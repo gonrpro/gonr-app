@@ -1,0 +1,181 @@
+{
+  "id": "permanent-marker-polyester",
+  "version": "5.0",
+  "authored": "2026-03-22",
+  "title": "Permanent Marker on Polyester",
+  "stainType": "dye",
+  "surface": "polyester",
+  "sector": "clothing",
+  "meta": {
+    "stainCanonical": "permanent-marker",
+    "surfaceCanonical": "polyester",
+    "sector": "clothing",
+    "tier": "universal",
+    "riskLevel": "high",
+    "timeEstimate": "20-40 min",
+    "stainType": "dye",
+    "tags": [
+      "marker",
+      "permanent",
+      "Sharpie",
+      "dye",
+      "resin",
+      "solvent",
+      "polyester",
+      "clothing"
+    ],
+    "freePreview": false
+  },
+  "stainChemistry": "Classification: Dye/Resin combination. Permanent marker is a three-component system: (1) solvent carrier — xylene, toluene, or alcohol that evaporates after application, (2) resin binder — a polymer (typically an acrylic or alkyd resin) that forms a tough film on the surface, (3) dye or pigment — concentrated colorant locked within the resin film. This is NOT just a dye stain — the resin film is the primary obstacle. Once the solvent carrier evaporates, the resin polymerizes into a hard film that mechanically and chemically adheres to the fiber surface. On polyester, the resin bonds readily because polyester is oleophilic — it attracts and holds nonpolar substances. The IRTA report tested black Sharpie specifically and confirmed POG agents are effective on marker ink.",
+  "whyThisWorks": "Amyl acetate and POG agents dissolve the resin film that locks the dye in place — once the resin is dissolved, the dye molecules are freed and can be extracted. Think of it as dissolving the prison walls, then removing the prisoners. On polyester, we can use aggressive solvents safely — polyester tolerates amyl acetate, POG, and even acetone without fiber damage. The challenge is the resin binder, not the fiber sensitivity.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Amyl acetate",
+      "technique": "Dissolve the resin film — this is the critical first step",
+      "dwellTime": "2-3 minutes per application",
+      "instruction": "Place garment face-down on spotting board over clean absorbent towel. Apply amyl acetate directly to the marker stain — this is your primary weapon because amyl acetate specifically targets the acrylic/alkyd resin binder in permanent marker. The resin is the lock; amyl acetate is the key. Work with moderate tamping using spotting brush. You should see color beginning to transfer to the towel underneath as the resin dissolves and releases the trapped dye. Flush with VDS. The IRTA study confirmed POG agents effective on Sharpie — amyl acetate is the stronger option in the POG family for resin dissolution.",
+      "equipment": "Spotting board with vacuum, amyl acetate, spotting brush, VDS, clean white towels"
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "A.L. Wilson NovaBone POG + amyl acetate combination",
+      "technique": "Deep resin dissolution — sustained solvent attack",
+      "dwellTime": "2-3 minutes",
+      "instruction": "Apply POG agent followed by additional amyl acetate. The combination provides broader solvency coverage — POG handles the oily components while amyl acetate targets the resin. Dan Eisen's dryside procedure: apply liberal amounts, manipulate with spatula using rapid light tamping with brush, absorb loosening with towel, flush with VDS. Repeat until color transfer slows. Permanent marker requires patience — the resin film dissolves progressively, not all at once. Three to five passes is normal.",
+      "equipment": "NovaBone POG, amyl acetate, bone spatula, spotting brush, VDS"
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "A.L. Wilson Picrin or Chemspec Ink-Go",
+      "technique": "Target remaining dye — specialized ink/paint chemistry",
+      "dwellTime": "1-2 minutes",
+      "instruction": "Once the resin film is dissolved, any remaining stain is freed dye. Apply Ink-Go or — for stubborn pigment-based markers — Picrin. Picrin is formulated for paint and ink stains and provides chemistry not available in standard POG agents. Work gently, flush with VDS. On polyester, you have good latitude for aggressive dryside chemistry. Note: if the marker was pigment-based rather than dye-based, the pigment particles may be mechanically trapped in the fiber — additional mechanical action on the spotting board may be needed.",
+      "equipment": "Picrin or Ink-Go, spotting brush, VDS"
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Water flush + NSD",
+      "technique": "Remove dissolved chemistry and check for residual color",
+      "dwellTime": "2-3 minutes",
+      "instruction": "Transition to wetside. Flush with water gun at safe distance. Apply NSD to emulsify and remove any remaining dissolved dye and solvent residue from the polyester. Polyester is hydrophobic — use warm water (not hot) to improve surfactant penetration. Flush thoroughly. Check the pad — if color is still transferring, return to step 2. If no more color but a faint shadow remains, proceed to bleaching.",
+      "equipment": "Water gun, NSD, clean pads"
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hydrogen peroxide 6% + ammonia",
+      "technique": "Oxidizing bleach for residual dye shadow",
+      "dwellTime": "3-5 minutes with steam",
+      "instruction": "Apply H2O2 6% with 1 drop ammonia per 8 oz. Apply steam — polyester handles heat well (up to 140°C). The oxidizing bleach breaks the chromophore of the remaining dye. Watch for color fading. If the marker was black (most Sharpies), the dye may be a combination — if peroxide doesn't fully resolve, follow with reducing bleach (sodium hydrosulfite) — Dan Eisen says reducing bleach is used specifically for dye and last traces of stains containing dye. Dissolve in warm water, apply with Q-tip, rinse within 15 minutes.",
+      "equipment": "H2O2 6%, ammonia 28%, steam gun, sodium hydrosulfite (if needed)"
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Acetic acid neutralization + final flush",
+      "technique": "pH restoration and chemical removal",
+      "dwellTime": "1-2 minutes",
+      "instruction": "Apply dilute acetic acid (1:10) to neutralize residual alkalinity. Flush thoroughly with clean water. Air dry and inspect. Polyester dries quickly — check within 15-20 minutes. If any shadow remains, repeat from step 1. Once clean, proceed to normal finishing.",
+      "equipment": "Acetic acid (1:10), water gun"
+    }
+  ],
+  "homeSolutions": [
+    "Apply 91% isopropyl alcohol to the marker stain — saturate generously. Place a paper towel underneath. The alcohol dissolves the resin binder, releasing the dye. Blot from behind, pushing color into the paper towel. Replace towel frequently. Repeat 4-5 times.",
+    "If rubbing alcohol isn't enough: apply a small amount of non-acetone nail polish remover (ethyl acetate based) — this targets the resin film more aggressively. Test on a hidden seam first.",
+    "For black Sharpie on white polyester: after alcohol treatment, apply OxiClean paste (powder + water) to the residual shadow. Let sit 1 hour. The oxygen bleach attacks the remaining dye.",
+    "Launder in warm water with enzyme detergent. Inspect before drying — heat permanently sets any remaining marker dye on polyester."
+  ],
+  "materialWarnings": [
+    "Polyester is oleophilic — it attracts and holds oily/resinous stains more tenaciously than cellulose fibers. Expect more passes.",
+    "Heat-set wrinkles on polyester are permanent — avoid excessive heat during treatment that could create new wrinkles.",
+    "Acetone is safe on polyester (Grade B) — but test first on colored polyester as it may affect some dye finishes.",
+    "NEVER use a dryer until marker stain is confirmed gone — heat above 140°C can permanently set dye into the polyester matrix.",
+    "Some permanent markers contain metallic pigments — if the stain has a metallic sheen, it may require different chemistry (mineral-based approach)."
+  ],
+  "escalation": "If stain persists after full protocol: the marker resin may have cross-linked with the polyester surface. Try acetone (safe on polyester) as a final solvent escalation. If the marker was industrial-grade (paint marker vs. regular Sharpie), the pigment may be mineral-based — treat as a paint stain with extended POG + amyl acetate cycles. For extremely set permanent marker, classification as permanent damage may be necessary — inform the customer.",
+  "products": {
+    "professional": [
+      {
+        "name": "Amyl Acetate (Banana Oil)",
+        "brand": "Professional spotting supplies",
+        "type": "solvent",
+        "icon": "🧪",
+        "amazonSearchQuery": "amyl acetate banana oil spotting solvent",
+        "affiliateTag": "gonr08-20",
+        "note": "Primary weapon against permanent marker resin binder. The critical first-step solvent."
+      },
+      {
+        "name": "A.L. Wilson NovaBone POG Remover",
+        "brand": "A.L. Wilson",
+        "type": "POG agent",
+        "icon": "🔧",
+        "amazonSearchQuery": "AL Wilson NovaBone POG remover professional spotting",
+        "affiliateTag": "gonr08-20",
+        "note": "Broad-spectrum POG agent for the oily carrier components."
+      },
+      {
+        "name": "Chemspec Ink-Go",
+        "brand": "Chemspec",
+        "type": "ink remover",
+        "icon": "🧪",
+        "amazonSearchQuery": "Chemspec Ink-Go professional ink remover",
+        "affiliateTag": "gonr08-20",
+        "note": "Targets freed dye after resin dissolution."
+      },
+      {
+        "name": "Sodium Hydrosulfite (Reducing Bleach)",
+        "brand": "Professional supplies",
+        "type": "reducing bleach",
+        "icon": "🧪",
+        "amazonSearchQuery": "sodium hydrosulfite reducing bleach textile",
+        "affiliateTag": "gonr08-20",
+        "note": "Per Eisen: specifically for dye and last traces of dye stains. Apply with Q-tip."
+      }
+    ],
+    "household": [
+      {
+        "name": "Isopropyl Alcohol 91%",
+        "brand": "Generic",
+        "type": "solvent",
+        "icon": "🧪",
+        "amazonSearchQuery": "isopropyl alcohol 91 percent",
+        "affiliateTag": "gonr08-20",
+        "note": "Dissolves the resin binder in permanent marker. Apply generously, blot repeatedly."
+      },
+      {
+        "name": "Amodex Ink & Stain Remover",
+        "brand": "Amodex",
+        "type": "ink stain remover",
+        "icon": "🧪",
+        "amazonSearchQuery": "Amodex ink stain remover",
+        "affiliateTag": "gonr08-20",
+        "note": "Non-toxic ink remover effective on many marker types."
+      }
+    ]
+  },
+  "customerExplanation": "Permanent marker is designed to be permanent — that's literally its name. It works by depositing a dye inside a tough resin film that bonds to the surface. We treat it by first dissolving the resin film with professional-grade solvents, which frees the trapped dye. Then we extract the dye and, if needed, bleach any remaining color. On polyester, the resin bonds tightly because polyester naturally attracts oily substances, so it takes multiple treatment passes.",
+  "commonMistakes": "Using water first — water does nothing to a solvent-resin-dye system. The resin is hydrophobic. You must start with solvent. | Not enough passes — permanent marker resin dissolves progressively, not all at once. Giving up after one or two applications is premature. Five passes is normal. | Using heat too early — heat before the resin is fully dissolved polymerizes it further, making removal harder.",
+  "scienceNote": "Permanent marker formulation: the key insight is that the 'permanent' in permanent marker comes from the RESIN BINDER, not the dye itself. The dye is no more permanent than ballpoint ink dye — it's the polymerized resin film that creates permanence. Once you dissolve the resin, you're dealing with a standard dye stain. Amyl acetate (isoamyl acetate, C₇H₁₄O₂) is an ester with excellent solvency for acrylic and alkyd resins — its Hansen Solubility Parameters match the polymer matrix better than simpler alcohols.",
+  "callPro": "Permanent marker on polyester is one of the harder stain-fiber combinations. Professional treatment with concentrated solvents on the spotting board gives the best chance of complete removal. Home methods work on fresh stains but struggle with aged or heavily applied marker.",
+  "difficulty": 4,
+  "difficulty_factors": [
+    "Resin binder creates a tough polymer film — dissolves progressively, requires multiple passes",
+    "Polyester is oleophilic — holds resinous stains more tenaciously than cellulose fibers",
+    "Permanent marker is literally formulated for permanence",
+    "Aged marker cross-links with fiber — becomes increasingly resistant over time"
+  ],
+  "components": [
+    "resin",
+    "dye"
+  ],
+  "component_order": [
+    "resin",
+    "dye"
+  ],
+  "solventNote": "For PERC shops: PERC has excellent compatibility with polyester. Pre-spot marker on the board first — PERC machine processing alone won't remove permanent marker resin. Level with Sofspot. For HC shops: hydrocarbon solvent provides less solvency than PERC for resin stains — extend spotting board time."
+}

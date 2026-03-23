@@ -1,65 +1,234 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+import { useState, useCallback, useEffect, useRef } from 'react'
+import ResultCard from '@/components/solve/ResultCard'
+import type { ProtocolCard } from '@/lib/types'
+
+const STAIN_FAMILIES = [
+  { id: 'protein', label: 'Protein', emoji: '🥩', stains: ['blood', 'egg', 'milk', 'sweat', 'urine', 'vomit', 'grass'] },
+  { id: 'tannin', label: 'Tannin', emoji: '🍷', stains: ['red-wine', 'coffee-black', 'tea', 'beer'] },
+  { id: 'oil-grease', label: 'Oil & Grease', emoji: '🛢️', stains: ['cooking-oil', 'butter', 'motor-oil', 'lipstick', 'foundation'] },
+  { id: 'dye', label: 'Dye', emoji: '🎨', stains: ['hair-dye', 'food-coloring', 'permanent-marker', 'ballpoint-pen'] },
+  { id: 'oxidizable', label: 'Oxidizable', emoji: '🧪', stains: ['rust', 'mustard', 'curry', 'tomato-sauce'] },
+  { id: 'combination', label: 'Combo', emoji: '🔀', stains: ['chocolate', 'coffee-with-cream', 'nail-polish'] },
+  { id: 'particulate', label: 'Particulate', emoji: '💨', stains: ['mildew', 'collar-ring'] },
+  { id: 'wax-gum', label: 'Wax & Gum', emoji: '🕯️', stains: ['candle-wax', 'crayon'] },
+  { id: 'bleach-damage', label: 'Bleach', emoji: '⚠️', stains: ['bleach'] },
+  { id: 'adhesive', label: 'Adhesive', emoji: '🩹', stains: ['adhesive', 'nail-polish'] },
+  { id: 'pigment', label: 'Pigment', emoji: '🖌️', stains: ['acrylic-paint', 'mascara'] },
+  { id: 'unknown', label: 'Unknown', emoji: '❓', stains: [] },
+]
+
+const SURFACES = [
+  'cotton-white', 'cotton-color', 'silk', 'wool', 'linen',
+  'polyester', 'denim', 'leather', 'suede', 'nylon',
+]
+
+function formatLabel(slug: string): string {
+  return slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+}
+
+interface SolveResult {
+  card: ProtocolCard
+  tier: number
+  confidence: number
+  source: 'verified' | 'ai'
+}
+
+export default function SolvePage() {
+  const [stainInput, setStainInput] = useState('')
+  const [selectedStain, setSelectedStain] = useState('')
+  const [selectedSurface, setSelectedSurface] = useState('')
+  const [expandedFamily, setExpandedFamily] = useState<string | null>(null)
+  const [result, setResult] = useState<SolveResult | null>(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [solveCount, setSolveCount] = useState(0)
+  const resultRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const count = parseInt(localStorage.getItem('gonr_solve_count') || '0', 10)
+    setSolveCount(count)
+  }, [])
+
+  const handleSolve = useCallback(async (stain?: string, surface?: string) => {
+    const s = stain || selectedStain || stainInput.trim()
+    const surf = surface || selectedSurface
+    if (!s) return
+
+    setLoading(true)
+    setError('')
+    setResult(null)
+
+    try {
+      const res = await fetch('/api/solve', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ stain: s, surface: surf }),
+      })
+
+      if (!res.ok) {
+        const data = await res.json()
+        throw new Error(data.error || 'Solve failed')
+      }
+
+      const data = await res.json()
+      setResult(data)
+
+      // Track solve count
+      const newCount = solveCount + 1
+      setSolveCount(newCount)
+      localStorage.setItem('gonr_solve_count', String(newCount))
+
+      // Scroll to result
+      setTimeout(() => {
+        resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 100)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong')
+    } finally {
+      setLoading(false)
+    }
+  }, [selectedStain, selectedSurface, stainInput, solveCount])
+
+  const handleStainSelect = (stain: string) => {
+    setSelectedStain(stain)
+    setStainInput(formatLabel(stain))
+    setResult(null)
+  }
+
+  const handleBack = () => {
+    setResult(null)
+    setError('')
+  }
+
+  // Result view
+  if (result) {
+    return (
+      <div ref={resultRef}>
+        <button
+          onClick={handleBack}
+          className="flex items-center gap-1 mb-4 text-sm font-medium"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          ← Back to search
+        </button>
+        <ResultCard
+          card={result.card}
+          source={result.source}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+      </div>
+    )
+  }
+
+  return (
+    <div className="space-y-5">
+      {/* Heading */}
+      <div>
+        <h1 className="text-xl font-bold tracking-tight">What&apos;s the stain?</h1>
+        <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
+          Select or type your stain and surface for an expert protocol.
+        </p>
+      </div>
+
+      {/* Text input */}
+      <input
+        type="text"
+        className="input"
+        placeholder="e.g. red wine, blood, coffee..."
+        value={stainInput}
+        onChange={(e) => {
+          setStainInput(e.target.value)
+          if (!e.target.value) setSelectedStain('')
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') handleSolve()
+        }}
+      />
+
+      {/* Stain family chips */}
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>
+          Stain Families
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {STAIN_FAMILIES.map((fam) => (
+            <div key={fam.id}>
+              <button
+                className={`chip ${expandedFamily === fam.id ? 'selected' : ''}`}
+                onClick={() => {
+                  setExpandedFamily(expandedFamily === fam.id ? null : fam.id)
+                }}
+              >
+                <span>{fam.emoji}</span>
+                <span>{fam.label}</span>
+              </button>
+            </div>
+          ))}
+        </div>
+
+        {/* Expanded sub-stains */}
+        {expandedFamily && (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {STAIN_FAMILIES.find(f => f.id === expandedFamily)?.stains.map((stain) => (
+              <button
+                key={stain}
+                className={`chip text-xs ${selectedStain === stain ? 'selected' : ''}`}
+                onClick={() => handleStainSelect(stain)}
+              >
+                {formatLabel(stain)}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Surface chips — show after stain selected */}
+      {(selectedStain || stainInput.trim()) && (
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>
+            Surface / Fabric
           </p>
+          <div className="flex flex-wrap gap-2">
+            {SURFACES.map((surface) => (
+              <button
+                key={surface}
+                className={`chip text-xs ${selectedSurface === surface ? 'selected' : ''}`}
+                onClick={() => setSelectedSurface(selectedSurface === surface ? '' : surface)}
+              >
+                {formatLabel(surface)}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      )}
+
+      {/* Get Protocol button */}
+      <button
+        className="btn-primary"
+        disabled={loading || (!selectedStain && !stainInput.trim())}
+        onClick={() => handleSolve()}
+      >
+        {loading ? 'Finding protocol...' : 'Get Protocol'}
+      </button>
+
+      {/* Loading skeleton */}
+      {loading && (
+        <div className="space-y-3">
+          <div className="skeleton h-6 w-3/4" />
+          <div className="skeleton h-4 w-full" />
+          <div className="skeleton h-4 w-5/6" />
+          <div className="skeleton h-32 w-full" />
+          <div className="skeleton h-4 w-2/3" />
         </div>
-      </main>
+      )}
+
+      {/* Error */}
+      {error && (
+        <div className="card" style={{ borderColor: 'var(--danger)' }}>
+          <p className="text-sm font-medium" style={{ color: 'var(--danger)' }}>{error}</p>
+        </div>
+      )}
     </div>
-  );
+  )
 }

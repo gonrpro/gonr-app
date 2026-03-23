@@ -1,0 +1,96 @@
+{
+  "id": "coffee-black+wool",
+  "version": "6.0",
+  "authored": "2026-03-22",
+  "title": "Black Coffee on Wool",
+  "stainFamily": "tannin",
+  "surface": "wool",
+  "sector": "textile",
+  "meta": {
+    "stainCanonical": "coffee-black",
+    "surfaceCanonical": "wool",
+    "tier": "universal",
+    "riskLevel": "high",
+    "danReview": false,
+    "sourceKnowledge": ["dan-eisen-procedures", "rr-street-on-the-spot", "agent-fiber-safety", "product-guide-al-wilson-tannin-go"]
+  },
+  "stainChemistry": "Black coffee's chlorogenic acid and melanoidin polymers hydrogen-bond and form hydrophobic interactions with wool's keratin. Dan Eisen classifies coffee as a tannin stain that is 'more difficult' on natural fibers like wool. Coffee rings form because the driest portion on the outside picks up more residue as it dries — oxidation darkens the stain as oxygen combines with the tannin, like a cut apple browning. On wool, the narrow pH window (5.5–8.0) and low heat tolerance (30°C) severely limit treatment options. No enzymes, no alkali, no chlorine, no sodium percarbonate — wool protein fiber is as restrictive as silk but with felting risk added.",
+  "whyThisWorks": "Cold water flush at every step keeps wool below its 30°C felting threshold. Acetic acid (Tannin-Go diluted) works within wool's preferred slightly-acidic pH range to disrupt the chlorogenic acid-keratin hydrogen bonds. Multiple gentle acid cycles replace the aggressive oxidizer step that wool can't safely tolerate. Dan Eisen's sequence of 'vinegar and detergent → rinse → peroxide (tested) → vinegar neutralize' applies, but on wool the peroxide step must use only 3% at cool temperature with no ammonia. The vinegar neutralization step is critical — it returns wool to its preferred acidic pH and prevents any alkaline yellowing.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "agent": "Cold water flush",
+      "technique": "Blot with cold water — no rubbing, no agitation",
+      "temperature": "Cold (60–65°F) — above 86°F (30°C) opens wool scales and risks felting",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Blot coffee immediately with clean white cloth. Place wool face-down on towel, spray cold water from back. Blot gently — wool is 25% weaker wet. No agitation, no rubbing. Dan Eisen: coffee on the fabric 'picks up oxygen from the air causing it to darken' — speed matters. The cold flush removes dissolved tannin before oxidation begins."
+    },
+    {
+      "step": 2,
+      "agent": "A.L. Wilson Tannin-Go (diluted 1:2 with cold water for wool)",
+      "technique": "Cotton pad application, light tamping only — no brushing wool",
+      "temperature": "Ambient — no steam on wool during tannin treatment",
+      "dwellTime": "2–4 minutes per cycle, up to 3 cycles",
+      "instruction": "Dilute Tannin-Go 1:2. Apply with cotton pad using light tamping. Never brush wet wool — mechanical action on open cuticle scales causes permanent felting. The acid disrupts chlorogenic acid's hydrogen bonds to keratin. Flush with cold water after each cycle. Dan Eisen's approach: 'Apply vinegar and detergent, rub area, rinse' — on wool, modify 'rub' to 'tamp gently.' Multiple mild cycles are safer than one aggressive treatment."
+    },
+    {
+      "step": 3,
+      "agent": "NSD surfactant + dilute vinegar solution",
+      "technique": "Surfactant-assisted acid treatment for melanoidin polymers",
+      "temperature": "Cold",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Mix 2 drops NSD into white vinegar diluted 1:2 with cold water. Apply with cotton pad. The surfactant helps emulsify melanoidin browning products that resist acid alone. Dan Eisen uses 'detergent mixed with water plus a little distilled vinegar' — the NSD is the professional equivalent. Tamp gently. Flush with cold water."
+    },
+    {
+      "step": 4,
+      "agent": "Hydrogen peroxide 3% (maximum safe for wool — cool, no catalyst)",
+      "technique": "Brief contact oxidation for residual melanoidin browning",
+      "temperature": "Cool — NO heat activation on wool, absolutely NO ammonia",
+      "dwellTime": "3–5 minutes, then flush",
+      "instruction": "Only if brown staining persists after acid cycles. Apply 3% peroxide only — wool is C-rated for peroxide at 3% max. NO ammonia catalyst (ammonia opens wool scales AND is above wool's pH ceiling). NO heat activation. Apply with cotton swab to stain only. Dan Eisen: 'Apply peroxide, apply ammonia, let sit 3 minutes' — on WOOL, skip the ammonia entirely. Flush with cold water. Apply vinegar immediately after to restore acidic pH."
+    },
+    {
+      "step": 5,
+      "agent": "Acetic acid neutralization (vinegar diluted 1:3)",
+      "technique": "pH restoration for wool safety",
+      "temperature": "Cold",
+      "dwellTime": "30 seconds, then flush",
+      "instruction": "Essential after any peroxide application on wool. Apply diluted vinegar to restore wool to its preferred slightly-acidic state (pH 5.5–7.0). Dan Eisen: 'Apply vinegar, rinse area.' Flush with cold water. Blot between towels — press gently, never wring. Reshape and air dry flat."
+    }
+  ],
+  "homeSolutions": [
+    "Fresh spill: Blot immediately, flush with cold water only. Mix white vinegar 1:1 with cold water, blot onto stain gently for 2 minutes, rinse cold. Never rub wool. Repeat vinegar treatment once if needed.",
+    "Set stain: Extended cold vinegar soak — submerge in cold water with 2 tablespoons white vinegar per quart for 30 minutes. Blot. Apply single round of 3% peroxide to stain area, wait 3 minutes, rinse. Follow with vinegar rinse. Do NOT use OxiClean on wool.",
+    "When to stop: If melanoidin browning persists after vinegar treatment + one peroxide application, stop. Wool cannot tolerate repeated oxidizer exposure or any aggressive chemistry. Take to a dry cleaner — specify it's coffee on wool, no enzymes or alkali were used."
+  ],
+  "materialWarnings": [
+    "NEVER use protease enzymes on wool — wool IS a protein fiber (keratin); protease digests the fiber",
+    "NEVER use chlorine bleach — destroys keratin protein and causes irreversible yellowing",
+    "NEVER use sodium percarbonate (OxiClean) — oxygen release + alkalinity is rated F (NEVER) for wool",
+    "NEVER use hot water or steam — opens wool cuticle scales causing felting; also sets tannin permanently",
+    "NEVER use ammonia — alkaline pH opens scales AND exceeds wool's pH ceiling of 8.0",
+    "NEVER rub or brush wet wool — mechanical action + open scales = irreversible felting",
+    "NEVER agitate in washing machine — use hand-wash or professional cleaning only"
+  ],
+  "products": {
+    "professional": [
+      {"name": "A.L. Wilson Tannin-Go", "use": "Diluted 1:2 for wool — primary chlorogenic acid bond breaker", "note": "Acetic acid stays within wool's safe pH range. Multiple mild cycles preferred."},
+      {"name": "Street's Tannin Remover", "use": "Alternative tannin spotter — dilute 1:3 for wool", "note": "Test on hidden area — some wool dyes may be acid-sensitive"},
+      {"name": "Hydrogen Peroxide 3%", "use": "Brief contact for melanoidin browning — no catalyst, no heat", "note": "C-rated for wool — use once only, follow with vinegar to restore pH"},
+      {"name": "NSD (Neutral Synthetic Detergent)", "use": "Gentle surfactant for melanoidin emulsification", "note": "pH-neutral surfactant is safe for wool — nonionic formulation preferred"}
+    ],
+    "consumer": [
+      {"name": "White distilled vinegar (5% acetic acid)", "use": "Dilute 1:1 with cold water — primary tannin spotter for wool", "note": "Safest effective tannin treatment; within wool's preferred acidic range"},
+      {"name": "Hydrogen Peroxide 3%", "use": "Last resort for brown melanoidin — test first, one application", "note": "Follow immediately with vinegar rinse. No repeat applications on wool."},
+      {"name": "Woolite (or wool-specific detergent)", "use": "Final wash after stain treatment", "note": "pH-balanced for wool. Cold water, gentle handling, flat dry."}
+    ]
+  },
+  "escalation": {
+    "when": "Brown melanoidin persists after three acid cycles + one peroxide application, or wool shows texture/felting change during treatment",
+    "whatToTell": "This is coffee melanoidin browning on wool. I kept everything cold, acidic, and enzyme-free. No alkali, no chlorine, no OxiClean. Used only diluted tannin spotter and a single 3% peroxide application. The fiber is undamaged but the stain chemistry has exceeded home treatment capability.",
+    "specialistType": "Dry cleaner with GreenEarth or hydrocarbon solvent — both A-rated for wool. Avoid PERC if possible (C-rated, may felt if residual moisture present). Ask for wet-side tannin pre-spot before the cleaning cycle."
+  },
+  "solventNote": "Pre-spot wet side with diluted tannin formula before dry cleaning — coffee tannin sets permanently at machine temperature (140–150°F). GreenEarth preferred for wool — A-rated with no shrinkage risk. Hydrocarbon also A-rated. PERC is C-rated (may cause felting if moisture present). Solvon K4 is A-rated if available. For set stains: professional tannin formula with extended dwell, followed by controlled 3% peroxide with no ammonia. Level with Sofspot before machine load.",
+  "difficulty": 7,
+  "danReviewFlag": false
+}

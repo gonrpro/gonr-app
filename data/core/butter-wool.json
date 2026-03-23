@@ -1,0 +1,299 @@
+{
+  "id": "butter-wool",
+  "version": "5.0",
+  "authored": "2026-03-22",
+  "components": ["oil"],
+  "component_order": ["oil"],
+  "difficulty": 3,
+  "difficulty_factors": [
+    "Wool is protein fiber — sensitive to alkaline pH, heat, mechanical agitation, and protease enzyme",
+    "Butter is primarily milk fat plus trace protein — treat as oil stain on wool",
+    "Dry cleaning preferred to avoid felting risk from wet treatment"
+  ],
+  "meta": {
+    "stainCanonical": "butter",
+    "surfaceCanonical": "wool",
+    "sector": "clothing",
+    "tier": "universal",
+    "riskLevel": "moderate",
+    "timeEstimate": "15-25 min",
+    "stainType": "oil",
+    "tags": ["oil", "butter", "wool", "clothing", "protein-fiber", "dry-side", "pog", "dairy"]
+  },
+  "diy": {
+    "title": "Butter on Wool",
+    "ingredients": [
+      "Dull knife or spoon",
+      "Cornstarch or talcum powder",
+      "Clean white cloths",
+      "Mild dish soap (Dawn — small amount)",
+      "Cool water",
+      "White vinegar"
+    ],
+    "mixSteps": [
+      "Mix 2-3 drops Dawn in 1 cup cool water",
+      "Prepare vinegar rinse: 1 tbsp white vinegar per cup cool water",
+      "Use within 30 minutes"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "instruction": "Gently scrape any solid butter with a dull knife — lift away, don't press in.",
+        "why": "Removing solid butter first reduces the stain footprint. Butter melts with body heat, so act before it liquefies."
+      },
+      {
+        "step": 2,
+        "instruction": "Apply cornstarch or talcum powder generously. Wait 15-20 minutes.",
+        "why": "Powder absorbs melted butter fat — safest approach for wool. No chemical risk, no felting risk."
+      },
+      {
+        "step": 3,
+        "instruction": "Brush off gently. Repeat if stain lightens.",
+        "why": "Multiple powder applications are safer than one aggressive chemical treatment on wool."
+      },
+      {
+        "step": 4,
+        "instruction": "If greasy residue persists: dab dilute Dawn solution onto the stain. Press gently — NEVER rub.",
+        "why": "The surfactant emulsifies remaining butter fat. Minimal agitation prevents felting."
+      },
+      {
+        "step": 5,
+        "instruction": "Rinse by dabbing with cool water. Follow with vinegar rinse to restore wool's acidic pH.",
+        "why": "Wool thrives at pH 5.5-7. Vinegar keeps the cuticle scales flat and smooth."
+      },
+      {
+        "step": 6,
+        "instruction": "Lay flat on a clean towel to dry. Reshape while damp. Never wring or hang wet.",
+        "why": "Wool stretches when wet and hung. Flat drying preserves shape."
+      }
+    ],
+    "ifStillThere": "Take to a professional dry cleaner. Specify butter on wool. Ask for POG pre-spotting before hydrocarbon or GreenEarth cleaning cycle.",
+    "proTips": [
+      "Scrape → powder → gentle soap. That's your sequence on wool.",
+      "Cool water only — wool felts with heat + water.",
+      "Never use enzyme detergent with protease on wool — protease attacks wool's protein structure."
+    ],
+    "safety": "Test on hidden seam first. Wool dyes can bleed — if color transfers to your cloth, stop and go to a professional. Never use chlorine bleach, protease enzyme, or hot water on wool.",
+    "whyThisWorks": "Butter is 80% milk fat. Scraping removes solids, powder absorbs liquid fat, and dilute surfactant emulsifies the residue. Wool's natural lanolin actually provides some resistance to fat penetration — butter often sits closer to the surface than on cotton, making absorption treatment effective."
+  },
+  "home": {
+    "title": "Butter on Wool — Careful Removal",
+    "confidenceRating": 75,
+    "confidenceNote": "Fresh butter responds well to scraping + powder. Professional dry cleaning recommended for aged or set stains.",
+    "primaryProduct": {
+      "name": "Carbona Stain Devils #5 (Fat & Cooking Oil)",
+      "brand": "Carbona",
+      "why": "Solvent-based — safer for wool than heavy water treatment",
+      "where": "Grocery stores, Amazon, Walmart",
+      "amazonSearchQuery": "Carbona Stain Devils fat cooking oil",
+      "icon": "🧴"
+    },
+    "alternativeProducts": [
+      {
+        "name": "Dawn Ultra Dish Soap (Blue)",
+        "brand": "Dawn",
+        "why": "Diluted (2-3 drops per cup cool water) surfactant for wool",
+        "amazonSearchQuery": "Dawn Ultra dish soap blue"
+      },
+      {
+        "name": "Eucalan Delicate Wash",
+        "brand": "Eucalan",
+        "why": "Wool-safe no-rinse formula with lanolin",
+        "amazonSearchQuery": "Eucalan delicate wool wash"
+      }
+    ],
+    "prepStep": "Scrape solid butter with dull knife. Apply cornstarch for 15-20 minutes before any wet treatment.",
+    "method": [
+      {
+        "step": 1,
+        "instruction": "Scrape solid butter. Apply cornstarch for 15-20 minutes. Brush off.",
+        "dwellTime": "15-20 minutes",
+        "why": "Physical removal + absorption handles butter bulk without chemistry."
+      },
+      {
+        "step": 2,
+        "instruction": "Apply Carbona #5 per label. Test on hidden area first.",
+        "dwellTime": "Per product label",
+        "why": "Solvent dissolves fat without water that risks felting."
+      },
+      {
+        "step": 3,
+        "instruction": "Blot gently. If residue persists: dab dilute Dawn, rinse cool, vinegar rinse.",
+        "dwellTime": "2-3 minutes wet contact maximum",
+        "why": "Brief wet contact with neutral surfactant. Vinegar restores wool pH."
+      },
+      {
+        "step": 4,
+        "instruction": "Lay flat to dry. Reshape while damp. Never use heat.",
+        "dwellTime": "Air dry completely",
+        "why": "Heat sets fat AND felts wet wool."
+      }
+    ],
+    "materialWarnings": [
+      {"material": "wool", "warning": "NEVER use water above 30°C/86°F — heat + water causes irreversible felting."},
+      {"material": "wool", "warning": "NEVER use protease enzyme on wool — wool IS protein. Protease damages the fiber."},
+      {"material": "wool", "warning": "NEVER rub, twist, or wring wool — mechanical action causes felting."}
+    ],
+    "ifItDoesntWork": {
+      "nextProduct": "Eucalan Delicate Wash",
+      "escalation": "Professional dry cleaning with POG pre-spot. HC or GreenEarth solvent ideal for wool."
+    },
+    "proTips": [
+      "Wool's natural lanolin provides some butter resistance — the stain may be more superficial than it looks.",
+      "Scrape before powder, powder before chemistry.",
+      "Professional dry cleaning is the safest route for butter on wool dress garments."
+    ],
+    "whyThisWorks": "Butter fat is a straightforward triglyceride that responds to absorbent powder and surfactant. Wool's lanolin actually helps — butter sits closer to the surface than on cotton.",
+    "timeEstimate": "20-30 minutes"
+  },
+  "pro": {
+    "title": "Butter on Wool — Professional Dry-Side Protocol",
+    "stainChemistry": "Classification: Oil/Grease (dairy fat — triglyceride). Butter is ~80% milk fat (saturated and monounsaturated triglycerides), ~16% water, ~2% casein protein, ~2% salt. On wool (keratin protein fiber, pH 5.5-8.0), the fat is the dominant treatment target. The trace casein protein is too small for separate enzyme treatment — and protease is FORBIDDEN on wool. The salt component can cause oxidation damage over time, so prompt treatment is important. Wool's natural lanolin provides some oil resistance, meaning butter often sits more superficially than on cotton — good news for treatment.",
+    "spottingProtocol": [
+      {
+        "step": 1,
+        "side": "dry",
+        "agent": "Mechanical removal + POG pre-spot",
+        "technique": "Scrape solids, then POG for fat dissolution",
+        "dwellTime": "30-60 seconds per POG round, 2 rounds",
+        "instruction": "Scrape solid butter. Apply POG to back of stain on spotting board. Tamp with bone spatula — wool tolerates moderate mechanical action (more than silk, less than cotton). Watch towel for fat transfer. Butter fat is straightforward for POG — usually 2 rounds. Flush with VDS and feather edges."
+      },
+      {
+        "step": 2,
+        "side": "dry",
+        "agent": "HC or GreenEarth cleaning cycle",
+        "technique": "Gentle solvent cycle for wool",
+        "dwellTime": "Standard gentle cycle",
+        "instruction": "Hydrocarbon or GreenEarth — both rated A for wool. GreenEarth preserves lanolin and softness best. Use wool-safe detergent. Avoid over-extraction. The POG pre-spot handled the concentrated stain — the cleaning cycle removes residual fat uniformly."
+      },
+      {
+        "step": 3,
+        "side": "dry",
+        "agent": "Post-clean inspection",
+        "technique": "Visual and tactile check",
+        "dwellTime": "2 minutes",
+        "instruction": "Check for grease halo. Touch test — should feel identical to surrounding fabric, not tacky. If residue persists, repeat POG and re-clean. Don't press until clear."
+      }
+    ],
+    "escalation": "Butter rarely needs escalation past POG. For aged, oxidized butter fat: amyl acetate. If the salt component has caused yellowing: mild H₂O₂ 3% on wool (with caution — test first). Lipase enzyme rated C on wool — brief exposure only if POG fails.",
+    "customerExplanation": "Butter on wool is handled with professional dry-side degreasing followed by a gentle solvent cleaning cycle designed for wool. The fat dissolved cleanly and the wool's natural softness is preserved.",
+    "commonMistakes": [
+      "Wet cleaning without proper wool protocol — water + agitation = felting.",
+      "Using protease enzyme because 'butter has protein' — wool IS protein. Protease damages wool.",
+      "Alkaline laundry detergent — opens wool cuticle scales, causes felting and dye bleeding.",
+      "Hot pressing before confirming fat is fully removed — oxidizes residual fat."
+    ],
+    "neutralization": "Dry-side protocol — no neutralization needed. If wet-side work was performed, acetic acid rinse to restore wool pH to 5.5-7.0.",
+    "fabricRisks": "Standard wool risks: felting from water + heat + agitation, dye bleeding from alkaline agents, protease damage, lanolin stripping from aggressive solvents. GreenEarth preserves lanolin best."
+  },
+  "products": {
+    "professional": [
+      {
+        "name": "A.L. Wilson NovaBone POG Remover",
+        "brand": "A.L. Wilson",
+        "type": "POG solvent",
+        "icon": "🔧",
+        "amazonSearchQuery": "AL Wilson NovaBone POG remover professional spotting",
+        "affiliateTag": "gonr08-20",
+        "note": "Primary POG for butter fat. Straightforward dissolution."
+      },
+      {
+        "name": "Street's POG Remover",
+        "brand": "R.R. Street",
+        "type": "POG solvent",
+        "icon": "🧪",
+        "amazonSearchQuery": "RR Street POG remover professional",
+        "affiliateTag": "gonr08-20",
+        "note": "Industry standard. Effective for all dairy fat stains."
+      }
+    ],
+    "household": [
+      {
+        "name": "Carbona Stain Devils #5 (Fat & Cooking Oil)",
+        "brand": "Carbona",
+        "type": "spotting solvent",
+        "icon": "🧴",
+        "amazonSearchQuery": "Carbona Stain Devils fat cooking oil",
+        "affiliateTag": "gonr08-20",
+        "note": "Consumer-grade solvent. Safer than water-based methods for wool."
+      },
+      {
+        "name": "Dawn Ultra Dish Soap (Blue)",
+        "brand": "Dawn",
+        "type": "surfactant",
+        "icon": "🧴",
+        "amazonSearchQuery": "Dawn Ultra dish soap blue",
+        "affiliateTag": "gonr08-20",
+        "note": "Diluted — 2-3 drops per cup cool water. Follow with vinegar rinse."
+      },
+      {
+        "name": "Eucalan Delicate Wash",
+        "brand": "Eucalan",
+        "type": "wool-safe wash",
+        "icon": "🧶",
+        "amazonSearchQuery": "Eucalan delicate wool wash",
+        "affiliateTag": "gonr08-20",
+        "note": "No-rinse formula with lanolin. Ideal for wool after fat removal."
+      }
+    ]
+  },
+  "title": "Butter on Wool",
+  "stainType": "oil",
+  "surface": "wool",
+  "sector": "clothing",
+  "stainChemistry": "Butter is primarily saturated/monounsaturated milk fat (palmitic, oleic, stearic acid triglycerides) that penetrates wool through gaps in the cuticle scale structure. Wool's natural lanolin provides some oil resistance — butter often sits more superficially on wool than on cotton. The saturated fat component (solid at room temperature) is actually easier to dissolve with POG than polyunsaturated cooking oils because it hasn't cross-linked. The trace casein protein doesn't warrant separate treatment, especially since protease enzyme is forbidden on wool.",
+  "whyThisWorks": "Mechanical removal handles solid butter. POG dissolves the milk fat. Gentle solvent cleaning completes the job. The entire protocol stays dry-side, keeping wool away from water + heat + agitation — the three factors that cause irreversible felting.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape solids + POG pre-spot",
+      "technique": "Mechanical removal then dry-side fat dissolution",
+      "equipment": "Dull knife, POG agent, spotting board, towels",
+      "dwellTime": "30-60 seconds per POG round, 2 rounds",
+      "instruction": "Scrape solid butter. Apply POG to back of stain. Moderate tamping. Fresh towel positions. Butter is straightforward for POG. Flush with VDS."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "HC or GreenEarth cleaning cycle",
+      "technique": "Wool-safe solvent cleaning",
+      "equipment": "Dry cleaning machine",
+      "dwellTime": "Standard gentle cycle",
+      "instruction": "Both solvents rated A for wool. GreenEarth preserves lanolin. Wool-safe detergent charge."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Inspection",
+      "technique": "Visual and touch check",
+      "equipment": "Good lighting",
+      "dwellTime": "2 minutes",
+      "instruction": "Confirm no grease residue before pressing."
+    }
+  ],
+  "homeSolutions": [
+    "Scrape + cornstarch: Remove solid butter, powder 15-20 minutes, brush off. Often sufficient for fresh butter.",
+    "Carbona Stain Devils #5: Solvent-based approach after scraping and powder.",
+    "Dilute Dawn (2-3 drops per cup cool water): Dab on, don't rub. Cool water rinse. Vinegar rinse. Flat dry.",
+    "Professional dry cleaning: Safest route for butter on wool dress garments."
+  ],
+  "materialWarnings": [
+    "NEVER use hot water on wool — felting risk.",
+    "NEVER use protease enzyme — wool IS protein.",
+    "NEVER use chlorine bleach — destroys wool protein.",
+    "NEVER rub or wring wet wool — felting.",
+    "NEVER use alkaline laundry detergent — opens cuticle scales."
+  ],
+  "commonMistakes": [
+    "Hot water — felts wool instantly.",
+    "Protease enzyme 'for the protein in butter' — correct chemistry, fatal for wool.",
+    "Machine washing with agitation — water + heat + agitation = felt.",
+    "Dryer before fat is gone — sets residual butter permanently."
+  ],
+  "scienceNote": "Butter's fat profile (primarily palmitic C16:0 and oleic C18:1) makes it relatively easy for POG to dissolve. Saturated fats have simple, straight-chain molecules that pack neatly and dissolve predictably in nonpolar solvents. Compare this to polyunsaturated cooking oils that oxidize and cross-link — butter is a simpler problem. Wool's lanolin (natural wool wax) has a similar lipid chemistry to butter, which is why wool has some natural resistance to butter penetration.",
+  "customerExplanation": "Butter on wool responds well to professional dry-side treatment. We dissolved the fat with a specialized solvent and cleaned your garment in a wool-safe system that preserves the fabric's natural softness and shape.",
+  "escalation": "Butter rarely needs escalation. Aged: amyl acetate. If salt-related yellowing: gentle H₂O₂ 3% with caution on wool.",
+  "callPro": "Professional dry cleaning recommended for butter on wool dress garments. For casual wool items, home treatment (scrape + powder + dilute soap) is reasonable if done promptly.",
+  "solventNote": "POG pre-spot on dry side before cleaning cycle. HC solvent effective for dairy fats. GreenEarth preferred for luxury wool."
+}

@@ -1,0 +1,357 @@
+{
+  "id": "motor-oil-denim-perfect",
+  "version": "5.0",
+  "authored": "2026-03-22",
+  "components": ["oil"],
+  "component_order": ["oil"],
+  "difficulty": 3,
+  "difficulty_factors": [
+    "Motor oil contains heavy hydrocarbons (C15-C50), metallic particulates, and combustion byproducts",
+    "Denim's indigo dye is physically trapped — not chemically bonded — solvents and rubbing strip color",
+    "Aged motor oil contains oxidation products that resist standard solvents"
+  ],
+  "meta": {
+    "stainCanonical": "motor-oil",
+    "surfaceCanonical": "denim",
+    "sector": "clothing",
+    "tier": "universal",
+    "riskLevel": "low",
+    "timeEstimate": "20-30 min",
+    "stainType": "oil",
+    "tags": ["pog", "automotive", "heavy", "denim", "oil", "clothing", "petroleum"]
+  },
+  "diy": {
+    "title": "Motor Oil on Denim",
+    "ingredients": [
+      "Cornstarch or clay-based absorbent (cat litter)",
+      "Dish soap (Dawn) or WD-40",
+      "Warm water",
+      "Clean white cloths",
+      "Old toothbrush"
+    ],
+    "mixSteps": [
+      "No mixing — apply Dawn directly to the dry stain",
+      "WD-40 as optional pre-treatment: spray on cloth first, apply to stain",
+      "Warm water only — hot water risks setting the oil"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "instruction": "Scrape any thick motor oil with a dull knife. Apply a thick layer of cornstarch (or crushed non-clumping cat litter for heavy deposits). Wait 15-20 minutes.",
+        "why": "Motor oil is heavy and viscous. Clay-based absorbent has enormous surface area that pulls heavy hydrocarbons by adsorption. The powder darkens dramatically as it absorbs motor oil."
+      },
+      {
+        "step": 2,
+        "instruction": "Brush off the powder. Apply Dawn dish soap directly to the DRY stain. Work in gently with a toothbrush — follow the twill weave direction.",
+        "why": "Soap on dry fabric contacts the petroleum directly. Working WITH the weave (not against it) protects denim's indigo dye layer."
+      },
+      {
+        "step": 3,
+        "instruction": "Let soap sit 10-15 minutes. Motor oil is heavier than cooking oil — it needs more dwell time.",
+        "why": "Motor oil's heavy hydrocarbons (C15-C50) require longer for surfactant micelles to fully encapsulate."
+      },
+      {
+        "step": 4,
+        "instruction": "Rinse with warm water. Repeat soap application if dark residue persists — expect 2-3 rounds.",
+        "why": "Motor oil releases in stages. Multiple treatments are normal, not a sign of failure."
+      },
+      {
+        "step": 5,
+        "instruction": "Wash in machine on warm with extra detergent. Air dry — check before using dryer.",
+        "why": "Heat permanently sets any remaining petroleum residue into a dark mark."
+      }
+    ],
+    "ifStillThere": "WD-40 pre-treatment: spray WD-40 onto a cloth and dab onto the stain — like dissolves like. Let sit 5-10 minutes. Follow with Dawn to remove the WD-40 and dissolved oil. Lestoil Heavy Duty Cleaner is the strongest consumer degreaser for petroleum stains. If all else fails, professional dry cleaning with POG solvents.",
+    "proTips": [
+      "The old mechanic's trick: WD-40 before Dawn. The petroleum solvent in WD-40 dissolves motor oil (like dissolves like), then Dawn emulsifies the WD-40.",
+      "Denim's indigo is physically trapped, not chemically bonded — don't rub hard or you'll strip color.",
+      "For heavy motor oil deposits, clay-based absorbent (cat litter) outperforms cornstarch."
+    ],
+    "safety": "Test any aggressive solvent on an inside seam first — denim varies in dye fastness. Avoid rubbing across the fabric — work with the weave direction. Keep WD-40 away from flame.",
+    "whyThisWorks": "Motor oil is petroleum-based (C15-C50 alkanes, cycloalkanes, aromatics). It requires petroleum-compatible chemistry to dissolve. Dawn's surfactants emulsify petroleum oil. The WD-40 trick works because its petroleum solvent base dissolves motor oil through molecular similarity — then Dawn removes both. On denim, the cotton fiber is forgiving, but the indigo dye layer is the vulnerability."
+  },
+  "home": {
+    "title": "Motor Oil on Denim — Confident Removal",
+    "confidenceRating": 85,
+    "confidenceNote": "Fresh motor oil on denim has high success with Dawn + patience. Aged black oil requires solvent pre-treatment.",
+    "primaryProduct": {
+      "name": "Dawn Platinum Dish Soap",
+      "brand": "Dawn",
+      "why": "Surfactants emulsify petroleum oils — apply directly to dry stain",
+      "where": "Grocery stores, Amazon, Walmart, Target",
+      "amazonSearchQuery": "Dawn Platinum Dish Soap",
+      "icon": "🧼"
+    },
+    "alternativeProducts": [
+      {
+        "name": "Lestoil Heavy Duty Multi-Purpose Cleaner",
+        "brand": "Lestoil",
+        "why": "Petroleum solvent base — strongest consumer degreaser for automotive stains",
+        "amazonSearchQuery": "Lestoil Heavy Duty Cleaner"
+      },
+      {
+        "name": "WD-40",
+        "brand": "WD-40",
+        "why": "Like dissolves like — petroleum solvent pre-treatment before Dawn",
+        "amazonSearchQuery": "WD-40 multi-use product"
+      },
+      {
+        "name": "Goo Gone Grease & Oil Remover",
+        "brand": "Goo Gone",
+        "why": "D-limonene (citrus solvent) effective on petroleum compounds",
+        "amazonSearchQuery": "Goo Gone Grease Oil Remover"
+      }
+    ],
+    "prepStep": "Scrape excess with dull knife. Apply absorbent powder (cornstarch or clay) for 15-20 minutes.",
+    "method": [
+      {
+        "step": 1,
+        "instruction": "Scrape excess. Apply absorbent powder 15-20 minutes. Brush off.",
+        "dwellTime": "15-20 minutes",
+        "why": "Removes the heaviest oil before chemical treatment."
+      },
+      {
+        "step": 2,
+        "instruction": "Apply Dawn directly to the DRY stain. Work in gently following the twill weave. Let sit 10-15 minutes.",
+        "dwellTime": "10-15 minutes",
+        "why": "Concentrated surfactant contacts petroleum directly. Longer dwell than cooking oil."
+      },
+      {
+        "step": 3,
+        "instruction": "Rinse warm. Repeat Dawn 2-3 times if dark residue persists.",
+        "dwellTime": "2-3 minutes per rinse",
+        "why": "Motor oil releases in stages. Multiple rounds expected."
+      },
+      {
+        "step": 4,
+        "instruction": "Wash warm with extra detergent. Inspect before drying.",
+        "dwellTime": "Standard warm cycle",
+        "why": "Machine agitation + surfactant handles residual oil."
+      },
+      {
+        "step": 5,
+        "instruction": "Air dry. Check for residual dark spots. If clean, safe for dryer going forward.",
+        "dwellTime": null,
+        "why": "Heat permanently sets petroleum residue."
+      }
+    ],
+    "materialWarnings": [
+      {"material": "denim", "warning": "Denim's indigo dye is physically trapped — rubbing hard strips color. Work WITH the weave, not against it."},
+      {"material": "denim", "warning": "Raw/unwashed denim bleeds indigo heavily when wet — treat in isolation."},
+      {"material": "all", "warning": "Heat permanently sets petroleum stains. No dryer until confirmed clean."}
+    ],
+    "ifItDoesntWork": {
+      "nextProduct": "Lestoil Heavy Duty Multi-Purpose Cleaner",
+      "escalation": "If Lestoil doesn't work: WD-40 pre-treatment → Dawn → warm wash. If still present, professional dry cleaner with POG solvents."
+    },
+    "proTips": [
+      "WD-40 → Dawn is the mechanic's secret for petroleum stains on denim.",
+      "Clay-based absorbent (cat litter) outperforms cornstarch on heavy motor oil.",
+      "Multiple Dawn applications are normal — don't give up after one round."
+    ],
+    "whyThisWorks": "Motor oil is petroleum hydrocarbon. Dawn's surfactants create micelles that encapsulate the nonpolar oil molecules. WD-40 works as a pre-treatment because its petroleum solvent dissolves motor oil through molecular similarity.",
+    "timeEstimate": "20-35 minutes (2-3 treatment rounds typical)"
+  },
+  "pro": {
+    "title": "Motor Oil on Denim — Professional POG Protocol",
+    "stainChemistry": "Classification: Oil/Grease (petroleum hydrocarbon). Motor oil is a complex mixture of C15-C50 alkanes, cycloalkanes, and aromatics, plus additive packages: zinc dialkyldithiophosphate (ZDDP anti-wear), calcium sulfonate detergent, polyisobutylene viscosity modifier. Used motor oil also contains carbon black particulate from combustion, metallic wear particles (iron, copper, zinc), and oxidation byproducts (carboxylic acids, ketones). On denim (tightly woven cotton twill with physically trapped indigo dye), motor oil wicks along warp threads. The IRTA/DTSC report confirms POG spotting agents as the standard treatment for motor oil on textiles. Dan Eisen classifies motor oil as a 'non-oxidizing oil' (petroleum derivative) — it doesn't fully dry, so it remains soluble in solvents. This is good news: even aged motor oil responds to POG.",
+    "spottingProtocol": [
+      {
+        "step": 1,
+        "side": "dry",
+        "agent": "Absorbent powder for heavy deposits",
+        "technique": "Clay-based adsorption for bulk oil removal",
+        "dwellTime": "10-15 minutes",
+        "instruction": "For heavy motor oil deposits: apply clay-based absorbent or Fuller's earth. The clay has enormous surface area and adsorbs heavy hydrocarbons effectively. Let sit 10-15 minutes — the powder will darken dramatically. Brush off. This removes the bulk before you commit solvent."
+      },
+      {
+        "step": 2,
+        "side": "dry",
+        "agent": "NovaBone POG or Street's POG Remover",
+        "technique": "Aggressive dry-side POG pre-spot",
+        "dwellTime": "1-2 minutes per round, 3-4 rounds",
+        "instruction": "Apply POG to the motor oil stain on spotting board. Motor oil is heavier than cooking oil — expect 3-4 rounds of POG with fresh towel positions. Tamp firmly with bone spatula. Denim handles aggressive mechanical action. Watch the towel: motor oil transfers as dark spots. When transfer fades to a light shadow, the bulk hydrocarbons are dissolved. Dan Eisen's principle: 'Always wet area with perc or VDS before using oily paint remover' — on denim this helps the POG spread evenly."
+      },
+      {
+        "step": 3,
+        "side": "dry",
+        "agent": "D-limonene or amyl acetate — for oxidized petroleum residue",
+        "technique": "Enhanced solvent for heavy compounds and carbon particulate",
+        "dwellTime": "30-60 seconds per application",
+        "instruction": "If dark residue persists after POG — you're dealing with carbon black particulate and oxidized petroleum. D-limonene (terpene solvent from citrus) intercalates between polycyclic aromatic hydrocarbons — its cyclic structure is particularly effective on these heavy compounds. Amyl acetate is the professional alternative with broader solvency. Apply, tamp, blot."
+      },
+      {
+        "step": 4,
+        "side": "wet",
+        "agent": "NSD surfactant flush",
+        "technique": "Emulsification of metallic particles and residual oil",
+        "dwellTime": "3-5 minutes",
+        "instruction": "Motor oil contains metallic particulates (zinc, iron, copper from engine wear) that solvents can't dissolve — they need to be physically suspended in surfactant and flushed. Apply NSD, work gently, flush with warm water. The surfactant micelles capture both residual oil and the fine metal particles."
+      },
+      {
+        "step": 5,
+        "side": "wet",
+        "agent": "Post-treatment oxidizer — for discoloration shadow",
+        "technique": "Hydrogen peroxide 3% for residual brown/yellow oxidation staining",
+        "dwellTime": "5-10 minutes monitored",
+        "instruction": "If a brownish shadow persists after surfactant flush — that's oxidation discoloration from petroleum breakdown products. The oil is gone but the color remains. On denim, test H₂O₂ on a hidden area first — peroxide can lighten indigo dye. Apply, monitor, flush when shadow fades. Alternatively, OxiClean for a broader but gentler approach."
+      }
+    ],
+    "escalation": "For extreme motor oil (industrial equipment, transmission fluid): multiple POG cycles + naphtha or xylene (with PPE and ventilation). For heat-set motor oil that went through the dryer: aggressive POG + d-limonene + multiple wash cycles. Be realistic with customer: heat-set petroleum on denim has limited but possible recovery.",
+    "customerExplanation": "Motor oil is petroleum-based — heavier and more stubborn than food grease. We used a professional solvent matched to petroleum chemistry to dissolve the oil, followed by surfactant treatment to remove the dark metallic particles that motor oil carries. Your denim cleaned up well.",
+    "commonMistakes": [
+      "Water before solvent — water disperses motor oil deeper into denim's dense weave.",
+      "One round of POG — motor oil requires 3-4 rounds minimum. It releases in stages.",
+      "Rubbing across denim weave — strips indigo dye. Work WITH the twill direction.",
+      "Dryer before confirming clean — heat-sets petroleum permanently."
+    ],
+    "neutralization": "After solvent + surfactant treatment: flush with clean water. No acid neutralization needed. Air dry until confirmed clear.",
+    "fabricRisks": "Denim's indigo is physically trapped — aggressive solvents and rubbing strip color. Test in inconspicuous area. Raw denim bleeds indigo heavily when wet — process in isolation. Chlorine bleach rapidly lightens denim — use only oxygen bleach if needed."
+  },
+  "products": {
+    "professional": [
+      {
+        "name": "A.L. Wilson NovaBone POG Remover",
+        "brand": "A.L. Wilson",
+        "type": "POG solvent",
+        "icon": "🔧",
+        "amazonSearchQuery": "AL Wilson NovaBone POG remover professional spotting",
+        "affiliateTag": "gonr08-20",
+        "note": "Primary POG for petroleum stains. Multiple rounds on motor oil."
+      },
+      {
+        "name": "Street's POG Remover",
+        "brand": "R.R. Street",
+        "type": "POG solvent",
+        "icon": "🧪",
+        "amazonSearchQuery": "RR Street POG remover professional",
+        "affiliateTag": "gonr08-20",
+        "note": "Industry standard. Effective on all petroleum hydrocarbons."
+      },
+      {
+        "name": "Amyl Acetate (Banana Oil)",
+        "brand": "Professional supplies",
+        "type": "ester solvent",
+        "icon": "🧪",
+        "amazonSearchQuery": "amyl acetate solvent spotting",
+        "affiliateTag": "gonr08-20",
+        "note": "Escalation solvent for oxidized/polymerized petroleum. Stronger than POG."
+      },
+      {
+        "name": "NSD (Neutral Synthetic Detergent)",
+        "brand": "Professional spotting supplies",
+        "type": "surfactant",
+        "icon": "🧴",
+        "amazonSearchQuery": "NSD neutral synthetic detergent spotting",
+        "affiliateTag": "gonr08-20",
+        "note": "For metallic particle suspension and residual oil emulsification."
+      }
+    ],
+    "household": [
+      {
+        "name": "Dawn Platinum Dish Soap",
+        "brand": "Dawn",
+        "type": "surfactant",
+        "icon": "🧼",
+        "amazonSearchQuery": "Dawn Platinum dish soap",
+        "affiliateTag": "gonr08-20",
+        "note": "Apply to DRY stain. Expect 2-3 rounds on motor oil."
+      },
+      {
+        "name": "WD-40",
+        "brand": "WD-40",
+        "type": "petroleum solvent pre-treatment",
+        "icon": "🔧",
+        "amazonSearchQuery": "WD-40 multi-use product",
+        "affiliateTag": "gonr08-20",
+        "note": "Like dissolves like. Apply via cloth, let sit 5-10 min, follow with Dawn."
+      },
+      {
+        "name": "Lestoil Heavy Duty Cleaner",
+        "brand": "Lestoil",
+        "type": "petroleum solvent cleaner",
+        "icon": "🧴",
+        "amazonSearchQuery": "Lestoil heavy duty cleaner",
+        "affiliateTag": "gonr08-20",
+        "note": "Strongest consumer degreaser. Pine oil + petroleum solvent base."
+      },
+      {
+        "name": "Goo Gone Grease & Oil Remover",
+        "brand": "Goo Gone",
+        "type": "citrus solvent",
+        "icon": "🍊",
+        "amazonSearchQuery": "Goo Gone Grease Oil Remover",
+        "affiliateTag": "gonr08-20",
+        "note": "D-limonene dissolves petroleum compounds. Good for oxidized motor oil."
+      }
+    ]
+  },
+  "title": "Motor Oil on Denim",
+  "stainType": "oil",
+  "surface": "denim",
+  "sector": "clothing",
+  "stainChemistry": "Motor oil is a complex petroleum mixture: C15-C50 alkanes, cycloalkanes, aromatics plus ZDDP anti-wear, calcium sulfonate detergent, and polyisobutylene viscosity modifier additives. Used oil adds carbon black, metallic wear particles, and oxidation byproducts. Dan Eisen classifies motor oil as a 'non-oxidizing oil' — petroleum derivatives don't fully dry, so they remain soluble in solvents even when aged. This is the good news for treatment: even old motor oil stains respond to POG. On denim's tight cotton twill, motor oil wicks along the warp threads, often creating a pattern that follows the weave.",
+  "whyThisWorks": "Petroleum-based stains require petroleum-compatible solvents — the molecular similarity principle. POG dissolves the hydrocarbon base. D-limonene or amyl acetate handles the heavier oxidized compounds. NSD surfactant captures the metallic particles that solvents can't dissolve. Denim is cotton at its core — chemically forgiving — but the indigo dye is physically trapped, making color preservation the main concern.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Clay absorbent + POG pre-spot",
+      "technique": "Bulk removal then solvent dissolution",
+      "equipment": "Absorbent powder, POG agent, spotting board, towels, bone spatula",
+      "dwellTime": "15 min powder + 1-2 min per POG round × 3-4 rounds",
+      "instruction": "Heavy deposits: absorbent powder first. Then aggressive POG — 3-4 rounds on motor oil. Denim handles firm tamping."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "D-limonene or amyl acetate escalation",
+      "technique": "Enhanced solvent for heavy/oxidized compounds",
+      "equipment": "D-limonene or amyl acetate, clean cloths",
+      "dwellTime": "30-60 seconds per application",
+      "instruction": "For dark residue after POG. Target oxidized petroleum and carbon particulate."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "NSD surfactant flush",
+      "technique": "Metallic particle suspension and emulsification",
+      "equipment": "NSD, warm water",
+      "dwellTime": "3-5 minutes",
+      "instruction": "Captures metallic particles. Flush thoroughly."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "H₂O₂ 3% for oxidation shadow",
+      "technique": "Oxidative decolorization of petroleum byproducts",
+      "equipment": "Hydrogen peroxide, clean cloths",
+      "dwellTime": "5-10 minutes monitored",
+      "instruction": "Test on hidden area first — can lighten indigo. For residual brown/yellow shadow only."
+    }
+  ],
+  "homeSolutions": [
+    "Dawn on dry stain: Apply directly, work in with weave, 10-15 minutes dwell. Repeat 2-3 times. Warm wash.",
+    "WD-40 → Dawn: Spray WD-40 on cloth, dab onto stain, 5-10 minutes. Then Dawn to remove everything. The mechanic's trick.",
+    "Lestoil soak: Apply Lestoil directly, soak 20-30 minutes. Wash warm. Strongest consumer option.",
+    "Goo Gone: Citrus solvent for oxidized motor oil. Apply, 5 minutes, follow with Dawn.",
+    "Coca-Cola soak: Old mechanics' trick — soak 30 minutes, hot wash with extra detergent. The phosphoric acid helps."
+  ],
+  "materialWarnings": [
+    "Denim's indigo dye is physically trapped — don't rub hard. Work WITH the twill weave direction.",
+    "Raw denim bleeds indigo heavily — process in isolation.",
+    "No dryer until motor oil is confirmed gone — heat sets petroleum permanently.",
+    "Chlorine bleach rapidly lightens denim — use oxygen bleach only if needed."
+  ],
+  "commonMistakes": [
+    "Water before solvent — disperses motor oil deeper into the dense twill.",
+    "One round of treatment — motor oil requires multiple passes. 3-4 minimum.",
+    "Rubbing against the weave — strips indigo dye from denim surface.",
+    "Dryer before confirming clean — creates permanent dark mark."
+  ],
+  "scienceNote": "Dan Eisen's distinction between oxidizing and non-oxidizing oils is critical for motor oil: petroleum derivatives don't polymerize the way vegetable oils do. Motor oil gets darker as it oxidizes (hydrocarbon chains break and reform into conjugated polyenes that absorb visible light), but the degradation products remain largely solvent-soluble. The ZDDP additive decomposes at engine temperatures into zinc phosphate — when this contaminated oil hits fabric, the zinc compounds can catalyze further oxidation, making timely treatment important. Fresh motor oil is brown and responds readily. Old stains turn black but still respond to POG — unlike heat-set vegetable oil, petroleum oil doesn't fully polymerize.",
+  "customerExplanation": "Motor oil is petroleum-based — heavier and more complex than cooking oil. It contains metallic particles from engine wear that create the dark color. We used a professional petroleum solvent to dissolve the oil base, then surfactant treatment to remove the metallic residue. Your denim looks great.",
+  "escalation": "Heavy industrial oil/transmission fluid: POG + naphtha/xylene (PPE required). Heat-set petroleum: aggressive POG + d-limonene + multiple cycles. Realistic expectations needed.",
+  "callPro": "Call a professional when: motor oil has been through the dryer; the stain is transmission fluid or industrial lubricant (heavier than consumer motor oil); you've done 3+ home treatment rounds without success.",
+  "solventNote": "POG pre-spot on dry side before cleaning cycle. HC solvent particularly effective for petroleum-based stains. PERC also excellent for motor oil on denim."
+}

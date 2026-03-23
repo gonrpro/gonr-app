@@ -1,0 +1,136 @@
+{
+  "id": "blood-wool",
+  "version": "6.0",
+  "authored": "2026-03-22",
+  "title": "Blood on Wool — Cold Protocol, No Enzymes, No Exceptions",
+  "stainFamily": "protein",
+  "surface": "wool",
+  "sector": "textile",
+  "meta": {
+    "stainCanonical": "blood",
+    "surfaceCanonical": "wool",
+    "tier": "universal",
+    "riskLevel": "high",
+    "danReview": false,
+    "sourceKnowledge": [
+      "dan-eisen-procedures",
+      "dan-eisen-protein-albuminous-stains",
+      "dan-eisen-how-to-avoid-set-stains",
+      "agent-fiber-safety",
+      "irta-spotting-chemicals",
+      "rr-street-on-the-spot"
+    ]
+  },
+  "stainChemistry": "Blood's hemoglobin is an iron-bearing protein that hydrogen-bonds aggressively to wool's keratin fiber. Wool is a protein fiber with overlapping scales — when wet and exposed to heat or alkaline conditions (pH >8), these scales open and interlock (felting). Blood on wool creates a double trap: the protein-to-protein bond is stronger than protein-to-cellulose, and the iron oxidizes to brown Fe³⁺ that embeds between the scale layers. Heat above 30°C triggers both hemoglobin coagulation AND wool felting simultaneously.",
+  "whyThisWorks": "Cold water keeps hemoglobin soluble while keeping wool scales closed and relaxed. The protein formula's mild alkali breaks hemoglobin's hydrogen bonds to keratin, but on wool you must keep pH below 8.0 and temperature below 30°C to prevent felting. Dan Eisen's approach — neutral lubricant, protein formula, mechanical action, flush, then peroxide+ammonia only if needed — works because it escalates gradually from safest to most aggressive. No protease enzymes ever touch the wool, because protease would attack the keratin fiber itself.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "agent": "Cold water flush",
+      "technique": "Flush from back of fabric using water gun at safe distance (6+ inches)",
+      "temperature": "Cold — below 80°F / 27°C. Wool felts above 30°C when agitated.",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Place wool face-down on clean towel over vacuum nose. Flush with cold water gun from the back — hold gun 6+ inches away. Wool weakens significantly when wet, so use gentle pressure. Watch for red/brown transfer to the towel beneath. Stop when transfer slows. Do NOT wring, twist, or agitate the wet wool — any mechanical action on wet wool promotes felting."
+    },
+    {
+      "step": 2,
+      "agent": "Neutral lubricant (NSD)",
+      "technique": "Apply with soft pad, very light tamping — minimal mechanical action",
+      "temperature": "Ambient",
+      "dwellTime": "30 seconds",
+      "instruction": "Apply NSD to the stain with a soft cotton pad. On wool, use the LIGHTEST tamping action possible. Wool's keratin scales open when wet — aggressive tamping interlocks them (felting). Light tamp, lift, repeat. Never use circular rubbing motion on wet wool."
+    },
+    {
+      "step": 3,
+      "agent": "Street's Protein Formula (diluted 1:1 with water)",
+      "technique": "Apply with dropper, minimal agitation",
+      "temperature": "Cool — never above 30°C",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply diluted protein formula to the blood stain. The mild alkali breaks hemoglobin's hydrogen bonds to wool keratin. Monitor the color — it should lighten. Keep dwell to 5 minutes maximum. Wool tolerates brief alkaline contact better than silk, but extended exposure above pH 8 causes scale damage. Test dye safety first — ammonia can shift colors on wool, especially blues and greens."
+    },
+    {
+      "step": 4,
+      "agent": "Cold water flush",
+      "technique": "Thorough flush from back",
+      "temperature": "Cold",
+      "dwellTime": "30–45 seconds",
+      "instruction": "Flush completely from back to remove all alkaline residue. On wool, residual alkali keeps scales open and promotes progressive felting even after the garment leaves the board."
+    },
+    {
+      "step": 5,
+      "agent": "Acetic acid (28% diluted 1:20) or white vinegar",
+      "technique": "Apply with dropper, blot",
+      "temperature": "Cool",
+      "dwellTime": "30 seconds",
+      "instruction": "Neutralize alkaline residue with dilute acetic acid. Wool is most stable at pH 5.5–8.0 and prefers slightly acidic. This also helps address the iron (heme) component. Blot gently."
+    },
+    {
+      "step": 6,
+      "agent": "Hydrogen peroxide 3% + 1 drop ammonia (ONLY if brown shadow remains)",
+      "technique": "Apply with dropper, monitor closely",
+      "temperature": "Cool — no steam, no heat",
+      "dwellTime": "2–3 minutes maximum",
+      "instruction": "ONLY if a brown iron shadow persists after steps 1–5. Apply 3% peroxide with 1 drop ammonia per tablespoon. The peroxide oxidizes the remaining heme chromophore while ammonia catalyzes the reaction. Watch closely — if wool color shifts, flush immediately. Do NOT use heat to accelerate. Flush with cold water after 3 minutes, then apply acetic acid rinse to neutralize."
+    },
+    {
+      "step": 7,
+      "agent": "Final cold flush + reshape and flat dry",
+      "technique": "Flush, reshape to original dimensions, dry flat",
+      "temperature": "Cold",
+      "dwellTime": "Until dry",
+      "instruction": "Final cold water flush. Gently press excess water out with towel — never wring. Reshape the garment to original dimensions (especially knits) and lay flat on a dry towel. Never hang wet wool — it stretches under its own weight. Do not tumble dry. Air dry at room temperature only."
+    }
+  ],
+  "homeSolutions": [
+    "FRESH: Flush immediately with COLD water from the back. Blot with clean white cloth — never rub. On wool, cold water alone removes most fresh blood if you act fast. The key is speed and cold temperature.",
+    "SET: Soak the stained area in cold water with a small amount of clear, enzyme-free dish soap (Dawn Free & Clear) for 20–30 minutes. Gently press the stain between your fingers — do not rub, twist, or agitate. Rinse cold. Do NOT use Tide, OxiClean, or any 'bio' detergent — these contain protease enzymes that attack wool fiber.",
+    "STOP AND CALL A PRO: If blood has dried for more than 24 hours, has been heat-set, or if you see any brown shadow after two cold treatments. Do not attempt hydrogen peroxide on wool at home — the line between effective bleaching and fiber damage is extremely thin on wool."
+  ],
+  "materialWarnings": [
+    "NEVER hot water on blood + wool — simultaneously coagulates hemoglobin AND felts the wool. Double damage that cannot be reversed.",
+    "NEVER protease enzymes on wool — wool IS a protein fiber (keratin). Protease weakens and destroys wool fibers, causing thinning and holes.",
+    "NEVER chlorine bleach on wool — destroys keratin protein structure and causes irreversible yellowing.",
+    "NEVER alcohol on blood stains — per Dan Eisen: alcohol makes protein stains virtually impossible to remove, even by the best professional dry cleaners.",
+    "NEVER sodium percarbonate (OxiClean powder) on wool — the alkaline pH + oxygen release damages wool's protein structure.",
+    "NEVER agitate wet wool — felting is irreversible. No rubbing, no wringing, no machine agitation."
+  ],
+  "products": {
+    "professional": [
+      {
+        "name": "Street's Protein Formula",
+        "use": "Primary protein treatment — dilute 1:1 for wool, limit dwell to 5 minutes",
+        "note": "Test on hidden area first. Ammonia component may shift colors on wool — especially susceptible: blue, green, and purple acid dyes."
+      },
+      {
+        "name": "Hydrogen Peroxide 3%",
+        "use": "Secondary — only for residual brown iron shadow after protein formula treatment",
+        "note": "Use with 1 drop ammonia catalyst. Maximum 3 minutes on wool. Cool temperature only. Flush and acid-rinse immediately after. Never use 6% on wool."
+      },
+      {
+        "name": "Street's General Spotter",
+        "use": "NOT recommended for blood on wool — too alkaline (pH 12+). Will damage wool and set the stain.",
+        "note": "General Spotter is designed for cellulose fibers. On wool, its high pH opens keratin scales and can cause felting and dye damage."
+      }
+    ],
+    "consumer": [
+      {
+        "name": "Dawn Free & Clear Dish Soap",
+        "use": "Mild surfactant for cold soak — enzyme-free formula safe for wool",
+        "note": "A few drops in cold water. Soak 20–30 minutes. Gently press, never rub. Rinse cold."
+      },
+      {
+        "name": "White distilled vinegar",
+        "use": "Acid rinse after any treatment to close wool scales and restore safe pH",
+        "note": "1 tablespoon per cup of cold rinse water. Helps prevent felting from residual alkaline chemistry."
+      }
+    ]
+  },
+  "escalation": {
+    "when": "Blood has dried for more than 24 hours, any brown shadow persists after two cold-water treatments, the wool has been accidentally heated or machine-washed while blood was present, or you see any signs of felting (shrunken, matted texture).",
+    "whatToTell": "Tell the cleaner: 'This is blood on wool. I kept it cold — no heat, no enzymes, no bleach. The stain is approximately [X] days old. I flushed with cold water but there's still a brown shadow, likely from oxidized iron in the blood. The garment has NOT been machine-washed or dried.'",
+    "specialistType": "Dry cleaner experienced with wool — ideally one with wet cleaning capability and wool-specific finishing equipment (flatbed press, not form finisher). If wool has felted, a professional may be able to partially relax the fiber with steam and reshaping, but felting is largely irreversible."
+  },
+  "solventNote": "For dry cleaners: Pre-spot blood on wool BEFORE machine cleaning. Blood sets at drycleaning temperatures. Cold protein formula pre-spot, flush, neutralize with acetic acid. Hydrocarbon solvent is preferred over PERC for wool — PERC can cause felting if any residual moisture is present during the cleaning cycle. GreenEarth or Solvon K4 are excellent alternatives that eliminate felting risk entirely. In the machine, use wool-safe detergent with no alkaline builders.",
+  "difficulty": 8,
+  "danReviewFlag": false
+}

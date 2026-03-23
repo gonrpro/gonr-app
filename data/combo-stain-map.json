@@ -1,0 +1,219 @@
+{
+  "_version": 1,
+  "_authored": "2026-03-22",
+  "_description": "Maps stains that have common combo variants to a follow-up question + variant routing. When user selects a trigger stain, the app shows a follow-up chip row BEFORE proceeding to surface selection. Each variant routes to the correct protocol type.",
+
+  "triggers": {
+    "coffee": {
+      "followUpQuestion": "What kind of coffee?",
+      "emoji": "☕",
+      "reason": "Black coffee is a pure tannin stain. Coffee with cream/milk adds protein + fat, requiring a combination protocol (treat protein FIRST at low temp, then tannin).",
+      "variants": [
+        {
+          "label": "Black coffee",
+          "emoji": "☕",
+          "chipStyle": "default",
+          "stainType": "tannin",
+          "routeTo": "coffee",
+          "protocolExists": true,
+          "notes": "Routes to standard coffee protocols (coffee-{surface}.json). Tannin-only treatment."
+        },
+        {
+          "label": "With cream or milk",
+          "emoji": "🥛",
+          "chipStyle": "default",
+          "stainType": "combination",
+          "routeTo": "coffee-cream",
+          "protocolExists": "partial",
+          "notes": "coffee-cream-any.json exists as universal. Surface-specific combo protocols needed. Treat protein first (cold water enzyme), then tannin (acid/oxidizer)."
+        },
+        {
+          "label": "Latte / Cappuccino",
+          "emoji": "🥛",
+          "chipStyle": "default",
+          "stainType": "combination",
+          "routeTo": "coffee-cream",
+          "protocolExists": "partial",
+          "notes": "Same chemistry as coffee w/ cream — high milk ratio makes protein component dominant. Route to coffee-cream protocols."
+        }
+      ]
+    },
+
+    "tea": {
+      "followUpQuestion": "What kind of tea?",
+      "emoji": "🍵",
+      "reason": "Black/green/herbal tea is a pure tannin stain. Tea with milk adds protein requiring combination treatment. Chai with milk and spices adds protein + oil.",
+      "variants": [
+        {
+          "label": "Black / green / herbal",
+          "emoji": "🍵",
+          "chipStyle": "default",
+          "stainType": "tannin",
+          "routeTo": "tea",
+          "protocolExists": true,
+          "notes": "Routes to standard tea protocols (tea-{surface}.json or tea+{surface}.json). Pure tannin treatment."
+        },
+        {
+          "label": "With milk",
+          "emoji": "🥛",
+          "chipStyle": "default",
+          "stainType": "combination",
+          "routeTo": "tea-milk",
+          "protocolExists": false,
+          "notes": "MISSING — needs creation. Same combination treatment logic as coffee-cream: cold protein removal first, then tannin treatment."
+        },
+        {
+          "label": "Chai latte",
+          "emoji": "🥛",
+          "chipStyle": "default",
+          "stainType": "combination",
+          "routeTo": "tea-milk",
+          "protocolExists": false,
+          "notes": "MISSING — needs creation. Protein + tannin + trace oil from spices. Route to tea-milk protocols."
+        }
+      ]
+    },
+
+    "hot chocolate": {
+      "followUpQuestion": null,
+      "emoji": "🍫",
+      "reason": "Hot chocolate is ALWAYS a combination stain (cocoa tannin + dairy protein + cocoa butter fat). No follow-up needed — auto-route to combo protocol.",
+      "autoRoute": true,
+      "variants": [
+        {
+          "label": "Hot chocolate",
+          "emoji": "🍫",
+          "chipStyle": "default",
+          "stainType": "combination",
+          "routeTo": "hot-chocolate",
+          "protocolExists": "partial",
+          "notes": "hot-chocolate-berber-carpet.json and hot-chocolate-wool-sweater.json exist. Need broader surface coverage. Always combo: protein (casein) + tannin (cocoa polyphenols) + fat (cocoa butter). Treat fat first (surfactant/solvent), then protein (cold enzyme), then tannin."
+        }
+      ]
+    },
+
+    "chocolate": {
+      "followUpQuestion": "What type of chocolate?",
+      "emoji": "🍫",
+      "reason": "Dark chocolate is primarily tannin + fat (no dairy). Milk chocolate adds dairy protein, requiring combination treatment sequence. White chocolate is fat-only.",
+      "variants": [
+        {
+          "label": "Dark / plain chocolate",
+          "emoji": "🍫",
+          "chipStyle": "default",
+          "stainType": "oil-tannin",
+          "routeTo": "chocolate",
+          "protocolExists": true,
+          "notes": "Routes to existing chocolate-{surface}.json protocols. Tannin + cocoa butter. Treat fat first (dish soap/solvent), then tannin (oxidizer)."
+        },
+        {
+          "label": "Milk chocolate",
+          "emoji": "🥛",
+          "chipStyle": "default",
+          "stainType": "combination",
+          "routeTo": "chocolate-milk",
+          "protocolExists": "partial",
+          "notes": "chocolate-milk-baby-clothes.json and chocolate-milk-car-carpet.json exist. Needs broader coverage. Triple combo: dairy protein + cocoa tannin + fat."
+        },
+        {
+          "label": "White chocolate",
+          "emoji": "🤍",
+          "chipStyle": "default",
+          "stainType": "oil",
+          "routeTo": "white-chocolate",
+          "protocolExists": false,
+          "notes": "MISSING — needs creation. No cocoa solids = no tannin. Pure fat stain (cocoa butter + dairy fat). Treat as oil/grease stain."
+        }
+      ]
+    },
+
+    "sauce": {
+      "followUpQuestion": "What kind of sauce?",
+      "emoji": "🍅",
+      "reason": "Tomato-only sauce is tannin + lycopene (dye). Meat sauce adds protein + animal fat, requiring combination treatment. Cream sauce is protein + fat.",
+      "variants": [
+        {
+          "label": "Tomato / marinara",
+          "emoji": "🍅",
+          "chipStyle": "default",
+          "stainType": "tannin-dye",
+          "routeTo": "tomato-sauce",
+          "protocolExists": true,
+          "notes": "Routes to existing tomato-sauce-{surface}.json protocols. Tannin + lycopene dye component. Flush cold, then enzyme + oxidizer."
+        },
+        {
+          "label": "Meat sauce / bolognese",
+          "emoji": "🍖",
+          "chipStyle": "default",
+          "stainType": "combination",
+          "routeTo": "meat-sauce",
+          "protocolExists": false,
+          "notes": "MISSING — needs creation. Protein (meat) + tannin (tomato) + animal fat. Cold rinse for protein first, then degrease, then tannin treatment."
+        },
+        {
+          "label": "Cream / alfredo",
+          "emoji": "🥛",
+          "chipStyle": "default",
+          "stainType": "protein-oil",
+          "routeTo": "cream-sauce",
+          "protocolExists": false,
+          "notes": "MISSING — needs creation. Dairy protein + butter fat. No tannin component. Cold enzyme first, then degrease."
+        },
+        {
+          "label": "Soy sauce",
+          "emoji": "🫘",
+          "chipStyle": "default",
+          "stainType": "tannin-dye",
+          "routeTo": "soy-sauce",
+          "protocolExists": true,
+          "notes": "Existing soy-sauce protocols handle this. Strong tannin + melanoidin dye. Similar to tomato but darker oxidized pigment."
+        }
+      ]
+    },
+
+    "salad dressing": {
+      "followUpQuestion": "What type of dressing?",
+      "emoji": "🥗",
+      "reason": "Vinaigrette is primarily oil + acid (no protein). Creamy dressings (ranch, caesar, blue cheese) add dairy protein and emulsifiers, changing the treatment approach.",
+      "variants": [
+        {
+          "label": "Vinaigrette / oil-based",
+          "emoji": "🫒",
+          "chipStyle": "default",
+          "stainType": "oil",
+          "routeTo": "salad-dressing",
+          "protocolExists": true,
+          "notes": "Routes to existing salad-dressing-{surface}.json protocols. Primarily oil with trace acid/vinegar. Standard degreasing treatment."
+        },
+        {
+          "label": "Ranch / creamy",
+          "emoji": "🥛",
+          "chipStyle": "default",
+          "stainType": "protein-oil",
+          "routeTo": "ranch-dressing",
+          "protocolExists": "partial",
+          "notes": "ranch-dressing-car-seat.json exists. Needs broader surface coverage. Dairy protein + oil emulsion. Cold enzyme for protein, then degrease."
+        },
+        {
+          "label": "Caesar / blue cheese",
+          "emoji": "🧀",
+          "chipStyle": "default",
+          "stainType": "protein-oil",
+          "routeTo": "caesar-dressing",
+          "protocolExists": false,
+          "notes": "MISSING — needs creation. Same chemistry as ranch (dairy + oil) plus anchovy/cheese protein. Route to ranch-dressing if caesar-specific doesn't exist."
+        }
+      ]
+    }
+  },
+
+  "_implementationNotes": {
+    "triggerDetection": "When user selects a stain from the chip row, check if stain name (lowercased, trimmed) matches a key in triggers{}. Also match sub-stain names: 'Coffee w/ Cream' should auto-select the cream variant, 'Black Coffee' should auto-select the black variant.",
+    "subStainMapping": "Some sub-stains in SECTORS already distinguish variants (e.g. clothing sector has 'Black Coffee' and 'Coffee w/ Cream' as subs). For those, skip the follow-up and route directly. Only show follow-up when the user selected the generic parent (e.g. 'Coffee') without picking a sub.",
+    "autoRoute": "If a trigger has autoRoute:true (hot chocolate), skip the follow-up question and route directly to the combo protocol.",
+    "surfaceAppend": "Protocol file lookup: {routeTo}-{surface}.json. Example: user picks 'coffee-cream' + 'cotton' → look for coffee-cream-cotton.json. Fall back to coffee-cream-any.json if surface-specific doesn't exist.",
+    "chipRowPosition": "Follow-up chips appear BETWEEN stain selection and surface selection, in a new row with the followUpQuestion as a label above. Same visual style as existing sub-stain chips.",
+    "protocolFallback": "If no surface-specific combo protocol exists, fall through to the AI solve endpoint with the combo stain type tagged. The solve prompt already handles combination stains correctly.",
+    "existingSubStainInteraction": "The clothing sector already has 'Coffee w/ Cream' and 'Black Coffee' as sub-stains under Coffee/Drink. For those, the existing sub-chip click should map directly to this routing table instead of needing a second follow-up. The follow-up system is for when the user types 'coffee' in search or picks the parent stain without expanding subs."
+  }
+}

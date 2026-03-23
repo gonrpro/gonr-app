@@ -1,0 +1,515 @@
+{
+  "id": "lipstick-silk",
+  "version": "5.0",
+  "authored": "2026-03-20",
+  "components": [
+    "pigment",
+    "oil",
+    "wax",
+    "dye"
+  ],
+  "component_order": [
+    "oil",
+    "wax",
+    "pigment",
+    "dye"
+  ],
+  "difficulty": 5,
+  "difficulty_factors": [
+    "Three-component system (wax + oil + dye) requires three-stage treatment",
+    "Silk limits available agents — no enzymes, no bleach, no heat, no alkali"
+  ],
+  "meta": {
+    "stainCanonical": "lipstick",
+    "surfaceCanonical": "silk",
+    "sector": "clothing",
+    "tier": "universal",
+    "riskLevel": "high",
+    "timeEstimate": "15-25 min",
+    "stainType": "oil",
+    "tags": [
+      "oil",
+      "wax",
+      "dye",
+      "cosmetic",
+      "delicate",
+      "protein-fiber",
+      "silk",
+      "clothing"
+    ]
+  },
+  "diy": {
+    "title": "Lipstick on Silk",
+    "ingredients": [
+      "Baking soda or cornstarch",
+      "1 tbsp dish soap (Dawn)",
+      "cool water",
+      "Clean white cloths",
+      "Old toothbrush"
+    ],
+    "mixSteps": [
+      "Combine 1 tbsp dish soap (dawn) with warm water in a spray bottle or bowl",
+      "Mix gently until combined — don't create excessive suds",
+      "Use within 1 hour for best results"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "instruction": "Sprinkle baking soda or cornstarch on the stain. Wait 5 minutes.",
+        "why": "The powder soaks up surface oil before it sinks deeper into the fabric."
+      },
+      {
+        "step": 2,
+        "instruction": "Brush off the powder with a clean white cloth.",
+        "why": "Brushing removes the oil the powder absorbed."
+      },
+      {
+        "step": 3,
+        "instruction": "Put a drop of dish soap on the stain. Blot gently it in.",
+        "why": "Dish soap is made to cut through grease and oil."
+      },
+      {
+        "step": 4,
+        "instruction": "Let it sit for 2-3 minutes. Rinse gently with cold water.",
+        "why": "Cool water helps the soap carry the oil away from the fabric."
+      },
+      {
+        "step": 5,
+        "instruction": "Repeat if needed. Lay flat on a towel to air dry — no heat, no wringing.",
+        "why": "Heat and agitation damage delicate fibers. Lay flat to keep the shape."
+      }
+    ],
+    "ifStillThere": "If the stain persists after two treatment attempts, take it to a professional. Silk is too delicate to risk aggressive home treatments. A professional cleaner has specialized agents that are safe for this material and more effective than household products.",
+    "proTips": [
+      "Never wring or twist delicate fabrics — gently press out moisture between towels.",
+      "When in doubt, take it to a professional cleaner who specializes in delicates.",
+      "Never add water to an oil stain first — water and oil don't mix, and you'll spread it."
+    ],
+    "safety": "Test on an inside seam or hidden area first — delicate fabrics can react unpredictably. Never use bleach, pH-neutral delicate wash, or hot water. Use cold water only. Handle gently — rubbing or wringing damages the fibers. Lay flat to dry.",
+    "whyThisWorks": "Lipstick — cosmetics contain oils, waxes, and pigments that bond to surfaces — the oil spreads the color deeper. Silk absorbs lipstick oils into its delicate fibers. The oil bonds with the natural oils already in the fiber, and harsh solvents risk damaging the material. Cold water and gentle cleaning agents are the only safe approach — anything stronger risks destroying the fiber along with the stain."
+  },
+  "home": {
+    "title": "Lipstick on Silk — Confident Removal",
+    "confidenceRating": 55,
+    "confidenceNote": "Success depends on surface type (Silk), delicate material. Fresh stains respond better than set stains.",
+    "primaryProduct": {
+      "name": "K2r Spot-Lifter",
+      "brand": "K2r",
+      "why": "Dry cleaning solvent safely dissolves oil and grease without water — ideal for delicate fabrics that can't handle wet treatment",
+      "where": "Amazon",
+      "amazonSearchQuery": "K2r Spot-Lifter",
+      "icon": "🧽"
+    },
+    "alternativeProducts": [
+      {
+        "name": "The Laundress Delicate Wash",
+        "brand": "Woolite",
+        "why": "Enzyme-free formula with surfactants that lift oil gently",
+        "amazonSearchQuery": "The Laundress Delicate Wash"
+      },
+      {
+        "name": "Cornstarch (pre-treatment)",
+        "brand": "Generic",
+        "why": "Absorbs oil from fabric before washing — zero chemical risk to delicate fibers",
+        "amazonSearchQuery": "Cornstarch (pre-treatment)"
+      }
+    ],
+    "prepStep": "Blot excess wet stain with paper towels—do NOT rub. Avoid heat (dryer/iron) until fully treated, as heat sets petroleum stains permanently.",
+    "method": [
+      {
+        "step": 1,
+        "instruction": "Blot excess wet stain with paper towels—do NOT rub. Avoid heat (dryer/iron) until fully treated, as heat sets petroleum stains permanently. Work quickly — the sooner you start, the better the result.",
+        "dwellTime": null,
+        "why": "Removes bulk material so the product can focus on the remaining stain."
+      },
+      {
+        "step": 2,
+        "instruction": "Apply Dawn Platinum Dish Soap directly to the stain. Work it in with a soft brush or cloth in gentle circular motions.",
+        "dwellTime": "5–10 minutes",
+        "why": "Allows the Dawn Platinum Dish Soap to penetrate and break the stain's bond to the fiber."
+      },
+      {
+        "step": 3,
+        "instruction": "Gently dab the area with a soft brush or cloth to work the product into the stain.",
+        "dwellTime": "2–3 minutes",
+        "why": "Physical agitation plus chemical action loosens the stain's bond to fibers."
+      },
+      {
+        "step": 4,
+        "instruction": "Rinse with cold water, rubbing gently to remove all product residue.",
+        "dwellTime": "2 minutes",
+        "why": "Cool water helps remove any remaining stain residue and flush it away."
+      },
+      {
+        "step": 5,
+        "instruction": "wash in cold water with appropriate detergent for this fabric type and inspect before drying. Inspect the stain before drying — do not use a dryer until it is completely gone.",
+        "dwellTime": "standard wash or wipe",
+        "why": "Final wash removes product residue. Air drying prevents heat-setting any remaining stain."
+      }
+    ],
+    "materialWarnings": [
+      {
+        "material": "silk/wool",
+        "warning": "NEVER use enzyme-based cleaners (OxiClean, Zout, Biz) — enzymes digest protein fibers, permanently destroying the fabric"
+      },
+      {
+        "material": "silk/wool",
+        "warning": "Use cold water only — heat sets protein stains and can damage delicate fibers"
+      },
+      {
+        "material": "silk/wool",
+        "warning": "Handle gently — never wring, twist, or scrub aggressively"
+      },
+      {
+        "material": "all materials",
+        "warning": "Heat permanently sets stains. Do not use dryer, iron, or hot water until stain is completely gone."
+      }
+    ],
+    "ifItDoesntWork": {
+      "nextProduct": "Professional dry cleaner — oil on delicate fibers often needs solvent-based treatment",
+      "escalation": "If the stain persists after Professional dry cleaner — oil on delicate fibers often needs solvent-based treatment, take it to a professional cleaner who specializes in silk. Explain what products you already tried so they can adjust their approach."
+    },
+    "proTips": [
+      "Fresh lipstick stains respond much faster than set stains.",
+      "Always test any product on a hidden area first—fabric dyes and finishes vary.",
+      "Never use the dryer or heat until the stain is completely gone; heat can lock it in permanently."
+    ],
+    "whyThisWorks": "Oil stains on protein fibers respond best to dry methods or gentle surfactants. Cornstarch absorbs surface oil, and dry cleaning solvents dissolve the rest without water damage. Enzyme-based degreasers would damage silk and wool fibers.",
+    "timeEstimate": "15–30 minutes (may require 2–3 repeat cycles for older stains)"
+  },
+  "pro": {
+    "title": "Lipstick — Oil Removal Protocol",
+    "stainChemistry": "Classification: Oil/Grease (lipid-based). Lipstick on silk is one of the highest-risk stain/surface combinations. Silk is a protein fiber (fibroin) with pH tolerance of only 4.0-8.0, temperature limit of 30°C, and extreme sensitivity to solvents, enzymes, and mechanical action. Lipstick's wax component (beeswax, carnauba) embeds in silk's fibrillar structure.  Oil stains penetrate fiber structure through capillary action and hydrophobic affinity. Triglycerides and fatty acids resist water-based cleaning. Treatment: dry-side solvent (POG) to dissolve lipid phase, followed by surfactant emulsification to remove residual oil.",
+    "spottingProtocol": [
+      {
+        "step": 1,
+        "side": "dry",
+        "agent": "POG (Paint Oil Grease remover)",
+        "technique": "Solvent extraction — dissolves and lifts oil from the fiber",
+        "dwellTime": "5-10 minutes",
+        "instruction": "Apply POG directly to the oil stain. POG is a volatile dry solvent with strong affinity for lipids — it dissolves oil droplets on contact. Tamp gently and blot with absorbent cloth. For delicate fabrics, use VDS (Volatile Dry Solvent) instead."
+      },
+      {
+        "step": 2,
+        "side": "dry",
+        "agent": "Amyl acetate (banana oil solvent)",
+        "technique": "Secondary solvent — targets stubborn or polymerized oils",
+        "dwellTime": "3-5 minutes",
+        "instruction": "If POG plateaus, apply amyl acetate for stronger solvent action. Amyl acetate is especially effective on older or polymerized oil stains. Blot with clean absorbent cloth between applications. Never use on acetate fabrics."
+      },
+      {
+        "step": 3,
+        "side": "wet",
+        "agent": "NSD (Neutral Synthetic Detergent)",
+        "technique": "Detergent flush — emulsifies remaining micro-droplets of oil",
+        "dwellTime": "5 minutes",
+        "instruction": "Apply NSD to emulsify any remaining oil micro-droplets and remove solvent residue. The detergent surrounds oil particles and allows them to be flushed away. Rinse thoroughly with cool water."
+      },
+      {
+        "step": 4,
+        "side": "wet",
+        "agent": "28% Acetic acid (diluted 1:10)",
+        "technique": "Final pH restoration",
+        "dwellTime": "1-2 minutes",
+        "instruction": "Apply diluted acetic acid to restore fiber to its natural state. Blot dry with clean cloth and allow to air dry."
+      }
+    ],
+    "escalation": "If the lipstick stain remains after two rounds of this protocol, STOP. Silk has a damage threshold — repeated solvent treatment can begin to dull the fabric's luster and weaken the fiber. Take to a professional dry cleaner who specializes in silk and specify 'lipstick on silk.' A professional can use controlled steam injection on a spotting board with amyl acetate and VDS flush — equipment that allows precise, rapid solvent application that minimizes silk contact time.",
+    "customerExplanation": "This was a tricky one — lipstick on your garment is one of the more challenging stains we deal with. Makeup combines oil and pigment — the oil spreads the color deeper into the material. Results depend on how long the stain had been set before treatment — some improvement may continue over the next few days.",
+    "commonMistakes": [
+      "Using rubbing alcohol (can fade silk dyes and damage fiber luster)",
+      "Using The Laundress Delicate Wash or oxygen bleach (pH 10",
+      "5 — far too alkaline for silk, which tolerates pH 4-8 max)",
+      "Using enzyme stain remover with protease — PROTEASE DIGESTS SILK (silk IS protein)",
+      "Using hot water — silk shrinks and loses luster above 30°C"
+    ],
+    "neutralization": "After solvent treatment: flush with NSD to remove all solvent residue. No acid neutralization needed. Extract and allow to air dry.",
+    "fabricRisks": "On silk: NEVER use bleach, chlorine, enzyme, protease. Safe agents: NSD, mild acetic acid, amyl acetate. Protein fiber — enzymes digest it. Test dyes first. Never wring."
+  },
+  "products": {
+    "professional": [
+      {
+        "name": "Pyratex® POG",
+        "brand": "Pyratex",
+        "type": "volatile solvent",
+        "icon": "🧪",
+        "amazonSearchQuery": "Pyratex POG paint oil grease remover",
+        "affiliateTag": "gonr08-20",
+        "note": "Dissolves the oil/wax carrier phase of cosmetics. First-line professional treatment. Use on dry fabric."
+      },
+      {
+        "name": "Amyl Acetate (Banana Oil)",
+        "brand": "Professional supplies",
+        "type": "ester solvent",
+        "icon": "🧪",
+        "amazonSearchQuery": "amyl acetate solvent spotting",
+        "affiliateTag": "gonr08-20",
+        "note": "Stronger solvent for long-wear and waterproof cosmetic film-formers. Dissolves polymer coatings that protect pigment."
+      },
+      {
+        "name": "NSD (Neutral Synthetic Detergent)",
+        "brand": "Professional spotting supplies",
+        "type": "surfactant",
+        "icon": "🧴",
+        "amazonSearchQuery": "NSD neutral synthetic detergent spotting",
+        "affiliateTag": "gonr08-20",
+        "note": "Suspends and flushes pigment particles after solvent dissolves the carrier. Essential for complete cosmetic stain removal."
+      },
+      {
+        "name": "Hydrogen Peroxide 6% (Color-Safe)",
+        "brand": "Professional supplies",
+        "type": "oxidizing bleach",
+        "icon": "🧪",
+        "amazonSearchQuery": "hydrogen peroxide 6% spotting",
+        "affiliateTag": "gonr08-20",
+        "note": "Bleaches persistent cosmetic dye staining. Apply after solvent and surfactant steps. Monitor colorfastness carefully."
+      }
+    ],
+    "household": [
+      {
+        "name": "Rubbing Alcohol (70% Isopropyl)",
+        "brand": "Generic",
+        "type": "solvent",
+        "icon": "🧪",
+        "amazonSearchQuery": "isopropyl alcohol 70 percent",
+        "affiliateTag": "gonr08-20",
+        "note": "Dissolves cosmetic oil carriers and many film-formers. Apply via cloth. First-line home treatment for makeup stains."
+      },
+      {
+        "name": "Bioderma Sensibio Micellar Water",
+        "brand": "Bioderma",
+        "type": "micellar cleanser",
+        "icon": "🧴",
+        "amazonSearchQuery": "Bioderma Sensibio micellar water",
+        "affiliateTag": "gonr08-20",
+        "note": "Designed to remove makeup — works on fabric too. Micelles capture oil and pigment simultaneously. Gentle option."
+      },
+      {
+        "name": "Dawn Ultra Dish Soap (Blue)",
+        "brand": "Dawn",
+        "type": "surfactant",
+        "icon": "🧴",
+        "amazonSearchQuery": "Dawn Ultra dish soap blue",
+        "affiliateTag": "gonr08-20",
+        "note": "Excellent grease-cutter for cosmetic oil phase. Apply directly to stain, work in, let sit 5 minutes."
+      },
+      {
+        "name": "Hydrogen Peroxide 3%",
+        "brand": "Generic",
+        "type": "oxidizing bleach",
+        "icon": "🧪",
+        "amazonSearchQuery": "hydrogen peroxide 3 percent",
+        "affiliateTag": "gonr08-20",
+        "note": "For persistent cosmetic dye ghosts. Apply to discolored area after oil/wax removal. Test colorfastness first."
+      },
+      {
+        "name": "Carbona Stain Devils #5 (Fat & Cooking Oil)",
+        "brand": "Carbona",
+        "type": "spotting solvent",
+        "icon": "🧴",
+        "amazonSearchQuery": "Carbona Stain Devils fat cooking oil",
+        "affiliateTag": "gonr08-20",
+        "note": "Consumer-grade solvent effective on the oil/wax base of cosmetics. More aggressive than dish soap. Follow label directions."
+      }
+    ]
+  },
+  "diy_es": {
+    "title": "Cómo Quitar Lápiz Labial de Seda",
+    "ingredients": [
+      "Baking refresco or cornstarch",
+      "1 tbsp jabón para platos (Dawn)",
+      "cool water",
+      "Clean white cloths",
+      "Old toothcepille"
+    ],
+    "mixSteps": [
+      "Combine 1 tbsp jabón para platos (dawn) with agua tibia in a rocíe bottle or bowl",
+      "Mezcle gently until combined — don't create excessive suds",
+      "Use within 1 hour for best results"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "instruction": "Sprinkle bicarbonato de sodio or cornstarch on the mancha. Espere 5 minutes.",
+        "why": "The powder remojes up surface aceite before it sinks deeper into the tela."
+      },
+      {
+        "step": 2,
+        "instruction": "Cepille off the powder with a un paño blanco limpio.",
+        "why": "Cepilleing retires the aceite the powder absorbed."
+      },
+      {
+        "step": 3,
+        "instruction": "Put a drop of jabón para platos on the mancha. Seque a toques gently it in.",
+        "why": "Dish soap is made to cut through grasa and aceite."
+      },
+      {
+        "step": 4,
+        "instruction": "Déjelo reposar for 2-3 minutes. Enjuague gently with agua fría.",
+        "why": "Cool water helps the soap carry the aceite away from the tela."
+      },
+      {
+        "step": 5,
+        "instruction": "Repita if needed. Lay flat on a towel to seque al aire — no heat, no wringing.",
+        "why": "Heat and agitation damage delicate fibers. Lay flat to keep the shape."
+      }
+    ],
+    "ifStillThere": "If the mancha persists after two treatment attempts, take it to a professional. seda is too delicate to risk aggressive home treatments. A professional cleaner has specialized agents that are safe for this material and more effective than household products.",
+    "proTips": [
+      "Nunca wring or twist delicate fabrics — gently press out moisture between towels.",
+      "When in doubt, take it to a professional cleaner who specializes in delicates.",
+      "Nunca add water to an aceite mancha first — water and aceite don't mezcle, and you'll spread it."
+    ],
+    "safety": "Pruebe on an inside seam or hidden area first — delicate fabrics can react unpredictably. Nunca use bleach, pH-neutral delicate wash, or agua caliente. Use agua fría only. Handle gently — rubbing or wringing damages the fibers. Lay flat to seque.",
+    "whyThisWorks": "lápiz labial — cosmetics contain oils, waxes, and pigments that bond to surfaces — the aceite spreads the color deeper. seda absorbs lápiz labial oils into its delicate fibers. The aceite bonds with the natural oils already in the fiber, and harsh solvents risk damaging the material. Cold water and gentle cleaning agents are the only safe approach — anything stronger risks destroying the fiber along with the mancha."
+  },
+  "pro_es": {
+    "title": "Protocolo Profesional: Lápiz Labial en Seda",
+    "stainChemistry": "Classification: aceite/grasa (lipid-based). lápiz labial on seda is one of the highest-risk mancha/surface combinations. seda is a protein fiber (fibroin) with pH tolerance of only 4.0-8.0, temperature limit of 30°C, and extreme sensitivity to solvents, enzymes, and mechanical action. lápiz labial's cera component (beeswax, carnauba) embeds in seda's fibrillar structure.  aceite stains penetrate fiber structure through capillary action and hydrophobic affinity. Triglycerides and fatty acids resist water-based cleaning. Treatment: seque-side solvent (POG) to dissolve lipid phase, followed by surfactant emulsification to retire residual aceite.",
+    "spottingProtocol": [
+      {
+        "step": 1,
+        "side": "dry",
+        "agent": "POG (Paint Oil Grease remover)",
+        "technique": "Solvent extraction — dissolves and lifts oil from the fiber",
+        "dwellTime": "5-10 minutes",
+        "instruction": "Aplique POG directly to the aceite mancha. POG is a volatile seque solvent with strong affinity for lipids — it dissolves aceite droplets on contact. Tamp gently and seque a toques with absorbent cloth. For delicate fabrics, use VDS (Volatile Seque Solvent) instead."
+      },
+      {
+        "step": 2,
+        "side": "dry",
+        "agent": "Amyl acetate (banana oil solvent)",
+        "technique": "Secondary solvent — targets stubborn or polymerized oils",
+        "dwellTime": "3-5 minutes",
+        "instruction": "If POG plateaus, aplique amyl acetate for stronger solvent action. Amyl acetate is especially effective on older or polymerized aceite stains. Seque a toques with clean absorbent cloth between applications. Nunca use on acetate fabrics."
+      },
+      {
+        "step": 3,
+        "side": "wet",
+        "agent": "NSD (Neutral Synthetic Detergent)",
+        "technique": "Detergent flush — emulsifies remaining micro-droplets of oil",
+        "dwellTime": "5 minutes",
+        "instruction": "Aplique NSD to emulsify any remaining aceite micro-droplets and retire solvent residue. The detergent surrounds aceite particles and allows them to be flushed away. Enjuague thoroughly with cool water."
+      },
+      {
+        "step": 4,
+        "side": "wet",
+        "agent": "28% Acetic acid (diluted 1:10)",
+        "technique": "Final pH restoration",
+        "dwellTime": "1-2 minutes",
+        "instruction": "Aplique diluted acetic acid to restore fiber to its natural state. Seque a toques seque with clean cloth and allow to seque al aire."
+      }
+    ],
+    "escalation": "If the lápiz labial mancha remains after two rounds of this protocol, STOP. seda has a damage threshold — repitaed solvent treatment can begin to dull the tela's luster and weaken the fiber. Take to a professional seque cleaner who specializes in seda and specify 'lápiz labial on seda.' A professional can use controlled steam injection on a spotting board with amyl acetate and VDS flush — equipment that allows precise, rapid solvent application that minimizes seda contact time.",
+    "customerExplanation": "Esta fue una mancha difícil — lápiz labial en su prenda es una de las manchas más complicadas que tratamos. Las manchas de aceite repelen el agua, por lo que el lavado regular no las elimina. Los resultados dependen de cuánto tiempo estuvo la mancha antes del tratamiento — puede seguir mejorando en los próximos días.",
+    "commonMistakes": [
+      "Using alcohol isopropílico (can fade seda dyes and damage fiber luster)",
+      "Using The Laundress Delicate Wash or oxygen bleach (pH 10",
+      "5 — far too alkaline for seda, which tolerates pH 4-8 max)",
+      "Using enzyme quitamanchas with protease — PROTEASE DIGESTS seda (seda IS protein)",
+      "Using agua caliente — seda shrinks and loses luster above 30°C"
+    ],
+    "neutralization": "After solvent treatment: flush with NSD to retire all solvent residue. No acid neutralization needed. Extract and allow to seque al aire.",
+    "fabricRisks": "On seda: NEVER use bleach, chlorine, enzyme, protease. Safe agents: NSD, mild acetic acid, amyl acetate. Protein fiber — enzymes digest it. Pruebe dyes first. Nunca wring."
+  },
+  "title": "Lipstick on Silk",
+  "stainType": "oil",
+  "surface": "silk",
+  "sector": "clothing",
+  "stainChemistry": "Lipstick is a three-component system: (1) waxes (beeswax, carnauba, candelilla) provide the solid stick structure; (2) emollient oils (castor oil, lanolin, mineral oil) provide glide and moisture; (3) dyes and pigments (D&C Red lakes, iron oxides, titanium dioxide) provide color. On silk (fibroin protein fiber), oil penetrates the loose amorphous regions between crystalline beta-sheet structures. Silk's smooth surface actually resists oil absorption initially, but once penetrated, the oil bonds to non-polar amino acid residues (glycine, alanine) along the peptide backbone. This combination creates a stain that's simultaneously waxy, oily, and dyed — requiring a multi-phase treatment approach. Long-wear formulas add silicone polymers (dimethicone, cyclomethicone) that form a water-resistant film.",
+  "whyThisWorks": "Attack in order of component: (1) solvent to dissolve the wax and oil phase — this is the bulk of the stain; (2) rubbing alcohol (isopropanol) or micellar water to break the pigment-oil bond and lift dye; (3) surfactant to emulsify loosened components and flush; (4) oxidizer if dye ghost persists. Each step targets a different chemical bond. Skipping the solvent and going straight to soap just smears the wax-pigment mixture across a larger area. Silk is pH-sensitive (4.0-8.0) and dissolves in strong alkali. Use NSD only, never alkaline detergent. No enzyme treatment — protease will digest the fiber. No chlorine bleach. Cold water only (≤30°C). Amyl acetate is safe for brief contact but don't overwork.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape and blot — remove surface excess",
+      "technique": "Mechanical removal without spreading",
+      "equipment": "Dull knife or credit card edge, clean white cloths or paper towels",
+      "dwellTime": "2-3 minutes",
+      "instruction": "Carefully lift any excess lipstick from the surface using a dull knife edge or credit card — scrape in one direction, lifting away from the fabric. For liquid products (foundation, concealer), blot with a clean white cloth — press and lift, never wipe or rub. Rubbing cosmetics spreads the pigment over a larger area and drives the oil carrier deeper into silk. Place a clean towel behind the stain to catch any bleed-through. The goal is to remove as much surface material as possible before chemical treatment — every bit you remove mechanically is product you don't have to dissolve chemically."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Solvent treatment — POG, rubbing alcohol, or micellar water",
+      "technique": "Dissolve oil/wax carrier and soften film-former",
+      "equipment": "POG or rubbing alcohol (70% isopropyl) or micellar water, clean white cloths, cotton swabs for precision",
+      "dwellTime": "15-30 seconds per application, 2-4 rounds",
+      "instruction": "Place fabric face-down on a clean white towel. Apply your solvent to the BACK of the lipstick stain — you're pushing the dissolved cosmetic OUT, not deeper in. POG is the professional choice for the oil/wax phase. Rubbing alcohol dissolves both oil and many cosmetic film-formers. Micellar water uses surfactant micelles to capture oil and pigment simultaneously. For lipstick specifically, start with rubbing alcohol — it's effective on the widest range of cosmetic formulations. Apply to a cotton ball or cloth, dab onto the stain, and tamp gently. Watch the towel below for color transfer — that's pigment being extracted. Rotate towel positions and repeat until transfer diminishes.",
+      "suggestedProducts": "Pyratex® POG, isopropyl alcohol 70%, Bioderma Sensibio Micellar Water"
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Amyl acetate — for long-wear or waterproof formulas",
+      "technique": "Aggressive solvent for polymer film-formers",
+      "equipment": "Amyl acetate, clean white cloths, dauber",
+      "dwellTime": "20-30 seconds per application",
+      "instruction": "Long-wear and waterproof lipstick formulas contain silicone polymers and cross-linked film-formers that resist standard solvents. If rubbing alcohol didn't fully lift the stain, amyl acetate (banana oil) provides stronger solvency for these polymer systems. Apply sparingly — amyl acetate is aggressive. Tamp and blot. You should see the remaining pigment release as the polymer matrix softens and breaks apart. For home users: a silicone-based makeup remover (like the ones designed for waterproof mascara) works on the same principle — it dissolves the silicone polymer film that protects the pigment."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Surfactant emulsification — NSD or Dawn dish soap",
+      "technique": "Pigment particle suspension and residual oil removal",
+      "equipment": "NSD or Dawn dish soap, warm water, clean cloths, soft brush or old toothbrush",
+      "dwellTime": "3-5 minutes working time",
+      "instruction": "Mix 1 teaspoon NSD or Dawn in a cup of cool water (≤30°C). Apply to the lipstick area and work gently with a soft brush. The surfactant serves multiple purposes: emulsifying residual oil, suspending freed pigment particles, and removing solvent residue. Cosmetic pigments (iron oxides, titanium dioxide, carbon black) are inorganic particles that need physical agitation plus surfactant suspension to flush away — they're too heavy to dissolve in any solvent. Work the area for 3-5 minutes with gentle brush strokes. Blot and check your progress. The stain should be significantly lighter.",
+      "suggestedProducts": "Mulsolite® NSD, Dawn Ultra Dish Soap"
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Oxidizer treatment — hydrogen peroxide 3% (for persistent dye ghost)",
+      "technique": "Oxidative decolorization of cosmetic dyes",
+      "equipment": "Hydrogen peroxide 3% or OxiClean solution, clean cloths",
+      "dwellTime": "5-10 minutes monitored",
+      "instruction": "If a colored shadow persists after solvent and surfactant treatment, the cosmetic DYE (as distinct from the pigment) has bonded to the silk fiber. Cosmetic dyes — particularly D&C reds and iron oxide staining — require oxidative treatment to break the chromophore. Apply hydrogen peroxide 3% directly to the discolored area and monitor. The oxygen radical breaks the conjugated double-bond structure that creates visible color. For whites, you can use a slightly stronger approach — OxiClean mixed per label directions. For colored fabrics, TEST colorfastness in a hidden area first. Monitor throughout — don't leave oxidizer unattended on fabric. Use very dilute concentration on silk and monitor closely — test colorfastness first."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Flush and extract",
+      "technique": "Complete residue removal",
+      "equipment": "Clean white cloths, cold water",
+      "dwellTime": "Multiple passes until clean",
+      "instruction": "Flush thoroughly with cold water — multiple passes with clean cloths until no color, odor, or residue transfers. Compress between dry towels to extract moisture. Air dry in a well-ventilated area. For machine-washable items, follow with a cold-water wash cycle with regular detergent for complete rinsing. Inspect after drying under bright light — lipstick residue can hide as a subtle discoloration that's only visible when the fabric is fully dry. If any trace remains, repeat from Step 2. Never machine dry until the stain is confirmed gone."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Post-dry verification",
+      "technique": "Final visual and tactile inspection",
+      "equipment": "Bright light source, clean hands",
+      "dwellTime": "After complete air-drying",
+      "instruction": "After the fabric is completely dry, perform a final inspection under bright light at multiple angles. Cosmetic stains — especially lipstick — can leave a faint shadow or texture change that's invisible on wet fabric. Tilt the fabric under light and look for any discoloration, especially a subtle pinkish, yellowish, or brownish tinge. Touch the area — it should feel identical to surrounding fabric with no waxy, stiff, or greasy residue. If the stain passes both tests, you're done. If any trace remains, one more round of solvent + surfactant + oxidizer usually finishes it."
+    }
+  ],
+  "homeSolutions": [
+    "Dawn dish soap (blue): Apply a drop directly to the dry lipstick stain on silk. Work in gently, let sit 5 minutes, then blot with a damp cloth. Dawn's surfactants break down oil and grease. Repeat 2-3 times for set-in stains.",
+    "Rubbing alcohol (70% isopropyl): Dampen a clean white cloth and dab the lipstick stain. Alcohol dissolves many oil-based compounds. Follow with soap and water. Best for fresh stains. Test colorfastness first on colored silk.",
+    "Baking soda absorption: For fresh lipstick spills, cover immediately with baking soda. Let sit 15-30 minutes to absorb surface oil. Brush off and follow with dish soap treatment. Won't help with aged stains but excellent as a first response.",
+    "Cornstarch pre-treatment: Sprinkle cornstarch on the lipstick stain, let absorb for 10-15 minutes. Brush off. Then apply dish soap solution. The powder-then-soap sequence handles more oil than either method alone.",
+    "Carbona Stain Devils (match to stain type): Choose the Carbona formula that matches your stain — #5 for fat/oil, #3 for ink/crayon, #1 for adhesives. Apply per label to the lipstick stain. These consumer solvents are more effective than dish soap for set-in stains."
+  ],
+  "materialWarnings": [
+    "NEVER use protease enzymes on silk — silk IS protein, and protease enzymes will digest the fiber itself, creating irreversible holes and weakening.",
+    "NEVER use chlorine bleach on silk — sodium hypochlorite dissolves protein fibers, causing yellowing and disintegration within minutes of contact.",
+    "NEVER use alkaline detergents (pH >8) on silk — alkali breaks peptide bonds in the fibroin chain, causing fiber degradation, loss of sheen, and permanent stiffness.",
+    "NEVER use acetone on silk — it can bleach colors and damage fiber structure. Use amyl acetate instead for brief solvent contact.",
+    "Cold water only (≤30°C / 86°F). Hot water denatures silk protein and can cause permanent shrinkage and texture change.",
+    "Always test dyes first — silk dyes bleed easily. Never wring silk. Never tumble dry. Iron on low heat with a press cloth between iron and fabric."
+  ],
+  "commonMistakes": [
+    "Adding water first — water and oil don't mix. Applying water to a fresh lipstick stain on silk drives the oil deeper into the fiber structure through displacement. Always start dry-side with a solvent or absorbent powder.",
+    "Rubbing instead of tamping — aggressive rubbing spreads lipstick laterally and pushes it deeper into silk. Use gentle tamping or blotting motions that lift oil UP and OUT, not across and down.",
+    "Using heat before the stain is completely removed — putting a lipstick-stained item in a hot dryer or pressing with an iron polymerizes any residual oil, converting it from a removable liquid to a permanently bonded plastic film. Air dry only until you've confirmed the stain is gone.",
+    "Using enzyme cleaner or hot water on silk — silk is a protein fiber. Protease enzymes digest protein = digest your fabric. Hot water denatures the protein and can cause permanent shrinkage and texture change. Cool water and NSD only.",
+    "Going straight to soap without solvent pre-treatment — lipstick contains wax and film-formers that repel water-based soap. Solvent must dissolve the protective matrix first, then soap can emulsify the released oil and pigment."
+  ],
+  "scienceNote": "Lipstick dyes are classified as D&C (Drug & Cosmetic) colors — they're specifically engineered to bind to keratin (skin protein) and resist water, sweat, and saliva. The same properties that make lipstick stay on lips make it cling to protein fibers (silk, wool). On cellulose fibers (cotton, linen), the dye adheres through the oil carrier rather than direct bonding, which is why cotton lipstick stains are usually easier to remove than silk ones. Carnauba wax (from Brazilian palm leaves) has the highest melting point of any natural wax at 82-86°C — that's why lipstick holds its shape in your pocket but dissolves with a warm solvent.",
+  "customerExplanation": "Lipstick is a combination of wax, oil, and dye — each component bonds differently. We dissolved the wax and oil carrier first, then lifted the color pigment with targeted treatment. Silk responded well.",
+  "escalation": "If the lipstick stain persists after two full treatment cycles, professional dry cleaning is strongly recommended. Silk is a delicate protein fiber that limits available treatment options — a professional cleaner has access to controlled solvent immersion, steam systems, and fiber-safe chemistry that home treatment cannot replicate. Explain what you've already tried so they can adjust their approach.",
+  "callPro": "Call a professional when: the garment is silk — delicate fibers have narrow treatment windows and professional equipment minimizes risk; you've completed two full treatment cycles and significant lipstick residue remains — repeated treatment without improvement means the stain needs different chemistry or equipment; you see color bleeding, fiber damage, or unexpected texture changes during treatment — stop immediately and let a professional assess before the damage worsens.",
+  "solventNote": "POG agents work across all solvent systems. For PERC shops: flush with Persec® between steps instead of water. For HC shops: flush with HC Boost™. For wet clean: water flush as written."
+}

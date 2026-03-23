@@ -1,0 +1,94 @@
+{
+  "id": "red-wine+cotton-white",
+  "version": "6.0",
+  "authored": "2026-03-22",
+  "title": "Red Wine on White Cotton",
+  "stainFamily": "tannin",
+  "surface": "cotton-white",
+  "sector": "textile",
+  "meta": {
+    "stainCanonical": "red-wine",
+    "surfaceCanonical": "cotton-white",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "danReview": false,
+    "sourceKnowledge": ["dan-eisen-procedures", "rr-street-on-the-spot", "agent-fiber-safety", "product-guide-al-wilson-tannin-go", "product-guide-wine-away", "product-guide-bridgepoint-stain-zone"]
+  },
+  "stainChemistry": "Red wine anthocyanins and condensed tannins hydrogen-bond to cotton's cellulose hydroxyl groups. Cotton is the most forgiving fiber for tannin treatment — pH tolerance 6.0–11.0, heat tolerance to 95°C, and compatibility with all bleach types on white. Anthocyanin is a pH-sensitive chromophore: red at low pH (wine's 3.0–3.8), colorless at neutral-alkaline pH. The tannin polymer fraction oxidizes to brown with heat and age, forming cross-links with cellulose that resist simple acid treatment.",
+  "whyThisWorks": "Dan Eisen's sequence: cold flush → NSD/detergent → vinegar (acid breaks tannin-cellulose hydrogen bonds) → peroxide + ammonia (oxidizes remaining anthocyanin chromophore) → vinegar neutralization (prevents alkaline yellowing on cellulose). On white cotton, the full oxidizer sequence is safe — no dye to risk. Acetic acid protonates tannin hydroxyls to displace them from cellulose, then hydrogen peroxide's hydroperoxide anion (HOO⁻) cleaves the conjugated double-bond system that creates the red/purple color. The ammonia catalyst increases HOO⁻ concentration 4,000x at pH 10.5 versus neutral pH.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "agent": "Cold water flush",
+      "technique": "Flush from back of fabric through clean white towel",
+      "temperature": "Cold (60–70°F) — no hot water until stain is confirmed removed",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Place fabric face-down on white towel. Flush cold water from the back to push stain out rather than deeper. Blot — don't rub. Cotton is strong wet but rubbing spreads the anthocyanin. This cold flush alone removes 30–50% of a fresh wine spill. Dan Eisen: 'Dab and rub stain with towel dampened with water' as step one."
+    },
+    {
+      "step": 2,
+      "agent": "A.L. Wilson Tannin-Go (full strength on white cotton)",
+      "technique": "Apply to stain, tamp with brush or spotting bone, flush",
+      "temperature": "Ambient — steam gun at 6+ inch safe distance only after tannin formula",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply Tannin-Go full strength — white cotton tolerates undiluted acid formula. Work with spotting brush using light tamping, not scrubbing. The acetic acid protonates tannin hydroxyl groups, breaking their hydrogen bonds to cellulose. Flush with water gun at safe distance (6+ inches per Dan Eisen). Repeat once if significant color remains."
+    },
+    {
+      "step": 3,
+      "agent": "Hydrogen peroxide 6% + ammonia (1 drop 28% per 8 oz)",
+      "technique": "Controlled oxidation — apply after tannin formula is fully flushed",
+      "temperature": "Can apply gentle steam after peroxide on white cotton to accelerate reaction",
+      "dwellTime": "3–5 minutes",
+      "instruction": "CRITICAL: Flush tannin formula completely before this step. If acid is still wet in the fiber when peroxide hits, it oxidizes the tannin IN PLACE — permanent dark compound. Once flushed, apply peroxide + ammonia mix. On white cotton, safe to use steam gun at 6 inches to activate — the alkaline-activated HOO⁻ cleaves the anthocyanin chromophore. Dan Eisen: 'Apply hydrogen peroxide, apply ammonia, let sit 3 minutes, rinse.' Every 18°F rise in temperature doubles peroxide's chemical action."
+    },
+    {
+      "step": 4,
+      "agent": "Acetic acid neutralization (white vinegar or dilute GAA)",
+      "technique": "Acid rinse to neutralize alkaline residue",
+      "temperature": "Cool",
+      "dwellTime": "1 minute",
+      "instruction": "Apply white vinegar or diluted acetic acid to the treated area. Dan Eisen emphasizes: 'Vinegar should be added — the color safe bleach is alkaline in nature and will produce yellowing if not neutralized with vinegar.' Residual alkali on cellulose continues weakening fiber chains and causes yellowing. Flush thoroughly with cold water."
+    },
+    {
+      "step": 5,
+      "agent": "Sodium percarbonate soak (for stubborn/set stains)",
+      "technique": "Extended oxygen bleach soak — white cotton only",
+      "temperature": "Warm (100°F / 38°C) — Dan Eisen specifies warm water for the soak",
+      "dwellTime": "2–3 hours per Dan Eisen",
+      "instruction": "For stubborn or set stains: fill plastic pail with warm water (100°F), add 2 oz/gallon color-safe bleach (sodium percarbonate) + 1 oz/gallon mild detergent per Dan Eisen's wine stain protocol. Submerge garment, cover with towel to keep fully wet. Soak 2–3 hours. Rinse in washing machine on gentle cycle. Follow with vinegar rinse (2 oz/gallon) to neutralize alkaline residue."
+    }
+  ],
+  "homeSolutions": [
+    "Fresh spill: Blot with clean white cloth immediately. Flush with cold water. Apply white vinegar full strength directly to stain, let sit 3–5 minutes, blot. Follow with 3% hydrogen peroxide — apply, wait 3 minutes, rinse. This is Dan Eisen's home protocol adapted.",
+    "Set stain on white cotton: OxiClean soak is your best friend. Dissolve per label in warm water (not hot), submerge the garment for 2–6 hours. The sodium percarbonate releases peroxide slowly to oxidize the tannin chromophore. Follow with vinegar rinse to prevent yellowing.",
+    "When to stop: If the stain is still visible after a 6-hour OxiClean soak + vinegar + peroxide treatment, the tannin has polymerized into the cellulose. Take to a dry cleaner — white cotton can tolerate their strongest chemistry including professional-strength oxidizers and even dilute chlorine bleach as a last resort."
+  ],
+  "materialWarnings": [
+    "NEVER use hot water on fresh wine stain — heat sets oxidized tannin pigment permanently into cellulose",
+    "NEVER apply peroxide while tannin spotter is still wet — oxidizes tannin in place, creating permanent dark compound",
+    "NEVER skip the vinegar neutralization after peroxide + ammonia — residual alkali yellows white cotton over time",
+    "NEVER tumble dry until stain is confirmed gone — dryer heat (120°F+) permanently sets any residual tannin"
+  ],
+  "products": {
+    "professional": [
+      {"name": "A.L. Wilson Tannin-Go", "use": "Full strength on white cotton — primary tannin bond breaker", "note": "Acetic acid base, safe undiluted on cotton's wide pH range (6.0–11.0)"},
+      {"name": "Hydrogen Peroxide 6%", "use": "With ammonia catalyst — oxidizes anthocyanin chromophore", "note": "Safe on white cotton at full professional strength; steam-activated for maximum power"},
+      {"name": "Bridgepoint Stain Zone", "use": "Stabilized peroxide system for stubborn oxidized wine", "note": "Controlled-release oxidizer with chelating agents — prevents Fenton chemistry damage"},
+      {"name": "Street's Tannin Remover", "use": "Alternative to Tannin-Go — full strength on cotton", "note": "Stronger formulation than Tannin-Go for heavily set tannin"}
+    ],
+    "consumer": [
+      {"name": "OxiClean Versatile Stain Remover", "use": "Extended soak for set wine stains on white cotton", "note": "Sodium percarbonate — safe on white cotton, excellent for oxidized tannin. Follow with vinegar rinse."},
+      {"name": "Wine Away Red Wine Stain Remover", "use": "Immediate treatment for fresh spills", "note": "Reducing agent approach — fast on fresh anthocyanin; less effective on oxidized brown stains"},
+      {"name": "Hydrogen Peroxide 3% (drugstore)", "use": "Apply after vinegar treatment, wait 3 minutes, rinse", "note": "Weaker than professional 6% but effective on white cotton where you can safely repeat applications"},
+      {"name": "White distilled vinegar", "use": "Primary tannin spotter + post-bleach neutralizer", "note": "Dual role: breaks tannin bonds AND prevents alkaline yellowing after peroxide treatment"}
+    ]
+  },
+  "escalation": {
+    "when": "Stain persists after OxiClean soak + peroxide + ammonia treatment, or the stain has aged weeks and turned dark brown",
+    "whatToTell": "This is polymerized red wine on white cotton. I treated with acid (vinegar), oxidizer (peroxide + ammonia), and extended oxygen bleach soak with vinegar neutralization. The tannin has cross-linked with the cellulose beyond what consumer oxidizers can reverse.",
+    "specialistType": "Any professional dry cleaner — white cotton can handle their full chemistry arsenal. They can use professional-strength oxidizers, rust remover (hydrofluoric acid) for extreme cases, and even dilute chlorine bleach as last resort. White cotton is the easiest fiber to treat aggressively."
+  },
+  "solventNote": "Pre-spot on wet side with tannin formula before dry cleaning cycle — tannin stains set at dry cleaning temperature (140–150°F). For PERC or hydrocarbon shops: complete wet-side tannin removal first, then level with Sofspot before loading machine. White cotton tolerates all solvents. For oxidized set stains: Dan Eisen's professional escalation — oxalic acid (test first), then rust remover, then peroxide + ammonia with steam activation.",
+  "difficulty": 4,
+  "danReviewFlag": false
+}

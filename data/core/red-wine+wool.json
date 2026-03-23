@@ -1,0 +1,86 @@
+{
+  "id": "red-wine+wool",
+  "version": "6.0",
+  "authored": "2026-03-22",
+  "title": "Red Wine on Wool",
+  "stainFamily": "tannin",
+  "surface": "wool",
+  "sector": "textile",
+  "meta": {
+    "stainCanonical": "red-wine",
+    "surfaceCanonical": "wool",
+    "tier": "universal",
+    "riskLevel": "high",
+    "danReview": false,
+    "sourceKnowledge": ["dan-eisen-procedures", "rr-street-on-the-spot", "agent-fiber-safety", "product-guide-wine-away", "product-guide-al-wilson-tannin-go"]
+  },
+  "stainChemistry": "Red wine anthocyanins bond to wool's keratin protein through both hydrogen bonding and hydrophobic interaction with the fiber's lipid layer. Wool has overlapping cuticle scales that open in alkaline conditions, causing felting and shrinkage. pH tolerance is 5.5–8.0 with a heat maximum of 30°C. The condensed tannin polymers in aged red wine can form tannin-protein cross-links with keratin — the same chemistry used in leather tanning — making aged wine on wool especially difficult.",
+  "whyThisWorks": "Cold water prevents both tannin oxidation and wool scale opening. Diluted acetic acid (Tannin-Go) works within wool's preferred slightly-acidic pH range (5.5–7.0) to disrupt anthocyanin-keratin hydrogen bonds. Wine Away's reducing chemistry decolorizes the anthocyanin without any alkaline exposure that would open wool scales. The entire protocol stays below pH 7 and below 30°C — the two critical thresholds for wool safety. No enzymes touch the fiber because protease digests keratin.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "agent": "Cold water flush",
+      "technique": "Blot with cold distilled water — no rubbing, no agitation",
+      "temperature": "Cold (60–65°F) — above 86°F (30°C) risks felting; heat sets tannin",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Blot excess wine immediately with clean white cloth — never rub wool. Place garment face-down on white towel and spray cold distilled water from the back. Blot gently to draw wine into the towel. Wool is 25% weaker when wet and agitation causes irreversible felting. Keep all water cold — warm water opens wool scales."
+    },
+    {
+      "step": 2,
+      "agent": "A.L. Wilson Tannin-Go (diluted 1:2 with cold water for wool)",
+      "technique": "Gentle application with cotton pad, tamp lightly — no brushing",
+      "temperature": "Ambient — no steam during tannin treatment on wool",
+      "dwellTime": "2–4 minutes",
+      "instruction": "Dilute Tannin-Go 1:2 for wool. Apply with cotton pad using light tamping motion — never brush wool on the spotting board, the mechanical action felts the scales. The acetic acid disrupts tannin-keratin hydrogen bonds while keeping pH within wool's safe acidic range. Flush with cold water after 2–4 minutes. Check for color improvement."
+    },
+    {
+      "step": 3,
+      "agent": "Wine Away Red Wine Stain Remover",
+      "technique": "Apply to residual red/purple color, blot gently",
+      "temperature": "Ambient",
+      "dwellTime": "2–5 minutes, observe color fade",
+      "instruction": "If anthocyanin color persists, apply Wine Away directly. The reducing agent converts the red flavylium cation to colorless carbinol pseudobase — no bleach, no alkali, no enzyme risk to wool. Watch for color fading. Blot gently with white cloth. For stubborn spots, apply a second round and cover with plastic wrap for 10 minutes to prevent drying."
+    },
+    {
+      "step": 4,
+      "agent": "Acetic acid rinse (white vinegar diluted 1:3 with cold water)",
+      "technique": "Final flush and pH confirmation",
+      "temperature": "Cold",
+      "dwellTime": "30 seconds",
+      "instruction": "Final flush with diluted vinegar to neutralize any trace alkali and leave wool in its preferred slightly acidic state. Blot dry between towels — press gently, never wring. Reshape garment while damp and air dry flat on a mesh drying rack away from heat. Never tumble dry wool."
+    }
+  ],
+  "homeSolutions": [
+    "Fresh spill: Blot immediately — never rub wool. Flush with cold water. Apply white vinegar diluted 1:1 with cold water, blot for 2 minutes, rinse cold. Repeat once if needed.",
+    "Set stain: Apply Wine Away, cover with plastic wrap, let sit 20–30 minutes. Rinse cold. If brown oxidation remains, do not try OxiClean on wool — sodium percarbonate is F-rated (NEVER) for wool. Take to dry cleaner.",
+    "When to stop: If stain has turned brown and two rounds of Wine Away + vinegar haven't moved it, the tannin has cross-linked with wool keratin. Take to a professional — tell them it's set red wine on wool, no enzymes or alkali were used."
+  ],
+  "materialWarnings": [
+    "NEVER use protease enzymes on wool — wool IS a protein fiber (keratin); protease will weaken and digest the fiber",
+    "NEVER use chlorine bleach — destroys wool keratin and causes irreversible yellowing",
+    "NEVER use sodium percarbonate (OxiClean) — oxygen release + alkalinity damages wool protein structure",
+    "NEVER use hot water or steam — opens wool cuticle scales causing irreversible felting; also sets tannin",
+    "NEVER rub or brush wet wool — mechanical agitation on open scales causes permanent felting",
+    "NEVER use ammonia or alkaline spotters (pH > 8) — opens scales, causes shrinkage, and darkens tannin"
+  ],
+  "products": {
+    "professional": [
+      {"name": "A.L. Wilson Tannin-Go", "use": "Diluted 1:2 for wool — primary tannin bond breaker", "note": "Acetic acid base stays within wool's safe pH range (5.5–7.0)"},
+      {"name": "Wine Away Red Wine Stain Remover", "use": "Reducing agent for anthocyanin chromophore", "note": "No alkali, no enzymes, no bleach — safe for wool protein fiber"},
+      {"name": "Hydrogen Peroxide 3%", "use": "Last resort for residual oxidized color — cool water only, brief contact", "note": "Wool tolerates 3% H₂O₂ with caution — test first, no heat activation, no ammonia catalyst on wool"}
+    ],
+    "consumer": [
+      {"name": "Wine Away Red Wine Stain Remover", "use": "Apply directly to wine stain, blot gently", "note": "Safe for wool — reducing chemistry avoids all wool-damaging agents"},
+      {"name": "White distilled vinegar (5% acetic acid)", "use": "Dilute 1:1 with cold water as tannin spotter", "note": "Safe acid within wool's pH tolerance — breaks tannin bonds gently"},
+      {"name": "Carbona Stain Devils #1", "use": "Tannin-specific consumer spotter — test on hidden area first", "note": "Check label for wool safety; some formulations contain surfactants that may affect wool hand-feel"}
+    ]
+  },
+  "escalation": {
+    "when": "Stain has turned brown (oxidized tannin-keratin cross-linking), or two treatment cycles haven't removed color, or felting/texture change is noticed during treatment",
+    "whatToTell": "This is red wine on wool — the tannin appears to have cross-linked with the keratin. I kept everything cold, acidic, and enzyme-free. No alkali or bleach was used. The fiber integrity is intact but the stain chemistry has progressed beyond home treatment.",
+    "specialistType": "Dry cleaner with GreenEarth or hydrocarbon solvent — safest for wool. Ask for wet-side tannin pre-spot before cleaning cycle. Avoid PERC if possible — residual moisture during PERC cycle risks felting."
+  },
+  "solventNote": "Pre-spot on wet side with diluted tannin formula before dry cleaning. GreenEarth or hydrocarbon preferred — PERC is C-rated for wool (may felt if residual moisture present). For oxidized stains, professional-strength H₂O₂ 3% with no ammonia catalyst, cool application, brief contact. Tannin spotters should be flushed completely before any machine cycle — residual acid in the drum accelerates fiber damage at machine temperature.",
+  "difficulty": 8,
+  "danReviewFlag": false
+}

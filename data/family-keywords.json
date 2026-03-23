@@ -1,0 +1,492 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "task": "TASK-100",
+    "description": "Keyword → stain family mapping for family-level fallback matching",
+    "familyCount": 12,
+    "lastUpdated": "2026-03-22"
+  },
+  "families": {
+    "protein": {
+      "id": "protein",
+      "keywords": [
+        "blood",
+        "egg",
+        "milk",
+        "dairy",
+        "sweat",
+        "perspiration",
+        "urine",
+        "vomit",
+        "grass",
+        "semen",
+        "saliva",
+        "drool",
+        "mucus",
+        "snot",
+        "formula",
+        "breast milk",
+        "yogurt",
+        "cheese",
+        "cream cheese",
+        "sour cream",
+        "whey",
+        "ice cream",
+        "pudding",
+        "custard",
+        "mayonnaise",
+        "hollandaise",
+        "alfredo",
+        "cream sauce",
+        "baby food",
+        "peas",
+        "carrots",
+        "spinach",
+        "beans",
+        "lentils"
+      ],
+      "chemistry": "Protein molecules denature and coagulate. Heat sets them permanently. Cold water only for fresh stains.",
+      "treatment_principle": "Cold water only. Never heat. Enzyme digestion (except silk/wool). NSD for delicates. Protein denaturation is irreversible above 140°F.",
+      "temperature_rule": "cold_only",
+      "contraindications": [
+        "Hot water (sets protein permanently)",
+        "Bleach on silk or wool",
+        "Protease enzymes on silk (digests fiber protein)"
+      ],
+      "recommended_agents": [
+        "Cold water rinse",
+        "Neutral detergent solution (NSD)",
+        "Protease enzyme (cotton/synthetic only)",
+        "Hydrogen peroxide (3% for delicates)"
+      ]
+    },
+    "tannin": {
+      "id": "tannin",
+      "keywords": [
+        "wine",
+        "tea",
+        "coffee",
+        "beer",
+        "juice",
+        "fruit",
+        "berry",
+        "cranberry",
+        "pomegranate",
+        "grape",
+        "apple",
+        "cherry",
+        "cola",
+        "soda",
+        "soft drink",
+        "iced tea",
+        "black tea",
+        "green tea",
+        "red wine",
+        "white wine",
+        "sangria",
+        "punch",
+        "lemonade",
+        "sports drink"
+      ],
+      "chemistry": "Tannins are polyphenolic compounds that form hydrogen bonds with cellulose and protein fibers. Acidic conditions and oxidation can help release them.",
+      "treatment_principle": "Tannin formula (acetic acid or citric acid). Warm water OK after initial treatment. Never bleach first (can oxidize and set). Cold rinse initially, then warm treatment.",
+      "temperature_rule": "warm_after_treatment",
+      "contraindications": [
+        "Chlorine bleach first (oxidizes tannin to darker color)",
+        "Excessive heat immediately (can set stain)",
+        "Alkaline cleaners (can darken stain)"
+      ],
+      "recommended_agents": [
+        "White vinegar (acetic acid)",
+        "Citric acid solution",
+        "Hydrogen peroxide (after acidic treatment)",
+        "Oxygen bleach (OxiClean after acid prep)",
+        "Glycerin (on delicates)"
+      ]
+    },
+    "oil": {
+      "id": "oil",
+      "keywords": [
+        "oil",
+        "grease",
+        "butter",
+        "lard",
+        "fat",
+        "lotion",
+        "cream",
+        "sunscreen",
+        "moisturizer",
+        "wax",
+        "candle",
+        "sebum",
+        "lanolin",
+        "tallow",
+        "shortening",
+        "margarine",
+        "mayo",
+        "mayonnaise",
+        "salad dressing",
+        "french fry",
+        "bacon",
+        "pork chop",
+        "fried chicken",
+        "motor oil",
+        "engine oil",
+        "tar",
+        "asphalt",
+        "lip balm",
+        "chapstick",
+        "pomade",
+        "coconut oil",
+        "olive oil",
+        "vegetable oil"
+      ],
+      "chemistry": "Lipids and non-polar hydrocarbons don't dissolve in water. Require surfactants (POG) or solvents to emulsify and lift. Heat helps emulsification.",
+      "treatment_principle": "POG (Petroleum, Oil, Grease) removal or surfactant lift. Warm water helps emulsify. Pre-treat before wash. Pat dry after initial treatment, don't rub.",
+      "temperature_rule": "warm_ok",
+      "contraindications": [
+        "Cold water alone (won't dissolve lipids)",
+        "Excessive rubbing (spreads oil)",
+        "Chlorine bleach on some oils (may set)"
+      ],
+      "recommended_agents": [
+        "POG remover (specialized degreaser)",
+        "Liquid dish soap (surfactant)",
+        "Laundry pre-spray (Shout, Fels-Naptha)",
+        "Cornstarch (absorbs wet oil)",
+        "Dry cleaning solvent (professional option)"
+      ]
+    },
+    "dye": {
+      "id": "dye",
+      "keywords": [
+        "ink",
+        "dye",
+        "marker",
+        "pen",
+        "turmeric",
+        "mustard",
+        "beet",
+        "berry",
+        "food coloring",
+        "hair color",
+        "hair dye",
+        "tie-dye",
+        "fabric dye",
+        "color bleed",
+        "color run",
+        "transfer",
+        "sharpie",
+        "permanent marker",
+        "ballpoint pen",
+        "highlighter",
+        "gel pen",
+        "fountain pen ink"
+      ],
+      "chemistry": "Chromophoric molecules (colored dyes) bond to fibers through hydrogen bonds or Van der Waals forces. Require solvent extraction or chromophore breaking via oxidizer/reducer.",
+      "treatment_principle": "Solvent for carrier, then target chromophore. Test colorfast first. Oxidizer (H2O2) or reducer (sodium hydrosulfite) depending on dye type. Never apply oxidizer + reducer together.",
+      "temperature_rule": "cold_first",
+      "contraindications": [
+        "Heat before solvent treatment (sets dye)",
+        "Mixing oxidizers and reducers (chemical reaction)",
+        "Bleach on natural dyes without testing (may discolor fabric)"
+      ],
+      "recommended_agents": [
+        "Rubbing alcohol (for pen/marker ink)",
+        "Acetone (for some synthetic dyes — NOT silk/wool)",
+        "Hydrogen peroxide (oxidizer for some dyes)",
+        "Sodium hydrosulfite (reducer for others — professional)",
+        "Color remover (fabric dye transfer)"
+      ]
+    },
+    "oxidizable": {
+      "id": "oxidizable",
+      "keywords": [
+        "rust",
+        "iron",
+        "iron oxide",
+        "old blood",
+        "set stain",
+        "yellowed",
+        "yellowing",
+        "age spot",
+        "foxing",
+        "brown spot",
+        "metal stain",
+        "copper",
+        "bronze",
+        "oxidation"
+      ],
+      "chemistry": "Oxidized metal ions (Fe3+, Cu2+) form colored compounds. Require reducing agents to convert back to soluble form, or chelation to bind metal ion.",
+      "treatment_principle": "Reducing bleach (sodium hydrosulfite) to break oxidized bonds. Oxalic acid for rust. Never chlorine bleach on rust (oxidizes further, darkens stain). Oxalic acid + heat most effective.",
+      "temperature_rule": "varies",
+      "contraindications": [
+        "Chlorine bleach on rust (worsens stain)",
+        "Mixing acids and bases (neutralization)",
+        "Oxalic acid on certain metals (may damage)"
+      ],
+      "recommended_agents": [
+        "Oxalic acid (Zud, Bar Keeper's Friend)",
+        "Sodium hydrosulfite (professional bleach)",
+        "White vinegar + hydrogen peroxide (mild combination)",
+        "Chelation compounds (professional)"
+      ]
+    },
+    "combo_protein_tannin": {
+      "id": "combo_protein_tannin",
+      "keywords": [
+        "coffee cream",
+        "latte",
+        "cappuccino",
+        "mocha",
+        "chocolate",
+        "cocoa",
+        "gravy",
+        "baby food",
+        "formula",
+        "ice cream",
+        "milkshake",
+        "chai latte",
+        "hot chocolate",
+        "cafe au lait",
+        "cream sauce",
+        "custard",
+        "pudding"
+      ],
+      "chemistry": "Contains both protein (milk/egg) and tannin (coffee/chocolate/cocoa). Protein will set permanently if exposed to heat before tannin removal. Must treat protein-first to avoid setting.",
+      "treatment_principle": "PROTEIN FIRST (cold enzyme or NSD), THEN tannin. Never reverse order. Cold rinse → enzyme (if fiber safe) → acid rinse → oxidizer if needed. Each step must complete before next.",
+      "temperature_rule": "cold_only",
+      "order_critical": true,
+      "contraindications": [
+        "Heat before protein removal (sets permanently)",
+        "Tannin treatment before protein (wastes effort)",
+        "Skipping enzyme step on washable fabrics (protein remains)"
+      ],
+      "recommended_agents": [
+        "Step 1: Cold water + NSD",
+        "Step 2: Protease enzyme (cotton/synthetic)",
+        "Step 3: Acetic acid rinse (vinegar)",
+        "Step 4: Hydrogen peroxide (if stain remains)"
+      ]
+    },
+    "combo_oil_dye": {
+      "id": "combo_oil_dye",
+      "keywords": [
+        "lipstick",
+        "lip gloss",
+        "shoe polish",
+        "curry",
+        "pasta sauce",
+        "tomato sauce",
+        "crayon",
+        "makeup",
+        "foundation",
+        "mascara",
+        "eyeliner",
+        "blush",
+        "eyeshadow",
+        "nail polish",
+        "paint",
+        "salad dressing"
+      ],
+      "chemistry": "Oil or wax carries pigment/dye. Pigment alone is insoluble in water; must remove carrier first to expose dye, then target dye separately.",
+      "treatment_principle": "Remove oil/wax carrier first (POG/solvent), then target dye component. Solvent lifts carrier, then acid/oxidizer attacks dye. Two-phase treatment required.",
+      "temperature_rule": "warm_ok",
+      "order_critical": true,
+      "contraindications": [
+        "Dye treatment before oil removal (ineffective)",
+        "Rubbing while wet (spreads oil)",
+        "Chlorine bleach first (may set pigment)"
+      ],
+      "recommended_agents": [
+        "Step 1: Rubbing alcohol or acetone (remove carrier — test first)",
+        "Step 2: POG remover (lift oil residue)",
+        "Step 3: Acetic acid (target remaining dye)",
+        "Step 4: Hydrogen peroxide (if needed)"
+      ]
+    },
+    "resin": {
+      "id": "resin",
+      "keywords": [
+        "glue",
+        "adhesive",
+        "tape",
+        "sticker",
+        "sap",
+        "resin",
+        "nail polish",
+        "paint",
+        "acrylic",
+        "latex",
+        "epoxy",
+        "gum",
+        "putty",
+        "caulk",
+        "silicone",
+        "tree sap",
+        "pine resin",
+        "rosin"
+      ],
+      "chemistry": "Polymeric resins and adhesives bond mechanically to fibers. Solvents dissolve polymer chains; freezing embrittles for mechanical removal. Chemistry varies by resin type.",
+      "treatment_principle": "Physical removal first (scrape/freeze). Then solvent (acetone, amyl acetate) — CHECK FIBER SAFETY. Freeze for 30min → pick off → solvent as last resort. Never melt adhesive with heat.",
+      "temperature_rule": "varies",
+      "fiber_dependent": true,
+      "contraindications": [
+        "Heat (melts adhesive deeper into fiber)",
+        "Acetone on silk/polyester (dissolves fiber)",
+        "Rubbing before freeze (spreads adhesive)"
+      ],
+      "recommended_agents": [
+        "Ice (freeze to 15min, then pick off)",
+        "Plastic scraper (physical removal)",
+        "Peanut butter or mayonnaise (on some gums)",
+        "Rubbing alcohol (milder solvent)",
+        "Acetone (strong solvent — test first)",
+        "Amyl acetate (safer than acetone on some fibers)"
+      ]
+    },
+    "particulate": {
+      "id": "particulate",
+      "keywords": [
+        "mud",
+        "dirt",
+        "clay",
+        "dust",
+        "sand",
+        "hard water",
+        "mineral",
+        "deodorant",
+        "antiperspirant",
+        "chalk",
+        "charcoal",
+        "ash",
+        "soot",
+        "powder",
+        "talc",
+        "baking soda",
+        "buildup"
+      ],
+      "chemistry": "Insoluble particles suspended or dry on fiber surface. Require mechanical removal (dry brushing) first, then targeted wash for any remaining chemical residue. Wet treatment before dry may set particles deeper.",
+      "treatment_principle": "Let dry, brush off particulate first. Then treat any remaining chemical stain. Dry brush with soft brush → tap gently → vacuum → then wet treatment if needed. Hard water particles may need acidic rinse.",
+      "temperature_rule": "varies",
+      "treatment_sequence": "dry_first",
+      "contraindications": [
+        "Water before dry brushing (embeds particles)",
+        "Vigorous rubbing (drives particles into fiber)",
+        "Hot water on mineral deposits (may require acid)"
+      ],
+      "recommended_agents": [
+        "Soft brush or lint roller (mechanical removal)",
+        "Vacuum with soft attachment",
+        "Dry cloth (absorb, don't rub)",
+        "Citric acid (on mineral deposits)",
+        "Acetic acid (on hard water marks)",
+        "Gentle wash (after dry removal)"
+      ]
+    },
+    "mildew": {
+      "id": "mildew",
+      "keywords": [
+        "mildew",
+        "mold",
+        "mould",
+        "fungus",
+        "musty",
+        "body soil",
+        "buildup",
+        "smoke",
+        "soot",
+        "fire",
+        "campfire",
+        "cigarette",
+        "odor",
+        "stale smell"
+      ],
+      "chemistry": "Living organism (fungal spores) and their metabolic byproducts. Smoke/soot are carbon particulates. Require killing organism first (oxidizer), then removing stain/odor. Soot requires special dry-clean solvent.",
+      "treatment_principle": "Kill organism (oxidizer), then remove stain. Spore safety critical for mildew. Smoke/soot best handled by professional dry cleaning. Vinegar + peroxide for mildew. Sunlight + air for odor.",
+      "temperature_rule": "warm_ok",
+      "safety_note": "Mildew spores can trigger respiratory reactions. Use mask if cleaning. Soot is carbon particulate — may require professional cleaning.",
+      "contraindications": [
+        "Chlorine bleach on colored fabrics (may discolor)",
+        "Mixing bleach + acids (toxic gas)",
+        "Not killing spores (will return)"
+      ],
+      "recommended_agents": [
+        "White vinegar (acetic acid kills spores)",
+        "Hydrogen peroxide (oxidizer)",
+        "Oxygen bleach (OxiClean — safer on colors)",
+        "Tea tree oil solution (antifungal)",
+        "Professional dry cleaning (for smoke/soot)"
+      ]
+    },
+    "chemical_damage": {
+      "id": "chemical_damage",
+      "keywords": [
+        "bleach",
+        "chlorine",
+        "acid",
+        "alkaline",
+        "solvent ring",
+        "ring mark",
+        "burn",
+        "discoloration",
+        "fading",
+        "color loss",
+        "permanent damage",
+        "chemical burn"
+      ],
+      "chemistry": "Not a stain — fiber or dye has been chemically altered or destroyed. Bleach removes chromophores (lightens). Acid can hydrolyze cellulose. Alkaline can denature protein fibers. Damage is irreversible.",
+      "treatment_principle": "Not stain removal — damage assessment. Dye restoration (fabric paint) or re-dyeing options. Document damage, stop treatment. Call professional for restoration estimate. No cleaning method reverses this.",
+      "temperature_rule": "na",
+      "reversible": false,
+      "action_required": "Assessment & professional estimate",
+      "contraindications": [
+        "Any stain removal method (won't help, may worsen)"
+      ],
+      "recommended_action": [
+        "Stop treatment immediately",
+        "Document damage with photo",
+        "Call professional dyer or restorer",
+        "File claim with cleaner if professional caused damage"
+      ]
+    },
+    "unknown": {
+      "id": "unknown",
+      "keywords": [
+        "unknown",
+        "mystery",
+        "not sure",
+        "don't know",
+        "unidentified",
+        "old stain",
+        "set stain",
+        "what is this",
+        "unclear",
+        "uncertain"
+      ],
+      "chemistry": "Unknown stain requires diagnostic testing to classify into one of the above families. Start with safest assumptions (cold water, gentle) and test response to guide next steps.",
+      "treatment_principle": "Diagnostic sequence: test with cold water, NSD, then targeted agents based on response. If brown/red + warm water sets it → protein. If lightens with acid → tannin. If wax carrier visible → resin or oil-dye.",
+      "temperature_rule": "cold_first",
+      "diagnostic_sequence": [
+        "Inspect under good light (color, texture, shine)",
+        "Cold water rinse only (observe response)",
+        "Neutral detergent solution test (does it lift?)",
+        "Test with vinegar (acidity test — does color change?)",
+        "Test with rubbing alcohol (solvent test — does stain move?)",
+        "If protein suspected: enzyme on hidden area (delicate test)",
+        "If still uncertain: professional identification"
+      ],
+      "contraindications": [
+        "Heat before diagnosis (may set protein)",
+        "Bleach before diagnosis (may worsen stain)"
+      ],
+      "recommended_agents": [
+        "Cold water (safest starting point)",
+        "Neutral detergent solution (gentle)",
+        "White vinegar (diagnostic acid test)",
+        "Rubbing alcohol (diagnostic solvent test)",
+        "Protease enzyme test (if protein suspected)"
+      ]
+    }
+  }
+}

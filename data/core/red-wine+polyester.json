@@ -1,0 +1,85 @@
+{
+  "id": "red-wine+polyester",
+  "version": "6.0",
+  "authored": "2026-03-22",
+  "title": "Red Wine on Polyester",
+  "stainFamily": "tannin",
+  "surface": "polyester",
+  "sector": "textile",
+  "meta": {
+    "stainCanonical": "red-wine",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "low",
+    "danReview": false,
+    "sourceKnowledge": ["dan-eisen-procedures", "rr-street-on-the-spot", "agent-fiber-safety", "product-guide-al-wilson-tannin-go", "product-guide-wine-away"]
+  },
+  "stainChemistry": "Red wine anthocyanins bond to polyester through weak van der Waals forces rather than the strong hydrogen bonds seen on cellulose or protein fibers. Polyester (PET polymer) is hydrophobic and oleophilic — it repels water-soluble tannins but can trap them in surface irregularities. pH tolerance is extremely wide (4.0–11.0), heat tolerance to 140°C, and it's compatible with all solvents and bleach types. Dan Eisen notes tannin stains are 'easier' on synthetics than natural fibers because the bonding is weaker. The main risk is that any oily component in the wine (or food served with it) bonds preferentially to polyester's oleophilic surface.",
+  "whyThisWorks": "Polyester's weak bonding to tannins means the standard acid flush often removes the stain completely without needing the oxidizer step. Cold water flush works better here than on cotton because polyester doesn't absorb — the wine sits on the surface. Tannin-Go's acetic acid easily breaks the weak van der Waals interactions. If color persists, polyester tolerates the full peroxide + ammonia oxidation with steam activation safely. Enzymes are safe on polyester (it's synthetic, not protein), and all bleach types work — this is the forgiving fiber.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "agent": "Cold water flush",
+      "technique": "Flush from back of fabric, blot with white towel",
+      "temperature": "Cold (60–70°F) — even though polyester handles heat, cold prevents tannin oxidation",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Place polyester face-down on white towel and flush cold water from back. Polyester is hydrophobic — the wine sits on the surface rather than absorbing deep like cotton. This makes cold flushing highly effective on fresh spills. You may get 50–70% removal from flushing alone on polyester. Blot firmly — polyester is strong wet and tolerates pressure."
+    },
+    {
+      "step": 2,
+      "agent": "A.L. Wilson Tannin-Go (full strength)",
+      "technique": "Apply to stain, tamp with brush, flush with water gun",
+      "temperature": "Ambient — steam is safe on polyester but not needed for fresh stains",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply Tannin-Go full strength. Tamp with spotting brush — polyester handles mechanical action well. The acid breaks what weak tannin-fiber bonds exist. On polyester, this step often completes the removal on fresh stains. Flush with water gun. For set stains, repeat with steam at safe distance to boost acid activity."
+    },
+    {
+      "step": 3,
+      "agent": "Hydrogen peroxide 6% + ammonia catalyst (if needed)",
+      "technique": "Oxidation for residual anthocyanin color — full strength safe on polyester",
+      "temperature": "Steam activation safe — polyester tolerates heat to 140°C",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Only needed if color persists after Tannin-Go. Flush tannin formula completely first. Apply peroxide + ammonia mix. Steam-activate at 6 inches. Polyester handles this aggressively — full-strength peroxide, ammonia catalyst, and steam are all safe. The anthocyanin chromophore breaks down quickly under this treatment. Flush after 3–5 minutes."
+    },
+    {
+      "step": 4,
+      "agent": "NSD surfactant flush",
+      "technique": "Final flush with neutral detergent to prevent redeposition",
+      "temperature": "Warm water acceptable on polyester",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Flush with NSD or mild detergent in warm water. Polyester's oleophilic nature means any oily wine residue can redeposit if not surfactant-flushed. This is the one surprise on polyester — the wine's alcohol and trace oils bond to polyester more than the tannin does. Anti-static treatment recommended if going through dry cleaning cycle."
+    }
+  ],
+  "homeSolutions": [
+    "Fresh spill: Blot and flush with cold water immediately — polyester is hydrophobic, so the wine sits on the surface. Cold water flush alone can remove 50–70% on polyester. Follow with white vinegar directly on the stain, wait 3 minutes, rinse.",
+    "Set stain: OxiClean soak in warm water for 1–4 hours. Polyester tolerates oxygen bleach excellently. The sodium percarbonate breaks down aged tannin chromophores. No special precautions needed — polyester is bulletproof.",
+    "When to stop: If OxiClean soak + peroxide haven't removed the stain, the pigment may have heat-set from a dryer cycle. Take to any dry cleaner — polyester handles all their chemistry. But be honest about dryer exposure, because heat-set polyester stains are notoriously persistent."
+  ],
+  "materialWarnings": [
+    "NEVER tumble dry before confirming stain is gone — polyester heat-sets wrinkles AND stains permanently above 140°C",
+    "Watch for oil component: wine served with food may leave an oily residue that polyester holds tenaciously — treat with POG spotter or dish soap if a halo remains after tannin treatment",
+    "Static buildup: polyester generates static during dry cleaning — add anti-static rinse to prevent soil reattraction"
+  ],
+  "products": {
+    "professional": [
+      {"name": "A.L. Wilson Tannin-Go", "use": "Full strength — breaks weak tannin-polyester bonds easily", "note": "Often sufficient alone on fresh stains; polyester tolerates undiluted acid formula"},
+      {"name": "Hydrogen Peroxide 6%", "use": "With ammonia catalyst and steam activation", "note": "Full-strength safe on polyester — can steam-activate aggressively"},
+      {"name": "Street's General Spotter", "use": "Follow-up wet-side treatment for complex wine stains", "note": "Alkaline surfactant safe on polyester — handles residual tannin + any food component"},
+      {"name": "POG Spotter (Soy Gold 2500)", "use": "For oily wine residue or food halo", "note": "Polyester is oleophilic — oil bonds strongly to PET; POG addresses this"}
+    ],
+    "consumer": [
+      {"name": "OxiClean Versatile Stain Remover", "use": "Warm water soak for set stains", "note": "Polyester + OxiClean = excellent combination. Safe, effective, low risk."},
+      {"name": "Wine Away Red Wine Stain Remover", "use": "Immediate fresh-spill treatment", "note": "Works fast on polyester's surface-level stains"},
+      {"name": "Dawn Dish Soap (Original Blue)", "use": "For oily wine/food residue halo", "note": "1 tsp per cup warm water — addresses the oil component polyester holds"},
+      {"name": "White distilled vinegar", "use": "Tannin spotter for fresh stains", "note": "Full strength directly on stain — polyester tolerates undiluted vinegar safely"}
+    ]
+  },
+  "escalation": {
+    "when": "Stain was heat-set in a dryer, or persistent halo after tannin treatment suggests oil/dye component beyond tannin",
+    "whatToTell": "This is red wine on polyester that may be heat-set from a dryer cycle. I treated with acid, oxidizer, and surfactant. Polyester handles any chemistry you have — the issue is likely heat-set polymerization rather than chemistry resistance.",
+    "specialistType": "Any professional dry cleaner — polyester is the easiest fiber to treat aggressively. All solvents safe including PERC. They can use professional-strength oxidizers, full steam, and aggressive mechanical action without fiber risk."
+  },
+  "solventNote": "Pre-spot wet side before dry cleaning — tannin sets at machine temperature. PERC is A-rated for polyester, as is hydrocarbon and GreenEarth. Pre-spot oil stains as polyester is oleophilic — POG treatment on dry side addresses any oil/alcohol residue the wine left. Add anti-static treatment. Polyester is the forgiving fiber — the professional can escalate aggressively without fiber concerns.",
+  "difficulty": 3,
+  "danReviewFlag": false
+}
