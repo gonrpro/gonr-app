@@ -2,7 +2,7 @@
   "id": "urine-cotton",
   "version": "5.0",
   "authored": "2026-03-22",
-  "title": "Urine (Fresh or Aged) on White Cotton",
+  "title": "Urine (Fresh or Aged) on Cotton",
   "stainType": "protein-oxidizable",
   "surface": "cotton-white",
   "sector": "textile",
@@ -21,7 +21,7 @@
     "freePreview": true
   },
   "stainChemistry": "Urine contains urea (protein breakdown product), uric acid crystals (oxidizable), and urochrome pigment (yellow dye). Fresh urine is acidic (pH 4.5-6.5); its uric acid bonds weakly to cotton. Urochrome is a breakdown product of hemoglobin and stains yellow. Bacteria multiply over time, breaking down urea and producing ammonia\u2014the characteristic odor. Cotton's cellulose is robust enough to tolerate enzymes, heat, and oxidizing bleach.",
-  "whyThisWorks": "Enzyme breaks urea and uric acid protein bonds. H₂O₂ oxidizes urochrome pigment to colorless. Cold water first prevents bacterial growth. Oxygen bleach (OxiClean) is thorough for old stains. White cotton tolerates aggressive treatment.",
+  "whyThisWorks": "Enzyme breaks urea and uric acid protein bonds. H\u2082O\u2082 oxidizes urochrome pigment to colorless. Cold water first prevents bacterial growth. Oxygen bleach (OxiClean) is thorough for old stains. White cotton tolerates aggressive treatment.",
   "spottingProtocol": [
     {
       "step": 1,
@@ -53,11 +53,11 @@
     {
       "step": 4,
       "side": "wet",
-      "agent": "H₂O₂ (3-6%) or OxiClean (sodium percarbonate)",
-      "technique": "Soak for oxidation",
+      "agent": "NSD flush",
+      "technique": "Flush and blot",
       "equipment": "Basin or sink",
-      "dwellTime": "5-10 minutes (H₂O₂), 30-60 minutes (OxiClean)",
-      "instruction": "For any remaining yellow color (urochrome pigment), apply H₂O₂ directly or soak in OxiClean solution. Peroxide works in minutes; OxiClean is gentler and works longer. Watch the stain fade as urochrome oxidizes to colorless. The peroxide will smell sharp\u2014that's the oxidation reaction. White cotton is immune to bleach damage, so either product is safe. For white ONLY, diluted chlorine bleach (1:10) also works in 5 minutes."
+      "dwellTime": "2-3 minutes",
+      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot \u2014 do not rub. All oxidizer and enzyme residue must be fully removed before drying."
     },
     {
       "step": 5,
@@ -101,10 +101,10 @@
   "products": {
     "household": [
       {
-        "name": "3% H₂O₂",
+        "name": "3% H\u2082O\u2082",
         "brand": "Any drugstore brand",
         "icon": "\ud83e\uddf4",
-        "amazonSearchQuery": "H₂O₂ 3% USP",
+        "amazonSearchQuery": "H\u2082O\u2082 3% USP",
         "affiliateTag": "gonr08-20",
         "note": "Oxidizes urochrome pigment to colorless. Fast (5 min). Safe for white cotton."
       },

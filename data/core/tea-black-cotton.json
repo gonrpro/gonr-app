@@ -2,7 +2,7 @@
   "id": "tea-black-cotton",
   "version": "5.0",
   "authored": "2026-03-22",
-  "title": "Black Tea on White Cotton",
+  "title": "Black Tea on Cotton",
   "stainType": "tannin",
   "surface": "cotton-white",
   "sector": "textile",
@@ -20,7 +20,7 @@
     "freePreview": true
   },
   "stainChemistry": "Black tea is higher in tannins than coffee\u2014stronger hydrogen bonding to cotton cellulose. Tea stains brown more quickly as tannins oxidize (within hours). White cotton's chemical tolerance allows aggressive acid and oxidizing treatment. The mechanism is identical to coffee (tannin bonding, acid breaks bonds, oxidizers remove color), but tea oxidizes faster and requires prompt treatment.",
-  "whyThisWorks": "Cold water flushes initial stain. Acetic acid breaks tannin-cellulose bonds immediately. H₂O₂ or bleach oxidizes remaining pigment. White cotton's robustness means all chemistry can be applied aggressively. Tea responds faster than coffee to these methods because tea tannins are slightly more soluble in acid.",
+  "whyThisWorks": "Cold water flushes initial stain. Acetic acid breaks tannin-cellulose bonds immediately. H\u2082O\u2082 or bleach oxidizes remaining pigment. White cotton's robustness means all chemistry can be applied aggressively. Tea responds faster than coffee to these methods because tea tannins are slightly more soluble in acid.",
   "spottingProtocol": [
     {
       "step": 1,
@@ -43,7 +43,7 @@
     {
       "step": 3,
       "side": "wet",
-      "agent": "H₂O₂ (3-6%)",
+      "agent": "H\u2082O\u2082 (3-6%)",
       "technique": "Direct application",
       "equipment": "Spray or dropper, white cloth",
       "dwellTime": "3-5 minutes",
@@ -52,11 +52,11 @@
     {
       "step": 4,
       "side": "wet",
-      "agent": "OxiClean or bleach (white only)",
-      "technique": "Soak",
+      "agent": "NSD flush",
+      "technique": "Flush and blot",
       "equipment": "Basin",
-      "dwellTime": "30-60 minutes or 5-10 minutes",
-      "instruction": "For stubborn brown tea stain, OxiClean soak (per directions) for 30-60 minutes. Or 1:10 diluted bleach (white only) for 5-10 minutes. Bleach works faster."
+      "dwellTime": "2-3 minutes",
+      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot \u2014 do not rub. All oxidizer and enzyme residue must be fully removed before drying."
     },
     {
       "step": 5,
@@ -65,7 +65,7 @@
       "technique": "Flush and wash",
       "equipment": "Running water or machine",
       "dwellTime": "Rinse until clear, then wash",
-      "instruction": "Rinse thoroughly to remove all acid, peroxide, and bleach. Then wash in warm or hot water with regular detergent."
+      "instruction": "Rinse thoroughly to remove all acid, peroxide, and H\u2082O\u2082 (3%) for white/light fabrics only. Then wash in warm or hot water with regular detergent."
     },
     {
       "step": 6,
@@ -79,8 +79,8 @@
   ],
   "homeSolutions": [
     "FRESH: Cold water flush, blot hard. Most comes out immediately.",
-    "REMAINING: 28% Acetic Acid (diluted), 2-3 minutes, blot. Then H₂O₂, 3-5 minutes, blot.",
-    "BROWN/AGED: OxiClean soak (30-60 min) or dilute bleach (1:10, white only, 5-10 min)."
+    "REMAINING: 28% Acetic Acid (diluted), 2-3 minutes, blot. Then H\u2082O\u2082, 3-5 minutes, blot.",
+    "BROWN/AGED: H₂O₂ (3-6%) soak 30-60 min, blot thoroughly."
   ],
   "materialWarnings": [
     "DO NOT use bleach on colored cotton",
@@ -98,10 +98,10 @@
         "note": "Acidic spotter. Full strength on white cotton. Very effective on tea."
       },
       {
-        "name": "H₂O₂ (3-6%)",
+        "name": "H\u2082O\u2082 (3-6%)",
         "brand": "Drugstore",
         "icon": "\ud83e\uddf4",
-        "amazonSearchQuery": "H₂O₂",
+        "amazonSearchQuery": "H\u2082O\u2082",
         "affiliateTag": "gonr08-20",
         "note": "Oxidizes tannin color. Full strength safe on white cotton."
       }
@@ -117,7 +117,7 @@
       }
     ]
   },
-  "customerExplanation": "Black tea contains high levels of tannins that bond to cotton. Acid (vinegar) breaks the bonds. H₂O₂ oxidizes the brown color. White cotton's chemical robustness means we can use strong, fast chemistry.",
+  "customerExplanation": "Black tea contains high levels of tannins that bond to cotton. Acid (vinegar) breaks the bonds. H\u2082O\u2082 oxidizes the brown color. White cotton's chemical robustness means we can use strong, fast chemistry.",
   "commonMistakes": [
     "Delaying treatment\u2014tea oxidizes quickly and becomes harder to remove",
     "Not using acid first\u2014acid is essential for breaking tannin-cotton bonds",
