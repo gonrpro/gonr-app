@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Space_Mono } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/layout/Nav'
 import Header from '@/components/layout/Header'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const spaceMono = Space_Mono({ weight: ['400', '700'], subsets: ['latin'], variable: '--font-mono' })
 
 export const metadata: Metadata = {
   title: 'GONR — AI Stain Intelligence',
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.variable} ${spaceMono.variable} font-sans antialiased`}>
         <Header />
         <main className="px-4 pt-2 pb-4">
           {children}
@@ -27,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
             var t = localStorage.getItem('gonr_theme');
-            if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            if (t !== 'light') {
               document.documentElement.classList.add('dark');
             }
           })();
