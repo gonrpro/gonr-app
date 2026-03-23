@@ -1,95 +1,145 @@
 {
   "id": "coffee-with-cream-cotton",
-  "title": "Coffee with Cream on Cotton",
-  "stainFamily": "combo",
-  "surface": "cotton",
+  "version": "5.0",
+  "authored": "2026-03-22",
+  "title": "Coffee with Cream on White Cotton",
+  "stainType": "combo-protein-tannin",
+  "surface": "cotton-white",
   "sector": "textile",
-  "source": "verified",
-  "stainChemistry": "Combination stains (coffee with cream, chocolate, mocha beverages, latte) contain multiple stain components each requiring different chemistry: (1) protein — from milk/cream solids, which bond to fibers via hydrogen bonds and hydrophobic interactions and are permanently set by heat; (2) fat/oil — from cream/cocoa butter, which are non-polar and repel water, requiring solvent extraction; (3) tannin — from cocoa or coffee pigments, which bond through hydrogen bonding and oxidize to brown over time. The molecular challenge: choose a sequence that targets each component without cross-activating others. Treat protein first (heat sets it), then fat (solvents lift it), then tannin (oxidizer breaks it).",
-  "whyThisWorks": "Multi-component stains cannot be treated with a single agent. Protein breaks the milk protein bonds first — if oxidizers are applied first, they permanently set the protein component. POG then extracts the fat component with solvent chemistry. Tannin and H₂O₂ handle the remaining color. Sequencing matters: each chemistry step must be completed and flushed before the next to avoid cross-contamination.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
-  "professionalProtocol": {
-    "steps": [
-      "1. Apply Tannin (acidic tannin spotter) — coffee pigment/color phase first. Tamp gently, work edge to center. Dwell 5–10 minutes.",
-      "2. Flush with cool water.",
-      "3. Apply Protein (digestant spotter) — address the milk/cream protein phase. Dwell 5–10 minutes cold. Tamp gently. Never apply heat before this step.",
-      "4. Flush with cool water — remove enzyme residue completely.",
-      "5. Apply POG (Paint-Oil-Grease remover) or amyl acetate — address the fat/cream phase. Dwell 5–10 minutes. Blot with clean absorbent cloth.",
-      "6. Flush with NSD (Neutral Synthetic Detergent) — removes all residue. Cool water rinse.",
-      "7. If residual discoloration: H₂O₂ 6% on colorfast cotton only — dwell 5 min, check progress, flush.",
-      "8. Neutralizing rinse: 28% Acetic acid (diluted 1:10) — restores pH. Blot dry."
+  "meta": {
+    "stainCanonical": "coffee-with-cream",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "combo",
+      "two-stage",
+      "enzyme-safe",
+      "fast-removal"
     ],
-    "products": [
-      "Tannin (acidic tannin spotter)",
-      "POG (Paint-Oil-Grease remover) or amyl acetate",
-      "Protein (digestant spotter)",
-      "H₂O₂ 6% (professional-grade oxidizer)",
-      "NSD (Neutral Synthetic Detergent)",
-      "28% Acetic acid (diluted 1:10)"
+    "freePreview": true
+  },
+  "stainChemistry": "Coffee with cream combines protein (casein from milk) and tannins (from coffee). White cotton's chemical robustness allows fast, aggressive treatment. Unlike delicate fibers, cotton tolerates enzymes (which digest proteins), heat, acid, and bleach. The two-component nature means sequential treatment still works best\u2014enzymes for protein, oxidizers for tannin\u2014but can be more aggressive than on natural fibers.",
+  "whyThisWorks": "Warm water and enzyme rapidly digest casein/whey proteins. H\u2082O\u2082 oxidizes tannin pigment. White cotton's tolerance for heat and oxidizers means this combination removes combo stains faster than any other surface. Multi-stage treatment still applies but with less risk of error.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Warm water (40-45\u00b0C), optional salt",
+      "technique": "Blot and flush from back",
+      "equipment": "White cloth, spray bottle",
+      "dwellTime": "1-2 minutes",
+      "instruction": "Spray warm water from back, blot hard. Salt helps osmotic transfer. Most fresh coffee-cream will flush out in the first 1-2 minutes. White cotton tolerates warmth\u2014this accelerates protein release. Continue until blotting produces pale or clear water."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Protein solution (warm, per directions)",
+      "technique": "Soak and brush work",
+      "equipment": "Basin, soft brush, white cloth",
+      "dwellTime": "20-30 minutes soak, then work",
+      "instruction": "Mix Protein in warm water (40-45\u00b0C). Submerge stained area. Enzymes break peptide bonds in casein/whey proteins\u2014much faster than detergent alone. After 20 minutes, gently brush the spot with soft brush. Cotton is strong\u2014you can apply more pressure than with delicate fibers. Blot repeatedly as protein fragments lift."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "H\u2082O\u2082 (3-6%, full strength)",
+      "technique": "Direct application or soak",
+      "equipment": "Spray bottle or basin, white cloth",
+      "dwellTime": "3-5 minutes, watch color fade",
+      "instruction": "If coffee color remains, apply H\u2082O\u2082. This oxidizes tannin pigment to colorless compounds. White cotton tolerates full-strength peroxide. For stubborn brown color, 6% peroxide works faster than 3%. After 3-5 minutes, blot thoroughly."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "OxiClean or dilute bleach (white only)",
+      "technique": "Soak",
+      "equipment": "Basin",
+      "dwellTime": "30-60 minutes (OxiClean) or 5-10 minutes (bleach)",
+      "instruction": "For remaining stain, OxiClean soak (per instructions) for 30-60 minutes works well. Alternatively, 1:10 diluted bleach on white only for 5-10 minutes. Bleach is faster but OxiClean is safer for color preservation on any colored trim."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Rinse water",
+      "technique": "Flush and wash",
+      "equipment": "Running water or machine",
+      "dwellTime": "Rinse until clear, then wash",
+      "instruction": "Rinse thoroughly to remove enzyme, peroxide, and bleach residue. Then wash in warm or hot water with regular detergent. All chemistry must be rinsed away."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Heat dry",
+      "technique": "Machine dryer or line dry",
+      "equipment": "Dryer or clothesline",
+      "dwellTime": "Until dry",
+      "instruction": "White cotton tolerates heat. Machine dryer or line dry\u2014both fine. Heat doesn't re-set combo stains on cotton."
+    }
+  ],
+  "homeSolutions": [
+    "FRESH: Warm water + salt flush. Blot hard. Most stain comes out immediately.",
+    "REMAINING: Protein soak (per product directions), 20-30 minutes, then brush gently, blot.",
+    "BROWN COLOR: H\u2082O\u2082, 3-5 minutes. Or OxiClean soak, 30-60 minutes."
+  ],
+  "materialWarnings": [
+    "DO NOT use bleach on colored cotton\u2014fades dye",
+    "AVOID bleach on colored thread"
+  ],
+  "escalation": "Coffee-cream on white cotton rarely needs professional help. Home enzyme + peroxide treatment is very effective.",
+  "products": {
+    "household": [
+      {
+        "name": "Protein Detergent",
+        "brand": "Any laundry brand",
+        "icon": "\ud83e\uddec",
+        "amazonSearchQuery": "Protein laundry",
+        "affiliateTag": "gonr08-20",
+        "note": "Digests casein/whey proteins. 20-30 minute soak, then brush work."
+      },
+      {
+        "name": "3-6% H\u2082O\u2082",
+        "brand": "Drugstore",
+        "icon": "\ud83e\uddf4",
+        "amazonSearchQuery": "H\u2082O\u2082 3% or 6%",
+        "affiliateTag": "gonr08-20",
+        "note": "Oxidizes tannin color. Full strength safe on white cotton."
+      }
     ],
-    "temperature": "cold — the protein component (milk/cream) is permanently set by heat. Never use warm or hot water at any stage until protein is fully digested and flushed.",
-    "warnings": [
-      "Applying all treatments simultaneously — creates a chemical slurry that's harder to remove.",
-      "Using hot water early — permanently sets the protein/milk component.",
-      "Not rinsing completely between treatments — old chemistry interferes with new treatment.",
-      "Over-agitating the stain — spreads each component deeper into the fiber.",
-      "NEVER use ammonia, baking soda, or alkaline agents on the tannin component — permanently darkens it."
+    "professional": [
+      {
+        "name": "Professional Protein concentrate",
+        "brand": "Huntsman or Chemspec",
+        "icon": "\ud83e\uddea",
+        "amazonSearchQuery": "Protein concentrate",
+        "affiliateTag": "gonr08-20",
+        "note": "Higher concentration than household. Faster protein digestion."
+      }
     ]
   },
-  "diyProtocol": {
-    "steps": [
-      "1. Scrape or wipe away any solid material. Use cold water only.",
-      "2. Mix 1 tbsp NSD into cold water. Blot the solution onto the stain. The soap addresses both the protein (surfactant action) and partial fat component.",
-      "3. Let it sit for 5–10 minutes.",
-      "4. Blot with a clean white cloth. Repeat if needed.",
-      "5. Rinse with cold water. Air dry — don't use a dryer until the stain is gone."
-    ],
-    "products": [
-      "Dawn NSD",
-      "Cold water",
-      "OxiClean Versatile Stain Remover (enzyme + oxygen bleach for multi-component stains)",
-      "3% H₂O₂ (for remaining color after protein treatment)",
-      "Clean white cloths"
-    ],
-    "whenToStop": "If the stain is still visible after multiple treatments, it may be permanently set. For fabrics you care about, consider professional cleaning before attempting further home treatment. Further aggressive home treatment on a set combo stain risks permanent fiber damage.",
-    "warnings": [
-      "Test any cleaning solution on a hidden seam or inside hem first.",
-      "Never use hot water — permanently sets the protein/milk component.",
-      "Avoid heat until the stain is completely gone — heat sets all components.",
-      "Always scrape off solid material first — don't smear it around.",
-      "NEVER use ammonia or alkaline products — permanently darkens the tannin component."
-    ]
-  },
-  "safetyMatrix": {
-    "neverDo": [
-      "Never use hot water or apply heat before protein component is treated — permanently sets milk/cream protein.",
-      "Never apply oxidizers before protein treatment — oxidizers permanently set protein stains.",
-      "Never use ammonia, baking soda, or alkaline agents — permanently darkens the tannin component.",
-      "Never mix ammonia with chlorine bleach — produces toxic chloramine gas.",
-      "Never apply all treatments simultaneously — chemistry interference makes removal harder.",
-      "Never put in the dryer before stain is fully gone."
-    ],
-    "fiberSensitivities": [
-      "Cotton (cellulose) tolerates most agents well — both enzyme digestants and peroxide are safe.",
-      "Colored cotton: test peroxide in a hidden area first.",
-      "The protein component of combo stains is the most time-sensitive — treat quickly before heat exposure."
-    ]
-  },
-  "escalation": {
-    "when": "If sequential treating fails, the stain components may have cross-linked or oxidized together. Try targeting the most stubborn component last: start with solvent for fat, then NSD for emulsification, then peroxide for color. For extreme cases, recommend professional assessment.",
-    "whatToTell": "We've treated the stain on your garment. This type of stain combines several components at once, each needing a different approach — protein, fat, and color pigment must all be addressed in sequence.",
-    "specialistType": "dry cleaner or wet cleaner"
-  },
-  "deepSolveHooks": {
-    "contextQuestions": [
-      "How old is the stain — was it treated immediately or has it been sitting?",
-      "Was any heat applied (dryer, iron) before treatment? (permanently sets protein component)",
-      "Is this coffee with cream, chocolate, or a mocha beverage? (affects fat content and protocol emphasis)",
-      "Has the garment been washed with warm water before spotting?"
-    ],
-    "modifierNotes": "Fresh combo stain on undisturbed cotton responds reasonably well to NSD alone. Any heat exposure permanently sets the protein component. Higher fat content (heavy cream, chocolate) requires more emphasis on the POG/solvent step. A garment run through the dryer has significantly reduced recovery odds on the protein component. Dark chocolate has a more complex tannin structure than milk chocolate — may require longer H₂O₂ dwell."
-  },
-  "difficulty": 7,
-  "timeEstimate": "15–30 minutes",
-  "lastValidated": "2026-03-23"
+  "customerExplanation": "Coffee with cream combines protein (from milk) and tannins (from coffee). Enzymes break down protein. H\u2082O\u2082 oxidizes tannin color. White cotton's chemical robustness means we can use all these tools aggressively and fast.",
+  "commonMistakes": [
+    "Using cold water\u2014warmth helps enzyme and protein release on cotton",
+    "Not using enzyme\u2014detergent alone doesn't remove proteins as well",
+    "Stopping after enzyme\u2014peroxide step removes the brown tannin color"
+  ],
+  "scienceNote": "Casein (milk protein) is sensitive to both temperature and pH. Warmth and alkaline conditions denature it faster. Enzymes (proteases) cut peptide bonds between amino acids\u2014much more efficient than detergent alone. Tannins oxidize over time in coffee-cream stains\u2014the longer the stain sits, the browner it becomes. This is why enzyme + peroxide works so well: enzymes remove protein completely, and peroxide handles whatever tannin pigment remains.",
+  "callPro": "Very rarely needed for white cotton coffee-cream stains. Home treatment is usually sufficient.",
+  "components": [
+    "enzyme",
+    "oxidizer",
+    "finisher"
+  ],
+  "component_order": [
+    "enzyme",
+    "oxidizer",
+    "finisher"
+  ],
+  "difficulty": 3,
+  "difficulty_factors": [
+    "combo-manageable",
+    "enzyme-safe",
+    "fast-oxidation"
+  ],
+  "solventNote": "Professional: Warm enzyme soak (40-45\u00b0C, 20-30 min), follow with H\u2082O\u2082 (3-6%) or sodium percarbonate. For brown stains, reducing bleach (sodium hydrosulfite 0.5-1%) for 10-15 minutes reverses oxidation, then oxidize again to colorless. Cotton tolerates aggressive treatment."
 }
