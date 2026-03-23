@@ -94,29 +94,19 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
     ?? []
 
   return (
-    <div className={`rounded-xl border-l-4 ${dc.border} bg-white dark:bg-[#0e131b] shadow-lg overflow-hidden`}>
+    <div className="rounded-xl overflow-hidden" style={{ background: 'var(--surface)', border: '1px solid var(--border-strong)' }}>
 
-      {/* ── 1. Header: Title + source badge + difficulty ── */}
-      <div className="px-4 pt-4 pb-3 space-y-2">
+      {/* ── 1. Header: Title + source badge ── */}
+      <div className="px-4 pt-4 pb-3 space-y-1" style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="flex items-start justify-between gap-2">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white leading-snug flex-1">
+          <h2 className="text-lg font-bold leading-snug flex-1" style={{ color: 'var(--text)' }}>
             {card.title}
           </h2>
-          <div className="flex items-center gap-2 flex-shrink-0 pt-0.5">
-            {/* Source badge */}
-            <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold
-              ${source === 'verified'
-                ? 'bg-green-500/20 text-green-400'
-                : 'bg-purple-500/20 text-purple-400'
-              }`}
-            >
-              {source === 'verified' ? '\u2713 VERIFIED' : '\uD83E\uDD16 AI'}
-            </span>
-            {/* Difficulty badge */}
-            <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold ${dc.bg} ${dc.text}`}>
-              {difficulty}/10
-            </span>
-          </div>
+          <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold flex-shrink-0 mt-0.5
+            ${source === 'verified' ? 'bg-green-500/15 text-green-600' : 'bg-purple-500/15 text-purple-500'}`}
+          >
+            {source === 'verified' ? '✓ Verified' : '🤖 AI'}
+          </span>
         </div>
       </div>
 
@@ -167,11 +157,13 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
                 flex items-center justify-center text-xs font-bold mt-0.5">
                 {step.step}
               </div>
-              <div className="flex-1 space-y-1">
-                <p className="text-xs font-bold text-green-400 uppercase tracking-wider">
-                  {step.agent}
-                </p>
-                <p className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed">
+              <div className="flex-1 space-y-0.5">
+                {step.agent && (
+                  <p className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>
+                    {step.agent}
+                  </p>
+                )}
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
                   {step.instruction}
                 </p>
                 {step.technique && (
