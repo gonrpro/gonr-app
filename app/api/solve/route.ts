@@ -103,10 +103,10 @@ Return ONLY valid JSON:
       model: 'gpt-4o',
       messages: [
         { role: 'system', content: systemPrompt },
-        { role: 'user', content: `Stain: ${stain}\nFiber/Surface: ${effectiveSurface}` },
+        { role: 'user', content: `Stain: ${stain}\nFiber/Surface: ${effectiveSurface}\n\nWrite detailed, expert-level instructions for each step. Each instruction should be 2-3 sentences minimum — explain what to do, how to do it, and what to watch for. This is going to a professional spotter, not a home user.` },
       ],
       temperature: 0.2,
-      max_tokens: 2000,
+      max_tokens: 3000,
     }),
   })
 

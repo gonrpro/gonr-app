@@ -109,14 +109,14 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         </div>
       </div>
 
-      {/* ── 2. Chemistry brief (one-line summary) ── */}
-      {card.stainChemistry && (
+      {/* ── 2. Chemistry brief — short summary only ── */}
+      {card.whyThisWorks && (
         <div className="px-4 pb-3">
-          <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-            <span className="mr-1">{'\uD83E\uDDEA'}</span>
-            {card.stainChemistry.length > 160
-              ? card.stainChemistry.slice(0, 160) + '\u2026'
-              : card.stainChemistry}
+          <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            <span className="mr-1">🧪</span>
+            {card.whyThisWorks.length > 120
+              ? card.whyThisWorks.slice(0, 120) + '…'
+              : card.whyThisWorks}
           </p>
         </div>
       )}
