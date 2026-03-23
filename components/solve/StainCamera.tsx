@@ -95,35 +95,30 @@ export default function StainCamera({ onStainDetected, onReset }: StainCameraPro
 
       {state === 'done' && result && (
         <div className="space-y-2">
-          <div className="px-3 py-2 rounded-xl bg-blue-500/10 text-sm space-y-1">
-            <p className="text-blue-300 font-medium">
+          <div className="px-3 py-2 rounded-xl text-sm space-y-1 w-full" style={{ background: 'var(--surface)', border: '1px solid var(--border-strong)' }}>
+            <p className="font-medium" style={{ color: 'var(--accent)' }}>
               Looks like <span className="text-white">{result.suggestion}</span>
             </p>
-            <p className="text-gray-400 text-xs">
+            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
               {FAMILY_LABELS[result.family] || result.family} family · {result.confidence} confidence
             </p>
             {result.reasoning && (
-              <p className="text-gray-500 text-xs italic">{result.reasoning}</p>
+              <p className="text-xs italic" style={{ color: 'var(--text-secondary)' }}>{result.reasoning}</p>
             )}
           </div>
           <div className="flex gap-2">
             <button
               onClick={() => onStainDetected(result.family, result.suggestion)}
-              className="px-3 py-1.5 rounded-lg text-sm font-medium bg-green-500 text-white"
+              className="flex-1 py-2 rounded-lg text-sm font-semibold bg-green-500 text-white"
             >
               ✓ Confirm
             </button>
             <button
-              onClick={() => { setState('idle'); inputRef.current?.click() }}
-              className="px-3 py-1.5 rounded-lg text-sm font-medium bg-[#0e131b] text-gray-400"
-            >
-              Try Again
-            </button>
-            <button
               onClick={handleReset}
-              className="px-3 py-1.5 rounded-lg text-sm font-medium bg-[#0e131b] text-gray-400"
+              className="flex-1 py-2 rounded-lg text-sm font-medium"
+              style={{ background: 'var(--surface-2)', color: 'var(--text-secondary)', border: '1px solid var(--border-strong)' }}
             >
-              ✗ Different
+              Different
             </button>
           </div>
         </div>

@@ -84,24 +84,26 @@ export default function CareLabelScanner({ onFiberDetected, onReset }: CareLabel
       )}
 
       {state === 'done' && result && (
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-green-500/10 text-green-400 text-sm">
+        <div className="flex flex-col gap-2 w-full">
+          <div className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm w-full"
+            style={{ background: 'rgba(34,197,94,0.1)', color: 'var(--accent)' }}>
             <span>🏷️</span>
-            <span className="font-medium capitalize">{result.fiber}</span>
+            <span className="font-semibold capitalize">{result.fiber}</span>
             {result.careSymbols?.length > 0 && (
-              <span className="text-gray-400 ml-1">· {result.careSymbols.join(', ')}</span>
+              <span className="text-xs ml-1" style={{ color: 'var(--text-secondary)' }}>· {result.careSymbols.join(', ')}</span>
             )}
           </div>
           <div className="flex gap-2">
             <button
               onClick={() => onFiberDetected(result.fiber, result.careSymbols || [])}
-              className="px-3 py-1.5 rounded-lg text-sm font-medium bg-green-500 text-white"
+              className="flex-1 py-2 rounded-lg text-sm font-semibold bg-green-500 text-white"
             >
               ✓ Use This
             </button>
             <button
               onClick={() => { setState('idle'); inputRef.current?.click() }}
-              className="px-3 py-1.5 rounded-lg text-sm font-medium bg-[#0e131b] text-gray-400"
+              className="flex-1 py-2 rounded-lg text-sm font-medium"
+              style={{ background: 'var(--surface-2)', color: 'var(--text-secondary)', border: '1px solid var(--border-strong)' }}
             >
               Scan Again
             </button>
@@ -111,10 +113,11 @@ export default function CareLabelScanner({ onFiberDetected, onReset }: CareLabel
 
       {state === 'error' && (
         <div className="space-y-2">
-          <p className="text-sm text-red-400 px-1">{error}</p>
+          <p className="text-sm text-red-500 px-1">{error}</p>
           <button
             onClick={handleReset}
-            className="px-3 py-1.5 rounded-lg text-sm bg-[#0e131b] text-gray-400"
+            className="px-3 py-1.5 rounded-lg text-sm"
+            style={{ background: 'var(--surface-2)', color: 'var(--text-secondary)', border: '1px solid var(--border-strong)' }}
           >
             Try Again
           </button>
