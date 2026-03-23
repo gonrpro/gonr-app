@@ -24,47 +24,13 @@ export function useUser(): UserState {
   })
 
   useEffect(() => {
-    let cancelled = false
-
-    async function load() {
-      try {
-        const supabase = createClient()
-        const { data: { session } } = await supabase.auth.getSession()
-
-        if (!session?.user?.email) {
-          if (!cancelled) setState({ email: null, tier: 'free', isFounder: false, loading: false })
-          return
-        }
-
-        const email = session.user.email
-
-        // Fetch tier from server
-        const res = await fetch('/api/auth/tier', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email }),
-        })
-
-        if (res.ok) {
-          const data = await res.json()
-          if (!cancelled) {
-            setState({
-              email,
-              tier: data.tier || 'free',
-              isFounder: data.isFounder || false,
-              loading: false,
-            })
-          }
-        } else {
-          if (!cancelled) setState({ email, tier: 'free', isFounder: false, loading: false })
-        }
-      } catch {
-        if (!cancelled) setState(prev => ({ ...prev, loading: false }))
-      }
-    }
-
-    load()
-    return () => { cancelled = true }
+    // DEMO MODE: always operator tier — remove after launch
+    setState({
+      email: 'tyler@gonr.pro',
+      tier: 'operator',
+      isFounder: true,
+      loading: false,
+    })
   }, [])
 
   return state
