@@ -95,7 +95,8 @@ Return ONLY valid JSON:
   "meta": { "stainCanonical": "${stain.toLowerCase().replace(/\s+/g, '-')}", "surfaceCanonical": "${effectiveSurface.toLowerCase().replace(/\s+/g, '-')}", "riskLevel": "medium", "tier": "ai-generated" }
 }`
 
-  const res = await fetch('https://api.openai.com/v1/chat/completions', {
+  // gpt-5.4 uses the Responses API
+  const res = await fetch('https://api.openai.com/v1/responses', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -103,23 +104,20 @@ Return ONLY valid JSON:
     },
     body: JSON.stringify({
       model: 'gpt-5.4',
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: `Stain: ${stain}\nFiber/Surface: ${effectiveSurface}\n\nWrite at Dan Eisen level — DLI Hall of Fame spotter. Each step must include:\n- The specific agent and exact application method\n- WHY this agent works on this chemistry (1 sentence)\n- What to watch for / what success looks like\n- Temperature guidance (cold/lukewarm/avoid heat) and dwell time\n- Any critical warnings for THIS fiber\n\nMinimum 3 sentences per step instruction. This goes to a professional spotter who needs to understand the chemistry, not just follow steps.` },
-      ],
-      temperature: 0.2,
-      max_tokens: 4000,
+      instructions: systemPrompt,
+      input: `Stain: ${stain}\nFiber/Surface: ${effectiveSurface}\n\nWrite at Dan Eisen level — DLI Hall of Fame spotter. Each step must include:\n- The specific agent and exact application method\n- WHY this agent works on this chemistry (1 sentence)\n- What to watch for / what success looks like\n- Temperature guidance (cold/lukewarm/avoid heat) and dwell time\n- Any critical warnings for THIS fiber\n\nMinimum 3 sentences per step instruction. Return ONLY valid JSON.`,
+      max_output_tokens: 4000,
     }),
   })
 
   if (!res.ok) {
     const errData = await res.text()
-    console.error('OpenAI API error:', errData)
+    console.error('OpenAI API error:', res.status, errData)
     throw new Error('AI generation failed')
   }
 
   const data = await res.json()
-  const content = data.choices?.[0]?.message?.content
+  const content = data.output_text || data.output?.[0]?.content?.[0]?.text
   if (!content) throw new Error('Empty AI response')
 
   const jsonStr = content.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim()

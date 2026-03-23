@@ -78,7 +78,14 @@ export async function POST(req: NextRequest) {
       })
     }
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    // Build Responses API input for gpt-5.4
+    const inputContent: any[] = content.map((c: any) => {
+      if (c.type === 'text') return { type: 'input_text', text: c.text }
+      if (c.type === 'image_url') return { type: 'input_image', image_url: c.image_url.url, detail: 'high' }
+      return c
+    })
+
+    const response = await fetch('https://api.openai.com/v1/responses', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -86,13 +93,10 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         model: 'gpt-5.4',
-        messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
-          { role: 'user', content },
-        ],
-        max_tokens: 1500,
-        temperature: 0.3,
-        response_format: { type: 'json_object' },
+        instructions: SYSTEM_PROMPT,
+        input: [{ role: 'user', content: inputContent }],
+        max_output_tokens: 1500,
+        text: { format: { type: 'json_object' } },
       }),
     })
 
@@ -106,7 +110,7 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await response.json()
-    const raw = data.choices?.[0]?.message?.content
+    const raw = data.output_text || data.output?.[0]?.content?.[0]?.text
 
     if (!raw) {
       return NextResponse.json(
