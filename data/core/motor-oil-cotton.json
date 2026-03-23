@@ -1,0 +1,77 @@
+{
+  "id": "motor-oil-cotton",
+  "title": "Motor Oil on Cotton",
+  "stainFamily": "dry_side",
+  "surface": "cotton",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Classification: Oil/Grease (lipid-based). Motor oil is a complex mixture of petroleum hydrocarbons (C15-C50 alkanes, cycloalkanes, aromatics) plus additives (zinc dialkyldithiophosphate anti-wear, dispersants, detergents, viscosity modifiers). Much heavier and more tenacious than cooking oil. Contains carbon black particulate from combustion. Oil stains penetrate fiber structure through capillary action and hydrophobic affinity. Treatment: dry-side solvent (POG) to dissolve lipid phase, followed by surfactant emulsification to remove residual oil.",
+  "whyThisWorks": "Automotive fluids are petroleum-based oils that soak in deep and resist water-based cleaners. Cotton absorbs liquids quickly and holds stains deep in the weave. Dish soap or a degreaser breaks down the oil so it becomes water-soluble and can be rinsed away.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply POG directly to the oil stain. POG is a volatile dry solvent with strong affinity for lipids — it dissolves oil droplets on contact. Tamp gently and blot with absorbent cloth. Dwell 5–10 minutes.",
+      "2. If POG plateaus, apply amyl acetate for stronger solvent action. Blot with clean absorbent cloth between applications. Never use on acetate fabrics. Dwell 3–5 minutes.",
+      "3. Apply NSD to emulsify any remaining oil micro-droplets and remove solvent residue. Rinse thoroughly with cool water. Dwell 5 minutes.",
+      "4. Apply diluted acetic acid (1:10) to restore fiber to its natural state. Blot dry with clean cloth and allow to air dry. Dwell 1–2 minutes."
+    ],
+    "products": [
+      "POG (Paint Oil Grease remover)",
+      "amyl acetate",
+      "NSD (Neutral Synthetic Detergent)",
+      "acetic acid (diluted 1:10)"
+    ],
+    "temperature": "warm for rinsing — warm water helps emulsify residual oil; use solvent phase first",
+    "warnings": [
+      "Rubbing instead of blotting — spreads the stain",
+      "Not testing in an inconspicuous area first",
+      "Using too aggressive a chemical without checking surface compatibility"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Sprinkle baking soda or cornstarch on the stain. Wait 5 minutes.",
+      "2. Brush off the powder with a clean white cloth.",
+      "3. Put a drop of Dawn dish soap on the stain. Blot it in.",
+      "4. Let it sit for 2–3 minutes. Rinse with cold water.",
+      "5. Repeat if needed. Air dry — don't use a dryer until the stain is gone."
+    ],
+    "products": [
+      "Dawn dish soap",
+      "baking soda or cornstarch"
+    ],
+    "whenToStop": "Try a dry cleaning solvent (Carbona Stain Devil #5 or Goo Gone). If the stain survives two rounds, a professional cleaner can use concentrated agents and specialized equipment.",
+    "warnings": [
+      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
+      "Never add water to an oil stain first — water and oil don't mix, and you'll spread it.",
+      "Avoid heat until the stain is completely gone."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Apply heat before oil is removed — polymerizes petroleum permanently into fiber",
+      "Add water to a fresh oil stain first — spreads it before any treatment can work"
+    ],
+    "fiberSensitivities": [
+      "Cotton tolerates most agents including bleach on whites. For colored cotton, test peroxide first. High heat can set petroleum stains permanently."
+    ]
+  },
+  "escalation": {
+    "when": "Motor oil stain remains after full solvent protocol — likely old or polymerized by heat",
+    "whatToTell": "Motor oil stain on cotton, petroleum-based. Treated at home with dish soap. Please use professional dry-side solvent protocol with POG.",
+    "specialistType": "dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is the stain fresh or has it been sitting and drying?",
+      "Has the garment been through the dryer?",
+      "What type of oil — clean motor oil, dirty used oil, or transmission fluid?",
+      "Is the cotton white or colored?"
+    ],
+    "modifierNotes": "Dirty used motor oil contains carbon black and combustion byproducts — harder to remove than clean oil. Dryer exposure polymerizes the oil and makes removal very difficult. On colored cotton, test all solvents on a hidden seam first."
+  },
+  "difficulty": 3,
+  "timeEstimate": "15–25 min",
+  "lastValidated": "2026-03-23"
+}

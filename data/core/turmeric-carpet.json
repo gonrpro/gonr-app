@@ -1,0 +1,81 @@
+{
+  "id": "turmeric-carpet",
+  "title": "Turmeric / Curry on Carpet",
+  "stainFamily": "tannin",
+  "surface": "carpet",
+  "sector": "home",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Tannins are polyphenolic compounds that bond to fibers via hydrogen bonding to hydroxyl groups. On carpet, tannins oxidize over time, darkening the stain and making it harder to remove. Curcumin (turmeric's active pigment) is a diketo-enol compound with a highly conjugated chromophore that is particularly resistant to oxidative bleaching. Oxidizing agents (H₂O₂) attack the chromophore, rendering it colorless. Acidic rinse (acetic acid) prevents re-oxidation. The oil/waxy component of curry must be removed first with a dry-side solvent before wet-side treatment can reach the color.",
+  "whyThisWorks": "Tannins are polyphenolic pigments that bond via hydrogen bonding. Hydrogen peroxide oxidizes the chromophore (colored part) of the molecule into colorless compounds. The oil carrier in curry must be removed first with dry-side solvent, or the color treatment cannot penetrate.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Spray or sponge VDS through the stain. Blot from back side into white absorbent. Ventilate. This removes any waxy or oily component of the curry. Dwell 1–2 minutes.",
+      "2. Apply Tannin Formula. For old curry/turmeric stains, allow up to 15 min dwell. Watch color fade. Dwell 5–10 minutes.",
+      "3. Apply diluted acetic acid (1:1 dilute) to stop the oxidation and prevent color rebound. Dwell 2 minutes.",
+      "4. Flush with cool water until cloth shows no residue color. Gentle pressure only. Dwell 1–2 minutes."
+    ],
+    "products": [
+      "Tannin Formula",
+      "NSD (Neutral Synthetic Detergent)",
+      "H₂O₂ 6%",
+      "acetic acid"
+    ],
+    "temperature": "cold/cool — hot water sets tannin stains and accelerates pigment bonding",
+    "warnings": [
+      "Using hot water on protein stains — heat permanently sets the protein",
+      "Rubbing the stain instead of blotting — friction drives the stain deeper and damages fibers",
+      "Not testing chemicals on a hidden area first — dyes can bleed or bleach unexpectedly"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Blot up excess. Apply baking soda paste (baking soda + a little water). Wait 5 minutes.",
+      "2. Flush the area with cool water. Blot dry.",
+      "3. Apply hydrogen peroxide 3% + dish soap solution. Wait 3–5 minutes.",
+      "4. Blot. If stain remains, repeat. Rinse thoroughly. Blot dry."
+    ],
+    "products": [
+      "hydrogen peroxide 3%",
+      "Dawn dish soap",
+      "baking soda",
+      "OxiClean Wine Stain Remover",
+      "white vinegar"
+    ],
+    "whenToStop": "If the stain persists after these steps, move to professional treatment. Curcumin is highly resistant and requires professional chemistry to avoid damaging the surface.",
+    "warnings": [
+      "Always test any solution on a hidden area first.",
+      "Work from the outside of the stain inward to avoid spreading it.",
+      "Use cool or warm water, never hot — heat sets many stains.",
+      "Blot, don't rub — friction damages fibers."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Use hot water — sets stains permanently",
+      "Use ammonia or alkaline cleaners on carpet — can set tannin stains",
+      "Rub instead of blot — drives stain deeper and damages fibers"
+    ],
+    "fiberSensitivities": [
+      "Test all treatments on a hidden area first. Carpet may have specific vulnerabilities depending on fiber type or coating. Avoid over-wetting — excess moisture causes delamination from carpet backing."
+    ]
+  },
+  "escalation": {
+    "when": "Stain does not fully resolve after spotting protocol — some set-in curcumin stains require bleaching or professional dyeing",
+    "whatToTell": "Turmeric/curry stain on carpet, curcumin pigment — very resistant to oxidative treatment. Treated at home with hydrogen peroxide. Please use professional tannin chemistry and oxidizer protocol.",
+    "specialistType": "professional carpet cleaner or textile restoration specialist"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is this fresh or has it been sitting and drying?",
+      "Was this a wet curry sauce or a dry turmeric spice?",
+      "Is the carpet synthetic or natural fiber?",
+      "Has any cleaning attempt already been made?"
+    ],
+    "modifierNotes": "Wet curry sauce has an oil carrier that must be removed first with dry-side solvent. Dry turmeric is almost pure curcumin and bonds very quickly. Fresh stains respond much better. Natural fiber carpets need gentler chemistry."
+  },
+  "difficulty": 5,
+  "timeEstimate": "10–15 min",
+  "lastValidated": "2026-03-23"
+}

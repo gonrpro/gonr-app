@@ -1,0 +1,81 @@
+{
+  "id": "grass-denim",
+  "title": "Grass on Denim",
+  "stainFamily": "tannin",
+  "surface": "denim",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Tannins are polyphenolic plant compounds that bond to fibers through hydrogen bonding and π-stacking interactions with cellulose and protein fibers. Fresh tannin stains are removable with mild detergent. Aged stains oxidize and darken: the brown/green color is caused by oxidation products. Hydrogen peroxide 6% breaks the double bonds in the oxidized tannin molecules, reversing the browning. Sodium hydrosulfite provides a reducing alternative for fibers that cannot tolerate bleaching.",
+  "whyThisWorks": "Grass stains get their color from natural pigments (chlorophyll, carotenoids) that bond to surfaces and darken over time. Denim is thick and tightly woven, so stains sit near the surface longer. An oxygen-based treatment breaks apart the pigment molecules, removing the color rather than just spreading it around.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Tannin Formula and tamp gently. This acidic spotter targets the bonds that grass pigments form with denim. Work from the edge toward the center. Check progress every few minutes. Dwell 5–10 minutes.",
+      "2. Apply H₂O₂ 6% to the stain. Monitor carefully — check every 5 minutes. On colored denim, test an inconspicuous area first. Dwell 5–15 minutes.",
+      "3. Flush with NSD and a mild leveling agent to remove broken-down tannin pigment and any excess oxidizer. Rinse thoroughly. Dwell 2–3 minutes.",
+      "4. Apply diluted acetic acid (1:10) to stop any remaining oxidizer activity and restore the fabric to its natural state. Blot dry and air dry completely. Dwell 1–2 minutes."
+    ],
+    "products": [
+      "Tannin Formula",
+      "H₂O₂ 6%",
+      "NSD (Neutral Synthetic Detergent)",
+      "acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold — hot water accelerates tannin oxidation and sets the color faster",
+    "warnings": [
+      "Using hot water — accelerates oxidation and sets the tannin color faster",
+      "Applying hydrogen peroxide to colored denim without testing — peroxide bleaches color along with the stain",
+      "Oversaturation with peroxide — can cause yellowing on light-colored fabric",
+      "Not rinsing peroxide completely — residual peroxide continues bleaching and weakens fiber"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Blot the stain with a clean white cloth to soak up as much as you can.",
+      "2. Apply the cleaning solution (1 tbsp Dawn + 1 cup hydrogen peroxide 3%) and let it sit for 5–10 minutes.",
+      "3. Blot with a clean white cloth. Repeat until the color fades.",
+      "4. Rinse with cold water to remove all cleaning solution.",
+      "5. Air dry — don't use a dryer until the stain is gone."
+    ],
+    "products": [
+      "hydrogen peroxide 3%",
+      "Dawn dish soap",
+      "OxiClean Versatile Stain Remover",
+      "cold water"
+    ],
+    "whenToStop": "For set-in tannin stains, mix baking soda with a little hydrogen peroxide to make a paste, apply for 15 minutes, then rinse. If stain persists after two rounds, take to a professional.",
+    "warnings": [
+      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
+      "Use a white cloth to avoid transferring dye from a colored cloth.",
+      "Speed matters — fresh tannin stains lift much more easily than dried ones."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Use ammonia, baking soda, or alkaline agents — permanently darken tannin stains",
+      "Apply heat before stain is completely gone — heat sets stains permanently",
+      "Use hot water — accelerates tannin oxidation"
+    ],
+    "fiberSensitivities": [
+      "Cotton and denim tolerate peroxide well. On colored/dark denim: always test H₂O₂ on a hidden seam first — peroxide can bleach the indigo dye."
+    ]
+  },
+  "escalation": {
+    "when": "Tannin has cross-linked with the fiber polymer after two professional-grade treatments",
+    "whatToTell": "Grass stain on denim, tannin-based. Treated at home with hydrogen peroxide and dish soap. Please use professional tannin formula and oxidizer protocol.",
+    "specialistType": "wet cleaner or dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is the stain fresh or has it been sitting and drying?",
+      "Has the denim been through the dryer since the stain occurred?",
+      "Is this dark/indigo denim or lighter washed denim?",
+      "Does the stain also have a mud component?"
+    ],
+    "modifierNotes": "Dryer exposure before treatment sets the stain significantly. Dark/indigo denim is vulnerable to peroxide bleaching — always test first. Mud mixed with grass adds a clay/soil component that should be dried and brushed off first."
+  },
+  "difficulty": 5,
+  "timeEstimate": "10–20 minutes",
+  "lastValidated": "2026-03-23"
+}

@@ -1,0 +1,80 @@
+{
+  "id": "mud-carpet",
+  "title": "Mud on Carpet",
+  "stainFamily": "combo",
+  "surface": "carpet",
+  "sector": "home",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Combination stains contain protein, fat, and tannin or mineral components. Mud contains organic material (plant matter, tannins), clay/mineral particles, and sometimes protein components. Each component requires different chemistry: protein needs detergent, fat needs solvent, tannin needs peroxide, minerals need acid. Standard approach: let mud dry completely first (wet scrubbing drives particles deeper), then detergent, then solvent, then tannin treatment.",
+  "whyThisWorks": "This combination stain contains multiple components — organic pigments, clay, and tannins — that each need separate treatment. Mud soaks through carpet into the padding below. Surface cleaning won't reach it — the stain hides underneath and wicks back up as the material dries. Dwell time matters more than scrubbing force.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply NSD and work gently into the stain. This neutral detergent targets the protein component and begins emulsifying surface oils. Blot thoroughly between passes. Dwell 5 minutes.",
+      "2. Apply POG or VDS to extract the oil and grease component of the stain. Blot with clean absorbent cloth. This targets what the NSD couldn't fully emulsify. Dwell 5 minutes.",
+      "3. If browning or color remains, apply Tannin Formula to target the tannin component. This addresses the plant-based pigments that give the stain its color. Tamp gently. Dwell 5–10 minutes.",
+      "4. Apply diluted acetic acid (1:10) to neutralize all residual chemistry and restore the fabric. Blot dry. Dwell 1–2 minutes."
+    ],
+    "products": [
+      "NSD (Neutral Synthetic Detergent)",
+      "POG (Paint-Oil-Grease remover)",
+      "Tannin Formula",
+      "acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold — hot water can set protein component permanently",
+    "warnings": [
+      "Applying all treatments simultaneously — creates a chemical slurry that's harder to remove",
+      "Using hot water early — can set the protein component permanently",
+      "Not rinsing completely between treatments — old chemistry interferes with new treatment",
+      "Over-agitating the stain — spreads each component deeper into the fiber"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Let mud dry completely before brushing off — wet scrubbing drives particles deeper.",
+      "2. Once dry, brush or vacuum off the loose dry material.",
+      "3. Mix dish soap into cold water. Blot the solution onto the stain.",
+      "4. Let it sit for 5–10 minutes. Blot with a clean white cloth.",
+      "5. Blot with a cloth dampened with plain water to rinse. Place a stack of paper towels over the spot and weigh them down. Let it dry completely."
+    ],
+    "products": [
+      "Dawn dish soap",
+      "OxiClean Versatile Stain Remover",
+      "cold water"
+    ],
+    "whenToStop": "If the stain is still visible after multiple treatments, it may be permanently set. Consider professional cleaning before attempting further home treatment.",
+    "warnings": [
+      "Always blot — never rub. Rubbing damages carpet fibers and spreads the stain.",
+      "Place paper towels over the wet spot and weigh them down to prevent wicking overnight.",
+      "Let mud dry first — never scrub wet mud, it drives the stain deeper."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Scrub wet mud — drives particles deeper into carpet fibers",
+      "Apply all treatments simultaneously — creates a harder-to-remove chemical slurry",
+      "Use hot water early — can set protein component permanently"
+    ],
+    "fiberSensitivities": [
+      "Combination stains on delicate fibers require careful chemistry sequencing. Protein fibers (silk, wool) need shorter dwell times and milder concentrations for each treatment."
+    ]
+  },
+  "escalation": {
+    "when": "Sequential treating fails, or stain components have cross-linked together",
+    "whatToTell": "Mud stain on carpet, combination of organic pigment, clay, and tannins. Treated at home with dish soap. Please use multi-step sequential protocol.",
+    "specialistType": "professional carpet cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Was the mud tracked in from outdoors (clay-heavy) or from a garden/potting soil?",
+      "Is the stain fresh or has it dried?",
+      "Is the carpet synthetic or wool/natural fiber?",
+      "Was there grass mixed with the mud?"
+    ],
+    "modifierNotes": "Clay-heavy mud is more tenacious and may need an acid mineral rinse step. Garden/potting soil often has a higher organic content. Grass mixed with mud adds a tannin/chlorophyll component. Natural fiber carpets require gentler chemistry."
+  },
+  "difficulty": 3,
+  "timeEstimate": "15–30 minutes",
+  "lastValidated": "2026-03-23"
+}

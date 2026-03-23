@@ -1,0 +1,78 @@
+{
+  "id": "ink-silk",
+  "title": "Ink on Silk",
+  "stainFamily": "dye",
+  "surface": "silk",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Classification: Dye (synthetic colorant). Ballpoint ink contains dye (Crystal Violet or eosin) dissolved in an oil-based vehicle (phenoxyethanol, benzyl alcohol) with resin binder. The resin anchors dye to fiber at a molecular level. Gel pen ink uses suspended pigment particles. Synthetic dyes bond to silk (protein fiber) via ionic bonds, covalent bonds, or physical entrapment. Treatment: gentle solvent (VDS) to dissolve dye carrier, followed by sodium hydrosulfite (reducing agent safe for protein fibers) — oxidizing agents must not be used on silk.",
+  "whyThisWorks": "Ink is a dye in an oil-based carrier designed to permanently mark surfaces. Silk is a delicate protein fiber — ink pigments bond tightly to its structure. Heat or harsh chemicals will set the stain permanently and damage the fiber. Cold water and mild treatment prevent heat-setting.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply VDS carefully. On protein fibers like silk, avoid aggressive tamping. VDS dissolves dye pigments without attacking the fiber. Blot gently with clean cloth. Dwell 5–10 minutes.",
+      "2. Apply sodium hydrosulfite to reduce the remaining dye color. This is safer than oxidizing agents on silk. Monitor closely and flush as soon as the color lifts. Dwell 5 minutes.",
+      "3. Flush with NSD to remove all chemical residue. Follow with a fiber conditioner rinse to restore hand and sheen. Air dry flat. Dwell 3–5 minutes."
+    ],
+    "products": [
+      "NSD (Neutral Synthetic Detergent)",
+      "sodium hydrosulfite"
+    ],
+    "temperature": "cold — heat damages silk fiber and sets protein stains permanently",
+    "warnings": [
+      "Using enzyme stain removers containing protease on silk — digests the protein fiber",
+      "Using OxiClean or oxygen bleach — too alkaline for protein fibers",
+      "Using hot water — causes felting and setting",
+      "Using chlorine bleach — destroys silk fiber"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Dab the stain with a cloth dipped in rubbing alcohol (isopropyl 70%).",
+      "2. Work from the outside edge toward the center. Swap to a clean part of the cloth often.",
+      "3. Keep dabbing until no more color transfers to the cloth.",
+      "4. Rinse gently with cold water.",
+      "5. Lay flat on a towel to air dry — no heat, no wringing."
+    ],
+    "products": [
+      "rubbing alcohol (isopropyl 70%)",
+      "Woolite Delicates"
+    ],
+    "whenToStop": "If the stain persists after two treatment attempts, take it to a professional. Silk is too delicate to risk aggressive home treatments.",
+    "warnings": [
+      "Never wring or twist silk — gently press out moisture between towels.",
+      "Test on an inside seam or hidden area first — silk can react unpredictably.",
+      "Never use bleach, enzyme cleaners, or hot water on silk."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Use enzyme stain removers containing protease — digests the protein fiber",
+      "Use OxiClean or oxygen bleach — too alkaline for protein fibers",
+      "Use hot water — causes felting and setting",
+      "Use chlorine bleach — destroys silk fiber",
+      "Wring or aggressively scrub"
+    ],
+    "fiberSensitivities": [
+      "Silk is a protein fiber — enzymes digest it. Safe agents: NSD, mild acetic acid, amyl acetate, sodium hydrosulfite, VDS. Test dyes first. Never wring."
+    ]
+  },
+  "escalation": {
+    "when": "Home treatment does not fully remove the stain after two gentle attempts",
+    "whatToTell": "Ink stain on silk, dye-based. Treated at home with isopropyl alcohol and cold water. Please use enzyme-free chemistry only. Reducing agent preferred over oxidizer.",
+    "specialistType": "silk specialist or wet cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is this ballpoint, gel pen, or marker ink?",
+      "Is the stain fresh or has it been sitting?",
+      "Has the item been ironed or put in a dryer?",
+      "What type of silk — charmeuse, chiffon, habotai, dupioni?"
+    ],
+    "modifierNotes": "Gel pen ink uses pigment particles that may respond differently. Dryer or iron exposure makes removal very difficult. Fresh stains respond much better. Thinner silks like chiffon are more vulnerable to solvent damage — minimize dwell time."
+  },
+  "difficulty": 6,
+  "timeEstimate": "20–30 min",
+  "lastValidated": "2026-03-23"
+}

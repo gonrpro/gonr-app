@@ -1,0 +1,79 @@
+{
+  "id": "blood-mattress",
+  "title": "Blood on Mattress",
+  "stainFamily": "protein",
+  "surface": "mattress",
+  "sector": "home",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Classification: Protein. Blood is primarily hemoglobin protein (oxygen-carrying protein in red blood cells) plus plasma (serum proteins, water, salts). Hemoglobin contains iron (heme group), which gives blood its red color. Fresh blood is liquid and water-soluble; dried blood is a protein network that has cross-linked through oxidation. Protein stains bond to fibers via peptide-to-fiber hydrogen bonds and hydrophobic interactions. Heat denatures the protein, cross-linking it to the substrate and making removal extremely difficult. Treatment: cold water flush to prevent heat-setting, followed by alkaline protease enzyme digestion to hydrolyze peptide bonds.",
+  "whyThisWorks": "Blood contains proteins that bond tightly to surfaces, and heat cooks them in permanently. Cold water is critical because heat permanently sets the protein. The cleaning agents need enough time to reach the depth the stain reached.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Protein Formula to the stain and tamp gently with a spotting brush. This digestant breaks down blood proteins. Work from the edge toward the center. Use reduced dwell time (3 minutes) on wool or silk. Dwell 5–10 minutes.",
+      "2. Apply NSD and work gently. This neutral detergent removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray. Dwell 3–5 minutes.",
+      "3. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue and restore the fabric's natural state. Blot dry with clean absorbent cloth. Dwell 1–2 minutes."
+    ],
+    "products": [
+      "Protein Formula",
+      "NSD (Neutral Synthetic Detergent)",
+      "acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold — hot water immediately sets hemoglobin protein through irreversible denaturation",
+    "warnings": [
+      "Using hot water immediately — sets hemoglobin protein permanently through irreversible denaturation",
+      "Soaking or saturating the mattress — mattress foam cannot dry completely, leading to mold and structural damage",
+      "Using only soap without enzymes — soap does not break protein bonds",
+      "Scrubbing instead of blotting — spreads the stain and drives liquid deeper into batting"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Rinse with cold water right away. Blot with a clean white cloth — don't rub.",
+      "2. Mix a small squirt of dish soap into cold water. Blot the solution onto the stain.",
+      "3. Let it sit for 5–10 minutes. Don't use any heat.",
+      "4. Blot with a clean white cloth until the stain fades.",
+      "5. Blot with a cloth dampened with plain water and let it air dry with good airflow — a fan nearby helps."
+    ],
+    "products": [
+      "Dawn dish soap",
+      "cold water",
+      "white vinegar",
+      "Nature's Miracle (enzyme-based)"
+    ],
+    "whenToStop": "Try an enzyme presoak (Nature's Miracle or similar) — apply and let it soak for 30–60 minutes. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment.",
+    "warnings": [
+      "Check the care tag before cleaning: W = water-safe, S = solvent only, WS = either.",
+      "Avoid over-wetting — excess moisture soaks into cushion filling and causes mildew.",
+      "Never use hot water on a protein stain — heat permanently sets it."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Use hot water — sets hemoglobin protein permanently",
+      "Soak or saturate the mattress — foam cannot dry completely, leads to mold",
+      "Scrub instead of blot — drives liquid deeper into batting"
+    ],
+    "fiberSensitivities": [
+      "On mattress: test all agents in an inconspicuous area first. Monitor for color change, surface dulling, or texture damage during treatment."
+    ]
+  },
+  "escalation": {
+    "when": "Stain has penetrated deep into mattress batting, or has been set by prior heat exposure",
+    "whatToTell": "Blood stain on mattress, unknown age, cold water and enzyme treatment applied. Possible deep penetration into batting. Steam extraction on surface only — do NOT fully saturate.",
+    "specialistType": "upholstery or mattress cleaning specialist"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is the stain fresh or has it had time to dry?",
+      "Has hot water or a heated appliance been applied to the stain already?",
+      "How large is the stained area — spot or soaked-through?",
+      "What type of mattress — foam, innerspring, pillow-top?"
+    ],
+    "modifierNotes": "Fresh blood is much easier to remove. Prior heat exposure drastically reduces chance of full removal. Large saturated areas may require professional steam extraction. Foam mattresses cannot be over-wetted — restrict treatment to surface only."
+  },
+  "difficulty": 4,
+  "timeEstimate": "10–20 min",
+  "lastValidated": "2026-03-23"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "tomato-sauce-carpet",
+  "title": "Tomato Sauce on Carpet",
+  "stainFamily": "combo",
+  "surface": "carpet",
+  "sector": "home",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Classification: Combination. Tomato sauce contains lycopene, a carotenoid pigment (same family as beta-carotene in carrots) that is fat-soluble and water-insoluble. It clings tenaciously to synthetic carpet fibers through lipophilic bonding. The tomato base is acidic (pH 3.5–4.0), which helps initial stain penetration. This stain contains multiple chemical components requiring sequential treatment: oil first, then tannin/color, then oxidizer. Treatment sequence matters — wrong order can set one component while removing another.",
+  "whyThisWorks": "Tomato-based stains contain both plant pigments and oil — the pigment provides the red color while the oil helps it soak in deeper. Tomato sauce soaks through carpet into the padding. Surface cleaning won't reach it. Dwell time matters more than scrubbing force.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply POG to dissolve the oil portion of the tomato sauce stain. Tomato-based stains contain both oil and tannin — the oil must be removed first so the tannin treatment can reach the color underneath. Blot with clean absorbent cloth. Dwell 5–10 minutes.",
+      "2. Apply Tannin Formula to address the color component. Tannin in tomato-based stains creates the red/orange discoloration. Tamp gently and work from edge toward center. Dwell 5–10 minutes.",
+      "3. Apply H₂O₂ 6% to oxidize any remaining tomato sauce pigment. Check progress every few minutes. Test on colored fabrics first. Dwell 5–10 minutes.",
+      "4. Flush with NSD to remove all spotting agent residue and loosened material. Rinse thoroughly with cool water. Dwell 3–5 minutes.",
+      "5. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue. Blot dry with clean absorbent cloth. Dwell 1–2 minutes."
+    ],
+    "products": [
+      "POG (Paint-Oil-Grease remover)",
+      "amyl acetate",
+      "Tannin Formula",
+      "H₂O₂ 6%",
+      "NSD (Neutral Synthetic Detergent)",
+      "acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold — hot water sets any protein component in the sauce and accelerates pigment bonding",
+    "warnings": [
+      "Using hot water immediately — sets any protein component in the sauce and accelerates pigment bonding",
+      "Skipping the lipase/solvent step — fat is the carrier holding the pigment to the fiber",
+      "Using only soap instead of oxidizers — detergent removes fat but doesn't break the carotenoid chromophore",
+      "Not allowing hydrogen peroxide to dwell long enough — oxidation reactions need contact time"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Scrape or wipe away any solid material. Use cold water.",
+      "2. Mix dish soap into cold water. Blot the solution onto the stain.",
+      "3. Let it sit for 5–10 minutes.",
+      "4. Blot with a clean white cloth. Repeat if needed.",
+      "5. Blot with a cloth dampened with plain water to rinse. Place paper towels over the spot and weigh them down. Let it dry completely."
+    ],
+    "products": [
+      "Dawn dish soap",
+      "OxiClean Versatile Stain Remover",
+      "hydrogen peroxide 3%",
+      "cold water"
+    ],
+    "whenToStop": "Try an enzyme presoak followed by oxygen bleach. Apply and let it soak for 30–60 minutes. If the stain survives two rounds, call a professional carpet cleaner with hot-water extraction.",
+    "warnings": [
+      "Always blot — never rub. Rubbing damages carpet fibers and spreads the stain.",
+      "Place paper towels over the wet spot and weigh them down to prevent wicking overnight.",
+      "Always scrape off solid material first — don't smear it around."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Use hot water immediately — sets protein component and accelerates pigment bonding",
+      "Use only soap without oxidizer — won't break the carotenoid chromophore",
+      "Over-wet the carpet — excess moisture causes delamination and browning",
+      "Use chlorine bleach — damages synthetic carpet fibers"
+    ],
+    "fiberSensitivities": [
+      "On synthetic carpet: test all agents in an inconspicuous area first. Monitor for color change, surface dulling, or texture damage during treatment."
+    ]
+  },
+  "escalation": {
+    "when": "Red discoloration persists after full protocol — lycopene may have oxidized into bound byproducts resistant to H₂O₂",
+    "whatToTell": "Tomato sauce stain on carpet, combination of carotenoid pigment and oil. Treated at home with dish soap. Please use professional hot-water extraction with enzyme pre-treatment and oxidative cleaners.",
+    "specialistType": "professional carpet cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is the stain fresh or has it been sitting and drying?",
+      "Was this plain tomato sauce or did it contain meat/oil additives?",
+      "Is the carpet synthetic or natural fiber?",
+      "Has any cleaning attempt already been made?"
+    ],
+    "modifierNotes": "Meat-containing sauce adds a protein component that requires enzyme treatment. Oil-heavy sauce (pesto, vodka sauce) has more lipid component. Older dried stains require longer dwell times. Natural fiber carpets need gentler chemistry."
+  },
+  "difficulty": 5,
+  "timeEstimate": "15–25 min",
+  "lastValidated": "2026-03-23"
+}

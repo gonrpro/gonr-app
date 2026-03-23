@@ -1,0 +1,79 @@
+{
+  "id": "coffee-wool",
+  "title": "Coffee on Wool",
+  "stainFamily": "tannin",
+  "surface": "wool",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Classification: Tannin (polyphenolic). Coffee tannins are polyphenolic compounds that bind to keratin (wool's protein fiber) primarily through hydrogen bonding. The aromatic hydroxyl groups in tannins form multiple hydrogen bonds with the amide groups and peptide backbone of wool fibers. When coffee is applied to wool, tannins immediately begin bonding to the fiber, making time-critical response essential. Over time, tannin oxidizes and polymerizes, shifting from bright (reversible) to brown (resistant). Treatment: acidic tannin formula to break initial hydrogen bonds, followed by sodium hydrosulfite (reducing agent safe for protein fibers).",
+  "whyThisWorks": "Coffee gets its dark color from plant pigments that bond tightly to wool's keratin structure. Heat or harsh chemicals will set the stain permanently and felt the fiber. Sodium hydrosulfite attacks tannin pigments without damaging protein fibers like wool.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Tannin Formula carefully and tamp very gently. On wool, use shorter dwell time and lighter touch. The acidic spotter breaks tannin bonds without attacking the fiber. Monitor closely. Dwell 3–5 minutes.",
+      "2. Apply sodium hydrosulfite solution. This reducing agent attacks tannin pigments without damaging protein fibers like wool — unlike oxidizing agents which can weaken these fabrics. Monitor carefully and flush when the color lifts. Dwell 5–10 minutes.",
+      "3. Flush with NSD to remove all chemical residue and loosened tannin. Use cool water only. On wool, avoid any agitation that could felt the fiber. Dwell 3–5 minutes.",
+      "4. Apply diluted acetic acid (1:10) with fiber conditioner to neutralize and restore the fiber. Follow with a fiber conditioner rinse to restore the hand and sheen that protein fibers lose during treatment. Air dry flat. Dwell 1–2 minutes."
+    ],
+    "products": [
+      "Tannin Formula",
+      "sodium hydrosulfite",
+      "NSD (Neutral Synthetic Detergent)",
+      "acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold — hot water immediately felts wool while simultaneously setting the tannin stain permanently",
+    "warnings": [
+      "Using hot water — felts wool immediately while setting the tannin stain permanently",
+      "Rubbing or agitating wet wool — even gentle rubbing of wet wool causes scale interlock and irreversible felting",
+      "Using regular laundry detergent (alkaline, pH 8–10) — alkalinity damages wool's keratin structure",
+      "Using enzyme stain removers containing protease — digests wool's protein fibers"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Blot gently with a clean white cloth to soak up as much as you can.",
+      "2. Apply Woolite Delicates diluted in cold water and let it sit for 5–10 minutes.",
+      "3. Blot gently with a clean white cloth. Repeat until the color fades.",
+      "4. Rinse gently with cold water to remove all cleaning solution.",
+      "5. Lay flat on a towel to air dry — no heat, no wringing."
+    ],
+    "products": [
+      "Woolite Delicates",
+      "cold water"
+    ],
+    "whenToStop": "If the stain persists after two treatment attempts, take it to a professional. Wool is too delicate to risk aggressive home treatments. For very dark, old, or set-in coffee stains, professional treatment is recommended before home attempts.",
+    "warnings": [
+      "Never wring or twist delicate fabrics — gently press out moisture between towels.",
+      "Use cold water only — hot water felts wool.",
+      "Never use bleach, enzyme cleaners, or hot water on wool."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Use hot water — felts wool and permanently sets tannin stain",
+      "Rub or agitate wet wool — causes irreversible felting",
+      "Use bleach, chlorine, or protease enzymes — destroys or digests wool fiber"
+    ],
+    "fiberSensitivities": [
+      "Wool is a protein fiber — enzymes digest it. Safe agents: NSD, mild acetic acid, hydrogen peroxide (dilute, cool), amyl acetate, sodium hydrosulfite. Protein fiber felts with heat + agitation. Keep cool and gentle at all times."
+    ]
+  },
+  "escalation": {
+    "when": "Stain persists after step 4 and remains visible; do not attempt additional chemical treatment or heat",
+    "whatToTell": "Coffee stain on wool, treated at home with enzyme-free detergent and cold water. Please use enzyme-free chemistry only and avoid all heat. Tannin stain — needs reducing agent approach.",
+    "specialistType": "dry cleaner specializing in wool"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is the stain fresh or has it been sitting and drying?",
+      "Has the wool been wet-agitated or machine-washed since the stain occurred?",
+      "Is this black coffee or coffee with milk/cream?",
+      "What type of wool — merino, cashmere, standard knit, woven?"
+    ],
+    "modifierNotes": "Coffee with milk or cream adds a protein component. Prior machine washing or wet agitation may have partially felted the wool. Finer wools (merino, cashmere) are more vulnerable to agitation damage. Tannins bond to wool within minutes — delays in treatment make removal progressively harder."
+  },
+  "difficulty": 3,
+  "timeEstimate": "10–15 min",
+  "lastValidated": "2026-03-23"
+}

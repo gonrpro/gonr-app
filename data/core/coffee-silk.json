@@ -1,0 +1,81 @@
+{
+  "id": "coffee-silk",
+  "title": "Coffee on Silk",
+  "stainFamily": "tannin",
+  "surface": "silk",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Classification: Tannin (polyphenolic). Coffee contains melanoidins (Maillard reaction products), chlorogenic acid, and tannin polyphenols that bind to fibers via hydrogen bonding. The brown color comes from conjugated chromophore systems in the melanoidin polymers. On silk: protein fiber — NEVER use protease enzymes, chlorine bleach, or OxiClean (too alkaline). Tannin pigments bond through hydrogen bonding and van der Waals forces. Treatment: acidic tannin formula to break initial hydrogen bonds, followed by sodium hydrosulfite (reducing agent — safe for protein fibers) to cleave chromophore conjugation.",
+  "whyThisWorks": "Coffee pigments bond tightly to silk's protein structure. Heat or harsh chemicals will set the stain permanently and damage the fiber. Cold water and mild treatment prevent heat-setting. Sodium hydrosulfite attacks tannin pigments without damaging protein fibers.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Tannin Formula carefully and tamp very gently. On silk, use shorter dwell time and lighter touch. The acidic spotter breaks tannin bonds without attacking the fiber. Monitor closely. Dwell 3–5 minutes.",
+      "2. Apply sodium hydrosulfite solution. This reducing agent attacks tannin pigments without damaging protein fibers like silk — unlike oxidizing agents which can weaken the fabric. Monitor carefully and flush when the color lifts. Dwell 5–10 minutes.",
+      "3. Flush with NSD to remove all chemical residue and loosened tannin. Use cool water only. Dwell 3–5 minutes.",
+      "4. Apply diluted acetic acid (1:10) with fiber conditioner to neutralize and restore the fiber. Follow with a fiber conditioner rinse to restore the hand and sheen that protein fibers lose during treatment. Air dry flat. Dwell 1–2 minutes."
+    ],
+    "products": [
+      "Tannin Formula",
+      "sodium hydrosulfite",
+      "NSD (Neutral Synthetic Detergent)",
+      "acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold — heat causes felting and sets protein stains; always use cool water on silk",
+    "warnings": [
+      "Using enzyme stain removers containing protease on silk — digests the protein fiber",
+      "Using OxiClean or oxygen bleach — too alkaline for protein fibers",
+      "Using hot water — causes felting and setting",
+      "Using chlorine bleach — destroys silk fiber"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Blot gently with a clean white cloth to soak up as much as you can.",
+      "2. Apply a small amount of Woolite Delicates diluted in cold water and let it sit for 5–10 minutes.",
+      "3. Blot gently with a clean white cloth. Repeat until the color fades.",
+      "4. Rinse gently with cold water to remove all cleaning solution.",
+      "5. Lay flat on a towel to air dry — no heat, no wringing."
+    ],
+    "products": [
+      "Woolite Delicates",
+      "cold water"
+    ],
+    "whenToStop": "If the stain persists after two treatment attempts, take it to a professional. Silk is too delicate to risk aggressive home treatments.",
+    "warnings": [
+      "Never wring or twist silk — gently press out moisture between towels.",
+      "Test on an inside seam or hidden area first.",
+      "Never use bleach, enzyme cleaners, or hot water on silk."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Use enzyme stain removers containing protease — digests the protein fiber",
+      "Use OxiClean or oxygen bleach — too alkaline for protein fibers",
+      "Use hot water — causes felting and setting",
+      "Use chlorine bleach — destroys fiber",
+      "Wring or aggressively scrub"
+    ],
+    "fiberSensitivities": [
+      "Silk is a protein fiber — enzymes digest it. Safe agents: NSD, mild acetic acid, amyl acetate, sodium hydrosulfite. Test dyes first. Never wring. Avoid hydrogen peroxide — can cause yellowing or discoloration on silk."
+    ]
+  },
+  "escalation": {
+    "when": "Home treatment does not fully remove the stain after two gentle attempts",
+    "whatToTell": "Coffee stain on silk, treated at home with enzyme-free detergent and cold water. Please use enzyme-free chemistry only. Tannin stain — needs reducing agent, not oxidizer.",
+    "specialistType": "silk specialist or wet cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is the stain fresh or has it been sitting and drying?",
+      "Has the item been ironed or put in a dryer since the stain occurred?",
+      "Is this black coffee or coffee with milk/cream?",
+      "What type of silk — charmeuse, chiffon, habotai?"
+    ],
+    "modifierNotes": "Coffee with milk or cream adds a protein component that requires additional attention. Dryer or iron exposure makes removal very difficult or impossible. Fresh stains respond much better. Thinner silks like chiffon are more vulnerable to damage."
+  },
+  "difficulty": 4,
+  "timeEstimate": "10–15 min",
+  "lastValidated": "2026-03-23"
+}

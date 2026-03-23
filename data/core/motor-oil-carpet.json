@@ -1,0 +1,78 @@
+{
+  "id": "motor-oil-carpet",
+  "title": "Motor Oil on Carpet",
+  "stainFamily": "dry_side",
+  "surface": "carpet",
+  "sector": "home",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Classification: Oil/Grease (lipid-based). Motor oil is a complex mixture of petroleum hydrocarbons (C15-C50 alkanes, cycloalkanes, aromatics) plus additives (zinc dialkyldithiophosphate anti-wear, dispersants, detergents, viscosity modifiers). Much heavier and more tenacious than cooking oil. Contains carbon black particulate from combustion. Oil stains penetrate fiber structure through capillary action and hydrophobic affinity. Triglycerides and fatty acids resist water-based cleaning. Treatment: dry-side solvent (POG) to dissolve lipid phase, followed by surfactant emulsification to remove residual oil.",
+  "whyThisWorks": "Automotive fluids are petroleum-based oils that soak in deep and resist water-based cleaners. Motor oil soaks through carpet into the padding. Oil repels water — you need something that breaks down the oil where it's hiding. Dwell time matters more than scrubbing force.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply POG directly to the oil stain. POG is a volatile dry solvent with strong affinity for lipids — it dissolves oil droplets on contact. Tamp gently and blot with absorbent cloth. Dwell 5–10 minutes.",
+      "2. If POG plateaus, apply amyl acetate for stronger solvent action. Amyl acetate is especially effective on older or polymerized oil stains. Blot with clean absorbent cloth between applications. Never use on acetate fabrics. Dwell 3–5 minutes.",
+      "3. Apply NSD to emulsify any remaining oil micro-droplets and remove solvent residue. The detergent surrounds oil particles and allows them to be flushed away. Rinse thoroughly with cool water. Dwell 5 minutes.",
+      "4. Apply diluted acetic acid (1:10) to restore fiber to its natural state. Blot dry with clean cloth and allow to air dry. Dwell 1–2 minutes."
+    ],
+    "products": [
+      "POG (Paint Oil Grease remover)",
+      "amyl acetate",
+      "NSD (Neutral Synthetic Detergent)",
+      "acetic acid (diluted 1:10)"
+    ],
+    "temperature": "warm for rinsing — warm water helps emulsify residual oil; solvent phase first",
+    "warnings": [
+      "Rubbing instead of blotting — spreads the stain",
+      "Not testing in an inconspicuous area first",
+      "Using too aggressive a chemical without checking surface compatibility"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Sprinkle baking soda or cornstarch on the stain. Wait 5 minutes.",
+      "2. Brush off the powder with a clean white cloth.",
+      "3. Put a drop of Dawn dish soap on the stain. Blot it in.",
+      "4. Let it sit for 2–3 minutes. Blot with a cloth dampened with plain water to rinse.",
+      "5. Repeat if needed. Place paper towels over the spot and weigh them down. Let it dry completely."
+    ],
+    "products": [
+      "Dawn dish soap",
+      "baking soda or cornstarch"
+    ],
+    "whenToStop": "Try a dry cleaning solvent (Carbona Stain Devil #5 or Goo Gone). If the stain survives two rounds, a professional carpet cleaner with hot-water extraction can often finish the job.",
+    "warnings": [
+      "Always blot — never rub. Rubbing damages carpet fibers and spreads the stain.",
+      "Place paper towels over the wet spot and weigh them down to prevent wicking overnight.",
+      "Never add water to an oil stain first — water and oil don't mix, and you'll spread it."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Apply heat before oil is removed — polymerizes petroleum into the fiber",
+      "Over-wet the carpet — excess moisture causes delamination and browning from carpet backing",
+      "Rub instead of blot — damages fibers and spreads the stain"
+    ],
+    "fiberSensitivities": [
+      "Synthetic carpet tolerates most agents. Test bleach on colored carpet first. Avoid over-wetting — excess moisture causes delamination and browning from carpet backing. Polypropylene (olefin) carpet: some strong solvents can melt olefin fibers — test on a hidden area first."
+    ]
+  },
+  "escalation": {
+    "when": "Motor oil stain remains after full solvent protocol, or stain covers a large area with deep saturation",
+    "whatToTell": "Motor oil stain on carpet, petroleum-based. Treated at home with dish soap. Please use professional solvent extraction with hot-water rinse.",
+    "specialistType": "professional carpet cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is the stain fresh or has it been sitting and drying?",
+      "How large is the affected area?",
+      "Is this synthetic or natural fiber carpet?",
+      "What color is the carpet — light, dark, or patterned?"
+    ],
+    "modifierNotes": "Large saturated areas may require professional hot-water extraction. Old or dried motor oil is more tenacious than fresh. Natural fiber carpets (wool, sisal) require gentler chemistry — test all solvents first. Light-colored carpets show residual staining more."
+  },
+  "difficulty": 4,
+  "timeEstimate": "15–25 min",
+  "lastValidated": "2026-03-23"
+}

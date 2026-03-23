@@ -1,0 +1,84 @@
+{
+  "id": "tomato-sauce-cotton",
+  "title": "Tomato Sauce on Cotton",
+  "stainFamily": "combo",
+  "surface": "cotton",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Combination stains contain protein, fat, and tannin components. Each component requires different chemistry: protein needs detergent, fat needs solvent, tannin needs peroxide, minerals need acid. Standard approach: solvent first (removes oil/fat carrier), then tannin formula (color), then H₂O₂ (residual pigment). Cotton (cellulose fiber) tolerates most agents well.",
+  "whyThisWorks": "Tomato-based stains contain both plant pigments and oil — the pigment provides the red color while the oil helps it soak in deeper. Cotton absorbs quickly and holds stains deep in the weave. The right cleaning agent breaks the stain's bond to the surface so it can be rinsed away cleanly.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply POG to dissolve the oil portion of the tomato sauce stain. The oil must be removed first so the tannin treatment can reach the color underneath. Blot with clean absorbent cloth. Dwell 5–10 minutes.",
+      "2. Apply Tannin Formula to address the color component. Tannin in tomato-based stains creates the red/orange discoloration. Tamp gently and work from edge toward center. Dwell 5–10 minutes.",
+      "3. Apply H₂O₂ 6% to oxidize any remaining tomato sauce pigment. Check progress every few minutes. Test on colored fabrics first. Dwell 5–10 minutes.",
+      "4. Flush with NSD to remove all spotting agent residue. Rinse thoroughly with cool water. Dwell 3–5 minutes.",
+      "5. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue. Blot dry with clean absorbent cloth. Dwell 1–2 minutes."
+    ],
+    "products": [
+      "POG (Paint-Oil-Grease remover)",
+      "amyl acetate",
+      "Tannin Formula",
+      "H₂O₂ 6%",
+      "NSD (Neutral Synthetic Detergent)",
+      "acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold — hot water can set any protein component permanently",
+    "warnings": [
+      "Applying all treatments simultaneously — creates a chemical slurry that's harder to remove",
+      "Using hot water early — can set the protein component permanently",
+      "Not rinsing completely between treatments — old chemistry interferes with new treatment",
+      "Over-agitating the stain — spreads each component deeper into the fiber"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Scrape or wipe away any solid material. Use cold water.",
+      "2. Mix dish soap into cold water. Blot the solution onto the stain.",
+      "3. Let it sit for 5–10 minutes.",
+      "4. Blot with a clean white cloth. Repeat if needed.",
+      "5. Rinse with cold water. Air dry — don't use a dryer until the stain is gone."
+    ],
+    "products": [
+      "Dawn dish soap",
+      "OxiClean Versatile Stain Remover",
+      "hydrogen peroxide 3%",
+      "white vinegar"
+    ],
+    "whenToStop": "If the stain is still visible after multiple treatments, it may be permanently set. For garments you care about, consider professional cleaning before attempting further home treatment.",
+    "warnings": [
+      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
+      "Always scrape off solid material first — don't smear it around.",
+      "Avoid heat until the stain is completely gone."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Apply all treatments simultaneously — creates a chemical slurry",
+      "Use hot water early — can set protein component permanently",
+      "Skip rinsing completely between treatment steps"
+    ],
+    "fiberSensitivities": [
+      "Combination stains on delicate fibers require careful chemistry sequencing. Cotton tolerates most agents. For colored cotton, test H₂O₂ on a hidden seam before use."
+    ]
+  },
+  "escalation": {
+    "when": "Sequential treating fails, or stain components have cross-linked together",
+    "whatToTell": "Tomato sauce stain on cotton, combination of oil and tannin pigment. Treated at home with dish soap. Age unknown. Please use sequential solvent, tannin formula, and oxidizer treatment.",
+    "specialistType": "wet cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is the stain fresh or dried?",
+      "Was this plain tomato sauce or did it contain meat/cream?",
+      "Has the garment been through the dryer?",
+      "Is the cotton white or colored?"
+    ],
+    "modifierNotes": "Meat-containing sauce adds protein. Cream-based sauces add fat. Dryer exposure bakes pigment into the fiber. On colored cotton, test H₂O₂ on a hidden seam first."
+  },
+  "difficulty": 5,
+  "timeEstimate": "15–30 minutes",
+  "lastValidated": "2026-03-23"
+}

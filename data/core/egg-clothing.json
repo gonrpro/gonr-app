@@ -1,0 +1,78 @@
+{
+  "id": "egg-clothing",
+  "title": "Egg on Clothing",
+  "stainFamily": "protein",
+  "surface": "clothing",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Classification: Protein. Egg stains contain albumin protein (egg white) and lecithin fat (egg yolk), plus sulfur compounds. Albumin is a globular protein held together by peptide bonds and hydrogen bonding. When exposed to heat above 60°C, albumin denatures and cross-links into an insoluble cooked protein structure — literally cooking onto the fabric like frying an egg in a pan. Protein stains bond to fibers via peptide-to-fiber hydrogen bonds and hydrophobic interactions. Treatment: cold water flush to prevent heat-setting, followed by alkaline protease enzyme digestion to hydrolyze peptide bonds.",
+  "whyThisWorks": "Egg is a protein that hardens and bonds when exposed to heat. Cold water prevents the protein from setting permanently; enzyme-based cleaners break the protein down so it rinses clean.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Protein Formula to the stain and tamp gently with a spotting brush. This digestant breaks down egg proteins. Work from the edge toward the center. On wool or silk, use reduced dwell time (3 minutes) to protect the fiber. Dwell 5–10 minutes.",
+      "2. Apply NSD and work gently. This neutral detergent removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray. Dwell 3–5 minutes.",
+      "3. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue and restore the fabric's natural state. Blot dry with clean absorbent cloth. Dwell 1–2 minutes."
+    ],
+    "products": [
+      "Protein Formula",
+      "NSD (Neutral Synthetic Detergent)",
+      "acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold — applying heat before chemical treatment denatures protein and cross-links it to clothing permanently",
+    "warnings": [
+      "Applying heat before chemical treatment — heat denatures protein and cross-links it to clothing permanently",
+      "Using tannin formula on protein — wrong chemistry, wastes time and can set the stain",
+      "Not flushing between enzyme and bleach steps — enzyme residue reduces bleach effectiveness",
+      "Rushing the enzyme dwell time — protease needs 10+ minutes for full peptide hydrolysis"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Rinse with cold water right away. Blot with a clean white cloth — don't rub.",
+      "2. Mix a small squirt of dish soap into cold water. Blot the solution onto the stain.",
+      "3. Let it sit for 5–10 minutes. Don't use any heat.",
+      "4. Blot with a clean white cloth until the stain fades.",
+      "5. Rinse with cold water and air dry — don't use a dryer until the stain is gone."
+    ],
+    "products": [
+      "Dawn dish soap",
+      "OxiClean Versatile Stain Remover",
+      "Nature's Miracle",
+      "cold water"
+    ],
+    "whenToStop": "Try an enzyme presoak (Nature's Miracle or OxiClean Versatile) — apply and let it soak for 30–60 minutes. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment.",
+    "warnings": [
+      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
+      "Never use hot water on a protein stain — heat permanently sets it.",
+      "Never use the dryer until the stain is completely gone."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Apply heat before chemical treatment — denatures protein and cross-links it permanently",
+      "Use tannin formula on protein — wrong chemistry and can set the stain"
+    ],
+    "fiberSensitivities": [
+      "On clothing: test all agents in an inconspicuous area first. Monitor for color change, surface dulling, or texture damage during treatment. Wool and silk require enzyme-free chemistry — protease enzymes digest protein fibers."
+    ]
+  },
+  "escalation": {
+    "when": "Stain persists after one complete wash cycle and two rounds of enzyme treatment, or stain has been heat-dried",
+    "whatToTell": "Egg stain on clothing, protein-based. Treated at home with dish soap and cold water. Stain may have been heat-set. Please advise on enzyme-based recovery options.",
+    "specialistType": "wet cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is the stain fresh or has it dried?",
+      "Has the garment been through the dryer or exposed to heat?",
+      "What type of fabric — cotton, wool, silk, synthetic?",
+      "Is this egg white, egg yolk, or whole egg?"
+    ],
+    "modifierNotes": "Egg yolk has a fat component (lecithin) in addition to protein — requires an extra solvent step. Heat exposure before treatment makes removal very difficult. Fresh stains respond significantly better. Wool and silk require enzyme-free chemistry."
+  },
+  "difficulty": 3,
+  "timeEstimate": "10–20 min",
+  "lastValidated": "2026-03-23"
+}

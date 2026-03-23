@@ -1,0 +1,86 @@
+{
+  "id": "chocolate-cotton",
+  "title": "Chocolate on Cotton",
+  "stainFamily": "combo",
+  "surface": "cotton",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Combination stains contain protein, fat, and tannin components. Each component requires different chemistry: protein needs detergent, fat needs solvent, tannin needs peroxide, minerals need acid. Standard approach: detergent first (targets protein and some fat), then solvent (completes fat removal), then peroxide (addresses tannin browning). On cotton (cellulose fiber) most agents are tolerated well.",
+  "whyThisWorks": "Chocolate contains three stain types at once — milk solids, dark cocoa pigment, and cocoa butter oil — each needing different treatment. Cotton absorbs quickly and holds stains deep in the weave. Sequential treatment of fat, protein, then tannin is the correct order.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Tannin Formula to address the color component. Tamp gently. Dwell 5–10 minutes.",
+      "2. Apply POG to dissolve the oil and fat portion of the chocolate stain. If POG alone doesn't resolve the oily residue, switch to amyl acetate. Never use amyl acetate on acetate fabrics. Blot with clean absorbent cloth. Dwell 5–10 minutes.",
+      "3. Apply Protein Formula to the chocolate stain and tamp gently with a spotting brush. Protein must be treated — heat and oxidizers permanently set protein stains. Work from the edge toward the center. Dwell 5–10 minutes.",
+      "4. Apply H₂O₂ 6% to oxidize any remaining chocolate color. Check progress every few minutes. Test on colored fabrics first. Dwell 5–10 minutes.",
+      "5. Flush with NSD to remove all spotting agent residue. Rinse thoroughly with cool water. Dwell 3–5 minutes.",
+      "6. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue. Blot dry with clean absorbent cloth. Dwell 1–2 minutes."
+    ],
+    "products": [
+      "Tannin Formula",
+      "POG (Paint-Oil-Grease remover)",
+      "amyl acetate",
+      "Protein Formula",
+      "H₂O₂ 6%",
+      "NSD (Neutral Synthetic Detergent)",
+      "acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold — using hot water early can set the protein component permanently",
+    "warnings": [
+      "Applying all treatments simultaneously — creates a chemical slurry that's harder to remove",
+      "Using hot water early — can set the protein component permanently",
+      "Not rinsing completely between treatments — old chemistry interferes with new treatment",
+      "Over-agitating the stain — spreads each component deeper into the fiber"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Scrape or wipe away any solid material. Use cold water.",
+      "2. Mix dish soap into cold water. Blot the solution onto the stain.",
+      "3. Let it sit for 5–10 minutes.",
+      "4. Blot with a clean white cloth. Repeat if needed.",
+      "5. Rinse with cold water. Air dry — don't use a dryer until the stain is gone."
+    ],
+    "products": [
+      "Dawn dish soap",
+      "OxiClean Versatile Stain Remover",
+      "hydrogen peroxide 3%",
+      "cold water"
+    ],
+    "whenToStop": "If the stain is still visible after multiple treatments, it may be permanently set. For garments you care about, consider professional cleaning before attempting further home treatment.",
+    "warnings": [
+      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
+      "Always scrape off solid material first — don't smear it around.",
+      "Avoid heat until the stain is completely gone."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Apply all treatments simultaneously — creates a chemical slurry",
+      "Use hot water early — can set the protein component permanently",
+      "Skip rinsing between treatment steps"
+    ],
+    "fiberSensitivities": [
+      "Combination stains on delicate fibers require careful chemistry sequencing. Cotton tolerates most agents. For delicate cotton, test peroxide on a hidden area first."
+    ]
+  },
+  "escalation": {
+    "when": "Sequential treating fails, or stain components appear to have cross-linked together",
+    "whatToTell": "Chocolate on cotton, multi-component stain (protein, fat, tannin). Treated at home with dish soap. Age unknown. Please use sequential enzyme, solvent, and oxidizer treatment.",
+    "specialistType": "wet cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is this milk chocolate, dark chocolate, or white chocolate?",
+      "Is the stain fresh or dried and set?",
+      "Has the garment been through the dryer?",
+      "Is the cotton white or colored?"
+    ],
+    "modifierNotes": "Milk chocolate has more protein. Dark chocolate has more tannin. White chocolate is mostly fat. Dryer exposure before treatment makes removal very difficult. On colored cotton, test H₂O₂ 6% first."
+  },
+  "difficulty": 7,
+  "timeEstimate": "15–30 minutes",
+  "lastValidated": "2026-03-23"
+}
