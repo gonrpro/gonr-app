@@ -1,0 +1,88 @@
+{
+  "id": "red-wine-carpet",
+  "title": "Red Wine on Carpet",
+  "stainFamily": "tannin",
+  "surface": "synthetic carpet (nylon/polyester)",
+  "sector": "home",
+  "source": "verified",
+  "stainChemistry": "Classification: Tannin (polyphenolic). Red wine contains anthocyanin pigments (water-soluble tannins) and proanthocyanidins that bond chemically to carpet fibers through hydrogen bonding. The acidic environment (pH 3–4) enhances staining. Heat or agitation during initial contact drives the tannin deeper into the fiber matrix, making removal exponentially harder. Tannin pigments bond to fibers through hydrogen bonding and van der Waals forces. Over time, tannin oxidizes and polymerizes, shifting from bright (reversible) to brown (resistant). Treatment: acidic tannin formula to break initial hydrogen bonds, followed by oxidizing bleach to cleave chromophore conjugation.",
+  "whyThisWorks": "Red wine soaks through synthetic carpet into the padding below. Surface cleaning alone won't reach it — the stain hides underneath and wicks back up as the material dries. Tannin Formula (acidic) breaks the hydrogen bonds between pigment and carpet fiber. H₂O₂ 6% cleaves the chromophore double bonds. NSD and acetic acid flush and neutralize. Dwell time matters more than scrubbing force — the chemistry needs time to reach the depth the stain reached.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Dwell 5–10 minutes. This acidic spotter targets the bonds that wine, coffee, tea, and fruit juice pigments form with carpet fiber. Work from edge toward center.",
+      "2. Apply H₂O₂ 6% (professional-grade oxidizer) to the stain. Dwell 5–15 minutes, checking every 5 minutes. This oxidizer breaks down the double bonds that make tannin stains brown. Test an inconspicuous area of carpet first.",
+      "3. Flush with NSD (Neutral Synthetic Detergent) with a mild leveling agent. Dwell 2–3 minutes. Removes broken-down tannin pigment and excess oxidizer. Rinse thoroughly.",
+      "4. Apply 28% Acetic acid (diluted 1:10) to stop oxidizer activity and restore the carpet fiber. Dwell 1–2 minutes. Blot dry and allow to air dry completely."
+    ],
+    "products": [
+      "Tannin Formula (acidic tannin spotter)",
+      "H₂O₂ 6% (professional-grade oxidizer)",
+      "NSD (Neutral Synthetic Detergent) with leveling agent",
+      "28% Acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold to ambient — never use hot water immediately on tannin stains in carpet. Heat drives tannin deeper into fiber matrix and accelerates polymerization.",
+    "warnings": [
+      "Using hot water immediately — heat sets tannins permanently into the fiber.",
+      "Rubbing or scrubbing instead of blotting — spreads the stain and drives liquid deeper into the pad.",
+      "Waiting too long before treating — wine sets chemically within 10–15 minutes on synthetic carpet.",
+      "Skipping the acetic acid neutralization — acidic residue can cause yellowing over time.",
+      "Test all agents on an inconspicuous area first — monitor for color change, surface dulling, or texture damage."
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Blot the stain with a clean white cloth to soak up as much as you can. Getting excess out early makes the rest easier.",
+      "2. Mix 1 tbsp dish soap with 1 cup 3% hydrogen peroxide. Apply the solution and let it sit for 5–10 minutes.",
+      "3. Blot with a clean white cloth. Repeat until the color fades.",
+      "4. Blot with a cloth dampened with plain water to rinse — remove all cleaning solution.",
+      "5. Place a stack of paper towels over the spot and weigh them down. Let it dry completely. This prevents the stain from wicking back up from the carpet pad."
+    ],
+    "products": [
+      "Dawn dish soap",
+      "3% hydrogen peroxide",
+      "OxiClean Versatile Stain Remover (for set stains)",
+      "Wine Away Red Wine Stain Remover",
+      "Clean white cloths, paper towels"
+    ],
+    "whenToStop": "Try an OxiClean oxygen bleach soak — follow the product label. Apply and let it soak for 30–60 minutes. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment that outperform any home method.",
+    "warnings": [
+      "Always blot — never rub. Rubbing damages carpet fibers and spreads the stain.",
+      "Place paper towels over the wet spot and weigh them down to prevent wicking overnight.",
+      "Never use hot water on tannin stains in carpet — heat permanently sets the color.",
+      "Test any cleaning solution on an inconspicuous area of carpet first.",
+      "Avoid over-wetting — too much liquid soaks through to the pad and causes wicking."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never use hot water — heat sets tannins permanently into carpet fiber.",
+      "Never rub or scrub — spreads the stain and drives it deeper.",
+      "Never use ammonia or alkaline agents — permanently darkens tannin stains.",
+      "Never mix ammonia with chlorine bleach — produces toxic chloramine gas.",
+      "Never over-wet the carpet — moisture soaks into pad and causes wicking and delamination."
+    ],
+    "fiberSensitivities": [
+      "Synthetic carpet (nylon/polyester) tolerates most agents — test all agents in an inconspicuous area first.",
+      "Monitor for color change, surface dulling, or texture damage during treatment.",
+      "Natural fiber carpet (wool) requires the wool-safe tannin protocol — different chemistry applies."
+    ]
+  },
+  "escalation": {
+    "when": "If wine stain persists after the full protocol, the tannins have cross-linked into the carpet fiber structure. Next option: rent a hot-water extraction machine (Rug Doctor or similar) and use the tannin remover additive pack. If the stain is larger than 12 inches or on a delicate natural fiber carpet, call a professional carpet cleaner who has industrial-grade tannin removers and hot-water extraction equipment.",
+    "whatToTell": "We've treated the red wine on your carpet. Wine darkens with air exposure and sets deeper with time and heat.",
+    "specialistType": "professional carpet cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain — was it treated immediately or has it been sitting?",
+      "Was salt, club soda, or any product applied at time of spill?",
+      "Is this natural fiber carpet (wool) or synthetic (nylon/polyester)?",
+      "How large is the stain and does it appear to have soaked through to the pad?"
+    ],
+    "modifierNotes": "Fresh red wine on synthetic carpet responds best — the sooner the treatment, the higher the success rate. Salt or club soda at spill time is neutral. Natural fiber carpet (wool) requires a completely different protocol — no enzymes, no oxidizing peroxide, use sodium hydrosulfite instead. Stains that have soaked into the pad will wick back up after surface treatment and require extraction equipment."
+  },
+  "difficulty": 6,
+  "timeEstimate": "10–15 min",
+  "lastValidated": "2026-03-23"
+}

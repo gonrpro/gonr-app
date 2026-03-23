@@ -1,0 +1,87 @@
+{
+  "id": "grass-cotton",
+  "title": "Grass on Cotton",
+  "stainFamily": "combo",
+  "surface": "cotton",
+  "sector": "textile",
+  "source": "verified",
+  "stainChemistry": "Classification: Tannin (polyphenolic) — triple-threat composite stain. Grass stains contain: (1) chlorophyll — a fat-soluble green pigment with a porphyrin ring and magnesium center that embeds in cotton cellulose through hydrophobic interaction; (2) plant proteins — which hydrogen-bond to cotton hydroxyl groups; (3) tannins (polyphenols) — which bond to fibers through hydrogen bonding and van der Waals forces. Over time, tannin oxidizes and polymerizes, shifting from bright (reversible) to brown (resistant). Treatment: acidic tannin formula to break initial hydrogen bonds, followed by oxidizing bleach to cleave chromophore conjugation across all three components.",
+  "whyThisWorks": "Grass is a multi-component stain requiring the tannin/peroxide sequence to address all three components. Tannin Formula (acidic) breaks the initial bonds of both tannin and plant protein components. H₂O₂ 6% cleaves the chromophore bonds of chlorophyll and oxidized tannins simultaneously. NSD flushes all broken-down stain material. Cotton tolerates peroxide well. Hot water first is especially damaging — it polymerizes the tannins AND denatures the protein component, locking both in.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Dwell 5–10 minutes. Targets the bonds that the plant pigments, tannins, and proteins form with the cotton fiber. Work from edge toward center.",
+      "2. Apply H₂O₂ 6% (professional-grade oxidizer) to the stain. Dwell 5–15 minutes, checking every 5 minutes. This oxidizer breaks down the chromophore bonds of both chlorophyll and oxidized tannins. On colored fabrics, test an inconspicuous area first.",
+      "3. Flush with NSD (Neutral Synthetic Detergent) with a mild leveling agent. Dwell 2–3 minutes. Removes all broken-down pigment, protein, and excess oxidizer. Rinse thoroughly.",
+      "4. Apply 28% Acetic acid (diluted 1:10) to stop any remaining oxidizer activity and restore the fabric. Dwell 1–2 minutes. Blot dry and allow to air dry completely."
+    ],
+    "products": [
+      "Tannin Formula (acidic tannin spotter)",
+      "H₂O₂ 6% (professional-grade oxidizer)",
+      "NSD (Neutral Synthetic Detergent) with leveling agent",
+      "28% Acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold to ambient — hot water first polymerizes tannins AND denatures the protein component simultaneously, setting both permanently.",
+    "warnings": [
+      "Using hot water first — polymerizes tannins and denatures chlorophyll into a harder-to-remove form.",
+      "Skipping the tannin formula step — soap alone cannot dissolve chlorophyll effectively because it's fat-soluble.",
+      "Using chlorine bleach on colored cotton — removes the grass stain but also removes the fabric dye.",
+      "NEVER use ammonia, baking soda, or alkaline agents — permanently darkens tannin component.",
+      "Applying hydrogen peroxide to colored fabrics without testing."
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Blot the stain with a clean white cloth to soak up as much surface material as possible.",
+      "2. Mix 1 tbsp dish soap with 1 cup 3% hydrogen peroxide. Apply the solution and let it sit for 5–10 minutes.",
+      "3. Blot with a clean white cloth. Repeat until the color fades.",
+      "4. Rinse with cold water to remove all cleaning solution.",
+      "5. Air dry — don't use a dryer until the stain is gone. Heat sets all components permanently."
+    ],
+    "products": [
+      "Dawn dish soap",
+      "3% hydrogen peroxide",
+      "OxiClean Versatile Stain Remover (for set stains — soak 30–60 min)"
+    ],
+    "whenToStop": "Try an OxiClean oxygen bleach soak — apply and let it soak for 30–60 minutes. If the stain survives two rounds of treatment, a professional cleaner can use POG + steam injection + tannin formula simultaneously with professional equipment to attack all three stain components at once.",
+    "warnings": [
+      "Test any cleaning solution on a hidden seam or inside hem first.",
+      "Check for colorfastness before using hydrogen peroxide.",
+      "Avoid heat until the stain is completely gone.",
+      "NEVER use ammonia, baking soda, or alkaline products — permanently darkens tannin component.",
+      "Speed matters — fresh grass stains lift much more easily than dried ones."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never use hot water first — polymerizes tannins and denatures protein component simultaneously.",
+      "Never use ammonia, baking soda, or alkaline agents — permanently darkens tannin component.",
+      "Never use chlorine bleach on colored cotton — removes fabric dye along with the stain.",
+      "Never mix ammonia with chlorine bleach — produces toxic chloramine gas.",
+      "Never put in the dryer before stain is fully gone."
+    ],
+    "fiberSensitivities": [
+      "Cotton (cellulose) tolerates most agents including dilute bleach on whites.",
+      "Colored cotton: test peroxide in a hidden area first — may affect dye.",
+      "The protein fraction of the grass stain responds to cold water treatment first.",
+      "High heat can set both the protein and tannin components simultaneously."
+    ]
+  },
+  "escalation": {
+    "when": "For old, heat-set grass stains, try a paste of OxiClean powder + warm water applied directly for 2 hours before soaking. If that fails, a professional dry cleaner can use POG (for chlorophyll, fat-soluble component) followed by steam injection and professional tannin formula — this combination attacks all three stain components simultaneously with professional equipment.",
+    "whatToTell": "We've treated the grass on your garment. Plant-based stains like this darken with time and air exposure — the sooner treatment starts, the better the result.",
+    "specialistType": "dry cleaner or wet cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain — was it treated immediately or has it been sitting?",
+      "Has the garment been through a dryer since the stain occurred? (sets all three components)",
+      "Is the cotton light/white or heavily dyed?",
+      "Was any product already applied to the stain?"
+    ],
+    "modifierNotes": "Fresh grass on undisturbed cotton responds well to dish soap/peroxide blend. A heat-set stain (dryer) locks in all three components — requires professional POG + tannin formula sequence. A garment run through the dryer with a grass stain has significantly reduced recovery odds. Chlorophyll (fat-soluble) requires the oxidative treatment to break down; soap alone is not enough."
+  },
+  "difficulty": 5,
+  "timeEstimate": "10–15 min",
+  "lastValidated": "2026-03-23"
+}

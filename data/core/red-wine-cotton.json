@@ -1,0 +1,85 @@
+{
+  "id": "red-wine-cotton",
+  "title": "Red Wine on Cotton",
+  "stainFamily": "tannin",
+  "surface": "cotton",
+  "sector": "textile",
+  "source": "verified",
+  "stainChemistry": "Classification: Tannin (polyphenolic). Red wine contains anthocyanin pigments (pH-dependent color: red at acidic, blue at alkaline, colorless when reduced), condensed tannins, and ethanol. Anthocyanins bond strongly to protein and cellulose fibers. The flavylium cation (red form) is the primary staining species. On cotton (cellulose fiber): tannin pigments bond through hydrogen bonding and van der Waals forces. Over time, tannin oxidizes and polymerizes, shifting from bright (reversible) to brown (resistant). Treatment: acidic tannin formula to break initial hydrogen bonds, followed by oxidizing bleach to cleave chromophore conjugation.",
+  "whyThisWorks": "Tannins are polyphenolic plant compounds with chromophore structures (colored chemical bonds). Tannin Formula (acidic) breaks the initial hydrogen bond between pigment and fiber. H₂O₂ 6% (oxidizer) cleaves the double bonds in the anthocyanin chromophore, turning the stain colorless. Cotton (cellulose) tolerates peroxide well. The NSD and acetic acid flush removes broken-down pigment and restores the fiber's pH.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Dwell 5–10 minutes. This acidic spotter targets the bonds that wine, coffee, tea, and fruit juice pigments form with fabric. Work from edge toward center.",
+      "2. Apply H₂O₂ 6% (professional-grade oxidizer) to the stain. Dwell 5–15 minutes, checking every 5 minutes. This oxidizer breaks down the double bonds that make tannin stains brown. On colored fabrics, test an inconspicuous area first.",
+      "3. Flush with NSD (Neutral Synthetic Detergent) with a mild leveling agent. Dwell 2–3 minutes. Removes broken-down tannin pigment and excess oxidizer. The leveling agent helps relax the fiber so trapped pigment can release. Rinse thoroughly.",
+      "4. Apply 28% Acetic acid (diluted 1:10) to stop any remaining oxidizer activity and restore the fabric to its natural state. Dwell 1–2 minutes. Blot dry and allow to air dry completely."
+    ],
+    "products": [
+      "Tannin Formula (acidic tannin spotter)",
+      "H₂O₂ 6% (professional-grade oxidizer)",
+      "NSD (Neutral Synthetic Detergent) with leveling agent",
+      "28% Acetic acid (diluted 1:10)"
+    ],
+    "temperature": "ambient to cool — never use hot water on tannin stains. Heat accelerates tannin oxidation and polymerization, locking the color into the fiber. Warm water (not hot) acceptable for final rinse on cotton.",
+    "warnings": [
+      "Using hot water — accelerates oxidation and sets the tannin color permanently.",
+      "Applying hydrogen peroxide to colored fabrics without testing — peroxide bleaches fabric dye along with the stain.",
+      "Oversaturation with peroxide — can cause yellowing on whites from oxidized cellulose.",
+      "Not rinsing peroxide completely — residual peroxide continues bleaching and weakens fiber.",
+      "NEVER use ammonia, baking soda, or alkaline agents — they permanently darken tannin stains."
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Blot the stain with a clean white cloth to soak up as much as you can. Getting excess out early makes the rest easier to treat.",
+      "2. Mix 1 tbsp dish soap with 1 cup 3% hydrogen peroxide in a spray bottle. Apply the solution and let it sit for 5–10 minutes. The solution needs time to break down the stain's color.",
+      "3. Blot with a clean white cloth. Repeat until the color fades. Each round lifts more stain out of the fabric.",
+      "4. Rinse with cold water to remove all cleaning solution.",
+      "5. Air dry — don't use a dryer until the stain is gone. Heat from a dryer can permanently set any remaining stain."
+    ],
+    "products": [
+      "Dawn dish soap",
+      "3% hydrogen peroxide",
+      "OxiClean Versatile Stain Remover (for set stains)",
+      "Wine Away Red Wine Stain Remover"
+    ],
+    "whenToStop": "Try an OxiClean oxygen bleach soak — follow the product label. Apply and let it soak for 30–60 minutes. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment that outperform any home method.",
+    "warnings": [
+      "Test any cleaning solution on a hidden seam or inside hem first.",
+      "Check for colorfastness before using hydrogen peroxide.",
+      "Avoid heat until the stain is completely gone — heat sets stains permanently.",
+      "NEVER use ammonia, baking soda, or alkaline products on tannin stains — permanently darkens them."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never use hot water — sets tannin color permanently.",
+      "Never use ammonia, baking soda, or any alkaline agent — permanently darkens tannin stains, irreversible even by professionals.",
+      "Never mix ammonia with chlorine bleach — produces toxic chloramine gas.",
+      "Never put in the dryer before stain is fully gone — heat-sets the remaining color permanently."
+    ],
+    "fiberSensitivities": [
+      "Cotton (cellulose) tolerates most agents including dilute bleach on whites.",
+      "Colored cotton: test peroxide in a hidden area first — may bleach fabric dye.",
+      "Heavy peroxide exposure on cotton can cause yellowing from oxidized cellulose."
+    ]
+  },
+  "escalation": {
+    "when": "If home treatment doesn't fully remove the red wine stain from cotton: take the item to a professional dry cleaner and specify the stain type. Professional spotting with concentrated agents and spotting board equipment achieves results home methods cannot match.",
+    "whatToTell": "We've treated the wine on your garment. Wine darkens with air exposure and sets deeper with time and heat.",
+    "specialistType": "dry cleaner or wet cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain — was it treated immediately or has it been sitting?",
+      "Was salt, club soda, or any product applied at the time of the spill?",
+      "Is the cotton light/white or heavily dyed? (affects peroxide safety)",
+      "Has the garment been through a dryer since the stain occurred?"
+    ],
+    "modifierNotes": "Fresh red wine responds well to the dish soap/peroxide DIY blend. A heat-set or dried stain requires a longer Tannin Formula dwell and may need multiple peroxide passes. Salt or club soda applied at spill time is neutral — neither helps nor harms. A garment run through the dryer with the stain present has significantly reduced recovery odds and should go to a professional."
+  },
+  "difficulty": 6,
+  "timeEstimate": "10–15 min",
+  "lastValidated": "2026-03-23"
+}

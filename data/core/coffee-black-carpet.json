@@ -1,0 +1,89 @@
+{
+  "id": "coffee-black-carpet",
+  "title": "Coffee (Black) on Carpet",
+  "stainFamily": "tannin",
+  "surface": "carpet",
+  "sector": "home",
+  "source": "verified",
+  "stainChemistry": "Tannins are polyphenolic plant compounds (from tea, coffee, red wine, fruit juices) that bond to fibers through hydrogen bonding and π-stacking interactions with cellulose and protein fibers. Fresh tannin stains are removable with mild detergent. Aged stains oxidize and darken: the brown color is caused by oxidation products. Hydrogen peroxide 6% breaks the double bonds in the oxidized tannin molecules, reversing the browning. Sodium hydrosulfite provides a reducing alternative for fibers that cannot tolerate bleaching. Black coffee is a pure tannin stain — no fat, no protein components.",
+  "whyThisWorks": "Coffee soaks through carpet into the padding below. Surface cleaning alone won't reach the full stain — it hides underneath and wicks back up as the material dries. Tannin Formula (acidic) breaks the hydrogen bonds between coffee pigment and carpet fiber. H₂O₂ 6% cleaves the chromophore double bonds. Dwell time matters more than scrubbing force — the chemistry needs time to reach the depth the stain reached.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Dwell 5–10 minutes. This acidic spotter targets the bonds that coffee, wine, tea, and fruit juice pigments form with carpet fiber. Work from edge toward center.",
+      "2. Apply H₂O₂ 6% (professional-grade oxidizer) to the stain. Dwell 5–15 minutes, checking every 5 minutes. This oxidizer breaks down the double bonds that make tannin stains brown. Test an inconspicuous area of carpet first.",
+      "3. Flush with NSD (Neutral Synthetic Detergent) with a mild leveling agent. Dwell 2–3 minutes. Removes broken-down tannin pigment and excess oxidizer. Rinse thoroughly.",
+      "4. Apply 28% Acetic acid (diluted 1:10) to stop oxidizer activity and restore the carpet fiber. Dwell 1–2 minutes. Blot dry and allow to air dry completely."
+    ],
+    "products": [
+      "Tannin Formula (acidic tannin spotter)",
+      "H₂O₂ 6% (professional-grade oxidizer)",
+      "NSD (Neutral Synthetic Detergent) with leveling agent",
+      "28% Acetic acid (diluted 1:10)"
+    ],
+    "temperature": "ambient — never use hot water on tannin stains in carpet. Heat accelerates tannin polymerization and permanently sets the brown color.",
+    "warnings": [
+      "Using hot water — accelerates oxidation and sets the tannin color faster.",
+      "Applying hydrogen peroxide to colored carpet without testing — may bleach carpet dye.",
+      "Oversaturation with peroxide — can cause yellowing.",
+      "Not rinsing peroxide completely — residual peroxide continues bleaching.",
+      "NEVER use ammonia or alkaline agents — permanently darkens tannin stains.",
+      "Test all agents on an inconspicuous carpet area first."
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Blot the stain with a clean white cloth to soak up as much as you can.",
+      "2. Mix 1 tbsp Dawn dish soap with 1 cup 3% hydrogen peroxide. Apply the solution and let it sit for 5–10 minutes.",
+      "3. Blot with a clean white cloth. Repeat until the color fades.",
+      "4. Blot with a cloth dampened with plain water to rinse — remove all cleaning solution.",
+      "5. Place a stack of paper towels over the spot and weigh them down. Let it dry completely. This prevents the stain from wicking back up from the carpet pad."
+    ],
+    "products": [
+      "Dawn dish soap",
+      "3% hydrogen peroxide",
+      "OxiClean Versatile Stain Remover (for set stains)",
+      "Folex Carpet Spot Remover",
+      "White vinegar (separate spray bottle for stubborn stains)"
+    ],
+    "whenToStop": "For set-in tannin stains, mix baking soda with a little hydrogen peroxide to make a paste, apply for 15 minutes, then rinse. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment that outperform any home method.",
+    "warnings": [
+      "Always blot — never rub. Rubbing damages carpet fibers and spreads the stain.",
+      "Place paper towels over the wet spot and weigh them down to prevent wicking overnight.",
+      "Never use hot water on tannin stains in carpet — heat permanently sets the color.",
+      "Test any cleaning solution on an inconspicuous area of carpet first.",
+      "Avoid over-wetting — too much liquid soaks through to the pad and causes wicking."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never use hot water — heat sets tannins permanently into carpet fiber.",
+      "Never rub or scrub — spreads the stain and drives it deeper into the pad.",
+      "Never use ammonia or alkaline agents — permanently darkens tannin stains.",
+      "Never mix ammonia with chlorine bleach — produces toxic chloramine gas.",
+      "Never over-wet the carpet — moisture soaks into the pad causing wicking and delamination."
+    ],
+    "fiberSensitivities": [
+      "Synthetic carpet (nylon/polyester) tolerates most cleaning agents.",
+      "Test all agents on an inconspicuous area first — carpet dyes vary in bleach tolerance.",
+      "Avoid over-wetting — excess moisture causes delamination and browning from carpet backing."
+    ]
+  },
+  "escalation": {
+    "when": "If peroxide bleaching reaches a plateau, the tannin has likely cross-linked with the carpet fiber polymer. Try sequential treating: alternate between peroxide and leveling agent. For stains larger than 12 inches or on natural fiber carpet, call a professional carpet cleaner.",
+    "whatToTell": "We've treated the coffee on your carpet. Coffee darkens with air exposure and sets deeper the longer it sits.",
+    "specialistType": "professional carpet cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain — was it treated immediately or has it been sitting?",
+      "Is this black coffee or coffee with cream/sugar? (changes the protocol)",
+      "Is this synthetic carpet (nylon/polyester) or natural fiber (wool)?",
+      "How large is the stain and does it appear to have soaked through to the pad?"
+    ],
+    "modifierNotes": "Black coffee is pure tannin — straightforward. Coffee with cream adds a fat component that needs POG or NSD pre-treatment before tannin formula. Natural fiber carpet (wool) requires the wool-safe reducing agent protocol instead of H₂O₂. Stains that soaked into the pad will wick back up and require extraction equipment."
+  },
+  "difficulty": 2,
+  "timeEstimate": "10–20 minutes",
+  "lastValidated": "2026-03-23"
+}

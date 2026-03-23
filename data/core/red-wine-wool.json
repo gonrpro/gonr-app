@@ -1,574 +1,91 @@
 {
   "id": "red-wine-wool",
-  "version": "5.0",
-  "authored": "2026-03-20",
-  "components": [
-    "tannin",
-    "dye",
-    "sugar"
-  ],
-  "component_order": [
-    "tannin",
-    "dye",
-    "sugar"
-  ],
-  "difficulty": 6,
-  "difficulty_factors": [
-    "Tannin bonds strengthen with time — early treatment is exponentially more effective",
-    "Protein fiber requires strict temperature and pH control — felting risk with any mistake",
-    "Chemical sequencing matters — wrong order can permanently set the stain",
-    "Aged stains undergo oxidative polymerization — increasingly resistant over time"
-  ],
-  "meta": {
-    "stainCanonical": "red-wine",
-    "surfaceCanonical": "wool",
-    "sector": "clothing",
-    "tier": "universal",
-    "riskLevel": "high",
-    "timeEstimate": "10-20 minutes",
-    "stainType": "tannin",
-    "tags": [
-      "tannin",
-      "wool",
-      "clothing"
-    ],
-    "freePreview": false
-  },
-  "diy": {
-    "title": "Red Wine on Wool",
-    "ingredients": [
-      "1 tbsp Dawn dish soap",
-      "White vinegar",
-      "Clean white cloths",
-      "Cold water",
-      "Spray bottle",
-      "The Laundress Delicate Wash"
-    ],
-    "mixSteps": [
-      "Mix 1 tbsp Dawn dish soap with 1 cup cold water in a spray bottle",
-      "In a separate spray bottle, mix 1 part white vinegar with 5 parts cold water",
-      "Have The Laundress Delicate Wash ready for a final gentle wash"
-    ],
+  "title": "Red Wine on Wool",
+  "stainFamily": "tannin",
+  "surface": "wool",
+  "sector": "textile",
+  "source": "verified",
+  "stainChemistry": "Tannins are polyphenolic plant compounds (from tea, coffee, red wine, fruit juices) that bond to fibers through hydrogen bonding and π-stacking interactions with cellulose and protein fibers. Fresh tannin stains are removable with mild detergent. Aged stains oxidize and darken: the brown color is caused by oxidation products. Hydrogen peroxide 6% breaks the double bonds in the oxidized tannin molecules, reversing the browning. Sodium hydrosulfite provides a reducing alternative for fibers that cannot tolerate bleaching. On wool (protein fiber): oxidizing agents like hydrogen peroxide can weaken wool keratin — sodium hydrosulfite is the safer reducing treatment.",
+  "whyThisWorks": "Red wine tannins bond to wool through hydrogen bonding and π-stacking. Wool is a protein fiber, so oxidizing bleach (peroxide) carries risk of fiber weakening — sodium hydrosulfite (reducing agent) attacks tannin pigments without damaging the keratin structure. Tannin Formula (acidic) first breaks the initial tannin-fiber bonds. NSD flushes residue. Acetic acid with fiber conditioner restores the hand and sheen that wool can lose during treatment.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
     "steps": [
-      {
-        "step": 1,
-        "instruction": "Blot gently the stain with a clean white cloth to soak up as much as you can.",
-        "why": "Getting the excess out early makes the rest easier to treat."
-      },
-      {
-        "step": 2,
-        "instruction": "Apply the cleaning solution and let it sit for 5-10 minutes.",
-        "why": "The solution needs time to break down the stain's color."
-      },
-      {
-        "step": 3,
-        "instruction": "Blot gently with a clean white cloth. Repeat until the color fades.",
-        "why": "Each round lifts more of the stain out of the fabric."
-      },
-      {
-        "step": 4,
-        "instruction": "Rinse gently with cold water to remove all cleaning solution.",
-        "why": "Leftover solution can leave a residue on the fabric."
-      },
-      {
-        "step": 5,
-        "instruction": "Lay flat on a towel to air dry — no heat, no wringing.",
-        "why": "Heat and agitation damage delicate fibers. Lay flat to keep the shape."
-      }
+      "1. Apply Tannin Formula (acidic tannin spotter) carefully and tamp very gently. Dwell 3–5 minutes (shorter than cotton — use lighter touch on wool). The acidic spotter breaks tannin bonds without attacking the fiber. Monitor closely.",
+      "2. Apply sodium hydrosulfite (reducing agent — safe for wool and silk). Dwell 5–10 minutes. This reducing agent attacks tannin pigments without damaging protein fibers like wool and silk — unlike oxidizing agents which can weaken these fabrics. Flush when the color lifts.",
+      "3. Flush with NSD (Neutral Synthetic Detergent) to remove all chemical residue and loosened tannin. Dwell 3–5 minutes. Use cool water only. On wool, avoid any agitation that could felt the fiber.",
+      "4. Apply 28% Acetic acid (diluted 1:10) with fiber conditioner to neutralize and restore the fiber. Dwell 1–2 minutes. Follow with a fiber conditioner rinse to restore the hand and sheen that protein fibers can lose during treatment. Air dry flat."
     ],
-    "ifStillThere": "If the stain persists after gentle treatment, take it to a professional cleaner who specializes in wool. Do not attempt stronger chemicals at home — wool fibers are easily damaged.",
-    "proTips": [
-      "Never wring or twist delicate fabrics — gently press out moisture between towels.",
-      "When in doubt, take it to a professional cleaner who specializes in delicates.",
-      "Speed matters — fresh tannin stains lift much more easily than dried ones."
+    "products": [
+      "Tannin Formula (acidic tannin spotter)",
+      "Sodium hydrosulfite (reducing agent — safe for wool and silk)",
+      "NSD (Neutral Synthetic Detergent)",
+      "28% Acetic acid (diluted 1:10) with fiber conditioner"
     ],
-    "safety": "Test on an inside seam or hidden area first — delicate fabrics can react unpredictably. Never use bleach, enzyme cleaners, or hot water. Use cold water only. Handle gently — rubbing or wringing damages the fibers. Lay flat to dry.",
-    "whyThisWorks": "Red wine — red wine gets its deep color from grape skin pigments that bond to surfaces and darken with air exposure. Wool is a delicate natural fiber, and red wine pigments bond tightly to its structure. Heat or harsh chemicals will set the stain permanently and damage the fiber. Cold water and mild treatment prevent heat-setting. Oxygen-based cleaners break the pigment down gradually without damaging the delicate fiber.",
-    "timeEstimate": "10-20 minutes"
-  },
-  "home": {
-    "title": "Red Wine on Wool — Confident Removal",
-    "confidenceRating": 55,
-    "confidenceNote": "Success depends on surface type (Wool), delicate material. Fresh stains respond better than set stains.",
-    "primaryProduct": {
-      "name": "Wine Away Red Wine Stain Remover",
-      "brand": "Wine Away",
-      "why": "Specifically formulated for tannin stains; hydrogen peroxide base oxidizes the chromophore bonds",
-      "where": "Amazon, specialty stores",
-      "amazonSearchQuery": "Wine Away Red Wine Stain Remover",
-      "icon": "🍷"
-    },
-    "alternativeProducts": [
-      {
-        "name": "Carbona Stain Devils #1 (Coffee, Tea & Red Wine)",
-        "brand": "Carbona",
-        "why": "Specialized solvent blend for tannin stains",
-        "amazonSearchQuery": "Carbona Stain Devils #1 (Coffee, Tea & Red Wine)"
-      },
-      {
-        "name": "Chateau Spill Red Wine Stain Remover",
-        "brand": "Chateau Spill",
-        "why": "Fast-acting formula penetrates tannin stains quickly",
-        "amazonSearchQuery": "Chateau Spill Red Wine Stain Remover"
-      }
-    ],
-    "prepStep": "Blot immediately. Avoid heat or hot water until fully treated.",
-    "method": [
-      {
-        "step": 1,
-        "instruction": "Blot immediately. Avoid heat or cold water until fully treated.",
-        "dwellTime": null,
-        "why": "Removes bulk material so the product can focus on the remaining stain."
-      },
-      {
-        "step": 2,
-        "instruction": "Apply Wine Away Red Wine Stain Remover to the stain according to product label. For liquid: dilute if needed, apply, and let sit. For spray: apply and let set.",
-        "dwellTime": "5–15 minutes",
-        "why": "Wine Away Red Wine Stain Remover needs time to chemically react with and break down the stain."
-      },
-      {
-        "step": 3,
-        "instruction": "Gently scrub or rub the area with a soft brush or cloth to work the product into the stain.",
-        "dwellTime": "2–3 minutes",
-        "why": "Physical agitation plus chemical action loosens the stain's bond to fibers."
-      },
-      {
-        "step": 4,
-        "instruction": "Rinse with cold water thoroughly, rubbing gently between your fingers to release the stain.",
-        "dwellTime": "2 minutes",
-        "why": "Cold water prevents setting while flushing out dissolved stain particles."
-      },
-      {
-        "step": 5,
-        "instruction": "wash in cold water with appropriate detergent for this fabric type and inspect before drying. Inspect the stain before drying — do not use a dryer until it is completely gone.",
-        "dwellTime": "standard wash or wipe",
-        "why": "Final wash removes product residue. Air drying prevents heat-setting any remaining stain."
-      }
-    ],
-    "materialWarnings": [
-      {
-        "material": "Wool",
-        "warning": "wool: enzyme cleaners break down wool protein. Use wool-safe, enzyme-free formulas."
-      },
-      {
-        "material": "Wool",
-        "warning": "wool: avoid bleach entirely—destroys fiber structure."
-      },
-      {
-        "material": "Wool",
-        "warning": "wool: excessive agitation felts wool fibers. Use gentle rubbing only."
-      },
-      {
-        "material": "all fabrics (tannin stain)",
-        "warning": "NEVER use white vinegar, white vinegar, or alkaline agents — they permanently darken tannin stains"
-      },
-      {
-        "material": "all materials",
-        "warning": "Heat permanently sets stains. Do not use dryer, iron, or hot water until stain is completely gone."
-      }
-    ],
-    "ifItDoesntWork": {
-      "nextProduct": "Carbona Stain Devils #1 (Coffee, Tea & Red Wine)",
-      "escalation": "If the stain persists after Carbona Stain Devils #1 (Coffee, take it to a professional cleaner who specializes in wool. Explain what products you already tried so they can adjust their approach."
-    },
-    "proTips": [
-      "Fresh red-wine stains respond much faster than set stains.",
-      "Always test any product on a hidden area first—fabric dyes and finishes vary.",
-      "Never use the dryer or heat until the stain is completely gone; heat can lock it in permanently."
-    ],
-    "whyThisWorks": "Tannins are plant pigments with chromophore structures (colored chemical bonds). Oxidizers like hydrogen peroxide or oxygen bleach break these colored bonds, turning the stain colorless.",
-    "timeEstimate": "15–30 minutes (may require 2–3 repeat cycles for older stains)"
-  },
-  "pro": {
-    "title": "Red Wine — Tannin Removal Protocol (Wool)",
-    "stainChemistry": "Tannins are polyphenolic plant compounds (from tea, coffee, red wine, fruit juices) that bond to fibers through hydrogen bonding and π-stacking interactions with cellulose and protein fibers. Fresh tannin stains are removable with mild detergent. Aged stains oxidize and darken: the brown color is caused by oxidation products. Hydrogen peroxide 6% breaks the double bonds in the oxidized tannin molecules, reversing the browning. Sodium hydrosulfite provides a reducing alternative for fibers that cannot tolerate bleaching.",
-    "spottingProtocol": [
-      {
-        "step": 1,
-        "side": "wet",
-        "agent": "Tannin Formula (acidic tannin spotter)",
-        "technique": "Acidic spotter — targets tannin bonds while being safe for delicate fibers",
-        "dwellTime": "3-5 minutes",
-        "instruction": "Apply Tannin Formula carefully and tamp very gently. On wool and silk, use shorter dwell time and lighter touch. The acidic spotter breaks tannin bonds without attacking the fiber. Monitor closely."
-      },
-      {
-        "step": 2,
-        "side": "wet",
-        "agent": "Sodium hydrosulfite (reducing agent — safe for wool and silk)",
-        "technique": "Reducing treatment — removes tannin color without the risks of oxidizing agents",
-        "dwellTime": "5-10 minutes",
-        "instruction": "Apply sodium hydrosulfite solution. This reducing agent attacks tannin pigments without damaging protein fibers like wool and silk — unlike oxidizing agents which can weaken these fabrics. Monitor carefully and flush when the color lifts."
-      },
-      {
-        "step": 3,
-        "side": "wet",
-        "agent": "NSD (Neutral Synthetic Detergent)",
-        "technique": "Gentle flush — removes all chemical residue",
-        "dwellTime": "3-5 minutes",
-        "instruction": "Flush with NSD to remove all chemical residue and loosened tannin. Use cool water only. On wool, avoid any agitation that could felt the fiber."
-      },
-      {
-        "step": 4,
-        "side": "wet",
-        "agent": "28% Acetic acid (diluted 1:10) with fiber conditioner",
-        "technique": "Neutralizing rinse with fiber conditioning — restores hand and sheen",
-        "dwellTime": "1-2 minutes",
-        "instruction": "Apply diluted acetic acid to neutralize and restore the fiber. Follow with a fiber conditioner rinse to restore the hand and sheen that protein fibers can lose during treatment. Air dry flat."
-      }
-    ],
-    "escalation": "If peroxide bleaching reaches a plateau, the tannin has likely cross-linked with the fiber polymer. Try sequential treating: alternate between peroxide and leveling agent (mild alkali to relax fiber swelling). For extreme cases (wine on white wool), recommend professional-grade tannin-specific chemistry or dye consultation.",
-    "customerExplanation": "This was a tricky one — wine on your garment is one of the more challenging stains we deal with. Wine stains darken with air exposure and set deeper with time and heat. Results depend on how long the stain had been set before treatment — some improvement may continue over the next few days.",
-    "commonMistakes": [
-      "Using hot water—accelerates oxidation and sets the tannin color faster.",
-      "Applying hydrogen peroxide to colored fabrics without testing—peroxide bleaches color along with the stain.",
-      "Oversaturation with peroxide—can cause yellowing on whites from oxidized cellulose.",
-      "Not rinsing peroxide completely—residual peroxide continues bleaching and weakens fiber."
-    ],
-    "neutralization": "After peroxide treatment, rinse thoroughly with cool water. If peroxide residue remains, a mild acetic acid rinse (1:10 dilution) stops the bleaching action and stabilizes the pH. For colored fabrics, a fiber conditioner rinse helps restore color vibrancy.",
-    "fabricRisks": "Cotton and synthetics tolerate peroxide well. Wool and silk: use lower concentrations (3% or reduced time). Avoid peroxide on heavily dyed fabrics or natural dyes. Mohair is especially vulnerable to peroxide."
-  },
-  "products": {
-    "professional": [
-      {
-        "name": "StreeTAN® Tannin Spotter",
-        "brand": "Street's",
-        "type": "tannin spotter",
-        "icon": "🧪",
-        "amazonSearchQuery": "StreeTAN tannin spotting fluid",
-        "affiliateTag": "gonr08-20",
-        "note": "Industry standard acidic tannin formula. pH 3-4. Use undiluted for heavy stains or 1:3 for delicates."
-      },
-      {
-        "name": "BonGo® Tannin Remover",
-        "brand": "Bonnotts",
-        "type": "tannin spotter",
-        "icon": "🧪",
-        "amazonSearchQuery": "BonGo tannin remover spotting",
-        "affiliateTag": "gonr08-20",
-        "note": "Thicker formula for vertical surfaces. Also handles tannin-protein combos."
-      },
-      {
-        "name": "Deprit 3 BLUE",
-        "brand": "Chemtex",
-        "type": "tannin spotter",
-        "icon": "🧪",
-        "amazonSearchQuery": "Deprit 3 BLUE tannin spotting formula",
-        "affiliateTag": "gonr08-20",
-        "note": "Fluorescent indicator shows coverage. pH 3-4."
-      },
-      {
-        "name": "Hydrogen Peroxide 6% (Color-Safe)",
-        "brand": "Professional supplies",
-        "type": "oxidizing bleach",
-        "icon": "🧪",
-        "amazonSearchQuery": "hydrogen peroxide 6% color safe spotting",
-        "affiliateTag": "gonr08-20",
-        "note": "Standard professional strength. Add 1 drop 28% ammonia per 8 oz to catalyze. Never use 12% on colored fabrics."
-      },
-      {
-        "name": "StreePene® Sodium Hydrosulfite",
-        "brand": "Street's",
-        "type": "reducing bleach",
-        "icon": "🧪",
-        "amazonSearchQuery": "sodium hydrosulfite reducing bleach spotting",
-        "affiliateTag": "gonr08-20",
-        "note": "Reducing bleach — donates electrons to crack melanoidin/tannin polymers. Safer on protein fibers than peroxide."
-      },
-      {
-        "name": "NSD (Neutral Synthetic Detergent)",
-        "brand": "Professional spotting supplies",
-        "type": "surfactant",
-        "icon": "🧴",
-        "amazonSearchQuery": "NSD neutral synthetic detergent spotting",
-        "affiliateTag": "gonr08-20",
-        "note": "Core surfactant for all wet-side spotting. 1-2% concentration. Prevents redeposition."
-      },
-      {
-        "name": "Sofspot® Leveling Agent",
-        "brand": "Chemquest",
-        "type": "leveling agent",
-        "icon": "🧴",
-        "amazonSearchQuery": "Sofspot leveling agent dry cleaning",
-        "affiliateTag": "gonr08-20",
-        "note": "Prevents water rings. 1 oz per gallon rinse water or spray direct."
-      },
-      {
-        "name": "Glacial Acetic Acid 28% (GAA)",
-        "brand": "Chemical suppliers",
-        "type": "pH neutralizer",
-        "icon": "🧪",
-        "amazonSearchQuery": "glacial acetic acid 28% technical grade",
-        "affiliateTag": "gonr08-20",
-        "note": "Dilute 1:10 for pH neutralization. Essential for protein fiber safety."
-      }
-    ],
-    "household": [
-      {
-        "name": "White Vinegar (5% Acetic Acid)",
-        "brand": "Any grocery brand",
-        "type": "pH adjustor / mild spotter",
-        "icon": "🍶",
-        "amazonSearchQuery": "white vinegar 5% cleaning",
-        "affiliateTag": "gonr08-20",
-        "note": "DIY tannin formula substitute. Dilute 1:1 with cold water. Safe and effective on fresh stains."
-      },
-      {
-        "name": "Hydrogen Peroxide 3%",
-        "brand": "Any drugstore brand",
-        "type": "oxidizing bleach",
-        "icon": "🧪",
-        "amazonSearchQuery": "hydrogen peroxide 3% solution",
-        "affiliateTag": "gonr08-20",
-        "note": "Drugstore strength. Much weaker than professional 6% but safe. Test colorfastness first."
-      },
-      {
-        "name": "Baking Soda",
-        "brand": "Any grocery brand",
-        "type": "mild abrasive / absorbent",
-        "icon": "🧂",
-        "amazonSearchQuery": "baking soda cleaning",
-        "affiliateTag": "gonr08-20",
-        "note": "Paste (3:1 with water) for fresh stains. Also absorbs liquid on fresh spills. Not for aged stains."
-      },
-      {
-        "name": "Wine Away Red Wine Stain Remover",
-        "brand": "Wine Away",
-        "type": "tannin remover",
-        "icon": "🍷",
-        "amazonSearchQuery": "Wine Away red wine stain remover",
-        "affiliateTag": "gonr08-20",
-        "note": "Commercial sodium hydrosulfite product. Works on fresh tannin stains. Rinse thoroughly."
-      },
-      {
-        "name": "OxiClean Versatile Stain Remover",
-        "brand": "OxiClean",
-        "type": "oxygen bleach",
-        "icon": "🧴",
-        "amazonSearchQuery": "OxiClean versatile stain remover",
-        "affiliateTag": "gonr08-20",
-        "note": "Sodium percarbonate — releases peroxide in water. Safe on most colorfast fabrics. Follow label dilution."
-      },
-      {
-        "name": "Carbona Stain Devils #1",
-        "brand": "Carbona",
-        "type": "tannin remover",
-        "icon": "🧴",
-        "amazonSearchQuery": "Carbona Stain Devils 1 coffee tea wine",
-        "affiliateTag": "gonr08-20",
-        "note": "Specialized for coffee, tea, and wine stains. Follow label directions."
-      }
+    "temperature": "cold — heat accelerates tannin oxidation and sets color permanently. On wool, heat also causes felting. Never use warm or hot water at any stage.",
+    "warnings": [
+      "Using hot water — accelerates oxidation and sets tannin color faster, and felts wool fiber.",
+      "Applying hydrogen peroxide to colored wool without testing — peroxide bleaches fiber color along with the stain.",
+      "Oversaturation with any oxidizer — can cause yellowing and fiber weakening.",
+      "Not rinsing completely — residual reducing or oxidizing agents continue to work and weaken fiber.",
+      "Over-agitation — felts wool fibers permanently.",
+      "NEVER use enzyme cleaners on wool — digest the protein fiber.",
+      "NEVER use bleach — destroys wool fiber structure."
     ]
   },
-  "diy_es": {
-    "title": "Cómo Quitar Vino Tinto de Lana",
-    "ingredients": [
-      "1 tbsp Dawn jabón para platos",
-      "White vinegar",
-      "Clean white cloths",
-      "Cold water",
-      "Rocíe bottle",
-      "The Laundress Delicate Wash"
-    ],
-    "mixSteps": [
-      "Mezcle 1 tbsp Dawn jabón para platos with 1 cup agua fría in a rocíe bottle",
-      "In a separate rocíe bottle, mezcle 1 part vinagre blanco with 5 parts agua fría",
-      "Have The Laundress Delicate Wash ready for a final gentle lave"
-    ],
+  "diyProtocol": {
     "steps": [
-      {
-        "step": 1,
-        "instruction": "Seque a toques gently the mancha with a un paño blanco limpio to remoje up as much as you can.",
-        "why": "Getting the excess out early makes the rest easier to treat."
-      },
-      {
-        "step": 2,
-        "instruction": "Aplique the cleaning solution and déjelo reposar for 5-10 minutes.",
-        "why": "The solution needs time to break down the mancha's color."
-      },
-      {
-        "step": 3,
-        "instruction": "Seque a toques gently with a un paño blanco limpio. Repita until the color fades.",
-        "why": "Each round lifts more of the mancha out of the tela."
-      },
-      {
-        "step": 4,
-        "instruction": "Enjuague gently with agua fría to retire all cleaning solution.",
-        "why": "Leftover solution can leave a residue on the tela."
-      },
-      {
-        "step": 5,
-        "instruction": "Lay flat on a towel to seque al aire — no heat, no wringing.",
-        "why": "Heat and agitation damage delicate fibers. Lay flat to keep the shape."
-      }
+      "1. Blot gently the stain with a clean white cloth to soak up as much as you can.",
+      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply the solution and let it sit for 5–10 minutes.",
+      "3. Blot gently with a clean white cloth. Repeat until the color fades.",
+      "4. Rinse gently with cold water to remove all cleaning solution.",
+      "5. Lay flat on a towel to air dry — no heat, no wringing."
     ],
-    "ifStillThere": "If the mancha persists after gentle treatment, take it to a professional cleaner who specializes in lana. No attempt stronger chemicals at home — lana fibers are easily damaged.",
-    "proTips": [
-      "Nunca wring or twist delicate fabrics — gently press out moisture between towels.",
-      "When in doubt, take it to a professional cleaner who specializes in delicates.",
-      "Speed matters — fresh tannin stains lift much more easily than dried ones."
+    "products": [
+      "Dawn dish soap",
+      "Cold water",
+      "White vinegar (diluted)",
+      "Woolite Delicates",
+      "Clean white cloths"
     ],
-    "safety": "Pruebe on an inside seam or hidden area first — delicate fabrics can react unpredictably. Nunca use bleach, limpiador enzimáticos, or agua caliente. Use agua fría only. Handle gently — rubbing or wringing damages the fibers. Lay flat to seque.",
-    "whyThisWorks": "vino tinto — vino tinto gets its deep color from grape skin pigments that bond to surfaces and darken with air exposure. lana is a delicate natural fiber, and vino tinto pigments bond tightly to its structure. Heat or harsh chemicals will set the mancha permanently and damage the fiber. Cold water and mild treatment prevent heat-setting. Oxygen-based cleaners break the pigment down gradually without damaging the delicate fiber.",
-    "timeEstimate": "10-20 minutes"
+    "whenToStop": "If the stain persists after gentle treatment, take it to a professional cleaner who specializes in wool. Do not attempt stronger chemicals at home — wool fibers are easily damaged.",
+    "warnings": [
+      "Test on an inside seam or hidden area first.",
+      "Never use bleach, enzyme cleaners, or hot water on wool.",
+      "Never wring or twist wool — gently press out moisture between towels.",
+      "Never rub — causes felting.",
+      "Lay flat to dry."
+    ]
   },
-  "pro_es": {
-    "title": "Protocolo Profesional: Vino Tinto en Lana",
-    "stainChemistry": "Tannins are polyphenolic plant compounds (from té, café, vino tinto, fruit juices) that bond to fibers through hydrogen bonding and π-stacking interactions with cellulose and protein fibers. Fresh tannin stains are removable with mild detergent. Aged stains oxidize and darken: the brown color is caused by oxidación products. Hydrogen peroxide 6% breaks the double bonds in the oxidized tannin molecules, reversing the browning. Sodium hydrosulfite provides a reducing alternative for fibers that cannot tolerate bleaching.",
-    "spottingProtocol": [
-      {
-        "step": 1,
-        "side": "wet",
-        "agent": "Tannin Formula (acidic tannin spotter)",
-        "technique": "Acidic spotter — targets tannin bonds while being safe for delicate fibers",
-        "dwellTime": "3-5 minutes",
-        "instruction": "Aplique Tannin fórmula carefully and tamp very gently. On lana and seda, use shorter dwell time and lighter touch. The acidic spotter breaks tannin bonds without attacking the fiber. Monitor closely."
-      },
-      {
-        "step": 2,
-        "side": "wet",
-        "agent": "Sodium hydrosulfite (reducing agent — safe for wool and silk)",
-        "technique": "Reducing treatment — removes tannin color without the risks of oxidizing agents",
-        "dwellTime": "5-10 minutes",
-        "instruction": "Aplique sodium hydrosulfite solution. This reducing agent attacks tannin pigments without damaging protein fibers like lana and seda — unlike oxidizing agents which can weaken these fabrics. Monitor carefully and flush when the color lifts."
-      },
-      {
-        "step": 3,
-        "side": "wet",
-        "agent": "NSD (Neutral Synthetic Detergent)",
-        "technique": "Gentle flush — removes all chemical residue",
-        "dwellTime": "3-5 minutes",
-        "instruction": "Flush with NSD to retire all chemical residue and loosened tannin. Use cool water only. On lana, avoid any agitation that could felt the fiber."
-      },
-      {
-        "step": 4,
-        "side": "wet",
-        "agent": "28% Acetic acid (diluted 1:10) with fiber conditioner",
-        "technique": "Neutralizing rinse with fiber conditioning — restores hand and sheen",
-        "dwellTime": "1-2 minutes",
-        "instruction": "Aplique diluted acetic acid to neutralize and restore the fiber. Follow with a fiber acondicioneer enjuague to restore the hand and sheen that protein fibers can lose during treatment. Air seque flat."
-      }
+  "safetyMatrix": {
+    "neverDo": [
+      "Never use hot water — sets tannin color and felts wool simultaneously.",
+      "Never use enzyme cleaners — digest the wool protein fiber.",
+      "Never use bleach — destroys wool fiber structure.",
+      "Never wring or aggressively agitate — felts wool permanently.",
+      "Never use ammonia or alkaline agents — permanently darkens tannin stains."
     ],
-    "escalation": "If peroxide bleaching reaches a plateau, the tannin has likely cross-linked with the fiber polymer. Try sequential treating: alternate between peroxide and leveling agent (mild alkali to relax fiber swelling). For extreme cases (vino on white lana), recommend professional-grade tannin-specific chemistry or dye consultation.",
-    "customerExplanation": "Esta fue una mancha difícil — vino tinto en su prenda es una de las manchas más complicadas que tratamos. Las manchas de origen vegetal se oscurecen con el tiempo y la exposición al aire. Los resultados dependen de cuánto tiempo estuvo la mancha antes del tratamiento — puede seguir mejorando en los próximos días.",
-    "commonMistakes": [
-      "Using agua caliente—accelerates oxidación and sets the tannin color faster.",
-      "Apliqueing agua oxigenada to colored fabrics without pruebeing—peroxide bleaches color along with the mancha.",
-      "Oversaturation with peroxide—can cause yellowing on whites from oxidized cellulose.",
-      "Not rinsing peroxide completely—residual peroxide continues bleaching and weakens fiber."
-    ],
-    "neutralization": "After peroxide treatment, enjuague thoroughly with cool water. If peroxide residue remains, a mild acetic acid enjuague (1:10 dilution) stops the bleaching action and stabilizes the pH. For colored fabrics, a fiber acondicioneer enjuague helps restore color vibrancy.",
-    "fabricRisks": "algodón and synthetics tolerate peroxide well. lana and seda: use lower concentrations (3% or reduced time). Avoid peroxide on heavily dyed fabrics or natural dyes. Mohair is especially vulnerable to peroxide."
+    "fiberSensitivities": [
+      "Wool (keratin, protein fiber) — enzyme cleaners attack it the same way they attack stains.",
+      "Wool felts with heat and mechanical agitation — always handle cold and gently.",
+      "Mohair is especially vulnerable to oxidizers — avoid peroxide entirely on mohair.",
+      "Wool dyes are variable — always test any product on a hidden area first."
+    ]
   },
-  "title": "Red Wine on Wool",
-  "stainType": "tannin",
-  "surface": "wool",
-  "sector": "clothing",
-  "stainChemistry": "Red Wine on Wool is a tannin-on-protein problem. The polyphenolic compounds in red wine — condensed tannins with multiple hydroxyl groups — form hydrogen bonds directly with the keratin peptide backbone. On protein fibers, these bonds aren't casual adhesion. The tannins penetrate the fiber structure through both hydrogen bonding and pi-stacking interactions. Fresh, you're separating H-bonds. Give it 48 hours and those tannins begin oxidizing — polymerizing into larger, darker, more resistant molecules. Give it a week and you may be looking at actual chemical tanning of the fiber — the same reaction that turns animal hides into leather. Temperature is critical: anything above 30°C accelerates oxidation AND risks felting the fiber. You're fighting chemistry on two fronts simultaneously.",
-  "whyThisWorks": "This protocol targets red wine through sequential chemistry: break the tannin-to-surface hydrogen bonds first (acidic tannin formula), then oxidize the residual chromophore (controlled peroxide), then flush and neutralize. The order matters — if you skip the acid step and go straight to peroxide while tannin is still bonded to the fiber, the peroxide oxidizes the tannin IN PLACE, creating a permanent dark compound. The acid loosens it; the flush removes it; the peroxide cleans up what's left. On wool, every step uses cool water and minimal agitation — protein fibers felt with heat and friction. The acetic acid neutralization at the end isn't optional; it restores the fiber's natural pH and prevents residual alkalinity from setting tannin deeper.",
-  "spottingProtocol": [
-    {
-      "step": 1,
-      "side": "dry",
-      "agent": "Blot and assess — remove excess material",
-      "technique": "Dry debris removal and assessment",
-      "equipment": "Clean white cotton pads or microfiber cloths, soft brush for dried residue",
-      "dwellTime": "30-60 seconds",
-      "instruction": "Start by assessing the stain. How old is it? Is it still wet or has it dried? If wet, blot immediately with a clean white cloth — press down firmly for 3 seconds, lift, move to a clean area of the cloth, repeat. You're absorbing dissolved red wine before it penetrates deeper. Watch the cloth — if you're pulling color, keep going until the transfer slows. If the stain is dried, use a soft brush to gently loosen any surface residue. Don't scrape aggressively — you'll push dried material deeper into wool. The goal is removing everything mechanical before you introduce chemistry."
-    },
-    {
-      "step": 2,
-      "side": "wet",
-      "agent": "Flush with cool (≤30°C) distilled water",
-      "technique": "Cold water dilution flush",
-      "equipment": "Spray bottle with cool (≤30°C) distilled water, white cotton pads",
-      "dwellTime": "2 minutes (three 40-second flushes)",
-      "instruction": "Spray cool (≤30°C) distilled water onto the stain — light mist, not soaking. Blot immediately with a clean pad. Press down 3 seconds, lift. Don't rub across the stain — that spreads tannin into clean fiber. Repeat twice more with fresh pads each time. You're diluting the tannin concentration before hitting it with chemistry. Watch the pad — you should see less color with each flush. NEVER use hot water on fresh tannin stains. Heat accelerates oxidative polymerization — it turns a removable stain into a permanent one. This pre-flush alone removes 30-40% of fresh red wine stains."
-    },
-    {
-      "step": 3,
-      "side": "wet",
-      "agent": "Apply tannin formula — acidic tannin spotter (1:3 with cool distilled water)",
-      "technique": "Tannin formula application",
-      "equipment": "Spray bottle or dropper, white cotton pads, spotting board with drain",
-      "dwellTime": "4-6 minutes",
-      "instruction": "Dilute tannin spotter 1:3 with cool distilled water — full strength is too harsh for protein fibers. Spray or drop the diluted tannin formula onto the stain in light passes. The acidic pH breaks hydrogen bonds between the tannin compounds and wool. stain shifts from original color toward orange/tan as tannin bonds break. That color shift is your confirmation that the chemistry is working — you're watching hydrogen bonds break in real time. Don't agitate — wool fibers lock under friction and moisture. Let it dwell 4-6 minutes. Blot with a clean pad. The pad should show visible color transfer. If it doesn't, the stain may have oxidized past what acid alone can handle — you'll need the bleaching step next.",
-      "suggestedProducts": "StreeTAN®, BonGo®, Deprit 3 BLUE, Benzafix C"
-    },
-    {
-      "step": 4,
-      "side": "wet",
-      "agent": "Apply oxidizing bleach — H₂O₂ 3% diluted + ammonia catalyst",
-      "technique": "Controlled oxidation",
-      "equipment": "Clean spray bottle, ammonia dropper, white cotton pads",
-      "dwellTime": "2-3 minutes active, 1 minute rest",
-      "instruction": "CRITICAL: Only proceed after fully flushing the tannin formula. If tannin spotter is still wet in the fiber and you add peroxide, it oxidizes the tannin IN PLACE — creating a permanent dark compound. This is the most common professional mistake with tannin stains. Once fully flushed, mix fresh: 1 drop 28% ammonia per 8 oz of 3% hydrogen peroxide. Dilute 1:1 with cool water for protein fibers. Spray onto the stain. You'll see slight foaming if organic residue remains — that's good, it means the peroxide is reacting. The residual color should continue fading. If the stain suddenly gets DARKER, stop — there's unflushed tannin still present. Flush and return to the tannin formula step. On protein fibers, keep dwell time short — 2 minutes maximum. Blot with a clean pad.",
-      "suggestedProducts": "Hydrogen Peroxide 6%, ammonia 28%"
-    },
-    {
-      "step": 5,
-      "side": "wet",
-      "agent": "NSD surfactant + leveling agent — prevent water rings",
-      "technique": "Surfactant flush and leveling",
-      "equipment": "Clean sponge, NSD solution, leveling agent spray bottle",
-      "dwellTime": "1-2 minutes active, 3-5 minutes leveling dwell",
-      "instruction": "This step separates a finished garment from one with water-ring ghosts. NSD (neutral synthetic detergent) keeps dissolved stain particles and residual chemistry suspended — preventing redeposition as the fabric dries. Spray NSD solution onto the treated area and a 2-inch border around it. Blot gently. Then spray the leveling agent (Sofspot® or similar) — this ensures the moisture profile blends smoothly into the surrounding dry fabric instead of creating a hard water line. Watch the edge of the wet area — it should blur into the dry fabric, not form a distinct ring. If you see a ring forming, extend the wet area with more leveling agent. This is the step most people skip, and it shows. The stain is gone but there's a perfect circle where you treated it.",
-      "suggestedProducts": "Sofspot®, Multispot®, NSD"
-    },
-    {
-      "step": 6,
-      "side": "wet",
-      "agent": "Neutralize with acetic acid — 28% GAA, 1:10 dilution",
-      "technique": "pH neutralization",
-      "equipment": "Spray bottle with diluted acetic acid, pH strips (optional), clean pad",
-      "dwellTime": "2 minutes",
-      "instruction": "This step is non-negotiable on protein fibers. Wool has a natural pH around 5-6. Even neutral water (pH 7) is alkaline relative to the fiber, and all the chemistry you've applied has shifted the pH. Residual alkalinity left in the fiber does two things: it opens the scale structure (risking felting on wool), and it causes residual tannin to darken over time through continued oxidation. Dilute acetic acid (1:10) brings the pH back to fiber-safe range. Spray lightly, blot after 2 minutes. One final flush with cool distilled water, then blot dry. You should feel no stickiness, no chemical smell — just clean fiber.",
-      "suggestedProducts": "Glacial Acetic Acid 28%, white vinegar (household alternative)"
-    },
-    {
-      "step": 7,
-      "side": "dry",
-      "agent": "Air dry flat at room temperature — no heat",
-      "technique": "Controlled flat drying",
-      "equipment": "Clean dry towel, flat drying surface, low fan optional",
-      "dwellTime": "Until completely dry",
-      "instruction": "Lay wool flat on a clean, dry towel. Reshape gently if needed. Never hang-dry wet protein fibers — gravity pulls water weight and stretches the garment permanently. Never machine dry — heat after wet spotting accelerates felting. Air dry flat. A low fan at distance speeds things up without risk. Check the treated area once fully dry. Most fresh red wine on wool disappears completely with this protocol. If a faint shadow remains, it may require a second pass or professional dry cleaning."
-    },
-    {
-      "step": 8,
-      "side": "dry",
-      "agent": "Final inspection and assessment",
-      "technique": "Visual and tactile inspection",
-      "equipment": "Good lighting, magnifying glass (optional for delicates)",
-      "dwellTime": "2 minutes",
-      "instruction": "Once completely dry, inspect the treated area under good lighting. Tilt the fabric or surface at multiple angles — residual stain hides in texture and fiber direction. Run your fingertip over the area — it should feel identical to surrounding untreated wool. If there's a texture difference (stiffness, roughness), the chemistry may have affected the surface and conditioning or re-treatment is needed. If a faint color shadow remains, don't panic — many red wine shadows fade completely after one normal wash cycle (for textiles) or one more treatment pass. If the stain is significantly visible after a full protocol run, it's likely an aged, polymerized tannin that needs professional-level reducing chemistry or dry cleaning solvents."
-    }
-  ],
-  "homeSolutions": [
-    "Cold water flush immediately — within 10 minutes of the spill, blot with a clean white cloth and flush with cold water. Never hot water, never rub. On fresh red wine, this alone can remove 30-50% of the stain.",
-    "White vinegar solution (1:1 with cold water) — spray onto the stain, let sit 3-5 minutes, blot. The acidity mimics professional tannin spotters. Effective on fresh to 24-hour stains. ",
-    "Baking soda paste (3:1 baking soda to water) — apply to the damp stain, let sit 5 minutes, brush off, rinse. Works on fresh stains by absorbing and mildly oxidizing. Not effective on aged or set stains.",
-    "Hydrogen peroxide 3% (drugstore strength) — apply diluted 1:1 with cool water to the stain. Let sit 2-5 minutes, blot. Test colorfastness on a hidden area first — can lighten some dyes. Much weaker than professional 6% but safe for home use.",
-    "Wine Away or similar tannin stain remover — commercial products using sodium hydrosulfite to reduce anthocyanin/tannin pigments to colorless. Follow label directions. Works well on fresh stains. Rinse thoroughly to remove sulfite residue."
-  ],
-  "materialWarnings": [
-    "NEVER use hot water on red wine stains — heat accelerates oxidative polymerization, turning a removable tannin stain into a permanent one. Cold water only, always.",
-    "NEVER use chlorine bleach (sodium hypochlorite) on wool — it attacks protein fiber bonds and turns tannins darker permanently.",
-    "NEVER use protease enzymes (OxiClean enzyme products, biological detergents) — enzymes digest protein fibers. The fiber weakens and eventually dissolves.",
-    "NEVER use strong alkali (ammonia >2%, sodium hydroxide, strong detergents) — opens fiber scale structure and sets tannin permanently.",
-    "ALWAYS keep water temperature ≤30°C (86°F) — protein fibers felt with heat + agitation. This is irreversible.",
-    "ALWAYS blot gently, never rub — friction + moisture on protein fibers causes mechanical felting.",
-    "ALWAYS neutralize with acetic acid after treatment — residual alkalinity darkens tannin stains over days."
-  ],
-  "commonMistakes": [
-    "Using hot water first. Hot water on red wine doesn't clean — it sets. Heat accelerates oxidative polymerization of tannin compounds, turning a removable stain into a permanent one. The person usually describes 'I ran hot water on it and it got darker.' By then, the chemistry is different.",
-    "Applying peroxide before fully flushing the tannin formula. If tannin spotter is still wet in the fiber when peroxide hits it, the oxidation locks the tannin in place permanently. You create a new, darker stain. Flush completely between steps — this is the most common professional mistake.",
-    "Using strong detergent or alkaline products on wool. 'I treated it with my regular laundry detergent and the stain got darker and the fabric feels rough.' Alkalinity sets tannin permanently into protein fibers AND opens the scale structure causing felting. Double damage.",
-    "Rubbing the stain on wool. Even with cool water, rubbing opens the fiber scale structure. Friction + moisture = felting. The stain spreads and the garment feels matted. Always blot — press, hold, lift.",
-    "Assuming the stain is gone before fully drying. Tannin stains often look lighter when wet. Let the treated area dry completely before declaring victory. If color returns upon drying, repeat the protocol — don't escalate to harsher chemistry."
-  ],
-  "scienceNote": "The chemistry happening during treatment is visible. When tannin formula hits red wine, the color shifts — you're watching polyphenolic compounds change their hydrogen-bonding state as pH drops. The tannins themselves are polymeric chains that create networks of hydrogen bonds and van der Waals forces with the surface. What makes aged red wine stains so stubborn is oxidative polymerization — oxygen from the air causes those tannin monomers to link into larger, darker, more complex molecules. It's the same reaction that turns a cut apple brown. Fresh stain: you're breaking individual hydrogen bonds. Aged stain: you're trying to disassemble a polymer network. That's why time matters exponentially — not linearly — with tannin stains.",
-  "customerExplanation": "Red Wine contains tannin compounds — the same molecules that give tea its color and are used to tan leather. These tannins bond directly to wool fibers at the molecular level. We use a specialized acidic formula to break those bonds, then a controlled bleaching step to remove any remaining color. The key is treating it quickly — fresh red wine is reversible chemistry. Once it sits for days, the tannins oxidize into darker, more permanent compounds that are much harder to treat.",
-  "escalation": "If the stain persists after a full protocol run, it's likely polymerized tannin — the compounds have oxidized past what standard acid + peroxide can reverse. For wool, professional dry cleaning solvents (perchloroethylene, hydrocarbon) can sometimes lift polymerized tannins where water-based spotting fails. A professional spotter can also apply concentrated reducing bleach (sodium hydrosulfite) with precise temperature control — something not safe to attempt at home on protein fibers. If the fiber itself feels damaged (matted, stiff, or rough), that's mechanical or chemical damage beyond stain removal — a textile restoration specialist may be able to help.",
-  "solventNote": "For PERC/HC shops: level with Sofspot® or Multispot® before loading machine. For wet clean shops: proceed to normal wash cycle after final rinse. The leveling step is critical to prevent rings.",
-  "callPro": "Call a professional when: the red wine stain persists after two full treatment cycles; you see color bleeding, fiber damage, or unexpected texture changes during treatment; the item is labeled dry clean only or is made of delicate fiber; the stain has been heat-set by a dryer or iron — polymerized stains require professional immersion equipment."
+  "escalation": {
+    "when": "If peroxide bleaching reaches a plateau, the tannin has likely cross-linked with the fiber polymer. Try sequential treating: alternate between peroxide (if colorfast) and leveling agent. For extreme cases (wine on white wool), recommend professional-grade tannin-specific chemistry or dye consultation.",
+    "whatToTell": "This was a tricky one — wine on wool is one of the more challenging stains. Wine stains darken with air exposure and set deeper with time and heat. Results depend on how long the stain had been set before treatment — some improvement may continue over the next few days.",
+    "specialistType": "wet cleaner specializing in delicate wool garments"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain — was it treated immediately or has it been sitting?",
+      "Has any product already been applied (salt, club soda, enzyme cleaner)?",
+      "Is this a fine gauge wool knit or woven wool fabric?",
+      "Has the garment been placed in the dryer or pressed since the stain occurred?"
+    ],
+    "modifierNotes": "Fresh wine on wool responds reasonably well to cold water and dish soap. Any heat exposure (dryer, iron) dramatically reduces recovery odds. Enzyme cleaner applied previously may have caused wool fiber damage that limits recovery. Fine-gauge knitwear requires shorter dwell times and extremely gentle handling to prevent felting."
+  },
+  "difficulty": 7,
+  "timeEstimate": "10–20 minutes",
+  "lastValidated": "2026-03-23"
 }

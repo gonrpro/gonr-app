@@ -1,0 +1,80 @@
+{
+  "id": "blood-cotton",
+  "title": "Blood on Cotton",
+  "stainFamily": "protein",
+  "surface": "cotton",
+  "sector": "textile",
+  "source": "verified",
+
+  "stainChemistry": "Blood contains hemoglobin, albumin, fibrin, and clotting proteins that bond to cotton cellulose through hydrogen bonding and hydrophobic interactions. When fresh, these proteins are water-soluble and respond well to enzymatic treatment. Heat coagulates and cross-links the proteins permanently into the fiber — a heat-set blood stain on cotton is orders of magnitude harder to remove than a fresh one.",
+
+  "whyThisWorks": "Protein Formula (digestant spotter) breaks down blood protein chains through enzymatic hydrolysis at neutral pH before coagulation occurs. NSD removes the loosened protein particles and digestant residue. A dilute acetic acid rinse restores the fabric to neutral pH. Cotton tolerates this full protocol without fiber risk.",
+
+  "defaultAssumption": "Treat as unknown age / possibly dried. Even dried blood responds to this protocol — rehydrate with cold water first before applying digestant.",
+
+  "professionalProtocol": {
+    "steps": [
+      "1. Flush immediately with cold water from back of fabric",
+      "2. Apply Protein Formula (digestant spotter) — tamp gently with spotting brush, work edge to center — dwell 5-10 minutes",
+      "3. Apply NSD (Neutral Synthetic Detergent) — flush with cool water or steam gun",
+      "4. If residual discoloration on white/colorfast cotton: dilute hydrogen peroxide (3%) — dwell 5 min, flush",
+      "5. Neutralizing rinse: dilute acetic acid (1:10, 28% stock) — restores fabric pH",
+      "6. Blot dry — inspect before any heat or pressing"
+    ],
+    "products": ["Protein Formula (digestant spotter)", "NSD (Neutral Synthetic Detergent)", "28% Acetic Acid (diluted 1:10)", "H2O2 3% for whites only"],
+    "temperature": "cold throughout — NEVER warm or hot",
+    "warnings": [
+      "Never apply hot water — permanently coagulates blood proteins",
+      "Never use alkaline detergent without enzyme pre-treatment",
+      "Do not press or apply heat before stain is fully resolved",
+      "For colored cotton: test hydrogen peroxide on hidden seam before applying"
+    ]
+  },
+
+  "diyProtocol": {
+    "steps": [
+      "1. Flush immediately with cold water from back of fabric — never front",
+      "2. Apply Dawn dish soap directly to stain — work in gently with fingers, cold water only",
+      "3. Let sit 10 minutes — do not apply heat",
+      "4. Rinse cold — repeat if needed",
+      "5. For white cotton: apply hydrogen peroxide (3%) to residual discoloration — dwell 5-10 min, cold rinse",
+      "6. For dried stain: soak in cold water 30 minutes first to rehydrate, then treat",
+      "7. Air dry and inspect — do not machine dry until stain is confirmed removed"
+    ],
+    "products": ["Dawn dish soap", "hydrogen peroxide 3% (whites only)", "cold water"],
+    "whenToStop": "Take to a professional if stain has been through a dryer cycle, or if it remains after two cold treatment attempts.",
+    "warnings": [
+      "No hot water at any point",
+      "No dryer before stain is removed",
+      "Hydrogen peroxide may lighten dyed cotton — test first"
+    ]
+  },
+
+  "safetyMatrix": {
+    "neverDo": [
+      "Hot water — sets protein permanently",
+      "Machine drying before removal confirmed",
+      "Alkaline detergent before enzymatic pre-treatment"
+    ],
+    "fiberSensitivities": [
+      "Cotton: wide treatment latitude — tolerates enzymes, mild bleach, most pH ranges",
+      "Colored cotton: always test H2O2 before use",
+      "Cotton blends with silk or wool: follow silk/wool protocol, not cotton"
+    ]
+  },
+
+  "escalation": {
+    "when": "Stain has been through a dryer, or remains after two cold enzyme treatments",
+    "whatToTell": "Blood on cotton — may be heat-set. Ask for cold Protein Formula (digestant) pre-spotting before any pressing.",
+    "specialistType": "Any competent dry cleaner or wet cleaner with enzyme spotting"
+  },
+
+  "deepSolveHooks": {
+    "contextQuestions": ["Fresh or dried?", "Through a dryer?", "White or colored cotton?", "Anything already applied?"],
+    "modifierNotes": "Fresh: excellent. Dried: cold rehydrate first. Heat-set: professional. H2O2 only if colorfast confirmed."
+  },
+
+  "difficulty": 3,
+  "timeEstimate": "10-20 minutes",
+  "lastValidated": "2026-03-23"
+}

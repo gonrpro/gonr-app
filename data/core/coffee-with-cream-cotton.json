@@ -1,0 +1,95 @@
+{
+  "id": "coffee-with-cream-cotton",
+  "title": "Coffee with Cream on Cotton",
+  "stainFamily": "combo",
+  "surface": "cotton",
+  "sector": "textile",
+  "source": "verified",
+  "stainChemistry": "Combination stains (coffee with cream, chocolate, mocha beverages, latte) contain multiple stain components each requiring different chemistry: (1) protein — from milk/cream solids, which bond to fibers via hydrogen bonds and hydrophobic interactions and are permanently set by heat; (2) fat/oil — from cream/cocoa butter, which are non-polar and repel water, requiring solvent extraction; (3) tannin — from cocoa or coffee pigments, which bond through hydrogen bonding and oxidize to brown over time. The molecular challenge: choose a sequence that targets each component without cross-activating others. Treat protein first (heat sets it), then fat (solvents lift it), then tannin (oxidizer breaks it).",
+  "whyThisWorks": "Multi-component stains cannot be treated with a single agent. Protein Formula breaks the milk protein bonds first — if oxidizers are applied first, they permanently set the protein component. POG then extracts the fat component with solvent chemistry. Tannin Formula and H₂O₂ handle the remaining color. Sequencing matters: each chemistry step must be completed and flushed before the next to avoid cross-contamination.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Tannin Formula (acidic tannin spotter) — coffee pigment/color phase first. Tamp gently, work edge to center. Dwell 5–10 minutes.",
+      "2. Flush with cool water.",
+      "3. Apply Protein Formula (digestant spotter) — address the milk/cream protein phase. Dwell 5–10 minutes cold. Tamp gently. Never apply heat before this step.",
+      "4. Flush with cool water — remove enzyme residue completely.",
+      "5. Apply POG (Paint-Oil-Grease remover) or amyl acetate — address the fat/cream phase. Dwell 5–10 minutes. Blot with clean absorbent cloth.",
+      "6. Flush with NSD (Neutral Synthetic Detergent) — removes all residue. Cool water rinse.",
+      "7. If residual discoloration: H₂O₂ 6% on colorfast cotton only — dwell 5 min, check progress, flush.",
+      "8. Neutralizing rinse: 28% Acetic acid (diluted 1:10) — restores pH. Blot dry."
+    ],
+    "products": [
+      "Tannin Formula (acidic tannin spotter)",
+      "POG (Paint-Oil-Grease remover) or amyl acetate",
+      "Protein Formula (digestant spotter)",
+      "H₂O₂ 6% (professional-grade oxidizer)",
+      "NSD (Neutral Synthetic Detergent)",
+      "28% Acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold — the protein component (milk/cream) is permanently set by heat. Never use warm or hot water at any stage until protein is fully digested and flushed.",
+    "warnings": [
+      "Applying all treatments simultaneously — creates a chemical slurry that's harder to remove.",
+      "Using hot water early — permanently sets the protein/milk component.",
+      "Not rinsing completely between treatments — old chemistry interferes with new treatment.",
+      "Over-agitating the stain — spreads each component deeper into the fiber.",
+      "NEVER use ammonia, baking soda, or alkaline agents on the tannin component — permanently darkens it."
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Scrape or wipe away any solid material. Use cold water only.",
+      "2. Mix 1 tbsp dish soap into cold water. Blot the solution onto the stain. The soap addresses both the protein (surfactant action) and partial fat component.",
+      "3. Let it sit for 5–10 minutes.",
+      "4. Blot with a clean white cloth. Repeat if needed.",
+      "5. Rinse with cold water. Air dry — don't use a dryer until the stain is gone."
+    ],
+    "products": [
+      "Dawn dish soap",
+      "Cold water",
+      "OxiClean Versatile Stain Remover (enzyme + oxygen bleach for multi-component stains)",
+      "3% hydrogen peroxide (for remaining color after protein treatment)",
+      "Clean white cloths"
+    ],
+    "whenToStop": "If the stain is still visible after multiple treatments, it may be permanently set. For fabrics you care about, consider professional cleaning before attempting further home treatment. Further aggressive home treatment on a set combo stain risks permanent fiber damage.",
+    "warnings": [
+      "Test any cleaning solution on a hidden seam or inside hem first.",
+      "Never use hot water — permanently sets the protein/milk component.",
+      "Avoid heat until the stain is completely gone — heat sets all components.",
+      "Always scrape off solid material first — don't smear it around.",
+      "NEVER use ammonia or alkaline products — permanently darkens the tannin component."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never use hot water or apply heat before protein component is treated — permanently sets milk/cream protein.",
+      "Never apply oxidizers before protein treatment — oxidizers permanently set protein stains.",
+      "Never use ammonia, baking soda, or alkaline agents — permanently darkens the tannin component.",
+      "Never mix ammonia with chlorine bleach — produces toxic chloramine gas.",
+      "Never apply all treatments simultaneously — chemistry interference makes removal harder.",
+      "Never put in the dryer before stain is fully gone."
+    ],
+    "fiberSensitivities": [
+      "Cotton (cellulose) tolerates most agents well — both enzyme digestants and peroxide are safe.",
+      "Colored cotton: test peroxide in a hidden area first.",
+      "The protein component of combo stains is the most time-sensitive — treat quickly before heat exposure."
+    ]
+  },
+  "escalation": {
+    "when": "If sequential treating fails, the stain components may have cross-linked or oxidized together. Try targeting the most stubborn component last: start with solvent for fat, then NSD for emulsification, then peroxide for color. For extreme cases, recommend professional assessment.",
+    "whatToTell": "We've treated the stain on your garment. This type of stain combines several components at once, each needing a different approach — protein, fat, and color pigment must all be addressed in sequence.",
+    "specialistType": "dry cleaner or wet cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain — was it treated immediately or has it been sitting?",
+      "Was any heat applied (dryer, iron) before treatment? (permanently sets protein component)",
+      "Is this coffee with cream, chocolate, or a mocha beverage? (affects fat content and protocol emphasis)",
+      "Has the garment been washed with warm water before spotting?"
+    ],
+    "modifierNotes": "Fresh combo stain on undisturbed cotton responds reasonably well to dish soap alone. Any heat exposure permanently sets the protein component. Higher fat content (heavy cream, chocolate) requires more emphasis on the POG/solvent step. A garment run through the dryer has significantly reduced recovery odds on the protein component. Dark chocolate has a more complex tannin structure than milk chocolate — may require longer H₂O₂ dwell."
+  },
+  "difficulty": 7,
+  "timeEstimate": "15–30 minutes",
+  "lastValidated": "2026-03-23"
+}

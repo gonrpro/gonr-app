@@ -1,85 +1,89 @@
 {
-  "id": "red-wine+silk",
-  "version": "6.0",
-  "authored": "2026-03-22",
+  "id": "red-wine-silk",
   "title": "Red Wine on Silk",
   "stainFamily": "tannin",
   "surface": "silk",
   "sector": "textile",
-  "meta": {
-    "stainCanonical": "red-wine",
-    "surfaceCanonical": "silk",
-    "tier": "universal",
-    "riskLevel": "high",
-    "danReview": false,
-    "sourceKnowledge": ["dan-eisen-procedures", "rr-street-on-the-spot", "agent-fiber-safety", "product-guide-wine-away", "product-guide-al-wilson-tannin-go"]
-  },
-  "stainChemistry": "Red wine anthocyanins and condensed tannin polymers hydrogen-bond aggressively to silk's peptide backbone. Silk is a protein fiber (fibroin) with pH tolerance of 4.0–7.0 — it weakens in alkaline conditions and is destroyed by chlorine bleach and protease enzymes. The alcohol in wine loosens silk dyes, making dye bleeding a primary risk alongside the tannin set.",
-  "whyThisWorks": "Cold water flush prevents tannin oxidation while avoiding the dye bleeding that warm water accelerates on silk. Acetic acid (white vinegar) protonates the anthocyanin hydroxyl groups, breaking hydrogen bonds to the silk fibroin without pushing pH above silk's safe ceiling. Wine Away's reducing chemistry converts the anthocyanin flavylium cation to its colorless carbinol form — specifically targeting the chromophore without risking the protein fiber. No enzymes, no alkali, no chlorine — all of which destroy silk.",
-  "spottingProtocol": [
-    {
-      "step": 1,
-      "agent": "Cold water flush",
-      "technique": "Gentle blotting with cold distilled water from back of fabric",
-      "temperature": "Cold (60–65°F) — heat sets tannin permanently and accelerates silk dye bleeding",
-      "dwellTime": "30–60 seconds",
-      "instruction": "Place silk face-down on clean white towel. Flush from the back with cold distilled water using a spray bottle — never rub silk, the wet fibers are 20% weaker than dry. Blot gently. Check towel for dye transfer before proceeding."
-    },
-    {
-      "step": 2,
-      "agent": "A.L. Wilson Tannin-Go (diluted 1:3 with cold water for silk)",
-      "technique": "Feather application with cotton swab from outside edge inward",
-      "temperature": "Ambient — no steam on silk during tannin treatment",
-      "dwellTime": "2–3 minutes maximum",
-      "instruction": "Dilute Tannin-Go 1:3 for silk safety. Apply with cotton swab from outer edge of stain inward. The mild acidity disrupts tannin-fiber hydrogen bonds without exceeding silk's pH floor. Work gently — no brushing, no spatula on silk. Flush with cold water after 2–3 minutes. Do not let acid dwell longer — prolonged acid contact weakens silk peptide chains."
-    },
-    {
-      "step": 3,
-      "agent": "Wine Away Red Wine Stain Remover",
-      "technique": "Apply directly to remaining anthocyanin color, blot with white cloth",
-      "temperature": "Ambient — cold application only",
-      "dwellTime": "1–5 minutes, watch for color conversion",
-      "instruction": "If red/purple color remains after Tannin-Go, apply Wine Away directly. The reducing chemistry converts the anthocyanin flavylium cation to a colorless carbinol form without oxidizer risk. Watch the stain — you should see red fade to pink to clear within 30–90 seconds on fresh stains. Blot gently. This product is silk-safe because it avoids bleach, enzymes, and alkali."
-    },
-    {
-      "step": 4,
-      "agent": "Acetic acid rinse (white vinegar diluted 1:4 with cold water)",
-      "technique": "Final pH neutralization and flush",
-      "temperature": "Cold",
-      "dwellTime": "30 seconds",
-      "instruction": "Spray dilute vinegar solution across treated area to neutralize any residual chemistry and prevent tannin rebound. Flush immediately with cold distilled water. Blot dry between clean white towels — never wring or twist silk. Air dry flat away from direct sunlight. Never apply heat until stain is confirmed gone."
-    }
-  ],
-  "homeSolutions": [
-    "Fresh spill: Blot immediately with a clean white cloth — never rub silk. Flush with cold water only. Apply white vinegar diluted 1:1 with cold water, let sit 2 minutes, blot and rinse.",
-    "Set stain: Apply Wine Away, cover with plastic wrap to keep moist, let sit 15–30 minutes. Rinse with cold water and repeat if needed. Do not use OxiClean or any oxygen bleach on silk.",
-    "When to stop: If the stain has turned brown (oxidized tannin) and vinegar/Wine Away aren't lifting it, stop. Take to a professional dry cleaner — home oxidizer options are too harsh for silk. Tell them it's oxidized red wine on silk."
-  ],
-  "materialWarnings": [
-    "NEVER use protease enzymes on silk — silk IS a protein fiber (fibroin); protease will digest the fabric itself",
-    "NEVER use chlorine bleach on silk — destroys the protein structure and causes irreversible yellowing",
-    "NEVER use hot water or steam — sets tannin permanently AND accelerates dye bleeding on silk",
-    "NEVER use ammonia or alkaline spotters — silk degrades above pH 7.0; alkali also darkens tannin stains",
-    "NEVER rub wet silk — fibroin loses 20% tensile strength when wet, causing fiber breakage and sheen loss"
-  ],
-  "products": {
-    "professional": [
-      {"name": "A.L. Wilson Tannin-Go", "use": "Diluted 1:3 for silk — primary tannin bond breaker", "note": "Acetic acid base disrupts hydrogen bonds between anthocyanin and silk fibroin without alkali risk"},
-      {"name": "Wine Away Red Wine Stain Remover", "use": "Reducing agent for residual anthocyanin chromophore", "note": "Silk-safe — no bleach, no enzymes, no alkali. Targets the flavylium cation specifically."},
-      {"name": "Street's Tannin Remover", "use": "Alternative tannin spotter — dilute for silk", "note": "More concentrated than Tannin-Go; must dilute 1:4 minimum for silk safety"}
+  "source": "verified",
+
+  "stainChemistry": "Red wine anthocyanins and tannins bond to silk fibroin through hydrogen bonding and ionic interactions with silk's amino acid groups. Silk dyes are notoriously unstable — many are acid dyes that bond ionically to the silk fiber. The acids in red wine (tartaric, malic) can interact with these dyes, causing color shifts or bleeding. The tannins also have affinity for protein fibers, making red wine one of the most difficult stains to remove from silk without professional intervention.",
+
+  "whyThisWorks": "Immediate cold water dilution limits the anthocyanin's ability to bond before it oxidizes. NSD maintains neutral pH and avoids the alkaline conditions that would damage silk's protein structure. The treatment window for silk red wine is very narrow — the longer it sits, the deeper the chromophore bonds and the more likely dye interaction becomes.",
+
+  "defaultAssumption": "Treat as urgent. Even a 30-minute delay significantly reduces success rate on silk. This is one of the highest-risk fabric/stain combinations in textile care.",
+
+  "professionalProtocol": {
+    "steps": [
+      "1. Blot immediately and continuously — maximum absorption before any treatment",
+      "2. Flush gently with cold water from back of fabric",
+      "3. Apply NSD (neutral synthetic detergent, pH 6-7) — work in very gently with fingertip",
+      "4. Cold water rinse — blot with clean white cloth",
+      "5. If stain remains: apply tannin spotter briefly (1-2 minutes maximum) — pH must stay neutral",
+      "6. Flush immediately and thoroughly",
+      "7. Do NOT apply hydrogen peroxide or bleach on colored silk — risk of dye damage",
+      "8. On white silk only: very dilute hydrogen peroxide (1%) with strict monitoring — rinse immediately",
+      "9. Lay flat to dry — never hang"
     ],
-    "consumer": [
-      {"name": "Wine Away Red Wine Stain Remover", "use": "Apply directly to red wine stain on silk", "note": "One of the few consumer products safe for silk wine stains — reducing chemistry, no bleach"},
-      {"name": "White distilled vinegar (5% acetic acid)", "use": "Dilute 1:1 with cold water as tannin spotter", "note": "Safe, gentle acid that breaks tannin bonds without damaging silk"},
-      {"name": "Carbona Stain Devils #1 (Coffee, Tea, Wine)", "use": "Follow label — test on hidden seam first", "note": "Formulated for tannin stains; test carefully on silk for dye safety"}
+    "products": ["NSD (neutral synthetic detergent)", "cold water", "Bridgepoint Tannin Spotter (brief, careful)", "1% H2O2 for white silk only"],
+    "temperature": "cold only — ≤30°C / 86°F",
+    "warnings": [
+      "NEVER use chlorine bleach — dissolves silk",
+      "NEVER use alkaline detergent — breaks silk protein bonds",
+      "NEVER apply heat",
+      "NEVER use full-strength tannin spotter without dilution — pH too low for silk",
+      "NEVER rub or agitate — breaks silk fibers",
+      "Silk dyes are unstable — always test on hidden seam before applying anything",
+      "Professional treatment is strongly recommended for any dried stain"
     ]
   },
-  "escalation": {
-    "when": "Stain has turned brown (oxidized), or Wine Away + Tannin-Go haven't removed it after two cycles, or dye bleeding is visible around stain",
-    "whatToTell": "This is an oxidized red wine stain on silk. I did not use heat, alkali, or enzymes. I used cold water, diluted tannin spotter, and Wine Away reducing agent. The anthocyanin has polymerized beyond what home chemistry can reverse.",
-    "specialistType": "Dry cleaner with GreenEarth or hydrocarbon solvent — PERC can leave odor and affect silk hand-feel. Ask for wet-side pre-spotting with professional tannin formula before the cleaning cycle."
+
+  "diyProtocol": {
+    "steps": [
+      "1. Blot immediately with clean white cloth — absorb as much as possible",
+      "2. Flush very gently with cold water",
+      "3. One drop of baby shampoo in cold water — apply to stain, work in with fingertip only",
+      "4. Rinse gently with cold water",
+      "5. Lay flat on clean white towel — do not hang"
+    ],
+    "products": ["baby shampoo", "cold water", "clean white cloth"],
+    "whenToStop": "Stop immediately if the silk shows any color change, water spotting, or texture difference. Take to a silk specialist. Do not attempt further treatment at home.",
+    "warnings": [
+      "No OxiClean, hydrogen peroxide, or any bleach on colored silk",
+      "No vinegar or acids",
+      "No rubbing",
+      "No heat",
+      "Home treatment has limited effectiveness — professional treatment significantly better for red wine on silk"
+    ]
   },
-  "solventNote": "Pre-spot on wet side with diluted tannin formula before dry cleaning cycle. GreenEarth or hydrocarbon solvent preferred for silk — PERC safe but may affect hand-feel and retain odor. For set stains showing brown oxidation, POG pre-treatment on dry side can help break the polymerized tannin shell before wet-side acid treatment. Avoid hot dryer — air dry or low heat only.",
-  "difficulty": 8,
-  "danReviewFlag": false
+
+  "safetyMatrix": {
+    "neverDo": [
+      "Chlorine bleach or strong oxidizers",
+      "Alkaline detergent (pH >8)",
+      "Hot water or any heat",
+      "Extended tannin spotter without pH control",
+      "Rubbing or agitation"
+    ],
+    "fiberSensitivities": [
+      "Silk pH range is 4.0–8.0 — anything outside this damages the fiber",
+      "Silk dyes are typically acid dyes — wine acids can cause dye bleeding",
+      "Silk fibroin is a protein — any alkaline or enzyme treatment carries fiber damage risk",
+      "Water spots are common on silk — always work with minimal moisture"
+    ]
+  },
+
+  "escalation": {
+    "when": "Any dried stain, any stain with color change, or any stain that remains after gentle cold NSD treatment",
+    "whatToTell": "Red wine on silk — tannin stain. Possibly affecting the dye. Ask for neutral tannin spotter treatment with strict pH control. No chlorine bleach, no alkaline treatment, no heat.",
+    "specialistType": "Silk specialist or certified wet cleaner with silk experience"
+  },
+
+  "deepSolveHooks": {
+    "contextQuestions": ["Is the stain fresh?", "Has any color change occurred?", "Is the silk white or colored?", "Has anything been applied already?"],
+    "modifierNotes": "Fresh red wine on silk: immediate cold water + NSD is most effective home option. Dried: professional only. Color change/dye bleeding already visible: professional — may require dye restoration. White silk: slightly more treatment latitude with dilute H2O2 monitored carefully."
+  },
+
+  "difficulty": 9,
+  "timeEstimate": "Immediate professional treatment recommended",
+  "lastValidated": "2026-03-23"
 }

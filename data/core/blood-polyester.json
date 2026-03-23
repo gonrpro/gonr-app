@@ -1,0 +1,84 @@
+{
+  "id": "blood-polyester",
+  "title": "Blood on Polyester",
+  "stainFamily": "protein",
+  "surface": "polyester",
+  "sector": "textile",
+  "source": "verified",
+  "stainChemistry": "Classification: Protein. Blood stains consist of hemoglobin (iron-containing protein), albumin, and other plasma proteins. Hemoglobin's heme group (iron-porphyrin complex) produces the red-brown color. Heat denatures blood proteins, causing irreversible cross-linking with fibers — making the stain permanent. On polyester (synthetic fiber): polyester is chemically resistant and non-absorbent — blood sits on the fiber surface and bonds via weak hydrogen bonds and hydrophobic interactions rather than absorbing deeply as it does on cotton. Treatment: cold water flush to prevent heat-setting, followed by alkaline protease enzyme digestion to hydrolyze peptide bonds. Polyester's chemical resistance means enzyme-based digestants are safe and effective on this fiber.",
+  "whyThisWorks": "Polyester doesn't absorb blood as deeply as natural fibers — the stain is more surface-bound, making early treatment especially effective. Protein Formula (digestant) hydrolyzes the peptide bonds in hemoglobin and other blood proteins. NSD removes digested protein particles. Acetic acid neutralizes alkaline residue. Unlike wool and silk, polyester can fully tolerate enzyme-based digestants — no fiber damage risk.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Protein Formula (digestant spotter) to the stain and tamp gently with a spotting brush. Dwell 5–10 minutes. This digestant breaks down blood, milk, egg, and body fluid proteins. Work from the edge toward the center.",
+      "2. Apply NSD (Neutral Synthetic Detergent) and work gently. Dwell 3–5 minutes. This neutral detergent removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray.",
+      "3. Apply 28% Acetic acid (diluted 1:10) to neutralize any remaining alkaline residue and restore the fabric's natural state. Dwell 1–2 minutes. Blot dry with clean absorbent cloth."
+    ],
+    "products": [
+      "Protein Formula (digestant spotter)",
+      "NSD (Neutral Synthetic Detergent)",
+      "28% Acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold — heat denatures blood proteins and cross-links them to the polyester fiber permanently. Never use hot water or heat at any stage until the stain is fully removed.",
+    "warnings": [
+      "Using hot water — permanently sets blood protein onto polyester fiber.",
+      "Rubbing instead of blotting — spreads the stain.",
+      "Not testing in an inconspicuous area first.",
+      "Using too aggressive a chemical without checking surface compatibility.",
+      "Never use alcohol or alcohol-based products — permanently sets protein stains."
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Rinse with cold water right away. Blot with a clean white cloth — don't rub. Cold water keeps the stain from setting; rubbing pushes it deeper.",
+      "2. Mix a small squirt of dish soap (Dawn) into cold water. Blot the solution onto the stain.",
+      "3. Let it sit for 5–10 minutes. Don't use any heat.",
+      "4. Blot with a clean white cloth until the stain fades.",
+      "5. Rinse with cold water and air dry — don't use a dryer until the stain is gone."
+    ],
+    "products": [
+      "Dawn dish soap (or similar)",
+      "Cold water",
+      "Clean white cloths",
+      "OxiClean Versatile Stain Remover (for set stains)",
+      "Zout Triple Enzyme Stain Remover (for stubborn protein stains)"
+    ],
+    "whenToStop": "If cold water and dish soap don't fully remove it, try an enzyme-based stain remover (OxiClean, Zout) — follow product label. On whites/colorfast fabric, a weak 3% hydrogen peroxide solution (1:3 with water) can help. Test on a hidden seam first. If stain survives two treatment rounds, take to a professional.",
+    "warnings": [
+      "Test any cleaning solution on a hidden seam or inside hem first.",
+      "Check for colorfastness before using hydrogen peroxide.",
+      "Avoid heat until the stain is completely gone.",
+      "Never use hot water on a protein stain — heat permanently sets it."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never use hot water — permanently sets blood protein into polyester.",
+      "Never use alcohol or alcohol-based products — permanently sets protein stains.",
+      "Never put in the dryer until stain is fully removed.",
+      "Never rub — spreads the stain."
+    ],
+    "fiberSensitivities": [
+      "Polyester (synthetic fiber) tolerates enzyme-based digestants, peroxide, and most cleaning agents well.",
+      "Polyester is heat-sensitive at high temperatures — avoid hot water and high-heat drying.",
+      "Polyester can develop a permanent gray haze from heat-set protein — treat cold and quickly."
+    ]
+  },
+  "escalation": {
+    "when": "If enzyme treatment and peroxide do not fully resolve the blood stain on polyester, the protein has likely cross-linked into the fiber. Professional spotting with concentrated agents and spotting board equipment achieves results home methods cannot match. Take to a professional dry cleaner and specify the stain type.",
+    "whatToTell": "We've treated the blood on your garment. Blood sets deeper with heat and time — the earlier it's treated, the better the result.",
+    "specialistType": "dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain — was it treated immediately or has it been sitting?",
+      "Was the garment washed or put in the dryer before this treatment attempt?",
+      "Is the polyester a light color or dark/heavily dyed?",
+      "Has any product already been applied to the stain?"
+    ],
+    "modifierNotes": "Fresh blood on polyester responds very well to cold water alone due to polyester's low absorption. A heat-set stain (dryer) is significantly harder — the protein has thermally cross-linked to the fiber. Enzyme-based spotters (Zout, OxiClean) are fully safe on polyester, unlike on wool or silk. Dark polyester: test peroxide in a hidden area before using."
+  },
+  "difficulty": 3,
+  "timeEstimate": "5–15 minutes",
+  "lastValidated": "2026-03-23"
+}
