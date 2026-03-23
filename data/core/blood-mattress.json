@@ -6,17 +6,17 @@
   "sector": "home",
   "source": "verified",
   "verified": false,
-  "stainChemistry": "Classification: Protein. Blood is primarily hemoglobin protein (oxygen-carrying protein in red blood cells) plus plasma (serum proteins, water, salts). Hemoglobin contains iron (heme group), which gives blood its red color. Fresh blood is liquid and water-soluble; dried blood is a protein network that has cross-linked through oxidation. Protein stains bond to fibers via peptide-to-fiber hydrogen bonds and hydrophobic interactions. Heat denatures the protein, cross-linking it to the substrate and making removal extremely difficult. Treatment: cold water flush to prevent heat-setting, followed by alkaline Protein Formula digestion to hydrolyze peptide bonds.",
+  "stainChemistry": "Classification: Protein. Blood is primarily hemoglobin protein (oxygen-carrying protein in red blood cells) plus plasma (serum proteins, water, salts). Hemoglobin contains iron (heme group), which gives blood its red color. Fresh blood is liquid and water-soluble; dried blood is a protein network that has cross-linked through oxidation. Protein stains bond to fibers via peptide-to-fiber hydrogen bonds and hydrophobic interactions. Heat denatures the protein, cross-linking it to the substrate and making removal extremely difficult. Treatment: cold water flush to prevent heat-setting, followed by alkaline Protein digestion to hydrolyze peptide bonds.",
   "whyThisWorks": "Blood contains proteins that bond tightly to surfaces, and heat cooks them in permanently. Cold water is critical because heat permanently sets the protein. The cleaning agents need enough time to reach the depth the stain reached.",
   "defaultAssumption": "Treat as unknown age / possibly dried.",
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula to the stain and tamp gently with a spotting brush. This digestant breaks down blood proteins. Work from the edge toward the center. Use reduced dwell time (3 minutes) on wool or silk. Dwell 5–10 minutes.",
+      "1. Apply Protein to the stain and tamp gently with a spotting brush. This digestant breaks down blood proteins. Work from the edge toward the center. Use reduced dwell time (3 minutes) on wool or silk. Dwell 5–10 minutes.",
       "2. Apply NSD and work gently. This NSD removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray. Dwell 3–5 minutes.",
       "3. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue and restore the fabric's natural state. Blot dry with clean absorbent cloth. Dwell 1–2 minutes."
     ],
     "products": [
-      "Protein Formula",
+      "Protein",
       "NSD (Neutral Synthetic Detergent)",
       "acetic acid (diluted 1:10)"
     ],
@@ -61,7 +61,7 @@
   },
   "escalation": {
     "when": "Stain has penetrated deep into mattress batting, or has been set by prior heat exposure",
-    "whatToTell": "Blood stain on mattress, unknown age, cold water and Protein Formula applied. Possible deep penetration into batting. Steam extraction on surface only — do NOT fully saturate.",
+    "whatToTell": "Blood stain on mattress, unknown age, cold water and Protein applied. Possible deep penetration into batting. Steam extraction on surface only — do NOT fully saturate.",
     "specialistType": "upholstery or mattress cleaning specialist"
   },
   "deepSolveHooks": {

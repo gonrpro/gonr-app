@@ -6,17 +6,17 @@
   "sector": "textile",
   "source": "verified",
   "verified": false,
-  "stainChemistry": "Classification: Protein. Egg stains contain albumin protein (egg white) and lecithin fat (egg yolk), plus sulfur compounds. Albumin is a globular protein held together by peptide bonds and hydrogen bonding. When exposed to heat above 60°C, albumin denatures and cross-links into an insoluble cooked protein structure — literally cooking onto the fabric like frying an egg in a pan. Protein stains bond to fibers via peptide-to-fiber hydrogen bonds and hydrophobic interactions. Treatment: cold water flush to prevent heat-setting, followed by alkaline Protein Formula digestion to hydrolyze peptide bonds.",
+  "stainChemistry": "Classification: Protein. Egg stains contain albumin protein (egg white) and lecithin fat (egg yolk), plus sulfur compounds. Albumin is a globular protein held together by peptide bonds and hydrogen bonding. When exposed to heat above 60°C, albumin denatures and cross-links into an insoluble cooked protein structure — literally cooking onto the fabric like frying an egg in a pan. Protein stains bond to fibers via peptide-to-fiber hydrogen bonds and hydrophobic interactions. Treatment: cold water flush to prevent heat-setting, followed by alkaline Protein digestion to hydrolyze peptide bonds.",
   "whyThisWorks": "Egg is a protein that hardens and bonds when exposed to heat. Cold water prevents the protein from setting permanently; enzyme-based cleaners break the protein down so it rinses clean.",
   "defaultAssumption": "Treat as unknown age / possibly dried.",
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula to the stain and tamp gently with a spotting brush. This digestant breaks down egg proteins. Work from the edge toward the center. On wool or silk, use reduced dwell time (3 minutes) to protect the fiber. Dwell 5–10 minutes.",
+      "1. Apply Protein to the stain and tamp gently with a spotting brush. This digestant breaks down egg proteins. Work from the edge toward the center. On wool or silk, use reduced dwell time (3 minutes) to protect the fiber. Dwell 5–10 minutes.",
       "2. Apply NSD and work gently. This NSD removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray. Dwell 3–5 minutes.",
       "3. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue and restore the fabric's natural state. Blot dry with clean absorbent cloth. Dwell 1–2 minutes."
     ],
     "products": [
-      "Protein Formula",
+      "Protein",
       "NSD (Neutral Synthetic Detergent)",
       "acetic acid (diluted 1:10)"
     ],
@@ -25,7 +25,7 @@
       "Applying heat before chemical treatment — heat denatures protein and cross-links it to clothing permanently",
       "Using tannin formula on protein — wrong chemistry, wastes time and can set the stain",
       "Not flushing between enzyme and bleach steps — enzyme residue reduces bleach effectiveness",
-      "Rushing the enzyme dwell time — Protein Formula needs 10+ minutes for full peptide hydrolysis"
+      "Rushing the enzyme dwell time — Protein needs 10+ minutes for full peptide hydrolysis"
     ]
   },
   "diyProtocol": {
@@ -55,11 +55,11 @@
       "Use tannin formula on protein — wrong chemistry and can set the stain"
     ],
     "fiberSensitivities": [
-      "On clothing: test all agents in an inconspicuous area first. Monitor for color change, surface dulling, or texture damage during treatment. Wool and silk require enzyme-free chemistry — Protein Formula enzymes digest protein fibers."
+      "On clothing: test all agents in an inconspicuous area first. Monitor for color change, surface dulling, or texture damage during treatment. Wool and silk require enzyme-free chemistry — Protein enzymes digest protein fibers."
     ]
   },
   "escalation": {
-    "when": "Stain persists after one complete wash cycle and two rounds of Protein Formula, or stain has been heat-dried",
+    "when": "Stain persists after one complete wash cycle and two rounds of Protein, or stain has been heat-dried",
     "whatToTell": "Egg stain on clothing, protein-based. Treated at home with NSD and cold water. Stain may have been heat-set. Please advise on enzyme-based recovery options.",
     "specialistType": "wet cleaner"
   },

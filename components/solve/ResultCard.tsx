@@ -74,7 +74,7 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
       if (typeof s === 'object') return s
       const clean = s.replace(/^\d+\.\s*/, '')
       // Extract agent: look for known professional agent names
-      const knownAgents = ['Protein Formula', 'Tannin Formula', 'NSD', 'POG', 'H₂O₂', 'H2O2', 'Acetic Acid', 'Reducing Agent', 'Rust Remover', 'Enzyme Digester', 'Leveling Agent', 'IPA']
+      const knownAgents = ['Protein', 'Tannin Formula', 'NSD', 'POG', 'H₂O₂', 'H2O2', 'Acetic Acid', 'Reducing Agent', 'Rust Remover', 'Enzyme Digester', 'Leveling Agent', 'IPA']
       const agent = knownAgents.find(a => clean.toLowerCase().includes(a.toLowerCase())) ?? ''
       return { step: i + 1, agent, instruction: clean }
     })
