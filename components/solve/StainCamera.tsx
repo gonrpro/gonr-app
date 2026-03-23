@@ -74,9 +74,16 @@ export default function StainCamera({ onStainDetected, onReset }: StainCameraPro
       {state === 'idle' && (
         <button
           onClick={() => inputRef.current?.click()}
-          className="flex items-center gap-2 px-3 py-2 rounded-xl min-h-[44px] text-sm font-medium bg-[var(--surface)] border border-[var(--border-strong)] text-[var(--text)] hover:border-green-500/50 transition-all"
+          className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all"
+          style={{
+            background: 'var(--surface)',
+            border: '1.5px solid var(--border-strong)',
+            color: 'var(--text)',
+            minHeight: 56,
+            flex: 1,
+          }}
         >
-          <span>📷</span>
+          <span className="text-xl">📷</span>
           <span>Scan Stain</span>
         </button>
       )}

@@ -227,8 +227,8 @@ export default function SolvePage() {
         )}
       </div>
 
-      {/* Surface chips — show after stain selected */}
-      {(selectedStain || stainInput.trim()) && (
+      {/* Surface chips — only show if no fiber selected yet */}
+      {!selectedFiber && (selectedStain || stainInput.trim()) && (
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>
             Surface / Fabric
