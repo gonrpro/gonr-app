@@ -2,9 +2,95 @@
 
 import { useState } from 'react'
 import TierGate from '@/components/ui/TierGate'
+import GarmentAnalysis from '@/components/solve/GarmentAnalysis'
+import { useUser } from '@/lib/hooks/useUser'
+import { canAccessFeature } from '@/lib/auth/features'
+
+type ActiveTool = 'garment_analysis' | 'deep_solve' | 'handoff' | 'stain_brain' | null
+
+const TOOLS: {
+  id: ActiveTool & string
+  feature: string
+  icon: string
+  title: string
+  description: string
+  badge: string
+  badgeColor: string
+  hoverBorder: string
+}[] = [
+  {
+    id: 'garment_analysis',
+    feature: 'garment_analysis',
+    icon: '🔍',
+    title: 'Garment Analysis',
+    description: 'Photo of damage → AI reasoning → root cause + repair protocol + customer handoff.',
+    badge: 'OPERATOR',
+    badgeColor: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
+    hoverBorder: 'hover:border-amber-500/30',
+  },
+  {
+    id: 'deep_solve',
+    feature: 'deep_solve',
+    icon: '🔬',
+    title: 'Deep Solve',
+    description: 'AI-powered deep analysis of complex or multi-layered stains.',
+    badge: 'PRO',
+    badgeColor: 'bg-green-500/15 text-green-400 border-green-500/30',
+    hoverBorder: 'hover:border-green-500/30',
+  },
+  {
+    id: 'handoff',
+    feature: 'handoff',
+    icon: '💬',
+    title: 'Customer Handoff',
+    description: 'Generate professional customer-facing messages for intake, release, and tough stains.',
+    badge: 'PRO',
+    badgeColor: 'bg-green-500/15 text-green-400 border-green-500/30',
+    hoverBorder: 'hover:border-green-500/30',
+  },
+  {
+    id: 'stain_brain',
+    feature: 'deep_solve',
+    icon: '🧠',
+    title: 'Stain Brain',
+    description: 'Chat with GONR\u2019s AI about any stain scenario. Ask anything.',
+    badge: 'PRO',
+    badgeColor: 'bg-green-500/15 text-green-400 border-green-500/30',
+    hoverBorder: 'hover:border-green-500/30',
+  },
+]
 
 export default function ProToolsPage() {
+  const { email, tier, loading } = useUser()
   const [showGate, setShowGate] = useState(false)
+  const [activeTool, setActiveTool] = useState<ActiveTool>(null)
+
+  function handleToolClick(tool: typeof TOOLS[number]) {
+    // If user has access, expand the tool
+    if (canAccessFeature(tier, tool.feature)) {
+      setActiveTool(prev => prev === tool.id ? null : tool.id)
+    } else {
+      // Show paywall
+      setShowGate(true)
+    }
+  }
+
+  // When a tool is active, show only that tool
+  if (activeTool === 'garment_analysis') {
+    return (
+      <div className="space-y-4">
+        <button
+          onClick={() => setActiveTool(null)}
+          className="flex items-center gap-2 text-xs font-mono font-bold px-3 py-1.5 rounded-lg
+            border border-white/10 hover:border-amber-500/30 transition-colors"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          ← BACK
+        </button>
+        <GarmentAnalysis />
+      </div>
+    )
+  }
 
   return (
     <div className="space-y-5">
@@ -15,52 +101,41 @@ export default function ProToolsPage() {
         </p>
       </div>
 
-      {/* Deep Solve */}
-      <button
-        onClick={() => setShowGate(true)}
-        className="card w-full text-left space-y-2 hover:border-green-500/30 transition-colors"
-      >
-        <div className="flex items-center gap-2">
-          <span className="text-lg">🔬</span>
-          <h2 className="text-base font-bold">Deep Solve</h2>
-          <span className="tier-badge tier-verified text-[10px]">PRO</span>
+      {loading ? (
+        <div className="flex items-center justify-center py-8">
+          <span className="w-5 h-5 border-2 border-white/20 border-t-green-500 rounded-full animate-spin" />
         </div>
-        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-          AI-powered deep analysis of complex or multi-layered stains.
-        </p>
-      </button>
+      ) : (
+        TOOLS.map(tool => {
+          const hasAccess = canAccessFeature(tier, tool.feature)
+          return (
+            <button
+              key={tool.id}
+              onClick={() => handleToolClick(tool)}
+              className={`card w-full text-left space-y-2 transition-colors ${tool.hoverBorder}`}
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-lg">{tool.icon}</span>
+                <h2 className="text-base font-bold">{tool.title}</h2>
+                <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-md border ${tool.badgeColor}`}>
+                  {tool.badge}
+                </span>
+                {!hasAccess && (
+                  <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md
+                    bg-white/5 text-gray-500 border border-white/10 ml-auto">
+                    🔒
+                  </span>
+                )}
+              </div>
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                {tool.description}
+              </p>
+            </button>
+          )
+        })
+      )}
 
-      {/* Customer Handoff */}
-      <button
-        onClick={() => setShowGate(true)}
-        className="card w-full text-left space-y-2 hover:border-green-500/30 transition-colors"
-      >
-        <div className="flex items-center gap-2">
-          <span className="text-lg">💬</span>
-          <h2 className="text-base font-bold">Customer Handoff</h2>
-          <span className="tier-badge tier-verified text-[10px]">PRO</span>
-        </div>
-        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-          Generate professional customer-facing messages for intake, release, and tough stains.
-        </p>
-      </button>
-
-      {/* Stain Brain */}
-      <button
-        onClick={() => setShowGate(true)}
-        className="card w-full text-left space-y-2 hover:border-green-500/30 transition-colors"
-      >
-        <div className="flex items-center gap-2">
-          <span className="text-lg">🧠</span>
-          <h2 className="text-base font-bold">Stain Brain</h2>
-          <span className="tier-badge tier-verified text-[10px]">PRO</span>
-        </div>
-        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-          Chat with GONR&apos;s AI about any stain scenario. Ask anything.
-        </p>
-      </button>
-
-      <TierGate isOpen={showGate} onClose={() => setShowGate(false)} />
+      <TierGate isOpen={showGate} onClose={() => setShowGate(false)} email={email || undefined} />
     </div>
   )
 }

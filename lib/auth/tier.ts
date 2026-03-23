@@ -3,14 +3,8 @@ import { createServerSupabaseClient } from '../supabase/server'
 
 const FOUNDER_EMAIL = 'tyler@gonr.pro'
 
-const FEATURE_ACCESS: Record<string, Tier[]> = {
-  solve:            ['free', 'home', 'spotter', 'operator', 'founder'],
-  unlimited_solve:  ['home', 'spotter', 'operator', 'founder'],
-  deep_solve:       ['spotter', 'operator', 'founder'],
-  handoff:          ['spotter', 'operator', 'founder'],
-  garment_analysis: ['operator', 'founder'],
-  dashboard:        ['operator', 'founder'],
-}
+// Re-export pure feature access for backward compatibility
+export { canAccessFeature } from './features'
 
 export async function resolveTier(email: string): Promise<User> {
   // Founder override
@@ -60,8 +54,3 @@ export async function resolveTier(email: string): Promise<User> {
   }
 }
 
-export function canAccessFeature(tier: Tier, feature: string): boolean {
-  const allowed = FEATURE_ACCESS[feature]
-  if (!allowed) return false
-  return allowed.includes(tier)
-}
