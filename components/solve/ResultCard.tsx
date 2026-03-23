@@ -73,11 +73,10 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
     if (!raw || !Array.isArray(raw)) return []
     return raw.map((s: string | Step, i: number) => {
       if (typeof s === 'object') return s
-      // Parse string like "1. Apply Protein Formula — tamp gently..."
       const clean = s.replace(/^\d+\.\s*/, '')
-      // Extract agent: first word(s) before dash, colon, or "with"
-      const agentMatch = clean.match(/^(Apply|Use|Flush|Rinse|Blot|Neutralize|Inspect)\s+([^—\-:]+)/i)
-      const agent = agentMatch ? agentMatch[2].trim() : ''
+      // Extract agent: look for known professional agent names
+      const knownAgents = ['Protein Formula', 'Tannin Formula', 'NSD', 'POG', 'H₂O₂', 'H2O2', 'Acetic Acid', 'Reducing Agent', 'Rust Remover', 'Enzyme Digester', 'Leveling Agent', 'IPA']
+      const agent = knownAgents.find(a => clean.toLowerCase().includes(a.toLowerCase())) ?? ''
       return { step: i + 1, agent, instruction: clean }
     })
   })()

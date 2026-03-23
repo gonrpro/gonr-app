@@ -212,36 +212,8 @@ export async function lookupProtocol(
     }
   }
 
-  // ── Tier 3: Family match ──────────────────────────────────────────────
-  const family = detectFamily(resolvedStain) ?? detectFamily(stainNorm)
-  if (family) {
-    const targetSurface = resolvedSurface
-    let bestCard: ProtocolCard | null = null
-    let bestScore = 0
-
-    for (const card of allCards) {
-      const cardFamily = detectFamily(card.meta.stainCanonical)
-      if (cardFamily !== family) continue
-
-      let score = 0.5
-
-      // Exact surface match is best
-      if (card.meta.surfaceCanonical === targetSurface) {
-        score = 0.7
-      } else if (card.meta.surfaceCanonical === surfaceSlug) {
-        score = 0.65
-      }
-
-      if (score > bestScore) {
-        bestScore = score
-        bestCard = card
-      }
-    }
-
-    if (bestCard) {
-      return { card: bestCard, tier: 3, confidence: bestScore, source: 'verified' }
-    }
-  }
+  // ── Tier 3: Skip family fallback — wrong card is worse than AI ──────
+  // Go straight to AI if no exact or alias match found.
 
   // ── Tier 4: No match ──────────────────────────────────────────────────
   return { card: null, tier: 4, confidence: 0, source: 'ai' }
