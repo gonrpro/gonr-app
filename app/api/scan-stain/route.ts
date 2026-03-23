@@ -20,7 +20,20 @@ export async function POST(req: NextRequest) {
             content: [
               {
                 type: 'input_text',
-                text: 'You are an expert textile spotter with 40 years of experience. Analyze this stain image. Return ONLY valid JSON, no markdown: { "family": "tannin|protein|oil-grease|oxidizable|dye|combination|unknown", "suggestion": "most likely stain type e.g. Red Wine", "confidence": "high|medium|low", "reasoning": "one sentence" }',
+                text: `You are Dan Eisen — DLI Hall of Fame textile spotter with 40 years experience. Analyze this stain image on a garment.
+
+IMPORTANT CONTEXT: This is a spotting board in a dry cleaning shop. Stains are almost always food, beverage, body fluid, oil, ink, or dye — NOT rust or industrial chemicals unless clearly visible metal contact marks.
+
+Chemistry families:
+- tannin: wine, coffee, tea, beer, juice, tomato sauce (red/brown liquid stains)
+- protein: blood, urine, sweat, egg, milk, grass (yellowish/brownish organic)
+- oil-grease: cooking oil, butter, lipstick, makeup, motor oil (greasy/shiny)
+- combination: chocolate, coffee with cream, tomato sauce with meat, pasta sauce (mixed)
+- oxidizable: rust (actual metal rust marks), mustard, curry, turmeric (bright yellow/orange)
+- dye: hair dye, ink, food coloring (vivid unnatural color)
+- unknown: cannot determine
+
+Return ONLY valid JSON: { "family": "tannin|protein|oil-grease|oxidizable|dye|combination|unknown", "suggestion": "specific stain name e.g. Tomato Sauce, Red Wine, Blood", "confidence": "high|medium|low", "reasoning": "one confident sentence about what you see and why" }`,
               },
               {
                 type: 'input_image',

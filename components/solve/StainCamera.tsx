@@ -96,14 +96,14 @@ export default function StainCamera({ onStainDetected, onReset }: StainCameraPro
       {state === 'done' && result && (
         <div className="space-y-2">
           <div className="px-3 py-2 rounded-xl text-sm space-y-1 w-full" style={{ background: 'var(--surface)', border: '1px solid var(--border-strong)' }}>
-            <p className="font-medium" style={{ color: 'var(--accent)' }}>
-              Looks like <span className="text-white">{result.suggestion}</span>
+            <p className="font-semibold text-base" style={{ color: 'var(--text)' }}>
+              {result.suggestion}
             </p>
-            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-              {FAMILY_LABELS[result.family] || result.family} family · {result.confidence} confidence
+            <p className="text-xs font-medium" style={{ color: 'var(--accent)' }}>
+              {FAMILY_LABELS[result.family] || result.family} family
             </p>
             {result.reasoning && (
-              <p className="text-xs italic" style={{ color: 'var(--text-secondary)' }}>{result.reasoning}</p>
+              <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{result.reasoning}</p>
             )}
           </div>
           <div className="flex gap-2">
