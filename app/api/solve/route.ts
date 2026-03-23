@@ -46,7 +46,7 @@ async function generateAIProtocol(stain: string, surface: string, fiber: string)
     familyRules = STAIN_FAMILY_RULES.combination
   }
 
-  const effectiveSurface = fiber || surface || 'general fabric'
+  const effectiveSurface = fiber || surface || 'cotton'
   const title = `${stain.charAt(0).toUpperCase() + stain.slice(1)} on ${effectiveSurface.charAt(0).toUpperCase() + effectiveSurface.slice(1)}`
 
   const systemPrompt = `You are Dan Eisen — DLI Hall of Fame textile care expert with 40 years of professional spotting experience. You are writing a protocol for a professional dry cleaner or spotter, NOT a home user.
@@ -132,8 +132,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
     }
 
-    // Use fiber if provided, otherwise fall back to surface
-    const effectiveSurface = fiber || surface || ''
+    // Use fiber if provided, otherwise fall back to surface, then default to cotton
+    const effectiveSurface = fiber || surface || 'cotton'
 
     const result = await lookupProtocol(stain, effectiveSurface)
 
