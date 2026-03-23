@@ -1,4 +1,31 @@
 import { NextResponse } from 'next/server'
+import { createClient } from '@supabase/supabase-js'
+
+async function saveToSupabase(card: any) {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY
+  if (!url || !key) return null
+
+  const supabase = createClient(url, key)
+
+  // Ensure table exists and insert
+  const { data, error } = await supabase
+    .from('dan_submissions')
+    .insert({
+      stain: card.stain,
+      fiber: card.fiber,
+      card_json: card,
+      submitted_at: card.submittedAt,
+      status: 'pending',
+    })
+    .select()
+
+  if (error) {
+    console.error('Supabase insert error:', error)
+    return null
+  }
+  return data
+}
 
 export async function POST(req: Request) {
   try {
@@ -90,7 +117,10 @@ Return ONLY valid JSON:
       submittedAt: card.submittedAt,
     }
 
-    // Step 3: Send email to atlas@gonr.pro
+    // Step 3: Save to Supabase
+    await saveToSupabase(fullCard)
+
+    // Step 4: Send email to atlas@gonr.pro
     const emailBody = `New Dan Eisen Protocol Submission
 
 Card ID: ${id}
