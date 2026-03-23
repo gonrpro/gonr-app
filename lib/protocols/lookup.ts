@@ -59,8 +59,6 @@ async function loadCoreCards(): Promise<void> {
   const files = await readdir(CORE_DIR)
   const jsonFiles = files.filter(f => f.endsWith('.json'))
 
-  // Track which canonical keys we've already indexed.
-  // Prefer files with '+' separator (v6 naming) over '-' (legacy).
   const seen = new Set<string>()
 
   // Sort so '+' files come first — they win the dedup race
@@ -74,11 +72,36 @@ async function loadCoreCards(): Promise<void> {
     try {
       const raw = await readFile(join(CORE_DIR, file), 'utf-8')
       const card: ProtocolCard = JSON.parse(raw)
-      const key = `${card.meta.stainCanonical}+${card.meta.surfaceCanonical}`
+
+      // Support both v6 (meta.stainCanonical) and v5/new format (id: "stain-surface")
+      let stainCanonical: string
+      let surfaceCanonical: string
+
+      if (card.meta?.stainCanonical && card.meta?.surfaceCanonical) {
+        stainCanonical = card.meta.stainCanonical
+        surfaceCanonical = card.meta.surfaceCanonical
+      } else if (card.id && card.id.includes('-')) {
+        // Derive from id: "blood-cotton" -> stain=blood, surface=cotton
+        const parts = card.id.split('-')
+        // Last part is surface if it's a known fiber/surface, otherwise use full id logic
+        surfaceCanonical = parts[parts.length - 1]
+        stainCanonical = parts.slice(0, -1).join('-')
+        // Patch meta so downstream code works
+        card.meta = card.meta ?? {} as any
+        card.meta.stainCanonical = stainCanonical
+        card.meta.surfaceCanonical = surfaceCanonical
+      } else {
+        continue
+      }
+
+      const key = `${stainCanonical}+${surfaceCanonical}`
+      // Also index with dash separator for flexible lookup
+      const dashKey = `${stainCanonical}-${surfaceCanonical}`
 
       if (!seen.has(key)) {
         seen.add(key)
         coreIndex.set(key, card)
+        coreIndex.set(dashKey, card)
         allCards.push(card)
       }
     } catch {
@@ -141,7 +164,8 @@ export async function lookupProtocol(
 
   // ── Tier 1: Exact canonical match ─────────────────────────────────────
   const exactKey = `${stainSlug}+${surfaceSlug}`
-  const exactCard = coreIndex.get(exactKey)
+  const exactKeyDash = `${stainSlug}-${surfaceSlug}`
+  const exactCard = coreIndex.get(exactKey) ?? coreIndex.get(exactKeyDash)
   if (exactCard) {
     return { card: exactCard, tier: 1, confidence: 1.0, source: 'verified' }
   }

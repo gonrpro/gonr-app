@@ -66,6 +66,29 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
     ? card.products as { professional?: { name: string; use?: string; note?: string }[]; consumer?: { name: string; use?: string; note?: string }[] }
     : { professional: [], consumer: [] }
 
+  // Normalize pro steps — support both spottingProtocol (v6) and professionalProtocol.steps (new format)
+  const rawCard = card as any
+  const proSteps: Step[] = card.spottingProtocol ?? (
+    rawCard.professionalProtocol?.steps
+      ? rawCard.professionalProtocol.steps.map((s: string, i: number) => ({
+          step: i + 1,
+          agent: s.replace(/^\d+\.\s*/, '').split('—')[0].split(':')[0].trim(),
+          instruction: s.replace(/^\d+\.\s*/, ''),
+        }))
+      : []
+  )
+
+  // Normalize DIY steps
+  const diySteps: (string | Step)[] = card.homeSolutions ?? (
+    rawCard.diyProtocol?.steps ?? []
+  )
+
+  // Normalize warnings
+  const warnings: string[] = card.materialWarnings
+    ?? rawCard.professionalProtocol?.warnings
+    ?? rawCard.safetyMatrix?.neverDo
+    ?? []
+
   return (
     <div className={`rounded-xl border-l-4 ${dc.border} bg-white dark:bg-[#0e131b] shadow-lg overflow-hidden`}>
 
@@ -132,9 +155,9 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
       </div>
 
       {/* ── 4. Pro Steps (numbered, agent in green caps) ── */}
-      {mode === 'pro' && card.spottingProtocol && (
+      {mode === 'pro' && proSteps.length > 0 && (
         <div className="px-4 pb-4 space-y-3">
-          {card.spottingProtocol.map((step, i) => (
+          {proSteps.map((step, i) => (
             <div key={i} className="flex gap-3">
               <div className="flex-shrink-0 w-7 h-7 rounded-full bg-green-500/20 text-green-400
                 flex items-center justify-center text-xs font-bold mt-0.5">
@@ -164,9 +187,9 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
       )}
 
       {/* ── 5. DIY Steps (numbered, simpler format) ── */}
-      {mode === 'diy' && card.homeSolutions && (
+      {mode === 'diy' && diySteps.length > 0 && (
         <div className="px-4 pb-4 space-y-3">
-          {card.homeSolutions.map((sol, i) => {
+          {diySteps.map((sol, i) => {
             const text = typeof sol === 'string' ? sol : (sol as Step).instruction
             return (
               <div key={i} className="flex gap-3">
@@ -241,10 +264,10 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         )}
 
         {/* Safety / Warnings */}
-        {card.materialWarnings && card.materialWarnings.length > 0 && (
+        {warnings.length > 0 && (
           <Collapsible title="Safety &amp; Warnings" icon={'\u26A0\uFE0F'}>
             <ul className="space-y-2">
-              {card.materialWarnings.map((w, i) => (
+              {warnings.map((w, i) => (
                 <li key={i} className="flex gap-2 items-start">
                   <span className="text-red-400 flex-shrink-0 mt-0.5">{'\u2022'}</span>
                   <span>{w}</span>
