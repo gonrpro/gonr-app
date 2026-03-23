@@ -61,6 +61,8 @@ PROFESSIONAL AGENT NAMES ONLY — use these exact terms:
 - Reducing Agent — for reactive dyes
 - Rust Remover (oxalic acid based) — for rust/iron
 
+NEVER suggest: OxiClean, chlorine bleach, baking soda, white vinegar, dish soap, Tide, Shout, or any consumer brand name. Professional agents only.
+
 ${familyRules ? `STAIN CHEMISTRY RULES:\n${familyRules}\n` : ''}
 ${fiberSafety ? `FIBER SAFETY CONSTRAINTS:\n${fiberSafety}\n` : ''}
 
