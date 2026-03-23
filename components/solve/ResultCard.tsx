@@ -154,28 +154,22 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         </div>
       )}
 
-      {/* ── 4. DIY / Home Steps ── */}
+      {/* Home Guide — collapsed by default, pro tool focus */}
       {diySteps.length > 0 && (
-        <div className="px-4 py-4" style={{ borderTop: '1px solid var(--border)' }}>
-          <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--text-secondary)' }}>
-            Home Guide
-          </p>
-          <div className="space-y-3">
-            {diySteps.map((sol, i) => {
-              const text = typeof sol === 'string' ? sol : (sol as Step).instruction
-              return (
-                <div key={i} className="flex gap-3">
-                  <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
-                    style={{ background: 'var(--surface-2)', color: 'var(--text-secondary)' }}>
-                    {i + 1}
+        <div className="px-4" style={{ borderTop: '1px solid var(--border)' }}>
+          <Collapsible title="Home Guide" icon="🏠">
+            <div className="space-y-2">
+              {diySteps.map((sol, i) => {
+                const text = typeof sol === 'string' ? sol : (sol as Step).instruction
+                return (
+                  <div key={i} className="flex gap-2">
+                    <span className="flex-shrink-0 text-xs font-bold mt-0.5" style={{ color: 'var(--text-secondary)' }}>{i + 1}.</span>
+                    <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>{text}</p>
                   </div>
-                  <p className="text-sm leading-relaxed flex-1" style={{ color: 'var(--text)' }}>
-                    {text}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
+                )
+              })}
+            </div>
+          </Collapsible>
         </div>
       )}
 
