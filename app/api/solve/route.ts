@@ -100,7 +100,7 @@ Return ONLY valid JSON:
       'Authorization': `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: 'gpt-4o',
+      model: 'gpt-4.1',
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: `Stain: ${stain}\nFiber/Surface: ${effectiveSurface}\n\nWrite at Dan Eisen level — DLI Hall of Fame spotter. Each step must include:\n- The specific agent and exact application method\n- WHY this agent works on this chemistry (1 sentence)\n- What to watch for / what success looks like\n- Temperature guidance (cold/lukewarm/avoid heat) and dwell time\n- Any critical warnings for THIS fiber\n\nMinimum 3 sentences per step instruction. This goes to a professional spotter who needs to understand the chemistry, not just follow steps.` },
