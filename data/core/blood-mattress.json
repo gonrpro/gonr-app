@@ -6,13 +6,13 @@
   "sector": "home",
   "source": "verified",
   "verified": false,
-  "stainChemistry": "Classification: Protein. Blood is primarily hemoglobin protein (oxygen-carrying protein in red blood cells) plus plasma (serum proteins, water, salts). Hemoglobin contains iron (heme group), which gives blood its red color. Fresh blood is liquid and water-soluble; dried blood is a protein network that has cross-linked through oxidation. Protein stains bond to fibers via peptide-to-fiber hydrogen bonds and hydrophobic interactions. Heat denatures the protein, cross-linking it to the substrate and making removal extremely difficult. Treatment: cold water flush to prevent heat-setting, followed by alkaline protease enzyme digestion to hydrolyze peptide bonds.",
+  "stainChemistry": "Classification: Protein. Blood is primarily hemoglobin protein (oxygen-carrying protein in red blood cells) plus plasma (serum proteins, water, salts). Hemoglobin contains iron (heme group), which gives blood its red color. Fresh blood is liquid and water-soluble; dried blood is a protein network that has cross-linked through oxidation. Protein stains bond to fibers via peptide-to-fiber hydrogen bonds and hydrophobic interactions. Heat denatures the protein, cross-linking it to the substrate and making removal extremely difficult. Treatment: cold water flush to prevent heat-setting, followed by alkaline Protein Formula digestion to hydrolyze peptide bonds.",
   "whyThisWorks": "Blood contains proteins that bond tightly to surfaces, and heat cooks them in permanently. Cold water is critical because heat permanently sets the protein. The cleaning agents need enough time to reach the depth the stain reached.",
   "defaultAssumption": "Treat as unknown age / possibly dried.",
   "professionalProtocol": {
     "steps": [
       "1. Apply Protein Formula to the stain and tamp gently with a spotting brush. This digestant breaks down blood proteins. Work from the edge toward the center. Use reduced dwell time (3 minutes) on wool or silk. Dwell 5–10 minutes.",
-      "2. Apply NSD and work gently. This neutral detergent removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray. Dwell 3–5 minutes.",
+      "2. Apply NSD and work gently. This NSD removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray. Dwell 3–5 minutes.",
       "3. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue and restore the fabric's natural state. Blot dry with clean absorbent cloth. Dwell 1–2 minutes."
     ],
     "products": [
@@ -31,15 +31,15 @@
   "diyProtocol": {
     "steps": [
       "1. Rinse with cold water right away. Blot with a clean white cloth — don't rub.",
-      "2. Mix a small squirt of dish soap into cold water. Blot the solution onto the stain.",
+      "2. Mix a small squirt of NSD into cold water. Blot the solution onto the stain.",
       "3. Let it sit for 5–10 minutes. Don't use any heat.",
       "4. Blot with a clean white cloth until the stain fades.",
       "5. Blot with a cloth dampened with plain water and let it air dry with good airflow — a fan nearby helps."
     ],
     "products": [
-      "Dawn dish soap",
+      "Dawn NSD",
       "cold water",
-      "white vinegar",
+      "28% Acetic Acid (diluted)",
       "Nature's Miracle (enzyme-based)"
     ],
     "whenToStop": "Try an enzyme presoak (Nature's Miracle or similar) — apply and let it soak for 30–60 minutes. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment.",
@@ -61,7 +61,7 @@
   },
   "escalation": {
     "when": "Stain has penetrated deep into mattress batting, or has been set by prior heat exposure",
-    "whatToTell": "Blood stain on mattress, unknown age, cold water and enzyme treatment applied. Possible deep penetration into batting. Steam extraction on surface only — do NOT fully saturate.",
+    "whatToTell": "Blood stain on mattress, unknown age, cold water and Protein Formula applied. Possible deep penetration into batting. Steam extraction on surface only — do NOT fully saturate.",
     "specialistType": "upholstery or mattress cleaning specialist"
   },
   "deepSolveHooks": {

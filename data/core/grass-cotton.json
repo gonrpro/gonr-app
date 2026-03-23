@@ -19,8 +19,8 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Fresh grass contains chlorophyll (porphyrin pigment), carotenoid pigments, and plant proteins. Chlorophyll is a magnesium-porphyrin complex that bonds to cotton fibers through hydrogen bonding. Grass stains are water-soluble but the chlorophyll pigment itself is stubborn\u2014it requires solvent (isopropyl alcohol) or enzyme to dislodge. White cotton is ideal for aggressive treatment: bleach, enzymes, heat, and solvents are all safe.",
-  "whyThisWorks": "Enzyme breaks down plant protein bonds first. Alcohol dissolves chlorophyll pigment out of the fiber. Hydrogen peroxide oxidizes any remaining green to colorless. Bleach finishes the job on white cotton.",
+  "stainChemistry": "Fresh grass contains chlorophyll (porphyrin pigment), carotenoid pigments, and plant proteins. Chlorophyll is a magnesium-porphyrin complex that bonds to cotton fibers through hydrogen bonding. Grass stains are water-soluble but the chlorophyll pigment itself is stubborn\u2014it requires solvent (IPA) or enzyme to dislodge. White cotton is ideal for aggressive treatment: bleach, enzymes, heat, and solvents are all safe.",
+  "whyThisWorks": "Enzyme breaks down plant protein bonds first. Alcohol dissolves chlorophyll pigment out of the fiber. H₂O₂ oxidizes any remaining green to colorless. Bleach finishes the job on white cotton.",
   "spottingProtocol": [
     {
       "step": 1,
@@ -43,28 +43,28 @@
     {
       "step": 3,
       "side": "wet",
-      "agent": "Protease enzyme solution (warm water, 30-40\u00b0C)",
+      "agent": "Protein Formula solution (warm water, 30-40\u00b0C)",
       "technique": "Soak and agitate",
       "equipment": "Basin, soft brush",
       "dwellTime": "15-20 minutes soak",
-      "instruction": "Mix protease enzyme per product directions with warm water. White cotton tolerates warmth. Submerge stained area. Enzymes break down the plant protein bonds that hold chlorophyll to the fiber. After 15 minutes, gently agitate or brush with a soft brush. You'll see the green lighten as protein fragments release. This step is crucial\u2014it loosens the chlorophyll pigment so alcohol can dissolve it out."
+      "instruction": "Mix Protein Formula per product directions with warm water. White cotton tolerates warmth. Submerge stained area. Enzymes break down the plant protein bonds that hold chlorophyll to the fiber. After 15 minutes, gently agitate or brush with a soft brush. You'll see the green lighten as protein fragments release. This step is crucial\u2014it loosens the chlorophyll pigment so alcohol can dissolve it out."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Isopropyl alcohol (70-90%) or rubbing alcohol",
+      "agent": "IPA (70-90%) or IPA (IPA)",
       "technique": "Direct application or soak",
       "equipment": "Cotton ball, cloth, or basin",
       "dwellTime": "5-10 minutes with agitation",
-      "instruction": "After enzyme, apply isopropyl alcohol directly to the stained area or soak in alcohol solution. Alcohol dissolves chlorophyll pigment out of the fiber. You'll see the stain visibly fade and the alcohol turn greenish as it pulls pigment. Work the alcohol in gently with a cloth. This is the key step for grass\u2014alcohol is what actually removes the chlorophyll, not water. For white cotton, strong alcohol (70-90%) is safe."
+      "instruction": "After enzyme, apply IPA directly to the stained area or soak in alcohol solution. Alcohol dissolves chlorophyll pigment out of the fiber. You'll see the stain visibly fade and the alcohol turn greenish as it pulls pigment. Work the alcohol in gently with a cloth. This is the key step for grass\u2014alcohol is what actually removes the chlorophyll, not water. For white cotton, strong alcohol (70-90%) is safe."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Hydrogen peroxide (3-6%) or bleach",
+      "agent": "H₂O₂ (3-6%) or bleach",
       "technique": "Oxidizing soak",
       "equipment": "Basin or sink",
-      "dwellTime": "3-5 minutes (H2O2), 5-10 minutes (bleach)",
+      "dwellTime": "3-5 minutes (H₂O₂), 5-10 minutes (bleach)",
       "instruction": "If grass is still slightly green after alcohol, peroxide oxidizes residual chlorophyll to colorless. Apply directly or soak. For white cotton ONLY, diluted chlorine bleach (1:10) works faster (5-10 minutes). Watch the stain fade. Don't over-bleach\u2014stop when stain is gone."
     },
     {
@@ -87,7 +87,7 @@
     }
   ],
   "homeSolutions": [
-    "FRESH: Dry brush. Cold water rinse. Enzyme soak (15 min). Isopropyl alcohol soak or application (5-10 min). Peroxide or bleach if green remains. Rinse thoroughly. Hot wash.",
+    "FRESH: Dry brush. Cold water rinse. Enzyme soak (15 min). IPA soak or application (5-10 min). Peroxide or bleach if green remains. Rinse thoroughly. Hot wash.",
     "AGED/OXIDIZED: Same protocol but enzyme soak longer (20-30 min), repeat alcohol application if needed. Bleach may be necessary for old grass that's turned brown.",
     "STUBBORN: Professional solvents (petroleum spirits, NSD) may be needed for very old grass stains."
   ],
@@ -100,18 +100,18 @@
   "products": {
     "household": [
       {
-        "name": "Isopropyl Alcohol (70-90%)",
+        "name": "IPA (70-90%)",
         "brand": "Any drugstore brand",
         "icon": "\ud83e\uddea",
-        "amazonSearchQuery": "isopropyl alcohol 70% rubbing alcohol",
+        "amazonSearchQuery": "IPA 70% IPA (IPA)",
         "affiliateTag": "gonr08-20",
         "note": "Dissolves chlorophyll pigment. This is the critical step for grass. Apply after enzyme."
       },
       {
-        "name": "3% Hydrogen Peroxide",
+        "name": "3% H₂O₂",
         "brand": "Any drugstore brand",
         "icon": "\ud83e\uddf4",
-        "amazonSearchQuery": "hydrogen peroxide 3% USP",
+        "amazonSearchQuery": "H₂O₂ 3% USP",
         "affiliateTag": "gonr08-20",
         "note": "Oxidizes residual chlorophyll to colorless. Fast (5 min). Safe for white."
       },
@@ -126,10 +126,10 @@
     ],
     "professional": [
       {
-        "name": "Protease Enzyme (concentrated)",
+        "name": "Protein Formula (concentrated)",
         "brand": "Huntsman or Chemspec",
         "icon": "\ud83e\uddec",
-        "amazonSearchQuery": "protease enzyme concentrate stain remover",
+        "amazonSearchQuery": "Protein Formula concentrate stain remover",
         "affiliateTag": "gonr08-20",
         "note": "Professional enzyme. Faster protein breakdown than household."
       },
@@ -139,7 +139,7 @@
         "icon": "\u2697\ufe0f",
         "amazonSearchQuery": "Mulsolite NSD solvent cleaner",
         "affiliateTag": "gonr08-20",
-        "note": "Professional solvents for stubborn chlorophyll. More effective than isopropyl alcohol."
+        "note": "Professional solvents for stubborn chlorophyll. More effective than IPA."
       }
     ]
   },
@@ -150,8 +150,8 @@
     "Skipping enzyme\u2014enzyme loosens the chlorophyll so alcohol can dissolve it. Together they're powerful; apart, neither fully works.",
     "Not rinsing completely\u2014leftover alcohol will continue breaking down fibers and cause damage over time"
   ],
-  "scienceNote": "Chlorophyll is a magnesium-centered porphyrin (Mg-tetrapyrrole). It bonds to cellulose through hydrogen bonding with the porphyrin's peripheral carboxyl groups. Heat (above 50\u00b0C) causes chlorophyll to oxidize to pheophytin (brown, chelated by zinc instead of magnesium), which is harder to remove. Isopropyl alcohol disrupts hydrogen bonding and dissolves chlorophyll through nonpolar interactions with the porphyrin's hydrophobic core.",
-  "callPro": "If grass stain persists after home enzyme and alcohol treatment, or if it has oxidized to brown, professional dry cleaners can use petroleum-based solvents (NSD, mineral spirits) that are more effective than rubbing alcohol. For very old brown grass stains, professionals may use reducing bleach to reverse oxidation.",
+  "scienceNote": "Chlorophyll is a magnesium-centered porphyrin (Mg-tetrapyrrole). It bonds to cellulose through hydrogen bonding with the porphyrin's peripheral carboxyl groups. Heat (above 50\u00b0C) causes chlorophyll to oxidize to pheophytin (brown, chelated by zinc instead of magnesium), which is harder to remove. IPA disrupts hydrogen bonding and dissolves chlorophyll through nonpolar interactions with the porphyrin's hydrophobic core.",
+  "callPro": "If grass stain persists after home enzyme and alcohol treatment, or if it has oxidized to brown, professional dry cleaners can use petroleum-based solvents (NSD, mineral spirits) that are more effective than IPA (IPA). For very old brown grass stains, professionals may use reducing bleach to reverse oxidation.",
   "components": [
     "enzyme",
     "solvent",
@@ -168,5 +168,5 @@
     "enzyme-responsive",
     "fast-removal"
   ],
-  "solventNote": "Professional: Protease enzyme soak (1-2% solution, 40\u00b0C, 15-20 min), then Mulsolite (NSD) 50% dilution in warm water (40\u00b0C, 10-15 min) or petroleum spirits. Alcohol extraction preferred over water-based. Rinse with isopropyl to remove solvent residue, then final hot wash. For oxidized (brown) grass: consider sodium hydrosulfite (StreePene) soak first to reduce oxidized chlorophyll back to green, then enzyme and solvent."
+  "solventNote": "Professional: Protein Formula soak (1-2% solution, 40\u00b0C, 15-20 min), then Mulsolite (NSD) 50% dilution in warm water (40\u00b0C, 10-15 min) or petroleum spirits. Alcohol extraction preferred over water-based. Rinse with isopropyl to remove solvent residue, then final hot wash. For oxidized (brown) grass: consider sodium hydrosulfite (StreePene) soak first to reduce oxidized chlorophyll back to green, then enzyme and solvent."
 }

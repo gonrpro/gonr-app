@@ -7,7 +7,7 @@
   "source": "verified",
   "verified": false,
   "stainChemistry": "Classification: Oil/Grease (lipid-based). Motor oil is a complex mixture of petroleum hydrocarbons (C15-C50 alkanes, cycloalkanes, aromatics) plus additives (zinc dialkyldithiophosphate anti-wear, dispersants, detergents, viscosity modifiers). Much heavier and more tenacious than cooking oil. Contains carbon black particulate from combustion. Oil stains penetrate fiber structure through capillary action and hydrophobic affinity. Treatment: dry-side solvent (POG) to dissolve lipid phase, followed by surfactant emulsification to remove residual oil.",
-  "whyThisWorks": "Automotive fluids are petroleum-based oils that soak in deep and resist water-based cleaners. Cotton absorbs liquids quickly and holds stains deep in the weave. Dish soap or a degreaser breaks down the oil so it becomes water-soluble and can be rinsed away.",
+  "whyThisWorks": "Automotive fluids are petroleum-based oils that soak in deep and resist water-based cleaners. Cotton absorbs liquids quickly and holds stains deep in the weave. NSD or a degreaser breaks down the oil so it becomes water-soluble and can be rinsed away.",
   "defaultAssumption": "Treat as unknown age / possibly dried.",
   "professionalProtocol": {
     "steps": [
@@ -17,7 +17,7 @@
       "4. Apply diluted acetic acid (1:10) to restore fiber to its natural state. Blot dry with clean cloth and allow to air dry. Dwell 1–2 minutes."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
+      "POG (POG remover)",
       "amyl acetate",
       "NSD (Neutral Synthetic Detergent)",
       "acetic acid (diluted 1:10)"
@@ -33,12 +33,12 @@
     "steps": [
       "1. Sprinkle baking soda or cornstarch on the stain. Wait 5 minutes.",
       "2. Brush off the powder with a clean white cloth.",
-      "3. Put a drop of Dawn dish soap on the stain. Blot it in.",
+      "3. Put a drop of Dawn NSD on the stain. Blot it in.",
       "4. Let it sit for 2–3 minutes. Rinse with cold water.",
       "5. Repeat if needed. Air dry — don't use a dryer until the stain is gone."
     ],
     "products": [
-      "Dawn dish soap",
+      "Dawn NSD",
       "baking soda or cornstarch"
     ],
     "whenToStop": "Try a dry cleaning solvent (Carbona Stain Devil #5 or Goo Gone). If the stain survives two rounds, a professional cleaner can use concentrated agents and specialized equipment.",
@@ -59,7 +59,7 @@
   },
   "escalation": {
     "when": "Motor oil stain remains after full solvent protocol — likely old or polymerized by heat",
-    "whatToTell": "Motor oil stain on cotton, petroleum-based. Treated at home with dish soap. Please use professional dry-side solvent protocol with POG.",
+    "whatToTell": "Motor oil stain on cotton, petroleum-based. Treated at home with NSD. Please use professional dry-side solvent protocol with POG.",
     "specialistType": "dry cleaner"
   },
   "deepSolveHooks": {

@@ -30,21 +30,21 @@
       "Using hot water immediately — sets any protein component in the sauce and accelerates pigment bonding",
       "Skipping the lipase/solvent step — fat is the carrier holding the pigment to the fiber",
       "Using only soap instead of oxidizers — detergent removes fat but doesn't break the carotenoid chromophore",
-      "Not allowing hydrogen peroxide to dwell long enough — oxidation reactions need contact time"
+      "Not allowing H₂O₂ to dwell long enough — oxidation reactions need contact time"
     ]
   },
   "diyProtocol": {
     "steps": [
       "1. Scrape or wipe away any solid material. Use cold water.",
-      "2. Mix dish soap into cold water. Blot the solution onto the stain.",
+      "2. Mix NSD into cold water. Blot the solution onto the stain.",
       "3. Let it sit for 5–10 minutes.",
       "4. Blot with a clean white cloth. Repeat if needed.",
       "5. Blot with a cloth dampened with plain water to rinse. Place paper towels over the spot and weigh them down. Let it dry completely."
     ],
     "products": [
-      "Dawn dish soap",
+      "Dawn NSD",
       "OxiClean Versatile Stain Remover",
-      "hydrogen peroxide 3%",
+      "H₂O₂ 3%",
       "cold water"
     ],
     "whenToStop": "Try an enzyme presoak followed by oxygen bleach. Apply and let it soak for 30–60 minutes. If the stain survives two rounds, call a professional carpet cleaner with hot-water extraction.",
@@ -67,7 +67,7 @@
   },
   "escalation": {
     "when": "Red discoloration persists after full protocol — lycopene may have oxidized into bound byproducts resistant to H₂O₂",
-    "whatToTell": "Tomato sauce stain on carpet, combination of carotenoid pigment and oil. Treated at home with dish soap. Please use professional hot-water extraction with enzyme pre-treatment and oxidative cleaners.",
+    "whatToTell": "Tomato sauce stain on carpet, combination of carotenoid pigment and oil. Treated at home with NSD. Please use professional hot-water extraction with enzyme pre-treatment and oxidative cleaners.",
     "specialistType": "professional carpet cleaner"
   },
   "deepSolveHooks": {
@@ -77,7 +77,7 @@
       "Is the carpet synthetic or natural fiber?",
       "Has any cleaning attempt already been made?"
     ],
-    "modifierNotes": "Meat-containing sauce adds a protein component that requires enzyme treatment. Oil-heavy sauce (pesto, vodka sauce) has more lipid component. Older dried stains require longer dwell times. Natural fiber carpets need gentler chemistry."
+    "modifierNotes": "Meat-containing sauce adds a protein component that requires Protein Formula. Oil-heavy sauce (pesto, vodka sauce) has more lipid component. Older dried stains require longer dwell times. Natural fiber carpets need gentler chemistry."
   },
   "difficulty": 5,
   "timeEstimate": "15–25 min",

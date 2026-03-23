@@ -7,7 +7,7 @@
   "source": "verified",
   "verified": false,
   "stainChemistry": "Classification: Oil/Grease (lipid-based). Foundation, concealer, and face makeup contain oil/silicone vehicle (dimethicone, cyclomethicone, mineral oil), pigment particles (iron oxide, titanium dioxide), waxes, and emulsifiers. The oil vehicle bonds to fabric through hydrophobic interaction while pigment particles embed physically. Requires dry-side treatment for the oil vehicle followed by wet-side for residual pigment. Cotton (cellulose fiber) tolerates most chemicals well.",
-  "whyThisWorks": "Cosmetics contain oils, waxes, and pigments — the oil spreads the color deeper. Cotton absorbs liquids quickly and holds onto stains deep in the weave. Dish soap or a degreaser breaks down the oil so it becomes water-soluble and can be rinsed away.",
+  "whyThisWorks": "Cosmetics contain oils, waxes, and pigments — the oil spreads the color deeper. Cotton absorbs liquids quickly and holds onto stains deep in the weave. NSD or a degreaser breaks down the oil so it becomes water-soluble and can be rinsed away.",
   "defaultAssumption": "Treat as unknown age / possibly dried.",
   "professionalProtocol": {
     "steps": [
@@ -17,7 +17,7 @@
       "4. Apply diluted acetic acid (1:10) to restore fiber to its natural state. Blot dry and allow to air dry. Dwell 1–2 minutes."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
+      "POG (POG remover)",
       "amyl acetate",
       "NSD (Neutral Synthetic Detergent)",
       "acetic acid (diluted 1:10)"
@@ -33,12 +33,12 @@
     "steps": [
       "1. Sprinkle baking soda or cornstarch on the stain. Wait 5 minutes.",
       "2. Brush off the powder with a clean white cloth.",
-      "3. Put a drop of Dawn dish soap on the stain. Blot it in.",
+      "3. Put a drop of Dawn NSD on the stain. Blot it in.",
       "4. Let it sit for 2–3 minutes. Rinse with cold water.",
       "5. Repeat if needed. Air dry — don't use a dryer until the stain is gone."
     ],
     "products": [
-      "Dawn dish soap",
+      "Dawn NSD",
       "baking soda or cornstarch"
     ],
     "whenToStop": "Try a dry cleaning solvent (Carbona Stain Devil #5 or Goo Gone). If the stain survives two rounds, a professional cleaner can use concentrated agents and specialized equipment.",
@@ -59,7 +59,7 @@
   },
   "escalation": {
     "when": "Oil component removes but pigment particles remain embedded in the cotton weave",
-    "whatToTell": "Makeup/foundation stain on cotton, oil and pigment combination. Treated at home with dish soap. Please use dry-side solvent protocol followed by wet-side.",
+    "whatToTell": "Makeup/foundation stain on cotton, oil and pigment combination. Treated at home with NSD. Please use dry-side solvent protocol followed by wet-side.",
     "specialistType": "dry cleaner or wet cleaner"
   },
   "deepSolveHooks": {
