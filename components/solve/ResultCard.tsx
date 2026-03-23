@@ -50,7 +50,6 @@ interface ResultCardProps {
 }
 
 export default function ResultCard({ card, source, lang = 'en' }: ResultCardProps) {
-  const [mode, setMode] = useState<'pro' | 'diy'>('pro')
   const [showHandoff, setShowHandoff] = useState(false)
 
   const difficulty = card.difficulty ?? 5
@@ -121,123 +120,77 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         </div>
       )}
 
-      {/* ── 3. Pro / DIY toggle ── */}
-      <div className="px-4 pb-3">
-        <div className="flex gap-1 bg-gray-100 dark:bg-white/5 rounded-lg p-1">
-          <button
-            onClick={() => setMode('pro')}
-            className={`flex-1 py-2 rounded-md text-sm font-semibold min-h-[44px] transition-all
-              ${mode === 'pro'
-                ? 'bg-green-500 text-white shadow-sm'
-                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
-              }`}
-          >
+      {/* ── 3. Pro Protocol Steps ── */}
+      {proSteps.length > 0 && (
+        <div className="px-4 pb-2">
+          <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--text-secondary)' }}>
             Pro Protocol
-          </button>
-          <button
-            onClick={() => setMode('diy')}
-            className={`flex-1 py-2 rounded-md text-sm font-semibold min-h-[44px] transition-all
-              ${mode === 'diy'
-                ? 'bg-green-500 text-white shadow-sm'
-                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
-              }`}
-          >
-            DIY / Home
-          </button>
-        </div>
-      </div>
-
-      {/* ── 4. Pro Steps (numbered, agent in green caps) ── */}
-      {mode === 'pro' && proSteps.length > 0 && (
-        <div className="px-4 pb-4 space-y-3">
-          {proSteps.map((step, i) => (
-            <div key={i} className="flex gap-3">
-              <div className="flex-shrink-0 w-7 h-7 rounded-full bg-green-500/20 text-green-400
-                flex items-center justify-center text-xs font-bold mt-0.5">
-                {step.step}
-              </div>
-              <div className="flex-1 space-y-0.5">
-                {step.agent && (
-                  <p className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>
-                    {step.agent}
-                  </p>
-                )}
-                <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
-                  {step.instruction}
-                </p>
-                {step.technique && (
-                  <p className="text-xs text-gray-500 italic">
-                    Technique: {step.technique}
-                  </p>
-                )}
-                {step.dwellTime && (
-                  <p className="text-xs text-gray-500">
-                    {'\u23F1'} {step.dwellTime}
-                  </p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* ── 5. DIY Steps (numbered, simpler format) ── */}
-      {mode === 'diy' && diySteps.length > 0 && (
-        <div className="px-4 pb-4 space-y-3">
-          {diySteps.map((sol, i) => {
-            const text = typeof sol === 'string' ? sol : (sol as Step).instruction
-            return (
+          </p>
+          <div className="space-y-4">
+            {proSteps.map((step, i) => (
               <div key={i} className="flex gap-3">
-                <div className="flex-shrink-0 w-7 h-7 rounded-full bg-green-500/20 text-green-400
-                  flex items-center justify-center text-xs font-bold mt-0.5">
-                  {i + 1}
+                <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
+                  style={{ background: 'rgba(34,197,94,0.15)', color: 'var(--accent)' }}>
+                  {step.step ?? i + 1}
                 </div>
-                <p className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed flex-1">
-                  {text}
-                </p>
+                <div className="flex-1 space-y-0.5">
+                  {step.agent && (
+                    <p className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>
+                      {step.agent}
+                    </p>
+                  )}
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
+                    {step.instruction}
+                  </p>
+                  {step.dwellTime && (
+                    <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                      ⏱ {step.dwellTime}
+                    </p>
+                  )}
+                </div>
               </div>
-            )
-          })}
-        </div>
-      )}
-
-      {/* ── 6. Why This Works ── */}
-      {card.whyThisWorks && (
-        <div className="px-4 pb-4">
-          <div className="bg-gray-50 dark:bg-white/5 rounded-xl p-4 space-y-2">
-            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2">
-              {'\uD83D\uDCA1'} Why This Works
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              {card.whyThisWorks}
-            </p>
+            ))}
           </div>
         </div>
       )}
 
-      {/* ── 7. Customer Explanation (green-tinted card) ── */}
-      {card.customerExplanation && (
-        <div className="px-4 pb-4">
-          <div className="bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 rounded-xl p-4 space-y-2">
-            <h3 className="text-sm font-semibold text-green-700 dark:text-green-400 flex items-center gap-2">
-              {'\uD83D\uDCAC'} What to Tell the Customer
-            </h3>
-            <p className="text-sm text-green-800 dark:text-green-300/90 leading-relaxed">
-              {card.customerExplanation}
-            </p>
+      {/* ── 4. DIY / Home Steps ── */}
+      {diySteps.length > 0 && (
+        <div className="px-4 py-4" style={{ borderTop: '1px solid var(--border)' }}>
+          <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--text-secondary)' }}>
+            Home Guide
+          </p>
+          <div className="space-y-3">
+            {diySteps.map((sol, i) => {
+              const text = typeof sol === 'string' ? sol : (sol as Step).instruction
+              return (
+                <div key={i} className="flex gap-3">
+                  <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
+                    style={{ background: 'var(--surface-2)', color: 'var(--text-secondary)' }}>
+                    {i + 1}
+                  </div>
+                  <p className="text-sm leading-relaxed flex-1" style={{ color: 'var(--text)' }}>
+                    {text}
+                  </p>
+                </div>
+              )
+            })}
           </div>
         </div>
       )}
 
-      {/* ── 8. Customer Handoff button ── */}
-      <div className="px-4 pb-4" id="cardHandoffResult">
+      {/* ── 5. Customer Handoff ── */}
+      <div className="px-4 py-4" style={{ borderTop: '1px solid var(--border)' }}>
         <button
           onClick={() => setShowHandoff(!showHandoff)}
-          className="w-full min-h-[44px] rounded-xl bg-green-500/10 border border-green-500/30
-            text-green-500 dark:text-green-400 text-sm font-semibold
-            hover:bg-green-500/20 transition-colors"
+          className="w-full min-h-[44px] rounded-xl text-sm font-semibold transition-colors"
+          style={{
+            background: showHandoff ? 'rgba(34,197,94,0.15)' : 'rgba(34,197,94,0.08)',
+            border: '1px solid rgba(34,197,94,0.3)',
+            color: 'var(--accent)'
+          }}
         >
-          {'\uD83D\uDCE4'} Customer Handoff
+          📤 Customer Handoff {showHandoff ? '▲' : '▼'}
         </button>
         {showHandoff && (
           <div className="mt-3">
@@ -333,27 +286,7 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         )}
       </div>
 
-      {/* ── 10. Deep Solve button (purple) ── */}
-      <div className="px-4 pb-3">
-        <button
-          className="w-full min-h-[44px] rounded-xl bg-purple-600 hover:bg-purple-700
-            text-white text-sm font-semibold transition-colors shadow-lg shadow-purple-600/25"
-        >
-          {'\uD83D\uDD2E'} Deep Solve &mdash; Get a tailored protocol
-        </button>
-      </div>
 
-      {/* ── 11. Stain Brain button ── */}
-      <div className="px-4 pb-4">
-        <button
-          className="w-full min-h-[44px] rounded-xl bg-gray-100 dark:bg-white/5
-            border border-gray-200 dark:border-white/10
-            text-gray-700 dark:text-gray-300 text-sm font-semibold
-            hover:bg-gray-200 dark:hover:bg-white/10 transition-colors"
-        >
-          {'\uD83E\uDDE0'} Ask Stain Brain about this
-        </button>
-      </div>
     </div>
   )
 }
