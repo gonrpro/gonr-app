@@ -8,7 +8,7 @@ interface HeaderProps {
 }
 
 export default function Header({ lang = 'en', onLangToggle }: HeaderProps) {
-  const [dark, setDark] = useState(true)
+  const [dark, setDark] = useState(false)
 
   useEffect(() => {
     setDark(document.documentElement.classList.contains('dark'))
