@@ -13,18 +13,20 @@ function buildMessage(stain: string, surface: string, stainChemistry?: string, w
   const s = stain.replace(/-/g, ' ')
   const f = surface.replace(/-/g, ' ')
 
-  if (stainChemistry) {
-    // Simplify the chemistry text for customer reading level
-    return stainChemistry
+  const source = whyThisWorks || stainChemistry
+  if (source && source.length > 40) {
+    return source
       .replace(/\bH₂O₂\b/g, 'hydrogen peroxide')
       .replace(/\bNSD\b/g, 'professional detergent')
       .replace(/\bPOG\b/g, 'solvent')
       .replace(/\bacetic acid\b/gi, 'neutralizing rinse')
-      .replace(/\bProtein Formula\b/gi, 'enzyme treatment')
-      .replace(/\bTannin Formula\b/gi, 'tannin treatment')
+      .replace(/\bProtein\b/g, 'enzyme treatment')
+      .replace(/\bTannin\b/g, 'tannin treatment')
+      .replace(/\bIPA\b/g, 'solvent')
+      .split(/\.\s+/).slice(0, 2).join('. ') + '.'
   }
 
-  // Fallback plain language
+  // Fallback
   return `${s.charAt(0).toUpperCase() + s.slice(1)} stains on ${f} require professional treatment. Home methods often set the stain or damage the fiber — we use professional-grade chemistry and technique to get the best possible result.`
 }
 

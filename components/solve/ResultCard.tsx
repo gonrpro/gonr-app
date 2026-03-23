@@ -208,6 +208,13 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
 
       {/* ── 9. Collapsible sections ── */}
       <div className="px-4 pb-4 space-y-2">
+        {/* Why This Works — open by default */}
+        {card.whyThisWorks && (
+          <Collapsible title="Why This Works" icon="💡" defaultOpen={true}>
+            <p className="leading-relaxed">{card.whyThisWorks}</p>
+          </Collapsible>
+        )}
+
         {/* Chemistry Details */}
         {card.stainChemistry && (
           <Collapsible title="Chemistry Details" icon={'\uD83E\uDDEA'}>
