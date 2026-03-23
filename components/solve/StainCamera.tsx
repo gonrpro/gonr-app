@@ -125,12 +125,15 @@ export default function StainCamera({ onStainDetected, onReset }: StainCameraPro
       )}
 
       {state === 'error' && (
-        <div className="space-y-2">
-          <p className="text-sm text-red-400 px-1">{error}</p>
-          <button onClick={handleReset} className="px-3 py-1.5 rounded-lg text-sm bg-[#0e131b] text-gray-400">
-            Try Again
-          </button>
-        </div>
+        <button
+          onClick={handleReset}
+          className="flex flex-col items-center justify-center gap-1.5 rounded-xl text-sm font-semibold transition-all w-full"
+          style={{ background: 'var(--surface)', border: '1.5px solid rgba(239,68,68,0.3)', color: 'var(--text)', minHeight: 72 }}
+        >
+          <span className="text-2xl">📷</span>
+          <span>Scan Stain</span>
+          <span className="text-xs text-red-400">Tap to try again</span>
+        </button>
       )}
     </div>
   )
