@@ -1,91 +1,161 @@
 {
   "id": "red-wine-wool",
   "title": "Red Wine on Wool",
-  "stainFamily": "tannin",
+  "stainType": "tannin",
   "surface": "wool",
   "sector": "textile",
-  "source": "verified",
-  "stainChemistry": "Tannins are polyphenolic plant compounds (from tea, coffee, red wine, fruit juices) that bond to fibers through hydrogen bonding and π-stacking interactions with cellulose and protein fibers. Fresh tannin stains are removable with mild detergent. Aged stains oxidize and darken: the brown color is caused by oxidation products. Hydrogen peroxide 6% breaks the double bonds in the oxidized tannin molecules, reversing the browning. Sodium hydrosulfite provides a reducing alternative for fibers that cannot tolerate bleaching. On wool (protein fiber): oxidizing agents like hydrogen peroxide can weaken wool keratin — sodium hydrosulfite is the safer reducing treatment.",
-  "whyThisWorks": "Red wine tannins bond to wool through hydrogen bonding and π-stacking. Wool is a protein fiber, so oxidizing bleach (peroxide) carries risk of fiber weakening — sodium hydrosulfite (reducing agent) attacks tannin pigments without damaging the keratin structure. Tannin Formula (acidic) first breaks the initial tannin-fiber bonds. NSD flushes residue. Acetic acid with fiber conditioner restores the hand and sheen that wool can lose during treatment.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
-  "professionalProtocol": {
-    "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) carefully and tamp very gently. Dwell 3–5 minutes (shorter than cotton — use lighter touch on wool). The acidic spotter breaks tannin bonds without attacking the fiber. Monitor closely.",
-      "2. Apply sodium hydrosulfite (reducing agent — safe for wool and silk). Dwell 5–10 minutes. This reducing agent attacks tannin pigments without damaging protein fibers like wool and silk — unlike oxidizing agents which can weaken these fabrics. Flush when the color lifts.",
-      "3. Flush with NSD (Neutral Synthetic Detergent) to remove all chemical residue and loosened tannin. Dwell 3–5 minutes. Use cool water only. On wool, avoid any agitation that could felt the fiber.",
-      "4. Apply 28% Acetic acid (diluted 1:10) with fiber conditioner to neutralize and restore the fiber. Dwell 1–2 minutes. Follow with a fiber conditioner rinse to restore the hand and sheen that protein fibers can lose during treatment. Air dry flat."
+  "meta": {
+    "stainCanonical": "red-wine",
+    "surfaceCanonical": "wool",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "tannin",
+      "protein-fiber",
+      "cold-only",
+      "no-enzymes",
+      "felting-risk"
     ],
-    "products": [
-      "Tannin Formula (acidic tannin spotter)",
-      "Sodium hydrosulfite (reducing agent — safe for wool and silk)",
-      "NSD (Neutral Synthetic Detergent)",
-      "28% Acetic acid (diluted 1:10) with fiber conditioner"
+    "freePreview": true
+  },
+  "stainChemistry": "Red wine anthocyanins (tannin pigments) bond to wool's keratin protein through hydrogen bonding and hydrophobic interactions. Wool is delicate: heat above 30\u00b0C triggers felting (cross-linking of disulfide bridges in wool protein), and this happens FASTER when wool is wet. Fresh wine penetrates wool deeply because tannins are attracted to protein. We cannot use enzymes (protease digests wool), strong bleach, or heat. Acetic acid and dilute oxidizers are the only safe options for wool, and dwell times must be minimal to avoid fiber weakening.",
+  "whyThisWorks": "Cold NSD removes surface anthocyanin without agitation risk. Dilute acetic acid (white vinegar) breaks hydrogen bonds in tannin-wool complex with minimal dwell. Dilute hydrogen peroxide (not chlorine) oxidizes remaining color. Every step stays cold and brief. The sequence prioritizes wool integrity over complete stain removal\u2014if residual color remains, professional is safer than aggressive home treatment.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Ice water (5\u00b0C), blot from back",
+      "technique": "Blot gently, no agitation",
+      "equipment": "White cloth, spray bottle with ice water",
+      "dwellTime": "1-2 minutes",
+      "instruction": "Immediately blot from the back with ice water. Press downward\u2014never rub or agitate wool. Most fresh anthocyanin transfers in the first 1-2 minutes. Flip cloth and continue blotting. Work concentric circles from edge inward. Every motion must be vertical pressure only."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD solution (Woolite Delicates, 10% cold)",
+      "technique": "Sponge work, vertical pressing only",
+      "equipment": "Natural sponge, white cloth",
+      "dwellTime": "2-3 minutes dwell",
+      "instruction": "Mix 1 part Woolite with 9 parts ice water. Sponge gently onto stain. Press vertically\u2014never rub. Neutral detergent suspends remaining anthocyanin. After 2-3 minutes, blot gently downward. Stain should lighten noticeably. This step removes most of the wine color."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Cold water rinse, thorough",
+      "technique": "Spray and blot",
+      "equipment": "Spray bottle, white cloth",
+      "dwellTime": "Multiple rinses until absolutely clear",
+      "instruction": "Rinse completely in cold water. NSD left behind will interfere with acid treatment. Work from back to front, pressing gently. Water must run absolutely clear with no bubbles. Thorough rinsing is critical."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Acetic acid spotter (1:1 white vinegar + cold water)",
+      "technique": "Dropper or sponge, light press",
+      "equipment": "Dropper, white cloth",
+      "dwellTime": "1 minute maximum",
+      "instruction": "Now apply acidity for remaining tannin color. Mix white vinegar 1:1 with cold water. Apply in small amounts with dropper or sponge. Press gently. Acetic acid breaks hydrogen bonds in the tannin-wool complex. After exactly 1 minute, blot completely. Do not extend\u2014wool weakens with prolonged acid exposure."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Dilute hydrogen peroxide (1.5%, cold)",
+      "technique": "Sponge if needed, watch closely",
+      "equipment": "Sponge, white cloth, 3% peroxide diluted 1:1 with cold water",
+      "dwellTime": "1-2 minutes maximum, monitor carefully",
+      "instruction": "If brown tannin color remains, mix 3% peroxide 1:1 with cold water (creating 1.5% solution). Sponge gently. Peroxide oxidizes anthocyanin pigment into colorless compounds. Wool is protein\u2014dilute peroxide is safer. After 1-2 minutes maximum, blot completely. Do not oversoak."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cold water final rinse",
+      "technique": "Multiple rinses",
+      "equipment": "Spray bottle, white cloth",
+      "dwellTime": "Until absolutely clear",
+      "instruction": "Final thorough rinse in cold water. All acid and peroxide must be removed. Residual chemicals will continue reacting and may damage wool. Work from back to front. Water must run clear."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Air dry flat, no heat",
+      "technique": "Lay flat on clean towel",
+      "equipment": "Clean dry towel, flat surface",
+      "dwellTime": "4-8 hours until dry",
+      "instruction": "Squeeze gently in towel\u2014never wring. Lay flat on clean dry towel. Reshape while damp if needed. NEVER use heat. Wool must dry slowly and evenly. Hot air triggers felting. Once dry, check for residual color\u2014if faint brown remains, do not retreat. Call professional instead."
+    }
+  ],
+  "homeSolutions": [
+    "FRESH: Ice water blot from back, then NSD soak (Woolite cold, 2-3 min).",
+    "REMAINING COLOR: Dilute white vinegar (1:1 cold, 1 min only), blot, rinse thoroughly.",
+    "BROWN TANNIN: Dilute hydrogen peroxide (1.5% cold, 1-2 min max), blot, rinse thoroughly cold.",
+    "IF STILL REMAINING: Stop. Call professional\u2014risk of damage increases with extended treatment."
+  ],
+  "materialWarnings": [
+    "NEVER use hot water\u2014felting occurs faster when wet + warm",
+    "NEVER rub or agitate\u2014causes pilling and structural damage",
+    "NEVER use enzymes\u2014protease digests wool's own keratin",
+    "NEVER use bleach (chlorine or strong oxidizers)\u2014weakens wool",
+    "NEVER use strong alkaline cleaners\u2014damage wool protein structure"
+  ],
+  "escalation": "If red wine stain is older than 6-8 hours or if home treatment doesn't fully remove color, STOP and call professional wool specialist. Risk of damage increases exponentially with extended treatment. Professional may use solvent system or inhibitor-formula enzymes designed specifically for wool.",
+  "products": {
+    "household": [
+      {
+        "name": "Woolite Delicates",
+        "brand": "Woolite",
+        "icon": "\ud83e\uddf4",
+        "amazonSearchQuery": "Woolite Delicates",
+        "affiliateTag": "gonr08-20",
+        "note": "Gentle NSD for protein fiber. 10% in cold water. Essential first step."
+      },
+      {
+        "name": "White Vinegar",
+        "brand": "Standard",
+        "icon": "\ud83c\udf76",
+        "amazonSearchQuery": "white vinegar",
+        "affiliateTag": "gonr08-20",
+        "note": "Tannin spotter. Dilute 1:1 with cold water. 1 minute max."
+      }
     ],
-    "temperature": "cold — heat accelerates tannin oxidation and sets color permanently. On wool, heat also causes felting. Never use warm or hot water at any stage.",
-    "warnings": [
-      "Using hot water — accelerates oxidation and sets tannin color faster, and felts wool fiber.",
-      "Applying hydrogen peroxide to colored wool without testing — peroxide bleaches fiber color along with the stain.",
-      "Oversaturation with any oxidizer — can cause yellowing and fiber weakening.",
-      "Not rinsing completely — residual reducing or oxidizing agents continue to work and weaken fiber.",
-      "Over-agitation — felts wool fibers permanently.",
-      "NEVER use enzyme cleaners on wool — digest the protein fiber.",
-      "NEVER use bleach — destroys wool fiber structure."
+    "professional": [
+      {
+        "name": "Mulsolite NSD",
+        "brand": "Chemspec",
+        "icon": "\ud83e\uddea",
+        "amazonSearchQuery": "Mulsolite NSD wool",
+        "affiliateTag": "gonr08-20",
+        "note": "Professional cold NSD for wool protein cleaning."
+      }
     ]
   },
-  "diyProtocol": {
-    "steps": [
-      "1. Blot gently the stain with a clean white cloth to soak up as much as you can.",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply the solution and let it sit for 5–10 minutes.",
-      "3. Blot gently with a clean white cloth. Repeat until the color fades.",
-      "4. Rinse gently with cold water to remove all cleaning solution.",
-      "5. Lay flat on a towel to air dry — no heat, no wringing."
-    ],
-    "products": [
-      "Dawn dish soap",
-      "Cold water",
-      "White vinegar (diluted)",
-      "Woolite Delicates",
-      "Clean white cloths"
-    ],
-    "whenToStop": "If the stain persists after gentle treatment, take it to a professional cleaner who specializes in wool. Do not attempt stronger chemicals at home — wool fibers are easily damaged.",
-    "warnings": [
-      "Test on an inside seam or hidden area first.",
-      "Never use bleach, enzyme cleaners, or hot water on wool.",
-      "Never wring or twist wool — gently press out moisture between towels.",
-      "Never rub — causes felting.",
-      "Lay flat to dry."
-    ]
-  },
-  "safetyMatrix": {
-    "neverDo": [
-      "Never use hot water — sets tannin color and felts wool simultaneously.",
-      "Never use enzyme cleaners — digest the wool protein fiber.",
-      "Never use bleach — destroys wool fiber structure.",
-      "Never wring or aggressively agitate — felts wool permanently.",
-      "Never use ammonia or alkaline agents — permanently darkens tannin stains."
-    ],
-    "fiberSensitivities": [
-      "Wool (keratin, protein fiber) — enzyme cleaners attack it the same way they attack stains.",
-      "Wool felts with heat and mechanical agitation — always handle cold and gently.",
-      "Mohair is especially vulnerable to oxidizers — avoid peroxide entirely on mohair.",
-      "Wool dyes are variable — always test any product on a hidden area first."
-    ]
-  },
-  "escalation": {
-    "when": "If peroxide bleaching reaches a plateau, the tannin has likely cross-linked with the fiber polymer. Try sequential treating: alternate between peroxide (if colorfast) and leveling agent. For extreme cases (wine on white wool), recommend professional-grade tannin-specific chemistry or dye consultation.",
-    "whatToTell": "This was a tricky one — wine on wool is one of the more challenging stains. Wine stains darken with air exposure and set deeper with time and heat. Results depend on how long the stain had been set before treatment — some improvement may continue over the next few days.",
-    "specialistType": "wet cleaner specializing in delicate wool garments"
-  },
-  "deepSolveHooks": {
-    "contextQuestions": [
-      "How old is the stain — was it treated immediately or has it been sitting?",
-      "Has any product already been applied (salt, club soda, enzyme cleaner)?",
-      "Is this a fine gauge wool knit or woven wool fabric?",
-      "Has the garment been placed in the dryer or pressed since the stain occurred?"
-    ],
-    "modifierNotes": "Fresh wine on wool responds reasonably well to cold water and dish soap. Any heat exposure (dryer, iron) dramatically reduces recovery odds. Enzyme cleaner applied previously may have caused wool fiber damage that limits recovery. Fine-gauge knitwear requires shorter dwell times and extremely gentle handling to prevent felting."
-  },
-  "difficulty": 7,
-  "timeEstimate": "10–20 minutes",
-  "lastValidated": "2026-03-23"
+  "customerExplanation": "Red wine on wool is tricky because wool is delicate protein fiber. We use cold water and neutral detergent for safety\u2014but this means we can't be aggressive. Fresh wine responds well to this gentle approach. Older wine may require professional cleaning because risk of damage increases with extended home treatment.",
+  "commonMistakes": [
+    "Using warm water\u2014this sets tannin AND triggers felting simultaneously",
+    "Rubbing or scrubbing\u2014causes pilling and weakens the fiber",
+    "Using enzymes\u2014people assume enzymes help. Protease digests wool's keratin protein.",
+    "Extending acid/peroxide dwell times\u2014wool weakens rapidly with chemical exposure"
+  ],
+  "scienceNote": "Wool protein (keratin) is held together by disulfide bridges (covalent bonds) and hydrogen bonds. Anthocyanins form hydrogen bonds with these same wool protein sites. Water above 30\u00b0C triggers hydrolysis of disulfide bonds, allowing wool to cross-link and felt. This felting is FASTER and more pronounced when the wool is wet\u2014exactly when we're treating the stain. This is why every step must be cold and brief. Acetic acid breaks anthocyanin hydrogen bonds (tannin removal), and peroxide oxidizes the remaining anthocyanin double-bond system (color removal) without targeting wool's protein structure.",
+  "callPro": "If color remains after NSD + vinegar + dilute peroxide treatment, or if wool shows signs of pilling, stiffness, or texture change, STOP and call professional immediately. Wool is expensive and recovery becomes risky after extended home treatment.",
+  "components": [
+    "detergent",
+    "acid-spotter",
+    "oxidizer"
+  ],
+  "component_order": [
+    "detergent",
+    "acid-spotter",
+    "oxidizer"
+  ],
+  "difficulty": 6,
+  "difficulty_factors": [
+    "protein-fiber",
+    "cold-only",
+    "felting-risk",
+    "two-stage-tannin-removal"
+  ],
+  "solventNote": "Professional: Cold soak in Mulsolite (5-10 min), gentle squeeze-out. Rinse thoroughly cold water. For remaining color, acetic acid spotter (dilute, cold, 1-2 min max). If needed, 1.5% dilute H2O2 (cold, max 2 min). Absolutely no heat. No reducing bleach. For aged stains, solvent system (perc or Stoddard) safer than extended aqueous treatment. VDS post-treatment recommended.",
+  "version": "5.0",
+  "authored": "2026-03-22"
 }

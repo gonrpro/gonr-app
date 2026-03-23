@@ -1,0 +1,158 @@
+{
+  "id": "coffee-cream-wool",
+  "version": "5.0",
+  "authored": "2026-03-22",
+  "title": "Coffee with Cream on Wool",
+  "stainType": "combo-protein-tannin",
+  "surface": "wool",
+  "sector": "textile",
+  "meta": {
+    "stainCanonical": "coffee-cream",
+    "surfaceCanonical": "wool",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "combo",
+      "felting-risk",
+      "no-enzymes",
+      "cold-only"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Coffee-cream on wool is challenging: cream proteins bond to wool's own protein structure, and we cannot use protease enzymes (they'd digest wool too). Tannins also bond. Wool requires cold treatment (no heat triggers felting), no enzymes, and careful sequencing. NSD for protein component, then acid for tannin\u2014but gentler than any other fiber type.",
+  "whyThisWorks": "Cold water removes proteins without enzyme help. NSD suspends residual casein/whey without alkalinity. Acetic acid breaks remaining tannin bonds. Wool's delicate nature demands the gentlest possible chemistry, but the sequence still works: protein first, tannin second, extreme caution throughout.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Ice water (5-10\u00b0C), optional salt",
+      "technique": "Blot from back, no agitation",
+      "equipment": "White cloth, spray bottle",
+      "dwellTime": "1-2 minutes",
+      "instruction": "Ice water from back. Blot hard. Salt helps. Flipping and continuing. Work concentric circles from edge inward. Never rub\u2014wool felts. Most fresh casein/whey will transfer to cloth in the first 1-2 minutes if you work immediately."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD solution (Woolite Delicates, 10% cold)",
+      "technique": "Sponge, gentle work only",
+      "equipment": "Natural sponge, white cloth",
+      "dwellTime": "2-3 minutes dwell",
+      "instruction": "Mix 1 part Woolite with 9 parts ice water. Sponge gently onto stain. Detergent encapsulates remaining casein/whey. After 2-3 minutes, blot gently\u2014downward pressure only, no rubbing. Stain lightens as proteins suspend. This is the protein removal stage."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Cold water rinse (thorough)",
+      "technique": "Spray and blot",
+      "equipment": "Spray bottle, white cloth",
+      "dwellTime": "Multiple rinses until clear",
+      "instruction": "Rinse completely in cold water. NSD left behind will interfere with acid treatment. Work from back to front. Water must run absolutely clear with no bubbles."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "White vinegar (1:1 diluted with cold water)",
+      "technique": "Dropper or sponge",
+      "equipment": "Dropper, white cloth",
+      "dwellTime": "1 minute maximum",
+      "instruction": "Now apply acidity for tannin removal. Mix vinegar 1:1 with cold water. Apply in small droplets. After 1 minute, blot. Don't overdo\u2014wool weakens with prolonged acid exposure. Brown coffee color should fade visibly."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Dilute hydrogen peroxide (1.5%, cold)",
+      "technique": "Sponge if needed",
+      "equipment": "Sponge, white cloth",
+      "dwellTime": "1-2 minutes, watch color",
+      "instruction": "If brown remains, dilute 3% peroxide 1:1 with cold water. Sponge gently. Wool is protein\u2014dilute peroxide is safer. After 1-2 minutes, blot. Peroxide oxidizes tannin pigment."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cold water final rinse",
+      "technique": "Multiple rinses",
+      "equipment": "Spray bottle, white cloth",
+      "dwellTime": "Until absolutely clear",
+      "instruction": "Rinse thoroughly. All acid and peroxide must be removed. Lay flat, work back to front."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Air dry flat",
+      "technique": "No heat",
+      "equipment": "Clean towel, flat surface",
+      "dwellTime": "Until dry (4-6 hours)",
+      "instruction": "Squeeze gently in towel\u2014never wring. Lay flat on clean dry towel. Never use heat. Wool must dry slowly and evenly."
+    }
+  ],
+  "homeSolutions": [
+    "FRESH: Immediately ice water + blot from back. Most casein comes out with this step.",
+    "REMAINING: Woolite Delicates solution (1:9 with cold water), 2 minutes, blot, rinse thoroughly.",
+    "BROWN COLOR: White vinegar (1:1 diluted), 1 minute only, blot. Then diluted hydrogen peroxide (1:1), 1-2 minutes, blot, rinse thoroughly."
+  ],
+  "materialWarnings": [
+    "NEVER use hot water\u2014felting",
+    "NEVER use protease enzymes\u2014digest wool",
+    "NEVER use bleach",
+    "NEVER use alkaline cleaners\u2014weaken wool",
+    "AVOID rubbing\u2014felting and pilling"
+  ],
+  "escalation": "If combo stain persists after NSD + acid + peroxide treatment, call professional. Wool-safe enzymes (inhibitor-formulation) or solvent cleaning may help, but risk is high.",
+  "products": {
+    "household": [
+      {
+        "name": "Woolite Delicates",
+        "brand": "Woolite",
+        "icon": "\ud83e\uddf4",
+        "amazonSearchQuery": "Woolite Delicates",
+        "affiliateTag": "gonr08-20",
+        "note": "Gentle detergent for protein. 10% in cold water. Use first."
+      },
+      {
+        "name": "White Vinegar",
+        "brand": "Standard",
+        "icon": "\ud83c\udf76",
+        "amazonSearchQuery": "white vinegar",
+        "affiliateTag": "gonr08-20",
+        "note": "For tannin. Dilute 1:1 with cold water. 1 minute max."
+      }
+    ],
+    "professional": [
+      {
+        "name": "Mulsolite",
+        "brand": "Chemspec",
+        "icon": "\ud83e\uddea",
+        "amazonSearchQuery": "Mulsolite NSD",
+        "affiliateTag": "gonr08-20",
+        "note": "Professional NSD for wool protein removal."
+      }
+    ]
+  },
+  "customerExplanation": "Coffee-cream on wool requires careful two-stage treatment: detergent for protein, acid for tannin. Wool is delicate\u2014no heat, no enzymes, no agitation. We must work cold and gentle throughout.",
+  "commonMistakes": [
+    "Using warm water\u2014causes felting AND sets protein",
+    "Using enzymes\u2014people assume enzymes help. Protease damages wool's own protein.",
+    "Treating tannin before protein\u2014acid causes casein to set deeper if still present"
+  ],
+  "scienceNote": "Wool contains keratin protein bonded with disulfide bridges and hydrogen bonds. Casein (milk protein) is a globular protein that bonds to keratin through similar forces. When heated (above 30\u00b0C), these bonds strengthen and water-activated disulfide cross-linking accelerates (felting). This is why heat is forbidden on wool stains. NSD works through mild detergency\u2014it doesn't break disulfide bridges the way heat does.",
+  "callPro": "If combo stain is older than 6-8 hours or if treatment doesn't fully remove color, call professional wool specialist. Risk of damage increases with extended treatment.",
+  "components": [
+    "detergent",
+    "acid-spotter",
+    "oxidizer"
+  ],
+  "component_order": [
+    "detergent",
+    "acid-spotter",
+    "oxidizer"
+  ],
+  "difficulty": 7,
+  "difficulty_factors": [
+    "combo-complex",
+    "felting-risk",
+    "two-stage",
+    "cold-only"
+  ],
+  "solventNote": "Professional: Cold NSD (Mulsolite) soak (2-3 min), sponge work, thorough rinse. Then acetic acid spotter (GAA diluted 1:10, cold, 1-2 min max). For brown tannin, dilute H\u2082O\u2082 (1.5-2%, cold, 2 min). For aged stains, reducing bleach (StreePene 0.25%, cold, max 5 min) then rinse thoroughly. Temperature critical: never exceed 30\u00b0C. VDS post-treatment optional."
+}

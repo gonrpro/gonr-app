@@ -1,90 +1,179 @@
 {
   "id": "blood-silk",
-  "title": "Blood on Silk",
-  "stainFamily": "protein",
+  "version": "5.0",
+  "authored": "2026-03-22",
+  "title": "Fresh Blood on Silk",
+  "stainType": "protein",
   "surface": "silk",
   "sector": "textile",
-  "source": "verified",
-  "stainChemistry": "Classification: Protein. Blood contains hemoglobin—an iron-binding protein that carries oxygen. The heme iron core creates the red color. Silk is itself a protein fiber (fibroin). Protein stains bond to fibers via peptide-to-fiber hydrogen bonds and hydrophobic interactions. Heat denatures the protein, cross-linking it to the substrate and making removal extremely difficult. Treatment: cold water flush to prevent heat-setting, followed by neutral synthetic detergent safe for protein fibers — never enzyme digestants, which dissolve silk fibroin along with the stain.",
-  "whyThisWorks": "Blood and silk are both protein structures — the stain bonds directly to the fiber. This double-protein problem makes enzyme-based treatments catastrophically wrong: protease enzymes cannot distinguish hemoglobin from silk fibroin and will digest the fiber. NSD lifts blood without attacking silk. Sodium hydrosulfite provides the only safe reducing/bleaching option for protein fibers. Cold water and gentle technique prevent both heat-setting and mechanical fiber damage.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
-  "professionalProtocol": {
-    "steps": [
-      "1. Apply NSD (Neutral Synthetic Detergent) at neutral setting and gently work into the blood stain. Dwell 5–10 minutes. NSD is safe for silk because it won't attack the protein fiber. Never use enzyme-based digestants on silk.",
-      "2. Apply sodium hydrosulfite (reducing agent — safe for protein fibers) to break down any remaining blood discoloration. Dwell 5–10 minutes. This is the only safe bleaching option for silk — never use hydrogen peroxide or oxidizing bleach on protein fibers.",
-      "3. Flush with NSD to remove all chemical residue. Dwell 3–5 minutes. Rinse with cool water — never use warm or hot water on blood stains or on silk.",
-      "4. Apply 28% Acetic acid (diluted 1:10) to neutralize any remaining alkaline residue and restore the fiber's natural state. Dwell 1–2 minutes. Blot dry gently — never wring silk."
+  "meta": {
+    "stainCanonical": "blood",
+    "surfaceCanonical": "silk",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "protein",
+      "fresh",
+      "silk-safe",
+      "cold-water",
+      "no-enzyme"
     ],
-    "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Sodium hydrosulfite (reducing agent — safe for protein fibers)",
-      "28% Acetic acid (diluted 1:10)"
+    "freePreview": true
+  },
+  "stainChemistry": "Blood proteins (hemoglobin, fibrin, albumin) denature and bond through hydrogen bonding to silk's fibroin protein structure. Heat above 30\u00b0C permanently cross-links blood protein to fibers, making removal impossible. Silk IS protein fiber itself\u2014any protease enzyme will digest silk along with blood protein, destroying the garment. Speed and cold water are critical.",
+  "whyThisWorks": "Ice-cold water halts protein denaturation before hemoglobin oxidizes and sets. NSD surfactant encapsulates protein fragments without alkalinity. Reducing bleach (sodium hydrosulfite, brief) reverses hemoglobin oxidation if needed. This sequence removes fresh blood while preserving silk's protein structure entirely. NO enzymes, ever.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Ice water (2-4\u00b0C)",
+      "technique": "Blot-and-flood",
+      "equipment": "White cotton terry towel, spray bottle",
+      "dwellTime": "Immediate\u2014work within 30 seconds",
+      "instruction": "Spray ice water directly onto blood spot. Watch the water bead, then absorb into silk. Blot from back of fabric first\u2014hydraulic flush pushes hemoglobin out before it sets. Flip to front. You'll see water turn pink as protein lifts. Never rub. Work in concentric circles from stain edge inward, moving inward progressively."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD solution (10% neutral detergent, 90% cold water)",
+      "technique": "Gentle sponge work",
+      "equipment": "Natural sponge, white cotton towel",
+      "dwellTime": "2-3 minutes dwell, then work",
+      "instruction": "Mix 1 part Mulsolite or Woolite Delicates with 9 parts ice water. Sponge this solution onto the stain\u2014don't pour. Detergent molecules encapsulate protein fragments and suspend them in solution. Stain lightens as protein lifts. Blot repeatedly. Work gently\u2014silk fibers rupture easily under pressure when wet. This is the standard first step for protein stains on silk."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Glycerin solution (50% glycerin, 50% cold water)",
+      "technique": "Soak and gentle work",
+      "equipment": "Plastic wrap, white cloth",
+      "dwellTime": "3-5 minutes soak",
+      "instruction": "Mix equal parts glycerin and cold water. This softens remaining protein residue without heat. Lay garment flat, apply glycerin solution to stain. Cover with plastic wrap to prevent evaporation. After 3-5 minutes, gently work spot with soft brush using downward motions only. Glycerin's hygroscopic nature draws moisture into protein fibers, making them pliable\u2014protein lifts more easily."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Acetic acid spotter (3% glacial acetic acid or white vinegar diluted 1:1 with cold water)",
+      "technique": "Micro-application",
+      "equipment": "Dropper or syringe, white cloth",
+      "dwellTime": "1 minute, then blot",
+      "instruction": "Apply acetic acid solution in small droplets to remaining stain marks. This acidifies silk's fiber surface slightly\u2014just enough to break hydrogen bonds remaining between blood residue and fibers without damaging silk protein. Stain fades visibly as pH drops. Blot with white cloth\u2014don't squeeze. This step is critical for oxidized hemoglobin (older stains)."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Reducing bleach solution (sodium hydrosulfite 0.5-1%, if stain is oxidized/dark)",
+      "technique": "Cautious soak\u2014TEST FIRST on hidden area",
+      "equipment": "Hidden seam test, reducing bleach solution, clock",
+      "dwellTime": "TEST 1 minute on hidden seam first. If safe: 30-60 seconds maximum on stain",
+      "instruction": "For fresh blood: skip this step. For OXIDIZED hemoglobin (brown/dark red stains older than 4-6 hours): mix sodium hydrosulfite solution 0.5-1% concentration. ALWAYS test on hidden seam first (1 min). If silk shows no damage, apply to stain for MAXIMUM 60 seconds only. Reducing bleach reverses iron oxidation (Fe\u00b3\u207a \u2192 Fe\u00b2\u207a), but exceeding 60 seconds on silk risks fiber damage. Blot immediately. Rinse thoroughly."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cold water rinse",
+      "technique": "Flood and blot",
+      "equipment": "Spray bottle, white towel",
+      "dwellTime": "Until rinse water runs clear (typically 3-4 rinses)",
+      "instruction": "Spray cold water repeatedly until all detergent, acid, and reducing bleach residue is gone. Final water must be completely clear. Detergent residue left behind attracts dirt and causes browning over time. Reducing bleach residue can cause yellowing. Work from back to front on final rinses. Fabric should feel clean and no longer slippery."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Air circulation only",
+      "technique": "Lay flat on clean towel",
+      "equipment": "Clean white towel, fans optional",
+      "dwellTime": "Until completely dry (2-4 hours depending on humidity)",
+      "instruction": "NEVER wring silk. Excess water removed by gentle hand-squeezing in towel\u2014hold garment and press gently, don't twist. Lay flat on clean dry towel in warm room with airflow. Silk must dry slowly and evenly or water spots set. Never use heat (iron, dryer, hairdryer). If protein stain is fully lifted, no heat is needed. If any faint shadow remains after air dry, professional treatment is next step\u2014do not repeat home chemistry."
+    }
+  ],
+  "homeSolutions": [
+    "FRESH (minutes old): Ice water blot, NSD solution soak, acetic acid rinse, cold water rinse, air dry. Most fresh blood lifts completely this way.",
+    "OLDER (2-6 hours, oxidizing): Follow full 7-step protocol including optional reducing bleach (careful\u2014test first). Oxidized hemoglobin (dark brown) needs chemical reversal, not enzyme.",
+    "AGED/SET (24+ hours, dark brown): Professional treatment is safest. Home reducing bleach risks fiber damage on silk. Dry cleaner has precise control and can use safe enzyme inhibitor formulations if needed."
+  ],
+  "materialWarnings": [
+    "NEVER protease enzymes\u2014they digest silk protein fiber as well as blood protein. This destroys the garment.",
+    "NEVER hot water (above 30\u00b0C)\u2014sets protein through cross-linking permanently.",
+    "NEVER chlorine bleach\u2014destroys silk fiber and causes yellowing.",
+    "NEVER strong alkaline detergents (pH > 8)\u2014weakens silk's tensile strength.",
+    "NEVER mechanical agitation\u2014silk fibers rupture under pressure when wet.",
+    "NEVER exceed 60 seconds with reducing bleach on silk\u2014fiber damage risk."
+  ],
+  "escalation": "If stain persists after step 6 or if hemoglobin has oxidized to dark brown, professional dry cleaner is recommended. They have enzyme inhibitor formulations that break hemoglobin-silk bonds safely and can use precise reducing bleach systems without fiber damage. Do not attempt home chemistry on aged blood stains on silk\u2014the oxidation state requires professional expertise.",
+  "products": {
+    "household": [
+      {
+        "name": "White Vinegar",
+        "brand": "Standard grocery",
+        "icon": "\ud83e\uddc2",
+        "amazonSearchQuery": "white vinegar 5% acetic acid",
+        "affiliateTag": "gonr08-20",
+        "note": "Acidic spotter for protein residue. Dilute 1:1 with cold water. Safe for silk."
+      },
+      {
+        "name": "Woolite Delicates",
+        "brand": "Woolite",
+        "icon": "\ud83e\uddf4",
+        "amazonSearchQuery": "Woolite Delicates liquid",
+        "affiliateTag": "gonr08-20",
+        "note": "Gentle neutral-pH detergent formulated for silk. 10% solution in cold water."
+      },
+      {
+        "name": "Vegetable Glycerin",
+        "brand": "Standard drugstore",
+        "icon": "\ud83d\udca7",
+        "amazonSearchQuery": "vegetable glycerin USP",
+        "affiliateTag": "gonr08-20",
+        "note": "Softens protein residue without heat. Mix 1:1 with cold water for soak."
+      }
     ],
-    "temperature": "cold — heat denatures hemoglobin AND damages silk protein simultaneously. This is the single worst mistake and causes permanent, irreversible staining.",
-    "warnings": [
-      "Using hot water — denatures hemoglobin AND damages silk protein fiber permanently.",
-      "Using protease enzymes — DIGESTS silk protein fiber, causing permanent weakening, thinning, and loss of sheen.",
-      "Using chlorine bleach — dissolves silk fiber entirely, causing holes in the treated area.",
-      "Using high-concentration hydrogen peroxide (>3%) — causes fiber browning, brittleness, and color change on silk.",
-      "Scrubbing or rubbing — crushes delicate silk nap, causing permanent shine loss.",
-      "NEVER use bleach, chlorine, enzyme, or protease on silk."
+    "professional": [
+      {
+        "name": "Mulsolite",
+        "brand": "Chemspec",
+        "icon": "\ud83e\uddea",
+        "amazonSearchQuery": "Mulsolite neutral detergent dry cleaning",
+        "affiliateTag": "gonr08-20",
+        "note": "Professional-grade NSD. Superior to household detergents for silk protein stains."
+      },
+      {
+        "name": "Sodium Hydrosulfite (Reducing Bleach)",
+        "brand": "Professional suppliers",
+        "icon": "\u2697\ufe0f",
+        "amazonSearchQuery": "sodium hydrosulfite reducing bleach",
+        "affiliateTag": "gonr08-20",
+        "note": "For oxidized hemoglobin reversal. Professional-only\u2014precise concentration and timing critical."
+      }
     ]
   },
-  "diyProtocol": {
-    "steps": [
-      "1. Rinse with cold water right away. Blot gently with a clean white cloth — don't rub. Cold water keeps the stain from setting; rubbing pushes it deeper into the fabric.",
-      "2. Mix a small squirt of dish soap (Dawn or similar) into cold water. Blot gently onto the stain. Soap breaks down the stain so it lifts off the fabric.",
-      "3. Let it sit for 5–10 minutes. Don't use any heat.",
-      "4. Blot gently with a clean white cloth until the stain fades.",
-      "5. Rinse gently with cold water and lay flat on a towel to air dry — no heat, no wringing."
-    ],
-    "products": [
-      "Dawn dish soap (or similar — enzyme-free)",
-      "Cold water",
-      "Clean white cloths",
-      "Eucalan Delicate Wash (enzyme-free, safe for silk)",
-      "The Laundress Delicate Wash (pH-neutral, enzyme-free)"
-    ],
-    "whenToStop": "If the stain persists after two treatment attempts, take it to a professional. Silk is too delicate to risk aggressive home treatments. A professional cleaner has specialized agents that are safe for this material and more effective than household products.",
-    "warnings": [
-      "Test on an inside seam or hidden area first — silk reacts unpredictably to many products.",
-      "Never use bleach, enzyme cleaners, or hot water on silk.",
-      "Never use hydrogen peroxide on silk — can cause yellowing or discoloration.",
-      "Never wring or twist silk — gently press out moisture between towels.",
-      "Lay flat to dry."
-    ]
-  },
-  "safetyMatrix": {
-    "neverDo": [
-      "Never use hot water — permanently sets blood protein and damages silk simultaneously.",
-      "Never use enzyme-based cleaners (protease) — digests silk protein fiber, causing irreversible damage.",
-      "Never use chlorine bleach — dissolves silk fiber entirely.",
-      "Never use hydrogen peroxide at concentrations above 3% — causes browning and brittleness.",
-      "Never scrub or rub — permanently damages silk sheen.",
-      "Never use alcohol — permanently sets protein stains."
-    ],
-    "fiberSensitivities": [
-      "Silk (fibroin) is a protein fiber — enzyme cleaners digest it the same way they digest the stain.",
-      "Silk dyes are often sensitive to both acids and oxidizers — always test on a hidden area.",
-      "Silk loses structural integrity with heat, alkalis, and aggressive mechanical action.",
-      "Amyl acetate is safe on silk for dry-side components; acetic acid (dilute) is safe for pH restoration."
-    ]
-  },
-  "escalation": {
-    "when": "For persistent blood stains on silk after one treatment cycle, professional dry cleaning is STRONGLY RECOMMENDED. Dry cleaners have access to chelating agents (citrates, EDTA) that can bond to iron deposits without damaging silk, and controlled environments for chemical treatment. Attempting multiple home treatments on delicate silk risks permanent fiber damage, color shift, or brittleness. For antique silk or silk blended with other delicate fibers, call a professional immediately.",
-    "whatToTell": "This was a tricky one — blood on silk is one of the more challenging stains because both the stain and the fiber are protein structures. Blood stains set deeper with heat and time. Results depend on how long the stain had been set before treatment — some improvement may continue over the next few days.",
-    "specialistType": "silk specialist or wet cleaner with delicate fiber experience"
-  },
-  "deepSolveHooks": {
-    "contextQuestions": [
-      "How old is the stain — was it treated immediately or has it been sitting?",
-      "Has the garment been pressed or ironed since the stain occurred?",
-      "Is this a printed or dyed silk, and has any product already been applied?",
-      "Is this a valuable or antique garment? (escalate immediately if yes)"
-    ],
-    "modifierNotes": "Fresh blood on silk responds reasonably well to cold water and gentle dish soap. Any heat exposure prior to treatment dramatically reduces recovery odds. Dyed silk may bleed during treatment — test hidden area first. Antique or blended silk garments should bypass home treatment entirely and go directly to a specialist."
-  },
-  "difficulty": 6,
-  "timeEstimate": "10–20 min (professional); 2–3 attempts max at home before escalating",
-  "lastValidated": "2026-03-23"
+  "customerExplanation": "Fresh blood contains proteins that bond to silk through hydrogen attraction. Cold water prevents this bonding from becoming permanent. Our treatment used gentle detergent to encapsulate protein and mild acid to break bonds. If blood oxidized (turned dark brown), professional use of reducing bleach can reverse the oxidation. We never used enzymes\u2014silk IS protein, and enzymes would destroy it.",
+  "commonMistakes": [
+    "Using hot water\u2014this is the #1 mistake. Hot water sets blood protein irreversibly. Once set, home chemistry fails.",
+    "Using protease enzyme\u2014people assume enzymes help all protein stains. Protease digests silk's protein structure along with blood, destroying the garment permanently.",
+    "Rubbing or scrubbing\u2014silk fibers rupture under pressure when wet, creating feathering and weakness.",
+    "Not rinsing reducing bleach thoroughly\u2014residue causes yellowing or gradual fiber weakening."
+  ],
+  "scienceNote": "Hemoglobin's iron center oxidizes from ferrous (Fe\u00b2\u207a, red) to ferric (Fe\u00b3\u207a, brown) over hours. Ferric iron bonds more strongly to protein and cellulose fibers through coordinate bonding. This is why fresh blood is easier to remove than old blood\u2014you're removing protein, not fighting iron chemistry. Once ferric, sodium hydrosulfite (reducing agent) converts Fe\u00b3\u207a back to Fe\u00b2\u207a, which releases from fiber more easily. This chemistry works on silk without damaging it, provided dwell time is brief (\u226460 sec).",
+  "callPro": "If stain is older than 4-6 hours or has oxidized dark red/brown, call a professional cleaner who specializes in delicate fabrics. They have access to reducing bleach systems calibrated for silk, enzyme inhibitor formulations, and the expertise to reverse oxidation without fiber damage.",
+  "components": [
+    "spotter",
+    "detergent",
+    "finisher"
+  ],
+  "component_order": [
+    "spotter",
+    "detergent",
+    "finisher"
+  ],
+  "difficulty": 7,
+  "difficulty_factors": [
+    "temperature-sensitive",
+    "silk-fragile",
+    "protein-cross-linking",
+    "oxidation-chemistry",
+    "time-critical",
+    "enzyme-forbidden"
+  ],
+  "solventNote": "Professional dry cleaning: Fresh blood on silk treated with NSD followed by mild acetic acid (GAA diluted 1:10). For oxidized hemoglobin residue, sodium hydrosulfite (reducing bleach) in dilute solution (0.5-1% hydrosulfite) is effective\u201460 seconds MAXIMUM dwell on silk. VDS post-treatment rinse prevents water spotting. Never exceed recommended reducing bleach concentration or timing on silk."
 }

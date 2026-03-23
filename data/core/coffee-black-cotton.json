@@ -1,86 +1,153 @@
 {
   "id": "coffee-black-cotton",
-  "title": "Coffee (Black) on Cotton",
-  "stainFamily": "tannin",
-  "surface": "cotton",
+  "version": "5.0",
+  "authored": "2026-03-22",
+  "title": "Black Coffee on White Cotton",
+  "stainType": "tannin",
+  "surface": "cotton-white",
   "sector": "textile",
-  "source": "verified",
-  "stainChemistry": "Tannins are polyphenolic plant compounds (from tea, coffee, red wine, fruit juices) that bond to fibers through hydrogen bonding and π-stacking interactions with cellulose and protein fibers. Fresh tannin stains are removable with mild detergent. Aged stains oxidize and darken: the brown color is caused by oxidation products. Hydrogen peroxide 6% breaks the double bonds in the oxidized tannin molecules, reversing the browning. Sodium hydrosulfite provides a reducing alternative for fibers that cannot tolerate bleaching. Black coffee is a pure tannin stain with no fat or protein components.",
-  "whyThisWorks": "Coffee gets its dark color from plant pigments (chlorogenic acids, tannins) in roasted beans that bond to cotton cellulose through hydrogen bonding. Cotton absorbs liquids quickly, pulling the stain deep into the weave. Tannin Formula (acidic) breaks the initial tannin-fiber bonds. H₂O₂ 6% cleaves the double bonds in oxidized tannin molecules, turning the stain colorless. NSD and acetic acid flush and restore the fiber. Cotton tolerates peroxide well.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
-  "professionalProtocol": {
-    "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Dwell 5–10 minutes. This acidic spotter specifically targets the bonds that coffee, wine, tea, and fruit juice pigments form with fabric. Work from the edge toward the center.",
-      "2. Apply H₂O₂ 6% (professional-grade oxidizer) to the stain. Dwell 5–15 minutes, checking every 5 minutes. This oxidizer breaks down the double bonds that make tannin stains brown. On colored fabrics, test an inconspicuous area first.",
-      "3. Flush with NSD (Neutral Synthetic Detergent) with a mild leveling agent. Dwell 2–3 minutes. Removes broken-down tannin pigment and excess oxidizer. The leveling agent helps relax the fiber so trapped pigment can release. Rinse thoroughly.",
-      "4. Apply 28% Acetic acid (diluted 1:10) to stop any remaining oxidizer activity and restore the fabric to its natural state. Dwell 1–2 minutes. Blot dry and allow to air dry completely."
+  "meta": {
+    "stainCanonical": "coffee-black",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "no-protein",
+      "acid-spotter",
+      "oxidizer-safe"
     ],
-    "products": [
-      "Tannin Formula (acidic tannin spotter)",
-      "H₂O₂ 6% (professional-grade oxidizer)",
-      "NSD (Neutral Synthetic Detergent) with leveling agent",
-      "28% Acetic acid (diluted 1:10)"
+    "freePreview": true
+  },
+  "stainChemistry": "Black coffee is primarily tannins (no cream protein). Tannins bond to cotton's cellulose through hydrogen attraction. White cotton's chemical tolerance allows aggressive acid and oxidizing treatment. Fresh coffee is easier to remove than brown/aged (oxidized) coffee. Acidic chemistry breaks tannin-cellulose bonds directly\u2014this is the key advantage vs protein stains.",
+  "whyThisWorks": "Acetic acid breaks tannin hydrogen bonds to cotton. Hydrogen peroxide or bleach oxidizes tannin pigment. Sequential chemistry (acid then oxidizer) removes both the stain and its color efficiently.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold water (initial flush)",
+      "technique": "Blot from back",
+      "equipment": "White cloth, spray bottle",
+      "dwellTime": "1-2 minutes",
+      "instruction": "Cold water from back, blot hard. This removes excess coffee and mobilizes tannins before they oxidize deeper. Most fresh stain will flush out with immediate cold water blotting. Flip to front and continue. Water should turn brown/tan."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "White vinegar (full strength or diluted)",
+      "technique": "Direct application or soak",
+      "equipment": "Dropper or basin, white cloth",
+      "dwellTime": "2-3 minutes",
+      "instruction": "Apply white vinegar directly to remaining brown stain. Full strength is safe on white cotton. Acidity breaks tannin-cellulose bonds. Watch the stain lighten. After 2-3 minutes, blot thoroughly. The acidic chemistry is what makes coffee tannins soluble."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Hydrogen peroxide (3-6%)",
+      "technique": "Direct application, watch oxidation",
+      "equipment": "Spray or dropper, white cloth",
+      "dwellTime": "3-5 minutes, watch color fade",
+      "instruction": "If brown color remains, apply hydrogen peroxide. This oxidizes tannin pigment to colorless products. Full strength safe on white cotton. Chemical smell sharp\u2014oxidation happening. After 3-5 minutes, blot thoroughly."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "OxiClean or dilute bleach (white only)",
+      "technique": "Soak",
+      "equipment": "Basin",
+      "dwellTime": "30-60 minutes (OxiClean) or 5-10 minutes (bleach)",
+      "instruction": "For stubborn brown stain, OxiClean soak (per directions) for 30-60 minutes. Alternatively, 1:10 diluted bleach for 5-10 minutes on white only. Bleach is faster; OxiClean is safer for colored trim."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Rinse water",
+      "technique": "Flush and wash",
+      "equipment": "Running water or machine",
+      "dwellTime": "Rinse until clear, then wash",
+      "instruction": "Rinse thoroughly to remove all acid, peroxide, and bleach residue. Then wash in warm or hot water with regular detergent. All chemistry must be rinsed away."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Heat dry",
+      "technique": "Machine dryer or line dry",
+      "equipment": "Dryer or clothesline",
+      "dwellTime": "Until dry",
+      "instruction": "White cotton tolerates heat. Machine dryer or line dry\u2014both fine. Heat doesn't re-set tannin stains on cotton."
+    }
+  ],
+  "homeSolutions": [
+    "FRESH: Cold water flush from back. Blot hard. Most comes out immediately.",
+    "REMAINING: White vinegar, 2-3 minutes, blot. Then hydrogen peroxide, 3-5 minutes, blot.",
+    "BROWN: OxiClean soak (30-60 min) or dilute bleach (1:10, white only, 5-10 min)."
+  ],
+  "materialWarnings": [
+    "DO NOT use bleach on colored cotton",
+    "AVOID bleach on colored thread/trim"
+  ],
+  "escalation": "Black coffee on white cotton rarely needs professional care. Home treatment is fast and effective.",
+  "products": {
+    "household": [
+      {
+        "name": "White Vinegar",
+        "brand": "Standard",
+        "icon": "\ud83c\udf76",
+        "amazonSearchQuery": "white vinegar 5%",
+        "affiliateTag": "gonr08-20",
+        "note": "Acidic spotter for tannin. Full strength safe on white cotton."
+      },
+      {
+        "name": "Hydrogen Peroxide (3-6%)",
+        "brand": "Drugstore",
+        "icon": "\ud83e\uddf4",
+        "amazonSearchQuery": "hydrogen peroxide",
+        "affiliateTag": "gonr08-20",
+        "note": "Oxidizes tannin color. Full strength safe on white cotton."
+      },
+      {
+        "name": "OxiClean or Clorox Bleach",
+        "brand": "OxiClean or Clorox",
+        "icon": "\ud83e\udde1",
+        "amazonSearchQuery": "OxiClean powder or Clorox bleach",
+        "affiliateTag": "gonr08-20",
+        "note": "OxiClean safe on colored trim. Bleach (1:10 diluted) fast on white only."
+      }
     ],
-    "temperature": "ambient — never use hot water on tannin stains. Heat accelerates tannin oxidation and polymerization, locking the brown color into the fiber.",
-    "warnings": [
-      "Using hot water — accelerates oxidation and sets the tannin color faster.",
-      "Applying hydrogen peroxide to colored fabrics without testing — peroxide bleaches fabric color along with the stain.",
-      "Oversaturation with peroxide — can cause yellowing on whites from oxidized cellulose.",
-      "Not rinsing peroxide completely — residual peroxide continues bleaching and weakens fiber.",
-      "NEVER use ammonia, baking soda, or alkaline agents — permanently darkens tannin stains."
+    "professional": [
+      {
+        "name": "StreeTAN",
+        "brand": "Chemspec",
+        "icon": "\ud83e\uddea",
+        "amazonSearchQuery": "StreeTAN tannin spotter",
+        "affiliateTag": "gonr08-20",
+        "note": "Professional acetic acid spotter. Rarely needed\u2014home vinegar works well."
+      }
     ]
   },
-  "diyProtocol": {
-    "steps": [
-      "1. Blot the stain with a clean white cloth to soak up as much as you can.",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup 3% hydrogen peroxide in a bowl. Apply the solution and let it sit for 5–10 minutes.",
-      "3. Blot with a clean white cloth. Repeat until the color fades.",
-      "4. Rinse with cold water to remove all cleaning solution.",
-      "5. Air dry — don't use a dryer until the stain is gone. Heat from a dryer can permanently set any remaining stain."
-    ],
-    "products": [
-      "Dawn dish soap",
-      "3% hydrogen peroxide",
-      "OxiClean Versatile Stain Remover (for set stains)",
-      "White vinegar (separate spray bottle for stubborn stains)"
-    ],
-    "whenToStop": "For set-in tannin stains, mix baking soda with a little hydrogen peroxide to make a paste, apply for 15 minutes, then rinse. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment that outperform any home method.",
-    "warnings": [
-      "Test any cleaning solution on a hidden seam or inside hem first.",
-      "Check for colorfastness before using hydrogen peroxide.",
-      "Avoid heat until the stain is completely gone.",
-      "Speed matters — fresh tannin stains lift much more easily than dried ones.",
-      "NEVER use ammonia, baking soda, or alkaline products — permanently darkens tannin stains."
-    ]
-  },
-  "safetyMatrix": {
-    "neverDo": [
-      "Never use hot water — sets tannin color permanently.",
-      "Never use ammonia, baking soda, or alkaline agents — permanently darkens tannin stains.",
-      "Never mix ammonia with chlorine bleach — produces toxic chloramine gas.",
-      "Never put in the dryer before stain is fully gone."
-    ],
-    "fiberSensitivities": [
-      "Cotton (cellulose) tolerates most agents including dilute bleach on whites.",
-      "Colored cotton: test peroxide in a hidden area first.",
-      "Heavy peroxide exposure on cotton can cause yellowing from oxidized cellulose."
-    ]
-  },
-  "escalation": {
-    "when": "If peroxide bleaching reaches a plateau, the tannin has likely cross-linked with the fiber polymer. Try sequential treating: alternate between peroxide and leveling agent. For extreme cases, recommend professional-grade tannin-specific chemistry.",
-    "whatToTell": "We've treated the coffee on your garment. Coffee darkens with air exposure and sets deeper the longer it sits.",
-    "specialistType": "dry cleaner or wet cleaner"
-  },
-  "deepSolveHooks": {
-    "contextQuestions": [
-      "How old is the stain — was it treated immediately or has it been sitting?",
-      "Is this black coffee or coffee with cream/sugar? (cream and sugar change the protocol)",
-      "Has the garment been through a dryer since the stain occurred?",
-      "Is the cotton light/white or heavily dyed?"
-    ],
-    "modifierNotes": "Black coffee is a pure tannin stain — straightforward protocol. Coffee with cream adds a fat component requiring POG or NSD pre-treatment. Coffee with sugar adds a caramelized sugar component. A heat-set stain requires longer Tannin Formula dwell and multiple peroxide passes. A garment run through the dryer has significantly reduced recovery odds."
-  },
+  "customerExplanation": "Black coffee contains tannins that bond to cotton. Acid (vinegar) breaks the bonds. Hydrogen peroxide oxidizes the brown color to colorless. White cotton's chemical robustness means we can use strong chemistry and heat safely.",
+  "commonMistakes": [
+    "Not using cold water first\u2014initial flush removes most of the stain",
+    "Skipping acid\u2014vinegar is essential for breaking tannin bonds",
+    "Not using peroxide\u2014it's the final step that removes brown color completely"
+  ],
+  "scienceNote": "Black coffee tannins are complex polyphenolic compounds. Fresh tannins are more soluble and lighter in color (tan/medium brown). As they oxidize (gain oxygen bridges), they darken (dark brown) and become less soluble. This is why fresh stains respond to acid alone, but aged stains need oxidizing chemistry. Bleach actually accelerates tannin oxidation to colorless products\u2014this is why bleach works so well on aged coffee on white cotton.",
+  "callPro": "Black coffee on white cotton rarely needs professional care.",
+  "components": [
+    "acid-spotter",
+    "oxidizer",
+    "finisher"
+  ],
+  "component_order": [
+    "acid-spotter",
+    "oxidizer",
+    "finisher"
+  ],
   "difficulty": 2,
-  "timeEstimate": "10–20 minutes",
-  "lastValidated": "2026-03-23"
+  "difficulty_factors": [
+    "tannin-soluble",
+    "acid-effective",
+    "cotton-tolerant"
+  ],
+  "solventNote": "Professional: Cold water flush, then acetic acid spotter for fresh tannins. For aged brown stains, H\u2082O\u2082 (3-6%) or sodium percarbonate. For very old stains, chlorine bleach (0.5-1% on white, dilute in water) or reducing bleach (sodium hydrosulfite 0.5%, warm, 10-15 min) to reverse oxidation, then oxidize to colorless. Standard approach: acid \u2192 oxidize \u2192 oxidize again."
 }

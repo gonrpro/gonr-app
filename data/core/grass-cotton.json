@@ -1,87 +1,172 @@
 {
   "id": "grass-cotton",
-  "title": "Grass on Cotton",
-  "stainFamily": "combo",
-  "surface": "cotton",
+  "version": "5.0",
+  "authored": "2026-03-22",
+  "title": "Grass Stains on White Cotton",
+  "stainType": "plant-pigment",
+  "surface": "cotton-white",
   "sector": "textile",
-  "source": "verified",
-  "stainChemistry": "Classification: Tannin (polyphenolic) — triple-threat composite stain. Grass stains contain: (1) chlorophyll — a fat-soluble green pigment with a porphyrin ring and magnesium center that embeds in cotton cellulose through hydrophobic interaction; (2) plant proteins — which hydrogen-bond to cotton hydroxyl groups; (3) tannins (polyphenols) — which bond to fibers through hydrogen bonding and van der Waals forces. Over time, tannin oxidizes and polymerizes, shifting from bright (reversible) to brown (resistant). Treatment: acidic tannin formula to break initial hydrogen bonds, followed by oxidizing bleach to cleave chromophore conjugation across all three components.",
-  "whyThisWorks": "Grass is a multi-component stain requiring the tannin/peroxide sequence to address all three components. Tannin Formula (acidic) breaks the initial bonds of both tannin and plant protein components. H₂O₂ 6% cleaves the chromophore bonds of chlorophyll and oxidized tannins simultaneously. NSD flushes all broken-down stain material. Cotton tolerates peroxide well. Hot water first is especially damaging — it polymerizes the tannins AND denatures the protein component, locking both in.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
-  "professionalProtocol": {
-    "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Dwell 5–10 minutes. Targets the bonds that the plant pigments, tannins, and proteins form with the cotton fiber. Work from edge toward center.",
-      "2. Apply H₂O₂ 6% (professional-grade oxidizer) to the stain. Dwell 5–15 minutes, checking every 5 minutes. This oxidizer breaks down the chromophore bonds of both chlorophyll and oxidized tannins. On colored fabrics, test an inconspicuous area first.",
-      "3. Flush with NSD (Neutral Synthetic Detergent) with a mild leveling agent. Dwell 2–3 minutes. Removes all broken-down pigment, protein, and excess oxidizer. Rinse thoroughly.",
-      "4. Apply 28% Acetic acid (diluted 1:10) to stop any remaining oxidizer activity and restore the fabric. Dwell 1–2 minutes. Blot dry and allow to air dry completely."
+  "meta": {
+    "stainCanonical": "grass",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "chlorophyll",
+      "plant-pigment",
+      "enzyme-responsive",
+      "alcohol-soluble"
     ],
-    "products": [
-      "Tannin Formula (acidic tannin spotter)",
-      "H₂O₂ 6% (professional-grade oxidizer)",
-      "NSD (Neutral Synthetic Detergent) with leveling agent",
-      "28% Acetic acid (diluted 1:10)"
+    "freePreview": true
+  },
+  "stainChemistry": "Fresh grass contains chlorophyll (porphyrin pigment), carotenoid pigments, and plant proteins. Chlorophyll is a magnesium-porphyrin complex that bonds to cotton fibers through hydrogen bonding. Grass stains are water-soluble but the chlorophyll pigment itself is stubborn\u2014it requires solvent (isopropyl alcohol) or enzyme to dislodge. White cotton is ideal for aggressive treatment: bleach, enzymes, heat, and solvents are all safe.",
+  "whyThisWorks": "Enzyme breaks down plant protein bonds first. Alcohol dissolves chlorophyll pigment out of the fiber. Hydrogen peroxide oxidizes any remaining green to colorless. Bleach finishes the job on white cotton.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Dry brush or cloth",
+      "technique": "Light brushing",
+      "equipment": "Soft brush or clean cloth",
+      "dwellTime": "Immediate",
+      "instruction": "Brush or wipe away dried grass particles before any water. Fresh grass particles will smear if wet first. Dry brushing removes 20-30% of loose particles. Don't scrub hard\u2014light brushing is enough. Shake the garment outdoors to dislodge residue."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold water rinse",
+      "technique": "Rinse and blot",
+      "equipment": "Running water, white towels",
+      "dwellTime": "Immediate, 1-2 minutes",
+      "instruction": "Rinse under cold running water to flush away loose chlorophyll. Blot with white towels (not colored\u2014chlorophyll transfers). Cold water prevents chlorophyll from oxidizing to brown (which happens with hot water). This rinse removes the initial bright green stain. Some staining will remain\u2014this is where enzyme and alcohol come in."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Protease enzyme solution (warm water, 30-40\u00b0C)",
+      "technique": "Soak and agitate",
+      "equipment": "Basin, soft brush",
+      "dwellTime": "15-20 minutes soak",
+      "instruction": "Mix protease enzyme per product directions with warm water. White cotton tolerates warmth. Submerge stained area. Enzymes break down the plant protein bonds that hold chlorophyll to the fiber. After 15 minutes, gently agitate or brush with a soft brush. You'll see the green lighten as protein fragments release. This step is crucial\u2014it loosens the chlorophyll pigment so alcohol can dissolve it out."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Isopropyl alcohol (70-90%) or rubbing alcohol",
+      "technique": "Direct application or soak",
+      "equipment": "Cotton ball, cloth, or basin",
+      "dwellTime": "5-10 minutes with agitation",
+      "instruction": "After enzyme, apply isopropyl alcohol directly to the stained area or soak in alcohol solution. Alcohol dissolves chlorophyll pigment out of the fiber. You'll see the stain visibly fade and the alcohol turn greenish as it pulls pigment. Work the alcohol in gently with a cloth. This is the key step for grass\u2014alcohol is what actually removes the chlorophyll, not water. For white cotton, strong alcohol (70-90%) is safe."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hydrogen peroxide (3-6%) or bleach",
+      "technique": "Oxidizing soak",
+      "equipment": "Basin or sink",
+      "dwellTime": "3-5 minutes (H2O2), 5-10 minutes (bleach)",
+      "instruction": "If grass is still slightly green after alcohol, peroxide oxidizes residual chlorophyll to colorless. Apply directly or soak. For white cotton ONLY, diluted chlorine bleach (1:10) works faster (5-10 minutes). Watch the stain fade. Don't over-bleach\u2014stop when stain is gone."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cold rinse and hot wash",
+      "technique": "Rinse thoroughly, then machine wash hot",
+      "equipment": "Sink and washing machine",
+      "dwellTime": "Rinse until clear; wash hot with detergent",
+      "instruction": "Rinse thoroughly under cold running water until all enzyme, alcohol, peroxide, and bleach residue are gone. Any leftover chemistry will cause yellowing. Then machine wash on hot water (65-95\u00b0C) with regular detergent. Hot wash removes alcohol residue and any final traces of pigment."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Heat dry or sunlight",
+      "technique": "Machine dry or line dry in sun",
+      "equipment": "Dryer or clothesline",
+      "dwellTime": "Until dry",
+      "instruction": "Machine dry on high heat is fine for white cotton. Or hang in direct sunlight\u2014UV light has bleaching effect and will fade any remaining green undertone. Heat won't re-set grass stains on cotton."
+    }
+  ],
+  "homeSolutions": [
+    "FRESH: Dry brush. Cold water rinse. Enzyme soak (15 min). Isopropyl alcohol soak or application (5-10 min). Peroxide or bleach if green remains. Rinse thoroughly. Hot wash.",
+    "AGED/OXIDIZED: Same protocol but enzyme soak longer (20-30 min), repeat alcohol application if needed. Bleach may be necessary for old grass that's turned brown.",
+    "STUBBORN: Professional solvents (petroleum spirits, NSD) may be needed for very old grass stains."
+  ],
+  "materialWarnings": [
+    "AVOID hot water initially\u2014causes chlorophyll oxidation to brown",
+    "DO NOT use water alone\u2014water-based treatment won't dissolve chlorophyll",
+    "ALCOHOL may bleach colored fibers\u2014test first if garment has colored trim"
+  ],
+  "escalation": "If grass staining persists after home enzyme and alcohol treatment, professional dry cleaners use professional solvents (NSD, petroleum spirits) to dissolve stubborn chlorophyll. For very old grass stains that have oxidized to brown, professionals may use reducing bleach first.",
+  "products": {
+    "household": [
+      {
+        "name": "Isopropyl Alcohol (70-90%)",
+        "brand": "Any drugstore brand",
+        "icon": "\ud83e\uddea",
+        "amazonSearchQuery": "isopropyl alcohol 70% rubbing alcohol",
+        "affiliateTag": "gonr08-20",
+        "note": "Dissolves chlorophyll pigment. This is the critical step for grass. Apply after enzyme."
+      },
+      {
+        "name": "3% Hydrogen Peroxide",
+        "brand": "Any drugstore brand",
+        "icon": "\ud83e\uddf4",
+        "amazonSearchQuery": "hydrogen peroxide 3% USP",
+        "affiliateTag": "gonr08-20",
+        "note": "Oxidizes residual chlorophyll to colorless. Fast (5 min). Safe for white."
+      },
+      {
+        "name": "Clorox Bleach",
+        "brand": "Clorox",
+        "icon": "\ud83e\udde1",
+        "amazonSearchQuery": "Clorox liquid bleach",
+        "affiliateTag": "gonr08-20",
+        "note": "For white cotton ONLY. Dilute 1:10. Fastest grass removal (5-10 min)."
+      }
     ],
-    "temperature": "cold to ambient — hot water first polymerizes tannins AND denatures the protein component simultaneously, setting both permanently.",
-    "warnings": [
-      "Using hot water first — polymerizes tannins and denatures chlorophyll into a harder-to-remove form.",
-      "Skipping the tannin formula step — soap alone cannot dissolve chlorophyll effectively because it's fat-soluble.",
-      "Using chlorine bleach on colored cotton — removes the grass stain but also removes the fabric dye.",
-      "NEVER use ammonia, baking soda, or alkaline agents — permanently darkens tannin component.",
-      "Applying hydrogen peroxide to colored fabrics without testing."
+    "professional": [
+      {
+        "name": "Protease Enzyme (concentrated)",
+        "brand": "Huntsman or Chemspec",
+        "icon": "\ud83e\uddec",
+        "amazonSearchQuery": "protease enzyme concentrate stain remover",
+        "affiliateTag": "gonr08-20",
+        "note": "Professional enzyme. Faster protein breakdown than household."
+      },
+      {
+        "name": "Mulsolite (NSD) or Petroleum Spirits",
+        "brand": "Chemspec",
+        "icon": "\u2697\ufe0f",
+        "amazonSearchQuery": "Mulsolite NSD solvent cleaner",
+        "affiliateTag": "gonr08-20",
+        "note": "Professional solvents for stubborn chlorophyll. More effective than isopropyl alcohol."
+      }
     ]
   },
-  "diyProtocol": {
-    "steps": [
-      "1. Blot the stain with a clean white cloth to soak up as much surface material as possible.",
-      "2. Mix 1 tbsp dish soap with 1 cup 3% hydrogen peroxide. Apply the solution and let it sit for 5–10 minutes.",
-      "3. Blot with a clean white cloth. Repeat until the color fades.",
-      "4. Rinse with cold water to remove all cleaning solution.",
-      "5. Air dry — don't use a dryer until the stain is gone. Heat sets all components permanently."
-    ],
-    "products": [
-      "Dawn dish soap",
-      "3% hydrogen peroxide",
-      "OxiClean Versatile Stain Remover (for set stains — soak 30–60 min)"
-    ],
-    "whenToStop": "Try an OxiClean oxygen bleach soak — apply and let it soak for 30–60 minutes. If the stain survives two rounds of treatment, a professional cleaner can use POG + steam injection + tannin formula simultaneously with professional equipment to attack all three stain components at once.",
-    "warnings": [
-      "Test any cleaning solution on a hidden seam or inside hem first.",
-      "Check for colorfastness before using hydrogen peroxide.",
-      "Avoid heat until the stain is completely gone.",
-      "NEVER use ammonia, baking soda, or alkaline products — permanently darkens tannin component.",
-      "Speed matters — fresh grass stains lift much more easily than dried ones."
-    ]
-  },
-  "safetyMatrix": {
-    "neverDo": [
-      "Never use hot water first — polymerizes tannins and denatures protein component simultaneously.",
-      "Never use ammonia, baking soda, or alkaline agents — permanently darkens tannin component.",
-      "Never use chlorine bleach on colored cotton — removes fabric dye along with the stain.",
-      "Never mix ammonia with chlorine bleach — produces toxic chloramine gas.",
-      "Never put in the dryer before stain is fully gone."
-    ],
-    "fiberSensitivities": [
-      "Cotton (cellulose) tolerates most agents including dilute bleach on whites.",
-      "Colored cotton: test peroxide in a hidden area first — may affect dye.",
-      "The protein fraction of the grass stain responds to cold water treatment first.",
-      "High heat can set both the protein and tannin components simultaneously."
-    ]
-  },
-  "escalation": {
-    "when": "For old, heat-set grass stains, try a paste of OxiClean powder + warm water applied directly for 2 hours before soaking. If that fails, a professional dry cleaner can use POG (for chlorophyll, fat-soluble component) followed by steam injection and professional tannin formula — this combination attacks all three stain components simultaneously with professional equipment.",
-    "whatToTell": "We've treated the grass on your garment. Plant-based stains like this darken with time and air exposure — the sooner treatment starts, the better the result.",
-    "specialistType": "dry cleaner or wet cleaner"
-  },
-  "deepSolveHooks": {
-    "contextQuestions": [
-      "How old is the stain — was it treated immediately or has it been sitting?",
-      "Has the garment been through a dryer since the stain occurred? (sets all three components)",
-      "Is the cotton light/white or heavily dyed?",
-      "Was any product already applied to the stain?"
-    ],
-    "modifierNotes": "Fresh grass on undisturbed cotton responds well to dish soap/peroxide blend. A heat-set stain (dryer) locks in all three components — requires professional POG + tannin formula sequence. A garment run through the dryer with a grass stain has significantly reduced recovery odds. Chlorophyll (fat-soluble) requires the oxidative treatment to break down; soap alone is not enough."
-  },
-  "difficulty": 5,
-  "timeEstimate": "10–15 min",
-  "lastValidated": "2026-03-23"
+  "customerExplanation": "Grass is chlorophyll (plant pigment) bonded to plant proteins. Enzyme breaks the protein bonds. Alcohol dissolves the pigment out. White cotton tolerates bleach too if needed. Enzyme + alcohol = the most effective combination for grass.",
+  "commonMistakes": [
+    "Using only water\u2014chlorophyll won't dissolve in water alone. Alcohol is essential.",
+    "Using hot water\u2014causes chlorophyll to oxidize to brown (harder to remove)",
+    "Skipping enzyme\u2014enzyme loosens the chlorophyll so alcohol can dissolve it. Together they're powerful; apart, neither fully works.",
+    "Not rinsing completely\u2014leftover alcohol will continue breaking down fibers and cause damage over time"
+  ],
+  "scienceNote": "Chlorophyll is a magnesium-centered porphyrin (Mg-tetrapyrrole). It bonds to cellulose through hydrogen bonding with the porphyrin's peripheral carboxyl groups. Heat (above 50\u00b0C) causes chlorophyll to oxidize to pheophytin (brown, chelated by zinc instead of magnesium), which is harder to remove. Isopropyl alcohol disrupts hydrogen bonding and dissolves chlorophyll through nonpolar interactions with the porphyrin's hydrophobic core.",
+  "callPro": "If grass stain persists after home enzyme and alcohol treatment, or if it has oxidized to brown, professional dry cleaners can use petroleum-based solvents (NSD, mineral spirits) that are more effective than rubbing alcohol. For very old brown grass stains, professionals may use reducing bleach to reverse oxidation.",
+  "components": [
+    "enzyme",
+    "solvent",
+    "oxidizer"
+  ],
+  "component_order": [
+    "enzyme",
+    "solvent",
+    "oxidizer"
+  ],
+  "difficulty": 2,
+  "difficulty_factors": [
+    "chlorophyll-solvent",
+    "enzyme-responsive",
+    "fast-removal"
+  ],
+  "solventNote": "Professional: Protease enzyme soak (1-2% solution, 40\u00b0C, 15-20 min), then Mulsolite (NSD) 50% dilution in warm water (40\u00b0C, 10-15 min) or petroleum spirits. Alcohol extraction preferred over water-based. Rinse with isopropyl to remove solvent residue, then final hot wash. For oxidized (brown) grass: consider sodium hydrosulfite (StreePene) soak first to reduce oxidized chlorophyll back to green, then enzyme and solvent."
 }

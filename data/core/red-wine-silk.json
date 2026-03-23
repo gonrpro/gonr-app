@@ -1,89 +1,132 @@
 {
   "id": "red-wine-silk",
+  "version": "5.0",
+  "authored": "2026-03-22",
   "title": "Red Wine on Silk",
-  "stainFamily": "tannin",
+  "stainType": "tannin",
   "surface": "silk",
   "sector": "textile",
-  "source": "verified",
-
-  "stainChemistry": "Red wine anthocyanins and tannins bond to silk fibroin through hydrogen bonding and ionic interactions with silk's amino acid groups. Silk dyes are notoriously unstable — many are acid dyes that bond ionically to the silk fiber. The acids in red wine (tartaric, malic) can interact with these dyes, causing color shifts or bleeding. The tannins also have affinity for protein fibers, making red wine one of the most difficult stains to remove from silk without professional intervention.",
-
-  "whyThisWorks": "Immediate cold water dilution limits the anthocyanin's ability to bond before it oxidizes. NSD maintains neutral pH and avoids the alkaline conditions that would damage silk's protein structure. The treatment window for silk red wine is very narrow — the longer it sits, the deeper the chromophore bonds and the more likely dye interaction becomes.",
-
-  "defaultAssumption": "Treat as urgent. Even a 30-minute delay significantly reduces success rate on silk. This is one of the highest-risk fabric/stain combinations in textile care.",
-
-  "professionalProtocol": {
-    "steps": [
-      "1. Blot immediately and continuously — maximum absorption before any treatment",
-      "2. Flush gently with cold water from back of fabric",
-      "3. Apply NSD (neutral synthetic detergent, pH 6-7) — work in very gently with fingertip",
-      "4. Cold water rinse — blot with clean white cloth",
-      "5. If stain remains: apply tannin spotter briefly (1-2 minutes maximum) — pH must stay neutral",
-      "6. Flush immediately and thoroughly",
-      "7. Do NOT apply hydrogen peroxide or bleach on colored silk — risk of dye damage",
-      "8. On white silk only: very dilute hydrogen peroxide (1%) with strict monitoring — rinse immediately",
-      "9. Lay flat to dry — never hang"
+  "meta": {
+    "stainCanonical": "red-wine",
+    "surfaceCanonical": "silk",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "tannin",
+      "dye",
+      "cold-water",
+      "acid-spotter"
     ],
-    "products": ["NSD (neutral synthetic detergent)", "cold water", "Bridgepoint Tannin Spotter (brief, careful)", "1% H2O2 for white silk only"],
-    "temperature": "cold only — ≤30°C / 86°F",
-    "warnings": [
-      "NEVER use chlorine bleach — dissolves silk",
-      "NEVER use alkaline detergent — breaks silk protein bonds",
-      "NEVER apply heat",
-      "NEVER use full-strength tannin spotter without dilution — pH too low for silk",
-      "NEVER rub or agitate — breaks silk fibers",
-      "Silk dyes are unstable — always test on hidden seam before applying anything",
-      "Professional treatment is strongly recommended for any dried stain"
+    "freePreview": true
+  },
+  "stainChemistry": "Red wine tannins (polyphenolic compounds) bond to silk through hydrogen bonding and Van der Waals forces. Tannins form hydrogen bonds with amino acid side chains in silk protein. Alcohol in wine can denature silk's surface structure if too hot. Silk's delicate nature and dye sensitivity means we must avoid heat, alkali, and aggressive chemistry. Red wine is nearly pure tannin in acidic solution\u2014acidity actually helps break tannin bonds, making this one of the few stains where acidic spotters work.",
+  "whyThisWorks": "Cold water flush removes alcohol and mobilizes tannins. Acetic acid (lower pH) breaks hydrogen bonds between tannins and silk protein. Tannic acid reduction via acidic chemistry is the mechanism. Blotting prevents tannin from setting deeper. This avoids heat (which would denature silk) while using tannin's natural affinity for acid.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold water (5-10\u00b0C) with salt (optional)",
+      "technique": "Blot-and-flood from back",
+      "equipment": "White towel, spray bottle, flat surface",
+      "dwellTime": "Immediate, work within 1 minute",
+      "instruction": "Fresh wine stains respond to immediate cold water. Spray ice water from back of garment\u2014this flushes alcohol and begins mobilizing tannins before they set deeper into silk fibers. Blot hard. Watch the water turn red. Salt (if available) in cold water slightly increases osmotic pressure and helps tannins transfer to the cloth. Work back to front. Speed is critical\u2014within the first 1-2 minutes, most of the visible stain will transfer to your cloth.",
+      "suggestedProducts": "None\u2014water and salt only"
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "White vinegar (diluted 1:1 with cold water) or NSD for residual",
+      "technique": "Alternate: acidic spotter or detergent",
+      "equipment": "Dropper, white cloth",
+      "dwellTime": "If acid: 1 minute. If NSD: 2-3 minutes",
+      "instruction": "After water flush, examine the stain. If pink/red remains: Apply 1:1 white vinegar + cold water to the stain using a dropper. The acidity (pH ~4) breaks hydrogen bonds between tannins and silk. You'll see the stain lighten. Wait 1 minute, blot. Alternatively, if the stain has minimal color but feels sticky (tannin residue), use Woolite Delicates solution (10% in cold water) to suspend remaining tannin particles. Different approach for different residue types.",
+      "suggestedProducts": "White vinegar (acid approach) or Woolite (detergent approach)"
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Cold water rinse",
+      "technique": "Spray and blot",
+      "equipment": "Spray bottle, white cloth",
+      "dwellTime": "Multiple rinses until clear",
+      "instruction": "Rinse repeatedly with cold water until water runs absolutely clear. Tannin residue and acid must be fully removed. Any remaining acid will continue breaking bonds in silk (weakening it) or cause browning as tannins re-oxidize. Work from back to front on final rinse."
+    },
+    {
+      "step": 4,
+      "side": "dry",
+      "agent": "Air dry flat",
+      "technique": "No heat",
+      "equipment": "Clean towel, flat surface, fan",
+      "dwellTime": "Until dry (2-4 hours)",
+      "instruction": "Lay flat on clean towel. Never wring silk. Silk should dry evenly and slowly. Heat will set any residual tannin deeper into fibers. Room should be warm and have airflow, but no direct heat source. If wine stain had alcohol, the alcohol's cooling effect as it evaporates will prevent heat damage\u2014this is why cold water + quick evaporation works for wine."
+    }
+  ],
+  "homeSolutions": [
+    "FRESH: Immediately blot with cold water from back. If pink remains, apply white vinegar diluted 1:1 with cold water. Wait 1 minute, blot, rinse thoroughly with cold water.",
+    "WITHIN HOURS: Cold water flush + white vinegar (1:1 diluted). Rinse completely.",
+    "OLDER (hours): Same approach. If color is darker (tannin has oxidized), results are less guaranteed. Professional intervention may be needed."
+  ],
+  "materialWarnings": [
+    "NEVER use hot water\u2014sets tannins deeper and denatures silk",
+    "NEVER use alkaline cleaners (pH>8)\u2014weakens silk structure",
+    "NEVER use enzymes\u2014harm silk's own protein",
+    "NEVER use strong bleach\u2014damages dye and silk fiber",
+    "AVOID prolonged soaking\u2014silk weakens in liquid"
+  ],
+  "escalation": "If wine stain is older than 6-8 hours or if color remains dark red/brown after acetic acid treatment, professional cleaner with access to tannin-specific spotters (commercial tannin removers, or reducing bleach for very stubborn oxidized stains) may help. Risk of silk damage increases with time and aggressive chemistry.",
+  "products": {
+    "household": [
+      {
+        "name": "White Vinegar",
+        "brand": "Standard grocery",
+        "icon": "\ud83c\udf76",
+        "amazonSearchQuery": "white vinegar 5% acetic acid",
+        "affiliateTag": "gonr08-20",
+        "note": "Acidic spotter for tannin. Dilute 1:1 with cold water. Breaks tannin-silk bonds."
+      },
+      {
+        "name": "Woolite Delicates",
+        "brand": "Woolite",
+        "icon": "\ud83e\uddf4",
+        "amazonSearchQuery": "Woolite Delicates",
+        "affiliateTag": "gonr08-20",
+        "note": "For tannin residue suspension. pH-neutral, silk-safe."
+      }
+    ],
+    "professional": [
+      {
+        "name": "StreeTAN (Tannin Spotter)",
+        "brand": "Chemspec",
+        "icon": "\ud83e\uddea",
+        "amazonSearchQuery": "StreeTAN tannin remover",
+        "affiliateTag": "gonr08-20",
+        "note": "Professional-grade acetic acid spotter. Stronger than white vinegar."
+      }
     ]
   },
-
-  "diyProtocol": {
-    "steps": [
-      "1. Blot immediately with clean white cloth — absorb as much as possible",
-      "2. Flush very gently with cold water",
-      "3. One drop of baby shampoo in cold water — apply to stain, work in with fingertip only",
-      "4. Rinse gently with cold water",
-      "5. Lay flat on clean white towel — do not hang"
-    ],
-    "products": ["baby shampoo", "cold water", "clean white cloth"],
-    "whenToStop": "Stop immediately if the silk shows any color change, water spotting, or texture difference. Take to a silk specialist. Do not attempt further treatment at home.",
-    "warnings": [
-      "No OxiClean, hydrogen peroxide, or any bleach on colored silk",
-      "No vinegar or acids",
-      "No rubbing",
-      "No heat",
-      "Home treatment has limited effectiveness — professional treatment significantly better for red wine on silk"
-    ]
-  },
-
-  "safetyMatrix": {
-    "neverDo": [
-      "Chlorine bleach or strong oxidizers",
-      "Alkaline detergent (pH >8)",
-      "Hot water or any heat",
-      "Extended tannin spotter without pH control",
-      "Rubbing or agitation"
-    ],
-    "fiberSensitivities": [
-      "Silk pH range is 4.0–8.0 — anything outside this damages the fiber",
-      "Silk dyes are typically acid dyes — wine acids can cause dye bleeding",
-      "Silk fibroin is a protein — any alkaline or enzyme treatment carries fiber damage risk",
-      "Water spots are common on silk — always work with minimal moisture"
-    ]
-  },
-
-  "escalation": {
-    "when": "Any dried stain, any stain with color change, or any stain that remains after gentle cold NSD treatment",
-    "whatToTell": "Red wine on silk — tannin stain. Possibly affecting the dye. Ask for neutral tannin spotter treatment with strict pH control. No chlorine bleach, no alkaline treatment, no heat.",
-    "specialistType": "Silk specialist or certified wet cleaner with silk experience"
-  },
-
-  "deepSolveHooks": {
-    "contextQuestions": ["Is the stain fresh?", "Has any color change occurred?", "Is the silk white or colored?", "Has anything been applied already?"],
-    "modifierNotes": "Fresh red wine on silk: immediate cold water + NSD is most effective home option. Dried: professional only. Color change/dye bleeding already visible: professional — may require dye restoration. White silk: slightly more treatment latitude with dilute H2O2 monitored carefully."
-  },
-
-  "difficulty": 9,
-  "timeEstimate": "Immediate professional treatment recommended",
-  "lastValidated": "2026-03-23"
+  "customerExplanation": "Red wine contains tannins\u2014plant compounds that bond to silk through hydrogen attraction. Cold water flushes the bulk of the wine. Mild acid (vinegar) breaks the bonds between tannins and silk. Silk is delicate, so we avoid heat and strong chemistry. Speed and gentle handling are the keys.",
+  "commonMistakes": [
+    "Using hot water\u2014this sets tannins deeper. Cold only.",
+    "Waiting too long\u2014fresh wine is much easier to remove than oxidized tannins",
+    "Using salt-based 'club soda' approach\u2014some people use carbonated water, but plain cold water + acid works better for silk"
+  ],
+  "scienceNote": "Red wine tannins are polyphenolic compounds that form through oxidation of grape phenols during fermentation. Tannins have multiple hydroxyl groups (-OH) that form hydrogen bonds with amino acids on silk protein. Acidity (pH ~3.5) protonates some of these groups, weakening bonds. This is why acidic spotters (glacial acetic acid, wine, citric acid) work on tannins\u2014they lower pH and disrupt hydrogen bonding. Heating increases tannin oxidation and actually strengthens bonding\u2014opposite of what happens with protein stains.",
+  "callPro": "If wine stain on silk is older than 8 hours and remains dark red or has begun to brown, call a professional. Tannins oxidize over time, making them harder to remove. Professional spotters (StreeTAN, BonGo) are stronger than household vinegar. Risk of silk damage with extended treatment increases.",
+  "components": [
+    "acid-spotter",
+    "detergent",
+    "rinse"
+  ],
+  "component_order": [
+    "acid-spotter",
+    "detergent",
+    "rinse"
+  ],
+  "difficulty": 5,
+  "difficulty_factors": [
+    "tannin-oxidation",
+    "silk-delicate",
+    "time-critical"
+  ],
+  "solventNote": "Professional shops: Red wine on silk responds well to immediate cold water flush, followed by acetic acid spotter (GAA diluted 1:10 in cold water) for 1-2 minutes. For aged stains, commercial tannin remover (StreeTAN, BonGo) at recommended dilution. Never exceed brief dwell times on silk. For oxidized brown stains, StreePene (reducing bleach) may help but risk of fiber damage is high. Test on hidden area first. VDS post-rinse to prevent water spotting."
 }

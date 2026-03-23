@@ -1,86 +1,190 @@
 {
   "id": "blood-wool",
+  "version": "5.0",
+  "authored": "2026-03-22",
   "title": "Blood on Wool",
-  "stainFamily": "protein",
+  "stainType": "protein",
   "surface": "wool",
   "sector": "textile",
-  "source": "verified",
-  "stainChemistry": "Classification: Protein. Blood contains hemoglobin—a quaternary protein with four globin chains surrounding an iron-containing heme group (iron+porphyrin ring chromophore). When blood contacts wool at room temperature, hemoglobin bonds to wool keratin (the wool fiber protein itself) through hydrogen bonding, electrostatic interactions, and hydrophobic effects. The critical difference from cotton: wool IS protein. Protein stains bond to fibers via peptide-to-fiber hydrogen bonds and hydrophobic interactions. Heat denatures the protein, cross-linking it to the substrate and making removal extremely difficult. Treatment: cold water flush to prevent heat-setting, followed by neutral detergent and reducing agents safe for protein fibers.",
-  "whyThisWorks": "Blood stains bond directly to wool keratin (both are protein structures — it's like-on-like). Cold water prevents the protein from heat-setting permanently. NSD is safe for protein fibers because it won't attack the fiber itself. Enzyme-based digestants are prohibited on wool because they digest the wool fiber along with the stain. Sodium hydrosulfite provides safe reducing action to break down residual discoloration without the oxidative risk that peroxide poses to protein fibers.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
-  "professionalProtocol": {
-    "steps": [
-      "1. Apply NSD (Neutral Synthetic Detergent) at neutral setting and gently work into the blood stain. Dwell 5–10 minutes. NSD is safe for wool and silk because it won't attack the fiber. Never use enzyme-based digestants on protein fibers.",
-      "2. Apply sodium hydrosulfite (reducing agent) to break down any remaining blood discoloration. Dwell 5–10 minutes. This reducing agent is the only safe bleaching option for wool and silk — never use hydrogen peroxide or oxidizing bleach on protein fibers.",
-      "3. Flush with NSD to remove all chemical residue. Dwell 3–5 minutes. Rinse with cool water — never use warm or hot water on blood stains or on wool.",
-      "4. Apply 28% Acetic acid (diluted 1:10) to neutralize any remaining alkaline residue and restore the fiber's natural state. Dwell 1–2 minutes. Blot dry gently — never wring wool."
+  "meta": {
+    "stainCanonical": "blood",
+    "surfaceCanonical": "wool",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "protein",
+      "hemoglobin",
+      "iron",
+      "wool",
+      "keratin",
+      "delicate",
+      "felting-risk"
     ],
-    "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Sodium hydrosulfite (reducing agent — safe for protein fibers)",
-      "28% Acetic acid (diluted 1:10)"
+    "freePreview": true
+  },
+  "stainChemistry": "Blood is hemoglobin \u2014 an iron-carrying protein with a heme chromophore that gives it red color. On wool (also a protein fiber, made of keratin), hemoglobin forms hydrogen bonds and hydrophobic interactions with the keratin chains. Fresh blood contains Fe\u00b2\u207a (ferrous iron, soluble). As blood ages or is exposed to heat, the iron oxidizes to Fe\u00b3\u207a (ferric iron, insoluble brown). The oxidized iron cross-links with wool's peptide backbone, creating a bond that becomes increasingly difficult to break. Wool's scale structure adds complexity \u2014 moisture, heat, and agitation cause those scales to lock together (felting), which is irreversible.",
+  "whyThisWorks": "Cold water keeps the hemoglobin soluble and prevents thermal cross-linking with keratin. NSD surrounds and lifts the protein without attacking the wool fiber. Reducing bleach (sodium hydrosulfite) donates electrons to break the iron-heme chromophore \u2014 converting visible Fe\u00b3\u207a back to soluble, colorless form. The entire approach avoids enzymes (which would digest wool's own keratin), avoids heat (which accelerates both stain-setting and felting), and uses acetic acid to restore wool's natural pH of ~5 after treatment.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot \u2014 no moisture yet",
+      "technique": "Dry debris removal",
+      "equipment": "White cotton pad or folded towel",
+      "dwellTime": "30 seconds",
+      "instruction": "Start dry. Press a clean white cotton pad against the stain \u2014 don't rub. You're absorbing any liquid blood that hasn't bonded yet. If the blood is still wet, you'll see red transfer to the pad. Keep blotting with fresh pads until transfer slows. This prevents you from pushing dissolved hemoglobin deeper into the wool's scale structure during the wet phase. Never scrub \u2014 friction plus moisture on wool equals felting."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Flush with cold water (\u226430\u00b0C / 86\u00b0F)",
+      "technique": "Cold water flush \u2014 back side",
+      "equipment": "Spray bottle with cold distilled water, white towel underneath",
+      "dwellTime": "2-3 minutes total (three 40-second flushes)",
+      "instruction": "Spray cold distilled water onto the BACK of the stain. You're pushing the hemoglobin OUT, not deeper in. Place a white towel underneath to catch runoff. You'll see pale red in the rinse water \u2014 that's loose hemoglobin flushing out. Blot between each flush with a clean pad. Three flushes, 40 seconds each. Cold water is non-negotiable \u2014 anything above 30\u00b0C starts denaturing hemoglobin AND risks felting the wool. This step alone removes 30-40% of fresh blood."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Apply NSD (neutral synthetic detergent) \u2014 1 tsp per cup cold water",
+      "technique": "NSD surround and lift \u2014 back side",
+      "equipment": "Spray bottle or eyedropper, white cotton pads, pressing cloths",
+      "dwellTime": "3-4 minutes",
+      "instruction": "Spray diluted NSD (1 teaspoon per cup cold distilled water) onto the back of the stain. NSD encapsulates the hemoglobin molecules without attacking wool's keratin \u2014 it surrounds and lifts, doesn't dissolve. You'll see the remaining red start to fade as the detergent breaks the hydrophobic grip between hemoglobin and keratin. Let it dwell 3-4 minutes. Blot with a clean white pad \u2014 you should see color transferring to the pad. Repeat 2-3 times until fresh pad shows minimal color. Do not agitate or rub.",
+      "suggestedProducts": "Mulsolite\u00ae, Woolite Delicates, neutral lube"
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Flush with cold distilled water",
+      "technique": "NSD rinse \u2014 back side",
+      "equipment": "Spray bottle, white towels",
+      "dwellTime": "1-2 minutes (two 30-second flushes)",
+      "instruction": "Flush all NSD residue before the next agent. Spray cold water on the back, blot immediately. You'll feel the texture shift from slick (soapy) to smooth (clean wool). Two flushes minimum. Residual detergent left behind can trap dissolved hemoglobin in the fiber and cause a shadow stain when it dries. The wool should feel like wool again \u2014 slightly rough from the scale structure, not slippery."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Apply reducing bleach \u2014 sodium hydrosulfite (1:2 dilution with cold water)",
+      "technique": "Reducing bleach \u2014 back side, timed application",
+      "equipment": "Eyedropper or spray, white towel, rubber gloves, ventilation",
+      "dwellTime": "45-60 seconds MAXIMUM",
+      "instruction": "This is the iron-breaker. Sodium hydrosulfite donates electrons that reduce Fe\u00b3\u207a (brown, insoluble) back to Fe\u00b2\u207a (colorless, soluble). Mix 1 part hydrosulfite to 2 parts cold distilled water. Apply to the back of the stain with an eyedropper or fine spray. Watch the color shift \u2014 red/brown fades to tan, then approaches colorless. That's the heme chromophore being dismantled. CRITICAL: Do not exceed 60 seconds dwell time on wool. Hydrosulfite can weaken keratin if left too long. Blot immediately when you see the color shift complete. One application is usually enough; a second pass (30 seconds max) if color persists.",
+      "suggestedProducts": "StreePene\u00ae, YellowGo\u00ae, SpotX Decol"
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Flush + neutralize with acetic acid (28% GAA diluted 1:10, or white vinegar)",
+      "technique": "pH neutralization and flush",
+      "equipment": "Spray bottle, white cotton pads",
+      "dwellTime": "2 minutes",
+      "instruction": "Wool's natural pH is around 5. The reducing bleach skews things, so you need to bring the fiber back to its comfort zone. Spray diluted acetic acid (1:10 GAA, or straight 5% white vinegar) onto the treated area. This closes the wool's scale structure back to normal and prevents residual chemistry from continuing to work on the fiber. You won't see dramatic change \u2014 that's correct. You're balancing pH, not removing stain. After 2 minutes, flush one final time with cold distilled water and blot dry.",
+      "suggestedProducts": "GAA (28% glacial acetic acid), white vinegar"
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Air dry flat \u2014 no heat, no hanging",
+      "technique": "Controlled flat drying",
+      "equipment": "Clean white towel, flat drying surface",
+      "dwellTime": "3-6 hours depending on humidity",
+      "instruction": "Lay the garment flat on a clean white towel. Reshape gently \u2014 wool is malleable when wet. Do NOT hang (gravity plus moisture stretches wool) and do NOT use any heat source (dryer, iron, heat gun, direct sun). The weight of water in wet wool combined with hanging causes distortion that's difficult to reverse. As the wool dries, you'll see the scale structure settle and the natural texture return. Check the stain once fully dry \u2014 fresh blood treated promptly should be completely gone. If a faint shadow remains, it's likely oxidized iron that resisted the reducing bleach \u2014 see escalation."
+    }
+  ],
+  "homeSolutions": [
+    "FRESH BLOOD (within 30 minutes): Cold water flush immediately \u2014 hold the stain under cold running water for 60 seconds. Mix 1 teaspoon mild dish soap (pH-neutral, like baby shampoo) in 1 cup cold water. Soak for 15 minutes, then blot. Repeat. This alone handles most fresh blood on wool.",
+    "OLDER BLOOD (dry but <24 hours): Cold water soak for 30 minutes. Then mix 1 tablespoon white vinegar in 1 cup cold water, soak another 15 minutes. The acidity helps loosen the hemoglobin bonds. Blot gently, repeat if needed. Air dry flat.",
+    "SET BLOOD (24+ hours, turned brown): The iron has oxidized. Try hydrogen peroxide 3% diluted 1:1 with cold water \u2014 TEST on hidden area first, as it can lighten dyed wool. Apply to stain, blot after 2 minutes. If the stain persists or the garment is valuable, this is professional territory."
+  ],
+  "materialWarnings": [
+    "NEVER use hot water \u2014 heat denatures hemoglobin AND causes irreversible felting of wool fibers. The combination is catastrophic: the stain sets permanently while the fabric shrinks and matts.",
+    "NEVER use enzyme detergents (OxiClean, Biz, any 'bio' laundry product) \u2014 these contain protein-digesting enzymes that will attack wool's keratin structure, weakening and eventually dissolving the fiber.",
+    "NEVER use chlorine bleach \u2014 dissolves wool's disulfide bonds, turning the fiber yellow and then destroying it entirely.",
+    "NEVER use strong alkaline solutions (ammonia >2%, sodium hydroxide) \u2014 alkalinity opens wool's scale structure and accelerates both stain penetration and felting.",
+    "NEVER rub or agitate vigorously \u2014 friction plus moisture on wool causes mechanical felting. Press and blot only.",
+    "ALWAYS use distilled water \u2014 tap water minerals can interact with blood chemistry and spotting agents, leaving white mineral deposits in the treated area."
+  ],
+  "escalation": "If the stain persists after two rounds of reducing bleach: the iron has likely fully oxidized and cross-linked with the keratin. A professional dry cleaner with access to PERC or hydrocarbon solvents can sometimes lift what water-based spotting cannot. Tell them: 'Blood stain, wool fiber, I've already tried NSD and reducing bleach \u2014 the iron appears to have oxidized.' They'll understand. If the garment is valuable (cashmere blend, designer piece), skip home treatment entirely and go straight to a professional cleaner who specializes in delicate fibers. For very old brown blood stains (weeks+), a chelating agent like sodium EDTA may help sequester the remaining iron, but this is advanced professional chemistry.",
+  "products": {
+    "household": [
+      {
+        "name": "Woolite Delicates",
+        "brand": "Woolite",
+        "icon": "\ud83e\uddf4",
+        "amazonSearchQuery": "Woolite Delicates wash",
+        "affiliateTag": "gonr08-20",
+        "note": "pH-neutral detergent safe for wool. Your NSD substitute for home use."
+      },
+      {
+        "name": "White Vinegar (5% acetic acid)",
+        "brand": "Any grocery brand",
+        "icon": "\ud83c\udf76",
+        "amazonSearchQuery": "white vinegar 5% acetic acid",
+        "affiliateTag": "gonr08-20",
+        "note": "pH neutralizer and mild protein stain lifter. Safe on wool."
+      },
+      {
+        "name": "Hydrogen Peroxide 3%",
+        "brand": "Any drugstore brand",
+        "icon": "\ud83d\udc8a",
+        "amazonSearchQuery": "hydrogen peroxide 3% solution",
+        "affiliateTag": "gonr08-20",
+        "note": "Mild oxidizer for older stains. TEST first on hidden area \u2014 can lighten dyed wool."
+      }
     ],
-    "temperature": "cold — heat denatures hemoglobin and cross-links it to the wool keratin fiber, making removal impossible. Never use warm or hot water at any stage.",
-    "warnings": [
-      "Using HOT water or enzyme detergent — both destroy the wool fiber.",
-      "Machine washing before spotting — combines heat, agitation, and enzymes and will permanently felt the garment.",
-      "Rubbing or aggressive scrubbing — causes felting and damages the fiber surface sheen.",
-      "Leaving acidic or bleaching solutions on the wool too long — slow hydrolysis of keratin continues over hours.",
-      "Using high concentrations of peroxide or vinegar — exceeds wool's pH tolerance.",
-      "NEVER use bleach, chlorine, protease, or enzyme-based spotters on wool."
+    "professional": [
+      {
+        "name": "Mulsolite\u00ae (NSD)",
+        "brand": "Mulsolite",
+        "icon": "\ud83d\udd2c",
+        "amazonSearchQuery": "Mulsolite neutral synthetic detergent spotting",
+        "affiliateTag": "gonr08-20",
+        "note": "Industry-standard NSD. Safe on all fibers including wool."
+      },
+      {
+        "name": "StreePene\u00ae (reducing bleach)",
+        "brand": "Stree Chemical",
+        "icon": "\u2697\ufe0f",
+        "amazonSearchQuery": "StreePene reducing bleach sodium hydrosulfite",
+        "affiliateTag": "gonr08-20",
+        "note": "Professional reducing bleach for iron-based stains. Safe on wool with timed application (\u226460 sec)."
+      },
+      {
+        "name": "GAA (28% Glacial Acetic Acid)",
+        "brand": "Raytex or Lawson",
+        "icon": "\ud83e\uddea",
+        "amazonSearchQuery": "28 percent acetic acid GAA spotting",
+        "affiliateTag": "gonr08-20",
+        "note": "Professional-grade pH neutralizer. Restores wool's natural acid balance after treatment."
+      }
     ]
   },
-  "diyProtocol": {
-    "steps": [
-      "1. Rinse with cold water right away. Blot gently with a clean white cloth — don't rub. Cold water keeps the stain from setting; rubbing pushes it deeper into the fabric.",
-      "2. Mix a small squirt of dish soap (Dawn or similar) into cold water. Blot the solution gently onto the stain. Soap breaks down the stain so it lifts off the fabric.",
-      "3. Let it sit for 5–10 minutes. Don't use any heat. Time lets the cleaner work; heat locks protein stains in permanently.",
-      "4. Blot gently with a clean white cloth until the stain fades. Each pass pulls more of the stain out of the fabric.",
-      "5. Rinse gently with cold water and lay flat on a towel to air dry — no heat, no wringing. Heat and agitation damage delicate fibers."
-    ],
-    "products": [
-      "Dawn dish soap (or similar dish soap)",
-      "Cold water",
-      "Clean white cloths"
-    ],
-    "whenToStop": "If the stain persists after two treatment attempts, take it to a professional. Wool is too delicate to risk aggressive home treatments. A professional cleaner has specialized agents that are safe for this material and more effective than household products.",
-    "warnings": [
-      "Test on an inside seam or hidden area first — delicate fabrics can react unpredictably.",
-      "Never use bleach, enzyme cleaners, or hot water on wool.",
-      "Never wring or twist wool — gently press out moisture between towels.",
-      "Lay flat to dry to keep the garment's shape."
-    ]
-  },
-  "safetyMatrix": {
-    "neverDo": [
-      "Never use hot water — permanently sets blood protein into wool keratin.",
-      "Never use enzyme-based cleaners or digestants — enzymes dissolve wool fiber along with the stain.",
-      "Never use chlorine bleach or oxidizing bleach — destroys wool fiber structure.",
-      "Never machine wash before spotting — heat, agitation, and detergent enzymes will permanently felt the garment.",
-      "Never use alcohol or alcohol-based products — permanently sets protein stains."
-    ],
-    "fiberSensitivities": [
-      "Wool is a protein fiber — enzyme cleaners attack it the same way they attack the stain.",
-      "Wool felts with heat and agitation — always handle gently, cold, and lay flat to dry.",
-      "Wool has a limited pH tolerance — avoid high concentrations of acids or alkalis.",
-      "Acetic acid is safe at dilute concentrations (1:10) but prolonged exposure hydrolyzes keratin."
-    ]
-  },
-  "escalation": {
-    "when": "For old, dried blood stains on wool, do not use enzyme detergents. Pre-soak in cool water for 30 minutes to soften the stain, then proceed with neutral detergent and reducing agent steps. For very stubborn stains, professional dry cleaning is safer than repeated home treatment, which compounds damage risk.",
-    "whatToTell": "This one took some work — the blood stain on your garment needed a multi-step treatment to break it down. Blood stains set deeper with heat and time — the earlier it's treated professionally, the better the result. The treated area may continue to improve over the next day or two as it fully dries.",
-    "specialistType": "wet cleaner specializing in delicate wool garments"
-  },
-  "deepSolveHooks": {
-    "contextQuestions": [
-      "How old is the stain — was it treated immediately or has it been sitting?",
-      "Was the garment washed or put in the dryer before this treatment attempt?",
-      "Is the wool a fine gauge (sweater, knitwear) or a woven structure (blazer, trousers)?",
-      "Has any product already been applied to the stain — and if so, what?"
-    ],
-    "modifierNotes": "A fresh stain on undisturbed wool responds well to NSD alone. A heat-set or machine-washed stain may require sodium hydrosulfite to break down cross-linked protein. Fine-gauge knitwear requires even shorter dwell times and lighter touch to prevent felting. Prior enzyme treatment may have caused fiber damage that limits recovery."
-  },
-  "difficulty": 5,
-  "timeEstimate": "10–20 min (fresh); 20–40 min for dried stains requiring multiple passes",
-  "lastValidated": "2026-03-23"
+  "customerExplanation": "Blood is a protein stain that bonds directly to wool because wool is also a protein fiber \u2014 they're chemically attracted to each other. The red color comes from iron in the blood. We use cold water and a gentle detergent to lift the protein, then a mild reducing agent to break the iron's color bond. The key with wool is staying cold and gentle \u2014 hot water or rough handling would lock the stain in permanently and damage the fabric's texture.",
+  "commonMistakes": [
+    "Using hot water \u2014 the most common panic response. Hot water denatures the hemoglobin (sets the stain permanently) AND starts felting the wool. By the time someone realizes the mistake, both the stain and the fabric damage are irreversible.",
+    "Using enzyme-based cleaners \u2014 products like OxiClean or 'bio' laundry detergents contain protease enzymes that digest protein. Wool IS protein. The enzyme can't tell the difference between blood protein and wool keratin. The stain might fade, but the fiber weakens.",
+    "Rubbing or scrubbing \u2014 wool's scale structure locks under friction when wet. People scrub blood stains thinking more pressure = more removal. Instead, the stain spreads AND the area starts to felt. Press and blot, never scrub.",
+    "Skipping the acetic acid flush \u2014 residual alkalinity from spotting chemistry opens wool's scale structure. People rinse with water and call it done, but the pH imbalance slowly damages the fiber over days. The acid flush takes 2 minutes and protects the garment long-term."
+  ],
+  "scienceNote": "Hemoglobin's iron atom sits inside a porphyrin ring (the heme group) that absorbs green light and reflects red \u2014 that's why blood is red. When blood hits wool, the protein chains in hemoglobin form hydrogen bonds with keratin's peptide backbone, while the hydrophobic heme group nestles into wool's lipid layer (lanolin residue). Fresh blood (Fe\u00b2\u207a) is relatively easy to flush because the iron is in its reduced, soluble state. But oxidation converts Fe\u00b2\u207a to Fe\u00b3\u207a, which is insoluble and forms coordination bonds with keratin's nitrogen atoms \u2014 essentially rusting into the fiber. Reducing bleach reverses this by donating electrons back to the iron, converting it from insoluble Fe\u00b3\u207a to soluble Fe\u00b2\u207a. It's the same chemistry that makes rust removers work on metal \u2014 just adapted for textile use.",
+  "callPro": "If the blood stain is more than a week old, has turned brown/black, or the garment is high-value: go straight to a professional dry cleaner who handles delicates. Aged blood on wool is one of the harder professional challenges because the iron cross-links with keratin over time. Tell them the stain's age and whether any home treatment was attempted. If the wool feels matted or stiff after your attempt, the fiber may have felted \u2014 a professional textile restoration specialist is the only option, and even they may not be able to fully reverse felting damage.",
+  "components": [
+    "protein",
+    "iron"
+  ],
+  "component_order": [
+    "protein",
+    "iron"
+  ],
+  "difficulty": 6,
+  "difficulty_factors": [
+    "Protein-on-protein fiber \u2014 hemoglobin bonds directly to keratin through shared chemistry",
+    "Iron oxidation \u2014 Fe\u00b2\u207a to Fe\u00b3\u207a conversion makes aged stains dramatically harder",
+    "Wool felting risk \u2014 heat, agitation, or alkalinity at any step can permanently damage the fiber",
+    "No enzyme option \u2014 protease (the standard protein stain tool) is off-limits because it digests wool",
+    "Reducing bleach timing \u2014 sodium hydrosulfite is effective but must be removed within 60 seconds",
+    "Temperature management \u2014 cold water throughout, no exceptions"
+  ],
+  "solventNote": "This protocol uses wet-side spotting only \u2014 safe for all solvent systems. For PERC/HC shops: dryclean normally after treatment. For wet clean shops: gentle wet clean cycle with wool program after spotting."
 }
