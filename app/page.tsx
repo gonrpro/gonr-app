@@ -2,6 +2,9 @@
 
 import { useState, useCallback, useEffect, useRef } from 'react'
 import ResultCard from '@/components/solve/ResultCard'
+import StainCamera from '@/components/solve/StainCamera'
+import CareLabelScanner from '@/components/solve/CareLabelScanner'
+import FiberChips from '@/components/solve/FiberChips'
 import type { ProtocolCard } from '@/lib/types'
 
 const STAIN_FAMILIES = [
@@ -44,6 +47,8 @@ export default function SolvePage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [solveCount, setSolveCount] = useState(0)
+  const [selectedFiber, setSelectedFiber] = useState<string | null>(null)
+  const [fiberSource, setFiberSource] = useState<'label' | 'chips' | null>(null)
   const resultRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -64,7 +69,7 @@ export default function SolvePage() {
       const res = await fetch('/api/solve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ stain: s, surface: surf }),
+        body: JSON.stringify({ stain: s, surface: surf, fiber: selectedFiber || undefined }),
       })
 
       if (!res.ok) {
@@ -130,6 +135,45 @@ export default function SolvePage() {
           Select or type your stain and surface for an expert protocol.
         </p>
       </div>
+
+      {/* Intake cameras */}
+      <div className="flex gap-3 flex-wrap">
+        <StainCamera
+          onStainDetected={(family, suggestion) => {
+            setStainInput(suggestion)
+            setSelectedStain(family)
+          }}
+          onReset={() => {
+            setStainInput('')
+            setSelectedStain('')
+          }}
+        />
+        <CareLabelScanner
+          onFiberDetected={(fiber) => {
+            setSelectedFiber(fiber)
+            setFiberSource('label')
+          }}
+          onReset={() => {
+            setSelectedFiber(null)
+            setFiberSource(null)
+          }}
+        />
+      </div>
+
+      {/* Fiber section */}
+      {fiberSource === 'label' && selectedFiber && (
+        <div className="flex items-center gap-2 text-sm text-green-400">
+          <span>🏷️</span>
+          <span className="capitalize font-medium">{selectedFiber}</span>
+          <button onClick={() => { setSelectedFiber(null); setFiberSource(null) }} className="text-gray-500 text-xs ml-1">change</button>
+        </div>
+      )}
+      {fiberSource !== 'label' && (
+        <FiberChips
+          selectedFiber={selectedFiber}
+          onFiberSelect={(f) => { setSelectedFiber(f); setFiberSource('chips') }}
+        />
+      )}
 
       {/* Text input */}
       <input
