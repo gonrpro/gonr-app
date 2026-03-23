@@ -23,7 +23,7 @@
     "freePreview": true
   },
   "stainChemistry": "Wool is a protein fiber (keratin) with overlapping cuticle scales exquisitely sensitive to pH and mechanical stress. Chocolate on wool is a three-component stain: cocoa butter (lipid, wicks into medullary layer), milk casein (protein, bonds to keratin through sulfide bridges), tannins (pigments, embed in fiber matrix). Wool's cuticle scales lock together (felting) under heat, alkalinity, or friction\u2014permanent structural damage. Protein enzymes digest wool's keratin protein along with chocolate's milk protein, destroying fiber strength. The challenge: remove chocolate's three components while keeping water below 30\u00b0C, pH 4.5-7, and zero friction.",
-  "whyThisWorks": "Cold water + pH-neutral soap mobilizes cocoa butter without raising pH (alkalinity triggers felting). Avoiding enzymes entirely protects wool's keratin structure. Mild acetic acid (vinegar) gently mobilizes tannin residue without dropping pH below safety floor (4.5). Optional: dilute H₂O₂ on white wool only for yellowing (cocoa butter oxidation). This protocol removes stain components while preventing felting.",
+  "whyThisWorks": "Cold water + pH-neutral soap mobilizes cocoa butter without raising pH (alkalinity triggers felting). Avoiding enzymes entirely protects wool's keratin structure. Mild acetic acid (vinegar) gently mobilizes tannin residue without dropping pH below safety floor (4.5). Optional: dilute H\u2082O\u2082 on white wool only for yellowing (cocoa butter oxidation). This protocol removes stain components while preventing felting.",
   "spottingProtocol": [
     {
       "step": 1,
@@ -55,7 +55,7 @@
     {
       "step": 4,
       "side": "wet",
-      "agent": "Acetic acid spotter (28% Acetic Acid (diluted) diluted 1:3 with cold water, pH ~4.0-4.5)",
+      "agent": "Acetic acid spotter diluted 1:3 with cold water, pH ~4.0-4.5)",
       "technique": "Acid rinse for tannin mobilization",
       "equipment": "Cloth or spray bottle",
       "dwellTime": "2-3 minutes",
@@ -64,11 +64,11 @@
     {
       "step": 5,
       "side": "wet",
-      "agent": "Optional: Dilute H₂O₂ (3% H₂O₂) for yellowing on WHITE WOOL ONLY",
+      "agent": "Optional: Dilute H\u2082O\u2082 for yellowing on WHITE WOOL ONLY",
       "technique": "Cautious soak, test first on hidden area",
-      "equipment": "Hidden seam test area, 3% H₂O₂ solution",
+      "equipment": "Hidden seam test area, 3% H\u2082O\u2082 solution",
       "dwellTime": "TEST 1 minute on hidden seam first. If safe: 3-5 minutes on stain maximum",
-      "instruction": "For white wool only\u2014cocoa butter oxidizes yellow/brown over time. If yellowing persists after vinegar step, test dilute H₂O₂ (3% solution from drugstore) on hidden seam for 1 minute. Check for color change or weakening. If safe, apply to stain for maximum 5 minutes (longer risks yellowing). DO NOT use on colored wool. Blot, rinse thoroughly with cool water. This oxidative treatment is optional and only for white wool."
+      "instruction": "For white wool only\u2014cocoa butter oxidizes yellow/brown over time. If yellowing persists after vinegar step, test dilute H\u2082O\u2082 on hidden seam for 1 minute. Check for color change or weakening. If safe, apply to stain for maximum 5 minutes (longer risks yellowing). DO NOT use on colored wool. Blot, rinse thoroughly with cool water. This oxidative treatment is optional and only for white wool."
     },
     {
       "step": 6,
@@ -90,7 +90,7 @@
     }
   ],
   "homeSolutions": [
-    "FRESH: Gentle blot, cool rinse, wool detergent (5 min), acetic acid rinse, optional H₂O₂ on white wool only, final weak vinegar rinse, flat-dry.",
+    "FRESH: Gentle blot, cool rinse, wool detergent (5 min), acetic acid rinse, optional H\u2082O\u2082 on white wool only, final weak vinegar rinse, flat-dry.",
     "OLDER (24+ hours): Same protocol as fresh. Extended detergent soaks do NOT improve results and risk fiber stress.",
     "STUBBORN/COLORED WOOL: Do NOT repeat home chemistry. Professional solvent-based spotting (POG) is safer and more effective."
   ],
@@ -100,7 +100,7 @@
     "NEVER alkaline cleaners (pH > 7)\u2014alkalinity causes cuticles to stand up and lock together.",
     "NEVER chlorine bleach\u2014breaks disulfide bonds in keratin, destroying fiber.",
     "NEVER agitate, rub, or wring\u2014mechanical friction causes irreversible felting.",
-    "NEVER apply H₂O₂ to colored wool\u2014bleaching risk."
+    "NEVER apply H\u2082O\u2082 to colored wool\u2014bleaching risk."
   ],
   "escalation": "Professional dry cleaners can apply solvent-based POG (Petroleum Oil and Grease) spotting to wool chocolate stains at room temperature, avoiding any felting risk. For stubborn tannin discoloration, professionals may use mild tannin reducers formulated specifically for wool or dry-solvent extraction. This is recommended for fine wool, cashmere, or expensive garments.",
   "products": {
@@ -130,10 +130,10 @@
         "note": "Mild acid; mobilizes tannins and prevents felting by smoothing cuticles."
       },
       {
-        "name": "H₂O₂ 3%",
+        "name": "H\u2082O\u2082 3%",
         "brand": "Generic drugstore",
         "icon": "\ud83e\uddea",
-        "amazonSearchQuery": "H₂O₂ 3% solution",
+        "amazonSearchQuery": "H\u2082O\u2082 3% solution",
         "affiliateTag": "gonr08-20",
         "note": "For yellowing on white wool only. Test first on hidden area. Do NOT use on colored wool."
       }
