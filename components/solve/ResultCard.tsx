@@ -142,6 +142,11 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
                   <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
                     {step.instruction}
                   </p>
+                  {(step.technique || step.temperature) && (
+                    <p className="text-xs italic mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+                      {[step.technique, step.temperature].filter(Boolean).join(' — ')}
+                    </p>
+                  )}
                   {step.dwellTime && (
                     <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
                       ⏱ {step.dwellTime}
