@@ -108,15 +108,18 @@ export default function StainCamera({ onStainDetected, onReset }: StainCameraPro
           </div>
           <div className="flex gap-2">
             <button
+              type="button"
               onClick={() => onStainDetected(result.family, result.suggestion)}
-              className="flex-1 py-2 rounded-lg text-sm font-semibold bg-green-500 text-white"
+              className="flex-1 rounded-lg text-sm font-semibold bg-green-500 text-white"
+              style={{ minHeight: 48, padding: '12px 16px' }}
             >
               ✓ Confirm
             </button>
             <button
+              type="button"
               onClick={handleReset}
-              className="flex-1 py-2 rounded-lg text-sm font-medium"
-              style={{ background: 'var(--surface-2)', color: 'var(--text-secondary)', border: '1px solid var(--border-strong)' }}
+              className="flex-1 rounded-lg text-sm font-medium"
+              style={{ minHeight: 48, padding: '12px 16px', background: 'var(--surface-2)', color: 'var(--text-secondary)', border: '1px solid var(--border-strong)' }}
             >
               Different
             </button>
