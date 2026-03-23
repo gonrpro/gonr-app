@@ -1,46 +1,54 @@
 import { NextResponse } from 'next/server'
 
-type HandoffOutcome = 'intake' | 'improved' | 'tough' | 'release'
-
-const VALID_OUTCOMES = new Set<string>(['intake', 'improved', 'tough', 'release'])
+const OUTCOME_PROMPTS: Record<string, string> = {
+  intake: 'The garment has just been received for cleaning. Write a professional, warm message to the customer acknowledging receipt and setting expectations.',
+  improved: 'The stain was successfully treated and the garment looks great. Write a positive, confident message to the customer.',
+  tough: 'The stain was difficult and may not be fully removed. Write an honest, professional message managing expectations without alarming the customer.',
+  release: 'The garment is ready for pickup. Write a brief, professional ready-for-pickup message.',
+  defect: 'A pre-existing defect or manufacturer issue was discovered. Write a professional message explaining the situation clearly and protecting the cleaner.',
+}
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json()
-    const { stain, surface, outcome, details, steps } = body
+    const { stain, surface, outcome, details } = await req.json()
 
     if (!stain || !outcome) {
       return NextResponse.json({ error: 'Stain and outcome required' }, { status: 400 })
     }
 
-    if (!VALID_OUTCOMES.has(outcome as string)) {
-      return NextResponse.json({ error: 'Invalid outcome type' }, { status: 400 })
+    const apiKey = process.env.OPENAI_API_KEY
+    if (!apiKey) {
+      return NextResponse.json({ error: 'API key not configured' }, { status: 500 })
     }
 
-    // Proxy to Netlify function (has its own OpenAI key)
-    const netlifyRes = await fetch('https://gonr.app/.netlify/functions/customer-handoff', {
+    const outcomePrompt = OUTCOME_PROMPTS[outcome] || OUTCOME_PROMPTS.intake
+    const fabric = surface || 'fabric'
+
+    const res = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        stain,
-        surface,
-        situation: outcome as HandoffOutcome,
-        details: details || `${stain} on ${surface}`,
-        protocolContext: steps ? { steps } : undefined,
+        model: 'gpt-4o',
+        max_tokens: 300,
+        temperature: 0.4,
+        messages: [
+          {
+            role: 'system',
+            content: `You are a professional dry cleaner with 30 years of experience. Write customer communication that is warm, professional, honest, and brief. Never use "Dear Valued Customer." Use plain conversational language. 2-4 sentences maximum.`,
+          },
+          {
+            role: 'user',
+            content: `${outcomePrompt}\n\nStain: ${stain}\nFabric: ${fabric}\n${details ? `Additional context: ${details}` : ''}`,
+          },
+        ],
       }),
     })
 
-    if (!netlifyRes.ok) {
-      const errText = await netlifyRes.text().catch(() => 'Unknown error')
-      console.error('Netlify handoff error:', netlifyRes.status, errText)
-      return NextResponse.json({ error: 'Message generation failed' }, { status: 502 })
-    }
-
-    const data = await netlifyRes.json()
-    const message = data.message || data.response || data.text
+    const data = await res.json()
+    const message = data.choices?.[0]?.message?.content?.trim()
 
     if (!message) {
-      return NextResponse.json({ error: 'Empty response from handoff service' }, { status: 502 })
+      return NextResponse.json({ error: 'Failed to generate message' }, { status: 500 })
     }
 
     return NextResponse.json({ message })

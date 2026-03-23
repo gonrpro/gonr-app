@@ -154,21 +154,24 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         </div>
       )}
 
-      {/* Home Guide — collapsed by default, pro tool focus */}
+      {/* Home Tips — collapsed, brief tips not step-by-step */}
       {diySteps.length > 0 && (
         <div className="px-4" style={{ borderTop: '1px solid var(--border)' }}>
-          <Collapsible title="Home Guide" icon="🏠">
-            <div className="space-y-2">
-              {diySteps.map((sol, i) => {
+          <Collapsible title="Home Tips" icon="🏠">
+            <ul className="space-y-1.5">
+              {diySteps.slice(0, 4).map((sol, i) => {
                 const text = typeof sol === 'string' ? sol : (sol as Step).instruction
+                // Trim to first sentence for tip format
+                const tip = text.split(/[.!?]/)[0].replace(/^\d+\.\s*/, '').trim()
+                if (!tip) return null
                 return (
-                  <div key={i} className="flex gap-2">
-                    <span className="flex-shrink-0 text-xs font-bold mt-0.5" style={{ color: 'var(--text-secondary)' }}>{i + 1}.</span>
-                    <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>{text}</p>
-                  </div>
+                  <li key={i} className="flex gap-2 text-sm" style={{ color: 'var(--text)' }}>
+                    <span style={{ color: 'var(--accent)' }}>•</span>
+                    <span>{tip}</span>
+                  </li>
                 )
               })}
-            </div>
+            </ul>
           </Collapsible>
         </div>
       )}
