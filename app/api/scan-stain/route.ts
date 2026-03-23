@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: 'gpt-5.4',
+        model: 'gpt-4o',
         max_tokens: 300,
         messages: [
           {
@@ -36,11 +36,25 @@ export async function POST(req: NextRequest) {
       }),
     })
 
+    if (!res.ok) {
+      const errText = await res.text()
+      console.error('OpenAI scan-stain error:', res.status, errText)
+      return NextResponse.json({ family: 'unknown', suggestion: 'Unknown stain', confidence: 'low', reasoning: 'Vision API error.' })
+    }
+
     const data = await res.json()
     const content = data.choices?.[0]?.message?.content || '{}'
-    const parsed = JSON.parse(content.trim())
-    return NextResponse.json(parsed)
-  } catch {
+    
+    // Handle potential JSON parse errors
+    try {
+      const clean = content.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim()
+      const parsed = JSON.parse(clean)
+      return NextResponse.json(parsed)
+    } catch {
+      return NextResponse.json({ family: 'unknown', suggestion: content.slice(0, 50), confidence: 'low', reasoning: 'Parse error.' })
+    }
+  } catch (err) {
+    console.error('scan-stain exception:', err)
     return NextResponse.json({ family: 'unknown', suggestion: 'Unknown stain', confidence: 'low', reasoning: 'Could not analyze image.' })
   }
 }
