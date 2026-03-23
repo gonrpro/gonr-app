@@ -1,11 +1,11 @@
 @import 'tailwindcss';
 
 :root {
-  --bg: #fafafa;
+  --bg: #f5f7fa;
   --surface: #ffffff;
-  --surface-2: #f0f0f0;
-  --text: #1a1a1a;
-  --text-secondary: #6b7280;
+  --surface-2: #eef1f6;
+  --text: #2d3748;
+  --text-secondary: #718096;
   --accent: #22c55e;
   --accent-soft: rgba(34, 197, 94, 0.08);
   --gold: #b8942e;
@@ -45,9 +45,7 @@ body {
   min-height: 100dvh;
 }
 
-h1, h2, h3, .mono {
-  font-family: var(--font-mono);
-}
+
 
 /* Utility classes for design tokens */
 .surface { background: var(--surface); }
