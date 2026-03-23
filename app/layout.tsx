@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
             var t = localStorage.getItem('gonr_theme');
-            if (t !== 'light') {
+            if (t === 'dark') {
               document.documentElement.classList.add('dark');
             }
           })();
