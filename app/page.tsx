@@ -9,11 +9,11 @@ import type { ProtocolCard } from '@/lib/types'
 
 const STAIN_FAMILIES = [
   { id: 'protein', label: 'Protein', emoji: '🥩', stains: ['blood', 'egg', 'milk', 'sweat', 'urine', 'vomit', 'grass'] },
-  { id: 'tannin', label: 'Tannin', emoji: '🍷', stains: ['red-wine', 'coffee-black', 'tea', 'beer'] },
+  { id: 'tannin', label: 'Tannin', emoji: '🍷', stains: ['red-wine', 'coffee-black', 'coffee-with-cream', 'tea', 'beer'] },
   { id: 'oil-grease', label: 'Oil & Grease', emoji: '🛢️', stains: ['cooking-oil', 'butter', 'motor-oil', 'lipstick', 'foundation'] },
   { id: 'dye', label: 'Dye', emoji: '🎨', stains: ['hair-dye', 'food-coloring', 'permanent-marker', 'ballpoint-pen'] },
   { id: 'oxidizable', label: 'Oxidizable', emoji: '🧪', stains: ['rust', 'mustard', 'curry', 'tomato-sauce'] },
-  { id: 'combination', label: 'Combo', emoji: '🔀', stains: ['chocolate', 'coffee-with-cream', 'nail-polish'] },
+  { id: 'combination', label: 'Combo', emoji: '🔀', stains: ['chocolate', 'nail-polish'] },
   { id: 'particulate', label: 'Particulate', emoji: '💨', stains: ['mildew', 'collar-ring'] },
   { id: 'wax-gum', label: 'Wax & Gum', emoji: '🕯️', stains: ['candle-wax', 'crayon'] },
   { id: 'bleach-damage', label: 'Bleach', emoji: '⚠️', stains: ['bleach'] },
@@ -27,8 +27,25 @@ const SURFACES = [
   'polyester', 'denim', 'leather', 'suede', 'nylon',
 ]
 
+const STAIN_LABELS: Record<string, string> = {
+  'coffee-black': 'Coffee (Black)',
+  'coffee-with-cream': 'Coffee w/ Cream',
+  'red-wine': 'Red Wine',
+  'cooking-oil': 'Cooking Oil',
+  'motor-oil': 'Motor Oil',
+  'hair-dye': 'Hair Dye',
+  'food-coloring': 'Food Coloring',
+  'permanent-marker': 'Permanent Marker',
+  'ballpoint-pen': 'Ballpoint Pen',
+  'tomato-sauce': 'Tomato Sauce',
+  'candle-wax': 'Candle Wax',
+  'collar-ring': 'Collar Ring',
+  'acrylic-paint': 'Acrylic Paint',
+  'nail-polish': 'Nail Polish',
+}
+
 function formatLabel(slug: string): string {
-  return slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+  return STAIN_LABELS[slug] ?? slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
 }
 
 interface SolveResult {
