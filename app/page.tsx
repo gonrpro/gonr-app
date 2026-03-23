@@ -137,27 +137,31 @@ export default function SolvePage() {
       </div>
 
       {/* Intake cameras */}
-      <div className="flex gap-3 flex-wrap">
-        <StainCamera
-          onStainDetected={(family, suggestion) => {
-            setStainInput(suggestion)
-            setSelectedStain(family)
-          }}
-          onReset={() => {
-            setStainInput('')
-            setSelectedStain('')
-          }}
-        />
-        <CareLabelScanner
-          onFiberDetected={(fiber) => {
-            setSelectedFiber(fiber)
-            setFiberSource('label')
-          }}
-          onReset={() => {
-            setSelectedFiber(null)
-            setFiberSource(null)
-          }}
-        />
+      <div className="flex gap-3 w-full">
+        <div className="flex-1">
+          <StainCamera
+            onStainDetected={(family, suggestion) => {
+              setStainInput(suggestion)
+              setSelectedStain(family)
+            }}
+            onReset={() => {
+              setStainInput('')
+              setSelectedStain('')
+            }}
+          />
+        </div>
+        <div className="flex-1">
+          <CareLabelScanner
+            onFiberDetected={(fiber) => {
+              setSelectedFiber(fiber)
+              setFiberSource('label')
+            }}
+            onReset={() => {
+              setSelectedFiber(null)
+              setFiberSource(null)
+            }}
+          />
+        </div>
       </div>
 
       {/* Fiber section */}
