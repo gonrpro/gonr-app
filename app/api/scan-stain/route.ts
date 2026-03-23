@@ -8,27 +8,24 @@ export async function POST(req: NextRequest) {
     const apiKey = process.env.OPENAI_API_KEY
     if (!apiKey) return NextResponse.json({ error: 'API key not configured' }, { status: 500 })
 
-    const res = await fetch('https://api.openai.com/v1/chat/completions', {
+    // gpt-5.4 vision uses the Responses API with input_image type
+    const res = await fetch('https://api.openai.com/v1/responses', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: 'gpt-4o',
-        max_tokens: 300,
-        messages: [
-          {
-            role: 'system',
-            content: 'You are an expert textile spotter with 40 years of experience. Analyze stain images and identify chemistry families. Return ONLY valid JSON, no markdown.',
-          },
+        model: 'gpt-5.4',
+        input: [
           {
             role: 'user',
             content: [
               {
-                type: 'text',
-                text: 'Analyze this stain image. Return ONLY this JSON: { "family": "tannin|protein|oil-grease|oxidizable|dye|combination|unknown", "suggestion": "most likely stain type e.g. Red Wine", "confidence": "high|medium|low", "reasoning": "one sentence" }',
+                type: 'input_text',
+                text: 'You are an expert textile spotter with 40 years of experience. Analyze this stain image. Return ONLY valid JSON, no markdown: { "family": "tannin|protein|oil-grease|oxidizable|dye|combination|unknown", "suggestion": "most likely stain type e.g. Red Wine", "confidence": "high|medium|low", "reasoning": "one sentence" }',
               },
               {
-                type: 'image_url',
-                image_url: { url: `data:image/jpeg;base64,${image}`, detail: 'high' },
+                type: 'input_image',
+                image_url: `data:image/jpeg;base64,${image}`,
+                detail: 'high',
               },
             ],
           },
@@ -38,20 +35,19 @@ export async function POST(req: NextRequest) {
 
     if (!res.ok) {
       const errText = await res.text()
-      console.error('OpenAI scan-stain error:', res.status, errText)
+      console.error('scan-stain error:', res.status, errText)
       return NextResponse.json({ family: 'unknown', suggestion: 'Unknown stain', confidence: 'low', reasoning: 'Vision API error.' })
     }
 
     const data = await res.json()
-    const content = data.choices?.[0]?.message?.content || '{}'
-    
-    // Handle potential JSON parse errors
+    const content = data.output_text || data.output?.[0]?.content?.[0]?.text || '{}'
+
     try {
       const clean = content.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim()
       const parsed = JSON.parse(clean)
       return NextResponse.json(parsed)
     } catch {
-      return NextResponse.json({ family: 'unknown', suggestion: content.slice(0, 50), confidence: 'low', reasoning: 'Parse error.' })
+      return NextResponse.json({ family: 'unknown', suggestion: 'Unknown stain', confidence: 'low', reasoning: 'Parse error.' })
     }
   } catch (err) {
     console.error('scan-stain exception:', err)
