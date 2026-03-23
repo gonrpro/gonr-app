@@ -197,8 +197,10 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         {showHandoff && (
           <div className="mt-3">
             <HandoffModule
-              stain={card.meta?.stainCanonical || ''}
-              surface={card.meta?.surfaceCanonical || ''}
+              stain={card.meta?.stainCanonical || card.id || ''}
+              surface={card.meta?.surfaceCanonical || card.surface || ''}
+              stainChemistry={card.stainChemistry}
+              whyThisWorks={card.whyThisWorks}
             />
           </div>
         )}
