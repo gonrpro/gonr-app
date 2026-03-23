@@ -33,10 +33,27 @@ function normalize(input: string): string {
     .replace(/\s+/g, ' ')
 }
 
+// Surface alias map — normalize UI surface names to card surface keys
+const SURFACE_NORMALIZE: Record<string, string> = {
+  'cotton-white': 'cotton',
+  'cotton-color': 'cotton',
+  'cotton color': 'cotton',
+  'cotton white': 'cotton',
+  'wool-cashmere': 'wool',
+  'leather-suede': 'leather',
+  'general fabric': 'cotton',
+  'general': 'cotton',
+}
+
 function toSlug(input: string): string {
   return normalize(input)
     .replace(/\s+/g, '-')
     .replace(/[^a-z0-9-]/g, '')
+}
+
+function normalizeSurface(input: string): string {
+  const n = normalize(input)
+  return SURFACE_NORMALIZE[n] ?? toSlug(input)
 }
 
 // ─── Index builder ──────────────────────────────────────────────────────────
@@ -160,7 +177,7 @@ export async function lookupProtocol(
   const stainNorm = normalize(stainInput)
   const surfaceNorm = normalize(surfaceInput)
   const stainSlug = toSlug(stainInput)
-  const surfaceSlug = toSlug(surfaceInput)
+  const surfaceSlug = normalizeSurface(surfaceInput)
 
   // ── Tier 1: Exact canonical match ─────────────────────────────────────
   const exactKey = `${stainSlug}+${surfaceSlug}`

@@ -68,15 +68,19 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
 
   // Normalize pro steps — support both spottingProtocol (v6) and professionalProtocol.steps (new format)
   const rawCard = card as any
-  const proSteps: Step[] = card.spottingProtocol ?? (
-    rawCard.professionalProtocol?.steps
-      ? rawCard.professionalProtocol.steps.map((s: string, i: number) => ({
-          step: i + 1,
-          agent: s.replace(/^\d+\.\s*/, '').split('—')[0].split(':')[0].trim(),
-          instruction: s.replace(/^\d+\.\s*/, ''),
-        }))
-      : []
-  )
+  const proSteps: Step[] = card.spottingProtocol ?? (() => {
+    const raw = rawCard.professionalProtocol?.steps
+    if (!raw || !Array.isArray(raw)) return []
+    return raw.map((s: string | Step, i: number) => {
+      if (typeof s === 'object') return s
+      // Parse string like "1. Apply Protein Formula — tamp gently..."
+      const clean = s.replace(/^\d+\.\s*/, '')
+      // Extract agent: first word(s) before dash, colon, or "with"
+      const agentMatch = clean.match(/^(Apply|Use|Flush|Rinse|Blot|Neutralize|Inspect)\s+([^—\-:]+)/i)
+      const agent = agentMatch ? agentMatch[2].trim() : ''
+      return { step: i + 1, agent, instruction: clean }
+    })
+  })()
 
   // Normalize DIY steps
   const diySteps: (string | Step)[] = card.homeSolutions ?? (
