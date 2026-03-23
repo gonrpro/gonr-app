@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: 'gpt-4o',
+        model: 'gpt-5.4',
         max_tokens: 300,
         messages: [
           {
@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
               },
               {
                 type: 'image_url',
-                image_url: { url: `data:image/jpeg;base64,${image}`, detail: 'low' },
+                image_url: { url: `data:image/jpeg;base64,${image}`, detail: 'high' },
               },
             ],
           },
