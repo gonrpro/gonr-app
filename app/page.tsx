@@ -128,15 +128,13 @@ export default function SolvePage() {
 
   return (
     <div className="space-y-5">
-      {/* Camera section header */}
+      {/* Header */}
       <div className="text-center space-y-1 pt-1">
-        <div className="flex items-center justify-center gap-2">
-          <span className="text-green-500 font-bold text-lg tracking-tight">G</span>
-          <span className="font-bold text-lg tracking-tight" style={{ color: 'var(--text)' }}>ONR</span>
-          <span className="text-xs font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full bg-green-500/10 text-green-600">Pro</span>
-        </div>
-        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-          Scan the stain or care label to get an expert protocol
+        <h1 className="text-xl font-bold tracking-tight" style={{ color: 'var(--text)' }}>
+          AI Stain Intelligence
+        </h1>
+        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+          Expert protocols for every stain, fiber, and surface
         </p>
       </div>
 
