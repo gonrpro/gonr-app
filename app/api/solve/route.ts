@@ -15,11 +15,11 @@ const FIBER_SAFETY: Record<string, string> = {
 
 const STAIN_FAMILY_RULES: Record<string, string> = {
   protein: 'PROTEIN FAMILY: Blood, urine, sweat, egg, milk, vomit. KEY RULE: COLD WATER ONLY — heat permanently sets protein. Use Protein (enzyme digester) first. NSD flush. Acetic acid neutralizer. NEVER hot water. NEVER ammonia on fresh protein.',
-  tannin: 'TANNIN FAMILY: Red wine, coffee, tea, beer, fruit juice. KEY RULE: Tannin Formula FIRST to break pigment bonds. NEVER use alkaline agents (ammonia, baking soda) — permanently darkens tannins. NSD flush. Acetic acid neutralizer. H₂O₂ for residual color on colorfast fabrics.',
+  tannin: 'TANNIN FAMILY: Red wine, coffee, tea, beer, fruit juice. KEY RULE: Tannin FIRST to break pigment bonds. NEVER use alkaline agents (ammonia, baking soda) — permanently darkens tannins. NSD flush. Acetic acid neutralizer. H₂O₂ for residual color on colorfast fabrics.',
   'oil-grease': 'OIL/GREASE FAMILY: Cooking oil, butter, motor oil, lipstick, cosmetics. KEY RULE: POG (Paint Oil Grease remover) or dry solvent first to break the lipid bond. NSD to emulsify. Flush thoroughly. No water until solvent is removed.',
   oxidizable: 'OXIDIZABLE FAMILY: Rust, mustard, curry, turmeric. KEY RULE: Rust Remover (oxalic acid) for rust. Oxidizer (H₂O₂) for mustard/curry. Never use reducing agents on oxidizable stains.',
   dye: 'DYE FAMILY: Hair dye, food coloring, permanent marker, ballpoint pen. KEY RULE: Reducing agent for reactive dyes. POG for ballpoint. Most dye stains require professional treatment on delicate fibers.',
-  combination: 'COMBINATION FAMILY: Chocolate (protein+tannin+fat), coffee with cream, nail polish. KEY RULE: Treat each component in order — protein component first (cold enzyme), then tannin component (Tannin Formula), then fat component (POG). Never combine treatments simultaneously.',
+  combination: 'COMBINATION FAMILY: Chocolate (protein+tannin+fat), coffee with cream, nail polish. KEY RULE: Treat each component in order — protein component first (cold enzyme), then tannin component (Tannin), then fat component (POG). Never combine treatments simultaneously.',
 }
 
 async function generateAIProtocol(stain: string, surface: string, fiber: string) {
@@ -55,7 +55,7 @@ PROFESSIONAL AGENT NAMES ONLY — use these exact terms:
 - NSD (Neutral Synthetic Detergent) — not "dish soap" or "detergent"
 - POG (Paint Oil Grease remover) — not "solvent" or "degreaser"  
 - Protein — not "enzyme cleaner" or "enzymatic cleaner"
-- Tannin Formula — not "stain remover"
+- Tannin — not "stain remover"
 - H₂O₂ 6% — not "hydrogen peroxide" or "bleach"
 - 28% Acetic Acid (diluted) — not "vinegar"
 - Reducing Agent — for reactive dyes
