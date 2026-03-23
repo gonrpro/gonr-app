@@ -33,8 +33,8 @@ export default function FiberChips({ selectedFiber, onFiberSelect }: FiberChipsP
                 ${fiber.fullWidth ? 'col-span-2' : ''}
                 ${
                   isSelected
-                    ? 'bg-green-500/20 text-green-400 ring-2 ring-green-500/50 shadow-[0_0_12px_rgba(34,197,94,0.25)]'
-                    : 'bg-[#0e131b] text-gray-300 hover:bg-[#161d28]'
+                    ? 'bg-green-500/20 text-green-600 dark:text-green-400 ring-2 ring-green-500/50'
+                    : 'bg-[var(--surface)] border border-[var(--border-strong)] text-[var(--text)] hover:border-green-500/50'
                 }`}
             >
               <span className="text-base">{fiber.emoji}</span>

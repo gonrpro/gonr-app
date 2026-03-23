@@ -108,7 +108,7 @@ h1, h2, h3, .mono {
 
 /* Button styles */
 .btn-primary {
-  background: var(--accent);
+  background: #22c55e;
   color: #fff;
   font-weight: 600;
   padding: 12px 24px;
@@ -125,7 +125,8 @@ h1, h2, h3, .mono {
 }
 
 .btn-primary:disabled {
-  opacity: 0.5;
+  background: #22c55e;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
