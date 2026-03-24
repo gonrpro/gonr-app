@@ -1,0 +1,136 @@
+{
+  "id": "resin",
+  "family": "Resin/Adhesive",
+  "icon": "🔗",
+  "color": "#DAA520",
+  "overview": {
+    "summary": "Polymeric compounds designed to be sticky and bond permanently (glue, tree sap, nail polish, paint, epoxy, lacquer, adhesive tape residue). Unlike other stains, resins intentionally form strong bonds. Some resins are designed to be temporary (adhesive tape), while others (epoxy, superglue) form irreversible covalent bonds. The defining characteristic: each resin has a specific solvent that dissolves it. Match the solvent to the resin type, or the stain is permanent.",
+    "molecularStructure": "Resins vary widely: tree saps are terpenes and diterpenes; glues are polymeric adhesives (polyvinyl acetate in school glue, cyanoacrylate in superglue); nail polish is color + binders + solvents evaporated to solid film; paint is pigment + binder + solvent. What they share: polymeric cross-linked structures designed to harden and bond. Many are designed to cure via oxidation, cross-linking, or solvent evaporation.",
+    "commonStains": ["tree sap (conifer)", "nail polish", "superglue", "craft glue", "spray adhesive", "paint (acrylic, latex, oil)", "lacquer", "shellac", "epoxy", "hot glue", "contact cement", "fabric glue", "silicone sealant"],
+    "prevalence": "Moderate. Resin stains represent 5-10% of spotting calls. Tree sap (automotive, outdoor) and nail polish are most common household sources. Adhesive residue from labels or tape is also frequent."
+  },
+  "chemistry": {
+    "bondingMechanism": "Depends on resin type. Tree sap bonds via mechanical entrapment and van der Waals forces. Glues bond via penetration and cross-linking (cyanoacrylate forms covalent bonds within milliseconds). Nail polish bonds as a hardened film. Paint forms a cross-linked polymer film. Epoxy forms irreversible covalent network. The commonality: resins are designed to bond permanently. As they cure/dry, they form stronger bonds.",
+    "removalPrinciple": "Solvent dissolution is the only effective method. Each resin family has a solvent or solvent combination that dissolves it. Nail polish dissolves in acetone. Oil paint dissolves in turpentine or mineral spirits. Superglue has no solvent (it's designed to be permanent). The challenge: identify the resin, find the right solvent, and hope the solvent doesn't damage the fiber or surrounding garment dye.",
+    "pHSensitivity": "Most resins are pH-insensitive — they're polymeric and don't ionize. pH doesn't break resin bonds. Alkaline or acidic pH doesn't aid removal. Solvents are the only approach.",
+    "solubility": "Resins are insoluble in water by design (water resistance is a goal for adhesives and paints). Resins dissolve in specific organic solvents: acetone for nail polish and some adhesives, mineral spirits for oil-based paints and varnishes, amyl acetate for certain lacquers and adhesives, trichloroethylene for some specialized resins. Superglue and epoxy have no effective solvent (covalent cross-linking is permanent).",
+    "oxidationBehavior": "Oxidizers (H2O2, bleach) don't break resin bonds — resins are polymers without the conjugated double bonds that oxidizers target. Oxidation won't help resin removal. Solvents are the only path."
+  },
+  "keyAgents": [
+    {
+      "agent": "Acetone (100%, or Nail Polish Remover 60-95% acetone)",
+      "mechanism": "Acetone dissolves many polymeric adhesives and nail polish. Acetone penetrates the hardened film, dissolving the polymer chains and returning them to liquid form, which can then be blotted or flushed away. Acetone is volatile — it evaporates quickly, leaving little residue. BUT acetone DISSOLVES acetate fiber instantly (critical danger).",
+      "concentration": "100% acetone (strongest) or commercial nail polish remover (60-95% acetone, with oils/water as additives). Pure acetone is more aggressive.",
+      "dwellTime": "1-3 minutes. Acetone works fast. Over-dwell risks acetate damage or spreading the resin.",
+      "bestFor": "Nail polish, some craft glues, some adhesive residues. Works on cellulose and protein fibers (cotton, silk, wool). NOT for acetate — kills acetate fiber instantly.",
+      "caution": "NEVER use acetone on acetate (including garment linings). Test on hidden area first (especially on dyed fabrics, as acetone can cause color shifting). Acetone is flammable — use in ventilated area. Acetone smell is strong and can be unpleasant."
+    },
+    {
+      "agent": "Amyl Acetate (Isoamyl Acetate, solvent)",
+      "mechanism": "Amyl acetate dissolves many lacquers, adhesives, and some paints. Similar to acetone but slightly less aggressive and slower-acting. Amyl acetate is gentler on fibers and dyes than acetone (less likely to cause color shift). It evaporates more slowly, allowing longer dwell times.",
+      "concentration": "100% amyl acetate (commercial solvent), or in lacquer thinner formulations.",
+      "dwellTime": "2-5 minutes. Slower than acetone but steadier.",
+      "bestFor": "Lacquer, varnish, some adhesives on delicate fibers where acetone is too risky. Better for dyed or protein fibers where acetone might shift color.",
+      "caution": "Still flammable. Amyl acetate is less immediately damaging to acetate than acetone but still risks damage with prolonged contact. Test first. Slower than acetone — requires patience."
+    },
+    {
+      "agent": "Mineral Spirits (Paint Thinner, Petroleum Distillate)",
+      "mechanism": "Mineral spirits dissolve oil-based paints, varnishes, and some adhesives by penetrating the polymeric film and softening the binder. Mineral spirits are less volatile than acetone (evaporate slower, require longer dwell). They're gentler on most fibers than acetone or amyl acetate.",
+      "concentration": "100% mineral spirits (commercial paint thinner).",
+      "dwellTime": "3-10 minutes. Longer dwell than acetone because mineral spirits work more slowly but steadily.",
+      "bestFor": "Oil-based paint, varnish, lacquer on sturdy fibers (cotton, polyester, nylon). Less risky for delicate fibers and dyes than acetone. Good for tree sap (though POG is also effective).",
+      "caution": "Mineral spirits evaporate slowly and leave residue — requires thorough water + detergent rinse after solvent treatment. Flammable. Test first on dyed fabrics."
+    },
+    {
+      "agent": "POG (Paint-Oil-Grease Remover)",
+      "mechanism": "POG is a hydrocarbon mixture (mineral spirits + naphtha) that dissolves many resins including some adhesives, paint, and tree sap. Works similarly to mineral spirits but is formulated for mixed contaminant removal.",
+      "concentration": "100% POG (concentrated solvent), usually used as-is.",
+      "dwellTime": "2-5 minutes for resin removal.",
+      "bestFor": "Tree sap (particularly effective), paint residue, some adhesives. Works on sturdy fibers. Less risky than pure acetone.",
+      "caution": "POG is aggressive and can damage acetate. Always test first. POG requires thorough water rinse after to remove solvent residue."
+    },
+    {
+      "agent": "Turpentine (for Oil-Based Paint)",
+      "mechanism": "Turpentine (from pine trees, terpene-based) is the traditional solvent for oil-based paint and varnish. It dissolves the binder in oil paint, returning the paint to liquid form.",
+      "concentration": "100% turpentine.",
+      "dwellTime": "5-10 minutes. Turpentine works more slowly than mineral spirits.",
+      "bestFor": "Oil-based paint (traditional art paints, house paints from pre-1980s). Less common now with latex paint prevalence.",
+      "caution": "Turpentine has strong smell and can cause allergic reactions in some people. Flammable. Test on hidden area (can cause color shifts)."
+    },
+    {
+      "agent": "Trichloroethylene (TCE, Professional Dry Cleaning Solvent)",
+      "mechanism": "TCE is a halogenated hydrocarbon solvent (similar to VDS) that dissolves many resins, adhesives, and paints. Professional-grade solvent with high solvency for polymers.",
+      "concentration": "100% TCE (professional use only).",
+      "dwellTime": "2-5 minutes.",
+      "bestFor": "Professional dry cleaning of resin stains. Specialized resins that don't respond to standard solvents.",
+      "caution": "TCE is toxic and regulated. Not for home use. Requires proper ventilation and safety equipment. Professional use only."
+    },
+    {
+      "agent": "Heat (as solvent softener for old resin)",
+      "mechanism": "Gentle heat (not boiling) can soften hardened resins, making them more moldable and less brittle. This doesn't dissolve resin but makes mechanical removal easier. Heat softens the polymer slightly.",
+      "concentration": "N/A. Use heat setting of 40-50°C water or warm air.",
+      "dwellTime": "5-10 minutes of gentle warmth.",
+      "bestFor": "Hardened resin (tree sap, old paint) where the goal is to soften it for mechanical removal (rubbing, scraping). Combines heat with mechanical action.",
+      "caution": "Heat can damage some fibers (synthetics, elastic) if too high. Never use boiling heat. This is for softening, not dissolving — always follow with solvent if heat alone doesn't work."
+    }
+  ],
+  "fiberInteractions": {
+    "cotton": "Cotton is robust to all solvents. Acetone, amyl acetate, mineral spirits, POG are all safe on cotton. Resin stains on cotton are straightforward: identify the resin, apply the right solvent, blot, rinse with water. Color loss is unlikely unless the dye is very sensitive or solvent dwell is excessive.",
+    "silk": "Silk is delicate to solvents but most acetone-based treatments can be brief (1-2 minutes) on silk with low risk. Amyl acetate is safer than acetone on silk. Mineral spirits are safest. Test hidden area first. Acetone can cause color shift on silk dyes — test first.",
+    "wool": "Wool is fairly robust to solvents but sensitive to extended solvent dwell (can cause color shift or fiber damage). Acetone should be brief (1 minute maximum). Amyl acetate or mineral spirits are preferable. Always test first on wool.",
+    "polyester": "Polyester is very solvent-resistant. Acetone, amyl acetate, mineral spirits are all safe for extended dwell. Resin on polyester is straightforward. Polyester is the fiber of choice for resin stain work because it tolerates solvents well.",
+    "nylon": "Nylon is fairly robust to solvents but can be sensitive to acetone (color shift possible). Amyl acetate or mineral spirits are safer. Test first.",
+    "acetate": "ACETATE IS INCOMPATIBLE WITH ACETONE. This is the most critical rule. Acetone dissolves acetate fiber. Never use acetone on acetate or garments with acetate linings. Always check fabric composition before using acetone. Amyl acetate is safer (brief dwell OK). Mineral spirits are safest.",
+    "leather": "Leather is delicate to most solvents. Brief acetone (1 minute or less) might work on leather, but extended dwell is risky (can dry out or discolor leather). Mineral spirits are safer. Professional leather care recommended for resin stains on leather.",
+    "generalRule": "Acetone is fastest but most risky (acetate damage, color shift). Mineral spirits are gentler but slower. For resin stains, choose the gentlest solvent first (mineral spirits), and escalate to acetone only if gentler approaches fail. Always test hidden area first."
+  },
+  "timeFactor": {
+    "fresh": "0-2 hours. Resin is still tacky and partially liquid. Removal is easiest at this stage. Solvents work quickly. Mechanical removal (blotting, gentle rubbing) can help suspend the tacky resin in solvent.",
+    "hours": "2-24 hours. Resin begins to cure/harden. Solvent still works but dwell time increases. Some evaporation of solvent from the resin may have begun (hardening).",
+    "days": "1-7 days. Resin is significantly cured and hardened. Solvent still works but requires longer dwell and more aggressive action. Some resins approach full cure at this point.",
+    "weeks": "7+ days. Resin is fully cured. Solvent still works (unlike some stain families, resin remains solvent-responsive even when very old). However, dwell times become long (15-30 minutes) and mechanical action becomes essential (rubbing, working solvent into resin).",
+    "heatExposure": "Heat (dryer, iron) can accelerate resin cure/hardening, making solvent removal slightly harder. Heat also can melt some resins (nail polish gets very sticky when warm), which can spread the stain. Don't apply heat to resin stains before treatment. Cool or room temperature is best.",
+    "keyInsight": "Unlike other stain families, age matters less for resins — a 1-year-old tree sap stain might still be 100% solvent-removable. Resin is fundamentally different: as long as the right solvent hasn't been used yet, the stain responds. This is why resin stains can sometimes be removed after months, whereas other stains are permanent by then."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Using acetone on garment with acetate lining without checking first",
+      "whyItFails": "Acetate lining dissolves on contact with acetone. Even brief contact creates holes in the lining. This can be worse than the original stain — now the garment is structurally damaged.",
+      "instead": "ALWAYS check fabric composition first. Look at care label and fiber content of lining. If acetate is present anywhere, use amyl acetate or mineral spirits instead."
+    },
+    {
+      "mistake": "Assuming superglue stains are removable like other resin stains",
+      "whyItFails": "Superglue (cyanoacrylate) forms covalent bonds to fiber within seconds. Unlike nail polish or tree sap, there is NO solvent for superglue. Once bonded, it's permanent.",
+      "instead": "Be honest: 'Superglue is permanent — there's no solvent that will remove it. The bonded area will likely need to be accepted or the garment replaced.' Rarely, small superglue spots can be partially removed by mechanical action (rubbing, careful scraping) but full removal is unrealistic."
+    },
+    {
+      "mistake": "Applying wrong solvent and then assuming the stain is impossible",
+      "whyItFails": "Different resins need different solvents. Using acetone on lacquer (which needs amyl acetate or mineral spirits) might not work well. Using mineral spirits on nail polish (which needs acetone) is slow and ineffective. Spotters sometimes try the wrong solvent, it doesn't work, and they give up.",
+      "instead": "Diagnose the resin type first: nail polish → acetone. Tree sap → POG or mineral spirits. Paint → mineral spirits or turpentine. Adhesive → acetone or amyl acetate. Use the right solvent from the start."
+    },
+    {
+      "mistake": "Over-treating resin stains with extended solvent dwell, spreading the stain",
+      "whyItFails": "Solvents soften resin and make it more liquid/spreadable. If you keep applying solvent without blotting and removing the softened resin, you're just spreading it across more fiber.",
+      "instead": "Apply solvent, dwell briefly (2-5 minutes), then BLOT HARD and remove the softened resin. If resin remains, repeat the cycle. Don't just soak the stain in solvent — use a blot-dwell-blot cycle."
+    },
+    {
+      "mistake": "Thinking epoxy stains are removable",
+      "whyItFails": "Epoxy is two-part resin that forms irreversible covalent cross-linked networks. Once cured, there's no solvent that dissolves epoxy. It's designed to be permanent.",
+      "instead": "Epoxy stains are essentially permanent once cured. Fresh (uncured) epoxy might be partially removable, but aged epoxy is not. Be honest: 'Epoxy is meant to be permanent — there's no practical solvent for removing it.'"
+    }
+  ],
+  "dansTips": [
+    "Tree sap is the resin stain that has an actual solution. POG dissolves pine sap beautifully. Motor oil + tree sap on a car seat? That's POG's day job. Fresh tree sap? 2-3 minutes with POG and you're 90% done. Aged sap is a little stickier, but POG still works. This is the confidence stain in the resin family.",
+    "Nail polish on cotton? Acetone, 2 minutes, done. Nail polish on silk? Different story. Acetone can shift the silk dye. Use it very briefly (30-60 seconds) and test an edge first. This is where experienced spotters use amyl acetate instead — slower but safer.",
+    "The 'hot glue gun accident' — hot glue hardens to plastic-like stiffness. It's actually responsive to heat + solvent. Warm (not hot) the garment, then apply acetone. The heat softens the glue, the acetone dissolves it. You're working with heat and chemical together. This is the exception to 'no heat with resin' — here you're using heat to soften, then solvent to dissolve.",
+    "Paint type matters hugely. Latex paint (water-based, modern) doesn't respond well to traditional solvents — the water base is the key. Latex paint often needs to be mechanically removed (scraping, blotting) plus detergent rinse. Oil-based paint (pre-1980s, artist paints) dissolves in mineral spirits or turpentine. Know which paint you're dealing with.",
+    "Contact cement and spray adhesive are hardcore. These are designed to be permanent bonds. They're not like glue stick adhesive. Acetone might soften them slightly, but full removal is often unrealistic. This is another 'accept it or replace the garment' stain.",
+    "Lacquer and shellac respond beautifully to amyl acetate. They're faster than with mineral spirits, safer than with acetone. If you're working on varnished or lacquered wood — wait, wrong discipline. But fabric stains from lacquer exposure respond to amyl acetate. It's the Goldilocks solvent for lacquer stains.",
+    "The smell test for resin removal: once the smell of the solvent is gone (full evaporation after rinsing), check if the stain is gone. Sometimes the resin is lighter but still visible. This is where you decide: do another round of solvent, or accept that partial removal is the max. Resin removal is sometimes 'good enough, not perfect.'"
+  ],
+  "crossReferences": {
+    "confusedWith": ["combination (paint might have oil + pigment, requiring both solvent and color removal)", "particulate (some paint includes pigment particles mixed with binder)"],
+    "overlapsWith": ["oil (some adhesives contain oils, making them partially oil+partially resin)", "maintenance (accumulated wax, polish residue from furniture care)"],
+    "note": "Resin stains are unique because they're designed to be permanent — they're meant to bond durably. Removal is possible for many (not all) resins using the right solvent. The key diagnostic is identifying which resin you're dealing with. Some resins (superglue, epoxy) are intentionally permanent and cannot be dissolved. Others (tree sap, nail polish, most paint) have effective solvents. This is the family where 'permanent vs. removable' depends on the specific resin chemistry."
+  }
+}

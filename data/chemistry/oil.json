@@ -1,0 +1,127 @@
+{
+  "id": "oil",
+  "family": "Oil/Grease",
+  "icon": "🛢️",
+  "color": "#D2B48C",
+  "overview": {
+    "summary": "Hydrophobic molecules (triglycerides, esters, petroleum derivatives, silicones) that bond to fiber via van der Waals forces and mechanical entrapment. Oil does not dissolve in water — this is the defining characteristic. Fresh oil is removable with solvent-based treatment. Aged or oxidized oil (that has polymerized or cross-linked) becomes progressively harder to remove.",
+    "molecularStructure": "Oils are hydrophobic organic molecules: triglycerides (animal fats, vegetable oils) are three fatty acid chains on a glycerol backbone; petroleum oils are long hydrocarbon chains; silicones are silicon-oxygen polymers with organic side chains. All lack polar functional groups — they are lipophilic but not hydrophilic, making them insoluble in water.",
+    "commonStains": ["cooking oil", "butter", "grease", "makeup", "salad dressing", "motor oil", "sunscreen", "lip balm", "cosmetic oils", "silicone spray", "furniture polish"],
+    "prevalence": "Very common. Oil/grease stains are 10-15% of household spotting calls. Kitchen and automotive sources are primary. Polyester and synthetic garments are more prone to oil staining (oleophilic) than natural fibers."
+  },
+  "chemistry": {
+    "bondingMechanism": "Oil bonds to fiber via van der Waals forces (weak dispersion forces between nonpolar molecules and the lipophilic regions of fiber). Oil also mechanically embeds in fiber structure, especially at fiber surface and in any irregularities. The bonding is weak initially but becomes stronger as oil oxidizes and polymerizes — oxidized oil molecules form larger, more entrenched polymers.",
+    "removalPrinciple": "Oil is removed via solvent dissolution (organic solvents like VDS, POG, or mineral spirits dissolve oil) or emulsification (surfactants like NSD break oil into tiny droplets suspended in water). The solvent principle: 'like dissolves like' — nonpolar solvents dissolve nonpolar oil. Emulsification is secondary: surfactants reduce surface tension and allow mechanical agitation to break oil into micro-droplets that can be flushed with water.",
+    "pHSensitivity": "Oil has no pH sensitivity — it doesn't ionize and doesn't form ionic bonds. Alkaline or acidic pH doesn't directly affect oil. However, alkaline detergents are more effective at emulsifying oil (surfactants work better in alkaline conditions). Acidic conditions don't help oil removal. This is why alkaline detergents are standard for laundry — they work well on oil.",
+    "solubility": "Oil is insoluble in water (water contact angle >90°). Oil is highly soluble in nonpolar organic solvents (VDS, POG, mineral spirits, hexane, trichloroethylene). As oil oxidizes with age and air exposure, it becomes slightly more polar (forms ketones, alcohols) and slightly more water-soluble, but still fundamentally hydrophobic.",
+    "oxidationBehavior": "Oil oxidizes when exposed to air and heat, forming peroxides, ketones, and aldehydes — more polar and darker molecules. This oxidation makes oil 'sticky' and harder to remove (cross-linking). Heating oil (dryer, iron, heat exposure) accelerates oxidation dramatically. Very old, oxidized oil can form polymer networks that bond covalently to fiber, approaching the permanence of resin stains."
+  },
+  "keyAgents": [
+    {
+      "agent": "POG (Paint-Oil-Grease Remover, typically mineral spirits-based)",
+      "mechanism": "POG is a nonpolar organic solvent (mineral spirits = refined petroleum distillate, naphtha, or other C6-C12 hydrocarbons). It dissolves oil directly by substituting for the solvent surrounding oil molecules. As POG dissolves oil, the oil is suspended in the solvent and can be blotted or flushed away. Purely solvent-based removal, no water involved initially.",
+      "concentration": "Concentrated — use as-is. POG is typically 100% active ingredient.",
+      "dwellTime": "1-3 minutes. Shorter for fresh oil (2 minutes), longer for aged oil (3-5 minutes). Don't over-dwell — POG can damage acetate or spread the stain if not managed carefully.",
+      "bestFor": "Cooking oil, butter, grease, motor oil on ANY fiber. Most effective on fresh oil stains. Works on all fibers (cotton, wool, silk, synthetics). Essential for oil on delicate fibers where water-based treatment might spread the stain.",
+      "caution": "POG will dissolve acetate and damage some dyes. Always test on hidden area. POG is flammable — apply in ventilated area. Never use POG followed immediately by alkaline detergent (POG residue + harsh alkaline = potential color shift). Rinse with cool water first to remove POG, then use mild detergent."
+    },
+    {
+      "agent": "VDS (Volatile Dry Solvent, typically perchloroethylene or alternative)",
+      "mechanism": "VDS is a halogenated hydrocarbon solvent with high solvency for oil and low surface tension. It penetrates oil stains deeply, dissolving the oil while leaving water-sensitive fibers (like rayon) undamaged. VDS is the professional standard for dry cleaning because it's gentle on fibers while highly effective on oil. It evaporates quickly, leaving minimal residue.",
+      "concentration": "Concentrated — use as-is. VDS is 100% active solvent.",
+      "dwellTime": "2-5 minutes. VDS works slowly but steadily. Allow adequate time for solvent to penetrate oil stain fully.",
+      "bestFor": "Delicate fibers (silk, wool, rayon, acetate) with oil stains. Professional use. Aged oil stains when gentle treatment is needed. VDS is the most fiber-safe solvent for oil.",
+      "caution": "VDS is expensive and requires proper ventilation/equipment. Not for home use. Some alternative VDS (non-perc) are less volatile and require longer dwell. Never mix VDS with water-based treatments without proper rinsing between."
+    },
+    {
+      "agent": "NSD (Neutral Synthetic Detergent) + Water, as Emulsifier",
+      "mechanism": "After initial solvent treatment, NSD emulsifies residual oil. Surfactants in NSD have one end that's lipophilic (attracted to oil) and one end that's hydrophilic (attracted to water). Surfactants surround oil droplets, with the hydrophobic ends pointing inward and hydrophilic ends pointing outward. This creates a stable emulsion where tiny oil droplets are suspended in water and can be flushed away mechanically.",
+      "concentration": "0.1-0.2% NSD. 1-2 drops of concentrated NSD in 1 cup cool water.",
+      "dwellTime": "2-3 minutes with light agitation. NSD doesn't dissolve oil — it just suspends it, so mechanical action (blotting, rubbing, circulation) is needed.",
+      "bestFor": "Final rinsing after solvent treatment. Works best in cool water (warm water can spread oil). Essential for removing POG or VDS residue. All fibers, all oil types.",
+      "caution": "NSD alone cannot remove fresh oil stains — it only suspends oil that's already been broken apart. Always use solvent first (POG, VDS) to dissolve the oil, then NSD + water for final cleanup."
+    },
+    {
+      "agent": "Alkaline Detergent (pH 9-12, for laundry)",
+      "mechanism": "Alkaline detergents contain stronger surfactants and alkaline salts (sodium carbonate, sodium silicate) that enhance surfactant performance. At alkaline pH, surfactants are more effective at emulsifying oil, and alkaline conditions themselves help break down some oil types (saponification of triglycerides). However, alkaline detergents are NOT the first step for fresh oil — they're for rinse/laundry after solvent pretreatment.",
+      "concentration": "Standard laundry dose. Typically 1-2 oz per wash load.",
+      "dwellTime": "5-15 minutes in wash cycle. In water (warm preferred for oil removal, cool is acceptable for delicate fibers).",
+      "bestFor": "Laundry treatment after POG or VDS pretreatment. Finishing step for oil stains on washable garments. Effective on sturdy fibers (cotton, polyester, linen). Not for hand-spotting.",
+      "caution": "Never use alkaline detergent as first step on fresh oil — it will spread the stain deeper into fiber and make removal harder. Always use solvent first. Alkaline can yellow delicate fibers if over-dosed or water is hot."
+    },
+    {
+      "agent": "Baking Soda (Sodium Bicarbonate, as Absorbent)",
+      "mechanism": "Baking soda is a dry absorbent that soaks up excess oil and prevents it from spreading deeper into fiber. It's NOT a solvent or emulsifier — it simply absorbs oil mechanically, like a sponge. For fresh oil spills, baking soda prevents the stain from setting while you prepare solvent treatment. It buys time.",
+      "concentration": "Straight powder, undiluted.",
+      "dwellTime": "5-15 minutes. Apply dry baking soda immediately to fresh oil spill, let it sit and absorb excess oil, then brush away. Follow with solvent treatment.",
+      "bestFor": "Immediate first aid for fresh oil spills (butter, oil, grease). Prevents stain from spreading or setting while you gather solvent. Best on sturdy fibers (carpet, upholstery, cotton).",
+      "caution": "Baking soda CANNOT remove oil stains — it only absorbs excess oil. Must be followed by solvent treatment. Don't use baking soda on delicate fabrics (wool, silk) where mechanical brushing to remove powder will damage fibers."
+    },
+    {
+      "agent": "Heat (Temperature Increase)",
+      "mechanism": "Heat is NOT an agent for removal — it's a RISK FACTOR. Heat accelerates oil oxidation, causing oil to polymerize and cross-link to fiber. Hot water spreads oil deeper (increased surface diffusion). Dryer heat transforms fresh oil stains into oxidized, nearly permanent stains. This is why 'don't dry before treating' is universal advice for oil stains.",
+      "concentration": "N/A",
+      "dwellTime": "N/A",
+      "bestFor": "Avoid entirely. Heat worsens oil stains.",
+      "caution": "Never apply heat to oil stains. Never dry oil-stained garments before solvent pretreatment. Cold or cool water is essential for oil stain work. If heat has already been applied (machine dryer), the stain is much harder — assess with solvent first, but manage customer expectations (harder removal)."
+    }
+  ],
+  "fiberInteractions": {
+    "cotton": "Cotton is somewhat oleophilic (oil-attracting) due to hydrophobic regions in cellulose structure. Oil on cotton bonds moderately and can embed in fiber. Fresh oil on cotton is easily removed with POG or solvent. Aged oil on cotton becomes harder. Cotton is robust — all solvents are safe (POG, VDS, strong detergents). Heat is the main risk (accelerates oxidation).",
+    "silk": "Silk (fibroin protein) is very oleophilic. Oil adheres strongly to silk and is harder to remove than from cotton. Silk is delicate — avoid aggressive solvents. Use VDS (gentle, professional solvent) or cool POG with brief dwell. Never use heat on oil-silk — oxidation happens fast and fiber is delicate. Aged oil on silk is very difficult; may require professional wet cleaning.",
+    "wool": "Wool has natural lanolin (oil-like substance) which can interact with additional oil. Oil on wool is moderately easy to remove with gentle solvents (VDS, cool POG). Wool is sensitive to strong solvents and alkaline detergents. Use cool, gentle treatment. Lanolin also provides some stain resistance — wool is actually more resistant to oil than silk or cotton per unit mass, though traditionally woolens contain oils intentionally.",
+    "polyester": "Polyester is very oleophilic (synthetic oil-attracting fiber). Oil on polyester bonds strongly and embeds deeply. Fresh oil on polyester is moderately easy with POG or solvent. Aged oil on polyester is very stubborn (polyester holds onto oil tightly). This is why polyester garments show oil stains prominently — the fiber loves oil. Solvent treatment is essential.",
+    "nylon": "Nylon has some oleophilic character due to its polymer structure. Oil on nylon is moderately difficult to remove. POG works well. Nylon is robust to solvents. Aged oil on nylon can become very persistent (nylon is oleophilic). Alkaline detergents can be used but aren't as critical for nylon as for cotton.",
+    "leather": "Leather is very oleophilic (historically treated with oils and fats). New oil on leather can spread easily if not treated quickly. Use dry absorbent first (blotting, baking soda), then gentle solvent. Leather is sensitive to strong solvents and water — be conservative. Aged oil on leather becomes part of the leather's treatment layer. Professional leather care may be needed.",
+    "generalRule": "Oil removal requires solvent first (POG or VDS), never water. Fresh oil is 90% solvable. Aged or heat-set oil is 30-50% solvable depending on oxidation level. Delicate fibers (silk, wool, leather) need gentle solvents and brief dwell. Robust fibers (cotton, polyester) tolerate aggressive solvent treatment. Never heat oil stains before solvent treatment — heat makes them permanent."
+  },
+  "timeFactor": {
+    "fresh": "0-2 hours. Oil is still molecular form, loosely bound to fiber surface. Solvent treatment at this stage is nearly 100% effective. A fresh butter stain or cooking oil spill can be completely removed in 2-3 minutes with POG.",
+    "hours": "2-24 hours. Oil begins to oxidize (air exposure accelerates). The stain remains removable with solvent but dwell time increases. If heat exposure has occurred (wash cycle, accidental dryer), oxidation accelerates and removal becomes harder.",
+    "days": "1-7 days. Oil has oxidized to darker, stickier molecules. Removal still possible with solvent but requires longer dwell and often repeated treatments. Some oxidized oil may need alkaline detergent assistance to fully remove.",
+    "weeks": "7+ days. Oil has significantly oxidized and may have cross-linked to fiber. Removal is difficult and may require professional treatment with heated equipment and specialized solvents. This is where 'permanent' language enters conversation.",
+    "heatExposure": "Heat (dryer, iron, hot water, sunlight) causes rapid oil oxidation. A stain that was 100% removable in 30 minutes becomes 30-50% removable after dryer heat. This is THE most common scenario: customer doesn't realize garment has oil stain, puts it in dryer, heat oxidizes the oil, and now they come in with an oxidized oil stain that's much harder. Educate: oil stains must be treated BEFORE any heat.",
+    "keyInsight": "Fresh oil + no heat = easy removal in 2 minutes. Oil + heat = exponentially harder problem. Time matters less than heat. A week-old oil stain that never touched heat is easier to remove than a 1-hour-old oil stain that went through a dryer cycle."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Using water or detergent as the first step on fresh oil stains",
+      "whyItFails": "Water is immiscible with oil — it doesn't dissolve oil, it spreads it. Spraying water on fresh oil pushes the oil deeper into fiber and spreads it across a larger area. Detergent without solvent pretreatment is less effective (detergents emulsify but don't dissolve). This wastes the critical 2-hour window when simple solvent treatment would work perfectly.",
+      "instead": "Always start with solvent (POG, VDS, or other non-aqueous solvent). Let the solvent dissolve and lift the oil. THEN rinse with water + NSD to remove solvent and residual oil. Water comes second, not first."
+    },
+    {
+      "mistake": "Putting oil-stained garment in the dryer or applying heat before solvent treatment",
+      "whyItFails": "Heat accelerates oil oxidation exponentially. A stain that would take 2 minutes to remove fresh becomes a 30-minute or permanent problem after dryer heat. Heat + oil = polymerization and cross-linking. This is irreversible. Dryer heat is the single biggest reason oil stains become 'permanent' in customer minds.",
+      "instead": "Treat oil stains with solvent BEFORE any heat exposure. If heat has already been applied, assess the stain's oxidation state. Aged, heat-set oil may not be fully removable (manage expectations). Always educate customers: 'Don't dry or wash before we treat it.'"
+    },
+    {
+      "mistake": "Using alkaline detergent as the primary treatment for fresh oil (hand-spotting)",
+      "whyItFails": "Alkaline detergent is an emulsifier and laundry tool, not a solvent. It cannot dissolve the bulk of fresh oil — it only helps suspend tiny droplets. On a fresh oil stain, alkaline detergent will partially spread the stain and require excessive water rinsing. This is a laundry step, not a hand-spotting step.",
+      "instead": "For hand-spotting fresh oil: solvent first (POG, VDS). For laundry: solvent pretreatment, then alkaline detergent in wash. Never use alkaline as the first step."
+    },
+    {
+      "mistake": "Over-treating aged or oxidized oil with repeated solvent applications without allowing adequate evaporation between treatments",
+      "whyItFails": "Aged, oxidized oil is partially polymerized and partially cross-linked. Multiple solvent applications can soften this polymer network temporarily, but if solvents aren't allowed to fully evaporate between treatments, the stain can re-set as solvents evaporate and oxidized oil re-hardens. This creates a cycle of temporary removal followed by re-hardening.",
+      "instead": "For aged oil: single application of solvent with longer dwell (5-10 minutes), followed by mechanical agitation (blotting, rubbing), then full water rinse. If the stain persists, wait for full evaporation and let the garment dry before assessing whether additional treatment is needed. Multiple quick applications are less effective than one thorough application."
+    },
+    {
+      "mistake": "Thinking oil stains are impossible to remove from polyester",
+      "whyItFails": "Polyester is oleophilic and loves oil — oil embeds deeply. BUT polyester is also robust to solvents. The combination of oleophilia and polymer structure makes polyester oil stains STICKY (harder to remove than from cotton), but not impossible. Many operators under-treat polyester because they assume it's hopeless.",
+      "instead": "Polyester oil stains are solvable but require aggressive solvent treatment (longer dwell, potentially repeated applications). Use strong POG application and adequate dwell time. Polyester is tough — it tolerates strong solvents well. Don't assume the stain is permanent; assume it needs more aggressive chemistry."
+    }
+  ],
+  "dansTips": [
+    "Fresh oil on white polyester? That's going to show hard. Polyester loves oil like a sponge. But the good news is polyester tolerates POG beautifully. Give it a good solvent soak, 3-4 minutes minimum, and you'll pull 80-90% of even fresh butter or cooking oil out of polyester. The stain looks like it's set but solvent always works if you give it time.",
+    "The 'oil stain that wasn't there' story: customer swears the stain wasn't visible before the dryer. What happened is there was a light oil stain they didn't notice, the dryer heat oxidized it dark brown or black, and now it's obvious and allegedly permanent. But it's not — it's just oxidized. Solvent still works, but manage expectations. It'll take longer and might not be 100% complete.",
+    "Motor oil looks scary but it's easier than cooking oil because motor oil is more deeply refined and less polar. Motor oil dissolves cleanly in POG or mineral spirits. Cooking oil oxidizes faster and gets sticky. Same family, very different behavior depending on the oil source.",
+    "Silicone (furniture polish, water repellent spray) LOOKS like oil but it's different chemistry — silicon-oxygen polymers. Silicone is trickier. Standard POG might not fully dissolve silicone. You need a stronger solvent or specialist silicone remover. If someone says 'I used furniture polish on my jacket and now there's a dark stain,' that's silicone and needs different treatment than regular oil.",
+    "The blotting motion matters more than most spotters realize. When you're working with POG on an oil stain, don't rub side-to-side — that spreads it. Blot straight down, lift straight up. The goal is to let the solvent soak in and dissolve the oil, then lift it out via capillary action. Horizontal rubbing spreads the stain toward clean fiber.",
+    "Aged oil on silk is where I see operators give up too early. A 3-day-old butter stain on silk looks hopeless but VDS with a 5-minute soak will get 70% of it. These require patience and aggressive dwell time, but they're not permanent. Don't tell customers it's permanent — tell them it needs professional care and time.",
+    "The smell test for oil: fresh oil (butter, cooking oil) has a distinctive smell that persists after visual removal. If you remove the visual stain but the smell remains, there's still oil residue in the fiber — you need additional water rinse + detergent, or repeated solvent application. Smell is your confirmation that chemical removal is complete."
+  ],
+  "crossReferences": {
+    "confusedWith": ["combination (oil + tannin in BBQ sauce, oil + dye in cosmetics)", "resin (polymerized oil can look like adhesive)"],
+    "overlapsWith": ["particulate (oil often mixed with soil, soot, carbon)", "maintenance (accumulated oil buildup on clothes)"],
+    "note": "Oil stains are sometimes misidentified as permanent color loss or dye transfer. Pure oil stains have no dye component — they're neutral. If an oil stain appears to have color (dark brown, yellowish), that's oxidation (oil aging) or mixed contamination (oil + soil, oil + dye from a cosmetic product). Combination stains require sequential treatment: remove oil first, then address any color component. Pure oil stains should be colorless when removed (leaving only the water ring from rinsing)."
+  }
+}

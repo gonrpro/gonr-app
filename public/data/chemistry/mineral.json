@@ -1,0 +1,126 @@
+{
+  "id": "mineral",
+  "family": "Mineral/Metallic",
+  "icon": "⛏️",
+  "color": "#808080",
+  "overview": {
+    "summary": "Inorganic compounds that bond via oxidation or precipitation (rust, hard water deposits, concrete dust, mineral makeup, iron oxide, metallic compounds). Unlike organic stains, minerals don't respond to solvents or enzymes. They require acid chemistry to dissolve or chelate the mineral. This family is unique: it needs ACID, the opposite of most stain chemistry which needs alkaline agents.",
+    "molecularStructure": "Minerals are inorganic crystalline solids. Rust is iron oxide (Fe2O3, Fe3O4). Hard water deposits are calcium carbonate (CaCO3) or magnesium hydroxide (Mg(OH)2). Concrete dust is silicates and oxides. Mineral makeup is mica, iron oxide, talc. These are crystalline, non-organic solids — fundamentally different chemistry from stains that dissolve in solvents.",
+    "commonStains": ["rust (iron oxide)", "hard water marks", "limescale", "mineral deposits", "concrete dust", "clay mud", "metal stains (copper, iron)", "mineral makeup", "foundation", "aluminum oxide (from deodorant)", "sunscreen residue (zinc oxide)"],
+    "prevalence": "Common in certain regions/situations. Hard water stains and rust are frequent. Mineral makeup and deodorant stains are moderate. These vary by geography (hard water areas) and activities (outdoor work with concrete/clay)."
+  },
+  "chemistry": {
+    "bondingMechanism": "Minerals bond to fiber via multiple mechanisms: mechanical entrapment (dust embedded in fiber), ionic bonding (charged mineral particles attracted to charged fiber sites), and sometimes surface precipitation (hard water minerals accumulate as a coating). Unlike organic stains, minerals are solid particles or crystalline deposits, not dissolved molecules.",
+    "removalPrinciple": "Minerals require dissolution or chelation. Acids dissolve minerals by breaking down the crystal structure (e.g., acid + calcium carbonate → soluble calcium salt + CO2). Chelating agents (EDTA, citrate) wrap around mineral ions, making them soluble and mobile. This is the ONLY family where acid is the primary tool, not a secondary one.",
+    "pHSensitivity": "Minerals are pH-DEPENDENT. Acidic pH (pH <4) dissolves many minerals. Alkaline pH actually WORSENS some minerals (causes calcium carbonate precipitation). This is opposite to organic stains. Acids are essential; alkaline is harmful.",
+    "solubility": "Most minerals are insoluble in water at neutral pH. Minerals dissolve dramatically in acidic solutions: rust dissolves in weak acid (oxalic acid, citric acid, acetic acid). Hard water minerals dissolve in acid. This is why vinegar (acetic acid) is a popular mineral cleaner.",
+    "oxidationBehavior": "Most mineral stains are already oxidized (rust IS oxidized iron). Oxidizers don't help. In rare cases, reducing agents can partially reverse rust (sodium thiosulfate) but this is niche treatment."
+  },
+  "keyAgents": [
+    {
+      "agent": "Oxalic Acid (pH ~1-2, Rust Remover)",
+      "mechanism": "Oxalic acid is a dicarboxylic acid that specifically targets iron oxide (rust). It dissolves rust by converting iron oxide to soluble iron oxalate, which can be flushed away. Oxalic acid is highly specific for iron — it targets rust without significantly affecting other minerals or fiber.",
+      "concentration": "0.1-0.5% solution. Commercial rust remover products (like Zout Rust Remover) contain oxalic acid pre-formulated. Powdered oxalic acid can be dissolved in water.",
+      "dwellTime": "5-15 minutes depending on rust age and concentration. Oxalic acid works steadily. Fresh rust responds in 5 minutes; aged rust may need 15+ minutes.",
+      "bestFor": "Rust stains on any fiber. This is THE agent for rust removal. Most effective for iron oxide. Works on cotton, linen, wool, silk, synthetics.",
+      "caution": "Oxalic acid is mildly toxic — handle carefully, avoid ingestion. Wash hands after use. Can be irritating to skin. Test on colored fabric first (usually safe but rare dyes can shift). Always rinse thoroughly after — oxalic acid residue can cause yellowing if left on fiber."
+    },
+    {
+      "agent": "Citric Acid (pH ~2-3, Mild Acid)",
+      "mechanism": "Citric acid is a weak acid that dissolves minerals, especially calcium carbonate and some metallic compounds. Milder than oxalic acid, citric acid works more slowly but is gentler on fibers and dyes. Good alternative when oxalic acid is too harsh.",
+      "concentration": "1-5% solution. Powdered citric acid dissolved in water. Lemon juice (citric acid) is approximately 5-6%.",
+      "dwellTime": "10-30 minutes. Citric acid is slower than oxalic. Extended dwell is needed.",
+      "bestFor": "Hard water stains, limescale, mineral deposits. Gentler than oxalic acid. Good for delicate fibers or when fiber safety is priority. General mineral removal when speed is less critical.",
+      "caution": "Citric acid is safe to handle (food-grade). Slower than oxalic acid — requires patience. Always rinse thoroughly after."
+    },
+    {
+      "agent": "Acetic Acid / White Vinegar (pH ~2-3, Weak Acid)",
+      "mechanism": "Acetic acid (5% in white vinegar) dissolves minerals, especially calcium carbonate. Vinegar is the gentlest acid option, household-safe, and very accessible. Works similarly to citric acid but slightly slower.",
+      "concentration": "5% acetic acid (standard white vinegar), sometimes diluted 1:1 with water for very delicate fibers or dyes.",
+      "dwellTime": "15-30 minutes or longer. Vinegar is very mild — requires extended contact.",
+      "bestFor": "Hard water marks, mineral deposits on delicate fibers or when extreme gentleness is needed. Household first-aid treatment. Works on all fibers (completely safe).",
+      "caution": "Very slow but very safe. No toxicity concerns. Smell is strong but harmless. Always rinse thoroughly."
+    },
+    {
+      "agent": "EDTA / Chelating Agents (Sequestering Agents)",
+      "mechanism": "EDTA (ethylenediaminetetraacetic acid) and other chelating agents wrap around mineral ions (calcium, magnesium, iron), making them soluble in water without lowering pH. This is a less acidic approach to mineral removal — works by molecular entrapment rather than acid dissolution.",
+      "concentration": "Varies by product. Commercial water softeners and some laundry detergents contain EDTA (~0.5-2%).",
+      "dwellTime": "10-20 minutes.",
+      "bestFor": "Hard water stains and mineral deposits when you want to avoid strong acid. Used in laundry detergents specifically to prevent mineral interference.",
+      "caution": "EDTA is safe and widely used in food products and detergents. No special handling needed. Sometimes less effective than acid for severe mineral stains."
+    },
+    {
+      "agent": "Sodium Thiosulfate (Specialized, for some mineral stains)",
+      "mechanism": "Sodium thiosulfate is a reducing agent that can partially reverse some metallic oxidation, converting some minerals to more soluble forms. Less common than acid for mineral removal but specialized for specific mineral types (some copper or iron deposits).",
+      "concentration": "0.1-1% solution.",
+      "dwellTime": "10-15 minutes.",
+      "bestFor": "Specific metallic stains (copper oxide, some forms of rust) when acid has been insufficient. Professional use.",
+      "caution": "Less common treatment. Use when acid fails on specific mineral type."
+    },
+    {
+      "agent": "Brushing / Dry Removal (for mineral dust)",
+      "mechanism": "For minerals that are mechanically trapped (concrete dust, clay, talc-based makeup), mechanical removal via dry brushing can remove 50-80% of the stain before any chemical treatment. This is purely physical removal.",
+      "concentration": "N/A. Use soft brush or cloth.",
+      "dwellTime": "N/A. Brush until mineral dust stops coming off.",
+      "bestFor": "Mineral dust (concrete, clay, mineral makeup powder). First step for these stains — always try dry removal first.",
+      "caution": "Only works for dry mineral particles. Won't work if mineral has been wetted and embedded deeper. Use soft brush — aggressive brushing can damage delicate fibers."
+    }
+  ],
+  "fiberInteractions": {
+    "cotton": "Cotton cellulose has minimal chemical affinity for minerals — minerals stick mechanically. Acid treatment is safe on cotton (cotton is acid-resistant). Rust removal with oxalic acid on cotton is straightforward and safe.",
+    "silk": "Silk protein is sensitive to strong acids. Oxalic acid for extended dwell can damage silk. Use mild acids (citric acid, vinegar) for extended dwell, or brief oxalic acid (5 minutes maximum). Test first.",
+    "wool": "Wool protein is sensitive to strong acids (can degrade fiber). Oxalic acid should be brief (5 minutes maximum) on wool, then thoroughly rinsed. Citric acid or vinegar is safer for wool. Some mineral stains (rust in wool) are challenging due to fiber sensitivity.",
+    "polyester": "Polyester is very acid-resistant. Oxalic acid, citric acid, vinegar are all safe for any dwell time. Mineral stains on polyester are straightforward.",
+    "nylon": "Nylon protein is slightly sensitive to strong acid but more robust than wool or silk. Oxalic acid 5-10 minutes is acceptable. Test first on colored nylon.",
+    "leather": "Leather is protein-based and acid-sensitive. Avoid strong acids (oxalic) on leather. Use mild acids (vinegar, citric acid) and brief contact. Some minerals (rust, concrete dust) on leather are best handled with gentle brushing first, then mild acid if needed. Professional leather care recommended.",
+    "generalRule": "All fiber types tolerate weak acids (vinegar, citric acid). Only robust fibers (cotton, polyester) tolerate oxalic acid safely for extended dwell. Delicate fibers (silk, wool, leather) need mild acids and brief contact. Test first on all colored fibers."
+  },
+  "timeFactor": {
+    "fresh": "0-24 hours. Fresh mineral deposits are loosely bound and often mechanically trapped. Dry brushing or mild acid works quickly.",
+    "days": "1-7 days. Mineral deposits harden and crystallize more firmly. Acid still works but dwell time increases.",
+    "weeks": "7+ days. Mineral deposits have crystallized completely. Removal is slow and requires extended acid contact. Some very old hard water stains approach permanence.",
+    "aged": "Months or years. Some mineral deposits (especially limescale) become part of the fabric's surface if not treated. Very old mineral stains may be partially permanent, though acid is still the best option.",
+    "heatExposure": "Heat can dehydrate mineral deposits, making them harder and more crystalline. Hot water can accelerate mineral precipitation (hard water deposits form faster in hot water). Use cool water for mineral stain treatment when possible.",
+    "keyInsight": "Unlike organic stains, time doesn't dramatically worsen mineral stains. A 1-year-old rust stain is still removable with oxalic acid, same as a 1-week-old stain. Minerals don't oxidize or polymerize — they just crystallize. Age matters less; composition matters more."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Using alkaline detergent or alkaline pH treatment on hard water stains",
+      "whyItFails": "Alkaline pH actually PRECIPITATES more mineral (calcium carbonate is MORE insoluble in alkaline pH). Using the 'standard' alkaline detergent approach on mineral stains makes them worse, not better.",
+      "instead": "Always use acidic pH for mineral stains. Never alkaline. Acid is opposite of standard stain chemistry."
+    },
+    {
+      "mistake": "Using oxalic acid on delicate fibers (silk, wool) for extended dwell without testing first",
+      "whyItFails": "Oxalic acid can damage protein fibers if contact time is long. Silk and wool are sensitive to acid degradation. Extended oxalic acid dwell on silk/wool can cause fiber weakening or discoloration.",
+      "instead": "Test oxalic acid on hidden seam first. If safe, keep contact brief (5 minutes maximum) on delicate fibers. Rinse immediately after."
+    },
+    {
+      "mistake": "Assuming all mineral stains are rust and treating with oxalic acid when the mineral might be something else",
+      "whyItFails": "Hard water minerals, concrete dust, mineral makeup are different minerals with different acid sensitivities. Oxalic acid is specific for iron oxide (rust). It's overkill for hard water deposits and may not be effective for other minerals.",
+      "instead": "Diagnose the mineral type first. Rust (brown) → oxalic acid. Hard water deposits (white, crusty) → citric acid or vinegar. Clay/concrete dust (tan, mechanical) → brushing first, then mild acid."
+    },
+    {
+      "mistake": "Not rinsing thoroughly after acid mineral treatment, leaving acid residue",
+      "whyItFails": "Leftover acid can cause yellowing, fiber degradation, and continued mineral reactivity. Incomplete rinsing is a common operator mistake.",
+      "instead": "After acid treatment for mineral stains, rinse thoroughly with cool water multiple times (3-5 rinses minimum). Then use NSD + water for final clean rinse."
+    },
+    {
+      "mistake": "Thinking deodorant stains (aluminum oxide) are stains when they're actually mineral deposits + sweat residue (combination)",
+      "whyItFails": "Deodorant stains are part mineral (aluminum, zinc oxide), part protein (sweat). Treating only as mineral with acid is incomplete. There's a sweat component that needs enzyme.",
+      "instead": "Treat deodorant stains as combination: brush first to remove particulate, then enzyme for sweat component, then mild acid for mineral component."
+    }
+  ],
+  "dansTips": [
+    "Rust stains are mineral chemistry, not organic chemistry. Your brain wants to use the standard spotting arsenal — detergents, solvents, oxidizers. None of that matters for rust. Oxalic acid is the answer, and it works beautifully on any fiber. Cotton with rust? 5 minutes oxalic acid, done. This is one of the few problems where the solution is that straightforward.",
+    "Hard water stains are geography. You live in a soft-water area? Customers bring you hard-water-marked garments and expect a miracle. Those crusty white mineral deposits on the cuffs and collar? Vinegar for 15-20 minutes will get 80% of it. Not instant, but predictable. Set customer expectations: 'This is mineral deposit, not stain — it takes time, but it's removable.'",
+    "The deodorant stain mystery: yellowish or whitish buildup on armpits. Everyone wants to blame aluminum or weird chemistry. It's actually three things: deodorant mineral (aluminum oxide), sweat protein residue, and sometimes fabric discoloration from the interaction of the two. Single-treatment approaches (enzyme only, acid only) don't work. You need the sequence: brushing to remove powder, enzyme for the sweat, acid for the mineral. This teaches customers that some stains are layers.",
+    "Concrete dust on white cotton looks permanent. It's not — it's mechanical. Dry brush first, get 50% off. Then vinegar for the mineral residue. It's surprisingly treatable once you stop thinking 'this is a stain' and start thinking 'this is mineral dust plus mineral cement.'",
+    "Foundation makeup stains are mineral (mica, iron oxide, talc) mixed with oils and sometimes pigment. The mineral part responds to acid, the oil part responds to POG or solvent, the pigment might respond to color remover. Again, multi-step problem. Don't treat as single-family stain.",
+    "The rare scenario: rust stain on wool. Oxalic acid for 2 minutes max, immediate rinse. Even brief dwell can weaken wool fiber. But oxalic acid is so effective that those 2 minutes do the work. This is where you're managing competing risks: need acid to remove rust, but acid damages wool. Brief, aggressive application solves it."
+  ],
+  "crossReferences": {
+    "confusedWith": ["combination (deodorant is mineral + protein sweat)", "particulate (concrete dust is both mineral and mechanical soil)"],
+    "overlapsWith": ["maintenance (hard water deposits accumulate over repeated washes)", "oil (sometimes mineral stains include oil component, especially sunscreen with zinc oxide)"],
+    "note": "Mineral stains are the only family where acid is the primary tool and alkaline is harmful. This inverts the standard stain chemistry playbook. Recognition of mineral stains is critical: treating them with standard detergent/alkaline approaches makes them worse. Master spotters distinguish mineral stains immediately (they look different, don't respond to standard chemistry) and pivot to acid-based treatment. Some mineral stains include multiple components (deodorant, sunscreen, foundation) — these require sequential treatment addressing each component in turn."
+  }
+}

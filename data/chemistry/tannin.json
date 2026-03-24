@@ -1,0 +1,127 @@
+{
+  "id": "tannin",
+  "family": "Tannin",
+  "icon": "🍷",
+  "color": "#8B4513",
+  "overview": {
+    "summary": "Polyphenolic plant compounds that form hydrogen bonds with cellulose and protein fibers. Fresh tannin stains are solvable. Aged or heat-set tannin becomes dramatically harder. The family includes tea, coffee, red wine, fruit juice, beer, and grass — some of the most common household stains.",
+    "molecularStructure": "Tannins are polymeric phenolic compounds (flavonoids, catechins, gallic acid derivatives) with multiple hydroxyl groups. These hydroxyl groups form hydrogen bonds with cellulose hydroxyl groups and amide groups on protein fibers. Over time, tannins oxidize via air exposure and form darker, more complex polymers (condensation) that crosslink with fiber.",
+    "commonStains": ["red wine", "tea", "coffee", "beer", "fruit juice", "grass", "berries", "apple juice", "cider", "walnut", "iodine"],
+    "prevalence": "Extremely common. Tannin stains represent 15-20% of all household spotting calls. Professional operators encounter tannin almost daily."
+  },
+  "chemistry": {
+    "bondingMechanism": "Hydrogen bonding between tannin hydroxyl groups and fiber hydroxyl groups (cellulose) or amide groups (protein). In fresh stains (<2 hours), this is reversible. With age and oxidation, tannin polymerizes and forms covalent cross-links to fiber — making removal progressively harder.",
+    "removalPrinciple": "Break hydrogen bonds with targeted reducing agents (tannin formulas) or mild oxidizers. Fresh tannin is removed by polyphenol-specific formulas (pH 3-4 acidic spotters with chelating agents). Aged tannin requires stronger oxidation (H2O2, sodium perborate) but carries risk of fiber yellowing. The goal is selective oxidation: decolorize tannin without destroying fiber.",
+    "pHSensitivity": "Tannin stains are DARKENED by alkaline pH (>8). This is critical: ammonia, NaOH, or alkaline detergents cause fresh tannin to polymerize INSTANTLY and set permanently. Acidic pH (3-4) keeps tannin soluble and easier to remove. This is the single biggest mistake operators make — using alkaline agents on tannin.",
+    "solubility": "Fresh tannin is moderately soluble in water and acidic solutions. Solubility improves dramatically with acidic pH and mild reducing agents. Aged tannin (oxidized polymer) becomes insoluble in water; removal requires oxidizers or solvents to break crosslinks.",
+    "oxidationBehavior": "H2O2 and sodium perborate oxidize tannin polymers, breaking them into smaller, lighter molecules. This works well BUT can cause yellowing in some fibers (especially wool and silk). Oxidation should always follow mechanical removal and acidic treatment — never use it as a first step. The sequence: tannin formula → water rinse → oxidizer (if needed) → neutralize."
+  },
+  "keyAgents": [
+    {
+      "agent": "Tannin Formula (Acidic Spotter, pH 3-4)",
+      "mechanism": "Acidic spotters contain weak acids (acetic acid, citric acid, oxalic acid) plus chelating agents (EDTA, sodium citrate, sequestrants). The acid keeps tannin monomers separated (prevents polymerization), while chelators bind tannin molecules, making them more soluble and easier to flush. No oxidation — purely mechanical/chelation removal.",
+      "concentration": "Typically 1-2% acetic acid equivalent. Commercial formulas like Tannin Formula from spotting suppliers, or dilute white vinegar (5% acetic acid) in water (1:1 or 1:2 ratio).",
+      "dwellTime": "2-5 minutes for fresh stains. Aged stains may need 10-15 minutes. Don't over-dwell — acidic formulas can bleach some dyes over long contact.",
+      "bestFor": "Red wine, tea, coffee, fruit juice on ANY fiber. Most effective on fresh stains (<24 hours). Works on cotton, linen, wool, silk. Test on colored fabrics first for dye stability.",
+      "caution": "Acidic formulas can yellow wool and silk if left too long. Never use on acetate (acid degrades cellulose acetate). Test dye stability first. Dry-side application recommended to avoid water rings."
+    },
+    {
+      "agent": "Hydrogen Peroxide (H2O2, 3-6%)",
+      "mechanism": "Oxidizer that breaks tannin polymers through oxidation, splitting the conjugated double bonds that create color. H2O2 releases oxygen, which attacks the chromophoric groups in oxidized tannin. This is NOT a bleach in the traditional sense — it's selective oxidation of tannin color, not fiber dyes (though test is essential).",
+      "concentration": "3% (standard drugstore) for home/safe use. 6% professional strength for tougher stains. 12% and higher for extremely set stains but carries high fiber damage risk.",
+      "dwellTime": "5-10 minutes at 3%. Check frequently (every 2 minutes) to avoid over-bleaching. Once the stain is gone, flush immediately — continued oxidation will damage fiber.",
+      "bestFor": "Aged tannin (>24 hours) when acidic spotters fail. Red wine and berry stains that have oxidized darker. Works on cellulose fibers (cotton, linen, viscose) better than protein fibers.",
+      "caution": "HIGH RISK on wool, silk, and colored fabrics — oxidation can bleach the garment dye, not just the stain. Always test. Never use on acetate. Combining H2O2 with other oxidizers (bleach, perborate) is dangerous — creates uncontrolled oxidation. Never mix with ammonia (creates peroxide decomposition and heat)."
+    },
+    {
+      "agent": "Sodium Perborate (2-4%)",
+      "mechanism": "More stable oxidizer than H2O2 — releases oxygen slowly over time. Perborate breaks down into borate + H2O2, providing sustained oxidation. This gradual release makes it safer than H2O2 for delicate fibers, but also slower.",
+      "concentration": "2-4% solution. Mix perborate powder with water; the solution is most active at warm temperatures (not hot).",
+      "dwellTime": "15-30 minutes. Longer than H2O2 because oxidation is slower. Warmth (not heat) activates perborate — use 35-40°C water, not boiling.",
+      "bestFor": "Wool and silk where H2O2 is too aggressive. Aged tannin on delicate fibers. More controllable oxidation than H2O2.",
+      "caution": "Still carries bleaching risk on colored fabrics. Test first. Not for acetate. Slower than H2O2 — requires patience. Temperature must be warm, not hot (heat can damage fiber)."
+    },
+    {
+      "agent": "NSD (Neutral Synthetic Detergent)",
+      "mechanism": "Surfactants in NSD lower surface tension and suspend tannin particles, allowing mechanical flushing to remove them. NSD doesn't break tannin bonds but helps suspend and rinse out tannin that's been loosened by acidic treatment or oxidizers. It's a rinse and finishing agent, not a primary remover.",
+      "concentration": "0.1-0.2% (dilute). 1-2 drops of concentrated NSD in 1 cup cold water.",
+      "dwellTime": "2-3 minutes for final rinse and suspension. Don't over-dwell — NSD is gentle and quick.",
+      "bestFor": "Rinsing after tannin formula or oxidizer treatment. Final cleanup on all fiber types. Finishing step to ensure no acidic residue remains.",
+      "caution": "NSD alone will NOT remove tannin — use it as a finishing rinse after primary treatment. Avoid excessive detergent (causes rinsing difficulties). Don't use alkaline detergents — they set tannin permanently."
+    },
+    {
+      "agent": "Ammonia (2-5%)",
+      "mechanism": "DANGEROUS FOR TANNIN. Ammonia (alkaline pH ~11) instantly polymerizes fresh tannin and sets it permanently. The hydroxyl groups on tannin form covalent crosslinks with fiber in alkaline pH, making the stain impossible to remove. Ammonia + tannin = permanent stain.",
+      "concentration": "Never use. If already applied, immediate rinse with acidic solution may partially reverse polymerization.",
+      "dwellTime": "N/A — avoid entirely.",
+      "bestFor": "Nothing. NEVER use ammonia on tannin stains.",
+      "caution": "This is the #1 operator mistake on tannin stains. Ammonia from carpet cleaner, glass cleaner, or detergent will make tannin permanent. Educate customers: never pre-treat with household cleaners."
+    },
+    {
+      "agent": "Pomegranate Seed Extract (when available)",
+      "mechanism": "Advanced principle: pomegranate is naturally high in punicalagins (a type of tannin). Paradoxically, applying tannin to tannin can sometimes aid removal via competitive displacement — new tannin binds preferentially to fiber, displacing aged tannin. This is niche but used in some professional protocols.",
+      "concentration": "Not widely available; specialist ingredients only.",
+      "dwellTime": "10-15 minutes. Experimental — results vary.",
+      "bestFor": "Extremely aged tannin when conventional methods fail. Experimental protocol.",
+      "caution": "Don't try at home. This is a professional-level technique. Requires precise timing and understanding of substrate."
+    }
+  ],
+  "fiberInteractions": {
+    "cotton": "Cotton has abundant cellulose hydroxyl groups. Tannin bonds readily to cotton via hydrogen bonding. Fresh tannin on cotton is easily removed with acidic spotters. Aged tannin is harder but still responsive to oxidizers. Heat exposure dramatically worsens tannin on cotton — drying heat causes oxidation and partial covalent bonding, making removal harder.",
+    "silk": "Silk (fibroin protein) has amide groups that attract tannin. Tannin on silk is initially similar to cotton in removability BUT silk is sensitive to oxidizers (H2O2, perborate risk bleaching dye or yellowing fiber). Always use conservative oxidation on silk. Acidic spotters are safe. Never apply heat to tannin-stained silk — this causes irreversible crosslinking.",
+    "wool": "Wool (keratin protein) interacts with tannin similar to silk. Tannin on wool can be removed with acidic spotters safely. Oxidizers must be used cautiously (H2O2 at 3% max, very brief dwell). Wool is sensitive to perborate discoloration (can yellow). Mechanical tannin stains on wool (tea leaf residue) must be removed by dry brushing BEFORE wet treatment.",
+    "polyester": "Polyester (synthetic fiber) has minimal hydrogen-bonding sites. Tannin sticks to polyester mainly via mechanical entrapment (tannin stain particles lodged in the fiber). Initial removal is easier than natural fibers. Acidic spotters work well. Oxidizers are safer on polyester (less bleaching risk). Aged tannin on polyester can be stubborn if tannin has oxidized to a darker, more hydrophobic polymer.",
+    "nylon": "Nylon (synthetic polymer) has amide groups that attract tannin via hydrogen bonding (similar to protein fibers). Tannin-on-nylon requires acidic spotters initially. Oxidizers must be gentle (H2O2 3% with short dwell). Nylon dyes vary widely in bleaching sensitivity — always test. Heat is dangerous on nylon+tannin (heat oxidizes tannin AND can damage nylon's dye).",
+    "leather": "Leather (tanned protein) is historically treated with tannins itself. New tannin stains on leather are usually removable with acidic solutions or mild oxidizers. Aged tannin on leather can become part of the leather's color layer. Professional leather cleaning requires specialist solvents. Home care: acidic water rinse first, then leather conditioner.",
+    "generalRule": "Fresh tannin on ANY fiber is removable with acidic pH treatment (tannin formula, weak vinegar solution). Aged or heat-set tannin requires escalation to oxidizers (H2O2 or perborate), with fiber-specific care for delicates. Never use alkaline pH (ammonia, alkaline detergents) on tannin — this makes it permanent. Always test acidic solutions on colored fabrics first."
+  },
+  "timeFactor": {
+    "fresh": "0-2 hours. Tannin is still mostly monomer form, held to fiber via reversible hydrogen bonds. Acidic spotters work quickly and completely. Water alone may help in the first 15 minutes (before any oxidation). This is the critical window — tannin removal is nearly effortless if treated immediately.",
+    "hours": "2-24 hours. Tannin begins to oxidize (air exposure, oxidizing agents in the stain source). Monomers polymerize into larger, darker molecules. Acidic spotters still work but require longer dwell. If heat exposure occurs (dryer, iron, sunlight), oxidation accelerates dramatically. This is where 'set' stains develop.",
+    "days": "1-7 days. Tannin has significantly oxidized and may have formed partial covalent cross-links to fiber. Acidic spotters become less effective. H2O2 or perborate oxidizers are now necessary. The stain color deepens. Repeated exposure to light and heat worsens oxidation.",
+    "weeks": "7+ days and beyond. Tannin is nearly fully polymerized and cross-linked to fiber. Removal becomes very difficult. This is where operators must have honest conversations with customers: some very old tannin stains may be permanent or require professional wet cleaning equipment (moisture + chemistry + drying expertise). Never promise removal.",
+    "heatExposure": "Heat (dryer, iron, sunlight, hot water) dramatically accelerates tannin oxidation. A fresh red wine stain in a 40°C wash cycle will oxidize faster than one in cold water. Dryer heat causes rapid oxidation (tannin turns from red to brown to nearly black). This is why customers often say 'the stain wasn't there until after I washed it' — heat didn't create the stain, it revealed darker oxidized tannin. Once heat-set, tannin is much harder to remove.",
+    "keyInsight": "Time + heat = permanent stain. Treat tannin within 2 hours without heat exposure, and removal is nearly guaranteed. Every hour past that, without treatment, makes the stain progressively harder. Heat exposure (especially dryer) can permanently set tannin even when fresh. This is why 'don't put it in the dryer' is the universal advice for stained garments."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Using ammonia, alkaline detergent, or glass cleaner on tannin stains",
+      "whyItFails": "Alkaline pH (>8) causes tannin monomers to undergo rapid polymerization and form covalent cross-links with fiber. This happens within seconds in alkaline conditions. The stain becomes permanent immediately — no amount of later treatment can undo this. This is an irreversible chemical reaction.",
+      "instead": "Always use acidic pH (vinegar, tannin formula, citric acid). If alkaline has already been used, immediately rinse with acidic solution to try to reverse the polymerization (success depends on contact time — fast action helps)."
+    },
+    {
+      "mistake": "Putting tannin-stained garment in the dryer or applying heat before treatment",
+      "whyItFails": "Heat accelerates oxidation of tannin monomers into darker polymers and promotes covalent bonding to fiber. A stain that was easily removable in 30 minutes becomes very difficult after heat exposure. Heat also kills the reversibility of hydrogen bonding — once dried hot, the stain is more permanent.",
+      "instead": "Rinse immediately with cold water or acidic solution BEFORE any heat exposure. If heat has already been applied, assess whether the stain is still removable (acidic spotters first, then oxidizers if needed)."
+    },
+    {
+      "mistake": "Over-applying oxidizers (H2O2, bleach) to remove aged tannin, especially on wool, silk, or colored fabrics",
+      "whyItFails": "While oxidizers do break tannin's chromophoric bonds, they also bleach fiber dyes and can yellow wool/silk. Overcorrecting for an old tannin stain by aggressive oxidation can destroy the garment's color or sheen. The cure becomes worse than the disease.",
+      "instead": "Use gentle oxidation (3% H2O2, brief dwell, test first). If this doesn't work, escalate to professional wet cleaning. For delicate fibers, try perborate (slower, more controllable) instead of H2O2. Educate customer: some aged tannin stains cannot be fully removed without professional equipment."
+    },
+    {
+      "mistake": "Using water or detergent as the first step on fresh tannin, without acidic treatment",
+      "whyItFails": "Water alone doesn't break tannin's hydrogen bonds effectively. Detergent is designed to suspend particles, not remove tannin polymers. Water may actually spread the stain or push it deeper into fiber. This wastes the critical 2-hour window when acidic treatment would work perfectly.",
+      "instead": "Dry-blot first to remove excess liquid. Then apply acidic spotter (tannin formula or dilute vinegar) directly to the stain. Dwell 2-5 minutes, then flush with water + NSD."
+    },
+    {
+      "mistake": "Assuming red wine on white fabric is permanently bleached",
+      "whyItFails": "A deep red stain on white cotton IS removable — the red color is tannin, not permanent dye transfer or bleaching. Operators (and customers) often assume red wine damage is permanent, when it's actually a straightforward tannin removal.",
+      "instead": "Treat immediately with acidic spotter. Fresh red wine on cotton or linen is one of the easiest stain removals — 2-5 minutes and it's gone."
+    }
+  ],
+  "dansTips": [
+    "The smell is your diagnostic tool. Fresh tannin (tea, wine, coffee) has a recognizable odor that helps you identify the stain source even if the customer doesn't remember. Once the stain is removed, the smell should mostly disappear. If smell lingers after spotting, there's still tannin residue in the fiber.",
+    "Tannin on white cotton is the spotter's easiest money. If you can treat it within 2 hours without heat, acidic spotter + water rinse = done. This is the stain to reassure nervous customers about. 'This? Two minutes. Guaranteed.' Red wine on white is actually easier than red wine on colored fabric because there's no bleaching risk.",
+    "The 'disappearing stain' happens because customers see the wet stain, treat it with something (often wrong), let it dry, and then the tannin oxidizes darker in the heat. They come back saying 'It wasn't even visible but it's dark brown now.' The stain was always there — heat just revealed the oxidized polymer. Educate customers: don't heat-dry stained clothes before professional treatment.",
+    "Grass stains look like tannin but they're mixed — tannin + chlorophyll (green dye) + mechanical soil. Treat the tannin layer first (acidic spotter), then deal with the green color separately if it remains. Many grass stains come out with just tannin treatment because the green bleaches away with simple mechanical action.",
+    "Iodine stains are tannin's tricky cousin. They look dark and complicated but iodine is actually reactive to reducing agents. If regular tannin treatment doesn't work on what looks like a dark stain, think iodine — use sodium thiosulfate or professional tannin formula designed for iodine. This is a spotter conversation: 'If acidic treatment doesn't work, we're probably dealing with iodine, which needs different chemistry.'",
+    "Temperature matters more than most spotters realize. Acidic spotter works faster at cool temperature (15-25°C) than at room temp. Oxidizers (H2O2, perborate) work faster warm but are also more aggressive. For a garment you want to be careful with, use cool acidic treatment. For a stain you want to attack aggressively, use warm (not hot) oxidizer.",
+    "The one stain you cannot fix is tannin that's been treated with ammonia. This is permanent the moment alkalinity touches it. You'll see this occasionally: customer pre-treated with Windex or ammonia-based cleaner, then came to you thinking professionals can fix anything. Be honest: that sequence created a permanent stain. Use this to educate (politely, without blame) about when to call professionals."
+  ],
+  "crossReferences": {
+    "confusedWith": ["dye", "combination"],
+    "overlapsWith": ["protein (when tea-stained wool)", "chemical-damage (if bleached during oxidation treatment)"],
+    "note": "Tannin is often confused with dye transfer (customer sees red wine stain and assumes dye moved to the fiber). Tannin is a chemical stain; dye transfer is mechanical. Protein fibers with fresh tannin sometimes look like protein stains (especially if blood was initially suspected). Test with acidic spotter first — if it's tannin, it disappears; if it's blood, acidic treatment won't fully clear it (needs enzyme/oxidizer instead). Combination stains (e.g., BBQ sauce = oil + tannin + dye) require multi-step treatment in the right order."
+  }
+}

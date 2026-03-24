@@ -1,0 +1,135 @@
+{
+  "id": "mildew",
+  "family": "Mildew/Biological",
+  "icon": "🍄",
+  "color": "#2F4F4F",
+  "overview": {
+    "summary": "Living organisms (fungi, bacteria) that colonize fabric and produce pigments, root structures (hyphae), and organic compounds. Mildew and mold are living stains, not chemical stains. Removal requires two steps: kill the organism (prevent regrowth), then remove the pigment and root structures (the visible stain). Treating only the pigment without killing the organism means the stain returns within weeks.",
+    "molecularStructure": "Mildew/mold are fungal organisms with filamentous hyphae (root structures) that penetrate fiber and extract nutrients. As fungi grow, they produce pigments (melanin in black mold, other pigments in colored molds) and decomposition byproducts. The visible 'stain' is part pigment, part dead fungal material, part fiber discoloration from enzymatic degradation by fungal acids.",
+    "commonStains": ["mildew (fuzzy white-gray, musty smell)", "mold (usually black or colored, visible growth)", "mildew on shower items", "basement/moisture-exposed garments", "smelly garments from wet storage", "algae (greenish, on outdoor items)", "bacterial growth (from sweat/moisture)"],
+    "prevalence": "Moderate to high depending on climate/storage. In humid regions, mildew is 5-10% of spotting calls. Storage in damp conditions frequently produces mildew. Seasonal issue (spring, fall in humid climates)."
+  },
+  "chemistry": {
+    "bondingMechanism": "Fungal hyphae physically penetrate fiber and extract cellulose/protein as nutrients (enzymatic degradation). Pigments produced by mold are organic molecules that bond to fiber. Unlike chemical stains, mold is a living system that actively remodels the fiber structure as it grows. The stain is not a simple surface deposit but a system of organism + pigment + degraded fiber.",
+    "removalPrinciple": "Dual approach: 1) Kill the organism (fungicide, oxidizer, or heat) to stop growth and prevent recurrence. 2) Remove the stain (pigment + dead organism + fiber degradation) using pigment removal chemistry (oxidizers, bleach, enzyme to digest fungal matter). Skipping the kill step means the stain returns.",
+    "pHSensitivity": "Fungi are pH-sensitive. Most mildew prefers slightly acidic to neutral pH (5.0-7.0). Alkaline pH (>8) inhibits fungal growth. However, pH alone doesn't kill established mold — biocides are needed.",
+    "solubility": "Fungal pigments are somewhat soluble in alkaline pH (making alkaline detergent helpful for removal). Fungal matter is also susceptible to oxidation (H2O2, bleach break down fungal cell walls). Enzymatic digestion (enzyme cleaners designed for organic matter) can degrade dead fungal material.",
+    "oxidationBehavior": "Oxidizers (H2O2, bleach, sodium perborate) are very effective against mold. Oxidation breaks down fungal cell walls and the pigments. This is the primary kill + stain removal method for mildew."
+  },
+  "keyAgents": [
+    {
+      "agent": "Sodium Hypochlorite (Bleach, 3-5% solution, for sturdy fibers only)",
+      "mechanism": "Bleach is a powerful oxidizer and fungicide. It kills mold/mildew on contact (oxidizes cell walls) and removes pigment (breaks down melanin and other mold pigments). Bleach is THE most effective agent for mildew but is only safe on white cotton and some synthetics — it bleaches colored fabrics.",
+      "concentration": "Household bleach (3-5% sodium hypochlorite), often diluted further for spotting (1:1 with water).",
+      "dwellTime": "5-10 minutes. Bleach works fast on mildew. Over-dwell risks fabric damage.",
+      "bestFor": "Mildew/mold on white cotton, white linen, some white synthetics. Most effective stain + organism removal method.",
+      "caution": "NEVER use on colored fabrics, silk, wool, or anything besides sturdy white fibers. Bleach will remove garment color, not just stain. Never mix with other chemicals (creates toxic chlorine gas). Wear gloves and work in ventilated area."
+    },
+    {
+      "agent": "Hydrogen Peroxide (3-6%, gentler oxidizer)",
+      "mechanism": "H2O2 kills mold and removes pigment via oxidation but is gentler than bleach. H2O2 is safer on colored fabrics (though still risky). Works on both organism and pigment.",
+      "concentration": "3-6% (3% standard, 6% professional strength).",
+      "dwellTime": "10-20 minutes.",
+      "bestFor": "Mildew on light-colored fabrics where bleach is too aggressive. Colored synthetics with mildew stains.",
+      "caution": "Still carries bleaching risk on some dyes. Test first. Slower than bleach but safer."
+    },
+    {
+      "agent": "Sodium Perborate (oxidizer, safer on delicates)",
+      "mechanism": "Perborate releases oxygen slowly, providing sustained antimold oxidation and pigment breaking. Safer and slower than H2O2.",
+      "concentration": "2-4% solution.",
+      "dwellTime": "20-30 minutes. Warm (not hot) water activates perborate.",
+      "bestFor": "Mildew on delicate colored fibers (some wool, silk, synthetics) where faster oxidizers are too risky.",
+      "caution": "Still carries bleaching risk. Test first. Much slower than bleach or H2O2 — requires patience."
+    },
+    {
+      "agent": "Enzyme-Based Cleaner (for dead mold pigment removal)",
+      "mechanism": "Enzymes (proteases, lipases, amylases) break down organic matter including fungal cell walls, pigments, and decomposition products. These don't kill living mold but clean up dead fungal matter and pigment residue.",
+      "concentration": "Follow product instructions.",
+      "dwellTime": "15-30 minutes.",
+      "bestFor": "Removal of mildew stain (pigment + dead matter) AFTER organism has been killed with biocide. Also for mildew prevention in laundry (enzymes break down proteins that feed mold).",
+      "caution": "Use AFTER kill step, not instead of it. Don't expect enzymes alone to kill living mold."
+    },
+    {
+      "agent": "Alkaline Detergent (as supplementary treatment)",
+      "mechanism": "Alkaline pH inhibits mold growth and helps solubilize mold pigments. Alkaline detergent is secondary treatment, not primary — it's not a biocide by itself.",
+      "concentration": "Standard laundry dose, pH 9-10.",
+      "dwellTime": "5-10 minutes in wash.",
+      "bestFor": "Laundry treatment after biocide + enzyme steps. Helps prevent mold recurrence and finishes stain removal.",
+      "caution": "Not effective as primary mold killer. Use as final rinse step after more aggressive treatment."
+    },
+    {
+      "agent": "Heat (High Temperature, as Kill Step)",
+      "mechanism": "High heat (>65°C / 150°F for 15+ minutes) kills most mold. This is the chemical-free biocide approach.",
+      "concentration": "N/A. Temperature.",
+      "dwellTime": "15-30 minutes at high temperature.",
+      "bestFor": "Mildew on heat-resistant fibers (cotton, linen, polyester). Kill step without chemicals.",
+      "caution": "Not for delicate fibers (silk, wool, some synthetics). After heat kill, stain (pigment) still requires oxidizer or enzyme removal. Heat kills organism but doesn't remove the stain."
+    },
+    {
+      "agent": "Vinegar (Acetic Acid, mild antimold)",
+      "mechanism": "Acidic pH (vinegar ~5%) inhibits mold growth and can partially kill some mold species. Vinegar is a mild biocide — not as strong as bleach but safer.",
+      "concentration": "5% white vinegar, sometimes diluted 1:1.",
+      "dwellTime": "15-30 minutes.",
+      "bestFor": "Mild mildew prevention. Preventative treatment (storage) or light mildew where killing is needed but bleach is too aggressive. Also good for smell removal (absorbs musty odor).",
+      "caution": "Slower and less effective than bleach. Won't fully kill mold on heavily molded garments. Good for prevention, less effective for treatment."
+    }
+  ],
+  "fiberInteractions": {
+    "cotton": "Cotton is robust to bleach and all oxidizers. For white cotton with mildew, bleach is the standard treatment. Cotton is fully bleach-safe.",
+    "silk": "Silk is very sensitive to bleach, H2O2, and perborate (risk of yellowing, weakening). For mildew on silk, use mild approaches: vinegar rinse, enzymes in cool water, or mild antimold treatment. Professional care recommended.",
+    "wool": "Wool is sensitive to oxidizers and alkaline pH (both can damage fiber). For mildew on wool, use gentle heat (55°C) + enzyme in cool water, or very mild oxidizer briefly. Professional care recommended.",
+    "polyester": "Polyester is robust to most oxidizers and heat. Bleach or H2O2 on white or light polyester works well. Colored polyester tolerate H2O2 or perborate better than bleach.",
+    "nylon": "Nylon is moderately sensitive to strong oxidizers. H2O2 is safer than bleach. Brief exposure to bleach (if white nylon) is acceptable.",
+    "leather": "Leather is very sensitive to all biocides. Professional leather cleaning recommended for mildew.",
+    "generalRule": "White robust fibers (cotton, linen, white synthetics) can use bleach. Colored or delicate fibers require milder approaches (H2O2, perborate, enzyme, vinegar, gentle heat). Professional care is recommended for mildew on silk, wool, leather."
+  },
+  "timeFactor": {
+    "fresh": "0-2 weeks. Mildew is in early growth phase. Organism is active but not deeply entrenched. Bleach or H2O2 kills effectively and removes stain completely.",
+    "weeks": "2-8 weeks. Mildew has established colonies with deep hyphae. Killing is still effective but stain removal becomes harder (pigment is more embedded). May require repeated treatment.",
+    "months": "8+ weeks. Mildew is deeply entrenched with extensive hyphae penetrating fiber. Killing is still possible but stain removal may be partial or impossible (fiber has been degraded). Some mildew stains become permanent.",
+    "heatExposure": "Heat accelerates mold growth if garment is stored warm + damp. Heat alone (55°C+) kills mold but must be sustained. Intermittent heat doesn't kill. Mildew-prone garments stored in cool, dry places are less likely to develop mold.",
+    "storageConditions": "Mildew growth is directly related to humidity and moisture. Garments stored damp or in humid environments develop mildew quickly (days to weeks). Stored dry and cool, mildew is rare even over months.",
+    "keyInsight": "Unlike chemical stains, mildew is a living process. Fresh mildew is easily killed and cleaned. Aged mildew (weeks old) has penetrated deeper and is harder to treat. Prevention (dry storage, ventilation) is far more effective than treatment. For already-molded garments, speed of treatment matters: treat within days if possible. Waiting months makes stain removal harder."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Removing mildew stain pigment without killing the organism, then storing the garment without ventilation",
+      "whyItFails": "Removing the visible stain without killing mold is pointless. The organism is still alive. The garment is recontaminated within weeks when stored damp or in humid conditions. The stain returns.",
+      "instead": "Always: 1) Kill the organism (bleach, H2O2, heat, or vinegar). 2) Remove the stain (oxidizer or enzyme). 3) DRY COMPLETELY and store in cool, dry, ventilated location. Step 3 is critical."
+    },
+    {
+      "mistake": "Using bleach on colored fabrics with mildew, destroying the garment dye",
+      "whyItFails": "Bleach removes both mold pigment AND garment dye. Colored mildewed garments require alternative treatment.",
+      "instead": "For colored fabrics: use H2O2 (gentler), perborate, enzyme, or vinegar. Or recommend professional cleaning. Never bleach colored fabrics."
+    },
+    {
+      "mistake": "Assuming the musty smell is just a smell and not a mold problem",
+      "whyItFails": "Musty smell = mold is actively growing. The odor is from mold volatile compounds and degradation products. If you smell mold, the organism is present and should be killed.",
+      "instead": "If musty smell is present, treat as mold: kill the organism with biocide, then remove stain. The smell may persist briefly even after killing mold (residual odor molecules), but should fade with drying."
+    },
+    {
+      "mistake": "Spot-cleaning a heavily molded garment and expecting full recovery",
+      "whyItFails": "If mildew has been present for weeks, the hyphae have penetrated deeply into fiber, and the fiber has been enzymatically degraded. The stain may not be fully removable.",
+      "instead": "For heavily molded garments, set expectations: 'This has been molded for a while. I can remove 70-80% of the stain and kill the organism, but complete removal may not be possible.' Some old mildew stains are more permanent than treatable."
+    },
+    {
+      "mistake": "Mixing mildew treatment chemicals (e.g., bleach + vinegar, or bleach + enzyme activator)",
+      "whyItFails": "Mixing oxidizers with other chemicals can create dangerous reactions or toxic fumes. Bleach + ammonia = toxic chlorine gas. Bleach + acid = chlorine release.",
+      "instead": "Use single-agent treatments in sequence: kill (bleach or vinegar) → rinse thoroughly → enzyme or oxidizer if needed → final rinse. Never mix."
+    }
+  ],
+  "dansTips": [
+    "The musty garment in the client's closet: 'I opened the closet and smelled mildew but I don't see any stain.' The visible mildew hasn't formed yet but the organism is definitely present. Early biocide treatment (vinegar or mild H2O2) can prevent visible mold from developing. This is prevention in action — treat the smell early, avoid the stain later.",
+    "Black mold on a cotton bathroom towel looks permanent but bleach kills it dead. That dark black pigment is melanin from the mold. Bleach in 5 minutes will oxidize that pigment to tan or light gray — not always 100% invisible but dramatically better. For white towels, bleach is your miracle.",
+    "Mildew on silk or wool is a professional-referral situation. These fibers are too delicate for bleach, and H2O2 risks yellowing. You're looking at professional dry cleaning or acceptance that the stain remains. Don't over-promise on delicate fabrics.",
+    "The storage-driven mildew stain: customer's winter coat, packed away in a humid basement, comes out spring-spotted with gray-brown mildew. This is so common in humid climates. Kill the organism first (vinegar rinse, or gentle H2O2 for light-colored coat), then enzyme to remove remaining pigment. Then educate: 'Store in cool, dry, ventilated space. Use cedar or silica. Never pack away damp.'",
+    "The basement bathroom towel that smells worse than it looks: mildew has been growing but pigment hasn't darkened yet. The smell is the volatile compounds from active growth. This is actually EASIER to treat than old mildew because the organism is actively metabolizing — bleach kills it fast. Once it's dead, the smell fades over 24-48 hours.",
+    "Enzyme cleaners marketed as 'mold removers' — they clean up the stain but they don't kill the organism. Read the label. If it says 'enzyme' but not 'antimold' or 'biocide,' it's a stain remover, not a kill agent. Use it AFTER you've killed the mold, not instead of killing it.",
+    "The question to ask customers: 'Where was this stored? Damp closet? Basement?' If damp, mildew is likely still growing (even if not visible). This changes your recommendation: kill step is non-negotiable. You can't just spot-clean this — you need to kill the organism or it comes back."
+  ],
+  "crossReferences": {
+    "confusedWith": ["tannin (very old mildew stains can be dark brown, resembling tannin)", "dye (mildew pigments can look like color transfer)"],
+    "overlapsWith": ["odor (mildew stains are almost always accompanied by musty odor)", "combination (mildewed garments often have mold + stain residue + odor as multi-component problem)"],
+    "note": "Mildew is unique among stain families: it's a living problem, not a chemical problem. This is why the approach is fundamentally different. You're not just removing a stain — you're killing an organism and then removing the stain it left. This dual approach (kill + clean) is critical. Removing stain without killing mold guarantees recurrence. Many spotters treat mildew purely as a chemical stain (oxidizer for pigment) and miss the biological component entirely."
+  }
+}

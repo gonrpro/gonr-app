@@ -1,0 +1,177 @@
+{
+  "id": "odor",
+  "family": "Odor",
+  "icon": "👃",
+  "color": "#FFB6C1",
+  "overview": {
+    "summary": "Volatile organic compounds (VOCs) trapped in fiber that create smell. Unlike visual stains, odor is olfactory — detected by nose, not eye. Sources vary: biological (sweat, bacterial growth, urine, mildew), chemical (smoke, perfume, solvents, off-gassing), or food-based (cooking odors, fish, curry). Some odors accompany visible stains (sweat stains), while others exist without visible damage (smoke smell with no visible soot). Treatment varies by source: odor-removal requires different chemistry than stain removal.",
+    "molecularStructure": "Odor compounds are volatile organic molecules (VOCs) that evaporate readily and reach the nasal olfactory receptors. Sweat odor is from bacterial metabolism of sweat proteins (isovaleric acid, propionic acid). Smoke odor is from polycyclic aromatic hydrocarbons (PAHs) and tar residue. Mildew odor is from microbial volatiles. Pet odor is from uric acid and bacterial breakdown. These are organic molecules, many of which are water-soluble or lipophilic, depending on source.",
+    "commonStains": ["sweat/perspiration odor", "smoke/cigarette smell", "pet odor (urine, dog smell)", "mildew/musty smell", "body odor", "fish/food cooking odor", "perfume/fragrance (over-application)", "smoke from fires or burning", "chemical smell (off-gassing from new fabrics)", "urine (baby, elderly, pet)"],
+    "prevalence": "Very common. Odor complaints are 10-15% of spotting/cleaning calls. Often accompanies visible stains but sometimes occurs without visible staining. Regional variation (smoke-affected garments more common near fires or in smoky areas)."
+  },
+  "chemistry": {
+    "bondingMechanism": "Odor compounds are physically trapped in fiber via absorption (molecules dissolve into the fiber polymer) and adsorption (molecules attach to fiber surface). Unlike chemical stains, odor molecules can be small and mobile. Some odor compounds are water-soluble (sweat volatiles), some are lipophilic (smoke PAHs), some are volatile (perfume). The bonding is weak and reversible compared to stains — most odor is mobile and can be removed with proper chemistry.",
+    "removalPrinciple": "Odor removal differs from stain removal. The goal is to VOLATILIZE and REMOVE odor molecules from fiber (via airing, heat, or absorption), not to chemically transform them (like stain removal). Methods include: airing (allowing VOCs to evaporate), absorption (activated charcoal, baking soda), oxidation (ozone, oxidizers to degrade odor molecules), or enzyme digestion (for biological odors from bacterial metabolism).",
+    "pHSensitivity": "Many odor compounds are pH-sensitive. Sweat odor (fatty acids, amines) can be ionized and made more mobile/removable by alkaline pH. Urine odor (uric acid) is pH-sensitive. However, pH alone doesn't remove odor — it aids removal by making odor molecules more water-soluble.",
+    "solubility": "Many odor compounds are water-soluble or become water-soluble at certain pH. Some (smoke PAHs) are lipophilic. This varied solubility means multiple removal strategies may be needed.",
+    "oxidationBehavior": "Oxidizers (H2O2, bleach, ozone) can chemically degrade some odor compounds, breaking their structure and removing smell. Ozone is particularly effective at oxidizing smoke odors and some biological odors."
+  },
+  "keyAgents": [
+    {
+      "agent": "Activated Charcoal or Baking Soda (Absorption-Based)",
+      "mechanism": "Activated charcoal and baking soda are porous adsorbents that physically absorb odor molecules. Charcoal is particularly effective for lipophilic odors (smoke). Baking soda is effective for acidic odors (sweat, urine) via acid-base neutralization.",
+      "concentration": "Straight powders (undiluted). Sprinkle on dry garment.",
+      "dwellTime": "30 minutes to 24 hours. Longer dwell is more effective. Overnight sitting in baking soda is common household remedy.",
+      "bestFor": "Sweat odor, general body odor, mild smoke smell (baking soda). Smoke odor, perfume residue (charcoal). Safe on all fibers. First-line treatment for odor.",
+      "caution": "These methods work for some odors better than others. Very strong or deeply embedded odors (heavy smoke, pet urine) may not be fully removed by absorption alone."
+    },
+    {
+      "agent": "Vinegar Rinse (Acidic pH + Volatilization)",
+      "mechanism": "Acidic vinegar (acetic acid) can ionize some odor compounds (amines from sweat, bases from urine) and make them more volatile. Also, the acidity itself masks or neutralizes some alkaline odors.",
+      "concentration": "1-2 cups vinegar per rinse cycle, or 1:1 dilution with water for soaking.",
+      "dwellTime": "15-30 minutes soaking.",
+      "bestFor": "Sweat odor, body odor, urine odor. Safe on most fibers.",
+      "caution": "Vinegar smell is strong initially but fades as it dries. Not effective on all odor types (less effective on smoke). Some people find vinegar smell unpleasant initially."
+    },
+    {
+      "agent": "Enzymatic Detergent (for Biological Odors)",
+      "mechanism": "Enzymes break down the organic matter that bacteria feed on (proteins, fats, sweat compounds). By removing the substrate, enzymes eliminate the source of odor production. This is particularly effective for sweat and bacterial growth odors.",
+      "concentration": "Follow product instructions.",
+      "dwellTime": "15-30 minutes in wash cycle.",
+      "bestFor": "Sweat odor, body odor, mildew odor, bacterial growth smell. Whole-garment laundry treatment.",
+      "caution": "Requires proper enzyme activation (pH, temperature per product). Removes staining odor sources but doesn't remove chemically absorbed smoke odors."
+    },
+    {
+      "agent": "Ozone Treatment (Professional-Grade Oxidizer)",
+      "mechanism": "Ozone (O3) is a powerful oxidizer that breaks down odor molecules, including smoke PAHs, perfume, and other complex organics. Ozone gas oxidizes volatilized odor compounds. This is professional treatment, not home remedy.",
+      "concentration": "Professional ozone generators produce 1-5 ppm ozone.",
+      "dwellTime": "30 minutes to several hours depending on odor severity.",
+      "bestFor": "Heavy smoke odors, persistent perfume smell, and odors that resist other treatments. Professional-grade treatment.",
+      "caution": "Ozone is an oxidizing gas and can degrade some fibers or dyes if concentration is too high. Requires professional equipment and ventilation. Safety concern if misused."
+    },
+    {
+      "agent": "Hydrogen Peroxide (Mild Oxidizer for Odor)",
+      "mechanism": "H2O2 oxidizes some odor compounds, especially those with aromatic or sulfur-based structures (some food odors, some pet smells). This is gentler than ozone but still effective for some odors.",
+      "concentration": "3-6% H2O2.",
+      "dwellTime": "15-30 minutes soaking.",
+      "bestFor": "Fish smell, some pet odors, some food-based odors. Test first on colored fabrics.",
+      "caution": "Can bleach some fibers or dyes. Test first. Not effective on all odor types."
+    },
+    {
+      "agent": "Heat + Ventilation (Volatilization-Based)",
+      "mechanism": "Heat increases vapor pressure of VOCs, causing them to evaporate from fiber. Open-air drying in sunlight (UV also helps degrade some odors) is effective. This is passive but often underused.",
+      "concentration": "N/A",
+      "dwellTime": "24-72 hours in sun and fresh air.",
+      "bestFor": "Most odor types can be partially removed by airing. Safe on all fibers. Often combined with other methods.",
+      "caution": "Slow but safe. Not 100% effective on deep odors but often helps significantly."
+    },
+    {
+      "agent": "Odor-Masking Fragrance (Band-Aid, Not Solution)",
+      "mechanism": "Fragrance doesn't remove odor — it masks it temporarily. The underlying odor molecules are still in the fiber.",
+      "concentration": "N/A",
+      "dwellTime": "N/A",
+      "bestFor": "Nothing. Don't use this as primary treatment.",
+      "caution": "Fragrance + odor creates a confusing mix, often worse than original odor. Avoid masking; solve the problem."
+    }
+  ],
+  "odorSources": {
+    "sweatOdor": {
+      "source": "Sweat proteins + bacterial metabolism",
+      "mechanism": "Bacteria in sweat break down amino acids into volatile compounds (isovaleric acid, propionic acid, ammonia). This is fermentation chemistry.",
+      "removal": "Enzyme detergent (removes protein substrate), alkaline pH, vinegar rinse (acid-base neutralization), baking soda (absorbs amines). Combine: enzyme wash + vinegar rinse.",
+      "difficulty": "Easy to moderate. Usually responsive to standard laundry + odor removal."
+    },
+    "smokeOdor": {
+      "source": "Polycyclic aromatic hydrocarbons (PAHs) + tar compounds",
+      "mechanism": "Smoke particles and PAH gases are absorbed into fiber (lipophilic). These are chemically complex, stable molecules.",
+      "removal": "Activated charcoal (absorbs PAHs), ozone (oxidizes PAHs), heat + ventilation (slow evaporation). Professional ozone treatment is most effective.",
+      "difficulty": "Difficult. Smoke odors are persistent and may require professional treatment."
+    },
+    "petOdor": {
+      "source": "Uric acid + bacterial breakdown",
+      "mechanism": "Pet urine contains uric acid. Bacteria metabolize uric acid, creating ammonia and sulfur compounds. The ammonia smell is characteristic.",
+      "removal": "Enzymatic detergent (breaks down proteins/uric acid), acidic rinse (neutralizes ammonia), vinegar (deodorizes uric acid residue). May require professional wet cleaning if deeply embedded.",
+      "difficulty": "Moderate to difficult, depending on penetration depth."
+    },
+    "mildeWOdor": {
+      "source": "Volatile metabolites from fungal growth",
+      "mechanism": "Mold produces VOCs as part of its metabolism. The musty smell is mold-produced.",
+      "removal": "Kill organism first (bleach, H2O2, vinegar), then odor compounds dissipate naturally as mold stops producing them. Enzyme can help break down dead mold matter.",
+      "difficulty": "Moderate. Odor persists briefly even after mold is killed (residual VOCs), then fades."
+    },
+    "urineOdor": {
+      "source": "Uric acid, ammonia, bacterial metabolism",
+      "mechanism": "Fresh urine has uric acid. Over time, bacteria metabolize it to ammonia (strong smell). This becomes progressively worse with age.",
+      "removal": "Enzyme (breaks down uric acid), acidic rinse (neutralizes ammonia), vinegar (deodorizes). Older urine requires enzyme + multiple rinses.",
+      "difficulty": "Moderate. Fresh urine is easier; aged urine is harder."
+    },
+    "perfumeOdor": {
+      "source": "Fragrance compounds (essential oils, synthetics)",
+      "mechanism": "Fragrance is absorbed into fiber. Some fragrances are oily (lipophilic), some volatile (evaporate readily).",
+      "removal": "Activated charcoal (absorbs fragrance), vinegar or baking soda (for some fragrance types), airing (volatile components evaporate). Light spray doesn't need aggressive treatment — usually resolves with airing.",
+      "difficulty": "Easy to moderate, depending on fragrance type and application amount."
+    },
+    "foodOdor": {
+      "source": "Food volatiles (garlic, fish, curry, etc.)",
+      "mechanism": "Cooking vapors and food particles are absorbed into fiber. These are often sulfur-based (garlic, onion) or aromatic (curry) compounds.",
+      "removal": "Vinegar or baking soda (absorbs sulfur compounds), enzyme (breaks down protein/fat particles), H2O2 (oxidizes some food odors), airing.",
+      "difficulty": "Easy to moderate. Most food odors respond to standard laundry + airing."
+    }
+  },
+  "fiberInteractions": {
+    "cotton": "Cotton absorbs odor readily due to its porous structure. Odor removal from cotton is straightforward — all methods work well.",
+    "silk": "Silk is sensitive to alkaline pH (baking soda, strong alkaline detergent). Prefer vinegar or enzyme methods. Ozone should be mild.",
+    "wool": "Wool is sensitive to alkaline pH and strong oxidizers. Gentle enzyme, mild acid, or airing preferred.",
+    "polyester": "Polyester doesn't absorb odor as readily as natural fibers. Odor removal from polyester is usually easier.",
+    "leather": "Leather absorbs odor deeply. Airing and gentle treatments (vinegar, charcoal) preferred. Professional leather cleaning for severe odors.",
+    "generalRule": "All fibers tolerate airing and gentle absorption (charcoal, baking soda). Alkaline and aggressive oxidizers are risky on delicates. Enzyme is gentle and effective for most."
+  },
+  "timeFactor": {
+    "fresh": "Recent odors (0-2 weeks) are usually volatile and easily removed by airing or gentle treatment.",
+    "aged": "Older odors (1-3 months) have likely oxidized and bonded more firmly to fiber. Require more aggressive treatment (enzyme, vinegar, charcoal).",
+    "chronic": "Old, persistent odors (months to years, like smoke-infused garments) may be nearly permanent. Require professional treatment (ozone) or acceptance that full removal is impossible.",
+    "heatExposure": "Heat (dryer, iron) can temporarily increase odor perception (heating volatilizes some odor compounds). But heat also can permanently bind some odors deeper into fiber.",
+    "keyInsight": "Unlike visible stains, odor can persist long after the source is gone. Sweat smell lingers weeks after the sweat-causing event. Smoke smell persists months. Accepting that some old odors are persistent is part of customer education."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Using fragrance to mask odor instead of removing it",
+      "whyItFails": "Fragrance doesn't remove odor molecules. It creates a confusing mix where old odor + new fragrance compete. Usually the result smells worse.",
+      "instead": "Always address the source: enzyme for bacterial odors, oxidation for smoke, airing for volatile compounds. Then fragrance is optional (and will smell clean, not masking)."
+    },
+    {
+      "mistake": "Assuming odor and visible stain have the same treatment",
+      "whyItFails": "A sweat stain and sweat odor are related but different chemistry. Stain removal (with spotting agents) doesn't remove odor. Odor removal (enzyme, vinegar) doesn't necessarily remove visible color.",
+      "instead": "Treat both: spotting for the visual stain, + separate odor treatment. They're related problems with different solutions."
+    },
+    {
+      "mistake": "Using baking soda or charcoal with NO dwell time, expecting instant results",
+      "whyItFails": "Absorption takes time. Sprinkling baking soda and immediately brushing off removes almost nothing. These methods need hours or overnight.",
+      "instead": "Apply baking soda or charcoal, leave it on for at least 30 minutes (longer is better), then brush thoroughly. Overnight is ideal."
+    },
+    {
+      "mistake": "Over-treating pet urine with alkaline detergent, which can set the odor",
+      "whyItFails": "Urine odor is acidic (uric acid, ammonia from bacterial degradation). Alkaline detergent can set some urine odor compounds via pH precipitation.",
+      "instead": "Treat pet urine with enzyme (breaks down uric acid) + acidic rinse (vinegar), not alkaline detergent."
+    },
+    {
+      "mistake": "Thinking heavy smoke odor is removable with home methods",
+      "whyItFails": "Smoke odors from fires, heavy smoking, or very old smoke contamination are often too deep and complex for home remedies. These require professional ozone treatment.",
+      "instead": "Assess odor severity. For light smoke, airing + charcoal may help. For heavy, persistent smoke, recommend professional ozone treatment or acceptance that smell may be permanent."
+    }
+  ],
+  "dansTips": [
+    "The 'sweat-smelly dress shirt' scenario: it has a visible sweat stain (spotting problem) AND sweat smell (odor problem). Spot treat the stain first (enzyme-based spotter), then also run the shirt through a full enzyme laundry wash + vinegar rinse. The stain comes out with spotting, the smell comes out with laundry + vinegar. Two problems, two solutions.",
+    "Baking soda overnight is magic for sweat and body odor. Customer asks, 'How long will this take?' Honest answer: 'Bake it with baking soda overnight, then wash. The smell will be 80-90% gone.' This is simple, it works, and customers love the simplicity.",
+    "Smoke-smelled garments from restaurants or smoky environments: light airing (24-48 hours in fresh air, in sun if possible) often does 50% of the work. Then enzyme wash + vinegar. Most light smoke odors respond to this. Heavy smoke (fire damage, heavy smoking) is different — refer to professional.",
+    "Pet accident on carpet or upholstery (not clothing): enzyme is non-negotiable. The uric acid MUST be broken down or the smell will return. Enzyme first, then odor treatment. But on clothing, enzyme wash is sufficient — most pet-soiled garments don't require spotting chemistry.",
+    "The 'leftover smell after laundering' issue: customer washed the garment but smell persists. Usually because they only did one wash cycle. Recommend: second enzyme wash + vinegar rinse. Sometimes stubborn odors need two cycles, not one.",
+    "Perfume-soaked garments (over-application or storage near perfume): these rarely need professional treatment. Airing (open window, 24-48 hours) usually solves it naturally. Baking soda speeds it up. Don't over-treat.",
+    "Mildew smell (musty basement storage): this is different from mildew stain. The organism might be dead or dormant, but the smell lingers. Enzyme to break down fungal residue + vinegar + airing. The smell usually fades faster than you'd expect once the garment airs."
+  ],
+  "crossReferences": {
+    "confusedWith": ["invisible stains (odor can exist without visible staining)", "mildew (odor often accompanies biological growth)"],
+    "overlapsWith": ["all families (many stains have accompanying odors: protein stains have bacterial smell, mildew has musty odor, urinary issues have ammonia smell)"],
+    "note": "Odor is unique because it's olfactory, not visual. A garment with no visible stain can have significant odor. This requires spotters to think beyond visual staining to chemical sensing (smell). Treatment is often different from stain treatment: odor requires volatilization, absorption, or oxidation rather than traditional spotting chemistry. Many customers equate visible stain removal with odor removal, but these are separate problems. Education is critical: 'The stain is gone, but smell may require additional treatment' or vice versa."
+  }
+}

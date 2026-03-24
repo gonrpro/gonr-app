@@ -1,0 +1,111 @@
+{
+  "id": "maintenance",
+  "family": "Maintenance",
+  "icon": "🧺",
+  "color": "#D3D3D3",
+  "overview": {
+    "summary": "Not acute stains but gradual accumulation of residue — general soil buildup, perspiration yellowing, detergent residue, fabric care product buildup, graying from repeated wear, dulling from soap scum, whitening/grayness from age. These are laundry/care issues, not spotting issues. The defining characteristic: maintenance problems are SYSTEMIC (throughout the garment) not LOCALIZED (spot). They result from improper washing, wrong detergent, or natural aging, not from single incidents.",
+    "molecularStructure": "Maintenance issues are accumulations: sweat salts and proteins deposit gradually on fiber. Detergent residue is surfactant + builders (salts, phosphates) that wasn't fully rinsed. Soap scum is fatty acid residue from alkaline soap in hard water. Yellowing is from oxidation of fiber and residual organics over time. These are multiple small deposits rather than single stains.",
+    "commonStains": ["perspiration buildup on collars/cuffs", "yellowing (underarm yellowing from repeated sweating)", "whitening/graying from age", "dull appearance from detergent/soap buildup", "fabric stiffness from soap/mineral residue", "water ring from hard water deposits", "deodorant stain accumulation", "general soil (all-over dullness)", "yellowing of aged fabric"],
+    "prevalence": "Very common but often misdiagnosed as 'stains.' Maintenance issues represent 15-20% of garment problems. Most are preventable with proper care."
+  },
+  "chemistry": {
+    "bondingMechanism": "Maintenance issues are accumulations, not concentrated stains. Perspiration gradually deposits salts and proteins across the fabric surface. Detergent residue is surfactant buildup that doesn't fully rinse. Soap scum is from alkaline soap reacting with hard water minerals. Yellowing is oxidative aging (the fiber polymer itself is oxidizing from exposure to light, heat, atmospheric oxygen).",
+    "removalPrinciple": "Unlike spotting (targeted chemical removal), maintenance issues require laundry system changes. Proper detergent choice, adequate rinsing, correct water temperature, and appropriate drying are the solutions. These are NOT suitable for hand-spotting — they require whole-garment laundry treatment or, in some cases, professional wet cleaning.",
+    "pHSensitivity": "Maintenance issues involve pH: yellowing is exacerbated by alkaline residue (which oxidizes yellowing compounds). Grayness is from detergent buildup (usually alkaline). Water chemistry (hard water deposits) affects maintenance. But pH correction alone doesn't fix maintenance issues — the root cause (wrong detergent, inadequate rinsing) must be addressed.",
+    "solubility": "Maintenance deposits are a mix of soluble (sweat salts, detergent surfactants) and insoluble (soap scum, mineral deposits). They're not localized stains but dispersed accumulation.",
+    "oxidationBehavior": "Yellowing in aged fabrics is oxidative aging — the fiber polymer itself is gradually oxidized by light and atmospheric oxygen. This is NOT reversible with spotting chemistry. Once fiber has oxidized, the yellowing is permanent."
+  },
+  "keyAgents": [
+    {
+      "agent": "Detergent System Change (Preventive, Not Curative)",
+      "mechanism": "Correct detergent choice and adequate rinsing prevent maintenance issues. Choosing the right detergent for water hardness, fabric type, and soil level prevents buildup.",
+      "concentration": "Per detergent instructions.",
+      "dwellTime": "N/A. This is a laundry system change.",
+      "bestFor": "PREVENTION. Addressing root cause of maintenance issues.",
+      "caution": "This is advice to customer, not a spotting treatment. If maintenance issues are already present, detergent change helps prevent recurrence but doesn't cure existing buildup."
+    },
+    {
+      "agent": "Water Hardness Chelation (EDTA in Detergent)",
+      "mechanism": "Hard water creates mineral deposits and soap scum. Detergents with chelating agents (EDTA) prevent mineral interference and soap scum formation.",
+      "concentration": "Standard laundry detergent dose.",
+      "dwellTime": "N/A. Regular wash cycle.",
+      "bestFor": "Prevention of maintenance issues in hard water areas. Chelated detergents reduce yellowing and graying from hard water.",
+      "caution": "This is prevention, not cure. Existing yellowing is not reversible with detergent change alone."
+    },
+    {
+      "agent": "Oxygen Bleach (Sodium Perborate) for Maintenance Yellowing",
+      "mechanism": "Oxygen bleach can lighten some yellowing (especially protein yellowing from perspiration). Perborate oxidizes yellow compounds but is gentler than chlorine bleach.",
+      "concentration": "Follow product instructions.",
+      "dwellTime": "Per product.",
+      "bestFor": "Mild yellowing from perspiration or detergent residue. Whole-garment treatment, not spotting.",
+      "caution": "Won't fully reverse severe yellowing. Test on colored fabrics (risk of color loss). Requires whole-garment treatment (expensive for spotting service)."
+    },
+    {
+      "agent": "Enzyme Cleaner (for Protein/Organic Buildup)",
+      "mechanism": "Enzymes break down residual proteins (sweat, protein-based detergent residue) and organic matter (body soil, degradation products) that cause yellowing and grayness.",
+      "concentration": "Follow product instructions.",
+      "dwellTime": "Per product (usually 15-30 minutes).",
+      "bestFor": "Yellowing from perspiration or organic accumulation. Whole-garment treatment.",
+      "caution": "Enzyme treatment requires proper water temperature and pH to activate. Not a quick spot treatment."
+    },
+    {
+      "agent": "Acidic Rinse (Vinegar or Citric Acid)",
+      "mechanism": "Acidic final rinse can remove detergent residue and mineral deposits, brightening fabric and restoring softness.",
+      "concentration": "1-2 tbsp vinegar per rinse cycle.",
+      "dwellTime": "5 minutes soak in acidic rinse.",
+      "bestFor": "Removing detergent/soap/mineral buildup. Whole-garment rinse, not spotting.",
+      "caution": "This is a laundry technique, not a spotting technique. Advice to customer on care, not professional service."
+    },
+    {
+      "agent": "Professional Wet Cleaning (for Severe Maintenance Issues)",
+      "mechanism": "Professional wet cleaning systems use controlled water chemistry, specialized detergents, and proper agitation/rinsing to remove buildup without damage. This is beyond spotting.",
+      "concentration": "N/A. Professional equipment.",
+      "dwellTime": "Per professional cleaning protocol.",
+      "bestFor": "Severe yellowing, graying, or buildup that cannot be resolved with home laundry.",
+      "caution": "This is professional service referral, not spotting treatment. Appropriate for severely aged garments or valuable items."
+    }
+  ],
+  "fiberInteractions": {
+    "cotton": "Cotton tolerates oxygen bleach and enzyme treatment well. Maintenance issues on cotton are usually solvable with proper laundry system.",
+    "silk": "Silk is sensitive to alkaline (detergent buildup on silk can damage fiber). Gentle enzyme treatment and acidic rinse are preferred. Maintenance on silk requires professional laundry.",
+    "wool": "Wool requires specialized detergent (pH neutral or slightly acidic). Maintenance issues on wool (yellowing, graying) are best prevented with proper care. Wet cleaning recommended.",
+    "polyester": "Polyester is robust. Maintenance issues usually resolve with enzyme treatment and proper detergent.",
+    "delicates": "Delicate fibers (lace, chiffon, aged fabrics) require professional care for maintenance issues. Home laundry changes are advisable, but aggressive treatments risk damage.",
+    "generalRule": "Maintenance issues are systemic and require laundry system solutions, not spotting chemistry. Professional or proper home laundry is the answer."
+  },
+  "timeFactor": {
+    "seasonal": "Maintenance issues build up seasonally. Summer (perspiration) causes buildup. Winter storage can yellow fibers. Seasonal care (air garments between wears, proper storage) prevents some issues.",
+    "ageAccumulation": "Maintenance issues accumulate over months and years of wear. A garment worn 100 times without proper care shows more maintenance issues than a garment worn 20 times with proper care. This is preventative — early good habits prevent later problems.",
+    "yearlyVibrancy": "Fabrics naturally yellow and gray over years, even with perfect care. This is oxidative aging, not a problem but a natural process. Accepting this is part of garment lifespan understanding."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Treating maintenance issues (yellowing, graying) as if they're spotting problems, attempting hand-spotting removal",
+      "whyItFails": "Maintenance issues are systemic (throughout fabric) not localized. Spotting chemistry is designed for localized stains. Using spotting approach on maintenance issues wastes time and chemicals.",
+      "instead": "Diagnose as maintenance issue. Advise customer on laundry system changes (detergent, water chemistry, rinsing, storage). For severe issues, recommend professional wet cleaning. Don't attempt hand-spotting."
+    },
+    {
+      "mistake": "Assuming armpit yellowing is a chemical stain that can be spotted, without addressing the root cause (sweat + detergent residue)",
+      "whyItFails": "Armpit yellowing is maintenance + protein accumulation. Spotting removes visible color but doesn't address accumulated residue. The yellowing returns with next wear.",
+      "instead": "Advise customer: 'This is perspiration buildup and protein residue. Enzyme treatment in laundry, proper detergent, and air-drying help prevent recurrence. Quick spotting will lighten but won't prevent future buildup.' Educate on care."
+    },
+    {
+      "mistake": "Over-using oxidizers on yellowed garments, causing unintended bleaching or yellowing shifts",
+      "whyItFails": "Severe yellowing (oxidative aging) is not solvable with spotting chemistry. Aggressive oxidizer use can damage fabric or shift color to unwanted hue.",
+      "instead": "Accept yellowing as part of aging. Recommend acceptance or professional restoration. Don't over-treat."
+    }
+  ],
+  "dansTips": [
+    "The 'white shirt that's turned gray after a year' is not a stain — it's detergent residue and body soil accumulation. The customer always asks 'Can you clean this?' Yes, but the answer is laundry, not spotting. Send them home with advice: 'Use less detergent, rinse thoroughly, use an acidic final rinse. The grayness will reduce with proper care.' This is education, not spotting.",
+    "Underarm yellowing on a white dress shirt: this is the classic maintenance issue. It's sweat proteins (protein family chemistry) + oxidation. Enzyme laundry treatment helps some. But accept that some yellowing is permanent oxidation — you can't un-oxidize aged fiber. Help customers understand: 'Some of this is set oxidation, some is removable with enzyme treatment.'",
+    "Hard water areas see these issues constantly. Customers complain garments get dull and dingy. This is soap scum and mineral deposit accumulation. Suggest: softer water (water softener), chelating detergent, or acidic rinse. This is area-specific advice that builds trust: you understand the customer's water issue.",
+    "The 'yellowing happened after dry cleaning' claim: sometimes true (if dry cleaning used wrong solvent or temperature), usually false (the yellowing was already there, the customer just noticed it after cleaning). Distinguish: if the yellowing is localized to where staining occurred (perspiration, deodorant), it's not dry cleaning damage — it's accumulated maintenance issue made visible.",
+    "Fabric that's 'stiff' after washing is detergent residue, not damage. Acidic rinse and proper rinsing solve this in one laundry cycle. This is education and prevention, not spotting."
+  ],
+  "crossReferences": {
+    "confusedWith": ["individual stains (yellowing from perspiration can look like a stain, but it's accumulation)", "oxidative stains (some maintenance yellowing looks like damage, but it's reversible with proper care)"],
+    "overlapsWith": ["protein (perspiration is protein)", "combination (armpit yellowing is protein + mineral deodorant + oxidation)"],
+    "note": "Maintenance issues are the family where a spotter's value is education and prevention, not spotting chemistry. Understanding the difference between acute stains (spotting problems) and maintenance issues (laundry problems) is critical. Many customer complaints are actually maintenance issues that no spotting chemistry can solve. The professional response is: identify, educate, advise on prevention, and recommend proper laundry or professional care. This is where spotting becomes lifestyle advice, not just chemistry."
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "id": "dye",
+  "family": "Dye/Pigment",
+  "icon": "🎨",
+  "color": "#FF1493",
+  "overview": {
+    "summary": "Synthetic and natural colorants (textile dyes, hair dyes, ink, food coloring, fabric transfer dyes). These stains differ from others because removing the stain dye often means also removing garment dye — this is the fundamental challenge. Dye bonding varies: acid dyes use ionic bonding (on protein fiber), disperse dyes use mechanical entrapment (on synthetics), reactive dyes use covalent bonding (strongest, most permanent). This is the only stain family where removal success can mean color loss.",
+    "molecularStructure": "Dyes are organic molecules with conjugated double bond systems (aromatic rings connected by π-bonds) that absorb visible light. Acid dyes are anionic (negatively charged), bonding ionically to cationic sites on protein fibers. Disperse dyes are nonionic molecules, held mechanically in synthetic fiber. Reactive dyes have functional groups that form covalent bonds with fiber hydroxyl groups. Different dye types bond differently to different fibers.",
+    "commonStains": ["hair dye", "fabric dye transfer", "food dye", "ink (ballpoint, permanent)", "food coloring", "Kool-Aid", "fabric paint", "plant dyes (beet, beet juice)", "acrylic paint", "clothing bleed-out"],
+    "prevalence": "Moderate. Dye stains represent 5-8% of spotting calls but are high-risk. Hair dye and denim/dark clothing transfer are most common. These are the stains where operators worry about 'doing more damage than good.'"
+  },
+  "chemistry": {
+    "bondingMechanism": "Depends on dye type. Acid dyes bond ionically to protein fibers (ammonium on dye, carboxyl on fiber). Disperse dyes bond mechanically to synthetic fibers (molecular entrapment). Reactive dyes bond covalently to fiber hydroxyl groups. Removing stain dye requires breaking these bonds WITHOUT breaking the garment dye — very difficult. Garment dyes and stain dyes often have similar chemistry, so any treatment that removes stain dye risks removing garment color.",
+    "removalPrinciple": "Dye removal is adversarial: use chemical treatments that affect stain dye but not garment dye. Acid dyes (hair dye on nylon) respond to color removers (sodium hydrosulfite reduces dye to leuco form, colorless). Disperse dyes respond to carriers/solvents that selectively solubilize stain dye. Reactive dyes are hardest — covalent bonding is nearly permanent. The goal is selective removal, not universal solvent action.",
+    "pHSensitivity": "Acid dyes are sensitive to pH. Acidic pH stabilizes their color. Alkaline pH can shift color and affect bonding (especially if attempting to reverse ionic bonds). Disperse dyes are pH-neutral. Reactive dyes don't respond to pH once covalently bonded.",
+    "solubility": "Most dyes are insoluble in water at neutral pH. Acid dyes are more soluble in acidic water. Disperse dyes are soluble in organic solvents. Reactive dyes are insoluble in any solvent — covalent bonding is irreversible. This insolubility is what makes dye stains so persistent.",
+    "oxidationBehavior": "Oxidizers (H2O2, bleach) break conjugated double bonds in dye molecules, destroying color. However, oxidizers don't selectively target stain dye — they also break garment dye bonds. Oxidizers are risky on dye stains but sometimes necessary for stubborn cases (managed very carefully, with testing)."
+  },
+  "keyAgents": [
+    {
+      "agent": "Color Remover (Sodium Hydrosulfite, Na2S2O4, 0.1-0.5%)",
+      "mechanism": "Sodium hydrosulfite is a reducing agent that converts dye molecules to their leuco (colorless) form. This doesn't actually remove dye molecules from fiber — it just removes color. The dye molecules stay bonded but become invisible. This is effective for acid dyes (hair dye) and some natural dyes. Must be used in neutral to slightly acidic conditions.",
+      "concentration": "0.1-0.5% solution. Specialized color remover products (like Rit Color Remover) are pre-formulated. Follow product instructions precisely.",
+      "dwellTime": "10-30 minutes depending on dye type and concentration. Some dyes are stubborn. Check progress frequently.",
+      "bestFor": "Acid dyes (hair dye, certain food dyes on protein fibers). Works on fresh hair dye stains. Some disperse dyes respond partially. Doesn't work on reactive dyes (covalent bonds not affected by reduction).",
+      "caution": "Color removers often work on BOTH stain dye AND garment dye. If garment is dyed with acid dyes, the color remover will lighten it too. Test on hidden area first. Must rinse thoroughly after use (sodium hydrosulfite residue can cause yellowing). Handle carefully (reduces dyes, some can create fumes)."
+    },
+    {
+      "agent": "Acetic Acid (5% vinegar or diluted acetic acid)",
+      "mechanism": "Acidic pH can help dissolve acid dyes or shift their chemical form, making them slightly more mobile and easier to flush. Acetic acid is gentle and unlikely to set dyes permanently. Works best on acid dyes. Doesn't break dye bonds but can help loosen them.",
+      "concentration": "White vinegar (5% acetic acid) diluted 1:1 with water, or use dilute acetic acid.",
+      "dwellTime": "5-10 minutes. Acidic treatment is slow.",
+      "bestFor": "First-line treatment for suspected acid dyes (hair dye, food dye on wool/silk). Test to see if dye loosens under acidic conditions. If it responds, continue with gentle treatment.",
+      "caution": "Acetic acid alone rarely fully removes dye stains. It's a diagnostic and loosening step. Don't expect this alone to work. Some dyes don't respond to acidic conditions. If this doesn't lighten the stain within 5 minutes, stain dye is probably not acid-bonded (likely disperse or reactive)."
+    },
+    {
+      "agent": "Carriers or Organic Solvents (for disperse dyes)",
+      "mechanism": "Disperse dyes are held mechanically in synthetic fibers (not ionic or covalent bonding). Carriers (aromatic compounds) or solvents can mobilize disperse dye molecules by penetrating fiber and making dye more mobile, then flushing it away. This is professional-level treatment used in dry cleaning.",
+      "concentration": "Varies by carrier or solvent used. Professional dry cleaners use specialized formulations.",
+      "dwellTime": "10-30 minutes depending on treatment strength.",
+      "bestFor": "Disperse dyes on synthetic fibers (polyester, nylon). Professional-level treatment. Home remedies rarely work for disperse dyes.",
+      "caution": "Requires professional equipment and knowledge. Not for home use. Disperse dyes are the most difficult to remove because they're mechanically trapped."
+    },
+    {
+      "agent": "Oxygen Bleach (Sodium Perborate, H2O2) on Dye Stains",
+      "mechanism": "Oxidizers break the conjugated double bonds that give dyes color. This works on BOTH stain dye AND garment dye — highly risky. Use only when dye removal is impossible otherwise and customer understands risk of color loss.",
+      "concentration": "3% H2O2 (conservative). Test first, always.",
+      "dwellTime": "2-5 minutes maximum. Watch constantly.",
+      "bestFor": "Desperate cases where color remover or acidic treatment failed and customer accepts risk of color damage.",
+      "caution": "This is a last-resort treatment. Oxidizers are non-selective — they remove color from everything, not just stain dye. Use with extreme caution. Many dye stain removals should end in 'I cannot remove this without risking the garment's color — recommend professional evaluation or acceptance that stain remains.'"
+    },
+    {
+      "agent": "Cold Water (for fresh dye stains)",
+      "mechanism": "Cold water can help flush fresh dye stains by dilution and mechanical removal. Works best on food dyes and fresh dye transfers that haven't fully set. As temperature increases, dye bonds become stronger — cold slows this process.",
+      "concentration": "100% cold water (4-15°C).",
+      "dwellTime": "5-10 minutes of rinsing.",
+      "bestFor": "Fresh dye stains (hair dye spill, fabric dye transfer) within the first hour. First aid step before any chemical treatment.",
+      "caution": "Cold water alone rarely fully removes dyes but prevents setting. Always follow with specific treatment (color remover, acidic treatment, etc.)."
+    }
+  ],
+  "fiberInteractions": {
+    "cotton": "Cotton (cellulose) is rarely dyed with acid dyes in commercial production. Most cotton garments use fiber-reactive dyes (covalent bonding, very strong). If cotton is stained with hair dye or other acid dye, removal is difficult because cotton's dye is reactive (covalent) while stain dye might be acid-based (ionic) — different bonding means neither color remover nor acidic treatment will selectively target stain dye.",
+    "silk": "Silk is traditionally dyed with acid dyes (ionic bonding to ammonium groups on fibroin). Acid dye stains (hair dye) on silk can be removed with color removers, but this risks also removing the silk's acid dye — color loss is probable. Professionals often decline dye stain removal on silk, or proceed with customer acceptance that color may lighten.",
+    "wool": "Wool is also traditionally dyed with acid dyes. Same issue as silk: acid dye stains (hair dye) on wool risk removing garment color. Color removers are risky. Some wool is dyed with fiber-reactive dyes (modern production) which are more resistant to color remover, but garment dye loss is still possible.",
+    "polyester": "Polyester is dyed with disperse dyes (mechanical entrapment, nonionic). Disperse dye stains on polyester are very difficult to remove because they bond similarly to garment dyes — any treatment that removes stain dye is likely to affect garment color. Professional carriers or solvents are needed. Home remedies don't work.",
+    "nylon": "Nylon has amide groups and can be dyed with acid dyes or disperse dyes depending on production. Acid dye stains (hair dye) on acid-dyed nylon can be targeted with color removers. Disperse dye stains are harder. Nylon is less sensitive to color loss than wool/silk (more robust), but still at risk.",
+    "leather": "Leather is tanned with tannins and may be dyed with acid dyes, aniline (for fine leather), or other leather-specific dyes. Dye stains on leather are risky — most leather is delicate and color damage is permanent. Professional leather care recommended. Home treatment is not recommended.",
+    "generalRule": "Dye stains are the highest-risk family for color loss. Always test hidden area first. If stain dye and garment dye are bonded similarly (acid dyes on silk, disperse dyes on polyester), removal is nearly impossible without damage. Many dye stains should end in honest conversation: 'This cannot be safely removed' or 'Removal will likely lighten the garment color.'"
+  },
+  "timeFactor": {
+    "fresh": "0-2 hours. Fresh dye (hair dye spill, fabric dye transfer) may still be mobile and partly rinsable. Cold water rinse helps. Acidic treatment (for acid dyes) may partially remove stain. Color removers are most effective on fresh dye.",
+    "hours": "2-24 hours. Dye begins to set more permanently. Ionization (acid dyes) increases, mechanical entrapment (disperse dyes) increases. Removal becomes harder. Color removers become less effective.",
+    "days": "1-7 days. Dye is well-set. Removal is very difficult and high-risk for color loss. Some dyes (especially reactive dyes forming covalent bonds) are now essentially permanent.",
+    "weeks": "7+ days. Most dyes are now permanent. This is where 'the stain is here to stay' conversation happens.",
+    "heatExposure": "Heat (especially for disperse dyes) fixes dye even faster. Dryer heat on polyester+disperse dye stain causes rapid dye setting. Any heat on dye stains makes removal progressively harder. Cold is essential for dye stain work.",
+    "keyInsight": "Unlike other stains, time + heat on dye stains means you're fighting BOTH the stain dye setting AND the risk of garment dye damage increasing. Fresh dye stains are the only ones with reasonable success rates. Aged dye stains are often best left untreated."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Using color remover (sodium hydrosulfite) without testing first on garment dye",
+      "whyItFails": "Color removers work on both stain dye and garment dye. If the garment is dyed with the same type of dye as the stain, the color remover will lighten or remove both. Testing on a hidden seam or inside edge is essential first.",
+      "instead": "ALWAYS test color remover on a hidden area first. If garment color shifts, the remover is risky. Proceed with caution or decline the service."
+    },
+    {
+      "mistake": "Assuming all dye stains are the same type and responding to the same treatments",
+      "whyItFails": "Acid dyes, disperse dyes, reactive dyes, and natural dyes all require different treatment strategies. Hair dye (usually acid-based) responds to color removers. Fabric dye transfer on polyester (disperse dye) does not. Using the wrong treatment wastes time and risks color damage.",
+      "instead": "Diagnose dye type first. Is this hair dye? Fabric bleed-out? Ink? Each responds differently. This diagnostic step determines which treatment to attempt."
+    },
+    {
+      "mistake": "Using heat or hot water on dye stains, thinking it helps 'set' the stain and make it easier to remove",
+      "whyItFails": "Heat does the opposite — it SETS dye permanently (especially disperse dyes). Heat accelerates dye molecule bonding to fiber. This makes removal harder, not easier.",
+      "instead": "Always use cold water on dye stains. Never apply heat before treatment."
+    },
+    {
+      "mistake": "Assuming dye stain removal with oxidizers (H2O2, bleach) is safe if done carefully",
+      "whyItFails": "Oxidizers are non-selective. They remove color by breaking conjugated double bonds, affecting both stain dye AND garment dye equally. Even brief, 'careful' oxidizer application can lighten the garment.",
+      "instead": "Use oxidizers only as last resort on dye stains, with full customer consent and understanding of color risk. Many dye stains are better left untouched."
+    },
+    {
+      "mistake": "Thinking hair dye stains on wool/silk are just tannin (brownish, pinkish) and treating with acidic spotters",
+      "whyItFails": "Acidic spotters don't remove dyes — they help tannins. Hair dye is dye, not tannin. The wrong treatment wastes critical time (first 2 hours are most important for dye stains).",
+      "instead": "Distinguish between tannin (responds to acidic spotter) and dye (requires color remover or dye-specific treatment). Diagnostic test: acidic spotter on suspect area — if it's tannin, stain lightens; if it's dye, it doesn't."
+    }
+  ],
+  "dansTips": [
+    "Hair dye on nylon is interesting because nylon is naturally attracted to acid dyes. Fresh hair dye on nylon? That's a color remover conversation, not a spotting conversation. The dye is bonding hard. You have a 2-hour window with color remover. After that, start talking to the customer about accepting the stain or professional dye work.",
+    "Denim bleed-out (dark clothing transferred dye to light clothing) is disperse dye on synthetic or acid dye on wool/silk. You CANNOT remove this without risking the light garment's dye. This is when you tell the customer: 'I can try, but there's a 50% chance I lighten the whole garment instead of just removing the stain.' Many customers accept living with it rather than risk that.",
+    "The 'food coloring accident' — Kool-Aid or food dye on white cotton — responds to color remover sometimes, but white cotton is reactive-dyed and the remover may not affect it. Test first. If it works and doesn't affect the white, great. If the white starts to yellow or shift, stop immediately.",
+    "Ballpoint pen ink is pigment + binder. The binder is often oil or wax. You're dealing with particulate + dye combination. Don't treat it purely as dye — brush out mechanical pigment first (dry), then assess color. Often it's mostly physical removal of ink particles, not dye removal.",
+    "Permanent marker on fabric is almost never removable. The dye in permanent markers is designed to be permanent and cross-link to fiber extremely fast. Even color remover often fails. Set expectations immediately: 'Permanent marker is meant to be permanent. I can try a color remover but success is unlikely. Acceptance or replacement are more realistic options.'",
+    "Beet juice stain that's dark purple-red might look like tannin but it's actually a natural dye (betalain pigment). Natural dyes sometimes respond to acidic treatment, sometimes to oxidation, sometimes to nothing. This is a diagnostic: try acidic first, then oxidizer if needed. But it's a slow reveal.",
+    "The worst dye stains are on polyester or nylon already in dark colors. You're trying to remove a disperse dye (or acid dye) stain from a garment that's also dyed with the same dye type. Selectivity is impossible. This is where you have to tell customers: 'This is not fixable without damaging the garment.' Be honest early."
+  ],
+  "crossReferences": {
+    "confusedWith": ["tannin (some food dyes and natural dyes create reddish stains similar to wine)", "chemical-damage (if oxidizer is used, dye loss may look like bleaching damage, not stain removal)"],
+    "overlapsWith": ["combination (hair dye often has peroxide developer mixed in, which is part dye, part oxidizer)", "tannin (if dye stain is from fruit/plant source, might have tannin component)"],
+    "note": "Dye stains are the most problematic family because successful removal often means unintended color loss. This is the family where a spotter must be most honest with customers about likelihood of success. Many dye stains should be diagnosed and then positioned to the customer as 'not safely removable' rather than attempted with risk of garment damage."
+  }
+}

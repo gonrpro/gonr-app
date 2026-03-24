@@ -1,0 +1,166 @@
+{
+  "id": "combination",
+  "family": "Combination",
+  "icon": "🍲",
+  "color": "#A0522D",
+  "overview": {
+    "summary": "Multi-component stains containing elements from two or more stain families (sauce = oil + tannin + protein, makeup = oil + dye + mineral, barbecue = grease + tannin + dye + protein, sunscreen = mineral + oil + wax). These stains require sequential treatment addressing each component in turn. The order matters critically — removing oil first, then tannin, then protein, in sequence, is different from random treatment order.",
+    "molecularStructure": "Combination stains are mixed-chemistry disasters. Barbecue sauce might be: glycerin (oil-like), tannins (from tomato/vinegar), proteins (from meat), and pigments (tomato color). Makeup is: silicones/oils (emollients), iron oxide (pigment), mica (mineral), wax (resin-like). Each component has different chemistry and requires different removal chemistry.",
+    "commonStains": ["barbecue sauce", "tomato sauce", "salad dressing", "cosmetics/makeup", "foundation", "sunscreen", "coffee with cream/sugar", "salsa", "jam/jelly", "gravy", "ice cream", "chocolate (with milk)", "wine with food residue"],
+    "prevalence": "Very common. Combination stains are 20-30% of spotting calls. These are the 'messy' stains (food) and the 'complicated' stains (cosmetics). They're often the hardest stains because multiple treatments are needed."
+  },
+  "chemistry": {
+    "bondingMechanism": "Each component bonds via its family's mechanism. Oil binds via van der Waals + mechanical entrapment. Protein binds via hydrogen bonding. Tannin binds via hydrogen bonding. Mineral binds mechanically. Dye binds ionically or mechanically. Together, they create a layered stain where removing one component without addressing others leaves partial color or residue.",
+    "removalPrinciple": "Sequential treatment. The order is: 1) Remove mechanical/particulate (brush dry first if needed). 2) Remove oil/grease (solvent-based, if present). 3) Remove protein (enzyme, if present). 4) Remove tannin (acidic spotter, if color remains). 5) Remove mineral (acid, if there's mineral component). 6) Address dye (color remover, if stain has color). The SEQUENCE is the science of combination stain removal.",
+    "pHSensitivity": "Varies by component. Oil is pH-neutral. Protein is pH-reactive (alkaline helps ionize). Tannin is pH-critical (alkaline sets it permanently). Dye is pH-sensitive. Mineral needs acid. This heterogeneity makes pH management complex — you can't use one pH for the whole stain.",
+    "solubility": "Each component has different solubility. Oil is insoluble in water. Protein is slightly soluble in cool water. Tannin is soluble in acidic solutions. Mineral is soluble in acidic pH. Dye varies. No single treatment solves combination stains.",
+    "oxidationBehavior": "Oxidizers help with tannin (in combination stains) and some proteins, but hurt with dye (oxidizers remove color). This is another reason sequence matters: use oxidizers at the right step (after protein/oil removal, if tannin remains)."
+  },
+  "keyAgents": [
+    {
+      "agent": "Dry Brush / Mechanical Removal (First Step)",
+      "mechanism": "For stains with significant food residue (dried sauce, jam, chocolate), mechanical removal via dry brush eliminates the bulk of the stain before chemistry begins. This reduces the concentration of each component and makes subsequent chemical treatments faster and more effective.",
+      "concentration": "N/A. Soft brush.",
+      "dwellTime": "N/A. Brush until residue stops coming off (typically 30-60 seconds).",
+      "bestFor": "Food-based combination stains with visible solid residue. Always the first step.",
+      "caution": "Use soft brush — avoid aggressive scrubbing that might damage fibers. Don't use if stain is wet (pushing residue deeper). Brush only when dry."
+    },
+    {
+      "agent": "POG or Solvent (for Oil Component)",
+      "mechanism": "If combination stain has oil (barbecue sauce, salad dressing, makeup), solvent treatment removes this component first. This speeds subsequent treatments and prevents oil from interfering with enzymatic or acidic steps.",
+      "concentration": "POG as-is.",
+      "dwellTime": "2-3 minutes.",
+      "bestFor": "Combination stains with oil component. Second step (after mechanical removal).",
+      "caution": "Always do solvent step BEFORE enzyme or acidic treatment. Oil first, then protein, then tannin. Don't reverse this order."
+    },
+    {
+      "agent": "Enzyme (for Protein Component)",
+      "mechanism": "If combination stain contains protein (barbecue, gravy, ice cream, meat sauce), enzyme removes this component. Enzyme is applied after oil removal (if oil was present) because oil can interfere with enzyme action.",
+      "concentration": "Follow enzyme product instructions.",
+      "dwellTime": "15-30 minutes.",
+      "bestFor": "Combination stains with protein. Third step (after oil removal, if applicable).",
+      "caution": "Never apply enzyme immediately after or simultaneously with oil solvent — oil residue reduces enzyme effectiveness. Rinse solvent first, dry partially, then apply enzyme."
+    },
+    {
+      "agent": "Tannin Formula (for Tannin Component)",
+      "mechanism": "If color remains after oil/protein removal, and stain has tannin (tomato, barbecue, wine-based sauces), acidic spotter targets tannin. This step removes the remaining brown/red color in the stain.",
+      "concentration": "Tannin formula or dilute vinegar (acidic spotter).",
+      "dwellTime": "2-5 minutes.",
+      "bestFor": "Combination stains with tannin component. Fourth step (after oil and protein removal).",
+      "caution": "Acidic spotter is safe after oil/protein removal. Don't use alkaline (sets tannin)."
+    },
+    {
+      "agent": "Oxidizer (H2O2, if color persists)",
+      "mechanism": "If stain still has visible color after tannin formula, gentle oxidizer (H2O2 3%) can reduce remaining oxidized tannin or protein browning. This is cautious escalation — oxidizers risk fiber damage.",
+      "concentration": "3% H2O2.",
+      "dwellTime": "2-5 minutes, monitoring constantly.",
+      "bestFor": "Last resort for combination stains with stubborn brown/red color remaining after other steps.",
+      "caution": "Test first. Oxidizers are risky on delicate fibers and dyes."
+    },
+    {
+      "agent": "Mild Acid (for Mineral Component, if present)",
+      "mechanism": "Some combination stains (sunscreen, foundation, cosmetics) have mineral components (zinc oxide, iron oxide, talc). Mild acid (vinegar, citric acid) removes mineral residue if present.",
+      "concentration": "Vinegar or citric acid, 1-5%.",
+      "dwellTime": "10-15 minutes.",
+      "bestFor": "Combination stains with cosmetic or mineral components.",
+      "caution": "Mild acid is safe on all fibers. This is low-risk step."
+    }
+  ],
+  "fiberInteractions": {
+    "cotton": "Cotton is robust to the full sequence of combination stain treatments: brush, solvent, enzyme, acid, mild oxidizer. All fiber-safe for cotton.",
+    "silk": "Silk is delicate to solvent (brief only), enzyme (cool water), and strong oxidizers (risky). Brush lightly (avoid fiber damage). Acidic treatment is gentle.",
+    "wool": "Wool is delicate to solvent (brief, gentle), alkaline conditions (never), strong acid (brief only), and oxidizers (risky). Acidic enzyme treatment at cool temperature is best approach.",
+    "polyester": "Polyester is robust to all treatments. Full combination sequence is safe.",
+    "leather": "Leather is delicate to solvents (brief, gentle), enzymes (cool, low-strength), and acids (weak only). Brush carefully. Professional leather care recommended for complex combination stains.",
+    "generalRule": "Cotton and polyester tolerate full combination sequence easily. Delicate fibers (silk, wool, leather) require gentle solvent, cool enzyme, mild acid, and avoidance of strong oxidizers."
+  },
+  "timeFactor": {
+    "fresh": "0-2 hours. Combination stains are easiest immediately. Mechanical removal + solvent + enzyme can resolve 90% of fresh combination stains. This is the critical window.",
+    "hours": "2-24 hours. Each component begins to age and set according to its family chemistry. Oil oxidizes, protein denatures, tannin polymerizes. Treatment becomes harder.",
+    "days": "1-7 days. Significant aging. Removal requires full sequential treatment and extended dwell times.",
+    "weeks": "7+ days. Many combination stains approach permanence once aged.",
+    "heatExposure": "Heat catastrophically worsens combination stains. Dryer heat oxidizes oil, denatures protein, darkens tannin, and fixes dye — all simultaneously. A stain that was 95% removable fresh becomes 20% removable after dryer heat.",
+    "keyInsight": "Combination stains are TIME + COMPONENT dependent. Fresh combination stains are highly solvable with the right sequence. Aged or heat-set combination stains are very difficult. The sequence matters more than any single chemical."
+  },
+  "treatmentSequence": {
+    "standardOrder": [
+      {
+        "step": 1,
+        "name": "Mechanical Removal",
+        "action": "Dry brush to remove visible residue (food particles, makeup, etc.)",
+        "rationale": "Reduces concentration of all components. Makes subsequent steps faster."
+      },
+      {
+        "step": 2,
+        "name": "Oil Removal (if present)",
+        "action": "POG or solvent for 2-3 minutes, blot thoroughly",
+        "rationale": "Oil component can interfere with enzyme and acidic steps. Remove it first."
+      },
+      {
+        "step": 3,
+        "name": "Protein Removal (if present)",
+        "action": "Enzyme for 15-30 minutes at cool temperature",
+        "rationale": "Removes protein component. Oil must be removed first to let enzyme work."
+      },
+      {
+        "step": 4,
+        "name": "Tannin/Color Treatment",
+        "action": "Acidic spotter (tannin formula) for 2-5 minutes, or oxidizer (H2O2) if color persists",
+        "rationale": "Addresses remaining tannin or protein browning. Only after oil and protein removed."
+      },
+      {
+        "step": 5,
+        "name": "Mineral Treatment (if applicable)",
+        "action": "Mild acid (vinegar) for 10-15 minutes if mineral component present",
+        "rationale": "Removes mineral residue (cosmetics, sunscreen). Gentle, can apply last."
+      },
+      {
+        "step": 6,
+        "name": "Final Rinse",
+        "action": "Water + NSD to remove all chemical residue",
+        "rationale": "Ensures no acid, enzyme, or solvent residue remains."
+      }
+    ]
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Treating combination stains in random order or as single-family stains",
+      "whyItFails": "A barbecue sauce stain treated with enzyme alone doesn't remove oil, leaving a greasy residue even after protein is gone. Treating with oil solvent alone leaves tannin color. Random sequence wastes time and leaves partial stains.",
+      "instead": "Always diagnose components first: 'This sauce is oil + tannin + protein.' Then sequence: oil solvent → enzyme → acidic spotter. This systematic approach works."
+    },
+    {
+      "mistake": "Using alkaline treatment on combination stains containing tannin (e.g., barbecue sauce)",
+      "whyItFails": "Alkaline detergent or alkaline pH sets tannin permanently. If the stain has tannin, alkaline is poison. Many spotters instinctively reach for detergent (alkaline), which worsens tannin-containing combination stains.",
+      "instead": "If tannin is present in combination stain, use acidic treatment only (acidic spotter, not alkaline detergent)."
+    },
+    {
+      "mistake": "Applying enzyme immediately after oil solvent without adequate rinse",
+      "whyItFails": "Oil solvent residue coats fiber and prevents enzyme from accessing protein stain. Enzyme can't work through a solvent film.",
+      "instead": "Rinse thoroughly with water after solvent treatment. Ensure no solvent smell remains. Then apply enzyme."
+    },
+    {
+      "mistake": "Assuming makeup stains are purely cosmetic (dye) when they're actually oil + mineral + dye",
+      "whyItFails": "Treating makeup stain purely as dye (with color remover) doesn't address the oil and mineral components. Partial removal or discoloration results.",
+      "instead": "Diagnose makeup stains as combination: brush first, solvent for oil, acidic treatment for mineral and remaining color. Test color remover only if color persists after other steps."
+    },
+    {
+      "mistake": "Applying heat to combination stains at any point in the sequence",
+      "whyItFails": "Heat oxidizes every component simultaneously. Oil oxidizes → hardens. Protein denatures. Tannin polymerizes. Dye sets. All components become permanently bonded.",
+      "instead": "Keep combination stain treatment completely dry and cool. No heat, no warm water. Use cool water for all rinses."
+    }
+  ],
+  "dansTips": [
+    "Barbecue sauce is the classic combination stain: oil + tannin + protein. Treat it like a puzzle. Brush first to get excess sauce off. POG for 2 minutes to remove the oil/grease. Water rinse thoroughly. Enzyme for 20 minutes to digest the meat protein. Then if there's still brown color, acidic spotter for the tannin. This sequence works 90% of the time on fresh barbecue stains.",
+    "Salsa is oil + tannin + mineral (tomato + cilantro + lime). Similar to barbecue but lighter. Mechanical removal first, solvent for oil component, acidic treatment for the tannin and mineral. Enzyme may not be needed unless there's significant avocado (protein). This teaches you the analytical approach: identify each component before treating.",
+    "Makeup stains look like one thing (colored smudge) but they're three things: oil (emollients), mineral (talc, mica, iron oxide), pigment (dye). If you treat purely as dye (color remover), you're leaving oil and mineral. If you treat purely as oil (solvent), you're leaving color. You need the sequence. Foundation is the worst case because it has all three in high concentration.",
+    "Coffee with cream — doesn't seem like combination but it is. Black coffee is tannin + protein (milk), plus sugar (becomes sticky when heated). Fresh coffee stain? Enzyme removes the milk protein and helps break up the sugar. Acidic spotter for remaining tannin. If it's been heat-dried, much harder — the sugar has caramelized and bound to fiber permanently.",
+    "Ice cream stains are oil + protein (milk) + sometimes tannin or dye (chocolate, fruit). Mechanical removal is key because dried ice cream is chunky. Then solvent, then enzyme, then acidic if color remains. This is a stain that teaches patience — ice cream is sticky and requires each step to complete thoroughly.",
+    "The 'it looked like a simple stain until I treated it' moment: you brush food residue off, apply enzyme, and suddenly see that the stain has an oil component you couldn't see before. This is normal. The mechanical removal revealed the complexity. Pivot immediately: rinse, apply solvent. This flexibility matters.",
+    "Sunscreen stains are minerals (zinc oxide, iron oxide) + wax/oils + sometimes fragrance. This is a combination that many spotters miss because they look like simple residue. Brush first to remove the white/tan particulate, solvent for the oil component, mild acid for the mineral. These look worse than they are because of the opacity of the minerals."
+  ],
+  "crossReferences": {
+    "confusedWith": ["individual stain families (e.g., treating combination as if it's pure tannin)", "color-loss situations (if oxidizer is used carelessly, dye damage can make it look like the stain was multicomponent)"],
+    "overlapsWith": ["every other family (combination stains are intersections of other families)"],
+    "note": "Combination stains represent the highest complexity in spotting. They require diagnostic skill (identifying components), chemical knowledge (knowing each family's treatment), sequencing logic (correct order), and fiber management (keeping each step safe). Master spotters often spend more time diagnosing combination stains than treating them. The treatment itself is mechanical: brush → solvent → enzyme → acid, in order, with patience between steps. The skill is in recognizing the combination and executing the sequence systematically."
+  }
+}

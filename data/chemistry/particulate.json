@@ -1,0 +1,121 @@
+{
+  "id": "particulate",
+  "family": "Particulate",
+  "icon": "🌪️",
+  "color": "#696969",
+  "overview": {
+    "summary": "Physical debris (particles, dust, powder) mechanically trapped in fiber — carbon/soot, graphite, clay, makeup powder, mineral dust, metal filings, chalk, paint powder. Unlike chemical stains where molecules bond to fiber, particulate stains are solid particles lodged in the fiber structure. The defining characteristic: DRY TREATMENT FIRST. Applying water or detergent to particulate stains pushes particles deeper into fiber, making removal harder. Dry brush and vacuum are the primary tools.",
+    "molecularStructure": "Particulates are solid particles: carbon is pure elemental carbon (soot, carbon black from tire residue); graphite is layered carbon; clay is silicate minerals; makeup is mica (silicate), iron oxide (mineral), and talc; metal filings are elemental metals or oxides. These are solid particles, not dissolved molecules.",
+    "commonStains": ["soot", "carbon (from exhaust, fireplace)", "graphite (pencil)", "clay mud", "talc (powder)", "makeup powder", "chalk", "dust", "metal filings", "coal dust", "mascara powder"],
+    "prevalence": "Common. Particulate stains are 8-12% of spotting calls. These are often mishandled because spotters instinctively apply water first (wrong approach)."
+  },
+  "chemistry": {
+    "bondingMechanism": "Particles bond mechanically to fiber via lodging in the fiber's surface structure and micro-pores. There are no chemical bonds — it's purely physical entrapment. Particles sit on and in the fiber surface. They're held there by friction and electrostatic attraction (some particles and fibers have opposite charges).",
+    "removalPrinciple": "Mechanical removal first: brush and vacuum to extract particles before any water or chemical treatment. Once dry particles are removed (50-90% removal possible with good brushing), remaining particulate residue might benefit from detergent or solvent (if particles have a binder — makeup powder has binders, pure graphite doesn't).",
+    "pHSensitivity": "Particles are not pH-sensitive — they're solid matter, not ionizable. pH doesn't help particle removal.",
+    "solubility": "Particles are not soluble in water by definition. Water makes them stick more firmly by wetting the fiber and creating surface tension that locks particles in place.",
+    "oxidationBehavior": "Not applicable. Oxidizers don't break down most particulates. Some can oxidize carbon (soot) but this is secondary to mechanical removal."
+  },
+  "keyAgents": [
+    {
+      "agent": "Soft Brush (Clothes Brush, Soft-Bristle Brush)",
+      "mechanism": "Brushing dislodges particles from fiber surface via mechanical action. The brush bristles separate fibers and lift trapped particles out. This is the PRIMARY tool for particulate stains.",
+      "concentration": "N/A",
+      "dwellTime": "N/A. Brush until particles stop coming loose (typically 30-60 seconds of steady brushing).",
+      "bestFor": "ALL particulate stains, always as first step. Dry brush on dry fabric removes 50-90% of particulate in seconds.",
+      "caution": "Use SOFT brush — hard brushing can damage fibers. Brush GENTLY but persistently. Brush while fabric is DRY — wet fabric holds particles tighter."
+    },
+    {
+      "agent": "Vacuum (Suction)",
+      "mechanism": "Vacuum draws particles out of fiber via suction. Useful for loose particulate and after brushing to ensure loose particles are fully removed.",
+      "concentration": "N/A",
+      "dwellTime": "N/A. Vacuum until no more particles are visible.",
+      "bestFor": "Upholstered items, large surface areas, after initial brushing to finish removing loose particles.",
+      "caution": "Gentle suction preferred — harsh suction can pull fibers. Use upholstery attachment, not floor vacuum."
+    },
+    {
+      "agent": "Tape or Lint Roller (for adhesive collection of particles)",
+      "mechanism": "Adhesive surface on tape or lint roller picks up loose particles. Good for final cleanup of residual particles.",
+      "concentration": "N/A",
+      "dwellTime": "N/A. Apply and pull away repeatedly until no particles transfer.",
+      "bestFor": "Final step after brushing, especially for items that can't be vacuumed. Makeup powder, graphite.",
+      "caution": "Can damage delicate fabrics if adhesive is too strong. Test first."
+    },
+    {
+      "agent": "NSD (Neutral Synthetic Detergent) + Water, as Secondary Step",
+      "mechanism": "After dry brushing removes bulk of particles, water + detergent can help suspend remaining particulate (especially if particles have binders, like makeup powder). Detergent emulsifies any light oils or binders holding particles.",
+      "concentration": "0.1-0.2% NSD.",
+      "dwellTime": "2-3 minutes with light agitation.",
+      "bestFor": "Second step ONLY, after mechanical removal. For particulates with organic binders (makeup, chalk dust mixed with oil).",
+      "caution": "Only apply AFTER dry brushing removes the bulk. Water applied first will lock particles deeper in fiber."
+    },
+    {
+      "agent": "Solvent (if particles have oil/wax binder)",
+      "mechanism": "Some particulates have binders (wax in makeup, oil in graphite sticks, etc.). Light solvent can help suspend these particles after brushing.",
+      "concentration": "Mild solvent (POG, mineral spirits, or alcohol).",
+      "dwellTime": "1-2 minutes.",
+      "bestFor": "Third step, if water alone doesn't remove all residue. For makeup powder (has wax binders).",
+      "caution": "Only after brushing. Solvent applied to dry particulate can spread particles. Always brush first."
+    },
+    {
+      "agent": "Enzyme (for Organic Residue Binder)",
+      "mechanism": "Some particulates have organic binders (chalk dust can have starch binder, some powders have protein binders). Enzyme can digest these binders, releasing particles for removal.",
+      "concentration": "Enzyme cleaner per product instructions.",
+      "dwellTime": "15-20 minutes.",
+      "bestFor": "If particulate has been partially set by organic binder. Usually last resort.",
+      "caution": "Rarely needed for pure particulate stains. Use only if brushing + water doesn't work."
+    }
+  ],
+  "fiberInteractions": {
+    "cotton": "Cotton is robust to all particulate removal methods. Brushing works well on cotton. Water and detergent are safe. Particulate removal on cotton is straightforward.",
+    "silk": "Silk is delicate to aggressive brushing. Use very soft brush, minimal pressure. Gentle brushing is OK, aggressive brushing damages fibers. Particulate on silk is challenging due to fiber sensitivity.",
+    "wool": "Wool is sensitive to aggressive brushing (can pill, damage surface). Use very soft brush with minimal pressure. Particulate on wool requires care.",
+    "polyester": "Polyester is robust to brushing and all particulate removal methods. No issues.",
+    "leather": "Leather is sensitive to aggressive brushing and water. Soft dry brush first (gentle). Avoid water if possible. Professional cleaning recommended for heavy particulate on leather.",
+    "generalRule": "All fibers benefit from dry brushing (gentle) first. Water and detergent should come second, not first. Delicate fibers require extra-gentle brushing."
+  },
+  "timeFactor": {
+    "fresh": "0-2 hours. Particles are loose, sitting on fiber surface. Brushing removes 90-95% instantly.",
+    "hours": "2-24 hours. Particles begin to settle and mechanically embed. Brushing still removes 80-90%.",
+    "days": "1-7 days. Particles are more firmly embedded. Brushing removes 60-80%. Additional water + detergent may be needed to remove last 20%.",
+    "weeks": "7+ days. Particles may have begun to integrate with fiber (dust particles can bond via electrostatic). Brushing removes 40-60%. This is the limit of mechanical removal.",
+    "moisture": "If particulate has been exposed to moisture (rain, sweat), particles may have begun to dissolve or redeposit as chemical stains. Dry particulate is easier than wet particulate.",
+    "keyInsight": "Unlike other stain families, age matters less for particulate. Even old particulate can be mechanically removed (though harder). Time + moisture is worse — wet particulate resets as partial chemical stain. Dry particulate is always mechanically removable."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Applying water or detergent first to particulate stains, without dry brushing first",
+      "whyItFails": "Water wets the fiber and particles, creating surface tension and capillary action that pulls particles DEEPER into fiber. This is the opposite of removal — it's embedding. What was sitting on the surface is now locked in the fiber.",
+      "instead": "ALWAYS dry brush first. Remove all loose particles via mechanical action. Only AFTER brushing is complete, use water/detergent if residue remains."
+    },
+    {
+      "mistake": "Using aggressive brushing on delicate fibers (silk, wool) for particulate removal",
+      "whyItFails": "Aggressive brushing damages delicate fibers (creates pilling on wool, breaks fibroin on silk). The cure is worse than the disease.",
+      "instead": "Use very soft brush with minimal pressure. Brush gently and persistently. If this doesn't fully remove particles, accept 80% removal rather than risk fiber damage."
+    },
+    {
+      "mistake": "Thinking particulate stains are 'impossible' because water/detergent didn't work",
+      "whyItFails": "The operator applied water first (wrong approach). Water embedded the particles. Now mechanical removal is harder.",
+      "instead": "Restart: rinse thoroughly to remove water, dry completely, then brush vigorously (if fiber allows). Or accept that particles are now harder to remove."
+    },
+    {
+      "mistake": "Confusing particulate stains with chemical stains (e.g., mistaking coal dust for a stain, or graphite for a dye stain)",
+      "whyItFails": "If you treat particulate as a chemical stain (applying detergent, enzyme, oxidizers), you're wasting time and chemicals while embedding particles deeper.",
+      "instead": "Diagnose particulate first: is this solid particles or dissolved molecules? Test: brush the stain. If particles come off, it's particulate. If nothing comes off and brushing doesn't help, it might be chemical."
+    }
+  ],
+  "dansTips": [
+    "The 'dirty collar' or 'dirty cuffs' on a garment? That's 80% particulate (body soil, dust, sweat residue minerals). Brush first — you'll remove half the stain instantly. The customer is amazed that a brush solved a problem water didn't.",
+    "Makeup powder on black clothing: brush gently, and the white/tan particulate mostly comes off. The residual stain is small. This teaches customers that particulate stains are easier than they look if you use the right first step (brushing, not water).",
+    "Mascara smudge: this is part particulate (makeup particles), part oil (emollients in mascara), part pigment (dye). Brush first to remove the powder. That alone removes 60-70%. Then if oil residue remains, light detergent or solvent. This is combination + particulate logic.",
+    "Graphite (pencil) on white shirt: brushing removes the loose graphite. A final lint roller or tape removes residual. The 'permanent' pencil stain is gone. This is the clearest example of dry-first working beautifully.",
+    "Soot and carbon are pure particulate. They're almost never chemical stains. Brush vigorously (cotton or polyester can tolerate this), vacuum, and the stain is mostly gone. If there's persistent gray tint after mechanical removal, that's residual soot that has begun to oxidize and bind — this might need gentle oxidizer or enzyme, but 90% comes off with brushing.",
+    "The 'after rain, mud stain hardened' situation: let the mud dry completely first (do NOT treat while wet). Brush when dry — you'll remove 70-80% without chemicals. This is prevention logic: some customers bring wet-mud garments wanting immediate treatment. Advise drying first.",
+    "Chalk dust (from outdoor chalk play): pure particulate, responds beautifully to brushing. Lint roller for final cleanup. This is the easiest category of particulate stain."
+  ],
+  "crossReferences": {
+    "confusedWith": ["mineral (mineral dust and particulate can overlap, but particulate is mechanical entrapment while mineral is chemical precipitation)", "dye (coal dust or graphite residue can have slight color tint, making it look like stain rather than particle)"],
+    "overlapsWith": ["combination (makeup is particulate + oil + pigment binder)", "maintenance (accumulated body soil on collars/cuffs is particulate + sweat protein)"],
+    "note": "Particulate stains are the family where FIRST STEP MATTERS MOST. Every other stain family benefits from water-based rinse first. Particulate is the exception: water is the enemy. Dry mechanical removal is the path. This inverts normal instinct, which is why particulate stains are so commonly mishandled. Master spotters recognize particulate immediately and reach for a brush, not a spray bottle. This is the family where technique (dry first) matters more than chemistry."
+  }
+}

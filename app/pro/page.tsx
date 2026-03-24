@@ -7,7 +7,7 @@ import GarmentAnalysis from '@/components/solve/GarmentAnalysis'
 import { useUser } from '@/lib/hooks/useUser'
 import { canAccessFeature } from '@/lib/auth/features'
 
-type ActiveTool = 'garment_analysis' | 'deep_solve' | 'handoff' | 'stain_brain' | 'chemicals' | null
+type ActiveTool = 'garment_analysis' | 'deep_solve' | 'handoff' | 'stain_brain' | 'chemicals' | 'chemistry' | null
 
 const TOOLS: {
   id: ActiveTool & string
@@ -69,6 +69,16 @@ const TOOLS: {
     badgeColor: 'bg-blue-500/15 text-blue-400 border-blue-500/30',
     hoverBorder: 'hover:border-blue-500/30',
   },
+  {
+    id: 'chemistry',
+    feature: 'spotter',
+    icon: '⚗️',
+    title: 'Chemistry Cards',
+    description: 'Stain family chemistry — how each family bonds to fiber, what breaks it, what makes it permanent.',
+    badge: 'SPOTTER',
+    badgeColor: 'bg-blue-500/15 text-blue-400 border-blue-500/30',
+    hoverBorder: 'hover:border-blue-500/30',
+  },
 ]
 
 export default function ProToolsPage() {
@@ -119,10 +129,10 @@ export default function ProToolsPage() {
       ) : (
         TOOLS.map(tool => {
           const hasAccess = canAccessFeature(tier, tool.feature)
-          // Chemicals tool navigates to its own page
-          if (tool.id === 'chemicals') {
+          // Tools that navigate to their own page
+          if (tool.id === 'chemicals' || tool.id === 'chemistry') {
             return (
-              <Link key={tool.id} href="/pro/chemicals" className={`card w-full text-left space-y-2 transition-colors ${tool.hoverBorder} block`}>
+              <Link key={tool.id} href={`/pro/${tool.id}`} className={`card w-full text-left space-y-2 transition-colors ${tool.hoverBorder} block`}>
                 <div className="flex items-center gap-2">
                   <span className="text-lg">{tool.icon}</span>
                   <h2 className="text-base font-bold">{tool.title}</h2>

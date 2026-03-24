@@ -1,0 +1,132 @@
+{
+  "id": "protein",
+  "family": "Protein",
+  "icon": "🩸",
+  "color": "#DC143C",
+  "overview": {
+    "summary": "Amino acid chains from biological sources (blood, egg, milk, sweat, body fluids, food proteins). Fresh protein stains bond to fiber via hydrogen bonding and can form covalent cross-links when heat-treated. This family's defining characteristic: HEAT DENATURES PROTEIN INSTANTLY, making heat the stain's worst enemy. Fresh protein requires cold-water treatment; aged protein requires enzymatic digestion or oxidation.",
+    "molecularStructure": "Proteins are long chains of amino acids linked by peptide bonds. Each amino acid has a carboxyl group and amino group. Protein chains fold into 3D structures stabilized by hydrogen bonding, disulfide bonds, and hydrophobic interactions. When heated above 40-45°C, these bonds break and proteins denature (unfold), exposing more surface area and forming new bonds with fiber — this is irreversible.",
+    "commonStains": ["blood", "egg", "milk", "sweat", "semen", "urine", "vomit", "saliva", "mucus", "meat juices", "fish emulsion"],
+    "prevalence": "Very common. Protein stains are 15-20% of household spotting calls. Blood is the most frequent protein stain. Sweat stains are cumulative (laundry/maintenance issue). Children's garments have high protein stain frequency (food, sweat, bodily fluids)."
+  },
+  "chemistry": {
+    "bondingMechanism": "Fresh protein bonds to fiber primarily via hydrogen bonding between amino acid side chains and fiber hydroxyl (cellulose) or amide (protein) groups. This bonding is initially reversible. When heat is applied, protein denatures (peptide backbone unwinds), exposing hydrophobic regions that form stronger bonds with lipophilic regions of fiber. Heat also enables covalent cross-linking (Maillard reaction if sugars/carbs present, or direct peptide-fiber cross-linking). These cross-links are irreversible.",
+    "removalPrinciple": "Fresh protein is removed by cold-water rinse (dilutes and flushes hydrogen-bonded protein) or enzymatic digestion (proteases cut peptide bonds, breaking protein into small amino acid fragments easily flushed). Aged protein requires enzymes or oxidizers. Heat is catastrophic — it must be avoided at all costs. Once protein is denatured, enzyme digestion becomes ineffective (enzymes can't break cross-linked structures easily).",
+    "pHSensitivity": "Protein is ionizable (has carboxyl and amino groups). At acidic pH, amino groups are protonated (+NH3), making protein positively charged. At alkaline pH, carboxyl groups are deprotonated (COO-), making protein negatively charged. Neutral pH is best for enzyme action. Alkaline conditions can hydrolyze some peptide bonds (saponification-like) but are less controlled than enzymes. Never use heat at any pH — heat denatures regardless of pH and causes permanent cross-linking.",
+    "solubility": "Fresh protein is slightly soluble in cool water (cold water helps because it prevents denaturation). Protein is more soluble in acidic or alkaline conditions (ionization) but these don't aid removal — cold water + mechanical action is best. Denatured protein (heat-set) is insoluble in water — removal requires enzymatic digestion or chemical oxidizers.",
+    "oxidationBehavior": "Protein responds to oxidizers (H2O2, perborate, bleach) by breaking peptide bonds and carbonizing protein molecules, turning brown or black. Oxidation works on aged protein but causes color shifts. Blood oxidation produces brown or black staining (hemoglobin is iron-porphyrin, oxidation changes the iron state). Use oxidizers cautiously — they can yellow fibers."
+  },
+  "keyAgents": [
+    {
+      "agent": "Cold Water (0-15°C)",
+      "mechanism": "Cold water dilutes and flushes fresh protein via osmosis and mechanical action. Cold temperature prevents protein denaturation (denaturing starts ~40°C in most proteins). Cold water is THE most important agent for fresh protein — more important than any chemical. Flushing with cold water removes 60-80% of fresh protein stains.",
+      "concentration": "100% water, cold.",
+      "dwellTime": "Continuous or intermittent flushing for 5-10 minutes. Cold water works slowly but steadily if you keep flushing.",
+      "bestFor": "FIRST treatment for any fresh protein stain (blood, egg, milk, sweat). Works on all fiber types. Essential. Before any other treatment, flush with cold water.",
+      "caution": "Never use warm or hot water on fresh protein. Never soak stained garment in hot water. The moment you apply heat, protein denatures and becomes permanent. If hot water has been applied, the stain is now much harder — assess with enzyme, but manage expectations."
+    },
+    {
+      "agent": "Protease Enzyme (Protein-Digesting Enzyme)",
+      "mechanism": "Protease enzymes (from bacteria or plants) cut peptide bonds at specific amino acid sequences, breaking protein chains into small oligopeptides and amino acids that are water-soluble and easily flushed. Proteases work best at neutral to slightly alkaline pH (7-9) and moderate temperature (25-40°C, NOT hot). Proteases cannot digest denatured (heat-set) protein effectively because the structure is cross-linked and inaccessible to enzyme active sites.",
+      "concentration": "Enzyme cleaners typically 0.5-1% active protease. Follow product instructions for dilution.",
+      "dwellTime": "15-30 minutes minimum. Enzymes work slowly. Longer dwell (30-45 minutes) is better for tough stains. Temperature 30-35°C is optimal — slightly warm but not hot.",
+      "bestFor": "Fresh and aged protein stains (blood, egg, milk, sweat on any fiber). Essential for protein family. Works on protein fibers (wool, silk) because the enzyme is specific to protein, not fiber. Most effective when applied to still-damp stains.",
+      "caution": "NEVER use boiling water or high heat with enzyme — this denatures the enzyme itself and kills its activity. Never use protease enzymes on silk or wool if followed by hot water rinse (heat sensitivity). Enzymes are pH-sensitive — very acidic or very alkaline conditions reduce effectiveness. Avoid combining enzyme with bleach (oxidation kills enzyme)."
+    },
+    {
+      "agent": "Hydrogen Peroxide (3-6%)",
+      "mechanism": "H2O2 oxidizes protein's aromatic amino acids (tyrosine, tryptophan) and breaks peptide bonds through oxidative degradation. This is particularly effective on hemoglobin in blood — H2O2 oxidizes the iron center and breaks the porphyrin ring, removing the red color. H2O2 works on both fresh and aged protein but is less selective than enzyme (can damage fiber dyes).",
+      "concentration": "3% standard drugstore strength. 6% professional strength for tougher stains.",
+      "dwellTime": "5-15 minutes. Check frequently (every 2-3 minutes) for color change. Once the stain is visibly lightened, flush immediately to avoid over-bleaching.",
+      "bestFor": "Blood stains, especially aged or brown blood (hemoglobin oxidation visible). Works on cellulose fibers (cotton, linen) better than protein fibers. Good second-line treatment when enzyme alone doesn't fully clear protein stain.",
+      "caution": "H2O2 will bleach fabric dyes — test first. Never use on wool or silk (yellowing risk). Combining H2O2 with enzyme reduces enzyme effectiveness (oxidation denatures enzyme). Apply H2O2 AFTER enzyme treatment, not before or simultaneously."
+    },
+    {
+      "agent": "Ammonia (2-5%)",
+      "mechanism": "Ammonia (alkaline, pH ~11) helps protein ionize and solubilize, making it easier to flush. However, ammonia's main benefit is pre-treatment — it helps loosen aged protein before enzyme application. Ammonia alone is NOT effective for protein removal. Its historical use was as a pre-rinse to loosen old sweat deposits before water rinse.",
+      "concentration": "Dilute: 1-2 tablespoons ammonia in 1 cup water. Never use straight ammonia (too harsh).",
+      "dwellTime": "5 minutes, then thorough water rinse before enzyme or other treatment.",
+      "bestFor": "Pre-treatment for aged or set protein (sweat accumulation, old stains). Helps loosen protein buildup before enzymatic treatment.",
+      "caution": "Never mix ammonia with bleach (creates toxic chlorine gas). Never use ammonia on wool or silk (alkaline causes fiber damage). Ammonia alone won't remove protein — it's a pre-rinse only. Always follow ammonia with cold water rinse and enzyme treatment."
+    },
+    {
+      "agent": "Salt Water (Saline, 0.9% NaCl)",
+      "mechanism": "Salt water (saline) mimics blood osmolarity and prevents red blood cells from lysing and releasing hemoglobin deeper into fiber. This is why 'rinse blood with salt water' is old spotting wisdom. Salt doesn't remove blood but prevents damage. Fresh blood stains should be rinsed with saline or cold salt water, then treated with enzyme.",
+      "concentration": "0.9% (9g salt per 1L water) or approximate: 1/4 teaspoon salt per 1 cup cool water.",
+      "dwellTime": "Rinse continuously for 5 minutes to remove free blood. Prevents hemolysis.",
+      "bestFor": "Fresh blood stains on any fiber. First aid step before enzyme treatment. Essential for large/fresh blood (accident wounds, nosebleeds).",
+      "caution": "Salt water is preventative, not curative — it stops worsening but doesn't remove stain. Always follow with enzyme treatment. Saline is harmless to all fibers, even silk and wool."
+    },
+    {
+      "agent": "Sodium Perborate (as oxidizer for blood)",
+      "mechanism": "Perborate oxidizes hemoglobin (iron-porphyrin) to a lighter form (hematin), removing the red-brown color. This is gentler and slower than H2O2 but more stable and less aggressive on dyes.",
+      "concentration": "2-4% solution.",
+      "dwellTime": "20-30 minutes. Warm (not hot) water activates perborate — use 35-40°C water.",
+      "bestFor": "Aged blood stains (brown, oxidized blood) on delicate fibers (wool, silk) where H2O2 is too aggressive. Professional-grade treatment.",
+      "caution": "Still carries bleaching risk. Test on colored fabrics. Slower than H2O2 — requires patience."
+    }
+  ],
+  "fiberInteractions": {
+    "cotton": "Cotton cellulose has hydroxyl groups that attract fresh protein via hydrogen bonding. Fresh protein on cotton is easily removed with cold water + enzyme. Heat is very dangerous on cotton+protein — heat denatures protein and causes Maillard browning (protein + sugars = brown color). This is why 'never iron bloodstained clothes' is universal advice. Aged protein on cotton is moderately difficult — requires enzyme + time.",
+    "silk": "Silk (fibroin protein) attracts protein stains strongly (protein-to-protein interaction). Fresh protein on silk is removable with cold water + gentle enzyme. Heat is catastrophic on silk+protein (both denature together, irreversible crosslinking). Silk is sensitive to oxidizers (H2O2, perborate risk yellowing). Use cold enzyme treatment preferentially. Aged protein on silk is very difficult.",
+    "wool": "Wool (keratin protein) has high affinity for protein stains. Fresh protein on wool is removable with cold water + enzyme at neutral pH (alkaline enzyme conditions risk fiber damage). Heat is catastrophic — denatures both wool and protein stain together. Aged protein on wool is very stubborn. Use cool enzyme treatment. Avoid ammonia (alkaline damages wool).",
+    "polyester": "Polyester (synthetic) has lower affinity for protein than natural fibers. Fresh protein on polyester is moderately easy to remove with cold water + enzyme. Polyester is robust — tolerates aggressive enzyme and oxidizer treatment well. Heat is still problematic but less damaging than to naturals — oxidation causes stain to set but polyester fiber itself survives better. Aged protein on polyester is moderately difficult.",
+    "nylon": "Nylon (synthetic with amide groups) attracts protein moderately. Fresh protein on nylon is moderately easy with cold water + enzyme. Nylon tolerates enzyme and mild oxidizers. Heat is problematic but less catastrophic than to naturals. Aged protein on nylon is moderately difficult — enzyme works if given adequate time.",
+    "leather": "Leather (tanned protein) is protein treated with tannins. New protein stains (blood, sweat) on leather can spread if not treated immediately. Use saline rinse first (prevent hemolysis), then enzyme in cool water. Leather is delicate to harsh chemicals — avoid aggressive oxidizers. Professional leather cleaning recommended for aged protein stains.",
+    "generalRule": "Fresh protein on ANY fiber = cold water + enzyme. This is universal. Aged protein = enzyme with longer dwell ± oxidizer. NEVER heat protein stains — this is universal rule across all fibers. Heat denatures both stain and (potentially) fiber, creating permanent damage. Cold is the friend; heat is the enemy."
+  },
+  "timeFactor": {
+    "fresh": "0-2 hours. Protein is still soluble, hydrogen-bonded to fiber. Cold water rinse alone removes 60-80%. Enzyme treatment in this window is nearly 100% effective. This is the golden period — treat fresh protein immediately.",
+    "hours": "2-24 hours. Protein begins to denature slightly (ambient temperature causes slow denaturation). Enzyme still works but requires longer dwell (20-30 minutes). Oxidative browning may have begun (blood turns darker brown).",
+    "days": "1-7 days. Protein is significantly denatured and cross-linked (even without heat, time + oxidation cause some cross-linking). Enzyme becomes less effective. Oxidizers (H2O2, perborate) may be necessary. Stain color deepens.",
+    "weeks": "7+ days. Protein is heavily cross-linked. Removal becomes very difficult. Enzyme may not penetrate denatured, cross-linked protein structure. Oxidizers might lighten but not fully remove. This is where 'permanent' conversations start (honestly).",
+    "heatExposure": "Heat (dryer, iron, washing in warm/hot water, sunlight) causes immediate protein denaturation. A fresh blood stain in a cold-water hand-rinse can be 90% removed. The same stain run through a 40°C wash cycle becomes 10-20% removable. Dryer heat makes protein essentially permanent (full denaturation + Maillard browning if sugars present). This is THE critical factor — timing is less important than whether heat has been applied.",
+    "keyInsight": "Fresh protein + no heat = trivial removal (cold water + enzyme, 2 minutes). Fresh protein + any heat = permanent stain. Age of stain matters less than heat exposure. A 2-week-old sweat stain that never touched heat is easier to remove than a 1-hour-old blood stain that went through a dryer."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Using hot water or warm water on fresh protein stains",
+      "whyItFails": "Hot water denatures protein instantly (irreversible unfolding). Denatured protein cross-links to fiber via exposed hydrophobic regions. This happens in seconds — one hot wash cycle turns a trivial stain into a permanent stain. This is the #1 reason protein stains become 'impossible' — heat application before treatment.",
+      "instead": "ALWAYS use cold water first. Flush with cold water for 5-10 minutes. Only after cold treatment is complete, you can apply warm (not hot) enzyme if needed."
+    },
+    {
+      "mistake": "Ironing or applying heat to clothing with unidentified stains (often protein)",
+      "whyItFails": "Iron heat denatures any protein stain present AND causes Maillard browning (protein + heat + time = brown color, irreversible). A light invisible sweat stain becomes a prominent brown stain under the iron. This is why professional advice is 'never iron unknown stains.'",
+      "instead": "Treat any suspicious stains with cold water before ironing. If protein is present, cold water + enzyme will remove it before heat exposure."
+    },
+    {
+      "mistake": "Mixing enzyme treatment with bleach or using enzyme after H2O2 without adequate rinse",
+      "whyItFails": "Oxidizers (bleach, H2O2) denature enzymes, killing their protein-cutting ability. Using both simultaneously wastes the enzyme. The oxidizer also creates uncontrolled protein degradation (browning, yellowing), not targeted removal.",
+      "instead": "Sequence: cold water → enzyme (if needed) → full water rinse → oxidizer (only if stain still visible and fiber safe). OR simply enzyme, no oxidizer. Don't combine."
+    },
+    {
+      "mistake": "Assuming aged protein stains (old sweat) are impossible to remove",
+      "whyItFails": "Aged protein is denatured but not chemically bonded (not cross-linked by heat or Maillard). Enzyme digestion STILL works on aged protein — it just takes longer (30-45 minute dwell instead of 15). Many operators give up too early.",
+      "instead": "Treat aged protein stains with extended enzyme dwell (45 minutes). If enzyme alone doesn't work, follow with gentle oxidizer (H2O2 3%, brief dwell). Aged protein is difficult but usually solvable — don't dismiss it as permanent."
+    },
+    {
+      "mistake": "Using alkaline detergent or ammonia as first treatment on fresh blood or fresh protein",
+      "whyItFails": "Alkaline conditions can set protein partially (alkaline helps polymerize). First treatment should be neutral or acidic (cold water, salt water). Enzyme works best at neutral pH. Alkaline detergent belongs in the laundry stage, not the spotting stage.",
+      "instead": "Fresh protein: cold saline rinse first, then enzyme at neutral pH. Save alkaline detergent for the wash cycle afterward."
+    },
+    {
+      "mistake": "Trying to remove aged blood stain without considering that hemoglobin oxidation has darkened it",
+      "whyItFails": "Old blood stains are brown or black (oxidized hemoglobin). Enzyme alone won't remove this colored oxidation product. Stain may look impossible, but the oxidation just changes the color — oxidizers (H2O2) can reduce it further.",
+      "instead": "For old blood (>24 hours): enzyme first (30 minutes), then assess. If brown color remains, apply H2O2 3% (brief dwell) to oxidize the hematin/hemoglobin residue. Often solves the 'old blood stain' problem."
+    }
+  ],
+  "dansTips": [
+    "Fresh blood is your easiest stain, bar none. Cold salt water for 2 minutes, then enzyme for 15 minutes, done. The fact that it looks scary (red, biological) makes customers think it's permanent. It's not — it's the most predictable stain in spotting. Use this to build customer confidence: 'Blood? I can fix this in 15 minutes, guaranteed.'",
+    "The brown stain that 'wasn't there before' story: customer had a light blood stain they didn't notice, ran the clothes through a warm wash, the blood oxidized (turned brown or black), and now it looks like a mysterious permanent stain. It's not permanent, it's oxidized. Enzyme will still work, and if a bit of brown remains, H2O2 finishes it. But manage expectations: 'This went through warm water, so it's oxidized, and the oxidation might leave some brown tint even after removal.'",
+    "Sweat stains are protein that's been oxidizing slowly for weeks while sitting in someone's closet. They look yellow or brown, they're old, and they STILL respond to enzyme if you give it 30-45 minutes. Enzyme + heat-free water + patience = problem solved. This is the old armpit stain that looks hopeless but enzyme cracks it.",
+    "The 'blood stain is still there but enzyme didn't work' scenario usually means the stain had a heat cycle before enzyme. Denatured protein is harder for enzyme to access. You might need longer dwell time (45 minutes instead of 15) or gentle oxidizer after enzyme. But educate customers: heat before treatment makes blood harder but not impossible.",
+    "Never iron a garment until you're 100% sure there's no protein stain — even invisible ones. The heat will denature it and cause Maillard browning. This is why old armpit stains often don't show up until someone irons the shirt. Suggest: rinse suspected sweat areas before ironing.",
+    "Egg stains look like protein (because they are) but egg white is pure albumin protein, and egg yolk is protein + fat + cholesterol. Fresh egg is easy (enzyme). Aged egg is harder because the protein has oxidized + the yolk fat has oxidized. Treat egg like combination stain: address protein part first (enzyme), then address any remaining oily or colored residue. This is where spotters underestimate egg — they think one treatment solves it.",
+    "Milk stains are protein + lactose + fat. Fresh milk is enzyme-solvable. Aged milk can be sticky (proteins have cross-linked, lactose has caramelized). Enzyme works but aged milk might need follow-up detergent or water rinse to fully clear. Milk is deceptively stubborn for what seems like a simple organic stain."
+  ],
+  "crossReferences": {
+    "confusedWith": ["combination (blood + fabric dye is protein + dye; sweat + deodorant stain residue is protein + chemical)", "tannin (some blood stains appear reddish-brown and confused with tannin, but tannin responds to acidic treatment, blood to enzyme)"],
+    "overlapsWith": ["maintenance (cumulative sweat stains are laundry/maintenance issue)", "odor (sweat stains often accompanied by bacterial growth and odor)"],
+    "note": "Protein stains and their treatment depend critically on whether heat has been applied. If heat has been applied, the treatment approach changes (longer dwell, possibly oxidizer). Always ask customer: 'Has this been washed or dried already?' Heat history determines difficulty. Blood is the signature protein stain but only represents ~30% of protein spotting calls — sweat, milk, and egg are equally common."
+  }
+}
