@@ -8,6 +8,7 @@ const FEATURE_ACCESS: Record<string, Tier[]> = {
   unlimited_solve:  ['home', 'spotter', 'operator', 'founder'],
   deep_solve:       ['spotter', 'operator', 'founder'],
   handoff:          ['spotter', 'operator', 'founder'],
+  spotter:          ['spotter', 'operator', 'founder'],
   garment_analysis: ['operator', 'founder'],
   dashboard:        ['operator', 'founder'],
 }
