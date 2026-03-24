@@ -104,9 +104,9 @@ export default function ChemistryPage() {
                 onClick={() => setSelected(selected === c.id ? null : c.id)}
                 className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-all"
                 style={{
-                  background: selected === c.id ? `${c.color}20` : 'var(--surface)',
-                  border: `1.5px solid ${selected === c.id ? c.color : 'var(--border-strong)'}`,
-                  color: selected === c.id ? c.color : 'var(--text)',
+                  background: selected === c.id ? 'rgba(34,197,94,0.12)' : 'var(--surface)',
+                  border: `1.5px solid ${selected === c.id ? 'var(--accent)' : 'var(--border-strong)'}`,
+                  color: selected === c.id ? 'var(--accent)' : 'var(--text)',
                 }}
               >
                 <span>{c.icon}</span>
@@ -131,7 +131,7 @@ export default function ChemistryPage() {
                   <div className="flex items-center gap-3">
                     <span className="text-3xl">{active.icon}</span>
                     <div>
-                      <h2 className="text-lg font-bold" style={{ color: active.color }}>{active.family} Family</h2>
+                      <h2 className="text-lg font-bold" style={{ color: 'var(--text)' }}>{active.family} Family</h2>
                     </div>
                   </div>
                 </div>
@@ -174,7 +174,7 @@ export default function ChemistryPage() {
                       <div className="space-y-2">
                         {agents.map((a, i) => (
                           <div key={i} className="flex gap-3">
-                            <span className="text-sm font-semibold flex-shrink-0" style={{ color: active.color, minWidth: 90 }}>{a.name}</span>
+                            <span className="text-sm font-semibold flex-shrink-0" style={{ color: 'var(--accent)', minWidth: 90 }}>{a.name}</span>
                             <span className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>{a.action}</span>
                           </div>
                         ))}
