@@ -176,11 +176,20 @@ export default function ChemistryPage() {
               {/* Common mistakes */}
               {active.commonMistakes && active.commonMistakes.length > 0 && (
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: '#ef4444' }}>Common Mistakes</p>
-                  <div className="space-y-1">
-                    {active.commonMistakes.map((m, i) => (
-                      <p key={i} className="text-xs" style={{ color: 'var(--text)' }}>• {typeof m === 'string' ? m : JSON.stringify(m)}</p>
-                    ))}
+                  <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: '#ef4444' }}>⚠️ Common Mistakes</p>
+                  <div className="space-y-3">
+                    {active.commonMistakes.map((m: any, i) => {
+                      if (typeof m === 'string') return (
+                        <p key={i} className="text-sm" style={{ color: 'var(--text)' }}>• {m}</p>
+                      )
+                      return (
+                        <div key={i} className="rounded-lg p-3 space-y-1" style={{ background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.15)' }}>
+                          <p className="text-sm font-semibold" style={{ color: '#ef4444' }}>✗ {m.mistake}</p>
+                          {m.whyItFails && <p className="text-xs" style={{ color: 'var(--text)' }}>{m.whyItFails}</p>}
+                          {m.instead && <p className="text-xs font-medium mt-1" style={{ color: 'var(--accent)' }}>→ {m.instead}</p>}
+                        </div>
+                      )
+                    })}
                   </div>
                 </div>
               )}
@@ -189,9 +198,11 @@ export default function ChemistryPage() {
               {active.dansTips && active.dansTips.length > 0 && (
                 <div className="rounded-lg p-3" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
                   <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--accent)' }}>💡 Dan's Tips</p>
-                  <div className="space-y-1">
-                    {active.dansTips.map((t, i) => (
-                      <p key={i} className="text-sm" style={{ color: 'var(--text)' }}>• {typeof t === 'string' ? t : JSON.stringify(t)}</p>
+                  <div className="space-y-2">
+                    {active.dansTips.map((t: any, i) => (
+                      <p key={i} className="text-sm" style={{ color: 'var(--text)' }}>
+                        • {typeof t === 'string' ? t : (t.tip || t.text || JSON.stringify(t))}
+                      </p>
                     ))}
                   </div>
                 </div>
