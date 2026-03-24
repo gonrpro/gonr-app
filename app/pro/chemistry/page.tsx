@@ -171,11 +171,11 @@ export default function ChemistryPage() {
                   {agents.length > 0 && (
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>Key Agents</p>
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         {agents.map((a, i) => (
-                          <div key={i} className="flex gap-3">
-                            <span className="text-sm font-semibold flex-shrink-0" style={{ color: 'var(--accent)', minWidth: 90 }}>{a.name}</span>
-                            <span className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>{a.action}</span>
+                          <div key={i} className="rounded-xl p-3" style={{ background: 'var(--surface-2)' }}>
+                            <p className="text-sm font-semibold mb-1" style={{ color: 'var(--accent)' }}>{a.name}</p>
+                            <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>{a.action}</p>
                           </div>
                         ))}
                       </div>
