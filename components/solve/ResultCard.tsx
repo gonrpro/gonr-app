@@ -108,14 +108,12 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         </div>
       </div>
 
-      {/* ── 2. Chemistry brief — short summary only ── */}
+      {/* ── 2. Chemistry overview — full, not truncated ── */}
       {card.whyThisWorks && (
         <div className="px-4 pb-3">
           <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             <span className="mr-1">🧪</span>
-            {card.whyThisWorks.length > 120
-              ? card.whyThisWorks.slice(0, 120) + '…'
-              : card.whyThisWorks}
+            {card.whyThisWorks}
           </p>
         </div>
       )}
