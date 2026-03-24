@@ -108,13 +108,15 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         </div>
       </div>
 
-      {/* ── 2. Chemistry overview — full, not truncated ── */}
+      {/* ── 2. Chemistry overview — prominent callout ── */}
       {card.whyThisWorks && (
         <div className="px-4 pb-3">
-          <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            <span className="mr-1">🧪</span>
-            {card.whyThisWorks}
-          </p>
+          <div className="rounded-xl p-3 space-y-1" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
+            <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--accent)' }}>🧪 Why This Works</p>
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
+              {card.whyThisWorks}
+            </p>
+          </div>
         </div>
       )}
 
