@@ -162,8 +162,10 @@ export default function SolvePage() {
             onStainDetected={(family, suggestion) => {
               setStainInput(suggestion)
               setSelectedStain(family)
-              // Auto-solve after short delay to allow state to settle
-              setTimeout(() => handleSolve(suggestion, family), 100)
+              // Scroll to fiber chips so operator picks fiber next
+              setTimeout(() => {
+                document.getElementById('fiber-section')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+              }, 150)
             }}
             onReset={() => {
               setStainInput('')
@@ -194,10 +196,10 @@ export default function SolvePage() {
         </div>
       )}
       {fiberSource !== 'label' && (
-        <FiberChips
+        <div id="fiber-section"><FiberChips
           selectedFiber={selectedFiber}
           onFiberSelect={(f) => { setSelectedFiber(f); setFiberSource('chips') }}
-        />
+        /></div>
       )}
 
       {/* Text input */}
