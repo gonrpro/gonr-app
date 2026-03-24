@@ -162,6 +162,8 @@ export default function SolvePage() {
             onStainDetected={(family, suggestion) => {
               setStainInput(suggestion)
               setSelectedStain(family)
+              // Auto-solve after short delay to allow state to settle
+              setTimeout(() => handleSolve(suggestion, family), 100)
             }}
             onReset={() => {
               setStainInput('')
