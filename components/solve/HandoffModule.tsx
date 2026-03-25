@@ -13,21 +13,21 @@ function buildMessage(stain: string, surface: string, stainChemistry?: string, w
   const s = stain.replace(/-/g, ' ')
   const f = surface.replace(/-/g, ' ')
 
+  // Build a plain-language customer-facing message — never dump raw science text
+  // Use whyThisWorks only as a hint to craft the science line, not verbatim
+  let scienceLine = ''
   const source = whyThisWorks || stainChemistry
-  if (source && source.length > 40) {
-    return source
-      .replace(/\bH₂O₂\b/g, 'hydrogen peroxide')
-      .replace(/\bNSD\b/g, 'professional detergent')
-      .replace(/\bPOG\b/g, 'solvent')
-      .replace(/\bacetic acid\b/gi, 'neutralizing rinse')
-      .replace(/\bProtein\b/g, 'enzyme treatment')
-      .replace(/\bTannin\b/g, 'tannin treatment')
-      .replace(/\bIPA\b/g, 'solvent')
-      .split(/\.\s+/).slice(0, 2).join('. ') + '.'
+  if (source && source.length > 20) {
+    // Take first sentence, strip jargon, use as context hint
+    const firstSentence = source.split(/\.\s+/)[0].trim()
+    // Only use it if it doesn't contain technical terms — otherwise use generic
+    const hasJargon = /enzyme|oxidiz|tannin|protein|pH|surfactant|solvent|NSD|POG|IPA|H₂O₂|acetic|alkalin/i.test(firstSentence)
+    if (!hasJargon && firstSentence.length < 120) {
+      scienceLine = ` ${firstSentence}.`
+    }
   }
 
-  // Fallback
-  return `${s.charAt(0).toUpperCase() + s.slice(1)} stains on ${f} require professional treatment. Home methods often set the stain or damage the fiber — we use professional-grade chemistry and technique to get the best possible result.`
+  return `We treated the ${s} stain on your ${f}.${scienceLine} We used the right process for this stain type — let us know if you have any questions about the outcome.`
 }
 
 export default function HandoffModule({ stain, surface, stainChemistry, whyThisWorks }: HandoffModuleProps) {
