@@ -1,0 +1,78 @@
+{
+  "id": "vomit-cotton",
+  "title": "Vomit on Cotton",
+  "stainFamily": "protein",
+  "surface": "cotton",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Vomit is a complex mixture of partially digested food, stomach acid (HCl, pH 1.5-3.5), bile salts, mucus, and proteins. On cotton, the acid can damage dyes and fibers if left in contact, while the protein component bonds and sets with heat. Bile salts act as surfactants that drive the stain deeper into the substrate. The odor comes from volatile fatty acids and bacterial decomposition.",
+  "whyThisWorks": "Immediate removal of solids prevents acid damage to cotton. Cold water dilutes the acid and prevents protein from setting. Enzyme treatment breaks down the protein matrix, while surfactant addresses the bile and fat components. Odor neutralization requires reaching all contaminated material beneath the surface.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center \u2014 5-10 min dwell time",
+      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water \u2014 3-5 min dwell time",
+      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein \u2014 5-10 min dwell time, monitor carefully",
+      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH \u2014 1-2 min dwell time",
+      "5. Blot dry with clean absorbent cloth. Air dry \u2014 no heat"
+    ],
+    "products": [
+      "Protein Formula",
+      "NSD (Neutral Synthetic Detergent)",
+      "sodium hydrosulfite",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "cold",
+    "warnings": [
+      "COLD water only throughout \u2014 heat permanently sets protein"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Remove solids with a spoon or dull edge \u2014 scrape, don't rub. Dispose safely",
+      "2. Blot area with cold water and clean white cloths to dilute acid",
+      "3. Mix 1 tbsp Dawn dish soap with 2 cups cold water. Apply and blot \u2014 5-10 min dwell time",
+      "4. Mix equal parts white vinegar and cold water. Apply for odor neutralization \u2014 5 min dwell time",
+      "5. Blot with clean white cloth until dry. Sprinkle baking soda over area \u2014 let sit 15 min",
+      "6. Vacuum and air dry \u2014 no heat"
+    ],
+    "products": [
+      "Dawn dish soap",
+      "white vinegar",
+      "baking soda"
+    ],
+    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "warnings": [
+      "NEVER use hot water on protein stains \u2014 heat sets them permanently",
+      "Always test cleaning solution on a hidden area first"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "No prolonged acid exposure on colored cotton",
+      "No chlorine bleach on colored cotton \u2014 strips dyes"
+    ],
+    "fiberSensitivities": [
+      "Most chemically durable textile fiber",
+      "Test colorfastness on colored cotton before peroxide"
+    ]
+  },
+  "escalation": {
+    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
+    "whatToTell": "Explain that the stain is vomit on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?",
+      "Is the stain fresh and wet, or dried/crusty?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 6,
+  "timeEstimate": "15-30 minutes",
+  "lastValidated": "2026-03-23"
+}

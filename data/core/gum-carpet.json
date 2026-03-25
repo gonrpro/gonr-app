@@ -1,0 +1,74 @@
+{
+  "id": "gum-carpet",
+  "title": "Gum on Carpet",
+  "stainFamily": "specialty",
+  "surface": "carpet",
+  "sector": "carpet",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Chewing gum is a hydrophobic polymer (polyisobutylene or chicle) mixed with softeners, sweeteners, and flavorings. On carpet, the polymer adheres through mechanical bonding and surface tension. Warm gum is soft and sticky, spreading when touched. Cold gum becomes brittle and loses adhesion. The polymer is not water-soluble at any temperature.",
+  "whyThisWorks": "Freezing makes the gum polymer brittle on carpet, breaking its mechanical bond and allowing it to be scraped or cracked off in pieces. POG or citrus-based solvent dissolves any remaining residue by breaking down the polymer. Ice in a bag (not direct ice) prevents water damage while providing the cold needed. Picking at warm gum spreads it \u2014 always freeze first.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Freeze with CO2 spray or ice to harden gum completely",
+      "2. Crack and scrape off hardened gum with dull edge",
+      "3. Apply POG to dissolve remaining residue \u2014 5-10 min dwell time",
+      "4. Apply NSD to remove final traces. Flush with cool water \u2014 3-5 min",
+      "5. Blot dry"
+    ],
+    "products": [
+      "POG (Paint Oil Grease remover)",
+      "NSD (Neutral Synthetic Detergent)"
+    ],
+    "temperature": "ambient",
+    "warnings": [
+      "Always test on hidden area first"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Place ice in a bag on the gum for 15 minutes until completely hard",
+      "2. Crack the frozen gum and peel/scrape off with a dull edge",
+      "3. Apply Dawn dish soap to remaining residue. Work gently \u2014 5 min",
+      "4. Rinse with warm water. Repeat if needed",
+      "5. Air dry"
+    ],
+    "products": [
+      "Dawn dish soap",
+      "ice"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "warnings": [
+      "Always test cleaning solution on a hidden area first",
+      "Air dry until stain is confirmed gone \u2014 heat sets most stains"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "No chlorine bleach on colored carpet",
+      "Avoid over-wetting \u2014 causes backing damage and mold"
+    ],
+    "fiberSensitivities": [
+      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
+      "Always blot from outside in to prevent spreading",
+      "Extract excess moisture to prevent backing damage"
+    ]
+  },
+  "escalation": {
+    "when": "If gum stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
+    "whatToTell": "Explain that the stain is gum on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 3,
+  "timeEstimate": "10-20 minutes",
+  "lastValidated": "2026-03-23"
+}

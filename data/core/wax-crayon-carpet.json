@@ -1,0 +1,79 @@
+{
+  "id": "wax-crayon-carpet",
+  "title": "Wax Crayon on Carpet",
+  "stainFamily": "dry_side",
+  "surface": "carpet",
+  "sector": "carpet",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Crayon is paraffin wax mixed with pigment (iron oxides, organic dyes). On carpet, the wax penetrates the fiber and hardens, trapping concentrated pigment within the matrix. The combination of physical wax deposit and dye stain makes this a two-phase removal challenge. Heat can spread the wax and drive pigment deeper.",
+  "whyThisWorks": "Freezing first hardens the wax for mechanical removal from carpet. POG then dissolves remaining wax residue. Surfactant lifts the liberated pigment. For persistent color, an oxidizer addresses the dye component after the wax matrix is fully removed. Working from the back of the fabric pushes wax out rather than deeper in.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Freeze with ice bag to harden wax. Scrape off bulk with dull edge",
+      "2. Apply POG to dissolve remaining wax residue \u2014 5-10 min dwell time",
+      "3. Apply NSD to lift pigment (for colored wax). Flush with cool water \u2014 3-5 min",
+      "4. If dye remains: apply H2O2 6% carefully, monitor \u2014 5-10 min dwell time",
+      "5. Apply Acetic Acid 28% (diluted 1:10) for pH restoration. Blot dry"
+    ],
+    "products": [
+      "POG (Paint Oil Grease remover)",
+      "NSD (Neutral Synthetic Detergent)",
+      "H2O2 6%",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "ambient",
+    "warnings": [
+      "Apply solvent BEFORE water \u2014 water spreads oil stains",
+      "Ensure adequate ventilation when using solvents \u2014 VOC fumes require extraction"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Place ice in a bag on the wax for 10 minutes until brittle. Do NOT apply ice directly to fabric",
+      "2. Scrape off hardened wax with a dull knife or credit card edge",
+      "3. Place paper towels above and below the fabric (if possible). Iron on low heat to melt remaining wax into paper \u2014 check every 5 seconds",
+      "4. Apply Dawn dish soap to any remaining residue. Blot \u2014 5 min dwell time",
+      "5. Rinse with warm water. Air dry \u2014 inspect before using dryer"
+    ],
+    "products": [
+      "Dawn dish soap",
+      "paper towels",
+      "ice"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner \u2014 they have specialized solvents for oil-based stains",
+    "warnings": [
+      "Never add water to a fresh oil stain first \u2014 water and oil don't mix, you will spread it",
+      "Heat from dryer permanently sets oil residue"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "No chlorine bleach on colored carpet",
+      "Avoid over-wetting \u2014 causes backing damage and mold"
+    ],
+    "fiberSensitivities": [
+      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
+      "Always blot from outside in to prevent spreading",
+      "Extract excess moisture to prevent backing damage"
+    ]
+  },
+  "escalation": {
+    "when": "If wax crayon stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
+    "whatToTell": "Explain that the stain is wax crayon on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?",
+      "Is the oil fresh or has it been washed/dried already?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 5,
+  "timeEstimate": "15-30 minutes",
+  "lastValidated": "2026-03-23"
+}

@@ -1,0 +1,76 @@
+{
+  "id": "nail-polish-cotton",
+  "title": "Nail Polish on Cotton",
+  "stainFamily": "dry_side",
+  "surface": "cotton",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Nail polish contains nitrocellulose (film former), plasticizers (dibutyl phthalate), colorants (pigments/dyes), and solvents (ethyl acetate, butyl acetate). On cotton, the solvents evaporate and the nitrocellulose hardens into a tough, pigmented film that is resistant to water, soap, and most common cleaners. The film bonds mechanically by penetrating fiber texture.",
+  "whyThisWorks": "Amyl acetate or acetone (where fiber-safe) dissolves the nitrocellulose film on cotton. The solvent reverses the hardening process, re-liquefying the polish so it can be blotted away. Acetone is faster but unsafe on acetate and many synthetics. Amyl acetate is safer for most fibers. The pigment transfers to the blotting cloth as the film dissolves.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply amyl acetate to soften and dissolve the polish film. Blot \u2014 do NOT rub \u2014 5-10 min dwell time",
+      "2. Repeat amyl acetate application, blotting dissolved polish onto clean cloth \u2014 3-5 min per pass",
+      "3. Apply NSD to remove remaining residue. Flush with cool water \u2014 3-5 min",
+      "4. Apply Acetic Acid 28% (diluted 1:10) for pH restoration \u2014 1-2 min",
+      "5. Blot dry. Air dry"
+    ],
+    "products": [
+      "amyl acetate",
+      "NSD (Neutral Synthetic Detergent)",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "ambient",
+    "warnings": [
+      "Apply solvent BEFORE water \u2014 water spreads oil stains",
+      "NEVER use acetone on acetate fabric \u2014 dissolves it on contact"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Blot excess polish \u2014 do NOT rub or spread",
+      "2. Test a hidden area with hydrogen peroxide 3% before proceeding",
+      "3. Apply hydrogen peroxide 3% to stain. Blot gently with white cloth \u2014 5 min dwell time",
+      "4. Apply Dawn dish soap and work gently. Rinse with warm water",
+      "5. Repeat if needed. Air dry \u2014 no heat until stain is gone"
+    ],
+    "products": [
+      "hydrogen peroxide 3%",
+      "Dawn dish soap"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner \u2014 they have specialized solvents for oil-based stains",
+    "warnings": [
+      "Never add water to a fresh oil stain first \u2014 water and oil don't mix, you will spread it",
+      "Heat from dryer permanently sets oil residue"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "No prolonged acid exposure on colored cotton",
+      "No chlorine bleach on colored cotton \u2014 strips dyes"
+    ],
+    "fiberSensitivities": [
+      "Most chemically durable textile fiber",
+      "Test colorfastness on colored cotton before peroxide"
+    ]
+  },
+  "escalation": {
+    "when": "If nail polish stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
+    "whatToTell": "Explain that the stain is nail polish on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?",
+      "Is the oil fresh or has it been washed/dried already?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 7,
+  "timeEstimate": "15-30 minutes",
+  "lastValidated": "2026-03-23"
+}

@@ -1,0 +1,79 @@
+{
+  "id": "grease-upholstery",
+  "title": "Grease on Upholstery",
+  "stainFamily": "dry_side",
+  "surface": "upholstery",
+  "sector": "upholstery",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Cooking grease is a thick triglyceride that coats upholstery surfaces and resists water \u2014 water alone cannot break it down. Fresh grease sits on fiber surfaces; aged grease penetrates and polymerizes into a hard, oxidized film. The oleophilic nature of many fibers (especially polyester) means grease bonds preferentially to synthetic materials.",
+  "whyThisWorks": "POG (volatile dry solvent) dissolves the grease on contact from upholstery. The principle is 'like dissolves like' \u2014 a non-polar solvent dissolves non-polar oils. Surfactant then emulsifies remaining micro-droplets so water can rinse them away. Applying solvent BEFORE water is critical \u2014 water causes the oil to emulsify and spread deeper.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently \u2014 5-10 min dwell time",
+      "2. If POG plateaus: apply amyl acetate for stronger solvent action \u2014 3-5 min dwell time",
+      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water \u2014 5 min dwell time",
+      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration \u2014 1-2 min dwell time",
+      "5. Blot dry. Air dry completely"
+    ],
+    "products": [
+      "POG (Paint Oil Grease remover)",
+      "amyl acetate",
+      "NSD (Neutral Synthetic Detergent)",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "ambient",
+    "warnings": [
+      "Apply solvent BEFORE water \u2014 water spreads oil stains",
+      "Ensure adequate ventilation when using solvents \u2014 VOC fumes require extraction"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil \u2014 wait 10 min",
+      "2. Brush off powder with a clean cloth",
+      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric \u2014 5-10 min dwell time",
+      "4. Rinse with warm water. Repeat soap application if stain persists",
+      "5. Air dry \u2014 do NOT use dryer until stain is completely gone"
+    ],
+    "products": [
+      "Dawn dish soap",
+      "baking soda"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner \u2014 they have specialized solvents for oil-based stains",
+    "warnings": [
+      "Never add water to a fresh oil stain first \u2014 water and oil don't mix, you will spread it",
+      "Heat from dryer permanently sets oil residue"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "No over-wetting \u2014 causes water rings and backing damage",
+      "No chlorine bleach on colored fabric",
+      "Always check care code (W, S, WS, X) before treating"
+    ],
+    "fiberSensitivities": [
+      "Mixed fiber blends common \u2014 treat for the most sensitive fiber present",
+      "Cushion foam absorbs moisture \u2014 avoid saturation",
+      "Test in hidden area before treating visible sections"
+    ]
+  },
+  "escalation": {
+    "when": "If grease stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
+    "whatToTell": "Explain that the stain is grease on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional upholstery cleaning service"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?",
+      "Is the oil fresh or has it been washed/dried already?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 3,
+  "timeEstimate": "15-30 minutes",
+  "lastValidated": "2026-03-23"
+}

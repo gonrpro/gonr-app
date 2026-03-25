@@ -1,0 +1,80 @@
+{
+  "id": "coffee-cream-carpet",
+  "title": "Coffee with Cream on Carpet",
+  "stainFamily": "combo",
+  "surface": "carpet",
+  "sector": "carpet",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Coffee with cream is a triple-component stain: tannins from coffee, milk protein (casein), and butterfat. On carpet, each component bonds differently \u2014 tannins through hydrogen bonds, protein through hydrophobic interactions, and fat through lipid-fiber affinity. The protein must be addressed first because heat used to remove other components would set it permanently.",
+  "whyThisWorks": "Treatment order is non-negotiable on carpet: tannin first (acidic spotter), then protein (cold enzyme or surfactant), then fat (POG or degreaser). This sequence prevents cross-contamination between treatment chemistries. The tannin must be addressed before the protein because alkaline protein treatment would permanently darken the tannin component.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Tannin Formula (acidic spotter) first to address coffee tannin \u2014 5-10 min dwell time",
+      "2. Apply Protein Formula to address the milk protein component. Tamp gently \u2014 5-10 min dwell time",
+      "3. Apply POG to address the butterfat component \u2014 3-5 min dwell time",
+      "4. Flush with NSD and cool water to remove all residue \u2014 3-5 min",
+      "5. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse \u2014 1-2 min. Blot dry"
+    ],
+    "products": [
+      "Tannin Formula",
+      "Protein Formula",
+      "POG (Paint Oil Grease remover)",
+      "NSD (Neutral Synthetic Detergent)",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "cold",
+    "warnings": [
+      "Treatment order: tannin first, then protein, then fat \u2014 do not reverse",
+      "COLD water throughout \u2014 heat sets the protein component"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Blot immediately with a clean white cloth \u2014 never rub",
+      "2. Apply Dawn dish soap mixed with cold water to address the tannin and fat \u2014 5-10 min dwell time",
+      "3. Blot. If stain persists, apply hydrogen peroxide 3% for the color component \u2014 5 min dwell time",
+      "4. Rinse thoroughly with COLD water \u2014 cold is critical for the protein (cream) component",
+      "5. Air dry \u2014 no heat, no dryer"
+    ],
+    "products": [
+      "Dawn dish soap",
+      "hydrogen peroxide 3%"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder \u2014 a professional cleaner has specialized chemistry for each component",
+    "warnings": [
+      "Treat each component in order \u2014 don't skip steps",
+      "Cold water always \u2014 heat sets protein components permanently"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "No chlorine bleach on colored carpet",
+      "Avoid over-wetting \u2014 causes backing damage and mold"
+    ],
+    "fiberSensitivities": [
+      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
+      "Always blot from outside in to prevent spreading",
+      "Extract excess moisture to prevent backing damage"
+    ]
+  },
+  "escalation": {
+    "when": "If coffee cream stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
+    "whatToTell": "Explain that the stain is coffee cream on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?",
+      "Can you identify the specific components?",
+      "Is there a greasy/oily feel to the stain?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 5,
+  "timeEstimate": "15-30 minutes",
+  "lastValidated": "2026-03-23"
+}

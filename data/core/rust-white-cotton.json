@@ -1,0 +1,75 @@
+{
+  "id": "rust-white-cotton",
+  "title": "Rust on White Cotton",
+  "stainFamily": "dye",
+  "surface": "white-cotton",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Rust (iron oxide, Fe2O3) is an inorganic metal stain, not an organic dye. On white cotton, iron oxide particles lodge in fiber texture and bond through electrostatic interactions. Standard detergents and bleach are ineffective \u2014 bleach actually sets rust stains darker by further oxidizing the iron. Only reducing agents or chelating agents can dissolve iron oxide back into soluble form.",
+  "whyThisWorks": "A reducing agent (sodium hydrosulfite professionally, oxalic acid at consumer level) converts insoluble iron oxide back into soluble iron ions on white cotton, which then rinse away. Lemon juice or white vinegar provide mild acid chelation for light rust. The key rule: NEVER use chlorine bleach on rust \u2014 it oxidizes the iron further, making the stain permanent.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply sodium hydrosulfite (reducing agent) to the rust stain \u2014 this converts insoluble iron oxide back to soluble form \u2014 5-15 min dwell time",
+      "2. Flush with NSD and cool water to remove dissolved iron \u2014 3-5 min",
+      "3. If rust persists: repeat sodium hydrosulfite application \u2014 5-10 min dwell time",
+      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse \u2014 1-2 min",
+      "5. Blot dry. Air dry completely"
+    ],
+    "products": [
+      "sodium hydrosulfite",
+      "NSD (Neutral Synthetic Detergent)",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "cold",
+    "warnings": [
+      "NEVER use chlorine bleach on rust \u2014 it oxidizes iron further, making the stain permanent"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Apply white vinegar or lemon juice to the rust stain. Let sit \u2014 15-30 min dwell time",
+      "2. Sprinkle salt over the vinegar-soaked area for mild abrasion",
+      "3. Blot with clean white cloth. Repeat application if needed",
+      "4. Rinse thoroughly with cold water",
+      "5. Air dry \u2014 do NOT use heat"
+    ],
+    "products": [
+      "white vinegar",
+      "lemon juice (alternative)"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional \u2014 they have specialized dye-stripping agents",
+    "warnings": [
+      "Never rub dye stains \u2014 rubbing spreads the color",
+      "Heat permanently sets dye stains"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Avoid prolonged exposure to concentrated acid"
+    ],
+    "fiberSensitivities": [
+      "Most chemically resistant textile \u2014 tolerates aggressive treatment",
+      "Can handle chlorine bleach, hydrogen peroxide, oxygen bleach",
+      "Hot water safe up to 95\u00b0C / 200\u00b0F"
+    ]
+  },
+  "escalation": {
+    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
+    "whatToTell": "Explain that the stain is rust on white cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?",
+      "Is the color still actively spreading or has it dried?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 6,
+  "timeEstimate": "15-45 minutes",
+  "lastValidated": "2026-03-23"
+}

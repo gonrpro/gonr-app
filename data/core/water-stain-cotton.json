@@ -1,0 +1,72 @@
+{
+  "id": "water-stain-cotton",
+  "title": "Water Stain on Cotton",
+  "stainFamily": "specialty",
+  "surface": "cotton",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Water stains are mineral deposits (calcium, magnesium, iron) left behind when water evaporates from cotton. Hard water leaves white/chalky residue. Iron-rich water leaves rust-colored marks. The minerals bond to fiber through electrostatic interactions and can etch certain surfaces (marble, glass) if left in contact. The 'stain' is actually a deposit, not absorbed color.",
+  "whyThisWorks": "A mild acid (white vinegar or citric acid) dissolves the mineral deposits on cotton by converting them to soluble salts. For iron-based water stains, a reducing agent (oxalic acid) is more effective. On stone surfaces, only pH-neutral cleaners are safe \u2014 acid dissolves marble/limestone. Preventing mineral buildup is easier than removing it \u2014 squeegee/dry after water contact.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Remove loose material mechanically \u2014 brush, scrape, or vacuum as appropriate",
+      "2. Apply NSD to the stain area \u2014 5-10 min dwell time",
+      "3. Apply appropriate secondary agent based on stain response \u2014 5-10 min dwell time",
+      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse \u2014 1-2 min",
+      "5. Blot dry. Air dry completely"
+    ],
+    "products": [
+      "NSD (Neutral Synthetic Detergent)",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "ambient",
+    "warnings": [
+      "Always test on hidden area first"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Mix equal parts white vinegar and water. Apply to mineral deposits \u2014 10-15 min dwell time",
+      "2. Blot with clean white cloth. Repeat if needed",
+      "3. Rinse with clean water to remove vinegar residue",
+      "4. For fabric: launder normally. For hard surfaces: wipe dry",
+      "5. Prevention: squeegee or dry surfaces after water contact"
+    ],
+    "products": [
+      "white vinegar"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "warnings": [
+      "Always test cleaning solution on a hidden area first",
+      "Air dry until stain is confirmed gone \u2014 heat sets most stains"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "No prolonged acid exposure on colored cotton",
+      "No chlorine bleach on colored cotton \u2014 strips dyes"
+    ],
+    "fiberSensitivities": [
+      "Most chemically durable textile fiber",
+      "Test colorfastness on colored cotton before peroxide"
+    ]
+  },
+  "escalation": {
+    "when": "If water stain stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
+    "whatToTell": "Explain that the stain is water stain on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 3,
+  "timeEstimate": "10-20 minutes",
+  "lastValidated": "2026-03-23"
+}

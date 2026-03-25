@@ -1,0 +1,77 @@
+{
+  "id": "salsa-carpet",
+  "title": "Salsa on Carpet",
+  "stainFamily": "combo",
+  "surface": "carpet",
+  "sector": "carpet",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Salsa contains tomato (lycopene, tannins), onion (sulfur compounds), chili (capsaicin in oil, red pigment), and citric acid. On carpet, the tomato tannins bond to fiber while the capsaicin oil penetrates deeply. The red pepper pigment (capsanthin) is fat-soluble and resistant to water-based cleaning. Citric acid can affect dyes on sensitive fibers.",
+  "whyThisWorks": "Cold water rinse removes loose solids and citric acid from carpet. Surfactant emulsifies the capsaicin oil. Tannin spotter addresses tomato polyphenols. An oxidizer targets the residual red pigment. Treating the oil component is key because capsaicin oil bonds pepper pigment to fiber.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Remove excess solids with dull edge \u2014 do not rub",
+      "2. Apply Tannin Formula for the plant-pigment component \u2014 5-10 min dwell time",
+      "3. Apply POG for the oil component \u2014 3-5 min dwell time",
+      "4. Flush with NSD and cool water \u2014 3-5 min",
+      "5. If color persists: apply H2O2 6% on colorfast fabrics \u2014 5-10 min dwell time",
+      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+    ],
+    "products": [
+      "Tannin Formula",
+      "POG (Paint Oil Grease remover)",
+      "NSD (Neutral Synthetic Detergent)",
+      "H2O2 6%",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "cold",
+    "warnings": []
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Remove solids with a spoon or dull edge \u2014 scrape, don't rub",
+      "2. Rinse with cold water to remove loose material",
+      "3. Apply Dawn dish soap. Work gently \u2014 5-10 min dwell time",
+      "4. Blot with clean white cloth. Repeat if needed",
+      "5. Air dry \u2014 no heat until stain is gone"
+    ],
+    "products": [
+      "Dawn dish soap"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder \u2014 a professional cleaner has specialized chemistry for each component",
+    "warnings": [
+      "Treat each component in order \u2014 don't skip steps",
+      "Cold water always \u2014 heat sets protein components permanently"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "No chlorine bleach on colored carpet",
+      "Avoid over-wetting \u2014 causes backing damage and mold"
+    ],
+    "fiberSensitivities": [
+      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
+      "Always blot from outside in to prevent spreading",
+      "Extract excess moisture to prevent backing damage"
+    ]
+  },
+  "escalation": {
+    "when": "If salsa stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
+    "whatToTell": "Explain that the stain is salsa on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?",
+      "Can you identify the specific components?",
+      "Is there a greasy/oily feel to the stain?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 5,
+  "timeEstimate": "15-25 minutes",
+  "lastValidated": "2026-03-23"
+}

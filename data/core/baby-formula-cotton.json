@@ -1,0 +1,76 @@
+{
+  "id": "baby-formula-cotton",
+  "title": "Baby Formula on Cotton",
+  "stainFamily": "protein",
+  "surface": "cotton",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Baby formula combines milk proteins (casein, whey), vegetable oils, lactose, and added vitamins/minerals. On cotton, the protein bonds to fibers, the oils create a hydrophobic barrier, and iron supplements can leave rust-like discoloration. Heat sets the protein rapidly and polymerizes the oil into a hard film.",
+  "whyThisWorks": "Cold water prevents protein from setting on cotton. Enzyme treatment targets the protein, surfactant emulsifies the oil component. The iron residue may need a secondary treatment after the organic components are removed. Working cold throughout is critical \u2014 any heat makes this stain permanent.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center \u2014 5-10 min dwell time",
+      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water \u2014 3-5 min dwell time",
+      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein \u2014 5-10 min dwell time, monitor carefully",
+      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH \u2014 1-2 min dwell time",
+      "5. Blot dry with clean absorbent cloth. Air dry \u2014 no heat"
+    ],
+    "products": [
+      "Protein Formula",
+      "NSD (Neutral Synthetic Detergent)",
+      "sodium hydrosulfite",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "cold",
+    "warnings": [
+      "COLD water only throughout \u2014 heat permanently sets protein"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Rinse immediately with COLD water. Blot with a clean white cloth \u2014 never rub",
+      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot \u2014 5-10 min dwell time",
+      "3. Blot with clean white cloth. Repeat soap application until stain fades",
+      "4. Rinse with cold water to remove all soap residue",
+      "5. Air dry \u2014 do NOT use dryer or any heat until stain is completely gone"
+    ],
+    "products": [
+      "Dawn dish soap",
+      "cold water"
+    ],
+    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "warnings": [
+      "NEVER use hot water on protein stains \u2014 heat sets them permanently",
+      "Always test cleaning solution on a hidden area first"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "No prolonged acid exposure on colored cotton",
+      "No chlorine bleach on colored cotton \u2014 strips dyes"
+    ],
+    "fiberSensitivities": [
+      "Most chemically durable textile fiber",
+      "Test colorfastness on colored cotton before peroxide"
+    ]
+  },
+  "escalation": {
+    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
+    "whatToTell": "Explain that the stain is baby formula on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?",
+      "Is the stain fresh and wet, or dried/crusty?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 5,
+  "timeEstimate": "15-25 minutes",
+  "lastValidated": "2026-03-23"
+}

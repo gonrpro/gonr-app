@@ -1,0 +1,76 @@
+{
+  "id": "deodorant-white-cotton",
+  "title": "Deodorant on White Cotton",
+  "stainFamily": "specialty",
+  "surface": "white-cotton",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Deodorant/antiperspirant stains are caused by aluminum compounds (aluminum chlorohydrate) reacting with sweat proteins and fabric dyes. On white cotton, the aluminum salt creates a white residue that bonds to fiber. Over time, the aluminum-protein complex yellows and hardens, becoming increasingly resistant to standard washing. The buildup is cumulative — it gets worse with each wear.",
+  "whyThisWorks": "An acidic treatment (white vinegar or dilute acetic acid) dissolves the aluminum salt deposits on white cotton. Surfactant lifts the dissolved residue. For yellowish buildup, an oxidizer addresses the protein-aluminum complex. Prevention is equally important: applying deodorant and letting it dry completely before dressing dramatically reduces fiber transfer.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Acetic Acid 28% (diluted 1:5) to dissolve aluminum salt deposits — 5-10 min dwell time",
+      "2. Apply NSD to lift dissolved residue — 3-5 min dwell time",
+      "3. If yellowing remains: apply H2O2 6% on colorfast fabrics — 5-10 min dwell time",
+      "4. Flush with cool water. Apply dilute acetic acid as final rinse — 1-2 min",
+      "5. Blot dry. Air dry completely"
+    ],
+    "products": [
+      "Acetic Acid 28% (diluted 1:5)",
+      "NSD (Neutral Synthetic Detergent)",
+      "H2O2 6%"
+    ],
+    "temperature": "ambient",
+    "warnings": [
+      "Always test on hidden area first"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Apply white vinegar directly to the stain to dissolve aluminum deposits — 10-15 min dwell time",
+      "2. Blot with clean white cloth. Repeat vinegar if needed",
+      "3. Apply Dawn dish soap and work gently — 5 min dwell time",
+      "4. Rinse with cold water"
+    ],
+    "products": [
+      "white vinegar",
+      "Dawn dish soap",
+      "enzyme laundry detergent (Tide or Persil)",
+      "cold water"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "warnings": [
+      "Always test cleaning solution on a hidden area first",
+      "Air dry until stain is confirmed gone — heat sets most stains",
+      "Do NOT use OxiClean or oxidizing agents on protein stains — they can set the stain permanently"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Avoid prolonged exposure to concentrated acid"
+    ],
+    "fiberSensitivities": [
+      "Most chemically resistant textile — tolerates aggressive treatment",
+      "Can handle chlorine bleach, hydrogen peroxide, oxygen bleach",
+      "Hot water safe up to 95°C / 200°F"
+    ]
+  },
+  "escalation": {
+    "when": "If deodorant stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
+    "whatToTell": "Explain that the stain is deodorant on white cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 5,
+  "timeEstimate": "15-30 minutes",
+  "lastValidated": "2026-03-23"
+}

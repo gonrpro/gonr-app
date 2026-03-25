@@ -1,0 +1,77 @@
+{
+  "id": "mystery-stain-carpet",
+  "title": "Mystery Stain on Carpet",
+  "stainFamily": "specialty",
+  "surface": "carpet",
+  "sector": "carpet",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Mystery stains have unknown composition and origin. On carpet, the stain could be protein, tannin, oil, dye, or any combination. Misidentifying the stain family leads to wrong treatment \u2014 and potentially setting the stain permanently (e.g., hot water on hidden protein, alkali on hidden tannin). Systematic testing is required.",
+  "whyThisWorks": "The systematic approach on carpet: start with the safest, most universal treatment (cold water + NSD) to avoid setting any component. Then test: does cold water dissolve it (water-soluble)? Does it feel greasy (oil)? Is it stiff/crusty (protein)? Is it colored without texture (dye/tannin)? Once identified, apply the correct family protocol. When in doubt, professional assessment prevents damage.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Test with cold water first \u2014 if it dissolves, likely water-soluble (tannin or fresh protein)",
+      "2. If greasy texture: start dry side \u2014 apply POG, then NSD",
+      "3. If stiff/crusty: treat as protein \u2014 apply Protein Formula (enzyme-safe fibers) or NSD (delicates)",
+      "4. If colored/flat: treat as tannin \u2014 apply Tannin Formula, then H2O2 6% on colorfast",
+      "5. Flush with NSD after any treatment. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse"
+    ],
+    "products": [
+      "NSD (Neutral Synthetic Detergent)",
+      "POG (Paint Oil Grease remover)",
+      "Protein Formula",
+      "Tannin Formula",
+      "H2O2 6%",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "ambient",
+    "warnings": [
+      "Always test on hidden area first"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Remove loose material \u2014 brush, blot, or scrape as appropriate",
+      "2. Apply Dawn dish soap mixed with cold water \u2014 5-10 min dwell time",
+      "3. Blot with clean white cloth. Repeat if needed",
+      "4. Rinse with cold water",
+      "5. Air dry \u2014 no heat"
+    ],
+    "products": [
+      "Dawn dish soap"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "warnings": [
+      "Always test cleaning solution on a hidden area first",
+      "Air dry until stain is confirmed gone \u2014 heat sets most stains"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "No chlorine bleach on colored carpet",
+      "Avoid over-wetting \u2014 causes backing damage and mold"
+    ],
+    "fiberSensitivities": [
+      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
+      "Always blot from outside in to prevent spreading",
+      "Extract excess moisture to prevent backing damage"
+    ]
+  },
+  "escalation": {
+    "when": "If mystery stain stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
+    "whatToTell": "Explain that the stain is mystery stain on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 6,
+  "timeEstimate": "15-45 minutes",
+  "lastValidated": "2026-03-23"
+}

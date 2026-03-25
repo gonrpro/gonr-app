@@ -1,0 +1,75 @@
+{
+  "id": "self-tanner-polyester",
+  "title": "Self-Tanner on Polyester",
+  "stainFamily": "dye",
+  "surface": "polyester",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Self-tanner contains dihydroxyacetone (DHA) that reacts with amino acids in a Maillard-type reaction to produce brown melanoidin pigments. On polyester, DHA reacts with the fiber (especially protein fibers and cotton) through the same chemistry it uses on skin. The brown color develops over 2-8 hours and becomes increasingly resistant as the Maillard products cross-link.",
+  "whyThisWorks": "If caught before color develops (within 1-2 hours), cold water and surfactant can remove the DHA before the Maillard reaction completes on polyester. Once developed, an oxidizer (H2O2) breaks down the melanoidin chromophores. Lemon juice (citric acid) can also lighten the Maillard products. Speed is everything \u2014 once the color fully develops, complete removal is very difficult.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply amyl acetate or appropriate solvent to dissolve dye/pigment matrix \u2014 5-10 min dwell time",
+      "2. Apply NSD to lift loosened pigment. Flush with cool water \u2014 3-5 min dwell time",
+      "3. If color persists: apply H2O2 6% on colorfast fabrics to break chromophore bonds \u2014 5-15 min dwell time",
+      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse \u2014 1-2 min",
+      "5. Blot dry. Air dry completely"
+    ],
+    "products": [
+      "amyl acetate",
+      "NSD (Neutral Synthetic Detergent)",
+      "H2O2 6%",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "cold",
+    "warnings": []
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Blot immediately \u2014 never rub (spreading dye worsens it)",
+      "2. Apply Dawn dish soap mixed with cold water. Blot gently \u2014 5-10 min dwell time",
+      "3. If stain persists: apply hydrogen peroxide 3% on colorfast fabrics \u2014 test hidden area first, 5-10 min dwell time",
+      "4. Rinse with cold water",
+      "5. Air dry \u2014 no heat until stain is completely gone"
+    ],
+    "products": [
+      "Dawn dish soap",
+      "hydrogen peroxide 3%"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional \u2014 they have specialized dye-stripping agents",
+    "warnings": [
+      "Never rub dye stains \u2014 rubbing spreads the color",
+      "Heat permanently sets dye stains"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "No strong alkali at high temperature",
+      "No concentrated acetone \u2014 softens surface"
+    ],
+    "fiberSensitivities": [
+      "Oleophilic \u2014 grabs and holds oil stains tenaciously",
+      "Retains odors due to lipophilic surface",
+      "Most chemicals are safe on polyester"
+    ]
+  },
+  "escalation": {
+    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
+    "whatToTell": "Explain that the stain is self tanner on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?",
+      "Is the color still actively spreading or has it dried?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 7,
+  "timeEstimate": "15-45 minutes",
+  "lastValidated": "2026-03-23"
+}

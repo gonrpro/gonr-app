@@ -1,0 +1,77 @@
+{
+  "id": "coffee-linen",
+  "title": "Coffee on Linen",
+  "stainFamily": "tannin",
+  "surface": "linen",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Coffee contains tannins (polyphenolic compounds from roasted beans) that bond to linen through hydrogen bonding and pi-stacking interactions. Fresh coffee is water-soluble. Aged stains oxidize and darken \u2014 the brown color intensifies as tannin molecules cross-link. Melanoidins from the roasting process add additional brown pigment that is highly resistant to removal.",
+  "whyThisWorks": "An acidic tannin spotter (professional) or oxidizer (DIY) breaks the chromophore bonds \u2014 the colored structures \u2014 in the tannin molecules on linen. Hydrogen peroxide specifically targets the double bonds that make oxidized tannin brown. The key is avoiding heat and alkaline products, both of which permanently darken tannin stains.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center \u2014 5-10 min dwell time",
+      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min \u2014 5-15 min dwell time",
+      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin \u2014 2-3 min dwell time",
+      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse \u2014 1-2 min dwell time",
+      "5. Blot dry. Air dry completely"
+    ],
+    "products": [
+      "Tannin Formula",
+      "H2O2 6%",
+      "NSD (Neutral Synthetic Detergent)",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "cold",
+    "warnings": [
+      "NEVER use ammonia or alkaline products on tannin stains \u2014 permanently darkens the color"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible \u2014 never rub",
+      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain \u2014 5-10 min dwell time",
+      "3. Blot with clean white cloth. Repeat until color fades",
+      "4. Rinse with cold water to remove all cleaning solution",
+      "5. Air dry \u2014 do NOT use dryer until stain is completely gone"
+    ],
+    "products": [
+      "Dawn dish soap",
+      "hydrogen peroxide 3%"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "warnings": [
+      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains \u2014 they permanently darken the color",
+      "Avoid heat until stain is fully removed"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "No strong concentrated acids \u2014 weakens cellulose",
+      "No chlorine bleach on colored linen"
+    ],
+    "fiberSensitivities": [
+      "Strongest natural fiber when wet \u2014 very durable",
+      "Wrinkles easily but tolerates aggressive cleaning",
+      "Neutralize acid spotters after use on cellulose"
+    ]
+  },
+  "escalation": {
+    "when": "If coffee stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
+    "whatToTell": "Explain that the stain is coffee on linen, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?",
+      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 3,
+  "timeEstimate": "10-20 minutes",
+  "lastValidated": "2026-03-23"
+}

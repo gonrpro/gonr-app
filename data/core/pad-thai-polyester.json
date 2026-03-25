@@ -1,0 +1,77 @@
+{
+  "id": "pad-thai-polyester",
+  "title": "Pad Thai / Noodle Sauce on Polyester",
+  "stainFamily": "combo",
+  "surface": "polyester",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Pad Thai sauce contains tamarind (tannin), fish sauce (protein, salt), sugar (caramelizes), chili oil, and peanut oil. On polyester, this creates a multi-layer stain: sugar matrix traps pigment, protein bonds to fiber, oil penetrates deeply, and tannin adds color. The high sugar content means heat exposure caramelizes the stain rapidly.",
+  "whyThisWorks": "Cold water dissolves the sugar matrix on polyester before it caramelizes. Protein treatment addresses the fish sauce component (cold, no heat). Surfactant emulsifies the oils. Tannin spotter targets the tamarind discoloration. Speed matters \u2014 once the sugar sets, removal difficulty increases significantly.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Remove excess solids with dull edge \u2014 do not rub",
+      "2. Apply Tannin Formula for the plant-pigment component \u2014 5-10 min dwell time",
+      "3. Apply POG for the oil component \u2014 3-5 min dwell time",
+      "4. Flush with NSD and cool water \u2014 3-5 min",
+      "5. If color persists: apply H2O2 6% on colorfast fabrics \u2014 5-10 min dwell time",
+      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+    ],
+    "products": [
+      "Tannin Formula",
+      "POG (Paint Oil Grease remover)",
+      "NSD (Neutral Synthetic Detergent)",
+      "H2O2 6%",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "cold",
+    "warnings": []
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Remove solids with a spoon or dull edge \u2014 scrape, don't rub",
+      "2. Rinse with cold water to remove loose material",
+      "3. Apply Dawn dish soap. Work gently \u2014 5-10 min dwell time",
+      "4. Blot with clean white cloth. Repeat if needed",
+      "5. Air dry \u2014 no heat until stain is gone"
+    ],
+    "products": [
+      "Dawn dish soap"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder \u2014 a professional cleaner has specialized chemistry for each component",
+    "warnings": [
+      "Treat each component in order \u2014 don't skip steps",
+      "Cold water always \u2014 heat sets protein components permanently"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "No strong alkali at high temperature",
+      "No concentrated acetone \u2014 softens surface"
+    ],
+    "fiberSensitivities": [
+      "Oleophilic \u2014 grabs and holds oil stains tenaciously",
+      "Retains odors due to lipophilic surface",
+      "Most chemicals are safe on polyester"
+    ]
+  },
+  "escalation": {
+    "when": "If pad thai stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
+    "whatToTell": "Explain that the stain is pad thai on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?",
+      "Can you identify the specific components?",
+      "Is there a greasy/oily feel to the stain?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+  },
+  "difficulty": 6,
+  "timeEstimate": "15-30 minutes",
+  "lastValidated": "2026-03-23"
+}
