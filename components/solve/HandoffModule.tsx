@@ -27,7 +27,7 @@ function buildMessage(stain: string, surface: string, stainChemistry?: string, w
     }
   }
 
-  return `We treated the ${s} stain on your ${f}.${scienceLine} We used the right process for this stain type — let us know if you have any questions about the outcome.`
+  return `We took a look at the ${s} stain on your ${f} and treated it using the right process for this stain type.${scienceLine} We gave it our best treatment and want to make sure you're happy with the result — feel free to reach out if you have any questions or concerns about the outcome.`
 }
 
 export default function HandoffModule({ stain, surface, stainChemistry, whyThisWorks }: HandoffModuleProps) {
