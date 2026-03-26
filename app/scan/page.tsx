@@ -31,10 +31,10 @@ export default function ScanPage() {
         onClick={handleScanStain}
         style={{
           width: '100%',
-          background: '#1a2e1a',
+          background: 'rgba(34, 197, 94, 0.08)',
           borderRadius: '12px',
           minHeight: '80px',
-          border: '1px solid rgba(34, 197, 94, 0.2)',
+          border: '2px solid rgba(34, 197, 94, 0.6)',
           cursor: 'pointer',
           transition: 'all 0.15s ease',
         }}
