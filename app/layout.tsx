@@ -24,12 +24,14 @@ export const metadata: Metadata = {
     siteName: 'GONR',
     locale: 'en_US',
     type: 'website',
+    images: [{ url: 'https://gonr.app/og-image.png', width: 1536, height: 1024, alt: 'GONR — AI Stain Intelligence' }],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'GONR — AI Stain Intelligence',
-    description: 'Professional stain removal protocols powered by AI.',
+    description: 'Professional stain removal protocols powered by AI. Built by a 3rd-generation dry cleaner.',
     site: '@gonrlabs',
+    images: ['https://gonr.app/og-image.png'],
   },
   icons: {
     icon: '/favicon.svg',
