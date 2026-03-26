@@ -214,6 +214,19 @@ export default function SolvePage() {
   return (
     <div className="space-y-4">
 
+      {/* ── Hero Copy ── */}
+      <div style={{ paddingBottom: '4px' }}>
+        <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', color: '#22c55e', textTransform: 'uppercase', marginBottom: '4px' }}>
+          AI Stain Intelligence for Textiles
+        </p>
+        <h1 style={{ fontSize: '26px', fontWeight: 900, letterSpacing: '-0.5px', lineHeight: 1.1, color: 'var(--text)', margin: 0 }}>
+          Master Spotter
+        </h1>
+        <p style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '4px' }}>
+          Powered by <a href="/pro" style={{ color: '#a855f7', fontWeight: 600, textDecoration: 'none' }}>Stain Brain</a>
+        </p>
+      </div>
+
       {/* ── SCAN SECTION ── */}
       <div className="flex gap-3">
         {/* Scan Stain — green */}
