@@ -269,6 +269,236 @@ export const strings: Record<string, Record<string, string>> = {
   home: { en: "Home", es: "Inicio" },
   spotter: { en: "Spotter", es: "Spotter" },
   operator: { en: "Operator", es: "Operador" },
+
+// ── TierGate ──────────────────────────────────────────────────
+  tierGateSubtitle: { en: "Professional stain removal intelligence", es: "Inteligencia profesional para eliminación de manchas" },
+  tierHome: { en: "Home", es: "Hogar" },
+  tierSpotter: { en: "Spotter", es: "Spotter" },
+  tierOperator: { en: "Operator", es: "Operador" },
+  tierHomePrice: { en: "$9.99/mo", es: "$9.99/mes" },
+  tierSpotterPrice: { en: "$49/mo", es: "$49/mes" },
+  tierOperatorPrice: { en: "$99/mo", es: "$99/mes" },
+  tierMostPopular: { en: "Most Popular", es: "Más Popular" },
+  tierGetStarted: { en: "Get Started", es: "Comenzar" },
+  tierFeatureDiyProtocols: { en: "DIY stain protocols", es: "Protocolos de manchas DIY" },
+  tierFeatureProductRecs: { en: "Product recommendations", es: "Recomendaciones de productos" },
+  tierFeatureBasicId: { en: "Basic stain identification", es: "Identificación básica de manchas" },
+  tierFeatureEmailSupport: { en: "Email support", es: "Soporte por correo" },
+  tierFeatureEverythingHome: { en: "Everything in Home", es: "Todo lo incluido en Hogar" },
+  tierFeatureFullPro: { en: "Full pro spotting protocols", es: "Protocolos profesionales completos" },
+  tierFeatureDeepSolve: { en: "Deep Solve AI analysis", es: "Análisis Deep Solve con IA" },
+  tierFeatureHandoff: { en: "Customer handoff scripts", es: "Guiones de entrega al cliente" },
+  tierFeatureStainBrain: { en: "Stain Brain chat", es: "Chat con Stain Brain" },
+  tierFeaturePriority: { en: "Priority support", es: "Soporte prioritario" },
+  tierFeatureEverythingSpotter: { en: "Everything in Spotter", es: "Todo lo incluido en Spotter" },
+  tierFeatureUnlimitedDeep: { en: "Unlimited Deep Solve", es: "Deep Solve ilimitado" },
+  tierFeatureTeam: { en: "Team accounts (up to 5)", es: "Cuentas de equipo (hasta 5)" },
+  tierFeatureCustomLibrary: { en: "Custom protocol library", es: "Biblioteca de protocolos personalizada" },
+  tierFeatureApi: { en: "API access", es: "Acceso API" },
+  tierFeatureOnboarding: { en: "White-glove onboarding", es: "Incorporación personalizada" },
+
+  // ── DeepSolveModule ───────────────────────────────────────────
+  deepSolveChipOld: { en: "Stain is old", es: "Mancha antigua" },
+  deepSolveChipTreated: { en: "Already treated", es: "Ya fue tratada" },
+  deepSolveChipHighValue: { en: "High-value garment", es: "Prenda de alto valor" },
+  deepSolveChipUpset: { en: "Customer is upset", es: "Cliente insatisfecho" },
+  deepSolveGenerating: { en: "Generating tailored protocol...", es: "Generando protocolo personalizado..." },
+  deepSolveGenerate: { en: "Generate Deep Solve Protocol", es: "Generar Protocolo Deep Solve" },
+  deepSolveUnavailable: { en: "Deep Solve is currently unavailable. Please try again.", es: "Deep Solve no está disponible en este momento. Intenta de nuevo." },
+
+  // ── StainChips / SurfaceChips ─────────────────────────────────
+  whatStain: { en: "What stain?", es: "¿Qué mancha?" },
+  cottonWhite: { en: "White / Light", es: "Blanco / Claro" },
+  cottonColored: { en: "Colored / Dark", es: "Color / Oscuro" },
+
+  // ── Error messages (additional) ───────────────────────────────
+  analysisFailed: { en: "Analysis failed", es: "Error en el análisis" },
+  handoffFailed: { en: "Failed to generate message", es: "Error al generar el mensaje" },
+
+  // ── Collapsible section titles (ResultCard patch) ─────────────
+  collapsibleHomeCare: { en: "Home Care Tips", es: "Consejos para el Hogar" },
+  collapsibleChemistry: { en: "Chemistry Details", es: "Detalles Químicos" },
+  collapsibleSafety: { en: "Safety Warnings", es: "Advertencias de Seguridad" },
+  collapsibleProducts: { en: "Products", es: "Productos" },
+  collapsibleEscalation: { en: "Escalation", es: "Escalación" },
+  collapsibleMistakes: { en: "Common Mistakes", es: "Errores Comunes" },
+  collapsibleSolvent: { en: "Solvent Note", es: "Nota de Solvente" },
+  collapsibleHandoff: { en: "Customer Handoff", es: "Entrega al Cliente" },
+
+  // ── Privacy page ──────────────────────────────────────────────
+  privacyTitle: { en: "Privacy Policy", es: "Política de Privacidad" },
+  privacyLastUpdated: { en: "Last updated", es: "Última actualización" },
+  privacyIntro: {
+    en: "GONR Labs (\"we\", \"us\") respects your privacy. This policy explains how we collect, use, and protect your information when you use the GONR application.",
+    es: "GONR Labs (\"nosotros\") respeta su privacidad. Esta política explica cómo recopilamos, usamos y protegemos su información al usar la aplicación GONR."
+  },
+  privacyDataWeCollect: { en: "Information We Collect", es: "Información que Recopilamos" },
+  privacyDataWeCollectContent: {
+    en: "We collect your email address when you create an account, usage data such as stain queries and protocol views, and device information for performance optimization. We do not collect payment card details directly — all payments are processed by our third-party provider, Lemon Squeezy.",
+    es: "Recopilamos su dirección de correo al crear una cuenta, datos de uso como consultas de manchas y vistas de protocolos, e información del dispositivo para optimización. No recopilamos datos de tarjetas de pago directamente — todos los pagos son procesados por nuestro proveedor externo, Lemon Squeezy."
+  },
+  privacyHowWeUse: { en: "How We Use Your Information", es: "Cómo Usamos Su Información" },
+  privacyHowWeUseContent: {
+    en: "We use your information to provide and improve the GONR service, deliver personalized stain removal protocols, process subscriptions, and send product updates. We do not sell your personal information to third parties.",
+    es: "Usamos su información para proveer y mejorar el servicio GONR, entregar protocolos personalizados de eliminación de manchas, procesar suscripciones y enviar actualizaciones del producto. No vendemos su información personal a terceros."
+  },
+  privacyDataSharing: { en: "Data Sharing", es: "Compartir Datos" },
+  privacyDataSharingContent: {
+    en: "We share data only with service providers essential to operating GONR: hosting (Vercel), authentication (Supabase), payments (Lemon Squeezy), and AI processing (OpenAI). Each provider is bound by their own privacy policies and data processing agreements.",
+    es: "Compartimos datos únicamente con proveedores esenciales para operar GONR: hosting (Vercel), autenticación (Supabase), pagos (Lemon Squeezy) y procesamiento de IA (OpenAI). Cada proveedor está sujeto a sus propias políticas de privacidad y acuerdos de procesamiento de datos."
+  },
+  privacySecurity: { en: "Security", es: "Seguridad" },
+  privacySecurityContent: {
+    en: "We use industry-standard encryption and security practices to protect your data. All connections use HTTPS. Authentication tokens are stored securely. However, no system is perfectly secure — we encourage you to use a strong, unique password.",
+    es: "Usamos prácticas de seguridad y cifrado estándar de la industria para proteger sus datos. Todas las conexiones usan HTTPS. Los tokens de autenticación se almacenan de forma segura. Sin embargo, ningún sistema es perfectamente seguro — le recomendamos usar una contraseña fuerte y única."
+  },
+  privacyContact: { en: "Contact", es: "Contacto" },
+  privacyContactContent: {
+    en: "For privacy questions or data requests, email us at tyler@gonr.pro.",
+    es: "Para preguntas sobre privacidad o solicitudes de datos, escríbanos a tyler@gonr.pro."
+  },
+
+  // ── Terms page ────────────────────────────────────────────────
+  termsTitle: { en: "Terms of Service", es: "Términos de Servicio" },
+  termsLastUpdated: { en: "Last updated", es: "Última actualización" },
+  termsIntro: {
+    en: "By using GONR, you agree to these terms. GONR is operated by Nexshift Inc. (\"we\", \"us\"), based in Fort Myers, FL.",
+    es: "Al usar GONR, usted acepta estos términos. GONR es operado por Nexshift Inc. (\"nosotros\"), con sede en Fort Myers, FL."
+  },
+  termsUseOfService: { en: "Use of Service", es: "Uso del Servicio" },
+  termsUseOfServiceContent: {
+    en: "GONR provides AI-assisted stain removal protocols and cleaning intelligence. Protocols are informational guidance — always test on an inconspicuous area first. We are not liable for damage resulting from following any protocol. Professional situations require professional judgment.",
+    es: "GONR provee protocolos de eliminación de manchas asistidos por IA e inteligencia de limpieza. Los protocolos son orientación informativa — siempre pruebe en un área no visible primero. No somos responsables por daños resultantes de seguir cualquier protocolo. Las situaciones profesionales requieren juicio profesional."
+  },
+  termsAccounts: { en: "Accounts", es: "Cuentas" },
+  termsAccountsContent: {
+    en: "You are responsible for maintaining the security of your account credentials. One account per person. Sharing accounts between operators requires an Operator tier subscription with team seats.",
+    es: "Usted es responsable de mantener la seguridad de sus credenciales. Una cuenta por persona. Compartir cuentas entre operadores requiere una suscripción de nivel Operador con puestos de equipo."
+  },
+  termsPayments: { en: "Payments & Subscriptions", es: "Pagos y Suscripciones" },
+  termsPaymentsContent: {
+    en: "Subscriptions are billed monthly through Lemon Squeezy. You may cancel at any time — access continues through the end of your billing period. Refunds are handled on a case-by-case basis.",
+    es: "Las suscripciones se facturan mensualmente a través de Lemon Squeezy. Puede cancelar en cualquier momento — el acceso continúa hasta el final de su período de facturación. Los reembolsos se manejan caso por caso."
+  },
+  termsIntellectualProperty: { en: "Intellectual Property", es: "Propiedad Intelectual" },
+  termsIntellectualPropertyContent: {
+    en: "GONR, its protocols, safety matrix, and AI models are proprietary to Nexshift Inc. Protected by 5 issued U.S. utility patents. You may not copy, redistribute, or reverse-engineer any part of the service.",
+    es: "GONR, sus protocolos, matriz de seguridad y modelos de IA son propiedad de Nexshift Inc. Protegidos por 5 patentes de utilidad emitidas en EE.UU. No puede copiar, redistribuir ni realizar ingeniería inversa de ninguna parte del servicio."
+  },
+  termsLimitations: { en: "Limitations of Liability", es: "Limitaciones de Responsabilidad" },
+  termsLimitationsContent: {
+    en: "GONR is provided \"as is\" without warranty. We are not liable for indirect, incidental, or consequential damages. Our total liability is limited to the amount you paid in the 12 months before the claim.",
+    es: "GONR se provee \"tal cual\" sin garantía. No somos responsables por daños indirectos, incidentales o consecuentes. Nuestra responsabilidad total se limita al monto pagado en los 12 meses anteriores a la reclamación."
+  },
+  termsContact: { en: "Contact", es: "Contacto" },
+  termsContactContent: {
+    en: "For questions about these terms, email tyler@gonr.pro.",
+    es: "Para preguntas sobre estos términos, escriba a tyler@gonr.pro."
+  },
+
+  // ── Partners page ─────────────────────────────────────────────
+  partnersTitle: { en: "Partner with GONR", es: "Asóciese con GONR" },
+  partnersSubtitle: {
+    en: "Built by a 3rd generation dry cleaner. 5 patents. 130+ expert protocols. Let's work together.",
+    es: "Creado por un tintorero de tercera generación. 5 patentes. Más de 130 protocolos expertos. Trabajemos juntos."
+  },
+  partnersWhyPartner: { en: "Why Partner with GONR?", es: "¿Por Qué Asociarse con GONR?" },
+  partnersWhyPartnerContent: {
+    en: "GONR is the only AI-powered stain intelligence platform built by industry professionals. Our protocols are chemistry-grounded, surface-specific, and safety-validated against a comprehensive material compatibility matrix. We serve both professional dry cleaners and home consumers.",
+    es: "GONR es la única plataforma de inteligencia de manchas con IA creada por profesionales de la industria. Nuestros protocolos están fundamentados en química, son específicos por superficie y validados contra una matriz integral de compatibilidad de materiales. Servimos tanto a tintorerías profesionales como a consumidores del hogar."
+  },
+  partnersModels: { en: "Partnership Models", es: "Modelos de Asociación" },
+  partnersModelsContent: {
+    en: "We offer brand integration partnerships for cleaning product companies, white-label licensing for multi-location dry cleaning operations, affiliate and referral programs, and co-marketing opportunities for industry events and publications.",
+    es: "Ofrecemos asociaciones de integración de marca para empresas de productos de limpieza, licenciamiento de marca blanca para operaciones de tintorería con múltiples ubicaciones, programas de afiliados y referidos, y oportunidades de co-marketing para eventos y publicaciones de la industria."
+  },
+  partnersContact: { en: "Get in Touch", es: "Contáctenos" },
+  partnersContactContent: {
+    en: "Interested in partnering? Email tyler@gonr.pro with your company name and partnership idea.",
+    es: "¿Interesado en asociarse? Escriba a tyler@gonr.pro con el nombre de su empresa y su propuesta de asociación."
+  },
+
+  // ── Misc additions ────────────────────────────────────────────
+  stainLabel: { en: "Stain", es: "Mancha" },
+  surfaceLabel: { en: "Surface", es: "Superficie" },
+
+  // ── TASK-127: Deep Solve upsell (ResultCard patch) ──
+  deepSolveUpsellPrefix: { en: "Old stain, prior treatment, or high-value garment?", es: "¿Mancha antigua, tratada previamente, o prenda de alto valor?" },
+  deepSolveUpsellLink: { en: "Deep Solve → (Operator)", es: "Deep Solve → (Operador)" },
+
+  // ── TASK-127: Operator page ──
+  operatorTitle: { en: "Operator", es: "Operador" },
+  operatorSubtitle: { en: "Advanced tools for problem garments", es: "Herramientas avanzadas para prendas problemáticas" },
+
+  // ── TASK-127: Progress bar ──
+  progressSolve: { en: "Solve", es: "Solve" },
+  progressDeepSolve: { en: "Deep Solve", es: "Deep Solve" },
+  progressGarmentAnalysis: { en: "Analysis", es: "Análisis" },
+  progressHandoff: { en: "Handoff", es: "Entrega" },
+
+  // ── TASK-127: Deep Solve module ──
+  deepSolveModuleTitle: { en: "Deep Solve", es: "Deep Solve" },
+  deepSolveModuleSubtitle: { en: "Tailored analysis for complex cases", es: "Análisis personalizado para casos complejos" },
+  deepSolvePlaceholder: { en: "Any other details — what they tried, how long ago, what you're seeing...", es: "Cualquier detalle adicional — qué intentaron, cuándo, qué observas..." },
+  deepSolveRunButton: { en: "Run Deep Solve", es: "Ejecutar Deep Solve" },
+  deepSolveRunning: { en: "Analyzing...", es: "Analizando..." },
+  deepSolveLoaded: { en: "Loaded", es: "Cargado" },
+  deepSolveEditContext: { en: "Edit", es: "Editar" },
+  situationAssessment: { en: "Situation Assessment", es: "Evaluación de Situación" },
+  modifiedProtocol: { en: "Modified Protocol", es: "Protocolo Modificado" },
+  riskFactors: { en: "Risk Factors", es: "Factores de Riesgo" },
+  outcomeScenarios: { en: "Outcome Scenarios", es: "Escenarios de Resultado" },
+  outcomeBest: { en: "Best case", es: "Mejor escenario" },
+  outcomeLikely: { en: "Likely case", es: "Escenario probable" },
+  outcomeWorst: { en: "Worst case", es: "Peor escenario" },
+  shouldYouProceed: { en: "Should you proceed?", es: "¿Debería proceder?" },
+  recommendationProceed: { en: "Proceed", es: "Proceder" },
+  recommendationCaution: { en: "Proceed with caution", es: "Proceder con precaución" },
+  recommendationRelease: { en: "Recommend release", es: "Recomendar devolución" },
+
+  // ── TASK-127: Situation chips ──
+  chipStainOld: { en: "Stain is old", es: "Mancha antigua" },
+  chipAlreadyTreated: { en: "Already treated", es: "Ya tratada" },
+  chipHighValue: { en: "High-value garment", es: "Prenda de alto valor" },
+  chipCustomerUpset: { en: "Customer upset", es: "Cliente molesto" },
+  chipDelicateFiber: { en: "Delicate fiber", es: "Fibra delicada" },
+  chipUnknownFiber: { en: "Unknown fiber", es: "Fibra desconocida" },
+  chipDyeBleed: { en: "Dye bleed suspected", es: "Posible sangrado de tinte" },
+  chipHeatDamage: { en: "Heat damage suspected", es: "Posible daño por calor" },
+
+  // ── TASK-127: Garment Analysis module ──
+  garmentAnalysisModuleTitle: { en: "Garment Analysis", es: "Análisis de Prenda" },
+  garmentAnalysisModuleSubtitle: { en: "Photo assessment for damage, discoloration, and repair potential", es: "Evaluación fotográfica de daños, decoloración y potencial de reparación" },
+  garmentAnalysisDescPlaceholder: { en: "Describe what you're seeing — discoloration, fiber damage, prior treatment marks...", es: "Describe lo que observas — decoloración, daño de fibra, marcas de tratamiento previo..." },
+  garmentAnalysisButton: { en: "Analyze Garment", es: "Analizar Prenda" },
+  garmentAnalysisRunning: { en: "Analyzing photo...", es: "Analizando foto..." },
+  garmentTakePhoto: { en: "Take Photo", es: "Tomar Foto" },
+  garmentSecondPhoto: { en: "Add Second Photo", es: "Agregar Segunda Foto" },
+  repairability: { en: "Repairability", es: "Posibilidad de Reparación" },
+  partiallyRepairable: { en: "Partially repairable", es: "Parcialmente reparable" },
+  likelyPermanent: { en: "Likely permanent", es: "Probablemente permanente" },
+  handoffScripts: { en: "Customer Handoff Scripts", es: "Guiones de Entrega al Cliente" },
+  handoffImproved: { en: "Improved", es: "Mejorado" },
+  handoffTough: { en: "Tough case", es: "Caso difícil" },
+  handoffRelease: { en: "Release", es: "Devolución" },
+
+  // ── TASK-127: Customer Handoff module (Operator version) ──
+  handoffOperatorTitle: { en: "Customer Handoff", es: "Entrega al Cliente" },
+  handoffOperatorSubtitle: { en: "What to say, word for word", es: "Qué decir, palabra por palabra" },
+  handoffIntakeScript: { en: "Intake Script", es: "Guión de Recepción" },
+  handoffTicketNotes: { en: "Ticket Notes", es: "Notas del Ticket" },
+  handoffPickupScript: { en: "Pickup Script", es: "Guión de Entrega" },
+  handoffWrittenNote: { en: "Written Note Template", es: "Plantilla de Nota Escrita" },
+  toneConfident: { en: "Confident", es: "Confiado" },
+  toneCautious: { en: "Cautious", es: "Cauteloso" },
+  toneApologetic: { en: "Apologetic", es: "Disculpa" },
+  toneRelease: { en: "Release", es: "Devolución" },
+  generateHandoff: { en: "Generate Handoff Script", es: "Generar Guión de Entrega" },
+  generatingHandoff: { en: "Generating...", es: "Generando..." },
+  analyzeGarmentDamage: { en: "Analyze Garment Damage →", es: "Analizar Daño de Prenda →" },
+  handoffContextLabel: { en: "Context", es: "Contexto" },
+  handoffToneLabel: { en: "Tone", es: "Tono" },
+  handoffNeedsContext: { en: "Run Deep Solve or Garment Analysis first, or enter context manually", es: "Ejecute Deep Solve o Análisis de Prenda primero, o ingrese contexto manualmente" },
 }
 
 export function t(key: string, lang: string = 'en'): string {

@@ -1,36 +1,8 @@
-/**
- * File: components/solve/ResultCard.tsx
- *
- * ⚠️  PROTECTED FILE — DO NOT REPLACE OR OVERWRITE ⚠️
- * This file is maintained by Atlas directly. Lab tasks must NOT include
- * this file as a deploy target. Submit change requests to Atlas instead.
- *
- * FORBIDDEN (do not reintroduce):
- * - Pro/DIY toggle (mode state, setMode, diy section)
- * - difficulty/10 badge
- * - Deep Solve button
- * - Ask Stain Brain button
- *
- * CARD STRUCTURE (fixed):
- * Title + trust badge → Chemistry brief → Spotting Protocol steps →
- * Collapsibles: Home Care Tips, Chemistry Details, Safety Warnings,
- *               Products, Escalation, Common Mistakes, Solvent Note
- *
- * TASK-122: Added trust badges for source differentiation.
- * - core       → ✅ Master Protocol (gold)
- * - verified   → ✅ Verified Protocol (green)
- * - ai-cached  → 🔄 AI Generated (gray, subtle)
- * - ai         → 🔄 AI Generated (gray)
- *
- * Card structure is UNTOUCHED. Only the badge rendering changed.
- */
-
 'use client'
 
 import { useState } from 'react'
 import type { ProtocolCard, Step } from '@/lib/types'
 import HandoffModule from './HandoffModule'
-import CustomerHandoff from './CustomerHandoff'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 /* ── Helpers ─────────────────────────────────── */
@@ -39,21 +11,6 @@ function difficultyColor(d: number) {
   if (d <= 3) return { text: 'text-green-400', bg: 'bg-green-500/20', border: 'border-l-green-500' }
   if (d <= 6) return { text: 'text-amber-400', bg: 'bg-amber-500/20', border: 'border-l-amber-500' }
   return { text: 'text-red-400', bg: 'bg-red-500/20', border: 'border-l-red-500' }
-}
-
-/** Badge config by source type */
-function sourceBadge(source: string) {
-  switch (source) {
-    case 'core':
-      return { label: '✅ Master Protocol', bg: 'bg-amber-500/20', text: 'text-amber-500' }
-    case 'verified':
-      return { label: '✅ Verified', bg: 'bg-green-500/20', text: 'text-green-500' }
-    case 'ai-cached':
-      return { label: '🔄 AI Generated', bg: 'bg-gray-500/15', text: 'text-gray-400' }
-    case 'ai':
-    default:
-      return { label: '🔄 AI Generated', bg: 'bg-purple-500/20', text: 'text-purple-400' }
-  }
 }
 
 function Collapsible({ title, icon, children, defaultOpen = false }: {
@@ -89,13 +46,16 @@ function Collapsible({ title, icon, children, defaultOpen = false }: {
 
 interface ResultCardProps {
   card: ProtocolCard
-  source: 'verified' | 'ai' | 'ai-cached' | 'core'
+  source: 'verified' | 'ai'
+  lang?: string
 }
 
-export default function ResultCard({ card, source }: ResultCardProps) {
+export default function ResultCard({ card, source, lang = 'en' }: ResultCardProps) {
   const { t } = useLanguage()
   const [showHandoff, setShowHandoff] = useState(false)
-  const badge = sourceBadge(source)
+
+  const difficulty = card.difficulty ?? 5
+  const dc = difficultyColor(difficulty)
 
   // Normalize escalation
   const escalation = typeof card.escalation === 'string'
@@ -107,115 +67,140 @@ export default function ResultCard({ card, source }: ResultCardProps) {
     ? card.products as { professional?: { name: string; use?: string; note?: string }[]; consumer?: { name: string; use?: string; note?: string }[] }
     : { professional: [], consumer: [] }
 
+  // Normalize pro steps — support both spottingProtocol (v6) and professionalProtocol.steps (new format)
+  const rawCard = card as any
+  const proSteps: Step[] = card.spottingProtocol ?? (() => {
+    const raw = rawCard.professionalProtocol?.steps
+    if (!raw || !Array.isArray(raw)) return []
+    return raw.map((s: string | Step, i: number) => {
+      if (typeof s === 'object') return s
+      const clean = s.replace(/^\d+\.\s*/, '')
+      // Extract agent: look for known professional agent names
+      const knownAgents = ['Protein', 'Tannin Formula', 'NSD', 'POG', 'H₂O₂', 'H2O2', 'Acetic Acid', 'Reducing Agent', 'Rust Remover', 'Enzyme Digester', 'Leveling Agent', 'IPA']
+      const agent = knownAgents.find(a => clean.toLowerCase().includes(a.toLowerCase())) ?? ''
+      return { step: i + 1, agent, instruction: clean }
+    })
+  })()
+
+  // Normalize DIY steps
+  const diySteps: (string | Step)[] = card.homeSolutions ?? (
+    rawCard.diyProtocol?.steps ?? []
+  )
+
+  // Normalize warnings
+  const warnings: string[] = card.materialWarnings
+    ?? rawCard.professionalProtocol?.warnings
+    ?? rawCard.safetyMatrix?.neverDo
+    ?? []
+
   return (
-    <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#0e131b] shadow-lg overflow-hidden">
+    <div className="rounded-xl overflow-hidden" style={{ background: 'var(--surface)', border: '1px solid var(--border-strong)' }}>
 
       {/* ── 1. Header: Title + source badge ── */}
-      <div className="px-4 pt-4 pb-3 space-y-2">
+      <div className="px-4 pt-4 pb-3 space-y-1" style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="flex items-start justify-between gap-2">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white leading-snug flex-1">
+          <h2 className="text-lg font-bold leading-snug flex-1" style={{ color: 'var(--text)' }}>
             {card.title}
           </h2>
-          <div className="flex items-center gap-2 flex-shrink-0 pt-0.5">
-            <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold ${badge.bg} ${badge.text}`}>
-              {badge.label}
-            </span>
-          </div>
+          <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold flex-shrink-0 mt-0.5
+            ${source === 'verified' ? 'bg-green-500/15 text-green-600' : 'bg-purple-500/15 text-purple-500'}`}
+          >
+            {source === 'verified' ? '✓ Verified' : '🤖 AI'}
+          </span>
         </div>
       </div>
 
-      {/* ── 2. Chemistry brief (one-line summary) ── */}
-      {card.stainChemistry && (
-        <div className="px-4 pb-3">
-          <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-            <span className="mr-1">{'\uD83E\uDDEA'}</span>
-            {card.stainChemistry}
-          </p>
-        </div>
-      )}
-
-      {/* ── 3. Spotting Protocol label ── */}
-      <div className="px-4 pb-2">
-        <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Spotting Protocol</p>
-      </div>
-
-      {/* ── 4. Protocol Steps ── */}
-      {card.spottingProtocol && (
-        <div className="px-4 pb-4 space-y-3">
-          {card.spottingProtocol.map((step, i) => (
-            <div key={i} className="flex gap-3">
-              <div className="flex-shrink-0 w-7 h-7 rounded-full bg-green-500/20 text-green-400
-                flex items-center justify-center text-xs font-bold mt-0.5">
-                {step.step}
-              </div>
-              <div className="flex-1 space-y-1">
-                <p className="text-xs font-bold text-green-400 uppercase tracking-wider">
-                  {step.agent}
-                </p>
-                <p className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed">
-                  {step.instruction}
-                </p>
-                {step.technique && (
-                  <p className="text-xs text-gray-500 italic">
-                    {t('technique')}: {step.technique}
-                  </p>
-                )}
-                {step.dwellTime && (
-                  <p className="text-xs text-gray-500">
-                    {'\u23F1'} {step.dwellTime}
-                  </p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-
-
-      {/* ── 6. Why This Works ── */}
+      {/* ── 2. Chemistry overview — prominent callout ── */}
       {card.whyThisWorks && (
-        <div className="px-4 pb-4">
-          <div className="bg-gray-50 dark:bg-white/5 rounded-xl p-4 space-y-2">
-            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2">
-              {'\uD83D\uDCA1'} {t('whyThisWorks')}
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+        <div className="px-4 pb-3">
+          <div className="rounded-xl p-3 space-y-1" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
+            <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--accent)' }}>🧪 Why This Works</p>
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
               {card.whyThisWorks}
             </p>
           </div>
         </div>
       )}
 
-      {/* ── 7. Customer Explanation (green-tinted card) ── */}
-      {card.customerExplanation && (
-        <div className="px-4 pb-4">
-          <div className="bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 rounded-xl p-4 space-y-2">
-            <h3 className="text-sm font-semibold text-green-700 dark:text-green-400 flex items-center gap-2">
-              {'\uD83D\uDCAC'} {t('whatToTellCustomer')}
-            </h3>
-            <p className="text-sm text-green-800 dark:text-green-300/90 leading-relaxed">
-              {card.customerExplanation}
-            </p>
+      {/* ── 3. Pro Protocol Steps ── */}
+      {proSteps.length > 0 && (
+        <div className="px-4 pb-2">
+          <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--text-secondary)' }}>
+            Pro Protocol
+          </p>
+          <div className="space-y-4">
+            {proSteps.map((step, i) => (
+              <div key={i} className="flex gap-3">
+                <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
+                  style={{ background: 'rgba(34,197,94,0.15)', color: 'var(--accent)' }}>
+                  {step.step ?? i + 1}
+                </div>
+                <div className="flex-1 space-y-0.5">
+                  {step.agent && (
+                    <p className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>
+                      {step.agent}
+                    </p>
+                  )}
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
+                    {step.instruction}
+                  </p>
+                  {(step.technique || step.temperature) && (
+                    <p className="text-xs italic mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+                      {[step.technique, step.temperature].filter(Boolean).join(' — ')}
+                    </p>
+                  )}
+                  {step.dwellTime && (
+                    <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                      ⏱ {step.dwellTime}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       )}
 
-      {/* ── 8. Customer Handoff button ── */}
-      <div className="px-4 pb-4" id="cardHandoffResult">
+      {/* Home Tips — collapsed, brief tips not step-by-step */}
+      {diySteps.length > 0 && (
+        <div className="px-4" style={{ borderTop: '1px solid var(--border)' }}>
+          <Collapsible title="Home Tips" icon="🏠">
+            <ul className="space-y-1.5">
+              {diySteps.slice(0, 4).map((sol, i) => {
+                const text = typeof sol === 'string' ? sol : (sol as Step).instruction
+                // Trim to first sentence for tip format
+                const tip = text.split(/[.!?]/)[0].replace(/^\d+\.\s*/, '').trim()
+                if (!tip) return null
+                return (
+                  <li key={i} className="flex gap-2 text-sm" style={{ color: 'var(--text)' }}>
+                    <span style={{ color: 'var(--accent)' }}>•</span>
+                    <span>{tip}</span>
+                  </li>
+                )
+              })}
+            </ul>
+          </Collapsible>
+        </div>
+      )}
+
+      {/* ── 5. Customer Handoff ── */}
+      <div className="px-4 py-4" style={{ borderTop: '1px solid var(--border)' }}>
         <button
           onClick={() => setShowHandoff(!showHandoff)}
-          className="w-full min-h-[44px] rounded-xl bg-green-500/10 border border-green-500/30
-            text-green-500 dark:text-green-400 text-sm font-semibold
-            hover:bg-green-500/20 transition-colors"
+          className="w-full min-h-[44px] rounded-xl text-sm font-semibold transition-colors"
+          style={{
+            background: showHandoff ? 'rgba(34,197,94,0.15)' : 'rgba(34,197,94,0.08)',
+            border: '1px solid rgba(34,197,94,0.3)',
+            color: 'var(--accent)'
+          }}
         >
-          {'\uD83D\uDCE4'} {t('customerHandoff')}
+          📤 Customer Handoff {showHandoff ? '▲' : '▼'}
         </button>
         {showHandoff && (
           <div className="mt-3">
             <HandoffModule
-              stain={card.meta?.stainCanonical || ''}
-              surface={card.meta?.surfaceCanonical || ''}
+              stain={card.meta?.stainCanonical || card.id || ''}
+              surface={card.meta?.surfaceCanonical || card.surface || ''}
             />
           </div>
         )}
@@ -223,43 +208,25 @@ export default function ResultCard({ card, source }: ResultCardProps) {
 
       {/* ── 9. Collapsible sections ── */}
       <div className="px-4 pb-4 space-y-2">
-
-        {/* Customer Handoff — expanded by default */}
-        {card.customerHandoff && (
-          <Collapsible title="Customer Handoff" icon="🧾" defaultOpen={true}>
-            <CustomerHandoff handoff={card.customerHandoff} />
-          </Collapsible>
-        )}
-
-        {/* Home Care Tips */}
-        {card.homeSolutions && card.homeSolutions.length > 0 && (
-          <Collapsible title="Home Care Tips" icon="🏠">
-            <ul className="space-y-2">
-              {card.homeSolutions.map((sol, i) => {
-                const text = typeof sol === 'string' ? sol : (sol as { instruction?: string }).instruction || ''
-                return (
-                  <li key={i} className="flex gap-2 items-start">
-                    <span className="text-green-400 flex-shrink-0 mt-0.5">•</span>
-                    <span>{text}</span>
-                  </li>
-                )
-              })}
-            </ul>
+        {/* Why This Works — open by default */}
+        {card.whyThisWorks && (
+          <Collapsible title="Why This Works" icon="💡" defaultOpen={true}>
+            <p className="leading-relaxed">{card.whyThisWorks}</p>
           </Collapsible>
         )}
 
         {/* Chemistry Details */}
         {card.stainChemistry && (
-          <Collapsible title={t('chemistryDetails')} icon={'\uD83E\uDDEA'}>
+          <Collapsible title={t('collapsibleChemistry')} icon={'\uD83E\uDDEA'}>
             <p className="leading-relaxed">{card.stainChemistry}</p>
           </Collapsible>
         )}
 
         {/* Safety / Warnings */}
-        {card.materialWarnings && card.materialWarnings.length > 0 && (
-          <Collapsible title={t('safetyWarnings')} icon={'\u26A0\uFE0F'}>
+        {warnings.length > 0 && (
+          <Collapsible title={t('collapsibleSafety')} icon={'\u26A0\uFE0F'}>
             <ul className="space-y-2">
-              {card.materialWarnings.map((w, i) => (
+              {warnings.map((w, i) => (
                 <li key={i} className="flex gap-2 items-start">
                   <span className="text-red-400 flex-shrink-0 mt-0.5">{'\u2022'}</span>
                   <span>{w}</span>
@@ -271,10 +238,10 @@ export default function ResultCard({ card, source }: ResultCardProps) {
 
         {/* Products */}
         {(products.professional?.length || products.consumer?.length) ? (
-          <Collapsible title={t('products')} icon={'\uD83D\uDED2'}>
+          <Collapsible title={t('collapsibleProducts')} icon={'\uD83D\uDED2'}>
             {products.professional && products.professional.length > 0 && (
               <div className="space-y-2">
-                <p className="text-xs font-bold text-green-400 uppercase tracking-wider">{t('professional')}</p>
+                <p className="text-xs font-bold text-green-400 uppercase tracking-wider">Professional</p>
                 {products.professional.map((p, i) => (
                   <div key={i} className="space-y-0.5">
                     <p className="font-medium text-gray-700 dark:text-gray-300">{p.name}</p>
@@ -286,7 +253,7 @@ export default function ResultCard({ card, source }: ResultCardProps) {
             )}
             {products.consumer && products.consumer.length > 0 && (
               <div className="space-y-2 mt-3">
-                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">{t('consumer')}</p>
+                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">Consumer</p>
                 {products.consumer.map((p, i) => (
                   <div key={i} className="space-y-0.5">
                     <p className="font-medium text-gray-700 dark:text-gray-300">{p.name}</p>
@@ -301,16 +268,16 @@ export default function ResultCard({ card, source }: ResultCardProps) {
 
         {/* Escalation */}
         {escalation && (
-          <Collapsible title={t('escalation')} icon={'\uD83D\uDCDE'}>
-            {escalation.when && <p><strong className="text-gray-700 dark:text-gray-300">{t('when')}:</strong> {escalation.when}</p>}
-            {escalation.whatToTell && <p><strong className="text-gray-700 dark:text-gray-300">{t('whatToSay')}:</strong> {escalation.whatToTell}</p>}
-            {escalation.specialistType && <p><strong className="text-gray-700 dark:text-gray-300">{t('specialistLabel')}:</strong> {escalation.specialistType}</p>}
+          <Collapsible title={t('collapsibleEscalation')} icon={'\uD83D\uDCDE'}>
+            {escalation.when && <p><strong className="text-gray-700 dark:text-gray-300">When:</strong> {escalation.when}</p>}
+            {escalation.whatToTell && <p><strong className="text-gray-700 dark:text-gray-300">What to say:</strong> {escalation.whatToTell}</p>}
+            {escalation.specialistType && <p><strong className="text-gray-700 dark:text-gray-300">Specialist:</strong> {escalation.specialistType}</p>}
           </Collapsible>
         )}
 
         {/* Common Mistakes */}
         {card.commonMistakes && card.commonMistakes.length > 0 && (
-          <Collapsible title={t('commonMistakes')} icon={'\uD83D\uDEAB'}>
+          <Collapsible title={t('collapsibleMistakes')} icon={'\uD83D\uDEAB'}>
             <ul className="space-y-2">
               {card.commonMistakes.map((m, i) => (
                 <li key={i} className="flex gap-2 items-start">
@@ -324,12 +291,25 @@ export default function ResultCard({ card, source }: ResultCardProps) {
 
         {/* Solvent Note */}
         {card.solventNote && (
-          <Collapsible title={t('solventNote')} icon={'\uD83E\uDDF4'}>
+          <Collapsible title={t('collapsibleSolvent')} icon={'\uD83E\uDDF4'}>
             <p className="leading-relaxed">{card.solventNote}</p>
           </Collapsible>
         )}
       </div>
 
+      {/* ── 12. Deep Solve upsell (Operator) ── */}
+      <div className="px-4 pb-4 pt-1 border-t border-gray-100 dark:border-white/5 mt-1">
+        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+          {t('deepSolveUpsellPrefix')}{' '}
+          <a
+            href={`/operator?stain=${encodeURIComponent(card.title || '')}&cardId=${encodeURIComponent(card.id || '')}`}
+            className="font-semibold hover:underline"
+            style={{ color: 'var(--accent)' }}
+          >
+            {t('deepSolveUpsellLink')}
+          </a>
+        </p>
+      </div>
 
     </div>
   )

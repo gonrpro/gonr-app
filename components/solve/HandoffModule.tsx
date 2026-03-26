@@ -6,7 +6,7 @@ import { useLanguage } from '@/lib/i18n/LanguageContext'
 export default function HandoffModule({ stain, surface }: { stain: string; surface: string }) {
   const { t, lang } = useLanguage()
   const [situation, setSituation] = useState<string>('intake')
-  const [details, setDetails] = useState(`Stain: ${stain}\nSurface: ${surface}`)
+  const [details, setDetails] = useState(`${t('stainLabel')}: ${stain}\n${t('surfaceLabel')}: ${surface}`)
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -34,13 +34,13 @@ export default function HandoffModule({ stain, surface }: { stain: string; surfa
 
       if (!res.ok) {
         const data = await res.json()
-        throw new Error(data.error || 'Failed to generate message')
+        throw new Error(data.error || t('handoffFailed'))
       }
 
       const data = await res.json()
       setMessage(data.message)
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong')
+      setError(err instanceof Error ? err.message : t('somethingWentWrong'))
     } finally {
       setLoading(false)
     }

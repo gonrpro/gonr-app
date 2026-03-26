@@ -1,33 +1,33 @@
 'use client'
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import { createContext, useContext, useState, ReactNode } from 'react'
 import { strings } from './strings'
 
-type Lang = 'en' | 'es'
-
-interface LanguageContextValue {
-  lang: Lang
-  setLang: (l: Lang) => void
+interface LanguageContextType {
+  lang: string
+  setLang: (lang: string) => void
   t: (key: string) => string
 }
 
-const LanguageContext = createContext<LanguageContextValue>({
+const LanguageContext = createContext<LanguageContextType>({
   lang: 'en',
   setLang: () => {},
-  t: (key) => key,
+  t: (key) => strings[key]?.en || key,
 })
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>('en')
+  const [lang, setLangState] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('gonr_lang') || 'en'
+    }
+    return 'en'
+  })
 
-  useEffect(() => {
-    const saved = localStorage.getItem('gonr_lang') as Lang
-    if (saved === 'en' || saved === 'es') setLangState(saved)
-  }, [])
-
-  function setLang(l: Lang) {
-    setLangState(l)
-    localStorage.setItem('gonr_lang', l)
+  function setLang(next: string) {
+    setLangState(next)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('gonr_lang', next)
+    }
   }
 
   function t(key: string): string {

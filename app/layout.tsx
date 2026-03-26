@@ -3,63 +3,35 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/layout/Nav'
 import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
+import HtmlLangSetter from '@/components/layout/HtmlLangSetter'
 import { LanguageProvider } from '@/lib/i18n/LanguageContext'
-import { AuthProvider } from '@/lib/auth/AuthContext'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'GONR — AI Stain Intelligence for Textile Professionals',
-  description: 'Professional stain removal protocols powered by AI. Built by a 3rd-generation dry cleaner. Scan a stain, get a protocol in seconds.',
-  keywords: ['stain removal', 'dry cleaning', 'textile care', 'spotting protocol', 'AI stain guide', 'dry cleaner app', 'professional spotting'],
-  authors: [{ name: 'GONR Labs LLC' }],
-  metadataBase: new URL('https://gonr.app'),
-  alternates: {
-    canonical: 'https://gonr.app',
-  },
-  openGraph: {
-    title: 'GONR — AI Stain Intelligence for Textile Professionals',
-    description: 'Scan a stain. Get a professional protocol in seconds. Built by a 3rd-generation dry cleaner.',
-    url: 'https://gonr.app',
-    siteName: 'GONR',
-    locale: 'en_US',
-    type: 'website',
-    images: [{ url: 'https://gonr.app/og-image.png', width: 1536, height: 1024, alt: 'GONR — AI Stain Intelligence' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'GONR — AI Stain Intelligence',
-    description: 'Professional stain removal protocols powered by AI. Built by a 3rd-generation dry cleaner.',
-    site: '@gonrlabs',
-    images: ['https://gonr.app/og-image.png'],
-  },
+  title: 'GONR — AI Stain Intelligence',
+  description: 'Expert stain removal protocols powered by AI. Built by a 3rd generation dry cleaner.',
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
-  },
+    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='96' fill='%230A0A0A'/%3E%3Cg transform='translate(270,256)'%3E%3Cpath d='M74-76L36-38C20-56-2-68-30-68C-80-68-108-30-108 8C-108 46-80 84-30 84C0 84 20 70 30 44L30 28L-22 28L-22-8L84-8L84 60C62 110 22 138-30 138C-118 138-166 74-166 8C-166-58-118-122-30-122C16-122 46-106 74-76Z' fill='%2322C55E'/%3E%3C/g%3E%3C/svg%3E"
+  }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
-        <AuthProvider>
-          <LanguageProvider>
-            <Header />
-            <main className="px-4 pt-2 pb-4">
-              {children}
-            </main>
-            <Footer />
-            <Nav />
-          </LanguageProvider>
-        </AuthProvider>
-        {/* Theme init script — runs before paint to avoid flash */}
+      <body className={`${inter.variable} font-sans antialiased`}>
+        <LanguageProvider>
+          <HtmlLangSetter />
+          <Header />
+          <main className="px-4 pt-2 pb-4">
+            {children}
+          </main>
+          <Nav />
+        </LanguageProvider>
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
             var t = localStorage.getItem('gonr_theme');
-            if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            if (t === 'dark') {
               document.documentElement.classList.add('dark');
             }
           })();

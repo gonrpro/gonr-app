@@ -19,11 +19,6 @@ const SURFACE_EMOJIS: Record<string, string> = {
   Upholstery: '\uD83D\uDECB\uFE0F',
 }
 
-const COTTON_MODIFIERS = [
-  { id: 'cotton-white', name: 'White / Light' },
-  { id: 'cotton-color', name: 'Colored / Dark' },
-]
-
 interface SurfaceChipsProps {
   onSurfaceSelect: (surface: string) => void
   selectedSurface: string
@@ -35,6 +30,11 @@ export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible
   const [showCottonMods, setShowCottonMods] = useState(false)
 
   if (!visible) return null
+
+  const COTTON_MODIFIERS = [
+    { id: 'cotton-white', nameKey: 'cottonWhite' },
+    { id: 'cotton-color', nameKey: 'cottonColored' },
+  ]
 
   function handleChipClick(surface: string) {
     if (surface === 'Cotton') {
@@ -99,7 +99,7 @@ export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible
                       : 'bg-[#0e131b] dark:bg-[#0e131b] bg-gray-100 text-gray-400 dark:text-gray-400 text-gray-600 hover:text-white hover:bg-[#161d28]'
                   }`}
               >
-                {mod.name}
+                {t(mod.nameKey)}
               </button>
             )
           })}
