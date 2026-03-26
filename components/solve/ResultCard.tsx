@@ -309,27 +309,7 @@ export default function ResultCard({ card, source }: ResultCardProps) {
         )}
       </div>
 
-      {/* ── 10. Deep Solve button (purple) ── */}
-      <div className="px-4 pb-3">
-        <button
-          className="w-full min-h-[44px] rounded-xl bg-purple-600 hover:bg-purple-700
-            text-white text-sm font-semibold transition-colors shadow-lg shadow-purple-600/25"
-        >
-          {'\uD83D\uDD2E'} {t('deepSolve')}
-        </button>
-      </div>
 
-      {/* ── 11. Stain Brain button ── */}
-      <div className="px-4 pb-4">
-        <button
-          className="w-full min-h-[44px] rounded-xl bg-gray-100 dark:bg-white/5
-            border border-gray-200 dark:border-white/10
-            text-gray-700 dark:text-gray-300 text-sm font-semibold
-            hover:bg-gray-200 dark:hover:bg-white/10 transition-colors"
-        >
-          {'\uD83E\uDDE0'} {t('askStainBrain')}
-        </button>
-      </div>
     </div>
   )
 }
