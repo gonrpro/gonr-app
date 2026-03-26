@@ -1,6 +1,21 @@
 /**
  * File: components/solve/ResultCard.tsx
  *
+ * ⚠️  PROTECTED FILE — DO NOT REPLACE OR OVERWRITE ⚠️
+ * This file is maintained by Atlas directly. Lab tasks must NOT include
+ * this file as a deploy target. Submit change requests to Atlas instead.
+ *
+ * FORBIDDEN (do not reintroduce):
+ * - Pro/DIY toggle (mode state, setMode, diy section)
+ * - difficulty/10 badge
+ * - Deep Solve button
+ * - Ask Stain Brain button
+ *
+ * CARD STRUCTURE (fixed):
+ * Title + trust badge → Chemistry brief → Spotting Protocol steps →
+ * Collapsibles: Home Care Tips, Chemistry Details, Safety Warnings,
+ *               Products, Escalation, Common Mistakes, Solvent Note
+ *
  * TASK-122: Added trust badges for source differentiation.
  * - core       → ✅ Master Protocol (gold)
  * - verified   → ✅ Verified Protocol (green)
