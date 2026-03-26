@@ -99,7 +99,42 @@ async function queueForReview(card: any, stain: string, surface: string, safetyR
 
 export async function POST(req: Request) {
   try {
-    const { stain, surface } = await req.json()
+    let stain: string = ''
+    let surface: string = ''
+    let imageBase64: string | null = null
+
+    const contentType = req.headers.get('content-type') || ''
+
+    if (contentType.includes('multipart/form-data')) {
+      // Camera path — FormData with image file
+      const formData = await req.formData()
+      const imageFile = formData.get('image') as File | null
+      if (!imageFile) {
+        return NextResponse.json({ error: 'No image provided' }, { status: 400 })
+      }
+      // Convert to base64 and send to scan-stain API for identification
+      const arrayBuffer = await imageFile.arrayBuffer()
+      imageBase64 = Buffer.from(arrayBuffer).toString('base64')
+
+      // Call scan-stain to identify stain from photo
+      const scanRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'https://gonr-app.vercel.app'}/api/scan-stain`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image: imageBase64 }),
+      })
+      if (!scanRes.ok) {
+        return NextResponse.json({ error: 'Image scan failed' }, { status: 502 })
+      }
+      const scanData = await scanRes.json()
+      // scan-stain returns { family, suggestion, confidence, reasoning }
+      stain = scanData.suggestion || scanData.family || 'unknown stain'
+      surface = formData.get('surface') as string || ''
+    } else {
+      // Text path — JSON body
+      const body = await req.json()
+      stain = body.stain
+      surface = body.surface || ''
+    }
 
     if (!stain || typeof stain !== 'string') {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
