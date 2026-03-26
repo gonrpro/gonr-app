@@ -13,7 +13,10 @@ export const strings: Record<string, Record<string, string>> = {
   poweredBy: { en: "Powered by", es: "Impulsado por" },
   careLabelSubtext: { en: "Reads fiber + care symbols instantly", es: "Lee fibra y símbolos de cuidado al instante" },
   solveBtn: { en: "Solve →", es: "Resolver →" },
-  scanCareLabel: { en: "Scan care label for fiber ID", es: "Escanear etiqueta de cuidado para identificar fibra" },
+  scanCareLabel: { en: "Scan Care Label", es: "Escanear Etiqueta" },
+  addContextOptional: { en: "Add context (optional)", es: "Agregar contexto (opcional)" },
+  fabricPlaceholder: { en: "Fabric feel — silky, stiff, stretchy, fuzzy...", es: "Textura — suave, rígida, elástica..." },
+  garmentLocationPlaceholder: { en: "Where on the garment — collar, sleeve, chest...", es: "Dónde en la prenda — cuello, manga, pecho..." },
   findingProtocol: { en: "Finding protocol...", es: "Buscando protocolo..." },
   backToSearch: { en: "← Back to search", es: "← Volver a la búsqueda" },
 
