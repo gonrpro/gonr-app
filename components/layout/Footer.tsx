@@ -11,20 +11,20 @@ export default function Footer() {
       <p className="text-xs font-semibold mb-3" style={{ color: 'var(--text-secondary)' }}>
         GONR Labs LLC
       </p>
-      <div className="flex items-center justify-center gap-4 flex-wrap">
-        <Link href="/privacy" className="text-xs hover:underline" style={{ color: 'var(--text-secondary)' }}>
-          Privacy Policy
+      <div className="flex items-center justify-center gap-2 flex-nowrap">
+        <Link href="/privacy" className="hover:underline whitespace-nowrap" style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>
+          Privacy
         </Link>
         <span style={{ color: 'var(--text-secondary)', fontSize: '10px' }}>·</span>
-        <Link href="/terms" className="text-xs hover:underline" style={{ color: 'var(--text-secondary)' }}>
-          Terms of Service
+        <Link href="/terms" className="hover:underline whitespace-nowrap" style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>
+          Terms
         </Link>
         <span style={{ color: 'var(--text-secondary)', fontSize: '10px' }}>·</span>
-        <Link href="/partners" className="text-xs hover:underline" style={{ color: 'var(--text-secondary)' }}>
+        <Link href="/partners" className="hover:underline whitespace-nowrap" style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>
           Brand Partners
         </Link>
         <span style={{ color: 'var(--text-secondary)', fontSize: '10px' }}>·</span>
-        <a href="mailto:hello@gonr.pro" className="text-xs hover:underline" style={{ color: 'var(--text-secondary)' }}>
+        <a href="mailto:hello@gonr.pro" className="hover:underline whitespace-nowrap" style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>
           Contact
         </a>
       </div>
