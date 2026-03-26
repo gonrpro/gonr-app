@@ -4,10 +4,10 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 const NAV_ITEMS = [
-  { key: 'solve', label: 'Solve', emoji: '\uD83E\uDDEA', href: '/' },
-  { key: 'scan', label: 'Scan', emoji: '\uD83D\uDCF7', href: '/scan' },
-  { key: 'pro', label: 'Pro Tools', emoji: '\u26A1', href: '/pro' },
-  { key: 'profile', label: 'Profile', emoji: '\uD83D\uDC64', href: '/profile' },
+  { key: 'solve', label: 'Solve', emoji: '🧴', href: '/' },
+  { key: 'spotter', label: 'Spotter', emoji: '⚗️', href: '/spotter' },
+  { key: 'operator', label: 'Operator', emoji: '🔍', href: '/operator' },
+  { key: 'profile', label: 'Profile', emoji: '👤', href: '/profile' },
 ] as const
 
 export default function Nav() {
