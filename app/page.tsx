@@ -170,8 +170,8 @@ export default function SolvePage() {
       <button
         onClick={handleCameraClick}
         disabled={loading}
-        className="scan-hero-btn flex flex-col items-center justify-center gap-2 px-4 py-6 active:scale-[0.97]"
-        style={{ width: '100%', borderRadius: '20px', minHeight: '120px', cursor: 'pointer', transition: 'all 0.12s ease', position: 'relative', overflow: 'hidden', border: 'none' }}
+        className="scan-hero-btn flex flex-col items-center justify-center gap-2 px-4 active:scale-[0.97]"
+        style={{ width: '100%', borderRadius: '20px', minHeight: '120px', cursor: 'pointer', transition: 'all 0.12s ease', position: 'relative', overflow: 'hidden', border: 'none', paddingTop: '28px', paddingBottom: '20px' }}
       >
         {/* radial glow behind icon */}
         <div className="scan-hero-glow" style={{
@@ -180,7 +180,7 @@ export default function SolvePage() {
           width: '140px', height: '140px',
           pointerEvents: 'none',
         }} />
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="scan-hero-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="scan-hero-icon">
           <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
           <circle cx="12" cy="13" r="3" />
         </svg>
