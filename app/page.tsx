@@ -313,12 +313,23 @@ export default function SolvePage() {
 
       {/* Loading skeleton */}
       {loading && (
-        <div className="space-y-3">
-          <div className="skeleton h-6 w-3/4" />
-          <div className="skeleton h-4 w-full" />
-          <div className="skeleton h-4 w-5/6" />
-          <div className="skeleton h-32 w-full" />
-          <div className="skeleton h-4 w-2/3" />
+        <div className="card flex flex-col items-center justify-center py-10 gap-4" style={{ borderColor: 'rgba(34,197,94,0.2)' }}>
+          {/* spinner */}
+          <div style={{
+            width: '36px', height: '36px',
+            border: '3px solid rgba(34,197,94,0.15)',
+            borderTop: '3px solid #22c55e',
+            borderRadius: '50%',
+            animation: 'spin 0.8s linear infinite',
+          }} />
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ fontWeight: 700, fontSize: '15px', color: 'var(--text)' }}>
+              Analyzing stain…
+            </p>
+            <p style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '4px' }}>
+              Stain Brain is on it
+            </p>
+          </div>
         </div>
       )}
 

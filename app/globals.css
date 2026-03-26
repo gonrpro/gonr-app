@@ -262,3 +262,7 @@ body {
 .dark .solve-btn:hover {
   opacity: 0.9;
 }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
