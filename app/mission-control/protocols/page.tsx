@@ -49,11 +49,11 @@ type FilterTab = 'all' | 'unverified' | 'verified' | 'high-traffic'
 import { createClient } from '@supabase/supabase-js'
 
 function getSupabase() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
-  return createClient(url || 'https://placeholder.supabase.co', key || 'placeholder')
+  const url = 'https://ljcmslyirxqtmdaxzuiq.supabase.co'
+  const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxqY21zbHlpcnhxdG1kYXh6dWlxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzExOTQwNjEsImV4cCI6MjA4Njc3MDA2MX0.RTh4Ms3108s5iyTZMSVB9tLd7N79XjmICcLn8j3NOR0'
+  return createClient(url, key)
 }
-const supabase = typeof window !== 'undefined' ? getSupabase() : null as any
+const supabase = getSupabase()
 
 /* ── Page Component ───────────────────────────── */
 
