@@ -49,7 +49,7 @@ export default function TermsPage() {
       <section className="space-y-2">
         <h2 className="text-base font-semibold">Contact</h2>
         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-          Questions? Email <a href="mailto:hello@gonr.app" className="underline">hello@gonr.app</a>.
+          Questions? Email <a href="mailto:hello@gonr.pro" className="underline">hello@gonr.pro</a>.
         </p>
       </section>
     </div>

@@ -8,7 +8,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    // Forward to partners@gonr.app via simple email
+    // Forward to partners@gonr.pro via simple email
     const emailBody = `New Brand Partner Inquiry
 
 Name: ${name}

@@ -108,7 +108,7 @@ export default function PartnersPage() {
               />
             </div>
             {status === 'error' && (
-              <p className="text-sm" style={{ color: 'var(--danger)' }}>Something went wrong — email us directly at partners@gonr.app</p>
+              <p className="text-sm" style={{ color: 'var(--danger)' }}>Something went wrong — email us directly at partners@gonr.pro</p>
             )}
             <button
               type="submit"
@@ -123,7 +123,7 @@ export default function PartnersPage() {
       </section>
 
       <p className="text-xs pt-2" style={{ color: 'var(--text-secondary)', opacity: 0.5 }}>
-        GONR Labs LLC · Fort Myers, FL · partners@gonr.app
+        GONR Labs LLC · Fort Myers, FL · partners@gonr.pro
       </p>
     </div>
   )

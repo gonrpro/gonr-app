@@ -35,14 +35,14 @@ export default function PrivacyPage() {
       <section className="space-y-2">
         <h2 className="text-base font-semibold">Your Rights</h2>
         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-          You can request deletion of your account and associated data at any time by emailing hello@gonr.app.
+          You can request deletion of your account and associated data at any time by emailing hello@gonr.pro.
         </p>
       </section>
 
       <section className="space-y-2">
         <h2 className="text-base font-semibold">Contact</h2>
         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-          Questions? Email us at <a href="mailto:hello@gonr.app" className="underline">hello@gonr.app</a>.
+          Questions? Email us at <a href="mailto:hello@gonr.pro" className="underline">hello@gonr.pro</a>.
         </p>
       </section>
     </div>

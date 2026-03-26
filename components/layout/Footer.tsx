@@ -24,7 +24,7 @@ export default function Footer() {
           Brand Partners
         </Link>
         <span style={{ color: 'var(--text-secondary)', fontSize: '10px' }}>·</span>
-        <a href="mailto:hello@gonr.app" className="text-xs hover:underline" style={{ color: 'var(--text-secondary)' }}>
+        <a href="mailto:hello@gonr.pro" className="text-xs hover:underline" style={{ color: 'var(--text-secondary)' }}>
           Contact
         </a>
       </div>
