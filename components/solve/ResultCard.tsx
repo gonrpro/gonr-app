@@ -78,11 +78,7 @@ interface ResultCardProps {
 
 export default function ResultCard({ card, source }: ResultCardProps) {
   const { t } = useLanguage()
-  const [mode, setMode] = useState<'pro' | 'diy'>('pro')
   const [showHandoff, setShowHandoff] = useState(false)
-
-  const difficulty = card.difficulty ?? 5
-  const dc = difficultyColor(difficulty)
   const badge = sourceBadge(source)
 
   // Normalize escalation
@@ -96,22 +92,17 @@ export default function ResultCard({ card, source }: ResultCardProps) {
     : { professional: [], consumer: [] }
 
   return (
-    <div className={`rounded-xl border-l-4 ${dc.border} bg-white dark:bg-[#0e131b] shadow-lg overflow-hidden`}>
+    <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#0e131b] shadow-lg overflow-hidden">
 
-      {/* ── 1. Header: Title + source badge + difficulty ── */}
+      {/* ── 1. Header: Title + source badge ── */}
       <div className="px-4 pt-4 pb-3 space-y-2">
         <div className="flex items-start justify-between gap-2">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white leading-snug flex-1">
             {card.title}
           </h2>
           <div className="flex items-center gap-2 flex-shrink-0 pt-0.5">
-            {/* Source badge — TASK-122 trust badges */}
             <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold ${badge.bg} ${badge.text}`}>
               {badge.label}
-            </span>
-            {/* Difficulty badge */}
-            <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold ${dc.bg} ${dc.text}`}>
-              {difficulty}/10
             </span>
           </div>
         </div>
@@ -129,34 +120,13 @@ export default function ResultCard({ card, source }: ResultCardProps) {
         </div>
       )}
 
-      {/* ── 3. Pro / DIY toggle ── */}
-      <div className="px-4 pb-3">
-        <div className="flex gap-1 bg-gray-100 dark:bg-white/5 rounded-lg p-1">
-          <button
-            onClick={() => setMode('pro')}
-            className={`flex-1 py-2 rounded-md text-sm font-semibold min-h-[44px] transition-all
-              ${mode === 'pro'
-                ? 'bg-green-500 text-white shadow-sm'
-                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
-              }`}
-          >
-            {t('proProtocol')}
-          </button>
-          <button
-            onClick={() => setMode('diy')}
-            className={`flex-1 py-2 rounded-md text-sm font-semibold min-h-[44px] transition-all
-              ${mode === 'diy'
-                ? 'bg-green-500 text-white shadow-sm'
-                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
-              }`}
-          >
-            {t('diyHome')}
-          </button>
-        </div>
+      {/* ── 3. Spotting Protocol label ── */}
+      <div className="px-4 pb-2">
+        <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Spotting Protocol</p>
       </div>
 
-      {/* ── 4. Pro Steps (numbered, agent in green caps) ── */}
-      {mode === 'pro' && card.spottingProtocol && (
+      {/* ── 4. Protocol Steps ── */}
+      {card.spottingProtocol && (
         <div className="px-4 pb-4 space-y-3">
           {card.spottingProtocol.map((step, i) => (
             <div key={i} className="flex gap-3">
@@ -187,25 +157,7 @@ export default function ResultCard({ card, source }: ResultCardProps) {
         </div>
       )}
 
-      {/* ── 5. DIY Steps (numbered, simpler format) ── */}
-      {mode === 'diy' && card.homeSolutions && (
-        <div className="px-4 pb-4 space-y-3">
-          {card.homeSolutions.map((sol, i) => {
-            const text = typeof sol === 'string' ? sol : (sol as Step).instruction
-            return (
-              <div key={i} className="flex gap-3">
-                <div className="flex-shrink-0 w-7 h-7 rounded-full bg-green-500/20 text-green-400
-                  flex items-center justify-center text-xs font-bold mt-0.5">
-                  {i + 1}
-                </div>
-                <p className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed flex-1">
-                  {text}
-                </p>
-              </div>
-            )
-          })}
-        </div>
-      )}
+
 
       {/* ── 6. Why This Works ── */}
       {card.whyThisWorks && (
@@ -257,6 +209,24 @@ export default function ResultCard({ card, source }: ResultCardProps) {
 
       {/* ── 9. Collapsible sections ── */}
       <div className="px-4 pb-4 space-y-2">
+
+        {/* Home Care Tips */}
+        {card.homeSolutions && card.homeSolutions.length > 0 && (
+          <Collapsible title="Home Care Tips" icon="🏠">
+            <ul className="space-y-2">
+              {card.homeSolutions.map((sol, i) => {
+                const text = typeof sol === 'string' ? sol : (sol as { instruction?: string }).instruction || ''
+                return (
+                  <li key={i} className="flex gap-2 items-start">
+                    <span className="text-green-400 flex-shrink-0 mt-0.5">•</span>
+                    <span>{text}</span>
+                  </li>
+                )
+              })}
+            </ul>
+          </Collapsible>
+        )}
+
         {/* Chemistry Details */}
         {card.stainChemistry && (
           <Collapsible title={t('chemistryDetails')} icon={'\uD83E\uDDEA'}>
