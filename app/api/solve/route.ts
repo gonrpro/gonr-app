@@ -1,6 +1,17 @@
 import { NextResponse } from 'next/server'
 import { lookupProtocol } from '@/lib/protocols/lookup'
 import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
+import crosswalkData from '@/data/chemicals/agent-brand-crosswalk.json'
+
+// Build compact product reference from crosswalk for AI injection
+type CrosswalkAgent = { genericName?: string; products?: Array<{ company: string; productName: string; notes?: string }> }
+const crosswalk = crosswalkData as Record<string, CrosswalkAgent>
+const PRODUCT_REFERENCE = Object.entries(crosswalk)
+  .filter(([, v]) => v && typeof v === 'object' && 'products' in v && Array.isArray(v.products))
+  .map(([agent, v]) => {
+    const products = (v.products || []).slice(0, 3).map((p) => `${p.productName} (${p.company})`).join(', ')
+    return `- ${v.genericName || agent}: ${products}`
+  }).join('\n')
 
 async function generateAIProtocol(stain: string, surface: string, lang: string = 'en') {
   const apiKey = process.env.OPENAI_API_KEY
@@ -34,7 +45,12 @@ PROFESSIONAL AGENT NAMES — always use these exact terms, never consumer equiva
 - "Acetic Acid 28% diluted" (NOT vinegar)
 - "Reducing Agent" (for reactive dyes)
 - "Rust Remover" (oxalic acid based)
-NEVER use: OxiClean, Tide, Shout, Dawn, baking soda, white vinegar, or any consumer brand.${languageInstruction}
+NEVER use: OxiClean, Tide, Shout, Dawn, baking soda, white vinegar, or any consumer brand.
+
+PROFESSIONAL PRODUCT REFERENCE — use these real products in the "products.professional" array:
+${PRODUCT_REFERENCE}
+
+For "products.consumer", recommend well-known home products appropriate for the stain type (e.g. Wine Away, Carbona Stain Devils, Zout, Woolite, Lestoil). These are acceptable for home users — be specific about which product and why.${languageInstruction}
 
 Return ONLY valid JSON in this exact format:
 {
