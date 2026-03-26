@@ -57,7 +57,10 @@ export default function SolvePage() {
   }, [])
 
   // Derived: what the solve button will show
-  const solveStainLabel = selectedStain || stainInput.trim() || (capturedPhoto ? 'Photo' : '')
+  const photoLabel = capturedPhoto
+    ? (careLabelFile ? 'Photo + Care Label' : 'Photo')
+    : ''
+  const solveStainLabel = selectedStain || stainInput.trim() || photoLabel
   const solveSurfaceLabel = selectedSurface || ''
   const hasSolveInput = !!(capturedPhoto || selectedStain || stainInput.trim())
 
