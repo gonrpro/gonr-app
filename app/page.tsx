@@ -58,7 +58,7 @@ export default function SolvePage() {
 
   // Derived: what the solve button will show
   const photoLabel = capturedPhoto
-    ? (careLabelFile ? 'Photo + Care Label' : 'Photo')
+    ? (careLabelFile ? t('photoAndCareLabel') || 'Photo + Care Label' : t('photoOnly') || 'Photo')
     : ''
   const solveStainLabel = selectedStain || stainInput.trim() || photoLabel
   const solveSurfaceLabel = selectedSurface || ''
@@ -220,13 +220,13 @@ export default function SolvePage() {
       {/* ── Hero Copy ── */}
       <div style={{ paddingBottom: '4px', textAlign: 'center' }}>
         <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', color: '#22c55e', textTransform: 'uppercase', marginBottom: '6px' }}>
-          AI Stain Intelligence for Textiles
+          {t('aiStainIntelligence')}
         </p>
         <h1 style={{ fontSize: '28px', fontWeight: 900, letterSpacing: '-0.5px', lineHeight: 1.1, color: 'var(--text)', margin: 0 }}>
-          Master Spotter
+          {t('masterSpotter')}
         </h1>
         <p style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '5px' }}>
-          Powered by <span style={{ fontWeight: 600 }}>Stain Brain</span>
+          {t('poweredBy')} <span style={{ fontWeight: 600 }}>Stain Brain</span>
         </p>
       </div>
 
@@ -315,7 +315,7 @@ export default function SolvePage() {
                 fontWeight: 600,
               }}
             >
-              Stain ✓
+              {t('stainCaptured') || 'Stain ✓'}
             </div>
           </div>
         )}
@@ -341,7 +341,7 @@ export default function SolvePage() {
               <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5" />
             </svg>
             <span style={{ color: '#a855f7', fontSize: '14px', fontWeight: 600 }}>
-              Scan Care Label
+              {t('scanCareLabel')}
             </span>
           </button>
         ) : (
