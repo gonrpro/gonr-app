@@ -325,10 +325,32 @@ export default function SolvePage() {
             <button
               onClick={() => handleSolve(selectedStain, selectedSurface)}
               disabled={loading}
-              className="solve-btn w-full hover:opacity-90 active:scale-[0.96]"
-              style={{ marginTop: '4px' }}
+              className="hover:opacity-90 active:scale-[0.98]"
+              style={{
+                width: '100%',
+                borderRadius: '16px',
+                border: '1.5px solid rgba(34,197,94,0.45)',
+                background: 'rgba(34,197,94,0.06)',
+                padding: '0 24px',
+                minHeight: '70px',
+                cursor: 'pointer',
+                transition: 'all 0.12s ease',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '18px',
+              }}
             >
-              {t('solveBtn')}
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+              <div style={{ textAlign: 'left', flex: 1 }}>
+                <div style={{ color: '#22c55e', fontSize: '15px', fontWeight: 600 }}>{t('solveBtn')}</div>
+                <div style={{ color: '#8a94a6', fontSize: '12px', marginTop: '2px' }}>{selectedStain}{selectedSurface ? ` on ${selectedSurface}` : ''}</div>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, opacity: 0.4 }}>
+                <path d="M9 18l6-6-6-6" />
+              </svg>
             </button>
           )}
         </div>
