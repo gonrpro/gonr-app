@@ -1,54 +1,65 @@
 /**
- * Client-side trial state manager for free users
- * Manages free_solves counter in localStorage
+ * Client-side 7-day trial gate
+ * Stores trial start date in localStorage.
+ * Full access for 7 days. After that → paywall.
  */
 
 export type Tier = 'free' | 'home' | 'spotter' | 'operator' | 'founder'
 
-const TRIAL_SOLVES_KEY = 'free_solves'
+const TRIAL_START_KEY = 'gonr_trial_start'
 const USER_TIER_KEY = 'gonr_user_tier'
-const INITIAL_SOLVES = 3
+const TRIAL_DAYS = 7
 
 /**
- * Initialize trial state on first visit
+ * Initialize trial on first visit. Records start date if not set.
  */
 export function initializeTrialState(): void {
   if (typeof window === 'undefined') return
-  if (localStorage.getItem(TRIAL_SOLVES_KEY) === null) {
-    localStorage.setItem(TRIAL_SOLVES_KEY, String(INITIAL_SOLVES))
+  if (localStorage.getItem(TRIAL_START_KEY) === null) {
+    localStorage.setItem(TRIAL_START_KEY, String(Date.now()))
   }
 }
 
 /**
- * Get current trial state
+ * Get days remaining in trial (0 if expired).
  */
-export function getTrialState(): { solvesRemaining: number; tier: Tier } {
-  if (typeof window === 'undefined') {
-    return { solvesRemaining: 0, tier: 'free' }
-  }
+export function getDaysRemaining(): number {
+  if (typeof window === 'undefined') return TRIAL_DAYS
+  const start = parseInt(localStorage.getItem(TRIAL_START_KEY) || '0', 10)
+  if (!start) return TRIAL_DAYS
+  const elapsed = Date.now() - start
+  const daysElapsed = elapsed / (1000 * 60 * 60 * 24)
+  return Math.max(0, Math.ceil(TRIAL_DAYS - daysElapsed))
+}
 
-  const solvesRemaining = parseInt(localStorage.getItem(TRIAL_SOLVES_KEY) || '3', 10)
+/**
+ * Returns true if the 7-day trial has expired.
+ */
+export function isTrialExpired(): boolean {
+  if (typeof window === 'undefined') return false
   const tier = (localStorage.getItem(USER_TIER_KEY) || 'free') as Tier
+  if (tier !== 'free') return false // paid users never expire
+  return getDaysRemaining() === 0
+}
 
+/**
+ * Get current trial state.
+ */
+export function getTrialState(): { daysRemaining: number; tier: Tier; expired: boolean } {
+  if (typeof window === 'undefined') {
+    return { daysRemaining: TRIAL_DAYS, tier: 'free', expired: false }
+  }
+  const tier = (localStorage.getItem(USER_TIER_KEY) || 'free') as Tier
+  const daysRemaining = getDaysRemaining()
   return {
-    solvesRemaining: Math.max(0, solvesRemaining),
+    daysRemaining,
     tier,
+    expired: tier === 'free' && daysRemaining === 0,
   }
 }
 
 /**
- * Decrement solves remaining (called after successful solve)
- */
-export function decrementSolve(): void {
-  if (typeof window === 'undefined') return
-  
-  const current = parseInt(localStorage.getItem(TRIAL_SOLVES_KEY) || '3', 10)
-  const newValue = Math.max(0, current - 1)
-  localStorage.setItem(TRIAL_SOLVES_KEY, String(newValue))
-}
-
-/**
- * Set tier in localStorage (called after login)
+ * Set tier in localStorage (called after login/subscription).
  */
 export function setUserTier(tier: Tier): void {
   if (typeof window === 'undefined') return
@@ -56,28 +67,26 @@ export function setUserTier(tier: Tier): void {
 }
 
 /**
- * Get remaining text for UI display
+ * Get human-readable trial status for UI.
  */
 export function getRemainingText(): string {
-  const { solvesRemaining } = getTrialState()
-  if (solvesRemaining === 0) return 'No solves remaining'
-  if (solvesRemaining === 1) return '1 solve remaining'
-  return `${solvesRemaining} solves remaining`
+  const { daysRemaining, tier } = getTrialState()
+  if (tier !== 'free') return ''
+  if (daysRemaining === 0) return 'Trial expired'
+  if (daysRemaining === 1) return '1 day left in trial'
+  return `${daysRemaining} days left in trial`
 }
 
 /**
- * Clear trial state (on logout)
+ * Clear trial state (on logout).
  */
 export function clearTrialState(): void {
   if (typeof window === 'undefined') return
-  localStorage.removeItem(TRIAL_SOLVES_KEY)
+  localStorage.removeItem(TRIAL_START_KEY)
   localStorage.removeItem(USER_TIER_KEY)
 }
 
-/**
- * Reset trial to initial state
- */
-export function resetTrial(): void {
-  if (typeof window === 'undefined') return
-  localStorage.setItem(TRIAL_SOLVES_KEY, String(INITIAL_SOLVES))
-}
+// Legacy exports for any consumers still using solve-counter API
+// These are no-ops — kept to avoid import errors during migration
+export function decrementSolve(): void {}
+export function resetTrial(): void {}

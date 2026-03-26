@@ -6,7 +6,7 @@ import StainChips from '@/components/solve/StainChips'
 import SurfaceChips from '@/components/solve/SurfaceChips'
 import PaywallModal from '@/components/paywall/PaywallModal'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-import { initializeTrialState, getTrialState, decrementSolve, getRemainingText } from '@/lib/auth/trialGuard'
+import { initializeTrialState, getTrialState, isTrialExpired, getRemainingText } from '@/lib/auth/trialGuard'
 import type { ProtocolCard } from '@/lib/types'
 
 interface SolveResult {
@@ -30,7 +30,7 @@ export default function SolvePage() {
 
   // Trial state
   const [showPaywall, setShowPaywall] = useState(false)
-  const [solvesRemaining, setSolvesRemaining] = useState(3)
+  const [daysRemaining, setDaysRemaining] = useState(7)
   const [userTier, setUserTier] = useState<'free' | 'home' | 'spotter' | 'operator' | 'founder'>('free')
 
   // Photo enrichment state
@@ -48,7 +48,7 @@ export default function SolvePage() {
 
     // Load trial state
     const trial = getTrialState()
-    setSolvesRemaining(trial.solvesRemaining)
+    setDaysRemaining(trial.daysRemaining)
     setUserTier(trial.tier)
   }, [])
 
@@ -131,7 +131,7 @@ export default function SolvePage() {
     if (!hasSolveInput) return
 
     // Check trial gate for free users
-    if (userTier === 'free' && solvesRemaining === 0) {
+    if (isTrialExpired()) {
       setShowPaywall(true)
       return
     }
@@ -178,14 +178,13 @@ export default function SolvePage() {
       setResult(data)
       incrementSolveCount()
 
-      // Decrement trial if free user
+      // Refresh trial state after solve
       if (userTier === 'free') {
-        decrementSolve()
         const newTrial = getTrialState()
-        setSolvesRemaining(newTrial.solvesRemaining)
+        setDaysRemaining(newTrial.daysRemaining)
 
-        // If last free solve was just used, show paywall after result
-        if (newTrial.solvesRemaining === 0) {
+        // If trial just expired, show paywall after result
+        if (newTrial.expired) {
           setTimeout(() => setShowPaywall(true), 1500)
         }
       }
@@ -196,7 +195,7 @@ export default function SolvePage() {
     } finally {
       setLoading(false)
     }
-  }, [hasSolveInput, capturedPhoto, careLabelFile, fabricDescription, garmentLocation, selectedStain, selectedSurface, stainInput, lang, t, incrementSolveCount, scrollToResult, userTier, solvesRemaining])
+  }, [hasSolveInput, capturedPhoto, careLabelFile, fabricDescription, garmentLocation, selectedStain, selectedSurface, stainInput, lang, t, incrementSolveCount, scrollToResult, userTier, daysRemaining])
 
   const handleStainSelect = (stain: string) => {
     setSelectedStain(stain)
@@ -538,8 +537,8 @@ export default function SolvePage() {
         )}
       </button>
 
-      {/* Trial counter badge */}
-      {userTier === 'free' && solvesRemaining < 3 && (
+      {/* Trial days remaining badge — show last 3 days only */}
+      {userTier === 'free' && daysRemaining <= 3 && daysRemaining > 0 && (
         <div style={{
           textAlign: 'center',
           padding: '8px 12px',
