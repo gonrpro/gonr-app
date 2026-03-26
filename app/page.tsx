@@ -156,7 +156,7 @@ export default function SolvePage() {
           AI Stain Intelligence for Textiles
         </p>
         <h1 style={{ fontSize: '30px', fontWeight: 900, letterSpacing: '-1px', lineHeight: 1.1, margin: 0 }}>
-          The Professional's<br />Stain Solver
+          Master Spotter
         </h1>
       </div>
 
