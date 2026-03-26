@@ -19,6 +19,7 @@ export default function SolvePage() {
   const [stainInput, setStainInput] = useState('')
   const [selectedStain, setSelectedStain] = useState('')
   const [selectedSurface, setSelectedSurface] = useState('')
+  const [showBrowse, setShowBrowse] = useState(false)
   const [result, setResult] = useState<SolveResult | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -452,20 +453,28 @@ export default function SolvePage() {
       </div>
 
       {/* ── OR BROWSE BY ── */}
-      <div className="space-y-3">
-        <div style={{ color: 'var(--text-secondary)', fontSize: '12px', fontWeight: 500, paddingLeft: '2px' }}>
-          {t('orBrowseByType') || 'Or browse by type'}
+      <button
+        onClick={() => setShowBrowse(!showBrowse)}
+        className="flex items-center gap-1 text-sm py-1"
+        style={{ color: 'var(--text-secondary)', background: 'none', border: 'none', cursor: 'pointer', paddingLeft: '2px' }}
+      >
+        <span>{t('orBrowseByType') || 'Or browse by type'}</span>
+        <span style={{ fontSize: '10px' }}>{showBrowse ? '▲' : '▼'}</span>
+      </button>
+
+      {showBrowse && (
+        <div className="space-y-3">
+          <StainChips
+            onStainSelect={handleStainSelect}
+            selectedStain={selectedStain}
+          />
+          <SurfaceChips
+            onSurfaceSelect={handleSurfaceSelect}
+            selectedSurface={selectedSurface}
+            visible={!!(selectedStain || stainInput.trim())}
+          />
         </div>
-        <StainChips
-          onStainSelect={handleStainSelect}
-          selectedStain={selectedStain}
-        />
-        <SurfaceChips
-          onSurfaceSelect={handleSurfaceSelect}
-          selectedSurface={selectedSurface}
-          visible={!!(selectedStain || stainInput.trim())}
-        />
-      </div>
+      )}
 
       {/* ── SOLVE BUTTON ── */}
       {hasSolveInput && (
