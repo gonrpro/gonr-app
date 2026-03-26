@@ -321,6 +321,16 @@ export default function SolvePage() {
         <div className="space-y-4">
           <StainChips onStainSelect={handleStainSelect} selectedStain={selectedStain} />
           <SurfaceChips onSurfaceSelect={handleSurfaceSelect} selectedSurface={selectedSurface} visible={!!(selectedStain || stainInput.trim())} />
+          {selectedStain && (
+            <button
+              onClick={() => handleSolve(selectedStain, selectedSurface)}
+              disabled={loading}
+              className="solve-btn w-full hover:opacity-90 active:scale-[0.96]"
+              style={{ marginTop: '4px' }}
+            >
+              {t('solveBtn')}
+            </button>
+          )}
         </div>
       )}
 

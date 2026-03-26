@@ -7,7 +7,7 @@ export interface StainChip {
 export const STAIN_CHIPS: StainChip[] = [
   { emoji: '☕', name: 'Coffee/Drink', subs: ['Black Coffee', 'Coffee with Cream', 'Tea', 'Juice', 'Milk'] },
   { emoji: '🍷', name: 'Wine', subs: ['Red Wine', 'White Wine', 'Beer'] },
-  { emoji: '🩸', name: 'Blood', subs: ['Fresh Blood', 'Dried Blood', 'Menstrual'] },
+  { emoji: '🩸', name: 'Blood', subs: [] },
   { emoji: '🫧', name: 'Grease/Oil', subs: ['Cooking Oil', 'Butter', 'Motor Oil'] },
   { emoji: '🖊️', name: 'Ink/Marker', subs: ['Ballpoint Pen', 'Permanent Marker'] },
   { emoji: '💄', name: 'Makeup', subs: ['Lipstick', 'Foundation', 'Mascara', 'Nail Polish'] },
