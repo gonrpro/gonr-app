@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import GarmentAnalysis from '@/components/solve/GarmentAnalysis'
 import HandoffModule from '@/components/solve/HandoffModule'
-import DeepSolveModule from '@/components/solve/DeepSolveModule'
+
 
 type ActiveTool = 'garment' | 'handoff' | 'deep_solve' | null
 
@@ -78,7 +78,13 @@ export default function OperatorPage() {
         >
           ← BACK
         </button>
-        <DeepSolveModule stain="" surface="" />
+        <div className="card text-center py-10 space-y-2">
+          <span className="text-3xl">🔬</span>
+          <p className="font-semibold">Deep Solve</p>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            Run a solve first, then use Deep Solve from the result card for advanced analysis.
+          </p>
+        </div>
       </div>
     )
   }
