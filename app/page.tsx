@@ -159,7 +159,7 @@ export default function SolvePage() {
           Master Spotter
         </h1>
         <p style={{ fontSize: '11px', color: '#6b7280', marginTop: '6px', letterSpacing: '0.3px' }}>
-          Powered by Stain Brain Engine
+          Powered by <a href="/pro" style={{ color: '#a855f7', fontWeight: 600, textDecoration: 'none' }}>Stain Brain Engine</a>
         </p>
       </div>
 
