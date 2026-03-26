@@ -78,25 +78,22 @@ export async function POST(req: NextRequest) {
       })
     }
 
-    // Build Responses API input for gpt-5.4
-    const inputContent: any[] = content.map((c: any) => {
-      if (c.type === 'text') return { type: 'input_text', text: c.text }
-      if (c.type === 'image_url') return { type: 'input_image', image_url: c.image_url.url, detail: 'high' }
-      return c
-    })
+    const systemPrompt = SYSTEM_PROMPT + (lang === 'es' ? '\n\nIMPORTANT: Write your ENTIRE response in professional Spanish. All field values — rootCause, fiberConcerns, protocol steps, and all handoff messages (improved, tough, release) and proTip — must be in Spanish. Use dry cleaning terminology. Agent names stay as-is (NSD, POG, Protein, Tannin).' : '')
 
-    const response = await fetch('https://api.openai.com/v1/responses', {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: 'gpt-5.4',
-        instructions: SYSTEM_PROMPT + (lang === 'es' ? '\n\nIMPORTANT: Write your ENTIRE response in professional Spanish. All field values — rootCause, fiberConcerns, protocol steps, and all handoff messages (improved, tough, release) and proTip — must be in Spanish. Use dry cleaning terminology. Agent names stay as-is (NSD, POG, Protein, Tannin).' : ''),
-        input: [{ role: 'user', content: inputContent }],
-        max_output_tokens: 1500,
-        text: { format: { type: 'json_object' } },
+        model: 'gpt-4o',
+        max_tokens: 1500,
+        response_format: { type: 'json_object' },
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content },
+        ],
       }),
     })
 
@@ -110,7 +107,7 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await response.json()
-    const raw = data.output_text || data.output?.[0]?.content?.[0]?.text
+    const raw = data.choices?.[0]?.message?.content || data.output_text || data.output?.[0]?.content?.[0]?.text
 
     if (!raw) {
       return NextResponse.json(
