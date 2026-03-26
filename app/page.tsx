@@ -89,8 +89,15 @@ export default function SolvePage() {
     input.type = 'file'
     input.accept = 'image/*'
     input.capture = 'environment'
-    input.onchange = async (e) => {
-      const file = (e.target as HTMLInputElement).files?.[0]
+    // iOS Safari requires input to be in the DOM before click
+    input.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none'
+    document.body.appendChild(input)
+
+    const cleanup = () => { if (document.body.contains(input)) document.body.removeChild(input) }
+
+    input.addEventListener('change', async () => {
+      cleanup()
+      const file = input.files?.[0]
       if (!file) return
 
       setLoading(true)
@@ -127,7 +134,13 @@ export default function SolvePage() {
       } finally {
         setLoading(false)
       }
+    })
+
+    // iOS cancel fallback — clean up if user dismisses camera
+    const handleFocus = () => {
+      setTimeout(() => { if (!input.files?.length) cleanup(); window.removeEventListener('focus', handleFocus) }, 500)
     }
+    window.addEventListener('focus', handleFocus)
     input.click()
   }
 
