@@ -235,30 +235,21 @@ export default function SolvePage() {
             onClick={handleScanStain}
             disabled={loading}
             style={{
-              background: '#1a2e1a',
+              background: 'rgba(34,197,94,0.08)',
               borderRadius: '12px',
               flex: 1,
-              minHeight: '70px',
-              border: '1px solid rgba(34, 197, 94, 0.2)',
+              minHeight: '80px',
+              border: '1.5px solid rgba(34,197,94,0.35)',
               cursor: 'pointer',
               transition: 'all 0.15s ease',
             }}
             className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98]"
           >
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#22c55e"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
               <circle cx="12" cy="13" r="3" />
             </svg>
-            <span style={{ color: '#22c55e', fontSize: '15px', fontWeight: 600 }}>
+            <span style={{ color: '#22c55e', fontSize: '14px', fontWeight: 600 }}>
               {t('scanStain')}
             </span>
           </button>
@@ -332,31 +323,22 @@ export default function SolvePage() {
             onClick={handleScanCareLabel}
             disabled={loading}
             style={{
-              background: '#1e1528',
+              background: 'rgba(168,85,247,0.08)',
               borderRadius: '12px',
               flex: 1,
-              minHeight: '70px',
-              border: '1px solid rgba(147, 51, 234, 0.2)',
+              minHeight: '80px',
+              border: '1.5px solid rgba(168,85,247,0.35)',
               cursor: 'pointer',
               transition: 'all 0.15s ease',
             }}
             className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98]"
           >
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#a855f7"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <rect x="3" y="3" width="18" height="18" rx="2" />
               <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5" />
             </svg>
-            <span style={{ color: '#a855f7', fontSize: '15px', fontWeight: 600 }}>
-              {t('scanCareLabel') || 'Scan Care Label'}
+            <span style={{ color: '#a855f7', fontSize: '14px', fontWeight: 600 }}>
+              Scan Care Label
             </span>
           </button>
         ) : (
@@ -367,7 +349,7 @@ export default function SolvePage() {
               flex: 1,
               minHeight: '70px',
               borderRadius: '12px',
-              background: '#1e1528',
+              background: 'rgba(168,85,247,0.08)',
               border: '1px solid rgba(147, 51, 234, 0.4)',
               display: 'flex',
               flexDirection: 'column',
@@ -495,7 +477,7 @@ export default function SolvePage() {
           onClick={handleSolve}
           disabled={loading}
           style={{
-            background: '#1a2e1a',
+            background: 'rgba(34,197,94,0.08)',
             borderRadius: '12px',
             minHeight: '56px',
             width: '100%',
