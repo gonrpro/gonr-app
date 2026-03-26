@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { lookupProtocol } from '@/lib/protocols/lookup'
+import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
 
 // ─── Text-based AI protocol generation (existing, unchanged) ───
 
@@ -13,7 +14,30 @@ async function generateAIProtocol(stain: string, surface: string, lang: string =
     ? `\n\nIMPORTANT: Write EVERYTHING in Spanish. All field values — title, stainChemistry, whyThisWorks, instructions, homeSolutions, materialWarnings, escalation text, product notes — must be in Spanish. Use professional dry cleaning terminology in Spanish. Agent names stay in their standard professional form (NSD, POG, Protein, Tannin) but all descriptions, instructions, and explanations must be in natural, professional Spanish.`
     : ''
 
-  const systemPrompt = `You are an expert stain removal chemist and 3rd-generation dry cleaner. Given a stain and surface, produce a JSON protocol card.${languageInstruction}
+  const systemPrompt = `You are Dan Eisen — DLI Hall of Fame textile spotter with 40 years of professional dry cleaning experience. Given a stain and surface, produce a THOROUGH, PROFESSIONAL JSON protocol card.
+
+PROTOCOL REQUIREMENTS:
+- MINIMUM 3 steps, ideally 4-6 for complex stains
+- Each step must be specific and actionable
+- Always start protein stains (blood, sweat, milk, egg) with COLD water flush — NEVER hot water
+- Always sequence: mechanical removal → appropriate agent → flush → repeat if needed → final treatment
+- Address the specific surface provided — Cotton protocols differ from Silk, Wool, Upholstery, etc.
+
+PROFESSIONAL AGENT NAMES — use ONLY these exact terms, never consumer equivalents:
+- "Protein" (NOT enzyme cleaner, enzymatic, bio-detergent, laundry detergent)
+- "NSD" or "Neutral Synthetic Detergent" (NOT dish soap, detergent, surfactant, liquid laundry detergent)
+- "POG" or "Paint Oil Grease remover" (NOT degreaser, solvent, WD-40)
+- "Tannin" (NOT stain remover, spot treatment)
+- "H₂O₂ 6%" (NOT hydrogen peroxide, bleach)
+- "Acetic Acid 28% diluted" (NOT vinegar, white vinegar)
+- "Reducing Agent" (for reactive dyes)
+- "Rust Remover" (oxalic acid based)
+NEVER use: OxiClean, Tide, Shout, Dawn, baking soda, white vinegar, liquid laundry detergent, or any consumer brand in the protocol steps.
+
+PROFESSIONAL PRODUCT REFERENCE — use these in products.professional:
+${PRODUCT_REFERENCE}
+
+For products.consumer, recommend well-known home products (Wine Away, Carbona Stain Devils, Zout, Woolite, Lestoil).${languageInstruction}
 
 Return ONLY valid JSON in this exact format:
 {
@@ -55,13 +79,13 @@ Return ONLY valid JSON in this exact format:
       'Authorization': `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: 'gpt-4o-mini',
+      model: 'gpt-4.1',
       messages: [
         { role: 'system', content: systemPrompt },
-        { role: 'user', content: `Stain: ${stain}\nSurface: ${surface || 'general fabric'}` },
+        { role: 'user', content: `Stain: ${stain}\nSurface: ${surface || 'unknown — ask for fiber content if possible'}` },
       ],
       temperature: 0.3,
-      max_tokens: 2000,
+      max_tokens: 3000,
     }),
   })
 
@@ -242,17 +266,46 @@ export async function POST(req: Request) {
       // Look up verified protocol first
       const result = await lookupProtocol(stain, surface)
       if (result.card) {
-        return NextResponse.json(result)
+        // Apply safety filter
+        const filterResult = runSafetyFilter(result.card, stain, surface)
+        if (!filterResult.safe) {
+          return NextResponse.json({
+            card: SAFE_FALLBACK,
+            tier: 0,
+            source: 'safety-blocked' as const,
+            violations: filterResult.violations,
+          })
+        }
+        return NextResponse.json({
+          ...result,
+          card: filterResult.card,
+          filtered: filterResult.filtered,
+          violations: filterResult.violations.length > 0 ? filterResult.violations : undefined,
+        })
       }
 
       // AI fallback
       try {
         const aiCard = await generateAIProtocol(stain, surface, lang)
+        
+        // Apply safety filter to AI-generated card
+        const filterResult = runSafetyFilter(aiCard, stain, surface)
+        if (!filterResult.safe) {
+          return NextResponse.json({
+            card: SAFE_FALLBACK,
+            tier: 0,
+            source: 'safety-blocked' as const,
+            violations: filterResult.violations,
+          })
+        }
+
         return NextResponse.json({
-          card: aiCard,
+          card: filterResult.card,
           tier: 4,
           confidence: identification.confidence === 'high' ? 0.7 : identification.confidence === 'medium' ? 0.5 : 0.3,
           source: 'ai' as const,
+          filtered: filterResult.filtered,
+          violations: filterResult.violations.length > 0 ? filterResult.violations : undefined,
         })
       } catch (err) {
         console.error('AI fallback failed:', err)
@@ -274,17 +327,46 @@ export async function POST(req: Request) {
     const result = await lookupProtocol(stain, surface || '')
 
     if (result.card) {
-      return NextResponse.json(result)
+      // Apply safety filter
+      const filterResult = runSafetyFilter(result.card, stain, surface || '')
+      if (!filterResult.safe) {
+        return NextResponse.json({
+          card: SAFE_FALLBACK,
+          tier: 0,
+          source: 'safety-blocked' as const,
+          violations: filterResult.violations,
+        })
+      }
+      return NextResponse.json({
+        ...result,
+        card: filterResult.card,
+        filtered: filterResult.filtered,
+        violations: filterResult.violations.length > 0 ? filterResult.violations : undefined,
+      })
     }
 
     // Tier 4: AI fallback
     try {
       const aiCard = await generateAIProtocol(stain, surface || '', effectiveLang)
+      
+      // Apply safety filter to AI-generated card
+      const filterResult = runSafetyFilter(aiCard, stain, surface || '')
+      if (!filterResult.safe) {
+        return NextResponse.json({
+          card: SAFE_FALLBACK,
+          tier: 0,
+          source: 'safety-blocked' as const,
+          violations: filterResult.violations,
+        })
+      }
+
       return NextResponse.json({
-        card: aiCard,
+        card: filterResult.card,
         tier: 4,
         confidence: 0.5,
         source: 'ai' as const,
+        filtered: filterResult.filtered,
+        violations: filterResult.violations.length > 0 ? filterResult.violations : undefined,
       })
     } catch (err) {
       console.error('AI fallback failed:', err)
