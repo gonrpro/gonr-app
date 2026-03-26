@@ -307,12 +307,10 @@ export const strings: Record<string, Record<string, string>> = {
   deepSolveUnavailable: { en: "Deep Solve is currently unavailable. Please try again.", es: "Deep Solve no está disponible en este momento. Intenta de nuevo." },
 
   // ── StainChips / SurfaceChips ─────────────────────────────────
-  whatStain: { en: "What stain?", es: "¿Qué mancha?" },
   cottonWhite: { en: "White / Light", es: "Blanco / Claro" },
   cottonColored: { en: "Colored / Dark", es: "Color / Oscuro" },
 
   // ── Error messages (additional) ───────────────────────────────
-  analysisFailed: { en: "Analysis failed", es: "Error en el análisis" },
   handoffFailed: { en: "Failed to generate message", es: "Error al generar el mensaje" },
 
   // ── Collapsible section titles (ResultCard patch) ─────────────
@@ -419,7 +417,6 @@ export const strings: Record<string, Record<string, string>> = {
   },
 
   // ── Misc additions ────────────────────────────────────────────
-  stainLabel: { en: "Stain", es: "Mancha" },
   surfaceLabel: { en: "Surface", es: "Superficie" },
 
   // ── TASK-127: Deep Solve upsell (ResultCard patch) ──
