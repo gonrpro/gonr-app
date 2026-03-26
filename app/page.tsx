@@ -266,26 +266,32 @@ export default function SolvePage() {
         }}
         style={{
           width: '100%',
-          borderRadius: '10px',
-          border: '1.5px solid rgba(168, 85, 247, 0.5)',
-          background: 'rgba(168, 85, 247, 0.06)',
-          padding: '10px 14px',
+          borderRadius: '16px',
+          border: '1.5px solid rgba(168, 85, 247, 0.45)',
+          background: 'rgba(168, 85, 247, 0.05)',
+          padding: '0 24px',
+          minHeight: '70px',
           cursor: 'pointer',
-          transition: 'all 0.15s ease',
+          transition: 'all 0.12s ease',
           display: 'flex',
           alignItems: 'center',
-          gap: '10px',
+          gap: '18px',
+          position: 'relative',
+          overflow: 'hidden',
         }}
         className="hover:opacity-90 active:scale-[0.98]"
       >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
           <rect x="3" y="3" width="18" height="18" rx="2" />
           <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5" />
         </svg>
-        <div style={{ textAlign: 'left' }}>
-          <div style={{ color: '#a855f7', fontSize: '14px', fontWeight: 600 }}>{t('scanCareLabel')}</div>
-          <div style={{ color: '#8a94a6', fontSize: '12px' }}>{t('careLabelSubtext')}</div>
+        <div style={{ textAlign: 'left', flex: 1 }}>
+          <div style={{ color: '#a855f7', fontSize: '15px', fontWeight: 600 }}>{t('scanCareLabel')}</div>
+          <div style={{ color: '#8a94a6', fontSize: '12px', marginTop: '2px' }}>{t('careLabelSubtext')}</div>
         </div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, opacity: 0.4 }}>
+          <path d="M9 18l6-6-6-6" />
+        </svg>
       </button>
 
       {/* ── Browse Toggle ── */}
