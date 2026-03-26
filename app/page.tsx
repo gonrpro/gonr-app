@@ -212,10 +212,8 @@ export default function SolvePage() {
           <button
             onClick={() => handleSolve()}
             disabled={loading}
+            className="solve-btn hover:opacity-90 active:scale-[0.96]"
             style={{
-              background: '#22c55e',
-              color: '#000',
-              border: 'none',
               borderRadius: '999px',
               padding: '0 20px',
               height: '42px',
@@ -227,7 +225,6 @@ export default function SolvePage() {
               flexShrink: 0,
               transition: 'all 0.15s ease',
             }}
-            className="hover:opacity-90 active:scale-[0.96]"
           >
             {t('solveBtn')}
           </button>
