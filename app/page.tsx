@@ -11,7 +11,7 @@ interface SolveResult {
   card: ProtocolCard
   tier: number
   confidence: number
-  source: 'verified' | 'ai'
+  source: 'verified' | 'ai' | 'ai-cached' | 'core'
 }
 
 export default function SolvePage() {

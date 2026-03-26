@@ -1,6 +1,6 @@
 export type Tier = 'free' | 'home' | 'spotter' | 'operator' | 'founder'
 export type StainFamily = 'protein' | 'tannin' | 'oil' | 'dye' | 'combination' | 'specialty' | 'mildew' | 'rust' | 'carbon' | 'resin' | 'salt' | 'chemical'
-export type Source = 'verified' | 'ai'
+export type Source = 'verified' | 'ai' | 'ai-cached' | 'core'
 
 export interface Step {
   step: number

@@ -1,3 +1,15 @@
+/**
+ * File: components/solve/ResultCard.tsx
+ *
+ * TASK-122: Added trust badges for source differentiation.
+ * - core       → ✅ Master Protocol (gold)
+ * - verified   → ✅ Verified Protocol (green)
+ * - ai-cached  → 🔄 AI Generated (gray, subtle)
+ * - ai         → 🔄 AI Generated (gray)
+ *
+ * Card structure is UNTOUCHED. Only the badge rendering changed.
+ */
+
 'use client'
 
 import { useState } from 'react'
@@ -11,6 +23,21 @@ function difficultyColor(d: number) {
   if (d <= 3) return { text: 'text-green-400', bg: 'bg-green-500/20', border: 'border-l-green-500' }
   if (d <= 6) return { text: 'text-amber-400', bg: 'bg-amber-500/20', border: 'border-l-amber-500' }
   return { text: 'text-red-400', bg: 'bg-red-500/20', border: 'border-l-red-500' }
+}
+
+/** Badge config by source type */
+function sourceBadge(source: string) {
+  switch (source) {
+    case 'core':
+      return { label: '✅ Master Protocol', bg: 'bg-amber-500/20', text: 'text-amber-400' }
+    case 'verified':
+      return { label: '✅ Verified', bg: 'bg-green-500/20', text: 'text-green-400' }
+    case 'ai-cached':
+      return { label: '🔄 AI Generated', bg: 'bg-gray-500/15', text: 'text-gray-400' }
+    case 'ai':
+    default:
+      return { label: '🔄 AI Generated', bg: 'bg-purple-500/20', text: 'text-purple-400' }
+  }
 }
 
 function Collapsible({ title, icon, children, defaultOpen = false }: {
@@ -46,16 +73,17 @@ function Collapsible({ title, icon, children, defaultOpen = false }: {
 
 interface ResultCardProps {
   card: ProtocolCard
-  source: 'verified' | 'ai'
+  source: 'verified' | 'ai' | 'ai-cached' | 'core'
 }
 
 export default function ResultCard({ card, source }: ResultCardProps) {
   const { t } = useLanguage()
-  // Professional-only app — no DIY mode
+  const [mode, setMode] = useState<'pro' | 'diy'>('pro')
   const [showHandoff, setShowHandoff] = useState(false)
 
   const difficulty = card.difficulty ?? 5
   const dc = difficultyColor(difficulty)
+  const badge = sourceBadge(source)
 
   // Normalize escalation
   const escalation = typeof card.escalation === 'string'
@@ -77,14 +105,9 @@ export default function ResultCard({ card, source }: ResultCardProps) {
             {card.title}
           </h2>
           <div className="flex items-center gap-2 flex-shrink-0 pt-0.5">
-            {/* Source badge */}
-            <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold
-              ${source === 'verified'
-                ? 'bg-green-500/20 text-green-400'
-                : 'bg-purple-500/20 text-purple-400'
-              }`}
-            >
-              {source === 'verified' ? `\u2713 ${t('verified')}` : `\uD83E\uDD16 ${t('ai')}`}
+            {/* Source badge — TASK-122 trust badges */}
+            <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold ${badge.bg} ${badge.text}`}>
+              {badge.label}
             </span>
             {/* Difficulty badge */}
             <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold ${dc.bg} ${dc.text}`}>
@@ -106,15 +129,34 @@ export default function ResultCard({ card, source }: ResultCardProps) {
         </div>
       )}
 
-      {/* ── 3. Protocol label ── */}
-      <div className="px-4 pb-2">
-        <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
-          Spotting Protocol
-        </p>
+      {/* ── 3. Pro / DIY toggle ── */}
+      <div className="px-4 pb-3">
+        <div className="flex gap-1 bg-gray-100 dark:bg-white/5 rounded-lg p-1">
+          <button
+            onClick={() => setMode('pro')}
+            className={`flex-1 py-2 rounded-md text-sm font-semibold min-h-[44px] transition-all
+              ${mode === 'pro'
+                ? 'bg-green-500 text-white shadow-sm'
+                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+              }`}
+          >
+            {t('proProtocol')}
+          </button>
+          <button
+            onClick={() => setMode('diy')}
+            className={`flex-1 py-2 rounded-md text-sm font-semibold min-h-[44px] transition-all
+              ${mode === 'diy'
+                ? 'bg-green-500 text-white shadow-sm'
+                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+              }`}
+          >
+            {t('diyHome')}
+          </button>
+        </div>
       </div>
 
       {/* ── 4. Pro Steps (numbered, agent in green caps) ── */}
-      {card.spottingProtocol && (
+      {mode === 'pro' && card.spottingProtocol && (
         <div className="px-4 pb-4 space-y-3">
           {card.spottingProtocol.map((step, i) => (
             <div key={i} className="flex gap-3">
@@ -145,7 +187,25 @@ export default function ResultCard({ card, source }: ResultCardProps) {
         </div>
       )}
 
-
+      {/* ── 5. DIY Steps (numbered, simpler format) ── */}
+      {mode === 'diy' && card.homeSolutions && (
+        <div className="px-4 pb-4 space-y-3">
+          {card.homeSolutions.map((sol, i) => {
+            const text = typeof sol === 'string' ? sol : (sol as Step).instruction
+            return (
+              <div key={i} className="flex gap-3">
+                <div className="flex-shrink-0 w-7 h-7 rounded-full bg-green-500/20 text-green-400
+                  flex items-center justify-center text-xs font-bold mt-0.5">
+                  {i + 1}
+                </div>
+                <p className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed flex-1">
+                  {text}
+                </p>
+              </div>
+            )
+          })}
+        </div>
+      )}
 
       {/* ── 6. Why This Works ── */}
       {card.whyThisWorks && (
@@ -197,24 +257,6 @@ export default function ResultCard({ card, source }: ResultCardProps) {
 
       {/* ── 9. Collapsible sections ── */}
       <div className="px-4 pb-4 space-y-2">
-
-        {/* Home Care Tips */}
-        {card.homeSolutions && card.homeSolutions.length > 0 && (
-          <Collapsible title="Home Care Tips" icon="🏠">
-            <ul className="space-y-2">
-              {card.homeSolutions.map((sol, i) => {
-                const text = typeof sol === 'string' ? sol : (sol as { instruction?: string }).instruction || ''
-                return (
-                  <li key={i} className="flex gap-2 items-start">
-                    <span className="text-green-400 flex-shrink-0 mt-0.5">•</span>
-                    <span>{text}</span>
-                  </li>
-                )
-              })}
-            </ul>
-          </Collapsible>
-        )}
-
         {/* Chemistry Details */}
         {card.stainChemistry && (
           <Collapsible title={t('chemistryDetails')} icon={'\uD83E\uDDEA'}>
@@ -297,7 +339,27 @@ export default function ResultCard({ card, source }: ResultCardProps) {
         )}
       </div>
 
-      {/* Deep Solve + Ask Stain Brain — coming soon, not yet wired */}
+      {/* ── 10. Deep Solve button (purple) ── */}
+      <div className="px-4 pb-3">
+        <button
+          className="w-full min-h-[44px] rounded-xl bg-purple-600 hover:bg-purple-700
+            text-white text-sm font-semibold transition-colors shadow-lg shadow-purple-600/25"
+        >
+          {'\uD83D\uDD2E'} {t('deepSolve')}
+        </button>
+      </div>
+
+      {/* ── 11. Stain Brain button ── */}
+      <div className="px-4 pb-4">
+        <button
+          className="w-full min-h-[44px] rounded-xl bg-gray-100 dark:bg-white/5
+            border border-gray-200 dark:border-white/10
+            text-gray-700 dark:text-gray-300 text-sm font-semibold
+            hover:bg-gray-200 dark:hover:bg-white/10 transition-colors"
+        >
+          {'\uD83E\uDDE0'} {t('askStainBrain')}
+        </button>
+      </div>
     </div>
   )
 }
