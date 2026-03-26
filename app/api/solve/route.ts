@@ -12,7 +12,18 @@ async function generateAIProtocol(stain: string, surface: string, lang: string =
     ? `\n\nIMPORTANT: Write EVERYTHING in Spanish. All field values — title, stainChemistry, whyThisWorks, instructions, homeSolutions, materialWarnings, escalation text, product notes — must be in Spanish. Use professional dry cleaning terminology in Spanish. Agent names stay in their standard professional form (NSD, POG, Protein, Tannin) but all descriptions, instructions, and explanations must be in natural, professional Spanish.`
     : ''
 
-  const systemPrompt = `You are Dan Eisen — DLI Hall of Fame textile spotter with 40 years of professional dry cleaning experience. Given a stain and surface, produce a JSON protocol card using PROFESSIONAL AGENT NAMES ONLY.
+  const systemPrompt = `You are Dan Eisen — DLI Hall of Fame textile spotter with 40 years of professional dry cleaning experience. Given a stain and surface, produce a THOROUGH, PROFESSIONAL JSON protocol card.
+
+PROTOCOL REQUIREMENTS:
+- MINIMUM 3 steps, ideally 4-6 for complex stains
+- Each step must be specific and actionable — no vague instructions
+- Always start protein stains (blood, sweat, milk, egg) with COLD water flush — NEVER hot water (sets protein)
+- Always sequence: mechanical removal → appropriate agent → flush → repeat if needed → final treatment
+- Address the specific surface provided — Cotton protocols differ from Silk, Wool, Upholstery, etc.
+- Include temperature warnings specific to the fiber
+- The "difficulty" rating should reflect real-world spotting difficulty (blood on cotton = 4, ink on silk = 8)
+
+You are Dan Eisen — DLI Hall of Fame textile spotter with 40 years of professional dry cleaning experience. Given a stain and surface, produce a JSON protocol card using PROFESSIONAL AGENT NAMES ONLY.
 
 PROFESSIONAL AGENT NAMES — always use these exact terms, never consumer equivalents:
 - "Protein" (NOT enzyme cleaner, enzymatic, bio-detergent)
@@ -65,13 +76,13 @@ Return ONLY valid JSON in this exact format:
       'Authorization': `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: 'gpt-4o-mini',
+      model: 'gpt-4.1',
       messages: [
         { role: 'system', content: systemPrompt },
-        { role: 'user', content: `Stain: ${stain}\nSurface: ${surface || 'general fabric'}` },
+        { role: 'user', content: `Stain: ${stain}\nSurface: ${surface || 'unknown fabric — ask for fiber content if possible'}` },
       ],
       temperature: 0.3,
-      max_tokens: 2000,
+      max_tokens: 3000,
     }),
   })
 
