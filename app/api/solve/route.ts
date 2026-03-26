@@ -235,6 +235,10 @@ Return ONLY valid JSON: { "family": "protein|tannin|oil-grease|dye|oxidizable|co
 
 export async function POST(req: Request) {
   try {
+    // Note: Trial gate is managed client-side via localStorage.
+    // Client checks solvesRemaining before calling this endpoint.
+    // This endpoint returns solvesRemaining for client to update state.
+    
     const contentType = req.headers.get('content-type') || ''
 
     // ── Image-based solve (FormData from camera flow) ──
