@@ -155,19 +155,20 @@ export default function SolvePage() {
         onClick={handleCameraClick}
         disabled={loading}
         style={{
-          background: 'rgba(34, 197, 94, 0.08)',
-          borderRadius: '12px',
-          minHeight: '80px',
+          background: 'linear-gradient(135deg, rgba(34,197,94,0.15) 0%, rgba(34,197,94,0.05) 100%)',
+          borderRadius: '16px',
+          minHeight: '110px',
           width: '100%',
-          border: '2px solid rgba(34, 197, 94, 0.6)',
+          border: '2px solid #22c55e',
           cursor: 'pointer',
           transition: 'all 0.15s ease',
+          boxShadow: '0 0 24px rgba(34,197,94,0.15)',
         }}
-        className="flex flex-col items-center justify-center gap-1 px-4 py-5 hover:opacity-90 active:scale-[0.98]"
+        className="flex flex-col items-center justify-center gap-2 px-4 py-6 hover:opacity-90 active:scale-[0.98]"
       >
         <svg
-          width="32"
-          height="32"
+          width="36"
+          height="36"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#22c55e"
@@ -178,11 +179,11 @@ export default function SolvePage() {
           <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
           <circle cx="12" cy="13" r="3" />
         </svg>
-        <span style={{ color: '#22c55e', fontSize: '18px', fontWeight: 600 }}>
-          Scan Stain
+        <span style={{ color: '#22c55e', fontSize: '20px', fontWeight: 700, letterSpacing: '-0.3px' }}>
+          Point. Shoot. Solved.
         </span>
         <span style={{ color: '#8a94a6', fontSize: '13px' }}>
-          Point at the stain — AI identifies it instantly
+          Snap the stain — get the exact protocol in seconds
         </span>
       </button>
 

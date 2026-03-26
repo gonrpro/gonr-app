@@ -31,10 +31,10 @@ export default function ScanPage() {
         onClick={handleScanStain}
         style={{
           width: '100%',
-          background: 'rgba(34, 197, 94, 0.08)',
-          borderRadius: '12px',
-          minHeight: '80px',
-          border: '2px solid rgba(34, 197, 94, 0.6)',
+          background: 'linear-gradient(135deg, rgba(34,197,94,0.15) 0%, rgba(34,197,94,0.05) 100%)',
+          borderRadius: '16px',
+          minHeight: '110px', boxShadow: '0 0 24px rgba(34,197,94,0.15)',
+          border: '2px solid #22c55e',
           cursor: 'pointer',
           transition: 'all 0.15s ease',
         }}
@@ -44,8 +44,8 @@ export default function ScanPage() {
           <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
           <circle cx="12" cy="13" r="3" />
         </svg>
-        <span style={{ color: '#22c55e', fontSize: '18px', fontWeight: 600 }}>Scan Stain</span>
-        <span style={{ color: '#8a94a6', fontSize: '13px' }}>Point at the stain — AI identifies it instantly</span>
+        <span style={{ color: '#22c55e', fontSize: '18px', fontWeight: 600 }}>Point. Shoot. Solved.</span>
+        <span style={{ color: '#8a94a6', fontSize: '13px' }}>Snap the stain — get the exact protocol in seconds</span>
       </button>
 
       {/* Scan Care Label — purple */}
