@@ -92,10 +92,50 @@ Return ONLY valid JSON in this exact format:
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json()
-    let stain: string = body.stain
-    let surface: string = body.surface || ''
-    const lang = body.lang
+    let stain: string = ''
+    let surface: string = ''
+    let lang: string = 'en'
+
+    const contentType = req.headers.get('content-type') || ''
+
+    if (contentType.includes('multipart/form-data')) {
+      // Camera path — FormData with image file
+      const formData = await req.formData()
+      const imageFile = formData.get('image') as File | null
+      lang = (formData.get('lang') as string) || 'en'
+
+      if (!imageFile) {
+        return NextResponse.json({ error: 'No image provided' }, { status: 400 })
+      }
+
+      const arrayBuffer = await imageFile.arrayBuffer()
+      const imageBase64 = Buffer.from(arrayBuffer).toString('base64')
+
+      const apiKey = process.env.OPENAI_API_KEY
+      if (!apiKey) return NextResponse.json({ error: 'API key not configured' }, { status: 500 })
+
+      // Use scan-stain endpoint to identify the stain from photo
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://gonr.app'
+      const scanRes = await fetch(`${baseUrl}/api/scan-stain`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image: imageBase64 }),
+      })
+
+      if (!scanRes.ok) {
+        return NextResponse.json({ error: 'Image scan failed' }, { status: 502 })
+      }
+
+      const scanData = await scanRes.json()
+      stain = scanData.suggestion || scanData.family || 'unknown stain'
+      surface = (formData.get('surface') as string) || ''
+    } else {
+      // Text path — JSON body
+      const body = await req.json()
+      stain = body.stain || ''
+      surface = body.surface || ''
+      lang = body.lang || 'en'
+    }
 
     if (!stain || typeof stain !== 'string') {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
