@@ -57,10 +57,12 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    // Build message content
-    const content: any[] = [
+    const systemPrompt = SYSTEM_PROMPT + (lang === 'es' ? '\n\nIMPORTANT: Write your ENTIRE response in professional Spanish. All field values — rootCause, fiberConcerns, protocol steps, and all handoff messages (improved, tough, release) and proTip — must be in Spanish. Use dry cleaning terminology. Agent names stay as-is (NSD, POG, Protein, Tannin).' : '')
+
+    // Build Responses API input — same format as scan-stain (which works)
+    const inputContent: any[] = [
       {
-        type: 'text',
+        type: 'input_text',
         text: description
           ? `Analyze this garment damage. Operator notes: "${description}"`
           : 'Analyze this garment damage from the photo.',
@@ -68,24 +70,12 @@ export async function POST(req: NextRequest) {
     ]
 
     if (image) {
-      // image is base64 data URL
-      content.push({
-        type: 'image_url',
-        image_url: {
-          url: image,
-          detail: 'high',
-        },
+      inputContent.push({
+        type: 'input_image',
+        image_url: image,
+        detail: 'high',
       })
     }
-
-    const systemPrompt = SYSTEM_PROMPT + (lang === 'es' ? '\n\nIMPORTANT: Write your ENTIRE response in professional Spanish. All field values — rootCause, fiberConcerns, protocol steps, and all handoff messages (improved, tough, release) and proTip — must be in Spanish. Use dry cleaning terminology. Agent names stay as-is (NSD, POG, Protein, Tannin).' : '')
-
-    // Build Responses API input (gpt-5.4 supports vision via Responses API)
-    const inputContent: any[] = content.map((c: any) => {
-      if (c.type === 'text') return { type: 'input_text', text: c.text }
-      if (c.type === 'image_url') return { type: 'input_image', image_url: c.image_url.url, detail: 'high' }
-      return c
-    })
 
     const response = await fetch('https://api.openai.com/v1/responses', {
       method: 'POST',
