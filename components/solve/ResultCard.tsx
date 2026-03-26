@@ -51,7 +51,7 @@ interface ResultCardProps {
 
 export default function ResultCard({ card, source }: ResultCardProps) {
   const { t } = useLanguage()
-  const [mode, setMode] = useState<'pro' | 'diy'>('pro')
+  // Professional-only app — no DIY mode
   const [showHandoff, setShowHandoff] = useState(false)
 
   const difficulty = card.difficulty ?? 5
@@ -106,34 +106,15 @@ export default function ResultCard({ card, source }: ResultCardProps) {
         </div>
       )}
 
-      {/* ── 3. Pro / DIY toggle ── */}
-      <div className="px-4 pb-3">
-        <div className="flex gap-1 bg-gray-100 dark:bg-white/5 rounded-lg p-1">
-          <button
-            onClick={() => setMode('pro')}
-            className={`flex-1 py-2 rounded-md text-sm font-semibold min-h-[44px] transition-all
-              ${mode === 'pro'
-                ? 'bg-green-500 text-white shadow-sm'
-                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
-              }`}
-          >
-            {t('proProtocol')}
-          </button>
-          <button
-            onClick={() => setMode('diy')}
-            className={`flex-1 py-2 rounded-md text-sm font-semibold min-h-[44px] transition-all
-              ${mode === 'diy'
-                ? 'bg-green-500 text-white shadow-sm'
-                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
-              }`}
-          >
-            {t('diyHome')}
-          </button>
-        </div>
+      {/* ── 3. Protocol label ── */}
+      <div className="px-4 pb-2">
+        <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
+          Spotting Protocol
+        </p>
       </div>
 
       {/* ── 4. Pro Steps (numbered, agent in green caps) ── */}
-      {mode === 'pro' && card.spottingProtocol && (
+      {card.spottingProtocol && (
         <div className="px-4 pb-4 space-y-3">
           {card.spottingProtocol.map((step, i) => (
             <div key={i} className="flex gap-3">
@@ -164,25 +145,7 @@ export default function ResultCard({ card, source }: ResultCardProps) {
         </div>
       )}
 
-      {/* ── 5. DIY Steps (numbered, simpler format) ── */}
-      {mode === 'diy' && card.homeSolutions && (
-        <div className="px-4 pb-4 space-y-3">
-          {card.homeSolutions.map((sol, i) => {
-            const text = typeof sol === 'string' ? sol : (sol as Step).instruction
-            return (
-              <div key={i} className="flex gap-3">
-                <div className="flex-shrink-0 w-7 h-7 rounded-full bg-green-500/20 text-green-400
-                  flex items-center justify-center text-xs font-bold mt-0.5">
-                  {i + 1}
-                </div>
-                <p className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed flex-1">
-                  {text}
-                </p>
-              </div>
-            )
-          })}
-        </div>
-      )}
+
 
       {/* ── 6. Why This Works ── */}
       {card.whyThisWorks && (
