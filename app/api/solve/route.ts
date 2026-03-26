@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { lookupProtocol } from '@/lib/protocols/lookup'
+import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
 
 async function generateAIProtocol(stain: string, surface: string, lang: string = 'en') {
   const apiKey = process.env.OPENAI_API_KEY
@@ -121,11 +122,21 @@ export async function POST(req: Request) {
     // Tier 4: AI fallback
     try {
       const aiCard = await generateAIProtocol(stain, surface || '', effectiveLang)
+      
+      // Apply safety filter to AI-generated cards
+      const safetyResult = runSafetyFilter(aiCard, stain, surface || '')
+      
+      // If safety filter found nuclear violation, use safe fallback
+      const finalCard = safetyResult.safe ? safetyResult.card : SAFE_FALLBACK
+      
       return NextResponse.json({
-        card: aiCard,
+        card: finalCard,
         tier: 4,
         confidence: 0.5,
         source: 'ai',
+        safetyFiltered: safetyResult.filtered,
+        safetyBlocked: !safetyResult.safe,
+        violations: safetyResult.violations.length > 0 ? safetyResult.violations : undefined,
       })
     } catch (err) {
       console.error('AI fallback failed:', err)
