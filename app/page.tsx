@@ -171,25 +171,40 @@ export default function SolvePage() {
         onClick={handleCameraClick}
         disabled={loading}
         style={{
-          background: 'linear-gradient(135deg, rgba(34,197,94,0.15) 0%, rgba(34,197,94,0.05) 100%)',
-          borderRadius: '16px',
-          minHeight: '110px',
+          background: 'linear-gradient(160deg, #1a3d1a 0%, #0f2410 100%)',
+          borderRadius: '20px',
+          minHeight: '120px',
           width: '100%',
-          border: '2px solid #22c55e',
+          border: '1.5px solid rgba(34,197,94,0.4)',
           cursor: 'pointer',
-          transition: 'all 0.15s ease',
-          boxShadow: '0 0 24px rgba(34,197,94,0.15)',
+          transition: 'all 0.12s ease',
+          boxShadow: '0 4px 24px rgba(34,197,94,0.2), 0 1px 0 rgba(34,197,94,0.3) inset, 0 -2px 0 rgba(0,0,0,0.4) inset',
+          position: 'relative',
+          overflow: 'hidden',
         }}
-        className="flex flex-col items-center justify-center gap-2 px-4 py-6 hover:opacity-90 active:scale-[0.98]"
+        className="flex flex-col items-center justify-center gap-2 px-4 py-6 active:scale-[0.97] active:shadow-none"
+        onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 6px 32px rgba(34,197,94,0.35), 0 1px 0 rgba(34,197,94,0.3) inset, 0 -2px 0 rgba(0,0,0,0.4) inset')}
+        onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 4px 24px rgba(34,197,94,0.2), 0 1px 0 rgba(34,197,94,0.3) inset, 0 -2px 0 rgba(0,0,0,0.4) inset')}
       >
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        {/* subtle radial glow behind icon */}
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -60%)',
+          width: '120px',
+          height: '120px',
+          background: 'radial-gradient(circle, rgba(34,197,94,0.15) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }} />
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 6px rgba(34,197,94,0.6))' }}>
           <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
           <circle cx="12" cy="13" r="3" />
         </svg>
-        <span style={{ color: '#22c55e', fontSize: '19px', fontWeight: 700, letterSpacing: '-0.3px' }}>
+        <span style={{ color: '#22c55e', fontSize: '20px', fontWeight: 800, letterSpacing: '-0.5px', textShadow: '0 0 20px rgba(34,197,94,0.4)' }}>
           {t('scanStain')}
         </span>
-        <span style={{ color: '#8a94a6', fontSize: '13px' }}>
+        <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: '12px', letterSpacing: '0.2px' }}>
           {t('scanStainSubtext')}
         </span>
       </button>
