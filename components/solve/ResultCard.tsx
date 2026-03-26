@@ -44,9 +44,9 @@ function difficultyColor(d: number) {
 function sourceBadge(source: string) {
   switch (source) {
     case 'core':
-      return { label: '✅ Master Protocol', bg: 'bg-amber-500/20', text: 'text-amber-400' }
+      return { label: '✅ Master Protocol', bg: 'bg-amber-500/20', text: 'text-amber-500' }
     case 'verified':
-      return { label: '✅ Verified', bg: 'bg-green-500/20', text: 'text-green-400' }
+      return { label: '✅ Verified', bg: 'bg-green-500/20', text: 'text-green-500' }
     case 'ai-cached':
       return { label: '🔄 AI Generated', bg: 'bg-gray-500/15', text: 'text-gray-400' }
     case 'ai':

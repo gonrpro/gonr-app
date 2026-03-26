@@ -184,7 +184,7 @@ export async function lookupProtocol(
   const exactKeyDash = `${stainSlug}-${surfaceSlug}`
   const exactCard = coreIndex.get(exactKey) ?? coreIndex.get(exactKeyDash)
   if (exactCard) {
-    return { card: exactCard, tier: 1, confidence: 1.0, source: 'verified' }
+    return { card: exactCard, tier: 1, confidence: 1.0, source: 'core' }
   }
 
   // ── Tier 2: Alias resolution ──────────────────────────────────────────
@@ -195,7 +195,7 @@ export async function lookupProtocol(
   if (aliasKey !== exactKey) {
     const aliasCard = coreIndex.get(aliasKey)
     if (aliasCard) {
-      return { card: aliasCard, tier: 2, confidence: 0.9, source: 'verified' }
+      return { card: aliasCard, tier: 2, confidence: 0.9, source: 'core' }
     }
   }
 
@@ -207,7 +207,7 @@ export async function lookupProtocol(
     if (tryKey !== exactKey && tryKey !== aliasKey) {
       const card = coreIndex.get(tryKey)
       if (card) {
-        return { card, tier: 2, confidence: 0.85, source: 'verified' }
+        return { card, tier: 2, confidence: 0.85, source: 'core' }
       }
     }
   }
