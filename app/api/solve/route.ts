@@ -140,6 +140,14 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
     }
 
+    // Parse "Blood On Cotton" / "Red Wine on Silk" style inputs
+    // Split on " on ", " in ", " from " and extract stain + surface
+    const onMatch = stain.match(/^(.+?)\s+(?:on|in|from|off)\s+(.+)$/i)
+    if (onMatch && !surface) {
+      stain = onMatch[1].trim()
+      surface = onMatch[2].trim()
+    }
+
     const effectiveSurface = surface || ''
 
     const result = await lookupProtocol(stain, effectiveSurface)
