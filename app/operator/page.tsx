@@ -78,7 +78,7 @@ export default function OperatorPage() {
         >
           ← BACK
         </button>
-        <DeepSolveModule />
+        <DeepSolveModule stain="" surface="" />
       </div>
     )
   }
