@@ -21,6 +21,75 @@ export const strings: Record<string, Record<string, string>> = {
   careLabelAdded: { en: "Care Label ✓", es: "Etiqueta ✓" },
   photoAndCareLabel: { en: "Photo + Care Label", es: "Foto + Etiqueta" },
   photoOnly: { en: "Photo", es: "Foto" },
+
+  // ── Auth ──
+  failedToSendLink: { en: "Failed to send login link", es: "No se pudo enviar el enlace de inicio de sesión" },
+  checkYourEmail: { en: "Check your email", es: "Revisa tu correo" },
+  sentMagicLink: { en: "We sent a magic link to", es: "Enviamos un enlace mágico a" },
+  clickLinkToSignIn: { en: "Click the link in the email to sign in.", es: "Haz clic en el enlace del correo para iniciar sesión." },
+  useDifferentEmail: { en: "Use a different email", es: "Usar otro correo" },
+  signInToGonr: { en: "Sign in to GONR", es: "Inicia sesión en GONR" },
+  enterEmailPrompt: { en: "Enter your email to sign in or create an account.", es: "Ingresa tu correo para iniciar sesión o crear una cuenta." },
+  emailPlaceholder: { en: "you@example.com", es: "tu@ejemplo.com" },
+  sending: { en: "Sending...", es: "Enviando..." },
+  sendMagicLink: { en: "Send Magic Link", es: "Enviar Enlace Mágico" },
+  noPasswordNeeded: { en: "No password needed. We'll email you a secure sign-in link.", es: "Sin contraseña. Te enviaremos un enlace seguro de inicio de sesión." },
+  authenticationError: { en: "Authentication Error", es: "Error de Autenticación" },
+  tryAgain: { en: "Try again", es: "Intentar de nuevo" },
+  signingYouIn: { en: "Signing you in...", es: "Iniciando sesión..." },
+  verifyingCredentials: { en: "Please wait while we verify your credentials.", es: "Por favor espera mientras verificamos tus credenciales." },
+
+  // ── Tier Gate ──
+  tierNameHome: { en: "Home", es: "Hogar" },
+  tierNameSpotter: { en: "Spotter", es: "Spotter" },
+  tierNameOperator: { en: "Operator", es: "Operador" },
+  tierFeatureDiy1: { en: "DIY stain protocols", es: "Protocolos de manchas para el hogar" },
+  tierFeatureDiy2: { en: "Product recommendations", es: "Recomendaciones de productos" },
+  tierFeatureDiy3: { en: "Basic stain identification", es: "Identificación básica de manchas" },
+  tierFeatureDiy4: { en: "Email support", es: "Soporte por correo" },
+  tierFeatureSpotter1: { en: "Everything in Home", es: "Todo lo de Hogar" },
+  tierFeatureSpotter2: { en: "Full pro spotting protocols", es: "Protocolos profesionales completos de manchado" },
+  tierFeatureSpotter3: { en: "Deep Solve AI analysis", es: "Análisis IA Deep Solve" },
+  tierFeatureSpotter4: { en: "Customer handoff scripts", es: "Scripts de entrega al cliente" },
+  tierFeatureSpotter5: { en: "Stain Brain chat", es: "Chat Stain Brain" },
+  tierFeatureSpotter6: { en: "Priority support", es: "Soporte prioritario" },
+  tierFeatureOp1: { en: "Everything in Spotter", es: "Todo lo de Spotter" },
+  tierFeatureOp2: { en: "Unlimited Deep Solve", es: "Deep Solve ilimitado" },
+  tierFeatureOp3: { en: "Team accounts (up to 5)", es: "Cuentas de equipo (hasta 5)" },
+  tierFeatureOp4: { en: "Custom protocol library", es: "Biblioteca de protocolos personalizada" },
+  tierFeatureOp5: { en: "API access", es: "Acceso API" },
+  tierFeatureOp6: { en: "White-glove onboarding", es: "Incorporación personalizada" },
+  tierGateSubheading: { en: "Professional stain removal intelligence", es: "Inteligencia profesional de eliminación de manchas" },
+  mostPopular: { en: "Most Popular", es: "Más Popular" },
+  getStarted: { en: "Get Started", es: "Comenzar" },
+
+  // ── Chips ──
+  whatStain: { en: "What stain?", es: "¿Qué mancha?" },
+  cottonModWhite: { en: "White / Light", es: "Blanco / Claro" },
+  cottonModColored: { en: "Colored / Dark", es: "Coloreado / Oscuro" },
+
+  // ── Header ──
+  toggleLanguageLabel: { en: "Toggle language", es: "Cambiar idioma" },
+  toggleThemeLabel: { en: "Toggle theme", es: "Cambiar tema" },
+
+  // ── Errors ──
+  failedToGenerateMessage: { en: "Failed to generate message", es: "No se pudo generar el mensaje" },
+  analysisFailed: { en: "Analysis failed", es: "El análisis falló" },
+  enhancedProtocolGenerated: { en: "Enhanced protocol generated.", es: "Protocolo mejorado generado." },
+
+  // ── Customer Handoff ──
+  customerHandoffTitle: { en: "Customer Handoff", es: "Entrega al Cliente" },
+  canTreatYes: { en: "Yes — treatable", es: "Sí — tratable" },
+  canTreatLikely: { en: "Likely treatable", es: "Probablemente tratable" },
+  canTreatHighRisk: { en: "High risk — no guarantee", es: "Alto riesgo — sin garantía" },
+  whatToSayLabel: { en: "What to say", es: "Qué decirle" },
+  ticketNotesLabel: { en: "Ticket notes", es: "Notas del ticket" },
+  stainLabel: { en: "Stain", es: "Mancha" },
+  fiberLabel: { en: "Fiber", es: "Fibra" },
+  treatmentLabel: { en: "Treatment", es: "Tratamiento" },
+  riskLabel: { en: "Risk", es: "Riesgo" },
+  locationLabel: { en: "Location", es: "Ubicación" },
+  spotterWatchFor: { en: "Spotter: watch for", es: "Manchador: atención a" },
   findingProtocol: { en: "Finding protocol...", es: "Buscando protocolo..." },
   backToSearch: { en: "← Back to search", es: "← Volver a la búsqueda" },
 
@@ -33,7 +102,7 @@ export const strings: Record<string, Record<string, string>> = {
   pro: { en: "Pro", es: "Pro" },
   diy: { en: "DIY", es: "DIY" },
   proProtocol: { en: "Pro Protocol", es: "Protocolo Profesional" },
-  diyHome: { en: "DIY / Home", es: "Hogar / DIY" },
+  diyHome: { en: "DIY / Home", es: "Para el Hogar" },
   proSteps: { en: "Pro Steps", es: "Pasos Pro" },
   diySteps: { en: "DIY Steps", es: "Pasos DIY" },
   technique: { en: "Technique", es: "Técnica" },
@@ -67,10 +136,10 @@ export const strings: Record<string, Record<string, string>> = {
   // ── Scan page ──
   scanSubtitle: { en: "Snap a photo of a stain for instant identification.", es: "Toma una foto de una mancha para identificación instantánea." },
   comingSoon: { en: "Coming soon", es: "Próximamente" },
-  scanPageDesc: { en: "Point your camera at a stain and GONR will identify the stain type and surface automatically.", es: "Apunta tu cámara a una mancha y GONR identificará el tipo de mancha y superficie automáticamente." },
+  scanPageDesc: { en: "Point your camera at a stain and GONR will identify the stain type and surface automatically.", es: "Apunta tu cámara a la mancha y GONR identificará automáticamente el tipo y la superficie." },
 
   // ── Pro Tools page ──
-  proToolsSubtitle: { en: "Advanced features for professional cleaners.", es: "Funciones avanzadas para limpiadores profesionales." },
+  proToolsSubtitle: { en: "Advanced features for professional cleaners.", es: "Funciones avanzadas para profesionales de tintorería." },
   garmentAnalysis: { en: "Garment Analysis", es: "Análisis de Prendas" },
   garmentAnalysisDesc: { en: "Photo of damage → AI reasoning → root cause + repair protocol + customer handoff.", es: "Foto del daño → razonamiento IA → causa raíz + protocolo de reparación + respuesta al cliente." },
   deepSolveTitle: { en: "Deep Solve", es: "Deep Solve" },
@@ -85,14 +154,14 @@ export const strings: Record<string, Record<string, string>> = {
   // ── Profile page ──
   profileSubtitle: { en: "Your GONR account & usage stats.", es: "Tu cuenta GONR y estadísticas de uso." },
   usage: { en: "Usage", es: "Uso" },
-  solvesRun: { en: "solves run", es: "protocolos ejecutados" },
+  solvesRun: { en: "solves run", es: "protocolos realizados" },
   appearance: { en: "Appearance", es: "Apariencia" },
   currentTheme: { en: "Current theme", es: "Tema actual" },
   dark: { en: "Dark", es: "Oscuro" },
   light: { en: "Light", es: "Claro" },
   headerThemeHint: { en: "Use the header toggle to switch themes.", es: "Usa el botón del encabezado para cambiar temas." },
   upgradeToGonrPro: { en: "Upgrade to GONR Pro", es: "Mejora a GONR Pro" },
-  unlockProFeatures: { en: "Unlock Deep Solve, Customer Handoff, and more.", es: "Desbloquea Deep Solve, Respuesta al Cliente, y más." },
+  unlockProFeatures: { en: "Unlock Deep Solve, Customer Handoff, and more.", es: "Desbloquea Deep Solve, Respuesta al Cliente y más." },
   language: { en: "Language", es: "Idioma" },
 
   // ── Auth / Account ──
@@ -129,7 +198,7 @@ export const strings: Record<string, Record<string, string>> = {
 
   // ── Garment Analysis ──
   garmentAnalysisTitle: { en: "Garment Analysis", es: "Análisis de Prendas" },
-  garmentAnalysisSubtext: { en: "Photo of damage → AI reasoning → root cause + handoff language", es: "Foto del daño → razonamiento IA → causa raíz + lenguaje de entrega" },
+  garmentAnalysisSubtext: { en: "Photo of damage → AI reasoning → root cause + handoff language", es: "Foto del daño → razonamiento IA → causa raíz + protocolo de reparación + respuesta al cliente" },
   newAnalysis: { en: "NEW", es: "NUEVO" },
   tapToPhotograph: { en: "Tap to photograph damage", es: "Toca para fotografiar el daño" },
   orUploadPhoto: { en: "or upload an existing photo", es: "o sube una foto existente" },

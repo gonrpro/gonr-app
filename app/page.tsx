@@ -31,7 +31,7 @@ export default function SolvePage() {
   // Trial state
   const [showPaywall, setShowPaywall] = useState(false)
   const [solvesRemaining, setSolvesRemaining] = useState(3)
-  const [userTier, setUserTier] = useState<'free' | 'home' | 'spotter' | 'operator'>('free')
+  const [userTier, setUserTier] = useState<'free' | 'home' | 'spotter' | 'operator' | 'founder'>('free')
 
   // Photo enrichment state
   const [capturedPhoto, setCapturedPhoto] = useState<File | null>(null)
