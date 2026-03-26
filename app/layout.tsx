@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/layout/Nav'
 import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="px-4 pt-2 pb-4">
           {children}
         </main>
+        <Footer />
         <Nav />
         {/* Theme init script — runs before paint to avoid flash */}
         <script dangerouslySetInnerHTML={{ __html: `
