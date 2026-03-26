@@ -25,6 +25,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
+    // Check if Supabase is configured
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      console.warn('Supabase not configured, skipping auth initialization')
+      setIsLoading(false)
+      return
+    }
+
     const supabase = createClient()
 
     // Check current session
