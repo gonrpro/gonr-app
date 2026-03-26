@@ -151,11 +151,13 @@ export default function SolvePage() {
   return (
     <div className="space-y-4">
       {/* ── Hero Title ── */}
-      <div style={{ paddingBottom: '2px' }}>
-        <h1 style={{ fontSize: '22px', fontWeight: 800, letterSpacing: '-0.5px', lineHeight: 1.2 }}>
-          Got a stain?<br />
-          <span style={{ color: '#22c55e' }}>We'll solve it.</span>
+      <div style={{ paddingBottom: '4px' }}>
+        <h1 style={{ fontSize: '32px', fontWeight: 900, letterSpacing: '-1px', lineHeight: 1.1, margin: 0 }}>
+          Master Spotter
         </h1>
+        <p style={{ fontSize: '13px', fontWeight: 500, color: '#22c55e', letterSpacing: '0.5px', marginTop: '4px', textTransform: 'uppercase' }}>
+          AI Stain Intelligence for Textiles
+        </p>
       </div>
 
       {/* ── Hero Camera ── */}
