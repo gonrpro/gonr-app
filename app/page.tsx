@@ -211,19 +211,20 @@ export default function SolvePage() {
               background: '#22c55e',
               color: '#000',
               border: 'none',
-              borderRadius: '10px',
-              padding: '0 18px',
-              height: '44px',
+              borderRadius: '999px',
+              padding: '0 20px',
+              height: '42px',
               fontWeight: 700,
-              fontSize: '14px',
+              fontSize: '13px',
+              letterSpacing: '0.5px',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
               flexShrink: 0,
-              transition: 'opacity 0.15s ease',
+              transition: 'all 0.15s ease',
             }}
-            className="hover:opacity-90 active:scale-[0.97]"
+            className="hover:opacity-90 active:scale-[0.96]"
           >
-            GO
+            Solve →
           </button>
         )}
       </div>
