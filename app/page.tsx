@@ -170,28 +170,46 @@ export default function SolvePage() {
       <button
         onClick={handleCameraClick}
         disabled={loading}
-        className="scan-hero-btn flex flex-col items-center justify-center gap-2 px-4 active:scale-[0.97]"
-        style={{ width: '100%', borderRadius: '20px', minHeight: '120px', cursor: 'pointer', transition: 'all 0.12s ease', position: 'relative', overflow: 'hidden', border: 'none', paddingTop: '28px', paddingBottom: '20px' }}
+        className="scan-hero-btn active:scale-[0.98]"
+        style={{
+          width: '100%',
+          borderRadius: '16px',
+          minHeight: '90px',
+          cursor: 'pointer',
+          transition: 'all 0.12s ease',
+          position: 'relative',
+          overflow: 'hidden',
+          border: 'none',
+          display: 'flex',
+          alignItems: 'center',
+          padding: '0 24px',
+          gap: '18px',
+        }}
       >
-        {/* radial glow behind icon */}
-        <div className="scan-hero-glow" style={{
-          position: 'absolute', top: '50%', left: '50%',
-          transform: 'translate(-50%, -60%)',
-          width: '140px', height: '140px',
-          pointerEvents: 'none',
+        {/* gold top stripe */}
+        <div style={{
+          position: 'absolute', top: 0, left: '10%', right: '10%', height: '2px',
+          background: 'linear-gradient(90deg, transparent, #d4a853, transparent)',
+          borderRadius: '999px',
         }} />
-        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="scan-hero-icon">
+        {/* icon left-aligned */}
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="scan-hero-icon" style={{ flexShrink: 0 }}>
           <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
           <circle cx="12" cy="13" r="3" />
         </svg>
-        <div style={{ textAlign: 'center' }}>
-          <div className="scan-hero-label" style={{ fontSize: '14px', fontWeight: 600 }}>
+        {/* text left-aligned */}
+        <div style={{ textAlign: 'left', flex: 1 }}>
+          <div className="scan-hero-label" style={{ fontSize: '17px', fontWeight: 700, letterSpacing: '-0.3px' }}>
             {t('scanStain')}
           </div>
-          <div className="scan-hero-sub" style={{ fontSize: '11px', marginTop: '2px' }}>
+          <div className="scan-hero-sub" style={{ fontSize: '12px', marginTop: '3px' }}>
             {t('scanStainSubtext')}
           </div>
         </div>
+        {/* arrow right */}
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="scan-hero-label" style={{ flexShrink: 0, opacity: 0.5 }}>
+          <path d="M9 18l6-6-6-6" />
+        </svg>
       </button>
 
       {/* ── Text Fallback + Solve button ── */}
