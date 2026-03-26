@@ -529,7 +529,7 @@ export default function SolvePage() {
           fontWeight: 700,
           transition: 'color 0.2s ease',
         }}>
-          {loading ? (t('findingProtocol') || 'Analyzing…') : 'Analyze Garment →'}
+          {loading ? (t('findingProtocol') || 'Analyzing…') : `${t('analyzeGarment')} →`}
         </span>
         {solveSubtext && !loading && hasSolveInput && (
           <span style={{ color: '#8a94a6', fontSize: '12px' }}>
