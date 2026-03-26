@@ -1,335 +1,682 @@
 'use client'
 
 import { useState } from 'react'
+import crosswalkData from '@/data/chemicals/agent-brand-crosswalk.json'
+import fiberData from '@/data/chemicals/fiber-expertise-index.json'
 
-const CHEMICALS = [
-  {
-    id: 'protein',
-    name: 'Protein',
-    aka: 'Enzyme Digester, Protease Spotter',
-    color: '#3b82f6',
-    what: 'Enzyme-based spotter containing proteases that break peptide bonds in protein-based stains.',
-    targets: ['Blood', 'Urine', 'Sweat', 'Egg', 'Milk', 'Vomit', 'Grass'],
-    family: 'Protein',
-    mechanism: 'Proteases hydrolyze the peptide bonds in protein chains, breaking large protein molecules into small fragments that flush out easily.',
-    safe: ['Cotton', 'Polyester', 'Linen', 'Nylon', 'Denim'],
-    unsafe: ['Silk', 'Wool', 'Cashmere', 'Angora'],
-    unsafeReason: 'Silk and wool ARE protein fibers — protease will digest the fiber itself, weakening and eventually dissolving it.',
-    dilution: 'Use per manufacturer directions. Typically apply full strength or diluted 1:1 with warm water.',
-    temperature: 'Warm (40-45°C) — heat activates enzyme. NEVER hot.',
-    dwellTime: '5-15 minutes. Dried stains may need 20-30 min.',
-    neverUse: ['Silk', 'Wool', 'Cashmere'],
-    neverWith: ['Chlorine bleach (denatures enzyme)', 'Very hot water (kills enzyme activity)'],
-    proTip: 'Fresh protein stains respond in minutes. Dried/set protein stains need rehydration with cold water first, then enzyme. Heat-set protein (through a dryer) is permanent — no enzyme will fix it.',
-  },
-  {
-    id: 'tannin',
-    name: 'Tannin',
-    aka: 'Tannin Spotter, Acetic Acid Spotter',
-    color: '#8b5cf6',
-    what: 'Acidic spotter formulated to break hydrogen bonds in tannin-based pigments.',
-    targets: ['Red Wine', 'Coffee', 'Tea', 'Beer', 'Fruit Juice', 'Tomato'],
-    family: 'Tannin',
-    mechanism: 'Tannin pigments bond to fibers through hydrogen bonding. Tannin spotter disrupts these bonds, releasing the pigment for flushing.',
-    safe: ['Cotton', 'Polyester', 'Linen', 'Nylon', 'Silk (cautiously)', 'Wool (cautiously)'],
-    unsafe: [],
-    unsafeReason: '',
-    dilution: 'Apply full strength to stain. Can dilute 1:1 with cool water on delicate fibers.',
-    temperature: 'Cool water — warm water can set tannin permanently.',
-    dwellTime: '3-8 minutes. Check for color lift.',
-    neverUse: [],
-    neverWith: ['Alkaline agents (ammonia, baking soda) — permanently darkens tannin', 'Hot water — sets pigment permanently'],
-    proTip: 'TANNIN FIRST on combo stains (coffee with cream, chocolate). If you use Protein first, it can lock in the tannin pigment. Always Tannin → Protein → POG for combo stains.',
-  },
-  {
-    id: 'nsd',
-    name: 'NSD',
-    aka: 'Neutral Synthetic Detergent',
-    color: '#22c55e',
-    what: 'pH-neutral synthetic detergent used to flush and emulsify after other spotting agents.',
-    targets: ['General soil', 'Flush/rinse step for all stain types'],
-    family: 'Universal',
-    mechanism: 'Surfactants lower surface tension, emulsifying loosened stain particles and spotting agent residue so they flush out of the fiber.',
-    safe: ['All fibers'],
-    unsafe: [],
-    unsafeReason: '',
-    dilution: 'Typically 1 tsp per cup of water, or as directed. Use cool to lukewarm water.',
-    temperature: 'Cool to lukewarm. Match to fiber sensitivity.',
-    dwellTime: '1-3 minutes. Flush thoroughly.',
-    neverUse: [],
-    neverWith: ['Nothing — NSD is the universal safe flush agent'],
-    proTip: 'Always flush with NSD after every spotting treatment. Residual chemistry left in fabric causes secondary damage — yellowing, fiber breakdown, or continued bleaching.',
-  },
-  {
-    id: 'pog',
-    name: 'POG',
-    aka: 'Paint Oil Grease Remover, Dry Solvent',
-    color: '#f59e0b',
-    what: 'Dry-side solvent spotter that dissolves oil, grease, and resin-based stains.',
-    targets: ['Cooking Oil', 'Motor Oil', 'Butter', 'Lipstick', 'Cosmetics', 'Wax', 'Adhesive residue'],
-    family: 'Oil & Grease',
-    mechanism: 'Organic solvents dissolve the lipid bonds in oil and grease, breaking the stain away from the fiber without water.',
-    safe: ['All fibers'],
-    unsafe: [],
-    unsafeReason: '',
-    dilution: 'Apply full strength. Do not dilute with water — water causes rings on solvent-applied areas.',
-    temperature: 'Room temperature only.',
-    dwellTime: '2-5 minutes. Blot — do not rub.',
-    neverUse: [],
-    neverWith: ['Water (use dry side first, water side after)', 'Open flame (solvent is flammable)'],
-    proTip: 'Always start on the DRY SIDE for oil stains. Water activates and spreads oil. POG first, blot, then NSD to emulsify, then water flush.',
-  },
-  {
-    id: 'h2o2',
-    name: 'H₂O₂',
-    aka: 'Hydrogen Peroxide, Oxidizer',
-    color: '#06b6d4',
-    what: 'Oxidizing bleach that breaks chromophores (color-producing molecular structures) in organic stains.',
-    targets: ['Residual tannin color', 'Mustard', 'Curry', 'Rust (in combo)', 'Yellowing'],
-    family: 'Oxidizable',
-    mechanism: 'H₂O₂ releases active oxygen that attacks the chromophore chains in organic pigments, oxidizing them to colorless compounds.',
-    safe: ['White cotton', 'White linen', 'White polyester', 'Colorfast fabrics (test first)'],
-    unsafe: ['Silk (high concentration)', 'Wool (bleaches and weakens fiber)', 'Dark or bright dyed fabrics'],
-    unsafeReason: 'Hydrogen peroxide oxidizes fiber and dye indiscriminately — can bleach and weaken delicate fibers and will strip color from dyed fabrics.',
-    dilution: '3% = mild (drugstore). 6% = standard spotting strength. 30% = professional (handle with caution).',
-    temperature: 'Room temperature. Heat accelerates action but also increases fiber damage risk.',
-    dwellTime: '3-10 minutes. Watch for color change — remove when target color is gone.',
-    neverUse: ['Silk', 'Wool', 'Any dyed fabric without colorfastness test'],
-    neverWith: ['Reducing agents', 'Ammonia (can cause dangerous reaction)'],
-    proTip: 'Test colorfastness on a hidden seam EVERY TIME before applying H₂O₂ to colored fabric. Once bleached, color cannot be restored. For silk: 3% maximum, short dwell, immediate flush.',
-  },
-  {
-    id: 'acetic-acid',
-    name: 'Acetic Acid',
-    aka: '28% Acetic Acid, Neutralizing Rinse',
-    color: '#ef4444',
-    what: 'Dilute acid used as a neutralizing rinse after alkaline spotting agents and to restore fiber pH.',
-    targets: ['Neutralizer for alkaline treatments', 'Mild action on some tannin stains'],
-    family: 'Universal (neutralizer)',
-    mechanism: 'Acetic acid neutralizes residual alkaline chemistry in the fiber, restoring pH balance and preventing fiber degradation from alkaline buildup.',
-    safe: ['All fibers when properly diluted'],
-    unsafe: [],
-    unsafeReason: '',
-    dilution: '28% stock diluted 1:10 with water for standard use. Never apply undiluted to fabric.',
-    temperature: 'Cool to room temperature.',
-    dwellTime: '1-2 minutes. Flush thoroughly with water.',
-    neverUse: [],
-    neverWith: ['Alkaline bleaches simultaneously', 'Undiluted application to fabric'],
-    proTip: 'Always finish protein and tannin treatments with a dilute acetic acid rinse to restore fabric pH. Alkaline residue left in fabric can cause fiber degradation over time, especially on silk and wool.',
-  },
-  {
-    id: 'ipa',
-    name: 'IPA',
-    aka: 'Isopropyl Alcohol, Rubbing Alcohol',
-    color: '#6366f1',
-    what: 'Alcohol solvent used for ink, dye, and resin stains.',
-    targets: ['Ballpoint Ink', 'Permanent Marker', 'Certain Dyes', 'Adhesive residue'],
-    family: 'Dye',
-    mechanism: 'Alcohol dissolves the resin binders in ink and some dyes, releasing the pigment from the fiber for blotting.',
-    safe: ['Most fibers — test first on delicates'],
-    unsafe: ['Acetate', 'Triacetate'],
-    unsafeReason: 'Alcohol dissolves acetate and triacetate fibers on contact.',
-    dilution: '70-91% isopropyl. Apply sparingly.',
-    temperature: 'Room temperature.',
-    dwellTime: '1-3 minutes. Blot immediately — do not let dry on fabric.',
-    neverUse: ['Acetate', 'Triacetate'],
-    neverWith: ['Nothing specific — but always neutralize and flush after'],
-    proTip: 'For ballpoint ink: apply IPA to a cotton blot placed under the stain, then use another blot on top to lift the ink upward. Avoid spreading. Work from edges to center.',
-  },
-  {
-    id: 'rust-remover',
-    name: 'Rust Remover',
-    aka: 'Oxalic Acid, Iron Remover',
-    color: '#dc2626',
-    what: 'Chelating acid that removes iron oxide (rust) and some tannin stains through chemical complexation.',
-    targets: ['Rust', 'Iron stains', 'Some mineral stains'],
-    family: 'Oxidizable (rust/mineral)',
-    mechanism: 'Oxalic acid forms a soluble complex with iron ions, pulling rust out of the fiber structure. Very specific to iron compounds.',
-    safe: ['Cotton', 'Linen', 'Polyester'],
-    unsafe: ['Silk', 'Wool', 'Nylon (prolonged exposure)'],
-    unsafeReason: 'Oxalic acid is aggressive — damages protein fibers and weakens nylon with prolonged contact.',
-    dilution: 'Per product directions. Typically use warm solution.',
-    temperature: 'Warm — heat improves chelation speed.',
-    dwellTime: '3-10 minutes. Flush immediately once rust is removed.',
-    neverUse: ['Silk', 'Wool'],
-    neverWith: ['Oxidizers (can cause reaction)', 'Alkalis'],
-    proTip: 'Rust stains from metal zippers, buttons, or outdoor furniture require Rust Remover — no other chemistry works. Always flush extremely thoroughly — residual oxalic acid can weaken fiber over time.',
-  },
-  {
-    id: 'reducing-agent',
-    name: 'Reducing Agent',
-    aka: 'Sodium Hydrosulfite, Color Remover',
-    color: '#f97316',
-    what: 'Reducing bleach that removes color by the opposite mechanism from oxidizing bleach.',
-    targets: ['Reactive dyes', 'Vat dyes', 'Color runs', 'Some oxidized stains that H₂O₂ cannot remove'],
-    family: 'Dye',
-    mechanism: 'Donates electrons to chromophores (color structures), reducing them to colorless forms. Works on different dye classes than oxidizing bleach.',
-    safe: ['Cotton', 'Linen — with caution'],
-    unsafe: ['Silk', 'Wool', 'Any fiber with oxidized finish'],
-    unsafeReason: 'Reducing agents can strip dye from delicate fibers and disrupt oxidized fiber finishes.',
-    dilution: 'Per product directions. Handle in ventilated area.',
-    temperature: 'Warm to hot for best results.',
-    dwellTime: '5-15 minutes. Monitor closely.',
-    neverUse: ['Silk', 'Wool'],
-    neverWith: ['Oxidizing bleach (H₂O₂, chlorine) — dangerous reaction'],
-    proTip: 'When H₂O₂ fails on a stubborn color stain, try reducing agent — they work on different chromophore bonds. Never use both simultaneously. Professional-level chemistry — use with caution.',
-  },
-  {
-    id: 'leveling-agent',
-    name: 'Leveling Agent',
-    aka: 'Dye Leveler, Migrator',
-    color: '#84cc16',
-    what: 'Surfactant that equalizes dye concentration in fiber, used after dye stains or color runs.',
-    targets: ['Color runs', 'Uneven dye after treatment', 'Bleeding dyes'],
-    family: 'Dye',
-    mechanism: 'Migrates dye molecules from areas of high concentration to low concentration, leveling the color across the fiber.',
-    safe: ['Most fibers'],
-    unsafe: [],
-    unsafeReason: '',
-    dilution: 'Per product directions.',
-    temperature: 'Warm to hot.',
-    dwellTime: '10-20 minutes.',
-    neverUse: [],
-    neverWith: [],
-    proTip: 'Used primarily after a color run incident or when a previous treatment has left uneven spotting. Not a first-line stain remover — used for color correction.',
-  },
-]
+// Company imports
+import rrStreet from '@/data/chemicals/companies/rr-street.json'
+import kreussler from '@/data/chemicals/companies/kreussler.json'
+import alWilson from '@/data/chemicals/companies/al-wilson.json'
+import adco from '@/data/chemicals/companies/adco.json'
+import pariser from '@/data/chemicals/companies/pariser.json'
+import seitz from '@/data/chemicals/companies/seitz.json'
+import royaltone from '@/data/chemicals/companies/royaltone.json'
+import bufa from '@/data/chemicals/companies/bufa.json'
+import greenearth from '@/data/chemicals/companies/greenearth.json'
+import nationalChemical from '@/data/chemicals/companies/national-chemical.json'
 
-export default function ChemicalReferencePage() {
-  const [selected, setSelected] = useState<string | null>(null)
+// ─── Types ───────────────────────────────────────────────────────────────────
 
-  const activeChemical = CHEMICALS.find(c => c.id === selected)
+type Tab = 'agent' | 'company' | 'fiber'
+
+interface CrosswalkProduct {
+  company: string
+  productName: string
+  notes: string
+}
+
+interface CrosswalkAgent {
+  genericName: string
+  description: string
+  mechanism: string
+  safetyWarning?: string
+  products: CrosswalkProduct[]
+}
+
+interface CompanyData {
+  id: string
+  name: string
+  slug: string
+  website: string
+  headquarters: string
+  founded: string
+  employeeRange?: string
+  overview: {
+    summary: string
+    historyAndReputation: string
+    marketPosition?: string
+  }
+  specialties: string[]
+  productLines: {
+    category: string
+    categoryDescription?: string
+    products: {
+      name: string
+      type?: string
+      description: string
+      usedFor?: string[]
+      fibers?: string[]
+      notFor?: string[]
+      proTips?: string
+      alternativeTo?: string
+      priceTier?: string
+      availability?: string
+    }[]
+  }[]
+  agentMapping: Record<string, string>
+  fiberExpertise: Record<string, string>
+  distributionNetwork?: {
+    regions?: string[]
+    distributionMethod?: string
+    howToBuy?: string
+    majorDistributors?: string[]
+  }
+  gonrIntegration: {
+    relevance: string
+    agentCrossReference?: string
+    whenToRecommend?: string
+  }
+  links?: Record<string, string>
+  lastResearched?: string
+}
+
+interface FiberEntry {
+  description: string
+  keyConsiderations: string[]
+  recommendedCompanies: {
+    company: string
+    why: string
+    products: string[]
+  }[]
+  agentsToUse: string[]
+  agentsToAvoid: string[]
+}
+
+// ─── Data ────────────────────────────────────────────────────────────────────
+
+const companies: CompanyData[] = [
+  rrStreet, kreussler, alWilson, adco, pariser,
+  seitz, royaltone, bufa, greenearth, nationalChemical,
+] as CompanyData[]
+
+const crosswalk = crosswalkData as unknown as Record<string, CrosswalkAgent>
+const fibers = fiberData as unknown as Record<string, FiberEntry>
+
+// Agent categories in display order
+const AGENT_KEYS = [
+  'NSD', 'POG', 'protein', 'tannin', 'leveling',
+  'rustRemover', 'enzymatic', 'solvent', 'oxidizingBleach',
+  'reducingAgent', 'wetCleaningDetergent', 'finishingAgent',
+] as const
+
+const AGENT_ICONS: Record<string, string> = {
+  NSD: '🧴', POG: '🛢️', protein: '🥩', tannin: '🍷',
+  leveling: '💧', rustRemover: '🔩', enzymatic: '🧬', solvent: '⚗️',
+  oxidizingBleach: '☀️', reducingAgent: '⚡', wetCleaningDetergent: '🫧',
+  finishingAgent: '✨',
+}
+
+// Fiber config
+const FIBER_KEYS = [
+  'silk', 'wool', 'cashmere', 'leather',
+  'suede', 'acetate', 'polyester', 'cotton',
+  'linen', 'nylon', 'alcantara', 'denim',
+] as const
+
+const FIBER_ICONS: Record<string, string> = {
+  silk: '🪡', wool: '🐑', cashmere: '🧣', leather: '🧥',
+  suede: '👞', acetate: '🎀', polyester: '👕', cotton: '🌿',
+  linen: '🌾', nylon: '🧦', alcantara: '🚗', denim: '👖',
+}
+
+const HIGH_RISK_FIBERS = ['silk', 'wool', 'cashmere']
+
+// ─── Shared Components ───────────────────────────────────────────────────────
+
+function Chevron({ open }: { open: boolean }) {
+  return (
+    <svg
+      width="16" height="16" viewBox="0 0 16 16" fill="none"
+      className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+      style={{ color: 'var(--text-secondary)' }}
+    >
+      <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1 text-sm font-medium transition-colors"
+      style={{ color: 'var(--accent)' }}
+    >
+      {children}
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+        <path d="M3.5 2.5H9.5V8.5M9.5 2.5L2.5 9.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </a>
+  )
+}
+
+function Chip({ children, variant = 'default' }: {
+  children: React.ReactNode
+  variant?: 'default' | 'green' | 'red' | 'gold'
+}) {
+  const colors = {
+    default: 'border-white/10 text-[var(--text-secondary)]',
+    green: 'border-green-500/30 bg-green-500/10 text-green-400',
+    red: 'border-red-500/30 bg-red-500/10 text-red-400',
+    gold: 'border-amber-500/30 bg-amber-500/10 text-amber-400',
+  }
+  return (
+    <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-mono font-bold border ${colors[variant]}`}>
+      {children}
+    </span>
+  )
+}
+
+// ─── Tab: By Agent ───────────────────────────────────────────────────────────
+
+function AgentTab() {
+  const [expandedAgent, setExpandedAgent] = useState<string | null>(null)
+  const [expandedBrands, setExpandedBrands] = useState<Record<string, boolean>>({})
 
   return (
-    <div className="space-y-4 pb-8">
-      <div>
-        <h1 className="text-xl font-bold" style={{ color: 'var(--text)' }}>Chemical Reference</h1>
-        <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
-          Professional spotting agents — what they do, when to use them, when not to.
-        </p>
-      </div>
+    <div className="space-y-3">
+      {AGENT_KEYS.map(key => {
+        const agent = crosswalk[key] as CrosswalkAgent | undefined
+        if (!agent?.genericName) return null
+        const isExpanded = expandedAgent === key
+        const brandProducts = agent.products?.filter(p => p.productName !== 'N/A' && !p.productName.startsWith('N/A')) || []
+        const showAllBrands = expandedBrands[key] || false
+        const visibleBrands = showAllBrands ? brandProducts : brandProducts.slice(0, 4)
 
-      {/* Chemical chips */}
-      <div className="flex flex-wrap gap-2">
-        {CHEMICALS.map(c => (
-          <button
-            key={c.id}
-            type="button"
-            onClick={() => setSelected(selected === c.id ? null : c.id)}
-            className="px-3 py-2 rounded-xl text-sm font-semibold transition-all"
-            style={{
-              background: selected === c.id ? `${c.color}20` : 'var(--surface)',
-              border: `1.5px solid ${selected === c.id ? c.color : 'var(--border-strong)'}`,
-              color: selected === c.id ? c.color : 'var(--text)',
-            }}
-          >
-            {c.name}
-          </button>
-        ))}
-      </div>
-
-      {/* Detail card */}
-      {activeChemical && (
-        <div className="space-y-4 rounded-xl p-4" style={{ background: 'var(--surface)', border: '1px solid var(--border-strong)' }}>
-          {/* Header */}
-          <div>
-            <div className="flex items-center gap-2 mb-1">
-              <h2 className="text-lg font-bold" style={{ color: activeChemical.color }}>{activeChemical.name}</h2>
-              <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: `${activeChemical.color}15`, color: activeChemical.color }}>{activeChemical.family}</span>
-            </div>
-            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Also known as: {activeChemical.aka}</p>
-          </div>
-
-          {/* What it is */}
-          <div>
-            <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>{activeChemical.what}</p>
-          </div>
-
-          {/* Mechanism */}
-          <div className="rounded-lg p-3" style={{ background: 'var(--surface-2)' }}>
-            <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--text-secondary)' }}>How It Works</p>
-            <p className="text-sm" style={{ color: 'var(--text)' }}>{activeChemical.mechanism}</p>
-          </div>
-
-          {/* Targets */}
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>Use For</p>
-            <div className="flex flex-wrap gap-1.5">
-              {activeChemical.targets.map(t => (
-                <span key={t} className="px-2 py-1 rounded-lg text-xs font-medium" style={{ background: `${activeChemical.color}15`, color: activeChemical.color }}>{t}</span>
-              ))}
-            </div>
-          </div>
-
-          {/* Safe / Unsafe fibers */}
-          <div className="grid grid-cols-2 gap-3">
-            {activeChemical.safe.length > 0 && (
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider mb-1.5" style={{ color: '#22c55e' }}>✓ Safe On</p>
-                <div className="space-y-1">
-                  {activeChemical.safe.map(f => (
-                    <p key={f} className="text-xs" style={{ color: 'var(--text)' }}>{f}</p>
-                  ))}
+        return (
+          <div key={key} className="card">
+            <button
+              onClick={() => setExpandedAgent(isExpanded ? null : key)}
+              className="w-full text-left flex items-center gap-3"
+            >
+              <span className="text-lg flex-shrink-0">{AGENT_ICONS[key] || '🧪'}</span>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2">
+                  <h3 className="font-bold text-sm">{key}</h3>
+                  <span className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                    {agent.genericName}
+                  </span>
                 </div>
               </div>
+              <Chevron open={isExpanded} />
+            </button>
+
+            {isExpanded && (
+              <div className="mt-3 pt-3 space-y-3" style={{ borderTop: '1px solid var(--border)' }}>
+                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                  {agent.description}
+                </p>
+
+                {agent.mechanism && (
+                  <div className="rounded-lg p-3" style={{ background: 'var(--surface-2)' }}>
+                    <p className="text-xs font-mono font-bold mb-1" style={{ color: 'var(--accent)' }}>
+                      MECHANISM
+                    </p>
+                    <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                      {agent.mechanism}
+                    </p>
+                  </div>
+                )}
+
+                {agent.safetyWarning && (
+                  <div className="rounded-lg p-3 border border-red-500/20" style={{ background: 'rgba(239,68,68,0.05)' }}>
+                    <p className="text-xs font-mono font-bold mb-1 text-red-400">
+                      ⚠️ SAFETY
+                    </p>
+                    <p className="text-xs text-red-400/80">
+                      {agent.safetyWarning}
+                    </p>
+                  </div>
+                )}
+              </div>
             )}
-            {activeChemical.unsafe.length > 0 && (
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider mb-1.5" style={{ color: '#ef4444' }}>✗ Avoid On</p>
-                <div className="space-y-1">
-                  {activeChemical.unsafe.map(f => (
-                    <p key={f} className="text-xs" style={{ color: 'var(--text)' }}>{f}</p>
+
+            {/* Brand Products — always visible below card header */}
+            {brandProducts.length > 0 && (
+              <div className="mt-3 pt-3" style={{ borderTop: '1px solid var(--border)' }}>
+                <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>
+                  BRAND PRODUCTS
+                </p>
+                <div className="space-y-1.5">
+                  {visibleBrands.map((p, i) => (
+                    <div key={i} className="flex items-start gap-2 text-xs">
+                      <span className="font-medium flex-shrink-0" style={{ color: 'var(--accent)' }}>
+                        {p.company}
+                      </span>
+                      <span style={{ color: 'var(--text-secondary)' }}>→</span>
+                      <span className="font-bold">{p.productName}</span>
+                    </div>
                   ))}
                 </div>
-                {activeChemical.unsafeReason && (
-                  <p className="text-xs mt-1.5 italic" style={{ color: 'var(--text-secondary)' }}>{activeChemical.unsafeReason}</p>
+                {brandProducts.length > 4 && (
+                  <button
+                    onClick={() => setExpandedBrands(prev => ({ ...prev, [key]: !prev[key] }))}
+                    className="text-[10px] font-mono font-bold mt-2 transition-colors"
+                    style={{ color: 'var(--accent)' }}
+                  >
+                    {showAllBrands ? '▲ Show less' : `▼ Show all ${brandProducts.length}`}
+                  </button>
                 )}
               </div>
             )}
           </div>
+        )
+      })}
+    </div>
+  )
+}
 
-          {/* Application details */}
-          <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Application</p>
-            <div className="grid grid-cols-3 gap-2">
-              <div className="rounded-lg p-2" style={{ background: 'var(--surface-2)' }}>
-                <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Dilution</p>
-                <p className="text-xs font-medium mt-0.5" style={{ color: 'var(--text)' }}>{activeChemical.dilution}</p>
+// ─── Tab: By Company ─────────────────────────────────────────────────────────
+
+function CompanyTab() {
+  const [expandedCompany, setExpandedCompany] = useState<string | null>(null)
+
+  return (
+    <div className="space-y-3">
+      {companies.map(company => {
+        const isExpanded = expandedCompany === company.id
+        const firstSentence = company.overview.summary.split('. ')[0] + '.'
+
+        return (
+          <div key={company.id} className="card">
+            {/* Header */}
+            <button
+              onClick={() => setExpandedCompany(isExpanded ? null : company.id)}
+              className="w-full text-left"
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className="font-bold text-sm">{company.name}</h3>
+                    <ExternalLink href={company.website}>{new URL(company.website).hostname.replace('www.', '')}</ExternalLink>
+                  </div>
+                  <p className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+                    {company.headquarters} · Est. {company.founded}
+                  </p>
+                </div>
+                <Chevron open={isExpanded} />
               </div>
-              <div className="rounded-lg p-2" style={{ background: 'var(--surface-2)' }}>
-                <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Temp</p>
-                <p className="text-xs font-medium mt-0.5" style={{ color: 'var(--text)' }}>{activeChemical.temperature}</p>
+
+              <p className="text-xs mt-2" style={{ color: 'var(--text-secondary)' }}>
+                {firstSentence}
+              </p>
+
+              {/* Specialty chips */}
+              <div className="flex flex-wrap gap-1.5 mt-2">
+                {company.specialties.slice(0, 4).map((s, i) => (
+                  <span
+                    key={i}
+                    className="text-[10px] font-mono px-2 py-0.5 rounded-md border"
+                    style={{
+                      borderColor: 'var(--border-strong)',
+                      color: 'var(--text-secondary)',
+                      background: 'var(--surface-2)',
+                    }}
+                  >
+                    {s.length > 40 ? s.slice(0, 37) + '...' : s}
+                  </span>
+                ))}
+                {company.specialties.length > 4 && (
+                  <span className="text-[10px] font-mono px-2 py-0.5" style={{ color: 'var(--text-secondary)' }}>
+                    +{company.specialties.length - 4}
+                  </span>
+                )}
               </div>
-              <div className="rounded-lg p-2" style={{ background: 'var(--surface-2)' }}>
-                <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Dwell</p>
-                <p className="text-xs font-medium mt-0.5" style={{ color: 'var(--text)' }}>{activeChemical.dwellTime}</p>
-              </div>
-            </div>
+            </button>
+
+            {/* Expanded Details */}
+            {isExpanded && (
+              <CompanyDetails company={company} />
+            )}
           </div>
+        )
+      })}
+    </div>
+  )
+}
 
-          {/* Never use with */}
-          {activeChemical.neverWith.length > 0 && (
-            <div className="rounded-lg p-3" style={{ background: 'rgba(239,68,68,0.06)', border: '1px solid rgba(239,68,68,0.2)' }}>
-              <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: '#ef4444' }}>⚠️ Never Combine With</p>
-              {activeChemical.neverWith.map((w, i) => (
-                <p key={i} className="text-xs" style={{ color: 'var(--text)' }}>• {w}</p>
-              ))}
-            </div>
-          )}
+function CompanyDetails({ company }: { company: CompanyData }) {
+  const [expandedSection, setExpandedSection] = useState<string | null>(null)
 
-          {/* Pro tip */}
-          <div className="rounded-lg p-3" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
-            <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--accent)' }}>💡 Pro Tip</p>
-            <p className="text-sm" style={{ color: 'var(--text)' }}>{activeChemical.proTip}</p>
+  const sections = [
+    { key: 'overview', label: 'Overview', icon: '📋' },
+    { key: 'products', label: 'Product Lines', icon: '🧪' },
+    { key: 'agents', label: 'Agent Mapping', icon: '🗺️' },
+    { key: 'fibers', label: 'Fiber Expertise', icon: '🧵' },
+    { key: 'distribution', label: 'Distribution', icon: '📦' },
+    { key: 'gonr', label: 'GONR Relevance', icon: '🟢' },
+  ]
+
+  return (
+    <div className="mt-3 pt-3 space-y-2" style={{ borderTop: '1px solid var(--border)' }}>
+      {sections.map(section => {
+        const isOpen = expandedSection === section.key
+
+        return (
+          <div key={section.key}>
+            <button
+              onClick={() => setExpandedSection(isOpen ? null : section.key)}
+              className="w-full flex items-center gap-2 py-2 text-left"
+            >
+              <span className="text-sm">{section.icon}</span>
+              <span className="text-xs font-bold flex-1">{section.label}</span>
+              <Chevron open={isOpen} />
+            </button>
+
+            {isOpen && (
+              <div className="pb-3 pl-6">
+                {section.key === 'overview' && (
+                  <div className="space-y-2">
+                    <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                      {company.overview.summary}
+                    </p>
+                    {company.overview.historyAndReputation && (
+                      <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                        {company.overview.historyAndReputation}
+                      </p>
+                    )}
+                  </div>
+                )}
+
+                {section.key === 'products' && (
+                  <div className="space-y-3">
+                    {company.productLines.map((line, i) => (
+                      <div key={i}>
+                        <p className="text-[10px] font-mono font-bold tracking-wider mb-1" style={{ color: 'var(--accent)' }}>
+                          {line.category.toUpperCase()}
+                        </p>
+                        {line.products.map((product, j) => (
+                          <div key={j} className="ml-2 mb-2">
+                            <p className="text-xs font-bold">{product.name}</p>
+                            <p className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+                              {product.description.length > 200
+                                ? product.description.slice(0, 197) + '...'
+                                : product.description}
+                            </p>
+                            {product.usedFor && product.usedFor.length > 0 && (
+                              <div className="flex flex-wrap gap-1 mt-1">
+                                {product.usedFor.slice(0, 5).map((use, k) => (
+                                  <Chip key={k}>{use}</Chip>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {section.key === 'agents' && (
+                  <div className="space-y-2">
+                    {Object.entries(company.agentMapping).map(([agent, mapping]) => (
+                      <div key={agent} className="flex items-start gap-2 text-xs">
+                        <span className="font-mono font-bold flex-shrink-0 w-20" style={{ color: 'var(--accent)' }}>
+                          {agent}
+                        </span>
+                        <span style={{ color: 'var(--text-secondary)' }}>
+                          {mapping}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {section.key === 'fibers' && (
+                  <div className="space-y-2">
+                    {Object.entries(company.fiberExpertise).map(([fiber, note]) => (
+                      <div key={fiber} className="flex items-start gap-2 text-xs">
+                        <span className="font-mono font-bold flex-shrink-0 w-20 capitalize" style={{ color: 'var(--accent)' }}>
+                          {fiber}
+                        </span>
+                        <span style={{ color: 'var(--text-secondary)' }}>
+                          {note}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {section.key === 'distribution' && company.distributionNetwork && (
+                  <div className="space-y-2 text-xs" style={{ color: 'var(--text-secondary)' }}>
+                    {company.distributionNetwork.regions && (
+                      <p><span className="font-bold" style={{ color: 'var(--text)' }}>Regions:</span> {company.distributionNetwork.regions.join(', ')}</p>
+                    )}
+                    {company.distributionNetwork.distributionMethod && (
+                      <p><span className="font-bold" style={{ color: 'var(--text)' }}>Method:</span> {company.distributionNetwork.distributionMethod}</p>
+                    )}
+                    {company.distributionNetwork.howToBuy && (
+                      <p><span className="font-bold" style={{ color: 'var(--text)' }}>How to buy:</span> {company.distributionNetwork.howToBuy}</p>
+                    )}
+                  </div>
+                )}
+
+                {section.key === 'gonr' && (
+                  <div className="space-y-2">
+                    <div className="rounded-lg p-3" style={{ background: 'var(--surface-2)' }}>
+                      <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                        {company.gonrIntegration.relevance}
+                      </p>
+                    </div>
+                    {company.gonrIntegration.agentCrossReference && (
+                      <div className="rounded-lg p-3 border border-green-500/20" style={{ background: 'rgba(34,197,94,0.04)' }}>
+                        <p className="text-[10px] font-mono font-bold mb-1" style={{ color: 'var(--accent)' }}>
+                          PROTOCOL MAPPING
+                        </p>
+                        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                          {company.gonrIntegration.agentCrossReference}
+                        </p>
+                      </div>
+                    )}
+                    {company.gonrIntegration.whenToRecommend && (
+                      <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                        <span className="font-bold" style={{ color: 'var(--text)' }}>When to recommend:</span>{' '}
+                        {company.gonrIntegration.whenToRecommend}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
+        )
+      })}
+    </div>
+  )
+}
+
+// ─── Tab: By Fiber ───────────────────────────────────────────────────────────
+
+function FiberTab() {
+  const [selectedFiber, setSelectedFiber] = useState<string | null>(null)
+
+  return (
+    <div>
+      {/* Fiber Grid */}
+      {!selectedFiber && (
+        <div className="grid grid-cols-4 gap-2">
+          {FIBER_KEYS.map(key => {
+            const isHighRisk = HIGH_RISK_FIBERS.includes(key)
+            return (
+              <button
+                key={key}
+                onClick={() => setSelectedFiber(key)}
+                className="card flex flex-col items-center gap-1 py-3 px-2 transition-colors hover:border-green-500/30"
+              >
+                <span className="text-lg">{FIBER_ICONS[key]}</span>
+                <span className="text-xs font-bold capitalize">{key}</span>
+                {isHighRisk && (
+                  <span className="text-[10px]">⚠️</span>
+                )}
+              </button>
+            )
+          })}
         </div>
       )}
 
-      {!selected && (
-        <p className="text-sm text-center py-4" style={{ color: 'var(--text-secondary)' }}>
-          Tap any agent to see full details
-        </p>
+      {/* Fiber Detail */}
+      {selectedFiber && (
+        <FiberDetail fiber={selectedFiber} onBack={() => setSelectedFiber(null)} />
       )}
+    </div>
+  )
+}
+
+function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
+  const data = fibers[fiber] as FiberEntry | undefined
+  if (!data) return null
+  const isHighRisk = HIGH_RISK_FIBERS.includes(fiber)
+
+  return (
+    <div className="space-y-4">
+      <button
+        onClick={onBack}
+        className="flex items-center gap-2 text-xs font-mono font-bold px-3 py-1.5 rounded-lg
+          border border-white/10 hover:border-green-500/30 transition-colors"
+        style={{ color: 'var(--text-secondary)' }}
+      >
+        ← ALL FIBERS
+      </button>
+
+      <div className="flex items-center gap-3">
+        <span className="text-2xl">{FIBER_ICONS[fiber]}</span>
+        <div>
+          <h2 className="text-lg font-bold capitalize">{fiber}</h2>
+          {isHighRisk && (
+            <Chip variant="red">⚠️ HIGH RISK FIBER</Chip>
+          )}
+        </div>
+      </div>
+
+      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+        {data.description}
+      </p>
+
+      {/* Key Considerations */}
+      <div className="card" style={{ borderColor: isHighRisk ? 'rgba(239,68,68,0.2)' : undefined }}>
+        <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: isHighRisk ? 'var(--danger)' : 'var(--gold)' }}>
+          ⚠️ KEY CONSIDERATIONS
+        </p>
+        <ul className="space-y-1.5">
+          {data.keyConsiderations.map((item, i) => (
+            <li key={i} className="text-xs flex items-start gap-2" style={{ color: 'var(--text-secondary)' }}>
+              <span className="flex-shrink-0 mt-0.5" style={{ color: 'var(--gold)' }}>•</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Recommended Companies */}
+      <div>
+        <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: 'var(--accent)' }}>
+          RECOMMENDED COMPANIES & PRODUCTS
+        </p>
+        <div className="space-y-2">
+          {data.recommendedCompanies.map((rec, i) => (
+            <div key={i} className="card">
+              <p className="text-sm font-bold" style={{ color: 'var(--accent)' }}>{rec.company}</p>
+              <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>{rec.why}</p>
+              <div className="flex flex-wrap gap-1.5 mt-2">
+                {rec.products.map((prod, j) => (
+                  <Chip key={j} variant="green">{prod}</Chip>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Agents To Use / Avoid */}
+      <div className="grid grid-cols-1 gap-3">
+        <div className="card">
+          <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: 'var(--accent)' }}>
+            ✓ AGENTS TO USE
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {data.agentsToUse.map((agent, i) => (
+              <Chip key={i} variant="green">{agent}</Chip>
+            ))}
+          </div>
+        </div>
+
+        <div className="card" style={{ borderColor: 'rgba(239,68,68,0.15)' }}>
+          <p className="text-[10px] font-mono font-bold tracking-wider mb-2 text-red-400">
+            ✗ AGENTS TO AVOID
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {data.agentsToAvoid.map((agent, i) => (
+              <Chip key={i} variant="red">{agent}</Chip>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ─── Main Page ───────────────────────────────────────────────────────────────
+
+const TABS: { key: Tab; label: string }[] = [
+  { key: 'agent', label: 'By Agent' },
+  { key: 'company', label: 'By Company' },
+  { key: 'fiber', label: 'By Fiber' },
+]
+
+export default function ChemicalReferencePage() {
+  const [activeTab, setActiveTab] = useState<Tab>('agent')
+
+  return (
+    <div className="space-y-4">
+      {/* Page Header */}
+      <div>
+        <h1 className="text-xl font-bold tracking-tight">Chemical Reference</h1>
+        <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
+          Professional cleaning agents, company directory, and fiber guides.
+        </p>
+      </div>
+
+      {/* Tab Bar */}
+      <div
+        className="flex rounded-xl p-1 gap-1"
+        style={{ background: 'var(--surface-2)' }}
+      >
+        {TABS.map(tab => (
+          <button
+            key={tab.key}
+            onClick={() => setActiveTab(tab.key)}
+            className={`flex-1 text-xs font-bold py-2 rounded-lg transition-all ${
+              activeTab === tab.key
+                ? 'text-white shadow-sm'
+                : ''
+            }`}
+            style={{
+              background: activeTab === tab.key ? 'var(--accent)' : 'transparent',
+              color: activeTab === tab.key ? '#fff' : 'var(--text-secondary)',
+            }}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Tab Content */}
+      {activeTab === 'agent' && <AgentTab />}
+      {activeTab === 'company' && <CompanyTab />}
+      {activeTab === 'fiber' && <FiberTab />}
     </div>
   )
 }

@@ -1,0 +1,146 @@
+{
+  "id": "pariser",
+  "name": "Pariser Industries",
+  "slug": "pariser",
+  "website": "https://www.pariser.net",
+  "headquarters": "Paterson, NJ, USA",
+  "founded": "est. ~1980s (40+ years in operation)",
+  "employeeRange": "50-100 (estimated)",
+  "overview": {
+    "summary": "Pariser Industries is a New Jersey-based specialty cleaning chemical manufacturer serving dry cleaning, commercial laundry, shirt laundry, janitorial, and water treatment markets. Known in the dry cleaning industry for Neutra-Lube (their premium neutral wet-side spotter) and their emphasis on technical field support — Pariser consultants do on-site problem-solving for complex cleaning challenges. ISO 9001 certified manufacturing. Distributed through 90 distributors across 40+ US states, Canada, and the Caribbean.",
+    "historyAndReputation": "Over four decades of focused specialty chemistry. Pariser built its reputation on technical support — their consultants diagnose complex cleaning problems on-site and recommend custom formulations. This service-first approach has earned loyalty among commercial laundry and dry cleaning operators who deal with difficult, recurring stain problems. ISO 9001 certification provides quality assurance.",
+    "marketPosition": "Mid-market with premium technical support. Broader market reach than most dry cleaning specialists due to their multi-segment approach (dry cleaning + commercial laundry + janitorial + water treatment). Strongest in the northeast US (NJ headquarters) with nationwide distribution through 90+ distributors. Competitive pricing with high-value technical consultation included."
+  },
+  "specialties": [
+    "Neutral wet-side spotting agents (Neutra-Lube)",
+    "Commercial laundry chemicals (75+ liquid products)",
+    "Dry cleaning and wet cleaning chemistry",
+    "Shirt laundry processing chemicals",
+    "Technical field consultation and problem-solving",
+    "Water treatment chemicals"
+  ],
+  "productLines": [
+    {
+      "category": "Spotting Agents",
+      "categoryDescription": "Pariser's spotting line for professional dry cleaning. Neutra-Lube is the flagship — a premium neutral-pH wet-side spotter that has become a reference product in the category.",
+      "products": [
+        {
+          "name": "Neutra-Lube",
+          "type": "neutral wet-side spotter (NSD equivalent)",
+          "description": "Premium neutral pH wet-side spotter with fine additives for wetting, penetration, lifting, and suspension of water-soluble soils. Compatible with all solvent systems (perc, hydrocarbon, GreenEarth, SolvonK4). Available in gallon containers. Pariser's most recognized dry cleaning product — a reference-quality NSD.",
+          "usedFor": ["general water-soluble stain removal", "wet-side spotting", "neutral pH applications on all fabrics"],
+          "fibers": ["all fabrics including silk, wool, and delicates — neutral pH"],
+          "notFor": ["oil-based stains (need POG)"],
+          "proTips": "Neutra-Lube's neutral pH and fine additive package make it safe for silk, wool, and any pH-sensitive fabric. It's the starting point for any wet-side spotting work on delicates. The wetting and penetration additives mean it works faster than plain NSD — less mechanical action needed, which protects delicate fibers.",
+          "alternativeTo": "Adco Neutra, A.L. Wilson (no direct NSD equivalent)",
+          "priceTier": "mid-premium",
+          "availability": "through Pariser's 90+ distributor network"
+        },
+        {
+          "name": "SHOT-SPOT",
+          "type": "all-purpose spotter",
+          "description": "Highly versatile stain remover that functions as a pre-spotter for wet cleaning or as a cold wash additive for oil removal. Multi-function agent that crosses wet-side and dry-side categories.",
+          "usedFor": ["pre-spotting for wet cleaning", "oil removal in cold wash", "general stain removal"],
+          "fibers": ["standard fabrics"],
+          "notFor": ["delicates without testing"],
+          "proTips": "SHOT-SPOT is Pariser's utility player — it handles multiple stain types in one product. Good for high-volume operations where speed matters more than maximum specialization.",
+          "alternativeTo": "R.R. Street WetDry®",
+          "priceTier": "mid",
+          "availability": "through Pariser's distributor network"
+        },
+        {
+          "name": "RightStuff",
+          "type": "eco-friendly spotter",
+          "description": "Contains eco-friendly solvents, detergents, and enzymes. Gently dissolves oils and pigments without fabric damage. Pariser's environmentally conscious spotting option.",
+          "usedFor": ["oil-based stains", "pigment stains", "eco-conscious cleaning operations"],
+          "fibers": ["most fabrics — enzyme component means caution on silk/wool"],
+          "notFor": ["silk (enzyme risk)", "wool (enzyme risk)"],
+          "proTips": "RightStuff combines three chemistries (solvent + detergent + enzyme) in one eco-friendly formulation. Good for shops marketing green cleaning but be aware of the enzyme component — not safe for protein fibers.",
+          "alternativeTo": "A.L. Wilson TarGo® (eco-reformulated)",
+          "priceTier": "mid",
+          "availability": "through Pariser's distributor network"
+        }
+      ]
+    },
+    {
+      "category": "Commercial Laundry",
+      "categoryDescription": "Pariser's largest product segment — 75+ liquid laundry products covering builders, bleaches, sours, softeners, and specialty items. Formulated for everything from top-loading consumer machines to 1,000-lb industrial washer-extractors.",
+      "products": [
+        {
+          "name": "Commercial Laundry Line (75+ products)",
+          "type": "complete laundry chemical system",
+          "description": "Comprehensive liquid laundry chemical line including builders, bleaches, sours, softeners, and specialty items. Designed for institutional and commercial laundry operations of all sizes. Automated dispensing systems available for high-volume operations.",
+          "usedFor": ["commercial laundry", "institutional laundry", "hospitality", "healthcare"],
+          "fibers": ["standard laundry fabrics"],
+          "notFor": ["dry cleaning applications"],
+          "proTips": "Pariser's commercial laundry line is their bread and butter — 75+ products means they have a formulation for nearly any institutional laundry challenge. Their technical consultants can audit a laundry operation and recommend the optimal product mix.",
+          "alternativeTo": "Ecolab, Diversey, NCL laundry lines",
+          "priceTier": "mid",
+          "availability": "through Pariser's distributor network with technical consultation"
+        }
+      ]
+    }
+  ],
+  "agentMapping": {
+    "NSD": "Neutra-Lube (premium neutral-pH wet-side spotter — Pariser's flagship)",
+    "POG": "SHOT-SPOT (multi-purpose, includes oil removal), RightStuff (eco-friendly with solvent component)",
+    "protein": "RightStuff (contains enzymes — not for silk/wool). No dedicated standalone protein spotter identified.",
+    "tannin": "No dedicated tannin spotter identified in current public product line (unconfirmed — Pariser may have tannin products not prominently marketed online)",
+    "leveling": "No dedicated leveling agent identified (Neutra-Lube's neutral pH serves a similar protective function on delicates)",
+    "rustRemover": "Not identified in current public product line",
+    "enzymatic": "RightStuff (contains enzymes)",
+    "solvent": "Pariser does not manufacture dry cleaning solvents"
+  },
+  "fiberExpertise": {
+    "silk": "Neutra-Lube is safe for silk due to neutral pH — it's one of the better NSD options for silk spotting. RightStuff is NOT safe for silk (enzyme content). Pariser's technical consultants can advise on silk-specific challenges.",
+    "wool": "Neutra-Lube safe for wool. RightStuff not safe for wool (enzymes). Standard precautions apply.",
+    "leather": "No dedicated leather products identified. Refer to Kreussler or Royaltone for leather-specific chemistry.",
+    "synthetics": "Full product line compatible. Pariser's commercial laundry expertise means strong knowledge of synthetic fiber processing.",
+    "delicates": "Neutra-Lube is the go-to for delicate fabric work — its neutral pH and premium wetting/penetration additives make it safe and effective on moisture-sensitive fabrics."
+  },
+  "protocols": [],
+  "distributionNetwork": {
+    "regions": ["USA (40+ states)", "Canada", "Caribbean"],
+    "distributionMethod": "through 90+ authorized distributors plus direct sales",
+    "howToBuy": "Contact Pariser Industries directly or through their 90+ distributor network across 40+ US states, Canada, and the Caribbean. Pariser offers both distributor and direct sales channels.",
+    "majorDistributors": ["Classic Dry Cleaning Distributor", "regional distributors across 40+ states"]
+  },
+  "industryReputation": {
+    "strengthsKnownFor": [
+      "Neutra-Lube — premium NSD recognized as a reference-quality neutral spotter",
+      "Technical field consultation — on-site problem-solving by experienced consultants",
+      "ISO 9001 certified manufacturing",
+      "40+ years of focused specialty chemistry",
+      "Multi-segment coverage (dry cleaning + commercial laundry + janitorial)",
+      "75+ liquid laundry products — one of the broadest commercial laundry lines available",
+      "Flexible business strategy adapted to regional markets"
+    ],
+    "limitations": [
+      "Smaller dry cleaning product line compared to R.R. Street, A.L. Wilson, or Kreussler",
+      "No dedicated tannin spotter, rust remover, or specialized ink remover in public product catalog",
+      "No proprietary solvent",
+      "Stronger in commercial laundry than in dry cleaning specialty chemistry",
+      "Limited online product information compared to competitors"
+    ],
+    "whoUsesThem": "Operators who value technical support and on-site consultation. Commercial laundry operations needing comprehensive chemical systems. Dry cleaners in the northeast US (close to NJ headquarters). Shops looking for a reliable NSD (Neutra-Lube). Multi-service operations that do both dry cleaning and commercial laundry under one roof.",
+    "rivalCompanies": ["A.L. Wilson Chemical Co.", "R.R. Street & Co.", "Adco"]
+  },
+  "education": {
+    "trainingResources": "In-service education with hands-on training and instructional charts. Pariser consultants provide on-site training tailored to specific operations.",
+    "technicalSupport": "Field consultants available for on-site problem-solving. Technical support covers operator safety, production optimization, linen handling, and replacement cost reduction. Consultants diagnose complex cleaning challenges and recommend custom formulations.",
+    "publications": "Product technical data sheets. Training materials provided during on-site consultations."
+  },
+  "gonrIntegration": {
+    "relevance": "Pariser's Neutra-Lube is one of the best NSD options available for professional spotting, especially on delicate fabrics. When GONR protocols call for a neutral wet-side spotter, Neutra-Lube is a premium choice. Pariser's technical consultation service is valuable for operators tackling unusual or recurring stain problems.",
+    "agentCrossReference": "When a GONR protocol calls for: NSD/neutral wet-side spotter → Neutra-Lube (premium quality, safe for all fibers); all-purpose pre-spotter → SHOT-SPOT; eco-friendly spotter → RightStuff (not for silk/wool).",
+    "whenToRecommend": "Recommend Pariser when: the protocol calls for a premium NSD; the operator handles high volumes of delicate fabrics requiring neutral-pH spotting; the shop needs on-site technical consultation for complex or recurring stain problems; or the operation includes both dry cleaning and commercial laundry (Pariser covers both segments with one supplier relationship)."
+  },
+  "links": {
+    "website": "https://www.pariser.net",
+    "productCatalog": "https://pariser.net/dry-cleaning-chemicals/",
+    "technicalDocs": "Contact Pariser directly for technical documentation",
+    "distributorLocator": "https://pariser.net/distributor-opportunities/",
+    "training": "Contact Pariser directly for training programs"
+  },
+  "lastResearched": "2026-03-25"
+}

@@ -1,0 +1,313 @@
+{
+  "id": "rr-street",
+  "name": "R.R. Street & Co.",
+  "slug": "rr-street",
+  "website": "https://www.rrstreet.com",
+  "headquarters": "Naperville, IL, USA",
+  "founded": "1876",
+  "employeeRange": "50-200",
+  "overview": {
+    "summary": "R.R. Street & Co. is the dominant manufacturer and marketer of dry-cleaning process additives, stain removal agents, and filtration products in North America. Founded in 1876, Street's is known for flagship products like StreeTAN® (tannin spotter), StreePRO® (protein spotter), and PICRIN® (volatile dry-side spotter), and distributes ExxonMobil's DF-2000™ hydrocarbon solvent. They serve professional dry cleaners, commercial laundries, and hospitality businesses through a nationwide distributor network.",
+    "historyAndReputation": "Robert R. Street founded the company in Chicago in 1876, making it one of the oldest continuously operating chemical suppliers in the dry cleaning industry — over 140 years of operation. The company built its position through consistent product quality, comprehensive spotting agent lines, and strong distributor relationships. Their 2014 acquisition of Adco/Laidlaw brands consolidated their market leadership.",
+    "marketPosition": "Market leader in North American dry cleaning chemicals. Premium-to-mid-market pricing. National distribution through authorized supply houses. The majority of professional dry cleaners in the US have used or currently use at least one Street's product. Their training program (Street's Academy) and multilingual support reinforce loyalty across diverse operator demographics."
+  },
+  "specialties": [
+    "Hydrocarbon solvents (DF-2000™ distribution)",
+    "Spotting agents (protein, tannin, dry-side, combination)",
+    "Dry cleaning detergents (perc, hydrocarbon, GreenEarth systems)",
+    "Wet cleaning chemistry (H2PRO® system)",
+    "Pre-treatment and leveling agents",
+    "Filtration products",
+    "GreenEarth-compatible formulations"
+  ],
+  "productLines": [
+    {
+      "category": "Solvents",
+      "categoryDescription": "The primary cleaning medium in a dry cleaning machine. The solvent dissolves and carries away oil-based soils from garments. Choice of solvent determines the entire cleaning system — detergents, spotters, and equipment must all be compatible.",
+      "products": [
+        {
+          "name": "DF-2000™ Fluid",
+          "type": "synthetic hydrocarbon solvent",
+          "description": "High-flash-point hydrocarbon solvent manufactured by ExxonMobil and distributed by R.R. Street. Introduced in 1994, DF-2000 has the lowest aromatic content of any HFHC dry cleaning solvent, which makes it gentler on dyes, trims, and beading than older hydrocarbon formulations. Flash point exceeds 130°F. Remains stable through multiple distillation and reclamation cycles without degradation. No moisture buildup means no shrinkage or water-soluble dye bleeding.",
+          "usedFor": ["primary dry cleaning solvent", "hydrocarbon machine systems", "alternative to perchloroethylene"],
+          "fibers": ["all standard fibers", "safe for dyes and trims", "safe for beading and sequins"],
+          "notFor": ["not a spotting agent — used as machine solvent only"],
+          "proTips": "DF-2000 cleans more gently than perc, which means heavily soiled items may need pre-spotting or a second run. Pair with MERASOL® detergent for optimal soil removal. Monitor solvent clarity — distill when KB value drops.",
+          "alternativeTo": "Perchloroethylene (perc), GreenEarth D5, SolvonK4",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        }
+      ]
+    },
+    {
+      "category": "Protein Spotters",
+      "categoryDescription": "Wet-side spotting agents that break down protein-based stains — blood, milk, egg, perspiration, baby formula, urine, food proteins. Applied on the spotting board before or after machine cleaning.",
+      "products": [
+        {
+          "name": "StreePRO®",
+          "type": "protein spotter",
+          "description": "Quick-acting wet-side stain remover with strong detergent qualities for protein-based stains. Removes food, milk, blood, perspiration, baby formula, and urine. Can be used alternately with StreeTAN® to tackle ballpoint ink, indelible ink, marking pen, and typewriter ribbon stains through an alternating acid-neutral technique.",
+          "usedFor": ["blood", "milk", "food stains", "perspiration", "baby formula", "urine", "egg"],
+          "fibers": ["most fabrics"],
+          "notFor": ["test on delicates first"],
+          "proTips": "For stubborn combination stains, alternate between StreePRO® and StreeTAN® — the pH shift between neutral protein spotter and acidic tannin spotter can break down complex stains that neither agent handles alone.",
+          "alternativeTo": "A.L. Wilson QwikGo®, Pariser protein spotters",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        }
+      ]
+    },
+    {
+      "category": "Tannin Spotters",
+      "categoryDescription": "Acidified wet-side spotting agents for beverage and plant-based stains — coffee, tea, wine, beer, grass, soft drinks, mustard, fruit juices. Tannins are polyphenolic compounds that bond to fibers through hydrogen bonding and require acidic chemistry to break.",
+      "products": [
+        {
+          "name": "StreeTAN®",
+          "type": "tannin spotter",
+          "description": "Acidified tannin spotter that is heat-stable — its activity does not increase at high temperatures, which means it won't damage heat-sensitive fabrics or dyes during steam flushing. Completely water-soluble for easy flushing. Removes coffee, beer, grass, liquor, mustard, soft drinks, tea, and wine. No need to rinse with cold water before steam flushing, which saves time on the board.",
+          "usedFor": ["coffee", "tea", "wine", "beer", "grass", "liquor", "mustard", "soft drinks", "fruit juice"],
+          "fibers": ["safe for most fabrics including delicates due to heat stability"],
+          "notFor": ["not for protein stains — use StreePRO® instead"],
+          "proTips": "The heat stability is the key differentiator. Most tannin spotters become more aggressive with heat, risking dye damage on delicates. StreeTAN® lets you steam flush immediately without a cold-water rinse step — saves 30-60 seconds per garment on the board.",
+          "alternativeTo": "A.L. Wilson BonGo®, Pariser Para-Tann, General Formula No. 209®",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        },
+        {
+          "name": "General Formula No. 209®",
+          "type": "tannin spotter (advanced)",
+          "description": "Professional-grade tannin spotter formulated for experienced spotters. More aggressive than StreeTAN® — effective on tannin stains, caramelized sugar stains, ink, grass, lipstick, and fruit stains. Designed for both wetcleaning and drycleaning applications. Requires more skill to use safely than StreeTAN®.",
+          "usedFor": ["stubborn tannin stains", "caramelized sugar", "ink", "grass", "lipstick", "fruit stains"],
+          "fibers": ["standard fabrics — test on delicates"],
+          "notFor": ["inexperienced spotters should use StreeTAN® instead"],
+          "proTips": "209 is the escalation agent when StreeTAN® doesn't fully resolve a tannin stain. Use with caution on silk and acetate — the stronger acid formulation requires faster flushing.",
+          "alternativeTo": "StreeTAN® (milder alternative)",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        }
+      ]
+    },
+    {
+      "category": "POG / Dry-Side Spotters",
+      "categoryDescription": "Volatile solvent-based spotters for oil, grease, paint, tar, adhesive, and other non-polar stains. Applied on the dry side of the spotting board. Must evaporate completely to avoid rings.",
+      "products": [
+        {
+          "name": "PICRIN®",
+          "type": "volatile dry spotter (POG)",
+          "description": "Volatile dry-side spotter with controlled evaporation rate for heavy oily stains. Dissolves adhesives, asphalt, crayon, grease, inks, lipstick, mascara, nail polish, oil, paint, shoe polish, tar, and varnish. Evaporates completely — leaves no residue and facilitates feathering to prevent rings.",
+          "usedFor": ["adhesives", "asphalt", "crayon", "grease", "ink", "lipstick", "mascara", "nail polish", "oil", "paint", "shoe polish", "tar", "varnish"],
+          "fibers": ["most fibers — volatile formula minimizes fiber contact time"],
+          "notFor": ["acetate (test first — some volatile solvents attack acetate)"],
+          "proTips": "PICRIN® can be combined with STREETEX® to create the 2-1 FORMULA® — a wet/dry combination spotter for mystery stains. The controlled evaporation rate is key: too-fast evaporation means the solvent leaves before dissolving the stain; too-slow means rings. PICRIN® is calibrated for optimal dwell.",
+          "alternativeTo": "A.L. Wilson TarGo®, amyl acetate",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        },
+        {
+          "name": "STREETEX®",
+          "type": "combination spotter / pre-spotter",
+          "description": "Versatile agent that works as a water-based pre-spotter on its own, or combines with PICRIN® to create the 2-1 FORMULA® wet/dry combination spotter. Removes mystery stains, embedded soil, and latex paint. The combination approach tackles stains with both polar and non-polar components simultaneously.",
+          "usedFor": ["mystery stains", "embedded soil", "latex paint", "combination stains"],
+          "fibers": ["most fabrics"],
+          "notFor": [],
+          "proTips": "When you don't know what the stain is, start with the 2-1 FORMULA® (PICRIN® + STREETEX®). It attacks both wet-side and dry-side components simultaneously. This is the go-to mystery stain approach for many Street's-trained spotters.",
+          "alternativeTo": "A.L. Wilson general spotters",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        }
+      ]
+    },
+    {
+      "category": "Pre-Treatment & Leveling Agents",
+      "categoryDescription": "Applied before machine cleaning to boost stain removal without board spotting, or used as leveling agents to prevent water marks and rings on moisture-sensitive fabrics. Save labor by reducing post-spotting.",
+      "products": [
+        {
+          "name": "MultiSPOT®",
+          "type": "pre-treatment / leveling agent",
+          "description": "No-flush pre-treatment, leveling agent, and cleaning booster for perchloroethylene systems. Spray on garments before loading — no board flushing required. Targets unidentified and combination stains: oily foods, cosmetics, inks, embedded soil. Rinses easily in the wheel during the cleaning cycle.",
+          "usedFor": ["pre-treatment for unidentified stains", "leveling agent", "cleaning booster in perc systems"],
+          "fibers": ["standard fabrics in perc systems"],
+          "notFor": ["not for hydrocarbon or GreenEarth systems — use GreenSPOT® instead"],
+          "proTips": "MultiSPOT® is a labor-saver. Instead of board-spotting every collar and cuff, spray MultiSPOT® on problem areas and load the machine. It handles 70-80% of routine soil that would otherwise require board time.",
+          "alternativeTo": "GreenSPOT® (for GreenEarth systems)",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        },
+        {
+          "name": "GreenSPOT®",
+          "type": "pre-treatment / leveling agent",
+          "description": "Pre-treatment and leveling agent formulated specifically for GreenEarth® solvent systems. Same no-flush spray-and-clean concept as MultiSPOT® but chemistry is optimized for silicone-based D5 solvent compatibility.",
+          "usedFor": ["pre-treatment in GreenEarth systems", "leveling", "stain removal boost"],
+          "fibers": ["all fabrics processed in GreenEarth systems"],
+          "notFor": ["perc systems — use MultiSPOT® instead"],
+          "proTips": "GreenEarth's D5 solvent is less aggressive than perc, so pre-spotting becomes more important. GreenSPOT® bridges the gap between D5's gentleness and the cleaning power needed for real-world soil.",
+          "alternativeTo": "MultiSPOT® (for perc systems)",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        },
+        {
+          "name": "SOFSPOT®",
+          "type": "delicate fabric spotter",
+          "description": "Gentle stain remover for water-soluble stains on delicate fabrics. Explicitly safe for silk, rayon, wool, linen, and cotton. Targets food, beverages, and perspiration stains on garments that cannot tolerate aggressive spotting chemistry.",
+          "usedFor": ["food stains on delicates", "beverages on silk/rayon/wool", "perspiration on delicate garments"],
+          "fibers": ["silk", "rayon", "wool", "linen", "cotton"],
+          "notFor": ["oil-based stains — use PICRIN® or AquaSOLV® for those"],
+          "proTips": "SOFSPOT® is the safe choice when you're not sure if a fabric can handle StreePRO® or StreeTAN®. It's milder but slower — plan for longer dwell times on stubborn stains.",
+          "alternativeTo": "Kreussler PRENETT A/B for delicates",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        }
+      ]
+    },
+    {
+      "category": "Wet Cleaning Products",
+      "categoryDescription": "Detergents and spotting agents designed specifically for professional wet cleaning — the process of washing dry-clean-only garments in water using specialized equipment, detergents, and techniques to prevent shrinkage, stretching, and dye loss.",
+      "products": [
+        {
+          "name": "H2PRO® Detergent",
+          "type": "wet cleaning detergent",
+          "description": "Complete wet cleaning detergent system formulated for multiple applications: hand washing, top-loading machines, front-loading machines, professional laundry, and dedicated wetcleaning machines. Uses latest advancements in surfactant chemistry to clean effectively while protecting fibers and dyes.",
+          "usedFor": ["professional wet cleaning", "hand washing delicates", "machine wet cleaning"],
+          "fibers": ["wool", "silk", "rayon", "most dry-clean-only fabrics when wet cleaned properly"],
+          "notFor": ["not a dry cleaning detergent — for aqueous systems only"],
+          "proTips": "Wet cleaning is growing fast as shops move away from perc. H2PRO® is Street's answer to Kreussler's Lanadol system. Match it with proper equipment (Miele, Electrolux, etc.) and controlled drying for best results.",
+          "alternativeTo": "Kreussler Lanadol AKTIV, Seitz Viva Care",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        },
+        {
+          "name": "AquaSOLV®",
+          "type": "wet cleaning pre-spotter",
+          "description": "Pre-spotting agent formulated for wet cleaning processes. Removes solvent-soluble stains (oils, greases) before garments enter the aqueous wet cleaning cycle. Critical because water alone won't dissolve oil-based stains — AquaSOLV® handles the dry-side component before the wet-side wash.",
+          "usedFor": ["pre-spotting oily stains before wet cleaning", "removing solvent-soluble soils in aqueous systems"],
+          "fibers": ["wet-cleanable fabrics"],
+          "notFor": [],
+          "proTips": "Apply AquaSOLV® to oil-based stains before loading into the wet cleaning machine. Water rinses it away along with the dissolved oils. This two-step approach (AquaSOLV® pre-spot + H2PRO® wash) handles most stain types in a wet cleaning workflow.",
+          "alternativeTo": "Traditional POG applied before wet cleaning",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        },
+        {
+          "name": "WetDry®",
+          "type": "combination wet/dry spotter",
+          "description": "Combines wet-side and dry-side stain removal agents in one pre-mixed, low-odor product. Eliminates the need to switch between separate wet and dry spotters for combination stains.",
+          "usedFor": ["combination stains", "mystery stains in wet cleaning environments"],
+          "fibers": ["standard fabrics"],
+          "notFor": [],
+          "proTips": "WetDry® is the wet cleaning equivalent of the 2-1 FORMULA® concept. One product for both components of a mystery stain.",
+          "alternativeTo": "Separate wet and dry spotters used in sequence",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        }
+      ]
+    },
+    {
+      "category": "Dry Cleaning Detergents",
+      "categoryDescription": "Charge soaps and injection detergents added to the dry cleaning machine's solvent to improve soil removal, prevent redeposition, reduce static, and control moisture. Different formulations for different solvent systems.",
+      "products": [
+        {
+          "name": "MERASOL®",
+          "type": "hydrocarbon system detergent",
+          "description": "Concentrated detergent formula for hydrocarbon solvent systems (DF-2000™). Solubilizes moisture in solvent so water-soluble soils can be dissolved and flushed away during the cleaning cycle. Prevents moisture buildup that causes shrinkage.",
+          "usedFor": ["hydrocarbon dry cleaning systems", "DF-2000™ systems"],
+          "fibers": ["all"],
+          "notFor": ["not for perc or GreenEarth systems"],
+          "proTips": "Proper MERASOL® dosing is critical. Too little and water-soluble soils stay on garments. Too much and you get moisture problems. Follow the dosing chart for your machine size and load weight.",
+          "alternativeTo": "Other hydrocarbon charge soaps",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        },
+        {
+          "name": "GreenSOL®",
+          "type": "GreenEarth system detergent",
+          "description": "Detergent formulated specifically for GreenEarth® D5 silicone solvent systems. Provides stain and soil removal beyond what the solvent alone achieves. Excellent soil suspension prevents redeposition. Reduces lint and static.",
+          "usedFor": ["GreenEarth D5 solvent systems"],
+          "fibers": ["all"],
+          "notFor": ["not for perc or hydrocarbon systems"],
+          "proTips": "D5 silicone is a gentle solvent — it relies more heavily on the detergent for actual soil removal than perc does. Don't under-dose GreenSOL® or you'll see dingy results.",
+          "alternativeTo": "Kreussler CLIP for GreenEarth, Sanitone 8870",
+          "priceTier": "mid",
+          "availability": "nationwide via authorized distributors"
+        }
+      ]
+    }
+  ],
+  "agentMapping": {
+    "NSD": "No dedicated NSD-branded product. MERASOL® and GreenSOL® serve the detergent role. SOFSPOT® functions as a neutral wet-side spotter for delicates.",
+    "POG": "PICRIN® (volatile dry spotter), STREETEX® (combination), 2-1 FORMULA® (PICRIN® + STREETEX®)",
+    "protein": "StreePRO®",
+    "tannin": "StreeTAN®, General Formula No. 209® (advanced)",
+    "leveling": "MultiSPOT® (perc systems), GreenSPOT® (GreenEarth systems), SOFSPOT® (delicates)",
+    "rustRemover": "No dedicated rust remover identified in current product line",
+    "enzymatic": "No dedicated enzyme product identified in current product line",
+    "solvent": "DF-2000™ Fluid (hydrocarbon), plus formulations for perc and GreenEarth systems"
+  },
+  "fiberExpertise": {
+    "silk": "SOFSPOT® is explicitly formulated safe for silk. StreeTAN®'s heat stability makes it safer for silk than most tannin spotters — no risk of heat activation damaging silk proteins during steam flushing.",
+    "wool": "SOFSPOT® safe for wool. H2PRO® wet cleaning system can handle wool with proper machine settings. StreeTAN® heat stability is an advantage on wool.",
+    "leather": "Leather care category exists in product portfolio but specific product names are not prominently marketed. Adco/Laidlaw acquisition may include leather-specific formulations.",
+    "synthetics": "Full product line compatible with synthetics. No special considerations — synthetics are the easiest fibers for most Street's products.",
+    "delicates": "SOFSPOT® is the dedicated delicate fabric spotter. GreenSPOT® and MultiSPOT® provide leveling to prevent water marks on moisture-sensitive fabrics. Street's training program emphasizes delicate handling techniques."
+  },
+  "protocols": [
+    {
+      "name": "2-1 FORMULA® (Mystery Stain Protocol)",
+      "description": "Combine PICRIN® and STREETEX® to create a wet/dry combination spotter that attacks both polar and non-polar stain components simultaneously. Apply to unknown stains, work with spatula or brush, steam flush. The combination handles most mystery stains without needing to identify the stain type first.",
+      "products": ["PICRIN®", "STREETEX®"],
+      "usedFor": "Mystery stains, combination stains, embedded soil, unknown stain identification"
+    },
+    {
+      "name": "StreePRO®/StreeTAN® Alternating Protocol",
+      "description": "For stubborn combination stains (especially ballpoint ink and marker), alternate between StreePRO® (protein/neutral) and StreeTAN® (acidic/tannin). The pH shift between applications breaks down complex stain chemistry that neither agent handles alone. Apply StreePRO®, flush, apply StreeTAN®, flush, repeat.",
+      "products": ["StreePRO®", "StreeTAN®"],
+      "usedFor": "Ballpoint ink, indelible ink, marking pen, typewriter ribbon, stubborn combination stains"
+    },
+    {
+      "name": "No-Flush Pre-Treatment (Labor-Saving)",
+      "description": "Spray MultiSPOT® (perc) or GreenSPOT® (GreenEarth) on collars, cuffs, and visibly soiled areas before loading into the machine. No board flushing required — agents dissolve in the solvent during the cleaning cycle. Handles routine soil that would otherwise require individual board spotting.",
+      "products": ["MultiSPOT®", "GreenSPOT®"],
+      "usedFor": "Collar soil, cuff grime, routine embedded soil, labor reduction"
+    }
+  ],
+  "distributionNetwork": {
+    "regions": ["USA", "Canada", "international markets"],
+    "distributionMethod": "through authorized distributors",
+    "howToBuy": "Contact R.R. Street at (630) 416-4244 or info@4streets.com for the nearest authorized distributor. Products are not sold direct — all sales go through the distribution network. Major distributors include FabriClean Supply, Elevation Supplies, and Garland Supply.",
+    "majorDistributors": ["FabriClean Supply", "Elevation Supplies", "Garland Supply", "Cleaners Outlet"]
+  },
+  "industryReputation": {
+    "strengthsKnownFor": [
+      "Most comprehensive spotting agent portfolio in North America",
+      "Heat-stable StreeTAN® tannin spotter (unique differentiator — no cold-water pre-rinse needed)",
+      "140+ years of continuous operation",
+      "Strong training program (Street's Academy, multilingual, on-site)",
+      "Multi-solvent system support (perc, hydrocarbon, GreenEarth)",
+      "Acquired Adco/Laidlaw to consolidate market position"
+    ],
+    "limitations": [
+      "No dedicated rust remover or enzyme product in current public product line",
+      "Privately held — limited public information about company financials and strategy",
+      "Products available only through distributors — no direct purchase option"
+    ],
+    "whoUsesThem": "The broadest customer base of any dry cleaning chemical supplier in North America. Used by single-location family dry cleaners, multi-unit operations, commercial laundries, and hospitality businesses. Strong adoption among Korean-American operators (Korean-language training available). GreenEarth-compatible line gives access to eco-focused shops.",
+    "rivalCompanies": ["Kreussler Inc.", "A.L. Wilson Chemical Co.", "Seitz Inc.", "Pariser Industries"]
+  },
+  "education": {
+    "trainingResources": "Street's Academy provides free online training with expert-led instruction. 'On the Spot™' video series covers stain removal techniques with step-by-step tutorials. Available anytime online.",
+    "technicalSupport": "On-site seminars with hands-on training at customer facilities. SpotStation equipment shipped to customer sites for training sessions. Instruction in English, Spanish, and Korean. Customized training for franchises, new staff onboarding, and process optimization.",
+    "publications": "Online guides and video library through Street's Academy. Product-specific usage guides included with products."
+  },
+  "gonrIntegration": {
+    "relevance": "R.R. Street is the most widely available professional chemical line in North America. When GONR protocols call for professional-grade spotting agents, Street's products are the most accessible option for the majority of US-based professional cleaners. Their heat-stable StreeTAN® and versatile 2-1 FORMULA® approach align directly with GONR's protocol methodology.",
+    "agentCrossReference": "When a GONR protocol calls for: protein spotter → StreePRO®; tannin spotter → StreeTAN® (standard) or General Formula No. 209® (advanced); POG/dry-side spotter → PICRIN®; mystery stain → 2-1 FORMULA® (PICRIN® + STREETEX®); delicate fabric spotter → SOFSPOT®; pre-treatment → MultiSPOT® (perc) or GreenSPOT® (GreenEarth); wet cleaning detergent → H2PRO®.",
+    "whenToRecommend": "Default recommendation for professional cleaners in the US who need a comprehensive, readily available spotting system. Especially strong for: shops running hydrocarbon (DF-2000™) systems, GreenEarth affiliates needing compatible chemistry, operations that need multilingual training support, and any shop looking for the widest product selection from a single supplier."
+  },
+  "links": {
+    "website": "https://www.rrstreet.com",
+    "productCatalog": "https://4streets.com/products/",
+    "technicalDocs": "https://4streets.com/streets-academy/",
+    "distributorLocator": "Contact (630) 416-4244 or info@4streets.com",
+    "training": "https://4streets.com/training/"
+  },
+  "lastResearched": "2026-03-25"
+}

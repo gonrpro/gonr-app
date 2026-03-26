@@ -1,0 +1,327 @@
+{
+  "id": "al-wilson",
+  "name": "A.L. Wilson Chemical Co.",
+  "slug": "al-wilson",
+  "website": "https://www.alwilson.com",
+  "headquarters": "Kearny, NJ, USA",
+  "founded": "1928",
+  "employeeRange": "7-13",
+  "overview": {
+    "summary": "A.L. Wilson is the defining name in professional spotting chemistry. Founded in 1928 by master spotter Aura L. Wilson, the company revolutionized dry cleaning by standardizing spotting formulas into consistent, packaged products with clear instructions — replacing the secret potions of individual craftspeople. Their branded product names (QwikGo®, BonGo®, TarGo®) have become so embedded in industry practice that they function as the generic standard. A small company (roughly a dozen employees) with outsized influence on how professional stain removal is practiced in the United States.",
+    "historyAndReputation": "Aura L. Wilson was a master spotter who decided to bottle his proven formulas for commercial sale in 1928. John Schwarzmann purchased Wilson's interest in 1933 and established the principle that still guides the company: 'Wilson products must be not only the most effective at removing stains but also the safest for delicate fabrics and colors.' The Schwarzmann family has led the company through four generations. A.L. Wilson's product names are the reference vocabulary of professional spotting in the US.",
+    "marketPosition": "The gold standard in professional spotting agents. Small company, dominant brand recognition. Mid-market pricing. Sold exclusively through authorized distributors — no direct-to-consumer sales. Virtually every professional dry cleaner in the US has used A.L. Wilson products. Their Stain Removal Hotline (800-526-1188) and Stain Removal Wizard are unique industry resources."
+  },
+  "specialties": [
+    "Professional spotting agents (protein, tannin, POG, rust, ink, specialty)",
+    "Spray spotters for pre-treatment",
+    "Reducing and oxidizing bleaches for dye/residual stain work",
+    "Specialty removers (lipstick, photo developer, x-ray chemicals)",
+    "Stain identification and removal education"
+  ],
+  "productLines": [
+    {
+      "category": "Protein Spotters",
+      "categoryDescription": "Agents that break down protein-based stains — blood, milk, egg, food, perspiration, urine. Protein stains coagulate with heat, so they must be treated with cool/lukewarm chemistry first.",
+      "products": [
+        {
+          "name": "QwikGo®",
+          "type": "protein spotter",
+          "description": "Fast-acting protein stain remover for food, blood, and milk stains. Formulated to be exceptionally safe for delicate colors and fabrics — the safety-first approach that defines A.L. Wilson's philosophy. The most widely recognized protein spotter name in US dry cleaning.",
+          "usedFor": ["blood", "milk", "food stains", "perspiration", "baby formula", "urine"],
+          "fibers": ["all fabrics including delicates — designed for color and fabric safety"],
+          "notFor": ["oil-based stains — use TarGo® instead"],
+          "proTips": "QwikGo® is the default protein spotter on most US spotting boards. Its gentle formulation means it's safe to use as a first-try agent on unknown protein stains without risking fabric damage. If QwikGo® doesn't fully resolve, escalate to SoGo '1'® (enzyme version).",
+          "alternativeTo": "R.R. Street StreePRO®, Kreussler PRENETT B",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only — call 800-526-1188"
+        },
+        {
+          "name": "SoGo \"1\"®",
+          "type": "enzyme-activated protein spotter / digestant",
+          "description": "Enzyme-activated synthetic detergent digestant for protein stains. More aggressive than QwikGo® — the enzymes physically digest protein molecules embedded in fabric fibers. Can be used on the spotting board or as a soak. Withstands water temperatures up to 145°F, which allows warm-water enzyme activation for stubborn stains.",
+          "usedFor": ["embedded protein stains", "old/set blood", "food proteins", "grass", "extended soak applications"],
+          "fibers": ["cotton", "polyester", "synthetics", "blends"],
+          "notFor": ["silk (protease enzymes digest silk protein)", "wool (protease damages keratin)"],
+          "proTips": "SoGo '1'® is the escalation agent when QwikGo® doesn't fully resolve. The enzyme action needs time — use as a soak for 15-30 minutes on stubborn stains. NEVER use on silk or wool. The 145°F temperature tolerance means you can use warm water to accelerate enzyme activity.",
+          "alternativeTo": "Kreussler LANADOL AVANT (also enzyme-based)",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        }
+      ]
+    },
+    {
+      "category": "Tannin Spotters",
+      "categoryDescription": "Agents for beverage and plant-based stains. Tannins are polyphenolic compounds found in coffee, tea, wine, beer, fruit juices, and grass. They bond to fibers through hydrogen bonding and often require acidic chemistry to release.",
+      "products": [
+        {
+          "name": "BonGo®",
+          "type": "tannin spotter",
+          "description": "Removes virtually all beverage stains except milk (milk is a protein stain — use QwikGo® for that). Safe for delicate colors and fabrics. Contains water, biodegradable surfactants, glycerin, and gluconic acid. The gluconic acid provides the mild acidity needed to break tannin bonds without being harsh enough to damage dyes.",
+          "usedFor": ["coffee", "tea", "wine", "beer", "soft drinks", "fruit juice", "grass"],
+          "fibers": ["all fabrics including delicates — mild acid formulation"],
+          "notFor": ["milk stains (protein — use QwikGo®)", "oil/grease stains (use TarGo®)"],
+          "proTips": "BonGo® is mild enough for routine use on delicates. The gluconic acid base is gentler than the stronger acid formulations used by some competitors. For stubborn tannin stains that BonGo® won't fully resolve, consider an alternating BonGo®/QwikGo® approach — the pH shift can break complex stains.",
+          "alternativeTo": "R.R. Street StreeTAN®, Kreussler PRENETT A",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        }
+      ]
+    },
+    {
+      "category": "POG / Oil-Based Spotters",
+      "categoryDescription": "Paint-Oil-Grease removers for non-polar stains: cooking oils, motor oil, tar, adhesives, cosmetics, shoe polish, wax. These stains don't dissolve in water — they require solvent-based chemistry.",
+      "products": [
+        {
+          "name": "TarGo®",
+          "type": "water-based POG",
+          "description": "Water-based spotter for oil-based stains. Biodegradable, non-combustible, chlorinated-solvent-free, California Prop 65 compliant. Can be used in laundry, wet cleaning, or on the spotting board. A.L. Wilson reformulated TarGo® to meet modern environmental and worker safety standards while maintaining effectiveness.",
+          "usedFor": ["cooking oil", "motor oil", "tar", "grease", "cosmetics", "shoe polish"],
+          "fibers": ["most fabrics"],
+          "notFor": [],
+          "proTips": "TarGo® is the modern, eco-friendly POG. Its water-based formulation means no flash point concerns and no VOC issues. Less aggressive than traditional solvent-based POGs, so stubborn oil stains may need longer dwell or repeated application.",
+          "alternativeTo": "R.R. Street PICRIN®, traditional VDS-based POGs",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        },
+        {
+          "name": "Laundry TarGo®",
+          "type": "laundry-specific POG",
+          "description": "TarGo® variant formulated specifically for laundry applications. Contains biodegradable surfactants, glycol ethers, water, and orange terpenes. The orange terpenes (d-limonene) provide natural solvent action against oil-based soils.",
+          "usedFor": ["oily stains in laundry", "pre-treating work uniforms", "food service laundry"],
+          "fibers": ["standard laundry fabrics"],
+          "notFor": ["dry cleaning applications — use TarGo® or TarGo Dry® instead"],
+          "proTips": "The orange terpene component gives Laundry TarGo® a pleasant citrus scent and genuine solvent power from a natural source. Good for restaurant/hospitality laundry where grease is constant.",
+          "alternativeTo": "Standard laundry pre-spotters",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        },
+        {
+          "name": "TarGo Dry®",
+          "type": "traditional POG (reformulated)",
+          "description": "Traditional oily stain remover recently reformulated to be eco/worker-friendly: chlorinated-solvent-free, California compliant, biodegradable, non-combustible. Designed for dry-side spotting board use.",
+          "usedFor": ["heavy oil stains on spotting board", "dry cleaning pre/post-spotting"],
+          "fibers": ["most fabrics"],
+          "notFor": [],
+          "proTips": "TarGo Dry® is the dry-side version for the spotting board. More concentrated than water-based TarGo® for stubborn oily soils that need pure solvent action.",
+          "alternativeTo": "R.R. Street PICRIN®, traditional VDS",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        }
+      ]
+    },
+    {
+      "category": "Ink Removers",
+      "categoryDescription": "Specialized agents for ink stains — ballpoint, permanent marker, printer ink, stamp ink. Ink chemistry varies widely, requiring targeted formulations.",
+      "products": [
+        {
+          "name": "InkGo®",
+          "type": "ink remover",
+          "description": "Removes all types of ink from all fabric types, including acetate. Also removes autoclave tape adhesive and general adhesives. Odor-free, biodegradable, no chlorinated solvents. Prop 65 and 2013 VOC regulation compliant. Safe on acetate is a critical feature — most solvents destroy acetate linings.",
+          "usedFor": ["ballpoint ink", "permanent marker", "printer ink", "stamp ink", "autoclave tape", "adhesive residue"],
+          "fibers": ["all fabrics including acetate"],
+          "notFor": [],
+          "proTips": "InkGo®'s acetate safety is a major differentiator. Most ink solvents contain acetone or similar ketones that dissolve acetate on contact. InkGo® lets you treat ink stains on garments with acetate linings without destroying them. Always the first choice for ink on or near acetate.",
+          "alternativeTo": "Kreussler DEPRIT PURPLE",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        }
+      ]
+    },
+    {
+      "category": "Rust Removers",
+      "categoryDescription": "Agents for iron oxide (rust) stains from metal contact, iron-rich water, or oxidized blood. Typically oxalic acid or hydrofluoric acid based.",
+      "products": [
+        {
+          "name": "RustGo®",
+          "type": "rust remover",
+          "description": "Fast-acting rust stain remover. Dissolves iron oxide deposits from fabric. Standard professional rust removal agent.",
+          "usedFor": ["rust stains", "iron water stains", "metal contact marks"],
+          "fibers": ["most fabrics — test first due to acid chemistry"],
+          "notFor": ["prolonged contact on delicates", "silk (acid-sensitive)"],
+          "proTips": "Rust removers are inherently aggressive. Apply to the stain only, flush quickly, and neutralize. Don't let it spread to surrounding fabric. RustGo® is fast-acting, which means shorter contact time and less risk of fiber damage.",
+          "alternativeTo": "Kreussler DEPRIT YELLOW, oxalic acid solutions",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        }
+      ]
+    },
+    {
+      "category": "Bleaches & Reducing Agents",
+      "categoryDescription": "Chemical agents for dye removal, residual stain reduction, and color correction. Oxidizing bleaches add oxygen to break down color; reducing agents remove oxygen. These are advanced spotting tools — improper use causes permanent damage.",
+      "products": [
+        {
+          "name": "YellowGo®",
+          "type": "reducing bleach (titanium sulfate-based)",
+          "description": "Titanium sulfate-based reducing bleach for recovering dye-stained fabrics. Contains 15-20% titanyl sulfate, 20-30% sulfuric acid, 1-10% ammonium bifluoride, and citric acid. This is a powerful, hazardous chemical — causes severe skin burns and eye damage. For experienced spotters only.",
+          "usedFor": ["dye transfer recovery", "color stain removal", "residual stain reduction"],
+          "fibers": ["test first — aggressive chemistry"],
+          "notFor": ["inexperienced users", "use without PPE"],
+          "proTips": "YellowGo® is the nuclear option for dye stains. The sulfuric acid and titanyl sulfate combination is extremely effective but extremely dangerous. Full PPE required: chemical-resistant gloves, eye protection, ventilation. Never use on silk or wool. Neutralize with ColorGo® or ExGo® after treatment.",
+          "alternativeTo": "Sodium hydrosulfite (milder reducing agent)",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        },
+        {
+          "name": "ColorGo®",
+          "type": "powdered reducing bleach",
+          "description": "Powdered reducing bleach for removing unwanted dye or residual stains. Can be used on the spotting board or in a bath. Also used to neutralize PermaGo® after oxidizing bleach treatment.",
+          "usedFor": ["dye removal", "residual stain reduction", "PermaGo® neutralization"],
+          "fibers": ["test first — bleach chemistry"],
+          "notFor": ["colored garments without testing"],
+          "proTips": "ColorGo® works by chemical reduction — it strips electrons from dye molecules, breaking their chromophore (color-producing) structure. Use after PermaGo® to neutralize and prevent continued oxidation that could weaken fibers.",
+          "alternativeTo": "YellowGo® (stronger alternative)",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        },
+        {
+          "name": "PermaGo®",
+          "type": "oxidizing bleach",
+          "description": "Removes residual ink, protein, and tannin stains through oxidation. White fabric only — will strip color from dyed fabrics. Must be neutralized after use with ColorGo® or ExGo® to prevent continued oxidation from weakening fibers.",
+          "usedFor": ["residual stains on white fabrics", "ink residue", "protein residue", "tannin residue"],
+          "fibers": ["white fabrics only"],
+          "notFor": ["ANY colored or dyed fabric", "silk", "wool"],
+          "proTips": "PermaGo® is the last resort for stains on white fabric that nothing else will touch. Apply, treat, then ALWAYS neutralize with ColorGo® or ExGo®. Failing to neutralize leaves active oxidizer in the fabric that continues to weaken fibers over time.",
+          "alternativeTo": "Hydrogen peroxide (milder oxidizer)",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        }
+      ]
+    },
+    {
+      "category": "Specialty Removers",
+      "categoryDescription": "Targeted formulations for specific stain types that don't fit neatly into protein/tannin/POG categories.",
+      "products": [
+        {
+          "name": "ReddyGo®",
+          "type": "lipstick remover",
+          "description": "Dedicated lipstick stain remover. Lipstick combines wax, oil, and dye — making it a complex multi-component stain that requires targeted chemistry rather than a single-agent approach.",
+          "usedFor": ["lipstick", "lip gloss", "similar wax/oil/dye combinations"],
+          "fibers": ["most fabrics"],
+          "notFor": [],
+          "proTips": "Lipstick is one of the most common and most mishandled stains. Most spotters try a POG (for the oil) or a tannin spotter (for the dye) — neither works alone because lipstick is both. ReddyGo® addresses all three components simultaneously.",
+          "alternativeTo": "Multi-step POG + tannin approach",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        },
+        {
+          "name": "ExGo®",
+          "type": "photo developer / silver nitrate remover",
+          "description": "Removes photo developer, x-ray developer, and silver nitrate residues from fabric. Also removes non-ferrous tarnish from fabric surfaces and metallic trim (buttons, zippers). Doubles as a PermaGo® neutralizer.",
+          "usedFor": ["photo developer stains", "x-ray developer stains", "silver nitrate", "non-ferrous tarnish", "PermaGo® neutralization"],
+          "fibers": ["most fabrics"],
+          "notFor": [],
+          "proTips": "ExGo® is a niche product but invaluable when you need it. Photo/x-ray developer stains are specific to healthcare and photography settings. The tarnish removal function is useful for uniforms with metal buttons or decorative metalwork.",
+          "alternativeTo": "No direct equivalent from other manufacturers",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        }
+      ]
+    },
+    {
+      "category": "Spray Spotters",
+      "categoryDescription": "Pre-treatment sprays applied to garments before loading into the cleaning machine. Save labor by handling routine soil without individual board spotting.",
+      "products": [
+        {
+          "name": "SpotsGo®",
+          "type": "spray spotter",
+          "description": "Penetrating spray spotter for ground-in soil, perspiration, collar/cuff stains, and food/beverage stains. Spray on problem areas before machine loading.",
+          "usedFor": ["collar soil", "cuff grime", "perspiration", "ground-in soil", "food/beverage pre-treatment"],
+          "fibers": ["standard fabrics"],
+          "notFor": [],
+          "proTips": "SpotsGo® is A.L. Wilson's answer to the pre-treatment/labor-saving category. Spray collars and cuffs before loading — handles routine soil that would otherwise require board time.",
+          "alternativeTo": "R.R. Street MultiSPOT®",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        },
+        {
+          "name": "EasyGo®",
+          "type": "spray spotter for hydrocarbon/perc",
+          "description": "Spray spotter formulated for use with hydrocarbon or perc systems. Penetrates to release ground-in soil, collar/cuff grime, and perspiration stains.",
+          "usedFor": ["pre-treatment in hydrocarbon systems", "pre-treatment in perc systems"],
+          "fibers": ["standard fabrics processed in HC or perc"],
+          "notFor": ["wet cleaning systems"],
+          "proTips": "EasyGo® is solvent-system-specific — it's designed to rinse out in HC or perc, not water. Use SpotsGo® for wet cleaning applications.",
+          "alternativeTo": "R.R. Street MultiSPOT®, GreenSPOT®",
+          "priceTier": "mid",
+          "availability": "through authorized distributors only"
+        }
+      ]
+    }
+  ],
+  "agentMapping": {
+    "NSD": "SoGo '1'® (enzyme-activated synthetic detergent — also functions as NSD), RiteGo® (micro-emulsion spray)",
+    "POG": "TarGo® (water-based), TarGo Dry® (dry-side), Laundry TarGo® (laundry), EasyGo® (HC/perc spray)",
+    "protein": "QwikGo® (gentle, safe for delicates), SoGo '1'® (enzyme-activated, more aggressive)",
+    "tannin": "BonGo® (gluconic acid-based, safe for delicates)",
+    "leveling": "No dedicated leveling agent in product line",
+    "rustRemover": "RustGo®",
+    "enzymatic": "SoGo '1'® (enzyme-activated digestant — NOT for silk/wool)",
+    "solvent": "A.L. Wilson does not manufacture solvents — they are a spotting agent specialist"
+  },
+  "fiberExpertise": {
+    "silk": "QwikGo® and BonGo® are both formulated safe for delicate colors and fabrics, making them default choices for silk. SoGo '1'® is NOT safe for silk (enzyme risk). InkGo® is safe on acetate, which is critical for garments with acetate linings.",
+    "wool": "QwikGo® and BonGo® safe for wool. SoGo '1'® NOT safe for wool (protease enzymes). RustGo® should be used with caution — quick application and flush.",
+    "leather": "No dedicated leather-specific products. Refer to Kreussler (LANADOL LICKER) or Royaltone for leather-specific chemistry.",
+    "synthetics": "Full product line compatible. No restrictions on synthetics.",
+    "delicates": "A.L. Wilson's entire philosophy is built around safety for delicate fabrics and colors. QwikGo® and BonGo® are specifically formulated to be exceptionally safe on delicates. The Schwarzmann family principle — 'most effective AND safest' — guides every formulation."
+  },
+  "protocols": [
+    {
+      "name": "A.L. Wilson Standard Spotting Sequence",
+      "description": "The classic approach taught to thousands of professional spotters: 1) Identify the stain type (protein, tannin, oil, or combination). 2) Apply the matching agent: QwikGo® for protein, BonGo® for tannin, TarGo® for oil. 3) Work with spatula or bone scraper, flush with steam. 4) If residual stain remains, escalate: SoGo '1'® for persistent protein, YellowGo®/ColorGo® for dye residue, InkGo® for ink. 5) Always test on hidden area for delicate fabrics.",
+      "products": ["QwikGo®", "BonGo®", "TarGo®", "SoGo '1'®", "InkGo®"],
+      "usedFor": "General stain identification and removal — the foundation of professional spotting"
+    },
+    {
+      "name": "Stain Removal Wizard Protocol",
+      "description": "Use A.L. Wilson's online Stain Removal Wizard (alwilson.com/wizard/) to identify the correct product for a specific stain type. Input the stain, the fabric, and the cleaning method — the wizard recommends the appropriate A.L. Wilson product and application technique.",
+      "products": ["All A.L. Wilson products"],
+      "usedFor": "Stain identification for less experienced spotters or unusual stain types"
+    }
+  ],
+  "distributionNetwork": {
+    "regions": ["USA", "Canada", "international"],
+    "distributionMethod": "exclusively through authorized distributors",
+    "howToBuy": "Call the A.L. Wilson Stain Removal Hotline at 800-526-1188 for the nearest authorized distributor. No direct sales. No online retail. All products sold B2B through the distribution network established in 1933.",
+    "majorDistributors": ["FabriClean Supply", "Elevation Supplies", "Garland Supply", "Cleaners Outlet", "Weinberg Supply", "Midwest Trading"]
+  },
+  "industryReputation": {
+    "strengthsKnownFor": [
+      "Gold standard in professional spotting agents — product names are industry vocabulary",
+      "95+ years of consistent quality from a single family-owned company",
+      "Safety-first formulation philosophy — 'most effective AND safest for delicate fabrics and colors'",
+      "Broadest range of specialized spotters (protein, tannin, POG, rust, ink, lipstick, bleaches, photo developer)",
+      "Stain Removal Hotline (800-526-1188) — free expert advice",
+      "Stain Removal Wizard — online tool for product selection",
+      "Moving industry toward chlorinated-solvent-free, VOC-compliant formulations",
+      "InkGo® acetate safety — unique in the market"
+    ],
+    "limitations": [
+      "Small company (~11 employees) — limited capacity for training, on-site support, or rapid product development",
+      "No solvents, no detergents, no wet cleaning system — spotting agents only",
+      "No leveling agent in product line",
+      "Distributor-only model means less visibility and harder access for new cleaners",
+      "Some products (YellowGo®) contain hazardous chemicals requiring careful handling and PPE"
+    ],
+    "whoUsesThem": "Nearly every professional dry cleaner in the US. A.L. Wilson products are the baseline spotting board setup — QwikGo®, BonGo®, TarGo® are standard equipment. Used by single-location shops through large multi-unit operations. The Stain Removal Hotline makes them accessible to spotters at every experience level.",
+    "rivalCompanies": ["R.R. Street & Co.", "Kreussler Inc.", "Pariser Industries"]
+  },
+  "education": {
+    "trainingResources": "Stain Removal Wizard (alwilson.com/wizard/) — interactive online tool that matches stains to products. Video library with instructional content in English, Spanish, and Korean.",
+    "technicalSupport": "Stain Removal Hotline: 800-526-1188 — call for expert advice on any stain removal challenge. Product-specific usage guides. Safety Data Sheets for all products available on alwilson.com.",
+    "publications": "Product overview PDFs for each product. Safety Data Sheets. Video tutorials for specific products (e.g., YellowGo® application technique)."
+  },
+  "gonrIntegration": {
+    "relevance": "A.L. Wilson products are the most widely used spotting agents in US professional dry cleaning. When GONR protocols reference generic agent types (protein spotter, tannin spotter, POG), A.L. Wilson products are the most commonly available versions on professional spotting boards. Their product names have become industry shorthand for the agent categories themselves.",
+    "agentCrossReference": "When a GONR protocol calls for: protein spotter → QwikGo® (gentle) or SoGo '1'® (enzyme, NOT for silk/wool); tannin spotter → BonGo®; POG/dry-side spotter → TarGo® (water-based) or TarGo Dry® (dry-side); rust remover → RustGo®; ink remover → InkGo® (acetate-safe); reducing bleach → YellowGo® (PPE required) or ColorGo® (powder); oxidizing bleach → PermaGo® (white only, must neutralize); lipstick → ReddyGo®; spray pre-treatment → SpotsGo® or EasyGo®.",
+    "whenToRecommend": "Default recommendation for professional spotting agents. A.L. Wilson should be the first brand mentioned when a GONR protocol calls for any spotting agent category. Especially strong for: shops that need a complete spotting board setup from a single trusted supplier, operations that value safety-first formulations, cleaners who need multilingual support, and any situation where acetate-safe ink removal is required (InkGo®)."
+  },
+  "links": {
+    "website": "https://www.alwilson.com",
+    "productCatalog": "https://www.alwilson.com/products/",
+    "technicalDocs": "https://www.alwilson.com/safety-data-sheets/",
+    "distributorLocator": "Call 800-526-1188",
+    "training": "https://www.alwilson.com/wizard/"
+  },
+  "lastResearched": "2026-03-25"
+}

@@ -1,0 +1,360 @@
+{
+  "meta": {
+    "title": "GONR Fiber Expertise Index",
+    "description": "Organized by fiber type — which companies, products, and approaches to use for each fiber. Powers the 'browse by fiber' entry point in GONR's Chemical Reference.",
+    "lastUpdated": "2026-03-25",
+    "version": 1
+  },
+  "silk": {
+    "description": "Protein fiber (fibroin) produced by silkworms. Extremely pH-sensitive, heat-sensitive, and moisture-sensitive. The most demanding fiber in professional textile care — errors are usually irreversible. Silk's sheen comes from its triangular cross-section refracting light; damage dulls this permanently.",
+    "keyConsiderations": [
+      "pH must stay neutral (6.5-7.5) throughout treatment — alkaline chemistry breaks peptide bonds, causing permanent fiber degradation and loss of sheen",
+      "NEVER use protease enzymes — enzymes digest silk protein (fibroin) exactly as they digest stain protein",
+      "NEVER use chlorine bleach — dissolves protein fibers, causes yellowing and disintegration",
+      "Temperature must stay below 30°C / 86°F — heat sets stains and damages fiber structure",
+      "No mechanical agitation — silk fibers are fragile and break under friction",
+      "Water causes rings and marks — leveling agent required for any wet-side work",
+      "Always test dyes first — silk dyes bleed easily, especially with water",
+      "Perspiration stains become permanent if set by heat"
+    ],
+    "recommendedCompanies": [
+      {
+        "company": "Kreussler",
+        "why": "SolvonK4/SYSTEMK4 is the industry gold standard for silk dry cleaning. Amphiphilic solvent cleans both oil and water soils without perc's harshness. PRENETT C (neutral pH) safe for silk pre-spotting. LANADOL AKTIV for silk wet cleaning.",
+        "products": ["SolvonK4", "PRENETT C (Green)", "LANADOL AKTIV", "CLIP COMBI", "COLOFIX"]
+      },
+      {
+        "company": "Royaltone",
+        "why": "Silk Magic is purpose-built for the most common silk problem — water rings. ULTRATONE detergent eliminates swales and blotches on silk. Both are specifically designed for water-sensitive fabrics.",
+        "products": ["Silk Magic", "ULTRATONE"]
+      },
+      {
+        "company": "A.L. Wilson",
+        "why": "QwikGo® and BonGo® are both formulated safe for delicate colors and fabrics. The safety-first Wilson philosophy makes them default choices for silk spotting. NEVER use SoGo '1'® on silk (enzyme risk).",
+        "products": ["QwikGo®", "BonGo®", "InkGo® (acetate-safe — critical for silk garments with acetate linings)"]
+      },
+      {
+        "company": "R.R. Street",
+        "why": "SOFSPOT® is explicitly formulated safe for silk. StreeTAN®'s heat stability means it won't cause damage during steam flushing — safer than most tannin spotters on silk.",
+        "products": ["SOFSPOT®", "StreeTAN®"]
+      }
+    ],
+    "agentsToUse": ["NSD (neutral pH only)", "leveling agent", "neutral spotters", "mild tannin spotters (BonGo®, StreeTAN®)", "amyl acetate (brief contact)"],
+    "agentsToAvoid": ["protease enzymes (SoGo '1'®, LANADOL AVANT, RSR, RightStuff)", "alkaline detergents (pH >8)", "chlorine bleach", "acetone", "strong acids (pH <3)", "ammonia-based spotters (Adco Wetspot)", "PRENETT B (pH 9.5-10.5 — too alkaline)", "hydrogen peroxide (>3% concentration)"]
+  },
+  "wool": {
+    "description": "Protein fiber (keratin) from sheep fleece. More tolerant than silk but still pH-sensitive and highly susceptible to felting — the irreversible process where heat, agitation, and alkalinity cause the fiber's scale structure to lock together. Wool's natural lanolin provides some stain resistance.",
+    "keyConsiderations": [
+      "pH tolerance: 5.0-8.0 — mild acid OK, alkaline is dangerous",
+      "Temperature must stay below 30°C / 86°F — heat + agitation causes irreversible felting",
+      "NEVER use protease enzymes — digest keratin fiber",
+      "NEVER use chlorine bleach — dissolves wool protein, turns yellow then disintegrates",
+      "Avoid strong alkalies (NaOH, ammonia >2%) — swell and dissolve keratin",
+      "Felting is IRREVERSIBLE — caused by scales locking under heat/agitation/alkalinity",
+      "Wool has natural lanolin — gentle detergents that preserve lanolin give better results",
+      "Lay flat or controlled drying — hanging stretches wet wool"
+    ],
+    "recommendedCompanies": [
+      {
+        "company": "Kreussler",
+        "why": "LANADOL AKTIV is the gold standard for wool wet cleaning — developed specifically with Miele for protein fiber safety. Mild surfactants preserve lanolin. LANADOL APRET for finishing.",
+        "products": ["LANADOL AKTIV", "LANADOL APRET", "SolvonK4", "PRENETT C (Green)"]
+      },
+      {
+        "company": "A.L. Wilson",
+        "why": "QwikGo® and BonGo® safe for wool. SoGo '1'® NOT safe (enzyme risk). The safety-first formulation philosophy makes these reliable choices.",
+        "products": ["QwikGo®", "BonGo®", "TarGo®"]
+      },
+      {
+        "company": "R.R. Street",
+        "why": "SOFSPOT® explicitly safe for wool. StreeTAN® heat stability is an advantage on wool. H2PRO® wet cleaning system handles wool with proper settings.",
+        "products": ["SOFSPOT®", "StreeTAN®", "H2PRO® Detergent"]
+      }
+    ],
+    "agentsToUse": ["NSD (neutral pH)", "mild acetic acid", "hydrogen peroxide (dilute, cool)", "amyl acetate", "leveling agents", "wool-safe wet cleaning detergent (LANADOL AKTIV)"],
+    "agentsToAvoid": ["protease enzymes", "chlorine bleach", "strong alkalies (ammonia >2%, NaOH)", "hot water + agitation", "acetone", "Adco Wetspot (ammoniated)", "PRENETT B (alkaline)"]
+  },
+  "cashmere": {
+    "description": "Protein fiber (fine keratin) from cashmere goats. Thinner and more delicate than standard wool — treat as 'super-wool' with extra care. Extremely soft, lightweight, and luxurious. Pilling is mechanical (friction), not chemical.",
+    "keyConsiderations": [
+      "pH tolerance: 5.0-7.5 — even narrower than wool",
+      "Temperature must stay below 30°C / 86°F",
+      "Even more sensitive to everything that harms wool — thinner fibers mean less tolerance",
+      "NEVER use protease enzymes — same risks as wool/silk",
+      "NEVER use chlorine bleach or strong alkali",
+      "Pilling is caused by friction, not chemistry — cannot be chemically prevented",
+      "Lay flat to dry ALWAYS — hanging stretches cashmere irreversibly",
+      "Avoid fabric softener — coats fibers and reduces natural softness over time"
+    ],
+    "recommendedCompanies": [
+      {
+        "company": "Kreussler",
+        "why": "LANADOL AKTIV is the safest wet cleaning option for cashmere. SolvonK4 for dry cleaning. The SYSTEMK4 system was designed with exactly this type of garment in mind.",
+        "products": ["LANADOL AKTIV", "LANADOL APRET", "SolvonK4", "PRENETT C (Green)"]
+      },
+      {
+        "company": "A.L. Wilson",
+        "why": "QwikGo® and BonGo® — same safety profile as with silk and wool. Gentle, effective, proven.",
+        "products": ["QwikGo®", "BonGo®"]
+      },
+      {
+        "company": "R.R. Street",
+        "why": "SOFSPOT® safe for delicates. StreeTAN® heat stability provides extra safety margin.",
+        "products": ["SOFSPOT®", "StreeTAN®"]
+      }
+    ],
+    "agentsToUse": ["NSD (neutral pH)", "baby shampoo (emergency home treatment)", "mild acetic acid rinse", "SolvonK4", "LANADOL AKTIV"],
+    "agentsToAvoid": ["protease enzymes", "chlorine bleach", "strong alkali", "hot water", "acetone", "fabric softener", "any ammonia-based product"]
+  },
+  "leather": {
+    "description": "Animal hide that has been tanned (chemically treated) to prevent decomposition. Leather is not a textile fiber — it's a sheet material with different chemistry than woven or knit fabrics. Cleaning leather requires replacing natural oils that any cleaning process strips away.",
+    "keyConsiderations": [
+      "NEVER use acetone — strips finish and dye from leather permanently",
+      "Water stiffens leather unless oils are replaced during/after cleaning",
+      "Leather dyes are surface-applied and can be stripped by aggressive solvents",
+      "After cleaning, leather MUST be re-conditioned to prevent stiffness",
+      "Color loss and stiffening are the two most common leather cleaning complaints",
+      "Professional leather cleaning is a specialized skill — training recommended",
+      "Suede and nubuck require different handling than smooth leather"
+    ],
+    "recommendedCompanies": [
+      {
+        "company": "Royaltone",
+        "why": "The only company with 40+ years dedicated leather/suede/fur expertise. Leather Wet Cleaning Detergent prevents stiffening. Ink Magic works on leather (unique). Training academy teaches the complete leather cleaning process.",
+        "products": ["Leather Wet Cleaning Detergent", "Ink Magic", "Blood & Protein Remover", "UGG Boot Cleaning Kit"]
+      },
+      {
+        "company": "Kreussler",
+        "why": "LANADOL LICKER restores suppleness and color depth after cleaning. Kreussler has specific leather protocols for both SYSTEMK4 and Lanadol systems.",
+        "products": ["LANADOL LICKER", "LANADOL AKTIV (for leather wet cleaning)", "SolvonK4"]
+      },
+      {
+        "company": "Büfa Cleaning",
+        "why": "Ozerna Basic (wet cleaning detergent) is leather-compatible. Lival Licker Conc provides concentrated leather conditioning.",
+        "products": ["Ozerna Basic", "Lival Licker Conc"]
+      }
+    ],
+    "agentsToUse": ["leather-specific detergents (Royaltone)", "leather conditioners (LANADOL LICKER, Lival Licker Conc)", "SolvonK4 (gentle solvent)", "neutral pH agents only"],
+    "agentsToAvoid": ["acetone", "chlorine bleach", "strong solvents", "standard laundry detergent", "any alkaline product that could strip dye", "enzymes"]
+  },
+  "suede": {
+    "description": "The inner split of a leather hide with a napped (fuzzy) finish created by sanding or buffing. More delicate than smooth leather — the napped surface traps soil and stains more readily and is harder to clean without disturbing the nap direction.",
+    "keyConsiderations": [
+      "Nap direction matters — brushing against the nap creates permanent marks",
+      "Water darkens suede unevenly and can cause permanent staining if not handled correctly",
+      "Oil stains are particularly difficult because they absorb into the napped surface",
+      "Color is more delicate than smooth leather — surface area of nap exposes more dye",
+      "Professional suede cleaning requires specialized training and products",
+      "Suede should be cleaned whole-garment, not spot-treated (to avoid uneven appearance)"
+    ],
+    "recommendedCompanies": [
+      {
+        "company": "Royaltone",
+        "why": "Royaltone's primary expertise. Leather Wet Cleaning Detergent handles suede. Training academy specifically covers suede cleaning. Frank Lucenta's 40+ years of suede expertise.",
+        "products": ["Leather Wet Cleaning Detergent", "Ink Magic", "UGG Boot Cleaning Kit"]
+      },
+      {
+        "company": "Büfa Cleaning",
+        "why": "Lival Licker Conc provides leather/suede conditioning after cleaning.",
+        "products": ["Lival Licker Conc", "Ozerna Basic"]
+      },
+      {
+        "company": "Kreussler",
+        "why": "LANADOL LICKER for post-cleaning conditioning. SolvonK4 for gentle solvent cleaning.",
+        "products": ["LANADOL LICKER", "SolvonK4"]
+      }
+    ],
+    "agentsToUse": ["suede-specific detergents", "leather conditioners", "gentle solvents", "specialized suede brushes (post-cleaning nap restoration)"],
+    "agentsToAvoid": ["water (unless using proper suede cleaning technique)", "acetone", "standard dry cleaning solvents without suede experience", "any spray spotter that might create uneven marks"]
+  },
+  "acetate": {
+    "description": "Semi-synthetic fiber (cellulose acetate). The most critical fiber in textile care safety — acetone dissolves acetate ON CONTACT, and acetate is the most common garment lining material. More garments have acetate in them than most operators realize.",
+    "keyConsiderations": [
+      "ACETONE DISSOLVES ACETATE ON CONTACT — the single most important safety warning in all of textile care",
+      "Nail polish remover contains acetone — will create holes in acetate",
+      "ALWAYS check garment linings before using any solvent — acetate linings are everywhere",
+      "pH tolerance: 7.0-8.5 (stable in alkaline, UNSTABLE in acid — opposite of silk/wool)",
+      "Temperature limit: ≤40°C / 104°F",
+      "Concentrated acetic acid/vinegar degrades cellulose acetate bonds",
+      "Tannin formulas (acidic) can cause color change — use briefly and neutralize",
+      "This is the #1 cause of professional dry cleaning damage claims"
+    ],
+    "recommendedCompanies": [
+      {
+        "company": "A.L. Wilson",
+        "why": "InkGo® is specifically formulated to be safe on acetate — unique in the market. Most ink solvents contain acetone or similar ketones. When ink stains appear on or near acetate linings, InkGo® is the only safe choice.",
+        "products": ["InkGo® (acetate-safe)", "QwikGo®", "BonGo®"]
+      },
+      {
+        "company": "R.R. Street",
+        "why": "SOFSPOT® is safe for delicate fabrics. StreeTAN® provides tannin removal with controlled chemistry.",
+        "products": ["SOFSPOT®", "StreeTAN®"]
+      },
+      {
+        "company": "Kreussler",
+        "why": "PRENETT C (neutral pH) is safe for acetate. SolvonK4 is gentle and acetate-compatible.",
+        "products": ["PRENETT C (Green)", "SolvonK4"]
+      }
+    ],
+    "agentsToUse": ["NSD (neutral to slightly alkaline)", "amyl acetate (brief, careful contact)", "protein formula to neutralize any acid exposure", "acetate-safe ink removers (InkGo®)"],
+    "agentsToAvoid": ["ACETONE (dissolves on contact)", "nail polish remover", "concentrated acetic acid/vinegar", "tannin formulas with extended contact", "strong acids of any kind", "any product containing ketone solvents"]
+  },
+  "polyester": {
+    "description": "Synthetic fiber (PET — polyethylene terephthalate). The most common synthetic fiber in clothing. Durable, resistant to most chemicals, but attracts and holds oil-based stains due to its oleophilic (oil-attracting) nature. Relatively easy to clean compared to natural fibers.",
+    "keyConsiderations": [
+      "Oleophilic — polyester attracts and holds oil-based stains tenaciously",
+      "Most chemicals are safe on polyester — it's chemically resistant",
+      "Oil stains require pre-treatment or extended dwell with POG agents",
+      "Chlorine bleach causes yellowing over time",
+      "High heat can cause permanent creasing/melting",
+      "Static-prone — anti-static additives help",
+      "Color transfer from other garments (especially denim) is common"
+    ],
+    "recommendedCompanies": [
+      {
+        "company": "A.L. Wilson",
+        "why": "TarGo® line is effective on the oil stains polyester attracts. Full product line compatible. SoGo '1'® enzyme can be used freely (polyester is not a protein fiber).",
+        "products": ["TarGo®", "QwikGo®", "BonGo®", "SoGo '1'®", "InkGo®"]
+      },
+      {
+        "company": "R.R. Street",
+        "why": "PICRIN® for oil/grease. MultiSPOT® for pre-treatment. Complete product line compatible with polyester.",
+        "products": ["PICRIN®", "MultiSPOT®", "StreePRO®", "StreeTAN®"]
+      },
+      {
+        "company": "Seitz",
+        "why": "SENSENE™'s high KB value (161) is particularly effective at removing oil stains from polyester's oleophilic fiber surface.",
+        "products": ["SENSENE™", "Frankotex detergents", "Polyspot KWV"]
+      }
+    ],
+    "agentsToUse": ["any NSD", "any POG (especially effective on polyester)", "any protein spotter", "any tannin spotter", "enzymes (safe on polyester)", "hydrogen peroxide", "most solvents"],
+    "agentsToAvoid": ["chlorine bleach (yellowing)", "extreme heat (melting/permanent creasing)"]
+  },
+  "cotton": {
+    "description": "Natural cellulose fiber from cotton plants. The most common natural fiber in textiles. Durable, tolerates most chemicals, absorbs water readily. Much more resistant than protein fibers but still vulnerable to chlorine bleach degradation over time.",
+    "keyConsiderations": [
+      "pH tolerance: 5.0-10.0 (wide range — cotton is forgiving)",
+      "Temperature tolerant — can handle hot water, but hot water sets some stains",
+      "Chlorine bleach is safe on WHITE cotton but weakens fibers over time and yellows colored cotton",
+      "Absorbs water readily — good for wet cleaning but means stains penetrate deeply",
+      "Wrinkles easily — finishing/sizing helps maintain appearance",
+      "Most chemicals and enzymes are safe on cotton"
+    ],
+    "recommendedCompanies": [
+      {
+        "company": "A.L. Wilson",
+        "why": "Full product line safe on cotton. All agents (including enzymes like SoGo '1'®) compatible. Cotton's durability means you can use the full arsenal.",
+        "products": ["QwikGo®", "BonGo®", "TarGo®", "SoGo '1'®", "RustGo®", "InkGo®", "YellowGo®", "PermaGo®"]
+      },
+      {
+        "company": "R.R. Street",
+        "why": "Complete product line compatible. No restrictions on cotton.",
+        "products": ["StreePRO®", "StreeTAN®", "PICRIN®", "MultiSPOT®", "H2PRO®"]
+      }
+    ],
+    "agentsToUse": ["any NSD", "any protein spotter (including enzymes)", "any tannin spotter", "any POG", "hydrogen peroxide", "oxygen bleach", "reducing bleach (on whites)", "any wet cleaning detergent"],
+    "agentsToAvoid": ["chlorine bleach on colored cotton (yellowing, dye stripping)", "prolonged chlorine bleach on any cotton (fiber weakening)"]
+  },
+  "linen": {
+    "description": "Natural cellulose fiber from flax plants. Stronger than cotton when wet, with a distinctive crisp hand. Similar chemical tolerance to cotton but wrinkles more easily. High-quality linen is a luxury fiber that demands careful pressing.",
+    "keyConsiderations": [
+      "Similar chemical tolerance to cotton — cellulose fiber with wide pH range",
+      "STRONGER when wet (unlike most fibers) — wet cleaning is well-tolerated",
+      "Wrinkles easily — more than cotton — professional pressing is critical",
+      "Natural linen (unbleached) has a warm beige tone that chlorine bleach removes",
+      "Prone to water spots if not dried evenly",
+      "Most chemicals and enzymes are safe on linen"
+    ],
+    "recommendedCompanies": [
+      {
+        "company": "A.L. Wilson",
+        "why": "Full product line compatible. SOFSPOT® mentions linen specifically as safe.",
+        "products": ["QwikGo®", "BonGo®", "TarGo®", "SoGo '1'®"]
+      },
+      {
+        "company": "R.R. Street",
+        "why": "SOFSPOT® explicitly safe for linen. Full product line compatible.",
+        "products": ["SOFSPOT®", "StreePRO®", "StreeTAN®", "PICRIN®"]
+      }
+    ],
+    "agentsToUse": ["any NSD", "any protein spotter (including enzymes)", "any tannin spotter", "any POG", "oxygen bleach", "most chemicals"],
+    "agentsToAvoid": ["chlorine bleach on natural (unbleached) linen (removes characteristic color)", "heavy chlorine bleach on any linen (fiber weakening over time)"]
+  },
+  "nylon": {
+    "description": "Synthetic polyamide fiber. Strong, elastic, lightweight. Common in hosiery, activewear, outerwear, and linings. Absorbs dye easily from other fabrics — color transfer is the most common nylon problem.",
+    "keyConsiderations": [
+      "pH tolerance: 5.0-9.0 (fairly wide range)",
+      "Strong acids hydrolyze amide bonds — avoid HCl, concentrated acetic acid",
+      "Chlorine bleach causes yellowing and fiber weakening",
+      "Acetone can damage or dissolve nylon",
+      "High heat melts/deforms — never high-heat dry",
+      "Nylon absorbs dye from other fabrics in wash — color transfer is the #1 issue",
+      "Static-prone"
+    ],
+    "recommendedCompanies": [
+      {
+        "company": "A.L. Wilson",
+        "why": "Standard spotting agents safe on nylon. ColorGo® reducing bleach can address dye transfer (the most common nylon problem).",
+        "products": ["QwikGo®", "BonGo®", "TarGo®", "ColorGo®", "InkGo®"]
+      },
+      {
+        "company": "R.R. Street",
+        "why": "Full line compatible. No special restrictions on nylon.",
+        "products": ["StreePRO®", "StreeTAN®", "PICRIN®"]
+      }
+    ],
+    "agentsToUse": ["NSD", "oxygen bleach", "hydrogen peroxide", "most solvents (brief contact)", "amyl acetate", "reducing bleach for dye transfer"],
+    "agentsToAvoid": ["strong acids (HCl, concentrated acetic acid)", "chlorine bleach (yellowing)", "acetone (can dissolve)", "high heat"]
+  },
+  "alcantara": {
+    "description": "Synthetic microfiber material (polyester + polyurethane) designed to mimic suede. Used in luxury automotive interiors, high-end furniture, fashion, and accessories. Brand name material made by Toray Industries (Japan) and Alcantara S.p.A. (Italy).",
+    "keyConsiderations": [
+      "Not real leather or suede — it's synthetic microfiber, so no leather-specific restrictions",
+      "Water-safe when handled properly — can be wet cleaned",
+      "Avoid harsh solvents that might dissolve the polyurethane binder",
+      "Nap direction matters (like suede) — brush gently in one direction after cleaning",
+      "More forgiving than real suede but still requires care to maintain texture",
+      "Check manufacturer guidelines — Alcantara provides specific care instructions"
+    ],
+    "recommendedCompanies": [
+      {
+        "company": "A.L. Wilson",
+        "why": "Standard spotting agents (QwikGo®, BonGo®, TarGo®) safe on synthetic microfiber. SoGo '1'® enzyme safe (no protein fibers).",
+        "products": ["QwikGo®", "BonGo®", "TarGo®", "SoGo '1'®"]
+      },
+      {
+        "company": "Kreussler",
+        "why": "SolvonK4 gentle enough for Alcantara. LANADOL AKTIV for wet cleaning approach.",
+        "products": ["SolvonK4", "LANADOL AKTIV", "PRENETT C (Green)"]
+      }
+    ],
+    "agentsToUse": ["NSD (neutral pH)", "mild protein spotters", "mild tannin spotters", "gentle POG agents", "water-based cleaning (controlled)", "soft brushing for nap restoration"],
+    "agentsToAvoid": ["harsh solvents that might dissolve polyurethane binder", "acetone", "chlorine bleach", "aggressive mechanical action that might damage nap"]
+  },
+  "denim": {
+    "description": "Cotton twill weave fabric traditionally dyed with indigo. Denim's indigo dye is surface-applied and intentionally designed to fade — this creates the characteristic worn look but also means the dye transfers readily to other fabrics and surfaces.",
+    "keyConsiderations": [
+      "Indigo dye TRANSFERS — denim bleeds onto other garments, furniture, skin, and any porous surface",
+      "Dye transfer is by design (fading is desired) — but it's a problem in professional cleaning when denim contacts other garments",
+      "Wash denim separately or with like-colored items only",
+      "Cold water reduces dye loss; hot water accelerates it",
+      "Chlorine bleach strips indigo rapidly and unevenly",
+      "Pre-wash denim customers about expected color changes",
+      "Raw/selvedge denim should NOT be washed — customers may bring these in expecting 'cleaning' without water"
+    ],
+    "recommendedCompanies": [
+      {
+        "company": "A.L. Wilson",
+        "why": "Standard agents work on denim stains (cotton base). ColorGo® and YellowGo® can address situations where denim dye has transferred TO other garments.",
+        "products": ["QwikGo®", "BonGo®", "TarGo®", "ColorGo® (for dye transfer removal from other garments)", "YellowGo® (for stubborn dye transfer)"]
+      },
+      {
+        "company": "Kreussler",
+        "why": "COLOFIX can help stabilize dyes. DEPRIT PURPLE addresses dye/pigment transfer issues.",
+        "products": ["COLOFIX", "DEPRIT PURPLE"]
+      }
+    ],
+    "agentsToUse": ["any standard spotter (denim base is cotton)", "cold water (reduces dye loss)", "reducing bleach for dye transfer to other garments", "dye fixation agents (COLOFIX)"],
+    "agentsToAvoid": ["chlorine bleach (strips indigo unevenly)", "hot water (accelerates dye loss)", "washing denim with light-colored garments"]
+  }
+}

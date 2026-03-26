@@ -2,51 +2,9 @@
 
 import { useState, useCallback, useEffect, useRef } from 'react'
 import ResultCard from '@/components/solve/ResultCard'
-import StainCamera from '@/components/solve/StainCamera'
-import CareLabelScanner from '@/components/solve/CareLabelScanner'
-import FiberChips from '@/components/solve/FiberChips'
+import StainChips from '@/components/solve/StainChips'
+import SurfaceChips from '@/components/solve/SurfaceChips'
 import type { ProtocolCard } from '@/lib/types'
-
-const STAIN_FAMILIES = [
-  { id: 'protein', label: 'Protein', emoji: '🥩', stains: ['blood', 'egg', 'milk', 'sweat', 'urine', 'vomit', 'grass'] },
-  { id: 'tannin', label: 'Tannin', emoji: '🍷', stains: ['red-wine', 'coffee-black', 'coffee-with-cream', 'tea', 'beer'] },
-  { id: 'oil-grease', label: 'Oil & Grease', emoji: '🛢️', stains: ['cooking-oil', 'butter', 'motor-oil', 'lipstick', 'foundation'] },
-  { id: 'dye', label: 'Dye', emoji: '🎨', stains: ['hair-dye', 'food-coloring', 'permanent-marker', 'ballpoint-pen'] },
-  { id: 'oxidizable', label: 'Oxidizable', emoji: '🧪', stains: ['rust', 'mustard', 'curry', 'tomato-sauce'] },
-  { id: 'combination', label: 'Combo', emoji: '🔀', stains: ['chocolate', 'nail-polish'] },
-  { id: 'particulate', label: 'Particulate', emoji: '💨', stains: ['mildew', 'collar-ring'] },
-  { id: 'wax-gum', label: 'Wax & Gum', emoji: '🕯️', stains: ['candle-wax', 'crayon'] },
-  { id: 'bleach-damage', label: 'Bleach', emoji: '⚠️', stains: ['bleach'] },
-  { id: 'adhesive', label: 'Adhesive', emoji: '🩹', stains: ['adhesive', 'nail-polish'] },
-  { id: 'pigment', label: 'Pigment', emoji: '🖌️', stains: ['acrylic-paint', 'mascara'] },
-  { id: 'unknown', label: 'Unknown', emoji: '❓', stains: [] },
-]
-
-const SURFACES = [
-  'cotton-white', 'cotton-color', 'silk', 'wool', 'linen',
-  'polyester', 'denim', 'leather', 'suede', 'nylon',
-]
-
-const STAIN_LABELS: Record<string, string> = {
-  'coffee-black': 'Coffee (Black)',
-  'coffee-with-cream': 'Coffee w/ Cream',
-  'red-wine': 'Red Wine',
-  'cooking-oil': 'Cooking Oil',
-  'motor-oil': 'Motor Oil',
-  'hair-dye': 'Hair Dye',
-  'food-coloring': 'Food Coloring',
-  'permanent-marker': 'Permanent Marker',
-  'ballpoint-pen': 'Ballpoint Pen',
-  'tomato-sauce': 'Tomato Sauce',
-  'candle-wax': 'Candle Wax',
-  'collar-ring': 'Collar Ring',
-  'acrylic-paint': 'Acrylic Paint',
-  'nail-polish': 'Nail Polish',
-}
-
-function formatLabel(slug: string): string {
-  return STAIN_LABELS[slug] ?? slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
-}
 
 interface SolveResult {
   card: ProtocolCard
@@ -59,13 +17,11 @@ export default function SolvePage() {
   const [stainInput, setStainInput] = useState('')
   const [selectedStain, setSelectedStain] = useState('')
   const [selectedSurface, setSelectedSurface] = useState('')
-  const [expandedFamily, setExpandedFamily] = useState<string | null>(null)
   const [result, setResult] = useState<SolveResult | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [solveCount, setSolveCount] = useState(0)
-  const [selectedFiber, setSelectedFiber] = useState<string | null>(null)
-  const [fiberSource, setFiberSource] = useState<'label' | 'chips' | null>(null)
+  const [showBrowse, setShowBrowse] = useState(false)
   const resultRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -86,7 +42,7 @@ export default function SolvePage() {
       const res = await fetch('/api/solve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ stain: s, surface: surf, fiber: selectedFiber || undefined }),
+        body: JSON.stringify({ stain: s, surface: surf }),
       })
 
       if (!res.ok) {
@@ -97,12 +53,10 @@ export default function SolvePage() {
       const data = await res.json()
       setResult(data)
 
-      // Track solve count
       const newCount = solveCount + 1
       setSolveCount(newCount)
       localStorage.setItem('gonr_solve_count', String(newCount))
 
-      // Scroll to result
       setTimeout(() => {
         resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }, 100)
@@ -115,13 +69,64 @@ export default function SolvePage() {
 
   const handleStainSelect = (stain: string) => {
     setSelectedStain(stain)
-    setStainInput(formatLabel(stain))
+    setStainInput(stain)
     setResult(null)
+  }
+
+  const handleSurfaceSelect = (surface: string) => {
+    setSelectedSurface(surface)
   }
 
   const handleBack = () => {
     setResult(null)
     setError('')
+  }
+
+  const handleCameraClick = () => {
+    // Camera / scan stain flow — triggers native camera or file picker
+    const input = document.createElement('input')
+    input.type = 'file'
+    input.accept = 'image/*'
+    input.capture = 'environment'
+    input.onchange = async (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0]
+      if (!file) return
+
+      setLoading(true)
+      setError('')
+      setResult(null)
+
+      try {
+        const formData = new FormData()
+        formData.append('image', file)
+
+        const res = await fetch('/api/solve', {
+          method: 'POST',
+          body: formData,
+        })
+
+        if (!res.ok) {
+          const data = await res.json()
+          throw new Error(data.error || 'Scan failed')
+        }
+
+        const data = await res.json()
+        setResult(data)
+
+        const newCount = solveCount + 1
+        setSolveCount(newCount)
+        localStorage.setItem('gonr_solve_count', String(newCount))
+
+        setTimeout(() => {
+          resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }, 100)
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Scan failed')
+      } finally {
+        setLoading(false)
+      }
+    }
+    input.click()
   }
 
   // Result view
@@ -144,144 +149,128 @@ export default function SolvePage() {
   }
 
   return (
-    <div className="space-y-5">
-      {/* Header */}
-      <div className="text-center space-y-1 pt-1">
-        <h1 className="text-xl font-bold tracking-tight" style={{ color: 'var(--text)' }}>
-          AI Stain Intelligence
-        </h1>
-        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-          Expert protocols for every stain, fiber, and surface
-        </p>
-      </div>
-
-      {/* Intake cameras */}
-      <div className="flex gap-3 w-full">
-        <div className="flex-1">
-          <StainCamera
-            onStainDetected={(family, suggestion) => {
-              setStainInput(suggestion)
-              setSelectedStain(family)
-              // Scroll to fiber chips so operator picks fiber next
-              setTimeout(() => {
-                document.getElementById('fiber-section')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-              }, 150)
-            }}
-            onReset={() => {
-              setStainInput('')
-              setSelectedStain('')
-            }}
-          />
-        </div>
-        <div className="flex-1">
-          <CareLabelScanner
-            onFiberDetected={(fiber) => {
-              setSelectedFiber(fiber)
-              setFiberSource('label')
-            }}
-            onReset={() => {
-              setSelectedFiber(null)
-              setFiberSource(null)
-            }}
-          />
-        </div>
-      </div>
-
-      {/* Fiber section */}
-      {fiberSource === 'label' && selectedFiber && (
-        <div className="flex items-center gap-2 text-sm text-green-400">
-          <span>🏷️</span>
-          <span className="capitalize font-medium">{selectedFiber}</span>
-          <button onClick={() => { setSelectedFiber(null); setFiberSource(null) }} className="text-gray-500 text-xs ml-1">change</button>
-        </div>
-      )}
-      {fiberSource !== 'label' && (
-        <div id="fiber-section"><FiberChips
-          selectedFiber={selectedFiber}
-          onFiberSelect={(f) => { setSelectedFiber(f); setFiberSource('chips') }}
-        /></div>
-      )}
-
-      {/* Text input */}
-      <input
-        type="text"
-        className="input"
-        placeholder="e.g. red wine, blood, coffee..."
-        value={stainInput}
-        onChange={(e) => {
-          setStainInput(e.target.value)
-          if (!e.target.value) setSelectedStain('')
-        }}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') handleSolve()
-        }}
-      />
-
-      {/* Stain family chips */}
-      <div>
-        <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>
-          Stain Families
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {STAIN_FAMILIES.map((fam) => (
-            <div key={fam.id}>
-              <button
-                className={`chip ${expandedFamily === fam.id ? 'selected' : ''}`}
-                onClick={() => {
-                  setExpandedFamily(expandedFamily === fam.id ? null : fam.id)
-                }}
-              >
-                <span>{fam.emoji}</span>
-                <span>{fam.label}</span>
-              </button>
-            </div>
-          ))}
-        </div>
-
-        {/* Expanded sub-stains */}
-        {expandedFamily && (
-          <div className="mt-3 flex flex-wrap gap-2">
-            {STAIN_FAMILIES.find(f => f.id === expandedFamily)?.stains.map((stain) => (
-              <button
-                key={stain}
-                className={`chip text-xs ${selectedStain === stain ? 'selected' : ''}`}
-                onClick={() => handleStainSelect(stain)}
-              >
-                {formatLabel(stain)}
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* Surface chips — only show if no fiber selected AND fiber chips section is not shown */}
-      {false && !selectedFiber && (selectedStain || stainInput.trim()) && (
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>
-            Surface / Fabric
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {SURFACES.map((surface) => (
-              <button
-                key={surface}
-                className={`chip text-xs ${selectedSurface === surface ? 'selected' : ''}`}
-                onClick={() => setSelectedSurface(selectedSurface === surface ? '' : surface)}
-              >
-                {formatLabel(surface)}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Get Protocol button */}
+    <div className="space-y-4">
+      {/* ── Hero Camera ── */}
       <button
-        className="btn-primary"
-        disabled={loading || (!selectedStain && !stainInput.trim())}
-        onClick={() => handleSolve()}
+        onClick={handleCameraClick}
+        disabled={loading}
+        style={{
+          background: '#1a2e1a',
+          borderRadius: '12px',
+          minHeight: '80px',
+          width: '100%',
+          border: '1px solid rgba(34, 197, 94, 0.2)',
+          cursor: 'pointer',
+          transition: 'all 0.15s ease',
+        }}
+        className="flex flex-col items-center justify-center gap-1 px-4 py-5 hover:opacity-90 active:scale-[0.98]"
       >
-        {loading ? 'Finding protocol...' : 'Get Protocol'}
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#22c55e"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+          <circle cx="12" cy="13" r="3" />
+        </svg>
+        <span style={{ color: '#22c55e', fontSize: '18px', fontWeight: 600 }}>
+          Scan Stain
+        </span>
+        <span style={{ color: '#8a94a6', fontSize: '13px' }}>
+          Point at the stain — AI identifies it instantly
+        </span>
       </button>
+
+      {/* ── Text Fallback ── */}
+      <div>
+        <input
+          type="text"
+          className="input"
+          placeholder="Or describe the stain and material..."
+          value={stainInput}
+          onChange={(e) => {
+            setStainInput(e.target.value)
+            if (!e.target.value) setSelectedStain('')
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') handleSolve()
+          }}
+        />
+      </div>
+
+      {/* ── Care Label Scanner ── */}
+      <button
+        onClick={() => {
+          // Care label scan — same camera flow but for care labels
+          const input = document.createElement('input')
+          input.type = 'file'
+          input.accept = 'image/*'
+          input.capture = 'environment'
+          input.onchange = async (e) => {
+            const file = (e.target as HTMLInputElement).files?.[0]
+            if (!file) return
+            // TODO: wire to care label API endpoint when available
+          }
+          input.click()
+        }}
+        className="flex items-center gap-2 w-full text-sm py-2 px-1"
+        style={{ color: 'var(--text-secondary)' }}
+      >
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5" />
+        </svg>
+        <span>Scan care label for fiber ID</span>
+      </button>
+
+      {/* ── Browse Toggle ── */}
+      <button
+        onClick={() => setShowBrowse(!showBrowse)}
+        className="flex items-center gap-1 text-sm py-1"
+        style={{ color: 'var(--text-secondary)' }}
+      >
+        <span>Browse by stain type</span>
+        <span>{showBrowse ? '▲' : '▼'}</span>
+      </button>
+
+      {showBrowse && (
+        <div className="space-y-4">
+          <StainChips
+            onStainSelect={handleStainSelect}
+            selectedStain={selectedStain}
+          />
+          <SurfaceChips
+            onSurfaceSelect={handleSurfaceSelect}
+            selectedSurface={selectedSurface}
+            visible={!!(selectedStain || stainInput.trim())}
+          />
+        </div>
+      )}
+
+      {/* ── Get Protocol button ── */}
+      {(selectedStain || stainInput.trim()) && (
+        <button
+          className="btn-primary"
+          disabled={loading}
+          onClick={() => handleSolve()}
+        >
+          {loading ? 'Finding protocol...' : 'Get Protocol'}
+        </button>
+      )}
 
       {/* Loading skeleton */}
       {loading && (

@@ -1,0 +1,145 @@
+{
+  "id": "greenearth",
+  "name": "GreenEarth Cleaning",
+  "slug": "greenearth",
+  "website": "https://www.greenearthcleaning.com",
+  "headquarters": "Kansas City, MO, USA",
+  "founded": "1999",
+  "employeeRange": "25-50 (estimated)",
+  "overview": {
+    "summary": "GreenEarth Cleaning is a licensing-based company that promotes and supports the use of liquid silicone (D5 — decamethylcyclopentasiloxane) as a dry cleaning solvent. Founded in 1999 by General Electric, Procter & Gamble, and three independent dry cleaners, GreenEarth operates as a licensing network rather than a traditional chemical manufacturer. With 1,800+ affiliated cleaning plants in 40+ countries and 6,000+ retail service points, they are the dominant force in 'green' dry cleaning marketing. Recently acquired by Greybull Stewardship, L.P.",
+    "historyAndReputation": "GreenEarth launched in 1999 with massive corporate backing from GE and P&G — both had vested interests in silicone chemistry (GE manufactured silicones, P&G used them in consumer products). The founding trio of independent dry cleaners (Jim Barry, Ron Benjamin, Jim Douglas) provided industry credibility. GreenEarth invested $30 million in independent testing and safety research. The brand has become synonymous with 'environmentally friendly dry cleaning' among consumers, though the D5 solvent's environmental profile is debated in scientific literature.",
+    "marketPosition": "Market leader in the 'green' dry cleaning segment. GreenEarth is not a traditional chemical company — they don't manufacture products. They license a brand, a solvent system, and a marketing platform. Their strength is in consumer-facing messaging and brand recognition. Affiliated cleaners benefit from the GreenEarth name's environmental positioning. Pricing is at a premium due to licensing fees and specialized equipment requirements."
+  },
+  "specialties": [
+    "Silicone-based dry cleaning solvent (D5)",
+    "Licensing and branding network for 'green' cleaning",
+    "Consumer marketing and environmental positioning",
+    "Affiliate support and training platform"
+  ],
+  "productLines": [
+    {
+      "category": "Solvents",
+      "categoryDescription": "GreenEarth's entire business centers on one solvent: D5 liquid silicone. Unlike traditional chemical companies that offer multiple solvents, GreenEarth is a single-solvent system.",
+      "products": [
+        {
+          "name": "GreenEarth Silicone Solvent (D5)",
+          "type": "liquid silicone (decamethylcyclopentasiloxane)",
+          "description": "100% pure liquid silicone derived from silica (sand). Clear, odorless, non-toxic, chemically inert. D5 does NOT interact with textile fibers or dyes during cleaning — it carries away soil without chemically attacking the garment. This preserves fabric softness, prevents shrinkage, and eliminates color loss. The same silicone chemistry used in consumer cosmetics and personal care products.",
+          "usedFor": ["primary dry cleaning solvent in GreenEarth-licensed machines"],
+          "fibers": ["all fibers — extremely gentle due to chemical inertness"],
+          "notFor": ["requires GreenEarth-licensed equipment", "heavily soiled items may need additional pre-treatment due to D5's gentler cleaning action"],
+          "proTips": "D5's chemical inertness is both its strength and limitation. It won't damage anything — but it also won't dissolve stubborn stains as aggressively as perc or SENSENE™. Pre-spotting becomes more important in a GreenEarth system. Pair with Sustain™ detergent and GreenSPOT® (from R.R. Street) for best results.",
+          "alternativeTo": "Perchloroethylene, hydrocarbon (DF-2000), Kreussler SolvonK4, Seitz SENSENE™",
+          "priceTier": "premium (licensing fees + solvent + equipment)",
+          "availability": "through GreenEarth licensing program"
+        }
+      ]
+    },
+    {
+      "category": "Detergents",
+      "categoryDescription": "Detergents formulated specifically for the D5 silicone solvent system. D5 requires different detergent chemistry than perc or hydrocarbon — standard detergents don't dissolve properly in silicone.",
+      "products": [
+        {
+          "name": "Sustain™",
+          "type": "D5-compatible detergent",
+          "description": "Proprietary detergent specifically formulated for D5 silicone solvent. Biodegradable, phosphate-free. Enhances cleaning performance beyond what D5 alone achieves. The primary detergent recommended by GreenEarth for their system.",
+          "usedFor": ["GreenEarth D5 cleaning systems"],
+          "fibers": ["all"],
+          "notFor": ["perc or hydrocarbon systems — incompatible chemistry"],
+          "proTips": "D5 is a weak solvent compared to perc — it relies more on the detergent for actual cleaning. Under-dosing Sustain™ is the most common cause of poor cleaning results in GreenEarth systems.",
+          "alternativeTo": "R.R. Street GreenSOL®, Kreussler CLIP for GreenEarth",
+          "priceTier": "premium",
+          "availability": "through GreenEarth affiliate program"
+        },
+        {
+          "name": "SANITONE® 8870 Detergent",
+          "type": "D5-compatible surfactant detergent",
+          "description": "Surfactant-optimized detergent formulation for D5 systems. Leaves garments with smooth, soft hand. Enhances soil penetration and flushing. An alternative detergent option within the GreenEarth ecosystem.",
+          "usedFor": ["GreenEarth D5 systems"],
+          "fibers": ["all"],
+          "notFor": ["non-D5 systems"],
+          "proTips": "SANITONE 8870 emphasizes hand feel — garments come out noticeably softer than with some other D5 detergents. Good for operators whose customers prioritize fabric feel.",
+          "alternativeTo": "Sustain™",
+          "priceTier": "premium",
+          "availability": "through GreenEarth and supply distributors"
+        }
+      ]
+    }
+  ],
+  "agentMapping": {
+    "NSD": "Sustain™ and SANITONE® 8870 (detergents, not standalone spotters). GreenEarth relies on third-party spotting agents — typically R.R. Street GreenSPOT® and GreenSOL®.",
+    "POG": "No GreenEarth-branded POG. Use R.R. Street PICRIN® or A.L. Wilson TarGo® for pre-spotting in GreenEarth systems.",
+    "protein": "No GreenEarth-branded protein spotter. Use R.R. Street StreePRO® or A.L. Wilson QwikGo®.",
+    "tannin": "No GreenEarth-branded tannin spotter. Use R.R. Street StreeTAN® or A.L. Wilson BonGo®.",
+    "leveling": "No GreenEarth-branded leveling agent. Use R.R. Street GreenSPOT® (formulated for GreenEarth systems).",
+    "rustRemover": "No GreenEarth-branded rust remover.",
+    "enzymatic": "No GreenEarth-branded enzyme product.",
+    "solvent": "D5 (decamethylcyclopentasiloxane) — the sole GreenEarth solvent"
+  },
+  "fiberExpertise": {
+    "silk": "D5 is exceptionally gentle on silk due to chemical inertness — no interaction with silk protein fibers. No shrinkage, no color loss, no dye bleeding. One of the safest solvents for silk garments. The trade-off is less aggressive stain removal — pre-spotting is essential.",
+    "wool": "Same advantages as silk — D5 doesn't interact with wool keratin. No felting risk from the solvent itself (felting requires heat + agitation + alkalinity, none of which D5 contributes). Safe for wool.",
+    "leather": "D5 is gentle on leather. GreenEarth markets leather cleaning as a capability, though dedicated leather products (Royaltone, Kreussler LANADOL LICKER) may provide better conditioning results.",
+    "synthetics": "D5 handles synthetics well. The chemical inertness means no fiber damage. Less effective at dissolving oil-based soils trapped in synthetic fibers compared to higher-KB solvents like SENSENE™.",
+    "delicates": "D5's primary selling point is gentleness on delicates. The solvent doesn't interact with fibers or dyes at all — it just carries soil away mechanically. This makes it theoretically the safest solvent for any delicate garment. The practical limitation is stain removal power."
+  },
+  "protocols": [
+    {
+      "name": "GreenEarth Standard Cleaning",
+      "description": "Pre-spot with GreenSPOT® (R.R. Street) on collars, cuffs, and stained areas. Load garments into GreenEarth-licensed machine with Sustain™ or SANITONE® 8870 detergent. Standard cleaning cycle. D5's gentleness means fewer damage claims but more pre-spotting labor.",
+      "products": ["GreenEarth D5 solvent", "Sustain™", "GreenSPOT® (R.R. Street)"],
+      "usedFor": "Standard professional dry cleaning in GreenEarth systems"
+    }
+  ],
+  "distributionNetwork": {
+    "regions": ["USA", "40+ countries", "6,000+ retail service points globally"],
+    "distributionMethod": "licensing/affiliate model — operators pay annual license fees to use GreenEarth brand and system",
+    "howToBuy": "Apply to become a GreenEarth affiliate through greenearthcleaning.com. GreenEarth does NOT sell solvent or equipment directly — they license the system and connect affiliates with equipment manufacturers and chemical suppliers. Annual licensing fee required.",
+    "majorDistributors": ["GreenEarth licensing program (direct)", "R.R. Street (compatible chemistry)", "equipment manufacturers (licensed machines)"]
+  },
+  "industryReputation": {
+    "strengthsKnownFor": [
+      "Dominant brand in 'green' dry cleaning marketing",
+      "Non-toxic, non-carcinogenic solvent (D5 is far safer than perc for workers)",
+      "Corporate founding partners (GE, P&G) provided initial research credibility",
+      "$30 million invested in independent safety and environmental testing",
+      "1,800+ affiliated plants, 6,000+ retail service points — massive network",
+      "Strong consumer brand recognition for environmental positioning",
+      "D5 is exceptionally gentle on all fiber types",
+      "Lower energy costs (50%+ reduction claimed vs. traditional systems)",
+      "Fewer garment damage claims due to solvent inertness"
+    ],
+    "limitations": [
+      "D5 (decamethylcyclopentasiloxane) classified by EU as 'very persistent' and 'very bioaccumulative'",
+      "Massachusetts TURI ranks D5 poorly among perc alternatives due to environmental persistence",
+      "D5 accumulates in aquatic ecosystems, particularly in fish — long-term impact uncertain",
+      "Weaker cleaning power than perc, hydrocarbon, or SENSENE™ — relies heavily on pre-spotting and detergent",
+      "No GreenEarth-branded spotting agents — operators must source from other suppliers",
+      "Licensing model adds cost on top of solvent and equipment investment",
+      "GreenEarth is a marketing/licensing company, not a chemical manufacturer — limited technical depth",
+      "EU regulatory scrutiny on D4/D5/D6 siloxanes continues",
+      "10-year EU derogation for GreenEarth use may not be renewed"
+    ],
+    "whoUsesThem": "Dry cleaners marketing to environmentally conscious consumers. Boutique and high-end cleaners in health-conscious markets (California, Northeast). Operations in buildings with strict VOC regulations where perc is prohibited. Cleaners who prioritize zero garment damage claims over maximum stain removal. Franchise-style operations that benefit from the GreenEarth brand umbrella.",
+    "rivalCompanies": ["Kreussler Inc. (SolvonK4 — bio-based alternative)", "Seitz Inc. (SENSENE™ — higher cleaning power)", "R.R. Street (DF-2000™ hydrocarbon)"]
+  },
+  "education": {
+    "trainingResources": "Affiliate portal with video training, documents, product ordering, and promotional materials. GreenEarth provides marketing support and consumer education materials to affiliates.",
+    "technicalSupport": "Support through affiliate program. Equipment manufacturers provide machine-specific technical support. Chemical suppliers (R.R. Street, etc.) provide spotting and detergent support.",
+    "publications": "Consumer-facing environmental education materials. Affiliate marketing toolkit. FAQ resources on greenearthcleaning.com."
+  },
+  "gonrIntegration": {
+    "relevance": "GreenEarth is relevant when a GONR user operates in or interacts with a GreenEarth-affiliated dry cleaner. Understanding that D5 is a gentle but less powerful solvent helps set expectations: more pre-spotting needed, more reliance on detergent, fewer aggressive stain removal options. GONR's safety-first approach aligns well with GreenEarth's gentleness, but GONR protocols should note when stains may require stronger solvents than D5.",
+    "agentCrossReference": "GreenEarth does not have branded spotting agents. For GreenEarth systems, use: R.R. Street GreenSPOT® (pre-treatment), GreenSOL® (detergent alternative), StreeTAN® (tannin), StreePRO® (protein), PICRIN® (POG); or A.L. Wilson equivalents. Detergent: Sustain™ or SANITONE® 8870.",
+    "whenToRecommend": "Recommend GreenEarth when: the protocol calls for the gentlest possible solvent cleaning (irreplaceable garments, extreme delicates); the operator is in a market that prohibits perc; the customer specifically requests 'green' or 'eco-friendly' dry cleaning; or the garment has minimal staining and primarily needs refreshing rather than aggressive stain removal. Note limitations when heavy staining requires stronger solvents."
+  },
+  "links": {
+    "website": "https://www.greenearthcleaning.com",
+    "productCatalog": "https://greenearthcleaning.com/the-greenearth-cleaning-system/",
+    "technicalDocs": "Affiliate portal (login required)",
+    "distributorLocator": "https://greenearthcleaning.com/find-a-cleaner/",
+    "training": "Affiliate portal"
+  },
+  "lastResearched": "2026-03-25"
+}

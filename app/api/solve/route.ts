@@ -1,101 +1,49 @@
+// app/api/solve/route.ts
 import { NextResponse } from 'next/server'
 import { lookupProtocol } from '@/lib/protocols/lookup'
+import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
 
-const FIBER_SAFETY: Record<string, string> = {
-  silk: 'CRITICAL FIBER — Silk requires extreme care. NEVER use alkaline agents, enzymes, oxidizers (H₂O₂ only at 3% max), hot water, or mechanical agitation. Use only neutral pH agents. Acetic acid neutralizer required after every treatment.',
-  wool: 'CRITICAL FIBER — Wool felts and shrinks with heat and agitation. NEVER use hot water, enzymes on protein stains, or alkaline detergents. Gentle handling only. Neutral pH throughout.',
-  cashmere: 'CRITICAL FIBER — Same as wool but even more delicate. Absolute minimum agitation. No enzymes, no heat, no alkaline.',
-  leather: 'CRITICAL SURFACE — No water saturation. Saddle soap or leather-specific agents only. Always condition after treatment.',
-  suede: 'CRITICAL SURFACE — No liquid solvents on suede. Dry methods preferred. Professional only for most stains.',
-  linen: 'Linen tolerates more than silk/wool but avoid high heat. Can handle dilute oxidizers on white linen.',
-  cotton: 'Cotton has wide treatment latitude. Tolerates enzymes, mild oxidizers, most pH ranges. Test colored cotton for H₂O₂ colorfastness.',
-  polyester: 'Polyester is resilient but can absorb oil-based stains deeply. Avoid high heat which can set synthetic dyes.',
-  nylon: 'Nylon is sensitive to strong oxidizers. Avoid chlorine bleach. Moderate pH range.',
-}
-
-const STAIN_FAMILY_RULES: Record<string, string> = {
-  protein: 'PROTEIN FAMILY: Blood, urine, sweat, egg, milk, vomit. KEY RULE: COLD WATER ONLY — heat permanently sets protein. Use Protein (enzyme digester) first. NSD flush. Acetic acid neutralizer. NEVER hot water. NEVER ammonia on fresh protein.',
-  tannin: 'TANNIN FAMILY: Red wine, coffee, tea, beer, fruit juice. KEY RULE: Tannin FIRST to break pigment bonds. NEVER use alkaline agents (ammonia, baking soda) — permanently darkens tannins. NSD flush. Acetic acid neutralizer. H₂O₂ for residual color on colorfast fabrics.',
-  'oil-grease': 'OIL/GREASE FAMILY: Cooking oil, butter, motor oil, lipstick, cosmetics. KEY RULE: POG (Paint Oil Grease remover) or dry solvent first to break the lipid bond. NSD to emulsify. Flush thoroughly. No water until solvent is removed.',
-  oxidizable: 'OXIDIZABLE FAMILY: Rust, mustard, curry, turmeric. KEY RULE: Rust Remover (oxalic acid) for rust. Oxidizer (H₂O₂) for mustard/curry. Never use reducing agents on oxidizable stains.',
-  dye: 'DYE FAMILY: Hair dye, food coloring, permanent marker, ballpoint pen. KEY RULE: Reducing agent for reactive dyes. POG for ballpoint. Most dye stains require professional treatment on delicate fibers.',
-  combination: 'COMBINATION FAMILY: Chocolate (protein+tannin+fat), coffee with cream, nail polish. KEY RULE: Treat each component in order — protein component first (cold enzyme), then tannin component (Tannin), then fat component (POG). Never combine treatments simultaneously.',
-}
-
-async function generateAIProtocol(stain: string, surface: string, fiber: string) {
+async function generateAIProtocol(stain: string, surface: string) {
   const apiKey = process.env.OPENAI_API_KEY
   if (!apiKey || apiKey === 'placeholder-add-real-key') {
     throw new Error('OpenAI API key not configured')
   }
 
-  const fiberKey = fiber?.toLowerCase() || ''
-  const fiberSafety = FIBER_SAFETY[fiberKey] || ''
+  const systemPrompt = `You are an expert stain removal chemist and 3rd-generation dry cleaner. Given a stain and surface, produce a JSON protocol card.
 
-  // Detect likely stain family for grounding
-  const stainLower = stain.toLowerCase()
-  let familyRules = ''
-  if (['blood', 'urine', 'sweat', 'egg', 'milk', 'vomit', 'grass'].some(s => stainLower.includes(s))) {
-    familyRules = STAIN_FAMILY_RULES.protein
-  } else if (['wine', 'coffee', 'tea', 'beer', 'juice'].some(s => stainLower.includes(s))) {
-    familyRules = STAIN_FAMILY_RULES.tannin
-  } else if (['oil', 'grease', 'butter', 'lipstick', 'makeup', 'lotion'].some(s => stainLower.includes(s))) {
-    familyRules = STAIN_FAMILY_RULES['oil-grease']
-  } else if (['rust', 'mustard', 'curry', 'turmeric'].some(s => stainLower.includes(s))) {
-    familyRules = STAIN_FAMILY_RULES.oxidizable
-  } else if (['chocolate'].some(s => stainLower.includes(s))) {
-    familyRules = STAIN_FAMILY_RULES.combination
-  }
-
-  const effectiveSurface = fiber || surface || 'cotton'
-  const title = `${stain.charAt(0).toUpperCase() + stain.slice(1)} on ${effectiveSurface.charAt(0).toUpperCase() + effectiveSurface.slice(1)}`
-
-  const systemPrompt = `You are Dan Eisen — DLI Hall of Fame textile care expert with 40 years of professional spotting experience. You are writing a protocol for a professional dry cleaner or spotter, NOT a home user.
-
-PROFESSIONAL AGENT NAMES ONLY — use these exact terms:
-- NSD (Neutral Synthetic Detergent) — not "dish soap" or "detergent"
-- POG (Paint Oil Grease remover) — not "solvent" or "degreaser"  
-- Protein — not "enzyme cleaner" or "enzymatic cleaner"
-- Tannin — not "stain remover"
-- H₂O₂ 6% — not "hydrogen peroxide" or "bleach"
-- 28% Acetic Acid (diluted) — not "vinegar"
-- Reducing Agent — for reactive dyes
-- Rust Remover (oxalic acid based) — for rust/iron
-
-NEVER suggest: OxiClean, chlorine bleach, baking soda, white vinegar, dish soap, Tide, Shout, or any consumer brand name. Professional agents only.
-
-${familyRules ? `STAIN CHEMISTRY RULES:\n${familyRules}\n` : ''}
-${fiberSafety ? `FIBER SAFETY CONSTRAINTS:\n${fiberSafety}\n` : ''}
-
-Return ONLY valid JSON:
+Return ONLY valid JSON in this exact format:
 {
-  "id": "${stain.toLowerCase().replace(/\s+/g, '-')}-${effectiveSurface.toLowerCase().replace(/\s+/g, '-')}",
-  "title": "${title}",
-  "stainFamily": "protein|tannin|oil-grease|dye|oxidizable|combination|unknown",
-  "surface": "${effectiveSurface}",
-  "stainChemistry": "1-2 sentences on the chemistry — professional level",
-  "whyThisWorks": "1-2 sentences explaining the mechanism",
+  "id": "<stain>-<surface>",
+  "title": "<descriptive title>",
+  "stainFamily": "<protein|tannin|oil-grease|dye|oxidizable|combination|particulate|wax-gum|bleach-damage|adhesive|pigment|unknown>",
+  "surface": "<surface>",
+  "stainChemistry": "<1-2 sentences on the chemistry of this stain on this surface>",
+  "whyThisWorks": "<1-2 sentences explaining why the recommended approach works>",
   "spottingProtocol": [
     {
       "step": 1,
-      "agent": "Professional agent name",
-      "technique": "tamping|flushing|blotting|feathering",
-      "temperature": "cold|lukewarm|avoid heat",
-      "dwellTime": "X-Y minutes",
-      "instruction": "Detailed professional instruction"
+      "agent": "<chemical or tool>",
+      "technique": "<brief technique>",
+      "temperature": "<temperature guidance>",
+      "dwellTime": "<time range>",
+      "instruction": "<detailed instruction paragraph>"
     }
   ],
-  "homeSolutions": ["Step 1 for home user", "Step 2"],
-  "materialWarnings": ["Critical warning 1", "Critical warning 2"],
+  "homeSolutions": ["<paragraph 1>", "<paragraph 2>"],
+  "materialWarnings": ["<warning 1>", "<warning 2>"],
+  "products": {
+    "professional": [{"name": "<product>", "use": "<use case>", "note": "<note>"}],
+    "consumer": [{"name": "<product>", "use": "<use case>", "note": "<note>"}]
+  },
   "escalation": {
-    "when": "When to send to specialist",
-    "whatToTell": "What to tell the cleaner",
-    "specialistType": "Type of specialist"
+    "when": "<when to escalate>",
+    "whatToTell": "<what to tell the cleaner>",
+    "specialistType": "<type of specialist>"
   },
   "difficulty": 5,
-  "meta": { "stainCanonical": "${stain.toLowerCase().replace(/\s+/g, '-')}", "surfaceCanonical": "${effectiveSurface.toLowerCase().replace(/\s+/g, '-')}", "riskLevel": "medium", "tier": "ai-generated" }
+  "meta": { "riskLevel": "medium", "tier": "ai-generated" }
 }`
 
-  // gpt-4.1-mini for fast AI fallback
   const res = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -103,18 +51,19 @@ Return ONLY valid JSON:
       'Authorization': `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: 'gpt-4.1-mini',
+      model: 'gpt-4o-mini',
       messages: [
         { role: 'system', content: systemPrompt },
-        { role: 'user', content: `Stain: ${stain}\nFiber/Surface: ${effectiveSurface}\n\nWrite at Dan Eisen level — DLI Hall of Fame spotter. Each step must include:\n- The specific agent and exact application method\n- WHY this agent works on this chemistry (1 sentence)\n- What to watch for / what success looks like\n- Temperature guidance (cold/lukewarm/avoid heat) and dwell time\n- Any critical warnings for THIS fiber\n\nMinimum 3 sentences per step instruction. Return ONLY valid JSON.` }
+        { role: 'user', content: `Stain: ${stain}\nSurface: ${surface || 'general fabric'}` },
       ],
-      max_tokens: 4000,
+      temperature: 0.3,
+      max_tokens: 2000,
     }),
   })
 
   if (!res.ok) {
     const errData = await res.text()
-    console.error('OpenAI API error:', res.status, errData)
+    console.error('OpenAI API error:', errData)
     throw new Error('AI generation failed')
   }
 
@@ -122,20 +71,41 @@ Return ONLY valid JSON:
   const content = data.choices?.[0]?.message?.content
   if (!content) throw new Error('Empty AI response')
 
+  // Parse JSON from response (handle markdown code blocks)
   const jsonStr = content.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim()
   return JSON.parse(jsonStr)
 }
 
+// Fire-and-forget: queue every safe AI response for human review
+async function queueForReview(card: any, stain: string, surface: string, safetyResult: any) {
+  const supabaseUrl = process.env.SUPABASE_URL
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY
+  if (!supabaseUrl || !supabaseKey) return
+
+  const { createClient } = await import('@supabase/supabase-js')
+  const supabase = createClient(supabaseUrl, supabaseKey)
+
+  await supabase.from('pending_protocols').insert({
+    stain_canonical: stain.toLowerCase().replace(/\s+/g, '-'),
+    surface_canonical: surface.toLowerCase().replace(/\s+/g, '-'),
+    card_json: card,
+    source_model: 'gpt-4o-mini',
+    safety_filtered: safetyResult.filtered,
+    safety_violation_count: safetyResult.violations.length,
+    status: 'pending_review',
+    created_at: new Date().toISOString(),
+  })
+}
+
 export async function POST(req: Request) {
   try {
-    const { stain, surface, fiber } = await req.json()
+    const { stain, surface } = await req.json()
 
     if (!stain || typeof stain !== 'string') {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
     }
 
-    // Use fiber if provided, otherwise fall back to surface, then default to cotton
-    const effectiveSurface = fiber || surface || 'cotton'
+    const effectiveSurface = surface || ''
 
     const result = await lookupProtocol(stain, effectiveSurface)
 
@@ -143,11 +113,39 @@ export async function POST(req: Request) {
       return NextResponse.json(result)
     }
 
-    // AI fallback with full grounding
+    // Tier 4: AI fallback
     try {
-      const aiCard = await generateAIProtocol(stain, surface || '', fiber || '')
+      const aiCard = await generateAIProtocol(stain, effectiveSurface)
+
+      // Run safety filter on every AI-generated response
+      const safetyResult = runSafetyFilter(aiCard, stain, effectiveSurface)
+
+      if (!safetyResult.safe) {
+        // Nuclear violation — return safe fallback, never the dangerous output
+        console.error(`[SafetyFilter] BLOCKED: ${safetyResult.violations.map(v => v.rule).join(', ')}`)
+        return NextResponse.json({
+          card: { ...SAFE_FALLBACK, surface: effectiveSurface },
+          tier: 4,
+          confidence: 0,
+          source: 'ai',
+          _safetyBlocked: true,
+        })
+      }
+
+      // Auto-corrections applied — use the mutated card
+      const safeCard = safetyResult.card
+      if (safetyResult.filtered) {
+        console.log(`[SafetyFilter] Auto-corrected ${safetyResult.violations.length} violation(s)`)
+        safeCard._safetyFiltered = true
+      }
+
+      // Queue for library review (fire-and-forget — never block the response)
+      queueForReview(safeCard, stain, effectiveSurface, safetyResult).catch(e =>
+        console.warn('[ProtocolCache] Queue failed (non-blocking):', e.message)
+      )
+
       return NextResponse.json({
-        card: aiCard,
+        card: safeCard,
         tier: 4,
         confidence: 0.5,
         source: 'ai',
@@ -164,4 +162,3 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
-// force redeploy Mon Mar 23 16:37:40 EDT 2026

@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "title": "GONR Agent-Brand Crosswalk",
+    "description": "Maps generic dry cleaning agent categories to specific branded products across all 10 profiled companies. When a GONR protocol calls for a generic agent type, this crosswalk tells operators which specific product to reach for based on which company's products they stock.",
+    "lastUpdated": "2026-03-25",
+    "version": 1
+  },
+  "NSD": {
+    "genericName": "Neutral Synthetic Detergent",
+    "description": "pH-neutral wet-side spotter and detergent. The universal starting point for water-soluble stain removal. Safe for all fabrics including silk, wool, and delicates due to neutral pH (6.5-7.5). Every spotting board should have one.",
+    "mechanism": "Surfactants lower surface tension of water, allowing it to wet and penetrate fibers. The neutral pH avoids damaging pH-sensitive fibers (silk, wool, acetate). Dissolves and suspends water-soluble soils for removal by flushing.",
+    "products": [
+      { "company": "Pariser Industries", "productName": "Neutra-Lube", "notes": "Premium quality NSD with fine wetting and penetration additives. Reference-quality neutral spotter. Compatible with all solvent systems." },
+      { "company": "Adco (Laidlaw)", "productName": "Neutra", "notes": "Budget-friendly neutral wet-side spotter. Functional NSD at a value price point." },
+      { "company": "R.R. Street & Co.", "productName": "SOFSPOT®", "notes": "Positioned as a delicate fabric spotter rather than a generic NSD, but functions as a neutral wet-side agent safe for silk, rayon, wool, linen, cotton." },
+      { "company": "Kreussler Inc.", "productName": "CLIP COMBI / CLIPK4", "notes": "Kreussler's detergent line (not a standalone NSD spotter). CLIP COMBI is a universal dry cleaning detergent compatible with all solvent systems." },
+      { "company": "Seitz Inc.", "productName": "Frankotex line", "notes": "Detergent family, not standalone NSD. System-specific: HCR (perc), KW (hydrocarbon), Fresh DF (premium HC)." },
+      { "company": "Royaltone", "productName": "ULTRATONE / All-in-One Injection", "notes": "All-in-one detergents with NSD-like cleaning action built in. Not standalone spotters." },
+      { "company": "Büfa Cleaning", "productName": "Ozerna Polar", "notes": "Wet cleaning color detergent. Functions as NSD in the Care 4.0 wet cleaning system." },
+      { "company": "GreenEarth Cleaning", "productName": "Sustain™ / SANITONE® 8870", "notes": "D5-compatible detergents. Not standalone NSD spotters — GreenEarth operators use third-party spotters (A.L. Wilson, R.R. Street)." },
+      { "company": "National Chemical Laboratories", "productName": "N/A", "notes": "NCL does not produce dry cleaning NSD products. Institutional/commercial focus." },
+      { "company": "A.L. Wilson Chemical Co.", "productName": "N/A (no branded NSD)", "notes": "A.L. Wilson does not market a standalone NSD. Their product line focuses on stain-specific spotters (QwikGo, BonGo, TarGo) rather than a generic neutral agent." }
+    ]
+  },
+  "POG": {
+    "genericName": "Paint-Oil-Grease Remover",
+    "description": "Volatile dry-side spotter for non-polar stains — cooking oil, motor oil, tar, adhesive, cosmetics, paint, shoe polish, wax, varnish. Must evaporate completely (volatile) to avoid leaving rings. Applied on the dry side of the spotting board.",
+    "mechanism": "Dissolves non-polar (oil-based) soil molecules through 'like dissolves like' — the solvent in the POG is chemically similar to the oil in the stain, allowing it to dissolve and carry the stain away. Controlled evaporation rate is critical: too fast and the solvent leaves before dissolving the stain, too slow and it leaves solvent rings.",
+    "products": [
+      { "company": "R.R. Street & Co.", "productName": "PICRIN®", "notes": "Volatile dry spotter with controlled evaporation. Can be combined with STREETEX® to create 2-1 FORMULA® (wet/dry combo for mystery stains)." },
+      { "company": "A.L. Wilson Chemical Co.", "productName": "TarGo® / TarGo Dry® / Laundry TarGo®", "notes": "TarGo® is water-based (modern, eco-friendly). TarGo Dry® is traditional dry-side. Laundry TarGo® contains orange terpenes for laundry pre-spotting." },
+      { "company": "Kreussler Inc.", "productName": "PRENETT C (Green) / DEPRIT GREEN / DEPRIT WHITE", "notes": "PRENETT C: neutral pH pre-spotter for fats/makeup (10-20 min dwell). DEPRIT GREEN: neutral post-spotter for oil/grease/adhesive. DEPRIT WHITE: surfactant-free solvent blend for stubborn non-polar soils." },
+      { "company": "Adco (Laidlaw)", "productName": "PURO", "notes": "Standard solvent-based dry-side spotter. Straightforward POG function." },
+      { "company": "Seitz Inc.", "productName": "V1", "notes": "Perc-based pre/post-spotter for paint, lacquer, adhesives, ballpoint pen, tar, nail polish, lipstick, ink, grease." },
+      { "company": "Royaltone", "productName": "Oil/Grease Spotter", "notes": "Claims no rings, no streaks, no swales, no graying. Designed for even feathering on dark fabrics." },
+      { "company": "Pariser Industries", "productName": "SHOT-SPOT", "notes": "Multi-purpose spotter with oil removal capability. Also functions as wet cleaning pre-spotter." },
+      { "company": "Büfa Cleaning", "productName": "SpotX variants / Benzafix (oil-targeting)", "notes": "Part of Büfa's multi-variant spotting system." },
+      { "company": "GreenEarth Cleaning", "productName": "N/A", "notes": "No GreenEarth-branded POG. Use R.R. Street PICRIN® or A.L. Wilson TarGo® in GreenEarth systems." },
+      { "company": "National Chemical Laboratories", "productName": "COMMAND™", "notes": "Carpet-grade petroleum spotter. NOT for garment use." }
+    ]
+  },
+  "protein": {
+    "genericName": "Protein Spotter",
+    "description": "Wet-side agent for protein-based stains — blood, milk, egg, perspiration, food, baby formula, urine, grass. Protein stains coagulate (set) with heat, so treatment must use cool or lukewarm chemistry first. Some protein spotters contain enzymes (protease) for deeper penetration — these are MORE effective but NEVER safe for silk or wool because enzymes digest protein fibers.",
+    "mechanism": "Surfactant-based protein spotters break the hydrogen bonds holding coagulated protein to fiber surfaces. Enzyme-based versions (protease) go further — they cleave peptide bonds in the protein molecule itself, literally digesting the stain. This is why enzymes work better on old/set stains but destroy silk (silk IS protein).",
+    "safetyWarning": "ENZYME-CONTAINING PROTEIN SPOTTERS MUST NEVER BE USED ON SILK, WOOL, CASHMERE, OR ANY PROTEIN-BASED FIBER. Protease enzymes cannot distinguish between stain protein and fiber protein. Always check the product label for enzyme content.",
+    "products": [
+      { "company": "A.L. Wilson Chemical Co.", "productName": "QwikGo® (non-enzyme) / SoGo '1'® (enzyme)", "notes": "QwikGo®: safe for all fabrics including delicates. SoGo '1'®: enzyme-activated, more aggressive, NOT for silk/wool. SoGo withstands 145°F for warm-water enzyme activation." },
+      { "company": "R.R. Street & Co.", "productName": "StreePRO®", "notes": "Quick-acting protein spotter. Can alternate with StreeTAN® for stubborn combination stains (pH shift technique)." },
+      { "company": "Kreussler Inc.", "productName": "PRENETT B (Red) / DEPRIT RED", "notes": "PRENETT B: alkaline (pH 9.5-10.5) pre-spotter. DEPRIT RED: alkaline post-spotter. WARNING: alkaline pH requires caution on silk (breaks peptide bonds) and wool (damages keratin)." },
+      { "company": "Adco (Laidlaw)", "productName": "Wetspot (ammoniated) / BPR / RSR (enzyme)", "notes": "Wetspot: ammonia-based, NOT for silk/wool. BPR: targeted blood/protein. RSR: powdered enzyme digester, NOT for silk/wool." },
+      { "company": "Royaltone", "productName": "Blood & Protein Remover", "notes": "Safe for delicate colors and fabrics. Broad target range including blood, perspiration, milk, eggs, glue, gravy, ketchup, vomit, urine, chocolate." },
+      { "company": "Seitz Inc.", "productName": "Polysol RAN (universal)", "notes": "Universal pre-spotter that handles protein among other stain types. Not a dedicated protein-only agent." },
+      { "company": "Pariser Industries", "productName": "RightStuff (enzyme-containing)", "notes": "Eco-friendly formula with enzymes. NOT safe for silk/wool due to enzyme content." },
+      { "company": "Büfa Cleaning", "productName": "Benzafix variants / SpotX variants", "notes": "Letter-coded system — specific variants target protein stains." },
+      { "company": "GreenEarth Cleaning", "productName": "N/A", "notes": "No GreenEarth-branded protein spotter. Use A.L. Wilson QwikGo® or R.R. Street StreePRO®." },
+      { "company": "National Chemical Laboratories", "productName": "SHA-ZYME / NATURE'S FORCE", "notes": "Enzyme-based but designed for drains/hard surfaces, NOT for textile use." }
+    ]
+  },
+  "tannin": {
+    "genericName": "Tannin Spotter",
+    "description": "Acidic wet-side agent for plant polyphenol stains — coffee, tea, wine, beer, fruit juice, grass, soft drinks, mustard, cola. Tannins bond to textile fibers through hydrogen bonding; acidic chemistry disrupts those bonds to release the stain.",
+    "mechanism": "Acid (typically organic acids like gluconic acid or citric acid, or stronger mineral acid formulations) protonates the hydroxyl groups on tannin polyphenols, breaking the hydrogen bonds that anchor the tannin to fiber surfaces. The freed tannin molecules dissolve in the acidic solution and flush away.",
+    "products": [
+      { "company": "R.R. Street & Co.", "productName": "StreeTAN® / General Formula No. 209®", "notes": "StreeTAN®: heat-stable (activity doesn't increase with temperature — unique safety feature for delicates). No cold-water pre-rinse needed before steam flushing. 209®: more aggressive, for experienced spotters." },
+      { "company": "A.L. Wilson Chemical Co.", "productName": "BonGo®", "notes": "Gluconic acid base — mild enough for delicates but effective on most tannin stains. Safe for delicate colors and fabrics. Removes virtually all beverage stains except milk (which is protein)." },
+      { "company": "Kreussler Inc.", "productName": "PRENETT A (Blue) / DEPRIT BLUE", "notes": "PRENETT A: pH 3.0-4.0 acidic pre-spotter. Blue color coding. DEPRIT BLUE: acidic post-spotter for residual tannin stains." },
+      { "company": "Adco (Laidlaw)", "productName": "Tannin Booster", "notes": "Booster used WITH a primary tannin agent — not a standalone tannin spotter." },
+      { "company": "Büfa Cleaning", "productName": "Benzafix C", "notes": "Specifically targets grass, tea, coffee, and tannin stains. Part of the lettered Benzafix system." },
+      { "company": "Seitz Inc.", "productName": "Polysol RAN / Polyspot KWV (universal)", "notes": "Universal pre-spotters that handle tannin among other stain types. Not dedicated tannin-only agents." },
+      { "company": "Royaltone", "productName": "N/A", "notes": "No dedicated tannin spotter identified in Royaltone's product line." },
+      { "company": "Pariser Industries", "productName": "N/A", "notes": "No dedicated tannin spotter identified in current public product catalog." },
+      { "company": "GreenEarth Cleaning", "productName": "N/A", "notes": "No GreenEarth-branded tannin spotter. Use R.R. Street StreeTAN® or A.L. Wilson BonGo®." },
+      { "company": "National Chemical Laboratories", "productName": "TANNIN OUT™", "notes": "Carpet-grade organic acid tannin remover. NOT for garment use — formulated for carpet durability, not fabric safety." }
+    ]
+  },
+  "leveling": {
+    "genericName": "Leveling Agent",
+    "description": "Prevents water rings and marks on moisture-sensitive fabrics (silk, rayon, acetate). Applied before or during wet-side spotting to control how moisture spreads through fibers. Essential when working with any water-based chemistry on water-sensitive garments.",
+    "mechanism": "Leveling agents contain surfactants and wetting agents that reduce surface tension of water, causing it to spread evenly through the fabric rather than creating a defined wet boundary. The ring/mark forms at the boundary where wet meets dry — by eliminating that sharp boundary, leveling agents prevent visible marks.",
+    "products": [
+      { "company": "Royaltone", "productName": "Silk Magic", "notes": "Purpose-built for water rings on silk and rayon. Both prevents and removes water marks. Functions as both spotter and leveling agent." },
+      { "company": "R.R. Street & Co.", "productName": "MultiSPOT® / GreenSPOT®", "notes": "Pre-treatment/leveling agents. MultiSPOT® for perc, GreenSPOT® for GreenEarth. No-flush application." },
+      { "company": "Kreussler Inc.", "productName": "COLOFIX", "notes": "Fixing and leveling agent. Stabilizes direct dyes and prevents redeposition in colored wash." },
+      { "company": "A.L. Wilson Chemical Co.", "productName": "N/A", "notes": "No dedicated leveling agent in A.L. Wilson's product line." },
+      { "company": "Adco (Laidlaw)", "productName": "N/A", "notes": "No dedicated leveling agent identified." },
+      { "company": "Pariser Industries", "productName": "Neutra-Lube (partial)", "notes": "Neutra-Lube's neutral pH and premium wetting additives provide some leveling function on delicates, though it's not marketed as a leveling agent." },
+      { "company": "Seitz Inc.", "productName": "Referenced but not named", "notes": "Seitz references leveling agents in their product line but specific product name not confirmed in public materials." },
+      { "company": "Büfa Cleaning", "productName": "Lizerna Carat", "notes": "Functions as a refiner/conditioner in the Care 4.0 wet cleaning system. Not a standalone spotting board leveling agent." },
+      { "company": "GreenEarth Cleaning", "productName": "N/A", "notes": "Use R.R. Street GreenSPOT® in GreenEarth systems." },
+      { "company": "National Chemical Laboratories", "productName": "N/A", "notes": "Not applicable — institutional cleaning focus." }
+    ]
+  },
+  "rustRemover": {
+    "genericName": "Rust Remover",
+    "description": "Acid-based agent for iron oxide (rust) stains from metal contact, iron-rich water, or oxidized blood. Typically contains oxalic acid or hydrofluoric acid. Aggressive chemistry that requires quick application, rapid flushing, and careful handling.",
+    "mechanism": "Strong acids dissolve iron oxide (Fe₂O₃) by converting it to soluble iron salts. Oxalic acid forms soluble iron oxalate complexes. Hydrofluoric acid (in some formulations) is extremely effective but extremely dangerous. The acid must be neutralized after treatment to prevent ongoing fiber damage.",
+    "safetyWarning": "Rust removers contain strong acids. Always wear chemical-resistant gloves and eye protection. Apply only to the stain — do not let the agent spread. Flush quickly. Neutralize after treatment. Never use on natural stone surfaces that may be near the spotting board.",
+    "products": [
+      { "company": "A.L. Wilson Chemical Co.", "productName": "RustGo®", "notes": "Fast-acting rust remover. Standard professional rust removal agent." },
+      { "company": "Kreussler Inc.", "productName": "DEPRIT YELLOW (5)", "notes": "Acidic post-spotter for rust, metal stains, old blood, and ointments. Part of the DEPRIT Professional six-product system." },
+      { "company": "Adco (Laidlaw)", "productName": "Adco Rust & Stain Remover", "notes": "Multi-purpose formula — also handles lacquer, nail polish, shellac, adhesive, varnish, grass, gum, ink, cosmetics. Broader than a dedicated rust-only agent." },
+      { "company": "R.R. Street & Co.", "productName": "N/A", "notes": "No dedicated rust remover identified in current Street's product line." },
+      { "company": "Seitz Inc.", "productName": "N/A", "notes": "Not identified in public product information." },
+      { "company": "Royaltone", "productName": "N/A", "notes": "No rust remover in product line." },
+      { "company": "Pariser Industries", "productName": "N/A", "notes": "Not identified in current product catalog." },
+      { "company": "Büfa Cleaning", "productName": "SpotX variant (unconfirmed)", "notes": "Likely available within the SpotX seven-variant system but not specifically confirmed." },
+      { "company": "GreenEarth Cleaning", "productName": "N/A", "notes": "No branded rust remover." },
+      { "company": "National Chemical Laboratories", "productName": "N/A", "notes": "No textile-grade rust remover." }
+    ]
+  },
+  "enzymatic": {
+    "genericName": "Enzyme Spotter / Digestant",
+    "description": "Contains protease enzymes that physically digest protein-based stain molecules. More effective than surfactant-based protein spotters on old, set, or embedded protein stains because enzymes break peptide bonds in the protein structure itself. CRITICAL SAFETY RULE: Never use on silk, wool, cashmere, or any protein-based fiber.",
+    "mechanism": "Protease enzymes are biological catalysts that cleave peptide bonds in protein chains. They 'eat' the stain protein one bond at a time. This is why enzyme spotters work on stains that surfactant-based agents can't fully remove — the enzyme breaks down protein at a molecular level, while surfactants only work at the surface. The enzyme continues working as long as it has substrate (protein) and appropriate conditions (pH, temperature).",
+    "safetyWarning": "ENZYMES CANNOT DISTINGUISH BETWEEN STAIN PROTEIN AND FIBER PROTEIN. Silk (fibroin), wool (keratin), and cashmere (keratin) are all protein fibers. Protease enzymes will digest these fibers just as effectively as they digest blood or food proteins. THIS IS THE MOST COMMON CAUSE OF ENZYME DAMAGE IN PROFESSIONAL CLEANING.",
+    "products": [
+      { "company": "A.L. Wilson Chemical Co.", "productName": "SoGo '1'®", "notes": "Enzyme-activated synthetic detergent digestant. Withstands 145°F. Use as board spotter or soak. NOT for silk/wool." },
+      { "company": "Kreussler Inc.", "productName": "LANADOL AVANT", "notes": "Cold-active enzyme pre-brushing agent for collar soil and heavy dirt. Part of wet cleaning system. NOT for silk/wool." },
+      { "company": "Adco (Laidlaw)", "productName": "RSR (Powdered Digester)", "notes": "Powdered enzyme product. Dissolve in water for soak applications. NOT for silk/wool." },
+      { "company": "Pariser Industries", "productName": "RightStuff", "notes": "Eco-friendly formula containing enzymes plus solvents and detergents. NOT for silk/wool." },
+      { "company": "R.R. Street & Co.", "productName": "N/A", "notes": "No dedicated enzyme product in current Street's product line." },
+      { "company": "Seitz Inc.", "productName": "Referenced but unconfirmed", "notes": "Enzymatic agents referenced in product line but specific product not identified." },
+      { "company": "Royaltone", "productName": "N/A", "notes": "No enzyme product identified." },
+      { "company": "Büfa Cleaning", "productName": "Implied in Care 4.0", "notes": "Enzyme capability implied but not specifically confirmed as standalone product." },
+      { "company": "GreenEarth Cleaning", "productName": "N/A", "notes": "No enzyme product." },
+      { "company": "National Chemical Laboratories", "productName": "SHA-ZYME / NATURE'S FORCE", "notes": "Bio-enzymatic cleaners for drains/hard surfaces. NOT formulated for textile safety." }
+    ]
+  },
+  "solvent": {
+    "genericName": "Dry Cleaning Solvent",
+    "description": "The primary cleaning medium in a dry cleaning machine. Dissolves and carries away oil-based soils from garments. Choice of solvent determines the entire cleaning system — detergents, spotters, and equipment must all be compatible.",
+    "mechanism": "Solvents dissolve non-polar (oil-based) soil through 'like dissolves like' — the solvent's molecular structure is similar enough to oil-based soils to dissolve them. The dissolved soil is carried to a filter and/or distillation unit, and the clean solvent is recycled back through the garments.",
+    "products": [
+      { "company": "R.R. Street & Co.", "productName": "DF-2000™ Fluid", "notes": "Synthetic High Flash Hydrocarbon by ExxonMobil, distributed by Street's. Lowest aromatic content of any HFHC. Flash point >130°F. The dominant hydrocarbon solvent in the US." },
+      { "company": "Kreussler Inc.", "productName": "SolvonK4", "notes": "Bio-based acetal from corn. Non-toxic, biodegradable, patent-protected. Only bio-based solvent on the market. Requires SYSTEMK4 equipment." },
+      { "company": "Seitz Inc.", "productName": "SENSENE™ / DC Naturell® / intense® / hydrocarbon", "notes": "SENSENE™: modified alcohol, KB 161 (highest non-perc solvency). DC Naturell®: liquid silicone. intense®: enhanced-safety solvent. Plus hydrocarbon. Most solvent options of any company." },
+      { "company": "GreenEarth Cleaning", "productName": "D5 (Decamethylcyclopentasiloxane)", "notes": "Liquid silicone. Non-toxic, chemically inert, gentle. KB ~15 (weakest cleaning power). Licensed system model." },
+      { "company": "Büfa Cleaning", "productName": "BÜFA TDC 2000 / SENSENE™ (distributed)", "notes": "TDC 2000: high-purity isoparaffinic hydrocarbon (C11-C12, narrow fraction). Also distributes SENSENE™." },
+      { "company": "A.L. Wilson Chemical Co.", "productName": "N/A", "notes": "A.L. Wilson does not manufacture solvents — spotting agent specialist only." },
+      { "company": "Adco (Laidlaw)", "productName": "N/A", "notes": "No proprietary solvent. Products designed for use with DF-2000™ or perc." },
+      { "company": "Pariser Industries", "productName": "N/A", "notes": "Does not manufacture dry cleaning solvents." },
+      { "company": "Royaltone", "productName": "N/A", "notes": "Does not manufacture dry cleaning solvents." },
+      { "company": "National Chemical Laboratories", "productName": "N/A", "notes": "Does not manufacture dry cleaning solvents." }
+    ]
+  },
+  "oxidizingBleach": {
+    "genericName": "Oxidizing Bleach",
+    "description": "Hydrogen peroxide-based or sodium percarbonate-based bleach that removes color and residual stains through oxidation. Used on white fabrics only — will strip dyes from colored garments. Must be neutralized after use to prevent ongoing fiber damage.",
+    "mechanism": "Oxidizing agents donate oxygen atoms to chromophore (color-producing) molecular structures in stains, breaking the electronic conjugation that produces visible color. The stain molecule becomes colorless. This same mechanism will attack garment dyes — hence the restriction to white fabrics.",
+    "products": [
+      { "company": "A.L. Wilson Chemical Co.", "productName": "PermaGo®", "notes": "Removes residual ink, protein, and tannin stains. White fabric ONLY. MUST neutralize with ColorGo® or ExGo® after treatment." },
+      { "company": "Kreussler Inc.", "productName": "Not explicitly identified", "notes": "Kreussler does not prominently market a standalone oxidizing bleach. Their DEPRIT system handles most residual stains through targeted chemistry rather than bleaching." },
+      { "company": "R.R. Street & Co.", "productName": "Not identified in current product line", "notes": "Street's product catalog does not include a prominently marketed oxidizing bleach." },
+      { "company": "Others", "productName": "Various", "notes": "Most other companies either don't offer or don't prominently market oxidizing bleach products. Hydrogen peroxide (3%) is often used as a generic oxidizing agent." }
+    ]
+  },
+  "reducingAgent": {
+    "genericName": "Reducing Bleach / Reducing Agent",
+    "description": "Chemical bleach that removes unwanted color by stripping electrons from dye molecules. Used for dye transfer recovery, residual color stains, and as a counterpart to oxidizing bleach. More aggressive and hazardous than oxidizing bleach.",
+    "mechanism": "Reducing agents donate electrons to dye molecules, breaking the electronic conjugation in the chromophore. This is the chemical opposite of oxidation — instead of adding oxygen, it removes it. Effective on stains that oxidizing bleach can't touch (some reactive dyes, some set stains).",
+    "products": [
+      { "company": "A.L. Wilson Chemical Co.", "productName": "YellowGo® / ColorGo®", "notes": "YellowGo®: titanium sulfate-based, contains sulfuric acid — extremely hazardous, full PPE required. The most powerful reducing bleach in professional dry cleaning. ColorGo®: powdered alternative, less aggressive. Also neutralizes PermaGo®." },
+      { "company": "Kreussler Inc.", "productName": "Not explicitly identified", "notes": "Kreussler's DEPRIT PURPLE addresses dye/ink stains through alkaline chemistry rather than reducing bleach." },
+      { "company": "Others", "productName": "N/A", "notes": "A.L. Wilson is the primary source for professional-grade reducing bleach in the US market." }
+    ]
+  },
+  "wetCleaningDetergent": {
+    "genericName": "Wet Cleaning Detergent",
+    "description": "Specialized detergent for washing dry-clean-only garments in water. Formulated with mild surfactants that clean without stripping natural fiber oils. pH-controlled to protect protein fibers. Used in conjunction with professional wet cleaning equipment (controlled temperature, limited mechanical action).",
+    "mechanism": "Mild, non-ionic and anionic surfactants create micelles that encapsulate and remove soil without the aggressive action of standard laundry detergents. Fiber protection agents coat fiber surfaces to prevent felting (wool) and weakening (rayon). pH buffers maintain neutral conditions to protect peptide bonds in silk and keratin bonds in wool.",
+    "products": [
+      { "company": "Kreussler Inc.", "productName": "LANADOL AKTIV", "notes": "Industry standard. Developed with Miele 20+ years ago. Blue Angel certified. Safe for wool, silk, cashmere, delicates." },
+      { "company": "R.R. Street & Co.", "productName": "H2PRO® Detergent", "notes": "For hand washing, top-load, front-load, professional laundry, and wetcleaning machines." },
+      { "company": "Seitz Inc.", "productName": "Viva Care system", "notes": "Complete wet cleaning product range." },
+      { "company": "Büfa Cleaning", "productName": "Ozerna Polar / Ozerna Basic", "notes": "Ozerna Polar: color protection. Ozerna Basic: general textiles and leather." },
+      { "company": "Adco (Laidlaw)", "productName": "Khaki Klean™ / Power Brite®", "notes": "Multi-purpose wet cleaning detergents in the Adco/Street's portfolio." },
+      { "company": "Royaltone", "productName": "Leather Wet Cleaning Detergent", "notes": "Specifically formulated for leather and suede — prevents stiffening. Niche application." },
+      { "company": "Pariser Industries", "productName": "Commercial laundry line", "notes": "75+ liquid laundry products. More institutional than professional garment wet cleaning." },
+      { "company": "A.L. Wilson Chemical Co.", "productName": "N/A", "notes": "A.L. Wilson does not manufacture wet cleaning detergents — spotting specialist only." },
+      { "company": "GreenEarth Cleaning", "productName": "N/A", "notes": "GreenEarth is a solvent system, not a wet cleaning system." },
+      { "company": "National Chemical Laboratories", "productName": "WASH-BRITE™", "notes": "Institutional laundry detergent. Not professional garment wet cleaning." }
+    ]
+  },
+  "finishingAgent": {
+    "genericName": "Finishing / Sizing Agent",
+    "description": "Post-cleaning treatment that restores body, crispness, and hand to garments. Essential after wet cleaning (which strips natural fiber stiffness). May also include water/stain repellent treatments, softeners, and anti-static agents.",
+    "mechanism": "Sizing agents deposit a thin film of polymer (starch, synthetic polymer, or silicone) on fiber surfaces. This restores the 'hand' (tactile quality) that cleaning processes strip away. Repellent finishes work by coating fiber surfaces with hydrophobic (water-repelling) molecules — traditionally fluorocarbons (PFAS), now increasingly PFAS-free alternatives.",
+    "products": [
+      { "company": "Kreussler Inc.", "productName": "LANADOL APRET / HYDROB EASY DRY / VINOYK4", "notes": "APRET: sizing/finishing for wet cleaning. HYDROB EASY DRY: PFOA/PFOS-free water/oil repellent. VINOYK4: stain repellent that also preserves SolvonK4 solvent purity." },
+      { "company": "Adco (Laidlaw)", "productName": "Silksheen™ / Aquasize® / Softenall®", "notes": "Silksheen™: anti-streak finishing aid. Aquasize®: wet cleaning sizing. Softenall®: fabric softener." },
+      { "company": "Büfa Cleaning", "productName": "Secasit Lotus / Lizerna Carat / Lival Licker Conc", "notes": "Secasit Lotus: fluorocarbon-reduced water-proofing. Lizerna Carat: wet cleaning conditioner. Lival Licker Conc: leather conditioning." },
+      { "company": "Kreussler Inc.", "productName": "LANADOL LICKER", "notes": "Leather/fur finishing agent — restores suppleness and color depth." },
+      { "company": "Seitz Inc.", "productName": "Referenced in product line", "notes": "Finishing agents available but specific product names not prominent in public materials." },
+      { "company": "R.R. Street & Co.", "productName": "Referenced but limited detail", "notes": "Finishing/water repellent category exists in Street's portfolio. Specific product details limited." },
+      { "company": "Others", "productName": "Various", "notes": "A.L. Wilson, Pariser, Royaltone, GreenEarth, and NCL do not prominently market finishing agents." }
+    ]
+  }
+}
