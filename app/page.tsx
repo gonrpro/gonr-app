@@ -180,16 +180,18 @@ export default function SolvePage() {
           width: '140px', height: '140px',
           pointerEvents: 'none',
         }} />
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="scan-hero-icon">
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="scan-hero-icon">
           <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
           <circle cx="12" cy="13" r="3" />
         </svg>
-        <span className="scan-hero-label" style={{ fontSize: '20px', fontWeight: 800, letterSpacing: '-0.5px' }}>
-          {t('scanStain')}
-        </span>
-        <span className="scan-hero-sub" style={{ fontSize: '12px', letterSpacing: '0.2px' }}>
-          {t('scanStainSubtext')}
-        </span>
+        <div style={{ textAlign: 'center' }}>
+          <div className="scan-hero-label" style={{ fontSize: '14px', fontWeight: 600 }}>
+            {t('scanStain')}
+          </div>
+          <div className="scan-hero-sub" style={{ fontSize: '11px', marginTop: '2px' }}>
+            {t('scanStainSubtext')}
+          </div>
+        </div>
       </button>
 
       {/* ── Text Fallback + Solve button ── */}
