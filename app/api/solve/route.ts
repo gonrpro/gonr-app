@@ -1,6 +1,16 @@
 import { NextResponse } from 'next/server'
 import { lookupProtocol } from '@/lib/protocols/lookup'
 import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
+import crosswalkData from '@/data/chemicals/agent-brand-crosswalk.json'
+
+type CrosswalkAgent = { genericName?: string; products?: Array<{ company: string; productName: string }> }
+const crosswalk = crosswalkData as Record<string, CrosswalkAgent>
+const PRODUCT_REFERENCE = Object.entries(crosswalk)
+  .filter(([, v]) => v && typeof v === 'object' && 'products' in v && Array.isArray(v.products))
+  .map(([, v]) => {
+    const products = (v.products || []).slice(0, 3).map((p) => `${p.productName} (${p.company})`).join(', ')
+    return `- ${v.genericName}: ${products}`
+  }).join('\n')
 
 // ─── Text-based AI protocol generation (existing, unchanged) ───
 
