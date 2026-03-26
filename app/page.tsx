@@ -158,6 +158,9 @@ export default function SolvePage() {
         <h1 style={{ fontSize: '30px', fontWeight: 900, letterSpacing: '-1px', lineHeight: 1.1, margin: 0 }}>
           Master Spotter
         </h1>
+        <p style={{ fontSize: '11px', color: '#6b7280', marginTop: '6px', letterSpacing: '0.3px' }}>
+          Powered by Stain Brain Engine
+        </p>
       </div>
 
       {/* ── Hero Camera ── */}
