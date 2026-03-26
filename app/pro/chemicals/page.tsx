@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import crosswalkData from '@/data/chemicals/agent-brand-crosswalk.json'
 import fiberData from '@/data/chemicals/fiber-expertise-index.json'
 
@@ -183,6 +184,7 @@ function Chip({ children, variant = 'default' }: {
 // ─── Tab: By Agent ───────────────────────────────────────────────────────────
 
 function AgentTab() {
+  const { t } = useLanguage()
   const [expandedAgent, setExpandedAgent] = useState<string | null>(null)
   const [expandedBrands, setExpandedBrands] = useState<Record<string, boolean>>({})
 
@@ -223,7 +225,7 @@ function AgentTab() {
                 {agent.mechanism && (
                   <div className="rounded-lg p-3" style={{ background: 'var(--surface-2)' }}>
                     <p className="text-xs font-mono font-bold mb-1" style={{ color: 'var(--accent)' }}>
-                      MECHANISM
+                      {t('mechanism')}
                     </p>
                     <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
                       {agent.mechanism}
@@ -234,7 +236,7 @@ function AgentTab() {
                 {agent.safetyWarning && (
                   <div className="rounded-lg p-3 border border-red-500/20" style={{ background: 'rgba(239,68,68,0.05)' }}>
                     <p className="text-xs font-mono font-bold mb-1 text-red-400">
-                      ⚠️ SAFETY
+                      ⚠️ {t('safetyUpper')}
                     </p>
                     <p className="text-xs text-red-400/80">
                       {agent.safetyWarning}
@@ -248,7 +250,7 @@ function AgentTab() {
             {brandProducts.length > 0 && (
               <div className="mt-3 pt-3" style={{ borderTop: '1px solid var(--border)' }}>
                 <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>
-                  BRAND PRODUCTS
+                  {t('brandProducts')}
                 </p>
                 <div className="space-y-1.5">
                   {visibleBrands.map((p, i) => (
@@ -267,7 +269,7 @@ function AgentTab() {
                     className="text-[10px] font-mono font-bold mt-2 transition-colors"
                     style={{ color: 'var(--accent)' }}
                   >
-                    {showAllBrands ? '▲ Show less' : `▼ Show all ${brandProducts.length}`}
+                    {showAllBrands ? `▲ ${t('showLess')}` : `▼ ${t('showAll')} ${brandProducts.length}`}
                   </button>
                 )}
               </div>
@@ -349,15 +351,16 @@ function CompanyTab() {
 }
 
 function CompanyDetails({ company }: { company: CompanyData }) {
+  const { t } = useLanguage()
   const [expandedSection, setExpandedSection] = useState<string | null>(null)
 
   const sections = [
-    { key: 'overview', label: 'Overview', icon: '📋' },
-    { key: 'products', label: 'Product Lines', icon: '🧪' },
-    { key: 'agents', label: 'Agent Mapping', icon: '🗺️' },
-    { key: 'fibers', label: 'Fiber Expertise', icon: '🧵' },
-    { key: 'distribution', label: 'Distribution', icon: '📦' },
-    { key: 'gonr', label: 'GONR Relevance', icon: '🟢' },
+    { key: 'overview', tKey: 'overview', icon: '📋' },
+    { key: 'products', tKey: 'productLines', icon: '🧪' },
+    { key: 'agents', tKey: 'agentMapping', icon: '🗺️' },
+    { key: 'fibers', tKey: 'fiberExpertise', icon: '🧵' },
+    { key: 'distribution', tKey: 'distribution', icon: '📦' },
+    { key: 'gonr', tKey: 'gonrRelevance', icon: '🟢' },
   ]
 
   return (
@@ -372,7 +375,7 @@ function CompanyDetails({ company }: { company: CompanyData }) {
               className="w-full flex items-center gap-2 py-2 text-left"
             >
               <span className="text-sm">{section.icon}</span>
-              <span className="text-xs font-bold flex-1">{section.label}</span>
+              <span className="text-xs font-bold flex-1">{t(section.tKey)}</span>
               <Chevron open={isOpen} />
             </button>
 
@@ -453,13 +456,13 @@ function CompanyDetails({ company }: { company: CompanyData }) {
                 {section.key === 'distribution' && company.distributionNetwork && (
                   <div className="space-y-2 text-xs" style={{ color: 'var(--text-secondary)' }}>
                     {company.distributionNetwork.regions && (
-                      <p><span className="font-bold" style={{ color: 'var(--text)' }}>Regions:</span> {company.distributionNetwork.regions.join(', ')}</p>
+                      <p><span className="font-bold" style={{ color: 'var(--text)' }}>{t('regions')}:</span> {company.distributionNetwork.regions.join(', ')}</p>
                     )}
                     {company.distributionNetwork.distributionMethod && (
-                      <p><span className="font-bold" style={{ color: 'var(--text)' }}>Method:</span> {company.distributionNetwork.distributionMethod}</p>
+                      <p><span className="font-bold" style={{ color: 'var(--text)' }}>{t('method')}:</span> {company.distributionNetwork.distributionMethod}</p>
                     )}
                     {company.distributionNetwork.howToBuy && (
-                      <p><span className="font-bold" style={{ color: 'var(--text)' }}>How to buy:</span> {company.distributionNetwork.howToBuy}</p>
+                      <p><span className="font-bold" style={{ color: 'var(--text)' }}>{t('howToBuy')}:</span> {company.distributionNetwork.howToBuy}</p>
                     )}
                   </div>
                 )}
@@ -474,7 +477,7 @@ function CompanyDetails({ company }: { company: CompanyData }) {
                     {company.gonrIntegration.agentCrossReference && (
                       <div className="rounded-lg p-3 border border-green-500/20" style={{ background: 'rgba(34,197,94,0.04)' }}>
                         <p className="text-[10px] font-mono font-bold mb-1" style={{ color: 'var(--accent)' }}>
-                          PROTOCOL MAPPING
+                          {t('protocolMapping')}
                         </p>
                         <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
                           {company.gonrIntegration.agentCrossReference}
@@ -483,7 +486,7 @@ function CompanyDetails({ company }: { company: CompanyData }) {
                     )}
                     {company.gonrIntegration.whenToRecommend && (
                       <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-                        <span className="font-bold" style={{ color: 'var(--text)' }}>When to recommend:</span>{' '}
+                        <span className="font-bold" style={{ color: 'var(--text)' }}>{t('whenToRecommend')}:</span>{' '}
                         {company.gonrIntegration.whenToRecommend}
                       </p>
                     )}
@@ -536,6 +539,7 @@ function FiberTab() {
 }
 
 function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
+  const { t } = useLanguage()
   const data = fibers[fiber] as FiberEntry | undefined
   if (!data) return null
   const isHighRisk = HIGH_RISK_FIBERS.includes(fiber)
@@ -548,7 +552,7 @@ function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
           border border-white/10 hover:border-green-500/30 transition-colors"
         style={{ color: 'var(--text-secondary)' }}
       >
-        ← ALL FIBERS
+        {t('allFibers')}
       </button>
 
       <div className="flex items-center gap-3">
@@ -556,7 +560,7 @@ function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
         <div>
           <h2 className="text-lg font-bold capitalize">{fiber}</h2>
           {isHighRisk && (
-            <Chip variant="red">⚠️ HIGH RISK FIBER</Chip>
+            <Chip variant="red">⚠️ {t('highRiskFiber')}</Chip>
           )}
         </div>
       </div>
@@ -568,7 +572,7 @@ function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
       {/* Key Considerations */}
       <div className="card" style={{ borderColor: isHighRisk ? 'rgba(239,68,68,0.2)' : undefined }}>
         <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: isHighRisk ? 'var(--danger)' : 'var(--gold)' }}>
-          ⚠️ KEY CONSIDERATIONS
+          ⚠️ {t('keyConsiderations')}
         </p>
         <ul className="space-y-1.5">
           {data.keyConsiderations.map((item, i) => (
@@ -583,7 +587,7 @@ function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
       {/* Recommended Companies */}
       <div>
         <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: 'var(--accent)' }}>
-          RECOMMENDED COMPANIES & PRODUCTS
+          {t('recommendedCompanies')}
         </p>
         <div className="space-y-2">
           {data.recommendedCompanies.map((rec, i) => (
@@ -604,7 +608,7 @@ function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
       <div className="grid grid-cols-1 gap-3">
         <div className="card">
           <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: 'var(--accent)' }}>
-            ✓ AGENTS TO USE
+            ✓ {t('agentsToUse')}
           </p>
           <div className="flex flex-wrap gap-1.5">
             {data.agentsToUse.map((agent, i) => (
@@ -615,7 +619,7 @@ function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
 
         <div className="card" style={{ borderColor: 'rgba(239,68,68,0.15)' }}>
           <p className="text-[10px] font-mono font-bold tracking-wider mb-2 text-red-400">
-            ✗ AGENTS TO AVOID
+            ✗ {t('agentsToAvoid')}
           </p>
           <div className="flex flex-wrap gap-1.5">
             {data.agentsToAvoid.map((agent, i) => (
@@ -630,22 +634,23 @@ function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
 
 // ─── Main Page ───────────────────────────────────────────────────────────────
 
-const TABS: { key: Tab; label: string }[] = [
-  { key: 'agent', label: 'By Agent' },
-  { key: 'company', label: 'By Company' },
-  { key: 'fiber', label: 'By Fiber' },
+const TAB_KEYS: { key: Tab; tKey: string }[] = [
+  { key: 'agent', tKey: 'byAgent' },
+  { key: 'company', tKey: 'byCompany' },
+  { key: 'fiber', tKey: 'byFiber' },
 ]
 
 export default function ChemicalReferencePage() {
+  const { t } = useLanguage()
   const [activeTab, setActiveTab] = useState<Tab>('agent')
 
   return (
     <div className="space-y-4">
       {/* Page Header */}
       <div>
-        <h1 className="text-xl font-bold tracking-tight">Chemical Reference</h1>
+        <h1 className="text-xl font-bold tracking-tight">{t('chemicalReference')}</h1>
         <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
-          Professional cleaning agents, company directory, and fiber guides.
+          {t('chemicalRefSubtitle')}
         </p>
       </div>
 
@@ -654,7 +659,7 @@ export default function ChemicalReferencePage() {
         className="flex rounded-xl p-1 gap-1"
         style={{ background: 'var(--surface-2)' }}
       >
-        {TABS.map(tab => (
+        {TAB_KEYS.map(tab => (
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
@@ -668,7 +673,7 @@ export default function ChemicalReferencePage() {
               color: activeTab === tab.key ? '#fff' : 'var(--text-secondary)',
             }}
           >
-            {tab.label}
+            {t(tab.tKey)}
           </button>
         ))}
       </div>

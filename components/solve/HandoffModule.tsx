@@ -1,62 +1,123 @@
 'use client'
 
 import { useState } from 'react'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
-interface HandoffModuleProps {
-  stain: string
-  surface: string
-  stainChemistry?: string
-  whyThisWorks?: string
-}
+export default function HandoffModule({ stain, surface }: { stain: string; surface: string }) {
+  const { t, lang } = useLanguage()
+  const [situation, setSituation] = useState<string>('intake')
+  const [details, setDetails] = useState(`Stain: ${stain}\nSurface: ${surface}`)
+  const [message, setMessage] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [copied, setCopied] = useState(false)
 
-function buildMessage(stain: string, surface: string, stainChemistry?: string, whyThisWorks?: string): string {
-  const s = stain.replace(/-/g, ' ')
-  const f = surface.replace(/-/g, ' ')
+  const SITUATIONS = [
+    { key: 'intake', tKey: 'intake', emoji: '📬' },
+    { key: 'improved', tKey: 'improved', emoji: '✅' },
+    { key: 'tough', tKey: 'tough', emoji: '⚠️' },
+    { key: 'release', tKey: 'release', emoji: '📤' },
+    { key: 'defect', tKey: 'manufacturerDefect', emoji: '🏭' },
+  ] as const
 
-  // Build a plain-language customer-facing message — never dump raw science text
-  // Use whyThisWorks only as a hint to craft the science line, not verbatim
-  let scienceLine = ''
-  const source = whyThisWorks || stainChemistry
-  if (source && source.length > 20) {
-    // Take first sentence, strip jargon, use as context hint
-    const firstSentence = source.split(/\.\s+/)[0].trim()
-    // Only use it if it doesn't contain technical terms — otherwise use generic
-    const hasJargon = /enzyme|oxidiz|tannin|protein|pH|surfactant|solvent|NSD|POG|IPA|H₂O₂|acetic|alkalin/i.test(firstSentence)
-    if (!hasJargon && firstSentence.length < 120) {
-      scienceLine = ` ${firstSentence}.`
+  const handleGenerate = async () => {
+    setLoading(true)
+    setError('')
+    setMessage('')
+
+    try {
+      const res = await fetch('/api/handoff', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ stain, surface, outcome: situation, details, lang }),
+      })
+
+      if (!res.ok) {
+        const data = await res.json()
+        throw new Error(data.error || 'Failed to generate message')
+      }
+
+      const data = await res.json()
+      setMessage(data.message)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong')
+    } finally {
+      setLoading(false)
     }
   }
 
-  return `We took a look at the ${s} stain on your ${f} and treated it using the right process for this stain type.${scienceLine} We gave it our best treatment and want to make sure you're happy with the result — feel free to reach out if you have any questions or concerns about the outcome.`
-}
-
-export default function HandoffModule({ stain, surface, stainChemistry, whyThisWorks }: HandoffModuleProps) {
-  const [copied, setCopied] = useState(false)
-
-  const message = buildMessage(stain, surface, stainChemistry, whyThisWorks)
-
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(message)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    if (message) {
+      await navigator.clipboard.writeText(message)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    }
   }
 
   return (
     <div className="space-y-3">
-      <div className="rounded-xl p-4 text-sm leading-relaxed" style={{ background: 'var(--surface-2)', color: 'var(--text)' }}>
-        {message}
+      {/* Situation selector */}
+      <div className="flex gap-1.5 flex-wrap">
+        {SITUATIONS.map((s) => (
+          <button
+            key={s.key}
+            onClick={() => setSituation(s.key)}
+            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors min-h-[44px]
+              ${situation === s.key
+                ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                : 'bg-gray-100 dark:bg-white/5 text-gray-500 dark:text-gray-400 border border-transparent hover:border-green-500/20'
+              }`}
+          >
+            {s.emoji} {t(s.tKey)}
+          </button>
+        ))}
       </div>
+
+      {/* Editable details textarea */}
+      <textarea
+        value={details}
+        onChange={(e) => setDetails(e.target.value)}
+        rows={3}
+        placeholder={t('addDetails')}
+        className="w-full rounded-lg bg-white dark:bg-[#0e131b] border border-gray-200 dark:border-white/10
+          text-sm text-gray-800 dark:text-gray-200 p-3 resize-none
+          focus:outline-none focus:ring-2 focus:ring-green-500/50
+          placeholder:text-gray-400 dark:placeholder:text-gray-600"
+      />
+
+      {/* Generate button */}
       <button
-        onClick={handleCopy}
-        className="w-full min-h-[44px] rounded-xl text-sm font-semibold transition-colors"
-        style={{
-          background: copied ? 'rgba(34,197,94,0.15)' : 'var(--surface-2)',
-          border: '1px solid var(--border-strong)',
-          color: copied ? 'var(--accent)' : 'var(--text)',
-        }}
+        onClick={handleGenerate}
+        disabled={loading}
+        className="w-full min-h-[44px] rounded-xl bg-green-500 text-white text-sm font-semibold
+          hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {copied ? '✓ Copied' : '📋 Copy to Clipboard'}
+        {loading ? t('generating') : t('generateResponse')}
       </button>
+
+      {/* Error */}
+      {error && (
+        <p className="text-sm text-red-400">{error}</p>
+      )}
+
+      {/* Generated message */}
+      {message && (
+        <div className="space-y-2">
+          <div className="bg-gray-50 dark:bg-white/5 rounded-xl p-4 text-sm leading-relaxed
+            text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
+            {message}
+          </div>
+          <button
+            onClick={handleCopy}
+            className="w-full min-h-[44px] rounded-lg bg-gray-100 dark:bg-white/5
+              border border-gray-200 dark:border-white/10
+              text-gray-600 dark:text-gray-400 text-sm font-medium
+              hover:bg-gray-200 dark:hover:bg-white/10 transition-colors"
+          >
+            {copied ? `✓ ${t('copied')}` : `📋 ${t('copyToClipboard')}`}
+          </button>
+        </div>
+      )}
     </div>
   )
 }

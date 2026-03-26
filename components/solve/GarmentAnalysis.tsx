@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef } from 'react'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 interface AnalysisResult {
   rootCause: string
@@ -12,25 +13,13 @@ interface AnalysisResult {
   proTip: string
 }
 
-const DAMAGE_CHIPS = [
-  'Color loss',
-  'Yellowing',
-  'Hole / tear',
-  'Texture change',
-  'Shrinkage',
-  'Press mark',
-  'Solvent ring',
-  'Dye bleed',
+const DAMAGE_CHIP_KEYS = [
+  'colorLoss', 'yellowing', 'holeTear', 'textureChange',
+  'shrinkage', 'pressMark', 'solventRing', 'dyeBleed',
 ] as const
 
-const REPAIRABLE_BADGE: Record<string, { label: string; color: string }> = {
-  yes:       { label: 'REPAIRABLE', color: 'bg-green-500/15 text-green-400 border-green-500/30' },
-  partial:   { label: 'PARTIAL',    color: 'bg-amber-500/15 text-amber-400 border-amber-500/30' },
-  no:        { label: 'PERMANENT',  color: 'bg-red-500/15 text-red-400 border-red-500/30' },
-  uncertain: { label: 'UNCERTAIN',  color: 'bg-gray-500/15 text-gray-400 border-gray-500/30' },
-}
-
 export default function GarmentAnalysis() {
+  const { t, lang } = useLanguage()
   const [image, setImage] = useState<string | null>(null)
   const [description, setDescription] = useState('')
   const [activeChips, setActiveChips] = useState<Set<string>>(new Set())
@@ -41,10 +30,22 @@ export default function GarmentAnalysis() {
   const [copied, setCopied] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
 
+  const REPAIRABLE_BADGE: Record<string, { tKey: string; color: string }> = {
+    yes:       { tKey: 'repairable', color: 'bg-green-500/15 text-green-400 border-green-500/30' },
+    partial:   { tKey: 'partial',    color: 'bg-amber-500/15 text-amber-400 border-amber-500/30' },
+    no:        { tKey: 'permanent',  color: 'bg-red-500/15 text-red-400 border-red-500/30' },
+    uncertain: { tKey: 'uncertain',  color: 'bg-gray-500/15 text-gray-400 border-gray-500/30' },
+  }
+
+  const HANDOFF_TONES: { key: 'improved' | 'tough' | 'release'; tKey: string }[] = [
+    { key: 'improved', tKey: 'improved' },
+    { key: 'tough', tKey: 'tough' },
+    { key: 'release', tKey: 'release' },
+  ]
+
   function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
     if (!file) return
-
     const reader = new FileReader()
     reader.onload = () => setImage(reader.result as string)
     reader.readAsDataURL(file)
@@ -60,21 +61,18 @@ export default function GarmentAnalysis() {
 
   async function handleAnalyze() {
     if (!image && !description) return
-
     setLoading(true)
     setError('')
     setResult(null)
 
     try {
-      const context = [
-        ...Array.from(activeChips),
-        description,
-      ].filter(Boolean).join('. ')
+      const chipLabels = Array.from(activeChips).map(k => t(k))
+      const context = [...chipLabels, description].filter(Boolean).join('. ')
 
       const res = await fetch('/api/garment-analysis', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ image, description: context }),
+        body: JSON.stringify({ image, description: context, lang }),
       })
 
       if (!res.ok) {
@@ -115,21 +113,21 @@ export default function GarmentAnalysis() {
         <div>
           <h2 className="text-base font-bold flex items-center gap-2">
             <span className="text-lg">🔍</span>
-            Garment Analysis
+            {t('garmentAnalysisTitle')}
             <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md
               bg-amber-500/15 text-amber-400 border border-amber-500/30">
-              OPERATOR
+              {t('operatorBadge')}
             </span>
           </h2>
           <p className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>
-            Photo of damage → AI reasoning → root cause + handoff language
+            {t('garmentAnalysisSubtext')}
           </p>
         </div>
         {result && (
           <button onClick={reset} className="text-xs font-mono font-bold px-3 py-1.5 rounded-lg
             border border-white/10 hover:border-green-500/30 transition-colors"
             style={{ color: 'var(--text-secondary)' }}>
-            NEW
+            {t('newAnalysis')}
           </button>
         )}
       </div>
@@ -164,8 +162,8 @@ export default function GarmentAnalysis() {
                 style={{ color: 'var(--text-secondary)' }}
               >
                 <span className="text-2xl">📷</span>
-                <span className="text-sm font-medium">Tap to photograph damage</span>
-                <span className="text-xs opacity-60">or upload an existing photo</span>
+                <span className="text-sm font-medium">{t('tapToPhotograph')}</span>
+                <span className="text-xs opacity-60">{t('orUploadPhoto')}</span>
               </button>
             )}
           </div>
@@ -175,7 +173,7 @@ export default function GarmentAnalysis() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             rows={2}
-            placeholder="Describe what you see (optional)..."
+            placeholder={t('describeOptional')}
             className="w-full rounded-lg border border-white/10 text-sm p-3 resize-none
               focus:outline-none focus:ring-2 focus:ring-amber-500/30
               placeholder:opacity-40"
@@ -184,18 +182,18 @@ export default function GarmentAnalysis() {
 
           {/* Damage chips */}
           <div className="flex flex-wrap gap-2">
-            {DAMAGE_CHIPS.map(chip => (
+            {DAMAGE_CHIP_KEYS.map(chipKey => (
               <button
-                key={chip}
-                onClick={() => toggleChip(chip)}
+                key={chipKey}
+                onClick={() => toggleChip(chipKey)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all
-                  ${activeChips.has(chip)
+                  ${activeChips.has(chipKey)
                     ? 'bg-amber-500 text-white'
                     : 'border border-white/10 hover:border-amber-500/30'
                   }`}
-                style={!activeChips.has(chip) ? { color: 'var(--text-secondary)', background: 'var(--card-bg)' } : {}}
+                style={!activeChips.has(chipKey) ? { color: 'var(--text-secondary)', background: 'var(--card-bg)' } : {}}
               >
-                {chip}
+                {t(chipKey)}
               </button>
             ))}
           </div>
@@ -211,10 +209,10 @@ export default function GarmentAnalysis() {
             {loading ? (
               <span className="flex items-center justify-center gap-2">
                 <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
-                Analyzing damage...
+                {t('analyzingDamage')}
               </span>
             ) : (
-              '🔍 Analyze Garment'
+              `🔍 ${t('analyzeGarment')}`
             )}
           </button>
 
@@ -223,17 +221,17 @@ export default function GarmentAnalysis() {
           )}
         </>
       ) : (
-        /* ─── Results ──────────────────────────────────────── */
+        /* Results */
         <div className="space-y-3">
           {/* Root Cause */}
           <div className="card space-y-2">
             <div className="flex items-center justify-between">
               <span className="text-[10px] font-mono font-bold tracking-wider"
-                style={{ color: 'var(--green)' }}>ROOT CAUSE</span>
+                style={{ color: 'var(--green)' }}>{t('rootCause')}</span>
               {REPAIRABLE_BADGE[result.repairable] && (
                 <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-md border
                   ${REPAIRABLE_BADGE[result.repairable].color}`}>
-                  {REPAIRABLE_BADGE[result.repairable].label}
+                  {t(REPAIRABLE_BADGE[result.repairable].tKey)}
                 </span>
               )}
             </div>
@@ -250,7 +248,7 @@ export default function GarmentAnalysis() {
           {result.fiberConcerns.length > 0 && (
             <div className="card border-red-500/20">
               <span className="text-[10px] font-mono font-bold tracking-wider text-red-400">
-                FIBER CONCERNS
+                {t('fiberConcerns')}
               </span>
               <div className="mt-2 space-y-1">
                 {result.fiberConcerns.map((c, i) => (
@@ -266,7 +264,7 @@ export default function GarmentAnalysis() {
           {result.protocol.length > 0 && (
             <div className="card">
               <span className="text-[10px] font-mono font-bold tracking-wider"
-                style={{ color: 'var(--green)' }}>PROTOCOL</span>
+                style={{ color: 'var(--green)' }}>{t('protocol')}</span>
               <div className="mt-3 space-y-3">
                 {result.protocol.map(s => (
                   <div key={s.step} className="flex gap-3 items-start">
@@ -297,7 +295,7 @@ export default function GarmentAnalysis() {
           {result.proTip && (
             <div className="card border-amber-500/20">
               <span className="text-[10px] font-mono font-bold tracking-wider text-amber-400">
-                PRO TIP
+                {t('proTip')}
               </span>
               <p className="text-sm mt-1 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 {result.proTip}
@@ -308,21 +306,21 @@ export default function GarmentAnalysis() {
           {/* Customer Handoff */}
           <div className="card border-amber-500/20">
             <span className="text-[10px] font-mono font-bold tracking-wider text-amber-400">
-              CUSTOMER HANDOFF
+              {t('customerHandoffUpper')}
             </span>
             <div className="mt-3 flex gap-0 rounded-lg overflow-hidden border border-white/10">
-              {(['improved', 'tough', 'release'] as const).map(tone => (
+              {HANDOFF_TONES.map(tone => (
                 <button
-                  key={tone}
-                  onClick={() => { setHandoffTone(tone); setCopied(false) }}
+                  key={tone.key}
+                  onClick={() => { setHandoffTone(tone.key); setCopied(false) }}
                   className={`flex-1 py-2 text-[11px] font-mono font-bold capitalize transition-all
-                    ${handoffTone === tone
+                    ${handoffTone === tone.key
                       ? 'bg-amber-500/15 text-amber-400'
                       : 'text-gray-500 hover:text-gray-300'
                     }`}
-                  style={handoffTone !== tone ? { background: 'var(--card-bg)' } : {}}
+                  style={handoffTone !== tone.key ? { background: 'var(--card-bg)' } : {}}
                 >
-                  {tone}
+                  {t(tone.tKey)}
                 </button>
               ))}
             </div>
@@ -338,7 +336,7 @@ export default function GarmentAnalysis() {
                   : 'bg-amber-500/10 text-amber-400 border-amber-500/30 hover:bg-amber-500/20'
                 }`}
             >
-              {copied ? 'COPIED' : 'COPY TO CLIPBOARD'}
+              {copied ? t('copiedUpper') : t('copyToClipboardUpper')}
             </button>
           </div>
         </div>

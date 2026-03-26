@@ -3,9 +3,9 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/layout/Nav'
 import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
+import { LanguageProvider } from '@/lib/i18n/LanguageContext'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'GONR — AI Stain Intelligence',
@@ -18,18 +18,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
-        <Header />
-        <main className="px-4 pt-2 pb-4">
-          {children}
-        </main>
-        <Footer />
-        <Nav />
+      <body className={`${inter.className} antialiased`}>
+        <LanguageProvider>
+          <Header />
+          <main className="px-4 pt-2 pb-4">
+            {children}
+          </main>
+          <Nav />
+        </LanguageProvider>
         {/* Theme init script — runs before paint to avoid flash */}
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
             var t = localStorage.getItem('gonr_theme');
-            if (t === 'dark') {
+            if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
               document.documentElement.classList.add('dark');
             }
           })();

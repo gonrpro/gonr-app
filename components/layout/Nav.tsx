@@ -2,55 +2,18 @@
 
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 const NAV_ITEMS = [
-  {
-    key: 'solve',
-    label: 'Solve',
-    href: '/',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8" />
-        <path d="m21 21-4.35-4.35" />
-      </svg>
-    ),
-  },
-  {
-    key: 'spotter',
-    label: 'Spotter',
-    href: '/spotter',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" />
-      </svg>
-    ),
-  },
-  {
-    key: 'operator',
-    label: 'Operator',
-    href: '/operator',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <path d="M8 21h8M12 17v4" />
-      </svg>
-    ),
-  },
-  {
-    key: 'profile',
-    label: 'Profile',
-    href: '/profile',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="8" r="4" />
-        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-      </svg>
-    ),
-  },
+  { key: 'solve', tKey: 'solve', emoji: '\uD83E\uDDEA', href: '/' },
+  { key: 'scan', tKey: 'scan', emoji: '\uD83D\uDCF7', href: '/scan' },
+  { key: 'pro', tKey: 'proTools', emoji: '\u26A1', href: '/pro' },
+  { key: 'profile', tKey: 'profile', emoji: '\uD83D\uDC64', href: '/profile' },
 ] as const
 
 export default function Nav() {
   const pathname = usePathname()
+  const { t } = useLanguage()
 
   function isActive(href: string) {
     if (href === '/') return pathname === '/'
@@ -76,10 +39,10 @@ export default function Nav() {
                     ? 'text-green-500'
                     : 'text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300'
                 }`}
-              aria-label={item.label}
+              aria-label={t(item.tKey)}
             >
-              {item.icon}
-              <span className="text-[10px] font-medium leading-none">{item.label}</span>
+              <span className="text-lg leading-none">{item.emoji}</span>
+              <span className="text-[10px] font-medium leading-none">{t(item.tKey)}</span>
             </Link>
           )
         })}

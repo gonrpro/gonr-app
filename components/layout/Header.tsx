@@ -1,14 +1,11 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
-interface HeaderProps {
-  lang?: string
-  onLangToggle?: (lang: string) => void
-}
-
-export default function Header({ lang = 'en', onLangToggle }: HeaderProps) {
-  const [dark, setDark] = useState(false)
+export default function Header() {
+  const { lang, setLang } = useLanguage()
+  const [dark, setDark] = useState(true)
 
   useEffect(() => {
     setDark(document.documentElement.classList.contains('dark'))
@@ -23,7 +20,7 @@ export default function Header({ lang = 'en', onLangToggle }: HeaderProps) {
 
   function toggleLang() {
     const next = lang === 'en' ? 'es' : 'en'
-    onLangToggle?.(next)
+    setLang(next)
   }
 
   return (
