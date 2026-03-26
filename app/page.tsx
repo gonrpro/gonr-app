@@ -206,7 +206,6 @@ export default function SolvePage() {
       {/* ── Care Label Scanner ── */}
       <button
         onClick={() => {
-          // Care label scan — same camera flow but for care labels
           const input = document.createElement('input')
           input.type = 'file'
           input.accept = 'image/*'
@@ -218,15 +217,26 @@ export default function SolvePage() {
           }
           input.click()
         }}
-        className="flex items-center gap-2 w-full text-sm py-2 px-1"
-        style={{ color: 'var(--text-secondary)' }}
+        style={{
+          width: '100%',
+          borderRadius: '10px',
+          border: '1.5px solid rgba(168, 85, 247, 0.5)',
+          background: 'rgba(168, 85, 247, 0.06)',
+          padding: '10px 14px',
+          cursor: 'pointer',
+          transition: 'all 0.15s ease',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
+        }}
+        className="hover:opacity-90 active:scale-[0.98]"
       >
         <svg
-          width="16"
-          height="16"
+          width="18"
+          height="18"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="#a855f7"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -234,7 +244,10 @@ export default function SolvePage() {
           <rect x="3" y="3" width="18" height="18" rx="2" />
           <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5" />
         </svg>
-        <span>Scan care label for fiber ID</span>
+        <div style={{ textAlign: 'left' }}>
+          <div style={{ color: '#a855f7', fontSize: '14px', fontWeight: 600 }}>Scan Care Label</div>
+          <div style={{ color: '#8a94a6', fontSize: '12px' }}>Reads fiber + care symbols instantly</div>
+        </div>
       </button>
 
       {/* ── Browse Toggle ── */}
