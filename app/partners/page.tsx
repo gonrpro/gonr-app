@@ -79,7 +79,7 @@ export default function PartnersPage() {
               <input
                 type="text"
                 className="input"
-                placeholder="R.R. Street & Co."
+                placeholder="Acme Chemical Co."
                 value={form.company}
                 onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
                 required
