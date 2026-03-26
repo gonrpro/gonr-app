@@ -91,7 +91,10 @@ Return ONLY valid JSON in this exact format:
 
 export async function POST(req: Request) {
   try {
-    const { stain, surface, lang } = await req.json()
+    const body = await req.json()
+    let stain: string = body.stain
+    let surface: string = body.surface || ''
+    const lang = body.lang
 
     if (!stain || typeof stain !== 'string') {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })

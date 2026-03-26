@@ -108,7 +108,9 @@ export default function PartnersPage() {
               />
             </div>
             {status === 'error' && (
-              <p className="text-sm" style={{ color: 'var(--danger)' }}>Something went wrong — email us directly at partners@gonr.pro</p>
+              <p className="text-sm" style={{ color: 'var(--danger)' }}>
+                Something went wrong — email us at <a href="mailto:partners@gonr.pro" className="underline">partners@gonr.pro</a>
+              </p>
             )}
             <button
               type="submit"
@@ -123,9 +125,8 @@ export default function PartnersPage() {
       </section>
 
       <p className="text-xs pt-2" style={{ color: 'var(--text-secondary)', opacity: 0.5 }}>
-        GONR Labs LLC · Fort Myers, FL · partners@gonr.pro
+        GONR Labs LLC · Fort Myers, FL · <a href="mailto:partners@gonr.pro" className="hover:underline">partners@gonr.pro</a>
       </p>
     </div>
   )
 }
-// cache bust Thu Mar 26 00:24:44 EDT 2026
