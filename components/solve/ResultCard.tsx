@@ -128,9 +128,7 @@ export default function ResultCard({ card, source }: ResultCardProps) {
         <div className="px-4 pb-3">
           <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
             <span className="mr-1">{'\uD83E\uDDEA'}</span>
-            {card.stainChemistry.length > 160
-              ? card.stainChemistry.slice(0, 160) + '\u2026'
-              : card.stainChemistry}
+            {card.stainChemistry}
           </p>
         </div>
       )}
