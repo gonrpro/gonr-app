@@ -150,6 +150,14 @@ export default function SolvePage() {
 
   return (
     <div className="space-y-4">
+      {/* ── Hero Title ── */}
+      <div style={{ paddingBottom: '2px' }}>
+        <h1 style={{ fontSize: '22px', fontWeight: 800, letterSpacing: '-0.5px', lineHeight: 1.2 }}>
+          Got a stain?<br />
+          <span style={{ color: '#22c55e' }}>We'll solve it.</span>
+        </h1>
+      </div>
+
       {/* ── Hero Camera ── */}
       <button
         onClick={handleCameraClick}
@@ -179,11 +187,11 @@ export default function SolvePage() {
           <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
           <circle cx="12" cy="13" r="3" />
         </svg>
-        <span style={{ color: '#22c55e', fontSize: '20px', fontWeight: 700, letterSpacing: '-0.3px' }}>
-          Point. Shoot. Solved.
+        <span style={{ color: '#22c55e', fontSize: '19px', fontWeight: 700, letterSpacing: '-0.3px' }}>
+          Scan Stain
         </span>
         <span style={{ color: '#8a94a6', fontSize: '13px' }}>
-          Snap the stain — get the exact protocol in seconds
+          Snap a photo — get the exact protocol in seconds
         </span>
       </button>
 
