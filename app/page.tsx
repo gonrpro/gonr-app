@@ -155,14 +155,14 @@ export default function SolvePage() {
 
       {/* ── Hero Title ── */}
       <div style={{ textAlign: 'center', paddingBottom: '4px', paddingTop: '8px' }}>
-        <p style={{ fontSize: '11px', fontWeight: 600, color: '#22c55e', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '6px' }}>
-          {t('aiStainIntelligence')}
+        <p style={{ fontSize: '10px', fontWeight: 600, color: '#22c55e', letterSpacing: '2.5px', textTransform: 'uppercase', marginBottom: '8px' }}>
+          AI Stain Intelligence for Textiles
         </p>
-        <h1 style={{ fontSize: '30px', fontWeight: 900, letterSpacing: '-1px', lineHeight: 1.1, margin: 0 }}>
-          {t('masterSpotter')}
+        <h1 style={{ fontSize: '30px', fontWeight: 900, letterSpacing: '-1px', lineHeight: 1.1, margin: '0 0 6px 0' }}>
+          Master Spotter
         </h1>
-        <p style={{ fontSize: '11px', color: '#6b7280', marginTop: '6px', letterSpacing: '0.3px' }}>
-          {t('poweredBy')} <a href="/pro" style={{ color: '#a855f7', fontWeight: 600, textDecoration: 'none' }}>Stain Brain Engine</a>
+        <p style={{ fontSize: '11px', color: '#6b7280', letterSpacing: '0.3px', margin: 0 }}>
+          Powered by <a href="/pro" style={{ color: '#a855f7', fontWeight: 600, textDecoration: 'none' }}>Stain Brain Engine</a>
         </p>
       </div>
 
