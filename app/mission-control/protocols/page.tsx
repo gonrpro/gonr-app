@@ -57,7 +57,7 @@ const supabase = typeof window !== 'undefined' ? getSupabase() : null as any
 
 /* ── Page Component ───────────────────────────── */
 
-const PASSCODE = 'gonrgonr'
+const PASSCODE = 'GONR33'
 
 export default function ProtocolReviewPage() {
   const [unlocked, setUnlocked] = useState(false)
