@@ -24,6 +24,44 @@ let surfaceAliases: Record<string, string> = {}
 /** family id -> keyword list */
 let familyKeywords: Record<string, string[]> = {}
 
+// ─── Card normalizer — maps legacy core card format to ProtocolCard schema ──
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function normalizeCard(card: any): any {
+  if (!card) return card
+  // Already has spottingProtocol — no-op
+  if (Array.isArray(card.spottingProtocol) && card.spottingProtocol.length > 0) return card
+
+  // Map professionalProtocol.steps (string[]) → spottingProtocol
+  if (card.professionalProtocol?.steps && Array.isArray(card.professionalProtocol.steps)) {
+    card.spottingProtocol = card.professionalProtocol.steps.map((s: string, i: number) => {
+      // Try to extract agent from step text (e.g. "1. Apply NSD to...")
+      const agentMatch = s.match(/apply\s+([A-Z][A-Za-z₂0-9\s%°]+?)[\s,.]|use\s+([A-Z][A-Za-z₂0-9\s%°]+?)[\s,.]/i)
+      return {
+        step: i + 1,
+        agent: agentMatch ? (agentMatch[1] || agentMatch[2]).trim() : 'Apply',
+        technique: '',
+        temperature: '',
+        dwellTime: '',
+        instruction: s.replace(/^\d+\.\s*/, '').trim(),
+      }
+    })
+  }
+
+  // Map diyProtocol → homeSolutions if missing
+  if (!card.homeSolutions && card.diyProtocol?.steps) {
+    card.homeSolutions = Array.isArray(card.diyProtocol.steps)
+      ? card.diyProtocol.steps.map((s: string) => s.replace(/^\d+\.\s*/, '').trim())
+      : []
+  }
+
+  // Map safetyMatrix → materialWarnings if missing
+  if (!card.materialWarnings && card.safetyMatrix?.warnings) {
+    card.materialWarnings = card.safetyMatrix.warnings
+  }
+
+  return card
+}
+
 // ─── Normalization ──────────────────────────────────────────────────────────
 function normalize(input: string): string {
   return input
@@ -184,7 +222,7 @@ export async function lookupProtocol(
   const exactKeyDash = `${stainSlug}-${surfaceSlug}`
   const exactCard = coreIndex.get(exactKey) ?? coreIndex.get(exactKeyDash)
   if (exactCard) {
-    return { card: exactCard, tier: 1, confidence: 1.0, source: 'core' }
+    return { card: normalizeCard(exactCard), tier: 1, confidence: 1.0, source: 'core' }
   }
 
   // ── Tier 2: Alias resolution ──────────────────────────────────────────
@@ -195,7 +233,7 @@ export async function lookupProtocol(
   if (aliasKey !== exactKey) {
     const aliasCard = coreIndex.get(aliasKey)
     if (aliasCard) {
-      return { card: aliasCard, tier: 2, confidence: 0.9, source: 'core' }
+      return { card: normalizeCard(aliasCard), tier: 2, confidence: 0.9, source: 'core' }
     }
   }
 
@@ -207,7 +245,7 @@ export async function lookupProtocol(
     if (tryKey !== exactKey && tryKey !== aliasKey) {
       const card = coreIndex.get(tryKey)
       if (card) {
-        return { card, tier: 2, confidence: 0.85, source: 'core' }
+        return { card: normalizeCard(card), tier: 2, confidence: 0.85, source: 'core' }
       }
     }
   }
