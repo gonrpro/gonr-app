@@ -1,66 +1,7 @@
-/**
- * File: app/api/solve/route.ts
- *
- * TASK-122: Added write-through cache layer.
- * - Before AI call → check Supabase pending_protocols cache
- * - Cache hit → return cached card, increment solve_count
- * - Cache miss → AI generate → write to cache → return
- * - Safety-filtered responses are NOT cached
- *
- * Card structure is UNTOUCHED. Cache wraps around existing format.
- */
-
 import { NextResponse } from 'next/server'
 import { lookupProtocol } from '@/lib/protocols/lookup'
-import { getSupabaseAdmin } from '@/lib/supabase/admin'
 
-/* ── Cache helpers ────────────────────────────── */
-
-function buildCacheKey(stain: string, surface: string): string {
-  return `${stain.toLowerCase().trim()}::${(surface || '').toLowerCase().trim()}`
-}
-
-async function checkCache(cacheKey: string) {
-  try {
-    const admin = getSupabaseAdmin()
-    if (!admin) return null
-    const { data, error } = await admin
-      .from('pending_protocols')
-      .select('card, verified, solve_count, source')
-      .eq('cache_key', cacheKey)
-      .single()
-
-    if (error || !data) return null
-
-    // Increment solve_count (fire-and-forget)
-    getSupabaseAdmin()?.from('pending_protocols')
-      .update({ solve_count: data.solve_count + 1, updated_at: new Date().toISOString() })
-      .eq('cache_key', cacheKey)
-
-    return data
-  } catch {
-    return null
-  }
-}
-
-async function writeCache(stain: string, surface: string, cacheKey: string, card: any) {
-  try {
-    await getSupabaseAdmin()?.from('pending_protocols').upsert({
-      stain: stain.toLowerCase().trim(),
-      surface: (surface || '').toLowerCase().trim(),
-      cache_key: cacheKey,
-      card,
-      source: 'ai',
-      verified: false,
-      solve_count: 1,
-      updated_at: new Date().toISOString(),
-    }, { onConflict: 'cache_key' })
-  } catch (err) {
-    console.error('[solve] Cache write failed:', err)
-  }
-}
-
-/* ── AI Generation (unchanged) ───────────────── */
+// ─── Text-based AI protocol generation (existing, unchanged) ───
 
 async function generateAIProtocol(stain: string, surface: string, lang: string = 'en') {
   const apiKey = process.env.OPENAI_API_KEY
@@ -138,10 +79,191 @@ Return ONLY valid JSON in this exact format:
   return JSON.parse(jsonStr)
 }
 
-/* ── Route Handler ───────────────────────────── */
+// ─── Care label vision decode ───
+
+async function decodeCareLabel(imageBase64: string, apiKey: string): Promise<{
+  fiber?: string
+  washTemp?: string
+  dryCleanOnly?: boolean
+  bleachAllowed?: boolean
+  symbols?: string[]
+}> {
+  const res = await fetch('https://api.openai.com/v1/responses', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: 'gpt-5.4',
+      input: [{
+        role: 'user',
+        content: [
+          {
+            type: 'input_text',
+            text: 'Read this care label. Return JSON: { "fiber": "fiber content e.g. 100% Cotton, 60% Polyester 40% Rayon", "washTemp": "max wash temp", "dryCleanOnly": true/false, "bleachAllowed": true/false, "symbols": ["list of care symbols you see"] }',
+          },
+          {
+            type: 'input_image',
+            image_url: `data:image/jpeg;base64,${imageBase64}`,
+            detail: 'high',
+          },
+        ],
+      }],
+    }),
+  })
+
+  if (!res.ok) {
+    console.error('Care label vision failed:', await res.text())
+    return {}
+  }
+
+  const data = await res.json()
+  const text = data.output_text || data.output?.[0]?.content?.[0]?.text || '{}'
+  const jsonStr = text.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim()
+
+  try {
+    return JSON.parse(jsonStr)
+  } catch {
+    console.error('Care label parse failed:', jsonStr)
+    return {}
+  }
+}
+
+// ─── Stain identification from image ───
+
+async function identifyStainFromImage(
+  imageBase64: string,
+  contextLines: string,
+  apiKey: string
+): Promise<{
+  family: string
+  suggestion: string
+  surface: string
+  confidence: string
+  reasoning: string
+}> {
+  const userText = `Analyze this stain image and identify what the stain is and what surface/fiber it's on.
+${contextLines ? `\nAdditional context from the operator:\n${contextLines}` : ''}
+
+Return ONLY valid JSON: { "family": "protein|tannin|oil-grease|dye|oxidizable|combination|particulate|wax-gum|bleach-damage|adhesive|pigment|unknown", "suggestion": "specific stain name", "surface": "fiber/surface", "confidence": "high|medium|low", "reasoning": "one sentence" }`
+
+  const res = await fetch('https://api.openai.com/v1/responses', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: 'gpt-5.4',
+      input: [{
+        role: 'user',
+        content: [
+          { type: 'input_text', text: userText },
+          {
+            type: 'input_image',
+            image_url: `data:image/jpeg;base64,${imageBase64}`,
+            detail: 'high',
+          },
+        ],
+      }],
+    }),
+  })
+
+  if (!res.ok) {
+    const errText = await res.text()
+    console.error('Stain vision failed:', errText)
+    throw new Error('Stain identification failed')
+  }
+
+  const data = await res.json()
+  const text = data.output_text || data.output?.[0]?.content?.[0]?.text || '{}'
+  const jsonStr = text.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim()
+  return JSON.parse(jsonStr)
+}
+
+// ─── Route handler ───
 
 export async function POST(req: Request) {
   try {
+    const contentType = req.headers.get('content-type') || ''
+
+    // ── Image-based solve (FormData from camera flow) ──
+    if (contentType.includes('multipart/form-data')) {
+      const apiKey = process.env.OPENAI_API_KEY
+      if (!apiKey || apiKey === 'placeholder-add-real-key') {
+        return NextResponse.json({ error: 'OpenAI API key not configured' }, { status: 500 })
+      }
+
+      const formData = await req.formData()
+      const image = formData.get('image') as File | null
+      const careLabel = formData.get('careLabel') as File | null
+      const fabricDescription = (formData.get('fabricDescription') as string) || ''
+      const garmentLocation = (formData.get('garmentLocation') as string) || ''
+      const stainHint = (formData.get('stainHint') as string) || ''
+      const surfaceHint = (formData.get('surfaceHint') as string) || ''
+      const lang = (formData.get('lang') as string) || 'en'
+
+      if (!image) {
+        return NextResponse.json({ error: 'Image required' }, { status: 400 })
+      }
+
+      // Convert stain image to base64
+      const imageBase64 = Buffer.from(await image.arrayBuffer()).toString('base64')
+
+      // Decode care label if provided
+      let careLabelContext = ''
+      let surface = ''
+
+      if (careLabel) {
+        const clBase64 = Buffer.from(await careLabel.arrayBuffer()).toString('base64')
+        const cl = await decodeCareLabel(clBase64, apiKey)
+        if (cl.fiber) {
+          careLabelContext = `Care label: ${cl.fiber}. Max wash: ${cl.washTemp || 'unknown'}. Dry clean only: ${cl.dryCleanOnly ?? 'unknown'}. Bleach allowed: ${cl.bleachAllowed ?? 'unknown'}.`
+          // Override surface with fiber from care label
+          surface = cl.fiber
+        }
+      }
+
+      // Build context string for vision prompt
+      const contextLines = [
+        stainHint ? `User suspects: ${stainHint}` : '',
+        surfaceHint ? `User says surface is: ${surfaceHint}` : '',
+        fabricDescription ? `Fabric feel: ${fabricDescription}` : '',
+        garmentLocation ? `Location on garment: ${garmentLocation}` : '',
+        careLabelContext,
+      ].filter(Boolean).join('\n')
+
+      // Identify stain from image
+      const identification = await identifyStainFromImage(imageBase64, contextLines, apiKey)
+      const stain = stainHint || identification.suggestion || 'unknown stain'
+      if (!surface) surface = surfaceHint || identification.surface || ''
+
+      // Look up verified protocol first
+      const result = await lookupProtocol(stain, surface)
+      if (result.card) {
+        return NextResponse.json(result)
+      }
+
+      // AI fallback
+      try {
+        const aiCard = await generateAIProtocol(stain, surface, lang)
+        return NextResponse.json({
+          card: aiCard,
+          tier: 4,
+          confidence: identification.confidence === 'high' ? 0.7 : identification.confidence === 'medium' ? 0.5 : 0.3,
+          source: 'ai' as const,
+        })
+      } catch (err) {
+        console.error('AI fallback failed:', err)
+        return NextResponse.json(
+          { error: 'No protocol found and AI generation unavailable' },
+          { status: 404 }
+        )
+      }
+    }
+
+    // ── Text-based solve (JSON from text/chip flow) ──
     const { stain, surface, lang } = await req.json()
 
     if (!stain || typeof stain !== 'string') {
@@ -149,49 +271,20 @@ export async function POST(req: Request) {
     }
 
     const effectiveLang = lang || 'en'
-
-    // 1. Local protocol lookup (Tier 1-3)
     const result = await lookupProtocol(stain, surface || '')
 
     if (result.card) {
-      return NextResponse.json({
-        ...result,
-        source: result.source === 'verified' ? 'core' : result.source,
-      })
+      return NextResponse.json(result)
     }
 
-    // 2. Cache lookup (Tier 4 — cached AI)
-    const cacheKey = buildCacheKey(stain, surface || '')
-    const cached = await checkCache(cacheKey)
-
-    if (cached) {
-      const sourceLabel = cached.verified ? 'verified' : 'ai-cached'
-      return NextResponse.json({
-        card: cached.card,
-        tier: cached.verified ? 2 : 4,
-        confidence: cached.verified ? 0.9 : 0.75,
-        source: sourceLabel,
-      })
-    }
-
-    // 3. AI generation (Tier 4 — fresh)
+    // Tier 4: AI fallback
     try {
       const aiCard = await generateAIProtocol(stain, surface || '', effectiveLang)
-
-      // Don't cache safety-filtered responses.
-      // NOTE: _safetyFiltered is a forward-looking guard. Currently the AI prompt
-      // doesn't produce this flag, but if a post-processing safety layer is added
-      // (or the prompt is updated to detect unsafe combos), this check prevents
-      // caching of flagged responses. Safe to leave as-is.
-      if (!aiCard._safetyFiltered) {
-        writeCache(stain, surface || '', cacheKey, aiCard)
-      }
-
       return NextResponse.json({
         card: aiCard,
         tier: 4,
         confidence: 0.5,
-        source: 'ai',
+        source: 'ai' as const,
       })
     } catch (err) {
       console.error('AI fallback failed:', err)

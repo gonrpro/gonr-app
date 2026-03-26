@@ -11,7 +11,7 @@ interface SolveResult {
   card: ProtocolCard
   tier: number
   confidence: number
-  source: 'verified' | 'ai' | 'ai-cached' | 'core'
+  source: 'verified' | 'ai'
 }
 
 export default function SolvePage() {
@@ -23,29 +23,127 @@ export default function SolvePage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [solveCount, setSolveCount] = useState(0)
-  const [showBrowse, setShowBrowse] = useState(false)
   const resultRef = useRef<HTMLDivElement>(null)
+
+  // Photo enrichment state
+  const [capturedPhoto, setCapturedPhoto] = useState<File | null>(null)
+  const [capturedPhotoUrl, setCapturedPhotoUrl] = useState<string>('')
+  const [careLabelFile, setCareLabelFile] = useState<File | null>(null)
+  const [fabricDescription, setFabricDescription] = useState('')
+  const [garmentLocation, setGarmentLocation] = useState('')
 
   useEffect(() => {
     const count = parseInt(localStorage.getItem('gonr_solve_count') || '0', 10)
     setSolveCount(count)
   }, [])
 
-  const handleSolve = useCallback(async (stain?: string, surface?: string) => {
-    const s = stain || selectedStain || stainInput.trim()
-    const surf = surface || selectedSurface
-    if (!s) return
+  useEffect(() => {
+    return () => {
+      if (capturedPhotoUrl) URL.revokeObjectURL(capturedPhotoUrl)
+    }
+  }, [capturedPhotoUrl])
+
+  const incrementSolveCount = useCallback(() => {
+    const newCount = solveCount + 1
+    setSolveCount(newCount)
+    localStorage.setItem('gonr_solve_count', String(newCount))
+  }, [solveCount])
+
+  const scrollToResult = useCallback(() => {
+    setTimeout(() => {
+      resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 100)
+  }, [])
+
+  // Derived: what the solve button will show
+  const solveStainLabel = selectedStain || stainInput.trim() || (capturedPhoto ? 'Photo' : '')
+  const solveSurfaceLabel = selectedSurface || ''
+  const hasSolveInput = !!(capturedPhoto || selectedStain || stainInput.trim())
+
+  // --- Camera: Scan Stain ---
+  const handleScanStain = useCallback(() => {
+    const input = document.createElement('input')
+    input.type = 'file'
+    input.accept = 'image/*'
+    input.capture = 'environment'
+    input.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none'
+    document.body.appendChild(input)
+    input.addEventListener('change', () => {
+      document.body.removeChild(input)
+      const file = (input as HTMLInputElement).files?.[0]
+      if (!file) return
+      setCapturedPhoto(file)
+      if (capturedPhotoUrl) URL.revokeObjectURL(capturedPhotoUrl)
+      setCapturedPhotoUrl(URL.createObjectURL(file))
+    })
+    input.click()
+  }, [capturedPhotoUrl])
+
+  // --- Camera: Scan Care Label ---
+  const handleScanCareLabel = useCallback(() => {
+    const input = document.createElement('input')
+    input.type = 'file'
+    input.accept = 'image/*'
+    input.capture = 'environment'
+    input.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none'
+    document.body.appendChild(input)
+    input.addEventListener('change', () => {
+      document.body.removeChild(input)
+      const file = (input as HTMLInputElement).files?.[0]
+      if (!file) return
+      setCareLabelFile(file)
+    })
+    input.click()
+  }, [])
+
+  // --- Retake stain photo ---
+  const handleRetakePhoto = useCallback(() => {
+    if (capturedPhotoUrl) URL.revokeObjectURL(capturedPhotoUrl)
+    setCapturedPhoto(null)
+    setCapturedPhotoUrl('')
+  }, [capturedPhotoUrl])
+
+  // --- Remove care label ---
+  const handleRemoveCareLabel = useCallback(() => {
+    setCareLabelFile(null)
+  }, [])
+
+  // --- SOLVE: unified handler ---
+  const handleSolve = useCallback(async () => {
+    if (!hasSolveInput) return
 
     setLoading(true)
     setError('')
     setResult(null)
 
     try {
-      const res = await fetch('/api/solve', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ stain: s, surface: surf, lang }),
-      })
+      let res: Response
+
+      if (capturedPhoto) {
+        // Image-based solve with enrichment
+        const formData = new FormData()
+        formData.append('image', capturedPhoto)
+        formData.append('lang', lang)
+        if (careLabelFile) formData.append('careLabel', careLabelFile)
+        if (fabricDescription.trim()) formData.append('fabricDescription', fabricDescription.trim())
+        if (garmentLocation.trim()) formData.append('garmentLocation', garmentLocation.trim())
+        // If user also typed or selected a stain/surface, pass those as hints
+        if (selectedStain || stainInput.trim()) formData.append('stainHint', selectedStain || stainInput.trim())
+        if (selectedSurface) formData.append('surfaceHint', selectedSurface)
+
+        res = await fetch('/api/solve', {
+          method: 'POST',
+          body: formData,
+        })
+      } else {
+        // Text-based solve
+        const s = selectedStain || stainInput.trim()
+        res = await fetch('/api/solve', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ stain: s, surface: selectedSurface, lang }),
+        })
+      }
 
       if (!res.ok) {
         const data = await res.json()
@@ -54,20 +152,14 @@ export default function SolvePage() {
 
       const data = await res.json()
       setResult(data)
-
-      const newCount = solveCount + 1
-      setSolveCount(newCount)
-      localStorage.setItem('gonr_solve_count', String(newCount))
-
-      setTimeout(() => {
-        resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }, 100)
+      incrementSolveCount()
+      scrollToResult()
     } catch (err) {
       setError(err instanceof Error ? err.message : t('somethingWentWrong'))
     } finally {
       setLoading(false)
     }
-  }, [selectedStain, selectedSurface, stainInput, solveCount, lang, t])
+  }, [hasSolveInput, capturedPhoto, careLabelFile, fabricDescription, garmentLocation, selectedStain, selectedSurface, stainInput, lang, t, incrementSolveCount, scrollToResult])
 
   const handleStainSelect = (stain: string) => {
     setSelectedStain(stain)
@@ -82,69 +174,16 @@ export default function SolvePage() {
   const handleBack = () => {
     setResult(null)
     setError('')
+    handleRetakePhoto()
+    setCareLabelFile(null)
+    setFabricDescription('')
+    setGarmentLocation('')
+    setSelectedStain('')
+    setSelectedSurface('')
+    setStainInput('')
   }
 
-  const handleCameraClick = () => {
-    const input = document.createElement('input')
-    input.type = 'file'
-    input.accept = 'image/*'
-    input.capture = 'environment'
-    // iOS Safari requires input to be in the DOM before click
-    input.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none'
-    document.body.appendChild(input)
-
-    const cleanup = () => { if (document.body.contains(input)) document.body.removeChild(input) }
-
-    input.addEventListener('change', async () => {
-      cleanup()
-      const file = input.files?.[0]
-      if (!file) return
-
-      setLoading(true)
-      setError('')
-      setResult(null)
-
-      try {
-        const formData = new FormData()
-        formData.append('image', file)
-        formData.append('lang', lang)
-
-        const res = await fetch('/api/solve', {
-          method: 'POST',
-          body: formData,
-        })
-
-        if (!res.ok) {
-          const data = await res.json()
-          throw new Error(data.error || t('scanFailed'))
-        }
-
-        const data = await res.json()
-        setResult(data)
-
-        const newCount = solveCount + 1
-        setSolveCount(newCount)
-        localStorage.setItem('gonr_solve_count', String(newCount))
-
-        setTimeout(() => {
-          resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }, 100)
-      } catch (err) {
-        setError(err instanceof Error ? err.message : t('scanFailed'))
-      } finally {
-        setLoading(false)
-      }
-    })
-
-    // iOS cancel fallback — clean up if user dismisses camera
-    const handleFocus = () => {
-      setTimeout(() => { if (!input.files?.length) cleanup(); window.removeEventListener('focus', handleFocus) }, 500)
-    }
-    window.addEventListener('focus', handleFocus)
-    input.click()
-  }
-
-  // Result view
+  // --- Result view ---
   if (result) {
     return (
       <div ref={resultRef}>
@@ -163,74 +202,242 @@ export default function SolvePage() {
     )
   }
 
+  // --- Build solve subtext ---
+  let solveSubtext = ''
+  if (solveStainLabel && solveSurfaceLabel) {
+    solveSubtext = `${solveStainLabel} on ${solveSurfaceLabel}`
+  } else if (solveStainLabel) {
+    solveSubtext = solveStainLabel
+  }
+
   return (
     <div className="space-y-4">
 
-      {/* ── Hero Title ── */}
-      <div style={{ textAlign: 'center', paddingBottom: '4px', paddingTop: '8px' }}>
-        <p style={{ fontSize: '10px', fontWeight: 600, color: '#22c55e', letterSpacing: '2.5px', textTransform: 'uppercase', marginBottom: '8px' }}>
-          AI Stain Intelligence for Textiles
-        </p>
-        <h1 style={{ fontSize: '30px', fontWeight: 900, letterSpacing: '-1px', lineHeight: 1.1, margin: '0 0 6px 0' }}>
-          Master Spotter
-        </h1>
-        <p style={{ fontSize: '11px', color: '#6b7280', letterSpacing: '0.3px', margin: 0 }}>
-          Powered by <a href="/pro" style={{ color: '#a855f7', fontWeight: 600, textDecoration: 'none' }}>Stain Brain</a>
-        </p>
+      {/* ── SCAN SECTION ── */}
+      <div className="flex gap-3">
+        {/* Scan Stain — green */}
+        {!capturedPhoto ? (
+          <button
+            onClick={handleScanStain}
+            disabled={loading}
+            style={{
+              background: '#1a2e1a',
+              borderRadius: '12px',
+              flex: 1,
+              minHeight: '70px',
+              border: '1px solid rgba(34, 197, 94, 0.2)',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+            }}
+            className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98]"
+          >
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#22c55e"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+              <circle cx="12" cy="13" r="3" />
+            </svg>
+            <span style={{ color: '#22c55e', fontSize: '15px', fontWeight: 600 }}>
+              {t('scanStain')}
+            </span>
+          </button>
+        ) : (
+          /* Stain photo captured — show thumbnail with retake */
+          <div
+            style={{
+              position: 'relative',
+              flex: 1,
+              minHeight: '70px',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              border: '1px solid rgba(34, 197, 94, 0.4)',
+            }}
+          >
+            <img
+              src={capturedPhotoUrl}
+              alt="Stain photo"
+              style={{
+                width: '100%',
+                height: '70px',
+                objectFit: 'cover',
+              }}
+            />
+            <button
+              onClick={handleRetakePhoto}
+              disabled={loading}
+              style={{
+                position: 'absolute',
+                top: '4px',
+                right: '4px',
+                width: '24px',
+                height: '24px',
+                borderRadius: '50%',
+                background: 'rgba(239, 68, 68, 0.9)',
+                border: 'none',
+                color: '#fff',
+                fontSize: '12px',
+                fontWeight: 700,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                lineHeight: 1,
+              }}
+              aria-label="Retake photo"
+            >
+              ✕
+            </button>
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '4px',
+                left: '4px',
+                background: 'rgba(0,0,0,0.6)',
+                borderRadius: '4px',
+                padding: '1px 6px',
+                fontSize: '11px',
+                color: '#22c55e',
+                fontWeight: 600,
+              }}
+            >
+              Stain ✓
+            </div>
+          </div>
+        )}
+
+        {/* Scan Care Label — purple */}
+        {!careLabelFile ? (
+          <button
+            onClick={handleScanCareLabel}
+            disabled={loading}
+            style={{
+              background: '#1e1528',
+              borderRadius: '12px',
+              flex: 1,
+              minHeight: '70px',
+              border: '1px solid rgba(147, 51, 234, 0.2)',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+            }}
+            className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98]"
+          >
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#a855f7"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5" />
+            </svg>
+            <span style={{ color: '#a855f7', fontSize: '15px', fontWeight: 600 }}>
+              {t('scanCareLabel') || 'Scan Care Label'}
+            </span>
+          </button>
+        ) : (
+          /* Care label captured — show indicator with remove */
+          <div
+            style={{
+              position: 'relative',
+              flex: 1,
+              minHeight: '70px',
+              borderRadius: '12px',
+              background: '#1e1528',
+              border: '1px solid rgba(147, 51, 234, 0.4)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '2px',
+            }}
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#a855f7"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 6L9 17l-5-5" />
+            </svg>
+            <span style={{ color: '#a855f7', fontSize: '13px', fontWeight: 600 }}>
+              {t('careLabelAdded') || 'Care Label ✓'}
+            </span>
+            <button
+              onClick={handleRemoveCareLabel}
+              disabled={loading}
+              style={{
+                position: 'absolute',
+                top: '4px',
+                right: '4px',
+                width: '20px',
+                height: '20px',
+                borderRadius: '50%',
+                background: 'rgba(239, 68, 68, 0.9)',
+                border: 'none',
+                color: '#fff',
+                fontSize: '11px',
+                fontWeight: 700,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                lineHeight: 1,
+              }}
+              aria-label="Remove care label"
+            >
+              ✕
+            </button>
+          </div>
+        )}
       </div>
 
-      {/* ── Hero Camera ── */}
-      <button
-        onClick={handleCameraClick}
-        disabled={loading}
-        className="scan-hero-btn active:scale-[0.98]"
-        style={{
-          width: '100%',
-          borderRadius: '16px',
-          minHeight: '90px',
-          cursor: 'pointer',
-          transition: 'all 0.12s ease',
-          position: 'relative',
-          overflow: 'hidden',
-          border: 'none',
-          display: 'flex',
-          alignItems: 'center',
-          padding: '0 24px',
-          gap: '18px',
-        }}
-      >
-        {/* gold top stripe */}
-        <div style={{
-          position: 'absolute', top: 0, left: '10%', right: '10%', height: '2px',
-          background: 'linear-gradient(90deg, transparent, #d4a853, transparent)',
-          borderRadius: '999px',
-        }} />
-        {/* icon left-aligned */}
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="scan-hero-icon" style={{ flexShrink: 0 }}>
-          <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
-          <circle cx="12" cy="13" r="3" />
-        </svg>
-        {/* text left-aligned */}
-        <div style={{ textAlign: 'left', flex: 1 }}>
-          <div className="scan-hero-label" style={{ fontSize: '17px', fontWeight: 700, letterSpacing: '-0.3px' }}>
-            {t('scanStain')}
+      {/* ── ENRICHMENT (visible after photo captured) ── */}
+      {capturedPhoto && (
+        <div className="space-y-2">
+          <div style={{ color: 'var(--text-secondary)', fontSize: '12px', fontWeight: 500, paddingLeft: '2px' }}>
+            {t('addContextOptional') || 'Add more context (optional)'}
           </div>
-          <div className="scan-hero-sub" style={{ fontSize: '12px', marginTop: '3px' }}>
-            {t('scanStainSubtext')}
-          </div>
+          <input
+            type="text"
+            className="input"
+            placeholder={t('fabricPlaceholder') || 'e.g. feels silky, stiff denim, stretchy knit, fuzzy wool'}
+            value={fabricDescription}
+            onChange={(e) => setFabricDescription(e.target.value)}
+            disabled={loading}
+            style={{ fontSize: '14px' }}
+          />
+          <input
+            type="text"
+            className="input"
+            placeholder={t('garmentLocationPlaceholder') || 'e.g. collar, underarm, sleeve, chest'}
+            value={garmentLocation}
+            onChange={(e) => setGarmentLocation(e.target.value)}
+            disabled={loading}
+            style={{ fontSize: '14px' }}
+          />
         </div>
-        {/* arrow right */}
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="scan-hero-label" style={{ flexShrink: 0, opacity: 0.5 }}>
-          <path d="M9 18l6-6-6-6" />
-        </svg>
-      </button>
+      )}
 
-      {/* ── Text Fallback + Solve button ── */}
-      <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+      {/* ── TEXT INPUT ── */}
+      <div>
         <input
           type="text"
           className="input"
-          style={{ flex: 1 }}
           placeholder={t('solvePlaceholder')}
           value={stainInput}
           onChange={(e) => {
@@ -238,143 +445,64 @@ export default function SolvePage() {
             if (!e.target.value) setSelectedStain('')
           }}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') handleSolve()
+            if (e.key === 'Enter' && hasSolveInput) handleSolve()
           }}
+          disabled={loading}
         />
-        {(stainInput.trim().length >= 2 || selectedStain) && (
-          <button
-            onClick={() => handleSolve()}
-            disabled={loading}
-            className="solve-btn hover:opacity-90 active:scale-[0.96]"
-            style={{
-              borderRadius: '999px',
-              padding: '0 20px',
-              height: '42px',
-              fontWeight: 700,
-              fontSize: '13px',
-              letterSpacing: '0.5px',
-              cursor: 'pointer',
-              whiteSpace: 'nowrap',
-              flexShrink: 0,
-              transition: 'all 0.15s ease',
-            }}
-          >
-            {t('solveBtn')}
-          </button>
-        )}
       </div>
 
-      {/* ── Care Label Scanner ── */}
-      <button
-        onClick={() => {
-          const input = document.createElement('input')
-          input.type = 'file'
-          input.accept = 'image/*'
-          input.capture = 'environment'
-          input.onchange = async (e) => {
-            const file = (e.target as HTMLInputElement).files?.[0]
-            if (!file) return
-          }
-          input.click()
-        }}
-        style={{
-          width: '100%',
-          borderRadius: '16px',
-          border: '1.5px solid rgba(168, 85, 247, 0.45)',
-          background: 'rgba(168, 85, 247, 0.05)',
-          padding: '0 24px',
-          minHeight: '70px',
-          cursor: 'pointer',
-          transition: 'all 0.12s ease',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '18px',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-        className="hover:opacity-90 active:scale-[0.98]"
-      >
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-          <rect x="3" y="3" width="18" height="18" rx="2" />
-          <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5" />
-        </svg>
-        <div style={{ textAlign: 'left', flex: 1 }}>
-          <div style={{ color: '#a855f7', fontSize: '15px', fontWeight: 600 }}>{t('scanCareLabel')}</div>
-          <div style={{ color: '#8a94a6', fontSize: '12px', marginTop: '2px' }}>{t('careLabelSubtext')}</div>
+      {/* ── OR BROWSE BY ── */}
+      <div className="space-y-3">
+        <div style={{ color: 'var(--text-secondary)', fontSize: '12px', fontWeight: 500, paddingLeft: '2px' }}>
+          {t('orBrowseByType') || 'Or browse by type'}
         </div>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, opacity: 0.4 }}>
-          <path d="M9 18l6-6-6-6" />
-        </svg>
-      </button>
+        <StainChips
+          onStainSelect={handleStainSelect}
+          selectedStain={selectedStain}
+        />
+        <SurfaceChips
+          onSurfaceSelect={handleSurfaceSelect}
+          selectedSurface={selectedSurface}
+          visible={!!(selectedStain || stainInput.trim())}
+        />
+      </div>
 
-      {/* ── Browse Toggle ── */}
-      <button
-        onClick={() => setShowBrowse(!showBrowse)}
-        className="flex items-center gap-1 text-sm py-1"
-        style={{ color: 'var(--text-secondary)' }}
-      >
-        <span>{t('orBrowseByType')}</span>
-        <span>{showBrowse ? '▲' : '▼'}</span>
-      </button>
-
-      {showBrowse && (
-        <div className="space-y-4">
-          <StainChips onStainSelect={handleStainSelect} selectedStain={selectedStain} />
-          <SurfaceChips onSurfaceSelect={handleSurfaceSelect} selectedSurface={selectedSurface} visible={!!(selectedStain || stainInput.trim())} />
-          {selectedStain && (
-            <button
-              onClick={() => handleSolve(selectedStain, selectedSurface)}
-              disabled={loading}
-              className="hover:opacity-90 active:scale-[0.98]"
-              style={{
-                width: '100%',
-                borderRadius: '16px',
-                border: '1.5px solid rgba(34,197,94,0.45)',
-                background: 'rgba(34,197,94,0.06)',
-                padding: '0 24px',
-                minHeight: '70px',
-                cursor: 'pointer',
-                transition: 'all 0.12s ease',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '18px',
-              }}
-            >
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.35-4.35" />
-              </svg>
-              <div style={{ textAlign: 'left', flex: 1 }}>
-                <div style={{ color: '#22c55e', fontSize: '15px', fontWeight: 600 }}>{t('solveBtn')}</div>
-                <div style={{ color: '#8a94a6', fontSize: '12px', marginTop: '2px' }}>{selectedStain}{selectedSurface ? ` on ${selectedSurface}` : ' — select a surface below'}</div>
-              </div>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, opacity: 0.4 }}>
-                <path d="M9 18l6-6-6-6" />
-              </svg>
-            </button>
+      {/* ── SOLVE BUTTON ── */}
+      {hasSolveInput && (
+        <button
+          onClick={handleSolve}
+          disabled={loading}
+          style={{
+            background: '#1a2e1a',
+            borderRadius: '12px',
+            minHeight: '56px',
+            width: '100%',
+            border: '1px solid rgba(34, 197, 94, 0.3)',
+            cursor: loading ? 'wait' : 'pointer',
+            transition: 'all 0.15s ease',
+            opacity: loading ? 0.7 : 1,
+          }}
+          className="flex flex-col items-center justify-center gap-0.5 px-4 py-3 hover:opacity-90 active:scale-[0.98]"
+        >
+          <span style={{ color: '#22c55e', fontSize: '17px', fontWeight: 600 }}>
+            {loading ? (t('findingProtocol') || 'Finding protocol...') : (t('solve') || 'Solve →')}
+          </span>
+          {solveSubtext && !loading && (
+            <span style={{ color: '#8a94a6', fontSize: '12px' }}>
+              {solveSubtext}
+            </span>
           )}
-        </div>
+        </button>
       )}
 
       {/* Loading skeleton */}
       {loading && (
-        <div className="card flex flex-col items-center justify-center py-10 gap-4" style={{ borderColor: 'rgba(34,197,94,0.2)' }}>
-          {/* spinner */}
-          <div style={{
-            width: '36px', height: '36px',
-            border: '3px solid rgba(34,197,94,0.15)',
-            borderTop: '3px solid #22c55e',
-            borderRadius: '50%',
-            animation: 'spin 0.8s linear infinite',
-          }} />
-          <div style={{ textAlign: 'center' }}>
-            <p style={{ fontWeight: 700, fontSize: '15px', color: 'var(--text)' }}>
-              Analyzing stain…
-            </p>
-            <p style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '4px' }}>
-              Stain Brain is on it
-            </p>
-          </div>
+        <div className="space-y-3">
+          <div className="skeleton h-6 w-3/4" />
+          <div className="skeleton h-4 w-full" />
+          <div className="skeleton h-4 w-5/6" />
+          <div className="skeleton h-32 w-full" />
+          <div className="skeleton h-4 w-2/3" />
         </div>
       )}
 
