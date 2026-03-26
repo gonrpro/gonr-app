@@ -187,10 +187,11 @@ export default function SolvePage() {
       </button>
 
       {/* ── Text Fallback ── */}
-      <div>
+      <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
         <input
           type="text"
           className="input"
+          style={{ flex: 1 }}
           placeholder="Or describe the stain and material..."
           value={stainInput}
           onChange={(e) => {
@@ -201,6 +202,29 @@ export default function SolvePage() {
             if (e.key === 'Enter') handleSolve()
           }}
         />
+        {(stainInput.trim().length >= 2 || selectedStain) && (
+          <button
+            onClick={() => handleSolve()}
+            disabled={loading}
+            style={{
+              background: '#22c55e',
+              color: '#000',
+              border: 'none',
+              borderRadius: '10px',
+              padding: '0 18px',
+              height: '44px',
+              fontWeight: 700,
+              fontSize: '14px',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
+              transition: 'opacity 0.15s ease',
+            }}
+            className="hover:opacity-90 active:scale-[0.97]"
+          >
+            GO
+          </button>
+        )}
       </div>
 
       {/* ── Care Label Scanner ── */}
