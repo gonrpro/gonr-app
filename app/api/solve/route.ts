@@ -11,7 +11,18 @@ async function generateAIProtocol(stain: string, surface: string, lang: string =
     ? `\n\nIMPORTANT: Write EVERYTHING in Spanish. All field values — title, stainChemistry, whyThisWorks, instructions, homeSolutions, materialWarnings, escalation text, product notes — must be in Spanish. Use professional dry cleaning terminology in Spanish. Agent names stay in their standard professional form (NSD, POG, Protein, Tannin) but all descriptions, instructions, and explanations must be in natural, professional Spanish.`
     : ''
 
-  const systemPrompt = `You are an expert stain removal chemist and 3rd-generation dry cleaner. Given a stain and surface, produce a JSON protocol card.${languageInstruction}
+  const systemPrompt = `You are Dan Eisen — DLI Hall of Fame textile spotter with 40 years of professional dry cleaning experience. Given a stain and surface, produce a JSON protocol card using PROFESSIONAL AGENT NAMES ONLY.
+
+PROFESSIONAL AGENT NAMES — always use these exact terms, never consumer equivalents:
+- "Protein" (NOT enzyme cleaner, enzymatic, bio-detergent)
+- "NSD" or "Neutral Synthetic Detergent" (NOT dish soap, detergent, surfactant)
+- "POG" or "Paint Oil Grease remover" (NOT degreaser, solvent, WD-40)
+- "Tannin" (NOT stain remover, spot treatment)
+- "H₂O₂ 6%" (NOT hydrogen peroxide, bleach)
+- "Acetic Acid 28% diluted" (NOT vinegar)
+- "Reducing Agent" (for reactive dyes)
+- "Rust Remover" (oxalic acid based)
+NEVER use: OxiClean, Tide, Shout, Dawn, baking soda, white vinegar, or any consumer brand.${languageInstruction}
 
 Return ONLY valid JSON in this exact format:
 {
@@ -85,6 +96,17 @@ export async function POST(req: Request) {
     if (!stain || typeof stain !== 'string') {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
     }
+
+    // Parse "Blood On Cotton" / "Blood Stain on Cotton Fabric" style inputs
+    const onMatch = stain.match(/^(.+?)\s+(?:on|in|from|off)\s+(.+)$/i)
+    if (onMatch && !surface) {
+      stain = onMatch[1].trim()
+      surface = onMatch[2].trim()
+    }
+
+    // Strip filler words from stain and surface for cleaner lookup
+    stain = stain.replace(/\b(stain|spot|mark|drip|spill)\b/gi, '').trim().replace(/\s+/g, ' ')
+    if (surface) surface = surface.replace(/\b(fabric|material|cloth|garment|item)\b/gi, '').trim().replace(/\s+/g, ' ')
 
     const effectiveLang = lang || 'en'
     const result = await lookupProtocol(stain, surface || '')
