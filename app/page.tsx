@@ -346,7 +346,7 @@ export default function SolvePage() {
               </svg>
               <div style={{ textAlign: 'left', flex: 1 }}>
                 <div style={{ color: '#22c55e', fontSize: '15px', fontWeight: 600 }}>{t('solveBtn')}</div>
-                <div style={{ color: '#8a94a6', fontSize: '12px', marginTop: '2px' }}>{selectedStain}{selectedSurface ? ` on ${selectedSurface}` : ''}</div>
+                <div style={{ color: '#8a94a6', fontSize: '12px', marginTop: '2px' }}>{selectedStain}{selectedSurface ? ` on ${selectedSurface}` : ' — select a surface below'}</div>
               </div>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, opacity: 0.4 }}>
                 <path d="M9 18l6-6-6-6" />

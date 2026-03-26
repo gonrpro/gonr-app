@@ -14,8 +14,12 @@ export default function StainChips({ onStainSelect, selectedStain }: StainChipsP
   function handleFamilyClick(name: string) {
     const chip = STAIN_CHIPS.find((c) => c.name === name)
     if (chip && chip.subs.length === 0) {
-      // No subs — select the family name directly
-      onStainSelect(name)
+      // No subs — toggle selection on the family name directly
+      if (selectedStain === name) {
+        onStainSelect('')
+      } else {
+        onStainSelect(name)
+      }
       setExpandedFamily(null)
       return
     }
