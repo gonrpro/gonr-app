@@ -12,6 +12,13 @@ export default function StainChips({ onStainSelect, selectedStain }: StainChipsP
   const [expandedFamily, setExpandedFamily] = useState<string | null>(null)
 
   function handleFamilyClick(name: string) {
+    const chip = STAIN_CHIPS.find((c) => c.name === name)
+    if (chip && chip.subs.length === 0) {
+      // No subs — select the family name directly
+      onStainSelect(name)
+      setExpandedFamily(null)
+      return
+    }
     if (expandedFamily === name) {
       setExpandedFamily(null)
     } else {
@@ -35,7 +42,7 @@ export default function StainChips({ onStainSelect, selectedStain }: StainChipsP
       <div className="flex flex-wrap gap-2">
         {STAIN_CHIPS.map((chip) => {
           const isExpanded = expandedFamily === chip.name
-          const isSelected = chip.subs.some((s) => s === selectedStain)
+          const isSelected = chip.subs.some((s) => s === selectedStain) || (chip.subs.length === 0 && selectedStain === chip.name)
           return (
             <button
               key={chip.name}
