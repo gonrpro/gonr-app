@@ -197,6 +197,24 @@ export default function ResultCard({ card, source }: ResultCardProps) {
 
       {/* ── 9. Collapsible sections ── */}
       <div className="px-4 pb-4 space-y-2">
+
+        {/* Home Care Tips */}
+        {card.homeSolutions && card.homeSolutions.length > 0 && (
+          <Collapsible title="Home Care Tips" icon="🏠">
+            <ul className="space-y-2">
+              {card.homeSolutions.map((sol, i) => {
+                const text = typeof sol === 'string' ? sol : (sol as { instruction?: string }).instruction || ''
+                return (
+                  <li key={i} className="flex gap-2 items-start">
+                    <span className="text-green-400 flex-shrink-0 mt-0.5">•</span>
+                    <span>{text}</span>
+                  </li>
+                )
+              })}
+            </ul>
+          </Collapsible>
+        )}
+
         {/* Chemistry Details */}
         {card.stainChemistry && (
           <Collapsible title={t('chemistryDetails')} icon={'\uD83E\uDDEA'}>
