@@ -59,6 +59,25 @@ function normalizeCard(card: any): any {
     card.materialWarnings = card.safetyMatrix.warnings
   }
 
+  // Generate customerHandoff for core cards that don't have one
+  if (!card.customerHandoff && card.title) {
+    const diff = card.difficulty ?? 5
+    const canTreat = diff <= 4 ? 'yes' : diff <= 7 ? 'likely' : 'high-risk'
+    const surface = card.surface || 'the fabric'
+    const stainFamily = card.stainFamily || 'stain'
+    card.customerHandoff = {
+      canTreat,
+      customerScript: `This appears to be a ${stainFamily} stain on ${surface}. We'll treat it with our professional spotting process. ${canTreat === 'yes' ? `${surface} responds well to this type of treatment and we expect good results.` : canTreat === 'likely' ? "Results depend on how long the stain has been set, but we'll do our best and let you know." : "This is a challenging combination and we want to be upfront — full removal is not guaranteed. We'll treat it carefully and let you know what we find."}`,
+      intakeNotes: {
+        stainType: card.title || stainFamily,
+        fiber: surface,
+        treatment: `Professional ${stainFamily} spotting`,
+        risk: canTreat === 'yes' ? 'Low' : canTreat === 'likely' ? 'Medium — results may vary' : 'High — no guarantee',
+      },
+      watchFor: (card.materialWarnings || []).slice(0, 2),
+    }
+  }
+
   return card
 }
 

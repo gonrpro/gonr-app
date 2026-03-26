@@ -41,6 +41,18 @@ export interface ProtocolCard {
   } | { name: string; type?: string; link?: string }[]
   customerExplanation?: string
   commonMistakes?: string[]
+  customerHandoff?: {
+    canTreat: 'yes' | 'likely' | 'high-risk'
+    customerScript: string
+    intakeNotes: {
+      stainType: string
+      fiber: string
+      treatment: string
+      risk: string
+      location?: string
+    }
+    watchFor: string[]
+  }
   scienceNote?: string
   callPro?: string
   solventNote?: string

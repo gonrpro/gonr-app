@@ -30,6 +30,7 @@
 import { useState } from 'react'
 import type { ProtocolCard, Step } from '@/lib/types'
 import HandoffModule from './HandoffModule'
+import CustomerHandoff from './CustomerHandoff'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 /* ── Helpers ─────────────────────────────────── */
@@ -222,6 +223,13 @@ export default function ResultCard({ card, source }: ResultCardProps) {
 
       {/* ── 9. Collapsible sections ── */}
       <div className="px-4 pb-4 space-y-2">
+
+        {/* Customer Handoff — expanded by default */}
+        {card.customerHandoff && (
+          <Collapsible title="Customer Handoff" icon="🧾" defaultOpen={true}>
+            <CustomerHandoff handoff={card.customerHandoff} />
+          </Collapsible>
+        )}
 
         {/* Home Care Tips */}
         {card.homeSolutions && card.homeSolutions.length > 0 && (

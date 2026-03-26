@@ -79,8 +79,23 @@ Return ONLY valid JSON in this exact format:
     "specialistType": "<type of specialist>"
   },
   "difficulty": 5,
-  "meta": { "riskLevel": "medium", "tier": "ai-generated" }
-}`
+  "meta": { "riskLevel": "medium", "tier": "ai-generated" },
+  "customerHandoff": {
+    "canTreat": "yes|likely|high-risk",
+    "customerScript": "2-4 sentences. What the counter person says to the customer. Professional, honest, never overpromise. Dan Eisen voice. No jargon.",
+    "intakeNotes": {
+      "stainType": "e.g. Red Wine (tannin)",
+      "fiber": "e.g. Cotton",
+      "treatment": "e.g. Professional tannin spotting",
+      "risk": "e.g. Low — cotton responds well"
+    },
+    "watchFor": ["one-line tip for the spotter", "optional second tip"]
+  }
+}
+
+CUSTOMER HANDOFF RULES:
+- canTreat: "yes" = difficulty 1-4 + fiber responds well. "likely" = difficulty 5-7 or some risk. "high-risk" = difficulty 8-10, or silk/acetate + aggressive stain, or old/set stain.
+- customerScript: 2-4 sentences. Professional, honest, never overpromise. Dan Eisen voice. Example: "This looks like a tannin stain — wine or juice. Cotton responds well to our spotting process and we expect to get most of this out. If it's been sitting for a while, there may be some residual discoloration, but we'll do our best."`
 
   const res = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
