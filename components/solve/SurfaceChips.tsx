@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { SURFACE_CHIPS } from '@/lib/protocols/chips'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 const SURFACE_EMOJIS: Record<string, string> = {
   Cotton: '\uD83E\uDDF5',
@@ -30,6 +31,7 @@ interface SurfaceChipsProps {
 }
 
 export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible }: SurfaceChipsProps) {
+  const { t } = useLanguage()
   const [showCottonMods, setShowCottonMods] = useState(false)
 
   if (!visible) return null
@@ -50,7 +52,7 @@ export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible
   return (
     <div className="space-y-3 animate-in fade-in slide-in-from-top-2 duration-200">
       <p className="text-xs font-medium text-gray-400 uppercase tracking-wider px-1">
-        What surface?
+        {t('whatSurface')}
       </p>
 
       <div className="flex flex-wrap gap-2">

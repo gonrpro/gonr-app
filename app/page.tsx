@@ -4,7 +4,9 @@ import { useState, useCallback, useEffect, useRef } from 'react'
 import ResultCard from '@/components/solve/ResultCard'
 import StainChips from '@/components/solve/StainChips'
 import SurfaceChips from '@/components/solve/SurfaceChips'
+import PaywallModal from '@/components/paywall/PaywallModal'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { initializeTrialState, getTrialState, decrementSolve, getRemainingText } from '@/lib/auth/trialGuard'
 import type { ProtocolCard } from '@/lib/types'
 
 interface SolveResult {
@@ -26,6 +28,11 @@ export default function SolvePage() {
   const [solveCount, setSolveCount] = useState(0)
   const resultRef = useRef<HTMLDivElement>(null)
 
+  // Trial state
+  const [showPaywall, setShowPaywall] = useState(false)
+  const [solvesRemaining, setSolvesRemaining] = useState(3)
+  const [userTier, setUserTier] = useState<'free' | 'home' | 'spotter' | 'operator' | 'founder'>('free')
+
   // Photo enrichment state
   const [capturedPhoto, setCapturedPhoto] = useState<File | null>(null)
   const [capturedPhotoUrl, setCapturedPhotoUrl] = useState<string>('')
@@ -34,8 +41,15 @@ export default function SolvePage() {
   const [garmentLocation, setGarmentLocation] = useState('')
 
   useEffect(() => {
+    // Initialize trial state
+    initializeTrialState()
     const count = parseInt(localStorage.getItem('gonr_solve_count') || '0', 10)
     setSolveCount(count)
+
+    // Load trial state
+    const trial = getTrialState()
+    setSolvesRemaining(trial.solvesRemaining)
+    setUserTier(trial.tier)
   }, [])
 
   useEffect(() => {
@@ -116,6 +130,12 @@ export default function SolvePage() {
   const handleSolve = useCallback(async () => {
     if (!hasSolveInput) return
 
+    // Check trial gate for free users
+    if (userTier === 'free' && solvesRemaining === 0) {
+      setShowPaywall(true)
+      return
+    }
+
     setLoading(true)
     setError('')
     setResult(null)
@@ -157,13 +177,26 @@ export default function SolvePage() {
       const data = await res.json()
       setResult(data)
       incrementSolveCount()
+
+      // Decrement trial if free user
+      if (userTier === 'free') {
+        decrementSolve()
+        const newTrial = getTrialState()
+        setSolvesRemaining(newTrial.solvesRemaining)
+
+        // If last free solve was just used, show paywall after result
+        if (newTrial.solvesRemaining === 0) {
+          setTimeout(() => setShowPaywall(true), 1500)
+        }
+      }
+
       scrollToResult()
     } catch (err) {
       setError(err instanceof Error ? err.message : t('somethingWentWrong'))
     } finally {
       setLoading(false)
     }
-  }, [hasSolveInput, capturedPhoto, careLabelFile, fabricDescription, garmentLocation, selectedStain, selectedSurface, stainInput, lang, t, incrementSolveCount, scrollToResult])
+  }, [hasSolveInput, capturedPhoto, careLabelFile, fabricDescription, garmentLocation, selectedStain, selectedSurface, stainInput, lang, t, incrementSolveCount, scrollToResult, userTier, solvesRemaining])
 
   const handleStainSelect = (stain: string) => {
     setSelectedStain(stain)
@@ -505,6 +538,21 @@ export default function SolvePage() {
         )}
       </button>
 
+      {/* Trial counter badge */}
+      {userTier === 'free' && solvesRemaining < 3 && (
+        <div style={{
+          textAlign: 'center',
+          padding: '8px 12px',
+          background: 'rgba(34, 197, 94, 0.08)',
+          borderRadius: '6px',
+          fontSize: '12px',
+          color: '#22c55e',
+          fontWeight: 500,
+        }}>
+          {getRemainingText()}
+        </div>
+      )}
+
       {/* Loading skeleton */}
       {loading && (
         <div className="space-y-3">
@@ -522,6 +570,12 @@ export default function SolvePage() {
           <p className="text-sm font-medium" style={{ color: 'var(--danger)' }}>{error}</p>
         </div>
       )}
+
+      {/* Paywall modal */}
+      <PaywallModal
+        open={showPaywall}
+        onDismiss={() => setShowPaywall(false)}
+      />
     </div>
   )
 }

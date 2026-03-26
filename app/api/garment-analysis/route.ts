@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json()
-    const { image, description } = body
+    const { image, description, lang } = body
 
     if (!image && !description) {
       return NextResponse.json(
@@ -93,7 +93,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         model: 'gpt-5.4',
-        instructions: SYSTEM_PROMPT,
+        instructions: SYSTEM_PROMPT + (lang === 'es' ? '\n\nIMPORTANT: Write your ENTIRE response in professional Spanish. All field values — rootCause, fiberConcerns, protocol steps, and all handoff messages (improved, tough, release) and proTip — must be in Spanish. Use dry cleaning terminology. Agent names stay as-is (NSD, POG, Protein, Tannin).' : ''),
         input: [{ role: 'user', content: inputContent }],
         max_output_tokens: 1500,
         text: { format: { type: 'json_object' } },

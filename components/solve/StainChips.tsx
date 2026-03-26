@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { STAIN_CHIPS } from '@/lib/protocols/chips'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 interface StainChipsProps {
   onStainSelect: (stain: string) => void
@@ -9,6 +10,7 @@ interface StainChipsProps {
 }
 
 export default function StainChips({ onStainSelect, selectedStain }: StainChipsProps) {
+  const { t } = useLanguage()
   const [expandedFamily, setExpandedFamily] = useState<string | null>(null)
 
   function handleFamilyClick(name: string) {
@@ -39,7 +41,7 @@ export default function StainChips({ onStainSelect, selectedStain }: StainChipsP
   return (
     <div className="space-y-3">
       <p className="text-xs font-medium text-gray-400 uppercase tracking-wider px-1">
-        What stain?
+        {t('whatStain')}
       </p>
 
       {/* Family chips */}

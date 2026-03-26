@@ -5,6 +5,7 @@ import Nav from '@/components/layout/Nav'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { LanguageProvider } from '@/lib/i18n/LanguageContext'
+import { AuthProvider } from '@/lib/auth/AuthContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -44,14 +45,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
-        <LanguageProvider>
-          <Header />
-          <main className="px-4 pt-2 pb-4">
-            {children}
-          </main>
-          <Footer />
-          <Nav />
-        </LanguageProvider>
+        <AuthProvider>
+          <LanguageProvider>
+            <Header />
+            <main className="px-4 pt-2 pb-4">
+              {children}
+            </main>
+            <Footer />
+            <Nav />
+          </LanguageProvider>
+        </AuthProvider>
         {/* Theme init script — runs before paint to avoid flash */}
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {

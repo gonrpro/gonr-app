@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export default function Header() {
-  const { lang, setLang } = useLanguage()
+  const { lang, setLang, t } = useLanguage()
   const [dark, setDark] = useState(true)
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function Header() {
             className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg
               text-sm font-semibold text-gray-500 hover:text-gray-900
               dark:text-gray-400 dark:hover:text-white transition-colors"
-            aria-label="Toggle language"
+            aria-label={t('toggleLanguageLabel')}
           >
             {lang === 'en' ? 'EN' : 'ES'}
           </button>
@@ -50,7 +50,7 @@ export default function Header() {
             onClick={toggleTheme}
             className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg
               text-sm hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
-            aria-label="Toggle theme"
+            aria-label={t('toggleThemeLabel')}
           >
             {dark ? '\u2600\uFE0F' : '\uD83C\uDF19'}
           </button>

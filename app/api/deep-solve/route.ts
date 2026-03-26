@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
   try {
-    const { stain, surface, cardId, context, stainAge, prevTreatment, condition } = await req.json()
+    const { stain, surface, cardId, context, stainAge, prevTreatment, condition, lang } = await req.json()
 
     if (!stain) {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
@@ -27,7 +27,11 @@ export async function POST(req: Request) {
       context ? `Additional context: ${context}` : null,
     ].filter(Boolean).join('\n')
 
-    const systemPrompt = `You are an expert stain removal chemist and 3rd-generation dry cleaner providing a deep analysis consultation.
+    const languageInstruction = lang === 'es'
+      ? `\n\nIMPORTANT: Write your ENTIRE response in professional Spanish. All assessment text, modified steps, warnings, and escalation guidance must be in Spanish. Use dry cleaning terminology in Spanish. Agent names stay as-is (NSD, POG, Protein, Tannin, H₂O₂ 6%).`
+      : ''
+
+    const systemPrompt = `You are Dan Eisen — DLI Hall of Fame textile spotter providing deep analysis consultation.${languageInstruction}
 
 The user has already received a standard protocol card and needs deeper, more personalized guidance. Consider:
 - The specific stain age and how chemistry changes over time

@@ -27,9 +27,9 @@ export default function CustomerHandoff({ handoff }: CustomerHandoffProps) {
   const { t } = useLanguage()
 
   const canTreatConfig = {
-    yes: { icon: '✅', label: 'Yes — treatable', color: '#22c55e', bg: 'rgba(34,197,94,0.08)', border: 'rgba(34,197,94,0.25)' },
-    likely: { icon: '⚠️', label: 'Likely treatable', color: '#f59e0b', bg: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.25)' },
-    'high-risk': { icon: '🔴', label: 'High risk — no guarantee', color: '#ef4444', bg: 'rgba(239,68,68,0.08)', border: 'rgba(239,68,68,0.25)' },
+    yes: { icon: '✅', label: t('canTreatYes'), color: '#22c55e', bg: 'rgba(34,197,94,0.08)', border: 'rgba(34,197,94,0.25)' },
+    likely: { icon: '⚠️', label: t('canTreatLikely'), color: '#f59e0b', bg: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.25)' },
+    'high-risk': { icon: '🔴', label: t('canTreatHighRisk'), color: '#ef4444', bg: 'rgba(239,68,68,0.08)', border: 'rgba(239,68,68,0.25)' },
   }
 
   const cfg = canTreatConfig[handoff.canTreat] || canTreatConfig['likely']
@@ -53,7 +53,7 @@ export default function CustomerHandoff({ handoff }: CustomerHandoffProps) {
       {/* Customer Script */}
       <div>
         <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: 'var(--text-secondary)' }}>
-          What to say
+          {t('whatToSayLabel')}
         </p>
         <p className="text-sm leading-relaxed" style={{ color: 'var(--text)', fontStyle: 'italic' }}>
           "{handoff.customerScript}"
@@ -63,15 +63,15 @@ export default function CustomerHandoff({ handoff }: CustomerHandoffProps) {
       {/* Intake Notes */}
       <div>
         <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: 'var(--text-secondary)' }}>
-          Ticket notes
+          {t('ticketNotesLabel')}
         </p>
         <div className="space-y-0.5 text-sm" style={{ color: 'var(--text-secondary)' }}>
-          <p><span style={{ fontWeight: 600, color: 'var(--text)' }}>Stain:</span> {handoff.intakeNotes.stainType}</p>
-          <p><span style={{ fontWeight: 600, color: 'var(--text)' }}>Fiber:</span> {handoff.intakeNotes.fiber}</p>
-          <p><span style={{ fontWeight: 600, color: 'var(--text)' }}>Treatment:</span> {handoff.intakeNotes.treatment}</p>
-          <p><span style={{ fontWeight: 600, color: 'var(--text)' }}>Risk:</span> {handoff.intakeNotes.risk}</p>
+          <p><span style={{ fontWeight: 600, color: 'var(--text)' }}>{t('stainLabel')}:</span> {handoff.intakeNotes.stainType}</p>
+          <p><span style={{ fontWeight: 600, color: 'var(--text)' }}>{t('fiberLabel')}:</span> {handoff.intakeNotes.fiber}</p>
+          <p><span style={{ fontWeight: 600, color: 'var(--text)' }}>{t('treatmentLabel')}:</span> {handoff.intakeNotes.treatment}</p>
+          <p><span style={{ fontWeight: 600, color: 'var(--text)' }}>{t('riskLabel')}:</span> {handoff.intakeNotes.risk}</p>
           {handoff.intakeNotes.location && (
-            <p><span style={{ fontWeight: 600, color: 'var(--text)' }}>Location:</span> {handoff.intakeNotes.location}</p>
+            <p><span style={{ fontWeight: 600, color: 'var(--text)' }}>{t('locationLabel')}:</span> {handoff.intakeNotes.location}</p>
           )}
         </div>
       </div>
@@ -80,7 +80,7 @@ export default function CustomerHandoff({ handoff }: CustomerHandoffProps) {
       {handoff.watchFor && handoff.watchFor.length > 0 && (
         <div>
           <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: 'var(--text-secondary)' }}>
-            Spotter: watch for
+            {t('spotterWatchFor')}
           </p>
           <ul className="space-y-1">
             {handoff.watchFor.map((tip, i) => (
