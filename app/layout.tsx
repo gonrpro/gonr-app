@@ -9,11 +9,33 @@ import { LanguageProvider } from '@/lib/i18n/LanguageContext'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'GONR — AI Stain Intelligence',
-  description: 'Expert stain removal protocols powered by AI. Built by a 3rd generation dry cleaner.',
+  title: 'GONR — AI Stain Intelligence for Textile Professionals',
+  description: 'Professional stain removal protocols powered by AI. Built by a 3rd-generation dry cleaner. Scan a stain, get a protocol in seconds.',
+  keywords: ['stain removal', 'dry cleaning', 'textile care', 'spotting protocol', 'AI stain guide', 'dry cleaner app', 'professional spotting'],
+  authors: [{ name: 'GONR Labs LLC' }],
+  metadataBase: new URL('https://gonr.app'),
+  alternates: {
+    canonical: 'https://gonr.app',
+  },
+  openGraph: {
+    title: 'GONR — AI Stain Intelligence for Textile Professionals',
+    description: 'Scan a stain. Get a professional protocol in seconds. Built by a 3rd-generation dry cleaner.',
+    url: 'https://gonr.app',
+    siteName: 'GONR',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'GONR — AI Stain Intelligence',
+    description: 'Professional stain removal protocols powered by AI.',
+    site: '@gonrlabs',
+  },
   icons: {
-    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='96' fill='%230A0A0A'/%3E%3Cg transform='translate(270,256)'%3E%3Cpath d='M74-76L36-38C20-56-2-68-30-68C-80-68-108-30-108 8C-108 46-80 84-30 84C0 84 20 70 30 44L30 28L-22 28L-22-8L84-8L84 60C62 110 22 138-30 138C-118 138-166 74-166 8C-166-58-118-122-30-122C16-122 46-106 74-76Z' fill='%2322C55E'/%3E%3C/g%3E%3C/svg%3E"
-  }
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
