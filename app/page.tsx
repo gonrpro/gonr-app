@@ -218,7 +218,7 @@ export default function SolvePage() {
     <div className="space-y-4">
 
       {/* ── Hero Copy ── */}
-      <div style={{ paddingBottom: '4px', textAlign: 'center' }}>
+      <div style={{ paddingTop: '12px', paddingBottom: '4px', textAlign: 'center' }}>
         <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', color: '#22c55e', textTransform: 'uppercase', marginBottom: '6px' }}>
           {t('aiStainIntelligence')}
         </p>
