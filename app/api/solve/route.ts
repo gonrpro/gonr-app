@@ -114,21 +114,41 @@ export async function POST(req: Request) {
       const apiKey = process.env.OPENAI_API_KEY
       if (!apiKey) return NextResponse.json({ error: 'API key not configured' }, { status: 500 })
 
-      // Use scan-stain endpoint to identify the stain from photo
-      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://gonr.app'
-      const scanRes = await fetch(`${baseUrl}/api/scan-stain`, {
+      // Inline vision call (avoid self-fetch which fails on Vercel)
+      const visionRes = await fetch('https://api.openai.com/v1/responses', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ image: imageBase64 }),
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+        body: JSON.stringify({
+          model: 'gpt-5.4',
+          input: [{
+            role: 'user',
+            content: [
+              { type: 'input_text', text: `You are Dan Eisen — DLI Hall of Fame textile spotter. Analyze this stain image. Identify WHAT the stain is and WHAT SURFACE it's on (garment, carpet, bathtub, tile, couch, etc.).\n\nChemistry families: tannin (wine/coffee/tea), protein (blood/sweat/milk), oil-grease (cooking oil/makeup), combination (mixed), oxidizable (rust/mustard/curry), dye (ink/hair dye), mineral (hard water/lime), unknown.\n\nReturn ONLY valid JSON: { "family": "tannin|protein|oil-grease|oxidizable|dye|combination|mineral|unknown", "suggestion": "specific stain name e.g. Rust, Marker, Red Wine", "surface": "what it's on e.g. Cotton Shirt, Couch Cushion, Bathtub", "confidence": "high|medium|low", "reasoning": "one sentence" }` },
+              { type: 'input_image', image_url: `data:image/jpeg;base64,${imageBase64}`, detail: 'high' },
+            ],
+          }],
+        }),
       })
 
-      if (!scanRes.ok) {
+      if (!visionRes.ok) {
+        const errText = await visionRes.text()
+        console.error('vision error:', visionRes.status, errText)
         return NextResponse.json({ error: 'Image scan failed' }, { status: 502 })
       }
 
-      const scanData = await scanRes.json()
+      const visionData = await visionRes.json()
+      const visionContent = visionData.output_text || visionData.output?.[0]?.content?.[0]?.text || '{}'
+      let scanData: { suggestion?: string; family?: string; surface?: string } = {}
+      try {
+        const clean = visionContent.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim()
+        scanData = JSON.parse(clean)
+      } catch {
+        console.error('vision parse error:', visionContent)
+        return NextResponse.json({ error: 'Image scan failed' }, { status: 502 })
+      }
+
       stain = scanData.suggestion || scanData.family || 'unknown stain'
-      surface = (formData.get('surface') as string) || ''
+      surface = (formData.get('surface') as string) || scanData.surface || ''
     } else {
       // Text path — JSON body
       const body = await req.json()
