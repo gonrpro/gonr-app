@@ -327,13 +327,27 @@ export async function POST(req: Request) {
     }
 
     // ── Text-based solve (JSON from text/chip flow) ──
-    const { stain, surface, lang } = await req.json()
+    const body = await req.json()
+    let stain: string = body.stain || ''
+    let surface: string = body.surface || ''
+    const lang = body.lang || 'en'
 
     if (!stain || typeof stain !== 'string') {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
     }
 
-    const effectiveLang = lang || 'en'
+    // Parse "Red Wine on Silk" / "Blood on Cotton" → stain + surface
+    const onMatch = stain.match(/^(.+?)\s+(?:on|in|from|off)\s+(.+)$/i)
+    if (onMatch && !surface) {
+      stain = onMatch[1].trim()
+      surface = onMatch[2].trim()
+    }
+
+    // Strip filler words
+    stain = stain.replace(/\b(stain|spot|mark|drip|spill)\b/gi, '').trim().replace(/\s+/g, ' ')
+    if (surface) surface = surface.replace(/\b(fabric|material|cloth|garment|item)\b/gi, '').trim().replace(/\s+/g, ' ')
+
+    const effectiveLang = lang
     const result = await lookupProtocol(stain, surface || '')
 
     if (result.card) {
