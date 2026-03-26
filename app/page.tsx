@@ -474,33 +474,36 @@ export default function SolvePage() {
         </div>
       )}
 
-      {/* ── SOLVE BUTTON ── */}
-      {hasSolveInput && (
-        <button
-          onClick={handleSolve}
-          disabled={loading}
-          style={{
-            background: 'rgba(34,197,94,0.08)',
-            borderRadius: '12px',
-            minHeight: '56px',
-            width: '100%',
-            border: '1px solid rgba(34, 197, 94, 0.3)',
-            cursor: loading ? 'wait' : 'pointer',
-            transition: 'all 0.15s ease',
-            opacity: loading ? 0.7 : 1,
-          }}
-          className="flex flex-col items-center justify-center gap-0.5 px-4 py-3 hover:opacity-90 active:scale-[0.98]"
-        >
-          <span style={{ color: '#22c55e', fontSize: '17px', fontWeight: 600 }}>
-            {loading ? (t('findingProtocol') || 'Finding protocol...') : (t('solve') || 'Solve →')}
+      {/* ── ANALYZE BUTTON — always visible, gray until input ── */}
+      <button
+        onClick={handleSolve}
+        disabled={!hasSolveInput || loading}
+        style={{
+          background: hasSolveInput ? 'rgba(34,197,94,0.08)' : 'transparent',
+          borderRadius: '12px',
+          minHeight: '56px',
+          width: '100%',
+          border: `1.5px solid ${hasSolveInput ? 'rgba(34,197,94,0.4)' : 'rgba(150,150,150,0.25)'}`,
+          cursor: hasSolveInput && !loading ? 'pointer' : 'default',
+          transition: 'all 0.2s ease',
+          opacity: loading ? 0.7 : 1,
+        }}
+        className="flex flex-col items-center justify-center gap-0.5 px-4 py-3 active:scale-[0.98]"
+      >
+        <span style={{
+          color: hasSolveInput ? '#22c55e' : 'var(--text-secondary)',
+          fontSize: '17px',
+          fontWeight: 700,
+          transition: 'color 0.2s ease',
+        }}>
+          {loading ? (t('findingProtocol') || 'Analyzing…') : 'Analyze Garment →'}
+        </span>
+        {solveSubtext && !loading && hasSolveInput && (
+          <span style={{ color: '#8a94a6', fontSize: '12px' }}>
+            {solveSubtext}
           </span>
-          {solveSubtext && !loading && (
-            <span style={{ color: '#8a94a6', fontSize: '12px' }}>
-              {solveSubtext}
-            </span>
-          )}
-        </button>
-      )}
+        )}
+      </button>
 
       {/* Loading skeleton */}
       {loading && (
