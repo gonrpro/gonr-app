@@ -145,15 +145,15 @@ export default function ChemistryPage() {
                   {timeFactor && (
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>Time Factor</p>
-                      <div className="grid grid-cols-3 gap-2">
+                      <div className="flex flex-col gap-2">
                         {[
                           { key: 'fresh', label: 'Fresh', color: '#22c55e', bg: 'rgba(34,197,94,0.08)', border: 'rgba(34,197,94,0.2)' },
                           { key: 'aged', label: 'Aged', color: '#f59e0b', bg: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.2)' },
                           { key: 'heatSet', label: 'Heat Set', color: '#ef4444', bg: 'rgba(239,68,68,0.08)', border: 'rgba(239,68,68,0.2)' },
                         ].map(({ key, label, color, bg, border }) => timeFactor[key] ? (
-                          <div key={key} className="rounded-xl p-2" style={{ background: bg, border: `1px solid ${border}` }}>
-                            <p className="text-xs font-semibold" style={{ color }}>{label}</p>
-                            <p className="text-xs mt-0.5 leading-relaxed" style={{ color: 'var(--text)' }}>{timeFactor[key]}</p>
+                          <div key={key} className="rounded-lg px-3 py-2 flex gap-2 items-baseline" style={{ background: bg, border: `1px solid ${border}` }}>
+                            <p className="text-[11px] font-bold shrink-0 w-14" style={{ color }}>{label}</p>
+                            <p className="text-[11px] leading-relaxed" style={{ color: 'var(--text)' }}>{timeFactor[key]}</p>
                           </div>
                         ) : null)}
                       </div>
