@@ -99,7 +99,66 @@ async function queueForReview(card: any, stain: string, surface: string, safetyR
 
 export async function POST(req: Request) {
   try {
-    const { stain, surface } = await req.json()
+    let stain: string = ''
+    let surface: string = ''
+    let imageBase64: string | null = null
+    let lang: string = 'en'
+
+    const contentType = req.headers.get('content-type') || ''
+
+    if (contentType.includes('multipart/form-data')) {
+      // FormData — photo-based solve
+      const formData = await req.formData()
+      const imageFile = formData.get('image') as File | null
+      const stainHint = formData.get('stainHint') as string | null
+      const surfaceHint = formData.get('surfaceHint') as string | null
+      lang = (formData.get('lang') as string) || 'en'
+
+      if (imageFile) {
+        const buf = await imageFile.arrayBuffer()
+        imageBase64 = Buffer.from(buf).toString('base64')
+      }
+
+      // If stain hint provided, use it directly — skip vision scan
+      if (stainHint) {
+        stain = stainHint
+        surface = surfaceHint || ''
+      } else if (imageBase64) {
+        // Run scan-stain vision to identify stain
+        const apiKey = process.env.OPENAI_API_KEY
+        if (apiKey) {
+          try {
+            const scanRes = await fetch('https://api.openai.com/v1/responses', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+              body: JSON.stringify({
+                model: 'gpt-5.4',
+                input: [{
+                  role: 'user',
+                  content: [
+                    { type: 'input_text', text: 'Identify the stain and surface. Return ONLY valid JSON: { "stain": "stain name", "surface": "surface name", "family": "tannin|protein|oil-grease|oxidizable|dye|combination|unknown" }' },
+                    { type: 'input_image', image_url: `data:image/jpeg;base64,${imageBase64}`, detail: 'high' },
+                  ],
+                }],
+              }),
+            })
+            if (scanRes.ok) {
+              const scanData = await scanRes.json()
+              const raw = (scanData.output_text || scanData.output?.[0]?.content?.[0]?.text || '{}').trim()
+              const parsed = JSON.parse(raw.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim())
+              stain = parsed.stain || 'unknown stain'
+              surface = surfaceHint || parsed.surface || ''
+            }
+          } catch { /* fall through to error below */ }
+        }
+      }
+    } else {
+      // JSON body
+      const body = await req.json()
+      stain = body.stain || ''
+      surface = body.surface || ''
+      lang = body.lang || 'en'
+    }
 
     if (!stain || typeof stain !== 'string') {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
