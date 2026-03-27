@@ -495,6 +495,7 @@ export default function SolvePage() {
             </svg>
             <span style={{ color: '#ca8a04', fontSize: '14px', fontWeight: 600 }}>{t('customerHandoff') || 'Handoff'}</span>
           </a>
+          <div style={{ minHeight: '36px' }} />
         </div>
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
           <a
@@ -513,6 +514,7 @@ export default function SolvePage() {
             </svg>
             <span style={{ color: '#9333ea', fontSize: '14px', fontWeight: 600 }}>{t('stainBrain') || 'Stain Brain'}</span>
           </a>
+          <div style={{ minHeight: '36px' }} />
         </div>
       </div>
 
