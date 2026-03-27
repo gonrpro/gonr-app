@@ -352,27 +352,27 @@ export default function SolvePage() {
           </div>
         )}
 
-        {/* Scan Care Label — purple */}
+        {/* Scan Care Label — light blue */}
         {!careLabelFile ? (
           <button
             onClick={handleScanCareLabel}
             disabled={loading}
             style={{
-              background: 'rgba(168,85,247,0.08)',
+              background: 'rgba(56,189,248,0.08)',
               borderRadius: '12px',
               flex: 1,
               minHeight: '80px',
-              border: '1.5px solid rgba(168,85,247,0.35)',
+              border: '1.5px solid rgba(56,189,248,0.35)',
               cursor: 'pointer',
               transition: 'all 0.15s ease',
             }}
             className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98]"
           >
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <rect x="3" y="3" width="18" height="18" rx="2" />
               <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5" />
             </svg>
-            <span style={{ color: '#a855f7', fontSize: '14px', fontWeight: 600 }}>
+            <span style={{ color: '#38bdf8', fontSize: '14px', fontWeight: 600 }}>
               {t('scanCareLabel')}
             </span>
           </button>
@@ -384,8 +384,8 @@ export default function SolvePage() {
               flex: 1,
               minHeight: '70px',
               borderRadius: '12px',
-              background: 'rgba(168,85,247,0.08)',
-              border: '1px solid rgba(147, 51, 234, 0.4)',
+              background: 'rgba(56,189,248,0.08)',
+              border: '1px solid rgba(56,189,248,0.4)',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -398,14 +398,14 @@ export default function SolvePage() {
               height="24"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#a855f7"
+              stroke="#38bdf8"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
               <path d="M20 6L9 17l-5-5" />
             </svg>
-            <span style={{ color: '#a855f7', fontSize: '13px', fontWeight: 600 }}>
+            <span style={{ color: '#38bdf8', fontSize: '13px', fontWeight: 600 }}>
               {t('careLabelAdded') || 'Care Label ✓'}
             </span>
             <button
