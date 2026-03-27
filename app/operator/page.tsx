@@ -825,15 +825,12 @@ function CustomerHandoffModule({
       }
 
       const data = await res.json()
-      const message = data.message || ''
 
-      // Parse the response into sections (the API returns a single message)
-      // We split it into logical sections for display
       setResult({
-        intake: message,
-        ticketNotes: `${session.stain} — ${tone} outcome. ${session.garmentAnalysisResult?.rootCause || ''}`.trim(),
-        pickup: message,
-        writtenNote: message,
+        intake: data.intake || '',
+        ticketNotes: data.ticketNotes || '',
+        pickup: data.pickup || '',
+        writtenNote: data.writtenNote || '',
       })
     } catch (err: any) {
       setError(err.message || 'Something went wrong')
