@@ -1,53 +1,15 @@
+// app/api/solve/route.ts
 import { NextResponse } from 'next/server'
 import { lookupProtocol } from '@/lib/protocols/lookup'
 import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
-import crosswalkData from '@/data/chemicals/agent-brand-crosswalk.json'
 
-type CrosswalkAgent = { genericName?: string; products?: Array<{ company: string; productName: string }> }
-const crosswalk = crosswalkData as Record<string, CrosswalkAgent>
-const PRODUCT_REFERENCE = Object.entries(crosswalk)
-  .filter(([, v]) => v && typeof v === 'object' && 'products' in v && Array.isArray(v.products))
-  .map(([, v]) => {
-    const products = (v.products || []).slice(0, 3).map((p) => `${p.productName} (${p.company})`).join(', ')
-    return `- ${v.genericName}: ${products}`
-  }).join('\n')
-
-// ─── Text-based AI protocol generation (existing, unchanged) ───
-
-async function generateAIProtocol(stain: string, surface: string, lang: string = 'en') {
+async function generateAIProtocol(stain: string, surface: string) {
   const apiKey = process.env.OPENAI_API_KEY
   if (!apiKey || apiKey === 'placeholder-add-real-key') {
     throw new Error('OpenAI API key not configured')
   }
 
-  const languageInstruction = lang === 'es'
-    ? `\n\nIMPORTANT: Write EVERYTHING in Spanish. All field values — title, stainChemistry, whyThisWorks, instructions, homeSolutions, materialWarnings, escalation text, product notes — must be in Spanish. Use professional dry cleaning terminology in Spanish. Agent names stay in their standard professional form (NSD, POG, Protein, Tannin) but all descriptions, instructions, and explanations must be in natural, professional Spanish.`
-    : ''
-
-  const systemPrompt = `You are Dan Eisen — DLI Hall of Fame textile spotter with 40 years of professional dry cleaning experience. Given a stain and surface, produce a THOROUGH, PROFESSIONAL JSON protocol card.
-
-PROTOCOL REQUIREMENTS:
-- MINIMUM 3 steps, ideally 4-6 for complex stains
-- Each step must be specific and actionable
-- Always start protein stains (blood, sweat, milk, egg) with COLD water flush — NEVER hot water
-- Always sequence: mechanical removal → appropriate agent → flush → repeat if needed → final treatment
-- Address the specific surface provided — Cotton protocols differ from Silk, Wool, Upholstery, etc.
-
-PROFESSIONAL AGENT NAMES — use ONLY these exact terms, never consumer equivalents:
-- "Protein" (NOT enzyme cleaner, enzymatic, bio-detergent, laundry detergent)
-- "NSD" or "Neutral Synthetic Detergent" (NOT dish soap, detergent, surfactant, liquid laundry detergent)
-- "POG" or "Paint Oil Grease remover" (NOT degreaser, solvent, WD-40)
-- "Tannin" (NOT stain remover, spot treatment)
-- "H₂O₂ 6%" (NOT hydrogen peroxide, bleach)
-- "Acetic Acid 28% diluted" (NOT vinegar, white vinegar)
-- "Reducing Agent" (for reactive dyes)
-- "Rust Remover" (oxalic acid based)
-NEVER use: OxiClean, Tide, Shout, Dawn, baking soda, white vinegar, liquid laundry detergent, or any consumer brand in the protocol steps.
-
-PROFESSIONAL PRODUCT REFERENCE — use these in products.professional:
-${PRODUCT_REFERENCE}
-
-For products.consumer, recommend well-known home products (Wine Away, Carbona Stain Devils, Zout, Woolite, Lestoil).${languageInstruction}
+  const systemPrompt = `You are an expert stain removal chemist and 3rd-generation dry cleaner. Given a stain and surface, produce a JSON protocol card.
 
 Return ONLY valid JSON in this exact format:
 {
@@ -79,23 +41,8 @@ Return ONLY valid JSON in this exact format:
     "specialistType": "<type of specialist>"
   },
   "difficulty": 5,
-  "meta": { "riskLevel": "medium", "tier": "ai-generated" },
-  "customerHandoff": {
-    "canTreat": "yes|likely|high-risk",
-    "customerScript": "2-4 sentences. What the counter person says to the customer. Professional, honest, never overpromise. Dan Eisen voice. No jargon.",
-    "intakeNotes": {
-      "stainType": "e.g. Red Wine (tannin)",
-      "fiber": "e.g. Cotton",
-      "treatment": "e.g. Professional tannin spotting",
-      "risk": "e.g. Low — cotton responds well"
-    },
-    "watchFor": ["one-line tip for the spotter", "optional second tip"]
-  }
-}
-
-CUSTOMER HANDOFF RULES:
-- canTreat: "yes" = difficulty 1-4 + fiber responds well. "likely" = difficulty 5-7 or some risk. "high-risk" = difficulty 8-10, or silk/acetate + aggressive stain, or old/set stain.
-- customerScript: 2-4 sentences. Professional, honest, never overpromise. Dan Eisen voice. Example: "This looks like a tannin stain — wine or juice. Cotton responds well to our spotting process and we expect to get most of this out. If it's been sitting for a while, there may be some residual discoloration, but we'll do our best."`
+  "meta": { "riskLevel": "medium", "tier": "ai-generated" }
+}`
 
   const res = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
@@ -104,13 +51,13 @@ CUSTOMER HANDOFF RULES:
       'Authorization': `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: 'gpt-4.1',
+      model: 'gpt-4o-mini',
       messages: [
         { role: 'system', content: systemPrompt },
-        { role: 'user', content: `Stain: ${stain}\nSurface: ${surface || 'unknown — ask for fiber content if possible'}` },
+        { role: 'user', content: `Stain: ${stain}\nSurface: ${surface || 'general fabric'}` },
       ],
       temperature: 0.3,
-      max_tokens: 3000,
+      max_tokens: 2000,
     }),
   })
 
@@ -124,292 +71,84 @@ CUSTOMER HANDOFF RULES:
   const content = data.choices?.[0]?.message?.content
   if (!content) throw new Error('Empty AI response')
 
+  // Parse JSON from response (handle markdown code blocks)
   const jsonStr = content.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim()
   return JSON.parse(jsonStr)
 }
 
-// ─── Care label vision decode ───
+// Fire-and-forget: queue every safe AI response for human review
+async function queueForReview(card: any, stain: string, surface: string, safetyResult: any) {
+  const supabaseUrl = process.env.SUPABASE_URL
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY
+  if (!supabaseUrl || !supabaseKey) return
 
-async function decodeCareLabel(imageBase64: string, apiKey: string): Promise<{
-  fiber?: string
-  washTemp?: string
-  dryCleanOnly?: boolean
-  bleachAllowed?: boolean
-  symbols?: string[]
-}> {
-  const res = await fetch('https://api.openai.com/v1/responses', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: 'gpt-5.4',
-      input: [{
-        role: 'user',
-        content: [
-          {
-            type: 'input_text',
-            text: 'Read this care label. Return JSON: { "fiber": "fiber content e.g. 100% Cotton, 60% Polyester 40% Rayon", "washTemp": "max wash temp", "dryCleanOnly": true/false, "bleachAllowed": true/false, "symbols": ["list of care symbols you see"] }',
-          },
-          {
-            type: 'input_image',
-            image_url: `data:image/jpeg;base64,${imageBase64}`,
-            detail: 'high',
-          },
-        ],
-      }],
-    }),
+  const { createClient } = await import('@supabase/supabase-js')
+  const supabase = createClient(supabaseUrl, supabaseKey)
+
+  await supabase.from('pending_protocols').insert({
+    stain_canonical: stain.toLowerCase().replace(/\s+/g, '-'),
+    surface_canonical: surface.toLowerCase().replace(/\s+/g, '-'),
+    card_json: card,
+    source_model: 'gpt-4o-mini',
+    safety_filtered: safetyResult.filtered,
+    safety_violation_count: safetyResult.violations.length,
+    status: 'pending_review',
+    created_at: new Date().toISOString(),
   })
-
-  if (!res.ok) {
-    console.error('Care label vision failed:', await res.text())
-    return {}
-  }
-
-  const data = await res.json()
-  const text = data.output_text || data.output?.[0]?.content?.[0]?.text || '{}'
-  const jsonStr = text.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim()
-
-  try {
-    return JSON.parse(jsonStr)
-  } catch {
-    console.error('Care label parse failed:', jsonStr)
-    return {}
-  }
 }
-
-// ─── Stain identification from image ───
-
-async function identifyStainFromImage(
-  imageBase64: string,
-  contextLines: string,
-  apiKey: string
-): Promise<{
-  family: string
-  suggestion: string
-  surface: string
-  confidence: string
-  reasoning: string
-}> {
-  const userText = `Analyze this stain image and identify what the stain is and what surface/fiber it's on.
-${contextLines ? `\nAdditional context from the operator:\n${contextLines}` : ''}
-
-Return ONLY valid JSON: { "family": "protein|tannin|oil-grease|dye|oxidizable|combination|particulate|wax-gum|bleach-damage|adhesive|pigment|unknown", "suggestion": "specific stain name", "surface": "fiber/surface", "confidence": "high|medium|low", "reasoning": "one sentence" }`
-
-  const res = await fetch('https://api.openai.com/v1/responses', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: 'gpt-5.4',
-      input: [{
-        role: 'user',
-        content: [
-          { type: 'input_text', text: userText },
-          {
-            type: 'input_image',
-            image_url: `data:image/jpeg;base64,${imageBase64}`,
-            detail: 'high',
-          },
-        ],
-      }],
-    }),
-  })
-
-  if (!res.ok) {
-    const errText = await res.text()
-    console.error('Stain vision failed:', errText)
-    throw new Error('Stain identification failed')
-  }
-
-  const data = await res.json()
-  const text = data.output_text || data.output?.[0]?.content?.[0]?.text || '{}'
-  const jsonStr = text.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim()
-  return JSON.parse(jsonStr)
-}
-
-// ─── Route handler ───
 
 export async function POST(req: Request) {
   try {
-    // Note: Trial gate is managed client-side via localStorage.
-    // Client checks solvesRemaining before calling this endpoint.
-    // This endpoint returns solvesRemaining for client to update state.
-    
-    const contentType = req.headers.get('content-type') || ''
-
-    // ── Image-based solve (FormData from camera flow) ──
-    if (contentType.includes('multipart/form-data')) {
-      const apiKey = process.env.OPENAI_API_KEY
-      if (!apiKey || apiKey === 'placeholder-add-real-key') {
-        return NextResponse.json({ error: 'OpenAI API key not configured' }, { status: 500 })
-      }
-
-      const formData = await req.formData()
-      const image = formData.get('image') as File | null
-      const careLabel = formData.get('careLabel') as File | null
-      const fabricDescription = (formData.get('fabricDescription') as string) || ''
-      const garmentLocation = (formData.get('garmentLocation') as string) || ''
-      const stainHint = (formData.get('stainHint') as string) || ''
-      const surfaceHint = (formData.get('surfaceHint') as string) || ''
-      const lang = (formData.get('lang') as string) || 'en'
-
-      if (!image) {
-        return NextResponse.json({ error: 'Image required' }, { status: 400 })
-      }
-
-      // Convert stain image to base64
-      const imageBase64 = Buffer.from(await image.arrayBuffer()).toString('base64')
-
-      // Decode care label if provided
-      let careLabelContext = ''
-      let surface = ''
-
-      if (careLabel) {
-        const clBase64 = Buffer.from(await careLabel.arrayBuffer()).toString('base64')
-        const cl = await decodeCareLabel(clBase64, apiKey)
-        if (cl.fiber) {
-          careLabelContext = `Care label: ${cl.fiber}. Max wash: ${cl.washTemp || 'unknown'}. Dry clean only: ${cl.dryCleanOnly ?? 'unknown'}. Bleach allowed: ${cl.bleachAllowed ?? 'unknown'}.`
-          // Override surface with fiber from care label
-          surface = cl.fiber
-        }
-      }
-
-      // Build context string for vision prompt
-      const contextLines = [
-        stainHint ? `User suspects: ${stainHint}` : '',
-        surfaceHint ? `User says surface is: ${surfaceHint}` : '',
-        fabricDescription ? `Fabric feel: ${fabricDescription}` : '',
-        garmentLocation ? `Location on garment: ${garmentLocation}` : '',
-        careLabelContext,
-      ].filter(Boolean).join('\n')
-
-      // Identify stain from image
-      const identification = await identifyStainFromImage(imageBase64, contextLines, apiKey)
-      const stain = stainHint || identification.suggestion || 'unknown stain'
-      if (!surface) surface = surfaceHint || identification.surface || ''
-
-      // Look up verified protocol first
-      const result = await lookupProtocol(stain, surface)
-      if (result.card) {
-        // Apply safety filter
-        const filterResult = runSafetyFilter(result.card, stain, surface)
-        if (!filterResult.safe) {
-          return NextResponse.json({
-            card: SAFE_FALLBACK,
-            tier: 0,
-            source: 'safety-blocked' as const,
-            violations: filterResult.violations,
-          })
-        }
-        return NextResponse.json({
-          ...result,
-          card: filterResult.card,
-          filtered: filterResult.filtered,
-          violations: filterResult.violations.length > 0 ? filterResult.violations : undefined,
-        })
-      }
-
-      // AI fallback
-      try {
-        const aiCard = await generateAIProtocol(stain, surface, lang)
-        
-        // Apply safety filter to AI-generated card
-        const filterResult = runSafetyFilter(aiCard, stain, surface)
-        if (!filterResult.safe) {
-          return NextResponse.json({
-            card: SAFE_FALLBACK,
-            tier: 0,
-            source: 'safety-blocked' as const,
-            violations: filterResult.violations,
-          })
-        }
-
-        return NextResponse.json({
-          card: filterResult.card,
-          tier: 4,
-          confidence: identification.confidence === 'high' ? 0.7 : identification.confidence === 'medium' ? 0.5 : 0.3,
-          source: 'ai' as const,
-          filtered: filterResult.filtered,
-          violations: filterResult.violations.length > 0 ? filterResult.violations : undefined,
-        })
-      } catch (err) {
-        console.error('AI fallback failed:', err)
-        return NextResponse.json(
-          { error: 'No protocol found and AI generation unavailable' },
-          { status: 404 }
-        )
-      }
-    }
-
-    // ── Text-based solve (JSON from text/chip flow) ──
-    const body = await req.json()
-    let stain: string = body.stain || ''
-    let surface: string = body.surface || ''
-    const lang = body.lang || 'en'
+    const { stain, surface } = await req.json()
 
     if (!stain || typeof stain !== 'string') {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
     }
 
-    // Parse "Red Wine on Silk" / "Blood on Cotton" → stain + surface
-    const onMatch = stain.match(/^(.+?)\s+(?:on|in|from|off)\s+(.+)$/i)
-    if (onMatch && !surface) {
-      stain = onMatch[1].trim()
-      surface = onMatch[2].trim()
-    }
+    const effectiveSurface = surface || ''
 
-    // Strip filler words
-    stain = stain.replace(/\b(stain|spot|mark|drip|spill)\b/gi, '').trim().replace(/\s+/g, ' ')
-    if (surface) surface = surface.replace(/\b(fabric|material|cloth|garment|item)\b/gi, '').trim().replace(/\s+/g, ' ')
-
-    const effectiveLang = lang
-    const result = await lookupProtocol(stain, surface || '')
+    const result = await lookupProtocol(stain, effectiveSurface)
 
     if (result.card) {
-      // Apply safety filter
-      const filterResult = runSafetyFilter(result.card, stain, surface || '')
-      if (!filterResult.safe) {
-        return NextResponse.json({
-          card: SAFE_FALLBACK,
-          tier: 0,
-          source: 'safety-blocked' as const,
-          violations: filterResult.violations,
-        })
-      }
-      return NextResponse.json({
-        ...result,
-        card: filterResult.card,
-        filtered: filterResult.filtered,
-        violations: filterResult.violations.length > 0 ? filterResult.violations : undefined,
-      })
+      return NextResponse.json(result)
     }
 
     // Tier 4: AI fallback
     try {
-      const aiCard = await generateAIProtocol(stain, surface || '', effectiveLang)
-      
-      // Apply safety filter to AI-generated card
-      const filterResult = runSafetyFilter(aiCard, stain, surface || '')
-      if (!filterResult.safe) {
+      const aiCard = await generateAIProtocol(stain, effectiveSurface)
+
+      // Run safety filter on every AI-generated response
+      const safetyResult = runSafetyFilter(aiCard, stain, effectiveSurface)
+
+      if (!safetyResult.safe) {
+        // Nuclear violation — return safe fallback, never the dangerous output
+        console.error(`[SafetyFilter] BLOCKED: ${safetyResult.violations.map(v => v.rule).join(', ')}`)
         return NextResponse.json({
-          card: SAFE_FALLBACK,
-          tier: 0,
-          source: 'safety-blocked' as const,
-          violations: filterResult.violations,
+          card: { ...SAFE_FALLBACK, surface: effectiveSurface },
+          tier: 4,
+          confidence: 0,
+          source: 'ai',
+          _safetyBlocked: true,
         })
       }
 
+      // Auto-corrections applied — use the mutated card
+      const safeCard = safetyResult.card
+      if (safetyResult.filtered) {
+        console.log(`[SafetyFilter] Auto-corrected ${safetyResult.violations.length} violation(s)`)
+        safeCard._safetyFiltered = true
+      }
+
+      // Queue for library review (fire-and-forget — never block the response)
+      queueForReview(safeCard, stain, effectiveSurface, safetyResult).catch(e =>
+        console.warn('[ProtocolCache] Queue failed (non-blocking):', e.message)
+      )
+
       return NextResponse.json({
-        card: filterResult.card,
+        card: safeCard,
         tier: 4,
         confidence: 0.5,
-        source: 'ai' as const,
-        filtered: filterResult.filtered,
-        violations: filterResult.violations.length > 0 ? filterResult.violations : undefined,
+        source: 'ai',
       })
     } catch (err) {
       console.error('AI fallback failed:', err)
