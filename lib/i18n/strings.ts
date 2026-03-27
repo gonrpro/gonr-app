@@ -146,7 +146,7 @@ export const strings: Record<string, Record<string, string>> = {
   deepSolveTitle: { en: "Deep Solve", es: "Deep Solve" },
   deepSolveDesc: { en: "AI-powered deep analysis of complex or multi-layered stains.", es: "Análisis profundo con IA de manchas complejas o multicapa." },
   customerHandoffDesc: { en: "Generate professional customer-facing messages for intake, release, and tough stains.", es: "Genera mensajes profesionales para clientes sobre ingreso, entrega y manchas difíciles." },
-  stainBrain: { en: "Stain Brain", es: "Stain Brain" },
+  stainBrain: { en: "Stain Brain", es: "Chat" },
   stainBrainDesc: { en: "Chat with GONR\u2019s AI about any stain scenario. Ask anything.", es: "Chatea con la IA de GONR sobre cualquier escenario de manchas. Pregunta lo que sea." },
   backUpper: { en: "← BACK", es: "← VOLVER" },
   operatorBadge: { en: "OPERATOR", es: "OPERADOR" },
