@@ -6,19 +6,20 @@ import type { Tier } from '../types'
  * No "home" tier.
  */
 const FEATURE_ACCESS: Record<string, Tier[]> = {
-  // Trial + all paid tiers
+  // Trial (free) + all paid tiers
   solve:            ['free', 'spotter', 'operator', 'founder'],
 
-  // Spotter tier — chemistry & protocol tools (the person at the spotting board)
+  // Spotter ($49/mo) — full professional toolkit, one user
   spotter:          ['spotter', 'operator', 'founder'],
   stain_brain:      ['spotter', 'operator', 'founder'],
   deep_solve:       ['spotter', 'operator', 'founder'],
   garment_analysis: ['spotter', 'operator', 'founder'],
+  handoff:          ['spotter', 'operator', 'founder'],
 
-  // Operator tier — counter/team tools (plant owner buys for staff)
-  handoff:          ['operator', 'founder'],
+  // Operator ($99/mo) — coming soon: team seats, counter access, dashboard
   dashboard:        ['operator', 'founder'],
   team:             ['operator', 'founder'],
+  counter:          ['operator', 'founder'],
 }
 
 export function canAccessFeature(tier: Tier, feature: string): boolean {
