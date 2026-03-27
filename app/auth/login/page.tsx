@@ -2,8 +2,10 @@
 
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export default function LoginPage() {
+  const { t } = useLanguage()
   const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false)
   const [sent, setSent] = useState(false)
@@ -28,7 +30,7 @@ export default function LoginPage() {
       if (authError) throw authError
       setSent(true)
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to send login link')
+      setError(err instanceof Error ? err.message : t('loginFailedToSend'))
     } finally {
       setLoading(false)
     }
@@ -38,17 +40,17 @@ export default function LoginPage() {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-4 px-4">
         <div className="text-4xl">📧</div>
-        <h1 className="text-xl font-bold">Check your email</h1>
+        <h1 className="text-xl font-bold">{t('loginCheckEmail')}</h1>
         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-          We sent a magic link to <strong>{email}</strong>.
-          <br />Click the link in the email to sign in.
+          {t('loginMagicLinkSent')} <strong>{email}</strong>.
+          <br />{t('loginClickLink')}
         </p>
         <button
           onClick={() => { setSent(false); setEmail('') }}
           className="text-sm font-medium mt-4"
           style={{ color: 'var(--accent)' }}
         >
-          Use a different email
+          {t('loginUseDifferentEmail')}
         </button>
       </div>
     )
@@ -58,9 +60,9 @@ export default function LoginPage() {
     <div className="flex flex-col items-center justify-center min-h-[60vh] px-4">
       <div className="w-full max-w-sm space-y-6">
         <div className="text-center space-y-2">
-          <h1 className="text-xl font-bold">Sign in to GONR</h1>
+          <h1 className="text-xl font-bold">{t('loginSignInTitle')}</h1>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            Enter your email to sign in or create an account.
+            {t('loginEnterEmailHint')}
           </p>
         </div>
 
@@ -68,7 +70,7 @@ export default function LoginPage() {
           <input
             type="email"
             className="input"
-            placeholder="you@example.com"
+            placeholder={t('loginEmailPlaceholder')}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -81,7 +83,7 @@ export default function LoginPage() {
             className="btn-primary"
             disabled={loading || !email.trim()}
           >
-            {loading ? 'Sending...' : 'Send Magic Link'}
+            {loading ? t('loginSending') : t('loginSendMagicLink')}
           </button>
         </form>
 
@@ -92,7 +94,7 @@ export default function LoginPage() {
         )}
 
         <p className="text-xs text-center" style={{ color: 'var(--text-secondary)' }}>
-          No password needed. We&apos;ll email you a secure sign-in link.
+          {t('loginNoPasswordNeeded')}
         </p>
       </div>
     </div>

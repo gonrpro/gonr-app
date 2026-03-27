@@ -1,111 +1,94 @@
 'use client'
 
-import { useLanguage } from '@/lib/i18n/LanguageContext'
 import Link from 'next/link'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
-const COMING_FEATURES = [
-  {
-    icon: '📸',
-    title: 'Garment Analysis',
-    description: 'Photo-based AI assessment. Root cause, repairability verdict, fiber concerns — before you touch it.',
-  },
-  {
-    icon: '🛡️',
-    title: 'Legal-Shield Customer Handoff',
-    description: 'Documented intake scripts, ticket notes, and pickup communication that protects your shop and builds customer trust.',
-  },
-  {
-    icon: '📋',
-    title: 'Problem Garment Queue',
-    description: 'Spotters flag tough cases. You review, analyze, and action — from anywhere.',
-  },
-  {
-    icon: '👥',
-    title: 'Team Seats',
-    description: 'Add spotters and counter staff under one account. Everyone sees what they need, nothing they don\'t.',
-  },
-  {
-    icon: '📊',
-    title: 'Training Dashboard',
-    description: 'Knowledge scores, protocol quiz results, and training progress across your entire team.',
-  },
-  {
-    icon: '🏪',
-    title: 'Multi-Location',
-    description: 'Run multiple plants from one login. Compare performance. Share protocols.',
-  },
-]
+const FEATURES = [
+  { titleKey: 'operatorFeature1Title', descKey: 'operatorFeature1Desc', icon: '🔍' },
+  { titleKey: 'operatorFeature2Title', descKey: 'operatorFeature2Desc', icon: '💬' },
+  { titleKey: 'operatorFeature3Title', descKey: 'operatorFeature3Desc', icon: '📋' },
+  { titleKey: 'operatorFeature4Title', descKey: 'operatorFeature4Desc', icon: '👥' },
+  { titleKey: 'operatorFeature5Title', descKey: 'operatorFeature5Desc', icon: '📊' },
+  { titleKey: 'operatorFeature6Title', descKey: 'operatorFeature6Desc', icon: '🏢' },
+] as const
 
 export default function OperatorPage() {
   const { t } = useLanguage()
 
   return (
-    <div className="space-y-6 pb-8">
-      {/* Hero */}
-      <div className="pt-2">
-        <div className="flex items-center gap-2 mb-1">
-          <h1 className="text-xl font-bold tracking-tight">Operator</h1>
-          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-            style={{ background: 'rgba(245,158,11,0.12)', color: '#d97706', border: '1px solid rgba(245,158,11,0.3)' }}>
-            COMING SOON
+    <div className="space-y-6">
+      {/* Header */}
+      <div className="text-center space-y-3">
+        <div className="flex items-center justify-center gap-2">
+          <h1 className="text-2xl font-bold tracking-tight">{t('operatorTitle')}</h1>
+          <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md
+            bg-amber-500/15 text-amber-400 border border-amber-500/30 uppercase">
+            {t('comingSoon')}
           </span>
         </div>
-        <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-          Built for the plant owner who runs the whole operation — not just the spotting board.
+        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+          {t('operatorComingSoonSubtitle')}
         </p>
       </div>
 
-      {/* Vision statement */}
-      <div className="rounded-2xl p-4" style={{ background: 'rgba(245,158,11,0.06)', border: '1px solid rgba(245,158,11,0.2)' }}>
-        <p className="text-sm leading-relaxed font-medium" style={{ color: 'var(--text)' }}>
-          "A customer drops off a $2,000 suit. Your spotter flags it. You analyze the photo, assess the risk, generate a documented handoff script — and your counter person delivers it word for word. No guessing. No liability."
+      {/* Vision quote */}
+      <div className="card text-center space-y-2 border-amber-500/20">
+        <p className="text-sm italic leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+          &ldquo;{t('operatorVisionQuote')}&rdquo;
         </p>
-        <p className="text-xs mt-2 font-semibold" style={{ color: '#d97706' }}>
-          That's what Operator makes possible.
+        <p className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>
+          &mdash; {t('operatorVisionAttribution')}
         </p>
       </div>
 
-      {/* Features */}
-      <div>
-        <p className="text-[10px] font-mono font-bold tracking-wider uppercase mb-3 px-1" style={{ color: 'var(--text-secondary)' }}>
-          What's coming
-        </p>
-        <div className="space-y-3">
-          {COMING_FEATURES.map((feature) => (
-            <div key={feature.title} className="card flex gap-3 items-start">
-              <span className="text-xl shrink-0 mt-0.5">{feature.icon}</span>
-              <div>
-                <p className="font-bold text-sm" style={{ color: 'var(--text)' }}>{feature.title}</p>
-                <p className="text-xs mt-0.5 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{feature.description}</p>
+      {/* What's coming */}
+      <div className="space-y-3">
+        <h2 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
+          {t('operatorWhatsComingHeader')}
+        </h2>
+
+        <div className="grid gap-3">
+          {FEATURES.map((feature) => (
+            <div
+              key={feature.titleKey}
+              className="card space-y-1"
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-lg">{feature.icon}</span>
+                <h3 className="text-sm font-bold">{t(feature.titleKey)}</h3>
               </div>
+              <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                {t(feature.descKey)}
+              </p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Grandfathering CTA */}
-      <div className="rounded-2xl p-4 text-center" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
-        <p className="text-sm font-bold" style={{ color: 'var(--text)' }}>Early Spotter subscribers get grandfathered pricing</p>
-        <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>
-          Sign up for Spotter now and lock in your rate before Operator launches.
+      {/* Grandfather note + CTA */}
+      <div className="text-center space-y-3">
+        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+          {t('operatorGrandfatherNote')}
         </p>
-        <Link
-          href="https://gonr.lemonsqueezy.com/checkout/buy/67c21a2e"
+        <a
+          href="https://gonrlabs.lemonsqueezy.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mt-3 px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90"
-          style={{ background: '#22c55e' }}
+          className="block w-full min-h-[44px] rounded-xl bg-amber-500 text-black text-sm font-semibold
+            hover:bg-amber-400 transition-colors flex items-center justify-center"
         >
-          Get Spotter — $49/mo
-        </Link>
+          {t('operatorGetSpotterCta')}
+        </a>
       </div>
 
-      {/* Back to Spotter */}
-      <div className="text-center">
-        <Link href="/spotter" className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-          ← Back to Spotter tools
-        </Link>
-      </div>
+      {/* Back link */}
+      <Link
+        href="/spotter"
+        className="block text-center text-sm font-medium"
+        style={{ color: 'var(--text-secondary)' }}
+      >
+        {t('operatorBackToSpotter')}
+      </Link>
     </div>
   )
 }

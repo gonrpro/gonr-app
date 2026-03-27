@@ -496,6 +496,111 @@ export const strings: Record<string, Record<string, string>> = {
   handoffContextLabel: { en: "Context", es: "Contexto" },
   handoffToneLabel: { en: "Tone", es: "Tono" },
   handoffNeedsContext: { en: "Run Deep Solve or Garment Analysis first, or enter context manually", es: "Ejecute Deep Solve o Análisis de Prenda primero, o ingrese contexto manualmente" },
+
+  // ── Solve / Home page ──
+  // ── ResultCard ──
+  // ── Nav ──
+  // ── Scan page ──
+  // ── Pro Tools page ──
+  // ── Profile page ──
+  // ── Auth / Account ──
+  // ── Tier / Subscription ──
+  // ── Theme ──
+  // ── Handoff Module ──
+  // ── Garment Analysis ──
+  // ── Damage chips ──
+  // ── Repairable badges ──
+  // ── Chemical Reference page ──
+  // ── Auth / Login page ──
+  loginFailedToSend: { en: "Failed to send login link", es: "Error al enviar el enlace de inicio de sesión" },
+  loginCheckEmail: { en: "Check your email", es: "Revisa tu correo" },
+  loginMagicLinkSent: { en: "We sent a magic link to", es: "Enviamos un enlace mágico a" },
+  loginClickLink: { en: "Click the link in the email to sign in.", es: "Haz clic en el enlace del correo para iniciar sesión." },
+  loginUseDifferentEmail: { en: "Use a different email", es: "Usar otro correo" },
+  loginSignInTitle: { en: "Sign in to GONR", es: "Inicia sesión en GONR" },
+  loginEnterEmailHint: { en: "Enter your email to sign in or create an account.", es: "Ingresa tu correo para iniciar sesión o crear una cuenta." },
+  loginEmailPlaceholder: { en: "you@example.com", es: "tu@ejemplo.com" },
+  loginSending: { en: "Sending...", es: "Enviando..." },
+  loginSendMagicLink: { en: "Send Magic Link", es: "Enviar Enlace Mágico" },
+  loginNoPasswordNeeded: { en: "No password needed. We\u2019ll email you a secure sign-in link.", es: "No necesitas contraseña. Te enviaremos un enlace seguro por correo." },
+  // ── Auth / Callback page ──
+  authErrorTitle: { en: "Authentication Error", es: "Error de Autenticación" },
+  authTryAgain: { en: "Try again", es: "Intentar de nuevo" },
+  authSigningIn: { en: "Signing you in...", es: "Iniciando sesión..." },
+  authVerifyingCredentials: { en: "Please wait while we verify your credentials.", es: "Espera mientras verificamos tus credenciales." },
+  // ── Deep Solve standalone page ──
+  deepSolveStainPlaceholder: { en: "Blood on Silk, Coffee on Marble...", es: "Sangre en Seda, Café en Mármol..." },
+  // ── Operator page (coming soon) ──
+  operatorComingSoonSubtitle: { en: "Built for the plant owner who runs the whole operation", es: "Diseñado para el dueño de planta que dirige toda la operación" },
+  operatorVisionQuote: { en: "One login. Every plant. Every spotter. Every garment — tracked, trained, and trusted.", es: "Un inicio de sesión. Cada planta. Cada spotter. Cada prenda — rastreada, capacitada y confiable." },
+  operatorVisionAttribution: { en: "The GONR vision for Operator", es: "La visión de GONR para Operador" },
+  operatorWhatsComingHeader: { en: "What\u2019s coming", es: "Lo que viene" },
+  operatorFeature1Title: { en: "Garment Analysis", es: "Análisis de Prenda" },
+  operatorFeature1Desc: { en: "AI photo assessment, root cause, repairability verdict", es: "Evaluación fotográfica con IA, causa raíz, veredicto de reparabilidad" },
+  operatorFeature2Title: { en: "Legal-Shield Customer Handoff", es: "Entrega Documentada al Cliente" },
+  operatorFeature2Desc: { en: "Documented intake scripts, ticket notes, and pickup communication that protects your shop", es: "Guiones documentados de recepción, notas de ticket y comunicación de entrega que protege tu tintorería" },
+  operatorFeature3Title: { en: "Problem Garment Queue", es: "Cola de Prendas Problema" },
+  operatorFeature3Desc: { en: "Spotters flag tough cases. You review, analyze, and action \u2014 from anywhere.", es: "Los spotters marcan casos difíciles. Tú revisas, analizas y actúas \u2014 desde cualquier lugar." },
+  operatorFeature4Title: { en: "Team Seats", es: "Puestos de Equipo" },
+  operatorFeature4Desc: { en: "Add spotters and counter staff under one account.", es: "Agrega spotters y personal de mostrador bajo una cuenta." },
+  operatorFeature5Title: { en: "Training Dashboard", es: "Panel de Capacitación" },
+  operatorFeature5Desc: { en: "Knowledge scores, protocol quiz results, and training progress across your entire team.", es: "Puntajes de conocimiento, resultados de evaluaciones y progreso de capacitación en todo tu equipo." },
+  operatorFeature6Title: { en: "Multi-Location", es: "Múltiples Ubicaciones" },
+  operatorFeature6Desc: { en: "Run multiple plants from one login.", es: "Administra múltiples plantas desde un solo inicio de sesión." },
+  operatorGrandfatherNote: { en: "Early Spotter subscribers get grandfathered pricing", es: "Los suscriptores tempranos de Spotter conservan el precio original" },
+  operatorGetSpotterCta: { en: "Get Spotter \u2014 $49/mo", es: "Obtener Spotter \u2014 $49/mes" },
+  operatorBackToSpotter: { en: "\u2190 Back to Spotter tools", es: "\u2190 Volver a herramientas Spotter" },
+  // ── Spotter page ──
+  spotterSectionReference: { en: "Reference", es: "Referencia" },
+  spotterSectionAiTools: { en: "AI Tools", es: "Herramientas IA" },
+  spotterBack: { en: "Back to Spotter", es: "Volver a Spotter" },
+  spotterChemRefDesc: { en: "Professional cleaning agents, solvents, and safety data.", es: "Agentes de limpieza profesional, solventes y datos de seguridad." },
+  spotterChemCardsDesc: { en: "Quick-reference chemistry cards for common agents.", es: "Tarjetas de referencia rápida de química para agentes comunes." },
+  spotterStainBrainDesc: { en: "Chat with GONR\u2019s AI about any stain scenario.", es: "Chatea con la IA de GONR sobre cualquier escenario de manchas." },
+  spotterDeepSolveDesc: { en: "AI-powered deep analysis for complex stains.", es: "Análisis profundo con IA para manchas complejas." },
+  spotterGarmentFlagDesc: { en: "Flag a garment for AI photo analysis and root cause.", es: "Marca una prenda para análisis fotográfico con IA y causa raíz." },
+  // ── Handoff standalone page ──
+  handoffPageSubtitle: { en: "Professional scripts for counter staff", es: "Guiones profesionales para personal de mostrador" },
+  handoffGarmentLabel: { en: "Garment / Stain", es: "Prenda / Mancha" },
+  handoffGarmentPlaceholder: { en: "e.g. Blood on linen, Wool suit", es: "ej. Sangre en lino, Traje de lana" },
+  handoffSituationLabel: { en: "Situation", es: "Situación" },
+  handoffNotesLabel: { en: "Additional notes (optional)", es: "Notas adicionales (opcional)" },
+  handoffNotesPlaceholder: { en: "Any extra context for the script...", es: "Cualquier contexto adicional para el guion..." },
+  // ── Profile page (extended) ──
+  profileAccountLabel: { en: "Account", es: "Cuenta" },
+  profileSignedIn: { en: "Signed in", es: "Sesión activa" },
+  profileSignOut: { en: "Sign Out", es: "Cerrar Sesión" },
+  profileSignInHint: { en: "Access your subscription from any device. No password needed.", es: "Accede a tu suscripción desde cualquier dispositivo. Sin contraseña." },
+  profileMagicLinkSent: { en: "We sent a sign-in link to", es: "Enviamos un enlace de inicio de sesión a" },
+  profileYourProfile: { en: "Your Profile", es: "Tu Perfil" },
+  profileDisplayName: { en: "Display Name", es: "Nombre para Mostrar" },
+  profileNamePlaceholder: { en: "Your name", es: "Tu nombre" },
+  profileShopName: { en: "Shop / Plant Name", es: "Nombre de Tintorería / Planta" },
+  profileShopPlaceholder: { en: "e.g. Jerry\u2019s Cleaners", es: "ej. Tintorería García" },
+  profileRoleLabel: { en: "Role", es: "Rol" },
+  profileRoleSpotter: { en: "Spotter", es: "Spotter" },
+  profileRoleCounter: { en: "Counter", es: "Mostrador" },
+  profileRoleOwner: { en: "Owner", es: "Dueño" },
+  profileSaving: { en: "Saving...", es: "Guardando..." },
+  profileSave: { en: "Save Profile", es: "Guardar Perfil" },
+  profileSaved: { en: "\u2713 Saved", es: "\u2713 Guardado" },
+  profileCredentialsTitle: { en: "Spotter Credentials", es: "Credenciales de Spotter" },
+  profileCredentialsSubtitle: { en: "Track your certifications and professional development.", es: "Rastrea tus certificaciones y desarrollo profesional." },
+  credDli: { en: "DLI Certification", es: "Certificación DLI" },
+  credNca: { en: "NCA Membership", es: "Membresía NCA" },
+  credYears: { en: "Years of Experience", es: "Años de Experiencia" },
+  credSpecialties: { en: "Specialties", es: "Especialidades" },
+  credPortfolio: { en: "Portfolio", es: "Portafolio" },
+  credBadge: { en: "Verified Badge", es: "Insignia Verificada" },
+  profileCredentialsCta: { en: "Build your reputation. Coming with Operator.", es: "Construye tu reputación. Disponible con Operador." },
+  profileTrialStatus: { en: "Trial Status", es: "Estado de Prueba" },
+  profileDaysRemaining: { en: "days remaining", es: "días restantes" },
+  profileTrialExpired: { en: "Trial expired", es: "Prueba expirada" },
+  profileUpgradeNow: { en: "Upgrade now \u2192", es: "Mejorar ahora \u2192" },
+  profileUpgradeCta: { en: "Upgrade to Spotter \u2014 $49/mo", es: "Mejorar a Spotter \u2014 $49/mes" },
+  profileUpgradeDesc: { en: "Unlock all pro tools, garment analysis, and customer handoff scripts.", es: "Desbloquea todas las herramientas pro, análisis de prendas y guiones de respuesta al cliente." },
+  // ── Error messages ──
+  // ── General ──
 }
 
 export function t(key: string, lang: string = 'en'): string {
