@@ -35,8 +35,8 @@ export default function ProfilePage() {
     supabase.auth.getUser().then(({ data }) => {
       setUser(data.user)
       setAuthLoading(false)
-      if (data.user) {
-        fetch('/api/profile').then(r => r.json()).then(p => {
+      if (data.user?.email) {
+        fetch(`/api/profile?email=${encodeURIComponent(data.user.email)}`).then(r => r.json()).then(p => {
           if (p.name) setDisplayName(p.name)
           if (p.shop_name) setShopName(p.shop_name)
           if (p.role) setRole(p.role)
@@ -88,7 +88,7 @@ export default function ProfilePage() {
       await fetch('/api/profile', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: displayName, shop_name: shopName, role }),
+        body: JSON.stringify({ email: user?.email, name: displayName, shop_name: shopName, role }),
       })
       setProfileSaved(true)
       setEditingProfile(false)
