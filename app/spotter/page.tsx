@@ -1,57 +1,109 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
+import StainBrainChat from '@/components/solve/StainBrainChat'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
-const SPOTTER_TOOLS = [
-  {
-    id: 'chemicals',
-    href: '/pro/chemicals',
-    icon: '🧪',
-    title: 'Chemical Reference',
-    description: 'Every spotting agent — what it does, when to use it, fiber safety, brand crosswalk.',
-    border: 'hover:border-green-500/30',
-  },
-  {
-    id: 'chemistry',
-    href: '/pro/chemistry',
-    icon: '⚗️',
-    title: 'Chemistry Cards',
-    description: 'Stain family chemistry — how each family bonds to fiber, what breaks it, what makes it permanent.',
-    border: 'hover:border-green-500/30',
-  },
-  {
-    id: 'stain-brain',
-    href: '/pro',
-    icon: '🧠',
-    title: 'Stain Brain',
-    description: 'Chat with the AI about any stain scenario. Ask why. Ask what if.',
-    border: 'hover:border-purple-500/30',
-  },
-]
+type ActiveTool = 'stain_brain' | null
 
 export default function SpotterPage() {
+  const { t } = useLanguage()
+  const [activeTool, setActiveTool] = useState<ActiveTool>(null)
+
+  if (activeTool === 'stain_brain') {
+    return (
+      <div className="space-y-3">
+        <button
+          onClick={() => setActiveTool(null)}
+          className="flex items-center gap-1.5 text-sm font-medium transition-colors"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M19 12H5M12 5l-7 7 7 7" />
+          </svg>
+          Back to Spotter
+        </button>
+        <div className="card p-0 overflow-hidden">
+          <StainBrainChat />
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="space-y-5">
       <div>
         <h1 className="text-xl font-bold tracking-tight">Spotter</h1>
         <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
-          Reference, chemistry, and education for professional spotters.
+          Reference, chemistry, and expert tools for professional spotters.
         </p>
       </div>
 
-      {SPOTTER_TOOLS.map(tool => (
+      {/* Reference tools */}
+      <div className="space-y-1">
+        <p className="text-[10px] font-mono font-bold tracking-wider uppercase px-1" style={{ color: 'var(--text-secondary)' }}>Reference</p>
         <Link
-          key={tool.id}
-          href={tool.href}
-          className={`card w-full text-left space-y-2 transition-colors ${tool.border} block`}
+          href="/pro/chemicals"
+          className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block"
         >
           <div className="flex items-center gap-2">
-            <span className="text-lg">{tool.icon}</span>
-            <h2 className="text-base font-bold">{tool.title}</h2>
+            <span className="text-lg">🧪</span>
+            <h2 className="text-base font-bold">Chemical Reference</h2>
           </div>
-          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{tool.description}</p>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            Every spotting agent — what it does, when to use it, fiber safety, brand crosswalk.
+          </p>
         </Link>
-      ))}
+
+        <Link
+          href="/pro/chemistry"
+          className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block"
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-lg">⚗️</span>
+            <h2 className="text-base font-bold">Chemistry Cards</h2>
+          </div>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            Stain family chemistry — how each family bonds to fiber, what breaks it, what makes it permanent.
+          </p>
+        </Link>
+      </div>
+
+      {/* AI tools */}
+      <div className="space-y-1">
+        <p className="text-[10px] font-mono font-bold tracking-wider uppercase px-1" style={{ color: 'var(--text-secondary)' }}>AI Tools</p>
+
+        <button
+          onClick={() => setActiveTool('stain_brain')}
+          className="card w-full text-left space-y-1 transition-colors hover:border-purple-500/30"
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🧠</span>
+            <h2 className="text-base font-bold">Stain Brain</h2>
+          </div>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            Chat with the AI about any stain scenario. Ask why. Ask what if. Dan Eisen methodology.
+          </p>
+        </button>
+
+        <Link
+          href="/deep-solve"
+          className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block"
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🔬</span>
+            <h2 className="text-base font-bold">Deep Solve</h2>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border ml-auto"
+              style={{ background: 'rgba(34,197,94,0.08)', color: '#22c55e', borderColor: 'rgba(34,197,94,0.3)' }}>
+              Pro
+            </span>
+          </div>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            Situational analysis for old stains, prior treatments, and high-value garments. Includes customer handoff scripts.
+          </p>
+        </Link>
+      </div>
     </div>
   )
 }

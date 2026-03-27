@@ -302,7 +302,7 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
           {t('deepSolveUpsellPrefix')}{' '}
           <a
-            href={`/operator?stain=${encodeURIComponent(card.title || '')}&cardId=${encodeURIComponent(card.id || '')}`}
+            href={`/deep-solve?stain=${encodeURIComponent(card.title || '')}&cardId=${encodeURIComponent(card.id || '')}`}
             className="font-semibold hover:underline"
             style={{ color: 'var(--accent)' }}
           >
