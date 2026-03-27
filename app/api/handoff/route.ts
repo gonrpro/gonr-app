@@ -41,13 +41,15 @@ export async function POST(req: Request) {
     const outcomeDescriptions: Record<string, string> = {
       improved: 'Treatment was successful — stain is gone or nearly gone. Confident, positive tone.',
       tough: 'Stain was difficult — partial improvement or uncertain result. Honest, professional tone managing expectations without alarming the customer.',
-      release: `We are recommending release — returning the garment untreated. This is a professional liability decision.
+      release: `We are recommending RELEASE AT INTAKE — declining to treat this garment before we touch it. The cleaner has assessed the risks and determined that treatment would likely cause damage.
 
-The four sections for a RELEASE must:
-- INTAKE: Explain at drop-off WHY treatment carries unacceptable risk for this specific garment. Reference the actual construction risks: unstable dyes, heat-sensitive adhesives on trim, couture construction with glued embellishments, delicate or unknown fibers, conflicting care requirements between components, or prior damage that cleaning could worsen. Be educational — the customer should understand WHY, not just hear "no."
-- TICKET NOTES: Document the specific risk factors for cleaning staff and liability records. Be technical and precise.
-- PICKUP: Deliver the release professionally at pickup. Acknowledge the customer's investment in this garment. Explain what would happen if treatment were attempted — be specific about the risk (dye bleeding, embellishment damage, fiber distortion, adhesive failure, etc.). Offer any safe alternatives if they exist.
-- WRITTEN NOTE: A formal written release note the customer takes home. Should document what was assessed, what the risks are, and that the garment is being returned in its received condition. Professional, protective language for the cleaner.`,
+This conversation happens AT THE COUNTER, BEFORE any treatment. The customer is standing there with the garment. We are explaining WHY we cannot accept it for treatment.
+
+The four sections for a RELEASE AT INTAKE must:
+- INTAKE: This IS the primary conversation. Explain clearly and specifically why treatment is too risky for this garment. Reference the actual construction and chemistry risks: unstable or hand-applied dyes that will migrate with any solvent, heat-sensitive adhesives holding beading or trim that will fail with moisture or heat, couture construction with conflicting fiber requirements between lining and shell, delicate embellishments that cannot survive agitation, or pre-existing damage that cleaning would worsen. Be educational and empathetic — the customer needs to understand the WHY. Sound like an expert protecting their investment, not a shop avoiding work.
+- TICKET NOTES: Brief internal note documenting the specific risk factors assessed at intake. For liability records.
+- PICKUP: Not applicable for release at intake — but write a short professional statement for IF they return later asking about other options or referrals.
+- WRITTEN NOTE: A formal written release document the customer takes home. States that the garment was assessed at intake, documents the specific risks identified, confirms the garment is being returned in its received condition untreated. Protective language for the cleaner. Professional signature line.`,
       intake: 'Garment just received — setting expectations before treatment. Knowledgeable, reassuring tone.',
     }
 
