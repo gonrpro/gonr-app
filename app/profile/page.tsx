@@ -25,6 +25,7 @@ export default function ProfilePage() {
   const [profileSaving, setProfileSaving] = useState(false)
   const [profileSaved, setProfileSaved] = useState(false)
   const [editingProfile, setEditingProfile] = useState(false)
+  const [profileLoaded, setProfileLoaded] = useState(false)
 
   useEffect(() => {
     setSolveCount(parseInt(localStorage.getItem('gonr_solve_count') || '0', 10))
@@ -39,7 +40,10 @@ export default function ProfilePage() {
           if (p.name) setDisplayName(p.name)
           if (p.shop_name) setShopName(p.shop_name)
           if (p.role) setRole(p.role)
-        })
+          setProfileLoaded(true)
+        }).catch(() => setProfileLoaded(true))
+      } else {
+        setProfileLoaded(true)
       }
     })
 
@@ -203,7 +207,7 @@ export default function ProfilePage() {
       )}
 
       {/* Profile identity (logged in only) */}
-      {user && !editingProfile && (displayName || shopName) && (
+      {user && profileLoaded && !editingProfile && (displayName || shopName) && (
         <div className="card space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
@@ -244,7 +248,7 @@ export default function ProfilePage() {
         </div>
       )}
 
-      {user && (editingProfile || (!displayName && !shopName)) && (
+      {user && profileLoaded && (editingProfile || (!displayName && !shopName)) && (
         <form onSubmit={handleSaveProfile} className="card space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
