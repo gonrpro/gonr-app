@@ -51,7 +51,7 @@ Return ONLY valid JSON in this exact format:
       'Authorization': `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: 'gpt-4o-mini',
+      model: 'gpt-4.1',
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: `Stain: ${stain}\nSurface: ${surface || 'general fabric'}` },
@@ -89,7 +89,7 @@ async function queueForReview(card: any, stain: string, surface: string, safetyR
     stain_canonical: stain.toLowerCase().replace(/\s+/g, '-'),
     surface_canonical: surface.toLowerCase().replace(/\s+/g, '-'),
     card_json: card,
-    source_model: 'gpt-4o-mini',
+    source_model: 'gpt-4.1',
     safety_filtered: safetyResult.filtered,
     safety_violation_count: safetyResult.violations.length,
     status: 'pending_review',

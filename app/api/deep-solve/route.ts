@@ -85,21 +85,23 @@ Rules:
 - If fiber is unknown, ALWAYS include a test step first.
 - Be specific. "Apply protein formula" is not enough. "Apply protein formula to spotting board, work wet side with bone spatula, 30-second dwell, flush with steam gun" — that's the standard.`
 
-    const res = await fetch('https://api.openai.com/v1/chat/completions', {
+    const res = await fetch('https://api.openai.com/v1/responses', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: 'gpt-4o',
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userMessage },
+        model: 'gpt-5.4',
+        instructions: systemPrompt,
+        input: [
+          {
+            role: 'user',
+            content: [{ type: 'input_text', text: userMessage }],
+          },
         ],
-        temperature: 0.4,
-        max_tokens: 3000,
-        response_format: { type: 'json_object' },
+        max_output_tokens: 3000,
+        text: { format: { type: 'json_object' } },
       }),
     })
 
@@ -109,7 +111,7 @@ Rules:
     }
 
     const data = await res.json()
-    const raw = data.choices?.[0]?.message?.content
+    const raw = data.output_text || data.output?.[0]?.content?.[0]?.text
 
     if (!raw) {
       return NextResponse.json({ error: 'Empty AI response' }, { status: 500 })
