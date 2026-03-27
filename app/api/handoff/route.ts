@@ -41,7 +41,13 @@ export async function POST(req: Request) {
     const outcomeDescriptions: Record<string, string> = {
       improved: 'Treatment was successful — stain is gone or nearly gone. Confident, positive tone.',
       tough: 'Stain was difficult — partial improvement or uncertain result. Honest, professional tone managing expectations without alarming the customer.',
-      release: 'Stain could not be removed or garment had pre-existing damage. Transparent, empathetic tone protecting the cleaner professionally.',
+      release: `We are recommending release — returning the garment untreated. This is a professional liability decision.
+
+The four sections for a RELEASE must:
+- INTAKE: Explain at drop-off WHY treatment carries unacceptable risk for this specific garment. Reference the actual construction risks: unstable dyes, heat-sensitive adhesives on trim, couture construction with glued embellishments, delicate or unknown fibers, conflicting care requirements between components, or prior damage that cleaning could worsen. Be educational — the customer should understand WHY, not just hear "no."
+- TICKET NOTES: Document the specific risk factors for cleaning staff and liability records. Be technical and precise.
+- PICKUP: Deliver the release professionally at pickup. Acknowledge the customer's investment in this garment. Explain what would happen if treatment were attempted — be specific about the risk (dye bleeding, embellishment damage, fiber distortion, adhesive failure, etc.). Offer any safe alternatives if they exist.
+- WRITTEN NOTE: A formal written release note the customer takes home. Should document what was assessed, what the risks are, and that the garment is being returned in its received condition. Professional, protective language for the cleaner.`,
       intake: 'Garment just received — setting expectations before treatment. Knowledgeable, reassuring tone.',
     }
 
