@@ -85,7 +85,7 @@ function ProgressBar({
   }
 
   return (
-    <div className="flex items-center justify-between gap-1 px-4 py-3 overflow-x-auto">
+    <div className="flex items-center justify-start gap-3 px-4 py-2 overflow-x-auto">
       {steps.map((step, i) => (
         <div key={step.id} className="flex items-center gap-1 min-w-0">
           <button
@@ -428,8 +428,10 @@ function DeepSolveModule({
 
 function CustomerHandoffModule({
   session,
+  onDone,
 }: {
   session: OperatorSession
+  onDone?: () => void
 }) {
   const { t, lang } = useLanguage()
   const [tone, setTone] = useState<string>('')
@@ -513,6 +515,7 @@ function CustomerHandoffModule({
         pickup: data.pickup || '',
         writtenNote: data.writtenNote || '',
       })
+      onDone?.()
     } catch (err: any) {
       setError(err.message || 'Something went wrong')
     } finally {
@@ -672,6 +675,7 @@ function OperatorPageInner() {
 
         <CustomerHandoffModule
           session={session}
+          onDone={() => setHandoffStatus('done')}
         />
       </div>
     </div>
