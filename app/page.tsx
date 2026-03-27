@@ -251,13 +251,13 @@ export default function SolvePage() {
 
       {/* ── Hero Copy ── */}
       <div style={{ paddingTop: '12px', paddingBottom: '4px', textAlign: 'center' }}>
-        <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', color: '#22c55e', textTransform: 'uppercase', marginBottom: '6px' }}>
-          {t('aiStainIntelligence')}
-        </p>
-        <h1 style={{ fontSize: '28px', fontWeight: 900, letterSpacing: '-0.5px', lineHeight: 1.1, color: 'var(--text)', margin: 0 }}>
+        <h1 style={{ fontSize: '28px', fontWeight: 900, letterSpacing: '-0.5px', lineHeight: 1.1, color: 'var(--text)', margin: 0, marginBottom: '6px' }}>
           {t('masterSpotter')}
         </h1>
-        <p style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '5px' }}>
+        <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.08em', color: '#22c55e', textTransform: 'uppercase', marginBottom: '4px' }}>
+          {t('aiStainIntelligence')}
+        </p>
+        <p style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '2px' }}>
           {t('poweredBy')} <span style={{ fontWeight: 600 }}>Stain Brain</span>
         </p>
       </div>
