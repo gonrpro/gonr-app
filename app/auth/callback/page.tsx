@@ -3,40 +3,53 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export default function AuthCallbackPage() {
   const router = useRouter()
+  const { t } = useLanguage()
   const [error, setError] = useState('')
 
   useEffect(() => {
     const handleCallback = async () => {
       const supabase = createClient()
-
-      // Magic links: Supabase sends ?code= (PKCE flow)
-      // Token links: Supabase sends #access_token= in hash
       const url = new URL(window.location.href)
+
       const code = url.searchParams.get('code')
       const tokenHash = url.searchParams.get('token_hash')
-      const type = url.searchParams.get('type')
+      const type = url.searchParams.get('type') as 'magiclink' | 'email' | 'recovery' | null
+      const errorDesc = url.searchParams.get('error_description')
+
+      if (errorDesc) {
+        setError(errorDesc)
+        return
+      }
 
       try {
-        if (code) {
+        if (tokenHash && type) {
+          // Magic link flow — verify OTP token hash
+          const { error } = await supabase.auth.verifyOtp({
+            token_hash: tokenHash,
+            type: type === 'magiclink' ? 'magiclink' : 'email',
+          })
+          if (error) throw error
+        } else if (code) {
           // PKCE code exchange
           const { error } = await supabase.auth.exchangeCodeForSession(code)
           if (error) throw error
-        } else if (tokenHash && type) {
-          // Token hash flow (magic link)
-          const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type: type as any })
-          if (error) throw error
         } else {
-          // Try getting session from hash fragment (legacy)
-          const { error } = await supabase.auth.getSession()
+          // Fallback — try getting existing session
+          const { data, error } = await supabase.auth.getSession()
           if (error) throw error
+          if (!data.session) {
+            setError('No session found. Please request a new magic link.')
+            return
+          }
         }
 
-        // Redirect to profile so user sees they're logged in
         router.replace('/profile')
       } catch (err: any) {
+        console.error('Auth callback error:', err)
         setError(err.message || 'Authentication failed')
       }
     }
@@ -48,10 +61,10 @@ export default function AuthCallbackPage() {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-4 px-4">
         <div className="text-4xl">⚠️</div>
-        <h1 className="text-xl font-bold">Authentication Error</h1>
+        <h1 className="text-xl font-bold">{t('authErrorTitle')}</h1>
         <p className="text-sm" style={{ color: '#ef4444' }}>{error}</p>
         <a href="/profile" className="text-sm font-medium" style={{ color: 'var(--accent)' }}>
-          Try again
+          {t('authTryAgain')}
         </a>
       </div>
     )
@@ -60,9 +73,9 @@ export default function AuthCallbackPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-4 px-4">
       <div className="text-4xl">🔄</div>
-      <h1 className="text-lg font-semibold">Signing you in...</h1>
+      <h1 className="text-lg font-semibold">{t('authSigningIn')}</h1>
       <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-        Please wait while we verify your credentials.
+        {t('authVerifyingCredentials')}
       </p>
     </div>
   )
