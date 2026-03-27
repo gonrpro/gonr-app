@@ -67,7 +67,6 @@ Generate four distinct customer communication pieces as specified. Make each one
           },
         ],
         max_output_tokens: 800,
-        text: { format: { type: 'json_object' } },
       }),
     })
 
@@ -84,7 +83,7 @@ Generate four distinct customer communication pieces as specified. Make each one
       return NextResponse.json({ error: 'Empty AI response' }, { status: 500 })
     }
 
-    const result = JSON.parse(raw)
+    const result = JSON.parse(raw.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim())
 
     // Validate all 4 sections present
     if (!result.intake || !result.ticketNotes || !result.pickup || !result.writtenNote) {

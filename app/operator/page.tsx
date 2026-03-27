@@ -769,7 +769,7 @@ function CustomerHandoffModule({
     }
   }, [session.deepSolveResult]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const hasContext = !!(session.deepSolveResult || session.garmentAnalysisResult || manualContext.trim())
+  const hasContext = !!(session.stain || session.deepSolveResult || session.garmentAnalysisResult || manualContext.trim())
 
   // Build context string from session
   const buildContext = () => {

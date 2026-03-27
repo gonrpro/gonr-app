@@ -88,7 +88,6 @@ export async function POST(req: NextRequest) {
         instructions: systemPrompt,
         input: [{ role: 'user', content: inputContent }],
         max_output_tokens: 1500,
-        text: { format: { type: 'json_object' } },
       }),
     })
 
@@ -111,7 +110,7 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    const analysis = JSON.parse(raw)
+    const analysis = JSON.parse(raw.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim())
     return NextResponse.json({ analysis })
   } catch (err: any) {
     console.error('Garment analysis error:', err)

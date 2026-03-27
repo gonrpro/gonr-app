@@ -101,7 +101,6 @@ Rules:
           },
         ],
         max_output_tokens: 3000,
-        text: { format: { type: 'json_object' } },
       }),
     })
 
@@ -117,7 +116,8 @@ Rules:
       return NextResponse.json({ error: 'Empty AI response' }, { status: 500 })
     }
 
-    const result = JSON.parse(raw)
+    const clean = raw.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim()
+    const result = JSON.parse(clean)
 
     // Validate required fields
     if (!result.assessment || !result.modifiedProtocol || !result.outcomes || !result.recommendation) {
