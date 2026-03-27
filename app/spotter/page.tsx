@@ -1,6 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 import Link from 'next/link'
 import StainBrainChat from '@/components/solve/StainBrainChat'
 import GarmentFlag from '@/components/solve/GarmentFlag'
@@ -8,9 +10,13 @@ import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 type ActiveTool = 'stain_brain' | 'garment_flag' | null
 
-export default function SpotterPage() {
+function SpotterPageInner() {
   const { t } = useLanguage()
-  const [activeTool, setActiveTool] = useState<ActiveTool>(null)
+  const searchParams = useSearchParams()
+  const [activeTool, setActiveTool] = useState<ActiveTool>(() => {
+    if (searchParams.get('tool') === 'stain_brain') return 'stain_brain'
+    return null
+  })
 
   if (activeTool === 'stain_brain') {
     return (
@@ -143,5 +149,13 @@ export default function SpotterPage() {
         </button>
       </div>
     </div>
+  )
+}
+
+export default function SpotterPage() {
+  return (
+    <Suspense fallback={<div className="p-4 text-sm" style={{ color: 'var(--text-secondary)' }}>Loading...</div>}>
+      <SpotterPageInner />
+    </Suspense>
   )
 }

@@ -437,6 +437,34 @@ export default function SolvePage() {
         )}
       </div>
 
+      {/* ── QUICK ACTIONS ── */}
+      <div className="flex gap-2">
+        <a
+          href="/deep-solve"
+          className="flex-1 flex items-center justify-center gap-1.5 rounded-xl text-xs font-semibold py-2.5 transition-colors"
+          style={{ background: 'rgba(34,197,94,0.08)', border: '1px solid rgba(34,197,94,0.25)', color: '#22c55e' }}
+        >
+          <span>🔬</span>
+          <span>{t('deepSolve') || 'Deep Solve'}</span>
+        </a>
+        <a
+          href="/handoff"
+          className="flex-1 flex items-center justify-center gap-1.5 rounded-xl text-xs font-semibold py-2.5 transition-colors"
+          style={{ background: 'rgba(168,85,247,0.08)', border: '1px solid rgba(168,85,247,0.25)', color: '#a855f7' }}
+        >
+          <span>💬</span>
+          <span>{t('customerHandoff') || 'Handoff'}</span>
+        </a>
+        <a
+          href="/spotter?tool=stain_brain"
+          className="flex-1 flex items-center justify-center gap-1.5 rounded-xl text-xs font-semibold py-2.5 transition-colors"
+          style={{ background: 'rgba(59,130,246,0.08)', border: '1px solid rgba(59,130,246,0.25)', color: '#3b82f6' }}
+        >
+          <span>🧠</span>
+          <span>{t('stainBrain') || 'Stain Brain'}</span>
+        </a>
+      </div>
+
       {/* ── ENRICHMENT (visible after photo captured) ── */}
       {capturedPhoto && (
         <div className="space-y-2">
