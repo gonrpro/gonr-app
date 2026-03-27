@@ -282,11 +282,11 @@ export default function SolvePage() {
               }}
               className="flex items-center justify-center gap-2 px-3 py-2 hover:opacity-90 active:scale-[0.98]"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
                 <circle cx="12" cy="13" r="3" />
               </svg>
-              <span style={{ color: '#22c55e', fontSize: '13px', fontWeight: 600 }}>{t('scanStain')}</span>
+              <span style={{ color: '#22c55e', fontSize: '14px', fontWeight: 600 }}>{t('scanStain')}</span>
             </button>
             <button
               onClick={() => handleScanStain(false)}
@@ -388,11 +388,11 @@ export default function SolvePage() {
               }}
               className="flex items-center justify-center gap-2 px-3 py-2 hover:opacity-90 active:scale-[0.98]"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5" />
               </svg>
-              <span style={{ color: '#38bdf8', fontSize: '13px', fontWeight: 600 }}>{t('scanCareLabel')}</span>
+              <span style={{ color: '#38bdf8', fontSize: '14px', fontWeight: 600 }}>{t('scanCareLabel')}</span>
             </button>
             <button
               onClick={() => handleScanCareLabel(false)}
@@ -442,7 +442,7 @@ export default function SolvePage() {
             >
               <path d="M20 6L9 17l-5-5" />
             </svg>
-            <span style={{ color: '#38bdf8', fontSize: '13px', fontWeight: 600 }}>
+            <span style={{ color: '#38bdf8', fontSize: '14px', fontWeight: 600 }}>
               {t('careLabelAdded') || 'Care Label ✓'}
             </span>
             <button
