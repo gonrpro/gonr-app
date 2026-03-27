@@ -475,42 +475,42 @@ export default function SolvePage() {
       </div>
 
       {/* ── QUICK ACTIONS ── */}
-      <div className="flex gap-2">
+      <div className="flex gap-3">
         <a
           href="/handoff"
-          className="flex items-center justify-center gap-1.5 hover:opacity-80 active:scale-[0.98] transition-all"
+          className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
           style={{
-            background: 'transparent',
-            borderRadius: '10px',
+            background: 'rgba(234,179,8,0.08)',
+            borderRadius: '12px',
             flex: 1,
-            height: '36px',
-            border: '1px solid rgba(234,179,8,0.3)',
+            minHeight: '80px',
+            border: '1.5px solid rgba(234,179,8,0.35)',
           }}
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ca8a04" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ca8a04" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
             <circle cx="9" cy="7" r="4"/>
             <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
           </svg>
-          <span style={{ color: '#ca8a04', fontSize: '11px', fontWeight: 600 }}>{t('customerHandoff') || 'Handoff'}</span>
+          <span style={{ color: '#ca8a04', fontSize: '14px', fontWeight: 600 }}>{t('customerHandoff') || 'Handoff'}</span>
         </a>
         <a
           href="/spotter?tool=stain_brain"
-          className="flex items-center justify-center gap-1.5 hover:opacity-80 active:scale-[0.98] transition-all"
+          className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
           style={{
-            background: 'transparent',
-            borderRadius: '10px',
+            background: 'rgba(147,51,234,0.08)',
+            borderRadius: '12px',
             flex: 1,
-            height: '36px',
-            border: '1px solid rgba(147,51,234,0.3)',
+            minHeight: '80px',
+            border: '1.5px solid rgba(147,51,234,0.35)',
           }}
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9333ea" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
             <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
           </svg>
-          <span style={{ color: '#9333ea', fontSize: '11px', fontWeight: 600 }}>{t('stainBrain') || 'Stain Brain'}</span>
+          <span style={{ color: '#9333ea', fontSize: '14px', fontWeight: 600 }}>{t('stainBrain') || 'Stain Brain'}</span>
         </a>
       </div>
 
