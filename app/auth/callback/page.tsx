@@ -38,7 +38,10 @@ export default function AuthCallbackPage() {
           const { error } = await supabase.auth.exchangeCodeForSession(code)
           if (error) throw error
         } else {
-          // Fallback — try getting existing session
+          // Hash fragment flow — Supabase puts access_token in # hash
+          // The Supabase client automatically picks this up from the URL hash
+          // Just wait a tick then check the session
+          await new Promise(resolve => setTimeout(resolve, 500))
           const { data, error } = await supabase.auth.getSession()
           if (error) throw error
           if (!data.session) {
