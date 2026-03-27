@@ -475,7 +475,7 @@ export default function SolvePage() {
       </div>
 
       {/* ── QUICK ACTIONS ── */}
-      <div className="flex gap-3">
+      <div className="flex gap-3" style={{ marginBottom: '-8px' }}>
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
           <a
             href="/handoff"
