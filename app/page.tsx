@@ -439,53 +439,43 @@ export default function SolvePage() {
 
       {/* ── QUICK ACTIONS ── */}
       <div className="flex gap-3">
-        <a
-          href="/deep-solve"
-          className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
-          style={{
-            background: 'rgba(34,197,94,0.08)',
-            borderRadius: '12px',
-            flex: 1,
-            minHeight: '64px',
-            border: '1.5px solid rgba(34,197,94,0.35)',
-          }}
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="11" cy="11" r="5"/><path d="m21 21-3.5-3.5"/><path d="M11 8v6M8 11h6"/>
-          </svg>
-          <span style={{ color: '#22c55e', fontSize: '12px', fontWeight: 600 }}>{t('deepSolve') || 'Deep Solve'}</span>
-        </a>
+        {/* Customer Handoff — gold */}
         <a
           href="/handoff"
           className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
           style={{
-            background: 'rgba(168,85,247,0.08)',
+            background: 'rgba(234,179,8,0.08)',
             borderRadius: '12px',
             flex: 1,
             minHeight: '64px',
-            border: '1.5px solid rgba(168,85,247,0.35)',
+            border: '1.5px solid rgba(234,179,8,0.35)',
           }}
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ca8a04" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
           </svg>
-          <span style={{ color: '#a855f7', fontSize: '12px', fontWeight: 600 }}>{t('customerHandoff') || 'Handoff'}</span>
+          <span style={{ color: '#ca8a04', fontSize: '12px', fontWeight: 600 }}>{t('customerHandoff') || 'Handoff'}</span>
         </a>
+        {/* Stain Brain — purple, matches Scan Care Label */}
         <a
           href="/spotter?tool=stain_brain"
           className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
           style={{
-            background: 'rgba(59,130,246,0.08)',
+            background: 'rgba(147,51,234,0.08)',
             borderRadius: '12px',
             flex: 1,
             minHeight: '64px',
-            border: '1.5px solid rgba(59,130,246,0.35)',
+            border: '1.5px solid rgba(147,51,234,0.35)',
           }}
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2a8 8 0 0 1 8 8c0 3-1.5 5.5-4 7l-1 5H9l-1-5C5.5 15.5 4 13 4 10a8 8 0 0 1 8-8z"/><path d="M9.5 14.5s.5 1.5 2.5 1.5 2.5-1.5 2.5-1.5"/>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9333ea" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
+            <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
           </svg>
-          <span style={{ color: '#3b82f6', fontSize: '12px', fontWeight: 600 }}>{t('stainBrain') || 'Stain Brain'}</span>
+          <span style={{ color: '#9333ea', fontSize: '12px', fontWeight: 600 }}>{t('stainBrain') || 'Stain Brain'}</span>
         </a>
       </div>
 
