@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef, Suspense } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
@@ -955,6 +955,7 @@ function OperatorPageInner() {
 
   const [deepSolveStatus, setDeepSolveStatus] = useState<StepStatus>('idle')
   const [garmentStatus, setGarmentStatus] = useState<StepStatus>('idle')
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [handoffStatus, setHandoffStatus] = useState<StepStatus>('idle')
 
   // Update handoff status when handoff gets context

@@ -110,7 +110,7 @@ export default function DanBuilderPage() {
       {/* Header */}
       <div className="space-y-1">
         <div className="flex items-center gap-2">
-          <h1 className="text-xl font-bold" style={{ color: 'var(--text)' }}>Dan's Protocol Builder</h1>
+          <h1 className="text-xl font-bold" style={{ color: 'var(--text)' }}>Dan&apos;s Protocol Builder</h1>
         </div>
         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
           Select the stain and fiber, fill in your steps. AI handles the rest.
@@ -119,7 +119,7 @@ export default function DanBuilderPage() {
 
       {saved && (
         <div className="rounded-xl p-4 text-sm font-medium" style={{ background: 'rgba(34,197,94,0.1)', color: 'var(--accent)', border: '1px solid rgba(34,197,94,0.3)' }}>
-          ✓ Protocol saved. It'll be live in the app after review.
+          ✓ Protocol saved. It&apos;ll be live in the app after review.
         </div>
       )}
 

@@ -8,14 +8,7 @@ const FAMILY_FILES = [
   'chemical-damage', 'maintenance'
 ]
 
-function getString(val: any): string {
-  if (!val) return ''
-  if (typeof val === 'string') return val
-  if (typeof val === 'object') {
-    return val.summary || val.tip || val.text || val.mistake || val.agent || val.name || JSON.stringify(val).slice(0, 100)
-  }
-  return String(val)
-}
+
 
 function getAgents(keyAgents: any): { name: string; action: string }[] {
   if (!keyAgents) return []
