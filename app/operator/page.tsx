@@ -805,13 +805,14 @@ function CustomerHandoffModule({
 
     try {
       const contextStr = buildContext()
-      const stainParts = session.stain.split(' on ')
+      const stainSource = session.stain || manualContext.trim() || 'Unknown stain'
+      const stainParts = stainSource.split(' on ')
 
       const res = await fetch('/api/handoff', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          stain: stainParts[0] || session.stain,
+          stain: stainParts[0] || stainSource,
           surface: stainParts[1] || '',
           outcome: toneToOutcome(tone),
           details: contextStr,
