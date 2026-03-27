@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import TierGate from '@/components/ui/TierGate'
 import GarmentAnalysis from '@/components/solve/GarmentAnalysis'
+import StainBrainChat from '@/components/solve/StainBrainChat'
 import { useUser } from '@/lib/hooks/useUser'
 import { canAccessFeature } from '@/lib/auth/features'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
@@ -57,7 +58,7 @@ export default function ProToolsPage() {
     },
     {
       id: 'stain_brain',
-      feature: 'deep_solve',
+      feature: 'stain_brain',
       icon: '🧠',
       titleKey: 'stainBrain',
       descKey: 'stainBrainDesc',
@@ -87,6 +88,24 @@ export default function ProToolsPage() {
           {t('backUpper')}
         </button>
         <GarmentAnalysis />
+      </div>
+    )
+  }
+
+  if (activeTool === 'stain_brain') {
+    return (
+      <div className="space-y-4">
+        <button
+          onClick={() => setActiveTool(null)}
+          className="flex items-center gap-2 text-xs font-mono font-bold px-3 py-1.5 rounded-lg
+            border border-white/10 hover:border-green-500/30 transition-colors"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          {t('backUpper')}
+        </button>
+        <div className="card overflow-hidden">
+          <StainBrainChat />
+        </div>
       </div>
     )
   }

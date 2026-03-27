@@ -17,13 +17,6 @@ export default function PaywallModal({ open, onDismiss }: PaywallModalProps) {
 
   const plans = [
     {
-      name: 'Home',
-      price: '$9.99',
-      period: 'month',
-      checkoutUrl: 'https://gonr.lemonsqueezy.com/checkout/buy/c2ff73cf',
-      description: 'Perfect for personal use',
-    },
-    {
       name: 'Spotter',
       price: '$49',
       period: 'month',
