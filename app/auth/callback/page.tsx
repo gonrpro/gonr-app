@@ -16,7 +16,8 @@ export default function AuthCallbackPage() {
       const url = new URL(window.location.href)
 
       const code = url.searchParams.get('code')
-      const tokenHash = url.searchParams.get('token_hash')
+      const token = url.searchParams.get('token')          // legacy magic link format
+      const tokenHash = url.searchParams.get('token_hash') // newer PKCE format
       const type = url.searchParams.get('type') as 'magiclink' | 'email' | 'recovery' | null
       const errorDesc = url.searchParams.get('error_description')
 
@@ -26,8 +27,15 @@ export default function AuthCallbackPage() {
       }
 
       try {
-        if (tokenHash && type) {
-          // Magic link flow — verify OTP token hash
+        if (token && type) {
+          // Legacy magic link format: ?token=...&type=magiclink
+          const { error } = await supabase.auth.verifyOtp({
+            token_hash: token,
+            type: type === 'magiclink' ? 'magiclink' : 'email',
+          })
+          if (error) throw error
+        } else if (tokenHash && type) {
+          // Newer PKCE format: ?token_hash=...&type=...
           const { error } = await supabase.auth.verifyOtp({
             token_hash: tokenHash,
             type: type === 'magiclink' ? 'magiclink' : 'email',
@@ -38,9 +46,7 @@ export default function AuthCallbackPage() {
           const { error } = await supabase.auth.exchangeCodeForSession(code)
           if (error) throw error
         } else {
-          // Hash fragment flow — Supabase puts access_token in # hash
-          // The Supabase client automatically picks this up from the URL hash
-          // Just wait a tick then check the session
+          // Fallback — check if session already exists (hash fragment flow)
           await new Promise(resolve => setTimeout(resolve, 500))
           const { data, error } = await supabase.auth.getSession()
           if (error) throw error
