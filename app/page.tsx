@@ -438,30 +438,54 @@ export default function SolvePage() {
       </div>
 
       {/* ── QUICK ACTIONS ── */}
-      <div className="flex gap-2">
+      <div className="flex gap-3">
         <a
           href="/deep-solve"
-          className="flex-1 flex items-center justify-center gap-1.5 rounded-xl text-xs font-semibold py-2.5 transition-colors"
-          style={{ background: 'rgba(34,197,94,0.08)', border: '1px solid rgba(34,197,94,0.25)', color: '#22c55e' }}
+          className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
+          style={{
+            background: 'rgba(34,197,94,0.08)',
+            borderRadius: '12px',
+            flex: 1,
+            minHeight: '64px',
+            border: '1.5px solid rgba(34,197,94,0.35)',
+          }}
         >
-          <span>🔬</span>
-          <span>{t('deepSolve') || 'Deep Solve'}</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="5"/><path d="m21 21-3.5-3.5"/><path d="M11 8v6M8 11h6"/>
+          </svg>
+          <span style={{ color: '#22c55e', fontSize: '12px', fontWeight: 600 }}>{t('deepSolve') || 'Deep Solve'}</span>
         </a>
         <a
           href="/handoff"
-          className="flex-1 flex items-center justify-center gap-1.5 rounded-xl text-xs font-semibold py-2.5 transition-colors"
-          style={{ background: 'rgba(168,85,247,0.08)', border: '1px solid rgba(168,85,247,0.25)', color: '#a855f7' }}
+          className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
+          style={{
+            background: 'rgba(168,85,247,0.08)',
+            borderRadius: '12px',
+            flex: 1,
+            minHeight: '64px',
+            border: '1.5px solid rgba(168,85,247,0.35)',
+          }}
         >
-          <span>💬</span>
-          <span>{t('customerHandoff') || 'Handoff'}</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          <span style={{ color: '#a855f7', fontSize: '12px', fontWeight: 600 }}>{t('customerHandoff') || 'Handoff'}</span>
         </a>
         <a
           href="/spotter?tool=stain_brain"
-          className="flex-1 flex items-center justify-center gap-1.5 rounded-xl text-xs font-semibold py-2.5 transition-colors"
-          style={{ background: 'rgba(59,130,246,0.08)', border: '1px solid rgba(59,130,246,0.25)', color: '#3b82f6' }}
+          className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
+          style={{
+            background: 'rgba(59,130,246,0.08)',
+            borderRadius: '12px',
+            flex: 1,
+            minHeight: '64px',
+            border: '1.5px solid rgba(59,130,246,0.35)',
+          }}
         >
-          <span>🧠</span>
-          <span>{t('stainBrain') || 'Stain Brain'}</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 2a8 8 0 0 1 8 8c0 3-1.5 5.5-4 7l-1 5H9l-1-5C5.5 15.5 4 13 4 10a8 8 0 0 1 8-8z"/><path d="M9.5 14.5s.5 1.5 2.5 1.5 2.5-1.5 2.5-1.5"/>
+          </svg>
+          <span style={{ color: '#3b82f6', fontSize: '12px', fontWeight: 600 }}>{t('stainBrain') || 'Stain Brain'}</span>
         </a>
       </div>
 
