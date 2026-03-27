@@ -274,7 +274,7 @@ export default function SolvePage() {
                 background: 'rgba(34,197,94,0.08)',
                 borderRadius: '12px',
                 flex: 1,
-                minHeight: '80px',
+                minHeight: '100px',
                 border: '1.5px solid rgba(34,197,94,0.35)',
                 cursor: 'pointer',
                 transition: 'all 0.15s ease',
@@ -380,7 +380,7 @@ export default function SolvePage() {
               style={{
                 background: 'rgba(56,189,248,0.08)',
                 borderRadius: '12px',
-                minHeight: '80px',
+                minHeight: '100px',
                 border: '1.5px solid rgba(56,189,248,0.35)',
                 cursor: 'pointer',
                 transition: 'all 0.15s ease',
