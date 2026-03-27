@@ -13,47 +13,46 @@ export default function AuthCallbackPage() {
   useEffect(() => {
     const handleCallback = async () => {
       const supabase = createClient()
-      const url = new URL(window.location.href)
 
-      const code = url.searchParams.get('code')
-      const token = url.searchParams.get('token')          // legacy magic link format
-      const tokenHash = url.searchParams.get('token_hash') // newer PKCE format
-      const type = url.searchParams.get('type') as 'magiclink' | 'email' | 'recovery' | null
-      const errorDesc = url.searchParams.get('error_description')
+      // The Supabase browser client automatically processes the hash fragment
+      // (#access_token=...&refresh_token=...) on initialization.
+      // We just need to wait for it then check the session.
 
-      if (errorDesc) {
-        setError(errorDesc)
+      // Small delay to let the client process the hash
+      await new Promise(resolve => setTimeout(resolve, 800))
+
+      const { data, error: sessionError } = await supabase.auth.getSession()
+
+      if (sessionError) {
+        setError(sessionError.message)
         return
       }
 
+      if (data.session) {
+        router.replace('/profile')
+        return
+      }
+
+      // Fallback: try explicit token exchange for edge cases
+      const url = new URL(window.location.href)
+      const token = url.searchParams.get('token')
+      const tokenHash = url.searchParams.get('token_hash')
+      const code = url.searchParams.get('code')
+      const type = url.searchParams.get('type') as 'magiclink' | 'email' | 'recovery' | null
+
       try {
         if (token && type) {
-          // Legacy magic link format: ?token=...&type=magiclink
-          const { error } = await supabase.auth.verifyOtp({
-            token_hash: token,
-            type: type === 'magiclink' ? 'magiclink' : 'email',
-          })
+          const { error } = await supabase.auth.verifyOtp({ token_hash: token, type: type === 'magiclink' ? 'magiclink' : 'email' })
           if (error) throw error
         } else if (tokenHash && type) {
-          // Newer PKCE format: ?token_hash=...&type=...
-          const { error } = await supabase.auth.verifyOtp({
-            token_hash: tokenHash,
-            type: type === 'magiclink' ? 'magiclink' : 'email',
-          })
+          const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type: type === 'magiclink' ? 'magiclink' : 'email' })
           if (error) throw error
         } else if (code) {
-          // PKCE code exchange
           const { error } = await supabase.auth.exchangeCodeForSession(code)
           if (error) throw error
         } else {
-          // Fallback — check if session already exists (hash fragment flow)
-          await new Promise(resolve => setTimeout(resolve, 500))
-          const { data, error } = await supabase.auth.getSession()
-          if (error) throw error
-          if (!data.session) {
-            setError('No session found. Please request a new magic link.')
-            return
-          }
+          setError('No session found. Please request a new magic link.')
+          return
         }
 
         router.replace('/profile')
