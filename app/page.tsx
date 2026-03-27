@@ -484,7 +484,7 @@ export default function SolvePage() {
             background: 'rgba(234,179,8,0.08)',
             borderRadius: '12px',
             flex: 1,
-            minHeight: '64px',
+            minHeight: '80px',
             border: '1.5px solid rgba(234,179,8,0.35)',
           }}
         >
@@ -504,7 +504,7 @@ export default function SolvePage() {
             background: 'rgba(147,51,234,0.08)',
             borderRadius: '12px',
             flex: 1,
-            minHeight: '64px',
+            minHeight: '80px',
             border: '1.5px solid rgba(147,51,234,0.35)',
           }}
         >
