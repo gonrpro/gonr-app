@@ -7,7 +7,7 @@ import { useLanguage } from '@/lib/i18n/LanguageContext'
 /* ═══════════════════════════════════════════════════
    TASK-127 — Operator Flow
    Full replacement for app/operator/page.tsx
-   Three modules: Deep Solve → Garment Analysis → Customer Handoff
+   Two modules: Deep Solve → Customer Handoff
    ═══════════════════════════════════════════════════ */
 
 // ── Types ──────────────────────────────────────────
@@ -28,23 +28,12 @@ interface DeepSolveResult {
   recommendationNote: string
 }
 
-interface GarmentAnalysisResult {
-  rootCause: string
-  damageType: string
-  repairable: 'yes' | 'partial' | 'no' | 'uncertain'
-  fiberConcerns: string[]
-  protocol: { step: number; action: string; agent: string | null }[]
-  handoff: { improved: string; tough: string; release: string }
-  proTip: string
-}
-
 interface OperatorSession {
   stain: string
   cardId: string
   deepSolveResult?: DeepSolveResult
   deepSolveSituations?: string[]
   deepSolveContext?: string
-  garmentAnalysisResult?: GarmentAnalysisResult
 }
 
 type StepStatus = 'idle' | 'loading' | 'done'
@@ -72,13 +61,11 @@ const TONES = [
 function ProgressBar({
   session,
   deepSolveStatus,
-  garmentStatus,
   handoffStatus,
   onTap,
 }: {
   session: OperatorSession
   deepSolveStatus: StepStatus
-  garmentStatus: StepStatus
   handoffStatus: StepStatus
   onTap: (id: string) => void
 }) {
@@ -88,7 +75,6 @@ function ProgressBar({
   const steps = [
     { id: 'solve', label: t('progressSolve'), status: hasSolve ? 'done' : 'idle' },
     { id: 'deep-solve', label: t('progressDeepSolve'), status: deepSolveStatus },
-    { id: 'garment', label: t('progressGarmentAnalysis'), status: garmentStatus },
     { id: 'handoff', label: t('progressHandoff'), status: handoffStatus },
   ] as const
 
@@ -158,13 +144,11 @@ function DeepSolveModule({
   setSession,
   status,
   setStatus,
-  onScrollTo,
 }: {
   session: OperatorSession
   setSession: React.Dispatch<React.SetStateAction<OperatorSession>>
   status: StepStatus
   setStatus: (s: StepStatus) => void
-  onScrollTo: (id: string) => void
 }) {
   const { t, lang } = useLanguage()
   const [situations, setSituations] = useState<string[]>([])
@@ -434,306 +418,6 @@ function DeepSolveModule({
             })()}
           </div>
 
-          {/* Link to Garment Analysis */}
-          <button
-            onClick={() => {
-              // Pre-populate garment analysis description
-              onScrollTo('garment')
-            }}
-            className="w-full min-h-[44px] rounded-xl text-sm font-semibold transition-colors
-              border border-purple-500/30 hover:bg-purple-500/10"
-            style={{ color: 'var(--accent)' }}
-          >
-            📸 {t('analyzeGarmentDamage')}
-          </button>
-        </div>
-      )}
-    </Section>
-  )
-}
-
-// ── Garment Analysis Module ────────────────────────
-
-function GarmentAnalysisModule({
-  session,
-  setSession,
-  status,
-  setStatus,
-}: {
-  session: OperatorSession
-  setSession: React.Dispatch<React.SetStateAction<OperatorSession>>
-  status: StepStatus
-  setStatus: (s: StepStatus) => void
-}) {
-  const { t, lang } = useLanguage()
-  const [photo, setPhoto] = useState<string | null>(null)
-  const [photo2, setPhoto2] = useState<string | null>(null)
-  const [description, setDescription] = useState('')
-  const [error, setError] = useState('')
-
-  // Pre-populate description from Deep Solve
-  useEffect(() => {
-    if (session.deepSolveResult && !description) {
-      const parts = [
-        session.stain,
-        session.deepSolveResult.assessment,
-        session.deepSolveSituations?.length
-          ? `Situations: ${session.deepSolveSituations.join(', ')}`
-          : null,
-      ].filter(Boolean)
-      setDescription(parts.join('. '))
-    }
-  }, [session.deepSolveResult]) // eslint-disable-line react-hooks/exhaustive-deps
-
-  const handlePhoto = (setter: (v: string | null) => void) => {
-    const input = document.createElement('input')
-    input.type = 'file'
-    input.accept = 'image/*'
-    input.capture = 'environment'
-    input.onchange = (e) => {
-      const file = (e.target as HTMLInputElement).files?.[0]
-      if (!file) return
-      const reader = new FileReader()
-      reader.onloadend = () => setter(reader.result as string)
-      reader.readAsDataURL(file)
-    }
-    input.click()
-  }
-
-  const runAnalysis = async () => {
-    if (!photo && !description.trim()) return
-
-    setError('')
-    setStatus('loading')
-
-    try {
-      const res = await fetch('/api/garment-analysis', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          image: photo || undefined,
-          description: description.trim() || undefined,
-          lang,
-        }),
-      })
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}))
-        throw new Error(data.error || 'Garment analysis failed')
-      }
-
-      const data = await res.json()
-      const analysis: GarmentAnalysisResult = data.analysis
-
-      setSession(prev => ({
-        ...prev,
-        garmentAnalysisResult: analysis,
-      }))
-      setStatus('done')
-    } catch (err: any) {
-      setError(err.message || 'Something went wrong')
-      setStatus('idle')
-    }
-  }
-
-  const result = session.garmentAnalysisResult
-
-  const repairIcon = (r: string) => {
-    if (r === 'yes') return '✅'
-    if (r === 'partial') return '⚠️'
-    if (r === 'no') return '❌'
-    return '❓'
-  }
-
-  const repairLabel = (r: string) => {
-    if (r === 'yes') return t('repairable')
-    if (r === 'partial') return t('partiallyRepairable')
-    if (r === 'no') return t('likelyPermanent')
-    return r
-  }
-
-  return (
-    <Section id="garment" icon="📸" title={t('garmentAnalysisModuleTitle')} subtitle={t('garmentAnalysisModuleSubtitle')}>
-      {/* Photo input */}
-      <div className="flex gap-2 mb-3">
-        <button
-          onClick={() => handlePhoto(setPhoto)}
-          className="flex-1 min-h-[44px] rounded-xl border-2 border-dashed flex items-center justify-center gap-2
-            text-sm font-medium transition-colors hover:border-purple-400"
-          style={{
-            borderColor: photo ? 'var(--accent)' : 'var(--border, rgba(128,128,128,0.3))',
-            color: photo ? 'var(--accent)' : 'var(--text-secondary)',
-            backgroundColor: 'var(--bg)',
-          }}
-        >
-          {photo ? '✅' : '📷'} {t('garmentTakePhoto')}
-        </button>
-        <button
-          onClick={() => handlePhoto(setPhoto2)}
-          className="flex-1 min-h-[44px] rounded-xl border-2 border-dashed flex items-center justify-center gap-2
-            text-sm font-medium transition-colors hover:border-purple-400"
-          style={{
-            borderColor: photo2 ? 'var(--accent)' : 'var(--border, rgba(128,128,128,0.3))',
-            color: photo2 ? 'var(--accent)' : 'var(--text-secondary)',
-            backgroundColor: 'var(--bg)',
-          }}
-        >
-          {photo2 ? '✅' : '📷'} {t('garmentSecondPhoto')}
-        </button>
-      </div>
-
-      {/* Photo thumbnails */}
-      {(photo || photo2) && (
-        <div className="flex gap-2 mb-3">
-          {photo && (
-            <img src={photo} alt="" className="w-20 h-20 rounded-lg object-cover border"
-              style={{ borderColor: 'var(--border, rgba(128,128,128,0.15))' }} />
-          )}
-          {photo2 && (
-            <img src={photo2} alt="" className="w-20 h-20 rounded-lg object-cover border"
-              style={{ borderColor: 'var(--border, rgba(128,128,128,0.15))' }} />
-          )}
-        </div>
-      )}
-
-      {/* Description */}
-      <textarea
-        value={description}
-        onChange={e => setDescription(e.target.value)}
-        placeholder={t('garmentAnalysisDescPlaceholder')}
-        rows={2}
-        className="w-full rounded-lg px-3 py-2 text-sm border outline-none resize-none
-          focus:ring-2 focus:ring-purple-500/40 mb-3"
-        style={{
-          backgroundColor: 'var(--bg)',
-          borderColor: 'var(--border, rgba(128,128,128,0.15))',
-          color: 'var(--text)',
-        }}
-      />
-
-      {error && <p className="text-xs text-red-400 mb-2">{error}</p>}
-
-      {/* Analyze button */}
-      {!result && (
-        <button
-          onClick={runAnalysis}
-          disabled={status === 'loading' || (!photo && !description.trim())}
-          className="w-full min-h-[44px] rounded-xl bg-purple-600 hover:bg-purple-700
-            text-white text-sm font-semibold transition-colors shadow-lg shadow-purple-600/25
-            disabled:opacity-50"
-        >
-          {status === 'loading' ? `🔄 ${t('garmentAnalysisRunning')}` : `📸 ${t('garmentAnalysisButton')}`}
-        </button>
-      )}
-
-      {/* ── Results ── */}
-      {result && (
-        <div className="mt-4 space-y-4">
-          {/* Root Cause */}
-          <div>
-            <h3 className="text-sm font-bold mb-1" style={{ color: 'var(--text)' }}>
-              {t('rootCause')}
-            </h3>
-            <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-              {result.rootCause}
-            </p>
-          </div>
-
-          {/* Repairability */}
-          <div className="rounded-lg p-3 border"
-            style={{ backgroundColor: 'var(--bg)', borderColor: 'var(--border, rgba(128,128,128,0.15))' }}>
-            <h3 className="text-sm font-bold mb-1" style={{ color: 'var(--text)' }}>
-              {t('repairability')}
-            </h3>
-            <span className="text-sm font-semibold">
-              {repairIcon(result.repairable)} {repairLabel(result.repairable)}
-            </span>
-          </div>
-
-          {/* Protocol */}
-          {result.protocol.length > 0 && (
-            <div>
-              <h3 className="text-sm font-bold mb-2" style={{ color: 'var(--text)' }}>
-                {t('modifiedProtocol')}
-              </h3>
-              <div className="space-y-2">
-                {result.protocol.map((step, i) => (
-                  <div key={i} className="rounded-lg p-3 border"
-                    style={{ backgroundColor: 'var(--bg)', borderColor: 'var(--border, rgba(128,128,128,0.15))' }}>
-                    <div className="flex items-start gap-2">
-                      <span className="text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5"
-                        style={{ backgroundColor: 'var(--accent)', color: 'white' }}>
-                        {step.step}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        {step.agent && (
-                          <span className="text-xs font-bold uppercase tracking-wide"
-                            style={{ color: 'var(--accent)' }}>
-                            {step.agent}
-                          </span>
-                        )}
-                        <p className="text-sm mt-0.5" style={{ color: 'var(--text)' }}>
-                          {step.action}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Fiber Concerns */}
-          {result.fiberConcerns.length > 0 && (
-            <div>
-              <h3 className="text-sm font-bold mb-1" style={{ color: 'var(--text)' }}>
-                {t('fiberConcerns')}
-              </h3>
-              <ul className="space-y-1">
-                {result.fiberConcerns.map((concern, i) => (
-                  <li key={i} className="text-sm flex items-start gap-2" style={{ color: 'var(--text-secondary)' }}>
-                    <span className="text-amber-400 mt-0.5">•</span>
-                    <span>{concern}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Customer Handoff Scripts */}
-          <div>
-            <h3 className="text-sm font-bold mb-2" style={{ color: 'var(--text)' }}>
-              {t('handoffScripts')}
-            </h3>
-            <div className="space-y-2">
-              {[
-                { icon: '💚', label: t('handoffImproved'), text: result.handoff.improved },
-                { icon: '⚠️', label: t('handoffTough'), text: result.handoff.tough },
-                { icon: '🔴', label: t('handoffRelease'), text: result.handoff.release },
-              ].map(script => (
-                <div key={script.label} className="rounded-lg p-3 border"
-                  style={{ backgroundColor: 'var(--bg)', borderColor: 'var(--border, rgba(128,128,128,0.15))' }}>
-                  <p className="text-xs font-bold mb-1" style={{ color: 'var(--text)' }}>
-                    {script.icon} {script.label}
-                  </p>
-                  <p className="text-sm italic" style={{ color: 'var(--text-secondary)' }}>
-                    &ldquo;{script.text}&rdquo;
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Pro Tip */}
-          <div className="rounded-lg p-3 border-l-4"
-            style={{ backgroundColor: 'var(--bg)', borderColor: 'var(--accent)' }}>
-            <h3 className="text-xs font-bold mb-1" style={{ color: 'var(--accent)' }}>
-              💡 {t('proTip')}
-            </h3>
-            <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-              {result.proTip}
-            </p>
-          </div>
         </div>
       )}
     </Section>
@@ -769,7 +453,7 @@ function CustomerHandoffModule({
     }
   }, [session.deepSolveResult]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const hasContext = !!(session.stain || session.deepSolveResult || session.garmentAnalysisResult || manualContext.trim())
+  const hasContext = !!(session.stain || session.deepSolveResult || manualContext.trim())
 
   // Build context string from session
   const buildContext = () => {
@@ -781,10 +465,6 @@ function CustomerHandoffModule({
       if (session.deepSolveResult.outcomes) {
         parts.push(`Likely outcome: ${session.deepSolveResult.outcomes.likely}`)
       }
-    }
-    if (session.garmentAnalysisResult) {
-      parts.push(`Root cause: ${session.garmentAnalysisResult.rootCause}`)
-      parts.push(`Repairability: ${session.garmentAnalysisResult.repairable}`)
     }
     if (manualContext.trim()) parts.push(manualContext.trim())
     return parts.join('\n')
@@ -843,7 +523,7 @@ function CustomerHandoffModule({
   return (
     <Section id="handoff" icon="📋" title={t('handoffOperatorTitle')} subtitle={t('handoffOperatorSubtitle')}>
       {/* Context summary */}
-      {(session.deepSolveResult || session.garmentAnalysisResult) && (
+      {session.deepSolveResult && (
         <div className="rounded-lg p-3 border mb-3"
           style={{ backgroundColor: 'var(--bg)', borderColor: 'var(--border, rgba(128,128,128,0.15))' }}>
           <p className="text-xs font-bold mb-1" style={{ color: 'var(--text)' }}>
@@ -852,13 +532,12 @@ function CustomerHandoffModule({
           <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
             {session.stain}
             {session.deepSolveResult && ` — ${session.deepSolveResult.recommendation}`}
-            {session.garmentAnalysisResult && ` — ${session.garmentAnalysisResult.repairable}`}
           </p>
         </div>
       )}
 
       {/* Manual context (if no prior modules ran) */}
-      {!session.deepSolveResult && !session.garmentAnalysisResult && (
+      {!session.deepSolveResult && (
         <textarea
           value={manualContext}
           onChange={e => setManualContext(e.target.value)}
@@ -952,16 +631,8 @@ function OperatorPageInner() {
   })
 
   const [deepSolveStatus, setDeepSolveStatus] = useState<StepStatus>('idle')
-  const [garmentStatus, setGarmentStatus] = useState<StepStatus>('idle')
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [handoffStatus, setHandoffStatus] = useState<StepStatus>('idle')
-
-  // Update handoff status when handoff gets context
-  useEffect(() => {
-    if (session.deepSolveResult || session.garmentAnalysisResult) {
-      // Handoff is ready but not yet run — still idle
-    }
-  }, [session])
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id)
@@ -986,7 +657,6 @@ function OperatorPageInner() {
       <ProgressBar
         session={session}
         deepSolveStatus={deepSolveStatus}
-        garmentStatus={garmentStatus}
         handoffStatus={handoffStatus}
         onTap={scrollTo}
       />
@@ -998,14 +668,6 @@ function OperatorPageInner() {
           setSession={setSession}
           status={deepSolveStatus}
           setStatus={setDeepSolveStatus}
-          onScrollTo={scrollTo}
-        />
-
-        <GarmentAnalysisModule
-          session={session}
-          setSession={setSession}
-          status={garmentStatus}
-          setStatus={setGarmentStatus}
         />
 
         <CustomerHandoffModule
