@@ -18,6 +18,13 @@ export default function ProfilePage() {
   const [sent, setSent] = useState(false)
   const [authError, setAuthError] = useState('')
 
+  // Profile fields
+  const [displayName, setDisplayName] = useState('')
+  const [shopName, setShopName] = useState('')
+  const [role, setRole] = useState('spotter')
+  const [profileSaving, setProfileSaving] = useState(false)
+  const [profileSaved, setProfileSaved] = useState(false)
+
   useEffect(() => {
     setSolveCount(parseInt(localStorage.getItem('gonr_solve_count') || '0', 10))
     setDark(document.documentElement.classList.contains('dark'))
@@ -26,6 +33,13 @@ export default function ProfilePage() {
     supabase.auth.getUser().then(({ data }) => {
       setUser(data.user)
       setAuthLoading(false)
+      if (data.user) {
+        fetch('/api/profile').then(r => r.json()).then(p => {
+          if (p.name) setDisplayName(p.name)
+          if (p.shop_name) setShopName(p.shop_name)
+          if (p.role) setRole(p.role)
+        })
+      }
     })
 
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -59,6 +73,23 @@ export default function ProfilePage() {
     const supabase = createClient()
     await supabase.auth.signOut()
     setUser(null)
+  }
+
+  async function handleSaveProfile(e: React.FormEvent) {
+    e.preventDefault()
+    setProfileSaving(true)
+    setProfileSaved(false)
+    try {
+      await fetch('/api/profile', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: displayName, shop_name: shopName, role }),
+      })
+      setProfileSaved(true)
+      setTimeout(() => setProfileSaved(false), 3000)
+    } finally {
+      setProfileSaving(false)
+    }
   }
 
   // Trial days remaining
@@ -172,6 +203,130 @@ export default function ProfilePage() {
                 : (lang === 'es' ? 'Enviar enlace mágico' : 'Send Magic Link')}
             </button>
           </form>
+        </div>
+      )}
+
+      {/* Profile identity (logged in only) */}
+      {user && (
+        <form onSubmit={handleSaveProfile} className="card space-y-3">
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
+              {lang === 'es' ? 'Tu Perfil' : 'Your Profile'}
+            </h2>
+            {profileSaved && (
+              <span className="text-xs font-semibold" style={{ color: '#22c55e' }}>
+                {lang === 'es' ? '✓ Guardado' : '✓ Saved'}
+              </span>
+            )}
+          </div>
+
+          <div className="space-y-2">
+            <div>
+              <label className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>
+                {lang === 'es' ? 'Nombre' : 'Display Name'}
+              </label>
+              <input
+                type="text"
+                value={displayName}
+                onChange={e => setDisplayName(e.target.value)}
+                placeholder={lang === 'es' ? 'Tu nombre' : 'Your name'}
+                className="w-full rounded-xl px-3 py-2 text-sm outline-none border mt-1 transition-colors"
+                style={{ background: 'var(--surface)', color: 'var(--text)', borderColor: 'var(--border)' }}
+              />
+            </div>
+            <div>
+              <label className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>
+                {lang === 'es' ? 'Nombre del Taller' : 'Shop / Plant Name'}
+              </label>
+              <input
+                type="text"
+                value={shopName}
+                onChange={e => setShopName(e.target.value)}
+                placeholder={lang === 'es' ? 'Nombre de tu tintorería' : "Your dry cleaning shop's name"}
+                className="w-full rounded-xl px-3 py-2 text-sm outline-none border mt-1 transition-colors"
+                style={{ background: 'var(--surface)', color: 'var(--text)', borderColor: 'var(--border)' }}
+              />
+            </div>
+            <div>
+              <label className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>
+                {lang === 'es' ? 'Rol' : 'Role'}
+              </label>
+              <div className="flex gap-2 mt-1">
+                {[
+                  { key: 'spotter', en: 'Spotter', es: 'Spotter' },
+                  { key: 'counter', en: 'Counter', es: 'Mostrador' },
+                  { key: 'owner', en: 'Owner', es: 'Dueño' },
+                ].map(r => (
+                  <button
+                    key={r.key}
+                    type="button"
+                    onClick={() => setRole(r.key)}
+                    className="px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors"
+                    style={{
+                      background: role === r.key ? 'var(--accent)' : 'var(--surface)',
+                      color: role === r.key ? '#fff' : 'var(--text-secondary)',
+                      border: '1px solid var(--border)',
+                    }}
+                  >
+                    {lang === 'es' ? r.es : r.en}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            disabled={profileSaving}
+            className="w-full py-2 rounded-xl text-sm font-bold transition-colors disabled:opacity-40"
+            style={{ background: 'var(--accent)', color: '#fff' }}
+          >
+            {profileSaving
+              ? (lang === 'es' ? 'Guardando...' : 'Saving...')
+              : (lang === 'es' ? 'Guardar Perfil' : 'Save Profile')}
+          </button>
+        </form>
+      )}
+
+      {/* Credentials — coming soon */}
+      {user && (
+        <div className="card space-y-3" style={{ opacity: 0.85 }}>
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
+              {lang === 'es' ? 'Credenciales del Spotter' : 'Spotter Credentials'}
+            </h2>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+              style={{ background: 'rgba(245,158,11,0.12)', color: '#d97706', border: '1px solid rgba(245,158,11,0.3)' }}>
+              {lang === 'es' ? 'PRÓXIMAMENTE' : 'COMING SOON'}
+            </span>
+          </div>
+          <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+            {lang === 'es'
+              ? 'Tu perfil profesional. Muestra tu experiencia al mundo.'
+              : 'Your professional identity. Show the industry what you can do.'}
+          </p>
+          <div className="space-y-2">
+            {[
+              { en: 'DLI / IFI Certification', es: 'Certificación DLI / IFI' },
+              { en: 'NCA Credentials', es: 'Credenciales NCA' },
+              { en: 'Years of Experience', es: 'Años de Experiencia' },
+              { en: 'Specialties (Leather, Bridal, Dye Correction...)', es: 'Especialidades (Cuero, Nupcial, Corrección de Tinte...)' },
+              { en: 'Before & After Portfolio', es: 'Portafolio Antes y Después' },
+              { en: 'Knowledge Score Badge', es: 'Insignia de Puntaje de Conocimiento' },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded border flex-shrink-0" style={{ borderColor: 'var(--border)' }} />
+                <span className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                  {lang === 'es' ? item.es : item.en}
+                </span>
+              </div>
+            ))}
+          </div>
+          <p className="text-[11px] font-semibold" style={{ color: '#d97706' }}>
+            {lang === 'es'
+              ? '🏆 Construye tu reputación. Llega con el plan Operador.'
+              : '🏆 Build your reputation. Coming with Operator.'}
+          </p>
         </div>
       )}
 
