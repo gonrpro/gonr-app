@@ -12,29 +12,33 @@ export default function AuthCallbackPage() {
     const handleCallback = async () => {
       const supabase = createClient()
 
-      // Supabase client-side auth automatically picks up the
-      // hash fragment or code from the URL
-      const { error: sessionError } = await supabase.auth.getSession()
-
-      if (sessionError) {
-        setError(sessionError.message)
-        return
-      }
-
-      // Exchange code if present in URL params
+      // Magic links: Supabase sends ?code= (PKCE flow)
+      // Token links: Supabase sends #access_token= in hash
       const url = new URL(window.location.href)
       const code = url.searchParams.get('code')
+      const tokenHash = url.searchParams.get('token_hash')
+      const type = url.searchParams.get('type')
 
-      if (code) {
-        const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code)
-        if (exchangeError) {
-          setError(exchangeError.message)
-          return
+      try {
+        if (code) {
+          // PKCE code exchange
+          const { error } = await supabase.auth.exchangeCodeForSession(code)
+          if (error) throw error
+        } else if (tokenHash && type) {
+          // Token hash flow (magic link)
+          const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type: type as any })
+          if (error) throw error
+        } else {
+          // Try getting session from hash fragment (legacy)
+          const { error } = await supabase.auth.getSession()
+          if (error) throw error
         }
-      }
 
-      // Redirect to home on success
-      router.replace('/')
+        // Redirect to profile so user sees they're logged in
+        router.replace('/profile')
+      } catch (err: any) {
+        setError(err.message || 'Authentication failed')
+      }
     }
 
     handleCallback()
@@ -45,12 +49,8 @@ export default function AuthCallbackPage() {
       <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-4 px-4">
         <div className="text-4xl">⚠️</div>
         <h1 className="text-xl font-bold">Authentication Error</h1>
-        <p className="text-sm" style={{ color: 'var(--danger)' }}>{error}</p>
-        <a
-          href="/auth/login"
-          className="text-sm font-medium"
-          style={{ color: 'var(--accent)' }}
-        >
+        <p className="text-sm" style={{ color: '#ef4444' }}>{error}</p>
+        <a href="/profile" className="text-sm font-medium" style={{ color: 'var(--accent)' }}>
           Try again
         </a>
       </div>
