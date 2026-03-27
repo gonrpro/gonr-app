@@ -280,7 +280,7 @@ export default function SolvePage() {
                 transition: 'all 0.15s ease',
                 width: '100%',
               }}
-              className="flex items-center justify-center gap-2 px-3 py-2 hover:opacity-90 active:scale-[0.98]"
+              className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98]"
             >
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
@@ -386,7 +386,7 @@ export default function SolvePage() {
                 transition: 'all 0.15s ease',
                 width: '100%',
               }}
-              className="flex items-center justify-center gap-2 px-3 py-2 hover:opacity-90 active:scale-[0.98]"
+              className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98]"
             >
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -478,7 +478,7 @@ export default function SolvePage() {
       <div className="flex gap-3">
         <a
           href="/handoff"
-          className="flex items-center justify-center gap-2 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
+          className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
           style={{
             background: 'rgba(234,179,8,0.08)',
             borderRadius: '12px',
@@ -497,7 +497,7 @@ export default function SolvePage() {
         </a>
         <a
           href="/spotter?tool=stain_brain"
-          className="flex items-center justify-center gap-2 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
+          className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
           style={{
             background: 'rgba(147,51,234,0.08)',
             borderRadius: '12px',
