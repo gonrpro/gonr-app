@@ -28,7 +28,7 @@ export async function POST(req: Request) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: 'gpt-5.4',
+        model: 'gpt-4.1',
         max_tokens: 300,
         temperature: 0.4,
         messages: [
