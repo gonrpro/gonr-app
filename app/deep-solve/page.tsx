@@ -242,7 +242,7 @@ function DeepSolveModule({
             type="text"
             value={stainInput}
             onChange={e => setStainInput(e.target.value)}
-            placeholder="Blood on Silk, Coffee on Marble..."
+            placeholder={t('deepSolveStainPlaceholder')}
             className="w-full rounded-lg px-3 py-2 text-sm border outline-none
               focus:ring-2 focus:ring-purple-500/40"
             style={{
