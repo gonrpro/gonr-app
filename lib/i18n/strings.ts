@@ -9,7 +9,7 @@ export const strings: Record<string, Record<string, string>> = {
   scanStain: { en: "Scan Stain", es: "Escanear Mancha" },
   scanStainSubtext: { en: "Built by cleaners. Trusted by pros.", es: "Creado por limpiadores. Confiado por profesionales." },
   aiStainIntelligence: { en: "AI Stain Intelligence for Textiles", es: "Inteligencia de Manchas con IA para Textiles" },
-  masterSpotter: { en: "Master Spotter", es: "Maestro del Manchado" },
+  masterSpotter: { en: "AI Stain Intelligence", es: "Inteligencia de Manchas con IA" },
   poweredBy: { en: "Powered by", es: "Impulsado por" },
   careLabelSubtext: { en: "Reads fiber + care symbols instantly", es: "Lee fibra y símbolos de cuidado al instante" },
   solveBtn: { en: "Solve →", es: "Resolver →" },
