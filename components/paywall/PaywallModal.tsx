@@ -49,7 +49,7 @@ export default function PaywallModal({ open, onDismiss }: PaywallModalProps) {
             </div>
 
             {/* Operator — coming soon */}
-            <div className={styles.planCard} style={{ opacity: 0.6, position: 'relative' }}>
+            <div className={styles.planCard} style={{ position: 'relative', border: '1px solid rgba(245,158,11,0.4)', background: 'rgba(245,158,11,0.03)' }}>
               <div style={{
                 position: 'absolute', top: '10px', right: '10px',
                 background: '#f59e0b', color: '#fff',
@@ -59,19 +59,26 @@ export default function PaywallModal({ open, onDismiss }: PaywallModalProps) {
                 COMING SOON
               </div>
               <h3 className={styles.planName}>Operator</h3>
-              <p className={styles.planDescription}>For plant owners managing teams</p>
-              <ul style={{ fontSize: '12px', color: '#6b7280', marginBottom: '12px', paddingLeft: '16px', lineHeight: '1.8' }}>
-                <li>Everything in Spotter</li>
-                <li>Team seats + counter staff access</li>
-                <li>Training dashboard</li>
-                <li>Multi-location support</li>
+              <p className={styles.planDescription} style={{ fontStyle: 'italic', color: '#92400e' }}>
+                Built for the plant owner who runs the whole operation
+              </p>
+              <ul style={{ fontSize: '12px', color: '#6b7280', marginBottom: '12px', paddingLeft: '16px', lineHeight: '2' }}>
+                <li>✦ <strong>Garment Analysis</strong> — AI photo assessment, root cause, repairability verdict</li>
+                <li>✦ <strong>Legal-Shield Handoff</strong> — documented customer communication that protects your shop</li>
+                <li>✦ <strong>Problem Garment Queue</strong> — spotters flag tough cases, you review and action</li>
+                <li>✦ <strong>Team Seats</strong> — add spotters and counter staff under one account</li>
+                <li>✦ <strong>Training Dashboard</strong> — track knowledge scores across your team</li>
+                <li>✦ <strong>Multi-location</strong> — run multiple plants from one login</li>
               </ul>
+              <p style={{ fontSize: '11px', color: '#92400e', marginBottom: '12px', fontWeight: 600 }}>
+                Early Spotter subscribers get grandfathered pricing when Operator launches.
+              </p>
               <div className={styles.pricing}>
                 <span className={styles.price}>$99</span>
                 <span className={styles.period}>/month</span>
               </div>
-              <button disabled className={styles.checkoutBtn} style={{ opacity: 0.5, cursor: 'not-allowed' }}>
-                Coming Soon
+              <button disabled className={styles.checkoutBtn} style={{ opacity: 0.4, cursor: 'not-allowed', background: '#f59e0b' }}>
+                Notify Me When Live
               </button>
             </div>
           </div>
