@@ -24,6 +24,7 @@ export default function ProfilePage() {
   const [role, setRole] = useState('spotter')
   const [profileSaving, setProfileSaving] = useState(false)
   const [profileSaved, setProfileSaved] = useState(false)
+  const [editingProfile, setEditingProfile] = useState(false)
 
   useEffect(() => {
     setSolveCount(parseInt(localStorage.getItem('gonr_solve_count') || '0', 10))
@@ -86,6 +87,7 @@ export default function ProfilePage() {
         body: JSON.stringify({ name: displayName, shop_name: shopName, role }),
       })
       setProfileSaved(true)
+      setEditingProfile(false)
       setTimeout(() => setProfileSaved(false), 3000)
     } finally {
       setProfileSaving(false)
@@ -201,7 +203,48 @@ export default function ProfilePage() {
       )}
 
       {/* Profile identity (logged in only) */}
-      {user && (
+      {user && !editingProfile && (displayName || shopName) && (
+        <div className="card space-y-3">
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
+              {t('profileYourProfile')}
+            </h2>
+            <button
+              onClick={() => setEditingProfile(true)}
+              className="text-xs font-semibold px-3 py-1 rounded-lg transition-colors"
+              style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text-secondary)' }}
+            >
+              {lang === 'es' ? 'Editar' : 'Edit'}
+            </button>
+          </div>
+          {displayName && (
+            <div>
+              <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{t('profileDisplayName')}</p>
+              <p className="text-sm font-semibold mt-0.5" style={{ color: 'var(--text)' }}>{displayName}</p>
+            </div>
+          )}
+          {shopName && (
+            <div>
+              <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{t('profileShopName')}</p>
+              <p className="text-sm font-semibold mt-0.5" style={{ color: 'var(--text)' }}>{shopName}</p>
+            </div>
+          )}
+          {role && (
+            <div>
+              <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{t('profileRoleLabel')}</p>
+              <span className="inline-block text-xs font-bold px-2 py-0.5 rounded-full mt-0.5"
+                style={{ background: 'var(--accent)', color: '#fff' }}>
+                {t(role === 'spotter' ? 'profileRoleSpotter' : role === 'counter' ? 'profileRoleCounter' : 'profileRoleOwner')}
+              </span>
+            </div>
+          )}
+          {profileSaved && (
+            <p className="text-xs font-semibold" style={{ color: '#22c55e' }}>{t('profileSaved')}</p>
+          )}
+        </div>
+      )}
+
+      {user && (editingProfile || (!displayName && !shopName)) && (
         <form onSubmit={handleSaveProfile} className="card space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
@@ -277,6 +320,16 @@ export default function ProfilePage() {
           >
             {profileSaving ? t('profileSaving') : t('profileSave')}
           </button>
+          {editingProfile && (
+            <button
+              type="button"
+              onClick={() => setEditingProfile(false)}
+              className="w-full py-2 rounded-xl text-sm font-medium transition-colors"
+              style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text-secondary)' }}
+            >
+              {lang === 'es' ? 'Cancelar' : 'Cancel'}
+            </button>
+          )}
         </form>
       )}
 
