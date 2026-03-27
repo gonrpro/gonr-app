@@ -3,9 +3,10 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import StainBrainChat from '@/components/solve/StainBrainChat'
+import GarmentFlag from '@/components/solve/GarmentFlag'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
-type ActiveTool = 'stain_brain' | null
+type ActiveTool = 'stain_brain' | 'garment_flag' | null
 
 export default function SpotterPage() {
   const { t } = useLanguage()
@@ -26,6 +27,26 @@ export default function SpotterPage() {
         </button>
         <div className="card p-0 overflow-hidden">
           <StainBrainChat />
+        </div>
+      </div>
+    )
+  }
+
+  if (activeTool === 'garment_flag') {
+    return (
+      <div className="space-y-3">
+        <button
+          onClick={() => setActiveTool(null)}
+          className="flex items-center gap-1.5 text-sm font-medium transition-colors"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M19 12H5M12 5l-7 7 7 7" />
+          </svg>
+          Back to Spotter
+        </button>
+        <div className="card p-0 overflow-hidden">
+          <GarmentFlag onClose={() => setActiveTool(null)} />
         </div>
       </div>
     )
@@ -103,6 +124,23 @@ export default function SpotterPage() {
             Situational analysis for old stains, prior treatments, and high-value garments. Includes customer handoff scripts.
           </p>
         </Link>
+
+        <button
+          onClick={() => setActiveTool('garment_flag')}
+          className="card w-full text-left space-y-1 transition-colors hover:border-amber-500/30"
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-lg">📸</span>
+            <h2 className="text-base font-bold">Flag for Garment Analysis</h2>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border ml-auto"
+              style={{ background: 'rgba(245,158,11,0.1)', color: '#f59e0b', borderColor: 'rgba(245,158,11,0.35)' }}>
+              Operator
+            </span>
+          </div>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            Capture a problem garment for operator review. Photo + notes sent to your operator for full AI assessment.
+          </p>
+        </button>
       </div>
     </div>
   )

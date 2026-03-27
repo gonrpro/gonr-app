@@ -3,6 +3,60 @@
 import { useState, useRef, useEffect } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
+function renderMarkdown(text: string) {
+  const lines = text.split('\n')
+  const elements: React.ReactNode[] = []
+  let key = 0
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+
+    // Numbered list
+    const numbered = line.match(/^(\d+)\.\s+(.+)/)
+    if (numbered) {
+      elements.push(
+        <div key={key++} className="flex gap-2 mt-2">
+          <span className="font-bold shrink-0" style={{ color: 'var(--accent)' }}>{numbered[1]}.</span>
+          <span dangerouslySetInnerHTML={{ __html: inlineMd(numbered[2]) }} />
+        </div>
+      )
+      continue
+    }
+
+    // Bullet list
+    const bullet = line.match(/^[-•]\s+(.+)/)
+    if (bullet) {
+      elements.push(
+        <div key={key++} className="flex gap-2 mt-1 ml-2">
+          <span className="shrink-0 mt-1" style={{ color: 'var(--accent)', fontSize: '8px' }}>●</span>
+          <span dangerouslySetInnerHTML={{ __html: inlineMd(bullet[1]) }} />
+        </div>
+      )
+      continue
+    }
+
+    // Empty line = spacer
+    if (line.trim() === '') {
+      elements.push(<div key={key++} className="mt-2" />)
+      continue
+    }
+
+    // Regular paragraph
+    elements.push(
+      <p key={key++} className="mt-1 first:mt-0" dangerouslySetInnerHTML={{ __html: inlineMd(line) }} />
+    )
+  }
+
+  return elements
+}
+
+function inlineMd(text: string): string {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/`(.+?)`/g, '<code style="background:rgba(0,0,0,0.08);padding:1px 4px;border-radius:3px;font-size:11px">$1</code>')
+}
+
 interface Message {
   role: 'user' | 'assistant'
   content: string
@@ -105,7 +159,7 @@ export default function StainBrainChat() {
         {messages.map((msg, i) => (
           <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
             <div
-              className="rounded-2xl px-3 py-2 max-w-[85%] text-sm leading-relaxed whitespace-pre-wrap"
+              className={`rounded-2xl px-3 py-2 max-w-[85%] text-sm leading-relaxed ${msg.role === 'user' ? 'whitespace-pre-wrap' : ''}`}
               style={msg.role === 'user' ? {
                 background: 'var(--accent)',
                 color: '#fff',
@@ -117,7 +171,7 @@ export default function StainBrainChat() {
                 borderBottomLeftRadius: '4px',
               }}
             >
-              {msg.content}
+              {msg.role === 'user' ? msg.content : renderMarkdown(msg.content)}
             </div>
           </div>
         ))}
