@@ -7,6 +7,7 @@ export const strings: Record<string, Record<string, string>> = {
   orBrowseByType: { en: "Browse by stain type", es: "Buscar por tipo de mancha" },
   getProtocol: { en: "Get Protocol", es: "Obtener Protocolo" },
   scanStain: { en: "Scan Stain", es: "Escanear Mancha" },
+  uploadPhoto: { en: 'Upload photo', es: 'Subir foto' },
   scanStainSubtext: { en: "Built by cleaners. Trusted by pros.", es: "Creado por limpiadores. Confiado por profesionales." },
   aiStainIntelligence: { en: "AI Stain Removal & Garment Care", es: "Eliminación de Manchas con IA y Cuidado de Prendas" },
   masterSpotter: { en: "Textile Intelligence", es: "Inteligencia Textil" },

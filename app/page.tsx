@@ -78,12 +78,12 @@ export default function SolvePage() {
   const solveSurfaceLabel = selectedSurface || ''
   const hasSolveInput = !!(capturedPhoto || selectedStain || stainInput.trim())
 
-  // --- Camera: Scan Stain ---
-  const handleScanStain = useCallback(() => {
+  // --- Photo: Scan Stain (camera or library) ---
+  const handleScanStain = useCallback((useCamera = true) => {
     const input = document.createElement('input')
     input.type = 'file'
     input.accept = 'image/*'
-    input.capture = 'environment'
+    if (useCamera) input.capture = 'environment'
     input.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none'
     document.body.appendChild(input)
     input.addEventListener('change', () => {
@@ -97,12 +97,12 @@ export default function SolvePage() {
     input.click()
   }, [capturedPhotoUrl])
 
-  // --- Camera: Scan Care Label ---
-  const handleScanCareLabel = useCallback(() => {
+  // --- Photo: Scan Care Label (camera or library) ---
+  const handleScanCareLabel = useCallback((useCamera = true) => {
     const input = document.createElement('input')
     input.type = 'file'
     input.accept = 'image/*'
-    input.capture = 'environment'
+    if (useCamera) input.capture = 'environment'
     input.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none'
     document.body.appendChild(input)
     input.addEventListener('change', () => {
@@ -266,28 +266,47 @@ export default function SolvePage() {
       <div className="flex gap-3">
         {/* Scan Stain — green */}
         {!capturedPhoto ? (
-          <button
-            onClick={handleScanStain}
-            disabled={loading}
-            style={{
-              background: 'rgba(34,197,94,0.08)',
-              borderRadius: '12px',
-              flex: 1,
-              minHeight: '80px',
-              border: '1.5px solid rgba(34,197,94,0.35)',
-              cursor: 'pointer',
-              transition: 'all 0.15s ease',
-            }}
-            className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98]"
-          >
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
-              <circle cx="12" cy="13" r="3" />
-            </svg>
-            <span style={{ color: '#22c55e', fontSize: '14px', fontWeight: 600 }}>
-              {t('scanStain')}
-            </span>
-          </button>
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <button
+              onClick={() => handleScanStain(true)}
+              disabled={loading}
+              style={{
+                background: 'rgba(34,197,94,0.08)',
+                borderRadius: '12px',
+                flex: 1,
+                minHeight: '54px',
+                border: '1.5px solid rgba(34,197,94,0.35)',
+                cursor: 'pointer',
+                transition: 'all 0.15s ease',
+                width: '100%',
+              }}
+              className="flex items-center justify-center gap-2 px-3 py-2 hover:opacity-90 active:scale-[0.98]"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                <circle cx="12" cy="13" r="3" />
+              </svg>
+              <span style={{ color: '#22c55e', fontSize: '13px', fontWeight: 600 }}>{t('scanStain')}</span>
+            </button>
+            <button
+              onClick={() => handleScanStain(false)}
+              disabled={loading}
+              style={{
+                background: 'rgba(34,197,94,0.04)',
+                borderRadius: '10px',
+                minHeight: '36px',
+                border: '1px dashed rgba(34,197,94,0.3)',
+                cursor: 'pointer',
+                width: '100%',
+              }}
+              className="flex items-center justify-center gap-1.5 px-3 py-1.5 hover:opacity-80 active:scale-[0.98]"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+              <span style={{ color: '#22c55e', fontSize: '11px', fontWeight: 500 }}>{t('uploadPhoto') || 'Upload photo'}</span>
+            </button>
+          </div>
         ) : (
           /* Stain photo captured — show thumbnail with retake */
           <div
@@ -354,28 +373,46 @@ export default function SolvePage() {
 
         {/* Scan Care Label — light blue */}
         {!careLabelFile ? (
-          <button
-            onClick={handleScanCareLabel}
-            disabled={loading}
-            style={{
-              background: 'rgba(56,189,248,0.08)',
-              borderRadius: '12px',
-              flex: 1,
-              minHeight: '80px',
-              border: '1.5px solid rgba(56,189,248,0.35)',
-              cursor: 'pointer',
-              transition: 'all 0.15s ease',
-            }}
-            className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98]"
-          >
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2" />
-              <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5" />
-            </svg>
-            <span style={{ color: '#38bdf8', fontSize: '14px', fontWeight: 600 }}>
-              {t('scanCareLabel')}
-            </span>
-          </button>
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <button
+              onClick={() => handleScanCareLabel(true)}
+              disabled={loading}
+              style={{
+                background: 'rgba(56,189,248,0.08)',
+                borderRadius: '12px',
+                minHeight: '54px',
+                border: '1.5px solid rgba(56,189,248,0.35)',
+                cursor: 'pointer',
+                transition: 'all 0.15s ease',
+                width: '100%',
+              }}
+              className="flex items-center justify-center gap-2 px-3 py-2 hover:opacity-90 active:scale-[0.98]"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5" />
+              </svg>
+              <span style={{ color: '#38bdf8', fontSize: '13px', fontWeight: 600 }}>{t('scanCareLabel')}</span>
+            </button>
+            <button
+              onClick={() => handleScanCareLabel(false)}
+              disabled={loading}
+              style={{
+                background: 'rgba(56,189,248,0.04)',
+                borderRadius: '10px',
+                minHeight: '36px',
+                border: '1px dashed rgba(56,189,248,0.3)',
+                cursor: 'pointer',
+                width: '100%',
+              }}
+              className="flex items-center justify-center gap-1.5 px-3 py-1.5 hover:opacity-80 active:scale-[0.98]"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+              <span style={{ color: '#38bdf8', fontSize: '11px', fontWeight: 500 }}>{t('uploadPhoto') || 'Upload photo'}</span>
+            </button>
+          </div>
         ) : (
           /* Care label captured — show indicator with remove */
           <div
