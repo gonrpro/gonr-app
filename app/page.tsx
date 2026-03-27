@@ -478,7 +478,7 @@ export default function SolvePage() {
       <div className="flex gap-3">
         <a
           href="/handoff"
-          className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
+          className="flex items-center justify-center gap-2 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
           style={{
             background: 'rgba(234,179,8,0.08)',
             borderRadius: '12px',
@@ -497,7 +497,7 @@ export default function SolvePage() {
         </a>
         <a
           href="/spotter?tool=stain_brain"
-          className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
+          className="flex items-center justify-center gap-2 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
           style={{
             background: 'rgba(147,51,234,0.08)',
             borderRadius: '12px',
