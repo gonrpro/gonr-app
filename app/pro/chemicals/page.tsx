@@ -154,7 +154,7 @@ function ExternalLink({ href, children }: { href: string; children: React.ReactN
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex items-center gap-1 text-sm font-medium transition-colors"
-      style={{ color: 'var(--accent)' }}
+      style={{ color: 'var(--text-secondary)' }}
     >
       {children}
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -170,9 +170,9 @@ function Chip({ children, variant = 'default' }: {
 }) {
   const colors = {
     default: 'border-white/10 text-[var(--text-secondary)]',
-    green: 'border-green-500/30 bg-green-500/10 text-green-400',
-    red: 'border-red-500/30 bg-red-500/10 text-red-400',
-    gold: 'border-amber-500/30 bg-amber-500/10 text-amber-400',
+    green: 'border-green-600/40 bg-green-500/10 text-green-700 dark:text-green-400',
+    red: 'border-red-500/30 bg-red-500/10 text-red-700 dark:text-red-400',
+    gold: 'border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-400',
   }
   return (
     <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-mono font-bold border ${colors[variant]}`}>
@@ -224,7 +224,7 @@ function AgentTab() {
 
                 {agent.mechanism && (
                   <div className="rounded-lg p-3" style={{ background: 'var(--surface-2)' }}>
-                    <p className="text-xs font-mono font-bold mb-1" style={{ color: 'var(--accent)' }}>
+                    <p className="text-xs font-mono font-bold mb-1" style={{ color: 'var(--text-secondary)' }}>
                       {t('mechanism')}
                     </p>
                     <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
@@ -255,7 +255,7 @@ function AgentTab() {
                 <div className="space-y-1.5">
                   {visibleBrands.map((p, i) => (
                     <div key={i} className="flex items-start gap-2 text-xs">
-                      <span className="font-medium flex-shrink-0" style={{ color: 'var(--accent)' }}>
+                      <span className="font-medium flex-shrink-0" style={{ color: 'var(--text-secondary)' }}>
                         {p.company}
                       </span>
                       <span style={{ color: 'var(--text-secondary)' }}>→</span>
@@ -267,7 +267,7 @@ function AgentTab() {
                   <button
                     onClick={() => setExpandedBrands(prev => ({ ...prev, [key]: !prev[key] }))}
                     className="text-[10px] font-mono font-bold mt-2 transition-colors"
-                    style={{ color: 'var(--accent)' }}
+                    style={{ color: 'var(--text-secondary)' }}
                   >
                     {showAllBrands ? `▲ ${t('showLess')}` : `▼ ${t('showAll')} ${brandProducts.length}`}
                   </button>
@@ -398,7 +398,7 @@ function CompanyDetails({ company }: { company: CompanyData }) {
                   <div className="space-y-3">
                     {company.productLines.map((line, i) => (
                       <div key={i}>
-                        <p className="text-[10px] font-mono font-bold tracking-wider mb-1" style={{ color: 'var(--accent)' }}>
+                        <p className="text-[10px] font-mono font-bold tracking-wider mb-1" style={{ color: 'var(--text-secondary)' }}>
                           {line.category.toUpperCase()}
                         </p>
                         {line.products.map((product, j) => (
@@ -427,7 +427,7 @@ function CompanyDetails({ company }: { company: CompanyData }) {
                   <div className="space-y-2">
                     {Object.entries(company.agentMapping).map(([agent, mapping]) => (
                       <div key={agent} className="flex items-start gap-2 text-xs">
-                        <span className="font-mono font-bold flex-shrink-0 w-20" style={{ color: 'var(--accent)' }}>
+                        <span className="font-mono font-bold flex-shrink-0 w-20" style={{ color: 'var(--text-secondary)' }}>
                           {agent}
                         </span>
                         <span style={{ color: 'var(--text-secondary)' }}>
@@ -442,7 +442,7 @@ function CompanyDetails({ company }: { company: CompanyData }) {
                   <div className="space-y-2">
                     {Object.entries(company.fiberExpertise).map(([fiber, note]) => (
                       <div key={fiber} className="flex items-start gap-2 text-xs">
-                        <span className="font-mono font-bold flex-shrink-0 w-20 capitalize" style={{ color: 'var(--accent)' }}>
+                        <span className="font-mono font-bold flex-shrink-0 w-20 capitalize" style={{ color: 'var(--text-secondary)' }}>
                           {fiber}
                         </span>
                         <span style={{ color: 'var(--text-secondary)' }}>
@@ -476,7 +476,7 @@ function CompanyDetails({ company }: { company: CompanyData }) {
                     </div>
                     {company.gonrIntegration.agentCrossReference && (
                       <div className="rounded-lg p-3 border border-green-500/20" style={{ background: 'rgba(34,197,94,0.04)' }}>
-                        <p className="text-[10px] font-mono font-bold mb-1" style={{ color: 'var(--accent)' }}>
+                        <p className="text-[10px] font-mono font-bold mb-1" style={{ color: 'var(--text-secondary)' }}>
                           {t('protocolMapping')}
                         </p>
                         <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
@@ -586,13 +586,13 @@ function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
 
       {/* Recommended Companies */}
       <div>
-        <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: 'var(--accent)' }}>
+        <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>
           {t('recommendedCompanies')}
         </p>
         <div className="space-y-2">
           {data.recommendedCompanies.map((rec, i) => (
             <div key={i} className="card">
-              <p className="text-sm font-bold" style={{ color: 'var(--accent)' }}>{rec.company}</p>
+              <p className="text-sm font-bold" style={{ color: 'var(--text)' }}>{rec.company}</p>
               <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>{rec.why}</p>
               <div className="flex flex-wrap gap-1.5 mt-2">
                 {rec.products.map((prod, j) => (
@@ -607,7 +607,7 @@ function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
       {/* Agents To Use / Avoid */}
       <div className="grid grid-cols-1 gap-3">
         <div className="card">
-          <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: 'var(--accent)' }}>
+          <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>
             ✓ {t('agentsToUse')}
           </p>
           <div className="flex flex-wrap gap-1.5">
