@@ -1,0 +1,265 @@
+{
+  "id": "bufa",
+  "name": "Büfa Cleaning",
+  "slug": "bufa",
+  "website": "https://www.buefa-cleaning.com",
+  "headquarters": "Oldenburg, Germany",
+  "founded": "1883",
+  "employeeRange": "500+ (cleaning division), 750+ (group)",
+  "overview": {
+    "summary": "Büfa Cleaning is the textile care division of the Büfa Group, a 140-year-old German chemical conglomerate founded in 1883 in Oldenburg. They manufacture a comprehensive range of dry cleaning and wet cleaning products including hydrocarbon solvents (TDC 2000), pre-spotting agents (Benzafix series, SpotX series), wet cleaning systems (Care 4.0 with Ozerna and Lizerna products), and finishing agents (Secasit Lotus). Büfa also partners with SAFECHEM to distribute SENSENE™ modified-alcohol solvent. Strong European market presence with growing international distribution.",
+    "historyAndReputation": "Founded in 1883 by cousins Ludwig Friedrich Carl Büsing and Friedrich Ludwig Fasch as a trading company for chemicals and colored woods. Over 140 years, the company expanded into three divisions: Chemicals, Cleaning, and Composites. The Cleaning division focuses on professional textile care and institutional hygiene. Known for methodical German engineering and comprehensive product systems. Regular exhibitor at Texcare International (the industry's premier trade show).",
+    "marketPosition": "Mid-to-premium tier, primarily European market. Büfa's strength is in comprehensive, system-based approaches to textile care — they don't just sell individual chemicals, they design complete cleaning workflows. US market presence exists but is significantly smaller than European operations. Competes with Kreussler and Seitz in the German/European premium segment."
+  },
+  "specialties": [
+    "Hydrocarbon solvents (TDC 2000)",
+    "SENSENE™ modified-alcohol solvent distribution",
+    "Pre-spotting agents (Benzafix series, SpotX series)",
+    "Wet cleaning systems (Care 4.0)",
+    "Finishing and water-proofing (Secasit Lotus)",
+    "Leather conditioning (Lival Licker Conc)"
+  ],
+  "productLines": [
+    {
+      "category": "Solvents",
+      "categoryDescription": "Büfa supports multiple solvent technologies for dry cleaning, offering flexibility to match regulatory requirements and operator preferences.",
+      "products": [
+        {
+          "name": "BÜFA TDC 2000",
+          "type": "hydrocarbon solvent",
+          "description": "High-purity isoparaffinic hydrocarbon solvent with C11-C12 chain length, narrow fraction cut. Specifically designed for textile care applications. The narrow cut means consistent boiling point range, predictable evaporation, and reliable cleaning performance batch to batch.",
+          "usedFor": ["primary dry cleaning solvent in hydrocarbon systems"],
+          "fibers": ["all standard fibers"],
+          "notFor": ["requires hydrocarbon-compatible equipment"],
+          "proTips": "TDC 2000's narrow fraction cut is the quality difference — commodity hydrocarbons have wider boiling ranges that lead to inconsistent distillation and variable cleaning. TDC 2000 distills cleanly and consistently.",
+          "alternativeTo": "R.R. Street DF-2000™, generic hydrocarbon solvents",
+          "priceTier": "mid-premium",
+          "availability": "through Büfa and authorized distributors"
+        },
+        {
+          "name": "SENSENE™ (distributed by Büfa)",
+          "type": "modified alcohol solvent",
+          "description": "Modified-alcohol-based hybrid solvent with KB value of 161. Büfa distributes SENSENE™ (developed by SAFECHEM/DOW) alongside their own products, giving operators access to the highest-performance non-perc solvent through the Büfa product system.",
+          "usedFor": ["high-performance dry cleaning", "perc alternative"],
+          "fibers": ["all fibers including delicates"],
+          "notFor": ["requires SENSENE-compatible equipment"],
+          "proTips": "By distributing SENSENE™, Büfa can offer operators a complete solvent upgrade path: start with TDC 2000 (hydrocarbon), move to SENSENE™ for higher performance. Same supplier relationship, same pre-spotting and detergent products.",
+          "alternativeTo": "Perchloroethylene, Kreussler SolvonK4",
+          "priceTier": "premium",
+          "availability": "through Büfa and SAFECHEM distributors"
+        }
+      ]
+    },
+    {
+      "category": "Pre-Spotting Agents",
+      "categoryDescription": "Büfa offers two spotting lines: the Benzafix series (targeted by stain chemistry) and the SpotX series (seven specialized variants). Both are designed for use before machine cleaning.",
+      "products": [
+        {
+          "name": "Benzafix C",
+          "type": "tannin pre-spotter",
+          "description": "Pre-spotting agent specifically targeting tannin-based stains: grass, tea, coffee. Part of the Benzafix lettered series where each letter corresponds to a stain chemistry type.",
+          "usedFor": ["grass", "tea", "coffee", "tannin-based stains"],
+          "fibers": ["most fabrics"],
+          "notFor": ["protein stains — use appropriate Benzafix variant"],
+          "proTips": "The Benzafix series follows a similar logic to Kreussler's PRENETT ABC — each letter targets a specific stain chemistry. Learn the system and you can pre-spot quickly by matching letter to stain.",
+          "alternativeTo": "Kreussler PRENETT A, R.R. Street StreeTAN®",
+          "priceTier": "mid-premium",
+          "availability": "through Büfa distributors"
+        },
+        {
+          "name": "Benzafix series (A, B, C, etc.)",
+          "type": "targeted pre-spotting system",
+          "description": "Letter-coded pre-spotting agents, each targeting a specific stain chemistry. Similar approach to Kreussler's PRENETT color-coding but using letters instead of colors.",
+          "usedFor": ["systematic pre-spotting across stain types"],
+          "fibers": ["most fabrics — check individual variant compatibility"],
+          "notFor": ["each variant has specific stain targets"],
+          "proTips": "The lettered system is Büfa's way of simplifying the spotting board. Learn which letter handles which stain type and you can work quickly through mixed loads.",
+          "alternativeTo": "Kreussler PRENETT ABC system",
+          "priceTier": "mid-premium",
+          "availability": "through Büfa distributors"
+        },
+        {
+          "name": "SpotX series (7 variants)",
+          "type": "specialty spotting line",
+          "description": "Seven specialized spotting variants for different stain types. A more granular spotting system than the Benzafix series, offering greater specificity for difficult stains.",
+          "usedFor": ["specialized post-spotting", "difficult stain types"],
+          "fibers": ["varies by variant"],
+          "notFor": ["varies by variant"],
+          "proTips": "SpotX is the escalation from Benzafix. If Benzafix pre-spotting doesn't fully resolve a stain, SpotX provides more targeted chemistry for post-cleaning treatment."
+        },
+        {
+          "name": "Benzapon Sanofresh",
+          "type": "cleaning booster / deodorizer",
+          "description": "Cleaning booster that enhances soil removal during the machine cycle. Also functions as a deodorizer for garments with persistent odors.",
+          "usedFor": ["enhanced soil removal", "odor control"],
+          "fibers": ["all"],
+          "notFor": [],
+          "proTips": "Add Benzapon Sanofresh when dealing with heavily soiled or malodorous garments that standard detergent dosing won't fully resolve.",
+          "alternativeTo": "Standard cleaning boosters",
+          "priceTier": "mid",
+          "availability": "through Büfa distributors"
+        }
+      ]
+    },
+    {
+      "category": "Wet Cleaning System (Care 4.0)",
+      "categoryDescription": "Büfa's Care 4.0 is their professional wet cleaning system — a complete product line for washing dry-clean-only garments in water with controlled chemistry and mechanical action.",
+      "products": [
+        {
+          "name": "Ozerna Polar",
+          "type": "wet cleaning color detergent",
+          "description": "Liquid color detergent for professional wet cleaning. Designed to clean colored garments while protecting dyes from bleeding or fading.",
+          "usedFor": ["wet cleaning colored garments", "professional wet cleaning"],
+          "fibers": ["colored fabrics, delicates"],
+          "notFor": ["dry cleaning applications"],
+          "proTips": "Color protection is critical in wet cleaning — water can cause dye bleeding that solvents wouldn't. Ozerna Polar's formulation includes dye fixation chemistry.",
+          "alternativeTo": "Kreussler LANADOL AKTIV",
+          "priceTier": "mid-premium",
+          "availability": "through Büfa distributors"
+        },
+        {
+          "name": "Ozerna Basic",
+          "type": "general wet cleaning detergent",
+          "description": "General liquid agent for wet cleaning of textiles and leather. Versatile formulation that handles both fabric and leather garments.",
+          "usedFor": ["general wet cleaning", "leather wet cleaning"],
+          "fibers": ["textiles and leather"],
+          "notFor": [],
+          "proTips": "Ozerna Basic's leather compatibility is notable — most wet cleaning detergents are textile-only. This gives Büfa a leather-capable wet cleaning option similar to Royaltone's approach.",
+          "alternativeTo": "Royaltone Leather Wet Cleaning Detergent",
+          "priceTier": "mid-premium",
+          "availability": "through Büfa distributors"
+        },
+        {
+          "name": "Lizerna Carat",
+          "type": "refiner / conditioner",
+          "description": "Post-wash refiner and conditioner product in the Care 4.0 system. Provides finishing and hand improvement after wet cleaning.",
+          "usedFor": ["post-wash conditioning", "finishing aid"],
+          "fibers": ["wet-cleaned garments"],
+          "notFor": [],
+          "proTips": "Lizerna Carat is the Care 4.0 equivalent of Kreussler's LANADOL APRET — it restores the hand and body that water washing can strip away.",
+          "alternativeTo": "Kreussler LANADOL APRET",
+          "priceTier": "mid-premium",
+          "availability": "through Büfa distributors"
+        },
+        {
+          "name": "Lizerna Citro",
+          "type": "neutralizer",
+          "description": "Neutralizing agent in the Care 4.0 system. Used after alkaline wash cycles to bring fabric pH back to neutral, preventing ongoing fiber damage.",
+          "usedFor": ["pH neutralization after washing", "sour step"],
+          "fibers": ["all wet-cleaned garments"],
+          "notFor": [],
+          "proTips": "The sour/neutralization step is often skipped by operators in a hurry — but leaving garments alkaline causes ongoing fiber degradation and can trigger dye changes. Always neutralize.",
+          "alternativeTo": "Standard laundry sour products",
+          "priceTier": "mid",
+          "availability": "through Büfa distributors"
+        }
+      ]
+    },
+    {
+      "category": "Finishing & Protection",
+      "categoryDescription": "Post-cleaning treatments including water/stain repellency and leather conditioning.",
+      "products": [
+        {
+          "name": "Secasit Lotus series",
+          "type": "water-proofing / stain repellent",
+          "description": "Water-proofing and stain-repellent finishing treatment. Fluorocarbon resin-reduced formulations for lower environmental impact. Applied after cleaning to add protective properties to garments.",
+          "usedFor": ["water-proofing", "stain protection", "outerwear finishing", "sportswear finishing"],
+          "fibers": ["suitable fabrics for repellent treatment"],
+          "notFor": [],
+          "proTips": "The fluorocarbon-reduced formulation reflects the industry move away from PFAS chemistry. Secasit Lotus provides repellency with a smaller environmental footprint than traditional treatments.",
+          "alternativeTo": "Kreussler HYDROB EASY DRY, traditional Scotchgard-type treatments",
+          "priceTier": "mid-premium",
+          "availability": "through Büfa distributors"
+        },
+        {
+          "name": "Lival Licker Conc",
+          "type": "leather conditioning agent",
+          "description": "Concentrated leather regreasing and conditioning agent. Restores oils and suppleness to leather garments after cleaning. Similar function to Kreussler's LANADOL LICKER.",
+          "usedFor": ["leather conditioning", "leather regreasing", "post-cleaning leather care"],
+          "fibers": ["leather", "suede"],
+          "notFor": ["textiles"],
+          "proTips": "Leather loses its natural oils during any cleaning process. Lival Licker Conc replaces those oils to prevent the stiff, dry results that drive customer complaints. Apply before drying.",
+          "alternativeTo": "Kreussler LANADOL LICKER",
+          "priceTier": "mid-premium",
+          "availability": "through Büfa distributors"
+        }
+      ]
+    }
+  ],
+  "agentMapping": {
+    "NSD": "Ozerna Polar (wet cleaning), Benzapon Sanofresh (cleaning booster)",
+    "POG": "SpotX variants, Benzafix variants (fat/oil-targeting letters)",
+    "protein": "SpotX variants, Benzafix variants (protein-targeting letters)",
+    "tannin": "Benzafix C (specifically for grass, tea, coffee, tannin stains)",
+    "leveling": "Lizerna Carat (refiner/conditioner in Care 4.0 system)",
+    "rustRemover": "Likely in SpotX variants but not specifically confirmed",
+    "enzymatic": "Implied in Care 4.0 system but not specifically confirmed",
+    "solvent": "BÜFA TDC 2000 (hydrocarbon), SENSENE™ (modified alcohol, distributed), perc (traditional)"
+  },
+  "fiberExpertise": {
+    "silk": "Care 4.0 wet cleaning system with Ozerna Polar is suitable for silk with proper machine settings. Benzafix variants offer pH-appropriate pre-spotting for silk. SENSENE™ distribution gives access to the gentlest high-performance solvent.",
+    "wool": "Care 4.0 designed for wool wet cleaning. Ozerna Polar color protection is important for dyed wools. Standard Büfa dry cleaning products compatible with wool.",
+    "leather": "Ozerna Basic (general wet cleaning detergent) is compatible with leather. Lival Licker Conc provides leather-specific conditioning and regreasing. Stronger leather capability than most German competitors except dedicated specialists.",
+    "synthetics": "Full product line compatible. TDC 2000 hydrocarbon handles synthetics effectively. No special considerations.",
+    "delicates": "Multi-solvent approach (hydrocarbon for standard delicates, SENSENE™ for challenging ones) provides flexibility. Care 4.0 wet cleaning system handles delicates with controlled chemistry."
+  },
+  "protocols": [
+    {
+      "name": "Büfa Pre-Spot and Clean (Hydrocarbon)",
+      "description": "Pre-spot with appropriate Benzafix variant (match letter to stain type), load with TDC 2000 hydrocarbon solvent and Büfa detergent. For persistent stains post-cleaning, apply SpotX targeted variant. Finish with Secasit Lotus if water-proofing is requested.",
+      "products": ["Benzafix series", "TDC 2000", "SpotX series", "Secasit Lotus"],
+      "usedFor": "Complete dry cleaning workflow in hydrocarbon systems"
+    },
+    {
+      "name": "Care 4.0 Wet Cleaning Workflow",
+      "description": "Wash with Ozerna Polar (colored) or Ozerna Basic (general/leather), neutralize with Lizerna Citro, condition with Lizerna Carat, controlled drying. For leather, add Lival Licker Conc before drying.",
+      "products": ["Ozerna Polar", "Ozerna Basic", "Lizerna Citro", "Lizerna Carat", "Lival Licker Conc"],
+      "usedFor": "Professional wet cleaning of textiles and leather"
+    }
+  ],
+  "distributionNetwork": {
+    "regions": ["Europe (primary)", "USA", "international"],
+    "distributionMethod": "direct and through authorized distributors",
+    "howToBuy": "Contact Büfa Cleaning directly for US distribution options. European distribution well-established. Products also available through textile care supply distributors. Exhibitor at Texcare International for industry connections.",
+    "majorDistributors": ["European distribution network", "US distributors (contact Büfa directly)"]
+  },
+  "industryReputation": {
+    "strengthsKnownFor": [
+      "140+ year family-owned German chemical company",
+      "Comprehensive system-based approach to textile care",
+      "Multiple solvent options including SENSENE™ distribution",
+      "Complete wet cleaning system (Care 4.0) with leather capability",
+      "Benzafix + SpotX dual spotting system for granular stain targeting",
+      "Leather conditioning products (Lival Licker Conc)",
+      "Fluorocarbon-reduced finishing options (Secasit Lotus)",
+      "Regular Texcare International presence"
+    ],
+    "limitations": [
+      "Limited US market presence compared to domestic competitors",
+      "Less brand recognition in the US than Kreussler or Seitz",
+      "Product information in English is less detailed than German documentation",
+      "Some product categories (enzymatic, rust removal) not clearly documented in public materials",
+      "US distribution network less developed than European operations"
+    ],
+    "whoUsesThem": "European dry cleaners (primary market). US operators seeking German engineering alternatives. Shops that want a complete system (solvent + spotters + wet cleaning + finishing) from one supplier. Cleaners processing leather who need a European alternative to Royaltone. Environmentally conscious operations (fluorocarbon-reduced finishes, SENSENE™ option).",
+    "rivalCompanies": ["Kreussler Inc.", "Seitz Inc.", "R.R. Street & Co."]
+  },
+  "education": {
+    "trainingResources": "Professional training programs available. Texcare International exhibitor with educational presentations. Training materials available through European offices.",
+    "technicalSupport": "Technical support through Büfa Cleaning's European offices. US support available but less extensive. Product documentation available in multiple languages.",
+    "publications": "Spotting guide (Detachur Fibel) available. Product technical sheets. Available through website and distributors."
+  },
+  "gonrIntegration": {
+    "relevance": "Büfa fills the role of a European-engineered comprehensive textile care system. For GONR users in markets where Büfa products are available, they offer a one-stop system covering solvents, spotting, wet cleaning, and finishing. Their leather conditioning capability (Lival Licker Conc) and tannin-specific spotting (Benzafix C) are directly relevant to GONR protocols.",
+    "agentCrossReference": "When a GONR protocol calls for: hydrocarbon solvent → BÜFA TDC 2000; tannin spotter → Benzafix C; general pre-spotter → Benzafix series (match letter to stain); post-spotter → SpotX variants; wet cleaning detergent → Ozerna Polar (colored) or Ozerna Basic (general/leather); leather conditioner → Lival Licker Conc; water-proofing → Secasit Lotus.",
+    "whenToRecommend": "Recommend Büfa when: the operator is in a European market where Büfa products are readily available; the shop wants a single-supplier system covering all categories; leather cleaning needs conditioning products; the operation needs fluorocarbon-reduced finishing options; or the cleaner wants access to SENSENE™ through the Büfa product ecosystem."
+  },
+  "links": {
+    "website": "https://www.buefa-cleaning.com",
+    "productCatalog": "https://buefa-cleaning.com/en/industries/textile-care/",
+    "technicalDocs": "https://buefa-cleaning.com/en/downloads/",
+    "distributorLocator": "Contact Büfa Cleaning directly",
+    "training": "Contact Büfa Cleaning directly"
+  },
+  "lastResearched": "2026-03-25"
+}
