@@ -3,11 +3,15 @@
 import { useState } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
-const QUICK_CHIP_KEYS = [
-  'deepSolveChipOld',
-  'deepSolveChipTreated',
-  'deepSolveChipHighValue',
-  'deepSolveChipUpset',
+const QUICK_CHIPS = [
+  { tKey: 'chipStainOld', value: 'Stain is old' },
+  { tKey: 'chipAlreadyTreated', value: 'Already treated' },
+  { tKey: 'chipHighValue', value: 'High-value garment' },
+  { tKey: 'chipCustomerUpset', value: 'Customer is upset' },
+  { tKey: 'chipDelicateFiber', value: 'Delicate fiber' },
+  { tKey: 'chipUnknownFiber', value: 'Unknown fiber' },
+  { tKey: 'chipDyeBleed', value: 'Dye bleed suspected' },
+  { tKey: 'chipHeatDamage', value: 'Heat damage suspected' },
 ] as const
 
 interface DeepSolveModuleProps {
@@ -25,13 +29,13 @@ export default function DeepSolveModule({ stain, surface, cardId, onResult }: De
   const [loading, setLoading] = useState(false)
   const [result, setResult] = useState('')
 
-  function toggleChip(chipKey: string) {
+  function toggleChip(value: string) {
     setActiveChips((prev) => {
       const next = new Set(prev)
-      if (next.has(chipKey)) {
-        next.delete(chipKey)
+      if (next.has(value)) {
+        next.delete(value)
       } else {
-        next.add(chipKey)
+        next.add(value)
       }
       return next
     })
@@ -41,7 +45,7 @@ export default function DeepSolveModule({ stain, surface, cardId, onResult }: De
     setLoading(true)
     try {
       const context = [
-        ...Array.from(activeChips).map(k => t(k)),
+        ...Array.from(activeChips),
         details,
       ].filter(Boolean).join('. ')
 
@@ -53,7 +57,7 @@ export default function DeepSolveModule({ stain, surface, cardId, onResult }: De
 
       if (res.ok) {
         const data = await res.json()
-        setResult(data.protocol || data.text || t('loading'))
+        setResult(data.protocol || data.text || t('deepSolveFallback'))
         onResult(data.protocol || data.text || '')
       } else {
         setResult(t('deepSolveUnavailable'))
@@ -72,7 +76,7 @@ export default function DeepSolveModule({ stain, surface, cardId, onResult }: De
         className="w-full min-h-[44px] rounded-xl bg-purple-600 hover:bg-purple-700
           text-white text-sm font-semibold transition-colors shadow-lg shadow-purple-600/25"
       >
-        {'\uD83D\uDD2E'} {t('deepSolve')}
+        {'\uD83D\uDD2E'} {t('deepSolveExpandCta')}
       </button>
     )
   }
@@ -81,7 +85,7 @@ export default function DeepSolveModule({ stain, surface, cardId, onResult }: De
     <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-4 space-y-4
       animate-in fade-in slide-in-from-top-2 duration-200">
       <h3 className="text-sm font-semibold text-purple-300 flex items-center gap-2">
-        {'\uD83D\uDD2E'} {t('deepSolveTitle')}
+        {'\uD83D\uDD2E'} {t('deepSolveModuleHeader')}
       </h3>
 
       {/* Textarea */}
@@ -89,7 +93,7 @@ export default function DeepSolveModule({ stain, surface, cardId, onResult }: De
         value={details}
         onChange={(e) => setDetails(e.target.value)}
         rows={3}
-        placeholder={t('deepSolvePlaceholder')}
+        placeholder={t('deepSolveDetailPlaceholder')}
         className="w-full rounded-lg bg-white dark:bg-[#0e131b] border border-gray-200 dark:border-white/10
           text-sm text-gray-800 dark:text-gray-200 p-3 resize-none
           focus:outline-none focus:ring-2 focus:ring-purple-500/50
@@ -98,17 +102,17 @@ export default function DeepSolveModule({ stain, surface, cardId, onResult }: De
 
       {/* Quick chips */}
       <div className="flex flex-wrap gap-2">
-        {QUICK_CHIP_KEYS.map((chipKey) => (
+        {QUICK_CHIPS.map((chip) => (
           <button
-            key={chipKey}
-            onClick={() => toggleChip(chipKey)}
+            key={chip.value}
+            onClick={() => toggleChip(chip.value)}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium min-h-[44px] transition-all
-              ${activeChips.has(chipKey)
+              ${activeChips.has(chip.value)
                 ? 'bg-purple-500 text-white'
                 : 'bg-white dark:bg-[#0e131b] text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10 hover:border-purple-500/50'
               }`}
           >
-            {t(chipKey)}
+            {t(chip.tKey)}
           </button>
         ))}
       </div>
@@ -121,7 +125,7 @@ export default function DeepSolveModule({ stain, surface, cardId, onResult }: De
           text-white text-sm font-semibold transition-colors disabled:opacity-50
           shadow-lg shadow-purple-600/25"
       >
-        {loading ? t('deepSolveGenerating') : `\uD83D\uDD2E ${t('deepSolveGenerate')}`}
+        {loading ? t('deepSolveGenerating') : `\uD83D\uDD2E ${t('deepSolveGenerateBtn')}`}
       </button>
 
       {/* Result */}
