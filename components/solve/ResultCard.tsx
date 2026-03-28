@@ -4,6 +4,7 @@ import { useState } from 'react'
 import type { ProtocolCard, Step } from '@/lib/types'
 import HandoffModule from './HandoffModule'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import FiberContextBadge from './FiberContextBadge'
 
 /* ── Helpers ─────────────────────────────────── */
 
@@ -109,6 +110,17 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
           </span>
         </div>
       </div>
+
+      {/* ── Fiber context from care label scan ── */}
+      {(card as any)._fiberContext?.fiber && (
+        <div className="px-4 pb-3">
+          <FiberContextBadge
+            fiber={(card as any)._fiberContext.fiber}
+            careSymbols={(card as any)._fiberContext.careSymbols || []}
+            warnings={(card as any)._fiberContext.warnings || []}
+          />
+        </div>
+      )}
 
       {/* ── 2. Chemistry overview — prominent callout ── */}
       {card.whyThisWorks && (
