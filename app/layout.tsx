@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/layout/Nav'
 import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
 import HtmlLangSetter from '@/components/layout/HtmlLangSetter'
 import { LanguageProvider } from '@/lib/i18n/LanguageContext'
 
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="px-4 pt-2 pb-4">
             {children}
           </main>
+          <Footer />
           <Nav />
         </LanguageProvider>
         <script dangerouslySetInnerHTML={{ __html: `

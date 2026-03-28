@@ -218,6 +218,13 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         )}
       </div>
 
+      {/* ── Liability disclaimer ── */}
+      <div className="px-4 pb-2">
+        <p className="text-[10px] leading-relaxed" style={{ color: 'var(--text-secondary)', opacity: 0.6 }}>
+          {t('protocolDisclaimer') || 'This protocol is AI-assisted and provided for informational purposes only. Results vary based on stain age, fiber content, dye stability, and prior treatment. Always test first. GONR assumes no liability for damage resulting from use of this information.'}
+        </p>
+      </div>
+
       {/* ── 9. Collapsible sections ── */}
       <div className="px-4 pb-4 space-y-2">
         {/* Why This Works — open by default */}

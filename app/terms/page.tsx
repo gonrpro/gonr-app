@@ -11,6 +11,8 @@ export default function TermsPage() {
     { titleKey: 'termsPayments', contentKey: 'termsPaymentsContent' },
     { titleKey: 'termsIntellectualProperty', contentKey: 'termsIntellectualPropertyContent' },
     { titleKey: 'termsLimitations', contentKey: 'termsLimitationsContent' },
+    { titleKey: 'termsNoWarranty', contentKey: 'termsNoWarrantyContent' },
+    { titleKey: 'termsProfessionalUse', contentKey: 'termsProfessionalUseContent' },
     { titleKey: 'termsContact', contentKey: 'termsContactContent' },
   ]
 
