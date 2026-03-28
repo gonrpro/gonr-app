@@ -32,7 +32,11 @@ export default function ProfilePage() {
     setDark(document.documentElement.classList.contains('dark'))
 
     const supabase = createClient()
+    // Timeout fallback — don't hang forever
+    const timeout = setTimeout(() => setAuthLoading(false), 3000)
+
     supabase.auth.getUser().then(({ data }) => {
+      clearTimeout(timeout)
       setUser(data.user)
       setAuthLoading(false)
       if (data.user?.email) {
