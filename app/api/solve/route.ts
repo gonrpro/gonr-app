@@ -139,15 +139,14 @@ async function queueForReview(card: any, stain: string, surface: string, safetyR
   if (!supabaseUrl || !supabaseKey) return
   const { createClient } = await import('@supabase/supabase-js')
   const supabase = createClient(supabaseUrl, supabaseKey)
+  const cacheKey = `${stain.toLowerCase().replace(/\s+/g, '-')}__${surface.toLowerCase().replace(/\s+/g, '-')}`
   await supabase.from('pending_protocols').insert({
-    stain_canonical: stain.toLowerCase().replace(/\s+/g, '-'),
-    surface_canonical: surface.toLowerCase().replace(/\s+/g, '-'),
-    card_json: card,
-    source_model: 'gpt-4.1',
-    safety_filtered: safetyResult.filtered,
-    safety_violation_count: safetyResult.violations.length,
-    status: 'pending_review',
-    created_at: new Date().toISOString(),
+    stain: stain,
+    surface: surface,
+    cache_key: cacheKey,
+    card: card,
+    source: 'ai',
+    verified: false,
   })
 }
 
