@@ -8,6 +8,63 @@ import StainBrainChat from '@/components/solve/StainBrainChat'
 import GarmentFlag from '@/components/solve/GarmentFlag'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
+const COURSES = [
+  {
+    titleKey: 'courseSpottingFundamentalsTitle',
+    descKey: 'courseSpottingFundamentalsDesc',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+      </svg>
+    ),
+  },
+  {
+    titleKey: 'courseDanEisenTitle',
+    descKey: 'courseDanEisenDesc',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="8" r="6" />
+        <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+      </svg>
+    ),
+  },
+  {
+    titleKey: 'courseFiberMasteryTitle',
+    descKey: 'courseFiberMasteryDesc',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" />
+      </svg>
+    ),
+  },
+  {
+    titleKey: 'courseCustomerCommTitle',
+    descKey: 'courseCustomerCommDesc',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      </svg>
+    ),
+  },
+] as const
+
+function CourseCard({ course }: { course: typeof COURSES[number] }) {
+  const { t } = useLanguage()
+  return (
+    <div className="card space-y-2" style={{ opacity: 0.75 }}>
+      <div className="flex items-center gap-2">
+        <span style={{ color: 'var(--text-secondary)' }}>{course.icon}</span>
+        <h3 className="text-base font-bold">{t(course.titleKey)}</h3>
+        <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md border"
+          style={{ background: 'rgba(245,158,11,0.12)', color: '#d97706', borderColor: 'rgba(245,158,11,0.3)' }}>
+          {t('comingSoon')}
+        </span>
+      </div>
+      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{t(course.descKey)}</p>
+    </div>
+  )
+}
+
 type ActiveTool = 'stain_brain' | 'garment_flag' | null
 
 function SpotterPageInner() {
@@ -147,6 +204,25 @@ function SpotterPageInner() {
             Capture a problem garment for operator review. Photo + notes sent to your operator for full AI assessment.
           </p>
         </button>
+      </div>
+
+      {/* ── Courses (coming soon) ── */}
+      <div className="space-y-3">
+        <div className="flex items-center gap-2">
+          <p className="text-[10px] font-mono font-bold tracking-wider uppercase" style={{ color: 'var(--text-secondary)' }}>
+            {t('spotterSectionCourses')}
+          </p>
+          <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md border"
+            style={{ background: 'rgba(245,158,11,0.12)', color: '#d97706', borderColor: 'rgba(245,158,11,0.3)' }}>
+            {t('comingSoon')}
+          </span>
+        </div>
+        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+          {t('spotterCoursesTagline')}
+        </p>
+        {COURSES.map((course) => (
+          <CourseCard key={course.titleKey} course={course} />
+        ))}
       </div>
     </div>
   )

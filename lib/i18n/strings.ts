@@ -8,6 +8,17 @@ export const strings: Record<string, Record<string, string>> = {
   getProtocol: { en: "Get Protocol", es: "Obtener Protocolo" },
   scanStain: { en: "Scan Stain", es: "Escanear Mancha" },
   uploadPhoto: { en: 'Upload photo', es: 'Subir foto' },
+  // ── Spotter Courses ──
+  spotterSectionCourses: { en: "Courses", es: "Cursos" },
+  spotterCoursesTagline: { en: "Earn credentials. Build your GONR Spotter profile.", es: "Obtén credenciales. Construye tu perfil de Spotter en GONR." },
+  courseSpottingFundamentalsTitle: { en: "Spotting Fundamentals", es: "Fundamentos del Spotting" },
+  courseSpottingFundamentalsDesc: { en: "Stain chemistry, fiber behavior, and the spotter's decision framework.", es: "Química de manchas, comportamiento de fibras y el marco de decisión del spotter." },
+  courseDanEisenTitle: { en: "The Dan Eisen Method", es: "El Método Dan Eisen" },
+  courseDanEisenDesc: { en: "40 years of DLI expertise — professional techniques from a Hall of Fame spotter.", es: "40 años de experiencia DLI — técnicas profesionales de un spotter del Salón de la Fama." },
+  courseFiberMasteryTitle: { en: "Fiber & Fabric Mastery", es: "Dominio de Fibras y Tejidos" },
+  courseFiberMasteryDesc: { en: "Silk, wool, acetate, rayon — know your fiber before you touch it.", es: "Seda, lana, acetato, rayón — conoce tu fibra antes de tocarla." },
+  courseCustomerCommTitle: { en: "Customer Communication", es: "Comunicación con el Cliente" },
+  courseCustomerCommDesc: { en: "Handle difficult conversations with confidence. Intake, release, and follow-up scripts.", es: "Maneja conversaciones difíciles con confianza. Guiones de recepción, devolución y seguimiento." },
   // ── Care Label / Fiber Context ──
   fiberIdentified: { en: "Fiber identified", es: "Fibra identificada" },
   careLabel: { en: "Care label", es: "Etiqueta de cuidado" },
