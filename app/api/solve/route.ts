@@ -186,23 +186,30 @@ export async function POST(req: Request) {
       }
 
       if (apiKey) {
-        if (stainImageBase64) tasks.push(identifyStain(stainImageBase64, apiKey))
+        if (stainImageBase64) tasks.push(identifyStain(stainImageBase64, apiKey).catch(() => null))
         else tasks.push(Promise.resolve(null))
 
-        if (labelImageBase64) tasks.push(readCareLabel(labelImageBase64, apiKey))
+        if (labelImageBase64) tasks.push(readCareLabel(labelImageBase64, apiKey).catch(() => null))
         else tasks.push(Promise.resolve(null))
       } else {
         tasks.push(Promise.resolve(null), Promise.resolve(null))
       }
 
-      const [stainResult, labelResult] = await Promise.all(tasks)
+      const [stainResult, labelResult] = await Promise.allSettled(tasks).then(results =>
+        results.map(r => r.status === 'fulfilled' ? r.value : null)
+      )
 
       if (stainHint) {
         stain = stainHint
         surface = surfaceHint
-      } else if (stainResult) {
-        stain = stainResult.stain || ''
+      } else if (stainResult?.stain) {
+        stain = stainResult.stain
         surface = surfaceHint || stainResult.surface || ''
+      } else {
+        // Vision didn't identify stain — use fabric description or generic fallback
+        const fabricHint = (formData.get('fabricDescription') as string) || ''
+        stain = fabricHint || 'unknown stain'
+        surface = surfaceHint || ''
       }
 
       if (labelResult && (labelResult.fiber || labelResult.careSymbols?.length)) {
