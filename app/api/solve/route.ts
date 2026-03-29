@@ -218,6 +218,42 @@ async function queueForReview(card: any, stain: string, surface: string, safetyR
   })
 }
 
+// ── Fire-and-forget solve history logging ─────────────────────
+async function logSolveHistory(params: {
+  stain: string
+  surface: string
+  title: string
+  tier: string
+  source: string
+  protocolId?: string
+  stainType?: string
+  confidence?: number
+}) {
+  const supabaseUrl = process.env.SUPABASE_URL
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY
+  if (!supabaseUrl || !supabaseKey) return
+  try {
+    const { createClient } = await import('@supabase/supabase-js')
+    const supabase = createClient(supabaseUrl, supabaseKey)
+    await supabase.from('solve_history').insert({
+      stain: params.stain || 'unknown',
+      surface: params.surface || 'unknown',
+      title: params.title || '',
+      is_pro: params.tier === 'operator' || params.tier === 'pro',
+      solution_json: JSON.stringify({
+        source: params.source,
+        tier: params.tier,
+        stainType: params.stainType || null,
+        _protocolId: params.protocolId || null,
+        confidence: params.confidence || null,
+      }),
+    })
+  } catch (e: any) {
+    // Non-blocking — never throw
+    console.warn('[SolveHistory] Log failed:', e.message)
+  }
+}
+
 // ── Main handler ───────────────────────────────────────────────
 export async function POST(req: Request) {
   try {
@@ -307,6 +343,17 @@ export async function POST(req: Request) {
       if (fiberContext?.fiber) {
         (result.card as any)._fiberContext = fiberContext
       }
+      // Log to solve_history (fire-and-forget)
+      logSolveHistory({
+        stain,
+        surface: effectiveSurface,
+        title: result.card?.title || stain,
+        tier: 'free', // tier isn't known at this level without auth — safe default
+        source: 'library',
+        protocolId: (result.card as any)?._protocolId,
+        stainType: (result.card as any)?.stainType,
+        confidence: result.confidence,
+      }).catch(() => {})
       return NextResponse.json(result)
     }
 
@@ -335,6 +382,16 @@ export async function POST(req: Request) {
         console.warn('[ProtocolCache] Queue failed:', e.message)
       )
 
+      // Log to solve_history (fire-and-forget)
+      logSolveHistory({
+        stain,
+        surface: effectiveSurface,
+        title: safeCard.title || stain,
+        tier: 'free',
+        source: 'ai',
+        stainType: (safeCard as any).stainType,
+        confidence: 0.5,
+      }).catch(() => {})
       return NextResponse.json({ card: safeCard, tier: 4, confidence: 0.5, source: 'ai' })
     } catch (err) {
       console.error('AI fallback failed:', err)
