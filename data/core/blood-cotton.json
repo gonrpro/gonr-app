@@ -78,9 +78,54 @@
     }
   ],
   "homeSolutions": [
-    "FRESH: Cold water + blot hard from back. If stain remains, soak in 3% H\u2082O\u2082 for 3-5 minutes. Blot, rinse, wash normally.",
-    "OLDER/SET: If stain is brown (oxidized), cold water rinse first, then H\u2082O\u2082, then OxiClean soak (30 minutes). For white cotton ONLY: diluted bleach (1:10) works fast. Always test bleach on hidden area first.",
-    "STUBBORN: Professional cleaner has access to stronger oxidizing systems (reduced bleach, higher-strength H\u2082O\u2082) and can safely treat stains that have set for days."
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first to ensure fabric tolerates the solution.",
+      "agent": "cool water",
+      "safetyNote": "Never use hot water on blood \u2014 heat sets protein stains."
+    },
+    {
+      "step": 2,
+      "instruction": "Place fabric stain-side down on glass work surface. Scrape off any dried blood residue with a spoon, working gently from center outward.",
+      "agent": "spoon"
+    },
+    {
+      "step": 3,
+      "instruction": "Dab the stain lightly with cool water applied to a white cloth, lifting blood from the fibers.",
+      "agent": "cool water"
+    },
+    {
+      "step": 4,
+      "instruction": "Apply detergent/ammonia solution (1/4 tbsp mild laundry detergent + 1/2 tsp ammonia + 4 oz cool water) to the stain. Rub gently with the back of a spoon.",
+      "agent": "detergent/ammonia solution",
+      "safetyNote": "Ammonia can be strong \u2014 ensure good ventilation."
+    },
+    {
+      "step": 5,
+      "instruction": "Rinse thoroughly with cool water, working from center outward to remove excess solution.",
+      "agent": "cool water"
+    },
+    {
+      "step": 6,
+      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes. This oxidizes remaining blood residue.",
+      "agent": "hydrogen peroxide 3% + ammonia",
+      "safetyNote": "Test on hidden area first \u2014 peroxide may lighten some dyes."
+    },
+    {
+      "step": 7,
+      "instruction": "Rinse thoroughly with cool water.",
+      "agent": "cool water"
+    },
+    {
+      "step": 8,
+      "instruction": "Apply white vinegar solution to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center with white cloth.",
+      "agent": "white vinegar + cool water"
+    },
+    {
+      "step": 9,
+      "instruction": "If stain persists or if fabric is delicate (silk, wool, fine cotton), call a professional cleaner.",
+      "agent": "escalation"
+    }
   ],
   "materialWarnings": [
     "DO NOT use bleach on colored cotton\u2014will fade dye",

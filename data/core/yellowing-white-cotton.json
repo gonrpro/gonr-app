@@ -68,5 +68,45 @@
   },
   "difficulty": 4,
   "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23"
+  "lastValidated": "2026-03-23",
+  "homeSolutions": [
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first to ensure fabric tolerates bleach solutions.",
+      "agent": "cool water",
+      "safetyNote": "Bleach is caustic \u2014 ensure good ventilation and avoid skin contact."
+    },
+    {
+      "step": 2,
+      "instruction": "Yellowing on white cotton can result from oxidation, age, or manufacturing residue. Treatment depends on fabric content and yellowing severity.",
+      "agent": "assessment"
+    },
+    {
+      "step": 3,
+      "instruction": "For synthetics and blends on white fabric: Prepare a mild safety bleach soak. Dissolve 2 oz mild household bleach per gallon of warm water. Soak fabric for no more than 4 hours.",
+      "agent": "mild household bleach solution",
+      "safetyNote": "Use minimal bleach concentration to prevent fiber damage. Do not exceed 4-hour soak time."
+    },
+    {
+      "step": 4,
+      "instruction": "After soaking, rinse thoroughly with cool water until all bleach smell is gone.",
+      "agent": "cool water"
+    },
+    {
+      "step": 5,
+      "instruction": "For 100% cotton on white fabric: Prepare a household bleach solution per container instructions. Typically 1-2 oz bleach per gallon of warm water. Soak for 15 minutes only.",
+      "agent": "household bleach solution",
+      "safetyNote": "Follow container instructions for proper dilution. Do not exceed recommended soak time."
+    },
+    {
+      "step": 6,
+      "instruction": "After soaking, rinse thoroughly with cool water until all bleach smell is gone.",
+      "agent": "cool water"
+    },
+    {
+      "step": 7,
+      "instruction": "Wash fabric with mild laundry detergent in warm water and allow to air dry in sunlight if possible. Sunlight provides additional natural bleaching for white cotton.",
+      "agent": "mild laundry detergent + warm water"
+    }
+  ]
 }

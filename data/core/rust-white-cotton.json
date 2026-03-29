@@ -71,5 +71,40 @@
   },
   "difficulty": 6,
   "timeEstimate": "15-45 minutes",
-  "lastValidated": "2026-03-23"
+  "lastValidated": "2026-03-23",
+  "homeSolutions": [
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first to ensure fabric tolerates oxalic acid solution. On white cotton, oxalic acid is safer than on colored fabrics.",
+      "agent": "cool water",
+      "safetyNote": "Oxalic acid is a strong chemical \u2014 handle with care and ensure good ventilation."
+    },
+    {
+      "step": 2,
+      "instruction": "Place fabric stain-side down on glass work surface.",
+      "agent": "spoon"
+    },
+    {
+      "step": 3,
+      "instruction": "Rust stains respond specifically to oxalic acid. Apply oxalic acid (crystals dissolved in minimal cool water) to a white cloth and dab the rust stain gently from center outward.",
+      "agent": "oxalic acid solution",
+      "safetyNote": "Oxalic acid can be corrosive \u2014 avoid direct skin contact and ensure proper ventilation."
+    },
+    {
+      "step": 4,
+      "instruction": "Allow the oxalic acid to work on the stain for 2-3 minutes, re-dabbing as needed with fresh cloth.",
+      "agent": "oxalic acid solution"
+    },
+    {
+      "step": 5,
+      "instruction": "Rinse thoroughly with cool water, working from center outward, ensuring all oxalic acid residue is removed.",
+      "agent": "cool water",
+      "safetyNote": "Complete removal of oxalic acid is essential to prevent fiber damage."
+    },
+    {
+      "step": 6,
+      "instruction": "For white cotton, oxalic acid treatment is typically effective. If rust stain persists after treatment, consult a professional cleaner.",
+      "agent": "escalation"
+    }
+  ]
 }

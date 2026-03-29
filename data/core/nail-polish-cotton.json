@@ -72,5 +72,45 @@
   },
   "difficulty": 7,
   "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23"
+  "lastValidated": "2026-03-23",
+  "homeSolutions": [
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first to ensure fabric tolerates acetone-based solutions. DO NOT use this procedure on acetate fabrics \u2014 acetone dissolves acetate.",
+      "agent": "cool water",
+      "safetyNote": "Acetone is volatile and flammable \u2014 ensure excellent ventilation and avoid flames."
+    },
+    {
+      "step": 2,
+      "instruction": "Place fabric stain-side down on glass work surface. Nail polish is a plastic/dry-based stain.",
+      "agent": "spoon"
+    },
+    {
+      "step": 3,
+      "instruction": "Apply dry-cleaning solvent (lighter fluid) to the stain. Rub gently with the back of a spoon from center outward.",
+      "agent": "dry-cleaning solvent",
+      "safetyNote": "Ensure good ventilation when using dry-cleaning solvent."
+    },
+    {
+      "step": 4,
+      "instruction": "If polish remains, apply acetone or nail polish remover (test on hidden area first). Rub gently with spoon. Acetone dissolves nail polish effectively.",
+      "agent": "acetone or nail polish remover",
+      "safetyNote": "Acetone is strong and volatile \u2014 use in a well-ventilated area. Never use on acetate, rayon, or delicate fabrics."
+    },
+    {
+      "step": 5,
+      "instruction": "Rinse thoroughly with dry-cleaning solvent to remove acetone residue.",
+      "agent": "dry-cleaning solvent"
+    },
+    {
+      "step": 6,
+      "instruction": "If any residue remains, apply petroleum jelly and rub gently with spoon, then rinse with dry-cleaning solvent.",
+      "agent": "petroleum jelly + dry-cleaning solvent"
+    },
+    {
+      "step": 7,
+      "instruction": "Allow fabric to air dry completely. If nail polish stain persists or if fabric is acetate or delicate, call a professional cleaner.",
+      "agent": "escalation"
+    }
+  ]
 }

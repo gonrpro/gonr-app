@@ -88,9 +88,49 @@
     }
   ],
   "homeSolutions": [
-    "FRESH: Cold water flush from back, soak in enzyme solution (15 min), vinegar soak (5 min), peroxide or OxiClean soak, baking soda paste (10 min), rinse, hot wash.",
-    "AGED/ODOROUS: Enzyme soak longer (20-30 min), double vinegar treatment, baking soda paste, peroxide/OxiClean if yellow visible, hot wash with detergent.",
-    "STUBBORN ODOR: Soak overnight in diluted 28% Acetic Acid (diluted) (1:4 ratio), then enzyme, then hot wash. For persistent odor, professional treatment with commercial enzymatic systems."
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
+      "agent": "cool water",
+      "safetyNote": "Never use hot water on urine \u2014 heat sets protein stains."
+    },
+    {
+      "step": 2,
+      "instruction": "Place fabric stain-side down on glass work surface. Dab the stain lightly with cool water applied to a white cloth.",
+      "agent": "cool water"
+    },
+    {
+      "step": 3,
+      "instruction": "Apply detergent/ammonia solution (1/4 tbsp mild laundry detergent + 1/2 tsp ammonia + 4 oz cool water) to the stain. Rub gently with the back of a spoon.",
+      "agent": "detergent/ammonia solution",
+      "safetyNote": "Ammonia can be strong \u2014 ensure good ventilation."
+    },
+    {
+      "step": 4,
+      "instruction": "Rinse thoroughly with cool water, working from center outward.",
+      "agent": "cool water"
+    },
+    {
+      "step": 5,
+      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize protein residue.",
+      "agent": "hydrogen peroxide 3% + ammonia",
+      "safetyNote": "Test on hidden area first \u2014 peroxide may lighten some dyes."
+    },
+    {
+      "step": 6,
+      "instruction": "Rinse thoroughly with cool water.",
+      "agent": "cool water"
+    },
+    {
+      "step": 7,
+      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center.",
+      "agent": "white vinegar + cool water"
+    },
+    {
+      "step": 8,
+      "instruction": "If urine stain persists or if fabric is delicate, call a professional cleaner.",
+      "agent": "escalation"
+    }
   ],
   "materialWarnings": [
     "DO NOT use hot water initially\u2014activates bacteria and sets odor",

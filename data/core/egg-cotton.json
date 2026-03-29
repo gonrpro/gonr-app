@@ -72,5 +72,55 @@
   },
   "difficulty": 4,
   "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23"
+  "lastValidated": "2026-03-23",
+  "homeSolutions": [
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first to ensure fabric tolerates the solution.",
+      "agent": "cool water",
+      "safetyNote": "Never use hot water on egg \u2014 heat sets protein stains immediately."
+    },
+    {
+      "step": 2,
+      "instruction": "Place fabric stain-side down on glass work surface. Scrape off excess egg with a spoon, working gently.",
+      "agent": "spoon"
+    },
+    {
+      "step": 3,
+      "instruction": "Dab the stain lightly with cool water applied to a white cloth, lifting egg protein from the fibers.",
+      "agent": "cool water"
+    },
+    {
+      "step": 4,
+      "instruction": "Apply detergent/ammonia solution (1/4 tbsp mild laundry detergent + 1/2 tsp ammonia + 4 oz cool water) to the stain. Rub gently with the back of a spoon.",
+      "agent": "detergent/ammonia solution",
+      "safetyNote": "Ammonia can be strong \u2014 ensure good ventilation."
+    },
+    {
+      "step": 5,
+      "instruction": "Rinse thoroughly with cool water, working from center outward.",
+      "agent": "cool water"
+    },
+    {
+      "step": 6,
+      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize remaining protein residue.",
+      "agent": "hydrogen peroxide 3% + ammonia",
+      "safetyNote": "Test on hidden area first \u2014 peroxide may lighten some dyes."
+    },
+    {
+      "step": 7,
+      "instruction": "Rinse thoroughly with cool water.",
+      "agent": "cool water"
+    },
+    {
+      "step": 8,
+      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center.",
+      "agent": "white vinegar + cool water"
+    },
+    {
+      "step": 9,
+      "instruction": "If egg stain persists or if fabric is delicate, call a professional cleaner.",
+      "agent": "escalation"
+    }
+  ]
 }

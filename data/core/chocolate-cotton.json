@@ -96,9 +96,48 @@
     }
   ],
   "homeSolutions": [
-    "FRESH: Scrape, cold rinse, enzyme soak (30 min), NSD scrub, H\u2082O\u2082 (10 min), final rinse.",
-    "OLDER (24+ hours): Same protocol, but soak enzyme for 60 minutes and increase peroxide dwell to 15-20 minutes.",
-    "STUBBORN: Repeat full cycle if needed. White cotton is forgiving. Multiple enzyme + soap + peroxide cycles will eventually lift even set-in chocolate."
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
+      "agent": "cool water"
+    },
+    {
+      "step": 2,
+      "instruction": "Place fabric stain-side down on glass work surface. Scrape off excess chocolate with a spoon. Chocolate is a combination stain (fat + sugar).",
+      "agent": "spoon"
+    },
+    {
+      "step": 3,
+      "instruction": "PROCEDURE 1 (Fat-based): Apply dry-cleaning solvent (lighter fluid) to the stain. Rub gently with the back of a spoon from center outward. Apply petroleum jelly and continue rubbing. Rinse with dry-cleaning solvent.",
+      "agent": "dry-cleaning solvent + petroleum jelly",
+      "safetyNote": "Ensure good ventilation when using dry-cleaning solvent."
+    },
+    {
+      "step": 4,
+      "instruction": "If chocolate remains after Procedure 1, apply detergent/vinegar solution (1/4 tbsp mild laundry detergent + 2 oz white vinegar + 2 oz cool water). Rub with spoon, then rinse with cool water.",
+      "agent": "detergent/vinegar solution"
+    },
+    {
+      "step": 5,
+      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes.",
+      "agent": "hydrogen peroxide 3% + ammonia",
+      "safetyNote": "Test on hidden area first \u2014 peroxide may lighten some dyes."
+    },
+    {
+      "step": 6,
+      "instruction": "Rinse thoroughly with cool water.",
+      "agent": "cool water"
+    },
+    {
+      "step": 7,
+      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center.",
+      "agent": "white vinegar + cool water"
+    },
+    {
+      "step": 8,
+      "instruction": "If chocolate stain persists or if fabric is delicate, call a professional cleaner.",
+      "agent": "escalation"
+    }
   ],
   "materialWarnings": [
     "DO NOT use hot water before enzyme step\u2014protein will set permanently.",

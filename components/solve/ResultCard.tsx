@@ -5,6 +5,7 @@ import type { ProtocolCard, Step } from '@/lib/types'
 import HandoffModule from './HandoffModule'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import FiberContextBadge from './FiberContextBadge'
+import CardBadges from './CardBadges'
 
 /* ── Helpers ─────────────────────────────────── */
 
@@ -109,6 +110,16 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
             {source === 'verified' ? '✓ Verified' : '🤖 AI'}
           </span>
         </div>
+      </div>
+
+      {/* ── Card badges (stain family, risk, difficulty, Eisen Method) ── */}
+      <div className="px-4 pb-2">
+        <CardBadges
+          stainType={(card as any).stainType || (card as any).stainFamily}
+          riskLevel={(card as any).meta?.riskLevel}
+          difficulty={card.difficulty}
+          tags={(card as any).meta?.tags}
+        />
       </div>
 
       {/* ── Fiber context from care label scan ── */}

@@ -72,5 +72,49 @@
   },
   "difficulty": 3,
   "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23"
+  "lastValidated": "2026-03-23",
+  "homeSolutions": [
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
+      "agent": "cool water"
+    },
+    {
+      "step": 2,
+      "instruction": "Dab the coffee stain immediately with cool water applied to a white cloth. Work from center outward to prevent spreading.",
+      "agent": "cool water",
+      "safetyNote": "Coffee contains tannins that oxidize and turn brown \u2014 act quickly."
+    },
+    {
+      "step": 3,
+      "instruction": "Apply detergent/vinegar solution (1/4 tbsp mild laundry detergent + 2 oz white vinegar + 2 oz cool water) to the stain. Rub gently with the back of a spoon from center outward.",
+      "agent": "detergent/vinegar solution"
+    },
+    {
+      "step": 4,
+      "instruction": "Rinse thoroughly with cool water, working from center outward.",
+      "agent": "cool water"
+    },
+    {
+      "step": 5,
+      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize tannin residue.",
+      "agent": "hydrogen peroxide 3% + ammonia",
+      "safetyNote": "Test on hidden area first \u2014 peroxide may lighten some dyes."
+    },
+    {
+      "step": 6,
+      "instruction": "Rinse thoroughly with cool water.",
+      "agent": "cool water"
+    },
+    {
+      "step": 7,
+      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center with white cloth.",
+      "agent": "white vinegar + cool water"
+    },
+    {
+      "step": 8,
+      "instruction": "If stain persists or if fabric is delicate, call a professional cleaner.",
+      "agent": "escalation"
+    }
+  ]
 }

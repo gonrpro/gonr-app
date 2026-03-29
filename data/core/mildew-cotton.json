@@ -69,5 +69,50 @@
   },
   "difficulty": 5,
   "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23"
+  "lastValidated": "2026-03-23",
+  "homeSolutions": [
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first \u2014 household bleach can damage some dyes. This procedure requires bleach due to mildew's fungal nature.",
+      "agent": "cool water",
+      "safetyNote": "Bleach is caustic \u2014 ensure good ventilation and avoid skin contact."
+    },
+    {
+      "step": 2,
+      "instruction": "Dab the mildew stain lightly with cool water applied to a white cloth to remove surface spores.",
+      "agent": "cool water"
+    },
+    {
+      "step": 3,
+      "instruction": "Apply diluted household bleach solution (5 drops household bleach in 4 oz cool water) to the stain using a white cloth. Dab gently from center outward.",
+      "agent": "diluted household bleach",
+      "safetyNote": "Test on hidden area first \u2014 bleach may discolor fabrics. Use minimal concentration."
+    },
+    {
+      "step": 4,
+      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to further oxidize fungal residue.",
+      "agent": "hydrogen peroxide 3% + ammonia",
+      "safetyNote": "Test on hidden area first \u2014 peroxide may lighten some dyes."
+    },
+    {
+      "step": 5,
+      "instruction": "Rinse thoroughly with cool water, working from center outward.",
+      "agent": "cool water"
+    },
+    {
+      "step": 6,
+      "instruction": "Apply the diluted bleach solution again and allow to sit for 3 minutes to ensure mildew is fully eliminated.",
+      "agent": "diluted household bleach"
+    },
+    {
+      "step": 7,
+      "instruction": "Apply white vinegar to neutralize bleach residue and remove any rings. Rinse thoroughly with cool water. Wipe rings outward from center.",
+      "agent": "white vinegar + cool water"
+    },
+    {
+      "step": 8,
+      "instruction": "If mildew persists or if fabric is delicate, call a professional cleaner.",
+      "agent": "escalation"
+    }
+  ]
 }

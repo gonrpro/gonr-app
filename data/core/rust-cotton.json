@@ -88,9 +88,39 @@
     }
   ],
   "homeSolutions": [
-    "FRESH: Cool water rinse. Bar Keeper's Friend paste (5-10 min). Thorough cold rinse (multiple times). Hot machine wash.",
-    "AGED/DARK: Same as fresh but let BKF sit 15-20 min. May need repeat cycle of Rust Remover (oxalic acid) treatment.",
-    "STUBBORN: Bar Keeper's Friend + gentle brush (2-3 min dwell). Multiple treatment cycles may be needed."
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first to ensure fabric tolerates oxalic acid solution. Test before applying to the actual stain.",
+      "agent": "cool water",
+      "safetyNote": "Oxalic acid is a strong chemical \u2014 handle with care and ensure good ventilation."
+    },
+    {
+      "step": 2,
+      "instruction": "Place fabric stain-side down on glass work surface.",
+      "agent": "spoon"
+    },
+    {
+      "step": 3,
+      "instruction": "Rust stains respond specifically to oxalic acid. Apply oxalic acid (crystals dissolved in minimal cool water) to a white cloth and dab the rust stain gently from center outward.",
+      "agent": "oxalic acid solution",
+      "safetyNote": "Oxalic acid can be corrosive \u2014 avoid direct skin contact and ensure proper ventilation."
+    },
+    {
+      "step": 4,
+      "instruction": "Allow the oxalic acid to work on the stain for 2-3 minutes, re-dabbing as needed with fresh cloth.",
+      "agent": "oxalic acid solution"
+    },
+    {
+      "step": 5,
+      "instruction": "Rinse thoroughly with cool water, working from center outward, ensuring all oxalic acid residue is removed.",
+      "agent": "cool water",
+      "safetyNote": "Complete removal of oxalic acid is essential to prevent fiber damage."
+    },
+    {
+      "step": 6,
+      "instruction": "If rust stain persists after oxalic acid treatment, the stain may require professional removal. Oxalic acid crystals can be found at camera supply stores (hypo crystals).",
+      "agent": "escalation"
+    }
   ],
   "materialWarnings": [
     "NEVER bleach, H\u2082O\u2082, or any oxidizing agent\u2014oxidizes iron and makes stain permanent",

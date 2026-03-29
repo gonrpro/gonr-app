@@ -1,0 +1,108 @@
+{
+  "id": "iodine-cotton",
+  "version": 1,
+  "authored": "2026-03-29",
+  "stainType": "oxidizable",
+  "stainFamily": "iodine",
+  "surface": "cotton",
+  "difficulty": 6,
+  "title": "Iodine on Cotton \u2014 Sodium Thiosulfate Reduction",
+  "stainChemistry": "Iodine forms charge-transfer complexes with cellulose fibers, creating a deep blue-black stain especially in the presence of starch. The iodine (I\u2082) physically absorbs into the cotton's cellulose matrix and forms van der Waals bonds with hydroxyl groups on the fiber chains. This is not a true dye bond but a molecular complex that penetrates the fiber.",
+  "whyThisWorks": "Sodium thiosulfate (hypo) reduces molecular iodine (I\u2082) to colorless iodide ion (I\u207b) through a redox reaction: I\u2082 + 2S\u2082O\u2083\u00b2\u207b \u2192 2I\u207b + S\u2084O\u2086\u00b2\u207b. The iodide is highly soluble and washes away. Any residual brown staining from oxidized iodine compounds is then removed with hydrogen peroxide 3%, which oxidizes iodide back to soluble iodine while bleaching any remaining discoloration.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "sodium thiosulfate (hypo crystals)",
+      "technique": "dry powder application with gentle tamping",
+      "equipment": "spotting brush, white cotton terry cloth pad, softener brush",
+      "dwellTime": "3-5 minutes (air dry)",
+      "instruction": "Apply dry sodium thiosulfate powder directly to the iodine stain on the dry side. Use a softener brush to work it into the fibers gently. The powder will absorb surface iodine. Do not wet at this stage."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "sodium thiosulfate solution (1 oz hypo per 16 oz water, tepid)",
+      "technique": "sponging",
+      "equipment": "white terry pad, spotting bottle, gentle pressure",
+      "dwellTime": "5-7 minutes total (sponge in 2-3 applications)",
+      "instruction": "Sponge the thiosulfate solution into the stain from the back side. Work from outside the stain inward to prevent spreading. Keep the area wet and repeatedly sponge until the blue-black color begins to fade. Replace the under-pad as it absorbs the stain."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "hydrogen peroxide 3% (standard drugstore strength)",
+      "technique": "sponging",
+      "equipment": "white terry pad, spotting bottle",
+      "dwellTime": "3-5 minutes",
+      "instruction": "After thiosulfate treatment, sponge with hydrogen peroxide 3% to oxidize any remaining brown iodine residue and complete the bleaching action. This step turns any remaining stain colorless. Work gently to avoid over-bleaching adjacent fibers."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "distilled water (rinse)",
+      "technique": "sponging and extraction",
+      "equipment": "white terry pad, spotting bottle, towel",
+      "dwellTime": "1-2 minutes (multiple rinses)",
+      "instruction": "Rinse thoroughly with distilled water to remove all chemical residue. Sponge repeatedly with fresh water and clean pad until no chemical smell remains. Blot excess water."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "5% acetic acid solution (white vinegar diluted 1:3 with water)",
+      "technique": "final rinse sponge",
+      "equipment": "white terry pad",
+      "dwellTime": "30 seconds",
+      "instruction": "Final sponge with diluted acetic acid to neutralize any remaining alkaline residue and restore fiber pH. This prevents yellowing."
+    }
+  ],
+  "escalation": "If stain persists after thiosulfate and peroxide treatment, do not repeat. Iodine may have formed insoluble compounds deep in the fiber. Professional dry-clean solvent bath with detergent additive may help. If the stain is set and brown, it may be permanent.",
+  "commonMistakes": [
+    "Using chlorine bleach instead of sodium thiosulfate \u2014 chlorine oxidizes iodine and makes stain darker.",
+    "Applying thiosulfate to wet fabric \u2014 the solution dilutes and loses potency.",
+    "Assuming all brown residue is iodine \u2014 some may be fiber damage that cannot be removed."
+  ],
+  "scienceNote": "The charge-transfer complex between iodine and cellulose explains why iodine stains are so color-stable. The reduction mechanism (thiosulfate) is the key \u2014 it's the same chemistry used in photography to fix film (removing unreacted silver halide). This is why the Eisen method prioritizes understanding oxidation-reduction reactions in spotting.",
+  "safety": "Sodium thiosulfate is non-toxic and mild. Hydrogen peroxide 3% is safe on cotton. No PPE required beyond standard spotting gloves. Test hydrogen peroxide on an inconspicuous area first to check for color fastness \u2014 some dyes may bleach.",
+  "materialWarnings": [
+    "Cotton is stable with all reagents used.",
+    "No fiber-specific hazards.",
+    "Test on seams or interior hems if garment has been previously dyed, as hydrogen peroxide can bleach some dyes."
+  ],
+  "callPro": "If the stain is brown, older than 48 hours, or if the fabric is a delicate weave, professional treatment is safer. Repeated amateur spotting can weaken cotton fibers.",
+  "customerExplanation": "Iodine stains create a chemical complex with cotton fibers. We used sodium thiosulfate, a reducing agent, to convert the iodine into a soluble form that washes away. A final hydrogen peroxide treatment removed any residual brown discoloration. The garment is now restored.",
+  "homeSolutions": [
+    "Soak stain in cold milk or potato starch paste for 10 minutes (the starch can absorb surface iodine), then rinse with cold water. This works for very fresh stains only.",
+    "Apply baking soda paste directly to the stain, let dry for 5 minutes, then brush off. Follow with cold water rinse. Mild but may help absorb some iodine.",
+    "For light iodine stains, soak the garment in a solution of 1 tablespoon white vinegar per cup of water for 30 minutes, then rinse thoroughly. The acid may help slightly."
+  ],
+  "meta": {
+    "riskLevel": "low",
+    "tags": [
+      "cold-water",
+      "test-first",
+      "oxidizable",
+      "chemical-complex"
+    ],
+    "source": "eisen-method",
+    "sourceRef": "Expert Garment Restoration & Stain Removal Tips"
+  },
+  "products": [
+    {
+      "name": "Sodium Thiosulfate (Hypo Crystals)",
+      "brand": "Photography/Chemical Supply",
+      "icon": "\ud83e\uddea",
+      "amazonSearchQuery": "sodium thiosulfate hypo crystals photography",
+      "affiliateTag": "gonr08-20",
+      "note": "Professional-grade hypo crystals. Essential for iodine stain removal. Purchase from photography or chemical supply sources. 1 lb lasts for hundreds of treatments."
+    },
+    {
+      "name": "Hydrogen Peroxide 3% USP",
+      "brand": "Drugstore (standard)",
+      "icon": "\ud83d\udca7",
+      "amazonSearchQuery": "hydrogen peroxide 3% usp",
+      "affiliateTag": "gonr08-20",
+      "note": "Standard drugstore hydrogen peroxide. Essential backup for residual brown stains. Safe on cotton and most colorfast dyes."
+    }
+  ]
+}

@@ -113,9 +113,48 @@
     }
   ],
   "homeSolutions": [
-    "FRESH: Scrape off excess mustard, dab with IPA, then use enzyme pre-treat and rinse. For any remaining yellow, soak in H\u2082O\u2082 + vinegar in sunlight\u2014this is the best step.",
-    "OLDER: If the mustard has sat for days, the curcumin has bonded more firmly. Use stronger oxidation: H\u2082O\u2082 + UV, or OxiClean soak, or both.",
-    "STUBBORN: Very old mustard can leave a permanent yellow tint on white cotton. Multiple applications of H\u2082O\u2082 + sunlight may be needed."
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
+      "agent": "cool water"
+    },
+    {
+      "step": 2,
+      "instruction": "Place fabric stain-side down on glass work surface. Scrape off excess mustard with a spoon. Mustard is a combination stain (oil + dye) requiring two approaches.",
+      "agent": "spoon"
+    },
+    {
+      "step": 3,
+      "instruction": "PROCEDURE 1 (Oil-based): Apply dry-cleaning solvent (lighter fluid) to the stain. Rub gently with the back of a spoon from center outward. Apply petroleum jelly and continue rubbing. Rinse with dry-cleaning solvent.",
+      "agent": "dry-cleaning solvent + petroleum jelly",
+      "safetyNote": "Ensure good ventilation when using dry-cleaning solvent. Avoid skin contact."
+    },
+    {
+      "step": 4,
+      "instruction": "If mustard remains after Procedure 1, apply detergent/vinegar solution (1/4 tbsp mild laundry detergent + 2 oz white vinegar + 2 oz cool water). Rub with spoon, then rinse with cool water.",
+      "agent": "detergent/vinegar solution"
+    },
+    {
+      "step": 5,
+      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize remaining dye.",
+      "agent": "hydrogen peroxide 3% + ammonia",
+      "safetyNote": "Test on hidden area first \u2014 peroxide may lighten some dyes."
+    },
+    {
+      "step": 6,
+      "instruction": "Rinse thoroughly with cool water.",
+      "agent": "cool water"
+    },
+    {
+      "step": 7,
+      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center.",
+      "agent": "white vinegar + cool water"
+    },
+    {
+      "step": 8,
+      "instruction": "If mustard stain persists or if fabric is delicate, call a professional cleaner.",
+      "agent": "escalation"
+    }
   ],
   "materialWarnings": [
     "AVOID chlorine bleach\u2014use H\u2082O\u2082 or OxiClean instead for white cotton.",

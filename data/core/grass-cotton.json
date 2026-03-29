@@ -87,9 +87,48 @@
     }
   ],
   "homeSolutions": [
-    "FRESH: Dry brush. Cold water rinse. Enzyme soak (15 min). IPA soak or application (5-10 min). Peroxide or bleach if green remains. Rinse thoroughly. Hot wash.",
-    "AGED/OXIDIZED: Same protocol but enzyme soak longer (20-30 min), repeat alcohol application if needed. Bleach may be necessary for old grass that's turned brown.",
-    "STUBBORN: Professional solvents (petroleum spirits, NSD) may be needed for very old grass stains."
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
+      "agent": "cool water"
+    },
+    {
+      "step": 2,
+      "instruction": "Place fabric stain-side down on glass work surface. Grass is a combination stain (dry + wet) requiring two approaches.",
+      "agent": "spoon"
+    },
+    {
+      "step": 3,
+      "instruction": "PROCEDURE 1 (Dry-based): Apply dry-cleaning solvent (lighter fluid) to the stain. Rub gently with the back of a spoon from center outward. Apply petroleum jelly and continue rubbing. Rinse with dry-cleaning solvent.",
+      "agent": "dry-cleaning solvent + petroleum jelly",
+      "safetyNote": "Ensure good ventilation when using dry-cleaning solvent. Avoid skin contact."
+    },
+    {
+      "step": 4,
+      "instruction": "If grass remains after Procedure 1, apply detergent/vinegar solution (1/4 tbsp mild laundry detergent + 2 oz white vinegar + 2 oz cool water). Rub with spoon, then rinse with cool water.",
+      "agent": "detergent/vinegar solution"
+    },
+    {
+      "step": 5,
+      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize remaining grass chlorophyll.",
+      "agent": "hydrogen peroxide 3% + ammonia",
+      "safetyNote": "Test on hidden area first \u2014 peroxide may lighten some dyes."
+    },
+    {
+      "step": 6,
+      "instruction": "Rinse thoroughly with cool water.",
+      "agent": "cool water"
+    },
+    {
+      "step": 7,
+      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center.",
+      "agent": "white vinegar + cool water"
+    },
+    {
+      "step": 8,
+      "instruction": "If grass stain persists or if fabric is delicate, call a professional cleaner.",
+      "agent": "escalation"
+    }
   ],
   "materialWarnings": [
     "AVOID hot water initially\u2014causes chlorophyll oxidation to brown",

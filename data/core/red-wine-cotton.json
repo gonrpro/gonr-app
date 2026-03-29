@@ -78,10 +78,48 @@
     }
   ],
   "homeSolutions": [
-    "FRESH: Boiling water pour-through from back. Most wine lifts immediately.",
-    "IF REMAINING: Diluted 28% Acetic Acid (diluted) (1:1 cold), 2-3 min, blot.",
-    "IF BROWN PERSISTS: OxiClean soak (cold, 15-30 min), blot, then hot water wash.",
-    "FINAL OPTION: Dilute chlorine bleach (1:10, white cotton only), 1-2 min max, blot, rinse, hot wash."
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
+      "agent": "cool water"
+    },
+    {
+      "step": 2,
+      "instruction": "Dab the red wine stain immediately with cool water applied to a white cloth. Work from center outward. Speed is critical \u2014 alcohol in wine affects dyes.",
+      "agent": "cool water",
+      "safetyNote": "Red wine contains both tannins and dyes \u2014 remove stain quickly before alcohol sets dyes."
+    },
+    {
+      "step": 3,
+      "instruction": "Apply detergent/vinegar solution (1/4 tbsp mild laundry detergent + 2 oz white vinegar + 2 oz cool water) to the stain. Rub gently with the back of a spoon from center outward.",
+      "agent": "detergent/vinegar solution"
+    },
+    {
+      "step": 4,
+      "instruction": "Rinse thoroughly with cool water, working from center outward.",
+      "agent": "cool water"
+    },
+    {
+      "step": 5,
+      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize tannin and dye residue.",
+      "agent": "hydrogen peroxide 3% + ammonia",
+      "safetyNote": "Test on hidden area first \u2014 peroxide may lighten some dyes."
+    },
+    {
+      "step": 6,
+      "instruction": "Rinse thoroughly with cool water.",
+      "agent": "cool water"
+    },
+    {
+      "step": 7,
+      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center with white cloth.",
+      "agent": "white vinegar + cool water"
+    },
+    {
+      "step": 8,
+      "instruction": "If stain persists or if fabric is delicate, call a professional cleaner.",
+      "agent": "escalation"
+    }
   ],
   "materialWarnings": [
     "Boiling water pour-through only for FRESH stains (within 30 min)",

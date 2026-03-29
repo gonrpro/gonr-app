@@ -103,9 +103,48 @@
     }
   ],
   "homeSolutions": [
-    "FRESH: Work from the back with IPA on a cloth, blotting repeatedly. Most of the ink lifts immediately. Then rinse and wash hot.",
-    "OLDER: If the ink has been on cotton for days, it's deeply bonded. Repeat the alcohol treatment 2-3 times, then soak in OxiClean before washing.",
-    "STUBBORN: For very old ballpoint stains, soak in alcohol for 30 minutes first to soften the oil-dye bond, then proceed with scrubbing and rinsing."
+    {
+      "step": 1,
+      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
+      "agent": "cool water"
+    },
+    {
+      "step": 2,
+      "instruction": "Place fabric stain-side down on glass work surface. Ink is a combination stain (dry + wet) requiring two approaches.",
+      "agent": "spoon"
+    },
+    {
+      "step": 3,
+      "instruction": "PROCEDURE 1 (Dry-based): Apply dry-cleaning solvent (lighter fluid) to the stain. Rub gently with the back of a spoon from center outward. Apply petroleum jelly and continue rubbing. Rinse with dry-cleaning solvent.",
+      "agent": "dry-cleaning solvent + petroleum jelly",
+      "safetyNote": "Ensure good ventilation when using dry-cleaning solvent. Avoid skin contact."
+    },
+    {
+      "step": 4,
+      "instruction": "If ink remains after Procedure 1, apply glycerine mixed with white vinegar (equal parts) to the stain. Rub with spoon, then rinse with cool water.",
+      "agent": "glycerine + white vinegar"
+    },
+    {
+      "step": 5,
+      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes.",
+      "agent": "hydrogen peroxide 3% + ammonia",
+      "safetyNote": "Test on hidden area first \u2014 peroxide may lighten some dyes."
+    },
+    {
+      "step": 6,
+      "instruction": "Rinse thoroughly with cool water.",
+      "agent": "cool water"
+    },
+    {
+      "step": 7,
+      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center.",
+      "agent": "white vinegar + cool water"
+    },
+    {
+      "step": 8,
+      "instruction": "If ink stain persists or if fabric is delicate, call a professional cleaner.",
+      "agent": "escalation"
+    }
   ],
   "materialWarnings": [
     "AVOID using bleach on colored cotton; use OxiClean instead.",
