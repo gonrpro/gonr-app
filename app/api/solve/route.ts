@@ -139,14 +139,18 @@ async function queueForReview(card: any, stain: string, surface: string, safetyR
   if (!supabaseUrl || !supabaseKey) return
   const { createClient } = await import('@supabase/supabase-js')
   const supabase = createClient(supabaseUrl, supabaseKey)
-  const cacheKey = `${stain.toLowerCase().replace(/\s+/g, '-')}__${surface.toLowerCase().replace(/\s+/g, '-')}`
+  const stainKey = stain.toLowerCase().replace(/\s+/g, '-')
+  const surfaceKey = surface.toLowerCase().replace(/\s+/g, '-')
   await supabase.from('pending_protocols').insert({
-    stain: stain,
-    surface: surface,
-    cache_key: cacheKey,
+    stain: stainKey,
+    surface: surfaceKey,
+    cache_key: `${stainKey}::${surfaceKey}`,
     card: card,
-    source: 'ai',
+    source: safetyResult.filtered ? 'ai-safety-filtered' : 'ai-generated',
     verified: false,
+    solve_count: 1,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   })
 }
 
@@ -186,30 +190,23 @@ export async function POST(req: Request) {
       }
 
       if (apiKey) {
-        if (stainImageBase64) tasks.push(identifyStain(stainImageBase64, apiKey).catch(() => null))
+        if (stainImageBase64) tasks.push(identifyStain(stainImageBase64, apiKey))
         else tasks.push(Promise.resolve(null))
 
-        if (labelImageBase64) tasks.push(readCareLabel(labelImageBase64, apiKey).catch(() => null))
+        if (labelImageBase64) tasks.push(readCareLabel(labelImageBase64, apiKey))
         else tasks.push(Promise.resolve(null))
       } else {
         tasks.push(Promise.resolve(null), Promise.resolve(null))
       }
 
-      const [stainResult, labelResult] = await Promise.allSettled(tasks).then(results =>
-        results.map(r => r.status === 'fulfilled' ? r.value : null)
-      )
+      const [stainResult, labelResult] = await Promise.all(tasks)
 
       if (stainHint) {
         stain = stainHint
         surface = surfaceHint
-      } else if (stainResult?.stain) {
-        stain = stainResult.stain
+      } else if (stainResult) {
+        stain = stainResult.stain || ''
         surface = surfaceHint || stainResult.surface || ''
-      } else {
-        // Vision didn't identify stain — use fabric description or generic fallback
-        const fabricHint = (formData.get('fabricDescription') as string) || ''
-        stain = fabricHint || 'unknown stain'
-        surface = surfaceHint || ''
       }
 
       if (labelResult && (labelResult.fiber || labelResult.careSymbols?.length)) {
