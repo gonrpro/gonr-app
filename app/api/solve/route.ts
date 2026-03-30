@@ -2,8 +2,68 @@
 import { NextResponse } from 'next/server'
 import { lookupProtocol } from '@/lib/protocols/lookup'
 import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
+import { createClient } from '@supabase/supabase-js'
+import { resolveTier } from '@/lib/auth/tier'
+import type { Tier } from '@/lib/types'
 
 const OPENAI_API = 'https://api.openai.com/v1'
+
+// ── Server-side solve gating ───────────────────────────────────
+const FREE_SOLVE_LIMIT = 3
+const TRIAL_DAYS = 7
+
+function getSupabaseAdmin() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+  )
+}
+
+async function checkAndIncrementSolve(email: string | null): Promise<{ allowed: boolean; reason?: string }> {
+  // Unauthenticated — allow through, client handles login prompt
+  if (!email) return { allowed: true }
+
+  const supabase = getSupabaseAdmin()
+  const user = await resolveTier(email)
+  const paidTiers: Tier[] = ['home', 'spotter', 'operator', 'founder']
+
+  // Paid tier — unlimited
+  if (paidTiers.includes(user.tier) && user.isActive) return { allowed: true }
+
+  // Free tier — enforce server-side trial
+  const { data: usage } = await supabase
+    .from('solve_usage')
+    .select('solve_count, trial_started_at')
+    .eq('email', email.toLowerCase())
+    .single()
+
+  const now = new Date()
+
+  if (!usage) {
+    // First solve — create record
+    await supabase.from('solve_usage').insert({
+      email: email.toLowerCase(),
+      solve_count: 1,
+      trial_started_at: now.toISOString(),
+      last_solve_at: now.toISOString(),
+    })
+    return { allowed: true }
+  }
+
+  const trialStart = new Date(usage.trial_started_at)
+  const daysSinceTrial = (now.getTime() - trialStart.getTime()) / (1000 * 60 * 60 * 24)
+
+  if (usage.solve_count >= FREE_SOLVE_LIMIT && daysSinceTrial > TRIAL_DAYS) {
+    return { allowed: false, reason: 'trial_expired' }
+  }
+
+  await supabase
+    .from('solve_usage')
+    .update({ solve_count: usage.solve_count + 1, last_solve_at: now.toISOString() })
+    .eq('email', email.toLowerCase())
+
+  return { allowed: true }
+}
 
 // ── Vision: identify stain from photo ──────────────────────────
 async function identifyStain(
@@ -260,6 +320,7 @@ export async function POST(req: Request) {
     let stain = ''
     let surface = ''
     let lang = 'en'
+    let email: string | null = null
     let fiberContext: { fiber: string; careSymbols: string[]; warnings: string[] } | undefined
     let fabricDescription = ''
     let garmentLocation = ''
@@ -274,6 +335,7 @@ export async function POST(req: Request) {
       const surfaceHint = (formData.get('surfaceHint') as string) || ''
       fabricDescription = (formData.get('fabricDescription') as string) || ''
       garmentLocation = (formData.get('garmentLocation') as string) || ''
+      email = (formData.get('email') as string) || null
       lang = (formData.get('lang') as string) || 'en'
 
       const apiKey = process.env.OPENAI_API_KEY
@@ -327,6 +389,16 @@ export async function POST(req: Request) {
       stain = body.stain || ''
       surface = body.surface || ''
       lang = body.lang || 'en'
+      email = body.email || null
+    }
+
+    // ── Solve gate ─────────────────────────────────────────────
+    const gate = await checkAndIncrementSolve(email)
+    if (!gate.allowed) {
+      return NextResponse.json(
+        { error: 'trial_expired', upgradeUrl: '/upgrade' },
+        { status: 403 },
+      )
     }
 
     if (!stain || typeof stain !== 'string') {

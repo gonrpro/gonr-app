@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback, useEffect, useRef } from 'react'
+import { useSearchParams, useRouter } from 'next/navigation'
 import ResultCard from '@/components/solve/ResultCard'
 import StainChips from '@/components/solve/StainChips'
 import SurfaceChips from '@/components/solve/SurfaceChips'
@@ -18,6 +19,9 @@ interface SolveResult {
 
 export default function SolvePage() {
   const { t, lang } = useLanguage()
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const [showUpgradeBanner, setShowUpgradeBanner] = useState(false)
   const [stainInput, setStainInput] = useState('')
   const [selectedStain, setSelectedStain] = useState('')
   const [selectedSurface, setSelectedSurface] = useState('')
@@ -39,6 +43,33 @@ export default function SolvePage() {
   const [careLabelFile, setCareLabelFile] = useState<File | null>(null)
   const [fabricDescription, setFabricDescription] = useState('')
   const [garmentLocation, setGarmentLocation] = useState('')
+
+  // ?upgraded=true — post-purchase redirect handler
+  useEffect(() => {
+    if (searchParams.get('upgraded') === 'true') {
+      setShowUpgradeBanner(true)
+      const url = new URL(window.location.href)
+      url.searchParams.delete('upgraded')
+      router.replace(url.pathname + url.search, { scroll: false })
+      // Refresh tier from server
+      const email = localStorage.getItem('gonr_user_email')
+      if (email) {
+        fetch('/api/auth/tier', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        })
+          .then(r => r.json())
+          .then(data => {
+            if (data.tier && data.tier !== 'free') {
+              localStorage.setItem('gonr_user_tier', data.tier)
+            }
+          })
+          .catch(() => {})
+      }
+      setTimeout(() => setShowUpgradeBanner(false), 6000)
+    }
+  }, [searchParams, router])
 
   useEffect(() => {
     // Initialize trial state
@@ -171,6 +202,10 @@ export default function SolvePage() {
 
       if (!res.ok) {
         const data = await res.json()
+        if (res.status === 403 && data.error === 'trial_expired') {
+          setShowPaywall(true)
+          return
+        }
         throw new Error(data.error || t('solveFailed'))
       }
 
@@ -248,6 +283,16 @@ export default function SolvePage() {
 
   return (
     <div className="space-y-4">
+
+      {/* ── Upgrade success banner ── */}
+      {showUpgradeBanner && (
+        <div
+          className="rounded-xl px-4 py-3 text-center text-sm font-semibold"
+          style={{ background: 'rgba(34,197,94,0.15)', color: '#22c55e', border: '1px solid rgba(34,197,94,0.3)' }}
+        >
+          Welcome to Spotter! You're all set. 🎉
+        </div>
+      )}
 
       {/* ── Hero Copy ── */}
       <div style={{ paddingTop: '12px', paddingBottom: '4px', textAlign: 'center' }}>
