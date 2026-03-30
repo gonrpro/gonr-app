@@ -268,12 +268,6 @@ export async function POST(req: Request) {
       })
     }
 
-    // ── Solve gate ─────────────────────────────────────────────
-    const gate = await checkAndIncrementSolve(email)
-    if (!gate.allowed) {
-      return NextResponse.json({ error: 'trial_expired', upgradeUrl: '/upgrade' }, { status: 403 })
-    }
-
     // ── Validate we have a stain ───────────────────────────────
     if (!ctx.stain) {
       if (ctx.fiber) {
