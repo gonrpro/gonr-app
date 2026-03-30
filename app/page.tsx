@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect, useRef } from 'react'
+import { useState, useCallback, useEffect, useRef, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import ResultCard from '@/components/solve/ResultCard'
 import StainChips from '@/components/solve/StainChips'
@@ -17,7 +17,7 @@ interface SolveResult {
   source: 'verified' | 'ai'
 }
 
-export default function SolvePage() {
+function SolvePageInner() {
   const { t, lang } = useLanguage()
   const searchParams = useSearchParams()
   const router = useRouter()
@@ -204,6 +204,10 @@ export default function SolvePage() {
         const data = await res.json()
         if (res.status === 403 && data.error === 'trial_expired') {
           setShowPaywall(true)
+          return
+        }
+        if (res.status === 422 && data.error === 'stain_not_identified') {
+          setError("Couldn't identify the stain from the photo. Try describing it in the text field below.")
           return
         }
         throw new Error(data.error || t('solveFailed'))
@@ -702,5 +706,13 @@ export default function SolvePage() {
         onDismiss={() => setShowPaywall(false)}
       />
     </div>
+  )
+}
+
+export default function SolvePage() {
+  return (
+    <Suspense fallback={null}>
+      <SolvePageInner />
+    </Suspense>
   )
 }

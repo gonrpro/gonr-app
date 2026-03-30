@@ -402,6 +402,14 @@ export async function POST(req: Request) {
     }
 
     if (!stain || typeof stain !== 'string') {
+      // If we have a care label but couldn't identify the stain from photo,
+      // return a specific error so the client can prompt for text input
+      if (fiberContext?.fiber) {
+        return NextResponse.json(
+          { error: 'stain_not_identified', fiberContext, message: 'Care label scanned. Please describe the stain.' },
+          { status: 422 }
+        )
+      }
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
     }
 
