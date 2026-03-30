@@ -204,7 +204,7 @@ function SolvePageInner() {
 
       if (!res.ok) {
         const data = await res.json()
-        if (res.status === 403 && data.error === 'trial_expired') {
+        if ((res.status === 402 || res.status === 403) && data.error === 'trial_expired') {
           setShowPaywall(true)
           return
         }

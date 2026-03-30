@@ -56,7 +56,8 @@ async function checkAndIncrementSolve(email: string | null): Promise<{ allowed: 
   const trialStart = new Date(usage.trial_started_at)
   const daysSinceTrial = (now.getTime() - trialStart.getTime()) / (1000 * 60 * 60 * 24)
 
-  if (usage.solve_count >= 3 && daysSinceTrial > 7) {
+  // Block if trial window expired (7 days) OR solve limit reached (3 solves)
+  if (daysSinceTrial > 7 || usage.solve_count >= 3) {
     return { allowed: false, reason: 'trial_expired' }
   }
 
