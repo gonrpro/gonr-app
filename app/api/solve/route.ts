@@ -159,7 +159,7 @@ Return ONLY valid JSON:
 
 // ── Queue AI cards for review ──────────────────────────────────
 async function queueForReview(card: any, ctx: SolveContext, safetyResult: any) {
-  const supabaseUrl = process.env.SUPABASE_URL
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY
   if (!supabaseUrl || !supabaseKey) return
   try {
@@ -187,7 +187,7 @@ async function logSolveHistory(params: {
   stain: string; surface: string; title: string
   source: string; confidence?: number; protocolId?: string
 }) {
-  const supabaseUrl = process.env.SUPABASE_URL
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY
   if (!supabaseUrl || !supabaseKey) return
   try {
@@ -278,6 +278,15 @@ export async function POST(req: Request) {
         )
       }
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
+    }
+
+    // ── Solve gate ─────────────────────────────────────────────
+    const gateResult = await checkAndIncrementSolve(email)
+    if (!gateResult.allowed) {
+      return NextResponse.json(
+        { error: 'trial_expired', reason: gateResult.reason },
+        { status: 402 }
+      )
     }
 
     // ── Library lookup ─────────────────────────────────────────
