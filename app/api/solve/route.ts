@@ -3,7 +3,6 @@ import { NextResponse } from 'next/server'
 import { lookupProtocol } from '@/lib/protocols/lookup'
 import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
 import { createClient } from '@supabase/supabase-js'
-import { resolveTier } from '@/lib/auth/tier'
 import { identifyStain, readCareLabel } from '@/lib/vision'
 import { buildSolveContext } from '@/lib/solve/context'
 import type { Tier } from '@/lib/types'
@@ -25,10 +24,16 @@ async function checkAndIncrementSolve(email: string | null): Promise<{ allowed: 
 
   try {
   const supabase = getSupabaseAdmin()
-  const user = await resolveTier(email)
-  const paidTiers: Tier[] = ['home', 'spotter', 'operator', 'founder']
 
-  if (paidTiers.includes(user.tier) && user.isActive) return { allowed: true }
+  // Check tier directly via admin client — avoids SSR cookie/UUID issues
+  const { data: sub } = await supabase
+    .from('subscriptions')
+    .select('tier, is_active')
+    .eq('email', email.toLowerCase())
+    .single()
+
+  const paidTiers: Tier[] = ['home', 'spotter', 'operator', 'founder']
+  if (sub && paidTiers.includes(sub.tier as Tier) && sub.is_active) return { allowed: true }
 
   const { data: usage } = await supabase
     .from('solve_usage')
