@@ -287,6 +287,9 @@ function SolvePageInner() {
     solveSubtext = solveStainLabel
   }
 
+  // Hint when care label scanned but no stain input yet
+  const showCareLabelHint = !!(careLabelFile && !hasSolveInput)
+
   return (
     <div className="space-y-4">
 
@@ -668,6 +671,13 @@ function SolvePageInner() {
           </span>
         )}
       </button>
+
+      {/* Care label scanned but no stain — prompt user */}
+      {showCareLabelHint && (
+        <div style={{ textAlign: 'center', fontSize: '13px', color: '#38bdf8', fontWeight: 500, padding: '4px 0' }}>
+          Care label scanned ✓ — now scan or describe the stain
+        </div>
+      )}
 
       {/* Trial days remaining badge — show last 3 days only */}
       {userTier === 'free' && daysRemaining <= 3 && daysRemaining > 0 && (
