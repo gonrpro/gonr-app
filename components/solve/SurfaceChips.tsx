@@ -39,6 +39,7 @@ export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible
   function handleChipClick(surface: string) {
     if (surface === 'Cotton') {
       setShowCottonMods(!showCottonMods)
+      onSurfaceSelect('cotton') // always set surface even if showing mods
     } else {
       setShowCottonMods(false)
       onSurfaceSelect(surface.toLowerCase())

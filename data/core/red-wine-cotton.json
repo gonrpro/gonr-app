@@ -1,194 +1,89 @@
 {
   "id": "red-wine-cotton",
   "title": "Red Wine on Cotton",
-  "stainType": "tannin",
-  "surface": "cotton-white",
-  "sector": "textile",
-  "meta": {
-    "stainCanonical": "red-wine",
-    "surfaceCanonical": "cotton",
-    "tier": "universal",
-    "riskLevel": "low",
-    "tags": [
-      "tannin",
-      "cellulose",
-      "strong-fiber",
-      "bleach-safe",
-      "hot-water-safe"
-    ],
-    "freePreview": true
-  },
-  "stainChemistry": "Red wine contains anthocyanin polyphenols (tannins)\u2014the pigments responsible for wine color. White cotton is pure cellulose, extremely tolerant of aggressive chemistry: enzymes, bleach, heat, strong alkali. Anthocyanins bond to cellulose through hydrogen bonding and van der Waals forces. The tannin color is resistant to water alone but vulnerable to oxidation and alkalinity. Fresh red wine can be removed with boiling water pour-through; older stains require oxidizer or bleach.",
-  "whyThisWorks": "Cold NSD (NSD) removes surface tannin while suspending pigment. Tannin spotter (acetic acid or specialized tannin remover) breaks hydrogen bonds in anthocyanin structure. H\u2082O\u2082 oxidizes remaining color into colorless compounds. White cotton's tolerance for heat and bleach makes red wine one of the easiest stains to eliminate completely.",
+  "stainFamily": "tannin",
+  "surface": "cotton",
+  "sector": "home",
+  "source": "verified",
+  "stainChemistry": "Red wine contains anthocyanin pigments — water-soluble tannins that bond to cotton cellulose fibers through hydrogen bonding. Cotton's porous fiber structure absorbs liquid quickly. The acidic pH (3–4) of wine enhances pigment-fiber bonding. Heat or agitation accelerates penetration and oxidation, shifting the stain from bright red to brown and making removal harder over time.",
+  "whyThisWorks": "Tannin-specific spotters break the hydrogen bonds between wine pigment and cotton cellulose. Cold water flushes the broken pigment out before it can re-bond. Oxidizing agents (H₂O₂) cleave the chromophore double bonds that give wine its color. Cotton tolerates this chemistry well — no fiber damage risk when using agents at appropriate concentrations.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cold water, blot immediately",
-      "technique": "Blot from back",
-      "equipment": "White cloth, spray bottle",
-      "dwellTime": "1 minute",
-      "instruction": "Immediately blot with cold water from the back. Press hard to absorb wine. Most fresh wine transfers to cloth in first 60 seconds. Flip cloth frequently and continue blotting. Cold water prevents tannin setting."
+      "agent": "Cold Water",
+      "technique": "Blotting",
+      "temperature": "Cold",
+      "dwellTime": "Immediate",
+      "instruction": "Blot immediately with a clean white cloth — do not rub. Work from the outer edge inward to prevent spreading. Flush the back of the fabric with cold water to push the stain out through the fiber rather than deeper in."
     },
     {
       "step": 2,
-      "side": "wet",
-      "agent": "NSD solution",
-      "technique": "Sponge work",
-      "equipment": "Sponge, white cloth",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Mix cold water with 1 teaspoon NSD . Sponge onto stain. NSD suspends anthocyanin pigment without setting it. Work gently with sponge. After 2-3 minutes, blot with white cloth. Stain should lighten noticeably."
+      "agent": "Liquid Dish Soap Solution",
+      "technique": "Dabbing",
+      "temperature": "Cold",
+      "dwellTime": "3-5 minutes",
+      "instruction": "Apply a small amount of neutral liquid dish soap directly to the stain. Work it in gently with your fingertip. Let it dwell 3–5 minutes, then blot with a clean damp cloth."
     },
     {
       "step": 3,
-      "side": "wet",
-      "agent": "Hot water pour-through (fresh stains only",
-      "technique": "Pour-through from back",
-      "equipment": "Kettle of boiling water, towel underneath",
-      "dwellTime": "1-2 pours",
-      "instruction": "For very fresh stains (within 30 minutes), hot water pour-through can be remarkably effective. Stretch fabric over a bowl or sink with towel underneath. Pour hot (not boiling) water through from the back. Heat helps break anthocyanin bonds on fresh stains. Do NOT use this for aged stains \u2014 heat can set older tannin permanently.",
-      "temperature": "Hot (not boiling) \u2014 fresh stains only"
+      "agent": "White Vinegar Solution",
+      "technique": "Dabbing",
+      "temperature": "Cold",
+      "dwellTime": "2-3 minutes",
+      "instruction": "Mix 1 tablespoon white vinegar with 1 cup cold water. Apply to the stain and let it dwell 2–3 minutes. The mild acid helps release tannin bonds from the cotton fiber. Blot thoroughly."
     },
     {
       "step": 4,
-      "side": "wet",
-      "agent": "Tannin spotter + cold water",
-      "technique": "Dropper application",
-      "equipment": "Dropper, white cloth",
-      "dwellTime": "2-3 minutes",
-      "instruction": "If wine color remains (orange-brown), apply diluted 28% Acetic Acid (diluted) (1 part vinegar to 1 part cold water). Acetic acid further disrupts hydrogen bonds in anthocyanin. Apply with dropper. After 2-3 minutes, blot. Continue blotting until no more color transfers."
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Dabbing",
+      "temperature": "Cold",
+      "dwellTime": "5-10 minutes",
+      "instruction": "For stubborn or dried stains, apply 3% hydrogen peroxide (drugstore variety) directly to the remaining stain. Let it dwell 5–10 minutes. The oxidizer breaks the chromophore bonds that give wine its color. Blot and rinse with cold water. Test on a hidden area first — check for colorfastness before applying to the stain."
     },
     {
       "step": 5,
-      "side": "wet",
-      "agent": "NSD flush",
-      "technique": "Flush and blot",
-      "equipment": "OxiClean powder, white cloth",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot \u2014 do not rub. All oxidizer and enzyme residue must be fully removed before drying."
-    },
-    {
-      "step": 6,
-      "side": "wet",
-      "agent": "Hot water wash with detergent",
-      "technique": "Machine wash or hand wash",
-      "equipment": "Hot water (60\u00b0C+), laundry detergent",
-      "dwellTime": "Normal wash cycle",
-      "instruction": "After spotting, wash in hot water with regular laundry detergent. Hot water removes residual tannin and any treatment chemicals. White cotton can tolerate boiling (95\u00b0C). Once washed and dried, any remaining faint color often fades with sunlight exposure."
+      "agent": "Cold Water Rinse",
+      "technique": "Flushing",
+      "temperature": "Cold",
+      "dwellTime": "Until clear",
+      "instruction": "Flush thoroughly with cold water to remove all cleaning agents. Check the stain before machine washing — heat from the dryer will permanently set any remaining pigment."
     }
   ],
   "homeSolutions": [
-    {
-      "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
-      "agent": "cool water"
-    },
-    {
-      "step": 2,
-      "instruction": "Dab the red wine stain immediately with cool water applied to a white cloth. Work from center outward. Speed is critical \u2014 alcohol in wine affects dyes.",
-      "agent": "cool water",
-      "safetyNote": "Red wine contains both tannins and dyes \u2014 remove stain quickly before alcohol sets dyes."
-    },
-    {
-      "step": 3,
-      "instruction": "Apply detergent/vinegar solution (1/4 tbsp mild laundry detergent + 2 oz white vinegar + 2 oz cool water) to the stain. Rub gently with the back of a spoon from center outward.",
-      "agent": "detergent/vinegar solution"
-    },
-    {
-      "step": 4,
-      "instruction": "Rinse thoroughly with cool water, working from center outward.",
-      "agent": "cool water"
-    },
-    {
-      "step": 5,
-      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize tannin and dye residue.",
-      "agent": "hydrogen peroxide 3% + ammonia",
-      "safetyNote": "Test on hidden area first \u2014 peroxide may lighten some dyes."
-    },
-    {
-      "step": 6,
-      "instruction": "Rinse thoroughly with cool water.",
-      "agent": "cool water"
-    },
-    {
-      "step": 7,
-      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center with white cloth.",
-      "agent": "white vinegar + cool water"
-    },
-    {
-      "step": 8,
-      "instruction": "If stain persists or if fabric is delicate, call a professional cleaner.",
-      "agent": "escalation"
-    }
+    "For a fresh red wine stain on cotton: blot immediately, then pour a small amount of club soda to help lift the pigment while it's still wet. Follow with cold water flush and dish soap. The faster you act, the better — wine sets into cotton within minutes.",
+    "For dried or set red wine: soak the stained area in a mixture of 1 tablespoon dish soap + 1 tablespoon white vinegar + 2 cups cold water for 30 minutes before treating. OxiClean or similar oxygen-based stain removers work well on set tannin stains in cotton — follow package instructions and check for colorfastness first."
   ],
   "materialWarnings": [
-    "Boiling water pour-through only for FRESH stains (within 30 min)",
-    "For aged wine stains, skip boiling water\u2014heat can set tannin deeper",
-    "Chlorine bleach on white cotton only\u2014don't use on colored fabrics"
+    "Never use hot water — heat permanently sets tannin stains into cotton fiber.",
+    "Never put in the dryer until the stain is fully removed — dryer heat locks the stain in permanently.",
+    "Never rub — rubbing spreads the stain and drives pigment deeper into the fabric.",
+    "Test hydrogen peroxide on a hidden seam first — white and light cotton is generally safe, but colored cotton may fade."
   ],
-  "escalation": "Red wine on white cotton rarely requires professional help. If stain persists after NSD + vinegar + OxiClean + bleach treatment, it may be a stubborn or very old stain\u2014professional dry cleaning with specialized tannin solvents might help, but home treatment is usually sufficient.",
   "products": {
-    "household": [
-      {
-        "name": "NSD",
-        "brand": "NSD",
-        "icon": "\ud83e\uddf4",
-        "amazonSearchQuery": "NSD",
-        "affiliateTag": "gonr08-20",
-        "note": "NSD for initial tannin suspension. 1 tsp per cup cold water."
-      },
-      {
-        "name": "28% Acetic Acid (diluted)",
-        "brand": "Standard",
-        "icon": "\ud83c\udf76",
-        "amazonSearchQuery": "28% Acetic Acid (diluted) cleaning",
-        "affiliateTag": "gonr08-20",
-        "note": "Tannin spotter. Dilute 1:1 with cold water. 2-3 minutes."
-      },
-      {
-        "name": "OxiClean",
-        "brand": "OxiClean",
-        "icon": "\u2728",
-        "amazonSearchQuery": "OxiClean powder",
-        "affiliateTag": "gonr08-20",
-        "note": "Oxygen bleach. 1 scoop per cup cold water. 15-30 min soak."
-      }
-    ],
     "professional": [
-      {
-        "name": "Tannin Spotter (Professional)",
-        "brand": "Chemspec",
-        "icon": "\ud83e\uddea",
-        "amazonSearchQuery": "Chemspec tannin spotter",
-        "affiliateTag": "gonr08-20",
-        "note": "Professional-grade tannin remover for set stains."
-      }
+      {"name": "Tannin (acidic tannin spotter)", "use": "Primary spotter for wine/tannin stains", "note": "Apply and dwell 5–10 minutes before flushing"},
+      {"name": "H₂O₂ 6%", "use": "Oxidizer for stubborn or set stains", "note": "Professional concentration — test first, do not leave on colored cotton more than 5 minutes"}
+    ],
+    "consumer": [
+      {"name": "OxiClean Versatile Stain Remover", "use": "Soak for set stains", "note": "Follow package directions — effective on dried tannin in cotton"},
+      {"name": "Wine Away Red Wine Stain Remover", "use": "Fresh stains", "note": "Apply immediately while stain is wet for best results"},
+      {"name": "Carbona Stain Devils #6 (Tannin)", "use": "Targeted tannin treatment", "note": "Good for dried stains"}
     ]
   },
-  "customerExplanation": "Red wine on white cotton is one of the easiest stains because cotton tolerates aggressive treatment. Fresh wine responds to boiling water; older wine needs vinegar, then oxygen bleach. We can even use chlorine bleach on white cotton if needed. Most cases resolve completely.",
-  "commonMistakes": [
-    "Using hot water on aged stains\u2014sets tannin deeper instead of removing it",
-    "Skipping NSD and jumping to bleach\u2014NSD removes much of the stain without chemicals",
-    "Not doing boiling water pour-through for fresh stains\u2014this is remarkably effective and free"
-  ],
-  "scienceNote": "Anthocyanins are polyphenolic pigments that absorb light in the red-blue range. They bond to cellulose through hydrogen bonds and van der Waals forces. Heat breaks hydrogen bonds (which is why hot water removes fresh wine), and oxidation breaks the conjugated double-bond system in anthocyanins (which is why bleach and oxygen bleach remove color). This is why we use cold NSD first (for mechanical removal), then heat or oxidation (for chemical removal). White cotton's cellulose structure is unharmed by any of these approaches.",
-  "callPro": "Rarely needed on white cotton. If stain persists after full protocol, professional dry cleaning with tannin-specific solvents is possible but not usually necessary.",
-  "components": [
-    "detergent",
-    "acid-spotter",
-    "oxidizer"
-  ],
-  "component_order": [
-    "detergent",
-    "acid-spotter",
-    "oxidizer"
-  ],
-  "difficulty": 2,
-  "difficulty_factors": [
-    "responsive-fiber",
-    "easy-boiling-water-option"
-  ],
-  "solventNote": "Professional: Soak in cold NSD (Mulsolite, 5-10 min). Rinse. Tannin spotter (acetic acid or professional tannin remover, 5-10 min). Rinse. OxiClean or Clorox 2 soak (15-30 min). For white only: dilute chlorine bleach (NaOCl 0.5%, 1-2 min max). Hot water wash with detergent. VDS post-treatment if needed.",
-  "version": "5.0",
-  "authored": "2026-03-22"
+  "escalation": {
+    "when": "If the stain survives cold water, dish soap, vinegar, and hydrogen peroxide, the tannins have cross-linked into the cotton fiber. Consider professional cleaning.",
+    "whatToTell": "Red wine stain on cotton, treated with cold water and dish soap at home. May have been partially set by heat or time.",
+    "specialistType": "dry cleaner or textile care specialist"
+  },
+  "difficulty": 4,
+  "timeEstimate": "10–20 min",
+  "lastValidated": "2026-03-30",
+  "meta": {
+    "stainCanonical": "red wine",
+    "surfaceCanonical": "cotton",
+    "riskLevel": "low",
+    "tags": ["cold-water", "no-heat"],
+    "tier": "verified"
+  }
 }
