@@ -102,6 +102,12 @@ async function generateAIProtocol(ctx: SolveContext): Promise<any> {
 
 Given a complete stain brief, produce a precise JSON protocol card. Every recommendation must be safe for the specific fiber and respect all care label restrictions.
 
+IMPORTANT RULES:
+- Never recommend "distilled water" — use "cold water" instead. Home users don't have distilled water.
+- Agent names must be in Title Case (e.g. "Cold Water", "Neutral Dish Soap", "White Vinegar Solution").
+- Step instructions must be complete sentences with proper capitalization and punctuation.
+- Keep steps concise and direct — one action per step.
+
 Return ONLY valid JSON:
 {
   "id": "<stain-slug>-<surface-slug>",
