@@ -119,6 +119,7 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
           riskLevel={(card as any).meta?.riskLevel}
           difficulty={card.difficulty}
           tags={(card as any).meta?.tags}
+          source={(card as any).source || (card as any).meta?.source}
         />
       </div>
 

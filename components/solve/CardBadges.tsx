@@ -6,9 +6,10 @@ interface CardBadgesProps {
   riskLevel?: string
   difficulty?: number
   tags?: string[]
+  source?: string
 }
 
-export default function CardBadges({ stainType, riskLevel, difficulty, tags }: CardBadgesProps) {
+export default function CardBadges({ stainType, riskLevel, difficulty, tags, source }: CardBadgesProps) {
   const { t } = useLanguage()
 
   // Badge config
@@ -88,13 +89,15 @@ export default function CardBadges({ stainType, riskLevel, difficulty, tags }: C
     )
   }
 
-  // 4. Eisen Method Badge — always shown
-  const eisenColors = { bg: 'rgba(180,150,50,0.08)', color: '#a87d20', border: 'rgba(180,150,50,0.25)' }
-  badges.push(
-    <span key="eisen" style={pillStyle(eisenColors)}>
-      {t('eisenMethod')}
-    </span>
-  )
+  // 4. Eisen Method Badge — only on verified Eisen-sourced cards
+  if (source === 'eisen-method') {
+    const eisenColors = { bg: 'rgba(180,150,50,0.08)', color: '#a87d20', border: 'rgba(180,150,50,0.25)' }
+    badges.push(
+      <span key="eisen" style={pillStyle(eisenColors)}>
+        {t('eisenMethod')}
+      </span>
+    )
+  }
 
   // 5. Key Tag Badges — max 2, only allowed tags
   if (tags && tags.length > 0) {
