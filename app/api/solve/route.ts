@@ -28,12 +28,12 @@ async function checkAndIncrementSolve(email: string | null): Promise<{ allowed: 
   // Check tier directly via admin client — avoids SSR cookie/UUID issues
   const { data: sub } = await supabase
     .from('subscriptions')
-    .select('tier, is_active')
+    .select('tier, status')
     .eq('email', email.toLowerCase())
     .single()
 
   const paidTiers: Tier[] = ['home', 'spotter', 'operator', 'founder']
-  if (sub && paidTiers.includes(sub.tier as Tier) && sub.is_active) return { allowed: true }
+  if (sub && paidTiers.includes(sub.tier as Tier) && sub.status === 'active') return { allowed: true }
 
   const { data: usage } = await supabase
     .from('solve_usage')
