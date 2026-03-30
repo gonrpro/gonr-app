@@ -23,6 +23,7 @@ function getSupabaseAdmin() {
 async function checkAndIncrementSolve(email: string | null): Promise<{ allowed: boolean; reason?: string }> {
   if (!email) return { allowed: true }
 
+  try {
   const supabase = getSupabaseAdmin()
   const user = await resolveTier(email)
   const paidTiers: Tier[] = ['home', 'spotter', 'operator', 'founder']
@@ -60,6 +61,10 @@ async function checkAndIncrementSolve(email: string | null): Promise<{ allowed: 
     .eq('email', email.toLowerCase())
 
   return { allowed: true }
+  } catch (err) {
+    console.warn('[SolveGate] Error — allowing through:', err)
+    return { allowed: true }
+  }
 }
 
 // ── Fiber modifier for library hits ───────────────────────────

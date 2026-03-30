@@ -179,6 +179,8 @@ function SolvePageInner() {
         const formData = new FormData()
         formData.append('image', capturedPhoto)
         formData.append('lang', lang)
+        const userEmail = localStorage.getItem('gonr_user_email')
+        if (userEmail) formData.append('email', userEmail)
         if (careLabelFile) formData.append('careLabel', careLabelFile)
         if (fabricDescription.trim()) formData.append('fabricDescription', fabricDescription.trim())
         if (garmentLocation.trim()) formData.append('garmentLocation', garmentLocation.trim())
