@@ -169,13 +169,17 @@ async function loadCoreCards(): Promise<void> {
       }
 
       const key = `${stainCanonical}+${surfaceCanonical}`
-      // Also index with dash separator for flexible lookup
       const dashKey = `${stainCanonical}-${surfaceCanonical}`
+      // Also index with slugified keys so lookup (which uses toSlug) always hits
+      const slugKey = `${toSlug(stainCanonical)}+${toSlug(surfaceCanonical)}`
+      const slugDashKey = `${toSlug(stainCanonical)}-${toSlug(surfaceCanonical)}`
 
       if (!seen.has(key)) {
         seen.add(key)
         coreIndex.set(key, card)
         coreIndex.set(dashKey, card)
+        coreIndex.set(slugKey, card)
+        coreIndex.set(slugDashKey, card)
         allCards.push(card)
       }
     } catch {
