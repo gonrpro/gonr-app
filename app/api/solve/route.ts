@@ -274,16 +274,6 @@ export async function POST(req: Request) {
       })
     }
 
-    // ── Solve gate ─────────────────────────────────────────────
-    try {
-      const gate = await checkAndIncrementSolve(email)
-      if (!gate.allowed) {
-        return NextResponse.json({ error: 'trial_expired', upgradeUrl: '/upgrade' }, { status: 403 })
-      }
-    } catch (gateErr) {
-      console.warn('[SolveGate] Gate failed, allowing through:', gateErr)
-    }
-
     // ── Validate we have a stain ───────────────────────────────
     if (!ctx.stain) {
       if (ctx.fiber) {
@@ -296,7 +286,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
     }
 
-    // ── Solve gate ─────────────────────────────────────────────
+    // ── Solve gate (single call — after stain is confirmed) ────
+    // NOTE: Only gate after stain is validated so failed requests don't consume trial credits.
     const gateResult = await checkAndIncrementSolve(email)
     if (!gateResult.allowed) {
       return NextResponse.json(
