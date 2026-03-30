@@ -29,6 +29,9 @@ export default function AuthCallbackPage() {
       }
 
       if (data.session) {
+        if (data.session.user?.email) {
+          localStorage.setItem('gonr_user_email', data.session.user.email)
+        }
         router.replace('/profile')
         return
       }
@@ -55,6 +58,11 @@ export default function AuthCallbackPage() {
           return
         }
 
+        // Store email after successful OTP/code exchange
+        const { data: sessionData } = await supabase.auth.getSession()
+        if (sessionData.session?.user?.email) {
+          localStorage.setItem('gonr_user_email', sessionData.session.user.email)
+        }
         router.replace('/profile')
       } catch (err: any) {
         console.error('Auth callback error:', err)
