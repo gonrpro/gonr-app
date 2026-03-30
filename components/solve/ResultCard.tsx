@@ -48,7 +48,7 @@ function Collapsible({ title, icon, children, defaultOpen = false }: {
 
 interface ResultCardProps {
   card: ProtocolCard
-  source: 'verified' | 'ai'
+  source: 'verified' | 'ai' | 'core' | 'ai-cached'
   lang?: string
 }
 
@@ -105,9 +105,9 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
             {card.title}
           </h2>
           <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold flex-shrink-0 mt-0.5
-            ${source === 'verified' ? 'bg-green-500/15 text-green-600' : 'bg-purple-500/15 text-purple-500'}`}
+            ${['verified','core'].includes(source) ? 'bg-green-500/15 text-green-600' : 'bg-purple-500/15 text-purple-500'}`}
           >
-            {source === 'verified' ? '✓ Verified' : '🤖 AI'}
+            {['verified','core'].includes(source) ? '✓ Verified' : '🤖 AI'}
           </span>
         </div>
       </div>
