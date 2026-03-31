@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
-import { createHmac } from 'crypto'
+import { createHmac, timingSafeEqual } from 'crypto'
 
 // Use service-role client for webhook writes (bypasses RLS)
 function getSupabaseAdmin() {
@@ -13,9 +13,16 @@ function getSupabaseAdmin() {
 }
 
 function verifySignature(rawBody: string, signature: string, secret: string): boolean {
-  const hmac = createHmac('sha256', secret)
-  const digest = hmac.update(rawBody).digest('hex')
-  return signature === digest
+  try {
+    const hmac = createHmac('sha256', secret)
+    const digest = hmac.update(rawBody).digest('hex')
+    const sigBuf = Buffer.from(signature, 'hex')
+    const digestBuf = Buffer.from(digest, 'hex')
+    if (sigBuf.length !== digestBuf.length) return false
+    return timingSafeEqual(sigBuf, digestBuf)
+  } catch {
+    return false
+  }
 }
 
 // Map LemonSqueezy product/variant to GONR tier
