@@ -10,6 +10,30 @@ import type { SolveContext } from '@/lib/solve/context'
 
 const OPENAI_API = 'https://api.openai.com/v1'
 
+// ── IP-based rate limiting ────────────────────────────────────
+const rateLimitMap = new Map<string, number[]>()
+const RATE_LIMIT_WINDOW_MS = 60 * 1000 // 1 minute
+const RATE_LIMIT_MAX = 60 // 60 requests per minute per IP
+const ANON_SOLVE_WINDOW_MS = 60 * 60 * 1000 // 1 hour
+const ANON_SOLVE_MAX = 1 // 1 solve per IP per hour for unauthenticated users
+
+function getClientIp(req: Request): string {
+  const forwarded = req.headers.get('x-forwarded-for')
+  if (forwarded) return forwarded.split(',')[0].trim()
+  return req.headers.get('x-real-ip') || '127.0.0.1'
+}
+
+function isRateLimited(ip: string, windowMs: number, max: number): boolean {
+  const now = Date.now()
+  const timestamps = rateLimitMap.get(ip) || []
+  const recent = timestamps.filter(t => now - t < windowMs)
+  rateLimitMap.set(ip, recent)
+  if (recent.length >= max) return true
+  recent.push(now)
+  rateLimitMap.set(ip, recent)
+  return false
+}
+
 // ── Supabase admin client ──────────────────────────────────────
 function getSupabaseAdmin() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -19,8 +43,20 @@ function getSupabaseAdmin() {
 }
 
 // ── Server-side solve gating ───────────────────────────────────
-async function checkAndIncrementSolve(email: string | null): Promise<{ allowed: boolean; reason?: string }> {
-  if (!email) return { allowed: true }
+const FOUNDER_EMAIL = 'tyler@gonr.pro'
+
+async function checkAndIncrementSolve(email: string | null, clientIp: string): Promise<{ allowed: boolean; reason?: string }> {
+  // Founder always passes
+  if (email && email.toLowerCase() === FOUNDER_EMAIL) return { allowed: true }
+
+  if (!email) {
+    // Cap unauthenticated users: 1 solve per IP per hour
+    const anonKey = `anon:${clientIp}`
+    if (isRateLimited(anonKey, ANON_SOLVE_WINDOW_MS, ANON_SOLVE_MAX)) {
+      return { allowed: false, reason: 'anon_limit' }
+    }
+    return { allowed: true }
+  }
 
   try {
   const supabase = getSupabaseAdmin()
@@ -287,9 +323,15 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
     }
 
+    // ── Rate limit (per-IP, all users) ──────────────────────────
+    const clientIp = getClientIp(req)
+    if (isRateLimited(clientIp, RATE_LIMIT_WINDOW_MS, RATE_LIMIT_MAX)) {
+      return NextResponse.json({ error: 'Too many requests' }, { status: 429 })
+    }
+
     // ── Solve gate (single call — after stain is confirmed) ────
     // NOTE: Only gate after stain is validated so failed requests don't consume trial credits.
-    const gateResult = await checkAndIncrementSolve(email)
+    const gateResult = await checkAndIncrementSolve(email, clientIp)
     if (!gateResult.allowed) {
       return NextResponse.json(
         { error: 'trial_expired', reason: gateResult.reason },

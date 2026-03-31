@@ -22,7 +22,7 @@ export async function resolveTier(email: string): Promise<User> {
     const supabase = await createServerSupabaseClient()
     const { data, error } = await supabase
       .from('subscriptions')
-      .select('id, email, tier, is_active')
+      .select('id, email, tier, status')
       .eq('email', email.toLowerCase())
       .single()
 
@@ -41,7 +41,7 @@ export async function resolveTier(email: string): Promise<User> {
       email: data.email,
       tier: (data.tier as Tier) || 'free',
       isFounder: false,
-      isActive: data.is_active ?? true,
+      isActive: data.status === 'active',
     }
   } catch {
     return {
