@@ -195,10 +195,11 @@ function SolvePageInner() {
       } else {
         // Text-based solve
         const s = selectedStain || stainInput.trim()
+        const textEmail = localStorage.getItem('gonr_user_email') || undefined
         res = await fetch('/api/solve', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ stain: s, surface: selectedSurface, lang }),
+          body: JSON.stringify({ stain: s, surface: selectedSurface, lang, email: textEmail }),
         })
       }
 
