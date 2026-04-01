@@ -319,12 +319,12 @@ export default function GarmentAnalysis() {
                   onClick={() => { setHandoffTone(tone); setCopied(false) }}
                   className={`flex-1 py-2 text-[11px] font-mono font-bold capitalize transition-all
                     ${handoffTone === tone
-                      ? 'bg-amber-500/15 text-amber-400'
+                      ? tone === 'release' ? 'bg-red-500/15 text-red-400' : 'bg-amber-500/15 text-amber-400'
                       : 'text-gray-500 hover:text-gray-300'
                     }`}
                   style={handoffTone !== tone ? { background: 'var(--card-bg)' } : {}}
                 >
-                  {tone}
+                  {tone === 'release' ? 'Decline Note' : tone}
                 </button>
               ))}
             </div>

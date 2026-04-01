@@ -28,7 +28,7 @@ export default function CustomerHandoff({ handoff }: CustomerHandoffProps) {
 
   const canTreatConfig = {
     yes: { icon: '✅', label: t('canTreatYes'), color: '#22c55e', bg: 'rgba(34,197,94,0.08)', border: 'rgba(34,197,94,0.25)' },
-    likely: { icon: '⚠️', label: t('canTreatLikely'), color: '#f59e0b', bg: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.25)' },
+    likely: { icon: '⚠️', label: t('canTreatLikely'), color: '#d97706', bg: 'rgba(245,158,11,0.10)', border: 'rgba(245,158,11,0.30)' },
     'high-risk': { icon: '🔴', label: t('canTreatHighRisk'), color: '#ef4444', bg: 'rgba(239,68,68,0.08)', border: 'rgba(239,68,68,0.25)' },
   }
 
@@ -85,7 +85,7 @@ export default function CustomerHandoff({ handoff }: CustomerHandoffProps) {
           <ul className="space-y-1">
             {handoff.watchFor.map((tip, i) => (
               <li key={i} className="text-sm flex gap-2 items-start" style={{ color: 'var(--text-secondary)' }}>
-                <span style={{ color: '#f59e0b', flexShrink: 0 }}>→</span>
+                <span style={{ color: 'var(--text-secondary)', flexShrink: 0 }}>→</span>
                 <span>{tip}</span>
               </li>
             ))}
