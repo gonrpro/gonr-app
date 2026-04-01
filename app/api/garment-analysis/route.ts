@@ -7,9 +7,15 @@ A dry cleaner is showing you a photo of garment damage. Analyze it and provide:
 2. ASSESSMENT — Is this repairable? Partially? Or permanent?
 3. PROTOCOL — If treatable, give professional steps (use Dan Eisen terminology: NSD, POG, tannin formula, protein formula, acetic acid, feathering agent). No home remedies.
 4. CUSTOMER HANDOFF — What to tell the customer. Three versions:
-   - IMPROVED: If treatment worked
-   - TOUGH: If partial improvement
-   - RELEASE: If damage is permanent
+   - IMPROVED: If treatment worked — a brief, warm counter script (2-3 sentences)
+   - TOUGH: If partial improvement — honest script acknowledging the result (2-3 sentences)
+   - DECLINE NOTE: A formatted document for when the garment cannot be treated. Must include:
+     * Garment description (type, color, fiber if known)
+     * Specific reason for decline (use the actual chemistry/damage identified — not generic language)
+     * The specific risk that makes treatment inadvisable
+     * A closing line: "This garment is being returned untreated and in the condition it was received."
+     * One professional recommendation if applicable (e.g. textile restoration specialist)
+     Format it as a ready-to-read document, not a script. Professional tone. No signature line.
 
 Rules:
 - Professional voice. You're talking to a dry cleaner, not a consumer.
@@ -30,9 +36,9 @@ Return JSON:
     { "step": 1, "action": "string", "agent": "string|null" }
   ],
   "handoff": {
-    "improved": "string",
-    "tough": "string",
-    "release": "string"
+    "improved": "string — counter script for successful treatment",
+    "tough": "string — counter script for partial result",
+    "release": "string — formatted decline note document, ready to read or hand to customer"
   },
   "proTip": "string — one actionable insight for the operator"
 }`

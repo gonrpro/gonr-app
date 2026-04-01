@@ -328,19 +328,34 @@ export default function GarmentAnalysis() {
                 </button>
               ))}
             </div>
-            <div className="mt-3 rounded-lg p-3 text-sm leading-relaxed border border-white/10"
-              style={{ background: 'var(--card-bg)', color: 'var(--text-secondary)' }}>
-              {result.handoff[handoffTone]}
-            </div>
+            {handoffTone === 'release' ? (
+              <div className="mt-3 rounded-lg border border-red-500/20"
+                style={{ background: 'rgba(239,68,68,0.04)' }}>
+                <div className="px-4 pt-3 pb-1 border-b border-red-500/15">
+                  <p className="text-[10px] font-mono font-bold tracking-wider text-red-400">DECLINE NOTICE</p>
+                </div>
+                <div className="px-4 py-3 text-sm leading-relaxed whitespace-pre-line"
+                  style={{ color: 'var(--text-secondary)' }}>
+                  {result.handoff[handoffTone]}
+                </div>
+              </div>
+            ) : (
+              <div className="mt-3 rounded-lg p-3 text-sm leading-relaxed border border-white/10"
+                style={{ background: 'var(--card-bg)', color: 'var(--text-secondary)' }}>
+                {result.handoff[handoffTone]}
+              </div>
+            )}
             <button
               onClick={copyHandoff}
               className={`mt-3 w-full py-2.5 rounded-lg text-xs font-mono font-bold transition-all border
                 ${copied
                   ? 'bg-green-500/15 text-green-400 border-green-500/30'
-                  : 'bg-amber-500/10 text-amber-400 border-amber-500/30 hover:bg-amber-500/20'
+                  : handoffTone === 'release'
+                    ? 'bg-red-500/10 text-red-400 border-red-500/30 hover:bg-red-500/20'
+                    : 'bg-amber-500/10 text-amber-400 border-amber-500/30 hover:bg-amber-500/20'
                 }`}
             >
-              {copied ? 'COPIED' : 'COPY TO CLIPBOARD'}
+              {copied ? 'COPIED' : handoffTone === 'release' ? 'COPY DECLINE NOTE' : 'COPY TO CLIPBOARD'}
             </button>
           </div>
         </div>
