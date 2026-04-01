@@ -62,18 +62,20 @@ Return ONLY valid JSON:
 }`
 
   try {
-    const res = await fetch(`${OPENAI_API}/responses`, {
+    const res = await fetch(`${OPENAI_API}/chat/completions`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: 'gpt-5.4',
-        input: [{
+        model: 'gpt-4.1-mini',
+        messages: [{
           role: 'user',
           content: [
-            { type: 'input_text', text: prompt },
-            { type: 'input_image', image_url: `data:image/jpeg;base64,${imageBase64}`, detail: 'high' },
+            { type: 'text', text: prompt },
+            { type: 'image_url', image_url: { url: `data:image/jpeg;base64,${imageBase64}`, detail: 'high' } },
           ],
         }],
+        max_tokens: 500,
+        temperature: 0.2,
       }),
     })
 
@@ -83,7 +85,7 @@ Return ONLY valid JSON:
     }
 
     const data = await res.json()
-    const raw = (data.output_text || data.output?.[0]?.content?.[0]?.text || '{}').trim()
+    const raw = (data.choices?.[0]?.message?.content || '{}').trim()
     const parsed = JSON.parse(raw.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim())
 
     if (parsed.confidence === 'low') {
@@ -123,18 +125,20 @@ Return ONLY valid JSON:
 }`
 
   try {
-    const res = await fetch(`${OPENAI_API}/responses`, {
+    const res = await fetch(`${OPENAI_API}/chat/completions`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: 'gpt-5.4',
-        input: [{
+        model: 'gpt-4.1-mini',
+        messages: [{
           role: 'user',
           content: [
-            { type: 'input_text', text: prompt },
-            { type: 'input_image', image_url: `data:image/jpeg;base64,${imageBase64}`, detail: 'high' },
+            { type: 'text', text: prompt },
+            { type: 'image_url', image_url: { url: `data:image/jpeg;base64,${imageBase64}`, detail: 'high' } },
           ],
         }],
+        max_tokens: 500,
+        temperature: 0.1,
       }),
     })
 
@@ -144,7 +148,7 @@ Return ONLY valid JSON:
     }
 
     const data = await res.json()
-    const raw = (data.output_text || data.output?.[0]?.content?.[0]?.text || '{}').trim()
+    const raw = (data.choices?.[0]?.message?.content || '{}').trim()
     const parsed = JSON.parse(raw.replace(/```json?\n?/g, '').replace(/```\n?/g, '').trim())
 
     return {
