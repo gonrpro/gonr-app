@@ -5,7 +5,6 @@ import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
 import { createClient } from '@supabase/supabase-js'
 import { identifyStain, readCareLabel } from '@/lib/vision'
 import { buildSolveContext } from '@/lib/solve/context'
-import type { Tier } from '@/lib/types'
 import type { SolveContext } from '@/lib/solve/context'
 
 const OPENAI_API = 'https://api.openai.com/v1'
@@ -43,11 +42,11 @@ function getSupabaseAdmin() {
 }
 
 // ── Server-side solve gating ───────────────────────────────────
-const FOUNDER_EMAIL = 'tyler@gonr.pro'
+const FOUNDER_PATTERNS = ['gonr', 'nexshift', 'tyler']
 
 async function checkAndIncrementSolve(email: string | null, clientIp: string): Promise<{ allowed: boolean; reason?: string }> {
-  // Founder always passes
-  if (email && email.toLowerCase() === FOUNDER_EMAIL) return { allowed: true }
+  // Founder bypass: email contains any founder pattern
+  if (email && FOUNDER_PATTERNS.some(p => email.toLowerCase().includes(p))) return { allowed: true }
 
   if (!email) {
     // Cap unauthenticated users: 1 solve per IP per hour
@@ -61,15 +60,15 @@ async function checkAndIncrementSolve(email: string | null, clientIp: string): P
   try {
   const supabase = getSupabaseAdmin()
 
-  // Check tier directly via admin client — avoids SSR cookie/UUID issues
-  const { data: sub } = await supabase
-    .from('subscriptions')
-    .select('tier, status')
+  // Check profile status — profiles.status is the source of truth
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('status')
     .eq('email', email.toLowerCase())
     .single()
 
-  const paidTiers: Tier[] = ['home', 'spotter', 'operator', 'founder']
-  if (sub && paidTiers.includes(sub.tier as Tier) && sub.status === 'active') return { allowed: true }
+  const paidStatuses = ['active', 'trialing_paid']
+  if (profile && paidStatuses.includes(profile.status)) return { allowed: true }
 
   const { data: usage } = await supabase
     .from('solve_usage')
@@ -183,7 +182,7 @@ Return ONLY valid JSON:
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
     body: JSON.stringify({
-      model: 'gpt-4.1-mini',
+      model: 'gpt-5.4-mini',
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: ctx.brief },
@@ -345,7 +344,7 @@ export async function POST(req: Request) {
       applyFiberModifications(result.card, ctx)
       if (ctx.fiber) (result.card as any)._fiberContext = { fiber: ctx.fiber, careSymbols: ctx.careSymbols, warnings: ctx.labelWarnings }
       logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: result.card.title, source: 'library', confidence: result.confidence }).catch(() => {})
-      return NextResponse.json(result)
+      return NextResponse.json({ ...result, stainType: ctx.stain })
     }
 
     // ── AI fallback ────────────────────────────────────────────
@@ -359,7 +358,7 @@ export async function POST(req: Request) {
         console.error(`[SafetyFilter] BLOCKED: ${safetyResult.violations.map((v: any) => v.rule).join(', ')}`)
         return NextResponse.json({
           card: { ...SAFE_FALLBACK, surface: ctx.surface },
-          tier: 4, confidence: 0, source: 'ai', _safetyBlocked: true,
+          tier: 4, confidence: 0, source: 'ai', stainType: ctx.stain, _safetyBlocked: true,
         })
       }
 
@@ -372,7 +371,7 @@ export async function POST(req: Request) {
       queueForReview(safeCard, ctx, safetyResult).catch(() => {})
       logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: safeCard.title || ctx.stain, source: 'ai', confidence: 0.5 }).catch(() => {})
 
-      return NextResponse.json({ card: safeCard, tier: 4, confidence: 0.5, source: 'ai' })
+      return NextResponse.json({ card: safeCard, tier: 4, confidence: 0.5, source: 'ai', stainType: ctx.stain })
     } catch (err) {
       console.error('AI fallback failed:', err)
       return NextResponse.json({ error: 'No protocol found and AI generation unavailable' }, { status: 404 })
