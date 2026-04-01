@@ -148,7 +148,7 @@ Return ONLY valid JSON:
 {
   "id": "<stain-slug>-<surface-slug>",
   "title": "<descriptive title>",
-  "stainFamily": "<protein|tannin|oil-grease|dye|oxidizable|combination|particulate|wax-gum|bleach-damage|adhesive|pigment|unknown>",
+  "stainFamily": "<protein|tannin|oil-grease|dye|oxidizable|combination|particulate|wax-gum|bleach-damage|adhesive|pigment|unknown> — IMPORTANT: classify correctly. Examples: wine/coffee/tea/beer = tannin; blood/egg/dairy/sweat = protein; oil/grease/butter = oil-grease; ink/dye transfer = dye. Only use unknown if truly unclassifiable.",
   "surface": "<surface>",
   "source": "ai-generated",
   "stainChemistry": "<1-2 sentences on the chemistry of this stain on this surface>",
