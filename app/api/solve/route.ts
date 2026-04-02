@@ -138,11 +138,53 @@ async function generateAIProtocol(ctx: SolveContext): Promise<any> {
 
 Given a complete stain brief, produce a precise JSON protocol card. Every recommendation must be safe for the specific fiber and respect all care label restrictions.
 
-IMPORTANT RULES:
+## EISEN METHODOLOGY (Non-Negotiable)
+
+SEQUENCING — Follow the pH-oscillation cycle:
+1. Cool water (dilute/loosen) → 2. Mild detergent + water (emulsify) → 3. Vinegar + detergent (acid phase for tannin) → 4. Water rinse → 5. Ammonia + detergent (alkali phase for protein) → 6. Water rinse → 7. Vinegar (neutralize ammonia — MANDATORY to prevent yellowing) → 8. Water rinse → 9. Hydrogen peroxide (oxidative bleaching) → 10. Ammonia immediately after peroxide (accelerates bleaching) → 11. Wait 3 min → 12. Water rinse → 13. Vinegar (neutralize) → 14. Water rinse.
+Skip phases that don't apply to the stain type, but NEVER skip vinegar after ammonia.
+
+COMBINATION STAINS (tannin + protein, e.g. coffee with milk, chocolate, gravy):
+- ALWAYS treat tannin FIRST with acid (vinegar). Complete all acid rinses.
+- THEN treat protein with ammonia. Reversing this order PERMANENTLY SETS the tannin.
+
+CRITICAL DON'Ts:
+- NEVER use ammonia/alkali directly on tannin stains (coffee, tea, wine, beer, juice) — sets them permanently
+- NEVER use alcohol on protein stains (blood, milk, egg, sweat) — denatures and sets protein
+- NEVER apply heat above 120°F during spotting — heat sets most stains
+- NEVER use chlorine bleach on wool, silk, or protein fibers
+- NEVER use enzymes on silk or wool (enzymes digest protein fibers)
+- NEVER use acetone or amyl acetate on acetate fabric (dissolves fiber)
+- NEVER mix ammonia + chlorine bleach (toxic chlorine gas)
+- ALWAYS test colors on unexposed area first
+- ALWAYS neutralize ammonia with vinegar (prevents yellowing)
+- ALWAYS neutralize bleach with vinegar (prevents fiber damage)
+
+FIBER VULNERABILITY (treat blends by most vulnerable fiber):
+- Silk: EXTREME — no chlorine bleach, no strong alkali, no enzymes, no heat, minimal water
+- Wool: HIGH — no chlorine bleach, no hot water, test enzymes, no rubbing when wet
+- Acetate: HIGH — no acetone, no amyl acetate, no heat, test everything
+- Rayon: MODERATE — loses 50% strength when wet, no rubbing, no hot water
+- Cotton: LOW — tolerates most agents, test colors, avoid heat during spotting
+- Polyester: LOW — avoid high heat, test solvents
+
+PROFESSIONAL AGENTS:
+- NSD (neutral synthetic detergent), POG (paint/oil/grease remover), Protein formula (enzyme-based), Tannin formula (oxidizing), Acetic acid 28% → 20% working strength, Amyl acetate (adhesives — NOT on acetate), H₂O₂ 3-6%, Feathering agent, Steam gun (4-6 inch minimum distance)
+
+BLEACH SELECTION:
+- Tannin traces: H₂O₂ + ammonia, or sodium perborate bath
+- Protein traces: H₂O₂ + ammonia
+- Dye stains: sodium hydrosulphite (reducing bleach) or titanium sulfate
+- Mildew: sodium hypochlorite (cellulose only)
+- Yellowing: sodium perborate/percarbonate
+- Every 18°F temperature increase doubles bleach reaction speed
+
+FORMATTING RULES:
 - Never recommend "distilled water" — use "cold water" instead. Home users don't have distilled water.
 - Agent names must be in Title Case (e.g. "Cold Water", "Neutral Dish Soap", "White Vinegar Solution").
 - Step instructions must be complete sentences with proper capitalization and punctuation.
 - Keep steps concise and direct — one action per step.
+- Include repeat cycling note for stubborn stains (turmeric, rust, old wine often need 2-3 passes).
 
 Return ONLY valid JSON:
 {
