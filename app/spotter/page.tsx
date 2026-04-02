@@ -71,6 +71,7 @@ type ActiveTool = 'stain_brain' | 'garment_flag' | 'customer_handoff' | null
 function SpotterPageInner() {
   const { t } = useLanguage()
   const searchParams = useSearchParams()
+  const prefill = searchParams.get('prefill') || ''
   const [activeTool, setActiveTool] = useState<ActiveTool>(() => {
     if (searchParams.get('tool') === 'stain_brain') return 'stain_brain'
     if (searchParams.get('tool') === 'customer_handoff') return 'customer_handoff'
@@ -133,7 +134,7 @@ function SpotterPageInner() {
         <div>
           <h2 className="text-lg font-bold tracking-tight mb-0.5">Customer Handoff</h2>
           <p className="text-xs mb-3" style={{ color: 'var(--text-secondary)' }}>Professional scripts for counter staff</p>
-          <HandoffTool />
+          <HandoffTool prefill={prefill} />
         </div>
       </div>
     )

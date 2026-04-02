@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import type { ProtocolCard, Step } from '@/lib/types'
-import HandoffModule from './HandoffModule'
+// HandoffModule removed — Customer Handoff is now a deep-link to Spotter tab
 import SaveButton from './SaveButton'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import FiberContextBadge from './FiberContextBadge'
@@ -55,7 +55,6 @@ interface ResultCardProps {
 
 export default function ResultCard({ card, source, lang = 'en' }: ResultCardProps) {
   const { t } = useLanguage()
-  const [showHandoff, setShowHandoff] = useState(false)
 
   const difficulty = card.difficulty ?? 5
   const dc = difficultyColor(difficulty)
@@ -211,27 +210,28 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         </div>
       )}
 
-      {/* ── 5. Customer Handoff ── */}
-      <div className="px-4 py-4" style={{ borderTop: '1px solid var(--border)' }}>
-        <button
-          onClick={() => setShowHandoff(!showHandoff)}
-          className="w-full min-h-[44px] rounded-xl text-sm font-semibold transition-colors"
-          style={{
-            background: showHandoff ? 'rgba(34,197,94,0.15)' : 'rgba(34,197,94,0.08)',
-            border: '1px solid rgba(34,197,94,0.3)',
-            color: 'var(--accent)'
-          }}
-        >
-          📤 Customer Handoff {showHandoff ? '▲' : '▼'}
-        </button>
-        {showHandoff && (
-          <div className="mt-3">
-            <HandoffModule
-              stain={card.meta?.stainCanonical || card.id || ''}
-              surface={card.meta?.surfaceCanonical || card.surface || ''}
-            />
-          </div>
-        )}
+      {/* ── 5. Customer Handoff link ── */}
+      <div className="px-4 py-3" style={{ borderTop: '1px solid var(--border)' }}>
+        {(() => {
+          const stain = card.meta?.stainCanonical || card.id || ''
+          const surface = card.meta?.surfaceCanonical || card.surface || ''
+          const prefill = surface ? `${stain} on ${surface}` : stain
+          const href = `/spotter?tool=customer_handoff&prefill=${encodeURIComponent(prefill)}`
+          return (
+            <a
+              href={href}
+              className="flex items-center justify-center gap-2 w-full min-h-[44px] rounded-xl text-sm font-semibold transition-colors hover:opacity-90"
+              style={{
+                background: 'rgba(34,197,94,0.08)',
+                border: '1px solid rgba(34,197,94,0.3)',
+                color: 'var(--accent)',
+                textDecoration: 'none',
+              }}
+            >
+              🤝 Customer Handoff
+            </a>
+          )
+        })()}
       </div>
 
       {/* ── 9. Collapsible sections ── */}

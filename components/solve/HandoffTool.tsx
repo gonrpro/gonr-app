@@ -13,9 +13,13 @@ const SITUATIONS = [
   { key: 'release', en: 'Release', es: 'Devolución' },
 ]
 
-export default function HandoffTool() {
+interface HandoffToolProps {
+  prefill?: string
+}
+
+export default function HandoffTool({ prefill = '' }: HandoffToolProps) {
   const { lang } = useLanguage()
-  const [garment, setGarment] = useState('')
+  const [garment, setGarment] = useState(prefill)
   const [situation, setSituation] = useState('intake')
   const [notes, setNotes] = useState('')
   const [loading, setLoading] = useState(false)
