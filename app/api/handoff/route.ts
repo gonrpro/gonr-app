@@ -62,19 +62,17 @@ ${details ? `Additional context: ${details}` : ''}
 
 Generate four distinct customer communication pieces as specified. Make each one genuinely different — intake sets expectations, ticket notes are internal shorthand, pickup communicates the result, written note is a leave-behind.`
 
-    const res = await fetch('https://api.openai.com/v1/responses', {
+    const res = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: 'gpt-5.4',
-        instructions: SYSTEM_PROMPT + langInstruction,
-        input: [
-          {
-            role: 'user',
-            content: [{ type: 'input_text', text: userMessage }],
-          },
+        model: 'gpt-4.1',
+        messages: [
+          { role: 'system', content: SYSTEM_PROMPT + langInstruction },
+          { role: 'user', content: userMessage },
         ],
-        max_output_tokens: 800,
+        max_tokens: 800,
+        temperature: 0.3,
       }),
     })
 
@@ -85,7 +83,7 @@ Generate four distinct customer communication pieces as specified. Make each one
     }
 
     const data = await res.json()
-    const raw = (data.output_text || data.output?.[0]?.content?.[0]?.text || '').trim()
+    const raw = (data.choices?.[0]?.message?.content || '').trim()
 
     if (!raw) {
       return NextResponse.json({ error: 'Empty AI response' }, { status: 500 })

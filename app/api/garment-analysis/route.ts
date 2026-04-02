@@ -83,17 +83,17 @@ export async function POST(req: NextRequest) {
       })
     }
 
-    const response = await fetch('https://api.openai.com/v1/responses', {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: 'gpt-5.4',
-        instructions: systemPrompt,
-        input: [{ role: 'user', content: inputContent }],
-        max_output_tokens: 1500,
+        model: 'gpt-4.1',
+        messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: inputContent }],
+        max_tokens: 1500,
+        temperature: 0.3,
       }),
     })
 
@@ -107,7 +107,7 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await response.json()
-    const raw = data.output_text || data.output?.[0]?.content?.[0]?.text
+    const raw = data.choices?.[0]?.message?.content
 
     if (!raw) {
       return NextResponse.json(

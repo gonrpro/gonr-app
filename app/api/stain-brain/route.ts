@@ -672,14 +672,20 @@ export async function POST(req: Request) {
       content: [{ type: 'input_text', text: m.content }],
     }))
 
-    const res = await fetch('https://api.openai.com/v1/responses', {
+    const res = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: 'gpt-5.4',
-        instructions: SYSTEM_PROMPT + langInstruction,
-        input,
-        max_output_tokens: 800,
+        model: 'gpt-4.1',
+        messages: [
+          { role: 'system', content: SYSTEM_PROMPT + langInstruction },
+          ...messages.map((m: { role: string; content: string }) => ({
+            role: m.role === 'user' ? 'user' : 'assistant',
+            content: m.content,
+          })),
+        ],
+        max_tokens: 800,
+        temperature: 0.3,
       }),
     })
 
@@ -690,7 +696,7 @@ export async function POST(req: Request) {
     }
 
     const data = await res.json()
-    const reply = (data.output_text || data.output?.[0]?.content?.[0]?.text || '').trim()
+    const reply = (data.choices?.[0]?.message?.content || '').trim()
 
     if (!reply) {
       return NextResponse.json({ error: 'Empty response' }, { status: 500 })

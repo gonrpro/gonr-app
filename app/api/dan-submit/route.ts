@@ -67,7 +67,7 @@ Return ONLY valid JSON:
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: 'gpt-5.4',
+        model: 'gpt-4.1',
         max_tokens: 1000,
         temperature: 0.2,
         messages: [
