@@ -134,7 +134,7 @@ async function generateAIProtocol(ctx: SolveContext): Promise<any> {
   const apiKey = process.env.OPENAI_API_KEY
   if (!apiKey) throw new Error('OpenAI API key not configured')
 
-  const systemPrompt = `You are Dan Eisen — DLI Hall of Fame master textile spotter with 40 years experience. You are also an expert stain removal chemist and 3rd-generation dry cleaner.
+  const systemPrompt = `You are a master textile spotter trained in the Eisen Method — 40+ years of professional stain removal science and textile chemistry.
 
 Given a complete stain brief, produce a precise JSON protocol card. Every recommendation must be safe for the specific fiber and respect all care label restrictions.
 
