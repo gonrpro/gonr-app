@@ -64,43 +64,6 @@ export default function ProtocolReviewPage() {
   const [sortBy, setSortBy] = useState<'created_at' | 'solve_count'>('created_at')
   const [actionLoading, setActionLoading] = useState<string | null>(null)
 
-  if (!unlocked) {
-    return (
-      <div style={{ minHeight: '100vh', background: '#0a0e14', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ background: '#111827', border: '1px solid #1f2937', borderRadius: '16px', padding: '40px', width: '100%', maxWidth: '360px', textAlign: 'center' }}>
-          <p style={{ fontSize: '24px', marginBottom: '8px' }}>🔒</p>
-          <h1 style={{ color: '#f9fafb', fontWeight: 700, fontSize: '18px', marginBottom: '4px' }}>Protocol Review</h1>
-          <p style={{ color: '#6b7280', fontSize: '13px', marginBottom: '24px' }}>Enter passcode to continue</p>
-          <input
-            type="password"
-            value={passcode}
-            onChange={e => { setPasscode(e.target.value); setPasscodeError(false) }}
-            onKeyDown={e => {
-              if (e.key === 'Enter') {
-                if (passcode === PASSCODE) setUnlocked(true)
-                else setPasscodeError(true)
-              }
-            }}
-            placeholder="Passcode"
-            autoFocus
-            style={{
-              width: '100%', padding: '12px 16px', borderRadius: '10px',
-              background: '#1f2937', border: `1.5px solid ${passcodeError ? '#ef4444' : '#374151'}`,
-              color: '#f9fafb', fontSize: '15px', outline: 'none', marginBottom: '12px', boxSizing: 'border-box'
-            }}
-          />
-          {passcodeError && <p style={{ color: '#ef4444', fontSize: '12px', marginBottom: '12px' }}>Incorrect passcode</p>}
-          <button
-            onClick={() => { if (passcode === PASSCODE) setUnlocked(true); else setPasscodeError(true) }}
-            style={{ width: '100%', padding: '12px', borderRadius: '10px', background: '#22c55e', color: '#000', fontWeight: 700, fontSize: '14px', border: 'none', cursor: 'pointer' }}
-          >
-            Unlock →
-          </button>
-        </div>
-      </div>
-    )
-  }
-
   /* ── Fetch ─────────────────────────────────── */
 
   const fetchProtocols = useCallback(async () => {
@@ -127,8 +90,10 @@ export default function ProtocolReviewPage() {
   }, [filter, search, sortBy])
 
   useEffect(() => {
-    fetchProtocols()
-  }, [fetchProtocols])
+    if (unlocked) {
+      fetchProtocols()
+    }
+  }, [fetchProtocols, unlocked])
 
   /* ── Actions ───────────────────────────────── */
 
@@ -190,7 +155,7 @@ export default function ProtocolReviewPage() {
     }
 
     // Download as JSON file
-    const filename = `${protocol.stain}-${protocol.surface}.json`.replace(/\s+/g, '-').toLowerCase()
+    const filename = `${protocol.stain}-${protocol.surface}.json`.replace(/\\s+/g, '-').toLowerCase()
     const blob = new Blob([JSON.stringify(coreCard, null, 2)], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
@@ -199,6 +164,45 @@ export default function ProtocolReviewPage() {
     a.click()
     URL.revokeObjectURL(url)
   }
+
+  if (!unlocked) {
+    return (
+      <div style={{ minHeight: '100vh', background: '#0a0e14', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ background: '#111827', border: '1px solid #1f2937', borderRadius: '16px', padding: '40px', width: '100%', maxWidth: '360px', textAlign: 'center' }}>
+          <p style={{ fontSize: '24px', marginBottom: '8px' }}>🔒</p>
+          <h1 style={{ color: '#f9fafb', fontWeight: 700, fontSize: '18px', marginBottom: '4px' }}>Protocol Review</h1>
+          <p style={{ color: '#6b7280', fontSize: '13px', marginBottom: '24px' }}>Enter passcode to continue</p>
+          <input
+            type="password"
+            value={passcode}
+            onChange={e => { setPasscode(e.target.value); setPasscodeError(false) }}
+            onKeyDown={e => {
+              if (e.key === 'Enter') {
+                if (passcode === PASSCODE) setUnlocked(true)
+                else setPasscodeError(true)
+              }
+            }}
+            placeholder="Passcode"
+            autoFocus
+            style={{
+              width: '100%', padding: '12px 16px', borderRadius: '10px',
+              background: '#1f2937', border: `1.5px solid ${passcodeError ? '#ef4444' : '#374151'}`,
+              color: '#f9fafb', fontSize: '15px', outline: 'none', marginBottom: '12px', boxSizing: 'border-box'
+            }}
+          />
+          {passcodeError && <p style={{ color: '#ef4444', fontSize: '12px', marginBottom: '12px' }}>Incorrect passcode</p>}
+          <button
+            onClick={() => { if (passcode === PASSCODE) setUnlocked(true); else setPasscodeError(true) }}
+            style={{ width: '100%', padding: '12px', borderRadius: '10px', background: '#22c55e', color: '#000', fontWeight: 700, fontSize: '14px', border: 'none', cursor: 'pointer' }}
+          >
+            Unlock →
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+
 
   /* ── Stats ─────────────────────────────────── */
 
