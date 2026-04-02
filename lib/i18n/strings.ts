@@ -666,6 +666,39 @@ export const strings: Record<string, Record<string, string>> = {
   profileUpgradeDesc: { en: "Unlock all pro tools, garment analysis, and customer handoff scripts.", es: "Desbloquea todas las herramientas pro, análisis de prendas y guiones de respuesta al cliente." },
   // ── Error messages ──
   // ── General ──
+
+  // ── Saved Protocols / Bookmarks ──
+  savedNav: { en: 'Saved', es: 'Guardados' },
+  savedTitle: { en: 'Saved Protocols', es: 'Protocolos Guardados' },
+  savedCount: { en: 'protocols', es: 'protocolos' },
+  savedEmpty: { en: 'No saved protocols yet', es: 'Sin protocolos guardados' },
+  savedEmptyHint: { en: 'Bookmark protocols from your solve results', es: 'Guarda protocolos desde tus resultados' },
+  savedSignIn: { en: 'Sign in to save protocols', es: 'Inicia sesión para guardar protocolos' },
+  savedDelete: { en: 'Delete', es: 'Eliminar' },
+  savedCustomBadge: { en: 'Custom', es: 'Personalizado' },
+  savedSave: { en: 'Save protocol', es: 'Guardar protocolo' },
+  savedUnsave: { en: 'Remove from saved', es: 'Quitar de guardados' },
+  savedLimitReached: { en: 'Free tier limited to 3 saved protocols. Upgrade to save more.', es: 'El plan gratuito permite solo 3 protocolos guardados. Mejora tu plan para guardar más.' },
+
+  // ── Custom Protocol Form ──
+  customTitle: { en: 'Create Custom Protocol', es: 'Crear Protocolo Personalizado' },
+  customStain: { en: 'Stain', es: 'Mancha' },
+  customStainPlaceholder: { en: 'e.g. Red wine, Grease, Ink...', es: 'ej. Vino tinto, Grasa, Tinta...' },
+  customSurface: { en: 'Surface / Material', es: 'Superficie / Material' },
+  customSurfacePlaceholder: { en: 'e.g. Cotton, Silk, Polyester...', es: 'ej. Algodón, Seda, Poliéster...' },
+  customSteps: { en: 'Protocol Steps', es: 'Pasos del Protocolo' },
+  customStepNum: { en: 'Step', es: 'Paso' },
+  customAgentPlaceholder: { en: 'Agent (e.g. NSD, POG, Enzyme...)', es: 'Agente (ej. NSD, POG, Enzima...)' },
+  customInstructionPlaceholder: { en: 'What to do — be specific', es: 'Qué hacer — sé específico' },
+  customAddStep: { en: 'Add Step', es: 'Agregar Paso' },
+  customRemove: { en: 'Remove', es: 'Eliminar' },
+  customNotes: { en: 'Notes (optional)', es: 'Notas (opcional)' },
+  customNotesPlaceholder: { en: 'e.g. We use Brand X instead of generic POG', es: 'ej. Usamos la marca X en vez de POG genérico' },
+  customCreate: { en: 'Create Protocol', es: 'Crear Protocolo' },
+  customCreating: { en: 'Creating...', es: 'Creando...' },
+  customErrorRequired: { en: 'Stain and surface are required', es: 'Mancha y superficie son obligatorios' },
+  customErrorSteps: { en: 'Add at least one step with instructions', es: 'Agrega al menos un paso con instrucciones' },
+  customErrorAuth: { en: 'Sign in to create custom protocols', es: 'Inicia sesión para crear protocolos personalizados' },
 }
 
 export function t(key: string, lang: string = 'en'): string {

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import type { ProtocolCard, Step } from '@/lib/types'
 import HandoffModule from './HandoffModule'
+import SaveButton from './SaveButton'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import FiberContextBadge from './FiberContextBadge'
 import CardBadges from './CardBadges'
@@ -104,11 +105,14 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
           <h2 className="text-lg font-bold leading-snug flex-1" style={{ color: 'var(--text)' }}>
             {card.title}
           </h2>
-          <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold flex-shrink-0 mt-0.5
-            ${['verified','core'].includes(source) ? 'bg-green-500/15 text-green-600' : 'bg-purple-500/15 text-purple-500'}`}
-          >
-            {['verified','core'].includes(source) ? '✓ Verified' : '🤖 AI'}
-          </span>
+          <div className="flex items-center gap-1.5 flex-shrink-0 mt-0.5">
+            <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold
+              ${['verified','core'].includes(source) ? 'bg-green-500/15 text-green-600' : 'bg-purple-500/15 text-purple-500'}`}
+            >
+              {['verified','core'].includes(source) ? '✓ Verified' : '🤖 AI'}
+            </span>
+            <SaveButton card={card} />
+          </div>
         </div>
       </div>
 
