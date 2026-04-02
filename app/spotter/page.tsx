@@ -196,6 +196,19 @@ function SpotterPageInner() {
           </p>
         </button>
 
+        <button
+          onClick={() => setActiveTool('customer_handoff')}
+          className="card w-full text-left space-y-1 transition-colors hover:border-yellow-500/30"
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🤝</span>
+            <h2 className="text-base font-bold">Customer Handoff</h2>
+          </div>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            Generate counter scripts for intake, tough cases, and pickup conversations.
+          </p>
+        </button>
+
         <Link
           href="/deep-solve"
           className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block"
@@ -209,22 +222,9 @@ function SpotterPageInner() {
             </span>
           </div>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            Situational analysis for old stains, prior treatments, and high-value garments. Includes customer handoff scripts.
+            Situational analysis for old stains, prior treatments, and high-value garments.
           </p>
         </Link>
-
-        <button
-          onClick={() => setActiveTool('customer_handoff')}
-          className="card w-full text-left space-y-1 transition-colors hover:border-yellow-500/30"
-        >
-          <div className="flex items-center gap-2">
-            <span className="text-lg">🤝</span>
-            <h2 className="text-base font-bold">Customer Handoff</h2>
-          </div>
-          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            Generate counter scripts for intake, tough cases, and pickup conversations.
-          </p>
-        </button>
 
         <button
           onClick={() => setActiveTool('garment_flag')}
