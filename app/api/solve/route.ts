@@ -60,15 +60,14 @@ async function checkAndIncrementSolve(email: string | null, clientIp: string): P
   try {
   const supabase = getSupabaseAdmin()
 
-  // Check profile status — profiles.status is the source of truth
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('status')
+  // Check subscriptions table — is_active is the source of truth (written by LS webhook)
+  const { data: subscription } = await supabase
+    .from('subscriptions')
+    .select('is_active, tier')
     .eq('email', email.toLowerCase())
     .single()
 
-  const paidStatuses = ['active', 'trialing_paid']
-  if (profile && paidStatuses.includes(profile.status)) return { allowed: true }
+  if (subscription && subscription.is_active === true) return { allowed: true }
 
   const { data: usage } = await supabase
     .from('solve_usage')
