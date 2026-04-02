@@ -45,15 +45,7 @@ interface PendingProtocol {
 
 type FilterTab = 'all' | 'unverified' | 'verified' | 'high-traffic'
 
-/* ── Supabase client ─── */
-import { createClient } from '@supabase/supabase-js'
-
-function getSupabase() {
-  const url = 'https://ljcmslyirxqtmdaxzuiq.supabase.co'
-  const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxqY21zbHlpcnhxdG1kYXh6dWlxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzExOTQwNjEsImV4cCI6MjA4Njc3MDA2MX0.RTh4Ms3108s5iyTZMSVB9tLd7N79XjmICcLn8j3NOR0'
-  return createClient(url, key)
-}
-const supabase = getSupabase()
+/* ── API client helpers ─── */
 
 /* ── Page Component ───────────────────────────── */
 
@@ -113,25 +105,23 @@ export default function ProtocolReviewPage() {
 
   const fetchProtocols = useCallback(async () => {
     setLoading(true)
-    let query = supabase
-      .from('pending_protocols')
-      .select('*')
-      .order(sortBy, { ascending: false })
+    try {
+      const params = new URLSearchParams({
+        filter,
+        search: search.trim(),
+        sortBy,
+      })
+      
+      const response = await fetch(`/api/mission-control/protocols?${params}`)
+      const result = await response.json()
 
-    if (filter === 'unverified') query = query.eq('verified', false)
-    if (filter === 'verified') query = query.eq('verified', true)
-    if (filter === 'high-traffic') query = query.gt('solve_count', 5)
-
-    if (search.trim()) {
-      query = query.or(`stain.ilike.%${search.trim()}%,surface.ilike.%${search.trim()}%`)
-    }
-
-    const { data, error } = await query.limit(200)
-
-    if (error) {
+      if (response.ok) {
+        setProtocols(result.data || [])
+      } else {
+        console.error('Fetch error:', result.error)
+      }
+    } catch (error) {
       console.error('Fetch error:', error)
-    } else {
-      setProtocols(data || [])
     }
     setLoading(false)
   }, [filter, search, sortBy])
@@ -144,21 +134,23 @@ export default function ProtocolReviewPage() {
 
   async function handleVerify(id: string) {
     setActionLoading(id)
-    const { error } = await supabase
-      .from('pending_protocols')
-      .update({
-        verified: true,
-        verified_at: new Date().toISOString(),
-        verified_by: 'tyler',
-        source: 'verified',
-        updated_at: new Date().toISOString(),
+    try {
+      const response = await fetch('/api/mission-control/protocols', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, action: 'verify' })
       })
-      .eq('id', id)
 
-    if (!error) {
-      setProtocols(prev => prev.map(p =>
-        p.id === id ? { ...p, verified: true, source: 'verified', verified_by: 'tyler', verified_at: new Date().toISOString() } : p
-      ))
+      if (response.ok) {
+        setProtocols(prev => prev.map(p =>
+          p.id === id ? { ...p, verified: true, source: 'verified', verified_by: 'tyler', verified_at: new Date().toISOString() } : p
+        ))
+      } else {
+        const result = await response.json()
+        console.error('Verify error:', result.error)
+      }
+    } catch (error) {
+      console.error('Verify error:', error)
     }
     setActionLoading(null)
   }
@@ -166,14 +158,20 @@ export default function ProtocolReviewPage() {
   async function handleReject(id: string) {
     if (!confirm('Delete this AI-generated card? This cannot be undone.')) return
     setActionLoading(id)
-    const { error } = await supabase
-      .from('pending_protocols')
-      .delete()
-      .eq('id', id)
+    try {
+      const response = await fetch(`/api/mission-control/protocols?id=${id}`, {
+        method: 'DELETE'
+      })
 
-    if (!error) {
-      setProtocols(prev => prev.filter(p => p.id !== id))
-      if (expandedId === id) setExpandedId(null)
+      if (response.ok) {
+        setProtocols(prev => prev.filter(p => p.id !== id))
+        if (expandedId === id) setExpandedId(null)
+      } else {
+        const result = await response.json()
+        console.error('Delete error:', result.error)
+      }
+    } catch (error) {
+      console.error('Delete error:', error)
     }
     setActionLoading(null)
   }
