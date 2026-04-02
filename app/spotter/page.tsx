@@ -6,7 +6,6 @@ import { Suspense } from 'react'
 import Link from 'next/link'
 import StainBrainChat from '@/components/solve/StainBrainChat'
 import GarmentFlag from '@/components/solve/GarmentFlag'
-import HandoffTool from '@/components/solve/HandoffTool'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 const COURSES = [
@@ -66,15 +65,13 @@ function CourseCard({ course }: { course: typeof COURSES[number] }) {
   )
 }
 
-type ActiveTool = 'stain_brain' | 'garment_flag' | 'customer_handoff' | null
+type ActiveTool = 'stain_brain' | 'garment_flag' | null
 
 function SpotterPageInner() {
   const { t } = useLanguage()
   const searchParams = useSearchParams()
-  const prefill = searchParams.get('prefill') || ''
   const [activeTool, setActiveTool] = useState<ActiveTool>(() => {
     if (searchParams.get('tool') === 'stain_brain') return 'stain_brain'
-    if (searchParams.get('tool') === 'customer_handoff') return 'customer_handoff'
     return null
   })
 
@@ -118,27 +115,6 @@ function SpotterPageInner() {
     )
   }
 
-  if (activeTool === 'customer_handoff') {
-    return (
-      <div className="space-y-3">
-        <button
-          onClick={() => setActiveTool(null)}
-          className="flex items-center gap-1.5 text-sm font-medium transition-colors"
-          style={{ color: 'var(--text-secondary)' }}
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 12H5M12 5l-7 7 7 7" />
-          </svg>
-          Back to Spotter
-        </button>
-        <div>
-          <h2 className="text-lg font-bold tracking-tight mb-0.5">Customer Handoff</h2>
-          <p className="text-xs mb-3" style={{ color: 'var(--text-secondary)' }}>Professional scripts for counter staff</p>
-          <HandoffTool prefill={prefill} />
-        </div>
-      </div>
-    )
-  }
 
   return (
     <div className="space-y-5">
@@ -193,19 +169,6 @@ function SpotterPageInner() {
           </div>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
             Chat with the AI about any stain scenario. Ask why. Ask what if. Dan Eisen methodology.
-          </p>
-        </button>
-
-        <button
-          onClick={() => setActiveTool('customer_handoff')}
-          className="card w-full text-left space-y-1 transition-colors hover:border-yellow-500/30"
-        >
-          <div className="flex items-center gap-2">
-            <span className="text-lg">🤝</span>
-            <h2 className="text-base font-bold">Customer Handoff</h2>
-          </div>
-          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            Generate counter scripts for intake, tough cases, and pickup conversations.
           </p>
         </button>
 

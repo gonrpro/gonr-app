@@ -210,17 +210,16 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         </div>
       )}
 
-      {/* ── 5. Customer Handoff link ── */}
-      <div className="px-4 py-3" style={{ borderTop: '1px solid var(--border)' }}>
-        {(() => {
-          const stain = card.meta?.stainCanonical || card.id || ''
-          const surface = card.meta?.surfaceCanonical || card.surface || ''
-          const prefill = surface ? `${stain} on ${surface}` : stain
-          const href = `/spotter?tool=customer_handoff&prefill=${encodeURIComponent(prefill)}`
-          return (
+      {/* ── 5. Escalation actions ── */}
+      {(() => {
+        const stain = card.meta?.stainCanonical || card.id || ''
+        const surface = card.meta?.surfaceCanonical || card.surface || ''
+        const prefill = surface ? `${stain} on ${surface}` : stain
+        return (
+          <div className="px-4 py-3 flex gap-2" style={{ borderTop: '1px solid var(--border)' }}>
             <a
-              href={href}
-              className="flex items-center justify-center gap-2 w-full min-h-[44px] rounded-xl text-sm font-semibold transition-colors hover:opacity-90"
+              href={`/deep-solve?stain=${encodeURIComponent(prefill)}`}
+              className="flex items-center justify-center gap-1.5 flex-1 min-h-[44px] rounded-xl text-sm font-semibold transition-colors hover:opacity-90"
               style={{
                 background: 'rgba(34,197,94,0.08)',
                 border: '1px solid rgba(34,197,94,0.3)',
@@ -228,11 +227,23 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
                 textDecoration: 'none',
               }}
             >
+              🔬 Deep Solve
+            </a>
+            <a
+              href={`/handoff?prefill=${encodeURIComponent(prefill)}`}
+              className="flex items-center justify-center gap-1.5 flex-1 min-h-[44px] rounded-xl text-sm font-semibold transition-colors hover:opacity-90"
+              style={{
+                background: 'rgba(234,179,8,0.08)',
+                border: '1px solid rgba(234,179,8,0.3)',
+                color: '#ca8a04',
+                textDecoration: 'none',
+              }}
+            >
               🤝 Customer Handoff
             </a>
-          )
-        })()}
-      </div>
+          </div>
+        )
+      })()}
 
       {/* ── 9. Collapsible sections ── */}
       <div className="px-4 pb-4 space-y-2">
