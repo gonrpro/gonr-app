@@ -297,8 +297,8 @@ export default function ProtocolReviewPage() {
         ) : protocols.length === 0 ? (
           <div className="text-center py-12 text-gray-500">No protocols found.</div>
         ) : (
-          <div className="border border-white/10 rounded-xl overflow-hidden">
-            <table className="w-full text-sm">
+          <div className="border border-white/10 rounded-xl overflow-hidden overflow-x-auto">
+            <table className="w-full min-w-[700px] text-sm">
               <thead>
                 <tr className="bg-white/5 text-left text-xs text-gray-500 uppercase tracking-wider">
                   <th className="px-4 py-3">Stain</th>
@@ -374,7 +374,9 @@ export default function ProtocolReviewPage() {
                     {expandedId === p.id && (
                       <tr key={`${p.id}-preview`}>
                         <td colSpan={7} className="p-0">
-                          <CardPreview card={p.card} cacheKey={p.cache_key} />
+                          <div className="max-h-96 overflow-y-auto">
+                            <CardPreview card={p.card} cacheKey={p.cache_key} />
+                          </div>
                         </td>
                       </tr>
                     )}
