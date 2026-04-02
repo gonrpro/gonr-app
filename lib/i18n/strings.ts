@@ -9,7 +9,7 @@ export const strings: Record<string, Record<string, string>> = {
   scanStain: { en: "Scan Stain", es: "Escanear Mancha" },
   uploadPhoto: { en: 'Upload photo', es: 'Subir foto' },
   // ── Card Badges (TASK-133) ──
-  eisenMethod: { en: '✦ Eisen Method', es: '✦ Método Eisen' },
+  eisenMethod: { en: 'Eisen Method', es: 'Método Eisen' },
   badgeAdvanced: { en: 'Advanced', es: 'Avanzado' },
   badgeModerate: { en: 'Moderate', es: 'Moderado' },
   badgeHighRisk: { en: 'High Risk', es: 'Alto Riesgo' },
@@ -57,7 +57,7 @@ export const strings: Record<string, Record<string, string>> = {
   spotterCoursesTagline: { en: "Earn credentials. Build your GONR Spotter profile.", es: "Obtén credenciales. Construye tu perfil de Spotter en GONR." },
   courseSpottingFundamentalsTitle: { en: "Spotting Fundamentals", es: "Fundamentos del Spotting" },
   courseSpottingFundamentalsDesc: { en: "Stain chemistry, fiber behavior, and the spotter's decision framework.", es: "Química de manchas, comportamiento de fibras y el marco de decisión del spotter." },
-  courseDanEisenTitle: { en: "The Dan Eisen Method", es: "El Método Dan Eisen" },
+  courseDanEisenTitle: { en: "Eisen Method", es: "Método Eisen" },
   courseDanEisenDesc: { en: "40 years of DLI expertise — professional techniques from a Hall of Fame spotter.", es: "40 años de experiencia DLI — técnicas profesionales de un spotter del Salón de la Fama." },
   courseFiberMasteryTitle: { en: "Fiber & Fabric Mastery", es: "Dominio de Fibras y Tejidos" },
   courseFiberMasteryDesc: { en: "Silk, wool, acetate, rayon — know your fiber before you touch it.", es: "Seda, lana, acetato, rayón — conoce tu fibra antes de tocarla." },

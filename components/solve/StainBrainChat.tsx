@@ -121,7 +121,7 @@ export default function StainBrainChat() {
           <span className="text-lg">🧠</span>
           <div>
             <p className="font-bold text-sm" style={{ color: 'var(--text)' }}>Stain Brain</p>
-            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Expert textile chemistry chat · Dan Eisen methodology</p>
+            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Expert textile chemistry chat · Eisen Method</p>
           </div>
         </div>
       </div>
