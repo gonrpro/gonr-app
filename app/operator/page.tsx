@@ -42,7 +42,7 @@ export default function OperatorPage() {
             <div key={feature.titleKey} className="card space-y-1">
               <div className="flex items-center gap-2">
                 <span className="text-base">{feature.icon}</span>
-                <h3 className="text-sm font-bold">{t(feature.titleKey)}</h3>
+                <h3 className="text-base font-bold">{t(feature.titleKey)}</h3>
               </div>
               <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                 {t(feature.descKey)}
