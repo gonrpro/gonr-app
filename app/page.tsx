@@ -678,8 +678,8 @@ function SolvePageInner() {
         </div>
       )}
 
-      {/* Trial days remaining badge — show last 3 days only */}
-      {userTier === 'free' && daysRemaining <= 3 && daysRemaining > 0 && (
+      {/* Trial days remaining badge — show last 3 days only, never for logged-in users */}
+      {userTier === 'free' && !user && daysRemaining <= 3 && daysRemaining > 0 && (
         <div style={{
           textAlign: 'center',
           padding: '8px 12px',
