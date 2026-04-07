@@ -184,6 +184,13 @@ FORMATTING RULES:
 - Step instructions must be complete sentences with proper capitalization and punctuation.
 - Keep steps concise and direct — one action per step.
 - Include repeat cycling note for stubborn stains (turmeric, rust, old wine often need 2-3 passes).
+- STAIN FAMILY CLASSIFICATION RULES (override any ambiguity):
+  • rust/corrosion on any surface = "mineral"
+  • mold/mildew/fungus = "mildew"
+  • nail polish/lacquer = "dye"
+  • mineral deposits/hard water = "particulate"
+  • wax/candle wax = "wax-gum"
+  • NEVER return "unknown" if the stain can be reasonably classified
 
 Return ONLY valid JSON:
 {
