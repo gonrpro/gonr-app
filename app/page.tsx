@@ -7,7 +7,8 @@ import StainChips from '@/components/solve/StainChips'
 import SurfaceChips from '@/components/solve/SurfaceChips'
 import PaywallModal from '@/components/paywall/PaywallModal'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-import { initializeTrialState, getTrialState, isTrialExpired, getRemainingText } from '@/lib/auth/trialGuard'
+import { useOptionalAuth } from '@/lib/auth/AuthContext'
+import { initializeTrialState, getTrialState, getRemainingText } from '@/lib/auth/trialGuard'
 import type { ProtocolCard } from '@/lib/types'
 
 interface SolveResult {
@@ -19,6 +20,7 @@ interface SolveResult {
 
 function SolvePageInner() {
   const { t, lang } = useLanguage()
+  const { user } = useOptionalAuth()
   const searchParams = useSearchParams()
   const router = useRouter()
   const [showUpgradeBanner, setShowUpgradeBanner] = useState(false)
@@ -34,6 +36,7 @@ function SolvePageInner() {
 
   // Trial state
   const [showPaywall, setShowPaywall] = useState(false)
+  const [showPaywallReason, setShowPaywallReason] = useState<'trial_expired' | 'anon_limit'>('trial_expired')
   const [daysRemaining, setDaysRemaining] = useState(7)
   const [userTier, setUserTier] = useState<'free' | 'home' | 'spotter' | 'operator' | 'founder'>('free')
 
@@ -161,12 +164,6 @@ function SolvePageInner() {
   const handleSolve = useCallback(async () => {
     if (!hasSolveInput) return
 
-    // Check trial gate for free users
-    if (isTrialExpired()) {
-      setShowPaywall(true)
-      return
-    }
-
     setLoading(true)
     setError('')
     setResult(null)
@@ -179,7 +176,7 @@ function SolvePageInner() {
         const formData = new FormData()
         formData.append('image', capturedPhoto)
         formData.append('lang', lang)
-        const userEmail = localStorage.getItem('gonr_user_email')
+        const userEmail = user?.email || localStorage.getItem('gonr_user_email')
         if (userEmail) formData.append('email', userEmail)
         if (careLabelFile) formData.append('careLabel', careLabelFile)
         if (fabricDescription.trim()) formData.append('fabricDescription', fabricDescription.trim())
@@ -195,7 +192,7 @@ function SolvePageInner() {
       } else {
         // Text-based solve
         const s = selectedStain || stainInput.trim()
-        const textEmail = localStorage.getItem('gonr_user_email') || undefined
+        const textEmail = user?.email || localStorage.getItem('gonr_user_email') || undefined
         res = await fetch('/api/solve', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -205,7 +202,8 @@ function SolvePageInner() {
 
       if (!res.ok) {
         const data = await res.json()
-        if ((res.status === 402 || res.status === 403) && data.error === 'trial_expired') {
+        if ((res.status === 402 || res.status === 403) && (data.error === 'trial_expired' || data.error === 'anon_limit')) {
+          setShowPaywallReason(data.error === 'anon_limit' ? 'anon_limit' : 'trial_expired')
           setShowPaywall(true)
           return
         }
@@ -237,7 +235,7 @@ function SolvePageInner() {
     } finally {
       setLoading(false)
     }
-  }, [hasSolveInput, capturedPhoto, careLabelFile, fabricDescription, garmentLocation, selectedStain, selectedSurface, stainInput, lang, t, incrementSolveCount, scrollToResult, userTier, daysRemaining])
+  }, [hasSolveInput, capturedPhoto, careLabelFile, fabricDescription, garmentLocation, selectedStain, selectedSurface, stainInput, lang, t, incrementSolveCount, scrollToResult, userTier, daysRemaining, user])
 
   const handleStainSelect = (stain: string) => {
     setSelectedStain(stain)
@@ -717,6 +715,7 @@ function SolvePageInner() {
       <PaywallModal
         open={showPaywall}
         onDismiss={() => setShowPaywall(false)}
+        reason={showPaywallReason}
       />
     </div>
   )

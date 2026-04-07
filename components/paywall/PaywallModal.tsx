@@ -6,14 +6,42 @@ import styles from './PaywallModal.module.css'
 interface PaywallModalProps {
   open: boolean
   onDismiss: () => void
+  reason?: 'trial_expired' | 'anon_limit'
 }
 
 /**
  * Paywall modal shown when free solves are exhausted
  * Displays 3 pricing tiers with checkout links to LemonSqueezy
  */
-export default function PaywallModal({ open, onDismiss }: PaywallModalProps) {
+export default function PaywallModal({ open, onDismiss, reason = 'trial_expired' }: PaywallModalProps) {
   if (!open) return null
+
+  if (reason === 'anon_limit') {
+    return (
+      <div className={styles.overlay} onClick={onDismiss}>
+        <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+          <div className={styles.content}>
+            <h2 className={styles.title}>Create a free account to keep going</h2>
+            <p className={styles.subtitle}>Sign up free — get 3 solves to try GONR</p>
+
+            <a
+              href="/auth/signup"
+              className={styles.checkoutBtn}
+              style={{ display: 'block', textAlign: 'center', marginTop: '16px', marginBottom: '12px' }}
+            >
+              Sign up free
+            </a>
+
+            <div className={styles.footer}>
+              <button onClick={onDismiss} className={styles.dismissBtn}>
+                Not right now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className={styles.overlay} onClick={onDismiss}>

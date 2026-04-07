@@ -142,6 +142,17 @@ export function useAuth(): AuthContextType {
 }
 
 /**
+ * Hook that returns auth context if available, or safe defaults if outside AuthProvider.
+ */
+export function useOptionalAuth(): AuthContextType {
+  const context = useContext(AuthContext)
+  if (!context) {
+    return { session: null, user: null, tier: 'free', isLoading: false, logout: async () => {} }
+  }
+  return context
+}
+
+/**
  * Hook to access session only (lighter weight)
  */
 export function useSession(): { session: Session | null; isLoading: boolean } {
