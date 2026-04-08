@@ -189,21 +189,39 @@ function SolvePageInner() {
         if (fabricDescription.trim()) formData.append('fabricDescription', fabricDescription.trim())
         if (garmentLocation.trim()) formData.append('garmentLocation', garmentLocation.trim())
         // If user also typed or selected a stain/surface, pass those as hints
-        if (selectedStain || stainInput.trim()) formData.append('stainHint', selectedStain || stainInput.trim())
-        if (selectedSurface) formData.append('surfaceHint', selectedSurface)
+        // Parse "X on Y" pattern from free-text input
+        let hintStain = selectedStain || stainInput.trim()
+        let hintSurface = selectedSurface
+        if (!hintSurface && hintStain) {
+          const onMatch = hintStain.match(/^(.+?)\s+on\s+(.+)$/i)
+          if (onMatch) {
+            hintStain = onMatch[1].trim()
+            hintSurface = onMatch[2].trim()
+          }
+        }
+        if (hintStain) formData.append('stainHint', hintStain)
+        if (hintSurface) formData.append('surfaceHint', hintSurface)
 
         res = await fetch('/api/solve', {
           method: 'POST',
           body: formData,
         })
       } else {
-        // Text-based solve
-        const s = selectedStain || stainInput.trim()
+        // Text-based solve — parse "X on Y" pattern from free-text input
+        let s = selectedStain || stainInput.trim()
+        let surf = selectedSurface
+        if (!surf && s) {
+          const onMatch = s.match(/^(.+?)\s+on\s+(.+)$/i)
+          if (onMatch) {
+            s = onMatch[1].trim()
+            surf = onMatch[2].trim()
+          }
+        }
         const textEmail = user?.email || localStorage.getItem('gonr_user_email') || undefined
         res = await fetch('/api/solve', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ stain: s, surface: selectedSurface, lang, email: textEmail }),
+          body: JSON.stringify({ stain: s, surface: surf, lang, email: textEmail }),
         })
       }
 
