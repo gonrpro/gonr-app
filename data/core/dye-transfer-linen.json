@@ -1,0 +1,81 @@
+{
+  "id": "dye-transfer-linen",
+  "title": "Dye Transfer on White Linen",
+  "stainFamily": "dye",
+  "surface": "linen",
+  "sector": "textile",
+  "source": "verified",
+  "verified": false,
+  "stainChemistry": "Dye transfer occurs when loose dye from one garment migrates to linen during washing — typically from dark denim, new colored items, or non-colorfast fabrics. The transferred dye bonds to linen's cellulose fibers through hydrogen bonds and Van der Waals forces. Linen is a cellulose fiber like cotton and tolerates similar chemistry, but is more prone to wrinkling and needs gentler agitation. Once set by heat or time, the dye behaves as if it were part of the fiber.",
+  "whyThisWorks": "Oxygen bleach or a reducing agent (sodium hydrosulfite) breaks the chromophore bonds in the transferred dye. Speed is critical — fresh transfers respond dramatically better than set ones. Re-washing immediately in cold water with oxygen bleach is the most effective first response. Linen tolerates oxygen bleach well. Heat (dryer) makes dye transfer permanent.",
+  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Apply sodium hydrosulfite (reducing agent) to break the transferred dye bonds. This is the most effective color run remover for cellulose fibers. Dwell 10–15 minutes.",
+      "2. Flush with NSD and cool water to remove loosened dye and reducing agent residue. Dwell 3–5 minutes.",
+      "3. If color remains: apply H₂O₂ 6% as oxygen bleach. Monitor carefully — do not over-bleach. Dwell 5–15 minutes.",
+      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Dwell 1–2 minutes.",
+      "5. Blot dry. Repeat full cycle if needed. Air dry only — never apply heat."
+    ],
+    "products": [
+      "Sodium hydrosulfite (reducing agent)",
+      "NSD (Neutral Synthetic Detergent)",
+      "H₂O₂ 6% (oxygen bleach)",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "cold — heat permanently sets dye transfer",
+    "warnings": [
+      "Speed is critical — treat immediately before dye bonds permanently",
+      "Never use chlorine bleach — oxygen bleach or reducing agent only",
+      "Heat makes dye transfer permanent — never tumble dry until stain is fully removed",
+      "Do not rub — rubbing spreads the transferred dye"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Re-wash IMMEDIATELY in cold water — do NOT dry the item.",
+      "2. Dissolve 1 scoop OxiClean (oxygen bleach) in cold water. Soak the linen item for 1–6 hours.",
+      "3. Check progress every hour. Re-wash in cold water with detergent.",
+      "4. If color remains, try a color remover product (Carbona Color Run Remover or Rit Color Remover). Follow package directions.",
+      "5. Repeat soak if needed — some dye transfers require multiple cycles.",
+      "6. Air dry only — dryer heat permanently sets dye transfer."
+    ],
+    "products": [
+      "OxiClean Versatile Stain Remover (oxygen bleach)",
+      "Carbona Color Run Remover or Rit Color Remover"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized reducing agents like sodium hydrosulfite.",
+    "warnings": [
+      "Never rub dye stains — rubbing spreads the color.",
+      "Never use chlorine bleach on dye transfer — it can set the stain permanently.",
+      "Heat permanently sets dye stains — air dry only."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Use chlorine bleach — can set dye transfer permanently on linen",
+      "Apply heat (dryer, iron) before stain is fully removed — makes it permanent",
+      "Rub or scrub — spreads transferred dye to clean areas"
+    ],
+    "fiberSensitivities": [
+      "Linen: cellulose fiber, tolerates oxygen bleach and reducing agents well. Avoid chlorine bleach on dye transfers. Handle gently when wet — linen wrinkles easily."
+    ]
+  },
+  "escalation": {
+    "when": "If the dye has penetrated the fiber (no improvement after 3 treatment cycles), or if the linen is expensive/antique, or if dye continues to spread during treatment",
+    "whatToTell": "Explain that the stain is dye transfer (color run) on white linen, how old it is, and what products were already used. This helps the professional choose the right reducing agent without duplicating failed approaches.",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the dye transfer stain?",
+      "Has it been exposed to heat (dryer, iron, hot water)?",
+      "Have you already tried treating it? If so, with what products?",
+      "What caused the color run (new jeans, red garment, mixed wash)?"
+    ],
+    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment with reducing agents."
+  },
+  "difficulty": 6,
+  "timeEstimate": "30–60 min",
+  "lastValidated": "2026-04-08"
+}
