@@ -283,7 +283,7 @@ export async function lookupProtocol(
 /**
  * Detect which stain family a stain belongs to using family-keywords.json
  */
-function detectFamily(stain: string): string | null {
+export function detectFamily(stain: string): string | null {
   const stainLower = normalize(stain)
   const stainWords = stainLower.replace(/-/g, ' ')
 

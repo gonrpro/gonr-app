@@ -1,6 +1,6 @@
 // app/api/solve/route.ts
 import { NextResponse } from 'next/server'
-import { lookupProtocol } from '@/lib/protocols/lookup'
+import { lookupProtocol, detectFamily } from '@/lib/protocols/lookup'
 import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
 import { createClient } from '@supabase/supabase-js'
 import { identifyStain, readCareLabel } from '@/lib/vision'
@@ -126,6 +126,50 @@ function applyFiberModifications(card: any, ctx: SolveContext): void {
   for (const w of additions) {
     if (!card.materialWarnings.includes(w)) card.materialWarnings.unshift(w)
   }
+}
+
+// ── Resolve stainType as chemistry class ─────────────────────
+const VALID_FAMILIES = new Set([
+  'protein', 'tannin', 'oil', 'oil-grease', 'dye', 'mineral', 'oxidizable',
+  'combination', 'particulate', 'wax-gum', 'bleach-damage', 'adhesive',
+  'pigment', 'mildew', 'resin', 'plant-pigment', 'chemical_damage',
+])
+
+// Stain-name-based overrides for cases where family-keywords.json or AI
+// returns a less specific family than the standard chemistry classification.
+// e.g. rust → "oxidizable" in keywords, but standard classification is "mineral"
+const STAIN_FAMILY_OVERRIDES: [RegExp, string][] = [
+  [/\brust\b/i, 'mineral'],
+  [/\biron\b/i, 'mineral'],
+  [/\bcopper\b/i, 'mineral'],
+  [/\bhard\s*water\b/i, 'mineral'],
+]
+
+function resolveStainType(card: any | null, ctx: SolveContext): string {
+  // Check card fields — cards use stainFamily (newer) or stainType (v5)
+  const cardFamily = card?.stainFamily || card?.stainType
+  if (cardFamily && cardFamily !== 'unknown' && VALID_FAMILIES.has(cardFamily)) {
+    // Apply stain-name overrides when card classification is less specific
+    if (cardFamily === 'oxidizable') {
+      for (const [pattern, override] of STAIN_FAMILY_OVERRIDES) {
+        if (pattern.test(ctx.stain)) return override
+      }
+    }
+    return cardFamily
+  }
+  // Fallback: detect from stain name via family-keywords
+  const detected = detectFamily(ctx.stain)
+  if (detected) {
+    // Apply same overrides to keyword-detected family
+    if (detected === 'oxidizable') {
+      for (const [pattern, override] of STAIN_FAMILY_OVERRIDES) {
+        if (pattern.test(ctx.stain)) return override
+      }
+    }
+    return detected
+  }
+  if (ctx.family && ctx.family !== 'unknown') return ctx.family
+  return ctx.stain
 }
 
 // ── AI protocol generator ──────────────────────────────────────
@@ -392,7 +436,7 @@ export async function POST(req: Request) {
       applyFiberModifications(result.card, ctx)
       if (ctx.fiber) (result.card as any)._fiberContext = { fiber: ctx.fiber, careSymbols: ctx.careSymbols, warnings: ctx.labelWarnings }
       logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: result.card.title, source: 'library', confidence: result.confidence }).catch(() => {})
-      return NextResponse.json({ ...result, stainType: ctx.stain })
+      return NextResponse.json({ ...result, stainType: resolveStainType(result.card, ctx) })
     }
 
     // ── AI fallback ────────────────────────────────────────────
@@ -406,7 +450,7 @@ export async function POST(req: Request) {
         console.error(`[SafetyFilter] BLOCKED: ${safetyResult.violations.map((v: any) => v.rule).join(', ')}`)
         return NextResponse.json({
           card: { ...SAFE_FALLBACK, surface: ctx.surface },
-          tier: 4, confidence: 0, source: 'ai', stainType: ctx.stain, _safetyBlocked: true,
+          tier: 4, confidence: 0, source: 'ai', stainType: resolveStainType(null, ctx), _safetyBlocked: true,
         })
       }
 
@@ -419,7 +463,7 @@ export async function POST(req: Request) {
       queueForReview(safeCard, ctx, safetyResult).catch(() => {})
       logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: safeCard.title || ctx.stain, source: 'ai', confidence: 0.5 }).catch(() => {})
 
-      return NextResponse.json({ card: safeCard, tier: 4, confidence: 0.5, source: 'ai', stainType: ctx.stain })
+      return NextResponse.json({ card: safeCard, tier: 4, confidence: 0.5, source: 'ai', stainType: resolveStainType(safeCard, ctx) })
     } catch (err) {
       console.error('AI fallback failed:', err)
       return NextResponse.json({ error: 'No protocol found and AI generation unavailable' }, { status: 404 })

@@ -265,6 +265,24 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
     })
   }
 
+  // RULE 7: H2O2 + ammonia on silk (BLOCK)
+  // Hydrogen peroxide and ammonia both destroy silk fiber protein.
+  // S1 safety-critical: blood on silk must use cold water + NSD only.
+  if (ctx.isSilk) {
+    activeRules.push({
+      id: 'RULE-7: Hydrogen peroxide on silk',
+      pattern: /\b(hydrogen peroxide|h2o2|h₂o₂|peroxide)\b/gi,
+      replacement: null, // nuclear — block entire response
+      action: 'blocked',
+    })
+    activeRules.push({
+      id: 'RULE-8: Ammonia on silk',
+      pattern: /\b(ammonia|ammonium hydroxide)\b/gi,
+      replacement: null, // nuclear — block entire response
+      action: 'blocked',
+    })
+  }
+
   // RULE 6: Flood/saturate wood (REPLACE)
   if (ctx.isWood) {
     activeRules.push({
