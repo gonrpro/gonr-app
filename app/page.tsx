@@ -6,6 +6,7 @@ import ResultCard from '@/components/solve/ResultCard'
 import StainChips from '@/components/solve/StainChips'
 import SurfaceChips from '@/components/solve/SurfaceChips'
 import PaywallModal from '@/components/paywall/PaywallModal'
+import LanguageToggle from '@/components/protocols/LanguageToggle'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { useOptionalAuth } from '@/lib/auth/AuthContext'
 import { initializeTrialState, getTrialState, getRemainingText } from '@/lib/auth/trialGuard'
@@ -39,6 +40,10 @@ function SolvePageInner() {
   const [showPaywallReason, setShowPaywallReason] = useState<'trial_expired' | 'anon_limit'>('trial_expired')
   const [daysRemaining, setDaysRemaining] = useState(7)
   const [userTier, setUserTier] = useState<'free' | 'home' | 'spotter' | 'operator' | 'founder'>('free')
+
+  // Translation state for solve result
+  const [translatedCard, setTranslatedCard] = useState<any>(null)
+  const [showTranslated, setShowTranslated] = useState(false)
 
   // Photo enrichment state
   const [capturedPhoto, setCapturedPhoto] = useState<File | null>(null)
@@ -167,6 +172,8 @@ function SolvePageInner() {
     setLoading(true)
     setError('')
     setResult(null)
+    setTranslatedCard(null)
+    setShowTranslated(false)
 
     try {
       let res: Response
@@ -270,8 +277,19 @@ function SolvePageInner() {
         >
           {t('backToSearch')}
         </button>
+        <div className="flex items-center justify-end mb-2">
+          <LanguageToggle
+            protocolJson={result.card}
+            translatedJson={translatedCard}
+            onTranslated={(translated) => {
+              setTranslatedCard(translated)
+              setShowTranslated(true)
+            }}
+            onLangChange={(l) => setShowTranslated(l === 'es')}
+          />
+        </div>
         <ResultCard
-          card={result.card}
+          card={showTranslated && translatedCard ? translatedCard : result.card}
           source={result.source}
         />
       </div>

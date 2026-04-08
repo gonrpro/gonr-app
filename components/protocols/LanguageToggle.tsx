@@ -3,10 +3,11 @@
 import { useState } from 'react'
 
 interface LanguageToggleProps {
-  protocolId: string
+  protocolId?: string
   protocolJson: any
   translatedJson: any | null
   onTranslated: (translated: any) => void
+  onLangChange?: (lang: 'en' | 'es') => void
 }
 
 export default function LanguageToggle({
@@ -14,6 +15,7 @@ export default function LanguageToggle({
   protocolJson,
   translatedJson,
   onTranslated,
+  onLangChange,
 }: LanguageToggleProps) {
   const [lang, setLang] = useState<'en' | 'es'>('en')
   const [loading, setLoading] = useState(false)
@@ -47,6 +49,7 @@ export default function LanguageToggle({
     }
 
     setLang(newLang)
+    onLangChange?.(newLang)
   }
 
   return (

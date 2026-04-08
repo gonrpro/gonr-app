@@ -18,7 +18,7 @@ export const strings: Record<string, Record<string, string>> = {
   badgeNoEnzyme: { en: 'No Enzyme', es: 'Sin Enzima' },
   badgeNoBleach: { en: 'No Bleach', es: 'Sin Blanqueador' },
   badgeNoHeat: { en: 'No Heat', es: 'Sin Calor' },
-  badgeSilkSafe: { en: 'Silk Safe', es: 'Seguro p/ Seda' },
+  badgeSilkSafe: { en: 'Silk Safe', es: 'Seguro para Seda' },
   badgeDryCleanOnly: { en: 'Dry Clean Only', es: 'Solo en Seco' },
   badgeTestFirst: { en: 'Test First', es: 'Prueba Primero' },
   // ── Legal / Terms additions ──
@@ -47,7 +47,7 @@ export const strings: Record<string, Record<string, string>> = {
   danNeverDo: { en: "Never Do", es: "Nunca Hacer" },
   danSaving: { en: "Saving...", es: "Guardando..." },
   danSaveProtocol: { en: "💾 Save Protocol", es: "💾 Guardar Protocolo" },
-  danAiFillsIn: { en: "AI fills in: stain chemistry, why it works, customer language, home tips, escalation. You just provide the steps.", es: "El AI completa: química de manchas, por qué funciona, lenguaje para el cliente, consejos caseros, escalado. Tú solo provees los pasos." },
+  danAiFillsIn: { en: "AI fills in: stain chemistry, why it works, customer language, home tips, escalation. You just provide the steps.", es: "La IA completa: química de manchas, por qué funciona, lenguaje para el cliente, consejos caseros, escalado. Tú solo provees los pasos." },
   danErrorSelectStainFiber: { en: "Select a stain and fiber first", es: "Selecciona una mancha y fibra primero" },
   danErrorMinSteps: { en: "Add at least 2 steps", es: "Agrega al menos 2 pasos" },
   danSaveFailed: { en: "Save failed — try again", es: "Error al guardar — inténtalo de nuevo" },
@@ -113,7 +113,7 @@ export const strings: Record<string, Record<string, string>> = {
   tierFeatureDiy3: { en: "Basic stain identification", es: "Identificación básica de manchas" },
   tierFeatureDiy4: { en: "Email support", es: "Soporte por correo" },
   tierFeatureSpotter1: { en: "Everything in Home", es: "Todo lo de Hogar" },
-  tierFeatureSpotter2: { en: "Full pro spotting protocols", es: "Protocolos profesionales completos de manchado" },
+  tierFeatureSpotter2: { en: "Full pro spotting protocols", es: "Protocolos profesionales completos de desmanchado" },
   tierFeatureSpotter3: { en: "Deep Solve AI analysis", es: "Análisis IA Deep Solve" },
   tierFeatureSpotter4: { en: "Customer handoff scripts", es: "Scripts de entrega al cliente" },
   tierFeatureSpotter5: { en: "Stain Brain chat", es: "Chat Stain Brain" },
@@ -154,7 +154,7 @@ export const strings: Record<string, Record<string, string>> = {
   treatmentLabel: { en: "Treatment", es: "Tratamiento" },
   riskLabel: { en: "Risk", es: "Riesgo" },
   locationLabel: { en: "Location", es: "Ubicación" },
-  spotterWatchFor: { en: "Spotter: watch for", es: "Manchador: atención a" },
+  spotterWatchFor: { en: "Spotter: watch for", es: "Técnico: atención a" },
   findingProtocol: { en: "Finding protocol...", es: "Buscando protocolo..." },
   backToSearch: { en: "← Back to search", es: "← Volver a la búsqueda" },
 
@@ -699,6 +699,17 @@ export const strings: Record<string, Record<string, string>> = {
   customErrorRequired: { en: 'Stain and surface are required', es: 'Mancha y superficie son obligatorios' },
   customErrorSteps: { en: 'Add at least one step with instructions', es: 'Agrega al menos un paso con instrucciones' },
   customErrorAuth: { en: 'Sign in to create custom protocols', es: 'Inicia sesión para crear protocolos personalizados' },
+
+  // ── Missing keys (TASK-SPANISH-FIX) ────────────────────────────
+  deepSolveDetailPlaceholder: { en: 'Add details about the stain, prior treatments, garment value...', es: 'Agrega detalles sobre la mancha, tratamientos previos, valor de la prenda...' },
+  deepSolveExpandCta: { en: 'Deep Solve — Tailored Protocol', es: 'Deep Solve — Protocolo Personalizado' },
+  deepSolveFallback: { en: 'Unable to generate a Deep Solve protocol. Please try again.', es: 'No se pudo generar un protocolo Deep Solve. Inténtalo de nuevo.' },
+  deepSolveGenerateBtn: { en: 'Generate Protocol', es: 'Generar Protocolo' },
+  deepSolveModuleHeader: { en: 'Deep Solve Analysis', es: 'Análisis Deep Solve' },
+  fabricDescription: { en: 'Fabric feel', es: 'Textura de la tela' },
+  garmentLocation: { en: 'Stain location', es: 'Ubicación de la mancha' },
+  stainHint: { en: 'Stain type', es: 'Tipo de mancha' },
+  surfaceHint: { en: 'Surface / fabric', es: 'Superficie / tela' },
 }
 
 export function t(key: string, lang: string = 'en'): string {
