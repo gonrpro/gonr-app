@@ -74,16 +74,29 @@ function SpotterPageInner() {
   const { tier } = useUser()
   const { email } = useUser()
   const searchParams = useSearchParams()
-  const [activeTool, setActiveTool] = useState<ActiveTool>(() => {
-    if (searchParams.get('tool') === 'stain_brain') return 'stain_brain'
-    return null
-  })
+  const [activeTool, setActiveTool] = useState<ActiveTool>(null)
   const [showLoginGate, setShowLoginGate] = useState(false)
+  const [pendingTool, setPendingTool] = useState<ActiveTool>(null)
+
+  // Check URL param on mount — but gate behind auth
+  useEffect(() => {
+    const toolParam = searchParams.get('tool')
+    if (toolParam === 'stain_brain') {
+      const hasAuth = email || localStorage.getItem('gonr_user_email')
+      if (hasAuth) {
+        setActiveTool('stain_brain')
+      } else {
+        setPendingTool('stain_brain')
+        setShowLoginGate(true)
+      }
+    }
+  }, [searchParams, email])
 
   // Gate pro tools behind login
   const requireAuth = (tool: ActiveTool) => {
     const hasEmail = email || (typeof window !== 'undefined' && localStorage.getItem('gonr_user_email'))
     if (!hasEmail) {
+      setPendingTool(tool)
       setShowLoginGate(true)
       return
     }
@@ -291,10 +304,15 @@ function SpotterPageInner() {
       {/* Login gate modal */}
       {showLoginGate && (
         <LoginGateModal
-          onClose={() => setShowLoginGate(false)}
+          onClose={() => { setShowLoginGate(false); setPendingTool(null) }}
           onLoggedIn={() => {
             setShowLoginGate(false)
-            window.location.reload()
+            if (pendingTool) {
+              setActiveTool(pendingTool)
+              setPendingTool(null)
+            } else {
+              window.location.reload()
+            }
           }}
         />
       )}
