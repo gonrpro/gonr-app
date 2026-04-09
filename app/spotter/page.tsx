@@ -8,6 +8,7 @@ import StainBrainChat from '@/components/solve/StainBrainChat'
 import GarmentFlag from '@/components/solve/GarmentFlag'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { useUser } from '@/lib/hooks/useUser'
+import LoginGateModal from '@/components/auth/LoginGateModal'
 
 const COURSES = [
   {
@@ -71,11 +72,23 @@ type ActiveTool = 'stain_brain' | 'garment_flag' | null
 function SpotterPageInner() {
   const { t } = useLanguage()
   const { tier } = useUser()
+  const { email } = useUser()
   const searchParams = useSearchParams()
   const [activeTool, setActiveTool] = useState<ActiveTool>(() => {
     if (searchParams.get('tool') === 'stain_brain') return 'stain_brain'
     return null
   })
+  const [showLoginGate, setShowLoginGate] = useState(false)
+
+  // Gate pro tools behind login
+  const requireAuth = (tool: ActiveTool) => {
+    const hasEmail = email || (typeof window !== 'undefined' && localStorage.getItem('gonr_user_email'))
+    if (!hasEmail) {
+      setShowLoginGate(true)
+      return
+    }
+    setActiveTool(tool)
+  }
 
   if (activeTool === 'stain_brain') {
     return (
@@ -162,7 +175,7 @@ function SpotterPageInner() {
         <p className="text-[10px] font-mono font-bold tracking-wider uppercase px-1" style={{ color: 'var(--text-secondary)' }}>AI Tools</p>
 
         <button
-          onClick={() => setActiveTool('stain_brain')}
+          onClick={() => requireAuth('stain_brain')}
           className="card w-full text-left space-y-1 transition-colors hover:border-purple-500/30"
         >
           <div className="flex items-center gap-2">
@@ -205,7 +218,7 @@ function SpotterPageInner() {
         </Link>
 
         <button
-          onClick={() => setActiveTool('garment_flag')}
+          onClick={() => requireAuth('garment_flag')}
           className="card w-full text-left space-y-1 transition-colors hover:border-amber-500/30"
         >
           <div className="flex items-center gap-2">
@@ -273,6 +286,17 @@ function SpotterPageInner() {
             </span>
           </a>
         </div>
+      )}
+
+      {/* Login gate modal */}
+      {showLoginGate && (
+        <LoginGateModal
+          onClose={() => setShowLoginGate(false)}
+          onLoggedIn={() => {
+            setShowLoginGate(false)
+            window.location.reload()
+          }}
+        />
       )}
     </div>
   )

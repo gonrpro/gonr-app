@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import LoginGateModal from '@/components/auth/LoginGateModal'
 import { STAIN_CHIPS, SURFACE_CHIPS } from '@/lib/protocols/chips'
 
 const AGENTS = [
@@ -30,6 +31,12 @@ function emptyStep(): ProtocolStep {
 
 export default function DanBuilderPage() {
   const { t } = useLanguage()
+  const [showLoginGate, setShowLoginGate] = useState(false)
+
+  const hasEmail = typeof window !== 'undefined' && localStorage.getItem('gonr_user_email')
+  useEffect(() => {
+    if (!hasEmail) setShowLoginGate(true)
+  }, [hasEmail])
 
   const [stain, setStain] = useState('')
   const [fiber, setFiber] = useState('')
@@ -297,6 +304,12 @@ export default function DanBuilderPage() {
       <p className="text-xs text-center leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
         {t('danAiFillsIn')}
       </p>
+      {showLoginGate && (
+        <LoginGateModal
+          onClose={() => setShowLoginGate(false)}
+          onLoggedIn={() => { setShowLoginGate(false); window.location.reload() }}
+        />
+      )}
     </div>
   )
 }

@@ -1,15 +1,22 @@
 'use client'
 
-import { Suspense } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import HandoffTool from '@/components/solve/HandoffTool'
+import LoginGateModal from '@/components/auth/LoginGateModal'
 
 function HandoffPageInner() {
   const { lang } = useLanguage()
   const searchParams = useSearchParams()
   const prefill = searchParams.get('prefill') || ''
+  const [showLoginGate, setShowLoginGate] = useState(false)
+
+  const hasEmail = typeof window !== 'undefined' && localStorage.getItem('gonr_user_email')
+  useEffect(() => {
+    if (!hasEmail) setShowLoginGate(true)
+  }, [hasEmail])
 
   return (
     <div className="space-y-4 pb-8">
@@ -25,6 +32,12 @@ function HandoffPageInner() {
         </div>
       </div>
       <HandoffTool prefill={prefill} />
+      {showLoginGate && (
+        <LoginGateModal
+          onClose={() => setShowLoginGate(false)}
+          onLoggedIn={() => { setShowLoginGate(false); window.location.reload() }}
+        />
+      )}
     </div>
   )
 }

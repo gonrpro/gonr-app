@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import LoginGateModal from '@/components/auth/LoginGateModal'
 
 /* ═══════════════════════════════════════════════════
    TASK-127 — Operator Flow
@@ -627,6 +628,13 @@ function CustomerHandoffModule({
 function OperatorPageInner() {
   const { t } = useLanguage()
   const searchParams = useSearchParams()
+  const [showLoginGate, setShowLoginGate] = useState(false)
+
+  // Require login
+  const hasEmail = typeof window !== 'undefined' && localStorage.getItem('gonr_user_email')
+  useEffect(() => {
+    if (!hasEmail) setShowLoginGate(true)
+  }, [hasEmail])
 
   const [session, setSession] = useState<OperatorSession>({
     stain: searchParams.get('stain') || '',
@@ -678,6 +686,13 @@ function OperatorPageInner() {
           onDone={() => setHandoffStatus('done')}
         />
       </div>
+      {/* Login gate modal */}
+      {showLoginGate && (
+        <LoginGateModal
+          onClose={() => setShowLoginGate(false)}
+          onLoggedIn={() => { setShowLoginGate(false); window.location.reload() }}
+        />
+      )}
     </div>
   )
 }
