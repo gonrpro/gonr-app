@@ -458,14 +458,25 @@ export default function ProfilePage() {
           href="https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e-ae15-4b25-9021-42c791f80325"
           target="_blank"
           rel="noopener noreferrer"
-          className="block card text-center space-y-1 hover:border-green-500/30 transition-colors"
+          className="block text-center space-y-2 rounded-2xl p-5 transition-all hover:scale-[1.01]"
+          style={{
+            background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.12), rgba(168, 85, 247, 0.08))',
+            border: '2px solid rgba(147, 51, 234, 0.4)',
+            boxShadow: '0 0 20px rgba(147, 51, 234, 0.1)',
+          }}
         >
-          <p className="text-sm font-semibold" style={{ color: 'var(--text)' }}>
+          <p className="text-base font-bold" style={{ color: '#a855f7' }}>
             {t('profileUpgradeCta')}
           </p>
           <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
             {t('profileUpgradeDesc')}
           </p>
+          <span
+            className="inline-block mt-1 px-5 py-2 rounded-xl text-sm font-bold text-white"
+            style={{ background: 'linear-gradient(135deg, #9333ea, #a855f7)' }}
+          >
+            Upgrade Now
+          </span>
         </a>
       )}
     </div>
