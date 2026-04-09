@@ -7,6 +7,7 @@ import Link from 'next/link'
 import StainBrainChat from '@/components/solve/StainBrainChat'
 import GarmentFlag from '@/components/solve/GarmentFlag'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { useUser } from '@/lib/hooks/useUser'
 
 const COURSES = [
   {
@@ -69,6 +70,7 @@ type ActiveTool = 'stain_brain' | 'garment_flag' | null
 
 function SpotterPageInner() {
   const { t } = useLanguage()
+  const { tier } = useUser()
   const searchParams = useSearchParams()
   const [activeTool, setActiveTool] = useState<ActiveTool>(() => {
     if (searchParams.get('tool') === 'stain_brain') return 'stain_brain'
@@ -239,33 +241,39 @@ function SpotterPageInner() {
         ))}
       </div>
 
-      {/* Upgrade CTA */}
-      <div className="space-y-3">
-        <a
-          href="https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e-ae15-4b25-9021-42c791f80325"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block text-center space-y-2 rounded-2xl p-5 transition-all hover:scale-[1.01]"
-          style={{
-            background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.12), rgba(168, 85, 247, 0.08))',
-            border: '2px solid rgba(147, 51, 234, 0.4)',
-            boxShadow: '0 0 20px rgba(147, 51, 234, 0.1)',
-          }}
-        >
-          <p className="text-base font-bold" style={{ color: '#a855f7' }}>
-            Get Spotter — $49/mo
-          </p>
-          <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-            Unlock all pro tools, garment analysis, and customer handoff scripts.
-          </p>
-          <span
-            className="inline-block mt-1 px-5 py-2 rounded-xl text-sm font-bold text-white"
-            style={{ background: 'linear-gradient(135deg, #9333ea, #a855f7)' }}
+      {/* Upgrade CTA — dynamic based on tier */}
+      {tier !== 'operator' && tier !== 'founder' && (
+        <div className="space-y-3">
+          <a
+            href={tier === 'spotter'
+              ? 'https://gonrlabs.lemonsqueezy.com/checkout/buy/21a29828-e007-4989-834f-50b372a82240'
+              : 'https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e-ae15-4b25-9021-42c791f80325'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-center space-y-2 rounded-2xl p-5 transition-all hover:scale-[1.01]"
+            style={{
+              background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.12), rgba(168, 85, 247, 0.08))',
+              border: '2px solid rgba(147, 51, 234, 0.4)',
+              boxShadow: '0 0 20px rgba(147, 51, 234, 0.1)',
+            }}
           >
-            Upgrade Now
-          </span>
-        </a>
-      </div>
+            <p className="text-base font-bold" style={{ color: '#a855f7' }}>
+              {tier === 'spotter' ? 'Upgrade to Operator — $99/mo' : 'Get Spotter — $49/mo'}
+            </p>
+            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+              {tier === 'spotter'
+                ? 'Unlimited Deep Solve, team accounts, custom protocol library, and API access.'
+                : 'Unlock all pro tools, garment analysis, and customer handoff scripts.'}
+            </p>
+            <span
+              className="inline-block mt-1 px-5 py-2 rounded-xl text-sm font-bold text-white"
+              style={{ background: 'linear-gradient(135deg, #9333ea, #a855f7)' }}
+            >
+              Upgrade Now
+            </span>
+          </a>
+        </div>
+      )}
     </div>
   )
 }
