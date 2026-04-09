@@ -57,16 +57,13 @@ export default function OperatorPage() {
         <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
           {t('operatorGrandfatherNote')}
         </p>
-        <a
-          href="https://gonrlabs.lemonsqueezy.com/checkout/buy/21a29828-e007-4989-834f-50b372a82240"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full min-h-[44px] rounded-xl text-white text-sm font-bold
-            hover:opacity-90 transition-all flex items-center justify-center"
-          style={{ background: 'linear-gradient(135deg, #9333ea, #a855f7)' }}
+        <div
+          className="block w-full min-h-[44px] rounded-xl text-sm font-bold
+            flex items-center justify-center cursor-default"
+          style={{ background: 'rgba(147, 51, 234, 0.1)', color: '#9ca3af', border: '2px solid rgba(147, 51, 234, 0.2)' }}
         >
-          Get Operator — $99/mo
-        </a>
+          Coming Soon
+        </div>
       </div>
 
       {/* Back link */}

@@ -268,12 +268,10 @@ function SpotterPageInner() {
       </div>
 
       {/* Upgrade CTA — dynamic based on tier */}
-      {tier !== 'operator' && tier !== 'founder' && (
+      {tier !== 'operator' && tier !== 'founder' && tier !== 'spotter' && (
         <div className="space-y-3">
           <a
-            href={tier === 'spotter'
-              ? 'https://gonrlabs.lemonsqueezy.com/checkout/buy/21a29828-e007-4989-834f-50b372a82240'
-              : 'https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e-ae15-4b25-9021-42c791f80325'}
+            href="https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e-ae15-4b25-9021-42c791f80325"
             target="_blank"
             rel="noopener noreferrer"
             className="block text-center space-y-2 rounded-2xl p-5 transition-all hover:scale-[1.01]"
@@ -284,12 +282,10 @@ function SpotterPageInner() {
             }}
           >
             <p className="text-base font-bold" style={{ color: '#a855f7' }}>
-              {tier === 'spotter' ? 'Upgrade to Operator — $99/mo' : 'Get Spotter — $49/mo'}
+              Get Spotter — $49/mo
             </p>
             <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-              {tier === 'spotter'
-                ? 'Unlimited Deep Solve, team accounts, custom protocol library, and API access.'
-                : 'Unlock all pro tools, garment analysis, and customer handoff scripts.'}
+              Unlock all pro tools, garment analysis, and customer handoff scripts.
             </p>
             <span
               className="inline-block mt-1 px-5 py-2 rounded-xl text-sm font-bold text-white"

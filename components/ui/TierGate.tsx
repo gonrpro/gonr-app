@@ -11,6 +11,7 @@ const TIERS: {
   accent: string
   badge: string
   popular?: boolean
+  comingSoon?: boolean
 }[] = [
   {
     nameKey: 'tierSpotter',
@@ -42,6 +43,7 @@ const TIERS: {
     url: 'https://gonrlabs.lemonsqueezy.com/checkout/buy/21a29828-e007-4989-834f-50b372a82240',
     accent: 'border-purple-500',
     badge: 'bg-purple-500/20 text-purple-400',
+    comingSoon: true,
   },
 ]
 
@@ -127,15 +129,24 @@ export default function TierGate({ isOpen, onClose, email }: TierGateProps) {
                 ))}
               </ul>
 
-              <a
-                href={buildUrl(tier.url)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full min-h-[44px] rounded-lg bg-green-500 hover:bg-green-600
-                  text-white text-sm font-semibold text-center leading-[44px] transition-colors"
-              >
-                {t('tierGetStarted')}
-              </a>
+              {tier.comingSoon ? (
+                <div
+                  className="block w-full min-h-[44px] rounded-lg bg-gray-200 dark:bg-gray-700
+                    text-gray-500 dark:text-gray-400 text-sm font-semibold text-center leading-[44px] cursor-default"
+                >
+                  {t('comingSoon')}
+                </div>
+              ) : (
+                <a
+                  href={buildUrl(tier.url)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full min-h-[44px] rounded-lg bg-green-500 hover:bg-green-600
+                    text-white text-sm font-semibold text-center leading-[44px] transition-colors"
+                >
+                  {t('tierGetStarted')}
+                </a>
+              )}
             </div>
           ))}
         </div>
