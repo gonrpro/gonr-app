@@ -7,6 +7,7 @@ import StainChips from '@/components/solve/StainChips'
 import SurfaceChips from '@/components/solve/SurfaceChips'
 import PaywallModal from '@/components/paywall/PaywallModal'
 import LanguageToggle from '@/components/protocols/LanguageToggle'
+import LoginGateModal from '@/components/auth/LoginGateModal'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { useOptionalAuth } from '@/lib/auth/AuthContext'
 import { initializeTrialState, getTrialState, getRemainingText } from '@/lib/auth/trialGuard'
@@ -44,6 +45,9 @@ function SolvePageInner() {
   // Translation state for solve result
   const [translatedCard, setTranslatedCard] = useState<any>(null)
   const [showTranslated, setShowTranslated] = useState(false)
+
+  // Login gate state
+  const [showLoginGate, setShowLoginGate] = useState(false)
 
   // Photo enrichment state
   const [capturedPhoto, setCapturedPhoto] = useState<File | null>(null)
@@ -168,6 +172,13 @@ function SolvePageInner() {
   // --- SOLVE: unified handler ---
   const handleSolve = useCallback(async () => {
     if (!hasSolveInput) return
+
+    // Gate: require login before solving
+    const email = user?.email || localStorage.getItem('gonr_user_email')
+    if (!email) {
+      setShowLoginGate(true)
+      return
+    }
 
     setLoading(true)
     setError('')
@@ -779,6 +790,18 @@ function SolvePageInner() {
         onDismiss={() => setShowPaywall(false)}
         reason={showPaywallReason}
       />
+
+      {/* Login gate modal — shown when anonymous user tries to solve */}
+      {showLoginGate && (
+        <LoginGateModal
+          onClose={() => setShowLoginGate(false)}
+          onLoggedIn={() => {
+            setShowLoginGate(false)
+            // Auto-trigger solve after login
+            handleSolve()
+          }}
+        />
+      )}
     </div>
   )
 }
