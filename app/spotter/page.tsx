@@ -259,6 +259,69 @@ function SpotterPageInner() {
         ))}
       </div>
 
+      {/* Industry Resources */}
+      <div className="space-y-3">
+        <p className="text-[10px] font-mono font-bold tracking-wider uppercase px-1" style={{ color: 'var(--text-secondary)' }}>
+          Industry Resources
+        </p>
+        <a
+          href="https://www.dlionline.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block"
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🏛️</span>
+            <h2 className="text-base font-bold">Drycleaning & Laundry Institute (DLI)</h2>
+          </div>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            Education, certification, and technical resources. The gold standard for professional development.
+          </p>
+        </a>
+        <a
+          href="https://www.nca-i.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block"
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🏛️</span>
+            <h2 className="text-base font-bold">National Cleaners Association (NCA)</h2>
+          </div>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            Founded 1946. Industry classes, events, and garment analysis services.
+          </p>
+        </a>
+        <a
+          href="https://www.tcata.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block"
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🤝</span>
+            <h2 className="text-base font-bold">TCATA</h2>
+          </div>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            Textile Care Allied Trades Association — equipment, chemicals, and supply distributors.
+          </p>
+        </a>
+        <a
+          href="https://www.cleanersupply.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block"
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🧴</span>
+            <h2 className="text-base font-bold">Cleaner's Supply</h2>
+          </div>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            28,000+ products. The leading wholesale supplier for dry cleaners since 1992.
+          </p>
+        </a>
+      </div>
+
       {/* Upgrade CTA — dynamic based on tier */}
       {tier !== 'operator' && tier !== 'founder' && tier !== 'spotter' && (
         <div className="space-y-3">
