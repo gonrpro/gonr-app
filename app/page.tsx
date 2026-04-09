@@ -321,7 +321,7 @@ function SolvePageInner() {
           card={showTranslated && translatedCard ? translatedCard : result.card}
           source={result.source}
         />
-        {(userTier === 'free' || userTier === 'home') && (
+        {(userTier === 'free') && (
           <a
             href="https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e-ae15-4b25-9021-42c791f80325"
             target="_blank"

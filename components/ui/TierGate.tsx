@@ -40,7 +40,7 @@ const TIERS: {
       'tierFeatureApi',
       'tierFeatureOnboarding',
     ],
-    url: 'https://gonrlabs.lemonsqueezy.com/checkout/buy/21a29828-e007-4989-834f-50b372a82240',
+    url: '#',
     accent: 'border-purple-500',
     badge: 'bg-purple-500/20 text-purple-400',
     comingSoon: true,

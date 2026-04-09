@@ -112,7 +112,7 @@ export const strings: Record<string, Record<string, string>> = {
   tierFeatureDiy2: { en: "Product recommendations", es: "Recomendaciones de productos" },
   tierFeatureDiy3: { en: "Basic stain identification", es: "Identificación básica de manchas" },
   tierFeatureDiy4: { en: "Email support", es: "Soporte por correo" },
-  tierFeatureSpotter1: { en: "Everything in Home", es: "Todo lo de Hogar" },
+  tierFeatureSpotter1: { en: "Full stain protocol library", es: "Biblioteca completa de protocolos" },
   tierFeatureSpotter2: { en: "Full pro spotting protocols", es: "Protocolos profesionales completos de desmanchado" },
   tierFeatureSpotter3: { en: "Deep Solve AI analysis", es: "Análisis IA Deep Solve" },
   tierFeatureSpotter4: { en: "Customer handoff scripts", es: "Scripts de entrega al cliente" },

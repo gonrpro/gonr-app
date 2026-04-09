@@ -56,7 +56,7 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
               <h3 className={styles.planName}>Spotter</h3>
               <p className={styles.planDescription}>Full professional toolkit — one user</p>
               <ul style={{ fontSize: '12px', color: '#6b7280', marginBottom: '12px', paddingLeft: '16px', lineHeight: '1.8' }}>
-                <li>Solve + 252-card protocol library</li>
+                <li>Solve + 250+ protocol library</li>
                 <li>Chemistry Cards + Chemical Reference</li>
                 <li>Stain Brain AI chat</li>
                 <li>Deep Solve + Garment Analysis</li>

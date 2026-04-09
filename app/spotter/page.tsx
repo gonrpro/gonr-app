@@ -238,8 +238,8 @@ function SpotterPageInner() {
             <span className="text-lg">📸</span>
             <h2 className="text-base font-bold">Flag for Garment Analysis</h2>
             <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border ml-auto"
-              style={{ background: 'rgba(245,158,11,0.1)', color: '#f59e0b', borderColor: 'rgba(245,158,11,0.35)' }}>
-              Operator
+              style={{ background: 'rgba(34,197,94,0.08)', color: '#22c55e', borderColor: 'rgba(34,197,94,0.3)' }}>
+              Pro
             </span>
           </div>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
