@@ -139,7 +139,7 @@ export default function ProfilePage() {
           </div>
           <div className="flex gap-2 pt-1">
             <a
-              href="https://gonr.lemonsqueezy.com"
+              href="https://gonrlabs.lemonsqueezy.com"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 text-center text-xs font-semibold py-2 rounded-lg transition-colors"
@@ -385,7 +385,7 @@ export default function ProfilePage() {
           </p>
           {daysRemaining <= 3 && daysRemaining > 0 && (
             <a
-              href="https://gonr.lemonsqueezy.com/checkout/buy/67c21a2e"
+              href="https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block text-xs font-semibold mt-1"
@@ -455,7 +455,7 @@ export default function ProfilePage() {
       {/* Upgrade CTA */}
       {!user && (
         <a
-          href="https://gonr.lemonsqueezy.com/checkout/buy/67c21a2e"
+          href="https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e"
           target="_blank"
           rel="noopener noreferrer"
           className="block card text-center space-y-1 hover:border-green-500/30 transition-colors"
