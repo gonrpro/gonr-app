@@ -220,10 +220,6 @@ function SpotterPageInner() {
           <div className="flex items-center gap-2">
             <span className="text-lg">🔬</span>
             <h2 className="text-base font-bold">Deep Solve</h2>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border ml-auto"
-              style={{ background: 'rgba(34,197,94,0.08)', color: '#22c55e', borderColor: 'rgba(34,197,94,0.3)' }}>
-              Pro
-            </span>
           </div>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
             Situational analysis for old stains, prior treatments, and high-value garments.
@@ -237,10 +233,6 @@ function SpotterPageInner() {
           <div className="flex items-center gap-2">
             <span className="text-lg">📸</span>
             <h2 className="text-base font-bold">Flag for Garment Analysis</h2>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border ml-auto"
-              style={{ background: 'rgba(34,197,94,0.08)', color: '#22c55e', borderColor: 'rgba(34,197,94,0.3)' }}>
-              Pro
-            </span>
           </div>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
             Capture a problem garment for operator review. Photo + notes sent to your operator for full AI assessment.
