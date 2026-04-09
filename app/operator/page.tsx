@@ -58,13 +58,14 @@ export default function OperatorPage() {
           {t('operatorGrandfatherNote')}
         </p>
         <a
-          href="https://gonrlabs.lemonsqueezy.com"
+          href="https://gonrlabs.lemonsqueezy.com/checkout/buy/21a29828-e007-4989-834f-50b372a82240"
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full min-h-[44px] rounded-xl bg-amber-500 text-black text-sm font-semibold
-            hover:bg-amber-400 transition-colors flex items-center justify-center"
+          className="block w-full min-h-[44px] rounded-xl text-white text-sm font-bold
+            hover:opacity-90 transition-all flex items-center justify-center"
+          style={{ background: 'linear-gradient(135deg, #9333ea, #a855f7)' }}
         >
-          {t('operatorGetSpotterCta')}
+          Get Operator — $99/mo
         </a>
       </div>
 
