@@ -67,7 +67,7 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
                 <span className={styles.period}>/month</span>
               </div>
               <a
-                href="https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e"
+                href="https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e-ae15-4b25-9021-42c791f80325"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.checkoutBtn}
