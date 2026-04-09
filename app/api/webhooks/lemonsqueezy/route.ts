@@ -26,11 +26,10 @@ function verifySignature(rawBody: string, signature: string, secret: string): bo
 }
 
 // Map LemonSqueezy product/variant to GONR tier
-function resolveProductTier(productName: string): 'home' | 'spotter' | 'operator' {
+function resolveProductTier(productName: string): 'spotter' | 'operator' {
   const lower = (productName || '').toLowerCase()
   if (lower.includes('operator')) return 'operator'
-  if (lower.includes('spotter')) return 'spotter'
-  if (lower.includes('home')) return 'home'
+  // Home tier retired — any unrecognized product defaults to spotter
   // Default to spotter for now (primary product)
   return 'spotter'
 }
@@ -91,6 +90,7 @@ export async function POST(req: NextRequest) {
             {
               email,
               tier,
+              status: 'active',
               is_active: true,
               ls_order_id: String(data.order_number || data.id || ''),
               updated_at: new Date().toISOString(),
@@ -123,6 +123,7 @@ export async function POST(req: NextRequest) {
             {
               email,
               tier,
+              status: 'active',
               is_active: true,
               ls_subscription_id: String(data.id || ''),
               updated_at: new Date().toISOString(),
@@ -153,6 +154,7 @@ export async function POST(req: NextRequest) {
             {
               email,
               tier,
+              status: isActive ? 'active' : 'cancelled',
               is_active: isActive,
               ls_subscription_id: String(data.id || ''),
               updated_at: new Date().toISOString(),
@@ -176,6 +178,7 @@ export async function POST(req: NextRequest) {
         const { error } = await supabase
           .from('subscriptions')
           .update({
+            status: 'cancelled',
             is_active: false,
             updated_at: new Date().toISOString(),
           })

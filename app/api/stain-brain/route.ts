@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { checkProAccess } from '@/lib/auth/serverGate'
 
 const SYSTEM_PROMPT = `You are Stain Brain — GONR's expert textile chemistry AI, built on 40 years of professional dry cleaning knowledge from Dan Eisen and the DLI Hall of Fame methodology.
 
@@ -651,7 +652,14 @@ Core teachings from all five guides:
 
 export async function POST(req: Request) {
   try {
-    const { messages, lang } = await req.json()
+    const body = await req.json()
+    const { messages, lang, email } = body
+
+    // Server-side auth: Spotter+ required
+    const access = await checkProAccess(email)
+    if (!access.allowed) {
+      return NextResponse.json({ error: access.reason || 'Unauthorized' }, { status: 401 })
+    }
 
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return NextResponse.json({ error: 'Messages required' }, { status: 400 })

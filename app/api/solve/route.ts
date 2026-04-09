@@ -42,11 +42,11 @@ function getSupabaseAdmin() {
 }
 
 // ── Server-side solve gating ───────────────────────────────────
-const FOUNDER_PATTERNS = ['gonr', 'nexshift', 'tyler']
+const FOUNDER_EMAILS = ['tyler@gonr.pro', 'tyler@nexshift.co', 'twfyke@me.com', 'eval@gonr.app']
 
 async function checkAndIncrementSolve(email: string | null, clientIp: string): Promise<{ allowed: boolean; reason?: string }> {
-  // Founder bypass: email contains any founder pattern
-  if (email && FOUNDER_PATTERNS.some(p => email.toLowerCase().includes(p))) return { allowed: true }
+  // Founder bypass: exact email match only
+  if (email && FOUNDER_EMAILS.includes(email.toLowerCase())) return { allowed: true }
 
   if (!email) {
     // Cap unauthenticated users: 1 solve per IP per hour

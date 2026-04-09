@@ -1,8 +1,16 @@
 import { NextResponse } from 'next/server'
+import { checkProAccess } from '@/lib/auth/serverGate'
 
 export async function POST(req: Request) {
   try {
-    const { stain, cardId, context, situations, lang } = await req.json()
+    const body = await req.json()
+    const { stain, cardId, context, situations, lang, email } = body
+
+    // Server-side auth: Spotter+ required
+    const access = await checkProAccess(email)
+    if (!access.allowed) {
+      return NextResponse.json({ error: access.reason || 'Unauthorized' }, { status: 401 })
+    }
 
     if (!stain) {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })

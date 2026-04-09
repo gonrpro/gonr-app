@@ -13,23 +13,10 @@ const TIERS: {
   popular?: boolean
 }[] = [
   {
-    nameKey: 'tierHome',
-    priceKey: 'tierHomePrice',
-    featureKeys: [
-      'tierFeatureDiyProtocols',
-      'tierFeatureProductRecs',
-      'tierFeatureBasicId',
-      'tierFeatureEmailSupport',
-    ],
-    url: 'https://gonrlabs.lemonsqueezy.com/checkout/buy/c2ff73cf-b600-47e6-9a94-ac27cd2902c3',
-    accent: 'border-green-500',
-    badge: 'bg-green-500/20 text-green-400',
-  },
-  {
     nameKey: 'tierSpotter',
     priceKey: 'tierSpotterPrice',
     featureKeys: [
-      'tierFeatureEverythingHome',
+      'tierFeatureDiyProtocols',
       'tierFeatureFullPro',
       'tierFeatureDeepSolve',
       'tierFeatureHandoff',

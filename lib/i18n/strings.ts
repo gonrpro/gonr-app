@@ -412,8 +412,8 @@ export const strings: Record<string, Record<string, string>> = {
   },
   privacySecurity: { en: "Security", es: "Seguridad" },
   privacySecurityContent: {
-    en: "We use industry-standard encryption and security practices to protect your data. All connections use HTTPS. Authentication tokens are stored securely. However, no system is perfectly secure — we encourage you to use a strong, unique password.",
-    es: "Usamos prácticas de seguridad y cifrado estándar de la industria para proteger sus datos. Todas las conexiones usan HTTPS. Los tokens de autenticación se almacenan de forma segura. Sin embargo, ningún sistema es perfectamente seguro — le recomendamos usar una contraseña fuerte y única."
+    en: "We use industry-standard encryption and security practices to protect your data. All connections use HTTPS. Authentication uses secure magic links — no passwords are stored. However, no system is perfectly secure.",
+    es: "Usamos prácticas de seguridad y cifrado estándar de la industria para proteger sus datos. Todas las conexiones usan HTTPS. La autenticación usa enlaces mágicos seguros — no se almacenan contraseñas. Sin embargo, ningún sistema es perfectamente seguro."
   },
   privacyContact: { en: "Contact", es: "Contacto" },
   privacyContactContent: {
@@ -425,8 +425,8 @@ export const strings: Record<string, Record<string, string>> = {
   termsTitle: { en: "Terms of Service", es: "Términos de Servicio" },
   termsLastUpdated: { en: "Last updated", es: "Última actualización" },
   termsIntro: {
-    en: "By using GONR, you agree to these terms. GONR is operated by Nexshift Inc. (\"we\", \"us\"), based in Fort Myers, FL.",
-    es: "Al usar GONR, usted acepta estos términos. GONR es operado por Nexshift Inc. (\"nosotros\"), con sede en Fort Myers, FL."
+    en: "By using GONR, you agree to these terms. GONR is operated by GONR Labs LLC (\"we\", \"us\"), based in Fort Myers, FL.",
+    es: "Al usar GONR, usted acepta estos términos. GONR es operado por GONR Labs LLC (\"nosotros\"), con sede en Fort Myers, FL."
   },
   termsUseOfService: { en: "Use of Service", es: "Uso del Servicio" },
   termsUseOfServiceContent: {
@@ -445,8 +445,8 @@ export const strings: Record<string, Record<string, string>> = {
   },
   termsIntellectualProperty: { en: "Intellectual Property", es: "Propiedad Intelectual" },
   termsIntellectualPropertyContent: {
-    en: "GONR, its protocols, safety matrix, and AI models are proprietary to Nexshift Inc. Protected by 5 issued U.S. utility patents. You may not copy, redistribute, or reverse-engineer any part of the service.",
-    es: "GONR, sus protocolos, matriz de seguridad y modelos de IA son propiedad de Nexshift Inc. Protegidos por 5 patentes de utilidad emitidas en EE.UU. No puede copiar, redistribuir ni realizar ingeniería inversa de ninguna parte del servicio."
+    en: "GONR, its protocols, safety matrix, and AI models are proprietary to GONR Labs LLC. Protected by 5 issued U.S. utility patents. You may not copy, redistribute, or reverse-engineer any part of the service.",
+    es: "GONR, sus protocolos, matriz de seguridad y modelos de IA son propiedad de GONR Labs LLC Protegidos por 5 patentes de utilidad emitidas en EE.UU. No puede copiar, redistribuir ni realizar ingeniería inversa de ninguna parte del servicio."
   },
   termsLimitations: { en: "Limitations of Liability", es: "Limitaciones de Responsabilidad" },
   termsLimitationsContent: {
@@ -462,7 +462,7 @@ export const strings: Record<string, Record<string, string>> = {
   // ── Partners page ─────────────────────────────────────────────
   partnersTitle: { en: "Partner with GONR", es: "Asóciese con GONR" },
   partnersSubtitle: {
-    en: "Built by a 3rd generation dry cleaner. 5 patents. 130+ expert protocols. Let's work together.",
+    en: "Built by a 3rd generation dry cleaner. 5 patents. 250+ expert protocols. Let's work together.",
     es: "Creado por un tintorero de tercera generación. 5 patentes. Más de 130 protocolos expertos. Trabajemos juntos."
   },
   partnersWhyPartner: { en: "Why Partner with GONR?", es: "¿Por Qué Asociarse con GONR?" },
@@ -486,7 +486,7 @@ export const strings: Record<string, Record<string, string>> = {
 
   // ── TASK-127: Deep Solve upsell (ResultCard patch) ──
   deepSolveUpsellPrefix: { en: "Old stain, prior treatment, or high-value garment?", es: "¿Mancha antigua, tratada previamente, o prenda de alto valor?" },
-  deepSolveUpsellLink: { en: "Deep Solve → (Operator)", es: "Deep Solve → (Operador)" },
+  deepSolveUpsellLink: { en: "Deep Solve → (Spotter)", es: "Deep Solve → (Spotter)" },
 
   // ── TASK-127: Operator page ──
   operatorTitle: { en: "Operator", es: "Operador" },
