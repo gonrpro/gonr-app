@@ -445,8 +445,8 @@ export const strings: Record<string, Record<string, string>> = {
   },
   termsIntellectualProperty: { en: "Intellectual Property", es: "Propiedad Intelectual" },
   termsIntellectualPropertyContent: {
-    en: "GONR, its protocols, safety matrix, and AI models are proprietary to GONR Labs LLC. Protected by 5 issued U.S. utility patents. You may not copy, redistribute, or reverse-engineer any part of the service.",
-    es: "GONR, sus protocolos, matriz de seguridad y modelos de IA son propiedad de GONR Labs LLC Protegidos por 5 patentes de utilidad emitidas en EE.UU. No puede copiar, redistribuir ni realizar ingeniería inversa de ninguna parte del servicio."
+    en: "GONR, its protocols, safety matrix, and AI models are proprietary to GONR Labs LLC. You may not copy, redistribute, or reverse-engineer any part of the service.",
+    es: "GONR, sus protocolos, matriz de seguridad y modelos de IA son propiedad de GONR Labs LLC. No puede copiar, redistribuir ni realizar ingeniería inversa de ninguna parte del servicio."
   },
   termsLimitations: { en: "Limitations of Liability", es: "Limitaciones de Responsabilidad" },
   termsLimitationsContent: {
@@ -462,8 +462,8 @@ export const strings: Record<string, Record<string, string>> = {
   // ── Partners page ─────────────────────────────────────────────
   partnersTitle: { en: "Partner with GONR", es: "Asóciese con GONR" },
   partnersSubtitle: {
-    en: "Built by a 3rd generation dry cleaner. 5 patents. 250+ expert protocols. Let's work together.",
-    es: "Creado por un tintorero de tercera generación. 5 patentes. Más de 130 protocolos expertos. Trabajemos juntos."
+    en: "Built by a 3rd generation dry cleaner. 250+ expert protocols. Let's work together.",
+    es: "Creado por un tintorero de tercera generación. Más de 250 protocolos expertos. Trabajemos juntos."
   },
   partnersWhyPartner: { en: "Why Partner with GONR?", es: "¿Por Qué Asociarse con GONR?" },
   partnersWhyPartnerContent: {
