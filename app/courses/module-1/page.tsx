@@ -6,6 +6,7 @@ import { useLanguage } from '@/lib/i18n/LanguageContext'
 import LessonCard from '@/components/courses/LessonCard'
 import QuizPlayer from '@/components/courses/QuizPlayer'
 import { MODULE_1_META, MODULE_1_LESSONS, MODULE_1_QUIZ } from '@/lib/courses/module1'
+import { earnBadge } from '@/lib/courses/badges'
 
 type Phase = 'overview' | 'lesson' | 'quiz' | 'complete'
 
@@ -38,6 +39,7 @@ export default function Module1Page() {
   function handleQuizComplete(score: number, passed: boolean) {
     setQuizScore(score)
     setQuizPassed(passed)
+    if (passed) earnBadge('spotter-mindset')
     setPhase('complete')
   }
 

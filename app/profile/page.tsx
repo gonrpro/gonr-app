@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { createClient } from '@/lib/supabase/client'
+import { BADGES, getEarnedBadges, getSpotterScore } from '@/lib/courses/badges'
 import type { User } from '@supabase/supabase-js'
 
 export default function ProfilePage() {
@@ -27,9 +28,19 @@ export default function ProfilePage() {
   const [editingProfile, setEditingProfile] = useState(false)
   const [profileLoaded, setProfileLoaded] = useState(false)
 
+  // Badges & credentials state
+  const [earnedBadgeIds, setEarnedBadgeIds] = useState<string[]>([])
+  const [dliMember, setDliMember] = useState(false)
+  const [ncaMember, setNcaMember] = useState(false)
+  const [yearsExp, setYearsExp] = useState('')
+  const [specialties, setSpecialties] = useState<string[]>([])
+  const [credsSaving, setCredsSaving] = useState(false)
+  const [credsSaved, setCredsSaved] = useState(false)
+
   useEffect(() => {
     setSolveCount(parseInt(localStorage.getItem('gonr_solve_count') || '0', 10))
     setDark(document.documentElement.classList.contains('dark'))
+    setEarnedBadgeIds(getEarnedBadges())
 
     const supabase = createClient()
     // Timeout fallback — don't hang forever
@@ -341,36 +352,158 @@ export default function ProfilePage() {
         </form>
       )}
 
-      {/* Credentials — coming soon */}
-      {user && (
-        <div className="card space-y-3" style={{ opacity: 0.85 }}>
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
-              {t('profileCredentialsTitle')}
-            </h2>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-              style={{ background: 'rgba(245,158,11,0.12)', color: '#d97706', border: '1px solid rgba(245,158,11,0.3)' }}>
-              {t('comingSoon')}
+      {/* GONR Badges */}
+      <div className="card space-y-3">
+        <div className="flex items-center justify-between">
+          <h2 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
+            {lang === 'es' ? 'Insignias GONR' : 'GONR Badges'}
+          </h2>
+          {earnedBadgeIds.length > 0 && (
+            <span className="text-xs font-bold" style={{ color: '#22c55e' }}>
+              {lang === 'es' ? 'Puntuación' : 'Score'}: {getSpotterScore()}
             </span>
-          </div>
-          <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-            {t('profileCredentialsSubtitle')}
-          </p>
-          <div className="space-y-2">
-            {(['credDli', 'credNca', 'credYears', 'credSpecialties', 'credPortfolio', 'credBadge'] as const).map((key) => (
-              <div key={key} className="flex items-center gap-2">
-                <div className="w-4 h-4 rounded border flex-shrink-0" style={{ borderColor: 'var(--border)' }} />
-                <span className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-                  {t(key)}
-                </span>
-              </div>
-            ))}
-          </div>
-          <p className="text-[11px] font-semibold" style={{ color: '#d97706' }}>
-            {t('profileCredentialsCta')}
-          </p>
+          )}
         </div>
-      )}
+        <div className="grid grid-cols-4 gap-2">
+          {BADGES.map((badge) => {
+            const earned = earnedBadgeIds.includes(badge.id)
+            return (
+              <div
+                key={badge.id}
+                className="flex flex-col items-center gap-1 rounded-xl p-2 text-center"
+                style={{
+                  background: earned ? 'rgba(34,197,94,0.06)' : 'var(--surface-2)',
+                  border: `1px solid ${earned ? 'rgba(34,197,94,0.3)' : 'var(--border)'}`,
+                  opacity: earned ? 1 : 0.4,
+                }}
+              >
+                <span className="text-xl">{badge.icon}</span>
+                <span className="text-[9px] font-bold leading-tight" style={{ color: earned ? '#22c55e' : 'var(--text-secondary)' }}>
+                  {lang === 'es' ? badge.nameEs : badge.name}
+                </span>
+                {earned && (
+                  <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: '#22c55e', color: '#fff' }}>
+                    ✓
+                  </span>
+                )}
+              </div>
+            )
+          })}
+        </div>
+        {earnedBadgeIds.length === 0 && (
+          <p className="text-xs text-center" style={{ color: 'var(--text-secondary)' }}>
+            {lang === 'es' ? 'Completa cursos para desbloquear insignias' : 'Complete courses to unlock badges'}
+          </p>
+        )}
+      </div>
+
+      {/* Industry Credentials */}
+      <div className="card space-y-3">
+        <h2 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
+          {lang === 'es' ? 'Credenciales de la Industria' : 'Industry Credentials'}
+        </h2>
+        <div className="space-y-3">
+          <label className="flex items-center justify-between">
+            <span className="text-sm">{lang === 'es' ? 'Miembro de DLI' : 'DLI Member'}</span>
+            <button
+              onClick={() => setDliMember(!dliMember)}
+              className="w-10 h-5 rounded-full transition-colors relative"
+              style={{ background: dliMember ? '#22c55e' : 'var(--surface-2)', border: '1px solid var(--border)' }}
+            >
+              <span
+                className="absolute top-0.5 w-4 h-4 rounded-full transition-transform"
+                style={{ background: '#fff', boxShadow: '0 1px 3px rgba(0,0,0,0.2)', left: dliMember ? '20px' : '2px' }}
+              />
+            </button>
+          </label>
+          <label className="flex items-center justify-between">
+            <span className="text-sm">{lang === 'es' ? 'Miembro de NCA' : 'NCA Member'}</span>
+            <button
+              onClick={() => setNcaMember(!ncaMember)}
+              className="w-10 h-5 rounded-full transition-colors relative"
+              style={{ background: ncaMember ? '#22c55e' : 'var(--surface-2)', border: '1px solid var(--border)' }}
+            >
+              <span
+                className="absolute top-0.5 w-4 h-4 rounded-full transition-transform"
+                style={{ background: '#fff', boxShadow: '0 1px 3px rgba(0,0,0,0.2)', left: ncaMember ? '20px' : '2px' }}
+              />
+            </button>
+          </label>
+          <div>
+            <label className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>
+              {lang === 'es' ? 'Años de Experiencia' : 'Years of Experience'}
+            </label>
+            <select
+              value={yearsExp}
+              onChange={(e) => setYearsExp(e.target.value)}
+              className="w-full rounded-xl px-3 py-2 text-sm outline-none border mt-1"
+              style={{ background: 'var(--surface)', color: 'var(--text)', borderColor: 'var(--border)' }}
+            >
+              <option value="">{lang === 'es' ? 'Seleccionar...' : 'Select...'}</option>
+              <option value="1-5">1-5</option>
+              <option value="5-10">5-10</option>
+              <option value="10-20">10-20</option>
+              <option value="20+">20+</option>
+            </select>
+          </div>
+          <div>
+            <label className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>
+              {lang === 'es' ? 'Especialidades' : 'Specialties'}
+            </label>
+            <div className="flex flex-wrap gap-1.5 mt-1">
+              {['Spotting', 'Wet Cleaning', 'Leather/Suede', 'Wedding Gowns'].map((spec) => {
+                const selected = specialties.includes(spec)
+                return (
+                  <button
+                    key={spec}
+                    type="button"
+                    onClick={() => setSpecialties(selected ? specialties.filter(s => s !== spec) : [...specialties, spec])}
+                    className="px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors"
+                    style={{
+                      background: selected ? '#22c55e' : 'var(--surface-2)',
+                      color: selected ? '#fff' : 'var(--text-secondary)',
+                      border: `1px solid ${selected ? 'transparent' : 'var(--border)'}`,
+                    }}
+                  >
+                    {spec}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+        <button
+          onClick={async () => {
+            if (!user?.email) return
+            setCredsSaving(true)
+            try {
+              await fetch('/api/profile', {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  email: user.email,
+                  dli_member: dliMember,
+                  nca_member: ncaMember,
+                  years_experience: yearsExp,
+                  specialties,
+                }),
+              })
+              setCredsSaved(true)
+              setTimeout(() => setCredsSaved(false), 3000)
+            } finally {
+              setCredsSaving(false)
+            }
+          }}
+          disabled={credsSaving || !user}
+          className="w-full py-2 rounded-xl text-sm font-bold transition-colors disabled:opacity-40"
+          style={{ background: 'var(--accent)', color: '#fff' }}
+        >
+          {credsSaving ? (lang === 'es' ? 'Guardando...' : 'Saving...') : credsSaved ? (lang === 'es' ? '✓ Guardado' : '✓ Saved') : (lang === 'es' ? 'Guardar Credenciales' : 'Save Credentials')}
+        </button>
+        <p className="text-[10px] text-center" style={{ color: 'var(--text-secondary)', opacity: 0.6 }}>
+          {lang === 'es' ? 'Auto-reportado. GONR no verifica credenciales de terceros.' : 'Self-reported. GONR does not verify third-party credentials.'}
+        </p>
+      </div>
 
       {/* Industry Resources */}
       <div className="space-y-3">
