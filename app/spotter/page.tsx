@@ -240,21 +240,42 @@ function SpotterPageInner() {
         </button>
       </div>
 
-      {/* ── Courses (coming soon) ── */}
+      {/* ── Courses ── */}
       <div className="space-y-3">
-        <div className="flex items-center gap-2">
-          <p className="text-[10px] font-mono font-bold tracking-wider uppercase" style={{ color: 'var(--text-secondary)' }}>
-            {t('spotterSectionCourses')}
+        <p className="text-[10px] font-mono font-bold tracking-wider uppercase px-1" style={{ color: 'var(--text-secondary)' }}>
+          {t('spotterSectionCourses')}
+        </p>
+        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+          {t('spotterCoursesTagline')}
+        </p>
+
+        {/* Module 1 — Live */}
+        <Link
+          href="/courses/module-1"
+          className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block"
+          style={{ borderColor: 'rgba(34,197,94,0.25)' }}
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🧠</span>
+            <h2 className="text-base font-bold">The Spotter&apos;s Mindset</h2>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border ml-auto"
+              style={{ background: 'rgba(34,197,94,0.08)', color: '#22c55e', borderColor: 'rgba(34,197,94,0.3)' }}>
+              4 lessons
+            </span>
+          </div>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            What spotting really is, the 5-step decision loop, and the #1 rule that prevents damage.
           </p>
+        </Link>
+
+        {/* Coming soon courses */}
+        <div className="flex items-center gap-2 mt-2">
           <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md border"
             style={{ background: 'rgba(245,158,11,0.12)', color: '#d97706', borderColor: 'rgba(245,158,11,0.3)' }}>
             {t('comingSoon')}
           </span>
         </div>
-        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-          {t('spotterCoursesTagline')}
-        </p>
-        {COURSES.map((course) => (
+        {COURSES.slice(1).map((course) => (
           <CourseCard key={course.titleKey} course={course} />
         ))}
         <div className="card space-y-2" style={{ background: 'rgba(34,197,94,0.04)', borderColor: 'rgba(34,197,94,0.2)' }}>
