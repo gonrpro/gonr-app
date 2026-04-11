@@ -105,7 +105,6 @@ export const strings: Record<string, Record<string, string>> = {
   verifyingCredentials: { en: "Please wait while we verify your credentials.", es: "Por favor espera mientras verificamos tus credenciales." },
 
   // ── Tier Gate ──
-  tierNameHome: { en: "Home", es: "Hogar" },
   tierNameSpotter: { en: "Spotter", es: "Spotter" },
   tierNameOperator: { en: "Operator", es: "Operador" },
   tierFeatureDiy1: { en: "DIY stain protocols", es: "Protocolos de manchas para el hogar" },
@@ -337,19 +336,12 @@ export const strings: Record<string, Record<string, string>> = {
 
 // ── TierGate ──────────────────────────────────────────────────
   tierGateSubtitle: { en: "Professional stain removal intelligence", es: "Inteligencia profesional para eliminación de manchas" },
-  tierHome: { en: "Home", es: "Hogar" },
   tierSpotter: { en: "Spotter", es: "Spotter" },
   tierOperator: { en: "Operator", es: "Operador" },
-  tierHomePrice: { en: "$9.99/mo", es: "$9.99/mes" },
   tierSpotterPrice: { en: "$49/mo", es: "$49/mes" },
   tierOperatorPrice: { en: "$99/mo", es: "$99/mes" },
   tierMostPopular: { en: "Most Popular", es: "Más Popular" },
   tierGetStarted: { en: "Get Started", es: "Comenzar" },
-  tierFeatureDiyProtocols: { en: "DIY stain protocols", es: "Protocolos de manchas DIY" },
-  tierFeatureProductRecs: { en: "Product recommendations", es: "Recomendaciones de productos" },
-  tierFeatureBasicId: { en: "Basic stain identification", es: "Identificación básica de manchas" },
-  tierFeatureEmailSupport: { en: "Email support", es: "Soporte por correo" },
-  tierFeatureEverythingHome: { en: "Everything in Home", es: "Todo lo incluido en Hogar" },
   tierFeatureFullPro: { en: "Full pro spotting protocols", es: "Protocolos profesionales completos" },
   tierFeatureDeepSolve: { en: "Deep Solve AI analysis", es: "Análisis Deep Solve con IA" },
   tierFeatureHandoff: { en: "Customer handoff scripts", es: "Guiones de entrega al cliente" },

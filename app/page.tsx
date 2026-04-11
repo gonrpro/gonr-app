@@ -40,7 +40,7 @@ function SolvePageInner() {
   const [showPaywall, setShowPaywall] = useState(false)
   const [showPaywallReason, setShowPaywallReason] = useState<'trial_expired' | 'anon_limit'>('trial_expired')
   const [daysRemaining, setDaysRemaining] = useState(7)
-  const [userTier, setUserTier] = useState<'free' | 'home' | 'spotter' | 'operator' | 'founder'>('free')
+  const [userTier, setUserTier] = useState<'free' | 'spotter' | 'operator' | 'founder'>('free')
 
   // Translation state for solve result
   const [translatedCard, setTranslatedCard] = useState<any>(null)
