@@ -4,7 +4,7 @@
  * Full access for 7 days. After that → paywall.
  */
 
-export type Tier = 'free' | 'home' | 'spotter' | 'operator' | 'founder'
+export type Tier = 'free' | 'spotter' | 'operator' | 'founder'
 
 const TRIAL_START_KEY = 'gonr_trial_start'
 const USER_TIER_KEY = 'gonr_user_tier'
