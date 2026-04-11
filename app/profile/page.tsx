@@ -55,6 +55,10 @@ export default function ProfilePage() {
           if (p.name) setDisplayName(p.name)
           if (p.shop_name) setShopName(p.shop_name)
           if (p.role) setRole(p.role)
+          if (p.dli_member) setDliMember(p.dli_member)
+          if (p.nca_member) setNcaMember(p.nca_member)
+          if (p.years_experience) setYearsExp(p.years_experience)
+          if (p.specialties) setSpecialties(p.specialties)
           setProfileLoaded(true)
         }).catch(() => setProfileLoaded(true))
       } else {
