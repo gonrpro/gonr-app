@@ -42,7 +42,7 @@ function getSupabaseAdmin() {
 }
 
 // ── Server-side solve gating ───────────────────────────────────
-const FOUNDER_EMAILS = ['tyler@gonr.pro', 'tyler@nexshift.co', 'twfyke@me.com', 'eval@gonr.app']
+const FOUNDER_EMAILS = ['tyler@gonr.pro', 'tyler@nexshift.co', 'twfyke@me.com', 'eval@gonr.app', 'jeff@cleanersupply.com']
 
 async function checkAndIncrementSolve(email: string | null, clientIp: string): Promise<{ allowed: boolean; reason?: string }> {
   // Founder bypass: exact email match only
