@@ -268,6 +268,25 @@ function SpotterPageInner() {
           </p>
         </Link>
 
+        {/* Module 2 — Live */}
+        <Link
+          href="/courses/module-2"
+          className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block"
+          style={{ borderColor: 'rgba(34,197,94,0.25)' }}
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🧪</span>
+            <h2 className="text-base font-bold">Stain Families</h2>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border ml-auto"
+              style={{ background: 'rgba(34,197,94,0.08)', color: '#22c55e', borderColor: 'rgba(34,197,94,0.3)' }}>
+              7 lessons
+            </span>
+          </div>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            The 6 stain families, their chemistry, and which agent breaks each bond.
+          </p>
+        </Link>
+
         {/* Coming soon courses */}
         <div className="flex items-center gap-2 mt-2">
           <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md border"
