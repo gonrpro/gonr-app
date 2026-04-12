@@ -118,19 +118,9 @@
     },
     {
       "step": 6,
-      "instruction": "If stain remains and fabric is not colored, apply hydrogen peroxide 3% with extreme caution. Allow to sit for 1 minute only. Test on hidden area first.",
-      "agent": "hydrogen peroxide 3%",
-      "safetyNote": "Hydrogen peroxide can bleach colored silk. Use sparingly and test first."
-    },
-    {
-      "step": 7,
-      "instruction": "Rinse thoroughly with cool water.",
-      "agent": "cool water"
-    },
-    {
-      "step": 8,
-      "instruction": "For set stains on silk or colored silk, call a professional cleaner. Silk stains are delicate and risk permanent damage from DIY attempts.",
-      "agent": "escalation"
+      "instruction": "If stain remains after step 5, do not apply hydrogen peroxide or any oxidizing agent to silk. Call a professional dry cleaner. Oxidizing agents on silk cause irreversible bleaching of dyes and fiber damage.",
+      "agent": "escalation",
+      "safetyNote": "NEVER use hydrogen peroxide on silk — it damages dyes and protein fiber structure. Escalate to professional."
     }
   ],
   "materialWarnings": [
