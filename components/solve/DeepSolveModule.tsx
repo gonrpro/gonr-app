@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { getStoredUserEmail } from '@/lib/auth/clientEmail'
 
 const QUICK_CHIPS = [
   { tKey: 'chipStainOld', value: 'Stain is old' },
@@ -49,10 +50,12 @@ export default function DeepSolveModule({ stain, surface, cardId, onResult }: De
         details,
       ].filter(Boolean).join('. ')
 
+      const email = getStoredUserEmail()
+
       const res = await fetch('/api/deep-solve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ stain, surface, cardId, context, lang }),
+        body: JSON.stringify({ stain, surface, cardId, context, lang, email }),
       })
 
       if (res.ok) {

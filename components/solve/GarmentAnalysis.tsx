@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { getStoredUserEmail } from '@/lib/auth/clientEmail'
 
 interface AnalysisResult {
   rootCause: string
@@ -32,7 +33,7 @@ const REPAIRABLE_BADGE: Record<string, { label: string; color: string }> = {
 }
 
 export default function GarmentAnalysis() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const [image, setImage] = useState<string | null>(null)
   const [description, setDescription] = useState('')
   const [activeChips, setActiveChips] = useState<Set<string>>(new Set())
@@ -73,10 +74,12 @@ export default function GarmentAnalysis() {
         description,
       ].filter(Boolean).join('. ')
 
+      const email = getStoredUserEmail()
+
       const res = await fetch('/api/garment-analysis', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ image, description: context }),
+        body: JSON.stringify({ image, description: context, lang, email }),
       })
 
       if (!res.ok) {

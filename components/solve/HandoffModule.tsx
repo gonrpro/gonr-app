@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { getStoredUserEmail } from '@/lib/auth/clientEmail'
 
 export default function HandoffModule({ stain, surface }: { stain: string; surface: string }) {
   const { t, lang } = useLanguage()
@@ -26,10 +27,12 @@ export default function HandoffModule({ stain, surface }: { stain: string; surfa
     setMessage('')
 
     try {
+      const email = getStoredUserEmail()
+
       const res = await fetch('/api/handoff', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ stain, surface, outcome: situation, details, lang }),
+        body: JSON.stringify({ stain, surface, outcome: situation, details, lang, email }),
       })
 
       if (!res.ok) {

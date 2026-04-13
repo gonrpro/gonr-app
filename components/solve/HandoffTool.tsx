@@ -5,6 +5,7 @@
 
 import { useState } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { getStoredUserEmail } from '@/lib/auth/clientEmail'
 
 const SITUATIONS = [
   { key: 'intake', en: 'Intake', es: 'Recepción' },
@@ -35,6 +36,8 @@ export default function HandoffTool({ prefill = '' }: HandoffToolProps) {
 
     try {
       const stainParts = garment.split(' on ')
+      const email = getStoredUserEmail()
+
       const res = await fetch('/api/handoff', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -44,6 +47,7 @@ export default function HandoffTool({ prefill = '' }: HandoffToolProps) {
           outcome: situation,
           details: notes.trim() || undefined,
           lang,
+          email,
         }),
       })
       if (!res.ok) {

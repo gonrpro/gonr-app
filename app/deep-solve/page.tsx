@@ -4,6 +4,7 @@ import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import LoginGateModal from '@/components/auth/LoginGateModal'
+import { getStoredUserEmail } from '@/lib/auth/clientEmail'
 
 /* ═══════════════════════════════════════════════════
    TASK-127 — Operator Flow
@@ -180,6 +181,8 @@ function DeepSolveModule({
     setStatus('loading')
 
     try {
+      const email = getStoredUserEmail()
+
       const res = await fetch('/api/deep-solve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -189,6 +192,7 @@ function DeepSolveModule({
           context: context.trim() || undefined,
           situations: situations.length > 0 ? situations : undefined,
           lang,
+          email,
         }),
       })
 
@@ -490,6 +494,7 @@ function CustomerHandoffModule({
       const contextStr = buildContext()
       const stainSource = session.stain || manualContext.trim() || 'Unknown stain'
       const stainParts = stainSource.split(' on ')
+      const email = getStoredUserEmail()
 
       const res = await fetch('/api/handoff', {
         method: 'POST',
@@ -500,6 +505,7 @@ function CustomerHandoffModule({
           outcome: toneToOutcome(tone),
           details: contextStr,
           lang,
+          email,
         }),
       })
 
