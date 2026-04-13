@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { checkProAccess } from '@/lib/auth/serverGate'
+import { createServerSupabaseClient } from '@/lib/supabase/server'
 
 const SYSTEM_PROMPT = `You are Stain Brain — GONR's expert textile chemistry AI, built on 40 years of professional dry cleaning knowledge from Dan Eisen and the DLI Hall of Fame methodology.
 
@@ -655,8 +656,20 @@ export async function POST(req: Request) {
     const body = await req.json()
     const { messages, lang, email } = body
 
+    let resolvedEmail = email as string | null | undefined
+
+    if (!resolvedEmail) {
+      try {
+        const supabase = await createServerSupabaseClient()
+        const { data: { user } } = await supabase.auth.getUser()
+        resolvedEmail = user?.email ?? null
+      } catch {
+        resolvedEmail = null
+      }
+    }
+
     // Server-side auth: Spotter+ required
-    const access = await checkProAccess(email)
+    const access = await checkProAccess(resolvedEmail)
     if (!access.allowed) {
       return NextResponse.json({ error: access.reason || 'Unauthorized' }, { status: 401 })
     }
