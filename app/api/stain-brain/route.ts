@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server'
-import { checkProAccess } from '@/lib/auth/serverGate'
-import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { requireProAuth } from '@/lib/auth/requireProAuth'
 
 const SYSTEM_PROMPT = `You are Stain Brain — GONR's expert textile chemistry AI, built on 40 years of professional dry cleaning knowledge from Dan Eisen and the DLI Hall of Fame methodology.
 
@@ -653,26 +652,11 @@ Core teachings from all five guides:
 
 export async function POST(req: Request) {
   try {
+    const auth = await requireProAuth()
+    if (!auth.allowed) return auth.response
+
     const body = await req.json()
-    const { messages, lang, email } = body
-
-    let resolvedEmail = email as string | null | undefined
-
-    if (!resolvedEmail) {
-      try {
-        const supabase = await createServerSupabaseClient()
-        const { data: { user } } = await supabase.auth.getUser()
-        resolvedEmail = user?.email ?? null
-      } catch {
-        resolvedEmail = null
-      }
-    }
-
-    // Server-side auth: Spotter+ required
-    const access = await checkProAccess(resolvedEmail)
-    if (!access.allowed) {
-      return NextResponse.json({ error: access.reason || 'Unauthorized' }, { status: 401 })
-    }
+    const { messages, lang } = body
 
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return NextResponse.json({ error: 'Messages required' }, { status: 400 })

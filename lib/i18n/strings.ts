@@ -100,6 +100,8 @@ export const strings: Record<string, Record<string, string>> = {
   sendMagicLink: { en: "Send Magic Link", es: "Enviar Enlace Mágico" },
   noPasswordNeeded: { en: "No password needed. We'll email you a secure sign-in link.", es: "Sin contraseña. Te enviaremos un enlace seguro de inicio de sesión." },
   authenticationError: { en: "Authentication Error", es: "Error de Autenticación" },
+  loginRequired: { en: "Please sign in to use this feature.", es: "Inicia sesión para usar esta función." },
+  upgradeRequired: { en: "This feature requires a Pro subscription.", es: "Esta función requiere una suscripción Pro." },
   tryAgain: { en: "Try again", es: "Intentar de nuevo" },
   signingYouIn: { en: "Signing you in...", es: "Iniciando sesión..." },
   verifyingCredentials: { en: "Please wait while we verify your credentials.", es: "Por favor espera mientras verificamos tus credenciales." },

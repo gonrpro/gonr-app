@@ -31,7 +31,7 @@ function HandoffPageInner() {
           </p>
         </div>
       </div>
-      <HandoffTool prefill={prefill} />
+      <HandoffTool prefill={prefill} onAuthError={() => setShowLoginGate(true)} />
       {showLoginGate && (
         <LoginGateModal
           onClose={() => setShowLoginGate(false)}

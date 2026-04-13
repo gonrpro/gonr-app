@@ -2,7 +2,6 @@
 
 import { useState, useRef } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-import { getStoredUserEmail } from '@/lib/auth/clientEmail'
 
 interface AnalysisResult {
   rootCause: string
@@ -74,16 +73,15 @@ export default function GarmentAnalysis() {
         description,
       ].filter(Boolean).join('. ')
 
-      const email = getStoredUserEmail()
-
       const res = await fetch('/api/garment-analysis', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ image, description: context, lang, email }),
+        body: JSON.stringify({ image, description: context, lang }),
       })
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
+        if (res.status === 401) throw new Error(data.error === 'login_required' ? t('loginRequired') : t('upgradeRequired'))
         throw new Error(data.error || t('analysisFailed'))
       }
 

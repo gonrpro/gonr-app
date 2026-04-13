@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-import { getStoredUserEmail } from '@/lib/auth/clientEmail'
 
 export default function HandoffModule({ stain, surface }: { stain: string; surface: string }) {
   const { t, lang } = useLanguage()
@@ -27,16 +26,15 @@ export default function HandoffModule({ stain, surface }: { stain: string; surfa
     setMessage('')
 
     try {
-      const email = getStoredUserEmail()
-
       const res = await fetch('/api/handoff', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ stain, surface, outcome: situation, details, lang, email }),
+        body: JSON.stringify({ stain, surface, outcome: situation, details, lang }),
       })
 
       if (!res.ok) {
         const data = await res.json()
+        if (res.status === 401) throw new Error(data.error === 'login_required' ? t('loginRequired') : t('upgradeRequired'))
         throw new Error(data.error || t('handoffFailed'))
       }
 

@@ -5,7 +5,7 @@
 
 import { useState } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-import { getStoredUserEmail } from '@/lib/auth/clientEmail'
+import { isAuthError, needsLogin } from '@/lib/auth/handleAuthError'
 
 const SITUATIONS = [
   { key: 'intake', en: 'Intake', es: 'Recepción' },
@@ -16,10 +16,11 @@ const SITUATIONS = [
 
 interface HandoffToolProps {
   prefill?: string
+  onAuthError?: () => void
 }
 
-export default function HandoffTool({ prefill = '' }: HandoffToolProps) {
-  const { lang } = useLanguage()
+export default function HandoffTool({ prefill = '', onAuthError }: HandoffToolProps) {
+  const { t, lang } = useLanguage()
   const [garment, setGarment] = useState(prefill)
   const [situation, setSituation] = useState('intake')
   const [notes, setNotes] = useState('')
@@ -36,7 +37,6 @@ export default function HandoffTool({ prefill = '' }: HandoffToolProps) {
 
     try {
       const stainParts = garment.split(' on ')
-      const email = getStoredUserEmail()
 
       const res = await fetch('/api/handoff', {
         method: 'POST',
@@ -47,12 +47,15 @@ export default function HandoffTool({ prefill = '' }: HandoffToolProps) {
           outcome: situation,
           details: notes.trim() || undefined,
           lang,
-          email,
         }),
       })
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
-        throw new Error(data.error || 'Failed to generate')
+        if (isAuthError(res.status, data)) {
+          if (needsLogin(data)) onAuthError?.()
+          throw new Error(needsLogin(data) ? t('loginRequired') : t('upgradeRequired'))
+        }
+        throw new Error(data.error || t('handoffFailed'))
       }
       const data = await res.json()
       setResult(data)

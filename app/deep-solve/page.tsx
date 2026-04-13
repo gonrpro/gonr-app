@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import LoginGateModal from '@/components/auth/LoginGateModal'
-import { getStoredUserEmail } from '@/lib/auth/clientEmail'
+import { isAuthError, needsLogin } from '@/lib/auth/handleAuthError'
 
 /* ═══════════════════════════════════════════════════
    TASK-127 — Operator Flow
@@ -146,11 +146,13 @@ function DeepSolveModule({
   setSession,
   status,
   setStatus,
+  onAuthError,
 }: {
   session: OperatorSession
   setSession: React.Dispatch<React.SetStateAction<OperatorSession>>
   status: StepStatus
   setStatus: (s: StepStatus) => void
+  onAuthError: () => void
 }) {
   const { t, lang } = useLanguage()
   const [situations, setSituations] = useState<string[]>([])
@@ -181,8 +183,6 @@ function DeepSolveModule({
     setStatus('loading')
 
     try {
-      const email = getStoredUserEmail()
-
       const res = await fetch('/api/deep-solve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -192,12 +192,15 @@ function DeepSolveModule({
           context: context.trim() || undefined,
           situations: situations.length > 0 ? situations : undefined,
           lang,
-          email,
         }),
       })
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
+        if (isAuthError(res.status, data)) {
+          if (needsLogin(data)) onAuthError()
+          throw new Error(t('loginRequired'))
+        }
         throw new Error(data.error || 'Deep Solve failed')
       }
 
@@ -434,9 +437,11 @@ function DeepSolveModule({
 function CustomerHandoffModule({
   session,
   onDone,
+  onAuthError,
 }: {
   session: OperatorSession
   onDone?: () => void
+  onAuthError: () => void
 }) {
   const { t, lang } = useLanguage()
   const [tone, setTone] = useState<string>('')
@@ -494,7 +499,6 @@ function CustomerHandoffModule({
       const contextStr = buildContext()
       const stainSource = session.stain || manualContext.trim() || 'Unknown stain'
       const stainParts = stainSource.split(' on ')
-      const email = getStoredUserEmail()
 
       const res = await fetch('/api/handoff', {
         method: 'POST',
@@ -505,12 +509,15 @@ function CustomerHandoffModule({
           outcome: toneToOutcome(tone),
           details: contextStr,
           lang,
-          email,
         }),
       })
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
+        if (isAuthError(res.status, data)) {
+          if (needsLogin(data)) onAuthError()
+          throw new Error(t('loginRequired'))
+        }
         throw new Error(data.error || 'Handoff generation failed')
       }
 
@@ -685,11 +692,13 @@ function OperatorPageInner() {
           setSession={setSession}
           status={deepSolveStatus}
           setStatus={setDeepSolveStatus}
+          onAuthError={() => setShowLoginGate(true)}
         />
 
         <CustomerHandoffModule
           session={session}
           onDone={() => setHandoffStatus('done')}
+          onAuthError={() => setShowLoginGate(true)}
         />
       </div>
       {/* Login gate modal */}

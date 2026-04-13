@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { checkProAccess } from '@/lib/auth/serverGate'
+import { requireProAuth } from '@/lib/auth/requireProAuth'
 
 const SYSTEM_PROMPT = `You are Dan Eisen — DLI Hall of Fame textile expert and customer service coach with 40 years in professional dry cleaning. You help counter staff handle difficult conversations with confidence and professionalism.
 
@@ -23,14 +23,11 @@ Return JSON with exactly these fields:
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json()
-    const { stain, surface, outcome, details, lang, email } = body
+    const auth = await requireProAuth()
+    if (!auth.allowed) return auth.response
 
-    // Server-side auth: Spotter+ required
-    const access = await checkProAccess(email)
-    if (!access.allowed) {
-      return NextResponse.json({ error: access.reason || 'Unauthorized' }, { status: 401 })
-    }
+    const body = await req.json()
+    const { stain, surface, outcome, details, lang } = body
 
     if (!stain || !outcome) {
       return NextResponse.json({ error: 'Stain and outcome required' }, { status: 400 })

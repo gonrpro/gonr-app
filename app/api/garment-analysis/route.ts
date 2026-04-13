@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { checkProAccess } from '@/lib/auth/serverGate'
+import { requireProAuth } from '@/lib/auth/requireProAuth'
 
 const SYSTEM_PROMPT = `You are a professional textile restoration expert trained in the Dan Eisen method.
 A dry cleaner is showing you a photo of garment damage. Analyze it and provide:
@@ -54,14 +54,11 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const body = await req.json()
-    const { image, description, lang, email } = body
+    const auth = await requireProAuth()
+    if (!auth.allowed) return auth.response
 
-    // Server-side auth: Spotter+ required
-    const access = await checkProAccess(email)
-    if (!access.allowed) {
-      return NextResponse.json({ error: access.reason || 'Unauthorized' }, { status: 401 })
-    }
+    const body = await req.json()
+    const { image, description, lang } = body
 
     if (!image && !description) {
       return NextResponse.json(

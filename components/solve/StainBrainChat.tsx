@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-import { useUser } from '@/lib/hooks/useUser'
 
 function renderMarkdown(text: string) {
   const lines = text.split('\n')
@@ -65,7 +64,6 @@ interface Message {
 
 export default function StainBrainChat() {
   const { lang } = useLanguage()
-  const { email } = useUser()
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
@@ -91,11 +89,12 @@ export default function StainBrainChat() {
       const res = await fetch('/api/stain-brain', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: newMessages, lang, email }),
+        body: JSON.stringify({ messages: newMessages, lang }),
       })
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
+        if (res.status === 401) throw new Error(data.error === 'login_required' ? 'Please sign in to use Stain Brain.' : 'This feature requires a Pro subscription.')
         throw new Error(data.error || 'Stain Brain unavailable')
       }
 
