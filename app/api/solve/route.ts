@@ -2,6 +2,7 @@
 import { NextResponse } from 'next/server'
 import { lookupProtocol, detectFamily } from '@/lib/protocols/lookup'
 import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
+import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
 import { createClient } from '@supabase/supabase-js'
 import { identifyStain, readCareLabel } from '@/lib/vision'
 import { buildSolveContext } from '@/lib/solve/context'
@@ -564,6 +565,7 @@ export async function POST(req: Request) {
         })
       }
       const filteredCard = librarySafety.card
+      ensureBleachNeutralization(filteredCard)
       logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: filteredCard.title, source: 'library', confidence: result.confidence }).catch(() => {})
       return NextResponse.json({ ...result, card: filteredCard, stainType: resolveStainType(filteredCard, ctx) })
     }
@@ -591,6 +593,7 @@ export async function POST(req: Request) {
       }
 
       queueForReview(safeCard, ctx, safetyResult).catch(() => {})
+      ensureBleachNeutralization(safeCard)
       logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: safeCard.title || ctx.stain, source: 'ai', confidence: 0.5 }).catch(() => {})
 
       return NextResponse.json({ card: safeCard, tier: 4, confidence: 0.5, source: 'ai', stainType: resolveStainType(safeCard, ctx) })

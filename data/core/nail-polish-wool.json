@@ -1,0 +1,106 @@
+{
+  "id": "nail-polish-wool",
+  "version": "6.0",
+  "authored": "2026-04-14",
+  "title": "Nail Polish on Wool",
+  "stainType": "combo_oil_dye",
+  "surface": "wool",
+  "sector": "textile",
+  "source": "lab-authored",
+  "verified": false,
+  "meta": {
+    "stainCanonical": "nail polish",
+    "surfaceCanonical": "wool",
+    "tier": "professional-only",
+    "riskLevel": "high",
+    "tags": [
+      "dry-side",
+      "protein-fiber",
+      "solvent-sensitive",
+      "professional-only",
+      "no-acetone",
+      "no-household-solvent"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Nail polish is a nitrocellulose film with pigments in ester solvents (ethyl acetate, butyl acetate) plus small amounts of acetone. On wool, the polish film bonds to the scaled cuticle of each fiber as the solvent evaporates. Wool is a protein fiber (keratin) with a scaled surface that swells and felts when exposed to water + agitation. Acetone does not dissolve wool but dehydrates the keratin scales, causing permanent hand loss and crazing of the fiber surface. Isopropyl alcohol strips dyes and raises the scales. Heat and friction during attempted removal felt the fiber irreversibly. The solvents that reverse the polish film damage the wool substrate.",
+  "whyThisWorks": "Amyl acetate applied by a professional spotter is the only fiber-safe route for polish on wool. Amyl acetate softens nitrocellulose without attacking protein fibers, and a trained spotter works cold with no agitation to prevent felting, uses NSD for pigment lift, and neutralizes with dilute acetic acid at pH ~5 to preserve keratin. This requires professional chemistry and fiber control wool cannot tolerate at home. Household 'non-acetone' removers still contain uncontrolled ester concentrations that damage wool.",
+  "defaultAssumption": "Assume the customer does NOT have amyl acetate, professional spotting experience, or the temperature control needed to avoid felting wool. Default recommendation is professional dry-clean referral. Do not offer consumer-tier DIY chemical suggestions on this card.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blotting only",
+      "technique": "Dry absorption, no agitation",
+      "equipment": "White cotton towel or unprinted paper towel",
+      "dwellTime": "Immediate",
+      "instruction": "If the polish is still wet, blot the excess gently from the outside of the stain inward with a dry white cloth. Do NOT rub — friction felts wool. Do NOT press deeper. Do NOT apply any liquid — water plus friction is how wool felts, and the damage is permanent. If the polish has already dried, skip to step 2."
+    },
+    {
+      "step": 2,
+      "side": "professional",
+      "agent": "Professional referral",
+      "technique": "Hand-off",
+      "equipment": "Clear customer instructions",
+      "dwellTime": "N/A",
+      "instruction": "This combination is a professional-only case. Take the garment to a dry cleaner with wool-spotting experience and tell them: (1) the stain is nail polish, (2) the fiber is wool, (3) you have NOT applied any solvent, remover, or water at home, (4) you have NOT rubbed the spot. Do not use acetone, do not use 'non-acetone' polish remover, do not use rubbing alcohol, and do not wash the garment — wool will felt. A professional will use amyl acetate and NSD under controlled cold conditions."
+    }
+  ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Fiber test: Apply amyl acetate to a hidden seam for 30 seconds. Check for scale damage, hand change, or color bleed. If any occurs, stop — refer to wool damage protocol.",
+      "2. Apply amyl acetate to the polish film with a clean white cloth, cold and static — no scrubbing, no agitation. Tight blotting motion in concentric passes from stain edge inward. 5-10 min total dwell, refreshing the cloth each pass.",
+      "3. Apply NSD (neutral synthetic detergent) sparingly with minimum moisture. Blot dry between passes. 3-5 min. Never immerse wool.",
+      "4. Apply acetic acid 28% diluted 1:10 via dropper for pH restoration. 1-2 min. Blot. Acidic finish closes wool scales.",
+      "5. Air dry flat on absorbent padding. Do NOT use heat, do NOT hang wet, do NOT tumble. Re-inspect for hand loss or felting before returning to customer."
+    ],
+    "products": [
+      "amyl acetate",
+      "NSD (Neutral Synthetic Detergent)",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "cold / ambient — never warm",
+    "warnings": [
+      "NEVER use acetone on wool — causes permanent hand loss and scale crazing",
+      "NEVER use nail polish remover (acetone OR non-acetone) on wool — uncontrolled ester concentrations damage keratin",
+      "NEVER use isopropyl alcohol — strips wool dyes and raises scales",
+      "NEVER agitate wet wool — felts permanently",
+      "NEVER apply heat during or after spotting — contributes to felting",
+      "Always fiber-test amyl acetate on a hidden seam"
+    ]
+  },
+  "diyProtocol": null,
+  "safetyMatrix": {
+    "neverDo": [
+      {
+        "agent": "acetone",
+        "reason": "Dehydrates wool keratin, causes permanent hand loss and scale crazing."
+      },
+      {
+        "agent": "nail polish remover (acetone or non-acetone)",
+        "reason": "Both formulations contain ester solvents in uncontrolled concentrations. Damage wool keratin."
+      },
+      {
+        "agent": "isopropyl alcohol / rubbing alcohol",
+        "reason": "Strips wool dyes and raises cuticle scales. Permanent color and hand loss."
+      },
+      {
+        "agent": "agitation / rubbing / washing",
+        "reason": "Felts wool permanently. Any friction combined with moisture causes irreversible shrinkage and hand change."
+      },
+      {
+        "agent": "heat (iron, dryer, warm water)",
+        "reason": "Contributes to felting and sets nitrocellulose film. Wool spotting must be cold."
+      }
+    ],
+    "customerAdvice": "Do not attempt home removal. Do not rub, do not apply ANY liquid, do not wash. Take to a professional dry cleaner with wool experience. Tell them the fiber is wool and the stain is nail polish."
+  },
+  "escalation": {
+    "whenToEscalate": "Immediately — this is a professional-only case.",
+    "whatToTell": "Take to a dry cleaner experienced with wool. Tell them: nail polish on wool, no home treatment attempted, no water applied, not rubbed. Do not use acetone, do not use 'non-acetone' polish remover, do not wash. Professional cold amyl acetate spotting is the only safe route."
+  },
+  "callPro": true,
+  "difficulty": "hard",
+  "timeEstimate": "Professional only — do not attempt at home",
+  "lastValidated": "2026-04-14"
+}

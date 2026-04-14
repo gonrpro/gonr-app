@@ -20,6 +20,6 @@ export const STAIN_CHIPS: StainChip[] = [
 ]
 
 export const SURFACE_CHIPS = [
-  'Cotton', 'Polyester', 'Silk', 'Wool', 'Cashmere', 'Linen',
+  'Cotton', 'Polyester', 'Acrylic', 'Silk', 'Wool', 'Cashmere', 'Linen',
   'Rayon', 'Nylon', 'Leather', 'Denim', 'Suede', 'Upholstery',
 ]

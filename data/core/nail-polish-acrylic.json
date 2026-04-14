@@ -1,0 +1,100 @@
+{
+  "id": "nail-polish-acrylic",
+  "version": "6.0",
+  "authored": "2026-04-14",
+  "title": "Nail Polish on Acrylic",
+  "stainType": "combo_oil_dye",
+  "surface": "acrylic",
+  "sector": "textile",
+  "source": "lab-authored",
+  "verified": false,
+  "meta": {
+    "stainCanonical": "nail polish",
+    "surfaceCanonical": "acrylic",
+    "tier": "professional-only",
+    "riskLevel": "high",
+    "tags": [
+      "dry-side",
+      "synthetic-fiber",
+      "solvent-sensitive",
+      "professional-only",
+      "no-acetone",
+      "no-nail-polish-remover"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Nail polish is a nitrocellulose film colored with insoluble pigments and suspended in solvents (typically ethyl acetate, butyl acetate, and small amounts of acetone). Once the solvent evaporates, the nitrocellulose hardens into a tough, pigmented film that bonds mechanically to the fiber surface. Acrylic fiber is a polyacrylonitrile-based synthetic with a low solvent tolerance: acetone, nail polish remover, and most ketone-class solvents dissolve, distort, or craze acrylic on contact. The very same solvents that would reverse the polish film also destroy the substrate. This combination is a professional-only case — consumer tools are not safe.",
+  "whyThisWorks": "Amyl acetate and neutral synthetic detergent are the only fiber-safe route for polish on acrylic. A professional spotter uses amyl acetate (a gentler ester solvent that softens nitrocellulose without attacking polyacrylonitrile), blots in tight concentric passes, follows with NSD to lift pigment residue, and neutralizes with dilute acetic acid. This requires professional-grade chemistry, ventilation, and fiber testing. Any consumer-grade solvent — including 'non-acetone' polish removers, which still contain ester solvents in uncontrolled concentrations — risks fiber damage ranging from crazing to holes.",
+  "defaultAssumption": "Assume the customer does NOT have amyl acetate or professional spotting experience. Default recommendation is professional dry-clean referral. Do not offer consumer-tier DIY chemical suggestions on this card.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blotting only",
+      "technique": "Dry absorption",
+      "equipment": "White cotton towel or unprinted paper towel",
+      "dwellTime": "Immediate",
+      "instruction": "If the polish is still wet, blot the excess gently from the outside of the stain inward. Do NOT rub, do NOT press the polish deeper into the fibers, and do NOT apply any liquid. Wet polish lifts off the surface much more of the color than dried polish. If the polish is already dry, skip to step 2 — nothing you can do at home will re-dissolve it safely on acrylic."
+    },
+    {
+      "step": 2,
+      "side": "professional",
+      "agent": "Professional referral",
+      "technique": "Hand-off",
+      "equipment": "Clear customer instructions",
+      "dwellTime": "N/A",
+      "instruction": "This combination is a professional-only case. Take the garment to a dry cleaner with textile-spotting experience and tell them: (1) the stain is nail polish, (2) the fiber is acrylic, (3) you have NOT applied any solvent or remover at home. Do not use acetone, do not use 'non-acetone' polish remover, do not use isopropyl alcohol, and do not use any household solvent on this fiber — they all risk permanent fiber damage. A professional will use amyl acetate and NSD under controlled conditions."
+    }
+  ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Fiber test: Apply amyl acetate to a hidden seam (inside cuff or hem) for 30 seconds. Check for fiber distortion, crazing, or color bleed. If any occurs, stop — refer to textile-damage protocol.",
+      "2. Apply amyl acetate to the polish film with a clean white cloth. Tight blotting motion in concentric passes from stain edge inward. 5-10 min total dwell time, refreshing the cloth each pass. Do NOT flood.",
+      "3. Once the polish film has softened and lifted, apply NSD (neutral synthetic detergent) to remove remaining pigment residue. Sponge gently, flush with cool water. 3-5 min.",
+      "4. Apply acetic acid 28% diluted 1:10 for pH restoration. 1-2 min. Blot.",
+      "5. Air dry flat. Do NOT use heat. Re-inspect for any residual fiber damage before returning to customer."
+    ],
+    "products": [
+      "amyl acetate",
+      "NSD (Neutral Synthetic Detergent)",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "ambient",
+    "warnings": [
+      "NEVER use acetone on acrylic fiber — it dissolves and crazes the substrate",
+      "NEVER use nail polish remover (acetone OR non-acetone) on acrylic — uncontrolled ester concentrations risk fiber damage",
+      "NEVER use isopropyl alcohol or ketone-class solvents — they attack polyacrylonitrile",
+      "Always fiber-test amyl acetate on a hidden seam before spotting the visible area"
+    ]
+  },
+  "diyProtocol": null,
+  "safetyMatrix": {
+    "neverDo": [
+      {
+        "agent": "acetone",
+        "reason": "Dissolves acrylic fiber on contact. Produces permanent holes, crazing, and fiber distortion."
+      },
+      {
+        "agent": "nail polish remover (acetone or non-acetone)",
+        "reason": "Both formulations contain ester solvents in uncontrolled concentrations. Risk permanent fiber damage to acrylic."
+      },
+      {
+        "agent": "isopropyl alcohol / rubbing alcohol",
+        "reason": "Can haze or craze acrylic fibers at higher concentrations. Not safe at home on this fiber."
+      },
+      {
+        "agent": "ketone solvents (MEK, MIBK)",
+        "reason": "Attacks polyacrylonitrile aggressively. Professional-only under strict ventilation."
+      }
+    ],
+    "customerAdvice": "Do not attempt home removal. Take to a professional dry cleaner with textile-spotting experience. Tell them the fiber is acrylic and the stain is nail polish."
+  },
+  "escalation": {
+    "whenToEscalate": "Immediately — this is a professional-only case.",
+    "whatToTell": "Take to a dry cleaner. Tell them: nail polish on acrylic, no home treatment attempted. Do not use acetone, do not use 'non-acetone' polish remover, do not use rubbing alcohol. Professional amyl acetate spotting is the only safe route."
+  },
+  "callPro": true,
+  "difficulty": "hard",
+  "timeEstimate": "Professional only — do not attempt at home",
+  "lastValidated": "2026-04-14"
+}

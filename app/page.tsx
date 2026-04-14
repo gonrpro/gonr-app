@@ -22,7 +22,7 @@ interface SolveResult {
 
 function SolvePageInner() {
   const { t, lang } = useLanguage()
-  const { user } = useOptionalAuth()
+  const { user, tier: authTier, isLoading: authLoading } = useOptionalAuth()
   const searchParams = useSearchParams()
   const router = useRouter()
   const [showUpgradeBanner, setShowUpgradeBanner] = useState(false)
@@ -89,11 +89,26 @@ function SolvePageInner() {
     const count = parseInt(localStorage.getItem('gonr_solve_count') || '0', 10)
     setSolveCount(count)
 
-    // Load trial state
+    // Load trial state as the unauthenticated baseline.
+    // Authenticated users are synced from AuthContext in the effect below.
     const trial = getTrialState()
     setDaysRemaining(trial.daysRemaining)
     setUserTier(trial.tier)
   }, [])
+
+  useEffect(() => {
+    if (authLoading) return
+
+    if (user?.email) {
+      setUserTier(authTier)
+      setDaysRemaining(0)
+      return
+    }
+
+    const trial = getTrialState()
+    setDaysRemaining(trial.daysRemaining)
+    setUserTier(trial.tier)
+  }, [authLoading, user?.email, authTier])
 
   useEffect(() => {
     return () => {
@@ -321,7 +336,7 @@ function SolvePageInner() {
           card={showTranslated && translatedCard ? translatedCard : result.card}
           source={result.source}
         />
-        {(userTier === 'free') && (
+        {(userTier === 'free' && !authLoading) && (
           <a
             href="https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e-ae15-4b25-9021-42c791f80325"
             target="_blank"
@@ -752,7 +767,7 @@ function SolvePageInner() {
       )}
 
       {/* Trial days remaining badge — show last 3 days only, never for logged-in users */}
-      {userTier === 'free' && !user && daysRemaining <= 3 && daysRemaining > 0 && (
+      {userTier === 'free' && !user && !authLoading && daysRemaining <= 3 && daysRemaining > 0 && (
         <div style={{
           textAlign: 'center',
           padding: '8px 12px',

@@ -1,0 +1,109 @@
+{
+  "id": "nail-polish-cashmere",
+  "version": "6.0",
+  "authored": "2026-04-14",
+  "title": "Nail Polish on Cashmere",
+  "stainType": "combo_oil_dye",
+  "surface": "cashmere",
+  "sector": "textile",
+  "source": "lab-authored",
+  "verified": false,
+  "meta": {
+    "stainCanonical": "nail polish",
+    "surfaceCanonical": "cashmere",
+    "tier": "professional-only",
+    "riskLevel": "critical",
+    "tags": [
+      "dry-side",
+      "protein-fiber",
+      "luxury-fiber",
+      "solvent-sensitive",
+      "professional-only",
+      "no-acetone",
+      "no-household-solvent"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Nail polish is a nitrocellulose film with pigments in ester solvents plus small amounts of acetone. On cashmere, the polish film bonds to the exceptionally fine scaled cuticle of each fiber as the solvent evaporates. Cashmere is a premium protein fiber (keratin) from the cashmere goat undercoat — its fineness (typically under 19 microns) and short staple length make it more fragile than any other wool-type fiber. Acetone dehydrates and crazes the scales. Isopropyl alcohol strips dyes. Agitation plus moisture felts cashmere even faster than sheep wool because the scales are finer and interlock more readily. The solvents that reverse the polish film damage the cashmere substrate, and cashmere garments are typically high-value — error cost is significant.",
+  "whyThisWorks": "Amyl acetate applied by a professional spotter is the only fiber-safe route for polish on cashmere. A trained spotter works cold with zero agitation, uses amyl acetate in minimum quantity to soften nitrocellulose without attacking protein fiber, follows with NSD via micro-application, and neutralizes with dilute acetic acid at pH ~5 to preserve keratin. Professional fiber-testing on a hidden seam is mandatory on every cashmere case. Consumer attempts are nearly guaranteed to damage the garment given cashmere's sensitivity.",
+  "defaultAssumption": "Assume the customer does NOT have amyl acetate, professional spotting experience, or the temperature and moisture control needed for cashmere. Default recommendation is professional dry-clean referral. Do not offer consumer-tier DIY chemical suggestions on this card. Cashmere is typically high-value — err on the side of strict refusal.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blotting only",
+      "technique": "Dry absorption, zero agitation",
+      "equipment": "White cotton towel or unprinted paper towel",
+      "dwellTime": "Immediate",
+      "instruction": "If the polish is still wet, blot the excess gently from the outside of the stain inward with a dry white cloth. Lift — do NOT wipe. Do NOT rub — friction felts cashmere faster than any other wool. Do NOT press deeper. Do NOT apply any liquid — water plus the slightest friction is how cashmere felts, and the damage is permanent on high-value garments. If the polish has already dried, skip to step 2."
+    },
+    {
+      "step": 2,
+      "side": "professional",
+      "agent": "Professional referral",
+      "technique": "Hand-off",
+      "equipment": "Clear customer instructions",
+      "dwellTime": "N/A",
+      "instruction": "This combination is a professional-only case. Take the garment to a dry cleaner with cashmere-spotting experience and tell them: (1) the stain is nail polish, (2) the fiber is cashmere, (3) you have NOT applied any solvent, remover, or water at home, (4) you have NOT rubbed the spot. Do not use acetone, do not use 'non-acetone' polish remover, do not use rubbing alcohol, and do not attempt to wash the garment — cashmere is exceptionally easy to felt. A professional will use amyl acetate and NSD under strict cold, low-moisture conditions."
+    }
+  ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Fiber test is MANDATORY on cashmere: Apply amyl acetate to a hidden seam for 30 seconds. Check for any scale damage, hand change, or color bleed. If any occurs, stop — refer to cashmere damage protocol and consult customer before proceeding.",
+      "2. Apply amyl acetate sparingly to the polish film with a clean white cloth. Cold and static — no scrubbing, no agitation, no rubbing in any direction. Tight blotting motion in concentric passes from stain edge inward. 5-10 min total dwell, refreshing the cloth each pass. Use the minimum amyl acetate that works.",
+      "3. Apply NSD (neutral synthetic detergent) via micro-application with an eye dropper. Minimum moisture. Blot dry between passes. 3-5 min. Never immerse cashmere.",
+      "4. Apply acetic acid 28% diluted 1:10 via dropper for pH restoration. 1-2 min. Blot. Acidic finish closes cashmere scales and preserves hand.",
+      "5. Air dry flat on absorbent padding in shape. Do NOT use heat, do NOT hang wet, do NOT tumble, do NOT steam. Re-inspect for hand loss, felting, or ring formation before returning to customer. On high-value cashmere, photograph before and after."
+    ],
+    "products": [
+      "amyl acetate",
+      "NSD (Neutral Synthetic Detergent)",
+      "Acetic Acid 28% (diluted 1:10)"
+    ],
+    "temperature": "cold / ambient — never warm",
+    "warnings": [
+      "NEVER use acetone on cashmere — causes permanent hand loss, scale crazing, and visible spotting",
+      "NEVER use nail polish remover (acetone OR non-acetone) on cashmere — uncontrolled ester concentrations damage keratin",
+      "NEVER use isopropyl alcohol — strips cashmere dyes and raises scales",
+      "NEVER agitate wet cashmere — felts faster than any other wool fiber",
+      "NEVER apply heat or steam during or after spotting",
+      "NEVER wash cashmere with this stain present — spot first",
+      "MANDATORY fiber test before amyl acetate application",
+      "High-value garment risk: consult customer if any test response is uncertain"
+    ]
+  },
+  "diyProtocol": null,
+  "safetyMatrix": {
+    "neverDo": [
+      {
+        "agent": "acetone",
+        "reason": "Dehydrates cashmere keratin, causes permanent hand loss and crazing on the finest natural fiber."
+      },
+      {
+        "agent": "nail polish remover (acetone or non-acetone)",
+        "reason": "Both formulations damage cashmere keratin. Unregulated ester concentrations."
+      },
+      {
+        "agent": "isopropyl alcohol / rubbing alcohol",
+        "reason": "Strips cashmere dyes and raises scales. Permanent color and hand loss."
+      },
+      {
+        "agent": "agitation / rubbing / washing",
+        "reason": "Cashmere felts faster than sheep wool — finer scales interlock more readily. One rub can be permanent."
+      },
+      {
+        "agent": "heat (iron, dryer, warm water, steam)",
+        "reason": "Contributes to felting and sets nitrocellulose film."
+      }
+    ],
+    "customerAdvice": "Do not attempt home removal. Do not rub, do not apply ANY liquid, do not wash or steam. Cashmere is fragile and high-value — take to a professional dry cleaner with cashmere experience. Tell them the fiber is cashmere and the stain is nail polish."
+  },
+  "escalation": {
+    "whenToEscalate": "Immediately — this is a professional-only case with high-value garment risk.",
+    "whatToTell": "Take to a dry cleaner experienced with cashmere. Tell them: nail polish on cashmere, no home treatment attempted, no water applied, not rubbed. Do not use acetone, do not use 'non-acetone' polish remover, do not wash, do not steam. Professional cold amyl acetate spotting with mandatory fiber testing is the only safe route."
+  },
+  "callPro": true,
+  "difficulty": "hard",
+  "timeEstimate": "Professional only — do not attempt at home",
+  "lastValidated": "2026-04-14"
+}

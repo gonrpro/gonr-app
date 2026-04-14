@@ -143,7 +143,7 @@ const COMMON_STAINS = [
 ]
 
 const COMMON_SURFACES = [
-  'cotton', 'silk', 'wool', 'polyester', 'linen', 'leather',
+  'cotton', 'silk', 'wool', 'polyester', 'acrylic', 'linen', 'leather',
   'denim', 'suede', 'upholstery', 'cashmere', 'nylon', 'rayon',
 ]
 

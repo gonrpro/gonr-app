@@ -181,6 +181,19 @@ function SpotterPageInner() {
             Stain family chemistry — how each family bonds to fiber, what breaks it, what makes it permanent.
           </p>
         </Link>
+
+        <Link
+          href="/pro/bleaching-guide"
+          className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block"
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🫧</span>
+            <h2 className="text-base font-bold">Bleaching Guide</h2>
+          </div>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            Oxidizing vs reducing, the 18°F rule, color-fastness testing, and the mandatory post-bleach neutralization rinse. Consolidated from the Dan Eisen archive.
+          </p>
+        </Link>
       </div>
 
       {/* AI tools */}

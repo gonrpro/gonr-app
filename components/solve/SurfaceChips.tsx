@@ -7,6 +7,7 @@ import { useLanguage } from '@/lib/i18n/LanguageContext'
 const SURFACE_EMOJIS: Record<string, string> = {
   Cotton: '\uD83E\uDDF5',
   Polyester: '\uD83E\uDDF6',
+  Acrylic: '🧶',
   Silk: '\uD83E\uDD4A',
   Wool: '\uD83D\uDC11',
   Cashmere: '\u2728',

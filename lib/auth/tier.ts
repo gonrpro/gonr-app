@@ -1,14 +1,14 @@
 import type { Tier, User } from '../types'
 import { createServerSupabaseClient } from '../supabase/server'
 
-const FOUNDER_EMAIL = 'tyler@gonr.pro'
+const FOUNDER_EMAILS = ['tyler@gonr.pro', 'tyler@nexshift.co', 'twfyke@me.com']
 
 // Re-export pure feature access for backward compatibility
 export { canAccessFeature } from './features'
 
 export async function resolveTier(email: string): Promise<User> {
   // Founder override
-  if (email.toLowerCase() === FOUNDER_EMAIL) {
+  if (FOUNDER_EMAILS.includes(email.toLowerCase())) {
     return {
       id: 'founder',
       email,
