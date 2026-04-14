@@ -6,6 +6,7 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import HtmlLangSetter from '@/components/layout/HtmlLangSetter'
 import { LanguageProvider } from '@/lib/i18n/LanguageContext'
+import { AuthProvider } from '@/lib/auth/AuthContext'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -35,15 +36,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
-        <LanguageProvider>
-          <HtmlLangSetter />
-          <Header />
-          <main className="px-4 pt-2 pb-4">
-            {children}
-          </main>
-          <Footer />
-          <Nav />
-        </LanguageProvider>
+        <AuthProvider>
+          <LanguageProvider>
+            <HtmlLangSetter />
+            <Header />
+            <main className="px-4 pt-2 pb-4">
+              {children}
+            </main>
+            <Footer />
+            <Nav />
+          </LanguageProvider>
+        </AuthProvider>
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
             var t = localStorage.getItem('gonr_theme');
