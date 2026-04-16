@@ -25,24 +25,15 @@
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "dry",
-      "agent": "Dry cloth—very light, minimal pressure",
-      "technique": "Gentle blot only",
-      "equipment": "Soft cloth",
-      "dwellTime": "Immediate",
-      "instruction": "Very gently blot to remove loose rust. DO NOT brush—silk pills easily. Minimal pressure. If rust is embedded, skip this step."
-    },
-    {
-      "step": 2,
       "side": "wet",
-      "agent": "Cool water (10-20°C) rinse",
+      "agent": "Cool water rinse",
       "technique": "Gentle rinse and squeeze",
       "equipment": "Running cool water, gentle squeezing",
       "dwellTime": "1-2 minutes",
       "instruction": "Rinse under cool running water. Squeeze gently (never wring or twist on silk). Work from back first. Cool water is critical—hot water weakens silk protein and accelerates acid damage. This rinse removes loose iron oxide."
     },
     {
-      "step": 3,
+      "step": 2,
       "side": "wet",
       "agent": "Diluted Bar Keeper's Friend (Rust Remover (oxalic acid)) in cool water—DILUTE SOLUTION ONLY",
       "technique": "Soak cautiously",
@@ -51,16 +42,16 @@
       "instruction": "DILUTE Bar Keeper's Friend heavily—add only a small pinch to a basin of cool water, stir to dissolve. The solution should be pale yellow, NOT strong. Submerge the stained area. Rust Remover (oxalic acid) chelates iron, but concentrated acid damages silk protein. Keep dwell time SHORT—5-10 minutes maximum. STOP if the water becomes warm (risk of fiber degradation)."
     },
     {
-      "step": 4,
+      "step": 3,
       "side": "wet",
       "agent": "Cool water rinse to remove acid",
       "technique": "Gentle squeeze rinse, multiple passes",
       "equipment": "Basin with cool water",
-      "dwellTime": "Rinse until water is neutral (3-4 passes)",
+      "dwellTime": "Until rinse water runs clear",
       "instruction": "Rinse thoroughly in cool water. This is critical—residual Rust Remover (oxalic acid) will damage silk protein over time. Squeeze gently (never wring). Rinse at least 3-4 times until all acid is removed. The water should feel neutral to touch and smell like plain water."
     },
     {
-      "step": 5,
+      "step": 4,
       "side": "wet",
       "agent": "Cool water gentle hand wash with silk detergent",
       "technique": "Soak and gentle squeeze",
@@ -69,22 +60,13 @@
       "instruction": "Use silk-safe detergent (pH neutral, no enzymes). Submerge in cool water with a drop of detergent. Gently squeeze (never rub or wring). This removes any trace acid and prepares the fiber for drying. Squeeze out excess water."
     },
     {
-      "step": 6,
+      "step": 5,
       "side": "wet",
       "agent": "Cool water final rinse (optional vinegar rinse for pH restoration)",
       "technique": "Final squeeze",
       "equipment": "Cool water with optional 28% Acetic Acid (diluted)",
       "dwellTime": "1-2 minutes",
       "instruction": "Optional: final rinse in cool water with . Gently squeeze out water (never wring)."
-    },
-    {
-      "step": 7,
-      "side": "dry",
-      "agent": "Air dry in shade",
-      "technique": "Lay flat or hang on padded hanger",
-      "equipment": "Clean towel or padded hanger",
-      "dwellTime": "4-8 hours",
-      "instruction": "NEVER machine dry, NEVER heat, NEVER direct sunlight. Lay flat on clean white towel or hang on padded hanger in shade. Heat will damage silk protein permanently. Allow complete air drying. Once dry, if any rust remains (faint brownish tint), call professional—home chemistry risks are exhausted."
     }
   ],
   "homeSolutions": [
@@ -167,5 +149,6 @@
     "time-critical",
     "dilution-critical"
   ],
-  "solventNote": "Professional: Heavily diluted Rust Remover (oxalic acid) or EDTA solution (pH controlled, 3.0-3.5) in cool water (15-20°C), dwell 5-8 minutes ONLY. Thorough cool water rinse (3-4 passes) to remove all acid. Silk-safe detergent rinse in cool water. Air dry flat in shade only. NO heat, NO sunlight. Multiple treatments risk cumulative acid damage—safer to refer to professional than repeat at home."
+  "solventNote": "Professional: Heavily diluted Rust Remover (oxalic acid) or EDTA solution (pH controlled, 3.0-3.5) in cool water (15-20°C), dwell 5-8 minutes ONLY. Thorough cool water rinse (3-4 passes) to remove all acid. Silk-safe detergent rinse in cool water. Air dry flat in shade only. NO heat, NO sunlight. Multiple treatments risk cumulative acid damage—safer to refer to professional than repeat at home.",
+  "aftercare": "Very gently blot to remove loose rust. DO NOT brush—silk pills easily. Minimal pressure. If rust is embedded, skip this step. NEVER machine dry, NEVER heat, NEVER direct sunlight. Lay flat on clean white towel or hang on padded hanger in shade. Heat will damage silk protein permanently. Allow complete air drying. Once dry, if any rust remains (faint brownish tint), call professional—home chemistry risks are exhausted."
 }

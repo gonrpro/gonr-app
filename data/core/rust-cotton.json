@@ -25,15 +25,6 @@
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "dry",
-      "agent": "Dry cloth or soft brush",
-      "technique": "Light brushing",
-      "equipment": "Soft cloth or brush",
-      "dwellTime": "Immediate",
-      "instruction": "Gently brush away any loose rust particles or residue. Don't scrub hard. This removes surface rust before chemistry begins. If rust is embedded in the weave, skip this step."
-    },
-    {
-      "step": 2,
       "side": "wet",
       "agent": "Cold or cool water rinse",
       "technique": "Rinse from back first",
@@ -42,16 +33,16 @@
       "instruction": "Rinse under cool running water. Work from the back of the garment first, flushing the rust away. This removes some loose iron oxide. Do NOT use hot water yet—hot water can oxidize iron further."
     },
     {
-      "step": 3,
+      "step": 2,
       "side": "wet",
       "agent": "Bar Keeper's Friend (Rust Remover (oxalic acid)) OR citric acid solution",
       "technique": "Paste application or soak",
       "equipment": "Bar Keeper's Friend, water, soft cloth or brush",
-      "dwellTime": "5-15 minutes depending on rust depth",
-      "instruction": "Bar Keeper's Friend is the household solution. Mix with a little water to form a paste. Apply directly to the rust stain. The Rust Remover (oxalic acid) (active ingredient) chelates iron, forming soluble complexes. Watch the stain fade as iron is trapped by the chelation complex. Let sit 5-15 minutes. You'll see the stain lighten and the paste may turn slightly reddish as iron dissolves into it. For heavy rust, let sit up to 20 minutes."
+      "dwellTime": "Brief — apply, work, check",
+      "instruction": "Bar Keeper's Friend is the household solution. Mix with a little water to form a paste. Apply directly to the rust stain. The Rust Remover (oxalic acid) (active ingredient) chelates iron, forming soluble complexes. Watch the stain fade as iron is trapped by the chelation complex. Let sit 5-15 minutes. For heavy rust, let sit up to 20 minutes."
     },
     {
-      "step": 4,
+      "step": 3,
       "side": "wet",
       "agent": "Gentle abrasion with soft brush (optional, for stubborn rust)",
       "technique": "Very gentle brushing",
@@ -60,7 +51,7 @@
       "instruction": "If rust is stubborn, gently brush the paste around the stain while it's still wet. Do NOT scrub hard. The combination of Rust Remover (oxalic acid) and gentle agitation helps penetrate rust embedded in fibers. Work gently—you're loosening the stain, not abrading the fiber."
     },
     {
-      "step": 5,
+      "step": 4,
       "side": "wet",
       "agent": "Thorough cold water rinse",
       "technique": "Flush thoroughly",
@@ -69,22 +60,13 @@
       "instruction": "Rinse thoroughly under cold running water. Rinse from back first. You must remove ALL Rust Remover (oxalic acid) residue—leftover Rust Remover (oxalic acid) is toxic and can cause irritation. Rinse at least 3-4 times until water runs clear and there's no taste of acid if you touch the cloth to your lips (test on a hidden area—if acidic, keep rinsing)."
     },
     {
-      "step": 6,
+      "step": 5,
       "side": "wet",
       "agent": "Warm or hot water machine wash",
       "technique": "Regular laundry cycle",
       "equipment": "Washing machine with regular detergent",
       "dwellTime": "Full wash cycle",
       "instruction": "Machine wash on warm or hot water (white cotton tolerates this) with regular detergent. Hot water helps remove any final traces of iron residue. This also removes any Rust Remover (oxalic acid) residue and sets the stain removal."
-    },
-    {
-      "step": 7,
-      "side": "dry",
-      "agent": "Heat dry or air dry",
-      "technique": "Machine dry or line dry",
-      "equipment": "Dryer or clothesline",
-      "dwellTime": "Until dry",
-      "instruction": "Machine dry on medium or high heat, or air dry. Heat won't re-set rust stains on white cotton. Once dry, inspect. If rust stain persists (faint brownish-red), repeat the Rust Remover (oxalic acid) step and wash again."
     }
   ],
   "homeSolutions": [
@@ -188,5 +170,6 @@
     "household-remedy-available",
     "fast-removal"
   ],
-  "solventNote": "Professional: Bar Keeper's Friend or EDTA solution (pH controlled, neutral) applied to rust stain, dwell 10-20 min, gentle agitation with soft brush. For oxidized rust (old stains): sodium thiosulfate soak first (5-10 min) to reduce Fe(III) to Fe(II), then Rust Remover (oxalic acid) or EDTA. Thorough rinsing essential. Hot wash with detergent to remove chelation residue. Multiple cycles may be required for heavily oxidized or aged rust."
+  "solventNote": "Professional: Bar Keeper's Friend or EDTA solution (pH controlled, neutral) applied to rust stain, dwell 10-20 min, gentle agitation with soft brush. For oxidized rust (old stains): sodium thiosulfate soak first (5-10 min) to reduce Fe(III) to Fe(II), then Rust Remover (oxalic acid) or EDTA. Thorough rinsing essential. Hot wash with detergent to remove chelation residue. Multiple cycles may be required for heavily oxidized or aged rust.",
+  "aftercare": "Gently brush away any loose rust particles or residue. Don't scrub hard. This removes surface rust before chemistry begins. If rust is embedded in the weave, skip this step. Machine dry on medium or high heat, or air dry. Heat won't re-set rust stains on white cotton. Once dry, inspect. If rust stain persists (faint brownish-red), repeat the Rust Remover (oxalic acid) step and wash again."
 }

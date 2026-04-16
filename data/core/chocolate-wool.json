@@ -27,24 +27,15 @@
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "dry",
-      "agent": "Physical removal only",
-      "technique": "Gentle blot and freeze if needed",
-      "equipment": "Soft cloth, ice pack optional",
-      "dwellTime": "5-10 minutes if using ice",
-      "instruction": "If chocolate is still moist, blot gently with soft cloth—never rub (friction causes felting). For wet chocolate, apply ice pack wrapped in cloth to stain area for 5-10 minutes to firm it up, then gently lift loosened pieces. DO NOT scrape wool—the cuticle is delicate and metal tools damage fiber surface. This step prevents chocolate from wicking deeper into fiber."
-    },
-    {
-      "step": 2,
       "side": "wet",
-      "agent": "Cool water only (15-20°C)",
+      "agent": "Cool water only",
       "technique": "Gentle rinse, no agitation",
       "equipment": "Spray bottle or soft cloth",
       "dwellTime": "1-2 minutes",
       "instruction": "Flush the stain with COOL water (cold, never tepid or warm). Work from back of fabric. Do NOT wring, twist, or agitate—fiber friction causes felting. Blot only, pressing gently with cloth. This removes loose chocolate particles and some cocoa butter before detergent step."
     },
     {
-      "step": 3,
+      "step": 2,
       "side": "wet",
       "agent": "Wool-safe detergent at neutral pH (NSD, Dreft, lanolin-based) at 1 tsp per 2 cups cold water",
       "technique": "Gentle immersion soak",
@@ -53,7 +44,7 @@
       "instruction": "Mix detergent in cold water to neutral pH (test with pH paper if available—target 6.5-7.0). Immerse stained area gently. Wool fibers slide past each other under lubricating action of mild soap, mobilizing cocoa butter without heat. Keep hands still, water temperature constant. DO NOT agitate or rub. After 5-10 minutes, rinse immediately with cold water. Longer soaking risks fiber stress."
     },
     {
-      "step": 4,
+      "step": 3,
       "side": "wet",
       "agent": "Acetic acid spotter",
       "technique": "Acid rinse for tannin mobilization",
@@ -62,7 +53,7 @@
       "instruction": "Vinegar at pH 4.0-4.5 is SAFE for wool and mobilizes chocolate tannins (polyphenol pigments) remaining in fiber. Gently blot or rinse with dilute vinegar solution. This step also neutralizes any alkaline detergent residue—important to prevent felting. DO NOT leave vinegar on wool—rinse immediately with cool water to stop acid action."
     },
     {
-      "step": 5,
+      "step": 4,
       "side": "wet",
       "agent": "Optional: Dilute H₂O₂ for yellowing on WHITE WOOL ONLY",
       "technique": "Cautious soak, test first on hidden area",
@@ -71,22 +62,13 @@
       "instruction": "For white wool only—cocoa butter oxidizes yellow/brown over time. If yellowing persists after vinegar step, test dilute H₂O₂ on hidden seam for 1 minute. Check for color change or weakening. If safe, apply to stain for maximum 5 minutes (longer risks yellowing). DO NOT use on colored wool. Blot, rinse thoroughly with cool water. This oxidative treatment is optional and only for white wool."
     },
     {
-      "step": 6,
+      "step": 5,
       "side": "wet",
       "agent": "Cool water with final trace of vinegar per gallon",
       "technique": "Acidified final rinse",
       "equipment": "Cloth or basin",
       "dwellTime": "1-2 minutes",
       "instruction": "A final very weak vinegar rinse helps set wool fiber cuticles in smooth position and prevents felting. This micro-acidification is a professional technique. Blot gently and press out excess water with your hands—do NOT wring."
-    },
-    {
-      "step": 7,
-      "side": "dry",
-      "agent": "Air dry only, lay flat",
-      "technique": "Flat drying",
-      "equipment": "Clean towel, flat surface",
-      "dwellTime": "60-120 minutes or longer",
-      "instruction": "Lay wool garment flat on clean towel. Do NOT hang (gravity stretches wet wool and can distort shape). Do NOT use heat. Wool dries slowly but will not retain odor if dried in open air, away from sunlight and heat. Once dry, inspect. If any chocolate tannin remains (brownish shadow), do NOT repeat treatment—call professional dry cleaner who can safely use solvent-based spotting."
     }
   ],
   "homeSolutions": [
@@ -184,5 +166,6 @@
     "protein-fiber-sensitivity",
     "cuticle-fragility"
   ],
-  "solventNote": "Wool tolerates solvent-based treatment better than water-based because organic solvents bypass the pH and temperature sensitivities that trigger felting. Professionals rely on solvent-based POG spotting for wool chocolate stains—risk-free compared to home water chemistry."
+  "solventNote": "Wool tolerates solvent-based treatment better than water-based because organic solvents bypass the pH and temperature sensitivities that trigger felting. Professionals rely on solvent-based POG spotting for wool chocolate stains—risk-free compared to home water chemistry.",
+  "aftercare": "If chocolate is still moist, blot gently with soft cloth—never rub (friction causes felting). For wet chocolate, apply ice pack wrapped in cloth to stain area for 5-10 minutes to firm it up, then gently lift loosened pieces. DO NOT scrape wool—the cuticle is delicate and metal tools damage fiber surface. This step prevents chocolate from wicking deeper into fiber. Lay wool garment flat on clean towel. Do NOT hang (gravity stretches wet wool and can distort shape). Do NOT use heat. Wool dries slowly but will not retain odor if dried in open air, away from sunlight and heat. Once dry, inspect. If any chocolate tannin remains (brownish shadow), do NOT repeat treatment—call professional dry cleaner who can safely use solvent-based spotting."
 }

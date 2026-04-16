@@ -25,42 +25,33 @@
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "dry",
-      "agent": "Dry brush or cloth",
-      "technique": "Light brushing",
-      "equipment": "Soft brush or clean cloth",
-      "dwellTime": "Immediate",
-      "instruction": "Brush or wipe away dried grass particles before any water. Fresh grass particles will smear if wet first. Dry brushing removes 20-30% of loose particles. Don't scrub hard—light brushing is enough. Shake the garment outdoors to dislodge residue."
-    },
-    {
-      "step": 2,
       "side": "wet",
       "agent": "Cold water rinse",
       "technique": "Rinse and blot",
       "equipment": "Running water, white towels",
-      "dwellTime": "Immediate, 1-2 minutes",
+      "dwellTime": "Immediate",
       "instruction": "Rinse under cold running water to flush away loose chlorophyll. Blot with white towels (not colored—chlorophyll transfers). Cold water prevents chlorophyll from oxidizing to brown (which happens with hot water). This rinse removes the initial bright green stain. Some staining will remain—this is where enzyme and alcohol come in."
     },
     {
-      "step": 3,
+      "step": 2,
       "side": "wet",
       "agent": "Protein solution (warm water, 30-40°C)",
       "technique": "Soak and agitate",
       "equipment": "Basin, soft brush",
       "dwellTime": "15-20 minutes soak",
-      "instruction": "Mix Protein per product directions with warm water. White cotton tolerates warmth. Submerge stained area. Enzymes break down the plant protein bonds that hold chlorophyll to the fiber. After 15 minutes, gently agitate or brush with a soft brush. You'll see the green lighten as protein fragments release. This step is crucial—it loosens the chlorophyll pigment so alcohol can dissolve it out."
+      "instruction": "Mix Protein per product directions with warm water. White cotton tolerates warmth. Submerge stained area. Enzymes break down the plant protein bonds that hold chlorophyll to the fiber. After 15 minutes, gently agitate or brush with a soft brush. This step is crucial—it loosens the chlorophyll pigment so alcohol can dissolve it out."
     },
     {
-      "step": 4,
+      "step": 3,
       "side": "wet",
       "agent": "IPA (70-90%) or IPA (IPA)",
       "technique": "Direct application or soak",
       "equipment": "Cotton ball, cloth, or basin",
       "dwellTime": "5-10 minutes with agitation",
-      "instruction": "After enzyme, apply IPA directly to the stained area or soak in alcohol solution. Alcohol dissolves chlorophyll pigment out of the fiber. You'll see the stain visibly fade and the alcohol turn greenish as it pulls pigment. Work the alcohol in gently with a cloth. This is the key step for grass—alcohol is what actually removes the chlorophyll, not water. For white cotton, strong alcohol (70-90%) is safe."
+      "instruction": "After enzyme, apply IPA directly to the stained area or soak in alcohol solution. Alcohol dissolves chlorophyll pigment out of the fiber. Work the alcohol in gently with a cloth. This is the key step for grass—alcohol is what actually removes the chlorophyll, not water. For white cotton, strong alcohol (70-90%) is safe."
     },
     {
-      "step": 5,
+      "step": 4,
       "side": "wet",
       "agent": "NSD flush",
       "technique": "Flush and blot",
@@ -69,22 +60,13 @@
       "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot — do not rub. All oxidizer and enzyme residue must be fully removed before drying."
     },
     {
-      "step": 6,
+      "step": 5,
       "side": "wet",
       "agent": "Cold rinse and hot wash",
       "technique": "Rinse thoroughly, then machine wash hot",
       "equipment": "Sink and washing machine",
-      "dwellTime": "Rinse until clear; wash hot with detergent",
+      "dwellTime": "Until rinse water runs clear",
       "instruction": "Rinse thoroughly under cold running water until all enzyme, alcohol, peroxide, and H₂O₂ for white/light fabrics only. Any leftover chemistry will cause yellowing. Then machine wash on hot water (65-95°C) with regular detergent. Hot wash removes alcohol residue and any final traces of pigment."
-    },
-    {
-      "step": 7,
-      "side": "dry",
-      "agent": "Heat dry or sunlight",
-      "technique": "Machine dry or line dry in sun",
-      "equipment": "Dryer or clothesline",
-      "dwellTime": "Until dry",
-      "instruction": "Machine dry on high heat is fine for white cotton. Or hang in direct sunlight—UV light has H₂O₂ for white/light fabrics only. Heat won't re-set grass stains on cotton."
     }
   ],
   "homeSolutions": [
@@ -208,5 +190,6 @@
     "enzyme-responsive",
     "fast-removal"
   ],
-  "solventNote": "Professional: Protein soak (1-2% solution, 40°C, 15-20 min), then Mulsolite (NSD) 50% dilution in warm water (40°C, 10-15 min) or petroleum spirits. Alcohol extraction preferred over water-based. Rinse with isopropyl to remove solvent residue, then final hot wash. For oxidized (brown) grass: consider sodium hydrosulfite (StreePene) soak first to reduce oxidized chlorophyll back to green, then enzyme and solvent."
+  "solventNote": "Professional: Protein soak (1-2% solution, 40°C, 15-20 min), then Mulsolite (NSD) 50% dilution in warm water (40°C, 10-15 min) or petroleum spirits. Alcohol extraction preferred over water-based. Rinse with isopropyl to remove solvent residue, then final hot wash. For oxidized (brown) grass: consider sodium hydrosulfite (StreePene) soak first to reduce oxidized chlorophyll back to green, then enzyme and solvent.",
+  "aftercare": "Brush or wipe away dried grass particles before any water. Fresh grass particles will smear if wet first. Dry brushing removes 20-30% of loose particles. Don't scrub hard—light brushing is enough. Shake the garment outdoors to dislodge residue. Machine dry on high heat is fine for white cotton. Or hang in direct sunlight—UV light has H₂O₂ for white/light fabrics only. Heat won't re-set grass stains on cotton."
 }

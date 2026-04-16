@@ -26,16 +26,6 @@
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "dry",
-      "agent": "Physical removal",
-      "technique": "Scrape and blot",
-      "equipment": "Spoon or dull knife; white cloth or paper towel",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Chocolate hardens when cold. If the stain is still wet or warm, let it air-dry or place in the refrigerator for 15 minutes. Once hardened, use the edge of a spoon to gently scrape away excess chocolate. Work from the perimeter toward the center to avoid spreading. Blot frequently with a white cloth to lift loosened particles. Do not rub—this drives particles deeper into fibers.",
-      "suggestedProducts": "None needed for this step"
-    },
-    {
-      "step": 2,
       "side": "wet",
       "agent": "Cold water",
       "technique": "Rinse and flush",
@@ -45,7 +35,7 @@
       "suggestedProducts": "None"
     },
     {
-      "step": 3,
+      "step": 2,
       "side": "wet",
       "agent": "Protein solution (e.g., NSD or meat tenderizer powder + water)",
       "technique": "Enzyme soak",
@@ -55,7 +45,7 @@
       "suggestedProducts": "NSD or store-brand Protein"
     },
     {
-      "step": 4,
+      "step": 3,
       "side": "wet",
       "agent": "Warm water (40-45°C) + 1 tbsp NSD per 2 cups water",
       "technique": "Surfactant scrub",
@@ -65,33 +55,23 @@
       "suggestedProducts": "NSD or similar NSD"
     },
     {
-      "step": 5,
+      "step": 4,
       "side": "wet",
       "agent": "H₂O₂",
       "technique": "Oxidation",
       "equipment": "Dropper or spray bottle; white cloth",
-      "dwellTime": "10-15 minutes",
+      "dwellTime": "Brief — apply, work, check",
       "instruction": "After enzyme and soap removal, a faint brown tannin residue often remains. White cotton tolerates 3% H₂O₂ without issue. Saturate the stain area and allow it to work. Peroxide oxidizes the remaining theobromine and phenolic molecules, converting them from brown to colorless. You may see faint bubbling—this is normal. Do not heat; do not use above 3% strength.",
       "suggestedProducts": "Standard household H₂O₂ (3%)"
     },
     {
-      "step": 6,
+      "step": 5,
       "side": "wet",
       "agent": "Cool water",
       "technique": "Final rinse",
       "equipment": "Clean cloth or spray",
       "dwellTime": "2 minutes",
       "instruction": "Rinse thoroughly with cool water until no soap residue or peroxide smell remains. Squeeze out excess moisture gently. Do not wring. Lay flat or hang to air-dry. The combination of scrape + enzyme + surfactant + oxidation will have removed 95% of all three chocolate components.",
-      "suggestedProducts": "None"
-    },
-    {
-      "step": 7,
-      "side": "dry",
-      "agent": "Heat (tumble dry or low iron if needed)",
-      "technique": "Final set",
-      "equipment": "Dryer or low-heat iron",
-      "dwellTime": "3-5 minutes",
-      "instruction": "Once dry, inspect for any remaining stain. If faint color lingers, repeat the H₂O₂ step. For heavy chocolate stains, a second full cycle (enzyme + soap + peroxide) may be necessary. White cotton is forgiving—you can repeat treatment many times without fiber damage. Once stain is gone, wash normally to remove any residual chemical smell.",
       "suggestedProducts": "None"
     }
   ],
@@ -214,5 +194,6 @@
     "protein requires enzyme",
     "tannin requires oxidation"
   ],
-  "solventNote": "White cotton is solvent-tolerant. Dry cleaning solvents (perchloroethylene, hydrocarbons) will also remove chocolate oil components, but home methods using surfactant + enzyme + peroxide are equally effective and less harsh."
+  "solventNote": "White cotton is solvent-tolerant. Dry cleaning solvents (perchloroethylene, hydrocarbons) will also remove chocolate oil components, but home methods using surfactant + enzyme + peroxide are equally effective and less harsh.",
+  "aftercare": "Chocolate hardens when cold. If the stain is still wet or warm, let it air-dry or place in the refrigerator for 15 minutes. Once hardened, use the edge of a spoon to gently scrape away excess chocolate. Work from the perimeter toward the center to avoid spreading. Blot frequently with a white cloth to lift loosened particles. Do not rub—this drives particles deeper into fibers. Once dry, inspect for any remaining stain. If faint color lingers, repeat the H₂O₂ step. For heavy chocolate stains, a second full cycle (enzyme + soap + peroxide) may be necessary. White cotton is forgiving—you can repeat treatment many times without fiber damage. Once stain is gone, wash normally to remove any residual chemical smell."
 }
