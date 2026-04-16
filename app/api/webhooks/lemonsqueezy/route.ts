@@ -91,7 +91,6 @@ export async function POST(req: NextRequest) {
               email,
               tier,
               status: 'active',
-              is_active: true,
               ls_order_id: String(data.order_number || data.id || ''),
               updated_at: new Date().toISOString(),
             },
@@ -124,7 +123,6 @@ export async function POST(req: NextRequest) {
               email,
               tier,
               status: 'active',
-              is_active: true,
               ls_subscription_id: String(data.id || ''),
               updated_at: new Date().toISOString(),
             },
@@ -155,7 +153,6 @@ export async function POST(req: NextRequest) {
               email,
               tier,
               status: isActive ? 'active' : 'cancelled',
-              is_active: isActive,
               ls_subscription_id: String(data.id || ''),
               updated_at: new Date().toISOString(),
             },
@@ -179,7 +176,6 @@ export async function POST(req: NextRequest) {
           .from('subscriptions')
           .update({
             status: 'cancelled',
-            is_active: false,
             updated_at: new Date().toISOString(),
           })
           .eq('email', email)
