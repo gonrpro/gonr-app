@@ -6,15 +6,15 @@
   "sector": "textile",
   "source": "verified",
   "verified": false,
-  "stainChemistry": "Rust (iron oxide, Fe2O3) is an inorganic metal stain, not an organic dye. On linen, iron oxide particles lodge in fiber texture and bond through electrostatic interactions. Standard detergents and bleach are ineffective \u2014 bleach actually sets rust stains darker by further oxidizing the iron. Only reducing agents or chelating agents can dissolve iron oxide back into soluble form.",
-  "whyThisWorks": "A reducing agent (sodium hydrosulfite professionally, oxalic acid at consumer level) converts insoluble iron oxide back into soluble iron ions on linen, which then rinse away. Lemon juice or white vinegar provide mild acid chelation for light rust. The key rule: NEVER use chlorine bleach on rust \u2014 it oxidizes the iron further, making the stain permanent.",
+  "stainChemistry": "Rust (iron oxide, Fe2O3) is an inorganic metal stain, not an organic dye. On linen, iron oxide particles lodge in fiber texture and bond through electrostatic interactions. Standard detergents and bleach are ineffective — bleach actually sets rust stains darker by further oxidizing the iron. Only reducing agents or chelating agents can dissolve iron oxide back into soluble form.",
+  "whyThisWorks": "A reducing agent (sodium hydrosulfite professionally, oxalic acid at consumer level) converts insoluble iron oxide back into soluble iron ions on linen, which then rinse away. Lemon juice or white vinegar provide mild acid chelation for light rust. The key rule: NEVER use chlorine bleach on rust — it oxidizes the iron further, making the stain permanent.",
   "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
   "professionalProtocol": {
     "steps": [
-      "1. Apply sodium hydrosulfite (reducing agent) to the rust stain \u2014 this converts insoluble iron oxide back to soluble form \u2014 5-15 min dwell time",
-      "2. Flush with NSD and cool water to remove dissolved iron \u2014 3-5 min",
-      "3. If rust persists: repeat sodium hydrosulfite application \u2014 5-10 min dwell time",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse \u2014 1-2 min",
+      "1. Apply sodium hydrosulfite (reducing agent) to the rust stain — this converts insoluble iron oxide back to soluble form — 5-15 min dwell time",
+      "2. Flush with NSD and cool water to remove dissolved iron — 3-5 min",
+      "3. If rust persists: repeat sodium hydrosulfite application — 5-10 min dwell time",
+      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse — 1-2 min",
       "5. Blot dry. Air dry completely"
     ],
     "products": [
@@ -24,34 +24,35 @@
     ],
     "temperature": "cold",
     "warnings": [
-      "NEVER use chlorine bleach on rust \u2014 it oxidizes iron further, making the stain permanent"
+      "NEVER use chlorine bleach on rust — it oxidizes iron further, making the stain permanent"
     ]
   },
   "diyProtocol": {
     "steps": [
-      "1. Apply white vinegar or lemon juice to the rust stain. Let sit \u2014 15-30 min dwell time",
+      "1. Apply white vinegar or lemon juice to the rust stain. Let sit — 15-30 min dwell time",
       "2. Sprinkle salt over the vinegar-soaked area for mild abrasion",
       "3. Blot with clean white cloth. Repeat application if needed",
       "4. Rinse thoroughly with cold water",
-      "5. Air dry \u2014 do NOT use heat"
+      "5. Air dry — do NOT use heat"
     ],
     "products": [
       "white vinegar",
       "lemon juice (alternative)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional \u2014 they have specialized dye-stripping agents",
+    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
     "warnings": [
-      "Never rub dye stains \u2014 rubbing spreads the color",
+      "Always test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents.",
+      "Never rub dye stains — rubbing spreads the color",
       "Heat permanently sets dye stains"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong concentrated acids \u2014 weakens cellulose",
+      "No strong concentrated acids — weakens cellulose",
       "No chlorine bleach on colored linen"
     ],
     "fiberSensitivities": [
-      "Strongest natural fiber when wet \u2014 very durable",
+      "Strongest natural fiber when wet — very durable",
       "Wrinkles easily but tolerates aggressive cleaning",
       "Neutralize acid spotters after use on cellulose"
     ]
@@ -72,5 +73,8 @@
   },
   "difficulty": 6,
   "timeEstimate": "15-45 minutes",
-  "lastValidated": "2026-03-23"
+  "lastValidated": "2026-03-23",
+  "materialWarnings": [
+    "ALWAYS test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents."
+  ]
 }

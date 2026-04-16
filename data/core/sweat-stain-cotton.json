@@ -18,8 +18,8 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Sweat stains have multiple components: urea and salts (from sweat), body proteins (from shed skin cells and sweat proteins), and body oil. Fresh sweat stains are usually just salt residue\u2014nearly invisible on white cotton but visible on armpits as discoloration. Over time, body oil oxidizes (especially in armpits where fabric warmth and humidity accelerate oxidation), creating yellow or brown discoloration. On white cotton, old sweat stains often appear as yellow or brown stains in the armpit area. The chemistry is similar to collar grime but localized and often with stronger oxidative yellowing (from oil oxidation in the warm armpit environment).",
-  "whyThisWorks": "Fresh sweat stains (salt-based) are removed by simple water rinse. Old sweat stains with oil oxidation require enzyme pre-treatment (to break down proteins and oil) + oxidative bleaching (to fade the yellow/brown discoloration from oxidized oils). For white cotton, which tolerates heat and bleach, hot wash + OxiClean or H\u2082O\u2082 is effective. The key is Protein for the protein-oil component, and oxidation for the yellowing.",
+  "stainChemistry": "Sweat stains have multiple components: urea and salts (from sweat), body proteins (from shed skin cells and sweat proteins), and body oil. Fresh sweat stains are usually just salt residue—nearly invisible on white cotton but visible on armpits as discoloration. Over time, body oil oxidizes (especially in armpits where fabric warmth and humidity accelerate oxidation), creating yellow or brown discoloration. On white cotton, old sweat stains often appear as yellow or brown stains in the armpit area. The chemistry is similar to collar grime but localized and often with stronger oxidative yellowing (from oil oxidation in the warm armpit environment).",
+  "whyThisWorks": "Fresh sweat stains (salt-based) are removed by simple water rinse. Old sweat stains are an oxidizable stain (yellow/brown from oxidized body oils) and require enzyme pre-treatment (to break down proteins and oil) + oxidative bleaching with oxygen bleach or hydrogen peroxide (H₂O₂ / peroxide) to fade the oxidizable yellow/brown discoloration. For white cotton, which tolerates heat and bleach, hot wash + OxiClean (oxygen bleach) or peroxide is effective. The key is enzyme for the protein-oil component, and peroxide oxidation for the oxidizable yellowing.",
   "spottingProtocol": [
     {
       "step": 1,
@@ -34,7 +34,7 @@
     {
       "step": 2,
       "side": "dry",
-      "agent": "Zout Trigger Spray or NSD Advanced Gel (enzyme pre-treater",
+      "agent": "Zout Trigger Spray or NSD Advanced Gel (enzyme pre-treater)",
       "technique": "Apply directly",
       "equipment": "Spray bottle",
       "dwellTime": "5-10 minutes",
@@ -68,8 +68,8 @@
       "technique": "Flush and blot",
       "equipment": "Bowl",
       "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot \u2014 do not rub. All oxidizer and enzyme residue must be fully removed before drying.",
-      "suggestedProducts": "OxiClean powder or H\u2082O\u2082 3%"
+      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot — do not rub. All oxidizer and enzyme residue must be fully removed before drying.",
+      "suggestedProducts": "OxiClean powder or H₂O₂ 3%"
     },
     {
       "step": 6,
@@ -84,22 +84,22 @@
     {
       "step": 7,
       "side": "wet",
-      "agent": "Laundry detergent + hot water (95\u00b0C for whites",
+      "agent": "Laundry detergent + hot water (95°C for whites)",
       "technique": "Machine wash",
       "equipment": "Washing machine",
       "dwellTime": "Normal wash cycle",
-      "instruction": "Wash immediately in hot water with regular detergent. Hot wash will flush out any remaining enzyme residue and oxidative H\u2082O\u2082 for white/light fabrics only.",
+      "instruction": "Wash immediately in hot water with regular detergent. Hot wash will flush out any remaining enzyme residue and oxidative H₂O₂ for white/light fabrics only.",
       "suggestedProducts": "NSD or NSD"
     }
   ],
   "homeSolutions": [
     "FRESH: A simple cool rinse often removes fresh sweat completely.",
     "OLDER WITH YELLOWING: Enzyme pre-treater + gentle scrubbing + OxiClean soak + hot wash. This handles old sweat stains well.",
-    "STUBBORN: If yellow persists, use H\u2082O\u2082 + sunlight for 30-60 minutes before washing."
+    "STUBBORN: If yellow persists, use H₂O₂ + sunlight for 30-60 minutes before washing."
   ],
   "materialWarnings": [
-    "Avoid chlorine bleach initially\u2014use OxiClean (oxygen bleach) instead.",
-    "Do NOT let enzyme pre-treater dry on fabric\u2014rinse after scrubbing."
+    "Avoid chlorine bleach initially—use OxiClean (oxygen bleach) instead.",
+    "Do NOT let enzyme pre-treater dry on fabric—rinse after scrubbing."
   ],
   "escalation": "If sweat stains persist after enzyme + oxidative treatment, they may be set permanently. Professional dry cleaning is rarely needed for sweat stains; home treatment is usually effective.",
   "products": {
@@ -107,7 +107,7 @@
       {
         "name": "Zout Trigger Spray",
         "brand": "Zout",
-        "icon": "\ud83d\udca7",
+        "icon": "💧",
         "amazonSearchQuery": "Zout stain remover",
         "affiliateTag": "gonr08-20",
         "note": "Enzyme pre-treater for sweat proteins."
@@ -115,16 +115,16 @@
       {
         "name": "OxiClean Powder",
         "brand": "OxiClean",
-        "icon": "\ud83e\udd64",
+        "icon": "🥤",
         "amazonSearchQuery": "OxiClean powder",
         "affiliateTag": "gonr08-20",
         "note": "For yellow/brown discoloration from oxidized oils."
       },
       {
-        "name": "H\u2082O\u2082 3%",
+        "name": "H₂O₂ 3%",
         "brand": "Generic",
-        "icon": "\ud83e\uddea",
-        "amazonSearchQuery": "H\u2082O\u2082 3%",
+        "icon": "🧪",
+        "amazonSearchQuery": "H₂O₂ 3%",
         "affiliateTag": "gonr08-20",
         "note": "Alternative to OxiClean for oxidative fading."
       }
@@ -133,11 +133,11 @@
   },
   "customerExplanation": "Sweat stains have two components: salt (which rinses away easily) and body oils that oxidize to yellow/brown discoloration (which requires treatment). We rinsed away the salt, then used enzyme pre-treater to break down sweat proteins and begin breaking down oil oxidation. We soaked in OxiClean to fade the remaining yellow/brown discoloration, then washed hot. This multi-step approach handles old sweat stains effectively on white cotton.",
   "commonMistakes": [
-    "Assuming sweat stains are permanent\u2014they're usually very treatable with enzyme + oxidation.",
-    "Not using enzyme pre-treater\u2014enzymes are essential for sweat protein removal.",
-    "Using chlorine bleach\u2014use OxiClean (oxygen bleach) instead for white cotton."
+    "Assuming sweat stains are permanent—they're usually very treatable with enzyme + oxidation.",
+    "Not using enzyme pre-treater—enzymes are essential for sweat protein removal.",
+    "Using chlorine bleach—use OxiClean (oxygen bleach) instead for white cotton."
   ],
-  "scienceNote": "Sweat stains yellow from the oxidation of body oils (lipid peroxidation) in the warm, humid armpit environment. The yellow/brown color comes from oxidized lipid polymers. Protein removes the protein matrix, and oxidative bleaching (OxiClean, H\u2082O\u2082) breaks the carbon-carbon bonds in the oxidized lipids, destroying the color.",
+  "scienceNote": "Sweat stains yellow from the oxidation of body oils (lipid peroxidation) in the warm, humid armpit environment. The yellow/brown color comes from oxidized lipid polymers. Protein removes the protein matrix, and oxidative bleaching (OxiClean, H₂O₂) breaks the carbon-carbon bonds in the oxidized lipids, destroying the color.",
   "callPro": "Sweat stains are rarely difficult enough to require professional treatment. Home enzyme + oxidative treatment is usually fully effective.",
   "components": [],
   "component_order": [],

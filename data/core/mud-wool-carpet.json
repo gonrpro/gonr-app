@@ -1,0 +1,100 @@
+{
+  "id": "mud-wool-carpet",
+  "title": "Mud on Wool Carpet",
+  "stainFamily": "combo",
+  "surface": "wool-carpet",
+  "sector": "home",
+  "source": "verified",
+  "verified": false,
+  "meta": {
+    "stainCanonical": "mud",
+    "surfaceCanonical": "wool-carpet",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "combo-organic-mineral",
+      "cold-water-only",
+      "animal-fiber",
+      "wool-rug",
+      "dry-brush-first"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Combination stains contain protein, fat, and tannin or mineral components. Mud contains organic material (plant matter, tannins), clay/mineral particles, and sometimes protein components. Each component requires different chemistry: protein needs detergent, fat needs solvent, tannin needs peroxide, minerals need acid. Standard approach: let mud dry completely first (wet scrubbing drives particles deeper), then dry-brush, then detergent, then solvent, then tannin treatment.",
+  "whyThisWorks": "This combination stain contains multiple components — organic pigments, clay, and tannins — that each need separate treatment. Mud soaks through carpet into the padding below. Surface cleaning won't reach it — the stain hides underneath and wicks back up as the material dries. On wool carpet the chemistry has to stay cold and gentle: wool keratin sets permanently with hot water and is destroyed by chlorine bleach. Dwell time matters more than scrubbing force.",
+  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "professionalProtocol": {
+    "steps": [
+      "1. Let the mud dry completely. Once dry, brush and vacuum the loose dry material out of the wool pile before any wet step.",
+      "2. Apply NSD and work gently into the stain. NSD is wool-safe at neutral pH — it targets the protein component and emulsifies surface oils. Blot thoroughly between passes. Dwell 5 minutes. Use cold water only.",
+      "3. Apply POG or VDS to extract the oil and grease component. Blot with clean absorbent cloth. Dwell 5 minutes.",
+      "4. If browning or color remains, apply Tannin to target the plant-based pigments. Tamp gently — do not scrub the wool pile. Dwell 5–10 minutes.",
+      "5. Apply diluted acetic acid (1:10) to neutralize residual chemistry and restore the fiber. Blot dry. Dwell 1–2 minutes."
+    ],
+    "products": [
+      "NSD (Neutral Synthetic Detergent)",
+      "POG (Paint-Oil-Grease remover)",
+      "Tannin",
+      "acetic acid (diluted 1:10)"
+    ],
+    "temperature": "cold only — hot water sets the protein component permanently and felts wool fibers",
+    "warnings": [
+      "Never use chlorine bleach on wool — destroys keratin permanently",
+      "Never use hot or warm water — felts the wool and sets the stain",
+      "Never use protease enzyme cleaners on wool — they digest keratin like they digest the stain",
+      "Skip the dry-brush step and you drive clay particles deeper into the wool pile",
+      "Over-agitating the stain — spreads each component deeper and crushes the pile"
+    ]
+  },
+  "diyProtocol": {
+    "steps": [
+      "1. Let the mud dry completely before touching it. Wet scrubbing drives clay particles deeper into the wool pile.",
+      "2. Once fully dry, brush off the loose dry material with a soft brush, then vacuum the area thoroughly.",
+      "3. Mix a small amount of wool-safe NSD into cold water (never hot — hot water felts wool and sets stains).",
+      "4. Blot the cold solution onto the stain with a clean white cloth. Do not scrub or rub the wool pile.",
+      "5. Let it dwell 5–10 minutes, then blot with a cloth dampened with plain cold water to rinse.",
+      "6. Place a stack of paper towels over the spot and weigh them down so the area dries slowly without wicking."
+    ],
+    "products": [
+      "wool-safe NSD",
+      "OxiClean Versatile Stain Remover (cold water only)",
+      "cold water"
+    ],
+    "whenToStop": "If the stain is still visible after multiple cold treatments, stop. Wool carpet damage from over-treatment is worse than the original stain. Call a professional carpet cleaner experienced with wool.",
+    "warnings": [
+      "Always blot — never rub or scrub. Rubbing damages wool fibers and crushes the pile.",
+      "Cold water only — hot water felts wool and sets the stain permanently.",
+      "Never use chlorine bleach on wool carpet — it destroys the fiber.",
+      "Let mud dry first and brush it out before any wet step — wet scrubbing drives clay deeper."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Use chlorine bleach on wool — destroys keratin permanently",
+      "Use hot or warm water — felts wool and sets the protein component",
+      "Use protease enzyme cleaners on wool — they digest the fiber",
+      "Scrub wet mud — drives clay particles deeper into the wool pile",
+      "Apply all treatments simultaneously — creates a harder-to-remove chemical slurry"
+    ],
+    "fiberSensitivities": [
+      "Wool is a protein fiber. It needs cold water, neutral-pH chemistry, gentle agitation, and zero chlorine bleach. Heat, alkalinity, and chlorine all destroy the fiber permanently."
+    ]
+  },
+  "escalation": {
+    "when": "Sequential cold treating fails, or stain components have cross-linked together, or the wool pile is starting to crush or felt",
+    "whatToTell": "Mud stain on wool carpet, combination of organic pigment, clay, and tannins. Treated at home with cold-water NSD only. Please use multi-step sequential protocol with wool-safe chemistry — no chlorine, no heat.",
+    "specialistType": "professional carpet cleaner experienced with wool"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Was the mud tracked in from outdoors (clay-heavy) or from a garden/potting soil?",
+      "Is the stain fresh or has it dried?",
+      "Has anyone already applied hot water, bleach, or an enzyme cleaner to it?",
+      "Was there grass mixed with the mud?"
+    ],
+    "modifierNotes": "Clay-heavy mud is more tenacious on wool and needs the dry-brush step done thoroughly before any wet step. Garden/potting soil often has higher organic content. Grass mixed with mud adds a tannin/chlorophyll component. Wool requires gentler chemistry and zero heat throughout."
+  },
+  "difficulty": 4,
+  "timeEstimate": "20–40 minutes",
+  "lastValidated": "2026-04-15"
+}

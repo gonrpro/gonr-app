@@ -7,14 +7,14 @@
   "source": "verified",
   "verified": false,
   "stainChemistry": "Liquid foundation contains pigment (iron oxides, titanium dioxide), oils (silicone, mineral oil), waxes, and emulsifiers. On silk, the oil component penetrates the fiber while pigment particles lodge in the surface texture. Water-based foundations are easier to remove than oil-based, but both contain pigment that can stain. Setting powders and primers add additional polymer layers.",
-  "whyThisWorks": "Solvent or POG dissolves the oil/silicone matrix on silk, releasing the trapped pigment particles. Surfactant then lifts the liberated pigment. For stubborn mineral pigment residue, a mild oxidizer addresses remaining discoloration. Working gently is key \u2014 aggressive rubbing drives pigment particles deeper into the fiber structure.",
+  "whyThisWorks": "Solvent or POG dissolves the oil/silicone matrix on silk, releasing the trapped pigment particles. Surfactant then lifts the liberated pigment. For stubborn mineral pigment residue, a mild oxidizer addresses remaining discoloration. Working gently is key — aggressive rubbing drives pigment particles deeper into the fiber structure.",
   "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG to dissolve the oil/wax component \u2014 5-10 min dwell time",
-      "2. Apply NSD to lift dissolved residue and pigment \u2014 3-5 min dwell time",
-      "3. If color remains: apply sodium hydrosulfite on colorfast fabrics \u2014 5-10 min dwell time, monitor",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse \u2014 1-2 min",
+      "1. Apply POG to dissolve the oil/wax component — 5-10 min dwell time",
+      "2. Apply NSD to lift dissolved residue and pigment — 3-5 min dwell time",
+      "3. If color remains: apply sodium hydrosulfite on colorfast fabrics — 5-10 min dwell time, monitor",
+      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse — 1-2 min",
       "5. Blot dry. Air dry completely"
     ],
     "products": [
@@ -25,37 +25,38 @@
     ],
     "temperature": "cold",
     "warnings": [
-      "No peroxide on silk \u2014 use sodium hydrosulfite (reducing agent) instead"
+      "No peroxide on silk — use sodium hydrosulfite (reducing agent) instead"
     ]
   },
   "diyProtocol": {
     "steps": [
-      "1. Scrape or blot excess \u2014 do NOT rub (spreading worsens it)",
-      "2. Apply Dawn dish soap directly to the stain. Work gently \u2014 5-10 min dwell time",
+      "1. Scrape or blot excess — do NOT rub (spreading worsens it)",
+      "2. Apply Dawn dish soap directly to the stain. Work gently — 5-10 min dwell time",
       "3. Blot with clean white cloth. Repeat Dawn application until stain fades",
-      "4. Rinse with warm water (unless protein component present \u2014 then cold)",
-      "5. Air dry \u2014 no heat"
+      "4. Rinse with warm water (unless protein component present — then cold)",
+      "5. Air dry — no heat"
     ],
     "products": [
       "Dawn dish soap"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder \u2014 a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
     "warnings": [
-      "Treat each component in order \u2014 don't skip steps",
-      "Cold water always \u2014 heat sets protein components permanently"
+      "Always test on a hidden seam or inside hem first — silk dyes may not tolerate spotting agents.",
+      "Treat each component in order — don't skip steps",
+      "Cold water always — heat sets protein components permanently"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No protease enzymes \u2014 silk IS protein; enzymes digest the fiber",
-      "No chlorine bleach \u2014 dissolves protein fibers",
-      "No alkaline detergents (pH >8) \u2014 breaks peptide bonds",
-      "No acetone \u2014 bleaches and damages fiber structure",
-      "No hot water \u2014 max 30\u00b0C / 86\u00b0F"
+      "No protease enzymes — silk IS protein; enzymes digest the fiber",
+      "No chlorine bleach — dissolves protein fibers",
+      "No alkaline detergents (pH >8) — breaks peptide bonds",
+      "No acetone — bleaches and damages fiber structure",
+      "No hot water — max 30°C / 86°F"
     ],
     "fiberSensitivities": [
-      "Protein fiber \u2014 extremely sensitive to enzymes, alkali, and heat",
-      "Dyes bleed easily \u2014 always test first",
+      "Protein fiber — extremely sensitive to enzymes, alkali, and heat",
+      "Dyes bleed easily — always test first",
       "Never wring or agitate vigorously"
     ]
   },
@@ -76,5 +77,8 @@
   },
   "difficulty": 5,
   "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23"
+  "lastValidated": "2026-03-23",
+  "materialWarnings": [
+    "ALWAYS test on a hidden seam or inside hem first — silk dyes may not tolerate spotting agents."
+  ]
 }

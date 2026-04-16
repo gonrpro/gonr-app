@@ -11,30 +11,31 @@
   "defaultAssumption": "Treat as unknown age / possibly dried.",
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein to the stain and tamp gently with a spotting brush. This digestant breaks down blood proteins. Work from the edge toward the center. Use reduced dwell time (3 minutes) on wool or silk. Dwell 5–10 minutes.",
-      "2. Apply NSD and work gently. This NSD removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray. Dwell 3–5 minutes.",
-      "3. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue and restore the fabric's natural state. Blot dry with clean absorbent cloth. Dwell 1–2 minutes."
+      "1. Apply Protein to the stain and tamp gently with a spotting brush. This digestant breaks down blood proteins. Work from the edge toward the center. Use reduced dwell time (3 minutes) on wool or silk. Dwell 5\u201310 minutes.",
+      "2. Apply NSD and work gently. This NSD removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray. Dwell 3\u20135 minutes.",
+      "2.5. For oxidized/aged stains or tannin-like discoloration (e.g., red wine), apply hydrogen peroxide 3% to oxidize remaining pigment. Dwell 3\u20135 minutes. Note: test on hidden area first.",
+      "3. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue and restore the fabric's natural state. Blot dry with clean absorbent cloth. Dwell 1\u20132 minutes."
     ],
     "products": [
       "Protein",
       "NSD (Neutral Synthetic Detergent)",
       "acetic acid (diluted 1:10)"
     ],
-    "temperature": "cold — hot water immediately sets hemoglobin protein through irreversible denaturation",
+    "temperature": "cold \u2014 hot water immediately sets hemoglobin protein through irreversible denaturation",
     "warnings": [
-      "Using hot water immediately — sets hemoglobin protein permanently through irreversible denaturation",
-      "Soaking or saturating the mattress — mattress foam cannot dry completely, leading to mold and structural damage",
-      "Using only soap without enzymes — soap does not break protein bonds",
-      "Scrubbing instead of blotting — spreads the stain and drives liquid deeper into batting"
+      "Using hot water immediately \u2014 sets hemoglobin protein permanently through irreversible denaturation",
+      "Soaking or saturating the mattress \u2014 mattress foam cannot dry completely, leading to mold and structural damage",
+      "Using only soap without enzymes \u2014 soap does not break protein bonds",
+      "Scrubbing instead of blotting \u2014 spreads the stain and drives liquid deeper into batting"
     ]
   },
   "diyProtocol": {
     "steps": [
-      "1. Rinse with cold water right away. Blot with a clean white cloth — don't rub.",
+      "1. Rinse with cold water right away. Blot with a clean white cloth \u2014 don't rub.",
       "2. Mix a small squirt of NSD into cold water. Blot the solution onto the stain.",
-      "3. Let it sit for 5–10 minutes. Don't use any heat.",
+      "3. Let it sit for 5\u201310 minutes. Don't use any heat.",
       "4. Blot with a clean white cloth until the stain fades.",
-      "5. Blot with a cloth dampened with plain water and let it air dry with good airflow — a fan nearby helps."
+      "5. Blot with a cloth dampened with plain water and let it air dry with good airflow \u2014 a fan nearby helps."
     ],
     "products": [
       "Dawn NSD",
@@ -42,18 +43,18 @@
       "28% Acetic Acid (diluted)",
       "Nature's Miracle (enzyme-based)"
     ],
-    "whenToStop": "Try an enzyme presoak (Nature's Miracle or similar) — apply and let it soak for 30–60 minutes. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment.",
+    "whenToStop": "Try an enzyme presoak (Nature's Miracle or similar) \u2014 apply and let it soak for 30\u201360 minutes. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment.",
     "warnings": [
       "Check the care tag before cleaning: W = water-safe, S = solvent only, WS = either.",
-      "Avoid over-wetting — excess moisture soaks into cushion filling and causes mildew.",
-      "Never use hot water on a protein stain — heat permanently sets it."
+      "Avoid over-wetting \u2014 excess moisture soaks into cushion filling and causes mildew.",
+      "Never use hot water on a protein stain \u2014 heat permanently sets it."
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use hot water — sets hemoglobin protein permanently",
-      "Soak or saturate the mattress — foam cannot dry completely, leads to mold",
-      "Scrub instead of blot — drives liquid deeper into batting"
+      "Use hot water \u2014 sets hemoglobin protein permanently",
+      "Soak or saturate the mattress \u2014 foam cannot dry completely, leads to mold",
+      "Scrub instead of blot \u2014 drives liquid deeper into batting"
     ],
     "fiberSensitivities": [
       "On mattress: test all agents in an inconspicuous area first. Monitor for color change, surface dulling, or texture damage during treatment."
@@ -61,19 +62,19 @@
   },
   "escalation": {
     "when": "Stain has penetrated deep into mattress batting, or has been set by prior heat exposure",
-    "whatToTell": "Blood stain on mattress, unknown age, cold water and Protein applied. Possible deep penetration into batting. Steam extraction on surface only — do NOT fully saturate.",
+    "whatToTell": "Blood stain on mattress, unknown age, cold water and Protein applied. Possible deep penetration into batting. Steam extraction on surface only \u2014 do NOT fully saturate.",
     "specialistType": "upholstery or mattress cleaning specialist"
   },
   "deepSolveHooks": {
     "contextQuestions": [
       "Is the stain fresh or has it had time to dry?",
       "Has hot water or a heated appliance been applied to the stain already?",
-      "How large is the stained area — spot or soaked-through?",
-      "What type of mattress — foam, innerspring, pillow-top?"
+      "How large is the stained area \u2014 spot or soaked-through?",
+      "What type of mattress \u2014 foam, innerspring, pillow-top?"
     ],
-    "modifierNotes": "Fresh blood is much easier to remove. Prior heat exposure drastically reduces chance of full removal. Large saturated areas may require professional steam extraction. Foam mattresses cannot be over-wetted — restrict treatment to surface only."
+    "modifierNotes": "Fresh blood is much easier to remove. Prior heat exposure drastically reduces chance of full removal. Large saturated areas may require professional steam extraction. Foam mattresses cannot be over-wetted \u2014 restrict treatment to surface only."
   },
   "difficulty": 4,
-  "timeEstimate": "10–20 min",
+  "timeEstimate": "10\u201320 min",
   "lastValidated": "2026-03-23"
 }
