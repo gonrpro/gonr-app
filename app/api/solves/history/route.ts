@@ -81,7 +81,7 @@ export async function GET(req: Request) {
       .order('created_at', { ascending: false })
       .range(offset, offset + limit - 1)
 
-    const plantId = (plant as { id?: string } | null)?.id
+    const plantId = plant?.plantId ?? null
     if (plantId) {
       eventsQuery = eventsQuery.or(`actor_id.eq.${actor},plant_id.eq.${plantId}`)
     } else {
