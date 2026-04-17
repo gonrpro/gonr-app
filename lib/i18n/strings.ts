@@ -675,6 +675,7 @@ export const strings: Record<string, Record<string, string>> = {
 
   // ── Saved Protocols / Bookmarks ──
   savedNav: { en: 'Saved', es: 'Guardados' },
+  historyNav: { en: 'History', es: 'Historial' },
   savedTitle: { en: 'Saved Protocols', es: 'Protocolos Guardados' },
   savedCount: { en: 'protocols', es: 'protocolos' },
   savedEmpty: { en: 'No saved protocols yet', es: 'Sin protocolos guardados' },
