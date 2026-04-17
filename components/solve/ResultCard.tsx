@@ -353,40 +353,44 @@ export default function ResultCard({ card, source, lang = 'en', correlationId }:
       {/* Inline, dismissable, on-demand. Per the "never mandatory" rule. */}
       {correlationId && outcomeState !== 'dismissed' && (
         <div
-          className="px-4 py-3 flex items-center gap-2 flex-wrap"
+          className="px-4 py-3"
           style={{ borderTop: '1px solid var(--border)' }}
         >
           {outcomeState === null || outcomeState === 'sending' ? (
             <>
-              <span
-                className="text-xs font-semibold uppercase tracking-wider"
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                How did this go?
-              </span>
-              {(['solved', 'partial', 'failed'] as OutcomeValue[]).map((v) => (
-                <button
-                  key={v}
-                  onClick={() => reportOutcome(v)}
-                  disabled={outcomeState === 'sending'}
-                  className="px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors hover:opacity-90 disabled:opacity-50"
-                  style={{
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid var(--border-strong)',
-                    color: 'var(--text)',
-                  }}
+              <div className="flex items-center justify-between mb-2">
+                <span
+                  className="text-xs font-semibold uppercase tracking-wider"
+                  style={{ color: 'var(--text-secondary)' }}
                 >
-                  {v === 'solved' ? 'Solved' : v === 'partial' ? 'Partial' : 'Failed'}
+                  How did this go?
+                </span>
+                <button
+                  onClick={() => setOutcomeState('dismissed')}
+                  className="text-xs"
+                  style={{ color: 'var(--text-secondary)', opacity: 0.6 }}
+                  aria-label="Dismiss outcome prompt"
+                >
+                  Skip
                 </button>
-              ))}
-              <button
-                onClick={() => setOutcomeState('dismissed')}
-                className="ml-auto text-xs"
-                style={{ color: 'var(--text-secondary)', opacity: 0.6 }}
-                aria-label="Dismiss outcome prompt"
-              >
-                Skip
-              </button>
+              </div>
+              <div className="flex gap-2">
+                {(['solved', 'partial', 'failed'] as OutcomeValue[]).map((v) => (
+                  <button
+                    key={v}
+                    onClick={() => reportOutcome(v)}
+                    disabled={outcomeState === 'sending'}
+                    className="flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors hover:opacity-90 disabled:opacity-50"
+                    style={{
+                      background: 'rgba(255,255,255,0.04)',
+                      border: '1px solid var(--border-strong)',
+                      color: 'var(--text)',
+                    }}
+                  >
+                    {v === 'solved' ? 'Solved' : v === 'partial' ? 'Partial' : 'Failed'}
+                  </button>
+                ))}
+              </div>
             </>
           ) : (
             <span className="text-xs" style={{ color: 'var(--accent)' }}>
