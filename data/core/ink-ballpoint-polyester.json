@@ -7,14 +7,14 @@
   "source": "verified",
   "verified": false,
   "stainChemistry": "Ballpoint ink contains dye (typically crystal violet or phthalocyanine), a glycol solvent, and a resin binder. On polyester, the resin hardens as the solvent evaporates, trapping dye in a polymer matrix. The dye itself bonds through Van der Waals forces and can penetrate fiber structure. Aged ink is increasingly resistant as the resin fully polymerizes.",
-  "whyThisWorks": "Alcohol (isopropyl or denatured) dissolves the resin binder on polyester, releasing the trapped dye. The freed dye transfers to a blotting cloth. Amyl acetate provides secondary solvent action for resistant resin. Working from the back pushes dissolved ink out. Multiple solvent applications are usually needed \u2014 ink releases in stages, not all at once.",
+  "whyThisWorks": "Alcohol (isopropyl or denatured) dissolves the resin binder on polyester, releasing the trapped dye. The freed dye transfers to a blotting cloth. Amyl acetate provides secondary solvent action for resistant resin. Working from the back pushes dissolved ink out. Multiple solvent applications are usually needed — ink releases in stages, not all at once.",
   "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate to dissolve the resin binder. Blot dissolved ink onto clean cloth \u2014 5-10 min dwell time",
-      "2. Repeat amyl acetate, blotting between applications \u2014 work from back of fabric when possible",
-      "3. Apply NSD to remove remaining residue. Flush with cool water \u2014 3-5 min",
-      "4. If color remains: apply H2O2 6% carefully on colorfast fabrics \u2014 5-10 min dwell time, monitor",
+      "1. Apply amyl acetate to dissolve the resin binder. Blot dissolved ink onto clean cloth",
+      "2. Repeat amyl acetate, blotting between applications — work from back of fabric when possible",
+      "3. Apply NSD to remove remaining residue. Flush with cool water",
+      "4. If color remains: apply H2O2 6% carefully on colorfast fabrics — 5-10 min dwell time, monitor",
       "5. Apply Acetic Acid 28% (diluted 1:10) to neutralize. Blot dry"
     ],
     "products": [
@@ -25,35 +25,35 @@
     ],
     "temperature": "cold",
     "warnings": [
-      "Never rub ink \u2014 it spreads the dye",
+      "Never rub ink — it spreads the dye",
       "Work from back of fabric to push stain out"
     ]
   },
   "diyProtocol": {
     "steps": [
       "1. Place a clean white cloth under the stain to catch transferred ink",
-      "2. Apply hydrogen peroxide 3% to the stain. Blot gently \u2014 do NOT rub \u2014 5 min dwell time",
+      "2. Apply hydrogen peroxide 3% to the stain. Blot gently — do NOT rub",
       "3. Blot dissolved ink onto the cloth. Move to clean area frequently",
-      "4. Apply Dawn dish soap and blot \u2014 5 min dwell time",
-      "5. Rinse with cold water. Air dry \u2014 no heat until stain is gone"
+      "4. Apply Dawn dish soap and blot",
+      "5. Rinse with cold water. Air dry — no heat until stain is gone"
     ],
     "products": [
       "hydrogen peroxide 3%",
       "Dawn dish soap"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional \u2014 they have specialized dye-stripping agents",
+    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
     "warnings": [
-      "Never rub dye stains \u2014 rubbing spreads the color",
+      "Never rub dye stains — rubbing spreads the color",
       "Heat permanently sets dye stains"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
       "No strong alkali at high temperature",
-      "No concentrated acetone \u2014 softens surface"
+      "No concentrated acetone — softens surface"
     ],
     "fiberSensitivities": [
-      "Oleophilic \u2014 grabs and holds oil stains tenaciously",
+      "Oleophilic — grabs and holds oil stains tenaciously",
       "Retains odors due to lipophilic surface",
       "Most chemicals are safe on polyester"
     ]

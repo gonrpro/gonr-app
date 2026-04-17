@@ -1,24 +1,31 @@
 // lib/protocols/validateDwell.ts
 // TASK-037 — runtime guard against numeric dwell-time regressions.
+// TASK-038 — extended: also rejects numeric time tokens in step prose.
 //
 // Atlas's rule (2026-04-17): GONR never makes a numeric dwell-time call.
-// Authors must use soft language. This validator is meant to be called from
-// any code path that writes to `protocol_cards.data.spottingProtocol[].dwellTime`:
-// migrations, admin UIs, bulk import scripts, the card-draft API, etc.
+// One gate, two named checks:
+//   1. FAIL_DWELL_FIELD       — dwellTime struct field rejection
+//   2. FAIL_PROSE_NUMERIC_TIME — numeric time in user-facing step prose
+//
+// Prose check scope (Atlas-whitelisted):
+//   professionalProtocol.steps[], diyProtocol.steps[],
+//   homeSolutions[].instruction, homeSolutions[].technique
+// Prose check does NOT scan: timeEstimate, lastValidated, escalation text,
+//   warnings, stainChemistry, whyThisWorks, or any metadata / admin field.
 //
 // Usage:
-//   const result = validateDwellTime(step.dwellTime)
-//   if (!result.ok) throw new Error(result.reason)
-//
-// Policy:
-//   Reject: any string that contains a numeric duration token
-//           (1 minute, 2-3 min, 30 seconds, 1h, etc.)
-//   Accept: soft descriptive language ("Brief", "Until rinse water runs clear",
-//           "Leave briefly; monitor continuously", "Immediate", "N/A")
-//   Accept: empty / null (step simply has no dwell directive)
+//   const r = validateDwellTime(step.dwellTime)     // field check
+//   const r = validateProseTime(step.instruction)   // prose check
+//   const r = validateCard(card)                    // both, whole card
+//   if (!r.ok) throw new Error(r.reason)
+
+export type FailCode =
+  | 'FAIL_DWELL_FIELD'
+  | 'FAIL_PROSE_NUMERIC_TIME'
 
 export interface DwellValidationResult {
   ok: boolean
+  code?: FailCode
   reason?: string
   matchedToken?: string
 }
@@ -34,7 +41,7 @@ const NUMERIC_RANGE_RE = /\b\d+\s*[-–—]\s*\d+\b/
 
 export function validateDwellTime(value: unknown): DwellValidationResult {
   if (value === null || value === undefined || value === '') return { ok: true }
-  if (typeof value !== 'string') return { ok: false, reason: 'dwellTime must be a string' }
+  if (typeof value !== 'string') return { ok: false, code: 'FAIL_DWELL_FIELD', reason: 'dwellTime must be a string' }
 
   const s = value.trim()
   if (s === '') return { ok: true }
@@ -43,8 +50,9 @@ export function validateDwellTime(value: unknown): DwellValidationResult {
   if (numericMatch) {
     return {
       ok: false,
+      code: 'FAIL_DWELL_FIELD',
       reason:
-        `dwellTime contains an explicit numeric duration ("${numericMatch[0]}"). ` +
+        `FAIL_DWELL_FIELD: dwellTime contains an explicit numeric duration ("${numericMatch[0]}"). ` +
         'GONR policy (TASK-037): use soft descriptive language — e.g., "Brief — apply, work, check", ' +
         '"Until rinse water runs clear", "Leave briefly; monitor continuously", "Brief; do not linger", ' +
         '"Repeat briefly as needed", or "Immediate".',
@@ -59,8 +67,9 @@ export function validateDwellTime(value: unknown): DwellValidationResult {
   if (rangeMatch && /min|sec|hour|hr/i.test(s)) {
     return {
       ok: false,
+      code: 'FAIL_DWELL_FIELD',
       reason:
-        `dwellTime contains a numeric range with a time unit ("${rangeMatch[0]}"). ` +
+        `FAIL_DWELL_FIELD: dwellTime contains a numeric range with a time unit ("${rangeMatch[0]}"). ` +
         'GONR policy (TASK-037): strip the numbers, use soft language instead.',
       matchedToken: rangeMatch[0],
     }
@@ -69,17 +78,91 @@ export function validateDwellTime(value: unknown): DwellValidationResult {
   return { ok: true }
 }
 
+// TASK-038 — prose numeric-time rejection.
+// Matches any numeric time token: "5 min", "5-10 minutes", "30 seconds",
+// "1 hour", "2-3 hrs", etc. Scoped to user-facing step prose only.
+const PROSE_NUMERIC_TIME_RE =
+  /\b\d+(?:\s*[-–—]\s*\d+)?\s*(?:sec(?:ond)?s?|min(?:ute)?s?|hrs?|hours?)\b/i
+
+export function validateProseTime(value: unknown, location = 'prose'): DwellValidationResult {
+  if (value === null || value === undefined || value === '') return { ok: true }
+  if (typeof value !== 'string') return { ok: true }
+  const m = value.match(PROSE_NUMERIC_TIME_RE)
+  if (m) {
+    return {
+      ok: false,
+      code: 'FAIL_PROSE_NUMERIC_TIME',
+      reason:
+        `FAIL_PROSE_NUMERIC_TIME: numeric time token ("${m[0]}") in ${location}. ` +
+        'GONR policy (TASK-038): user-facing step prose must not prescribe specific durations. ' +
+        'Rewrite as soft guidance ("Apply and monitor", "Work briefly; check frequently") ' +
+        'or drop the duration if not critical to the chemistry.',
+      matchedToken: m[0],
+    }
+  }
+  return { ok: true }
+}
+
+interface ProseScanCard {
+  professionalProtocol?: { steps?: string[] }
+  diyProtocol?: { steps?: string[] }
+  homeSolutions?: Array<{ instruction?: string; technique?: string }>
+  spottingProtocol?: Array<{ dwellTime?: string }>
+}
+
 /**
- * Validate every dwellTime in a protocol card's spottingProtocol steps.
- * Returns the first failure (or ok) so callers can surface a single error.
- * For batch contexts, iterate manually and aggregate.
+ * Whole-card validator. Runs both named checks:
+ *   FAIL_DWELL_FIELD       — on every spottingProtocol step's dwellTime
+ *   FAIL_PROSE_NUMERIC_TIME — on professionalProtocol.steps[],
+ *                             diyProtocol.steps[], and homeSolutions prose.
+ * Returns the first failure so callers can surface one error.
+ */
+export function validateCard(card: ProseScanCard): DwellValidationResult {
+  // Check 1: structured dwellTime field
+  const steps = card.spottingProtocol
+  if (Array.isArray(steps)) {
+    for (let i = 0; i < steps.length; i++) {
+      const r = validateDwellTime(steps[i]?.dwellTime)
+      if (!r.ok) return { ...r, reason: `spottingProtocol.steps[${i}]: ${r.reason}` }
+    }
+  }
+
+  // Check 2: prose numeric times in whitelisted fields only
+  const proSteps = card.professionalProtocol?.steps
+  if (Array.isArray(proSteps)) {
+    for (let i = 0; i < proSteps.length; i++) {
+      const r = validateProseTime(proSteps[i], `professionalProtocol.steps[${i}]`)
+      if (!r.ok) return r
+    }
+  }
+  const diySteps = card.diyProtocol?.steps
+  if (Array.isArray(diySteps)) {
+    for (let i = 0; i < diySteps.length; i++) {
+      const r = validateProseTime(diySteps[i], `diyProtocol.steps[${i}]`)
+      if (!r.ok) return r
+    }
+  }
+  if (Array.isArray(card.homeSolutions)) {
+    for (let i = 0; i < card.homeSolutions.length; i++) {
+      const h = card.homeSolutions[i]
+      const r1 = validateProseTime(h?.instruction, `homeSolutions[${i}].instruction`)
+      if (!r1.ok) return r1
+      const r2 = validateProseTime(h?.technique, `homeSolutions[${i}].technique`)
+      if (!r2.ok) return r2
+    }
+  }
+  return { ok: true }
+}
+
+/**
+ * @deprecated use validateCard — kept for TASK-037 call-site compatibility.
  */
 export function validateCardDwells(card: { spottingProtocol?: Array<{ dwellTime?: string }> }): DwellValidationResult {
   const steps = card.spottingProtocol
   if (!Array.isArray(steps)) return { ok: true }
   for (let i = 0; i < steps.length; i++) {
     const r = validateDwellTime(steps[i]?.dwellTime)
-    if (!r.ok) return { ok: false, reason: `step[${i}]: ${r.reason}`, matchedToken: r.matchedToken }
+    if (!r.ok) return { ...r, reason: `step[${i}]: ${r.reason}` }
   }
   return { ok: true }
 }
