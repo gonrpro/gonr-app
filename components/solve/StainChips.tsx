@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { STAIN_CHIPS } from '@/lib/protocols/chips'
+import { STAIN_CHIPS, getStainLabel } from '@/lib/protocols/chips'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 interface StainChipsProps {
@@ -10,7 +10,7 @@ interface StainChipsProps {
 }
 
 export default function StainChips({ onStainSelect, selectedStain }: StainChipsProps) {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const [expandedFamily, setExpandedFamily] = useState<string | null>(null)
 
   function handleFamilyClick(name: string) {
@@ -53,16 +53,15 @@ export default function StainChips({ onStainSelect, selectedStain }: StainChipsP
             <button
               key={chip.name}
               onClick={() => handleFamilyClick(chip.name)}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl min-h-[44px]
-                text-sm font-medium transition-all
-                ${
-                  isExpanded || isSelected
-                    ? 'bg-green-500/20 text-green-400 ring-2 ring-green-500/50 shadow-[0_0_12px_rgba(34,197,94,0.25)]'
-                    : 'bg-[#0e131b] dark:bg-[#0e131b] bg-gray-100 text-gray-300 dark:text-gray-300 text-gray-700 hover:bg-[#161d28]'
-                }`}
+              className={`flex items-center px-3 py-2 rounded-xl min-h-[44px] border text-sm font-medium transition-all active:scale-[0.98] ${
+                isSelected
+                  ? 'bg-emerald-500 text-white border-emerald-500 shadow-[0_10px_24px_rgba(16,185,129,0.22)]'
+                  : isExpanded
+                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-500/12 dark:text-emerald-300 dark:border-emerald-500/30'
+                    : 'bg-white text-gray-700 border-gray-200 shadow-sm hover:border-emerald-300 hover:bg-emerald-50 dark:bg-[#0f172a] dark:text-gray-200 dark:border-white/10 dark:hover:bg-emerald-500/10 dark:hover:border-emerald-500/25'
+              }`}
             >
-              <span className="text-base">{chip.emoji}</span>
-              <span>{chip.name}</span>
+              <span>{getStainLabel(chip.name, lang as 'en' | 'es')}</span>
             </button>
           )
         })}
@@ -77,14 +76,13 @@ export default function StainChips({ onStainSelect, selectedStain }: StainChipsP
               <button
                 key={sub}
                 onClick={() => handleSubClick(sub)}
-                className={`px-3 py-1.5 rounded-lg min-h-[44px] text-sm font-medium transition-all
-                  ${
-                    isActive
-                      ? 'bg-green-500 text-white shadow-[0_0_12px_rgba(34,197,94,0.35)]'
-                      : 'bg-[#0e131b] dark:bg-[#0e131b] bg-gray-100 text-gray-400 dark:text-gray-400 text-gray-600 hover:text-white hover:bg-[#161d28]'
-                  }`}
+                className={`px-3 py-1.5 rounded-lg min-h-[44px] border text-sm font-medium transition-all ${
+                  isActive
+                    ? 'bg-emerald-500 text-white border-emerald-500 shadow-[0_10px_24px_rgba(16,185,129,0.22)]'
+                    : 'bg-white text-gray-600 border-gray-200 shadow-sm hover:border-emerald-300 hover:bg-emerald-50 dark:bg-[#0f172a] dark:text-gray-300 dark:border-white/10 dark:hover:bg-emerald-500/10 dark:hover:border-emerald-500/25'
+                }`}
               >
-                {sub}
+                {getStainLabel(sub, lang as 'en' | 'es')}
               </button>
             )
           })}
