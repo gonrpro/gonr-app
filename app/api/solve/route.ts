@@ -639,7 +639,7 @@ export async function POST(req: Request) {
         },
         correlation_id: correlationId,
       }).catch(() => {})
-      return NextResponse.json({ ...result, card: plantTunedCard, stainType: resolveStainType(plantTunedCard, ctx) })
+      return NextResponse.json({ ...result, card: plantTunedCard, stainType: resolveStainType(plantTunedCard, ctx), correlationId })
     }
 
     // ── AI fallback ────────────────────────────────────────────
@@ -671,7 +671,7 @@ export async function POST(req: Request) {
       const plantTunedAi = applyPlantFilters(safeCard, userPlant)
       logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: plantTunedAi.title || ctx.stain, source: userPlant ? 'ai-plant-tuned' : 'ai', confidence: 0.5 }).catch(() => {})
 
-      return NextResponse.json({ card: plantTunedAi, tier: 4, confidence: 0.5, source: 'ai', stainType: resolveStainType(plantTunedAi, ctx) })
+      return NextResponse.json({ card: plantTunedAi, tier: 4, confidence: 0.5, source: 'ai', stainType: resolveStainType(plantTunedAi, ctx), correlationId })
     } catch (err) {
       console.error('AI fallback failed:', err)
       return NextResponse.json({

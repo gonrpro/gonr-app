@@ -20,6 +20,7 @@ interface SolveResult {
   tier: number
   confidence: number
   source: 'verified' | 'ai'
+  correlationId?: string
 }
 
 function SolvePageInner() {
@@ -355,6 +356,7 @@ function SolvePageInner() {
         <ResultCard
           card={showTranslated && translatedCard ? translatedCard : result.card}
           source={result.source}
+          correlationId={result.correlationId}
         />
         {(userTier === 'free' && !authLoading) && (
           <a
