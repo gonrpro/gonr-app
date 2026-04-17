@@ -108,7 +108,23 @@ Rules:
     })
 
     if (!res.ok) {
-      console.error('OpenAI deep-solve error:', await res.text())
+      const errText = await res.text()
+      console.error('OpenAI deep-solve error:', errText)
+
+      if (errText.includes('insufficient_quota')) {
+        return NextResponse.json(
+          { error: 'Deep Solve is temporarily unavailable because the AI quota is exhausted.' },
+          { status: 503 }
+        )
+      }
+
+      if (errText.includes('invalid_api_key')) {
+        return NextResponse.json(
+          { error: 'Deep Solve is temporarily unavailable because the AI key is invalid.' },
+          { status: 503 }
+        )
+      }
+
       return NextResponse.json({ error: 'AI analysis failed' }, { status: 500 })
     }
 

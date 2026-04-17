@@ -1,12 +1,50 @@
+// components/solve/ResultCard.tsx — TASK-036 Phase 2 (full replacement).
+// Builds on Atlas's Phase 1 apply (Microscope/Handshake quick actions).
+// This revision extends the icon pass to:
+//   - Collapsible section headers (Home, Lightbulb, FlaskConical, AlertTriangle,
+//     ShoppingBag, Phone, Ban, Droplet)
+//   - "Why This Works" callout (🧪 → FlaskConical)
+//   - Hands-Free button (🖐 → Hand)
+//   - Safety warning bullets (• → AlertTriangle small)
+//
+// NOT changed in this pass:
+//   - Dwell-time display (⏱ untouched) — gated on TASK-037 data call.
+//     If Tyler picks "strip all specific+range dwell-times", the dwell row will
+//     often be empty and no icon is needed. If he keeps numerics, swap ⏱→Clock
+//     in a follow-up one-liner.
+//   - Step-level action icons — skipped per Atlas's "if it needs explanation
+//     it's wrong" rule. Step semantics (technique/agent/instruction) are too
+//     fuzzy for reliable icon mapping.
+//
+// All other emoji in this file (verified badge ✓, AI badge 🤖, stain-type
+// emojis in CardBadges) are scoped out intentionally: they're semantic markers,
+// not section headers, and replacing them is a separate tasteful pass.
+
 'use client'
 
 import { useState } from 'react'
+import type { ComponentType } from 'react'
 import type { ProtocolCard, Step } from '@/lib/types'
-// HandoffModule removed — Customer Handoff is now a deep-link to Spotter tab
 import SaveButton from './SaveButton'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import FiberContextBadge from './FiberContextBadge'
 import CardBadges from './CardBadges'
+import StepEnlargeModal from './StepEnlargeModal'
+import FullCardModal from './FullCardModal'
+import {
+  Microscope,
+  Handshake,
+  Lightbulb,
+  Home,
+  AlertTriangle,
+  ShoppingBag,
+  Phone,
+  Ban,
+  Droplet,
+  FlaskConical,
+  Hand,
+  type LucideIcon,
+} from 'lucide-react'
 
 /* ── Helpers ─────────────────────────────────── */
 
@@ -16,10 +54,26 @@ function difficultyColor(d: number) {
   return { text: 'text-red-400', bg: 'bg-red-500/20', border: 'border-l-red-500' }
 }
 
-function Collapsible({ title, icon, children, defaultOpen = false }: {
-  title: string; icon: string; children: React.ReactNode; defaultOpen?: boolean
+/**
+ * Collapsible now accepts either a lucide component (preferred) or a string
+ * (legacy; keeps any callsite we haven't migrated yet working). The lucide
+ * path uses stroke="currentColor" so the icon always matches the header text
+ * color in both dark and light themes.
+ */
+function Collapsible({
+  title,
+  icon,
+  children,
+  defaultOpen = false,
+}: {
+  title: string
+  icon: LucideIcon | string
+  children: React.ReactNode
+  defaultOpen?: boolean
 }) {
   const [open, setOpen] = useState(defaultOpen)
+  const IconCmp: ComponentType<{ size?: number; strokeWidth?: number; 'aria-hidden'?: boolean | 'true' | 'false' }> | null =
+    typeof icon === 'string' ? null : (icon as unknown as ComponentType<any>)
   return (
     <div className="border border-gray-200 dark:border-white/10 rounded-xl overflow-hidden">
       <button
@@ -29,7 +83,11 @@ function Collapsible({ title, icon, children, defaultOpen = false }: {
           hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
       >
         <span className="flex items-center gap-2">
-          <span>{icon}</span>
+          {IconCmp ? (
+            <IconCmp size={16} strokeWidth={1.75} aria-hidden="true" />
+          ) : (
+            <span>{icon as string}</span>
+          )}
           <span>{title}</span>
         </span>
         <span className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
@@ -55,21 +113,20 @@ interface ResultCardProps {
 
 export default function ResultCard({ card, source, lang = 'en' }: ResultCardProps) {
   const { t } = useLanguage()
+  const [enlargedStepIndex, setEnlargedStepIndex] = useState<number | null>(null)
+  const [fullCardOpen, setFullCardOpen] = useState(false)
 
   const difficulty = card.difficulty ?? 5
   const dc = difficultyColor(difficulty)
 
-  // Normalize escalation
   const escalation = typeof card.escalation === 'string'
     ? { when: card.escalation, whatToTell: '', specialistType: '' }
     : card.escalation
 
-  // Normalize products — handle both object and array formats
   const products = card.products && !Array.isArray(card.products)
     ? card.products as { professional?: { name: string; use?: string; note?: string }[]; consumer?: { name: string; use?: string; note?: string }[] }
     : { professional: [], consumer: [] }
 
-  // Normalize pro steps — support both spottingProtocol (v6) and professionalProtocol.steps (new format)
   const rawCard = card as any
   const proSteps: Step[] = card.spottingProtocol ?? (() => {
     const raw = rawCard.professionalProtocol?.steps
@@ -77,19 +134,16 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
     return raw.map((s: string | Step, i: number) => {
       if (typeof s === 'object') return s
       const clean = s.replace(/^\d+\.\s*/, '')
-      // Extract agent: look for known professional agent names
       const knownAgents = ['Protein', 'Tannin Formula', 'NSD', 'POG', 'H₂O₂', 'H2O2', 'Acetic Acid', 'Reducing Agent', 'Rust Remover', 'Enzyme Digester', 'Leveling Agent', 'IPA']
       const agent = knownAgents.find(a => clean.toLowerCase().includes(a.toLowerCase())) ?? ''
       return { step: i + 1, agent, instruction: clean }
     })
   })()
 
-  // Normalize DIY steps
   const diySteps: (string | Step)[] = card.homeSolutions ?? (
     rawCard.diyProtocol?.steps ?? []
   )
 
-  // Normalize warnings
   const warnings: string[] = card.materialWarnings
     ?? rawCard.professionalProtocol?.warnings
     ?? rawCard.safetyMatrix?.neverDo
@@ -98,7 +152,7 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
   return (
     <div className="rounded-xl overflow-hidden" style={{ background: 'var(--surface)', border: '1px solid var(--border-strong)' }}>
 
-      {/* ── 1. Header: Title + source badge ── */}
+      {/* ── 1. Header ── */}
       <div className="px-4 pt-4 pb-3 space-y-1" style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="flex items-start justify-between gap-2">
           <h2 className="text-lg font-bold leading-snug flex-1" style={{ color: 'var(--text)' }}>
@@ -108,14 +162,14 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
             <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold
               ${['verified','core'].includes(source) ? 'bg-green-500/15 text-green-600' : 'bg-purple-500/15 text-purple-500'}`}
             >
-              {['verified','core'].includes(source) ? '✓ Verified' : '🤖 AI'}
+              {['verified','core'].includes(source) ? `✓ ${t('verified')}` : `🤖 ${t('ai')}`}
             </span>
             <SaveButton card={card} />
           </div>
         </div>
       </div>
 
-      {/* ── Card badges (stain family, risk, difficulty, Eisen Method) ── */}
+      {/* ── Card badges ── */}
       <div className="px-4 pb-2">
         <CardBadges
           stainType={(card as any).stainType || (card as any).stainFamily}
@@ -126,7 +180,7 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         />
       </div>
 
-      {/* ── Fiber context from care label scan ── */}
+      {/* ── Fiber context ── */}
       {(card as any)._fiberContext?.fiber && (
         <div className="px-4 pb-3">
           <FiberContextBadge
@@ -137,11 +191,14 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         </div>
       )}
 
-      {/* ── 2. Chemistry overview — prominent callout ── */}
+      {/* ── 2. Chemistry overview ── */}
       {card.whyThisWorks && (
         <div className="px-4 pb-3">
           <div className="rounded-xl p-3 space-y-1" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
-            <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--accent)' }}>🧪 Why This Works</p>
+            <p className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5" style={{ color: 'var(--accent)' }}>
+              <FlaskConical size={14} strokeWidth={1.75} aria-hidden="true" />
+              {t('whyThisWorks')}
+            </p>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
               {card.whyThisWorks}
             </p>
@@ -153,11 +210,16 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
       {proSteps.length > 0 && (
         <div className="px-4 pb-2">
           <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--text-secondary)' }}>
-            Pro Protocol
+            {t('proProtocol')}
           </p>
           <div className="space-y-4">
             {proSteps.map((step, i) => (
-              <div key={i} className="flex gap-3">
+              <button
+                key={i}
+                type="button"
+                onClick={() => setEnlargedStepIndex(i)}
+                className="flex gap-3 w-full text-left rounded-lg p-2 -mx-2 transition-colors hover:bg-white/5 active:bg-white/10 cursor-pointer"
+              >
                 <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
                   style={{ background: 'rgba(34,197,94,0.15)', color: 'var(--accent)' }}>
                   {step.step ?? i + 1}
@@ -182,20 +244,37 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
                     </p>
                   )}
                 </div>
-              </div>
+              </button>
             ))}
+          </div>
+          <div className="flex items-center justify-between mt-3">
+            <p className="text-[10px]" style={{ color: 'var(--text-secondary)', opacity: 0.5 }}>
+              {t('tapAnyStepToEnlarge')}
+            </p>
+            <button
+              type="button"
+              onClick={() => setFullCardOpen(true)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors hover:opacity-90"
+              style={{
+                background: 'rgba(129,140,248,0.1)',
+                border: '1px solid rgba(129,140,248,0.25)',
+                color: '#818cf8',
+              }}
+            >
+              <Hand size={14} strokeWidth={1.75} aria-hidden="true" />
+              <span>{t('handsFree')}</span>
+            </button>
           </div>
         </div>
       )}
 
-      {/* Home Tips — collapsed, brief tips not step-by-step */}
+      {/* Home Tips */}
       {diySteps.length > 0 && (
         <div className="px-4" style={{ borderTop: '1px solid var(--border)' }}>
-          <Collapsible title="Home Tips" icon="🏠">
+          <Collapsible title={t('collapsibleHomeCare')} icon={Home}>
             <ul className="space-y-1.5">
               {diySteps.slice(0, 4).map((sol, i) => {
                 const text = typeof sol === 'string' ? sol : (sol as Step).instruction
-                // Trim to first sentence for tip format
                 const tip = text.split(/[.!?]/)[0].replace(/^\d+\.\s*/, '').trim()
                 if (!tip) return null
                 return (
@@ -210,7 +289,7 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         </div>
       )}
 
-      {/* ── 5. Escalation actions ── */}
+      {/* ── 5. Escalation actions (Phase 1 — unchanged) ── */}
       {(() => {
         const stain = card.meta?.stainCanonical || card.id || ''
         const surface = card.meta?.surfaceCanonical || card.surface || ''
@@ -219,7 +298,7 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
           <div className="px-4 py-3 flex gap-2" style={{ borderTop: '1px solid var(--border)' }}>
             <a
               href={`/deep-solve?stain=${encodeURIComponent(prefill)}`}
-              className="flex items-center justify-center gap-1.5 flex-1 min-h-[44px] rounded-xl text-sm font-semibold transition-colors hover:opacity-90"
+              className="flex items-center justify-center gap-2 flex-1 min-h-[44px] rounded-xl text-sm font-semibold transition-[transform,opacity] duration-150 active:scale-[0.98] hover:opacity-90"
               style={{
                 background: 'rgba(34,197,94,0.08)',
                 border: '1px solid rgba(34,197,94,0.3)',
@@ -227,11 +306,12 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
                 textDecoration: 'none',
               }}
             >
-              🔬 Deep Solve
+              <Microscope size={18} strokeWidth={1.75} aria-hidden="true" />
+              <span>{t('deepSolveTitle')}</span>
             </a>
             <a
               href={`/handoff?prefill=${encodeURIComponent(prefill)}`}
-              className="flex items-center justify-center gap-1.5 flex-1 min-h-[44px] rounded-xl text-sm font-semibold transition-colors hover:opacity-90"
+              className="flex items-center justify-center gap-2 flex-1 min-h-[44px] rounded-xl text-sm font-semibold transition-[transform,opacity] duration-150 active:scale-[0.98] hover:opacity-90 dark:text-amber-400"
               style={{
                 background: 'rgba(234,179,8,0.08)',
                 border: '1px solid rgba(234,179,8,0.3)',
@@ -239,7 +319,8 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
                 textDecoration: 'none',
               }}
             >
-              🤝 Customer Handoff
+              <Handshake size={18} strokeWidth={1.75} aria-hidden="true" />
+              <span>{t('customerHandoffTitle')}</span>
             </a>
           </div>
         )
@@ -247,27 +328,24 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
 
       {/* ── 9. Collapsible sections ── */}
       <div className="px-4 pb-4 space-y-2">
-        {/* Why This Works — open by default */}
         {card.whyThisWorks && (
-          <Collapsible title="Why This Works" icon="💡" defaultOpen={true}>
+          <Collapsible title={t('whyThisWorks')} icon={Lightbulb} defaultOpen={true}>
             <p className="leading-relaxed">{card.whyThisWorks}</p>
           </Collapsible>
         )}
 
-        {/* Chemistry Details */}
         {card.stainChemistry && (
-          <Collapsible title={t('collapsibleChemistry')} icon={'\uD83E\uDDEA'}>
+          <Collapsible title={t('collapsibleChemistry')} icon={FlaskConical}>
             <p className="leading-relaxed">{card.stainChemistry}</p>
           </Collapsible>
         )}
 
-        {/* Safety / Warnings */}
         {warnings.length > 0 && (
-          <Collapsible title={t('collapsibleSafety')} icon={'\u26A0\uFE0F'}>
+          <Collapsible title={t('collapsibleSafety')} icon={AlertTriangle}>
             <ul className="space-y-2">
               {warnings.map((w, i) => (
                 <li key={i} className="flex gap-2 items-start">
-                  <span className="text-red-400 flex-shrink-0 mt-0.5">{'\u2022'}</span>
+                  <AlertTriangle size={14} strokeWidth={1.75} className="text-red-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                   <span>{w}</span>
                 </li>
               ))}
@@ -275,12 +353,11 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
           </Collapsible>
         )}
 
-        {/* Products */}
         {(products.professional?.length || products.consumer?.length) ? (
-          <Collapsible title={t('collapsibleProducts')} icon={'\uD83D\uDED2'}>
+          <Collapsible title={t('collapsibleProducts')} icon={ShoppingBag}>
             {products.professional && products.professional.length > 0 && (
               <div className="space-y-2">
-                <p className="text-xs font-bold text-green-400 uppercase tracking-wider">Professional</p>
+                <p className="text-xs font-bold text-green-400 uppercase tracking-wider">{t('professional')}</p>
                 {products.professional.map((p, i) => (
                   <div key={i} className="space-y-0.5">
                     <p className="font-medium text-gray-700 dark:text-gray-300">{p.name}</p>
@@ -292,7 +369,7 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
             )}
             {products.consumer && products.consumer.length > 0 && (
               <div className="space-y-2 mt-3">
-                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">Consumer</p>
+                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">{t('consumer')}</p>
                 {products.consumer.map((p, i) => (
                   <div key={i} className="space-y-0.5">
                     <p className="font-medium text-gray-700 dark:text-gray-300">{p.name}</p>
@@ -305,18 +382,16 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
           </Collapsible>
         ) : null}
 
-        {/* Escalation */}
         {escalation && (
-          <Collapsible title={t('collapsibleEscalation')} icon={'\uD83D\uDCDE'}>
-            {escalation.when && <p><strong className="text-gray-700 dark:text-gray-300">When:</strong> {escalation.when}</p>}
-            {escalation.whatToTell && <p><strong className="text-gray-700 dark:text-gray-300">What to say:</strong> {escalation.whatToTell}</p>}
-            {escalation.specialistType && <p><strong className="text-gray-700 dark:text-gray-300">Specialist:</strong> {escalation.specialistType}</p>}
+          <Collapsible title={t('collapsibleEscalation')} icon={Phone}>
+            {escalation.when && <p><strong className="text-gray-700 dark:text-gray-300">{t('when')}:</strong> {escalation.when}</p>}
+            {escalation.whatToTell && <p><strong className="text-gray-700 dark:text-gray-300">{t('whatToSay')}:</strong> {escalation.whatToTell}</p>}
+            {escalation.specialistType && <p><strong className="text-gray-700 dark:text-gray-300">{t('specialistLabel')}:</strong> {escalation.specialistType}</p>}
           </Collapsible>
         )}
 
-        {/* Common Mistakes */}
         {card.commonMistakes && card.commonMistakes.length > 0 && (
-          <Collapsible title={t('collapsibleMistakes')} icon={'\uD83D\uDEAB'}>
+          <Collapsible title={t('collapsibleMistakes')} icon={Ban}>
             <ul className="space-y-2">
               {card.commonMistakes.map((m, i) => (
                 <li key={i} className="flex gap-2 items-start">
@@ -328,9 +403,8 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
           </Collapsible>
         )}
 
-        {/* Solvent Note */}
         {card.solventNote && (
-          <Collapsible title={t('collapsibleSolvent')} icon={'\uD83E\uDDF4'}>
+          <Collapsible title={t('collapsibleSolvent')} icon={Droplet}>
             <p className="leading-relaxed">{card.solventNote}</p>
           </Collapsible>
         )}
@@ -350,11 +424,27 @@ export default function ResultCard({ card, source, lang = 'en' }: ResultCardProp
         </p>
       </div>
 
-      {/* ── Disclaimer (minimal) ── */}
       <p className="px-4 pb-3 text-[9px] leading-relaxed" style={{ color: 'var(--text-secondary)', opacity: 0.35 }}>
         {t('protocolDisclaimer')}
       </p>
 
+      {enlargedStepIndex !== null && proSteps.length > 0 && (
+        <StepEnlargeModal
+          steps={proSteps}
+          currentIndex={enlargedStepIndex}
+          onClose={() => setEnlargedStepIndex(null)}
+          onNavigate={setEnlargedStepIndex}
+        />
+      )}
+
+      {fullCardOpen && proSteps.length > 0 && (
+        <FullCardModal
+          card={card}
+          steps={proSteps}
+          warnings={warnings}
+          onClose={() => setFullCardOpen(false)}
+        />
+      )}
     </div>
   )
 }

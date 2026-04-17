@@ -670,10 +670,10 @@ function OperatorPageInner() {
       {/* Header */}
       <div className="px-4 pt-6 pb-2">
         <h1 className="text-2xl font-bold" style={{ color: 'var(--text)' }}>
-          {t('operatorTitle')}
+          {t('deepSolveModuleTitle')}
         </h1>
         <p className="text-sm mt-0.5" style={{ color: 'var(--text-secondary)' }}>
-          {t('operatorSubtitle')}
+          {t('deepSolveModuleSubtitle')}
         </p>
       </div>
 

@@ -1,24 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { SURFACE_CHIPS } from '@/lib/protocols/chips'
+import { SURFACE_CHIPS, getSurfaceLabel } from '@/lib/protocols/chips'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-
-const SURFACE_EMOJIS: Record<string, string> = {
-  Cotton: '\uD83E\uDDF5',
-  Polyester: '\uD83E\uDDF6',
-  Acrylic: '🧶',
-  Silk: '\uD83E\uDD4A',
-  Wool: '\uD83D\uDC11',
-  Cashmere: '\u2728',
-  Linen: '\uD83C\uDF3E',
-  Rayon: '\uD83C\uDF00',
-  Nylon: '\uD83E\uDDF1',
-  Leather: '\uD83D\uDC5C',
-  Denim: '\uD83D\uDC56',
-  Suede: '\uD83E\uDDE4',
-  Upholstery: '\uD83D\uDECB\uFE0F',
-}
 
 interface SurfaceChipsProps {
   onSurfaceSelect: (surface: string) => void
@@ -27,7 +11,7 @@ interface SurfaceChipsProps {
 }
 
 export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible }: SurfaceChipsProps) {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const [showCottonMods, setShowCottonMods] = useState(false)
 
   if (!visible) return null
@@ -40,7 +24,7 @@ export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible
   function handleChipClick(surface: string) {
     if (surface === 'Cotton') {
       setShowCottonMods(!showCottonMods)
-      onSurfaceSelect('cotton') // always set surface even if showing mods
+      onSurfaceSelect('cotton')
     } else {
       setShowCottonMods(false)
       onSurfaceSelect(surface.toLowerCase())
@@ -59,7 +43,6 @@ export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible
 
       <div className="flex flex-wrap gap-2">
         {SURFACE_CHIPS.map((surface) => {
-          const emoji = SURFACE_EMOJIS[surface] || ''
           const isActive =
             selectedSurface === surface.toLowerCase() ||
             (surface === 'Cotton' &&
@@ -70,22 +53,20 @@ export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible
             <button
               key={surface}
               onClick={() => handleChipClick(surface)}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl min-h-[44px]
-                text-sm font-medium transition-all
-                ${
-                  isActive || isExpanded
-                    ? 'bg-green-500/20 text-green-400 ring-2 ring-green-500/50 shadow-[0_0_12px_rgba(34,197,94,0.25)]'
-                    : 'bg-[#0e131b] dark:bg-[#0e131b] bg-gray-100 text-gray-300 dark:text-gray-300 text-gray-700 hover:bg-[#161d28]'
-                }`}
+              className={`flex items-center px-3 py-2 rounded-xl min-h-[44px] border text-sm font-medium transition-all active:scale-[0.98] ${
+                isActive
+                  ? 'bg-emerald-500 text-white border-emerald-500 shadow-[0_10px_24px_rgba(16,185,129,0.22)]'
+                  : isExpanded
+                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-500/12 dark:text-emerald-300 dark:border-emerald-500/30'
+                    : 'bg-white text-gray-700 border-gray-200 shadow-sm hover:border-emerald-300 hover:bg-emerald-50 dark:bg-[#0f172a] dark:text-gray-200 dark:border-white/10 dark:hover:bg-emerald-500/10 dark:hover:border-emerald-500/25'
+              }`}
             >
-              <span className="text-base">{emoji}</span>
-              <span>{surface}</span>
+              <span>{getSurfaceLabel(surface, lang as 'en' | 'es')}</span>
             </button>
           )
         })}
       </div>
 
-      {/* Cotton color modifier */}
       {showCottonMods && (
         <div className="flex flex-wrap gap-2 pl-2 pt-1 animate-in fade-in slide-in-from-top-2 duration-200">
           {COTTON_MODIFIERS.map((mod) => {
@@ -94,12 +75,11 @@ export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible
               <button
                 key={mod.id}
                 onClick={() => handleCottonMod(mod.id)}
-                className={`px-3 py-1.5 rounded-lg min-h-[44px] text-sm font-medium transition-all
-                  ${
-                    isActive
-                      ? 'bg-green-500 text-white shadow-[0_0_12px_rgba(34,197,94,0.35)]'
-                      : 'bg-[#0e131b] dark:bg-[#0e131b] bg-gray-100 text-gray-400 dark:text-gray-400 text-gray-600 hover:text-white hover:bg-[#161d28]'
-                  }`}
+                className={`px-3 py-1.5 rounded-lg min-h-[44px] border text-sm font-medium transition-all ${
+                  isActive
+                    ? 'bg-emerald-500 text-white border-emerald-500 shadow-[0_10px_24px_rgba(16,185,129,0.22)]'
+                    : 'bg-white text-gray-600 border-gray-200 shadow-sm hover:border-emerald-300 hover:bg-emerald-50 dark:bg-[#0f172a] dark:text-gray-300 dark:border-white/10 dark:hover:bg-emerald-500/10 dark:hover:border-emerald-500/25'
+                }`}
               >
                 {t(mod.nameKey)}
               </button>

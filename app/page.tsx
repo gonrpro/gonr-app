@@ -10,8 +10,10 @@ import LanguageToggle from '@/components/protocols/LanguageToggle'
 import LoginGateModal from '@/components/auth/LoginGateModal'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { useOptionalAuth } from '@/lib/auth/AuthContext'
-import { initializeTrialState, getTrialState, getRemainingText } from '@/lib/auth/trialGuard'
+import { fetchUsageState, getRemainingTextFromState, type UsageState } from '@/lib/auth/trialGuard'
+import { buildCheckoutUrl } from '@/lib/payments/checkoutUrls'
 import type { ProtocolCard } from '@/lib/types'
+import { getStainLabel, getSurfaceLabel } from '@/lib/protocols/chips'
 
 interface SolveResult {
   card: ProtocolCard
@@ -39,12 +41,24 @@ function SolvePageInner() {
   // Trial state
   const [showPaywall, setShowPaywall] = useState(false)
   const [showPaywallReason, setShowPaywallReason] = useState<'trial_expired' | 'anon_limit'>('trial_expired')
-  const [daysRemaining, setDaysRemaining] = useState(7)
+  const [usageState, setUsageState] = useState<UsageState | null>(null)
   const [userTier, setUserTier] = useState<'free' | 'spotter' | 'operator' | 'founder'>('free')
+  const solvesRemaining = usageState?.solvesRemaining ?? 3
 
   // Translation state for solve result
   const [translatedCard, setTranslatedCard] = useState<any>(null)
   const [showTranslated, setShowTranslated] = useState(false)
+
+  const translateProtocolCard = useCallback(async (protocolJson: any, targetLang: 'en' | 'es') => {
+    if (targetLang !== 'es') return null
+    const res = await fetch('/api/protocols/translate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ protocolJson, targetLang }),
+    })
+    const data = await res.json()
+    return res.ok && data.translated ? data.translated : null
+  }, [])
 
   // Login gate state
   const [showLoginGate, setShowLoginGate] = useState(false)
@@ -63,37 +77,28 @@ function SolvePageInner() {
       const url = new URL(window.location.href)
       url.searchParams.delete('upgraded')
       router.replace(url.pathname + url.search, { scroll: false })
-      // Refresh tier from server
-      const email = localStorage.getItem('gonr_user_email')
-      if (email) {
-        fetch('/api/auth/tier', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email }),
+      // TASK-033 P0-3: /api/auth/tier is session-only (TASK-032). POST with no
+      // body; server reads email from the session cookie. Previous code read
+      // email from localStorage and sent it in the body, which the server
+      // now ignores — dead code that would mislead future readers.
+      fetch('/api/auth/tier', { method: 'POST' })
+        .then(r => r.json())
+        .then(data => {
+          if (data.tier && data.tier !== 'free') {
+            localStorage.setItem('gonr_user_tier', data.tier)
+          }
         })
-          .then(r => r.json())
-          .then(data => {
-            if (data.tier && data.tier !== 'free') {
-              localStorage.setItem('gonr_user_tier', data.tier)
-            }
-          })
-          .catch(() => {})
-      }
+        .catch(() => {})
       setTimeout(() => setShowUpgradeBanner(false), 6000)
     }
   }, [searchParams, router])
 
   useEffect(() => {
-    // Initialize trial state
-    initializeTrialState()
     const count = parseInt(localStorage.getItem('gonr_solve_count') || '0', 10)
     setSolveCount(count)
 
-    // Load trial state as the unauthenticated baseline.
-    // Authenticated users are synced from AuthContext in the effect below.
-    const trial = getTrialState()
-    setDaysRemaining(trial.daysRemaining)
-    setUserTier(trial.tier)
+    // Pull live usage from server (no more localStorage trial guesses).
+    fetchUsageState().then(setUsageState).catch(() => setUsageState(null))
   }, [])
 
   useEffect(() => {
@@ -101,13 +106,10 @@ function SolvePageInner() {
 
     if (user?.email) {
       setUserTier(authTier)
-      setDaysRemaining(0)
-      return
     }
 
-    const trial = getTrialState()
-    setDaysRemaining(trial.daysRemaining)
-    setUserTier(trial.tier)
+    // Refresh usage state when auth state changes (signup, login, logout).
+    fetchUsageState().then(setUsageState).catch(() => setUsageState(null))
   }, [authLoading, user?.email, authTier])
 
   useEffect(() => {
@@ -132,8 +134,10 @@ function SolvePageInner() {
   const photoLabel = capturedPhoto
     ? (careLabelFile ? t('photoAndCareLabel') || 'Photo + Care Label' : t('photoOnly') || 'Photo')
     : ''
-  const solveStainLabel = selectedStain || stainInput.trim() || photoLabel
-  const solveSurfaceLabel = selectedSurface || ''
+  const solveStainLabel = selectedStain
+    ? getStainLabel(selectedStain, lang as 'en' | 'es')
+    : stainInput.trim() || photoLabel
+  const solveSurfaceLabel = selectedSurface ? getSurfaceLabel(selectedSurface, lang as 'en' | 'es') : ''
   const hasSolveInput = !!(capturedPhoto || selectedStain || stainInput.trim())
 
   // --- Photo: Scan Stain (camera or library) ---
@@ -209,8 +213,8 @@ function SolvePageInner() {
         const formData = new FormData()
         formData.append('image', capturedPhoto)
         formData.append('lang', lang)
-        const userEmail = user?.email || localStorage.getItem('gonr_user_email')
-        if (userEmail) formData.append('email', userEmail)
+        // TASK-033 P0-3: /api/solve is session-only (TASK-032). Don't send email
+        // in body — it's ignored server-side. Session cookie travels with fetch.
         if (careLabelFile) formData.append('careLabel', careLabelFile)
         if (fabricDescription.trim()) formData.append('fabricDescription', fabricDescription.trim())
         if (garmentLocation.trim()) formData.append('garmentLocation', garmentLocation.trim())
@@ -243,11 +247,12 @@ function SolvePageInner() {
             surf = onMatch[2].trim()
           }
         }
-        const textEmail = user?.email || localStorage.getItem('gonr_user_email') || undefined
+        // TASK-033 P0-3: /api/solve is session-only (TASK-032). Session cookie
+        // travels with fetch; client email in body is ignored server-side.
         res = await fetch('/api/solve', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ stain: s, surface: surf, lang, email: textEmail }),
+          body: JSON.stringify({ stain: s, surface: surf, lang }),
         })
       }
 
@@ -266,17 +271,31 @@ function SolvePageInner() {
       }
 
       const data = await res.json()
+
+      if (lang === 'es') {
+        try {
+          const translated = await translateProtocolCard(data.card, 'es')
+          setTranslatedCard(translated)
+          setShowTranslated(!!translated)
+        } catch {
+          setTranslatedCard(null)
+          setShowTranslated(false)
+        }
+      }
+
       setResult(data)
       incrementSolveCount()
 
-      // Refresh trial state after solve
+      // Refresh usage state after solve so the badge counts down accurately.
       if (userTier === 'free') {
-        const newTrial = getTrialState()
-        setDaysRemaining(newTrial.daysRemaining)
-
-        // If trial just expired, show paywall after result
-        if (newTrial.expired) {
-          setTimeout(() => setShowPaywall(true), 1500)
+        try {
+          const newUsage = await fetchUsageState()
+          setUsageState(newUsage)
+          if (newUsage.expired) {
+            setTimeout(() => setShowPaywall(true), 1500)
+          }
+        } catch {
+          // Server returned 503 / network blip — leave the prior state in place.
         }
       }
 
@@ -286,7 +305,7 @@ function SolvePageInner() {
     } finally {
       setLoading(false)
     }
-  }, [hasSolveInput, capturedPhoto, careLabelFile, fabricDescription, garmentLocation, selectedStain, selectedSurface, stainInput, lang, t, incrementSolveCount, scrollToResult, userTier, daysRemaining, user])
+  }, [hasSolveInput, capturedPhoto, careLabelFile, fabricDescription, garmentLocation, selectedStain, selectedSurface, stainInput, lang, t, incrementSolveCount, scrollToResult, userTier, solvesRemaining, user, translateProtocolCard])
 
   const handleStainSelect = (stain: string) => {
     setSelectedStain(stain)
@@ -325,6 +344,7 @@ function SolvePageInner() {
           <LanguageToggle
             protocolJson={result.card}
             translatedJson={translatedCard}
+            initialLang={showTranslated && translatedCard ? 'es' : 'en'}
             onTranslated={(translated) => {
               setTranslatedCard(translated)
               setShowTranslated(true)
@@ -338,7 +358,7 @@ function SolvePageInner() {
         />
         {(userTier === 'free' && !authLoading) && (
           <a
-            href="https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e-ae15-4b25-9021-42c791f80325"
+            href={buildCheckoutUrl('spotter') ?? '#'}
             target="_blank"
             rel="noopener noreferrer"
             className="block text-center space-y-2 rounded-2xl p-5 mt-4 transition-all hover:scale-[1.01]"
@@ -349,16 +369,16 @@ function SolvePageInner() {
             }}
           >
             <p className="text-base font-bold" style={{ color: '#a855f7' }}>
-              Upgrade to Spotter — $49/mo
+              {t('upgradeSpotterTitle')}
             </p>
             <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-              Unlock Deep Solve, garment analysis, customer handoff scripts, and Stain Brain chat.
+              {t('upgradeSpotterBlurb')}
             </p>
             <span
               className="inline-block mt-1 px-5 py-2 rounded-xl text-sm font-bold text-white"
               style={{ background: 'linear-gradient(135deg, #9333ea, #a855f7)' }}
             >
-              Upgrade Now
+              {t('upgradeNow')}
             </span>
           </a>
         )}
@@ -369,7 +389,7 @@ function SolvePageInner() {
   // --- Build solve subtext ---
   let solveSubtext = ''
   if (solveStainLabel && solveSurfaceLabel) {
-    solveSubtext = `${solveStainLabel} on ${solveSurfaceLabel}`
+    solveSubtext = `${solveStainLabel} ${lang === 'es' ? 'en' : 'on'} ${solveSurfaceLabel}`
   } else if (solveStainLabel) {
     solveSubtext = solveStainLabel
   }
@@ -766,8 +786,8 @@ function SolvePageInner() {
         </div>
       )}
 
-      {/* Trial days remaining badge — show last 3 days only, never for logged-in users */}
-      {userTier === 'free' && !user && !authLoading && daysRemaining <= 3 && daysRemaining > 0 && (
+      {/* Free solves remaining badge — never for paid/founder users */}
+      {userTier === 'free' && !authLoading && usageState && solvesRemaining > 0 && solvesRemaining <= 3 && (
         <div style={{
           textAlign: 'center',
           padding: '8px 12px',
@@ -777,7 +797,7 @@ function SolvePageInner() {
           color: '#22c55e',
           fontWeight: 500,
         }}>
-          {getRemainingText()}
+          {getRemainingTextFromState(usageState)}
         </div>
       )}
 
