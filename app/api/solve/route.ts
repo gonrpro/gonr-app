@@ -490,6 +490,15 @@ export async function POST(req: Request) {
     const evalSecret = process.env.GONR_EVAL_SECRET?.trim()
     const incomingSecret = req.headers.get('x-gonr-eval-secret')?.trim()
     const isEvalRunner = Boolean(evalSecret && incomingSecret && incomingSecret === evalSecret)
+    // TASK-042 temp debug — remove after root cause found
+    console.log('[eval-probe]', JSON.stringify({
+      evalSecretDefined: Boolean(evalSecret),
+      evalSecretLen: evalSecret?.length ?? 0,
+      incomingDefined: Boolean(incomingSecret),
+      incomingLen: incomingSecret?.length ?? 0,
+      match: evalSecret && incomingSecret ? incomingSecret === evalSecret : false,
+      isEvalRunner,
+    }))
 
     // TASK-032 P0: always derive email from verified session, never from body
     const email: string | null = isEvalRunner ? 'eval@gonr.app' : await getSessionEmail()
