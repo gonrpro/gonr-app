@@ -9,9 +9,13 @@
 //
 // Prose check scope (Atlas-whitelisted):
 //   professionalProtocol.steps[], diyProtocol.steps[],
-//   homeSolutions[].instruction, homeSolutions[].technique
+//   homeSolutions[].instruction, homeSolutions[].technique,
+//   spottingProtocol[].instruction   ← added 2026-04-17 Phase 1b
 // Prose check does NOT scan: timeEstimate, lastValidated, escalation text,
 //   warnings, stainChemistry, whyThisWorks, or any metadata / admin field.
+// Note: spottingProtocol is the render-path source — lookup.ts normalizer
+// early-returns when it's populated, so if this field carries dwell tails,
+// the cleaned professionalProtocol.steps never reaches the UI.
 //
 // Usage:
 //   const r = validateDwellTime(step.dwellTime)     // field check
@@ -107,7 +111,7 @@ interface ProseScanCard {
   professionalProtocol?: { steps?: string[] }
   diyProtocol?: { steps?: string[] }
   homeSolutions?: Array<{ instruction?: string; technique?: string }>
-  spottingProtocol?: Array<{ dwellTime?: string }>
+  spottingProtocol?: Array<{ dwellTime?: string; instruction?: string }>
 }
 
 /**
@@ -118,7 +122,7 @@ interface ProseScanCard {
  * Returns the first failure so callers can surface one error.
  */
 export function validateCard(card: ProseScanCard): DwellValidationResult {
-  // Check 1: structured dwellTime field
+  // Check 1: structured dwellTime field (existing TASK-037 rule)
   const steps = card.spottingProtocol
   if (Array.isArray(steps)) {
     for (let i = 0; i < steps.length; i++) {
@@ -127,7 +131,14 @@ export function validateCard(card: ProseScanCard): DwellValidationResult {
     }
   }
 
-  // Check 2: prose numeric times in whitelisted fields only
+  // Check 2: prose numeric times in whitelisted fields only.
+  // spottingProtocol[].instruction is the render-path source (see file header).
+  if (Array.isArray(steps)) {
+    for (let i = 0; i < steps.length; i++) {
+      const r = validateProseTime(steps[i]?.instruction, `spottingProtocol[${i}].instruction`)
+      if (!r.ok) return r
+    }
+  }
   const proSteps = card.professionalProtocol?.steps
   if (Array.isArray(proSteps)) {
     for (let i = 0; i < proSteps.length; i++) {
