@@ -1,65 +1,67 @@
 /**
- * Client-side 7-day trial gate
- * Stores trial start date in localStorage.
- * Full access for 7 days. After that → paywall.
+ * Solve-count trial gate (server-truth).
+ *
+ * Pre-TASK-027 this file ran a 7-day localStorage countdown that did not match
+ * the canonical rule and could be cleared/falsified by users. The actual gate
+ * has always lived in /api/solve (see route.ts:checkAndIncrementSolve), but
+ * the UI was reading the wrong source of truth.
+ *
+ * Now: this module fetches /api/usage and surfaces server-truth solve counts.
+ * The localStorage `gonr_user_tier` key is preserved as a hint for AuthContext
+ * during page load; the source of truth is /api/auth/tier and /api/usage.
  */
 
 export type Tier = 'free' | 'spotter' | 'operator' | 'founder'
 
-const TRIAL_START_KEY = 'gonr_trial_start'
 const USER_TIER_KEY = 'gonr_user_tier'
-const TRIAL_DAYS = 7
+
+export interface UsageState {
+  tier: Tier
+  gateType: 'founder' | 'subscription' | 'trial' | 'anon' | 'unknown'
+  solvesUsed: number
+  solvesRemaining: number  // -1 means unlimited
+  limit: number             // -1 means unlimited
+  expired: boolean
+}
+
+const UNKNOWN_STATE: UsageState = {
+  tier: 'free',
+  gateType: 'unknown',
+  solvesUsed: 0,
+  solvesRemaining: 0,
+  limit: 3,
+  expired: false,
+}
 
 /**
- * Initialize trial on first visit. Records start date if not set.
+ * Fetch live usage from server. Throws on network/Supabase error so callers
+ * can render a "—" placeholder rather than fabricating a count.
  */
-export function initializeTrialState(): void {
-  if (typeof window === 'undefined') return
-  if (localStorage.getItem(TRIAL_START_KEY) === null) {
-    localStorage.setItem(TRIAL_START_KEY, String(Date.now()))
+export async function fetchUsageState(): Promise<UsageState> {
+  if (typeof window === 'undefined') return UNKNOWN_STATE
+
+  const res = await fetch('/api/usage', { cache: 'no-store' })
+  if (!res.ok) {
+    throw new Error(`usage fetch failed: ${res.status}`)
   }
-}
+  const data = await res.json()
+  const tier = (data.tier || 'free') as Tier
+  const limit = typeof data.limit === 'number' ? data.limit : 3
+  const remaining = typeof data.solves_remaining === 'number' ? data.solves_remaining : 0
 
-/**
- * Get days remaining in trial (0 if expired).
- */
-export function getDaysRemaining(): number {
-  if (typeof window === 'undefined') return TRIAL_DAYS
-  const start = parseInt(localStorage.getItem(TRIAL_START_KEY) || '0', 10)
-  if (!start) return TRIAL_DAYS
-  const elapsed = Date.now() - start
-  const daysElapsed = elapsed / (1000 * 60 * 60 * 24)
-  return Math.max(0, Math.ceil(TRIAL_DAYS - daysElapsed))
-}
-
-/**
- * Returns true if the 7-day trial has expired.
- */
-export function isTrialExpired(): boolean {
-  if (typeof window === 'undefined') return false
-  const tier = (localStorage.getItem(USER_TIER_KEY) || 'free') as Tier
-  if (tier !== 'free') return false // paid users never expire
-  return getDaysRemaining() === 0
-}
-
-/**
- * Get current trial state.
- */
-export function getTrialState(): { daysRemaining: number; tier: Tier; expired: boolean } {
-  if (typeof window === 'undefined') {
-    return { daysRemaining: TRIAL_DAYS, tier: 'free', expired: false }
-  }
-  const tier = (localStorage.getItem(USER_TIER_KEY) || 'free') as Tier
-  const daysRemaining = getDaysRemaining()
   return {
-    daysRemaining,
     tier,
-    expired: tier === 'free' && daysRemaining === 0,
+    gateType: data.gate_type || 'unknown',
+    solvesUsed: typeof data.solves_used === 'number' ? data.solves_used : 0,
+    solvesRemaining: remaining,
+    limit,
+    expired: tier === 'free' && remaining === 0,
   }
 }
 
 /**
- * Set tier in localStorage (called after login/subscription).
+ * Set tier in localStorage as a UI hint (e.g. used by AuthContext on initial
+ * paint). Server-side gates do not trust this value.
  */
 export function setUserTier(tier: Tier): void {
   if (typeof window === 'undefined') return
@@ -67,26 +69,56 @@ export function setUserTier(tier: Tier): void {
 }
 
 /**
- * Get human-readable trial status for UI.
+ * Read the tier hint from localStorage. Returns 'free' if missing.
+ * UI hint only — server is the source of truth.
  */
-export function getRemainingText(): string {
-  const { daysRemaining, tier } = getTrialState()
-  if (tier !== 'free') return ''
-  if (daysRemaining === 0) return 'Trial expired'
-  if (daysRemaining === 1) return '1 day left in trial'
-  return `${daysRemaining} days left in trial`
+export function getCachedTierHint(): Tier {
+  if (typeof window === 'undefined') return 'free'
+  return ((localStorage.getItem(USER_TIER_KEY) || 'free') as Tier)
 }
 
-/**
- * Clear trial state (on logout).
- */
 export function clearTrialState(): void {
   if (typeof window === 'undefined') return
-  localStorage.removeItem(TRIAL_START_KEY)
   localStorage.removeItem(USER_TIER_KEY)
+  // Legacy keys from the pre-TASK-027 7-day-trial implementation. Removing on
+  // logout so stale values don't bleed into a different account.
+  localStorage.removeItem('gonr_trial_start')
+  localStorage.removeItem('gonr_solves_remaining')
 }
 
-// Legacy exports for any consumers still using solve-counter API
-// These are no-ops — kept to avoid import errors during migration
+export function getRemainingTextFromState(state: UsageState): string {
+  if (state.gateType === 'founder' || state.gateType === 'subscription') return ''
+  if (state.solvesRemaining === -1) return ''
+  if (state.solvesRemaining === 0) return 'Free solves used — upgrade to keep going'
+  if (state.solvesRemaining === 1) return '1 free solve left'
+  return `${state.solvesRemaining} free solves left`
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Legacy shims for compatibility during the rollout. Remove in a follow-up
+// after callers (app/page.tsx, profile/page.tsx) are updated to use the
+// async fetchUsageState() pattern.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/** @deprecated 7-day trial is removed. Returns 0 always. */
+export function getDaysRemaining(): number { return 0 }
+
+/** @deprecated server gate is the source of truth. Returns false. */
+export function isTrialExpired(): boolean { return false }
+
+/** @deprecated returns synthetic state for callers not yet on fetchUsageState. */
+export function getTrialState(): { daysRemaining: number; tier: Tier; expired: boolean } {
+  return { daysRemaining: 0, tier: getCachedTierHint(), expired: false }
+}
+
+/** @deprecated server tracks solves now. No-op. */
 export function decrementSolve(): void {}
+
+/** @deprecated server tracks solves now. No-op. */
 export function resetTrial(): void {}
+
+/** @deprecated 7-day trial is removed. No-op. */
+export function initializeTrialState(): void {}
+
+/** @deprecated synchronous version returns empty; use getRemainingTextFromState. */
+export function getRemainingText(): string { return '' }

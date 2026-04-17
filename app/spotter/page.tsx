@@ -9,6 +9,8 @@ import GarmentFlag from '@/components/solve/GarmentFlag'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { useUser } from '@/lib/hooks/useUser'
 import LoginGateModal from '@/components/auth/LoginGateModal'
+import { buildCheckoutUrl } from '@/lib/payments/checkoutUrls'
+import PlantWizardModal from '@/components/wizard/PlantWizardModal'
 
 const COURSES = [
   {
@@ -77,6 +79,19 @@ function SpotterPageInner() {
   const [activeTool, setActiveTool] = useState<ActiveTool>(null)
   const [showLoginGate, setShowLoginGate] = useState(false)
   const [pendingTool, setPendingTool] = useState<ActiveTool>(null)
+  const [showWizard, setShowWizard] = useState(false)
+  const [wizardCompleted, setWizardCompleted] = useState<boolean | null>(null)
+
+  // Check if user has completed plant wizard
+  useEffect(() => {
+    if (!email) return
+    fetch('/api/plant')
+      .then(r => r.json())
+      .then(d => {
+        setWizardCompleted(!!d?.plant?.wizard_completed_at)
+      })
+      .catch(() => setWizardCompleted(null))
+  }, [email])
 
   // Check URL param on mount — but gate behind auth
   useEffect(() => {
@@ -146,6 +161,30 @@ function SpotterPageInner() {
 
   return (
     <div className="space-y-5">
+      {/* Plant wizard banner — shown to logged-in users who haven't completed wizard */}
+      {email && wizardCompleted === false && (
+        <div
+          className="flex items-center justify-between gap-3 rounded-xl px-4 py-3 text-sm"
+          style={{ background: 'var(--accent-subtle, rgba(99,102,241,0.1))', border: '1px solid var(--accent, #6366f1)' }}
+        >
+          <div className="flex items-center gap-2">
+            <span>🏭</span>
+            <span style={{ color: 'var(--text-primary)' }}><strong>Set up your plant profile</strong> — get protocols tuned to your chemistry and equipment.</span>
+          </div>
+          <button
+            onClick={() => setShowWizard(true)}
+            className="shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors"
+            style={{ background: 'var(--accent, #6366f1)', color: '#fff' }}
+          >
+            Set up
+          </button>
+        </div>
+      )}
+      <PlantWizardModal
+        open={showWizard}
+        onClose={() => setShowWizard(false)}
+        onComplete={() => { setShowWizard(false); setWizardCompleted(true) }}
+      />
       <div>
         <h1 className="text-xl font-bold tracking-tight">Spotter</h1>
         <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
@@ -324,7 +363,7 @@ function SpotterPageInner() {
       {tier !== 'operator' && tier !== 'founder' && tier !== 'spotter' && (
         <div className="space-y-3">
           <a
-            href="https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e-ae15-4b25-9021-42c791f80325"
+            href={buildCheckoutUrl('spotter') ?? '#'}
             target="_blank"
             rel="noopener noreferrer"
             className="block text-center space-y-2 rounded-2xl p-5 transition-all hover:scale-[1.01]"

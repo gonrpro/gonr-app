@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { CHECKOUT_URLS, isCheckoutLive } from '@/lib/payments/checkoutUrls'
 
 const TIERS: {
   nameKey: string
@@ -24,7 +25,7 @@ const TIERS: {
       'tierFeatureStainBrain',
       'tierFeaturePriority',
     ],
-    url: 'https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e-ae15-4b25-9021-42c791f80325',
+    url: CHECKOUT_URLS.spotter,
     accent: 'border-amber-500',
     badge: 'bg-amber-500/20 text-amber-400',
     popular: true,
@@ -40,10 +41,10 @@ const TIERS: {
       'tierFeatureApi',
       'tierFeatureOnboarding',
     ],
-    url: '#',
+    url: CHECKOUT_URLS.operator ?? '#',
     accent: 'border-purple-500',
     badge: 'bg-purple-500/20 text-purple-400',
-    comingSoon: true,
+    comingSoon: !isCheckoutLive('operator'),
   },
 ]
 
@@ -93,7 +94,7 @@ export default function TierGate({ isOpen, onClose, email }: TierGateProps) {
         <div className="px-6 pt-6 pb-4 text-center">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">
             {t('unlockGonr').replace('GONR', '')}
-            <span className="text-green-500">G</span>ONR
+            GON<span className="text-green-500">R</span>
           </h2>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
             {t('tierGateSubtitle')}

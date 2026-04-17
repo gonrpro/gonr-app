@@ -27,8 +27,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white dark:bg-[#05070b] backdrop-blur-md">
       <div className="flex items-center justify-between px-4 py-3">
         <div className="select-none" style={{ fontSize: '28px', fontWeight: 900, letterSpacing: '-1.5px', lineHeight: 1 }}>
-          <span style={{ color: '#22c55e' }}>G</span>
-          <span className="text-gray-900 dark:text-white">ONR</span>
+          <span className="text-gray-900 dark:text-white">GON</span>
+          <span style={{ color: '#22c55e' }}>R</span>
         </div>
         <div className="flex items-center gap-1">
           <button

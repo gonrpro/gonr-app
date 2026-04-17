@@ -1,12 +1,80 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './PaywallModal.module.css'
+import { buildCheckoutUrl, isCheckoutLive } from '@/lib/payments/checkoutUrls'
 
 interface PaywallModalProps {
   open: boolean
   onDismiss: () => void
   reason?: 'trial_expired' | 'anon_limit'
+}
+
+// TASK-034: Operator waitlist capture. While Operator is parked, accumulate
+// warm leads we can email when it launches. Posts to /api/operator-waitlist.
+function OperatorWaitlist() {
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+
+  async function onSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    const trimmed = email.trim()
+    if (!trimmed) return
+    setStatus('submitting')
+    try {
+      const res = await fetch('/api/operator-waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: trimmed }),
+      })
+      if (!res.ok) throw new Error('failed')
+      setStatus('success')
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  if (status === 'success') {
+    return (
+      <p style={{ fontSize: '12px', color: '#92400e', fontWeight: 600, textAlign: 'center', padding: '10px 0' }}>
+        &#10003; You&apos;re on the list. We&apos;ll email when Operator launches.
+      </p>
+    )
+  }
+
+  return (
+    <form onSubmit={onSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+      <input
+        type="email"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        placeholder="you@shop.com"
+        required
+        disabled={status === 'submitting'}
+        style={{
+          padding: '8px 10px',
+          borderRadius: '8px',
+          border: '1px solid rgba(245,158,11,0.4)',
+          fontSize: '13px',
+          background: '#fff',
+          outline: 'none',
+        }}
+      />
+      <button
+        type="submit"
+        disabled={status === 'submitting' || !email.trim()}
+        className={styles.checkoutBtn}
+        style={{ background: '#f59e0b', opacity: status === 'submitting' ? 0.6 : 1 }}
+      >
+        {status === 'submitting' ? 'Saving...' : 'Notify me when Operator launches'}
+      </button>
+      {status === 'error' && (
+        <p style={{ fontSize: '11px', color: '#dc2626', textAlign: 'center' }}>
+          Couldn&apos;t save your email. Try again.
+        </p>
+      )}
+    </form>
+  )
 }
 
 /**
@@ -67,7 +135,7 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
                 <span className={styles.period}>/month</span>
               </div>
               <a
-                href="https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e-ae15-4b25-9021-42c791f80325"
+                href={buildCheckoutUrl('spotter') ?? '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.checkoutBtn}
@@ -105,9 +173,19 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
                 <span className={styles.price}>$99</span>
                 <span className={styles.period}>/month</span>
               </div>
-              <button disabled className={styles.checkoutBtn} style={{ opacity: 0.4, cursor: 'not-allowed', background: '#f59e0b' }}>
-                Notify Me When Live
-              </button>
+              {isCheckoutLive('operator') ? (
+                <a
+                  href={buildCheckoutUrl('operator') ?? '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.checkoutBtn}
+                  style={{ background: '#f59e0b' }}
+                >
+                  Upgrade to Operator
+                </a>
+              ) : (
+                <OperatorWaitlist />
+              )}
             </div>
           </div>
 

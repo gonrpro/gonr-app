@@ -1,12 +1,39 @@
 // app/api/solve/route.ts
 import { NextResponse } from 'next/server'
+import { createServerClient } from '@supabase/ssr'
+import { cookies } from 'next/headers'
 import { lookupProtocol, detectFamily } from '@/lib/protocols/lookup'
+import { getUserPlant } from '@/lib/auth/getUserPlant'
+import { applyPlantFilters } from '@/lib/protocols/applyPlantFilters'
 import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
 import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
 import { createClient } from '@supabase/supabase-js'
 import { identifyStain, readCareLabel } from '@/lib/vision'
 import { buildSolveContext } from '@/lib/solve/context'
 import type { SolveContext } from '@/lib/solve/context'
+
+// TASK-032 P0 fix: derive email from verified session cookie only.
+// Never trust email from request body — prevents tier escalation via
+// body-supplied founder/subscriber emails.
+async function getSessionEmail(): Promise<string | null> {
+  try {
+    const cookieStore = await cookies()
+    const supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          getAll: () => cookieStore.getAll(),
+          setAll: () => {},
+        },
+      }
+    )
+    const { data } = await supabase.auth.getUser()
+    return data.user?.email ?? null
+  } catch {
+    return null
+  }
+}
 
 const OPENAI_API = 'https://api.openai.com/v1'
 
@@ -44,16 +71,16 @@ function getSupabaseAdmin() {
 const FOUNDER_EMAILS = ['tyler@gonr.pro', 'tyler@nexshift.co', 'twfyke@me.com', 'eval@gonr.app', 'jeff@cleanersupply.com']
 
 const FREE_SOLVE_LIMIT = 3
-const TRIAL_WINDOW_DAYS = 7
 
 // Counts and atomically increments a solve_usage row keyed by `key`
 // (email for logged-in users, `anon:<ip>` for unauthenticated).
-// Returns { allowed, reason } where reason distinguishes the block type
-// for clients (trial_expired vs free_limit).
+// Pure usage-count gate, no time window. Canonical rule per Learnings:
+// 3 free solves after email signup, period. The 7-day trial window was
+// removed in TASK-027 to match that rule.
 async function consumeSolveFromUsage(
   supabase: ReturnType<typeof getSupabaseAdmin>,
   key: string,
-  opts: { enforceTrialWindow: boolean; reasonWhenBlocked: string },
+  reasonWhenBlocked: string,
 ): Promise<{ allowed: boolean; reason?: string }> {
   const { data: usage } = await supabase
     .from('solve_usage')
@@ -73,16 +100,8 @@ async function consumeSolveFromUsage(
     return { allowed: true }
   }
 
-  if (opts.enforceTrialWindow) {
-    const trialStart = new Date(usage.trial_started_at)
-    const daysSinceTrial = (now.getTime() - trialStart.getTime()) / (1000 * 60 * 60 * 24)
-    if (daysSinceTrial > TRIAL_WINDOW_DAYS) {
-      return { allowed: false, reason: 'trial_expired' }
-    }
-  }
-
   if (usage.solve_count >= FREE_SOLVE_LIMIT) {
-    return { allowed: false, reason: opts.reasonWhenBlocked }
+    return { allowed: false, reason: reasonWhenBlocked }
   }
 
   await supabase
@@ -94,7 +113,8 @@ async function consumeSolveFromUsage(
 }
 
 async function checkAndIncrementSolve(email: string | null, clientIp: string): Promise<{ allowed: boolean; reason?: string }> {
-  // Founder bypass: exact email match only
+  // Founder bypass: exact email match only — outside the try so a Supabase
+  // outage cannot lock founders out.
   if (email && FOUNDER_EMAILS.includes(email.toLowerCase())) return { allowed: true }
 
   try {
@@ -111,21 +131,20 @@ async function checkAndIncrementSolve(email: string | null, clientIp: string): P
       // Paying subscribers (status='active') are not gated.
       if (subscription && subscription.status === 'active') return { allowed: true }
 
-      return await consumeSolveFromUsage(supabase, email.toLowerCase(), {
-        enforceTrialWindow: true,
-        reasonWhenBlocked: 'trial_expired',
-      })
+      return await consumeSolveFromUsage(supabase, email.toLowerCase(), 'trial_expired')
     }
 
     // Unauthenticated path — persistent 3-lifetime-solves per IP,
-    // tracked in solve_usage with an `anon:<ip>` key. No trial window.
-    return await consumeSolveFromUsage(supabase, `anon:${clientIp}`, {
-      enforceTrialWindow: false,
-      reasonWhenBlocked: 'free_limit',
-    })
+    // tracked in solve_usage with an `anon:<ip>` key.
+    return await consumeSolveFromUsage(supabase, `anon:${clientIp}`, 'free_limit')
   } catch (err) {
-    console.warn('[SolveGate] Error — allowing through:', err)
-    return { allowed: true }
+    // Fail-closed for free + anon (TASK-027). Pre-TASK-027 the catch block
+    // returned `allowed: true`, leaking unlimited free solves on every
+    // Supabase blip. Founders bypass above, so this only blocks free/anon
+    // and paying users whose subscription check itself errored. Paying users
+    // can retry in seconds; the leak is closed.
+    console.warn('[SolveGate] Error — failing closed:', err)
+    return { allowed: false, reason: 'temporary_error' }
   }
 }
 
@@ -463,7 +482,15 @@ export async function POST(req: Request) {
     const apiKey = process.env.OPENAI_API_KEY
     const contentType = req.headers.get('content-type') || ''
 
-    let email: string | null = null
+    // TASK-033 eval bypass: server-to-server eval runner authenticates via
+    // secret header rather than a browser session. Secret is stored in Vercel
+    // env (GONR_EVAL_SECRET) and never exposed to clients.
+    const evalSecret = process.env.GONR_EVAL_SECRET?.trim()
+    const incomingSecret = req.headers.get('x-gonr-eval-secret')?.trim()
+    const isEvalRunner = Boolean(evalSecret && incomingSecret && incomingSecret === evalSecret)
+
+    // TASK-032 P0: always derive email from verified session, never from body
+    const email: string | null = isEvalRunner ? 'eval@gonr.app' : await getSessionEmail()
     let lang = 'en'
     let ctx: SolveContext
 
@@ -476,7 +503,7 @@ export async function POST(req: Request) {
       const surfaceHint = (formData.get('surfaceHint') as string) || ''
       const fabricDescription = (formData.get('fabricDescription') as string) || ''
       const garmentLocation = (formData.get('garmentLocation') as string) || ''
-      email = (formData.get('email') as string) || null
+      // email intentionally NOT read from formData — session-only
       lang = (formData.get('lang') as string) || 'en'
 
       // Run vision in parallel — only if no text hints override
@@ -505,7 +532,7 @@ export async function POST(req: Request) {
 
     } else {
       const body = await req.json()
-      email = body.email || null
+      // email intentionally NOT read from body — session-only (TASK-032 P0 fix)
       lang = body.lang || 'en'
 
       // Text-only solve — no vision needed
@@ -529,9 +556,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Stain required' }, { status: 400 })
     }
 
-    // ── Rate limit (per-IP, all users) ──────────────────────────
+    // ── Rate limit (per-IP, all users except authenticated eval runner) ─────
     const clientIp = getClientIp(req)
-    if (isRateLimited(clientIp, RATE_LIMIT_WINDOW_MS, RATE_LIMIT_MAX)) {
+    if (!isEvalRunner && isRateLimited(clientIp, RATE_LIMIT_WINDOW_MS, RATE_LIMIT_MAX)) {
       return NextResponse.json({ error: 'Too many requests' }, { status: 429 })
     }
 
@@ -539,11 +566,20 @@ export async function POST(req: Request) {
     // NOTE: Only gate after stain is validated so failed requests don't consume trial credits.
     const gateResult = await checkAndIncrementSolve(email, clientIp)
     if (!gateResult.allowed) {
+      // 503 for transient Supabase errors (client should retry); 402 for real
+      // payment-required block (trial_expired / free_limit / anon_limit).
+      const isTransient = gateResult.reason === 'temporary_error'
       return NextResponse.json(
-        { error: 'trial_expired', reason: gateResult.reason },
-        { status: 402 }
+        { error: gateResult.reason || 'trial_expired', reason: gateResult.reason },
+        { status: isTransient ? 503 : 402 }
       )
     }
+
+    // ── Plant context (TASK-023 Phase C) ───────────────────────
+    // Best-effort: fetches the user's plant if they belong to one. Returns null
+    // for anon, no-plant, or Supabase errors — solve gracefully degrades to
+    // canonical behavior in any of those cases.
+    const userPlant = await getUserPlant(email)
 
     // ── Library lookup ─────────────────────────────────────────
     const result = await lookupProtocol(ctx.stain, ctx.surface)
@@ -566,8 +602,12 @@ export async function POST(req: Request) {
       }
       const filteredCard = librarySafety.card
       ensureBleachNeutralization(filteredCard)
-      logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: filteredCard.title, source: 'library', confidence: result.confidence }).catch(() => {})
-      return NextResponse.json({ ...result, card: filteredCard, stainType: resolveStainType(filteredCard, ctx) })
+      // Plant-level filters (TASK-023 Phase C v1): bleach_allowed=false suppresses
+      // chlorine steps; solvent='wet-only' flags dry-side; house_rules appended.
+      // No-op if userPlant is null.
+      const plantTunedCard = applyPlantFilters(filteredCard, userPlant)
+      logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: plantTunedCard.title, source: userPlant ? 'library-plant-tuned' : 'library', confidence: result.confidence }).catch(() => {})
+      return NextResponse.json({ ...result, card: plantTunedCard, stainType: resolveStainType(plantTunedCard, ctx) })
     }
 
     // ── AI fallback ────────────────────────────────────────────
@@ -594,9 +634,12 @@ export async function POST(req: Request) {
 
       queueForReview(safeCard, ctx, safetyResult).catch(() => {})
       ensureBleachNeutralization(safeCard)
-      logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: safeCard.title || ctx.stain, source: 'ai', confidence: 0.5 }).catch(() => {})
+      // Apply plant-level filters to AI-generated cards too — bleach policy
+      // and house rules must be respected regardless of card source.
+      const plantTunedAi = applyPlantFilters(safeCard, userPlant)
+      logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: plantTunedAi.title || ctx.stain, source: userPlant ? 'ai-plant-tuned' : 'ai', confidence: 0.5 }).catch(() => {})
 
-      return NextResponse.json({ card: safeCard, tier: 4, confidence: 0.5, source: 'ai', stainType: resolveStainType(safeCard, ctx) })
+      return NextResponse.json({ card: plantTunedAi, tier: 4, confidence: 0.5, source: 'ai', stainType: resolveStainType(plantTunedAi, ctx) })
     } catch (err) {
       console.error('AI fallback failed:', err)
       return NextResponse.json({

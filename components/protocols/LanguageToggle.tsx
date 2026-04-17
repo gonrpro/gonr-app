@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface LanguageToggleProps {
   protocolId?: string
   protocolJson: any
   translatedJson: any | null
+  initialLang?: 'en' | 'es'
   onTranslated: (translated: any) => void
   onLangChange?: (lang: 'en' | 'es') => void
 }
@@ -14,11 +15,16 @@ export default function LanguageToggle({
   protocolId,
   protocolJson,
   translatedJson,
+  initialLang = 'en',
   onTranslated,
   onLangChange,
 }: LanguageToggleProps) {
-  const [lang, setLang] = useState<'en' | 'es'>('en')
+  const [lang, setLang] = useState<'en' | 'es'>(initialLang)
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLang(initialLang)
+  }, [initialLang])
 
   async function toggle() {
     const newLang = lang === 'en' ? 'es' : 'en'

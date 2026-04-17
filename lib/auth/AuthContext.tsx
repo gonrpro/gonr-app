@@ -34,7 +34,40 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     const supabase = createClient()
 
-    // Check current session
+    // Shared tier-fetch helper. On failure, logs loudly and leaves tier UNCHANGED
+    // rather than silently downgrading a paid user to 'free'. Silent downgrade was
+    // the root of the results-page CTA bug (TASK-022): a transient backend hiccup
+    // flipped a founder into 'free' and surfaced the upgrade CTA.
+    const fetchAndSetTier = async (email: string | null | undefined): Promise<void> => {
+      if (!email) {
+        setTier('free')
+        setUserTier('free')
+        return
+      }
+      try {
+        const res = await fetch('/api/auth/tier', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        })
+        if (!res.ok) {
+          console.error('[Auth] tier fetch failed', res.status, 'for', email, '— leaving tier unchanged')
+          return
+        }
+        const data = await res.json()
+        const resolved = data.tier as Tier | undefined
+        if (!resolved) {
+          console.error('[Auth] tier fetch returned empty tier for', email, '— leaving tier unchanged')
+          return
+        }
+        setTier(resolved)
+        setUserTier(resolved)
+      } catch (err) {
+        console.error('[Auth] tier fetch threw for', email, err, '— leaving tier unchanged')
+      }
+    }
+
+    // Initial session check
     const checkSession = async () => {
       try {
         const {
@@ -43,26 +76,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
         setSession(currentSession)
         setUser(currentSession?.user || null)
-
-        // If logged in, fetch tier from API
-        if (currentSession?.user) {
-          try {
-            const res = await fetch('/api/auth/tier', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ email: currentSession.user.email }),
-            })
-
-            if (res.ok) {
-              const data = await res.json()
-              const userTier = data.tier as Tier
-              setTier(userTier)
-              setUserTier(userTier)
-            }
-          } catch (err) {
-            console.error('Failed to fetch user tier:', err)
-          }
-        }
+        await fetchAndSetTier(currentSession?.user?.email)
       } catch (err) {
         console.error('Failed to check session:', err)
       } finally {
@@ -72,33 +86,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     checkSession()
 
-    // Listen for auth changes
+    // Listen for auth changes. Critical: wrap the whole handler in
+    // setIsLoading(true) / finally setIsLoading(false) so consumers see a
+    // consistent loading state across the tier-resolve window. Before this
+    // fix, onAuthStateChange left isLoading=false during the fetch, which
+    // meant consumers could render with user=founder + tier='free' (stale)
+    // + loading=false — exactly the results-page CTA bug.
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(async (event, newSession) => {
-      setSession(newSession)
-      setUser(newSession?.user || null)
-
-      if (newSession?.user) {
-        // Fetch updated tier
-        try {
-          const res = await fetch('/api/auth/tier', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: newSession.user.email }),
-          })
-
-          if (res.ok) {
-            const data = await res.json()
-            const userTier = data.tier as Tier
-            setTier(userTier)
-            setUserTier(userTier)
-          }
-        } catch (err) {
-          console.error('Failed to fetch user tier on auth change:', err)
+    } = supabase.auth.onAuthStateChange(async (_event, newSession) => {
+      setIsLoading(true)
+      try {
+        setSession(newSession)
+        setUser(newSession?.user || null)
+        if (newSession?.user) {
+          await fetchAndSetTier(newSession.user.email)
+        } else {
+          setTier('free')
+          setUserTier('free')
         }
-      } else {
-        setTier('free')
+      } finally {
+        setIsLoading(false)
       }
     })
 

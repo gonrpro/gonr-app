@@ -1,6 +1,15 @@
 import { readdir, readFile } from 'fs/promises'
 import { join } from 'path'
 import type { ProtocolCard, LookupResult } from '../types'
+import { getAllCanonicalCards, isAdapterHealthy } from './db'
+
+// ─── TASK-024 — Source-of-truth for protocol cards ──────────────────────────
+// PROTOCOL_SOURCE env flag controls where lookup.ts loads from:
+//   "json"     — original behavior, read data/core/*.json (default)
+//   "supabase" — read protocol_cards table; fall back to JSON if DB is empty/down
+// Set in Vercel + .env.local. After 30 days of clean Supabase operation in
+// prod, the JSON fallback path can be removed.
+const PROTOCOL_SOURCE = (process.env.PROTOCOL_SOURCE || 'json').toLowerCase()
 
 // ─── Paths ──────────────────────────────────────────────────────────────────
 const DATA_DIR = join(process.cwd(), 'data')
@@ -122,11 +131,81 @@ function ensureLoaded(): Promise<void> {
 }
 
 async function loadAll(): Promise<void> {
+  // TASK-024: pick the card-source loader based on env flag.
+  // The aliases + family keywords still come from JSON (out of scope).
   await Promise.all([
-    loadCoreCards(),
+    loadCoreCardsRouted(),
     loadAliases(),
     loadFamilyKeywords(),
   ])
+}
+
+async function loadCoreCardsRouted(): Promise<void> {
+  if (PROTOCOL_SOURCE === 'supabase') {
+    const ok = await loadCoreCardsFromDb()
+    if (ok) return
+    // Hard fall-back: DB unavailable. Load from JSON so solve still works.
+    console.warn('[lookup] Supabase load failed — falling back to JSON.')
+  }
+  await loadCoreCards()
+}
+
+async function loadCoreCardsFromDb(): Promise<boolean> {
+  try {
+    if (!(await isAdapterHealthy())) {
+      console.warn('[lookup] protocol_cards adapter unhealthy — falling back to JSON.')
+      return false
+    }
+    const cards = await getAllCanonicalCards()
+    if (cards.length < 200) {
+      console.warn(`[lookup] protocol_cards count=${cards.length} (<200) — falling back to JSON.`)
+      return false
+    }
+    indexCards(cards)
+    console.log(`[lookup] loaded ${cards.length} cards from Supabase.`)
+    return true
+  } catch (err) {
+    console.warn('[lookup] DB load threw — falling back to JSON:', err)
+    return false
+  }
+}
+
+// Shared indexer extracted from loadCoreCards so the DB loader can use the
+// same key-derivation logic. Populates coreIndex (4 key variants) + allCards.
+function indexCards(cards: ProtocolCard[]): void {
+  const seen = new Set<string>()
+  for (const card of cards) {
+    let stainCanonical: string
+    let surfaceCanonical: string
+
+    if (card.meta?.stainCanonical && card.meta?.surfaceCanonical) {
+      stainCanonical = card.meta.stainCanonical
+      surfaceCanonical = card.meta.surfaceCanonical
+    } else if (card.id && card.id.includes('-')) {
+      const parts = card.id.split('-')
+      surfaceCanonical = parts[parts.length - 1]
+      stainCanonical = parts.slice(0, -1).join('-')
+      card.meta = card.meta ?? ({} as ProtocolCard['meta'])
+      card.meta.stainCanonical = stainCanonical
+      card.meta.surfaceCanonical = surfaceCanonical
+    } else {
+      continue
+    }
+
+    const key = `${stainCanonical}+${surfaceCanonical}`
+    const dashKey = `${stainCanonical}-${surfaceCanonical}`
+    const slugKey = `${toSlug(stainCanonical)}+${toSlug(surfaceCanonical)}`
+    const slugDashKey = `${toSlug(stainCanonical)}-${toSlug(surfaceCanonical)}`
+
+    if (!seen.has(key)) {
+      seen.add(key)
+      coreIndex.set(key, card)
+      coreIndex.set(dashKey, card)
+      coreIndex.set(slugKey, card)
+      coreIndex.set(slugDashKey, card)
+      allCards.push(card)
+    }
+  }
 }
 
 async function loadCoreCards(): Promise<void> {

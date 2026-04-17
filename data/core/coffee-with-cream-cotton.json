@@ -19,57 +19,57 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Coffee with cream combines protein (casein from milk) and tannins (from coffee). White cotton's chemical robustness allows fast, aggressive treatment. Unlike delicate fibers, cotton tolerates enzymes (which digest proteins), heat, acid, and bleach. The two-component nature means sequential treatment still works best\u2014enzymes for protein, oxidizers for tannin\u2014but can be more aggressive than on natural fibers.",
-  "whyThisWorks": "Coffee with cream is a three-component stain: tannin (coffee pigment), protein (casein from cream), and fat (butterfat). Treating in the wrong order locks the stain in \u2014 Tannin must go first to break pigment bonds before enzyme fixes them. Then Protein digests the milk component. POG lifts the fat. The sequence matters as much as the agents.",
+  "stainChemistry": "Coffee with cream combines protein (casein from milk) and tannins (from coffee). White cotton's chemical robustness allows fast, aggressive treatment. Unlike delicate fibers, cotton tolerates enzymes (which digest proteins), heat, acid, and bleach. The two-component nature means sequential treatment still works best—enzymes for protein, oxidizers for tannin—but can be more aggressive than on natural fibers.",
+  "whyThisWorks": "Coffee with cream is a three-component stain: tannin (coffee pigment), protein (casein from cream), and fat (butterfat). Treating in the wrong order locks the stain in — Tannin must go first to break pigment bonds before enzyme fixes them. Then Protein digests the milk component. POG lifts the fat. The sequence matters as much as the agents.",
   "spottingProtocol": [
     {
       "step": 1,
       "agent": "Tannin",
       "technique": "Tamp and flush",
       "temperature": "Cool water",
-      "dwellTime": "3-5 minutes",
-      "instruction": "Apply Tannin spotter to break the coffee pigment bonds first. Tannin must go first on combo stains \u2014 if you use enzyme (Protein) first, it can fix the tannin pigment permanently. Tamp gently from the edges to center, flush with cool water. Watch for color lift."
+      "dwellTime": "Brief — apply, work, check",
+      "instruction": "Apply Tannin spotter to break the coffee pigment bonds first. Tannin must go first on combo stains — if you use enzyme (Protein) first, it can fix the tannin pigment permanently. Tamp gently from the edges to center, flush with cool water. Watch for color lift."
     },
     {
       "step": 2,
       "agent": "Protein",
       "technique": "Soak and brush work",
-      "temperature": "Warm (40-45\u00b0C)",
-      "dwellTime": "10-15 minutes",
-      "instruction": "Apply Protein (enzyme digester) warm to address the casein/whey from the cream component. Enzymes break peptide bonds in milk proteins \u2014 warm temperature accelerates the reaction. Gently brush with soft brush after 10 minutes. Blot repeatedly as protein fragments lift."
+      "temperature": "Warm (40-45°C)",
+      "dwellTime": "Leave briefly; monitor continuously",
+      "instruction": "Apply Protein (enzyme digester) warm to address the casein/whey from the cream component. Enzymes break peptide bonds in milk proteins — warm temperature accelerates the reaction. Gently brush with soft brush after 10 minutes. Blot repeatedly as protein fragments lift."
     },
     {
       "step": 3,
       "agent": "POG",
       "technique": "Dry solvent application",
       "temperature": "Room temperature",
-      "dwellTime": "2-3 minutes",
+      "dwellTime": "Brief — apply, work, check",
       "instruction": "Apply POG (Paint Oil Grease remover) to address the fat component from cream. Coffee with cream leaves an oily residue that neither Tannin nor Protein will break. Apply POG, tamp lightly, blot. Do not over-saturate."
     },
     {
       "step": 4,
-      "agent": "H\u2082O\u2082",
+      "agent": "H₂O₂",
       "technique": "Direct application or soak",
       "temperature": "Room temperature",
-      "dwellTime": "3-5 minutes, watch color fade",
-      "instruction": "If coffee color remains after Tannin treatment, apply H\u2082O\u2082 to oxidize residual tannin pigment to colorless compounds. White cotton tolerates full-strength. For colored cotton, test a hidden seam first \u2014 peroxide can affect dyes."
+      "dwellTime": "Brief — apply, work, check",
+      "instruction": "If coffee color remains after Tannin treatment, apply H₂O₂ to oxidize residual tannin pigment to colorless compounds. White cotton tolerates full-strength. For colored cotton, test a hidden seam first — peroxide can affect dyes."
     },
     {
       "step": 5,
       "agent": "NSD flush",
       "technique": "Flush and blot",
       "temperature": "Cool water",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD to remove all H\u2082O\u2082, Protein, Tannin, and POG residue. Work from back of fabric. Blot \u2014 do not rub. Residual oxidizer left in the fiber can continue bleaching over time."
+      "dwellTime": "Brief — apply, work, check",
+      "instruction": "Flush thoroughly with NSD to remove all H₂O₂, Protein, Tannin, and POG residue. Work from back of fabric. Blot — do not rub. Residual oxidizer left in the fiber can continue bleaching over time."
     }
   ],
   "homeSolutions": [
     "FRESH: Warm water + salt flush. Blot hard. Most stain comes out immediately.",
     "REMAINING: Protein soak (per product directions), 20-30 minutes, then brush gently, blot.",
-    "BROWN COLOR: H\u2082O\u2082, 3-5 minutes. Or OxiClean soak, 30-60 minutes."
+    "BROWN COLOR: H₂O₂, 3-5 minutes. Or OxiClean soak, 30-60 minutes."
   ],
   "materialWarnings": [
-    "DO NOT use bleach on colored cotton\u2014fades dye",
+    "DO NOT use bleach on colored cotton—fades dye",
     "AVOID bleach on colored thread"
   ],
   "escalation": "Coffee-cream on white cotton rarely needs professional help. Home enzyme + peroxide treatment is very effective.",
@@ -78,16 +78,16 @@
       {
         "name": "Protein Detergent",
         "brand": "Any laundry brand",
-        "icon": "\ud83e\uddec",
+        "icon": "🧬",
         "amazonSearchQuery": "Protein laundry",
         "affiliateTag": "gonr08-20",
         "note": "Digests casein/whey proteins. 20-30 minute soak, then brush work."
       },
       {
-        "name": "3-6% H\u2082O\u2082",
+        "name": "3-6% H₂O₂",
         "brand": "Drugstore",
-        "icon": "\ud83e\uddf4",
-        "amazonSearchQuery": "H\u2082O\u2082 3% or 6%",
+        "icon": "🧴",
+        "amazonSearchQuery": "H₂O₂ 3% or 6%",
         "affiliateTag": "gonr08-20",
         "note": "Oxidizes tannin color. Full strength safe on white cotton."
       }
@@ -96,20 +96,20 @@
       {
         "name": "Professional Protein concentrate",
         "brand": "Huntsman or Chemspec",
-        "icon": "\ud83e\uddea",
+        "icon": "🧪",
         "amazonSearchQuery": "Protein concentrate",
         "affiliateTag": "gonr08-20",
         "note": "Higher concentration than household. Faster protein digestion."
       }
     ]
   },
-  "customerExplanation": "Coffee with cream combines protein (from milk) and tannins (from coffee). Enzymes break down protein. H\u2082O\u2082 oxidizes tannin color. White cotton's chemical robustness means we can use all these tools aggressively and fast.",
+  "customerExplanation": "Coffee with cream combines protein (from milk) and tannins (from coffee). Enzymes break down protein. H₂O₂ oxidizes tannin color. White cotton's chemical robustness means we can use all these tools aggressively and fast.",
   "commonMistakes": [
-    "Using cold water\u2014warmth helps enzyme and protein release on cotton",
-    "Not using enzyme\u2014detergent alone doesn't remove proteins as well",
-    "Stopping after enzyme\u2014peroxide step removes the brown tannin color"
+    "Using cold water—warmth helps enzyme and protein release on cotton",
+    "Not using enzyme—detergent alone doesn't remove proteins as well",
+    "Stopping after enzyme—peroxide step removes the brown tannin color"
   ],
-  "scienceNote": "Casein (milk protein) is sensitive to both temperature and pH. Warmth and alkaline conditions denature it faster. Enzymes (proteases) cut peptide bonds between amino acids\u2014much more efficient than detergent alone. Tannins oxidize over time in coffee-cream stains\u2014the longer the stain sits, the browner it becomes. This is why enzyme + peroxide works so well: enzymes remove protein completely, and peroxide handles whatever tannin pigment remains.",
+  "scienceNote": "Casein (milk protein) is sensitive to both temperature and pH. Warmth and alkaline conditions denature it faster. Enzymes (proteases) cut peptide bonds between amino acids—much more efficient than detergent alone. Tannins oxidize over time in coffee-cream stains—the longer the stain sits, the browner it becomes. This is why enzyme + peroxide works so well: enzymes remove protein completely, and peroxide handles whatever tannin pigment remains.",
   "callPro": "Very rarely needed for white cotton coffee-cream stains. Home treatment is usually sufficient.",
   "components": [
     "enzyme",
@@ -127,5 +127,5 @@
     "enzyme-safe",
     "fast-oxidation"
   ],
-  "solventNote": "Professional: Warm enzyme soak (40-45\u00b0C, 20-30 min), follow with H\u2082O\u2082 (3-6%) or sodium percarbonate. For brown stains, reducing bleach (sodium hydrosulfite 0.5-1%) for 10-15 minutes reverses oxidation, then oxidize again to colorless. Cotton tolerates aggressive treatment."
+  "solventNote": "Professional: Warm enzyme soak (40-45°C, 20-30 min), follow with H₂O₂ (3-6%) or sodium percarbonate. For brown stains, reducing bleach (sodium hydrosulfite 0.5-1%) for 10-15 minutes reverses oxidation, then oxidize again to colorless. Cotton tolerates aggressive treatment."
 }
