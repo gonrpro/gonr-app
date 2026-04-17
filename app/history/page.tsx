@@ -15,6 +15,7 @@ interface HistoryRow {
   surface: string | null
   procedure_id: string | null
   procedure_type: string | null
+  procedure_title: string | null
   source: string | null
   confidence: number | null
   tier: number | null
@@ -49,6 +50,28 @@ function formatWhen(iso: string): string {
   const d = new Date(iso)
   if (Number.isNaN(d.getTime())) return iso
   return d.toLocaleString(undefined, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })
+}
+
+// Capitalize first letter of each hyphen/space-separated word so user-entered
+// lowercase terms ("beer", "coffee-with-cream") render cleanly as titles.
+function titleCase(s: string): string {
+  return s.replace(/(^|[\s-])([a-z])/g, (_, sep, ch) => sep + ch.toUpperCase())
+}
+
+// Fallback chain per Atlas's 2026-04-17 call:
+//   1. stain + surface   → "Beer on Cotton"
+//   2. stain only        → "Beer"
+//   3. surface only      → "Cotton"
+//   4. procedure_title   → "Red Wine on Silk (plant-tuned)"
+//   5. procedure_id      → "beer_cotton"
+//   6. generic fallback  → "Solve"
+function rowTitle(r: HistoryRow): string {
+  if (r.stain && r.surface) return `${titleCase(r.stain)} on ${titleCase(r.surface)}`
+  if (r.stain) return titleCase(r.stain)
+  if (r.surface) return titleCase(r.surface)
+  if (r.procedure_title) return r.procedure_title
+  if (r.procedure_id) return r.procedure_id
+  return 'Solve'
 }
 
 export default function HistoryPage() {
@@ -206,29 +229,27 @@ export default function HistoryPage() {
               className="w-full text-left px-4 py-3 flex items-start gap-3"
             >
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <p className="text-sm font-semibold truncate" style={{ color: 'var(--text)' }}>
-                    {[r.stain, r.surface].filter(Boolean).join(' · ') || 'Solve'}
-                  </p>
-                  <span
-                    className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase"
-                    style={{ background: badge.bg, color: badge.color }}
-                  >
-                    {badge.label}
-                  </span>
-                </div>
-                <p className="text-[11px] mt-1" style={{ color: 'var(--text-secondary)' }}>
+                <p className="text-sm font-semibold truncate" style={{ color: 'var(--text)' }}>
+                  {rowTitle(r)}
+                </p>
+                <p className="text-[11px] mt-0.5 truncate" style={{ color: 'var(--text-secondary)' }}>
                   {formatWhen(r.served_at)}
-                  {r.tier ? ` · Tier ${r.tier}` : ''}
-                  {r.source ? ` · ${r.source}` : ''}
                 </p>
               </div>
-              <span
-                className={`transition-transform duration-200 mt-1 ${expanded ? 'rotate-180' : ''}`}
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                &#9662;
-              </span>
+              <div className="flex items-center gap-2 shrink-0 mt-0.5">
+                <span
+                  className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase whitespace-nowrap"
+                  style={{ background: badge.bg, color: badge.color }}
+                >
+                  {badge.label}
+                </span>
+                <span
+                  className={`transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}
+                  style={{ color: 'var(--text-secondary)' }}
+                >
+                  &#9662;
+                </span>
+              </div>
             </button>
 
             {expanded && (

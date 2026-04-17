@@ -633,6 +633,9 @@ export async function POST(req: Request) {
         payload: {
           procedure_id: (plantTunedCard as { id?: string }).id ?? null,
           procedure_type: 'stain_solve',
+          procedure_title: (plantTunedCard as { title?: string }).title ?? null,
+          stain: ctx.stain,
+          surface: ctx.surface,
           source: userPlant ? 'library-plant-tuned' : 'library',
           confidence: result.confidence,
           tier: result.tier,

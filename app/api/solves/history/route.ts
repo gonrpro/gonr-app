@@ -45,6 +45,7 @@ interface SolveHistoryRow {
   surface: string | null
   procedure_id: string | null
   procedure_type: string | null
+  procedure_title: string | null
   source: string | null
   confidence: number | null
   tier: number | null
@@ -113,12 +114,35 @@ export async function GET(req: Request) {
       }
     }
 
+    // Step 2b: historical fallback. Older procedure.served events don't carry
+    // stain/surface/procedure_title in their payload (added 2026-04-17 after
+    // Tyler flagged all rows rendering as generic "Solve"). Pull the matching
+    // solve.requested events for this batch so rows missing those fields can
+    // still be titled correctly.
+    const reqMap = new Map<string, { stain: string | null; surface: string | null }>()
+    if (correlationIds.length > 0) {
+      const { data: reqRows } = await (supabase.from('events') as any)
+        .select('correlation_id, payload')
+        .eq('type', 'solve.requested')
+        .in('correlation_id', correlationIds)
+      for (const r of (reqRows ?? []) as Array<{ correlation_id: string; payload: Record<string, unknown> }>) {
+        const p = r.payload ?? {}
+        reqMap.set(r.correlation_id, {
+          stain: typeof p.stain === 'string' ? p.stain : null,
+          surface: typeof p.surface === 'string' ? p.surface : null,
+        })
+      }
+    }
+
     // Step 3: merge + apply client-side filters (stain, surface, outcome)
     const results: SolveHistoryRow[] = []
     for (const e of events) {
       const payload = e.payload ?? {}
-      const stain = typeof payload.stain === 'string' ? payload.stain : null
-      const surface = typeof payload.surface === 'string' ? payload.surface : null
+      const req = reqMap.get(e.correlation_id) ?? null
+      const stain =
+        (typeof payload.stain === 'string' ? payload.stain : null) ?? req?.stain ?? null
+      const surface =
+        (typeof payload.surface === 'string' ? payload.surface : null) ?? req?.surface ?? null
       if (stainFilter && (!stain || !stain.toLowerCase().includes(stainFilter))) continue
       if (surfaceFilter && (!surface || !surface.toLowerCase().includes(surfaceFilter))) continue
       const outcomeInfo = outcomeMap.get(e.correlation_id) ?? null
@@ -129,6 +153,7 @@ export async function GET(req: Request) {
         surface,
         procedure_id: typeof payload.procedure_id === 'string' ? payload.procedure_id : null,
         procedure_type: typeof payload.procedure_type === 'string' ? payload.procedure_type : null,
+        procedure_title: typeof payload.procedure_title === 'string' ? payload.procedure_title : null,
         source: typeof payload.source === 'string' ? payload.source : null,
         confidence: typeof payload.confidence === 'number' ? payload.confidence : null,
         tier: typeof payload.tier === 'number' ? payload.tier : null,
