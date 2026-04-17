@@ -506,6 +506,7 @@ export async function POST(req: Request) {
     let ctx: SolveContext
 
     // ── Parse inputs ───────────────────────────────────────────
+    console.log('[eval-probe] pre-parse', JSON.stringify({ contentType, isEvalRunner, method: req.method }))
     if (contentType.includes('multipart/form-data')) {
       const formData = await req.formData()
       const imageFile = formData.get('image') as File | null
@@ -542,7 +543,9 @@ export async function POST(req: Request) {
       })
 
     } else {
+      console.log('[eval-probe] json-branch: about to req.json()')
       const body = await req.json()
+      console.log('[eval-probe] json-branch: body parsed', JSON.stringify({ keys: Object.keys(body || {}) }))
       // email intentionally NOT read from body — session-only (TASK-032 P0 fix)
       lang = body.lang || 'en'
 
@@ -691,6 +694,11 @@ export async function POST(req: Request) {
 
   } catch (err) {
     console.error('Solve error:', err)
+    // TASK-042 temp: dump full stack + context so we can pinpoint the 500 line.
+    if (err instanceof Error) {
+      console.error('Solve error stack:', err.stack)
+      console.error('Solve error context:', JSON.stringify({ name: err.name, message: err.message }))
+    }
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
