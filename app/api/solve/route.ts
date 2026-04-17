@@ -3,6 +3,8 @@ import { NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { lookupProtocol, detectFamily } from '@/lib/protocols/lookup'
+import { decide } from '@/lib/decision/engine'
+import { recordEvent, newCorrelationId, EVENT_TYPES } from '@/lib/events/record'
 import { getUserPlant } from '@/lib/auth/getUserPlant'
 import { applyPlantFilters } from '@/lib/protocols/applyPlantFilters'
 import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
@@ -581,8 +583,24 @@ export async function POST(req: Request) {
     // canonical behavior in any of those cases.
     const userPlant = await getUserPlant(email)
 
-    // ── Library lookup ─────────────────────────────────────────
-    const result = await lookupProtocol(ctx.stain, ctx.surface)
+    // ── Event log: solve.requested ─────────────────────────────
+    // TASK-040 Week 0 Day 2. Fire-and-forget; never blocks user.
+    const correlationId = newCorrelationId()
+    recordEvent({
+      type: EVENT_TYPES.SOLVE_REQUESTED,
+      actor_id: email ?? null,
+      plant_id: (userPlant as { id?: string } | null)?.id ?? null,
+      payload: { stain: ctx.stain, surface: ctx.surface, lang, has_fiber_context: !!ctx.fiber },
+      correlation_id: correlationId,
+    }).catch(() => {})
+
+    // ── Library lookup (via DecisionEngine seam — TASK-040 Day 3) ──────
+    const result = await decide({
+      stain: ctx.stain,
+      surface: ctx.surface,
+      plant_id: (userPlant as { id?: string } | null)?.id ?? null,
+      lang,
+    })
     if (result.card) {
       applyFiberModifications(result.card, ctx)
       injectContextWarnings(result.card, ctx)
@@ -607,6 +625,20 @@ export async function POST(req: Request) {
       // No-op if userPlant is null.
       const plantTunedCard = applyPlantFilters(filteredCard, userPlant)
       logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: plantTunedCard.title, source: userPlant ? 'library-plant-tuned' : 'library', confidence: result.confidence }).catch(() => {})
+      // ── Event log: procedure.served ────────────────────────────
+      recordEvent({
+        type: EVENT_TYPES.PROCEDURE_SERVED,
+        actor_id: email ?? null,
+        plant_id: (userPlant as { id?: string } | null)?.id ?? null,
+        payload: {
+          procedure_id: (plantTunedCard as { id?: string }).id ?? null,
+          procedure_type: 'stain_solve',
+          source: userPlant ? 'library-plant-tuned' : 'library',
+          confidence: result.confidence,
+          tier: result.tier,
+        },
+        correlation_id: correlationId,
+      }).catch(() => {})
       return NextResponse.json({ ...result, card: plantTunedCard, stainType: resolveStainType(plantTunedCard, ctx) })
     }
 
