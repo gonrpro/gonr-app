@@ -9,7 +9,7 @@ import { getUserPlant } from '@/lib/auth/getUserPlant'
 import { applyPlantFilters } from '@/lib/protocols/applyPlantFilters'
 import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
 import { normalizeAICard } from '@/lib/protocols/normalizeAICard'
-import { retrieveForQuery, formatRetrievedContext, isRetrievalEnabled, type RetrievalResult } from '@/lib/stainbrain/retrieve'
+import { retrieveForQuery, formatRetrievedContext, applyGroundedAttribution, isRetrievalEnabled, type RetrievalResult } from '@/lib/stainbrain/retrieve'
 import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
 import { createClient } from '@supabase/supabase-js'
 import { identifyStain, readCareLabel } from '@/lib/vision'
@@ -685,6 +685,12 @@ export async function POST(req: Request) {
       // merges adjacent rinses, strips numeric dwell, caps instruction length.
       // See lib/protocols/normalizeAICard.ts (2026-04-18 Atlas call).
       const aiCard = normalizeAICard(aiCardRaw)
+      // Deterministic source attribution — don't trust the model to self-cite
+      // (preview verification 2026-04-18 showed the model ignored the "name
+      // source families" directive). Populates `grounded_sources` and
+      // appends a grounded-in tail to whyThisWorks if absent. No-op when
+      // retrieval didn't run.
+      if (retrieval?.retrieved) applyGroundedAttribution(aiCard, retrieval)
       injectContextWarnings(aiCard, ctx)
       if (ctx.fiber) aiCard._fiberContext = { fiber: ctx.fiber, careSymbols: ctx.careSymbols, warnings: ctx.labelWarnings }
 

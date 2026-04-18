@@ -4,11 +4,12 @@
 // from /api/solve BEFORE generateAIProtocol() when canonical library misses
 // AND the STAIN_BRAIN_RETRIEVAL_ENABLED env flag is truthy.
 //
-// Current implementation: embeds the query via OpenAI, fetches sb_chunks
-// via PostgREST, scores cosine similarity client-side, returns top-K with
-// source metadata. Fine at our current ~1.2k row scale; graduate to a
-// Postgres RPC using pgvector's <=> operator once we cross ~10k chunks or
-// see p95 latency cross ~400 ms.
+// Implementation: embeds the query via OpenAI, calls the `sb_search_chunks`
+// Postgres RPC (pgvector HNSW <=> cosine distance), returns top-K with
+// source metadata. Preview verification showed 4817 ms on the client-side
+// scan at ~1.2k rows — switched to RPC in Phase 2 tightening. If the RPC
+// is unavailable (older env, migration not applied), falls back to the old
+// client-side scan so dev/preview environments don't break.
 //
 // Kill switch: STAIN_BRAIN_RETRIEVAL_ENABLED=true enables. Any other value
 // (unset, 'false', '') returns an empty retrieval — caller falls back to
@@ -86,6 +87,32 @@ async function fetchChunks(url: string, key: string): Promise<RawChunkRow[]> {
   return res.json() as Promise<RawChunkRow[]>
 }
 
+interface RpcRow {
+  id: string
+  source_id: string
+  content: string
+  section: string | null
+  similarity: number
+}
+
+async function rpcSearch(
+  url: string,
+  key: string,
+  queryVec: number[],
+  topK: number
+): Promise<RpcRow[] | null> {
+  // Null return signals "RPC not available; caller should fall back." Any
+  // other failure mode re-throws so we don't silently mask real issues.
+  const res = await fetch(`${url}/rest/v1/rpc/sb_search_chunks`, {
+    method: 'POST',
+    headers: { apikey: key, Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query_embedding: queryVec, match_count: topK }),
+  })
+  if (res.status === 404) return null // function not yet applied
+  if (!res.ok) throw new Error(`rpc sb_search_chunks ${res.status}: ${await res.text()}`)
+  return res.json() as Promise<RpcRow[]>
+}
+
 async function fetchSourcesByIds(url: string, key: string, ids: string[]): Promise<Map<string, RawSourceRow>> {
   if (ids.length === 0) return new Map()
   const idList = ids.join(',')
@@ -133,26 +160,40 @@ export async function retrieveForQuery(
 
   try {
     const queryVec = await embedQuery(query, apiKey)
-    const chunks = await fetchChunks(url, key)
 
-    const scored = chunks
-      .map(c => {
-        const emb = typeof c.embedding === 'string' ? JSON.parse(c.embedding) as number[] : c.embedding
-        return { row: c, sim: cosineSim(queryVec, emb) }
-      })
-      .sort((a, b) => b.sim - a.sim)
-      .slice(0, topK)
+    // Try the pgvector RPC first — HNSW index, server-side <=> operator,
+    // target < 400 ms. If not yet applied to this env, fall back to
+    // client-side full scan so dev/preview doesn't break.
+    let scored: { source_id: string; content: string; section: string | null; sim: number }[]
+    const rpcRows = await rpcSearch(url, key, queryVec, topK).catch(() => null)
+    if (rpcRows && rpcRows.length > 0) {
+      scored = rpcRows.map(r => ({
+        source_id: r.source_id,
+        content: r.content,
+        section: r.section,
+        sim: r.similarity,
+      }))
+    } else {
+      const chunks = await fetchChunks(url, key)
+      scored = chunks
+        .map(c => {
+          const emb = typeof c.embedding === 'string' ? JSON.parse(c.embedding) as number[] : c.embedding
+          return { source_id: c.source_id, content: c.content, section: c.section, sim: cosineSim(queryVec, emb) }
+        })
+        .sort((a, b) => b.sim - a.sim)
+        .slice(0, topK)
+    }
 
-    const sourceMap = await fetchSourcesByIds(url, key, [...new Set(scored.map(s => s.row.source_id))])
+    const sourceMap = await fetchSourcesByIds(url, key, [...new Set(scored.map(s => s.source_id))])
 
-    const result: RetrievedChunk[] = scored.map(({ row, sim }) => {
-      const src = sourceMap.get(row.source_id)
+    const result: RetrievedChunk[] = scored.map(s => {
+      const src = sourceMap.get(s.source_id)
       return {
-        content: row.content,
-        section: row.section,
-        similarity: sim,
+        content: s.content,
+        section: s.section,
+        similarity: s.sim,
         source: {
-          id: row.source_id,
+          id: s.source_id,
           family: src?.family ?? 'Unknown',
           subfamily: src?.subfamily ?? null,
           title: src?.title ?? 'Unknown source',
@@ -175,6 +216,56 @@ export async function retrieveForQuery(
       latency_ms: Date.now() - start,
     }
   }
+}
+
+/**
+ * Deterministic source-family list for a retrieval. Dedupes, preserves
+ * retrieval-order (highest similarity first), caps at `max`.
+ * Used to populate an AI card's `grounded_sources` field server-side
+ * without trusting the model to self-cite.
+ */
+export function sourceFamilyList(result: RetrievalResult, max = 3): string[] {
+  if (!result.retrieved) return []
+  const seen = new Set<string>()
+  const out: string[] = []
+  for (const c of result.chunks) {
+    const label = c.source.subfamily
+      ? `${c.source.family} — ${c.source.subfamily}`
+      : c.source.family
+    if (!seen.has(label)) {
+      seen.add(label)
+      out.push(label)
+    }
+    if (out.length >= max) break
+  }
+  return out
+}
+
+/**
+ * Inject deterministic source attribution into an AI card. Sets
+ * `grounded_sources` (always) and appends a "Grounded in: X, Y, Z." tail
+ * to `whyThisWorks` if the narrative didn't already mention any of the
+ * source names (case-insensitive). No-op when retrieval didn't run.
+ */
+export function applyGroundedAttribution<T extends { whyThisWorks?: string; grounded_sources?: string[] }>(
+  card: T,
+  result: RetrievalResult
+): T {
+  const sources = sourceFamilyList(result)
+  if (sources.length === 0) return card
+  ;(card as { grounded_sources?: string[] }).grounded_sources = sources
+
+  const why = card.whyThisWorks ?? ''
+  const whyLower = why.toLowerCase()
+  const alreadyNamed = sources.some(s => {
+    const key = s.split('—')[0].trim().toLowerCase()
+    return whyLower.includes(key)
+  })
+  if (!alreadyNamed) {
+    const tail = ` Grounded in: ${sources.join(', ')}.`
+    ;(card as { whyThisWorks?: string }).whyThisWorks = why.trim() + tail
+  }
+  return card
 }
 
 /** Format retrieved chunks for injection into an AI system prompt. */

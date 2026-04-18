@@ -401,13 +401,10 @@ export default function ResultCard({ card, source, lang = 'en', correlationId }:
       )}
 
       {/* ── 9. Collapsible sections ── */}
+      {/* Note: whyThisWorks already renders in the top "Chemistry overview"
+          callout (section 2). Don't duplicate it here — Tyler flagged the
+          verbatim double-render 2026-04-18. */}
       <div className="px-4 pb-4 space-y-2">
-        {card.whyThisWorks && (
-          <Collapsible title={t('whyThisWorks')} icon={Lightbulb} defaultOpen={true}>
-            <p className="leading-relaxed">{card.whyThisWorks}</p>
-          </Collapsible>
-        )}
-
         {card.stainChemistry && (
           <Collapsible title={t('collapsibleChemistry')} icon={FlaskConical}>
             <p className="leading-relaxed">{card.stainChemistry}</p>
