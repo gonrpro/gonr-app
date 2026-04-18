@@ -49,7 +49,11 @@ function detectContext(stain: string, surface: string, card: any) {
     isWool: /\bwool\b|\bcashmere\b|\bmerino\b/i.test(surfaceText),
     isMarble: /\bmarble\b|\blimestone\b|\btravertine\b/i.test(surfaceText),
     isAcetate: /\bacetate\b|\btriacetate\b/i.test(surfaceText),
-    isProtein: /\bblood\b|\burine\b|\bsweat\b|\begg\b|\bmilk\b|\bvomit\b/i.test(stainText),
+    // Extended 2026-04-18: combination stains carrying a protein component
+    // (chocolate = milk protein; gravy / dairy / meat / baby formula etc.)
+    // need the same cold-water-pre-rinse discipline as pure protein stains,
+    // per eval judge flag on chocolate-cotton.
+    isProtein: /\b(blood|urine|sweat|egg|milk|vomit|chocolate|gravy|baby[-\s]?formula|ice[-\s]?cream|yogurt|cheese|meat|fish|custard|pudding|dairy)\b/i.test(stainText),
     isWood: /\bwood\b|\bhardwood\b/i.test(surfaceText),
     isLeather,
     isAnilineLeather: isLeather && /\baniline\b/i.test(surfaceText),
@@ -221,24 +225,90 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
   // Build the set of active rules based on context
   const activeRules: ScanRule[] = []
 
-  // RULE 1: Hot water on protein stains (REPLACE)
+  // RULE 1: Heat on protein stains (REPLACE)
+  // Extended 2026-04-18 to catch steam/steamer/heated — the eval judge flagged
+  // egg-cotton where the AI introduced steam before protein removal; original
+  // regex only caught literal "hot/warm/boiling water".
   if (ctx.isProtein) {
     activeRules.push({
-      id: 'RULE-1: Hot water on protein stain',
-      pattern: /\b(hot water|warm water|boiling water)\b/gi,
+      id: 'RULE-1: Heat on protein stain',
+      pattern: /\b(hot water|warm water|boiling water|steam(?:er|ing|\s+gun|\s+wand)?|heated water|elevated temperature)\b/gi,
       replacement: 'cold water',
       note: '[cold water only — heat permanently sets protein]',
       action: 'replaced',
     })
+    // RULE-1b: warm/heated/hot <agent> on protein — caught chocolate-cotton
+    // where AI wrote "warm enzyme and detergent" without literal "warm water".
+    // Lookahead requires a non-water agent word so the rule only triggers
+    // when heat is being applied to a chemistry step; scanAndReplace does
+    // not support $N backreferences, so the match is just the heat word
+    // and the following agent word is preserved in place.
+    activeRules.push({
+      id: 'RULE-1b: Warm/heated agent on protein stain',
+      pattern: /\b(warm|heated|hot)\b(?=\s+(?!water\b)[a-z][a-z-]+)/gi,
+      replacement: 'cool',
+      // No mid-sentence note — would break the "cool <agent>" phrase in the
+      // rendered instruction. The rule id + violations log captures context.
+      action: 'replaced',
+    })
+    // RULE-1c: laundering / washing machine / dryer pre-rinse on protein —
+    // eval judge flagged egg-cotton where AI introduced "laundering before
+    // confirming protein removal"; laundering carries heat + agitation.
+    activeRules.push({
+      id: 'RULE-1c: Laundering before protein removal',
+      pattern: /\b(launder(?:ing|ed)?|washing machine|clothes dryer|tumble dryer|tumble dry|dry cycle|wash cycle)\b/gi,
+      replacement: 'cold-water hand treatment (do not launder until stain is gone)',
+      note: '[no heat-based laundering until the stain is gone]',
+      action: 'replaced',
+    })
   }
 
-  // RULE 2: Enzymes on silk or wool (REPLACE)
-  if (ctx.isSilk || ctx.isWool) {
+  // RULE 2: Enzymes on wool (REPLACE — wool tolerates pH-neutral alternative)
+  // For silk, enzymes are unsafe AT ALL (see RULE-2S below) — they digest
+  // fibroin irreversibly regardless of pH.
+  if (ctx.isWool && !ctx.isSilk) {
     activeRules.push({
-      id: 'RULE-2: Enzyme on silk/wool',
+      id: 'RULE-2: Enzyme on wool',
       pattern: /\b(enzyme|protease|enzymatic|biological detergent|OxiClean)\b/gi,
       replacement: 'pH-neutral protein spotter',
       action: 'replaced',
+    })
+  }
+
+  // RULE 2S: Enzymes / protein spotters on silk (BLOCK — nuclear)
+  // Added 2026-04-18 after chocolate-silk eval FAIL. Enzymes digest silk
+  // fibroin; "protein spotter" is the protein-spotting agent category and
+  // includes enzymes, proteases, and digestants. No safe generic
+  // replacement exists for silk — send to professional.
+  if (ctx.isSilk) {
+    activeRules.push({
+      id: 'RULE-2S: Enzyme/protein spotter on silk',
+      pattern: /\b(enzyme|protease|enzymatic|biological detergent|protein spotter|protein formula|protein solution|digestant|digestive)\b/gi,
+      replacement: null, // nuclear
+      action: 'blocked',
+    })
+  }
+
+  // RULE 13: Alkali/ammonia on tannin stains (BLOCK — nuclear)
+  // Added 2026-04-18 after beer-cotton eval FAIL. Tannin stains (coffee,
+  // tea, wine, beer, juice, chocolate) are permanently darkened by alkali.
+  // Eisen Method rule: acid side only, never ammonia or alkali.
+  // Extended with generic "alkaline ..." pattern after second-pass eval
+  // still flagged beer-cotton (AI wrote "alkaline detergent" not "ammonia").
+  if (ctx.isTannin) {
+    activeRules.push({
+      id: 'RULE-13: Alkali on tannin stain',
+      pattern: /\b(ammonia|ammonium hydroxide|sodium carbonate|sodium hydroxide|lye|caustic soda|washing soda|borax|baking soda|sodium bicarbonate|potassium hydroxide)\b/gi,
+      replacement: null, // nuclear
+      action: 'blocked',
+    })
+    // RULE-13b: generic "alkaline <anything>" on tannin — catches the class
+    // without enumerating every compound name.
+    activeRules.push({
+      id: 'RULE-13b: Alkaline agent on tannin stain',
+      pattern: /\balkaline\s+(?:detergent|solution|cleaner|spotter|agent|rinse|bath|formula|product)\b/gi,
+      replacement: null, // nuclear
+      action: 'blocked',
     })
   }
 
