@@ -9,6 +9,7 @@ import { getUserPlant } from '@/lib/auth/getUserPlant'
 import { applyPlantFilters } from '@/lib/protocols/applyPlantFilters'
 import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
 import { normalizeAICard } from '@/lib/protocols/normalizeAICard'
+import { retrieveForQuery, formatRetrievedContext, isRetrievalEnabled, type RetrievalResult } from '@/lib/stainbrain/retrieve'
 import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
 import { createClient } from '@supabase/supabase-js'
 import { identifyStain, readCareLabel } from '@/lib/vision'
@@ -310,9 +311,11 @@ function resolveStainType(card: any | null, ctx: SolveContext): string {
 }
 
 // ── AI protocol generator ──────────────────────────────────────
-async function generateAIProtocol(ctx: SolveContext): Promise<any> {
+async function generateAIProtocol(ctx: SolveContext, retrieval?: RetrievalResult): Promise<any> {
   const apiKey = process.env.OPENAI_API_KEY
   if (!apiKey) throw new Error('OpenAI API key not configured')
+
+  const groundedContext = retrieval ? formatRetrievedContext(retrieval) : ''
 
   const systemPrompt = `You are a master textile spotter trained in the Eisen Method — 40+ years of professional stain removal science and textile chemistry.
 
@@ -413,13 +416,20 @@ Return ONLY valid JSON:
   "meta": { "riskLevel": "medium", "tier": "ai-generated" }
 }`
 
+  // Prepend retrieved grounding context when available. Sits at the top of
+  // the system prompt so the model weighs excerpts above the generic
+  // methodology when they conflict (see formatRetrievedContext).
+  const fullSystemPrompt = groundedContext
+    ? `${groundedContext}\n${systemPrompt}`
+    : systemPrompt
+
   const res = await fetch(`${OPENAI_API}/chat/completions`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
     body: JSON.stringify({
       model: 'gpt-4.1-mini',
       messages: [
-        { role: 'system', content: systemPrompt },
+        { role: 'system', content: fullSystemPrompt },
         { role: 'user', content: ctx.brief },
       ],
       temperature: 0.3,
@@ -654,7 +664,23 @@ export async function POST(req: Request) {
 
     // ── AI fallback ────────────────────────────────────────────
     try {
-      const aiCardRaw = await generateAIProtocol(ctx)
+      // Stain Brain retrieval (TASK-005 Phase 2) — fetch grounded context
+      // from sb_chunks when the kill switch is on. Returns a non-retrieving
+      // result when disabled or on missing creds — no behavior change.
+      let retrieval: RetrievalResult | undefined
+      if (isRetrievalEnabled()) {
+        retrieval = await retrieveForQuery(`${ctx.stain} on ${ctx.surface}`, { topK: 5 })
+        console.log('[stainbrain] retrieval', {
+          query: retrieval.query,
+          retrieved: retrieval.retrieved,
+          chunks: retrieval.chunks.length,
+          top_source_ids: retrieval.top_source_ids,
+          latency_ms: retrieval.latency_ms,
+          error: retrieval.error,
+        })
+      }
+
+      const aiCardRaw = await generateAIProtocol(ctx, retrieval)
       // Normalize shape before any downstream processing — caps step count,
       // merges adjacent rinses, strips numeric dwell, caps instruction length.
       // See lib/protocols/normalizeAICard.ts (2026-04-18 Atlas call).
