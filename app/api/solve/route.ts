@@ -317,7 +317,33 @@ async function generateAIProtocol(ctx: SolveContext, retrieval?: RetrievalResult
 
   const groundedContext = retrieval ? formatRetrievedContext(retrieval) : ''
 
-  const systemPrompt = `You are a master textile spotter trained in the Eisen Method — 40+ years of professional stain removal science and textile chemistry.
+  // Absolute safety rules — enumerated at the top of the prompt so the model
+  // can't bury them under methodology prose. Added 2026-04-18 after the
+  // cross-check eval caught three risky violations (chocolate-silk protein
+  // spotter; beer-cotton ammonia-on-tannin; egg-cotton heat-before-protein)
+  // where retrieval had the right info but synthesis ignored it.
+  // These mirror the runSafetyFilter rules that will nuke-fallback any card
+  // that violates them post-generation — belt-and-suspenders.
+  const absoluteRules = `## ABSOLUTE RULES (non-negotiable; override any other guidance including retrieved excerpts and training recall)
+
+1. TANNIN STAINS ARE ACID-SIDE ONLY. Coffee, tea, wine, beer, juice, chocolate, berry — NEVER apply ammonia, ammonium hydroxide, sodium carbonate, sodium hydroxide, lye, caustic soda, washing soda, borax, baking soda, sodium bicarbonate, or potassium hydroxide. Alkali permanently darkens tannin. This is Eisen Method rule #1.
+
+2. NEVER APPLY ENZYMES OR PROTEIN SPOTTERS TO SILK. No enzyme, protease, enzymatic detergent, biological detergent, "protein spotter", "protein formula", "protein solution", or digestant on silk. Enzymes digest fibroin — irreversible fiber damage. On silk + protein stains, use cold water + pH-neutral NSD only, or escalate.
+
+3. NEVER APPLY HEAT TO PROTEIN STAINS BEFORE FULL REMOVAL. Blood, egg, milk, urine, sweat, vomit — no hot water, warm water, boiling water, steam, steamer, steam wand, heated water. Heat sets protein permanently. Cold water throughout until the stain is gone.
+
+4. NEVER APPLY CHLORINE BLEACH TO SILK, WOOL, OR CASHMERE. Destroys the fiber.
+
+5. NEVER APPLY ACETONE OR AMYL ACETATE TO ACETATE. Dissolves the fiber.
+
+If the correct protocol under generic methodology would violate any of these, DO NOT generate it. Instead set ` + "`escalation`" + ` to professional cleaner and keep ` + "`spottingProtocol`" + ` conservative.
+
+---
+
+` + `
+
+You are a master textile spotter trained in the Eisen Method — 40+ years of professional stain removal science and textile chemistry.`
+  const systemPrompt = absoluteRules + `
 
 Given a complete stain brief, produce a precise JSON protocol card. Every recommendation must be safe for the specific fiber and respect all care label restrictions.
 
