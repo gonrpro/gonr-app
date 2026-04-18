@@ -8,6 +8,7 @@ import { recordEvent, newCorrelationId, EVENT_TYPES } from '@/lib/events/record'
 import { getUserPlant } from '@/lib/auth/getUserPlant'
 import { applyPlantFilters } from '@/lib/protocols/applyPlantFilters'
 import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
+import { normalizeAICard } from '@/lib/protocols/normalizeAICard'
 import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
 import { createClient } from '@supabase/supabase-js'
 import { identifyStain, readCareLabel } from '@/lib/vision'
@@ -364,6 +365,12 @@ FORMATTING RULES:
 - Step instructions must be complete sentences with proper capitalization and punctuation.
 - Keep steps concise and direct — one action per step.
 - Include repeat cycling note for stubborn stains (turmeric, rust, old wine often need 2-3 passes).
+
+LENGTH + SHAPE (match the verified library norm):
+- Output 5 to 8 primary steps. NEVER more than 8. Aim for 5-6 on easy stains, 7-8 only when the chemistry truly needs them.
+- CONSOLIDATE repetitive rinses: one rinse step after a chemistry phase covers the whole phase. Do not emit "Rinse with cold water" as a standalone step after every other action — rinses are folded into the action that precedes them, OR appear as one closing rinse.
+- Do NOT prescribe numeric dwell times in instruction prose. Use soft language ("Monitor and reapply as needed", "Work briefly; check frequently"). The dwellTime struct field should also be soft language, never a number range.
+- Keep each instruction under ~200 characters. Move longer chemistry context to stainChemistry or whyThisWorks.
 - STAIN FAMILY CLASSIFICATION RULES (override any ambiguity):
   • rust/corrosion on any surface = "mineral"
   • mold/mildew/fungus = "mildew"
@@ -647,7 +654,11 @@ export async function POST(req: Request) {
 
     // ── AI fallback ────────────────────────────────────────────
     try {
-      const aiCard = await generateAIProtocol(ctx)
+      const aiCardRaw = await generateAIProtocol(ctx)
+      // Normalize shape before any downstream processing — caps step count,
+      // merges adjacent rinses, strips numeric dwell, caps instruction length.
+      // See lib/protocols/normalizeAICard.ts (2026-04-18 Atlas call).
+      const aiCard = normalizeAICard(aiCardRaw)
       injectContextWarnings(aiCard, ctx)
       if (ctx.fiber) aiCard._fiberContext = { fiber: ctx.fiber, careSymbols: ctx.careSymbols, warnings: ctx.labelWarnings }
 
