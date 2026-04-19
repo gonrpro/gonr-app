@@ -70,11 +70,13 @@ function Collapsible({
   icon,
   children,
   defaultOpen = false,
+  onToggle,
 }: {
   title: string
   icon: LucideIcon | string
   children: React.ReactNode
   defaultOpen?: boolean
+  onToggle?: (nowOpen: boolean) => void
 }) {
   const [open, setOpen] = useState(defaultOpen)
   const IconCmp: ComponentType<{ size?: number; strokeWidth?: number; 'aria-hidden'?: boolean | 'true' | 'false' }> | null =
@@ -82,7 +84,7 @@ function Collapsible({
   return (
     <div className="border border-gray-200 dark:border-white/10 rounded-xl overflow-hidden">
       <button
-        onClick={() => setOpen(!open)}
+        onClick={() => { const next = !open; setOpen(next); onToggle?.(next) }}
         className="w-full flex items-center justify-between px-4 py-3 min-h-[44px]
           text-sm font-medium text-gray-600 dark:text-gray-300
           hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
@@ -347,7 +349,18 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
       {/* Home Tips — only show as collapsible for pro users (home users see it as primary) */}
       {isPro && diySteps.length > 0 && (
         <div className="px-4" style={{ borderTop: '1px solid var(--border)' }}>
-          <Collapsible title={t('collapsibleHomeCare')} icon={Home}>
+          <Collapsible
+            title={t('collapsibleHomeCare')}
+            icon={Home}
+            onToggle={(nowOpen) => {
+              if (nowOpen) {
+                recordClientEvent('render.spotter_home_section_expanded', {
+                  cardId: card.id ?? null,
+                  viewerTier,
+                })
+              }
+            }}
+          >
             <ul className="space-y-1.5">
               {diySteps.slice(0, 4).map((sol, i) => {
                 const text = typeof sol === 'string' ? sol : (sol as Step).instruction

@@ -14,6 +14,7 @@ import { fetchUsageState, getRemainingTextFromState, type UsageState } from '@/l
 import { buildCheckoutUrl } from '@/lib/payments/checkoutUrls'
 import type { ProtocolCard } from '@/lib/types'
 import { getStainLabel, getSurfaceLabel } from '@/lib/protocols/chips'
+import { BookOpen, Clock, ShieldCheck } from 'lucide-react'
 
 interface SolveResult {
   card: ProtocolCard
@@ -416,13 +417,27 @@ function SolvePageInner() {
 
       {/* ── Hero Copy ── */}
       <div style={{ paddingTop: '12px', paddingBottom: '4px', textAlign: 'center' }}>
-        <h1 style={{ fontSize: '28px', fontWeight: 900, letterSpacing: '-0.5px', lineHeight: 1.1, color: 'var(--text)', margin: 0, marginBottom: '6px' }}>
+        <h1 style={{ fontSize: '28px', fontWeight: 900, letterSpacing: '-0.5px', lineHeight: 1.1, color: 'var(--text)', margin: 0, marginBottom: '8px' }}>
           {t('masterSpotter')}
         </h1>
-        <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.08em', color: '#22c55e', textTransform: 'uppercase', marginBottom: '4px' }}>
+        <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '10px', lineHeight: 1.4 }}>
           {t('aiStainIntelligence')}
         </p>
-        <p style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '2px' }}>
+        <div className="flex justify-center gap-4 flex-wrap" style={{ marginBottom: '8px', fontSize: '11px', color: 'var(--text-secondary)' }}>
+          <span className="flex items-center gap-1.5">
+            <BookOpen size={14} strokeWidth={1.8} aria-hidden="true" />
+            {t('heroBadgeProtocols')}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Clock size={14} strokeWidth={1.8} aria-hidden="true" />
+            {t('heroBadgeTrial')}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <ShieldCheck size={14} strokeWidth={1.8} aria-hidden="true" />
+            {t('heroBadgeTrusted')}
+          </span>
+        </div>
+        <p style={{ fontSize: '11px', color: 'var(--text-secondary)', marginTop: '4px', opacity: 0.7 }}>
           {t('poweredBy')} <span style={{ fontWeight: 600 }}>Stain Brain</span>
         </p>
       </div>

@@ -73,8 +73,11 @@ export const strings: Record<string, Record<string, string>> = {
   doNotWash: { en: "Do Not Wash", es: "No Lavar" },
   noIron: { en: "No Iron", es: "No Planchar" },
   scanStainSubtext: { en: "Built by cleaners. Trusted by pros.", es: "Creado por limpiadores. Confiado por profesionales." },
-  aiStainIntelligence: { en: "AI Stain Removal & Garment Care", es: "Eliminación de Manchas con IA y Cuidado de Prendas" },
-  masterSpotter: { en: "Textile Intelligence", es: "Inteligencia Textil" },
+  aiStainIntelligence: { en: "Type the stain and fabric. Get the exact removal protocol — step by step.", es: "Escribe la mancha y la tela. Recibe el protocolo exacto de eliminación — paso a paso." },
+  masterSpotter: { en: "What's the stain?", es: "¿Qué mancha es?" },
+  heroBadgeProtocols: { en: "264+ stain protocols", es: "264+ protocolos de manchas" },
+  heroBadgeTrial: { en: "Start free, upgrade anytime", es: "Empieza gratis, sube de plan cuando quieras" },
+  heroBadgeTrusted: { en: "Trusted by dry cleaning pros", es: "Respaldado por profesionales" },
   poweredBy: { en: "Powered by", es: "Impulsado por" },
   careLabelSubtext: { en: "Reads fiber + care symbols instantly", es: "Lee fibra y símbolos de cuidado al instante" },
   solveBtn: { en: "Solve →", es: "Resolver →" },
@@ -385,7 +388,7 @@ export const strings: Record<string, Record<string, string>> = {
   handoffFailed: { en: "Failed to generate message", es: "Error al generar el mensaje" },
 
   // ── Collapsible section titles (ResultCard patch) ─────────────
-  collapsibleHomeCare: { en: "Home Care Tips", es: "Consejos para el Hogar" },
+  collapsibleHomeCare: { en: "Home care instructions", es: "Instrucciones para el hogar" },
   collapsibleChemistry: { en: "Chemistry Details", es: "Detalles Químicos" },
   collapsibleSafety: { en: "Safety Warnings", es: "Advertencias de Seguridad" },
   collapsibleProducts: { en: "Products", es: "Productos" },
