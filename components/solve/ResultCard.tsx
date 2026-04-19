@@ -22,15 +22,20 @@
 
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { ComponentType } from 'react'
 import type { ProtocolCard, Step } from '@/lib/types'
+import type { Tier } from '@/lib/types'
 import SaveButton from './SaveButton'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import FiberContextBadge from './FiberContextBadge'
 import CardBadges from './CardBadges'
 import StepEnlargeModal from './StepEnlargeModal'
 import FullCardModal from './FullCardModal'
+import UpgradeBanner from './UpgradeBanner'
+import WhenToStopFooter from './WhenToStopFooter'
+import TierFallbackNote from './TierFallbackNote'
+import { recordClientEvent } from '@/lib/events/client'
 import {
   Microscope,
   Handshake,
@@ -110,11 +115,12 @@ interface ResultCardProps {
   source: 'verified' | 'ai' | 'core' | 'ai-cached'
   lang?: string
   correlationId?: string
+  viewerTier?: Tier | 'anon'
 }
 
 type OutcomeValue = 'solved' | 'partial' | 'failed'
 
-export default function ResultCard({ card, source, lang = 'en', correlationId }: ResultCardProps) {
+export default function ResultCard({ card, source, lang = 'en', correlationId, viewerTier = 'free' }: ResultCardProps) {
   const { t } = useLanguage()
   const [enlargedStepIndex, setEnlargedStepIndex] = useState<number | null>(null)
   const [fullCardOpen, setFullCardOpen] = useState(false)
@@ -146,12 +152,15 @@ export default function ResultCard({ card, source, lang = 'en', correlationId }:
     ? { when: card.escalation, whatToTell: '', specialistType: '' }
     : card.escalation
 
-  const products = card.products && !Array.isArray(card.products)
-    ? card.products as { professional?: { name: string; use?: string; note?: string }[]; consumer?: { name: string; use?: string; note?: string }[] }
-    : { professional: [], consumer: [] }
-
   const rawCard = card as any
-  const proSteps: Step[] = card.spottingProtocol ?? (() => {
+
+  // ── Tier-aware rendering (TASK-049 P2-d) ──────────────────────
+  const HOME_TIER_ACTIVE = process.env.NEXT_PUBLIC_HOME_TIER_GATE_ENABLED === 'true'
+  const isHomeUI = HOME_TIER_ACTIVE && (viewerTier === 'home' || viewerTier === 'free' || viewerTier === 'anon')
+  const isPro = !isHomeUI
+
+  // Pro-voice protocol derivation (unchanged)
+  const spottingProtocolSteps: Step[] = card.spottingProtocol ?? (() => {
     const raw = rawCard.professionalProtocol?.steps
     if (!raw || !Array.isArray(raw)) return []
     return raw.map((s: string | Step, i: number) => {
@@ -163,14 +172,46 @@ export default function ResultCard({ card, source, lang = 'en', correlationId }:
     })
   })()
 
-  const diySteps: (string | Step)[] = card.homeSolutions ?? (
-    rawCard.diyProtocol?.steps ?? []
-  )
+  // Home-voice protocol
+  const homeSolutionsRaw: (string | Step)[] = card.homeSolutions ?? (rawCard.diyProtocol?.steps ?? [])
+  const homeHasOwnProtocol = Array.isArray(homeSolutionsRaw) && homeSolutionsRaw.length > 0
+
+  const primarySteps: (Step | string)[] = isHomeUI
+    ? (homeHasOwnProtocol ? homeSolutionsRaw : spottingProtocolSteps)
+    : spottingProtocolSteps
+
+  const needsFallbackNote = isHomeUI && !homeHasOwnProtocol
+
+  // Products rail — tier-aware
+  type ProductArray = { name: string; use?: string; note?: string; link?: string }[]
+  type ProductsMap = { professional?: ProductArray; consumer?: ProductArray; household?: ProductArray }
+  const productsObj: ProductsMap = card.products && !Array.isArray(card.products)
+    ? (card.products as ProductsMap)
+    : {}
+  const primaryProducts: ProductArray = isHomeUI
+    ? (productsObj.consumer ?? productsObj.household ?? [])
+    : (productsObj.professional ?? [])
+
+  // Legacy aliases (used elsewhere in this file)
+  const proSteps = spottingProtocolSteps
+  const diySteps = homeSolutionsRaw
+  const products = productsObj as { professional?: { name: string; use?: string; note?: string }[]; consumer?: { name: string; use?: string; note?: string }[] }
 
   const warnings: string[] = card.materialWarnings
     ?? rawCard.professionalProtocol?.warnings
     ?? rawCard.safetyMatrix?.neverDo
     ?? []
+
+  // ── Tier telemetry on mount ───────────────────────────────────
+  useEffect(() => {
+    if (!correlationId) return
+    recordClientEvent('render.tier_branched', {
+      viewerTier,
+      cardId: card.id ?? null,
+      protocolSource: isHomeUI ? (homeHasOwnProtocol ? 'home' : 'fallback') : 'pro',
+      correlationId,
+    })
+  }, [correlationId, viewerTier, card.id, isHomeUI, homeHasOwnProtocol])
 
   return (
     <div className="rounded-xl overflow-hidden" style={{ background: 'var(--surface)', border: '1px solid var(--border-strong)' }}>
@@ -229,14 +270,25 @@ export default function ResultCard({ card, source, lang = 'en', correlationId }:
         </div>
       )}
 
-      {/* ── 3. Pro Protocol Steps ── */}
-      {proSteps.length > 0 && (
+      {/* ── 3. Protocol Steps (tier-aware P2-d) ── */}
+      {needsFallbackNote && (
+        <div className="px-4 pt-2">
+          <TierFallbackNote
+            cardId={card.id ?? null}
+            stain={rawCard.meta?.stainCanonical ?? ''}
+            surface={card.surface ?? ''}
+          />
+        </div>
+      )}
+      {primarySteps.length > 0 && (
         <div className="px-4 pb-2">
           <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--text-secondary)' }}>
-            {t('proProtocol')}
+            {isHomeUI ? t('homeProtocol') || 'Home Protocol' : t('proProtocol')}
           </p>
           <div className="space-y-4">
-            {proSteps.map((step, i) => (
+            {primarySteps.map((step, i) => {
+              const stepObj = typeof step === 'string' ? { step: i + 1, agent: '', instruction: step } : step
+              return (
               <button
                 key={i}
                 type="button"
@@ -245,30 +297,31 @@ export default function ResultCard({ card, source, lang = 'en', correlationId }:
               >
                 <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
                   style={{ background: 'rgba(34,197,94,0.15)', color: 'var(--accent)' }}>
-                  {step.step ?? i + 1}
+                  {stepObj.step ?? i + 1}
                 </div>
                 <div className="flex-1 space-y-0.5">
-                  {step.agent && (
+                  {stepObj.agent && (
                     <p className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>
-                      {step.agent}
+                      {stepObj.agent}
                     </p>
                   )}
                   <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
-                    {step.instruction}
+                    {stepObj.instruction}
                   </p>
-                  {(step.technique || step.temperature) && (
+                  {(stepObj.technique || stepObj.temperature) && (
                     <p className="text-xs italic mt-0.5" style={{ color: 'var(--text-secondary)' }}>
-                      {[step.technique, step.temperature].filter(Boolean).join(' — ')}
+                      {[stepObj.technique, stepObj.temperature].filter(Boolean).join(' — ')}
                     </p>
                   )}
-                  {step.dwellTime && (
+                  {stepObj.dwellTime && (
                     <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-                      ⏱ {step.dwellTime}
+                      ⏱ {stepObj.dwellTime}
                     </p>
                   )}
                 </div>
               </button>
-            ))}
+              )
+            })}
           </div>
           <div className="flex items-center justify-between mt-3">
             <p className="text-[10px]" style={{ color: 'var(--text-secondary)', opacity: 0.5 }}>
@@ -291,8 +344,8 @@ export default function ResultCard({ card, source, lang = 'en', correlationId }:
         </div>
       )}
 
-      {/* Home Tips */}
-      {diySteps.length > 0 && (
+      {/* Home Tips — only show as collapsible for pro users (home users see it as primary) */}
+      {isPro && diySteps.length > 0 && (
         <div className="px-4" style={{ borderTop: '1px solid var(--border)' }}>
           <Collapsible title={t('collapsibleHomeCare')} icon={Home}>
             <ul className="space-y-1.5">
@@ -312,8 +365,8 @@ export default function ResultCard({ card, source, lang = 'en', correlationId }:
         </div>
       )}
 
-      {/* ── 5. Escalation actions (Phase 1 — unchanged) ── */}
-      {(() => {
+      {/* ── 5. Escalation actions (pro only — Phase 1) ── */}
+      {isPro && (() => {
         const stain = card.meta?.stainCanonical || card.id || ''
         const surface = card.meta?.surfaceCanonical || card.surface || ''
         const prefill = surface ? `${stain} on ${surface}` : stain
@@ -481,19 +534,35 @@ export default function ResultCard({ card, source, lang = 'en', correlationId }:
         )}
       </div>
 
+      {/* ── P2-d: Home tier surfaces ── */}
+      {isHomeUI && correlationId && (
+        <>
+          <div className="px-4">
+            <UpgradeBanner
+              correlationId={correlationId}
+              fromTier={viewerTier === 'home' ? 'home' : 'free'}
+              cardId={card.id ?? null}
+            />
+            <WhenToStopFooter />
+          </div>
+        </>
+      )}
+
       {/* ── 12. Deep Solve upsell (Operator) ── */}
-      <div className="px-4 pb-4 pt-1 border-t border-gray-100 dark:border-white/5 mt-1">
-        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-          {t('deepSolveUpsellPrefix')}{' '}
-          <a
-            href={`/deep-solve?stain=${encodeURIComponent(card.title || '')}&cardId=${encodeURIComponent(card.id || '')}`}
-            className="font-semibold hover:underline"
-            style={{ color: 'var(--accent)' }}
-          >
-            {t('deepSolveUpsellLink')}
-          </a>
-        </p>
-      </div>
+      {isPro && (
+        <div className="px-4 pb-4 pt-1 border-t border-gray-100 dark:border-white/5 mt-1">
+          <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+            {t('deepSolveUpsellPrefix')}{' '}
+            <a
+              href={`/deep-solve?stain=${encodeURIComponent(card.title || '')}&cardId=${encodeURIComponent(card.id || '')}`}
+              className="font-semibold hover:underline"
+              style={{ color: 'var(--accent)' }}
+            >
+              {t('deepSolveUpsellLink')}
+            </a>
+          </p>
+        </div>
+      )}
 
       <p className="px-4 pb-3 text-[9px] leading-relaxed" style={{ color: 'var(--text-secondary)', opacity: 0.35 }}>
         {t('protocolDisclaimer')}

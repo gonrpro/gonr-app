@@ -21,6 +21,7 @@ interface SolveResult {
   confidence: number
   source: 'verified' | 'ai'
   correlationId?: string
+  viewerTier?: 'free' | 'home' | 'spotter' | 'operator' | 'founder' | 'anon'
 }
 
 function SolvePageInner() {
@@ -357,6 +358,7 @@ function SolvePageInner() {
           card={showTranslated && translatedCard ? translatedCard : result.card}
           source={result.source}
           correlationId={result.correlationId}
+          viewerTier={result.viewerTier}
         />
         {(userTier === 'free' && !authLoading) && (
           <a

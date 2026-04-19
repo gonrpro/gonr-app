@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import crosswalkData from '@/data/chemicals/agent-brand-crosswalk.json'
 import fiberData from '@/data/chemicals/fiber-expertise-index.json'
+import { getAgentIcon } from '@/lib/ui/chemistryIcons'
 
 // Company imports
 import rrStreet from '@/data/chemicals/companies/rr-street.json'
@@ -111,12 +112,9 @@ const AGENT_KEYS = [
   'reducingAgent', 'wetCleaningDetergent', 'finishingAgent',
 ] as const
 
-const AGENT_ICONS: Record<string, string> = {
-  NSD: '🧴', POG: '🛢️', protein: '🥩', tannin: '🍷',
-  leveling: '💧', rustRemover: '🔩', enzymatic: '🧬', solvent: '⚗️',
-  oxidizingBleach: '☀️', reducingAgent: '⚡', wetCleaningDetergent: '🫧',
-  finishingAgent: '✨',
-}
+// Cheesy chemistry emojis (🧴🛢️🥩🍷💧🔩🧬⚗️☀️⚡🫧✨) retired here — see
+// lib/ui/chemistryIcons.tsx. Modern palette matches the solve card's Lucide
+// section headers.
 
 // Fiber config
 const FIBER_KEYS = [
@@ -198,13 +196,14 @@ function AgentTab() {
         const showAllBrands = expandedBrands[key] || false
         const visibleBrands = showAllBrands ? brandProducts : brandProducts.slice(0, 4)
 
+        const AgentIcon = getAgentIcon(key)
         return (
           <div key={key} className="card">
             <button
               onClick={() => setExpandedAgent(isExpanded ? null : key)}
               className="w-full text-left flex items-center gap-3"
             >
-              <span className="text-lg flex-shrink-0">{AGENT_ICONS[key] || '🧪'}</span>
+              <AgentIcon size={18} strokeWidth={1.75} className="flex-shrink-0" style={{ color: 'var(--text-secondary)' }} aria-hidden="true" />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
                   <h3 className="font-bold text-sm">{key}</h3>

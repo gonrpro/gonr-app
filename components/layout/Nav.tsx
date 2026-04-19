@@ -3,6 +3,8 @@
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { useOptionalAuth } from '@/lib/auth/AuthContext'
+import { canAccessFeature } from '@/lib/auth/features'
 
 const NAV_ITEMS = [
   {
@@ -42,6 +44,7 @@ const NAV_ITEMS = [
     key: 'spotter',
     tKey: 'spotter',
     href: '/spotter',
+    feature: 'spotter' as const,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" />
@@ -52,6 +55,7 @@ const NAV_ITEMS = [
     key: 'operator',
     tKey: 'operator',
     href: '/operator',
+    feature: 'dashboard' as const,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -75,6 +79,12 @@ const NAV_ITEMS = [
 export default function Nav() {
   const pathname = usePathname()
   const { t } = useLanguage()
+  const { tier } = useOptionalAuth()
+
+  const visibleItems = NAV_ITEMS.filter(item => {
+    if (!('feature' in item) || !item.feature) return true
+    return canAccessFeature(tier, item.feature)
+  })
 
   function isActive(href: string) {
     if (href === '/') return pathname === '/'
@@ -88,7 +98,7 @@ export default function Nav() {
         backdrop-blur-xl border-t border-gray-200 dark:border-white/10"
     >
       <div className="flex items-center justify-around h-full max-w-lg mx-auto px-2">
-        {NAV_ITEMS.map((item) => {
+        {visibleItems.map((item) => {
           const active = isActive(item.href)
           return (
             <Link
