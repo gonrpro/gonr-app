@@ -19,7 +19,7 @@
     "freePreview": true
   },
   "stainChemistry": "Black tea is a pure tannin stain. On cotton it bonds to the cellulose fibers as a pale-to-medium brown ring. Left alone, tannin oxidizes and darkens into a set stain that is much harder to lift.",
-  "whyThisWorks": "Cold water flushes the soluble tannin out of the cotton before it oxidizes and sets. Gentle blotting (never rubbing) lifts the residue without driving it deeper into the weave. Mild detergent followed by an acid-side rinse releases the remaining tannin trace, and oxygen bleach handles any shadow without the alkaline-side chemistry that would darken a pure tannin stain.",
+  "whyThisWorks": "Cold water flushes the soluble tannin out of the cotton before it oxidizes and sets. Gentle blotting (never rubbing) lifts the residue without driving it deeper into the weave. Mild detergent followed by a mild acid-side tannin treatment releases the remaining tannin trace, and oxygen bleach handles any shadow without the alkaline-side chemistry that would darken a pure tannin stain.",
   "spottingProtocol": [
     {
       "step": 1,
@@ -39,11 +39,11 @@
     },
     {
       "step": 3,
-      "agent": "White Vinegar Solution",
+      "agent": "Acidic Tannin Rinse",
       "technique": "Light blotting",
       "temperature": "Cool",
       "dwellTime": "Brief contact only",
-      "instruction": "If a pale ring remains, blot with a 1:1 mix of white vinegar and cold water, then rinse again. Vinegar helps release the last of the tannin trace."
+      "instruction": "If a pale ring remains, apply a mild acid-side tannin treatment, blot gently, then rinse again. This helps release the last of the tannin trace."
     },
     {
       "step": 4,
@@ -75,8 +75,8 @@
     },
     {
       "step": 3,
-      "instruction": "If a faint ring remains, blot with diluted white vinegar (1:1 with cold water) and rinse again.",
-      "agent": "White Vinegar Solution"
+      "instruction": "If a faint ring remains, apply a mild acid-side tannin treatment and rinse again.",
+      "agent": "Acidic Tannin Rinse"
     },
     {
       "step": 4,
@@ -92,7 +92,7 @@
   ],
   "escalation": {
     "when": "Escalate if the stain is old, heat-set, on a dry-clean-only cotton garment, or if repeated home treatment leaves a visible ring.",
-    "whatToTell": "Tell the cleaner it is black tea on cotton and whether detergent, vinegar, or oxygen bleach were already used. Note how long before it was treated.",
+    "whatToTell": "Tell the cleaner it is black tea on cotton and whether detergent, acid-side tannin treatment, or oxygen bleach were already used. Note how long before it was treated.",
     "specialistType": "professional cleaner"
   },
   "products": {
@@ -104,10 +104,10 @@
         "note": "Use only a small amount and rinse fully with cold water."
       },
       {
-        "name": "White Vinegar",
+        "name": "Tannin Spotter",
         "use": "Tannin residue ring",
         "affiliateTag": "gonr08-20",
-        "note": "Dilute 1:1 with cold water. Brief contact only."
+        "note": "Use a mild acid-side tannin treatment labeled safe for fabric spot work."
       },
       {
         "name": "Oxygen Bleach",
