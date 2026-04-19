@@ -1,0 +1,150 @@
+{
+  "id": "white-wine-cotton",
+  "title": "White Wine on Cotton",
+  "stainFamily": "tannin",
+  "surface": "cotton",
+  "sector": "textile",
+  "meta": {
+    "stainCanonical": "white-wine",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "cotton",
+      "washable",
+      "home-safe",
+      "low-risk"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "White wine is a light tannin and sugar stain. On cotton, most of the spill stays water-soluble unless it dries and oxidizes into a pale yellow or beige ring.",
+  "whyThisWorks": "Cold water dilutes the spill before it dries deeper into the cotton. Detergent lifts the sugar and residue, vinegar helps release the light tannin trace, and oxygen bleach handles any remaining shadow without the aggressive escalation this stain usually does not need.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "agent": "Cold Water",
+      "technique": "Blot from the back",
+      "temperature": "Cold",
+      "dwellTime": "Work immediately",
+      "instruction": "Blot the area and flush cold water through the back of the stain. Keep blotting until the spill stops transferring."
+    },
+    {
+      "step": 2,
+      "agent": "Mild Liquid Detergent",
+      "technique": "Work gently with fingertips or a soft cloth",
+      "temperature": "Cool",
+      "dwellTime": "Check frequently",
+      "instruction": "Apply a small amount of mild liquid detergent or dish soap to the damp stain. Work gently, then rinse with cold water."
+    },
+    {
+      "step": 3,
+      "agent": "White Vinegar Solution",
+      "technique": "Light blotting",
+      "temperature": "Cool",
+      "dwellTime": "Brief contact only",
+      "instruction": "If a pale ring remains, blot with a 1:1 mix of white vinegar and cold water, then rinse again."
+    },
+    {
+      "step": 4,
+      "agent": "Oxygen Bleach Solution",
+      "technique": "Spot treat or short soak",
+      "temperature": "Cool",
+      "dwellTime": "Monitor and reapply as needed",
+      "instruction": "If a shadow still shows, use a color-safe oxygen bleach solution and monitor the area closely, then rinse thoroughly."
+    },
+    {
+      "step": 5,
+      "agent": "Laundry Detergent",
+      "technique": "Wash and air dry",
+      "temperature": "Per care label",
+      "dwellTime": "Normal wash",
+      "instruction": "Wash the item per the care label and air dry until you confirm the stain is gone. Do not use heat until the area is clear."
+    }
+  ],
+  "homeSolutions": [
+    {
+      "step": 1,
+      "instruction": "Blot first, then flush cold water through the back of the stain.",
+      "agent": "Cold Water"
+    },
+    {
+      "step": 2,
+      "instruction": "Work in a few drops of mild dish soap or liquid detergent and rinse well.",
+      "agent": "Mild Dish Soap"
+    },
+    {
+      "step": 3,
+      "instruction": "If a faint yellow ring remains, blot with diluted white vinegar and rinse again.",
+      "agent": "White Vinegar Solution"
+    },
+    {
+      "step": 4,
+      "instruction": "If needed, use a color-safe oxygen bleach soak before washing.",
+      "agent": "Oxygen Bleach"
+    }
+  ],
+  "materialWarnings": [
+    "Do not use heat until the stain is fully gone.",
+    "Test oxygen bleach first if the cotton is dyed or trimmed.",
+    "Skip home treatment and escalate if the care label says dry clean only."
+  ],
+  "escalation": {
+    "when": "Escalate if the stain is old, heat-set, on a dry-clean-only cotton garment, or if repeated treatment leaves a visible ring.",
+    "whatToTell": "Tell the cleaner it is white wine on cotton and whether detergent, vinegar, or oxygen bleach were already used.",
+    "specialistType": "professional cleaner"
+  },
+  "products": {
+    "consumer": [
+      {
+        "name": "Mild Liquid Dish Soap",
+        "use": "Initial detergent step",
+        "note": "Use only a small amount and rinse fully."
+      },
+      {
+        "name": "White Vinegar",
+        "use": "Light tannin residue",
+        "note": "Dilute 1:1 with cold water."
+      },
+      {
+        "name": "Oxygen Bleach",
+        "use": "Residual yellow or beige shadow",
+        "note": "Use a color-safe oxygen bleach, not chlorine bleach."
+      }
+    ],
+    "professional": [
+      {
+        "name": "Tannin Spotter",
+        "use": "Stubborn residual ring after home treatment",
+        "note": "Usually unnecessary on fresh white wine spills on cotton."
+      }
+    ]
+  },
+  "customerExplanation": "White wine on cotton is usually a straightforward cleanup, not a professional-only case. Fast flushing, light detergent work, and air drying before heat solve most spills.",
+  "commonMistakes": [
+    "Letting the spill dry before flushing it out",
+    "Using heat before confirming the stain is gone",
+    "Over-treating a simple spill with harsh chemistry"
+  ],
+  "scienceNote": "White wine carries far less pigment than red wine, so the main issue on cotton is diluted tannin residue plus sugars. That is why cold water and detergent do most of the work, with oxygen bleach only as a cleanup step for the leftover ring.",
+  "difficulty": 1,
+  "difficulty_factors": [
+    "light tannin load",
+    "cotton is forgiving",
+    "usually fully removable"
+  ],
+  "components": [
+    "water-flush",
+    "detergent",
+    "acid-side",
+    "oxidizer-optional"
+  ],
+  "component_order": [
+    "water-flush",
+    "detergent",
+    "acid-side",
+    "oxidizer-optional"
+  ],
+  "version": "1.0",
+  "authored": "2026-04-18"
+}

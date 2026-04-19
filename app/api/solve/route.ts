@@ -11,6 +11,7 @@ import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
 import { normalizeAICard } from '@/lib/protocols/normalizeAICard'
 import { retrieveForQuery, formatRetrievedContext, applyGroundedAttribution, isRetrievalEnabled, type RetrievalResult } from '@/lib/stainbrain/retrieve'
 import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
+import { enrichProductsWithAffiliates } from '@/lib/protocols/enrichProducts'
 import { createClient } from '@supabase/supabase-js'
 import { identifyStain, readCareLabel } from '@/lib/vision'
 import { buildSolveContext } from '@/lib/solve/context'
@@ -190,8 +191,20 @@ function injectContextWarnings(card: any, ctx: SolveContext): void {
 // the user (and the eval suite) sees appropriate guidance.
 function buildContextualFallback(ctx: SolveContext): any {
   const fallback: any = JSON.parse(JSON.stringify(SAFE_FALLBACK))
+  const fallbackFamily = detectFamily(ctx.stain) || (ctx.family && ctx.family !== 'unknown' ? ctx.family : 'specialty')
+  const stainCanonical = ctx.stain.toLowerCase().trim().replace(/\s+/g, '-')
+  const surfaceCanonical = ctx.surface.toLowerCase().trim().replace(/\s+/g, '-')
+
   fallback.surface = ctx.surface
   fallback.title = `Professional Assessment Required — ${ctx.stain} on ${ctx.surface}`
+  fallback.stainFamily = fallbackFamily
+  fallback.meta = {
+    ...(fallback.meta || {}),
+    stainCanonical,
+    surfaceCanonical,
+    tier: 'safety-blocked',
+    riskLevel: 'high',
+  }
 
   const surface = ctx.surface.toLowerCase()
   const stain = ctx.stain.toLowerCase()
@@ -285,7 +298,20 @@ const STAIN_FAMILY_OVERRIDES: [RegExp, string][] = [
 
 function resolveStainType(card: any | null, ctx: SolveContext): string {
   // Check card fields — cards use stainFamily (newer) or stainType (v5)
-  const cardFamily = card?.stainFamily || card?.stainType
+  let cardFamily = card?.stainFamily || card?.stainType
+
+  // TASK-045 follow-up: normalize legacy v5 schema values. Older cards use
+  // descriptive types like "combo-protein-tannin" or "combination-oil-dye"
+  // instead of the canonical family "combination". Fold these down so the
+  // VALID_FAMILIES gate accepts them and the response reports the correct
+  // top-level stainType.
+  if (cardFamily && typeof cardFamily === 'string') {
+    const lower = cardFamily.toLowerCase()
+    if (lower === 'combination' || lower.startsWith('combo-') || lower.startsWith('combination-')) {
+      cardFamily = 'combination'
+    }
+  }
+
   if (cardFamily && cardFamily !== 'unknown' && VALID_FAMILIES.has(cardFamily)) {
     // Apply stain-name overrides when card classification is less specific
     if (cardFamily === 'oxidizable') {
@@ -349,9 +375,14 @@ Given a complete stain brief, produce a precise JSON protocol card. Every recomm
 
 ## EISEN METHODOLOGY (Non-Negotiable)
 
-SEQUENCING — Follow the pH-oscillation cycle:
-1. Cool water (dilute/loosen) → 2. Mild detergent + water (emulsify) → 3. Vinegar + detergent (acid phase for tannin) → 4. Water rinse → 5. Ammonia + detergent (alkali phase for protein) → 6. Water rinse → 7. Vinegar (neutralize ammonia — MANDATORY to prevent yellowing) → 8. Water rinse → 9. Hydrogen peroxide (oxidative bleaching) → 10. Ammonia immediately after peroxide (accelerates bleaching) → 11. Wait 3 min → 12. Water rinse → 13. Vinegar (neutralize) → 14. Water rinse.
-Skip phases that don't apply to the stain type, but NEVER skip vinegar after ammonia.
+ABSOLUTE RULE #1 OVERRIDES THIS CYCLE. If the stain is pure tannin (coffee, tea, wine, beer, juice, chocolate, berry), the ammonia phases below do NOT run — not step 5, not step 10, not any variant. Pure tannin is acid-side only.
+
+SEQUENCING — Follow the pH-oscillation cycle, but treat the ammonia phases as CONDITIONAL on a protein component being present:
+1. Cool water (dilute/loosen) → 2. Mild detergent + water (emulsify) → 3. Vinegar + detergent (acid phase for tannin) → 4. Water rinse → 5. [PROTEIN/COMBINATION ONLY] Ammonia + detergent (alkali phase for protein) → 6. Water rinse → 7. Vinegar (neutralize ammonia — MANDATORY to prevent yellowing) → 8. Water rinse → 9. Hydrogen peroxide (oxidative bleaching) → 10. [PROTEIN/COMBINATION ONLY] Ammonia immediately after peroxide (accelerates bleaching on protein residue) → 11. Wait 3 min → 12. Water rinse → 13. Vinegar (neutralize) → 14. Water rinse.
+
+PURE TANNIN PATH: run steps 1-4, skip 5-7 entirely, then 8 → 9 → skip 10 → 11 → 12 → (13 only if vinegar was used earlier) → 14. Peroxide on tannin is acid-activated or plain, NEVER ammonia-accelerated.
+
+Skip phases that don't apply to the stain type. NEVER skip vinegar after ammonia. NEVER introduce ammonia into a pure-tannin flow even when a step labeled "accelerator" tempts it.
 
 COMBINATION STAINS (tannin + protein, e.g. coffee with milk, chocolate, gravy):
 - ALWAYS treat tannin FIRST with acid (vinegar). Complete all acid rinses.
@@ -381,8 +412,9 @@ PROFESSIONAL AGENTS:
 - NSD (neutral synthetic detergent), POG (paint/oil/grease remover), Protein formula (enzyme-based), Tannin formula (oxidizing), Acetic acid 28% → 20% working strength, Amyl acetate (adhesives — NOT on acetate), H₂O₂ 3-6%, Feathering agent, Steam gun (4-6 inch minimum distance)
 
 BLEACH SELECTION:
-- Tannin traces: H₂O₂ + ammonia, or sodium perborate bath
+- Tannin traces (pure): H₂O₂ alone (acid-activated with vinegar if needed), or sodium perborate bath. NEVER H₂O₂ + ammonia on pure tannin — alkali darkens tannin permanently, overriding any "accelerator" heuristic.
 - Protein traces: H₂O₂ + ammonia
+- Combination tannin + protein: treat tannin first (acid side), fully rinse, then H₂O₂ + ammonia on residual protein
 - Dye stains: sodium hydrosulphite (reducing bleach) or titanium sulfate
 - Mildew: sodium hypochlorite (cellulose only)
 - Yellowing: sodium perborate/percarbonate
@@ -609,15 +641,20 @@ export async function POST(req: Request) {
 
     // ── Solve gate (single call — after stain is confirmed) ────
     // NOTE: Only gate after stain is validated so failed requests don't consume trial credits.
-    const gateResult = await checkAndIncrementSolve(email, clientIp)
-    if (!gateResult.allowed) {
-      // 503 for transient Supabase errors (client should retry); 402 for real
-      // payment-required block (trial_expired / free_limit / anon_limit).
-      const isTransient = gateResult.reason === 'temporary_error'
-      return NextResponse.json(
-        { error: gateResult.reason || 'trial_expired', reason: gateResult.reason },
-        { status: isTransient ? 503 : 402 }
-      )
+    // TASK-033 eval runner bypass: authenticated server-to-server eval traffic
+    // should exercise solve behavior without burning trial credits or getting
+    // blocked by subscriber/free gating.
+    if (!isEvalRunner) {
+      const gateResult = await checkAndIncrementSolve(email, clientIp)
+      if (!gateResult.allowed) {
+        // 503 for transient Supabase errors (client should retry); 402 for real
+        // payment-required block (trial_expired / free_limit / anon_limit).
+        const isTransient = gateResult.reason === 'temporary_error'
+        return NextResponse.json(
+          { error: gateResult.reason || 'trial_expired', reason: gateResult.reason },
+          { status: isTransient ? 503 : 402 }
+        )
+      }
     }
 
     // ── Plant context (TASK-023 Phase C) ───────────────────────
@@ -663,6 +700,7 @@ export async function POST(req: Request) {
       }
       const filteredCard = librarySafety.card
       ensureBleachNeutralization(filteredCard)
+      enrichProductsWithAffiliates(filteredCard)
       // Plant-level filters (TASK-023 Phase C v1): bleach_allowed=false suppresses
       // chlorine steps; solvent='wet-only' flags dry-side; house_rules appended.
       // No-op if userPlant is null.
@@ -738,6 +776,7 @@ export async function POST(req: Request) {
 
       queueForReview(safeCard, ctx, safetyResult).catch(() => {})
       ensureBleachNeutralization(safeCard)
+      enrichProductsWithAffiliates(safeCard)
       // Apply plant-level filters to AI-generated cards too — bleach policy
       // and house rules must be respected regardless of card source.
       const plantTunedAi = applyPlantFilters(safeCard, userPlant)

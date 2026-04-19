@@ -111,6 +111,19 @@ const SURFACE_NORMALIZE: Record<string, string> = {
   'general': 'cotton',
 }
 
+// TASK-045 follow-up — cosmetic color prefix strip. Common eval/user inputs
+// like "White carpet" or "White cotton tablecloth" should collapse to the
+// underlying substrate for lookup. Color alone doesn't change chemistry.
+// Kept narrow and deterministic — only purely cosmetic adjectives that would
+// never alter how a stain is treated. Stain-relevant fiber types (silk, wool,
+// cotton, linen, etc.) are NOT in this list.
+const COSMETIC_PREFIX = /^(white|black|off[-\s]?white|cream|ivory|beige|grey|gray|tan|dark|light|colored|natural|plain|dyed)\s+/i
+
+function stripCosmeticPrefix(input: string): string {
+  const stripped = input.replace(COSMETIC_PREFIX, '').trim()
+  return stripped || input
+}
+
 function toSlug(input: string): string {
   return normalize(input)
     .replace(/\s+/g, '-')
@@ -119,7 +132,10 @@ function toSlug(input: string): string {
 
 function normalizeSurface(input: string): string {
   const n = normalize(input)
-  return SURFACE_NORMALIZE[n] ?? toSlug(input)
+  if (n in SURFACE_NORMALIZE) return SURFACE_NORMALIZE[n]
+  const stripped = stripCosmeticPrefix(n)
+  if (stripped !== n && stripped in SURFACE_NORMALIZE) return SURFACE_NORMALIZE[stripped]
+  return toSlug(stripped)
 }
 
 // ─── Index builder ──────────────────────────────────────────────────────────
@@ -143,9 +159,15 @@ async function loadAll(): Promise<void> {
 async function loadCoreCardsRouted(): Promise<void> {
   if (PROTOCOL_SOURCE === 'supabase') {
     const ok = await loadCoreCardsFromDb()
-    if (ok) return
-    // Hard fall-back: DB unavailable. Load from JSON so solve still works.
-    console.warn('[lookup] Supabase load failed — falling back to JSON.')
+    if (!ok) {
+      // Hard fall-back: DB unavailable. Load from JSON so solve still works.
+      console.warn('[lookup] Supabase load failed — falling back to JSON.')
+    }
+    // Always overlay JSON cards that are missing from DB. This lets newly
+    // added canonical cards ship immediately even when protocol_cards is the
+    // primary source of truth, without overriding existing DB-backed cards.
+    await loadCoreCards(true)
+    return
   }
   await loadCoreCards()
 }
@@ -208,7 +230,7 @@ function indexCards(cards: ProtocolCard[]): void {
   }
 }
 
-async function loadCoreCards(): Promise<void> {
+async function loadCoreCards(overlayOnly: boolean = false): Promise<void> {
   const files = await readdir(CORE_DIR)
   const jsonFiles = files.filter(f => f.endsWith('.json'))
 
@@ -255,6 +277,14 @@ async function loadCoreCards(): Promise<void> {
 
       if (!seen.has(key)) {
         seen.add(key)
+
+        if (
+          overlayOnly &&
+          (coreIndex.has(key) || coreIndex.has(dashKey) || coreIndex.has(slugKey) || coreIndex.has(slugDashKey))
+        ) {
+          continue
+        }
+
         coreIndex.set(key, card)
         coreIndex.set(dashKey, card)
         coreIndex.set(slugKey, card)
@@ -307,6 +337,12 @@ async function loadFamilyKeywords(): Promise<void> {
  *   Tier 2 — alias-resolved match (confidence 0.85-0.9)
  *   Tier 3 — family-level fallback (confidence 0.5-0.7)
  *   Tier 4 — no match, caller uses AI (confidence 0)
+ *
+ * TASK-045 follow-up: surface input is tried in both original and
+ * cosmetic-prefix-stripped form so "White carpet" hits the same card as
+ * "carpet" and "White cotton tablecloth" resolves through "cotton tablecloth"
+ * alias to "cotton". Original form is tried FIRST so specific cards
+ * (e.g. a hypothetical "red-wine-white-carpet") still win when they exist.
  */
 export async function lookupProtocol(
   stainInput: string,
@@ -316,38 +352,49 @@ export async function lookupProtocol(
 
   const stainNorm = normalize(stainInput)
   const surfaceNorm = normalize(surfaceInput)
+  const surfaceNormStripped = stripCosmeticPrefix(surfaceNorm)
   const stainSlug = toSlug(stainInput)
   const surfaceSlug = normalizeSurface(surfaceInput)
+  const surfaceSlugStripped = normalizeSurface(surfaceNormStripped)
+
+  // Surface variants to try, in preference order (specific → general)
+  type SurfaceVariant = { norm: string; slug: string }
+  const surfaceVariants: SurfaceVariant[] = [{ norm: surfaceNorm, slug: surfaceSlug }]
+  if (surfaceNormStripped !== surfaceNorm || surfaceSlugStripped !== surfaceSlug) {
+    surfaceVariants.push({ norm: surfaceNormStripped, slug: surfaceSlugStripped })
+  }
 
   // ── Tier 1: Exact canonical match ─────────────────────────────────────
-  const exactKey = `${stainSlug}+${surfaceSlug}`
-  const exactKeyDash = `${stainSlug}-${surfaceSlug}`
-  const exactCard = coreIndex.get(exactKey) ?? coreIndex.get(exactKeyDash)
-  if (exactCard) {
-    return { card: normalizeCard(exactCard), tier: 1, confidence: 1.0, source: 'core' }
+  for (const { slug } of surfaceVariants) {
+    const exactKey = `${stainSlug}+${slug}`
+    const exactKeyDash = `${stainSlug}-${slug}`
+    const exactCard = coreIndex.get(exactKey) ?? coreIndex.get(exactKeyDash)
+    if (exactCard) {
+      return { card: normalizeCard(exactCard), tier: 1, confidence: 1.0, source: 'core' }
+    }
   }
 
   // ── Tier 2: Alias resolution ──────────────────────────────────────────
   const resolvedStain = stainAliases[stainNorm] ?? stainAliases[stainSlug] ?? stainSlug
-  const resolvedSurface = surfaceAliases[surfaceNorm] ?? surfaceAliases[surfaceSlug] ?? surfaceSlug
-  const aliasKey = `${resolvedStain}+${resolvedSurface}`
 
-  if (aliasKey !== exactKey) {
-    const aliasCard = coreIndex.get(aliasKey)
-    if (aliasCard) {
-      return { card: normalizeCard(aliasCard), tier: 2, confidence: 0.9, source: 'core' }
-    }
-  }
+  for (const { norm, slug } of surfaceVariants) {
+    const resolvedSurface = surfaceAliases[norm] ?? surfaceAliases[slug] ?? slug
+    const aliasKey = `${resolvedStain}+${resolvedSurface}`
+    const baseKey = `${stainSlug}+${slug}`
 
-  // Also try resolved stain with original surface and vice versa
-  for (const tryKey of [
-    `${resolvedStain}+${surfaceSlug}`,
-    `${stainSlug}+${resolvedSurface}`,
-  ]) {
-    if (tryKey !== exactKey && tryKey !== aliasKey) {
-      const card = coreIndex.get(tryKey)
-      if (card) {
-        return { card: normalizeCard(card), tier: 2, confidence: 0.85, source: 'core' }
+    // Prefer preserving the more specific user stain when only the surface
+    // needs alias resolution, e.g. "black tea" + "cotton tablecloth" should
+    // hit black-tea-cotton before falling back to a generic tea-cotton card.
+    for (const tryKey of [
+      `${stainSlug}+${resolvedSurface}`,
+      `${resolvedStain}+${slug}`,
+      aliasKey,
+    ]) {
+      if (tryKey !== baseKey) {
+        const card = coreIndex.get(tryKey)
+        if (card) {
+          return { card: normalizeCard(card), tier: 2, confidence: tryKey === aliasKey ? 0.9 : 0.85, source: 'core' }
+        }
       }
     }
   }
