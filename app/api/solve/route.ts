@@ -75,13 +75,53 @@ function getSupabaseAdmin() {
 // ── Server-side solve gating ───────────────────────────────────
 const FOUNDER_EMAILS = ['tyler@gonr.pro', 'tyler@nexshift.co', 'twfyke@me.com', 'eval@gonr.app', 'jeff@cleanersupply.com']
 
+// TASK-049 Phase 2 P2-b: feature flag gates the new tier-aware path.
+// When off, gate behavior is identical to pre-P2-b (free = 3 lifetime, paying = bypass).
+// When on, home tier users are gated at 15 solves per calendar month via the
+// consume_solve_atomic RPC (which wraps the check-and-increment in a single
+// transaction with SELECT ... FOR UPDATE for race safety).
+const HOME_TIER_GATE_ENABLED = process.env.HOME_TIER_GATE_ENABLED === 'true'
+
+type SolveTier = 'free' | 'home' | 'spotter' | 'operator' | 'founder'
+
+// Calls the Postgres RPC that handles the check-and-increment atomically with
+// row lock. Returns a normalized shape for the caller.
+async function consumeSolveAtomic(
+  supabase: ReturnType<typeof getSupabaseAdmin>,
+  email: string,
+  tier: SolveTier,
+): Promise<{ allowed: boolean; reason?: string; cap?: number; used?: number; resetAt?: string }> {
+  const { data, error } = await supabase.rpc('consume_solve_atomic', {
+    p_email: email,
+    p_tier: tier,
+  })
+
+  if (error || !data) {
+    console.warn('[SolveGate] RPC error — failing closed:', error?.message || 'no data')
+    return { allowed: false, reason: 'temporary_error' }
+  }
+
+  const r = data as {
+    allowed: boolean
+    reason?: string
+    cap?: number
+    used?: number
+    reset_at?: string
+  }
+
+  return {
+    allowed: r.allowed,
+    reason: r.reason,
+    cap: r.cap,
+    used: r.used,
+    resetAt: r.reset_at,
+  }
+}
+
+// Legacy counter — kept as fallback when HOME_TIER_GATE_ENABLED is false,
+// preserves exact pre-P2-b behavior for free-tier 3-lifetime-solves.
 const FREE_SOLVE_LIMIT = 3
 
-// Counts and atomically increments a solve_usage row keyed by `key`
-// (email for logged-in users, `anon:<ip>` for unauthenticated).
-// Pure usage-count gate, no time window. Canonical rule per Learnings:
-// 3 free solves after email signup, period. The 7-day trial window was
-// removed in TASK-027 to match that rule.
 async function consumeSolveFromUsage(
   supabase: ReturnType<typeof getSupabaseAdmin>,
   key: string,
@@ -117,39 +157,69 @@ async function consumeSolveFromUsage(
   return { allowed: true }
 }
 
-async function checkAndIncrementSolve(email: string | null, clientIp: string): Promise<{ allowed: boolean; reason?: string }> {
+// Resolves the subscription-derived tier for a logged-in email.
+async function resolveTierForGate(
+  supabase: ReturnType<typeof getSupabaseAdmin>,
+  email: string | null,
+): Promise<SolveTier | null> {
+  if (!email) return null
+  if (FOUNDER_EMAILS.includes(email.toLowerCase())) return 'founder'
+
+  try {
+    const { data } = await supabase
+      .from('subscriptions')
+      .select('status, tier')
+      .eq('email', email.toLowerCase())
+      .single()
+    if (data && data.status === 'active') {
+      const t = data.tier as string
+      if (t === 'home' || t === 'spotter' || t === 'operator') return t as SolveTier
+    }
+  } catch {
+    // fall through to free
+  }
+  return 'free'
+}
+
+async function checkAndIncrementSolve(
+  email: string | null,
+  clientIp: string,
+): Promise<{ allowed: boolean; reason?: string; viewerTier: SolveTier | 'anon'; cap?: number; used?: number; resetAt?: string }> {
   // Founder bypass: exact email match only — outside the try so a Supabase
   // outage cannot lock founders out.
-  if (email && FOUNDER_EMAILS.includes(email.toLowerCase())) return { allowed: true }
+  if (email && FOUNDER_EMAILS.includes(email.toLowerCase())) {
+    return { allowed: true, viewerTier: 'founder' }
+  }
 
   try {
     const supabase = getSupabaseAdmin()
+    const tier = await resolveTierForGate(supabase, email)
 
-    // Authenticated path — check subscription first, then trial usage.
-    if (email) {
-      const { data: subscription } = await supabase
-        .from('subscriptions')
-        .select('status, tier')
-        .eq('email', email.toLowerCase())
-        .single()
+    // ── Authenticated path ───────────────────────────────────────────────
+    if (email && tier) {
+      // Spotter / Operator: bypass gate (they're paying, unlimited solves).
+      if (tier === 'spotter' || tier === 'operator') {
+        return { allowed: true, viewerTier: tier }
+      }
 
-      // Paying subscribers (status='active') are not gated.
-      if (subscription && subscription.status === 'active') return { allowed: true }
+      // Home tier (Phase 2 P2-b): tier-aware cap via atomic RPC — only when
+      // feature flag is on. Otherwise treat as free-tier (pre-P2-b behavior).
+      if (tier === 'home' && HOME_TIER_GATE_ENABLED) {
+        const r = await consumeSolveAtomic(supabase, email.toLowerCase(), 'home')
+        return { ...r, viewerTier: 'home' }
+      }
 
-      return await consumeSolveFromUsage(supabase, email.toLowerCase(), 'trial_expired')
+      // Free tier — preserve legacy behavior regardless of feature flag.
+      const r = await consumeSolveFromUsage(supabase, email.toLowerCase(), 'trial_expired')
+      return { ...r, viewerTier: 'free' }
     }
 
-    // Unauthenticated path — persistent 3-lifetime-solves per IP,
-    // tracked in solve_usage with an `anon:<ip>` key.
-    return await consumeSolveFromUsage(supabase, `anon:${clientIp}`, 'free_limit')
+    // ── Unauthenticated path — anon, IP-keyed ────────────────────────────
+    const r = await consumeSolveFromUsage(supabase, `anon:${clientIp}`, 'free_limit')
+    return { ...r, viewerTier: 'anon' }
   } catch (err) {
-    // Fail-closed for free + anon (TASK-027). Pre-TASK-027 the catch block
-    // returned `allowed: true`, leaking unlimited free solves on every
-    // Supabase blip. Founders bypass above, so this only blocks free/anon
-    // and paying users whose subscription check itself errored. Paying users
-    // can retry in seconds; the leak is closed.
     console.warn('[SolveGate] Error — failing closed:', err)
-    return { allowed: false, reason: 'temporary_error' }
+    return { allowed: false, reason: 'temporary_error', viewerTier: email ? 'free' : 'anon' }
   }
 }
 
@@ -644,17 +714,35 @@ export async function POST(req: Request) {
     // TASK-033 eval runner bypass: authenticated server-to-server eval traffic
     // should exercise solve behavior without burning trial credits or getting
     // blocked by subscriber/free gating.
+    let viewerTier: SolveTier | 'anon' = 'anon'
     if (!isEvalRunner) {
       const gateResult = await checkAndIncrementSolve(email, clientIp)
+      viewerTier = gateResult.viewerTier
       if (!gateResult.allowed) {
-        // 503 for transient Supabase errors (client should retry); 402 for real
-        // payment-required block (trial_expired / free_limit / anon_limit).
         const isTransient = gateResult.reason === 'temporary_error'
+        // home_monthly_cap ships richer info so the UI can show "15/15 — upgrade
+        // or wait until <reset date>" instead of a generic cap error.
+        if (gateResult.reason === 'home_monthly_cap') {
+          return NextResponse.json(
+            {
+              error: 'home_monthly_cap',
+              reason: 'home_monthly_cap',
+              cap: gateResult.cap,
+              used: gateResult.used,
+              resetAt: gateResult.resetAt,
+              viewerTier: 'home',
+            },
+            { status: 402 }
+          )
+        }
         return NextResponse.json(
-          { error: gateResult.reason || 'trial_expired', reason: gateResult.reason },
+          { error: gateResult.reason || 'trial_expired', reason: gateResult.reason, viewerTier },
           { status: isTransient ? 503 : 402 }
         )
       }
+    } else {
+      // Eval runner — treat as founder for rendering purposes.
+      viewerTier = 'founder'
     }
 
     // ── Plant context (TASK-023 Phase C) ───────────────────────
@@ -696,6 +784,7 @@ export async function POST(req: Request) {
         return NextResponse.json({
           card: buildContextualFallback(ctx),
           tier: 4, confidence: 0, source: 'library-safety-blocked', stainType: resolveStainType(null, ctx), _safetyBlocked: true,
+          viewerTier,
         })
       }
       const filteredCard = librarySafety.card
@@ -723,7 +812,7 @@ export async function POST(req: Request) {
         },
         correlation_id: correlationId,
       }).catch(() => {})
-      return NextResponse.json({ ...result, card: plantTunedCard, stainType: resolveStainType(plantTunedCard, ctx), correlationId })
+      return NextResponse.json({ ...result, card: plantTunedCard, stainType: resolveStainType(plantTunedCard, ctx), correlationId, viewerTier })
     }
 
     // ── AI fallback ────────────────────────────────────────────
@@ -765,6 +854,7 @@ export async function POST(req: Request) {
         return NextResponse.json({
           card: buildContextualFallback(ctx),
           tier: 4, confidence: 0, source: 'ai', stainType: resolveStainType(null, ctx), _safetyBlocked: true,
+          viewerTier,
         })
       }
 
@@ -782,12 +872,13 @@ export async function POST(req: Request) {
       const plantTunedAi = applyPlantFilters(safeCard, userPlant)
       logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: plantTunedAi.title || ctx.stain, source: userPlant ? 'ai-plant-tuned' : 'ai', confidence: 0.5 }).catch(() => {})
 
-      return NextResponse.json({ card: plantTunedAi, tier: 4, confidence: 0.5, source: 'ai', stainType: resolveStainType(plantTunedAi, ctx), correlationId })
+      return NextResponse.json({ card: plantTunedAi, tier: 4, confidence: 0.5, source: 'ai', stainType: resolveStainType(plantTunedAi, ctx), correlationId, viewerTier })
     } catch (err) {
       console.error('AI fallback failed:', err)
       return NextResponse.json({
         card: buildContextualFallback(ctx),
         tier: 4, confidence: 0, source: 'ai-unavailable', stainType: resolveStainType(null, ctx), _aiUnavailable: true,
+        viewerTier,
       })
     }
 
