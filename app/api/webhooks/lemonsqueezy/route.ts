@@ -25,12 +25,33 @@ function verifySignature(rawBody: string, signature: string, secret: string): bo
   }
 }
 
-// Map LemonSqueezy product/variant to GONR tier
-function resolveProductTier(productName: string): 'spotter' | 'operator' {
+// Map LemonSqueezy product/variant to GONR tier.
+// Variant ID is the authoritative signal when available (robust against rename);
+// falls back to product name matching for any legacy events.
+//
+// TASK-049 Phase 2 P2-e: Home tier re-introduced as the primary consumer SKU.
+type BillingTier = 'home' | 'spotter' | 'operator'
+
+const HOME_VARIANT_ID = process.env.LS_HOME_VARIANT_ID
+const SPOTTER_VARIANT_ID = process.env.LS_SPOTTER_VARIANT_ID
+const OPERATOR_VARIANT_ID = process.env.LS_OPERATOR_VARIANT_ID
+
+function resolveProductTier(productName: string, variantId?: string | null): BillingTier {
+  // 1. Variant-ID match (authoritative, survives product rename)
+  if (variantId) {
+    const idStr = String(variantId)
+    if (HOME_VARIANT_ID && idStr === HOME_VARIANT_ID) return 'home'
+    if (SPOTTER_VARIANT_ID && idStr === SPOTTER_VARIANT_ID) return 'spotter'
+    if (OPERATOR_VARIANT_ID && idStr === OPERATOR_VARIANT_ID) return 'operator'
+  }
+
+  // 2. Product-name fallback (case-insensitive substring match)
   const lower = (productName || '').toLowerCase()
   if (lower.includes('operator')) return 'operator'
-  // Home tier retired — any unrecognized product defaults to spotter
-  // Default to spotter for now (primary product)
+  if (lower.includes('home')) return 'home'
+  if (lower.includes('spotter')) return 'spotter'
+
+  // 3. Final fallback — unrecognized defaults to spotter (preserves pre-P2-e behavior)
   return 'spotter'
 }
 
@@ -82,7 +103,12 @@ export async function POST(req: NextRequest) {
         }
 
         const productName = data.first_order_item?.product_name || ''
-        const tier = resolveProductTier(productName)
+        const variantId =
+          payload.data?.attributes?.first_subscription_item?.variant_id ??
+          payload.data?.attributes?.first_order_item?.variant_id ??
+          payload.data?.attributes?.variant_id ??
+          null
+        const tier = resolveProductTier(productName, variantId != null ? String(variantId) : null)
 
         const { error } = await supabase
           .from('subscriptions')
@@ -114,7 +140,11 @@ export async function POST(req: NextRequest) {
         }
 
         const productName = data.product_name || ''
-        const tier = resolveProductTier(productName)
+        const variantId =
+          payload.data?.attributes?.first_subscription_item?.variant_id ??
+          payload.data?.attributes?.variant_id ??
+          null
+        const tier = resolveProductTier(productName, variantId != null ? String(variantId) : null)
 
         const { error } = await supabase
           .from('subscriptions')
@@ -143,7 +173,11 @@ export async function POST(req: NextRequest) {
         if (!email) break
 
         const productName = data.product_name || ''
-        const tier = resolveProductTier(productName)
+        const variantId =
+          payload.data?.attributes?.first_subscription_item?.variant_id ??
+          payload.data?.attributes?.variant_id ??
+          null
+        const tier = resolveProductTier(productName, variantId != null ? String(variantId) : null)
         const isActive = data.status === 'active' || data.status === 'on_trial'
 
         const { error } = await supabase
