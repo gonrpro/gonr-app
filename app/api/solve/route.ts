@@ -215,7 +215,7 @@ async function checkAndIncrementSolve(
     }
 
     // ── Unauthenticated path — anon, IP-keyed ────────────────────────────
-    const r = await consumeSolveFromUsage(supabase, `anon:${clientIp}`, 'free_limit')
+    const r = await consumeSolveFromUsage(supabase, `anon:${clientIp}`, 'anon_limit')
     return { ...r, viewerTier: 'anon' }
   } catch (err) {
     console.warn('[SolveGate] Error — failing closed:', err)
