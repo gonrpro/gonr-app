@@ -30,6 +30,8 @@ import SaveButton from './SaveButton'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import FiberContextBadge from './FiberContextBadge'
 import CardBadges from './CardBadges'
+import CardRatingBadges from '@/components/solve/CardRatingBadges'
+import CardRatingWidget from '@/components/solve/CardRatingWidget'
 import StepEnlargeModal from './StepEnlargeModal'
 import FullCardModal from './FullCardModal'
 import UpgradeBanner from './UpgradeBanner'
@@ -217,6 +219,7 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
 
   return (
     <div className="rounded-xl overflow-hidden" style={{ background: 'var(--surface)', border: '1px solid var(--border-strong)' }}>
+      <CardRatingBadges cardId={card.id ?? ''} />
 
       {/* ── 1. Header ── */}
       <div className="px-4 pt-4 pb-3 space-y-1" style={{ borderBottom: '1px solid var(--border)' }}>
@@ -576,6 +579,8 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
           </p>
         </div>
       )}
+
+      <CardRatingWidget cardId={card.id ?? ''} correlationId={correlationId ?? null} />
 
       <p className="px-4 pb-3 text-[9px] leading-relaxed" style={{ color: 'var(--text-secondary)', opacity: 0.35 }}>
         {t('protocolDisclaimer')}
