@@ -667,12 +667,12 @@ export const strings: Record<string, Record<string, string>> = {
   credPortfolio: { en: "Portfolio", es: "Portafolio" },
   credBadge: { en: "Verified Badge", es: "Insignia Verificada" },
   profileCredentialsCta: { en: "Build your reputation. Coming with Operator.", es: "Construye tu reputación. Disponible con Operador." },
-  profileTrialStatus: { en: "Trial Status", es: "Estado de Prueba" },
+  profileTrialStatus: { en: "Free solves", es: "Pruebas gratis" },
   profileDaysRemaining: { en: "days remaining", es: "días restantes" },
-  profileTrialExpired: { en: "Trial expired", es: "Prueba expirada" },
+  profileTrialExpired: { en: "Free solves used", es: "Pruebas gratis usadas" },
   profileUpgradeNow: { en: "Upgrade now \u2192", es: "Mejorar ahora \u2192" },
-  profileUpgradeCta: { en: "Upgrade to Spotter \u2014 $49/mo", es: "Mejorar a Spotter \u2014 $49/mes" },
-  profileUpgradeDesc: { en: "Unlock all pro tools, garment analysis, and customer handoff scripts.", es: "Desbloquea todas las herramientas pro, análisis de prendas y guiones de respuesta al cliente." },
+  profileUpgradeCta: { en: "Get GONR Home \u2014 $7.99/mo unlimited", es: "Obtener GONR Home \u2014 $7.99/mes ilimitado" },
+  profileUpgradeDesc: { en: "Unlimited stain removal at home. Cancel anytime.", es: "Quitamanchas ilimitado en casa. Cancela cuando quieras." },
   // ── Error messages ──
   // ── General ──
 

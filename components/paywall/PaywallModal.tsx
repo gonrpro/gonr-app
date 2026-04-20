@@ -115,10 +115,37 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
     <div className={styles.overlay} onClick={onDismiss}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.content}>
-          <h2 className={styles.title}>Your trial has ended</h2>
-          <p className={styles.subtitle}>Upgrade to keep full access to GONR</p>
+          <h2 className={styles.title}>You&apos;ve used your 3 free solves</h2>
+          <p className={styles.subtitle}>Pick a plan to keep removing stains</p>
 
           <div className={styles.plansGrid}>
+            {/* Home — primary consumer tier (TASK-051) */}
+            {isCheckoutLive('home') && (
+              <div className={styles.planCard} style={{ border: '1px solid rgba(34,197,94,0.4)', background: 'rgba(34,197,94,0.03)' }}>
+                <h3 className={styles.planName}>Home</h3>
+                <p className={styles.planDescription}>Confident stain removal at home</p>
+                <ul style={{ fontSize: '12px', color: '#6b7280', marginBottom: '12px', paddingLeft: '16px', lineHeight: '1.8' }}>
+                  <li>Unlimited solves</li>
+                  <li>Safe home-ingredient protocols</li>
+                  <li>Step-by-step guidance</li>
+                  <li>Cancel anytime</li>
+                </ul>
+                <div className={styles.pricing}>
+                  <span className={styles.price}>$7.99</span>
+                  <span className={styles.period}>/month</span>
+                </div>
+                <a
+                  href={buildCheckoutUrl('home') ?? '/auth/signup'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.checkoutBtn}
+                  style={{ background: '#22c55e' }}
+                >
+                  Get GONR Home
+                </a>
+              </div>
+            )}
+
             {/* Spotter — active */}
             <div className={styles.planCard}>
               <h3 className={styles.planName}>Spotter</h3>
