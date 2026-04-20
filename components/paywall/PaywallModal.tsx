@@ -89,20 +89,41 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
       <div className={styles.overlay} onClick={onDismiss}>
         <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
           <div className={styles.content}>
-            <h2 className={styles.title}>Create a free account to keep going</h2>
-            <p className={styles.subtitle}>Sign up free — get 3 solves to try GONR</p>
+            {/* Icon */}
+            <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🧪</div>
+
+            <h2 className={styles.title} style={{ fontSize: '1.3rem', lineHeight: '1.3' }}>
+              Your protocol is ready — create a free account to see it
+            </h2>
+            <p className={styles.subtitle} style={{ marginBottom: '0', lineHeight: '1.6' }}>
+              GONR uses 3,500+ dry-cleaning protocols to give you the exact treatment for this stain — not generic advice.
+            </p>
+
+            {/* Social proof / trust signals */}
+            <div style={{
+              display: 'flex',
+              gap: '12px',
+              margin: '16px 0',
+              fontSize: '11px',
+              color: 'var(--text-secondary)',
+              flexWrap: 'wrap',
+            }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>✓ No credit card</span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>✓ 3 free solves</span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>✓ Built by dry cleaners</span>
+            </div>
 
             <a
               href="/auth/signup"
               className={styles.checkoutBtn}
-              style={{ display: 'block', textAlign: 'center', marginTop: '16px', marginBottom: '12px' }}
+              style={{ display: 'block', textAlign: 'center', marginTop: '4px', marginBottom: '12px', padding: '14px', fontSize: '15px', fontWeight: 700, borderRadius: '10px' }}
             >
-              Sign up free
+              See my protocol — it&apos;s free
             </a>
 
-            <div className={styles.footer}>
-              <button onClick={onDismiss} className={styles.dismissBtn}>
-                Not right now
+            <div style={{ textAlign: 'center' }}>
+              <button onClick={onDismiss} className={styles.dismissBtn} style={{ fontSize: '12px', opacity: 0.5 }}>
+                I&apos;ll risk the stain
               </button>
             </div>
           </div>
