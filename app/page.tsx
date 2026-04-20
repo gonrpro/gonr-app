@@ -848,6 +848,7 @@ function SolvePageInner() {
         open={showPaywall}
         onDismiss={() => setShowPaywall(false)}
         reason={showPaywallReason}
+        stain={stainInput || selectedStain}
       />
 
       {/* Login gate modal — shown when anonymous user tries to solve */}

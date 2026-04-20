@@ -8,6 +8,7 @@ interface PaywallModalProps {
   open: boolean
   onDismiss: () => void
   reason?: 'trial_expired' | 'anon_limit'
+  stain?: string
 }
 
 // TASK-034: Operator waitlist capture. While Operator is parked, accumulate
@@ -81,7 +82,7 @@ function OperatorWaitlist() {
  * Paywall modal shown when free solves are exhausted
  * Displays 3 pricing tiers with checkout links to LemonSqueezy
  */
-export default function PaywallModal({ open, onDismiss, reason = 'trial_expired' }: PaywallModalProps) {
+export default function PaywallModal({ open, onDismiss, reason = 'trial_expired', stain }: PaywallModalProps) {
   if (!open) return null
 
   if (reason === 'anon_limit') {
@@ -93,7 +94,7 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
             <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🧪</div>
 
             <h2 className={styles.title} style={{ fontSize: '1.3rem', lineHeight: '1.3' }}>
-              Your protocol is ready — create a free account to see it
+              {stain ? `🧪 Nice. Your ${stain} protocol is ready.` : 'Your protocol is ready.'}
             </h2>
             <p className={styles.subtitle} style={{ marginBottom: '0', lineHeight: '1.6' }}>
               Built from decades of professional dry-cleaning experience. Your protocol is specific to this stain — not generic advice.
