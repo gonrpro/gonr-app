@@ -34,7 +34,7 @@ export default function SignupPage() {
         <div className="text-center space-y-2">
           <h1 className="text-xl font-bold">Start with GONR Home</h1>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            Confident stain removal at home — $9.99/month for unlimited solves,
+            Confident stain removal at home — $7.99/month for unlimited solves,
             safe home-ingredient protocols, and step-by-step guidance.
           </p>
         </div>

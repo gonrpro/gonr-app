@@ -2,7 +2,8 @@
  * Centralized checkout URL config.
  * Single source of truth for LemonSqueezy product URLs.
  *
- * Home: $9.99/mo consumer tier. Gated behind NEXT_PUBLIC_HOME_CHECKOUT_URL;
+ * Home: $7.99/mo consumer tier — unlimited solves (no monthly cap).
+ *   Tyler decision 2026-04-20. Gated behind NEXT_PUBLIC_HOME_CHECKOUT_URL;
  *   /auth/signup surfaces a friendly notice when the env var is not set.
  * Spotter: live product (variant active, buy_now_url ready).
  * Operator: product 892634 / variant 1404897 — variant status `pending` in

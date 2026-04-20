@@ -75,11 +75,10 @@ function getSupabaseAdmin() {
 // ── Server-side solve gating ───────────────────────────────────
 const FOUNDER_EMAILS = ['tyler@gonr.pro', 'tyler@nexshift.co', 'twfyke@me.com', 'eval@gonr.app', 'jeff@cleanersupply.com']
 
-// TASK-049 Phase 2 P2-b: feature flag gates the new tier-aware path.
-// When off, gate behavior is identical to pre-P2-b (free = 3 lifetime, paying = bypass).
-// When on, home tier users are gated at 15 solves per calendar month via the
-// consume_solve_atomic RPC (which wraps the check-and-increment in a single
-// transaction with SELECT ... FOR UPDATE for race safety).
+// TASK-049 Phase 2 P2-b flag retained for backwards compatibility; no longer
+// drives a per-month cap. Tyler decision 2026-04-20 (TASK-050): GONR Home is
+// unlimited solves at $7.99/mo. Abuse protection stays at the per-IP rate-limit
+// below; no user-facing monthly counter for Home subscribers.
 const HOME_TIER_GATE_ENABLED = process.env.HOME_TIER_GATE_ENABLED === 'true'
 
 type SolveTier = 'free' | 'home' | 'spotter' | 'operator' | 'founder'
@@ -202,11 +201,10 @@ async function checkAndIncrementSolve(
         return { allowed: true, viewerTier: tier }
       }
 
-      // Home tier (Phase 2 P2-b): tier-aware cap via atomic RPC — only when
-      // feature flag is on. Otherwise treat as free-tier (pre-P2-b behavior).
-      if (tier === 'home' && HOME_TIER_GATE_ENABLED) {
-        const r = await consumeSolveAtomic(supabase, email.toLowerCase(), 'home')
-        return { ...r, viewerTier: 'home' }
+      // Home tier (TASK-050): unlimited solves at $7.99/mo. Bypass the
+      // monthly cap; per-IP rate-limit in the request handler handles abuse.
+      if (tier === 'home') {
+        return { allowed: true, viewerTier: 'home' }
       }
 
       // Free tier — preserve legacy behavior regardless of feature flag.
@@ -720,21 +718,6 @@ export async function POST(req: Request) {
       viewerTier = gateResult.viewerTier
       if (!gateResult.allowed) {
         const isTransient = gateResult.reason === 'temporary_error'
-        // home_monthly_cap ships richer info so the UI can show "15/15 — upgrade
-        // or wait until <reset date>" instead of a generic cap error.
-        if (gateResult.reason === 'home_monthly_cap') {
-          return NextResponse.json(
-            {
-              error: 'home_monthly_cap',
-              reason: 'home_monthly_cap',
-              cap: gateResult.cap,
-              used: gateResult.used,
-              resetAt: gateResult.resetAt,
-              viewerTier: 'home',
-            },
-            { status: 402 }
-          )
-        }
         return NextResponse.json(
           { error: gateResult.reason || 'trial_expired', reason: gateResult.reason, viewerTier },
           { status: isTransient ? 503 : 402 }

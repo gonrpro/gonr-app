@@ -11,7 +11,7 @@
  * during page load; the source of truth is /api/auth/tier and /api/usage.
  */
 
-export type Tier = 'free' | 'spotter' | 'operator' | 'founder'
+export type Tier = 'free' | 'home' | 'spotter' | 'operator' | 'founder'
 
 const USER_TIER_KEY = 'gonr_user_tier'
 

@@ -411,6 +411,28 @@ export default function ProfilePage() {
         </div>
       )}
 
+      {/* PLAN — signed-in users (TASK-050) */}
+      {user && usage && (
+        <div className="card space-y-2">
+          <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
+            Plan
+          </p>
+          <div className="flex items-center justify-between">
+            <p className="text-sm font-semibold" style={{ color: 'var(--text)' }}>
+              {usage.tier === 'home' ? 'GONR Home · $7.99/mo'
+                : usage.tier === 'spotter' ? 'GONR Spotter · $49/mo'
+                : usage.tier === 'operator' ? 'GONR Operator · $99/mo'
+                : usage.tier === 'founder' ? 'GONR Founder'
+                : 'Free trial'}
+            </p>
+            <p className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>
+              {usage.limit === -1 ? 'Unlimited solves'
+                : `${usage.solvesRemaining} / ${usage.limit} solves left`}
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Logged-in content — skeleton on first visit (cache-miss) */}
       {user && dataLoading && !hydratedFromCache ? (
         <Skeleton />
