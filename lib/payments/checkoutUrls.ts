@@ -2,18 +2,21 @@
  * Centralized checkout URL config.
  * Single source of truth for LemonSqueezy product URLs.
  *
+ * Home: $9.99/mo consumer tier. Gated behind NEXT_PUBLIC_HOME_CHECKOUT_URL;
+ *   /auth/signup surfaces a friendly notice when the env var is not set.
  * Spotter: live product (variant active, buy_now_url ready).
  * Operator: product 892634 / variant 1404897 — variant status `pending` in
  *   LemonSqueezy, no live buy_now_url yet. Stays gated until the env var is set.
  *
- * To activate Operator after LemonSqueezy publishes the buy_now_url:
- *   1. Set NEXT_PUBLIC_OPERATOR_CHECKOUT_URL in Vercel
- *   2. Redeploy. PaywallModal switches automatically; no code change required.
+ * To activate Home or Operator after LemonSqueezy publishes the buy_now_url:
+ *   1. Set NEXT_PUBLIC_HOME_CHECKOUT_URL / NEXT_PUBLIC_OPERATOR_CHECKOUT_URL in Vercel
+ *   2. Redeploy. The signup page and PaywallModal switch automatically.
  */
 
-export type Tier = 'spotter' | 'operator'
+export type Tier = 'home' | 'spotter' | 'operator'
 
 export const CHECKOUT_URLS = {
+  home: process.env.NEXT_PUBLIC_HOME_CHECKOUT_URL || null,
   spotter: 'https://gonrlabs.lemonsqueezy.com/checkout/buy/67c21a2e-ae15-4b25-9021-42c791f80325',
   operator: process.env.NEXT_PUBLIC_OPERATOR_CHECKOUT_URL || null,
 } as const
