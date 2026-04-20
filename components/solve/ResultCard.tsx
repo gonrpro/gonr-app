@@ -122,32 +122,10 @@ interface ResultCardProps {
   viewerTier?: Tier | 'anon'
 }
 
-type OutcomeValue = 'solved' | 'partial' | 'failed'
-
 export default function ResultCard({ card, source, lang = 'en', correlationId, viewerTier = 'free' }: ResultCardProps) {
   const { t } = useLanguage()
   const [enlargedStepIndex, setEnlargedStepIndex] = useState<number | null>(null)
   const [fullCardOpen, setFullCardOpen] = useState(false)
-  // TASK-043 Slice 2 — inline outcome prompt.
-  // States: null = untouched, 'sending' = in-flight, OutcomeValue = reported, 'dismissed' = hidden.
-  const [outcomeState, setOutcomeState] = useState<null | 'sending' | OutcomeValue | 'dismissed'>(null)
-
-  async function reportOutcome(value: OutcomeValue) {
-    if (!correlationId || outcomeState === 'sending') return
-    setOutcomeState('sending')
-    try {
-      const res = await fetch('/api/solve/outcome', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ correlation_id: correlationId, outcome: value }),
-      })
-      if (!res.ok) throw new Error(String(res.status))
-      setOutcomeState(value)
-    } catch {
-      // Silent failure — user can retry; no workflow block per the on-demand rule.
-      setOutcomeState(null)
-    }
-  }
 
   const difficulty = card.difficulty ?? 5
   const dc = difficultyColor(difficulty)
@@ -418,56 +396,6 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
         )
       })()}
 
-      {/* ── Outcome prompt (TASK-043 Slice 2) ── */}
-      {/* Inline, dismissable, on-demand. Per the "never mandatory" rule. */}
-      {correlationId && outcomeState !== 'dismissed' && (
-        <div
-          className="px-4 py-3"
-          style={{ borderTop: '1px solid var(--border)' }}
-        >
-          {outcomeState === null || outcomeState === 'sending' ? (
-            <>
-              <div className="flex items-center justify-between mb-2">
-                <span
-                  className="text-xs font-semibold uppercase tracking-wider"
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  How did this go?
-                </span>
-                <button
-                  onClick={() => setOutcomeState('dismissed')}
-                  className="text-xs"
-                  style={{ color: 'var(--text-secondary)', opacity: 0.6 }}
-                  aria-label="Dismiss outcome prompt"
-                >
-                  Skip
-                </button>
-              </div>
-              <div className="flex gap-2">
-                {(['solved', 'partial', 'failed'] as OutcomeValue[]).map((v) => (
-                  <button
-                    key={v}
-                    onClick={() => reportOutcome(v)}
-                    disabled={outcomeState === 'sending'}
-                    className="flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors hover:opacity-90 disabled:opacity-50"
-                    style={{
-                      background: 'rgba(255,255,255,0.04)',
-                      border: '1px solid var(--border-strong)',
-                      color: 'var(--text)',
-                    }}
-                  >
-                    {v === 'solved' ? 'Solved' : v === 'partial' ? 'Partial' : 'Failed'}
-                  </button>
-                ))}
-              </div>
-            </>
-          ) : (
-            <span className="text-xs" style={{ color: 'var(--accent)' }}>
-              ✓ Reported: {outcomeState}
-            </span>
-          )}
-        </div>
-      )}
 
       {/* ── 9. Collapsible sections ── */}
       {/* Note: whyThisWorks already renders in the top "Chemistry overview"

@@ -1,6 +1,6 @@
 'use client'
 
-// TASK-052 Stage B — CardRatingWidget.
+// TASK-052 Stage B + TASK-053 dual-write — CardRatingWidget.
 //
 // Collapsed band at the bottom of the result card. Three UI states:
 //
@@ -8,13 +8,18 @@
 //   submitting — spinner on the primary CTA
 //   thanked  — "Thanks — saved. Add a note (optional)?" → textarea → submit
 //
-// A rating is only sent when the user has picked BOTH stars and a worked-state
-// (UX prevents partial submissions). No identity in the body (TASK-014 rule).
-// Server derives the rater from the Supabase session cookie, or falls back to
-// anon:<ip>. Notes are moderation-gated server-side (status='pending').
+// A rating is only sent when the user has picked BOTH stars and a worked-state.
+// No identity in the body (TASK-014 rule). Server derives the rater from the
+// Supabase session cookie, or falls back to anon:<ip>.
+//
+// TASK-053 dual-write: on every rating submit that has a correlationId, we
+// ALSO fire /api/solve/outcome with the mapped outcome value (yes→solved,
+// no→failed, partial→partial) so app/history's badge pipeline (reading from
+// the outcomes table) stays intact. The outcome write is fire-and-forget —
+// a ratings write is the new source of truth and must not block on outcome.
 
 import { useState } from 'react'
-import { submitRating } from '@/lib/ratings/fetch'
+import { submitRating, submitOutcome, workedToOutcome } from '@/lib/ratings/fetch'
 
 type WorkedValue = 'yes' | 'partial' | 'no'
 
@@ -48,6 +53,11 @@ export default function CardRatingWidget({ cardId, correlationId, onRated }: Pro
       setState('error')
       setError(res.error ?? 'submit_failed')
       return
+    }
+    // TASK-053: mirror the outcome onto the legacy pipeline so app/history keeps
+    // its badge pipeline. Fire-and-forget — failure is intentionally silent.
+    if (correlationId) {
+      void submitOutcome(correlationId, workedToOutcome(worked))
     }
     setState('thanked')
     onRated?.({ stars, worked })
