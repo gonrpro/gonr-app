@@ -96,7 +96,7 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
               Your protocol is ready — create a free account to see it
             </h2>
             <p className={styles.subtitle} style={{ marginBottom: '0', lineHeight: '1.6' }}>
-              GONR uses 3,500+ dry-cleaning protocols to give you the exact treatment for this stain — not generic advice.
+              Built from decades of professional dry-cleaning experience. Your protocol is specific to this stain — not generic advice.
             </p>
 
             {/* Social proof / trust signals */}
