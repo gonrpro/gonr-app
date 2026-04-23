@@ -12,6 +12,7 @@
 
 import { useState, useEffect } from 'react'
 import { recordClientEvent } from '@/lib/events/client'
+import { buildCheckoutUrl } from '@/lib/payments/checkoutUrls'
 
 interface UpgradeBannerProps {
   /** Unique identifier for this solve — dismissal state keyed by this. */
@@ -60,9 +61,11 @@ export default function UpgradeBanner({ correlationId, fromTier, cardId }: Upgra
       cardId: cardId ?? null,
       correlationId,
     })
-    const url = process.env.NEXT_PUBLIC_SPOTTER_CHECKOUT_URL
-      || process.env.NEXT_PUBLIC_OPERATOR_CHECKOUT_URL
-      || '/profile'
+    // TASK-073 2026-04-23: use the canonical Spotter checkout URL, not a
+    // env-var fallback chain that silently dropped to Operator when
+    // NEXT_PUBLIC_SPOTTER_CHECKOUT_URL wasn't set. Banner says "Upgrade to
+    // Spotter" — it MUST go to Spotter.
+    const url = buildCheckoutUrl('spotter') || '/profile'
     window.location.href = url
   }
 

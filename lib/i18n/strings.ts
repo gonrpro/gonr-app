@@ -171,6 +171,7 @@ export const strings: Record<string, Record<string, string>> = {
   pro: { en: "Pro", es: "Pro" },
   diy: { en: "DIY", es: "DIY" },
   proProtocol: { en: "Pro Protocol", es: "Protocolo Profesional" },
+  homeProtocol: { en: "Home Protocol", es: "Protocolo Casero" },
   fullProtocol: { en: "Full Protocol", es: "Protocolo Completo" },
   handsFree: { en: "Hands-Free", es: "Manos Libres" },
   readAloud: { en: "Read Aloud", es: "Leer en Voz Alta" },
