@@ -103,11 +103,7 @@ export default function HistoryPage() {
       }
       const data = await res.json()
       if (!data.ok) {
-        // TASK-071 2026-04-23 — surface the backend-supplied details during
-        // diagnosis. Kept behind the existing error UI; will be removed once
-        // root cause lands.
-        const suffix = data.details ? ` — ${data.details}` : ''
-        setError((data.error || 'request_failed') + suffix)
+        setError(data.error || 'request_failed')
         setRows([])
         return
       }
@@ -138,19 +134,19 @@ export default function HistoryPage() {
 
       {/* Filters */}
       <div className="space-y-2">
-        <div className="flex gap-2">
+        <div className="flex gap-2 w-full">
           <input
             value={stainFilter}
             onChange={e => setStainFilter(e.target.value)}
             placeholder="Filter stain…"
-            className="flex-1 px-3 py-2 rounded-lg text-sm"
+            className="flex-1 min-w-0 px-3 py-2 rounded-lg text-sm"
             style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)' }}
           />
           <input
             value={surfaceFilter}
             onChange={e => setSurfaceFilter(e.target.value)}
             placeholder="Filter surface…"
-            className="flex-1 px-3 py-2 rounded-lg text-sm"
+            className="flex-1 min-w-0 px-3 py-2 rounded-lg text-sm"
             style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)' }}
           />
         </div>
