@@ -183,6 +183,22 @@ export const strings: Record<string, Record<string, string>> = {
   upgradeSpotterTitle: { en: "Upgrade to Spotter — $49/mo", es: "Mejora a Spotter — $49/mes" },
   upgradeSpotterBlurb: { en: "Unlock Deep Solve, garment analysis, customer handoff scripts, and Stain Brain chat.", es: "Desbloquea Deep Solve, análisis de prendas, respuestas al cliente y chat con Stain Brain." },
   upgradeNow: { en: "Upgrade Now", es: "Mejorar Ahora" },
+
+  // TASK-063 — 3-tier result upsell (tierSpotterPrice/tierOperatorPrice/tierMostPopular
+  // already defined in the TierGate section below; reusing those.)
+  tierUpsellTitle: { en: "Pick a plan that fits how you remove stains", es: "Elige un plan que se ajuste a cómo quitas manchas" },
+  tierUpsellSubtitle: { en: "Free gets you 3 solves. Upgrade anytime.", es: "Gratis incluye 3 resoluciones. Mejora cuando quieras." },
+  tierHomeLabel: { en: "Home", es: "Hogar" },
+  tierHomePrice: { en: "$7.99/mo", es: "$7.99/mes" },
+  tierHomeBlurb: { en: "Unlimited solves with safe home-ingredient protocols. For everyday stains at home.", es: "Resoluciones ilimitadas con protocolos seguros para el hogar. Para manchas cotidianas en casa." },
+  tierHomeCta: { en: "Start Home", es: "Comenzar Hogar" },
+  tierSpotterLabel: { en: "Spotter", es: "Spotter" },
+  tierSpotterBlurb: { en: "Pro toolkit — unlimited solves, Deep Solve, Customer Handoff, Stain Brain chat.", es: "Kit pro — resoluciones ilimitadas, Deep Solve, Respuesta al Cliente, chat con Stain Brain." },
+  tierSpotterCta: { en: "Start Spotter", es: "Comenzar Spotter" },
+  tierOperatorLabel: { en: "Operator", es: "Operator" },
+  tierOperatorBlurb: { en: "Everything in Spotter plus team seats and priority Deep Solve. For plant owners and managers.", es: "Todo lo de Spotter más asientos para equipo y prioridad en Deep Solve. Para dueños y gerentes de planta." },
+  tierOperatorCta: { en: "Start Operator", es: "Comenzar Operator" },
+  tierComingSoon: { en: "Coming soon", es: "Próximamente" },
   diyHome: { en: "DIY / Home", es: "Para el Hogar" },
   proSteps: { en: "Pro Steps", es: "Pasos Pro" },
   diySteps: { en: "DIY Steps", es: "Pasos DIY" },

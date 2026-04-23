@@ -8,11 +8,11 @@ import SurfaceChips from '@/components/solve/SurfaceChips'
 import PaywallModal from '@/components/paywall/PaywallModal'
 import LanguageToggle from '@/components/protocols/LanguageToggle'
 import LoginGateModal from '@/components/auth/LoginGateModal'
+import ResultTierUpsell from '@/components/solve/ResultTierUpsell'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { useOptionalAuth } from '@/lib/auth/AuthContext'
 import { canAccessFeature } from '@/lib/auth/features'
 import { fetchUsageState, getRemainingTextFromState, type UsageState } from '@/lib/auth/trialGuard'
-import { buildCheckoutUrl } from '@/lib/payments/checkoutUrls'
 import type { ProtocolCard } from '@/lib/types'
 import { getStainLabel, getSurfaceLabel } from '@/lib/protocols/chips'
 import { BookOpen, Clock, ShieldCheck } from 'lucide-react'
@@ -363,30 +363,10 @@ function SolvePageInner() {
           viewerTier={result.viewerTier}
         />
         {(userTier === 'free' && !authLoading) && (
-          <a
-            href={buildCheckoutUrl('spotter') ?? '#'}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-center space-y-2 rounded-2xl p-5 mt-4 transition-all hover:scale-[1.01]"
-            style={{
-              background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.12), rgba(168, 85, 247, 0.08))',
-              border: '2px solid rgba(147, 51, 234, 0.4)',
-              boxShadow: '0 0 20px rgba(147, 51, 234, 0.1)',
-            }}
-          >
-            <p className="text-base font-bold" style={{ color: '#a855f7' }}>
-              {t('upgradeSpotterTitle')}
-            </p>
-            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-              {t('upgradeSpotterBlurb')}
-            </p>
-            <span
-              className="inline-block mt-1 px-5 py-2 rounded-xl text-sm font-bold text-white"
-              style={{ background: 'linear-gradient(135deg, #9333ea, #a855f7)' }}
-            >
-              {t('upgradeNow')}
-            </span>
-          </a>
+          <ResultTierUpsell
+            correlationId={result.correlationId ?? 'no-correlation'}
+            cardId={result.card?.id ?? null}
+          />
         )}
       </div>
     )
