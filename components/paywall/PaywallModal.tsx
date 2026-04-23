@@ -90,27 +90,23 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
       <div className={styles.overlay} onClick={onDismiss}>
         <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
           <div className={styles.content}>
-            {/* Icon */}
-            <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🧪</div>
-
-            <h2 className={styles.title} style={{ fontSize: '1.3rem', lineHeight: '1.3' }}>
-              {stain ? `🧪 Nice. Your ${stain} protocol is ready.` : 'Your protocol is ready.'}
+            <h2 className={styles.title} style={{ fontSize: '1.3rem', lineHeight: '1.3', textAlign: 'center' }}>
+              {stain ? `🧪 Nice. Your ${stain} protocol is ready.` : '🧪 Nice. Your protocol is ready.'}
             </h2>
-            <p className={styles.subtitle} style={{ marginBottom: '0', lineHeight: '1.6' }}>
-              Built from decades of professional dry-cleaning experience. Your protocol is specific to this stain — not generic advice.
+            <p className={styles.subtitle} style={{ marginBottom: '0', lineHeight: '1.6', textAlign: 'center' }}>
+              The exact first steps dry cleaners use, not generic internet advice.
             </p>
 
-            {/* Social proof / trust signals */}
             <div style={{
               display: 'flex',
-              gap: '12px',
-              margin: '16px 0',
+              flexDirection: 'column',
+              gap: '6px',
+              margin: '18px 0',
               fontSize: '11px',
               color: 'var(--text-secondary)',
-              flexWrap: 'wrap',
+              alignItems: 'center',
             }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>✓ No credit card</span>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>✓ 3 free solves</span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>✓ 3 free solves · no credit card</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>✓ Built by dry cleaners</span>
             </div>
 
@@ -119,12 +115,12 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
               className={styles.checkoutBtn}
               style={{ display: 'block', textAlign: 'center', marginTop: '4px', marginBottom: '12px', padding: '14px', fontSize: '15px', fontWeight: 700, borderRadius: '10px' }}
             >
-              See my protocol — it&apos;s free
+              See my free protocol
             </a>
 
             <div style={{ textAlign: 'center' }}>
-              <button onClick={onDismiss} className={styles.dismissBtn} style={{ fontSize: '12px', opacity: 0.5 }}>
-                I&apos;ll risk the stain
+              <button onClick={onDismiss} className={styles.dismissBtn} style={{ fontSize: '12px', opacity: 0.55 }}>
+                Not now
               </button>
             </div>
           </div>

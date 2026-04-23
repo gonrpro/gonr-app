@@ -8,9 +8,10 @@ interface LoginGateModalProps {
   onClose: () => void
   onLoggedIn: (email: string) => void
   redirectPath?: string
+  stain?: string
 }
 
-export default function LoginGateModal({ onClose, onLoggedIn, redirectPath }: LoginGateModalProps) {
+export default function LoginGateModal({ onClose, onLoggedIn, redirectPath, stain }: LoginGateModalProps) {
   const { t, lang } = useLanguage()
   const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false)
@@ -98,7 +99,13 @@ export default function LoginGateModal({ onClose, onLoggedIn, redirectPath }: Lo
 
             <div className="text-center space-y-2">
               <h2 className="text-xl font-bold" style={{ color: '#111827' }}>
-                {lang === 'es' ? 'Tu protocolo está listo' : 'Your protocol is ready'}
+                {lang === 'es'
+                  ? stain
+                    ? `Tu protocolo para ${stain} está listo`
+                    : 'Tu protocolo está listo'
+                  : stain
+                    ? `Your ${stain} protocol is ready`
+                    : 'Your protocol is ready'}
               </h2>
               <p className="text-sm" style={{ color: '#6b7280' }}>
                 {lang === 'es'

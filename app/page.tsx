@@ -854,6 +854,7 @@ function SolvePageInner() {
       {/* Login gate modal — shown when anonymous user tries to solve */}
       {showLoginGate && (
         <LoginGateModal
+          stain={stainInput || selectedStain}
           onClose={() => setShowLoginGate(false)}
           onLoggedIn={() => {
             setShowLoginGate(false)
