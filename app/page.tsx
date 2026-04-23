@@ -66,6 +66,8 @@ function SolvePageInner() {
 
   // Login gate state
   const [showLoginGate, setShowLoginGate] = useState(false)
+  // TASK-065: auto-restore-and-solve after magic-link return
+  const [shouldAutoSolve, setShouldAutoSolve] = useState(false)
 
   // Photo enrichment state
   const [capturedPhoto, setCapturedPhoto] = useState<File | null>(null)
@@ -199,6 +201,21 @@ function SolvePageInner() {
     // Gate: require login before solving
     const email = user?.email || localStorage.getItem('gonr_user_email')
     if (!email) {
+      // TASK-065: persist solve intent so magic-link return auto-restores it.
+      // Keeps the first-solve UX smooth: query → email → click link → result,
+      // no re-typing on the other side.
+      try {
+        const pending = {
+          stain: selectedStain || stainInput.trim(),
+          surface: selectedSurface,
+          ts: Date.now(),
+        }
+        if (pending.stain || pending.surface) {
+          localStorage.setItem('gonr_pending_solve', JSON.stringify(pending))
+        }
+      } catch {
+        // storage unavailable — user re-types on return; acceptable fallback
+      }
       setShowLoginGate(true)
       return
     }
@@ -310,6 +327,48 @@ function SolvePageInner() {
       setLoading(false)
     }
   }, [hasSolveInput, capturedPhoto, careLabelFile, fabricDescription, garmentLocation, selectedStain, selectedSurface, stainInput, lang, t, incrementSolveCount, scrollToResult, userTier, solvesRemaining, user, translateProtocolCard])
+
+  // TASK-065: after magic-link return lands the user authenticated, restore
+  // the stain/surface they were trying to solve and auto-run the solve once
+  // so they don't re-type. One-hour expiry on the stored intent to avoid
+  // zombie solves from an abandoned session.
+  useEffect(() => {
+    if (authLoading || !user || result || loading) return
+    try {
+      const raw = localStorage.getItem('gonr_pending_solve')
+      if (!raw) return
+      const pending = JSON.parse(raw)
+      if (!pending || typeof pending !== 'object') {
+        localStorage.removeItem('gonr_pending_solve')
+        return
+      }
+      const HOUR_MS = 60 * 60 * 1000
+      if (!pending.ts || Date.now() - pending.ts > HOUR_MS) {
+        localStorage.removeItem('gonr_pending_solve')
+        return
+      }
+      if (pending.stain) {
+        setSelectedStain(pending.stain)
+        setStainInput(pending.stain)
+      }
+      if (pending.surface) setSelectedSurface(pending.surface)
+      localStorage.removeItem('gonr_pending_solve')
+      setShouldAutoSolve(true)
+    } catch {
+      // corrupt storage — wipe and continue
+      try { localStorage.removeItem('gonr_pending_solve') } catch { /* noop */ }
+    }
+  }, [authLoading, user, result, loading])
+
+  // TASK-065: actually trigger the solve once state has settled from the
+  // pending-restore above. Separate effect so React has applied the setState
+  // calls before handleSolve runs and sees fresh values.
+  useEffect(() => {
+    if (!shouldAutoSolve) return
+    if (!hasSolveInput) return
+    setShouldAutoSolve(false)
+    handleSolve()
+  }, [shouldAutoSolve, hasSolveInput, handleSolve])
 
   const handleStainSelect = (stain: string) => {
     setSelectedStain(stain)
