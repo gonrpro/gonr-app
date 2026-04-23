@@ -323,7 +323,7 @@ export default function ProfilePage() {
             </p>
           ) : (
             <a
-              href={buildCheckoutUrl('spotter') ?? '#'}
+              href={buildCheckoutUrl('home') ?? buildCheckoutUrl('spotter') ?? '/auth/signup'}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-center py-2.5 rounded-xl text-sm font-bold transition-opacity hover:opacity-90"
@@ -869,7 +869,7 @@ export default function ProfilePage() {
       {/* UPGRADE CTA — anon only, bottom */}
       {!user && (
         <a
-          href={buildCheckoutUrl('spotter') ?? '#'}
+          href={buildCheckoutUrl('home') ?? buildCheckoutUrl('spotter') ?? '/auth/signup'}
           target="_blank"
           rel="noopener noreferrer"
           className="block text-center space-y-2 rounded-2xl p-5 transition-all hover:scale-[1.01]"
