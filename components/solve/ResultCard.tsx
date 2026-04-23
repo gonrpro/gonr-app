@@ -38,6 +38,8 @@ import UpgradeBanner from './UpgradeBanner'
 import WhenToStopFooter from './WhenToStopFooter'
 import TierFallbackNote from './TierFallbackNote'
 import { recordClientEvent } from '@/lib/events/client'
+import { useOptionalAuth } from '@/lib/auth/AuthContext'
+import { getEffectiveViewerTier } from '@/lib/auth/viewerTier'
 import {
   Microscope,
   Handshake,
@@ -135,11 +137,17 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
     : card.escalation
 
   const rawCard = card as any
+  const { user } = useOptionalAuth()
 
-  // ── Tier-aware rendering (TASK-049 P2-d) ──────────────────────
-  const HOME_TIER_ACTIVE = process.env.NEXT_PUBLIC_HOME_TIER_GATE_ENABLED === 'true'
-  const isHomeUI = HOME_TIER_ACTIVE && (viewerTier === 'home' || viewerTier === 'free' || viewerTier === 'anon')
-  const isPro = !isHomeUI
+  // ── Tier-aware rendering (TASK-066 fail-safe containment 2026-04-23) ─────
+  // RULE: tier separation MUST NOT depend on an env flag. Anon/free/home
+  // always render home-only. Only spotter/operator/founder unlock pro
+  // surfaces (protocol steps, Deep Solve, Customer Handoff, pro chemistry).
+  // If tier can't be determined, we fail downward to home UI — never upward.
+  const effectiveTier = getEffectiveViewerTier(viewerTier, user?.email ?? null)
+  const PAID_TIER_SET = new Set<string>(['spotter', 'operator', 'founder'])
+  const isPro = PAID_TIER_SET.has(effectiveTier)
+  const isHomeUI = !isPro
 
   // Pro-voice protocol derivation (unchanged)
   const spottingProtocolSteps: Step[] = card.spottingProtocol ?? (() => {
@@ -188,12 +196,12 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
   useEffect(() => {
     if (!correlationId) return
     recordClientEvent('render.tier_branched', {
-      viewerTier,
+      viewerTier: effectiveTier,
       cardId: card.id ?? null,
       protocolSource: isHomeUI ? (homeHasOwnProtocol ? 'home' : 'fallback') : 'pro',
       correlationId,
     })
-  }, [correlationId, viewerTier, card.id, isHomeUI, homeHasOwnProtocol])
+  }, [correlationId, effectiveTier, card.id, isHomeUI, homeHasOwnProtocol])
 
   return (
     <div className="rounded-xl overflow-hidden" style={{ background: 'var(--surface)', border: '1px solid var(--border-strong)' }}>
@@ -423,7 +431,9 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
 
         {(products.professional?.length || products.consumer?.length) ? (
           <Collapsible title={t('collapsibleProducts')} icon={ShoppingBag}>
-            {products.professional && products.professional.length > 0 && (
+            {/* TASK-066: professional products are a pro-tier surface. Home/free/anon
+                see consumer-tier products only. */}
+            {isPro && products.professional && products.professional.length > 0 && (
               <div className="space-y-2">
                 <p className="text-xs font-bold text-green-400 uppercase tracking-wider">{t('professional')}</p>
                 {products.professional.map((p, i) => (
