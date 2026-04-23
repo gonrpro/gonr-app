@@ -103,7 +103,11 @@ export default function HistoryPage() {
       }
       const data = await res.json()
       if (!data.ok) {
-        setError(data.error || 'request_failed')
+        // TASK-071 2026-04-23 — surface the backend-supplied details during
+        // diagnosis. Kept behind the existing error UI; will be removed once
+        // root cause lands.
+        const suffix = data.details ? ` — ${data.details}` : ''
+        setError((data.error || 'request_failed') + suffix)
         setRows([])
         return
       }

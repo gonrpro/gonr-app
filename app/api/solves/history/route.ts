@@ -91,8 +91,26 @@ export async function GET(req: Request) {
 
     const { data: eventRows, error: eventsErr } = await eventsQuery
     if (eventsErr) {
-      console.error('[history] events fetch failed:', eventsErr.message)
-      return NextResponse.json({ ok: false, error: 'database_error' }, { status: 500 })
+      // TASK-071 2026-04-23 — temporary diagnostic surface. Tyler reported
+      // `database_error` on fresh-auth /history. Logging + returning the
+      // real Supabase message so we can see the root cause in Vercel logs
+      // AND in the browser response during diagnosis. Remove `details`
+      // after root cause is fixed.
+      console.error('[history] events fetch failed:', {
+        message: eventsErr.message,
+        code: (eventsErr as { code?: string }).code,
+        details: (eventsErr as { details?: string }).details,
+        hint: (eventsErr as { hint?: string }).hint,
+        actor,
+        plantId,
+      })
+      return NextResponse.json({
+        ok: false,
+        error: 'database_error',
+        details: eventsErr.message,
+        code: (eventsErr as { code?: string }).code,
+        hint: (eventsErr as { hint?: string }).hint,
+      }, { status: 500 })
     }
     const events = (eventRows ?? []) as Array<{
       correlation_id: string
