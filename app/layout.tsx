@@ -5,6 +5,7 @@ import Nav from '@/components/layout/Nav'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import HtmlLangSetter from '@/components/layout/HtmlLangSetter'
+import PreviewBanner from '@/components/ui/PreviewBanner'
 import { LanguageProvider } from '@/lib/i18n/LanguageContext'
 import { AuthProvider } from '@/lib/auth/AuthContext'
 
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AuthProvider>
           <LanguageProvider>
             <HtmlLangSetter />
+            <PreviewBanner />
             <Header />
             <main className="px-4 pt-2 pb-4">
               {children}

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { useOptionalAuth } from '@/lib/auth/AuthContext'
 import { canAccessFeature } from '@/lib/auth/features'
+import { getEffectiveViewerTier } from '@/lib/auth/viewerTier'
 
 const NAV_ITEMS = [
   {
@@ -79,11 +80,12 @@ const NAV_ITEMS = [
 export default function Nav() {
   const pathname = usePathname()
   const { t } = useLanguage()
-  const { tier } = useOptionalAuth()
+  const { user, tier } = useOptionalAuth()
+  const effectiveTier = getEffectiveViewerTier(tier, user?.email ?? null) as typeof tier
 
   const visibleItems = NAV_ITEMS.filter(item => {
     if (!('feature' in item) || !item.feature) return true
-    return canAccessFeature(tier, item.feature)
+    return canAccessFeature(effectiveTier, item.feature)
   })
 
   function isActive(href: string) {
