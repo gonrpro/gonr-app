@@ -1,129 +1,218 @@
 {
   "id": "beer-carpet",
   "title": "Beer on Carpet",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Beer contains malt tannins, hop resins, proteins (from barley), and sugars. On carpet, the tannin component stains while the sugar creates a sticky residue that attracts dirt. Fresh beer stains are light and water-soluble. Dried beer stains darken as the tannins oxidize and the sugars caramelize, leaving a stiff, discolored patch.",
-  "whyThisWorks": "Surfactant treatment dissolves the sugar and protein components on carpet. The acidic tannin spotter (professional) or oxidizer (DIY) targets the tannin discoloration. Beer stains are among the easier tannin stains because the tannin concentration is relatively low compared to wine or coffee.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "15–30 minutes; one of the easier tannin stains",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "beer",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "sugar",
+      "carpet",
+      "party",
+      "no-alkaline",
+      "easy"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Beer contains light malt tannins (lower concentration than wine, coffee, or tea), hop resins, barley protein, and sugar (maltose / fermentable residuals). On carpet, fresh beer is light-colored and mostly water-soluble — it's one of the EASIER tannin stains. Dried beer darkens as tannins oxidize and sugar caramelizes, creating a sticky tan halo that attracts dirt for weeks if not flushed early. Dark beer (stout / porter) carries more melanoidin pigment from the roasted malt and stains harder than light beer. Same tannin rule as all the tannin family: NO alkaline cleaners (ammonia, baking soda, OxiClean) — they turn tannin darker permanently. Cold water + Dawn + peroxide + vinegar sequence clears most cases in one round.",
+  "whyThisWorks": "Beer's low tannin concentration means fresh beer lifts out with Dawn + cold water + 3% peroxide easily. Sugar flush first (cold water) prevents sticky residue from caramelizing or attracting dirt. Weighted paper towels overnight prevent pad wick-back ring.",
+  "defaultAssumption": "Party / pub context — spilled glass, dropped bottle, overfilled stein. Fresh = trivially easy. Overnight with sugar caramelized = harder, but still reasonable home win. Dark beer (stout) = budget an extra peroxide round. Spilled CASE of beer on carpet = pad saturation likely, pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot Outside-In",
+      "technique": "Absorb liquid before it reaches pad",
+      "equipment": "White paper towels or cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Press paper towels straight down on the spill. Lift, rotate, press. Work outside-in. Don't rub. Keep blotting until towels come up dry."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water Sugar Flush",
+      "technique": "Remove sugar + fresh tannin",
+      "equipment": "Cold water, white cloth",
+      "dwellTime": "1–2 min per pass",
+      "instruction": "Small amount of cold water on the spot, blot. Repeat 2–3 times. Removes sugar + fresh tannin. Cold only. Don't flood — pad wick."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Hidden Peroxide Test",
+      "technique": "Verify carpet color tolerance",
+      "equipment": "3% H₂O₂ + Dawn on damp cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "Dab the Dawn + peroxide mix (step 4) on a hidden carpet area 2 min. Color transfer = skip peroxide, Dawn alone. Clean = proceed."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Dawn + 3% Peroxide Mix",
+      "technique": "Oxidize tannin + lift",
+      "equipment": "1 tbsp Dawn + 1 cup 3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Mix Dawn + 3% peroxide. Dampen white cloth, wring, press 5–10 min. Blot. Light beer usually clears in 1 cycle. Dark beer / stout: 2 cycles.",
+      "safetyNote": "Never mix with ammonia / bleach / alkaline."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Rinse",
+      "technique": "Neutralize + keep tannin on acid side",
+      "equipment": "1 tbsp vinegar + 1 cup cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar rinse on damp cloth 5 min. Neutralizes peroxide, keeps tannin light. Blot dry."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Paper Towels Overnight + Fan",
+      "technique": "Prevent wick-back ring",
+      "equipment": "Paper towels + weight, fan",
+      "dwellTime": "8–12 hours",
+      "instruction": "Weighted paper towels overnight. Fan-dry in morning. Prevents sugar + tannin wick-back. Inspect in daylight — halo = one more peroxide round."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Immediate blot outside-in.",
+      "2. Cold water sugar flush + blot between.",
+      "3. Hidden peroxide test.",
+      "4. Dawn + 3% H₂O₂ mix damp cloth, 5–10 min, 1–2 cycles.",
+      "5. White vinegar + cool water rinse.",
+      "6. Weighted paper towels overnight + fan."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Paper towels + weight",
+      "Fan"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color",
-      "Avoid over-wetting — extract excess moisture to prevent backing damage"
+      "NEVER alkaline cleaners (baking soda / OxiClean / ammonia) on tannin",
+      "NEVER hot water — cross-links tannin",
+      "Hidden peroxide test on dyed carpet",
+      "Don't flood — pad wick",
+      "Dark beer / stout: expect 2 peroxide cycles"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test on a hidden spot",
-      "instruction": "Find a hidden patch of the same carpet — inside a closet, under furniture, behind a door. Dab a drop of your cleaning solution (Dawn + water, or the peroxide mix from step 5) and blot with a white cloth after two minutes. If the carpet holds its color, you're safe to treat. If the cloth picks up dye, stop — carpet dye is unstable and home chemistry will lighten it. Go to step 9."
+      "agent": "Good News — Beer Is an Easier Tannin Stain",
+      "instruction": "Beer has much less tannin than red wine, coffee, or tea — fresh beer usually lifts out in one round. The rules that matter: (1) NO alkaline cleaners — no baking soda, OxiClean, ammonia, all-purpose sprays. They turn tannin darker permanently. (2) Don't let the sugar dry into a sticky halo — flush it with cold water fast. Your toolkit: cold water, Dawn, 3% hydrogen peroxide, white vinegar."
     },
     {
       "step": 2,
-      "agent": "The tannin rule: no alkaline cleaners",
-      "instruction": "Beer stains are tannin, the same family as wine, coffee, and tea. Alkaline products — ammonia, baking soda, OxiClean, most \"all-purpose\" sprays — lock tannin into the fiber permanently and turn a pale beige ring into a dark brown one. Use only: cold water, dish soap, 3% hydrogen peroxide, and white vinegar. Nothing else."
+      "agent": "Blot — Outside In",
+      "instruction": "Press a thick stack of white paper towels straight down on the spill. Lift, move to a dry section, press again. Work from the outside of the spill inward. Don't rub — rubbing mashes beer + sugar into the pad, where it comes back as a ring."
     },
     {
       "step": 3,
-      "agent": "Blot the spill immediately — never rub",
-      "instruction": "Press a clean white cloth or stack of paper towels straight down on the wet spot. Lift, move to a dry section, press again. Work from the outside of the stain inward so you don't spread it. Keep blotting until the cloth stops picking up beer. Rubbing mashes the beer and its sugars deeper into the pile and the pad beneath."
+      "agent": "Cold Water Flush — Sugar First",
+      "instruction": "Pour a SMALL amount of cold water on the spot, blot with a dry cloth, repeat 2–3 times. Removes sugar + fresh tannin. Cold only — hot water cross-links tannin. Don't flood — pad wick is the enemy."
     },
     {
       "step": 4,
-      "agent": "Cold-water dilute",
-      "instruction": "Pour a small amount of cold water directly on the stain to dilute any remaining beer, then blot immediately. Repeat two or three times. This matters especially if the spill sat for even a few minutes — the sugar in beer caramelizes as it dries and creates a sticky crust that attracts dirt. Water dissolves it before it sets."
+      "agent": "Hidden Test Before Peroxide",
+      "instruction": "In a hidden carpet area, dab the Dawn + peroxide mix on a cloth, press 2 minutes. Carpet color transfers = skip peroxide, use Dawn alone. Clean = proceed."
     },
     {
       "step": 5,
-      "agent": "Dish-soap + hydrogen peroxide solution",
-      "instruction": "Mix one tablespoon of clear Dawn dish soap with one cup of 3% hydrogen peroxide in a small bowl. Dip a white cloth in the solution, wring nearly dry, and dab the stain. Let it sit five minutes, then blot with a clean damp cloth. Peroxide oxidizes the tannin color; Dawn lifts it and cuts the sugar. Repeat up to three cycles — most beer stains lift completely in this step.",
-      "safetyNote": "Never mix hydrogen peroxide with ammonia, bleach, or any other cleaner — dangerous gases. And test on your hidden patch first: peroxide can lighten bright carpet dyes."
+      "agent": "Dawn + 3% Hydrogen Peroxide",
+      "instruction": "Mix 1 tablespoon Dawn with 1 cup 3% drugstore hydrogen peroxide. Dampen a white cloth, wring it out, press on the spot 5–10 minutes. Blot with a clean damp cloth. Light beer (lagers / pilsners) usually clears in one round. Dark beer (stout, porter, brown ale) may need a second round.",
+      "safetyNote": "Never mix peroxide with ammonia, bleach, OxiClean, or baking soda."
     },
     {
       "step": 6,
-      "agent": "Vinegar-water rinse",
-      "instruction": "Mix one tablespoon of white vinegar into one cup of cold water. Dab onto the treated spot with a white cloth. This does two things: it neutralizes any peroxide residue, and the mild acid keeps the tannin from darkening later. Blot dry with a clean cloth."
+      "agent": "White Vinegar + Cool Water Rinse",
+      "instruction": "Mix 1 tablespoon white vinegar + 1 cup cool water. Dab on a damp cloth, press 5 minutes. Neutralizes peroxide, keeps any residual tannin on the light (acid) side. Blot dry."
     },
     {
       "step": 7,
-      "agent": "Dry down — prevent wicking",
-      "instruction": "Blot the area until no more moisture transfers to a dry cloth. Stack six to ten sheets of white paper towels over the spot, weigh them down with a heavy book, and leave overnight. This pulls any residual beer up out of the carpet pad before it can wick back to the surface as a ring. Do not walk on the area or vacuum until fully dry."
+      "agent": "Weighted Paper Towels Overnight",
+      "instruction": "Stack dry paper towels on the spot, put a heavy book on top, leave overnight. Pulls residual beer sugar + tannin out of the pad before it wicks back as a halo. Fan-dry in the morning. Inspect in daylight. Halo remaining = repeat steps 5–6."
     },
     {
       "step": 8,
-      "agent": "Check under daylight",
-      "instruction": "Once dry, inspect the spot under good natural light — not lamplight. Beer rings often look gone when wet but reappear as a pale tan halo when dry. If you see one, repeat steps 5–7 a second time. Two full rounds is the home ceiling. If the ring still shows after that, escalate."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a professional carpet cleaner",
-      "instruction": "If two rounds of peroxide + vinegar didn't lift the stain, or if the carpet failed the patch test, call a pro carpet cleaner. Tell them: \"Beer on [nylon/polyester/wool] carpet, treated with Dawn + 3% peroxide, vinegar rinse. Residual tan halo remains. No ammonia or alkaline products used.\" That handoff tells them you protected the tannin and lets them go straight to professional tannin spotter + extraction."
+      "agent": "Escalate for Case-Size Spills or Wool",
+      "instruction": "Pro if the spill is big enough to saturate the pad (someone spilled a whole six-pack), if the carpet is wool, or if alkaline cleaner was used before you got there (tannin locked). Tell them: \"Beer on [nylon / polyester / wool] carpet, [light / dark], age [fresh / overnight], home-treated with cold + Dawn + 3% peroxide + vinegar. No alkaline used. [Halo remains / pad saturation / alkaline was used before].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Blot outside-in; no rubbing.",
+      "2. NO alkaline cleaners — no baking soda / OxiClean.",
+      "3. Cold water sugar flush, 2–3 passes.",
+      "4. Hidden peroxide test.",
+      "5. Dawn + 3% peroxide mix damp cloth, 5–10 min, 1–2 cycles.",
+      "6. White vinegar + cool water rinse.",
+      "7. Weighted paper towels overnight + fan.",
+      "8. Large spill / wool / locked tannin = pro."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Paper towels + heavy book",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if alkaline cleaner was used first (tannin locked), if pad is saturated from a large spill, or if ring returns after two rounds.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NEVER alkaline cleaners — locks tannin",
+      "NEVER hot water",
+      "Hidden peroxide test on dyed carpet",
+      "Never flood — pad wick"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never baking soda / OxiClean / ammonia on beer",
+      "Never hot water",
+      "Never mix peroxide with bleach / ammonia",
+      "Never rub — drives into pad"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / olefin carpet: tolerates full protocol",
+      "Wool: hidden test, peroxide risky — pro lane for tight spots",
+      "Dyed carpet: hidden peroxide test mandatory"
     ]
   },
+  "materialWarnings": [
+    "Easier tannin than wine / coffee / tea",
+    "Alkaline cleaners still lock tannin",
+    "Dark beer takes an extra cycle"
+  ],
   "escalation": {
-    "when": "If beer stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is beer on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Case-size spill (pad saturation), wool carpet, alkaline cleaner used before treatment, or ring returns after two home rounds.",
+    "whatToTell": "\"Beer on [nylon / polyester / wool] carpet, [light / dark], age [fresh / overnight], home-treated with cold + Dawn + 3% peroxide + vinegar. No alkaline used [or: alkaline was applied before I started]. [Residual halo / pad saturation].\"",
+    "specialistType": "professional carpet cleaner with tannin chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Light beer (lager, pilsner) or dark (stout, porter)?",
+      "Fresh or dried in?",
+      "How much was spilled — glass, pitcher, case?",
+      "Has anyone applied OxiClean / baking soda?",
+      "Carpet fiber?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Light beer is the easy case — usually a one-round job. Dark beer has melanoidin pigment from roasted malts and takes an extra cycle. Case-size spills (a whole six-pack) saturate the pad and become a pro extraction job."
   },
-  "difficulty": 2,
-  "timeEstimate": "10-15 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,81 +1,179 @@
 {
   "id": "grease-carpet",
   "title": "Grease on Carpet",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Cooking grease is a thick triglyceride that coats carpet surfaces and resists water — water alone cannot break it down. Fresh grease sits on fiber surfaces; aged grease penetrates and polymerizes into a hard, oxidized film. The oleophilic nature of many fibers (especially polyester) means grease bonds preferentially to synthetic materials.",
-  "whyThisWorks": "POG (volatile dry solvent) dissolves the grease on contact from carpet. The principle is 'like dissolves like' — a non-polar solvent dissolves non-polar oils. Surfactant then emulsifies remaining micro-droplets so water can rinse them away. Applying solvent BEFORE water is critical — water causes the oil to emulsify and spread deeper.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "30 minutes to an hour; powder preload is the difference-maker",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "grease",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "oil",
+      "grease",
+      "carpet",
+      "powder-preload",
+      "kitchen",
+      "no-pour"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "\"Grease\" on carpet is a catch-all for thick animal / vegetable fats that coated the carpet from a kitchen context — bacon grease, chicken fat, beef drippings, butter, lard, cooking-pan splatter. Thicker and more adherent than cooking oil (which is thin and penetrating). Fresh grease sits on fiber surfaces more than thin oil does; aged grease oxidizes and polymerizes into a varnish-like film (same chemistry as aged cooking oil but starting from a thicker base). For motor oil / mechanical grease on carpet, use motor-oil-carpet — different chemistry. The carpet failure mode is pad saturation through pouring water on the grease — same rule as cooking oil: NEVER pour water on grease on carpet.",
+  "whyThisWorks": "Powder preload (cornstarch / fuller's earth) wicks thick grease UP via capillary action — works even better on viscous fats than on thin oil because the higher surface-tension gives powder more to grab. Dawn emulsifies the remaining fat. Aged / polymerized grease needs Goo Gone or mineral spirits softening first. Weighted paper towels overnight pull any remaining fat residue out of the pile.",
+  "defaultAssumption": "Kitchen context — cooking splatter, dropped bacon, knocked-over turkey roasting pan. Fresh = reasonable home win with powder + Dawn. Aged / dryer-cycled (if this is an area rug that went through a dryer) = harder, mineral spirits softening needed.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Bulk + Powder Preload",
+      "technique": "Remove solid fat, then wick liquid",
+      "equipment": "Plastic card, cornstarch / fuller's earth / baking soda",
+      "dwellTime": "30–60 minutes",
+      "instruction": "Scrape any solid fat (cooled bacon grease, chicken fat) with a plastic card into a garbage bag. Then cover the remaining grease with a THICK layer of cornstarch, baking soda, or fuller's earth. Let sit 30–60 min — grease needs longer than thin oil to wick. Vacuum off. Repeat with fresh powder if first layer saturated."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Emulsify residual grease",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Generous amount of Dawn in cool water on damp cloth. Work in with soft toothbrush 1–2 min. Dwell 5–10 min. Damp-cloth rinse — NEVER pour water on carpet. Repeat if oily feel remains."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Goo Gone / Mineral Spirits (Aged / Polymerized)",
+      "technique": "Solvent soften for set grease film",
+      "equipment": "Goo Gone or mineral spirits on white cloth",
+      "dwellTime": "30–60 sec per pass",
+      "instruction": "Aged grease with a stiff, shiny film: Goo Gone or mineral spirits on a white cloth. Tamp top, outside-in. Flip cloth. Ventilate. Then another Dawn pass to clear solvent."
+    },
+    {
+      "step": 4,
+      "side": "dry",
+      "agent": "Weighted Paper Towels Overnight + Fan",
+      "technique": "Pull residual fat + extract moisture",
+      "equipment": "Paper towels + weight, fan",
+      "dwellTime": "8–12 hours",
+      "instruction": "Stack paper towels, weight with heavy book, overnight. Fan-dry. Prevents any residual fat + water from wicking back up as a ring."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Scrape solid fat + powder preload 30–60 min. Vacuum.",
+      "2. Generous Dawn / NSD + soft brush on damp cloth.",
+      "3. Aged / polymerized: Goo Gone / mineral spirits tamp top.",
+      "4. Weighted paper towels overnight + fan."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda / fuller's earth",
+      "Dawn / NSD",
+      "Goo Gone / mineral spirits (aged only)",
+      "Paper towels + weight",
+      "Fan"
     ],
-    "temperature": "ambient",
+    "temperature": "room temp; no heat until grease cleared",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains",
-      "Ensure adequate ventilation when using solvents — VOC fumes require extraction"
+      "NEVER pour water on carpet — water spreads grease + pad soak",
+      "NEVER hot-dry residual grease — polymerizes",
+      "Powder preload is more effective on thick grease than thin oil",
+      "Flammable solvent for aged variant — ventilate, no flame"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Scrape + Powder First — Before Any Water",
+      "instruction": "If there's solid fat (cooled bacon grease, chicken fat), scrape it up with a plastic card or dull knife into a garbage bag. Don't wipe — wiping smears. Then cover the remaining grease with a thick layer of cornstarch, baking soda, or plain baby powder. Let it sit 30 to 60 minutes — longer than for thin cooking oil, because thick grease takes longer to wick up. Vacuum off with a carpet attachment. This step alone often removes most of the stain."
+    },
+    {
+      "step": 2,
+      "agent": "Dawn — Generous, Work It In",
+      "instruction": "Apply a generous amount of Dawn dish soap to a damp cloth. Work it into the spot with a soft toothbrush for 1–2 minutes. Let it sit 5–10 minutes. Dawn is what wildlife rehabbers use for oil-spill cleanup — it's specifically designed for this. Rinse with a damp cloth. NEVER pour water on the carpet. Repeat if the spot still feels oily."
+    },
+    {
+      "step": 3,
+      "agent": "Aged / Stiff Grease — Goo Gone on a Rag",
+      "instruction": "If the grease has been there long enough to feel stiff or shiny (polymerized — usually from being walked on for days, or from a hot spot in the room), Dawn alone won't finish. Apply Goo Gone (orange bottle, hardware store) to a clean white rag — NEVER pour on carpet. Tamp the spot from the top, flip the rag as it picks up grease. Work outside-in. Open windows — flammable. Then another round of Dawn to clear the solvent."
+    },
+    {
+      "step": 4,
+      "agent": "Weighted Paper Towels Overnight + Fan",
+      "instruction": "Stack dry paper towels on the spot, put a heavy book on top, leave overnight. Fan-dry in the morning. This step matters more for grease than for thin oil — any residual fat in the pad wicks back up as a greasy halo over the next few days without overnight extraction."
+    },
+    {
+      "step": 5,
+      "agent": "Escalate for Polymerized / Pad Saturation",
+      "instruction": "Call a pro if: the grease polymerized before you got to it and survives powder + Dawn + solvent, or someone poured water on the spot (pad saturation — grease is now in the pad where home chemistry can't reach it). Tell them: \"Kitchen grease on [nylon / polyester / wool] carpet, age [fresh / aged / polymerized], home-treated with powder preload + Dawn + [Goo Gone]. No water poured. [Residual greasy film / pad saturation suspected].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Scrape solid fat. Powder preload 30–60 min. Vacuum.",
+      "2. Repeat powder if first was saturated.",
+      "3. Generous Dawn + cool water damp cloth + soft toothbrush, 5–10 min.",
+      "4. Aged / polymerized: Goo Gone on rag, tamp top.",
+      "5. Weighted paper towels overnight + fan.",
+      "6. NEVER pour water on carpet — spreads grease + pad soak."
     ],
     "products": [
-      "Dawn dish soap",
-      "baking soda"
+      "Plastic card",
+      "Cornstarch / baking soda / baby powder",
+      "Dawn dish soap (generous)",
+      "Goo Gone (aged grease only)",
+      "Paper towels + heavy book",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if grease polymerized and survives two rounds of powder + Dawn + solvent, or if pad is saturated.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER pour water on carpet — water spreads grease + soaks pad",
+      "NEVER hot-dry residual grease — polymerizes",
+      "Powder preload is the unlock",
+      "Flammable solvent for aged variant — ventilate, no flame"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never pour water on greasy carpet",
+      "Never hot-dry residual grease — polymerizes",
+      "Never use solvent near flame",
+      "Never rub — drives grease into pad"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / olefin: tolerates full protocol",
+      "Wool: pro-lane if solvent needed",
+      "Jute backing: over-wetting browns"
     ]
   },
+  "materialWarnings": [
+    "Powder preload cuts work in half",
+    "Never pour water on grease",
+    "Overnight weighted towels prevent wick-back halo"
+  ],
   "escalation": {
-    "when": "If grease stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is grease on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Grease polymerized into stiff film after powder + Dawn + solvent, pad saturation suspected (water was poured), or two home rounds don't clear.",
+    "whatToTell": "\"Kitchen grease on [nylon / polyester / wool] carpet, age [fresh / aged / polymerized], home-treated with powder preload + Dawn + [Goo Gone]. No water poured. [Residual greasy film / pad saturation / shiny polymer].\"",
+    "specialistType": "professional carpet cleaner with solvent spotting"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Fresh or aged (walked on for days, through a dryer cycle)?",
+      "Kitchen grease (this card) or motor oil (see motor-oil-carpet)?",
+      "Solid / cooled fat or liquid?",
+      "Has anyone poured water on the spot?",
+      "Carpet fiber?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Motor oil has its own card — this one is for kitchen / cooking grease. Dryer-polymerized grease (if a rug went through a dryer with grease still on it) is the multi-step variant. If someone already poured water on the spot, assume pad saturation."
   },
-  "difficulty": 3,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

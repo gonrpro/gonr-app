@@ -1,82 +1,220 @@
 {
   "id": "ink-permanent-marker-upholstery",
   "title": "Permanent Marker on Upholstery",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Permanent marker contains xylene or toluene-based solvent, resin binder, and concentrated dye. On upholstery, the solvent penetrates deeply and evaporates, leaving a tough resin-dye film. The resin is designed to be solvent-resistant once dry — this is why 'permanent' markers are permanent. Fresh marker is much easier to treat than dried.",
-  "whyThisWorks": "Isopropyl alcohol or acetone (where fiber-safe) dissolves the resin binder on upholstery. The dissolved dye transfers to a blotting cloth. Amyl acetate provides the strongest safe solvent action for resistant residue. Complete removal is often not possible on porous materials — the dye penetrates too deeply. Professional treatment recommended for valued items.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "20–45 minutes; fiber + code checks before solvent",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "ink-permanent-marker",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "dye",
+      "solvent-dye",
+      "sharpie",
+      "upholstery",
+      "fiber-check-critical",
+      "code-check",
+      "kid-disaster"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Same chemistry as permanent marker on carpet: Sharpie-class marker is concentrated solvent-based dye in xylene/toluene/alcohol, with a resin binder that locks into fiber once the solvent evaporates. Upholstery adds two factors: (1) CODE TAG — S-only upholstery is solvent-cleaning lane but often doesn't tolerate the stronger solvents needed for Sharpie, and (2) CUSHION BATTING — if ink soaked deep, home chemistry can't reach foam. Also: IPA (91%) is the safest effective first solvent. Acetone is stronger but DESTROYS acetate, modacrylic, triacetate — and microfiber upholstery often contains those. Fiber check + code check are both non-negotiable. Black Sharpie is hardest; colors easier.",
+  "whyThisWorks": "IPA on a cloth softens Sharpie resin and lifts dye onto a catch cloth. Tamping from top + outside-in prevents spreading. On upholstery, working a catch cloth UNDER the fabric where possible (zip-off cushion covers, loose cushions) transfers dye DOWN and out. Dawn emulsifies residual solvent + pigment on W/W-S codes; dry-buff on S-only. Pro escalation threshold is moderate because cushion batting soak is the ceiling.",
+  "defaultAssumption": "Kid on couch with a Sharpie — extremely common. Fresh = real chance. Dried into a tight weave = harder. Batting soak (pressed hard for a while) = pro. Microfiber couch + colored Sharpie = fiber-test carefully; many microfiber fabrics contain acetate-sensitive fibers.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Code + Fiber Check — Before Any Solvent",
+      "technique": "Tag read + hidden-area IPA test",
+      "equipment": "91% IPA, white cloth, good light",
+      "dwellTime": "3 minutes",
+      "instruction": "Upholstery code: W / W-S = full protocol. S-only = solvent only (no Dawn + water rinse). X = vacuum only, pro. Fiber test: dab 91% IPA on a white cloth, press on hidden seam 30 sec. Color transfer / fiber change = STOP, pro. Clean = proceed with IPA. Microfiber often contains acetate-sensitive fibers — extra cautious on the test."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Catch Cloth UNDER (If Possible)",
+      "technique": "Direction-controlled transfer",
+      "equipment": "White cotton catch cloth",
+      "dwellTime": "1 minute",
+      "instruction": "If possible (zip-off cushion cover, loose seat cushion, reachable from behind), slip a white cotton catch cloth UNDER the fabric. Dissolved ink will transfer DOWN into the catch cloth rather than spreading sideways. For fixed upholstery without underside access, skip this step."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "91% IPA on White Cloth — Tamp From Top",
+      "technique": "Solvent tamp, outside-in, never poured",
+      "equipment": "91% IPA on white cotton cloth",
+      "dwellTime": "30–60 sec per pass",
+      "instruction": "Apply IPA to a white cloth (NEVER pour on upholstery). Press and tamp from the TOP. Flip cloth frequently as it picks up ink. Work outside-in. 3–5 passes typical for fresh Sharpie. Ventilate — flammable. No flames."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "If IPA Plateaus — Consider Stopping",
+      "technique": "Acetone only with confirmed fiber",
+      "equipment": "Acetone (only if fiber-tested)",
+      "dwellTime": "30 sec per pass",
+      "instruction": "If IPA stalls on stubborn ink AND hidden-seam test was fully clean (no color / fiber / texture change), re-test acetone at the hidden seam. Clean = same technique as IPA. Any doubt, especially on microfiber = STOP and go pro — acetone destroys acetate / modacrylic / triacetate fibers."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Dawn Damp Cloth (W / W-S) or Dry Buff (S)",
+      "technique": "Clear solvent + lift pigment",
+      "equipment": "Dawn + cool water on damp cloth",
+      "dwellTime": "3–5 minutes",
+      "instruction": "W / W-S: Dawn in cool water on damp cloth, work with soft toothbrush, blot. S-only: dry-buff solvent residue with clean cloth instead, no water added. Damp cloth only, never pour."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan-Dry",
+      "technique": "Extract + vent solvent",
+      "equipment": "Dry towel + weight, fan",
+      "dwellTime": "30 min + fan",
+      "instruction": "Weighted dry towel 30 min. Fan with window open several hours to vent solvent vapor. Inspect in daylight. Residual ink = repeat IPA passes."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate to dissolve the resin binder. Blot dissolved ink onto clean cloth",
-      "2. Repeat amyl acetate, blotting between applications — work from back of fabric when possible",
-      "3. Apply NSD to remove remaining residue. Flush with cool water",
-      "4. If color remains: apply H2O2 6% carefully on colorfast fabrics — 5-10 min dwell time, monitor",
-      "5. Apply Acetic Acid 28% (diluted 1:10) to neutralize. Blot dry"
+      "1. Code tag + fiber hidden-seam test with 91% IPA.",
+      "2. Catch cloth UNDER (where possible).",
+      "3. IPA on white cloth, tamp from top, outside-in, 3–5 passes.",
+      "4. Graduate to acetone ONLY if fiber-tested, all doubts = stop.",
+      "5. Dawn damp cloth (W/W-S) or dry buff (S).",
+      "6. Weighted dry towel + fan with ventilation."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "91% Isopropyl alcohol",
+      "Acetone (ONLY if fiber-tested, non-acetate)",
+      "Dawn / NSD",
+      "White cotton catch + tamp cloths",
+      "Fan"
     ],
-    "temperature": "cold",
+    "temperature": "ambient",
     "warnings": [
-      "Never rub ink — it spreads the dye",
-      "Work from back of fabric to push stain out"
+      "FIBER CHECK FIRST — acetone destroys acetate / modacrylic / triacetate",
+      "CODE CHECK — S-only = no water rinse",
+      "Microfiber often contains acetate-sensitive fibers",
+      "Flammable solvent — ventilate, no flame",
+      "Never pour solvent on upholstery — tamp with cloth",
+      "Cushion batting soak = pro",
+      "Wool / silk = pro only"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Two Checks Before Any Solvent — Code + Fiber",
+      "instruction": "Before rubbing alcohol or anything else touches the couch: (1) FABRIC TEST — is it safe? Acetone destroys acetate, modacrylic, and triacetate fibers on contact, and those fibers are common in microfiber and suede-like upholstery. Dab 91% isopropyl alcohol (drugstore) on a hidden seam first — if it picks up carpet color, fiber, or changes texture, STOP and go pro. (2) CODE TAG — find the tag under a cushion. W / W-S = full protocol. S-only = solvent-only, limited options. X = vacuum only, pro. If the cushion cover zips off and is machine-washable, that's often the best path — get the ink off with IPA in place first, then wash the cover cold."
+    },
+    {
+      "step": 2,
+      "agent": "Catch Cloth UNDER If Possible",
+      "instruction": "If possible (zip-off cushion cover, loose cushion), slip a clean white cotton cloth UNDERNEATH the fabric before applying solvent. As the ink dissolves, it transfers DOWN into the catch cloth rather than spreading sideways. For fixed upholstery without underside access, skip and work carefully from the top."
+    },
+    {
+      "step": 3,
+      "agent": "91% Rubbing Alcohol on a White Rag — Never Poured",
+      "instruction": "Apply 91% isopropyl rubbing alcohol (drugstore — the higher % than standard 70%) to a clean white cloth. DO NOT pour it on the upholstery — pouring sinks ink + solvent into the cushion batting where you can't reach. Press and tamp from the TOP. Flip the rag as it picks up ink. Work from the OUTSIDE of the stain toward the CENTER (counter-intuitive but prevents spreading). 3–5 passes for fresh Sharpie. Open windows — flammable. No candles, no gas stove, no smoking."
+    },
+    {
+      "step": 4,
+      "agent": "If IPA Plateaus — Stop and Consider",
+      "instruction": "If IPA runs out of effect, acetone is stronger — BUT only safe if your hidden-seam test was COMPLETELY clean AND you're confident the fabric isn't microfiber / acetate / modacrylic. Re-test acetone at the hidden seam first. Any doubt = stop and call a pro. Pure acetone on microfiber upholstery can melt the fiber."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn Damp Cloth OR Dry Buff — Code-Dependent",
+      "instruction": "W / W-S code: work a drop of Dawn in cool water into a damp cloth, press on the spot 3–5 minutes, blot. S-only code: DO NOT add water. Dry-buff the solvent residue with a clean dry cloth instead. Damp cloth only, no pouring either way."
+    },
+    {
+      "step": 6,
+      "agent": "Weighted Dry Towel + Ventilated Fan-Dry",
+      "instruction": "Stack a dry white towel on the spot, weigh with a book, 30 minutes. Point a fan at the area for several hours with windows open to vent solvent vapor. Don't close the room up while solvent is still evaporating. Inspect in daylight. Residual ink ghost = repeat steps 3–5."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate for S-Only, Microfiber, Batting Soak",
+      "instruction": "Call a pro if: the code is S-only and IPA plateaus, the upholstery is microfiber / suede-like / silk / wool, the hidden-seam test showed fiber interaction, or the ink soaked into cushion batting. Tell them: \"Permanent marker on [W / W-S / S / X] upholstery, fabric [microfiber / velvet / cotton / silk / unknown], age [fresh / dried], home-treated with 91% IPA tamped from top + [Dawn / dry buff]. No pouring. Fiber test was [clean / showed pickup]. [Residual ghost / batting saturation / fiber concern].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place a clean white cloth under the stain to catch transferred ink",
-      "2. Apply hydrogen peroxide 3% to the stain. Blot gently — do NOT rub",
-      "3. Blot dissolved ink onto the cloth. Move to clean area frequently",
-      "4. Apply Dawn dish soap and blot",
-      "5. Rinse with cold water. Air dry — no heat until stain is gone"
+      "1. FIBER CHECK + CODE CHECK — both non-negotiable.",
+      "2. Catch cloth UNDER if possible (zip-off cover).",
+      "3. 91% IPA on RAG, tamp from top, outside-in. NEVER pour.",
+      "4. Graduate to acetone ONLY if fiber-tested clean — otherwise stop.",
+      "5. Dawn damp cloth (W/W-S) OR dry buff (S-only).",
+      "6. Weighted dry towel + fan-dry with ventilation.",
+      "7. S-only plateau / microfiber / batting soak = pro."
     ],
     "products": [
-      "hydrogen peroxide 3%",
-      "Dawn dish soap"
+      "91% Isopropyl alcohol (drugstore)",
+      "Dawn dish soap",
+      "White cotton catch + tamp cloths",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if the hidden-seam test damages upholstery, if code is S-only and IPA plateaus, if the upholstery is microfiber / silk / wool / leather, or if ink soaked into cushion batting.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "FIBER CHECK FIRST — acetone destroys acetate / modacrylic / triacetate",
+      "CODE CHECK — S/X change protocol",
+      "Microfiber often contains acetate-sensitive fibers",
+      "Flammable solvent — ventilate, no flame, no smoking",
+      "NEVER pour solvent on upholstery",
+      "Never wipe ink — blot straight down or tamp outside-in",
+      "Wool / silk = pro only"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never acetone on untested fiber",
+      "Never pour solvent on upholstery",
+      "Never use solvent near flame",
+      "Never wipe — blot straight down or tamp"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S standard upholstery: tolerates IPA + Dawn",
+      "S-only: IPA only, dry buff — no water rinse",
+      "Microfiber: often acetate blend — fiber test critical",
+      "Acetate / modacrylic / triacetate: acetone destroys — pro",
+      "Silk / wool: pro only",
+      "Leather: different protocol entirely"
     ]
   },
+  "materialWarnings": [
+    "FIBER CHECK IS NON-NEGOTIABLE",
+    "Microfiber + acetone is a high-risk combo",
+    "Cushion batting = pro ceiling",
+    "Black Sharpie hardest; colors easier"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is ink permanent marker on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "Hidden-seam test damages fiber, code is S-only with IPA plateau, cushion batting shows ink soak-through, microfiber with solvent sensitivity, or acetone-free can't finish and acetone isn't fiber-safe.",
+    "whatToTell": "\"Permanent marker on [W / W-S / S / X] upholstery, fabric [microfiber / velvet / cotton / silk / unknown], age [fresh / dried], home-treated with 91% IPA tamped from top + [Dawn damp cloth / dry buff]. No pouring. Fiber test [clean / pickup]. [Residual ghost / batting soak / fiber concern].\"",
+    "specialistType": "professional upholstery cleaner with solvent spotting + fiber ID"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Upholstery code — W / W-S / S / X?",
+      "Fabric — microfiber / velvet / woven cotton / silk / leather?",
+      "Does the cushion cover zip off and wash?",
+      "Fresh or dried in?",
+      "Sharpie black, color? (black hardest)",
+      "Has anyone already tried anything?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Microfiber is the subtle trap — often an acetate blend and acetone-sensitive. Always start with 91% IPA, acetone-free. Zip-off washable cushion covers are the easiest path. Dark Sharpie colors (black, red, purple) often leave a pigment ghost even after the film dissolves."
   },
-  "difficulty": 8,
-  "timeEstimate": "20-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

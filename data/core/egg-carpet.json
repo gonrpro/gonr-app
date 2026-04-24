@@ -1,81 +1,201 @@
 {
   "id": "egg-carpet",
   "title": "Egg on Carpet",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Egg contains concentrated albumin protein that coagulates rapidly when exposed to heat. On carpet, raw egg is water-soluble and relatively easy to remove. Cooked or heat-set egg forms a tough, insoluble protein film that bonds mechanically and chemically to fiber surfaces. The fat content in yolk adds a secondary oil component.",
-  "whyThisWorks": "Cold water is critical — warm water instantly cooks the albumin into an insoluble solid on carpet. A digestant enzyme breaks down the protein chains, while a surfactant emulsifies the fat component from the yolk. Sequential treatment (protein first, then oil) ensures complete removal.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–30 minutes; cold water rule is the whole protocol",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "egg",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "protein",
+      "albumin",
+      "carpet",
+      "cold-water-critical",
+      "breakfast",
+      "no-hot-water"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Egg is concentrated albumin (egg white) + yolk (which adds fat + protein). Raw egg is water-soluble and easy to remove IF treated cold. Hot or warm water instantly COOKS the albumin into an insoluble white solid that bonds mechanically to carpet fiber (same chemistry as frying an egg — heat + protein = denaturation + cross-linking). Cooked / heat-set egg is a permanent plastic-like film. The #1 mistake: someone pours warm water on the spill to \"rinse it off,\" and instead cooks the egg into the carpet. Cold water ONLY is the entire rule for this stain, even if the egg was warm when it landed.",
+  "whyThisWorks": "Cold water keeps the albumin mobile so it can be blotted / rinsed out rather than cooked in. Enzyme pretreat in WARM (not hot) water then digests any remaining albumin without setting it. Dawn handles the fat fraction from the yolk. Skipping cold-first or using hot water at any step locks in the protein permanently — no home chemistry reverses a cooked egg in carpet.",
+  "defaultAssumption": "Breakfast spill — dropped raw egg, cracked while cooking. Fresh + still liquid = very winnable. Dried overnight = harder, but the protein isn't heat-set unless someone used hot water on it. If someone DID use warm/hot water on it before you got there, the egg is likely cooked into the carpet permanently.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scoop Bulk + Blot",
+      "technique": "Remove solids before any water",
+      "equipment": "Spoon / dull edge, paper towels",
+      "dwellTime": "2 minutes",
+      "instruction": "Scoop any yolk / shell pieces into a garbage bag with a spoon. Press paper towels STRAIGHT DOWN on the liquid. Lift straight up. Repeat with fresh towels until no more transfers. Don't rub."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "COLD Water Blot — No Warm, No Hot",
+      "technique": "Small-volume cold dilute + blot",
+      "equipment": "Cold water, white cloth, dry towel + weight",
+      "dwellTime": "2 min per pass",
+      "instruction": "Pour a SMALL amount of COLD water on the spot. Blot with dry cloth. Repeat 2–3 passes. Cold only — warm / hot water immediately cooks egg white into a permanent plastic film. Don't flood — pad wick."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn + Cold Water Damp Cloth",
+      "technique": "Lift fat + remaining albumin",
+      "equipment": "Dawn + cold water, soft brush",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn in cold water on damp cloth. Work in with soft toothbrush 5 min. Lifts yolk fat and most remaining albumin. Blot. Damp-cloth rinse — NEVER pour water."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat — WARM (Not Hot)",
+      "technique": "Digest residual albumin",
+      "equipment": "OxiClean Versatile / Biz in WARM (<100°F) water on damp cloth",
+      "dwellTime": "15 minutes",
+      "instruction": "Enzyme pretreat in WARM water — bath temperature, NOT hot. Damp cloth, press 15 min. Digests any remaining albumin. Don't use hot — even this late-stage hot would still set residual."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan",
+      "technique": "Extract moisture before pad wicks",
+      "equipment": "Dry towel + weight, fan",
+      "dwellTime": "30 min + fan",
+      "instruction": "Weighted dry towel 30 min. Fan-dry. Inspect in daylight. Residual film = already heat-set (someone used warm water) = pro, not more home rounds."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Scoop solids + blot straight down.",
+      "2. COLD water small-volume dilute, blot between.",
+      "3. Dawn + cold water damp cloth + soft brush.",
+      "4. Enzyme pretreat WARM (not hot), 15 min.",
+      "5. Weighted dry towel + fan-dry."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Spoon / plastic card",
+      "Dawn / NSD",
+      "Enzyme pretreat (OxiClean Versatile / Biz)",
+      "Paper towels + weight",
+      "Fan"
     ],
-    "temperature": "cold",
+    "temperature": "cold through initial; warm (<100°F) for enzyme; NEVER hot",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein",
-      "Avoid over-wetting — extract excess moisture to prevent backing/foam damage"
+      "NEVER warm or hot water — cooks albumin permanently",
+      "NEVER steam",
+      "Cooked egg is not removable by home chemistry — pro only",
+      "Don't flood — pad wick",
+      "Cold-water-only rule even if egg was hot when it landed"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "COLD Water Only — This Is the Whole Rule",
+      "instruction": "Egg on carpet is easy IF you use cold water. It's permanent IF you use warm or hot water. That's the whole fight. Egg white (albumin) cooks into an insoluble plastic film the moment it hits heat — same chemistry as frying an egg. If someone has already poured warm water on the spot, the egg is likely cooked in and a pro is the only option. If you caught it before any heat, you're in great shape. Even if the egg was warm when it landed (just cracked, still from a warm pan), use COLD water now — the stain itself is still mobile if it hasn't been cooked AGAIN."
+    },
+    {
+      "step": 2,
+      "agent": "Scoop + Blot — Don't Rub",
+      "instruction": "Use a spoon to scoop up any yolk or shell into the trash. Press paper towels STRAIGHT DOWN on the liquid. Lift straight up, press fresh ones, repeat. Don't rub — rubbing drives protein and fat into the pad."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Blot — Small Volume",
+      "instruction": "Pour a SMALL amount of COLD tap water on the spot and blot with a dry cloth. Repeat 2–3 times. Cold only. Don't use warm, don't use hot, don't use room temp if your tap runs warm. If unsure, run the cold tap for 30 seconds before filling a cup. Don't flood — water that reaches the pad is trapped there."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Cold Water Damp Cloth",
+      "instruction": "Mix 1 tablespoon Dawn in 2 cups cold water. Dampen a white cloth, work into the spot with a soft toothbrush for 5 minutes. Dawn handles the fat from the yolk and lifts most of the remaining albumin. Damp-cloth rinse — don't pour water."
+    },
+    {
+      "step": 5,
+      "agent": "Enzyme Pretreat in WARM (Not Hot) Water",
+      "instruction": "Dissolve OxiClean Versatile or Biz in WARM water — bath temperature, under 100°F. NOT hot. Warm is needed for enzyme activity but wouldn't cook already-weakened albumin the way hot would. Dampen a white cloth in the solution, press on the spot, cover with a damp towel, 15 minutes. Digests any residual egg."
+    },
+    {
+      "step": 6,
+      "agent": "Weighted Paper Towels + Fan",
+      "instruction": "Stack dry paper towels on the spot, put a heavy book on top, 30 minutes. Fan-dry. Inspect in daylight. Fully clean = win. White / yellowish film remaining = already heat-set (warm water was used at some point) — home chemistry can't reverse that. Pro."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate for Heat-Set",
+      "instruction": "If the egg got warm / hot water before you started, or if a white film remains after the full cold-water cycle: pro. Tell them: \"Egg on carpet, age [fresh / overnight], home-treated with cold water + Dawn + enzyme (warm, not hot). [No hot water used / warm water was used before I got there]. [Residual white film / fully clear].\" Be honest about whether warm water was used — it changes what's possible."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. COLD WATER ONLY. Warm = cooked = permanent.",
+      "2. Scoop solids + blot straight down.",
+      "3. Cold water small-volume dilute, blot between, 2–3 passes.",
+      "4. Dawn + cold water damp cloth + soft brush, 5 min.",
+      "5. Enzyme pretreat WARM (<100°F, NOT hot), 15 min.",
+      "6. Weighted paper towels + fan-dry.",
+      "7. Heat-set = pro (cold water only can't reverse cooked albumin)."
     ],
     "products": [
+      "Spoon / plastic card",
       "Dawn dish soap",
-      "cold water"
+      "OxiClean Versatile or Biz pretreat",
+      "White paper towels + heavy book",
+      "Fan"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if warm or hot water was used on the spot before you got there (egg likely cooked in), or if a white film remains after cold-water cycle.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "NEVER warm or hot water — cooks albumin permanently",
+      "NEVER steam",
+      "Cooked egg in carpet is pro-only",
+      "Never pour — pad wick",
+      "Cold water only on initial blotting"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never warm or hot water on raw egg",
+      "Never steam-clean",
+      "Never skip cold-water step",
+      "Never rub — drives into pad"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / olefin carpet: tolerates full protocol",
+      "Wool: pH-sensitive — hidden test on enzyme",
+      "Most carpet dyes: stable against cold + Dawn + enzyme"
     ]
   },
+  "materialWarnings": [
+    "Cold water only — warm water = cooked egg = permanent",
+    "Enzyme warm (not hot)",
+    "Heat at any step sets the protein"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is egg on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Warm / hot water was used on the spot before treatment, white albumin film remains after cold-water cycle, or stain dried overnight with heat exposure.",
+    "whatToTell": "\"Egg on carpet, age [fresh / overnight], home-treated with cold water + Dawn + enzyme (warm, not hot). [No hot water / warm water was used before I got here]. [Residual white film / fully clear].\"",
+    "specialistType": "professional carpet cleaner with protein / cooked-albumin chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Raw egg (dropped from carton) or cooked egg (scrambled / fried)?",
+      "Fresh or dried in?",
+      "Has anyone used warm / hot water on the spot?",
+      "Whole egg or just white / just yolk?",
+      "Carpet fiber?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Cooked egg (scrambled, fried) dropped on carpet is simpler — no albumin-cooking risk, just scoop + blot + Dawn for any fat. Raw egg is the hard variant because of the cold-water rule. The warm-water-first mistake is extremely common and irreversible."
   },
-  "difficulty": 4,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

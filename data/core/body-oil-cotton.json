@@ -1,81 +1,233 @@
 {
   "id": "body-oil-cotton",
   "title": "Body Oil on Cotton",
-  "stainFamily": "protein",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Body oil (sebum) contains triglycerides, wax esters, squalene, and cholesterol. On cotton, these lipids penetrate the fiber and oxidize over time, becoming increasingly polymerized and resistant to standard washing. The yellowing associated with collar and cuff rings is caused by oxidized squalene and protein residue from sweat combining with the oils.",
-  "whyThisWorks": "A degreasing surfactant (POG professionally, Dawn at home) emulsifies the oils and makes them water-soluble on cotton. For oxidized/polymerized oils, a solvent pre-treatment dissolves the hardened residue before the surfactant can work. The protein component from sweat is addressed with enzyme or cold-water surfactant treatment.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–45 minutes per round; cumulative buildup takes multiple rounds",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "body-oil",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "oil",
+      "sebum",
+      "cotton",
+      "pillowcase",
+      "collar-cuff",
+      "cumulative-buildup",
+      "honest-expectations"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Body oil is SEBUM — the oily secretion from skin: triglycerides + wax esters + squalene + cholesterol + free fatty acids. Plus trace protein from sweat (urea, albumin). On cotton, sebum penetrates fiber rapidly and OXIDIZES over time — fresh sebum is clear and easy to lift, but after oxygen exposure squalene cross-links into polymerized yellow residue. Heat accelerates the yellowing dramatically — this is why pillowcases and collars yellow faster if dried on high heat. The stain is ALWAYS cumulative: every night of sleep adds a thin layer, every day of wear adds a little more. One treatment never fully clears months of buildup — honest expectation is 2–3 rounds for set yellowing. Once fully polymerized (months of heat-setting in the dryer), the yellow can be permanent.",
+  "whyThisWorks": "Dawn emulsifies fresh triglyceride sebum effectively. Pre-treatment with enzyme laundry detergent handles the protein fraction from sweat. For oxidized / yellowed cotton, a PRE-SOAK in Dawn + enzyme pretreat in warm water softens polymerized squalene before washing. 3% peroxide on white cotton brightens residual yellow. Air-dry prevents heat-setting residual oil. The limitation: cumulative buildup that has been heat-set over months in a dryer is often past home recovery. Prevention (pillowcase cover wash rotation, switching to lower-oil-producing skincare) matters as much as treatment.",
+  "defaultAssumption": "Pillowcase yellowing, collar / cuff ring, underarm oil on dress shirts. Fresh spot = quick win. Months of cumulative yellow that's been through the dryer many times = 2–3 rounds minimum, sometimes past recovery. White cotton = best response (peroxide + sun). Colored cotton = skip peroxide or hidden-test carefully.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scope Check — Fresh or Cumulative Yellow?",
+      "technique": "Set realistic expectations",
+      "equipment": "Good light",
+      "dwellTime": "1 minute",
+      "instruction": "FRESH spot (today's pillowcase, one-off sweat ring) = one round usually clears it. CUMULATIVE YELLOW (months of buildup — pillowcase yellowing, old dress shirts with yellow collars) = 2–3 rounds minimum, sometimes past recovery if heat-set. Plan accordingly."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Pre-Treat — Dawn Directly on Dry Fabric",
+      "technique": "Surfactant penetration before wash",
+      "equipment": "Dawn dish soap (undiluted)",
+      "dwellTime": "30 min for fresh / overnight for cumulative",
+      "instruction": "Apply Dawn directly to the oil stain on DRY cotton (counter-intuitive but works — dry fabric absorbs more surfactant into the fiber than wet). Work in with fingertips. Let dwell 30 min for fresh spots, overnight for cumulative yellow. Dawn penetrates sebum while it's concentrated."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Warm Water Soak + Enzyme Pretreat",
+      "technique": "Protein digestion + oil softening",
+      "equipment": "OxiClean Versatile / Biz / Tide with enzymes in warm water basin",
+      "dwellTime": "30–60 minutes",
+      "instruction": "Dissolve enzyme pretreat in a basin of warm water (100–110°F is OK for enzyme on cotton — cotton is heat-tolerant and this stain's protein fraction benefits from warm). Submerge the oil area, soak 30–60 min. Cumulative yellow: up to 2 hours."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Agitate + Soft Brush",
+      "technique": "Mechanical lift of loosened oil",
+      "equipment": "Soft brush, fingertips",
+      "dwellTime": "2 minutes",
+      "instruction": "Work the stain area with fingertips and a soft brush. Break up loosened oil. Rinse warm."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for White Cotton Yellow",
+      "technique": "Oxidize residual yellow",
+      "equipment": "3% H₂O₂ directly on the spot",
+      "dwellTime": "10–15 minutes",
+      "instruction": "WHITE cotton only: apply 3% peroxide directly to residual yellow. Dwell 10–15 min. Brightens oxidized sebum yellow. Skip on colored / dyed cotton — hidden-test if trying.",
+      "safetyNote": "Never mix peroxide with ammonia, bleach, or strong alkali."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Hot Wash (Cotton Tolerates) + Sun-Dry",
+      "technique": "Launder hot + UV finish",
+      "equipment": "Washing machine, outdoor line",
+      "dwellTime": "Full cycle + sun-dry",
+      "instruction": "Cotton tolerates hot wash once protein is digested. Wash hot per care label. LINE-DRY IN SUN if possible — UV photodegrades residual yellow on cotton (decades-old laundry trick, still works). Inspect BEFORE a hot dryer cycle — dryer heat on residual yellow locks it in permanently."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Inspect + Repeat If Cumulative",
+      "technique": "2–3 rounds for chronic buildup",
+      "equipment": "Daylight inspection",
+      "dwellTime": "n/a",
+      "instruction": "Daylight check. Fresh yellow usually clears round 1. Cumulative usually needs 2–3 rounds of steps 2–6. After each round, evaluate — if there's no improvement at all from round 2 to round 3, the yellowing is likely heat-set permanently."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Scope — fresh or cumulative yellow.",
+      "2. Dawn directly on dry fabric, dwell 30 min – overnight.",
+      "3. Enzyme pretreat soak in warm water 30 min – 2 hr.",
+      "4. Soft brush + fingertip agitation.",
+      "5. 3% H₂O₂ on residual white-cotton yellow, 10–15 min.",
+      "6. Hot wash (cotton tolerates) + sun-dry.",
+      "7. Repeat 2–3 rounds for cumulative. Stop if no progress round 2→3."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn dish soap (pre-treatment on dry fabric)",
+      "Enzyme pretreat (OxiClean Versatile / Biz / Tide enzymes)",
+      "3% Hydrogen peroxide (white cotton only)",
+      "Sunlight"
     ],
-    "temperature": "cold",
+    "temperature": "warm for pre-soak; hot wash once protein is digested; air-dry or sun-dry only — NO dryer heat on residual yellow",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "NEVER dryer heat on residual yellow — heat-sets permanently",
+      "Dawn on DRY cotton pre-treatment is counter-intuitive but key",
+      "Cumulative buildup needs 2–3 rounds — manage expectations",
+      "3% peroxide = white cotton only; hidden-test dyed",
+      "Prevention matters (cover rotations, aluminum-free deodorant, lower-oil skincare)"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Set Expectations — Fresh vs Cumulative",
+      "instruction": "Body oil (sebum) on cotton is a cumulative stain — every night of sleep adds a thin layer to a pillowcase, every day of wear adds a little to a collar. That matters because: (1) fresh spots (one night, one wear) usually clear in ONE round, but (2) CUMULATIVE yellowing (months of buildup on a pillowcase, set collar rings on old dress shirts) usually needs 2 to 3 rounds minimum, and sometimes — if it's been heat-set in a hot dryer over many months — it's past home recovery. This isn't a failure; it's the chemistry of oxidized sebum. Plan accordingly."
+    },
+    {
+      "step": 2,
+      "agent": "Pre-Treat with Dawn on DRY Cotton — Counter-Intuitive",
+      "instruction": "Before washing, squirt Dawn dish soap DIRECTLY onto the oil stain on DRY cotton. This feels wrong (soap usually wants water) but it works better — dry fabric absorbs more surfactant deep into the fiber than wet fabric does. Work it in with your fingertips. For fresh spots: let dwell 30 minutes. For cumulative yellow: let dwell OVERNIGHT. Dawn penetrates sebum while the surfactant is most concentrated."
+    },
+    {
+      "step": 3,
+      "agent": "Warm Soak with Enzyme Pretreat",
+      "instruction": "Fill a basin with warm water (100–110°F is fine — cotton is heat-tolerant, and warm helps enzyme activity). Dissolve a scoop of OxiClean Versatile, Biz, or detergent-with-enzymes. Submerge the oil area and soak 30–60 minutes. For cumulative yellow, go up to 2 hours. The enzyme digests the small protein fraction from sweat that's part of the stain."
+    },
+    {
+      "step": 4,
+      "agent": "Soft Brush + Fingertip Work",
+      "instruction": "Work the stained area with your fingertips and a soft toothbrush to break up the loosened oil. Rinse warm. Check if the yellow is fading."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide for Residual Yellow (White Cotton Only)",
+      "instruction": "For WHITE cotton with residual yellow: apply 3% drugstore peroxide directly to the spot. 10–15 minutes. Oxidizes the oxidized-sebum yellow pigment. Skip on colored or dyed cotton — peroxide can lighten fabric dye. If trying on colored cotton, hidden-seam test for 2 minutes first.",
+      "safetyNote": "Never mix peroxide with ammonia, bleach, or strong alkali."
+    },
+    {
+      "step": 6,
+      "agent": "Hot Wash + Sun-Dry — The Finisher",
+      "instruction": "Cotton handles hot water once the protein is digested (from the enzyme pretreat). Wash hot per care label. Then LINE-DRY IN THE SUN if weather allows. Sunlight + the UV rays + residual moisture photodegrade remaining yellow — this is the old-fashioned technique for yellowed white linens and it actually works. Inspect BEFORE using a hot dryer — dryer heat on residual yellow LOCKS IT IN PERMANENTLY, and that's where chronic pillowcase yellowing comes from."
+    },
+    {
+      "step": 7,
+      "agent": "Repeat for Cumulative Buildup — 2 or 3 Rounds",
+      "instruction": "Daylight check. Fresh spots: usually one round. Cumulative yellow: usually 2–3 rounds. After round 2, if there's zero improvement from round 1 to round 2, the yellow has probably been heat-set permanently — that's the honest home ceiling, and it's time to accept or replace (pillowcases are cheap; dress shirts you can consider pro)."
+    },
+    {
+      "step": 8,
+      "agent": "Prevention Beats Treatment for Recurrence",
+      "instruction": "If this is a pillowcase that keeps yellowing: (1) wash it weekly not monthly, (2) air-dry or low-heat dry to avoid heat-setting sebum, (3) rotate 2–3 pillowcases so each one spends less time accumulating. If this is a dress shirt with yellow collars: aluminum-free deodorant helps, and wash cool + air-dry instead of hot wash + dryer prevents heat-setting. Prevention is higher leverage than treatment on this stain."
+    },
+    {
+      "step": 9,
+      "agent": "Escalate Honestly",
+      "instruction": "For high-value cotton (heirloom linens, expensive dress shirts) that has been heat-set with cumulative yellow: pro dry cleaner with reducing-agent chemistry (sodium hydrosulfite) sometimes recovers what home can't. Tell them: \"Cumulative oxidized sebum on white cotton, age [months / years], home-treated with Dawn pre-treat + enzyme warm soak + 3% peroxide + sun-dry, 2–3 rounds. No chlorine bleach. Residual yellow.\" For cheap cotton (pillowcases, old T-shirts), replacement is often the right call."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. Scope — fresh (1 round) vs cumulative (2–3 rounds, maybe past recovery).",
+      "2. Dawn DIRECTLY on DRY cotton, 30 min – overnight dwell.",
+      "3. Warm water enzyme soak, 30 min – 2 hr.",
+      "4. Soft brush + fingertips to break up oil.",
+      "5. 3% peroxide on white cotton yellow, 10–15 min.",
+      "6. Hot wash + SUN-DRY. No dryer on residual yellow.",
+      "7. Repeat 2–3 rounds for cumulative.",
+      "8. Prevention: weekly wash, air-dry, lower-oil skincare.",
+      "9. Heat-set + high-value = pro; heat-set + low-value = replace."
     ],
     "products": [
-      "Dawn dish soap",
-      "cold water",
-      "enzyme laundry detergent (Tide or Persil)"
+      "Dawn dish soap (pre-treatment on dry fabric)",
+      "OxiClean Versatile or Biz / enzyme detergent",
+      "3% Hydrogen peroxide (white cotton only)",
+      "Sunlight + outdoor line"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if 2 rounds yield no improvement (heat-set) or if cotton is past recovery — replace cheap items, pro for high-value.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first",
-      "Do NOT use OxiClean or oxidizing agents on protein stains — they can set the stain permanently"
+      "NEVER dryer heat on residual yellow — heat-sets permanently",
+      "NEVER mix peroxide with ammonia / bleach / alkali",
+      "Prevention is more leverage than treatment",
+      "Cumulative = 2–3 rounds expected, not a failure"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never dryer-heat residual yellow — permanent",
+      "Never mix peroxide with bleach / ammonia",
+      "Never skip the dry-pre-treatment step (it's the key)"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "White cotton: tolerates full protocol including 3% peroxide + hot wash",
+      "Dyed cotton: hidden test peroxide; skip if dye lifts",
+      "Cotton blends (elastane): tolerate enzyme; avoid very hot soak"
     ]
   },
+  "materialWarnings": [
+    "Cumulative buildup = multi-round job",
+    "Dry Dawn pre-treatment is the key trick",
+    "Dryer heat sets residual yellow permanently",
+    "Sun is a legit finisher on white cotton"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is body oil on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Cumulative yellow survives 2–3 home rounds (likely heat-set), high-value garment that merits pro sodium-hydrosulfite attempt, or complete recovery not achievable and replacement is cheaper.",
+    "whatToTell": "\"Cumulative oxidized sebum on white cotton, age [months / years], home-treated with Dawn pre-treat on dry fabric + enzyme warm soak + 3% peroxide + sun-dry, [X] rounds. No chlorine bleach used. Residual yellow appears heat-set.\"",
+    "specialistType": "professional dry cleaner with reducing-agent chemistry (for heat-set yellowed cotton)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Fresh spot (today / this week) or cumulative yellow (months / years)?",
+      "Pillowcase / collar / cuff / underarm?",
+      "White cotton or colored / dyed?",
+      "Has it been through many hot dryer cycles?",
+      "What's the value — replace easily, or worth pro attempt?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Cumulative sebum yellow on pillowcases that have been hot-dried for years is often past recovery — replacement is usually the right call. Collar rings on dress shirts respond better because they've had fewer wash-dry cycles. Prevention (weekly wash, air-dry, lower-oil skincare) is higher leverage than treatment for recurring cases."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

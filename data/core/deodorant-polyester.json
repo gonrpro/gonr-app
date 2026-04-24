@@ -1,140 +1,256 @@
 {
   "id": "deodorant-polyester",
   "title": "Deodorant on Polyester",
-  "stainFamily": "combination",
   "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "polyester",
+  "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–45 minutes fresh white mark; chronic yellow takes more rounds",
+  "lastValidated": "2026-04-24",
   "meta": {
     "stainCanonical": "deodorant",
     "surfaceCanonical": "polyester",
     "tier": "universal",
     "riskLevel": "low",
     "tags": [
+      "combination",
       "mineral",
       "protein",
-      "combination",
       "aluminum-salt",
-      "time-cumulative"
+      "polyester",
+      "two-variants",
+      "gym-shirt"
     ],
     "freePreview": true
   },
-  "sector": "textile",
-  "source": "verified",
-  "verified": false,
-  "stainChemistry": "Deodorant/antiperspirant stains are caused by aluminum compounds (aluminum chlorohydrate) reacting with sweat proteins and fabric dyes. On polyester, the aluminum salt creates a white residue that bonds to fiber. Over time, the aluminum-protein complex yellows and hardens, becoming increasingly resistant to standard washing. The buildup is cumulative — it gets worse with each wear.",
-  "whyThisWorks": "An acidic treatment (white vinegar or dilute acetic acid) dissolves the aluminum salt deposits on polyester. Surfactant lifts the dissolved residue. For yellowish buildup, an oxidizer addresses the protein-aluminum complex. Prevention is equally important: applying deodorant and letting it dry completely before dressing dramatically reduces fiber transfer.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "stainChemistry": "TWO different deodorant stains on polyester, with different protocols. (1) FRESH WHITE TRANSFER — dry deodorant stick rubbed off onto the shirt as you pulled it on. This is a SURFACE MECHANICAL transfer — aluminum-chlorohydrate powder sitting on polyester fibers. Comes off easily with a soft brush + dilute vinegar rinse before laundering. (2) CHRONIC YELLOW — cumulative buildup over many wears: aluminum salts + sweat proteins + oils bonded to polyester through dozens of wash cycles, yellowed by heat oxidation. Much harder; requires vinegar soak + Dawn + enzyme pretreat + multiple cold-wash rounds. The #1 home mistake: treating chronic yellow as a fresh white transfer — surface wipe won't budge cumulative buildup. Identify which variant you have first.",
+  "whyThisWorks": "FRESH WHITE: soft brush + dilute vinegar dissolves the aluminum salt surface transfer; cold wash rinses it out. CHRONIC YELLOW: vinegar is the specific acid that chelates aluminum-chlorohydrate bonds to polyester. Dawn emulsifies the oil carrier + surface residue. Enzyme pretreat digests the sweat-protein fraction of the stain. Polyester is OLEOPHILIC (grabs oil), so the oil component is what makes chronic yellow so persistent — surfactant + acid + enzyme in combination addresses all three faces. Fabric softener is the silent saboteur — locks residue in forever. Prevention (aluminum-free deodorant, drying deodorant fully before dressing) matters as much as treatment.",
+  "defaultAssumption": "FRESH = gym shirt, workout top, jersey — just pulled over head and white streaks from the stick are visible. CHRONIC = polyester workout shirt / uniform with yellow underarm halos that have built up over months. Identify which you have before picking protocol.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify Variant — White Fresh vs Yellow Chronic",
+      "technique": "Inspection decides protocol",
+      "equipment": "Good light",
+      "dwellTime": "1 minute",
+      "instruction": "FRESH WHITE transfer (recent, visible white streaks from stick) = short protocol, below. CHRONIC YELLOW (cumulative buildup, yellowed underarm after many wears) = longer protocol, skip to step 5. Don't confuse them — white treatment on yellow wastes time."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Fresh White — Soft Brush Off",
+      "technique": "Mechanical lift of surface transfer",
+      "equipment": "Soft brush (old toothbrush) or damp sponge edge",
+      "dwellTime": "1 minute",
+      "instruction": "Brush off the white transfer with a soft brush or damp sponge edge. Outward from center. Gets most of it off before chemistry."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Fresh White — Dilute Vinegar Spot",
+      "technique": "Dissolve remaining aluminum salt",
+      "equipment": "1 part white vinegar + 2 parts cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Dilute vinegar on damp cloth, press on the spot 5 min. Dissolves any remaining aluminum salt transfer. Blot."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Fresh White — Cold Wash",
+      "technique": "Launder cold, no fabric softener",
+      "equipment": "Washing machine",
+      "dwellTime": "Full cycle",
+      "instruction": "Cold wash per care label. NO fabric softener — softener locks aluminum residue in. Half cup of white vinegar in the rinse cycle instead = natural softener + neutralizes detergent alkalinity. Air-dry or tumble-low; inspect BEFORE high heat."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Chronic Yellow — Scope Check",
+      "technique": "Set expectations for cumulative buildup",
+      "equipment": "Good light",
+      "dwellTime": "1 minute",
+      "instruction": "Chronic yellow underarm on polyester is aluminum salt + sweat protein + oil built up over many wears. One treatment may not fully clear cumulative buildup — budget 2–3 full rounds. ALSO: going forward, switch to aluminum-free deodorant on the shirt you want to preserve, and STOP using fabric softener."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "Chronic Yellow — Vinegar Dwell",
+      "technique": "Acid chelation of aluminum bonds",
+      "equipment": "Straight white vinegar (or 1:2 dilute for very old polyester)",
+      "dwellTime": "15–60 minutes",
+      "instruction": "Pour straight white vinegar on the yellow area (or soak the underarm in 1 cup vinegar + 2 cups cool water for whole-garment). Dwell 15–20 min for fresh buildup, up to 1 hour for heavy. Vinegar's acid breaks aluminum-chlorohydrate bonds — the specific chemistry, no substitute.",
+      "safetyNote": "Never mix vinegar with bleach or peroxide in the same dwell. Rinse fully between."
+    },
+    {
+      "step": 7,
+      "side": "wet",
+      "agent": "Chronic Yellow — Dawn + Soft Brush",
+      "technique": "Lift dissolved residue + oil carrier",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn in cool water, work in with soft toothbrush. Lifts dissolved aluminum + oil carrier (polyester is oleophilic — oil is what makes chronic yellow so persistent)."
+    },
+    {
+      "step": 8,
+      "side": "wet-minimal",
+      "agent": "Chronic Yellow — Enzyme Pretreat",
+      "technique": "Digest sweat-protein fraction",
+      "equipment": "OxiClean Versatile / Biz / Zout per label, warm water",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Enzyme pretreat per label, warm (not hot) water, 20–30 min dwell. Digests sweat-protein buildup. Skip this step on fresh white — only needed for chronic yellow."
+    },
+    {
+      "step": 9,
+      "side": "wet",
+      "agent": "Cold Wash, NO Fabric Softener",
+      "technique": "Launder + prevent recurrence",
+      "equipment": "Washing machine",
+      "dwellTime": "Full cycle",
+      "instruction": "Cold wash per care label. NO fabric softener — softener is the #1 reason deodorant buildup comes back wash after wash. Half cup vinegar in rinse cycle instead. Air-dry — heat sets residual aluminum salts into polyester permanently. Repeat steps 6–9 if yellow remains after air-dry inspection."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Acetic Acid 28% (diluted 1:5) to dissolve aluminum salt deposits",
-      "2. Apply NSD to lift dissolved residue",
-      "3. If yellowing remains: apply H2O2 6% on colorfast fabrics",
-      "4. Flush with cool water. Apply dilute acetic acid as final rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Identify — white fresh transfer or chronic yellow buildup.",
+      "2. Fresh: soft brush + dilute vinegar spot + cold wash no softener.",
+      "3. Chronic: vinegar dwell 15–60 min + Dawn + enzyme pretreat + cold wash.",
+      "4. NO fabric softener — use white vinegar in rinse cycle instead.",
+      "5. Inspect BEFORE dryer. Heat sets residual.",
+      "6. 2–3 full rounds for stubborn cumulative buildup."
     ],
     "products": [
-      "Acetic Acid 28% (diluted 1:5)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%"
+      "Soft toothbrush",
+      "White vinegar (key product)",
+      "Dawn / NSD",
+      "Enzyme pretreat (OxiClean Versatile / Biz / Zout)",
+      "Washing machine"
     ],
-    "temperature": "ambient",
+    "temperature": "cool to warm (<100°F); never hot on yellowed polyester",
     "warnings": [
-      "Always test on hidden area first"
+      "Fresh white vs chronic yellow = different protocols",
+      "NEVER fabric softener — locks deodorant into polyester",
+      "NEVER hot water or dryer heat on chronic yellow — fuses aluminum salt permanently",
+      "NEVER mix vinegar with bleach or peroxide in same dwell",
+      "Polyester is oleophilic — oil fraction matters",
+      "Prevention: aluminum-free deodorant + dry before dressing"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "This stain is cumulative — it gets worse every wear",
-      "instruction": "Deodorant on polyester isn't a one-time spill; it's aluminum salt plus sweat protein that builds up wash after wash. The yellow/white buildup you see is usually dozens of tiny overlays. That means: (1) one treatment won't always fully clear cumulative buildup, and (2) PREVENTION matters as much as treatment — let deodorant dry fully before putting on polyester, and stop using fabric softener which locks the residue in."
+      "agent": "Which One Do You Have — Fresh White or Chronic Yellow?",
+      "instruction": "There are TWO different deodorant stains on polyester, and they need different treatment. FRESH WHITE streaks (you just pulled the shirt on and left marks from the stick) = a quick surface fix. CHRONIC YELLOW underarm halos (your gym shirt has been yellowing over months) = cumulative buildup that takes multiple rounds. Identify which you have first — treating chronic yellow like a fresh streak just wastes your time."
     },
     {
       "step": 2,
-      "agent": "Lift dry flake residue — brush, don't rub",
-      "instruction": "Any dry white flakes on the surface: lift off with a soft brush (an old toothbrush is perfect) or the edge of a dampened sponge. Brush outward from the center, don't rub — rubbing grinds aluminum crystals deeper into the polyester weave where later steps can't reach them."
+      "agent": "Fresh White Streaks — Brush + Vinegar + Cold Wash",
+      "instruction": "For fresh white transfer: lift the visible white off with a soft brush (old toothbrush) or the damp edge of a sponge. Brush outward from center. Then mix 1 part white vinegar + 2 parts cool water, dab on a damp cloth, press on the spot 5 minutes. Cold wash the shirt with NO fabric softener. Add half a cup of vinegar to the rinse cycle instead. That's the whole fix — usually one round. Skip the chronic-yellow steps below."
     },
     {
       "step": 3,
-      "agent": "The key step: white vinegar dissolves aluminum salts",
-      "instruction": "Pour white vinegar DIRECTLY on the stain (or soak the underarm area in 1 cup vinegar + 2 cups cold water if treating a whole garment). Let it dwell 15–20 minutes for fresh stains; up to an hour for heavy buildup. Vinegar's mild acid is THE specific tool that breaks the aluminum-chlorohydrate bond holding the stain to the fiber. No other household product does this job — vinegar is the whole fight.",
-      "safetyNote": "Never mix vinegar with bleach or hydrogen peroxide in the same dwell — gas. Rinse fully between if you plan to use peroxide next."
+      "agent": "Chronic Yellow — Set Expectations",
+      "instruction": "Chronic yellow on polyester is aluminum salt + sweat protein + oil built up over MANY wears. One treatment rarely clears months of buildup — plan for 2 to 3 full rounds. Two things to change going forward or the yellow comes right back: (1) switch to aluminum-free deodorant on the shirts you care about, (2) STOP using fabric softener — it's the #1 reason deodorant buildup is locked in."
     },
     {
       "step": 4,
-      "agent": "Dawn dish soap — lift dissolved residue",
-      "instruction": "Apply a small drop of Dawn on the treated area. Work it in with a fingertip or soft toothbrush in SHORT strokes — not back-and-forth rubbing. Let sit 5 minutes. Dawn emulsifies the oil component of the deodorant carrier so the dissolved aluminum rinses away cleanly rather than re-depositing on the fiber."
+      "agent": "Chronic Yellow — White Vinegar Dwell",
+      "instruction": "Pour WHITE VINEGAR straight on the yellow area (or soak just the underarm in 1 cup vinegar + 2 cups cool water for whole-garment). Let it dwell 15 to 20 minutes for fresh yellowing, up to an HOUR for heavy cumulative buildup. Vinegar's mild acid is THE specific tool that breaks the aluminum-chlorohydrate bond holding the stain to polyester. No household substitute does this job — vinegar is the whole fight here.",
+      "safetyNote": "Never mix vinegar with bleach or peroxide in the same dwell — chlorine gas. Rinse fully between if you plan to use peroxide next."
     },
     {
       "step": 5,
-      "agent": "Enzyme pretreat for protein-buildup yellowing",
-      "instruction": "For cumulative yellow staining (weeks or months of buildup), an enzyme pretreat handles the protein side of the combination stain. Apply OxiClean Versatile, Biz, or Zout per label and dwell 20–30 minutes. Skip this step on fresh stains — it's only needed for set yellow."
+      "agent": "Chronic Yellow — Dawn + Soft Toothbrush",
+      "instruction": "Work a drop of Dawn into the vinegar-dwelled area with a soft toothbrush. Short strokes, not back-and-forth rubbing. 5 minutes. Polyester is oleophilic — it grabs oil and holds it. Dawn emulsifies the oil carrier so the dissolved aluminum rinses away cleanly instead of re-depositing."
     },
     {
       "step": 6,
-      "agent": "Cold machine wash — NO fabric softener",
-      "instruction": "Launder on cold with your normal detergent. Do NOT use fabric softener — it's the #1 reason deodorant buildup comes back wash after wash. Add a half-cup of white vinegar to the rinse cycle instead (vinegar acts as a natural softener AND neutralizes any alkaline residue from detergent)."
+      "agent": "Chronic Yellow — Enzyme Pretreat for Set Protein",
+      "instruction": "Apply OxiClean Versatile, Biz, or Zout per label and dwell 20–30 minutes. Handles the sweat-protein fraction that vinegar and Dawn don't. Skip this on fresh stains — only needed for set yellow. Warm (not hot) water — hot fuses aluminum salt into polyester."
     },
     {
       "step": 7,
-      "agent": "Air dry + daylight inspect",
-      "instruction": "Hang or lay flat to air-dry. Inspect underarms in daylight. If yellow or white buildup remains, repeat steps 3–6. Cumulative stains often need 2–3 full rounds. DO NOT tumble-dry on heat until fully clear — dryer heat fuses residual aluminum salts into polyester permanently."
+      "agent": "Cold Wash, NO Fabric Softener Ever",
+      "instruction": "Cold machine wash with your normal detergent. Do NOT use fabric softener — it's the #1 reason deodorant buildup comes back. Add HALF A CUP OF WHITE VINEGAR to the rinse cycle — it works as a natural softener AND neutralizes detergent alkalinity that could set residual aluminum."
     },
     {
       "step": 8,
-      "agent": "Escalate for heavily set buildup",
-      "instruction": "If buildup survives 2–3 home rounds, or has been heat-set by a dryer over months, take it in. Tell them: \"Cumulative antiperspirant buildup on polyester, treated with vinegar soak + Dawn + enzyme. No fabric softener used (going forward). Residual yellow/white remains.\" Pros use concentrated acetic acid + commercial enzyme + oxidizer in sequence. Going forward: switch to aluminum-free deodorant on polyester garments you want to preserve."
+      "agent": "Air-Dry, Inspect BEFORE Any Heat",
+      "instruction": "Hang or lay flat to air-dry. Inspect underarms in daylight. Yellow remaining? Repeat steps 4–7. Cumulative buildup often needs 2 or 3 rounds. DO NOT tumble-dry on heat until fully clear — dryer heat fuses residual aluminum salts into polyester permanently."
+    },
+    {
+      "step": 9,
+      "agent": "Escalate for Heavily Set Yellow",
+      "instruction": "If cumulative yellow survives 2–3 home rounds, or has been through dryer heat over months (aluminum salts fused into polyester), take it in. Tell them: \"Cumulative aluminum + sweat buildup on polyester, treated with vinegar soak + Dawn + enzyme + cold wash. No fabric softener used (going forward). Residual yellow remains.\" Pro cleaners can apply stronger acetic acid + commercial enzyme sequences. For very set buildup, the shirt may be past recovery — consider replacing and switching to aluminum-free deodorant for the replacement."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Lift dry flaked residue with a soft brush or the edge of a dampened sponge — do not rub the stain, rubbing drives aluminum salts deeper into the polyester weave.",
-      "2. Apply white vinegar directly to the stain to dissolve aluminum deposits — 10-15 min dwell time. Dab with a clean sponge to lift, never rub.",
-      "3. Blot with clean white cloth or sponge. Repeat vinegar if needed.",
-      "4. Apply Dawn dish soap and work gently with a soft brush in short strokes — 5 min dwell time. Do not rub across the weave.",
-      "5. For yellowed cumulative buildup, pretreat with an enzyme laundry detergent (Tide or Persil) before the vinegar step — enzymes break the sweat-protein side of the combination stain.",
-      "6. Rinse with cold water. Air dry flat."
+      "1. Identify — fresh white OR chronic yellow.",
+      "2. FRESH: brush + dilute vinegar + cold wash no softener. Done.",
+      "3. CHRONIC: vinegar straight dwell 15–60 min.",
+      "4. Dawn + soft toothbrush 5 min.",
+      "5. Enzyme pretreat 20–30 min.",
+      "6. Cold wash + half-cup vinegar in rinse cycle.",
+      "7. Air-dry — inspect BEFORE any dryer heat.",
+      "8. 2–3 rounds for heavy chronic yellow.",
+      "9. NO fabric softener. EVER."
     ],
     "products": [
-      "white vinegar",
+      "Soft toothbrush",
+      "White vinegar (key product)",
       "Dawn dish soap",
-      "enzyme laundry detergent (Tide or Persil)",
-      "cold water"
+      "Enzyme pretreat (OxiClean Versatile / Biz / Zout)",
+      "Washing machine"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if chronic yellow survives 3 rounds (shirt may be past recovery) or if dryer heat over months has fused aluminum salts permanently.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains",
-      "Do NOT use OxiClean or oxidizing agents on protein stains — they can set the stain permanently"
+      "Fresh vs chronic are different protocols",
+      "NEVER fabric softener — locks deodorant into polyester",
+      "NEVER hot water / dryer heat on yellow — fuses aluminum",
+      "NEVER mix vinegar with bleach or peroxide (chlorine gas)",
+      "Prevention — aluminum-free deodorant + dry before dressing"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never fabric softener on polyester with deodorant buildup",
+      "Never hot water or dryer heat on yellowed polyester",
+      "Never mix vinegar + bleach (chlorine gas)",
+      "Never rub aggressively — grinds aluminum into fiber"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs and holds oil tenaciously",
+      "Tolerates vinegar, Dawn, enzyme",
+      "Heat-sensitive for this specific stain — dryer sets residual permanently",
+      "Color-stable polyester tolerates peroxide if needed (hidden test)"
     ]
   },
+  "materialWarnings": [
+    "Two different stains in one card — identify first",
+    "Fabric softener is the silent saboteur",
+    "Vinegar is the specific chemistry — no substitute",
+    "Prevention + treatment together = long-term clean"
+  ],
   "escalation": {
-    "when": "If deodorant stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is deodorant on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Chronic yellow survives 3 home rounds, shirt has been through dryer heat over months (aluminum fused), or buildup is on a uniform / technical fabric that can't tolerate vinegar-dwell.",
+    "whatToTell": "\"Cumulative antiperspirant buildup on polyester, treated with vinegar soak + Dawn + enzyme + cold wash. No fabric softener used going forward. [Residual yellow / dryer-heat-fused]. Any hope before I replace?\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Fresh white streak (today) or chronic yellow (months)?",
+      "Polyester workout shirt / uniform / dress shirt?",
+      "Aluminum-based deodorant / antiperspirant, or aluminum-free?",
+      "Has fabric softener been used on this garment?",
+      "Has the shirt been through a hot dryer with visible yellow already?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The fresh vs chronic fork is the whole card. Fabric softener + antiperspirant is the pair that creates chronic yellow — switching deodorant + ditching softener prevents recurrence. Aluminum-free deodorants don't cause this stain at all."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,81 +1,177 @@
 {
   "id": "cooking-oil-carpet",
   "title": "Cooking Oil on Carpet",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Cooking oil (vegetable, olive, canola) contains long-chain triglycerides that penetrate carpet rapidly due to low viscosity. Fresh oil is easily dissolved by surfactants. Aged oil oxidizes and polymerizes — especially polyunsaturated oils (canola, soybean) which cross-link into a varnish-like film. Heat accelerates this polymerization.",
-  "whyThisWorks": "Surfactant (Dawn is the consumer standard) breaks the oil into micelles — tiny droplets surrounded by surfactant molecules that water can carry away from carpet. For polymerized oil, a solvent pre-treatment dissolves the hardened film before surfactant can work. Avoid heat until the oil is fully removed — it polymerizes the residue.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–40 minutes; powder preload + Dawn wins most cases",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "cooking-oil",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "oil",
+      "triglyceride",
+      "carpet",
+      "powder-preload",
+      "kitchen",
+      "no-pour"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Cooking oil — vegetable / canola / olive / peanut / corn — is long-chain triglycerides suspended by low viscosity (vs the thicker triglycerides in butter or bacon grease). Low viscosity means cooking oil penetrates carpet fiber + pad rapidly — within minutes. Fresh oil is easily emulsified by Dawn. AGED cooking oil oxidizes and polymerizes into a varnish-like film, especially polyunsaturated oils (canola, soybean, corn) which cross-link fastest; olive oil polymerizes slower; peanut oil is in between. Once polymerized, surface chemistry won't budge it — dry-side solvent needed. Carpet pad saturation is the other failure mode: pouring water / soap on oil drives the oil into the pad via the water carrier. Powder preload FIRST (no water) wicks most of the oil up before any chemistry.",
+  "whyThisWorks": "Powder (cornstarch / baking soda / fuller's earth) wicks oil UP out of carpet by capillary action — no water, no heat, no risk. Dawn then emulsifies residual oil into water-soluble micelles. Aged / polymerized oil needs a solvent softening pass first (mineral spirits or Goo Gone on a cloth), then Dawn. Never pour water — water spreads oil and carries it into the pad.",
+  "defaultAssumption": "Kitchen-floor splash, dinner-plate tip, olive-oil drizzle that missed. Fresh = quick win with powder + Dawn. Aged cooking oil on carpet that has been walked on or been through a dryer (if rug) = harder but still home-treatable with solvent softening first.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Absorbent Powder Preload",
+      "technique": "Wick oil via capillary — no water, no chemistry",
+      "equipment": "Cornstarch, baking soda, or fuller's earth",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Cover the oil stain with a generous layer of cornstarch, baking soda, or fuller's earth. Let sit 20–30 min. Powder wicks oil UP out of the fiber — no water needed. Vacuum off. Repeat with fresh powder if the first layer fully saturated."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush — Emulsify",
+      "technique": "Surfactant on damp cloth",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn in cool water on damp cloth. Work into spot with soft toothbrush. Emulsifies residual oil into water-soluble droplets. Damp-cloth rinse — NEVER pour water on carpet."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Goo Gone / Mineral Spirits (Aged / Polymerized)",
+      "technique": "Solvent soften for set oil film",
+      "equipment": "Goo Gone or mineral spirits on white cloth",
+      "dwellTime": "30–60 sec per pass",
+      "instruction": "For aged oil with a stiff / shiny feel: Goo Gone or mineral spirits on a white cloth (never pour on carpet). Tamp from top, outside-in. Flip cloth. Ventilate. Follow with another Dawn pass."
+    },
+    {
+      "step": 4,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan",
+      "technique": "Extract + dry",
+      "equipment": "Dry towel + weight, fan",
+      "dwellTime": "30 min + fan",
+      "instruction": "Weighted dry towel 30 min. Fan-dry fully. Inspect in daylight. Residual grease feel = one more Dawn pass. Residual stain = peroxide unnecessary (oil is clear); may be dirt that wicked in — treat as separate dirt stain if visible."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Powder preload 20–30 min. Vacuum. Repeat if saturated.",
+      "2. Dawn / NSD + soft brush, damp cloth.",
+      "3. Aged / polymerized: Goo Gone / mineral spirits on cloth, tamp top.",
+      "4. Weighted dry towel + fan-dry."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda / fuller's earth",
+      "Dawn / NSD",
+      "Goo Gone / mineral spirits (aged only)",
+      "Fan"
     ],
-    "temperature": "ambient",
+    "temperature": "room temp throughout; no heat until oil is cleared",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains",
-      "Ensure adequate ventilation when using solvents — VOC fumes require extraction"
+      "NEVER pour water on carpet — water spreads oil + saturates pad",
+      "NEVER hot-dry residual oil — polymerizes",
+      "Powder preload cuts work in half",
+      "Flammable solvent for aged variant — ventilate, no flame"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Powder First — Pull Oil Up Without Water",
+      "instruction": "Before you touch water or soap, cover the oil spot with cornstarch, baking soda, or plain baby powder. Let it sit at least 20–30 minutes. The powder wicks oil UP out of the carpet fiber through capillary action — no scrubbing, no chemistry. Vacuum off with a carpet attachment. Much of the stain usually comes with it. If the first layer turned visibly wet / saturated, dust on a fresh layer and repeat."
+    },
+    {
+      "step": 2,
+      "agent": "Dawn — Generous, on a Damp Cloth",
+      "instruction": "Work a drop of Dawn in cool water into a damp cloth. Press and tamp on the spot with a soft toothbrush for a minute or two. Let it dwell 5 minutes. Dawn is engineered for exactly this — triglyceride emulsion. Rinse with a damp cloth; NEVER pour water on the carpet. Water + oil = spreads to a bigger spot AND drives oil into the pad underneath."
+    },
+    {
+      "step": 3,
+      "agent": "Aged or Stiff-Feel Oil? Goo Gone or Mineral Spirits",
+      "instruction": "If the oil has been there long enough to feel stiff or shiny (polymerized), Dawn alone won't finish it. Apply Goo Gone (orange bottle) or mineral spirits to a clean white cloth — NEVER pour on carpet. Press and tamp the spot from the top, flip the cloth as it picks up oil. Work outside-in. Open windows — flammable. Then return to Dawn step to clear the solvent."
+    },
+    {
+      "step": 4,
+      "agent": "Weighted Paper Towels + Fan-Dry",
+      "instruction": "Stack dry paper towels on the spot, put a heavy book on top, 30 minutes. Fan-dry until the carpet is fully dry. Inspect in daylight. Feel with a clean fingertip — still oily? One more Dawn round. Fully dry = done."
+    },
+    {
+      "step": 5,
+      "agent": "Escalate for Polymerized / Pad Saturation",
+      "instruction": "If the stain stays after powder + Dawn + solvent, or if someone poured water on the spot before you got there (pad saturation), call a pro. Tell them: \"Cooking oil on [nylon / polyester / wool] carpet, age [fresh / aged / polymerized], home-treated with powder preload + Dawn + [Goo Gone]. No water poured. [Residual oily feel / shiny film / pad suspected].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Powder first — cornstarch / baking soda 20–30 min. Vacuum.",
+      "2. Repeat with fresh powder if first was saturated.",
+      "3. Dawn + cool water damp cloth + soft toothbrush, 5 min.",
+      "4. Aged / polymerized: Goo Gone / mineral spirits on RAG, tamp top.",
+      "5. Weighted paper towels + fan-dry.",
+      "6. NEVER pour water on the carpet — spreads oil + pad soak."
     ],
     "products": [
+      "Cornstarch / baking soda / baby powder",
       "Dawn dish soap",
-      "baking soda"
+      "Goo Gone / mineral spirits (aged oil only)",
+      "Paper towels + heavy book",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if oil has polymerized and two rounds of Dawn + solvent don't clear it, or if pad is saturated (pro extraction).",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER pour water on carpet — water spreads oil + soaks pad",
+      "NEVER hot-dry residual oil — polymerizes",
+      "Powder preload saves time",
+      "Flammable solvent for aged variant — ventilate, no flame"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never pour water on carpet with oil",
+      "Never hot-dry residual oil — polymerizes",
+      "Never use solvent near flame",
+      "Never rub — drives oil into pad"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / olefin: tolerates full protocol",
+      "Wool: pro-lane if solvent needed",
+      "Jute backing: over-wetting browns"
     ]
   },
+  "materialWarnings": [
+    "Powder preload cuts work in half",
+    "Never pour water on an oil stain",
+    "Polyunsaturated oils polymerize faster than olive oil"
+  ],
   "escalation": {
-    "when": "If cooking oil stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is cooking oil on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Polymerized oil film after powder + Dawn + solvent, pad saturation suspected (someone poured water), or stain survives two home rounds.",
+    "whatToTell": "\"Cooking oil on [nylon / polyester / wool] carpet, age [fresh / aged / polymerized], home-treated with powder preload + Dawn + [Goo Gone / mineral spirits]. No water poured. [Residual oily film / pad saturation].\"",
+    "specialistType": "professional carpet cleaner with solvent spotting"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Fresh or aged / dried in?",
+      "Type of oil — olive / canola / vegetable / peanut?",
+      "Has anyone poured water on the spot?",
+      "Has the area been walked on a lot since (grinds oil in)?",
+      "Carpet fiber?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Polyunsaturated oils (canola, soybean, corn) polymerize fastest. Olive oil is slower; extra-virgin even slower due to higher antioxidant content. If someone already poured water on a fresh oil stain, assume pad saturation and escalate — home chemistry won't reach pad oil."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

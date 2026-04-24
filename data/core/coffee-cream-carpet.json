@@ -1,83 +1,238 @@
 {
   "id": "coffee-cream-carpet",
   "title": "Coffee with Cream on Carpet",
-  "stainFamily": "combo",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Coffee with cream is a triple-component stain: tannins from coffee, milk protein (casein), and butterfat. On carpet, each component bonds differently — tannins through hydrogen bonds, protein through hydrophobic interactions, and fat through lipid-fiber affinity. The protein must be addressed first because heat used to remove other components would set it permanently.",
-  "whyThisWorks": "Treatment order is non-negotiable on carpet: tannin first (acidic spotter), then protein (cold enzyme or surfactant), then fat (POG or degreaser). This sequence prevents cross-contamination between treatment chemistries. The tannin must be addressed before the protein because alkaline protein treatment would permanently darken the tannin component.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–40 minutes; ordered multi-component treatment",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "coffee-cream",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "combination",
+      "tannin",
+      "protein",
+      "fat",
+      "carpet",
+      "morning-spill",
+      "ordered-chemistry"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Coffee with cream is a three-component stain: (1) COFFEE TANNIN (theaflavins / chlorogenic acid, the brown pigment), (2) MILK PROTEIN (casein + whey from the cream), and (3) MILK FAT (butterfat from the cream). Ordering is critical because the three families respond to different and sometimes OPPOSITE chemistries: hot water and alkaline cleaners (OxiClean) set the protein permanently; alkaline cleaners also DARKEN the tannin permanently. Heat anywhere before protein is dealt with = locked in. The correct order is: cold water + Dawn (universal-safe, handles fresh tannin + lifts fat) → enzyme pretreat (warm, not hot — digests protein) → 3% peroxide (oxidizes residual tannin) → vinegar rinse. On carpet the additional constraint is PAD WICKING: over-wetting carries the mess into the pad where you can't reach it. Damp cloth, not pouring.",
+  "whyThisWorks": "Cold + Dawn deals with fresh tannin + fat in one step without setting protein. Enzyme in warm (not hot) water digests the casein. Peroxide then reaches residual tannin. Vinegar keeps tannin on the light (acid) side. Weighted paper towels overnight prevent pad wick-back. Order + cold + no-pouring = clean. Wrong order = ghost.",
+  "defaultAssumption": "Morning spill on living-room / home-office carpet. Fresh = reasonable win. Overnight + carpet-pad-soaked = harder; tends to leave a tan halo that returns next day as moisture wicks back. Barista-style cappuccino (more milk) = bigger protein + fat component. Black coffee with a splash = closer to plain coffee chemistry.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot Outside-In",
+      "technique": "Absorb bulk before protein sets",
+      "equipment": "White paper towels or cotton cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Press paper towels straight down on the spill. Lift, rotate, press again. Outside-in. No rubbing. Keep blotting until the towel stops picking up color."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water Blot — Small Volume",
+      "technique": "Flush fresh tannin without pad saturation",
+      "equipment": "Cold water, white cloth, dry towel + weight",
+      "dwellTime": "2 min per pass",
+      "instruction": "Dampen a cloth with cold water, press. Lift, blot with dry cloth, repeat 2–3 passes. COLD only — warm/hot water sets the milk casein permanently. Never pour — pad soak = permanent ghost."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Dawn + Cold Water on Damp Cloth",
+      "technique": "Universal-safe surfactant — lifts fat + fresh tannin",
+      "equipment": "Dawn + cold water on damp cloth, soft brush",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn in cold water on damp cloth. Work in with soft toothbrush. Dwell 5 min. Blot. Dawn lifts fat + fresh tannin without setting protein. NO OxiClean — alkaline sets protein AND darkens tannin."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat — WARM (Not Hot)",
+      "technique": "Digest casein before oxidizer",
+      "equipment": "OxiClean Versatile / Biz in WARM water (<100°F / 38°C) on damp cloth",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Dissolve enzyme pretreat in WARM water — bath temperature, NOT hot. Damp cloth, press on spot, cover with damp towel to keep enzyme wet. 15–20 min. Hot water = protein set."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ on Damp Cloth (AFTER Enzyme)",
+      "technique": "Oxidize residual tannin",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Hidden-area test first on dyed carpet. 3% peroxide damp cloth 5–10 min for residual brown. Order matters — peroxide BEFORE enzyme sets protein. Don't mix with ammonia / bleach / alkaline."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "White Vinegar + Water Rinse",
+      "technique": "Neutralize + keep tannin on acid side",
+      "equipment": "1 tbsp vinegar + 1 cup cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar rinse on damp cloth. Neutralizes peroxide + keeps tannin light. Blot dry."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Weighted Paper Towels Overnight + Fan",
+      "technique": "Prevent pad wick-back ring",
+      "equipment": "Paper towels + weight, fan",
+      "dwellTime": "8–12 hours",
+      "instruction": "Weighted paper towels overnight. Fan-dry. Pulls residual moisture + tannin out of pad before wick-back. Inspect in daylight — halo = one more peroxide + vinegar round."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic spotter) first to address coffee tannin",
-      "2. Apply Protein Formula to address the milk protein component. Tamp gently",
-      "3. Apply POG to address the butterfat component",
-      "4. Flush with NSD and cool water to remove all residue",
-      "5. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse — 1-2 min. Blot dry"
+      "1. Immediate blot outside-in.",
+      "2. Cold damp-cloth flush — no pouring, avoid pad soak.",
+      "3. Dawn + cold water damp cloth + soft brush.",
+      "4. Enzyme pretreat WARM (not hot), 15–20 min — BEFORE oxidizer.",
+      "5. 3% H₂O₂ damp cloth for residual tannin — AFTER enzyme.",
+      "6. White vinegar + cool water rinse.",
+      "7. Weighted paper towels overnight + fan."
     ],
     "products": [
-      "Tannin Formula",
-      "Protein Formula",
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "Enzyme pretreat (OxiClean Versatile / Biz)",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Paper towels + weight",
+      "Fan"
     ],
-    "temperature": "cold",
+    "temperature": "cold through initial; warm (<100°F) for enzyme; never hot",
     "warnings": [
-      "Treatment order: tannin first, then protein, then fat — do not reverse",
-      "COLD water throughout — heat sets the protein component"
+      "NEVER hot water — sets casein protein",
+      "NEVER oxidizer BEFORE enzyme — sets protein permanently",
+      "NEVER alkaline cleaners (OxiClean alone, ammonia, baking soda) — sets protein AND darkens tannin",
+      "Never pour — pad wick-back is the ceiling",
+      "Order matters: Dawn → enzyme → peroxide"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Three Stains in One — Order Matters",
+      "instruction": "Coffee with cream is actually three stains at once: coffee tannin (brown pigment), milk protein (casein from the cream), and milk fat. These respond to DIFFERENT chemistries, and some are OPPOSITES — alkaline cleaners (OxiClean, ammonia) set the milk protein permanently AND darken the tannin permanently. Hot water cooks the milk protein into the carpet. The order is: cold water + Dawn first, then a WARM (not hot) enzyme soak to digest the protein, then peroxide for any remaining brown, then a vinegar rinse. Wrong order = permanent tan halo."
+    },
+    {
+      "step": 2,
+      "agent": "Blot — Outside In, No Rubbing",
+      "instruction": "Press a thick stack of white paper towels or a clean cloth STRAIGHT DOWN on the spill. Lift, move to a dry section, press again. Work from the outside of the spill inward to contain it. Do NOT rub — rubbing pushes coffee + cream into the pad and pad contamination is where rings come back from."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Blot — Small Volume",
+      "instruction": "Pour a SMALL amount of cold water on the spot and blot with a dry cloth. Repeat 2–3 times. Cold ONLY — warm/hot water sets the milk protein permanently, even if the coffee was hot. DO NOT flood — water that reaches the pad carries the stain deeper where you can't extract it."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Cold Water Damp Cloth",
+      "instruction": "Mix 1 tablespoon of Dawn in 2 cups cold water. Dampen a white cloth in the solution and press on the spot with a soft toothbrush for 5 minutes. Blot with a clean damp cloth. Dawn is safe on everything — it lifts fresh tannin and fat without setting protein. DO NOT use OxiClean or baking soda at this stage — alkaline cleaners set protein AND darken tannin."
+    },
+    {
+      "step": 5,
+      "agent": "Enzyme Pretreat in WARM (Not Hot) Water",
+      "instruction": "Dissolve OxiClean Versatile or Biz in WARM water — bath temperature, under 100°F. NOT hot. Warm is necessary for enzyme activity; hot would set the protein you're trying to remove. Dampen a white cloth in the enzyme solution, press on the spot, cover with a second damp towel to keep it wet, wait 15–20 minutes. The enzyme digests the casein from the cream."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide for Residual Brown (AFTER Enzyme)",
+      "instruction": "Once protein is digested, 3% drugstore peroxide on a damp cloth for 5–10 minutes oxidizes any residual tannin. Hidden-area test first on dyed carpet. Only AFTER the enzyme step — peroxide BEFORE enzyme sets the protein.",
+      "safetyNote": "Never mix peroxide with ammonia, bleach, OxiClean, or baking soda."
+    },
+    {
+      "step": 7,
+      "agent": "White Vinegar + Cool Water Rinse",
+      "instruction": "Mix 1 tablespoon white vinegar + 1 cup cool water. Dab on damp cloth, press 5 min. Neutralizes peroxide + keeps residual tannin in its lighter (acid) color. Blot dry."
+    },
+    {
+      "step": 8,
+      "agent": "Weighted Paper Towels Overnight + Fan",
+      "instruction": "Stack 6–10 dry paper towels on the spot, put a heavy book on top, leave overnight. Fan-dry in the morning. Pulls residual moisture + coffee pigment out of the pad before it wicks back up as a visible ring next day. Inspect in daylight. Halo remaining = one more peroxide + vinegar round."
+    },
+    {
+      "step": 9,
+      "agent": "Escalate for Pad Saturation or Ring Return",
+      "instruction": "Call a pro if the stain dried overnight + saturated the pad, if a tan halo returns after a full home cycle, or if someone hit the spot with OxiClean / baking soda before you got there. Tell them: \"Coffee with cream on [nylon / polyester / wool] carpet, age [fresh / overnight], home-treated in order: cold + Dawn → enzyme (warm, not hot) → 3% peroxide → vinegar → overnight paper towels. No alkaline pre-treatment used [or: alkaline was used before I got here].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth — never rub",
-      "2. Apply Dawn dish soap mixed with cold water to address the tannin and fat",
-      "3. Blot. If stain persists, apply hydrogen peroxide 3% for the color component",
-      "4. Rinse thoroughly with COLD water — cold is critical for the protein (cream) component",
-      "5. Air dry — no heat, no dryer"
+      "1. Three-in-one stain — ORDER matters.",
+      "2. Blot outside-in; no rubbing.",
+      "3. Cold water small-volume, blot between, 2–3 passes.",
+      "4. Dawn + cold water damp cloth + soft brush, 5 min.",
+      "5. Enzyme pretreat WARM (not hot) water, 15–20 min.",
+      "6. 3% peroxide damp cloth AFTER enzyme, 5–10 min.",
+      "7. White vinegar + water rinse.",
+      "8. Weighted paper towels overnight + fan.",
+      "9. Pad saturation / ring return = pro."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "OxiClean Versatile or Biz pretreat",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Paper towels + heavy book",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if pad is saturated, if OxiClean / baking soda was used before you (tannin likely locked), if ring returns after two rounds, or if hot water was applied before the cold step.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "NEVER hot water — sets casein permanently",
+      "NEVER oxidizer before enzyme — sets protein",
+      "NEVER alkaline cleaners on the tannin — darkens brown permanently",
+      "Never pour — pad wick-back",
+      "Cold water through initial blotting"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never hot water or steam on cream-containing spills",
+      "Never OxiClean / baking soda / ammonia before enzyme",
+      "Never pour liquid — pad saturation",
+      "Never rub — drives stain into pad"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / olefin carpet: tolerates full protocol",
+      "Wool: pH-sensitive — pro lane for tight spots",
+      "Dyed carpet: hidden peroxide test mandatory"
     ]
   },
+  "materialWarnings": [
+    "Three stains in one — order matters",
+    "Protein-before-heat invariant",
+    "Alkaline cleaners set tannin AND protein — double lose",
+    "Cold water throughout the wet phase"
+  ],
   "escalation": {
-    "when": "If coffee cream stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is coffee cream on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Pad saturation, stain dried overnight with heat exposure, ring returns after two home rounds, or alkaline cleaner (OxiClean / baking soda) was applied before the enzyme step.",
+    "whatToTell": "\"Coffee with cream on [nylon / polyester / wool] carpet, age [fresh / overnight], home-treated in order: cold + Dawn → enzyme (warm, not hot) → 3% peroxide → vinegar → overnight paper towels. No hot water / no oxidizer before enzyme. [Residual halo / pad saturation / alkaline was used before I got here].\"",
+    "specialistType": "professional carpet cleaner with combination-stain chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Fresh spill or dried overnight?",
+      "Cappuccino / latte (more milk) or splash of cream?",
+      "Flavored syrup added? (adds sugar component)",
+      "Has anyone hit the spot with OxiClean / baking soda already?",
+      "Carpet fiber?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Flavored-syrup drinks add sugar (sticky matrix, more cycles). Cappuccino has more protein + fat than a standard coffee-with-cream splash. The OxiClean-first mistake is the common failure path — tannin darkens AND protein sets, both locked."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,84 +1,245 @@
 {
   "id": "coffee-cream-upholstery",
   "title": "Coffee with Cream on Upholstery",
-  "stainFamily": "combo",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Coffee with cream is a triple-component stain: tannins from coffee, milk protein (casein), and butterfat. On upholstery, each component bonds differently — tannins through hydrogen bonds, protein through hydrophobic interactions, and fat through lipid-fiber affinity. The protein must be addressed first because heat used to remove other components would set it permanently.",
-  "whyThisWorks": "Treatment order is non-negotiable on upholstery: tannin first (acidic spotter), then protein (cold enzyme or surfactant), then fat (POG or degreaser). This sequence prevents cross-contamination between treatment chemistries. The tannin must be addressed before the protein because alkaline protein treatment would permanently darken the tannin component.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–45 minutes; code check + protein-before-heat ordering",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "coffee-cream",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "combination",
+      "tannin",
+      "protein",
+      "fat",
+      "upholstery",
+      "code-check",
+      "batting-risk",
+      "ordered-chemistry"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Same triple-component chemistry as coffee-cream-carpet: coffee tannin + milk casein + milk fat. Upholstery adds two constraints: (1) the CODE TAG (W / W-S / S / X) determines whether water-based treatment is allowed, and (2) BATTING / FOAM saturation is the permanent-failure mode — over-wetting carries the stain into the cushion where home chemistry can't reach. Order invariants from the carpet card apply: cold + Dawn → warm (not hot) enzyme → peroxide → vinegar rinse. Adding: damp cloth only, never pour; weighted dry towel after each wet step to prevent batting wick-back.",
+  "whyThisWorks": "Correct order + cold water + damp-cloth-only + aggressive weighted extraction between rounds = clean without setting protein, darkening tannin, or saturating batting. The most common failure mode on upholstery is someone pouring water or an alkaline cleaner directly on a coffee-cream spill, setting the protein + darkening tannin + soaking batting simultaneously.",
+  "defaultAssumption": "Living-room couch / favorite chair spill during morning coffee. Fresh + W/W-S code = reasonable home win. S-only code = pro-lane for water-based combination stain. Dried overnight with batting saturation = pro low-moisture extraction, not more home rounds. If cushion cover zips off and is washable, that's often the easiest path.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Code Check + Blot",
+      "technique": "Read tag + immediate absorb",
+      "equipment": "Good light, white paper towels / cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "Find the upholstery code: W / W-S = water-based protocol OK, proceed. S-only = solvent only, coffee + cream is water-soluble chemistry — this is not a DIY match, call a pro. X = vacuum only, pro. Zip-off washable cover = freeze / blot in place, then wash cover cold with enzyme detergent. Blot the spill outside-in with white towels pressed straight down."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Damp-Cloth Blot",
+      "technique": "Dilute without pouring",
+      "equipment": "Cold water, white cloth, dry towel + weight",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Dampen a cloth with cold water. Press on the spot, lift, rotate, press. Transfer coffee + cream into the cloth. Cold only — hot sets milk protein. Never pour — batting saturation = permanent. Weighted dry towel 3–5 min to extract."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Dawn + Cold Water Damp Cloth",
+      "technique": "Lift fresh tannin + fat without setting protein",
+      "equipment": "Dawn + cold water on damp cloth, soft brush",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn in cold water on damp cloth. Work with soft toothbrush. Dwell 5 min. Blot. Dawn is safe on everything — lifts fat + tannin without setting casein. No OxiClean yet — alkaline sets protein."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat — WARM (Not Hot)",
+      "technique": "Digest casein before oxidizer",
+      "equipment": "OxiClean Versatile / Biz in WARM (<100°F) water on damp cloth",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Enzyme pretreat in WARM water — bath temperature, NOT hot. Damp cloth, press on spot, cover with damp towel, 15–20 min. Digests casein without setting it."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ on Damp Cloth (W/W-S Only)",
+      "technique": "Oxidize residual tannin AFTER enzyme",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "W / W-S code + hidden-area color test: 3% peroxide on damp cloth, 5–10 min. Order matters — AFTER enzyme, not before. Don't mix with ammonia / bleach / alkaline."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "White Vinegar + Cool Water Rinse",
+      "technique": "Neutralize + keep tannin on acid side",
+      "equipment": "1 tbsp vinegar + 1 cup cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar rinse on damp cloth 5 min. Neutralizes peroxide, keeps tannin light. Blot dry."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Aggressive Weighted Extraction + Fan",
+      "technique": "Prevent batting wick-back",
+      "equipment": "Heavy dry towels + weight, fan",
+      "dwellTime": "30 min × 2–3 rounds + overnight",
+      "instruction": "Weighted dry towel 30 min. Swap for fresh, repeat 2–3 rounds. Finish with fresh towels overnight. Fan-dry fully. Extraction matters more than application on upholstery."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic spotter) first to address coffee tannin",
-      "2. Apply Protein Formula to address the milk protein component. Tamp gently",
-      "3. Apply POG to address the butterfat component",
-      "4. Flush with NSD and cool water to remove all residue",
-      "5. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse — 1-2 min. Blot dry"
+      "1. Code tag check. S/X = pro. Blot outside-in.",
+      "2. Cold damp-cloth blot + weighted extract.",
+      "3. Dawn + cold damp cloth + soft brush.",
+      "4. Enzyme pretreat WARM (not hot), 15–20 min — BEFORE oxidizer.",
+      "5. 3% H₂O₂ damp cloth (W/W-S) AFTER enzyme — hidden test first.",
+      "6. White vinegar + cool water rinse.",
+      "7. Weighted dry towels × 2–3 rounds + overnight + fan."
     ],
     "products": [
-      "Tannin Formula",
-      "Protein Formula",
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "Enzyme pretreat (OxiClean Versatile / Biz)",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Heavy dry towels + weight",
+      "Fan"
     ],
-    "temperature": "cold",
+    "temperature": "cold through initial; warm (<100°F) for enzyme; never hot",
     "warnings": [
-      "Treatment order: tannin first, then protein, then fat — do not reverse",
-      "COLD water throughout — heat sets the protein component"
+      "CODE CHECK — S/X = pro",
+      "NEVER hot water — sets casein + spreads tannin",
+      "NEVER oxidizer before enzyme — sets protein",
+      "NEVER alkaline (OxiClean alone) — sets protein AND darkens tannin",
+      "Never pour — batting saturation = permanent",
+      "Aggressive extraction on upholstery > aggressive chemistry"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Three Stains in One + Code Check",
+      "instruction": "Coffee with cream is THREE stains at once: coffee tannin + milk protein + milk fat. They respond to different chemistries, and some are OPPOSITES. Hot water + milk protein = cooked-in. Alkaline cleaners (OxiClean, ammonia) + protein = set. Alkaline cleaners + tannin = darker brown permanently. So order matters: cold + Dawn, then warm (not hot) enzyme, then peroxide, then vinegar rinse. Also: find your upholstery code (tag under cushion). W / W-S = proceed. S-only = pro, coffee + cream is water-side chemistry, not a match for solvent-only upholstery. X = pro."
+    },
+    {
+      "step": 2,
+      "agent": "Blot Immediately — Outside In",
+      "instruction": "Press a thick stack of white paper towels STRAIGHT DOWN on the spill. Lift, move to a dry section, press again. Work outside-in. Do NOT rub — rubbing pushes coffee + cream into the cushion batting where home chemistry can't reach. Keep blotting until the towel stops picking up color."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Damp Cloth — Never Pour",
+      "instruction": "Dampen a cloth with COLD water, press firmly on the spot. Lift, rotate to a clean section, press again. Transfer liquid out of the upholstery into the cloth. Cold only. Hot = milk protein set permanently. DO NOT pour water on the upholstery — pouring drives the stain into the cushion batting. Weighted dry towel 3–5 min after blotting to pull moisture back up."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Cold Water on a Damp Cloth",
+      "instruction": "Mix 1 tablespoon Dawn in 2 cups cold water. Dampen a clean cloth, work into the spot with a soft toothbrush for 5 minutes. Blot with a damp cloth. Dawn lifts fresh tannin + fat without setting protein. DO NOT use OxiClean or baking soda at this stage — alkaline sets protein AND darkens tannin."
+    },
+    {
+      "step": 5,
+      "agent": "Enzyme Pretreat in WARM (Not Hot) Water",
+      "instruction": "Dissolve OxiClean Versatile or Biz in WARM water — bath temperature, under 100°F. NOT hot. Warm is necessary for enzyme activity; hot sets the casein. Dampen a white cloth, press on the spot, cover with a second damp towel to keep enzyme wet, 15–20 minutes."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide After Enzyme (W / W-S Only)",
+      "instruction": "If the code is W or W-S: hidden-area test first. Then dab 3% drugstore peroxide on a damp cloth, press 5–10 minutes for residual brown. Only AFTER the enzyme step — peroxide before enzyme sets protein permanently.",
+      "safetyNote": "Never mix peroxide with ammonia, bleach, OxiClean, or baking soda."
+    },
+    {
+      "step": 7,
+      "agent": "White Vinegar + Water Rinse",
+      "instruction": "Mix 1 tablespoon white vinegar + 1 cup cool water. Dab on damp cloth, press 5 minutes. Neutralizes peroxide + keeps residual tannin on the light (acid) side. Blot dry."
+    },
+    {
+      "step": 8,
+      "agent": "Aggressive Dry-Towel Extraction — The Step That Wins",
+      "instruction": "Stack heavy dry white towels on the spot, weigh them with books, 30 minutes. Swap for fresh dry towels, repeat 2–3 times. Finish with fresh towels overnight under weight. Fan-dry in the morning. On upholstery, EXTRACTION matters more than application — over-applying chemistry saturates batting and makes things worse, but aggressive extraction pulls contamination up out of the foam."
+    },
+    {
+      "step": 9,
+      "agent": "Escalate for S-Code, Batting Soak, or Ring Return",
+      "instruction": "Call a pro if: the code is S-only (solvent cleaning, not water-based), the cushion batting is obviously saturated, a ring keeps returning after a full cycle, or someone applied OxiClean / baking soda before you got there. Tell them: \"Coffee with cream on [W / W-S / S / X] upholstery, age [fresh / overnight], home-treated in order: cold + Dawn → enzyme (warm, not hot) → 3% peroxide → vinegar → aggressive weighted extraction. No hot water / no alkaline before enzyme. Need low-moisture extraction, not truck-mount saturation.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth — never rub",
-      "2. Apply Dawn dish soap mixed with cold water to address the tannin and fat",
-      "3. Blot. If stain persists, apply hydrogen peroxide 3% for the color component",
-      "4. Rinse thoroughly with COLD water — cold is critical for the protein (cream) component",
-      "5. Air dry — no heat, no dryer"
+      "1. Three-in-one — ORDER matters. Code check.",
+      "2. Blot outside-in; no rubbing.",
+      "3. Cold damp-cloth blot + weighted extract. Never pour.",
+      "4. Dawn + cold water damp cloth + soft brush, 5 min.",
+      "5. Enzyme pretreat WARM (not hot), 15–20 min.",
+      "6. 3% peroxide damp cloth AFTER enzyme (W/W-S only).",
+      "7. White vinegar + water rinse.",
+      "8. Weighted dry towels × 2–3 rounds + overnight + fan.",
+      "9. S-only / batting soak / ring return = pro low-moisture extraction."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "OxiClean Versatile or Biz pretreat",
+      "3% Hydrogen peroxide (W/W-S only)",
+      "White vinegar",
+      "Heavy dry towels + weight",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if the code is S-only / X (pro), if batting is saturated, if ring returns after a full cycle with correct ordering, or if alkaline cleaner was used before the enzyme step.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "CODE CHECK — S-only + coffee-cream = pro",
+      "NEVER hot water or steam",
+      "NEVER oxidizer before enzyme",
+      "NEVER alkaline (OxiClean alone / baking soda) — sets protein + darkens tannin",
+      "Never pour — batting saturation = permanent",
+      "Extraction > application on upholstery"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never hot water or steam",
+      "Never OxiClean alone before enzyme step",
+      "Never baking soda / ammonia on tannin",
+      "Never pour liquid on upholstery",
+      "Never rub — drives stain into batting"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S upholstery: full protocol OK",
+      "S-only: water-side coffee-cream isn't a match — pro",
+      "X: vacuum only — pro",
+      "Leather: different protocol entirely",
+      "Silk / wool: pro only"
     ]
   },
+  "materialWarnings": [
+    "Three stains in one — order matters",
+    "Code check before any chemistry",
+    "Batting saturation is the upholstery ceiling",
+    "Aggressive extraction > aggressive cleaning"
+  ],
   "escalation": {
-    "when": "If coffee cream stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is coffee cream on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "S-only or X code, cushion batting saturation, ring returns after a full correctly-ordered home cycle, alkaline cleaner was used before the enzyme step, or cushion cover isn't removable and spill was large.",
+    "whatToTell": "\"Coffee with cream on [W / W-S / S / X] upholstery, age [fresh / overnight], home-treated in order: cold + Dawn → enzyme (warm, not hot) → 3% peroxide → vinegar → aggressive weighted extraction. No hot water / no alkaline before enzyme. [Ring returns / batting soak / alkaline was used before I got here]. Need low-moisture extraction, not truck-mount.\"",
+    "specialistType": "professional upholstery cleaner with low-moisture extraction"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Upholstery code — W / W-S / S / X?",
+      "Does cushion cover zip off and machine-wash?",
+      "Fresh or overnight?",
+      "Cappuccino / latte (more milk) or splash of cream?",
+      "Syrup / sweetener added? (sugar adds stickiness)",
+      "Has OxiClean / baking soda been used already?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Zip-off cushion covers change the card — wash the cover cold with enzyme detergent. On fixed upholstery, batting saturation is the real ceiling. Latte / cappuccino (more milk, more protein + fat) takes more enzyme dwell than splash-of-cream variants."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

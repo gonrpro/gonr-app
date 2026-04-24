@@ -1,82 +1,237 @@
 {
   "id": "wax-crayon-carpet",
   "title": "Wax Crayon on Carpet",
-  "stainFamily": "dry_side",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Crayon is paraffin wax mixed with pigment (iron oxides, organic dyes). On carpet, the wax penetrates the fiber and hardens, trapping concentrated pigment within the matrix. The combination of physical wax deposit and dye stain makes this a two-phase removal challenge. Heat can spread the wax and drive pigment deeper.",
-  "whyThisWorks": "Freezing first hardens the wax for mechanical removal from carpet. POG then dissolves remaining wax residue. Surfactant lifts the liberated pigment. For persistent color, an oxidizer addresses the dye component after the wax matrix is fully removed. Working from the back of the fabric pushes wax out rather than deeper in.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–45 minutes; NO iron on synthetic carpet",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "wax-crayon",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "wax",
+      "paraffin",
+      "pigment",
+      "carpet",
+      "kid-classic",
+      "no-iron-synthetic",
+      "bad-advice-target"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Same chemistry as crayon on upholstery: paraffin wax + concentrated pigment (iron oxides for earth tones, organic dyes for brights). Crayon deposits on carpet fiber as a physical wax object + leaves separate pigment behind after wax removal. Two bad-advice targets on carpet specifically: (1) the \"iron + brown paper bag\" trick works on cotton fabric but is DANGEROUS on synthetic carpet — nylon / polyester / olefin can soften, distort, or melt under a hot iron, and olefin (Berber, indoor-outdoor) is the most vulnerable. (2) The oily-DIY family (peanut butter, WD-40, mayo) softens wax but leaves a grease halo that's harder to clean than the crayon on fabric that can't be flushed. Clean answer: freeze the wax brittle, crack it off, citrus solvent for residue, separate pigment treatment. Works on all fibers without the iron risk.",
+  "whyThisWorks": "Freezing (ice bag) hardens paraffin brittle so bulk lifts off mechanically — safe on every fiber. Goo Gone dissolves remaining wax film. Separate peroxide pass handles residual pigment. Freeze-and-solvent is the universal-safe path that doesn't depend on fiber identification.",
+  "defaultAssumption": "Kid coloring on the living-room or bedroom rug. Most home carpet is synthetic — NO IRON. Wool carpet is rare and tolerates careful low heat through a barrier, but most home carpet is not wool. Default to freeze-and-solvent; skip heat entirely when fiber is unknown.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Fiber ID — NO IRON on Synthetic",
+      "technique": "Identify fiber OR default no-heat",
+      "equipment": "Carpet tag if available, good light",
+      "dwellTime": "2 minutes",
+      "instruction": "Synthetic carpet (nylon, polyester, olefin, triexta) = NO IRON. Wool = iron OK through heavy barrier, careful. Unknown = NO IRON, freeze-and-solvent only. Olefin softens at modest heat. Most home carpet is synthetic."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Freeze Wax Brittle",
+      "technique": "Ice bag on wax 10–15 min",
+      "equipment": "Ice in sealed plastic bag, plastic card or dull knife",
+      "dwellTime": "10–15 minutes",
+      "instruction": "Press a sealed bag of ice on the crayon for 10–15 min. Never direct ice on carpet — water damage. Wax gets brittle."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Crack and Lift Bulk",
+      "technique": "Mechanical removal while brittle",
+      "equipment": "Plastic card / dull knife",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Crack the frozen wax with the edge of a plastic card. Lift off bulk pieces. Re-freeze if it softens. Don't gouge fibers."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Goo Gone on a White Cloth",
+      "technique": "Citrus solvent tamp from top",
+      "equipment": "Goo Gone on white cotton cloth",
+      "dwellTime": "30–60 sec per pass",
+      "instruction": "Apply Goo Gone to a cloth (never pour on carpet). Tamp from top, outside-in. Flip cloth as it picks up wax. Ventilate — flammable. 2–3 passes typical."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush — Emulsify",
+      "technique": "Clear solvent residue",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Dawn in cool water on damp cloth. Soft toothbrush. Blot. Damp-cloth rinse, never pour."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ for Residual Pigment (Optional)",
+      "technique": "Separate dye treatment after wax is gone",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Once wax is gone, pigment may remain. Hidden-area test first. 3% peroxide on damp cloth 5 min. Blot. Dark crayons (red / purple / black) may need 2 rounds."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan-Dry",
+      "technique": "Extract + verify",
+      "equipment": "Dry towel + weight, fan",
+      "dwellTime": "30 min + fan",
+      "instruction": "Weighted dry towel 30 min. Fan-dry. Inspect in daylight."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Freeze with ice bag to harden wax. Scrape off bulk with dull edge",
-      "2. Apply POG to dissolve remaining wax residue",
-      "3. Apply NSD to lift pigment (for colored wax). Flush with cool water",
-      "4. If dye remains: apply H2O2 6% carefully, monitor",
-      "5. Apply Acetic Acid 28% (diluted 1:10) for pH restoration. Blot dry"
+      "1. Fiber ID: synthetic = NO iron. Unknown = no iron.",
+      "2. Freeze with ice bag 10–15 min. Crack + lift bulk.",
+      "3. Goo Gone tamp from top, outside-in.",
+      "4. Dawn + soft brush damp cloth.",
+      "5. 3% H₂O₂ for residual pigment (hidden test).",
+      "6. Weighted dry towel + fan-dry."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Ice + sealed bag",
+      "Plastic card / dull knife",
+      "Goo Gone (citrus solvent)",
+      "Dawn / NSD",
+      "3% Hydrogen peroxide (pigment residual)",
+      "Fan"
     ],
-    "temperature": "ambient",
+    "temperature": "cold (freeze) + ambient solvent; no iron on synthetic",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains",
-      "Ensure adequate ventilation when using solvents — VOC fumes require extraction"
+      "NEVER iron on synthetic carpet (nylon / polyester / olefin / triexta)",
+      "NEVER iron on unknown fiber — default freeze + solvent",
+      "NEVER peanut butter / WD-40 / mayo — grease halo",
+      "Never direct ice — water damage",
+      "Flammable solvent — ventilate, no flame",
+      "Pigment is a separate stain after wax is gone"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Don't Iron Synthetic Carpet — And Don't Use Peanut Butter",
+      "instruction": "Two bad-advice traps to avoid. (1) The viral \"iron + brown paper bag\" trick works on COTTON FABRIC but NOT on most carpet. Most home carpet is synthetic (nylon, polyester, olefin, triexta) and can soften, melt, or distort under a hot iron. Olefin (a lot of Berber and indoor-outdoor carpet) is especially heat-sensitive. (2) \"Peanut butter / WD-40 / mayo\" tricks soften crayon wax but leave a grease stain on carpet that you can't flush like you can flush fabric. Clean answer: freeze the wax. Safe on every fiber, no grease halo."
+    },
+    {
+      "step": 2,
+      "agent": "Freeze the Crayon 10 to 15 Minutes",
+      "instruction": "Put ice in a zip-lock bag and press directly on the crayon for 10–15 minutes. NEVER put ice directly on carpet — water damage. The wax will get hard and brittle. You can feel it change under the bag."
+    },
+    {
+      "step": 3,
+      "agent": "Crack and Lift — Don't Dig",
+      "instruction": "Once frozen, crack the wax with the edge of a plastic card, old credit card, or dull butter knife. Lift the pieces out of the pile. Most of the bulk comes off cleanly this way. If it starts softening, refreeze. Don't gouge the fibers with sharp edges."
+    },
+    {
+      "step": 4,
+      "agent": "Goo Gone or Citrus Solvent on a White Rag",
+      "instruction": "A thin wax film usually remains in the pile. Put Goo Gone (orange bottle, hardware / grocery store) on a clean white rag — NEVER pour on carpet. Press and tamp from the TOP. Flip the rag as it picks up wax and pigment. Work outside-in. Open windows — Goo Gone is flammable, no flame, no smoking."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn + Soft Toothbrush",
+      "instruction": "Work a drop of Dawn with cool water into a damp cloth, press on the spot with a soft toothbrush. Lifts residual wax + solvent residue. Damp-cloth rinse — don't pour water on the carpet."
+    },
+    {
+      "step": 6,
+      "agent": "If Color Remains — Separate Dye Treatment",
+      "instruction": "Once the wax is gone, you may still see the crayon color in the carpet fiber (especially red, blue, purple, or black). That's now a dye stain, not a wax stain. Hidden-area test first. Dab 3% hydrogen peroxide on a damp white cloth, press 5 minutes, blot. Dark crayon colors (red, purple, black) may need 2 rounds."
+    },
+    {
+      "step": 7,
+      "agent": "Weighted Paper Towels + Fan",
+      "instruction": "Stack dry paper towels on the spot, put a heavy book on top, 30 minutes. Fan-dry until the carpet is fully dry. Inspect in daylight."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate for Melted-In or Olefin / Wool / Stubborn",
+      "instruction": "Pro if: someone already ironed the spot and melted wax into the fiber, the carpet is wool (pro-only), the carpet is a Berber / indoor-outdoor (often olefin with solvent sensitivity), or color persists after 2 rounds on pigment. Tell them: \"Crayon on [nylon / polyester / olefin / wool / unknown] carpet, age [fresh / melted-in], home-treated with freeze + Goo Gone + Dawn + [3% peroxide]. No iron attempted / iron was attempted with X result. [Residual pigment / melted-in / fiber concern].\" Don't mention peanut butter even if someone tried it earlier."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place ice in a bag on the wax for 10 minutes until brittle. Do NOT apply ice directly to fabric",
-      "2. Scrape off hardened wax with a dull knife or credit card edge",
-      "3. Place paper towels above and below the fabric (if possible). Iron on low heat to melt remaining wax into paper — check every 5 seconds",
-      "4. Apply Dawn dish soap to any remaining residue. Blot",
-      "5. Rinse with warm water. Air dry — inspect before using dryer"
+      "1. Fiber ID — synthetic or unknown = NO IRON.",
+      "2. NO peanut butter / WD-40 / mayo — grease halo.",
+      "3. Freeze with ice-in-bag 10–15 min. Crack + lift.",
+      "4. Goo Gone on rag, tamp from top, outside-in. Ventilate.",
+      "5. Dawn + soft toothbrush damp cloth.",
+      "6. 3% peroxide for residual pigment (hidden test).",
+      "7. Weighted paper towels + fan-dry.",
+      "8. Melted-in / olefin / wool / dark-ghost = pro."
     ],
     "products": [
+      "Ice + zip-lock bag",
+      "Plastic card / dull knife",
+      "Goo Gone (citrus solvent)",
       "Dawn dish soap",
-      "paper towels",
-      "ice"
+      "3% Hydrogen peroxide",
+      "Paper towels + heavy book",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if someone already ironed the spot (melted wax into fiber), if the carpet is olefin / Berber with solvent sensitivity, if the carpet is wool, or if pigment persists after 2 peroxide rounds on fiber-tested carpet.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER iron synthetic carpet — melts fiber",
+      "NEVER iron unknown fiber — default freeze + solvent",
+      "NEVER peanut butter / WD-40 / mayo / hair conditioner — grease halo",
+      "Never direct ice on carpet — water damage",
+      "Flammable solvent — ventilate, no flame",
+      "Never pour solvent or water on carpet",
+      "Pigment is a separate stain AFTER wax is gone"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never iron on synthetic or unknown carpet fiber",
+      "Never oily DIY tricks — grease halo on carpet",
+      "Never direct ice on carpet",
+      "Never pour solvent on carpet",
+      "Never use solvent near open flame"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / triexta carpet: freeze + solvent OK. NO IRON.",
+      "Olefin (polypropylene): freeze + solvent OK; NO IRON — melting risk",
+      "Wool: careful iron through heavy barrier possible; pro for tight pigment",
+      "Unknown fiber: treat as synthetic — no heat",
+      "Jute backing: over-wetting browns"
     ]
   },
+  "materialWarnings": [
+    "Iron method DANGEROUS on synthetic carpet",
+    "Freeze-and-solvent is universal-safe",
+    "Oily DIY hacks leave grease halo",
+    "Pigment is a separate stain after wax"
+  ],
   "escalation": {
-    "when": "If wax crayon stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is wax crayon on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Iron was already used and wax is melted in, olefin / Berber / indoor-outdoor carpet with solvent sensitivity, wool carpet with tight pigment, or residual color after 2 peroxide rounds on fiber-tested carpet.",
+    "whatToTell": "\"Crayon on [nylon / polyester / olefin / wool / unknown] carpet, age [fresh / melted-in], home-treated with freeze + Goo Gone + Dawn + [3% peroxide]. No iron attempted [/ iron was attempted with X result]. [Residual pigment / melted-in / fiber concern]. No oily DIY tricks used.\"",
+    "specialistType": "professional carpet cleaner with solvent spotting + fiber ID"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Carpet fiber — synthetic / wool / unknown?",
+      "Has anyone already ironed it?",
+      "Size / spread — drip, smear, scribble?",
+      "Crayon color — dark (red / purple / black) or light?",
+      "Fresh or melted-in from warm room / sat on?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Ironing synthetic carpet is the most dangerous piece of widespread advice for this stain. Olefin carpet is especially heat-sensitive. Dark crayons leave more pigment residue — budget extra peroxide rounds."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
