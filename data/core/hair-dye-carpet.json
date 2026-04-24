@@ -1,78 +1,233 @@
 {
   "id": "hair-dye-carpet",
   "title": "Hair Dye on Carpet",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Permanent hair dye contains oxidative dye precursors (p-phenylenediamine, aminophenols) that react with hydrogen peroxide developer inside the fiber to form large, insoluble dye molecules. On carpet, the same chemistry occurs — the dye precursors penetrate the fiber and oxidize into permanent color. Once fully developed, the dye is designed to be wash-resistant.",
-  "whyThisWorks": "If caught before full development (within minutes), surfactant and cold water can remove undeveloped dye precursors from carpet. Once developed, a reducing agent (sodium hydrosulfite) reverses the oxidation, breaking the dye molecule apart. An oxidizer (H2O2) can also break the chromophore. Complete removal is difficult — professional treatment is often necessary for full resolution.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 9,
+  "timeEstimate": "20 minutes fresh; low success rate once developed — set expectations",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "hair-dye",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "dye",
+      "oxidative-dye",
+      "carpet",
+      "time-critical",
+      "low-success-rate",
+      "expectation-setting",
+      "no-bleach-fantasy"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Permanent hair dye is engineered to be permanent. It contains dye PRECURSORS (p-phenylenediamine, aminophenols, para-toluenediamine) that are SMALL and colorless until they react with a hydrogen peroxide developer inside the fiber (or inside the carpet). That reaction builds large, insoluble color molecules that mechanically lock into the fiber structure. On hair, that's the whole point. On carpet, same chemistry — the dye develops inside the carpet fiber and becomes a permanent plastic-bonded color. The wet window (before the dye finishes oxidizing) is usually 20–30 minutes. AFTER development, home removal success rate is LOW — sometimes 30%, often 0%. The #1 piece of bad advice online is \"use chlorine bleach to remove hair dye\" — chlorine bleach will NOT reliably remove developed hair dye from carpet and can permanently bleach the carpet itself, leaving a whiter spot where the dye was. There's no safe \"nuclear\" home option. Honest expectation-setting is part of the card.",
+  "whyThisWorks": "If caught during development (first 20–30 min), cold water + Dawn rinses unreacted precursors before they finish oxidizing. Once developed, reducing agents (sodium hydrosulfite, professional) can sometimes break the dye molecule apart, but home options are limited and carpet often takes a bleached patch along with any color reduction. 3% peroxide at home has minimal effect on developed hair dye. The honest card: catch-it-fresh = reasonable; discovered-dry = low success, set expectations, pro early.",
+  "defaultAssumption": "Home hair-coloring accident — kitchen floor, bathroom rug, carpeted bathroom. Fresh splash (still wet) = act in the next 10 minutes for the best (still limited) chance. Dried, developed dye = low home success rate. Box dye (permanent) = hard. Semi-permanent color = easier but still tough. Henna = different chemistry entirely.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Expectation Check",
+      "technique": "Set realistic goal before chemistry",
+      "equipment": "Honesty + timer",
+      "dwellTime": "1 minute",
+      "instruction": "FRESH and still wet (caught within 20 min of spill) = real chance at partial removal. DRIED / developed dye = home success rate is low, a pro is the honest path. There is NO safe home nuclear option — DO NOT use chlorine bleach. Bleach doesn't reliably remove developed hair dye and can permanently bleach the carpet."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Water Blot — Fast",
+      "technique": "Damp-cloth transfer before development",
+      "equipment": "Cold water, stack of white towels",
+      "dwellTime": "2–5 minutes",
+      "instruction": "Dampen a clean white towel with cold water. Press FIRMLY on the spot. Lift, rotate to a clean section, press again. The goal is to transfer as much wet dye into the towel as possible BEFORE it finishes oxidizing inside the carpet fiber. Work fast. Never pour — pouring carries dye into the pad, and pad-dye is non-reversible."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Dawn + Cold Water",
+      "technique": "Surfactant lifts unreacted precursor",
+      "equipment": "Dawn + cold water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn diluted in cold water on damp cloth. Press on the spot, 5 min, blot. Keeps going while still wet — lifts precursors before full development. Repeat 2–3 cycles while still wet."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Peroxide Test",
+      "technique": "Verify peroxide safe on carpet color",
+      "equipment": "3% H₂O₂ on white cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "In a hidden carpet area: 3% peroxide on damp cloth, press 2 min. Cloth picks up carpet color = skip peroxide. Clean = proceed to step 5."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide — Low-Yield on Developed Dye",
+      "technique": "Oxidize chromophore (limited effect post-development)",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "3% peroxide on damp cloth, press 5–10 min, blot. Only partial effect on developed hair dye — manage expectations. Two cycles max. Do not layer with bleach / ammonia / alkaline.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners. Hidden-test first."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Towels Overnight + Fan",
+      "technique": "Extract + prevent pad wicking",
+      "equipment": "Paper towels + weight, fan",
+      "dwellTime": "8–12 hours",
+      "instruction": "Weighted paper towels on the spot overnight. Fan-dry. Prevents dye from wicking back up from the pad."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Honest Assessment + Escalation",
+      "technique": "Accept or escalate — no home nuclear option",
+      "equipment": "Daylight, pro phone number",
+      "dwellTime": "n/a",
+      "instruction": "Inspect in daylight. If significant color remains, two options: (1) pro carpet cleaner with reducing-agent chemistry — may help, not guaranteed, or (2) accept the stain / replace the affected area. DO NOT escalate to chlorine bleach at home — it bleaches the carpet, not the dye."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate or appropriate solvent to dissolve dye/pigment matrix",
-      "2. Apply NSD to lift loosened pigment. Flush with cool water",
-      "3. If color persists: apply H2O2 6% on colorfast fabrics to break chromophore bonds",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Expectation check — fresh = chance, developed = low-yield.",
+      "2. Cold damp-cloth blot, fast, before full development.",
+      "3. Dawn / NSD + cold water, 2–3 cycles while still wet.",
+      "4. Hidden peroxide test on carpet.",
+      "5. 3% H₂O₂ — 2 cycles max, limited effect post-development.",
+      "6. Weighted paper towels overnight + fan.",
+      "7. Escalate: pro sodium hydrosulfite or accept stain. No chlorine bleach."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cold water",
+      "Dawn / NSD",
+      "3% Hydrogen peroxide",
+      "Sodium hydrosulfite (pro only, limited success)",
+      "Paper towels + weight",
+      "Fan"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold throughout — heat accelerates oxidation and development",
+    "warnings": [
+      "NEVER chlorine bleach — bleaches carpet, not developed dye",
+      "Home success rate on DEVELOPED dye is low — manage expectations",
+      "Never pour — pad-dye is non-reversible",
+      "Never heat — accelerates development",
+      "Hidden peroxide test mandatory on dyed carpet",
+      "Reducing agents (sodium hydrosulfite) are pro-only and still limited"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Set Expectations BEFORE Any Chemistry",
+      "instruction": "Permanent hair dye is engineered to be permanent. On carpet, the same chemistry that sets dye in hair sets it in the carpet fiber. The honest truth: if you caught this in the first 10–20 minutes (still wet), you have a real chance of partial removal. If it's already dried and developed, home success rate is LOW — sometimes the stain comes out partially, often not at all. There is NO home \"nuclear option\" that works reliably. DO NOT use chlorine bleach — it will NOT reliably remove developed hair dye, and it CAN permanently bleach your carpet, leaving a white spot where the dye was. Plan for: (a) act fast while wet, (b) pro for what's left, OR (c) accept the stain / replace the affected patch."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Water + White Towel — Right Now If Fresh",
+      "instruction": "If the spill is still wet: drop what you're doing. Grab a stack of clean white towels. Dampen one with COLD tap water. Press FIRMLY on the spot. Lift, rotate to a clean section, press again. Keep transferring wet dye into the towel. Speed matters — the dye is actively developing INSIDE the carpet fiber right now, and you're racing the clock. Do NOT pour water on the spot — pouring drives dye into the pad, which you can't extract. Do NOT rub — rubbing spreads it."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Cold Water — While Still Wet",
+      "instruction": "Mix a tablespoon of Dawn dish soap with 2 cups of cold water. Dampen a white cloth, press on the spot 5 minutes, blot. Repeat 2–3 times WHILE THE SPOT IS STILL WET. Dawn lifts unreacted dye precursors before they finish oxidizing. Cold only. If the spot dries between your attempts, you've lost the wet window."
+    },
+    {
+      "step": 4,
+      "agent": "Hidden Patch Test Before Peroxide",
+      "instruction": "In a closet or under furniture, dab 3% drugstore hydrogen peroxide on a white cloth, press on hidden carpet for 2 minutes. If the cloth picks up carpet color, your carpet is not peroxide-tolerant — skip the peroxide step and go straight to escalation. If the test is clean, proceed."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide — Honest About Limited Effect",
+      "instruction": "Dab 3% drugstore peroxide on a damp white cloth, press on the spot 5–10 minutes, blot. Repeat once, maximum. Against DEVELOPED hair dye, peroxide does not do much — but it's the strongest safe thing you have at home. Don't expect a miracle. Don't try to \"escalate\" peroxide to OxiClean, bleach, ammonia, or anything else — that won't help and can make things worse.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline products."
+    },
+    {
+      "step": 6,
+      "agent": "Weighted Towels + Fan Overnight",
+      "instruction": "Stack dry paper towels on the spot, weigh them with a heavy book, leave overnight. Prevents residual dye from wicking back up from the pad. Point a fan at the area. Inspect in daylight the next morning."
+    },
+    {
+      "step": 7,
+      "agent": "Accept or Escalate — Be Honest With Yourself",
+      "instruction": "Look at the spot in daylight. Two options: (1) CALL A PRO carpet cleaner — they have sodium hydrosulfite (reducing agent) and related chemistry that sometimes breaks hair dye down, but even a pro has a limited success rate on developed hair dye. Or (2) ACCEPT the stain / replace the affected section. For a nice rug or high-value carpet, try the pro route. For a rental or basement carpet you were planning to replace anyway, accept is often the economical call. DO NOT escalate to chlorine bleach at home — bleach will bleach the carpet, not the dye, and leave a whiter spot where the dye was."
+    },
+    {
+      "step": 8,
+      "agent": "What to Tell the Pro",
+      "instruction": "\"Permanent hair dye on [nylon / polyester / wool / unknown] carpet, [box dye brand if known] — age [fresh / dried / overnight], home-treated with cold + Dawn + [3% peroxide]. No chlorine bleach used. Dye was [caught within minutes / discovered after development]. Please assess — I understand developed hair dye has a low success rate even with pro chemistry.\" That last line makes you easier to help — shows you have realistic expectations."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately — never rub (spreading dye worsens it)",
-      "2. Apply Dawn dish soap mixed with cold water. Blot gently",
-      "3. If stain persists: apply hydrogen peroxide 3% on colorfast fabrics — test hidden area first, 5-10 min dwell time",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat until stain is completely gone"
+      "1. Expectation check — fresh has a chance; developed dye is low-yield.",
+      "2. NO CHLORINE BLEACH — bleaches carpet, not dye.",
+      "3. Cold water damp-cloth blot FAST while wet — no pouring, no rubbing.",
+      "4. Dawn + cold water damp cloth, 2–3 cycles WHILE STILL WET.",
+      "5. Hidden peroxide test.",
+      "6. 3% peroxide — 2 cycles max, limited effect.",
+      "7. Weighted towels + fan overnight.",
+      "8. Accept or call pro — no home nuclear option."
     ],
     "products": [
+      "Cold water",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% Hydrogen peroxide (drugstore)",
+      "White paper towels + heavy book",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if the dye has fully developed (dried, overnight, hours old) and Dawn cycles haven't cleared it. Home chemistry ceiling is low; bleach is not a safe escalation.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "NEVER chlorine bleach — bleaches carpet, not developed dye",
+      "NEVER heat — accelerates oxidation / development",
+      "NEVER pour — pad dye is non-reversible",
+      "NEVER rub — spreads dye",
+      "Home success rate on developed hair dye is LOW — set expectations"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never chlorine bleach on hair dye on carpet",
+      "Never heat — accelerates development",
+      "Never pour liquid — pad dye is permanent",
+      "Never layer bleach + peroxide + ammonia"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester carpet: limited home success even so",
+      "Wool: pro-only, sodium hydrosulfite carefully",
+      "Dyed carpet: peroxide hidden-test mandatory (can bleach carpet)"
     ]
   },
+  "materialWarnings": [
+    "NO BLEACH FANTASY — bleach doesn't work and ruins carpet",
+    "Home success rate on developed dye is LOW",
+    "Fresh = chance. Developed = often accept or pro.",
+    "Replacement / accept is a valid option"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is hair dye on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Dye has developed (any time past the 10–20 min wet window), Dawn cycles haven't cleared it, or the carpet is high-value enough to try pro sodium hydrosulfite.",
+    "whatToTell": "\"Permanent hair dye on [nylon / polyester / wool] carpet, age [fresh / developed], home-treated with cold + Dawn + [3% peroxide]. No chlorine bleach used. I understand developed hair dye has low pro success rate — want your best effort, open to replacement if not feasible.\"",
+    "specialistType": "professional carpet cleaner with reducing-agent chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Still wet or already developed (dry / hours old)?",
+      "Permanent (box dye), semi-permanent, or henna?",
+      "Has anyone already tried chlorine bleach?",
+      "Carpet — nylon / polyester / wool?",
+      "How valuable — try pro or accept / replace?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The wet-window is often the whole difference between \"partially removable\" and \"permanent.\" Henna is a different chemistry (plant tannin) and responds to different treatment. Chlorine bleach on carpet is the #1 bad advice online — it bleaches the carpet, leaving a worse mark than the dye, not better."
   },
-  "difficulty": 9,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

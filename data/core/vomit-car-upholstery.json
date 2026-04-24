@@ -1,83 +1,267 @@
 {
   "id": "vomit-car-upholstery",
   "title": "Vomit on Car Upholstery",
+  "stainType": "combination",
   "stainFamily": "protein",
   "surface": "car-upholstery",
-  "sector": "automotive",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Vomit is a complex mixture of partially digested food, stomach acid (HCl, pH 1.5-3.5), bile salts, mucus, and proteins. On car upholstery, the acid can damage dyes and fibers if left in contact, while the protein component bonds and sets with heat. Bile salts act as surfactants that drive the stain deeper into the substrate. The odor comes from volatile fatty acids and bacterial decomposition.",
-  "whyThisWorks": "Immediate removal of solids prevents acid damage to car upholstery. Cold water dilutes the acid and prevents protein from setting. Enzyme treatment breaks down the protein matrix, while surfactant addresses the bile and fat components. Odor neutralization requires reaching all contaminated material beneath the surface.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "30 minutes to several hours; car-specific constraints",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "vomit",
+    "surfaceCanonical": "car-upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "protein",
+      "acid",
+      "combination",
+      "car",
+      "biohazard",
+      "foam-soak-risk",
+      "odor-critical",
+      "HVAC-consideration"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Same chemistry as vomit on home upholstery — protein + stomach acid (HCl) + bile salts + partially digested food — but car context changes the protocol in important ways: (1) car upholstery is usually synthetic (polyester / nylon) and built to be cleanable, (2) car seats have FOAM and SEAT SPRINGS underneath that absorb liquid and hold odor, (3) the car's HVAC system will pick up lingering odor molecules and re-distribute them through the cabin for months, (4) car upholstery can't be removed easily to wash separately, and (5) you can't fully dry a car interior the way you can a couch — trapped moisture in foam or under carpet backing leads to persistent odor + mold. Fast response + aggressive extraction + ventilation + enzyme treatment + odor-eliminator (ozone or pro-grade enzyme dwell) are the car-specific adjustments.",
+  "whyThisWorks": "Solids removal + cold acid-neutralization + enzyme protein digestion + Dawn fat emulsion + vinegar rinse handles the chemistry. Aggressive weighted extraction prevents foam saturation from becoming permanent. Baking soda + sun-in-open-doors dries moisture and absorbs residual odor. HVAC-running-on-fresh-air-only while treating pulls odor out rather than through the vents. Pro-escalation threshold is lower than home upholstery because car foam + HVAC mean odor can linger for months if not caught cleanly.",
+  "defaultAssumption": "Kid car-sick, adult car-sick (e.g., after a night out), pet car-sick, or morning sickness. Fresh + caught at a gas station = real home chance with aggressive extraction. Dried / overnight / baked in the sun (summer car + vomit = worst case) = pro auto detailer with ozone. Leather seats = different protocol entirely (leather-specific card, generally wipe-clean + conditioning).",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Safety + Environment Setup",
+      "technique": "Park, ventilate, PPE",
+      "equipment": "N95 mask, disposable gloves, garbage bag, parking spot",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Pull over / park as fast as safely possible if you're driving. Gloves + mask. Open ALL doors. Turn car HVAC OFF (or to recirculate OFF + fresh air IN) — you don't want vomit odor cycling through the vent system. If in hot weather, parking in shade matters — heat sets protein. If it's a pet accident, mask especially."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Solid Removal — Scrape, Don't Rub",
+      "technique": "Spoon / dull edge into sealed garbage bag",
+      "equipment": "Spoon, plastic card, garbage bag, paper towels",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Scoop solids with a spoon or plastic card into a sealed garbage bag. Press paper towels STRAIGHT DOWN on liquid, lift, repeat. Don't rub or wipe — drives liquid into foam. Work outside-in. Seal and discard waste outside the car."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Cold Water Blot — Dilute Acid",
+      "technique": "Damp-cloth blot + weighted extract",
+      "equipment": "Cold water, white cloth, dry towel + weight",
+      "dwellTime": "5 minutes",
+      "instruction": "Dampen a clean white cloth with cold water. Press firmly on the spot, lift, rotate, repeat. Cold dilutes stomach acid before it damages dye. Weighted dry towel 5 min after blotting to pull moisture back up. Never pour — car upholstery foam is unforgiving about saturation."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat — Warm (Not Hot)",
+      "technique": "Digest protein + food residue",
+      "equipment": "Enzyme pretreat (Nature's Miracle / OxiClean Versatile / Biz) in warm water on damp cloth",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Dissolve enzyme pretreat in WARM water (bath temperature, under 100°F — hot water sets protein). Dampen a cloth, press on the spot, cover with a second damp towel to keep enzyme wet. 15–20 min. Don't use hot."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Emulsify fat + bile",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Work Dawn in cool water into the spot with a soft toothbrush. Lifts bile and fat. Damp-cloth rinse."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Rinse",
+      "technique": "Neutralize acid + VOC odor",
+      "equipment": "White vinegar + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Dilute white vinegar on damp cloth, 5 min. Neutralizes residual acid and VOCs causing lingering odor. The car-specific version of the step most guides skip. Blot."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Baking Soda Overnight",
+      "technique": "Aggressive moisture + odor extraction",
+      "equipment": "Heavy dry towels + weight, baking soda",
+      "dwellTime": "30 min × 2–3 rounds + overnight",
+      "instruction": "Stack dry towels, weight heavily, 30 min. Swap for fresh dry towels, repeat 2–3 times. Then dust baking soda generously over the area. Leave overnight with all doors / windows open (shade, not sun). Vacuum baking soda next day with car vacuum attachment."
+    },
+    {
+      "step": 8,
+      "side": "dry",
+      "agent": "Sun + Open Doors Ventilation (Next Day)",
+      "technique": "Dry the foam completely + vent residual odor",
+      "equipment": "Parked car with all doors open, sunlight nearby but not baking interior",
+      "dwellTime": "Several hours",
+      "instruction": "Park in a well-ventilated spot, open all doors for several hours. Sunlight near the car helps UV kill residual bacteria; direct sun baking the inside = don't if hot outside (over ~80°F) — heat can set any residual protein."
+    },
+    {
+      "step": 9,
+      "side": "dry",
+      "agent": "Odor Check + Escalate to Auto Detailer With Ozone",
+      "technique": "Smell check in fresh car",
+      "equipment": "Nose, auto detailer phone if needed",
+      "dwellTime": "n/a",
+      "instruction": "Drive the car for a day with HVAC on FRESH AIR (not recirculate). Smell-check. Lingering odor = foam is still contaminated. Auto detailer with OZONE treatment (car sealed + ozone generator runs, humans + pets out) is the car-specific pro option that home can't replicate."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Park + open doors + HVAC OFF. Gloves + mask.",
+      "2. Scrape solids into sealed bag. Blot liquid straight down.",
+      "3. Cold damp-cloth blot + weighted extract.",
+      "4. Enzyme pretreat WARM (not hot), 15–20 min.",
+      "5. Dawn + soft brush damp cloth.",
+      "6. White vinegar + cool water damp cloth rinse.",
+      "7. Weighted dry towels × 2–3 rounds + baking soda overnight.",
+      "8. Open-door ventilation + mild sunlight next day.",
+      "9. Residual odor = auto detailer with ozone."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "N95 mask + gloves",
+      "Spoon / plastic card",
+      "Enzyme pretreat (Nature's Miracle / OxiClean Versatile / Biz)",
+      "Dawn / NSD",
+      "White vinegar",
+      "Baking soda",
+      "Heavy dry towels + weight",
+      "Sealed garbage bag"
     ],
-    "temperature": "cold",
+    "temperature": "cool to warm (<100°F / 38°C) — never hot, never steam",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein",
-      "Avoid over-wetting — extract excess moisture to prevent backing/foam damage"
+      "Biohazard — PPE + sealed disposal",
+      "NEVER hot water or steam — sets protein",
+      "NEVER pour liquid on car upholstery — foam saturation is permanent territory",
+      "Car HVAC picks up odor — run fresh air ONLY during and after",
+      "Hot parked car + residual vomit = protein set permanently",
+      "Pro escalation threshold is LOW on car upholstery — ozone is the car-specific tool"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Pull Over and Don't Drive With It in the Car",
+      "instruction": "If you're driving when it happens, pull over as soon as safely possible. Driving the vomit around heats the seat (engine heat, sun through windshield) and drives odor into the HVAC system. Park in shade if summer. Open ALL doors. Turn the HVAC OFF completely — you don't want vents cycling vomit odor through the cabin. Gloves and a mask on before you touch anything. Keep a trash bag ready."
+    },
+    {
+      "step": 2,
+      "agent": "Solid Removal — Scrape Into a Sealed Bag",
+      "instruction": "Spoon or plastic card to scoop solids into a garbage bag. Don't rub or wipe — that drives liquid into the seat foam. Press paper towels STRAIGHT DOWN on liquid, lift straight up, press fresh ones. Keep going until no more liquid transfers. Seal the garbage bag and put it OUTSIDE the car immediately."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Blot — Never Pour",
+      "instruction": "Dampen a clean white cloth with cold water, press firmly on the spot. Lift, rotate to a clean section, press again. Cold water dilutes the stomach acid before it damages the seat dye. Keep blotting until no more color transfers. NEVER pour water on a car seat — car seats have foam underneath, and saturated foam dries slowly and holds odor for months."
+    },
+    {
+      "step": 4,
+      "agent": "Enzyme Pretreat in WARM (Not Hot) Water",
+      "instruction": "Dissolve enzyme pretreat — Nature's Miracle, OxiClean Versatile, or Biz — in WARM water. Bath temperature, under 100°F. Not hot. Hot water sets the protein. Dampen a white cloth in the enzyme solution, press on the spot, cover with a second damp towel to keep it wet, wait 15–20 minutes. The enzyme digests the protein + food residue."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn + Soft Toothbrush",
+      "instruction": "Work a drop of Dawn in cool water into the spot with a soft toothbrush. Dawn emulsifies the fat and bile salts in vomit. Damp-cloth rinse — don't pour."
+    },
+    {
+      "step": 6,
+      "agent": "White Vinegar + Water Rinse for Acid + Odor",
+      "instruction": "Mix equal parts white vinegar + cool water. Dab on a damp cloth, press on the spot 5 minutes. Neutralizes residual stomach acid and breaks down the volatile compounds that cause persistent smell. This is the step that separates \"looks clean, smells bad\" from actually clean."
+    },
+    {
+      "step": 7,
+      "agent": "Weighted Towels + Baking Soda Overnight",
+      "instruction": "Stack heavy dry towels on the spot, weight them with a book or bag of sand, 30 minutes. Swap for fresh dry towels, repeat 2–3 times. Then dust baking soda generously over the area. Leave overnight with ALL DOORS OPEN (shade, not sun). Vacuum the baking soda next morning with a car-vac attachment. Aggressive extraction matters more on car seats than aggressive cleaning — foam that stays wet = mold + odor for months."
+    },
+    {
+      "step": 8,
+      "agent": "Ventilate + Mild Sunlight Next Day",
+      "instruction": "Park in a well-ventilated shade spot the next day with all doors open for several hours. Mild sunlight near the car helps. Avoid direct sun baking the interior on a hot day — over 80°F + vomit residue = protein set permanently. Don't use HVAC while treating; when you drive, run fresh air ONLY, not recirculate, for the next several days."
+    },
+    {
+      "step": 9,
+      "agent": "Smell Check + Pro Ozone for Lingering Odor",
+      "instruction": "Drive for a day with HVAC on fresh air. If you can still smell vomit (especially as the car heats up in sunlight), the foam is still contaminated and home chemistry is at its ceiling. Call an AUTO DETAILER with OZONE treatment — they seal the car with an ozone generator inside (no people / pets during treatment) and oxidize the last residual VOCs. Tell them: \"Vomit on car upholstery, age [fresh / overnight], home-treated with cold + enzyme (warm, not hot) + Dawn + vinegar + baking soda + open-door dry. [Odor persists / foam saturation suspected]. Need ozone treatment.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub. Dispose safely",
-      "2. Blot area with cold water and clean white cloths to dilute acid",
-      "3. Mix 1 tbsp Dawn dish soap with 2 cups cold water. Apply and blot",
-      "4. Mix equal parts white vinegar and cold water. Apply for odor neutralization",
-      "5. Blot with clean white cloth until dry. Sprinkle baking soda over area — let sit 15 min",
-      "6. Vacuum and air dry — no heat"
+      "1. Pull over. Open doors. HVAC OFF. PPE.",
+      "2. Scrape solids into sealed bag outside car. Blot straight down.",
+      "3. Cold damp-cloth blot — never pour.",
+      "4. Enzyme pretreat WARM (not hot) water, 15–20 min.",
+      "5. Dawn + soft toothbrush.",
+      "6. White vinegar + water rinse for acid + odor.",
+      "7. Weighted dry towels × 2–3 + baking soda overnight with doors open.",
+      "8. Ventilate + mild sunlight next day; fresh-air HVAC only.",
+      "9. Odor lingers = auto detailer with ozone."
     ],
     "products": [
+      "N95 mask + gloves",
+      "Spoon / plastic card",
+      "Enzyme pretreat (Nature's Miracle / OxiClean Versatile / Biz)",
       "Dawn dish soap",
-      "white vinegar",
-      "baking soda"
+      "White vinegar",
+      "Baking soda",
+      "Heavy dry towels + weight",
+      "Sealed garbage bag"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if odor persists after a full cycle + ventilation, if the vomit baked in a hot car before treatment (protein likely set), or if the seat material is leather / Alcantara (different protocol).",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "Biohazard — PPE + sealed disposal outside car",
+      "NEVER hot water or steam — sets protein",
+      "NEVER pour — foam saturation is persistent-odor territory",
+      "Car HVAC redistributes odor — fresh-air only",
+      "Never bake the car in hot sun with vomit residue",
+      "Pro ozone threshold is LOW — car foam holds odor"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach — damages automotive fabric",
-      "No excess water — soaks into seat foam and causes mold/mildew"
+      "Never hot water or steam — sets protein",
+      "Never pour liquid on car upholstery",
+      "Never drive far with vomit in the car (heat + HVAC)",
+      "Never run HVAC on recirculate during or after",
+      "Never bare-handed — biohazard"
     ],
     "fiberSensitivities": [
-      "Automotive fabrics are usually synthetic (nylon/polyester) — chemically durable",
-      "Seat foam absorbs moisture — use minimum liquid, extract thoroughly",
-      "Test in hidden area (under seat) before visible treatment"
+      "Polyester / nylon car fabric: tolerates full protocol",
+      "Leather: different protocol — don't use this card",
+      "Alcantara / suede-like: pro — most DIY chemistry damages the nap",
+      "Vinyl: tolerates mild cleaning but test first"
     ]
   },
+  "materialWarnings": [
+    "Car-specific: HVAC + foam + heat combine to make odor permanent",
+    "Pro ozone is the car-specific escalation",
+    "LOW pro threshold",
+    "Baking in hot sun = protein set"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is vomit on car upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional auto detailer"
+    "when": "Odor persists after a full home cycle, vomit baked in a hot sun-parked car before treatment, seat is leather / Alcantara / suede, or HVAC smells like vomit when running.",
+    "whatToTell": "\"Vomit on car upholstery, seat type [polyester / leather / Alcantara], age [fresh / overnight / older / baked in heat], home-treated with cold + enzyme (warm, not hot) + Dawn + vinegar + baking soda + ventilation. No hot water / steam. [Odor persists / HVAC contaminated / foam saturation suspected]. Need ozone treatment.\"",
+    "specialistType": "auto detailer with enzyme cleaning + ozone generator capability"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "How long ago — was it driven around before treatment?",
+      "Has the car been parked in hot sun since the incident?",
+      "Seat type — polyester / leather / Alcantara / vinyl?",
+      "Has HVAC been running? Recirculate or fresh air?",
+      "Adult / kid / pet? (pet vomit has different bile content)",
+      "Visible staining or just odor now?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The big car-specific variables: heat exposure (hot parked car) sets protein fast, HVAC on recirculate redistributes odor through the whole cabin for months, and foam under the seat cover is the real ceiling for home chemistry — once saturated, ozone treatment is often the only clean fix. Baby car seat covers are often removable and machine-washable — check before in-place treatment."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,76 +1,235 @@
 {
   "id": "water-stain-carpet",
-  "title": "Water on Carpet",
+  "title": "Water Ring on Carpet",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Water stains are mineral deposits (calcium, magnesium, iron) left behind when water evaporates from carpet. Hard water leaves white/chalky residue. Iron-rich water leaves rust-colored marks. The minerals bond to fiber through electrostatic interactions and can etch certain surfaces (marble, glass) if left in contact. The 'stain' is actually a deposit, not absorbed color.",
-  "whyThisWorks": "A mild acid (white vinegar or citric acid) dissolves the mineral deposits on carpet by converting them to soluble salts. For iron-based water stains, a reducing agent (oxalic acid) is more effective. On stone surfaces, only pH-neutral cleaners are safe — acid dissolves marble/limestone. Preventing mineral buildup is easier than removing it — squeegee/dry after water contact.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "20–45 minutes; wicking/ring mechanics are the whole problem",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "water-stain",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "water-ring",
+      "wicking",
+      "mineral-deposit",
+      "carpet",
+      "common-confusion",
+      "counter-intuitive"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "\"Water stain\" on carpet isn't water itself (water is clear). The visible mark is one of three things: (1) DIRT WICKING — dirt already in the carpet fiber and pad is carried to the edges of the wet zone as water evaporates, concentrating at a line as the boundary retreats (the 'coffee-ring effect'), (2) MINERAL DEPOSITS from hard water (calcium / magnesium / iron), or (3) SIZING or FILLER chemicals from the carpet that migrated when wet. Dirt wicking is BY FAR the most common on home carpet. That matters because the solution is counter-intuitive: the ring isn't a new deposit; it's redistributed dirt. Spot-cleaning a water ring concentrates more dirt at a smaller ring, making the problem worse. Wetting the ENTIRE AREA uniformly wider and drying uniformly is what clears it.",
+  "whyThisWorks": "Uniform re-wet across a zone wider than the ring + gentle surfactant + uniform drying redistributes the wicked dirt back into the carpet instead of concentrating at a line. Uniform extraction matters as much as uniform application. For hard-water mineral rings, dilute vinegar chelates the calcium. For pad soak-through discoloration (persistent after surface treatment), pro extraction can flush the pad.",
+  "defaultAssumption": "Leaky plant pot, spilled glass, pet's water bowl knocked over, overcooked humidifier, carpet cleaning left a boundary ring, or wet-shoe footprint that dried into a halo. Fresh ring = quick fix with uniform redistribution. Old dried ring that's been spot-cleaned multiple times = bigger ring each attempt until someone widens the zone. Mineral-deposit ring (chalky / white) = vinegar step.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage — Ring vs Pad Soak",
+      "technique": "Identify what you're actually cleaning",
+      "equipment": "Good light + hand on carpet",
+      "dwellTime": "2 minutes",
+      "instruction": "Feel the spot. Dry surface + visible ring = dirt wicking (this protocol). Damp / still-wet / crunchy pad under the surface = pad saturation, different problem (wet extraction pro). Mineral / chalky white ring = vinegar step added. Dirt / tan / gray ring = standard wicking protocol."
+    },
+    {
+      "step": 2,
+      "side": "wet-uniform",
+      "agent": "Uniform Damp Cloth — Wet WIDER Than the Ring",
+      "technique": "Counter-intuitive: wet MORE area",
+      "equipment": "Clean white cloth + cool water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Dampen (don't soak) a white cloth with cool water. Work in gentle sweeping motions starting OUTSIDE the ring, sweeping inward, then back outward. Cover a zone 4–6 inches larger than the ring on all sides. You're deliberately re-mobilizing the wicked dirt across the full area. Do NOT concentrate on the ring — that's what created the problem. No pouring — damp cloth only."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Dawn Damp Cloth — Uniform Application",
+      "technique": "Gentle surfactant, sweeping",
+      "equipment": "Dawn + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Tiny amount of Dawn in cool water on damp cloth. Sweep uniformly over the whole wider zone (not just the ring). Flip cloth as it picks up dirt. No pouring."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "White Vinegar (Mineral / Hard-Water Rings Only)",
+      "technique": "Acid chelation on calcium",
+      "equipment": "1 tbsp white vinegar + 1 cup cool water on damp cloth",
+      "dwellTime": "3 minutes",
+      "instruction": "If the ring is white / chalky / pale yellow (hard-water mineral): vinegar on damp cloth, sweep across the wider zone. Neutralize with plain-water damp cloth after. Skip for dirt-wicking rings."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Weighted Dry Towels — COVER the Wider Zone",
+      "technique": "Uniform extraction, not ring-focused",
+      "equipment": "Dry white towels sized to cover the wider wet zone, weight",
+      "dwellTime": "30 min + overnight",
+      "instruction": "Stack dry towels over the ENTIRE wet zone (not just the ring). Weight with books. 30 min minimum. Swap for fresh towels, repeat. Overnight with fresh towels = best result. Uniform drying = no new ring."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Fan-Dry Uniformly — Not Just the Ring",
+      "technique": "Even airflow across the zone",
+      "equipment": "Fan positioned for broad coverage",
+      "dwellTime": "4–12 hours",
+      "instruction": "Position fan for broad airflow across the whole zone. Do NOT point the fan at just the ring — that creates uneven drying which creates a new ring at the new boundary. Check in daylight after full dry."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "If New Ring Formed — Go Wider Still",
+      "technique": "Expand the zone",
+      "equipment": "Damp cloth, more patience",
+      "dwellTime": "varies",
+      "instruction": "New ring = didn't widen enough, or dried unevenly. Repeat with an even WIDER zone (6–8 inches beyond the new ring). You can keep expanding outward until the whole affected patch is uniformly clean. Not failure — the physics of the ring mechanic."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove loose material mechanically — brush, scrape, or vacuum as appropriate",
-      "2. Apply NSD to the stain area",
-      "3. Apply appropriate secondary agent based on stain response",
-      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Triage: ring vs pad soak. Mineral vs dirt.",
+      "2. Uniform damp-cloth sweep 4–6\" beyond the ring.",
+      "3. Dawn / NSD damp cloth — sweep whole zone, don't spot-treat.",
+      "4. Vinegar chelation for mineral rings only.",
+      "5. Weighted dry towels over ENTIRE wet zone, overnight.",
+      "6. Fan-dry uniformly across the zone.",
+      "7. New ring = widen zone and repeat."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "White cotton cloths",
+      "Dawn / NSD",
+      "White vinegar (hard-water rings)",
+      "Dry towels + weight",
+      "Fan"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout",
     "warnings": [
-      "Always test on hidden area first"
+      "Wet UNIFORMLY WIDER — not just the ring",
+      "Spot-cleaning a water ring creates a new smaller water ring",
+      "NEVER pour water — damp cloth only",
+      "NEVER point fan at only the ring — uneven drying creates new ring",
+      "Pad soak-through = wet extraction pro, different problem",
+      "Hidden peroxide not needed for this stain (no pigment)"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Understand What a Water Ring Is",
+      "instruction": "This is counter-intuitive and matters: when water sits on carpet and evaporates at the edges, it PULLS dirt that was already in the fiber + pad toward the outside of the wet zone. Dirt concentrates at the boundary as a ring. That's what you see. The ring isn't water damage, it's REDISTRIBUTED DIRT. Because of that, spot-cleaning the ring CREATES ANOTHER ring around the new wet area. The fix is counter-intuitive: wet a WIDER area UNIFORMLY, redistribute the dirt back, and dry everything uniformly."
+    },
+    {
+      "step": 2,
+      "agent": "Check — Ring or Pad Soak?",
+      "instruction": "Press firmly on the spot. If the carpet feels damp under the surface, or the pad feels crunchy / squishy, that's pad saturation — a different problem. Home surface treatment won't reach pad water, and you need a pro with wet extraction. If the surface is DRY and you just see a visible RING line, continue below."
+    },
+    {
+      "step": 3,
+      "agent": "Damp Cloth — Wet 4 to 6 Inches WIDER Than the Ring",
+      "instruction": "Dampen (don't soak) a clean white cloth with cool water. Work in gentle SWEEPING motions — not scrubbing — starting OUTSIDE the ring, sweeping inward, then back outward. Cover a zone 4 to 6 inches wider than the ring on every side. You're deliberately making the whole zone uniformly damp. Do NOT concentrate effort on the ring itself — that's what created the problem. Do NOT pour water on the carpet."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn on a Damp Cloth — Sweep the Whole Zone",
+      "instruction": "Mix a tiny drop of Dawn in cool water on another damp cloth. Sweep gently across the whole wider zone — NOT just the ring. The Dawn helps redistribute the dirt that was concentrated at the ring edge. Flip the cloth as it picks up color. Keep sweeping; don't scrub."
+    },
+    {
+      "step": 5,
+      "agent": "Vinegar Only for Chalky / White Rings",
+      "instruction": "If the ring is WHITE, chalky, or pale yellow, it's hard-water mineral deposit (calcium or iron). Mix 1 tablespoon white vinegar in 1 cup cool water. Sweep across the zone on a damp cloth for 3 minutes. Then re-sweep with a plain cool-water damp cloth. Skip this step for standard tan / gray dirt-wicking rings."
+    },
+    {
+      "step": 6,
+      "agent": "Dry Towel — Cover the ENTIRE Wet Zone",
+      "instruction": "Get a dry white towel larger than the whole wet area you just created. Lay it flat over the WHOLE damp zone. Weigh it down with books. 30 minutes. Replace with a fresh dry towel, repeat. Overnight with a fresh towel is the best result. The towel has to cover the whole zone so the carpet dries uniformly — if you leave some of the wet area uncovered, a new ring forms at the edge of the uncovered part."
+    },
+    {
+      "step": 7,
+      "agent": "Fan-Dry the WHOLE Area Evenly",
+      "instruction": "Set a fan so airflow crosses the whole treated zone evenly. DO NOT point the fan directly at just the ring spot — that dries it faster than the edges and creates a new ring at the new boundary. Broad, even airflow. Full dry typically takes 4–12 hours. Don't walk on the zone or vacuum until fully dry."
+    },
+    {
+      "step": 8,
+      "agent": "If a New Ring Formed — Just Go Wider",
+      "instruction": "Check in daylight after full dry. If a new, smaller ring formed, you didn't go wide enough or you dried unevenly. Repeat steps 3–7 on an even WIDER zone — 6 to 8 inches beyond the new ring. This isn't failure; it's the physics of the ring mechanic. You can keep expanding outward until the whole affected area is uniformly clean."
+    },
+    {
+      "step": 9,
+      "agent": "Escalate — Pad Soak / Mineral-Persistent / Wool",
+      "instruction": "Pro call if: the pad is soaked and you can feel damp beneath the surface, a mineral ring doesn't fade with vinegar, the carpet is wool, or you've run the redistribute-and-dry protocol twice on progressively wider zones without success. Tell them: \"Water ring on [nylon / polyester / wool] carpet, source [plain water / hard water / iron well water], home-treated with uniform wider-zone redistribution + Dawn + [vinegar] + weighted uniform dry. [New ring keeps forming / pad soak-through / mineral persistent].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Mix equal parts white vinegar and water. Apply to mineral deposits",
-      "2. Blot with clean white cloth. Repeat if needed",
-      "3. Rinse with clean water to remove vinegar residue",
-      "4. For fabric: launder normally. For hard surfaces: wipe dry",
-      "5. Prevention: squeegee or dry surfaces after water contact"
+      "1. Understand the ring is physics, not chemistry — redistributed dirt.",
+      "2. Triage — ring (this card) vs pad soak (pro extraction).",
+      "3. Damp cloth — wet UNIFORMLY 4–6\" beyond the ring.",
+      "4. Dawn damp cloth sweeping the whole zone.",
+      "5. White vinegar for mineral rings only (chalky / white).",
+      "6. Dry towel over ENTIRE wet zone, weighted, overnight.",
+      "7. Fan across whole area evenly, not just the ring.",
+      "8. New ring = widen zone and repeat.",
+      "9. Pad soak / mineral persistent / wool = pro."
     ],
     "products": [
-      "white vinegar"
+      "Clean white cloths (damp + dry)",
+      "Dawn dish soap",
+      "White vinegar (mineral rings only)",
+      "Large dry white towels + weight",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if you can feel pad soak-through damp under the surface (wet extraction pro), if a mineral ring persists after vinegar, or if a new ring forms after two progressively wider redistribution attempts.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "Don't spot-treat a water ring — creates a new smaller ring",
+      "Wet UNIFORMLY WIDER, not more on the ring",
+      "NEVER pour water on carpet — damp cloth only",
+      "Uniform drying is mandatory — uneven fan = new ring",
+      "Pad soak is a different problem (pro extraction)"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never spot-treat the ring — creates a new one",
+      "Never pour water",
+      "Never point a fan at only the ring",
+      "Never assume chemistry when it's physics"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / olefin: tolerates full protocol",
+      "Wool: pH-sensitive — vinegar test hidden area first",
+      "Jute backing: over-wetting causes browning — even bigger reason to damp-cloth only"
     ]
   },
+  "materialWarnings": [
+    "Water ring = dirt redistribution, not water damage",
+    "Solution is counter-intuitively wider redistribution",
+    "Uniform wet + uniform dry = no ring",
+    "Spot-cleaning makes it worse"
+  ],
   "escalation": {
-    "when": "If water stain stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is water stain on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Pad soak-through (damp under surface), mineral ring that doesn't fade after vinegar, wool carpet with ring persistence, or new ring forms after two progressively wider redistribution attempts.",
+    "whatToTell": "\"Water ring on [nylon / polyester / wool] carpet, source [plain / hard / iron water], home-treated with uniform wider-zone redistribution + Dawn + [vinegar] + weighted uniform dry. [New ring keeps forming / pad soak / mineral persistent].\"",
+    "specialistType": "professional carpet cleaner with low-moisture extraction (pad soak = wet extraction)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Ring is dry on surface, or damp / pad soak underneath?",
+      "Ring color — tan / gray (dirt wicking) or white / chalky (mineral)?",
+      "Hard water area or well with iron?",
+      "Has anyone spot-cleaned the ring already (making it worse)?",
+      "Carpet fiber?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The 'ring is physics, not chemistry' framing is the whole card. Previous spot-cleaning attempts often create a series of concentric rings — each one pulls more dirt inward. Wider is always the right direction. Microfiber or shag rugs are more prone to visible rings because nap direction affects apparent color."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

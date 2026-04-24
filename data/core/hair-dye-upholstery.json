@@ -1,79 +1,231 @@
 {
   "id": "hair-dye-upholstery",
   "title": "Hair Dye on Upholstery",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Permanent hair dye contains oxidative dye precursors (p-phenylenediamine, aminophenols) that react with hydrogen peroxide developer inside the fiber to form large, insoluble dye molecules. On upholstery, the same chemistry occurs — the dye precursors penetrate the fiber and oxidize into permanent color. Once fully developed, the dye is designed to be wash-resistant.",
-  "whyThisWorks": "If caught before full development (within minutes), surfactant and cold water can remove undeveloped dye precursors from upholstery. Once developed, a reducing agent (sodium hydrosulfite) reverses the oxidation, breaking the dye molecule apart. An oxidizer (H2O2) can also break the chromophore. Complete removal is difficult — professional treatment is often necessary for full resolution.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 9,
+  "timeEstimate": "20 minutes fresh; low success rate once developed — set expectations",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "hair-dye",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "dye",
+      "oxidative-dye",
+      "upholstery",
+      "time-critical",
+      "low-success-rate",
+      "expectation-setting",
+      "no-bleach-fantasy",
+      "code-check"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Same chemistry as hair dye on carpet: dye PRECURSORS (p-phenylenediamine, aminophenols) react with hydrogen peroxide developer to form large, insoluble, covalently-bonded color inside fiber. On upholstery the dye develops inside the fabric + sometimes into cushion batting. Wet window is 20–30 minutes; after that, success rate is low. Upholstery adds two problems carpet doesn't: (1) the care code (W / W-S / S / X) determines what chemistry is even allowed, and (2) cushion batting saturation wicks dye deeper and makes it functionally unreachable by surface treatment. The #1 bad advice is chlorine bleach — it will NOT reliably remove developed hair dye, and it CAN bleach the upholstery permanently (fabric whiter than surroundings, permanent). Honest expectation-setting is the whole card.",
+  "whyThisWorks": "Fresh (wet) dye: cold + Dawn + blot can lift unreacted precursors before full development. Developed dye: pro sodium hydrosulfite is limited but sometimes partial. Home peroxide has minimal effect on developed hair dye. The honest framing — catch-it-fresh = chance, discovered-dry = low-yield — is more useful than promising results home chemistry can't deliver.",
+  "defaultAssumption": "Home hair-dyeing accident — sat on a couch while dye was processing, splashed a chair, dripped on an ottoman. Fresh + caught in first 10 min = real chance. Dried = low success. Cushion cover that zips off and is machine-washable = by far the best option for a fresh spot — freeze any chemistry on the cushion, wash the cover cold.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Expectation + Code Check",
+      "technique": "Set realistic goal + read tag",
+      "equipment": "Honesty + good light",
+      "dwellTime": "1 minute",
+      "instruction": "Fresh (wet) = real chance. Developed (dry) = LOW home success rate. DO NOT use chlorine bleach — bleaches the upholstery, not the dye, and leaves a whiter patch. Find the upholstery code: W / W-S = full protocol. S-only = solvent only, no water chemistry. X = vacuum only, pro. If the cushion cover zips off and is washable, that's the best path — freeze on cushion, wash cover cold."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Damp-Cloth Blot — Fast",
+      "technique": "Transfer wet dye into towel",
+      "equipment": "Cold water, white towels",
+      "dwellTime": "2–5 minutes",
+      "instruction": "Damp white towel with cold water. Press FIRMLY on the spot, lift, rotate, repeat. Transfer wet dye into the towel before it finishes developing. Never pour — over-wetting carries dye into batting. Never rub — spreads."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Dawn + Cold Water (W / W-S)",
+      "technique": "Surfactant on damp cloth",
+      "equipment": "Dawn + cold water on damp cloth",
+      "dwellTime": "5 minutes per pass",
+      "instruction": "W or W-S code only: Dawn in cold water on damp cloth, press 5 min, blot. 2–3 cycles WHILE STILL WET. S-only code: skip Dawn-in-water; use a dry clean white cloth to buff, or call a pro — S-only + hair dye is a tough combination for DIY."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hidden Test + 3% H₂O₂",
+      "technique": "Limited effect post-development — set expectations",
+      "equipment": "3% H₂O₂ on damp cloth (W / W-S only)",
+      "dwellTime": "5–10 minutes",
+      "instruction": "W / W-S: hidden-area color test (2 min). If upholstery doesn't bleach on test, 3% peroxide on damp cloth, press 5–10 min, blot. Two cycles max. Minimal effect on developed dye. S-only: pro.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan",
+      "technique": "Prevent batting wick-back",
+      "equipment": "Dry towel + weight, fan",
+      "dwellTime": "30 min + overnight",
+      "instruction": "Weighted dry towel 30 min × 2–3 rounds + overnight. Fan-dry fully. Batting saturation wicks dye back up — extraction matters more than application on upholstery."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Honest Assessment + Escalate or Accept",
+      "technique": "No home nuclear option — decide path",
+      "equipment": "Daylight",
+      "dwellTime": "n/a",
+      "instruction": "Inspect. Significant color remaining = pro sodium-hydrosulfite option (limited success), reupholster / replace cushion cover (often most economical), or accept. Don't escalate to chlorine bleach at home."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate or appropriate solvent to dissolve dye/pigment matrix",
-      "2. Apply NSD to lift loosened pigment. Flush with cool water",
-      "3. If color persists: apply H2O2 6% on colorfast fabrics to break chromophore bonds",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Expectation + code tag check.",
+      "2. Cold damp-cloth blot, fast, before full development.",
+      "3. Dawn / NSD + cold water (W/W-S only), 2–3 cycles WHILE WET.",
+      "4. Hidden peroxide test, then 3% H₂O₂ — 2 cycles max, limited effect.",
+      "5. Weighted dry towel × rounds + overnight + fan.",
+      "6. Escalate: pro reducing agent OR reupholster / accept."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "White towels",
+      "Dawn / NSD",
+      "3% Hydrogen peroxide",
+      "Sodium hydrosulfite (pro, limited success)",
+      "Fan"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold throughout",
+    "warnings": [
+      "NEVER chlorine bleach — bleaches upholstery, not developed dye",
+      "Home success rate on DEVELOPED dye is LOW",
+      "Code check — S/X change protocol",
+      "Never pour — batting saturation is the ceiling",
+      "Never heat — accelerates development",
+      "Reducing agents (pro) are limited and code-dependent"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Set Expectations — and Stay Away From Bleach",
+      "instruction": "Permanent hair dye is designed to be permanent. Once it's developed (dry, hours old), home success rate is LOW. There is NO home nuclear option that works reliably. DO NOT use chlorine bleach — it does NOT reliably remove developed hair dye from upholstery, and it CAN permanently bleach the upholstery itself, leaving a whiter patch where the dye was. That's the most common piece of bad internet advice for this stain. Your realistic options: (a) act fast while still wet, (b) pro with reducing-agent chemistry (limited success but worth a try on valuable pieces), or (c) reupholster / replace the cushion cover / accept."
+    },
+    {
+      "step": 2,
+      "agent": "Code Check + Zip-Off Cushion Cover?",
+      "instruction": "Find the upholstery tag. W / W-S = full protocol. S-only = solvent-only, hair dye is a very tough combo with S-only — call a pro. X = vacuum only, pro. If the cushion cover zips off and is machine-washable, that's the BEST path: freeze any chemistry on the spot, take the cover off, wash it cold with enzyme detergent. The chance of recovery is higher on a full cold wash than on in-place spotting."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Damp Cloth + White Towel — IMMEDIATELY",
+      "instruction": "If the spill is still wet: NOW. Dampen a clean white towel with COLD tap water, press FIRMLY on the spot, lift, rotate to a clean section, press again. Transfer as much wet dye into the towel as possible before the dye finishes developing inside the fiber. Do NOT pour water on the upholstery — that carries dye into the cushion batting. Do NOT rub — rubbing spreads it."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Cold Water — W / W-S Only, While Still Wet",
+      "instruction": "If the code is W or W-S: mix 1 tablespoon of Dawn with 2 cups of cold water. Dampen a white cloth, press on the spot 5 minutes, blot. Repeat 2–3 times WHILE THE SPOT IS STILL WET. Dawn lifts unreacted dye precursors before they finish oxidizing. Cold only — heat accelerates development. If the code is S-only, skip this and call a pro — S-only + hair dye is not a home-safe combination."
+    },
+    {
+      "step": 5,
+      "agent": "Hidden Patch Test Before Peroxide",
+      "instruction": "In a hidden spot on the upholstery (under a cushion, inside a seam, behind a skirt), dab 3% drugstore peroxide on a white cloth, press 2 minutes. If upholstery color transfers to the cloth or the hidden spot looks paler after, skip peroxide — it will bleach the upholstery. If the test is clean, proceed."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide — Limited Effect, Honest",
+      "instruction": "Dab 3% peroxide on a damp white cloth, press on the spot 5–10 minutes, blot. Repeat once, max. Against DEVELOPED hair dye, peroxide has limited effect — but it's the strongest safe option at home. Don't expect miracles. Don't try to \"escalate\" to OxiClean + peroxide + bleach layered — that combination won't help and can leave fabric bleaching AND dye both.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners."
+    },
+    {
+      "step": 7,
+      "agent": "Weighted Dry Towels + Fan — Aggressive Extraction",
+      "instruction": "Stack dry white towels on the spot, weigh them with a heavy book, 30 minutes. Replace with fresh towels, repeat. Finish with fresh towels overnight under weight. This is the step that prevents dye from wicking back UP from the cushion batting as the upholstery dries. Fan the area. On upholstery, aggressive extraction matters more than aggressive application."
+    },
+    {
+      "step": 8,
+      "agent": "Accept, Replace Cover, or Pro",
+      "instruction": "Inspect the spot in daylight. Three options, no bleach: (1) CALL A PRO upholstery cleaner with sodium hydrosulfite chemistry — limited success on developed hair dye, but worth trying on a valuable piece, (2) REPLACE the cushion cover if it's a zip-off type — often cheaper than pro cleaning for a stubborn stain, (3) ACCEPT / flip the cushion / live with it. For a sentimental or expensive piece, pro. For a $200 chair, reupholstering the seat is often cheaper than pro dye removal with no guarantee. DO NOT escalate to chlorine bleach at home."
+    },
+    {
+      "step": 9,
+      "agent": "What to Tell the Pro",
+      "instruction": "\"Permanent hair dye on [W / W-S / S / X] upholstery, [box dye brand if known], age [fresh / dried / developed], home-treated with cold + Dawn + [3% peroxide]. No chlorine bleach used. I understand developed hair dye has low success even with pro chemistry — looking for your best effort, open to cushion cover replacement if not feasible.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately — never rub (spreading dye worsens it)",
-      "2. Apply Dawn dish soap mixed with cold water. Blot gently",
-      "3. If stain persists: apply hydrogen peroxide 3% on colorfast fabrics — test hidden area first, 5-10 min dwell time",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat until stain is completely gone"
+      "1. Expectation check — developed hair dye has LOW home success.",
+      "2. NO chlorine bleach. Period.",
+      "3. Code check + zip-off cover option.",
+      "4. Cold damp-cloth blot FAST while wet — no pour, no rub.",
+      "5. Dawn + cold water damp cloth (W/W-S) × 2–3 while wet.",
+      "6. Hidden peroxide test, then 3% peroxide × 2 max.",
+      "7. Weighted dry towels × rounds + overnight + fan.",
+      "8. Accept / replace cover / pro. No bleach escalation."
     ],
     "products": [
+      "Cold water",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% Hydrogen peroxide (drugstore)",
+      "Dry white towels + weight",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if the dye has developed (dry, overnight), if the code is S-only or X, or if Dawn cycles haven't cleared it. Home chemistry ceiling is low; bleach is not a safe escalation.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "NEVER chlorine bleach — bleaches upholstery, not developed dye",
+      "NEVER heat — accelerates development",
+      "NEVER pour — batting saturation is the ceiling",
+      "NEVER rub — spreads dye",
+      "Home success on developed dye is LOW — set expectations"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never chlorine bleach on hair dye on upholstery",
+      "Never heat or steam",
+      "Never pour liquid on upholstery",
+      "Never layer bleach + peroxide + ammonia"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S: limited home success; peroxide hidden-test mandatory",
+      "S-only: pro — hair dye + S-code is a tough combination",
+      "X: pro",
+      "Leather: different protocol entirely — call a leather specialist",
+      "Silk / wool: pro only"
     ]
   },
+  "materialWarnings": [
+    "NO BLEACH FANTASY — bleaches fabric, not developed dye",
+    "Reupholstering / replacing a cover is a valid option",
+    "Home success rate on developed dye is LOW",
+    "Fresh = chance. Developed = pro or accept."
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is hair dye on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "Dye has developed (past wet window), code is S-only or X, Dawn cycles haven't cleared it, or the piece is valuable enough to try pro reducing-agent chemistry or reupholstery.",
+    "whatToTell": "\"Permanent hair dye on [W / W-S / S / X] upholstery, age [fresh / dried / developed], home-treated with cold + Dawn + [3% peroxide]. No chlorine bleach used. I understand developed hair dye has low success rate — looking for best effort or to discuss reupholstery.\"",
+    "specialistType": "professional upholstery cleaner with reducing-agent chemistry OR upholstery repair specialist (for cover replacement)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Still wet or already developed (dry)?",
+      "Upholstery code — W / W-S / S / X?",
+      "Does the cushion cover zip off and machine-wash?",
+      "Permanent box dye, semi-permanent, or henna?",
+      "Has anyone tried chlorine bleach already?",
+      "How valuable — pro attempt, replace cover, or accept?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Zip-off washable cushion covers change the whole card — wash the cover cold, skip the in-place chemistry. Chlorine bleach on upholstery is widespread bad internet advice that makes things worse. Leather hair dye is an entirely different protocol — don't apply this card to leather."
   },
-  "difficulty": 9,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

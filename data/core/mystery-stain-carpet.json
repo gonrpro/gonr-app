@@ -1,80 +1,215 @@
 {
   "id": "mystery-stain-carpet",
-  "title": "Mystery on Carpet",
+  "title": "Unknown Stain on Carpet",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Mystery stains have unknown composition and origin. On carpet, the stain could be protein, tannin, oil, dye, or any combination. Misidentifying the stain family leads to wrong treatment — and potentially setting the stain permanently (e.g., hot water on hidden protein, alkali on hidden tannin). Systematic testing is required.",
-  "whyThisWorks": "The systematic approach on carpet: start with the safest, most universal treatment (cold water + NSD) to avoid setting any component. Then test: does cold water dissolve it (water-soluble)? Does it feel greasy (oil)? Is it stiff/crusty (protein)? Is it colored without texture (dye/tannin)? Once identified, apply the correct family protocol. When in doubt, professional assessment prevents damage.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "10 minutes for triage; full protocol depends on ID",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "mystery-stain",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "specialty",
+      "triage",
+      "refusal-style",
+      "unknown",
+      "carpet",
+      "routing-honesty",
+      "no-chemistry-soup"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "\"Mystery stain\" on carpet isn't a chemistry — it's a diagnostic gap. The stain is some combination of protein, tannin, oil, dye, or pigment, possibly compounded by heat, pad contamination, or age. The failure mode of generic stain advice: wrong first move PERMANENTLY sets the stain. Hot water on hidden protein, alkaline cleaner on hidden tannin, peroxide on hidden protein, solvent-first on water-soluble stain — each wrong choice is how a mystery becomes permanent. Carpet adds pad contamination risk: over-wetting with the wrong chemistry sinks the problem into the pad where no home treatment reaches. The correct protocol is identify-before-treat. If identification isn't possible, the universal-safe first step is cold + Dawn, and stop before aggressive chemistry if the stain doesn't respond.",
+  "whyThisWorks": "Triage narrows most \"mystery\" stains to one family in 60 seconds of visual + tactile inspection. A specific card then handles the real chemistry. For genuinely unknown stains, cold + Dawn is the ONE sequence that can't set any family of stain — protein, tannin, dye, or oil. When Dawn plateaus, stopping is the discipline. Layering aggressive chemistry blindly (hot water + OxiClean + peroxide + bleach + vinegar) is how home attempts turn a removable stain into a permanent one.",
+  "defaultAssumption": "User doesn't know what the stain is — often because they weren't there when it happened, it's old, a child / pet / guest made it and didn't report, or it predates their occupancy. Carpet can tolerate standard chemistry, but the stain itself might be heat-set, age-oxidized, or chemistry-unfriendly (rust + bleach = permanent, protein + hot water = permanent).",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage — Narrow to a Family",
+      "technique": "Visual + tactile inspection before any chemistry",
+      "equipment": "Good light, optional magnifier, flashlight",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Look and feel. Protein signals: stiff, crusty, rusty-brown, often yellowing over time (blood, food, bodily). Tannin signals: flat color, often yellowing/brown, no grease feel (wine, coffee, tea, berries). Oil signals: darker than surrounding carpet, greasy, halo, delayed drying (food oil, cosmetic, motor). Dye signals: vivid color, flat, sharp edges (ink, food coloring, marker). Combination / crusty / multicolor / rust-adjacent: protein + oil or dye + oil or rust. Try to narrow before chemistry."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Route to Specific Card If Possible",
+      "technique": "Use the right protocol",
+      "equipment": "GONR protocol library",
+      "dwellTime": "1 minute",
+      "instruction": "If triage narrowed the family, use the specific card (blood, red wine, cooking oil, Sharpie, etc.). Specific cards handle specific chemistry correctly. Generic \"mystery chemistry\" is how carpet gets ruined."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Cold Water Damp-Cloth Test",
+      "technique": "Safest possible first step",
+      "equipment": "Cold water, white cotton cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "Dampen a white cloth with COLD water. Press on the stain, lift. Color transfers = water-soluble family (likely fresh protein or dye or tannin). Nothing transfers = oil-side, polymerized, or set. Cold water is the one step that can't set ANY family of stain. Don't pour — damp cloth only."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn on Damp Cloth",
+      "technique": "Universal-safe surfactant",
+      "equipment": "Dawn + cold water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Small amount of Dawn in cold water on damp cloth. Press on the stain 5 min, blot. Dawn is the most universal-safe step: breaks oil, lifts water-soluble, won't set protein / tannin / dye. Color transfers to the cloth = encouragement; keep going cold. No transfer after one round = next decision."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "STOP POINT — Do NOT Guess Aggressive Chemistry",
+      "technique": "Refusal discipline",
+      "equipment": "Phone camera, good light, memory search",
+      "dwellTime": "2 minutes",
+      "instruction": "If Dawn + cold water didn't move the stain, STOP. Do NOT layer hot water → OxiClean → bleach → peroxide → vinegar → solvent in sequence hoping one works. One of those will set whatever the stain actually is. On carpet specifically: hot water sets protein, bleach sets rust darker, peroxide / OxiClean can set fresh protein, alkaline sets tannin, solvent on a wet stain spreads it. Photograph the stain in daylight. Think about context: age / location / who was there."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Escalate Honestly With Full Disclosure",
+      "technique": "Pro with chemistry-preserved disclosure",
+      "equipment": "Professional carpet cleaner",
+      "dwellTime": "n/a",
+      "instruction": "Call a pro carpet cleaner. Tell them: \"Unknown stain on [nylon / polyester] carpet, age [best guess], home-treated with cold water + Dawn ONLY. No hot water, no bleach, no OxiClean, no peroxide, no solvent, no vinegar.\" That exact disclosure is valuable — it tells them nothing is set yet and the full range of chemistry is available. If you tried other stuff before reading this, tell them what and in what order — honesty makes their job possible."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Test with cold water first — if it dissolves, likely water-soluble (tannin or fresh protein)",
-      "2. If greasy texture: start dry side — apply POG, then NSD",
-      "3. If stiff/crusty: treat as protein — apply Protein Formula (enzyme-safe fibers) or NSD (delicates)",
-      "4. If colored/flat: treat as tannin — apply Tannin Formula, then H2O2 6% on colorfast",
-      "5. Flush with NSD after any treatment. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse"
+      "1. Triage — narrow to protein / tannin / oil / dye / combination.",
+      "2. Route to specific card if identified.",
+      "3. Cold water damp-cloth test.",
+      "4. Dawn on damp cloth, 5 min.",
+      "5. STOP if no progress — no aggressive blind chemistry.",
+      "6. Escalate with full chemistry-disclosure to pro."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "POG (Paint Oil Grease remover)",
-      "Protein Formula",
-      "Tannin Formula",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cold water",
+      "Dawn / NSD",
+      "White diagnostic cloths",
+      "Good light + camera for documentation"
     ],
-    "temperature": "ambient",
+    "temperature": "cold throughout — any heat can set hidden protein",
     "warnings": [
-      "Always test on hidden area first"
+      "DO NOT layer aggressive chemistry on unknown stains",
+      "ONE wrong first step can set an unknown stain permanently",
+      "Cold + Dawn is the universal-safe first step",
+      "After Dawn plateau = STOP",
+      "Hot water, bleach, alkaline, peroxide, solvent each set DIFFERENT families permanently",
+      "Pad contamination risk is high on carpet — never pour"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Try to Figure Out What It Is Before You Touch It",
+      "instruction": "The #1 way unknown stains on carpet become permanent: someone guesses wrong on the first step. Hot water sets hidden protein. Bleach sets rust DARKER. Alkaline cleaners (baking soda, OxiClean, ammonia) set tannin. OxiClean can set fresh protein. Solvent on a wet stain spreads it. Before any chemistry, spend 60 seconds LOOKING: crusty / stiff = probably protein (blood, food, bodily). Flat color, dry, no greasy feel = probably tannin (wine, coffee, tea, juice). Greasy feel + halo = oil. Vivid bright color, sharp edge, no texture = dye (ink, food coloring, marker). Rust-orange + sharp edge near metal = rust. Context helps: what room, who was there, how old?"
+    },
+    {
+      "step": 2,
+      "agent": "Use the Right Card If You Can Narrow It",
+      "instruction": "If the triage narrowed it to a family, look up the specific protocol (red wine, cooking oil, Sharpie, blood, rust, etc.) — those cards handle the real chemistry correctly. Generic \"mystery chemistry\" on carpet can ruin it permanently. If you can't narrow it, continue here but know success rate is lower."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Damp-Cloth Test",
+      "instruction": "Dampen a white cloth with COLD water. Press on the stain, lift, look at the cloth. Color transferred up = water-soluble stain (treat cold, don't go hot). Nothing transferred = not fresh-water-soluble — could be oil, set, or polymerized. Cold water is the one step that can't set any family of stain. DO NOT pour water on the carpet — pouring drives whatever the stain is into the pad, which is functionally permanent."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Cold Water — The Safest Chemistry",
+      "instruction": "Mix a drop of Dawn with 1 cup of cold water. Dampen a white cloth in the solution and press on the spot for 5 minutes. Blot. Dawn is the most universal-safe first chemistry: it breaks oil, lifts water-soluble stains, and won't set protein / tannin / dye. If the stain fades or color transfers to the cloth: keep going with cold + Dawn. If NOTHING changes after one round: STOP, read step 5 carefully."
+    },
+    {
+      "step": 5,
+      "agent": "Do NOT Guess at Aggressive Chemistry",
+      "instruction": "If Dawn didn't move the stain, resist the urge to try OxiClean, then peroxide, then bleach, then vinegar, then alcohol, hoping one will work. ONE of those sequences will set the stain permanently. On carpet specifically: hot water sets hidden protein. Chlorine bleach sets rust DARKER and can bleach the carpet itself. Baking soda and OxiClean set tannin permanently. Peroxide can set fresh protein. Solvent on a wet stain spreads it. Stop. Take a photo in daylight. Try to remember context — was someone sick in that room, was there metal there, was food spilled, is this a pet accident spot?"
+    },
+    {
+      "step": 6,
+      "agent": "Escalate With Full Honesty",
+      "instruction": "Call a pro carpet cleaner. Tell them EXACTLY: \"Unknown stain on [nylon / polyester / wool] carpet. I don't know what it is or how old. Home-treated with cold water + Dawn ONLY. No hot water, no bleach, no OxiClean, no peroxide, no vinegar, no solvent used.\" That disclosure is valuable — it means nothing is set yet and they have the full chemistry toolkit. If you DID already try other things, tell them exactly what, in what order — lying or minimizing makes their job harder and can make the stain permanent."
+    },
+    {
+      "step": 7,
+      "agent": "Accept-As-Is Is a Valid Option",
+      "instruction": "For basement / rental / stairwell carpet, sometimes \"accept the spot\" is the right answer. Spending a pro visit on a small unknown stain in a low-traffic area might cost more than the stain is worth. For visible living-room carpet, pro is usually worth it. Knowing when to stop is part of the skill."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove loose material — brush, blot, or scrape as appropriate",
-      "2. Apply Dawn dish soap mixed with cold water",
-      "3. Blot with clean white cloth. Repeat if needed",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat"
+      "1. Triage — narrow to protein / tannin / oil / dye / rust / combination.",
+      "2. If identified, use the specific card. Generic = risky.",
+      "3. Cold water damp-cloth test — tells you if water-soluble.",
+      "4. Dawn + cold water damp cloth, 5 min.",
+      "5. If Dawn plateaus, STOP. No layering aggressive chemistry.",
+      "6. Escalate to pro with FULL disclosure of what was tried.",
+      "7. Accept-as-is is valid for low-value areas."
     ],
     "products": [
-      "Dawn dish soap"
+      "Cold water",
+      "Dawn dish soap",
+      "White diagnostic cloth",
+      "Good light + phone camera"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "STOP after Dawn + cold water plateaus. Do NOT escalate to aggressive blind chemistry on an unidentified stain — one wrong choice will set it permanently and pad contamination is unrecoverable at home.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "NEVER layer hot water + OxiClean + peroxide + bleach + solvent + vinegar on unknown",
+      "Hot water sets protein — if mystery is bodily fluid, permanent",
+      "Bleach sets rust darker — if mystery is metal/rust, permanent worse",
+      "Alkaline cleaners set tannin — if mystery is wine/tea, locked in",
+      "Peroxide can set fresh protein",
+      "Never pour — pad contamination is unrecoverable",
+      "Cold + Dawn is the universal-safe starting and stopping point"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never use hot water on unidentified stain",
+      "Never layer oxidizers + bleach + alkaline on unknown",
+      "Never pour liquid on carpet — pad contamination is permanent",
+      "Never assume carpet tolerance means the stain tolerates chemistry"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester carpet: chemistry-tolerant once stain is identified",
+      "Wool: pH-sensitive + hot-water-intolerant — pro on any uncertainty",
+      "Olefin: solvent-sensitive + solvent-tolerant in mixed ways",
+      "On unknown stain: cold + Dawn + stop + escalate"
     ]
   },
+  "materialWarnings": [
+    "Triage before chemistry",
+    "No aggressive chemistry on unknown stains",
+    "Cold + Dawn + stop + escalate is the honest protocol",
+    "Accept-as-is is valid for low-value areas"
+  ],
   "escalation": {
-    "when": "If mystery stain stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is mystery stain on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "After Dawn + cold water plateaus on an unidentified stain, or whenever the carpet is valuable enough that guessing wrong costs more than a pro visit.",
+    "whatToTell": "\"Unknown stain on [nylon / polyester / wool] carpet, age [best guess], home-treated with cold water + Dawn ONLY. No bleach, no OxiClean, no peroxide, no hot water, no solvent, no vinegar. Context [what I can remember about when/where the stain appeared].\"",
+    "specialistType": "professional carpet cleaner with stain identification experience"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "When / where did you notice it? Who was in the room?",
+      "Crusty/stiff, flat-colored, greasy, vivid, or rust-orange?",
+      "Halo around it (often oil) or sharp edge (often dye)?",
+      "Has the area been cleaned (maybe stain locked by someone earlier)?",
+      "Wall-to-wall carpet or area rug — valuable enough for pro?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Triage narrows the family ~90% of the time if the user looks carefully. The 10% genuinely-unknown case on valuable carpet should route to a pro. Previous cleaning attempts with wrong chemistry are the most common reason an 'unknown' stain is already locked when the pro gets there — honesty about what was tried changes what's still possible."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

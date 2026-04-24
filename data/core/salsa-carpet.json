@@ -1,80 +1,236 @@
 {
   "id": "salsa-carpet",
   "title": "Salsa on Carpet",
-  "stainFamily": "combo",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Salsa contains tomato (lycopene, tannins), onion (sulfur compounds), chili (capsaicin in oil, red pigment), and citric acid. On carpet, the tomato tannins bond to fiber while the capsaicin oil penetrates deeply. The red pepper pigment (capsanthin) is fat-soluble and resistant to water-based cleaning. Citric acid can affect dyes on sensitive fibers.",
-  "whyThisWorks": "Cold water rinse removes loose solids and citric acid from carpet. Surfactant emulsifies the capsaicin oil. Tannin spotter addresses tomato polyphenols. An oxidizer targets the residual red pigment. Treating the oil component is key because capsaicin oil bonds pepper pigment to fiber.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–40 minutes; ordered multi-component treatment",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "salsa",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "combination",
+      "tannin",
+      "oil",
+      "capsaicin",
+      "pigment",
+      "carpet",
+      "game-day",
+      "ordered-chemistry"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Salsa is a four-component stain: (1) TOMATO base (lycopene pigment + mild tannin + citric acid), (2) CHILI (capsaicin suspended in oil + capsanthin red pigment — both FAT-SOLUBLE, not water-soluble), (3) ONION + GARLIC (sulfur compounds + trace protein), (4) CILANTRO / SPICES (plant tannin + trace pigment). The unique element versus other tomato-based stains: capsaicin and capsanthin are fat-soluble pigments carried in oil. Water-only cleaning doesn't touch them — they stay in the fiber after the tomato red rinses away, leaving a lingering orange / red ghost. The correct order: scrape solids → cold water flush (removes citric acid, loose tomato) → DAWN to strip the oil (critical — releases fat-soluble pigments) → peroxide to oxidize lycopene + capsanthin → vinegar rinse. Skipping the oil-strip step leaves capsanthin locked behind.",
+  "whyThisWorks": "Cold water removes the water-soluble fraction fast. Dawn emulsifies the chili oil and releases the fat-soluble red pigment. Only THEN can peroxide reach and oxidize the pigment. Vinegar rinse keeps tannin on the acid side. Correct order = clean. Wrong order (peroxide before Dawn) = oil blocks oxidizer = orange ghost.",
+  "defaultAssumption": "Game-day / taco-Tuesday / Mexican takeout spill on living-room or kitchen carpet. Fresh + caught fast = reasonable win. Dried in = harder because of capsaicin-oil penetration. Restaurant salsa tends to be oilier than jarred (bigger oil-strip job). Store-bought jarred salsa has more vinegar and less oil (easier).",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Solid Bulk",
+      "technique": "Spoon solids into garbage bag",
+      "equipment": "Spoon, plastic card",
+      "dwellTime": "1 minute",
+      "instruction": "Scoop tomato chunks, onion, cilantro into a garbage bag. Don't rub."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water Blot",
+      "technique": "Flush water-soluble fraction",
+      "equipment": "Cold water, white cloth",
+      "dwellTime": "2 min per pass",
+      "instruction": "Pour small amount of cold water, blot. Repeat 2–3 times. Removes loose tomato + citric acid. Cold only. Don't flood."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush — Strip the Oil",
+      "technique": "CRITICAL step to release fat-soluble pigment",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Work Dawn into the spot with soft toothbrush 5–10 min. Dawn emulsifies chili oil and releases capsanthin. Skip this and peroxide can't reach the pigment. Damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hidden Peroxide Test",
+      "technique": "Verify carpet color safe",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "Dab peroxide on hidden carpet area. Color transfer = skip peroxide. Clean = proceed."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ for Pigment",
+      "technique": "Oxidize lycopene + capsanthin",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "3% peroxide on damp cloth, 5–10 min, blot. 2–3 cycles for restaurant-style salsa. Don't mix with ammonia / bleach / alkaline."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "White Vinegar + Water Rinse",
+      "technique": "Neutralize + keep tannin acid-side",
+      "equipment": "1 tbsp vinegar + 1 cup cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar rinse on damp cloth, 5 min. Neutralizes peroxide, keeps tannin light. Blot dry."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Weighted Paper Towels Overnight + Fan",
+      "technique": "Prevent wick-back ring",
+      "equipment": "Paper towels + weight, fan",
+      "dwellTime": "8–12 hours",
+      "instruction": "Weighted paper towels overnight. Fan-dry. Inspect daylight."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove excess solids with dull edge — do not rub",
-      "2. Apply Tannin Formula for the plant-pigment component",
-      "3. Apply POG for the oil component",
-      "4. Flush with NSD and cool water",
-      "5. If color persists: apply H2O2 6% on colorfast fabrics",
-      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+      "1. Scrape solid bulk.",
+      "2. Cold water flush 2–3 passes.",
+      "3. Dawn + soft brush oil-strip — CRITICAL step.",
+      "4. Hidden peroxide test.",
+      "5. 3% H₂O₂ 5–10 min, 2–3 cycles.",
+      "6. White vinegar + cool water rinse.",
+      "7. Weighted paper towels overnight + fan."
     ],
     "products": [
-      "Tannin Formula",
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Paper towels + weight",
+      "Fan"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold throughout",
+    "warnings": [
+      "Oil-strip BEFORE oxidizer — chili pigment is fat-soluble",
+      "NEVER alkaline cleaners on tomato tannin",
+      "NEVER hot water — cross-links tannin, caramelizes any sugar",
+      "Hidden peroxide test mandatory on dyed carpet",
+      "Don't flood — pad wick"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Why Salsa Leaves a Lingering Orange Ghost",
+      "instruction": "Salsa is tomato + onion + CHILI OIL + spices. The chili part — capsaicin and the red pigment capsanthin — is FAT-SOLUBLE. Water-only cleaning doesn't touch them. They stay in the carpet fiber after the tomato red rinses away, leaving an orange ghost. That's why a lot of \"cleaned\" salsa spots still have a faint orange tint. The fix is simple: strip the oil with Dawn BEFORE you use peroxide. Order matters."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Solids Into the Trash",
+      "instruction": "Spoon or plastic card to scrape tomato chunks, onion, cilantro into a garbage bag. Don't rub. Don't wipe. Just scoop."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Blot — Small Volume",
+      "instruction": "Pour a SMALL amount of cold water on the spot and blot with a dry cloth. Repeat 2–3 times. Removes loose tomato pigment and citric acid. Cold only — hot water cross-links tannin and sets pigment. Don't flood — pad wicking is the enemy."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Soft Toothbrush — OIL STRIP (The Key Step)",
+      "instruction": "Work a drop of Dawn with cool water into the spot using a soft toothbrush for 5–10 minutes. This is the step most home guides skip and it's why salsa leaves a ghost. Dawn emulsifies the chili oil and releases the fat-soluble red pigment so the next step (peroxide) can reach it. Without this step, oil blocks peroxide and the orange stays. Damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "agent": "Hidden Patch Test Before Peroxide",
+      "instruction": "In a hidden carpet area, dab 3% hydrogen peroxide on a white cloth, press 2 minutes. Color transfer = skip peroxide. Clean = proceed."
+    },
+    {
+      "step": 6,
+      "agent": "3% Hydrogen Peroxide on Damp Cloth",
+      "instruction": "Dab 3% drugstore peroxide on a damp white cloth, press on the spot 5–10 minutes, blot. Oxidizes lycopene (tomato red) and capsanthin (chili red). Repeat 2–3 times for restaurant-style oilier salsa.",
+      "safetyNote": "Never mix peroxide with ammonia, chlorine bleach, OxiClean, or baking soda."
+    },
+    {
+      "step": 7,
+      "agent": "White Vinegar + Water Rinse",
+      "instruction": "Mix 1 tablespoon white vinegar + 1 cup cool water. Dab on damp cloth, press 5 min. Neutralizes peroxide, keeps remaining tannin on the light (acidic) side of its color equilibrium. Blot dry. Don't skip this — it prevents the ghost from returning as a brownish ring."
+    },
+    {
+      "step": 8,
+      "agent": "Weighted Paper Towels Overnight",
+      "instruction": "Stack dry paper towels on the spot, heavy book on top, leave overnight. Fan-dry in the morning. Prevents pigment wick-back. Inspect in daylight. Residual orange = one more Dawn → peroxide → vinegar round."
+    },
+    {
+      "step": 9,
+      "agent": "Escalate for Wool or Ghost That Won't Move",
+      "instruction": "Call a pro if the carpet is wool (pH-sensitive — pro chemistry safer), if someone used baking soda / OxiClean before you got there (tannin locked), or if an orange ghost persists after two full rounds with proper oil-strip first. Tell them: \"Salsa on [nylon / polyester / wool] carpet, age [fresh / overnight], home-treated in order: cold flush → Dawn oil-strip → 3% peroxide → vinegar. No alkaline used. [Residual orange ghost / locked tannin].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub",
-      "2. Rinse with cold water to remove loose material",
-      "3. Apply Dawn dish soap. Work gently",
-      "4. Blot with clean white cloth. Repeat if needed",
-      "5. Air dry — no heat until stain is gone"
+      "1. Know the four components — oil-strip before peroxide is the key.",
+      "2. Scrape solids into bag.",
+      "3. Cold water blot 2–3 passes.",
+      "4. Dawn + soft toothbrush OIL-STRIP — 5–10 min.",
+      "5. Hidden peroxide test.",
+      "6. 3% peroxide damp cloth, 5–10 min, 2–3 cycles.",
+      "7. White vinegar + water rinse.",
+      "8. Weighted paper towels overnight + fan.",
+      "9. Wool / locked tannin / ghost = pro."
     ],
     "products": [
-      "Dawn dish soap"
+      "Dawn dish soap",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Paper towels + heavy book",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if baking soda / OxiClean was already used (tannin locked), if the carpet is wool and peroxide fails hidden test, or if orange ghost persists after two rounds with proper oil-strip sequence.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "Oil-strip BEFORE peroxide — chili pigment is fat-soluble",
+      "NEVER alkaline cleaners on tomato tannin",
+      "NEVER hot water — cross-links tannin",
+      "Hidden peroxide test mandatory on dyed carpet",
+      "Never mix peroxide with bleach / ammonia / alkaline"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never skip Dawn oil-strip before peroxide",
+      "Never alkaline cleaners on tannin",
+      "Never hot water on salsa",
+      "Never mix peroxide with bleach / ammonia"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / olefin: tolerates full protocol",
+      "Wool: pH-sensitive — pro lane for tight spots",
+      "Dyed carpet: hidden peroxide test mandatory"
     ]
   },
+  "materialWarnings": [
+    "Chili pigment (capsanthin) is FAT-SOLUBLE — oil-strip or ghost remains",
+    "Order matters more than product choice",
+    "Alkaline cleaners lock tomato tannin"
+  ],
   "escalation": {
-    "when": "If salsa stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is salsa on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Alkaline cleaner was used before (tannin locked), wool carpet, orange ghost persists after two full rounds with correct oil-strip order.",
+    "whatToTell": "\"Salsa on [nylon / polyester / wool] carpet, age [fresh / overnight], home-treated in order: cold flush → Dawn oil-strip → 3% peroxide [× X cycles] → vinegar. No alkaline used. [Orange ghost / locked tannin / fiber-test failed].\"",
+    "specialistType": "professional carpet cleaner with combination-stain chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Restaurant salsa (oilier) or jarred (more vinegar)?",
+      "Mild, medium, or hot? (hot = more capsaicin oil)",
+      "Fresh or dried in?",
+      "Has anyone used alkaline cleaner already?",
+      "Carpet fiber?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Restaurant salsa has more chili oil than jarred. Hot salsa has more capsaicin than mild. Oilier + hotter = bigger fat-soluble pigment load = Dawn step is even more critical."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

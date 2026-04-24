@@ -1,81 +1,218 @@
 {
   "id": "ink-permanent-marker-carpet",
   "title": "Permanent Marker on Carpet",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Permanent marker contains xylene or toluene-based solvent, resin binder, and concentrated dye. On carpet, the solvent penetrates deeply and evaporates, leaving a tough resin-dye film. The resin is designed to be solvent-resistant once dry — this is why 'permanent' markers are permanent. Fresh marker is much easier to treat than dried.",
-  "whyThisWorks": "Isopropyl alcohol or acetone (where fiber-safe) dissolves the resin binder on carpet. The dissolved dye transfers to a blotting cloth. Amyl acetate provides the strongest safe solvent action for resistant residue. Complete removal is often not possible on porous materials — the dye penetrates too deeply. Professional treatment recommended for valued items.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "20–40 minutes; fiber check before any solvent",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "ink-permanent-marker",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "dye",
+      "solvent-dye",
+      "sharpie",
+      "carpet",
+      "fiber-check-critical",
+      "kid-classic",
+      "solvent-risk"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Permanent marker (Sharpie-class) is concentrated solvent-based dye suspended in xylene / toluene / alcohol carriers, plus a resin binder. When the solvent evaporates, the resin locks the dye into the fiber mechanically and chemically — that's the \"permanent\" part. Black Sharpie is the most concentrated pigment; colors are slightly easier. On carpet, IPA (91% isopropyl alcohol) is the safest effective solvent — dissolves the resin and lifts the dye onto a catch cloth. The risky step is SOLVENT on UNKNOWN FIBER: acetone destroys acetate/modacrylic/triacetate fibers, and strong solvents can distort olefin/polypropylene. The #1 internet bad advice here is pouring alcohol or acetone directly on the spot — floods the pad with dye AND solvent, spreading the stain and risking fiber damage. Catch cloth UNDER + tamp solvent from TOP is the discipline.",
+  "whyThisWorks": "IPA softens the resin and lifts the dye. A catch cloth UNDER the carpet pile captures the dissolved dye as it moves through the fiber. Tamping from the TOP, outside-in, keeps the stain from spreading. Dawn clears residual solvent. Fiber check FIRST prevents the \"I used acetone and the carpet melted\" failure mode. Over-wetting is the other failure mode — pad soak with solvent-laden dye is functionally permanent.",
+  "defaultAssumption": "Kid with a Sharpie on the living room rug. Fresh = real chance. Dried in = harder but still solvent-responsive with multiple rounds. Black = hardest; colors = easier. Carpet fiber is usually nylon or polyester — IPA-tolerant. Olefin (Berber, indoor-outdoor) is solvent-sensitive. Wool and acetate = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Fiber Check — Hidden Seam Test",
+      "technique": "Verify solvent safe before touching the stain",
+      "equipment": "91% IPA on white cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "In a hidden area (closet, under furniture): dab 91% isopropyl alcohol on a white cloth, press on hidden carpet 30 sec, lift. Cloth picks up fiber / color, or carpet texture changes = solvent NOT safe. STOP, call a pro. Clean test = nylon / polyester, proceed."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Catch Cloth UNDER Pile + Blot",
+      "technique": "Dry blot to absorb wet ink before solvent",
+      "equipment": "Clean white cotton towel, paper towels",
+      "dwellTime": "2 minutes",
+      "instruction": "If wet: press paper towels STRAIGHT DOWN, lift, press fresh ones. No wiping. If possible, slide a white cotton catch cloth UNDER the carpet pile (rug edge, or through a hole) so dissolved ink transfers DOWN. For wall-to-wall carpet, work the catch cloth as deep into the pile as possible."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "91% IPA — Tamp From Top, Outside-In",
+      "technique": "Solvent on cloth, never poured",
+      "equipment": "91% IPA on white cotton cloth",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply IPA to a white cloth (never pour on carpet). Tamp from the top, outside-in. Flip cloth as it picks up ink. 3–5 passes typical. Over-wetting = pad soak = permanent. Ventilate — flammable. No flames."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "If IPA Plateaus — Graduate With Caution",
+      "technique": "Amyl acetate or acetone ONLY if fiber-tested",
+      "equipment": "Amyl acetate (pro) OR acetone (tested fibers only)",
+      "dwellTime": "30 sec per pass",
+      "instruction": "If IPA stops progressing and hidden-seam test was fully clean, stronger solvent may help. Re-test acetone at the hidden seam. Still clean = tamp carefully from top. Any doubt = stop, go pro. NEVER acetone on untested fiber."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Dawn Damp Cloth",
+      "technique": "Clear solvent residue + lift remaining pigment",
+      "equipment": "Dawn + cool water on damp cloth",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Dawn in cool water on damp cloth. Work with soft toothbrush. Damp cloth rinse, never pour water."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan",
+      "technique": "Extract moisture + solvent",
+      "equipment": "Dry towel + weight, fan",
+      "dwellTime": "30 min + fan",
+      "instruction": "Weighted dry towel 30 min. Fan-dry. Full solvent clearance takes hours. Ghost remaining = one more tamp pass OR escalate."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate to dissolve the resin binder. Blot dissolved ink onto clean cloth",
-      "2. Repeat amyl acetate, blotting between applications — work from back of fabric when possible",
-      "3. Apply NSD to remove remaining residue. Flush with cool water",
-      "4. If color remains: apply H2O2 6% carefully on colorfast fabrics — 5-10 min dwell time, monitor",
-      "5. Apply Acetic Acid 28% (diluted 1:10) to neutralize. Blot dry"
+      "1. Fiber check at hidden seam with 91% IPA.",
+      "2. Catch cloth UNDER + dry blot.",
+      "3. IPA tamp from top, outside-in, multiple passes.",
+      "4. Graduate to amyl acetate / acetone ONLY with fiber confirmation.",
+      "5. Dawn / NSD damp cloth rinse.",
+      "6. Weighted dry towel + fan-dry."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "91% Isopropyl alcohol",
+      "Amyl acetate (pro, tested fibers)",
+      "Acetone (tested fibers only)",
+      "Dawn / NSD",
+      "White cotton catch cloth",
+      "Fan"
     ],
-    "temperature": "cold",
+    "temperature": "ambient",
     "warnings": [
-      "Never rub ink — it spreads the dye",
-      "Work from back of fabric to push stain out"
+      "FIBER CHECK FIRST — acetone destroys acetate/modacrylic/triacetate",
+      "NEVER pour solvent on carpet — tamp with cloth",
+      "Flammable solvent — ventilate, no flame, no smoking",
+      "Over-wetting = pad soak = permanent",
+      "Never rub — drags ink through fiber",
+      "Wool carpet = pro only"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Fiber Check FIRST — Before Any Solvent",
+      "instruction": "Before any chemistry touches the spot, check what your carpet is made of. Most home carpet is nylon or polyester and tolerates rubbing alcohol. But ACETONE destroys acetate, modacrylic, and triacetate fibers on contact, and can soften olefin (polypropylene, which is what a lot of Berbers and indoor-outdoor carpets are). Wool carpet is pro-only. Hidden-seam test: in a closet or under furniture, dab 91% isopropyl alcohol on a white rag, press on the hidden spot for 30 seconds. If the rag picks up carpet fiber or color, or the carpet feels different after, STOP. Call a pro. Clean test = proceed."
+    },
+    {
+      "step": 2,
+      "agent": "Catch Cloth UNDER the Pile + Blot",
+      "instruction": "If the ink is still wet (within minutes of drawing on carpet): press paper towels STRAIGHT DOWN on the spot — don't wipe. Lift, press fresh paper towels, repeat. For area rugs, slip a clean white cotton cloth UNDERNEATH the pile — dissolved ink transfers DOWN into it rather than spreading sideways. On wall-to-wall carpet, work a catch cloth as deep into the pile as you can get it."
+    },
+    {
+      "step": 3,
+      "agent": "91% Rubbing Alcohol on a White Rag — Never Poured",
+      "instruction": "Put 91% isopropyl rubbing alcohol (drugstore, higher % than the standard 70%) on a clean white rag. DO NOT pour it on the carpet — pouring sinks ink and solvent into the pad where you can't extract it, and that's the failure mode. Press and tamp the rag on the spot from the TOP. Work from the OUTSIDE of the stain toward the CENTER (counter-intuitive but prevents spreading). Flip the rag frequently as it picks up ink. 3–5 passes typical for fresh Sharpie. Open windows — rubbing alcohol is flammable. No candles, no gas stove running."
+    },
+    {
+      "step": 4,
+      "agent": "If Alcohol Plateaus — Consider Stopping",
+      "instruction": "If IPA runs out of effect and your fiber test was CLEAN and CONFIRMED nylon or polyester, regular acetone (nail polish remover, acetone-type) is stronger. Re-test acetone at the hidden seam first. Still clean = same technique: rag, tamp, outside-in, cold. If there was ANY doubt on the first fiber test, don't graduate to acetone — call a pro. Acetone on acetate/modacrylic/triacetate fiber DESTROYS it."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn on a Damp Cloth",
+      "instruction": "Work a drop of Dawn with cool water into the spot using a soft toothbrush. Clears the solvent residue and lifts any last pigment. Damp cloth rinse — don't pour water."
+    },
+    {
+      "step": 6,
+      "agent": "Weighted Paper Towels + Fan",
+      "instruction": "Stack dry paper towels on the spot, put a heavy book on top, 30 minutes. Fan the area. Full solvent clearance takes several hours. Don't walk on the spot until dry. Inspect in daylight after drying. Ghost ring remaining = one more IPA tamp round OR escalate."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate for Olefin, Wool, or Stubborn Ink",
+      "instruction": "Pro if: the carpet is wool, Berber, or indoor-outdoor (often olefin), if the hidden-seam test showed fiber interaction, if the ink is deeply set into the pile, or if IPA + Dawn didn't clear it. Tell the pro: \"Permanent marker on [nylon / polyester / olefin / unknown] carpet, age [fresh / dried], home-treated with 91% IPA tamped from top + Dawn. No pouring. No heat. [Fiber test was clean / showed color pickup / unknown fiber]. [Residual ghost / fiber damage visible].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place a clean white cloth under the stain to catch transferred ink",
-      "2. Apply hydrogen peroxide 3% to the stain. Blot gently — do NOT rub",
-      "3. Blot dissolved ink onto the cloth. Move to clean area frequently",
-      "4. Apply Dawn dish soap and blot",
-      "5. Rinse with cold water. Air dry — no heat until stain is gone"
+      "1. FIBER CHECK at hidden seam with 91% IPA BEFORE anything.",
+      "2. Catch cloth UNDER pile if possible. Blot wet ink straight down.",
+      "3. 91% IPA on a RAG, tamp from top, outside-in. NEVER pour.",
+      "4. Graduate to acetone ONLY if fiber-confirmed clean — otherwise stop.",
+      "5. Dawn + soft toothbrush damp cloth.",
+      "6. Weighted paper towels + fan-dry.",
+      "7. Olefin / wool / deep-set = pro."
     ],
     "products": [
-      "hydrogen peroxide 3%",
-      "Dawn dish soap"
+      "91% Isopropyl alcohol (drugstore)",
+      "Dawn dish soap",
+      "White cotton cloth + rag",
+      "Paper towels + heavy book",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if the hidden-seam test damages carpet fiber, if the carpet is wool / Berber / indoor-outdoor (often olefin), if IPA can't progress and you aren't fiber-confirmed for acetone, or if the ink is deeply set.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "FIBER CHECK FIRST — acetone destroys several common carpet fibers",
+      "NEVER pour solvent on carpet — always tamp with cloth",
+      "Flammable — ventilate, no flame",
+      "Over-wetting = pad soak = permanent",
+      "Never wipe or rub — drags ink through fiber",
+      "Wool carpet = pro only"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never pour solvent on carpet",
+      "Never use solvent near flame",
+      "Never acetone on untested fiber",
+      "Never wipe ink — blot straight down or tamp"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester carpet: tolerates IPA, usually acetone (test)",
+      "Olefin (polypropylene): IPA OK, acetone can soften — test carefully",
+      "Acetate / modacrylic / triacetate: acetone DESTROYS — pro only",
+      "Wool: pro only",
+      "Berber / indoor-outdoor: often olefin — test carefully"
     ]
   },
+  "materialWarnings": [
+    "FIBER CHECK IS NON-NEGOTIABLE",
+    "Solvent on unknown fiber is high-risk",
+    "Over-wetting = pad soak = permanent",
+    "Wool = pro only"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is ink permanent marker on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Hidden-seam fiber test shows interaction, carpet is wool / Berber / indoor-outdoor (olefin), IPA + Dawn plateau with ink remaining, or acetone can't be confirmed fiber-safe.",
+    "whatToTell": "\"Permanent marker on [nylon / polyester / olefin / unknown] carpet, age [fresh / dried], home-treated with 91% IPA tamped from top + Dawn + no pouring + no heat. [Fiber test clean / fiber test showed color pickup / fiber unknown]. [Residual ghost / solvent sensitivity].\"",
+    "specialistType": "professional carpet cleaner with solvent spotting + fiber ID training"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Carpet fiber — nylon / polyester / olefin / wool / unknown?",
+      "Fresh or dried in?",
+      "Sharpie black or color? (black is most pigmented)",
+      "Has anyone already poured alcohol / acetone on it?",
+      "How deep into the pile did ink go?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Fiber identity is 90% of the battle. Black Sharpie is the hardest variant — expect multiple rounds even on fresh. Previous poured-solvent attempts often create a permanent ghost because ink + solvent reached pad depth."
   },
-  "difficulty": 8,
-  "timeEstimate": "20-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

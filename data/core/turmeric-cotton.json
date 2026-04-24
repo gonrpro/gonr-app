@@ -1,85 +1,238 @@
 {
   "id": "turmeric-cotton",
   "title": "Turmeric / Curry on Cotton",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Tannins are polyphenolic compounds that bond to fibers via hydrogen bonding to hydroxyl groups. Curcumin (turmeric's active pigment) is a diketo-enol compound with a highly conjugated chromophore that is particularly resistant to oxidative bleaching. On cotton, tannins oxidize over time, darkening the stain and making it harder to remove. Oxidizing agents (H₂O₂) attack the chromophore, rendering it colorless. Acidic rinse (acetic acid) prevents re-oxidation. UV light is the most effective decolorizer for curcumin (photodegrades the chromophore).",
-  "whyThisWorks": "Tannins are polyphenolic pigments that bond via hydrogen bonding. H₂O₂ oxidizes the chromophore (colored part) of the molecule into colorless compounds. The oil carrier in curry must be removed first with dry-side solvent, or the color treatment cannot penetrate.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "30 minutes to days; UV/sunlight finish; honest plateau",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "turmeric",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "tannin",
+      "curcumin",
+      "cotton",
+      "no-alkaline-trap",
+      "UV-sensitive",
+      "honest-plateau"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Turmeric's active pigment is CURCUMIN — a diketo-enol compound with an extremely stable conjugated chromophore. Three facts matter: (1) curcumin is FAT-SOLUBLE, not water-soluble — suspended in oil in curries, it needs Dawn to release before any oxidizer can reach it, (2) curcumin shifts color with pH: yellow in acid, RED/BROWN in alkali — so baking soda, ammonia, OxiClean make a yellow stain DARKER, often permanently locked in the red/brown form, and (3) curcumin is UV-SENSITIVE — sunlight gradually breaks the chromophore down. Home chemistry plateaus on curcumin after 1–2 rounds; sunlight finishes what chemistry started. The most common internet mistake: \"apply baking soda paste\" — this takes a removable yellow stain and turns it into a permanent red-brown one. Honest card acknowledges the plateau and leverages UV.",
+  "whyThisWorks": "Dawn strips the oil carrier (curry) so peroxide can reach the curcumin. 3% peroxide oxidizes the chromophore partially — one pass clears the easy portion, a second gets most of the remainder, but curcumin is stubborn. Sunlight then photodegrades the residual pigment — hours to days. Honest expectation: full clearance is often a multi-day patience job. Vinegar rinse keeps curcumin on the YELLOW (acid) side of the pH equilibrium — prevents accidental red-shift darkening.",
+  "defaultAssumption": "Home curry / Indian food / golden-milk latte / turmeric supplement spilled on a cotton T-shirt or napkin. White or light cotton = best peroxide + sun chance. Dyed cotton = peroxide test first; may need to accept partial. Hot-dried = significantly harder. Plain dry turmeric powder spill without oil = slightly easier than curry (no fat-solubility problem).",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot + Scrape Solid Bulk",
+      "technique": "Remove bulk without heat",
+      "equipment": "Spoon, dull edge, paper towels",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Scrape off any solid curry / spice paste into a garbage bag. Blot liquid with paper towels pressed straight down. Don't rub — spreads pigment."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Water Flush From the BACK",
+      "technique": "Flush water-soluble fraction",
+      "equipment": "Cold running water",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Flip the cotton inside out. Run cold water through the BACK of the stain for 1–2 min. Pushes pigment + any free oil back out the way it came in. Cold only — heat cross-links tannin. NO BAKING SODA — curcumin shifts to red/brown in alkali."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn + Fingertips — Strip the Oil",
+      "technique": "Release fat-soluble curcumin",
+      "equipment": "Dawn + cool water",
+      "dwellTime": "10 minutes",
+      "instruction": "Work Dawn into the stain with fingertips (bristles drive pigment in). Dwell 10 min. For curry: this step is essential — the oil carrier holds curcumin hostage from peroxide. Rinse cold."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "3% H₂O₂ + Dawn Solution",
+      "technique": "Oxidize chromophore",
+      "equipment": "1 part 3% H₂O₂ + 1 part Dawn in bowl, apply to spot",
+      "dwellTime": "15–30 minutes",
+      "instruction": "White/light cotton: apply peroxide + Dawn 1:1 directly to the stain, dwell 15–30 min. Keep wet with a damp towel on top. Blot and rinse cold. Dyed cotton: hidden-seam test first — peroxide can lighten dye.",
+      "safetyNote": "Never mix with chlorine bleach / ammonia / alkaline."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "White Vinegar Rinse",
+      "technique": "Keep curcumin on yellow/acid side",
+      "equipment": "1 tbsp vinegar + 1 cup cool water",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar-water rinse keeps residual curcumin in its lighter yellow form. Don't skip — this is the step that prevents accidental red-shift when drying."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Sunlight Finish — The Key Step",
+      "technique": "UV photodegrades curcumin",
+      "equipment": "Direct sunlight",
+      "dwellTime": "Hours to days",
+      "instruction": "Lay the cotton flat OUTSIDE in direct sunlight while still damp. UV is the best decolorizer for curcumin. Several hours can visibly fade stains. Multi-day sun exposure can finish what chemistry can't. This is not folk wisdom — it's real photochemistry and it's the piece most home guides skip."
+    },
+    {
+      "step": 7,
+      "side": "wet",
+      "agent": "Cool Wash + Air-Dry + Inspect",
+      "technique": "Launder without heat-setting residual",
+      "equipment": "Washing machine, line",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cool wash per care label. Air-dry — do NOT tumble-dry if any yellow remains; heat permanently sets curcumin. Inspect BEFORE any heat. Ghost remaining = one more peroxide + sun cycle."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Spray or sponge VDS through the stain. Blot from back side into white absorbent. Ventilate. This removes any waxy or oily component of the curry.",
-      "2. Apply Tannin. For old curry/turmeric stains, allow up to 15 min dwell. Watch color fade.",
-      "3. Apply diluted acetic acid (1:1 dilute) to stop the oxidation and prevent color rebound.",
-      "4. Flush with cool water until cloth shows no residue color. Gentle pressure only."
+      "1. Scrape solid + blot bulk.",
+      "2. Cold back-flush — no alkaline.",
+      "3. Dawn + fingertips 10 min — strip oil for fat-soluble curcumin.",
+      "4. 3% H₂O₂ + Dawn 1:1 (white cotton) / test on dyed — 15–30 min.",
+      "5. White vinegar + water rinse — keeps acid side.",
+      "6. SUNLIGHT — the decisive step, hours to days.",
+      "7. Cool wash + air-dry. No heat until fully clear."
     ],
     "products": [
-      "Tannin",
-      "NSD (Neutral Synthetic Detergent)",
-      "H₂O₂ 6%",
-      "acetic acid"
+      "Dawn / NSD",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Sunlight",
+      "Spoon / plastic card"
     ],
-    "temperature": "cold/cool — hot water sets tannin stains permanently",
+    "temperature": "cold throughout wet; sunlight = UV, not heat",
     "warnings": [
-      "Using hot water — permanently sets the tannin color",
-      "Using vinegar on marble or limestone — acid etches the stone permanently",
-      "Rubbing the stain instead of blotting — friction drives the stain deeper and damages fibers",
-      "Not testing chemicals on a hidden area first — dyes can bleed or bleach unexpectedly"
+      "NEVER alkaline cleaners — baking soda / ammonia / OxiClean turn curcumin RED-BROWN permanently",
+      "NEVER hot water — cross-links tannin",
+      "NEVER dryer heat — sets residual curcumin permanently",
+      "Oil-strip (Dawn) BEFORE peroxide for curry",
+      "Sunlight is the decisive step — hours to days, not minutes",
+      "Dyed cotton: peroxide hidden test mandatory"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Expectations + the Alkaline Trap",
+      "instruction": "Turmeric / curcumin is one of the hardest yellow stains because the pigment is stubborn AND because the most common internet advice — \"baking soda paste\" — actually makes it WORSE. Curcumin shifts color with pH: it's yellow in acid, red-brown in alkali. Baking soda, ammonia, and OxiClean turn a yellow stain RED-BROWN and often lock it in permanently. DO NOT use baking soda or alkaline cleaners. The real path is Dawn + peroxide + vinegar + SUNLIGHT, and it's a multi-step multi-day patience job. Full clearance is often not achievable in an hour, even with perfect technique."
+    },
+    {
+      "step": 2,
+      "agent": "Blot + Scrape Without Rubbing",
+      "instruction": "If it's still wet, press paper towels STRAIGHT DOWN on the spot. Scrape any solid curry / spice off with a spoon or dull edge into a garbage bag. Don't rub — rubbing drives the oil + pigment deeper into the weave."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Flush From the BACK of the Fabric",
+      "instruction": "Flip the shirt inside out. Run COLD water through the BACK of the stain for 1–2 minutes. Pushes pigment out the way it came in. Cold only — heat cross-links tannin. If the stain is from dry turmeric powder (no oil), you can go to the Dawn step next. If it's from curry (has oil), keep going in order."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Fingertips for 10 Minutes — Strip the Oil",
+      "instruction": "For CURRY: the curcumin pigment is carried in oil, and oil blocks peroxide from reaching it. You have to strip the oil first. Work a generous amount of Dawn into the wet spot with your fingertips (not a brush — brushes drive pigment deeper) for 10 minutes. Rinse cold. For dry turmeric (no oil), you can shorten this to 3–5 minutes."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide + Dawn Solution (White / Light Cotton)",
+      "instruction": "On WHITE or light cotton: mix 1 part 3% drugstore peroxide with 1 part Dawn. Apply directly to the stain, cover with a damp towel so it doesn't dry out, wait 15–30 minutes. Rinse cold. On DYED cotton: hidden-seam test first — peroxide can lighten fabric dye. If test is clean, proceed; if test isn't clean, skip peroxide and go to the sunlight step.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners."
+    },
+    {
+      "step": 6,
+      "agent": "White Vinegar Rinse — Keep It Yellow, Not Red",
+      "instruction": "Mix 1 tablespoon white vinegar + 1 cup cool water. Rinse the treated spot with this solution. The mild acid keeps any residual curcumin in its lighter YELLOW form rather than drifting toward the darker red-brown. If you skip this, the peroxide residue can shift the pigment darker as the cotton dries. Rinse cool. Blot dry."
+    },
+    {
+      "step": 7,
+      "agent": "SUN THE SHIRT — This Is the Decisive Step",
+      "instruction": "Lay the cotton flat OUTSIDE in DIRECT SUNLIGHT while it's still damp from the rinse. UV sunlight is the most effective thing on Earth for breaking down curcumin. Several hours can visibly fade a stain that chemistry couldn't finish. For stubborn stains, leave the cotton in the sun for a full day, or across multiple days. This is not folklore — it's real photochemistry and it's the step that gets you past the home-chemistry plateau. Check every few hours, re-wet with water if the cotton dries out (UV + moisture works better than UV + dry)."
+    },
+    {
+      "step": 8,
+      "agent": "Cool Wash + Air-Dry, Inspect Before Any Heat",
+      "instruction": "Wash cool per care label. AIR-DRY — do not put the cotton in the dryer if any yellow remains. Heat permanently sets curcumin. Inspect in daylight. Still yellow? Another round of peroxide + sun, cotton still damp. Multi-day patience is normal for curry stains."
+    },
+    {
+      "step": 9,
+      "agent": "Escalate — Accept / Pro / Live With It",
+      "instruction": "Honest: even with perfect technique, some curry / turmeric stains don't fully clear. If you've done peroxide + sun x 2 days and it's still yellow, options are: (a) dry cleaner with professional tannin chemistry (sometimes helps), (b) accept the faded ghost, (c) dye the shirt. Tell the pro: \"Curry / turmeric on [white / light / dyed] cotton, age [fresh / overnight / older], home-treated with cold + Dawn + 3% peroxide + vinegar + multi-day sunlight. No alkaline used.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot up excess. Apply baking soda paste (baking soda + a little water). Wait 5 minutes.",
-      "2. Flush the area with cool water. Blot dry.",
-      "3. Apply 3% hydrogen peroxide from the pharmacy + dish soap solution. Wait 3–5 minutes.",
-      "4. Blot. If stain remains, repeat. Rinse thoroughly. Blot dry."
+      "1. Honest expectations — multi-day job. NO BAKING SODA / alkaline.",
+      "2. Blot + scrape solids; don't rub.",
+      "3. Cold back-flush.",
+      "4. Dawn + fingertips 10 min — oil-strip for curry.",
+      "5. 3% peroxide + Dawn 1:1 (white cotton), 15–30 min. Hidden test on dyed.",
+      "6. White vinegar + water rinse — keeps yellow/acid side.",
+      "7. SUNLIGHT on damp fabric — hours to days, the decisive step.",
+      "8. Cool wash + air-dry. No heat until fully clear.",
+      "9. Plateau = pro / accept / dye."
     ],
     "products": [
-      "H₂O₂ 3%",
-      "Dawn NSD",
-      "baking soda",
-      "OxiClean Wine Stain Remover",
-      "28% Acetic Acid (diluted)"
+      "Dawn dish soap",
+      "3% Hydrogen peroxide (drugstore)",
+      "White vinegar",
+      "Sunlight (not an optional finish)"
     ],
-    "whenToStop": "If the stain persists after these steps, move to professional treatment. Curcumin is highly resistant and requires professional chemistry to avoid damaging the fabric.",
+    "whenToStop": "Stop reaching for more chemistry after the peroxide + sun plateau — curcumin has a honest home ceiling. Accept, dry-clean, or dye.",
     "warnings": [
-      "Always test any solution on a hidden area first.",
-      "Work from the outside of the stain inward to avoid spreading it.",
-      "Use cool or warm water, never hot — heat sets many stains.",
-      "Blot, don't rub — friction damages fibers."
+      "NEVER baking soda / ammonia / OxiClean — turns yellow to red-brown permanently",
+      "NEVER hot water — cross-links tannin",
+      "NEVER dryer heat — sets residual",
+      "NEVER mix peroxide with bleach / ammonia / alkaline",
+      "Oil-strip Dawn BEFORE peroxide for curry",
+      "Sunlight is the finisher — not optional"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use hot water — sets tannin stains permanently",
-      "Use ammonia or alkaline cleaners — can darken tannin stains",
-      "Rub instead of blot — drives stain deeper and damages fibers"
+      "Never baking soda paste on curcumin — permanently darkens",
+      "Never alkaline cleaners (ammonia / OxiClean)",
+      "Never hot water",
+      "Never dryer heat on residual",
+      "Never mix peroxide with bleach / ammonia"
     ],
     "fiberSensitivities": [
-      "Test all treatments on a hidden area first. Cotton may have specific vulnerabilities depending on dye or finish. For colored cotton, test H₂O₂ on a hidden seam before use."
+      "White / light cotton: peroxide + sun tolerant",
+      "Dyed cotton: peroxide hidden-test mandatory; sunlight can fade dye",
+      "Cotton-synthetic blends: usually tolerate protocol"
     ]
   },
+  "materialWarnings": [
+    "Baking soda is the bad-advice trap — permanent red-brown",
+    "Sunlight is the decisive step",
+    "Honest home ceiling exists — plateau is real",
+    "Multi-day patience is normal"
+  ],
   "escalation": {
-    "when": "Stain does not fully resolve after spotting protocol — some set-in curcumin stains require professional bleaching",
-    "whatToTell": "Turmeric/curry stain on cotton, curcumin pigment — very resistant to oxidative treatment. Treated at home with H₂O₂ and NSD. Please use professional tannin chemistry. Sunlight exposure after treatment may also help.",
-    "specialistType": "dry cleaner or wet cleaner"
+    "when": "Residual yellow persists after peroxide + 2+ days of sunlight, if alkaline cleaner was used first (likely red-brown lock), or if dyed cotton can't tolerate peroxide.",
+    "whatToTell": "\"Curry / turmeric on [white / light / dyed] cotton, age [fresh / overnight / older], home-treated with cold + Dawn + 3% peroxide + vinegar + multi-day sunlight. No alkaline used [or: baking soda was accidentally applied before I started].\"",
+    "specialistType": "professional dry cleaner with tannin chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is this fresh or has it been sitting and drying?",
-      "Was this a wet curry sauce or a dry turmeric spice?",
-      "Has the garment been through the dryer?",
-      "Is the cotton white or colored?"
+      "Curry (has oil) or dry turmeric powder (no oil)?",
+      "White / light cotton or dyed?",
+      "Has anyone applied baking soda or OxiClean already?",
+      "Fresh, overnight, or through a dryer?",
+      "Can you lay the cotton in direct sunlight?"
     ],
-    "modifierNotes": "Wet curry sauce has an oil carrier that must be removed first. Dry turmeric bonds very quickly. Dryer exposure before treatment makes removal very difficult. For white cotton: after treatment, brief sunlight exposure on the wet stain can help photodegrade residual curcumin. On colored cotton, test H₂O₂ on a hidden seam first."
+    "modifierNotes": "Curcumin is the hardest common kitchen pigment. Alkaline cleaners are the catastrophic bad advice for this stain — irreversible red-brown shift. Sunlight is the unlock home guides consistently underplay. Multi-day patience is the normal case, not a failure."
   },
-  "difficulty": 5,
-  "timeEstimate": "10–15 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

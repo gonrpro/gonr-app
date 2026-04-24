@@ -1,82 +1,229 @@
 {
   "id": "nail-polish-upholstery",
   "title": "Nail Polish on Upholstery",
-  "stainFamily": "dry_side",
+  "stainType": "resin",
+  "stainFamily": "dye",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Nail polish contains nitrocellulose (film former), plasticizers (dibutyl phthalate), colorants (pigments/dyes), and solvents (ethyl acetate, butyl acetate). On upholstery, the solvents evaporate and the nitrocellulose hardens into a tough, pigmented film that is resistant to water, soap, and most common cleaners. The film bonds mechanically by penetrating fiber texture.",
-  "whyThisWorks": "Amyl acetate or acetone (where fiber-safe) dissolves the nitrocellulose film on upholstery. The solvent reverses the hardening process, re-liquefying the polish so it can be blotted away. Acetone is faster but unsafe on acetate and many synthetics. Amyl acetate is safer for most fibers. The pigment transfers to the blotting cloth as the film dissolves.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "30 minutes to several hours; fiber + code checks before solvent",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "nail-polish",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "resin",
+      "nitrocellulose",
+      "pigment",
+      "upholstery",
+      "fiber-check-critical",
+      "code-check",
+      "solvent-risk"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Same chemistry as nail polish on carpet: nitrocellulose (film former) + plasticizers + concentrated pigment + volatile solvents (ethyl acetate, butyl acetate, sometimes toluene). Solvents flash off fast; nitrocellulose hardens into a tough pigmented film that mechanically locks into fiber. Upholstery adds TWO risks not present on carpet: (1) upholstery CODE — many upholstery fabrics are S-only (solvent cleaning only) or have delicate backing that can't tolerate water rinses, and (2) CUSHION BATTING — if polish soaks through into foam, home chemistry can't reach it. Also: acetone DESTROYS acetate, modacrylic, and triacetate fibers on contact — upholstery includes lots of these in microfiber and suede-like fabrics. Fiber check + code check are both non-negotiable.",
+  "whyThisWorks": "Acetone-free nail polish remover softens nitrocellulose safely on most fibers. Tamping with catch cloth pattern (paper towels under, solvent cloth on top tamping) pulls dissolved polish down and out. Dawn emulsifies solvent and residue on W/W-S code. For S-code, dry buff the solvent rather than adding water. The limitation: fully dried polish in a tight weave, or polish that soaked into cushion batting, is often a pro-only job.",
+  "defaultAssumption": "Home manicure accident on couch / chair / bed. Fresh, caught in the first few minutes before full polymerization = real chance. Dried with film set, or spill went into cushion = pro or accept. Microfiber and suede-like fabrics are often acetone-sensitive — acetone-free only. If cushion cover zips off and is washable, freeze the spot first and wash the cover cold.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Code + Fiber Check — Before Any Solvent",
+      "technique": "Tag read + hidden-area solvent test",
+      "equipment": "Good light, acetone-free remover, white cloth",
+      "dwellTime": "3 minutes",
+      "instruction": "Upholstery code: W / W-S = full protocol. S-only = solvent only (no Dawn-in-water rinse). X = vacuum only, pro. Fiber test: dab ACETONE-FREE nail polish remover on a white cloth, press on a hidden upholstery seam 30 sec. Color transfer / fiber change / texture shift = STOP, pro. Clean = proceed with acetone-free remover. NEVER start with acetone on unknown fabric — acetate / modacrylic / triacetate + acetone = destroyed fiber."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Blot Wet Polish or Scrape Dried — Straight Down",
+      "technique": "No wiping; no rubbing",
+      "equipment": "Paper towels, plastic card",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Wet polish: press paper towels STRAIGHT DOWN. Lift straight up, repeat with fresh ones until no more transfers. Dried polish: scrape the surface film off with the edge of a plastic card, working outward from center. Don't dig."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Cornstarch Powder Preload",
+      "technique": "Absorb remaining wet pigment",
+      "equipment": "Cornstarch",
+      "dwellTime": "10 minutes",
+      "instruction": "Dust cornstarch over the spot for 10 min. Absorbs remaining liquid polish. Vacuum off."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Catch Cloth UNDER + Acetone-Free Solvent on Top",
+      "technique": "Direction-controlled solvent tamp",
+      "equipment": "White catch cloth under, acetone-free remover on separate white cloth on top",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Place a catch cloth UNDER (where possible — zip-off cushion cover makes this easy). Apply acetone-free remover to a white cloth, tamp from the top, outside-in. Flip cloth as it picks up pigment. Never pour solvent on upholstery. 3–5 passes typical for fresh. Ventilate — flammable."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Dawn Damp Cloth (W / W-S Code Only)",
+      "technique": "Clear solvent residue",
+      "equipment": "Dawn + cool water on damp cloth",
+      "dwellTime": "3–5 minutes",
+      "instruction": "W / W-S: Dawn in cool water on damp cloth, work with soft toothbrush to lift residual pigment, blot. S-only: dry-buff solvent residue instead, no water added. Damp cloth only, never pour."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan-Dry",
+      "technique": "Extract + vent solvent",
+      "equipment": "Dry towel + weight, fan, open window",
+      "dwellTime": "30 min + fan",
+      "instruction": "Weighted dry towel 30 min. Fan with windows open several hours to vent solvent vapor. Inspect in daylight. Residual pigment = repeat steps 4–5."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate to soften and dissolve the polish film. Blot — do NOT rub",
-      "2. Repeat amyl acetate application, blotting dissolved polish onto clean cloth — 3-5 min per pass",
-      "3. Apply NSD to remove remaining residue. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for pH restoration",
-      "5. Blot dry. Air dry"
+      "1. Code tag + fiber hidden-seam test with acetone-free.",
+      "2. Blot wet / scrape dried polish — no wiping.",
+      "3. Cornstarch preload 10 min. Vacuum.",
+      "4. Catch cloth under + acetone-free tamp from top, outside-in.",
+      "5. Dawn damp cloth (W/W-S) or dry buff (S).",
+      "6. Weighted towel + fan-dry with ventilation.",
+      "7. Plateau = pro amyl acetate / reduce pigment."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Acetone-free nail polish remover (ethyl acetate or propylene carbonate based)",
+      "Cornstarch",
+      "Amyl acetate (pro / tested fiber only)",
+      "Acetone (tested fiber only — NOT acetate/modacrylic/triacetate)",
+      "Dawn / NSD",
+      "White cotton catch + tamp cloths",
+      "Fan"
     ],
-    "temperature": "ambient",
+    "temperature": "ambient — no heat until solvent fully evaporated",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains",
-      "NEVER use acetone on acetate fabric — dissolves it on contact",
-      "Ensure adequate ventilation when using solvents — VOC fumes require extraction"
+      "FIBER CHECK FIRST — acetone destroys acetate / modacrylic / triacetate",
+      "CODE CHECK — S-only changes endgame",
+      "Flammable solvent — ventilate, no flame",
+      "Never pour solvent on upholstery — tamp with cloth",
+      "Cushion batting saturation = pro — home can't reach foam",
+      "Wool / silk upholstery = pro only"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Two Checks Before Any Solvent",
+      "instruction": "Before any remover touches the upholstery, two things: (1) FABRIC TEST — is it safe? Acetone DESTROYS acetate, modacrylic, and triacetate on contact, and those fibers are common in microfiber and suede-like fabrics. Dab acetone-FREE nail polish remover on a hidden seam first. If it picks up color / fiber / texture, stop and call a pro. (2) CODE TAG — find the tag under the cushion. W / W-S = full protocol works. S-only = solvent only, no Dawn + water rinse. X = vacuum only, pro. If the cushion cover zips off and is machine-washable, the best path is freeze + scrape + wash the cover cold."
+    },
+    {
+      "step": 2,
+      "agent": "Blot Wet Polish Straight Down — or Scrape Dried",
+      "instruction": "WET polish: press paper towels STRAIGHT DOWN on the spot. Lift straight up, press fresh ones, repeat until no more color transfers. Do NOT wipe — wiping spreads pigment across clean fabric. DRIED polish: scrape the surface film off with the edge of a plastic card, working outward from the center. Don't dig into the fabric."
+    },
+    {
+      "step": 3,
+      "agent": "Cornstarch Powder Preload",
+      "instruction": "Dust cornstarch over the remaining pigment. Wait 10 minutes. Absorbs lingering wet polish and prevents it from spreading when you apply solvent. Vacuum off with an upholstery attachment."
+    },
+    {
+      "step": 4,
+      "agent": "Acetone-Free Remover on a White Cloth — Tamp Outside-In",
+      "instruction": "Apply ACETONE-FREE nail polish remover (the gentler kind — ethyl acetate or propylene carbonate based) to a clean white cloth. NEVER pour solvent on upholstery — pouring sends it into cushion batting where you can't reach it. Press and tamp the spot from the TOP. Flip the cloth as it picks up pigment. Work from the OUTSIDE of the stain toward the CENTER — counter-intuitive but prevents spreading. If possible (zip-off cushion cover, loose cushion), slip a white catch cloth UNDER the fabric so pigment transfers DOWN into it. 3–5 passes for fresh polish. Open windows — flammable."
+    },
+    {
+      "step": 5,
+      "agent": "If Acetone-Free Plateaus — Consider Stopping",
+      "instruction": "If acetone-free remover runs out of effect, regular acetone is stronger BUT only safe if your hidden-seam test was COMPLETELY clean and you're confident the fiber isn't acetate / modacrylic / triacetate. Re-test acetone at the hidden seam first. Any doubt = stop and go pro. Pure acetone on upholstery is a high-stakes move."
+    },
+    {
+      "step": 6,
+      "agent": "Dawn Damp Cloth OR Dry Buff — Code-Dependent",
+      "instruction": "W / W-S code: work a drop of Dawn in cool water into a damp cloth, press on the spot 3–5 minutes, blot clean. S-only code: DO NOT add water. Dry-buff the solvent residue with a clean dry cloth instead. Damp cloth only in either case — no pouring."
+    },
+    {
+      "step": 7,
+      "agent": "Weighted Dry Towel + Fan, Windows Open",
+      "instruction": "Stack a dry towel on the spot, weigh with a book, 30 min. Point a fan at the area for several hours with windows still open to vent solvent vapor. Don't close the room up while solvent is still evaporating. Inspect in daylight after full dry. Residual pigment = repeat steps 4–6."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate for S-Only, Wool, Silk, Microfiber Issues, or Deep Soak",
+      "instruction": "Call a pro if: the code is S-only and acetone-free plateaued, the upholstery is wool / silk, the hidden-seam test showed fiber interaction, polish soaked into cushion batting, or microfiber shows texture change after solvent. Tell them: \"Nail polish on [W / W-S / S / X] upholstery, fabric [microfiber / velvet / cotton / silk / unknown], age [fresh / dried], home-treated with cornstarch + acetone-free remover tamped from top + [Dawn / dry buff]. Fiber test was [clean / showed pickup]. [Residual pigment / batting saturation / fiber concern].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot excess polish — do NOT rub or spread",
-      "2. Test a hidden area with hydrogen peroxide 3% before proceeding",
-      "3. Apply Dawn dish soap mixed with warm water. Blot",
-      "4. Apply Dawn dish soap and work gently. Rinse with warm water",
-      "5. Repeat if needed. Air dry — no heat until stain is gone"
+      "1. FIBER CHECK + CODE CHECK — both non-negotiable.",
+      "2. Blot wet straight down or scrape dried film.",
+      "3. Cornstarch preload 10 min. Vacuum.",
+      "4. Catch cloth under + acetone-free remover on cloth, tamp from top, outside-in. Never pour.",
+      "5. Graduate to acetone ONLY if fiber-tested clean — otherwise stop.",
+      "6. Dawn damp cloth (W/W-S) OR dry buff (S-only).",
+      "7. Weighted dry towel + fan-dry with ventilation.",
+      "8. S-only plateau / wool / silk / batting soak = pro."
     ],
     "products": [
-      "hydrogen peroxide 3%",
-      "Dawn dish soap"
+      "Acetone-free nail polish remover",
+      "Cornstarch",
+      "Dawn dish soap",
+      "White cotton cloths + plastic card",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if the hidden-seam test damages upholstery, if code is S-only and acetone-free plateaus, if the cushion batting is saturated, or if the upholstery is wool / silk / leather.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "FIBER CHECK FIRST — acetone destroys several common upholstery fibers",
+      "CODE CHECK — S/X change protocol",
+      "Flammable solvent — ventilate, no flame, no smoking",
+      "NEVER pour solvent on upholstery",
+      "Never wipe polish — blot straight down or tamp outside-in",
+      "Wool / silk = pro only",
+      "Batting saturation = pro"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never acetone on untested fiber",
+      "Never pour solvent on upholstery",
+      "Never use solvent near flame",
+      "Never wipe — blot straight down or tamp"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S upholstery: tolerates acetone-free + Dawn + cornstarch",
+      "S-only: acetone-free remover, dry-buff — no water rinse",
+      "Microfiber: often acetate blend — acetone-free ONLY, test carefully",
+      "Acetate / modacrylic / triacetate: acetone DESTROYS — pro",
+      "Silk / wool: pro only",
+      "Leather: different protocol entirely"
     ]
   },
+  "materialWarnings": [
+    "FIBER CHECK IS NON-NEGOTIABLE",
+    "Code check before water",
+    "Microfiber + acetone is a high-risk combo",
+    "Cushion batting = pro ceiling"
+  ],
   "escalation": {
-    "when": "If nail polish stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is nail polish on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "Hidden-seam test damages fiber, code is S-only with plateau, cushion batting shows polish soak-through, upholstery is wool / silk / microfiber with solvent issues, or acetone-free can't finish and acetone isn't fiber-safe.",
+    "whatToTell": "\"Nail polish on [W / W-S / S / X] upholstery, fabric [microfiber / velvet / cotton / silk / unknown], age [fresh / dried], home-treated with cornstarch + acetone-free remover tamped from top + [Dawn / dry buff]. Fiber test [clean / showed pickup]. [Residual pigment / batting soak / fiber concern].\"",
+    "specialistType": "professional upholstery cleaner with solvent spotting + fiber ID"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Upholstery code — W / W-S / S / X?",
+      "Fabric — microfiber / velvet / woven cotton / silk / leather?",
+      "Does the cushion cover zip off and machine-wash?",
+      "Fresh or dried polish?",
+      "Dark color (red / black / purple) or light (pastel / nude)?",
+      "Has anyone already tried acetone on it?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Microfiber is the subtle trap — often an acetate/polyester blend, and acetone softens the acetate. Always acetone-free on microfiber. Zip-off washable cushion cover is the easiest path when available. Dark pigments (red, black, purple) often leave a ghost even after the film is gone — pigment is separate chemistry."
   },
-  "difficulty": 7,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
