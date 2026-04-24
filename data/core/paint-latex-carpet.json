@@ -15,25 +15,67 @@
     "surfaceCanonical": "carpet",
     "tier": "universal",
     "riskLevel": "high",
-    "tags": ["paint", "carpet", "time-critical", "no-saturation", "pad-risk"],
+    "tags": [
+      "paint",
+      "carpet",
+      "time-critical",
+      "no-saturation",
+      "pad-risk"
+    ],
     "freePreview": true
   },
   "stainChemistry": "Same chemistry as latex paint on fabric — water-based acrylic / vinyl polymer in emulsion, water-soluble while wet, cross-linked plastic film when dry. Carpet adds construction risk: face yarn (nylon, olefin, polyester, wool) is what the stain sits on, but pooled solvent or water sinks through to latex backing and pad, where it can dissolve the backing adhesive and delaminate the carpet. Wet latex paint is a short-window easy fix on carpet; dry latex paint is a patient, extraction-heavy job.",
   "whyThisWorks": "Time and extraction. If you catch it wet, cool water + NSD + aggressive wet-vac extraction lifts the polymer before it films on the face yarn. If it's dry, the polymer must be re-softened with a solvent (methanol or latex-specific remover), emulsified, and extracted. Extraction between every wet pass is the rule that protects the pad — pooled liquid is what ruins carpet, not the chemistry.",
   "defaultAssumption": "Assume nylon or olefin face yarn unless user says wool. Wool carpet escalates earlier (strong solvents not safe).",
   "spottingProtocol": [
-    { "step": 1, "side": "dry", "agent": "Time Check", "technique": "Wet vs dry decision", "dwellTime": "immediate",
-      "instruction": "Is the paint wet or has it filmed? Wet = minutes to act. Dry = patient, extraction-heavy, maybe pro. Also ask fiber: wool carpet with latex paint = escalate to a carpet pro, most solvents aren't wool-safe." },
-    { "step": 2, "side": "dry", "agent": "Blot / Scrape", "technique": "Remove bulk before wet work", "dwellTime": "brief",
-      "instruction": "Wet: blot with a folded white towel — press straight down, don't rub, lift and repeat on a dry section. Dry: scrape off brittle film with a dull blade or stiff brush. Reduce mass before wet work — solvent and detergent handle residue, not thick paint." },
-    { "step": 3, "side": "wet-minimal", "agent": "Cool Water + NSD", "technique": "Damp cloth transfer + extract", "dwellTime": "1 min per pass",
-      "instruction": "Wet paint only, synthetic face yarn. Apply cool water + NSD via a damp cloth — press onto the spot, lift, rotate cloth. Do NOT pour. Immediately extract with a wet/dry vac or absorbent towel weighted on the spot. Repeat 2–4 cycles until the towel comes up clean." },
-    { "step": 4, "side": "wet-minimal", "agent": "Methanol Cloth", "technique": "Dry paint softener, transfer only", "dwellTime": "30–60 sec",
-      "instruction": "Dry paint on synthetic face yarn. Methanol (or latex-specific remover) on a clean white cloth — press onto the dried film, lift, rotate cloth. Polymer re-softens and transfers. Never pour methanol onto carpet — sinks straight to backing and pad." },
-    { "step": 5, "side": "wet", "agent": "NSD + Extract", "technique": "Emulsify + pull out", "dwellTime": "1 min",
-      "instruction": "NSD via damp cloth after methanol pass. Tamp with a soft brush. Extract. Repeat the NSD + extraction cycle until clean." },
-    { "step": 6, "side": "dry", "agent": "Fan-Dry + Inspect", "technique": "Weighted towel, fan, no heat", "dwellTime": "4–8 hours",
-      "instruction": "Press a folded dry towel onto the spot, weight it for 30 min to pull moisture up and out of backing. Fan the area. Air-dry fully. Inspect for tackiness (residual polymer), backing odor (pad contamination), or delamination at edges. Any of those = specialist." }
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Time Check",
+      "technique": "Wet vs dry decision",
+      "dwellTime": "immediate",
+      "instruction": "Is the paint wet or has it filmed? Wet = minutes to act. Dry = patient, extraction-heavy, maybe pro. Also ask fiber: wool carpet with latex paint = escalate to a carpet pro, most solvents aren't wool-safe."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Blot / Scrape",
+      "technique": "Remove bulk before wet work",
+      "dwellTime": "brief",
+      "instruction": "Wet: blot with a folded white towel — press straight down, don't rub, lift and repeat on a dry section. Dry: scrape off brittle film with a dull blade or stiff brush. Reduce mass before wet work — solvent and detergent handle residue, not thick paint."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Cool Water + NSD",
+      "technique": "Damp cloth transfer + extract",
+      "dwellTime": "1 min per pass",
+      "instruction": "Wet paint only, synthetic face yarn. Apply cool water + NSD via a damp cloth — press onto the spot, lift, rotate cloth. Do NOT pour. Immediately extract with a wet/dry vac or absorbent towel weighted on the spot. Repeat 2–4 cycles until the towel comes up clean."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Methanol Cloth",
+      "technique": "Dry paint softener, transfer only",
+      "dwellTime": "30–60 sec",
+      "instruction": "Dry paint on synthetic face yarn. Methanol (or latex-specific remover) on a clean white cloth — press onto the dried film, lift, rotate cloth. Polymer re-softens and transfers. Never pour methanol onto carpet — sinks straight to backing and pad."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "NSD + Extract",
+      "technique": "Emulsify + pull out",
+      "dwellTime": "1 min",
+      "instruction": "NSD via damp cloth after methanol pass. Tamp with a soft brush. Extract. Repeat the NSD + extraction cycle until clean."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Fan-Dry + Inspect",
+      "technique": "Weighted towel, fan, no heat",
+      "dwellTime": "4–8 hours",
+      "instruction": "Press a folded dry towel onto the spot, weight it for 30 min to pull moisture up and out of backing. Fan the area. Air-dry fully. Inspect for tackiness (residual polymer), backing odor (pad contamination), or delamination at edges. Any of those = specialist."
+    }
   ],
   "professionalProtocol": {
     "steps": [
@@ -44,7 +86,12 @@
       "5. NSD + extraction cycle until clean.",
       "6. Fan-dry + weighted towel. Inspect for backing odor, delamination, residual tack."
     ],
-    "products": ["NSD (Neutral Synthetic Detergent)", "Methanol or latex-specific remover (Motsenbocker's Lift Off 5)", "Wet/dry vacuum", "Absorbent white towels"],
+    "products": [
+      "NSD (Neutral Synthetic Detergent)",
+      "Methanol or latex-specific remover (Motsenbocker's Lift Off 5)",
+      "Wet/dry vacuum",
+      "Absorbent white towels"
+    ],
     "temperature": "cool throughout — hot water activates backing adhesive",
     "warnings": [
       "Never pool or pour liquid on carpet — sinks to backing and pad",
@@ -54,20 +101,41 @@
     ]
   },
   "homeSolutions": [
-    { "step": 1, "agent": "Fast matters — wet latex is beatable",
-      "instruction": "If you just dropped it and it's still wet, you have a real shot. Once latex paint dries (15–30 minutes on carpet, sometimes faster near a vent), it turns into flexible plastic embedded in the pile. Wet = cool water + Dawn + a lot of blotting. Dry = longer story." },
-    { "step": 2, "agent": "Blot wet / scrape dry — don't rub",
-      "instruction": "Wet paint: press a folded white towel straight down on the spot. Lift. Move to a dry section. Press again. Get as much off as possible before any wet work. Dry paint: scrape the dried film off with a dull butter knife or credit-card edge. Don't rub wet paint — rubbing mashes it deeper into the pile." },
-    { "step": 3, "agent": "Cool water + Dawn, on a rag — never pour",
-      "instruction": "Put cool water + a drop of Dawn on a clean rag. Press the damp rag onto the spot, lift, rotate to a clean section, repeat. Paint transfers out of the carpet and onto the rag. Do NOT pour water or soap directly onto the carpet — pooled liquid sinks through to the backing and the pad, and that's how you ruin the floor underneath. Keep your rag damp, not dripping." },
-    { "step": 4, "agent": "Blot dry between every wet pass",
-      "instruction": "After each wet pass, put a thick DRY towel on the spot and press down hard — a book or heavy pan helps. The dry towel pulls moisture up and out. Check the towel for paint color — you're doing it right if the towel comes up with paint on it. Swap to a fresh dry towel and repeat until the towel comes up clean." },
-    { "step": 5, "agent": "Dry paint → methanol or Goof Off on a rag",
-      "instruction": "For paint that already filmed: methanol (denatured alcohol, hardware store) or Goof Off on a white rag. Press onto the dried film, lift, rotate rag. Never pour on the carpet. The methanol softens the polymer and it transfers to the rag. Follow with Dawn + damp rag to pull out the softened residue. Extract again with a dry weighted towel." },
-    { "step": 6, "agent": "Fan-dry, don't walk on it",
-      "instruction": "Point a fan at the spot. Put a folded dry towel on it with something heavy for 30 min to keep pulling moisture up. Let the area air-dry fully before walking on it — several hours. Rushing this step is how pad mold starts." },
-    { "step": 7, "agent": "Escalate if it smells wrong",
-      "instruction": "Once dry, sniff the spot. A musty or chemical smell means moisture got into the pad, and that's a professional extraction job now — call a carpet cleaner. If the pile feels crunchy or tacky, the paint's still in there and you need a pro with hot extraction rigs. Tell them: \"Latex paint on [synthetic/wool] carpet, [wet/dry] when treated, used [Dawn / methanol / both] on a rag — no pooling.\"" }
+    {
+      "step": 1,
+      "agent": "Fast Matters — Wet Latex Is Beatable",
+      "instruction": "If you just dropped it and it's still wet, you have a real shot. Once latex paint dries (15–30 minutes on carpet, sometimes faster near a vent), it turns into flexible plastic embedded in the pile. Wet = cool water + Dawn + a lot of blotting. Dry = longer story."
+    },
+    {
+      "step": 2,
+      "agent": "Blot Wet / Scrape Dry — Don't Rub",
+      "instruction": "Wet paint: press a folded white towel straight down on the spot. Lift. Move to a dry section. Press again. Get as much off as possible before any wet work. Dry paint: scrape the dried film off with a dull butter knife or credit-card edge. Don't rub wet paint — rubbing mashes it deeper into the pile."
+    },
+    {
+      "step": 3,
+      "agent": "Cool Water + Dawn, on a Rag — Never Pour",
+      "instruction": "Put cool water + a drop of Dawn on a clean rag. Press the damp rag onto the spot, lift, rotate to a clean section, repeat. Paint transfers out of the carpet and onto the rag. Do NOT pour water or soap directly onto the carpet — pooled liquid sinks through to the backing and the pad, and that's how you ruin the floor underneath. Keep your rag damp, not dripping."
+    },
+    {
+      "step": 4,
+      "agent": "Blot Dry Between Every Wet Pass",
+      "instruction": "After each wet pass, put a thick DRY towel on the spot and press down hard — a book or heavy pan helps. The dry towel pulls moisture up and out. Check the towel for paint color — you're doing it right if the towel comes up with paint on it. Swap to a fresh dry towel and repeat until the towel comes up clean."
+    },
+    {
+      "step": 5,
+      "agent": "Dry Paint → Methanol or Goof Off on a Rag",
+      "instruction": "For paint that already filmed: methanol (denatured alcohol, hardware store) or Goof Off on a white rag. Press onto the dried film, lift, rotate rag. Never pour on the carpet. The methanol softens the polymer and it transfers to the rag. Follow with Dawn + damp rag to pull out the softened residue. Extract again with a dry weighted towel."
+    },
+    {
+      "step": 6,
+      "agent": "Fan-Dry, Don't Walk on It",
+      "instruction": "Point a fan at the spot. Put a folded dry towel on it with something heavy for 30 min to keep pulling moisture up. Let the area air-dry fully before walking on it — several hours. Rushing this step is how pad mold starts."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate If It Smells Wrong",
+      "instruction": "Once dry, sniff the spot. A musty or chemical smell means moisture got into the pad, and that's a professional extraction job now — call a carpet cleaner. If the pile feels crunchy or tacky, the paint's still in there and you need a pro with hot extraction rigs. Tell them: \"Latex paint on [synthetic/wool] carpet, [wet/dry] when treated, used [Dawn / methanol / both] on a rag — no pooling.\""
+    }
   ],
   "diyProtocol": {
     "steps": [
@@ -79,7 +147,13 @@
       "6. Fan-dry fully before walking. Several hours.",
       "7. Musty/chemical smell or tacky pile after drying = call a carpet pro."
     ],
-    "products": ["Dawn dish soap", "Methanol (denatured alcohol) or Goof Off", "Dull blade or credit card edge", "Several clean white rags", "Heavy dry towel + something heavy"],
+    "products": [
+      "Dawn dish soap",
+      "Methanol (denatured alcohol) or Goof Off",
+      "Dull blade or credit card edge",
+      "Several clean white rags",
+      "Heavy dry towel + something heavy"
+    ],
     "whenToStop": "Stop if the carpet is wool, the paint has been walked-on for more than a day, the pile feels tacky / crunchy after drying, or there's any smell after dry-out. Professional carpet cleaners have hot-water extraction equipment that's safer for pad than anything you can do at home.",
     "warnings": [
       "Never pool or pour solvent/water on carpet — ruins backing and pad",

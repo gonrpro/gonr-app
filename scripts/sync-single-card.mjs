@@ -23,10 +23,13 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
+import { validateCardObject } from './validate-card.mjs'
 
-const file = process.argv[2]
+const args = process.argv.slice(2)
+const skipValidation = args.includes('--skip-validation')
+const file = args.find(a => !a.startsWith('--'))
 if (!file) {
-  console.error('usage: node sync-single-card.mjs <path/to/card.json>')
+  console.error('usage: node sync-single-card.mjs <path/to/card.json> [--skip-validation]')
   process.exit(1)
 }
 
@@ -38,6 +41,24 @@ if (!url || !key) {
 }
 
 const card = JSON.parse(readFileSync(resolve(file), 'utf-8'))
+
+// Validator gate: a card marked verified:true must pass presentation rules
+// (Atlas 8184). Blocks sync; unverified cards just print warnings.
+if (!skipValidation) {
+  const { isVerified, violations } = validateCardObject(card, card?.id)
+  const blocking = violations.filter(v => v.severity === 'block')
+  if (isVerified && blocking.length > 0) {
+    console.error(`❌ ${card?.id} is verified:true but fails presentation validation:`)
+    for (const v of blocking) console.error(`   BLOCK  ${v.code}  ${v.message}`)
+    console.error(`\nFix the card, or re-run with --skip-validation to bypass.`)
+    process.exit(1)
+  }
+  if (!isVerified && blocking.length > 0) {
+    console.warn(`· ${card?.id} is unverified; ${blocking.length} presentation issue(s) would block if promoted:`)
+    for (const v of blocking) console.warn(`   warn  ${v.code}  ${v.message}`)
+  }
+}
+
 const stainCanonical = card?.meta?.stainCanonical
 const surfaceCanonical = card?.meta?.surfaceCanonical
 

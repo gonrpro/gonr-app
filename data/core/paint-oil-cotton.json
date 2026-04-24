@@ -15,25 +15,66 @@
     "surfaceCanonical": "cotton",
     "tier": "universal",
     "riskLevel": "medium",
-    "tags": ["paint", "cotton", "solvent-required", "ventilate"],
+    "tags": [
+      "paint",
+      "cotton",
+      "solvent-required",
+      "ventilate"
+    ],
     "freePreview": true
   },
   "stainChemistry": "Oil-based paint is pigment + binder (typically alkyd or linseed oil) + petroleum solvent (usually mineral spirits or turpentine). It does not thin with water. While wet, mineral spirits / turpentine dissolves it; once dry, the alkyd oxidizes and cross-links into a hard film that still softens with petroleum solvents but progressively less over time. Cotton's cellulose fiber is unaffected by any of the solvents used here — POG, mineral spirits, turpentine are all safe on cotton at room temperature.",
   "whyThisWorks": "Oil-based paint is chemistry-compatible with the same petroleum solvents used to thin and clean brushes. Apply the solvent BEFORE water — water emulsifies the oil binder and spreads the pigment sideways, exactly what you don't want. Solvent first dissolves the binder, then NSD emulsifies the dispersed pigment, then water flushes. Timing matters less than on latex, but fresh stains still come out cleaner than aged, oxidized ones.",
   "defaultAssumption": "Assume the user doesn't have pro POG on hand — home path calls for mineral spirits (paint-thinner) which is widely available at any hardware store.",
   "spottingProtocol": [
-    { "step": 1, "side": "dry", "agent": "Blot + Pick", "technique": "Remove bulk before solvent", "dwellTime": "brief",
-      "instruction": "Blot fresh paint with a clean white cloth — press straight down, lift, repeat. For dried paint, scrape off any brittle bulk with a dull blade. Get as much off as possible before introducing solvent — solvent turns bulk into a smear if there's too much to dissolve at once." },
-    { "step": 2, "side": "wet-minimal", "agent": "POG or Mineral Spirits", "technique": "Solvent tamp, never pour", "dwellTime": "30–60 sec",
-      "instruction": "Apply POG (pro) or mineral spirits (home-grade equivalent) to a clean white cloth. Tamp the stain with the damp cloth from the back of the fabric. Solvent dissolves the alkyd binder. Flip cloth frequently — fresh cloth surface pulls more out. Ventilate the work area." },
-    { "step": 3, "side": "wet", "agent": "NSD", "technique": "Emulsify dispersed pigment", "dwellTime": "1–2 min",
-      "instruction": "After solvent softens the paint, apply NSD and agitate with a soft brush. The detergent emulsifies the now-dispersed pigment and binder so water can carry it out." },
-    { "step": 4, "side": "wet", "agent": "Cool Flush", "technique": "Rinse + inspect", "dwellTime": "brief",
-      "instruction": "Flush cool water from the back. Inspect. For oxidized / aged paint, repeat steps 2–3 — dried oil-based paint gives up incrementally rather than in one pass." },
-    { "step": 5, "side": "wet", "agent": "Acetic Rinse", "technique": "Restore pH", "dwellTime": "30 sec",
-      "instruction": "Optional but clean: a dilute acetic-acid rinse (white vinegar) restores pH after the alkaline NSD and prevents yellowing. Flush one more time cool." },
-    { "step": 6, "side": "dry", "agent": "Air Dry, No Heat", "technique": "Inspect before dryer", "dwellTime": "until dry",
-      "instruction": "Air-dry. Inspect in daylight before running a warm/hot dryer. Residual paint cures further under heat and is harder to remove on the next pass." }
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot + Pick",
+      "technique": "Remove bulk before solvent",
+      "dwellTime": "brief",
+      "instruction": "Blot fresh paint with a clean white cloth — press straight down, lift, repeat. For dried paint, scrape off any brittle bulk with a dull blade. Get as much off as possible before introducing solvent — solvent turns bulk into a smear if there's too much to dissolve at once."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "POG or Mineral Spirits",
+      "technique": "Solvent tamp, never pour",
+      "dwellTime": "30–60 sec",
+      "instruction": "Apply POG (pro) or mineral spirits (home-grade equivalent) to a clean white cloth. Tamp the stain with the damp cloth from the back of the fabric. Solvent dissolves the alkyd binder. Flip cloth frequently — fresh cloth surface pulls more out. Ventilate the work area."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify dispersed pigment",
+      "dwellTime": "1–2 min",
+      "instruction": "After solvent softens the paint, apply NSD and agitate with a soft brush. The detergent emulsifies the now-dispersed pigment and binder so water can carry it out."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Flush",
+      "technique": "Rinse + inspect",
+      "dwellTime": "brief",
+      "instruction": "Flush cool water from the back. Inspect. For oxidized / aged paint, repeat steps 2–3 — dried oil-based paint gives up incrementally rather than in one pass."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Acetic Rinse",
+      "technique": "Restore pH",
+      "dwellTime": "30 sec",
+      "instruction": "Optional but clean: a dilute acetic-acid rinse (white vinegar) restores pH after the alkaline NSD and prevents yellowing. Flush one more time cool."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Air Dry, No Heat",
+      "technique": "Inspect before dryer",
+      "dwellTime": "until dry",
+      "instruction": "Air-dry. Inspect in daylight before running a warm/hot dryer. Residual paint cures further under heat and is harder to remove on the next pass."
+    }
   ],
   "professionalProtocol": {
     "steps": [
@@ -44,7 +85,12 @@
       "5. Dilute acetic rinse — optional pH restoration.",
       "6. Air-dry. No heat until clean."
     ],
-    "products": ["POG (Paint-Oil-Grease remover)", "Mineral spirits or turpentine", "NSD (Neutral Synthetic Detergent)", "White vinegar (acetic rinse)"],
+    "products": [
+      "POG (Paint-Oil-Grease remover)",
+      "Mineral spirits or turpentine",
+      "NSD (Neutral Synthetic Detergent)",
+      "White vinegar (acetic rinse)"
+    ],
     "temperature": "room temperature through spotting; no heat drying until residue is gone",
     "warnings": [
       "Ventilate — petroleum solvents have flammable fumes",
@@ -54,21 +100,42 @@
     ]
   },
   "homeSolutions": [
-    { "step": 1, "agent": "Solvent first, water after — always",
+    {
+      "step": 1,
+      "agent": "Solvent First, Water After — Always",
       "instruction": "Oil-based paint does not thin with water. Rinse it first and all you do is spread pigment across your cotton like a smear. Solvent first — paint-thinner dissolves the binder, detergent emulsifies the softened pigment, water carries it out. Do it in that order.",
-      "safetyNote": "Water first on oil-based paint turns a localized stain into a bigger diffuse one." },
-    { "step": 2, "agent": "Blot fresh / scrape dry first",
-      "instruction": "Before you reach for solvent, get the easy mass off. Fresh paint: press a folded paper towel straight down. Lift. Move to a dry section. Press again. Don't rub. Dry paint: edge of a credit card, scrape off the brittle film." },
-    { "step": 3, "agent": "Paint-thinner on a rag — ventilate",
-      "instruction": "Put mineral spirits (paint-thinner, any hardware store) on a clean white rag. Work in a ventilated space — open a window, no flames, no smoking. Press the rag onto the paint from the BACK of the fabric. Solvent softens the binder. Flip to a clean spot on the rag, press again. Keep going until the rag comes away with less pigment each pass." },
-    { "step": 4, "agent": "Dawn dish soap — work in dry",
-      "instruction": "A drop of clear Dawn directly on the stain. Work it in with a fingertip for 30 seconds — no water yet. Dawn emulsifies the softened paint the solvent just loosened. Let it sit 5 minutes." },
-    { "step": 5, "agent": "Cool water rinse",
-      "instruction": "Rinse the Dawn out with cool water from the back of the fabric. You'll often see more pigment come out at this step than during the solvent pass — that's the Dawn carrying it out. Repeat mineral spirits + Dawn + rinse once if a shadow remains." },
-    { "step": 6, "agent": "Air dry, inspect, no heat",
-      "instruction": "Air-dry the garment. Inspect in daylight. If you still see paint, repeat the solvent + Dawn pass. Do not run it through a warm or hot dryer with any paint still visible — heat cures the alkyd binder further and makes the next pass harder." },
-    { "step": 7, "agent": "Escalate for heat-set or large stains",
-      "instruction": "If the paint was already ironed, run through a hot dryer, or covers more than a few square inches, take it to a dry cleaner. Tell them: \"Oil-based paint on cotton, [fresh / dried / heat-set], home-treated with mineral spirits + Dawn.\" Pros use POG and targeted solvents that are more aggressive than mineral spirits, controlled for fiber safety." }
+      "safetyNote": "Water first on oil-based paint turns a localized stain into a bigger diffuse one."
+    },
+    {
+      "step": 2,
+      "agent": "Blot Fresh / Scrape Dry First",
+      "instruction": "Before you reach for solvent, get the easy mass off. Fresh paint: press a folded paper towel straight down. Lift. Move to a dry section. Press again. Don't rub. Dry paint: edge of a credit card, scrape off the brittle film."
+    },
+    {
+      "step": 3,
+      "agent": "Paint-Thinner on a Rag — Ventilate",
+      "instruction": "Put mineral spirits (paint-thinner, any hardware store) on a clean white rag. Work in a ventilated space — open a window, no flames, no smoking. Press the rag onto the paint from the BACK of the fabric. Solvent softens the binder. Flip to a clean spot on the rag, press again. Keep going until the rag comes away with less pigment each pass."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn Dish Soap — Work in Dry",
+      "instruction": "A drop of clear Dawn directly on the stain. Work it in with a fingertip for 30 seconds — no water yet. Dawn emulsifies the softened paint the solvent just loosened. Let it sit 5 minutes."
+    },
+    {
+      "step": 5,
+      "agent": "Cool Water Rinse",
+      "instruction": "Rinse the Dawn out with cool water from the back of the fabric. You'll often see more pigment come out at this step than during the solvent pass — that's the Dawn carrying it out. Repeat mineral spirits + Dawn + rinse once if a shadow remains."
+    },
+    {
+      "step": 6,
+      "agent": "Air Dry, Inspect, No Heat",
+      "instruction": "Air-dry the garment. Inspect in daylight. If you still see paint, repeat the solvent + Dawn pass. Do not run it through a warm or hot dryer with any paint still visible — heat cures the alkyd binder further and makes the next pass harder."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate for Heat-Set or Large Stains",
+      "instruction": "If the paint was already ironed, run through a hot dryer, or covers more than a few square inches, take it to a dry cleaner. Tell them: \"Oil-based paint on cotton, [fresh / dried / heat-set], home-treated with mineral spirits + Dawn.\" Pros use POG and targeted solvents that are more aggressive than mineral spirits, controlled for fiber safety."
+    }
   ],
   "diyProtocol": {
     "steps": [
@@ -80,7 +147,11 @@
       "6. Repeat solvent + Dawn + rinse once if any shadow remains.",
       "7. Air-dry fully before any heat — residual paint cures further in dryer heat."
     ],
-    "products": ["Mineral spirits (paint-thinner)", "Dawn dish soap", "Clean white rags"],
+    "products": [
+      "Mineral spirits (paint-thinner)",
+      "Dawn dish soap",
+      "Clean white rags"
+    ],
     "whenToStop": "Stop if the paint has been ironed or machine-dried, if it covers more than a few square inches, or if two home rounds don't clear it. Take it to a dry cleaner.",
     "warnings": [
       "Never use water first — it spreads oil-based paint across cotton",

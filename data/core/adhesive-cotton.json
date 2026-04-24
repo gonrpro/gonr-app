@@ -15,25 +15,65 @@
     "surfaceCanonical": "cotton",
     "tier": "universal",
     "riskLevel": "medium",
-    "tags": ["adhesive", "cotton", "solvent-first"],
+    "tags": [
+      "adhesive",
+      "cotton",
+      "solvent-first"
+    ],
     "freePreview": true
   },
   "stainChemistry": "Adhesives on cotton split into four working classes: (1) rubber / contact — petroleum solvent (POG); (2) acrylic / white / school — warm NSD or IPA; (3) cyanoacrylate / super glue — acetone (cotton tolerates it); (4) hot-melt — freeze, pick, treat residue. Cotton is the most chemically durable common fiber — tolerates acetone, IPA, warm water, and most common solvents without damage.",
   "whyThisWorks": "Cotton's durability means the path is driven by adhesive class, not fiber sensitivity. Identify the glue first. Water-soluble glues give up to NSD + warm water. Acrylic adhesives lift with IPA. Cyanoacrylate needs acetone. Rubber cement breaks under petroleum solvents. Cotton handles all of these at room temperature; heat is the only thing to avoid until residue is fully gone.",
   "defaultAssumption": "Assume a water-soluble or acrylic adhesive unless the user says otherwise — that's the majority case. Cyanoacrylate gets called out explicitly if they mention super glue.",
   "spottingProtocol": [
-    { "step": 1, "side": "dry", "agent": "ID + Pick", "technique": "Identify class, scrape bulk", "dwellTime": "brief",
-      "instruction": "Ask: what kind? Super glue → acetone. Rubber cement → POG. White / school / acrylic → IPA or NSD. Hot-melt → chill, pick, treat residue. Remove pickable bulk with a dull blade before anything wet hits it." },
-    { "step": 2, "side": "wet", "agent": "Warm Flush", "technique": "Flush from back", "dwellTime": "30 seconds",
-      "instruction": "Warm water flush from the back of the fabric. Cotton tolerates warm; water-soluble glues loosen fast." },
-    { "step": 3, "side": "wet", "agent": "NSD", "technique": "Tamp, dwell, flush", "dwellTime": "1–2 min",
-      "instruction": "NSD directly on the spot. Tamp with a bristle brush. Water-soluble adhesives lift here." },
-    { "step": 4, "side": "wet", "agent": "IPA or Acetone", "technique": "Solvent tamp, cotton tolerates both", "dwellTime": "30–60 sec",
-      "instruction": "Residue remains: IPA on a white cloth for acrylic / white glue. Acetone on a cotton swab for confirmed cyanoacrylate — cotton tolerates acetone, unlike acetate blends. Tamp, don't pour. Flip cloth frequently." },
-    { "step": 5, "side": "wet", "agent": "Flush", "technique": "Warm rinse, no heat drying", "dwellTime": "brief",
-      "instruction": "Flush warm, blot, inspect. Air-dry only — heat sets residual adhesive into cotton fiber permanently." },
-    { "step": 6, "side": "wet", "agent": "Repeat or Escalate", "technique": "Second pass or escalate", "dwellTime": "as needed",
-      "instruction": "Repeat steps 3–5 once if residue persists. If the stain has been through a dryer or iron, escalate — heat-set adhesive on cotton usually needs pro chemistry." }
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "ID + Pick",
+      "technique": "Identify class, scrape bulk",
+      "dwellTime": "brief",
+      "instruction": "Ask: what kind? Super glue → acetone. Rubber cement → POG. White / school / acrylic → IPA or NSD. Hot-melt → chill, pick, treat residue. Remove pickable bulk with a dull blade before anything wet hits it."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Warm Flush",
+      "technique": "Flush from back",
+      "dwellTime": "30 seconds",
+      "instruction": "Warm water flush from the back of the fabric. Cotton tolerates warm; water-soluble glues loosen fast."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Tamp, dwell, flush",
+      "dwellTime": "1–2 min",
+      "instruction": "NSD directly on the spot. Tamp with a bristle brush. Water-soluble adhesives lift here."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "IPA or Acetone",
+      "technique": "Solvent tamp, cotton tolerates both",
+      "dwellTime": "30–60 sec",
+      "instruction": "Residue remains: IPA on a white cloth for acrylic / white glue. Acetone on a cotton swab for confirmed cyanoacrylate — cotton tolerates acetone, unlike acetate blends. Tamp, don't pour. Flip cloth frequently."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Flush",
+      "technique": "Warm rinse, no heat drying",
+      "dwellTime": "brief",
+      "instruction": "Flush warm, blot, inspect. Air-dry only — heat sets residual adhesive into cotton fiber permanently."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Repeat or Escalate",
+      "technique": "Second pass or escalate",
+      "dwellTime": "as needed",
+      "instruction": "Repeat steps 3–5 once if residue persists. If the stain has been through a dryer or iron, escalate — heat-set adhesive on cotton usually needs pro chemistry."
+    }
   ],
   "professionalProtocol": {
     "steps": [
@@ -44,7 +84,12 @@
       "5. Flush warm. Blot. Air-dry only — no heat until clean.",
       "6. Repeat once. Escalate if heat-set."
     ],
-    "products": ["NSD (Neutral Synthetic Detergent)", "Isopropyl alcohol 90%+", "Acetone (cotton-safe, not acetate)", "POG (rubber / contact cement)"],
+    "products": [
+      "NSD (Neutral Synthetic Detergent)",
+      "Isopropyl alcohol 90%+",
+      "Acetone (cotton-safe, not acetate)",
+      "POG (rubber / contact cement)"
+    ],
     "temperature": "room temperature through spotting — no heat drying until residue is gone",
     "warnings": [
       "Never heat an uncured or residual adhesive — it cures into the fiber permanently.",
@@ -53,20 +98,41 @@
     ]
   },
   "homeSolutions": [
-    { "step": 1, "agent": "Name the glue first",
-      "instruction": "Different glues want different removers. Super glue? Acetone-based nail polish remover — cotton handles it. School / white glue? Warm water and dish soap. Rubber cement or contact cement? Goo Gone or orange oil. Hot glue? Freeze and pick off. Skip this step and you'll guess wrong." },
-    { "step": 2, "agent": "Pick off any solid bulk",
-      "instruction": "Before wetting anything, scrape the raised or rubbery bulk off with the edge of a credit card or a dull butter knife. Don't pull hard on the fabric — if it doesn't come free easily, leave it for the solvent step." },
-    { "step": 3, "agent": "White / school glue → warm water + Dawn",
-      "instruction": "Water-soluble glues give up fast on cotton. Run warm water through the back of the stain for 60 seconds. Work a drop of Dawn into the spot with a fingertip. Let it sit 5 minutes, rinse. Two passes clears most of it." },
-    { "step": 4, "agent": "Super glue → acetone on cotton swab",
-      "instruction": "Cotton tolerates acetone-based nail polish remover well. Dab a cotton swab from the BACK of the fabric. Tamp-and-blot, don't pour. Super glue dissolves in seconds. Flush cold water right after." },
-    { "step": 5, "agent": "Rubber cement / contact glue → citrus or oil",
-      "instruction": "Apply Goo Gone, orange oil, or cooking oil to the residue. Let it sit 10 minutes — the adhesive gets gummy. Work gently with a soft toothbrush, lift dissolved residue with a paper towel. Wash the oil out with Dawn + warm water." },
-    { "step": 6, "agent": "Hot glue → freeze first",
-      "instruction": "Put the garment in the freezer 20 minutes. Hot glue turns brittle when frozen and pops off with light pressure from a dull blade. Any film left behind runs through the Dawn + warm water pass." },
-    { "step": 7, "agent": "Air-dry, inspect in daylight",
-      "instruction": "Air-dry fully before the dryer. Adhesive residue cures permanently under dryer heat. Inspect in daylight — not the laundry-room bulb — before running hot. If you still see or feel a tacky spot, repeat the solvent step that matched your glue before drying." }
+    {
+      "step": 1,
+      "agent": "Name the Glue First",
+      "instruction": "Different glues want different removers. Super glue? Acetone-based nail polish remover — cotton handles it. School / white glue? Warm water and dish soap. Rubber cement or contact cement? Goo Gone or orange oil. Hot glue? Freeze and pick off. Skip this step and you'll guess wrong."
+    },
+    {
+      "step": 2,
+      "agent": "Pick Off Any Solid Bulk",
+      "instruction": "Before wetting anything, scrape the raised or rubbery bulk off with the edge of a credit card or a dull butter knife. Don't pull hard on the fabric — if it doesn't come free easily, leave it for the solvent step."
+    },
+    {
+      "step": 3,
+      "agent": "White / School Glue → Warm Water + Dawn",
+      "instruction": "Water-soluble glues give up fast on cotton. Run warm water through the back of the stain for 60 seconds. Work a drop of Dawn into the spot with a fingertip. Let it sit 5 minutes, rinse. Two passes clears most of it."
+    },
+    {
+      "step": 4,
+      "agent": "Super Glue → Acetone on Cotton Swab",
+      "instruction": "Cotton tolerates acetone-based nail polish remover well. Dab a cotton swab from the BACK of the fabric. Tamp-and-blot, don't pour. Super glue dissolves in seconds. Flush cold water right after."
+    },
+    {
+      "step": 5,
+      "agent": "Rubber Cement / Contact Glue → Citrus or Oil",
+      "instruction": "Apply Goo Gone, orange oil, or cooking oil to the residue. Let it sit 10 minutes — the adhesive gets gummy. Work gently with a soft toothbrush, lift dissolved residue with a paper towel. Wash the oil out with Dawn + warm water."
+    },
+    {
+      "step": 6,
+      "agent": "Hot Glue → Freeze First",
+      "instruction": "Put the garment in the freezer 20 minutes. Hot glue turns brittle when frozen and pops off with light pressure from a dull blade. Any film left behind runs through the Dawn + warm water pass."
+    },
+    {
+      "step": 7,
+      "agent": "Air-Dry, Inspect in Daylight",
+      "instruction": "Air-dry fully before the dryer. Adhesive residue cures permanently under dryer heat. Inspect in daylight — not the laundry-room bulb — before running hot. If you still see or feel a tacky spot, repeat the solvent step that matched your glue before drying."
+    }
   ],
   "diyProtocol": {
     "steps": [
@@ -78,7 +144,12 @@
       "6. Hot glue: freeze, pick, clean residue with Dawn + warm water.",
       "7. Air-dry fully before the dryer — heat cures residual adhesive permanently."
     ],
-    "products": ["Acetone-based nail polish remover", "Dawn dish soap", "Goo Gone or orange oil", "A dull blade or credit card"],
+    "products": [
+      "Acetone-based nail polish remover",
+      "Dawn dish soap",
+      "Goo Gone or orange oil",
+      "A dull blade or credit card"
+    ],
     "whenToStop": "Stop if the adhesive has been through a dryer or iron, or two full rounds haven't improved it. Take it to a dry cleaner with the adhesive type identified.",
     "warnings": [
       "No heat until residue is gone — cures adhesive permanently into cotton",
