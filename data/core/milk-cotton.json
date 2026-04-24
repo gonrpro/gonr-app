@@ -1,127 +1,174 @@
 {
   "id": "milk-cotton",
   "title": "Milk on Cotton",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Milk contains casein (protein), lactose (sugar), and butterfat (lipid) — a triple-component stain. The casein bonds to cotton through hydrogen bonding and becomes increasingly insoluble as it dries. Butterfat leaves a greasy residue that traps the protein component against the fiber. Heat causes the casein to denature and cross-link permanently.",
-  "whyThisWorks": "Cold water keeps the casein protein soluble on cotton. Enzyme treatment breaks down the casein chains. Surfactant emulsifies the butterfat. The treatment order matters: protein first (cold), then fat (surfactant), because hot water used for fat removal would set the protein.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "15–30 minutes (fresh); aged milk adds odor",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "milk",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "protein",
+      "cotton",
+      "odor-risk",
+      "time-sensitive"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Milk is a triple-component stain: casein (protein, ~80% of milk protein), whey (protein, ~20%), and butterfat (lipid). Lactose adds a sugar residue that attracts bacteria if the stain sits. Fresh milk is almost invisible on light cotton — the cleanup problem is usually the SMELL that develops after a few hours as casein sours. Cotton tolerates enzymes, NSD, 3% H₂O₂, and hot post-chemistry wash. The ordering constraint: protein before heat. Hot water on fresh casein cooks it into the fiber and locks the fat + lactose with it.",
+  "whyThisWorks": "Cold flush first pulls soluble protein before it denatures. Enzyme digests the casein matrix — the protein is what holds the butterfat and lactose onto the fiber. Once protein is gone, NSD handles the fat and lactose rinses out. Hot wash at the end finishes and kills any lingering souring bacteria. Reverse the order and the casein cooks in; the stain stays invisible but the smell stays forever.",
+  "defaultAssumption": "Fresh milk spills (within a few hours) are high-confidence DIY. Aged milk is less about the stain and more about the odor — bacteria have been metabolizing lactose and casein for hours, and hot wash becomes the non-negotiable finisher.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Flush",
+      "technique": "Flush from the back",
+      "equipment": "Cold water, white cotton terry towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Cold flush from the BACK of the fabric. Blot with a towel from underneath. Cold only — warm water sets the casein into cotton and seals the butterfat in with it."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Protein Spotter",
+      "technique": "Apply, dwell, light brush",
+      "equipment": "Liquid Protein Spotter (PRENETT B / protease digestant) in warm water (30–38°C)",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Apply Protein Spotter or enzyme pretreat dissolved in warm water. Enzyme window is warm, not hot — above 50°C the protease denatures. Dwell 15–20 min, light brush after the first 5. Protease hydrolyzes the casein matrix so the butterfat and lactose can lift in the next step."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify residual fat",
+      "equipment": "NSD in warm water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD, work with a soft brush. Emulsifies the butterfat the enzyme freed. Rinse cool from the back."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder hot, odor-kill",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label. Hot water is what kills the souring bacteria that give aged milk its smell. If the stain sat overnight, repeat the enzyme step before laundering — dried protein doesn't digest in a 30-minute wash cycle alone."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Cold flush from the back — never warm while the protein is still raw.",
+      "2. Liquid Protein Spotter (PRENETT B / protease) in warm water (30–38°C). Dwell 15–20 min.",
+      "3. NSD to emulsify residual butterfat. Cool rinse.",
+      "4. Hot wash per care label — finishes odor-kill."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Liquid Protein Spotter (PRENETT B or protease digestant)",
+      "NSD (Neutral Synthetic Detergent)"
     ],
-    "temperature": "cold",
+    "temperature": "cold flush; warm (30–38°C) for enzyme; cool rinse; hot wash post-chemistry",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "Never warm-water-flush fresh milk — cooks the casein",
+      "Enzymes die above 50°C — warm not hot",
+      "Hot wash is the odor finisher — don't skip on aged stains",
+      "Flush chemistry before heat"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test + speed matters",
-      "instruction": "Milk is a three-part stain (protein + fat + sugar) and it smells bad fast — the protein starts to spoil within hours at room temperature. Speed helps more here than on almost any other stain. On an inside seam, dab a drop of Dawn solution and blot with a white cloth. If the fabric holds its color, proceed to step 2 immediately."
+      "agent": "Cold Water, Fast",
+      "instruction": "Fresh milk on cotton clears easily IF you catch it cold. Hold the BACK of the stained fabric under cold running water for 30–60 seconds. Cold only — warm water cooks the milk protein into the cotton and locks everything (including the future smell) in place."
     },
     {
       "step": 2,
-      "agent": "Protein rule: cold water, never hot",
-      "instruction": "Milk protein (casein) is the reason for the no-heat rule. Hot water denatures casein and cross-links it permanently into cotton fibers — that's a shirt you can't save. Cold water at every step: sink, washing machine, drying. No dryer, no hair dryer, no warm ambient room until the stain is gone."
+      "agent": "Enzyme Pretreat — Warm, Not Hot",
+      "instruction": "Use an enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout). Dissolve in WARM water per the label — hot kills the enzymes. Apply to the stain, let sit 15–20 minutes. The enzymes dismantle the milk protein that holds the fat and lactose on the fiber."
     },
     {
       "step": 3,
-      "agent": "Cold water back-flush",
-      "instruction": "Turn the fabric inside out and run cold tap water through the BACK of the stain for 30–60 seconds. Push the milk back out the way it came in, rather than forward through the fiber. On a fresh spill this alone lifts most of the stain. For dried or set milk: lay a cold damp cloth over the spot for 10 minutes to rehydrate first."
+      "agent": "Dawn + Soft Brush for the Butterfat",
+      "instruction": "Work a drop of Dawn dish soap into the spot with a soft toothbrush. Dawn breaks up the residual butterfat. Rinse cool."
     },
     {
       "step": 4,
-      "agent": "Dish-soap cycle",
-      "instruction": "Mix one tablespoon of Dawn dish soap with two cups of cold water. Dab onto the area with a white cloth, let sit 5 minutes, then blot. Dawn cuts the butterfat — the fat that's trapping the casein against the fiber. Without this step, the protein won't fully release even with an enzyme."
+      "agent": "Hot Wash — the Odor-Kill Step",
+      "instruction": "Launder on the hottest setting the care label allows. The hot wash is the step that actually kills the bacteria that make old milk smell. If you skip it or run a cold wash, the stain looks gone but the smell comes back within a day."
     },
     {
       "step": 5,
-      "agent": "Enzyme pretreat (20–30 min)",
-      "instruction": "Apply an enzyme stain remover — OxiClean Versatile, Biz, or Zout — per the label. Let it dwell 20–30 minutes, keeping the area damp by re-wetting with cold water if it starts drying out. Enzymes digest the casein protein that Dawn can't fully lift. This step also handles the spoiled-milk smell that survives a surface wash.",
-      "safetyNote": "Never mix enzyme products with chlorine bleach — deactivates the enzymes. Safe with cotton dye in almost every case; skip on silk or wool."
+      "agent": "If the Smell Comes Back",
+      "instruction": "If the milk sat overnight before treatment, or if you ran the fabric through a cold wash after the enzyme step, the bacteria may still be in the fiber. Repeat: enzyme pretreat + hot wash. A second cycle with sunlight-dry often finishes any lingering odor."
     },
     {
       "step": 6,
-      "agent": "Cold-water machine wash",
-      "instruction": "Launder the garment on a cold cycle with your normal detergent plus an extra splash of white vinegar in the rinse if the smell is still there. Do not use warm or hot. Skip any fabric softener — it can seal residual milk protein into the fiber."
-    },
-    {
-      "step": 7,
-      "agent": "Air dry + smell check",
-      "instruction": "Hang or lay flat to air-dry. Once dry, do a smell check — put your nose right on the fabric in the affected area. Milk protein residue has a sour smell; if you can detect it, the casein is still there and will get worse in the dryer. Repeat steps 4–6 before using heat."
-    },
-    {
-      "step": 8,
-      "agent": "Sunlight finish for persistent yellow shadow",
-      "instruction": "On white cotton only: if a pale yellow shadow remains after a full wash, lay the damp garment flat in direct sunlight for 1–3 hours. UV naturally lightens residual protein-related yellowing. Skip on colored cotton."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a dry cleaner",
-      "instruction": "If the milk was heat-set (tumble-dried before treatment), sat longer than 48 hours without treatment, or survived two home rounds, take it in. Tell them: \"Milk on cotton — protein + fat + sugar — treated at home with Dawn + enzyme pretreat, cold wash, no heat applied. Residual [yellow shadow / sour odor] remains.\" Pros have concentrated protein digestants (Protein Formula) and reducing agents that outperform anything at home."
+      "agent": "Escalate If the Smell Persists",
+      "instruction": "If the smell returns after two full cycles, take the garment to a dry cleaner. Tell them: \"Milk on cotton, age [fresh / overnight / days], home-treated with enzyme pretreat + Dawn + hot wash. Odor [cleared / returns after drying].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. Cold water flush from the BACK of the fabric — never warm.",
+      "2. Enzyme pretreat (OxiClean Versatile, Biz, Zout) in WARM water. Dwell 15–20 min.",
+      "3. Dawn + soft toothbrush to lift butterfat.",
+      "4. Hot wash per care label — kills souring bacteria.",
+      "5. If smell returns, repeat enzyme + hot wash once.",
+      "6. Escalate if odor persists after two cycles."
     ],
     "products": [
-      "Dawn dish soap",
-      "cold water"
+      "Enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout)",
+      "Dawn dish soap"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if the smell returns after two full enzyme + hot-wash cycles. Take it to a dry cleaner.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "Cold water for the first flush — warm sets casein",
+      "Enzymes die above 50°C — warm water, not hot",
+      "Hot wash is the odor-kill — cold wash leaves bacteria alive",
+      "Fresh milk looks invisible on light cotton; treat the SMELL as the real problem"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never warm-flush fresh milk — cooks the casein, locks everything in",
+      "Never skip the hot wash — odor returns from live bacteria",
+      "Never run enzymes above 50°C — protease denatures",
+      "Never ignore fresh milk because it looks invisible — the smell is the late payment"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates enzymes, NSD, 3% H₂O₂, hot wash after chemistry",
+      "Dyed cotton: no peroxide needed for milk stains typically — just enzyme + hot wash",
+      "Heat-durable once chemistry is cleared"
     ]
   },
+  "materialWarnings": [
+    "Cold during spotting — hot sets casein",
+    "Enzyme in warm water, not hot",
+    "Hot wash is the odor-kill — never skip"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is milk on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Odor returns after two full enzyme + hot-wash cycles, or milk has been heat-set by iron or hot dryer before enzyme treatment.",
+    "whatToTell": "\"Milk on cotton, age [fresh / overnight / days], home-treated with enzyme pretreat + Dawn + hot wash. Odor [cleared / returns after drying].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "How long ago did the spill happen?",
+      "Is the milk whole, 2%, skim, or plant-based? (plant milks have different chemistry — coconut, almond, oat have more fat or more sugar)",
+      "Has it been through a hot wash or dryer since?",
+      "Does the fabric already smell?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Milk is the stain where the smell IS the problem. Visible stain clears easily; odor is the late payment of skipping the hot wash."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

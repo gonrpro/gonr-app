@@ -1,125 +1,198 @@
 {
   "id": "hair-dye-cotton",
   "title": "Hair Dye on Cotton",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Permanent hair dye contains oxidative dye precursors (p-phenylenediamine, aminophenols) that react with hydrogen peroxide developer inside the fiber to form large, insoluble dye molecules. On cotton, the same chemistry occurs — the dye precursors penetrate the fiber and oxidize into permanent color. Once fully developed, the dye is designed to be wash-resistant.",
-  "whyThisWorks": "If caught before full development (within minutes), surfactant and cold water can remove undeveloped dye precursors from cotton. Once developed, a reducing agent (sodium hydrosulfite) reverses the oxidation, breaking the dye molecule apart. An oxidizer (H2O2) can also break the chromophore. Complete removal is difficult — professional treatment is often necessary for full resolution.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "5–15 minutes IF caught pre-development; hours-plus or escalation if developed",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "hair-dye",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "dye",
+      "permanent",
+      "oxidative",
+      "cotton",
+      "time-critical",
+      "escalate-fast"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Permanent hair dye is one of the hardest home stains to remove because the dye is ENGINEERED to bond permanently inside protein fiber — and cellulose (cotton) shares enough chemistry for the same reaction to work on the fabric. The formula is oxidative: small colorless dye precursors (p-phenylenediamine, aminophenols) + hydrogen peroxide developer penetrate the fiber THEN react in situ to form large insoluble dye molecules. Once that reaction completes (15–30 minutes after application), the dye is there for the life of the fabric. Caught BEFORE development: regular dye chemistry. Caught AFTER: home chemistry plateaus; even pro chemistry (reducing bleaches, sodium hydrosulfite) may leave residual color. Cotton itself tolerates strong chemistry; the stain is the problem.",
+  "whyThisWorks": "Speed is the entire protocol. In the first minutes, the dye precursors are still water-soluble and haven't yet cross-linked — NSD + cold flush can lift them cleanly. After 15–30 minutes of 'development,' the molecules polymerize into their permanent form and no home chemistry clears them reliably. The honest answer on developed hair dye: escalate fast. Pros have sodium hydrosulfite (reducing bleach) that can partially reverse the oxidation, sometimes with residual shadow. Home chemistry (OxiClean, H₂O₂) targets the chromophore directly but rarely fully removes permanent dye.",
+  "defaultAssumption": "Treat as time-critical. The first 10 minutes are everything. If the dye has been on the cotton for 30+ minutes, home chemistry will probably plateau at faint color and a pro is the honest path. Set expectations clearly and early.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Flush — Speed Matters",
+      "technique": "Flush from the back IMMEDIATELY",
+      "equipment": "Cold water, white cotton terry towel",
+      "dwellTime": "1–2 minutes",
+      "instruction": "If the dye is still fresh (within 5–10 min), cold flush from the BACK of the fabric under cold running water HARD. You're racing the development reaction. Cold slows oxidation; hot accelerates it. Blot from underneath with a clean white towel."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Suspend undeveloped dye",
+      "equipment": "NSD in cold water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Apply NSD, work gently with a soft brush. On pre-development stains, this lifts the dye precursors before they've fully cross-linked. Rinse cool, repeat if color is still transferring to the cloth."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Reducing Bleach (Pro)",
+      "technique": "Sodium hydrosulfite spot pass",
+      "equipment": "Sodium hydrosulfite (StreePene or equivalent) — pro stock only",
+      "dwellTime": "5–10 minutes",
+      "instruction": "For developed dye on whites: sodium hydrosulfite reducing bleach can reverse some of the oxidation. Pro chemistry, not household. Apply per manufacturer instructions, monitor carefully, rinse fully. Residual shadow is common even on successful passes."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Oxidizer pass after reducing",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "After reducing bleach, an oxidizer pass can sometimes finish the job by breaking the chromophore from the oxidative direction. Whites only. One oxidizer at a time."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Rinse thoroughly. Launder hot per care label. Inspect BEFORE the dryer — any residual dye sets permanently under heat."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate or appropriate solvent to dissolve dye/pigment matrix",
-      "2. Apply NSD to lift loosened pigment. Flush with cool water",
-      "3. If color persists: apply H2O2 6% on colorfast fabrics to break chromophore bonds",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cold flush from the back IMMEDIATELY — racing the oxidative reaction.",
+      "2. NSD — suspend any pre-developed precursors.",
+      "3. Sodium hydrosulfite reducing bleach on whites. Pro chemistry. Monitor, rinse fully.",
+      "4. 3% H₂O₂ oxidizer pass. One pass. NSD-flush between.",
+      "5. Hot wash per care label.",
+      "6. Residual shadow often remains — set honest expectations."
     ],
     "products": [
-      "amyl acetate",
       "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Sodium hydrosulfite reducing bleach (StreePene or equivalent — whites only)",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold through spotting; hot wash post-chemistry",
+    "warnings": [
+      "Time-critical — every minute the dye develops reduces home / pro success rate",
+      "Sodium hydrosulfite on whites only; never on dyed cotton (strips fabric dye)",
+      "Never layer reducing + oxidizing chemistry without a clean flush between",
+      "Residual color on developed dye is common — no home or pro chemistry guarantees full removal"
+    ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Set realistic expectations",
-      "instruction": "Permanent hair dye is engineered to be, well, permanent — it forms its final color INSIDE the fiber via an oxidation reaction. That means two things: (1) if you catch it within 5 minutes before the reaction completes, you have a real chance at home, and (2) if it's already developed or dried, realistic best-case is \"significantly lighter,\" not \"completely gone.\" Save expensive garments for the pro — white cotton with fresh dye is the one home-winnable scenario."
+      "agent": "Move FAST — Every Second Counts",
+      "instruction": "Permanent hair dye is engineered to bond permanently inside fibers. It keeps developing for 15–30 minutes after it hits the fabric. Caught in the first 5 minutes, you have a real chance. Caught after 30 minutes, home treatment probably won't fully clear it. If you're reading this with dye on a shirt right now, drop everything and get to the sink."
     },
     {
       "step": 2,
-      "agent": "Identify the dye type if you can",
-      "instruction": "Quick check: was it permanent color (comes in two bottles you mix — developer + color), semi-permanent (one bottle, lasts ~6 weeks), temporary (washes out in 1–2 washes), or hair mascara/powder? Temporary and semi-permanent are MUCH easier and respond to alcohol. Permanent dye is the hardest. If you don't know, assume permanent and proceed — it's the safer starting assumption."
+      "agent": "Cold Water, Flush Hard From the Back",
+      "instruction": "Hold the BACK of the stained fabric under COLD running water — hard pressure, 1–2 minutes. Cold slows the dye's chemical development; hot accelerates it (hot water is what activates the developer at the salon). Flush until the water running off is pale or clear."
     },
     {
       "step": 3,
-      "agent": "Speed is everything — don't let the dye develop",
-      "instruction": "If the spill is fresh (under 5 minutes), run to a sink immediately. Turn the fabric inside out and run cold water through the BACK of the stain at full pressure for 60 seconds. Hot water accelerates the oxidation reaction that LOCKS the dye in — use cold only. This step alone can save a shirt if you catch it before the dye \"develops.\""
+      "agent": "Dawn + Cold Water, Immediately",
+      "instruction": "Work a drop of Dawn dish soap into the stain with a fingertip for 1–2 minutes. Dawn lifts the oil carrier in the dye formulation. Rinse cool. Repeat 2–3 times — each pass removes more undeveloped dye."
     },
     {
       "step": 4,
-      "agent": "Patch test + Dawn dish soap",
-      "instruction": "Dab a drop of Dawn solution on an inside seam. If the fabric holds color, apply a small amount of clear Dawn directly to the stain (no water). Work it in with a fingertip for 30 seconds. Let sit 5 minutes. Blot with a damp cloth. Dawn emulsifies the cream/conditioner base that carries the dye molecules."
+      "agent": "Rubbing Alcohol for Residual Color",
+      "instruction": "If color remains after the Dawn pass: dab 70%+ rubbing alcohol on a clean white cloth, press onto the stain from the back. Alcohol dissolves some of the oxidized dye molecules AND the cream base of the dye. Flip cloth often."
     },
     {
       "step": 5,
-      "agent": "Hairspray or rubbing alcohol — works on fresh dye",
-      "instruction": "An old hairstylist trick: spray aerosol hairspray (old-school, alcohol-based — not the new glycerin/oil types) directly on the stain. Let it sit 2 minutes, then blot with a clean white cloth — you'll see dye transfer to the cloth. OR: dab isopropyl alcohol 91% with a white cloth directly on the spot, replacing the cloth as it picks up color. Both work on undeveloped dye. Neither works well once the dye has oxidized fully.",
-      "safetyNote": "Never use alcohol or hairspray on silk, rayon, acetate, or wool. Cotton is fine. Keep away from open flame — both are flammable."
+      "agent": "Hydrogen Peroxide 3% on Whites (Cautious)",
+      "instruction": "For white cotton ONLY, and only if the dye has already started developing: dab 3% drugstore hydrogen peroxide on the stain, let it bubble 5–10 min, blot. Peroxide breaks the dye molecule's color-forming bonds. Skip entirely on dark or dyed cotton — peroxide lightens the fabric dye too.",
+      "safetyNote": "Never mix peroxide with ammonia or chlorine bleach — toxic fumes. Hair dye itself contains ammonia; rinse it out fully before any peroxide step."
     },
     {
       "step": 6,
-      "agent": "3% hydrogen peroxide — white cotton only",
-      "instruction": "On WHITE cotton only: dab 3% hydrogen peroxide directly on the stain with a white cloth. Let sit 10 minutes, blot, repeat once. Peroxide can reverse some of the oxidation reaction that made the dye permanent. Skip this step entirely on colored cotton — peroxide will lighten your shirt's dye too. Never mix with bleach or ammonia."
+      "agent": "Honest Assessment Before the Wash",
+      "instruction": "Before you run it through the washer: inspect in daylight. If the stain is faint or gone, hot wash per care label and you're done. If you can still clearly see the dye, escalate NOW — hot wash on developed dye permanently sets it. The honest path forward is a dry cleaner who has reducing bleaches home chemistry doesn't have."
     },
     {
       "step": 7,
-      "agent": "Enzyme + peroxide pretreat wash",
-      "instruction": "Pretreat with OxiClean Versatile (oxygen bleach, safe on colors) per label, let dwell 30 minutes. Launder on cold. Hang to air-dry — do NOT put in the dryer yet. Inspect in daylight. If the stain is visibly lighter, repeat steps 5–7 for a second round. Most hair dye stains max out around 50–80% removal on cotton — that's often enough for a shirt you'd otherwise throw out."
-    },
-    {
-      "step": 8,
-      "agent": "Sunlight finish (white cotton)",
-      "instruction": "After laundering, if some pigment remains on white cotton, lay the damp garment in direct sunlight for 2–4 hours. UV helps break down residual dye molecules. Keep it damp by re-misting with cold water if it dries out. Skip on colored cotton — sunlight will fade your dye."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate — and be honest with the pro",
-      "instruction": "For garments you care about, taking it to a pro cleaner ASAP is often the best move BEFORE home treatment — home chemistry can make it harder for pros by partially setting the dye. Tell them: \"Permanent hair dye on cotton, age [under 5 min / hours / days / dryer-set]. Treated with [nothing / Dawn / hairspray / alcohol / peroxide]. Color: [brand and shade if you know].\" They have sodium hydrosulfite (reducing agent) that can strip some permanent dyes. Be prepared for \"significantly lighter\" rather than \"gone\" — even pros have limits with oxidative dye."
+      "agent": "Escalate — Hair Dye Is a Pro Stain",
+      "instruction": "If the dye has been on the fabric for more than 30 minutes, or if visible color remains after two home rounds: take it to a dry cleaner. Tell them: \"Permanent hair dye on cotton, age [minutes / hours / overnight], home-treated with cold flush + Dawn + rubbing alcohol + [3% H₂O₂ on whites].\" Even pros often leave a residual shadow on hair dye — set your expectation that the outcome may be \"much lighter, not invisible.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately — never rub (spreading dye worsens it)",
-      "2. Apply Dawn dish soap mixed with cold water. Blot gently",
-      "3. If stain persists: apply hydrogen peroxide 3% on colorfast fabrics — test hidden area first, 5-10 min dwell time",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat until stain is completely gone"
+      "1. SPEED MATTERS — every minute the dye develops reduces success odds.",
+      "2. Cold water flush from the BACK, hard, 1–2 minutes.",
+      "3. Dawn + cold water, 2–3 rapid cycles.",
+      "4. Rubbing alcohol on a white cloth for residual color.",
+      "5. 3% hydrogen peroxide (WHITES ONLY), 5–10 min. Never on dyed cotton.",
+      "6. Inspect in daylight BEFORE the wash — if color's still visible, escalate, don't hot-wash.",
+      "7. Escalate at 30+ min of dye contact or after two home rounds — hair dye is pro-lane territory."
     ],
     "products": [
+      "Cold water (the real first-line treatment)",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "70%+ rubbing alcohol",
+      "3% hydrogen peroxide (WHITES ONLY)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop home treatment IMMEDIATELY if: the dye has been on the fabric for 30+ minutes, the cotton is dark / dyed and peroxide isn't safe, visible color remains after two home rounds. Take to a dry cleaner — and set expectations that even pros may leave a faint shadow.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "Hair dye is ENGINEERED to bond permanently — speed and escalation discipline matter more than perfect chemistry",
+      "NEVER hot-wash a visibly dyed garment — permanent set",
+      "NEVER mix peroxide with chlorine bleach or ammonia (hair dye has ammonia — rinse first)",
+      "Skip peroxide on dark/dyed cotton",
+      "Set honest expectations: residual shadow is common even with professional treatment"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never delay — hair dye develops irreversibly in 15–30 minutes",
+      "Never hot-wash visible hair dye — sets it permanently",
+      "Never mix peroxide with residual hair-dye ammonia — rinse fully first",
+      "Never promise full removal — even pros sometimes plateau at faint shadow"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates strong chemistry; the stain, not the fiber, is the difficulty",
+      "Dyed cotton: very narrow window — reducing bleach and peroxide both risk fabric color",
+      "Heat is the worst enemy until the stain is fully out"
     ]
   },
+  "materialWarnings": [
+    "Hair dye is permanent by design — escalate early",
+    "Inspect BEFORE the wash — hot water sets it",
+    "Set honest expectations — residual shadow is common"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is hair dye on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Hair dye has been on cotton for 30+ minutes, the fabric is dark / dyed, or two home rounds haven't cleared it. Escalate FAST — delay makes removal harder.",
+    "whatToTell": "\"Permanent hair dye on cotton, age [minutes / hours / overnight], home-treated with cold flush + Dawn + rubbing alcohol + [3% H₂O₂ on whites if applicable]. No hot wash. [Current level of visible color.]\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "How long has the dye been on the cotton?",
+      "Is it fully developed (waited 30+ minutes) or still fresh?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Permanent dye (box dye / salon / tint), semi-permanent, or demi-permanent?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Hair dye is the stain where SPEED + ESCALATION DISCIPLINE beat any specific chemistry. Even perfect pro chemistry often leaves residual shadow once the dye is developed. Set honest expectations — this is not a \"miracle home remedy\" stain."
   },
-  "difficulty": 9,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

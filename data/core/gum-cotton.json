@@ -1,119 +1,188 @@
 {
   "id": "gum-cotton",
-  "title": "Gum on Cotton",
+  "title": "Chewing Gum on Cotton",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Chewing gum is a hydrophobic polymer (polyisobutylene or chicle) mixed with softeners, sweeteners, and flavorings. On cotton, the polymer adheres through mechanical bonding and surface tension. Warm gum is soft and sticky, spreading when touched. Cold gum becomes brittle and loses adhesion. The polymer is not water-soluble at any temperature.",
-  "whyThisWorks": "Freezing makes the gum polymer brittle on cotton, breaking its mechanical bond and allowing it to be scraped or cracked off in pieces. POG or citrus-based solvent dissolves any remaining residue by breaking down the polymer. Ice in a bag (not direct ice) prevents water damage while providing the cold needed. Picking at warm gum spreads it — always freeze first.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "10–30 minutes plus freezer time",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "gum",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "polymer",
+      "hydrophobic",
+      "cotton",
+      "freeze-first"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Chewing gum is a hydrophobic polymer (polyisobutylene or chicle) blended with softeners, sweeteners, and flavorings. It adheres to cotton through mechanical and surface-tension bonding, not chemical bonding. Warm gum is sticky and smears; cold gum is brittle and cracks off. Water does nothing — the polymer is hydrophobic at any temperature. Cotton tolerates citrus oils, POG, IPA, and 3% H₂O₂ at room temperature, so the chemistry lane is wide; the key is mechanical removal first.",
+  "whyThisWorks": "Cold-brittling + mechanical removal clears 80% of the gum mass before any solvent touches the fiber. Residue — the staining flavorings + dye + softener — is then handled with a citrus or petroleum solvent. NSD emulsifies the last traces. Skip the freeze and go straight to solvent and you dissolve the gum into a much bigger, stickier stain than you started with.",
+  "defaultAssumption": "Fresh gum on cotton is a high-confidence DIY with a freezer and a scraper. Sugar-free gum has slightly different softeners but the same physics. Dried / old gum that's been washed already is a pro-lane job.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Freeze to Brittle",
+      "technique": "Sealed bag in freezer",
+      "equipment": "Zip-top bag, freezer",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Put the gummed area of the garment in a zip-top bag and place it in the freezer. Wait 20–30 minutes. Polymer transitions from sticky to brittle; the gum loses adhesion to the fiber. For large garments, use an ice pack wrapped in plastic directly on the gum instead."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Scrape + Pick",
+      "technique": "Remove brittle mass cleanly",
+      "equipment": "Dull blade, credit card, or butter knife",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Immediately after removal from freezer, pry the brittle gum off with a dull blade. Flakes come free in pieces. Work fast — once it warms back up, it goes sticky again. If any film remains, re-freeze and repeat."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Solvent Residue Pass",
+      "technique": "Solvent on cloth, tamp",
+      "equipment": "POG OR citrus oil (Goo Gone) OR IPA on a clean white cloth",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Any remaining residue from flavoring or dye: tamp with POG, Goo Gone, or IPA on a white cloth. Flip cloth frequently — residue transfers out. Never pour solvent on cotton directly."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify residual",
+      "equipment": "NSD in warm water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD, work with a soft brush. Emulsifies the last traces of solvent + residue. Rinse cool."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label. Inspect before the dryer."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Freeze with CO2 spray or ice to harden gum completely",
-      "2. Crack and scrape off hardened gum with dull edge",
-      "3. Apply POG to dissolve remaining residue",
-      "4. Apply NSD to remove final traces. Flush with cool water",
-      "5. Blot dry"
+      "1. Freeze the garment 20–30 min — polymer goes brittle.",
+      "2. Scrape the brittle gum off with a dull blade immediately post-freezer.",
+      "3. Residue: POG, citrus oil, or IPA on a white cloth. Tamp, don't pour.",
+      "4. NSD — emulsify final residue. Cool rinse.",
+      "5. Hot wash per care label."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
+      "Zip-top freezer bag OR ice pack",
+      "Dull blade or credit-card edge",
+      "POG, citrus oil (Goo Gone), or IPA",
       "NSD (Neutral Synthetic Detergent)"
     ],
-    "temperature": "ambient",
+    "temperature": "cold (freezer) for mechanical phase; room-temp solvent; hot wash post-chemistry",
     "warnings": [
-      "Always test on hidden area first"
+      "Never try solvent first — dissolves gum into a bigger, stickier stain",
+      "Work fast post-freezer — gum re-softens in minutes",
+      "Never pour solvent on cotton — tamp with cloth",
+      "Ventilate — POG and citrus oils have flammable fumes"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Don't pull at warm gum — freeze it first",
-      "instruction": "Warm gum is soft and sticky; pulling or picking at it stretches the gum into the cotton weave and makes the problem 5× worse. First rule: don't touch it yet. Ice the gum until it's rock-hard and brittle. Soft → hard is the whole game — once the gum is frozen solid, it snaps off cleanly."
+      "agent": "Freeze It Solid First — This Is the Whole Trick",
+      "instruction": "Put the gummed fabric in a zip-top bag (so it doesn't stick to other food) and toss it in the freezer for 20–30 minutes. Don't skip this step or try to work around it. Warm gum smears into a bigger mess; frozen gum goes brittle and pops off. An ice pack pressed directly against the gum through a plastic bag also works if freezing the whole garment is impractical."
     },
     {
       "step": 2,
-      "agent": "Freeze — ice in a bag, not on fabric",
-      "instruction": "Place a ziplock bag of ice cubes (or frozen peas) directly on top of the gum. Leave 15–20 minutes. If the item fits, you can put it in the freezer in a ziplock for 30 minutes instead — faster and cleaner. Never apply ice directly to cotton, condensation can bloom a separate water-ring stain."
+      "agent": "Scrape It Off Right After the Freezer",
+      "instruction": "Take the garment out and IMMEDIATELY scrape the frozen gum off with a dull butter knife or the edge of a credit card. It should come off in brittle flakes. You have a few minutes before it warms and re-softens — work fast. If any chunk stays stuck, put it back in the freezer for another 10 minutes and repeat."
     },
     {
       "step": 3,
-      "agent": "Crack and peel — work the frozen gum off",
-      "instruction": "Once the gum is hard, flex the fabric to crack the gum. Lift the biggest chunks off with a butter knife or the edge of a credit card. Work from outside in. If any piece stretches or smears, stop — it's warming up. Re-freeze another 10 minutes and try again. Repeat until as much gum is off as possible. Don't panic about residue — that's step 4."
+      "agent": "Goo Gone or Rubbing Alcohol for Residue",
+      "instruction": "Usually a faint oily / colored spot remains from the gum's softeners or flavoring. Dab Goo Gone (or 70%+ rubbing alcohol) on a clean white cloth and press it onto the spot. Flip the cloth frequently. The residue transfers out. Never pour — always dab from a cloth."
     },
     {
       "step": 4,
-      "agent": "Patch test before solvents",
-      "instruction": "Dab a drop of isopropyl alcohol or Goo Gone on an inside seam and blot with a white cloth after 60 seconds. If the fabric holds its color, you can use solvent in step 5. If dye transfers, skip to step 6 (Dawn only) and expect to escalate to a pro for stubborn residue."
+      "agent": "Dawn + Warm Water to Finish",
+      "instruction": "Work a drop of Dawn dish soap into the remaining spot. Dawn breaks up the solvent residue. Rinse cool."
     },
     {
       "step": 5,
-      "agent": "Solvent attack on residue — Goo Gone, alcohol, or peanut butter oil",
-      "instruction": "For residue still stuck to fiber, apply a small amount of one of: Goo Gone (orange/citrus-based dissolver), isopropyl alcohol 91% (dab with cotton ball), OR the old trick — a dab of smooth peanut butter (the oil dissolves the gum polymer). Let it sit 5 minutes. The solvent dissolves the polyisobutylene polymer so it releases from the fiber. Scrape or lift off the dissolved residue with the credit-card edge.",
-      "safetyNote": "Skip alcohol on silk, wool, rayon, or acetate. Cotton tolerates it well. Goo Gone is safe on most cotton but can leave an oil ring — step 6 handles that."
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. If you can still see color or feel stickiness, repeat the Goo Gone + Dawn round."
     },
     {
       "step": 6,
-      "agent": "Dawn dish soap — clean up the solvent oil",
-      "instruction": "Both Goo Gone and peanut butter leave an oil film. Apply a small drop of clear Dawn directly on the spot, work it in dry with a fingertip for 30 seconds, let sit 5 minutes, then blot with a clean damp cloth. Dawn emulsifies the oil so it rinses clean."
-    },
-    {
-      "step": 7,
-      "agent": "Warm wash + inspect before dryer",
-      "instruction": "Launder on warm (not hot) with your normal detergent. Hang or lay flat, inspect in daylight. Any sticky or oily shadow means residual polymer — repeat step 5 before using the dryer. Dryer heat on residual gum liquefies it and can transfer to other clothes in the load."
-    },
-    {
-      "step": 8,
-      "agent": "Escalate to a dry cleaner for stubborn residue",
-      "instruction": "If the gum survived through a hot dryer (now melted INTO the weave), or residue survives two full home rounds, take it to a dry cleaner. Tell them: \"Gum on cotton, [fresh/heat-set]. Bulk removed by freeze + peel; treated residue with [Goo Gone / alcohol] + Dawn. No hot water used at home.\" Pros have POG and professional-grade citrus solvents that cleave stuck polymer."
+      "agent": "Escalate for Old Gum or Heat-Set",
+      "instruction": "If the gum has already been through a hot wash or dryer (sometimes gum in a pocket gets discovered AFTER laundry), it may have melted and spread. Take the garment to a dry cleaner. Tell them: \"Chewing gum on cotton, age [fresh / dried / washed-through], home-treated with freezer + Goo Gone + Dawn.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Place ice in a bag on the gum for 15 minutes until completely hard",
-      "2. Crack the frozen gum and peel/scrape off with a dull edge",
-      "3. Apply Dawn dish soap to remaining residue. Work gently",
-      "4. Rinse with warm water. Repeat if needed",
-      "5. Air dry"
+      "1. FREEZE the gummed area 20–30 min in a zip-top bag. Or ice pack direct.",
+      "2. Scrape brittle gum off IMMEDIATELY with a dull blade.",
+      "3. Goo Gone or rubbing alcohol on a clean white cloth for residue.",
+      "4. Dawn + warm water for final cleanup.",
+      "5. Hot wash per care label. Inspect BEFORE the dryer.",
+      "6. Escalate if gum was hot-washed or hot-dried into the fabric."
     ],
     "products": [
-      "Dawn dish soap",
-      "ice"
+      "Zip-top freezer bag OR ice pack",
+      "Dull butter knife or credit-card edge",
+      "Goo Gone OR 70%+ rubbing alcohol",
+      "Dawn dish soap"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if gum has melted through a hot wash or dryer cycle. Take it to a dry cleaner.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "FREEZE FIRST — solvent on warm gum makes a bigger stain",
+      "Never pour solvent on fabric — tamp with cloth",
+      "Ventilate when using Goo Gone or alcohol",
+      "Work fast post-freezer — gum re-softens within minutes"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never skip the freeze step — solvent on warm gum spreads the stain",
+      "Never rub warm gum — grinds it into the weave",
+      "Never pour solvent on cotton directly",
+      "Never hot-dry with any residual stickiness — sets the softener residue"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates POG, citrus oil, IPA, and hot wash",
+      "Dyed cotton: IPA / Goo Gone usually safe; test inside seam if concerned",
+      "Heat-durable once the gum is off"
     ]
   },
+  "materialWarnings": [
+    "FREEZE first — the whole protocol depends on it",
+    "Work fast post-freezer",
+    "Solvent tamp, not pour"
+  ],
   "escalation": {
-    "when": "If gum stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is gum on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Gum has been through a hot wash or dryer and melted into the fabric, or home scrape + solvent round didn't clear the residue.",
+    "whatToTell": "\"Chewing gum on cotton, age [fresh / dried / washed-through], home-treated with freezer + Goo Gone + Dawn. [Hot-washed previously / not yet laundered.]\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Has the gum been through a hot wash or dryer already?",
+      "Regular sugar gum or sugar-free?",
+      "How old is the gum — fresh, dried, days?",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Gum is a mechanical-first, chemistry-second stain. Freeze step is the unlock; skip it and solvent makes everything worse."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

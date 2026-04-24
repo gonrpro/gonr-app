@@ -1,81 +1,215 @@
 {
   "id": "vomit-cotton",
   "title": "Vomit on Cotton",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Vomit is a complex mixture of partially digested food, stomach acid (HCl, pH 1.5-3.5), bile salts, mucus, and proteins. On cotton, the acid can damage dyes and fibers if left in contact, while the protein component bonds and sets with heat. Bile salts act as surfactants that drive the stain deeper into the substrate. The odor comes from volatile fatty acids and bacterial decomposition.",
-  "whyThisWorks": "Immediate removal of solids prevents acid damage to cotton. Cold water dilutes the acid and prevents protein from setting. Enzyme treatment breaks down the protein matrix, while surfactant addresses the bile and fat components. Odor neutralization requires reaching all contaminated material beneath the surface.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "20–60 minutes; aged adds enzyme soak",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "vomit",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "protein",
+      "acid",
+      "odor-risk",
+      "biohazard-adjacent",
+      "cotton"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Vomit is a complex mixture: partially digested food (protein + fat + starch), stomach acid (HCl, pH 1.5–3.5), bile salts (natural surfactants), mucus, and live bacteria. The acid can strip dye or weaken cotton if left in contact — cotton itself tolerates acid at neutral strength but the localized low pH damages some reactive dyes. Protein component cooks into the fiber under heat. Bile salts act as surfactants that drive the stain deeper. Odor comes from volatile fatty acids + bacterial metabolism.",
+  "whyThisWorks": "Remove solids first to stop acid contact + get the mass off before chemistry. Cold flush dilutes the acid and moves soluble protein before heat sets it. Enzyme digests the food-protein component. Dilute baking-soda or NSD rinse neutralizes the residual acid. Hot wash kills bacteria + finishes. Order matters: solids → cold flush → enzyme → neutralize → hot wash. Hot wash before enzyme cooks the protein in; enzyme before acid-neutralization leaves residual low pH that can damage dye over hours.",
+  "defaultAssumption": "Treat with gloves — vomit is biohazard-adjacent. Fresh vomit on cotton is solvable but the odor requires the hot-wash finisher. Kids' / sickness vomit on bedding is the typical case; mattress involvement escalates to a carpet/upholstery pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Gloves + Scrape",
+      "technique": "Remove solids safely",
+      "equipment": "Disposable gloves, dull blade, dedicated towel",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Gloves on. Scrape solid material off with a dull blade onto a disposable surface — newspaper or a paper towel you can throw away. Don't rub. Dispose of the scraped material in a sealed bag."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Flush",
+      "technique": "Flush from the back, dilute acid",
+      "equipment": "Cold water, white cotton terry towel",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Cold flush from the BACK of the fabric. Blot from underneath. Cold only — warm water cooks the protein AND accelerates the acid's dye damage. Flushing also dilutes the stomach acid to safer pH before it sits on the fabric for hours."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Protein Spotter",
+      "technique": "Apply, dwell, light brush",
+      "equipment": "Liquid Protein Spotter (PRENETT B / protease digestant) in warm water (30–38°C)",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Apply Protein Spotter or enzyme pretreat dissolved in warm water. Protease digests the food-protein matrix + any mucus. Dwell 20–30 min — longer than milk because vomit has more protein substrate. Light brush after the first 10."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Baking Soda Rinse",
+      "technique": "Neutralize residual acid",
+      "equipment": "1 tbsp baking soda in 1 cup cool water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "After the enzyme, neutralize any remaining stomach acid with a dilute baking-soda rinse. Mild alkalinity counters the HCl. This step protects reactive dyes from long-term fading. Rinse cool."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify residual",
+      "equipment": "NSD in warm water",
+      "dwellTime": "3 minutes",
+      "instruction": "Apply NSD, work with a soft brush. Emulsifies residual food oils and bile-salt film."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Hot Wash + Sunlight",
+      "technique": "Launder hot, bacterial-kill + odor-fade",
+      "equipment": "Washing machine, outdoor line if available",
+      "dwellTime": "Full wash cycle + dry",
+      "instruction": "Launder hot per care label — kills residual bacteria that cause persistent odor. Dry in direct sunlight when possible; UV is a second antimicrobial pass."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Gloves. Scrape solids safely.",
+      "2. Cold flush from the back — dilutes stomach acid, moves soluble protein.",
+      "3. Liquid Protein Spotter (PRENETT B / protease) in warm water (30–38°C). Dwell 20–30 min.",
+      "4. Baking-soda rinse — neutralizes residual HCl.",
+      "5. NSD — emulsify residual food oils and bile salts. Cool rinse.",
+      "6. Hot wash + sunlight dry."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Disposable gloves",
+      "Liquid Protein Spotter (PRENETT B or protease digestant)",
+      "Baking soda (sodium bicarbonate) — acid neutralizer",
+      "NSD (Neutral Synthetic Detergent)"
     ],
-    "temperature": "cold",
+    "temperature": "cold flush; warm (30–38°C) for enzyme; cool through neutralize + NSD; hot wash post-chemistry; sun during dry",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "Gloves on — biohazard adjacent",
+      "Never warm-flush vomit — cooks the protein + accelerates dye damage",
+      "Enzyme window warm, not hot",
+      "Hot wash is non-negotiable on vomit — kills bacteria, clears odor"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Gloves and a Separate Towel",
+      "instruction": "Put on rubber or nitrile gloves and use a towel you can toss (not a favorite) to handle the fabric. Vomit is biohazard-adjacent — gloves for your own health, separate towel to avoid cross-contaminating clean laundry."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Solid Material Off Outside",
+      "instruction": "Take the fabric outside or over a trash bin. Scrape solid material off with a dull butter knife or plastic scraper onto newspaper or a paper towel you can throw away. Seal in a bag. Don't rub — scraping lifts, rubbing grinds into the weave."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water, Flush From the Back",
+      "instruction": "Hold the BACK of the stained area under cold running water for 1–2 minutes. The flush dilutes the stomach acid AND pushes the food/protein back the way it came in. Cold only — warm water cooks the protein in and can damage the cotton's dye."
+    },
+    {
+      "step": 4,
+      "agent": "Enzyme Pretreat — Warm Water, Longer Dwell",
+      "instruction": "Use an enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout). Dissolve in WARM water per the label. Apply to the stain and let it sit 20–30 minutes — longer than usual because vomit has more protein substrate to digest."
+    },
+    {
+      "step": 5,
+      "agent": "Baking Soda Rinse for Acid + Odor",
+      "instruction": "Mix 1 tablespoon baking soda into 1 cup cool water. Sponge onto the spot, let sit 5 minutes, rinse. The baking soda neutralizes any remaining stomach acid (protecting your cotton's dye from long-term fading) AND cuts odor. This step is often the difference between 'cleaned but still faintly smells' and 'fully clean.'"
+    },
+    {
+      "step": 6,
+      "agent": "Dawn + Soft Brush",
+      "instruction": "A drop of Dawn worked in gently with a soft toothbrush lifts any residual food oils and bile-salt film. Rinse cool."
+    },
+    {
+      "step": 7,
+      "agent": "Hot Wash, Sunlight Dry",
+      "instruction": "Launder on the hottest setting the care label allows. The hot wash is what kills the bacteria that cause persistent vomit odor. Dry in direct sunlight when possible — UV is a second kill. If you must machine-dry, hot dryer is fine after the enzyme + hot-wash has cleared the protein."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate for Mattress or Persistent Odor",
+      "instruction": "If vomit soaked into a mattress, carpet pad, or upholstery batting, home treatment can't reach the trapped material and bacteria will continue producing odor. Call a professional cleaner with hot-water extraction. Tell them: \"Vomit on cotton [mattress cover / bedding / garment / upholstery], home-treated with enzyme pretreat + baking soda + Dawn + hot wash. [Odor persists / stain clear].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub. Dispose safely",
-      "2. Blot area with cold water and clean white cloths to dilute acid",
-      "3. Mix 1 tbsp Dawn dish soap with 2 cups cold water. Apply and blot",
-      "4. Mix equal parts white vinegar and cold water. Apply for odor neutralization",
-      "5. Blot with clean white cloth until dry. Sprinkle baking soda over area — let sit 15 min",
-      "6. Vacuum and air dry — no heat"
+      "1. Gloves on. Separate towel. Outdoors if you can.",
+      "2. Scrape solids onto disposable paper and bag-seal.",
+      "3. Cold flush from the BACK — dilutes stomach acid + moves protein.",
+      "4. Enzyme pretreat (OxiClean Versatile, Biz, Zout) in WARM water. 20–30 min.",
+      "5. Baking soda + water rinse for acid + odor.",
+      "6. Dawn + soft brush for food oils.",
+      "7. Hot wash + sunlight dry — kills bacteria.",
+      "8. Escalate for mattress / upholstery / persistent odor after full cycle."
     ],
     "products": [
+      "Disposable gloves",
+      "Enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout)",
+      "Baking soda (household)",
       "Dawn dish soap",
-      "white vinegar",
-      "baking soda"
+      "Direct sunlight (if possible)"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop home treatment if vomit soaked into a mattress or upholstery padding — the bacteria trap requires professional extraction. Also escalate if odor persists after a full cycle.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "GLOVES — vomit is biohazard-adjacent",
+      "Cold water for first flush — warm cooks protein + damages cotton dye",
+      "Enzymes die above 50°C — warm not hot",
+      "Hot wash is the bacterial-kill — cold wash leaves odor alive",
+      "Mattress / upholstery involvement = escalate"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never handle vomit bare-handed",
+      "Never warm-water-flush fresh vomit — cooks protein + accelerates dye damage from the acid",
+      "Never skip the hot wash — bacterial odor returns",
+      "Never skip the neutralize step — residual stomach acid continues to fade dye over hours",
+      "Never run enzymes above 50°C"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates enzymes, baking-soda rinse, NSD, hot wash",
+      "Dyed cotton: the stomach-acid-on-dye issue is the risk — neutralize quickly",
+      "Heat-durable once protein is cleared"
     ]
   },
+  "materialWarnings": [
+    "Gloves — biohazard-adjacent",
+    "Cold during spotting — warm cooks protein + damages cotton dye",
+    "Hot wash + sunlight dry is the odor-kill",
+    "Mattress / upholstery padding = pro"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is vomit on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Vomit soaked into a mattress, carpet pad, or upholstery batting; persistent odor after a full home cycle; or the cotton has visible dye damage from acid contact.",
+    "whatToTell": "\"Vomit on [cotton garment / mattress cover / bedding / upholstery], age [fresh / overnight / older], home-treated with enzyme pretreat + baking-soda rinse + Dawn + hot wash. [Odor persists / stain clear / dye damage visible.]\"",
+    "specialistType": "professional cleaner with hot-water extraction (carpet / upholstery specialist if padding involved)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Has the vomit soaked into a mattress, sofa batting, or carpet padding?",
+      "How long ago did it happen?",
+      "Has it been through any wash cycle yet?",
+      "Is the cotton white or dyed? (dyed cotton + stomach acid contact for hours = dye damage risk)"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Gloves + scrape + cold flush is the time-sensitive trio; the baking-soda neutralize is the step that protects the fabric's dye from long-term acid fade. Padding involvement = pro."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

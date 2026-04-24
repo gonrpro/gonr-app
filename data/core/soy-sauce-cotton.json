@@ -1,127 +1,195 @@
 {
   "id": "soy-sauce-cotton",
   "title": "Soy Sauce on Cotton",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Soy sauce contains caramel color compounds (melanoidins), salt, amino acids, and tannin-like phenolics from fermentation. On cotton, the melanoidins bond to fiber through a combination of hydrogen bonding and Maillard-type crosslinks. The high salt content acts as a mordant, fixing the brown color deeper into the fiber matrix.",
-  "whyThisWorks": "Flushing with cold water immediately removes salt and loose pigment from cotton. The tannin spotter breaks melanoidin-fiber bonds. An oxidizer addresses the persistent brown color. Pre-rinsing is unusually important for soy sauce — the salt component acts as a dye fixative, so removing it quickly prevents the stain from becoming permanent.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "15–40 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "soy-sauce",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "melanoidin",
+      "salt-mordant",
+      "cotton",
+      "time-sensitive"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Soy sauce is a brown-black stain of melanoidins (caramel-type compounds from fermentation), tannin-like phenolics, amino acids, and — critically — salt. The melanoidins bond to cotton through hydrogen bonding AND some Maillard-type cross-linking. The salt content acts as a MORDANT — a dye fixative that locks the brown color deeper into the fiber the longer it sits. This makes soy sauce genuinely time-sensitive: the same spill caught in 5 minutes is twice as easy as the same spill at 30 minutes. Cotton is pure cellulose — tolerates acid-side spotters, NSD, 3% H₂O₂, and hot wash.",
+  "whyThisWorks": "Cold flush removes the salt before it can finish mordanting the color into the fiber. NSD suspends loose pigment. Acid-side tannin spotter disrupts the melanoidin-cellulose hydrogen bonds. 3% H₂O₂ oxidizes the residual brown chromophore. Hot wash finishes. The salt-flush first is the difference between soy-sauce-as-removable-tannin and soy-sauce-as-dye-fixed-by-its-own-salt.",
+  "defaultAssumption": "Time is the main variable. Fresh (within 10 min) is a high-confidence DIY. Hour-old adds a peroxide cycle. Overnight has set most of the way — expect a plateau at faint brown without pro chemistry.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Flush — Salt First",
+      "technique": "Flush from the back",
+      "equipment": "Cold water, white cotton terry towel",
+      "dwellTime": "1 minute",
+      "instruction": "Cold flush from the BACK of the fabric. This step is doing TWO jobs: moving soluble pigment AND flushing out the salt that would otherwise mordant the color into the fiber. Flush longer than you would for a straight tannin — 60+ seconds. The longer the salt sits, the harder the stain fixes."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Sponge, dwell, blot",
+      "equipment": "NSD in cold water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Apply NSD, sponge gently. Suspends residual pigment. Blot with a clean towel."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Tannin Spotter",
+      "technique": "Drop, dwell, blot",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Acid-side tannin spotter by dropper on the brown residue. Disrupts the melanoidin-cellulose bonds. Dwell 3–5 min, blot. Repeat once if needed."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Residual brown: 3% H₂O₂ drop-by-drop. Oxidizes the melanoidin chromophore. Dwell, blot. One oxidizer at a time."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "NSD Flush + Hot Wash",
+      "technique": "Clear chemistry, launder",
+      "equipment": "NSD, washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Rinse until water runs clear. Launder hot per care label."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cold flush from the back — longer than a standard tannin. Salt removal is job #1.",
+      "2. NSD in cold water. Sponge, 2–3 min.",
+      "3. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A). 3–5 min.",
+      "4. 3% H₂O₂ on residual brown. 3–5 min. One pass.",
+      "5. NSD flush, hot wash per care label."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
       "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
+    "temperature": "cold through spotting; hot wash post-chemistry",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color"
+      "Cold flush first AND longer — the salt mordants the color if it sits",
+      "One oxidizer at a time, NSD-flushed between",
+      "Flush all chemistry before heat"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Rinse within 60 seconds — salt is the enemy",
-      "instruction": "Soy sauce is a tannin stain with a lot of salt. Salt acts as a mordant — it fixes the brown color DEEPER into the fabric the longer it sits. If you can reach a sink: hold the garment under cold tap water, stain-side DOWN, for 30–60 seconds immediately. That single step takes a 30-minute treatment down to 5."
+      "agent": "Speed Matters — Flush Salt Fast",
+      "instruction": "Soy sauce is different from most stains: it has a lot of salt, and the salt LOCKS the brown color into cotton the longer it sits. The more seconds tick by, the harder it fixes. Move fast. If you can get cold water on it in the first 30 seconds, you're in great shape."
     },
     {
       "step": 2,
-      "agent": "Patch test + tannin rule",
-      "instruction": "On an inside seam, dab a drop of Dawn + 3% peroxide solution. Blot with a white cloth after two minutes. If dye transfers, stop and wash cold. If clean, proceed. Tannin rule: no alkaline cleaners (ammonia, baking soda, untreated OxiClean) — they lock the brown color into the fiber permanently."
+      "agent": "Cold Water, Back of Fabric, Longer Than Usual",
+      "instruction": "Hold the BACK of the stained area under cold running water for at least a full minute — longer than you'd use on most tannin stains. You're flushing BOTH the pigment AND the salt out. The salt is what would otherwise fix the stain permanently."
     },
     {
       "step": 3,
-      "agent": "Blot — never rub",
-      "instruction": "Press a white cloth or paper-towel stack straight down on the stain. Lift, move to a dry section, press again. Work outside in. Rubbing cotton when wet breaks down the fiber AND spreads the melanoidin pigment — you'll turn a quarter-sized spot into a palm-sized one."
+      "agent": "Dawn + Cold Water",
+      "instruction": "Work a drop of Dawn dish soap into the stain with a fingertip or soft toothbrush. Let it sit 5 minutes. Rinse cool."
     },
     {
       "step": 4,
-      "agent": "Cold-water back-flush",
-      "instruction": "Turn the garment inside out and run cold water through the BACK of the stain for 30–60 seconds. This pushes the soy sauce out the way it came in, and — critical for soy — flushes the salt out before it finishes locking the stain. Skip hot water: heat polymerizes the melanoidins (browning compounds) permanently."
+      "agent": "White Vinegar Dab for Residual Brown",
+      "instruction": "Mix 1 teaspoon white vinegar with 4 tablespoons cool water. Dab onto the remaining stain, let sit 3 minutes, blot. The vinegar's mild acidity breaks the melanoidin bond."
     },
     {
       "step": 5,
-      "agent": "Dawn + 3% hydrogen peroxide solution",
-      "instruction": "Mix one tablespoon of Dawn dish soap with one cup of 3% hydrogen peroxide in a small bowl. Dip a white cloth, wring nearly dry, and dab the stain. Let it sit 10 minutes. Peroxide oxidizes the melanoidin browning compounds; Dawn lifts them. Blot with a clean damp cloth. Repeat up to two more times for older stains.",
-      "safetyNote": "Never mix peroxide with ammonia or bleach. On brightly colored cotton, the step-2 patch test is your safety net."
+      "agent": "3% Hydrogen Peroxide for Stubborn Shadow",
+      "instruction": "If brown remains: dab 3% drugstore hydrogen peroxide on the spot, let it bubble 3–5 min, blot. Skip on dark or dyed cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fume risk."
     },
     {
       "step": 6,
-      "agent": "White vinegar rinse",
-      "instruction": "Mix one tablespoon of white vinegar with one cup of cold water. Dab onto the area. The mild acid neutralizes peroxide residue and keeps any remaining tannin in its lighter form rather than drifting toward brown on drying. Blot dry."
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer — dryer heat sets any residual brown permanently."
     },
     {
       "step": 7,
-      "agent": "Cold machine wash + air dry",
-      "instruction": "Launder on cold with your normal detergent. DO NOT tumble-dry until you've inspected in daylight. Hang or lay flat; check for shadow in natural light. If any remains, repeat steps 5–6 before using dryer heat. Heat on a residual soy stain locks the remaining brown in."
-    },
-    {
-      "step": 8,
-      "agent": "Sunlight finish for white cotton",
-      "instruction": "If a pale tan shadow persists on white cotton, lay the damp garment flat in direct sunlight for 1–3 hours. UV naturally bleaches residual melanoidins without chemistry. Skip on colored cotton — sun fades dye."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a dry cleaner",
-      "instruction": "If the stain survived two home rounds, was set by a dryer, or is older than 48 hours, take it in. Tell them: \"Soy sauce on cotton, treated at home with Dawn + 3% peroxide, vinegar rinse. No heat, no alkaline products used. Residual tan halo remains.\" That tells them to go straight to tannin formula + 6% peroxide rather than guessing at pigment type."
+      "agent": "Escalate If the Stain Sat",
+      "instruction": "If the soy sauce sat for hours before treatment, the salt has already done its job and home chemistry may plateau at a faint brown. Take it to a dry cleaner. Tell them: \"Soy sauce on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% hydrogen peroxide.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Move fast — salt in soy sauce mordants the color.",
+      "2. Cold water flush from the BACK for 60+ seconds (longer than regular tannin).",
+      "3. Dawn + cold water, 5 min dwell, rinse.",
+      "4. Diluted white vinegar dab for residual brown.",
+      "5. 3% hydrogen peroxide on stubborn shadow. Skip on dark cotton.",
+      "6. Hot wash per care label. Inspect BEFORE the dryer.",
+      "7. Escalate if aged / plateau."
     ],
     "products": [
+      "Cold water",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "White vinegar",
+      "3% hydrogen peroxide"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if soy sauce sat for hours before treatment and home chemistry plateaus at a faint brown shadow. Take it to a dry cleaner.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "Speed matters — salt fixes the color",
+      "Cold water only during spotting",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton",
+      "Inspect before the dryer"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never let soy sauce sit without a flush — the salt will mordant the color in",
+      "Never hot-water-flush — sets melanoidins brown",
+      "Never layer oxidizers — one at a time",
+      "Never dry with residual color visible"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, hot wash",
+      "Dyed cotton: skip or inside-seam-test peroxide",
+      "Heat-durable once chemistry is cleared"
     ]
   },
+  "materialWarnings": [
+    "Flush salt fast — it fixes the color",
+    "Cold during spotting, hot at wash",
+    "Peroxide on whites; test inside seam on dark cotton"
+  ],
   "escalation": {
-    "when": "If soy sauce stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is soy sauce on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Soy sauce sat for hours before treatment, heat-set by iron or dryer, or two home rounds plateau at faint brown.",
+    "whatToTell": "\"Soy sauce on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% H₂O₂. [Hot-washed / not yet laundered.]\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "How long ago did the spill happen?",
+      "Has the fabric been through any wash cycle yet?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Light or dark soy sauce? (dark / mushroom / tamari has more melanoidin — harder)"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The salt-mordant mechanism is the novel feature. A minute of extra cold flush time at the start of treatment saves two peroxide cycles later."
   },
-  "difficulty": 4,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,128 +1,204 @@
 {
   "id": "candle-wax-cotton",
   "title": "Candle Wax on Cotton",
-  "stainFamily": "dry_side",
+  "stainType": "specialty",
+  "stainFamily": "specialty",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Candle wax (paraffin) is a solid petroleum hydrocarbon that solidifies on cotton as it cools, trapping any dye from colored candles within the wax matrix. The wax itself is not a stain — it's a physical deposit. However, dyed candles leave pigment behind after wax removal. The wax must be removed before the dye can be treated.",
-  "whyThisWorks": "Freezing makes wax brittle on cotton, allowing mechanical removal of the bulk deposit. Low heat (iron through paper towel) melts remaining wax into the absorbent paper by capillary action. POG dissolves any wax residue. If dye remains after wax removal, it's treated as a separate dye stain with appropriate chemistry.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "15–40 minutes (wax itself is easy; dye residue may add a cycle)",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "candle-wax",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "wax",
+      "paraffin",
+      "cotton",
+      "freeze-first",
+      "iron-absorb"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Candle wax is paraffin (a solid petroleum hydrocarbon), sometimes with dye, essential oil, or soy/beeswax additions depending on candle type. Pure wax isn't technically a stain — it's a physical deposit of solid petroleum sitting in the fiber. Dyed candles leave a separate dye stain behind AFTER the wax is removed, which is usually the actual treatment problem. Cotton tolerates freezer temperatures, gentle iron heat, POG, and 3% H₂O₂. Two-phase cleanup: remove the wax, then treat any residual dye.",
+  "whyThisWorks": "Same mechanical-first logic as gum: freeze the wax brittle so it snaps off in pieces without smearing. Whatever's too thin to scrape gets absorbed by a clean paper towel with a warm iron — capillary action pulls melted wax into the absorbent paper instead of deeper into cotton. POG or IPA clears any last oily film. If the candle was dyed, residual pigment is treated like any other dye stain (peroxide + optional sunlight).",
+  "defaultAssumption": "Fresh wax (on a tablecloth, shirt, etc. from a dinner candle) is a high-confidence DIY. Soy / beeswax is softer and brittle-fractures less cleanly than paraffin but the same protocol works. Dyed candles (red, black, purple) mean you're doing a two-step stain — wax first, then the color.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Freeze to Brittle",
+      "technique": "Freezer or ice pack",
+      "equipment": "Zip-top bag + freezer, or ice pack",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Put the waxed area in a zip-top bag and freeze 20–30 min. Or press an ice pack (in a bag) directly on the wax for the same time. Paraffin turns brittle and loses adhesion to the fiber."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Scrape + Snap",
+      "technique": "Lift brittle wax off",
+      "equipment": "Dull blade or credit-card edge",
+      "dwellTime": "2 minutes",
+      "instruction": "Immediately post-freezer, pry the brittle wax off. It fractures and falls away cleanly. 80–95% of the wax mass leaves in this step. Work fast before it re-softens."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Iron + Brown Paper",
+      "technique": "Absorb residue into paper",
+      "equipment": "Brown paper (grocery bag) or clean white paper towel, iron on low-medium",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Lay clean brown paper or a white paper towel over the thin wax residue. Iron on LOW-MEDIUM (no steam). The wax melts and wicks into the paper. Shift the paper to a clean section as wax appears; repeat until the paper pulls no more wax. Never iron without the absorbent paper barrier — that just drives wax deeper."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Solvent Residue Pass",
+      "technique": "Tamp with solvent",
+      "equipment": "POG or IPA on a clean white cloth",
+      "dwellTime": "30 seconds",
+      "instruction": "Any remaining oily ring: tamp with POG or IPA on a cloth. Flip frequently. Never pour solvent directly."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Dye Treatment (If Candle Was Colored)",
+      "technique": "Tannin-style treatment of any remaining color",
+      "equipment": "NSD, then 3% H₂O₂ if residual color",
+      "dwellTime": "3–5 minutes each",
+      "instruction": "If the candle was dyed (red, black, purple, green), residual pigment will remain after wax removal. Apply NSD, then 3% H₂O₂ on whites. Treat the dye as its own stain class — see dye-transfer-cotton or general dye protocol."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full cycle",
+      "instruction": "Launder hot per care label. Inspect before the dryer."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Freeze the wax with ice bag to harden it. Scrape off bulk with dull edge",
-      "2. Apply POG to dissolve remaining wax residue",
-      "3. Apply NSD to lift pigment (for colored wax). Flush with cool water",
-      "4. If dye remains: apply H2O2 6% carefully, monitor",
-      "5. Apply Acetic Acid 28% (diluted 1:10) for pH restoration. Blot dry"
+      "1. Freeze to brittle. Zip-top bag 20–30 min.",
+      "2. Scrape brittle wax off immediately.",
+      "3. Iron through brown paper on low-medium — wax wicks into paper by capillary action. Shift paper to clean sections.",
+      "4. Solvent tamp (POG or IPA) on residual oily ring.",
+      "5. If dyed candle: NSD + 3% H₂O₂ treats residual pigment on whites.",
+      "6. Hot wash per care label."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Zip-top bag or ice pack",
+      "Dull blade or credit-card edge",
+      "Brown paper / clean white paper towel",
+      "Iron (low-medium, no steam)",
+      "POG or IPA",
+      "NSD + 3% H₂O₂ (for dyed-candle residue)"
     ],
-    "temperature": "ambient",
+    "temperature": "freezer for mechanical phase; low-medium iron for absorb; room-temp solvent; hot wash post-chemistry",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "Never iron without absorbent paper — drives wax deeper",
+      "Never skip the freeze — warm wax smears",
+      "Never pour solvent — tamp with cloth",
+      "Dyed candle residual color needs a separate chemistry pass"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Two-stage plan: physical first, chemistry second",
-      "instruction": "Candle wax is unusual — the wax itself isn't a stain, it's a physical deposit. The real stain (if any) is pigment from a colored candle hiding inside that wax. Your job: get 95% of the wax off MECHANICALLY (freeze + scrape + iron), then treat any remaining oil or dye with normal chemistry. Do NOT skip to washing — laundry detergent + wax = wax smeared across the whole load of clothes."
+      "agent": "Freeze It Brittle First",
+      "instruction": "Put the waxed fabric in a zip-top bag and toss it in the freezer for 20–30 minutes. Or press an ice pack (in a bag) directly on the wax. Paraffin goes hard and brittle at freezer temperatures, which is when it lifts cleanly. Skip this step and the wax smears."
     },
     {
       "step": 2,
-      "agent": "Freeze the wax brittle — ice in a bag, not on fabric",
-      "instruction": "Place a ziplock bag of ice cubes (or a frozen peas bag) directly on top of the wax. Leave 10–15 minutes. You want the wax rock-hard and shattery. Never apply ice DIRECTLY to cotton — condensation spreads stains. If the item fits, you can put it in the freezer in a ziplock for 30 minutes instead."
+      "agent": "Crack and Scrape Off",
+      "instruction": "Pull the fabric out and immediately pry the frozen wax off with a dull butter knife or credit-card edge. Most of it fractures and falls off in pieces. Work fast — once the wax warms back up, it re-softens and smears."
     },
     {
       "step": 3,
-      "agent": "Scrape + flake off with a dull edge",
-      "instruction": "Once the wax is hard, crack it gently and lift off large chunks with a butter knife or the edge of a credit card. Work from the outside in. Brittle wax pops off in satisfying chunks — if it's still soft or smearing, re-freeze. Bend the fabric over on itself to pop remaining wax out of the weave. Don't use a sharp knife — it cuts the fabric."
+      "agent": "Iron Through a Paper Towel or Grocery Bag",
+      "instruction": "Place a piece of brown paper (grocery bag is perfect) or a clean white paper towel over the thin wax that's left. Iron on LOW to MEDIUM heat (no steam). The wax melts and wicks INTO the paper — you'll see it appear as a dark patch. Shift the paper to a clean section and iron again. Keep going until the paper comes away clean. NEVER iron without the absorbent paper — that drives wax deeper."
     },
     {
       "step": 4,
-      "agent": "Iron melt-through — sandwich between paper towels",
-      "instruction": "Place a piece of brown paper bag or four layers of clean white paper towel UNDER the wax spot and another four layers on TOP. Set your iron to LOW heat (wool/silk setting — never cotton/linen high). Press down for 10 seconds, lift, move to a clean section of the paper, press again. The remaining wax melts UP and DOWN into the paper and out of the fiber. Replace the paper every time you see it absorb wax. Keep going until the paper stops picking up anything.",
-      "safetyNote": "Test your iron temperature on a corner of the paper first — too hot and the paper browns or scorches the fabric. Never use steam here. Never press wax directly (without paper) — you melt it INTO the fabric permanently."
+      "agent": "Goo Gone or Rubbing Alcohol for the Oily Ring",
+      "instruction": "An oily ring may remain. Dab Goo Gone or 70%+ rubbing alcohol on a clean white cloth and press onto the spot. Flip the cloth frequently — the oil transfers out."
     },
     {
       "step": 5,
-      "agent": "Patch test before chemistry",
-      "instruction": "Before applying any solvent or Dawn, dab a drop on an inside seam and blot after 60 seconds. If the fabric holds its color, proceed. If dye transfers, go to step 9 — home solvents will strip your cotton dye."
+      "agent": "Colored Candle? Treat the Dye Separately",
+      "instruction": "If the candle was dyed (red, purple, black, green), a faint pigment shadow will remain after the wax is gone. This is now a DYE stain, not a wax stain. Dab a drop of Dawn dish soap on it, work it in with a soft toothbrush for a minute, rinse. If color persists on WHITE cotton: 3% hydrogen peroxide dabbed for 3–5 min. Skip peroxide on dark or dyed cotton."
     },
     {
       "step": 6,
-      "agent": "Dawn + dry-side work for residual wax oil",
-      "instruction": "Even after the iron step there's often an oil film from the paraffin left behind. Put a small drop of clear Dawn directly on the spot (no water yet), work it in with a fingertip for 30 seconds, let sit 10 minutes, then blot with a clean damp cloth. Dawn is the best consumer-grade degreaser for paraffin residue. Blot from the back of the fabric if possible."
-    },
-    {
-      "step": 7,
-      "agent": "Treat any remaining dye (colored candles only)",
-      "instruction": "If the candle was white, you're done — skip to step 8. If the candle was colored (red, blue, green, etc.), you may see pigment left behind after the wax is gone. That's now a DYE stain — treat with rubbing alcohol: dab isopropyl alcohol 91% on a clean white cloth and press onto the pigment, replacing the pad underneath as it picks up dye. Work outside in. If color won't budge, skip to step 9."
-    },
-    {
-      "step": 8,
-      "agent": "Warm wash + air dry",
-      "instruction": "Launder on warm (not hot) with your normal detergent. Air-dry and inspect in daylight. Any greasy shadow means residual paraffin — repeat step 6 before using the dryer. Dryer heat on residual wax melts it back into surrounding fabric and can transfer wax to other items."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a dry cleaner",
-      "instruction": "If colored-candle dye won't lift, the wax was already through a hot dryer, or significant residue survives two home rounds, take it in. Tell them: \"Candle wax on cotton, [plain/colored]. Removed bulk mechanically (freeze + iron-through-paper), treated residue with Dawn + [alcohol]. Please use POG solvent for paraffin film and dye-side treatment for residual pigment.\" That specifies exactly what they need to do."
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. If there's still a ring or tint, repeat the iron-absorb OR dye-treatment step as needed."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Freeze the wax: place ice in a bag on the wax for 10 minutes until brittle. Do NOT apply ice directly to fabric",
-      "2. Scrape off hardened wax with a dull knife or credit card edge",
-      "3. Place paper towels above and below the fabric (if possible). Iron on low heat to melt remaining wax into paper — check every 5 seconds",
-      "4. Apply Dawn dish soap to any remaining residue. Blot",
-      "5. Rinse with warm water. Air dry — inspect before using dryer"
+      "1. Freeze 20–30 min in a zip-top bag. Or ice pack direct.",
+      "2. Scrape brittle wax off with a dull blade right after.",
+      "3. Iron through brown paper / paper towel on LOW-MED, no steam. Shift paper as wax appears.",
+      "4. Goo Gone or rubbing alcohol on a white cloth for the oily ring.",
+      "5. If colored candle: treat residual dye with Dawn + optional 3% peroxide (whites only).",
+      "6. Hot wash per care label. Inspect BEFORE the dryer."
     ],
     "products": [
+      "Zip-top bag or ice pack",
+      "Dull butter knife or credit card",
+      "Brown paper grocery bag or clean white paper towel",
+      "Iron (low-medium, no steam)",
+      "Goo Gone or 70%+ rubbing alcohol",
       "Dawn dish soap",
-      "paper towels",
-      "ice"
+      "3% hydrogen peroxide (for dyed candle residue, whites only)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if the iron-absorb step isn't lifting any more wax after several passes, OR if the dye residue from a colored candle won't fade. Take it to a dry cleaner.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER iron without the absorbent paper — drives wax deeper",
+      "NEVER skip the freeze step — warm wax smears",
+      "Never pour solvent on fabric — tamp with cloth",
+      "Ventilate when using Goo Gone or alcohol"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never iron wax directly without absorbent paper",
+      "Never try to scrub warm wax — smears into a bigger area",
+      "Never pour solvent directly on fabric",
+      "Never ignore dyed-candle pigment — treat it as a separate dye stain"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates POG, IPA, 3% H₂O₂, gentle iron heat, and hot wash",
+      "Dyed cotton: skip peroxide or test inside seam first",
+      "Heat-durable fiber — iron heat is safe if the absorbent paper barrier is used"
     ]
   },
+  "materialWarnings": [
+    "FREEZE first, then IRON through paper",
+    "Absorbent paper is non-negotiable",
+    "Colored candle = two-step treatment (wax + dye)"
+  ],
   "escalation": {
-    "when": "If candle wax stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is candle wax on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Wax has been iron-set without the absorbent paper, dye from a colored candle doesn't fade, or two full home rounds don't clear it.",
+    "whatToTell": "\"Candle wax on cotton — [undyed / red / black / purple candle], age [fresh / old], home-treated with freezer + iron-and-paper + Goo Gone. [Wax cleared / residue color remaining.]\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Was the candle undyed (white) or dyed (red, purple, black, etc.)?",
+      "Paraffin, soy, or beeswax?",
+      "Has the fabric been ironed directly without absorbent paper?",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Wax is the easy half; dye from a colored candle is often the actual stain problem. Two-step treatment: freeze + iron-absorb handles the wax, then treat residual color as dye-class chemistry."
   },
-  "difficulty": 4,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

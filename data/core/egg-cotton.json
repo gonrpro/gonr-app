@@ -1,129 +1,194 @@
 {
   "id": "egg-cotton",
   "title": "Egg on Cotton",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Egg contains concentrated albumin protein that coagulates rapidly when exposed to heat. On cotton, raw egg is water-soluble and relatively easy to remove. Cooked or heat-set egg forms a tough, insoluble protein film that bonds mechanically and chemically to fiber surfaces. The fat content in yolk adds a secondary oil component.",
-  "whyThisWorks": "Cold water is critical — warm water instantly cooks the albumin into an insoluble solid on cotton. A digestant enzyme breaks down the protein chains, while a surfactant emulsifies the fat component from the yolk. Sequential treatment (protein first, then oil) ensures complete removal.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "10–30 minutes (raw); heat-set egg climbs a tier",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "egg",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "protein",
+      "cotton",
+      "heat-sensitive",
+      "yolk-oil-fraction"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Egg is mostly albumin protein (in the white) with a fat and pigment fraction in the yolk. Albumin is the textbook heat-coagulating protein — it cooks into an insoluble film on cotton the moment warm water touches raw egg, which is why eggs on shirts are fine until someone rinses with hot water. Yolk adds lecithin emulsifier and the yellow carotenoid pigment. Cotton tolerates enzymes, NSD, 3% H₂O₂, and hot post-chemistry wash; the narrow window is that first flush.",
+  "whyThisWorks": "Cold flush keeps the albumin soluble. Enzyme (protease) hydrolyzes the egg-white protein and frees whatever yolk fat the white was holding in the fiber. NSD emulsifies residual yolk oil. For any lingering yellow from the yolk pigment, 3% H₂O₂ oxidizes the carotenoid to colorless. Hot wash finishes. Reverse the order — hot water on raw egg — and the whole stain cooks into an insoluble film that chemistry can't reach.",
+  "defaultAssumption": "Fresh raw egg on cotton is a high-confidence DIY. Heat-set egg (ironed, hot-washed, or cooked onto the fabric somehow — e.g., sitting on a warm car hood) climbs to pro territory: the albumin has cross-linked into a film.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape + Cold Flush",
+      "technique": "Lift yolk bulk, cold flush from back",
+      "equipment": "Dull blade, cold water, white cotton terry towel",
+      "dwellTime": "1 minute",
+      "instruction": "Scrape any solid yolk off with a dull blade. Cold flush from the BACK of the fabric. Cold only — warm water cooks the albumin instantly and locks the stain permanently."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Protein Spotter",
+      "technique": "Apply, dwell, light brush",
+      "equipment": "Liquid Protein Spotter (PRENETT B / protease digestant) in warm water (30–38°C)",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Apply Protein Spotter directly or dissolve enzyme pretreat in warm water. Enzyme window is warm, not hot. Dwell 15–20 min. Light brush after the first 5. Protease hydrolyzes the albumin matrix."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify yolk oil",
+      "equipment": "NSD in warm water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD, work with a soft brush. Emulsifies the yolk lipid residue. Rinse cool from the back."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For any residual yellow yolk pigment shadow: 3% H₂O₂ drop-by-drop. Oxidizes the carotenoid chromophore. Dwell 3–5 min, blot. Skip on dark or dyed cotton."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Rinse until water runs clear. Launder hot per care label."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Scrape yolk bulk. Cold flush from the back.",
+      "2. Liquid Protein Spotter (PRENETT B / protease) in warm water (30–38°C). Dwell 15–20 min.",
+      "3. NSD — emulsify yolk oil. Cool rinse.",
+      "4. 3% H₂O₂ on residual yellow pigment. 3–5 min.",
+      "5. Hot wash per care label."
     ],
     "products": [
-      "Protein Formula",
+      "Liquid Protein Spotter (PRENETT B or protease digestant)",
       "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
+    "temperature": "cold flush; warm (30–38°C) for enzyme; cool through NSD + peroxide; hot wash post-chemistry",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "Never warm-water-flush fresh egg — albumin cooks instantly",
+      "Enzyme window is warm, not hot — above 50°C the protease denatures",
+      "One oxidizer at a time, NSD-flushed between",
+      "Flush chemistry before heat"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Cold Water, Not Warm — This One Is Absolute",
+      "instruction": "Of all the stains, egg on fabric has the narrowest window. Warm or hot water on raw egg cooks the white INSTANTLY into an insoluble film you can't remove at home. Cold water only. If you just dropped an egg on your shirt, get cold water on it in the next 60 seconds and the rest of this is easy."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Yolk, Flush From the Back",
+      "instruction": "Scrape any yolk off with a dull butter knife. Then hold the BACK of the stained area under cold running water. The egg pushes out the way it came in."
+    },
+    {
+      "step": 3,
+      "agent": "Enzyme Pretreat — Warm, Not Hot",
+      "instruction": "Use an enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout). Dissolve in WARM water per the label — hot kills the enzymes. Apply to the stain, let sit 15–20 minutes. The enzymes digest the egg-white protein."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Soft Brush for Yolk Oil",
+      "instruction": "Work a drop of Dawn dish soap into the spot with a soft toothbrush. Dawn lifts the yolk's fat content. Rinse cool."
+    },
+    {
+      "step": 5,
+      "agent": "Hydrogen Peroxide 3% for Yellow Shadow (Whites Only)",
+      "instruction": "If a yellow shadow remains from the yolk: dab 3% drugstore hydrogen peroxide on the spot, let it bubble 3–5 min, blot. Skip on dark or dyed cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fume risk."
+    },
+    {
+      "step": 6,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. If you still see the stain, repeat the enzyme pass first."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate If Heat-Set",
+      "instruction": "If the egg has been through a hot wash or dryer before enzyme treatment, the albumin has cooked into the fiber and home chemistry plateaus. Take it to a dry cleaner. Tell them: \"Egg on cotton, age [fresh / overnight / heat-set], home-treated with enzyme pretreat + Dawn + 3% hydrogen peroxide.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. COLD water only while the stain is raw — hot water cooks egg white into an insoluble film.",
+      "2. Scrape yolk, cold flush from the BACK.",
+      "3. Enzyme pretreat (OxiClean Versatile, Biz, Zout) dissolved in WARM water. Dwell 15–20 min.",
+      "4. Dawn + soft toothbrush for yolk oil.",
+      "5. 3% hydrogen peroxide on yellow shadow (whites only).",
+      "6. Hot wash per care label. Inspect BEFORE the dryer.",
+      "7. Escalate if heat-set."
     ],
     "products": [
+      "Enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout)",
       "Dawn dish soap",
-      "cold water"
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if egg has been through a hot wash or dryer before enzyme treatment — albumin is cooked in. Take it to a dry cleaner.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "COLD water only — warm cooks egg white permanently",
+      "Enzymes die above 50°C — warm water, not hot",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton",
+      "Inspect before the dryer"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never use warm water on raw egg — cooks the albumin instantly",
+      "Never skip the enzyme step on dried egg — water won't touch cross-linked protein",
+      "Never layer oxidizers — one at a time",
+      "Never dry with residual stain visible"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates enzymes, NSD, 3% H₂O₂, hot wash post-chemistry",
+      "Dyed cotton: skip or inside-seam-test peroxide",
+      "Heat-durable once chemistry is cleared"
     ]
   },
+  "materialWarnings": [
+    "COLD during spotting — warm cooks egg white permanently",
+    "Enzyme in warm water, not hot",
+    "Peroxide on whites; test inside seam on dark cotton"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is egg on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Egg heat-set by iron or hot dryer before enzyme treatment.",
+    "whatToTell": "\"Egg on cotton, age [fresh / overnight / heat-set], home-treated with enzyme pretreat + Dawn + 3% H₂O₂.\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
+      "Has the stain been rinsed with warm or hot water yet? (if yes, the chemistry is different — see heat-set path)",
+      "Raw egg or cooked (e.g., scrambled egg bit)?",
       "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Egg is the stain where ONE wrong move (warm water flush) turns an easy fix into a permanent problem. Temperature is the whole protocol."
   },
-  "difficulty": 4,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
-  "homeSolutions": [
-    {
-      "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates the solution.",
-      "agent": "cool water",
-      "safetyNote": "Never use hot water on egg — heat sets protein stains immediately."
-    },
-    {
-      "step": 2,
-      "instruction": "Place fabric stain-side down on glass work surface. Scrape off excess egg with a spoon, working gently.",
-      "agent": "spoon"
-    },
-    {
-      "step": 3,
-      "instruction": "Dab the stain lightly with cool water applied to a white cloth, lifting egg protein from the fibers.",
-      "agent": "cool water"
-    },
-    {
-      "step": 4,
-      "instruction": "Apply detergent/ammonia solution (1/4 tbsp mild laundry detergent + 1/2 tsp ammonia + 4 oz cool water) to the stain. Rub gently with the back of a spoon.",
-      "agent": "detergent/ammonia solution",
-      "safetyNote": "Ammonia can be strong — ensure good ventilation."
-    },
-    {
-      "step": 5,
-      "instruction": "Rinse thoroughly with cool water, working from center outward.",
-      "agent": "cool water"
-    },
-    {
-      "step": 6,
-      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize remaining protein residue.",
-      "agent": "hydrogen peroxide 3% + ammonia",
-      "safetyNote": "Test on hidden area first — peroxide may lighten some dyes."
-    },
-    {
-      "step": 7,
-      "instruction": "Rinse thoroughly with cool water.",
-      "agent": "cool water"
-    },
-    {
-      "step": 8,
-      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center.",
-      "agent": "white vinegar + cool water"
-    },
-    {
-      "step": 9,
-      "instruction": "If egg stain persists or if fabric is delicate, call a professional cleaner.",
-      "agent": "escalation"
-    }
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

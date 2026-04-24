@@ -1,82 +1,209 @@
 {
   "id": "juice-upholstery",
-  "title": "Juice on Upholstery",
+  "title": "Fruit Juice on Upholstery",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Fruit juice contains anthocyanins or carotenoids (depending on fruit), citric acid, fructose, and tannins. On upholstery, the pigment bonds through hydrogen bonding, and the sugar component creates a sticky matrix that traps the dye against the fiber. Oxidation over time deepens the color and makes the stain increasingly resistant to treatment.",
-  "whyThisWorks": "The acidic tannin spotter breaks pigment-fiber bonds on upholstery. Hydrogen peroxide oxidizes the chromophore structures responsible for color. Quick treatment is key — fresh juice stains are water-soluble, but dried stains require significantly more effort as the sugars crystallize and tannins cross-link.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "15–45 minutes with extraction between every pass",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "juice",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "tannin",
+      "upholstery",
+      "pad-risk",
+      "sugar-sticky",
+      "time-sensitive"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Fruit juice on upholstery is a tannin stain plus a sticky residue. The pigment is anthocyanin (grape, berry, cranberry) or carotenoid (orange, mango, carrot); sugars (fructose, glucose) form a sticky crystalline residue when the juice dries, trapping the pigment against the fiber. Citric acid component briefly shifts pH but doesn't drive lasting dye damage on cotton/synthetic upholstery. Check the upholstery code (W / W-S / S / X) before any liquid touches the fabric.",
+  "whyThisWorks": "Same extraction-beats-chemistry rule as red wine on upholstery, with one extra step: the sugar residue needs emulsification BEFORE the tannin spotter can reach the pigment. Cold flush dissolves most of the sugar; NSD pulls the residue; acid-side tannin spotter disrupts anthocyanin hydrogen bonds; 3% H₂O₂ oxidizes the chromophore. Weighted dry towel extraction between every pass protects the batting.",
+  "defaultAssumption": "Check the upholstery code tag first. W / W-S: proceed with water-based chemistry. S-only: dry-cleaning solvent, not a DIY. X-code: vacuum only. Fresh juice on W-code upholstery is a good DIY; aged or dark-anthocyanin juices (grape, black cherry) on light upholstery trend toward pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Check Code + Blot",
+      "technique": "Code tag, then blot, no rub",
+      "equipment": "Clean white cotton towel, firm pressure",
+      "dwellTime": "1 minute",
+      "instruction": "Read the upholstery code tag. W / W-S: proceed. S-only: stop and use a dry-cleaning solvent instead. X: vacuum only. Then press a folded white towel straight down on the stain. Lift, move to a dry section, press again. Outside-in. Never rub."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water + NSD",
+      "technique": "Damp cloth transfer + extract",
+      "equipment": "NSD in cold water, damp cloth, weighted dry towel",
+      "dwellTime": "1 min per pass",
+      "instruction": "Apply cold NSD via DAMP cloth — press onto the stain, lift, rotate. Never pour. Immediately weighted-dry-towel on top 5 minutes to pull moisture back up. NSD handles the sugar residue AND starts lifting pigment. Repeat 2–3 cycles."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Tannin Spotter",
+      "technique": "Dropper, localized",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Acid-side tannin spotter by dropper on residual color. Never pour. Dwell 3–5 min, blot with a dry towel. Patch-test a hidden spot on any dyed or printed upholstery."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Dropper, watch, extract",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "5–10 minutes, check every 5",
+      "instruction": "3% H₂O₂ drop-by-drop on residual chromophore. Check every 5 min for color break. Blot with dry towel immediately when lift is visible. One oxidizer at a time."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "NSD Flush + Weighted Extract",
+      "technique": "Clear chemistry, extraction",
+      "equipment": "NSD damp cloth, heavy dry towel, weight",
+      "dwellTime": "2 min + 30 min weighted",
+      "instruction": "NSD-damp cloth to clear residual chemistry. Then heavy DRY towel + book/pan weight for 30 min to pull moisture up from batting."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Fan-Dry + Inspect",
+      "technique": "Air-dry, watch for wicking",
+      "equipment": "Fan",
+      "dwellTime": "4–8 hours",
+      "instruction": "Fan the spot. Don't sit on it until bone-dry. Inspect next day for wicking — if a ring returns, batting is saturated and a pro is needed."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Read code tag. W / W-S: proceed. S: solvent. X: vacuum only.",
+      "2. Blot press + extract. No rubbing.",
+      "3. Cold NSD via damp cloth — handles sugar + starts pigment lift. Weighted extract between passes.",
+      "4. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A) by dropper. 3–5 min.",
+      "5. 3% H₂O₂ drop-by-drop on residual. 5–10 min, check every 5.",
+      "6. NSD-damp flush + 30 min weighted dry towel.",
+      "7. Fan-dry. Inspect next day."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
       "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
+      "Hydrogen Peroxide 3%",
+      "Weighted dry towels for extraction"
     ],
-    "temperature": "cold",
+    "temperature": "cold through spotting",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color",
-      "Avoid over-wetting — extract excess moisture to prevent backing damage"
+      "Read code tag first — S/X codes can't take water",
+      "Never pour or pool liquid on upholstery — batting saturation = water ring",
+      "Never skip weighted extraction between passes",
+      "One oxidizer at a time",
+      "NSD first for juice specifically — the sugar matrix blocks the tannin spotter otherwise"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Find the Upholstery Code Tag First",
+      "instruction": "Before anything else, find the care tag — usually under a cushion. W or W-S = water-based OK. S = solvent only (not DIY). X = vacuum only. If the tag says S or X, stop and call a professional. Flooding an S- or X-code fabric with water will ring the fabric permanently."
+    },
+    {
+      "step": 2,
+      "agent": "Blot, Don't Rub",
+      "instruction": "Press a thick white towel straight down on the juice. Lift, move to a dry section, press again. Work from the outside of the stain toward the center. Never rub — rubbing drives the juice into the batting underneath where you can't reach it."
+    },
+    {
+      "step": 3,
+      "agent": "Cool Water on a Damp Cloth — Never Pour",
+      "instruction": "Dampen a white cloth with cool water, wrung nearly dry. Press on the spot, lift, rotate cloth. Repeat. The sugar in juice is water-soluble and lifts quickly. DO NOT pour water on the upholstery — it goes straight through to the batting and rings the fabric as it dries."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + 3% Peroxide Solution (Whites and Colorfast Only)",
+      "instruction": "Mix 1 teaspoon Dawn dish soap with 1 cup 3% hydrogen peroxide. Dip a white cloth, wring nearly dry, dab the stain — outside edges toward center. Let sit 5 minutes, blot with damp cloth. Peroxide oxidizes the anthocyanin pigment. Test a hidden patch first on dark or patterned upholstery.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fumes. Skip this step on dark/patterned upholstery if the patch test lifts dye."
+    },
+    {
+      "step": 5,
+      "agent": "Weighted Dry Towel Between Every Wet Pass",
+      "instruction": "After each wet dab, press a thick DRY towel on the spot with a heavy book or pan for 20–30 minutes. This pulls moisture UP out of the batting before it dries into a water ring. This is the pad-protection step."
+    },
+    {
+      "step": 6,
+      "agent": "Fan-Dry, Don't Sit",
+      "instruction": "Point a fan at the spot. Don't sit on the furniture until it's bone-dry — several hours. Inspect next day in daylight. If a faint pink/orange ring returns, call a professional upholstery cleaner."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate for Wicking, Dark Anthocyanin, or S-Code",
+      "instruction": "Call a pro if: the code tag is S or X, the ring wicks back, the patch test lifted fabric dye, or the juice was dark grape / black cherry / cranberry on light upholstery (high anthocyanin load often needs pro chemistry). Tell them: \"Fruit juice on [W / W-S / code unknown] upholstery, age [fresh / overnight / older], home-treated with Dawn + 3% peroxide + weighted towel. [Type of juice.]\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Find the upholstery code tag. W or W-S: proceed. S or X: stop, call a pro.",
+      "2. Blot straight down from outside to center. Never rub.",
+      "3. Cool water on a DAMP cloth — never pour.",
+      "4. Dawn + 3% peroxide solution, dab with damp cloth, 5 min. Patch-test first on colored upholstery.",
+      "5. Weighted dry towel 20–30 min between every wet pass.",
+      "6. Fan-dry. Inspect next day for wicking.",
+      "7. Escalate for S-code, wicking, dark grape/cherry anthocyanin, or plateau."
     ],
     "products": [
+      "Clean white towels",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% hydrogen peroxide (drugstore brown bottle)",
+      "A heavy book or pan for weighted drying"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if upholstery code is S or X, if the stain wicks back as it dries, if patch test shows dye bleed, if the juice was dark anthocyanin (grape/cherry/cranberry) and plateau'd, or if two home rounds didn't clear it.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NEVER pour or pool liquid on upholstery — batting saturates",
+      "NEVER skip weighted extraction between passes",
+      "NEVER mix peroxide with chlorine bleach or ammonia",
+      "S-code and X-code upholstery are not DIY"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never pour liquid on upholstery — batting saturates",
+      "Never ignore the code tag",
+      "Never skip extraction between wet passes",
+      "Never layer oxidizers"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S upholstery tolerates water-based chemistry at room temp",
+      "S-code: solvent only",
+      "X-code: vacuum only",
+      "Silk / velvet: escalate even on W-code"
     ]
   },
+  "materialWarnings": [
+    "Read the upholstery code first",
+    "Damp cloth only — never pool",
+    "Weighted extraction is the pad-protection step"
+  ],
   "escalation": {
-    "when": "If juice stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is juice on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "S-code or X-code upholstery, stain wicks back, patch test shows dye bleed, dark anthocyanin juice on light upholstery, or two home rounds without clearing.",
+    "whatToTell": "\"Fruit juice on [W / W-S / code unknown] upholstery, age [fresh / overnight / older], home-treated with Dawn + 3% H₂O₂ + weighted towel. [Juice type.] [Ring wicked / plateau / code unknown.]\"",
+    "specialistType": "professional upholstery cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "What does the upholstery code tag say?",
+      "What kind of juice — grape / cherry / cranberry (heavy anthocyanin) or orange / mango / apple (lighter)?",
+      "How old is the spill?",
+      "Is the upholstery light, dark, or patterned?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Grape / black cherry / cranberry juice on light upholstery = highest pigment load; budget 2–3 peroxide cycles or escalate earlier. Orange / apple / mango = lighter pigment, usually clears in one cycle."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

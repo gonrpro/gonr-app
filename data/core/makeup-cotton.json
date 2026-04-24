@@ -1,128 +1,199 @@
 {
   "id": "makeup-cotton",
   "title": "Makeup on Cotton",
-  "stainFamily": "dry_side",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Oil/Grease (lipid-based). Foundation, concealer, and face makeup contain oil/silicone vehicle (dimethicone, cyclomethicone, mineral oil), pigment particles (iron oxide, titanium dioxide), waxes, and emulsifiers. The oil vehicle bonds to fabric through hydrophobic interaction while pigment particles embed physically. Requires dry-side treatment for the oil vehicle followed by wet-side for residual pigment. Cotton (cellulose fiber) tolerates most chemicals well.",
-  "whyThisWorks": "Cosmetics contain oils, waxes, and pigments — the oil spreads the color deeper. Cotton absorbs liquids quickly and holds onto stains deep in the weave. NSD or a degreaser breaks down the oil so it becomes water-soluble and can be rinsed away.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "10–30 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "makeup",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "combination",
+      "oil",
+      "pigment",
+      "silicone",
+      "cotton"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Makeup on cotton covers a family of related stains: foundation, concealer, BB cream, cushion compact, bronzer, blush. They share the same structure — oil or silicone vehicle (dimethicone, cyclomethicone, mineral oil, or plant oils) + pigment particles (iron oxide, titanium dioxide, carmine, mica) + waxes + emulsifiers. The oil/silicone vehicle is what locks the pigment against the fiber; remove the vehicle and the pigment lifts. Lipstick and mascara have their own cards with dye / wax emphasis; this card is the foundation/concealer family. Cotton tolerates IPA, POG, NSD, 3% H₂O₂, and hot wash.",
+  "whyThisWorks": "Same solvent-first pattern as lipstick and ink. Silicone-based foundations (most modern ones) are especially water-repellent — soap alone spreads them without removing. IPA or micellar water breaks up the silicone + oil vehicle; the pigment transfers onto a catch cloth; NSD emulsifies the residual film; peroxide clears any dye shadow on whites.",
+  "defaultAssumption": "Fresh makeup on a collar or cuff is a high-confidence DIY. Long-wear / matte foundations have more polymer than traditional cream and need 2–3 solvent passes. Dark shades leave more pigment residue than nude shades.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape + Catch Cloth",
+      "technique": "Lift bulk, isolate work area",
+      "equipment": "Dull blade, clean white cotton towel catch cloth",
+      "dwellTime": "30 seconds",
+      "instruction": "Gently scrape any cakey residue off with a dull blade — don't rub. Place a folded clean white catch cloth UNDER the stain so pigment transfers downward when solvent mobilizes it."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "IPA or POG Tamp",
+      "technique": "Solvent on cloth, tamp from back",
+      "equipment": "Isopropyl alcohol 90%+ OR POG on clean white cloth (micellar water for silicone-based)",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "IPA is the pro default. For silicone-based foundations (most modern long-wear), micellar water or POG works better than alcohol. Apply solvent to a white cloth, tamp from the BACK. Flip cloth frequently. 2–3 passes usually clear fresh makeup."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify residual oil",
+      "equipment": "NSD in warm water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD, work with a soft brush. Emulsifies the residual oil/silicone film. Rinse cool from the back."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For residual pigment shadow on whites: 3% H₂O₂ drop-by-drop. Oxidizes the pigment chromophore (especially iron oxide tints). Skip on dark or dyed cotton."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label. Inspect BEFORE the dryer."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG directly to the oil stain. POG is a volatile dry solvent with strong affinity for lipids — it dissolves oil droplets on contact. Tamp gently and blot with absorbent cloth.",
-      "2. If POG plateaus, apply amyl acetate for stronger solvent action. Blot with clean absorbent cloth between applications. Never use on acetate fabrics.",
-      "3. Apply NSD to emulsify any remaining oil micro-droplets and remove solvent residue. The detergent surrounds oil particles and allows them to be flushed away. Rinse thoroughly with cool water.",
-      "4. Apply diluted acetic acid (1:10) to restore fiber to its natural state. Blot dry and allow to air dry."
+      "1. Scrape bulk. Catch cloth UNDER the stain.",
+      "2. IPA or POG on a white cloth, tamp from back. Micellar water for silicone-based foundations. 2–3 passes.",
+      "3. NSD — emulsify residual oil/silicone. Cool rinse.",
+      "4. 3% H₂O₂ on pigment shadow (whites only). 3–5 min.",
+      "5. Hot wash per care label."
     ],
     "products": [
-      "POG (POG remover)",
-      "amyl acetate",
+      "Isopropyl alcohol 90%+",
+      "POG (for silicone-based formulations)",
+      "Micellar water (consumer-available silicone solvent)",
       "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "warm for rinsing — warm water helps emulsify residual oil; treat with solvent first before introducing water",
+    "temperature": "cool through spotting; hot wash post-chemistry",
     "warnings": [
-      "Rubbing instead of blotting — spreads the stain",
-      "Not testing in an inconspicuous area first",
-      "Using too aggressive a chemical without checking surface compatibility"
+      "Solvent before water — water alone doesn't touch makeup",
+      "Catch cloth UNDER + pressing cloth on TOP — prevents sideways pigment spread",
+      "Silicone-based long-wear needs micellar or POG; IPA alone may plateau",
+      "One oxidizer at a time; skip peroxide on dark/dyed cotton"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test + identify the makeup type",
-      "instruction": "Before you treat, check: is this foundation, lipstick, mascara, eyeshadow, or a waterproof/long-wear formula? Waterproof and long-wear makeup need rubbing alcohol in step 6, everything else does not. On an inside seam, dab a drop of rubbing alcohol if you'll use it — let sit 60 seconds and blot with a white cloth. If the cloth picks up dye, stop and hand-wash cold with Dawn only, then go to step 8."
+      "agent": "Scrape Cakey Bits First",
+      "instruction": "If any solid makeup residue is sitting on the surface (cushion compact, pressed powder), lift it off with a dull butter knife or credit-card edge. Don't rub — rubbing grinds the pigment into the weave."
     },
     {
       "step": 2,
-      "agent": "The oil rule: don't add water first",
-      "instruction": "Most makeup is oil and pigment bound together. Water repels oil, so rinsing first just smears the stain into a bigger one. Instead: go dry → solvent → water, in that order. Also: do not put the garment in the dryer until the stain is fully out. Heat polymerizes the oil vehicle into the cotton fiber and locks the pigment in."
+      "agent": "Put a White Towel UNDER the Stain",
+      "instruction": "Fold a clean white towel and place it under the stained area. When the next step dissolves the makeup, the pigment transfers DOWN into the catch cloth instead of smearing sideways into clean fabric."
     },
     {
       "step": 3,
-      "agent": "Lift any solid or caked makeup",
-      "instruction": "For a chunk of lipstick, a smear of waxy foundation, or dried mascara: lift it off with the edge of a spoon or a plastic card, scraping away from the center of the stain. Don't rub — you're removing what's sitting on the surface so the next step can reach the fiber. Use a new section of a white paper towel to dab up anything that transfers."
+      "agent": "Micellar Water or Rubbing Alcohol",
+      "instruction": "For long-wear / silicone-based foundations (most modern brands — Estée Lauder Double Wear, MAC Studio Fix, Fenty Pro Filt'r): MICELLAR WATER is the unlock. Dab a cotton round or clean cloth with micellar water and press onto the stain from the back. The micelles specifically target silicone and oil vehicles. For traditional cream foundations or powder: 70%+ rubbing alcohol on a white cloth works just as well. Flip the pressing cloth to a clean spot every few seconds — pigment transfers out. Expect 2–3 rounds."
     },
     {
       "step": 4,
-      "agent": "Absorbent powder — pull the oil out",
-      "instruction": "Sprinkle cornstarch, baking soda, or unscented talc generously over the stain. Let it sit 10–15 minutes. The powder wicks the oil out of the fiber before it sets. Brush off with a dry white cloth or a soft toothbrush, then vacuum or shake off the residue. You may see the powder yellow or tint — that's the oil leaving. If so, apply a second round of fresh powder and wait again."
+      "agent": "Dawn + Soft Brush for the Oil",
+      "instruction": "Work a drop of Dawn dish soap into the spot with a soft toothbrush. Dawn breaks up any residual oil film. Rinse cool."
     },
     {
       "step": 5,
-      "agent": "Dawn dish soap — work it in, dry",
-      "instruction": "Put a small drop of clear Dawn dish soap directly on the stain — no water yet. Work it into the fiber with a fingertip or the bristles of a soft toothbrush in gentle circles. Let it sit 5–10 minutes. Dawn is specifically designed to lift oil (it's what wildlife rescuers use on oil-soaked birds). Blot with a clean damp cloth from the back of the fabric."
+      "agent": "Hydrogen Peroxide 3% for Shadows (Whites Only)",
+      "instruction": "For a residual tint shadow on white cotton: dab 3% drugstore hydrogen peroxide, let it bubble 3–5 min, blot. Skip on dark or dyed cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fume risk."
     },
     {
       "step": 6,
-      "agent": "Rubbing alcohol spot treatment — waterproof/long-wear only",
-      "instruction": "If the makeup is waterproof mascara, long-wear foundation, lip stain, or waxy lipstick, those formulas are built to resist water. Dab a small amount of isopropyl alcohol (70% or 91%) on a white cloth and press onto the stain. Let it sit 2–3 minutes, then blot. The alcohol dissolves the wax and silicone components Dawn leaves behind. Skip this step on non-waterproof makeup — it's not needed.",
-      "safetyNote": "Test on your step-1 patch first. Alcohol can dissolve some dyes. Never apply to silk, acetate, or rayon — only cotton."
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. Repeat the solvent + Dawn round if color remains."
     },
     {
       "step": 7,
-      "agent": "Launder warm + air-dry and inspect",
-      "instruction": "Launder the garment on a warm cycle (not hot) with your normal detergent. If a shadow remains when it's done, DO NOT put it in the dryer — heat will set what's left permanently. Instead hang to air-dry, inspect in daylight, and repeat steps 5–6 before the next wash. Only dry on heat when the stain is completely invisible."
-    },
-    {
-      "step": 8,
-      "agent": "Enzyme pretreat (for persistent pigment halos)",
-      "instruction": "If a color shadow is still there after a full wash — common with red lipstick, orange foundation, or deep-toned eyeshadow — pretreat with an enzyme stain remover (OxiClean Versatile, Biz, Zout) per the label. Let it dwell 30 minutes. Then launder cold. Enzymes target the protein binders in many long-wear formulas that Dawn can't reach."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a dry cleaner for structured or delicate pieces",
-      "instruction": "For tailored cotton (a blazer, structured dress) or if the stain survived two home rounds, take it to a dry cleaner. Tell them: \"Makeup on cotton — type: [foundation/lipstick/mascara/waterproof], treated at home with Dawn and [alcohol/enzyme]. No heat applied. Please treat dry-side first for oil, then wet-side for residual pigment.\" That tells them the exact protocol order and saves them diagnostic time."
+      "agent": "Escalate If Hot-Dried",
+      "instruction": "If the makeup has been through a hot dryer, the oil and pigment have set. Take to a dry cleaner. Tell them: \"Makeup on cotton — [foundation / concealer / blush / bronzer], age [fresh / overnight / heat-set], home-treated with [micellar water / rubbing alcohol] + Dawn + 3% peroxide.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain. Wait 5 minutes.",
-      "2. Brush off the powder with a clean white cloth.",
-      "3. Put a drop of Dawn dish soap on the stain. Blot it in.",
-      "4. Let it sit for 2–3 minutes. Rinse with cold water.",
-      "5. Repeat if needed. Air dry — don't use a dryer until the stain is gone."
+      "1. Scrape cakey bits off gently.",
+      "2. Catch cloth UNDER the stain.",
+      "3. Micellar water (silicone-based) OR rubbing alcohol (cream/powder) on a white cloth, tamp from the BACK. 2–3 passes.",
+      "4. Dawn + soft toothbrush for residual oil.",
+      "5. 3% hydrogen peroxide on residual tint (whites only).",
+      "6. Hot wash per care label. Inspect BEFORE the dryer.",
+      "7. Escalate if heat-set."
     ],
     "products": [
-      "Dawn NSD",
-      "baking soda or cornstarch"
+      "Micellar water (Bioderma, Simple, Garnier — the generic bottle on any drugstore shelf)",
+      "70%+ rubbing alcohol (alternative for cream / powder formulas)",
+      "Clean white cloths (catch + pressing)",
+      "Dawn dish soap",
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Try a dry cleaning solvent (Carbona Stain Devil #5 or Goo Gone). If the stain survives two rounds, a professional cleaner can use concentrated agents and specialized equipment.",
+    "whenToStop": "Stop if makeup has been hot-dried and two home rounds haven't cleared it, or if the cotton is dark dyed and peroxide isn't safe.",
     "warnings": [
-      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
-      "Never add water to an oil stain first — water and oil don't mix, and you'll spread it.",
-      "Avoid heat until the stain is completely gone."
+      "Solvent before water — water spreads oil-based makeup",
+      "Silicone-based (long-wear) needs micellar or POG, not just alcohol",
+      "Catch cloth + pressing cloth always",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Inspect before the dryer"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Apply heat before the oil is removed — polymerizes into the fiber",
-      "Add water first — doesn't dissolve oil and spreads pigment"
+      "Never rub wet makeup into cotton — smears pigment into clean fabric",
+      "Never pour solvent on cotton — tamp with cloth",
+      "Never skip the catch cloth — sideways pigment spread",
+      "Never hot-dry residual makeup — sets pigment permanently"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates most agents including bleach on whites. For colored cotton, test peroxide first. High heat can set pigment permanently. OxiClean safe on cotton."
+      "Cotton tolerates IPA, POG, micellar water, NSD, 3% H₂O₂, hot wash",
+      "Dyed cotton: skip peroxide or inside-seam-test",
+      "Heat-durable once the makeup is out"
     ]
   },
+  "materialWarnings": [
+    "Solvent first — water alone doesn't touch makeup",
+    "Silicone-based formulas need micellar water or POG",
+    "Catch cloth UNDER + tamp on TOP"
+  ],
   "escalation": {
-    "when": "Oil component removes but pigment particles remain embedded in the cotton weave",
-    "whatToTell": "Makeup/foundation stain on cotton, oil and pigment combination. Treated at home with NSD. Please use dry-side solvent protocol followed by wet-side.",
-    "specialistType": "dry cleaner or wet cleaner"
+    "when": "Makeup heat-set by dryer or iron, two home rounds failed, or dark dyed cotton where peroxide isn't safe.",
+    "whatToTell": "\"Makeup on cotton — [type if known], age [fresh / overnight / older], home-treated with micellar water + Dawn + 3% H₂O₂. [Hot-washed / not yet laundered.]\"",
+    "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is this foundation, concealer, mascara, or eyeshadow?",
-      "Is the stain fresh or has it been set?",
-      "Has the garment been through the dryer?",
-      "Is the cotton white or colored?"
+      "What kind of makeup — foundation, concealer, blush, bronzer, cushion compact?",
+      "Long-wear / matte / 24hr formula, or traditional cream?",
+      "How old is the stain?",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Mascara has a wax and carbon black pigment component — may need extra solvent time. Waterproof formulas are more resistant to water-based cleaning. Dryer exposure bakes pigment into the fiber. On colored cotton, test H₂O₂ on a hidden seam first."
+    "modifierNotes": "Silicone-based long-wear formulas are the main variable — micellar water is the specific unlock; plain alcohol may plateau. Dark shades leave more residual pigment than nudes."
   },
-  "difficulty": 5,
-  "timeEstimate": "15–25 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

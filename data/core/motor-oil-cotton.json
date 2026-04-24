@@ -1,80 +1,198 @@
 {
   "id": "motor-oil-cotton",
   "title": "Motor Oil on Cotton",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Oil/Grease (lipid-based). Motor oil is a complex mixture of petroleum hydrocarbons (C15-C50 alkanes, cycloalkanes, aromatics) plus additives (zinc dialkyldithiophosphate anti-wear, dispersants, detergents, viscosity modifiers). Much heavier and more tenacious than cooking oil. Contains carbon black particulate from combustion. Oil stains penetrate fiber structure through capillary action and hydrophobic affinity. Treatment: dry-side solvent (POG) to dissolve lipid phase, followed by surfactant emulsification to remove residual oil.",
-  "whyThisWorks": "Automotive fluids are petroleum-based oils that soak in deep and resist water-based cleaners. Cotton absorbs liquids quickly and holds stains deep in the weave. NSD or a degreaser breaks down the oil so it becomes water-soluble and can be rinsed away.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–45 minutes; aged or heavy stains need multiple cycles",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "motor-oil",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "oil",
+      "petroleum",
+      "cotton",
+      "heavy-grease",
+      "solvent-required"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Motor oil is much heavier and more tenacious than cooking oil — petroleum hydrocarbons (C15–C50 alkanes + cycloalkanes + aromatics) plus engine additives (zinc dialkyldithiophosphate anti-wear, dispersants, detergents, viscosity modifiers). Used motor oil adds carbon black particulate from combustion. The heavy-molecular-weight hydrocarbons bond to cotton through deep capillary penetration and hydrophobic affinity. Water does nothing; the oil must be dissolved by a matching petroleum solvent, then emulsified by surfactant, then rinsed. Cotton tolerates POG, mineral spirits, IPA, NSD, and hot post-chemistry wash at room temperature.",
+  "whyThisWorks": "Heavy petroleum needs heavy petroleum solvent. POG or mineral spirits dissolves the oil + additives. Cornstarch or cornmeal powder absorbs the bulk first (pro-grade tip that works at home too) — reduces the mass the solvent has to handle. Once the solvent has mobilized the oil, NSD emulsifies it so water can rinse it out. Hot wash finishes. The carbon black particulate from used motor oil is what often leaves a gray shadow after the oil is gone — that's a separate mechanical-removal problem and sometimes doesn't fully clear.",
+  "defaultAssumption": "Used motor oil (black, with combustion particulate) vs fresh motor oil (amber, just the hydrocarbons) behave differently — used is significantly harder because of the carbon. Assume used unless the user says otherwise. Mechanic shop stains on work clothes are often heavily saturated — multiple cycles expected.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Absorbent Powder Preload",
+      "technique": "Cornstarch / cornmeal / fuller's earth",
+      "equipment": "Powdered absorbent, soft brush",
+      "dwellTime": "20–60 minutes",
+      "instruction": "Cover the stain completely with cornstarch, cornmeal, or fuller's earth. A visibly thick layer, not a dusting. Let it sit 20 minutes minimum — longer on heavier stains. The powder wicks oil out of the fiber without any moisture. Brush off with a soft brush. Repeat if the stain is still visibly wet-looking. This step pulls 40–60% of the oil out before any solvent touches the fabric."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "POG or Mineral Spirits Tamp",
+      "technique": "Solvent on cloth, tamp from back",
+      "equipment": "POG or mineral spirits on white cloth, catch cloth under stain",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply POG or mineral spirits to a clean white cloth. Tamp the stain from the BACK of the fabric, with a catch cloth UNDER. The solvent dissolves the hydrocarbons + additives; the oil transfers out into the under-cloth and the pressing cloth. Flip cloth frequently. Ventilate — mineral spirits have flammable fumes. 3–5 passes on heavy stains."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify dispersed oil",
+      "equipment": "NSD in warm water",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Apply NSD, work with a soft bristle brush. NSD emulsifies the now-dispersed oil so water can carry it out. Rinse cool from the back."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Repeat If Needed",
+      "technique": "Re-solvent or re-NSD",
+      "equipment": "Same as above",
+      "dwellTime": "As needed",
+      "instruction": "Used motor oil often needs 2–3 full solvent + NSD cycles. Each pass lifts another layer. Stop when the stain stops visibly lightening between passes."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label. Inspect BEFORE the dryer. A gray shadow may remain if there's carbon black particulate — that's mechanical, not chemical, and sometimes doesn't fully clear. Set expectations honestly."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG directly to the oil stain. POG is a volatile dry solvent with strong affinity for lipids — it dissolves oil droplets on contact. Tamp gently and blot with absorbent cloth.",
-      "2. If POG plateaus, apply amyl acetate for stronger solvent action. Blot with clean absorbent cloth between applications. Never use on acetate fabrics.",
-      "3. Apply NSD to emulsify any remaining oil micro-droplets and remove solvent residue. Rinse thoroughly with cool water.",
-      "4. Apply diluted acetic acid (1:10) to restore fiber to its natural state. Blot dry with clean cloth and allow to air dry."
+      "1. Absorbent powder preload (cornstarch / cornmeal / fuller's earth). 20+ min. Brush off.",
+      "2. POG or mineral spirits on a white cloth, tamp from back with catch cloth under. 3–5 passes.",
+      "3. NSD to emulsify — 5–10 min with brush. Cool rinse.",
+      "4. Repeat solvent + NSD cycle as needed.",
+      "5. Hot wash per care label."
     ],
     "products": [
-      "POG (POG remover)",
-      "amyl acetate",
+      "Cornstarch, cornmeal, or fuller's earth",
+      "POG or mineral spirits",
       "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Clean white cloths (catch + pressing)"
     ],
-    "temperature": "warm for rinsing — warm water helps emulsify residual oil; use solvent phase first",
+    "temperature": "room temp through spotting; hot wash post-chemistry",
     "warnings": [
-      "Rubbing instead of blotting — spreads the stain",
-      "Not testing in an inconspicuous area first",
-      "Using too aggressive a chemical without checking surface compatibility"
+      "Ventilate — mineral spirits and POG have flammable fumes",
+      "Catch cloth UNDER + pressing cloth on TOP — prevents sideways oil spread",
+      "Heavy used-oil stains need multiple cycles — budget accordingly",
+      "Carbon black particulate from used oil may leave a gray shadow that doesn't fully clear — set expectations"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Cornstarch or Baby Powder First — Pull Oil Out",
+      "instruction": "Before any solvent touches the fabric, cover the oil stain completely with cornstarch, baking soda, or plain talc baby powder. A thick layer — you shouldn't see the stain through it. Let it sit 30 minutes to an hour. The powder wicks the oil UP out of the cotton fibers without introducing any moisture. Brush off with a soft brush. You'll see the stain dramatically smaller already."
+    },
+    {
+      "step": 2,
+      "agent": "Place a White Towel UNDER the Stain",
+      "instruction": "Fold a clean white towel and place it UNDER the stained area. When the solvent mobilizes the oil in the next step, it needs somewhere to go. The catch cloth pulls it downward."
+    },
+    {
+      "step": 3,
+      "agent": "Paint Thinner (Mineral Spirits) on a White Rag",
+      "instruction": "Apply mineral spirits (paint thinner — any hardware store) to a clean white rag. Press the rag onto the stain from the BACK of the fabric, over the catch cloth. Flip the rag to a clean section every few seconds. The oil transfers out. Ventilate the area — open a window, no flames, no smoking. Expect 3–5 rounds on heavy motor oil.",
+      "safetyNote": "Mineral spirits are flammable. Ventilate. Keep away from any ignition source. If you don't have mineral spirits, rubbing alcohol is a weaker alternative — takes more passes."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Warm Water — Emulsify What's Left",
+      "instruction": "Work a generous amount of Dawn dish soap directly into the spot with a soft brush or fingertip. Dawn is formulated to break up petroleum oils (it's what wildlife rehabilitators use to clean oil-spill birds). Let it sit 5–10 minutes, rinse cool, repeat. This step often lifts more color than the solvent pass because Dawn carries out the emulsified oil."
+    },
+    {
+      "step": 5,
+      "agent": "Hot Wash — Multiple Cycles May Be Needed",
+      "instruction": "Launder on the hottest setting the care label allows. Use a heavy-duty or \"grease-cutting\" detergent if you have one (Tide Heavy Duty, Persil ProClean). For work shirts heavily saturated in motor oil, run TWO full wash cycles before drying — inspect between. Inspect BEFORE the dryer — any remaining oil cures into the fiber under heat."
+    },
+    {
+      "step": 6,
+      "agent": "Accept the Honest Plateau",
+      "instruction": "Used motor oil contains carbon black from combustion. Even when the oil itself is fully gone, a gray shadow sometimes remains — that's carbon particulate stuck in the fibers, and home chemistry doesn't always clear it. Don't keep cycling if the stain has plateaued. Take it to a dry cleaner; they have hot-water extraction and specialized solvents. Or, for work clothes that see motor oil regularly, accept that the fabric may carry a permanent shadow — a badge of honest work, not a failure."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate for Fresh Stains on Non-Work Clothes",
+      "instruction": "If this is a FRESH motor oil stain on a nice garment (not a mechanic's work shirt), and two home rounds haven't cleared it, don't keep cycling — get it to a dry cleaner fast, while the oil is still recent. Tell them: \"Motor oil on cotton, age [fresh / overnight / older], used [type of oil if known], home-treated with cornstarch + mineral spirits + Dawn.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain. Wait 5 minutes.",
-      "2. Brush off the powder with a clean white cloth.",
-      "3. Put a drop of Dawn dish soap on the stain. Blot it in.",
-      "4. Let it sit for 2–3 minutes. Rinse with cold water.",
-      "5. Repeat if needed. Air dry — don't use a dryer until the stain is gone."
+      "1. Cornstarch / baking soda / baby powder preload, 30–60 min, brush off.",
+      "2. Catch cloth UNDER the stain.",
+      "3. Mineral spirits on a white rag, tamp from BACK. Flip cloth. 3–5 passes. Ventilate.",
+      "4. Dawn + soft brush, generous amount, 5–10 min dwell, rinse. Repeat.",
+      "5. Hot wash per care label — heavy-duty detergent if available. Double cycle on heavy stains.",
+      "6. Inspect BEFORE the dryer.",
+      "7. Accept plateau: used motor oil's carbon may leave a permanent gray shadow."
     ],
     "products": [
-      "Dawn NSD",
-      "baking soda or cornstarch"
+      "Cornstarch / baking soda / baby powder",
+      "Mineral spirits (paint thinner, hardware store)",
+      "Clean white rags or towels (catch + pressing)",
+      "Dawn dish soap (generous amounts)",
+      "Heavy-duty laundry detergent (optional but helpful)"
     ],
-    "whenToStop": "Try a dry cleaning solvent (Carbona Stain Devil #5 or Goo Gone). If the stain survives two rounds, a professional cleaner can use concentrated agents and specialized equipment.",
+    "whenToStop": "Stop if two home rounds haven't cleared the stain, if the dryer has already baked it in, or if the plateau is carbon-black shadow from used oil (home chemistry doesn't always clear that).",
     "warnings": [
-      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
-      "Never add water to an oil stain first — water and oil don't mix, and you'll spread it.",
-      "Avoid heat until the stain is completely gone."
+      "VENTILATE — mineral spirits are flammable",
+      "Catch cloth + pressing cloth — sideways oil spread is easy without them",
+      "Inspect BEFORE the dryer — heat sets residual oil permanently",
+      "Used motor oil's carbon may leave a permanent gray shadow — set honest expectations",
+      "Never near open flame or ignition source"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Apply heat before oil is removed — polymerizes petroleum permanently into fiber",
-      "Add water to a fresh oil stain first — spreads it before any treatment can work"
+      "Never use solvent near open flame — mineral spirits are flammable",
+      "Never skip the powder preload on heavy motor oil — it cuts the work in half",
+      "Never pour solvent directly on fabric — tamp with cloth, catch cloth underneath",
+      "Never hot-dry residual motor oil — locks the stain in permanently"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates most agents including bleach on whites. For colored cotton, test peroxide first. High heat can set petroleum stains permanently."
+      "Cotton tolerates POG, mineral spirits, IPA, NSD, hot wash",
+      "Dyed cotton: mineral spirits usually safe; inside-seam-test if concerned",
+      "Heat-durable fiber once oil is cleared"
     ]
   },
+  "materialWarnings": [
+    "Ventilate — flammable solvents",
+    "Powder preload cuts the work in half",
+    "Carbon black from used oil may leave a permanent shadow"
+  ],
   "escalation": {
-    "when": "Motor oil stain remains after full solvent protocol — likely old or polymerized by heat",
-    "whatToTell": "Motor oil stain on cotton, petroleum-based. Treated at home with NSD. Please use professional dry-side solvent protocol with POG.",
-    "specialistType": "dry cleaner"
+    "when": "Motor oil has been hot-dried, two home rounds didn't clear it, or the residual gray shadow is from carbon black and won't fade.",
+    "whatToTell": "\"Motor oil on cotton, age [fresh / overnight / older], [fresh oil / used oil with combustion carbon], home-treated with cornstarch + mineral spirits + Dawn + heavy-duty hot wash. [Hot-washed / not yet laundered.]\"",
+    "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the stain fresh or has it been sitting and drying?",
-      "Has the garment been through the dryer?",
-      "What type of oil — clean motor oil, dirty used oil, or transmission fluid?",
-      "Is the cotton white or colored?"
+      "Fresh motor oil (amber, unused) or used oil (black, with combustion residue)?",
+      "How old is the stain?",
+      "Has it been through a hot wash or dryer?",
+      "Is this a mechanic's work shirt (saturation common) or a one-off accident?"
     ],
-    "modifierNotes": "Dirty used motor oil contains carbon black and combustion byproducts — harder to remove than clean oil. Dryer exposure polymerizes the oil and makes removal very difficult. On colored cotton, test all solvents on a hidden seam first."
+    "modifierNotes": "Used motor oil vs fresh motor oil is the main variable — used has carbon black that chemistry can't fully remove. Honest plateau-acknowledgment is part of the protocol."
   },
-  "difficulty": 3,
-  "timeEstimate": "15–25 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
