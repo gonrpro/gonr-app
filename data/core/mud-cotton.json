@@ -60,9 +60,46 @@
     }
   ],
   "homeSolutions": [
-    "FRESH MUD (hours old, still partially damp): Let air-dry completely (24 hours) → dry brush (step 2) → surfactant soak (step 4) → rinse (step 5) → wash. Expect 95%+ removal. Quick and easy.",
-    "ESTABLISHED MUD (dried on fabric, 12-24 hours old): Dry brush (step 2) + vacuum (step 3 alternative) → longer surfactant soak (30 min, step 4) → warm rinse → optional enzyme (step 6 if needed) → machine wash. Expect 90-95% removal.",
-    "CAKED OR OLD MUD (>3 days, heavily embedded): Dry scrape with butter knife → vigorous dry brush (3-5 min) → extended surfactant soak (45 min) → warm rinse → enzyme soak (20 min, step 6) → repeat surfactant if haze remains (step 8) → machine wash. Expect 85-90% removal; may plateau there."
+    {
+      "step": 1,
+      "agent": "Wait — let the mud dry fully before anything else",
+      "instruction": "This is the most important instruction for mud on cotton. Wet mud is clay particles suspended in water. Scrub it wet and you grind the clay DEEPER into the weave and into any carpet pad below. Instead: hang the garment or spread it flat out of the way, let it dry completely. Small spot on clothing: 1–3 hours. Heavy caked mud: up to 24 hours. Point a fan at it to speed drying. Do not use a hair dryer or heat."
+    },
+    {
+      "step": 2,
+      "agent": "Patch test (only needed if cotton is dyed)",
+      "instruction": "On colored cotton, dab a drop of your Dawn + cool water solution on an inside seam, blot with a white cloth after 60 seconds. If clean, proceed. On white or indifferent cotton, skip the patch test — cotton tolerates all the chemistry you'll use here."
+    },
+    {
+      "step": 3,
+      "agent": "Break up + brush off the dry crust",
+      "instruction": "Once the mud is fully dry and crumbly, gently break up the surface crust with a soft toothbrush or the edge of a credit card. You'll see chunks release. Brush off into a trash bag — don't let them settle back on the fabric. If chunks are still wet or smearing, re-wait and re-dry. Fresh mud dry-brushed lifts 60–80% of the stain with no chemistry."
+    },
+    {
+      "step": 4,
+      "agent": "Dish-soap solution — work into the residual haze",
+      "instruction": "Mix one tablespoon of clear Dawn dish soap with two cups of cool water. Dip a white cloth and apply directly to the remaining brown haze. Let it sit 10–30 minutes (longer for older stains). Dawn lifts plant-matter residue and fine clay that brushing couldn't reach. Blot with a clean damp cloth between applications."
+    },
+    {
+      "step": 5,
+      "agent": "Enzyme pretreat for grass/plant-matter brown",
+      "instruction": "If a brown shadow remains after the soap cycle, that's tannin from plant matter mixed with the mud. Apply OxiClean Versatile, Biz, or Zout per label. 20–30 minutes dwell. Safe on cotton (unlike wool/silk) — cellulose fibers tolerate enzymes."
+    },
+    {
+      "step": 6,
+      "agent": "Warm-water machine wash",
+      "instruction": "Launder on warm (not hot) with your normal detergent. Warm water helps dissolve residual fine clay that cold can't touch. For heavy or caked mud on white cotton, add a half-cup of white vinegar to the rinse cycle — vinegar is a mild mineral remover that helps with lingering clay."
+    },
+    {
+      "step": 7,
+      "agent": "Air dry + daylight inspect before using the dryer",
+      "instruction": "Hang or lay flat to air-dry. Inspect in daylight. If a shadow remains, repeat steps 4–5 once more before the next wash. DO NOT tumble-dry on heat while anything visible remains — dryer heat fuses residual clay and plant pigment into the fiber. For white cotton, 1–3 hours of direct sunlight on the damp garment often finishes residual tannin."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate for clay-heavy or old mud",
+      "instruction": "If the mud was clay-heavy (red clay, potting soil), covered a large area, or survived two home rounds, take to a pro cleaner. Tell them: \"Mud on cotton (clay + plant matter + tannin), age [x]. Let dry fully, brushed off, treated with Dawn + enzyme + warm wash. No hot water, no alkaline-pre-chemistry on tannin.\" Pros have truck-mount extraction + tannin/mineral formulas that finish what home can't."
+    }
   ],
   "materialWarnings": [
     "White cotton is tolerant of all methods. No damage risk from brushing, surfactant, or enzyme.",
