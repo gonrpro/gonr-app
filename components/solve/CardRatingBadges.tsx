@@ -68,10 +68,10 @@ export default function CardRatingBadges({ cardId }: { cardId: string | undefine
             color: 'var(--accent)',
             border: '1px solid rgba(34,197,94,0.3)',
           }}
-          title="Verified by the GONR team"
+          title="Verified by the GONR™ team"
         >
           <span aria-hidden="true">✓</span>
-          GONR Lab tested
+          GONR™ Lab tested
         </span>
       )}
 
@@ -83,7 +83,7 @@ export default function CardRatingBadges({ cardId }: { cardId: string | undefine
             color: '#92400e',
             border: '1px solid rgba(245,158,11,0.3)',
           }}
-          title="Tested by a GONR pilot cleaner — not yet verified by the GONR team"
+          title="Tested by a GONR™ pilot cleaner — not yet verified by the GONR team"
         >
           <span aria-hidden="true">◆</span>
           Pilot tested
