@@ -205,10 +205,17 @@ function AgentTab() {
             >
               <AgentIcon size={18} strokeWidth={1.75} className="flex-shrink-0" style={{ color: 'var(--text-secondary)' }} aria-hidden="true" />
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2">
-                  <h3 className="font-bold text-sm">{key}</h3>
-                  <span className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-                    {agent.genericName}
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h3 className="font-bold text-sm">{agent.genericName}</h3>
+                  <span
+                    className="text-[10px] font-mono px-1.5 py-0.5 rounded border"
+                    style={{
+                      color: 'var(--text-secondary)',
+                      borderColor: 'var(--border-strong)',
+                      background: 'var(--surface-2)',
+                    }}
+                  >
+                    {key}
                   </span>
                 </div>
               </div>
