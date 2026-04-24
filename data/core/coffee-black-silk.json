@@ -69,10 +69,43 @@
     }
   ],
   "homeSolutions": [
-    "Test on a hidden area first (inside seam or hem) — silk dyes may react to cleaning agents.",
-    "FRESH: Ice water blot from back immediately. Most stain comes out with this step alone.",
-    "REMAINING: Very dilute vinegar (1:2 with cold water), 30-60 seconds only, blot gently, rinse thoroughly.",
-    "BROWN: If color remains, very dilute peroxide (1:2 with cold water), 30-45 seconds only, blot, rinse. Stop if uncertain—don't risk silk damage."
+    {
+      "step": 1,
+      "agent": "Silk is a protein fiber — know what's off-limits",
+      "instruction": "Silk is fibroin (protein), same family as wool and your own hair. That means anything that digests protein — enzymes (OxiClean, Biz, \"bio\" detergents), chlorine bleach, strong alkaline — will damage the silk along with the stain. Off-limits at every step: enzymes, chlorine bleach, ammonia, hot water (above 30°C / 86°F), and any mechanical scrubbing (silk ruptures when wet under friction). You have a much shorter tool list than on cotton."
+    },
+    {
+      "step": 2,
+      "agent": "Patch test on a hidden seam",
+      "instruction": "Dab a drop of plain cold water on an inside seam, wait 60 seconds, blot with a white cloth. If the seam loses color or shows a water mark, stop — silk's dye is highly fugitive. Home treatment on visible areas will almost certainly lighten it. Go to step 6 (pro)."
+    },
+    {
+      "step": 3,
+      "agent": "Cold-water blot from the BACK — do this fast",
+      "instruction": "For fresh coffee on silk, speed is everything. Turn the garment inside out. Place a clean white towel under the stain. Dab cold (ideally ice) water on the BACK of the stain with a cotton ball. Blot — don't wipe — with the underside towel catching runoff. Replace the towel as it picks up brown. For black coffee caught within a minute, this alone often removes 80% of the stain. No scrubbing, no wringing, no pressing harder."
+    },
+    {
+      "step": 4,
+      "agent": "Very dilute vinegar rinse — 30–60 seconds, strict",
+      "instruction": "If a shadow remains after blotting, mix 1 part white vinegar with 2 parts cold water. Dab a cotton swab onto the shadow (not a soak). 30–60 SECONDS maximum dwell on silk — then blot with a cold damp cloth immediately. Vinegar restores silk's natural pH and helps mobilize residual tannin. Set a timer. Over-dwell and you risk fiber weakening. Skip this step if the stain looks gone after step 3.",
+      "safetyNote": "Never use full-strength vinegar on silk. Never use vinegar on ink or dye stains — only tannin like this one."
+    },
+    {
+      "step": 5,
+      "agent": "Very dilute peroxide (optional, white/light silk only, 30–45 sec)",
+      "instruction": "If a BROWN trace remains AND the silk is white, cream, or very light-colored AND your step-2 patch test came back clean: mix 1 part 3% hydrogen peroxide with 2 parts cold water. Dab a cotton swab onto the trace. 30–45 SECONDS MAXIMUM, then flush with cold water immediately. Peroxide yellows silk at longer dwells. If you're uncertain, stop here and escalate — the cost of waiting too long on silk is higher than the cost of paying a pro.",
+      "safetyNote": "Never exceed 45 seconds peroxide dwell on silk. Never on colored or patterned silk. Never mix with ammonia or bleach."
+    },
+    {
+      "step": 6,
+      "agent": "Press between towels and air-dry flat — never hang, never heat",
+      "instruction": "Lay the garment flat between two dry white towels. Press gently to absorb moisture — no wringing, no twisting, no hanging wet silk (gravity stretches the fiber permanently). Let it air-dry flat at room temperature, out of direct sun. Reshape while damp. Never use a hair dryer, iron, or dryer on damp silk with residual stain — heat sets anything left."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate to a silk specialist — earlier than other fabrics",
+      "instruction": "If the patch test failed, the coffee was set by heat or time, or any shadow remains after step 5, take it to a dry cleaner who specializes in silk or delicates (NOT every dry cleaner is safe for silk — ask first). Tell them: \"Black coffee on silk, treated at home with cold water + dilute vinegar + [dilute peroxide on white]. No enzymes, no alkaline, no heat used. Silk dye [tested fine / unknown / transferred].\" Pros use reducing-bleach spotting (sodium hydrosulfite) and silk-specific chemistry that isn't safe for home use."
+    }
   ],
   "materialWarnings": [
     "ALWAYS test on a hidden seam or inside hem first — silk dyes may not tolerate spotting agents.",
