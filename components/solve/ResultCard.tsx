@@ -296,21 +296,20 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
             {card.title}
           </h2>
           <div className="flex items-center gap-1.5 flex-shrink-0 mt-0.5">
-            {/* Trust badge — Atlas 8053/8071 lock:
-                   card.verified === true        → green ✓ Verified
-                   source === 'ai'               → purple 🤖 AI
-                   curated-but-not-verified yet  → no badge (title carries weight)
-                Never let `source: "verified"` alone show the green badge —
-                that misrepresented 202 curated-but-unpolished cards today. */}
-            {card.verified === true ? (
+            {/* Trust badge — Atlas 8053/8071/8077 lock:
+                   card.verified === true  → green ✓ Verified
+                   anything else           → NO badge (title carries weight)
+                The AI badge was removed from the consumer surface (Atlas
+                8077 after Tyler screenshot): a purple 🤖 AI badge on a
+                stain-removal card reads as "might be made up" rather
+                than "we're iterating." Source state stays in the data
+                (card.source) for internal/admin surfaces and telemetry;
+                trust state on the public UI is pass/fail. */}
+            {card.verified === true && (
               <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-green-500/15 text-green-600">
                 ✓ {t('verified')}
               </span>
-            ) : source === 'ai' ? (
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-500">
-                🤖 {t('ai')}
-              </span>
-            ) : null}
+            )}
             <SaveButton card={card} />
           </div>
         </div>
