@@ -14,7 +14,7 @@
 //
 // Scope (Atlas 8392): no PDF/export, no schema changes, no plant overlay.
 
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 type CardRow = {
   card_key: string
@@ -159,6 +159,15 @@ export default function AdminProtocolLibraryPage() {
   const [levelFilter, setLevelFilter] = useState<string>('')
   const [verifiedOnly, setVerifiedOnly] = useState(false)
   const [selectedKey, setSelectedKey] = useState<string | null>(null)
+  const detailRef = useRef<HTMLElement | null>(null)
+
+  // When a card is selected (especially on mobile where the detail sits
+  // below a long list), auto-scroll so the detail is visible.
+  useEffect(() => {
+    if (selectedKey && detailRef.current) {
+      detailRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [selectedKey])
 
   const load = useCallback(async () => {
     setLoading(true)
@@ -411,7 +420,10 @@ export default function AdminProtocolLibraryPage() {
 
       {/* Expanded detail rendered OUTSIDE the table so it gets the page's container width, not the table's */}
       {selectedCard && (
-        <section className="border border-emerald-500/30 bg-emerald-500/5 rounded p-4 min-w-0">
+        <section
+          ref={detailRef}
+          className="border border-emerald-500/30 bg-emerald-500/5 rounded p-4 min-w-0 scroll-mt-4"
+        >
           <div className="flex items-baseline justify-between gap-2 mb-4">
             <div className="min-w-0">
               <div className="text-xs text-gray-500 font-mono break-all">{selectedCard.card_key}</div>
