@@ -68,9 +68,43 @@
   "callPro": "For colored or patterned polyester garments, professional treatment is safer. Professional dry cleaners can use solvents that penetrate polyester differently than water-based bleaches. For delicate or valuable polyester items, professional dry cleaning is recommended.",
   "customerExplanation": "Gentian violet on polyester requires special care because polyester is thermoplastic and heat can set the stain. We used sodium hydrosulfite, a reducing bleach, with extended contact time because polyester absorbs aqueous solutions slowly. We applied hydrogen peroxide cautiously to avoid trapping oxidative residues in the fiber. The garment was rinsed thoroughly and allowed to air dry away from heat to prevent the stain from being set again.",
   "homeSolutions": [
-    "Soak the stained area in white vinegar for 15-20 minutes (polyester responds slightly better to acid than cotton), then rinse with cool water. Mild and unreliable but safe.",
-    "Oxygen bleach (OxiClean) soaked into the stain for 30 minutes, then rinsed. Gentian violet rarely responds well to oxygen bleach on polyester, but it's safer than trying strong chlorine bleach.",
-    "For very light stains, cold water soak for 30 minutes followed by gentle rubbing between hands (not on fabric surface). Sometimes the dye hasn't fully absorbed and can be rinsed away."
+    {
+      "step": 1,
+      "agent": "Polyester makes this slightly easier than cotton — but not much",
+      "instruction": "Gentian violet (crystal violet) is a triarylmethane dye engineered to be permanent. On polyester, the dye sits more on the fiber surface than it does on cotton, so early cold rinse can pull more of it out before it bonds. That's the good news. The bad news: once bonded, home chemistry still can't fully lift it — you're looking at significant fading, rarely full removal. If the polyester is colored, skip most of this and go straight to step 6. White/light polyester is where the home path is winnable."
+    },
+    {
+      "step": 2,
+      "agent": "Patch test + NO rubbing",
+      "instruction": "Dab a drop of Dawn + 3% peroxide solution on an inside seam. Wait 60 seconds, blot with a white cloth. If the polyester holds its color, proceed. Absolute rule regardless of patch test: do NOT rub or scrub at any step. Gentian violet smears under friction and the dye visibly spreads outward — making a quarter-sized spot into a palm-sized one."
+    },
+    {
+      "step": 3,
+      "agent": "Cold water back-flush — do this fast",
+      "instruction": "Turn the garment inside out and run cold water through the BACK of the stain for 60–90 seconds. Polyester's low absorbency works in your favor here — fresh gentian violet often lifts 30–40% at this step alone. Never use hot water: heat fuses the dye into polyester's thermoplastic fiber and makes the stain permanent at temperatures lower than cotton's tolerance."
+    },
+    {
+      "step": 4,
+      "agent": "OxiClean paste — white polyester only",
+      "instruction": "On white polyester, mix 1 tablespoon of OxiClean Versatile with just enough cold water to form a thick paste. Apply directly to the stain, keep it wet (re-wet every 10 minutes if it dries), let dwell 30–60 minutes. OxiClean's oxygen bleach is the strongest home tool against triarylmethane dyes and polyester tolerates it well. On colored polyester, skip to step 5.",
+      "safetyNote": "Never mix OxiClean with chlorine bleach or ammonia. Test on an inside seam before running on a large area of colored polyester."
+    },
+    {
+      "step": 5,
+      "agent": "Rubbing alcohol dab — for colored polyester or second pass",
+      "instruction": "Dab 91% isopropyl alcohol on a clean white cloth and press onto the stain. Work outside-in. Replace the cloth frequently — you'll see violet transfer to the cloth as alcohol partially dissolves the dye. Repeat up to 3 rounds. Alcohol alone rarely clears gentian violet fully but often takes a bright stain to a pale one.",
+      "safetyNote": "Polyester is safe with alcohol, but not silk/wool/acetate. Ventilated area, no open flame."
+    },
+    {
+      "step": 6,
+      "agent": "Cold wash + air dry — never tumble-dry on a shadow",
+      "instruction": "Launder on cold with your normal detergent. Hang or lay flat to air-dry and inspect in daylight. If a shadow remains, repeat steps 4–5 one more time before the next wash. DO NOT put the garment in the dryer while any pigment remains — polyester fuses residual dye under dryer heat at surprisingly low temperatures. Two rounds is the home ceiling."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate to a cleaner with sequential-bleach capability",
+      "instruction": "For full removal, triarylmethane dyes need sequential reducing bleach (sodium hydrosulfite) + oxidizing bleach in order — two-step chemistry that breaks the central carbon bonds in the dye molecule. Tell the pro: \"Gentian violet on polyester, treated at home with [OxiClean paste / alcohol]. No hypochlorite used. Please use sequential reducing-then-oxidizing bleach.\" Not every cleaner carries sodium hydrosulfite — call ahead."
+    }
   ],
   "meta": {
     "riskLevel": "high",
