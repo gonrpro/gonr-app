@@ -1,119 +1,219 @@
 {
   "id": "nail-polish-cotton",
   "title": "Nail Polish on Cotton",
-  "stainFamily": "dry_side",
+  "stainType": "specialty",
+  "stainFamily": "specialty",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Nail polish contains nitrocellulose (film former), plasticizers (dibutyl phthalate), colorants (pigments/dyes), and solvents (ethyl acetate, butyl acetate). On cotton, the solvents evaporate and the nitrocellulose hardens into a tough, pigmented film that is resistant to water, soap, and most common cleaners. The film bonds mechanically by penetrating fiber texture.",
-  "whyThisWorks": "Amyl acetate or acetone (where fiber-safe) dissolves the nitrocellulose film on cotton. The solvent reverses the hardening process, re-liquefying the polish so it can be blotted away. Acetone is faster but unsafe on acetate and many synthetics. Amyl acetate is safer for most fibers. The pigment transfers to the blotting cloth as the film dissolves.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "15–45 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "nail-polish",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "solvent-required",
+      "polymer",
+      "cotton",
+      "test-first"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Nail polish is nitrocellulose polymer + plasticizer + pigment + solvent (ethyl acetate, butyl acetate, or acetone). On contact with fabric the solvent evaporates fast and the nitrocellulose hardens into a tough, pigmented film mechanically anchored in the fiber texture. Water, soap, and oxidizers do nothing to nitrocellulose — it needs its own solvent class to re-soften. Cotton is cellulose — tolerates acetone, amyl acetate, and IPA at room temp. THE critical caveat: acetone DESTROYS acetate and triacetate fibers (acetate dissolves in acetone literally within seconds). Blend content must be confirmed before reaching for acetone — cotton/acetate blends exist on summer dresses and older linings.",
+  "whyThisWorks": "Acetone or amyl acetate re-liquefies the nitrocellulose film, releasing the pigment so it can transfer onto a catch cloth. Non-acetone nail polish remover (ethyl acetate) is the slower, fiber-friendlier alternative — it works, just needs more passes. NSD emulsifies residual plasticizer. 3% H₂O₂ clears any residual dye shadow on whites. The rule: verify fiber (pure cotton vs cotton/acetate blend) BEFORE acetone.",
+  "defaultAssumption": "Pure cotton is a safe bet for acetone; assume pure cotton unless the label says otherwise. Cotton blends (especially with acetate or triacetate) narrow the solvent choice to non-acetone remover. Heat-set polish (already hot-washed or dried) trends toward escalation.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Verify Fiber + Place Catch Cloth",
+      "technique": "Label read, catch cloth under stain",
+      "equipment": "Care label, clean white cotton towel",
+      "dwellTime": "30 seconds",
+      "instruction": "Read the care label. 100% cotton: acetone is safe. Cotton/acetate or cotton/triacetate blends: acetone dissolves the acetate fiber — use non-acetone (ethyl acetate) nail polish remover instead. Unknown blend: default to non-acetone. Then place a folded clean white towel UNDER the stain — the dissolved polish transfers downward into the catch cloth, not sideways."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Scrape Bulk If Dry",
+      "technique": "Dull blade, gentle",
+      "equipment": "Dull blade, spoon edge, or credit card",
+      "dwellTime": "30 seconds",
+      "instruction": "If the polish has dried into a raised film, scrape the brittle top layer off with a dull blade. Don't rub — rubbing grinds the polymer into the weave. Lift and flake. This reduces the mass that the solvent has to dissolve."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Acetone or Amyl Acetate Tamp",
+      "technique": "Solvent on white cloth, tamp from back",
+      "equipment": "Acetone (pure cotton only) OR amyl acetate OR non-acetone polish remover on a clean white cloth",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply the solvent to a CLEAN white cloth — never to the fabric directly. Tamp the stain from the BACK of the fabric, over the catch cloth. The polymer re-softens and transfers onto the cloths. Flip the pressing cloth to a clean section frequently. Expect 3–5 passes — deeper polish layers surface as each pass lifts the outer layer."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify residual",
+      "equipment": "NSD in cool water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Apply NSD, work with a soft brush. NSD emulsifies the residual plasticizer the solvent freed. Rinse cool from the back."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For residual pigment shadow on whites: 3% H₂O₂ drop-by-drop. Oxidizes the dye chromophore. Dwell 3–5 min, blot. One oxidizer at a time. Skip on dark or dyed cotton."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Hot Wash Per Label",
+      "technique": "Launder, inspect before dryer",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Rinse thoroughly. Launder on the hottest setting the care label allows. Inspect BEFORE the dryer — dryer heat sets any residual polish permanently."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate to soften and dissolve the polish film. Blot — do NOT rub",
-      "2. Repeat amyl acetate application, blotting dissolved polish onto clean cloth — 3-5 min per pass",
-      "3. Apply NSD to remove remaining residue. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for pH restoration",
-      "5. Blot dry. Air dry"
+      "1. Verify fiber. Pure cotton = acetone safe. Cotton/acetate blend = acetone DESTROYS; use amyl acetate or non-acetone remover.",
+      "2. Place catch cloth UNDER the stain.",
+      "3. Scrape dry bulk gently.",
+      "4. Acetone (pure cotton) OR amyl acetate (universal) OR non-acetone remover on a white cloth, tamp from the back. 3–5 passes.",
+      "5. NSD to emulsify residual plasticizer. Cool rinse.",
+      "6. 3% H₂O₂ on residual dye shadow (whites only). 3–5 min.",
+      "7. Hot wash per care label. Inspect before dryer."
     ],
     "products": [
-      "amyl acetate",
+      "Acetone (100% cotton only — destroys acetate)",
+      "Amyl acetate (universal solvent, slower)",
+      "Non-acetone polish remover (ethyl acetate)",
       "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "ambient",
+    "temperature": "cool through spotting; hot wash post-chemistry",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains",
-      "NEVER use acetone on acetate fabric — dissolves it on contact"
+      "ACETONE DESTROYS ACETATE AND TRIACETATE — verify fiber before use",
+      "Always tamp with a catch cloth under + pressing cloth on top — prevents sideways spread",
+      "Never pour solvent on fabric",
+      "One oxidizer at a time; skip peroxide on dark/dyed cotton",
+      "Ventilate — acetone and amyl acetate are flammable"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Read the Care Label First",
+      "instruction": "This stain has ONE rule that matters above all others: if the fabric contains acetate or triacetate (common in summer dresses, linings, and some blends), acetone-based nail polish remover will DISSOLVE the fiber literally within seconds. Pull the garment inside out and read the care label. 100% cotton: acetone remover is fine. If it says acetate/triacetate or blend: use non-acetone remover only. Unknown: use non-acetone to be safe."
+    },
+    {
+      "step": 2,
+      "agent": "Place a White Towel UNDER the Stain",
+      "instruction": "Fold a clean white towel and put it UNDER the stained fabric. When the polish dissolves in the next step, it needs somewhere to go — the catch cloth pulls it out. Skip this and the polish smears sideways into clean fabric."
+    },
+    {
+      "step": 3,
+      "agent": "Scrape Dried Polish Off First",
+      "instruction": "If the polish has dried into a hard film, use the edge of a credit card or a dull butter knife to lift the top layer. Lift, don't rub. You're reducing how much the remover has to dissolve."
+    },
+    {
+      "step": 4,
+      "agent": "Nail Polish Remover on a White Cloth",
+      "instruction": "Dab nail polish remover onto a clean white cloth — not onto the fabric directly. Press the cloth onto the stain from the BACK of the fabric, over the catch cloth. Flip the pressing cloth to a clean spot every 10 seconds. The polish transfers out as the pigment dissolves. Expect 3–5 rounds. Ventilate the room — open a window, no flames, no smoking.",
+      "safetyNote": "Acetone-based remover on ACETATE (common in summer dresses and linings) dissolves the fabric. Read the care label first. Non-acetone remover is the safe default."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn + Soft Brush",
+      "instruction": "Work a drop of Dawn dish soap into the spot with a soft toothbrush. Dawn lifts the plasticizer residue the solvent left behind. Rinse cool."
+    },
+    {
+      "step": 6,
+      "agent": "Hydrogen Peroxide 3% for Faint Color (Whites Only)",
+      "instruction": "For a residual pink or red shadow on white cotton: dab 3% drugstore hydrogen peroxide, let it bubble 3–5 min, blot. Skip on dark or dyed cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fumes."
+    },
+    {
+      "step": 7,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. If you still see polish, repeat the remover + Dawn round first. Dryer heat locks in any residual polymer film."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate for Acetate Damage or Heat-Set",
+      "instruction": "If acetone was accidentally used on an acetate-blend fabric, the fiber damage is not recoverable at home. Take to a dry cleaner immediately. If nail polish has been hot-dried onto cotton or two home rounds haven't cleared it, same answer. Tell them: \"Nail polish on [cotton / cotton blend / acetate], age [fresh / overnight / older], home-treated with [acetone / non-acetone remover] + Dawn. [Fiber intact / fiber damage suspected].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot excess polish — do NOT rub or spread",
-      "2. Test a hidden area with hydrogen peroxide 3% before proceeding",
-      "3. Apply hydrogen peroxide 3% to stain. Blot gently with white cloth",
-      "4. Apply Dawn dish soap and work gently. Rinse with warm water",
-      "5. Repeat if needed. Air dry — no heat until stain is gone"
+      "1. READ THE LABEL. 100% cotton: acetone OK. Any acetate blend: non-acetone remover only.",
+      "2. Place catch cloth UNDER the stain.",
+      "3. Scrape dried polish gently with a credit card edge.",
+      "4. Nail polish remover on a clean white cloth, tamp from the BACK. Flip cloth frequently. 3–5 passes. Ventilate.",
+      "5. Dawn + soft toothbrush for residual plasticizer.",
+      "6. 3% hydrogen peroxide on residual pigment shadow (whites only).",
+      "7. Hot wash per care label. Inspect BEFORE the dryer.",
+      "8. Escalate immediately if acetone hit acetate, or if heat-set."
     ],
     "products": [
-      "hydrogen peroxide 3%",
-      "Dawn dish soap"
+      "Non-acetone nail polish remover (ethyl acetate — the safe default)",
+      "Acetone-based nail polish remover (100% cotton only)",
+      "Dawn dish soap",
+      "Clean white cloths for catch + pressing",
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop immediately if acetone was applied to an acetate-blend fabric (fiber damage is done; take to a pro). Stop if two home rounds haven't cleared the polish, or if the cotton is dark dyed and peroxide isn't safe.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "ACETONE DESTROYS ACETATE FIBER — read the label before you reach for remover",
+      "Solvent on cloth, NOT on fabric — tamp, never pour",
+      "Ventilate — remover is flammable",
+      "Skip peroxide on dark/dyed cotton",
+      "Inspect before the dryer — heat sets residual polymer"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never use acetone on acetate / triacetate fiber — destroys the fiber",
+      "Never pour solvent onto fabric — tamp with cloth, catch cloth underneath",
+      "Never skip the catch cloth — sideways pigment spread",
+      "Never use near open flame — acetone is flammable",
+      "Never mix peroxide with chlorine bleach or ammonia"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Pure cotton: tolerates acetone, amyl acetate, ethyl acetate at room temp",
+      "Cotton/acetate blends: non-acetone remover only",
+      "Dyed cotton: test acetone on inside seam — some dyes lift",
+      "Heat-durable fiber — hot wash is the finisher"
     ]
   },
+  "materialWarnings": [
+    "Verify the fiber label BEFORE reaching for acetone",
+    "Catch cloth UNDER + tamp on TOP, always",
+    "Ventilate — solvent fumes are flammable"
+  ],
   "escalation": {
-    "when": "If nail polish stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is nail polish on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Acetone was applied to an acetate-blend fabric (fiber damage), polish has been hot-dried into cotton, two home rounds haven't cleared it, or dark dyed cotton where peroxide isn't safe.",
+    "whatToTell": "\"Nail polish on [100% cotton / cotton-acetate blend / unsure], age [fresh / overnight / older], home-treated with [acetone-based / non-acetone] remover + Dawn. [Fiber intact / fiber damage suspected / hot-washed].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "What does the care label say — 100% cotton or blended with acetate?",
+      "How old is the stain — fresh, overnight, older?",
+      "Has it been through a hot wash or dryer?",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The #1 home failure on this stain is acetone on an acetate blend — irreversible fiber damage within seconds. Label-read first is the non-negotiable rule. Non-acetone remover is the safe default when in doubt."
   },
-  "difficulty": 7,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
-  "homeSolutions": [
-    {
-      "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates acetone-based solutions. DO NOT use this procedure on acetate fabrics — acetone dissolves acetate.",
-      "agent": "cool water",
-      "safetyNote": "Acetone is volatile and flammable — ensure excellent ventilation and avoid flames."
-    },
-    {
-      "step": 2,
-      "instruction": "Place fabric stain-side down on glass work surface. Nail polish is a plastic/dry-based stain.",
-      "agent": "spoon"
-    },
-    {
-      "step": 3,
-      "instruction": "Apply dry-cleaning solvent (lighter fluid) to the stain. Rub gently with the back of a spoon from center outward.",
-      "agent": "dry-cleaning solvent",
-      "safetyNote": "Ensure good ventilation when using dry-cleaning solvent."
-    },
-    {
-      "step": 4,
-      "instruction": "If polish remains, apply acetone or nail polish remover (test on hidden area first). Rub gently with spoon. Acetone dissolves nail polish effectively.",
-      "agent": "acetone or nail polish remover",
-      "safetyNote": "Acetone is strong and volatile — use in a well-ventilated area. Never use on acetate, rayon, or delicate fabrics."
-    },
-    {
-      "step": 5,
-      "instruction": "Rinse thoroughly with dry-cleaning solvent to remove acetone residue.",
-      "agent": "dry-cleaning solvent"
-    },
-    {
-      "step": 6,
-      "instruction": "If any residue remains, apply petroleum jelly and rub gently with spoon, then rinse with dry-cleaning solvent.",
-      "agent": "petroleum jelly + dry-cleaning solvent"
-    },
-    {
-      "step": 7,
-      "instruction": "Allow fabric to air dry completely. If nail polish stain persists or if fabric is acetate or delicate, call a professional cleaner.",
-      "agent": "escalation"
-    }
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

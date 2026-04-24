@@ -1,120 +1,197 @@
 {
   "id": "lipstick-cotton",
   "title": "Lipstick on Cotton",
-  "stainFamily": "dry_side",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Oil/Grease (lipid-based). Lipstick is one of the most complex cosmetic stains: it contains wax (beeswax, carnauba, candelilla — provides structure), oils (castor oil, lanolin, mineral oil — provides glide), and concentrated dye (D&C Red 6, Red 7, Red 21 — organic fluorescent dyes plus iron oxide pigments). The wax component solidifies on cotton and traps oil and dye within its matrix. Oil stains penetrate fiber structure through capillary action and hydrophobic affinity. Treatment: dry-side solvent (POG) to dissolve lipid phase, followed by surfactant emulsification to remove residual oil.",
-  "whyThisWorks": "Cosmetics contain oils, waxes, and pigments — the oil spreads the color deeper. Cotton absorbs quickly and holds stains deep in the weave. NSD or a degreaser breaks down the oil so it becomes water-soluble and can be rinsed away.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "10–30 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "lipstick",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "combination",
+      "wax",
+      "oil",
+      "dye",
+      "cotton",
+      "solvent-first"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Lipstick is a waxy dye matrix: beeswax / carnauba / candelilla wax (the structural frame), oils (castor oil, lanolin, mineral oil), pigments (D&C Red 6, Red 7, Red 21, plus iron oxides for opacity), and emollients. The wax sets the shape; the oils carry the pigment into the fiber when the lipstick smears. Cotton tolerates IPA, POG, NSD, and 3% H₂O₂ at room temperature. The sequence is solvent-first: dissolve the wax-oil carrier, transfer the dye onto a catch cloth, emulsify residual oil with detergent, oxidize faint shadow if needed.",
+  "whyThisWorks": "Water won't touch lipstick — wax and oil are hydrophobic, so soap alone spreads the pigment without removing it. IPA or POG (pro) / rubbing alcohol (home) breaks up the wax + oil matrix in one pass. With the wax dissolved, the dye transfers into a catch cloth instead of smearing sideways. NSD / Dawn cleans the residual oil film. 3% H₂O₂ clears faint dye shadow on whites.",
+  "defaultAssumption": "Fresh lipstick on cotton (collar, cuff, pocket) is a high-confidence DIY. Aged or washed-in lipstick needs 2–3 solvent passes but usually stays in home scope. Heat-set (through a dryer) trends toward escalation.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape + Catch Cloth",
+      "technique": "Remove bulk, isolate work area",
+      "equipment": "Dull blade, clean white cotton towel as catch cloth",
+      "dwellTime": "30 seconds",
+      "instruction": "Scrape solid lipstick off with a dull blade edge — don't rub. Lift the waxy bulk before adding any solvent. Then place a folded white catch cloth UNDER the stain so the dissolved dye transfers downward, not sideways into clean fabric."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "IPA or POG Tamp",
+      "technique": "Solvent on cloth, tamp from back",
+      "equipment": "Isopropyl alcohol 90%+ OR POG on clean white cloth",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply the solvent to a clean white cloth. Tamp from the BACK of the fabric, over the catch cloth. Flip the pressing cloth frequently — the dye transfers onto whichever surface it's pressed against. 2–3 passes usually clear fresh lipstick; deeper/aged stains need more. Never pour solvent directly on cotton."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify residual oil",
+      "equipment": "NSD in warm water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD, work with a soft brush. NSD emulsifies the residual oil film after the solvent pass. Rinse cool from the back."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For residual dye shadow on whites: 3% H₂O₂ drop-by-drop. Oxidizes the dye chromophore. Dwell 3–5 min, blot. Skip on dark or dyed cotton. One oxidizer at a time."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder, inspect before dryer",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Rinse. Launder on the hottest setting the care label allows. Inspect BEFORE the dryer — dryer heat sets any residual dye permanently."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG directly to the oil stain. POG is a volatile dry solvent with strong affinity for lipids — it dissolves oil droplets on contact. Tamp gently and blot with absorbent cloth.",
-      "2. If POG plateaus, apply amyl acetate for stronger solvent action. Amyl acetate is especially effective on older or polymerized oil stains. Blot with clean absorbent cloth between applications. Never use on acetate fabrics.",
-      "3. Apply NSD to emulsify any remaining oil micro-droplets and remove solvent residue. The detergent surrounds oil particles and allows them to be flushed away. Rinse thoroughly with cool water.",
-      "4. Apply diluted acetic acid (1:10) to restore fiber to its natural state. Blot dry and allow to air dry."
+      "1. Scrape waxy bulk. Place catch cloth UNDER the stain.",
+      "2. IPA or POG on a white cloth, tamp from the back. Flip cloth. 2–3 passes.",
+      "3. NSD to emulsify residual oil.",
+      "4. 3% H₂O₂ on residual dye shadow (whites only). 3–5 min.",
+      "5. Hot wash per care label."
     ],
     "products": [
-      "POG (POG remover)",
-      "amyl acetate",
+      "Isopropyl alcohol 90%+",
+      "POG (Paint-Oil-Grease remover)",
       "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "warm for rinsing — warm water helps emulsify residual oil; treat with solvent first before introducing water",
+    "temperature": "cool through spotting; hot wash post-chemistry",
     "warnings": [
-      "Rubbing the stain — lipstick contains concentrated dye that spreads aggressively",
-      "Using water first — water doesn't dissolve wax or oil, and the dye is not water-soluble",
-      "Putting the stained garment in the dryer — melts wax and transfers lipstick to other clothes",
-      "Skipping the solvent step and going straight to OxiClean — oxygen bleach cannot reach dye still locked in the wax matrix"
+      "Solvent before water — water spreads waxy pigment without removing it",
+      "Always tamp with a catch cloth under + pressing cloth on top",
+      "One oxidizer at a time; skip peroxide on dark/dyed cotton"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Scrape Waxy Bulk First",
+      "instruction": "Use a dull butter knife or credit-card edge to lift any solid lipstick off the fabric. Don't rub. The wax has structure — scraping lifts it cleanly; rubbing grinds the pigment into the weave."
+    },
+    {
+      "step": 2,
+      "agent": "Put a White Towel UNDER the Stain",
+      "instruction": "Fold a clean white towel and place it UNDER the stained area. When the solvent dissolves the wax, the dye transfers downward into the catch cloth instead of smearing sideways into clean fabric. This is the step that separates 'stain gone' from 'stain bigger.'"
+    },
+    {
+      "step": 3,
+      "agent": "Rubbing Alcohol on a Clean Cloth",
+      "instruction": "Dab 70%+ rubbing alcohol (drugstore isopropyl) on a clean white cloth. Press the cloth onto the stain from the BACK of the fabric. Flip the pressing cloth to a clean spot every few seconds — the dye transfers onto whichever cloth is touching it. 2–3 passes usually clears fresh lipstick. Cotton handles alcohol fine."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Soft Brush for the Oil",
+      "instruction": "Work a drop of Dawn dish soap into the spot with a soft toothbrush. Dawn breaks up the oil film the solvent pass left behind. Rinse cool."
+    },
+    {
+      "step": 5,
+      "agent": "Hydrogen Peroxide 3% for Residual Shadow (Whites Only)",
+      "instruction": "For a residual pink or red shadow on white cotton: dab 3% drugstore hydrogen peroxide on the spot, let it bubble 3–5 min, blot. Skip on dark or dyed cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fume risk."
+    },
+    {
+      "step": 6,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. Any residual lipstick sets permanently under dryer heat. If you still see color, repeat the alcohol + Dawn pass."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate to a Dry Cleaner",
+      "instruction": "If the lipstick has been hot-dried, or two full home rounds haven't cleared it, take it to a dry cleaner. Tell them: \"Lipstick on cotton, age [fresh / overnight / older], home-treated with rubbing alcohol + Dawn + 3% hydrogen peroxide. [Hot-washed / not yet laundered.]\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain. Wait 5 minutes.",
-      "2. Brush off the powder with a clean white cloth.",
-      "3. Put a drop of Dawn dish soap on the stain. Blot it in.",
-      "4. Let it sit for 2–3 minutes. Rinse with cold water.",
-      "5. Repeat if needed. Air dry — don't use a dryer until the stain is gone."
+      "1. Scrape waxy lipstick bulk off with a dull blade — don't rub.",
+      "2. Place a clean white towel UNDER the stain as a catch cloth.",
+      "3. Rubbing alcohol on a white cloth, tamp from the BACK. Flip cloth. 2–3 passes.",
+      "4. Dawn + soft toothbrush for residual oil.",
+      "5. 3% hydrogen peroxide on residual shadow (whites only).",
+      "6. Hot wash per care label. Inspect BEFORE the dryer.",
+      "7. Escalate if heat-set or two rounds failed."
     ],
     "products": [
-      "Dawn NSD",
-      "baking soda or cornstarch"
+      "70%+ rubbing alcohol (drugstore isopropyl)",
+      "Clean white cotton towels (catch + pressing)",
+      "Dawn dish soap",
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Try a dry cleaning solvent (Carbona Stain Devil #5 or Goo Gone). If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment.",
+    "whenToStop": "Stop if lipstick has been through a hot dryer, if two home rounds haven't cleared it, or if the cotton is dark dyed and peroxide isn't safe.",
     "warnings": [
-      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
-      "Never add water to an oil stain first — water and oil don't mix, and you'll spread it.",
-      "Putting the stained garment in the dryer transfers the stain to other clothes."
+      "Solvent before water — water alone spreads waxy pigment",
+      "Never pour alcohol on fabric — tamp with cloth, catch cloth underneath",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton",
+      "Inspect before the dryer"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Put the stained garment in the dryer — melts wax and permanently transfers stain",
-      "Add water first — doesn't dissolve wax or oil, and spreads the dye",
-      "Rub the stain — lipstick dye spreads aggressively"
+      "Never skip the catch cloth — sideways dye spread is the #1 home failure",
+      "Never pour solvent — tamp with a cloth",
+      "Never rub wet lipstick — smears the wax matrix into fresh fiber",
+      "Never run residual lipstick through a hot dryer"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates most agents including bleach on whites. For colored cotton, test peroxide first. High heat can set protein stains. OxiClean is safe on cotton."
+      "Cotton tolerates IPA, POG, NSD, 3% H₂O₂, and hot wash",
+      "Dyed cotton: alcohol is usually safe; test inside seam if concerned about fabric dye",
+      "Heat-durable fiber — hot wash is the finisher"
     ]
   },
+  "materialWarnings": [
+    "Solvent first, water after — water alone doesn't touch wax",
+    "Catch cloth UNDER + tamp on TOP — always",
+    "Inspect before the dryer — heat sets residual dye"
+  ],
   "escalation": {
-    "when": "Long-wear or matte liquid lipstick with film-forming polymers doesn't respond to standard solvent",
-    "whatToTell": "Lipstick stain on cotton, oil/wax/dye combination. Treated at home with NSD. Please use dry-side solvent protocol with POG or amyl acetate.",
-    "specialistType": "dry cleaner or wet cleaner"
+    "when": "Lipstick heat-set by iron or hot dryer, two home rounds failed, or dark dyed cotton where peroxide isn't safe and alcohol alone plateaus.",
+    "whatToTell": "\"Lipstick on cotton, age [fresh / overnight / older], home-treated with rubbing alcohol + Dawn + 3% H₂O₂. [Hot-washed / not yet laundered.]\"",
+    "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is this regular lipstick, long-wear/matte lipstick, or lip gloss?",
-      "Is the stain fresh or has it been set by heat?",
-      "Has the garment been through the dryer?",
-      "Is the cotton white or colored?"
+      "How old is the stain?",
+      "Has it been through a hot wash or dryer?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Long-wear / matte lipstick or traditional cream? (matte/long-wear has more polymer, needs more solvent passes)"
     ],
-    "modifierNotes": "Long-wear and matte liquid lipsticks contain additional film-forming polymers that may require a glycerin pre-treatment. Lip gloss is primarily oil and wax without as much dye. Dryer exposure melts wax into the fiber and makes removal very difficult. On colored cotton, test H₂O₂ on a hidden seam first."
+    "modifierNotes": "Most home attempts stall on lipstick because they start with soap + water. The wax-and-oil carrier beads off water; solvent is the unlock. Catch cloth under + pressing cloth on top is the second non-negotiable — without it, the dissolved dye smears sideways."
   },
-  "difficulty": 8,
-  "timeEstimate": "15–25 min",
-  "lastValidated": "2026-03-23",
-  "homeSolutions": [
-    {
-      "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
-      "agent": "cool water"
-    },
-    {
-      "step": 2,
-      "instruction": "Place fabric stain-side down on glass work surface. Lipstick is a makeup stain (oil-based + pigment).",
-      "agent": "spoon"
-    },
-    {
-      "step": 3,
-      "instruction": "Apply dry-cleaning solvent (lighter fluid) to the stain. Rub gently with the back of a spoon from center outward.",
-      "agent": "dry-cleaning solvent",
-      "safetyNote": "Ensure good ventilation when using dry-cleaning solvent."
-    },
-    {
-      "step": 4,
-      "instruction": "Apply petroleum jelly to the stain and continue rubbing with spoon to dissolve the makeup oils and pigment.",
-      "agent": "petroleum jelly"
-    },
-    {
-      "step": 5,
-      "instruction": "Rinse thoroughly with dry-cleaning solvent to remove all lipstick residue.",
-      "agent": "dry-cleaning solvent"
-    },
-    {
-      "step": 6,
-      "instruction": "Wipe any remaining rings outward from center with a white cloth moistened with dry-cleaning solvent.",
-      "agent": "dry-cleaning solvent"
-    },
-    {
-      "step": 7,
-      "instruction": "Allow fabric to air dry completely. If lipstick stain persists or if fabric is delicate, call a professional cleaner.",
-      "agent": "escalation"
-    }
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,81 +1,175 @@
 {
   "id": "deodorant-cotton",
   "title": "Deodorant on Cotton",
-  "stainFamily": "combo",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Combination (aluminum salts + oil + wax). Deodorant bonds to cotton (cellulose) through aluminum compounds that react with sweat proteins; wax base bonds to fiber. Treatment strategy: multi-phase approach addressing each component separately — dry-side for wax/oil first, then wet-side for the mineral/protein complex.",
-  "whyThisWorks": "Deodorant is a combination stain — aluminum salts + oil + wax — each bonding differently. The wax and oil must be removed with a dry-side solvent before the water-based treatment can reach the aluminum-protein complex underneath.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "10–30 minutes for fresh white marks; chronic yellowing needs the sweat-stain protocol",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "deodorant",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "combination",
+      "aluminum-salts",
+      "wax",
+      "cotton",
+      "fresh-white-marks"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Two different deodorant stains live under the same word: (1) FRESH white marks — the waxy/oily base plus aluminum salts that rub off onto cotton as you pull a shirt over antiperspirant-dry skin. Typically goes away with one pass. (2) CHRONIC yellowing — aluminum-protein complex that builds up over many wash cycles when sweat and antiperspirant react in the fiber over time. That's a separate problem (see sweat-stain-cotton). This card is the fresh-white-mark path. Cotton tolerates IPA, NSD, hot wash.",
+  "whyThisWorks": "Fresh deodorant is a wax + oil + aluminum-salt mix. IPA or POG dissolves the wax-oil carrier. NSD emulsifies residual antiperspirant. Rinse cool. Hot wash finishes. The key ordering is solvent BEFORE water — water alone beads off the wax and leaves the stain behind.",
+  "defaultAssumption": "Most 'deodorant on cotton' calls are the fresh white-mark variant — dressing after antiperspirant, deodorant transferred onto the shirt. Chronic yellow armpit stains are a different chemistry (sweat-stain-cotton). Read the complaint: white smudges = this card; yellow set-in = sweat-stain-cotton.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Dry Rub-Off",
+      "technique": "Rub the marks with the fabric itself",
+      "equipment": "Clean section of the same garment, or a pair of nylon stockings",
+      "dwellTime": "30 seconds",
+      "instruction": "Fresh white deodorant marks often rub off without any chemistry. Rub the mark gently with a clean section of the same fabric (fabric-on-fabric friction lifts the wax), or use a balled-up pair of nylon stockings. This alone clears most fresh transfers and saves the chemistry for cases that need it."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "IPA or POG on a White Cloth",
+      "technique": "Solvent tamp",
+      "equipment": "Isopropyl alcohol 90%+ OR POG on clean white cloth",
+      "dwellTime": "30–60 seconds",
+      "instruction": "If the mark persists: tamp with IPA or POG on a white cloth. Solvent dissolves the wax + oil base. Flip cloth frequently. Never pour — tamp only. Cotton tolerates both solvents at room temp."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify residual",
+      "equipment": "NSD in cool water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Apply NSD, work with a soft brush. NSD emulsifies the residual aluminum-salt film the solvent freed from the fiber. Flush cool from the back."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Rinse + Hot Wash",
+      "technique": "Clear chemistry, launder",
+      "equipment": "Running cool water, washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Rinse cool until water runs clear. Launder hot per care label. Fresh deodorant clears fully in one cycle; if yellow shadow appears over time, the stain has transitioned to chronic sweat-stain chemistry — see the sweat-stain-cotton protocol."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG to address the oil/wax component. Tamp gently. Flush with VDS. This must be done BEFORE any wet-side treatment.",
-      "2. After oil removed, apply Tannin or Protein based on dominant stain component — Protein for body-soil/antiperspirant buildup, Tannin if oxidized yellowing is present. Tamp and flush. Follow with H₂O₂ 6% if discoloration remains.",
-      "3. Flush thoroughly with NSD on spotting board. Apply leveling agent to feathered edges. Extract with wet vac. Neutralize pH if acid or alkali was used."
+      "1. Dry rub with fabric-on-fabric or stockings. Many fresh marks clear here alone.",
+      "2. IPA or POG on a white cloth. Tamp, not pour.",
+      "3. NSD. Emulsify residual aluminum salts. Cool flush.",
+      "4. Cool rinse + hot wash per care label.",
+      "5. Chronic yellowing → escalate to sweat-stain-cotton protocol (different chemistry)."
     ],
     "products": [
+      "Isopropyl alcohol 90%+",
       "POG (Paint-Oil-Grease remover)",
-      "Protein",
-      "Tannin",
-      "H₂O₂ 6%",
       "NSD (Neutral Synthetic Detergent)"
     ],
-    "temperature": "ambient — NEVER use hot water on deodorant stains; heat sets the aluminum-protein complex",
+    "temperature": "cool through spotting; hot wash post-chemistry",
     "warnings": [
-      "Rubbing instead of blotting — rubbing pushes the stain deeper into cotton fibers",
-      "Applying heat before stain is fully removed — heat sets the aluminum-protein complex permanently"
+      "Solvent before water — water alone beads off the wax base",
+      "Fresh white marks vs chronic yellow are different stains — don't apply this protocol to chronic yellowing",
+      "Tamp solvent, never pour"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Try Fabric Rub First — Often Works",
+      "instruction": "Before chemistry: rub the white deodorant mark with a clean section of the same shirt. The friction of fabric-on-fabric lifts the wax without any product. An old pair of nylon stockings balled up works even better. This clears most fresh deodorant transfers in seconds and is the step most people skip."
+    },
+    {
+      "step": 2,
+      "agent": "Rubbing Alcohol on a White Cloth",
+      "instruction": "If the rub-off didn't clear it: dab 70%+ rubbing alcohol (drugstore isopropyl) on a clean white cloth, press onto the mark, flip cloth frequently. The alcohol dissolves the wax and oil in the deodorant. Cotton is fine with it."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Warm Water",
+      "instruction": "Work a drop of Dawn dish soap into the spot with a fingertip or soft toothbrush. Dawn lifts any aluminum-salt residue the alcohol freed. Rinse warm — warm is OK here (no protein is holding anything together yet)."
+    },
+    {
+      "step": 4,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. If a yellow shadow is emerging instead of a fresh white mark, that's chronic sweat-stain chemistry — see the sweat-stain-cotton protocol, which has different steps."
+    },
+    {
+      "step": 5,
+      "agent": "Prevent the Recurrence",
+      "instruction": "Fresh deodorant marks happen when you pull a shirt over antiperspirant that hasn't fully dried. Let antiperspirant dry 1–2 minutes before dressing and the white marks stop appearing. If white marks keep happening on the same shirts, switch to a non-staining clear antiperspirant formula."
+    },
+    {
+      "step": 6,
+      "agent": "Escalate If Yellowing Appears",
+      "instruction": "If the deodorant on this shirt has built up over many cycles and is now yellow instead of white, this protocol won't fully clear it. Run the sweat-stain-cotton protocol (vinegar soak + OxiClean + peroxide + sun) instead. If that plateaus, take it to a dry cleaner."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove any excess deodorant by blotting with a clean white cloth. Press firmly and lift straight up — never rub. Work from the outside edges toward the center.",
-      "2. Sprinkle baking soda or cornstarch generously over the stain. Let it sit for 10–15 minutes.",
-      "3. Brush off the powder. Apply a drop of Dawn dish soap directly to the stain and work it in gently with your fingertip.",
-      "4. Rinse thoroughly with cool water. Blot dry with a clean towel.",
-      "5. Air dry completely. Do NOT use heat until you are certain the stain is completely gone."
+      "1. Try fabric-on-fabric rub first — lifts most fresh deodorant without product.",
+      "2. Rubbing alcohol on a white cloth if the mark persists.",
+      "3. Dawn + warm water to clear residual.",
+      "4. Hot wash per care label. Inspect BEFORE the dryer.",
+      "5. Let antiperspirant dry 1–2 min before dressing to prevent recurrence.",
+      "6. Chronic yellowing → run sweat-stain-cotton protocol instead."
     ],
     "products": [
-      "Dawn NSD",
-      "baking soda or cornstarch",
-      "OxiClean MaxForce spray",
-      "H₂O₂ 3%"
+      "An old pair of nylon stockings (best) OR the same garment's fabric",
+      "70%+ rubbing alcohol (drugstore isopropyl)",
+      "Dawn dish soap"
     ],
-    "whenToStop": "If two home treatments haven't removed the deodorant, a professional cleaner with commercial-grade chemistry can often finish the job.",
+    "whenToStop": "Stop this protocol and switch to sweat-stain-cotton if the mark is yellow instead of white. Escalate to a dry cleaner if both protocols plateau.",
     "warnings": [
-      "NEVER use hot water on deodorant stains — heat sets aluminum-protein complex.",
-      "Test any cleaning solution on a hidden area first.",
-      "Avoid heat until the stain is completely gone."
+      "Solvent before water — water alone doesn't lift the wax",
+      "Fresh white marks and chronic yellowing need different protocols",
+      "Never mix alcohol with chlorine bleach or ammonia"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Apply hot water or heat — sets the aluminum-protein complex permanently",
-      "Rub instead of blot — pushes stain deeper into cotton fibers"
+      "Never assume yellow armpit stains are the same as fresh white deodorant marks — different chemistry",
+      "Never pour alcohol on fabric — tamp with a cloth",
+      "Never use chlorine bleach on white deodorant marks — dulls cotton over time with no benefit here"
     ],
     "fiberSensitivities": [
-      "Cotton is chemically durable. Standard spotting chemistry is safe. Always test on hidden area for colorfastness on dyed goods."
+      "Cotton tolerates IPA, POG, NSD, hot wash",
+      "Dyed cotton: test alcohol on inside seam if concerned about dye stability",
+      "Heat-durable fiber — hot wash is the finisher"
     ]
   },
+  "materialWarnings": [
+    "Solvent before water — wax base beads off water",
+    "White marks vs yellow stains = different protocols",
+    "Let antiperspirant dry before dressing to prevent"
+  ],
   "escalation": {
-    "when": "Two professional-grade treatments haven't resolved the stain, or stain has permanently bonded",
-    "whatToTell": "Deodorant stain on cotton, combination of aluminum salts and wax/oil. Age unknown. Treated at home with NSD. Please use sequential dry-side then wet-side protocol.",
-    "specialistType": "wet cleaner"
+    "when": "The mark is yellow rather than white (chronic sweat-stain chemistry), or the fresh-mark protocol plateaus on a shirt that's been worn through many cycles.",
+    "whatToTell": "\"Deodorant on cotton — [fresh white marks / chronic yellowing]. Home-treated with fabric rub + rubbing alcohol + Dawn. [Mark cleared / yellow remains.]\"",
+    "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is this a fresh deodorant smear or a long-term buildup (pit stain)?",
-      "Is the fabric white or colored?",
-      "What type of deodorant — solid stick, gel, spray, antiperspirant?",
-      "Has the garment been through the dryer with the stain still present?"
+      "Is the mark white (fresh transfer) or yellow (chronic build-up)?",
+      "Was the antiperspirant applied just before dressing?",
+      "Has this shirt yellowed across many wash cycles?",
+      "Aluminum-based antiperspirant or aluminum-free deodorant?"
     ],
-    "modifierNotes": "Long-term pit stain buildup is much harder to remove than fresh deodorant smears. Antiperspirant (with aluminum) creates the yellowing reaction with sweat proteins. Dryer exposure sets the stain significantly. Gels and sprays penetrate differently than solid sticks."
+    "modifierNotes": "Fresh white marks on a shirt worn once = this protocol. Yellow armpit stains across many wash cycles = run sweat-stain-cotton, which addresses the aluminum-protein complex properly."
   },
-  "difficulty": 4,
-  "timeEstimate": "20–35 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

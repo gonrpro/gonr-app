@@ -1,11 +1,15 @@
 {
   "id": "coffee-black-cotton",
-  "version": "5.0",
-  "authored": "2026-03-22",
   "title": "Black Coffee on Cotton",
   "stainType": "tannin",
-  "surface": "cotton-white",
+  "stainFamily": "tannin",
+  "surface": "cotton",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 2,
+  "timeEstimate": "5–20 minutes (fresh)",
+  "lastValidated": "2026-04-24",
   "meta": {
     "stainCanonical": "coffee-black",
     "surfaceCanonical": "cotton",
@@ -13,136 +17,185 @@
     "riskLevel": "low",
     "tags": [
       "tannin",
-      "no-protein",
-      "acid-spotter",
-      "oxidizer-safe"
+      "cotton",
+      "time-sensitive"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Black coffee is primarily tannins (no cream protein). Tannins bond to cotton's cellulose through hydrogen attraction. White cotton's chemical tolerance allows aggressive acid and oxidizing treatment. Fresh coffee is easier to remove than brown/aged (oxidized) coffee. Acidic chemistry breaks tannin-cellulose bonds directly—this is the key advantage vs protein stains.",
-  "whyThisWorks": "Acetic acid breaks tannin hydrogen bonds to cotton. H₂O₂ or bleach oxidizes tannin pigment. Sequential chemistry (acid then oxidizer) removes both the stain and its color efficiently.",
+  "stainChemistry": "Black coffee (no cream, no sugar) is a single-component tannin stain — chlorogenic acid and phenolic polyphenols dissolved in water. No protein, no oil to complicate the sequence. Anthocyanin-like bonds form through hydrogen bonding between the coffee polyphenols and cotton cellulose. Fresh black coffee rinses out easily; aged coffee oxidizes slowly into a browner, more resistant form. Cotton is pure cellulose — tolerates acid-side tannin spotters, 3% H₂O₂, and hot post-chemistry wash.",
+  "whyThisWorks": "Without milk protein in the way, black coffee is a straightforward tannin job: cold flush to move what's loose, NSD to emulsify bound pigment, acid-side tannin spotter to disrupt the hydrogen bond, 3% H₂O₂ to oxidize the chromophore, hot wash to finish. Simpler than coffee-with-cream because there's no casein layer that has to be digested first.",
+  "defaultAssumption": "Black coffee on cotton is the easiest coffee variant. Fresh clears in minutes; aged (overnight+) adds a peroxide or tannin-spotter cycle but rarely escalates beyond home treatment unless heat-set.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "wet",
-      "agent": "Cold water (initial flush)",
-      "technique": "Blot from back",
-      "equipment": "White cloth, spray bottle",
-      "dwellTime": "1-2 minutes",
-      "instruction": "Cold water from back, blot hard. This removes excess coffee and mobilizes tannins before they oxidize deeper. Most fresh stain will flush out with immediate cold water blotting. Flip to front and continue. Water should turn brown/tan."
+      "agent": "Cold Flush",
+      "technique": "Flush from the back",
+      "equipment": "Cold running water, white cotton terry towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Cold flush from the BACK of the fabric. Blot from underneath. On fresh black coffee (<15 min), 80%+ of the stain lifts here. Cold only — hot water on aged coffee sets the tannin brown."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Acetic Acid 28% (diluted)",
-      "technique": "Direct application or soak",
-      "equipment": "Dropper or basin, white cloth",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Apply 28% Acetic Acid (diluted) directly to remaining brown stain. Full strength is safe on white cotton. Acidity breaks tannin-cellulose bonds. Watch the stain lighten. After 2-3 minutes, blot thoroughly. The acidic chemistry is what makes coffee tannins soluble."
+      "agent": "NSD",
+      "technique": "Sponge, dwell, blot",
+      "equipment": "NSD in cold water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Apply NSD to the stain, sponge gently. NSD suspends residual pigment so the next steps act on what's bound to the fiber. Blot with a clean towel. Should see noticeable lightening."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "H₂O₂ (3-6%)",
-      "technique": "Direct application, watch oxidation",
-      "equipment": "Spray or dropper, white cloth",
-      "dwellTime": "Brief — apply, check, blot",
-      "instruction": "If brown color remains, apply H₂O₂. This oxidizes tannin pigment to colorless products. Full strength safe on white cotton. Chemical smell sharp—oxidation happening. After 3-5 minutes, blot thoroughly."
+      "agent": "Hot-Water Pour-Through (Fresh Only)",
+      "technique": "Pour from the back",
+      "equipment": "Kettle of hot — not boiling — water",
+      "dwellTime": "1–2 pours",
+      "instruction": "Only for stains under 30 minutes old. Stretch the fabric taut over a bowl, pour hot water through from the back. Heat breaks hydrogen bonds on fresh tannin. Skip on aged — heat sets older tannin permanently."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "NSD flush",
-      "technique": "Flush and blot",
-      "equipment": "Basin",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot — do not rub. All oxidizer and enzyme residue must be fully removed before drying."
+      "agent": "Tannin Spotter",
+      "technique": "Drop, dwell, blot",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "2–5 minutes",
+      "instruction": "If any brown shadow remains, apply acid-side tannin spotter by dropper. Disrupts the polyphenol-cellulose hydrogen bond. Dwell 2–5 min, blot. Repeat once if shadow persists."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Rinse water",
-      "technique": "Flush and wash",
-      "equipment": "Running water or machine",
-      "dwellTime": "Until rinse water runs clear",
-      "instruction": "Rinse thoroughly to remove all acid, peroxide, and H₂O₂ for white/light fabrics only. Then wash in warm or hot water with regular detergent. All chemistry must be rinsed away."
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For residual chromophore: 3% H₂O₂ drop-by-drop. Oxidizes the conjugated polyphenol to colorless. Dwell 3–5 min, blot. Repeat once if needed. One oxidizer at a time, NSD-flushed between."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "NSD Flush + Hot Wash",
+      "technique": "Clear chemistry, launder",
+      "equipment": "NSD, washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Flush with NSD until rinse runs clear. Launder hot per care label."
     }
   ],
-  "homeSolutions": [
-    "FRESH: Cold water flush from back. Blot hard. Most comes out immediately.",
-    "REMAINING: white vinegar, 2-3 minutes, blot. Then hydrogen peroxide 3% from the pharmacy, 3-5 minutes, blot.",
-    "BROWN: OxiClean soak (30-60 min) or dilute chlorine bleach (1 part bleach to 10 parts water, white only, 5-10 min)."
-  ],
-  "materialWarnings": [
-    "DO NOT use bleach on colored cotton",
-    "AVOID bleach on colored thread/trim"
-  ],
-  "escalation": "Black coffee on white cotton rarely needs professional care. Home treatment is fast and effective.",
-  "products": {
-    "household": [
-      {
-        "name": "White Vinegar",
-        "brand": "Standard",
-        "icon": "🍶",
-        "amazonSearchQuery": "white vinegar 5% acetic acid",
-        "affiliateTag": "gonr08-20",
-        "note": "Acidic spotter for tannin. Full strength safe on white cotton. DO NOT substitute industrial-strength (28%) acetic acid — it causes chemical burns."
-      },
-      {
-        "name": "H₂O₂ (3-6%)",
-        "brand": "Drugstore",
-        "icon": "🧴",
-        "amazonSearchQuery": "H₂O₂",
-        "affiliateTag": "gonr08-20",
-        "note": "Oxidizes tannin color. Full strength safe on white cotton."
-      },
-      {
-        "name": "OxiClean or Clorox Bleach",
-        "brand": "OxiClean or Clorox",
-        "icon": "🧡",
-        "amazonSearchQuery": "OxiClean powder or Clorox bleach",
-        "affiliateTag": "gonr08-20",
-        "note": "OxiClean safe on colored trim. Bleach (1:10 diluted) fast on white only."
-      }
+  "professionalProtocol": {
+    "steps": [
+      "1. Cold flush from the back — fresh black coffee mostly lifts here.",
+      "2. NSD in cold water. Sponge, dwell 2–3 min, blot.",
+      "3. FRESH ONLY (<30 min): hot pour-through. Skip on aged.",
+      "4. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A) — dropper, 2–5 min, blot.",
+      "5. 3% H₂O₂ on residual. 3–5 min. One pass, NSD-flush between repeats.",
+      "6. NSD flush, hot wash per care label."
     ],
-    "professional": [
-      {
-        "name": "StreeTAN",
-        "brand": "Chemspec",
-        "icon": "🧪",
-        "amazonSearchQuery": "StreeTAN tannin spotter",
-        "affiliateTag": "gonr08-20",
-        "note": "Professional acetic acid spotter. Rarely needed—home vinegar works well."
-      }
+    "products": [
+      "NSD (Neutral Synthetic Detergent)",
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
+      "Hydrogen Peroxide 3%"
+    ],
+    "temperature": "cold through spotting; hot wash post-chemistry",
+    "warnings": [
+      "Never use hot water on aged black coffee — sets tannin permanently",
+      "One oxidizer at a time — NSD-flushed between",
+      "Flush all chemistry before heat — residual oxidizer yellows cotton"
     ]
   },
-  "customerExplanation": "Black coffee contains tannins that bond to cotton. Acid (vinegar) breaks the bonds. H₂O₂ oxidizes the brown color to colorless. White cotton's chemical robustness means we can use strong chemistry and heat safely.",
-  "commonMistakes": [
-    "Not using cold water first—initial flush removes most of the stain",
-    "Skipping acid—vinegar is essential for breaking tannin bonds",
-    "Not using peroxide—it's the final step that removes brown color completely"
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Move Fast, Cold Water",
+      "instruction": "Black coffee on cotton is easy to beat if you move fast. Cold water only — hot water sets the tannin. Most fresh spills lift with the next step alone."
+    },
+    {
+      "step": 2,
+      "agent": "Flush From the Back of the Fabric",
+      "instruction": "Hold the BACK of the stained area under cold running water for 30–60 seconds. The coffee pushes out the way it came in. Blot with a clean white towel from underneath — don't rub."
+    },
+    {
+      "step": 3,
+      "agent": "Hot-Water Pour-Through (Fresh Only)",
+      "instruction": "If the stain is under 30 minutes old: stretch the fabric taut over a bowl, place a clean towel underneath, pour hot (not boiling) water through from the back. You'll see the coffee fade dramatically. Skip this if the coffee's been sitting longer than 30 minutes — heat sets older tannin."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + White Vinegar for Stubborn Shadow",
+      "instruction": "If any brown shadow remains, mix 1 teaspoon Dawn dish soap, 1 tablespoon white vinegar, and 1 cup cold water. Dab onto the stain with a clean cloth, let sit 3 minutes, blot from outside toward center. Repeat once if color persists."
+    },
+    {
+      "step": 5,
+      "agent": "OxiClean or 3% Hydrogen Peroxide for Lingering Color",
+      "instruction": "For stubborn shadows: dissolve 1 scoop OxiClean in 1 cup cool water, soak the stain 15–30 minutes. OR dab 3% drugstore hydrogen peroxide on the spot and let it bubble 3–5 min, blot. Skip on dark or dyed cotton.",
+      "safetyNote": "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide at the same time — one oxidizer at a time."
+    },
+    {
+      "step": 6,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer — dryer heat sets any residual tannin permanently."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate on Heat-Set or Plateau",
+      "instruction": "If the coffee has already been through a hot dryer or two home rounds haven't cleared it, take it to a dry cleaner. Tell them: \"Black coffee on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar / OxiClean / 3% hydrogen peroxide.\""
+    }
   ],
-  "scienceNote": "Black coffee tannins are complex polyphenolic compounds. Fresh tannins are more soluble and lighter in color (tan/medium brown). As they oxidize (gain oxygen bridges), they darken (dark brown) and become less soluble. This is why fresh stains respond to acid alone, but aged stains need oxidizing chemistry. Bleach actually accelerates tannin oxidation to colorless products—this is why bleach works so well on aged coffee on white cotton.",
-  "callPro": "Black coffee on white cotton rarely needs professional care.",
-  "components": [
-    "acid-spotter",
-    "oxidizer",
-    "finisher"
+  "diyProtocol": {
+    "steps": [
+      "1. Move fast — cold water only while the stain is visible.",
+      "2. Flush cold from the BACK of the fabric, blot from underneath.",
+      "3. Fresh (<30 min) only: hot-water pour-through.",
+      "4. Dawn + vinegar + cold water solution, 3 min dwell, blot.",
+      "5. OxiClean soak OR 3% peroxide on residual shadow. Never layer oxidizers.",
+      "6. Hot wash per care label. Inspect BEFORE the dryer.",
+      "7. Escalate if heat-set or two rounds failed."
+    ],
+    "products": [
+      "Cold water",
+      "Dawn dish soap",
+      "White vinegar (household)",
+      "OxiClean or 3% hydrogen peroxide"
+    ],
+    "whenToStop": "Stop if black coffee has been through a hot dryer, if two home rounds don't clear it, or if the cotton is dark dyed where peroxide isn't safe.",
+    "warnings": [
+      "Hot water only for fresh — sets aged tannin",
+      "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide",
+      "Skip peroxide on dark/dyed cotton — test inside seam first",
+      "Inspect before the dryer"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never use hot water on aged black coffee — sets tannin brown",
+      "Never layer oxidizers — one at a time",
+      "Never dry with residual chemistry in the fiber",
+      "Never rub — blot"
+    ],
+    "fiberSensitivities": [
+      "Cotton tolerates NSD, acid-side tannin spotters, 3% H₂O₂, hot wash post-chemistry",
+      "Dyed cotton: inside-seam-test peroxide",
+      "Heat-safe fiber once chemistry is cleared"
+    ]
+  },
+  "materialWarnings": [
+    "Hot water only for fresh — sets aged tannin",
+    "One oxidizer at a time",
+    "Peroxide on whites; test inside seam on dark cotton"
   ],
-  "component_order": [
-    "acid-spotter",
-    "oxidizer",
-    "finisher"
-  ],
-  "difficulty": 2,
-  "difficulty_factors": [
-    "tannin-soluble",
-    "acid-effective",
-    "cotton-tolerant"
-  ],
-  "solventNote": "Professional: Cold water flush, then acetic acid spotter for fresh tannins. For aged brown stains, H₂O₂ (3-6%) or sodium percarbonate. For very old stains, chlorine bleach (0.5-1% on white, dilute in water) or reducing bleach (sodium hydrosulfite 0.5%, warm, 10-15 min) to reverse oxidation, then oxidize to colorless. Standard approach: acid → oxidize → oxidize again.",
-  "aftercare": "White cotton tolerates heat. Machine dryer or line dry—both fine. Heat doesn't re-set tannin stains on cotton.",
+  "escalation": {
+    "when": "Heat-set by dryer or iron, two home rounds failed, or dark dyed cotton where peroxide isn't safe.",
+    "whatToTell": "\"Black coffee on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar / OxiClean / 3% H₂O₂. [Washed hot / not yet laundered.]\"",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Has it been through a hot wash or dryer since?"
+    ],
+    "modifierNotes": "Black coffee is the simplest coffee variant — no protein, no oil. Fresh = trivial DIY. Heat-set or dyed cotton narrows options."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

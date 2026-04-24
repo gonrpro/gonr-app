@@ -1,130 +1,218 @@
 {
   "id": "red-wine-upholstery",
   "title": "Red Wine on Upholstery",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Red wine contains anthocyanins (red-purple pigments), condensed tannins, and tartaric acid. Anthocyanins bond to upholstery immediately through hydrogen bonding and color intensifies with pH changes — alkaline conditions turn wine stains blue-purple and more difficult to remove. The tannin component oxidizes and darkens over time, cross-linking with the fiber polymer.",
-  "whyThisWorks": "The acidic tannin spotter maintains correct pH (acidic) which keeps anthocyanins in their most removable red form on upholstery. The oxidizer then breaks the chromophore bonds in the anthocyanin molecule. Avoiding alkaline products is critical — ammonia, baking soda, and alkaline detergents permanently darken wine stains by shifting the anthocyanin into its blue form.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–60 minutes — extraction between every pass",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "red-wine",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "tannin",
+      "upholstery",
+      "pad-risk",
+      "time-critical",
+      "no-saturation"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Red wine on upholstery is the same tannin chemistry as on fabric — anthocyanin polyphenols bond to the fiber through hydrogen bonding. The extra complication on upholstery is construction: padding + batting underneath absorbs pooled liquid, and furniture is not removable-for-extraction the way a garment is. Upholstery codes (W / S / W-S / X) matter: W-code fabrics take water-based cleaning, S-code take solvent-only, W-S take either, X-code take only vacuuming. Check the tag before any liquid touches the fabric.",
+  "whyThisWorks": "Same principle as carpet: extraction beats chemistry. Damp cloth transfer, never pour. Cold blot flushes what water can carry. Acid-side tannin spotter disrupts the anthocyanin-fiber hydrogen bond in a localized way. 3% H₂O₂ oxidizes residual chromophore. Weighted dry towel between every wet pass pulls moisture UP toward the surface before it saturates the batting. Upholstery that gets flooded dries with visible water rings AND can wick tannin color back up as it dries.",
+  "defaultAssumption": "Check the upholstery code tag first (typically under a cushion or on a loose cushion tag). W or W-S: proceed with water-based. S-only: solvent treatment only (not a DIY job). X-code: vacuum only; any liquid will ring or stain the fabric. Assume W or W-S unless the tag says otherwise or there's no tag.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Check Code Tag + Blot",
+      "technique": "Identify code, blot, don't rub",
+      "equipment": "Clean white cotton towel, firm pressure",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Find and read the upholstery code tag first. W or W-S: water-based chemistry OK. S-only: stop and use a dry-cleaning solvent instead. X-code: vacuum only — don't attempt liquid removal. Then press a folded white towel straight down on the stain with firm pressure, lift, move to a dry section, press again. Work outside-in. Never rub."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water + NSD",
+      "technique": "Damp cloth transfer + extract",
+      "equipment": "NSD in cold water, damp cloth, weighted dry towel",
+      "dwellTime": "1 min per pass",
+      "instruction": "Apply cold NSD via a DAMP cloth — press onto the stain, lift, rotate cloth. Never pour liquid on upholstery. Immediately press a dry folded towel on top, weighted with a book or heavy pan, for 5 minutes to pull moisture back UP before it reaches the batting. Repeat 2–4 cycles."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Tannin Spotter",
+      "technique": "Dropper only, localized",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Apply acid-side tannin spotter by dropper directly to the stain. Never pour. Dwell 5–10 min. Blot with dry towel. Test a hidden patch first on any dyed or patterned upholstery — acid can lift some dyes."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Dropper, watch, extract",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "5–15 minutes, check every 5 min",
+      "instruction": "3% H₂O₂ drop-by-drop on residual color. Check every 5 minutes for color break. Blot with dry towel immediately when color lifts. One oxidizer at a time; NSD-damp flush before any second pass."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "NSD Flush + Weighted Extract",
+      "technique": "Clear chemistry, weighted extraction",
+      "equipment": "NSD damp cloth, heavy dry towel, book or pan weight",
+      "dwellTime": "2 min + 30 min weighted",
+      "instruction": "NSD-damp cloth to clear spotter and oxidizer residue. Then a folded DRY towel on the spot with heavy weight for 30 minutes. This step pulls moisture up from the batting before the upholstery dries — skip it and you'll get a water ring as the fabric dries uneven."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Fan-Dry + Inspect",
+      "technique": "Air-dry, no heat",
+      "equipment": "Fan",
+      "dwellTime": "4–8 hours",
+      "instruction": "Fan the spot. Air-dry fully before sitting on it again. Inspect the next day for wicking — if a faint ring returns, the batting is saturated and a professional extraction is needed."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Read upholstery code tag. W/W-S: proceed. S-only: dry solvent. X: vacuum only.",
+      "2. Blot press + extract. Never rub.",
+      "3. Cold NSD via damp cloth + weighted dry towel between every pass.",
+      "4. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A) by dropper. 5–10 min.",
+      "5. 3% H₂O₂ drop-by-drop on residual. 5–15 min, check every 5.",
+      "6. NSD-damp flush + 30 min weighted dry towel to pull moisture up from batting.",
+      "7. Fan-dry. Inspect next day for wicking."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
       "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
+      "Hydrogen Peroxide 3%",
+      "Absorbent white towels + weight for extraction"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout — hot water accelerates tannin browning + can set",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color",
-      "Avoid over-wetting — extract excess moisture to prevent backing damage"
+      "Never pour or pool liquid on upholstery — batting saturation = water ring",
+      "Never use hot water — sets tannin brown",
+      "Read code tag first — S-only and X-code upholstery can't take water-based treatment",
+      "Never skip weighted extraction between wet passes",
+      "One oxidizer at a time, NSD-flushed between"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Check the care code FIRST",
-      "instruction": "Upholstery is different from carpet: the wrong cleaner can stain worse than the spill. Find the manufacturer's tag (usually sewn into a seam under a cushion). Look for a single letter: W = water-safe, S = solvent only (dry cleaning), WS = both okay, X = vacuum only (professional treatment). If it's S or X, stop here and call a pro. If it's W or WS, continue. No tag? Treat as S (solvent only) — safer."
+      "agent": "Find the Upholstery Code Tag First",
+      "instruction": "Before anything else, find the care tag — usually under a cushion or on a loose label. It'll say W (water-based OK), W-S (either), S (solvent only, not for home), or X (vacuum only, no liquid). W or W-S: proceed. S or X: stop and call a professional. Flooding an S- or X-code fabric with water will ring the fabric permanently, which is a worse outcome than the wine."
     },
     {
       "step": 2,
-      "agent": "Patch test on a hidden section",
-      "instruction": "Flip the cushion over, or find the back of the frame, and dab a drop of the Dawn + 3% peroxide solution from step 5. Blot with a white cloth after two minutes. If the fabric holds its color, you're safe. If dye transfers or the color changes, stop here — upholstery dye is usually far more delicate than carpet dye and home chemistry can lighten it. Skip to step 9."
+      "agent": "No Alkaline Cleaners on Red Wine",
+      "instruction": "Red wine is a tannin. Alkaline products — ammonia, baking soda, OxiClean, most \"upholstery cleaner\" sprays — LOCK the tannin into the fabric as a permanent brown stain. Use ONLY: cold water, Dawn dish soap, and 3% hydrogen peroxide. Salt and club soda don't help much either — what actually works is blot-extract and the Dawn/peroxide chemistry."
     },
     {
       "step": 3,
-      "agent": "The tannin rule: no alkaline cleaners",
-      "instruction": "Red wine is a tannin stain. Alkaline products — ammonia, baking soda, OxiClean, most \"all-purpose\" upholstery sprays — permanently lock and darken tannin on upholstery fiber. Use only: cold water, Dawn dish soap, 3% hydrogen peroxide, and white vinegar. Forget the salt trick — it doesn't help and can leave crystals in the fiber."
+      "agent": "Blot Straight Down, Never Rub",
+      "instruction": "Press a thick stack of white paper towels or a folded white cloth straight down on the spill. Lift, move to a dry section, press again. Work outside the stain toward the center. Never rub — rubbing drives wine into the batting underneath, where you can't reach it from the surface."
     },
     {
       "step": 4,
-      "agent": "Blot with pressure — never rub, never saturate",
-      "instruction": "Press a stack of clean white paper towels or a white cloth straight down on the spill. Work from the outside of the stain toward the center. Keep going — use fresh sections each time — until the cloth stops picking up red. Upholstery is trickier than carpet because the cushion foam absorbs liquid FAST and hides it from you. More blotting, less rubbing, is always the right answer."
+      "agent": "Cold Water, Small Amounts — Damp Cloth Only",
+      "instruction": "Dampen a white cloth with cold water (wrung nearly dry). Press it on the spot, lift, rotate. Repeat. DO NOT pour water on upholstery — it goes straight through to the batting and rings the fabric permanently as it dries."
     },
     {
       "step": 5,
-      "agent": "Damp-cloth chemistry — never pour on upholstery",
-      "instruction": "Mix one tablespoon of Dawn with one cup of 3% hydrogen peroxide in a bowl. Dip a white cloth, WRING NEARLY DRY, and press onto the stain — work from outside edges in. This is the #1 difference from carpet: you never pour liquid on upholstery. Wet the cloth, not the cushion. Let it sit 5–10 minutes, then blot with a clean damp cloth. Most fresh wine lifts in 2–3 cycles.",
-      "safetyNote": "Never mix peroxide with ammonia or bleach — dangerous gases. On dark/patterned upholstery, the patch test is your only safety net."
+      "agent": "Dawn + 3% Hydrogen Peroxide — Dabbed, Not Poured",
+      "instruction": "Mix 1 tablespoon clear Dawn dish soap with 1 cup 3% hydrogen peroxide. Dip a white cloth, wring nearly dry, dab the stain — edges toward center. Let sit 5 minutes, blot with a clean damp cloth. Peroxide oxidizes the wine pigment; Dawn lifts it. Repeat 2–3 cycles.",
+      "safetyNote": "Never mix hydrogen peroxide with ammonia or chlorine bleach. Skip this step entirely on dark, patterned, or delicate upholstery — test a hidden patch first."
     },
     {
       "step": 6,
-      "agent": "White vinegar rinse",
-      "instruction": "Mix one tablespoon of white vinegar into one cup of cold water. Dip a white cloth, wring nearly dry, and dab the area. Vinegar neutralizes peroxide residue and keeps remaining tannin in its lighter (red) form as it dries. Blot dry with a fresh clean cloth."
+      "agent": "Weighted Dry Towel Between Every Wet Pass",
+      "instruction": "After each wet dab pass, press a thick DRY towel on the spot and weight it with a heavy book or pan for 20–30 minutes. This pulls moisture UP out of the batting before it can dry into a water ring. This step is the difference between upholstery that dries clean and upholstery that dries with a visible halo."
     },
     {
       "step": 7,
-      "agent": "Dry with a fan — never a dryer or hair dryer",
-      "instruction": "Blot until no more moisture transfers to a dry cloth. Then: point a fan at the treated area for 4–8 hours. Good airflow drying prevents mildew inside the cushion and stops water rings from forming at the edge of the damp zone. Don't use a hair dryer (heat sets tannin) and don't sit on the cushion until fully dry."
+      "agent": "Fan-Dry, Don't Sit On It",
+      "instruction": "Point a fan at the spot. Don't sit on the furniture until it's bone-dry — several hours. Inspect the next day in daylight. If a faint pink ring returns, call a professional upholstery cleaner. Home chemistry has plateaued at that point."
     },
     {
       "step": 8,
-      "agent": "Daylight inspect — repeat once if needed",
-      "instruction": "Once fully dry, inspect in natural light. Wine often looks gone when damp and returns as a pink ring when dry. If you see one, repeat steps 5–7 a second time. Two rounds is the home ceiling on upholstery. If a brown halo has appeared (rather than pink), the tannin has polymerized — escalate."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a professional upholstery cleaner",
-      "instruction": "If the care code is S or X, the patch test failed, or the stain survived two home rounds, call a pro. Tell them: \"Red wine on [W/WS/unknown] upholstery, treated with Dawn + 3% peroxide, vinegar rinse. No alkaline products used, no pouring — damp-cloth only.\" They have low-moisture hot-water extraction and commercial tannin formulas that don't over-saturate the foam."
+      "agent": "Escalate for S-Code, Wicking, or Plateau",
+      "instruction": "Call a pro if: the upholstery code is S or X, the ring wicked back as it dried (batting saturated), the test patch showed dye bleed, or two full home rounds didn't clear it. Tell them: \"Red wine on [W / W-S / code unknown] upholstery, age [fresh / overnight / older], home-treated with Dawn + 3% hydrogen peroxide + weighted dry towel. [Ring wicked back / plateau / no tag / dye bled].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Find the upholstery code tag. W or W-S: proceed. S or X: stop, call a pro.",
+      "2. NO alkaline cleaners (ammonia, OxiClean, baking soda) on red wine — locks tannin brown.",
+      "3. Blot straight down from outside to center. Never rub.",
+      "4. Cold water with a DAMP cloth — never pour.",
+      "5. Dawn + 3% peroxide solution, dab with damp cloth, 5 min, 2–3 cycles. Patch-test first.",
+      "6. Weighted dry towel 20–30 min between every wet pass.",
+      "7. Fan-dry. Inspect next day for wicking.",
+      "8. Escalate for S-code, wicking, or plateau."
     ],
     "products": [
+      "Clean white towels or thick paper towel stack",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% hydrogen peroxide (drugstore brown bottle)",
+      "A heavy book or pan for weighted drying"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if upholstery code is S or X, if the stain wicks back as it dries, if patch test shows dye bleed, or if two home rounds don't clear it. Call a professional upholstery cleaner.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NEVER pour or pool liquid on upholstery — saturates batting, rings fabric",
+      "NEVER use alkaline cleaners on tannin — locks as permanent brown",
+      "NEVER skip weighted extraction between wet passes",
+      "NEVER mix peroxide with ammonia or chlorine bleach",
+      "S-code and X-code upholstery are NOT DIY — call a pro"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never pour or pool liquid on upholstery — batting saturates",
+      "Never use alkaline cleaners on red wine tannin — permanent brown",
+      "Never ignore the upholstery code tag — S-code damages under water",
+      "Never skip extraction between wet passes",
+      "Never layer oxidizers — one at a time",
+      "Never sit on wet upholstery — drives moisture deeper into batting"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S code upholstery tolerates water-based chemistry at room temperature",
+      "S-code: solvent only — water causes permanent rings",
+      "X-code: vacuum only — no liquid permitted",
+      "Delicate / silk / velvet upholstery: escalate even on W-code"
     ]
   },
+  "materialWarnings": [
+    "Read the upholstery code before any liquid",
+    "Never pool — damp cloth transfer only",
+    "NO alkaline cleaners on tannin"
+  ],
   "escalation": {
-    "when": "If red wine stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is red wine on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "Upholstery code is S or X, stain wicks back after drying, patch test shows dye bleed, upholstery is silk/velvet/delicate, or two home rounds haven't cleared it.",
+    "whatToTell": "\"Red wine on [W / W-S / code unknown] upholstery, age [fresh / overnight / older], home-treated with Dawn + 3% H₂O₂ + weighted dry towel. [Ring wicked back / plateau / no tag / dye bled.]\"",
+    "specialistType": "professional upholstery cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "What does the upholstery code tag say — W, W-S, S, or X?",
+      "How long ago did the spill happen?",
+      "Has anything alkaline (OxiClean, ammonia) been applied already?",
+      "Is the upholstery delicate fabric (silk, velvet) or durable (synthetic, cotton blend)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "S-code or X-code = pro-lane by default. Alkaline already applied = permanent brown, replacement-only. W-code + fresh + no alkaline = good DIY odds. Silk / velvet upholstery = escalate regardless of code."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

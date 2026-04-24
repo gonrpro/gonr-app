@@ -1,141 +1,202 @@
 {
   "id": "sweat-stain-cotton",
-  "version": "5.0",
-  "authored": "2026-03-22",
-  "title": "Sweat-Stain on Cotton",
-  "stainType": "protein-salts",
-  "surface": "cotton white",
+  "title": "Sweat Stain on Cotton",
+  "stainType": "protein",
+  "stainFamily": "protein",
+  "surface": "cotton",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "20 minutes to overnight soak",
+  "lastValidated": "2026-04-24",
   "meta": {
     "stainCanonical": "sweat-stain",
     "surfaceCanonical": "cotton",
     "tier": "universal",
     "riskLevel": "low",
     "tags": [
-      "protein-salts",
-      "cotton white",
-      "dry-clean-laundry"
+      "protein",
+      "yellowing",
+      "antiperspirant",
+      "cotton",
+      "chronic"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Sweat stains have multiple components: urea and salts (from sweat), body proteins (from shed skin cells and sweat proteins), and body oil. Fresh sweat stains are usually just salt residue—nearly invisible on white cotton but visible on armpits as discoloration. Over time, body oil oxidizes (especially in armpits where fabric warmth and humidity accelerate oxidation), creating yellow or brown discoloration. On white cotton, old sweat stains often appear as yellow or brown stains in the armpit area. The chemistry is similar to collar grime but localized and often with stronger oxidative yellowing (from oil oxidation in the warm armpit environment).",
-  "whyThisWorks": "Fresh sweat stains (salt-based) are removed by simple water rinse. Old sweat stains are an oxidizable stain (yellow/brown from oxidized body oils) and require enzyme pre-treatment (to break down proteins and oil) + oxidative bleaching with oxygen bleach or hydrogen peroxide (H₂O₂ / peroxide) to fade the oxidizable yellow/brown discoloration. For white cotton, which tolerates heat and bleach, hot wash + OxiClean (oxygen bleach) or peroxide is effective. The key is enzyme for the protein-oil component, and peroxide oxidation for the oxidizable yellowing.",
+  "stainChemistry": "What people call a 'sweat stain' is usually NOT sweat alone — it's the brown-yellow armpit crust that forms when sweat proteins (albumin, urea) react with aluminum salts from antiperspirant over many wash cycles. Pure sweat on cotton is nearly invisible; aluminum-protein complexes build up in the fiber over weeks and yellow progressively with heat. Cotton tolerates enzymes, oxygen bleach, and hot wash, but the fix has to BOTH digest the protein AND dissolve or chelate the aluminum complex — enzyme alone leaves the yellowing; oxidizer alone leaves the protein; the combination clears both.",
+  "whyThisWorks": "Enzyme pretreat digests the albumin-urea protein matrix. Acidic (vinegar) soak or a dedicated chelator loosens the aluminum salts from the fiber. Oxygen-side bleach (OxiClean or 3% H₂O₂ for whites) oxidizes the yellow chromophore. Hot wash finishes. The reason most home attempts plateau is they use bleach alone — which sets the protein crosslinks and can actually DARKEN a sweat stain. Enzyme first, chelator/acid second, oxidizer third.",
+  "defaultAssumption": "Assume the stain is chronic — built up over multiple wash cycles rather than a single event. A single-wash sweat stain is rare; the typical home complaint is 'my white t-shirts have yellow armpits.' Chronic stains take longer than acute ones — expect overnight enzyme soak + peroxide pass + hot wash for a full result.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "wet",
-      "agent": "Cool or warm water",
-      "technique": "Rinse",
-      "equipment": "Water",
+      "agent": "Cold Flush",
+      "technique": "Rinse sweat + antiperspirant off",
+      "equipment": "Cold water",
       "dwellTime": "1 minute",
-      "instruction": "Rinse the sweat-stained area under cool to warm running water. This removes salt and some surface sweat. Fresh sweat stains may be completely gone after rinsing.",
-      "suggestedProducts": "Water"
+      "instruction": "Cold flush the armpit area from both sides. The flush removes loose antiperspirant residue and any surface sweat. Cold only — warm water at this stage sets protein deeper."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Soft brush + the enzyme pre-treater still on the fabric",
-      "technique": "Gentle scrubbing",
-      "equipment": "Soft brush or old toothbrush",
-      "dwellTime": "1-2 minutes",
-      "instruction": "Using a soft brush, scrub the stain gently with light, circular motions. The enzyme is actively working. Scrub for 1-2 minutes.",
-      "suggestedProducts": "Soft brush"
+      "agent": "Protein Spotter + Soak",
+      "technique": "Submerge, dwell long",
+      "equipment": "Liquid Protein Spotter (PRENETT B / protease digestant) in warm water (30–38°C) basin",
+      "dwellTime": "1–4 hours, or overnight for chronic stains",
+      "instruction": "Submerge the armpit area in a warm (30–38°C) enzyme solution. For chronic yellowing, overnight soak. Protease hydrolyzes the albumin protein matrix that's anchoring the aluminum-protein complex to the fiber. Agitate occasionally."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Cool water",
-      "technique": "Rinse",
-      "equipment": "Water",
-      "dwellTime": "1 minute",
-      "instruction": "Rinse thoroughly under cool running water until no soap remains.",
-      "suggestedProducts": "Water"
+      "agent": "Acid Chelator",
+      "technique": "Soak or spot with acid",
+      "equipment": "Dilute acetic acid 5% aqueous OR citric acid 5% solution",
+      "dwellTime": "15–30 minutes",
+      "instruction": "After enzyme, soak or spot the yellowing area with dilute acetic or citric acid. The weak acid loosens the aluminum salts that the protease exposed. Cotton tolerates acids at these concentrations."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "NSD flush",
-      "technique": "Flush and blot",
-      "equipment": "Bowl",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot — do not rub. All oxidizer and enzyme residue must be fully removed before drying.",
-      "suggestedProducts": "OxiClean powder or H₂O₂ 3%"
+      "agent": "Hydrogen Peroxide 3% + Sun",
+      "technique": "Saturate, dwell, sunlight",
+      "equipment": "3% H₂O₂, outdoor line or sunny window",
+      "dwellTime": "10 minutes wet + 1–2 hours in sunlight",
+      "instruction": "Saturate the yellowed area with 3% H₂O₂. Dwell 10 min wet, then hang in direct sunlight while damp. UV + peroxide oxidize the yellow chromophore. Chronic stains often need 2–3 peroxide + sun cycles across two afternoons."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Cold water",
-      "technique": "Final rinse",
-      "equipment": "Water",
-      "dwellTime": "1 minute",
-      "instruction": "Final rinse.",
-      "suggestedProducts": "Water"
+      "agent": "NSD Flush + Hot Wash",
+      "technique": "Clear chemistry, launder",
+      "equipment": "NSD, washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Flush with NSD until rinse runs clear. Launder hot per care label. Sun-dry if possible — extends the fade. Inspect in daylight before the dryer."
+    }
+  ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Cold flush the armpit area.",
+      "2. Protein Spotter soak in warm water (30–38°C). Overnight for chronic.",
+      "3. Dilute acetic or citric acid soak — 15–30 min, loosens aluminum salts.",
+      "4. 3% H₂O₂ saturate + 1–2 hours in sunlight. 2–3 cycles on chronic yellowing.",
+      "5. NSD flush, hot wash + sun dry."
+    ],
+    "products": [
+      "Liquid Protein Spotter (PRENETT B or protease digestant)",
+      "Dilute acetic acid 5% aqueous OR citric acid 5% solution",
+      "Hydrogen Peroxide 3%",
+      "NSD (Neutral Synthetic Detergent)"
+    ],
+    "temperature": "cold flush; warm (30–38°C) for enzyme; cool through acid + peroxide; hot wash post-chemistry; sun during dry",
+    "warnings": [
+      "Never chlorine bleach sweat-stained cotton — darkens the protein crosslinks",
+      "Enzyme window is warm, not hot",
+      "Chronic stains are patient-removal — set expectations: 2–3 cycles over 1–2 days",
+      "Flush all chemistry before heat — residual oxidizer yellows cotton further"
+    ]
+  },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Chlorine Bleach Makes It Worse",
+      "instruction": "This is the one rule most people get backwards. Chlorine bleach (Clorox) is the first thing most home guides recommend for yellow armpit stains on white shirts — and it's the worst thing you can use. Chlorine reacts with the protein + aluminum in sweat stains and DARKENS them, sometimes permanently. Use OxiClean or hydrogen peroxide instead. Never chlorine bleach."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Rinse, Both Sides",
+      "instruction": "Rinse the armpit area under cold running water, front and back. The rinse removes fresh sweat and loose antiperspirant. Cold only — warm water sets sweat protein deeper."
+    },
+    {
+      "step": 3,
+      "agent": "White Vinegar Soak — 30 Minutes",
+      "instruction": "Fill a basin with warm water + 1 cup white vinegar. Submerge the armpit area and let it soak 30 minutes to 1 hour. The vinegar's mild acidity loosens the aluminum salts that built up from antiperspirant. This is the step most home guides skip, and it's why the yellowing comes back."
+    },
+    {
+      "step": 4,
+      "agent": "OxiClean Paste OR Enzyme Pretreat",
+      "instruction": "After the vinegar soak, make a thick paste: 1 scoop OxiClean + just enough warm water to make a spreadable paste. Apply directly to the yellow area, let sit 1–2 hours. For heavier build-up, use an enzyme pretreat (Biz, OxiClean Versatile) dissolved in warm water per the label, soak the area overnight."
+    },
+    {
+      "step": 5,
+      "agent": "Hydrogen Peroxide 3% + Sunlight",
+      "instruction": "Pour 3% drugstore hydrogen peroxide directly on the yellow area. Hang the shirt in direct sunlight for 1–2 hours while still damp. UV + peroxide fade the yellow chromophore. Chronic stains often need 2–3 rounds of this over a day or two.",
+      "safetyNote": "Never mix hydrogen peroxide with chlorine bleach or ammonia — toxic fume risk. And do NOT use chlorine bleach at any point in this sequence — it darkens sweat stains permanently."
     },
     {
       "step": 6,
-      "side": "wet",
-      "agent": "Laundry detergent + hot water (95°C for whites)",
-      "technique": "Machine wash",
-      "equipment": "Washing machine",
-      "dwellTime": "Normal wash cycle",
-      "instruction": "Wash immediately in hot water with regular detergent. Hot wash will flush out any remaining enzyme residue and oxidative H₂O₂ for white/light fabrics only.",
-      "suggestedProducts": "NSD or NSD"
+      "agent": "Hot Wash, Line-Dry in Sun",
+      "instruction": "Launder on the hottest setting the care label allows. Line-dry in direct sunlight rather than machine-drying when possible — sunlight keeps fading any residual yellow the peroxide left. Inspect before storing."
+    },
+    {
+      "step": 7,
+      "agent": "Prevent the Recurrence",
+      "instruction": "Sweat stains build up from antiperspirant over many wash cycles. To prevent them: let antiperspirant fully dry before dressing (damp + fabric = stain), switch to aluminum-free deodorant if the yellowing is severe, and wash workout shirts separately in hot water with enzyme detergent every time — never let sweat sit in the fabric in the laundry hamper."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate for Deeply Set Yellowing",
+      "instruction": "If the yellow doesn't fade after two full vinegar + OxiClean + peroxide + sun cycles, the protein-aluminum complex is locked in and home chemistry has plateaued. Take it to a dry cleaner. Tell them: \"Chronic sweat / antiperspirant yellowing on white cotton, treated at home with vinegar soak + OxiClean + 3% hydrogen peroxide + sun. NO chlorine bleach used.\""
     }
   ],
-  "homeSolutions": [
-    "FRESH: A simple cool rinse often removes fresh sweat completely.",
-    "OLDER WITH YELLOWING: Enzyme pre-treater + gentle scrubbing + OxiClean soak + hot wash. This handles old sweat stains well.",
-    "STUBBORN: If yellow persists, apply hydrogen peroxide 3% from the pharmacy and let the garment sit in sunlight for 30-60 minutes before washing."
-  ],
-  "materialWarnings": [
-    "Avoid chlorine bleach initially—use OxiClean (oxygen bleach) instead.",
-    "Do NOT let enzyme pre-treater dry on fabric—rinse after scrubbing."
-  ],
-  "escalation": "If sweat stains persist after enzyme + oxidative treatment, they may be set permanently. Professional dry cleaning is rarely needed for sweat stains; home treatment is usually effective.",
-  "products": {
-    "household": [
-      {
-        "name": "Zout Trigger Spray",
-        "brand": "Zout",
-        "icon": "💧",
-        "amazonSearchQuery": "Zout stain remover",
-        "affiliateTag": "gonr08-20",
-        "note": "Enzyme pre-treater for sweat proteins."
-      },
-      {
-        "name": "OxiClean Powder",
-        "brand": "OxiClean",
-        "icon": "🥤",
-        "amazonSearchQuery": "OxiClean powder",
-        "affiliateTag": "gonr08-20",
-        "note": "For yellow/brown discoloration from oxidized oils."
-      },
-      {
-        "name": "H₂O₂ 3%",
-        "brand": "Generic",
-        "icon": "🧪",
-        "amazonSearchQuery": "H₂O₂ 3%",
-        "affiliateTag": "gonr08-20",
-        "note": "Alternative to OxiClean for oxidative fading."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. NEVER use chlorine bleach — darkens sweat stains. Use OxiClean or peroxide.",
+      "2. Cold rinse both sides of the armpit area.",
+      "3. White vinegar soak 30 min–1 hour to loosen aluminum salts from antiperspirant.",
+      "4. OxiClean paste 1–2 hours OR enzyme pretreat overnight.",
+      "5. 3% hydrogen peroxide + 1–2 hours direct sunlight. Repeat 2–3 cycles on chronic.",
+      "6. Hot wash, line-dry in sun.",
+      "7. Prevent recurrence: antiperspirant fully dry before dressing; enzyme detergent for workout shirts."
     ],
-    "professional": []
+    "products": [
+      "White vinegar (household)",
+      "OxiClean Versatile",
+      "3% hydrogen peroxide (drugstore brown bottle)",
+      "Enzyme laundry pretreat (Biz, OxiClean Versatile) — optional for heavier build-up"
+    ],
+    "whenToStop": "Stop if two full vinegar + OxiClean + peroxide + sun cycles don't fade the yellow. Take it to a dry cleaner. Chronic sweat stains can plateau at a faint permanent shadow — professionals have stronger chelators and sometimes reducing bleaches that home chemistry doesn't cover.",
+    "warnings": [
+      "NEVER chlorine bleach sweat stains — darkens them permanently",
+      "Cold water at the flush stage — warm sets protein",
+      "Enzymes die above 50°C — warm water for the pretreat, not hot",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Sweat stain removal is a patient process — 2–3 cycles is normal on chronic yellowing"
+    ]
   },
-  "customerExplanation": "Sweat stains have two components: salt (which rinses away easily) and body oils that oxidize to yellow/brown discoloration (which requires treatment). We rinsed away the salt, then used enzyme pre-treater to break down sweat proteins and begin breaking down oil oxidation. We soaked in OxiClean to fade the remaining yellow/brown discoloration, then washed hot. This multi-step approach handles old sweat stains effectively on white cotton.",
-  "commonMistakes": [
-    "Assuming sweat stains are permanent—they're usually very treatable with enzyme + oxidation.",
-    "Not using enzyme pre-treater—enzymes are essential for sweat protein removal.",
-    "Using chlorine bleach—use OxiClean (oxygen bleach) instead for white cotton."
+  "safetyMatrix": {
+    "neverDo": [
+      "Never chlorine bleach sweat-yellowing — darkens instead of removing",
+      "Never warm-water flush fresh sweat — sets the protein",
+      "Never layer OxiClean + peroxide + chlorine bleach — toxic fumes",
+      "Never ignore chronic recurrence — the antiperspirant / wash habit is the root cause"
+    ],
+    "fiberSensitivities": [
+      "Cotton tolerates enzymes, acids, OxiClean, 3% H₂O₂, UV sunlight, hot wash",
+      "Dyed cotton: skip or inside-seam-test peroxide",
+      "Heat-durable fiber — the sweat-stain chemistry, not the fiber, is the limiting factor"
+    ]
+  },
+  "materialWarnings": [
+    "NO chlorine bleach on sweat stains — darkens permanently",
+    "Peroxide + sunlight is the fade workhorse for chronic yellowing",
+    "Address the antiperspirant habit or the stain recurs"
   ],
-  "scienceNote": "Sweat stains yellow from the oxidation of body oils (lipid peroxidation) in the warm, humid armpit environment. The yellow/brown color comes from oxidized lipid polymers. Protein removes the protein matrix, and oxidative bleaching (OxiClean, H₂O₂) breaks the carbon-carbon bonds in the oxidized lipids, destroying the color.",
-  "callPro": "Sweat stains are rarely difficult enough to require professional treatment. Home enzyme + oxidative treatment is usually fully effective.",
-  "components": [],
-  "component_order": [],
-  "difficulty": 4,
-  "difficulty_factors": [],
-  "solventNote": "",
-  "aftercare": "For older sweat stains with yellow/brown discoloration, apply enzyme pre-treater directly to the stain. Let it sit for 5-10 minutes. The enzymes will break down sweat proteins and start breaking down oil oxidation residue.",
+  "escalation": {
+    "when": "Two full vinegar + OxiClean + peroxide + sun cycles haven't faded the yellow, or the stain has been chlorine-bleached already (permanent darkening).",
+    "whatToTell": "\"Chronic sweat / antiperspirant yellowing on white cotton. Home-treated with vinegar soak + OxiClean + 3% H₂O₂ + sunlight. [No chlorine bleach used / chlorine bleach was applied before I knew.] [Fade plateaued / accidentally darkened.]\"",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How long has the yellowing been building up — weeks, months, longer?",
+      "Has chlorine bleach ever been used on this shirt? (important — that worsens sweat stains)",
+      "What antiperspirant brand / type — aluminum-based or aluminum-free?",
+      "Are workout shirts stored in the hamper before washing?"
+    ],
+    "modifierNotes": "Chlorine bleach is the #1 home mistake on this stain class. Chronic sweat-yellowing is a slow-removal problem, not a fast one. The prevention half (aluminum-free deodorant, enzyme detergent, dry-before-dress) matters as much as the removal half."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

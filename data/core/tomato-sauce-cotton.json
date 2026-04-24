@@ -1,130 +1,196 @@
 {
   "id": "tomato-sauce-cotton",
   "title": "Tomato Sauce on Cotton",
-  "stainFamily": "combo",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Combination stains contain protein, fat, and tannin components. Each component requires different chemistry: protein needs detergent, fat needs solvent, tannin needs peroxide, minerals need acid. Standard approach: solvent first (removes oil/fat carrier), then tannin formula (color), then H₂O₂ (residual pigment). Cotton (cellulose fiber) tolerates most agents well.",
-  "whyThisWorks": "Tomato-based stains contain both plant pigments and oil — the pigment provides the red color while the oil helps it soak in deeper. Cotton absorbs quickly and holds stains deep in the weave. The right cleaning agent breaks the stain's bond to the surface so it can be rinsed away cleanly.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "15–40 minutes (fresh) or overnight (aged)",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "tomato-sauce",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "combination",
+      "tannin",
+      "oil",
+      "lycopene",
+      "cotton"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Tomato sauce is a three-component stain: lycopene (the red carotenoid pigment, fat-soluble), plant tannins (polyphenols), and oil (olive oil + pan oils used in cooking). Lycopene is what makes tomato stains stubborn — it's a fat-soluble dye that gets locked onto the fiber by the oil carrier, just like mustard's curcumin but darker and less UV-responsive. Cotton is pure cellulose, tolerant of IPA, NSD, 3% H₂O₂, and hot post-chemistry wash. The ordering rule is oil-first (strip the carrier) then tannin (disrupt hydrogen bonds) then oxidizer (break the lycopene chromophore) — skip the oil strip and the rest of the sequence plateaus.",
+  "whyThisWorks": "Oil carrier must come off first or the rest of the chemistry can't reach the lycopene. NSD (pro) or Dawn (home) pulls the oil. Acid-side tannin spotter disrupts the plant-tannin hydrogen bonds. 3% H₂O₂ oxidizes the residual lycopene chromophore; sunlight accelerates it because lycopene is mildly photosensitive. Hot wash finishes. This is the same oil-then-tannin-then-oxidizer pattern as red wine's sibling stains.",
+  "defaultAssumption": "Fresh tomato sauce on cotton is a high-confidence DIY; aged tomato sauce (overnight+) may need a peroxide + sunlight cycle in addition to the oil + tannin pass. Heat-set (ironed or hot-dried) climbs into pro territory.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape + Cold Flush",
+      "technique": "Remove bulk, then cold flush",
+      "equipment": "Dull blade, cold water, white cotton terry towel",
+      "dwellTime": "1 minute",
+      "instruction": "Scrape solid sauce off with a dull blade — don't rub. Cold flush from the BACK of the fabric. Cold only — heat combined with the oil carrier drives lycopene deeper into cotton and makes subsequent chemistry less effective."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Strip the oil carrier",
+      "equipment": "NSD in cool water",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Apply NSD, work with a soft bristle brush. The oil carrier (olive oil, pan oils) must come off before peroxide can reach the pigment. Tamp, don't scrub hard. Rinse cool. Repeat if oil residue is still visible."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Tannin Spotter",
+      "technique": "Drop, dwell, blot",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Acid-side tannin spotter by dropper on the residual color. Disrupts the tannin-cellulose hydrogen bond. Dwell 3–5 min, blot. Repeat once if shadow persists."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3% + Sun Assist",
+      "technique": "Oxidize, optional UV",
+      "equipment": "3% H₂O₂, optional sunny window",
+      "dwellTime": "5–10 minutes wet, optional 30–60 min sunlight",
+      "instruction": "Apply 3% H₂O₂ to residual lycopene shadow. For aged stains, hang the damp garment in sunlight — UV accelerates lycopene oxidation. Fresh stains usually clear without the sun step."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "NSD Flush + Hot Wash",
+      "technique": "Clear chemistry, launder",
+      "equipment": "NSD, washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Rinse until water runs clear. Launder hot per care label."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG to dissolve the oil portion of the tomato sauce stain. The oil must be removed first so the tannin treatment can reach the color underneath. Blot with clean absorbent cloth.",
-      "2. Apply Tannin to address the color component. Tannin in tomato-based stains creates the red/orange discoloration. Tamp gently and work from edge toward center.",
-      "3. Apply H₂O₂ 6% to oxidize any remaining tomato sauce pigment. Check progress every few minutes. Test on colored fabrics first.",
-      "4. Flush with NSD to remove all spotting agent residue. Rinse thoroughly with cool water.",
-      "5. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue. Blot dry with clean absorbent cloth."
+      "1. Scrape bulk. Cold flush from the back.",
+      "2. NSD — strip the oil carrier first. Tamp, not scrub.",
+      "3. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A). Dropper, 3–5 min.",
+      "4. 3% H₂O₂ on residual lycopene. Sunlight assist on aged stains.",
+      "5. NSD flush, hot wash per care label."
     ],
     "products": [
-      "POG (Paint-Oil-Grease remover)",
-      "amyl acetate",
-      "Tannin",
-      "H₂O₂ 6%",
       "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold — hot water can set any protein component permanently",
+    "temperature": "cold through spotting; hot wash post-chemistry; sun during dry for aged",
     "warnings": [
-      "Applying all treatments simultaneously — creates a chemical slurry that's harder to remove",
-      "Using hot water early — can set the protein component permanently",
-      "Not rinsing completely between treatments — old chemistry interferes with new treatment",
-      "Over-agitating the stain — spreads each component deeper into the fiber"
+      "Oil carrier off FIRST — peroxide can't reach lycopene otherwise",
+      "Never use hot water before the oil is stripped — drives pigment deeper",
+      "One oxidizer at a time, NSD-flushed between",
+      "Flush all chemistry before heat"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test on a hidden seam",
-      "instruction": "Tomato sauce is a combo stain — lycopene pigment, oil, and sometimes protein from meat or cream. You'll use several cleaners in sequence, so test first. On an inside seam, dab a drop of Dawn solution and a drop of 3% hydrogen peroxide. Blot with a white cloth after two minutes. If no dye transfers and the fabric looks unchanged, proceed. If the seam loses color, go to step 8."
+      "agent": "Scrape Off the Bulk First",
+      "instruction": "Lift solid sauce off the fabric with a dull butter knife or credit card edge. Don't rub — rubbing drives the sauce into the weave. Scrape what will come off easily."
     },
     {
       "step": 2,
-      "agent": "Scrape solids — don't rub",
-      "instruction": "Lift off pooled sauce, meat chunks, or cheese with a dull butter knife or plastic card, scraping away from the center. Most tomato stains have half their bulk sitting on the surface — removing it makes every following step 3× more effective. Don't press, don't wipe in circles, don't let solids sit."
+      "agent": "Cold Water From the Back",
+      "instruction": "Hold the BACK of the stained area under cold running water. The sauce pushes out the way it came in. Cold only — hot water drives the oily red pigment deeper into cotton."
     },
     {
       "step": 3,
-      "agent": "Cold back-flush — prevent lycopene setting",
-      "instruction": "Turn the fabric inside out and run cold water through the BACK of the stain for 30–60 seconds. Push the sauce back out the way it came in. Cold matters: heat sets lycopene (the red pigment) into the fiber permanently, and protein from meat or cream sauces also cross-links with heat. Skip hot water — even if the sauce was hot."
+      "agent": "Dawn First — Before Any Color Work",
+      "instruction": "Tomato sauce has an oil carrier (olive oil, the pan oil it was cooked in). That oil protects the red pigment from everything else until the oil is removed. Work a drop of Dawn dish soap into the stain with a fingertip or soft toothbrush, let sit 10 minutes, rinse cool. You should see the stain lighten noticeably once the oil is gone."
     },
     {
       "step": 4,
-      "agent": "Dawn dish soap — tackle the oil first",
-      "instruction": "Dab a small amount of Dawn directly on the stain (no water yet). Work it in with a fingertip for 30 seconds. Let it sit 5 minutes. Dawn emulsifies the oil carrier in the sauce so the next step can reach the pigment underneath. Blot with a clean damp cloth. Most fresh tomato stains lose most of their intensity in this step alone."
+      "agent": "White Vinegar Dab for Stubborn Red",
+      "instruction": "Mix 1 teaspoon white vinegar with 4 tablespoons cool water. Dab onto residual red with a white cloth, let sit 3 minutes, blot. The vinegar's mild acidity breaks the tannin hydrogen bond. Repeat once if needed."
     },
     {
       "step": 5,
-      "agent": "Dawn + 3% hydrogen peroxide — tackle the pigment",
-      "instruction": "Mix one teaspoon of Dawn with two tablespoons of 3% hydrogen peroxide in a small bowl. Dab onto the remaining stain. Let it dwell 10 minutes. Peroxide oxidizes lycopene — the specific chromophore that makes tomato red. Blot with a clean damp cloth. Repeat up to two more times if a shadow is still visible.",
-      "safetyNote": "Never mix hydrogen peroxide with ammonia or bleach — toxic gas. On brightly colored cotton, test the seam first."
+      "agent": "Hydrogen Peroxide 3% + Sunlight",
+      "instruction": "For stubborn residual color: dab 3% drugstore hydrogen peroxide on the spot, let it bubble 3–5 min. For aged stains, hang the damp shirt in direct sunlight for 30–60 min — UV helps fade the lycopene pigment. Skip on dark or dyed cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fume risk."
     },
     {
       "step": 6,
-      "agent": "Enzyme pretreat + warm wash",
-      "instruction": "If the sauce had meat or cream, add an enzyme step: apply OxiClean Versatile, Biz, or Zout per the label. Dwell 30 minutes (enzymes digest the protein component). Launder on warm (not hot) with your normal detergent. Cotton tolerates warm water once pigment is out — but keep it under 90°F while any shadow remains."
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer — dryer heat sets any residual lycopene permanently. If you still see orange, repeat the Dawn + peroxide round."
     },
     {
       "step": 7,
-      "agent": "Air dry + daylight inspect — sunlight finish on white",
-      "instruction": "Hang or lay flat. Inspect in daylight, NOT a lamp. If the cotton is white and a faint yellow/orange shadow remains, lay the garment flat in direct sunlight for 1–3 hours. UV naturally bleaches lycopene over time without chemistry. Skip sunlight on colored cotton (fades dye). If shadow persists, repeat steps 5–6 before drying on heat."
-    },
-    {
-      "step": 8,
-      "agent": "Escalate to a dry cleaner",
-      "instruction": "If the sauce was set by a dryer, sat for more than 24 hours, or survived two full home rounds, take it to a dry cleaner. Tell them: \"Tomato sauce on cotton — [plain / meat / cream-based], treated at home with Dawn + 3% peroxide + [enzyme]. No heat applied. Please use sequential POG → tannin formula → peroxide treatment.\" That specifies the exact order pros need."
+      "agent": "Escalate to a Dry Cleaner",
+      "instruction": "If the sauce has been hot-dried or two home rounds haven't cleared it, take it to a dry cleaner. Tell them: \"Tomato sauce on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% hydrogen peroxide + sun.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Scrape or wipe away any solid material. Use cold water.",
-      "2. Mix mild dish soap into cold water. Blot the solution onto the stain.",
-      "3. Let it sit for 5–10 minutes.",
-      "4. Blot with a clean white cloth. Repeat if needed.",
-      "5. Rinse with cold water. Air dry — don't use a dryer until the stain is gone."
+      "1. Scrape solid sauce off with a dull blade — don't rub.",
+      "2. Cold water flush from the BACK of the fabric.",
+      "3. Dawn dish soap FIRST — strips the oil carrier. Dwell 10 min, rinse cool.",
+      "4. Diluted white vinegar dab for residual red. 3 min, blot.",
+      "5. 3% hydrogen peroxide + 30–60 min sunlight on stubborn stains. Skip on dark cotton.",
+      "6. Hot wash per care label. Inspect BEFORE the dryer.",
+      "7. Escalate if heat-set or two rounds failed."
     ],
     "products": [
-      "Dawn NSD",
-      "OxiClean Versatile Stain Remover",
-      "H₂O₂ 3%",
-      "28% Acetic Acid (diluted)"
+      "Dull blade or credit-card edge",
+      "Dawn dish soap",
+      "White vinegar (household)",
+      "3% hydrogen peroxide (drugstore brown bottle)"
     ],
-    "whenToStop": "If the stain is still visible after multiple treatments, it may be permanently set. For garments you care about, consider professional cleaning before attempting further home treatment.",
+    "whenToStop": "Stop if tomato sauce has been through a hot dryer or iron, if two home rounds don't clear it, or if the cotton is dark dyed and peroxide isn't safe.",
     "warnings": [
-      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
-      "Always scrape off solid material first — don't smear it around.",
-      "Avoid heat until the stain is completely gone."
+      "Oil first, then color — peroxide can't work through the oil carrier",
+      "Cold water during spotting — heat drives the oily pigment deeper",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton",
+      "Inspect before the dryer — heat sets lycopene permanently"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Apply all treatments simultaneously — creates a chemical slurry",
-      "Use hot water early — can set protein component permanently",
-      "Skip rinsing completely between treatment steps"
+      "Never hot-water-flush tomato sauce before the oil is stripped — drives lycopene deeper",
+      "Never skip the Dawn/NSD step — the oil protects the dye from everything else",
+      "Never layer oxidizers — one at a time",
+      "Never dry with residual chemistry in the fiber"
     ],
     "fiberSensitivities": [
-      "Combination stains on delicate fibers require careful chemistry sequencing. Cotton tolerates most agents. For colored cotton, test H₂O₂ on a hidden seam before use."
+      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, sunlight, hot wash",
+      "Dyed cotton: skip or inside-seam-test peroxide",
+      "Heat-safe fiber once chemistry is cleared"
     ]
   },
+  "materialWarnings": [
+    "Oil carrier off first, then color work",
+    "Cold during spotting, hot at wash",
+    "Peroxide on whites; test inside seam on dark cotton"
+  ],
   "escalation": {
-    "when": "Sequential treating fails, or stain components have cross-linked together",
-    "whatToTell": "Tomato sauce stain on cotton, combination of oil and tannin pigment. Treated at home with NSD. Age unknown. Please use sequential solvent, tannin formula, and oxidizer treatment.",
-    "specialistType": "wet cleaner"
+    "when": "Tomato sauce heat-set by iron or hot dryer, two home rounds failed, or dark dyed cotton where peroxide isn't safe.",
+    "whatToTell": "\"Tomato sauce on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% H₂O₂ + sunlight. [Hot-washed / not yet laundered.]\"",
+    "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the stain fresh or dried?",
-      "Was this plain tomato sauce or did it contain meat/cream?",
-      "Has the garment been through the dryer?",
-      "Is the cotton white or colored?"
+      "How old is the stain?",
+      "Has it been through a hot wash or dryer?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Was the sauce oily (pan-cooked, restaurant-style) or lean (jarred marinara straight)? Oilier = harder."
     ],
-    "modifierNotes": "Meat-containing sauce adds protein. Cream-based sauces add fat. Dryer exposure bakes pigment into the fiber. On colored cotton, test H₂O₂ on a hidden seam first."
+    "modifierNotes": "Lycopene + oil carrier is the engine. Remove the oil and the rest of the chemistry can reach the pigment; skip it and everything stalls at faint orange. Sunlight + 3% peroxide is a patient finisher for aged residual."
   },
-  "difficulty": 5,
-  "timeEstimate": "15–30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

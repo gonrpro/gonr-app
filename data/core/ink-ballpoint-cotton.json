@@ -1,216 +1,196 @@
 {
   "id": "ink-ballpoint-cotton",
-  "version": "5.0",
-  "authored": "2026-03-22",
-  "title": "Ink-Ballpoint on Cotton",
-  "stainType": "oil-based-inks",
-  "surface": "cotton white",
+  "title": "Ballpoint Ink on Cotton",
+  "stainType": "dye",
+  "stainFamily": "dye",
+  "surface": "cotton",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–45 minutes",
+  "lastValidated": "2026-04-24",
   "meta": {
     "stainCanonical": "ink-ballpoint",
     "surfaceCanonical": "cotton",
     "tier": "universal",
     "riskLevel": "low",
     "tags": [
-      "oil-based-inks",
-      "cotton white",
-      "dry-clean-laundry"
+      "ink",
+      "dye",
+      "oil-carrier",
+      "cotton",
+      "solvent-first"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Ballpoint pen ink is an oil-based dye system: a paste of wax, synthetic dye (azo or triphenylmethane), and mineral oil suspended in a viscous medium. On white cotton, the ink dries on the surface initially, but the oil carrier (mineral oil) gradually wicks into the cotton fibers, carrying the dye molecules with it. The deeper the oil penetrates, the harder the stain becomes to remove. The wax hardens quickly, but the dye-oil matrix bonds to cotton's cellulose through hydrogen bonding and hydrophobic interactions, making ballpoint ink one of the most stubborn stains on cotton.",
-  "whyThisWorks": "IPA dissolves both the wax and the oil carrier, releasing the dye molecules. Working from the back prevents driving the ink deeper into the fabric. Mechanical action (gentle scrubbing) helps break up the ink particle matrix. Repeated solvent applications are often needed because the dye-oil has penetrated multiple fiber layers. A final enzymatic soak removes any protein-based residues, and OxiClean oxidizes any remaining color molecules. For white cotton, which tolerates heat and bleach, we can be aggressive.",
+  "stainChemistry": "Ballpoint ink is a paste of synthetic dye (azo or triphenylmethane), wax, and mineral oil in a viscous oil carrier. The wax grips the surface; the oil wicks into cotton and drags the dye molecules in with it. Cotton is pure cellulose — tolerates IPA (isopropyl alcohol), POG, NSD, and 3% H₂O₂ at room temperature. The chemistry is sequential: dissolve the oil carrier first, then lift the dye, then oxidize any residual shadow. Water-based cleaning alone does nothing to ink — the dye is oil-borne and water beads off it.",
+  "whyThisWorks": "IPA dissolves the wax and the oil carrier in one pass, releasing the dye molecules so they can transfer out of the fabric. Work from the back — tamping on a clean white cloth moves the dissolved dye OUT of the cotton, not deeper in. NSD emulsifies any residual oil film the alcohol softened. 3% H₂O₂ oxidizes the remaining dye chromophore. Hot wash finishes. Skipping the solvent and going straight to detergent leaves the ink locked in the oil carrier.",
+  "defaultAssumption": "Fresh ballpoint ink (within an hour) is a high-confidence DIY on cotton. Aged ink (overnight+) adds cycles but stays in home scope. Heat-set ink (through a dryer) is pro territory.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "back",
-      "agent": "IPA",
-      "technique": "Blotting from rear",
-      "equipment": "White cloth",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Place the inked area face-down on a white cloth. Dampen another cloth with IPA and dab the back of the stain repeatedly. DO NOT RUB YET. The alcohol will dissolve the wax-oil carrier and push it out toward the back cloth. Refresh the back cloth frequently. This is the most important step—the majority of the ink lifts here.",
-      "suggestedProducts": "IPA 91%"
+      "side": "dry",
+      "agent": "Blot + Isolate",
+      "technique": "Blot what's wet, place cloth underneath",
+      "equipment": "Clean white cotton towel",
+      "dwellTime": "30 seconds",
+      "instruction": "Blot any wet ink surface with a clean white towel — press, don't rub. Then place a folded white towel UNDER the stained area so the ink has somewhere to transfer to. Never work ink without a catch cloth underneath; otherwise the dissolved dye spreads sideways into clean fabric."
     },
     {
       "step": 2,
-      "side": "back",
-      "agent": "IPA",
-      "technique": "Light scrubbing",
-      "equipment": "Soft brush or old toothbrush",
-      "dwellTime": "3-5 minutes",
-      "instruction": "With the fabric still face-down on a cloth, use a soft brush to gently scrub the back of the stain with alcohol-dampened brush. Small circular motions, light pressure. The mechanical action helps break up ink particles that have bonded to the fiber. Keep applying fresh alcohol. The stain should lighten noticeably. This step may take several minutes and multiple passes.",
-      "suggestedProducts": "Soft brush or toothbrush"
+      "side": "wet-minimal",
+      "agent": "IPA Tamp From the Back",
+      "technique": "Solvent tamp, flip cloth often",
+      "equipment": "Isopropyl alcohol 90%+ on white cloth",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply IPA to a clean white cloth. Tamp the stain from the BACK of the fabric — the dissolved dye transfers into the under-cloth. Flip the upper cloth frequently so you're always pressing with a clean section. Never pour IPA onto cotton directly. Repeat 3–5 passes; ballpoint ink often needs multiple rounds as deeper dye layers reach the surface."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Cool water",
-      "technique": "Rinse",
-      "equipment": "Water, cloth",
-      "dwellTime": "1 minute",
-      "instruction": "Rinse thoroughly under cool running water from the back. Push out the alcohol and any lifted ink particles. The stain will appear lighter after rinsing. If much color remains, repeat steps 1-2.",
-      "suggestedProducts": "Water"
+      "agent": "NSD",
+      "technique": "Emulsify residual oil",
+      "equipment": "NSD in warm water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD, work with a soft brush. NSD emulsifies the oil film the IPA softened. Rinse cool from the back."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "1 tsp NSD + 1/2 tsp enzyme powder in cool water",
-      "technique": "Light scrubbing",
-      "equipment": "Soft brush",
-      "dwellTime": "5-7 minutes",
-      "instruction": "Make a paste and apply to the stain. Scrub gently with a brush in light circular motions. The enzymes will break down any remaining oil-protein complexes. Keep the paste moist. The stain will continue to lighten.",
-      "suggestedProducts": "Zout or Fels-Naptha"
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For residual dye shadow on whites: 3% H₂O₂ drop-by-drop. Oxidizes the dye chromophore. Dwell 3–5 min, blot. One oxidizer at a time. Skip on dark or dyed cotton."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Cool water",
-      "technique": "Rinse",
-      "equipment": "Water, cloth",
-      "dwellTime": "1 minute",
-      "instruction": "Rinse thoroughly under cool running water until no soap remains.",
-      "suggestedProducts": "Water"
-    },
-    {
-      "step": 6,
-      "side": "wet",
-      "agent": "NSD flush",
-      "technique": "Flush and blot",
-      "equipment": "Bowl",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot — do not rub. All oxidizer and enzyme residue must be fully removed before drying.",
-      "suggestedProducts": "OxiClean (oxygen bleach powder)"
-    },
-    {
-      "step": 7,
-      "side": "wet",
-      "agent": "NSD flush",
-      "technique": "Flush and blot",
-      "equipment": "Water, cloth",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot — do not rub. All oxidizer and enzyme residue must be fully removed before drying.",
-      "suggestedProducts": "Water"
-    },
-    {
-      "step": 8,
-      "side": "wet",
-      "agent": "Laundry detergent",
-      "technique": "Machine wash",
-      "equipment": "Washing machine",
-      "dwellTime": "Normal wash cycle",
-      "instruction": "Wash immediately in hot water (95°C for whites) with regular detergent. Hot wash will help dissolve any remaining trace oil and flush out final ink residue. Dry normally.",
-      "suggestedProducts": "NSD or NSD"
+      "agent": "NSD Flush + Hot Wash",
+      "technique": "Clear chemistry, launder",
+      "equipment": "NSD, washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Rinse until water runs clear. Launder hot per care label. Inspect BEFORE the dryer — dryer heat sets any residual ink permanently."
     }
   ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Blot wet ink. Place a clean catch cloth UNDER the stain.",
+      "2. IPA tamp from the BACK on a white cloth. Flip cloth frequently. 3–5 passes.",
+      "3. NSD to emulsify residual oil. Cool rinse.",
+      "4. 3% H₂O₂ on residual dye shadow (whites only). 3–5 min.",
+      "5. NSD flush, hot wash per care label."
+    ],
+    "products": [
+      "Isopropyl alcohol 90%+",
+      "NSD (Neutral Synthetic Detergent)",
+      "Hydrogen Peroxide 3%"
+    ],
+    "temperature": "cool through spotting; hot wash post-chemistry",
+    "warnings": [
+      "Solvent before water — water alone doesn't touch ink",
+      "Always tamp with cloth, never pour solvent",
+      "Always place a catch cloth UNDER the stain — prevents sideways dye spread",
+      "One oxidizer at a time; skip peroxide on dark/dyed cotton"
+    ]
+  },
   "homeSolutions": [
     {
       "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
-      "agent": "cool water"
+      "agent": "Place a White Towel UNDER the Stain",
+      "instruction": "Before you touch the ink with anything else, fold a clean white towel and place it UNDER the stained area. When the ink dissolves in the next step, it needs somewhere to go — the catch cloth pulls it out of your garment. Skip this and the dissolved ink spreads sideways into clean fabric."
     },
     {
       "step": 2,
-      "instruction": "Place fabric stain-side down on glass work surface. Ink is a combination stain (dry + wet) requiring two approaches.",
-      "agent": "spoon"
+      "agent": "Rubbing Alcohol on a Clean White Cloth",
+      "instruction": "Dab 70%+ rubbing alcohol (drugstore isopropyl) on a clean white cloth. Press the cloth onto the stain from the BACK of the fabric, over your catch cloth. Flip the pressing cloth to a clean section every few seconds — the ink transfers onto whichever fabric is touching it. Never pour alcohol directly on the fabric. Expect 3–5 rounds as deeper layers of ink reach the surface."
     },
     {
       "step": 3,
-      "instruction": "PROCEDURE 1 (Dry-based): Apply dry-cleaning solvent (lighter fluid) to the stain. Rub gently with the back of a spoon from center outward. Apply petroleum jelly and continue rubbing. Rinse with dry-cleaning solvent.",
-      "agent": "dry-cleaning solvent + petroleum jelly",
-      "safetyNote": "Ensure good ventilation when using dry-cleaning solvent. Avoid skin contact."
+      "agent": "Hand Sanitizer or Hairspray — Alternatives",
+      "instruction": "If you don't have rubbing alcohol: alcohol-based hand sanitizer works the same way (it's mostly alcohol + gel). Old-school hairspray also works, but only the kind with alcohol in it — most modern hairsprays are alcohol-free and will do nothing. Read the label. Apply the same way — on a white cloth, tamp from behind, never pour."
     },
     {
       "step": 4,
-      "instruction": "If ink remains after Procedure 1, apply glycerine mixed with white vinegar (equal parts) to the stain. Rub with spoon, then rinse with cool water.",
-      "agent": "glycerine + white vinegar"
+      "agent": "Dawn + Soft Brush for the Oil",
+      "instruction": "Once the alcohol pass has pulled most of the ink out, work a drop of Dawn dish soap into the spot with a soft toothbrush. Dawn breaks up the oily film the ink's carrier left behind. Rinse cool."
     },
     {
       "step": 5,
-      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes.",
-      "agent": "hydrogen peroxide 3% + ammonia",
-      "safetyNote": "Test on hidden area first — peroxide may lighten some dyes."
+      "agent": "Hydrogen Peroxide 3% for Shadows (Whites Only)",
+      "instruction": "For a faint residual shadow on white cotton: dab 3% drugstore hydrogen peroxide on the spot, let it bubble 3–5 min, blot. Skip on dark or dyed cotton — peroxide lightens fabric dye.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia. And don't layer hairspray + alcohol + peroxide — one at a time with a rinse between."
     },
     {
       "step": 6,
-      "instruction": "Rinse thoroughly with cool water.",
-      "agent": "cool water"
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer — if any ink is still visible, repeat steps 2 + 4 first. Dryer heat sets residual ink permanently."
     },
     {
       "step": 7,
-      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center.",
-      "agent": "white vinegar + cool water"
-    },
-    {
-      "step": 8,
-      "instruction": "If ink stain persists or if fabric is delicate, call a professional cleaner.",
-      "agent": "escalation"
+      "agent": "Escalate to a Dry Cleaner",
+      "instruction": "If the ink has already been through a hot dryer or two home rounds haven't cleared it, take it to a dry cleaner. Tell them: \"Ballpoint ink on cotton, age [fresh / overnight / older], home-treated with rubbing alcohol + Dawn + 3% hydrogen peroxide. [Hot-washed / not yet laundered.]\""
     }
   ],
-  "materialWarnings": [
-    "AVOID using bleach on colored cotton; use OxiClean instead.",
-    "DO NOT use hot water until the stain is mostly gone—heat can set the oil residue."
-  ],
-  "escalation": "If the stain persists after these steps as a faint blue ghost, a professional dry cleaner can use Amodex (a specialized ink solvent) or hydrocarbon solvents (Mulsolite) to attempt removal. However, old ballpoint stains are sometimes permanent.",
-  "products": {
-    "household": [
-      {
-        "name": "Rubbing Alcohol (IPA 91%)",
-        "brand": "Generic",
-        "icon": "🧪",
-        "amazonSearchQuery": "IPA 91%",
-        "affiliateTag": "gonr08-20",
-        "note": "Rubbing alcohol (isopropyl alcohol) dissolves ballpoint ink's oil carrier. Essential for this stain."
-      },
-      {
-        "name": "Zout Trigger Spray",
-        "brand": "Zout",
-        "icon": "💧",
-        "amazonSearchQuery": "Zout stain remover spray",
-        "affiliateTag": "gonr08-20",
-        "note": "Pre-mixed enzyme + surfactant for oil-ink residue."
-      },
-      {
-        "name": "OxiClean MaxForce",
-        "brand": "OxiClean",
-        "icon": "🥤",
-        "amazonSearchQuery": "OxiClean MaxForce gel",
-        "affiliateTag": "gonr08-20",
-        "note": "For residual blue dye on white cotton."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. Place a clean white towel UNDER the stain — gives the ink somewhere to go.",
+      "2. Rubbing alcohol on a white cloth, tamp from the BACK. Flip cloth frequently. 3–5 passes.",
+      "3. Alternatives: alcohol hand sanitizer OR alcohol-containing hairspray. Same method.",
+      "4. Dawn + soft toothbrush to lift residual oil.",
+      "5. 3% hydrogen peroxide on residual shadow (whites only).",
+      "6. Hot wash per care label. Inspect BEFORE the dryer.",
+      "7. Escalate if heat-set or two rounds failed."
     ],
-    "professional": [
-      {
-        "name": "Amodex Ink and Stain Remover",
-        "brand": "Amodex",
-        "icon": "🔬",
-        "amazonSearchQuery": "Amodex ink and stain remover",
-        "affiliateTag": "gonr08-20",
-        "note": "Professional-grade ink solvent. Often used by dry cleaners."
-      },
-      {
-        "name": "Mulsolite NSD",
-        "brand": "StreeTAN",
-        "icon": "🧴",
-        "amazonSearchQuery": "Mulsolite neutral solvent",
-        "affiliateTag": "gonr08-20",
-        "note": "Hydrocarbon solvent for deep ink penetration."
-      }
+    "products": [
+      "70%+ rubbing alcohol (drugstore isopropyl)",
+      "Clean white cotton towels or stack of paper towels for the catch cloth + pressing cloth",
+      "Dawn dish soap",
+      "3% hydrogen peroxide (whites only)"
+    ],
+    "whenToStop": "Stop if the ink has been through a hot dryer, two home rounds failed, or the cotton is dark dyed and peroxide isn't safe.",
+    "warnings": [
+      "Solvent before water — water alone doesn't touch ballpoint ink",
+      "Never pour alcohol on fabric — tamp with cloth, catch cloth underneath",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton",
+      "Inspect before the dryer — heat sets ink permanently"
     ]
   },
-  "customerExplanation": "Ballpoint ink is an oil-based paste that gradually soaks into cotton fibers. We dissolved the oil carrier with IPA (working from the back to push the ink out), scrubbed gently to break up the ink particles, then rinsed and soaked in oxygen bleach to fade any remaining color. Hot water wash at the end removed the final traces.",
-  "commonMistakes": [
-    "Rubbing immediately with water—this spreads the oil and pushes it deeper. Solvent treatment first, water second.",
-    "Not working from the back—this drives the ink through the garment and out the front, setting it deeper.",
-    "Giving up after one pass—ballpoint ink often requires 2-3 solvent applications to fully remove."
+  "safetyMatrix": {
+    "neverDo": [
+      "Never pour alcohol on cotton — always tamp with cloth",
+      "Never skip the catch cloth under the stain — sideways dye spread",
+      "Never run ink through a dryer — heat-set ink is pro territory",
+      "Never layer oxidizers — one at a time with a flush between"
+    ],
+    "fiberSensitivities": [
+      "Cotton tolerates IPA, POG, NSD, 3% H₂O₂, and hot wash",
+      "Dyed cotton: IPA is safe on most dyes but test inside seam first; skip peroxide",
+      "Heat-durable once the ink is out"
+    ]
+  },
+  "materialWarnings": [
+    "Solvent first, water after — water alone won't touch ink",
+    "Catch cloth UNDER + tamp on TOP, always",
+    "Inspect before the dryer — heat sets ink"
   ],
-  "scienceNote": "Ballpoint ink's dye molecules (typically azo or triphenylmethane dyes) are highly stable and bind tenaciously to cotton's cellulose through hydrophobic interactions and hydrogen bonding. The oil carrier (mineral oil) is what allows the dye to penetrate fiber layers. Dissolving the oil with IPA is the key to releasing the dye; once the oil is gone, the dye is much easier to lift or oxidize.",
-  "callPro": "If a faint blue ghost remains after home treatment, Amodex or Mulsolite may help. However, very old or deeply set ballpoint stains are often permanent.",
-  "components": [],
-  "component_order": [],
-  "difficulty": 6,
-  "difficulty_factors": [],
-  "solventNote": "",
+  "escalation": {
+    "when": "Ink has been through a hot dryer, two home rounds haven't cleared it, or dark dyed cotton where peroxide isn't safe and the alcohol-only pass plateaus.",
+    "whatToTell": "\"Ballpoint ink on cotton, age [fresh / overnight / older], home-treated with rubbing alcohol + Dawn + 3% H₂O₂. [Hot-washed / not yet laundered.]\"",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain — fresh, overnight, older?",
+      "Has it been through a hot wash or dryer?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Ballpoint pen, gel pen, or permanent marker? (permanent marker is a different, harder class)"
+    ],
+    "modifierNotes": "Most home attempts fail on ink because they start with water — which beads off the oil carrier. Alcohol-first is the unlock. Catch cloth under + tamp on top is the #2 rule that separates successful home cleanup from smeared-bigger stains."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

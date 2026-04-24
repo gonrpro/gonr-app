@@ -1,139 +1,216 @@
 {
   "id": "red-wine-carpet",
   "title": "Red Wine on Carpet",
+  "stainType": "tannin",
   "stainFamily": "tannin",
-  "surface": "synthetic carpet (nylon/polyester)",
-  "sector": "home",
+  "surface": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "stainChemistry": "Classification: Tannin (polyphenolic). Red wine contains anthocyanin pigments (water-soluble tannins) and proanthocyanidins that bond chemically to carpet fibers through hydrogen bonding. The acidic environment (pH 3–4) enhances staining. Heat or agitation during initial contact drives the tannin deeper into the fiber matrix, making removal exponentially harder. Tannin pigments bond to fibers through hydrogen bonding and van der Waals forces. Over time, tannin oxidizes and polymerizes, shifting from bright (reversible) to brown (resistant). Treatment: acidic tannin formula to break initial hydrogen bonds, followed by oxidizing bleach to cleave chromophore conjugation.",
-  "whyThisWorks": "Red wine soaks through synthetic carpet into the padding below. Surface cleaning alone won't reach it — the stain hides underneath and wicks back up as the material dries. Tannin (acidic) breaks the hydrogen bonds between pigment and carpet fiber. H₂O₂ 6% cleaves the chromophore double bonds. NSD and acetic acid flush and neutralize. Dwell time matters more than scrubbing force — the chemistry needs time to reach the depth the stain reached.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "10–45 minutes (wet) or up to a couple of hours (dry)",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "red-wine",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "tannin",
+      "carpet",
+      "pad-risk",
+      "time-critical",
+      "no-saturation"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Red wine is a tannin stain — anthocyanin polyphenols bound to face yarn through hydrogen bonding and van der Waals forces. Carpet adds a fiber-AND-construction risk: nylon / olefin / polyester face yarn is what the wine sits on, but pooled liquid sinks through to the latex backing and the pad beneath, where it wicks back up for days as the carpet dries. The visible stain on the pile is half the problem; the invisible contamination in the backing + pad is the other half. Heat accelerates tannin oxidation and can lock a reversible purple stain into a permanent brown one within 15–30 minutes. Treatment is extraction-first, chemistry-small-amounts, always.",
+  "whyThisWorks": "Extraction beats chemistry on carpet. The rule is damp-cloth transfer, never pour — pooled liquid is what ruins the pad. Cold blot flushes what water can carry. NSD emulsifies what's bound. Acid-side tannin spotter disrupts the anthocyanin-fiber hydrogen bond. 3% H₂O₂ oxidizes residual chromophore. Between every wet pass, a weighted dry towel pulls moisture UP and out of the backing before it can migrate into the pad. Skip the extraction step and the stain wicks back up the next time the carpet gets damp.",
+  "defaultAssumption": "Assume synthetic face yarn (nylon / olefin / polyester) unless user says wool. Wool carpet + red wine escalates earlier — wool is protein fiber, narrower chemistry lane.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot + Extract",
+      "technique": "Press dry, lift, repeat — no rubbing",
+      "equipment": "Clean white cotton towels, firm pressure",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Press a clean folded white towel straight down onto the spill with firm pressure. Lift, move to a dry section, press again. Work from the outside of the stain inward. Never rub — rubbing drives wine deep into the pile and then into the pad. Stop when the towel stops picking up red."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water + NSD",
+      "technique": "Damp cloth transfer + extract",
+      "equipment": "NSD in cold water, damp white cloth, wet/dry vacuum or weighted dry towel",
+      "dwellTime": "1 min per pass",
+      "instruction": "Apply cold NSD via a damp cloth — press onto the spot, lift, rotate cloth. Never pour on carpet. Immediately extract with a wet/dry vac or weighted dry towel on top. Repeat 2–4 cycles until the towel comes up clean. Extraction between every wet pass is the rule that protects the pad."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Tannin Spotter",
+      "technique": "Dropper, localized, never pour",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Apply acid-side tannin spotter by dropper directly to the stain — never pour. The acid disrupts the anthocyanin-fiber hydrogen bond. Dwell 5–10 min. Blot with dry towel. On any dyed or printed carpet, test a hidden patch first."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Dropper oxidation with extraction",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "5–15 minutes, check every 5 min",
+      "instruction": "Apply 3% H₂O₂ drop-by-drop on residual color. Peroxide oxidizes the anthocyanin conjugated system. Check every 5 minutes for color break. Blot with a dry towel. One oxidizer at a time; flush with NSD-damp cloth before a second pass."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "NSD Flush + Extract",
+      "technique": "Clear chemistry, pull moisture up",
+      "equipment": "NSD damp cloth, weighted dry towel",
+      "dwellTime": "2 minutes + 30 min weighted",
+      "instruction": "NSD-damp cloth to clear residual spotter and oxidizer. Then a folded DRY towel on the spot with a book or heavy pan on top — weighted 30 minutes to pull moisture UP from the backing toward the surface. Residual liquid left in the pad will wick wine color back up over the next 24 hours."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Fan-Dry + Inspect",
+      "technique": "No heat, inspect for wicking",
+      "equipment": "Fan, dry towel",
+      "dwellTime": "4–8 hours",
+      "instruction": "Fan the area. Air-dry fully. Inspect the next day for wicking — if a faint ring returns as the carpet dries, the pad is contaminated. Escalate to a professional carpet cleaner with extraction equipment. Pad contamination is the invisible failure mode of home carpet treatment."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin (acidic tannin spotter) and tamp gently. Dwell 5–10 minutes. This acidic spotter targets the bonds that wine, coffee, tea, and fruit juice pigments form with carpet fiber. Work from edge toward center.",
-      "2. Apply H₂O₂ 6% (professional-grade oxidizer) to the stain. Dwell 5–15 minutes, checking every 5 minutes. This oxidizer breaks down the double bonds that make tannin stains brown. Test an inconspicuous area of carpet first.",
-      "3. Flush with NSD (Neutral Synthetic Detergent) with a mild leveling agent. Dwell 2–3 minutes. Removes broken-down tannin pigment and excess oxidizer. Rinse thoroughly.",
-      "4. Apply 28% Acetic acid (diluted 1:10) to stop oxidizer activity and restore the carpet fiber. Dwell 1–2 minutes. Blot dry and allow to air dry completely."
+      "1. Blot + extract dry — press, lift, repeat. Never rub.",
+      "2. Cold NSD via damp cloth, extract between every pass.",
+      "3. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A) by dropper. 5–10 min.",
+      "4. 3% H₂O₂ drop-by-drop on residual. 5–15 min, check every 5. One oxidizer at a time.",
+      "5. NSD-damp flush + weighted dry towel, 30 min, to pull moisture up from backing.",
+      "6. Fan-dry. Inspect next day for wicking — pad contamination = specialist."
     ],
     "products": [
-      "Tannin (acidic tannin spotter)",
-      "H₂O₂ 6% (professional-grade oxidizer)",
-      "NSD (Neutral Synthetic Detergent) with leveling agent",
-      "28% Acetic acid (diluted 1:10)"
+      "NSD (Neutral Synthetic Detergent)",
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
+      "Hydrogen Peroxide 3%",
+      "Wet/dry vacuum or weighted dry towels"
     ],
-    "temperature": "cold to ambient — never use hot water immediately on tannin stains in carpet. Heat drives tannin deeper into fiber matrix and accelerates polymerization.",
+    "temperature": "cold throughout — hot water activates backing adhesive + accelerates tannin browning",
     "warnings": [
-      "Using hot water immediately — heat sets tannins permanently into the fiber.",
-      "Rubbing or scrubbing instead of blotting — spreads the stain and drives liquid deeper into the pad.",
-      "Waiting too long before treating — wine sets chemically within 10–15 minutes on synthetic carpet.",
-      "Skipping the acetic acid neutralization — acidic residue can cause yellowing over time.",
-      "Test all agents on an inconspicuous area first — monitor for color change, surface dulling, or texture damage."
+      "Never pour or pool liquid on carpet — sinks to backing and pad",
+      "Never use hot water — accelerates tannin browning + activates backing adhesive",
+      "Never skip extraction between wet passes — pad moisture causes wicking + mildew",
+      "One oxidizer at a time — NSD-flushed between",
+      "Wool carpet narrows the chemistry lane — escalate earlier"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test on a hidden spot",
-      "instruction": "Find a hidden patch of the same carpet — inside a closet, under a couch, behind a door. Dab a drop of the Dawn + 3% peroxide solution from step 5 and blot with a white cloth after two minutes. If the carpet holds its color, you're safe. If dye transfers to the cloth or the fiber lightens, stop — home peroxide will bleach the carpet. Skip to step 9."
+      "agent": "Test a Hidden Patch First",
+      "instruction": "Find a hidden patch of the same carpet — inside a closet, under a couch, behind a door. Dab a drop of cool water + Dawn on it with a white cloth. Wait 2 minutes. If the white cloth comes up with carpet dye on it, stop — your carpet's dye isn't stable and home chemistry will lighten it. Skip to step 6 (call a pro)."
     },
     {
       "step": 2,
-      "agent": "The tannin rule: no alkaline cleaners",
-      "instruction": "Red wine is a tannin, the same family as coffee, tea, and berries. Alkaline products — ammonia, baking soda, OxiClean, most \"all-purpose\" carpet sprays — lock the tannin into the fiber permanently and turn a purple ring into a dark brown one you can't undo. Use only: cold water, Dawn dish soap, 3% hydrogen peroxide, and white vinegar. Salt and club soda don't hurt, but they don't help either."
+      "agent": "Avoid Alkaline Cleaners on Red Wine",
+      "instruction": "Red wine is a tannin. Alkaline products — ammonia, baking soda, OxiClean, many \"all-purpose\" carpet sprays — LOCK tannin into the fiber and turn a purple ring into a permanent brown one. Use ONLY: cold water, Dawn dish soap, 3% hydrogen peroxide, and (optionally) white vinegar. Salt and club soda don't help much, but they don't hurt."
     },
     {
       "step": 3,
-      "agent": "Blot with pressure — never rub",
-      "instruction": "Press a clean white cloth or stack of paper towels straight down on the spill with firm pressure. Lift, move to a dry section, press again. Work from the outside of the stain inward so you don't spread it. Keep blotting until the cloth stops picking up red. Rubbing drives wine deep into the pile and the pad below — and once it reaches the pad, it will wick back up even after you clean the surface."
+      "agent": "Blot Straight Down, Never Rub",
+      "instruction": "Press a thick stack of white paper towels or a folded white cloth straight down on the spill. Lift, move to a dry section, press again. Work from the outside of the stain toward the center so it doesn't spread. Keep blotting until the cloth stops picking up red. Rubbing is the #1 mistake — it drives the wine deep into the pile and into the pad below, and once it's in the pad you can't reach it from the top."
     },
     {
       "step": 4,
-      "agent": "Cold water dilute — small amounts",
-      "instruction": "Pour a small amount of cold water directly on the stain — a few tablespoons at most, not a cup — and blot immediately. Repeat two or three times. The goal is to push the wine off the fiber and into your cloth without flooding the pad. Avoid hot water. Heat sets red wine tannin permanently and causes the stain to polymerize to a brown color you can't reverse."
+      "agent": "Cold Water Dilute — Small Amounts",
+      "instruction": "Pour a few TABLESPOONS of cold water directly on the stain — not a cup, a few tablespoons. Blot immediately. Repeat two or three times. You want to rinse the wine off the fibers without flooding the pad. Hot water is off-limits — it sets the tannin into a permanent brown color."
     },
     {
       "step": 5,
-      "agent": "Dawn + 3% hydrogen peroxide solution",
-      "instruction": "Mix one tablespoon of clear Dawn dish soap with one cup of 3% hydrogen peroxide in a small bowl. Dip a white cloth, wring nearly dry, and dab the stain — outside edges toward center. Let it sit 5–10 minutes, then blot with a clean damp cloth. Peroxide oxidizes the anthocyanin pigment; Dawn lifts it. Most wine stains need 2–3 cycles. This is the workhorse step — give it time.",
-      "safetyNote": "Never mix hydrogen peroxide with ammonia or bleach — dangerous gases. And skip this step on dark or patterned carpet unless your patch test came back clean."
+      "agent": "Dawn + 3% Hydrogen Peroxide Solution",
+      "instruction": "Mix 1 tablespoon clear Dawn dish soap with 1 cup 3% drugstore hydrogen peroxide in a small bowl. Dip a white cloth, wring nearly dry, dab the stain — edges toward center. Let it sit 5–10 minutes, blot with a clean damp cloth. Peroxide oxidizes the wine pigment; Dawn lifts it. Most wine stains need 2–3 cycles. This is the workhorse step — give it time.",
+      "safetyNote": "Never mix hydrogen peroxide with ammonia or bleach — toxic fume risk. Skip this step on dark or patterned carpet unless your patch test was clean."
     },
     {
       "step": 6,
-      "agent": "White vinegar rinse",
-      "instruction": "Mix one tablespoon of white vinegar into one cup of cold water. Dab onto the treated spot with a clean white cloth. Mild acid does two things: neutralizes any peroxide residue, and keeps tannin in its red (lighter) form rather than letting it drift toward brown as it dries. Blot dry with a clean cloth."
+      "agent": "Weighted Dry Towel Between Every Wet Pass",
+      "instruction": "This is the step most home guides skip. After each wet pass, put a THICK DRY towel on the spot and weight it with a book or a heavy pan for 20–30 minutes. The dry towel pulls moisture UP and out of the carpet backing before it can soak into the pad. If you skip this, the wine color wicks back up as the carpet dries over the next 24 hours."
     },
     {
       "step": 7,
-      "agent": "Dry down — prevent pad wicking overnight",
-      "instruction": "Blot until no more moisture transfers to a dry cloth. Stack eight to twelve sheets of white paper towels over the area, weigh them down with a heavy book, and leave overnight. Wine on carpet is a pad problem — any pigment still in the padding will wick back up as a ring if you don't pull it out while the carpet is still wet. Don't walk on the area or vacuum until completely dry."
+      "agent": "Fan-Dry, Don't Walk on It",
+      "instruction": "Point a fan at the spot. Let it dry completely before walking on it — several hours. Inspect the next day in daylight. If a faint pink ring returns as the carpet dries, the wine is in the pad and home treatment has plateaued. Call a carpet cleaner."
     },
     {
       "step": 8,
-      "agent": "Check under daylight — repeat if shadow remains",
-      "instruction": "Once dry, inspect in natural light (not a lamp). Wine rings often look gone when wet but reappear as a pink or tan halo when dry. If you see one, repeat steps 5–7 a second time. Two full rounds is the home ceiling. If a shadow still shows, or if you see a brown (not pink) halo, the tannin has polymerized — escalate."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a professional carpet cleaner",
-      "instruction": "If the patch test fails, the carpet is wool, or a stain survives two full home rounds, call a pro. Tell them: \"Red wine on [nylon/polyester/wool] carpet, treated with Dawn + 3% peroxide, vinegar rinse. No ammonia or alkaline products used. Residual [pink/brown] halo remains.\" That handoff lets them go straight to a commercial tannin formula, 6% peroxide, and hot-water extraction — the full depth tools you can't run at home."
+      "agent": "Escalate When the Ring Returns",
+      "instruction": "If the stain wicks back, if your patch test failed, if the carpet is wool, or if two full home rounds didn't clear it — call a professional carpet cleaner. They have hot-water extraction equipment that reaches the pad, which home tools can't. Tell them: \"Red wine on [nylon / wool / synthetic] carpet, age [fresh / overnight / older], home-treated with Dawn + 3% hydrogen peroxide + weighted dry towel. [Ring wicked back / stain plateau'd / patch test failed].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot the stain with a clean white cloth to soak up as much as you can. Getting excess out early makes the rest easier.",
-      "2. Mix 1 tbsp dish soap with 1 cup 3% hydrogen peroxide (the brown bottle from the pharmacy). Apply the solution and let it sit for 5–10 minutes.",
-      "3. Blot with a clean white cloth. Repeat until the color fades.",
-      "4. Blot with a cloth dampened with plain water to rinse — remove all cleaning solution.",
-      "5. Place a stack of paper towels over the spot and weigh them down. Let it dry completely. This prevents the stain from wicking back up from the carpet pad."
+      "1. Patch-test a hidden area with Dawn + 3% peroxide first.",
+      "2. NO alkaline cleaners — ammonia/OxiClean/baking soda lock tannin in as permanent brown.",
+      "3. Blot straight down from outside to center. Never rub.",
+      "4. Cold water dilute in small amounts — tablespoons, not cups.",
+      "5. Dawn + 3% peroxide solution, dab with damp cloth, dwell 5–10 min. 2–3 cycles.",
+      "6. Weighted dry towel 20–30 min between every wet pass — this is the pad-protection step.",
+      "7. Fan-dry, don't walk on it. Inspect next day for wicking.",
+      "8. Escalate to a carpet pro if it wicks back, if wool carpet, or two home rounds failed."
     ],
     "products": [
-      "Dawn NSD",
-      "3% H₂O₂",
-      "OxiClean Versatile Stain Remover (for set stains)",
-      "Wine Away Red Wine Stain Remover",
-      "Clean white cloths, paper towels"
+      "Clean white towels or thick paper towel stack",
+      "Dawn dish soap",
+      "3% hydrogen peroxide (drugstore brown bottle)",
+      "A heavy book or pan (for weighted drying)"
     ],
-    "whenToStop": "Apply H₂O₂ (3%) directly and let it dwell for 30-60 minutes. Apply and let it soak for 30–60 minutes. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment that outperform any home method.",
+    "whenToStop": "Stop if the stain wicks back after drying, if the carpet is wool, if your patch test shows dye bleed, or if two full home rounds don't clear it. Call a carpet cleaner with hot-water extraction.",
     "warnings": [
-      "Always blot — never rub. Rubbing damages carpet fibers and spreads the stain.",
-      "Place paper towels over the wet spot and weigh them down to prevent wicking overnight.",
-      "Never use hot water on tannin stains in carpet — heat permanently sets the color.",
-      "Test any cleaning solution on an inconspicuous area of carpet first.",
-      "Avoid over-wetting — too much liquid soaks through to the pad and causes wicking."
+      "NEVER use alkaline cleaners (ammonia, OxiClean, baking soda) on red wine — locks tannin as permanent brown",
+      "NEVER pour or pool liquid on carpet — sinks to backing and pad",
+      "NEVER skip the weighted dry-towel extraction between wet passes",
+      "NEVER mix peroxide with ammonia or bleach",
+      "NEVER use hot water — sets tannin brown"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never use hot water — heat sets tannins permanently into carpet fiber.",
-      "Never rub or scrub — spreads the stain and drives it deeper.",
-      "Never use ammonia or alkaline agents — permanently darkens tannin stains.",
-      "Never mix ammonia with chlorine bleach — produces toxic chloramine gas.",
-      "Never over-wet the carpet — moisture soaks into pad and causes wicking and delamination."
+      "Never pour or pool liquid on carpet — pad contamination",
+      "Never use alkaline cleaners on red wine — tannin locks as permanent brown",
+      "Never use hot water — sets tannin into carpet fiber",
+      "Never skip extraction between wet passes",
+      "Never layer oxidizers — one at a time, flushed between",
+      "Never walk on the spot while drying — drives moisture deeper"
     ],
     "fiberSensitivities": [
-      "Synthetic carpet (nylon/polyester) tolerates most agents — test all agents in an inconspicuous area first.",
-      "Monitor for color change, surface dulling, or texture damage during treatment.",
-      "Natural fiber carpet (wool) requires the wool-safe tannin protocol — different chemistry applies."
+      "Nylon / olefin / polyester face yarn: tolerates NSD, acid-side spotters, 3% H₂O₂ at room temp",
+      "Wool carpet: protein fiber — narrower chemistry, skip peroxide, escalate earlier",
+      "Backing latex: dissolves under pooled solvent or hot water — the invisible failure mode"
     ]
   },
+  "materialWarnings": [
+    "Never pool liquid — cloth-transfer only",
+    "NO alkaline cleaners on tannin — locks as permanent brown",
+    "Extract moisture between every wet pass"
+  ],
   "escalation": {
-    "when": "If wine stain persists after the full protocol, the tannins have cross-linked into the carpet fiber structure. Next option: rent a hot-water extraction machine (Rug Doctor or similar) and use the tannin remover additive pack. If the stain is larger than 12 inches or on a delicate natural fiber carpet, call a professional carpet cleaner who has industrial-grade tannin removers and hot-water extraction equipment.",
-    "whatToTell": "We've treated the red wine on your carpet. Wine darkens with air exposure and sets deeper with time and heat.",
-    "specialistType": "professional carpet cleaner"
+    "when": "Stain wicks back as carpet dries (pad contamination), wool carpet, patch test shows dye bleed, or two home rounds haven't cleared it.",
+    "whatToTell": "\"Red wine on [nylon / wool / synthetic] carpet, age [fresh / overnight / older], home-treated with Dawn + 3% H₂O₂ + weighted dry towel. [Ring wicked back / plateau / dye-test failed.]\"",
+    "specialistType": "professional carpet cleaner with hot-water extraction"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain — was it treated immediately or has it been sitting?",
-      "Was salt, club soda, or any product applied at time of spill?",
-      "Is this natural fiber carpet (wool) or synthetic (nylon/polyester)?",
-      "How large is the stain and does it appear to have soaked through to the pad?"
+      "How long ago did the spill happen?",
+      "Is the carpet fiber nylon, olefin, polyester, or wool?",
+      "Has anything alkaline (OxiClean / ammonia / baking soda) been applied?",
+      "Did anyone walk on the spot or use hot water?"
     ],
-    "modifierNotes": "Fresh red wine on synthetic carpet responds best — the sooner the treatment, the higher the success rate. Salt or club soda at spill time is neutral. Natural fiber carpet (wool) requires a completely different protocol — no enzymes, no oxidizing peroxide, use sodium hydrosulfite instead. Stains that have soaked into the pad will wick back up after surface treatment and require extraction equipment."
+    "modifierNotes": "Alkaline cleaner already applied = permanent brown, pro-lane or fabric replacement. Walked-on + dried = high pad-contamination risk. Wool + red wine = pro. Synthetic + caught fresh + no alkaline = good DIY odds."
   },
-  "difficulty": 6,
-  "timeEstimate": "10–15 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
