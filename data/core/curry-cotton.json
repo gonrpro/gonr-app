@@ -1,127 +1,207 @@
 {
   "id": "curry-cotton",
-  "title": "Curry/Turmeric on Cotton",
-  "stainFamily": "combo",
+  "title": "Curry on Cotton",
+  "stainType": "dye",
+  "stainFamily": "dye",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Curry stains are dominated by curcumin from turmeric — one of the most persistent natural dyes. On cotton, curcumin bonds through strong hydrogen bonds and is intensified by alkaline conditions and UV light. The oil base (ghee, coconut oil) drives the pigment deep into fibers. Secondary spices add additional pigments and oils.",
-  "whyThisWorks": "Avoiding sunlight and alkali is the first priority — both permanently intensify curcumin color on cotton. Oil is addressed first with POG or surfactant. An oxidizer (H2O2) then breaks the conjugated double bonds in curcumin that produce the yellow color. This is one of the hardest stains to fully remove — professional treatment may be necessary for complete resolution.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "20–60 minutes plus hours of sunlight",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "curry",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "dye",
+      "curcumin",
+      "turmeric",
+      "oil-carrier",
+      "cotton",
+      "sunlight-responsive",
+      "alkaline-avoid"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Curry stains are dominated by curcumin (the same turmeric chromophore as mustard), intensified by other spice pigments (paprika carotenoids, chili capsanthin) and driven deep into cotton by the oil base (ghee, coconut oil, ground oil). Two rules matter more than the rest: (1) AVOID ALKALINE — curcumin under alkaline conditions (ammonia, baking soda, soap scum) reversibly shifts to a much darker RED color. That red fades back to yellow under acid, but on cotton it can stain semi-permanently in the red form. (2) UV LIGHT FADES curcumin — sunlight is a friend here, the opposite of the alkaline rule. Cotton itself tolerates IPA, NSD, 3% H₂O₂, sun. The challenge is the tenacious bond curcumin forms with cellulose.",
+  "whyThisWorks": "Oil-carrier first (NSD / Dawn) — curcumin is protected from every subsequent chemistry while the oil is there. Then 3% H₂O₂ oxidizes the chromophore from the oxygen side, and sunlight drives the same fade from the UV side. Multiple cycles over a day or two are normal on curry — the stain is patient-removal, not power-removal. The alkaline-avoid rule is absolute: one ammonia-containing cleaner applied by accident can turn a yellow stain into a dark red one that's harder to remove.",
+  "defaultAssumption": "Curry is one of the hardest home stains. Fresh + white cotton + no alkaline exposure = reasonable DIY but plan for 2–3 cycles. Aged + dark cotton = pro plateau likely. Anything that's seen ammonia or baking soda paste from a prior attempt = red-shifted, harder than it started.",
+  "spottingProtocol": [
+    {
+      "side": "dry",
+      "step": 1,
+      "agent": "Scrape + Cold Flush",
+      "technique": "Remove bulk, then cold flush from back",
+      "equipment": "Dull blade, cold water, white cotton terry towel",
+      "dwellTime": "1 minute",
+      "instruction": "Scrape solid curry off with a dull blade. Cold flush from the BACK of the fabric. Cold only — heat drives the oil deeper. DO NOT use any alkaline cleaner (ammonia, baking soda, all-purpose spray) on curry; it shifts the yellow to red."
+    },
+    {
+      "side": "wet",
+      "step": 2,
+      "agent": "NSD",
+      "technique": "Strip the oil carrier",
+      "equipment": "NSD in cool water",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Apply NSD, work with a soft brush. The oil must come off first — curcumin is protected from peroxide while oil is there. Rinse cool. Repeat if oil residue is still visible."
+    },
+    {
+      "side": "wet",
+      "step": 3,
+      "agent": "POG (If Heavy)",
+      "technique": "Solvent pass for aged oil",
+      "equipment": "POG on a clean white cloth",
+      "dwellTime": "30–60 seconds",
+      "instruction": "For aged / heavy curry where NSD alone doesn't clear the oil: POG tamp on a white cloth. Cotton tolerates POG. Ventilate."
+    },
+    {
+      "side": "wet",
+      "step": 4,
+      "agent": "Hydrogen Peroxide 3% + Sunlight",
+      "technique": "Oxidize + UV",
+      "equipment": "3% H₂O₂, sunny window or outdoor line",
+      "dwellTime": "10 minutes wet + 1–3 hours in sunlight",
+      "instruction": "Apply 3% H₂O₂ directly. Dwell 10 min wet, blot. Hang damp in direct sunlight — UV + peroxide oxidize curcumin together. Repeat the peroxide + sun pass every 30–60 minutes until shadow fades."
+    },
+    {
+      "side": "wet",
+      "step": 5,
+      "agent": "NSD Flush",
+      "technique": "Clear residual chemistry",
+      "equipment": "NSD, clean water",
+      "dwellTime": "2 minutes",
+      "instruction": "Flush with NSD. No alkaline rinse — stays on the acid / neutral side throughout."
+    },
+    {
+      "side": "wet",
+      "step": 6,
+      "agent": "Hot Wash + Sun Dry",
+      "technique": "Launder hot, sun finish",
+      "equipment": "Washing machine, outdoor line",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label. Sun-dry when possible — any residual curcumin continues to fade. Multiple sun cycles may be needed over 2 days on aged stains."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove excess solids with dull edge — do not rub",
-      "2. Apply Tannin Formula for the plant-pigment component",
-      "3. Apply POG for the oil component",
-      "4. Flush with NSD and cool water",
-      "5. If color persists: apply H2O2 6% on colorfast fabrics",
-      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+      "1. Scrape bulk. Cold flush from the back. No alkaline anywhere.",
+      "2. NSD — strip oil carrier first. Tamp, not scrub.",
+      "3. POG if oil is aged / heavy.",
+      "4. 3% H₂O₂ + 1–3 hours sunlight. Repeat every 30–60 min until fade.",
+      "5. NSD flush — stay on acid / neutral side throughout.",
+      "6. Hot wash + sun dry for residual fade."
     ],
     "products": [
-      "Tannin Formula",
-      "POG (Paint Oil Grease remover)",
       "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "POG (Paint-Oil-Grease remover) for heavy oil",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool through spotting; hot wash post-chemistry; ambient sun for fade",
+    "warnings": [
+      "NEVER apply any alkaline cleaner — curcumin red-shifts and becomes harder",
+      "Oil first — peroxide can't reach curcumin through the oil carrier",
+      "One oxidizer at a time",
+      "Set honest expectations — aged curry may plateau at faint yellow even professionally"
+    ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Know the rules: sunlight is your friend, alkaline is your enemy",
-      "instruction": "Turmeric (curcumin) is the hardest common household stain. Two counter-intuitive rules: (1) ALKALINE products turn a yellow stain BRIGHT RED and lock it in forever — ammonia, baking soda, many all-purpose sprays. Avoid them. (2) SUNLIGHT, by contrast, breaks down curcumin — UV is literally the best home finish for this stain. Most other stains hide from the sun; this one you want to expose to it."
+      "agent": "DON'T Use Baking Soda, Ammonia, or Alkaline Cleaner",
+      "instruction": "This is the single most important rule for curry on cotton. The yellow in curry comes from turmeric (curcumin). If curcumin touches ANYTHING alkaline — baking soda, ammonia, most all-purpose sprays, washing soda — it instantly shifts from yellow to dark RED, and that red form is much harder to remove. If you've already applied baking soda paste, soak the area in diluted white vinegar for 20 minutes to shift it back before anything else."
     },
     {
       "step": 2,
-      "agent": "Patch test + scrape solids",
-      "instruction": "On an inside seam, dab a drop of Dawn + 3% peroxide and blot after 60 seconds. If the fabric holds color, you're safe. Meanwhile, lift off any food chunks or oil pooling with a butter knife or credit card edge — away from the center. Don't rub — mashing curry chunks into the weave makes every following step harder."
+      "agent": "Scrape + Cold Water From the Back",
+      "instruction": "Scrape any solid curry off with a dull butter knife. Hold the BACK of the stained fabric under cold running water for a minute. Cold only — warm water drives the oil deeper into cotton."
     },
     {
       "step": 3,
-      "agent": "Cold water back-flush",
-      "instruction": "Turn the fabric inside out and run cold water through the BACK of the stain for 30–60 seconds. Push the curry sauce and its oil base OUT the way it came in. Skip hot water — heat polymerizes the oil base (ghee, coconut oil) into the cotton and makes the pigment even harder to reach."
+      "agent": "Dawn FIRST — Strip the Oil",
+      "instruction": "Curry has oil (ghee, coconut, vegetable) as its carrier. That oil protects the yellow pigment from everything else until it's gone. Work Dawn dish soap directly into the stain with a soft toothbrush for 2–3 minutes, rinse cool. Repeat if you can still feel oiliness. You should see the stain lighten noticeably once the oil is out."
     },
     {
       "step": 4,
-      "agent": "Dawn dish soap — cut the oil carrier first",
-      "instruction": "Put a small drop of clear Dawn directly on the stain (no water yet). Work it in with a fingertip for 30 seconds. Let sit 10 minutes. The oil or ghee base of curry traps the curcumin pigment against the fiber — Dawn emulsifies the oil so the pigment-fighting steps can actually reach the pigment. Blot with a damp cloth."
+      "agent": "Hydrogen Peroxide 3% + Sunlight — the Real Fade",
+      "instruction": "This is where curcumin actually fades. Pour 3% drugstore hydrogen peroxide on the stain, let it bubble 10 min. Hang the damp garment in direct sunlight for an hour. Come back, re-apply peroxide, back in the sun, another hour. A full sunny afternoon of this often takes a curry stain from bright yellow to nearly gone. Aged curry can take 2–3 sunny days. Skip on dark cotton.",
+      "safetyNote": "Never mix hydrogen peroxide with ammonia, chlorine bleach, or vinegar at the same time — one at a time with a rinse between. And never, ever put alkaline anything on a curry stain."
     },
     {
       "step": 5,
-      "agent": "Dawn + 3% peroxide solution (multiple cycles)",
-      "instruction": "Mix one tablespoon of Dawn with one cup of 3% hydrogen peroxide. Dab onto the stain with a white cloth, let sit 10–15 minutes, then blot. Curcumin fights back — plan on 3–5 cycles for a fresh stain, more for dried. Between cycles, re-dab the solution rather than flooding. Peroxide breaks the conjugated double bonds in curcumin that produce the yellow color.",
-      "safetyNote": "Never mix peroxide with ammonia or bleach. On brightly colored cotton, the step-2 patch test is your safety net."
+      "agent": "Hot Wash, Line-Dry in Sun",
+      "instruction": "Once the stain is faded, launder on the hottest setting the care label allows. Line-dry in direct sunlight if possible — any residual curcumin keeps fading under UV."
     },
     {
       "step": 6,
-      "agent": "Cold wash — no dryer yet",
-      "instruction": "Launder on cold with your normal detergent. Hang to air-dry, still damp. DO NOT put it in the dryer yet — heat on residual curcumin sets the color permanently and also turns any alkaline laundry-booster residue into a bright red stain you can't undo."
+      "agent": "Set Expectations Honestly",
+      "instruction": "Curry is one of the hardest home stains. Fresh + caught fast on white cotton is winnable. Aged + dark cotton often plateaus at a faint yellow shadow — even professionals have limits here. If the stain has been through a hot dryer, iron, OR had alkaline cleaner applied, home chemistry may not fully clear it and honest escalation to a dry cleaner (with realistic expectations) is the call."
     },
     {
       "step": 7,
-      "agent": "SUNLIGHT — the turmeric secret weapon",
-      "instruction": "This step is what actually finishes the job. Lay the still-damp garment flat outdoors in direct sunlight for 2–4 hours. UV breaks down curcumin molecules much faster than any home chemistry. You will often watch a bright yellow shadow fade to nothing over a single afternoon. Keep the fabric damp — re-spray with cold water if it dries out (damp + sunlight is more effective than dry + sunlight). On colored cotton, sunlight may fade your dye too — keep exposure under 2 hours and watch closely."
-    },
-    {
-      "step": 8,
-      "agent": "Second round if any shadow remains",
-      "instruction": "After sunlight: inspect in daylight. If a faint yellow trace persists, repeat steps 5–7 once more. Two full rounds is the home ceiling for curcumin — beyond that, the pigment has cross-linked with fiber and you need professional chemistry."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a dry cleaner for stubborn turmeric",
-      "instruction": "If two rounds of home + sunlight don't clear it, escalate. Tell them: \"Curry (turmeric) on cotton, age [fresh/dried/heat-set]. Treated at home with Dawn + 3% peroxide x 2 rounds + sunlight finish. No alkaline products used.\" That's the exact protocol pros would follow at home-grade potency — they can step up to 6% peroxide, commercial tannin formulas, and reducing agents. Don't expect 100% removal on old or heat-set curry — curcumin is famously the final boss of household stains."
+      "agent": "Escalate to a Dry Cleaner",
+      "instruction": "Take to a pro if: alkaline was applied (red-shift), the curry has been hot-dried, two peroxide + sun cycles haven't cleared it, or the cotton is dark dyed. Tell them: \"Curry on cotton, age [fresh / overnight / older], home-treated with Dawn + 3% hydrogen peroxide + sunlight. [No alkaline used / baking soda was applied before I knew / hot-dried].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub",
-      "2. Rinse with cold water to remove loose material",
-      "3. Apply Dawn dish soap. Work gently",
-      "4. Blot with clean white cloth. Repeat if needed",
-      "5. Air dry — no heat until stain is gone"
+      "1. NO alkaline cleaners on curry. Ever. Baking soda + curry = permanent red shift.",
+      "2. Scrape bulk, cold water flush from the BACK.",
+      "3. Dawn first — strip the oil carrier. 2–3 min, rinse cool.",
+      "4. 3% hydrogen peroxide + 1 hour direct sunlight. Repeat every 30–60 min. 2–3 cycles over a sunny day (or two days on aged stains).",
+      "5. Hot wash per care label. Line-dry in sun.",
+      "6. Escalate if alkaline was applied, hot-dried, two cycles plateau, or dark cotton."
     ],
     "products": [
-      "Dawn dish soap"
+      "Dull blade or credit-card edge",
+      "Dawn dish soap",
+      "3% hydrogen peroxide (drugstore brown bottle)",
+      "A sunny afternoon (or two)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if alkaline has been applied and turned yellow to red, if curry has been hot-dried, or if two peroxide + sun cycles plateau. Take to a dry cleaner and set realistic expectations — curry may leave a faint shadow.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "ABSOLUTE: no alkaline cleaners on curry. Baking soda, ammonia, washing soda, all-purpose sprays = red permanent shift.",
+      "Oil first — peroxide can't work through the oil carrier",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton",
+      "Set honest expectations: aged curry plateaus are normal"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "NEVER apply alkaline cleaners to curry — red-shifts the curcumin",
+      "Never skip the oil-strip step — peroxide can't penetrate the carrier",
+      "Never layer oxidizers — one at a time",
+      "Never promise full removal on aged curry — plateau is common"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates NSD, POG, 3% H₂O₂, UV sunlight, hot wash",
+      "Dyed cotton: peroxide + sun fades fabric dye too — test inside seam",
+      "Heat-durable fiber overall; the curcumin is the limiting factor"
     ]
   },
+  "materialWarnings": [
+    "NO ALKALINE cleaners on curry — permanent red shift",
+    "Oil off before oxidizer",
+    "Peroxide + sunlight is the patient fade workhorse"
+  ],
   "escalation": {
-    "when": "If curry stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is curry on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Alkaline cleaner was applied to curry (red-shift), curry heat-set by iron or dryer, two peroxide + sun cycles plateau, or dark dyed cotton where peroxide isn't safe.",
+    "whatToTell": "\"Curry on cotton, age [fresh / overnight / older], home-treated with Dawn + 3% H₂O₂ + sunlight. [No alkaline used / baking soda was applied before I knew / hot-dried.] Visible shadow: [yellow / red / faint].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
+      "Has any alkaline cleaner (baking soda, ammonia, all-purpose) been applied? (critical — red-shifts curcumin)",
       "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Has it been through a hot wash or dryer?",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The alkaline-avoid rule is the curry-specific unlock. Normal stain advice says \"baking soda paste\" for everything — here it turns a yellow stain into a red one. Never on curry. Mustard-cotton shares this rule (same curcumin chromophore)."
   },
-  "difficulty": 8,
-  "timeEstimate": "20-45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

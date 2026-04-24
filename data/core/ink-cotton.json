@@ -1,128 +1,213 @@
 {
   "id": "ink-cotton",
   "title": "Ink on Cotton",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Dye stains (ink, markers, food coloring, dye transfer) are pigment molecules suspended in binders or vehicles. Fresh dyes are reversible; aging allows cross-linking with the fiber. VDS (volatile dry solvent) dissolves the pigment and binder, lifting the stain from the fiber. Amyl acetate is stronger but riskier on delicate fabrics. H₂O₂ 6% provides an oxidizing alternative, especially for natural food dyes. Sodium hydrosulfite reduces the dye's chromophores, eliminating color without bleaching the base fiber.",
-  "whyThisWorks": "Ink is a dye in an oil-based carrier designed to permanently mark surfaces. Cotton absorbs quickly and holds stains deep in the weave. Alcohol or solvent dissolves the carrier holding the dye in place, letting you lift it away before it bonds permanently.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–45 minutes (fresh); aged or heat-set climbs tier",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "ink",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "dye",
+      "ink",
+      "cotton",
+      "solvent-first",
+      "catch-cloth-required"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "\"Ink\" covers multiple chemistries and this card is the catch-all for everything not covered by ink-ballpoint-cotton or ink-permanent-marker-cotton: gel pen, fountain-pen dye ink, rollerball, stamp ink. Most gel and rollerball inks are dye-in-water-plus-glycerin systems; fountain ink is similar with a wetter carrier; stamp ink is typically dye + solvent. Cotton tolerates IPA, POG, 3% H₂O₂, NSD, hot wash. The solvent choice depends on the ink base — water-based inks lift with NSD + cold flush + IPA if needed; solvent-based inks need more aggressive tamp with alcohol or POG. Catch cloth under the stain is the non-negotiable rule regardless of ink type.",
+  "whyThisWorks": "Catch cloth UNDER + tamp on TOP pattern transfers the dye molecules OUT of the cotton into the cloths instead of smearing sideways. Cold flush first for water-based inks moves the water-soluble part; IPA handles what's left. 3% H₂O₂ clears residual dye chromophore on whites. For solvent-based inks the starting step is the IPA tamp, skipping the cold flush since water does nothing to solvent dyes. Identify the ink class in step 1 — it decides the protocol.",
+  "defaultAssumption": "Modern gel pens and rollerballs are the most common 'ink on cotton' case outside of ballpoint. Treat as dye-in-water unless the user specifies stamp ink or permanent marker. Caught fresh = high-confidence DIY; heat-set (hot-dried) = often pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify + Catch Cloth",
+      "technique": "Which ink, then isolate work area",
+      "equipment": "Clean white cotton towel underneath",
+      "dwellTime": "30 seconds",
+      "instruction": "Identify the ink type: water-based (gel pen, fountain, rollerball) → cold flush first works. Solvent-based (stamp ink, Sharpie, permanent marker) → skip water, go straight to IPA tamp. For ballpoint specifically, use ink-ballpoint-cotton. Then place a clean white catch cloth UNDER the stain so the dye transfers down."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Flush (Water-Based Only)",
+      "technique": "Flush from the back",
+      "equipment": "Cold water",
+      "dwellTime": "30–60 seconds",
+      "instruction": "For water-based inks: cold flush from the BACK of the fabric. Blot. Most fresh gel-pen or fountain ink lightens significantly here. Skip this step entirely for solvent-based ink — water does nothing to it."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "IPA Tamp",
+      "technique": "Solvent tamp from back",
+      "equipment": "Isopropyl alcohol 90%+ on clean white cloth",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply IPA to a clean white cloth. Tamp from the BACK of the fabric, over the catch cloth. Flip the pressing cloth frequently. 3–5 passes on dense ink. Cotton tolerates IPA. Never pour alcohol directly."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify residual",
+      "equipment": "NSD in warm water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD, soft brush. Rinse cool. Lifts any residual oil or glycerin vehicle."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For residual dye shadow on whites: 3% H₂O₂ drop-by-drop. Oxidizes the chromophore. Skip on dark or dyed cotton. One oxidizer at a time."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label. Inspect BEFORE the dryer — dryer heat sets residual ink permanently."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply VDS to dissolve the dye pigment and its binder. VDS is gentle but effective — it lifts color molecules from the fiber. Blot with clean cloth, replacing often as it picks up dye. Work from outside in.",
-      "2. If VDS plateaus, switch to amyl acetate for stronger solvent action. This targets dye molecules that have bonded more deeply to the fiber. Test on a hidden area first. Never use on acetate fabrics.",
-      "3. Flush with NSD to remove all solvent residue and any remaining pigment particles. Rinse thoroughly with cool water."
+      "1. Identify ink class. Water-based vs solvent-based decides the protocol.",
+      "2. Catch cloth UNDER the stain.",
+      "3. Water-based: cold flush first. Solvent-based: skip to IPA.",
+      "4. IPA on a white cloth, tamp from back. 3–5 passes.",
+      "5. NSD to emulsify residual.",
+      "6. 3% H₂O₂ on residual chromophore (whites only).",
+      "7. Hot wash per care label."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)"
+      "Isopropyl alcohol 90%+",
+      "NSD (Neutral Synthetic Detergent)",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold — water causes dye to absorb deeper; treat dry-side first before any wet treatment",
+    "temperature": "cool through spotting; hot wash post-chemistry",
     "warnings": [
-      "Using water first — water causes dye to absorb deeper into the fiber",
-      "Rubbing or agitating the stain — spreads the dye throughout the fabric",
-      "Not testing on hidden areas first — some dyes transfer and re-stain adjacent fibers",
-      "Oversaturating with solvent — creates a dye-solvent slurry harder to remove than the original stain"
+      "Catch cloth UNDER + pressing cloth on TOP — non-negotiable",
+      "Solvent before water for solvent-based inks — water does nothing and can spread dye",
+      "Never pour solvent — tamp with cloth",
+      "One oxidizer at a time; skip peroxide on dark/dyed cotton"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test + identify the ink type",
-      "instruction": "Before you treat, check: is this ballpoint, gel pen, permanent marker, highlighter, or printer ink? Ballpoint responds best to alcohol; gel pen and permanent marker often need a dry-cleaning solvent (Amodex or dry-cleaning spotter). Printer ink is water-based and often lifts with dish soap alone. On a hidden seam, dab isopropyl alcohol — if no dye transfers to your cloth from the cotton itself, you're safe to proceed."
+      "agent": "Identify What Kind of Ink",
+      "instruction": "Different inks need different treatments. GEL PEN, FOUNTAIN PEN, ROLLERBALL (water-based): cold water does half the work; alcohol finishes. STAMP INK, PERMANENT MARKER, SHARPIE: cold water does nothing — go straight to alcohol. BALLPOINT: see ink-ballpoint-cotton, which has its own protocol. Knowing which type saves you two steps."
     },
     {
       "step": 2,
-      "agent": "The dye rule: no water first",
-      "instruction": "Water drives ink pigment deeper into cotton fiber and makes a small mark into a bigger faded one. Treat dry-side first — alcohol or solvent, never water first. Also: do NOT put the garment in the dryer until the stain is fully out. Heat polymerizes the dye into the cotton permanently."
+      "agent": "Put a White Towel UNDER the Stain",
+      "instruction": "Fold a clean white towel and place it UNDER the stained area. When the ink dissolves, it transfers DOWN into the catch cloth instead of smearing sideways into clean fabric. This is the rule for every ink stain — no exceptions."
     },
     {
       "step": 3,
-      "agent": "Place an absorbent pad UNDER the stain",
-      "instruction": "Lay the garment stain-side DOWN on a stack of clean white paper towels or a folded white cloth. As you apply solvent from above, the dissolved ink will transfer DOWN into the pad instead of spreading sideways on the fabric you're saving. This one step does more for ink removal than most people's entire DIY attempt. Replace the pad every time you see it pick up dye."
+      "agent": "Water-Based Ink: Cold Water First",
+      "instruction": "For gel pen, fountain pen, or rollerball: hold the BACK of the stained area under cold running water for 30–60 seconds. A lot of the ink lifts here. Skip this step if the ink is solvent-based (stamp ink, Sharpie)."
     },
     {
       "step": 4,
-      "agent": "Isopropyl alcohol — dab, don't rub",
-      "instruction": "Dip a clean white cloth or Q-tip in 91% isopropyl alcohol (drugstore). Press it directly onto the stain from above — dab, lift, dab again. Work from outside edges toward the center so you pull dye inward, not outward. Replace the pad underneath every minute or two as it picks up ink. Keep going until no more color transfers. Fresh ballpoint usually lifts completely here.",
-      "safetyNote": "Never use alcohol on silk, rayon, acetate, or wool. Cotton tolerates it well. Do not saturate the fabric — pressed dabs beat soaking."
+      "agent": "Rubbing Alcohol on a White Cloth",
+      "instruction": "Dab 70%+ rubbing alcohol on a clean white cloth. Press onto the stain from the BACK, over the catch cloth. Flip the pressing cloth frequently. Dye transfers onto whichever cloth is touching it. 3–5 rounds on dense stains."
     },
     {
       "step": 5,
-      "agent": "Dawn dish soap — emulsify what alcohol left behind",
-      "instruction": "Once the dye has stopped transferring to the pad, put a small drop of clear Dawn directly on the stain. Work it in with a fingertip for 30 seconds, then let it sit 5 minutes. Dawn emulsifies the oil carrier that most pens use to bind dye to surfaces — alcohol dissolves the dye, Dawn lifts the carrier. Blot with a clean damp cloth."
+      "agent": "Dawn + Soft Brush",
+      "instruction": "Work a drop of Dawn dish soap into the spot with a soft toothbrush. Dawn lifts any residual oil vehicle from the ink. Rinse cool."
     },
     {
       "step": 6,
-      "agent": "Specialty remover for persistent pigment (optional)",
-      "instruction": "If a shadow remains, apply Amodex Ink & Stain Remover (drugstore/Amazon, made specifically for ink) per label and dwell 10–15 minutes. Or try a hair spray with alcohol as the active solvent — old trick, still works on ballpoint. For permanent marker: dry-cleaning solvent (Carbona Stain Devil #3) is better than anything water-based. Blot with a clean damp cloth."
+      "agent": "Hydrogen Peroxide 3% for Shadow (Whites)",
+      "instruction": "For residual blue / purple / red shadow on white cotton: dab 3% drugstore hydrogen peroxide, let it bubble 3–5 min, blot. Skip on dark or dyed cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fumes."
     },
     {
       "step": 7,
-      "agent": "Cold wash + air dry",
-      "instruction": "Launder the garment on cold, with your normal detergent. Do NOT use hot water and do NOT tumble-dry. Hang or lay flat, inspect in daylight after drying. If any shadow remains, repeat steps 4–6 before drying on heat. Only put in the dryer once the stain is completely invisible in natural light."
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. Dryer heat sets residual ink permanently."
     },
     {
       "step": 8,
-      "agent": "Hydrogen peroxide (white cotton only)",
-      "instruction": "On white cotton ONLY, if a pale shadow persists: dab with 3% hydrogen peroxide, let sit 5 minutes, rinse cold. Peroxide oxidizes residual dye color. Do not use on colored cotton — it will bleach the dye. Never mix with bleach or ammonia."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a dry cleaner",
-      "instruction": "Permanent marker, set-in gel pen, or printer-ink that's been through the dryer usually needs professional solvent chemistry (amyl acetate, VDS) that isn't safe at home. Take it in and tell them: \"[Ballpoint / gel / permanent marker / printer] ink on cotton, treated at home with isopropyl alcohol + Dawn + [Amodex / nothing]. No heat applied. Please use dry-side solvent first, then wet-side.\" That gives them the full treatment history."
+      "agent": "Escalate If Heat-Set or Sharpie Plateau",
+      "instruction": "If ink has been hot-dried, or if the stain is from Sharpie / permanent marker and doesn't respond to alcohol, take to a dry cleaner. Tell them: \"Ink on cotton — [type if known], age [fresh / overnight / older], home-treated with rubbing alcohol + Dawn + 3% H₂O₂. [Hot-washed / not yet laundered].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Dab the stain with a cloth dipped in rubbing alcohol (isopropyl alcohol 91%, also called IPA).",
-      "2. Work from the outside edge toward the center. Swap to a clean part of the cloth often.",
-      "3. Keep dabbing until no more color transfers to the cloth.",
-      "4. Rinse with cold water.",
-      "5. Air dry — don't use a dryer until the stain is gone."
+      "1. Identify ink type — water-based (cold flush helps) vs solvent-based (skip to alcohol).",
+      "2. Catch cloth UNDER the stain.",
+      "3. Water-based ink: cold flush from the BACK.",
+      "4. Rubbing alcohol on a white cloth, tamp from the back. 3–5 passes.",
+      "5. Dawn + soft toothbrush for residual.",
+      "6. 3% hydrogen peroxide on residual shadow (whites only).",
+      "7. Hot wash per care label. Inspect BEFORE the dryer.",
+      "8. Escalate if heat-set or Sharpie plateau."
     ],
     "products": [
-      "Rubbing alcohol (isopropyl alcohol 91%, IPA)",
-      "Amodex Ink & Stain Remover",
-      "H₂O₂ 3%"
+      "70%+ rubbing alcohol (drugstore isopropyl)",
+      "Clean white cloths (catch + pressing)",
+      "Dawn dish soap",
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "For permanent markers or set-in dyes, a professional cleaner has access to specialized solvents (like amyl acetate) that work better than household rubbing alcohol. Don't keep treating — you risk damaging the fabric.",
+    "whenToStop": "Stop if ink has been hot-dried, two home rounds failed, or the ink is permanent marker that doesn't respond to alcohol.",
     "warnings": [
-      "Always blot — never rub with pressure. Rubbing the stain pushes it deeper into the fabric.",
-      "Use a white cloth to avoid transferring dye from a colored cloth.",
-      "Rubbing alcohol (isopropyl alcohol / IPA) works on most dye stains because it dissolves the carrier that holds the pigment."
+      "Catch cloth + tamp from back — ink smears sideways without these",
+      "Never pour alcohol — tamp with cloth",
+      "Water-based vs solvent-based ink need different starts",
+      "Skip peroxide on dark/dyed cotton",
+      "Inspect before the dryer"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Apply water first — causes dye to absorb deeper into the fiber",
-      "Rub or agitate the stain — spreads the dye throughout the fabric",
-      "Use heat before the dye is removed — polymerizes dye into the fiber"
+      "Never skip the catch cloth — sideways dye spread",
+      "Never pour alcohol on cotton — tamp with cloth",
+      "Never hot-dry residual ink — permanent set",
+      "Never layer oxidizers"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates solvents well. Acetate fibers cannot tolerate amyl acetate or solvents — VDS only. For colored cotton, test H₂O₂ on a hidden seam before use."
+      "Cotton tolerates IPA, POG, NSD, 3% H₂O₂, hot wash",
+      "Dyed cotton: IPA usually safe; inside-seam-test if concerned; skip peroxide",
+      "Heat-durable once ink is out"
     ]
   },
+  "materialWarnings": [
+    "Catch cloth UNDER + tamp on TOP",
+    "Identify ink class before starting",
+    "Inspect before the dryer"
+  ],
   "escalation": {
-    "when": "VDS plateau reached and dye has likely covalently bonded to the fiber",
-    "whatToTell": "Ink stain on cotton, dye-based. Treated at home with rubbing alcohol (isopropyl alcohol, IPA). Please use amyl acetate or professional solvent protocol.",
-    "specialistType": "dry cleaner or wet cleaner"
+    "when": "Ink heat-set by dryer or iron, permanent marker that doesn't respond to alcohol, or two home rounds haven't cleared it.",
+    "whatToTell": "\"Ink on cotton — [gel / fountain / stamp / permanent marker if known], age [fresh / overnight / older], home-treated with rubbing alcohol + Dawn + 3% H₂O₂.\"",
+    "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is this ballpoint, gel pen, marker, or printer ink?",
-      "Is the stain fresh or has it been sitting?",
-      "Has the garment been through the dryer?",
-      "Is the cotton white or colored?"
+      "What kind of pen / ink — gel, fountain, rollerball, stamp, Sharpie, ballpoint?",
+      "How old is the stain?",
+      "Has it been through a hot wash or dryer?",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Permanent marker and gel pen use different chemical formulations than ballpoint — may require stronger solvent. Dryer exposure makes removal very difficult. Fresh stains respond significantly better. On colored cotton, test peroxide first."
+    "modifierNotes": "For ballpoint specifically, ink-ballpoint-cotton has a more targeted protocol. For permanent marker, escalate early — Sharpie pigments rarely clear fully even professionally."
   },
-  "difficulty": 4,
-  "timeEstimate": "15–45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

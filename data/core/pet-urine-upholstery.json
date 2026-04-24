@@ -1,135 +1,221 @@
 {
   "id": "pet-urine-upholstery",
   "title": "Pet Urine on Upholstery",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Pet urine is more concentrated than human urine — higher protein, uric acid, and pheromone content. On upholstery, uric acid crystallizes as it dries and bonds tightly to fibers. These crystals reactivate with humidity, causing recurring odor. Cat urine is particularly concentrated with felinine (a sulfur-containing amino acid) that produces especially persistent odor through bacterial decomposition.",
-  "whyThisWorks": "Enzyme treatment is essential — uric acid crystals resist standard cleaning. The enzyme breaks down the protein and uric acid bonds on upholstery. Cold water prevents protein from setting. For odor, the enzyme must penetrate to the base of the contamination, not just the surface. Complete saturation of the affected area is necessary for odor resolution.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "30 minutes to several hours plus fan-dry; batting involvement pushes pro",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "pet-urine",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "protein",
+      "uric-acid",
+      "odor-permanent",
+      "upholstery",
+      "pad-risk",
+      "biohazard-adjacent"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Pet urine is more concentrated than human urine: higher urea, uric acid, pheromones, and for cats, felinine (a sulfur-containing amino acid with especially persistent odor). Uric acid crystallizes as the urine dries; those crystals reactivate under humidity and keep producing odor for months. On upholstery, the liquid soaks through face fabric into batting, where crystals collect and bacteria metabolize the urea into ammonia. Home treatment that only addresses the face fabric leaves the batting contaminated and the smell returns every time the humidity rises or a pet smells the old spot and refreshes it.",
+  "whyThisWorks": "Enzyme-specific pet urine products (Nature's Miracle, Rocco & Roxie, Anti Icky Poo) have protease enzymes formulated to break down uric-acid crystals that general enzymes don't. The enzyme MUST reach where the urine reached — surface treatment leaves the batting alive with bacteria. This means saturating enough to match the original spill, which is a carpet-cleaner extraction problem on any significant upholstery stain. Vinegar rinse neutralizes residual ammonia; baking-soda dry-dust helps with odor; fan + dehumidifier dries the batting fully. The limitation: if batting or cushion foam has been soaked repeatedly, no amount of surface enzyme will fully clear the odor — that's a cushion-replace or pro-extract problem.",
+  "defaultAssumption": "Pet urine on upholstery is escalate-first MORE OFTEN than human urine. Mattress / cushion / chair padding trap bacteria home chemistry can't reach. Cats especially — felinine odor is persistent. Small fresh spill on a W / W-S code piece = DIY possible. Anything larger or older = professional.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Check Code + Blot",
+      "technique": "Read code tag, blot extract",
+      "equipment": "Disposable gloves, white cotton towel, code tag",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Gloves on. Read upholstery code: W / W-S (water-based OK), S (solvent only, not for urine — enzyme can't do its work), X (vacuum only, urine on X-code = professional upholstery restorer). Press folded white towel hard on the spot to extract as much urine as possible before chemistry touches it."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Pet-Specific Enzyme Saturate",
+      "technique": "Saturate matching original spill",
+      "equipment": "Pet-specific enzyme cleaner (Nature's Miracle / Rocco & Roxie / Anti Icky Poo)",
+      "dwellTime": "30–60 minutes",
+      "instruction": "Apply enzyme cleaner matching the volume of the original spill — the enzyme has to reach where the urine reached. For a fresh small spill on the face fabric only, a damp cloth saturated with enzyme works. For anything that soaked through, you need to saturate enough to reach the batting — which is where the cushion-replace / pro-extract decision often lands. Dwell 30–60 minutes; don't let it dry mid-dwell."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Rinse",
+      "technique": "Neutralize ammonia",
+      "equipment": "Equal parts white vinegar + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Apply vinegar solution via damp cloth. Neutralizes residual ammonia from bacterial breakdown. Blot with dry towel."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "NSD Flush + Weighted Extract",
+      "technique": "Clear chemistry, extract moisture",
+      "equipment": "NSD damp cloth, heavy dry towel, weight",
+      "dwellTime": "2 min + 30 min weighted",
+      "instruction": "NSD-damp cloth. Then weighted dry towel 30+ minutes. Pull as much moisture up as possible — residual moisture in batting breeds the same bacteria you just killed."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Baking Soda Dry Dust + Fan",
+      "technique": "Absorb residual odor, fan-dry",
+      "equipment": "Baking soda, fan, ideally a dehumidifier",
+      "dwellTime": "4–12 hours",
+      "instruction": "Once the spot is damp not wet, dust baking soda over the area. Let sit 4–12 hours with a fan pointed at the spot. Vacuum off. Fan + low humidity = batting actually dries; without them, bacteria return."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Inspect for Wicking + Smell",
+      "technique": "Day-later check",
+      "equipment": "Daylight, your nose",
+      "dwellTime": "Ongoing",
+      "instruction": "Next day, inspect in daylight for a wicked-back ring AND smell the area. If smell persists or ring returns, batting is contaminated beyond surface treatment. Call a professional upholstery cleaner — they have hot-water extraction equipment that reaches batting."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Gloves + code tag check. S / X code or wool upholstery = escalate.",
+      "2. Pet-specific enzyme (Nature's Miracle / Rocco & Roxie) saturating to the depth of the original spill. 30–60 min dwell.",
+      "3. Vinegar rinse — neutralize ammonia.",
+      "4. NSD-damp flush + 30 min weighted dry towel.",
+      "5. Baking soda dry dust + fan 4–12 hr.",
+      "6. Day-later smell and wicking check. Batting odor persistence = escalate."
     ],
     "products": [
-      "Protein Formula",
+      "Disposable gloves",
+      "Pet-specific enzyme cleaner (Nature's Miracle / Rocco & Roxie / Anti Icky Poo)",
+      "White vinegar",
       "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Baking soda",
+      "Fan / dehumidifier"
     ],
-    "temperature": "cold",
+    "temperature": "cold through spotting",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein",
-      "Avoid over-wetting — extract excess moisture to prevent backing/foam damage"
+      "Cat urine (felinine) is the hardest odor — escalate earlier",
+      "Batting / cushion foam involvement = pro-lane by default",
+      "Never use ammonia-containing cleaners — pets smell residual ammonia as 'go here again'",
+      "Never hot-water or steam upholstery with urine in it — sets protein",
+      "Honest scope: surface treatment can't fix batting contamination"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Check the care code FIRST",
-      "instruction": "Find the tag sewn into a seam under a cushion. One letter: W = water-safe, S = solvent only, WS = both okay, X = vacuum only. On S or X, stop and call a pro — water will ring the fabric. On W or WS, proceed. No tag? Treat as S and call a pro. Enzyme cleaners (which you'll need in step 6) require water compatibility."
+      "agent": "Honest Assessment First",
+      "instruction": "Pet urine on upholstery is one of the toughest home stains. Before you start: (a) how long has it been there — fresh spill, overnight, days? (b) does the upholstery smell now, or does it only smell in humidity? (c) is this the first time in this spot or has your pet repeatedly used the same area? If it's ongoing, repeated, or the smell returns after drying, home treatment will not fully solve it — you need a professional upholstery cleaner with hot-water extraction, and possibly a cushion replacement. Spending an afternoon on home chemistry that won't work is the worst outcome."
     },
     {
       "step": 2,
-      "agent": "Find the full spot — blacklight it if you can",
-      "instruction": "Pet urine on a cushion always spreads bigger than you can see, and if the cushion cover comes off, the pad under it is usually also contaminated. In a dark room, sweep a UV blacklight across the area — urine glows pale yellow-green. Mark edges with painter's tape. Also check the back of the cushion and the frame below; accidents often leak through. Treating only the visible spot is why odor comes back."
+      "agent": "Gloves On, Check the Care Tag",
+      "instruction": "Put on gloves. Find the upholstery care code tag — usually under a cushion. W or W-S: water-based enzyme OK. S-only: solvent upholstery, and pet urine on S-code is not a DIY job — call a pro. X-code: vacuum only, absolutely call a pro."
     },
     {
       "step": 3,
-      "agent": "The protein + enzyme rules",
-      "instruction": "Two rules: (1) no hot water — heat sets the protein and bakes the odor in forever. (2) No ammonia cleaners — they smell like urine to your pet and trigger re-marking right where you just cleaned. Skip the vinegar + baking soda pairing — they cancel each other out. The real fix is an enzyme cleaner that digests the uric acid crystals."
+      "agent": "Blot Fresh Urine Extract",
+      "instruction": "Press a thick stack of white paper towels or a folded white cloth hard on the spot — absorb as much urine as possible BEFORE any chemistry. Lift, dry section, press. Keep going until the towel stops picking up moisture."
     },
     {
       "step": 4,
-      "agent": "Press fresh urine out with paper towels",
-      "instruction": "If it's fresh: stack 6–8 sheets of white paper towels over the area, press down with your full weight (stand on them if the cushion can handle it, wearing a shoe you don't love). Replace and repeat until the towels come up nearly dry. If it's already dried: lay a cold DAMP (not dripping) white towel over it for 10 minutes to rehydrate before anything else."
+      "agent": "Pet-Specific Enzyme Cleaner — Saturate, Don't Sprinkle",
+      "instruction": "Use a pet-specific enzyme cleaner (Nature's Miracle, Rocco & Roxie, or Anti Icky Poo). These have different enzymes than regular laundry pretreats — specifically formulated for uric acid crystals. Apply MATCHING the volume of the original spill — the enzyme has to reach where the urine reached. If the urine soaked through to the cushion, you need enough liquid to reach the same depth (which is often too much liquid to apply safely on upholstery without a carpet cleaner). Let it dwell 30–60 min — don't let it dry during that time."
     },
     {
       "step": 5,
-      "agent": "Dish-soap cycle — damp cloth only",
-      "instruction": "Mix one tablespoon of Dawn with two cups of cold water in a bowl. Dip a white cloth, WRING NEARLY DRY, press on the area. Let sit 5 minutes, then blot with a clean damp cloth. Dawn lifts surface residue and any trace fats so the enzyme in step 6 can reach the uric acid. Skip OxiClean and baking soda — alkaline products set protein and neutralize enzymes."
+      "agent": "White Vinegar Rinse for Ammonia Neutralization",
+      "instruction": "Mix equal parts white vinegar and cool water. Dab on a damp cloth and press on the spot. Let sit 5 min, blot. This neutralizes residual ammonia from bacterial breakdown — important because lingering ammonia smell signals 'come here again' to pets."
     },
     {
       "step": 6,
-      "agent": "Enzyme cleaner — saturate enough to reach the cushion pad",
-      "instruction": "Apply a pet-specific enzyme cleaner (Nature's Miracle, Rocco & Roxie, Simple Solution, Anti Icky Poo). On upholstery this is tricky: you DO need to saturate enough to reach the pad, but NOT so much that you create water rings or soak the cushion through. Start with enough to make the surface visibly wet but not puddled. If you can unzip the cushion cover, treat both the cover AND the foam pad underneath separately.",
-      "safetyNote": "Enzymes are deactivated by heat, chlorine bleach, and strong alkaline cleaners. Don't mix. No steam cleaning during the enzyme stage."
+      "agent": "Weighted Dry Towel Extraction",
+      "instruction": "Press a thick DRY towel hard on the spot with a heavy book or pan on top for 30 minutes or more. This pulls moisture UP out of the batting. Repeat with a fresh dry towel. The more moisture you pull back up here, the less bacteria breeds later."
     },
     {
       "step": 7,
-      "agent": "Covered dwell — 8 to 24 hours, stay damp",
-      "instruction": "Lay a damp (not dripping) white towel over the treated area and cover with plastic wrap. Tape the edges to seal. This keeps the enzyme working at full moisture instead of drying on the surface. 8 hours for a fresh accident; 24 for older spots. The enzyme is digesting uric acid — rushing this step is why home treatments fail."
+      "agent": "Baking Soda + Fan + Overnight Dry",
+      "instruction": "Dust baking soda generously over the area — it absorbs residual moisture and odor as the upholstery dries. Point a fan at the spot. If you have a dehumidifier, run it nearby. Let it dry overnight (12+ hours). Vacuum off the baking soda the next day."
     },
     {
       "step": 8,
-      "agent": "Fan-dry + smell and blacklight re-check",
-      "instruction": "Uncover, blot surface moisture. Point a room fan at the area for 12–24 hours (longer on upholstery than carpet — foam dries slowly). Once dry, nose-check up close and re-sweep the blacklight. If odor or fluorescence remains, repeat steps 6–7 with fresh enzyme. Don't let the pet or anyone sit on the cushion until it's fully dry and odor-free — damp + warm body = perfect re-marking trigger."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate — especially for leaked-through or cushion-pad contamination",
-      "instruction": "If odor returns with humidity, the blacklight still lights up, or the accident soaked through to the cushion foam, call a pro upholstery cleaner. Tell them: \"Pet urine on [W/WS/unknown] upholstery, treated with Dawn + enzyme (2 rounds), no heat, no ammonia used. Odor or blacklight signal still present — possible cushion-pad contamination.\" Pros have low-moisture extraction + sub-surface enzyme injection; in worst cases the cushion foam gets replaced (much cheaper than replacing the couch)."
+      "agent": "Smell-Check Next Day — Escalate If It Returns",
+      "instruction": "Next morning, in daylight, sniff the area. If odor is gone, you won. If ANY urine smell remains, or comes back during humid weather, the batting is contaminated beyond surface treatment. Call a professional upholstery cleaner. Tell them: \"Pet urine on [W / W-S / code unknown] upholstery, [cat / dog], age [fresh / overnight / repeated / unknown], home-treated with pet-specific enzyme cleaner + vinegar + baking soda + fan-dry. Odor [cleared / returns / persistent].\" Set realistic expectations — depending on how deep it soaked, the cushion may need replacement."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot up as much liquid as possible with clean white cloths — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 2 cups cold water. Apply to stain and blot",
-      "3. Mix equal parts white vinegar and cold water. Apply to neutralize odor",
-      "4. Sprinkle baking soda over the area to absorb remaining moisture and odor — let sit 15-30 min",
-      "5. Blot thoroughly and air dry — no heat"
+      "1. Honest scope check — repeated soaking / cat urine / batting involvement = call a pro first.",
+      "2. Gloves + read code tag. S / X = pro. W / W-S = proceed.",
+      "3. Blot-extract fresh urine hard before chemistry.",
+      "4. Pet-specific enzyme (Nature's Miracle / Rocco & Roxie). Saturate matching the original spill volume. 30–60 min dwell.",
+      "5. Vinegar + water rinse for ammonia.",
+      "6. Weighted dry towel 30+ min extraction.",
+      "7. Baking soda + fan + overnight dry.",
+      "8. Smell-check next day. Odor return = batting contaminated = pro."
     ],
     "products": [
-      "Dawn dish soap",
-      "white vinegar",
-      "baking soda",
-      "Enzyme cleaner (Nature's Miracle or Rocco & Roxie)",
-      "cold water",
-      "white vinegar (odor)"
+      "Disposable gloves",
+      "Pet-specific enzyme cleaner (Nature's Miracle, Rocco & Roxie, Anti Icky Poo)",
+      "White vinegar",
+      "Baking soda",
+      "Fan, dehumidifier if available"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if the upholstery is S-code / X-code / wool, if this is a recurring spot, if cat urine, if batting contamination is likely, or if two rounds don't clear the smell. Call a professional upholstery cleaner.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first",
-      "Do NOT use OxiClean or oxidizing agents on protein stains — they can set the stain permanently"
+      "Cat urine is especially persistent — escalate earlier",
+      "Batting contamination can't be fixed at the surface",
+      "NEVER use ammonia-based cleaners on pet urine — tells pets to re-mark",
+      "NEVER hot water or steam — sets the protein",
+      "Repeated urine in the same spot = often a cushion replacement",
+      "S / X code = pro from the start"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never use ammonia-based cleaners on pet urine",
+      "Never hot-water / steam upholstery with urine in it",
+      "Never pour onto upholstery — damp cloth only",
+      "Never skip the honest scope check — pro-lane threshold is LOW for pet urine"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S upholstery tolerates enzyme + vinegar + baking soda",
+      "S-code: solvent only (not for urine)",
+      "X-code: vacuum only (call a pro)",
+      "Wool upholstery: pro from start — enzyme chemistry on wool is tricky"
     ]
   },
+  "materialWarnings": [
+    "Pet urine on upholstery has a LOW threshold for pro escalation",
+    "Batting contamination is invisible and permanent without hot-water extraction",
+    "Cat urine especially persistent — felinine odor doesn't fade",
+    "Never ammonia-based cleaners — pets re-mark"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is pet urine on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "S / X code upholstery, wool upholstery, cat urine, repeated soaking in the same spot, batting contamination, or odor returns after a full home cycle. Escalate EARLY on pet urine — home ceiling is low.",
+    "whatToTell": "\"Pet urine on [W / W-S / code unknown] upholstery, [cat / dog], age [fresh / overnight / repeated], home-treated with pet-specific enzyme + vinegar + baking soda + fan-dry. Odor [cleared / returns / persistent]. [Batting wetness suspected / batting dry].\"",
+    "specialistType": "professional upholstery cleaner with hot-water extraction (and possibly cushion replacement specialist)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Is this a fresh spill or repeated urination in the same spot?",
+      "Cat or dog? (cat urine is hardest)",
+      "How deep did it soak — surface wet, through the fabric, into the cushion?",
+      "Does the odor return in humid weather?",
+      "What does the upholstery code tag say?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Pet urine on upholstery is the stain where BEST home outcome may still be 'partial' — batting is where the bacteria live, and home tools can't reach it. Escalate honestly rather than cycling enzyme for days."
   },
-  "difficulty": 6,
-  "timeEstimate": "20-45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

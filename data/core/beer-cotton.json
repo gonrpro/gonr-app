@@ -1,123 +1,186 @@
 {
   "id": "beer-cotton",
   "title": "Beer on Cotton",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Beer contains malt tannins, hop resins, proteins (from barley), and sugars. On cotton, the tannin component stains while the sugar creates a sticky residue that attracts dirt. Fresh beer stains are light and water-soluble. Dried beer stains darken as the tannins oxidize and the sugars caramelize, leaving a stiff, discolored patch.",
-  "whyThisWorks": "Surfactant treatment dissolves the sugar and protein components on cotton. The acidic tannin spotter (professional) or oxidizer (DIY) targets the tannin discoloration. Beer stains are among the easier tannin stains because the tannin concentration is relatively low compared to wine or coffee.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 2,
+  "timeEstimate": "10–20 minutes (fresh); aged beer adds a light-brown ring",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "beer",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "cotton",
+      "sugar-residue",
+      "low-pigment"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Beer is a low-tannin, low-sugar, low-protein stain — malt tannins (polyphenols) + hop resins + barley proteins + dissolved sugars. The stain is light and often invisible on dark cotton while fresh; it's the DRIED version that shows up as a faint tan / yellow-brown ring after the sugar caramelizes and the tannin oxidizes. Cotton is pure cellulose — tolerates NSD, acid-side spotters, 3% H₂O₂, and hot post-chemistry wash.",
+  "whyThisWorks": "Beer is one of the easier tannin stains because the pigment load is low. NSD dissolves the sugar and surface residue in one pass. For the residual ring — usually only visible on white or light fabric — an acid-side rinse or peroxide clears the oxidized tannin. Hot wash finishes.",
+  "defaultAssumption": "Fresh beer on cotton rinses out almost fully with water. Aged or dried beer is the harder version — faint ring that shows up only after drying. Expectation: fresh = trivial; aged = one chemistry pass.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Flush",
+      "technique": "Flush from the back",
+      "equipment": "Cold water, white cotton terry towel",
+      "dwellTime": "30 seconds",
+      "instruction": "Cold flush from the BACK of the fabric. Blot from underneath. Most fresh beer lifts here because the pigment is light and water-soluble."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Sponge, dwell, blot",
+      "equipment": "NSD in cool water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Apply NSD, sponge gently. NSD handles the sugar residue + residual barley protein + any remaining pigment."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Tannin Spotter (Aged Stains)",
+      "technique": "Dropper on residual ring",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "2–3 minutes",
+      "instruction": "For aged beer where a faint ring remains, acid-side tannin spotter by dropper. Dwell 2–3 min, blot. Fresh beer rarely needs this step."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3% (Aged on Whites)",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3 minutes",
+      "instruction": "Optional: 3% H₂O₂ on aged oxidized rings on white cotton. One oxidizer at a time. Skip on dark cotton."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Rinse. Launder hot per care label."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cold flush from the back — fresh beer mostly lifts here.",
+      "2. NSD in cool water. Sponge, 2–3 min.",
+      "3. Aged ring only: acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A). 2–3 min.",
+      "4. Aged white: 3% H₂O₂ on residual oxidized ring.",
+      "5. Hot wash per care label."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
       "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — aged only",
+      "Hydrogen Peroxide 3% — aged whites only"
     ],
-    "temperature": "cold",
+    "temperature": "cold through spotting; hot wash post-chemistry",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color"
+      "Beer's low pigment means most fresh spills are a 2-step job — don't over-treat",
+      "Aged beer stains oxidize to a light brown; inspect dried fabric to confirm residual color",
+      "One oxidizer at a time"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Cold Water Flush Is Often Enough for Fresh",
+      "instruction": "Beer is a light stain compared to wine or coffee. Fresh beer usually rinses right out of cotton with cold water alone — hold the BACK of the stained area under cold running water for 30 seconds and you'll often be done. The tough variant is BEER THAT DRIED overnight, which oxidizes into a faint tan ring."
+    },
+    {
+      "step": 2,
+      "agent": "Dawn + Cool Water",
+      "instruction": "For anything that didn't rinse out: a drop of Dawn dish soap worked into the spot with a fingertip for a minute. Rinse cool. This handles the sugar and barley residue the water left behind."
+    },
+    {
+      "step": 3,
+      "agent": "White Vinegar Dab for Aged Ring",
+      "instruction": "If a faint tan ring remains from beer that sat overnight, mix 1 teaspoon white vinegar with 3 tablespoons cool water. Dab on the ring, let sit 2–3 minutes, blot. The mild acidity breaks the oxidized tannin."
+    },
+    {
+      "step": 4,
+      "agent": "3% Hydrogen Peroxide for Stubborn Rings (Whites)",
+      "instruction": "For a stubborn aged ring on WHITE cotton: dab 3% drugstore hydrogen peroxide, let it bubble 3 minutes, blot. Skip on dark or dyed cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fume risk."
+    },
+    {
+      "step": 5,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. Fresh beer that's been flushed is usually fully clear before wash; aged rings may need one more soap + vinegar pass."
+    },
+    {
+      "step": 6,
+      "agent": "Escalate Only for Unusual Cases",
+      "instruction": "Beer rarely needs a pro. If the stain has been ironed or gone through a hot dryer AND you can still see it after home treatment, take to a dry cleaner. Tell them: \"Beer on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% peroxide on whites.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Cold water flush from the BACK — often enough by itself for fresh beer.",
+      "2. Dawn + cool water for residual sugar / protein.",
+      "3. Diluted white vinegar dab for aged tan ring.",
+      "4. 3% hydrogen peroxide on stubborn oxidized ring (whites only).",
+      "5. Hot wash per care label. Inspect BEFORE the dryer.",
+      "6. Escalate only if heat-set + home round fails."
     ],
     "products": [
+      "Cold water",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "White vinegar",
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if beer has been iron-set or hot-dried AND home round didn't clear the residue. Take to a dry cleaner. But most beer on cotton clears without ever needing a pro.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "Cold water first — fresh beer rinses out easily",
+      "Hot water on aged stains sets the oxidized tannin",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never hot-water-flush aged beer — sets the tan ring",
+      "Never over-treat fresh beer — usually one step gets it out",
+      "Never layer oxidizers"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, hot wash",
+      "Dyed cotton: skip or inside-seam-test peroxide",
+      "Heat-durable once chemistry is cleared"
     ]
   },
+  "materialWarnings": [
+    "Fresh beer is easy; aged beer leaves a tan ring",
+    "Don't over-treat — often one rinse suffices",
+    "Peroxide on whites only"
+  ],
   "escalation": {
-    "when": "If beer stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is beer on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Beer heat-set by iron or dryer AND home round didn't clear residual. This is rare.",
+    "whatToTell": "\"Beer on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + [3% H₂O₂ on whites].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "How old is the stain — fresh or overnight+?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Regular beer or stout/dark? (dark beers have more tannin)",
+      "Has it been through a hot wash or dryer?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Beer is the lightest-pigment common tannin stain. Fresh = usually just water. Aged is the real stain. Dark / stout beers raise the tannin load a notch but stay in the same protocol."
   },
-  "difficulty": 2,
-  "timeEstimate": "10-15 minutes",
-  "lastValidated": "2026-03-23",
-  "homeSolutions": [
-    {
-      "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
-      "agent": "cool water"
-    },
-    {
-      "step": 2,
-      "instruction": "Dab the beer stain immediately with cool water applied to a white cloth. Work from center outward. Speed is critical — alcohol in beer affects dyes.",
-      "agent": "cool water",
-      "safetyNote": "Beer contains both sugars and alcohol — alcohol can set dyes quickly. Remove stain immediately."
-    },
-    {
-      "step": 3,
-      "instruction": "Apply detergent/vinegar solution (1/4 tbsp mild laundry detergent + 2 oz white vinegar + 2 oz cool water) to the stain. Rub gently with the back of a spoon from center outward.",
-      "agent": "detergent/vinegar solution"
-    },
-    {
-      "step": 4,
-      "instruction": "Rinse thoroughly with cool water, working from center outward.",
-      "agent": "cool water"
-    },
-    {
-      "step": 5,
-      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize any remaining organic matter.",
-      "agent": "hydrogen peroxide 3% + ammonia",
-      "safetyNote": "Test on hidden area first — peroxide may lighten some dyes."
-    },
-    {
-      "step": 6,
-      "instruction": "Rinse thoroughly with cool water.",
-      "agent": "cool water"
-    },
-    {
-      "step": 7,
-      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center with white cloth.",
-      "agent": "white vinegar + cool water"
-    },
-    {
-      "step": 8,
-      "instruction": "If beer stain persists or if fabric is delicate, call a professional cleaner.",
-      "agent": "escalation"
-    }
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

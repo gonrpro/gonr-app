@@ -1,127 +1,194 @@
 {
   "id": "baby-formula-cotton",
   "title": "Baby Formula on Cotton",
-  "stainFamily": "protein",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Baby formula combines milk proteins (casein, whey), vegetable oils, lactose, and added vitamins/minerals. On cotton, the protein bonds to fibers, the oils create a hydrophobic barrier, and iron supplements can leave rust-like discoloration. Heat sets the protein rapidly and polymerizes the oil into a hard film.",
-  "whyThisWorks": "Cold water prevents protein from setting on cotton. Enzyme treatment targets the protein, surfactant emulsifies the oil component. The iron residue may need a secondary treatment after the organic components are removed. Working cold throughout is critical — any heat makes this stain permanent.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "15–40 minutes (fresh); aged formula adds odor + iron tint",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "baby-formula",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "combination",
+      "protein",
+      "oil",
+      "iron-fortification",
+      "cotton",
+      "odor-risk"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Baby formula is milk's chemistry plus extras: casein + whey proteins, vegetable oils (palm / coconut / soy), lactose, and added vitamins + minerals — critically, iron fortification. On cotton, the protein bonds through hydrogen bonding, the oil creates a hydrophobic film, and the iron can leave a faint rust-colored shadow after the protein and fat are gone. Cotton tolerates enzymes, NSD, 3% H₂O₂, and hot post-chemistry wash. The ordering is protein-before-heat, same as milk, with an optional iron-reducing pass at the end for tinted residue.",
+  "whyThisWorks": "Cold flush keeps the casein soluble. Enzyme digests the protein matrix holding the rest in place. NSD emulsifies the vegetable oil. For residual iron tint (fortification iron reacts with air to leave a faint orange-brown shadow), a dilute acid rinse (lemon juice or citric acid at home, dilute acetic at pro) reduces the iron to a soluble form. Hot wash finishes and kills any souring bacteria.",
+  "defaultAssumption": "Fresh formula on a bib / burp cloth / parent's shirt is a high-confidence DIY. Aged formula is more about the smell (souring milk) than the stain. Iron tint only shows up after the rest is gone.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Flush",
+      "technique": "Flush from the back",
+      "equipment": "Cold water, white cotton terry towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Cold flush from the BACK of the fabric. Cold only — warm water sets the casein + polymerizes the vegetable oil. Blot with a towel from underneath."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Protein Spotter",
+      "technique": "Apply, dwell, light brush",
+      "equipment": "Liquid Protein Spotter (PRENETT B / protease digestant) in warm water (30–38°C)",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Apply Protein Spotter or enzyme pretreat in warm water. Enzyme window is warm, not hot. Dwell 15–20 min; light brush after the first 5. Protease hydrolyzes the casein + whey matrix."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify vegetable oil",
+      "equipment": "NSD in warm water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD, soft brush. Emulsifies the formula's vegetable oil. Rinse cool."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Acid Rinse for Iron Tint",
+      "technique": "Dilute acid dab for fortification-iron shadow",
+      "equipment": "Dilute acetic acid 5% aqueous OR lemon juice diluted 1:4",
+      "dwellTime": "2–3 minutes",
+      "instruction": "If a faint rust / orange-brown shadow remains after the protein and oil are gone: dab dilute acetic acid OR lemon juice on the spot. Iron fortification oxidizes to a soluble form under mild acid. Rinse cool."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot — kills souring bacteria, clears any residual chemistry. Inspect BEFORE the dryer."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Cold flush from the back.",
+      "2. Liquid Protein Spotter (PRENETT B / protease) in warm water (30–38°C). 15–20 min.",
+      "3. NSD — emulsify vegetable oil. Cool rinse.",
+      "4. Dilute acetic acid 5% for residual iron fortification tint.",
+      "5. Hot wash per care label."
     ],
     "products": [
-      "Protein Formula",
+      "Liquid Protein Spotter (PRENETT B or protease digestant)",
       "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dilute acetic acid 5% aqueous"
     ],
-    "temperature": "cold",
+    "temperature": "cold flush; warm (30–38°C) for enzyme; cool through NSD + acid; hot wash post-chemistry",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "Never warm-flush fresh formula — sets casein + polymerizes oil",
+      "Enzyme window warm, not hot",
+      "Iron tint is a SEPARATE stain visible only after protein + oil clear — don't skip the acid step",
+      "Hot wash kills souring bacteria — non-negotiable on aged formula"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test on a seam",
-      "instruction": "On colored cotton, dab a drop of your dish-soap solution and — if you'll use it — a drop of OxiClean solution on an inside seam or hem. Blot with a white cloth. If the cloth picks up dye or the fabric lightens, stop and hand-wash with cold water only, then go to step 9 (escalate). If the seam looks unchanged after 60 seconds, you're safe to treat the visible stain."
+      "agent": "Cold Water From the Back, Fast",
+      "instruction": "Bib, burp cloth, parent's shirt — all move out fastest with cold water. Hold the BACK of the stained area under cold running water for 30–60 seconds. Never warm or hot — cooks the milk protein AND polymerizes the oil in the formula into a semi-permanent film."
     },
     {
       "step": 2,
-      "agent": "Cold water only — no heat, not yet",
-      "instruction": "Baby formula is a protein, a fat, and a sugar all at once. Heat does two bad things: it sets the protein and it polymerizes the oil into a hard film. Do not rinse in warm water, do not tumble-dry, do not iron, and do not use a hair dryer on it — not until the stain is completely gone. Cold tap water only at every step."
+      "agent": "Enzyme Pretreat — Warm, Not Hot",
+      "instruction": "Use an enzyme laundry pretreat (OxiClean Versatile, Biz, or a baby-specific enzyme spray). Dissolve in WARM water per the label. Apply, let sit 15–20 minutes. The enzymes digest the milk protein that holds the rest of the stain on the fiber."
     },
     {
       "step": 3,
-      "agent": "Scrape off solids",
-      "instruction": "If the formula has dried into a crust or the bib has curdled residue, gently lift off the solids with a dull butter knife or the edge of a credit card. Don't scrub — you're just removing what's sitting on top so liquids can reach the fiber below."
+      "agent": "Dawn + Soft Brush for the Oil",
+      "instruction": "Work a drop of Dawn dish soap into the spot with a soft toothbrush. Dawn breaks up the vegetable oil in the formula. Rinse cool."
     },
     {
       "step": 4,
-      "agent": "Flush from the back with cold water",
-      "instruction": "Turn the fabric inside out and run cold water through the back of the stain for 30–60 seconds. Let the water push the formula back out the way it came in, rather than driving it deeper. For a bib or small garment, hold it under the tap. For something larger, lay it stain-down on a stack of white paper towels and pour cold water through from behind."
+      "agent": "Lemon Juice for Orange Shadow",
+      "instruction": "Formula has iron added to it, and once the protein and oil are gone, sometimes a faint orange-brown shadow shows up — that's the iron oxidizing. Dab a few drops of lemon juice (or dilute white vinegar) on it, wait 2–3 minutes, rinse cool. The acid turns the iron residue back into a soluble form you can rinse out."
     },
     {
       "step": 5,
-      "agent": "Dish-soap solution",
-      "instruction": "Mix one tablespoon of clear Dawn dish soap into one cup of cold water. Dip a white cloth in the solution, wring nearly dry, and dab the stain from the front. Let it sit five minutes. Dawn is formulated to cut oil — it handles the fat in the formula that water alone can't touch. Blot with a clean damp cloth to lift the soap and loosened stain. Repeat the soap-and-blot cycle two or three times."
+      "agent": "Hot Wash — the Smell-Kill Step",
+      "instruction": "Launder on the hottest setting the care label allows. Hot water kills the bacteria that cause the sour-milk smell that otherwise comes back on drying. Don't skip or substitute cold — the smell is what most home treatments miss."
     },
     {
       "step": 6,
-      "agent": "Enzyme pretreat (if a shadow remains)",
-      "instruction": "If a yellow or beige shadow is still there after the soap cycle, apply an enzyme stain remover — OxiClean Versatile, Biz, or Zout. Mix per the label with cold water, dab onto the stain, and let it dwell 20–30 minutes. Enzymes break down the milk protein (casein) that dish soap leaves behind. Don't let it dry out — re-wet with a cold damp cloth if needed.",
-      "safetyNote": "Never mix enzyme products with chlorine bleach — it deactivates the enzymes and can release irritating fumes."
+      "agent": "Repeat If Smell Returns",
+      "instruction": "If the fabric still smells after drying, the bacteria haven't been fully killed. Repeat enzyme pretreat + hot wash once more. Sun-drying is a clean finisher."
     },
     {
       "step": 7,
-      "agent": "Rust/iron-ring treatment (only if an orange halo remains)",
-      "instruction": "Baby formulas contain added iron. If, after the enzyme step, a small orange or yellow halo is still visible, the iron has oxidized. On white cotton only: dab the halo with a paste of cream of tartar and a few drops of cold water, let sit 5 minutes, then rinse cold. On colored cotton: do not attempt — go straight to step 9. Never use lemon juice or vinegar on this stage if you plan to bleach later (the acid interferes)."
-    },
-    {
-      "step": 8,
-      "agent": "Cold-water machine wash, air dry",
-      "instruction": "Launder the garment on a cold cycle with your normal detergent. Do not use hot or warm water. Skip the dryer — hang or lay flat to air-dry and check the stain under good light first. If any shadow remains, repeat steps 5 and 6 before the next wash. Only put it in the dryer when the stain is completely invisible, dry, in daylight."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a professional cleaner",
-      "instruction": "If the stain is older than 48 hours without treatment, has already been through a hot dryer, or survived two full rounds of steps 4–7, take it to a dry cleaner and tell them exactly: \"Baby formula on cotton — protein plus oil plus iron supplement. Treated with cold water, Dawn, and [OxiClean/Biz]. Already heat-exposed: [yes/no]. Please treat as a protein stain first, then address any iron oxide halo.\" That handoff saves them 20 minutes of guesswork."
+      "agent": "Escalate If Needed",
+      "instruction": "If the stain survived two enzyme cycles or was hot-dried before enzyme treatment, take to a dry cleaner. Tell them: \"Baby formula on cotton, age [fresh / overnight / days], home-treated with enzyme pretreat + Dawn + lemon juice + hot wash. [Odor persists / iron shadow remains.]\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. Cold water flush from the BACK of the fabric.",
+      "2. Enzyme pretreat in WARM water. 15–20 min.",
+      "3. Dawn + soft toothbrush for the oil.",
+      "4. Lemon juice dab for orange-brown iron shadow if it appears.",
+      "5. Hot wash per care label — kills souring bacteria.",
+      "6. Repeat if smell returns.",
+      "7. Escalate if heat-set or two cycles fail."
     ],
     "products": [
+      "Enzyme laundry pretreat (OxiClean Versatile, Biz, or baby-specific enzyme spray)",
       "Dawn dish soap",
-      "cold water"
+      "Lemon juice OR white vinegar (for iron tint)"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if the smell persists after two full enzyme + hot-wash cycles, or if the formula was hot-dried before enzyme treatment.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "Cold flush only while fresh — warm cooks casein + polymerizes oil",
+      "Enzymes die above 50°C — warm water, not hot",
+      "Hot wash is the bacterial-kill — cold wash leaves smell alive",
+      "Iron shadow shows AFTER protein + oil clear — don't panic, lemon juice handles it"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never warm-flush fresh formula — sets casein + polymerizes the vegetable oil",
+      "Never skip the hot wash — souring bacteria return if not heat-killed",
+      "Never run enzymes above 50°C",
+      "Never mistake iron tint for a persistent stain — treat it separately with acid"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates enzymes, NSD, acid rinse, hot wash post-chemistry",
+      "Dyed cotton: no peroxide needed here usually — enzyme + acid do the work",
+      "Heat-durable once chemistry is cleared"
     ]
   },
+  "materialWarnings": [
+    "Cold flush only — warm sets the protein + polymerizes oil",
+    "Hot wash kills souring bacteria",
+    "Iron fortification can leave a separate orange-brown shadow — treat with lemon juice"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is baby formula on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Formula has been hot-dried before enzyme treatment, two home cycles don't clear smell, or iron shadow persists after lemon-juice pass.",
+    "whatToTell": "\"Baby formula on cotton, age [fresh / overnight / days], home-treated with enzyme pretreat + Dawn + lemon juice + hot wash. [Odor persists / iron shadow remains.]\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "How long ago did the spill happen?",
+      "Has the fabric been through any wash cycle yet?",
+      "Is there a faint orange or rust shadow after the initial cleaning? (iron tint)",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Formula is milk + oil + iron. The iron tint is the underappreciated variable — appears only AFTER protein + oil clear, and is often misdiagnosed as 'stain still there' when it's a different chemistry. Lemon juice handles it."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

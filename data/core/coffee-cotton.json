@@ -1,123 +1,204 @@
 {
   "id": "coffee-cotton",
   "title": "Coffee on Cotton",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Coffee contains tannins (polyphenolic compounds from roasted beans) that bond to cotton through hydrogen bonding and pi-stacking interactions. Fresh coffee is water-soluble. Aged stains oxidize and darken — the brown color intensifies as tannin molecules cross-link. Melanoidins from the roasting process add additional brown pigment that is highly resistant to removal.",
-  "whyThisWorks": "An acidic tannin spotter (professional) or oxidizer (DIY) breaks the chromophore bonds — the colored structures — in the tannin molecules on cotton. Hydrogen peroxide specifically targets the double bonds that make oxidized tannin brown. The key is avoiding heat and alkaline products, both of which permanently darken tannin stains.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "10–30 minutes (fresh); aged adds a peroxide cycle",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "coffee",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "cotton",
+      "time-sensitive",
+      "general-coffee"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Coffee is a tannin stain — polyphenols and melanoidins (brown roast compounds) from coffee beans. Fresh coffee is water-soluble and lifts easily; aged coffee oxidizes to a deeper brown and cross-links weakly to cellulose. This card is the general coffee case — for black coffee specifically see coffee-black-cotton, for coffee with cream see coffee-cream-cotton (different chemistry with added protein + fat). If the coffee has ANY cream or milk in it, treat as coffee-with-cream — the protein ordering rule changes everything.",
+  "whyThisWorks": "Cotton handles the classic tannin sequence cleanly: cold flush + NSD for fresh, acid-side tannin spotter + 3% H₂O₂ for aged. Hot wash finishes. The one rule that saves most coffee stains is avoiding alkaline products (ammonia, baking soda, soap scum) — those permanently darken tannin.",
+  "defaultAssumption": "Coffee on cotton is a high-confidence DIY in almost every case. Fresh = trivial; aged = one extra cycle. Escalation rarely needed unless heat-set.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Flush",
+      "technique": "Flush from the back",
+      "equipment": "Cold water, white cotton terry towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Cold flush from the BACK of the fabric. Blot from underneath. Most fresh coffee lifts here."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Sponge, dwell, blot",
+      "equipment": "NSD in cold water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Apply NSD, sponge gently. Blot with a clean towel."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Hot-Water Pour-Through (Fresh Only)",
+      "technique": "Pour from the back",
+      "equipment": "Kettle of hot water",
+      "dwellTime": "1–2 pours",
+      "instruction": "Under 30 min old only. Hot pour-through from the back. Skip on aged stains."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Tannin Spotter",
+      "technique": "Drop, dwell, blot",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "2–5 minutes",
+      "instruction": "Acid-side tannin spotter by dropper on residual brown. Dwell 2–5 min, blot. Repeat once if needed."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "3% H₂O₂ on residual chromophore. Dwell 3–5 min, blot. One oxidizer at a time."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "NSD Flush + Hot Wash",
+      "technique": "Clear chemistry, launder",
+      "equipment": "NSD, washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Rinse until clean. Hot wash per care label."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cold flush from the back.",
+      "2. NSD in cold water. 2–3 min.",
+      "3. Fresh only (<30 min): hot pour-through.",
+      "4. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A). 2–5 min.",
+      "5. 3% H₂O₂ on residual. 3–5 min.",
+      "6. NSD flush, hot wash per care label."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
       "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
+    "temperature": "cold through spotting; hot wash post-chemistry",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color"
+      "Never use hot water on aged coffee — sets tannin",
+      "If coffee has cream / milk, switch to the protein-first coffee-cream-cotton protocol",
+      "One oxidizer at a time"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Cold Water, Act Fast",
+      "instruction": "Fresh coffee on cotton is a simple stain. Hold the BACK of the stained area under cold running water for 30–60 seconds. Cold only — hot water sets coffee tannin brown. Most of the stain lifts in this step alone."
+    },
+    {
+      "step": 2,
+      "agent": "Coffee With Cream? Different Protocol",
+      "instruction": "If the coffee had milk or cream in it, this isn't just a tannin stain — there's also protein (casein) that needs to come off before heat touches it. Use the coffee-cream-cotton protocol instead. The difference: that protocol starts with an enzyme pretreat, because protein-before-heat is non-negotiable. Black coffee: continue below."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Cold Water",
+      "instruction": "A drop of Dawn dish soap worked into the spot with a fingertip for a minute. Rinse cool. Clears residual pigment."
+    },
+    {
+      "step": 4,
+      "agent": "White Vinegar + Water for Stubborn Brown",
+      "instruction": "Mix 1 teaspoon white vinegar with 3 tablespoons cool water. Dab on the spot, let sit 3 minutes, blot. Breaks the tannin bond."
+    },
+    {
+      "step": 5,
+      "agent": "3% Hydrogen Peroxide for Shadow (Whites Only)",
+      "instruction": "For residual brown shadow on white cotton: dab 3% drugstore hydrogen peroxide, 3–5 min, blot. Skip on dark/dyed cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia."
+    },
+    {
+      "step": 6,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder hot per care label. Inspect BEFORE the dryer — residual tannin sets permanently under heat."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate If Heat-Set",
+      "instruction": "If coffee has been through a hot dryer or two home rounds didn't clear it, take to a dry cleaner. Tell them: \"Coffee on cotton — [black / with cream], age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% peroxide.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Coffee WITH CREAM? Use coffee-cream-cotton — different chemistry.",
+      "2. Cold water flush from the BACK.",
+      "3. Dawn + cold water, 1 min, rinse.",
+      "4. Diluted white vinegar for residual brown.",
+      "5. 3% hydrogen peroxide on shadow (whites only).",
+      "6. Hot wash per care label. Inspect BEFORE the dryer.",
+      "7. Escalate if heat-set."
     ],
     "products": [
+      "Cold water",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "White vinegar",
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if coffee has been hot-dried and home round didn't clear it.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "Coffee WITH cream is a different stain — use coffee-cream-cotton protocol",
+      "Hot water sets aged tannin",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton",
+      "Inspect before the dryer"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never use hot water on aged coffee — sets tannin",
+      "Never treat coffee-with-cream with this protocol — protein needs enzyme first",
+      "Never layer oxidizers",
+      "Never dry with residual color"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, hot wash",
+      "Dyed cotton: skip or inside-seam-test peroxide",
+      "Heat-durable once chemistry is cleared"
     ]
   },
+  "materialWarnings": [
+    "Coffee with cream = different protocol (protein first)",
+    "Hot water only for fresh — sets aged tannin",
+    "Peroxide on whites; test inside seam on dark cotton"
+  ],
   "escalation": {
-    "when": "If coffee stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is coffee on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Coffee heat-set by iron or dryer, or two home rounds plateau.",
+    "whatToTell": "\"Coffee on cotton — [black / with cream], age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% H₂O₂.\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
+      "Black coffee or with cream/milk? (cream version is a different protocol)",
       "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Is the cotton white, light, or dark/dyed?",
+      "Has it been through a hot wash or dryer?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Black coffee is simple tannin. Cream version is combination-stain chemistry (protein first). The biggest home-treatment error on coffee is treating cream-coffee as plain coffee and hot-washing it before the enzyme step."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
-  "homeSolutions": [
-    {
-      "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
-      "agent": "cool water"
-    },
-    {
-      "step": 2,
-      "instruction": "Dab the coffee stain immediately with cool water applied to a white cloth. Work from center outward to prevent spreading.",
-      "agent": "cool water",
-      "safetyNote": "Coffee contains tannins that oxidize and turn brown — act quickly."
-    },
-    {
-      "step": 3,
-      "instruction": "Apply detergent/vinegar solution (1/4 tbsp mild laundry detergent + 2 oz white vinegar + 2 oz cool water) to the stain. Rub gently with the back of a spoon from center outward.",
-      "agent": "detergent/vinegar solution"
-    },
-    {
-      "step": 4,
-      "instruction": "Rinse thoroughly with cool water, working from center outward.",
-      "agent": "cool water"
-    },
-    {
-      "step": 5,
-      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize tannin residue.",
-      "agent": "hydrogen peroxide 3% + ammonia",
-      "safetyNote": "Test on hidden area first — peroxide may lighten some dyes."
-    },
-    {
-      "step": 6,
-      "instruction": "Rinse thoroughly with cool water.",
-      "agent": "cool water"
-    },
-    {
-      "step": 7,
-      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center with white cloth.",
-      "agent": "white vinegar + cool water"
-    },
-    {
-      "step": 8,
-      "instruction": "If stain persists or if fabric is delicate, call a professional cleaner.",
-      "agent": "escalation"
-    }
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

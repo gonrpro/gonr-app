@@ -1,128 +1,209 @@
 {
   "id": "berry-carpet",
-  "title": "Berry on Carpet",
+  "title": "Berry Stain on Carpet",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "carpet",
-  "sector": "home",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Tannin (anthocyanin pigments). Berry bonds to carpet through anthocyanin bonds via hydrogen bonding. Treatment strategy: acidic tannin spotter to break hydrogen bonds, followed by oxidizing bleach to cleave chromophores.",
-  "whyThisWorks": "Berry is a tannin (anthocyanin pigments) stain — anthocyanin bonds via hydrogen bonding. The treatment works by breaking these bonds chemically so it can be blotted or rinsed away from carpet.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–45 minutes with extraction between passes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "berry",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "tannin",
+      "anthocyanin",
+      "carpet",
+      "pad-risk",
+      "no-alkaline"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Berry on carpet is the same anthocyanin tannin chemistry as on fabric — blueberry, blackberry, raspberry, strawberry, mulberry, cranberry. Blueberry and blackberry carry the heaviest pigment load. On carpet, the stain moves deeper with pooled liquid and wicks back up as the carpet dries if the pad gets contaminated. Nylon, olefin, polyester face yarn tolerate acid-side spotters and 3% H₂O₂; wool narrows the lane sharply. The universal-berry-on-carpet enemy is alkaline cleaners (ammonia, OxiClean paste, \"all-purpose\" sprays) which permanently lock the anthocyanin as a darker brown.",
+  "whyThisWorks": "Same extraction-beats-chemistry logic as red wine on carpet, adapted for berry: cold NSD via damp cloth, acid-side tannin spotter for the anthocyanin bond, 3% H₂O₂ for oxidation. Weighted dry towel between every wet pass protects the pad. Never alkaline, never pour, never rub.",
+  "defaultAssumption": "Assume synthetic face yarn unless user says wool. Wool + berry = pro-lane. Fresh + synthetic = solid DIY odds; aged dark-berry (blueberry, blackberry) on light carpet often plateaus at faint shadow.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot + Extract",
+      "technique": "Press dry, lift, repeat — no rubbing",
+      "equipment": "Clean white cotton towels, firm pressure",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Press a folded white towel straight down with firm pressure. Lift, dry section, press again. Outside-in. Never rub — rubbing drives berry into the pile and pad."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water + NSD",
+      "technique": "Damp cloth transfer + extract",
+      "equipment": "NSD in cold water, damp cloth, wet/dry vac or weighted dry towel",
+      "dwellTime": "1 min per pass",
+      "instruction": "Apply cold NSD via damp cloth — press, lift, rotate. Never pour. Extract between passes with wet/dry vac or weighted dry towel. 2–4 cycles."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Tannin Spotter",
+      "technique": "Dropper, localized",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Acid-side tannin spotter by dropper on residual color. Never pour. Dwell 5–10 min. Blot with a dry towel. Patch-test hidden area first."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Dropper, watch, extract",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "5–15 minutes, check every 5",
+      "instruction": "3% H₂O₂ drop-by-drop. Check every 5 min. Blot dry. One oxidizer at a time; NSD-damp-flush between any repeat."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "NSD Flush + Weighted Extract",
+      "technique": "Clear chemistry, weighted dry towel",
+      "equipment": "NSD damp cloth, heavy dry towel + weight",
+      "dwellTime": "2 min + 30 min weighted",
+      "instruction": "NSD-damp cloth to clear residual chemistry. Weighted dry towel 30 min pulls moisture up from backing before it migrates into pad."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Fan-Dry + Inspect",
+      "technique": "Air-dry, watch for wicking",
+      "equipment": "Fan",
+      "dwellTime": "4–8 hours",
+      "instruction": "Fan the spot. Don't walk on it. Inspect next day for wicking — if ring returns, pad is contaminated and pro extraction is the call."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin via tamping brush. Tamp gently from edges inward. Flush with steam gun. Check progress — if pigment is fading, repeat.",
-      "2. Apply H₂O₂ 6% with a few drops of 28% Acetic Acid (diluted) to lower pH to ~4–5, accelerating oxidation. Tamp into stain. Monitor — over-application lightens dyed substrates. Spot-test on colored goods. Use steam to accelerate if needed.",
-      "3. Flush thoroughly with NSD on spotting board. Apply leveling agent to feathered edges. Extract with wet vac. Neutralize pH if acid or alkali was used in previous steps."
+      "1. Blot + extract dry. Never rub.",
+      "2. Cold NSD via damp cloth, extract between every pass.",
+      "3. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A) by dropper. 5–10 min.",
+      "4. 3% H₂O₂ drop-by-drop on residual. 5–15 min.",
+      "5. NSD-damp flush + 30 min weighted dry towel.",
+      "6. Fan-dry. Inspect next day for wicking."
     ],
     "products": [
-      "Tannin",
-      "H₂O₂ 6%",
       "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (28% Acetic Acid (diluted) for pH adjustment)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
+      "Hydrogen Peroxide 3%",
+      "Wet/dry vac or weighted dry towels"
     ],
-    "temperature": "cold — heat sets tannin pigments permanently; always use cold or cool water",
+    "temperature": "cold throughout — hot water accelerates anthocyanin browning + activates backing adhesive",
     "warnings": [
-      "Using ammonia or baking soda — alkaline agents permanently darken tannin pigments",
-      "Rubbing instead of blotting — rubbing pushes the stain deeper into carpet fibers",
-      "Applying heat before stain is fully removed — heat sets stains permanently"
+      "Never pour or pool liquid on carpet — pad contamination",
+      "Never use alkaline on anthocyanin — locks as permanent brown",
+      "Never use hot water — sets tannin brown",
+      "Never skip extraction between wet passes",
+      "Wool carpet + berry = pro-lane"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test on a hidden spot",
-      "instruction": "Find a hidden patch of the same carpet — inside a closet, under furniture, behind a door. Dab a drop of the Dawn + 3% hydrogen peroxide solution from step 5. Blot with a white cloth after two minutes. If the carpet holds its color, you're safe. If the cloth picks up dye or the fiber lightens, stop — home peroxide will bleach the carpet. Skip to step 9."
+      "agent": "Patch-Test a Hidden Area",
+      "instruction": "Find a hidden patch of the same carpet — inside a closet or under furniture. Dab a drop of cool water + Dawn on it with a white cloth. Wait 2 min. If the cloth picks up carpet dye, your carpet's color isn't stable and home chemistry will lighten it. Skip to step 7 (call a pro)."
     },
     {
       "step": 2,
-      "agent": "The tannin rule: no alkaline cleaners",
-      "instruction": "Berries stain by anthocyanin pigment — the same tannin family as wine, coffee, and beer. Anthocyanins change color with pH: alkaline products (ammonia, baking soda, OxiClean, most \"all-purpose\" sprays, laundry boosters) will darken a red berry stain to deep blue or purple and lock it into the fiber permanently. Use only: cold water, Dawn dish soap, 3% hydrogen peroxide, and white vinegar."
+      "agent": "NO Alkaline Cleaners on Berry",
+      "instruction": "Berry is anthocyanin — same pigment family as red wine. Alkaline products — ammonia, baking soda, OxiClean paste, most all-purpose sprays — LOCK berry color into carpet as permanent brown. Use ONLY: cold water, Dawn dish soap, 3% hydrogen peroxide."
     },
     {
       "step": 3,
-      "agent": "Lift off berry solids — don't rub",
-      "instruction": "If there's pulp or whole berries on the carpet, lift them off with a spoon or a dull butter knife. Scoop away from the center of the stain, not across it. Don't press, don't wipe, don't rub — mashed berry pulp drives pigment deep into the carpet pile and the pad underneath."
+      "agent": "Blot Straight Down, Never Rub",
+      "instruction": "Press a thick stack of white paper towels or folded white cloth straight down on the berry spot. Lift, move to dry section, press again. Outside-in. Rubbing is the #1 home failure — it drives the berry into the pad."
     },
     {
       "step": 4,
-      "agent": "Cold water dilute + blot cycle",
-      "instruction": "Pour a small amount of cold water directly on the stain, then press a folded white cloth or stack of paper towels straight down. Lift, move to a dry section, press again. Repeat until the cloth stops picking up purple or red. Work from the outside in. Don't flood the carpet — a little water, blotted out well, beats a soak that reaches the pad."
+      "agent": "Cold Water + Dawn, Damp Cloth Only",
+      "instruction": "Dampen a white cloth with cool water + a drop of Dawn. Press onto the spot, lift, rotate. Never pour water on carpet — it sinks to the pad and rings back up. Keep your cloth damp, not dripping. 2–3 cycles."
     },
     {
       "step": 5,
-      "agent": "Dawn + 3% hydrogen peroxide solution",
-      "instruction": "Mix one tablespoon of clear Dawn dish soap with one cup of 3% hydrogen peroxide in a small bowl. Dip a white cloth, wring nearly dry, and dab the stain — working from the edges toward the center. Let it sit 5–10 minutes, then blot with a clean damp cloth. Peroxide breaks the anthocyanin color molecules; Dawn lifts them out. Dark berries (blueberry, blackberry) often need two or three cycles.",
-      "safetyNote": "Never mix hydrogen peroxide with ammonia, bleach, or vinegar simultaneously — dangerous gases. And skip this step on dark or patterned carpet unless your patch test came back clean."
+      "agent": "Dawn + 3% Peroxide Solution (Whites / Colorfast Only)",
+      "instruction": "Mix 1 tbsp Dawn + 1 cup 3% hydrogen peroxide. Dip a white cloth, wring nearly dry, dab the stain. Dwell 5–10 min. Blot with damp cloth. 2–3 cycles on heavy berry. Skip if your patch test came back positive for dye transfer.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia. Patch test first on dark or patterned carpet."
     },
     {
       "step": 6,
-      "agent": "White vinegar rinse",
-      "instruction": "Mix one tablespoon of white vinegar into one cup of cold water. Dab onto the treated spot with a clean white cloth. The mild acid does two things: it neutralizes any peroxide residue, and it keeps any remaining anthocyanin in its red (lighter) form rather than letting it drift toward purple. Blot dry with a clean cloth."
+      "agent": "Weighted Dry Towel Between Every Pass",
+      "instruction": "After each wet cycle, put a thick DRY towel on the spot with a book or pan on top for 20–30 min. Pulls moisture UP and out of the pad. Skip this and the stain wicks back as it dries."
     },
     {
       "step": 7,
-      "agent": "Dry down — prevent wicking",
-      "instruction": "Blot until no more moisture transfers to a dry cloth. Stack six to ten sheets of white paper towels over the area, weigh them down with a heavy book, and leave overnight. Berries soak deep — the pad often holds pigment that will wick back up and create a ring if the carpet isn't dried fully. Don't walk on the spot or vacuum until completely dry."
-    },
-    {
-      "step": 8,
-      "agent": "Check under daylight — repeat if shadow remains",
-      "instruction": "Once dry, inspect in natural light, not a lamp. Berry rings often look gone when wet but reappear as a pale pink or lavender halo when dry. If you see one, repeat steps 5–7 a second time — anthocyanin pigments often need two full rounds. Two rounds is the home ceiling. If a shadow survives that, escalate."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a professional carpet cleaner",
-      "instruction": "If the patch test fails, the carpet is wool, or a stain survives two full home rounds, call a pro. Tell them: \"Berry on [nylon/polyester/wool] carpet, treated with Dawn + 3% peroxide, vinegar rinse. No ammonia or alkaline products used. Residual [pink/blue/purple] halo remains.\" That handoff lets them go straight to a commercial tannin formula and 6% peroxide with extraction — they'll finish what home chemistry can't."
+      "agent": "Fan-Dry, Inspect Next Day, Escalate If Needed",
+      "instruction": "Fan the area. Don't walk on it until bone-dry. Next day, inspect in daylight. If a faint ring returns, call a carpet cleaner. If the carpet is wool, the patch test failed, or two home rounds plateau, also call a pro. Tell them: \"Berry on [nylon / wool / synthetic] carpet, age [fresh / overnight / older], home-treated with Dawn + 3% peroxide + weighted towel. [Ring wicked back / plateau / patch test failed].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Remove any excess berry by blotting with a clean white cloth. Press firmly and lift straight up — never rub. Work from the outside edges toward the center.",
-      "2. Flush the stain with cold water. Blot to remove as much pigment as possible.",
-      "3. Apply 3% hydrogen peroxide (brown bottle from the pharmacy) directly to the stain. Let it sit for 5 minutes.",
-      "4. Blot with a cloth dampened with cool water to rinse. Stack paper towels with a heavy book on top for 1–2 hours.",
-      "5. Air dry completely. Do NOT use heat — no dryer, no iron, no hot water — until you are certain the stain is completely gone."
+      "1. Patch-test a hidden area with Dawn + 3% peroxide.",
+      "2. NO alkaline cleaners on berry — ammonia/OxiClean/baking soda permanently lock it brown.",
+      "3. Blot straight down from outside to center. Never rub.",
+      "4. Cold water + Dawn on a DAMP cloth — never pour.",
+      "5. Dawn + 3% peroxide solution, dab with damp cloth, 5–10 min. 2–3 cycles.",
+      "6. Weighted dry towel 20–30 min between every wet pass.",
+      "7. Fan-dry, inspect next day. Escalate for wool, wicking, or plateau."
     ],
     "products": [
-      "H₂O₂ 3%",
-      "Dawn NSD",
-      "cold water"
+      "Clean white towels / thick paper towel stack",
+      "Dawn dish soap",
+      "3% hydrogen peroxide",
+      "A heavy book or pan for weighted drying"
     ],
-    "whenToStop": "If two home treatments haven't removed the berry, a professional cleaner with commercial-grade chemistry can often finish the job. Explain what you've already tried — it helps them choose the right approach and avoid repeating failed methods.",
+    "whenToStop": "Stop if wool carpet, stain wicks back as carpet dries, patch test showed dye bleed, or two home rounds plateau.",
     "warnings": [
-      "NEVER use ammonia, baking soda, or alkaline cleaners on berry stains — permanently darkens tannin pigments. This damage cannot be reversed even by professionals.",
-      "Avoid heat until the stain is completely gone — heat permanently sets most stains."
+      "NEVER alkaline cleaners on berry — permanent brown",
+      "NEVER pool liquid on carpet",
+      "NEVER skip weighted extraction between wet passes",
+      "NEVER mix peroxide with chlorine bleach or ammonia",
+      "NEVER use hot water — sets tannin brown"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use ammonia or baking soda — alkaline agents permanently darken tannin pigments",
-      "Rub instead of blot — rubbing pushes stain deeper into carpet fibers",
-      "Apply heat before stain is fully removed — heat sets stains permanently"
+      "Never pour liquid on carpet — pad contamination",
+      "Never alkaline on berry — permanent brown",
+      "Never hot water — sets tannin",
+      "Never skip extraction",
+      "Never layer oxidizers"
     ],
     "fiberSensitivities": [
-      "Carpet is chemically durable. Standard spotting chemistry is safe. Always test on hidden area for colorfastness on dyed goods."
+      "Nylon / olefin / polyester: tolerates NSD, acid-side spotters, 3% H₂O₂",
+      "Wool: pro-lane",
+      "Backing: no pooled liquid"
     ]
   },
+  "materialWarnings": [
+    "NO alkaline cleaners",
+    "Damp cloth only — never pour",
+    "Weighted extraction protects the pad"
+  ],
   "escalation": {
-    "when": "Stain does not respond after two full professional treatment cycles, or pigment has cross-linked with fiber dye",
-    "whatToTell": "Berry stain on carpet, treated with tannin formula and H₂O₂ 6%, age unknown. Possible cross-linking with fiber dye present.",
-    "specialistType": "textile restoration specialist"
+    "when": "Wool carpet, stain wicks back, patch test showed dye bleed, or two home rounds plateau.",
+    "whatToTell": "\"Berry on [nylon / wool / synthetic] carpet, age [fresh / overnight / older], home-treated with Dawn + 3% H₂O₂ + weighted towel.\"",
+    "specialistType": "professional carpet cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the stain fresh or has it been sitting for more than an hour?",
-      "Has heat been applied (dryer, iron, hot water) before treatment?",
-      "What color is the carpet — light, dark, or patterned?",
-      "What type of berry — blueberry, strawberry, raspberry, blackberry?"
+      "Nylon, olefin, polyester, or wool carpet?",
+      "What berry — blueberry / blackberry (heavy anthocyanin) or strawberry (lighter)?",
+      "Any alkaline cleaner applied already?",
+      "Fresh spill or walked-on?"
     ],
-    "modifierNotes": "Fresh stains respond significantly better. Heat exposure before treatment reduces chance of full removal. Darker carpets may hide residual staining. Blueberry and blackberry contain the most concentrated anthocyanins and are hardest to remove."
+    "modifierNotes": "Dark-berry (blueberry / blackberry) on light carpet = hardest. Walked-on fresh spill often means pad is contaminated = escalate."
   },
-  "difficulty": 4,
-  "timeEstimate": "10–20 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

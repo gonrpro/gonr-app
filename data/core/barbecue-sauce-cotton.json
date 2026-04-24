@@ -1,122 +1,193 @@
 {
   "id": "barbecue-sauce-cotton",
   "title": "Barbecue Sauce on Cotton",
-  "stainFamily": "combo",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Barbecue sauce combines tomato (lycopene, tannins), sugar (caramelizes when set), vinegar, spices (turmeric/paprika pigments), and oil. On cotton, the sugar creates a sticky matrix that bonds pigment to fiber. Caramelized sugar from heat exposure becomes extremely adhesive. Multiple pigment sources (lycopene, turmeric, paprika) make this a persistent multi-colored stain.",
-  "whyThisWorks": "Cold water dissolves the sugar matrix on cotton before it can caramelize. Surfactant addresses the oil component. Tannin spotter targets the tomato polyphenols. An oxidizer addresses the turmeric and paprika pigments. Treating quickly before the sugar sets is the single biggest factor in successful removal.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–45 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "barbecue-sauce",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "combination",
+      "tannin",
+      "oil",
+      "sugar",
+      "cotton",
+      "multi-pigment"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Barbecue sauce is one of the stickiest combination stains because it has EVERY category: tomato (lycopene + tannin), sugar (caramelizes on cotton when exposed to heat, which is common because BBQ is a summer-dryer stain), vinegar (acid — cotton-neutral), spices (turmeric + paprika carotenoids adding yellow-orange pigment), and oil (ingredient oils + often spattered grill oil). The sugar is the trap: caramelized sugar is extraordinarily adhesive, and summer sun on a hanging shirt can do the caramelizing without any iron touching it. Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, sunlight, and hot wash at room temperature. Treatment is sugar-first (before it caramelizes further), oil-strip, then the tannin + dye passes.",
+  "whyThisWorks": "Cold water dissolves the sugar BEFORE caramelization can lock the rest of the stain into the fiber. NSD handles the oil component. Acid-side tannin spotter disrupts the tomato tannin bond. 3% H₂O₂ + optional sunlight handles the turmeric + paprika carotenoids. Each component has its own chemistry; treated in sequence, the whole stain lifts. Skip the sugar flush and heat exposure locks everything in.",
+  "defaultAssumption": "BBQ sauce stains are almost always summer-context: picnics, cookouts, backyard. Assume the stain has had some sun exposure, which means the sugar may have started caramelizing. Treat as moderately aged unless the user says they're catching it within minutes.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape + Cold Flush",
+      "technique": "Remove bulk, cold flush from back",
+      "equipment": "Dull blade, cold water, white cotton terry towel",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Scrape solid sauce off with a dull blade — don't rub. Cold flush from the BACK of the fabric, LONGER than a standard flush (90 seconds+) because the sugar needs to dissolve before it caramelizes further. Cold only — heat accelerates the sugar-lock AND the lycopene deepening."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify oil component",
+      "equipment": "NSD in cool water",
+      "dwellTime": "5 minutes",
+      "instruction": "Apply NSD, work with a soft bristle brush. NSD handles the sauce's oil fraction, the remaining sugar residue, and starts lifting surface pigment."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Tannin Spotter",
+      "technique": "Drop, dwell, blot",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Acid-side tannin spotter by dropper on the residual red/brown. Disrupts the tomato-tannin bond. Dwell 3–5 min, blot."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3% + Sun Assist",
+      "technique": "Oxidize residual pigment",
+      "equipment": "3% H₂O₂, optional sunlight",
+      "dwellTime": "5–10 minutes wet, optional 30–60 min sunlight",
+      "instruction": "Apply 3% H₂O₂ to the residual orange-red (lycopene) and yellow (turmeric/paprika) shadow. For aged stains, hang damp in sunlight — UV accelerates lycopene + curcumin oxidation. Fresh stains often don't need the sun step."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "NSD Flush + Hot Wash",
+      "technique": "Clear chemistry, launder",
+      "equipment": "NSD, washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Rinse until water runs clear. Launder hot per care label. Inspect BEFORE the dryer."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove excess solids with dull edge — do not rub",
-      "2. Apply Tannin Formula for the plant-pigment component",
-      "3. Apply POG for the oil component",
-      "4. Flush with NSD and cool water",
-      "5. If color persists: apply H2O2 6% on colorfast fabrics",
-      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+      "1. Scrape bulk. Cold flush LONGER than usual — dissolve sugar before caramelization.",
+      "2. NSD — handles oil + residual sugar + surface pigment.",
+      "3. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A). 3–5 min.",
+      "4. 3% H₂O₂ + sun assist on residual lycopene / turmeric / paprika pigment.",
+      "5. NSD flush, hot wash per care label."
     ],
     "products": [
-      "Tannin Formula",
-      "POG (Paint Oil Grease remover)",
       "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold flush (longer than standard); cool through chemistry; hot wash post-chemistry; sun for aged pigment",
+    "warnings": [
+      "Sugar flush is longer than a regular tannin protocol — caramelization is the lock",
+      "Heat (sun, iron, dryer) accelerates the lock; no heat until chemistry has cleared the sugar",
+      "Multiple pigments (tomato + turmeric + paprika) may need multiple oxidizer passes",
+      "One oxidizer at a time, NSD-flushed between"
+    ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test on a hidden seam",
-      "instruction": "Barbecue sauce is a combo stain — tomato tannin, sugar, oil, vinegar, and turmeric/paprika pigments — so you'll use several cleaners in sequence. On an inside seam or hem, dab a drop of your Dawn solution and a drop of 3% hydrogen peroxide. Blot with a white cloth after two minutes. If no dye transfers and the fabric looks unchanged, you're safe. If the seam loses color, stop and go to step 8 (escalate)."
+      "agent": "Scrape + Long Cold Flush",
+      "instruction": "Scrape any solid sauce off with a dull butter knife. Then hold the BACK of the stained area under cold running water for at least 90 seconds — longer than you'd flush most stains. BBQ sauce has a lot of sugar and you're racing the caramelization reaction. Cold only."
     },
     {
       "step": 2,
-      "agent": "Scrape solids — don't rub",
-      "instruction": "Lift off any pooled sauce with a dull butter knife or the edge of a credit card, scraping away from the center of the stain. Don't press, don't rub, don't wipe in a circle — you're removing what's sitting on top so the chemistry below can reach the fiber. What looks like a small stain often has most of its volume sitting on the surface."
+      "agent": "Dawn First — Strip the Oil",
+      "instruction": "BBQ sauce has oil in it (plus sometimes grill oil spatter). Work a drop of Dawn dish soap into the stain with a fingertip or soft toothbrush, let sit 10 minutes, rinse cool. Should see the stain lighten noticeably as the oil comes off."
     },
     {
       "step": 3,
-      "agent": "Cold back-flush",
-      "instruction": "Turn the fabric inside out and run cold tap water through the back of the stain for 30–60 seconds. Push the sauce back out the way it came in. Cold matters here: barbecue sauce has sugar, and hot water caramelizes sugar into a glue-like film that holds the pigment to the fiber. On delicate items or upholstery that can't be flushed, dab the back with a cold wet cloth, then blot front and back."
+      "agent": "White Vinegar Dab for the Red",
+      "instruction": "For residual red/brown: mix 1 teaspoon white vinegar with 4 tablespoons cool water. Dab on the spot, let sit 3 minutes, blot. Works on the tomato tannin."
     },
     {
       "step": 4,
-      "agent": "Dawn dish soap — tackle the oil first",
-      "instruction": "Dab a small amount of clear Dawn dish soap straight onto the stain (no water yet). Gently work it into the fiber with your fingertips for 30 seconds. Dawn cuts through the oil component so the next step can reach the pigment. Let it sit five minutes, then blot with a cold damp cloth. Don't rinse it off yet."
+      "agent": "3% Hydrogen Peroxide + Sunlight",
+      "instruction": "For stubborn orange-yellow shadow (from turmeric / paprika): dab 3% drugstore hydrogen peroxide on the spot, let it bubble 5 min, blot. For aged stains, hang the damp fabric in direct sunlight for 30–60 min — UV helps fade the carotenoid pigments. Skip peroxide on dark or dyed cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fume risk."
     },
     {
       "step": 5,
-      "agent": "Dawn + 3% hydrogen peroxide — tackle the pigment",
-      "instruction": "Mix one teaspoon of Dawn with two tablespoons of 3% hydrogen peroxide in a small bowl. Dab onto the remaining stain with a white cloth. Let it dwell 10 minutes. Peroxide oxidizes the tomato lycopene, the turmeric, and the paprika all at once. Blot with a clean damp cloth. Repeat up to two more times if a color shadow is still visible.",
-      "safetyNote": "Never mix hydrogen peroxide with ammonia or bleach. On brightly colored cotton, peroxide can lighten the dye — the step-1 patch test is your safeguard."
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. If you still see the stain, repeat the Dawn + vinegar + peroxide round."
     },
     {
       "step": 6,
-      "agent": "Enzyme pretreat and cool wash",
-      "instruction": "Apply an enzyme stain remover (OxiClean Versatile, Biz, or Shout Advanced) per the label. Let it dwell 20–30 minutes. Then launder in a cool or warm cycle (not hot) with your normal detergent. Cotton can tolerate warm water once the pigment is out, but keep it under 90°F until the stain is fully gone."
-    },
-    {
-      "step": 7,
-      "agent": "Air-dry and inspect under daylight — never tumble-dry early",
-      "instruction": "Hang or lay flat to air-dry, then inspect in daylight. A faint yellow shadow is usually turmeric residue — it often fades further in direct sunlight over a day or two. If you see any tan, orange, or yellow trace, repeat steps 5 and 6 before drying on heat. Only put it in the dryer when the stain is completely invisible in natural light."
-    },
-    {
-      "step": 8,
-      "agent": "Escalate to a professional cleaner",
-      "instruction": "If a yellow/orange halo survives two full rounds of peroxide + enzyme, or if the sauce was dried-on or heat-set before you started, take it to a dry cleaner. Tell them: \"Barbecue sauce on cotton — combo stain with turmeric residue. Treated with Dawn + 3% peroxide + enzyme. No ammonia or chlorine bleach used.\" Pros use paint/oil/grease spotters and tannin-specific chemistry that outperform anything at home."
+      "agent": "Escalate If Heat-Set or Stubborn",
+      "instruction": "If the BBQ sauce has been hot-dried or two home rounds haven't cleared it, take to a dry cleaner. Tell them: \"BBQ sauce on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% H₂O₂ + sun.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub",
-      "2. Rinse with cold water to remove loose material",
-      "3. Apply Dawn dish soap. Work gently",
-      "4. Blot with clean white cloth. Repeat if needed",
-      "5. Air dry — no heat until stain is gone"
+      "1. Scrape solid sauce off gently.",
+      "2. LONG cold flush from the BACK — 90+ seconds to dissolve sugar before it caramelizes.",
+      "3. Dawn first — strips the oil. 10 min dwell, rinse cool.",
+      "4. Diluted white vinegar for residual red.",
+      "5. 3% hydrogen peroxide + sunlight for orange-yellow shadow. Skip on dark cotton.",
+      "6. Hot wash per care label. Inspect BEFORE the dryer.",
+      "7. Escalate if heat-set or two rounds failed."
     ],
     "products": [
-      "Dawn dish soap"
+      "Dull blade or credit-card edge",
+      "Cold water (long flush)",
+      "Dawn dish soap",
+      "White vinegar",
+      "3% hydrogen peroxide"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if BBQ sauce has been hot-dried or two home rounds haven't cleared it.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "Longer cold flush than regular tannin — caramelization is the risk",
+      "Heat = sugar-lock. No hot water, no sun drying, no iron until chemistry clears",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton",
+      "Inspect before the dryer"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never hot-flush BBQ sauce — sugar caramelizes + lycopene sets",
+      "Never skip the long cold flush — sugar is the lock",
+      "Never layer oxidizers — one at a time",
+      "Never dry with residual pigment — heat sets it"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, sunlight, hot wash",
+      "Dyed cotton: skip or inside-seam-test peroxide",
+      "Heat-safe once chemistry is cleared"
     ]
   },
+  "materialWarnings": [
+    "Long cold flush — sugar lock is the enemy",
+    "Heat in any form sets BBQ sauce harder",
+    "Peroxide on whites; test inside seam on dark cotton"
+  ],
   "escalation": {
-    "when": "If barbecue sauce stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is barbecue sauce on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "BBQ sauce heat-set by iron, hot dryer, or extended sun on a hanging garment; or two home rounds don't clear it.",
+    "whatToTell": "\"BBQ sauce on cotton, age [fresh / overnight / older, possibly sun-exposed], home-treated with Dawn + vinegar + 3% H₂O₂ + sun.\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "How long ago did the spill happen?",
+      "Has the fabric been in direct sun or gone through a hot wash since?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Sweet-style BBQ (more sugar → harder), vinegar-style (easier), or mustard-based (more turmeric, plateau risk)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "BBQ sauce is the summer stain where the biggest enemy is sun / heat finishing the caramelization while the user drives home from the cookout. Cold flush ASAP, even just with a water bottle at the event, is a real win."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
