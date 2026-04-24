@@ -78,10 +78,47 @@
     }
   ],
   "homeSolutions": [
-    "Test on a hidden area first (inside seam or hem) — wool dyes may react to cleaning agents.",
-    "FRESH: Immediately ice water + blot from back. Most casein comes out with this step.",
-    "REMAINING: dish-soap solution (1:9 with cold water), 2 minutes, blot, rinse thoroughly.",
-    "BROWN COLOR: white vinegar (1:1 diluted), 1 minute only, blot. Then diluted hydrogen peroxide 3% from the pharmacy (1 part peroxide with 1 part cold water), 1-2 minutes, blot, rinse thoroughly."
+    {
+      "step": 1,
+      "agent": "Wool + coffee-with-cream: three-part stain, no-enzyme constraint",
+      "instruction": "Coffee with cream is a three-part combo: tannin (coffee), protein (milk casein), fat (cream). On wool, enzymes are banned (digest keratin), so you can't attack the protein directly. Attack order: cold water → Dawn (fat cut) → 60-sec vinegar (tannin + pH) → 60-sec peroxide (residual pigment, white wool only). Fresh catches almost always resolve. Dried/set is pro territory — don't run repeat home cycles on wool."
+    },
+    {
+      "step": 2,
+      "agent": "Wool rules + combo attack order",
+      "instruction": "Wool bans: NO enzymes (OxiClean, Biz, Zout — they digest wool protein), no hot water, no alkaline, no bleach, no scrubbing, no wringing. Combo-specific: attack fat before pigment, because fat blocks tannin chemistry from reaching the fiber. Cool water + Dawn + vinegar is the safe sequence. Skip peroxide if not needed — it's the highest-risk step on wool."
+    },
+    {
+      "step": 3,
+      "agent": "Patch test + ice-water blot from the back",
+      "instruction": "Dab cool water on an inside seam, wait 60 seconds, blot. If clean, proceed. Press a white paper-towel stack straight down on the stain; turn inside out and blot with ICE-cold water on the BACK using a cotton ball. Underside towel catches runoff. 60 seconds of patient press-and-blot work. Fresh casein transfers within the first 2 minutes on wool."
+    },
+    {
+      "step": 4,
+      "agent": "Wool-safe detergent — Eucalan or clear Dawn",
+      "instruction": "Mix one teaspoon of Eucalan, Woolite, or Soak (or clear Dawn) in two cups of cool water. Dip a white cloth, wring nearly dry, PRESS on the stain. 3 minutes dwell. Blot with a clean damp cloth. Repeat once. NEVER use OxiClean, Biz, or Zout — those contain proteases that digest wool."
+    },
+    {
+      "step": 5,
+      "agent": "Dilute vinegar — STRICT 60-second ceiling",
+      "instruction": "Mix 1 part white vinegar with 1 part cool water. Press a cotton swab on the stain for 60 SECONDS MAX — set a timer. Flush with cool water immediately. Vinegar handles residual tannin AND restores wool's natural pH (~5)."
+    },
+    {
+      "step": 6,
+      "agent": "3% peroxide dab — STRICT 60-sec ceiling, white wool only",
+      "instruction": "If brown remains AND the wool is white, cream, or very light AND patch test was clean: mix 1 part 3% peroxide with 1 part cool water. Dab with a cotton swab for 60 SECONDS MAX, flush with cool water. Skip on colored wool — peroxide lifts wool dye.",
+      "safetyNote": "Never exceed 60 seconds peroxide on wool. Never combine with ammonia or bleach."
+    },
+    {
+      "step": 7,
+      "agent": "Press dry + lay flat — never hang wet wool",
+      "instruction": "Press between dry white towels. Lay flat on a fresh dry towel. Reshape while damp. Air-dry at room temperature, out of direct sun. Never hang wet wool. Never heat. If a shadow remains after drying, DO NOT run a second full round — repeat chemistry on wool is where felting starts."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate to a wool specialist",
+      "instruction": "If the stain survives one round, take to a cleaner who specializes in wool (call ahead). Tell them: \"Coffee with cream on wool (tannin + casein + fat), age [x]. One home round: ice water + Dawn/Eucalan + 1:1 vinegar (60 sec) + [60-sec peroxide on white]. No enzymes, no hot water, no alkaline.\" Pros have wool-safe protein spotters + reducing bleach with timed dwell."
+    }
   ],
   "materialWarnings": [
     "ALWAYS test on a hidden seam or inside hem first — wool dyes may not tolerate spotting agents.",
