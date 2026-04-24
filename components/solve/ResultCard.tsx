@@ -335,34 +335,83 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
         </div>
       )}
 
-      {/* Home Tips — only show as collapsible for pro users (home users see it as primary) */}
+      {/* Customer Handoff — Pro users can reveal the full Home protocol to hand off
+          to a customer. Pro protocol stays primary above; this is a secondary reveal,
+          not a replacement. Copy approved by Tyler 2026-04-24. */}
       {isPro && diySteps.length > 0 && (
         <div className="px-4" style={{ borderTop: '1px solid var(--border)' }}>
           <Collapsible
-            title={t('collapsibleHomeCare')}
-            icon={Home}
+            title={t('proShowHomeToggle')}
+            icon={Handshake}
             onToggle={(nowOpen) => {
               if (nowOpen) {
-                recordClientEvent('render.spotter_home_section_expanded', {
+                recordClientEvent('render.pro_customer_handoff_expanded', {
                   cardId: card.id ?? null,
                   viewerTier,
+                  homeStepCount: diySteps.length,
                 })
               }
             }}
           >
-            <ul className="space-y-1.5">
-              {diySteps.slice(0, 4).map((sol, i) => {
-                const text = typeof sol === 'string' ? sol : (sol as Step).instruction
-                const tip = text.split(/[.!?]/)[0].replace(/^\d+\.\s*/, '').trim()
-                if (!tip) return null
-                return (
-                  <li key={i} className="flex gap-2 text-sm" style={{ color: 'var(--text)' }}>
-                    <span style={{ color: 'var(--accent)' }}>•</span>
-                    <span>{tip}</span>
-                  </li>
-                )
-              })}
-            </ul>
+            <div className="space-y-4">
+              {/* Caveat banner — reminds Pro users not to substitute home for pro on the job */}
+              <div
+                className="flex gap-2 items-start rounded-lg px-3 py-2.5 text-xs leading-relaxed"
+                style={{
+                  background: 'rgba(234,179,8,0.08)',
+                  border: '1px solid rgba(234,179,8,0.25)',
+                  color: 'var(--text)',
+                }}
+              >
+                <AlertTriangle size={14} strokeWidth={1.75} className="flex-shrink-0 mt-0.5" style={{ color: '#ca8a04' }} aria-hidden="true" />
+                <span>{t('proShowHomeCaveat')}</span>
+              </div>
+
+              {/* Header + subtext */}
+              <div className="space-y-1">
+                <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--accent)' }}>
+                  {t('proShowHomeHeader')}
+                </p>
+                <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                  {t('proShowHomeSubtext')}
+                </p>
+              </div>
+
+              {/* Full home step list — same visual pattern as primarySteps for parity */}
+              <div className="space-y-3">
+                {diySteps.map((step, i) => {
+                  const stepObj =
+                    typeof step === 'string'
+                      ? { step: i + 1, agent: '', instruction: step }
+                      : (step as Step)
+                  return (
+                    <div key={i} className="flex gap-3">
+                      <div
+                        className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
+                        style={{ background: 'rgba(34,197,94,0.15)', color: 'var(--accent)' }}
+                      >
+                        {stepObj.step ?? i + 1}
+                      </div>
+                      <div className="flex-1 space-y-0.5">
+                        {stepObj.agent && (
+                          <p className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>
+                            {stepObj.agent}
+                          </p>
+                        )}
+                        <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
+                          {stepObj.instruction}
+                        </p>
+                        {stepObj.safetyNote && (
+                          <p className="text-xs italic mt-1" style={{ color: '#ca8a04' }}>
+                            ⚠ {stepObj.safetyNote}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
           </Collapsible>
         </div>
       )}

@@ -414,6 +414,24 @@ export const strings: Record<string, Record<string, string>> = {
   collapsibleSolvent: { en: "Solvent Note", es: "Nota de Solvente" },
   collapsibleHandoff: { en: "Customer Handoff", es: "Entrega al Cliente" },
 
+  // ── Pro-shows-Home reveal (collapsible on Pro cards) ──────────
+  proShowHomeToggle: {
+    en: "Show the home version for customers",
+    es: "Mostrar la versión casera para clientes"
+  },
+  proShowHomeHeader: {
+    en: "Customer Handoff",
+    es: "Entrega al Cliente"
+  },
+  proShowHomeSubtext: {
+    en: "Simpler at-home steps your customer can follow before or instead of bringing it in.",
+    es: "Pasos simples que su cliente puede seguir en casa antes o en lugar de traer la prenda."
+  },
+  proShowHomeCaveat: {
+    en: "This is the customer-facing path. The Professional Protocol above is your full spotter/operator treatment — don't substitute one for the other on the job.",
+    es: "Esta es la ruta para el cliente. El Protocolo Profesional arriba es su tratamiento completo — no sustituya uno por el otro en el trabajo."
+  },
+
   // ── Privacy page ──────────────────────────────────────────────
   privacyTitle: { en: "Privacy Policy", es: "Política de Privacidad" },
   privacyLastUpdated: { en: "Last updated", es: "Última actualización" },

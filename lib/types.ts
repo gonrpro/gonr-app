@@ -10,6 +10,7 @@ export interface Step {
   temperature?: string
   dwellTime?: string
   why?: string
+  safetyNote?: string
 }
 
 export interface ProtocolCard {
