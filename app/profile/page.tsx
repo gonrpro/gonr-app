@@ -419,10 +419,10 @@ export default function ProfilePage() {
           </p>
           <div className="flex items-center justify-between">
             <p className="text-sm font-semibold" style={{ color: 'var(--text)' }}>
-              {usage.tier === 'home' ? 'GONR Home · $7.99/mo'
-                : usage.tier === 'spotter' ? 'GONR Spotter · $49/mo'
-                : usage.tier === 'operator' ? 'GONR Operator · $99/mo'
-                : usage.tier === 'founder' ? 'GONR Founder'
+              {usage.tier === 'home' ? 'GONR™ Home · $7.99/mo'
+                : usage.tier === 'spotter' ? 'GONR™ Spotter · $49/mo'
+                : usage.tier === 'operator' ? 'GONR™ Operator · $99/mo'
+                : usage.tier === 'founder' ? 'GONR™ Founder'
                 : 'Free trial'}
             </p>
             <p className="text-xs font-semibold" style={{ color: 'var(--accent)' }}>

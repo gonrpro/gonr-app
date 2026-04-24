@@ -160,7 +160,7 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
                   className={styles.checkoutBtn}
                   style={{ background: '#22c55e' }}
                 >
-                  Get GONR Home
+                  Get GONR™ Home
                 </a>
               </div>
             )}

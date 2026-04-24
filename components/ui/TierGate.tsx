@@ -55,7 +55,7 @@ export default function TierGate({ isOpen, onClose, email }: TierGateProps) {
         {/* Header — consumer-first per TASK-057a */}
         <div className="px-6 pt-6 pb-4 text-center">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-            Pick your GON<span className="text-green-500">R</span>
+            Pick your GON<span className="text-green-500">R</span><span aria-hidden="true" className="align-super text-[10px] font-bold opacity-60 ml-px">™</span>
           </h2>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
             Start where you are — upgrade anytime.

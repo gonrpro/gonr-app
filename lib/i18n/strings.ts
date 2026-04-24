@@ -96,7 +96,7 @@ export const strings: Record<string, Record<string, string>> = {
   sentMagicLink: { en: "We sent a magic link to", es: "Enviamos un enlace mágico a" },
   clickLinkToSignIn: { en: "Click the link in the email to sign in.", es: "Haz clic en el enlace del correo para iniciar sesión." },
   useDifferentEmail: { en: "Use a different email", es: "Usar otro correo" },
-  signInToGonr: { en: "Sign in to GONR", es: "Inicia sesión en GONR" },
+  signInToGonr: { en: "Sign in to GONR™", es: "Inicia sesión en GONR™" },
   enterEmailPrompt: { en: "Enter your email to sign in or create an account.", es: "Ingresa tu correo para iniciar sesión o crear una cuenta." },
   emailPlaceholder: { en: "you@example.com", es: "tu@ejemplo.com" },
   sending: { en: "Sending...", es: "Enviando..." },
@@ -250,7 +250,7 @@ export const strings: Record<string, Record<string, string>> = {
   proBadge: { en: "PRO", es: "PRO" },
 
   // ── Profile page ──
-  profileSubtitle: { en: "Your GONR account & usage stats.", es: "Tu cuenta GONR y estadísticas de uso." },
+  profileSubtitle: { en: "Your GONR™ account & usage stats.", es: "Tu cuenta GONR™ y estadísticas de uso." },
   usage: { en: "Usage", es: "Uso" },
   solvesRun: { en: "solves run", es: "protocolos realizados" },
   appearance: { en: "Appearance", es: "Apariencia" },
@@ -258,7 +258,7 @@ export const strings: Record<string, Record<string, string>> = {
   dark: { en: "Dark", es: "Oscuro" },
   light: { en: "Light", es: "Claro" },
   headerThemeHint: { en: "Use the header toggle to switch themes.", es: "Usa el botón del encabezado para cambiar temas." },
-  upgradeToGonrPro: { en: "Upgrade to GONR Pro", es: "Mejora a GONR Pro" },
+  upgradeToGonrPro: { en: "Upgrade to GONR™ Pro", es: "Mejora a GONR™ Pro" },
   unlockProFeatures: { en: "Unlock Deep Solve, Customer Handoff, and more.", es: "Desbloquea Deep Solve, Respuesta al Cliente y más." },
   language: { en: "Language", es: "Idioma" },
 
@@ -271,7 +271,7 @@ export const strings: Record<string, Record<string, string>> = {
   account: { en: "Account", es: "Cuenta" },
 
   // ── Tier / Subscription ──
-  unlockGonr: { en: "Unlock GONR", es: "Desbloquea GONR" },
+  unlockGonr: { en: "Unlock GONR™", es: "Desbloquea GONR™" },
   maybeLater: { en: "Maybe later", es: "Quizás después" },
   free: { en: "Free", es: "Gratis" },
   founder: { en: "Founder", es: "Fundador" },
@@ -509,12 +509,12 @@ export const strings: Record<string, Record<string, string>> = {
   },
 
   // ── Partners page ─────────────────────────────────────────────
-  partnersTitle: { en: "Partner with GONR", es: "Asóciese con GONR" },
+  partnersTitle: { en: "Partner with GONR™", es: "Asóciese con GONR™" },
   partnersSubtitle: {
     en: "Built by a 3rd generation dry cleaner. 250+ expert protocols. Let's work together.",
     es: "Creado por un tintorero de tercera generación. Más de 250 protocolos expertos. Trabajemos juntos."
   },
-  partnersWhyPartner: { en: "Why Partner with GONR?", es: "¿Por Qué Asociarse con GONR?" },
+  partnersWhyPartner: { en: "Why Partner with GONR™?", es: "¿Por Qué Asociarse con GONR™?" },
   partnersWhyPartnerContent: {
     en: "GONR is the only AI-powered stain intelligence platform built by industry professionals. Our protocols are chemistry-grounded, surface-specific, and safety-validated against a comprehensive material compatibility matrix. We serve both professional dry cleaners and home consumers.",
     es: "GONR es la única plataforma de inteligencia de manchas con IA creada por profesionales de la industria. Nuestros protocolos están fundamentados en química, son específicos por superficie y validados contra una matriz integral de compatibilidad de materiales. Servimos tanto a tintorerías profesionales como a consumidores del hogar."
@@ -531,7 +531,7 @@ export const strings: Record<string, Record<string, string>> = {
   },
 
   // ── TASK-073: Contact page ────────────────────────────────────
-  contactTitle: { en: "Contact GONR", es: "Contacta con GONR" },
+  contactTitle: { en: "Contact GONR™", es: "Contacta con GONR™" },
   contactSubtitle: {
     en: "Questions, feedback, or need help with a protocol? We read every message.",
     es: "¿Preguntas, comentarios o necesita ayuda con un protocolo? Leemos cada mensaje."

@@ -29,6 +29,19 @@ export default function Header() {
         <div className="select-none" style={{ fontSize: '28px', fontWeight: 900, letterSpacing: '-1.5px', lineHeight: 1 }}>
           <span className="text-gray-900 dark:text-white">GON</span>
           <span style={{ color: '#22c55e' }}>R</span>
+          <span
+            aria-hidden="true"
+            style={{
+              fontSize: '10px',
+              fontWeight: 700,
+              verticalAlign: 'super',
+              marginLeft: '1px',
+              letterSpacing: 0,
+              opacity: 0.6,
+            }}
+          >
+            ™
+          </span>
         </div>
         <div className="flex items-center gap-1">
           <button
