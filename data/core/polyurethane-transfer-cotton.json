@@ -66,9 +66,37 @@
   "callPro": "For valuable cotton garments or if you're unsure about fiber content or dye stability, professional treatment is safer. Professional dry cleaners have access to controlled environments and can assess fiber stability before proceeding.",
   "customerExplanation": "Polyurethane coating from bags or packaging transfers to cotton through direct contact. Since polyurethane is a polymer that doesn't dissolve in water, we used volatile dry-clean solvent to dissolve and extract it. Cotton's higher absorbency allowed the solvent to penetrate and remove the polyurethane effectively. The garment was allowed to air dry completely to ensure all solvent evaporated.",
   "homeSolutions": [
-    "Rubbing alcohol (70% isopropyl alcohol) sponged gently into the stain — weaker than professional solvents but may lighten fresh polyurethane. Use in ventilated area and test first.",
-    "Mineral spirits or paint thinner sponged gently into the stain — aromatic hydrocarbons that may partially dissolve fresh polyurethane. Less effective than VDS but safer than professional solvents. Ventilation required.",
-    "For very light, fresh polyurethane stains, sometimes placing the garment in the freezer for 1-2 hours and then attempting gentle rubbing with a soft, dry cloth can cause the brittle polymer to crack and flake off slightly. This only works on fresh, thin transfers."
+    {
+      "step": 1,
+      "agent": "Polyurethane transfer is a polymer deposit — pick your approach",
+      "instruction": "Polyurethane gets onto cotton from bag coatings, faux leather linings, shiny packaging, or some stretch-fabric backings that rub against your shirt. It's a plastic film — doesn't dissolve in water, doesn't lift with dish soap. Realistic home outcome: fresh thin transfers often come off cleanly with alcohol or freeze-and-flake. Heavy or set transfers usually need a pro dry-side solvent. Fabric color and dye matter — cotton is generally solvent-tolerant, but some specialty dyes aren't."
+    },
+    {
+      "step": 2,
+      "agent": "Patch test on a hidden seam",
+      "instruction": "Dab a drop of 91% isopropyl alcohol on an inside seam, wait 60 seconds, blot with a white cloth. If the cloth picks up dye, stop — home solvents will lift the garment's color. Go to step 6 and escalate. If the seam holds its color, proceed."
+    },
+    {
+      "step": 3,
+      "agent": "Freeze-and-flake — works on fresh thin transfers",
+      "instruction": "Put the garment in a ziplock bag and into the freezer for 1–2 hours, OR place a ziplock of ice (not ice directly) on top of the transfer for 30 minutes. Polyurethane gets brittle when cold. Flex the fabric gently — if the deposit cracks and flakes off, lift the flakes with the edge of a plastic card. On fresh light transfers, this alone removes most of it. Don't force it — if flakes don't come cleanly, move to step 4."
+    },
+    {
+      "step": 4,
+      "agent": "Isopropyl alcohol dab — place pad UNDER the fabric",
+      "instruction": "Lay the garment transfer-side DOWN on a stack of clean white paper towels. Dab 91% isopropyl alcohol on a white cloth or Q-tip and press onto the transfer from above. Alcohol partially dissolves polyurethane; the dissolved polymer wicks DOWN into the pad beneath rather than spreading across the cotton. Replace the pad underneath every time it picks up residue. Patience wins — 2–3 minutes of careful dabbing beats rubbing.",
+      "safetyNote": "Alcohol is flammable — work in a ventilated area, no open flame. Never on silk, wool, rayon, acetate. Safe on cotton per your step-2 patch test."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn dish soap + warm wash",
+      "instruction": "After alcohol, apply a small drop of Dawn to the treated area, work in with a fingertip for 30 seconds, let sit 5 minutes, blot. Launder on warm (not hot) with your normal detergent. Air-dry and inspect in daylight. If any polymer residue remains, repeat steps 3–5 before drying on heat. Dryer heat sets any residual polyurethane permanently."
+    },
+    {
+      "step": 6,
+      "agent": "Escalate — heavy polyurethane needs pro dry-side solvent",
+      "instruction": "If the transfer is thick, has been heat-set, or survives two home rounds, take it in. Tell the pro: \"Polyurethane transfer on cotton, source [faux leather / bag coating / unknown], fresh or set [x]. Treated at home with [freeze and flake / alcohol / Dawn]. No heat applied.\" They'll use amyl acetate or a volatile dry-side solvent (VDS) in a controlled environment that cuts polyurethane cleanly without over-exposing the fiber."
+    }
   ],
   "meta": {
     "riskLevel": "moderate",
