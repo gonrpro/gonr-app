@@ -64,10 +64,47 @@
     }
   ],
   "homeSolutions": [
-    "Test on a hidden area first (inside seam or hem) — linen dyes may react to cleaning agents.",
-    "FRESH: Warm water + salt flush. Blot hard. Most stain comes out immediately.",
-    "REMAINING: Protein soak (per product directions), 20-30 minutes, then brush gently, blot.",
-    "BROWN COLOR: hydrogen peroxide 3% from the pharmacy, 3-5 minutes. Or OxiClean soak, 30-60 minutes."
+    {
+      "step": 1,
+      "agent": "Linen + coffee-with-cream: tannin + protein + fat, in order",
+      "instruction": "Coffee with cream is a combo stain on linen — tannin pigment from the coffee, casein protein from the milk, and fat from the cream. Linen is cellulose (like cotton) and handles the full toolkit: Dawn, enzymes, peroxide. Attack order matters: fat first (Dawn), then protein (enzyme), then pigment (peroxide). Skipping fat means enzymes can't reach the protein; skipping enzyme means peroxide sets the protein. Fresh on linen usually resolves in one pass. The prior 'warm water + salt' instruction is not recommended — salt adds no value and hot water sets the protein component."
+    },
+    {
+      "step": 2,
+      "agent": "Patch test + tannin rule",
+      "instruction": "Dab a drop of Dawn + 3% peroxide on an inside seam. Wait 60 seconds, blot with a white cloth. If the linen holds color, proceed. Tannin rule: no ammonia, no baking soda, no OxiClean on untreated tannin — alkaline locks brown permanently."
+    },
+    {
+      "step": 3,
+      "agent": "Cold back-flush + blot",
+      "instruction": "Turn the garment inside out. Run cold tap water through the BACK of the stain for 30–60 seconds. Blot the front with a white paper-towel stack. Cold only — hot water sets milk casein and polymerizes cream's fat into the fiber. Linen's open weave flushes well, so a fresh spill often loses most of its color at this step."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn dish soap — tackle the fat first",
+      "instruction": "Apply a small drop of clear Dawn directly to the stain (no water yet). Work into the fiber with a fingertip for 30 seconds. Let sit 5 minutes, then blot with a damp cloth. Dawn emulsifies the butterfat in the cream so the enzyme step can reach the casein protein underneath."
+    },
+    {
+      "step": 5,
+      "agent": "Enzyme pretreat — 20–30 minutes",
+      "instruction": "Apply an enzyme stain remover (OxiClean Versatile, Biz, or Zout) per label. Keep the area damp during dwell — re-wet with a cold damp cloth if it dries out. 20–30 minutes lets the enzyme digest the milk casein. This step is safe on linen (unlike wool/silk) because linen is a cellulose fiber, not a protein fiber.",
+      "safetyNote": "Never mix enzyme products with chlorine bleach — deactivates the enzymes."
+    },
+    {
+      "step": 6,
+      "agent": "3% peroxide for the residual pigment",
+      "instruction": "After the enzyme dwell, rinse with cool water. If a brown or tan shadow remains, dab 3% hydrogen peroxide on a white cloth and press onto the spot for 5 minutes. Peroxide oxidizes tannin pigment. Blot with a clean damp cloth. Safe on white and most colored linen (patch test result governs)."
+    },
+    {
+      "step": 7,
+      "agent": "Cold machine wash + air dry",
+      "instruction": "Launder on cold with your normal detergent. Hang or lay flat to air-dry. Inspect in daylight. If any shadow remains, repeat steps 4–6 before using dryer heat. Linen tolerates sun — a 1–3 hour sunlight finish on white linen often finishes residual tannin."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate to a dry cleaner",
+      "instruction": "If the stain has been heat-set or survives two home rounds, take it in. Tell them: \"Coffee with cream on linen (tannin + casein + fat), age [x]. Treated at home with Dawn + enzyme + 3% peroxide — attack order fat → protein → pigment. No hot water, no alkaline.\" That handoff names the exact sequence pros use and saves them diagnostic time."
+    }
   ],
   "materialWarnings": [
     "ALWAYS test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents.",
