@@ -183,7 +183,7 @@ function Collapsible({
 
 interface ResultCardProps {
   card: ProtocolCard
-  source: 'verified' | 'ai' | 'core' | 'ai-cached'
+  source: 'verified' | 'ai' | 'core' | 'ai-cached' | 'no-verified-protocol' | 'ai-unavailable' | 'library-safety-blocked'
   lang?: string
   correlationId?: string
   viewerTier?: Tier | 'anon'
