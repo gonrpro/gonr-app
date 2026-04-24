@@ -1,199 +1,193 @@
 {
   "id": "blood-cotton",
-  "version": "5.0",
+  "version": "6.0",
   "authored": "2026-03-22",
+  "lastValidated": "2026-04-24",
   "title": "Blood on Cotton",
   "stainType": "protein",
-  "surface": "cotton-white",
+  "stainFamily": "protein",
+  "surface": "cotton",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "10–25 minutes",
   "meta": {
     "stainCanonical": "blood",
     "surfaceCanonical": "cotton",
     "tier": "universal",
     "riskLevel": "low",
-    "tags": [
-      "protein",
-      "fresh",
-      "cotton",
-      "enzyme-safe"
-    ],
+    "tags": ["protein", "fresh", "cotton", "enzyme-safe", "free-preview"],
     "freePreview": true
   },
-  "stainChemistry": "Blood proteins (hemoglobin, fibrin, albumin) bond to cotton cellulose through hydrogen bonding. Cotton is robust and can tolerate heat, enzymes, and oxidizing bleach. Unlike protein stains on delicate fibers, blood on white cotton can be treated aggressively once initial protein is flushed. The challenge shifts to hemoglobin's iron oxidation state\u2014fresh stains are red/pink, but as hemoglobin oxidizes to ferric state, the stain browns and becomes harder to remove.",
-  "whyThisWorks": "Cold water first halts protein setting and flushes initial stain. Protein enzymes then digest remaining protein fragments. H\u2082O\u2082 oxidizes residual hemoglobin pigment to colorless products. White cotton's chemical tolerance (up to 95\u00b0C, oxygen bleach, enzymes, even chlorine) makes this the fastest and most reliable removal sequence.",
+  "stainChemistry": "Blood is a protein stain — hemoglobin, fibrin, albumin. Cotton is chemically durable: it tolerates cold and warm water, enzymes, peroxide, and (on white cotton) even chlorine bleach. The clock matters: the first 15–30 minutes while the protein is still soluble is when blood comes out easiest. After that, hemoglobin oxidizes to ferric iron-porphyrin and browns into cellulose, and the stain gets progressively harder. Heat at any stage cross-links the protein into the fiber permanently.",
+  "whyThisWorks": "Cold water halts protein setting and flushes soluble hemoglobin out before it can bind. Protein Spotter (enzymatic digestant, liquid) then breaks peptide bonds on residual stain — cotton tolerates protease enzymes safely, unlike wool or silk. 3% hydrogen peroxide oxidizes residual iron-porphyrin pigment to colorless products. NSD flushes out all chemistry residue before any heat-drying, which would otherwise re-set anything left behind. The sequence stays cold through spotting — heat is the one thing that will permanently set blood on any fiber.",
+  "defaultAssumption": "Assume the stain is fresh unless the user says otherwise. Start conservative — cold water discipline, enzymatic spotter, peroxide only if needed.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "wet",
-      "agent": "Cold water",
-      "technique": "Blot-and-flood",
-      "equipment": "White cotton terry towel, spray bottle",
+      "agent": "Cold Water",
+      "technique": "Flush from the back, blot hard",
+      "equipment": "Spray bottle, white cotton terry towel",
       "dwellTime": "Immediate",
-      "instruction": "Work from the back of the garment first. Spray cold water and blot hard from underneath\u2014this hydraulically flushes hemoglobin out before it sets. Flip to front and continue flooding and blotting. Blood should visibly lighten in the water. Keep working until blotting produces clear or pale pink water. Speed matters here\u2014protein sets fastest in the first 15-30 minutes."
+      "instruction": "Work from the back of the garment first. Spray cold water and blot hard from underneath — hydraulic pressure pushes soluble hemoglobin back out the way it came in, rather than forward through the weave. Flip to the front and continue flooding and blotting. Blood should visibly lighten in the water. Keep working until blotting produces clear or pale pink water. Speed matters — protein sets fastest in the first 15–30 minutes. Cold only — any warmth at this stage cooks the protein into the cotton permanently."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Enzyme spotter (e.g. Biz, Zout, or enzyme pre-soak)",
-      "technique": "Soak and gentle agitation",
-      "equipment": "Plastic basin, soft brush",
-      "dwellTime": "15-20 minutes soak, then work",
-      "instruction": "Apply an enzyme-based pre-soak or spotter (Biz, Zout, or any biological detergent with protease enzymes) directly to the stained area. Work into the fabric gently with a soft brush \u2014 enzymes break the peptide bonds in hemoglobin, reducing the protein to smaller fragments that rinse away. Allow to dwell 10-15 minutes at room temperature. Cold water only at this stage \u2014 heat permanently sets protein. Do not rub aggressively; the enzymes are doing the molecular work."
+      "agent": "Protein Spotter",
+      "technique": "Apply liquid spotter directly, tamp",
+      "equipment": "Liquid Protein Spotter (PRENETT B / protease-based enzymatic digestant)",
+      "dwellTime": "5–15 minutes",
+      "instruction": "Apply liquid Protein Spotter directly to the stained area. PRENETT B or any protease-based enzymatic digestant is the pro canonical — a clear liquid, not a powder. Tamp gently with a soft bristle brush. The protease hydrolyzes peptide bonds on residual protein that cold water could not lift. White cotton handles warm enzyme work safely; if using a warm-water enzyme pre-soak for an older stain, 30–40°C is the ceiling. If all you have is a powder pre-soak (Biz, OxiClean, Zout), dissolve it in cold water per the label and apply as a liquid — never sprinkle powder directly on fabric."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "H\u2082O\u2082 (3-6%)",
-      "technique": "Direct application and soak",
-      "equipment": "Dropper or spray bottle, white cloth",
-      "dwellTime": "Brief \u2014 apply, work, blot",
-      "instruction": "Pour 3% H\u2082O\u2082 (drugstore strength) or 6% if you can source it, directly onto any remaining pink/red stain. Watch the peroxide foam and bubble\u2014this is the oxidation reaction. The stain will fade visibly as hemoglobin pigment is oxidized to colorless compounds. For white cotton, this is highly effective. The peroxide will also gently brighten the fibers around the stain. After 3-5 minutes, blot thoroughly. The smell will be sharp and chemical."
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Oxidize residual pigment",
+      "equipment": "3% drugstore H₂O₂ (or 6% pro if available)",
+      "dwellTime": "2–5 minutes",
+      "instruction": "For any remaining pink or brown shadow: apply 3% hydrogen peroxide drop-by-drop directly onto the stain. Watch it foam — that is the oxidation reaction lifting residual iron-porphyrin pigment. Flush the moment the shadow disappears. Test an inside seam first on dyed cotton — some reactive dyes lift under peroxide."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "NSD flush",
-      "technique": "Flush and blot",
-      "equipment": "Plastic basin or container",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot \u2014 do not rub. All oxidizer and enzyme residue must be fully removed before drying."
+      "agent": "NSD Flush",
+      "technique": "Remove residue",
+      "equipment": "Neutral Synthetic Detergent",
+      "dwellTime": "1 minute",
+      "instruction": "Flush thoroughly with NSD to remove all chemistry residue — enzymes, peroxide, and any alkali. Work from the back. Blot; do not rub. All oxidizer and enzyme residue must be fully out before drying, or residual chemistry damages the fiber in storage."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Rinse water (cold to warm)",
-      "technique": "Flush and wash",
-      "equipment": "Sink or washing machine",
-      "dwellTime": "Until rinse water runs clear",
-      "instruction": "Rinse thoroughly under running cold water until all peroxide and enzyme residue is removed. Then wash in warm water with regular detergent. Incomplete rinsing leaves chemistry on the fabric that causes problems later."
+      "agent": "Final Rinse",
+      "technique": "Cool rinse, warm wash after",
+      "equipment": "Running cold water, standard laundry",
+      "dwellTime": "Until rinses clean",
+      "instruction": "Rinse under running cold water until the water runs clear. Then launder in warm water (cotton tolerates warm once the stain is gone) with regular detergent. Incomplete rinsing leaves peroxide or enzyme residue that yellows the fiber over time. Inspect dry, in daylight, before any hot-dryer pass."
     }
   ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Cold water flush from the back of the fabric. Blot hard, lift out hemoglobin before it sets.",
+      "2. Apply liquid Protein Spotter (PRENETT B or protease-based enzymatic digestant). Tamp. Dwell 5–15 min.",
+      "3. If shadow remains: 3% hydrogen peroxide drop-by-drop. Watch the foam. Test inside seam on dyed cotton.",
+      "4. NSD flush. Remove all chemistry residue before any heat.",
+      "5. Cool rinse, then warm-water wash with standard detergent. Air dry and inspect in daylight before hot-drying."
+    ],
+    "products": [
+      "Liquid Protein Spotter (PRENETT B or equivalent protease-based digestant)",
+      "Hydrogen Peroxide 3% (drugstore) or 6% (pro)",
+      "NSD (Neutral Synthetic Detergent)",
+      "Cold running water, standard warm-water laundry detergent"
+    ],
+    "temperature": "cold through spotting; warm only after stain is fully gone",
+    "warnings": [
+      "Never use hot water or heat on blood — sets protein permanently",
+      "Never sprinkle enzyme powder directly on fabric — always dissolve in cold water first",
+      "Test 3% hydrogen peroxide on an inside seam on dyed cotton — some reactive dyes lift",
+      "Never dry with residual peroxide or enzyme — yellows or degrades the fiber over time"
+    ]
+  },
   "homeSolutions": [
     {
       "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates the solution.",
-      "agent": "cool water",
-      "safetyNote": "Never use hot water on blood \u2014 heat sets protein stains."
+      "agent": "Act Fast — Cold Water Only",
+      "instruction": "Fresh blood on cotton is beatable if you get to it in the first 15–30 minutes. Cold water only. Hot water cooks the protein into the fiber and sets the stain permanently — this is the single most common reason blood stains \"never come out.\"",
+      "safetyNote": "Never use hot water, a warm dryer, or an iron on a blood stain that's still visible."
     },
     {
       "step": 2,
-      "instruction": "Place fabric stain-side down on glass work surface. Scrape off any dried blood residue with a spoon, working gently from center outward.",
-      "agent": "spoon"
+      "agent": "Flush from the Back",
+      "instruction": "Hold the fabric under cold running water with the BACK of the stain facing the tap. The water pushes the blood back out the way it came in, rather than through the fiber. Keep going until the water running off runs clear or only faintly pink. This step alone clears most of a fresh stain."
     },
     {
       "step": 3,
-      "instruction": "Dab the stain lightly with cool water applied to a white cloth, lifting blood from the fibers.",
-      "agent": "cool water"
+      "agent": "Lift Dried Residue with a Spoon",
+      "instruction": "If there's any dried crust on the surface, lay the fabric stain-side down on a hard surface (counter, glass) and gently scrape off the residue with the edge of a spoon or a butter knife. Work from the outside in so you don't smear. Don't pull hard — you want to lift the crust, not stretch the weave."
     },
     {
       "step": 4,
-      "instruction": "Apply detergent/ammonia solution (1/4 tbsp mild laundry detergent + 1/2 tsp ammonia + 4 oz cool water) to the stain. Rub gently with the back of a spoon.",
-      "agent": "detergent/ammonia solution",
-      "safetyNote": "Ammonia can be strong \u2014 ensure good ventilation."
+      "agent": "Enzyme Pretreat — 15 Minutes",
+      "instruction": "Apply an enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout) per the label — always dissolve powder in cold water first, never sprinkle dry powder on fabric. Work it gently into the stain and let it sit 15 minutes. The enzymes digest residual protein the water rinse couldn't lift."
     },
     {
       "step": 5,
-      "instruction": "Rinse thoroughly with cool water, working from center outward to remove excess solution.",
-      "agent": "cool water"
+      "agent": "Dawn + Cold Water Spot",
+      "instruction": "Put a drop of clear Dawn dish soap on the spot. Work it in gently with a fingertip or a soft toothbrush — no hard scrubbing, which frays cotton fibers. Rinse cool."
     },
     {
       "step": 6,
-      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes. This oxidizes remaining blood residue.",
-      "agent": "hydrogen peroxide 3% + ammonia",
-      "safetyNote": "Test on hidden area first \u2014 peroxide may lighten some dyes."
+      "agent": "Hydrogen Peroxide 3% for Shadows",
+      "instruction": "If a faint brown or pink shadow remains, dab 3% drugstore hydrogen peroxide on the spot. Watch closely — you'll often see the stain lift in under a minute as the peroxide oxidizes the residual pigment. Rinse with cold water immediately once the shadow is gone. Test on an inside seam first if the cotton is dyed."
     },
     {
       "step": 7,
-      "instruction": "Rinse thoroughly with cool water.",
-      "agent": "cool water"
+      "agent": "Air Dry, Inspect in Daylight",
+      "instruction": "Lay flat or hang to air-dry. Inspect the dried fabric under daylight — not the laundry-room bulb — before tumble-drying. Any shadow you can still see will lock in permanently under dryer heat. If there's any doubt, repeat steps 4–6 before drying hot."
     },
     {
       "step": 8,
-      "instruction": "Apply white vinegar solution to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center with white cloth.",
-      "agent": "white vinegar + cool water"
-    },
-    {
-      "step": 9,
-      "instruction": "If stain persists or if fabric is delicate (silk, wool, fine cotton), call a professional cleaner.",
-      "agent": "escalation"
+      "agent": "Escalate to a Dry Cleaner",
+      "instruction": "If the blood has already been through a hot dryer, is older than 24–48 hours, or survives two full home rounds, take it to a dry cleaner. Tell them: \"Blood on cotton, age [fresh / overnight / older], treated at home with cold water, enzyme pretreat, and hydrogen peroxide. No heat applied.\" Pros have liquid Protein Spotters and controlled oxidation that go further than drugstore peroxide without damaging the fiber."
     }
   ],
-  "materialWarnings": [
-    "DO NOT use bleach on colored cotton\u2014will fade dye",
-    "AVOID extended soaking in H\u2082O\u2082 on colored trim or thread",
-    "TEST any bleach on a hidden area first\u2014even white cotton can have colored stitching"
-  ],
-  "escalation": "If stain persists after H\u2082O\u2082 and OxiClean, the hemoglobin has likely oxidized to an iron oxide that requires professional reducing bleach (sodium hydrosulfite) or specialized enzymatic systems. Professional cleaners also have access to higher-strength oxidizers safe for cotton.",
-  "products": {
-    "household": [
-      {
-        "name": "3% H\u2082O\u2082",
-        "brand": "Any drugstore brand",
-        "icon": "\ud83e\uddf4",
-        "amazonSearchQuery": "H\u2082O\u2082 3% USP",
-        "affiliateTag": "gonr08-20",
-        "note": "Oxidizes hemoglobin to colorless compounds. Safe for white cotton. Apply direct to stain."
-      },
-      {
-        "name": "OxiClean",
-        "brand": "OxiClean",
-        "icon": "\ud83e\udde1",
-        "amazonSearchQuery": "OxiClean powder",
-        "affiliateTag": "gonr08-20",
-        "note": "Sodium percarbonate\u2014oxygen bleach. Safer than chlorine for colored items. Soak 30-60 minutes."
-      },
-      {
-        "name": "Clorox Bleach",
-        "brand": "Clorox",
-        "icon": "\ud83e\uddea",
-        "amazonSearchQuery": "Clorox liquid bleach",
-        "affiliateTag": "gonr08-20",
-        "note": "For white cotton ONLY. Dilute 1:10 with water. Very effective on fresh blood. 5-10 minutes soak."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. Flush with cold water from the back of the fabric until the water runs mostly clear.",
+      "2. Scrape off any dried crust with the edge of a spoon or butter knife.",
+      "3. Apply an enzyme laundry pretreat dissolved in cold water. Let sit 15 minutes.",
+      "4. Work a drop of Dawn into the spot gently. Rinse cool.",
+      "5. For remaining shadow: dab 3% hydrogen peroxide, rinse as soon as it lifts. Test inside seam first on dyed cotton.",
+      "6. Air dry. Inspect in daylight before any hot dryer — residual stain sets permanently in dryer heat."
     ],
-    "professional": [
-      {
-        "name": "Protein (concentrated)",
-        "brand": "Huntsman or Chemspec",
-        "icon": "\ud83e\uddec",
-        "amazonSearchQuery": "Protein concentrate",
-        "affiliateTag": "gonr08-20",
-        "note": "Professional-strength enzyme for blood protein. More active than household versions."
-      },
-      {
-        "name": "StreePene (Sodium Hydrosulfite)",
-        "brand": "Chemspec",
-        "icon": "\ud83e\uddea",
-        "amazonSearchQuery": "StreePene reducing bleach sodium hydrosulfite",
-        "affiliateTag": "gonr08-20",
-        "note": "Reduces oxidized hemoglobin (brown stains) back to soluble state. For set-in blood."
-      }
+    "products": [
+      "Cold water",
+      "Enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout)",
+      "Dawn dish soap",
+      "3% hydrogen peroxide (drugstore)"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after two full rounds. Professional dry cleaners have liquid Protein Spotters and controlled oxidation that go further than home peroxide without damaging cotton.",
+    "warnings": [
+      "Never use hot water — heat sets protein permanently into cotton",
+      "Never sprinkle enzyme powder directly on fabric — dissolve in cold water first",
+      "Never rub hard — frays cotton fiber and can smear the stain",
+      "Test hydrogen peroxide on an inside seam on dyed cotton"
     ]
   },
-  "customerExplanation": "Blood proteins bond to cotton fibers. Cold water flushes initial protein before it sets. Enzymes break down remaining protein, and H\u2082O\u2082 oxidizes hemoglobin pigment to colorless compounds. White cotton is very forgiving\u2014we can use aggressive chemistry that wouldn't be safe on delicate fabrics. If heat has been applied before treatment, permanent staining may occur and removal becomes difficult.",
-  "commonMistakes": [
-    "Using hot water first\u2014this speeds protein setting. Always start cold.",
-    "Skipping H\u2082O\u2082\u2014enzymes remove protein, but peroxide removes the pigment. Together they're powerful; apart, neither fully works.",
-    "Not rinsing completely\u2014leftover peroxide and bleach residue will cause yellowing or continued fading days later."
+  "safetyMatrix": {
+    "neverDo": [
+      "Never use hot water, warm dryer, or iron on blood — heat sets protein permanently",
+      "Never sprinkle enzyme powder directly on fabric — always dissolve in cold water first",
+      "Never dry with residual peroxide or enzyme — yellows or degrades fiber in storage"
+    ],
+    "fiberSensitivities": [
+      "White cotton tolerates enzymes, peroxide, and chlorine bleach (colored cotton: no bleach)",
+      "Colored cotton: test peroxide on inside seam first; avoid chlorine entirely",
+      "Heat-sensitive only in the sense that heat sets the stain — cotton itself tolerates high laundry temps once the stain is gone"
+    ]
+  },
+  "materialWarnings": [
+    "No hot water — blood protein sets permanently on any fiber if heated",
+    "No chlorine bleach on colored cotton — strips dyes",
+    "Test 3% hydrogen peroxide on an inside seam first if the cotton is dyed",
+    "Always dissolve enzyme powders in cold water first — never apply dry"
   ],
-  "scienceNote": "Hemoglobin's iron center undergoes two oxidation state changes. Fresh blood is ferrous (Fe\u00b2\u207a) and red/pink. Within hours, it oxidizes to ferric (Fe\u00b3\u207a) and browns. The problem: ferric iron is harder to remove because it's already in a stable, bonded state. H\u2082O\u2082 targets fresh (ferrous) hemoglobin directly. Reducing bleach (sodium hydrosulfite) converts ferric back to ferrous, making it susceptible to oxidation again. This is why fresh blood comes out with peroxide, but old blood needs reducing bleach.",
-  "callPro": "If stain is days old and brown/black (oxidized hemoglobin), or if H\u2082O\u2082 doesn't fully remove pink color after 5 minutes, call a professional. They'll use reducing bleach (sodium hydrosulfite) to reverse the iron oxidation state, then oxidizing systems to lift color.",
-  "components": [
-    "enzyme",
-    "oxidizer",
-    "finisher"
-  ],
-  "component_order": [
-    "enzyme",
-    "oxidizer",
-    "finisher"
-  ],
-  "difficulty": 3,
-  "difficulty_factors": [
-    "fresh-protein",
-    "tolerant-fiber",
-    "fast-removal"
-  ],
-  "solventNote": "Professional shops: Fresh blood on white cotton responds well to Protein followed by H\u2082O\u2082 or sodium percarbonate. For oxidized stains (brown), StreePene (sodium hydrosulfite 0.5-1% solution) in warm water (40\u00b0C) for 10-15 minutes, then thorough rinse and wash. Chlorine bleach is fastest but oxidizing systems (H\u2082O\u2082, OxiClean) are safer for color preservation on trim.",
-  "aftercare": "White cotton tolerates heat well. Machine dryer on medium or high heat is fine. Line dry is also fine. Hang in sunlight if possible\u2014UV light has mild H\u2082O\u2082 for white/light fabrics only. Heat will not re-set blood stains on cotton as it does on delicate fibers."
+  "escalation": {
+    "when": "If stain persists after H₂O₂ and enzyme pretreat, if the blood was heat-set by a dryer or iron, if the stain is older than 24–48 hours, or if two home rounds don't improve it — take it to a dry cleaner.",
+    "whatToTell": "Tell them: \"Blood on cotton, age [fresh / overnight / older], treated at home with cold water, enzyme pretreat, and 3% hydrogen peroxide. No heat applied.\" Give the age and prior treatment so they don't duplicate failed approaches.",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has the fabric been through heat — dryer, iron, warm water?",
+      "Is the cotton white or dyed?",
+      "What's the garment — shirt / sheet / carpet backing / other?"
+    ],
+    "modifierNotes": "Fresh + no heat = high success rate. Heat-set or aged stains often need a pro. Dyed cotton requires peroxide testing on an inside seam. White cotton gives the widest chemistry latitude of any common fabric."
+  }
 }

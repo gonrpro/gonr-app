@@ -421,12 +421,12 @@ export const strings: Record<string, Record<string, string>> = {
 
   // ── Pro-shows-Home reveal (collapsible on Pro cards) ──────────
   proShowHomeToggle: {
-    en: "Show the home version for customers",
-    es: "Mostrar la versión casera para clientes"
+    en: "Show customer-safe steps",
+    es: "Mostrar pasos para el cliente"
   },
   proShowHomeHeader: {
-    en: "Customer Handoff",
-    es: "Entrega al Cliente"
+    en: "Customer Home Care",
+    es: "Cuidado en Casa del Cliente"
   },
   proShowHomeSubtext: {
     en: "Simpler at-home steps your customer can follow before or instead of bringing it in.",
