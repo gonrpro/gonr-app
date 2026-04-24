@@ -59,9 +59,46 @@
   "callPro": "For colored or valuable polyester garments, professional treatment is strongly recommended. KOH handling requires careful training and proper safety equipment. Professional dry cleaners can use specialized alkaline systems with precise pH control in controlled environments.",
   "customerExplanation": "Oxidized cooking oil has polymerized into a cross-linked polymer that standard spotting cannot remove. We first used volatile dry-clean solvent to lift and dissolve the bulk of the polymerized oil. Then we applied very dilute potassium hydroxide to break down remaining polymer chains through saponification. The garment was thoroughly rinsed to neutral pH to remove all alkaline residue (which would damage polyester). Air drying was used to prevent heat from setting any remaining residues.",
   "homeSolutions": [
-    "OxiClean or oxygen bleach applied as a paste to the stain and left for 20 minutes, then rinsed — weak oxidizing approach that may lighten very fresh oxidized oil slightly, but is unlikely to fully remove it.",
-    "Mineral spirits or paint thinner sponged gently into the stain — weaker solvent than professional VDS but may partially dissolve fresh oxidized oil on polyester. Use in ventilated area only.",
-    "For extremely fresh oxidized oil (within hours), cold water rinse followed by mild liquid dishwashing detergent may prevent further oxidation, but will not remove polymerized oil."
+    {
+      "step": 1,
+      "agent": "Polyester + oxidized oil: hardest grease stain on the hardest-grease-fiber",
+      "instruction": "Polyester is oleophilic — it clings to oil tenaciously even when fresh. Oxidized oil that's polymerized into cotton is hard; on polyester, it's one of the toughest home stains period. Realistic outcome: 20–40% improvement at home on most oxidized stains, rarely full removal. Fresh (unpolymerized) oil is a different protocol — see grease-polyester. This card is for yellow/brown oxidized or rancid oil that has been sitting."
+    },
+    {
+      "step": 2,
+      "agent": "Polyester rule: NO high-heat, NO dryer until stain is fully gone",
+      "instruction": "Polyester is thermoplastic — it fuses oil into the fiber at dryer temperatures well below cotton's tolerance. Any residual oxidized oil that goes through a hot dryer cycle is permanent. Cold water and air-dry at every step until you're sure the stain is completely invisible in daylight. NO hair dryer, NO iron, NO hot wash."
+    },
+    {
+      "step": 3,
+      "agent": "Patch test + mechanical cleanup",
+      "instruction": "Dab a drop of Dawn + cool water on an inside seam, wait 60 seconds, blot with a white cloth. If the polyester holds color, proceed. Lift any loose oil crust with the edge of a plastic card — working flat, no pressure."
+    },
+    {
+      "step": 4,
+      "agent": "Cornstarch preload — extended dwell",
+      "instruction": "Sprinkle cornstarch, baking soda, or unscented talc over the stain. On oxidized oil on polyester, let it sit 30–45 minutes (longer than on cotton — polyester releases oil slowly to absorbent powder). Brush off with a soft toothbrush, vacuum, or shake out. This is where 15–25% of the job gets done mechanically before any wet chemistry."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn dish soap — extended dry-work",
+      "instruction": "Apply a small drop of clear Dawn directly to the stain (no water). Work it into the fiber with a fingertip for 30 seconds. 20 MINUTES dwell — longer than on cotton because polyester's oleophilic nature holds the surfactant-oil reaction longer. Blot with a cool damp cloth. Repeat 2–3 cycles. Every cycle lifts a little more of the polymer."
+    },
+    {
+      "step": 6,
+      "agent": "Warm rinse (not hot) + enzyme pretreat + cold wash",
+      "instruction": "Rinse from the back with warm (not hot) water. Apply OxiClean Versatile, Biz, or Zout per label, 30 minutes dwell. Launder on COLD with your normal detergent. Warm water helps dissolve mobile oil; cold protects polyester during the wash cycle. Don't combine steps — rinse thoroughly between Dawn and enzyme."
+    },
+    {
+      "step": 7,
+      "agent": "Air dry + daylight inspect — NEVER dryer on residual",
+      "instruction": "Hang or lay flat to air-dry. Inspect in daylight. Any shadow remaining at this point — stop. Don't tumble-dry, don't iron, don't apply any heat. Polyester fuses residual oxidized oil into the fiber at surprisingly low temperatures. If you want another shot, repeat step 5 while the fabric is still damp before drying."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate — pro VDS + alkaline saponification",
+      "instruction": "If the stain persists, take to a dry cleaner. Tell them: \"Oxidized cooking oil on polyester, age [x]. Treated at home with cornstarch preload + Dawn + enzyme + cold wash. No solvent used at home, no heat.\" Pros use volatile dry-cleaning solvent (VDS) to lift the bulk of polymerized oil, then very dilute potassium hydroxide saponification to break remaining polymer — a sequence that's unsafe at home (KOH burns, pH control critical on polyester). Realistic: significant lightening, rarely 100%."
+    }
   ],
   "meta": {
     "riskLevel": "high",
