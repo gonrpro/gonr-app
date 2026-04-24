@@ -91,10 +91,10 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
         <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
           <div className={styles.content}>
             <h2 className={styles.title} style={{ fontSize: '1.3rem', lineHeight: '1.3', textAlign: 'center' }}>
-              {stain ? `🧪 Nice. Your ${stain} protocol is ready.` : '🧪 Nice. Your protocol is ready.'}
+              {stain ? `🧪 That was your one free look at the ${stain} protocol.` : '🧪 That was your one free protocol.'}
             </h2>
             <p className={styles.subtitle} style={{ marginBottom: '0', lineHeight: '1.6', textAlign: 'center' }}>
-              The exact first steps dry cleaners use, not generic internet advice.
+              Stains follow predictable chemistry. The exact sequence dry cleaners use gets most of them out cleanly at home — without generic internet advice or guesswork.
             </p>
 
             <div style={{
@@ -106,8 +106,9 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
               color: 'var(--text-secondary)',
               alignItems: 'center',
             }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>✓ 3 free solves · no credit card</span>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>✓ Built by dry cleaners</span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>✓ One real sample protocol</span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>✓ Built from 3rd-generation dry cleaning operations</span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>✓ Unlimited access after signup — no credit card required to start</span>
             </div>
 
             <a
@@ -115,7 +116,7 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
               className={styles.checkoutBtn}
               style={{ display: 'block', textAlign: 'center', marginTop: '4px', marginBottom: '12px', padding: '14px', fontSize: '15px', fontWeight: 700, borderRadius: '10px' }}
             >
-              See my free protocol
+              Create free account for unlimited protocols
             </a>
 
             <div style={{ textAlign: 'center' }}>
