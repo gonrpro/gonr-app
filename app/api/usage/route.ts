@@ -8,6 +8,10 @@ import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
 const FREE_SOLVE_LIMIT = 3
+// TASK-073: anon users get 1 sample protocol pre-signup; must stay aligned
+// with ANON_SOLVE_LIMIT in app/api/solve/route.ts so the UI counter reflects
+// the actual server gate, not the legacy 3-free-solves number.
+const ANON_SOLVE_LIMIT = 1
 const FOUNDER_EMAILS = ['tyler@gonr.pro', 'tyler@nexshift.co', 'twfyke@me.com', 'eval@gonr.app', 'jeff@cleanersupply.com']
 
 function getSupabaseAdmin() {
@@ -89,14 +93,17 @@ export async function GET(req: Request) {
       .single()
 
     const used = usage?.solve_count ?? 0
-    const remaining = Math.max(0, FREE_SOLVE_LIMIT - used)
+    // TASK-073: anon limit diverged from free-tier limit — report the
+    // correct gate so the UI counter matches the server's actual block point.
+    const limit = email ? FREE_SOLVE_LIMIT : ANON_SOLVE_LIMIT
+    const remaining = Math.max(0, limit - used)
 
     return NextResponse.json({
       tier: 'free',
       gate_type: email ? 'trial' : 'anon',
       solves_used: used,
       solves_remaining: remaining,
-      limit: FREE_SOLVE_LIMIT,
+      limit,
     })
   } catch (err) {
     // Match solve route fail-closed posture: report as temporarily unavailable.

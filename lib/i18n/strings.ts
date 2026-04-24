@@ -543,8 +543,8 @@ export const strings: Record<string, Record<string, string>> = {
   },
   contactPartnershipsTitle: { en: "Partnerships & press", es: "Asociaciones y prensa" },
   contactPartnershipsContent: {
-    en: "Commercial partnerships, licensing, and press inquiries: tyler@gonr.pro. See our Brand Partners page for active collaborations.",
-    es: "Asociaciones comerciales, licencias y prensa: tyler@gonr.pro. Consulta nuestra página de Socios para ver colaboraciones activas."
+    en: "Commercial partnerships, licensing, and press inquiries: partners@gonr.pro. See our Brand Partners page for active collaborations.",
+    es: "Asociaciones comerciales, licencias y prensa: partners@gonr.pro. Consulta nuestra página de Socios para ver colaboraciones activas."
   },
 
   // ── Misc additions ────────────────────────────────────────────
