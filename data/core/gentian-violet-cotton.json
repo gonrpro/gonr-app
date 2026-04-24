@@ -66,9 +66,42 @@
   "callPro": "For valuable or delicate cotton garments, professional treatment is safer. For fabrics with prints or multiple colors, professional treatment prevents unintended color loss. If two full applications of the protocol fail, professional treatment carries minimal additional risk but significant cost.",
   "customerExplanation": "Gentian violet is a triarylmethane dye that bonds very strongly to cotton. We used sodium hydrosulfite, a reducing bleach, to chemically break down the dye's structure. Then we applied hydrogen peroxide, an oxidizing bleach, to destroy any remaining dye fragments. The garment was fully rinsed and neutralized with acetic acid to prevent post-spotting yellowing.",
   "homeSolutions": [
-    "Soak the stained area in white vinegar (straight, not diluted) for 20 minutes, then rinse with cold water. The acid can help slightly, but is unlikely to remove gentian violet completely.",
-    "Apply baking soda paste directly to the stain, let dry for 10 minutes, brush off and rinse. Alkalinity may help slightly but is weak against this dye.",
-    "Oxygen bleach (OxiClean) mixed into a paste, applied to the stain and left for 30 minutes, then rinsed. This is a mild oxidizing bleach — it may lighten but rarely fully removes gentian violet from cotton."
+    {
+      "step": 1,
+      "agent": "Be honest: gentian violet on cotton is mostly a pro job",
+      "instruction": "Gentian violet (crystal violet, methyl violet) is a triarylmethane dye — the same family chemists use to stain microscope slides because it bonds so permanently. Home treatment can lighten it, but fully removing it usually requires sequential reducing + oxidizing bleaches that aren't safe to run at home. Realistic home outcome: significantly lighter, often not gone. If this is an item you care about, skip to step 6 and call a pro now."
+    },
+    {
+      "step": 2,
+      "agent": "Patch test + no-rub rule",
+      "instruction": "Dab a drop of 3% hydrogen peroxide on an inside seam. Wait 60 seconds, blot with a white cloth. If the cotton holds its color, you're safe to proceed. Whatever you do, do NOT rub or scrub — gentian violet spreads under friction and any rubbing embeds the dye deeper into the fiber."
+    },
+    {
+      "step": 3,
+      "agent": "Cold water flush from the back",
+      "instruction": "Turn the fabric inside out and run cold water through the BACK of the stain for 60 seconds. This pushes loose dye out the way it came in, rather than driving it further through the fiber. Don't expect dramatic results — you're just setting up for chemistry."
+    },
+    {
+      "step": 4,
+      "agent": "Oxygen bleach paste — white cotton only",
+      "instruction": "On white cotton, mix 1 tablespoon of OxiClean Versatile with just enough cold water to form a thick paste. Apply directly on the stain, let sit 30–60 minutes, keeping it damp by re-wetting if it starts drying out. OxiClean's oxygen-bleach action is the strongest safe-at-home option against triarylmethane dyes. On COLORED cotton, skip this step — OxiClean will also lift the garment's dye. Go to step 5 instead."
+    },
+    {
+      "step": 5,
+      "agent": "Rubbing alcohol dab — for colored cotton or as a second pass",
+      "instruction": "Dab 91% isopropyl alcohol on a clean white cloth and press onto the stain. Work outside-in. Replace the cloth frequently — you'll see violet transfer to the cloth as alcohol partially dissolves the dye. Alcohol alone won't clear gentian violet, but it often takes a bright stain to a pale one.",
+      "safetyNote": "Never use alcohol on silk, wool, rayon, or acetate. Cotton tolerates it. Never mix alcohol with bleach."
+    },
+    {
+      "step": 6,
+      "agent": "Cold wash + air dry — never use the dryer on a shadow",
+      "instruction": "Launder on cold with your normal detergent. Hang or lay flat to air-dry. Inspect in daylight. If a pale shadow remains, one more round of steps 4–5 MIGHT lift more — but two rounds is the home ceiling. Dryer heat on residual dye permanently sets it and you're done."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate to a dry cleaner with reducing-bleach capability",
+      "instruction": "For full removal, you need sequential reducing bleach (sodium hydrosulfite) followed by oxidizing bleach — the two-step chemistry that breaks the central carbon bonds in the dye. Tell the pro: \"Gentian violet (triarylmethane dye) on cotton, treated at home with [OxiClean paste / alcohol]. No hypochlorite used. Please use sequential reducing-then-oxidizing bleach.\" That exact handoff names the chemistry they need — saves them 20 minutes of diagnosing which dye family. Not every cleaner carries sodium hydrosulfite; call ahead."
+    }
   ],
   "meta": {
     "riskLevel": "high",
