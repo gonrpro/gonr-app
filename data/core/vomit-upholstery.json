@@ -1,84 +1,246 @@
 {
   "id": "vomit-upholstery",
   "title": "Vomit on Upholstery",
+  "stainType": "combination",
   "stainFamily": "protein",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Vomit is a complex mixture of partially digested food, stomach acid (HCl, pH 1.5-3.5), bile salts, mucus, and proteins. On upholstery, the acid can damage dyes and fibers if left in contact, while the protein component bonds and sets with heat. Bile salts act as surfactants that drive the stain deeper into the substrate. The odor comes from volatile fatty acids and bacterial decomposition.",
-  "whyThisWorks": "Immediate removal of solids prevents acid damage to upholstery. Cold water dilutes the acid and prevents protein from setting. Enzyme treatment breaks down the protein matrix, while surfactant addresses the bile and fat components. Odor neutralization requires reaching all contaminated material beneath the surface.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "20 minutes to several hours; escalate early on soak-through",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "vomit",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "protein",
+      "acid",
+      "combination",
+      "upholstery",
+      "biohazard",
+      "pad-soak-risk",
+      "odor-critical",
+      "code-check"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Vomit is a complex mix: partially digested food (protein, carbohydrate, fat), stomach acid (HCl, pH 1.5–3.5), bile salts (natural surfactant that drives stain deep), mucus, and proteins (pepsin, food proteins). The acid can damage dyes and weaken fibers if left in contact — quick neutralization matters. The protein fraction bonds and sets with heat (protein-before-heat rule). Bile salts act as emulsifiers and help the stain penetrate the batting. Odor comes from volatile fatty acids and bacterial breakdown of protein + food residue. On upholstery, the invariant failure mode is batting / foam saturation — vomit carries liquid down into the cushion where surface chemistry can't reach. Upholstery code tag (W / W-S / S / X) determines whether water-based cleaning is even allowed.",
+  "whyThisWorks": "Solid removal + cold water flush + enzyme + acetic-acid neutralization + weighted extraction is the standard pro protocol for vomit on upholstery. Enzyme digests the protein matrix. Dawn lifts fat and bile. Dilute white vinegar or acetic acid neutralizes residual acid and reduces odor. Aggressive weighted extraction between rounds prevents wick-back. The ceiling: if vomit soaked into batting, home chemistry only clears the surface. Upholstery pro-escalation threshold is LOW — honest early escalation is better than grinding through four rounds of half-success.",
+  "defaultAssumption": "Kid / pet / night-before-too-much context. Fresh + caught-in-the-act on a W/W-S code cushion = solid home try. Dried or older, bigger than a hand, on an S-only or X-code upholstery, or soaked-through = pro early. Don't over-wet upholstery trying to chase odor deeper than a home cloth can reach.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Gloves + Code Check + Solid Removal",
+      "technique": "Biohazard PPE, code tag read, spoon-scrape",
+      "equipment": "Disposable gloves, mask optional, spoon or dull edge, garbage bag",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Gloves on (mask for pet vomit or if immunocompromised in household). Find and read the upholstery care code (usually tag under a cushion): W or W-S = water OK, proceed. S-only = solvent-only, NOT for vomit, call a pro. X = vacuum only, pro. Remove solids with a spoon or dull edge — scrape, don't rub — into a sealed garbage bag. Don't work liquid deeper into the cushion."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water Blot — Neutralize Acid",
+      "technique": "Damp-cloth press + weighted extract",
+      "equipment": "Cold water, white cotton towel, weighted dry towel",
+      "dwellTime": "5 minutes",
+      "instruction": "Dampen a white cloth with cold water. Press on the spot, lift, rotate to a clean section, press again. Transfers vomit into the cloth while diluting the stomach acid before it damages dye. Never pour. Weighted dry towel 5 min to extract surface moisture."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat",
+      "technique": "Damp-cloth enzyme for protein + food matrix",
+      "equipment": "Liquid Protein Spotter OR enzyme pretreat (Nature's Miracle, Biz, OxiClean Versatile per label) in warm water on damp cloth",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Warm water (NOT hot — under 100°F / 38°C — warm enough for enzyme activity, not hot enough to set protein). Enzyme solution on damp cloth, press on the spot, dwell 15–20 min. Digests protein and food residue."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Emulsify fat and bile salts",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn in cool water on a damp cloth. Work in with a soft toothbrush. Lifts fat and bile. Damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Rinse",
+      "technique": "Acid neutralization + odor reduction",
+      "equipment": "Equal parts white vinegar + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Dilute white vinegar on damp cloth. Press, dwell 5 min. Neutralizes residual acid and breaks down volatile fatty acids that cause lingering odor. Blot dry."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "Weighted Dry Towel + Baking Soda",
+      "technique": "Moisture extract + odor absorb overnight",
+      "equipment": "Heavy dry towel + weight, baking soda",
+      "dwellTime": "30 min weighted + overnight",
+      "instruction": "Weighted dry towel 30 min to wick moisture back out of batting. Dust baking soda generously, leave overnight with a fan pointed at the area. Vacuum off next morning. Weighted extraction matters more than fancy chemistry on upholstery."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Fan-Dry + Smell Check",
+      "technique": "Full dry + odor verification",
+      "equipment": "Fan, dehumidifier if available",
+      "dwellTime": "4–12 hours",
+      "instruction": "Fan the area fully dry. Smell check in daylight the next day. Any lingering odor or wick-back ring = batting is contaminated, home ceiling reached, pro low-moisture extraction."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Gloves + mask. Code tag check. S/X = pro. Scrape solids.",
+      "2. Cold damp-cloth extract + weighted extract.",
+      "3. Enzyme pretreat, warm (not hot), 15–20 min.",
+      "4. Dawn / NSD + soft brush.",
+      "5. Dilute white vinegar acid neutralization.",
+      "6. Weighted dry towel 30 min + baking soda overnight + fan.",
+      "7. Odor / wick-back return = pro low-moisture extraction."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Disposable gloves + mask",
+      "Liquid Protein Spotter / enzyme pretreat (Nature's Miracle / Biz / OxiClean Versatile)",
+      "Dawn / NSD",
+      "White vinegar",
+      "Baking soda",
+      "Fan + dehumidifier"
     ],
-    "temperature": "cold",
+    "temperature": "cool to warm (<100°F/38°C) — never hot, never steam",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein",
-      "Avoid over-wetting — extract excess moisture to prevent backing/foam damage"
+      "Biohazard — gloves + mask + sealed disposal",
+      "CODE CHECK FIRST — S-only / X are pro lanes, not DIY",
+      "NEVER hot water or steam — sets protein, spreads acid damage",
+      "NEVER pour liquid on upholstery — batting saturation is the failure mode",
+      "Low pro-escalation threshold — honest early escalation beats 4 half-rounds",
+      "Never ammonia cleaners on vomit — pets / kids smell them as urine"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Scope First",
+      "instruction": "Fresh vomit caught within minutes on W or W-S upholstery = doable at home. Dried, older, bigger than a hand, on an S-only code, through to the batting, or causing ongoing odor in the room after treatment = call a pro. Upholstery is where over-treating makes things worse — you can't rinse it the way you can rinse laundry. If the cushion cover zips off and is machine-washable, that is by far the best option for fresh vomit."
+    },
+    {
+      "step": 2,
+      "agent": "Gloves, Mask, Upholstery Code Check",
+      "instruction": "Gloves on — this is biohazard. Mask if it's pet vomit or if anyone in the house is immunocompromised. Find the upholstery code (usually on a tag under a cushion): W or W-S = water-based cleaning OK, proceed. S-only = solvent-only, NOT for vomit, pro call. X = vacuum only, pro. If the cushion cover zips off and is W-marked, take it off and machine-wash it cold (remove solids first, cold cycle, mild detergent + white vinegar rinse) — that's vastly easier than treating in place."
+    },
+    {
+      "step": 3,
+      "agent": "Remove Solids — Scrape, Don't Rub",
+      "instruction": "Use a spoon or the edge of a plastic card to scoop solids into a garbage bag. Scrape, don't rub or wipe — rubbing drives the liquid deeper into the cushion and the batting where chemistry can't reach. Seal the garbage bag."
+    },
+    {
+      "step": 4,
+      "agent": "Cold Water Blot — Dilute the Acid",
+      "instruction": "Dampen a clean white towel with COLD water and press firmly on the spot. Lift, rotate to a clean section, press again. Cold water dilutes the stomach acid before it damages the dye. Never pour — over-wetting carries vomit into the batting. Keep pressing until the towel stops picking up color."
+    },
+    {
+      "step": 5,
+      "agent": "Enzyme Pretreat on a Damp Cloth",
+      "instruction": "In WARM (not hot — bath temperature, under 100°F) water, dissolve an enzyme pretreat — OxiClean Versatile, Biz, or a pet-stain enzyme cleaner like Nature's Miracle. Dampen a white cloth in the enzyme solution, press on the spot, cover with a damp towel for 15–20 minutes. The enzyme digests the protein and food matrix. Hot water would set the protein — keep it warm."
+    },
+    {
+      "step": 6,
+      "agent": "Dawn + Soft Toothbrush",
+      "instruction": "Work a drop of Dawn in cool water into the spot with a soft toothbrush. Dawn emulsifies the fat and bile salts in vomit that the enzyme didn't reach. Blot with a damp cloth — don't pour water."
+    },
+    {
+      "step": 7,
+      "agent": "White Vinegar + Water Rinse — Neutralize Acid + Odor",
+      "instruction": "Mix equal parts white vinegar + cool water. Dab on a damp cloth, press on the spot 5 minutes. This neutralizes residual stomach acid and breaks down the volatile compounds that cause the lingering smell. This is the step most home guides skip and it's what separates \"stain gone, smell lingers\" from \"fully clean.\""
+    },
+    {
+      "step": 8,
+      "agent": "Weighted Towels + Baking Soda Overnight",
+      "instruction": "Press a thick DRY towel with a heavy book on the spot for 30 minutes — pulls moisture back up out of the batting. Then dust baking soda generously over the area. Leave overnight with a fan pointed at it. Vacuum off in the morning. Baking soda + airflow + time = dry batting = no returning smell."
+    },
+    {
+      "step": 9,
+      "agent": "Smell Check + Escalate If Persistent",
+      "instruction": "Nose to the cushion next morning in daylight. Any lingering smell or a wick-back ring = the batting is still contaminated, home chemistry is at its ceiling. Tell a pro: \"Vomit on [W / W-S / code unknown] upholstery, age [fresh / overnight], home-treated with enzyme + Dawn + vinegar + baking soda + fan-dry. [Odor persists / wick-back visible / batting suspect]. Please use low-moisture surface extraction — do not saturate.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub. Dispose safely",
-      "2. Blot area with cold water and clean white cloths to dilute acid",
-      "3. Mix 1 tbsp Dawn dish soap with 2 cups cold water. Apply and blot",
-      "4. Mix equal parts white vinegar and cold water. Apply for odor neutralization",
-      "5. Blot with clean white cloth until dry. Sprinkle baking soda over area — let sit 15 min",
-      "6. Vacuum and air dry — no heat"
+      "1. Honest scope — code S/X / soak-through = pro. Zip-off cover = wash cover.",
+      "2. Gloves + mask. Code-tag check (W / W-S / S / X).",
+      "3. Scrape solids into sealed bag — never rub.",
+      "4. Cold damp-cloth blot to dilute acid + wick vomit.",
+      "5. Enzyme pretreat in WARM (not hot) water, damp cloth, 15–20 min.",
+      "6. Dawn + soft toothbrush to lift fat + bile.",
+      "7. Dilute white vinegar damp cloth, 5 min — neutralizes acid + odor.",
+      "8. Weighted dry towel 30 min + baking soda overnight + fan.",
+      "9. Smell check next day. Persistent = pro low-moisture extraction."
     ],
     "products": [
+      "Disposable gloves + mask",
+      "Enzyme pretreat (OxiClean Versatile / Biz / Nature's Miracle)",
       "Dawn dish soap",
-      "white vinegar",
-      "baking soda"
+      "White vinegar",
+      "Baking soda",
+      "Fan + towels + weight"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if upholstery code is S-only or X, if vomit soaked through into batting, if area is larger than a hand, if the cushion cover doesn't zip off and the spill is big, or if odor persists after a full home cycle.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "Biohazard — gloves, mask, sealed disposal",
+      "CODE CHECK — S/X are NOT DIY lanes for vomit",
+      "NEVER hot water — sets protein + spreads acid damage",
+      "NEVER steam-clean vomit — steam sets protein",
+      "NEVER pour liquid on upholstery",
+      "NEVER ammonia-based cleaners — pets/kids re-mark smell",
+      "Batting saturation = pro-only — home ceiling is surface"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never hot water or steam on vomit",
+      "Never pour liquid on upholstery",
+      "Never ammonia cleaners — invites re-marking by pets, smells like urine to kids",
+      "Never work bare-handed — biohazard",
+      "Never skip the code tag check"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S code: tolerates full protocol",
+      "S-only: solvent-only cleaning, NOT for water-based stain — pro",
+      "X: vacuum only — pro",
+      "Leather upholstery: different protocol entirely — use leather-specific card",
+      "Microfiber / suede-like: test in hidden area first"
     ]
   },
+  "materialWarnings": [
+    "Code check is non-negotiable",
+    "Batting saturation = pro; home is surface-only",
+    "Low pro-escalation threshold",
+    "Vinegar + warm water rinse is the odor step most people skip"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is vomit on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "Upholstery code is S or X, leather, wool, spill larger than a hand, batting soak suspected, cushion cover isn't removable and spill was large, or odor persists after a full home cycle.",
+    "whatToTell": "\"Vomit on upholstery — code [W / W-S / S / X / unknown], age [fresh / overnight / older], home-treated with enzyme + Dawn + white vinegar + baking soda + fan-dry. [Odor persists / wick-back ring / batting saturation suspected]. Please use low-moisture surface extraction — do not saturate.\"",
+    "specialistType": "professional upholstery cleaner with low-moisture / hot-water extraction (not truck-mount saturation)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "What's the upholstery code — W, W-S, S, or X? (under cushion tag)",
+      "Does the cushion cover zip off and is it machine-washable?",
+      "Human or pet vomit?",
+      "Fresh, overnight, or older?",
+      "How big — coin, hand, cushion-covering?",
+      "Did it soak into the cushion or stay on the surface?",
+      "Any ammonia cleaner or hot water used already?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Zip-off washable cushion covers change everything — wash the cover cold with enzyme detergent + vinegar rinse, that's far more effective than in-place treatment. Pet vomit often has bile that stains dye — prompt acid-neutralization matters. Cushion batting is the ceiling for home chemistry; if batting is saturated, pro low-moisture extraction is the right tool, NOT truck-mount saturation."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

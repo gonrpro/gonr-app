@@ -1,79 +1,211 @@
 {
   "id": "mystery-stain-cotton",
-  "title": "Mystery on Cotton",
+  "title": "Unknown Stain on Cotton",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Mystery stains have unknown composition and origin. On cotton, the stain could be protein, tannin, oil, dye, or any combination. Misidentifying the stain family leads to wrong treatment — and potentially setting the stain permanently (e.g., hot water on hidden protein, alkali on hidden tannin). Systematic testing is required.",
-  "whyThisWorks": "The systematic approach on cotton: start with the safest, most universal treatment (cold water + NSD) to avoid setting any component. Then test: does cold water dissolve it (water-soluble)? Does it feel greasy (oil)? Is it stiff/crusty (protein)? Is it colored without texture (dye/tannin)? Once identified, apply the correct family protocol. When in doubt, professional assessment prevents damage.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "10 minutes for triage + ID; full protocol depends on what it is",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "mystery-stain",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "specialty",
+      "triage",
+      "refusal-style",
+      "unknown",
+      "cotton",
+      "routing-honesty"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "\"Mystery stain\" isn't a chemistry — it's a diagnostic gap. The stain is some combination of protein, tannin, oil, dye, or pigment, possibly compounded by heat-setting or age. The failure mode of generic stain advice is that the wrong first move permanently sets the stain: hot water on hidden protein, alkali on hidden tannin, oxidizer on hidden protein, solvent-first on what's really water-soluble. So the honest protocol is identify before treat. If identification isn't possible, the only safe default is the most conservative, most reversible first step — cold water + Dawn — and stopping before any irreversible chemistry if the stain doesn't respond.",
+  "whyThisWorks": "Triage works better than guessing. A 60-second visual + tactile inspection usually narrows a \"mystery\" to one of 4–5 probable families, each of which has a real protocol card. For genuinely-unknown stains, the conservative-first-step rule (cold + Dawn + no heat) prevents the common ways unknown stains become permanent. The limitation is honest: some stains can't be identified without a pro, and recommending aggressive generic chemistry on them is worse than no advice at all.",
+  "defaultAssumption": "User doesn't know what the stain is — most commonly because they weren't there when it happened, or it's old and they've forgotten. Assume cotton can tolerate standard chemistry but the STAIN might be heat-set, age-oxidized, or something that shouldn't meet water at all.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage — Narrow the Family",
+      "technique": "Visual + tactile inspection before any chemistry",
+      "equipment": "Good light, magnifier optional",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Look and feel. Protein signals: stiff, crusty, rusty / brownish-red, often yellowing with age (blood, food, egg, bodily). Tannin signals: flat color, often yellowing or browning, no greasy feel (wine, coffee, tea, grass). Oil signals: darker than surrounding fabric, greasy texture, takes longer to dry (food, cosmetic, motor). Dye signals: vivid color, flat, no texture (ink, food coloring, marker). Combination / crusty / multi-layered: likely protein + oil or dye + oil. Narrow to a family before routing."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Route to a Specific Card If Possible",
+      "technique": "Use the right protocol instead of guessing",
+      "equipment": "GONR protocol library",
+      "dwellTime": "1 minute",
+      "instruction": "If triage identified it: go treat-the-real-thing. Specific cards handle specific stains correctly. 'Generic mystery chemistry' is how stains become permanent. If still genuinely unknown after triage, continue — but know you're accepting higher failure risk."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Cold Water Test",
+      "technique": "Safest possible first step",
+      "equipment": "Cold water, white cotton cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "Dampen a white cloth with cold water. Press on the stain, lift. If color transfers to the cloth: water-soluble family (likely fresh protein or dye). Continue cold-water-only for now. If nothing transfers: not water-soluble fresh — oil, polymerized, or set. Don't escalate to hot water yet."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn on Damp Cloth",
+      "technique": "Conservative surfactant test",
+      "equipment": "Dawn + cold water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn diluted in cold water on a damp white cloth. Press, dwell 5 min, blot. Dawn is the most universal safe step — breaks oil, lifts water-soluble, won't set most stains. If color comes up: keep going, cold only. If nothing changes: escalation decision point."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Stop and Assess — No Aggressive Chemistry Blind",
+      "technique": "Decision point — identify or stop",
+      "equipment": "Phone camera, good light",
+      "dwellTime": "1–2 minutes",
+      "instruction": "If Dawn + cold water didn't move the stain, stop. Do NOT layer hot water, OxiClean, bleach, peroxide, solvent, or vinegar on an unidentified stain — one of those will set what another would have solved. Photograph the stain in daylight. Re-triage: is there any context about what it might have been (age, environment, who wore the garment, when it was last worn)?"
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Escalate Honestly",
+      "technique": "Professional identification + treatment",
+      "equipment": "Dry cleaner",
+      "dwellTime": "n/a",
+      "instruction": "Take to a professional cleaner. Tell them: \"Unknown stain on cotton, age [guess], home-treated with cold water + Dawn only. No hot water, no bleach, no oxidizer, no solvent.\" That exact phrasing is valuable — it tells the pro nothing is set yet and they have the full range of chemistry available."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Test with cold water first — if it dissolves, likely water-soluble (tannin or fresh protein)",
-      "2. If greasy texture: start dry side — apply POG, then NSD",
-      "3. If stiff/crusty: treat as protein — apply Protein Formula (enzyme-safe fibers) or NSD (delicates)",
-      "4. If colored/flat: treat as tannin — apply Tannin Formula, then H2O2 6% on colorfast",
-      "5. Flush with NSD after any treatment. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse"
+      "1. Triage first — visual + tactile narrowing to protein / tannin / oil / dye / combination.",
+      "2. Route to the specific card if identifiable.",
+      "3. Cold water test — color transfer = water-soluble.",
+      "4. Dawn on damp cloth — 5 min dwell.",
+      "5. Stop point — no aggressive blind chemistry.",
+      "6. Escalate with full chemistry disclosure."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "POG (Paint Oil Grease remover)",
-      "Protein Formula",
-      "Tannin Formula",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cold water",
+      "Dawn / NSD",
+      "White diagnostic cloths",
+      "Good light + camera for documentation"
     ],
-    "temperature": "ambient",
+    "temperature": "cold throughout — hot water sets protein permanently if protein is hiding in the mystery",
     "warnings": [
-      "Always test on hidden area first"
+      "DO NOT layer oxidizer + bleach + solvent + hot water on an unidentified stain",
+      "ONE wrong first step can set an unknown stain permanently",
+      "Cold + Dawn is the universal-safe first step",
+      "After Dawn plateau, stop — identify or escalate",
+      "Heat is the most common home mistake on unidentified stains"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Figure Out What It Is Before You Touch It",
+      "instruction": "The #1 way unknown stains become permanent is someone guessing wrong on the first step. Hot water sets protein. Bleach sets rust. Alkaline cleaners set tannin. OxiClean can set fresh protein. Before any chemistry, spend 60 seconds looking: crusty or stiff = probably protein (blood, food, bodily fluid). Flat color, dry, no texture = probably tannin (wine, coffee, tea). Greasy feel, darker halo = oil. Vivid bright color with no texture = dye (ink, food coloring). Oil + color = combination (lipstick, makeup)."
+    },
+    {
+      "step": 2,
+      "agent": "Use the Right Card If You Can Narrow It",
+      "instruction": "If the triage narrowed it to a family, look up the specific protocol (blood, red wine, cooking oil, etc.) — those cards handle the real chemistry. \"Generic mystery chemistry\" is how cotton gets ruined. If you genuinely can't narrow it, continue here but know success rate is lower."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Test First",
+      "instruction": "Dampen a white cloth with COLD tap water. Press on the stain, lift, look at the cloth. Color came up: water-soluble (treat cold, don't go hot). Nothing came up: not fresh-water-soluble — could be oil, set, or polymerized. Cold water is the one step that can't set any family."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Cold Water — Safest Chemistry",
+      "instruction": "Mix a drop of Dawn into cold water. Dampen a white cloth and press on the stain 5 minutes. Blot. Dawn is the most universal-safe first step: it breaks oil, lifts water-soluble stains, and won't set protein, tannin, or dye. If the stain fades or fully clears: keep going with cold + Dawn. If nothing changes: STOP and read step 5."
+    },
+    {
+      "step": 5,
+      "agent": "Do NOT Guess at Aggressive Chemistry",
+      "instruction": "If Dawn didn't move it, resist the urge to try OxiClean, hydrogen peroxide, bleach, vinegar, rubbing alcohol, or hot water in sequence hoping one works. One of those sequences will set the stain permanently. On cotton specifically: hot water sets protein; bleach sets rust and iron-based stains darker; peroxide and OxiClean can set fresh protein; solvent on a wet stain spreads it. Stop. Take a photo in daylight. Try to remember or ask what the stain might have been."
+    },
+    {
+      "step": 6,
+      "agent": "Escalate With Honesty About What's Already Been Tried",
+      "instruction": "Take the garment to a dry cleaner. Tell them exactly: \"Unknown stain on cotton, I don't know what it is or how old. Home-treated with cold water + Dawn only. No bleach, no OxiClean, no peroxide, no hot water, no solvent.\" That disclosure is valuable — it means nothing is set yet and they can use any chemistry. If you DID already try other stuff, tell them what, in what order. Lying or minimizing makes their job harder and can make the stain permanent."
+    },
+    {
+      "step": 7,
+      "agent": "Accept-as-Is Is a Legitimate Option",
+      "instruction": "For a shirt you wear as a painting smock or pajamas, sometimes \"accept the spot\" is the right answer. Spending three rounds of chemistry on a $10 T-shirt for an unknown stain is usually not worth it. For a good shirt — pro. For a work shirt — try cold + Dawn once and live with the result. Knowing when to stop is part of the skill."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove loose material — brush, blot, or scrape as appropriate",
-      "2. Apply Dawn dish soap mixed with cold water",
-      "3. Blot with clean white cloth. Repeat if needed",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat"
+      "1. Triage — narrow to protein / tannin / oil / dye family before chemistry.",
+      "2. If identified, use the specific protocol card. Generic = risky.",
+      "3. Cold water cloth test — tells you if it's water-soluble.",
+      "4. Dawn + cold water on damp cloth, 5 min.",
+      "5. If Dawn plateaus, STOP. No layering bleach / peroxide / hot.",
+      "6. Escalate to a pro with full disclosure of what was tried.",
+      "7. Accept-as-is is a valid call for low-value garments."
     ],
     "products": [
-      "Dawn dish soap"
+      "Cold water",
+      "Dawn dish soap",
+      "White diagnostic cloth",
+      "Good light + phone camera"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "STOP after Dawn + cold water plateaus. Do NOT escalate to aggressive chemistry on an unidentified stain — one wrong choice will set it permanently.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "NEVER layer hot water + OxiClean + peroxide + bleach + solvent on unknown",
+      "Hot water sets protein — if the mystery is bodily fluid, you've made it permanent",
+      "Bleach sets rust darker — if the mystery is metal/rust, you've made it permanent",
+      "Alkaline cleaners set tannin — if the mystery is wine/coffee, you've made it harder",
+      "Cold + Dawn is the universal-safe starting point",
+      "Triage and specific-card routing > generic mystery chemistry"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never use hot water on an unidentified stain",
+      "Never layer oxidizers on unknown chemistry",
+      "Never guess with solvent on a visibly wet stain",
+      "Never assume 'it's just cotton, it can handle anything' — the stain might be what can't handle hot water"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton is chemistry-tolerant once the stain is identified",
+      "But cotton + wrong sequence can still lose: rust + bleach = permanent, protein + hot = permanent",
+      "On unknown: cold + Dawn + stop + escalate"
     ]
   },
+  "materialWarnings": [
+    "Triage before chemistry",
+    "No aggressive chemistry on unknown stains",
+    "Cold + Dawn + stop + escalate is the honest protocol",
+    "Accept-as-is is a valid option"
+  ],
   "escalation": {
-    "when": "If mystery stain stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is mystery stain on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "After Dawn + cold water plateaus on an unidentified stain, or whenever the garment is valuable enough that guessing wrong costs more than a pro visit.",
+    "whatToTell": "\"Unknown stain on cotton, age [best guess], home-treated with cold water + Dawn ONLY. No bleach, no OxiClean, no peroxide, no hot water, no solvent applied. Any context I can give you: [when discovered / what was worn / environment].\"",
+    "specialistType": "professional dry cleaner with stain identification experience"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "When did you notice it? Where were you wearing the garment?",
+      "Is it crusty/stiff, flat-colored, greasy, or vivid bright?",
+      "Is there a halo around it (often oil) or is the edge sharp (often dye)?",
+      "Has it been washed or dried already since the stain happened?",
+      "How valuable is the garment — worth pro treatment or accept-as-is?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Triage narrows the family ~90% of the time if the user looks carefully. The remaining 10% is the hard case — genuinely unknown stains on valuable garments should route to a pro, not a chemistry lottery at home. Age matters: old oxidized unknown stains are usually tannin or oil that polymerized, and home chemistry rarely reverses that without specific knowledge of the original stain."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

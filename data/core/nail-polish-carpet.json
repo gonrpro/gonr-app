@@ -1,81 +1,228 @@
 {
   "id": "nail-polish-carpet",
   "title": "Nail Polish on Carpet",
-  "stainFamily": "dry_side",
+  "stainType": "resin",
+  "stainFamily": "dye",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Nail polish contains nitrocellulose (film former), plasticizers (dibutyl phthalate), colorants (pigments/dyes), and solvents (ethyl acetate, butyl acetate). On carpet, the solvents evaporate and the nitrocellulose hardens into a tough, pigmented film that is resistant to water, soap, and most common cleaners. The film bonds mechanically by penetrating fiber texture.",
-  "whyThisWorks": "Amyl acetate or acetone (where fiber-safe) dissolves the nitrocellulose film on carpet. The solvent reverses the hardening process, re-liquefying the polish so it can be blotted away. Acetone is faster but unsafe on acetate and many synthetics. Amyl acetate is safer for most fibers. The pigment transfers to the blotting cloth as the film dissolves.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "30 minutes to several hours; fiber check is the critical first step",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "nail-polish",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "resin",
+      "nitrocellulose",
+      "pigment",
+      "carpet",
+      "fiber-check-critical",
+      "solvent-risk"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Nail polish is nitrocellulose (film former) + plasticizers (dibutyl phthalate) + pigments/dyes + solvents (ethyl acetate, butyl acetate, sometimes toluene). The solvents evaporate within minutes and the nitrocellulose hardens into a tough, pigmented plastic film that mechanically locks into carpet fiber. Three things matter: (1) the film is re-softenable with the right solvent, (2) pigment is separate from film and can transfer, and (3) SOLVENT-ON-FIBER is the dangerous variable — acetone dissolves acetate, modacrylic, and triacetate fibers on contact, and damages some olefin (polypropylene) carpet. Non-acetone remover (ethyl acetate or propylene carbonate base) is safer but weaker. Amyl acetate is the pro go-to. The fiber check must happen before any solvent touches the carpet.",
+  "whyThisWorks": "The right solvent on the right fiber softens nitrocellulose enough to blot out the pigment. Powder preload absorbs pigment transfer. Dawn emulsifies solvent residue. The whole protocol is built around NOT melting the carpet while dissolving the polish — which is why the fiber check is step 1.",
+  "defaultAssumption": "Most home carpet in the US is nylon or polyester (solvent-tolerant). Berber, indoor-outdoor, or older carpet is often olefin/polypropylene — test-risk. Wool is pro-lane. If you don't know the fiber, the hidden-seam test is non-negotiable.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Fiber Check — BEFORE Any Solvent",
+      "technique": "Hidden-seam solvent test + fiber ID if possible",
+      "equipment": "Acetone-free nail polish remover, white cloth, flashlight",
+      "dwellTime": "2 minutes",
+      "instruction": "Find a hidden carpet area (inside closet, under furniture, seam). Dab acetone-free nail polish remover on a white cloth, press on the hidden spot 30 sec, lift. If the cloth picks up carpet fiber or color, or if the carpet texture changes, STOP — olefin / acetate / modacrylic / wool, solvent is not safe. Call a pro. If the test cloth is clean and carpet is unchanged, nylon / polyester is likely — proceed with acetone-free remover. Never start with acetone."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Blot Wet Polish — Do Not Wipe",
+      "technique": "Paper-towel lift of liquid polish before it dries",
+      "equipment": "Paper towels, plastic card for scraping dried",
+      "dwellTime": "1–2 minutes",
+      "instruction": "If wet: press paper towels STRAIGHT DOWN on the spill. Do not wipe — wiping spreads pigment. Lift straight up, discard, press fresh towels. Repeat until no more polish transfers. If dried: lift any hardened surface polish with the edge of a plastic card, scraping gently outward from the center."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Cornstarch Powder Preload",
+      "technique": "Absorb residual pigment",
+      "equipment": "Cornstarch or baking soda",
+      "dwellTime": "10–15 minutes",
+      "instruction": "Dust cornstarch generously over the remaining stain. Absorbs liquid polish and prevents pigment spread. Vacuum off."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Acetone-Free Remover — Tamp From Top",
+      "technique": "Solvent on cloth, outside-in",
+      "equipment": "Acetone-free nail polish remover (ethyl acetate or propylene carbonate base), white cotton cloth",
+      "dwellTime": "30–60 sec per pass",
+      "instruction": "Dampen a white cloth with acetone-free remover. Tamp from the top, flip cloth frequently, work OUTSIDE-IN toward the center so you don't spread the edge. Never pour solvent on carpet. Ventilate. No flames. 2–4 passes typical. If acetone-free remover stalls and the hidden-seam test was clean, graduate to amyl acetate or (last resort) acetone — but only if you already confirmed fiber tolerance."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Dawn Damp Cloth — Emulsify Residue",
+      "technique": "Clear solvent and lift pigment",
+      "equipment": "Dawn + cool water on damp cloth, soft brush",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Dawn in cool water on a damp cloth. Work into the spot with a soft brush. Lifts residual pigment and clears the solvent. Damp-cloth rinse — don't pour water."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan",
+      "technique": "Extract moisture + solvent vapor",
+      "equipment": "Dry white towel + weight, fan",
+      "dwellTime": "30 min + fan-dry",
+      "instruction": "Weighted dry towel 30 min to wick moisture and any residual solvent. Fan the area fully dry. Inspect in daylight — residual pigment ghost = one more round of steps 4–5, OR escalate."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate to soften and dissolve the polish film. Blot — do NOT rub",
-      "2. Repeat amyl acetate application, blotting dissolved polish onto clean cloth — 3-5 min per pass",
-      "3. Apply NSD to remove remaining residue. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for pH restoration",
-      "5. Blot dry. Air dry"
+      "1. Fiber test at hidden seam with acetone-free remover. STOP if olefin / acetate / wool.",
+      "2. Blot wet polish or scrape dried polish. No wiping.",
+      "3. Cornstarch preload 10–15 min. Vacuum.",
+      "4. Acetone-free remover tamp from top, outside-in. Ventilate.",
+      "5. Graduate to amyl acetate only if fiber-tested and non-solvent-sensitive.",
+      "6. Dawn / NSD damp cloth + soft brush.",
+      "7. Weighted dry towel + fan-dry."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Acetone-free nail polish remover",
+      "Cornstarch or baking soda",
+      "Amyl acetate (pro / tested fiber only)",
+      "Dawn / NSD",
+      "White cloths + soft brush",
+      "Fan"
     ],
-    "temperature": "ambient",
+    "temperature": "ambient — no heat until solvent fully evaporated",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains",
-      "NEVER use acetone on acetate fabric — dissolves it on contact",
-      "Ensure adequate ventilation when using solvents — VOC fumes require extraction"
+      "FIBER CHECK FIRST — acetone dissolves acetate, modacrylic, triacetate; damages olefin",
+      "NEVER start with acetone — start acetone-free",
+      "Flammable solvent — ventilate, no flames, no smoking",
+      "Never pour solvent on carpet",
+      "Work outside-in to prevent edge spread",
+      "Wool carpet = pro only"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Fiber Check FIRST — Before Any Remover",
+      "instruction": "Before any solvent touches the carpet, check the fiber. Most home carpet is nylon or polyester and tolerates nail polish remover. But acetone DESTROYS acetate, modacrylic, and triacetate on contact, and can soften olefin (polypropylene) — which is what a lot of indoor/outdoor carpet and some Berbers are made of. Wool carpet is pro-only. Test in a hidden area first: dab ACETONE-FREE nail polish remover on a white rag, press it on a seam or closet corner for 30 seconds. If the rag picks up fiber, color, or the carpet feels different after, STOP. Call a pro. If the test is clean, proceed."
+    },
+    {
+      "step": 2,
+      "agent": "Blot Wet Polish Straight Down",
+      "instruction": "If the polish is still wet: press a folded paper towel STRAIGHT DOWN on the spill. Do NOT wipe or rub — wiping spreads pigment across the carpet. Lift straight up, discard, press fresh towels. Repeat until no more color transfers. If it's already dried, skip to step 3."
+    },
+    {
+      "step": 3,
+      "agent": "Scrape Dried Polish Off the Surface",
+      "instruction": "If polish dried into a hard crust, lift the surface with the edge of a plastic card, scraping gently outward from the center. Don't dig — you're just removing the bulk. What's left is the thin film in the fiber, which the solvent will handle."
+    },
+    {
+      "step": 4,
+      "agent": "Cornstarch to Soak Up Residual Pigment",
+      "instruction": "Dust cornstarch generously over the spot. 10–15 minutes. Cornstarch absorbs liquid polish and stops pigment from spreading. Vacuum off."
+    },
+    {
+      "step": 5,
+      "agent": "Acetone-Free Remover on a White Rag — Work Outside-In",
+      "instruction": "Dampen a white rag with ACETONE-FREE nail polish remover (the gentler kind — ethyl acetate or propylene carbonate based). Never pour solvent on the carpet. Press the rag on the spot, tamp gently, flip the rag as it picks up color. Work from the OUTSIDE of the stain toward the CENTER — the opposite of what feels natural — so you don't drag color to new fibers. Open windows. No candles, no gas stove running, no smoking. 2–4 passes typical."
+    },
+    {
+      "step": 6,
+      "agent": "If Acetone-Free Stalls — Consider Stopping",
+      "instruction": "If acetone-free remover can't finish the job and your hidden-seam test was completely clean, regular acetone nail polish remover is stronger but riskier. Re-test acetone on the hidden seam FIRST. If that test is still clean, same technique — rag, tamp, outside-in. If the carpet fiber wasn't clearly fine with acetone-free, do NOT graduate to acetone. Call a pro."
+    },
+    {
+      "step": 7,
+      "agent": "Dawn on a Damp Cloth to Clear Solvent",
+      "instruction": "Work a drop of Dawn into the spot with a soft toothbrush and a damp cloth. Lifts residual pigment and clears solvent residue. Damp cloth rinse — don't pour water."
+    },
+    {
+      "step": 8,
+      "agent": "Weighted Paper Towels + Fan-Dry",
+      "instruction": "Stack dry paper towels on the spot, set a heavy book on top, 30 min. Point a fan at it. Full dry before you walk on it or vacuum. Solvent vapor clears with airflow."
+    },
+    {
+      "step": 9,
+      "agent": "Escalate — What to Tell the Pro",
+      "instruction": "\"Nail polish on [nylon / polyester / olefin / unknown] carpet, [wet / dried], home-treated with acetone-free remover [+ acetone if tried]. [Residual pigment ghost / fiber change after test / test failed on hidden seam]. Please assess fiber compatibility before solvent.\" Bring the polish bottle if you have it — pigment chemistry varies by color and helps the pro pick solvent."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot excess polish — do NOT rub or spread",
-      "2. Test a hidden area with hydrogen peroxide 3% before proceeding",
-      "3. Apply Dawn dish soap mixed with warm water. Blot",
-      "4. Apply Dawn dish soap and work gently. Rinse with warm water",
-      "5. Repeat if needed. Air dry — no heat until stain is gone"
+      "1. FIBER CHECK at hidden seam with acetone-free remover BEFORE anything.",
+      "2. Blot wet polish straight down — no wiping.",
+      "3. Scrape dried surface polish with a plastic card.",
+      "4. Cornstarch preload 10–15 min. Vacuum.",
+      "5. Acetone-free remover on a rag, tamp, outside-in. Ventilate.",
+      "6. Graduate to acetone ONLY if fiber-tested clean — otherwise stop.",
+      "7. Dawn on damp cloth + soft brush.",
+      "8. Weighted dry towels + fan-dry."
     ],
     "products": [
-      "hydrogen peroxide 3%",
-      "Dawn dish soap"
+      "Acetone-free nail polish remover",
+      "Cornstarch",
+      "Dawn dish soap",
+      "White rags + plastic card",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if the hidden-seam test damages carpet, if the carpet is wool / Berber / indoor-outdoor, if pigment ghost persists after two full rounds, or if acetone-free remover has no effect and fiber wasn't tested clean for acetone.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "FIBER CHECK FIRST — acetone destroys acetate/modacrylic/triacetate, softens olefin",
+      "Flammable — ventilate, no flames, no smoking",
+      "Never pour solvent on carpet",
+      "Never wipe — blot straight down or tamp outside-in",
+      "Wool carpet = pro only"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never use acetone without a hidden-seam test",
+      "Never use solvent near open flame",
+      "Never wipe nail polish — blot or tamp",
+      "Never pour solvent or water on carpet"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester carpet: tolerates acetone-free and usually acetone (test)",
+      "Olefin (polypropylene): acetone can soften — test carefully",
+      "Acetate / modacrylic / triacetate: acetone DESTROYS — pro only",
+      "Wool carpet: pro only — solvent risk + pH sensitivity",
+      "Berber / indoor-outdoor: usually olefin — test carefully"
     ]
   },
+  "materialWarnings": [
+    "FIBER CHECK IS NON-NEGOTIABLE",
+    "Acetone destroys several common carpet fibers — start acetone-free",
+    "Wool = pro only",
+    "Work outside-in to prevent edge spread"
+  ],
   "escalation": {
-    "when": "If nail polish stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is nail polish on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Hidden-seam test damages carpet, fiber is wool/acetate/modacrylic/triacetate/unknown olefin, pigment ghost persists after acetone-free + (tested) acetone, or carpet changes texture after solvent contact.",
+    "whatToTell": "\"Nail polish on [nylon / polyester / olefin / unknown] carpet, [wet / dried], home-treated with acetone-free remover [+ acetone if tested fiber-safe]. [Residual ghost / fiber damage suspected / unknown fiber]. Please assess fiber before solvent.\"",
+    "specialistType": "professional carpet cleaner with solvent spotting + fiber-ID training"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "What's the carpet fiber? Nylon / polyester / olefin / wool / unknown?",
+      "Is the polish still wet or already dried?",
+      "What color — dark reds/blacks carry more pigment load than pastels?",
+      "Has anyone already used acetone on it?",
+      "Is this a high-value area rug or standard wall-to-wall?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Fiber identity is the whole game. Nylon/polyester = full protocol works. Olefin = test carefully. Acetate/modacrylic/triacetate/wool = pro only. Dark-pigmented polish often leaves a ghost even after the film is gone — pigment is separate from nitrocellulose."
   },
-  "difficulty": 7,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

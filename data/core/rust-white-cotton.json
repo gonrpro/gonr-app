@@ -1,113 +1,204 @@
 {
   "id": "rust-white-cotton",
   "title": "Rust on White Cotton",
-  "stainFamily": "dye",
-  "surface": "white-cotton",
+  "stainType": "specialty",
+  "stainFamily": "specialty",
+  "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Rust (iron oxide, Fe2O3) is an inorganic metal stain, not an organic dye. On white cotton, iron oxide particles lodge in fiber texture and bond through electrostatic interactions. Standard detergents and bleach are ineffective — bleach actually sets rust stains darker by further oxidizing the iron. Only reducing agents or chelating agents can dissolve iron oxide back into soluble form.",
-  "whyThisWorks": "A reducing agent (sodium hydrosulfite professionally, oxalic acid at consumer level) converts insoluble iron oxide back into soluble iron ions on white cotton, which then rinse away. Lemon juice or white vinegar provide mild acid chelation for light rust. The key rule: NEVER use chlorine bleach on rust — it oxidizes the iron further, making the stain permanent.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "30 minutes to several hours in sun; never use chlorine bleach",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "rust-white",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "rust",
+      "iron-oxide",
+      "metal",
+      "white-cotton",
+      "no-chlorine-bleach",
+      "acid-chelation"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Rust is iron(III) oxide (Fe₂O₃) — an INORGANIC metal stain, fundamentally different from organic stains. Iron oxide particles physically lodge in cotton fiber texture and bond through electrostatic interactions. The critical rule: chlorine bleach DARKENS rust by further oxidizing the iron — it converts soluble iron species to more-insoluble rust and sets the stain permanently. Only ACIDS and REDUCING agents remove rust. Acids (citric / ascorbic / oxalic) chelate the iron and dissolve it back into soluble form that rinses out. Reducing agents (sodium hydrosulfite professionally) convert rust back to soluble iron. Cotton is chemistry-tolerant so the protocol can be aggressive; the fiber isn't the worry, the chemistry choice is.",
+  "whyThisWorks": "Lemon juice (citric acid) + salt + sunlight is the classic home rust remover — UV-assisted acid chelation. Works reliably on white cotton for light rust. Commercial rust removers (Whink, Iron Out, Bar Keepers Friend) use oxalic acid, which is stronger and works on heavier rust. Sodium hydrosulfite (pro-grade) is the reducing-agent alternative. The hard rule — NEVER chlorine bleach — is why \"just throw it in the washer with bleach\" (the reflex for white cotton) makes rust worse.",
+  "defaultAssumption": "Rust on white cotton is commonly from a metal hanger, a wet iron, a clothesline, a metal zipper/snap, a washer drum, or tools. Small spots = easy lemon+salt+sun. Large area (wet cotton sat on a rusty surface) = commercial rust remover or pro. Old set-in rust that has been bleached = often permanent.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "ID + Remove Source",
+      "technique": "Confirm rust and eliminate the cause",
+      "equipment": "Good light",
+      "dwellTime": "1 minute",
+      "instruction": "Confirm it's rust (orange-brown, often where cotton met metal). Find and remove the source — wet cotton on a wire hanger, a leaky iron, a rusty washer drum — otherwise it will happen again. If the source can't be removed, protect the cotton going forward."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Lemon Juice + Salt Paste",
+      "technique": "Acid chelation with UV assist",
+      "equipment": "Fresh lemon juice or bottled 100% lemon juice, table salt",
+      "dwellTime": "15–30 min, outdoors in sunlight",
+      "instruction": "Squeeze lemon juice directly on the rust spot. Sprinkle table salt generously over the wet lemon juice. Lay the cotton flat in direct sunlight (the UV accelerates the reaction). Let sit 15–30 min. Check — rust often fades visibly. Rinse cool, repeat if needed. Sun is not optional; it's the catalyst."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Commercial Rust Remover (If Lemon Plateaus)",
+      "technique": "Oxalic acid",
+      "equipment": "Whink Rust Stain Remover, Iron Out, or Bar Keepers Friend",
+      "dwellTime": "Per label, usually 30 seconds to a few minutes",
+      "instruction": "Apply per product label — most require dilution or very short contact. Oxalic acid is strong; rinse cool and thorough immediately. Gloves. Ventilate.",
+      "safetyNote": "Oxalic acid is toxic if ingested and a skin/eye irritant. Gloves + ventilation. Never mix with bleach."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Rinse Thoroughly + Cool Wash",
+      "technique": "Remove acid residue",
+      "equipment": "Cool running water, washing machine",
+      "dwellTime": "Full cycle",
+      "instruction": "Rinse cool until no trace of acid remains. Wash cool per care label. Acid left in cotton can weaken fibers over time. Inspect BEFORE the dryer."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Sun-Dry for Final Fade",
+      "technique": "UV bleaching for residual shadow",
+      "equipment": "Outdoor drying line",
+      "dwellTime": "2–4 hours",
+      "instruction": "Sun-dry outside. UV + remaining moisture helps fade any residual rust shadow on white cotton. This is a classic technique and still works."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply sodium hydrosulfite (reducing agent) to the rust stain — this converts insoluble iron oxide back to soluble form",
-      "2. Flush with NSD and cool water to remove dissolved iron",
-      "3. If rust persists: repeat sodium hydrosulfite application",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Identify + remove source.",
+      "2. Lemon juice + salt + sun, 15–30 min.",
+      "3. Oxalic acid (Whink / Iron Out) if lemon plateaus — gloves + ventilation.",
+      "4. Thorough cool rinse + cool wash.",
+      "5. Sun-dry for residual shadow.",
+      "6. Persistent rust = sodium hydrosulfite (pro)."
     ],
     "products": [
-      "sodium hydrosulfite",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Lemon juice",
+      "Table salt",
+      "Commercial rust remover (Whink / Iron Out / Bar Keepers Friend)",
+      "Sodium hydrosulfite (pro)",
+      "Gloves"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat can set iron oxide deeper",
     "warnings": [
-      "NEVER use chlorine bleach on rust — it oxidizes iron further, making the stain permanent"
+      "NEVER chlorine bleach — darkens rust permanently",
+      "NEVER mix oxalic acid with chlorine bleach",
+      "Gloves + ventilation on commercial rust removers",
+      "Rinse acid thoroughly — residue weakens cotton fibers",
+      "Remove the rust source or it recurs"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "DO NOT Use Chlorine Bleach",
+      "instruction": "This is the hard rule on rust: chlorine bleach DARKENS rust permanently by oxidizing the iron further. The instinct with white cotton is \"throw it in with bleach,\" and it's exactly wrong here. If someone has already bleached the rust, the stain may now be permanent — take it to a pro. Otherwise, read on."
+    },
+    {
+      "step": 2,
+      "agent": "Find and Remove the Rust Source",
+      "instruction": "Figure out what rusted onto the cotton — a wire hanger, a wet iron, a rusty washer drum, a metal snap, tools in a laundry basket. Remove or clean the source, otherwise this will keep happening. Check wet-iron drip on ironing board cotton is the sneakiest one — scale inside the iron releases rust when you steam."
+    },
+    {
+      "step": 3,
+      "agent": "Lemon Juice + Salt + Sunlight (The Classic)",
+      "instruction": "Squeeze fresh lemon juice (or bottled 100% lemon juice) directly on the rust spot until it's wet. Sprinkle regular table salt generously over the lemon. Lay the cotton FLAT IN DIRECT SUNLIGHT — not shade, not indoors — for 15 to 30 minutes. The citric acid dissolves the rust, the salt helps hold it in place, and UV sunlight catalyzes the reaction. Check the spot: on light / fresh rust you'll often see it visibly fade."
+    },
+    {
+      "step": 4,
+      "agent": "Rinse Cool, Repeat If Needed",
+      "instruction": "Rinse the spot thoroughly with COOL water. If rust remains, repeat lemon + salt + sun. Light rust often clears in one round; older or heavier rust may need 2–3 rounds. Cool water only — heat can set iron oxide deeper into the weave."
+    },
+    {
+      "step": 5,
+      "agent": "Commercial Rust Remover for Stubborn Spots",
+      "instruction": "If lemon + sun plateau, try a commercial rust remover — Whink Rust Stain Remover, Iron Out, or Bar Keepers Friend. These use oxalic acid (stronger than citric). READ THE LABEL — most require dilution and very short contact time. Work outside or in a well-ventilated room. Wear gloves.",
+      "safetyNote": "Oxalic acid is toxic if swallowed, irritating to skin and eyes. Gloves + ventilation. NEVER mix with chlorine bleach — creates toxic gas."
+    },
+    {
+      "step": 6,
+      "agent": "Cool Wash + Air-Dry in Sun",
+      "instruction": "Wash on cool per care label to remove all acid residue. Line-dry outside in direct sunlight — UV + residual moisture can fade any remaining shadow. Inspect BEFORE the dryer. If rust is still visible, heat will set it deeper."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate — Pro for Set / Bleached / Heavy Rust",
+      "instruction": "If rust survives lemon + oxalic acid or someone already used chlorine bleach, take it to a pro dry cleaner. They have sodium hydrosulfite (a reducing agent) and related chemistry that can sometimes recover what home chemistry can't. Tell them: \"Rust on white cotton, [old / fresh / source known or unknown], home-treated with lemon + salt + sun [+ Whink]. [No bleach / bleach was tried by accident].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Apply white vinegar or lemon juice to the rust stain. Let sit",
-      "2. Sprinkle salt over the vinegar-soaked area for mild abrasion",
-      "3. Blot with clean white cloth. Repeat application if needed",
-      "4. Rinse thoroughly with cold water",
-      "5. Air dry — do NOT use heat"
+      "1. NEVER chlorine bleach — darkens rust permanently.",
+      "2. Find + remove the rust source (hanger, iron, washer drum).",
+      "3. Lemon juice + salt, lay flat in DIRECT SUNLIGHT 15–30 min.",
+      "4. Rinse cool, repeat lemon+salt+sun up to 3 rounds.",
+      "5. Commercial rust remover (Whink / Iron Out) for stubborn.",
+      "6. Cool wash, sun-dry line. Inspect BEFORE dryer.",
+      "7. Escalate if bleached or set — pro sodium hydrosulfite."
     ],
     "products": [
-      "white vinegar",
-      "lemon juice (alternative)"
+      "Fresh or bottled lemon juice",
+      "Table salt",
+      "Whink Rust Stain Remover / Iron Out / Bar Keepers Friend",
+      "Gloves"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if chlorine bleach has already been used (may be permanent), if rust survives oxalic acid, or if the rust source can't be identified and will recur.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "NEVER chlorine bleach on rust — makes it permanent",
+      "NEVER mix oxalic acid rust removers with bleach — toxic gas",
+      "Gloves + ventilation on commercial rust removers",
+      "Rinse acid thoroughly — residue weakens cotton over time",
+      "Cool water only — heat sets iron oxide",
+      "Remove the source or it recurs"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Avoid prolonged exposure to concentrated acid"
+      "Never chlorine bleach on rust — it darkens permanently",
+      "Never mix oxalic acid products with chlorine bleach",
+      "Never skip the rinse after acid treatment",
+      "Never dryer heat on residual rust"
     ],
     "fiberSensitivities": [
-      "Most chemically resistant textile — tolerates aggressive treatment",
-      "Can handle chlorine bleach, hydrogen peroxide, oxygen bleach",
-      "Hot water safe up to 95°C / 200°F"
+      "White cotton tolerates citric acid, oxalic acid, sodium hydrosulfite",
+      "Dyed cotton: oxalic acid can strip dye — hidden-seam test (use rust-cotton card for dyed)",
+      "Cotton-synthetic blends: usually tolerate acid treatment, test first"
     ]
   },
+  "materialWarnings": [
+    "NEVER chlorine bleach — the core rule",
+    "Remove the source or it recurs",
+    "Sun is part of the chemistry, not optional"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is rust on white cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Chlorine bleach has already been used on the rust, rust survives oxalic acid, rust source can't be found and will recur, or the rust has been through a hot dryer multiple times.",
+    "whatToTell": "\"Rust on white cotton, age [fresh / old / unknown], home-treated with lemon + salt + sun [+ Whink / Iron Out]. Source [known: X / unknown]. [No chlorine bleach used / bleach was accidentally used].\"",
+    "specialistType": "professional dry cleaner with sodium hydrosulfite / metal-stain chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Where did the rust come from — hanger, iron, washer, tools?",
+      "How big is the spot?",
+      "Fresh or old/set?",
+      "Has chlorine bleach been used on it already?",
+      "Has it been through a dryer?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The rust-source question is the most important — wet cotton on a wire hanger causes this repeatedly if not addressed. Iron scale (rust inside a steam iron) is a sneaky recurring source. Once bleach has touched rust, the stain is often permanent."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-45 minutes",
-  "lastValidated": "2026-03-23",
-  "homeSolutions": [
-    {
-      "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates oxalic acid solution. On white cotton, oxalic acid is safer than on colored fabrics.",
-      "agent": "cool water",
-      "safetyNote": "Oxalic acid is a strong chemical — handle with care and ensure good ventilation."
-    },
-    {
-      "step": 2,
-      "instruction": "Place fabric stain-side down on glass work surface.",
-      "agent": "spoon"
-    },
-    {
-      "step": 3,
-      "instruction": "Rust stains respond specifically to oxalic acid. Apply oxalic acid (crystals dissolved in minimal cool water) to a white cloth and dab the rust stain gently from center outward.",
-      "agent": "oxalic acid solution",
-      "safetyNote": "Oxalic acid can be corrosive — avoid direct skin contact and ensure proper ventilation."
-    },
-    {
-      "step": 4,
-      "instruction": "Allow the oxalic acid to work on the stain for 2-3 minutes, re-dabbing as needed with fresh cloth.",
-      "agent": "oxalic acid solution"
-    },
-    {
-      "step": 5,
-      "instruction": "Rinse thoroughly with cool water, working from center outward, ensuring all oxalic acid residue is removed.",
-      "agent": "cool water",
-      "safetyNote": "Complete removal of oxalic acid is essential to prevent fiber damage."
-    },
-    {
-      "step": 6,
-      "instruction": "For white cotton, oxalic acid treatment is typically effective. If rust stain persists after treatment, consult a professional cleaner.",
-      "agent": "escalation"
-    }
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

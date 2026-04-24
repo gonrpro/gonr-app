@@ -1,77 +1,217 @@
 {
   "id": "paint-acrylic-cotton",
-  "title": "Acrylic Paint on Cotton",
-  "stainFamily": "dye",
+  "title": "Acrylic Craft Paint on Cotton",
+  "stainType": "resin",
+  "stainFamily": "resin",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Acrylic paint contains acrylic polymer emulsion, pigment, and water. While wet, it is water-soluble. Once dry, the acrylic polymer cross-links into a flexible, water-resistant film on cotton. This transition from water-soluble to water-resistant happens relatively quickly (15-30 minutes) and is irreversible. Dried acrylic paint is essentially a plastic coating.",
-  "whyThisWorks": "If wet: immediate cold water flushing and surfactant removes acrylic paint easily from cotton — it is fully water-soluble before curing. If dry: isopropyl alcohol or amyl acetate softens and dissolves the cured acrylic film. Scraping the softened film with a dull edge helps mechanical removal. The window between 'easy' and 'very difficult' is narrow — treat immediately for best results.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15 minutes while wet; pro-only once cured",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "paint-acrylic",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "water-based",
+      "resin",
+      "paint",
+      "craft",
+      "time-critical",
+      "dries-insoluble"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Craft / artist acrylic paint is a water-based acrylic polymer emulsion with pigment — the same basic chemistry as wall latex, but more concentrated and faster-drying. Craft acrylics (Apple Barrel, FolkArt, Liquitex Basics) usually cure fully in 10–20 minutes on fabric, tighter than wall paint's 15–30 minute window. Heavy body / artist-grade acrylics have more resin and cure into harder films. While wet, water-soluble. Once cured, the acrylic polymer coalesces into a flexible plastic film locked mechanically into cotton fibers. Like latex, the cure is irreversible at home temperatures. Heat-set acrylic is effectively permanent without solvent — and some craft acrylics are MARKETED as heat-settable fabric paint, which is the same chemistry intentionally made permanent.",
+  "whyThisWorks": "Cold water + Dawn rinses the acrylic out while it's still emulsion. Fingertip work (not a brush) lifts pigment without driving it into the weave. Isopropyl alcohol softens partially-cured acrylic for a second cold-water cycle. Cotton tolerates extended soak which helps keep the paint re-suspended. The hard limit is the same as latex: fully cured acrylic is a plastic film, and home chemistry can't un-polymerize it.",
+  "defaultAssumption": "Kid's craft project, school art, painter's shirt. Fresh splatter caught in the first 15 minutes = easy win. Discovered-dry acrylic, especially craft-grade, = often escalation or accept-as-is. Fabric paint (intentionally heat-set) = the paint is doing what it was designed to do and is permanent.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Bulk Paint Off",
+      "technique": "Plastic card, outward from center",
+      "equipment": "Plastic card or dull blade",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Scrape pooled paint with the edge of a plastic card, working outward from the center. Don't wipe. The clock is shorter than latex — craft acrylics cure in 10–20 min."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush + Soak",
+      "technique": "Flush from the reverse",
+      "equipment": "Cold water, sink",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Turn the cotton inside out. Cold water through the BACK for 30–60 sec. Plug sink, fill cold, soak 5–10 min. Cold ONLY — heat cures acrylic permanently."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn + Fingertips",
+      "technique": "Surfactant emulsify — no brush",
+      "equipment": "Dawn dish soap",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Work Dawn into the stain with fingertips while wet. No brush — bristles drive pigment in. Dwell 5–10 min wet."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cold Rinse + Repeat",
+      "technique": "Until runoff is clear",
+      "equipment": "Cold water",
+      "dwellTime": "1–2 minutes per pass",
+      "instruction": "Cold rinse from the back. Repeat Dawn + rinse while still wet if paint remains. Never let the fabric dry mid-cycle."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "91% IPA for Partially Cured Paint",
+      "technique": "Solvent soften + another wet cycle",
+      "equipment": "91% isopropyl alcohol on white cloth",
+      "dwellTime": "2–5 minutes",
+      "instruction": "If paint started curing: dab 91% IPA on a white cloth, press on the stain to soften the partial film, blot, return to Dawn + cold rinse. Hidden-seam test if cotton is dyed.",
+      "safetyNote": "No IPA on silk/wool/rayon/acetate. Flammable — no open flame."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Air-Dry Flat + Inspect",
+      "technique": "Daylight inspection before heat",
+      "equipment": "Flat drying surface",
+      "dwellTime": "2–4 hours",
+      "instruction": "Air-dry flat. Inspect in daylight. Any ghost = no dryer, no iron — or the ghost becomes permanent. If still damp and ghost remains, one more Dawn + rinse cycle."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate or appropriate solvent to dissolve dye/pigment matrix",
-      "2. Apply NSD to lift loosened pigment. Flush with cool water",
-      "3. If color persists: apply H2O2 6% on colorfast fabrics to break chromophore bonds",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Scrape bulk paint with dull edge.",
+      "2. Cold back-flush + soak.",
+      "3. Dawn / NSD with fingertips, 5–10 min wet.",
+      "4. Cold rinse, repeat while wet.",
+      "5. IPA on damp cloth for partially cured film.",
+      "6. Air-dry flat. Cured acrylic = amyl acetate (pro)."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Plastic scraper",
+      "Dawn / NSD",
+      "91% Isopropyl alcohol",
+      "Amyl acetate (pro, for cured paint)"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold throughout — heat cures acrylic",
+    "warnings": [
+      "Craft acrylic wet window is shorter than wall latex — 10–20 min typical",
+      "NEVER hot water — cures polymer",
+      "NEVER dryer / iron until gone — permanent",
+      "NEVER brush — fingertips only",
+      "Fabric paint is intentionally heat-set — designed permanent"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Check — Craft Paint or Fabric Paint?",
+      "instruction": "Regular craft acrylic (Apple Barrel, FolkArt, Liquitex Basics) comes out of cotton IF you catch it wet — usually a 10–20 minute window, shorter than wall latex paint. FABRIC paint (Tulip, Jacquard, heat-setting craft paints) is designed to BE permanent on fabric once heat-set — if that's what was used and it's dried, it's doing what it was designed to do and there isn't a home path. If you're not sure which, assume craft acrylic and move fast."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Excess Paint",
+      "instruction": "Lift pooled paint with the edge of a plastic card, scraping outward from the center. Don't wipe — that drives pigment into the weave. Move fast; the cure clock is tight."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Back-Flush + Soak",
+      "instruction": "Turn the shirt inside out. Run COLD water through the BACK of the stain for 30–60 seconds. Plug the sink, fill with cold water, soak 5–10 minutes. Cold ONLY. Hot water cures acrylic permanently."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Fingertips (No Brush)",
+      "instruction": "Keep the area wet. Work a few drops of Dawn into the stain with your fingertips. A brush drives pigment deeper — use fingertips. 5–10 minutes of dwell while still wet."
+    },
+    {
+      "step": 5,
+      "agent": "Cold Rinse — Repeat While Wet",
+      "instruction": "Rinse from the back with cold water until runoff is clear. Paint remaining? Repeat Dawn + rinse while still wet. Don't let the cotton dry between rounds — what's in the weave when it dries is locked in."
+    },
+    {
+      "step": 6,
+      "agent": "91% Isopropyl Alcohol for Partially-Cured Paint",
+      "instruction": "If the paint had started drying before you got to it, dab 91% isopropyl alcohol on a white cloth and press it on the spot. Softens the partial film. Blot, return to Dawn + cold rinse. Test hidden seam first on dyed cotton.",
+      "safetyNote": "No alcohol on silk, wool, rayon, or acetate. Keep away from open flame."
+    },
+    {
+      "step": 7,
+      "agent": "Air-Dry Flat and Inspect",
+      "instruction": "Lay flat, air-dry. Inspect in daylight. Any remaining paint — even a faint ghost — locks permanently under dryer or iron heat. If you see a ghost while the cotton is still damp, one more Dawn + cold rinse round can sometimes finish."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate — or Accept",
+      "instruction": "Fully cured craft acrylic on cotton is a pro-solvent job (amyl acetate). Worth it for a nice shirt; not worth it for a kid's painting smock — sometimes \"accept the spot\" is the right call. Tell the pro: \"Craft acrylic paint on cotton, [fresh / partial / cured], home-treated with cold water + Dawn + [IPA]. No heat applied. [Brand if known].\" Fabric paint that was heat-set is permanent by design — don't spend money trying to remove it."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately — never rub (spreading dye worsens it)",
-      "2. Apply Dawn dish soap mixed with cold water. Blot gently",
-      "3. If stain persists: apply hydrogen peroxide 3% on colorfast fabrics — test hidden area first, 5-10 min dwell time",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat until stain is completely gone"
+      "1. Craft acrylic or fabric paint? Fabric paint heat-set = permanent.",
+      "2. Scrape bulk with plastic card.",
+      "3. Cold back-flush + soak 5–10 min.",
+      "4. Dawn + fingertips (no brush) while wet.",
+      "5. Cold rinse, repeat while wet.",
+      "6. 91% IPA for partial cure. Hidden-seam test.",
+      "7. Air-dry flat. Inspect before any heat.",
+      "8. Cured paint = pro or accept."
     ],
     "products": [
+      "Plastic card",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "91% Isopropyl alcohol"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if paint is fully cured, was heat-set (including by dryer/iron), was fabric paint by design, or ghost remains after two cold-water cycles.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "Cure window is SHORTER than wall latex — 10–20 min",
+      "NEVER hot water — cures polymer",
+      "NEVER dryer / iron until gone",
+      "NEVER brush — fingertips only",
+      "Fabric paint is designed permanent — don't fight it"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never hot water, dryer, iron — cures acrylic",
+      "Never brush — drives pigment into weave",
+      "Never let cotton dry mid-cycle",
+      "Never IPA on silk / wool / rayon / acetate"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates Dawn, cold water, IPA, extended soak",
+      "Dyed cotton: IPA hidden-seam test",
+      "Cotton-spandex blends: avoid acetone"
     ]
   },
+  "materialWarnings": [
+    "Wet window is tighter than wall latex — 10–20 min typical",
+    "Fabric paint is permanent by design",
+    "Heat = permanent",
+    "Fingertips not brush"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is paint acrylic on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Paint fully cured, been through dryer/iron, fabric paint by design, or ghost after two cold-water rounds.",
+    "whatToTell": "\"Craft acrylic on cotton, [fresh / partial / cured / fabric paint], home-treated with cold water + Dawn + [IPA]. No heat. [Brand if known].\"",
+    "specialistType": "professional dry cleaner with amyl acetate"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Craft acrylic (Apple Barrel / FolkArt / Liquitex) or fabric paint (Tulip / Jacquard / heat-set)?",
+      "How long ago — still wet, tacky, or dry?",
+      "Been through dryer or iron?",
+      "White or dyed cotton?",
+      "Brand / product name if known?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Fabric paint is acrylic chemistry engineered to BE permanent — no home path once heat-set. Heavy-body artist acrylic (Liquitex Heavy Body, Golden) has more resin and cures tighter than thin craft paint."
   },
-  "difficulty": 6,
-  "timeEstimate": "10-45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

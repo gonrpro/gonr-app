@@ -1,86 +1,232 @@
 {
   "id": "pet-urine-mattress",
   "title": "Pet Urine on Mattress",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "mattress",
-  "sector": "bedding",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Pet urine is more concentrated than human urine — higher protein, uric acid, and pheromone content. On mattress, uric acid crystallizes as it dries and bonds tightly to fibers. These crystals reactivate with humidity, causing recurring odor. Cat urine is particularly concentrated with felinine (a sulfur-containing amino acid) that produces especially persistent odor through bacterial decomposition.",
-  "whyThisWorks": "Enzyme treatment is essential — uric acid crystals resist standard cleaning. The enzyme breaks down the protein and uric acid bonds on mattress. Cold water prevents protein from setting. For odor, the enzyme must penetrate to the base of the contamination, not just the surface. Complete saturation of the affected area is necessary for odor resolution.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "30 minutes to 24 hours enzyme dwell; low pro threshold — foam soak is often permanent",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "pet-urine",
+    "surfaceCanonical": "mattress",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "protein",
+      "uric-acid",
+      "pet",
+      "mattress",
+      "foam-soak-risk",
+      "enzyme-required",
+      "low-pro-threshold"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Pet urine is concentrated urea + uric acid + pheromones + protein. On a mattress the failure mode is severe: liquid soaks straight into the foam or batting and uric acid crystallizes at the depth it reached. Those crystals reactivate with humidity and continue producing odor for weeks. Cat urine is hardest because of felinine (cat-specific sulfur amino acid) that bacterially decomposes into mercaptans. Mattresses cannot be rinsed, extracted, or soaked — which is exactly what uric acid removal needs. That mismatch is why the pro-escalation threshold is LOW on pet-urine-mattress: home surface treatment often cannot reach the crystal depth, and saturation to reach depth risks mold and permanent mattress damage.",
+  "whyThisWorks": "Enzyme cleaner digests uric acid when it reaches the crystals. On a mattress, enzyme delivery has to balance \"reach depth\" against \"don't turn the foam into a moldy swamp.\" The honest protocol is: catch it fresh (highest win rate), use minimum effective liquid, cover to extend dwell without over-wetting, weighted-extract aggressively, fan-dry fully, and escalate fast if odor persists. Mattresses with pad saturation frequently need replacement rather than cleaning — that's not defeatism, it's chemistry.",
+  "defaultAssumption": "Cat or dog accident on a bed, a mattress stored in a garage, or a kid's mattress. Fresh + small + caught-in-the-act = reasonable home treatment. Dried / large / soaked-through / cat urine with strong odor = escalate early or consider mattress replacement. Don't spend days fighting a mattress that a pro would tell you to replace.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot Extract — Never Pour",
+      "technique": "Cold damp-cloth wick + weighted extract",
+      "equipment": "White towel, cold water, weighted extraction towel, gloves",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Gloves on. Stack paper towels on the spot, step down hard to wick urine up. Replace until towels come up dry. Then dampen a clean white towel with cold water, press on the spot, lift, rotate, repeat. Never pour liquid on a mattress — it drives the problem deeper into the foam."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Dawn on Damp Cloth",
+      "technique": "Clear surface residue before enzyme",
+      "equipment": "Dawn + cold water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn in cold water on a damp cloth. Press on the spot 5 min. Blot. Clears surface fats and salts so the enzyme can reach uric acid. No OxiClean — can set protein."
+    },
+    {
+      "step": 3,
+      "side": "wet-measured",
+      "agent": "Pet Enzyme — Measured Application",
+      "technique": "Enzyme dwell under cover — minimum liquid for depth",
+      "equipment": "Pet-specific enzyme cleaner (Nature's Miracle / Rocco & Roxie / Anti Icky Poo), damp towel, plastic wrap",
+      "dwellTime": "30–60 min fresh; 12–24 hr dried",
+      "instruction": "Apply enzyme cleaner measured to approximately the urine volume — NOT 2–3× like on carpet. Mattress can't extract the excess. Cover with a damp towel + plastic wrap taped at the edges to keep the enzyme wet and extend dwell without re-saturating. Fresh: 30–60 min. Dried / overnight: 12–24 hr.",
+      "safetyNote": "Enzymes deactivated by heat, chlorine bleach, alkali. No steam before, during, or after."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Weighted Dry Towel Extraction — Aggressive",
+      "technique": "Wick moisture back OUT of the foam",
+      "equipment": "Heavy dry towels + weight",
+      "dwellTime": "30 min × 2–3 rounds + overnight",
+      "instruction": "Uncover. Stack dry towels on the spot, weight heavily, 30 min. Swap for fresh towels, repeat 2–3× with overnight final. This is THE step that prevents the \"ring came back next day\" and mold risk. Aggressive extraction matters more than aggressive application."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Fan-Dry Fully + Smell Check",
+      "technique": "Full dry before sheets / bed use",
+      "equipment": "Fan, dehumidifier if available, UV blacklight for verify",
+      "dwellTime": "12–24 hours",
+      "instruction": "Fan the area until fully dry — usually overnight minimum, sometimes 24 hours. Damp mattress = mold. Smell check in daylight. Blacklight in a dark room. Any lingering smell or fluorescence = second enzyme round OR escalation. One home retry max — foam soak doesn't respond to more."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Gloves. Step-on paper towels to wick. Cold damp cloth extract — no pouring.",
+      "2. Dawn damp cloth 5 min, blot.",
+      "3. Pet enzyme — measured to urine volume (not 2–3×). Cover + dwell 30 min–24 hr.",
+      "4. Weighted dry towel 30 min × 2–3 rounds + overnight.",
+      "5. Fan-dry fully. Blacklight + smell check.",
+      "6. Persistent odor = pro surface extraction OR mattress replacement."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Gloves",
+      "Pet enzyme cleaner (Nature's Miracle / Rocco & Roxie / Anti Icky Poo)",
+      "Dawn / NSD",
+      "Plastic wrap + painter's tape",
+      "Heavy dry towels + weight",
+      "Fan",
+      "UV blacklight"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout — never heat a mattress with protein on it",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein",
-      "Avoid over-wetting — extract excess moisture to prevent backing/foam damage"
+      "Biohazard-adjacent — gloves + disposables",
+      "Mattress CANNOT be saturated — extracts are the limit, truck-mount is not",
+      "Low pro-escalation threshold — foam soak often beyond home chemistry",
+      "NEVER hot water / steam / heating pad — sets protein + kills future enzyme rounds",
+      "NEVER ammonia cleaners — triggers re-marking",
+      "Cat urine with persistent mercaptan smell = consider replacement"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Scope — Low Pro Threshold",
+      "instruction": "Mattresses are the hardest surface for pet urine because you can't rinse them and you can't saturate them. Fresh, small, caught-in-the-act = reasonable home try. Overnight, bigger than a hand, soaked-through, or persistent cat-urine smell = escalate early. Sometimes the right answer is mattress replacement — foam that's been peed into and dried has crystallized uric acid at depth that even a pro can't always reach. Don't spend three days fighting what a pro would tell you to replace."
+    },
+    {
+      "step": 2,
+      "agent": "Gloves and No Ammonia Rule",
+      "instruction": "Gloves on — biohazard-adjacent. Two rules: (1) NO hot water, steam, heating pad, or dryer — heat sets the protein and bakes the odor in, and (2) NO ammonia-based cleaners — they smell like urine to your pet. Skip vinegar+baking soda tricks. The unlock is a pet-specific enzyme cleaner."
+    },
+    {
+      "step": 3,
+      "agent": "Wick Urine Up — Paper Towels + Foot",
+      "instruction": "Fresh: stack a thick pile of paper towels on the spot, step on them with your shoe-weight, let gravity + pressure pull urine up. Replace until the towels come up dry. Dried / crusty: lay a COLD damp white towel on the spot for 10 min to rehydrate, then paper-towel-and-step. NEVER pour water on the mattress — it carries the problem deeper."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn on a Damp Cloth — Clear the Way",
+      "instruction": "Tablespoon of Dawn in two cups of cold water. Dampen a clean cloth, press on the spot for 5 min, blot. Clears surface residue so the enzyme can reach the uric acid. Don't use OxiClean or baking soda — alkaline products can set the protein."
+    },
+    {
+      "step": 5,
+      "agent": "Enzyme — Measured, Not Flooded",
+      "instruction": "Pet-specific enzyme cleaner (Nature's Miracle, Rocco & Roxie, Anti Icky Poo, Simple Solution). On CARPET you saturate 2–3×. On a MATTRESS you apply roughly the urine volume — no more. The mattress can't get rid of excess liquid. Apply just enough to reach the crystal depth without turning the foam into a swamp.",
+      "safetyNote": "Enzymes are killed by heat, chlorine bleach, and strong alkali. No steam before, during, or after."
+    },
+    {
+      "step": 6,
+      "agent": "Cover — Keep It Wet Without Adding Water",
+      "instruction": "Lay a damp (not dripping) white towel over the enzyme-treated area and cover with plastic wrap. Tape the edges so the enzyme stays wet. Fresh accident: 30–60 min dwell. Overnight / older: 12–24 hr. The cover is the trick that extends enzyme dwell on a mattress without re-saturating."
+    },
+    {
+      "step": 7,
+      "agent": "Weighted Towels — Multiple Rounds",
+      "instruction": "Uncover. Stack dry towels on the spot, weigh them down, 30 min. Swap for fresh dry towels, repeat 2–3 times. Finish with fresh towels overnight under weight. This is the step that prevents the smell from coming back as the mattress dries — extraction matters more on a mattress than application does."
+    },
+    {
+      "step": 8,
+      "agent": "Fan-Dry 12–24 Hours Before Sheets",
+      "instruction": "Point a fan at the spot. Plan on 12–24 hours of drying — a mattress dried too fast on the surface stays damp inside, and damp foam grows mold. Smell check in daylight with your nose in the spot. If you have a UV blacklight, check in a dark room for fluorescence."
+    },
+    {
+      "step": 9,
+      "agent": "One Retry Max — Then Escalate or Replace",
+      "instruction": "Still smells or still glows? One more full enzyme round (steps 5–7) with a 24-hour dwell. Still positive after the retry = home ceiling. Options: (a) call a pro with LOW-MOISTURE surface extraction (NOT truck-mount — mattress can't take that much water), or (b) replace the mattress. For old / cheap / cat-urine-soaked mattresses, replacement is often cheaper and cleaner than a pro call."
+    },
+    {
+      "step": 10,
+      "agent": "What to Tell the Pro",
+      "instruction": "\"Pet urine on mattress — [cat / dog], age [fresh / overnight / older], home-treated with enzyme ([brand]) × [1 / 2] rounds. No heat. No ammonia. Blacklight still positive / persistent smell / soak-through suspected. Please use LOW-MOISTURE surface extraction — do not flood the mattress.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot up as much liquid as possible with clean white cloths — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 2 cups cold water. Apply to stain and blot",
-      "3. Mix equal parts white vinegar and cold water. Apply to neutralize odor",
-      "4. Sprinkle baking soda over the area to absorb remaining moisture and odor — let sit 15-30 min",
-      "5. Blot thoroughly and air dry — no heat"
+      "1. Honest scope — low pro threshold; fresh + small only.",
+      "2. Gloves. No hot, no steam, no ammonia, no vinegar-baking soda tricks.",
+      "3. Paper towels + foot to wick. Never pour.",
+      "4. Dawn damp cloth 5 min.",
+      "5. Enzyme MEASURED to urine volume (not 2–3× like carpet).",
+      "6. Cover with damp towel + plastic wrap. 30 min fresh, 12–24 hr older.",
+      "7. Weighted dry towels × 2–3 rounds + overnight.",
+      "8. Fan-dry 12–24 hr before sheets return.",
+      "9. One retry max. Then pro low-moisture extraction OR replace."
     ],
     "products": [
+      "Disposable gloves",
+      "Pet enzyme cleaner (Nature's Miracle / Rocco & Roxie / Anti Icky Poo / Simple Solution)",
       "Dawn dish soap",
-      "white vinegar",
-      "baking soda",
-      "Enzyme cleaner (Nature's Miracle or Rocco & Roxie)",
-      "cold water",
-      "white vinegar (odor)"
+      "Plastic wrap + painter's tape",
+      "Heavy dry towels + weight",
+      "Fan",
+      "UV blacklight (optional)"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if urine soaked through into the foam, if smell/blacklight stays positive after one retry, if the mattress is old/cheap (replacement often cheaper than pro), or if the mattress shows any mold risk from prior over-wetting.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first",
-      "Do NOT use OxiClean or oxidizing agents on protein stains — they can set the stain permanently"
+      "NEVER pour liquid on a mattress",
+      "NEVER hot / steam / heating pad",
+      "NEVER ammonia cleaners",
+      "NEVER OxiClean before enzyme",
+      "Extraction matters more than application on a mattress",
+      "Low pro threshold — mattress often can't be saved from deep soak"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — mattress foam absorbs and retains moisture, leading to mold",
-      "No chlorine bleach — damages fabric cover and foam"
+      "Never saturate a mattress",
+      "Never hot water / steam / dryer heat",
+      "Never ammonia cleaners",
+      "Never chlorine bleach",
+      "Never fight pad soak for days — replace or pro"
     ],
     "fiberSensitivities": [
-      "Cannot be machine washed — spot treatment only",
-      "Interior foam retains moisture — use minimum liquid, extract thoroughly",
-      "Vacuum before and after treatment"
+      "Memory foam: minimum liquid — surface only, extract hard",
+      "Innerspring / pillow-top: batting soak risk — aggressive weighted extraction",
+      "Waterproof encasement: protects the core; target the cover surface only",
+      "Old / low-value mattress: replacement is often the honest call"
     ]
   },
+  "materialWarnings": [
+    "LOW pro-escalation threshold",
+    "Replacement is a legitimate option, not a failure",
+    "NEVER truck-mount — surface-only extraction on mattresses",
+    "Extraction > application on mattresses"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is pet urine on mattress, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional mattress cleaning service"
+    "when": "Urine soaked into foam, blacklight/smell positive after a home retry, persistent cat-urine mercaptan smell, mattress exhibited any mold from over-wetting, or mattress is old/inexpensive enough that replacement is the simpler path.",
+    "whatToTell": "\"Pet urine on mattress — [cat / dog], age [fresh / overnight / older], home-treated with enzyme ([brand]) × [1 / 2] rounds. No heat. No ammonia. [Blacklight still positive / persistent smell / soak-through suspected]. Please use LOW-MOISTURE surface extraction — do not flood the mattress.\"",
+    "specialistType": "mattress / upholstery cleaner with low-moisture surface extraction (NOT truck-mount)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Fresh, overnight, or older?",
+      "Cat or dog? (cat urine is hardest — felinine)",
+      "Soaked through into the foam or stayed on the cover?",
+      "Memory foam, innerspring, or pillow-top?",
+      "How old / valuable is the mattress? (replacement might be the right call)",
+      "Any ammonia cleaner, vinegar-baking soda, or heat already used?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Cat urine with mercaptan breakdown is the hardest variant — often requires replacement. Memory foam is especially prone to permanent contamination because the liquid soaks in and the foam can't be flushed. Recurring same-spot accidents almost always mean the mattress is already marking territory — the pet smells it even if you don't."
   },
-  "difficulty": 6,
-  "timeEstimate": "20-45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

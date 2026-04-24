@@ -1,77 +1,234 @@
 {
   "id": "mildew-carpet",
   "title": "Mildew on Carpet",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Mildew is a living fungal organism that digests organic material in carpet for nutrition. The visible discoloration (gray, black, green) comes from fungal spores and metabolic byproducts. Mildew roots (hyphae) penetrate into the fiber structure, making surface cleaning insufficient. The organism thrives in warm, humid, dark conditions and produces musty volatile organic compounds (odor).",
-  "whyThisWorks": "An oxidizer (H2O2 or oxygen bleach) kills the mildew organism and breaks down the pigmented metabolic byproducts on carpet. Surfactant removes the dead fungal material. For persistent staining, sunlight exposure provides additional UV oxidation. Preventing recurrence requires addressing the moisture source — mildew returns if conditions remain favorable.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "30 minutes surface + fan-dry; or pro remediation if beyond surface",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "mildew",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "mildew",
+      "mold",
+      "fungus",
+      "carpet",
+      "moisture-source",
+      "surface-vs-structural",
+      "health-risk"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Mildew is living fungus (mold) — microscopic organisms with hyphae (roots) that penetrate carpet fiber and pad. Visible discoloration (gray / black / green / pink) is fungal biomass plus metabolic byproducts. Musty odor is microbial volatile organic compounds (MVOCs) the fungus releases. The defining property: mildew is ALIVE, driven by moisture. Surface mildew (spores + biomass on fibers) can sometimes be killed and cleaned. STRUCTURAL mildew (hyphae have colonized the pad, subfloor, or are visible through to the back of the carpet) is a remediation problem — surface cleaning doesn't reach it, and attempting to clean it without addressing the moisture source means it returns. Health risk is real: mold exposure causes respiratory symptoms and is worse for people with asthma, immunocompromised conditions, or infants. This card is about surface mildew — it is NOT a mold remediation protocol.",
+  "whyThisWorks": "For TRUE surface-only mildew (carpet damp recently, visible biomass on top fibers, no pad saturation, no underside growth): oxidizer kills fungal cells, surfactant removes dead biomass, fan-dry prevents return. The protocol depends entirely on the mildew being surface-confined AND the moisture source being fixable. If either condition isn't met, this is a remediation job, not a cleaning job — and pretending otherwise makes the problem worse by driving it deeper and wasting money.",
+  "defaultAssumption": "Surface mildew from a minor one-time moisture event — pet accident left too long, spilled water not dried, humid basement corner. Treatable IF caught early and the moisture source is addressable. Flood contamination, long-standing leaks, visible colony through carpet backing, or any pad saturation = pro remediation, not surface cleaning.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scope Check — Surface or Structural?",
+      "technique": "Inspection + moisture-source identification",
+      "equipment": "Good light, mask (N95), gloves, moisture meter optional",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Gloves + mask. Lift the carpet corner if possible. Inspect: is biomass only on top fibers, or has it penetrated to the underside / pad / subfloor? Is the pad damp to the touch? Can you SEE through to the backing showing discoloration? Identify the moisture source — leak, humidity, ongoing pet accidents, flood. If biomass is through to the back, pad is saturated, or moisture source isn't known or isn't fixable, STOP. This is remediation, not cleaning."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Containment + Spore Removal Outdoors",
+      "technique": "Vacuum with HEPA outside or in ventilated area",
+      "equipment": "HEPA vacuum, mask, gloves, soft brush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Brush off loose fungal biomass into a garbage bag while wearing a mask. If the carpet can be moved, do this outside or in a ventilated area — disturbing mildew releases spores. Seal and discard waste."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Hydrogen Peroxide 3% — Kill the Organism",
+      "technique": "Oxidizer dab on damp cloth",
+      "equipment": "3% H₂O₂ on white cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "3% peroxide on a damp white cloth. Press on the affected area, dwell 5–10 min. Peroxide kills fungal cells and oxidizes pigmented biomass. Hidden-area color test first — peroxide can lighten dyed carpet. Do NOT pour."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "OxiClean or NSD — Remove Dead Biomass",
+      "technique": "Surfactant rinse via damp cloth",
+      "equipment": "OxiClean or Dawn / NSD + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Dilute OxiClean or Dawn in cool water on a damp cloth. Work in with a soft brush, blot. Removes dead fungal material and peroxide residue. Don't over-wet — moisture is the enemy here."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Fan-Dry Aggressively + Dehumidify",
+      "technique": "Full dry + humidity control",
+      "equipment": "Fan, dehumidifier, open windows",
+      "dwellTime": "8–24 hours",
+      "instruction": "Fan the area hard. If basement / bathroom / humid room, run a dehumidifier. Open windows if outside humidity is lower than inside. Fully dry carpet + dry room = no mildew return. Damp = guaranteed return, probably worse than before."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Sunlight If Possible + Monitor",
+      "technique": "UV assist + watch for regrowth",
+      "equipment": "Sunlight (if carpet is movable)",
+      "dwellTime": "Days to weeks",
+      "instruction": "If the carpet is a rug that can be moved, sun it outside — UV kills residual spores. Monitor the spot for 2–4 weeks. Any smell or visible return = structural mildew, not surface. Call a remediation specialist."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Brush off loose mildew spores outdoors or in ventilated area",
-      "2. Apply H2O2 6% to kill remaining organism and bleach discoloration",
-      "3. Apply NSD to remove dead fungal material",
-      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Air dry in sunlight if possible — UV provides additional antimicrobial action"
+      "1. Scope check — surface only, or structural / pad-saturated?",
+      "2. HEPA vacuum loose biomass (mask + outside / ventilated).",
+      "3. 3% H₂O₂ on damp cloth, 5–10 min. Hidden-color test first.",
+      "4. OxiClean / NSD damp cloth + soft brush.",
+      "5. Aggressive fan-dry + dehumidify + fix moisture source.",
+      "6. UV (sun) if movable rug. Monitor 2–4 weeks.",
+      "7. Return of mildew = pro remediation, not more cleaning."
     ],
     "products": [
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "HEPA vacuum",
+      "N95 mask + gloves",
+      "3% Hydrogen peroxide",
+      "OxiClean or Dawn / NSD",
+      "Fan + dehumidifier",
+      "Sealed disposal bags"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout; aggressive air-movement dry",
     "warnings": [
-      "Always test on hidden area first"
+      "This is SURFACE mildew only — NOT mold remediation",
+      "If mildew is through to carpet backing, through to pad, or through to subfloor = REMEDIATION",
+      "Respiratory PPE — spores are a health risk",
+      "Fix the moisture source — otherwise it returns",
+      "Hidden-color test peroxide on dyed carpet",
+      "Over-wetting the carpet creates more mildew"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Scope — Surface Mildew vs. Mold Problem",
+      "instruction": "This card is for SURFACE mildew — the kind you catch early: a pet accident left too long, a spilled drink that wasn't dried, a damp basement corner. If the mildew has grown through to the BACK of the carpet, if the PAD underneath is wet or stained, if you see visible colonies larger than your palm, or if the room has a persistent musty smell that isn't going away — this is NOT a carpet cleaning job. It's mold remediation. Pretending otherwise by scrubbing the surface wastes time and spreads spores. Call a licensed mold remediator, and in the meantime close the door to the affected room."
+    },
+    {
+      "step": 2,
+      "agent": "PPE First — Mask and Gloves",
+      "instruction": "Disturbing mildew releases spores into the air. Before anything else, put on an N95 mask (not a cloth mask — an actual N95 from the paint section or drugstore) and disposable gloves. People with asthma, respiratory conditions, immunocompromise, or infants in the home should not be in the room during cleaning — have someone else do it or call a pro."
+    },
+    {
+      "step": 3,
+      "agent": "Find the Moisture Source — or It Comes Back",
+      "instruction": "Mildew grows because there's moisture. If you don't fix why the carpet is wet, it WILL come back no matter how well you clean. Leak from above? Bathroom overflow? Pet accidents in the same spot? Humid basement without dehumidification? Window condensation? Figure it out before you clean. If you can't figure it out or can't fix it, cleaning is a waste."
+    },
+    {
+      "step": 4,
+      "agent": "Vacuum Loose Spores Outside (Or HEPA)",
+      "instruction": "If the carpet is a rug you can move, take it outside and brush off loose mildew biomass into a sealed garbage bag. If it's wall-to-wall, use a HEPA vacuum (a normal vacuum just recirculates spores through the room). Mask stays on the whole time."
+    },
+    {
+      "step": 5,
+      "agent": "3% Hydrogen Peroxide on a Damp Cloth",
+      "instruction": "Dab 3% drugstore hydrogen peroxide on a damp white cloth. Press it onto the affected area for 5–10 minutes. Peroxide kills fungal cells and lightens the pigment in the biomass. Test a hidden area first if the carpet is dyed — peroxide can lighten color. Do NOT pour peroxide on the carpet — damp cloth only."
+    },
+    {
+      "step": 6,
+      "agent": "OxiClean or Dawn — Remove Dead Biomass",
+      "instruction": "Mix a scoop of OxiClean in cool water, or use Dawn in cool water. Dampen a cloth, work into the spot with a soft brush, blot clean. This lifts the dead fungal material out of the carpet. Keep the carpet as DRY as possible — moisture is literally what mildew eats."
+    },
+    {
+      "step": 7,
+      "agent": "Dry the Carpet and the ROOM — Aggressively",
+      "instruction": "Fans on the spot for 8–24 hours. If the room is basement / bathroom / humid, run a dehumidifier until the indoor humidity is below 50%. Open windows if outdoor air is drier. The carpet AND the room have to be fully dry. If you leave moisture in the carpet, the mildew will come right back — usually worse. This step matters more than the cleaning."
+    },
+    {
+      "step": 8,
+      "agent": "Sun + Watch for 2–4 Weeks",
+      "instruction": "If the rug is movable, dry it in direct sunlight — UV kills residual spores. Keep an eye on the spot for the next 2–4 weeks. Any returning smell or visible color = the mildew was never just on the surface. Stop cleaning and call a pro."
+    },
+    {
+      "step": 9,
+      "agent": "Escalate — When Home Cleaning Isn't the Right Tool",
+      "instruction": "Call a mold remediation specialist (not a carpet cleaner) if: mildew returns after treatment, smell persists after drying, the pad is wet, you see mildew through the carpet backing, anyone in the home has respiratory symptoms, or the affected area is larger than a few square feet. Tell them: \"Visible mildew on carpet, [area], moisture source [identified and fixed / unfixable / unknown], home-treated with peroxide + OxiClean + fan-dry. [Returned / persistent odor / respiratory symptoms].\" Licensed remediators have the equipment and training for this; a carpet cleaner with a wand doesn't."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Brush off loose mildew spores outdoors — wear a mask",
-      "2. Mix 1 scoop OxiClean per gallon of warm water. Apply or soak",
-      "3. Scrub gently with soft brush. Rinse thoroughly",
-      "4. Air dry in direct sunlight if possible — UV kills remaining spores",
-      "5. Repeat if stain persists"
+      "1. Scope check: surface only? Or structural / pad-saturated = pro remediation.",
+      "2. N95 mask + gloves before ANY disturbance.",
+      "3. Find + fix the moisture source — mandatory.",
+      "4. Brush loose spores outdoors or HEPA vacuum.",
+      "5. 3% peroxide on damp cloth, 5–10 min. Hidden-area color test.",
+      "6. OxiClean or Dawn damp cloth + soft brush, blot.",
+      "7. Aggressive fan-dry + dehumidify to <50% humidity.",
+      "8. Sun (if movable) + monitor 2–4 weeks.",
+      "9. Return / persistent smell / respiratory symptoms = licensed remediator."
     ],
     "products": [
-      "OxiClean Versatile Stain Remover"
+      "N95 mask",
+      "Disposable gloves",
+      "HEPA vacuum (or outdoor brush-off)",
+      "3% hydrogen peroxide",
+      "OxiClean or Dawn dish soap",
+      "Fan + dehumidifier",
+      "Sealed disposal bags"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop and call a licensed mold remediator if: mildew is through to the backing / pad / subfloor, area is larger than a few square feet, moisture source can't be identified or fixed, anyone in the home has respiratory symptoms, or the mildew returns after a full cycle.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "This is SURFACE mildew only — NOT a mold remediation protocol",
+      "PPE — spores are a respiratory health risk",
+      "Fix moisture source FIRST or cleaning is pointless",
+      "Hidden-area test peroxide on dyed carpet",
+      "Over-wetting feeds mildew",
+      "Asthma / immunocompromised / infants — don't DIY, call a pro"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never bleach mixed with peroxide — toxic gas",
+      "Never disturb mildew without N95",
+      "Never skip the moisture-source fix",
+      "Never scrub-and-saturate — over-wetting feeds regrowth",
+      "Never DIY if anyone in the home has respiratory vulnerability"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Synthetic carpet (nylon/polyester/olefin): tolerates peroxide + OxiClean",
+      "Wool carpet: pH-sensitive — pro only for mildew",
+      "Dyed carpet: peroxide hidden-area color test mandatory",
+      "Jute backing: over-wetting causes browning + structural damage"
     ]
   },
+  "materialWarnings": [
+    "NOT a mold remediation protocol — surface only",
+    "Respiratory health risk — PPE required",
+    "Fix moisture source or it returns",
+    "Licensed remediator is the pro lane, not a carpet cleaner"
+  ],
   "escalation": {
-    "when": "If mildew stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is mildew on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Mildew is through to the carpet backing, the pad is saturated, the affected area is larger than a few square feet, mildew returns after a full home cycle, moisture source can't be found or fixed, or anyone in the home has respiratory symptoms.",
+    "whatToTell": "\"Visible mildew on carpet, area [size], moisture source [identified + fixed / unfixable / unknown], home-treated with 3% peroxide + [OxiClean / Dawn] + fan-dry. [Returned / persistent smell / respiratory symptoms in household / visible on backing / pad saturation suspected].\"",
+    "specialistType": "licensed mold remediation specialist (NOT a carpet cleaner) — verify IICRC S520 certification"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Is it only on the top surface, or through to the backing / pad?",
+      "What's the moisture source — leak, humidity, pet, flood, unknown?",
+      "How big is the affected area?",
+      "Can the moisture source be fixed?",
+      "Any respiratory symptoms in the household?",
+      "Is this a movable rug or wall-to-wall?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The surface-vs-structural distinction is THE whole card. Surface mildew with a fixable moisture source = DIY works. Structural mildew (pad, subfloor, backing) or unfixable moisture = licensed remediator, not cleaning. Most \"it came back worse\" mildew stories are actually structural mildew that was surface-cleaned."
   },
-  "difficulty": 5,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

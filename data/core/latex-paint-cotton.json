@@ -1,12 +1,15 @@
 {
   "id": "latex-paint-cotton",
-  "version": "6.0",
-  "authored": "2026-04-14",
   "title": "Latex Paint on Cotton",
   "stainType": "resin",
   "stainFamily": "resin",
   "surface": "cotton",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15 minutes while wet; pro-only once cured",
+  "lastValidated": "2026-04-24",
   "meta": {
     "stainCanonical": "latex-paint",
     "surfaceCanonical": "cotton",
@@ -17,164 +20,197 @@
       "resin",
       "paint",
       "time-critical",
-      "dries-insoluble"
+      "dries-insoluble",
+      "wet-window"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Latex paint is a water-based acrylic polymer emulsion carrying pigment. While wet, the polymer is suspended in water and fully water-soluble — a quick cold-water soak and detergent wash lifts it cleanly. Once the water evaporates (typically 15–30 minutes at room temperature), the acrylic polymer cross-links into a flexible, water-resistant film and mechanically locks into cotton fibers. The wet window is the entire fight: treat while wet and it's easy, treat after drying and removal becomes professional-grade work with solvents.",
-  "whyThisWorks": "Cotton is the most chemically durable common fiber, so the protocol is aggressive on the paint and safe on the fiber. Step 1 is time-critical: scrape excess while still wet, then soak the stained area in cold water to re-suspend the acrylic emulsion before it cures. Cold water only — heat accelerates polymer cross-linking and sets the paint. A mild detergent (Dawn or NSD) breaks surface tension and lifts pigment. For partially-dried paint, isopropyl alcohol softens the film enough that a second wet soak + rinse cycle can finish the job. Never put a paint-stained garment in the dryer — heat is permanent.",
+  "stainChemistry": "Latex paint is a water-based acrylic polymer emulsion with pigment. While wet, the polymer particles are suspended in water and fully water-soluble — cold water + detergent rinses it out cleanly. Once water evaporates (typically 15–30 minutes at room temperature), the particles coalesce and cross-link into a flexible, water-resistant plastic film that mechanically locks into cotton fibers. That phase change is irreversible at home temperatures. The entire fight is the wet window: treat while wet and it's easy; treat after curing and removal becomes a professional-grade solvent job. Heat accelerates curing — hot water, dryer, or iron permanently sets the paint.",
+  "whyThisWorks": "Cold water + Dawn keeps the acrylic emulsion re-suspended so it can rinse out before the polymer has a chance to coalesce. Scraping the bulk first means chemistry reaches the fiber instead of the puddle. For paint that started curing on the edges, isopropyl alcohol softens partially-set acrylic enough for another cold-water + Dawn cycle to finish. The limitation is brutal and simple: fully cured latex is a plastic film, and home chemistry can't un-polymerize it.",
+  "defaultAssumption": "DIY painting context — wall paint, trim, furniture refresh. Fresh splatter caught in the first 20 minutes = trivial. Dried paint discovered hours later = hard to impossible at home. The caught-fresh vs discovered-dry split is the whole card.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cold water soak",
-      "technique": "Flush and soak",
-      "equipment": "Sink, cold tap water",
-      "dwellTime": "5-10 minutes",
-      "instruction": "Flip the garment inside out and flush the back of the stain with cold running water to push paint out the way it came in. Then soak the stained area in cold water for 5–10 minutes. Cold only — heat sets latex paint permanently. The goal is to keep the paint wet so the acrylic emulsion cannot cure.",
-      "suggestedProducts": "Cold water"
+      "side": "dry",
+      "agent": "Scrape Bulk Paint Off",
+      "technique": "Dull edge, outward from center",
+      "equipment": "Plastic card or dull blade",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Lift pooled or lumpy paint with the edge of a plastic card, scraping outward from the center. Don't wipe or rub — rubbing drives pigment into the weave. Work fast — the clock is running."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Dawn dish soap or NSD",
-      "technique": "Work in detergent",
-      "equipment": "Soft fingertips or soft brush",
-      "dwellTime": "5-10 minutes",
-      "instruction": "Work a few drops of Dawn dish soap or NSD into the wet stain with your fingertips. Let it sit for 5–10 minutes while still wet. The surfactant breaks surface tension on the acrylic droplets and lifts pigment into the detergent phase.",
-      "suggestedProducts": "Dawn dish soap, NSD"
+      "agent": "Cold Water Back-Flush + Soak",
+      "technique": "Flush from reverse + soak",
+      "equipment": "Cold tap water, sink",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Flip the cotton inside out. Run cold water through the BACK of the stain to push paint out the way it came in. Then soak the stained area in cold water 5–10 min. Cold ONLY — heat accelerates cross-linking and sets the paint."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Cold water rinse",
-      "technique": "Flush clean",
-      "equipment": "Sink",
-      "dwellTime": "1-2 minutes",
-      "instruction": "Rinse thoroughly with cold water until the runoff is clear. If any paint is still visible, repeat steps 3–4 while the cotton is still wet. Do not let the fabric dry between cycles — once it dries, the remaining paint locks in.",
-      "suggestedProducts": "Cold water"
+      "agent": "Dawn + Fingertips While Wet",
+      "technique": "Surfactant emulsify — no brush",
+      "equipment": "Dawn dish soap or NSD",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Keep the area wet. Work a few drops of Dawn into the stain with fingertips (bristles drive pigment in). Dwell 5–10 min while still wet. Surfactant lifts pigment and keeps the acrylic re-suspended."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Isopropyl alcohol (for partially dried paint)",
-      "technique": "Solvent spot",
-      "equipment": "Cotton swab, clean white cloth",
-      "dwellTime": "2-5 minutes",
-      "instruction": "If the paint began to dry before you started, dab isopropyl alcohol onto the stain with a cotton swab. The alcohol softens the acrylic film. Blot — do not rub — then return to step 3 (detergent) and step 4 (rinse). Test on a hidden seam first if the cotton is dyed.",
-      "suggestedProducts": "70% or 91% isopropyl alcohol"
-    }
-  ],
-  "homeSolutions": [
-    {
-      "step": 1,
-      "agent": "Speed is the whole game — act while wet",
-      "instruction": "Latex paint is a water-based acrylic emulsion. While it's still wet, it rinses out of cotton with soap and water. Once it dries (usually 15–30 minutes at room temperature), the polymer cross-links into a flexible plastic film that bonds into the weave — and at that point removal becomes a pro-solvent job. The entire fight is the wet window: if you caught it in the first 20 minutes, this is easy. If it's already dry, skip to step 7."
-    },
-    {
-      "step": 2,
-      "agent": "Scrape excess paint — before anything else",
-      "instruction": "Lift off any pooled or lumpy paint with the edge of a plastic card or dull knife, scraping away from the center of the stain. You're removing the bulk deposit so chemistry in step 4 can reach the fiber. Do NOT wipe or rub — rubbing wet paint drives pigment deeper into the weave. Work fast and don't stop to inspect — the clock is running."
-    },
-    {
-      "step": 3,
-      "agent": "Cold water back-flush + soak",
-      "instruction": "Turn the garment inside out. Run cold tap water through the BACK of the stain for 30–60 seconds. Then plug the sink, fill with cold water, and soak the stained area for 5–10 minutes. Cold only. HOT water accelerates polymer cross-linking and sets the paint. The goal is keeping the acrylic wet so it can't cure."
-    },
-    {
-      "step": 4,
-      "agent": "Dawn dish soap — work into the wet stain",
-      "instruction": "Keep the area wet. Work a few drops of clear Dawn dish soap directly into the stain with your fingertips (no soft toothbrush — bristles drive pigment in). Let it sit 5–10 minutes while still wet. The surfactant lifts pigment from the weave and suspends the acrylic back into the liquid phase so it can rinse out."
+      "agent": "Cold Rinse + Repeat — Never Dry Between Cycles",
+      "technique": "Rinse until runoff is clear",
+      "equipment": "Cold water",
+      "dwellTime": "1–2 minutes per pass",
+      "instruction": "Rinse with cold running water from the back until runoff is clear. Paint still visible? Repeat steps 3–4 while still wet. Never let the fabric dry between cycles — whatever is in the weave when it dries is locked in."
     },
     {
       "step": 5,
-      "agent": "Cold rinse — repeat until runoff is clear",
-      "instruction": "Rinse with cold running water from the back until the water runs clear. If you still see paint, repeat steps 4–5 while the cotton is still wet. DO NOT let the fabric dry between cycles — whatever is left when it dries is locked in. Work continuously until the stain is gone or you can't see more coming out."
+      "side": "wet-minimal",
+      "agent": "Isopropyl Alcohol for Partially Cured Paint",
+      "technique": "Solvent spot on damp cloth",
+      "equipment": "91% isopropyl alcohol on white cloth",
+      "dwellTime": "2–5 minutes",
+      "instruction": "If paint started curing before treatment: dab 91% IPA on a white cloth, press on the stain to soften the partial film, blot (don't rub), return to steps 3–4. Test on a hidden seam first if the cotton is dyed or printed.",
+      "safetyNote": "Never IPA on silk, wool, rayon, acetate. Cotton tolerates it. Keep away from open flame."
     },
     {
       "step": 6,
-      "agent": "Isopropyl alcohol for partially-dried paint (if needed)",
-      "instruction": "If the paint had started to dry before you got to it, dab 91% isopropyl alcohol on a clean white cloth and press onto the stain. The alcohol softens the partially-cured acrylic film enough for another round of steps 4–5 to finish. Blot — don't rub. Return to Dawn + cold rinse. Test alcohol on a hidden seam first if the cotton is colored or printed.",
-      "safetyNote": "Never use alcohol on silk, wool, rayon, or acetate. Cotton tolerates it. Keep away from open flame — alcohol is flammable."
+      "side": "dry",
+      "agent": "Air-Dry Flat + Inspect",
+      "technique": "Daylight inspection before any heat",
+      "equipment": "Flat drying surface",
+      "dwellTime": "2–4 hours",
+      "instruction": "Lay flat to air-dry. Inspect in daylight. ANY remaining paint — even a faint ghost — locks in permanently under dryer or iron heat. If a ghost remains while the cotton is still slightly damp, one more round of steps 3–4 can sometimes finish the job."
+    }
+  ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Scrape bulk paint with dull edge.",
+      "2. Cold back-flush + soak 5–10 min.",
+      "3. Dawn / NSD with fingertips, 5–10 min dwell while wet.",
+      "4. Cold rinse, repeat until runoff clear. Never dry between cycles.",
+      "5. IPA on damp cloth for partially-cured edges.",
+      "6. Air-dry flat. Cured paint = amyl acetate (pro) or escalate."
+    ],
+    "products": [
+      "Plastic scraper",
+      "Dawn / NSD",
+      "91% Isopropyl alcohol",
+      "Amyl acetate (pro, for cured paint)"
+    ],
+    "temperature": "cold throughout — heat sets latex paint permanently",
+    "warnings": [
+      "WET WINDOW — 15–30 min typical; treat while wet",
+      "NEVER hot water — cures polymer",
+      "NEVER dryer / iron — permanent",
+      "NEVER rub — drives pigment into weave",
+      "Fully cured latex = pro amyl acetate job"
+    ]
+  },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Speed Is the Whole Game",
+      "instruction": "Latex paint is water-based. While it's still wet, it rinses out of cotton with cold water and dish soap. Once it dries (usually 15–30 minutes at room temperature), it becomes a flexible plastic film that bonds into the weave — and at that point it's a pro-solvent job. The entire fight is the wet window. Caught in the first 20 minutes = easy. Already dry = skip to step 7 and set expectations."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Excess Paint FIRST",
+      "instruction": "Lift any pooled or lumpy paint with the edge of a plastic card or dull knife, scraping outward from the center. You're removing the bulk so chemistry can reach the fiber. Do NOT wipe or rub — that drives pigment into the weave. Work fast."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Back-Flush + Soak",
+      "instruction": "Turn the garment inside out. Run COLD water through the BACK of the stain for 30–60 seconds. Then plug the sink, fill with cold water, soak the stained area 5–10 min. Cold ONLY. Hot water cures the polymer and sets the paint."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Fingertips While Wet",
+      "instruction": "Keep the area wet. Work a few drops of clear Dawn directly into the stain with your fingertips — not a brush. Bristles push pigment deeper. Let it sit 5–10 minutes while still wet. The surfactant lifts pigment and keeps the acrylic re-suspended so it rinses out."
+    },
+    {
+      "step": 5,
+      "agent": "Cold Rinse — Until Water Runs Clear",
+      "instruction": "Rinse from the back with cold water until runoff is clear. Still see paint? Repeat steps 4–5 WHILE STILL WET. Do NOT let the fabric dry between cycles — whatever is in the weave when it dries is locked in."
+    },
+    {
+      "step": 6,
+      "agent": "91% Isopropyl Alcohol for Partially-Cured Paint",
+      "instruction": "If paint started to dry before you got to it, dab 91% isopropyl alcohol on a white cloth and press on the stain. The alcohol softens the partially-cured acrylic so another round of cold water + Dawn can finish. Blot, don't rub. Test on a hidden seam first if the cotton is colored or printed.",
+      "safetyNote": "Never use alcohol on silk, wool, rayon, or acetate. Cotton tolerates it. Keep away from open flame."
     },
     {
       "step": 7,
-      "agent": "Air dry flat — absolutely no dryer until stain is fully gone",
-      "instruction": "Once the stain looks clear, lay the garment flat to air-dry and inspect in daylight. ANY remaining paint, even a faint ghost, will lock in permanently under dryer heat. Do not tumble-dry, do not iron, do not use a hair dryer until the cotton is visibly clean in good light. If a ghost remains, one more round of steps 4–5 can sometimes finish the job while still damp."
+      "agent": "Air-Dry Flat — No Dryer Until Clean",
+      "instruction": "Once the stain looks clear, lay flat to air-dry and inspect in daylight. ANY remaining paint — even a faint ghost — locks in permanently under dryer, iron, or hair-dryer heat. If a ghost remains while the cotton is still damp, one more round of Dawn + cold rinse can sometimes finish."
     },
     {
       "step": 8,
-      "agent": "Escalate — cured latex is a pro-solvent job",
-      "instruction": "If the paint fully cured before you started (set for hours or overnight, been through heat) or survives the full wet-window protocol, it's cured acrylic polymer now — a flexible plastic film. Tell the pro: \"Latex paint on cotton, [fresh/partial/fully cured]. Treated at home with cold water + Dawn + [alcohol]. No heat applied.\" Bring the paint can or a photo of the label if you can — the acrylic chemistry varies by brand/sheen and the pro picks solvent (amyl acetate vs others) based on which resin."
+      "agent": "Escalate — Cured Paint Is a Pro Job",
+      "instruction": "If the paint fully cured (set for hours, overnight, or went through heat) or survives the full wet-window protocol, it's cured acrylic polymer — a plastic film. Tell the pro: \"Latex paint on cotton, [fresh / partial / fully cured]. Treated at home with cold water + Dawn + [IPA]. No heat applied.\" Bring the paint can or a photo of the label — acrylic chemistry varies by brand/sheen, and the pro picks solvent (usually amyl acetate) based on which resin."
     }
   ],
-  "materialWarnings": [
-    "NEVER use hot water — heat cures latex paint permanently.",
-    "NEVER put the garment in the dryer until the stain is gone.",
-    "NEVER rub — rubbing drives paint into the weave.",
-    "AVOID acetone on cotton — it's usually unnecessary here and can damage elastane blends."
-  ],
-  "escalation": "If the paint has fully cured into the cotton fibers, take the garment to a professional cleaner who can spot with amyl acetate or a dry-side resin solvent. Bring the paint can or a description of the paint (brand, sheen, age) — the chemistry matters for chosen solvent.",
-  "products": {
-    "household": [
-      {
-        "name": "Dawn Dish Soap",
-        "brand": "Dawn",
-        "icon": "🧴",
-        "amazonSearchQuery": "Dawn ultra dish soap",
-        "affiliateTag": "gonr08-20",
-        "note": "Surfactant lifts pigment from the cotton weave while the acrylic is still wet."
-      },
-      {
-        "name": "Isopropyl Alcohol 91%",
-        "brand": "Generic",
-        "icon": "💧",
-        "amazonSearchQuery": "isopropyl alcohol 91 percent",
-        "affiliateTag": "gonr08-20",
-        "note": "Softens partially-dried acrylic film so the next wet cycle can finish the job."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. Speed — 15–30 min wet window decides everything.",
+      "2. Scrape bulk with plastic card.",
+      "3. Cold back-flush + soak 5–10 min.",
+      "4. Dawn + fingertips (no brush) while wet, 5–10 min.",
+      "5. Cold rinse, repeat while still wet. Never dry between cycles.",
+      "6. 91% IPA for partially-cured edges. Test hidden seam first.",
+      "7. Air-dry flat. Inspect before any heat.",
+      "8. Cured paint = pro dry cleaner with amyl acetate."
     ],
-    "professional": [
-      {
-        "name": "Amyl Acetate",
-        "brand": "Industry Standard",
-        "icon": "🧪",
-        "amazonSearchQuery": "amyl acetate dry cleaning solvent",
-        "affiliateTag": "gonr08-20",
-        "note": "Dry-side solvent for cured acrylic resin on textile."
-      },
-      {
-        "name": "NSD (Neutral Synthetic Detergent)",
-        "brand": "NSD",
-        "icon": "🧼",
-        "amazonSearchQuery": "NSD neutral synthetic detergent",
-        "affiliateTag": "gonr08-20",
-        "note": "Professional-grade wet spotter for lifting water-based paint."
-      }
+    "products": [
+      "Plastic card or dull knife",
+      "Dawn dish soap",
+      "91% Isopropyl alcohol"
+    ],
+    "whenToStop": "Stop if paint has fully dried / cured, if it has been through a dryer or iron, or if a ghost remains after two full wet-window cycles.",
+    "warnings": [
+      "NEVER hot water — cures the polymer",
+      "NEVER dryer / iron until stain is fully gone",
+      "NEVER rub — drives paint deeper into weave",
+      "NEVER brush — fingertips lift, bristles drive in",
+      "Fully cured latex = pro-only"
     ]
   },
-  "customerExplanation": "Latex paint is water-based, so while it's still wet it rinses out of cotton with cold water and dish soap. The whole trick is speed — keep the fabric wet and soak it before the paint dries. Once it dries, the acrylic cross-links into a plastic film and a professional solvent is usually the only option.",
-  "commonMistakes": [
-    "Letting the stain dry before treating — cured latex paint is a plastic film.",
-    "Using hot water — heat locks in the polymer.",
-    "Tossing the garment in the dryer — same heat problem, but worse.",
-    "Rubbing instead of soaking — spreads pigment and drives it into the weave."
+  "safetyMatrix": {
+    "neverDo": [
+      "Never hot water, dryer, iron — cures the polymer",
+      "Never rub or brush — drives pigment into weave",
+      "Never dry between cycles while paint is still present",
+      "Never IPA on silk / wool / rayon / acetate"
+    ],
+    "fiberSensitivities": [
+      "Cotton tolerates Dawn, cold water, IPA, extended soak",
+      "Dyed cotton: IPA hidden-seam test",
+      "Cotton-synthetic blends (elastane): avoid acetone, IPA usually safe"
+    ]
+  },
+  "materialWarnings": [
+    "Wet window is 15–30 min — after that, pro job",
+    "Heat is the invariant — cures the polymer",
+    "Dawn with fingertips, not a brush"
   ],
-  "scienceNote": "Latex paint is an acrylic polymer emulsion. While suspended in water, the polymer particles are discrete and water-soluble. Drying evaporates the water carrier and triggers coalescence — particles fuse into a continuous cross-linked film. This phase change is irreversible at room temperature and is why the wet window matters so much.",
-  "callPro": "Call a professional cleaner if the paint has fully dried and home treatment isn't budging it. Bring the paint can or a photo of the label so the cleaner can pick the right solvent.",
-  "components": [
-    "latex-paint-removal",
-    "cotton-care"
-  ],
-  "difficulty": 4,
-  "difficulty_factors": [
-    "time-critical wet window",
-    "chemistry changes irreversibly on drying",
-    "heat sets the stain"
-  ],
-  "solventNote": "Amyl acetate and similar ester-class dry-side solvents are the professional go-to for cured acrylic resin. Home use is not recommended — ventilation and exposure matter.",
-  "aftercare": "Before the paint dries, scrape excess wet paint off the cotton with a dull edge. Work from the outside of the stain inward to avoid spreading. Do not rub — rubbing drives paint deeper into the weave. Air dry flat and inspect. Never put paint-stained cotton in the dryer until the stain is fully gone — heat cures any remaining acrylic polymer permanently. If a ghost remains after drying, the paint is cured and a professional with solvent spotting is the next step.",
+  "escalation": {
+    "when": "Paint fully cured, been through dryer/iron heat, or ghost remains after two full wet-window cycles.",
+    "whatToTell": "\"Latex paint on cotton, [fresh / partial / cured], home-treated with cold water + Dawn + [IPA]. No heat applied. [Ghost remains / full cure]. Bringing paint can / brand info if available.\"",
+    "specialistType": "professional dry cleaner with amyl acetate or dry-side resin solvent"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How long ago — is the paint still wet, tacky, or fully dry?",
+      "Has it been through a dryer, iron, or heated appliance?",
+      "Flat, eggshell, semi-gloss, or gloss? (higher sheen = more resin = harder)",
+      "Brand of paint if known — chemistry varies",
+      "White or colored cotton? Dyed cotton needs IPA hidden-seam test"
+    ],
+    "modifierNotes": "The wet-window is the only leverage point. Higher-sheen paints have more acrylic resin and cure tighter. Pro option for cured paint is amyl acetate — bring the paint can for chemistry reference."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

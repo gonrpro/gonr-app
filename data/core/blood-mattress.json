@@ -1,83 +1,206 @@
 {
   "id": "blood-mattress",
   "title": "Blood on Mattress",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "mattress",
-  "sector": "home",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Protein. Blood is primarily hemoglobin protein (oxygen-carrying protein in red blood cells) plus plasma (serum proteins, water, salts). Hemoglobin contains iron (heme group), which gives blood its red color. Fresh blood is liquid and water-soluble; dried blood is a protein network that has cross-linked through oxidation. Protein stains bond to fibers via peptide-to-fiber hydrogen bonds and hydrophobic interactions. Heat denatures the protein, cross-linking it to the substrate and making removal extremely difficult. Treatment: cold water flush to prevent heat-setting, followed by alkaline Protein digestion to hydrolyze peptide bonds.",
-  "whyThisWorks": "Blood contains proteins that bond tightly to surfaces, and heat cooks them in permanently. Cold water is critical because heat permanently sets the protein. The cleaning agents need enough time to reach the depth the stain reached.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "20 minutes to overnight dry; escalate early on soak-through",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "blood",
+    "surfaceCanonical": "mattress",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "protein",
+      "hemoglobin",
+      "mattress",
+      "biohazard-adjacent",
+      "soak-risk",
+      "cold-water-critical"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Blood is hemoglobin protein (oxygen-carrying, iron-containing) + plasma proteins + salts. Fresh blood is liquid and water-soluble. Once it dries, the proteins cross-link through oxidation and bond mechanically into fibers — removal gets exponentially harder. HEAT is the invariant: hot water denatures the protein and cross-links it to the substrate permanently (same chemistry as cooking an egg white). On a mattress, blood's special failure mode is batting / foam soak-through: liquid carries the protein deeper than surface chemistry can reach. Mattresses cannot be rinsed or extracted the way cotton can, so the window for clean home treatment is narrow.",
+  "whyThisWorks": "Cold water dilutes fresh blood and keeps the protein soluble. Hydrogen peroxide is the household workhorse on blood — it oxidizes hemoglobin into colorless compounds. A small volume of peroxide bubbles visibly on blood; that's the reaction doing its job. For mattresses, the discipline is minimum liquid + weighted extraction + fan-dry — never saturate, never steam, never heat. The limitation: if blood has soaked into the batting/foam, home chemistry only clears the surface.",
+  "defaultAssumption": "Period / nosebleed / small cut on a mattress is very common. Fresh + small = high-confidence DIY. Dried or large = lower confidence. Soak-through = pro extraction with surface-only approach; be explicit with the cleaner that the mattress CANNOT be over-wetted.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Cold Blot — Extract Before Chemistry",
+      "technique": "Wick blood UP with cold water and pressure",
+      "equipment": "White cotton towel, cold water, gloves",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Gloves on. Dampen a clean white towel with COLD water and press firmly on the spot. Lift, rotate to a clean section, press again. Repeat until the towel stops picking up red. Never pour water on a mattress. Never scrub — scrubbing drives blood deeper into the batting."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Target oxidizer on surface",
+      "equipment": "3% H₂O₂, white cloth, cotton swab for small spots",
+      "dwellTime": "2–5 minutes",
+      "instruction": "Dab 3% drugstore hydrogen peroxide directly on the stain with a cotton swab (small spots) or a damp cloth (larger). Watch it bubble — that's the hemoglobin reaction. Dwell 2–5 min. Blot. Repeat up to 3 times. Cold only, never warm. Test on a hidden seam first if the mattress cover is dyed."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Dawn on a Damp Cloth",
+      "technique": "Surfactant emulsify + lift residue",
+      "equipment": "Dawn dish soap + cold water on damp cloth",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Dilute Dawn in cold water. Dampen a white cloth, press on the spot to lift residual protein and peroxide. Flip cloth, repeat. Never pour."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Weighted Dry Towel Extraction",
+      "technique": "Pull moisture out of batting",
+      "equipment": "Heavy dry white towel + weight",
+      "dwellTime": "30 minutes + overnight option",
+      "instruction": "Stack dry white towels on the area, weight them down. 30 min minimum. Replace towels, repeat. Overnight with fresh towels prevents the blood from wicking back up as the mattress dries."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Fan-Dry + Inspect",
+      "technique": "Full dry before use",
+      "equipment": "Fan, dehumidifier if available",
+      "dwellTime": "6–24 hours",
+      "instruction": "Fan the area until fully dry before putting sheets back on. Damp mattress = mold. Inspect in daylight. Shadow remaining = soak-through; escalate."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein to the stain and tamp gently with a spotting brush. This digestant breaks down blood proteins. Work from the edge toward the center. Use reduced dwell time (3 minutes) on wool or silk.",
-      "2. Apply NSD and work gently. This NSD removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray.",
-      "2.5. For oxidized/aged stains or tannin-like discoloration (e.g., red wine), apply hydrogen peroxide 3% to oxidize remaining pigment. Dwell 3–5 minutes. Note: test on hidden area first.",
-      "3. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue and restore the fabric's natural state. Blot dry with clean absorbent cloth."
+      "1. Gloves. Cold damp-cloth blot to extract — never pour.",
+      "2. 3% H₂O₂ dab (hemoglobin oxidation). Up to 3 passes.",
+      "3. Dawn / NSD on damp cloth to lift residue.",
+      "4. Weighted dry towel 30 min + overnight.",
+      "5. Fan-dry fully. Soak-through = pro surface-only extraction."
     ],
     "products": [
-      "Protein",
-      "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Gloves",
+      "Hydrogen Peroxide 3%",
+      "Dawn dish soap / NSD",
+      "White cotton towels + weight",
+      "Fan"
     ],
-    "temperature": "cold — hot water immediately sets hemoglobin protein through irreversible denaturation",
+    "temperature": "cold throughout — no heat, ever",
     "warnings": [
-      "Using hot water immediately — sets hemoglobin protein permanently through irreversible denaturation",
-      "Soaking or saturating the mattress — mattress foam cannot dry completely, leading to mold and structural damage",
-      "Using only soap without enzymes — soap does not break protein bonds",
-      "Scrubbing instead of blotting — spreads the stain and drives liquid deeper into batting"
+      "Biohazard — gloves + contain disposables",
+      "NEVER hot water — sets hemoglobin permanently",
+      "NEVER pour or saturate — mattress foam mold risk",
+      "NEVER steam-clean blood — steam sets protein",
+      "Escalate early on soak-through — home ceiling is surface-only"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Scope First",
+      "instruction": "Fresh, small blood spot on the mattress cover = very winnable at home. Dried blood, bigger than a hand, or blood that clearly soaked through into the mattress = escalate early. Home chemistry reaches the surface; mattresses can't be rinsed, and you can't extract batting without pro equipment. Speed matters most — every minute of drying makes this harder."
+    },
+    {
+      "step": 2,
+      "agent": "Gloves — Biohazard-Adjacent",
+      "instruction": "Put on disposable gloves before you touch blood that isn't your own, and even for your own if the spot is dried. Blood is biohazard-adjacent — treat the towels and gloves as disposables when you're done."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Damp Cloth — Never Pour",
+      "instruction": "Dampen a clean white towel with COLD water — do NOT pour water on the mattress. Press firmly on the spot, lift, rotate to a clean section, press again. Keep transferring blood into the towel until it stops coming up red. Cold only. HOT water will set the blood permanently. Scrubbing drives it deeper into the batting — press and lift, don't rub."
+    },
+    {
+      "step": 4,
+      "agent": "Hydrogen Peroxide 3% — Drugstore Kind",
+      "instruction": "Dab 3% drugstore hydrogen peroxide (the $2 brown bottle) directly on the blood with a cotton swab for small spots or a white cloth for larger. You'll see it bubble or foam — that's the peroxide reacting with the iron in hemoglobin and breaking it down. Let it sit 2–5 minutes. Blot. Repeat up to 3 times. Skip on a dyed or printed mattress cover without testing a hidden seam first — peroxide can lighten color."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn on a Damp Cloth",
+      "instruction": "Mix a small squirt of Dawn in cold water. Dampen a white cloth, press on the spot to lift any remaining residue and the spent peroxide. Flip the cloth as it picks up color. No pouring — everything comes in on a cloth and leaves on a cloth."
+    },
+    {
+      "step": 6,
+      "agent": "Weighted Towels Overnight",
+      "instruction": "Stack dry white towels on the spot. Put a heavy book on top. Leave 30 minutes, swap for fresh towels, repeat. For best results, do this overnight with fresh towels — it wicks any residual moisture AND blood that might otherwise resurface as the mattress dries. This is the step most home guides skip and it's the one that prevents the \"ring\" that shows up next day."
+    },
+    {
+      "step": 7,
+      "agent": "Fan-Dry Completely Before Sheets",
+      "instruction": "Point a fan at the spot until the mattress is fully dry — usually overnight. A damp mattress grows mold you can't see until it's a bigger problem. Check the spot in daylight. Fully clear = win. Shadow or ring remaining = call a pro with surface-only upholstery extraction (NOT truck-mount flood extraction — mattresses can't take that much water)."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate — What to Tell the Pro",
+      "instruction": "\"Blood on mattress, age [fresh / overnight / older], home-treated with cold cloth + 3% hydrogen peroxide + Dawn + weighted towels + fan-dry. [Residual shadow / soak-through suspected]. Please use surface-only extraction — do NOT flood the mattress.\" That handoff saves diagnostic time and prevents the cleaner from over-wetting."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse with cold water right away. Blot with a clean white cloth — don't rub.",
-      "2. Mix a small squirt of mild dish soap into cold water. Blot the solution onto the stain.",
-      "3. Let it sit for 5–10 minutes. Don't use any heat.",
-      "4. Blot with a clean white cloth until the stain fades.",
-      "5. Blot with a cloth dampened with plain water and let it air dry with good airflow — a fan nearby helps."
+      "1. Fresh + small = DIY. Dried / big / soak-through = escalate.",
+      "2. Gloves on.",
+      "3. COLD damp cloth — press + lift, never pour, never scrub.",
+      "4. 3% hydrogen peroxide dab, 2–5 min, up to 3 passes.",
+      "5. Dawn on damp cloth to clear residue.",
+      "6. Weighted dry towels 30 min + overnight.",
+      "7. Fan-dry fully before sheets return."
     ],
     "products": [
-      "Dawn NSD",
-      "cold water",
-      "28% Acetic Acid (diluted)",
-      "Nature's Miracle (enzyme-based)"
+      "Disposable gloves",
+      "3% hydrogen peroxide (brown bottle)",
+      "Dawn dish soap",
+      "White towels + weight",
+      "Fan"
     ],
-    "whenToStop": "Try an enzyme presoak (Nature's Miracle or similar) — apply and let it soak for 30–60 minutes. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment.",
+    "whenToStop": "Stop if blood has soaked through, if the spot is larger than a hand, if the mattress cover is dyed and peroxide fails a spot test, or if a shadow remains after a full home cycle.",
     "warnings": [
-      "Check the care tag before cleaning: W = water-safe, S = solvent only, WS = either.",
-      "Avoid over-wetting — excess moisture soaks into cushion filling and causes mildew.",
-      "Never use hot water on a protein stain — heat permanently sets it."
+      "Biohazard — gloves + disposables",
+      "NEVER hot water — sets hemoglobin",
+      "NEVER pour or saturate — mold risk",
+      "NEVER steam-clean blood — steam sets protein",
+      "Soak-through = pro surface-only extraction"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use hot water — sets hemoglobin protein permanently",
-      "Soak or saturate the mattress — foam cannot dry completely, leads to mold",
-      "Scrub instead of blot — drives liquid deeper into batting"
+      "Never hot water or steam — sets hemoglobin",
+      "Never pour liquid on a mattress — batting mold risk",
+      "Never scrub — drives blood deeper",
+      "Never treat bare-handed if blood isn't your own"
     ],
     "fiberSensitivities": [
-      "On mattress: test all agents in an inconspicuous area first. Monitor for color change, surface dulling, or texture damage during treatment."
+      "Dyed mattress cover: test 3% peroxide on a hidden seam",
+      "Memory foam / pillow-top: minimum liquid — surface only",
+      "Encasement / waterproof cover: protects the core; target the cover surface"
     ]
   },
+  "materialWarnings": [
+    "Soak-through = pro surface-only (NOT truck-mount)",
+    "Cold water only — heat sets blood permanently",
+    "Gloves + disposable towels — biohazard-adjacent"
+  ],
   "escalation": {
-    "when": "Stain has penetrated deep into mattress batting, or has been set by prior heat exposure",
-    "whatToTell": "Blood stain on mattress, unknown age, cold water and Protein applied. Possible deep penetration into batting. Steam extraction on surface only — do NOT fully saturate.",
-    "specialistType": "upholstery or mattress cleaning specialist"
+    "when": "Blood soaked through into batting/foam, spot larger than a hand, dried blood that shadows after full home cycle, or suspected mold from prior over-wetting.",
+    "whatToTell": "\"Blood on mattress, age [fresh / overnight / older], home-treated with cold cloth + 3% H₂O₂ + Dawn + weighted towels + fan-dry. [Shadow remains / soak-through suspected]. Surface-only extraction — do not flood.\"",
+    "specialistType": "mattress / upholstery cleaning specialist with low-moisture surface extraction"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the stain fresh or has it had time to dry?",
-      "Has hot water or a heated appliance been applied to the stain already?",
-      "How large is the stained area — spot or soaked-through?",
-      "What type of mattress — foam, innerspring, pillow-top?"
+      "Fresh, dried, or overnight?",
+      "How big — coin, hand, larger?",
+      "Did liquid soak through into the mattress itself or stay on the cover?",
+      "Memory foam, innerspring, or pillow-top?",
+      "Has hot water, an iron, or a heating pad touched the spot?"
     ],
-    "modifierNotes": "Fresh blood is much easier to remove. Prior heat exposure drastically reduces chance of full removal. Large saturated areas may require professional steam extraction. Foam mattresses cannot be over-wetted — restrict treatment to surface only."
+    "modifierNotes": "Fresh small surface blood is the easiest case. Soak-through into batting/foam is the home ceiling — surface-only pro extraction is the escalation, never truck-mount. Heat exposure (hot water, heating pad, dryer) makes blood functionally permanent."
   },
-  "difficulty": 4,
-  "timeEstimate": "10–20 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
