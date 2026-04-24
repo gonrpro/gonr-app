@@ -1,81 +1,200 @@
 {
   "id": "milk-carpet",
   "title": "Milk on Carpet",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Milk contains casein (protein), lactose (sugar), and butterfat (lipid) — a triple-component stain. The casein bonds to carpet through hydrogen bonding and becomes increasingly insoluble as it dries. Butterfat leaves a greasy residue that traps the protein component against the fiber. Heat causes the casein to denature and cross-link permanently.",
-  "whyThisWorks": "Cold water keeps the casein protein soluble on carpet. Enzyme treatment breaks down the casein chains. Surfactant emulsifies the butterfat. The treatment order matters: protein first (cold), then fat (surfactant), because hot water used for fat removal would set the protein.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "20 minutes plus fan-dry; odor work is the long tail",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "milk",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "protein",
+      "odor-risk",
+      "carpet",
+      "pad-risk",
+      "bacterial"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Same milk chemistry (casein + whey + butterfat + lactose) on carpet. The stain often looks like 'nothing' fresh — the problem is the ODOR that develops from souring bacteria if the milk soaked into the pad and wasn't fully cleared. Protein-before-heat ordering is non-negotiable. Synthetic face yarn tolerates enzymes + NSD; wool narrows the lane.",
+  "whyThisWorks": "Cold NSD damp cloth pulls soluble protein and lactose. Enzyme pretreat digests casein before any bacteria can metabolize it. Weighted dry towel extraction keeps moisture out of the pad — the invisible failure mode on milk-carpet is NOT the visual stain but the smell that emerges 24h later from bacteria in the pad.",
+  "defaultAssumption": "Milk-carpet is an odor-risk stain more than a visual one. Extract aggressively and address the pad, or the smell comes back.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot + Extract Fast",
+      "technique": "Press dry, lift as much liquid as possible",
+      "equipment": "Clean white towels, firm pressure",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Press folded white towels hard on the spill. Lift, move to dry section, press again. Get as much milk OUT before chemistry touches it."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water + NSD",
+      "technique": "Damp cloth transfer + extract",
+      "equipment": "NSD in cold water, damp cloth, weighted dry towel",
+      "dwellTime": "1 min per pass",
+      "instruction": "Cold NSD damp cloth. Never pour. Weighted dry towel extraction between passes."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Enzyme Damp Cloth",
+      "technique": "Digest casein",
+      "equipment": "Liquid Protein Spotter / enzyme pretreat in warm water on damp cloth",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Dampen cloth with enzyme solution, press on spot. Digests casein that would otherwise feed souring bacteria."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "NSD Flush + Weighted Extract",
+      "technique": "Clear chemistry, pull moisture up",
+      "equipment": "NSD damp cloth, heavy dry towel + weight",
+      "dwellTime": "2 min + 30 min weighted",
+      "instruction": "NSD-damp flush. Weighted dry towel 30 min."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Fan-Dry + Baking Soda Dry Dust",
+      "technique": "Complete pad dry + odor absorb",
+      "equipment": "Fan, baking soda",
+      "dwellTime": "4–8 hours",
+      "instruction": "Fan-dry thoroughly. Dust baking soda over the area and leave overnight. Vacuum off next day. Baking soda + airflow = dry pad = no returning smell."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Smell-Check Next Day",
+      "technique": "Verify kill",
+      "equipment": "Your nose + daylight",
+      "dwellTime": "Next morning",
+      "instruction": "Sniff next day. If faint smell remains, repeat cycle. If strong smell persists, pad is contaminated = pro call."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Blot extract fast before chemistry.",
+      "2. Cold NSD damp cloth + weighted extract.",
+      "3. Enzyme damp cloth 15–20 min (warm).",
+      "4. NSD-damp flush + 30 min weighted extract.",
+      "5. Fan-dry + baking soda dry dust overnight.",
+      "6. Smell-check next day. Pad contamination = pro."
     ],
     "products": [
-      "Protein Formula",
       "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Liquid Protein Spotter / enzyme pretreat",
+      "Baking soda",
+      "Weighted dry towels + fan"
     ],
-    "temperature": "cold",
+    "temperature": "cold through spotting",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein",
-      "Avoid over-wetting — extract excess moisture to prevent backing/foam damage"
+      "Milk on carpet is an ODOR-risk stain — extraction + dry beats chemistry",
+      "Never pour liquid — pad saturation = smell",
+      "Enzymes die above 50°C",
+      "Wool = pro-lane"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Blot Fast, Hard, Before Anything Else",
+      "instruction": "Press a thick stack of white paper towels or a folded white cloth hard on the spill. Lift, dry section, press again. Get as much milk OUT of the carpet as you can BEFORE touching it with anything wet. The more you extract now, the less work everything else has to do."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Water + Dawn on a DAMP Cloth",
+      "instruction": "Dampen a white cloth with cool water + a drop of Dawn. Press on the spot, lift, rotate. Never pour water on the carpet — pooled liquid sinks to the pad where bacteria breed."
+    },
+    {
+      "step": 3,
+      "agent": "Enzyme Pretreat on a Damp Cloth",
+      "instruction": "Dissolve OxiClean Versatile or Biz in WARM water per the label. Dampen a cloth and press on the spot for 15–20 minutes. The enzyme digests the milk protein BEFORE bacteria can get to it and start producing smell."
+    },
+    {
+      "step": 4,
+      "agent": "Weighted Dry Towel Extraction",
+      "instruction": "Press a thick DRY towel on the spot with a heavy book or pan for 30 minutes. This is THE step that prevents the delayed smell — it pulls moisture up out of the backing before it soaks into the pad."
+    },
+    {
+      "step": 5,
+      "agent": "Baking Soda + Fan Overnight",
+      "instruction": "Dust baking soda generously over the damp spot. Point a fan at it. Leave overnight. Baking soda absorbs residual moisture + pre-emptively handles any bacterial odor byproducts. Vacuum off next morning."
+    },
+    {
+      "step": 6,
+      "agent": "Smell-Check Next Day",
+      "instruction": "Sniff the area in the morning. If there's any sour milk smell, the pad has some moisture still and bacteria are working. Repeat the enzyme damp-cloth + weighted dry towel + baking soda cycle. If the smell persists after a second cycle, the pad is contaminated beyond surface treatment — call a carpet cleaner with hot-water extraction."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. Extract milk fast — blot press + dry towels.",
+      "2. Cold water + Dawn on DAMP cloth. Never pour.",
+      "3. Enzyme pretreat damp cloth 15–20 min.",
+      "4. Weighted dry towel 30 min — the odor-prevention step.",
+      "5. Baking soda dry dust + fan overnight.",
+      "6. Smell-check next day. Odor return = pad contamination = pro."
     ],
     "products": [
+      "Clean white towels for blot-extract",
       "Dawn dish soap",
-      "cold water"
+      "Enzyme pretreat (OxiClean Versatile, Biz)",
+      "Baking soda",
+      "Fan"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if odor returns after two full cycles. Pad contamination = professional carpet cleaner with hot-water extraction.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "Extraction is half the protocol — pour = pad soak = delayed smell",
+      "Enzymes die above 50°C — warm water, not hot",
+      "Milk on carpet is often invisible but smells later — treat anyway",
+      "Wool carpet narrows chemistry"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never pour liquid on carpet — pad saturation",
+      "Never skip extraction + baking soda — odor is the real enemy",
+      "Never run enzymes above 50°C",
+      "Never ignore fresh spills because they look invisible"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / olefin / polyester: tolerates standard chemistry",
+      "Wool: pro-lane",
+      "Backing: no pooled liquid"
     ]
   },
+  "materialWarnings": [
+    "Odor is the hidden problem on milk-carpet",
+    "Extract hard BEFORE chemistry",
+    "Baking soda + fan = pad-smell prevention"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is milk on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Odor returns after two full home cycles, or wool carpet.",
+    "whatToTell": "\"Milk on [nylon / wool / synthetic] carpet, age [fresh / overnight / older], home-treated with blot-extract + enzyme damp cloth + weighted dry towel + baking soda + fan. [Odor returned / faded].\"",
+    "specialistType": "professional carpet cleaner with hot-water extraction"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Carpet fiber — nylon / olefin / polyester / wool?",
+      "Whole milk, skim, or plant milk? (plant milks can have different sugars + proteins)",
+      "How much spilled — cup / glass / bottle?",
+      "How long ago?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Milk-carpet = odor risk > visual stain risk. Extract + enzyme + dry is the whole protocol. Baking soda dry dust is the pad-smell preventer."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

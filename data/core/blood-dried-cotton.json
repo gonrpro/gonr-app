@@ -1,79 +1,212 @@
 {
   "id": "blood-dried-cotton",
-  "title": "Blood Dried on Cotton",
+  "title": "Dried Blood on Cotton",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Dried blood has undergone protein denaturation and oxidation. On cotton, the hemoglobin cross-links with the fiber polymer, and the iron component oxidizes to form rust-colored iron oxide. The protein matrix becomes insoluble and forms a tough film. The older the stain, the more cross-linking has occurred, and the harder removal becomes. Heat exposure at any point makes this nearly permanent.",
-  "whyThisWorks": "Extended enzyme treatment (where fiber-safe) slowly breaks down the cross-linked protein matrix on cotton. Cold water throughout — any heat further denatures the remaining protein. For the iron component that remains after protein removal, a reducing agent addresses the rust discoloration. Multiple treatment cycles are usually needed — dried blood rarely comes out in one pass.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "30–90 minutes; budget multiple cycles",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "blood-dried",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "protein",
+      "aged",
+      "iron-oxide",
+      "cotton",
+      "multi-cycle"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Dried blood is fresh blood's chemistry plus oxidation. Hemoglobin has denatured and cross-linked with cellulose; iron has oxidized to iron oxide (the rust-brown part of the stain). The protein matrix is now insoluble in water and partially resistant to standard enzyme digestion. Heat at any point from drying onward sets the cross-links harder. Cotton tolerates enzymes, acid-side rinses, 3% H₂O₂, and hot wash — so the chemistry lane is wide. The issue is that dried blood responds incrementally: each cycle lifts another layer, and 2–3 cycles is the norm.",
+  "whyThisWorks": "Cold soak reactivates the outer layer of denatured protein so enzyme can reach it. Liquid Protein Spotter (extended dwell) digests what it can reach; the rest waits for the next cycle. A dilute acid pass converts the oxidized iron to a soluble form. 3% H₂O₂ oxidizes residual iron-porphyrin chromophore. Repeat until shadow fades. Never hot-wash between cycles — sets what the enzyme hasn't cleared.",
+  "defaultAssumption": "Expect 2–3 cycles. Fresh blood = easy single-pass; dried blood = patience. Any previous hot-water or hot-dryer exposure moves toward pro territory.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Water Soak",
+      "technique": "Rehydrate denatured protein",
+      "equipment": "Cold water in a basin",
+      "dwellTime": "30–60 minutes",
+      "instruction": "Submerge the stained area in cold water — soak 30–60 minutes. This rehydrates and softens the outer layer of denatured hemoglobin, letting the enzyme step reach protein that's been cross-linked."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Protein Spotter — Extended Dwell",
+      "technique": "Apply, dwell long, brush gently",
+      "equipment": "Liquid Protein Spotter (PRENETT B / protease digestant) in warm water (30–38°C)",
+      "dwellTime": "30–60 minutes",
+      "instruction": "Apply Protein Spotter directly OR submerge the stain in warm (30–38°C) enzyme solution. Dwell 30–60 min — longer than fresh blood, because dried protein breaks incrementally. Gently brush with a soft brush every 15 min. Enzyme denatures above 50°C; keep warm, not hot."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Acid Rinse for Iron Tint",
+      "technique": "Convert iron oxide to soluble form",
+      "equipment": "Dilute acetic acid 5% aqueous OR lemon juice diluted 1:4",
+      "dwellTime": "5–10 minutes",
+      "instruction": "After the enzyme pass, a rust-brown shadow often remains — that's iron oxide from the hemoglobin. Dab dilute acid on the shadow. Converts the iron to a soluble form that rinses out. Rinse cool."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Oxidize residual iron-porphyrin",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "5–10 minutes",
+      "instruction": "For residual pink / brown shadow, 3% H₂O₂ drop-by-drop. Dwell 5–10 min, blot. Skip on dark cotton."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Repeat Full Cycle",
+      "technique": "Second or third pass if needed",
+      "equipment": "Same as above",
+      "dwellTime": "As needed",
+      "instruction": "Dried blood rarely clears in one pass. If shadow remains, repeat steps 1–4. Each cycle lifts another layer. 2–3 cycles total is normal."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cold Wash + Inspect",
+      "technique": "Launder cold, dry only when clear",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Wash COLD per care label — heat sets remaining blood. Air-dry or tumble LOW. Inspect BEFORE any heat drying. Only once the stain is fully gone can hot wash follow."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Cold water soak 30–60 min — rehydrate denatured protein.",
+      "2. Liquid Protein Spotter, extended 30–60 min dwell, warm (30–38°C).",
+      "3. Dilute acetic acid for oxidized iron shadow.",
+      "4. 3% H₂O₂ on residual pigment.",
+      "5. Repeat 1–4 for incremental clearing. 2–3 cycles normal.",
+      "6. Cold wash until stain is clear; only then a hot finishing wash."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Liquid Protein Spotter (PRENETT B or protease digestant)",
+      "Dilute acetic acid 5% aqueous",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
+    "temperature": "cold soak; warm (30–38°C) enzyme; cool through acid + peroxide; cold wash until clear",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "Never use warm/hot water on the protein step — sets remaining blood",
+      "Enzyme window warm, not hot",
+      "Dried blood is multi-cycle — set expectations",
+      "Never hot-wash or dry until stain is fully gone",
+      "Iron shadow is separate chemistry — don't skip acid step"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Expect Multiple Cycles",
+      "instruction": "Dried blood is harder than fresh blood — not impossible, just slower. Expect 2–3 full cycles to fully clear it. This card assumes you know the stain is blood and it's been dried for a while (overnight +); if you just discovered a stain and don't know, look for a rust-brown / dark-brown ring — that's the iron oxidation that distinguishes dried blood from other brown stains."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Water Soak — 30 Minutes to an Hour",
+      "instruction": "Submerge the stained area in cold water for 30–60 minutes. Cold only — warm or hot water COOKS remaining protein and makes the stain permanent. The soak rehydrates the outer layer of dried blood so the next step can reach it."
+    },
+    {
+      "step": 3,
+      "agent": "Enzyme Pretreat — Warm Water, Long Dwell",
+      "instruction": "Use an enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout). Dissolve in WARM (not hot) water per the label. Apply to the stain, let it sit 30–60 MINUTES — longer than you would for fresh blood, because dried blood breaks down incrementally. Brush gently with a soft toothbrush every 15 min."
+    },
+    {
+      "step": 4,
+      "agent": "Lemon Juice or Vinegar for Rust-Brown Shadow",
+      "instruction": "After the enzyme pass, a rust-brown shadow often remains — that's the iron in the blood, oxidized. Dab a few drops of lemon juice or dilute white vinegar on the shadow, wait 5–10 minutes, rinse cool. The mild acid turns the iron into a soluble form you can rinse out."
+    },
+    {
+      "step": 5,
+      "agent": "Hydrogen Peroxide 3% for Final Shadow (Whites)",
+      "instruction": "For residual pink/brown on white cotton: dab 3% drugstore hydrogen peroxide, let it bubble 5–10 min, blot. Skip on dark cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia."
+    },
+    {
+      "step": 6,
+      "agent": "Repeat the Whole Cycle If Needed",
+      "instruction": "If a shadow remains, REPEAT steps 2–5. 2–3 full cycles is normal for dried blood. Don't be discouraged — each cycle lifts more."
+    },
+    {
+      "step": 7,
+      "agent": "COLD Wash Until the Stain Is Fully Gone",
+      "instruction": "After the shadow has faded, COLD WASH only. Air-dry. Do NOT run through a hot dryer or hot wash until the stain is 100% gone — heat permanently sets any remaining blood. Only once the fabric is fully clean can you hot-wash as a finishing step."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate for Heat-Set",
+      "instruction": "If the dried blood has already been through a hot wash or hot dryer before treatment, the protein has cooked into the fiber and home chemistry plateaus. Take to a dry cleaner."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. Expect 2–3 cycles. Dried blood is patience, not power.",
+      "2. Cold water soak 30–60 min.",
+      "3. Enzyme pretreat in WARM water, 30–60 min dwell.",
+      "4. Lemon juice / vinegar dab for rust-brown iron shadow.",
+      "5. 3% hydrogen peroxide on residual shadow (whites only).",
+      "6. Repeat 2–5 as needed.",
+      "7. COLD WASH until stain is fully gone — then hot wash as finisher.",
+      "8. Escalate if heat-set before treatment."
     ],
     "products": [
-      "Dawn dish soap",
-      "cold water"
+      "Enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout)",
+      "Lemon juice or white vinegar (for iron tint)",
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if dried blood has already been hot-washed or hot-dried (heat-set = pro only), or if 3 full home cycles plateau.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "Cold water throughout until stain is fully gone",
+      "NEVER hot-wash or dry visible blood — permanent set",
+      "Enzymes die above 50°C — warm water, not hot",
+      "Multi-cycle is normal for dried blood",
+      "Never mix peroxide with chlorine bleach or ammonia"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never hot-wash or dry dried blood while stain is visible — permanent",
+      "Never run enzymes above 50°C",
+      "Never layer oxidizers",
+      "Never skip the iron-step — rust shadow is separate chemistry"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates enzymes, acid, 3% H₂O₂, cold wash",
+      "Dyed cotton: skip or inside-seam-test peroxide",
+      "Heat-durable once protein is fully out — but only then"
     ]
   },
+  "materialWarnings": [
+    "Cold only until fully gone",
+    "Multi-cycle is normal",
+    "Iron tint is a separate chemistry step"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is blood dried on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Dried blood has been hot-washed or hot-dried before treatment, or 3 full home cycles plateau.",
+    "whatToTell": "\"Dried blood on cotton, age [hours / days / older], home-treated with cold soak + enzyme pretreat + lemon juice + 3% H₂O₂. [Heat-set / no heat applied.] [N cycles completed.]\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "How long has the blood been dried?",
+      "Has the fabric been through any hot wash or dryer since?",
+      "Is there a visible rust-brown ring around the darker center? (iron fingerprint)",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Dried blood is the patient-removal version of blood chemistry. Multi-cycle framing + iron-step awareness are the protocol's two novel features vs fresh blood."
   },
-  "difficulty": 7,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

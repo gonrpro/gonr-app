@@ -1,81 +1,207 @@
 {
   "id": "mustard-carpet",
   "title": "Mustard on Carpet",
-  "stainFamily": "tannin",
+  "stainType": "dye",
+  "stainFamily": "dye",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Mustard stains are caused by curcumin (turmeric-derived yellow pigment) and tannins from mustard seed. Curcumin is one of the most persistent natural dyes — it bonds to carpet through strong hydrogen bonds and is resistant to standard surfactants. UV light and alkaline conditions actually intensify the yellow color.",
-  "whyThisWorks": "An oxidizer (H2O2) is the primary weapon — it breaks the conjugated double bonds in curcumin that produce the yellow color on carpet. The tannin spotter addresses the secondary tannin component. Avoiding alkaline products is critical — they intensify curcumin staining. Sunlight also darkens curcumin, so treated items should be air-dried away from direct sun.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "30–90 minutes plus sun cycles",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "mustard",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "dye",
+      "curcumin",
+      "carpet",
+      "pad-risk",
+      "no-alkaline"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Same curcumin chemistry as mustard-cotton, on carpet. Curcumin's key rule: AVOID ALKALINE (red-shifts yellow to dark red); UV SUNLIGHT FADES curcumin (supports removal). Carpet adds construction risk: pooled liquid soaks to backing + pad. The oil carrier (mustard oil) must come off before peroxide can reach the dye. Synthetic face yarn tolerates NSD + 3% H₂O₂; wool narrows the lane.",
+  "whyThisWorks": "Scrape bulk. NSD via damp cloth strips the oil carrier. 3% H₂O₂ oxidizes curcumin. Sunlight exposure on a portable rug accelerates the fade. For fitted carpet, repeated peroxide + fan-dry cycles are the substitute. Alkaline cleaners = permanent red shift. Never.",
+  "defaultAssumption": "Mustard on carpet is difficult. Aged mustard on light carpet often plateaus at faint yellow even professionally. Set expectations honestly. Escalate earlier for wool.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape + Blot",
+      "technique": "No alkaline, remove bulk",
+      "equipment": "Dull blade, white cotton towel",
+      "dwellTime": "1 minute",
+      "instruction": "Scrape any solid mustard off. NEVER apply baking soda / ammonia / OxiClean — turns yellow to dark red permanently. Blot the spot straight down."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water + NSD",
+      "technique": "Damp cloth transfer + extract",
+      "equipment": "NSD in cool water, damp cloth, weighted dry towel",
+      "dwellTime": "2–3 min per pass",
+      "instruction": "Apply cold NSD via damp cloth. Strips oil carrier. Never pour. Weighted dry towel extraction between passes. 2–3 cycles."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Dropper oxidation",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "10 min wet",
+      "instruction": "3% H₂O₂ drop-by-drop on curcumin shadow. Dwell 10 min. Blot dry. Patch-test on colored carpet first."
+    },
+    {
+      "step": 4,
+      "side": "dry",
+      "agent": "Fan + Sun (Portable Rug)",
+      "technique": "UV photo-degrades curcumin",
+      "equipment": "Fan, direct sun if rug can move",
+      "dwellTime": "1–3 hours",
+      "instruction": "For portable rugs: place damp in direct sunlight. Fitted carpet: fan-dry, plan to repeat peroxide + dry over 1–2 days."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "NSD Flush + Weighted Extract",
+      "technique": "Clear chemistry, pull moisture up",
+      "equipment": "NSD damp cloth, heavy dry towel + weight",
+      "dwellTime": "2 min + 30 min weighted",
+      "instruction": "NSD-damp cloth. Weighted dry towel 30 min."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Multiple Peroxide + Fade Cycles",
+      "technique": "Patient removal",
+      "equipment": "3% H₂O₂ + time",
+      "dwellTime": "Ongoing",
+      "instruction": "Aged mustard usually needs 2–3 peroxide + fade cycles over 1–2 days. Set honest expectation: may plateau at faint yellow."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Scrape bulk. NO alkaline cleaners.",
+      "2. Cold NSD damp cloth + weighted extract — strip oil carrier.",
+      "3. 3% H₂O₂ drop-by-drop on shadow. 10 min.",
+      "4. Sun exposure on portable rugs; fan + peroxide repeat on fitted.",
+      "5. NSD-damp flush + 30 min weighted extract.",
+      "6. Repeat peroxide + fade cycles. Honest plateau expectation."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
       "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
+    "temperature": "cold through spotting",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color",
-      "Avoid over-wetting — extract excess moisture to prevent backing damage"
+      "NEVER alkaline on curcumin — permanent red shift",
+      "Never pool liquid on carpet",
+      "Oil-strip before peroxide",
+      "Honest plateau on aged mustard",
+      "Wool carpet = pro-lane"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "DON'T Use Baking Soda or Ammonia",
+      "instruction": "Mustard's yellow is turmeric (curcumin). If curcumin touches ANYTHING alkaline — baking soda paste, ammonia cleaner, OxiClean — it turns from yellow to DARK RED, and that red form is nearly impossible to remove. Use only Dawn dish soap + hydrogen peroxide on mustard carpet. Nothing alkaline."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Bulk Off",
+      "instruction": "Use a dull butter knife to lift any solid mustard off the carpet pile. Don't rub — drives it into the backing."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Cool Water on a DAMP Cloth",
+      "instruction": "Dampen a white cloth with cool water + a drop of Dawn. Press on the spot, lift, rotate. Never pour on carpet. Repeat 2–3 cycles. Dawn strips the oil that carries the yellow pigment — without this step, peroxide can't reach the dye."
+    },
+    {
+      "step": 4,
+      "agent": "Weighted Dry Towel Extraction",
+      "instruction": "After each wet pass, press a thick DRY towel + heavy book on the spot for 20–30 min. Pulls moisture UP out of the pad."
+    },
+    {
+      "step": 5,
+      "agent": "3% Hydrogen Peroxide + Sunlight",
+      "instruction": "Dab 3% drugstore hydrogen peroxide on the stain via a damp cloth. Patch-test a hidden carpet area first — peroxide lightens carpet dye. If it's a portable rug, set it in direct sunlight damp for 1–2 hours. For fitted carpet, fan-dry and repeat peroxide every 30–60 min over a sunny afternoon.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia. Test-patch on colored carpet."
+    },
+    {
+      "step": 6,
+      "agent": "Expect Multiple Cycles",
+      "instruction": "Mustard is slow to fade. Budget 2–3 peroxide + dry cycles over a day or two. Aged mustard on light carpet often plateaus at a faint yellow even professionally."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate for Wool or Plateau",
+      "instruction": "Wool carpet + mustard = professional cleaner. Also escalate if patch test showed dye bleed, if ammonia was already applied (red shift), or two cycles plateau. Tell them: \"Mustard on [nylon / wool / synthetic] carpet, age [fresh / overnight / older], home-treated with Dawn + 3% H₂O₂ + sun. [No alkaline used / baking soda was applied before I knew / plateau at faint yellow].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. NO alkaline cleaners — baking soda / ammonia / OxiClean all shift curcumin to permanent red.",
+      "2. Scrape bulk mustard off.",
+      "3. Dawn + cool water on DAMP cloth — strip oil carrier. 2–3 cycles.",
+      "4. Weighted dry towel between wet passes.",
+      "5. 3% hydrogen peroxide + sunlight on portable rugs. Multiple cycles.",
+      "6. Set honest expectations — aged mustard often plateaus faint yellow.",
+      "7. Escalate for wool, patch-test failure, or plateau."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% hydrogen peroxide",
+      "Clean white towels (damp + dry)",
+      "Heavy book or pan",
+      "A sunny afternoon (ideal)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if ammonia-containing cleaner has been applied (red shift), wool carpet, patch-test failure, or 2–3 peroxide + sun cycles plateau.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NO alkaline — red shift is permanent",
+      "Never pour liquid on carpet",
+      "Never skip weighted extraction",
+      "Skip peroxide on dyed / patterned carpet without patch test",
+      "Aged mustard plateaus — set expectations"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "NEVER alkaline on mustard — permanent red shift",
+      "Never pour liquid on carpet",
+      "Never skip the oil-strip step",
+      "Never layer oxidizers"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Synthetic face yarn: tolerates NSD, 3% H₂O₂",
+      "Wool: pro-lane",
+      "Backing: no pooled liquid"
     ]
   },
+  "materialWarnings": [
+    "NO alkaline — permanent red shift",
+    "Oil off before peroxide",
+    "Expect multiple cycles + plateau"
+  ],
   "escalation": {
-    "when": "If mustard stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is mustard on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Alkaline was applied (red shift), wool carpet, patch-test failure, or two peroxide + sun cycles plateau.",
+    "whatToTell": "\"Mustard on [nylon / wool / synthetic] carpet, age [fresh / overnight / older], home-treated with Dawn + 3% H₂O₂ + sun. [No alkaline / baking soda applied / plateau].\"",
+    "specialistType": "professional carpet cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
+      "Carpet fiber — nylon / olefin / polyester / wool?",
+      "Has any alkaline cleaner been applied?",
       "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Is the carpet a portable rug (can sun-dry) or fitted?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Same curcumin rules as mustard-cotton — alkaline red-shift is absolute, UV + peroxide is the fade workhorse. Carpet constraints add pad-protection + patch-test discipline."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

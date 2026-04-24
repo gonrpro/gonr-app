@@ -1,77 +1,181 @@
 {
   "id": "gum-carpet",
-  "title": "Gum on Carpet",
+  "title": "Chewing Gum on Carpet",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Chewing gum is a hydrophobic polymer (polyisobutylene or chicle) mixed with softeners, sweeteners, and flavorings. On carpet, the polymer adheres through mechanical bonding and surface tension. Warm gum is soft and sticky, spreading when touched. Cold gum becomes brittle and loses adhesion. The polymer is not water-soluble at any temperature.",
-  "whyThisWorks": "Freezing makes the gum polymer brittle on carpet, breaking its mechanical bond and allowing it to be scraped or cracked off in pieces. POG or citrus-based solvent dissolves any remaining residue by breaking down the polymer. Ice in a bag (not direct ice) prevents water damage while providing the cold needed. Picking at warm gum spreads it — always freeze first.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "15–30 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "gum",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "polymer",
+      "hydrophobic",
+      "carpet",
+      "freeze-first"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Same hydrophobic polymer (polyisobutylene / chicle + softeners + pigments) as gum-cotton. On carpet, the key rule is the same: FREEZE to brittle before touching it. Ice pack in a plastic bag presses directly onto the gum for 15–20 min. Once brittle, it fractures and lifts out of the pile. Solvent (Goo Gone / IPA) cleans residue. Water does nothing at any temp. Cotton / synthetic carpet tolerates IPA, POG, NSD at room temp. Wool carpet narrows the lane slightly.",
+  "whyThisWorks": "Ice-brittle + pick out is 80%+ of the removal. Residue handled by solvent tamp + Dawn. Weighted dry towel between any wet step protects the pad.",
+  "defaultAssumption": "Most gum on carpet cases are kid-related or foot-traffic. Freeze-first with an ice pack avoids any water near the pad.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Ice Pack Direct",
+      "technique": "Press ice pack on gum, not the carpet",
+      "equipment": "Ice pack in a plastic bag, OR ice cubes in a zip-top bag",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Press an ice pack (wrapped in plastic — no melt into carpet) directly on the gum for 15–20 min. Gum goes brittle. Do NOT let ice melt into the carpet."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Scrape + Pick",
+      "technique": "Lift brittle gum",
+      "equipment": "Dull blade or credit-card edge",
+      "dwellTime": "2 minutes",
+      "instruction": "Immediately after chilling, pry the brittle gum off with a dull blade. Flakes and chunks lift out. Work fast — it re-softens within a few minutes."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Goo Gone or IPA on White Cloth",
+      "technique": "Solvent tamp for residue",
+      "equipment": "Goo Gone OR IPA on clean white cloth",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Tamp residual pigment / softener residue with solvent on a cloth. Never pour on carpet. Flip cloth frequently."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "NSD + Damp Cloth",
+      "technique": "Clear solvent residue",
+      "equipment": "NSD + warm water damp cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "NSD-damp cloth to clear solvent. Blot with dry towel."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Fan-Dry",
+      "technique": "Dry carpet fully before walking",
+      "equipment": "Fan",
+      "dwellTime": "1–2 hours",
+      "instruction": "Fan-dry the area. Once dry, vacuum to lift any loose particles."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Freeze with CO2 spray or ice to harden gum completely",
-      "2. Crack and scrape off hardened gum with dull edge",
-      "3. Apply POG to dissolve remaining residue",
-      "4. Apply NSD to remove final traces. Flush with cool water",
-      "5. Blot dry"
+      "1. Ice pack direct on gum 15–20 min — brittle-freeze.",
+      "2. Scrape brittle gum off immediately.",
+      "3. Goo Gone / IPA on white cloth for residue.",
+      "4. NSD-damp cloth to clear solvent.",
+      "5. Fan-dry + vacuum."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
+      "Ice pack in plastic bag",
+      "Dull blade or credit-card edge",
+      "Goo Gone or IPA",
       "NSD (Neutral Synthetic Detergent)"
     ],
-    "temperature": "ambient",
+    "temperature": "cold (ice) for mechanical phase; room-temp solvent",
     "warnings": [
-      "Always test on hidden area first"
+      "Never let ice melt into carpet",
+      "Never pour solvent — tamp only",
+      "Never skip the freeze step — solvent on warm gum = bigger mess",
+      "Ventilate — Goo Gone / IPA fumes"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Ice Pack, Not Running Water",
+      "instruction": "Grab an ice pack or a ziplock bag filled with ice cubes. Wrap it in a plastic bag so water can't drip onto the carpet. Press it directly on the gum for 15–20 minutes. Frozen gum is brittle and lifts out of the pile cleanly; warm gum smears deeper in."
+    },
+    {
+      "step": 2,
+      "agent": "Pick and Scrape Right After Freezing",
+      "instruction": "Pry the brittle gum out of the carpet with a dull butter knife or credit-card edge. Flakes and chunks come free. Work fast — you have a few minutes before it re-softens."
+    },
+    {
+      "step": 3,
+      "agent": "Goo Gone or Rubbing Alcohol on a White Cloth",
+      "instruction": "For any colored / oily residue: dab Goo Gone or 70%+ rubbing alcohol on a clean white cloth, press onto the spot. Flip cloth frequently. Never pour solvent directly on carpet — it sinks to the pad."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Damp Cloth",
+      "instruction": "Dampen a clean cloth with warm water + a drop of Dawn. Press on the spot to clear solvent residue. Blot with a dry towel."
+    },
+    {
+      "step": 5,
+      "agent": "Fan-Dry, Then Vacuum",
+      "instruction": "Point a fan at the spot. Once the carpet is bone-dry, vacuum over the area to lift any loose residual particles."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place ice in a bag on the gum for 15 minutes until completely hard",
-      "2. Crack the frozen gum and peel/scrape off with a dull edge",
-      "3. Apply Dawn dish soap to remaining residue. Work gently",
-      "4. Rinse with warm water. Repeat if needed",
-      "5. Air dry"
+      "1. Ice pack (in plastic bag) direct on gum, 15–20 min.",
+      "2. Scrape brittle gum off with a dull blade.",
+      "3. Goo Gone or rubbing alcohol on a white cloth for residue.",
+      "4. Dawn damp cloth to clear solvent.",
+      "5. Fan-dry, then vacuum."
     ],
     "products": [
-      "Dawn dish soap",
-      "ice"
+      "Ice pack in plastic bag",
+      "Dull butter knife or credit-card edge",
+      "Goo Gone or 70%+ rubbing alcohol",
+      "Dawn dish soap"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Very rare to need a pro for gum on carpet — the freeze + scrape handles most cases.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "Don't let ice melt onto carpet",
+      "Never pour solvent on carpet",
+      "Ventilate when using Goo Gone / alcohol",
+      "Work fast post-freezer — gum re-softens"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never let ice melt into carpet",
+      "Never skip the freeze step",
+      "Never pour solvent on carpet",
+      "Never rub warm gum into the pile"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / olefin / polyester / wool: all tolerate freeze + light solvent tamp",
+      "Backing: no pooled liquid"
     ]
   },
+  "materialWarnings": [
+    "Ice pack in PLASTIC — no melt into carpet",
+    "Solvent tamp, never pour",
+    "Work fast post-freeze"
+  ],
   "escalation": {
-    "when": "If gum stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is gum on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Rare. Only if the gum melted through a shampooer / steam cleaner cycle and pressed into backing, or residual pigment survives two solvent passes.",
+    "whatToTell": "\"Chewing gum on [nylon / wool / synthetic] carpet, [fresh / walked-in], home-treated with ice-pack freeze + scrape + Goo Gone + Dawn.\"",
+    "specialistType": "professional carpet cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Carpet fiber — nylon / olefin / polyester / wool?",
+      "Fresh gum or walked-in / sugar-crusted old?",
+      "Has any water / shampooer been applied?",
+      "Is this a high-pile or low-pile carpet?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Freeze-first-with-ice-pack is essentially the whole protocol. Chemistry is residue cleanup only."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

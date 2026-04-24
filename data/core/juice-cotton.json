@@ -1,79 +1,197 @@
 {
   "id": "juice-cotton",
-  "title": "Juice on Cotton",
+  "title": "Fruit Juice on Cotton",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Fruit juice contains anthocyanins or carotenoids (depending on fruit), citric acid, fructose, and tannins. On cotton, the pigment bonds through hydrogen bonding, and the sugar component creates a sticky matrix that traps the dye against the fiber. Oxidation over time deepens the color and makes the stain increasingly resistant to treatment.",
-  "whyThisWorks": "The acidic tannin spotter breaks pigment-fiber bonds on cotton. Hydrogen peroxide oxidizes the chromophore structures responsible for color. Quick treatment is key — fresh juice stains are water-soluble, but dried stains require significantly more effort as the sugars crystallize and tannins cross-link.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "10–30 minutes (fresh); aged adds a peroxide cycle",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "juice",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "anthocyanin",
+      "cotton",
+      "time-sensitive",
+      "sugar-residue"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Fruit juice is anthocyanin (grape, berry, cranberry, pomegranate) or carotenoid (orange, mango, carrot) pigment + citric acid + fructose. The anthocyanin bond to cotton is hydrogen-bonded; the sugar creates a sticky residue that, if allowed to dry, traps the pigment against the fiber. Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, and hot wash. Grape and cranberry juice carry the heaviest anthocyanin load; orange and apple are lighter. This is essentially the red-wine pattern at lower concentration.",
+  "whyThisWorks": "Same tannin sequence: cold flush, NSD for sugar + surface pigment, acid-side spotter for anthocyanin hydrogen bond, 3% H₂O₂ for residual chromophore, hot wash. Dark-anthocyanin juices may need an extra peroxide cycle; light carotenoid juices often clear in one pass.",
+  "defaultAssumption": "Most juice spills are kid-centric (apple, orange, grape). Fresh = high-confidence DIY. Dark-anthocyanin juices on light cotton = two cycles. Heat-set = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Flush",
+      "technique": "Flush from the back",
+      "equipment": "Cold water, white cotton terry towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Cold flush from the BACK of the fabric. Most fresh juice lifts here — sugar and pigment are water-soluble while fresh."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Sponge, dwell, blot",
+      "equipment": "NSD in cold water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Apply NSD, sponge gently. Handles residual sugar + pigment."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Hot-Water Pour-Through (Fresh Only)",
+      "technique": "Pour from the back",
+      "equipment": "Kettle of hot water",
+      "dwellTime": "1–2 pours",
+      "instruction": "Under 30 min old only. Hot pour-through from the back. Skip on aged stains."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Tannin Spotter (Aged / Dark-Anthocyanin)",
+      "technique": "Drop, dwell, blot",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Acid-side spotter by dropper on residual color. Dwell 3–5 min, blot. Skip for fresh light-juice."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "3% H₂O₂ on residual chromophore. Skip on dark cotton."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "NSD Flush + Hot Wash",
+      "technique": "Clear chemistry, launder",
+      "equipment": "NSD, washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Rinse until water runs clear. Hot wash per care label."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cold flush from the back.",
+      "2. NSD in cold water. 2–3 min.",
+      "3. Fresh only (<30 min): hot pour-through.",
+      "4. Aged / dark juice: acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A).",
+      "5. 3% H₂O₂ on residual. 3–5 min.",
+      "6. NSD flush, hot wash per care label."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
       "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — aged / dark only",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
+    "temperature": "cold through spotting; hot wash post-chemistry",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color"
+      "Never use hot water on aged juice — sets tannin",
+      "One oxidizer at a time",
+      "Dark juice on light cotton = budget 2 cycles"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Cold Water, Act Fast",
+      "instruction": "Fresh juice on cotton comes out easily. Hold the BACK of the stained area under cold running water for 30–60 seconds. Cold only."
+    },
+    {
+      "step": 2,
+      "agent": "Hot-Water Pour-Through (Fresh Only)",
+      "instruction": "If the spill is under 30 minutes old, stretch the fabric over a bowl and pour hot (not boiling) water through from the back. Skip for aged stains — sets the color."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + White Vinegar + Cold Water",
+      "instruction": "Mix 1 tsp Dawn + 1 tbsp white vinegar + 1 cup cold water. Dab on the spot, let sit 3 min, blot from center outward. Repeat once if color remains."
+    },
+    {
+      "step": 4,
+      "agent": "OxiClean or 3% Peroxide for Stubborn Shadow",
+      "instruction": "Dissolve 1 scoop OxiClean in 1 cup cool water, soak stained area 15–30 min. Or 3% peroxide on spot for whites 3–5 min. Skip on dark cotton.",
+      "safetyNote": "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide."
+    },
+    {
+      "step": 5,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder hot per care label. Inspect BEFORE the dryer."
+    },
+    {
+      "step": 6,
+      "agent": "Escalate for Heat-Set",
+      "instruction": "If juice has been hot-dried or two rounds don't clear, take to a dry cleaner."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Cold flush from the BACK.",
+      "2. Fresh (<30 min) only: hot-water pour-through.",
+      "3. Dawn + vinegar + cold water, 3 min.",
+      "4. OxiClean soak OR 3% peroxide on residual. Never layer oxidizers.",
+      "5. Hot wash per care label. Inspect BEFORE the dryer.",
+      "6. Escalate if heat-set or plateau."
     ],
     "products": [
+      "Cold water",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "White vinegar",
+      "OxiClean or 3% hydrogen peroxide"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if juice has been hot-dried and home round doesn't clear it.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "Hot water only for fresh — sets aged tannin",
+      "Never mix OxiClean with chlorine bleach or hydrogen peroxide",
+      "Skip peroxide on dark/dyed cotton",
+      "Inspect before the dryer"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never use hot water on aged juice — sets tannin",
+      "Never layer oxidizers",
+      "Never dry with residual color"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, hot wash",
+      "Dyed cotton: inside-seam-test peroxide",
+      "Heat-durable once chemistry is cleared"
     ]
   },
+  "materialWarnings": [
+    "Hot water only for fresh",
+    "Dark juice = more peroxide passes",
+    "Peroxide on whites"
+  ],
   "escalation": {
-    "when": "If juice stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is juice on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Heat-set by iron or dryer, or two home rounds plateau.",
+    "whatToTell": "\"Fruit juice on cotton — [type], age [fresh / overnight / older], home-treated with Dawn + vinegar + OxiClean / 3% peroxide.\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
+      "Which juice — grape / cherry / cranberry (heavy anthocyanin) or orange / apple (lighter)?",
       "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Has it been hot-washed or dryer-cycled?",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Dark-anthocyanin juices (grape, blackcurrant, cranberry) carry 3–4× the pigment load of orange or apple — budget accordingly."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

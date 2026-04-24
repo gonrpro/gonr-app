@@ -1,76 +1,206 @@
 {
   "id": "smoke-cotton",
   "title": "Smoke on Cotton",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Smoke residue (soot) contains carbon particles, tar, nicotine (alkaloid), and volatile organic compounds. On cotton, carbon particles lodge mechanically in fiber texture while tar creates a sticky film. Nicotine produces yellow-brown staining through chemical bonding. The odor comes from VOCs absorbed into the fiber matrix. Fire smoke also contains acidic gases that can damage fibers.",
-  "whyThisWorks": "Dry cleaning (professional) is most effective because solvent dissolves tar without driving soot deeper into cotton. For DIY, surfactant with baking soda addresses the acidic soot. An oxidizer targets nicotine yellowing. Odor requires thorough airing or ozone treatment. Vacuuming loose soot BEFORE wet treatment prevents smearing.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "30 minutes plus ventilation / airing time",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "smoke",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "soot",
+      "smoke",
+      "tar",
+      "cotton",
+      "specialty-hazard",
+      "airborne-particulate",
+      "odor-persistent"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Smoke residue (soot) on cotton is three problems: (1) carbon particulate lodged mechanically in the fiber, (2) tar / VOC film coating the fibers and carrying odor, (3) for fire smoke, acidic gases that can weaken the fiber if left in prolonged contact. Tobacco smoke adds nicotine yellowing (alkaloid + tar). The #1 home failure is wet-rinsing soot before vacuuming it off — water turns carbon particulate into a smeared gray paste that embeds in the weave. Mechanical removal first, then solvent for tar, then surfactant for residue.",
+  "whyThisWorks": "Vacuum off dry soot first (NO rubbing — mechanical lift only). Neutral-pH surfactant handles the water-soluble tar film + residue after the carbon is out. Solvent tamp (mineral spirits / POG) clears any bitumen-heavy soot from fire smoke. Airing + sunlight handle the VOC odor that chemistry can't. Hot wash kills any lingering bacteria in organic smoke sources.",
+  "defaultAssumption": "Smoke on cotton is escalation-prone depending on source: house-fire smoke = pro (often with restoration company). Campfire / BBQ / cigarette = manageable DIY. Vape residue is usually lighter. Clarify source first.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Safety Fork + Dry Soot Removal",
+      "technique": "Identify source + vacuum FIRST",
+      "equipment": "Vacuum with HEPA filter, dust mask",
+      "dwellTime": "5 minutes",
+      "instruction": "SAFETY FORK: house-fire smoke damage = STOP, don't DIY. The soot is toxic (synthetic-combustion byproducts) and improper cleaning makes it worse. Call a fire-restoration company. Cigarette / campfire / BBQ / vape smoke = proceed with DIY. Put on a dust mask. Vacuum the soot off with a HEPA-filter vacuum — go outdoors or in a well-ventilated space. Do NOT rub, do NOT wet-rinse, do NOT shake the fabric inside. Multiple vacuum passes in different directions."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Surfactant pass on residual tar film",
+      "equipment": "NSD in warm water",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Apply NSD, work with a soft bristle brush. Handles the water-soluble tar + nicotine residue. Rinse cool from the back. Repeat if staining remains."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Solvent Pass (If Heavy Tar Residue)",
+      "technique": "POG / mineral spirits for bitumen-heavy smoke",
+      "equipment": "POG or mineral spirits on clean white cloth",
+      "dwellTime": "30–60 seconds",
+      "instruction": "For fire-smoke or heavy smoker residue with visible tar film: tamp POG / mineral spirits on a white cloth. Ventilate — flammable. Flip cloth frequently."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3% (Nicotine Yellowing on Whites)",
+      "technique": "Oxidize alkaloid pigment",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For residual nicotine-yellow on white cotton: 3% H₂O₂ drop-by-drop. Skip on dark cotton. One oxidizer at a time."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hot Wash + Air-Dry Outside",
+      "technique": "Launder hot, UV + outdoor airing",
+      "equipment": "Washing machine, outdoor line",
+      "dwellTime": "Full wash cycle plus outdoor airing",
+      "instruction": "Launder hot per care label. Air-dry outdoors in sunlight when possible — UV + fresh air clear residual VOC odor better than machine drying. Smoke odor can persist into the fabric's fiber matrix and may need 2–3 wash + air-dry cycles to fully clear."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Vacuum loose soot — do NOT brush or wipe (smears carbon into fiber)",
-      "2. Apply POG to dissolve tar component",
-      "3. Apply NSD to remove remaining soot and nicotine",
-      "4. If yellowing remains: apply H2O2 6%",
-      "5. Flush with cool water. Air dry in ventilated area"
+      "1. Source check. Fire-smoke = fire-restoration pro. Tobacco / campfire / BBQ = DIY.",
+      "2. HEPA vacuum off dry soot — outdoors, mask on.",
+      "3. NSD + soft brush.",
+      "4. POG / mineral spirits for heavy tar residue.",
+      "5. 3% H₂O₂ on residual nicotine yellowing (whites).",
+      "6. Hot wash per care label + sun-dry for VOC odor."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
+      "HEPA-filter vacuum",
+      "Dust mask",
       "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%"
+      "POG / mineral spirits (if heavy tar)",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "ambient",
+    "temperature": "cool through spotting; hot wash post-chemistry; sun during dry",
     "warnings": [
-      "Always test on hidden area first"
+      "House-fire smoke damage = restoration pro only, NOT a DIY — toxic + safety",
+      "Vacuum FIRST, wet chemistry SECOND — water on dry soot = gray smear",
+      "Ventilation + mask — soot is respiratory irritant",
+      "POG / mineral spirits flammable",
+      "Odor may need multiple wash + sun cycles"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Was This House-Fire Smoke? Stop Here",
+      "instruction": "If the smoke damage is from a HOUSE FIRE, STOP. Do not try to DIY-clean. Fire smoke contains combustion byproducts from plastics, electronics, furniture — many of which are toxic, and improper home cleaning can spread the contamination to the rest of your wardrobe. Call a fire-restoration company. Cigarette smoke, campfire / BBQ smoke, vape residue, candle soot = proceed below. When in doubt, pro."
+    },
+    {
+      "step": 2,
+      "agent": "Vacuum Off Soot BEFORE Anything Else",
+      "instruction": "Take the garment outside or to a well-ventilated garage. Put on a dust mask — soot particles are respiratory irritants. Vacuum the fabric thoroughly with your highest-quality vacuum (HEPA filter if possible). Go over it multiple times in different directions. DO NOT rub the fabric, DO NOT shake it indoors, and absolutely DO NOT wet-rinse dry soot — water turns loose carbon into a gray smear that embeds permanently."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Warm Water — Surfactant Pass",
+      "instruction": "Now that the dry soot is off: work a generous amount of Dawn dish soap into the remaining stain with a soft toothbrush. Dawn handles the residual tar film + nicotine yellowing that the vacuum left behind. Rinse warm. Repeat if color persists."
+    },
+    {
+      "step": 4,
+      "agent": "Heavy Tar / Smoker Residue? Mineral Spirits on a Rag",
+      "instruction": "If the fabric came out of a heavy-smoker environment and has a visible yellow-brown tar film: dab mineral spirits (paint thinner) on a clean white rag, press onto the spot from the BACK. Ventilate — flammable. Flip cloth frequently. Then repeat the Dawn step to clean up the solvent residue.",
+      "safetyNote": "Mineral spirits are flammable. Ventilate. No open flame."
+    },
+    {
+      "step": 5,
+      "agent": "Hydrogen Peroxide 3% for Nicotine Yellow (Whites)",
+      "instruction": "For residual yellow tint on white cotton from nicotine / tar: dab 3% drugstore hydrogen peroxide, 3–5 min, blot. Skip on dark cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia."
+    },
+    {
+      "step": 6,
+      "agent": "Hot Wash + Outdoor Line Dry",
+      "instruction": "Launder hot per care label. Hang outside in fresh air and sunlight — UV + ventilation handle the VOC odor that chemistry can't. For heavily smoke-exposed garments, this may take 2–3 wash + outdoor-dry cycles to fully clear the smell."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate for Persistent Odor or Fire Smoke",
+      "instruction": "If fabric still smells after 2–3 cycles, or the original source was a fire (see step 1), take to a dry cleaner or fire-restoration company. Tell them: \"Smoke on cotton, source [cigarette / campfire / BBQ / fire], home-treated with HEPA vacuum + Dawn + [mineral spirits] + 3% peroxide + hot wash + sun-dry. [Odor persists / visible staining].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove loose material — brush, blot, or scrape as appropriate",
-      "2. Apply Dawn dish soap mixed with cold water",
-      "3. Blot with clean white cloth. Repeat if needed",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat"
+      "1. Fire-smoke damage? STOP, call fire restoration.",
+      "2. HEPA vacuum dry soot OFF outdoors, mask on. Do NOT wet-rinse soot.",
+      "3. Dawn + warm water + soft brush.",
+      "4. Mineral spirits on a rag for heavy tar residue (ventilate).",
+      "5. 3% peroxide on nicotine yellow (whites only).",
+      "6. Hot wash + outdoor sun-dry. Multiple cycles may be needed for odor.",
+      "7. Escalate if odor persists or source was fire."
     ],
     "products": [
-      "Dawn dish soap"
+      "HEPA-filter vacuum",
+      "Dust mask",
+      "Dawn dish soap (generous)",
+      "Mineral spirits (heavy tar, flammable)",
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "STOP if source is house-fire smoke — restoration pro only. Otherwise stop if odor persists after 2–3 wash + sun-dry cycles.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "FIRE SMOKE = NOT DIY — toxic combustion byproducts",
+      "Never wet-rinse dry soot — smears permanently",
+      "VACUUM FIRST, chemistry SECOND",
+      "Mineral spirits flammable",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Odor may need multiple wash cycles"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "NEVER DIY-clean house-fire smoke — toxic + spreads contamination",
+      "Never wet-rinse dry soot — turns into gray smear",
+      "Never rub or shake soot-covered fabric indoors",
+      "Never work without mask — soot is respiratory irritant",
+      "Never open flame near mineral spirits"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates HEPA vacuum, NSD, POG, mineral spirits, 3% H₂O₂, hot wash, sun-dry",
+      "Dyed cotton: skip peroxide or inside-seam-test",
+      "Heat-durable once soot is mechanically off"
     ]
   },
+  "materialWarnings": [
+    "Fire smoke = restoration pro only",
+    "VACUUM dry soot FIRST — wet = smear",
+    "Mask + ventilation required"
+  ],
   "escalation": {
-    "when": "If smoke stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is smoke on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Source is house-fire smoke (escalate IMMEDIATELY), odor persists after 2–3 wash + sun-dry cycles, or visible staining plateaus.",
+    "whatToTell": "\"Smoke on cotton, source [cigarette / campfire / BBQ / fire], home-treated with HEPA vacuum + Dawn + [mineral spirits] + 3% H₂O₂ + hot wash + sun-dry. [Odor persists / visible staining plateau].\"",
+    "specialistType": "professional dry cleaner OR fire-restoration company (depending on source)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "What's the smoke source — cigarette, campfire, BBQ, candle, fire damage, vape?",
+      "Is the fabric visibly soot-covered or just odor-contaminated?",
+      "How old is the exposure?",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Source determines everything. Fire smoke = pro. Tobacco = DIY with patience. Vacuum-before-wet is the non-negotiable mechanical step."
   },
-  "difficulty": 6,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,79 +1,202 @@
 {
   "id": "tar-cotton",
   "title": "Tar on Cotton",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Tar (bitumen) is a complex mixture of polycyclic aromatic hydrocarbons, resins, and heavy petroleum fractions. On cotton, tar bonds through strong hydrophobic interactions and mechanical adhesion. It hardens as volatile fractions evaporate, becoming increasingly resistant to standard cleaning. Tar is one of the most tenacious oil-based stains due to its complex molecular structure.",
-  "whyThisWorks": "POG or petroleum-based solvent dissolves the tar resin on cotton — like dissolves like. Amyl acetate provides secondary solvent action for resistant residue. The treatment requires patience — tar dissolves slowly and requires repeated solvent applications. Mechanical removal of excess tar first prevents spreading during solvent treatment.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "30–60 minutes plus ventilation time",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "tar",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "oil",
+      "tar",
+      "bitumen",
+      "cotton",
+      "specialty-hazard",
+      "solvent-required",
+      "ventilate"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Tar is bitumen — a complex mixture of polycyclic aromatic hydrocarbons, resins, and heavy petroleum fractions. Fresh tar is sticky and tenacious; aged tar hardens as volatile fractions evaporate. Tar bonds to cotton through strong hydrophobic interactions and mechanical adhesion — water does nothing, and surfactant alone is slow. Tar needs a like-dissolves-like approach: petroleum solvent. Cotton tolerates POG, mineral spirits, and kerosene at room temp without damage.",
+  "whyThisWorks": "Mechanical removal first (while sticky tar is cool and scrape-able, or after chilling it brittle). Petroleum solvent dissolves the bitumen's aromatic + resin fractions. NSD emulsifies the dispersed tar for water rinse. Multiple passes are expected — tar plateaus slowly, lifting another layer each pass. The real home-treatment enemy is the user's instinct to scrub (which spreads tar) or to reach for water-based cleaners (which don't touch it).",
+  "defaultAssumption": "Tar on cotton is rarely caught fresh-fresh — typically discovered hours after exposure (parking lot, road construction, beach tar). Expect 3–5 solvent cycles. Fabric damage is low with standard solvents; the challenge is the stain's tenacity, not fiber risk.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Safety Fork + Bulk Removal",
+      "technique": "Fire-safety first, then mechanical lift",
+      "equipment": "Dull blade, ice pack (for brittle-lift), outdoor or ventilated space",
+      "dwellTime": "1–2 minutes",
+      "instruction": "SAFETY FORK: tar chemistry requires petroleum solvent. Solvent = flammable. Work outdoors or in a well-ventilated space. No open flame, no smoking, no lit stove nearby. Put on nitrile gloves. Then: if the tar is sticky, chill it brittle with an ice pack in a plastic bag (10–15 min direct contact). Lift off the hardened tar with a dull blade — flakes fracture cleanly. For fresh sticky tar, scrape as much as you can before chilling; ice ruins the sticky phase, lets the rest off easier."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Place Catch Cloth UNDER",
+      "technique": "Work-area isolation",
+      "equipment": "Clean white cotton towel",
+      "dwellTime": "30 seconds",
+      "instruction": "Place a catch cloth UNDER the stain. When solvent mobilizes tar, it transfers DOWN, not sideways."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "POG or Mineral Spirits Tamp",
+      "technique": "Solvent tamp, multiple passes",
+      "equipment": "POG, mineral spirits, OR kerosene on clean white cloth",
+      "dwellTime": "1–2 minutes per pass",
+      "instruction": "Apply petroleum solvent to a clean white cloth. Tamp from the BACK of the fabric. Flip cloth frequently — tar transfers out slowly. Expect 3–5 rounds. Never pour solvent directly. Patience — tar is a patient-removal stain."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "NSD or Dawn — Emulsify",
+      "technique": "Detergent pass",
+      "equipment": "NSD or Dawn in warm water",
+      "dwellTime": "5 minutes",
+      "instruction": "Apply generous NSD / Dawn, work with a soft brush for 2–3 min. Dawn is the household-grade solvent-cleanup — breaks up residual tar that the petroleum solvent freed but didn't carry away. Rinse cool. Repeat solvent → Dawn cycle once if shadow remains."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label, separately",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label — but separately from other clothes in case residual tar lifts during the cycle. Inspect BEFORE the dryer. Residual tar cures into a near-permanent film under dryer heat."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. SAFETY: ventilation + gloves + no flame. Chill sticky tar brittle, scrape off bulk.",
+      "2. Catch cloth UNDER the stain.",
+      "3. POG / mineral spirits tamp from back. 3–5 passes. Flip cloth.",
+      "4. NSD / Dawn to emulsify residual. Soft brush.",
+      "5. Hot wash per care label, separately from other items. Inspect before dryer."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "POG / mineral spirits / kerosene",
+      "NSD (Neutral Synthetic Detergent) or Dawn",
+      "Nitrile gloves",
+      "Ice pack (for brittle-lift on sticky tar)"
     ],
-    "temperature": "ambient",
+    "temperature": "cool through spotting; hot wash post-chemistry (separate load)",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "FLAMMABLE — ventilation, gloves, no open flame",
+      "Never pour solvent directly on fabric",
+      "Never scrub sticky tar — spreads and embeds",
+      "Wash separately — residual tar can transfer to other items",
+      "Inspect before dryer — heat cures tar permanently"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Safety First — Ventilation + No Flame",
+      "instruction": "Tar needs a petroleum solvent to dissolve, and petroleum solvents are FLAMMABLE. Work outside or in a well-ventilated garage, NOT in a bathroom or laundry room with a water heater pilot light nearby. Gloves on (nitrile, not latex). No smoking, no candles, no cooking nearby. Read this BEFORE you start."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Off What You Can",
+      "instruction": "If the tar is sticky and soft, scrape off as much as you can with a dull butter knife or credit-card edge. Don't rub — scraping lifts, rubbing spreads. If the tar is dried, put an ice pack (inside a plastic bag) directly on it for 10 minutes. Frozen tar gets brittle and chips off."
+    },
+    {
+      "step": 3,
+      "agent": "Place a White Towel UNDER the Stain",
+      "instruction": "Fold a clean white towel and put it under the stained area. When you dissolve the tar, it transfers DOWN into the catch cloth."
+    },
+    {
+      "step": 4,
+      "agent": "Mineral Spirits on a Clean White Rag",
+      "instruction": "Pour a little mineral spirits (paint thinner, from any hardware store) onto a clean white rag — NEVER directly on the fabric. Press the rag onto the tar from the BACK of the garment. Flip the rag to a clean spot every few seconds. Tar transfers out slowly — expect 3–5 passes. Some sources suggest WD-40 as a home alternative, and it does work, but it's also flammable and leaves a stronger residue that needs more Dawn cleanup.",
+      "safetyNote": "Mineral spirits are flammable. Ventilate. No flames. Keep away from ignition sources."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn — Lots of It",
+      "instruction": "Work a GENEROUS amount of Dawn dish soap into the area with a soft toothbrush — more than you'd use on most stains. Dawn is what wildlife rehabbers use on oil-spill birds; it handles petroleum residue better than any other home product. Work it in for 2–3 minutes, let sit 5 minutes, rinse cool. Repeat if color or sheen remains."
+    },
+    {
+      "step": 6,
+      "agent": "Hot Wash Separately, Inspect Before the Dryer",
+      "instruction": "Launder hot per care label, BY ITSELF (not mixed with other laundry — residual tar can transfer). Inspect BEFORE the dryer. Any remaining tar cures into a near-permanent film under dryer heat."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate If Solvent Plateaus",
+      "instruction": "If two solvent + Dawn rounds haven't cleared the tar, take to a dry cleaner. Tell them: \"Tar on cotton, age [fresh / old], home-treated with mineral spirits + Dawn. [Hot-washed separately / not yet laundered]. [Fabric intact].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. SAFETY: ventilate, gloves, NO FLAME. Petroleum solvent is flammable.",
+      "2. Scrape / chill-brittle-and-flake as much tar as possible first.",
+      "3. Catch cloth UNDER the stain.",
+      "4. Mineral spirits on a clean white RAG, tamp from back. 3–5 passes. Flip rag.",
+      "5. Dawn (generous) + soft brush + rinse. Repeat if needed.",
+      "6. Hot wash per care label, SEPARATELY from other laundry. Inspect BEFORE the dryer.",
+      "7. Escalate if two rounds plateau."
     ],
     "products": [
-      "Dawn dish soap",
-      "baking soda"
+      "Mineral spirits (paint thinner, hardware store)",
+      "Dawn dish soap (generous amounts)",
+      "Nitrile gloves",
+      "Ice pack (for hardened tar)",
+      "Clean white cloths (catch + pressing)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if two home rounds haven't cleared the tar, if the tar has been through a hot dryer and cured, OR if the fabric is starting to show solvent damage (rare on cotton but possible on blends).",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "MINERAL SPIRITS ARE FLAMMABLE — ventilate, no flames",
+      "Never pour solvent on fabric — tamp with cloth",
+      "Never scrub sticky tar — spreads it",
+      "Wash SEPARATELY — residual tar transfers",
+      "Inspect BEFORE the dryer — heat cures tar permanently"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "NEVER work with mineral spirits near open flame / water heater pilot / stove",
+      "Never pour solvent on cotton — tamp with cloth",
+      "Never scrub sticky tar",
+      "Never mix laundry loads — tar transfers",
+      "Never hot-dry residual tar — cures permanently"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates POG, mineral spirits, kerosene, IPA, NSD, hot wash",
+      "Dyed cotton: solvent usually safe; inside-seam-test if concerned",
+      "Heat-durable once tar is cleared"
     ]
   },
+  "materialWarnings": [
+    "FLAMMABLE solvent — ventilate, no flames",
+    "Wash separately — tar transfers",
+    "Dryer cures residual tar into a permanent film"
+  ],
   "escalation": {
-    "when": "If tar stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is tar on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Two home rounds haven't cleared tar, tar has been hot-dried and cured, or fabric shows unexpected solvent interaction.",
+    "whatToTell": "\"Tar on cotton, age [fresh / old], home-treated with mineral spirits + Dawn. [Hot-washed separately / not yet laundered]. Residual [size].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Is the tar fresh (sticky) or old (hardened)?",
+      "Road tar, roofing tar, or beach tar? (roofing has higher-MW hydrocarbons, harder)",
+      "How big is the stain?",
+      "Has it been through a dryer yet?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Tar is the petroleum solvent's home ground — like dissolves like. Safety posture (ventilation + no flame) is as important as the chemistry. Hot-dried tar is typically not recoverable."
   },
-  "difficulty": 8,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

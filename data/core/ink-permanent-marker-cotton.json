@@ -1,80 +1,222 @@
 {
   "id": "ink-permanent-marker-cotton",
   "title": "Permanent Marker on Cotton",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Permanent marker contains xylene or toluene-based solvent, resin binder, and concentrated dye. On cotton, the solvent penetrates deeply and evaporates, leaving a tough resin-dye film. The resin is designed to be solvent-resistant once dry — this is why 'permanent' markers are permanent. Fresh marker is much easier to treat than dried.",
-  "whyThisWorks": "Isopropyl alcohol or acetone (where fiber-safe) dissolves the resin binder on cotton. The dissolved dye transfers to a blotting cloth. Amyl acetate provides the strongest safe solvent action for resistant residue. Complete removal is often not possible on porous materials — the dye penetrates too deeply. Professional treatment recommended for valued items.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "15–60 minutes; honest expectation is often partial removal",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "ink-permanent-marker",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "dye",
+      "permanent-marker",
+      "sharpie",
+      "cotton",
+      "specialty-hazard",
+      "solvent-required",
+      "escalate-fast"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Permanent marker is engineered to be permanent. Xylene or toluene solvent + concentrated dye + resin binder — once the solvent evaporates, the resin-dye film is solvent-resistant by design. On cotton, the solvent carries the dye deep into the fiber before the binder sets, and the binder then locks the color in. Home chemistry has a real but limited ceiling on permanent marker: fresh marker (minutes old) often yields 70–90% to alcohol or acetone; aged / washed-in marker frequently plateaus at faint shadow no matter what. Honest expectation-setting is part of the protocol. Cotton tolerates IPA, acetone, POG, NSD, 3% H₂O₂, hot wash.",
+  "whyThisWorks": "Catch cloth UNDER + solvent tamp on TOP moves dye out of the cotton into the cloths. Fresh marker responds to IPA; aged marker often needs acetone (on 100% cotton only — destroys acetate blends). Multiple passes on permanent marker are the norm. The honest framing: home treatment on permanent marker is 'fade significantly' not 'remove completely' — professionals sometimes do better, sometimes don't. Set expectations up front.",
+  "defaultAssumption": "Escalate-first posture. Permanent marker on valuable clothing is often best handled by a dry cleaner while it's still fresh; home attempts that don't work delay pro treatment and make the marker harder to remove. Set expectations honestly — full removal is not guaranteed even professionally.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Safety Fork",
+      "technique": "Fiber check + honest scope",
+      "equipment": "Care label, patch-test area",
+      "dwellTime": "1 minute",
+      "instruction": "READ THE LABEL. If cotton is blended with acetate / triacetate, DO NOT use acetone — it dissolves those fibers. 100% cotton = acetone OK; any acetate blend = IPA or non-acetone remover only. Second fork: if the garment is valuable or the marker is older than a few hours, consider escalating to a dry cleaner first — home attempts that fail make the pro's job harder. Third fork: place a catch cloth UNDER the stain before any solvent touches it."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "IPA Tamp From the Back",
+      "technique": "Solvent tamp, catch cloth under",
+      "equipment": "Isopropyl alcohol 90%+ on clean white cloth, catch cloth",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "IPA on a clean white cloth. Tamp from the BACK of the fabric over the catch cloth. Flip cloth frequently. 3–5 passes on fresh marker. Expect the dye to come out slowly — marker resists solvent by design."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Acetone Escalation (100% Cotton)",
+      "technique": "Stronger solvent for resin binder",
+      "equipment": "Acetone on clean white cloth — 100% cotton ONLY (destroys acetate)",
+      "dwellTime": "15–30 seconds per pass",
+      "instruction": "If IPA plateaus and fiber is confirmed 100% cotton: acetone on a white cloth, tamp from the back. SHORT dwell — acetone evaporates fast. Flip cloth frequently. Ventilate — acetone is flammable. Never use on acetate blends or unknown blends."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "NSD + Dawn",
+      "technique": "Emulsify residual resin",
+      "equipment": "NSD in warm water, Dawn",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD or Dawn, soft brush. Lifts any residual resin the solvent freed. Rinse cool."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3% (Whites Only)",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For residual dye shadow on white cotton: 3% H₂O₂. Skip on dark/dyed. One oxidizer at a time."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Hot Wash + Honest Inspection",
+      "technique": "Launder per label, accept realistic outcome",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Hot wash per care label. Inspect BEFORE the dryer. Most home results on permanent marker are 'significantly faded, maybe partially visible.' If that's acceptable, continue to dryer. If not, escalate to a dry cleaner — and don't dryer-set first."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate to dissolve the resin binder. Blot dissolved ink onto clean cloth",
-      "2. Repeat amyl acetate, blotting between applications — work from back of fabric when possible",
-      "3. Apply NSD to remove remaining residue. Flush with cool water",
-      "4. If color remains: apply H2O2 6% carefully on colorfast fabrics — 5-10 min dwell time, monitor",
-      "5. Apply Acetic Acid 28% (diluted 1:10) to neutralize. Blot dry"
+      "1. SAFETY FORK: fiber check (acetate = no acetone). Scope check (valuable / aged = consider escalation).",
+      "2. Catch cloth UNDER. IPA tamp from back. 3–5 passes.",
+      "3. Acetone on 100% cotton only if IPA plateaus. Short dwell. Ventilate.",
+      "4. NSD + Dawn to emulsify resin residue.",
+      "5. 3% H₂O₂ on residual shadow (whites only).",
+      "6. Hot wash per care label. Honest outcome expectations."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Isopropyl alcohol 90%+",
+      "Acetone (100% cotton only — destroys acetate / triacetate)",
+      "NSD / Dawn",
+      "Hydrogen Peroxide 3% (whites)"
     ],
-    "temperature": "cold",
+    "temperature": "cool through spotting; hot wash post-chemistry",
     "warnings": [
-      "Never rub ink — it spreads the dye",
-      "Work from back of fabric to push stain out"
+      "ACETONE DESTROYS ACETATE — fiber check is non-negotiable",
+      "Ventilate — acetone and IPA are flammable",
+      "Catch cloth UNDER + pressing cloth on TOP — always",
+      "Honest expectation: partial removal is the common outcome, not full removal",
+      "Dryer-set permanent marker = usually not recoverable"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Scope + Fiber Check",
+      "instruction": "Permanent marker (Sharpie) on cotton is genuinely hard. Before you start: (a) read the care label — if it says cotton/acetate blend or polyester/acetate blend, acetone-based removers will DISSOLVE the fiber. Use rubbing alcohol or non-acetone remover only. (b) If this is a valuable garment, consider taking it to a dry cleaner BEFORE you try home remedies — they have stronger options and home attempts that don't work make the marker harder to remove. (c) Set realistic expectations: home treatment typically FADES permanent marker significantly but rarely removes it completely."
+    },
+    {
+      "step": 2,
+      "agent": "Place a White Towel UNDER the Stain",
+      "instruction": "Fold a clean white towel and place it UNDER the stained area. The dissolved ink transfers DOWN into the catch cloth, not sideways."
+    },
+    {
+      "step": 3,
+      "agent": "Rubbing Alcohol on a White Cloth — Tamp From the Back",
+      "instruction": "Dab 70%+ rubbing alcohol on a clean white cloth. Press onto the stain from the BACK of the fabric, over the catch cloth. Flip the pressing cloth frequently. The dye transfers onto whichever cloth is touching it. Expect 3–5 rounds. Cotton tolerates alcohol."
+    },
+    {
+      "step": 4,
+      "agent": "Hand Sanitizer — Alternative",
+      "instruction": "If you don't have rubbing alcohol: alcohol-based hand sanitizer works (it's mostly alcohol + gel). Apply to a cotton ball or cloth, tamp from behind."
+    },
+    {
+      "step": 5,
+      "agent": "Acetone-Based Nail Polish Remover (100% Cotton Only)",
+      "instruction": "If alcohol plateaus AND your label confirms 100% cotton (NOT a blend): dab acetone-based nail polish remover on a cotton swab. Tamp from the back for 15–30 seconds per pass. Ventilate the room — acetone is flammable and the fumes are strong. ONE MORE TIME: if the fabric contains acetate or triacetate, acetone dissolves it. When in doubt, skip this step.",
+      "safetyNote": "Acetone is flammable. Open a window. No smoking, no candles, no flames nearby."
+    },
+    {
+      "step": 6,
+      "agent": "Dawn + Warm Water to Clean Up",
+      "instruction": "Once you've lifted as much as you can with alcohol / acetone, work a drop of Dawn into the spot with a soft toothbrush. Rinse cool. Dawn removes the residual resin and any solvent residue."
+    },
+    {
+      "step": 7,
+      "agent": "Peroxide for Final Shadow (Whites Only)",
+      "instruction": "For a lingering color shadow on white cotton: dab 3% hydrogen peroxide, let bubble 3–5 min, blot. Skip on dark / dyed cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia."
+    },
+    {
+      "step": 8,
+      "agent": "Inspect and Decide — Accept or Escalate",
+      "instruction": "Inspect in daylight BEFORE the dryer. Three possible outcomes: (1) fully gone = hot wash per label. (2) significantly faded but still visible = decide if that's acceptable. If yes, proceed. If no, don't hot-wash/dry — take it to a dry cleaner while the treatment is still fresh. (3) barely faded or same = stop and escalate. The dry cleaner has stronger options and deserves to see the fabric before your home solvents set anything."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place a clean white cloth under the stain to catch transferred ink",
-      "2. Apply hydrogen peroxide 3% to the stain. Blot gently — do NOT rub",
-      "3. Blot dissolved ink onto the cloth. Move to clean area frequently",
-      "4. Apply Dawn dish soap and blot",
-      "5. Rinse with cold water. Air dry — no heat until stain is gone"
+      "1. Fiber check (acetate blend? no acetone). Value check (expensive? pro first). Expectation check (partial fade is common).",
+      "2. Catch cloth UNDER the stain.",
+      "3. Rubbing alcohol on a white cloth, tamp from the BACK. 3–5 rounds.",
+      "4. Hand sanitizer = alcohol alternative.",
+      "5. Acetone nail polish remover on 100% cotton ONLY if alcohol plateaus. Ventilate.",
+      "6. Dawn + warm water to finish.",
+      "7. 3% peroxide on residual shadow (whites only).",
+      "8. Inspect BEFORE the dryer. Partial fade is the common outcome — decide accept vs escalate."
     ],
     "products": [
-      "hydrogen peroxide 3%",
-      "Dawn dish soap"
+      "70%+ rubbing alcohol (drugstore isopropyl) — primary",
+      "Alcohol-based hand sanitizer — alternative",
+      "Acetone nail polish remover — 100% cotton only (NOT on acetate blends)",
+      "Clean white cloths (catch + pressing)",
+      "Dawn dish soap",
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if acetone would damage an acetate blend, if two home rounds haven't faded the marker, if the garment is valuable and you're better off at a dry cleaner, OR if you've reached the 'significantly faded' outcome and further chemistry risks fiber damage for marginal gain.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "ACETONE DESTROYS ACETATE — fiber label check first",
+      "Ventilate when using acetone or alcohol",
+      "Never pour solvent — tamp with cloth",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Set honest expectations: fade significantly is the usual outcome, full removal is rare",
+      "Never hot-wash or dry until you've accepted the current state — dryer permanently sets residual marker"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "NEVER acetone on acetate / triacetate blends — dissolves fiber",
+      "Never work near open flame — acetone and alcohol are flammable",
+      "Never pour solvent on cotton — tamp with cloth",
+      "Never hot-dry residual marker — permanent set",
+      "Never over-promise removal — set honest expectations"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "100% cotton: tolerates acetone, IPA, POG, NSD, 3% H₂O₂, hot wash",
+      "Cotton / acetate blends: acetone is forbidden — non-acetone remover or IPA only",
+      "Dyed cotton: skip peroxide or inside-seam-test",
+      "Heat-durable once marker is out"
     ]
   },
+  "materialWarnings": [
+    "Acetate blend + acetone = destroyed fiber",
+    "Home outcome is fade, not removal — set expectations",
+    "Dryer-set permanent marker = usually not recoverable"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is ink permanent marker on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Acetone needed but fiber is an acetate blend, garment is valuable, two home rounds haven't faded the marker, or fade is insufficient and user needs better. Escalate EARLIER rather than later — home attempts that don't work can set the marker harder.",
+    "whatToTell": "\"Permanent marker on cotton — [100% cotton / blend / unknown], age [fresh / overnight / older], home-treated with [rubbing alcohol / acetone / both]. [Significantly faded / barely changed]. Fabric [intact / possible acetate damage]. No hot wash or dryer applied.\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Is the fabric 100% cotton or a blend? (blend possibly with acetate?)",
+      "How old is the marker?",
+      "Is this a valuable / sentimental item?",
+      "Has any solvent been applied already?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Permanent marker is the stain where expectation-setting is half the protocol. Home treatment fades; it rarely removes. Acetate check is a fiber-safety must. Valuable items go pro earlier."
   },
-  "difficulty": 8,
-  "timeEstimate": "20-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

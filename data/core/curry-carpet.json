@@ -1,80 +1,200 @@
 {
   "id": "curry-carpet",
-  "title": "Curry/Turmeric on Carpet",
-  "stainFamily": "combo",
+  "title": "Curry on Carpet",
+  "stainType": "dye",
+  "stainFamily": "dye",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Curry stains are dominated by curcumin from turmeric — one of the most persistent natural dyes. On carpet, curcumin bonds through strong hydrogen bonds and is intensified by alkaline conditions and UV light. The oil base (ghee, coconut oil) drives the pigment deep into fibers. Secondary spices add additional pigments and oils.",
-  "whyThisWorks": "Avoiding sunlight and alkali is the first priority — both permanently intensify curcumin color on carpet. Oil is addressed first with POG or surfactant. An oxidizer (H2O2) then breaks the conjugated double bonds in curcumin that produce the yellow color. This is one of the hardest stains to fully remove — professional treatment may be necessary for complete resolution.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "30–90 minutes plus multiple fade cycles; often pro",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "curry",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "dye",
+      "curcumin",
+      "oil-carrier",
+      "carpet",
+      "pad-risk",
+      "no-alkaline",
+      "escalate-early"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Same curcumin chemistry as curry-cotton, on carpet. Same ABSOLUTE RULE: NO alkaline cleaners — permanent red shift. Same sunlight + peroxide fade workhorse. Carpet adds pad-contamination risk + patch-test discipline. Fitted carpet loses the sunlight advantage (can't be moved to sun), so fade cycles stretch to days. Curry on carpet trends strongly toward pro-lane — the combination of oil carrier + curcumin + pad + limited sun access is rough at home.",
+  "whyThisWorks": "Oil carrier off via NSD damp cloth. 3% peroxide damp cloth on residual color. Repeated fade cycles over a day or two. Portable rugs can be sun-fade; fitted carpet substitutes repeat peroxide passes. Honest plateau expectation: aged curry on light carpet often leaves a faint shadow even with pros.",
+  "defaultAssumption": "Escalate-first posture. Curry on fitted carpet is a hard consumer stain; a pro has better odds than a home user. Portable rugs with sun access = reasonable DIY. Fresh + small = try once before escalating.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Safety Fork — No Alkaline",
+      "technique": "Absolute rule + honest scope",
+      "equipment": "Clean white towel",
+      "dwellTime": "1 minute",
+      "instruction": "ABSOLUTE RULE: do NOT apply baking soda, ammonia, OxiClean, or any alkaline cleaner. Curry's curcumin shifts to permanent DARK RED under alkaline. Set scope honestly: fitted carpet + aged curry often plateaus at faint yellow even with a pro. If the stain is on a portable rug, you have sun access and better odds. Scrape bulk off with a dull blade."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water + NSD",
+      "technique": "Strip oil carrier via damp cloth",
+      "equipment": "NSD in cool water, damp cloth, weighted dry towel",
+      "dwellTime": "5 min per pass",
+      "instruction": "NSD damp cloth. Strips the oil that locks curcumin onto the fiber. Never pour. Weighted dry towel extraction between passes. 2–3 cycles."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Hydrogen Peroxide 3% + Sun Cycle (Portable Rug)",
+      "technique": "Oxidize + UV fade",
+      "equipment": "3% H₂O₂ damp cloth, sun if portable",
+      "dwellTime": "10 min wet + 1–2 hours sun",
+      "instruction": "Dab 3% H₂O₂ via damp cloth. For portable rugs: set damp in direct sun 1–2 hours. For fitted carpet: fan-dry and repeat peroxide every 30–60 min over a sunny afternoon. Patch-test first."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "NSD Flush + Weighted Extract",
+      "technique": "Clear chemistry",
+      "equipment": "NSD damp cloth, heavy dry towel + weight",
+      "dwellTime": "2 min + 30 min weighted",
+      "instruction": "NSD-damp clean pass. Weighted dry towel 30 min."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Repeat Fade Cycles, Accept Plateau",
+      "technique": "Patient removal",
+      "equipment": "3% H₂O₂ + time",
+      "dwellTime": "1–2 days",
+      "instruction": "Curry is patient-removal. 2–3 peroxide + fade cycles over a sunny day or two. Honest plateau is common — aged curry on light carpet may leave faint yellow."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove excess solids with dull edge — do not rub",
-      "2. Apply Tannin Formula for the plant-pigment component",
-      "3. Apply POG for the oil component",
-      "4. Flush with NSD and cool water",
-      "5. If color persists: apply H2O2 6% on colorfast fabrics",
-      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+      "1. NO alkaline cleaners. Scrape bulk.",
+      "2. Cold NSD damp cloth — strip oil carrier.",
+      "3. 3% H₂O₂ damp cloth + sun (portable) or repeat fade (fitted).",
+      "4. NSD-damp flush + 30 min weighted extract.",
+      "5. Repeat fade cycles. Honest plateau.",
+      "6. Fitted carpet + aged curry = escalate early."
     ],
     "products": [
-      "Tannin Formula",
-      "POG (Paint Oil Grease remover)",
       "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold through spotting",
+    "warnings": [
+      "NEVER alkaline — permanent red shift",
+      "Never pool liquid on carpet",
+      "Oil before peroxide",
+      "Fitted carpet + aged curry = pro territory, set honest expectations",
+      "Patch-test peroxide on colored carpet"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "DON'T Apply Baking Soda or Ammonia",
+      "instruction": "Curry's yellow is turmeric (curcumin). If any alkaline cleaner — baking soda, ammonia, OxiClean, \"all-purpose\" carpet sprays — touches curry, the yellow permanently shifts to a DARK RED. Use ONLY Dawn + 3% peroxide on curry carpet. Nothing else."
+    },
+    {
+      "step": 2,
+      "agent": "Consider Calling a Pro — Honest Scope",
+      "instruction": "Curry on fitted carpet is hard. If the stain is aged, big, or on light carpet that's hard to patch-test, a carpet cleaner has stronger options. If you're proceeding, expect 2–3 cycles over a sunny day or two and set the expectation that aged curry may plateau at faint yellow."
+    },
+    {
+      "step": 3,
+      "agent": "Scrape Bulk Off",
+      "instruction": "Lift any solid curry off the carpet with a dull butter knife. Don't rub — drives it into the pad."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Cool Water on a DAMP Cloth",
+      "instruction": "Dampen a white cloth with cool water + a drop of Dawn. Press on the spot, lift, rotate. Strips the oil carrier that locks the yellow pigment. Repeat 2–3 cycles. Never pour on carpet."
+    },
+    {
+      "step": 5,
+      "agent": "Weighted Dry Towel Between Every Wet Pass",
+      "instruction": "Press a thick DRY towel with a heavy book on the spot for 20–30 min after each wet pass. Pulls moisture up from the pad."
+    },
+    {
+      "step": 6,
+      "agent": "3% Hydrogen Peroxide + Sun (Portable Rug)",
+      "instruction": "Dab 3% drugstore hydrogen peroxide on the stain via a damp cloth. Patch-test a hidden area first. Portable rug: lay damp in sunlight 1–2 hours. Fitted carpet: fan-dry, then repeat the peroxide application every 30–60 min over a sunny afternoon.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia."
+    },
+    {
+      "step": 7,
+      "agent": "Accept Plateau and Escalate If Needed",
+      "instruction": "Curry is patient-removal. If 2–3 cycles plateau at faint yellow, that may be the realistic home ceiling. Call a pro if: alkaline was applied (red shift), wool carpet, aged stain on light carpet, or 2 cycles didn't meaningfully fade. Tell them: \"Curry on [nylon / wool / synthetic] carpet, age [fresh / overnight / older], home-treated with Dawn + 3% peroxide + sun. [No alkaline / baking soda applied / plateau at faint yellow].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub",
-      "2. Rinse with cold water to remove loose material",
-      "3. Apply Dawn dish soap. Work gently",
-      "4. Blot with clean white cloth. Repeat if needed",
-      "5. Air dry — no heat until stain is gone"
+      "1. NO alkaline — baking soda / ammonia / OxiClean all shift curcumin to permanent red.",
+      "2. Honest scope check — fitted carpet + aged = often pro.",
+      "3. Scrape bulk. Cold water + Dawn on DAMP cloth, 2–3 cycles.",
+      "4. Weighted dry towel between wet passes.",
+      "5. 3% peroxide + sunlight (portable rug) OR repeat peroxide (fitted). Patch-test first.",
+      "6. Accept plateau — aged curry often leaves faint yellow.",
+      "7. Escalate for alkaline-applied, wool, or plateau."
     ],
     "products": [
-      "Dawn dish soap"
+      "Dawn dish soap",
+      "3% hydrogen peroxide",
+      "Clean white cloths",
+      "Heavy book or pan for weighted drying",
+      "A sunny afternoon (ideal)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if alkaline applied, wool carpet, or two peroxide + fade cycles plateau.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "NO alkaline — permanent red shift",
+      "Never pour on carpet",
+      "Never skip oil-strip step",
+      "Skip peroxide on colored carpet without patch test",
+      "Aged curry plateaus — set expectations"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "NEVER alkaline on curry — permanent red shift",
+      "Never pool liquid on carpet",
+      "Never skip the oil-strip step",
+      "Never layer oxidizers"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Synthetic face yarn: tolerates NSD, 3% H₂O₂",
+      "Wool: pro-lane",
+      "Backing: no pooled liquid"
     ]
   },
+  "materialWarnings": [
+    "NO alkaline cleaners — permanent red shift",
+    "Fitted carpet + aged curry = often pro",
+    "Expect plateau; don't over-cycle"
+  ],
   "escalation": {
-    "when": "If curry stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is curry on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Alkaline cleaner applied (red shift), wool carpet, aged curry on light fitted carpet, or two peroxide + fade cycles plateau.",
+    "whatToTell": "\"Curry on [nylon / wool / synthetic] carpet, age [fresh / overnight / older], home-treated with Dawn + 3% H₂O₂ + [sun / repeat fade cycles]. [No alkaline / baking soda applied / plateau].\"",
+    "specialistType": "professional carpet cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Has any alkaline cleaner been applied? (critical)",
+      "Carpet fiber — nylon / olefin / polyester / wool?",
+      "Portable rug (can sun-dry) or fitted carpet?",
+      "How old is the spill?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Same curcumin rules as mustard + curry-cotton. Alkaline-avoid absolute. Carpet adds pad-protection constraints. Fitted carpet plateau is common; honest expectation-setting is part of the protocol."
   },
-  "difficulty": 8,
-  "timeEstimate": "20-45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
