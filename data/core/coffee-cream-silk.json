@@ -1,195 +1,206 @@
 {
   "id": "coffee-cream-silk",
-  "version": "5.0",
-  "authored": "2026-03-22",
   "title": "Coffee with Cream on Silk",
-  "stainType": "combo-protein-tannin",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "silk",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "15–40 minutes (fresh); aged silk stains usually need a pro",
+  "lastValidated": "2026-04-24",
   "meta": {
     "stainCanonical": "coffee-cream",
     "surfaceCanonical": "silk",
     "tier": "universal",
     "riskLevel": "high",
     "tags": [
-      "combo",
-      "protein-first",
-      "tannin-second",
-      "cold-water",
-      "two-stage"
+      "combination",
+      "protein",
+      "tannin",
+      "silk",
+      "delicate-fiber",
+      "no-oxidizer"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Coffee with cream is a two-component stain: cream proteins (casein, whey) and coffee tannins. The challenge is treating them in the right sequence. Cold water sets protein—this is the critical mistake. The proteins in cream bond to silk's amino acids. Coffee tannins also bond, but through different mechanisms (hydrogen bonding). Treating tannin first with acid while protein remains will cause protein to set deeper under acidic conditions. Order matters here: protein first (gentle, cold, NSD), then tannin (acid).",
-  "whyThisWorks": "Ice-cold water flushes protein before setting. NSD encapsulates protein residue. Only after protein is gone do we use acetic acid for tannin removal. This two-stage approach prevents cross-contamination between stain components. Treating them separately (protein with detergent, tannin with acid) works better than treating them together.",
+  "stainChemistry": "Coffee with cream is the same combination stain as on cotton — casein protein from the milk, phenolic tannin from the coffee, a small oil fraction from the cream — but silk changes everything the pro operator has to do about it. Silk is a protein fiber (sericin + fibroin), which means the fiber itself reacts to enzymes, alkali, chlorine, and strong oxidizers the way the stain does. Aggressive protease digests the stain AND eats the silk. Strong peroxide yellows silk and weakens the hand. Heat shrinks it. The narrow-window chemistry is: low-enzyme concentration in cool water, short dwell, gentle acid-side for the tannin, and absolutely no chlorine bleach or hot pour-through.",
+  "whyThisWorks": "The order is the same as cotton (protein before tannin, chemistry before heat), but every step dials down. Cool (not cold, not warm) water flush. A short, dilute enzyme pass — if used at all. Acid-side tannin spotter in a small localized application, never a soak. Dilute peroxide only as a last resort and tested on an inside seam first. The honest reality: on silk, the pro lane is narrow, and aged coffee-cream stains on silk frequently plateau at 'faint but visible' — at which point the decision is either a dry cleaner or an accepted trade-off.",
+  "defaultAssumption": "Silk stains are escalate-first: the fiber is delicate and home-treatment windows are narrow. Fresh + small + colorfast silk may be a careful DIY; aged silk, dyed silk, or large-area stains are pro-lane. Err toward escalation more than on cotton.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "wet",
-      "agent": "Cold water",
-      "technique": "Blot from back, immediate action",
-      "equipment": "White towel, spray bottle, flat surface",
-      "dwellTime": "Within 1 minute of contact",
-      "instruction": "CRITICAL: Treat protein FIRST. Work from the back of the fabric. Spray cold water and blot hard—this hydraulically flushes cream proteins before they denature and set. Flipping to front and continuing. This initial cold water flush is more important than any chemistry that follows. If you miss this window, protein cross-links permanently."
+      "agent": "Cool Water Blot",
+      "technique": "Blot gently from the back",
+      "equipment": "Cool (not cold, not warm) water, soft white silk-safe towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Blot the stain from the BACK of the fabric with a soft white towel dampened with cool water — not cold (shocks silk) and not warm (sets casein). Dab gently, never rub or sponge hard. Silk's surface is easily disturbed; even a rough towel fiber can distort the weave. Continue until no more pigment transfers to the towel."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "NSD solution (NSD, 10% in cold water)",
-      "technique": "Sponge, gentle work",
-      "equipment": "Natural sponge, white cloth",
-      "dwellTime": "Brief — apply, work, blot",
-      "instruction": "Sponge onto stain gently. Detergent encapsulates remaining casein/whey proteins, suspending them so they lift away from silk. This is the protein removal stage—get it perfect before moving to tannin treatment. Blot repeatedly. Stain should lighten noticeably."
+      "agent": "Dilute Protein Spotter",
+      "technique": "Dropper application, short dwell",
+      "equipment": "Silk-safe Protein Spotter (low-concentration protease, e.g., PRENETT B diluted 1:3 in cool water) — OR dilute NSD alone if no silk-safe enzyme available",
+      "dwellTime": "5–8 minutes maximum",
+      "instruction": "Apply the dilute Protein Spotter by dropper to the stain, not to the fabric around it. Standard-strength protease will digest silk itself; dilute and short-dwell only. If no silk-specific enzyme is on hand, skip enzymes and use dilute NSD — under-treating silk is safer than over-treating. Watch the stain; flush the moment the color breaks."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Cold water rinse (multiple)",
-      "technique": "Spray and blot",
-      "equipment": "Spray bottle, white cloth",
-      "dwellTime": "Until rinse water runs clear",
-      "instruction": "Rinse thoroughly in cold water to remove all detergent. This is important—any NSD left behind will interfere with the acid treatment that follows. Work from back to front. Water should run absolutely clear with no bubbles."
+      "agent": "NSD Spot",
+      "technique": "Sponge, dab, blot",
+      "equipment": "Dilute NSD in cool water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Dab dilute NSD on the spot with a soft sponge. Silk tolerates neutral detergents; avoid anything alkaline. Blot from the back. NSD emulsifies any residual fat from the cream."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Acetic Acid 5% (GAA 1:20 in cold)",
-      "technique": "Dropper application, brief soak",
-      "equipment": "Dropper, white cloth",
-      "dwellTime": "1 minute maximum",
-      "instruction": "NOW that protein is removed, apply dilute acetic acid for tannin removal — 5% working dilution (glacial acetic acid 28% at 1:20 in cold water). Apply in droplets to any remaining brown/tan coffee color. The acidity breaks tannin-silk hydrogen bonds without damaging delicate protein fiber. After 1 minute maximum, blot. Don't overdo acid — silk weakens with prolonged exposure."
+      "agent": "Tannin Spotter",
+      "technique": "Dropper only, localized",
+      "equipment": "Silk-safe acid-side tannin spotter (PRENETT-A or dilute 5% acetic acid in cool water)",
+      "dwellTime": "2–3 minutes maximum",
+      "instruction": "For residual coffee pigment, apply the acid-side spotter by dropper only. Do NOT soak silk in acid — localized application and short dwell. Dab, blot. Test an inside seam first on colored or printed silk."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Dilute H₂O₂ (1.5%, in cold water)",
-      "technique": "Light sponge if needed",
-      "equipment": "Sponge, white cloth",
-      "dwellTime": "Brief — apply, check, blot",
-      "instruction": "If brown coffee color remains, dilute 3% H₂O₂ 1:1 with cold water. Sponge gently onto any remaining color. Peroxide oxidizes remaining tannin pigment. Silk is protein—dilute peroxide is safer than full strength. After 1-2 minutes, blot thoroughly."
+      "agent": "Dilute Peroxide — Last Resort",
+      "technique": "Inside-seam test, then spot",
+      "equipment": "3% H₂O₂ diluted 1:1 with cool water",
+      "dwellTime": "2 minutes maximum, test first",
+      "instruction": "Only if color persists after steps 2–4 AND the silk is white or colorfast. Dilute 3% H₂O₂ 1:1 with cool water. Test on an inside seam for dye stability before applying to the stain. If the test is clean, apply to the spot with a dropper for 2 minutes maximum. Flush immediately. On any sign of yellowing or dye lift, stop and escalate."
     },
     {
       "step": 6,
       "side": "wet",
-      "agent": "Cold water final rinse",
-      "technique": "Multiple rinses",
-      "equipment": "Spray bottle, white cloth",
-      "dwellTime": "Until rinse water runs clear",
-      "instruction": "Rinse completely to remove all acid and peroxide. Lay flat, work from back to front. Silk should feel clean and not slippery."
+      "agent": "Cool Rinse + Flat Dry",
+      "technique": "Flush from back, flat-dry in shade",
+      "equipment": "Cool running water, flat surface, white cotton towel",
+      "dwellTime": "Rinse to clear; flat-dry several hours",
+      "instruction": "Flush cool water from the back until no chemistry remains. Pat dry between two clean white cotton towels. Lay flat in a shaded space to air-dry — never direct sun (bleaches silk dye) and never a dryer (heat + tumble both damage silk). Do not wring."
     }
   ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Cool water blot from the back — not cold, not warm. Gentle.",
+      "2. Dilute Protein Spotter (1:3 in cool water) or skip enzymes. Short dwell, dropper only.",
+      "3. Dilute NSD dab on residual. Blot from the back.",
+      "4. Silk-safe acid-side tannin spotter (PRENETT-A or dilute acetic acid) by dropper. Localized only, no soak.",
+      "5. LAST RESORT: 3% H₂O₂ diluted 1:1. Inside-seam-test first. Spot only, 2 min max.",
+      "6. Cool rinse, pat between towels, flat-dry in shade."
+    ],
+    "products": [
+      "Silk-safe Protein Spotter (dilute protease)",
+      "NSD (Neutral Synthetic Detergent)",
+      "Silk-safe acid-side tannin spotter (PRENETT-A or dilute 5% acetic acid)",
+      "3% H₂O₂ (diluted 1:1, last resort only)"
+    ],
+    "temperature": "cool throughout — never cold, never warm, never hot; flat-dry in shade",
+    "warnings": [
+      "Silk IS a protein fiber — strong protease digests it; dilute enzyme or skip",
+      "Never chlorine bleach on silk",
+      "Never soak silk in acid — localized dropper only",
+      "Never sun-dry dyed silk — fades the dye",
+      "Never hot-wash or tumble-dry silk",
+      "Inside-seam-test every oxidizer, acid, and solvent before applying to the visible stain"
+    ]
+  },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Silk + coffee-with-cream: combo stain, narrow home toolkit",
-      "instruction": "Coffee with cream has three parts: tannin (coffee), protein (milk casein), and fat (cream). On silk, enzymes — the go-to tool for the protein — are banned because they digest silk fibroin. That leaves cold water + silk-safe detergent + strict-dwell vinegar + strict-dwell peroxide (white only). Fresh within 1–2 hours is winnable. Anything older or heat-set is pro territory."
+      "agent": "Consider Escalating First",
+      "instruction": "Silk is an escalate-first fabric. Most silk stains that don't come out with cool water + gentle dabbing in the first 2 minutes are best taken to a dry cleaner. Home chemistry that works fine on cotton often damages silk. Read the care label; if it says \"Dry Clean Only\" or \"Dry Clean Recommended,\" that is the correct path. Proceed with home treatment only if the label allows hand-wash AND the stain is small AND fresh."
     },
     {
       "step": 2,
-      "agent": "Silk rules + combo attack order",
-      "instruction": "Silk bans: no enzymes, no hot water, no alkaline, no alcohol, no wringing or scrubbing, peroxide max 45 sec. Combo attack order matters here: cool water → Dawn (fat) → vinegar (tannin/pH) → peroxide (residual pigment on white only). Do NOT use hot water — protein sets permanently with heat and silk felts."
+      "agent": "Cool Water Blot, Never Cold",
+      "instruction": "If you are proceeding: work quickly. Dampen a soft white cloth with COOL (not cold, not warm) water. Blot the stain from the BACK of the fabric. Dab gently — silk surface disturbs easily. Never rub, never sponge hard. Cold shocks silk; warm sets the cream protein."
     },
     {
       "step": 3,
-      "agent": "Patch test + ice-water blot from the back",
-      "instruction": "Dab cool water on an inside seam, wait 60 seconds, blot. If clean, proceed. Turn the garment inside out, place a white towel underneath, dab ICE-cold water on the BACK of the stain with a cotton ball. The underside towel catches runoff; replace it as it picks up brown. 30–60 seconds of patient dabbing. Most fresh coffee-with-cream lifts 70–80% at this step alone on silk (surface-bonding)."
+      "agent": "One Drop of Mild Detergent",
+      "instruction": "Mix one drop of a silk-safe mild detergent (Eucalan, Heritage Park Silk & Wool Wash, or a tiny drop of clear Dawn) in 1 cup cool water. Dab the solution onto the stain with a clean cotton cloth, let sit 3 minutes, blot. Do not soak the garment."
     },
     {
       "step": 4,
-      "agent": "Dawn dish soap — cut the cream fat",
-      "instruction": "Mix half a teaspoon of clear Dawn in one cup of cool water. Dip a white cloth, WRING NEARLY DRY, press on the stain. 2 minutes dwell. Blot. Dawn emulsifies the butterfat in the cream so the vinegar in step 5 can reach the tannin underneath. Without this step, vinegar gets held off by the fat film."
+      "agent": "White Vinegar — Diluted, Spot Only",
+      "instruction": "For coffee color that persists: mix 1 teaspoon white vinegar with 4 tablespoons cool water. Dab on the spot with a cotton swab, 1–2 minutes only. Blot. The weak acidity gently breaks the coffee tannin bond. Do NOT soak silk in vinegar — localized application only. Test an inside seam first on colored or patterned silk.",
+      "safetyNote": "Never use hydrogen peroxide, OxiClean, or chlorine bleach on silk at home — all three can yellow, weaken, or damage the fiber."
     },
     {
       "step": 5,
-      "agent": "Dilute vinegar — STRICT 60-second ceiling",
-      "instruction": "Mix 1 part white vinegar with 1 part cool water. Press a cotton swab onto the stain. 60 SECONDS MAX — set a timer. Rinse with cool water from the back immediately. Mild acid keeps tannin in its lighter form and restores silk pH. Over-dwell weakens silk.",
-      "safetyNote": "Never full-strength vinegar on silk. Rinse vinegar out fully before any peroxide step."
+      "agent": "Cool Rinse, Pat Between Towels",
+      "instruction": "Rinse the spot with cool water from the back. Do not wring the silk. Lay the garment flat between two clean white cotton towels, press gently to absorb water, then lay flat on a third dry towel to air-dry in a shaded space. No sun, no dryer, no ironing until dry."
     },
     {
       "step": 6,
-      "agent": "Very dilute peroxide — STRICT 45-sec, white silk only",
-      "instruction": "If a brown shadow remains AND the silk is white or very light AND the patch test came back clean: mix 1 part 3% peroxide with 2 parts cool water. Dab with a cotton swab for 30–45 SECONDS MAX, flush with cool water immediately. Skip on colored silk. Over-dwell yellows silk permanently.",
-      "safetyNote": "Never exceed 45 seconds peroxide on silk."
-    },
-    {
-      "step": 7,
-      "agent": "Press dry + lay flat — never hang wet silk",
-      "instruction": "Press between dry white towels. No wringing. Lay flat on a fresh dry towel, reshape while damp. Air-dry at room temperature out of direct sun. No heat source. If a shadow remains, do not repeat the full home protocol — escalate."
-    },
-    {
-      "step": 8,
-      "agent": "Escalate to a silk specialist",
-      "instruction": "If the patch test failed, the stain was older than a few hours, or a shadow remains after drying, take the garment to a silk specialist (call ahead — not every dry cleaner is silk-safe). Tell them: \"Coffee with cream on silk (tannin + casein + fat), age [x]. Treated at home with ice water + Dawn + 1:1 vinegar (60 sec) + [dilute peroxide 45 sec on white]. No enzymes, no alkaline, no heat.\" Pros have silk-safe protein digestant + reducing bleach with controlled dwell."
+      "agent": "Inspect Dry and Escalate on Residue",
+      "instruction": "Once fully dry, inspect in daylight. If any shadow remains, stop and escalate. Home treatment on silk plateaus faster than on cotton, and repeat attempts risk fiber damage more than they help. Take it to a dry cleaner and tell them: \"Coffee with cream on silk, age [fresh / same-day / older], home-treated with cool water + mild detergent + diluted white vinegar. No oxidizers used.\""
     }
   ],
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — silk dyes may not tolerate spotting agents.",
-    "NEVER use hot water—sets protein irreversibly through cross-linking",
-    "NEVER treat tannin first while protein remains—protein will set under acidic conditions",
-    "NEVER use Protein enzymes—digest silk protein",
-    "NEVER use strong acid (undiluted vinegar)—weakens silk",
-    "AVOID mechanical agitation—silk ruptures when wet"
-  ],
-  "escalation": "If stain persists after two-stage treatment (protein then tannin) or if stain has set for hours, call professional. Coffee-cream stains that have oxidized (brown color intensifies) require stronger chemistry than home treatment provides.",
-  "products": {
-    "household": [
-      {
-        "name": "Mild Liquid Dish Soap (dye-free, fragrance-free)",
-        "brand": "Dawn Free & Clear or similar",
-        "icon": "🧴",
-        "amazonSearchQuery": "dawn free clear dish soap",
-        "affiliateTag": "gonr08-20",
-        "note": "Use 1/4 tsp in 1 cup cold water. Gentle pH-neutral substitute for professional NSD. Gentle detergent for protein component. 10% solution in cold water. Use first."
-      },
-      {
-        "name": "White Vinegar",
-        "brand": "Any grocery store",
-        "icon": "🍶",
-        "amazonSearchQuery": "white vinegar 5% acetic acid",
-        "affiliateTag": "gonr08-20",
-        "note": "For tannin component. Dilute 1:1 with cold water. Use AFTER protein is removed. DO NOT substitute industrial-strength (28%) acetic acid — it causes chemical burns."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. If care label is dry-clean-only, stop and escalate. Home chemistry on silk damages more than it helps.",
+      "2. Cool (not cold, not warm) water blot from the BACK with a soft white cloth.",
+      "3. 1 drop silk-safe detergent (Eucalan, Heritage Park, or clear Dawn) in 1 cup cool water. Dab, dwell 3 min, blot.",
+      "4. Diluted white vinegar (1 tsp in 4 tbsp cool water) on residual coffee color — spot only, 1–2 min, blot.",
+      "5. Cool rinse from the back. Pat between towels. Flat-dry in shade.",
+      "6. Inspect dry. Any remaining shadow = escalate to a dry cleaner."
     ],
-    "professional": [
-      {
-        "name": "Mulsolite",
-        "brand": "Chemspec",
-        "icon": "🧪",
-        "amazonSearchQuery": "Mulsolite NSD",
-        "affiliateTag": "gonr08-20",
-        "note": "Professional NSD for protein removal stage."
-      }
+    "products": [
+      "Soft white cotton cloths (no terry loops on the outside layer)",
+      "Silk-safe detergent (Eucalan, Heritage Park Silk & Wool Wash, or clear Dawn)",
+      "White vinegar (diluted, spot-only use)"
+    ],
+    "whenToStop": "Stop immediately if the silk shows yellowing, a watermark ring, fiber damage, dye lift, or shrinkage. Stop if two gentle passes don't clear the stain. Take it to a professional dry cleaner — silk is their lane.",
+    "warnings": [
+      "Silk stains are escalate-first; most coffee-cream on silk belongs at the dry cleaner",
+      "NEVER hydrogen peroxide, OxiClean, or chlorine bleach on silk at home — damages the fiber",
+      "NEVER soak silk in water or acid — localized dabs only",
+      "NEVER hot water, sunlight drying, dryer, or iron on wet silk — all damage the fiber",
+      "Cool means cool — cold shocks silk, warm sets the protein"
     ]
   },
-  "customerExplanation": "Coffee with cream has two stain components: proteins from cream and tannins from coffee. The critical mistake is treating them the same way or in the wrong order. We treat protein FIRST with cold water and detergent, then tannin SECOND with mild acid. This two-step sequence prevents proteins from setting deeper under acidic conditions.",
-  "commonMistakes": [
-    "Using hot water immediately—protein sets permanently and stain becomes nearly impossible to remove",
-    "Treating tannin first with acid—this causes remaining cream proteins to denature and set into the silk",
-    "Using enzymes—people assume enzymes help protein stains. Protein damages silk's own protein."
+  "safetyMatrix": {
+    "neverDo": [
+      "Never use strong enzymes on silk — protease digests silk fiber",
+      "Never use chlorine bleach on silk — irreversibly damages",
+      "Never hot-water or tumble-dry silk — shrinks and weakens",
+      "Never soak silk in acid or oxidizer — localized dabs only",
+      "Never sun-dry dyed silk — fades the dye",
+      "Never iron silk until fully dry"
+    ],
+    "fiberSensitivities": [
+      "Silk is a protein fiber — same chemistries that attack stain protein attack silk",
+      "Dye on silk is less stable than dye on cotton — test every chemistry on an inside seam first",
+      "Heat-sensitive; temperature tolerance is narrow (cool to lukewarm only)",
+      "Mechanical-action sensitive; no scrubbing, wringing, or vigorous blotting"
+    ]
+  },
+  "materialWarnings": [
+    "Silk is escalate-first — home chemistry options are narrow",
+    "No oxidizers at home on silk — yellowing and fiber damage risk",
+    "Cool water only — cold shocks, warm sets the protein"
   ],
-  "scienceNote": "Combo stains like coffee-cream are actually two independent stain problems that happen to occur together. Casein (milk protein) denatures and cross-links starting around 40°C. Tannins form hydrogen bonds that break under acidity but strengthen under heat. If you apply acid (vinegar) while proteins are still present, the lowered pH accelerates protein denaturation and locks them in. The solution is sequential treatment: remove proteins first (cold, detergent), then remove tannins (acid). Some operators try to treat both simultaneously—this fails because the chemistries conflict.",
-  "callPro": "If combo stain has set for more than 6-8 hours, professional care is justified. Proteins that have cross-linked require different chemistry (sometimes mild enzymes safe for silk, or solvent-based treatments) than home detergent provides.",
-  "components": [
-    "detergent",
-    "acid-spotter",
-    "oxidizer"
-  ],
-  "component_order": [
-    "detergent",
-    "acid-spotter",
-    "oxidizer"
-  ],
-  "difficulty": 7,
-  "difficulty_factors": [
-    "combo-stain",
-    "two-stage",
-    "order-critical",
-    "protein-first",
-    "time-sensitive"
-  ],
-  "solventNote": "Professional shops: Coffee-cream on silk requires two-stage treatment. Stage 1: Cold NSD (Mulsolite) for protein removal, 2-3 minutes soak then sponge work. Stage 2: After complete rinse, acetic acid spotter (GAA diluted 1:10 in cold water) for tannin removal, 1-2 minutes max. For oxidized tannin residue, dilute H₂O₂ (1.5-2%, cold, max 2 minutes). VDS post-treatment optional. Temperature critical: never exceed 30°C. Risk of fiber damage increases with extended treatment time.",
-  "aftercare": "Squeeze gently in towel—never wring. Lay flat. No heat. Silk must dry slowly and evenly.",
+  "escalation": {
+    "when": "Care label says dry-clean-only, the stain is aged or large, silk is dyed/patterned, two gentle passes haven't cleared it, or any sign of fiber damage / dye lift appears during home treatment.",
+    "whatToTell": "\"Coffee with cream on silk, age [fresh / same-day / older], home-treated with [cool water + silk-safe detergent / + diluted vinegar]. No oxidizers. [Dye stable / shadow remains / visible ring.]\"",
+    "specialistType": "professional dry cleaner with silk experience"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is the care label dry-clean-only or hand-wash?",
+      "How old is the stain — fresh, same-day, older?",
+      "Is the silk dyed, patterned, or off-white / ivory?",
+      "How large is the stain — thumbnail, palm, larger?"
+    ],
+    "modifierNotes": "Silk narrows every chemistry window. Protease, peroxide, chlorine, heat, and soaking are all fiber risks as much as stain solvents. Default answer for aged or dyed silk is a dry cleaner. Home treatment only for small, fresh, colorfast silk with explicit hand-wash labels."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

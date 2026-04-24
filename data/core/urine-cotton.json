@@ -1,218 +1,205 @@
 {
   "id": "urine-cotton",
-  "version": "5.0",
-  "authored": "2026-03-22",
-  "title": "Urine (Fresh or Aged) on Cotton",
-  "stainType": "protein-oxidizable",
-  "surface": "cotton-white",
+  "title": "Urine on Cotton",
+  "stainType": "protein",
+  "stainFamily": "protein",
+  "surface": "cotton",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "15–45 minutes (fresh) or up to 2 hours (aged odor present)",
+  "lastValidated": "2026-04-24",
   "meta": {
     "stainCanonical": "urine",
     "surfaceCanonical": "cotton",
     "tier": "universal",
     "riskLevel": "low",
     "tags": [
-      "urine",
-      "uric-acid",
       "protein",
+      "uric-acid",
       "odor-causing",
-      "cotton-tolerant"
+      "cotton",
+      "bacterial"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Urine contains urea (protein breakdown product), uric acid crystals (oxidizable), and urochrome pigment (yellow dye). Fresh urine is acidic (pH 4.5-6.5); its uric acid bonds weakly to cotton. Urochrome is a breakdown product of hemoglobin and stains yellow. Bacteria multiply over time, breaking down urea and producing ammonia—the characteristic odor. Cotton's cellulose is robust enough to tolerate enzymes, heat, and oxidizing bleach.",
-  "whyThisWorks": "Urine is a biological stain — protein + uric acid + bacterial byproducts — so bio-enzymatic (enzymatic) treatment is the correct first move. The enzyme breaks urea and uric acid protein bonds. H₂O₂ oxidizes urochrome pigment to colorless. Cold water first prevents bacterial growth. Oxygen bleach (OxiClean) is thorough for old stains. White cotton tolerates aggressive treatment.",
+  "stainChemistry": "Urine is urea + uric-acid crystals + urochrome (a yellow pigment derived from hemoglobin breakdown). Fresh urine is mildly acidic (pH 4.5–6.5) and lifts fast. Aged urine is the real problem: bacteria metabolize the urea into ammonia, raising pH above 7, which precipitates uric-acid crystals AND produces the characteristic sharp odor. Cotton is cellulose — chemically durable, tolerates enzymes, acid-side spotters, 3% H₂O₂, and hot post-chemistry wash. The treatment has to clear both the stain AND the bacteria; otherwise the smell comes back.",
+  "whyThisWorks": "Enzyme first to digest the urea + uric acid protein chain. Acid-side pass (acetic acid / white vinegar in home) dissolves residual uric-acid crystals and neutralizes the alkaline ammonia that builds under bacterial action. Peroxide oxidizes the urochrome pigment to colorless. NSD flush removes all chemistry. Hot wash kills any surviving bacteria — without the hot wash the odor will return in a few hours even if the visible stain is gone.",
+  "defaultAssumption": "Fresh urine on cotton is an easy win; aged (>24 hours) is a two-pass job because the bacterial-odor loop has to be broken. Pet urine on a mattress or upholstery escalates earlier — the padding traps bacteria the home chemistry can't reach.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "wet",
-      "agent": "Cold water",
-      "technique": "Blot and flush",
-      "equipment": "White towel, spray bottle",
-      "dwellTime": "Immediate",
-      "instruction": "Work from the back of the garment first. Spray cold water and blot hard—this hydraulically flushes initial urine and uric acid crystals before bacteria establish. Flip to front and continue. Speed matters for fresh urine (within 1-2 hours). Keep blotting until you see only clear or pale yellow water. Cold water is critical; warm water activates bacteria and sets the odor."
+      "agent": "Cold Flush",
+      "technique": "Flush from the back, blot",
+      "equipment": "Cold water, white cotton terry towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Cold flush from the BACK of the fabric. Press a clean towel under from the top and blot hard. Hydraulic flow pushes urea and uric-acid crystals out the way they came in. Cold only — warm water accelerates bacterial metabolism and locks the odor in before chemistry has a chance. Continue until the towel comes up clear or pale."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Enzyme spotter (e.g. Biz, Zout, or enzyme pre-soak)",
-      "technique": "Soak and gentle agitation",
-      "equipment": "Plastic basin, soft brush",
-      "dwellTime": "15-20 minutes soak, then work",
-      "instruction": "Mix the enzyme spotter (Biz, Zout, or a biological laundry detergent) per product instructions with warm water (30-40°C, enzyme-activation range). White cotton tolerates warmth safely. Submerge stained area completely. Enzymes break peptide bonds in urea and uric acid molecules, reducing them to fragments. After 15 minutes, gently agitate or brush with a soft brush. You'll feel the stain texture change as protein fragments detach. Don't be aggressive; enzyme does the molecular work."
+      "agent": "Protein Spotter",
+      "technique": "Apply, dwell, light brush",
+      "equipment": "Liquid Protein Spotter (PRENETT B / protease digestant) or enzyme pre-soak dissolved in warm water (30–38°C)",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Apply the Protein Spotter directly. The enzyme window is warm, not hot — 30–38°C / 85–100°F (above 50°C the protease denatures). Submerge the stain or keep it wet under a damp towel. Brush gently with a soft bristle brush after the first 5 minutes. Protease hydrolyzes the peptide backbone of urea and cleaves the protein matrix that holds uric acid + urochrome in place."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Acetic Acid 28% (diluted)",
-      "technique": "Soak after enzyme",
-      "equipment": "Basin with vinegar solution",
-      "dwellTime": "5-10 minutes",
-      "instruction": "After Protein, apply 28% Acetic Acid (diluted) directly or soak in vinegar solution . Acetic acid dissolves any remaining uric acid crystals and helps neutralize bacterial odor. Vinegar also kills bacteria actively producing ammonia smell. This step is optional but highly recommended for urine because odor is the real problem—the stain itself is minor. Vinegar tackles both."
+      "agent": "Acid Rinse",
+      "technique": "Dropper or flush",
+      "equipment": "Dilute acetic acid (pro: 5% aqueous or Chemspec tannin-acid spotter)",
+      "dwellTime": "2–5 minutes",
+      "instruction": "After the enzyme pass, flush with an acid-side rinse. The acid dissolves residual uric-acid crystals that the enzyme loosens but doesn't fully clear, and neutralizes alkaline ammonia from bacterial breakdown. Work from the back of the fabric."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "NSD flush",
-      "technique": "Flush and blot",
-      "equipment": "Basin or sink",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot — do not rub. All oxidizer and enzyme residue must be fully removed before drying."
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop-by-drop on residual pigment",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For any residual yellow urochrome shadow: apply 3% H₂O₂ drop-by-drop. Peroxide oxidizes the urochrome to colorless. Dwell 3–5 min, blot. One oxidizer at a time; NSD-flush between if a second pass is needed."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Sodium bicarbonate (alkaline odor pass)",
-      "technique": "Soak or paste",
-      "equipment": "Basin or paste application",
-      "dwellTime": "Brief — apply, work, check",
-      "instruction": "Urine odor is the real issue. After peroxide, apply baking soda paste (baking soda + water) directly to the stained area. Baking soda is alkaline and neutralizes any residual acidic urine compounds and ammonia. Let sit 10-15 minutes. Alternatively, do a final vinegar soak . Either approach kills remaining bacterial smell."
+      "agent": "NSD Flush",
+      "technique": "Remove chemistry",
+      "equipment": "NSD (Neutral Synthetic Detergent)",
+      "dwellTime": "2 minutes",
+      "instruction": "Flush with NSD to clear all enzyme, acid, and peroxide residue. Any oxidizer left in the fiber yellows cotton over time under dryer heat."
     },
     {
       "step": 6,
       "side": "wet",
-      "agent": "Cold rinse and hot wash",
-      "technique": "Rinse thoroughly, then machine wash hot",
-      "equipment": "Sink and washing machine",
-      "dwellTime": "Until rinse water runs clear",
-      "instruction": "Rinse under cold running water until all enzyme, vinegar, peroxide, and baking soda are gone. Any residual chemistry left behind will reactivate odor. Then machine wash on hot water (65-95°C) with regular detergent. Heat kills any remaining bacteria and sets the odor removal. Hot water is fine for white cotton. This hot wash is essential—it's the final bacteria kill."
+      "agent": "Hot Wash + Sunlight Dry",
+      "technique": "Hot laundry, UV finish",
+      "equipment": "Washing machine (hot cycle, 60°C+), sunlight-drying line if available",
+      "dwellTime": "Full wash cycle, then air-dry",
+      "instruction": "Launder on the hottest setting the care label permits — heat is what kills the remaining odor-causing bacteria. Cold wash leaves them alive and the smell returns. Dry in direct sunlight when possible; UV has an antimicrobial effect and is the cleanest odor finisher for urine."
     }
   ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Cold flush from the back — fresh urine clears fast.",
+      "2. Liquid Protein Spotter (PRENETT B / protease) in warm water (30–38°C). Dwell 15–20 min.",
+      "3. Acid rinse (acetic acid 5% aqueous) — dissolves residual uric-acid, neutralizes ammonia.",
+      "4. 3% H₂O₂ drop-by-drop on residual urochrome. One pass. NSD-flush before any second pass.",
+      "5. NSD flush to clear all chemistry before heat.",
+      "6. Hot wash per care label + sunlight dry — heat kills bacteria, UV finishes the odor."
+    ],
+    "products": [
+      "Liquid Protein Spotter (PRENETT B or protease digestant)",
+      "Dilute acetic acid 5% aqueous",
+      "Hydrogen Peroxide 3%",
+      "NSD (Neutral Synthetic Detergent)"
+    ],
+    "temperature": "cold flush; warm (30–38°C) for enzyme; hot wash post-chemistry",
+    "warnings": [
+      "Warm water only in the enzyme window; above 50°C the protease denatures",
+      "Never warm-flush fresh urine — bacterial growth is the odor engine",
+      "One oxidizer at a time, NSD-flushed between",
+      "Flush all chemistry before heat — residual oxidizer yellows cotton"
+    ]
+  },
   "homeSolutions": [
     {
       "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
-      "agent": "cool water",
-      "safetyNote": "Never use hot water on urine — heat sets protein stains."
+      "agent": "Cold Water First, Not Warm",
+      "instruction": "Flush the spot with cold water from the BACK of the fabric. Cold only — warm water feeds the bacteria that cause the smell. Blot hard with a clean white towel from underneath. On fresh accidents most of the stain lifts here."
     },
     {
       "step": 2,
-      "instruction": "Place fabric stain-side down on glass work surface. Dab the stain lightly with cool water applied to a white cloth.",
-      "agent": "cool water"
+      "agent": "Enzyme Pretreat (Pet-Rated If Available)",
+      "instruction": "Use an enzyme laundry pretreat — OxiClean Versatile, Biz, or a pet-specific enzyme cleaner (Nature's Miracle, Rocco & Roxie). Dissolve powder in WARM water per the label (warm, not hot — hot water kills the enzymes). Apply to the stain. Let it sit 15–20 minutes. The enzymes digest the urea and uric-acid protein that hold the odor in."
     },
     {
       "step": 3,
-      "instruction": "Apply detergent/ammonia solution (1/4 tbsp mild laundry detergent + 1/2 tsp ammonia + 4 oz cool water) to the stain. Rub gently with the back of a spoon.",
-      "agent": "detergent/ammonia solution",
-      "safetyNote": "Ammonia can be strong — ensure good ventilation."
+      "agent": "White Vinegar for Odor + Crystals",
+      "instruction": "Mix equal parts white vinegar and cool water. Sponge onto the stain or soak the area for 5 minutes. Vinegar dissolves residual uric-acid crystals the enzyme leaves behind AND neutralizes the ammonia smell. This step is the reason old urine stops smelling after treatment."
     },
     {
       "step": 4,
-      "instruction": "Rinse thoroughly with cool water, working from center outward.",
-      "agent": "cool water"
+      "agent": "Hydrogen Peroxide 3% for Yellow Shadow",
+      "instruction": "If a yellow or brown shadow remains, dab 3% drugstore hydrogen peroxide onto the spot. Let it bubble 3–5 minutes, then blot. Skip this step on dark or dyed cotton — peroxide lightens dye. Rinse cool.",
+      "safetyNote": "Never mix hydrogen peroxide with ammonia, chlorine bleach, or vinegar at the same time — one at a time with a rinse between."
     },
     {
       "step": 5,
-      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize protein residue.",
-      "agent": "hydrogen peroxide 3% + ammonia",
-      "safetyNote": "Test on hidden area first — peroxide may lighten some dyes."
+      "agent": "Cool Rinse From the Back",
+      "instruction": "Flush cool water through the back of the fabric until the blotting towel runs clean. No peroxide, vinegar, or detergent residue should remain before the wash step."
     },
     {
       "step": 6,
-      "instruction": "Rinse thoroughly with cool water.",
-      "agent": "cool water"
+      "agent": "Hot Wash + Sunlight Dry",
+      "instruction": "Launder on the hottest setting the care label allows. The hot wash is non-negotiable for urine — it's what kills the remaining odor bacteria. Cold wash leaves them alive and the smell comes back overnight. Dry outside in direct sunlight when possible; UV kills anything the wash missed."
     },
     {
       "step": 7,
-      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center.",
-      "agent": "white vinegar + cool water"
-    },
-    {
-      "step": 8,
-      "instruction": "If urine stain persists or if fabric is delicate, call a professional cleaner.",
-      "agent": "escalation"
+      "agent": "Escalate If the Smell Comes Back",
+      "instruction": "If the stain is gone but the odor returns after drying, the bacteria are deeper than home treatment can reach. Repeat the full cycle once. If it still returns, escalate to a professional — for a mattress or upholstery this is almost always the call. Tell them: \"Urine on cotton, age [fresh / overnight / older], home-treated with enzyme pretreat + vinegar + 3% hydrogen peroxide + hot wash. [Odor returned after drying / stain gone.]\""
     }
   ],
-  "materialWarnings": [
-    "DO NOT use hot water initially—activates bacteria and sets odor",
-    "DO NOT skip the hot wash—cold water won't kill bacteria",
-    "AVOID mixing vinegar and bleach—creates toxic chlorine gas"
-  ],
-  "escalation": "If odor persists after home treatment, the stain has bacteria deeply embedded. Professional cleaners use commercial enzymatic systems (like Protenzyme or Chemspec enzyme products at high concentration) combined with antimicrobial rinses. For mattresses or upholstery, professional enzymatic treatment is the only reliable option.",
-  "products": {
-    "household": [
-      {
-        "name": "3% H₂O₂",
-        "brand": "Any drugstore brand",
-        "icon": "🧴",
-        "amazonSearchQuery": "H₂O₂ 3% USP",
-        "affiliateTag": "gonr08-20",
-        "note": "Oxidizes urochrome pigment to colorless. Fast (5 min). Safe for white cotton."
-      },
-      {
-        "name": "White Vinegar",
-        "brand": "Any household brand",
-        "icon": "🧂",
-        "amazonSearchQuery": "white vinegar 5% acetic acid",
-        "affiliateTag": "gonr08-20",
-        "note": "Dissolves uric acid, kills odor-causing bacteria. Essential for urine stains. DO NOT substitute industrial-strength (28%) acetic acid — it causes chemical burns."
-      },
-      {
-        "name": "Baking Soda",
-        "brand": "Any household brand",
-        "icon": "🍌",
-        "amazonSearchQuery": "baking soda sodium bicarbonate",
-        "affiliateTag": "gonr08-20",
-        "note": "Neutralizes ammonia and acidic urine compounds. Apply as paste for odor removal."
-      },
-      {
-        "name": "OxiClean",
-        "brand": "OxiClean",
-        "icon": "🧡",
-        "amazonSearchQuery": "OxiClean powder stain remover",
-        "affiliateTag": "gonr08-20",
-        "note": "Sodium percarbonate. Gentler than peroxide, works 30-60 minutes. Safe for white."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. Cold water flush from the back — never warm while the stain is fresh.",
+      "2. Enzyme pretreat (OxiClean Versatile, Biz, or Nature's Miracle), dissolved in warm-not-hot water. Dwell 15–20 min.",
+      "3. Equal-parts white vinegar + cool water — dissolves uric-acid crystals, neutralizes ammonia.",
+      "4. 3% hydrogen peroxide on residual yellow shadow. Skip on dark cotton. One oxidizer at a time.",
+      "5. Cool rinse from the back.",
+      "6. Hot wash + sunlight dry — heat kills odor bacteria.",
+      "7. If odor returns after drying: repeat once, or escalate to a pro for mattress/upholstery."
     ],
-    "professional": [
-      {
-        "name": "Protein (concentrated)",
-        "brand": "Huntsman or Chemspec",
-        "icon": "🧬",
-        "amazonSearchQuery": "Protein concentrate stain remover",
-        "affiliateTag": "gonr08-20",
-        "note": "Professional-strength enzyme. Faster breakdown of urine proteins than household."
-      },
-      {
-        "name": "StreePene (Sodium Hydrosulfite)",
-        "brand": "Chemspec",
-        "icon": "🧪",
-        "amazonSearchQuery": "StreePene reducing bleach sodium hydrosulfite",
-        "affiliateTag": "gonr08-20",
-        "note": "For oxidized/aged urochrome. Professional shops use for old urine stains."
-      }
+    "products": [
+      "Enzyme laundry pretreat (OxiClean Versatile, Biz) or pet-specific enzyme cleaner (Nature's Miracle, Rocco & Roxie)",
+      "White vinegar (household)",
+      "3% hydrogen peroxide (drugstore brown bottle)"
+    ],
+    "whenToStop": "Stop if the odor keeps returning after two full cycles, if the urine's soaked into a mattress/upholstery padding, or if the stain's been through a hot wash already without enzyme treatment first. Call a pro.",
+    "warnings": [
+      "Never warm-water-flush fresh urine — bacterial growth sets the odor in permanently",
+      "Never mix hydrogen peroxide with chlorine bleach or ammonia — toxic fumes",
+      "Skip peroxide on dark/dyed cotton — test an inside seam first",
+      "The hot wash is non-negotiable for urine — cold wash leaves bacteria alive"
     ]
   },
-  "customerExplanation": "Urine is urea protein, uric acid crystals, and urochrome pigment. Bacteria multiply and break down urea, creating ammonia odor. Enzyme breaks the protein, vinegar dissolves crystals and kills bacteria, peroxide removes color. White cotton tolerates all of this chemistry. The real challenge is odor—bacteria need to be fully killed.",
-  "commonMistakes": [
-    "Using warm water first—this accelerates bacterial growth and sets odor permanently",
-    "Skipping vinegar—uric acid remains and bacteria smell continues",
-    "Not doing a hot wash—bacteria need heat to be killed. Cold wash won't work.",
-    "Not air drying in sunlight—UV light kills remaining odor bacteria. Skip this and odor lingers."
+  "safetyMatrix": {
+    "neverDo": [
+      "Never warm-flush fresh urine — accelerates bacterial growth and locks odor in",
+      "Never layer peroxide and ammonia and chlorine bleach — toxic fume risk",
+      "Never skip the hot wash on urine — cold wash = bacteria survive and odor returns",
+      "Never dry in a hot machine dryer with residual chemistry in the fiber — yellows cotton"
+    ],
+    "fiberSensitivities": [
+      "Cotton tolerates enzymes, acid-side spotters, 3% H₂O₂, and hot post-chemistry wash",
+      "Dyed cotton: skip or inside-seam-test peroxide",
+      "Mattress / upholstery urine on cotton-blend padding escalates to pro — bacteria trap in padding"
+    ]
+  },
+  "materialWarnings": [
+    "Cold flush only while fresh — warm water breeds bacteria, sets odor",
+    "Hot wash non-negotiable — kills remaining bacteria",
+    "Peroxide on whites/lights; test inside seam on dark cotton"
   ],
-  "scienceNote": "Uric acid (C5H4N4O3) is a purine metabolite. Fresh urine is acidic and uric acid stays ionized and relatively mobile. As bacteria multiply, they break down urea (NH2-CO-NH2) into ammonia (NH3), raising pH above 7. Alkaline urine precipitates uric acid as crystals and promotes ammonia production—this is why old urine smells. Enzyme breaks down the urea substrate itself, cutting off the bacteria's food source.",
-  "callPro": "For stains aged weeks or months, or for urine on mattresses/upholstery where bacteria is embedded in padding, professional enzymatic treatment is essential. They use high-concentration enzyme systems and antimicrobial rinses that home chemistry can't match. Odor in upholstery requires professional equipment to force enzymes deep into the padding.",
-  "components": [
-    "enzyme",
-    "acid-neutralizer",
-    "oxidizer",
-    "finisher"
-  ],
-  "component_order": [
-    "enzyme",
-    "acid-neutralizer",
-    "oxidizer",
-    "finisher"
-  ],
-  "difficulty": 3,
-  "difficulty_factors": [
-    "protein-based",
-    "bacterial-odor",
-    "multi-step"
-  ],
-  "solventNote": "Professional: High-concentration Protein (2-5%) in warm water (40°C) for 20-30 minutes, vinegar rinse (1:1 with water) for bacterial kill, then StreePene solution if stain is aged/brown, then hot wash. For embedded odor in padding, use injection extraction—force enzyme solution into padding, let dwell 20 minutes, extract with hot water. Follow with antimicrobial rinse.",
-  "aftercare": "Machine dry on high heat is fine for white cotton. Or hang in direct sunlight—UV light has antimicrobial effect and will further suppress any residual odor-causing bacteria. Heat won't re-set urine stains on cotton. Sunlight drying is actually preferred for urine because UV kills bacteria. Bring inside once dry.",
+  "escalation": {
+    "when": "Urine on mattress / upholstery padding, odor returns after two full home cycles, or stain has already been machine-dried without enzyme treatment.",
+    "whatToTell": "\"Urine on cotton, age [fresh / overnight / older], home-treated with enzyme pretreat + vinegar + 3% hydrogen peroxide + hot wash. [Odor returned after drying / stain gone.]\"",
+    "specialistType": "professional cleaner (carpet / upholstery specialist if padding involved)"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain — fresh, overnight, or days/weeks?",
+      "Is the cotton garment, mattress cover, bedding, or upholstery?",
+      "Has it been through a hot wash or dryer already?",
+      "Pet or human urine? (pet urine tends to have higher uric acid, deeper penetration)"
+    ],
+    "modifierNotes": "Odor-persistence is the real difficulty gate, not the visible stain. Mattress + urine + any age = pro. Fresh on garment = easy DIY."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

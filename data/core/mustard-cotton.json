@@ -1,208 +1,207 @@
 {
   "id": "mustard-cotton",
-  "version": "5.0",
-  "authored": "2026-03-22",
   "title": "Mustard on Cotton",
-  "stainType": "vegetable-oils-dyes",
-  "surface": "cotton white",
+  "stainType": "dye",
+  "stainFamily": "dye",
+  "surface": "cotton",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–60 minutes spotting plus several hours of sunlight",
+  "lastValidated": "2026-04-24",
   "meta": {
     "stainCanonical": "mustard",
     "surfaceCanonical": "cotton",
     "tier": "universal",
     "riskLevel": "low",
     "tags": [
-      "vegetable-oils-dyes",
-      "cotton white",
-      "dry-clean-laundry"
+      "dye",
+      "curcumin",
+      "oil-carrier",
+      "cotton",
+      "time-sensitive",
+      "sunlight-responsive"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Mustard stains on white cotton are a combination of two problems: (1) turmeric dye (curcumin), an intensely yellow chromophore that's highly stable on cotton, and (2) mustard seed oil, which is a carrier that helps the dye penetrate fibers. Curcumin is unique because it's photosensitive—it degrades and fades when exposed to UV light (sunlight). The oil penetration is relatively shallow on cotton, but the dye bonding is quite strong, especially as it ages (the dye can form intramolecular hydrogen bonds with cellulose). Fresh mustard stains are much easier to treat than old ones because the dye hasn't fully bonded.",
-  "whyThisWorks": "Early treatment (within hours) catches the stain while the oil is still fresh and the dye hasn't fully bonded to cotton. IPA removes the oil carrier, which weakens the dye's hold on the fiber. Enzymatic treatment breaks down any protein residues in the mustard. Oxidative bleaching (H₂O₂ + UV, or OxiClean) fades the curcumin dye molecules directly. This multi-pronged approach (solvent + enzyme + oxidation + UV) tackles each component of the mustard stain.",
+  "stainChemistry": "Mustard is actually two stains layered together: a turmeric-based yellow DYE (curcumin — the actual pigment that makes it yellow) and an oil carrier (mustard seed oil / vegetable oil) that helps the dye soak into the fiber. Curcumin binds to cotton cellulose through hydrogen bonds AND hydrophobic interactions; the longer it sits, the more bonds form, and the harder it is to remove. The saving feature: curcumin is photosensitive. UV light from sunlight progressively fades the dye. On cotton — a heat- and bleach-durable fiber — mustard is fully solvable, but the time-scale is measured in hours of sun, not minutes of chemistry.",
+  "whyThisWorks": "Two chemistries + one finisher. NSD (pro) or Dawn (home) strips the oil carrier that's holding the curcumin onto the fiber. Once the oil is gone, the dye is vulnerable — 3% H₂O₂ oxidizes the conjugated diketone that gives curcumin its color, AND sunlight photodegrades what the peroxide doesn't reach. The reason mustard has a reputation for being un-removable is that most home attempts skip the oil-first step and go straight to peroxide or vinegar, which can't touch the dye while the oil is still there.",
+  "defaultAssumption": "Treat as time-sensitive but forgiving. Fresh mustard (under an hour) usually clears with one chemistry pass + a sunny afternoon. Aged mustard (overnight+) adds cycles — scrape what's dried, re-oil-strip, repeat peroxide + sun. Heat-set mustard is genuinely hard; may need the pro solvent lane or permanent color concession.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cool water + 1 tsp NSD + 1/2 tsp enzyme powder",
-      "technique": "Light scrubbing",
-      "equipment": "Soft brush, cool water",
-      "dwellTime": "5-7 minutes",
-      "instruction": "Make a paste and apply to the remaining yellow stain. Scrub gently with a soft brush. The enzymes break down any remaining mustard proteins, and the surfactant lifts the dye. Keep the paste moist. The yellow will lighten noticeably.",
-      "suggestedProducts": "Zout or NSD Trigger"
+      "side": "dry",
+      "agent": "Scrape + Cold Flush",
+      "technique": "Remove mass, cold-flush from the back",
+      "equipment": "Dull blade or spoon edge, cold water, white cotton terry towel",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Scrape any solid mustard off with a dull blade — never rub. Scraping lifts; rubbing drives. Then cold-flush from the BACK of the fabric. Cold only — heat at any stage makes the curcumin bond deeper, it doesn't help like it does with water-soluble stains."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Cool water",
-      "technique": "Rinse",
-      "equipment": "Water, cloth",
-      "dwellTime": "1 minute",
-      "instruction": "Rinse thoroughly under cool running water until no soap remains.",
-      "suggestedProducts": "Water"
+      "agent": "NSD",
+      "technique": "Strip the oil carrier",
+      "equipment": "NSD in cool water",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Apply NSD directly to the stain, work in with a soft bristle brush. The oil carrier must come out first — while the oil is in place the curcumin dye is protected from subsequent chemistry. Tamp, don't scrub hard. Blot. Repeat if oil residue is still visible."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "H₂O₂ 3-6% + Acetic Acid 28% (diluted)",
-      "technique": "Soak",
-      "equipment": "Bowl or container",
-      "dwellTime": "Brief — apply, work, check",
-      "instruction": "Mix H₂O₂ (3-6%) with diluted 28% acetic acid in a bowl. Place the stained area in the solution and set in direct sunlight. The UV light breaks down curcumin molecules, and the H₂O₂ oxidizes any remaining dye. Check every 15 minutes. The yellow should fade noticeably. This is the most effective step for old mustard stains. Safe for white and light-colored cotton. For dark or colored fabrics, skip this step and proceed to NSD flush — test a hidden area first if unsure.",
-      "suggestedProducts": "H₂O₂ 3% (drugstore)"
+      "agent": "POG (If Heavy Oil)",
+      "technique": "Solvent pass for stubborn oil",
+      "equipment": "POG (Paint-Oil-Grease remover) on a clean white cloth",
+      "dwellTime": "30–60 seconds",
+      "instruction": "For thick or set mustard where NSD alone doesn't clear the oil: a POG pass on a white cloth. Tamp from the back. Flip cloth frequently. Only needed on aged or heavy stains; skip for fresh."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Cool water",
-      "technique": "Rinse",
-      "equipment": "Water, cloth",
-      "dwellTime": "1 minute",
-      "instruction": "Rinse thoroughly under cool water to remove peroxide and vinegar residue.",
-      "suggestedProducts": "Water"
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Oxidize the dye, UV-assist",
+      "equipment": "3% H₂O₂, sunny window or outdoor line",
+      "dwellTime": "10 minutes wet, then 1–3 hours in sunlight",
+      "instruction": "Apply 3% H₂O₂ directly. Let it dwell 10 minutes wet, blot. Then place the damp garment in direct sunlight — UV accelerates the oxidation of curcumin and photodegrades the conjugated chromophore. Check at 1 hour; repeat the peroxide + sun pass if shadow persists. Sun + 3% peroxide is the workhorse; chasing this step with more peroxide alone without the UV is much slower."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "NSD flush",
-      "technique": "Flush and blot",
-      "equipment": "Bowl",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot — do not rub. All oxidizer and enzyme residue must be fully removed before drying.",
-      "suggestedProducts": "OxiClean powder"
+      "agent": "NSD Flush",
+      "technique": "Clear all chemistry",
+      "equipment": "NSD, clean water",
+      "dwellTime": "2 minutes",
+      "instruction": "Flush with NSD until the rinse runs clear. Residual peroxide in the fiber combined with dryer heat yellows cotton over time — clean chemistry removal matters here."
     },
     {
       "step": 6,
       "side": "wet",
-      "agent": "Cold water",
-      "technique": "Final rinse",
-      "equipment": "Water, cloth",
-      "dwellTime": "1 minute",
-      "instruction": "Final rinse under cold running water. The mustard stain should be gone or barely visible.",
-      "suggestedProducts": "Water"
-    },
-    {
-      "step": 7,
-      "side": "wet",
-      "agent": "Laundry detergent + hot water",
-      "technique": "Machine wash",
-      "equipment": "Washing machine",
-      "dwellTime": "Normal wash cycle",
-      "instruction": "Wash immediately in hot water (95°C for whites) with regular detergent. Hot water will flush out any final traces of dye and oil. Dry normally.",
-      "suggestedProducts": "NSD or NSD"
+      "agent": "Hot Wash + Sun Dry",
+      "technique": "Launder hot, finish in sun",
+      "equipment": "Washing machine, outdoor drying line",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder on the hottest setting the care label permits. Air-dry in direct sunlight whenever possible — any residual curcumin the peroxide missed continues to fade under UV. Multiple sunny days may be needed on very aged stains."
     }
   ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Scrape solid residue. Cold flush from the back.",
+      "2. NSD — strip the oil carrier first. Tamp, don't scrub.",
+      "3. POG if oil is thick or set (aged stains only).",
+      "4. 3% H₂O₂, 10 min wet + 1–3 hours in direct sunlight. Repeat as needed.",
+      "5. NSD flush — clear all chemistry before heat.",
+      "6. Hot wash per care label. Sun-dry to finish any residual fade."
+    ],
+    "products": [
+      "NSD (Neutral Synthetic Detergent)",
+      "POG (Paint-Oil-Grease remover) for aged oil",
+      "Hydrogen Peroxide 3%"
+    ],
+    "temperature": "cold/cool throughout spotting; hot wash post-chemistry; ambient sunlight during fade",
+    "warnings": [
+      "Never apply heat before the dye is oxidized — sets curcumin into cotton permanently",
+      "Strip the oil carrier BEFORE the oxidizer — peroxide can't reach curcumin through the oil",
+      "One oxidizer at a time — never mix with chlorine bleach or ammonia",
+      "Set expectations honestly: aged mustard may need multiple sun cycles even with pro chemistry"
+    ]
+  },
   "homeSolutions": [
     {
       "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
-      "agent": "cool water"
+      "agent": "Scrape Off the Solid Mustard",
+      "instruction": "Use a dull butter knife or the edge of a credit card to lift any solid mustard off the fabric. Don't rub — rubbing smears the turmeric dye further into the weave. If it's dried and stuck, moisten with cold water (not warm) first, then scrape."
     },
     {
       "step": 2,
-      "instruction": "Place fabric stain-side down on glass work surface. Scrape off excess mustard with a spoon. Mustard is a combination stain (oil + dye) requiring two approaches.",
-      "agent": "spoon"
+      "agent": "Cold Water Flush From the Back",
+      "instruction": "Hold the BACK of the stained area under cold running water. Let the water push the stain out the way it came in. Cold only — heat bonds curcumin permanently to cotton."
     },
     {
       "step": 3,
-      "instruction": "PROCEDURE 1 (Oil-based): Apply dry-cleaning solvent (lighter fluid) to the stain. Rub gently with the back of a spoon from center outward. Apply petroleum jelly and continue rubbing. Rinse with dry-cleaning solvent.",
-      "agent": "dry-cleaning solvent + petroleum jelly",
-      "safetyNote": "Ensure good ventilation when using dry-cleaning solvent. Avoid skin contact."
+      "agent": "Dawn First — Before Any Color Work",
+      "instruction": "Mustard has an oil carrier that protects the dye from everything else until the oil is removed. Work a drop of Dawn dish soap into the stain with a fingertip or soft toothbrush. Let it sit 10 minutes. Rinse cool. You should see the mustard lighten noticeably once the oil is gone."
     },
     {
       "step": 4,
-      "instruction": "If mustard remains after Procedure 1, apply detergent/vinegar solution (1/4 tbsp mild laundry detergent + 2 oz white vinegar + 2 oz cool water). Rub with spoon, then rinse with cool water.",
-      "agent": "detergent/vinegar solution"
+      "agent": "Hydrogen Peroxide 3% + Sunlight",
+      "instruction": "This is the real color-removal step. Pour 3% drugstore hydrogen peroxide directly on the stain. Let it sit 10 minutes. Then place the damp garment in direct sunlight — UV breaks down curcumin, the molecule that gives mustard its yellow. An hour in direct sun usually clears most of it; an entire afternoon handles aged stains. Skip this step on dark or dyed cotton; peroxide + sun fades dyes too.",
+      "safetyNote": "Never mix hydrogen peroxide with chlorine bleach or ammonia — toxic fume risk."
     },
     {
       "step": 5,
-      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize remaining dye.",
-      "agent": "hydrogen peroxide 3% + ammonia",
-      "safetyNote": "Test on hidden area first — peroxide may lighten some dyes."
+      "agent": "Inspect, Repeat Peroxide + Sun as Needed",
+      "instruction": "Check the stain after an hour in sun. If it's faded but not gone, apply more 3% peroxide and return it to sunlight. Old mustard often needs 2–3 peroxide + sun passes over a day or two. This is normal; mustard is a patient-removal stain, not a one-shot chemistry win."
     },
     {
       "step": 6,
-      "instruction": "Rinse thoroughly with cool water.",
-      "agent": "cool water"
+      "agent": "Rinse Cool, Then Hot Wash",
+      "instruction": "Rinse cool from the back until the towel runs clean. Launder on the hottest setting the care label allows. Line-dry in sunlight rather than machine-dry — sun keeps fading any residual curcumin you haven't cleared yet."
     },
     {
       "step": 7,
-      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center.",
-      "agent": "white vinegar + cool water"
-    },
-    {
-      "step": 8,
-      "instruction": "If mustard stain persists or if fabric is delicate, call a professional cleaner.",
-      "agent": "escalation"
+      "agent": "Escalate or Accept Tradeoff",
+      "instruction": "If mustard has been ironed or hot-dried into the fabric, or survives three peroxide + sun cycles, take it to a dry cleaner. Tell them: \"Mustard on cotton, age [fresh / overnight / older], home-treated with Dawn + 3% hydrogen peroxide + sunlight. [Heat-set / no heat applied.]\" Some aged mustard on cotton is genuinely not fully recoverable even with pro chemistry — the honest escalation is a pro consult plus a decision on whether to accept a faint yellow shadow."
     }
   ],
-  "materialWarnings": [
-    "AVOID chlorine bleach—use H₂O₂ or OxiClean instead for white cotton.",
-    "DO NOT use hot water until the stain is mostly gone—heat can set the oil residue."
-  ],
-  "escalation": "If the mustard stain persists as a faint yellow ghost after all treatments, a professional dry cleaner with access to professional bleaching agents (like sodium hypobromite or potassium permanganate) may attempt deeper stain lifting, but very old mustard stains are sometimes permanent.",
-  "products": {
-    "household": [
-      {
-        "name": "IPA 91%",
-        "brand": "Generic",
-        "icon": "🧪",
-        "amazonSearchQuery": "IPA 91%",
-        "affiliateTag": "gonr08-20",
-        "note": "Dissolves mustard seed oil, the carrier for curcumin dye."
-      },
-      {
-        "name": "Zout Trigger Spray",
-        "brand": "Zout",
-        "icon": "💧",
-        "amazonSearchQuery": "Zout stain remover",
-        "affiliateTag": "gonr08-20",
-        "note": "Pre-mixed enzyme + surfactant for oil-dye residue."
-      },
-      {
-        "name": "H₂O₂ 3%",
-        "brand": "Generic",
-        "icon": "🧪",
-        "amazonSearchQuery": "H₂O₂ 3% pharmacy",
-        "affiliateTag": "gonr08-20",
-        "note": "Combined with sunlight, this is the most effective step for curcumin dye degradation."
-      },
-      {
-        "name": "OxiClean MaxForce",
-        "brand": "OxiClean",
-        "icon": "🥤",
-        "amazonSearchQuery": "OxiClean powder",
-        "affiliateTag": "gonr08-20",
-        "note": "For residual yellow after peroxide treatment."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. Scrape solid mustard off with a dull blade — don't rub.",
+      "2. Cold water flush from the BACK of the fabric.",
+      "3. Dawn dish soap first — strip the oil carrier. Dwell 10 min, rinse cool.",
+      "4. 3% hydrogen peroxide + 1 hour in direct sunlight. Skip peroxide on dark cotton.",
+      "5. Inspect, repeat peroxide + sun if faded-but-visible. Expect 2–3 cycles on aged stains.",
+      "6. Cool rinse, hot wash per care label, sun-dry.",
+      "7. Escalate or accept: aged/ironed mustard may leave a faint shadow even professionally."
     ],
-    "professional": [
-      {
-        "name": "Professional Dry Cleaning",
-        "brand": "Local Dry Cleaner",
-        "icon": "👔",
-        "amazonSearchQuery": "",
-        "affiliateTag": "gonr08-20",
-        "note": "For very old mustard stains, professionals may use specialized bleaching agents."
-      }
+    "products": [
+      "Dull blade or credit-card edge",
+      "Dawn dish soap",
+      "3% hydrogen peroxide (drugstore brown bottle)",
+      "A sunny afternoon"
+    ],
+    "whenToStop": "Stop if the mustard has been ironed or hot-dried, if three peroxide + sun cycles haven't fully faded it, or if the cotton is dark dyed and peroxide would bleach the fabric color. Consult a dry cleaner — and know that some mustard stains on cotton are a tradeoff between fade and fabric dye.",
+    "warnings": [
+      "Never warm-water or hot-wash mustard before the dye is oxidized — sets the curcumin in",
+      "Oil first, then peroxide — peroxide can't work through the oil carrier",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton — fades the fabric dye too",
+      "Set expectations: aged mustard may need multiple sun cycles, sometimes partial only"
     ]
   },
-  "customerExplanation": "Mustard has two components: turmeric dye (curcumin) and mustard seed oil. The oil carries the dye into cotton fibers. We dissolved the oil with IPA and used Protein to break down any remaining mustard proteins. Then, we used H₂O₂ combined with sunlight—the UV light breaks down curcumin molecules, and the peroxide oxidizes any remaining dye. This combination is the most effective for mustard stains. Finally, we washed hot to remove all traces.",
-  "commonMistakes": [
-    "Not scraping off excess mustard first—this leads to unnecessary spreading.",
-    "Skipping the H₂O₂ + UV step—this is the most important step for curcumin dye fading.",
-    "Using hot water too early—this can set the oil residue.",
-    "Assuming the stain is gone when it's still faintly yellow—complete removal can take multiple treatments."
+  "safetyMatrix": {
+    "neverDo": [
+      "Never apply heat before the dye is oxidized — bonds curcumin into cotton permanently",
+      "Never skip the oil-strip step — peroxide can't penetrate the carrier",
+      "Never layer oxidizers — one at a time",
+      "Never rub wet mustard — smears the dye into new fiber"
+    ],
+    "fiberSensitivities": [
+      "Cotton tolerates NSD, 3% H₂O₂, UV sunlight, and hot wash after chemistry",
+      "Dyed/colored cotton: peroxide + sun fades the fabric dye too — test inside seam first",
+      "Heat-durable fiber overall; cotton itself isn't the constraint — the curcumin is"
+    ]
+  },
+  "materialWarnings": [
+    "Oil carrier must come off BEFORE the oxidizer",
+    "Sun + 3% peroxide is the fade workhorse; expect multiple cycles on aged stains",
+    "Dark/dyed cotton: peroxide fades fabric dye — test inside seam first"
   ],
-  "scienceNote": "Curcumin (the turmeric dye) has a long conjugated pi-electron system that absorbs visible light (making it yellow). UV light breaks this conjugation, causing the dye to fade. This is why sunlight is so effective against mustard stains. H₂O₂ acts as a second oxidizer, and together these two mechanisms can destroy the curcumin molecule itself, not just lift it from the fiber.",
-  "callPro": "If the mustard stain persists as a faint yellow after home treatment, a professional dry cleaner may help, but very old mustard can leave permanent yellow tints on white cotton. Discuss realistic expectations beforehand.",
-  "components": [],
-  "component_order": [],
-  "difficulty": 6,
-  "difficulty_factors": [],
-  "solventNote": "",
-  "aftercare": "Scrape off any excess mustard paste from the surface. Work from outside to center with light strokes. Don't press hard or you'll push mustard deeper into the cotton. Pour IPA onto a white cloth and dab the stain. DO NOT RUB. The alcohol dissolves the mustard seed oil and begins to lift the curcumin dye.  Continue blotting with fresh cloth sections for 2-3 minutes.",
+  "escalation": {
+    "when": "Mustard heat-set by iron or hot dryer, three peroxide + sun cycles haven't cleared it, or dark dyed cotton where the fabric-dye tradeoff isn't acceptable.",
+    "whatToTell": "\"Mustard on cotton, age [fresh / overnight / older], home-treated with Dawn + 3% hydrogen peroxide + sunlight. [Heat-set / no heat applied.] Visible shadow remaining: [faint yellow / strong yellow].\"",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain — fresh, overnight, days?",
+      "Has it been through a hot wash, dryer, or iron?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Yellow mustard, Dijon, whole-grain? (Dijon and whole-grain have lower curcumin + more vinegar — sometimes easier)"
+    ],
+    "modifierNotes": "Mustard is a patience stain, not a power stain. Curcumin fades under UV; peroxide catalyzes the fade. No amount of aggressive chemistry substitutes for time in sun. Heat-set or dyed-cotton variants may plateau at partial removal — set honest expectations."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

@@ -1,123 +1,195 @@
 {
   "id": "gravy-cotton",
   "title": "Gravy on Cotton",
-  "stainFamily": "combo",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Gravy is a starch-thickened mixture of meat protein, fat, and flavor compounds. On cotton, the starch creates a binding matrix that holds protein and fat against the fiber. The protein sets with heat. The fat penetrates the fiber. When dried, the starch hardens into a tough film that resists water alone.",
-  "whyThisWorks": "Scraping dry residue first removes the starch matrix from cotton. Cold water prevents protein from setting. Enzyme treatment (amylase for starch + protease for protein where safe) breaks down the organic components. Surfactant emulsifies the fat. The multi-component nature requires sequential treatment — protein-safe steps first.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "15–40 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "gravy",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "combination",
+      "protein",
+      "oil",
+      "starch",
+      "cotton"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Gravy is four components layered together: meat protein (from stock or drippings), animal fat (triglyceride), starch (flour or cornstarch thickener) that forms a matrix holding the other three against the fiber, and sometimes a tannin or caramel component from pan browning. Cotton is cellulose — tolerates enzymes, NSD, and 3% H₂O₂ at room temperature. The constraints are ordering-based, not fiber-based: starch must be broken down mechanically or with amylase before water, and protein must be cleared by enzyme before any heat, or the whole stain matrix cooks into the fabric.",
+  "whyThisWorks": "Starch first, mechanically — scrape the dried film off. Then enzyme (protease digests meat protein, amylase handles residual starch; most modern enzyme pretreats include both). NSD emulsifies the fat the protein matrix was holding in place. 3% H₂O₂ oxidizes any residual brown pigment from pan-browning. Hot wash only after the protein is gone — safe at that point because there's nothing left for heat to set.",
+  "defaultAssumption": "Fresh gravy is an easy clean; dried gravy (hours+) is harder because the starch matrix has locked the other components in a brittle film that has to be cracked open before chemistry can act. Heat-set (already ironed or hot-dried) escalates — the protein has cooked into the fiber and home recovery is unreliable.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape + Cold Flush",
+      "technique": "Remove starch bulk, then cold flush",
+      "equipment": "Dull blade or spoon edge, cold water, white terry towel",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Scrape dried gravy off with a dull blade — don't rub, scraping lifts the starch film cleanly while rubbing drives it into the weave. Then flush cold water from the BACK of the fabric. Cold only — warm water sets the meat protein into cotton."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Protein Spotter",
+      "technique": "Apply, dwell, light brush",
+      "equipment": "Liquid Protein Spotter (PRENETT B / protease + amylase pretreat) in warm water (30–38°C)",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Apply the Protein Spotter or dissolve a multi-enzyme pretreat in warm water (warm, not hot — enzymes denature above 50°C). Submerge the stain or keep it wet under a damp towel. Brush gently with a soft bristle brush after the first 10 minutes. Protease breaks the meat protein; amylase, if present in the formulation, digests any residual starch the scrape missed."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify the fat",
+      "equipment": "NSD in warm water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD, work with a soft brush. NSD emulsifies the animal fat the enzyme freed from the matrix. Rinse cool from the back."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For residual brown shadow from pan-browning or caramelization: apply 3% H₂O₂ drop-by-drop. Peroxide oxidizes the browning compounds to colorless. One oxidizer at a time; NSD-flush before a second pass."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Final Rinse + Hot Wash",
+      "technique": "Rinse, launder per care label",
+      "equipment": "Running cool water, washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Rinse until the water runs clear. Launder hot per the care label. Safe at this point — the protein has been digested, so heat is on the finishing side, not the setting side."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove excess solids with dull edge — do not rub",
-      "2. Apply Tannin Formula for the plant-pigment component",
-      "3. Apply POG for the oil component",
-      "4. Flush with NSD and cool water",
-      "5. If color persists: apply H2O2 6% on colorfast fabrics",
-      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+      "1. Scrape the dried film off. Cold flush from the back.",
+      "2. Liquid Protein Spotter (protease + amylase) in warm water (30–38°C). Dwell 20–30 min.",
+      "3. NSD to emulsify the fat. Light brush.",
+      "4. 3% H₂O₂ on residual browning. One pass. NSD-flush between any repeat.",
+      "5. Cool rinse + hot wash per care label."
     ],
     "products": [
-      "Tannin Formula",
-      "POG (Paint Oil Grease remover)",
+      "Liquid Protein Spotter (PRENETT B or protease/amylase pretreat)",
       "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold flush; warm (30–38°C) for enzyme; cool through NSD + peroxide; hot wash post-chemistry",
+    "warnings": [
+      "Never warm-flush fresh gravy — sets the meat protein",
+      "Enzyme window is warm, not hot — above 50°C the protease denatures",
+      "One oxidizer at a time, NSD-flushed between",
+      "Flush all chemistry before heat"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Scrape Off the Bulk First",
+      "instruction": "Get the solid gravy off the fabric before any water. Use a dull butter knife or the edge of a credit card. If it's dried, it'll pop off in brittle flakes — that's the starch film. Don't rub; scraping lifts the film, rubbing grinds it into the weave."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Water Flush From the Back",
+      "instruction": "Hold the BACK of the stained area under cold running water for a minute. Let the water push the gravy out the way it came in. Never use warm or hot water yet — the meat protein in gravy cooks into cotton if you do."
+    },
+    {
+      "step": 3,
+      "agent": "Enzyme Pretreat — Warm Water, Not Hot",
+      "instruction": "Use an enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout — these have both protein- and starch-digesting enzymes). Dissolve in WARM water per the label. Apply to the stain, let it sit 20–30 minutes. The enzymes dismantle the meat protein and any residual starch."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Soft Brush for the Fat",
+      "instruction": "Add a drop of Dawn dish soap and work it in gently with a soft toothbrush or fingertip. Dawn emulsifies the animal fat the enzyme freed. Rinse cool."
+    },
+    {
+      "step": 5,
+      "agent": "Hydrogen Peroxide 3% for Brown Shadow",
+      "instruction": "If a brown shadow remains from pan-browning: dab 3% drugstore hydrogen peroxide on the spot. Let it bubble for 3–5 minutes, blot. Skip this step on dark or dyed cotton.",
+      "safetyNote": "Never mix hydrogen peroxide with chlorine bleach or ammonia — toxic fumes."
+    },
+    {
+      "step": 6,
+      "agent": "Cool Rinse, Then Hot Wash",
+      "instruction": "Rinse cool from the back until the towel runs clean. Then launder on the hottest setting the care label allows — safe now that the protein is digested. Inspect BEFORE the dryer. Any residual stain cures permanently under dryer heat."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate to a Dry Cleaner",
+      "instruction": "If the gravy's been ironed or hot-dried, or it survives two full home rounds, take it to a dry cleaner. Tell them: \"Gravy on cotton, age [fresh / overnight / older], treated at home with enzyme pretreat + Dawn + 3% hydrogen peroxide. No heat until after enzyme.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub",
-      "2. Rinse with cold water to remove loose material",
-      "3. Apply Dawn dish soap. Work gently",
-      "4. Blot with clean white cloth. Repeat if needed",
-      "5. Air dry — no heat until stain is gone"
+      "1. Scrape the dried film off with a dull blade. Don't rub.",
+      "2. Cold water flush from the BACK of the fabric.",
+      "3. Enzyme pretreat (OxiClean Versatile, Biz, Zout) dissolved in WARM water. Dwell 20–30 min.",
+      "4. Dawn dish soap + soft brush to lift the fat.",
+      "5. 3% hydrogen peroxide on residual brown shadow. Skip on dark cotton.",
+      "6. Cool rinse from the back.",
+      "7. Hot wash per care label. Inspect BEFORE the dryer."
     ],
     "products": [
-      "Dawn dish soap"
+      "Dull blade or credit-card edge",
+      "Enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout)",
+      "Dawn dish soap",
+      "3% hydrogen peroxide (drugstore brown bottle)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if gravy has been through a hot dryer or iron, two home rounds haven't cleared it, or the cotton is dark dyed and peroxide isn't safe. Take it to a dry cleaner.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "Never warm-flush fresh gravy — sets the meat protein",
+      "Enzymes die above 50°C — warm water for the pretreat, not hot",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton or inside-seam-test first"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never apply hot water before the enzyme step — cooks the meat protein in",
+      "Never run enzymes above 50°C",
+      "Never layer oxidizers — one at a time, flushed between",
+      "Never rub wet gravy into the fiber — scrape first"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates enzymes, NSD, 3% H₂O₂, and hot wash after chemistry",
+      "Dyed cotton: inside-seam-test peroxide first",
+      "Cotton is heat-durable once protein is gone"
     ]
   },
+  "materialWarnings": [
+    "Protein first, heat after — reverse and the stain sets",
+    "Scrape before water — rubbing drives starch deeper",
+    "Peroxide on whites; inside-seam-test dark cotton"
+  ],
   "escalation": {
-    "when": "If gravy stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is gravy on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Gravy already ironed or hot-dried, two home rounds failed, or dark/dyed cotton where peroxide isn't safe.",
+    "whatToTell": "\"Gravy on cotton, age [fresh / overnight / older], home-treated with enzyme pretreat + Dawn + 3% hydrogen peroxide. [Hot-washed / not yet laundered.]\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "How old is the stain — fresh, overnight, older?",
+      "Has it been ironed or hot-dried since?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Heavy gravy (dark pan-browning) or light gravy (pale roux)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Protein-before-heat is the one hard rule. Dried starch film requires mechanical scraping before chemistry can reach the rest of the stain. Dark pan-browning increases peroxide passes; light gravy often clears without peroxide at all."
   },
-  "difficulty": 4,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
-  "homeSolutions": [
-    {
-      "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
-      "agent": "cool water"
-    },
-    {
-      "step": 2,
-      "instruction": "Place fabric stain-side down on glass work surface. Scrape off excess gravy with a spoon. Gravy is a combination stain (fat + protein).",
-      "agent": "spoon"
-    },
-    {
-      "step": 3,
-      "instruction": "PROCEDURE 1 (Fat-based): Apply dry-cleaning solvent (lighter fluid) to the stain. Rub gently with the back of a spoon from center outward. Apply petroleum jelly and continue rubbing. Rinse with dry-cleaning solvent.",
-      "agent": "dry-cleaning solvent + petroleum jelly",
-      "safetyNote": "Ensure good ventilation when using dry-cleaning solvent."
-    },
-    {
-      "step": 4,
-      "instruction": "If gravy remains after Procedure 1, apply detergent/vinegar solution (1/4 tbsp mild laundry detergent + 2 oz white vinegar + 2 oz cool water). Rub with spoon, then rinse with cool water.",
-      "agent": "detergent/vinegar solution"
-    },
-    {
-      "step": 5,
-      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize protein residue.",
-      "agent": "hydrogen peroxide 3% + ammonia",
-      "safetyNote": "Test on hidden area first — peroxide may lighten some dyes."
-    },
-    {
-      "step": 6,
-      "instruction": "Rinse thoroughly with cool water.",
-      "agent": "cool water"
-    },
-    {
-      "step": 7,
-      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center.",
-      "agent": "white vinegar + cool water"
-    },
-    {
-      "step": 8,
-      "instruction": "If gravy stain persists or if fabric is delicate, call a professional cleaner.",
-      "agent": "escalation"
-    }
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

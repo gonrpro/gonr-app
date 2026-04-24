@@ -1,126 +1,208 @@
 {
   "id": "berry-cotton",
-  "title": "Berry on Cotton",
+  "title": "Berry Stain on Cotton",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Tannins are polyphenolic plant compounds (from tea, coffee, red wine, fruit juices) that bond to fibers through hydrogen bonding and π-stacking interactions with cellulose. Fresh tannin stains are removable with NSD. Aged stains oxidize and darken: the brown color is caused by oxidation products. H₂O₂ 6% breaks the double bonds in the oxidized tannin molecules, reversing the browning. Sodium hydrosulfite provides a reducing alternative for fibers that cannot tolerate bleaching.",
-  "whyThisWorks": "Berry and fruit juices contain concentrated plant pigments that bond to surfaces and darken with time. Cotton fabric absorbs liquids quickly and holds onto stains deep in the weave. An oxygen-based treatment breaks apart the pigment molecules, removing the color rather than just spreading it around.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "10–30 minutes (fresh) or up to 60 minutes (aged)",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "berry",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "anthocyanin",
+      "cotton",
+      "time-sensitive"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Berry stains (blueberry, blackberry, raspberry, strawberry, mulberry) are tannin stains dominated by anthocyanin pigments — the same family that colors red wine. Anthocyanins bond to cotton cellulose through hydrogen bonding and van der Waals forces. Blueberry and blackberry have the deepest, bluest anthocyanin load; strawberry has a weaker pigment but additional pectin that can make the stain sticky. Cotton is pure cellulose: chemically tolerant of enzymes, acid-side tannin spotters, 3% H₂O₂, and hot post-chemistry wash. Fresh berry stains move easily; aged berry dries into a dark tannin-anthocyanin matrix that needs oxidation to lift.",
+  "whyThisWorks": "Fresh: cold flush + hot-water pour-through knocks out most of the stain before chemistry. Aged: acid-side tannin spotter disrupts the anthocyanin hydrogen bond, then 3% H₂O₂ oxidizes the residual chromophore. Cotton's durability lets the full sequence run at pace. The one hard constraint: heat sets aged tannin permanently, so the hot-water pour-through is fresh-only, and the hot final wash only runs after all chemistry is flushed.",
+  "defaultAssumption": "Most berry stains are caught fresh (within an hour) and are high-confidence DIY on cotton. Aged + dark cotton narrows the oxidizer lane; set expectations accordingly.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Flush",
+      "technique": "Flush from the back",
+      "equipment": "Cold running water, white cotton terry towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Cold flush from the BACK of the fabric. Blot hard from underneath. The anthocyanin pigment is water-mobile when fresh; hydraulic pressure pushes it out the way it came in. Cold only — hot water on aged stains sets the tannin permanently."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Sponge, dwell, blot",
+      "equipment": "NSD in cold water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Apply NSD to the stain, sponge gently. NSD suspends pigment so the next steps act on what's bound to the fiber, not what's loose. Blot with a clean white towel. Noticeable lightening should occur before moving on."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Hot-Water Pour-Through (Fresh Only)",
+      "technique": "Pour from the back",
+      "equipment": "Kettle of hot — not boiling — water, catch basin",
+      "dwellTime": "1–2 pours",
+      "instruction": "Only for stains under 30 minutes old. Stretch the fabric taut over a bowl, pour hot water through from the back. Heat breaks hydrogen bonds on fresh tannin. Skip on aged stains: heat sets older tannin. Express lane for fresh, off-limits for aged."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Tannin Spotter",
+      "technique": "Drop, dwell, blot",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "2–5 minutes",
+      "instruction": "For any residual purple-blue or red shadow, apply an acid-side tannin spotter by dropper. The acid disrupts the anthocyanin-cellulose hydrogen bond. Dwell 2–5 min, blot. Flip cloth frequently. Repeat once if shadow persists."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop-by-drop oxidation",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply 3% H₂O₂ drop-by-drop on residual chromophore. Peroxide oxidizes the anthocyanin conjugated system to colorless. Dwell 3–5 min, blot. Repeat once if needed. Never layer oxidizers — one at a time, NSD-flushed between."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "NSD Flush + Hot Wash",
+      "technique": "Clear chemistry, launder",
+      "equipment": "NSD, washing machine",
+      "dwellTime": "Until rinse clear; full wash cycle",
+      "instruction": "Flush with NSD until the rinse runs clear. Launder hot per care label. Cotton is heat-tolerant once the chemistry is flushed."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin and tamp gently. This acidic spotter specifically targets the bonds that berry pigments form with cotton. Work from the edge toward the center. Check progress every few minutes.",
-      "2. Apply H₂O₂ 6% to the stain. Monitor carefully — check every 5 minutes. On colored fabrics, test an inconspicuous area first.",
-      "3. Flush with NSD and a mild leveling agent to remove broken-down tannin pigment and any excess oxidizer. Rinse thoroughly.",
-      "4. Apply diluted acetic acid (1:10) to stop any remaining oxidizer activity and restore the fabric to its natural state. Blot dry and air dry completely."
+      "1. Cold flush from the back — fresh berry pigment is water-mobile.",
+      "2. NSD in cold water. Sponge, dwell 2–3 min, blot.",
+      "3. FRESH ONLY (<30 min): hot pour-through. Skip on aged.",
+      "4. Professional tannin spotter (Chemspec Tannin Spotter / PRENETT-A) — dropper, 2–5 min, blot. Repeat once.",
+      "5. 3% H₂O₂ drop-by-drop on residual. 3–5 min. One pass. NSD-flush between repeats.",
+      "6. NSD flush, hot wash per care label."
     ],
     "products": [
-      "Tannin",
-      "H₂O₂ 6%",
       "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold — hot water accelerates tannin oxidation and sets color faster",
+    "temperature": "cold through spotting; hot wash post-chemistry",
     "warnings": [
-      "Using hot water — accelerates oxidation and sets the tannin color faster",
-      "Applying H₂O₂ to colored fabrics without testing — peroxide bleaches color along with the stain",
-      "Oversaturation with peroxide — can cause yellowing on whites from oxidized cellulose",
-      "Not rinsing peroxide completely — residual peroxide continues bleaching and weakens fiber"
+      "Never use hot water on aged berry stains — sets tannin permanently",
+      "One oxidizer at a time, NSD-flushed between",
+      "Flush all chemistry before heat — residual oxidizer yellows cotton"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Cold Water, Fast",
+      "instruction": "Fresh berry stains come out easy on cotton if you move quickly. Cold water only — hot water on aged or dried berry juice sets the tannin permanently into the fabric. Get to the stain within the first hour if you can."
+    },
+    {
+      "step": 2,
+      "agent": "Flush From the Back of the Fabric",
+      "instruction": "Hold the BACK of the stained area under cold running water for 30–60 seconds. The berry juice pushes out the way it came in. Then blot with a clean white towel from underneath — don't rub."
+    },
+    {
+      "step": 3,
+      "agent": "Hot-Water Pour-Through (Fresh Stains Only)",
+      "instruction": "If the stain is under 30 minutes old: stretch the fabric taut over a bowl, place a clean towel underneath, and pour hot (not boiling) water through from the back. You'll see the stain fade dramatically. Skip this step if the berry's been sitting longer than 30 minutes — heat sets older tannin."
+    },
+    {
+      "step": 4,
+      "agent": "Dish Soap + White Vinegar Solution",
+      "instruction": "Mix 1 teaspoon Dawn dish soap, 2 tablespoons white vinegar, and 1 cup cold water. Dab onto the stain, let sit 3 minutes, blot from center outward. The soap lifts remaining pigment; the mild acidity of vinegar helps break the berry's anthocyanin bond. Repeat once if color is still visible."
+    },
+    {
+      "step": 5,
+      "agent": "Cool Rinse From the Back",
+      "instruction": "Flush cool water from the reverse side until your blotting towel runs clean. Rinse before the next step — layering oxidizers on top of residue creates a mess."
+    },
+    {
+      "step": 6,
+      "agent": "OxiClean or 3% Hydrogen Peroxide for Shadows",
+      "instruction": "For any lingering purple or pink shadow: dissolve one scoop of OxiClean in 1 cup cool water and soak the stained area 15–30 minutes. Or for a faster spot pass, use 3% drugstore hydrogen peroxide on the shadow for 3–5 minutes, then blot. Skip on dark or dyed cotton.",
+      "safetyNote": "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide at the same time — one oxidizer at a time."
+    },
+    {
+      "step": 7,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect the stain BEFORE the dryer — any residual tannin sets permanently under dryer heat. If you still see color, repeat the soap/OxiClean round first."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate to a Dry Cleaner",
+      "instruction": "If the berry stain has been through a hot wash + dryer, or two full home rounds don't clear it, take it to a dry cleaner. Tell them: \"Berry stain on cotton, age [fresh / overnight / older], treated at home with [dish soap + vinegar / OxiClean / 3% peroxide].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot the stain with a clean white cloth to soak up as much as you can.",
-      "2. Apply the cleaning solution (1 tbsp dish soap + 1 cup 3% hydrogen peroxide (brown bottle from pharmacy)) and let it sit for 5–10 minutes.",
-      "3. Blot with a clean white cloth. Repeat until the color fades.",
-      "4. Rinse with cold water to remove all cleaning solution.",
-      "5. Air dry — don't use a dryer until the stain is gone."
+      "1. Move fast — cold water only while the stain is visible.",
+      "2. Flush cold from the BACK of the fabric, blot with a clean white towel.",
+      "3. Fresh (<30 min) only: hot-water pour-through from the back.",
+      "4. Dawn + vinegar + cold water solution: dab, dwell 3 min, blot.",
+      "5. Cool rinse from the back until towel runs clean.",
+      "6. OxiClean soak OR 3% hydrogen peroxide on residual shadow. Never layer oxidizers.",
+      "7. Hot wash per care label. Inspect BEFORE the dryer."
     ],
     "products": [
-      "H₂O₂ 3%",
-      "Dawn NSD",
-      "cold water"
+      "Cold water",
+      "Dawn dish soap",
+      "White vinegar (household)",
+      "OxiClean (oxygen bleach) or 3% hydrogen peroxide"
     ],
-    "whenToStop": "For set-in tannin stains, mix baking soda with a little H₂O₂ to make a paste, apply for 15 minutes, then rinse. If stain persists after two rounds, take to a professional.",
+    "whenToStop": "Stop if the stain has been through a hot wash + dryer, if the cotton is dark dyed and peroxide isn't safe, or if two home rounds haven't cleared it. Take it to a dry cleaner.",
     "warnings": [
-      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
-      "Use a white cloth to avoid transferring dye from a colored cloth onto the stain.",
-      "Speed matters — fresh tannin stains lift much more easily than dried ones."
+      "Hot water only for fresh stains (<30 min) — sets older tannin",
+      "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide",
+      "Skip peroxide on dark/dyed cotton or inside-seam-test first",
+      "Inspect before the dryer — heat sets residual tannin permanently"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use ammonia, baking soda, or alkaline agents — they permanently darken tannin stains",
-      "Apply heat before stain is completely gone — heat sets stains permanently"
+      "Never layer oxidizers — one at a time, flushed between",
+      "Never use hot water on aged berry stains — sets tannin",
+      "Never dry with residual chemistry in the fiber — yellows cotton",
+      "Never rub — blot from underneath"
     ],
     "fiberSensitivities": [
-      "Cotton and synthetics tolerate peroxide well. Wool and silk: use lower concentrations (3%) or reduced time. Avoid peroxide on heavily dyed fabrics or natural dyes. Mohair is especially vulnerable to peroxide."
+      "Cotton tolerates NSD, acid-side tannin spotters, 3% H₂O₂, and hot post-chemistry wash",
+      "Dyed cotton: test acid-side spotters and peroxide on inside seam first",
+      "Heat-safe fiber once chemistry is cleared"
     ]
   },
+  "materialWarnings": [
+    "Hot water only for fresh — sets aged tannin",
+    "One oxidizer at a time — flush with NSD between passes",
+    "Peroxide on whites; test inside seam on dark cotton"
+  ],
   "escalation": {
-    "when": "Stain persists after two professional-grade tannin treatments, or pigment has cross-linked with fiber polymer",
-    "whatToTell": "Berry stain on cotton, treated with tannin formula and H₂O₂ 6%, age and heat exposure unknown. Please advise on advanced tannin chemistry or dye consultation.",
-    "specialistType": "wet cleaner"
+    "when": "Berry stain heat-set by hot wash or dryer, dark dyed cotton where peroxide isn't safe, or two full home rounds without clearing it.",
+    "whatToTell": "\"Berry stain on cotton, age [fresh / overnight / older], home-treated with [Dawn + vinegar / OxiClean / 3% hydrogen peroxide]. [Washed hot / not yet laundered.]\"",
+    "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the stain fresh or has it been sitting for more than an hour?",
-      "Has the garment been through the dryer or ironed since the stain occurred?",
-      "What type of berry — blueberry, strawberry, raspberry, blackberry?",
-      "Is the fabric white or colored?"
+      "How old is the stain?",
+      "Which berry — blueberry, blackberry, raspberry, strawberry?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Has it been through a hot wash or dryer?"
     ],
-    "modifierNotes": "Fresh stains respond much better. Dryer or iron exposure before treatment can make removal impossible. Blueberry and blackberry contain the most concentrated anthocyanins. On colored cotton, always test peroxide first — it can bleach fabric dye."
+    "modifierNotes": "Blueberry and blackberry carry the heaviest anthocyanin load — expect an extra peroxide or OxiClean cycle. Strawberry is lighter on pigment but has sticky pectin that needs the soap pass. Heat-set trends toward escalation."
   },
-  "difficulty": 6,
-  "timeEstimate": "10–20 minutes",
-  "lastValidated": "2026-03-23",
-  "homeSolutions": [
-    {
-      "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
-      "agent": "cool water"
-    },
-    {
-      "step": 2,
-      "instruction": "Dab the berry stain immediately with cool water applied to a white cloth. Work from center outward. Berry stains contain both tannins and dyes — they are difficult and should be treated quickly.",
-      "agent": "cool water",
-      "safetyNote": "Berry stains are among the most difficult to remove. Act quickly to prevent setting."
-    },
-    {
-      "step": 3,
-      "instruction": "Apply detergent/vinegar solution (1/4 tbsp mild laundry detergent + 2 oz white vinegar + 2 oz cool water) to the stain. Rub gently with the back of a spoon from center outward.",
-      "agent": "detergent/vinegar solution"
-    },
-    {
-      "step": 4,
-      "instruction": "Rinse thoroughly with cool water, working from center outward.",
-      "agent": "cool water"
-    },
-    {
-      "step": 5,
-      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize tannin and dye residue.",
-      "agent": "hydrogen peroxide 3% + ammonia",
-      "safetyNote": "Test on hidden area first — peroxide may lighten some dyes."
-    },
-    {
-      "step": 6,
-      "instruction": "Rinse thoroughly with cool water.",
-      "agent": "cool water"
-    },
-    {
-      "step": 7,
-      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center with white cloth.",
-      "agent": "white vinegar + cool water"
-    },
-    {
-      "step": 8,
-      "instruction": "If berry stain persists or if fabric is delicate, call a professional cleaner. These are difficult stains that may require specialized treatment.",
-      "agent": "escalation"
-    }
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
