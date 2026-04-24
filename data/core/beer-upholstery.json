@@ -1,130 +1,207 @@
 {
   "id": "beer-upholstery",
   "title": "Beer on Upholstery",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Beer contains malt tannins, hop resins, proteins (from barley), and sugars. On upholstery, the tannin component stains while the sugar creates a sticky residue that attracts dirt. Fresh beer stains are light and water-soluble. Dried beer stains darken as the tannins oxidize and the sugars caramelize, leaving a stiff, discolored patch.",
-  "whyThisWorks": "Surfactant treatment dissolves the sugar and protein components on upholstery. The acidic tannin spotter (professional) or oxidizer (DIY) targets the tannin discoloration. Beer stains are among the easier tannin stains because the tannin concentration is relatively low compared to wine or coffee.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "10–30 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "beer",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "tannin",
+      "upholstery",
+      "low-pigment",
+      "pad-risk"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Beer is a low-pigment tannin stain — most fresh spills on upholstery clear with cool damp cloth + NSD alone. The upholstery-specific risk isn't the stain chemistry; it's the LIQUID VOLUME. Beer comes in larger spills than wine or coffee, so more liquid = more risk of batting saturation + water ring. Check the upholstery code tag (W / W-S / S / X) first. Aged beer develops a faint tan ring as sugar caramelizes and residual polyphenol oxidizes.",
+  "whyThisWorks": "Damp-cloth transfer, never pour. Cold NSD handles surface sugar + barley-protein residue in most fresh spills. Aged stains need the acid-side tannin spotter + optional peroxide on whites. Weighted dry towel between passes protects the batting from ringing.",
+  "defaultAssumption": "Fresh beer on W / W-S upholstery is a fast, easy job. S-code or X-code = call a pro. The real risk is flooding the batting with too much liquid during treatment — damp cloth only.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Check Code + Blot",
+      "technique": "Read tag, blot extract",
+      "equipment": "Care tag, clean white cotton towel",
+      "dwellTime": "1 minute",
+      "instruction": "Read upholstery code. W / W-S: proceed. S-only: solvent lane (not for beer). X: vacuum only. Press a folded white towel straight down on the spill — extract as much as possible before chemistry. Outside-in."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water + NSD",
+      "technique": "Damp cloth transfer + extract",
+      "equipment": "NSD in cold water, damp cloth, weighted dry towel",
+      "dwellTime": "1 min per pass",
+      "instruction": "Apply cold NSD via DAMP cloth. Press, lift, rotate. Never pour. Weighted dry towel 5 min on top to extract. 2–3 cycles for fresh beer — usually enough."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Tannin Spotter (Aged Ring Only)",
+      "technique": "Dropper on residual tan ring",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Only for aged stains where tan ring remains. Acid-side spotter by dropper. Never pour. Blot with dry towel. Fresh beer skips this step."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hydrogen Peroxide 3% (Aged Light Upholstery)",
+      "technique": "Dropper on oxidized ring",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For aged tan ring on light / white upholstery: 3% H₂O₂ drop-by-drop. Patch-test hidden area first. Skip on dark / patterned."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "NSD Flush + Weighted Extract",
+      "technique": "Clear chemistry, extraction",
+      "equipment": "NSD damp cloth, heavy dry towel + weight",
+      "dwellTime": "2 min + 20 min weighted",
+      "instruction": "NSD-damp cloth. Weighted dry towel 20 min to pull moisture up from batting."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Fan-Dry",
+      "technique": "Air-dry before sitting",
+      "equipment": "Fan",
+      "dwellTime": "2–4 hours",
+      "instruction": "Fan-dry. Don't sit on it until bone-dry. Inspect next day for wicking."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Read code tag. W / W-S: proceed. S / X: pro.",
+      "2. Blot extract, no rub.",
+      "3. Cold NSD via damp cloth + weighted extract.",
+      "4. Aged ring: acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A).",
+      "5. Aged on light: 3% H₂O₂ on the ring.",
+      "6. NSD-damp flush + 20 min weighted extract.",
+      "7. Fan-dry. Inspect for wicking."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
       "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — aged only",
+      "Hydrogen Peroxide 3% — aged light only"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color",
-      "Avoid over-wetting — extract excess moisture to prevent backing damage"
+      "Beer is low-pigment — don't over-treat fresh spills",
+      "Damp cloth only — never pour, batting saturates fast with beer's volume",
+      "S / X code upholstery = pro",
+      "Patch test peroxide on colored upholstery"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Check the care code FIRST",
-      "instruction": "Find the tag sewn into a seam under a cushion. One letter: W = water-safe, S = solvent only, WS = both, X = vacuum only. On S or X, stop and call a pro — water will ring the fabric worse than beer ever could. On W or WS, proceed. No tag? Treat as S and escalate."
+      "agent": "Check the Upholstery Code",
+      "instruction": "Find the care tag under a cushion. W or W-S: proceed. S-only: solvent upholstery, not a beer DIY — call a pro. X: vacuum only, also a pro."
     },
     {
       "step": 2,
-      "agent": "The tannin rule: no alkaline cleaners",
-      "instruction": "Beer is a tannin stain — malt tannins, hop resins, plus sugar that will attract future dirt if you don't get it out. Alkaline products (ammonia, baking soda, OxiClean, most all-purpose upholstery sprays) lock tannin into the fiber permanently. Use only cold water, Dawn dish soap, 3% peroxide, and white vinegar."
+      "agent": "Blot Straight Down — Don't Rub",
+      "instruction": "Press a thick stack of white paper towels or folded white cloth straight down on the beer spill. Lift, dry section, press again. Outside-in. Beer is a lot of volume — get as much out BEFORE you do any chemistry."
     },
     {
       "step": 3,
-      "agent": "Patch test + blot the fresh spill",
-      "instruction": "Dab a drop of Dawn + 3% peroxide solution on the back of the cushion or hidden frame. Blot with a white cloth after two minutes — if the fabric holds color, you're safe. Meanwhile, press a stack of paper towels or white cloth straight down on the spill. Lift, move to a dry section, press again. Work outside-in until the cloth stops picking up beer."
+      "agent": "Cold Water + Dawn on a DAMP Cloth — Never Pour",
+      "instruction": "Dampen a white cloth with cool water + a drop of Dawn. Press on the spot, lift, rotate. Never pour water on upholstery — beer volumes plus pour = batting saturation + permanent water ring. Keep cloth damp, not dripping."
     },
     {
       "step": 4,
-      "agent": "Cold-water damp-cloth dilute",
-      "instruction": "Dip a white cloth in cold water, wring nearly dry, press on the stain. Lift, rinse the cloth in cold water, press again. Repeat 3–4 times. You're diluting the beer and flushing sugar out of the weave before the real chemistry starts. Never pour water on upholstery — foam absorbs what you can't see, and water rings form at the damp-zone edge."
+      "agent": "Weighted Dry Towel Between Wet Passes",
+      "instruction": "After each wet dab pass, press a thick DRY towel with a book or pan on top for 15–20 minutes. Pulls moisture up out of the batting. This matters MORE on upholstery than most surfaces because a beer-sized spill can saturate batting if you're not careful."
     },
     {
       "step": 5,
-      "agent": "Dawn + 3% hydrogen peroxide — damp cloth only",
-      "instruction": "Mix one tablespoon of Dawn with one cup of 3% hydrogen peroxide in a bowl. Dip a white cloth, WRING NEARLY DRY, and press on the stain. Let it sit 5 minutes, then blot with a clean damp cloth. Peroxide oxidizes the tannin; Dawn lifts it and cuts the sugar. Most beer stains lift in 1–2 cycles — beer has less tannin than wine or coffee.",
-      "safetyNote": "Never mix peroxide with ammonia or bleach. On dark or patterned upholstery, skip this step unless the patch test was clean."
+      "agent": "Aged Tan Ring? One Extra Step",
+      "instruction": "If beer sat overnight and left a tan ring: dab a dilute white-vinegar solution (1 tsp vinegar + 3 tbsp cool water) on the ring via damp cloth, 3 minutes, blot. For stubborn aged ring on light / white upholstery only, 3% drugstore hydrogen peroxide dab 3–5 min, blot. Skip peroxide on dark or patterned upholstery.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia. Patch test on colored upholstery."
     },
     {
       "step": 6,
-      "agent": "White vinegar rinse",
-      "instruction": "Mix one tablespoon of white vinegar with one cup of cold water. Dip a white cloth, wring nearly dry, dab the area. Vinegar neutralizes peroxide residue and prevents the tannin from drifting toward brown as it dries. Blot dry with a fresh cloth."
+      "agent": "Fan-Dry, Don't Sit",
+      "instruction": "Point a fan at the spot. Don't sit on the furniture until fully dry — several hours. Inspect next day for a tan ring wicking back. If the ring returns, batting is saturated and a pro extraction is the call."
     },
     {
       "step": 7,
-      "agent": "Fan-dry — no heat",
-      "instruction": "Blot until no more moisture transfers to a dry cloth. Point a room fan at the area for 4–8 hours. Good airflow prevents mildew in the cushion foam and stops water rings. No hair dryer — heat sets tannin and can damage the fabric."
-    },
-    {
-      "step": 8,
-      "agent": "Daylight inspect — repeat if shadow remains",
-      "instruction": "Inspect in natural light. Beer rings can reappear as a tan halo when fully dry. If you see one, repeat steps 5–7 once more. Two rounds is the home ceiling. If a shadow persists, the tannin has set — escalate."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a professional upholstery cleaner",
-      "instruction": "If care code is S or X, the patch test failed, or the stain survived two rounds, call a pro. Tell them: \"Beer on [W/WS/unknown] upholstery, treated with Dawn + 3% peroxide + vinegar rinse. No alkaline products, damp-cloth only.\" That sends them straight to commercial tannin formula + low-moisture extraction."
+      "agent": "Escalate for S-Code, Wool, or Wicking",
+      "instruction": "Escalate for S-code / X-code / wool upholstery, if the ring wicked back, or if two home rounds didn't clear it. Tell them: \"Beer on [W / W-S / code unknown] upholstery, age [fresh / overnight / older], home-treated with Dawn + [vinegar / 3% peroxide for aged ring] + weighted towel.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Check upholstery code tag. W / W-S: proceed. S / X: pro.",
+      "2. Blot extract straight down, no rub.",
+      "3. Cold water + Dawn on a DAMP cloth — never pour.",
+      "4. Weighted dry towel 15–20 min between wet passes.",
+      "5. Aged ring: diluted vinegar, then optional 3% peroxide on light upholstery.",
+      "6. Fan-dry, don't sit until dry.",
+      "7. Escalate for S-code, wool, wicking, or plateau."
     ],
     "products": [
+      "Clean white towels",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "White vinegar (aged ring)",
+      "3% hydrogen peroxide (aged ring, light upholstery only)",
+      "Heavy book or pan for weighted drying"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop for S / X code, wool upholstery, wicking, patch-test failure, or two-round plateau.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NEVER pour — beer volume saturates batting fast",
+      "NEVER skip weighted extraction",
+      "NEVER mix peroxide with chlorine bleach or ammonia",
+      "Patch test on colored upholstery"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never pour liquid on upholstery",
+      "Never rub — spreads beer into clean areas",
+      "Never skip the code-tag check",
+      "Never layer oxidizers"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S upholstery: tolerates standard chemistry",
+      "S: solvent only",
+      "X: vacuum only",
+      "Silk / velvet: escalate even on W-code"
     ]
   },
+  "materialWarnings": [
+    "Read the code tag first",
+    "Damp cloth only — beer volume saturates batting",
+    "Weighted extraction is pad-protection"
+  ],
   "escalation": {
-    "when": "If beer stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is beer on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "S / X code upholstery, wool, stain wicks back after drying, patch test fails, or two home rounds plateau.",
+    "whatToTell": "\"Beer on [W / W-S / code unknown] upholstery, age [fresh / overnight / older], home-treated with Dawn + [vinegar / 3% H₂O₂ for aged ring] + weighted towel.\"",
+    "specialistType": "professional upholstery cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Upholstery code — W, W-S, S, or X?",
+      "Fresh spill or overnight with tan ring?",
+      "Light / dark / patterned upholstery?",
+      "Silk, velvet, or standard synthetic?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Beer is a low-pigment stain — easy chemistry. The risk on upholstery is VOLUME — beer spills are larger than wine or coffee, and batting saturation is the real failure mode. Damp cloth + weighted extract is the whole discipline."
   },
-  "difficulty": 2,
-  "timeEstimate": "10-15 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

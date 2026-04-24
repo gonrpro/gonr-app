@@ -1,79 +1,188 @@
 {
   "id": "salsa-cotton",
   "title": "Salsa on Cotton",
-  "stainFamily": "combo",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Salsa contains tomato (lycopene, tannins), onion (sulfur compounds), chili (capsaicin in oil, red pigment), and citric acid. On cotton, the tomato tannins bond to fiber while the capsaicin oil penetrates deeply. The red pepper pigment (capsanthin) is fat-soluble and resistant to water-based cleaning. Citric acid can affect dyes on sensitive fibers.",
-  "whyThisWorks": "Cold water rinse removes loose solids and citric acid from cotton. Surfactant emulsifies the capsaicin oil. Tannin spotter addresses tomato polyphenols. An oxidizer targets the residual red pigment. Treating the oil component is key because capsaicin oil bonds pepper pigment to fiber.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "15–40 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "salsa",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "combination",
+      "tannin",
+      "oil",
+      "capsaicin",
+      "cotton"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Salsa is tomato + chili oil + onion + citric acid + sometimes cilantro + garlic. The three stain-forming components are: tomato (lycopene + tannin), chili pepper (capsaicin carried in oil + capsanthin red pigment), and onion (sulfur compounds that can darken over time). The capsaicin oil is the real lock — fat-soluble, drives the red pepper pigment deep into cotton. Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, and hot wash. Treatment is oil-first, then tannin, then oxidizer — same oil-then-color pattern as tomato-sauce.",
+  "whyThisWorks": "Capsaicin + capsanthin behave like mustard's curcumin + carrier oil — the oil protects the pigment until the oil is gone. Dawn / NSD pulls the capsaicin oil. Acid-side tannin spotter breaks the tomato-tannin bond. 3% H₂O₂ oxidizes residual red. Hot wash finishes. Skip the oil strip and the rest plateaus at faint orange.",
+  "defaultAssumption": "Fresh salsa on cotton is a high-confidence DIY. Heavy-oil salsa (restaurant-style with visible oil film) adds a solvent pre-treatment. Aged salsa is tougher because both the lycopene and capsanthin oxidize deeper.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape + Cold Flush",
+      "technique": "Remove chunks, cold flush",
+      "equipment": "Dull blade, cold water, white cotton terry towel",
+      "dwellTime": "1 minute",
+      "instruction": "Scrape solid salsa chunks off with a dull blade. Cold flush from the BACK of the fabric. Cold only — hot water drives capsaicin oil deeper into cotton."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Strip the capsaicin oil",
+      "equipment": "NSD in cool water",
+      "dwellTime": "5 minutes",
+      "instruction": "Apply NSD, work with a soft brush. Strips the chili oil carrier. Essential first step — peroxide can't reach the pigment while the oil is there."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Tannin Spotter",
+      "technique": "Drop, dwell, blot",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Acid-side tannin spotter by dropper on tomato tannin. Dwell 3–5 min, blot."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "3% H₂O₂ on residual orange-red. Oxidizes lycopene + capsanthin. Skip on dark cotton."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove excess solids with dull edge — do not rub",
-      "2. Apply Tannin Formula for the plant-pigment component",
-      "3. Apply POG for the oil component",
-      "4. Flush with NSD and cool water",
-      "5. If color persists: apply H2O2 6% on colorfast fabrics",
-      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+      "1. Scrape chunks. Cold flush from the back.",
+      "2. NSD — strip capsaicin oil FIRST.",
+      "3. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A).",
+      "4. 3% H₂O₂ on residual orange-red.",
+      "5. Hot wash per care label."
     ],
     "products": [
-      "Tannin Formula",
-      "POG (Paint Oil Grease remover)",
       "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold through spotting; hot wash post-chemistry",
+    "warnings": [
+      "Oil off FIRST — peroxide can't work through capsaicin oil",
+      "Never hot-flush — drives chili oil deeper",
+      "One oxidizer at a time"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Scrape + Cold Water From the Back",
+      "instruction": "Scrape salsa chunks off with a dull butter knife. Hold the BACK of the fabric under cold running water for a minute. Cold only — hot water drives the chili oil deeper."
+    },
+    {
+      "step": 2,
+      "agent": "Dawn FIRST — Strip the Oil",
+      "instruction": "Salsa has chili oil that carries the red pepper pigment. That oil has to come off BEFORE anything else can reach the pigment. Work Dawn dish soap into the stain with a fingertip or soft toothbrush, let sit 10 min, rinse cool. The stain should lighten noticeably."
+    },
+    {
+      "step": 3,
+      "agent": "White Vinegar Dab for Red",
+      "instruction": "Mix 1 tsp white vinegar with 3 tbsp cool water. Dab on the stain, let sit 3 min, blot. Breaks the tomato tannin bond."
+    },
+    {
+      "step": 4,
+      "agent": "3% Hydrogen Peroxide for Residual Color (Whites)",
+      "instruction": "For residual orange-red on white cotton: dab 3% drugstore hydrogen peroxide, let it bubble 3–5 min, blot. Skip on dark cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia."
+    },
+    {
+      "step": 5,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer."
+    },
+    {
+      "step": 6,
+      "agent": "Escalate If Heat-Set",
+      "instruction": "If salsa's been hot-dried or two home rounds haven't cleared it, take to a dry cleaner. Tell them: \"Salsa on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% hydrogen peroxide.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub",
-      "2. Rinse with cold water to remove loose material",
-      "3. Apply Dawn dish soap. Work gently",
-      "4. Blot with clean white cloth. Repeat if needed",
-      "5. Air dry — no heat until stain is gone"
+      "1. Scrape chunks. Cold water flush from the BACK.",
+      "2. Dawn FIRST — strip the chili oil. 10 min dwell, rinse cool.",
+      "3. Diluted white vinegar dab for red residue.",
+      "4. 3% hydrogen peroxide on residual color (whites only).",
+      "5. Hot wash per care label. Inspect BEFORE the dryer.",
+      "6. Escalate if heat-set."
     ],
     "products": [
-      "Dawn dish soap"
+      "Dull blade or credit-card edge",
+      "Dawn dish soap",
+      "White vinegar",
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if salsa has been hot-dried or two home rounds didn't clear it.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "Oil off FIRST — peroxide blocked by capsaicin oil otherwise",
+      "Cold water during spotting — hot drives oil deeper",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never hot-flush fresh salsa — drives chili oil deeper",
+      "Never skip the Dawn / oil-strip step",
+      "Never layer oxidizers",
+      "Never dry with residual color"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, hot wash",
+      "Dyed cotton: skip or inside-seam-test peroxide",
+      "Heat-durable once chemistry is cleared"
     ]
   },
+  "materialWarnings": [
+    "Oil carrier off first, color second",
+    "Cold spotting, hot wash",
+    "Peroxide on whites"
+  ],
   "escalation": {
-    "when": "If salsa stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is salsa on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Salsa heat-set by iron or dryer, or two home rounds plateau.",
+    "whatToTell": "\"Salsa on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% H₂O₂.\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
       "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Oily restaurant-style salsa or lean homemade?",
+      "Has it been through a hot wash or dryer?",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Salsa + chili oil is tomato sauce plus extra chili pigment. Same oil-first-then-color pattern. Heavy oil restaurant salsa trends harder — more solvent passes."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,129 +1,227 @@
 {
   "id": "coffee-carpet",
   "title": "Coffee on Carpet",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Coffee contains tannins (polyphenolic compounds from roasted beans) that bond to carpet through hydrogen bonding and pi-stacking interactions. Fresh coffee is water-soluble. Aged stains oxidize and darken — the brown color intensifies as tannin molecules cross-link. Melanoidins from the roasting process add additional brown pigment that is highly resistant to removal.",
-  "whyThisWorks": "An acidic tannin spotter (professional) or oxidizer (DIY) breaks the chromophore bonds — the colored structures — in the tannin molecules on carpet. Hydrogen peroxide specifically targets the double bonds that make oxidized tannin brown. The key is avoiding heat and alkaline products, both of which permanently darken tannin stains.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–45 minutes with extraction between passes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "coffee",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "tannin",
+      "carpet",
+      "pad-risk",
+      "time-sensitive",
+      "no-alkaline"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Coffee on carpet is a tannin stain (polyphenols + melanoidins) with the same carpet-specific construction risks as red wine: pooled liquid soaks into the backing and pad, wicks back up as the carpet dries. Light coffee + cream is actually worse than black on carpet because the milk protein + fat add a combination-stain layer. If the coffee had cream, the protein chemistry applies AS WELL — see coffee-cream-cotton's protein-before-heat logic adapted for carpet here. No alkaline cleaners on tannin.",
+  "whyThisWorks": "Same extraction pattern as red-wine-carpet. Damp-cloth transfer (never pour), weighted dry towel between passes protects the pad. Acid-side tannin spotter + 3% H₂O₂ on residual color. For coffee WITH cream, an enzyme damp cloth step is inserted before the acid spotter to digest the milk protein.",
+  "defaultAssumption": "Assume synthetic face yarn. Wool carpet + coffee = pro-lane. Coffee-with-cream version is combination-stain chemistry; this card covers both the black and with-cream paths.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot + Extract",
+      "technique": "Press dry, lift, repeat — no rubbing",
+      "equipment": "Clean white cotton towels, firm pressure",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Press a folded white towel straight down with firm pressure. Lift, dry section, press again. Outside-in. Never rub."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water + NSD",
+      "technique": "Damp cloth transfer + extract",
+      "equipment": "NSD in cold water, damp cloth, weighted dry towel",
+      "dwellTime": "1 min per pass",
+      "instruction": "Apply cold NSD via damp cloth. Press, lift, rotate. Never pour. Extract between passes with weighted dry towel. 2–4 cycles."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Enzyme Step (If Cream)",
+      "technique": "Damp cloth enzyme for milk protein",
+      "equipment": "Liquid Protein Spotter in warm water (30–38°C) OR Protein enzyme pre-soak, damp cloth",
+      "dwellTime": "10–15 minutes",
+      "instruction": "For coffee-WITH-cream specifically: damp cloth with enzyme solution pressed onto the stain. Protease digests milk protein before the tannin chemistry runs. Skip for plain black coffee."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Tannin Spotter",
+      "technique": "Dropper, localized",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Acid-side tannin spotter by dropper on residual brown. Dwell 5–10 min, blot with dry towel. Patch-test first on dyed / patterned carpet."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Dropper, watch, extract",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "5–15 minutes, check every 5",
+      "instruction": "3% H₂O₂ drop-by-drop on residual chromophore. Check every 5 min. Blot when color breaks. One oxidizer at a time."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "NSD Flush + Weighted Extract",
+      "technique": "Clear chemistry, extract",
+      "equipment": "NSD damp cloth, heavy dry towel + weight",
+      "dwellTime": "2 min + 30 min weighted",
+      "instruction": "NSD-damp cloth + weighted dry towel 30 min. Pull moisture up from backing."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Fan-Dry + Inspect",
+      "technique": "Watch for wicking",
+      "equipment": "Fan",
+      "dwellTime": "4–8 hours",
+      "instruction": "Fan, air-dry, inspect next day. Wicking back = pad contamination = pro."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Blot + extract dry. No rubbing.",
+      "2. Cold NSD via damp cloth + weighted extract between every pass.",
+      "3. Coffee WITH cream: insert enzyme damp-cloth step for milk protein.",
+      "4. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A).",
+      "5. 3% H₂O₂ on residual chromophore.",
+      "6. NSD-damp flush + 30 min weighted dry towel.",
+      "7. Fan-dry. Inspect next day for wicking."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
       "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Liquid Protein Spotter / enzyme (for coffee-with-cream)",
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color",
-      "Avoid over-wetting — extract excess moisture to prevent backing damage"
+      "Never pour or pool liquid on carpet",
+      "Never use hot water — sets tannin + activates backing adhesive",
+      "Never alkaline on coffee tannin — locks as permanent brown",
+      "Coffee-with-cream adds enzyme step — protein before tannin chemistry",
+      "One oxidizer at a time"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test on a hidden spot",
-      "instruction": "Find a hidden patch of the same carpet — inside a closet, under furniture, behind a door. Dab a drop of the Dawn + 3% peroxide solution from step 5 and blot with a white cloth after two minutes. If the carpet holds its color, you're safe to treat. If dye transfers or the fiber lightens, skip to step 9 and bring in a pro — home peroxide will lift the dye."
+      "agent": "Patch-Test First on Dyed Carpet",
+      "instruction": "Find a hidden patch of carpet — inside a closet or under furniture. Dab a drop of cool water + Dawn. If carpet dye lifts onto a white cloth, home chemistry may lighten your carpet. Stop and call a pro."
     },
     {
       "step": 2,
-      "agent": "The tannin rule: no alkaline cleaners",
-      "instruction": "Coffee is a tannin, just like wine, tea, and berries. Alkaline products — ammonia, baking soda, OxiClean, most \"all-purpose\" carpet sprays and foams — lock tannin into the carpet fiber permanently and turn a light brown ring into a dark, unreverseable one. Use only: cold water, Dawn dish soap, 3% hydrogen peroxide, and white vinegar. Nothing else."
+      "agent": "Blot Straight Down, Never Rub",
+      "instruction": "Press a thick stack of white paper towels or folded white cloth straight down on the spill. Lift, dry section, press. Outside-in. Never rub — rubbing drives coffee into the pad."
     },
     {
       "step": 3,
-      "agent": "Blot immediately — never rub",
-      "instruction": "Press a clean white cloth or stack of paper towels straight down on the spill. Lift, move to a dry section, press again. Work from the outside of the stain inward so you don't spread it. Keep blotting until the cloth stops picking up brown. Rubbing drives coffee deep into the pile and the pad below — and pad contamination is how you end up with a permanent ring."
+      "agent": "Coffee With Cream? Enzyme Step First",
+      "instruction": "If the coffee had milk or cream: dissolve an enzyme laundry pretreat (OxiClean Versatile, Biz) in WARM water per the label. Dampen a clean white cloth with that solution, press on the spot, let it sit 10 minutes. This handles the milk protein — skipping this step and going straight to peroxide locks the protein in."
     },
     {
       "step": 4,
-      "agent": "Cold water dilute",
-      "instruction": "Pour a small amount of cold water directly on the stain — a few tablespoons, not a cup — and blot immediately. Repeat two or three times. Fresh coffee is water-soluble, so early dilution pulls most of the stain out before the real chemistry starts. Avoid hot water, even if the spill was hot: hot water drives tannin deeper into the fiber and triggers browning."
+      "agent": "Cold Water + Dawn on a DAMP Cloth",
+      "instruction": "Dampen a white cloth with cool water + a drop of Dawn. Press on the spot, lift, rotate. Never pour water on carpet — it goes to the pad."
     },
     {
       "step": 5,
-      "agent": "Dawn + 3% hydrogen peroxide solution",
-      "instruction": "Mix one tablespoon of clear Dawn dish soap with one cup of 3% hydrogen peroxide in a small bowl. Dip a white cloth, wring nearly dry, and dab the stain. Let it sit 5–10 minutes. Peroxide oxidizes the tannin color molecules; Dawn lifts them. Blot with a clean damp cloth. Most coffee stains lift in 1–2 cycles; older, heavier stains may need 3.",
-      "safetyNote": "Never mix hydrogen peroxide with ammonia or bleach. On dark or patterned carpet, do not apply this solution unless the patch test came back clean."
+      "agent": "White Vinegar for Residual Brown (Tannin)",
+      "instruction": "Mix 1 tbsp white vinegar in 1 cup cool water. Dab on residual brown with a damp cloth, let sit 3–5 min, blot dry."
     },
     {
       "step": 6,
-      "agent": "White vinegar rinse",
-      "instruction": "Mix one tablespoon of white vinegar into one cup of cold water. Dab onto the treated spot with a clean white cloth. The mild acid neutralizes any peroxide residue and keeps the tannin in its lighter form as it dries. Blot dry with a fresh clean cloth."
+      "agent": "3% Hydrogen Peroxide for Stubborn Shadow",
+      "instruction": "For a stubborn brown shadow on light carpet: mix 1 tbsp Dawn with 1 cup 3% drugstore hydrogen peroxide. Dip a cloth, wring nearly dry, dab. Dwell 5 min, blot with damp cloth. Skip on dark / patterned carpet.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia. Patch test on colored carpet first."
     },
     {
       "step": 7,
-      "agent": "Dry down — prevent pad wicking overnight",
-      "instruction": "Blot until no moisture transfers to a dry cloth. Stack six to ten sheets of white paper towels over the spot, weigh them down with a heavy book, and leave overnight. This pulls any residual coffee up out of the carpet pad before it can wick back to the surface as a ring. Don't walk on the area or vacuum until completely dry."
+      "agent": "Weighted Dry Towel Between Every Wet Pass",
+      "instruction": "After each wet cycle, press a thick DRY towel + heavy book on the spot for 20–30 min. Pulls moisture UP out of the pad. Non-negotiable on carpet."
     },
     {
       "step": 8,
-      "agent": "Check under daylight — repeat if shadow remains",
-      "instruction": "Once dry, inspect in natural light, not a lamp. Coffee rings often look clean when wet and reappear as a pale tan halo when dry. If you see one, repeat steps 5–7 a second time. Two rounds is the home ceiling. If a shadow still shows after two full rounds, the tannin has set and a pro will be faster than a third DIY pass."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a professional carpet cleaner",
-      "instruction": "If the patch test fails, the carpet is wool, or the stain survives two full rounds, call a pro. Tell them: \"Coffee on [nylon/polyester/wool] carpet, treated with Dawn + 3% peroxide, vinegar rinse. No ammonia or alkaline products used. Residual tan halo remains.\" That handoff lets them jump straight to a tannin formula + 6% peroxide + truck-mount extraction — the full tool chain you can't replicate at home."
+      "agent": "Fan-Dry, Inspect Next Day, Escalate If Needed",
+      "instruction": "Fan the area. Don't walk on it until bone-dry. Next day, check for wicking. Escalate for wool carpet, wicking ring, patch-test failure, or two home rounds without clearing. Tell them: \"Coffee on [nylon / wool / synthetic] carpet — [black / with cream], age [fresh / overnight / older], home-treated with [enzyme + ] Dawn + vinegar + 3% peroxide + weighted towel.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Patch-test hidden area.",
+      "2. Blot straight down, never rub.",
+      "3. Coffee WITH cream: enzyme pretreat damp cloth first (protein step).",
+      "4. Cold water + Dawn on DAMP cloth — never pour.",
+      "5. Diluted vinegar for residual brown.",
+      "6. 3% peroxide + Dawn mix for stubborn shadow (light carpet only, patch-test).",
+      "7. Weighted dry towel 20–30 min between wet passes.",
+      "8. Fan-dry. Inspect next day. Escalate for wool, wicking, or plateau."
     ],
     "products": [
+      "Clean white towels",
+      "Enzyme pretreat (coffee with cream only)",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "White vinegar",
+      "3% hydrogen peroxide",
+      "Heavy book or pan for weighted drying"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop for wool carpet, stain wicks back, patch-test failure, or two-round plateau.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NEVER pool liquid on carpet",
+      "NEVER skip weighted extraction",
+      "NEVER alkaline on tannin — permanent brown",
+      "Coffee with cream needs enzyme step first (protein)",
+      "Skip peroxide on dark / patterned carpet"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never pour liquid on carpet",
+      "Never alkaline on coffee tannin",
+      "Never hot water",
+      "Never skip extraction",
+      "Never layer oxidizers"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / olefin / polyester: tolerates standard chemistry",
+      "Wool: pro-lane",
+      "Backing: no pooled liquid"
     ]
   },
+  "materialWarnings": [
+    "Coffee with cream = enzyme step first",
+    "Damp cloth only — never pool",
+    "Weighted extraction protects pad"
+  ],
   "escalation": {
-    "when": "If coffee stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is coffee on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Wool carpet, stain wicks back, patch-test fails, or two home rounds plateau.",
+    "whatToTell": "\"Coffee on [nylon / wool / synthetic] carpet — [black / with cream], age [fresh / overnight / older], home-treated with [enzyme + ] Dawn + vinegar + 3% H₂O₂ + weighted towel.\"",
+    "specialistType": "professional carpet cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Black coffee or with cream/milk?",
+      "Carpet fiber — nylon / olefin / polyester / wool?",
+      "Age of the stain?",
+      "Walked on since?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Coffee-with-cream on carpet = combination-stain + pad-risk. Enzyme step has to come first, then the tannin sequence. Skipping protein-before-heat on carpet-with-cream locks everything."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

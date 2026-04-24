@@ -1,9 +1,15 @@
 {
   "id": "white-wine-cotton",
   "title": "White Wine on Cotton",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 2,
+  "timeEstimate": "5–20 minutes (fresh); aged can develop a yellow ring",
+  "lastValidated": "2026-04-24",
   "meta": {
     "stainCanonical": "white-wine",
     "surfaceCanonical": "cotton",
@@ -12,142 +18,168 @@
     "tags": [
       "tannin",
       "cotton",
-      "washable",
-      "home-safe",
-      "low-risk"
+      "low-pigment",
+      "sugar-residue"
     ],
     "freePreview": true
   },
-  "stainChemistry": "White wine is a light tannin and sugar stain. On cotton, most of the spill stays water-soluble unless it dries and oxidizes into a pale yellow or beige ring.",
-  "whyThisWorks": "Cold water dilutes the spill before it dries deeper into the cotton. Detergent lifts the sugar and residue, a mild acid-side tannin treatment helps release the light tannin trace, and oxygen bleach handles any remaining shadow without the aggressive escalation this stain usually does not need.",
+  "stainChemistry": "White wine is a much lower-pigment tannin stain than red — whites have a fraction of the anthocyanin load and the acidity is comparable. Fresh white wine on cotton is almost invisible and rinses out with water alone in most cases. The cleanup problem emerges LATER: if a white-wine spill sits overnight, the residual sugar caramelizes + the polyphenols oxidize, producing a faint yellow / tan ring. Cotton tolerates acid-side spotters, NSD, 3% H₂O₂, and hot wash. A common modern cooking use — deglazing with white wine — is the stain's other form and often has added oil.",
+  "whyThisWorks": "Fresh white wine clears with cold flush alone. Aged white wine needs the full tannin sequence because the sugar + oxidized polyphenol residue behaves like a mild tannin. Cotton handles the chemistry without fuss.",
+  "defaultAssumption": "Fresh white wine is so easy it often feels like it 'went away' — then the yellow ring shows up after drying if it wasn't properly flushed. Treat even invisible fresh spills with a cold flush + NSD to prevent the aged ring from developing.",
   "spottingProtocol": [
     {
       "step": 1,
-      "agent": "Cold Water",
-      "technique": "Blot from the back",
-      "temperature": "Cold",
-      "dwellTime": "Work immediately",
-      "instruction": "Blot the area and flush cold water through the back of the stain. Keep blotting until the spill stops transferring."
+      "side": "wet",
+      "agent": "Cold Flush",
+      "technique": "Flush from the back",
+      "equipment": "Cold water, white cotton terry towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Cold flush from the BACK of the fabric. Cold only — hot water on white wine's sugar content caramelizes it and locks the residue."
     },
     {
       "step": 2,
-      "agent": "Mild Liquid Detergent",
-      "technique": "Work gently with fingertips or a soft cloth",
-      "temperature": "Cool",
-      "dwellTime": "Check frequently",
-      "instruction": "Apply a small amount of mild liquid detergent or dish soap to the damp stain. Work gently, then rinse with cold water."
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Sponge, dwell, blot",
+      "equipment": "NSD in cold water",
+      "dwellTime": "2 minutes",
+      "instruction": "Apply NSD, sponge gently. Handles any residual sugar + polyphenol."
     },
     {
       "step": 3,
-      "agent": "Acidic Tannin Rinse",
-      "technique": "Light blotting",
-      "temperature": "Cool",
-      "dwellTime": "Brief contact only",
-      "instruction": "If a pale ring remains, apply a mild acid-side tannin treatment, blot gently, then rinse again."
+      "side": "wet",
+      "agent": "Tannin Spotter (Aged Ring Only)",
+      "technique": "Dropper on residual yellow ring",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Only if aged white-wine ring is present: acid-side spotter by dropper. Fresh stains don't need this step."
     },
     {
       "step": 4,
-      "agent": "Oxygen Bleach Solution",
-      "technique": "Spot treat or short soak",
-      "temperature": "Cool",
-      "dwellTime": "Monitor and reapply as needed",
-      "instruction": "If a shadow still shows, use a color-safe oxygen bleach solution and monitor the area closely, then rinse thoroughly."
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3% (Aged Whites)",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3 minutes",
+      "instruction": "For aged yellow ring on white cotton: 3% H₂O₂ on the ring. Skip on dark cotton. One oxidizer at a time."
     },
     {
       "step": 5,
-      "agent": "Laundry Detergent",
-      "technique": "Wash and air dry",
-      "temperature": "Per care label",
-      "dwellTime": "Normal wash",
-      "instruction": "Wash the item per the care label and air dry until you confirm the stain is gone. Do not use heat until the area is clear."
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label."
     }
   ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Cold flush from the back — fresh white wine usually clears here.",
+      "2. NSD for residual sugar + polyphenol.",
+      "3. Aged yellow ring only: acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A).",
+      "4. Aged ring on whites: 3% H₂O₂ on the shadow.",
+      "5. Hot wash per care label."
+    ],
+    "products": [
+      "NSD (Neutral Synthetic Detergent)",
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — aged only",
+      "Hydrogen Peroxide 3% — aged whites only"
+    ],
+    "temperature": "cold through spotting; hot wash post-chemistry",
+    "warnings": [
+      "White wine sugar caramelizes under heat — cold flush even on seemingly invisible spills prevents an aged ring",
+      "Fresh white wine rarely needs more than cold flush + NSD — don't over-treat",
+      "One oxidizer at a time"
+    ]
+  },
   "homeSolutions": [
     {
       "step": 1,
-      "instruction": "Blot first, then flush cold water through the back of the stain.",
-      "agent": "Cold Water"
+      "agent": "Don't Wait — Cold Flush Even 'Invisible' Spills",
+      "instruction": "White wine is tricky because it looks like nothing at first — then, a day later, a yellow ring shows up where the spill was. That yellow ring is sugar caramelization + polyphenol oxidation, and it's harder to remove than the fresh spill would have been. Even if the fabric looks clean, cold-flush the area to prevent the ring."
     },
     {
       "step": 2,
-      "instruction": "Work in a few drops of mild dish soap or liquid detergent and rinse well.",
-      "agent": "Mild Dish Soap"
+      "agent": "Cold Water Flush From the Back",
+      "instruction": "Hold the BACK of the stained area under cold running water for 30–60 seconds. The residue — even if invisible — rinses out. Don't use hot water; it caramelizes any sugar."
     },
     {
       "step": 3,
-      "instruction": "If a faint yellow ring remains, apply a mild acid-side tannin treatment and rinse again.",
-      "agent": "Acidic Tannin Rinse"
+      "agent": "Dawn + Cold Water",
+      "instruction": "A drop of Dawn dish soap worked into the spot with a fingertip for a minute. Rinse cool."
     },
     {
       "step": 4,
-      "instruction": "If needed, use a color-safe oxygen bleach soak before washing.",
-      "agent": "Oxygen Bleach"
+      "agent": "Aged Yellow Ring? Extra Step",
+      "instruction": "If the fabric's been sitting and a yellow ring has developed: mix 1 teaspoon white vinegar with 3 tablespoons cool water, dab on the ring, let sit 3 min, blot. If it's still there on white cotton, dab 3% drugstore hydrogen peroxide for 3–5 min, blot.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia. Skip peroxide on dark/dyed cotton."
+    },
+    {
+      "step": 5,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. If an aged yellow ring is still visible, repeat the vinegar + peroxide pass first."
+    },
+    {
+      "step": 6,
+      "agent": "Escalate Rarely",
+      "instruction": "White wine almost never needs a dry cleaner. Only escalate if the aged ring has been hot-dried and two home rounds didn't clear it."
     }
   ],
-  "materialWarnings": [
-    "Do not use heat until the stain is fully gone.",
-    "Test oxygen bleach first if the cotton is dyed or trimmed.",
-    "Skip home treatment and escalate if the care label says dry clean only."
-  ],
-  "escalation": {
-    "when": "Escalate if the stain is old, heat-set, on a dry-clean-only cotton garment, or if repeated treatment leaves a visible ring.",
-    "whatToTell": "Tell the cleaner it is white wine on cotton and whether detergent, acid-side tannin treatment, or oxygen bleach were already used.",
-    "specialistType": "professional cleaner"
-  },
-  "products": {
-    "consumer": [
-      {
-        "name": "Mild Liquid Dish Soap",
-        "use": "Initial detergent step",
-        "note": "Use only a small amount and rinse fully."
-      },
-      {
-        "name": "Tannin Spotter",
-        "use": "Light tannin residue",
-        "note": "Use a mild acid-side tannin treatment labeled safe for fabric spot work."
-      },
-      {
-        "name": "Oxygen Bleach",
-        "use": "Residual yellow or beige shadow",
-        "note": "Use a color-safe oxygen bleach, not chlorine bleach."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. Cold flush from the BACK of the fabric — even invisible fresh spills, to prevent aged ring.",
+      "2. Dawn + cold water for residue.",
+      "3. Aged yellow ring: diluted white vinegar + 3% peroxide on whites.",
+      "4. Hot wash per care label.",
+      "5. Escalate only if aged ring was hot-dried."
     ],
-    "professional": [
-      {
-        "name": "Tannin Spotter",
-        "use": "Stubborn residual ring after home treatment",
-        "note": "Usually unnecessary on fresh white wine spills on cotton."
-      }
+    "products": [
+      "Cold water",
+      "Dawn dish soap",
+      "White vinegar (aged ring)",
+      "3% hydrogen peroxide (aged ring, whites only)"
+    ],
+    "whenToStop": "Stop if an aged yellow ring has been hot-dried and home round didn't clear it. Rare case.",
+    "warnings": [
+      "Cold water even for 'invisible' fresh spills — prevents aged ring",
+      "Hot water caramelizes sugar into a yellow ring",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton"
     ]
   },
-  "customerExplanation": "White wine on cotton is usually a straightforward cleanup, not a professional-only case. Fast flushing, light detergent work, a mild acid-side tannin treatment if needed, and air drying before heat solve most spills.",
-  "commonMistakes": [
-    "Letting the spill dry before flushing it out",
-    "Using heat before confirming the stain is gone",
-    "Over-treating a simple spill with harsh chemistry"
+  "safetyMatrix": {
+    "neverDo": [
+      "Never skip treating 'invisible' fresh spills — aged ring forms later",
+      "Never hot-flush white wine — sugar caramelizes to yellow",
+      "Never layer oxidizers"
+    ],
+    "fiberSensitivities": [
+      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, hot wash",
+      "Dyed cotton: skip or inside-seam-test peroxide",
+      "Heat-durable once chemistry is cleared"
+    ]
+  },
+  "materialWarnings": [
+    "Treat fresh spills even when invisible — aged ring is the real problem",
+    "Cold water only during spotting",
+    "Peroxide on whites for aged ring"
   ],
-  "scienceNote": "White wine carries far less pigment than red wine, so the main issue on cotton is diluted tannin residue plus sugars. That is why cold water and detergent do most of the work, with oxygen bleach only as a cleanup step for the leftover ring.",
-  "difficulty": 1,
-  "difficulty_factors": [
-    "light tannin load",
-    "cotton is forgiving",
-    "usually fully removable"
-  ],
-  "components": [
-    "water-flush",
-    "detergent",
-    "acid-side",
-    "oxidizer-optional"
-  ],
-  "component_order": [
-    "water-flush",
-    "detergent",
-    "acid-side",
-    "oxidizer-optional"
-  ],
-  "version": "1.0",
-  "authored": "2026-04-18",
+  "escalation": {
+    "when": "Aged yellow ring has been hot-dried and home round didn't clear it. Rare.",
+    "whatToTell": "\"White wine on cotton, [fresh / aged yellow ring], home-treated with Dawn + vinegar + [3% H₂O₂ on whites].\"",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Fresh spill or aged yellow ring?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Has it been washed or dryer-cycled since the spill?",
+      "Straight wine or cooking-wine (may have added oil)?"
+    ],
+    "modifierNotes": "The 'invisible fresh spill → aged yellow ring' trap is the characteristic white-wine failure mode. Even seemingly clean wet spills deserve a cold flush."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

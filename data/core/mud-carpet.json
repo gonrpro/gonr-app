@@ -1,131 +1,195 @@
 {
   "id": "mud-carpet",
   "title": "Mud on Carpet",
-  "stainFamily": "combo",
+  "stainType": "specialty",
+  "stainFamily": "specialty",
   "surface": "carpet",
-  "sector": "home",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Combination stains contain protein, fat, and tannin or mineral components. Mud contains organic material (plant matter, tannins), clay/mineral particles, and sometimes protein components. Each component requires different chemistry: protein needs detergent, fat needs solvent, tannin needs peroxide, minerals need acid. Standard approach: let mud dry completely first (wet scrubbing drives particles deeper), then detergent, then solvent, then tannin treatment.",
-  "whyThisWorks": "This combination stain contains multiple components — organic pigments, clay, and tannins — that each need separate treatment. Mud soaks through carpet into the padding below. Surface cleaning won't reach it — the stain hides underneath and wicks back up as the material dries. Dwell time matters more than scrubbing force.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "5 minutes plus drying time",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "mud",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "mud",
+      "soil",
+      "carpet",
+      "dry-first",
+      "vacuum-first"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Same chemistry as mud on fabric — clay + silt + sand + organic debris — but on carpet the failure mode is different. Rubbing wet mud on a carpet pile both (a) drives particles deeper into the backing and (b) can damage the face yarn by grinding abrasive soil against the tufts. Let it dry, vacuum it, done. Most mud on carpet doesn't need any chemistry at all. Nylon / olefin / polyester / wool all tolerate dry vacuuming equally well. Wet chemistry follows the same cold-damp-cloth + weighted extraction pattern as other carpet spills if any shadow remains.",
+  "whyThisWorks": "Dry + vacuum is 90% of the protocol. What's left after a thorough vacuum is fine-particle residue and maybe an earth-tone shadow if the mud had clay or organic matter. NSD via damp cloth handles both. Resist any instinct to pour water on wet mud on carpet — you drive the particles into the pad where they don't come out.",
+  "defaultAssumption": "Most home failures on mud-carpet come from panic-scrubbing wet mud. The dry-first rule is counterintuitive but it's the whole protocol. Synthetic carpet assumption.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Let It Dry, Do Not Touch",
+      "technique": "Air-dry in place",
+      "equipment": "Fan if needed",
+      "dwellTime": "1–4 hours",
+      "instruction": "Leave the wet mud alone. Don't step on it, don't try to blot it, don't dab cleaner on it. Let it dry completely. If the spot is large and wet, set a fan nearby to accelerate drying. Do NOT apply heat (hair dryer, space heater) — slow, natural air drying preserves the mud's dry-brittle structure which is what lifts cleanly."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Vacuum Thoroughly",
+      "technique": "Multiple passes with a good vacuum",
+      "equipment": "Upright or canister vacuum with beater bar",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Vacuum the dried mud. Use the beater bar to lift dried particles from the pile. Multiple passes in different directions. Most of the mud leaves in this step."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "NSD + Damp Cloth",
+      "technique": "Damp cloth transfer + extract",
+      "equipment": "NSD in warm water, damp cloth, weighted dry towel",
+      "dwellTime": "2–3 minutes per pass",
+      "instruction": "For any residual shadow: apply NSD via DAMP cloth — press onto the spot, lift, rotate. Never pour. Extract between passes with a weighted dry towel. 2–3 cycles usually clears residual soil."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Acid Rinse (Red Clay Only)",
+      "technique": "Dilute acid for iron tint",
+      "equipment": "Dilute acetic acid 5% OR lemon juice 1:4 with water, damp cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "For red-clay mud with iron content leaving a rust-like tint: dab dilute acid via damp cloth. Blot with dry towel."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Fan-Dry + Re-Vacuum",
+      "technique": "Air-dry, final vacuum",
+      "equipment": "Fan, vacuum",
+      "dwellTime": "2–4 hours",
+      "instruction": "Fan-dry the spot. Once bone-dry, vacuum once more to lift any last particles the wet chemistry may have loosened."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply NSD and work gently into the stain. This NSD targets the protein component and begins emulsifying surface oils. Blot thoroughly between passes.",
-      "2. Apply POG or VDS to extract the oil and grease component of the stain. Blot with clean absorbent cloth. This targets what the NSD couldn't fully emulsify.",
-      "3. If browning or color remains, apply Tannin to target the tannin component. This addresses the plant-based pigments that give the stain its color. Tamp gently.",
-      "4. Apply diluted acetic acid (1:10) to neutralize all residual chemistry and restore the fabric. Blot dry."
+      "1. Let mud dry completely in place. Fan if large. No heat.",
+      "2. Vacuum thoroughly — beater bar, multiple directions.",
+      "3. NSD via damp cloth + weighted extraction for residual shadow.",
+      "4. Acid rinse for red-clay iron tint if present.",
+      "5. Fan-dry + final vacuum."
     ],
     "products": [
+      "Patience (drying phase)",
+      "Good vacuum with beater bar",
       "NSD (Neutral Synthetic Detergent)",
-      "POG (Paint-Oil-Grease remover)",
-      "Tannin",
-      "acetic acid (diluted 1:10)"
+      "Dilute acetic acid 5% (red clay only)"
     ],
-    "temperature": "cold — hot water can set protein component permanently",
+    "temperature": "ambient throughout",
     "warnings": [
-      "Applying all treatments simultaneously — creates a chemical slurry that's harder to remove",
-      "Using hot water early — can set the protein component permanently",
-      "Not rinsing completely between treatments — old chemistry interferes with new treatment",
-      "Over-agitating the stain — spreads each component deeper into the fiber"
+      "Never rub or wet-scrub fresh mud — grinds into pad",
+      "Never apply heat to dry mud — crystallizes it harder against fiber",
+      "Never pour water — carpet pad contamination",
+      "Red clay iron content = separate acid step"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "WAIT — let the mud dry fully before doing anything else",
-      "instruction": "This is the most important instruction for mud on carpet. Wet mud is clay particles suspended in water. If you scrub, blot, or wipe it while wet, you grind those particles DEEPER into the carpet fibers and the pad — and the stain becomes much harder to remove. Instead: block the area off, keep pets and kids out, and wait. Let it dry completely. Small spot: 1–3 hours. Large spot: 4–8 hours. Point a fan at it to speed drying. Do not use a hair dryer or heat."
+      "agent": "LET IT DRY — Step Away",
+      "instruction": "Panicking and scrubbing wet mud is the #1 home failure on this stain. DON'T. Step away. Let the mud dry completely on the carpet — 1 to 4 hours depending on how much there is. Wet mud grinds into the pile and soaks into the pad; dry mud lifts with a vacuum. Patience is the whole protocol."
     },
     {
       "step": 2,
-      "agent": "Patch test on a hidden spot",
-      "instruction": "While the mud dries, find a hidden patch of the same carpet. Dab a drop of Dawn + cold water solution, blot with a white cloth after two minutes. If the fiber holds its color, you're safe. If dye transfers, you'll be blotting with water only in the later steps and should go straight to a pro if the mud doesn't lift cleanly."
+      "agent": "Vacuum, Vacuum, Vacuum",
+      "instruction": "Once the mud is completely dry (it'll be a dusty crust), run a vacuum over the spot. Use the beater bar / rotating brush. Go over it multiple times in different directions. Most of the mud lifts right out. You'll be surprised."
     },
     {
       "step": 3,
-      "agent": "Break up + brush off the dry crust",
-      "instruction": "Once the mud is fully dry and crumbly, gently break up the surface crust with a soft brush or the edge of a credit card. You should see chunks release from the pile. Then VACUUM thoroughly — multiple slow passes from different directions to lift particles out of the base of the fibers. 60–80% of a mud stain comes up at this step if you let it dry first. If you see a brown residue still, that's the tannin + fine clay that needs chemistry."
+      "agent": "Dawn + Damp Cloth for Residue",
+      "instruction": "For any shadow left after vacuuming: dampen a white cloth with cool water + a drop of Dawn dish soap. Press it onto the spot, lift, rotate. DO NOT pour water on the carpet. Keep the cloth damp, not wet. 2–3 cycles usually clears the residue."
     },
     {
       "step": 4,
-      "agent": "Dish-soap solution",
-      "instruction": "Mix one tablespoon of clear Dawn dish soap with two cups of cold water. Dip a white cloth, wring nearly dry, and dab the area — outside edges in. Let it sit 5 minutes, then blot with a clean damp cloth. Dawn lifts any oil or plant-matter residue the vacuum couldn't get. Repeat the soap-and-blot cycle once or twice."
+      "agent": "Weighted Dry Towel Between Passes",
+      "instruction": "Between each wet pass, press a thick DRY towel on the spot with a heavy book or pan on top for 15 minutes. This pulls moisture UP out of the carpet backing before it reaches the pad."
     },
     {
       "step": 5,
-      "agent": "3% peroxide on plant-matter brown (optional)",
-      "instruction": "If a brown shadow remains after the soap cycle, that's tannin from plant matter in the mud. Dab 3% hydrogen peroxide on the spot with a white cloth, let sit 5 minutes, blot with a damp cloth. Peroxide oxidizes tannin pigment. Skip this on dark or patterned carpet — check the patch-test result from step 2 first.",
-      "safetyNote": "Never mix peroxide with ammonia or bleach. Test on your hidden patch first — carpet dye varies in bleach tolerance."
+      "agent": "Red Clay? Lemon Juice Step",
+      "instruction": "If the mud was red clay (common in the Southeast), a faint rust-colored tint may remain from the iron in the soil. Dab a few drops of lemon juice or diluted white vinegar on it via a damp cloth for 2–3 minutes, then blot dry. The mild acid converts the iron to a soluble form."
     },
     {
       "step": 6,
-      "agent": "Vinegar-water rinse",
-      "instruction": "Mix one tablespoon of white vinegar with one cup of cold water. Dab onto the treated area. Vinegar does two things here: (1) neutralizes any peroxide residue, and (2) acts as a mild mineral remover for lingering clay particles. Blot dry."
+      "agent": "Fan-Dry + Final Vacuum",
+      "instruction": "Point a fan at the spot. Let it dry completely — several hours. Once bone-dry, vacuum once more to lift any particles the wet chemistry loosened."
     },
     {
       "step": 7,
-      "agent": "Dry down — prevent pad wicking",
-      "instruction": "Stack six to ten sheets of white paper towels over the area, weigh them down with a heavy book, and leave overnight. This pulls any residual moisture (and the last of the mineral/tannin particles) up out of the pad before it can wick back as a ring. Don't vacuum or walk on the area until fully dry."
-    },
-    {
-      "step": 8,
-      "agent": "Second vacuum pass + daylight inspect",
-      "instruction": "Once fully dry, vacuum the area again — slow, multiple directions — to pick up any loose particles the chemistry loosened. Inspect in daylight. Fresh mud should be fully gone. If a shadow remains and the carpet passes the patch test, repeat steps 4–6 once more."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a professional carpet cleaner",
-      "instruction": "If the mud was clay-heavy (red clay, potting soil), covered a large area, or survived two home rounds, call a pro. Tell them: \"Mud on [nylon/polyester/wool] carpet, [fresh/aged], let dry fully and vacuumed, treated with Dawn + 3% peroxide + vinegar rinse. No hot water used.\" They have truck-mount hot-water extraction + tannin/mineral formulas that can finish what vacuum-plus-home-chemistry can't."
+      "agent": "Escalate Only for Unusual Cases",
+      "instruction": "Mud rarely needs a pro. If a large volume of mud was walked on for days before drying (pad contamination), or two home rounds didn't clear a shadow, call a carpet cleaner. Tell them: \"Mud on [nylon / wool / synthetic] carpet, [fresh / dried / walked-on-extensively], home-treated with dry + vacuum + Dawn damp-cloth + [lemon juice for red clay].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Let mud dry completely before brushing off — wet scrubbing drives particles deeper.",
-      "2. Once dry, brush or vacuum off the loose dry material.",
-      "3. Mix mild dish soap into cold water. Blot the solution onto the stain.",
-      "4. Let it sit for 5–10 minutes. Blot with a clean white cloth.",
-      "5. Blot with a cloth dampened with plain water to rinse. Place a stack of paper towels over the spot and weigh them down. Let it dry completely."
+      "1. LET IT DRY — 1–4 hours, no scrubbing.",
+      "2. Vacuum thoroughly, multiple passes, beater bar.",
+      "3. Dawn + cool water on a DAMP cloth for residual shadow.",
+      "4. Weighted dry towel 15 min between wet passes.",
+      "5. Red clay: lemon juice / dilute vinegar for iron tint.",
+      "6. Fan-dry + final vacuum.",
+      "7. Escalate rarely — walked-on-for-days is the main case."
     ],
     "products": [
-      "Dawn NSD",
-      "OxiClean Versatile Stain Remover",
-      "cold water"
+      "Patience (drying phase)",
+      "Vacuum with beater bar",
+      "Dawn dish soap",
+      "Clean white cloths (damp + dry)",
+      "Lemon juice or white vinegar (red clay only)"
     ],
-    "whenToStop": "If the stain is still visible after multiple treatments, it may be permanently set. Consider professional cleaning before attempting further home treatment.",
+    "whenToStop": "Stop if walked-on wet mud has contaminated the pad and two home rounds plateau.",
     "warnings": [
-      "Always blot — never rub. Rubbing damages carpet fibers and spreads the stain.",
-      "Place paper towels over the wet spot and weigh them down to prevent wicking overnight.",
-      "Let mud dry first — never scrub wet mud, it drives the stain deeper."
+      "NEVER scrub or rinse wet mud — drives particles into pad",
+      "NEVER pour water on carpet",
+      "NEVER apply heat to dry mud on carpet",
+      "Red clay iron = separate treatment"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Scrub wet mud — drives particles deeper into carpet fibers",
-      "Apply all treatments simultaneously — creates a harder-to-remove chemical slurry",
-      "Use hot water early — can set protein component permanently"
+      "Never scrub wet mud — grinds in + spreads",
+      "Never pour liquid on carpet",
+      "Never apply heat to dry mud — crystallizes worse",
+      "Never skip vacuuming between passes"
     ],
     "fiberSensitivities": [
-      "Combination stains on delicate fibers require careful chemistry sequencing. Protein fibers (silk, wool) need shorter dwell times and milder concentrations for each treatment."
+      "Nylon / olefin / polyester / wool — all tolerate dry vacuum",
+      "Red clay iron tint may need acid step"
     ]
   },
+  "materialWarnings": [
+    "DRY + VACUUM first — chemistry is step 3",
+    "Damp cloth only — never pool",
+    "Red clay needs a separate iron step"
+  ],
   "escalation": {
-    "when": "Sequential treating fails, or stain components have cross-linked together",
-    "whatToTell": "Mud stain on carpet, combination of organic pigment, clay, and tannins. Treated at home with NSD. Please use multi-step sequential protocol.",
+    "when": "Walked-on wet mud contaminated the pad, or two home rounds plateau on residual shadow.",
+    "whatToTell": "\"Mud on [carpet fiber] carpet, [fresh / dried / walked-on-for-days], home-treated with dry + vacuum + Dawn damp-cloth + [lemon juice for red clay].\"",
     "specialistType": "professional carpet cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Was the mud tracked in from outdoors (clay-heavy) or from a garden/potting soil?",
-      "Is the stain fresh or has it dried?",
-      "Is the carpet synthetic or wool/natural fiber?",
-      "Was there grass mixed with the mud?"
+      "Is the mud fresh or dried?",
+      "What kind — garden / construction / red clay?",
+      "Was it walked on wet or allowed to dry?",
+      "Carpet fiber — nylon, olefin, polyester, wool?"
     ],
-    "modifierNotes": "Clay-heavy mud is more tenacious and may need an acid mineral rinse step. Garden/potting soil often has a higher organic content. Grass mixed with mud adds a tannin/chlorophyll component. Natural fiber carpets require gentler chemistry."
+    "modifierNotes": "Dry-first is the whole game on carpet mud. The biggest failure mode is panic-scrubbing wet mud, which makes every later step harder."
   },
-  "difficulty": 3,
-  "timeEstimate": "15–30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

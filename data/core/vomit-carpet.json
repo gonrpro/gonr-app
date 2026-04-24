@@ -1,131 +1,220 @@
 {
   "id": "vomit-carpet",
   "title": "Vomit on Carpet",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Vomit is a complex mixture of partially digested food, stomach acid (HCl, pH 1.5-3.5), bile salts, mucus, and proteins. On carpet, the acid can damage dyes and fibers if left in contact, while the protein component bonds and sets with heat. Bile salts act as surfactants that drive the stain deeper into the substrate. The odor comes from volatile fatty acids and bacterial decomposition. pH-neutral detergents are essential to avoid further damage to the carpet from acidic or alkaline residues.",
-  "whyThisWorks": "Immediate removal of solids prevents acid damage to carpet. Cold water dilutes the acid and prevents protein from setting. Enzyme treatment breaks down the protein matrix, while surfactant addresses the bile and fat components. Odor neutralization requires reaching all contaminated material beneath the surface.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "30–90 minutes plus drying; pad involvement = pro",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "vomit",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "protein",
+      "acid",
+      "biohazard-adjacent",
+      "carpet",
+      "pad-risk",
+      "odor-permanent"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Same vomit chemistry as on fabric (protein + stomach acid + bacteria) with added carpet-construction issues: pooled vomit soaks into the pad where bacteria can persist and re-emit odor for months. The biohazard posture + carpet extraction rules combine. Enzyme for protein, baking-soda / vinegar for acid neutralization and odor, hot-water extraction for bacteria — but home tools have limited reach into the pad. Pad involvement often means a pro extraction. Synthetic face yarn tolerates standard chemistry; wool narrows the lane.",
+  "whyThisWorks": "Gloves + scrape + extract = reduce bulk before chemistry. Cold damp-cloth with enzyme pretreatment digests food protein. Baking-soda rinse neutralizes acid (protecting carpet dye). NSD handles residual bile-salt / food-oil. Weighted extraction between every pass pulls moisture up from the backing. Dry + vacuum finishes. Soapy or ammonia-based cleaners make it worse — ammonia smells like urine to pets AND leaves residue bacteria love.",
+  "defaultAssumption": "Vomit on carpet is escalate-FIRST if: the carpet is wool, the spill soaked through to the pad (visible pooling > 1 second), the spill covers an area larger than a dinner plate, or odor persists after a full home cycle. Small spot, synthetic face yarn, caught fresh = reasonable DIY.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Gloves + Scrape Solids",
+      "technique": "Biohazard posture",
+      "equipment": "Disposable gloves, dull blade, disposable paper / bag",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Gloves on. Scrape solid material off the carpet surface onto disposable paper. Seal in a bag. Don't push down — you'll drive material into the pile and pad."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water + NSD",
+      "technique": "Damp cloth transfer + extract",
+      "equipment": "NSD in cold water, damp cloth, weighted dry towel",
+      "dwellTime": "1 min per pass",
+      "instruction": "Cold NSD via damp cloth — press, lift, rotate. Never pour. Extract with weighted dry towel between passes. Cold dilutes acid AND moves protein before heat can set it."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat",
+      "technique": "Damp cloth enzyme for protein digest",
+      "equipment": "Liquid Protein Spotter OR enzyme pretreat in warm water (30–38°C) on a damp cloth",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Dampen cloth with enzyme solution, press on the spot, dwell 15–20 min. Protease digests the food-protein matrix. Keep the spot wet but don't pool."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Baking Soda Rinse",
+      "technique": "Neutralize residual acid",
+      "equipment": "1 tbsp baking soda in 1 cup cool water, damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Apply via damp cloth. Neutralizes stomach acid — protects carpet dye from ongoing fade. Blot dry."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "NSD Flush + Weighted Extract",
+      "technique": "Clear chemistry, extract moisture",
+      "equipment": "NSD damp cloth, heavy dry towel + weight",
+      "dwellTime": "2 min + 30 min weighted",
+      "instruction": "NSD-damp clean pass. Weighted dry towel 30 min to pull moisture up from backing."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Fan-Dry + Re-Vacuum",
+      "technique": "Air-dry, watch for wicking + smell",
+      "equipment": "Fan, dehumidifier if available, vacuum",
+      "dwellTime": "4–8 hours",
+      "instruction": "Fan-dry. Once bone-dry, vacuum. Inspect next day for smell OR wicked-back ring. Either = pad contamination = pro call."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Gloves + scrape solids.",
+      "2. Cold NSD via damp cloth + weighted extract.",
+      "3. Enzyme pretreat damp cloth — 15–20 min digest protein.",
+      "4. Baking-soda rinse — neutralize stomach acid.",
+      "5. NSD flush + 30 min weighted extract.",
+      "6. Fan-dry + vacuum. Smell or wicking = escalate."
     ],
     "products": [
-      "Protein Formula",
+      "Disposable gloves",
       "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Liquid Protein Spotter or enzyme pretreat",
+      "Baking soda",
+      "Weighted dry towels"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein",
-      "Avoid over-wetting — extract excess moisture to prevent backing/foam damage"
+      "Gloves — biohazard adjacent",
+      "Never pour or pool liquid — pad contamination",
+      "Never use hot water — sets protein AND activates backing adhesive",
+      "Never ammonia-based cleaners on any body-fluid stain on carpet — attracts pets",
+      "Wool carpet narrows chemistry — escalate earlier"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Protect yourself — vomit is a biohazard",
-      "instruction": "Before you touch anything: wear disposable gloves and, if the smell is strong or the affected person was sick with a stomach bug, an N95 or surgical mask. Norovirus and rotavirus spread from vomit for hours after the fact. Open a window. Use dedicated cleanup towels you can throw away — don't reuse them on other rooms. Keep kids and pets out of the area until fully cleaned and dry."
+      "agent": "Honest Scope First",
+      "instruction": "Vomit on carpet escalates faster than most stains. If the spill soaked into the pad (liquid pooled for more than a second), covers an area larger than a dinner plate, the carpet is wool, or this is a repeat event — call a carpet cleaner. Pad contamination is invisible and re-emits odor for months. A pro with hot-water extraction reaches depths you can't."
     },
     {
       "step": 2,
-      "agent": "Lift solids — don't rub, don't flush them down",
-      "instruction": "Scoop solids off the carpet with a stiff piece of cardboard, a paper plate, or a dustpan. Work from the outside edge toward the center so you don't spread the spill. Drop everything straight into a plastic bag, tie it off, and put it outside. Don't wipe, don't rub, and don't rinse solids down the carpet — that pushes acid and food pigment deeper into the fiber and the pad."
+      "agent": "Gloves, Scrape Solids, Seal in Bag",
+      "instruction": "Put on gloves. Use a dull butter knife or plastic scraper to lift solid material off the carpet onto a paper towel. Seal the debris in a bag. Don't push down on the carpet — you'll drive material deeper."
     },
     {
       "step": 3,
-      "agent": "Cold water dilute — neutralize the acid fast",
-      "instruction": "Vomit has stomach acid (pH around 2) which can damage carpet dye if it sits. Pour a small amount of cold water over the area and immediately blot with a stack of white paper towels or a white cotton towel. Repeat three or four times. Do NOT use hot water — heat sets the protein. Cold water dilutes the acid and flushes food pigment before it can bond."
+      "agent": "Cold Water + Dawn on a DAMP Cloth",
+      "instruction": "Dampen a white cloth with cool water + a drop of Dawn. Press onto the spot, lift, rotate. Never pour water on the carpet — pooled liquid ruins the pad. Keep the cloth damp, not dripping. 2–3 cycles."
     },
     {
       "step": 4,
-      "agent": "Dish-soap cycle",
-      "instruction": "Mix one tablespoon of clear Dawn dish soap with two cups of cold water. Dip a white cloth, wring nearly dry, and dab the area. Let it sit 5 minutes, then blot with a clean damp cloth. Dawn cuts bile salts and fats that vinegar alone can't touch, and it primes the carpet for the enzyme step that actually handles the protein. Do not use OxiClean or baking soda — alkaline products set protein."
+      "agent": "Enzyme Pretreat on a Damp Cloth",
+      "instruction": "Dissolve an enzyme laundry pretreat (OxiClean Versatile, Biz) in WARM water per the label. Dampen a cloth with that solution, press onto the spot, let sit 15–20 minutes. The enzymes digest the food protein. Keep the area damp during the dwell — dry mid-dwell stops the enzyme work."
     },
     {
       "step": 5,
-      "agent": "Enzyme cleaner — saturate the contaminated area",
-      "instruction": "Apply a pet-stain enzyme cleaner (Nature's Miracle, Rocco & Roxie, Simple Solution) even though it's not a pet accident — these are the strongest consumer-grade enzymes, and vomit is chemically similar to the stains they're built for. Saturate enough to reach the pad, not just the surface. The enzyme digests the protein and the food residue. This is the step that actually eliminates odor, not vinegar.",
-      "safetyNote": "Enzymes are deactivated by chlorine bleach, ammonia, hot water, and strong alkaline cleaners. Don't mix with any of them."
+      "agent": "Baking Soda + Water for Acid + Odor",
+      "instruction": "Mix 1 tablespoon baking soda with 1 cup cool water. Dampen a cloth, press on the spot, let sit 5 minutes. Blot dry with a dry towel. This neutralizes remaining stomach acid — important because the acid can fade carpet dye AND the baking soda absorbs odor."
     },
     {
       "step": 6,
-      "agent": "Covered dwell — 30 to 60 minutes",
-      "instruction": "Lay a damp (not dripping) white towel over the treated area and cover with plastic wrap. Tape the edges. This keeps the enzyme working at full moisture instead of drying out on the surface. Leave 30–60 minutes for fresh, several hours for older. Uncover, blot any surface moisture with clean paper towels."
+      "agent": "Weighted Dry Towel Extraction",
+      "instruction": "Press a thick DRY towel on the spot with a heavy book or pan on top for 30 minutes. Repeat with a fresh towel. Pulls moisture UP out of the backing before it settles into the pad."
     },
     {
       "step": 7,
-      "agent": "Light vinegar rinse (optional)",
-      "instruction": "If a sour odor lingers even after the enzyme dwell, mix one tablespoon of white vinegar into one cup of cold water and dab onto the area with a white cloth. Vinegar neutralizes residual odor molecules the enzyme left behind. Blot dry. Skip baking soda entirely — it's alkaline and will reactivate protein bonds you just broke down."
+      "agent": "Baking Soda Dry Dust + Fan",
+      "instruction": "Once the spot is damp not wet, dust baking soda generously on the area. Point a fan at it. Let dry overnight (12 hours). Vacuum off next day."
     },
     {
       "step": 8,
-      "agent": "Dry down + smell and stain check",
-      "instruction": "Stack six to ten sheets of white paper towels over the area, weigh with a heavy book, leave overnight to pull moisture out of the pad. In the morning, inspect in daylight and put your nose close to the carpet. If you smell anything or see a shadow, repeat steps 5–6 once more. Once clean and dry, vacuum the area to restore pile."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate — especially for food-pigment halos or lingering odor",
-      "instruction": "If a food-color halo (tomato, berry, wine) remains after two enzyme rounds, or if odor persists, the pad is likely contaminated. Tell a pro: \"Vomit on [nylon/polyester/wool] carpet, treated with Dawn + enzyme (2 rounds), vinegar rinse. No hot water, no ammonia, no bleach used. Residual [pigment halo/odor] remains — suspect pad contamination.\" Pros have sub-surface extraction and tannin-specific chemistry to finish the job."
+      "agent": "Smell-Check Next Day — Escalate If Odor Persists",
+      "instruction": "Sniff the area next morning in daylight. If any smell remains, OR a ring wicks back as the carpet dried, the pad is contaminated beyond surface treatment. Call a professional carpet cleaner. Tell them: \"Vomit on [nylon / wool / synthetic] carpet, age [fresh / overnight], home-treated with Dawn + enzyme + baking soda + weighted-towel extract. [Odor persists / ring returned / area-larger-than-plate / suspected pad contamination].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub. Dispose safely",
-      "2. Blot area with cold water and clean white cloths to dilute acid",
-      "3. Mix 1 tbsp Dawn dish soap with 2 cups cold water. Apply and blot",
-      "4. Mix equal parts white vinegar and cold water. Apply for odor neutralization",
-      "5. Blot with clean white cloth until dry. Sprinkle baking soda over area — let sit 15 min",
-      "6. Vacuum and air dry — no heat"
+      "1. Honest scope: large area, wool, or pad soak = call a pro.",
+      "2. Gloves. Scrape solids onto disposable paper. Bag it.",
+      "3. Cold water + Dawn on a DAMP cloth (never pour).",
+      "4. Enzyme pretreat on a damp cloth, 15–20 min dwell.",
+      "5. Baking soda + water rinse for acid + odor.",
+      "6. Weighted dry towel extraction 30 min.",
+      "7. Baking soda dry dust + fan overnight.",
+      "8. Smell-check next day. Odor return = batting contaminated = pro."
     ],
     "products": [
+      "Disposable gloves",
       "Dawn dish soap",
-      "white vinegar",
-      "baking soda"
+      "Enzyme pretreat (OxiClean Versatile, Biz)",
+      "Baking soda",
+      "Clean white cloths + heavy dry towel + weight",
+      "Fan + dehumidifier (if available)"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop home treatment if the vomit soaked into the pad, covers more than a dinner plate, is on wool carpet, or odor returns after drying. Call a carpet cleaner with hot-water extraction.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "Gloves — biohazard adjacent",
+      "NEVER pool liquid on carpet — pad contamination",
+      "NEVER use hot water — sets protein + activates backing adhesive",
+      "NEVER ammonia-based cleaners — attracts pets, feeds bacteria",
+      "Pad contamination + odor = pro-only from that point",
+      "Wool carpet narrows chemistry"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never handle vomit bare-handed",
+      "Never pour liquid on carpet",
+      "Never hot water — cooks protein + activates backing adhesive",
+      "Never ammonia-based cleaners on carpet body-fluid stains",
+      "Never skip the scope check — pro-lane threshold is LOW"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / olefin / polyester face yarn: tolerates standard chemistry",
+      "Wool: pro-lane",
+      "Backing + pad: no pooled liquid, ever"
     ]
   },
+  "materialWarnings": [
+    "Pro-lane threshold is LOW on vomit-carpet",
+    "Damp cloth only — never pool",
+    "Hot wash / steam not an option here",
+    "Cat urine pattern — ammonia cleaners make it worse"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is vomit on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Large spill (> dinner plate), wool carpet, pad soak suspected, or odor persists after full home cycle.",
+    "whatToTell": "\"Vomit on [nylon / wool / synthetic] carpet, age [fresh / overnight], home-treated with Dawn + enzyme + baking soda + weighted-towel extract. [Odor persists / ring returned / pad contamination suspected.]\"",
+    "specialistType": "professional carpet cleaner with hot-water extraction"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "How large is the affected area?",
+      "Did the vomit pool / soak in (liquid sitting > 1 second)?",
+      "Carpet fiber — nylon, olefin, polyester, wool?",
+      "First time on this spot, or repeat event?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Pad contamination is the invisible failure mode. Honest early escalation saves hours and avoids wasted home chemistry. Large-area or walked-on-wet = pro."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

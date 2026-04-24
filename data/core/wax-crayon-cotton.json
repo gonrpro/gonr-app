@@ -1,80 +1,220 @@
 {
   "id": "wax-crayon-cotton",
   "title": "Wax Crayon on Cotton",
-  "stainFamily": "dry_side",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Crayon is paraffin wax mixed with pigment (iron oxides, organic dyes). On cotton, the wax penetrates the fiber and hardens, trapping concentrated pigment within the matrix. The combination of physical wax deposit and dye stain makes this a two-phase removal challenge. Heat can spread the wax and drive pigment deeper.",
-  "whyThisWorks": "Freezing first hardens the wax for mechanical removal from cotton. POG then dissolves remaining wax residue. Surfactant lifts the liberated pigment. For persistent color, an oxidizer addresses the dye component after the wax matrix is fully removed. Working from the back of the fabric pushes wax out rather than deeper in.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "15–45 minutes plus freezer time",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "wax-crayon",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "wax",
+      "pigment",
+      "cotton",
+      "freeze-first",
+      "iron-absorb",
+      "kids"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Crayon is paraffin wax + pigment (iron oxides, organic dyes), essentially a dyed candle wax. On cotton, the wax penetrates the fiber and the concentrated pigment stays suspended inside the wax matrix. Treat it as candle wax + dye: remove the wax first (same freeze + iron-through-paper protocol as candle-wax-cotton), then treat any residual dye. Heat WITHOUT an absorbent barrier spreads the melted crayon; heat WITH the barrier is the correct removal technique. Cotton tolerates POG, IPA, 3% H₂O₂, and hot wash.",
+  "whyThisWorks": "Same two-phase protocol as candle wax: freeze + scrape the hardened wax, then iron-through-paper to absorb residue. Then treat the revealed dye with a solvent tamp + Dawn + optional peroxide on whites. Crayon has more pigment than candles (crayons are designed to draw color), so the dye phase is often the bigger job than the wax phase.",
+  "defaultAssumption": "Typically kid context — laundry basket discoveries are common. Most cases are post-wash-dryer (crayon went through the dryer and melted onto other clothes). That's the hardest variant: melted crayon on hot clothes spreads before the fabric cools.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Freeze to Brittle",
+      "technique": "Zip-top bag + freezer",
+      "equipment": "Zip-top bag, freezer",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Freeze the crayon-marked area 20–30 min. Paraffin wax transitions to brittle. If the garment is already in a load that got hot-dryer'd (common case), freeze the whole garment."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Scrape + Snap",
+      "technique": "Lift brittle wax",
+      "equipment": "Dull blade or credit-card edge",
+      "dwellTime": "2 minutes",
+      "instruction": "Immediately post-freezer, pry the brittle wax off with a dull blade. Flakes come off cleanly. Work fast before it softens."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Iron + Brown Paper",
+      "technique": "Melt into absorbent paper",
+      "equipment": "Brown paper bag or clean white paper towel, iron on low-medium",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Lay brown paper or a white paper towel over the remaining wax residue. Iron on LOW-MEDIUM (no steam). Wax wicks into the paper. Shift paper to clean sections as wax appears; repeat until paper comes away clean. Do NOT iron without the absorbent paper — drives wax deeper."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Solvent Residue Pass",
+      "technique": "Tamp with solvent",
+      "equipment": "POG or IPA on clean white cloth",
+      "dwellTime": "30 seconds",
+      "instruction": "Tamp POG or IPA on a white cloth onto the oily residue. Never pour."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Dye Treatment",
+      "technique": "NSD + optional peroxide",
+      "equipment": "NSD, optional 3% H₂O₂ on whites",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD, work with a soft brush for the residual crayon pigment. For stubborn color on whites, a 3% H₂O₂ dab completes the job. Skip peroxide on dark cotton."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label. Inspect BEFORE the dryer — inspect again if the crayon incident originated in the dryer."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Freeze with ice bag to harden wax. Scrape off bulk with dull edge",
-      "2. Apply POG to dissolve remaining wax residue",
-      "3. Apply NSD to lift pigment (for colored wax). Flush with cool water",
-      "4. If dye remains: apply H2O2 6% carefully, monitor",
-      "5. Apply Acetic Acid 28% (diluted 1:10) for pH restoration. Blot dry"
+      "1. Freeze crayon to brittle. Zip-top bag 20–30 min.",
+      "2. Scrape brittle wax off immediately.",
+      "3. Iron through brown paper on low-medium — wax wicks into paper.",
+      "4. Solvent tamp (POG or IPA) on oily residue.",
+      "5. NSD + optional 3% H₂O₂ for residual dye.",
+      "6. Hot wash per care label."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
+      "Zip-top bag or ice pack",
+      "Dull blade or credit-card edge",
+      "Brown paper / clean white paper towel",
+      "Iron (low-medium, no steam)",
+      "POG or IPA",
       "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Hydrogen Peroxide 3% (whites only)"
     ],
-    "temperature": "ambient",
+    "temperature": "freezer for wax; low-medium iron for absorb; room temp solvent; hot wash post-chemistry",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "Never iron without absorbent paper — spreads melted wax",
+      "Never skip the freeze step — warm wax smears",
+      "If the crayon incident happened in a hot dryer, check EVERY garment in that load — melted crayon contaminates widely",
+      "One oxidizer at a time"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Crayon in the Dryer? Check Everything",
+      "instruction": "If this happened because a crayon went through a hot dryer (common), the melted wax spreads to every garment in the load. Check ALL of them and treat each separately. Don't re-run any of them through the dryer until the crayon is off — heat sets it harder."
+    },
+    {
+      "step": 2,
+      "agent": "Freeze the Fabric 20–30 Minutes",
+      "instruction": "Put the crayon-marked area in a zip-top bag and freeze 20–30 minutes. Or press an ice pack in a plastic bag directly on the crayon. Frozen crayon wax goes brittle and pops off cleanly; soft crayon smears."
+    },
+    {
+      "step": 3,
+      "agent": "Scrape Off Brittle Wax",
+      "instruction": "Take the garment out and immediately scrape the frozen crayon off with a dull butter knife or credit-card edge. Works fast — the wax re-softens in a few minutes."
+    },
+    {
+      "step": 4,
+      "agent": "Iron Through Brown Paper — Do NOT Iron Directly",
+      "instruction": "Place a piece of brown paper (grocery bag) or clean white paper towel over the crayon residue. Iron on LOW or MEDIUM heat (no steam). The wax melts and wicks INTO the paper. Shift the paper to clean sections; re-iron; repeat until the paper comes away clean. NEVER iron crayon without the paper — you'll drive the wax deeper and spread it."
+    },
+    {
+      "step": 5,
+      "agent": "Goo Gone or Rubbing Alcohol for the Oily Ring",
+      "instruction": "After the wax is off, an oily / colored ring often remains. Dab Goo Gone or 70%+ rubbing alcohol on a clean white cloth and press onto the ring. Flip cloth frequently. The pigment transfers onto the cloth."
+    },
+    {
+      "step": 6,
+      "agent": "Dawn + Warm Water",
+      "instruction": "Work a drop of Dawn dish soap into the remaining color with a soft toothbrush. Rinse warm. Dawn lifts the crayon dye."
+    },
+    {
+      "step": 7,
+      "agent": "Hydrogen Peroxide 3% for Shadow (Whites)",
+      "instruction": "For stubborn color on white cotton: 3% drugstore hydrogen peroxide for 3–5 min, blot. Skip on dark cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia."
+    },
+    {
+      "step": 8,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder hot per care label. Inspect BEFORE the dryer — residual crayon that goes back through a hot dryer sets permanently."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place ice in a bag on the wax for 10 minutes until brittle. Do NOT apply ice directly to fabric",
-      "2. Scrape off hardened wax with a dull knife or credit card edge",
-      "3. Place paper towels above and below the fabric (if possible). Iron on low heat to melt remaining wax into paper — check every 5 seconds",
-      "4. Apply Dawn dish soap to any remaining residue. Blot",
-      "5. Rinse with warm water. Air dry — inspect before using dryer"
+      "1. Dryer crayon? Check every garment in that load.",
+      "2. Freeze the area 20–30 min.",
+      "3. Scrape brittle wax off with a dull blade.",
+      "4. Iron through BROWN PAPER on low-medium — absorbs wax into paper. Never iron directly.",
+      "5. Goo Gone or rubbing alcohol on a white cloth for the oily ring.",
+      "6. Dawn + soft brush for residual color.",
+      "7. 3% hydrogen peroxide on color shadow (whites only).",
+      "8. Hot wash per care label. Inspect BEFORE the dryer."
     ],
     "products": [
+      "Zip-top bag or ice pack",
+      "Dull blade or credit-card edge",
+      "Brown paper grocery bag or white paper towel",
+      "Iron (low-medium, no steam)",
+      "Goo Gone or 70%+ rubbing alcohol",
       "Dawn dish soap",
-      "paper towels",
-      "ice"
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if crayon has been through multiple hot dryer cycles and two home rounds don't clear it.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER iron crayon without absorbent paper — spreads wax",
+      "NEVER skip the freeze step",
+      "Never pour solvent — tamp with cloth",
+      "Dryer crayon = check every garment in that load",
+      "Never mix peroxide with chlorine bleach or ammonia"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never iron crayon without absorbent paper",
+      "Never skip freezing — smears otherwise",
+      "Never pour solvent directly on fabric",
+      "Never re-run a crayon-contaminated load through the dryer — sets permanently"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates POG, IPA, NSD, 3% H₂O₂, hot wash, gentle iron heat with paper barrier",
+      "Dyed cotton: skip peroxide or inside-seam-test",
+      "Heat-durable once crayon is out"
     ]
   },
+  "materialWarnings": [
+    "FREEZE → SCRAPE → IRON THROUGH PAPER is the protocol",
+    "Never iron crayon directly",
+    "Check all dryer-load garments if this was a dryer incident"
+  ],
   "escalation": {
-    "when": "If wax crayon stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is wax crayon on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Crayon has been through multiple hot dryer cycles and two home rounds don't clear it.",
+    "whatToTell": "\"Wax crayon on cotton, [fresh / dryer-melted], home-treated with freezer + iron-through-paper + Goo Gone + Dawn + [3% H₂O₂ on whites].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Fresh crayon mark or went through a hot dryer?",
+      "If dryer: how many garments were in the load? (treat all of them)",
+      "Single color or multi-color?",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Dryer-crayon is the classic kid disaster — one crayon in a pocket contaminates an entire load. Treat every garment before re-drying anything. Freeze + iron-through-paper is the whole protocol; solvent + soap is cleanup."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

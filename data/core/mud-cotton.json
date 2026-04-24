@@ -1,172 +1,195 @@
 {
   "id": "mud-cotton",
-  "version": "5.0",
-  "authored": "2026-03-22",
-  "title": "Mud on Cotton — Dry Brush & Surfactant Protocol",
-  "stainType": "mud",
-  "surface": "cotton-white",
+  "title": "Mud on Cotton",
+  "stainType": "specialty",
+  "stainFamily": "specialty",
+  "surface": "cotton",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 2,
+  "timeEstimate": "5–20 minutes plus drying time",
+  "lastValidated": "2026-04-24",
   "meta": {
     "stainCanonical": "mud",
     "surfaceCanonical": "cotton",
     "tier": "universal",
     "riskLevel": "low",
     "tags": [
-      "particle-based",
+      "mud",
+      "soil",
+      "cotton",
       "dry-first",
-      "mechanical-removal",
-      "clay"
+      "easy"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Mud is primarily hydrated clay (aluminosilicate minerals like montmorillonite or kaolin) plus organic matter (humus, decomposed plant material). Wet mud particles are plastic and embed easily into fiber. Once dry, mud becomes brittle and can be mechanically removed. The residual clay film that remains after particle removal requires surfactant to break the electrochemical bond between silicate particles and cellulose fiber. Never wet mud first—water drives particles deep into the fiber, making removal exponentially harder.",
-  "whyThisWorks": "Dry approach uses mud's change in physical state (plastic when wet, brittle when dry). Mechanical removal (brush/vacuum) takes advantage of this brittleness. Surfactant then weakens electrochemical bonds holding residual clay to fiber. By skipping water initially, you prevent embedding—the stain stays on the surface where it's easiest to remove.",
+  "stainChemistry": "Mud is soil particles suspended in water — clay + silt + sand + some organic matter (plant debris, microbes). The particles bond to cotton mechanically, not chemically; water helps them settle between fibers. The #1 rule: LET IT DRY COMPLETELY first. Wet mud grinds deeper and spreads when touched; dry mud flakes off cleanly with a brush. Cotton tolerates NSD, enzymes (for any organic fraction), 3% H₂O₂, and hot wash at room temperature. Most of the 'cleanup' is mechanical.",
+  "whyThisWorks": "Drying + brushing off removes 80–90% of the mud physically, no chemistry needed. What remains is the fine-particle residue plus any organic tint from plant debris or soil microbes. NSD + warm water handles that residue; enzyme pretreat covers any organic component; peroxide clears any residual earth-tone shadow on whites. Resist the urge to rinse fresh mud — it makes the stain bigger.",
+  "defaultAssumption": "Mud on cotton is one of the easiest common stains if the dry-first rule is followed. The typical home-treatment failure is rinsing wet mud immediately, which spreads and grinds particles into the weave.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Warm water + 0.5-1 tsp liquid NSD (NSD or equivalent)",
-      "technique": "Surfactant soak to remove residual clay film",
-      "equipment": "White bowl, warm water (40-50°C), soft cloth",
-      "dwellTime": "Brief — apply, work, check",
-      "instruction": "Now that loose particles are removed, treat the remaining clay film with surfactant. Mix liquid NSD into warm water and submerge the stained area completely, or apply the solution directly if treating a localized spot. Let soak for 20-30 minutes—the soap molecules will begin breaking the silicate-fiber bond electrochemically. After soaking, use a soft cloth to gently rub the stain in circular motions for 1-2 minutes. The clay residue will gradually lighten and the water may become slightly cloudy/brown as clay particles suspend. Continue gentle agitation for 5 minutes, checking progress every minute."
+      "side": "dry",
+      "agent": "Let It Dry Completely",
+      "technique": "Hang flat, no touching",
+      "equipment": "Drying surface, patience",
+      "dwellTime": "1–4 hours depending on mud volume",
+      "instruction": "Lay the garment flat in a well-ventilated spot. Let the mud dry completely — do NOT rinse, dab, or rub it while wet. Dry mud flakes off; wet mud smears."
     },
     {
       "step": 2,
-      "side": "wet",
-      "agent": "Warm water rinse (no soap)",
-      "technique": "Surfactant flush to remove loosened clay",
-      "equipment": "Sink or bowl, warm running water",
-      "dwellTime": "2-3 minutes (continuous rinsing)",
-      "instruction": "Hold the stained area under warm running water and gently rub with your fingers as you rinse. The soap has loosened clay particles; water flushes them away. Rinse for at least 2-3 minutes until the water runs clear and you see no more clay color in the rinse water. This is crucial—soap residue left in the fiber can cause yellowing, so complete flushing is necessary."
+      "side": "dry",
+      "agent": "Brush + Tap Off",
+      "technique": "Soft brush, shake loose",
+      "equipment": "Stiff-bristle brush or an old toothbrush",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Over a trash can or outside, brush the dried mud off with a stiff brush. Work against the weave to lift particles. Tap the fabric to shake loose dust. 80–90% of the mud leaves in this step alone."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Enzyme powder (optional, for organic matter) — 0.5 tsp per 1 cup warm water (40-45°C)",
-      "technique": "Optional enzyme soak for humus component",
-      "equipment": "Bowl, warm water",
-      "dwellTime": "20 minutes (optional step)",
-      "instruction": "If the stain was from rich garden soil or forest mud (containing significant organic matter/humus), optional Protein may help. Mix enzyme powder into warm water and soak the stained area for 20 minutes. Cellulase and lipase enzymes will chew through organic residue that clay alone doesn't capture. Most casual mud stains (play in the park, rain splash) are 90% clay and 10% organic—enzyme is optional. Heavy soil stains benefit from this step. Only use if you suspect significant organic contamination."
+      "agent": "NSD",
+      "technique": "Emulsify residual soil",
+      "equipment": "NSD in warm water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD, work with a soft brush. Clears residual fine-particle soil and any light organic tint."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Final cold-water rinse + machine wash",
-      "technique": "Complete chemical removal and standard washing",
-      "equipment": "Sink, cold water + washing machine",
-      "dwellTime": "1-2 minutes (rinse) + regular wash cycle",
-      "instruction": "After surfactant soak and enzyme (if used), rinse one more time under cold water until all soap and chemical odor are gone. Then machine-wash in warm water with regular laundry detergent on a normal cycle. Use normal detergent dose—no additional chemicals needed. Tumble-dry on low or air-dry. Check the stain when fully dry. Most mud stains achieve 90-95% removal with this protocol."
-    }
-  ],
-  "homeSolutions": [
-    {
-      "step": 1,
-      "agent": "Wait — let the mud dry fully before anything else",
-      "instruction": "This is the most important instruction for mud on cotton. Wet mud is clay particles suspended in water. Scrub it wet and you grind the clay DEEPER into the weave and into any carpet pad below. Instead: hang the garment or spread it flat out of the way, let it dry completely. Small spot on clothing: 1–3 hours. Heavy caked mud: up to 24 hours. Point a fan at it to speed drying. Do not use a hair dryer or heat."
-    },
-    {
-      "step": 2,
-      "agent": "Patch test (only needed if cotton is dyed)",
-      "instruction": "On colored cotton, dab a drop of your Dawn + cool water solution on an inside seam, blot with a white cloth after 60 seconds. If clean, proceed. On white or indifferent cotton, skip the patch test — cotton tolerates all the chemistry you'll use here."
-    },
-    {
-      "step": 3,
-      "agent": "Break up + brush off the dry crust",
-      "instruction": "Once the mud is fully dry and crumbly, gently break up the surface crust with a soft toothbrush or the edge of a credit card. You'll see chunks release. Brush off into a trash bag — don't let them settle back on the fabric. If chunks are still wet or smearing, re-wait and re-dry. Fresh mud dry-brushed lifts 60–80% of the stain with no chemistry."
-    },
-    {
-      "step": 4,
-      "agent": "Dish-soap solution — work into the residual haze",
-      "instruction": "Mix one tablespoon of clear Dawn dish soap with two cups of cool water. Dip a white cloth and apply directly to the remaining brown haze. Let it sit 10–30 minutes (longer for older stains). Dawn lifts plant-matter residue and fine clay that brushing couldn't reach. Blot with a clean damp cloth between applications."
+      "agent": "Enzyme Pretreat (If Organic Tint Remains)",
+      "technique": "Enzyme pass for plant/microbial residue",
+      "equipment": "Enzyme pretreat OR Liquid Protein Spotter if heavy organic",
+      "dwellTime": "10–15 minutes",
+      "instruction": "If mud contained grass, leaf fragments, or microbial residue (common in yard mud), an enzyme pretreat handles the organic component. Skip if the mud was clean clay / sand."
     },
     {
       "step": 5,
-      "agent": "Enzyme pretreat for grass/plant-matter brown",
-      "instruction": "If a brown shadow remains after the soap cycle, that's tannin from plant matter mixed with the mud. Apply OxiClean Versatile, Biz, or Zout per label. 20–30 minutes dwell. Safe on cotton (unlike wool/silk) — cellulose fibers tolerate enzymes."
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label."
+    }
+  ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Let mud dry completely — never treat wet.",
+      "2. Brush + tap off. Removes 80–90% mechanically.",
+      "3. NSD for residual fine-particle soil.",
+      "4. Enzyme pretreat if organic (grass, leaves) was in the mud.",
+      "5. Hot wash per care label."
+    ],
+    "products": [
+      "Stiff-bristle brush or old toothbrush",
+      "NSD (Neutral Synthetic Detergent)",
+      "Enzyme pretreat (optional, for organic-heavy mud)"
+    ],
+    "temperature": "dry through mechanical phase; warm NSD; hot wash post-chemistry",
+    "warnings": [
+      "Never rinse wet mud — spreads particles + grinds into weave",
+      "Brush outside or over a trash can — fine dust scatters",
+      "Red clay / iron-rich mud may leave a rust-like tint; treat with a dilute acid rinse if needed"
+    ]
+  },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Let the Mud Dry — Don't Rinse It",
+      "instruction": "This is the single most important rule for mud: LEAVE IT ALONE until it's completely dry. Do NOT rinse, dab, or scrub wet mud — that spreads the particles and grinds them into the fabric. Hang the garment flat somewhere ventilated and wait 1–4 hours. Patience here saves you the hardest part."
+    },
+    {
+      "step": 2,
+      "agent": "Brush Dry Mud Off Outside",
+      "instruction": "Take the garment outside (or over a trash can). Use a stiff-bristle brush or an old toothbrush and brush the dried mud off in short strokes against the weave. Tap the fabric to shake loose fine dust. Most of the mud comes off here — you'll be surprised how much."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Warm Water for Residue",
+      "instruction": "What's left is fine-particle residue plus maybe a faint earth-tone shadow. Work a drop of Dawn dish soap into the spot with a soft toothbrush, rinse warm. Repeat if a shadow remains."
+    },
+    {
+      "step": 4,
+      "agent": "OxiClean Soak for Stubborn Shadow",
+      "instruction": "If a brown shadow is still visible after the Dawn pass (often from organic matter in yard mud), dissolve 1 scoop OxiClean in 1 cup warm water, soak the spot 15–30 min, rinse.",
+      "safetyNote": "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide — one oxidizer at a time."
+    },
+    {
+      "step": 5,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. If any shadow remains, repeat Dawn / OxiClean first."
     },
     {
       "step": 6,
-      "agent": "Warm-water machine wash",
-      "instruction": "Launder on warm (not hot) with your normal detergent. Warm water helps dissolve residual fine clay that cold can't touch. For heavy or caked mud on white cotton, add a half-cup of white vinegar to the rinse cycle — vinegar is a mild mineral remover that helps with lingering clay."
+      "agent": "Red Clay? One Extra Step",
+      "instruction": "If the mud was red clay (Southeastern US soil, for instance), there may be a rust-like tint from iron content. Dab a few drops of lemon juice or dilute white vinegar on it for 3 minutes, rinse cool. The mild acid converts the iron to a soluble form. Re-wash if needed."
     },
     {
       "step": 7,
-      "agent": "Air dry + daylight inspect before using the dryer",
-      "instruction": "Hang or lay flat to air-dry. Inspect in daylight. If a shadow remains, repeat steps 4–5 once more before the next wash. DO NOT tumble-dry on heat while anything visible remains — dryer heat fuses residual clay and plant pigment into the fiber. For white cotton, 1–3 hours of direct sunlight on the damp garment often finishes residual tannin."
-    },
-    {
-      "step": 8,
-      "agent": "Escalate for clay-heavy or old mud",
-      "instruction": "If the mud was clay-heavy (red clay, potting soil), covered a large area, or survived two home rounds, take to a pro cleaner. Tell them: \"Mud on cotton (clay + plant matter + tannin), age [x]. Let dry fully, brushed off, treated with Dawn + enzyme + warm wash. No hot water, no alkaline-pre-chemistry on tannin.\" Pros have truck-mount extraction + tannin/mineral formulas that finish what home can't."
+      "agent": "Escalate Rarely",
+      "instruction": "Mud rarely requires a professional — dry-and-brush handles most cases. If the mud has been run through a hot dryer (particles locked into the fiber) and two home rounds didn't clear it, take to a dry cleaner. Tell them: \"Mud on cotton, age [fresh / dried / washed-through], home-treated with dry brush + Dawn + OxiClean + [lemon juice for red clay].\""
     }
   ],
-  "materialWarnings": [
-    "White cotton is tolerant of all methods. No damage risk from brushing, surfactant, or enzyme.",
-    "Do NOT wash mud in cold water before drying. Cold water wicks into fiber and drives particles deeper. Always dry-treat first.",
-    "Do NOT use bleach on mud stains—clay isn't a dye and bleach won't help. Surfactant and enzyme are the correct tools."
-  ],
-  "escalation": "If clay haze persists after three surfactant soaks, the clay has likely migrated into the fiber's interior. Professional dry cleaning with clay-specific solvents (like naphtha or POG with clay-chelating agents) may improve results, but this is rare and recovery is uncertain. For most practical purposes, accept the light haze as permanent if home protocol doesn't achieve 80%+ removal.",
-  "products": {
-    "household": [
-      {
-        "name": "Stiff-Bristled Brush",
-        "brand": "Any old toothbrush, shoe brush, or dedicated stain brush",
-        "icon": "🪥",
-        "amazonSearchQuery": "stiff bristle brush cleaning",
-        "affiliateTag": "gonr08-20",
-        "note": "Essential for dry-particle removal. Works because dried mud is brittle. Cheap tool that lasts hundreds of uses."
-      },
-      {
-        "name": "Liquid NSD",
-        "brand": "NSD or equivalent",
-        "icon": "🧼",
-        "amazonSearchQuery": "dawn NSD",
-        "affiliateTag": "gonr08-20",
-        "note": "Breaks electrochemical bonds between clay and fiber. Gentle and effective. Any brand works."
-      },
-      {
-        "name": "Enzyme Powder (optional)",
-        "brand": "Biz, NSD with Enzymes, or generic cellulase/lipase",
-        "icon": "🧬",
-        "amazonSearchQuery": "enzyme powder laundry cellulase",
-        "affiliateTag": "gonr08-20",
-        "note": "For organic matter (humus, decomposed plant) in rich garden soil. Optional unless you suspect heavy organic contamination."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. LET MUD DRY completely — do not rinse, dab, or scrub wet mud.",
+      "2. Brush + tap dried mud off outside or over a trash can.",
+      "3. Dawn + warm water for residue.",
+      "4. OxiClean soak 15–30 min if brown shadow remains.",
+      "5. Hot wash per care label. Inspect BEFORE the dryer.",
+      "6. Red clay: extra lemon juice / vinegar step for iron tint.",
+      "7. Escalate rarely — mostly unneeded."
     ],
-    "professional": [
-      {
-        "name": "POG or Naphtha (Clay-chelating solvents)",
-        "brand": "Professional dry-cleaning supplies",
-        "icon": "🔬",
-        "amazonSearchQuery": "naphtha dry cleaning solvent",
-        "affiliateTag": "gonr08-20",
-        "note": "Professional-grade approach for clay that has migrated deep into fiber. Home-use is not practical or safe."
-      }
+    "products": [
+      "Time + patience (drying phase)",
+      "Stiff-bristle brush or old toothbrush",
+      "Dawn dish soap",
+      "OxiClean Versatile",
+      "Lemon juice OR white vinegar (red clay only)"
+    ],
+    "whenToStop": "Stop if mud has been hot-dried into the fiber and home chemistry doesn't clear the shadow.",
+    "warnings": [
+      "NEVER rinse wet mud — spreads and grinds",
+      "Brush outside — fine dust scatters",
+      "Never mix OxiClean with chlorine bleach or hydrogen peroxide",
+      "Red clay iron content may need a separate acid step"
     ]
   },
-  "customerExplanation": "Mud is mostly clay particles and organic matter. The key mistake most people make is rinsing the mud while wet—that drives the particles deeper into the fiber. We let it dry completely first (clay becomes brittle and pops right off), then used soap to chemically break the bond between the remaining clay film and your cotton. Sequential physics and chemistry.",
-  "commonMistakes": [
-    "Rinsing immediately. Wet mud is plastic and sinks with water. Drying-first is the entire strategy—rushing to water ruins success.",
-    "Using hot water on wet mud. Hot water softens the dried mud back into plastic form. Cold water (if you must use water) is always better, but dry is best.",
-    "Trying to scrub wet mud. Wet scrubbing embeds particles deeper. Always brush DRY mud, never wet mud.",
-    "Skipping the surfactant step. After particle removal, clay film remains bonded to fiber. Soap is necessary to break this bond.",
-    "Not rinsing soap completely. Soap residue left in the fiber yellows over time and dulls the finish."
+  "safetyMatrix": {
+    "neverDo": [
+      "Never rinse or rub wet mud — grinds into weave",
+      "Never skip the brush-off — skipping doubles the chemistry work",
+      "Never layer oxidizers",
+      "Never hot-dry until the mud is fully gone"
+    ],
+    "fiberSensitivities": [
+      "Cotton tolerates NSD, enzymes, OxiClean, 3% H₂O₂, hot wash",
+      "Dyed cotton: no peroxide needed usually",
+      "Heat-durable once mud is cleared"
+    ]
+  },
+  "materialWarnings": [
+    "LET MUD DRY before treating",
+    "Brush outside — dust scatters",
+    "Red clay has iron — separate treatment"
   ],
-  "scienceNote": "Clay minerals like montmorillonite have a negative surface charge (from exposed oxygen and aluminum atoms on the crystal face). Cellulose in cotton fiber is also negatively charged. Opposite charges should repel, but van der Waals forces and hydration allow weak attraction. Soap molecules are amphiphilic—their ionic head groups disrupt this interaction, allowing separation. This is why surfactant is so effective on clay despite the charge mismatch.",
-  "callPro": "If dry brushing + surfactant soaks achieve less than 80% removal, or if a clay haze persists after multiple treatments, professional dry cleaning may help. Professionals have access to clay-chelating solvents and specialized equipment for deep-fiber cleaning. However, clay migration into fiber after days of drying may be permanent. Call a cleaner if the stain is several weeks old or if home treatment plateaus.",
-  "components": [],
-  "component_order": [],
-  "difficulty": 4,
-  "difficulty_factors": [
-    "patience-required (must dry completely)",
-    "dry-first strategy (crucial)",
-    "two-phase removal (particle + film)",
-    "low risk of damage"
-  ],
-  "solventNote": "Water is the solvent for surfactant treatment, but only AFTER mechanical dry removal. Never wet fresh mud. Warm water (40-50°C) helps surfactant action. Cold water works if necessary but is less efficient. Professional dry solvents (naphtha, POG) dissolve residual organic matter but are home-unsafe.",
-  "aftercare": "Do NOT treat wet or damp mud. Let the garment air-dry completely—this is non-negotiable. Wet mud is plastic and will sink deeper with every attempted removal. Set the muddy garment on a white cloth or in a well-lit area and wait. You'll notice the mud changes color from dark brown/gray to lighter tan/brown as water evaporates—this color change signals the mud is drying and becoming brittle. Once completely dry (24 hours is typical), the mud should feel stiff and chalky to the touch, not plastic or squishy. Only proceed to step 2 once the mud is fully desiccated. Place the garment on a white cloth to catch loosened particles. Using a stiff-bristled brush, brush the dried mud vigorously in one direction (along the fiber nap if there is one). The goal is to shatter the brittle mud particles and dislodge them from the fiber.  Brush for 2-3 minutes, then inspect. The stain should visibly lighten as loose particles are removed. If mud is heavily caked, use a dull knife edge (like a butter knife or credit card) to scrape gently before brushing—this breaks the cake into smaller pieces. Alternative to brushing: use low-suction vacuum setting to lift loose mud particles from the fabric. Hold the vacuum nozzle slightly above the stain (not in contact) and move slowly across the affected area. Vacuum can remove 60-70% of particle stain if done carefully. Avoid high suction—aggressive vacuum can pull fibers and create a pilling problem. Low suction is safer. After vacuuming, there will still be a brown/tan clay residue film—proceed to step 4 to remove this with surfactant. Once completely dry, inspect in natural sunlight. Light mud stains (single splash, casual contact) usually achieve 95%+ removal. Heavy mud stains (caked, days old) may show a faint tan/gray clay haze even after protocol completion. If a light haze remains, repeat steps 4-5 (surfactant soak + rinse) once more. The haze is residual clay that requires additional surfactant treatment. Rarely, you may need a third surfactant treatment. Note: If the stain has been sitting for weeks, clay can slowly migrate deeper into the fiber—home treatment may plateau at 80-85% removal.",
+  "escalation": {
+    "when": "Mud has been hot-dried into the fabric AND home round didn't clear it (rare).",
+    "whatToTell": "\"Mud on cotton, age [fresh / dried / washed-through], home-treated with dry brush + Dawn + OxiClean + [lemon juice for red clay].\"",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Is the mud fresh or dried already?",
+      "What kind of mud — garden / yard / red clay / construction?",
+      "Has it been through a hot dryer?",
+      "Is the cotton white, light, or dark/dyed?"
+    ],
+    "modifierNotes": "Mud is the stain where PATIENCE > chemistry. Drying + brushing is the whole game. Red clay's iron content is the only real variant that changes treatment."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

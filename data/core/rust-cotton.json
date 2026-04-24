@@ -1,178 +1,179 @@
 {
   "id": "rust-cotton",
-  "version": "5.0",
-  "authored": "2026-03-22",
-  "title": "Rust Stains on Cotton",
-  "stainType": "iron-oxide",
-  "surface": "cotton-white",
+  "title": "Rust on Cotton",
+  "stainType": "rust",
+  "stainFamily": "rust",
+  "surface": "cotton",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "15–45 minutes",
+  "lastValidated": "2026-04-24",
   "meta": {
     "stainCanonical": "rust",
     "surfaceCanonical": "cotton",
     "tier": "universal",
-    "riskLevel": "low",
+    "riskLevel": "medium",
     "tags": [
       "rust",
       "iron-oxide",
-      "chelation",
-      "household-remedy",
-      "oxalic-acid"
+      "cotton",
+      "acid-required",
+      "no-bleach"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Rust is iron(III) oxide (Fe₂O₃), an insoluble reddish-brown compound. It bonds to cotton through ionic interactions with cellulose's hydroxyl groups. The critical rule: NEVER bleach rust—oxidizing agents like bleach and H₂O₂ convert Fe₂O₃ to Fe₃O₄ (darker, harder to remove) or make the stain permanent. Instead, use chelating agents (Rust Remover (oxalic acid), citric acid) that form soluble complexes with iron, allowing it to rinse away. Bar Keeper's Friend (Rust Remover (oxalic acid)) is the household solution.",
-  "whyThisWorks": "Rust Remover (oxalic acid) chelates iron without oxidation, making Fe₂O₃ soluble and rinsable. It's chemistry-specific to iron. No need for enzyme or bleach—chelation is enough.",
+  "stainChemistry": "Rust on cotton is iron oxide (Fe₂O₃) physically embedded in the fiber and mechanically bound to cellulose. Unlike organic stains, rust is a MINERAL — soap, enzymes, oxidizers (peroxide, OxiClean, chlorine bleach) do almost nothing against it. Worse: chlorine bleach on rust makes the stain PERMANENT by oxidizing Fe²⁺ to a harder-to-reduce form. The only chemistry that moves rust is acid — dilute oxalic acid (pro / hardware-store rust remover) or citric acid (home) chelates and reduces iron to a soluble form that can be rinsed out. Cotton tolerates these acids at dilute concentrations.",
+  "whyThisWorks": "Rust responds to acid reduction, not detergent or oxidation. Dilute oxalic acid (Whink / Rust Stain Magic / Bar Keepers Friend) or lemon juice + salt (home equivalent) chelates the iron and reverses the oxidation. With the iron in soluble form, NSD rinses it out. The hard no-chlorine-bleach rule is absolute — bleach on rust = permanent orange-brown mark.",
+  "defaultAssumption": "Rust on cotton requires acid chemistry, not the standard stain toolkit. Assume the user's first instinct will be bleach or OxiClean — warn them off that immediately. Fresh rust = likely DIY with lemon juice + salt. Set-in rust may need commercial rust remover.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cold or cool water rinse",
-      "technique": "Rinse from back first",
-      "equipment": "Running water, white towels",
-      "dwellTime": "1-2 minutes",
-      "instruction": "Rinse under cool running water. Work from the back of the garment first, flushing the rust away. This removes some loose iron oxide. Do NOT use hot water yet—hot water can oxidize iron further."
+      "side": "wet-minimal",
+      "agent": "Acid Pretreat",
+      "technique": "Dilute oxalic acid or lemon juice",
+      "equipment": "Commercial rust remover (Whink, Bar Keepers Friend) OR lemon juice + salt",
+      "dwellTime": "5–15 minutes",
+      "instruction": "Apply dilute oxalic-acid rust remover to the spot per the product label. OR make a home version: sprinkle salt on the rust, squeeze lemon juice over until wet, let sit 10 minutes. The acid reduces iron oxide to a soluble iron salt. Rinse cool."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Bar Keeper's Friend (Rust Remover (oxalic acid)) OR citric acid solution",
-      "technique": "Paste application or soak",
-      "equipment": "Bar Keeper's Friend, water, soft cloth or brush",
-      "dwellTime": "Brief — apply, work, check",
-      "instruction": "Bar Keeper's Friend is the household solution. Mix with a little water to form a paste. Apply directly to the rust stain. The Rust Remover (oxalic acid) (active ingredient) chelates iron, forming soluble complexes. Watch the stain fade as iron is trapped by the chelation complex. Let sit 5-15 minutes. For heavy rust, let sit up to 20 minutes."
+      "agent": "NSD",
+      "technique": "Flush soluble iron out",
+      "equipment": "NSD in cool water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD, work with a soft brush. Flushes the now-soluble iron out of the fiber."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Gentle abrasion with soft brush (optional, for stubborn rust)",
-      "technique": "Very gentle brushing",
-      "equipment": "Soft brush or cloth",
-      "dwellTime": "2-3 minutes while stain is wet with Rust Remover (oxalic acid)",
-      "instruction": "If rust is stubborn, gently brush the paste around the stain while it's still wet. Do NOT scrub hard. The combination of Rust Remover (oxalic acid) and gentle agitation helps penetrate rust embedded in fibers. Work gently—you're loosening the stain, not abrading the fiber."
+      "agent": "Repeat If Needed",
+      "technique": "Second acid + NSD cycle",
+      "equipment": "Same as above",
+      "dwellTime": "As needed",
+      "instruction": "Set-in rust often needs 2–3 acid + NSD cycles. Each pass reduces another layer."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Thorough cold water rinse",
-      "technique": "Flush thoroughly",
-      "equipment": "Running water, basin",
-      "dwellTime": "Multiple rinses, 2-3 minutes total",
-      "instruction": "Rinse thoroughly under cold running water. Rinse from back first. You must remove ALL Rust Remover (oxalic acid) residue—leftover Rust Remover (oxalic acid) is toxic and can cause irritation. Rinse at least 3-4 times until water runs clear and there's no taste of acid if you touch the cloth to your lips (test on a hidden area—if acidic, keep rinsing)."
-    },
-    {
-      "step": 5,
-      "side": "wet",
-      "agent": "Warm or hot water machine wash",
-      "technique": "Regular laundry cycle",
-      "equipment": "Washing machine with regular detergent",
+      "agent": "Final Rinse + Hot Wash",
+      "technique": "Clear chemistry, launder",
+      "equipment": "Cool water, washing machine",
       "dwellTime": "Full wash cycle",
-      "instruction": "Machine wash on warm or hot water (white cotton tolerates this) with regular detergent. Hot water helps remove any final traces of iron residue. This also removes any Rust Remover (oxalic acid) residue and sets the stain removal."
+      "instruction": "Rinse until water runs clear. Launder hot per care label. Inspect BEFORE the dryer."
     }
   ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Dilute oxalic-acid rust remover — dwell 5–15 min. Rinse cool.",
+      "2. NSD flush — removes soluble iron.",
+      "3. Repeat acid + NSD cycle for set-in rust (2–3 passes).",
+      "4. Hot wash per care label."
+    ],
+    "products": [
+      "Commercial oxalic-acid rust remover (Whink, Rust Stain Magic, Bar Keepers Friend)",
+      "NSD (Neutral Synthetic Detergent)"
+    ],
+    "temperature": "cool through spotting; hot wash post-chemistry",
+    "warnings": [
+      "NEVER use chlorine bleach on rust — makes the stain permanent",
+      "Oxalic acid is a skin/eye irritant — wear gloves + eye protection for pro-strength",
+      "Detergents, enzymes, peroxide are all ineffective on rust — acid is required",
+      "Ventilate when using commercial rust remover"
+    ]
+  },
   "homeSolutions": [
     {
       "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates oxalic acid solution. Test before applying to the actual stain.",
-      "agent": "cool water",
-      "safetyNote": "Oxalic acid is a strong chemical — handle with care and ensure good ventilation."
+      "agent": "DO NOT Use Bleach or OxiClean",
+      "instruction": "Before you do anything: rust is a MINERAL stain, not an organic one. Chlorine bleach and OxiClean — which are your default for most cotton stains — do NOTHING on rust, and bleach specifically can make rust stains PERMANENT by oxidizing the iron to a form that can't be reduced. Soap, enzyme, and peroxide are also useless. Rust needs acid chemistry."
     },
     {
       "step": 2,
-      "instruction": "Place fabric stain-side down on glass work surface.",
-      "agent": "spoon"
+      "agent": "Lemon Juice + Salt — the Home Rust Remover",
+      "instruction": "Sprinkle table salt directly on the rust stain. Squeeze fresh lemon juice over the salt until the spot is wet. Let it sit 10 minutes in direct sunlight if possible — sun accelerates the reaction. The citric acid chelates (binds to) the iron and reduces it to a soluble form that rinses out."
     },
     {
       "step": 3,
-      "instruction": "Rust stains respond specifically to oxalic acid. Apply oxalic acid (crystals dissolved in minimal cool water) to a white cloth and dab the rust stain gently from center outward.",
-      "agent": "oxalic acid solution",
-      "safetyNote": "Oxalic acid can be corrosive — avoid direct skin contact and ensure proper ventilation."
+      "agent": "Rinse Cool, Repeat If Needed",
+      "instruction": "Rinse the salt + lemon juice out with cool water. The rust should be lighter. Light or fresh rust often clears in one pass; set-in rust may need 2–3 cycles. Re-apply salt + lemon juice if color remains."
     },
     {
       "step": 4,
-      "instruction": "Allow the oxalic acid to work on the stain for 2-3 minutes, re-dabbing as needed with fresh cloth.",
-      "agent": "oxalic acid solution"
+      "agent": "Commercial Rust Remover for Stubborn Stains",
+      "instruction": "For rust that's been on cotton a long time or isn't responding to lemon juice: use a commercial rust remover — Whink Rust Stain Remover, Iron OUT, or Bar Keepers Friend (apply as a paste). Follow the product label exactly. These use oxalic acid, which is more effective than citric acid but also more caustic.",
+      "safetyNote": "Commercial rust removers are skin and eye irritants. Wear gloves. Work in a ventilated space. Never mix with bleach or ammonia. Keep away from children."
     },
     {
       "step": 5,
-      "instruction": "Rinse thoroughly with cool water, working from center outward, ensuring all oxalic acid residue is removed.",
-      "agent": "cool water",
-      "safetyNote": "Complete removal of oxalic acid is essential to prevent fiber damage."
+      "agent": "Dawn + Hot Wash",
+      "instruction": "Once the rust is gone: work a drop of Dawn into the spot to remove any remaining acid, rinse, then launder hot per care label. Inspect BEFORE the dryer. Any remaining rust that touches hot water might come back out, but hot water alone won't clear it — you need the acid step first."
     },
     {
       "step": 6,
-      "instruction": "If rust stain persists after oxalic acid treatment, the stain may require professional removal. Oxalic acid crystals can be found at camera supply stores (hypo crystals).",
-      "agent": "escalation"
+      "agent": "Escalate for Persistent or Ironed-In Rust",
+      "instruction": "If the rust has been through multiple hot-dryer cycles before treatment, it may have been fixed by bleach already applied, or two home rounds haven't cleared it, take to a dry cleaner. They have stronger reducing agents. Tell them: \"Rust on cotton, age [fresh / old / long-standing], home-treated with [lemon juice + salt / Whink / Bar Keepers Friend]. Bleach [used / never used].\""
     }
   ],
-  "materialWarnings": [
-    "NEVER bleach, H₂O₂, or any oxidizing agent—oxidizes iron and makes stain permanent",
-    "NEVER ammonia or alkaline chemicals—can set rust permanently",
-    "ALWAYS rinse thoroughly—leftover Rust Remover (oxalic acid) is toxic and irritating to skin"
-  ],
-  "escalation": "If rust persists after 2-3 home treatment cycles, professional cleaners have access to stronger chelating systems (EDTA, citrate complexes) or reducing agents that can break down oxidized iron more aggressively. Some old rust may have oxidized to forms resistant to household chemistry.",
-  "products": {
-    "household": [
-      {
-        "name": "Bar Keeper's Friend",
-        "brand": "Bar Keeper's Friend",
-        "icon": "🧂",
-        "amazonSearchQuery": "Bar Keeper's Friend powder Rust Remover (oxalic acid)",
-        "affiliateTag": "gonr08-20",
-        "note": "Rust Remover (oxalic acid) powder. THE solution for rust on white cotton. Mix with water to paste. 5-20 min dwell."
-      },
-      {
-        "name": "Lemon Juice or White Vinegar (citric/acetic acid alternative)",
-        "brand": "Any household brand",
-        "icon": "🍋",
-        "amazonSearchQuery": "white vinegar 5% acetic acid",
-        "affiliateTag": "gonr08-20",
-        "note": "Weaker than Rust Remover (oxalic acid) but works for light rust. Apply and dwell longer (20-30 min). DO NOT substitute industrial-strength (28%) acetic acid — it causes chemical burns."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. NO BLEACH, NO OXICLEAN, NO PEROXIDE — none of these work on rust; bleach makes it permanent.",
+      "2. Salt + lemon juice on the stain, 10 min in sun if possible.",
+      "3. Rinse cool. Repeat for set-in rust.",
+      "4. Commercial rust remover (Whink / Iron OUT / Bar Keepers Friend) for stubborn stains — follow label, wear gloves.",
+      "5. Dawn + hot wash per care label. Inspect BEFORE the dryer.",
+      "6. Escalate if bleach was applied previously or home round fails."
     ],
-    "professional": [
-      {
-        "name": "EDTA or Professional Chelating Agent",
-        "brand": "Chemspec",
-        "icon": "🧪",
-        "amazonSearchQuery": "EDTA chelating agent stain remover",
-        "affiliateTag": "gonr08-20",
-        "note": "Professional chelation stronger than household Rust Remover (oxalic acid). For stubborn oxidized rust."
-      },
-      {
-        "name": "Sodium Thiosulfate (professional rust reducer)",
-        "brand": "Chemspec",
-        "icon": "⚗️",
-        "amazonSearchQuery": "sodium thiosulfate rust remover",
-        "affiliateTag": "gonr08-20",
-        "note": "Reduces oxidized rust (Fe₂O₃) to forms that chelation can handle."
-      }
+    "products": [
+      "Table salt",
+      "Fresh lemon juice",
+      "Commercial oxalic-acid rust remover (Whink Rust Stain Remover, Iron OUT, Bar Keepers Friend)",
+      "Dawn dish soap",
+      "Gloves for commercial remover"
+    ],
+    "whenToStop": "Stop if chlorine bleach has already been applied to the rust (may be permanent), if rust has been through multiple hot dryer cycles, or if two home rounds haven't cleared it.",
+    "warnings": [
+      "NEVER chlorine bleach on rust — can make it permanent",
+      "NEVER OxiClean, peroxide, or enzyme — all ineffective",
+      "Oxalic-acid rust removers are caustic — gloves, ventilation, no contact with bleach or ammonia",
+      "Set-in rust may need multiple cycles"
     ]
   },
-  "customerExplanation": "Rust is iron oxide. Chelation chemistry (Rust Remover (oxalic acid)) traps iron and makes it soluble so it rinses away. Bleach will make it worse by oxidizing the iron further. Bar Keeper's Friend is the household fix.",
-  "commonMistakes": [
-    "Using bleach, peroxide, or any oxidizer—these convert Fe₂O₃ to darker, harder-to-remove forms. NEVER.",
-    "Using hot water in the initial rinse—heat can oxidize iron. Use cool water first.",
-    "Not rinsing thoroughly—leftover Rust Remover (oxalic acid) is toxic. Rinse at least 4 times.",
-    "Using lemon juice or vinegar alone—too weak. Bar Keeper's Friend (Rust Remover (oxalic acid)) is much more effective.",
-    "Assuming one wash removes all rust—aged or deep rust may need 2-3 treatment cycles."
+  "safetyMatrix": {
+    "neverDo": [
+      "NEVER chlorine bleach on rust — permanent oxidation",
+      "NEVER mix rust remover with bleach or ammonia — toxic fume risk",
+      "Never skip gloves when using commercial rust remover",
+      "Never use rust remover on colored fabric without an inside-seam test — can strip dye"
+    ],
+    "fiberSensitivities": [
+      "Cotton tolerates dilute oxalic acid and citric acid at room temperature",
+      "Dyed cotton: commercial rust remover can strip some dyes — test inside seam first",
+      "Heat-durable fiber; the rust chemistry, not the fiber, is the variable"
+    ]
+  },
+  "materialWarnings": [
+    "RUST NEEDS ACID — soap/enzyme/peroxide all useless",
+    "NEVER bleach on rust — permanent",
+    "Commercial rust remover is caustic — gloves + ventilation"
   ],
-  "scienceNote": "Iron(III) oxide (Fe₂O₃) forms ionic complexes with cellulose's -OH groups. Rust Remover (oxalic acid) (C₂H₂O₄) is a bidentate chelator that forms stable octahedral complexes with Fe³⁺: Fe(C₂O₄)₃³⁻. These iron-oxalate complexes are water-soluble, allowing rinse-away removal. Critically: oxidizing agents (Cl₂, H₂O₂, Br₂) oxidize the iron-oxalate complex, destroying it and making iron insoluble again. This is why bleach sets rust permanently.",
-  "callPro": "If rust stain persists after 2-3 home Bar Keeper's Friend treatments, professional cleaning is warranted. They use stronger chelating agents (EDTA) or may use reducing agents (sodium thiosulfate) to break down more complex iron compounds before chelation.",
-  "components": [
-    "chelator"
-  ],
-  "component_order": [
-    "chelator"
-  ],
-  "difficulty": 2,
-  "difficulty_factors": [
-    "chemistry-specific",
-    "household-remedy-available",
-    "fast-removal"
-  ],
-  "solventNote": "Professional: Bar Keeper's Friend or EDTA solution (pH controlled, neutral) applied to rust stain, dwell 10-20 min, gentle agitation with soft brush. For oxidized rust (old stains): sodium thiosulfate soak first (5-10 min) to reduce Fe(III) to Fe(II), then Rust Remover (oxalic acid) or EDTA. Thorough rinsing essential. Hot wash with detergent to remove chelation residue. Multiple cycles may be required for heavily oxidized or aged rust.",
-  "aftercare": "Gently brush away any loose rust particles or residue. Don't scrub hard. This removes surface rust before chemistry begins. If rust is embedded in the weave, skip this step. Machine dry on medium or high heat, or air dry. Heat won't re-set rust stains on white cotton. Once dry, inspect. If rust stain persists (faint brownish-red), repeat the Rust Remover (oxalic acid) step and wash again.",
+  "escalation": {
+    "when": "Chlorine bleach was applied to the rust previously (may be permanent), rust has been through multiple hot dryer cycles, or two home rounds haven't cleared it.",
+    "whatToTell": "\"Rust on cotton, age [fresh / old / long-standing], home-treated with [lemon juice + salt / Whink / Bar Keepers Friend]. Bleach [used / never used on this stain].\"",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Has chlorine bleach been applied to this stain? (important — may be permanent)",
+      "What caused the rust — iron pipes, tools, metal zipper, iron in water?",
+      "How old is the stain?",
+      "Is the cotton white, light, or dark/dyed?"
+    ],
+    "modifierNotes": "The \"never use bleach\" rule is the home-treatment unlock. Most people default to bleach for any stubborn cotton stain and with rust it's actively harmful. Acid chemistry is the specific lane."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

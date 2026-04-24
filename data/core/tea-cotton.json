@@ -1,128 +1,202 @@
 {
   "id": "tea-cotton",
   "title": "Tea on Cotton",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Tannin (polyphenolic). Tea contains theaflavins and thearubigins (oxidized catechin polymers) plus tannin polyphenols. Black tea stains more than green tea due to higher oxidation. The polyphenols bind to fiber through hydrogen bonding with cellulose hydroxyl groups. On cotton (cellulose fiber): tannin pigments bond through hydrogen bonding and van der Waals forces. Over time, tannin oxidizes and polymerizes, shifting from bright (reversible) to brown (resistant). Treatment: acidic tannin formula to break initial hydrogen bonds, followed by H₂O₂ 6% to cleave chromophore conjugation.",
-  "whyThisWorks": "Tea gets its color from concentrated plant pigments that bind tightly and darken over time. Cotton absorbs liquids quickly and holds onto stains deep in the weave. An oxygen-based treatment breaks apart the pigment molecules, removing the color rather than just spreading it around.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "10–30 minutes (fresh); aged adds a peroxide cycle",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "tea",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "cotton",
+      "time-sensitive",
+      "general-tea"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Tea is a classic tannin stain: theaflavins + thearubigins (oxidized catechin polymers) + general polyphenols. Black tea has the heaviest tannin load from oxidation during processing; green and white teas are lighter; herbal teas vary depending on ingredients. Polyphenols bond to cellulose through hydrogen bonds. Fresh tea rinses easily; aged tea oxidizes to a deeper brown. If the tea had MILK in it, treat as a combination stain — protein first — similar to coffee-cream-cotton. This card is straight tea. Cotton tolerates acid-side spotters, NSD, 3% H₂O₂, and hot wash.",
+  "whyThisWorks": "Same tannin sequence as coffee: cold flush, NSD, acid-side spotter for residual color, 3% H₂O₂ for chromophore, hot wash. The novelty versus coffee is that tea is generally lighter — most fresh spills don't need the peroxide step. Aged black tea approaches coffee in difficulty.",
+  "defaultAssumption": "Most tea spills are lighter than coffee — fresh tea rinses out with cold water + NSD. Aged black tea with milk adds the protein-before-heat rule; redirect to coffee-cream protocol if milk is involved.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Flush",
+      "technique": "Flush from the back",
+      "equipment": "Cold water, white cotton terry towel",
+      "dwellTime": "30 seconds",
+      "instruction": "Cold flush from the BACK of the fabric. Most fresh tea lifts here."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Sponge, dwell, blot",
+      "equipment": "NSD in cold water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Apply NSD, sponge gently. Blot."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Hot Pour-Through (Fresh Only)",
+      "technique": "Pour from the back",
+      "equipment": "Kettle of hot water",
+      "dwellTime": "1–2 pours",
+      "instruction": "Under 30 minutes old only. Hot pour-through from the back. Skip on aged stains."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Tannin Spotter (Aged or Black Tea)",
+      "technique": "Drop, dwell, blot",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
+      "dwellTime": "2–5 minutes",
+      "instruction": "For aged or black-tea stains with residual brown, acid-side spotter by dropper. Dwell 2–5 min, blot. Skip for fresh light tea."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3% (Aged Whites)",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For residual chromophore on white cotton: 3% H₂O₂ drop-by-drop. Skip on dark cotton."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin and tamp gently. This acidic spotter targets the bonds that coffee, wine, tea, and fruit juice pigments form with fabric. Work from the edge toward the center. Check progress every few minutes.",
-      "2. Apply H₂O₂ 6% to the stain. Monitor carefully — check every 5 minutes. On colored fabrics, test an inconspicuous area first.",
-      "3. Flush with NSD and a mild leveling agent to remove broken-down tannin pigment and any excess oxidizer. Rinse thoroughly.",
-      "4. Apply diluted acetic acid (1:10) to stop any remaining oxidizer activity and restore the fabric to its natural state. Blot dry and air dry completely."
+      "1. Cold flush from the back.",
+      "2. NSD in cold water. 2–3 min.",
+      "3. Fresh only (<30 min): hot pour-through.",
+      "4. Aged / black tea: acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A).",
+      "5. 3% H₂O₂ on residual chromophore (whites only).",
+      "6. Hot wash per care label."
     ],
     "products": [
-      "Tannin",
-      "H₂O₂ 6%",
       "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — aged / black tea",
+      "Hydrogen Peroxide 3% — aged whites only"
     ],
-    "temperature": "cold — hot water sets tannin stains permanently",
+    "temperature": "cold through spotting; hot wash post-chemistry",
     "warnings": [
-      "Using hot water on this stain — sets it permanently",
-      "Rubbing instead of blotting — spreads the stain",
-      "Not testing in an inconspicuous area first",
-      "Using too aggressive a chemical without checking surface compatibility"
+      "Never use hot water on aged tea — sets tannin",
+      "If tea had milk / cream, use coffee-cream-cotton protocol — protein first",
+      "One oxidizer at a time"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Cold Water, Act Fast",
+      "instruction": "Tea lifts easier than coffee. Hold the BACK of the stained area under cold running water for 30 seconds. Cold only."
+    },
+    {
+      "step": 2,
+      "agent": "Tea With Milk? Different Protocol",
+      "instruction": "If the tea had milk or cream in it (English breakfast, chai, milk tea), use the coffee-cream-cotton protocol — protein from the milk has to be digested before heat touches it. Plain tea: continue below."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Cold Water",
+      "instruction": "Drop of Dawn worked into the spot with a fingertip for a minute. Rinse cool."
+    },
+    {
+      "step": 4,
+      "agent": "White Vinegar Dab for Residual Brown",
+      "instruction": "Mix 1 teaspoon white vinegar with 3 tablespoons cool water. Dab on the stain, let sit 3 min, blot."
+    },
+    {
+      "step": 5,
+      "agent": "3% Hydrogen Peroxide for Shadow (Whites)",
+      "instruction": "For stubborn brown on white cotton: dab 3% drugstore hydrogen peroxide, let bubble 3–5 min, blot. Skip on dark cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia."
+    },
+    {
+      "step": 6,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder hot per care label. Inspect BEFORE the dryer."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate Rarely",
+      "instruction": "Tea on cotton almost never needs a pro. Escalate only if the stain has been hot-dried and home round didn't clear it."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot the stain with a clean white cloth to soak up as much as you can.",
-      "2. Apply the cleaning solution (1 tbsp dish soap + 1 cup 3% hydrogen peroxide (brown bottle from pharmacy)) and let it sit for 5–10 minutes.",
-      "3. Blot with a clean white cloth. Repeat until the color fades.",
-      "4. Rinse with cold water to remove all cleaning solution.",
-      "5. Air dry — don't use a dryer until the stain is gone."
+      "1. Tea WITH MILK? Use coffee-cream-cotton — different chemistry.",
+      "2. Cold water flush from the BACK.",
+      "3. Dawn + cold water, 1 min, rinse.",
+      "4. Diluted white vinegar for residual brown.",
+      "5. 3% hydrogen peroxide on shadow (whites only).",
+      "6. Hot wash per care label.",
+      "7. Escalate only if heat-set."
     ],
     "products": [
-      "H₂O₂ 3%",
-      "Dawn NSD",
-      "OxiClean Versatile Stain Remover",
-      "28% Acetic Acid (diluted)"
+      "Cold water",
+      "Dawn dish soap",
+      "White vinegar",
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Try an oxygen bleach (OxiClean) soak — apply and let it soak for 30–60 minutes. If the stain survives two rounds, a professional cleaner can use concentrated agents.",
+    "whenToStop": "Stop if tea has been hot-dried and home round didn't clear it.",
     "warnings": [
-      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
-      "Use a white cloth to avoid transferring dye from a colored cloth.",
-      "Speed matters — fresh tannin stains lift much more easily than dried ones."
+      "Tea with milk = different protocol (protein first)",
+      "Hot water sets aged tannin",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use ammonia, baking soda, or alkaline agents — they permanently darken tannin stains",
-      "Apply heat before stain is completely gone",
-      "Use hot water — sets tannin color faster"
+      "Never use hot water on aged tea — sets tannin",
+      "Never treat tea-with-milk as plain tea — protein needs enzyme first",
+      "Never layer oxidizers"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates peroxide well. For colored cotton, test H₂O₂ on a hidden seam before use. High heat sets tannin permanently."
+      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, hot wash",
+      "Dyed cotton: skip or inside-seam-test peroxide",
+      "Heat-durable"
     ]
   },
+  "materialWarnings": [
+    "Tea with milk = coffee-cream-cotton protocol",
+    "Hot water only for fresh — sets aged tannin",
+    "Peroxide on whites"
+  ],
   "escalation": {
-    "when": "Tannin has cross-linked with the fiber polymer after two professional-grade treatments",
-    "whatToTell": "Tea stain on cotton, tannin-based. Treated at home with H₂O₂ and NSD. Please use professional tannin formula and oxidizer protocol.",
-    "specialistType": "wet cleaner or dry cleaner"
+    "when": "Tea heat-set by iron or dryer and home round didn't clear it.",
+    "whatToTell": "\"Tea on cotton — [black / green / with milk], age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% H₂O₂.\"",
+    "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is this black tea, green tea, or herbal tea?",
-      "Is the stain fresh or has it been sitting?",
-      "Has the garment been through the dryer?",
-      "Is the cotton white or colored?"
+      "Black, green, white, or herbal tea?",
+      "Plain or with milk/cream?",
+      "How old is the stain?",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Black tea stains more deeply than green or herbal tea due to higher oxidation levels. Tea with milk adds a protein component. Dryer exposure sets the stain significantly. On colored cotton, test H₂O₂ on a hidden seam first."
+    "modifierNotes": "Black tea approaches coffee in tannin load. Milk in the tea changes the whole protocol — use coffee-cream-cotton."
   },
-  "difficulty": 2,
-  "timeEstimate": "10–15 min",
-  "lastValidated": "2026-03-23",
-  "homeSolutions": [
-    {
-      "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
-      "agent": "cool water"
-    },
-    {
-      "step": 2,
-      "instruction": "Dab the tea stain immediately with cool water applied to a white cloth. Work from center outward to prevent spreading.",
-      "agent": "cool water",
-      "safetyNote": "Tea contains tannins that oxidize and turn brown — act quickly to prevent setting."
-    },
-    {
-      "step": 3,
-      "instruction": "Apply detergent/vinegar solution (1/4 tbsp mild laundry detergent + 2 oz white vinegar + 2 oz cool water) to the stain. Rub gently with the back of a spoon from center outward.",
-      "agent": "detergent/vinegar solution"
-    },
-    {
-      "step": 4,
-      "instruction": "Rinse thoroughly with cool water, working from center outward.",
-      "agent": "cool water"
-    },
-    {
-      "step": 5,
-      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize tannin residue.",
-      "agent": "hydrogen peroxide 3% + ammonia",
-      "safetyNote": "Test on hidden area first — peroxide may lighten some dyes."
-    },
-    {
-      "step": 6,
-      "instruction": "Rinse thoroughly with cool water.",
-      "agent": "cool water"
-    },
-    {
-      "step": 7,
-      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center with white cloth.",
-      "agent": "white vinegar + cool water"
-    },
-    {
-      "step": 8,
-      "instruction": "If stain persists or if fabric is delicate, call a professional cleaner.",
-      "agent": "escalation"
-    }
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
