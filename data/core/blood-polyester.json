@@ -8,6 +8,64 @@
   "stainChemistry": "Classification: Protein. Blood stains consist of hemoglobin (iron-containing protein), albumin, and other plasma proteins. Hemoglobin's heme group (iron-porphyrin complex) produces the red-brown color. Heat denatures blood proteins, causing irreversible cross-linking with fibers — making the stain permanent. On polyester (synthetic fiber): polyester is chemically resistant and non-absorbent — blood sits on the fiber surface and bonds via weak hydrogen bonds and hydrophobic interactions rather than absorbing deeply as it does on cotton. Treatment: cold water flush to prevent heat-setting, followed by alkaline Protein digestion to hydrolyze peptide bonds. Polyester's chemical resistance means enzyme-based digestants are safe and effective on this fiber.",
   "whyThisWorks": "Polyester doesn't absorb blood as deeply as natural fibers — the stain is more surface-bound, making early treatment especially effective. Protein (digestant) hydrolyzes the peptide bonds in hemoglobin and other blood proteins. NSD removes digested protein particles. Acetic acid neutralizes alkaline residue. Unlike wool and silk, polyester can fully tolerate enzyme-based digestants — no fiber damage risk.",
   "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "agent": "Cold pre-flush + age classification",
+      "technique": "Flush from reverse; classify on spotting board",
+      "dwellTime": "0 (immediate)",
+      "instruction": "Immediately flush the reverse side with cold water only. Classify on the spotting board: fresh (bright red, wet), dried (brown, crusted), or set (yellow-brown, fixed). Heat at any stage cross-links hemoglobin and albumin into the polyester — this is the #1 irreversible error."
+    },
+    {
+      "step": 2,
+      "agent": "Protease digestant",
+      "technique": "Tamp lightly with soft spotting brush",
+      "dwellTime": "Fresh: 5–10 min · Dried/set: 20–30 min with re-tamping every 8–10 min",
+      "instruction": "Apply bacterial protease or papain enzyme (pH 7.0–8.0, strictly below 100°F). Tamp lightly with a soft spotting brush. Monitor for dye bleed on the polyester; if migration appears, flush cold and note for later wet-side reduction."
+    },
+    {
+      "step": 3,
+      "agent": "NSD (Neutral Synthetic Detergent)",
+      "technique": "Controlled small circles on spotting board",
+      "dwellTime": "3–5 min",
+      "instruction": "Apply NSD and work in controlled small circles. If the fiber begins to pill or distort under light tension, cease all mechanical action immediately and switch to chemistry-only — polyester overworking causes permanent fiber damage."
+    },
+    {
+      "step": 4,
+      "agent": "10x loupe inspection",
+      "technique": "Incident-light visual check",
+      "dwellTime": "n/a",
+      "instruction": "Protein residue must appear translucent and matte under magnification. Any remaining red gloss or opacity means the enzyme stage is incomplete — return to step 2. Do not advance to the acid side with active protein present."
+    },
+    {
+      "step": 5,
+      "agent": "Hard prohibitions (operator discipline)",
+      "technique": "Observation only — confirm none of these have been applied",
+      "dwellTime": "n/a",
+      "instruction": "No heat. No chlorine bleach before full enzyme digestion. No alcohol-based products. No vigorous agitation on lightweight polyester. All cause permanent setting, yellowing, or fiber damage."
+    },
+    {
+      "step": 6,
+      "agent": "TAD → POG → rust spotter chain (only if oxidized halo)",
+      "technique": "Sequential; never reverse order",
+      "dwellTime": "TAD 2 min · POG per product · rust spotter per product",
+      "instruction": "For iron-oxidized halo (orange-brown tone): apply tannin/age remover (TAD), dwell 2 min, flush. Follow with POG on reverse if needed. Use rust spotter LAST if metallic tones remain. Never reverse this order — it drives oxidized iron deeper into the fiber."
+    },
+    {
+      "step": 7,
+      "agent": "Acetic neutralization",
+      "technique": "Dropper apply, blot dry",
+      "dwellTime": "1–2 min",
+      "instruction": "Dilute 28% acetic acid 1:10 with cold water. Apply, dwell 1–2 min, blot dry with clean absorbent toweling. This restores fiber pH and prevents post-spot browning on polyester."
+    },
+    {
+      "step": 8,
+      "agent": "Final judgment + handoff",
+      "technique": "Loupe + incident-light inspection; log if escalating",
+      "dwellTime": "n/a",
+      "instruction": "Under loupe and incident light the fabric must show zero discoloration, stiffness, or halo. If any protein shadow or stiffness remains after the full enzyme → TAD/POG chain, the stain has cross-linked. Escalate to concentrated reducing agents (leuco-methylene blue) or full wet-cleaning line. Log: \"Blood on polyester, aged, protease + NSD + TAD/POG chain, residual shadow — recommend reduction.\""
+    }
+  ],
   "professionalProtocol": {
     "steps": [
       "1. Apply Protein (digestant spotter) to the stain and tamp gently with a spotting brush. Dwell 5–10 minutes. This digestant breaks down blood, milk, egg, and body fluid proteins. Work from the edge toward the center.",
