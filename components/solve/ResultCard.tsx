@@ -34,6 +34,7 @@ import CardRatingBadges from '@/components/solve/CardRatingBadges'
 import CardRatingWidget from '@/components/solve/CardRatingWidget'
 import StepEnlargeModal from './StepEnlargeModal'
 import FullCardModal from './FullCardModal'
+import QuickReferenceModal, { type QuickReferenceContent } from '@/components/ui/QuickReferenceModal'
 import UpgradeBanner from './UpgradeBanner'
 import WhenToStopFooter from './WhenToStopFooter'
 import TierFallbackNote from './TierFallbackNote'
@@ -65,23 +66,26 @@ function difficultyColor(d: number) {
 
 /**
  * TrustTile — one square in the 3-tile trust strip under the result title.
- * Starts collapsed to a single line; tap expands to show the full body. Three
- * colored variants map to the trust dimensions: green = Why, amber = Caution,
- * red = Escalate. Matches the existing accent palette used elsewhere in the
- * card so it reads like part of the same product, not a separate widget.
+ * Tap opens a modal overlay with the full body text (Atlas 8069 + Tyler
+ * 8067: the previous expand-in-place pattern broke visually on mobile
+ * vertical when one tile stretched taller than the others). Three colored
+ * accents map to the trust dimensions: green = Why, amber = Caution, red
+ * = Escalate — matches the existing accent palette used elsewhere in the
+ * card so it reads like part of the same product.
  */
 function TrustTile({
   icon,
   label,
   body,
   accent,
+  onOpen,
 }: {
   icon: LucideIcon
   label: string
   body: string
   accent: 'green' | 'amber' | 'red'
+  onOpen: () => void
 }) {
-  const [expanded, setExpanded] = useState(false)
   const IconCmp = icon
   const styles = {
     green: {
@@ -106,10 +110,10 @@ function TrustTile({
   return (
     <button
       type="button"
-      onClick={() => setExpanded((v) => !v)}
+      onClick={onOpen}
       className="text-left rounded-xl p-3 min-h-[72px] transition-colors hover:brightness-[1.03] active:brightness-95"
       style={{ background: styles.background, border: styles.border }}
-      aria-expanded={expanded}
+      aria-label={`${label} — tap to read more`}
     >
       <div className="flex items-center gap-1.5 mb-1">
         <IconCmp size={14} strokeWidth={1.75} style={{ color: styles.iconColor }} aria-hidden="true" />
@@ -117,10 +121,7 @@ function TrustTile({
           {label}
         </span>
       </div>
-      <p
-        className={`text-xs leading-snug ${expanded ? '' : 'line-clamp-2'}`}
-        style={{ color: 'var(--text)' }}
-      >
+      <p className="text-xs leading-snug line-clamp-2" style={{ color: 'var(--text)' }}>
         {body}
       </p>
     </button>
@@ -267,6 +268,12 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
   const trustEscalate = (escalation?.when ?? '').trim()
   const showTrustBlock = trustWhy.length > 20 || trustCaution.length > 20 || trustEscalate.length > 20
 
+  // ── Trust tile modal state (Atlas 8069 + Tyler 8067) — tap any tile and
+  // the full body opens in the shared QuickReferenceModal, same interaction
+  // pattern as the chemistry badge quick-reference. Fixes the ugly vertical
+  // stretching when one tile expanded taller than its siblings on mobile.
+  const [trustModal, setTrustModal] = useState<QuickReferenceContent | null>(null)
+
   // ── Tier telemetry on mount ───────────────────────────────────
   useEffect(() => {
     if (!correlationId) return
@@ -345,6 +352,12 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
                 label={t('trustWhyLabel')}
                 body={trustWhy}
                 accent="green"
+                onOpen={() => setTrustModal({
+                  title: t('trustWhyLabel'),
+                  tone: 'safe',
+                  icon: '🧪',
+                  explainer: trustWhy,
+                })}
               />
             )}
             {trustCaution.length > 20 && (
@@ -353,6 +366,12 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
                 label={t('trustCautionLabel')}
                 body={trustCaution}
                 accent="amber"
+                onOpen={() => setTrustModal({
+                  title: t('trustCautionLabel'),
+                  tone: 'caution',
+                  icon: '⚠',
+                  explainer: trustCaution,
+                })}
               />
             )}
             {trustEscalate.length > 20 && (
@@ -361,6 +380,12 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
                 label={t('trustEscalateLabel')}
                 body={trustEscalate}
                 accent="red"
+                onOpen={() => setTrustModal({
+                  title: t('trustEscalateLabel'),
+                  tone: 'danger',
+                  icon: '📞',
+                  explainer: trustEscalate,
+                })}
               />
             )}
           </div>
@@ -696,6 +721,13 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
           onClose={() => setFullCardOpen(false)}
         />
       )}
+
+      {/* Trust tile modal — opens when user taps Why / Caution / Escalate */}
+      <QuickReferenceModal
+        open={trustModal !== null}
+        content={trustModal}
+        onClose={() => setTrustModal(null)}
+      />
     </div>
   )
 }
