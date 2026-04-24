@@ -5,6 +5,7 @@ import { useLanguage } from '@/lib/i18n/LanguageContext'
 import crosswalkData from '@/data/chemicals/agent-brand-crosswalk.json'
 import fiberData from '@/data/chemicals/fiber-expertise-index.json'
 import { getAgentIcon } from '@/lib/ui/chemistryIcons'
+import Badge from '@/components/ui/Badge'
 
 // Company imports
 import rrStreet from '@/data/chemicals/companies/rr-street.json'
@@ -162,22 +163,12 @@ function ExternalLink({ href, children }: { href: string; children: React.ReactN
   )
 }
 
-function Chip({ children, variant = 'default' }: {
-  children: React.ReactNode
-  variant?: 'default' | 'green' | 'red' | 'gold'
-}) {
-  const colors = {
-    default: 'border-white/10 text-[var(--text-secondary)]',
-    green: 'border-green-600/40 bg-green-500/10 text-green-700 dark:text-green-400',
-    red: 'border-red-500/30 bg-red-500/10 text-red-700 dark:text-red-400',
-    gold: 'border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-400',
-  }
-  return (
-    <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-mono font-bold border ${colors[variant]}`}>
-      {children}
-    </span>
-  )
-}
+// TASK-badges-v1: local Chip removed in favor of `components/ui/Badge`.
+// Call sites below use the shared Badge with tones:
+//   variant="green" → tone="safe"   (agents to use, compatible products)
+//   variant="red"   → tone="danger" (agents to avoid, high-risk fibers)
+//   variant="default" → tone="neutral"
+// `variant="gold"` was defined here but never actually used in this file.
 
 // ─── Tab: By Agent ───────────────────────────────────────────────────────────
 
@@ -207,16 +198,7 @@ function AgentTab() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap">
                   <h3 className="font-bold text-sm">{agent.genericName}</h3>
-                  <span
-                    className="text-[10px] font-mono px-1.5 py-0.5 rounded border"
-                    style={{
-                      color: 'var(--text-secondary)',
-                      borderColor: 'var(--border-strong)',
-                      background: 'var(--surface-2)',
-                    }}
-                  >
-                    {key}
-                  </span>
+                  <Badge tone="schema" size="sm" srLabel="Schema key">{key}</Badge>
                 </div>
               </div>
               <Chevron open={isExpanded} />
@@ -418,7 +400,7 @@ function CompanyDetails({ company }: { company: CompanyData }) {
                             {product.usedFor && product.usedFor.length > 0 && (
                               <div className="flex flex-wrap gap-1 mt-1">
                                 {product.usedFor.slice(0, 5).map((use, k) => (
-                                  <Chip key={k}>{use}</Chip>
+                                  <Badge key={k} tone="neutral" mono>{use}</Badge>
                                 ))}
                               </div>
                             )}
@@ -566,7 +548,7 @@ function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
         <div>
           <h2 className="text-lg font-bold capitalize">{fiber}</h2>
           {isHighRisk && (
-            <Chip variant="red">⚠️ {t('highRiskFiber')}</Chip>
+            <Badge tone="danger" srLabel="Risk">⚠️ {t('highRiskFiber')}</Badge>
           )}
         </div>
       </div>
@@ -602,7 +584,7 @@ function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
               <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>{rec.why}</p>
               <div className="flex flex-wrap gap-1.5 mt-2">
                 {rec.products.map((prod, j) => (
-                  <Chip key={j} variant="green">{prod}</Chip>
+                  <Badge key={j} tone="safe" mono>{prod}</Badge>
                 ))}
               </div>
             </div>
@@ -618,7 +600,7 @@ function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
           </p>
           <div className="flex flex-wrap gap-1.5">
             {data.agentsToUse.map((agent, i) => (
-              <Chip key={i} variant="green">{agent}</Chip>
+              <Badge key={i} tone="safe" mono>{agent}</Badge>
             ))}
           </div>
         </div>
@@ -629,7 +611,7 @@ function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
           </p>
           <div className="flex flex-wrap gap-1.5">
             {data.agentsToAvoid.map((agent, i) => (
-              <Chip key={i} variant="red">{agent}</Chip>
+              <Badge key={i} tone="danger" mono>{agent}</Badge>
             ))}
           </div>
         </div>
