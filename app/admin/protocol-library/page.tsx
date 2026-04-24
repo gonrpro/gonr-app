@@ -3,15 +3,16 @@
 // app/admin/protocol-library/page.tsx
 //
 // Founder-only "book view" of the protocol library (Task #40).
+// v1.1 changes (Atlas 8401):
+//   - Mobile: stacked card list (no horizontal scroll)
+//   - Desktop: table view
+//   - Expanded detail renders BELOW the list in a full-width block (escapes
+//     table-forced width, so mobile scrolls vertically with zero side-scroll)
+//   - min-w-0 + break-words everywhere inside detail
+//   - Added Task #42 explanation: verified: true (voice-reviewed) vs
+//     verification_level (TASK-055 provenance) — two different concepts.
 //
-// Structure:
-//   Summary tiles     — total / verified / by verification_level
-//   Filters           — search + stain / surface / level / verified-only / tier
-//   Table             — sortable list, click row to expand
-//   Expanded detail   — side-by-side Home + Pro (Spotter/Operator shares Pro view)
-//
-// v1 scope (Atlas 8392): no PDF/export, no schema change, no plant overlay.
-// Stop for review before expanding.
+// Scope (Atlas 8392): no PDF/export, no schema changes, no plant overlay.
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
@@ -157,7 +158,7 @@ export default function AdminProtocolLibraryPage() {
   const [surfaceFilter, setSurfaceFilter] = useState<string>('')
   const [levelFilter, setLevelFilter] = useState<string>('')
   const [verifiedOnly, setVerifiedOnly] = useState(false)
-  const [expandedKey, setExpandedKey] = useState<string | null>(null)
+  const [selectedKey, setSelectedKey] = useState<string | null>(null)
 
   const load = useCallback(async () => {
     setLoading(true)
@@ -197,6 +198,11 @@ export default function AdminProtocolLibraryPage() {
       return true
     })
   }, [data, search, stainFilter, surfaceFilter, levelFilter, verifiedOnly])
+
+  const selectedCard = useMemo(() => {
+    if (!selectedKey || !data) return null
+    return data.cards.find(c => c.card_key === selectedKey) ?? null
+  }, [selectedKey, data])
 
   const stainOptions = useMemo(() => {
     if (!data) return []
@@ -241,9 +247,9 @@ export default function AdminProtocolLibraryPage() {
   if (!data) return null
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8 space-y-6">
-      <header className="flex items-baseline justify-between">
-        <div>
+    <main className="mx-auto max-w-7xl px-4 py-8 space-y-6 min-w-0">
+      <header className="flex flex-wrap items-baseline justify-between gap-2">
+        <div className="min-w-0">
           <h1 className="text-2xl font-semibold">Protocol Library</h1>
           <p className="mt-1 text-sm text-gray-500">
             Book view for quality audit · {data.summary.total} active canonical cards · {data.summary.verified} marked <code>verified: true</code>.
@@ -252,10 +258,17 @@ export default function AdminProtocolLibraryPage() {
         <button onClick={() => void load()} className="text-xs text-gray-500 underline">refresh</button>
       </header>
 
+      <section className="border border-sky-500/30 bg-sky-500/5 rounded p-3 text-xs text-gray-700 dark:text-gray-300 space-y-1">
+        <div><strong>Two different &ldquo;verified&rdquo; concepts below — they measure different things:</strong></div>
+        <div><code>verified: true</code> → card has been <strong>voice-reviewed</strong> (passes the presentation validator for pro/home tone). This is the Tranche-2 voice-rewrite scoreboard.</div>
+        <div><code>verification_level</code> → <strong>provenance</strong> from TASK-055 (how well-sourced the chemistry claims are): <code>draft</code> (no verified source) · <code>single_source</code> · <code>cross_ref</code> (2+ agree) · <code>pro_verified</code> (pro sign-off).</div>
+        <div className="text-gray-500">A card can be <code>verified: true</code> (voice good) and still be <code>draft</code> (chemistry needs sourcing), and vice versa.</div>
+      </section>
+
       <section>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
           <SummaryTile label="total" value={data.summary.total} tone="gray" hint="active canonical" />
-          <SummaryTile label="verified" value={data.summary.verified} tone="emerald" hint="verified: true" />
+          <SummaryTile label="verified" value={data.summary.verified} tone="emerald" hint="voice-reviewed" />
           <SummaryTile label="draft" value={data.summary.draft} tone="slate" hint="no source" />
           <SummaryTile label="single_source" value={data.summary.single_source} tone="blue" hint="1 source" />
           <SummaryTile label="cross_ref" value={data.summary.cross_ref} tone="violet" hint="2+ agree" />
@@ -324,7 +337,36 @@ export default function AdminProtocolLibraryPage() {
         </div>
       </section>
 
-      <section>
+      {/* Mobile: stacked card list */}
+      <section className="md:hidden space-y-2">
+        {filteredCards.map(row => {
+          const isSelected = selectedKey === row.card_key
+          return (
+            <button
+              key={row.card_key}
+              onClick={() => setSelectedKey(isSelected ? null : row.card_key)}
+              className={`w-full text-left border rounded p-3 transition-colors ${isSelected ? 'border-emerald-500/40 bg-emerald-500/5' : 'border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900/40'}`}
+            >
+              <div className="font-semibold text-sm">{row.data?.title ?? row.card_key}</div>
+              <div className="mt-1 font-mono text-[11px] text-gray-500 break-all">{row.card_key}</div>
+              <div className="mt-2 flex flex-wrap items-center gap-2">
+                <LevelBadge level={row.verification_level} />
+                <VerifiedBadge verified={row.data?.verified} />
+                {row.data?.meta?.tier && <span className="text-[10px] text-gray-500">tier: {row.data.meta.tier}</span>}
+                <span className="text-[10px] text-gray-500 ml-auto">{fmtTs(row.updated_at)}</span>
+              </div>
+            </button>
+          )
+        })}
+        {filteredCards.length === 0 && (
+          <div className="border border-gray-200 dark:border-gray-800 rounded p-6 text-center text-sm text-gray-500">
+            No cards match these filters.
+          </div>
+        )}
+      </section>
+
+      {/* Desktop: table */}
+      <section className="hidden md:block">
         <div className="overflow-x-auto border border-gray-200 dark:border-gray-800 rounded">
           <table className="min-w-full text-sm">
             <thead className="bg-gray-50 dark:bg-gray-900 text-[11px] uppercase tracking-wide text-gray-500">
@@ -339,29 +381,20 @@ export default function AdminProtocolLibraryPage() {
             </thead>
             <tbody>
               {filteredCards.map(row => {
-                const isExpanded = expandedKey === row.card_key
+                const isSelected = selectedKey === row.card_key
                 return (
-                  <>
-                    <tr
-                      key={row.card_key}
-                      onClick={() => setExpandedKey(isExpanded ? null : row.card_key)}
-                      className={`border-t border-gray-100 dark:border-gray-800 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900/40 ${isExpanded ? 'bg-gray-50 dark:bg-gray-900/40' : ''}`}
-                    >
-                      <td className="px-3 py-2 font-mono text-xs">{row.card_key}</td>
-                      <td className="px-3 py-2">{row.data?.title ?? '—'}</td>
-                      <td className="px-3 py-2"><LevelBadge level={row.verification_level} /></td>
-                      <td className="px-3 py-2"><VerifiedBadge verified={row.data?.verified} /></td>
-                      <td className="px-3 py-2 text-xs text-gray-500">{row.data?.meta?.tier ?? '—'}</td>
-                      <td className="px-3 py-2 text-xs text-gray-500">{fmtTs(row.updated_at)}</td>
-                    </tr>
-                    {isExpanded && (
-                      <tr key={`${row.card_key}-detail`} className="border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/20">
-                        <td colSpan={6} className="px-4 py-6">
-                          <CardDetail card={row} />
-                        </td>
-                      </tr>
-                    )}
-                  </>
+                  <tr
+                    key={row.card_key}
+                    onClick={() => setSelectedKey(isSelected ? null : row.card_key)}
+                    className={`border-t border-gray-100 dark:border-gray-800 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900/40 ${isSelected ? 'bg-emerald-500/5' : ''}`}
+                  >
+                    <td className="px-3 py-2 font-mono text-xs">{row.card_key}</td>
+                    <td className="px-3 py-2">{row.data?.title ?? '—'}</td>
+                    <td className="px-3 py-2"><LevelBadge level={row.verification_level} /></td>
+                    <td className="px-3 py-2"><VerifiedBadge verified={row.data?.verified} /></td>
+                    <td className="px-3 py-2 text-xs text-gray-500">{row.data?.meta?.tier ?? '—'}</td>
+                    <td className="px-3 py-2 text-xs text-gray-500">{fmtTs(row.updated_at)}</td>
+                  </tr>
                 )
               })}
               {filteredCards.length === 0 && (
@@ -375,6 +408,25 @@ export default function AdminProtocolLibraryPage() {
           </table>
         </div>
       </section>
+
+      {/* Expanded detail rendered OUTSIDE the table so it gets the page's container width, not the table's */}
+      {selectedCard && (
+        <section className="border border-emerald-500/30 bg-emerald-500/5 rounded p-4 min-w-0">
+          <div className="flex items-baseline justify-between gap-2 mb-4">
+            <div className="min-w-0">
+              <div className="text-xs text-gray-500 font-mono break-all">{selectedCard.card_key}</div>
+              <div className="text-lg font-semibold">{selectedCard.data?.title ?? selectedCard.card_key}</div>
+            </div>
+            <button
+              onClick={() => setSelectedKey(null)}
+              className="text-xs text-gray-500 underline shrink-0"
+            >
+              close
+            </button>
+          </div>
+          <CardDetail card={selectedCard} />
+        </section>
+      )}
     </main>
   )
 }
@@ -384,11 +436,10 @@ function CardDetail({ card }: { card: CardRow }) {
   if (!d) return <p className="text-sm text-gray-500">No card data.</p>
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 min-w-0 break-words">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-        <div className="space-y-2">
-          <h3 className="font-semibold text-gray-700 dark:text-gray-300">{d.title}</h3>
-          <div className="text-xs text-gray-500 space-x-3">
+        <div className="space-y-2 min-w-0">
+          <div className="text-xs text-gray-500 space-x-3 break-words">
             <span>type: <code>{d.stainType ?? d.stainFamily ?? '—'}</code></span>
             <span>difficulty: {d.difficulty ?? '—'}</span>
             <span>time: {d.timeEstimate ?? '—'}</span>
@@ -402,8 +453,7 @@ function CardDetail({ card }: { card: CardRow }) {
             </div>
           )}
         </div>
-        <div className="space-y-1 text-xs text-gray-500">
-          <div>card_key: <code className="text-gray-800 dark:text-gray-200">{card.card_key}</code></div>
+        <div className="space-y-1 text-xs text-gray-500 min-w-0 break-words">
           <div>last validated: <code>{d.lastValidated ?? '—'}</code></div>
           <div>verification_level: <LevelBadge level={card.verification_level} /></div>
           <div>sources: {card.sources && card.sources.length > 0 ? card.sources.join(', ') : '—'}</div>
@@ -412,34 +462,34 @@ function CardDetail({ card }: { card: CardRow }) {
 
       {d.stainChemistry && (
         <Section title="Stain Chemistry">
-          <p className="text-sm leading-relaxed">{d.stainChemistry}</p>
+          <p className="text-sm leading-relaxed whitespace-pre-wrap break-words">{d.stainChemistry}</p>
         </Section>
       )}
 
       {d.whyThisWorks && (
         <Section title="Why This Works">
-          <p className="text-sm leading-relaxed">{d.whyThisWorks}</p>
+          <p className="text-sm leading-relaxed whitespace-pre-wrap break-words">{d.whyThisWorks}</p>
         </Section>
       )}
 
       {d.defaultAssumption && (
         <Section title="Default Assumption">
-          <p className="text-sm leading-relaxed italic text-gray-600 dark:text-gray-400">{d.defaultAssumption}</p>
+          <p className="text-sm leading-relaxed italic text-gray-600 dark:text-gray-400 whitespace-pre-wrap break-words">{d.defaultAssumption}</p>
         </Section>
       )}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 min-w-0">
         <Lane title="Home (consumer voice)" tone="home">
           {d.homeSolutions && d.homeSolutions.length > 0 ? (
-            <ol className="space-y-3">
+            <ol className="space-y-3 min-w-0">
               {d.homeSolutions.map((step, i) => (
-                <li key={i} className="text-sm">
+                <li key={i} className="text-sm break-words">
                   <div className="font-semibold text-gray-700 dark:text-gray-300">
                     {step.step ?? i + 1}. {step.agent ?? ''}
                   </div>
-                  <p className="mt-1 text-gray-600 dark:text-gray-400 leading-relaxed">{step.instruction}</p>
+                  <p className="mt-1 text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-wrap break-words">{step.instruction}</p>
                   {step.safetyNote && (
-                    <p className="mt-1 text-xs text-amber-700 dark:text-amber-400 italic">⚠ {step.safetyNote}</p>
+                    <p className="mt-1 text-xs text-amber-700 dark:text-amber-400 italic break-words">⚠ {step.safetyNote}</p>
                   )}
                 </li>
               ))}
@@ -453,20 +503,20 @@ function CardDetail({ card }: { card: CardRow }) {
 
         <Lane title="Pro (Spotter / Operator)" tone="pro">
           {d.spottingProtocol && d.spottingProtocol.length > 0 ? (
-            <ol className="space-y-3">
+            <ol className="space-y-3 min-w-0">
               {d.spottingProtocol.map((step, i) => (
-                <li key={i} className="text-sm">
+                <li key={i} className="text-sm break-words">
                   <div className="font-semibold text-gray-700 dark:text-gray-300">
                     {step.step ?? i + 1}. {step.agent ?? ''}
                   </div>
-                  <div className="text-[11px] text-gray-500 mt-0.5 space-x-2">
+                  <div className="text-[11px] text-gray-500 mt-0.5 space-x-2 break-words">
                     {step.side && <span>side: {step.side}</span>}
                     {step.dwellTime && <span>dwell: {step.dwellTime}</span>}
                     {step.equipment && <span>eq: {step.equipment}</span>}
                   </div>
-                  <p className="mt-1 text-gray-600 dark:text-gray-400 leading-relaxed">{step.instruction}</p>
+                  <p className="mt-1 text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-wrap break-words">{step.instruction}</p>
                   {step.safetyNote && (
-                    <p className="mt-1 text-xs text-amber-700 dark:text-amber-400 italic">⚠ {step.safetyNote}</p>
+                    <p className="mt-1 text-xs text-amber-700 dark:text-amber-400 italic break-words">⚠ {step.safetyNote}</p>
                   )}
                 </li>
               ))}
@@ -481,7 +531,7 @@ function CardDetail({ card }: { card: CardRow }) {
 
       {d.materialWarnings && d.materialWarnings.length > 0 && (
         <Section title="Material Warnings">
-          <ul className="list-disc list-inside text-sm space-y-1 text-amber-700 dark:text-amber-400">
+          <ul className="list-disc list-inside text-sm space-y-1 text-amber-700 dark:text-amber-400 break-words">
             {d.materialWarnings.map((w, i) => <li key={i}>{w}</li>)}
           </ul>
         </Section>
@@ -489,19 +539,19 @@ function CardDetail({ card }: { card: CardRow }) {
 
       {d.safetyMatrix && (
         <Section title="Safety Matrix">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm min-w-0">
             {d.safetyMatrix.neverDo && (
-              <div>
+              <div className="min-w-0">
                 <div className="text-xs uppercase tracking-wide text-gray-500 mb-1">Never Do</div>
-                <ul className="list-disc list-inside space-y-0.5 text-red-700 dark:text-red-400">
+                <ul className="list-disc list-inside space-y-0.5 text-red-700 dark:text-red-400 break-words">
                   {d.safetyMatrix.neverDo.map((w, i) => <li key={i}>{w}</li>)}
                 </ul>
               </div>
             )}
             {d.safetyMatrix.fiberSensitivities && (
-              <div>
+              <div className="min-w-0">
                 <div className="text-xs uppercase tracking-wide text-gray-500 mb-1">Fiber Sensitivities</div>
-                <ul className="list-disc list-inside space-y-0.5">
+                <ul className="list-disc list-inside space-y-0.5 break-words">
                   {d.safetyMatrix.fiberSensitivities.map((w, i) => <li key={i}>{w}</li>)}
                 </ul>
               </div>
@@ -512,7 +562,7 @@ function CardDetail({ card }: { card: CardRow }) {
 
       {d.escalation && typeof d.escalation === 'object' && (
         <Section title="Escalation">
-          <div className="text-sm space-y-1">
+          <div className="text-sm space-y-1 break-words">
             {d.escalation.when && <div><span className="text-gray-500">when:</span> {d.escalation.when}</div>}
             {d.escalation.whatToTell && <div><span className="text-gray-500">what to tell:</span> {d.escalation.whatToTell}</div>}
             {d.escalation.specialistType && <div><span className="text-gray-500">specialist:</span> {d.escalation.specialistType}</div>}
@@ -523,12 +573,12 @@ function CardDetail({ card }: { card: CardRow }) {
       {d.deepSolveHooks && (
         <Section title="Deep Solve Hooks">
           {d.deepSolveHooks.contextQuestions && (
-            <ul className="list-disc list-inside text-sm space-y-0.5">
+            <ul className="list-disc list-inside text-sm space-y-0.5 break-words">
               {d.deepSolveHooks.contextQuestions.map((q, i) => <li key={i}>{q}</li>)}
             </ul>
           )}
           {d.deepSolveHooks.modifierNotes && (
-            <p className="mt-2 text-xs italic text-gray-500">{d.deepSolveHooks.modifierNotes}</p>
+            <p className="mt-2 text-xs italic text-gray-500 break-words">{d.deepSolveHooks.modifierNotes}</p>
           )}
         </Section>
       )}
@@ -538,7 +588,7 @@ function CardDetail({ card }: { card: CardRow }) {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section>
+    <section className="min-w-0">
       <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">{title}</h4>
       {children}
     </section>
@@ -548,7 +598,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function Lane({ title, tone, children }: { title: string; tone: 'home' | 'pro'; children: React.ReactNode }) {
   const border = tone === 'home' ? 'border-emerald-500/30' : 'border-blue-500/30'
   return (
-    <div className={`border-l-2 ${border} pl-4`}>
+    <div className={`border-l-2 ${border} pl-4 min-w-0`}>
       <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-3">{title}</h4>
       {children}
     </div>
@@ -557,33 +607,33 @@ function Lane({ title, tone, children }: { title: string; tone: 'home' | 'pro'; 
 
 function ProtocolBlock({ protocol }: { protocol: ProProtocol | DiyProtocol }) {
   return (
-    <div className="text-sm space-y-3">
+    <div className="text-sm space-y-3 min-w-0 break-words">
       {protocol.steps && protocol.steps.length > 0 && (
         <div>
           <div className="text-xs uppercase tracking-wide text-gray-500 mb-1">Steps</div>
           <ol className="space-y-1">
-            {protocol.steps.map((s, i) => <li key={i} className="text-gray-700 dark:text-gray-300">{s}</li>)}
+            {protocol.steps.map((s, i) => <li key={i} className="text-gray-700 dark:text-gray-300 break-words">{s}</li>)}
           </ol>
         </div>
       )}
       {protocol.products && protocol.products.length > 0 && (
         <div>
           <div className="text-xs uppercase tracking-wide text-gray-500 mb-1">Products</div>
-          <ul className="list-disc list-inside text-gray-600 dark:text-gray-400">
+          <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 break-words">
             {protocol.products.map((p, i) => <li key={i}>{p}</li>)}
           </ul>
         </div>
       )}
       {'temperature' in protocol && protocol.temperature && (
-        <div className="text-xs text-gray-500">temperature: {protocol.temperature}</div>
+        <div className="text-xs text-gray-500 break-words">temperature: {protocol.temperature}</div>
       )}
       {'whenToStop' in protocol && protocol.whenToStop && (
-        <div className="text-xs text-amber-700 dark:text-amber-400">when to stop: {protocol.whenToStop}</div>
+        <div className="text-xs text-amber-700 dark:text-amber-400 break-words">when to stop: {protocol.whenToStop}</div>
       )}
       {protocol.warnings && protocol.warnings.length > 0 && (
         <div>
           <div className="text-xs uppercase tracking-wide text-gray-500 mb-1">Warnings</div>
-          <ul className="list-disc list-inside text-xs text-amber-700 dark:text-amber-400">
+          <ul className="list-disc list-inside text-xs text-amber-700 dark:text-amber-400 break-words">
             {protocol.warnings.map((w, i) => <li key={i}>{w}</li>)}
           </ul>
         </div>
@@ -601,10 +651,10 @@ function SummaryTile({ label, value, tone, hint }: { label: string; value: numbe
     gray: 'border-gray-500/30 bg-gray-500/5',
   }
   return (
-    <div className={`rounded border p-3 ${tones[tone]}`}>
+    <div className={`rounded border p-3 min-w-0 ${tones[tone]}`}>
       <div className="text-2xl font-bold tabular-nums">{value}</div>
-      <div className="text-[11px] font-mono uppercase tracking-wide text-gray-600 dark:text-gray-400">{label}</div>
-      <div className="text-[10px] text-gray-500 mt-0.5">{hint}</div>
+      <div className="text-[11px] font-mono uppercase tracking-wide text-gray-600 dark:text-gray-400 break-words">{label}</div>
+      <div className="text-[10px] text-gray-500 mt-0.5 break-words">{hint}</div>
     </div>
   )
 }
