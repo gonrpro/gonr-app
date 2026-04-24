@@ -1,130 +1,221 @@
 {
   "id": "blood-upholstery",
   "title": "Blood on Upholstery",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Blood contains hemoglobin — an iron-bearing protein that bonds to upholstery through hydrogen bonding and hydrophobic interactions. When fresh, the protein is water-soluble in cold conditions. Heat or time causes the protein chains to cross-link (denature), making the stain insoluble and far harder to remove. The iron component can leave a secondary rust-like discoloration after the protein is removed.",
-  "whyThisWorks": "Cold water keeps the protein from denaturing and locking into the upholstery fiber. A digestant enzyme (professional) or surfactant (DIY) breaks down the protein chains into soluble fragments that rinse away. The key is treating before any heat exposure — heat permanently cross-links the protein.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–45 minutes (plus drying)",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "blood",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": ["protein", "upholstery", "no-saturation", "stuffing-risk", "fiber-dependent"],
+    "freePreview": true
+  },
+  "stainChemistry": "Blood on upholstery is the same protein chemistry as on fabric — hemoglobin, fibrin, albumin — but upholstery has three construction concerns that fabric doesn't: (1) you can't remove the fabric from the frame, so you can't flush from the back; (2) stuffing (foam, down, polyester batting) sits directly under the fabric and holds water indefinitely; (3) the visible surface is often a blend (cotton-poly, rayon-poly, microfiber) with unknown dye-fastness. Cloth-transfer + aggressive extraction is non-negotiable; saturation causes fabric-to-frame water marks and permanent stuffing odor.",
+  "whyThisWorks": "Cold water + cloth-transfer handles fresh blood without reaching the stuffing. Liquid Protein Spotter on a cloth then lifts any residue the water couldn't — never sprinkle powder on upholstery; dry powder works into the weave and is nearly impossible to fully remove. 3% hydrogen peroxide on a cloth for stubborn shadow, but always test hidden (under-cushion / inside-seam) first — upholstery dyes are often not colorfast.",
+  "defaultAssumption": "Assume unknown fiber blend and unknown colorfastness. Test every applied product on an under-cushion or inside-seam area first.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Tag Check + Hidden Test",
+      "technique": "Find the manufacturer cleaning code",
+      "equipment": "Care tag on the cushion seam",
+      "dwellTime": "brief",
+      "instruction": "Find the furniture cleaning code on the tag (usually under a cushion): W (water-safe), S (solvent-only, no water), WS (either), X (vacuum only — professional required). If the code is S or X, stop here and route to a professional upholstery cleaner — no home water treatment is safe. If W or WS, test any product you're about to apply on a hidden area first (back, under-cushion seam)."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Blot Fresh / Scrape Dry",
+      "technique": "Lift bulk before any liquid",
+      "equipment": "Clean white terry towels or paper towels",
+      "dwellTime": "brief",
+      "instruction": "Fresh blood: press a folded white towel straight down on the stain. Lift. Move to a dry section. Press again. Don't rub — rubbing works blood sideways into the weave. Dried blood: gently scrape off surface crust with the edge of a spoon or dull butter knife before any liquid touches it."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Cold Water + Cloth Transfer",
+      "technique": "Damp cloth only, never pour",
+      "equipment": "Spray bottle, clean white cloth, wet/dry vac or dry towels",
+      "dwellTime": "2–3 cycles",
+      "instruction": "Lightly dampen a clean white cloth with cold water — do not saturate. Press onto the stain, lift, rotate to a clean section of cloth, press again. Blood transfers onto the cloth. Between cycles, press a DRY towel down with weight for 30 seconds to pull moisture back out before it reaches the stuffing. Stop saturating the moment the cloth comes away almost clean — don't keep going until the fabric looks soaked."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Protein Spotter (Cloth)",
+      "technique": "Liquid on cloth, tamp, extract",
+      "equipment": "Liquid Protein Spotter or dissolved enzyme pretreat",
+      "dwellTime": "5–10 minutes",
+      "instruction": "For any shadow that remains: apply liquid Protein Spotter (PRENETT B or a dissolved enzyme pretreat) to a clean white cloth — not to the upholstery. Press onto the stain. Let it dwell 5–10 minutes. Extract hard with a dry weighted towel. If you only have powder enzyme pretreat, dissolve it fully in cold water first — never sprinkle powder on upholstery."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Hydrogen Peroxide 3% (Test Hidden First)",
+      "technique": "Drop on cotton swab, test, then spot",
+      "equipment": "3% drugstore H₂O₂, cotton swabs",
+      "dwellTime": "1–2 minutes",
+      "instruction": "For residual pink or brown shadow: test a drop of 3% hydrogen peroxide on a hidden area (back of a cushion, inside seam) first — upholstery dyes vary wildly and peroxide can lighten the fabric itself. If the test passes: dab peroxide on a cotton swab, touch the stain, watch for lift. Flush cool with a damp cloth as soon as the shadow clears."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "NSD Rinse (Cloth)",
+      "technique": "Remove chemistry residue",
+      "equipment": "Neutral Synthetic Detergent on damp cloth",
+      "dwellTime": "1 minute",
+      "instruction": "Damp cloth with NSD, press onto the treated area to pull out residual enzyme and peroxide. Extract hard with a dry weighted towel. Residual chemistry trapped in upholstery + stuffing = odor, yellowing, and long-term fabric damage."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Fan Dry + Weighted Towel",
+      "technique": "Slow dry, no heat, prevent water-ring",
+      "equipment": "Fan, heavy dry towels",
+      "dwellTime": "4–12 hours",
+      "instruction": "Place a folded dry towel on the spot with a weight for 30 minutes to keep pulling moisture up. Point a fan at the area. Air-dry thoroughly — no hair-dryer, no direct sun (fades dye), no sitting on it. Upholstery dries slowly because stuffing holds moisture; rushing with heat causes fabric-to-frame water rings and musty odor."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Check the cleaning code (W/S/WS/X). S or X = specialist. Test hidden area.",
+      "2. Blot fresh / scrape dry — lift bulk before any liquid.",
+      "3. Cold water on damp cloth, press-and-lift, extract with dry weighted towel between cycles.",
+      "4. Liquid Protein Spotter on cloth for residue. Dwell 5–10 min. Extract.",
+      "5. 3% H₂O₂ on swab for shadow — test hidden area first, flush cool via cloth.",
+      "6. NSD rinse via cloth, aggressive extraction.",
+      "7. Fan-dry with weighted towel. No heat, no sun, several hours."
     ],
     "products": [
-      "Protein Formula",
+      "Liquid Protein Spotter (PRENETT B or equivalent)",
+      "Hydrogen Peroxide 3%",
       "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Heavy absorbent white towels, wet/dry vac if available"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout — hot water sets protein and can damage dye + backing",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein",
-      "Avoid over-wetting — extract excess moisture to prevent backing/foam damage"
+      "Never pour liquid on upholstery — stuffing holds moisture indefinitely",
+      "Never skip the hidden-area test — upholstery dyes often not colorfast",
+      "Never use heat to speed drying — water rings, musty odor, dye fade",
+      "Never sprinkle enzyme powder on upholstery — cannot fully remove",
+      "Cleaning-code X or S = professional only"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Check the care code FIRST",
-      "instruction": "Find the manufacturer's tag (usually in a seam under a cushion). One letter: W = water-safe, S = solvent-only, WS = both okay, X = vacuum only. On S or X, stop and call a pro — water can ring or shrink the fabric worse than blood. On W or WS, continue. No tag? Treat as S and escalate."
+      "agent": "Find the Cleaning Code First",
+      "instruction": "Most upholstered furniture has a cleaning code on a tag under the cushion. W means water-safe. S means solvent-only (no water). WS means either. X means vacuum only, call a pro. If it's S or X, stop here and call an upholstery cleaner — home water methods will damage the fabric.",
+      "safetyNote": "Don't guess the cleaning code — code X + water = permanent fabric damage."
     },
     {
       "step": 2,
-      "agent": "Protein rules: cold only, no alcohol",
-      "instruction": "Two hard rules for blood: (1) no hot water — heat denatures hemoglobin and cross-links it into the fiber permanently. Cold at every step. (2) No alcohol-based products (hand sanitizer, rubbing alcohol, alcohol sprays) — alcohol sets protein beyond even professional recovery. If you've already used alcohol, tell the pro in step 9 — it changes their approach."
+      "agent": "Test a Hidden Area Before You Touch the Stain",
+      "instruction": "Before you apply anything to the visible stain, test on a hidden spot — back of a cushion, inside a seam. Dampen a cloth with cold water, press it on the hidden area for 30 seconds. Check for color transfer or a water ring after it dries. If either happens, stop and call a pro."
     },
     {
       "step": 3,
-      "agent": "Patch test on a hidden section",
-      "instruction": "Dab a drop of Dawn + cold water solution on the back of a cushion or the hidden frame. Blot with a white cloth after 60 seconds. If the fabric holds color, proceed. If dye transfers, skip to step 9 — home chemistry will lighten the upholstery dye."
+      "agent": "Blot, Don't Rub — Ever",
+      "instruction": "Fresh blood: press a folded white towel straight down on the stain. Lift, move to a dry section, press again. No rubbing — rubbing works blood sideways into the weave and into the stuffing underneath. Dried blood: scrape the crust off with the edge of a spoon before any liquid."
     },
     {
       "step": 4,
-      "agent": "Blot with a cold damp cloth — don't rub, don't saturate",
-      "instruction": "Dip a white cloth in cold water, wring nearly dry, press onto the stain under firm pressure. Lift, re-wet, blot again. Work outside-in. Keep going — fresh sections of cloth each time — until the cloth stops picking up red. Rubbing forces blood deeper into the foam below; blotting only pulls it back out."
+      "agent": "Cold Water, Damp Cloth Only",
+      "instruction": "Lightly dampen a clean white cloth with cold water. The cloth should feel cool and slightly damp, not wet. Press onto the stain, lift, rotate to a clean section, repeat. Blood transfers onto the cloth. Never pour water on the upholstery — the stuffing underneath will hold it for hours and cause water rings and musty smell."
     },
     {
       "step": 5,
-      "agent": "Dawn dish soap + cold water — damp cloth only",
-      "instruction": "Mix one tablespoon of Dawn with two cups of cold water in a bowl. Dip a white cloth, WRING NEARLY DRY, press on the stain. Let sit 5 minutes, then blot with a clean damp cloth. Repeat 2–3 cycles. Dawn + cold water is the home equivalent of a digestant — it emulsifies cell lipids around the protein so cold water can rinse the protein out."
+      "agent": "Dry Weighted Towel Between Passes",
+      "instruction": "After every 3–4 cloth presses, switch to a thick DRY towel. Press down hard — put a book or heavy pan on top for 30 seconds. The dry towel pulls moisture out before it reaches the stuffing. Check the dry towel for blood — you'll often see it transferring. Swap to a fresh section, repeat."
     },
     {
       "step": 6,
-      "agent": "3% hydrogen peroxide — light-colored upholstery only",
-      "instruction": "If a pink or brown shadow remains AND the fabric is light (beige, white, cream): dab 3% hydrogen peroxide on a clean white cloth and press onto the stain. Let sit 3–5 minutes, blot. Peroxide lightens hemoglobin pigment. Skip this step on dark or patterned upholstery — the patch test is your safety gate.",
-      "safetyNote": "Never mix peroxide with ammonia or bleach. Never exceed 5 minutes dwell on upholstery — longer can lift fiber dye."
+      "agent": "Enzyme Pretreat — Dissolved, on Cloth",
+      "instruction": "For stubborn shadow: dissolve an enzyme pretreat (OxiClean Versatile, Biz, or Zout) in cold water per the label. Apply to a cloth, press onto the stain, let sit 10 minutes, extract with a dry weighted towel. Never sprinkle powder directly on upholstery — it gets into the weave and is almost impossible to fully remove."
     },
     {
       "step": 7,
-      "agent": "Fan-dry — no hair dryer, no heat",
-      "instruction": "Blot until no more moisture transfers to a dry cloth. Point a room fan at the area for 4–8 hours. Good airflow prevents mildew inside the cushion and water rings at the edges. NEVER use a hair dryer or iron — even a brief blast of heat sets any residual protein into the fabric permanently."
+      "agent": "Hydrogen Peroxide 3% on a Swab — After Hidden Test",
+      "instruction": "Test a drop of 3% hydrogen peroxide on that same hidden area first. If the fabric doesn't lighten, dab peroxide on a cotton swab and touch the stain. Watch closely — peroxide can lift blood in under a minute. Flush with a cool damp cloth the moment the shadow clears."
     },
     {
       "step": 8,
-      "agent": "Daylight inspect — repeat if shadow remains",
-      "instruction": "Once fully dry, inspect in natural light. Blood often looks gone when damp and returns as a tan shadow when dry. If you see one, repeat steps 5–7 once more. Two rounds is the home ceiling. If a brown halo persists, the protein has cross-linked — escalate."
+      "agent": "Fan Dry, Don't Sit on It",
+      "instruction": "Point a fan at the spot. Put a folded dry towel on it with something heavy for 30 minutes. Let the cushion air-dry fully before sitting on it — several hours to overnight. Sitting on damp upholstery presses moisture into the stuffing and can create a permanent water ring on the outside fabric. No hair dryers, no heat — dries unevenly and fades dye."
     },
     {
       "step": 9,
-      "agent": "Escalate to a professional upholstery cleaner",
-      "instruction": "If care code is S or X, the patch test failed, alcohol was applied, or the stain survived two home rounds, call a pro. Tell them: \"Blood on [W/WS/S/X/unknown] upholstery, treated with Dawn + cold water only + [peroxide if used]. NO hot water, NO alcohol [or: alcohol WAS applied — flag this], damp-cloth only.\" That handoff lets them jump straight to protein digestants + reducing agents + low-moisture extraction."
+      "agent": "Escalate on Odor or Ring",
+      "instruction": "Once fully dry, check: any musty smell, water ring around the cleaned spot, or visible stain remaining? Call an upholstery cleaner. Tell them: \"Blood on upholstery, cleaning code [W/WS], age [time], home-treated with cold water + enzyme pretreat + 3% hydrogen peroxide on a cloth, no pouring, no heat.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. For stubborn stains on whites: apply 3% hydrogen peroxide directly — test colorfastness first, 5 min dwell time",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. Find the furniture cleaning code. S / X = professional only.",
+      "2. Test cold water + any product on a hidden area (back of cushion) first.",
+      "3. Blot fresh / scrape dry bulk — no rubbing.",
+      "4. Cold water on a damp cloth, press-and-lift. Never pour.",
+      "5. Dry weighted towel between wet passes to pull moisture up.",
+      "6. Shadow: enzyme pretreat dissolved in cold water, applied via cloth, 10-min dwell.",
+      "7. Stubborn shadow: 3% hydrogen peroxide on a swab after hidden test.",
+      "8. Fan-dry fully before sitting on it. No heat."
     ],
     "products": [
-      "Dawn dish soap",
-      "cold water",
-      "hydrogen peroxide 3%"
+      "Cold water, clean white cloths",
+      "Enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout) dissolved in cold water",
+      "3% hydrogen peroxide + cotton swabs",
+      "Thick dry towels + something heavy"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Cleaning-code S or X. Water ring after drying. Musty odor. Two home rounds without clearing. Call an upholstery cleaner.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "NEVER use alcohol on blood — alcohol permanently sets protein stains",
-      "Always test cleaning solution on a hidden area first"
+      "Never pour liquid on upholstery — stuffing holds moisture and causes rings",
+      "Never skip the hidden-area colorfast test — upholstery dyes often lift",
+      "Never sprinkle enzyme powder on upholstery",
+      "No heat drying — rings, fade, musty odor"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never pour liquid on upholstery — stuffing failure mode",
+      "Never skip hidden-area colorfast test — most upholstery dye is not fully fast",
+      "Never apply heat to damp upholstery — water rings + musty odor",
+      "Never sprinkle enzyme powder directly — cannot fully remove",
+      "Cleaning-code S or X: home work not safe"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "Upholstery blends vary — test every product on a hidden area first",
+      "Stuffing holds moisture far longer than the visible fabric — extraction is non-negotiable",
+      "Dye colorfastness is not a given on upholstery — peroxide and enzyme can lighten fabric"
     ]
   },
+  "materialWarnings": [
+    "Check the W/S/WS/X cleaning code on the tag first",
+    "Test every product on a hidden area (back of cushion) before the stain",
+    "Transfer liquid via cloth only — never pour",
+    "No heat drying — musty odor and water rings"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is blood on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "Cleaning-code S or X, water ring after drying, musty odor, blood older than 24–48 hours on porous upholstery, or two home rounds without clearing.",
+    "whatToTell": "\"Blood on upholstery, cleaning code [W/WS/S/X], age [time], home-treated with cold water + enzyme pretreat + 3% hydrogen peroxide on a cloth, no pouring, no heat.\"",
+    "specialistType": "professional upholstery cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
+      "What's the furniture cleaning code (W, S, WS, X)?",
       "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "What's the fabric — cotton, polyester blend, microfiber, velvet, leather?",
+      "Any hot water or heat already applied?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
-  },
-  "difficulty": 4,
-  "timeEstimate": "5-15 minutes",
-  "lastValidated": "2026-03-23"
+    "modifierNotes": "Cleaning code X or S = specialist every time. Velvet and silk-blend upholstery escalates early. Synthetic microfiber + W code + fresh blood is the easiest DIY case."
+  }
 }

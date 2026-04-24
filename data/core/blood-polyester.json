@@ -1,142 +1,183 @@
 {
   "id": "blood-polyester",
   "title": "Blood on Polyester",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "stainChemistry": "Classification: Protein. Blood stains consist of hemoglobin (iron-containing protein), albumin, and other plasma proteins. Hemoglobin's heme group (iron-porphyrin complex) produces the red-brown color. Heat denatures blood proteins, causing irreversible cross-linking with fibers — making the stain permanent. On polyester (synthetic fiber): polyester is chemically resistant and non-absorbent — blood sits on the fiber surface and bonds via weak hydrogen bonds and hydrophobic interactions rather than absorbing deeply as it does on cotton. Treatment: cold water flush to prevent heat-setting, followed by alkaline Protein digestion to hydrolyze peptide bonds. Polyester's chemical resistance means enzyme-based digestants are safe and effective on this fiber.",
-  "whyThisWorks": "Polyester doesn't absorb blood as deeply as natural fibers — the stain is more surface-bound, making early treatment especially effective. Protein (digestant) hydrolyzes the peptide bonds in hemoglobin and other blood proteins. NSD removes digested protein particles. Acetic acid neutralizes alkaline residue. Unlike wool and silk, polyester can fully tolerate enzyme-based digestants — no fiber damage risk.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "10–25 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "blood",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": ["protein", "polyester", "heat-sensitive", "enzyme-safe"],
+    "freePreview": true
+  },
+  "stainChemistry": "Blood is a protein stain — hemoglobin, fibrin, albumin. Polyester is a chemically durable synthetic: it tolerates enzymes, 3% hydrogen peroxide, and neutral detergents at room temperature. Heat is the constraint — polyester softens above ~170°F and sets protein into the fiber permanently at any hot-water or dryer temperature. Unlike cotton, polyester is hydrophobic, so water-soluble protein washes out faster than it rinses IN, which is why cold-water flush alone clears a fresh stain.",
+  "whyThisWorks": "Cold water halts protein setting and flushes soluble hemoglobin out before it can bind. Liquid Protein Spotter (enzymatic digestant) then breaks peptide bonds on residual stain — polyester handles protease enzymes safely. 3% hydrogen peroxide oxidizes residual iron-porphyrin pigment to colorless products. NSD removes all chemistry residue before any heat — critical because polyester is the fiber most vulnerable to heat-setting residual chemistry.",
+  "defaultAssumption": "Assume the stain is fresh unless the user says otherwise. Polyester is forgiving on fresh blood; heat-set or aged stains escalate faster than cotton.",
   "spottingProtocol": [
     {
       "step": 1,
-      "agent": "Cold pre-flush + age classification",
-      "technique": "Flush from reverse; classify on spotting board",
-      "dwellTime": "0 (immediate)",
-      "instruction": "Immediately flush the reverse side with cold water only. Classify on the spotting board: fresh (bright red, wet), dried (brown, crusted), or set (yellow-brown, fixed). Heat at any stage cross-links hemoglobin and albumin into the polyester — this is the #1 irreversible error."
+      "side": "wet",
+      "agent": "Cold Water",
+      "technique": "Flush from the back",
+      "equipment": "Spray bottle, white cotton terry towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Work from the back of the fabric. Flood cold water and blot hard from underneath — hydraulic pressure pushes soluble hemoglobin out the way it came in. Polyester is hydrophobic, so fresh blood often rinses out almost completely in this step alone. Keep going until the towel comes up clear or pale pink. Cold only — hot water cooks the protein into polyester permanently."
     },
     {
       "step": 2,
-      "agent": "Protease digestant",
-      "technique": "Tamp lightly with soft spotting brush",
-      "dwellTime": "Fresh: 5–10 min · Dried/set: 20–30 min with re-tamping every 8–10 min",
-      "instruction": "Apply bacterial protease or papain enzyme (pH 7.0–8.0, strictly below 100°F). Tamp lightly with a soft spotting brush. Monitor for dye bleed on the polyester; if migration appears, flush cold and note for later wet-side reduction."
+      "side": "wet",
+      "agent": "Protein Spotter",
+      "technique": "Apply liquid directly, tamp",
+      "equipment": "Liquid Protein Spotter (PRENETT B / protease-based digestant)",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Apply liquid Protein Spotter directly to the stained area. PRENETT B or any protease-based enzymatic digestant is the pro canonical — a clear liquid, not a powder. Tamp gently with a soft bristle brush. Protease hydrolyzes peptide bonds on residual protein. If all you have is a powder enzyme pre-soak, dissolve it fully in cold water before applying — never sprinkle dry powder on fabric."
     },
     {
       "step": 3,
-      "agent": "NSD (Neutral Synthetic Detergent)",
-      "technique": "Controlled small circles on spotting board",
-      "dwellTime": "3–5 min",
-      "instruction": "Apply NSD and work in controlled small circles. If the fiber begins to pill or distort under light tension, cease all mechanical action immediately and switch to chemistry-only — polyester overworking causes permanent fiber damage."
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Oxidize residual pigment",
+      "equipment": "3% drugstore H₂O₂",
+      "dwellTime": "2–5 minutes",
+      "instruction": "For any remaining pink or brown shadow: apply 3% hydrogen peroxide drop-by-drop. Polyester tolerates peroxide well, but dyed polyester — especially reactive-dyed activewear — can lose color under prolonged contact. Test an inside seam first if the garment is dark or vivid."
     },
     {
       "step": 4,
-      "agent": "10x loupe inspection",
-      "technique": "Incident-light visual check",
-      "dwellTime": "n/a",
-      "instruction": "Protein residue must appear translucent and matte under magnification. Any remaining red gloss or opacity means the enzyme stage is incomplete — return to step 2. Do not advance to the acid side with active protein present."
+      "side": "wet",
+      "agent": "NSD Flush",
+      "technique": "Remove chemistry residue",
+      "equipment": "Neutral Synthetic Detergent",
+      "dwellTime": "1 minute",
+      "instruction": "Flush with NSD to remove all enzyme and peroxide residue. Work from the back. Blot — do not rub. Residual chemistry under dryer heat is how polyester gets faintly yellow shadows later."
     },
     {
       "step": 5,
-      "agent": "Hard prohibitions (operator discipline)",
-      "technique": "Observation only — confirm none of these have been applied",
-      "dwellTime": "n/a",
-      "instruction": "No heat. No chlorine bleach before full enzyme digestion. No alcohol-based products. No vigorous agitation on lightweight polyester. All cause permanent setting, yellowing, or fiber damage."
-    },
-    {
-      "step": 6,
-      "agent": "TAD → POG → rust spotter chain (only if oxidized halo)",
-      "technique": "Sequential; never reverse order",
-      "dwellTime": "TAD 2 min · POG per product · rust spotter per product",
-      "instruction": "For iron-oxidized halo (orange-brown tone): apply tannin/age remover (TAD), dwell 2 min, flush. Follow with POG on reverse if needed. Use rust spotter LAST if metallic tones remain. Never reverse this order — it drives oxidized iron deeper into the fiber."
-    },
-    {
-      "step": 7,
-      "agent": "Acetic neutralization",
-      "technique": "Dropper apply, blot dry",
-      "dwellTime": "1–2 min",
-      "instruction": "Dilute 28% acetic acid 1:10 with cold water. Apply, dwell 1–2 min, blot dry with clean absorbent toweling. This restores fiber pH and prevents post-spot browning on polyester."
-    },
-    {
-      "step": 8,
-      "agent": "Final judgment + handoff",
-      "technique": "Loupe + incident-light inspection; log if escalating",
-      "dwellTime": "n/a",
-      "instruction": "Under loupe and incident light the fabric must show zero discoloration, stiffness, or halo. If any protein shadow or stiffness remains after the full enzyme → TAD/POG chain, the stain has cross-linked. Escalate to concentrated reducing agents (leuco-methylene blue) or full wet-cleaning line. Log: \"Blood on polyester, aged, protease + NSD + TAD/POG chain, residual shadow — recommend reduction.\""
+      "side": "wet",
+      "agent": "Final Rinse",
+      "technique": "Cool rinse, cool wash after",
+      "equipment": "Cold running water, standard laundry",
+      "dwellTime": "Until rinse runs clean",
+      "instruction": "Rinse under cold running water until the water runs clear. Then launder on the polyester setting (cold to warm max — never hot) with regular detergent. Air-dry or tumble on low — polyester softens above ~170°F."
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein (digestant spotter) to the stain and tamp gently with a spotting brush. Dwell 5–10 minutes. This digestant breaks down blood, milk, egg, and body fluid proteins. Work from the edge toward the center.",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently. Dwell 3–5 minutes. This NSD removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray.",
-      "3. Apply 28% Acetic acid (diluted 1:10) to neutralize any remaining alkaline residue and restore the fabric's natural state. Dwell 1–2 minutes. Blot dry with clean absorbent cloth."
+      "1. Cold water flush from the back. Polyester clears fresh blood fast.",
+      "2. Liquid Protein Spotter (PRENETT B or protease digestant). Tamp. Dwell 5–10 min.",
+      "3. 3% hydrogen peroxide drop-by-drop for any shadow. Test inside seam on dyed polyester.",
+      "4. NSD flush — remove all enzyme and peroxide residue before any heat.",
+      "5. Cool rinse, cool-to-warm laundry. Never hot water, never hot dryer — polyester softens."
     ],
     "products": [
-      "Protein (digestant spotter)",
-      "NSD (Neutral Synthetic Detergent)",
-      "28% Acetic acid (diluted 1:10)"
+      "Liquid Protein Spotter (PRENETT B or equivalent)",
+      "Hydrogen Peroxide 3%",
+      "NSD (Neutral Synthetic Detergent)"
     ],
-    "temperature": "cold — heat denatures blood proteins and cross-links them to the polyester fiber permanently. Never use hot water or heat at any stage until the stain is fully removed.",
+    "temperature": "cold through spotting; cold-to-warm laundry only — never hot",
     "warnings": [
-      "Using hot water — permanently sets blood protein onto polyester fiber.",
-      "Rubbing instead of blotting — spreads the stain.",
-      "Not testing in an inconspicuous area first.",
-      "Using too aggressive a chemical without checking surface compatibility.",
-      "Never use alcohol or alcohol-based products — permanently sets protein stains."
+      "Never use hot water on polyester with blood — cooks protein into the fiber and softens polyester",
+      "Never dry on high heat with residual chemistry — yellow shadows set in",
+      "Test 3% H₂O₂ on inside seam on vivid / activewear polyester",
+      "Never sprinkle enzyme powder dry — dissolve in cold water first"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Act Fast — Cold Water Only",
+      "instruction": "Fresh blood on polyester rinses out faster than on cotton — polyester doesn't soak up water the way natural fibers do. But the clock still matters. You have minutes, not hours. Cold water only. Hot water cooks the protein in AND softens the fiber itself.",
+      "safetyNote": "Never use hot water, a warm dryer, or an iron on a blood stain that's still visible."
+    },
+    {
+      "step": 2,
+      "agent": "Flush from the Back",
+      "instruction": "Hold the fabric with the BACK of the stain under cold running water. Let it flow through the fabric the way it came out of it. Keep going until the water running off runs clear or only faintly pink. On polyester, this step alone often clears a fresh stain completely."
+    },
+    {
+      "step": 3,
+      "agent": "Enzyme Pretreat — Dissolve in Cold Water First",
+      "instruction": "If any shadow remains, use an enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout). Dissolve powder in cold water per the label — never sprinkle powder on fabric. Apply to the stain, let sit 10 minutes. The enzymes digest residual protein."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Cold Water Spot",
+      "instruction": "A drop of clear Dawn on the spot. Work in gently with a fingertip. Polyester fibers are smooth — don't need hard scrubbing. Rinse cool."
+    },
+    {
+      "step": 5,
+      "agent": "Hydrogen Peroxide 3% for Shadows",
+      "instruction": "For any pink or brown shadow left: dab 3% drugstore hydrogen peroxide on the spot. Watch closely — lift in under a minute as the peroxide oxidizes residual iron. Rinse cool the moment it's gone. Test an inside seam first if the polyester is dark or neon."
+    },
+    {
+      "step": 6,
+      "agent": "Air Dry or Tumble LOW",
+      "instruction": "Air-dry is safest. If you must tumble, use the LOW setting only — polyester softens above ~170°F and any residual protein sets permanently. Inspect in daylight before machine-drying."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate to a Dry Cleaner",
+      "instruction": "If the blood's been through a hot wash or dryer, is older than 24–48 hours, or survives two home rounds — take it to a dry cleaner. Tell them: \"Blood on polyester, age [fresh / overnight / older], treated at home with cold water, enzyme pretreat, and 3% hydrogen peroxide. No heat applied.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse with cold water right away. Blot with a clean white cloth — don't rub. Cold water keeps the stain from setting; rubbing pushes it deeper.",
-      "2. Mix a small squirt of mild dish soap into cold water. Blot the solution onto the stain.",
-      "3. Let it sit for 5–10 minutes. Don't use any heat.",
-      "4. Blot with a clean white cloth until the stain fades.",
-      "5. Rinse with cold water and air dry — don't use a dryer until the stain is gone."
+      "1. Cold water flush from the back of the fabric. Polyester clears fresh blood fast.",
+      "2. Enzyme pretreat dissolved in cold water — never sprinkle powder dry.",
+      "3. Drop of Dawn, work in gently, rinse cool.",
+      "4. For remaining shadow: 3% hydrogen peroxide, rinse as soon as it lifts. Test inside seam first on dark or vivid polyester.",
+      "5. Air dry or tumble LOW only — polyester softens above 170°F."
     ],
     "products": [
-      "Dawn NSD (or similar)",
       "Cold water",
-      "Clean white cloths",
-      "OxiClean Versatile Stain Remover (for set stains)",
-      "Zout Triple Enzyme Stain Remover (for stubborn protein stains)"
+      "Enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout) — dissolved in cold water",
+      "Dawn dish soap",
+      "3% hydrogen peroxide"
     ],
-    "whenToStop": "If cold water and NSD don't fully remove it, try an Protein (OxiClean, Zout) — follow product label. On whites/colorfast fabric, a weak 3% H₂O₂ solution (1:3 with water) can help. Test on a hidden seam first. If stain survives two treatment rounds, take to a professional.",
+    "whenToStop": "Stop if the stain has been through a hot wash / dryer, is older than 24–48 hours, or survives two home rounds. Take it to a dry cleaner.",
     "warnings": [
-      "Test any cleaning solution on a hidden seam or inside hem first.",
-      "Check for colorfastness before using H₂O₂.",
-      "Avoid heat until the stain is completely gone.",
-      "Never use hot water on a protein stain — heat permanently sets it."
+      "No hot water — cooks protein AND softens polyester",
+      "No high-heat drying — yellow-shadow risk from any residual chemistry",
+      "Test 3% hydrogen peroxide on inside seam on dark or neon polyester",
+      "Dissolve enzyme powder in cold water first — never apply dry"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never use hot water — permanently sets blood protein into polyester.",
-      "Never use alcohol or alcohol-based products — permanently sets protein stains.",
-      "Never put in the dryer until stain is fully removed.",
-      "Never rub — spreads the stain."
+      "Never use hot water on polyester — softens the fiber + sets protein permanently",
+      "Never dry on high heat with any residual chemistry — yellows over time",
+      "Never sprinkle enzyme powder dry on fabric — always dissolve in cold water first"
     ],
     "fiberSensitivities": [
-      "Polyester (synthetic fiber) tolerates enzyme-based digestants, peroxide, and most cleaning agents well.",
-      "Polyester is heat-sensitive at high temperatures — avoid hot water and high-heat drying.",
-      "Polyester can develop a permanent gray haze from heat-set protein — treat cold and quickly."
+      "Polyester tolerates enzymes, 3% H₂O₂, and neutral detergent at room temperature",
+      "Heat-sensitive above ~170°F — never hot laundry, always low dryer",
+      "Dyed/vivid polyester can lose color under prolonged peroxide — test inside seam first"
     ]
   },
+  "materialWarnings": [
+    "No hot water or high-heat drying — polyester softens + protein sets",
+    "Test 3% hydrogen peroxide on inside seam for dark / neon polyester",
+    "Always dissolve enzyme powder in cold water first"
+  ],
   "escalation": {
-    "when": "If Protein and peroxide do not fully resolve the blood stain on polyester, the protein has likely cross-linked into the fiber. Professional spotting with concentrated agents and spotting board equipment achieves results home methods cannot match. Take to a professional dry cleaner and specify the stain type.",
-    "whatToTell": "We've treated the blood on your garment. Blood sets deeper with heat and time — the earlier it's treated, the better the result.",
-    "specialistType": "dry cleaner"
+    "when": "Heat-set by hot wash or dryer, older than 24–48 hours, or survives two home rounds.",
+    "whatToTell": "\"Blood on polyester, age [fresh / overnight / older], treated at home with cold water, enzyme pretreat, and 3% hydrogen peroxide. No heat applied.\"",
+    "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain — was it treated immediately or has it been sitting?",
-      "Was the garment washed or put in the dryer before this treatment attempt?",
-      "Is the polyester a light color or dark/heavily dyed?",
-      "Has any product already been applied to the stain?"
+      "How old is the stain?",
+      "Has the garment been through a hot wash, dryer, or iron?",
+      "Is the polyester dark / neon / activewear dye?",
+      "What's the garment — shirt / carpet / upholstery / other?"
     ],
-    "modifierNotes": "Fresh blood on polyester responds very well to cold water alone due to polyester's low absorption. A heat-set stain (dryer) is significantly harder — the protein has thermally cross-linked to the fiber. Enzyme-based spotters (Zout, OxiClean) are fully safe on polyester, unlike on wool or silk. Dark polyester: test peroxide in a hidden area before using."
-  },
-  "difficulty": 3,
-  "timeEstimate": "5–15 minutes",
-  "lastValidated": "2026-03-23"
+    "modifierNotes": "Polyester is the fiber most sensitive to heat — any hot-water or hot-dryer exposure on a blood stain escalates to pro. Fresh + no heat is almost always a DIY win."
+  }
 }

@@ -1,133 +1,202 @@
 {
   "id": "blood-carpet",
   "title": "Blood on Carpet",
+  "stainType": "protein",
   "stainFamily": "protein",
-  "surface": "synthetic carpet (nylon/polyester)",
-  "sector": "home",
+  "surface": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "stainChemistry": "Classification: Protein. Blood stains consist of hemoglobin (iron-containing protein), albumin, and other plasma proteins. Hemoglobin's heme group (iron-porphyrin complex) produces the red-brown color. Heat denatures blood proteins, causing irreversible cross-linking with fibers — making the stain permanent. On synthetic carpet (nylon/polyester): synthetic fiber is chemically resistant to most cleaning agents. Protein stains bond to fibers via peptide-to-fiber hydrogen bonds and hydrophobic interactions. Heat denatures the protein, cross-linking it to the substrate and making removal extremely difficult. Treatment: cold water flush to prevent heat-setting, followed by alkaline Protein digestion to hydrolyze peptide bonds.",
-  "whyThisWorks": "Blood soaks into carpet and its padding — surface cleaning won't reach the full stain. Cold water is critical because heat permanently sets the protein. Protein (digestant) hydrolyzes the peptide bonds holding blood proteins to the carpet fiber. NSD flushes the digested particles away, and acetic acid neutralizes any alkaline residue. Unlike wool and silk, synthetic carpet can tolerate enzyme-based digestants safely.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–40 minutes (plus extraction time)",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "blood",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": ["protein", "carpet", "no-saturation", "pad-risk", "fiber-dependent"],
+    "freePreview": true
+  },
+  "stainChemistry": "Blood on carpet is the same protein chemistry as on fabric — hemoglobin, fibrin, albumin — but carpet construction adds the real risk. Face yarn (nylon, olefin, polyester) is what the stain sits on; backing latex and pad underneath are what fail first if you over-wet. Pooled water or solvent sinks through the pile into the pad, where it can delaminate the carpet, grow mildew, and leave odor for weeks. Wool carpet is the fragile branch — enzymatic digestants that lift blood on cotton also attack wool keratin, and wool tolerates none of the same temperatures. Cold water + cloth-transfer + aggressive extraction is the rule.",
+  "whyThisWorks": "Speed, cold water, and extraction between every wet pass. Fresh blood comes up with cold water + blotting if you catch it in the first 30 minutes. Residual stain gives way to enzymatic digestion on synthetic face yarn. The invisible failure mode is backing / pad damage from pooled liquid — transfer-from-cloth only. Wool carpet escalates early because the safe-for-cotton protocol is dangerous on wool.",
+  "defaultAssumption": "Assume nylon or olefin face yarn unless the user says wool. Synthetic face yarn gives the widest chemistry latitude; wool carpet routes to a professional much earlier.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Fiber Check",
+      "technique": "Synthetic vs wool decision",
+      "equipment": "Carpet label or tuft test",
+      "dwellTime": "brief",
+      "instruction": "Ask: is the carpet wool, or is it synthetic (nylon, olefin, polyester)? Wool carpet + blood = call a pro now. Most enzyme digestants damage wool keratin, and wool tolerates none of the chlorine or high-peroxide steps that synthetic face yarn handles fine. Synthetic face yarn = proceed."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water Blot",
+      "technique": "Cloth transfer, extract between passes",
+      "equipment": "White terry towels, cold water spray bottle, wet/dry vacuum if available",
+      "dwellTime": "1–2 min per pass",
+      "instruction": "Apply cold water with a damp cloth to the stain — never pour or saturate. Press, lift, rotate to a clean section, repeat. After every 3–4 presses, switch to a DRY towel and press down hard (a weight or your knee) to pull moisture up and out. Extract with a wet/dry vacuum if you have one. Hemoglobin transfers onto the cloth. Two or three wet-then-dry cycles often clear a fresh stain entirely."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Protein Spotter",
+      "technique": "Apply liquid to a cloth, transfer, extract",
+      "equipment": "Liquid Protein Spotter or dissolved enzyme pretreat",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Synthetic face yarn only. Apply liquid Protein Spotter (PRENETT B or dissolved enzyme pretreat — never dry powder on carpet) to a damp cloth. Press onto the stain, lift, rotate, repeat. Let the applied spotter dwell 5–10 min. Extract aggressively with a dry weighted towel before the next step. Pool + pad = odor + mildew."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drops on cloth only, watch the shadow",
+      "equipment": "3% drugstore H₂O₂",
+      "dwellTime": "1–3 minutes",
+      "instruction": "For pink or brown shadow on synthetic face yarn: dab 3% hydrogen peroxide onto a clean white cloth — do not pour onto the carpet. Press onto the shadow. Watch closely. Peroxide will lighten the stain and in some cases lighten the face yarn color too — test a hidden section first, and flush the moment the shadow is gone."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "NSD Cloth + Extract",
+      "technique": "Remove chemistry, pull moisture",
+      "equipment": "Neutral Synthetic Detergent, wet/dry vac or heavy towels",
+      "dwellTime": "1 min",
+      "instruction": "Damp cloth with NSD, press onto the treated area to remove residual enzyme and peroxide. Extract thoroughly with a dry weighted towel. Residual chemistry in the pad is what causes long-term odor and mildew."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Fan Dry + Inspect",
+      "technique": "Weighted towel, fan, no heat",
+      "equipment": "Fan, heavy dry towels",
+      "dwellTime": "4–8 hours",
+      "instruction": "Weight a folded dry towel onto the spot for 30 min to pull residual moisture from the backing. Point a fan at the area. Air-dry fully before walking on it. Inspect for odor (pad contamination), tackiness (residual chemistry), or edge delamination. Any of those = specialist."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein (digestant spotter) to the stain and tamp gently with a spotting brush. Dwell 5–10 minutes. This digestant breaks down blood, milk, egg, and body fluid proteins. Work from the edge toward the center.",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently. Dwell 3–5 minutes. This NSD removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray.",
-      "3. Apply 28% Acetic acid (diluted 1:10) to neutralize any remaining alkaline residue and restore the fabric's natural state. Dwell 1–2 minutes. Blot dry with clean absorbent cloth."
+      "1. Fiber check: wool = escalate. Synthetic = proceed.",
+      "2. Cold water on damp cloth, press-and-lift, extract between passes with dry weighted towel or wet/dry vac.",
+      "3. Liquid Protein Spotter on damp cloth — never pour. Dwell 5–10 min. Extract.",
+      "4. For shadow: 3% H₂O₂ dabbed on a cloth only, never on the carpet. Test hidden area.",
+      "5. NSD cloth + aggressive extraction — chemistry residue in the pad causes odor.",
+      "6. Fan-dry + weighted towel 30 min. Inspect for odor, tackiness, delamination."
     ],
     "products": [
-      "Protein (digestant spotter)",
+      "Liquid Protein Spotter (PRENETT B or equivalent)",
+      "Hydrogen Peroxide 3%",
       "NSD (Neutral Synthetic Detergent)",
-      "28% Acetic acid (diluted 1:10)"
+      "Wet/dry vacuum or heavy absorbent white towels"
     ],
-    "temperature": "cold — heat denatures blood proteins and cross-links them to carpet fibers permanently. Never use hot water or steam extraction until the protein is fully digested and flushed.",
+    "temperature": "cold through all steps — warm water activates backing adhesive",
     "warnings": [
-      "Using hot water on this stain sets it permanently.",
-      "Rubbing instead of blotting spreads the stain.",
-      "Not testing in an inconspicuous area first.",
-      "Over-wetting carpet — excess moisture causes delamination and browning from carpet backing.",
-      "Using too aggressive a chemical without checking surface compatibility."
+      "Never pool or pour liquid on carpet — sinks to backing and pad",
+      "Never use enzyme digestant on wool carpet — attacks wool keratin",
+      "Never skip extraction between wet passes — pad moisture causes odor + mildew",
+      "Never use hot water — activates backing adhesive + sets protein permanently",
+      "Test 3% H₂O₂ on a hidden section before treating the visible stain"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test a hidden spot",
-      "instruction": "Find an inconspicuous patch of the same carpet — inside a closet, under a couch, behind a door. Dab a drop of cold water, then a drop of diluted dish-soap solution. Blot with a white cloth and wait two minutes. If the carpet fiber holds its color and texture, you're safe to treat. If dye transfers to the cloth, stop here and call a professional — home treatment will lighten the carpet."
+      "agent": "Check the Carpet Fiber First",
+      "instruction": "Is the carpet wool or synthetic? If wool (or \"natural fiber blend\"), call a carpet-cleaning pro now — wool is fragile and most blood treatments that work on synthetic carpet damage wool. Synthetic (nylon, olefin, polyester) = proceed with home treatment.",
+      "safetyNote": "Never use enzyme pretreats on wool carpet — enzymes digest wool fiber."
     },
     {
       "step": 2,
-      "agent": "Work cold — no heat at any stage",
-      "instruction": "Blood is a protein. Heat — from hot water, a steam cleaner, a hair dryer, or even a warm room after treatment — cross-links the protein into the carpet fiber and the stain becomes permanent. Use cold tap water only. Do not walk on the area, do not run a fan on it, and do not extract with hot water until the stain is fully gone."
+      "agent": "Act Fast — Cold Water Only",
+      "instruction": "Fresh blood on synthetic carpet comes up with cold water + aggressive blotting, but you have minutes. Hot water cooks the protein AND can activate the carpet backing adhesive. Cold only."
     },
     {
       "step": 3,
-      "agent": "Blot — never rub",
-      "instruction": "Fold a clean white cloth or white paper towel and press straight down on the stain. Lift, move to a clean section of cloth, press again. Work from the outside of the stain toward the center so you don't spread it. Keep blotting until the cloth stops picking up red. Rubbing damages carpet fibers and drives the blood deeper into the pile and the pad underneath."
+      "agent": "Blot, Don't Pour — Ever",
+      "instruction": "Put cold water on a clean white cloth. Press onto the stain, lift, rotate to a clean section, repeat. Do NOT pour water onto the carpet — pooled liquid sinks through to the pad, and that's how you ruin the floor underneath. The cloth transfer is slow and deliberate; that's the right speed."
     },
     {
       "step": 4,
-      "agent": "Cold-water flush (fresh blood) or cold soak (dried blood)",
-      "instruction": "If the blood is fresh: pour a small amount of cold water directly on the stain, then blot immediately. Repeat three to four times. If the blood is dried or crusted: lay a cloth soaked in cold water over the stain for ten minutes to soften it, then blot. Don't flood the carpet — a little water, blotted out, beats a soaking that reaches the pad."
+      "agent": "Extract with a Dry Weighted Towel",
+      "instruction": "After every 3–4 press-and-lift passes, switch to a thick dry towel. Press down hard — put a book or heavy pan on top for 1–2 minutes. The dry towel pulls moisture up and out of the pad. Check it — you'll often see blood on the dry towel too. Swap to a fresh section, repeat until the towel comes up clean."
     },
     {
       "step": 5,
-      "agent": "Dish-soap solution",
-      "instruction": "Mix one teaspoon of clear Dawn (or any mild dish soap) into two cups of cold water. Dip a white cloth in the solution, wring it nearly dry, and blot the stain. Give it five minutes to work, then blot up the soap with a fresh damp cloth. Repeat the soap-and-blot cycle two or three times. Each pass pulls more blood out."
+      "agent": "Enzyme Pretreat — Dissolved, on a Cloth",
+      "instruction": "If a shadow remains on synthetic carpet: dissolve an enzyme pretreat (OxiClean Versatile, Biz, or Zout) fully in cold water per the label. Apply to a cloth, press onto the stain, let dwell 10 minutes, then extract with a dry weighted towel. Never sprinkle powder on carpet — it works into the pile and is nearly impossible to remove."
     },
     {
       "step": 6,
-      "agent": "3% hydrogen peroxide (if color still lingers)",
-      "instruction": "If a pink or brown shadow remains, pour a small amount of drugstore 3% hydrogen peroxide on a white cloth and dab the stain. Let it fizz for three to five minutes, then blot with a clean damp cloth. Peroxide lightens blood pigment — but it can also lighten carpet dye. Test on your hidden patch from step 1 first. On dark or patterned carpet, skip this step and go to step 7.",
-      "safetyNote": "Never mix hydrogen peroxide with ammonia, bleach, or any other cleaner — dangerous gases."
+      "agent": "Hydrogen Peroxide 3% — Only on Cloth",
+      "instruction": "For stubborn shadow on synthetic carpet: dab 3% drugstore hydrogen peroxide onto a clean white cloth — never pour on the carpet. Press onto the stain. Watch closely — peroxide can lighten the carpet face yarn too, so test a hidden corner first. Flush cool-water-on-cloth immediately when the shadow is gone."
     },
     {
       "step": 7,
-      "agent": "Enzyme presoak for stubborn stains",
-      "instruction": "If peroxide isn't safe or isn't enough, use an enzyme cleaner — OxiClean Versatile, Nature's Miracle, or a dedicated carpet enzyme. Mix per label, apply just enough to dampen the stain (not soak), and let it dwell 30–60 minutes. Blot dry. Enzymes digest the protein and are safe on synthetic carpet. Skip this step on wool or silk carpet — enzymes damage natural protein fibers."
+      "agent": "Fan Dry, Don't Walk on It",
+      "instruction": "Point a fan at the spot. Leave a folded dry towel on it with something heavy for 30 min. Let the carpet air-dry fully before walking on the area — several hours. Walking on damp carpet pushes moisture into the pad and into the fibers you just cleaned."
     },
     {
       "step": 8,
-      "agent": "Dry down — prevent wicking overnight",
-      "instruction": "Blot the area until no more moisture transfers to a dry cloth. Stack six to ten sheets of white paper towels over the spot and weigh them down with a heavy book. Leave overnight. This pulls any residual blood up out of the carpet pad before it can wick back to the surface as a ring. Do not vacuum or walk on the area until fully dry."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a professional carpet cleaner",
-      "instruction": "If a stain is still visible after two full rounds of steps 4–7, or if the blood was already dried/set when you started, call a professional carpet cleaner. Tell them: \"Blood stain on [nylon/polyester/wool] carpet, treated with cold water, dish soap, and [peroxide/enzyme]. Residual discoloration remains. The pad may be affected.\" Pros have truck-mounted extraction and stronger digestants that can't be used safely at home."
+      "agent": "Smell Check, Then Call a Pro",
+      "instruction": "Once dry, smell the spot. A musty or chemical smell means moisture reached the pad and you need a professional extraction. Tacky or crunchy pile means residual chemistry is still there. Tell the pro: \"Blood on [synthetic/wool] carpet, age [time], home-treated with cold water + enzyme pretreat + 3% hydrogen peroxide, no pooling, no hot water.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse with cold water right away. Blot with a clean white cloth — don't rub. Cold water keeps the stain from setting; rubbing pushes it deeper into the carpet.",
-      "2. Mix a small squirt of mild dish soap into cold water. Blot the solution onto the stain. Soap breaks down the blood so it lifts off the carpet.",
-      "3. Let it sit for 5–10 minutes. Don't use any heat.",
-      "4. Blot with a clean white cloth until the stain fades. Each pass pulls more stain out.",
-      "5. Blot with a cloth dampened with plain water to rinse. Place a stack of paper towels over the spot and weigh them down. Let it dry completely. Thorough drying prevents the stain from wicking back up from the carpet pad."
+      "1. Check carpet fiber: wool = call a pro. Synthetic = continue.",
+      "2. Cold water on a damp cloth, press-and-lift onto the stain. Never pour.",
+      "3. Extract every 3–4 passes with a dry weighted towel.",
+      "4. For shadow: dissolve enzyme pretreat in cold water, apply via cloth, dwell 10 min, extract.",
+      "5. For stubborn shadow: 3% hydrogen peroxide dabbed on a cloth only, test hidden area first.",
+      "6. Fan-dry fully before walking. Smell-check for musty odor = pro extraction."
     ],
     "products": [
-      "Dawn NSD (or similar)",
-      "Cold water",
-      "Clean white cloths",
-      "OxiClean Versatile Stain Remover (for stubborn or set stains)",
-      "Nature's Miracle or enzyme carpet cleaner (for set stains)"
+      "Cold water, clean white cloths",
+      "Enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout) dissolved in cold water",
+      "3% hydrogen peroxide",
+      "Thick dry towels + something heavy for extraction"
     ],
-    "whenToStop": "Try an enzyme presoak (Biz, OxiClean Versatile) — follow the product label. Apply and let it soak for 30–60 minutes. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment that outperform any home method.",
+    "whenToStop": "Wool carpet, musty smell after drying, tacky / crunchy pile, or two home rounds without clearing it — call a carpet-cleaning professional.",
     "warnings": [
-      "Always blot — never rub. Rubbing damages carpet fibers and spreads the stain.",
-      "Place paper towels over the wet spot and weigh them down to prevent wicking overnight.",
-      "Don't use heat until the stain is completely gone.",
-      "Test any cleaning solution on an inconspicuous area of carpet first.",
-      "Avoid over-wetting — too much liquid soaks through to the pad and causes wicking."
+      "Never pour or pool liquid on carpet — damages backing and pad",
+      "Never use enzyme or peroxide on wool carpet — specialist territory",
+      "Never skip the dry-towel extraction between wet passes",
+      "Never use hot water — activates backing adhesive + sets protein"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never use hot water — permanently sets blood protein into carpet fibers.",
-      "Never rub the stain — spreads it and drives it deeper into the pile.",
-      "Never use alcohol or alcohol-based products — permanently sets protein stains.",
-      "Never over-wet — excess moisture causes delamination and pad browning."
+      "Never pool or pour solvent or water on carpet — backing and pad damage",
+      "Never use enzyme digestant on wool carpet — attacks keratin",
+      "Never skip extraction between wet passes",
+      "Never use hot water on carpet with blood — cooks protein + loosens backing adhesive"
     ],
     "fiberSensitivities": [
-      "Synthetic carpet (nylon/polyester) tolerates most cleaning agents including enzyme digestants.",
-      "Test bleach on colored carpet first — carpet dyes vary widely in bleach tolerance.",
-      "Avoid over-wetting — excess moisture causes delamination and browning from carpet backing."
+      "Synthetic face yarn (nylon, olefin, polyester): enzyme + peroxide safe",
+      "Wool carpet: enzyme-sensitive, peroxide-sensitive, heat-sensitive — escalate early",
+      "Backing latex: dissolves under pooled water or hot liquid — the invisible failure mode"
     ]
   },
+  "materialWarnings": [
+    "Transfer liquid from a cloth — never pour on carpet",
+    "Wool carpet + blood = professional carpet cleaner",
+    "Extract moisture between every wet pass"
+  ],
   "escalation": {
-    "when": "If home treatment doesn't fully remove the blood stain from synthetic carpet: take the item to a professional carpet cleaner and specify the stain type. Professional spotting with concentrated agents and spotting board equipment achieves results home methods cannot match.",
-    "whatToTell": "Good news — we've treated the blood on your carpet. Blood sets deeper with heat and time — the earlier it's treated professionally, the better the result.",
+    "when": "Wool carpet, musty / chemical odor after drying, tacky or crunchy pile after drying, blood older than 24 hours, or two home rounds without clearing it.",
+    "whatToTell": "\"Blood on [nylon / wool / synthetic] carpet, age [time], home-treated with cold water + enzyme pretreat + 3% hydrogen peroxide, no pooling, no hot water.\"",
     "specialistType": "professional carpet cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain — was it treated immediately or has it been sitting?",
-      "Was any heat applied to the area (steam cleaner, hot water) before this treatment?",
-      "Is this natural fiber carpet (wool, cotton) or synthetic (nylon, polyester)?",
-      "How large is the stain and does it appear to have soaked through to the pad?"
+      "What's the carpet fiber — nylon, olefin, polyester, wool, or unknown?",
+      "How old is the stain?",
+      "Any hot water or heat already applied?",
+      "How large is the stain?"
     ],
-    "modifierNotes": "Fresh blood on synthetic carpet responds well to cold water flush alone or with NSD. Dried or heat-set stains require enzyme digestants and longer dwell time. Natural fiber carpet (wool) requires the protein-fiber protocol — no enzymes. Large stains that have soaked into the pad may wick back up after surface treatment and require extraction equipment."
-  },
-  "difficulty": 4,
-  "timeEstimate": "10–20 min",
-  "lastValidated": "2026-03-23"
+    "modifierNotes": "Wool + blood = always pro. Synthetic + fresh = DIY. Backing/pad moisture is the invisible failure mode — cloth transfer + extraction, never pooling."
+  }
 }
