@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import type { Step, ProtocolCard } from '@/lib/types'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { TtsPlayer, ttsAvailable } from '@/lib/tts/client'
 
 interface FullCardModalProps {
   card: ProtocolCard
@@ -11,65 +12,11 @@ interface FullCardModalProps {
   onClose: () => void
 }
 
-/* ── Speech helpers ─────────────────────────── */
-
-function speechAvailable(): boolean {
-  return typeof window !== 'undefined' && 'speechSynthesis' in window
-}
-
-// Map our app lang ('en' | 'es') to the BCP-47 tag the SpeechSynthesis API expects.
-function speechLangFor(lang: string): string {
-  if (lang === 'es') return 'es-ES'
-  return 'en-US'
-}
-
-// Pick the best installed voice for the given lang. Prefer voices whose name
-// contains a quality keyword, then a known-good named voice, then default,
-// then any voice in the language family.
-function pickBestVoice(lang: string, voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | null {
-  if (!voices.length) return null
-  const targetPrefix = lang.split('-')[0].toLowerCase() // "en" or "es"
-
-  const candidates = voices.filter(v => v.lang.toLowerCase().startsWith(targetPrefix))
-  if (!candidates.length) return null
-
-  const QUALITY_KEYWORDS = ['premium', 'enhanced', 'natural', 'neural', 'studio']
-  const NAMED_GOOD = lang.startsWith('es')
-    ? ['mónica', 'monica', 'paulina', 'jorge', 'google']
-    : ['samantha', 'alex', 'google us english', 'microsoft aria', 'microsoft jenny']
-
-  const lower = (s: string) => s.toLowerCase()
-
-  // 1. Quality keyword match
-  const qualityHit = candidates.find(v => QUALITY_KEYWORDS.some(k => lower(v.name).includes(k)))
-  if (qualityHit) return qualityHit
-
-  // 2. Named-good voice
-  const namedHit = candidates.find(v => NAMED_GOOD.some(k => lower(v.name).includes(k)))
-  if (namedHit) return namedHit
-
-  // 3. Default voice in the language family
-  const defaultHit = candidates.find(v => v.default)
-  if (defaultHit) return defaultHit
-
-  // 4. First match
-  return candidates[0]
-}
-
-function speakText(text: string, lang: string, voice: SpeechSynthesisVoice | null, rate = 0.88) {
-  if (!speechAvailable()) return
-  window.speechSynthesis.cancel()
-  const u = new SpeechSynthesisUtterance(text.trim())
-  u.rate = rate
-  u.pitch = 1.0
-  u.lang = speechLangFor(lang)
-  if (voice) u.voice = voice
-  window.speechSynthesis.speak(u)
-}
-
-function stopSpeech() {
-  if (speechAvailable()) window.speechSynthesis.cancel()
-}
+/* ── Speech is handled by the TtsPlayer from lib/tts/client ──
+   Primary provider: xAI TTS via /api/tts (voice Ara).
+   Automatic fallback to browser speechSynthesis if the network or provider
+   blips, so hands-free never goes silent. Tyler picked Ara after a blind
+   A/B bake-off (2026-04-24, AtlasOps 8034). */
 
 /* ── Component ──────────────────────────────── */
 
@@ -77,8 +24,7 @@ export default function FullCardModal({ card, steps, warnings, onClose }: FullCa
   const { lang, t } = useLanguage()
   const [isSpeaking, setIsSpeaking] = useState(false)
   const [activeStepIdx, setActiveStepIdx] = useState<number | null>(null)
-  const [voice, setVoice] = useState<SpeechSynthesisVoice | null>(null)
-  const keepAliveRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const playerRef = useRef<TtsPlayer | null>(null)
   const stepRefs = useRef<(HTMLDivElement | null)[]>([])
 
   // Lock scroll
@@ -94,32 +40,17 @@ export default function FullCardModal({ card, steps, warnings, onClose }: FullCa
     return () => document.removeEventListener('keydown', handler)
   }, [onClose])
 
-  // Voice loading. getVoices() is async on Chrome — must wait for voiceschanged.
+  // Set up the shared TTS player for the modal's lifetime. Wire the end
+  // handler to clear the speaking state so the UI reflects when audio stops.
   useEffect(() => {
-    if (!speechAvailable()) return
-    const updateVoice = () => {
-      const voices = window.speechSynthesis.getVoices()
-      setVoice(pickBestVoice(lang, voices))
-    }
-    updateVoice()
-    window.speechSynthesis.addEventListener('voiceschanged', updateVoice)
-    return () => window.speechSynthesis.removeEventListener('voiceschanged', updateVoice)
-  }, [lang])
-
-  // iOS keep-alive for speechSynthesis
-  useEffect(() => {
-    if (isSpeaking && speechAvailable()) {
-      keepAliveRef.current = setInterval(() => {
-        try { window.speechSynthesis.pause(); window.speechSynthesis.resume() } catch {}
-      }, 12000)
-    }
+    const player = new TtsPlayer()
+    player.onEnd(() => setIsSpeaking(false))
+    playerRef.current = player
     return () => {
-      if (keepAliveRef.current) clearInterval(keepAliveRef.current)
+      player.stop()
+      playerRef.current = null
     }
-  }, [isSpeaking])
-
-  // Cleanup speech on unmount
-  useEffect(() => () => stopSpeech(), [])
+  }, [])
 
   const buildFullText = useCallback(() => {
     const parts: string[] = []
@@ -140,42 +71,37 @@ export default function FullCardModal({ card, steps, warnings, onClose }: FullCa
   }, [card, steps, warnings, t])
 
   const handleReadAloud = useCallback(() => {
-    if (!speechAvailable()) return
+    const player = playerRef.current
+    if (!player) return
     if (isSpeaking) {
-      stopSpeech()
+      player.stop()
       setIsSpeaking(false)
       return
     }
-    speakText(buildFullText(), lang, voice)
     setIsSpeaking(true)
-    // Track when speech ends
-    const check = setInterval(() => {
-      if (!window.speechSynthesis.speaking) {
-        setIsSpeaking(false)
-        clearInterval(check)
-      }
-    }, 500)
-  }, [isSpeaking, buildFullText, lang, voice])
+    void player.play(buildFullText(), lang)
+  }, [isSpeaking, buildFullText, lang])
 
   const handleStepTap = useCallback((idx: number) => {
-    if (!speechAvailable()) return
+    const player = playerRef.current
+    if (!player) return
     const s = steps[idx]
     let text = ''
     if (s.agent) text += s.agent + '. '
     text += s.instruction
     if (s.dwellTime) text += ` Wait ${s.dwellTime}.`
-    speakText(text, lang, voice)
     setActiveStepIdx(idx)
     setIsSpeaking(true)
-  }, [steps, lang, voice])
+    void player.play(text, lang)
+  }, [steps, lang])
 
   const handleClose = useCallback(() => {
-    stopSpeech()
+    playerRef.current?.stop()
     setIsSpeaking(false)
     onClose()
   }, [onClose])
 
-  const hasSpeech = speechAvailable()
+  const hasSpeech = ttsAvailable()
 
   return (
     <div
