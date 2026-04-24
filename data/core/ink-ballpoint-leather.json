@@ -7,11 +7,11 @@
   "source": "verified",
   "verified": false,
   "stainChemistry": "Ballpoint ink contains dye (typically crystal violet or phthalocyanine), a glycol solvent, and a resin binder. On leather, the resin hardens as the solvent evaporates, trapping dye in a polymer matrix. The dye itself bonds through Van der Waals forces and can penetrate fiber structure. Aged ink is increasingly resistant as the resin fully polymerizes.",
-  "whyThisWorks": "Alcohol (isopropyl or denatured) dissolves the resin binder on leather, releasing the trapped dye. The freed dye transfers to a blotting cloth. Amyl acetate provides secondary solvent action for resistant resin. Working from the back pushes dissolved ink out. Multiple solvent applications are usually needed \u2014 ink releases in stages, not all at once.",
+  "whyThisWorks": "Alcohol (isopropyl or denatured) dissolves the resin binder on leather, releasing the trapped dye. The freed dye transfers to a blotting cloth. Amyl acetate provides secondary solvent action for resistant resin. Working from the back pushes dissolved ink out. Multiple solvent applications are usually needed — ink releases in stages, not all at once.",
   "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
   "professionalProtocol": {
     "steps": [
-      "1. Blot immediately \u2014 do NOT rub",
+      "1. Blot immediately — do NOT rub",
       "2. Take to a leather specialist. Ink on leather requires professional intervention"
     ],
     "products": [
@@ -24,7 +24,7 @@
   },
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately \u2014 do NOT rub",
+      "1. Blot immediately — do NOT rub",
       "2. Take to a leather specialist immediately"
     ],
     "products": [
@@ -32,20 +32,20 @@
     ],
     "whenToStop": "Do not attempt further home treatment on leather",
     "warnings": [
-      "Never rub dye stains \u2014 rubbing spreads the color",
+      "Never rub dye stains — rubbing spreads the color",
       "Heat permanently sets dye stains"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No acetone \u2014 strips finish and dye",
-      "No chlorine bleach \u2014 destroys leather protein",
-      "No alkaline cleaners \u2014 strips tanning agents",
-      "No excess water on aniline leather \u2014 causes permanent marks"
+      "No acetone — strips finish and dye",
+      "No chlorine bleach — destroys leather protein",
+      "No alkaline cleaners — strips tanning agents",
+      "No excess water on aniline leather — causes permanent marks"
     ],
     "fiberSensitivities": [
-      "Pigmented leather has protective topcoat \u2014 more forgiving",
-      "Aniline leather has no topcoat \u2014 extremely stain-susceptible",
+      "Pigmented leather has protective topcoat — more forgiving",
+      "Aniline leather has no topcoat — extremely stain-susceptible",
       "Always condition after cleaning to prevent cracking"
     ]
   },
@@ -65,5 +65,8 @@
   },
   "difficulty": 5,
   "timeEstimate": "15-45 minutes",
-  "lastValidated": "2026-03-23"
+  "lastValidated": "2026-03-23",
+  "sources": [],
+  "cross_refs": [],
+  "verification_level": "single_source"
 }
