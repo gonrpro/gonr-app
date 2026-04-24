@@ -20,6 +20,13 @@ export interface ProtocolCard {
   stainFamily?: string
   surface: string
   sector?: string
+  /**
+   * Explicit verification flag on the card data itself. Only `true` earns
+   * the green ✓ Verified badge on the UI. Separate from `source` (which
+   * describes *where the card came from*, not whether it's been reviewed).
+   * See ResultCard.tsx trust-badge block + Atlas 8071.
+   */
+  verified?: boolean
   meta: {
     stainCanonical: string
     surfaceCanonical: string
