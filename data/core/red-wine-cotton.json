@@ -80,45 +80,44 @@
   "homeSolutions": [
     {
       "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates the solutions.",
-      "agent": "cool water"
+      "agent": "Patch test",
+      "instruction": "Test any solution on an inside seam first. If color transfers to the cloth, stop and take the garment to a dry cleaner immediately."
     },
     {
       "step": 2,
-      "instruction": "Dab the red wine stain immediately with cool water applied to a white cloth. Work from center outward. Speed is critical — alcohol in wine affects dyes.",
-      "agent": "cool water",
-      "safetyNote": "Red wine contains both tannins and dyes — remove stain quickly before alcohol sets dyes."
+      "agent": "Blot from the reverse side",
+      "instruction": "If the spill is fresh, blot firmly from the back with a clean white cloth and cold water. Work edge-to-center. Never rub. Most fresh red wine lifts in the first 60 seconds."
     },
     {
       "step": 3,
-      "instruction": "Apply detergent/vinegar solution (1/4 tbsp mild laundry detergent + 2 oz white vinegar + 2 oz cool water) to the stain. Rub gently with the back of a spoon from center outward.",
-      "agent": "detergent/vinegar solution"
+      "agent": "Hot-water pour-through (fresh stains only)",
+      "instruction": "If the stain is under 30 minutes old, stretch the fabric over a bowl, place a towel underneath, and pour hot (not boiling) water through from the back. Skip this step if older — heat will set the tannin permanently."
     },
     {
       "step": 4,
-      "instruction": "Rinse thoroughly with cool water, working from center outward.",
-      "agent": "cool water"
+      "agent": "Dish-soap and vinegar solution",
+      "instruction": "Mix 1 tsp Dawn dish soap, 2 tbsp white vinegar, and 1 cup cold water. Sponge onto the stain, let sit 3 minutes, then blot center outward. If color remains, repeat once."
     },
     {
       "step": 5,
-      "instruction": "Apply hydrogen peroxide 3% mixed with ammonia (equal parts) and allow to sit for 3 minutes to oxidize tannin and dye residue.",
-      "agent": "hydrogen peroxide 3% + ammonia",
-      "safetyNote": "Test on hidden area first — peroxide may lighten some dyes."
+      "agent": "Rinse from the back",
+      "instruction": "Flush with cold water from the reverse until your cloth runs clean. No soap or vinegar residue should remain."
     },
     {
       "step": 6,
-      "instruction": "Rinse thoroughly with cool water.",
-      "agent": "cool water"
+      "agent": "OxiClean soak (if color lingers)",
+      "instruction": "Mix 1 scoop OxiClean in 1 cup cold water. Soak the stained area 15–30 minutes. Rinse cold.",
+      "safetyNote": "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide — one oxidizer at a time."
     },
     {
       "step": 7,
-      "instruction": "Apply white vinegar to neutralize and remove any rings. Rinse again with cool water. Wipe rings outward from center with white cloth.",
-      "agent": "white vinegar + cool water"
+      "agent": "Hot machine wash",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect the stain before drying — heat sets any remaining tannin."
     },
     {
       "step": 8,
-      "instruction": "If stain persists or if fabric is delicate, call a professional cleaner.",
-      "agent": "escalation"
+      "agent": "Escalate to a professional",
+      "instruction": "If any trace remains after washing, take the garment to a dry cleaner. Tell them: \"Red wine on white cotton, pre-treated at home with dish soap, vinegar, and OxiClean.\""
     }
   ],
   "materialWarnings": [
