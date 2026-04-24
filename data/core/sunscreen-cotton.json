@@ -1,77 +1,208 @@
 {
   "id": "sunscreen-cotton",
   "title": "Sunscreen on Cotton",
-  "stainFamily": "combo",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Sunscreen contains UV filters (avobenzone, oxybenzone), oils (mineral oil, silicone), titanium dioxide or zinc oxide (physical blockers), and emulsifiers. On cotton, the oil base penetrates deeply while mineral particles create visible white or yellow residue. Avobenzone reacts with iron in water to produce rust-colored stains. Heat and chlorine accelerate yellowing.",
-  "whyThisWorks": "POG or solvent dissolves the oil-based matrix on cotton. Surfactant then emulsifies the remaining oil and lifts mineral particles. An oxidizer addresses the avobenzone-iron discoloration. Avoiding hot water and chlorine is critical — both react with sunscreen chemicals to produce permanent yellow staining.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–40 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "sunscreen",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "combination",
+      "oil",
+      "mineral",
+      "avobenzone",
+      "cotton",
+      "summer-stain",
+      "no-chlorine"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Sunscreen is an oil or silicone emulsion + UV filters (avobenzone, oxybenzone) + mineral blockers (titanium dioxide, zinc oxide) + emulsifiers. The most important chemistry fact: AVOBENZONE REACTS WITH IRON in water to produce rust-colored permanent stains. Hard water + avobenzone + heat = orange-yellow yellow marks that are hard to remove. Chlorine bleach also reacts with sunscreen to create persistent yellowing. Cotton tolerates NSD, POG, IPA, 3% H₂O₂. Treatment is oil-strip first, then addressing any iron-reacted avobenzone residue.",
+  "whyThisWorks": "NSD / Dawn pulls the oil-silicone emulsion and mineral particles. For iron-reacted avobenzone (orange-brown yellowing), a dilute acid (lemon juice / vinegar) converts iron to a soluble form. 3% H₂O₂ clears any residual chromophore. The two absolute rules: NO chlorine bleach (makes yellowing worse), NO hot water on fresh sunscreen (sets avobenzone iron reaction).",
+  "defaultAssumption": "Sunscreen stains are the summer-stain invisible problem: transfer happens on car seats, beach towels, chair covers without the user noticing until they come home and it's already oxidized. Fresh sunscreen on light-colored cotton = high-confidence DIY; aged / hot-washed-in sunscreen = stubborn, possible plateau.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot + Safety Fork",
+      "technique": "Absorb + no-chlorine rule",
+      "equipment": "White cotton towel",
+      "dwellTime": "1 minute",
+      "instruction": "Blot fresh sunscreen with a folded white towel. Press straight down. CRITICAL: do NOT reach for chlorine bleach on sunscreen — chlorine + avobenzone produces permanent yellow staining. Use Dawn + peroxide lane only."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Strip oil + mineral particles",
+      "equipment": "NSD in cool water",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Apply NSD, work with a soft bristle brush. NSD emulsifies the oil-silicone base and suspends mineral particles (titanium dioxide, zinc oxide). Rinse cool. Repeat if mineral white residue is still visible."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "POG (Heavy Silicone Formulations)",
+      "technique": "Solvent pass on silicone emulsion",
+      "equipment": "POG on clean white cloth",
+      "dwellTime": "30–60 seconds",
+      "instruction": "For sport / water-resistant sunscreens with heavy silicone content, an NSD-only pass may not fully emulsify. Tamp POG on a white cloth from the back. Follow with NSD to clear POG residue."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Acid Rinse (For Orange Yellowing)",
+      "technique": "Dilute acid for iron-reacted avobenzone",
+      "equipment": "Dilute acetic acid 5% aqueous OR lemon juice",
+      "dwellTime": "2–3 minutes",
+      "instruction": "If an orange / rust-colored shadow remains (iron-reacted avobenzone — common on hard-water laundry), dab dilute acid on the shadow. Converts iron-complex to soluble form. Rinse cool."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For residual yellow chromophore on whites: 3% H₂O₂. Dwell 3–5 min, blot. Skip on dark cotton. NEVER use chlorine bleach instead."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Warm Wash (Not Hot)",
+      "technique": "Launder warm, NOT hot",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder warm per care label — NOT hot. Hot water can set the iron-avobenzone reaction if any oil residue remains. Inspect BEFORE the dryer."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG to dissolve the oil/wax component",
-      "2. Apply NSD to lift dissolved residue and pigment",
-      "3. If color remains: apply H2O2 6% on colorfast fabrics — 5-10 min dwell time, monitor",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Blot bulk. NO chlorine bleach — makes yellowing worse.",
+      "2. NSD — strip oil emulsion + mineral particles.",
+      "3. POG if heavy silicone sport formulation.",
+      "4. Dilute acetic acid for iron-reacted avobenzone yellowing.",
+      "5. 3% H₂O₂ on residual yellow chromophore.",
+      "6. Warm wash per care label (not hot)."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
       "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "POG (for silicone sport formulations)",
+      "Dilute acetic acid 5% aqueous",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool through spotting; warm (not hot) wash post-chemistry",
+    "warnings": [
+      "NO chlorine bleach — makes sunscreen yellowing permanent",
+      "Hot water accelerates iron-avobenzone reaction",
+      "Silicone-heavy sport sunscreens need POG, not just NSD",
+      "Iron shadow = separate acid step"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "DO NOT Use Bleach",
+      "instruction": "The single worst thing for sunscreen stains is chlorine bleach. Bleach reacts with avobenzone (the main UV filter in most sunscreens) to produce a PERMANENT yellow stain. If you've already bleached the spot, don't bleach it again — move on to the acid + peroxide path."
+    },
+    {
+      "step": 2,
+      "agent": "Blot Off Excess Sunscreen",
+      "instruction": "Press a folded white towel or paper towels on the stain. Lift. Press dry section again. Get as much surface sunscreen off BEFORE wetting anything."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Cool Water — Soak the Oil Out",
+      "instruction": "Work a generous amount of Dawn dish soap directly into the stain with a soft toothbrush or fingertip. Let sit 10 minutes. Rinse cool. Repeat if you can still feel oiliness or see white residue (mineral sunscreen)."
+    },
+    {
+      "step": 4,
+      "agent": "Lemon Juice Dab for Orange Yellow",
+      "instruction": "Sometimes a rust-orange shadow shows up after the Dawn pass — that's the avobenzone reacting with iron in your water. Dab a few drops of lemon juice or diluted white vinegar on it, wait 3 min, rinse cool. The acid turns the iron complex into a soluble form."
+    },
+    {
+      "step": 5,
+      "agent": "3% Hydrogen Peroxide for Residual Yellow (Whites)",
+      "instruction": "For stubborn yellow on white cotton: dab 3% drugstore hydrogen peroxide, 3–5 min, blot. Skip on dark cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia."
+    },
+    {
+      "step": 6,
+      "agent": "Warm Wash, Not Hot",
+      "instruction": "Launder WARM per care label — not hot. Hot water sets the iron-avobenzone reaction if any sunscreen remains. Inspect BEFORE the dryer."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate for Stubborn Yellowing",
+      "instruction": "If yellow persists or was bleach-set, take to a dry cleaner. Tell them: \"Sunscreen on cotton, age [fresh / summer-washed-in], home-treated with Dawn + [lemon juice / 3% peroxide]. NO chlorine bleach used [/ bleach was applied before I knew].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Scrape or blot excess — do NOT rub (spreading worsens it)",
-      "2. Apply Dawn dish soap directly to the stain. Work gently",
-      "3. Blot with clean white cloth. Repeat Dawn application until stain fades",
-      "4. Rinse with warm water (unless protein component present — then cold)",
-      "5. Air dry — no heat"
+      "1. NO chlorine bleach — makes sunscreen yellowing permanent.",
+      "2. Blot off excess.",
+      "3. Generous Dawn + cool water, 10 min dwell, rinse. Repeat.",
+      "4. Lemon juice / vinegar dab for rust-orange shadow (iron-avobenzone).",
+      "5. 3% hydrogen peroxide on residual yellow (whites).",
+      "6. WARM wash per care label — not hot.",
+      "7. Escalate if yellow persists or bleach was applied."
     ],
     "products": [
-      "Dawn dish soap"
+      "Dawn dish soap (generous)",
+      "Lemon juice OR white vinegar",
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if chlorine bleach was applied (may be permanent), if hot water has set the reaction, or if two home rounds plateau.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "NO chlorine bleach — permanent yellow",
+      "WARM wash, not hot — hot water sets the iron reaction",
+      "Silicone sport sunscreens are tougher — may need solvent",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "NEVER chlorine bleach on sunscreen — permanent yellow",
+      "Never hot water — sets iron-avobenzone reaction",
+      "Never layer oxidizers",
+      "Never dry with residual yellow — heat locks it"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates NSD, POG, IPA, 3% H₂O₂, warm wash",
+      "Dyed cotton: skip peroxide or inside-seam-test",
+      "Heat-durable fiber; the avobenzone chemistry is the constraint"
     ]
   },
+  "materialWarnings": [
+    "NO bleach — chlorine + avobenzone = permanent yellow",
+    "WARM wash, not hot",
+    "Iron-shadow needs separate acid step"
+  ],
   "escalation": {
-    "when": "If sunscreen stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is sunscreen on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Chlorine bleach applied (may be permanent), hot-dried into fiber, or two home rounds plateau.",
+    "whatToTell": "\"Sunscreen on cotton, age [fresh / summer-washed-in], home-treated with Dawn + [lemon juice / 3% H₂O₂]. [Bleach used or never / hot-dried or not].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Has any chlorine bleach touched this stain?",
+      "Regular sunscreen or silicone-based sport / water-resistant?",
+      "Mineral (zinc / titanium dioxide) or chemical (avobenzone) filter?",
+      "Has it been through a hot wash?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The two absolute rules — no chlorine bleach, warm wash not hot — are what separates clean results from permanent yellowing. Iron-avobenzone orange shadow is the characteristic failure mode."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

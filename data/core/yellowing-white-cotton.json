@@ -1,115 +1,195 @@
 {
   "id": "yellowing-white-cotton",
   "title": "Yellowing on White Cotton",
+  "stainType": "specialty",
   "stainFamily": "specialty",
-  "surface": "white-cotton",
+  "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Yellowing on white cotton has multiple causes: oxidized body oils (most common on white clothing), degradation of optical brighteners in detergent, cellulose oxidation from age/storage, and residual product buildup. The yellow color comes from chromophore formation in oxidized organic compounds. Heat and time accelerate the process. Chlorine bleach can cause permanent yellowing on synthetics.",
-  "whyThisWorks": "An oxygen-based bleach (OxiClean/sodium percarbonate) oxidizes the yellow chromophores back to colorless on white cotton. For body oil yellowing, a degreasing pre-treatment addresses the oil that oxidized in the first place. Sunlight provides additional natural bleaching through UV oxidation. For whites, a borax soak can help restore brightness by boosting the detergent's cleaning power.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "30 minutes to overnight soak; multiple cycles for chronic",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "yellowing-white",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "yellowing",
+      "oxidized-body-oils",
+      "cotton",
+      "whites-only",
+      "chronic"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "General yellowing on white cotton has several common causes: (1) oxidized body oils from skin contact (collars, armpits, bedsheets), (2) optical-brightener degradation over many wash cycles, (3) cellulose oxidation from age / storage (classic 'yellowed shirt in the back of the closet'), (4) detergent / softener residue buildup that yellows under heat. Chlorine bleach often WORSENS general yellowing on whites that are old or have synthetic blends. OxiClean + sunlight is the clean fade workhorse. Cotton tolerates oxygen bleach, 3% H₂O₂, UV, hot wash. Sweat-specific yellowing is a different case — use sweat-stain-cotton for armpit chronic yellow.",
+  "whyThisWorks": "OxiClean (sodium percarbonate dissolves in water to release H₂O₂) oxidizes the yellow chromophores back to colorless. Sunlight + UV compounds the oxidation. For age / storage yellowing, repeated OxiClean soak + sun-dry cycles usually restore white. A final borax rinse can restore brightness by boosting residual oxidative capacity.",
+  "defaultAssumption": "Multiple causes — the user may not know which. Start with OxiClean + sun (handles most). Escalate to sweat-stain protocol if the yellowing is localized to armpits / collars (aluminum-protein chemistry is different).",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Diagnose Yellowing Type",
+      "technique": "Localize vs general",
+      "equipment": "Daylight + eyes",
+      "dwellTime": "1 minute",
+      "instruction": "Look at where the yellowing is. ARMPITS / COLLAR ONLY = sweat/antiperspirant chemistry — use sweat-stain-cotton protocol (different chemistry, chlorine-bleach darkens). GENERAL yellowing across the garment or age-related yellowing = this protocol continues. Body-oil yellowing on bedsheets, collar, back of shirt = this protocol."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "OxiClean Soak",
+      "technique": "Warm-water dissolve + long soak",
+      "equipment": "OxiClean Versatile in warm water",
+      "dwellTime": "1–6 hours or overnight",
+      "instruction": "Mix OxiClean per label in WARM (not hot) water. Submerge the yellowed cotton. Soak 1–6 hours for mild yellowing, overnight for chronic / aged. Warm water activates the oxygen-bleach reaction; hot water breaks it down."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3% Spot (If Localized)",
+      "technique": "Targeted oxidation",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "5–10 minutes",
+      "instruction": "For localized yellow spots remaining after the soak: 3% H₂O₂ dabbed on the spot. One oxidizer at a time — rinse the OxiClean out first."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hot Wash + Sun Dry",
+      "technique": "Finish + UV fade",
+      "equipment": "Washing machine, outdoor line",
+      "dwellTime": "Full wash + sun-dry",
+      "instruction": "Launder hot per care label. Line-dry in DIRECT SUNLIGHT whenever possible — UV is a natural bleach that continues the fade. For chronic / aged yellowing, repeat OxiClean + sun cycles over 2–3 sunny days."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Prevention",
+      "technique": "Address buildup + storage",
+      "equipment": "Borax as a laundry additive; cool storage",
+      "dwellTime": "Ongoing",
+      "instruction": "Prevent recurrence: add 1/2 cup borax to the laundry as a booster once in a while. Store whites in cool, dry, dark places (heat + humidity + UV without oxidation = yellowing). Wash whites with other whites only."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove loose material mechanically — brush, scrape, or vacuum as appropriate",
-      "2. Apply NSD to the stain area",
-      "3. Apply appropriate secondary agent based on stain response",
-      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Localize: armpit/collar = sweat-stain-cotton. General = continue.",
+      "2. OxiClean soak 1–6 hr or overnight. Warm water.",
+      "3. 3% H₂O₂ for persistent localized yellow.",
+      "4. Hot wash + sun-dry. 2–3 cycles for chronic.",
+      "5. Prevention: borax booster + cool dark storage."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "OxiClean Versatile (sodium percarbonate)",
+      "Hydrogen Peroxide 3%",
+      "Borax (laundry booster)"
     ],
-    "temperature": "ambient",
+    "temperature": "warm for OxiClean soak; hot wash post-chemistry; sun during dry",
     "warnings": [
-      "Always test on hidden area first"
+      "NEVER use chlorine bleach on already-yellowed whites — often worsens",
+      "OxiClean + hot water = reaction breaks down; warm only",
+      "Sweat-armpit yellowing is a DIFFERENT chemistry — use sweat-stain-cotton",
+      "Multiple cycles expected on chronic yellowing"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Is It Armpit-Only Yellowing?",
+      "instruction": "Before starting: where is the yellow? If it's ONLY at the armpits / collar, it's sweat + antiperspirant buildup — that's a specific chemistry (aluminum + protein), and chlorine bleach DARKENS it. Use the sweat-stain-cotton protocol instead. If the yellow is general across the garment, bedsheets, or back of a collar (body oils), continue below."
+    },
+    {
+      "step": 2,
+      "agent": "SKIP Chlorine Bleach",
+      "instruction": "Chlorine bleach is the first thing most people reach for on yellowed whites. On old or synthetic-blend whites, it often makes the yellowing WORSE, not better. Use OxiClean + sunlight instead — it's the right oxygen-bleach chemistry for general yellowing."
+    },
+    {
+      "step": 3,
+      "agent": "OxiClean Soak — Warm Water, Long Dwell",
+      "instruction": "Fill a bucket or bathtub with WARM (not hot) water. Add OxiClean per the label (usually 1 scoop per gallon). Submerge the yellowed whites. Soak 1–6 hours for mild, overnight for heavy yellowing. Warm water activates OxiClean; hot water breaks it down."
+    },
+    {
+      "step": 4,
+      "agent": "Hydrogen Peroxide 3% for Stubborn Spots",
+      "instruction": "For spots that didn't fade in the soak: dab 3% drugstore hydrogen peroxide on each, let bubble 5–10 min, blot. Rinse first if OxiClean residue remains — never layer oxidizers.",
+      "safetyNote": "Never mix peroxide or OxiClean with chlorine bleach or ammonia."
+    },
+    {
+      "step": 5,
+      "agent": "Hot Wash + Line-Dry in the Sun",
+      "instruction": "Launder on the hottest setting the care label allows. Hang outside in direct SUNLIGHT — UV continues the fade naturally. Chronic yellowing may take 2–3 OxiClean + sun cycles across a sunny week."
+    },
+    {
+      "step": 6,
+      "agent": "Prevent the Recurrence",
+      "instruction": "To keep whites white: add 1/2 cup borax to your wash occasionally as a booster. Wash whites with other whites only (never with colored items). Store whites in a cool, dry, dark place — heat + humidity + UV-free conditions in closets (irony — sunlight FADES yellowing while closet darkness CREATES it over time) cause the gradual yellow that shows up after storage."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate for Plateau",
+      "instruction": "If whites don't brighten after 2–3 OxiClean + sun cycles, take to a dry cleaner. Old yellowing from storage can sometimes plateau at faint ivory; some items (pre-1980 wedding dresses, inherited linens) may never fully recover. Tell them: \"General yellowing on white cotton, [age / body-oil / storage / unknown], home-treated with OxiClean + 3% peroxide + sun. [No chlorine bleach / bleach was applied before I knew].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Dissolve 1-2 scoops OxiClean in hottest water safe for the fabric. Soak — 1-6 hours",
-      "2. Check progress every hour — some yellowing requires extended soak time",
-      "3. Wash in appropriate temperature water with regular detergent",
-      "4. Air dry in direct sunlight if possible — UV provides additional whitening",
-      "5. Repeat cycle if needed — stubborn yellowing may require 2-3 treatments"
+      "1. Localize: armpit only = sweat-stain-cotton protocol.",
+      "2. SKIP CHLORINE BLEACH — often worsens yellowing.",
+      "3. OxiClean soak in WARM (not hot) water, 1 hr to overnight.",
+      "4. 3% peroxide on stubborn spots. Flush between oxidizers.",
+      "5. Hot wash + direct sunlight line-dry. 2–3 cycles for chronic.",
+      "6. Prevent: borax booster, separate white loads, cool dark storage.",
+      "7. Escalate for plateau after 2–3 cycles."
     ],
     "products": [
-      "OxiClean Versatile Stain Remover"
+      "OxiClean Versatile",
+      "3% hydrogen peroxide",
+      "Borax (prevention)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if 2–3 OxiClean + sun cycles plateau (may be permanent on very old / storage-yellowed items), or if chlorine bleach was applied and worsened the yellow.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "NO chlorine bleach — often worsens general yellowing",
+      "WARM water for OxiClean, not hot",
+      "Armpit yellowing is a different chemistry — wrong protocol here",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Some storage / age yellowing may plateau at faint ivory"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Avoid prolonged exposure to concentrated acid"
+      "Never use chlorine bleach on general yellowing — often makes it worse",
+      "Never OxiClean in hot water — breaks down the reaction",
+      "Never apply this protocol to armpit yellowing — different chemistry",
+      "Never layer oxidizers — flush between"
     ],
     "fiberSensitivities": [
-      "Most chemically resistant textile — tolerates aggressive treatment",
-      "Can handle chlorine bleach, hydrogen peroxide, oxygen bleach",
-      "Hot water safe up to 95°C / 200°F"
+      "Cotton tolerates OxiClean, 3% H₂O₂, UV, hot wash",
+      "Whites only — this protocol bleaches dye on colored cotton",
+      "Heat-durable"
     ]
   },
+  "materialWarnings": [
+    "NO chlorine bleach on general yellowing",
+    "Armpit = different protocol",
+    "Chronic yellowing = multiple cycles"
+  ],
   "escalation": {
-    "when": "If yellowing stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is yellowing on white cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "2–3 OxiClean + sun cycles plateau, chlorine bleach was applied and worsened the yellow, or the item is very old / pre-modern fabric where yellowing may be irreversible.",
+    "whatToTell": "\"General yellowing on white cotton, source [age / body-oil / storage / unknown], home-treated with OxiClean + 3% peroxide + sun. NO chlorine bleach used [/ bleach was applied before I knew].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Is the yellow localized (armpit / collar) or general across the garment?",
+      "How old is the garment or how long was it stored?",
+      "Has chlorine bleach been applied to it?",
+      "White cotton / cotton blend / vintage linen?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Localization decides the protocol — armpit goes to sweat-stain-cotton (different chemistry, chlorine worsens). General yellowing = OxiClean + sun. Chlorine-bleach-first is the classic home mistake on both."
   },
-  "difficulty": 4,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
-  "homeSolutions": [
-    {
-      "step": 1,
-      "instruction": "Test on hidden area first to ensure fabric tolerates bleach solutions.",
-      "agent": "cool water",
-      "safetyNote": "Bleach is caustic — ensure good ventilation and avoid skin contact."
-    },
-    {
-      "step": 2,
-      "instruction": "Yellowing on white cotton can result from oxidation, age, or manufacturing residue. Treatment depends on fabric content and yellowing severity.",
-      "agent": "assessment"
-    },
-    {
-      "step": 3,
-      "instruction": "For synthetics and blends on white fabric: Prepare a mild safety bleach soak. Dissolve 2 oz mild household bleach per gallon of warm water. Soak fabric for no more than 4 hours.",
-      "agent": "mild household bleach solution",
-      "safetyNote": "Use minimal bleach concentration to prevent fiber damage. Do not exceed 4-hour soak time."
-    },
-    {
-      "step": 4,
-      "instruction": "After soaking, rinse thoroughly with cool water until all bleach smell is gone.",
-      "agent": "cool water"
-    },
-    {
-      "step": 5,
-      "instruction": "For 100% cotton on white fabric: Prepare a household bleach solution per container instructions. Typically 1-2 oz bleach per gallon of warm water. Soak for 15 minutes only.",
-      "agent": "household bleach solution",
-      "safetyNote": "Follow container instructions for proper dilution. Do not exceed recommended soak time."
-    },
-    {
-      "step": 6,
-      "instruction": "After soaking, rinse thoroughly with cool water until all bleach smell is gone.",
-      "agent": "cool water"
-    },
-    {
-      "step": 7,
-      "instruction": "Wash fabric with mild laundry detergent in warm water and allow to air dry in sunlight if possible. Sunlight provides additional natural bleaching for white cotton.",
-      "agent": "mild laundry detergent + warm water"
-    }
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,77 +1,207 @@
 {
   "id": "food-coloring-cotton",
   "title": "Food Coloring on Cotton",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Synthetic food dyes (FD&C Red 40, Blue 1, Yellow 5) are water-soluble acid dyes designed for maximum color intensity. On cotton, they bond through ionic and hydrogen bonds. Fresh food coloring is highly water-soluble. However, once dried or heat-set, the dye bonds become increasingly resistant. Some food dyes (Red 40 especially) are notoriously persistent on porous materials.",
-  "whyThisWorks": "Immediate cold water flushing removes the majority of fresh food dye from cotton because these dyes are designed to be water-soluble. For set stains, oxygen bleach breaks the chromophore bonds. White vinegar helps restore pH after treatment. The speed of initial treatment is the single biggest factor — a 5-minute delay can dramatically increase difficulty.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "15–60 minutes; set expectations",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "food-coloring",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "dye",
+      "azo-dye",
+      "cotton",
+      "time-critical",
+      "set-expectations"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Food coloring is concentrated azo / triphenylmethane / natural food dyes in water + glycerin carrier. Red 40, Blue 1, Yellow 5 (Tartrazine) are the FDA-approved synthetic azo / triphenylmethane dyes that bond to cotton through the same hydrogen bonds as deliberate dye application. Fresh food coloring rinses easily; set food coloring (through a hot dryer) is often permanent. Cotton tolerates the standard dye-stain toolkit (NSD, IPA, OxiClean, 3% H₂O₂) but these work BEFORE heat-setting. Red 40 is the hardest variant because it's concentrated.",
+  "whyThisWorks": "Fresh food coloring + cold water + immediate cycle = 70–90% removal. Set food coloring + home chemistry plateaus. OxiClean soak is the home workhorse for whites. Pro-side reducing bleaches (Rit Color Remover / sodium hydrosulfite) strip harder on whites. Speed + escalation discipline matter more than chemistry choice.",
+  "defaultAssumption": "Context is usually baking / Easter eggs / kid crafts / homemade playdough. Fresh spill = high-confidence DIY. Discovered-after-dryer spill = often pro or accept-as-is.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Flush",
+      "technique": "Flush from the back fast",
+      "equipment": "Cold water, white cotton terry towel",
+      "dwellTime": "1 minute",
+      "instruction": "Cold flush from the BACK. Fresh food coloring rinses rapidly. Cold only — heat sets dye."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD or Dawn",
+      "technique": "Surfactant + soft brush",
+      "equipment": "NSD or Dawn in cold water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Apply NSD or Dawn, work with a soft brush. Rinse cool. Repeat if color transfers to cloth."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "OxiClean Soak",
+      "technique": "Oxygen bleach soak",
+      "equipment": "OxiClean Versatile in warm water",
+      "dwellTime": "1–4 hours or overnight",
+      "instruction": "Submerge the stained area in OxiClean + warm water. Soak 1–4 hours, overnight for stubborn color. Oxidizes the dye chromophore on whites and most pastels."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3% (Whites)",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "5 minutes",
+      "instruction": "For residual color on WHITE cotton after OxiClean: 3% H₂O₂. Skip on dark cotton."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Rit Color Remover (Whites, Nuclear)",
+      "technique": "Reducing bleach for stubborn dye",
+      "equipment": "Rit Color Remover per label",
+      "dwellTime": "Per label",
+      "instruction": "White cotton only. If color persists, Rit Color Remover uses sodium hydrosulfite to strip residual dye. Ventilate — sulfur smell. Do NOT use on colored clothes — strips fabric dye too.",
+      "safetyNote": "Sodium hydrosulfite = respiratory irritant. Ventilate. Gloves. Never mix with chlorine bleach."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cool Wash, Air-Dry Until Clear",
+      "technique": "Launder cold, do not hot-dry with residual color",
+      "equipment": "Washing machine, air-dry line",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cold wash per care label. Air-dry until stain is fully gone. Any heat on remaining food coloring = permanent."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate or appropriate solvent to dissolve dye/pigment matrix",
-      "2. Apply NSD to lift loosened pigment. Flush with cool water",
-      "3. If color persists: apply H2O2 6% on colorfast fabrics to break chromophore bonds",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cold flush from the back — speed matters.",
+      "2. Dawn / NSD + soft brush.",
+      "3. OxiClean soak 1–4 hr or overnight.",
+      "4. 3% H₂O₂ on residual (whites).",
+      "5. Rit Color Remover for stubborn dye (whites only, sulfur smell).",
+      "6. Cold wash + air-dry until stain is fully gone."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "OxiClean Versatile",
+      "Hydrogen Peroxide 3%",
+      "Rit Color Remover (whites only, nuclear option)"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold throughout",
+    "warnings": [
+      "HEAT SETS food coloring permanently",
+      "Rit Color Remover strips ALL dye — whites only",
+      "Never mix oxygen + chlorine bleach",
+      "Red 40 is the hardest variant"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Act Fast — Cold Water",
+      "instruction": "Food coloring is concentrated dye. Caught fresh = easy. Caught after a hot dryer cycle = often permanent. Drop what you're doing and get cold water on it. Cold only — heat sets."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Flush From the Back",
+      "instruction": "Hold the BACK of the stained fabric under cold running water for a minute. The water-soluble dye rinses out while it's still mobile."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Cold Water",
+      "instruction": "Work a drop of Dawn into the spot with a fingertip. Rinse cool. Repeat 2–3 cycles for concentrated colors (Red 40 is the toughest)."
+    },
+    {
+      "step": 4,
+      "agent": "OxiClean Soak for Stubborn Color",
+      "instruction": "Fill a basin with warm water + 1 scoop OxiClean per gallon. Submerge the garment. Soak 1–4 hours — overnight for heavy stains. OxiClean's oxygen bleach oxidizes the food dye's chromophore.",
+      "safetyNote": "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide."
+    },
+    {
+      "step": 5,
+      "agent": "Hydrogen Peroxide 3% for Residual (Whites)",
+      "instruction": "For residual color on white cotton: dab 3% drugstore hydrogen peroxide on the spot. Skip on dark cotton. Rinse OxiClean out first — one oxidizer at a time."
+    },
+    {
+      "step": 6,
+      "agent": "COLD Wash, Air-Dry Until Fully Clear",
+      "instruction": "Cold wash per care label if stain is still visible. AIR-DRY — do not run through a dryer until the stain is fully gone. Heat permanently sets food coloring."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate for Heat-Set",
+      "instruction": "If food coloring has been hot-dried, take to a dry cleaner. For whites specifically, Rit Color Remover is a home nuclear option (sodium hydrosulfite, sulfur smell — ventilate). Don't use on colored clothes — strips the fabric's own dye."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately — never rub (spreading dye worsens it)",
-      "2. Apply Dawn dish soap mixed with cold water. Blot gently",
-      "3. If stain persists: apply hydrogen peroxide 3% on colorfast fabrics — test hidden area first, 5-10 min dwell time",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat until stain is completely gone"
+      "1. SPEED MATTERS — every minute of dry contact matters.",
+      "2. Cold water flush from the BACK.",
+      "3. Dawn + cold water, 2–3 cycles.",
+      "4. OxiClean soak 1–4 hr or overnight.",
+      "5. 3% peroxide on residual (whites only, flush OxiClean first).",
+      "6. COLD wash + AIR-DRY until stain is fully gone.",
+      "7. Escalate if heat-set. Rit Color Remover is the home nuclear option (whites)."
     ],
     "products": [
+      "Cold water",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "OxiClean Versatile",
+      "3% hydrogen peroxide (whites)",
+      "Rit Color Remover (whites, nuclear option)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if food coloring has been hot-dried — often permanent at that point.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "HEAT PERMANENTLY SETS food coloring — never hot-dry visible dye",
+      "Rit Color Remover strips ALL dye — whites only",
+      "Never layer OxiClean + peroxide + chlorine bleach",
+      "Red 40 is the hardest variant — budget extra cycles"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never hot-wash or dry visible food coloring — permanent",
+      "Never layer oxidizers",
+      "Never use Rit Color Remover on colored cotton"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates OxiClean, 3% H₂O₂, Rit Color Remover, cold wash",
+      "Dyed cotton: Rit Color Remover strips fabric dye — whites only",
+      "Heat is the hard constraint"
     ]
   },
+  "materialWarnings": [
+    "HEAT SETS food coloring",
+    "Rit Color Remover = whites only (strips all dye)",
+    "Speed matters more than chemistry choice"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is food coloring on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Food coloring has been hot-dried, OxiClean + peroxide haven't cleared it, or the fabric is colored and Rit Color Remover would strip its dye.",
+    "whatToTell": "\"Food coloring on cotton, color [red / blue / etc], age [fresh / hot-dried], home-treated with cold water + Dawn + OxiClean + [3% H₂O₂ whites].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "What color — Red 40 is hardest; yellow and blue usually easier?",
+      "Has it been through a hot dryer?",
+      "White cotton or colored?",
+      "How long ago?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Food coloring is the concentrated-dye stain where time + heat are the only real enemies. Home chemistry is strong; fresh on whites is usually winnable."
   },
-  "difficulty": 5,
-  "timeEstimate": "10-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

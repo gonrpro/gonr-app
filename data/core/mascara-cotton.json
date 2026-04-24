@@ -1,77 +1,169 @@
 {
   "id": "mascara-cotton",
   "title": "Mascara on Cotton",
-  "stainFamily": "dye",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Mascara contains carbon black or iron oxide pigment, wax (beeswax, carnauba), polymer film-formers, and oils. Waterproof mascara adds additional silicone and acrylate polymers. On cotton, the wax-polymer matrix hardens and traps intense pigment against the fiber. Waterproof formulas are specifically engineered to resist water-based cleaning.",
-  "whyThisWorks": "POG or oil-based makeup remover dissolves the wax-polymer matrix on cotton. Surfactant then lifts the freed pigment particles. For waterproof mascara, an oil-based solvent is essential — water-based products cannot penetrate the silicone barrier. The carbon black pigment is extremely fine and can permanently stain porous fibers if rubbed.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–40 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "mascara",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "combination",
+      "wax",
+      "oil",
+      "pigment",
+      "cotton",
+      "waterproof-variant"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Mascara is waxes (beeswax, carnauba) + oils (mineral oil, lanolin) + iron-oxide pigment (usually black, sometimes brown) + film-forming polymers + preservatives. Waterproof mascara adds silicone and hydrophobic polymers that resist water entirely. On cotton, mascara transfers from eyelashes onto pillowcases, collars, or anywhere near the face. Regular mascara responds to the standard wax+oil pattern (rubbing alcohol → Dawn); waterproof mascara needs a silicone-targeting solvent like micellar water or POG.",
+  "whyThisWorks": "Catch cloth UNDER + solvent tamp from the TOP pattern. IPA or micellar water breaks the wax + oil + silicone matrix. Dawn emulsifies residual oil. Iron-oxide pigment usually comes out with the wax, rarely needs peroxide.",
+  "defaultAssumption": "Morning-routine or pillowcase transfer. Most mascara is NOT waterproof and responds to standard IPA + Dawn. Ask about formula if user knows.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify + Catch Cloth",
+      "technique": "Waterproof vs regular + isolate",
+      "equipment": "Clean white cotton towel catch cloth",
+      "dwellTime": "30 seconds",
+      "instruction": "Ask: waterproof mascara or regular? Regular = alcohol path. Waterproof = micellar water / POG path. Place a catch cloth UNDER the stain."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "IPA (Regular) or Micellar Water / POG (Waterproof)",
+      "technique": "Solvent tamp from back",
+      "equipment": "IPA 90%+ OR micellar water OR POG on clean white cloth",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply solvent to a white cloth. Tamp from the BACK of the fabric over the catch cloth. Flip cloth frequently. 2–3 passes for fresh mascara."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Emulsify residual wax + oil",
+      "equipment": "Dawn + warm water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Work Dawn into the spot with a soft toothbrush. Rinse cool."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label. Inspect BEFORE the dryer."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate or appropriate solvent to dissolve dye/pigment matrix",
-      "2. Apply NSD to lift loosened pigment. Flush with cool water",
-      "3. If color persists: apply H2O2 6% on colorfast fabrics to break chromophore bonds",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Waterproof vs regular. Catch cloth UNDER.",
+      "2. IPA (regular) or micellar / POG (waterproof) tamp from back.",
+      "3. Dawn / NSD to emulsify wax + oil.",
+      "4. Hot wash per care label."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Isopropyl alcohol 90%+ (regular mascara)",
+      "Micellar water or POG (waterproof mascara)",
+      "Dawn / NSD"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool through spotting; hot wash post-chemistry",
+    "warnings": [
+      "Waterproof needs silicone-specific solvent — IPA alone may plateau",
+      "Catch cloth + pressing cloth always",
+      "Iron-oxide pigment usually comes with the wax, no separate pigment step"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Is It Waterproof Mascara?",
+      "instruction": "Regular mascara comes off with rubbing alcohol; waterproof needs MICELLAR WATER (the makeup-remover bottle at any drugstore) or Goo Gone. The difference matters — alcohol on waterproof mascara barely does anything."
+    },
+    {
+      "step": 2,
+      "agent": "Put a White Towel UNDER the Stain",
+      "instruction": "Fold a clean white towel and place it UNDER the stained area. The dissolved mascara transfers DOWN into the catch cloth, not sideways."
+    },
+    {
+      "step": 3,
+      "agent": "Solvent on a White Cloth — Tamp From the Back",
+      "instruction": "REGULAR mascara: rubbing alcohol on a white cloth. WATERPROOF: micellar water on a cotton round or white cloth. Press onto the stain from the BACK of the fabric. Flip cloth frequently. 2–3 rounds usually clears fresh mascara."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Soft Brush",
+      "instruction": "Work a drop of Dawn into the spot with a soft toothbrush to lift any residual wax + oil. Rinse cool."
+    },
+    {
+      "step": 5,
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder hot per care label. Inspect BEFORE the dryer. Repeat solvent + Dawn if any color remains."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately — never rub (spreading dye worsens it)",
-      "2. Apply Dawn dish soap mixed with cold water. Blot gently",
-      "3. If stain persists: apply hydrogen peroxide 3% on colorfast fabrics — test hidden area first, 5-10 min dwell time",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat until stain is completely gone"
+      "1. Waterproof? Use micellar water, not alcohol.",
+      "2. Catch cloth UNDER the stain.",
+      "3. Rubbing alcohol (regular) or micellar water (waterproof) on a white cloth, tamp from the back.",
+      "4. Dawn + soft toothbrush.",
+      "5. Hot wash per care label. Inspect BEFORE the dryer."
     ],
     "products": [
-      "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "70%+ rubbing alcohol (regular mascara)",
+      "Micellar water (waterproof mascara)",
+      "Dawn dish soap"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if waterproof mascara has been hot-dried and two rounds don't clear it.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "Waterproof needs micellar water, not alcohol",
+      "Catch cloth + pressing cloth always",
+      "Never pour solvent directly on cotton",
+      "Inspect BEFORE the dryer"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never pour solvent on cotton",
+      "Never hot-dry residual mascara",
+      "Never treat waterproof mascara with alcohol alone — plateau"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates IPA, micellar water, POG, NSD, hot wash",
+      "Dyed cotton: alcohol usually safe; inside-seam-test if concerned"
     ]
   },
+  "materialWarnings": [
+    "Waterproof mascara = micellar water or POG, not alcohol",
+    "Catch cloth + tamp pattern always",
+    "Inspect BEFORE the dryer"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is mascara on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Waterproof mascara heat-set by dryer, or two home rounds plateau.",
+    "whatToTell": "\"Mascara on cotton — [regular / waterproof], age [fresh / hot-dried], home-treated with [rubbing alcohol / micellar water] + Dawn.\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
+      "Waterproof or regular mascara?",
       "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Has it been through a hot dryer?",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Waterproof vs regular is the whole unlock. Waterproof formulas resist alcohol the way they resist tears — need silicone-specific solvent."
   },
-  "difficulty": 5,
-  "timeEstimate": "10-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

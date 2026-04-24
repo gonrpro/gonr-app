@@ -1,79 +1,189 @@
 {
   "id": "dye-transfer-cotton",
   "title": "Dye Transfer on Cotton",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Dye transfer occurs when loose dye from one garment migrates to cotton during washing — typically from dark denim, new colored items, or non-colorfast fabrics. The transferred dye bonds to the recipient fiber through the same mechanisms as intentional dyeing: hydrogen bonds, Van der Waals forces, and in some cases ionic bonds. Once set by heat or time, the dye behaves as if it were part of the fiber.",
-  "whyThisWorks": "Oxygen bleach (an oxygen-based bleach, for colorfast items) or a dedicated color remover / dye remover (reducing agent — sodium hydrosulfite for whites, e.g. Rit Color Remover) breaks the chromophore bonds in the transferred dye on cotton. Speed is critical — fresh transfers respond dramatically better than set ones. Re-washing immediately in cold water with oxygen bleach is the most effective first response. If color persists, escalate to a commercial color remover / dye remover. Heat (dryer) makes dye transfer permanent.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–60 minutes; success depends heavily on whether it's been hot-dried",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "dye-transfer",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "dye",
+      "laundry-accident",
+      "cotton",
+      "pre-dryer-critical"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Dye transfer is what happens when a color-bleeding garment (new dark denim, red shirt, non-colorfast item) shares a wash cycle with lighter items and the loose dye migrates onto them. The transferred dye bonds to cotton the same way intentional dyeing does — hydrogen bonds, Van der Waals, sometimes ionic — so once heat-set it behaves as if it were part of the fiber's original color. Pre-dryer: mostly recoverable. Post-hot-dryer: often permanent. Cotton tolerates oxygen-side oxidizers and reducing bleaches at home.",
+  "whyThisWorks": "OxiClean or a dedicated color remover (Rit Color Remover — sodium hydrosulfite reducing bleach) breaks the chromophore. Re-washing immediately in cold water + OxiClean is the strongest first response while dye is still mobile. Color remover is the home nuclear option for whites — don't use on anything you want to keep colorfast. Heat is the absolute enemy; a hot-dryer cycle can turn a recoverable transfer into a permanent one.",
+  "defaultAssumption": "Assume the user just pulled a load out of the wash and noticed pink / blue / gray on items that shouldn't have any color. The critical decision fork: has it been DRYER'D yet? Pre-dryer = high-confidence DIY; post-dryer = often pro or accept.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Time Fork — Pre-Dryer vs Post-Dryer",
+      "technique": "Critical decision, determines protocol",
+      "equipment": "Your memory of what just happened",
+      "dwellTime": "Immediate",
+      "instruction": "HAS THE LOAD BEEN THROUGH A HOT DRYER YET? If NO: immediate re-wash in cold water + OxiClean is the fix (proceed below). If YES: dye is likely heat-set, home chemistry options are narrower, and escalation may be the honest call. Do NOT dry the affected garments again until treated."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Re-Wash + OxiClean",
+      "technique": "Immediate oxygen bleach soak",
+      "equipment": "1 scoop OxiClean + cold water",
+      "dwellTime": "1–4 hours soak, or full wash cycle",
+      "instruction": "Put the dye-transferred garments in a basin of cold water with OxiClean (1 scoop per gallon). Soak 1–4 hours, or run them through a cold wash with OxiClean added. Oxygen bleach breaks the freshly-transferred dye's chromophore. Check at the 1-hour mark."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Rit Color Remover (Whites / Nuclear Option)",
+      "technique": "Reducing bleach for stubborn transfer",
+      "equipment": "Rit Color Remover (sodium hydrosulfite) per label",
+      "dwellTime": "Per label — typically 15–30 min",
+      "instruction": "For WHITE cotton only where color remains after OxiClean: Rit Color Remover uses sodium hydrosulfite to reduce the dye. Follow label — ventilation required, product has a sulfur smell. Do NOT use on clothes you want to keep colorfast (reducing bleach strips all dye, including the fabric's own).",
+      "safetyNote": "Sodium hydrosulfite = sulfur smell, respiratory irritant. Ventilate. Gloves. Never mix with chlorine bleach."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn Spot-Treatment (Localized Transfer)",
+      "technique": "For spot transfers, not full-garment",
+      "equipment": "Dawn + warm water",
+      "dwellTime": "5 minutes",
+      "instruction": "For localized dye spots (not whole-garment): Dawn worked in with a soft brush, rinse. Repeat if color persists. Good for freshly-caught transfers on cotton that OxiClean alone didn't clear."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cold Wash + Air-Dry",
+      "technique": "Launder cold, do not dryer-set",
+      "equipment": "Washing machine, air-dry line",
+      "dwellTime": "Full wash + air-dry",
+      "instruction": "Wash cold per care label. AIR-DRY — do NOT run through a hot dryer until the stain is 100% gone. Heat sets any remaining dye permanently. If any color remains, repeat steps 2–4 before drying."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply sodium hydrosulfite (reducing agent) to break the transferred dye bonds",
-      "2. Flush with NSD and cool water",
-      "3. If color remains: apply H2O2 6% as oxidizing bleach — 5-15 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Repeat full cycle if needed"
+      "1. Time fork: pre-dryer = good odds, post-dryer = often pro.",
+      "2. Cold re-wash + OxiClean soak. 1–4 hours or full cycle.",
+      "3. Rit Color Remover for stubborn transfer on whites. Sodium hydrosulfite. Ventilate.",
+      "4. Dawn spot-treat for localized transfers.",
+      "5. Cold wash + air-dry. Never hot-dry until fully gone."
     ],
     "products": [
-      "sodium hydrosulfite",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "OxiClean Versatile (oxygen bleach)",
+      "Rit Color Remover (sodium hydrosulfite reducing bleach — whites only)",
+      "Dawn dish soap"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout — heat permanently sets transferred dye",
     "warnings": [
-      "Speed is critical — treat immediately before dye bonds",
-      "Heat makes dye transfer permanent"
+      "Heat is the enemy — never dryer-set dye transfer",
+      "Sodium hydrosulfite strips ALL dye — not colorfast-safe",
+      "Never mix peroxide / OxiClean with chlorine bleach",
+      "Rit Color Remover has sulfur odor — ventilate"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Did It Go Through the Dryer? Critical Question",
+      "instruction": "This stain has ONE time-critical question: has the load been through a HOT DRYER yet? If NO: you have a real chance to remove it. If YES: heat has set the dye and your options narrow dramatically. Either way, DON'T dry the affected garments again — that makes it permanent."
+    },
+    {
+      "step": 2,
+      "agent": "Immediate Cold OxiClean Soak",
+      "instruction": "Fill a basin (or bathtub for a big load) with COLD water. Add 1 scoop of OxiClean Versatile per gallon of water. Submerge the dye-transferred garments. Soak 1–4 hours. OxiClean's oxygen bleach breaks the chromophore in the transferred dye. Check the garments at 1 hour; stir occasionally."
+    },
+    {
+      "step": 3,
+      "agent": "Rit Color Remover for Whites (If Needed)",
+      "instruction": "For WHITE cotton where color remains after OxiClean: Rit Color Remover (available at hardware / craft stores) uses sodium hydrosulfite to reduce and remove dye. Follow the box EXACTLY. Ventilate — it has a sulfur smell. Do NOT use on clothes you want to keep colorfast — it'll strip the fabric's own color too.",
+      "safetyNote": "Sodium hydrosulfite is a respiratory irritant with a sulfur odor. Open a window. Gloves. Never mix with chlorine bleach."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn for Localized Spots",
+      "instruction": "If the transfer is a small spot rather than a whole garment: work a drop of Dawn with a soft toothbrush into the spot, rinse cool. Repeat."
+    },
+    {
+      "step": 5,
+      "agent": "Cold Wash, Air-Dry, Inspect",
+      "instruction": "Wash cold per care label. HANG TO DRY — do not put through a dryer until the stain is 100% gone. Inspect between cycles. Any remaining color in a hot dryer = permanent set."
+    },
+    {
+      "step": 6,
+      "agent": "Escalate for Dryer-Set Transfer",
+      "instruction": "If the dye transfer has already been through a hot dryer cycle, home chemistry may not remove it. Take to a dry cleaner and describe the chain of events. Tell them: \"Dye transfer on cotton, from [source garment if known], home-treated with cold water + OxiClean [+ Rit Color Remover if applicable]. [Hot-dried before I noticed / not yet dried].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Re-wash IMMEDIATELY in cold water — do NOT dry",
-      "2. Dissolve 1 scoop OxiClean in cold water. Soak the item for 1-6 hours",
-      "3. Check progress every hour. Re-wash in cold water with detergent",
-      "4. Repeat soak if needed — some dye transfers require multiple cycles",
-      "5. Air dry only — dryer heat permanently sets dye transfer"
+      "1. CRITICAL: has it been through a hot dryer? Yes = often permanent / pro.",
+      "2. DON'T dry again until treated.",
+      "3. Cold OxiClean soak 1–4 hours.",
+      "4. Rit Color Remover for whites if OxiClean plateaus (ventilate, sulfur smell).",
+      "5. Dawn spot-treat for localized transfers.",
+      "6. Cold wash + AIR-DRY until stain is fully gone.",
+      "7. Escalate if already hot-dried."
     ],
     "products": [
-      "OxiClean Versatile Stain Remover"
+      "OxiClean Versatile",
+      "Rit Color Remover (whites only, nuclear option)",
+      "Dawn dish soap"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if dye transfer has already been through a hot dryer and home rounds plateau, or if the fabric is colored and Rit Color Remover would strip its dye.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "HEAT SETS dye transfer permanently — never dryer-set",
+      "Rit Color Remover strips ALL dye — not for colorfast fabrics",
+      "Never mix OxiClean or peroxide with chlorine bleach",
+      "Sodium hydrosulfite has sulfur smell — ventilate"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "NEVER hot-dry dye transfer before treatment — permanent set",
+      "Never use Rit Color Remover on clothes you want to keep colorfast",
+      "Never layer reducing bleach + oxidizing bleach — toxic",
+      "Never skip the air-dry step while color remains"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates OxiClean, Rit Color Remover, Dawn, cold wash",
+      "Dyed cotton: Rit Color Remover strips fabric dye — whites only",
+      "Heat is the absolute constraint"
     ]
   },
+  "materialWarnings": [
+    "NEVER dryer-set dye transfer — permanent",
+    "Rit Color Remover is whites-only (strips all dye)",
+    "Sodium hydrosulfite has sulfur smell — ventilate"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is dye transfer on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Dye transfer has been through a hot dryer cycle, OxiClean + Rit Color Remover haven't cleared it, or the affected garment is colored and the nuclear reducing bleach would strip its fabric dye.",
+    "whatToTell": "\"Dye transfer on cotton from [source garment], home-treated with cold water + OxiClean [+ Rit Color Remover]. [Hot-dried before treatment / not yet dried].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Has the affected garment been through a hot dryer?",
+      "Do you know the source (new dark denim, red shirt, unknown)?",
+      "Is the affected item white or colored?",
+      "How much time has passed since the wash?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Dye transfer is the time-+ heat-critical stain where catching it BEFORE the dryer is the whole protocol. Post-dryer, even pros often can't remove it."
   },
-  "difficulty": 6,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

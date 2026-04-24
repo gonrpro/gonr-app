@@ -1,77 +1,196 @@
 {
   "id": "self-tanner-cotton",
   "title": "Self-Tanner on Cotton",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Self-tanner contains dihydroxyacetone (DHA) that reacts with amino acids in a Maillard-type reaction to produce brown melanoidin pigments. On cotton, DHA reacts with the fiber (especially protein fibers and cotton) through the same chemistry it uses on skin. The brown color develops over 2-8 hours and becomes increasingly resistant as the Maillard products cross-link.",
-  "whyThisWorks": "If caught before color develops (within 1-2 hours), cold water and surfactant can remove the DHA before the Maillard reaction completes on cotton. Once developed, an oxidizer (H2O2) breaks down the melanoidin chromophores. Lemon juice (citric acid) can also lighten the Maillard products. Speed is everything — once the color fully develops, complete removal is very difficult.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "5–30 minutes IF caught pre-development; hours-plus or escalation if developed",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "self-tanner",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "dye",
+      "DHA",
+      "maillard-reaction",
+      "cotton",
+      "time-critical",
+      "escalate-fast"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Self-tanner is dihydroxyacetone (DHA) — an active ingredient that reacts with amino acids in a MAILLARD-TYPE REACTION (same browning reaction as cooking) to produce brown melanoidin pigments. On cotton, DHA reacts with residual proteins and fiber groups the same way it does on skin. The brown color develops over 2–8 hours and becomes progressively more resistant as melanoidins cross-link. This is effectively a time-bomb stain: invisible when fresh, dark brown hours later, permanent after full development. Cotton tolerates NSD, 3% H₂O₂, acid-side spotters.",
+  "whyThisWorks": "Speed is everything. Within the first 1–2 hours, cold water + NSD can remove DHA before the Maillard reaction completes. Once developed, 3% H₂O₂ breaks the melanoidin chromophore; citric / lemon juice acid lightens residual color. After ~8 hours of development, home chemistry plateaus and pro treatment may still leave residue. Expectation-setting is part of the protocol: caught in minutes = trivial; caught next morning = often pro or partial.",
+  "defaultAssumption": "Self-tanner stains on sheets, towels, or light-colored clothing are usually discovered hours after application (overnight on sheets is the classic). Default is 'developed stain' = hard. Set honest expectations.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Time Fork + Cold Flush",
+      "technique": "Speed matters; cold flush",
+      "equipment": "Cold water, white cotton terry towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "CRITICAL: self-tanner reacts with cotton over 2–8 hours. Speed is everything. If the stain is under 2 hours old, you have a good chance. Over 8 hours, home chemistry may plateau. Cold flush from the BACK of the fabric immediately. Cold only — heat accelerates the Maillard reaction."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Strip DHA before full reaction",
+      "equipment": "NSD in cold water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Apply NSD, work with a soft brush. Lifts DHA and emulsion base before Maillard reaction completes. Repeat 2–3 cycles for fresh stains."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Acid Rinse (Developed Stains)",
+      "technique": "Citric / acetic acid for melanoidin",
+      "equipment": "Lemon juice diluted 1:4 OR dilute acetic acid 5% aqueous",
+      "dwellTime": "5–10 minutes",
+      "instruction": "For fully developed brown: dab dilute acid on the shadow. Lightens Maillard melanoidin. Dwell 5–10 min, rinse cool."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Oxidize developed chromophore",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Apply 3% H₂O₂ on residual brown. Oxidizes the melanoidin. Skip on dark cotton. For developed stains, may need repeat cycles with NSD flush between."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cool Wash + Inspect",
+      "technique": "Launder cool — heat sets developed",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "COLD wash per care label if stain is still visible — heat sets the melanoidin. Only once the stain is fully gone, hot wash as finisher."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate or appropriate solvent to dissolve dye/pigment matrix",
-      "2. Apply NSD to lift loosened pigment. Flush with cool water",
-      "3. If color persists: apply H2O2 6% on colorfast fabrics to break chromophore bonds",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Time fork: <2 hr = good odds, >8 hr = often pro. Cold flush immediately.",
+      "2. NSD to strip DHA before reaction completes.",
+      "3. Dilute acetic / citric acid on developed melanoidin.",
+      "4. 3% H₂O₂ on residual chromophore.",
+      "5. Cool wash until stain is fully gone."
     ],
     "products": [
-      "amyl acetate",
       "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dilute acetic acid 5% aqueous OR lemon juice diluted",
+      "Hydrogen Peroxide 3%"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold throughout — heat accelerates Maillard",
+    "warnings": [
+      "Heat accelerates the Maillard reaction — cold water throughout until stain is gone",
+      "Developed stains plateau even with pro chemistry — honest expectations",
+      "One oxidizer at a time"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Speed Is the Whole Protocol",
+      "instruction": "Self-tanner develops over 2–8 hours through a chemical reaction (same browning reaction as cooking). Caught in minutes: trivial. Caught on sheets the next morning: often partial or pro-only. If you just noticed it, drop everything and get cold water on it."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Water From the Back",
+      "instruction": "Hold the BACK of the stained fabric under cold running water. Cold only — warm or hot water accelerates the browning. Flush hard for a minute."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Cold Water",
+      "instruction": "Work a drop of Dawn dish soap into the spot with a fingertip for 1–2 minutes. Rinse cool. Repeat 2–3 times. Dawn strips the DHA before full reaction."
+    },
+    {
+      "step": 4,
+      "agent": "Lemon Juice for Developed Brown",
+      "instruction": "If brown has already developed: mix lemon juice with a little cool water, dab on the spot, let sit 5–10 minutes. The citric acid lightens the Maillard melanoidin. Rinse cool."
+    },
+    {
+      "step": 5,
+      "agent": "3% Hydrogen Peroxide for Residual (Whites)",
+      "instruction": "For stubborn brown on white cotton: dab 3% drugstore hydrogen peroxide, 5–10 min, blot. Skip on dark cotton.",
+      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia."
+    },
+    {
+      "step": 6,
+      "agent": "COLD Wash Until the Stain Is Gone",
+      "instruction": "Wash cold per care label if stain is still visible — hot water sets developed self-tanner into the fabric permanently. Only once the stain is fully clear can you hot-wash as a finisher."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate for Fully Developed Stains",
+      "instruction": "If the self-tanner has been on the fabric 8+ hours (sheets / towels / overnight), home chemistry may plateau. Take to a dry cleaner — and set realistic expectations; even pros sometimes leave faint shadow. Tell them: \"Self-tanner on cotton, age [minutes / hours / overnight], home-treated with Dawn + lemon juice + 3% peroxide.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately — never rub (spreading dye worsens it)",
-      "2. Apply Dawn dish soap mixed with cold water. Blot gently",
-      "3. If stain persists: apply hydrogen peroxide 3% on colorfast fabrics — test hidden area first, 5-10 min dwell time",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat until stain is completely gone"
+      "1. SPEED MATTERS — every hour the Maillard reaction progresses.",
+      "2. Cold water flush from the BACK.",
+      "3. Dawn + cold water, 2–3 cycles.",
+      "4. Lemon juice / vinegar for developed brown.",
+      "5. 3% peroxide on residual (whites).",
+      "6. COLD wash until stain is fully gone.",
+      "7. Escalate for overnight / developed stains."
     ],
     "products": [
+      "Cold water",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "Lemon juice",
+      "3% hydrogen peroxide (whites only)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if stain is 8+ hours developed and home rounds plateau. Set realistic expectation: even pros may leave shadow.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "HEAT accelerates the Maillard reaction — cold water until stain is gone",
+      "NEVER hot-wash visible self-tanner",
+      "Never mix peroxide with chlorine bleach or ammonia",
+      "Skip peroxide on dark/dyed cotton",
+      "Developed stains may plateau at faint shadow"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never delay — Maillard reaction is a clock",
+      "Never hot-wash or dry visible self-tanner — sets the melanoidin",
+      "Never layer oxidizers",
+      "Never promise full removal on developed stains"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates cold chemistry, acid, peroxide",
+      "Dyed cotton: skip or inside-seam-test peroxide",
+      "Heat is the enemy — even at wash temp — until stain is fully gone"
     ]
   },
+  "materialWarnings": [
+    "Maillard reaction is time + heat dependent",
+    "Cold until fully gone",
+    "Developed = expect plateau"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is self tanner on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Self-tanner has been on cotton 8+ hours, has been hot-washed, or two home rounds plateau.",
+    "whatToTell": "\"Self-tanner on cotton, age [minutes / hours / overnight], home-treated with Dawn + lemon juice + 3% H₂O₂. No hot wash.\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "How long ago did the self-tanner touch the fabric?",
+      "Has it been washed yet?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Sheets / towel / clothing?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Self-tanner is the chemistry-clock stain — Maillard reaction keeps progressing until the DHA is either removed or fully reacted. Speed is half the protocol; honest expectation-setting is the other half."
   },
-  "difficulty": 7,
-  "timeEstimate": "15-45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

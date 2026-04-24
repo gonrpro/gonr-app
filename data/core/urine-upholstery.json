@@ -1,87 +1,212 @@
 {
   "id": "urine-upholstery",
-  "title": "Urine on Upholstery",
+  "title": "Human Urine on Upholstery",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Urine contains urea, uric acid, and proteins. Fresh urine is mildly acidic and water-soluble. As it dries, bacteria break down urea into ammonia (alkaline shift) and uric acid crystals form — these crystals are extremely difficult to dissolve and bind tightly to upholstery. The yellow color comes from urochrome pigment. Odor is caused by volatile ammonia and bacterial decomposition products.",
-  "whyThisWorks": "Enzyme-based treatment breaks down the protein and uric acid components. Cold water prevents the protein from setting into upholstery. The surfactant component lifts soluble waste while the enzyme digests the protein bonds. For odor, the enzyme must reach all contaminated material — surface cleaning alone leaves odor-causing residue in the substrate.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "30 minutes to several hours plus fan-dry; batting involvement = pro",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "urine",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "protein",
+      "uric-acid",
+      "odor-risk",
+      "upholstery",
+      "pad-risk",
+      "biohazard-adjacent"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Human urine is urea + uric acid + urochrome (yellow pigment) + mild protein. Less concentrated than pet urine but the same odor-risk mechanism: bacteria metabolize urea into ammonia, raising pH and producing the characteristic smell. On upholstery, batting saturation is the invisible failure mode — bacteria trap in the cushion foam / batting and re-emit odor for weeks. Check the upholstery code (W / W-S / S / X) before any liquid touches the fabric.",
+  "whyThisWorks": "Enzyme digests the urea and uric acid before bacteria can fully metabolize them. Vinegar rinse neutralizes residual ammonia. Baking soda dry dust + fan + time dry the batting enough to prevent ongoing bacterial activity. The limitation: batting soak = pro extraction needed (home chemistry can't reach the foam).",
+  "defaultAssumption": "Fresh small spot on W / W-S upholstery = reasonable DIY. Larger spill or batting soak (accident on a couch cushion, mattress cover) = escalate early — home ceiling is low once padding is involved. Pet urine has its own card (pet-urine-upholstery) with different enzyme targeting.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Code Check + Blot Extract",
+      "technique": "Read tag, extract as much as possible",
+      "equipment": "Disposable gloves, white cotton towel",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Gloves on. Read upholstery code: W / W-S (water-based OK), S (solvent only — not for urine), X (vacuum only — call a pro). Press folded white towel hard on the spot to extract as much urine as possible BEFORE chemistry touches it."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water + NSD",
+      "technique": "Damp cloth transfer + weighted extract",
+      "equipment": "NSD in cold water, damp cloth, weighted dry towel",
+      "dwellTime": "1 min per pass",
+      "instruction": "Cold NSD via damp cloth. Press, lift, rotate. Never pour. Weighted dry towel 5 min on top to extract. 2–3 cycles."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat",
+      "technique": "Damp cloth enzyme for protein + urea",
+      "equipment": "Liquid Protein Spotter OR enzyme pretreat in warm water (30–38°C) on damp cloth",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Dampen cloth with enzyme solution, press on spot, dwell 15–20 min. Digests urea + uric acid protein before bacteria can metabolize."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Rinse",
+      "technique": "Acid neutralization",
+      "equipment": "Equal parts white vinegar + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar rinse via damp cloth. Neutralizes residual ammonia from bacterial breakdown. Blot dry."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Weighted Dry Towel + Baking Soda",
+      "technique": "Moisture extract + odor absorb",
+      "equipment": "Heavy dry towel + weight, baking soda",
+      "dwellTime": "30 min weighted + overnight dust",
+      "instruction": "Weighted dry towel 30 min to pull moisture up from batting. Then dust baking soda over the area. Leave overnight. Vacuum next day."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Fan-Dry + Inspect + Smell-Check",
+      "technique": "Verify full dry + no odor",
+      "equipment": "Fan, dehumidifier if available",
+      "dwellTime": "4–12 hours",
+      "instruction": "Fan the area. Smell-check next day. If odor returns or a ring wicks back, batting is contaminated — call a pro."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Gloves. Code-tag check. S / X = pro. Blot extract hard.",
+      "2. Cold NSD damp cloth + weighted extract.",
+      "3. Enzyme damp cloth 15–20 min.",
+      "4. Vinegar rinse via damp cloth.",
+      "5. Weighted dry towel 30 min + baking soda dry dust overnight.",
+      "6. Fan-dry + smell-check next day. Batting odor = pro."
     ],
     "products": [
-      "Protein Formula",
+      "Disposable gloves",
       "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Liquid Protein Spotter / enzyme pretreat",
+      "White vinegar",
+      "Baking soda",
+      "Fan / dehumidifier"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein",
-      "Avoid over-wetting — extract excess moisture to prevent backing/foam damage"
+      "Gloves — biohazard adjacent",
+      "Never pour liquid on upholstery — batting saturation",
+      "Never use hot water — sets protein",
+      "Never ammonia-based cleaners — pets / kids smell them as urine",
+      "Batting involvement = pro-lane"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Scope First",
+      "instruction": "Human urine on upholstery has a low pro-escalation threshold. If the spill soaked through (pooled more than a second), covers more than a dinner plate, or it's on a mattress or cushion you can't fully extract, call a pro. Home surface treatment can't reach batting, and that's where the smell persists."
+    },
+    {
+      "step": 2,
+      "agent": "Gloves, Code-Tag Check",
+      "instruction": "Gloves on. Find the upholstery care code — usually under a cushion. W / W-S: proceed. S-only: solvent lane (not for urine) — call a pro. X: vacuum only — definitely a pro."
+    },
+    {
+      "step": 3,
+      "agent": "Blot Extract Hard Before Chemistry",
+      "instruction": "Press a thick stack of white paper towels or folded cloths on the spot. Lift, dry section, press. Get as much urine OUT as possible before any chemistry."
+    },
+    {
+      "step": 4,
+      "agent": "Enzyme Cleaner on a Damp Cloth",
+      "instruction": "Dissolve enzyme pretreat (OxiClean Versatile, Biz) in WARM water per the label — or use a human-urine-specific cleaner if you have one. Dampen a cloth, press on the spot 15–20 minutes. Don't let it dry during dwell."
+    },
+    {
+      "step": 5,
+      "agent": "White Vinegar Rinse",
+      "instruction": "Mix equal parts white vinegar + cool water. Dab on a damp cloth. Press on the spot 5 minutes. Neutralizes residual ammonia — the step that most home guides skip."
+    },
+    {
+      "step": 6,
+      "agent": "Weighted Dry Towel + Baking Soda Overnight",
+      "instruction": "Press a thick DRY towel with a heavy book on the spot for 30 minutes. Then dust baking soda generously over the area. Leave overnight with a fan pointed at it. Vacuum off next morning. Baking soda + airflow + time = dry batting = no returning smell."
+    },
+    {
+      "step": 7,
+      "agent": "Smell-Check Next Day, Escalate If Odor Returns",
+      "instruction": "Sniff the area next morning in daylight. Any lingering smell = batting is contaminated = pro call. Tell them: \"Human urine on [W / W-S / code unknown] upholstery, age [fresh / overnight], home-treated with enzyme + vinegar + baking soda + fan-dry. [Odor persists / cleared].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot up as much liquid as possible with clean white cloths — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 2 cups cold water. Apply to stain and blot",
-      "3. Mix equal parts white vinegar and cold water. Apply to neutralize odor",
-      "4. Sprinkle baking soda over the area to absorb remaining moisture and odor — let sit 15-30 min",
-      "5. Blot thoroughly and air dry — no heat"
+      "1. Honest scope: batting soak / large area / S-X code = call a pro.",
+      "2. Gloves + code-tag check.",
+      "3. Blot-extract hard before chemistry.",
+      "4. Enzyme pretreat on damp cloth 15–20 min.",
+      "5. Vinegar + water rinse for ammonia.",
+      "6. Weighted dry towel + baking soda overnight.",
+      "7. Smell-check next day. Odor return = pro."
     ],
     "products": [
-      "Dawn dish soap",
-      "white vinegar",
-      "baking soda",
-      "Enzyme cleaner (Nature's Miracle or Rocco & Roxie)",
-      "cold water",
-      "white vinegar (odor)"
+      "Disposable gloves",
+      "Enzyme pretreat (OxiClean Versatile, Biz)",
+      "White vinegar",
+      "Baking soda",
+      "Fan"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if upholstery code is S or X, if batting soak suspected, if large area, or if odor returns after a full home cycle.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first",
-      "Do NOT use OxiClean or oxidizing agents on protein stains — they can set the stain permanently"
+      "Gloves — biohazard adjacent",
+      "NEVER pour — batting saturation is irreversible at home",
+      "NEVER hot water — sets protein",
+      "NEVER ammonia-based cleaners",
+      "Batting involvement = pro-only from that point"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never handle urine bare-handed",
+      "Never pool liquid on upholstery — batting ruin",
+      "Never hot water — cooks protein + sets",
+      "Never ammonia-based cleaners on urine"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S upholstery: tolerates enzyme + vinegar + baking soda",
+      "S-only: not for urine",
+      "X-code: pro only",
+      "Wool upholstery: pro"
     ]
   },
+  "materialWarnings": [
+    "Pro-lane threshold is LOW on urine-upholstery",
+    "Batting contamination is invisible + permanent at home",
+    "Never ammonia cleaners — smells like urine"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is urine on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "S / X code upholstery, wool, large spill, batting soak, or odor returns after a full home cycle.",
+    "whatToTell": "\"Human urine on [W / W-S / code unknown] upholstery, age [fresh / overnight], home-treated with enzyme + vinegar + baking soda + fan-dry. [Odor persists / cleared / batting suspect].\"",
+    "specialistType": "professional upholstery cleaner with hot-water extraction"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "How deep did it soak — surface, through the fabric, into cushion?",
+      "Mattress / couch / chair / car seat?",
+      "How long ago — fresh, overnight, older?",
+      "Is this human or pet urine? (use pet-urine-upholstery for pet)"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Human urine is usually less concentrated than pet urine but the batting-contamination failure mode is the same. Low pro-escalation threshold. Ammonia-cleaner-avoidance still applies (even without pets)."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

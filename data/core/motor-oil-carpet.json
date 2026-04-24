@@ -1,81 +1,196 @@
 {
   "id": "motor-oil-carpet",
   "title": "Motor Oil on Carpet",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "carpet",
-  "sector": "home",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Oil/Grease (lipid-based). Motor oil is a complex mixture of petroleum hydrocarbons (C15-C50 alkanes, cycloalkanes, aromatics) plus additives (zinc dialkyldithiophosphate anti-wear, dispersants, detergents, viscosity modifiers). Much heavier and more tenacious than cooking oil. Contains carbon black particulate from combustion. Oil stains penetrate fiber structure through capillary action and hydrophobic affinity. Triglycerides and fatty acids resist water-based cleaning. Treatment: dry-side solvent (POG) to dissolve lipid phase, followed by surfactant emulsification to remove residual oil.",
-  "whyThisWorks": "Automotive fluids are petroleum-based oils that soak in deep and resist water-based cleaners. Motor oil soaks through carpet into the padding. Oil repels water — you need something that breaks down the oil where it's hiding. Dwell time matters more than scrubbing force.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "30 minutes to several hours plus fan-dry; used-oil carbon shadow may plateau",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "motor-oil",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "oil",
+      "petroleum",
+      "carpet",
+      "solvent-first",
+      "flammable-solvent",
+      "used-oil-carbon"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Motor oil is a petroleum base-oil (C15–C50 hydrocarbons) + additive package — detergents, dispersants, anti-wear (ZDDP), viscosity modifiers. USED motor oil adds soot, combustion carbon, and wear-metal particulate from the engine — that carbon load is why used oil leaves a grey-black shadow long after the oil phase is extracted. Clean new oil is a standard hydrocarbon stain: dry-side solvent (POG / mineral spirits) dissolves it, surfactant emulsifies the residue. Used oil is a two-stage problem — the oil comes out; the carbon particulate can plateau. Carpet adds the pad-saturation failure mode: oil wicks down into the pad, then wicks BACK UP after you think you've extracted it. Weighted dry towel and patience between rounds matter more than chemistry choice.",
+  "whyThisWorks": "Powder preload wicks the bulk oil up via capillary action before any chemistry. POG or mineral spirits dissolves the remaining hydrocarbon film. Dawn emulsifies residual oil and flushes the solvent. The limitation: used oil carbon particulate isn't a chemistry problem, it's a particulate problem — sometimes it only clears with pro hot-water extraction, and sometimes it's a permanent shadow.",
+  "defaultAssumption": "Garage / driveway / workshop context. Fresh clean oil = reasonable DIY with powder + Dawn + patience. Used oil (dark, has been in an engine) = escalate earlier — carbon shadow is the failure mode home chemistry can't touch. Large spill or pad saturation = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Absorbent Powder Preload",
+      "technique": "Wick oil up via capillary — no chemistry yet",
+      "equipment": "Cornstarch, baking soda, or fuller's earth; soft brush",
+      "dwellTime": "30–60 minutes",
+      "instruction": "Cover the oil stain with a thick layer of cornstarch, baking soda, or fuller's earth. Let sit 30–60 min. The powder wicks oil UP out of the carpet fibers. Vacuum off. Repeat with fresh powder if the first layer saturated."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "POG or Mineral Spirits",
+      "technique": "Solvent tamp from top — carpet has no back-access",
+      "equipment": "POG or mineral spirits on clean white cotton cloth",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply solvent to a white cloth (never pour on carpet). Tamp from the top, flip cloth frequently, work outside-in toward the center. Ventilate the room. No flames. 2–3 passes for a fresh stain."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn + Cool Water",
+      "technique": "Emulsify residual oil and flush solvent",
+      "equipment": "Dawn dish soap + cool water, soft brush",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Work Dawn into the spot with a soft brush. Dwell 3–5 min. Dawn emulsifies residual oil and clears solvent residue. Rinse via damp cloth, not by pouring — over-wetting sinks the problem into the pad."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Weighted Dry Towel Extraction",
+      "technique": "Pull moisture + any residual oil out of the pad",
+      "equipment": "Heavy dry white towel + weight (book / brick)",
+      "dwellTime": "30 minutes minimum",
+      "instruction": "Stack dry white towels on the spot, weight them down, 30 min. Replace towels, repeat. This prevents oil from wicking back up from the pad."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Fan-Dry + Inspect",
+      "technique": "Dry the pad + check for carbon shadow",
+      "equipment": "Fan",
+      "dwellTime": "4–12 hours",
+      "instruction": "Fan the area fully dry. Inspect next day. If oil is gone but a grey-black shadow remains (used oil carbon), home chemistry is at its ceiling — pro hot-water extraction next."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG directly to the oil stain. POG is a volatile dry solvent with strong affinity for lipids — it dissolves oil droplets on contact. Tamp gently and blot with absorbent cloth.",
-      "2. If POG plateaus, apply amyl acetate for stronger solvent action. Amyl acetate is especially effective on older or polymerized oil stains. Blot with clean absorbent cloth between applications. Never use on acetate fabrics.",
-      "3. Apply NSD to emulsify any remaining oil micro-droplets and remove solvent residue. The detergent surrounds oil particles and allows them to be flushed away. Rinse thoroughly with cool water.",
-      "4. Apply diluted acetic acid (1:10) to restore fiber to its natural state. Blot dry with clean cloth and allow to air dry."
+      "1. Fuller's earth / cornstarch preload 30–60 min. Vacuum.",
+      "2. POG or mineral spirits tamp from top. Ventilate. No flames.",
+      "3. Dawn / NSD emulsify. Damp-cloth rinse — no pouring.",
+      "4. Weighted dry towel 30 min. Replace towels.",
+      "5. Fan-dry fully. Shadow remaining = hot-water extraction."
     ],
     "products": [
-      "POG (POG remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Fuller's earth / cornstarch / baking soda",
+      "POG (volatile dry solvent)",
+      "Mineral spirits (aged / polymerized)",
+      "Dawn dish soap / NSD",
+      "Fan"
     ],
-    "temperature": "warm for rinsing — warm water helps emulsify residual oil; solvent phase first",
+    "temperature": "cool / room temp throughout; no heat until oil is gone",
     "warnings": [
-      "Rubbing instead of blotting — spreads the stain",
-      "Not testing in an inconspicuous area first",
-      "Using too aggressive a chemical without checking surface compatibility"
+      "Flammable solvent — ventilate, no flames, no smoking, no hot equipment",
+      "Never pour solvent on carpet — tamp with cloth only",
+      "Used motor oil carbon particulate may leave a permanent shadow",
+      "Pad saturation = pro hot-water extraction",
+      "Never apply heat before oil phase is fully extracted — polymerizes"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Is This Clean Oil or Used Oil?",
+      "instruction": "Clean / new motor oil (amber, clear) is a regular oil stain. USED motor oil (black, from an engine) carries soot and carbon from combustion — the oil may come out but leave a grey-black shadow that home chemistry can't fully clear. Set expectations: clean oil = reasonable home job. Used oil = pro-lane threshold is low."
+    },
+    {
+      "step": 2,
+      "agent": "Powder First — 30 Minutes or More",
+      "instruction": "Cover the stain with a thick layer of cornstarch, baking soda, or cat litter. Let it sit at least 30 minutes — an hour is better. The powder wicks the oil UP out of the carpet without any chemistry or water. Vacuum off. Much of the stain usually comes with it."
+    },
+    {
+      "step": 3,
+      "agent": "Solvent on a Rag — NOT Poured",
+      "instruction": "Apply Goo Gone or mineral spirits (from any hardware store) to a clean white rag. Press and tamp from the TOP of the carpet — never pour solvent on carpet. Work outside-in so you don't spread the edge. Open windows. No candles, no gas appliances running, no one smoking. Flip the rag frequently as it picks up oil."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Damp Cloth",
+      "instruction": "Work a drop of Dawn into the spot with a soft toothbrush. Dawn emulsifies the remaining oil and clears the solvent. Rinse with a DAMP cloth, not by pouring water — pouring sends oil down into the pad where you can't reach it."
+    },
+    {
+      "step": 5,
+      "agent": "Weighted Paper Towels Overnight",
+      "instruction": "Stack paper towels on the spot, set a heavy book on top, leave 30 min. Swap for fresh ones, repeat. This pulls moisture AND any oil trying to wick back up from the pad. Overnight with fresh towels is the gold standard."
+    },
+    {
+      "step": 6,
+      "agent": "Dry Fully, Then Inspect",
+      "instruction": "Point a fan at the spot and let it dry fully — usually overnight. Check it in daylight next day. Clean oil gone = win. Grey-black shadow remaining (used oil carbon) = home ceiling reached. Call a pro with hot-water extraction and manage expectations — used-oil shadows sometimes don't fully come out."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain. Wait 5 minutes.",
-      "2. Brush off the powder with a clean white cloth.",
-      "3. Put a drop of Dawn dish soap on the stain. Blot it in.",
-      "4. Let it sit for 2–3 minutes. Blot with a cloth dampened with plain water to rinse.",
-      "5. Repeat if needed. Place paper towels over the spot and weigh them down. Let it dry completely."
+      "1. Clean oil = home job. Used oil = escalate early (carbon shadow).",
+      "2. Powder preload 30–60 min. Vacuum.",
+      "3. Goo Gone / mineral spirits on a RAG, tamp from top. Ventilate. No flames.",
+      "4. Dawn + damp cloth. Never pour water on carpet.",
+      "5. Weighted paper towels 30 min, replace, repeat. Overnight best.",
+      "6. Fan-dry. Shadow remaining = pro hot-water extraction."
     ],
     "products": [
-      "Dawn NSD",
-      "baking soda or cornstarch"
+      "Cornstarch / baking soda / cat litter",
+      "Goo Gone or mineral spirits",
+      "Dawn dish soap",
+      "Paper towels + weight",
+      "Fan"
     ],
-    "whenToStop": "Try a dry cleaning solvent (Carbona Stain Devil #5 or Goo Gone). If the stain survives two rounds, a professional carpet cleaner with hot-water extraction can often finish the job.",
+    "whenToStop": "Stop if used-oil carbon shadow persists after powder + solvent + Dawn, if pad is saturated, or if the spill covers more than a dinner plate.",
     "warnings": [
-      "Always blot — never rub. Rubbing damages carpet fibers and spreads the stain.",
-      "Place paper towels over the wet spot and weigh them down to prevent wicking overnight.",
-      "Never add water to an oil stain first — water and oil don't mix, and you'll spread it."
+      "FLAMMABLE SOLVENT — ventilate, no flames, no smoking, no gas stoves running",
+      "Never pour solvent or water on carpet — tamp and damp-cloth rinse",
+      "Used motor oil carbon may leave a permanent shadow",
+      "Never apply heat before oil phase is fully extracted"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Apply heat before oil is removed — polymerizes petroleum into the fiber",
-      "Over-wet the carpet — excess moisture causes delamination and browning from carpet backing",
-      "Rub instead of blot — damages fibers and spreads the stain"
+      "Never use solvent near open flame, pilot light, or hot equipment",
+      "Never pour solvent on carpet — tamp from a cloth",
+      "Never over-wet carpet — pad saturation wicks oil back up",
+      "Never apply heat before the oil phase is extracted — polymerizes"
     ],
     "fiberSensitivities": [
-      "Synthetic carpet tolerates most agents. Test bleach on colored carpet first. Avoid over-wetting — excess moisture causes delamination and browning from carpet backing. Polypropylene (olefin) carpet: some strong solvents can melt olefin fibers — test on a hidden area first."
+      "Nylon / polyester carpet: tolerates POG, mineral spirits, Dawn",
+      "Olefin (polypropylene) carpet: some solvents soften olefin — inside-seam-test",
+      "Wool carpet: call a pro — pH-sensitive + solvent-risk",
+      "Jute backing: over-wetting causes browning"
     ]
   },
+  "materialWarnings": [
+    "Used oil carbon shadow often plateaus at home",
+    "Pad saturation = pro-lane",
+    "Ventilate solvent — flammable",
+    "Never pour — tamp only"
+  ],
   "escalation": {
-    "when": "Motor oil stain remains after full solvent protocol, or stain covers a large area with deep saturation",
-    "whatToTell": "Motor oil stain on carpet, petroleum-based. Treated at home with NSD. Please use professional solvent extraction with hot-water rinse.",
-    "specialistType": "professional carpet cleaner"
+    "when": "Used-oil carbon shadow after full home cycle, pad saturation, spill larger than a dinner plate, wool carpet, or olefin carpet with visible solvent interaction.",
+    "whatToTell": "\"Motor oil on carpet — [clean / used], age [fresh / aged], home-treated with powder + Goo Gone + Dawn + weighted-towel extraction. [Oil cleared / carbon shadow remains / pad saturation suspected].\"",
+    "specialistType": "professional carpet cleaner with hot-water extraction"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the stain fresh or has it been sitting and drying?",
-      "How large is the affected area?",
-      "Is this synthetic or natural fiber carpet?",
-      "What color is the carpet — light, dark, or patterned?"
+      "Clean new oil (amber) or used oil from an engine (black)?",
+      "How large is the stain — coin / dinner plate / larger?",
+      "Fresh or has it been sitting?",
+      "Synthetic or wool carpet?",
+      "Any chance it soaked into the pad?"
     ],
-    "modifierNotes": "Large saturated areas may require professional hot-water extraction. Old or dried motor oil is more tenacious than fresh. Natural fiber carpets (wool, sisal) require gentler chemistry — test all solvents first. Light-colored carpets show residual staining more."
+    "modifierNotes": "Used motor oil is the hard variant because carbon particulate is a physical problem, not a chemistry problem. Pad saturation is carpet's signature failure mode — weighted dry towels between rounds prevent wick-back."
   },
-  "difficulty": 4,
-  "timeEstimate": "15–25 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,126 +1,162 @@
 {
   "id": "grease-cotton",
   "title": "Grease on Cotton",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Cooking grease is a thick triglyceride that coats cotton surfaces and resists water — water alone cannot break it down. Fresh grease sits on fiber surfaces; aged grease penetrates and polymerizes into a hard, oxidized film. The oleophilic nature of many fibers (especially polyester) means grease bonds preferentially to synthetic materials.",
-  "whyThisWorks": "POG (volatile dry solvent) dissolves the grease on contact from cotton. The principle is 'like dissolves like' — a non-polar solvent dissolves non-polar oils. Surfactant then emulsifies remaining micro-droplets so water can rinse them away. Applying solvent BEFORE water is critical — water causes the oil to emulsify and spread deeper.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "15–30 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "grease",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "oil",
+      "grease",
+      "cotton",
+      "solvent-first"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "'Grease' is a catch-all for thick animal or vegetable fats that coat cotton — bacon grease, butter, lard, chicken fat, cooking-pan splatter. These are triglycerides similar to cooking oil but thicker, more viscous, and more adherent at room temperature. Fresh grease sits on fiber surfaces; aged grease oxidizes and polymerizes (same linseed-oil-varnish chemistry as aged cooking oil). Cotton tolerates POG, mineral spirits, Dawn, and hot wash. For motor oil specifically see motor-oil-cotton; for light cooking oil see cooking-oil-cotton.",
+  "whyThisWorks": "Powder preload pulls bulk grease out of the fiber via capillary action — no chemistry, no heat, effective. Dawn is the wildlife-rehab standard for triglyceride emulsion and works on most kitchen grease. For aged / polymerized grease, mineral spirits or POG tamp re-softens the hardened film before Dawn emulsifies it.",
+  "defaultAssumption": "Kitchen / restaurant context. Fresh bacon / butter / pan-splatter = high-confidence DIY with powder + Dawn. Aged grease trends harder. Hot-dryer grease polymerizes into a shiny film that resists further Dawn treatment.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Absorbent Powder Preload",
+      "technique": "Wick grease out via capillary action",
+      "equipment": "Cornstarch / baking soda / fuller's earth",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Cover the grease stain with a thick layer of cornstarch, baking soda, or fuller's earth. Let sit 20–30 min. The powder wicks thick grease UP out of the fiber with no water needed. Brush off."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn or NSD",
+      "technique": "Generous surfactant application",
+      "equipment": "Dawn dish soap or NSD + warm water",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Apply a generous amount of Dawn or NSD directly to the stain. Dawn is formulated specifically for triglyceride emulsification. Work with a soft toothbrush for 1–2 minutes. Dwell 5 min. Rinse warm."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Mineral Spirits (Aged / Polymerized)",
+      "technique": "Solvent for set grease film",
+      "equipment": "Mineral spirits or POG on clean white cloth",
+      "dwellTime": "30–60 seconds",
+      "instruction": "For aged grease with a shiny, stiff film (usually hot-dried): tamp mineral spirits or POG on a white cloth from the back. Ventilate. Flip cloth frequently. Follow with another Dawn pass to clear the solvent."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Hot Wash",
+      "technique": "Launder per care label",
+      "equipment": "Washing machine",
+      "dwellTime": "Full wash cycle",
+      "instruction": "Launder hot per care label. Inspect BEFORE the dryer — any residual grease polymerizes under dryer heat into a semi-permanent film."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Cornstarch / fuller's earth preload 20–30 min. Brush off.",
+      "2. Generous NSD / Dawn + soft brush, 5 min.",
+      "3. Aged / polymerized: mineral spirits tamp from back.",
+      "4. Hot wash per care label."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda / fuller's earth",
+      "Dawn dish soap (or NSD)",
+      "Mineral spirits / POG (aged only)"
     ],
-    "temperature": "ambient",
+    "temperature": "room temp through spotting; hot wash post-chemistry",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "Never hot-dry residual grease — polymerizes",
+      "Ventilate when using solvent",
+      "Powder preload cuts work in half"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test + don't panic about size",
-      "instruction": "Grease looks worse than it is because oil wicks along fiber faster than water would. The visible spread isn't the full stain — most of it sits in the center. On an inside seam, dab a drop of Dawn — if the fabric keeps its color, you're safe. Save your energy for the steps that actually matter, which are powder preload and dry Dawn work."
+      "agent": "Powder First — Pull Grease Out",
+      "instruction": "Cover the grease with cornstarch, baking soda, or plain baby powder. Let it sit 20–30 minutes. The powder wicks the grease UP out of the fabric — no scrubbing, no chemistry. Brush off with a soft brush. Much of the stain usually comes with it."
     },
     {
       "step": 2,
-      "agent": "The oil rule: don't add water first",
-      "instruction": "Water and oil don't mix. Rinsing a fresh grease stain first floats the oil around and turns a small mark into a bigger faded one. The order is: powder → Dawn (dry) → wash warm. Also: skip the dryer until the stain is completely gone. Heat polymerizes oil into the cotton fiber — that's what makes old set grease nearly impossible to remove."
+      "agent": "Dawn — Generous, Work It In",
+      "instruction": "Apply a generous amount of Dawn dish soap directly to the stain. Work it in with a fingertip or soft toothbrush for 1–2 minutes. Dawn is what wildlife rehabbers use for oil-spill cleanup — it's specifically designed for grease. Let it sit 5 minutes, rinse warm. Repeat if you can feel any oily residue."
     },
     {
       "step": 3,
-      "agent": "Blot fresh grease — don't rub",
-      "instruction": "If the grease is fresh and still wet on the surface, press a folded white paper towel straight down on it. Lift, move to a dry section, press again. Get as much surface grease out of the fiber as you can before the next step. Don't rub — grease spreads sideways under pressure and you'll make the stain 3× bigger."
+      "agent": "Aged / Dryer-Cycled? Mineral Spirits",
+      "instruction": "If the grease has been through a hot dryer and has a stiff / shiny film, soap alone won't touch it. Tamp mineral spirits (paint thinner, any hardware store) on a clean white rag onto the spot from the BACK. Ventilate. No flames. Then repeat the Dawn step."
     },
     {
       "step": 4,
-      "agent": "Absorbent powder preload — 10 minutes",
-      "instruction": "Generously sprinkle cornstarch, baking soda, or unscented talc over the stain. Let it sit 10–15 minutes minimum; 30 minutes on a heavy stain. The powder wicks oil up out of the fiber before you introduce any chemistry. You'll often see the powder turn translucent or gray where it pulled oil — that's exactly what you want. Brush off with a soft toothbrush or the edge of a credit card, then shake out."
-    },
-    {
-      "step": 5,
-      "agent": "Dawn dish soap — work it in DRY",
-      "instruction": "Put a small drop of clear Dawn directly on the stain — no water yet. Work it into the fiber with a fingertip or a soft toothbrush in gentle circles. Let it sit 10 minutes. Dawn is the single best household surfactant for grease — it's literally what wildlife rescuers use on oil-soaked birds. Dry-work matters: water dilutes Dawn's grease-cutting action right when you want it strongest."
-    },
-    {
-      "step": 6,
-      "agent": "Warm water rinse + second Dawn pass",
-      "instruction": "Now rinse with warm water (not hot) from the back of the fabric. Push the dissolved grease OUT the way it came in, rather than forward through the fiber. If you still see a shadow, apply a second drop of Dawn, work it in dry again for 5 minutes, and rinse. Repeat up to three times — heavy grease almost always needs two passes."
-    },
-    {
-      "step": 7,
-      "agent": "Enzyme pretreat + warm wash",
-      "instruction": "If a shadow persists, pretreat with an enzyme stain remover (OxiClean Versatile, Biz, or Zout) per the label. Let it dwell 30 minutes. Then launder on warm (cotton's tolerance) with your normal detergent plus a half-cup of white vinegar or an extra scoop of enzyme booster. Warm water dissolves residual oil that cold leaves behind."
-    },
-    {
-      "step": 8,
-      "agent": "Air dry + daylight inspect",
-      "instruction": "Hang or lay flat to air-dry. DO NOT tumble-dry until you've inspected in daylight. Even faint oil shadows will lock in permanently under dryer heat — a common \"I thought it was gone\" mistake. If you see any shadow, repeat steps 5–7 before drying on heat."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate to a dry cleaner",
-      "instruction": "If the grease has been through a hot dryer, is older than 72 hours, or survives two full home rounds, take it to a dry cleaner. Tell them: \"Grease on cotton, age [fresh/dry-cycled/old], treated at home with cornstarch preload + Dawn dry-work + [enzyme]. No heat applied at home.\" Pros use POG (paint-oil-grease solvent) and amyl acetate that actually cleave polymerized oil — not available as a household product."
+      "agent": "Hot Wash, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer — any residual grease polymerizes under heat into a near-permanent film."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Cornstarch / baby powder preload 20–30 min. Brush off.",
+      "2. Generous Dawn + soft toothbrush, 5 min, rinse warm. Repeat.",
+      "3. Aged grease: mineral spirits on a rag from the back. Ventilate.",
+      "4. Hot wash per care label. Inspect BEFORE the dryer."
     ],
     "products": [
-      "Dawn dish soap",
-      "baking soda"
+      "Cornstarch / baby powder / baking soda",
+      "Dawn dish soap (generous)",
+      "Mineral spirits (aged / polymerized grease only)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if grease has been hot-dried and two home rounds don't clear the polymerized film.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "Powder preload saves time",
+      "Inspect BEFORE the dryer — heat sets residual grease",
+      "Ventilate when using mineral spirits",
+      "Never near open flame"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never hot-dry residual grease — polymerizes",
+      "Never use solvent near open flame",
+      "Never pour solvent directly — tamp with cloth"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton tolerates POG, mineral spirits, Dawn, NSD, hot wash",
+      "Dyed cotton: mineral spirits usually safe; inside-seam-test if concerned",
+      "Heat-durable once grease is cleared"
     ]
   },
+  "materialWarnings": [
+    "Powder first cuts the work in half",
+    "Inspect BEFORE the dryer",
+    "Ventilate solvent"
+  ],
   "escalation": {
-    "when": "If grease stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is grease on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Grease hot-dried into a polymerized film and two home rounds don't clear it.",
+    "whatToTell": "\"Grease on cotton, age [fresh / aged / hot-dried polymerized], home-treated with cornstarch + Dawn + [mineral spirits].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Fresh or aged grease?",
+      "Has it been through a hot dryer?",
+      "Kitchen / cooking grease, or motor / mechanical grease? (motor-oil-cotton for the latter)",
+      "Is the cotton white, light, or dark/dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Fresh kitchen grease is a powder + Dawn win. Dryer-polymerized grease is the multi-step variant. Motor oil has its own card; see motor-oil-cotton."
   },
-  "difficulty": 3,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
