@@ -40,21 +40,40 @@ if (!url || !key) {
 const card = JSON.parse(readFileSync(resolve(file), 'utf-8'))
 const stainCanonical = card?.meta?.stainCanonical
 const surfaceCanonical = card?.meta?.surfaceCanonical
-if (!stainCanonical || !surfaceCanonical) {
-  console.error('card is missing meta.stainCanonical or meta.surfaceCanonical')
-  process.exit(1)
-}
+
+// Fallback: derive card_key from filename or card.id when meta is missing
+// (some older cards don't carry meta.stainCanonical/surfaceCanonical yet).
+// card_key format in DB is `{stain}_{surface}`; filenames follow `stain-surface.json`.
+const fileBase = file.split('/').pop().replace(/\.json$/, '')
+const derivedFromFile = fileBase.replace('-', '_')
+const derivedFromId = card?.id ? String(card.id).replace('-', '_') : null
 
 const supabase = createClient(url, key, { auth: { persistSession: false } })
 
-const { data: existing, error: fetchErr } = await supabase
-  .from('protocol_cards')
-  .select('id, card_key, version, updated_at')
-  .eq('stain_canonical', stainCanonical)
-  .eq('surface_canonical', surfaceCanonical)
-  .eq('is_active', true)
-  .is('plant_id', null)
-  .maybeSingle()
+let existing, fetchErr
+if (stainCanonical && surfaceCanonical) {
+  ({ data: existing, error: fetchErr } = await supabase
+    .from('protocol_cards')
+    .select('id, card_key, version, updated_at')
+    .eq('stain_canonical', stainCanonical)
+    .eq('surface_canonical', surfaceCanonical)
+    .eq('is_active', true)
+    .is('plant_id', null)
+    .maybeSingle())
+} else {
+  const candidates = [derivedFromFile, derivedFromId].filter(Boolean)
+  if (!candidates.length) {
+    console.error('card has no meta + no id/filename to derive card_key')
+    process.exit(1)
+  }
+  ;({ data: existing, error: fetchErr } = await supabase
+    .from('protocol_cards')
+    .select('id, card_key, version, updated_at')
+    .in('card_key', candidates)
+    .eq('is_active', true)
+    .is('plant_id', null)
+    .maybeSingle())
+}
 
 if (fetchErr) {
   console.error('fetch failed:', fetchErr.message)
