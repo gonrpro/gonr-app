@@ -63,9 +63,42 @@
   "callPro": "If the stain is brown, older than 48 hours, or if the fabric is a delicate weave, professional treatment is safer. Repeated amateur spotting can weaken cotton fibers.",
   "customerExplanation": "Iodine stains create a chemical complex with cotton fibers. We used sodium thiosulfate, a reducing agent, to convert the iodine into a soluble form that washes away. A final hydrogen peroxide treatment removed any residual brown discoloration. The garment is now restored.",
   "homeSolutions": [
-    "Soak stain in cold milk or potato starch paste for 10 minutes (the starch can absorb surface iodine), then rinse with cold water. This works for very fresh stains only.",
-    "Apply baking soda paste directly to the stain, let dry for 5 minutes, then brush off. Follow with cold water rinse. Mild but may help absorb some iodine.",
-    "For light iodine stains, soak the garment in a solution of 1 tablespoon white vinegar per cup of water for 30 minutes, then rinse thoroughly. The acid may help slightly."
+    {
+      "step": 1,
+      "agent": "Iodine is a complex — sodium thiosulfate dissolves it",
+      "instruction": "Iodine (Betadine, tincture of iodine, povidone-iodine) stains cotton through a chemical complex, not a dye bond. The specific tool that breaks that complex is sodium thiosulfate — sold as \"hypo\" at photography stores or as chlorine neutralizer at pool-supply stores (under $10). A small bottle solves this stain. Without it: vinegar, milk, and baking soda will all give minor improvements but nothing will fully lift the orange/brown. Potato starch pulled from fresh spills only. If you have thiosulfate, you're in good shape."
+    },
+    {
+      "step": 2,
+      "agent": "Patch test + cold water back-flush",
+      "instruction": "Dab a drop of cold water on an inside seam, wait 60 seconds, blot. If the fabric holds its color, proceed. Turn the garment inside out and flush cold water through the BACK of the stain for 30–60 seconds. Iodine is water-soluble while fresh — this flush alone often removes 50% of the pigment on fresh stains."
+    },
+    {
+      "step": 3,
+      "agent": "Fresh-stain rescue: cold milk or potato starch (optional)",
+      "instruction": "If the iodine is VERY fresh (under 10 minutes) and you don't have sodium thiosulfate on hand yet: soak the stained area in cold milk for 10 minutes, OR apply a paste of potato starch and cold water and let sit until dry. Both absorb surface iodine. Rinse in cold water. This is a stopgap, not a fix. Still get sodium thiosulfate for the real treatment."
+    },
+    {
+      "step": 4,
+      "agent": "Sodium thiosulfate solution — the main event",
+      "instruction": "Mix 1 tablespoon of sodium thiosulfate crystals in 1 cup of cool (not warm) water. Dip a white cloth, wring nearly dry, press on the stain. Keep the area moist by re-wetting every 2–3 minutes. 8–10 minutes total dwell. Watch the stain fade from orange-brown toward yellow, then colorless as the thiosulfate reduces the iodine to soluble iodide. Blot with a fresh damp cloth between applications.",
+      "safetyNote": "Never mix sodium thiosulfate with chlorine bleach or strong acid — can generate sulfur dioxide gas. Work in a ventilated area."
+    },
+    {
+      "step": 5,
+      "agent": "3% peroxide for residual brown (if any)",
+      "instruction": "If a faint brown trace remains after thiosulfate, dab 3% hydrogen peroxide with a clean white cloth. 3–5 minutes dwell, then blot. Peroxide oxidizes any leftover brown compounds. Rinse the thiosulfate out fully before applying peroxide — don't mix them on the fabric. Skip this step on colored or printed cotton — test on the patch first."
+    },
+    {
+      "step": 6,
+      "agent": "Rinse thoroughly + vinegar finish",
+      "instruction": "Rinse the area with cold water at least 3 times, replacing any under-pad you're using. Residual thiosulfate left on cotton can slowly re-oxidize to cause yellowing over days. Finish with a quick vinegar rinse (1 tbsp white vinegar in 1 cup cold water) for 1 minute to neutralize pH. Air dry — no heat on residual stain."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate if brown persists after full protocol",
+      "instruction": "If a brown residue survives the full thiosulfate + peroxide sequence, the iodine has formed deeper complexes with the cellulose that home chemistry won't reach. Tell a pro: \"Iodine on cotton, age [x], treated at home with sodium thiosulfate + 3% peroxide. No bleach used. Residual brown remains.\" They'll run the same chemistry at professional concentration with controlled dwell. Very old brown iodine stains are sometimes permanent even with pro treatment."
+    }
   ],
   "meta": {
     "riskLevel": "low",
