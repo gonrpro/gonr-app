@@ -103,10 +103,18 @@ function main() {
     }
 
     if (sql) {
-      // card_key in DB = stain_surface (underscore separator, last-hyphen-to-underscore)
+      // card_key in DB = `${stain}_${surface}`. Prefer explicit `surface`
+      // when present because some surfaces contain hyphens (e.g. wool-carpet).
+      // Fallback to the historical last-hyphen split for older cards.
       const fileBase = basename(filePath, '.json')
-      const i = fileBase.lastIndexOf('-')
-      const cardKey = i === -1 ? fileBase : `${fileBase.slice(0, i)}_${fileBase.slice(i + 1)}`
+      const surface = typeof card.surface === 'string' && card.surface.trim() ? card.surface.trim() : null
+      let cardKey
+      if (surface && fileBase.endsWith(`-${surface}`)) {
+        cardKey = `${fileBase.slice(0, -1 * (`-${surface}`).length)}_${surface}`
+      } else {
+        const i = fileBase.lastIndexOf('-')
+        cardKey = i === -1 ? fileBase : `${fileBase.slice(0, i)}_${fileBase.slice(i + 1)}`
+      }
       sqlLines.push(
         `UPDATE public.protocol_cards SET sources = ${toPgTextArrayLiteral(newFields.sources)}, cross_refs = ${toPgTextArrayLiteral(newFields.cross_refs)}, verification_level = '${sqlEscape(newFields.verification_level)}' WHERE card_key = '${sqlEscape(cardKey)}' AND is_active = true AND plant_id IS NULL;`
       )
