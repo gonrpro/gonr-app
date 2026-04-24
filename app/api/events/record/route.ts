@@ -31,6 +31,8 @@ const ALLOWED_EVENT_TYPES = new Set([
   'upgrade_banner.dismissed',
   'home_monthly_cap.hit',
   'home_monthly_cap.upgrade_clicked',
+  // TASK-056 — disambiguation flow telemetry
+  'solve.ai_fallback_disclosure_rendered',
 ])
 
 async function getSessionEmail(): Promise<string | null> {

@@ -3,6 +3,9 @@
 import { useState, useCallback, useEffect, useRef, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import ResultCard from '@/components/solve/ResultCard'
+import DisambiguationPrompt from '@/components/solve/DisambiguationPrompt'
+import DisclosureRenderedBeacon from '@/components/solve/DisclosureRenderedBeacon'
+import type { DisambiguationPrompt as DisambiguationPromptType } from '@/lib/protocols/ambiguity'
 import SolveLoadingSkeleton from '@/components/solve/SolveLoadingSkeleton'
 import StainChips from '@/components/solve/StainChips'
 import SurfaceChips from '@/components/solve/SurfaceChips'
@@ -29,6 +32,22 @@ interface SolveResult {
   noVerifiedProtocol?: boolean
   message?: string
   stainType?: string | null
+  /** TASK-056 — disclosure banner when the user consented to a general baseline
+   *  via the Unknown option in a disambiguation flow. */
+  ai_fallback_disclosure?: {
+    label: string
+    body: string
+  }
+}
+
+/** TASK-056 — returned by /api/solve instead of a card when the input is
+ *  ambiguous and the viewer is Pro-tier. Client shows the picker instead of
+ *  a result, re-solves on pick with the refined_stain. */
+interface DisambiguationResponse {
+  disambiguation_prompt: DisambiguationPromptType
+  original_query: { stain: string; surface: string }
+  correlationId?: string
+  viewerTier?: string
 }
 
 function SolvePageInner() {
@@ -42,6 +61,7 @@ function SolvePageInner() {
   const [selectedSurface, setSelectedSurface] = useState('')
   const [showBrowse, setShowBrowse] = useState(false)
   const [result, setResult] = useState<SolveResult | null>(null)
+  const [disambiguation, setDisambiguation] = useState<DisambiguationResponse | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [solveCount, setSolveCount] = useState(0)
@@ -213,6 +233,7 @@ function SolvePageInner() {
     setLoading(true)
     setError('')
     setResult(null)
+    setDisambiguation(null)
     setTranslatedCard(null)
     setShowTranslated(false)
 
@@ -298,6 +319,15 @@ function SolvePageInner() {
       }
 
       const data = await res.json()
+
+      // TASK-056 — disambiguation fork. Pro tier got an ambiguous token and
+      // the server handed back a question instead of a card. Render the
+      // picker; the onPick handler re-fires solve with the refined stain.
+      if (data && data.disambiguation_prompt) {
+        setDisambiguation(data)
+        setResult(null)
+        return
+      }
 
       if (lang === 'es') {
         try {
@@ -404,6 +434,68 @@ function SolvePageInner() {
     setStainInput('')
   }
 
+  // --- TASK-056: disambiguation picker ---
+  // When the server returned a question instead of a card, show the picker.
+  // onPick re-fires solve with the refined stain + the ORIGINAL surface.
+  // Bypasses handleSolve so we don't have to mutate the input state.
+  const handleDisambiguationPick = useCallback(
+    async (refinedStain: string) => {
+      if (!disambiguation) return
+      const originalSurface = disambiguation.original_query.surface
+      setLoading(true)
+      setError('')
+      setDisambiguation(null)
+      setResult(null)
+      try {
+        const res = await fetch('/api/solve', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ stain: refinedStain, surface: originalSurface, lang }),
+        })
+        const data = await res.json()
+        if (!res.ok) {
+          throw new Error(data.error || t('solveFailed'))
+        }
+        // Re-solve could itself return another disambiguation in edge cases.
+        // If so, render it (shouldn't happen with the static tree, but cheap guard).
+        if (data && data.disambiguation_prompt) {
+          setDisambiguation(data)
+          return
+        }
+        setResult(data)
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'solve failed')
+      } finally {
+        setLoading(false)
+      }
+    },
+    [disambiguation, lang, t]
+  )
+
+  // --- TASK-056: disambiguation view ---
+  if (disambiguation) {
+    return (
+      <div
+        ref={resultRef}
+        className="animate-in fade-in slide-in-from-bottom-2 duration-300 max-w-2xl mx-auto space-y-4"
+      >
+        <button
+          onClick={handleBack}
+          className="flex items-center gap-1 mb-2 text-sm font-medium"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          {t('backToSearch')}
+        </button>
+        <DisambiguationPrompt
+          prompt={disambiguation.disambiguation_prompt}
+          originalQuery={disambiguation.original_query}
+          onPick={handleDisambiguationPick}
+          disabled={loading}
+        />
+      </div>
+    )
+  }
+
   // --- Result view ---
   if (result) {
     // Pro-tier verified-only gate — Spotter / Operator hit the library and
@@ -497,6 +589,33 @@ function SolvePageInner() {
             onLangChange={(l) => setShowTranslated(l === 'es')}
           />
         </div>
+        {/* TASK-056 — AI-fallback disclosure banner.
+            Rendered when the user picked the Unknown option in a
+            disambiguation flow. Not hideable — this is the UX surface
+            for verification_level = 'draft' (TASK-055) on cards served
+            to users who consented to a general baseline. */}
+        {result.ai_fallback_disclosure && (
+          <DisclosureRenderedBeacon correlationId={result.correlationId ?? null} />
+        )}
+        {result.ai_fallback_disclosure && (
+          <div
+            className="mb-3 rounded-xl border border-amber-500/40 bg-amber-500/5 p-4"
+            role="alert"
+            aria-live="polite"
+          >
+            <div className="flex items-start gap-2">
+              <span className="text-xl leading-none" aria-hidden="true">⚠️</span>
+              <div className="space-y-1">
+                <p className="text-sm font-semibold" style={{ color: 'var(--text)' }}>
+                  {result.ai_fallback_disclosure.label}
+                </p>
+                <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                  {result.ai_fallback_disclosure.body}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
         <ResultCard
           card={showTranslated && translatedCard ? translatedCard : result.card}
           source={result.source}

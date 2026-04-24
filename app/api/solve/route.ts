@@ -17,6 +17,7 @@ import { identifyStain, readCareLabel } from '@/lib/vision'
 import { buildSolveContext } from '@/lib/solve/context'
 import type { SolveContext } from '@/lib/solve/context'
 import { logSolveReview } from '@/lib/solve/reviewQueue'
+import { isAmbiguousStainInput, getDisambiguationPrompt, parseUnknownMetaStain } from '@/lib/protocols/ambiguity'
 
 // TASK-032 P0 fix: derive email from verified session cookie only.
 // Never trust email from request body — prevents tier escalation via
@@ -880,6 +881,57 @@ export async function POST(req: Request) {
       return NextResponse.json({ ...result, card: sanitizeCardForTier(plantTunedCard, viewerTier), stainType: resolveStainType(plantTunedCard, ctx), correlationId, viewerTier })
     }
 
+    // ── TASK-056: parse the unknown-meta suffix ONCE here ─────
+    // When the disambiguation UI's Unknown option fires a re-solve,
+    // the stain arrives as `<original>-unknown-general`. That's the
+    // user's explicit consent to a general baseline response and it
+    // overrides the pro-tier AI gate — they've been told, up-front,
+    // that this isn't stain-specific.
+    const unknownMeta = parseUnknownMetaStain(ctx.stain)
+    const explicitAiConsent = unknownMeta.isUnknown
+
+    // ── TASK-056: Pro-tier disambiguation prompt ──────────────
+    // Pro tiers (Spotter/Operator/Founder) get a routing-honesty
+    // question when their input is ambiguous instead of an AI card
+    // pretending certainty. Home/Free/Anon keep the existing
+    // frictionless AI-fallback path unchanged (Atlas 8243 lock).
+    const isProTier = viewerTier === 'spotter' || viewerTier === 'operator' || viewerTier === 'founder'
+    if (isProTier && !explicitAiConsent && isAmbiguousStainInput(ctx.stain)) {
+      const prompt = getDisambiguationPrompt(ctx.stain)
+      if (prompt) {
+        recordEvent({
+          type: EVENT_TYPES.SOLVE_DISAMBIGUATION_PROMPTED,
+          actor_id: email ?? null,
+          plant_id: (userPlant as { id?: string } | null)?.id ?? null,
+          payload: {
+            original_stain: ctx.stain,
+            surface: ctx.surface,
+            option_count: prompt.options.length,
+            tier: viewerTier,
+          },
+          correlation_id: correlationId,
+        }).catch(() => {})
+        logSolveReview({
+          queryRaw: `${ctx.stain} on ${ctx.surface}`,
+          stain: ctx.stain,
+          surface: ctx.surface,
+          tierRequested: viewerTier,
+          matchedCardKey: null,
+          usedAiFallback: false,
+          userId: email,
+          sessionId: correlationId,
+        })
+        return NextResponse.json({
+          disambiguation_prompt: prompt,
+          original_query: { stain: ctx.stain, surface: ctx.surface },
+          correlationId,
+          viewerTier,
+        })
+      }
+      // If the token was in AMBIGUOUS_STAIN_TOKENS but getDisambiguationPrompt
+      // returned null (tree miss), fall through to the pro-tier gate below.
+    }
+
     // ── Pro-tier verified-only gate (Atlas 8088 + 8102) ────────
     // Spotter and Operator must never see AI-generated chemistry —
     // pros can't un-read a bad protocol, and "AI might be right" is
@@ -887,7 +939,13 @@ export async function POST(req: Request) {
     // didn't match, bail here with a "No verified protocol yet"
     // response and log the query so it surfaces as a high-priority
     // card to author next.
-    if (viewerTier === 'spotter' || viewerTier === 'operator') {
+    //
+    // TASK-056 exception: if the user explicitly picked the Unknown
+    // option in the disambiguation UI (`-unknown-general` suffix),
+    // they've consented to the general baseline. Let that fall through
+    // to the AI fallback below, where it'll land with the prominent
+    // ai_fallback_disclosure banner.
+    if ((viewerTier === 'spotter' || viewerTier === 'operator') && !explicitAiConsent) {
       logSolveReview({
         queryRaw: `${ctx.stain} on ${ctx.surface}`,
         stain: ctx.stain,
@@ -978,7 +1036,37 @@ export async function POST(req: Request) {
         userId: email,
         sessionId: correlationId,
       })
-      return NextResponse.json({ card: sanitizeCardForTier(plantTunedAi, viewerTier), tier: 4, confidence: 0.5, source: 'ai', stainType: resolveStainType(plantTunedAi, ctx), correlationId, viewerTier })
+      recordEvent({
+        type: EVENT_TYPES.SOLVE_AI_FALLBACK_SERVED,
+        actor_id: email ?? null,
+        plant_id: (userPlant as { id?: string } | null)?.id ?? null,
+        payload: {
+          stain: ctx.stain,
+          surface: ctx.surface,
+          tier: viewerTier,
+          had_disambiguation: explicitAiConsent,
+        },
+        correlation_id: correlationId,
+      }).catch(() => {})
+      // TASK-056: attach the disclosure banner when the user got here
+      // via the Unknown option in a disambiguation flow. The banner is
+      // the UX surface for `verification_level = 'draft'` (TASK-055).
+      const aiFallbackDisclosure = explicitAiConsent
+        ? {
+            label: 'General starting point — not stain-specific',
+            body: 'We couldn\'t narrow this to a specific stain class. These are tested general steps. If no response after 1–2 passes, take it to a professional.',
+          }
+        : undefined
+      return NextResponse.json({
+        card: sanitizeCardForTier(plantTunedAi, viewerTier),
+        tier: 4,
+        confidence: 0.5,
+        source: 'ai',
+        stainType: resolveStainType(plantTunedAi, ctx),
+        correlationId,
+        viewerTier,
+        ...(aiFallbackDisclosure ? { ai_fallback_disclosure: aiFallbackDisclosure } : {}),
+      })
     } catch (err) {
       console.error('AI fallback failed:', err)
       return NextResponse.json({

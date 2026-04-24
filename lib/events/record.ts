@@ -29,6 +29,12 @@ export const EVENT_TYPES = {
   SOLVE_REQUESTED: 'solve.requested',
   PROCEDURE_SERVED: 'procedure.served',
 
+  // TASK-056 — disambiguation routing events
+  SOLVE_DISAMBIGUATION_PROMPTED: 'solve.disambiguation_prompted',
+  SOLVE_DISAMBIGUATION_PICKED: 'solve.disambiguation_picked',
+  SOLVE_AI_FALLBACK_SERVED: 'solve.ai_fallback_served',
+  SOLVE_AI_FALLBACK_DISCLOSURE_RENDERED: 'solve.ai_fallback_disclosure_rendered',
+
   // Future (defined early for convention; add wiring when surface ships)
   OUTCOME_REPORTED: 'outcome.reported',
   ESCALATION_TRIGGERED: 'escalation.triggered',
