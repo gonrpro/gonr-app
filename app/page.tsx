@@ -19,12 +19,16 @@ import { getStainLabel, getSurfaceLabel } from '@/lib/protocols/chips'
 import { BookOpen, Clock, ShieldCheck } from 'lucide-react'
 
 interface SolveResult {
-  card: ProtocolCard
+  card: ProtocolCard | null
   tier: number
   confidence: number
-  source: 'verified' | 'ai'
+  source: 'verified' | 'ai' | 'no-verified-protocol' | 'ai-unavailable' | 'library-safety-blocked'
   correlationId?: string
   viewerTier?: 'free' | 'home' | 'spotter' | 'operator' | 'founder' | 'anon'
+  /** Spotter/Operator-only gate response — library missed, AI disabled for pros. */
+  noVerifiedProtocol?: boolean
+  message?: string
+  stainType?: string | null
 }
 
 function SolvePageInner() {
@@ -402,6 +406,73 @@ function SolvePageInner() {
 
   // --- Result view ---
   if (result) {
+    // Pro-tier verified-only gate — Spotter / Operator hit the library and
+    // got no match. The API returns noVerifiedProtocol=true with card=null
+    // (Atlas 8102). Render a clean explanatory surface instead of an
+    // empty broken ResultCard.
+    if (result.noVerifiedProtocol) {
+      const stainSurface = [solveStainLabel, solveSurfaceLabel].filter(Boolean).join(' on ') || t('yourQuery') || 'this combination'
+      return (
+        <div
+          ref={resultRef}
+          className="animate-in fade-in slide-in-from-bottom-2 duration-300 max-w-2xl mx-auto"
+        >
+          <button
+            onClick={handleBack}
+            className="flex items-center gap-1 mb-4 text-sm font-medium"
+            style={{ color: 'var(--text-secondary)' }}
+          >
+            {t('backToSearch')}
+          </button>
+          <div
+            className="rounded-2xl p-6 space-y-4"
+            style={{ background: 'var(--surface)', border: '1px solid var(--border-strong)' }}
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-2xl" aria-hidden="true">🔬</span>
+              <h2 className="text-lg font-bold" style={{ color: 'var(--text)' }}>
+                No verified protocol yet
+              </h2>
+            </div>
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
+              We don&apos;t have a verified protocol for <span className="font-semibold">{stainSurface}</span> yet.
+              Pro tiers only see protocols that have passed chemistry review, so we don&apos;t guess here —
+              we&apos;d rather stay silent than ship shaky chemistry to a spotter in motion.
+            </p>
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              Your query was logged. Pro-tier misses are the highest-priority signal on our
+              &ldquo;what to author next&rdquo; list — we add verified cards continuously. Try again soon.
+            </p>
+            <div className="flex gap-2 pt-2">
+              <button
+                onClick={handleBack}
+                className="flex-1 min-h-[44px] rounded-xl text-sm font-semibold transition-colors"
+                style={{
+                  background: 'rgba(34,197,94,0.08)',
+                  border: '1px solid rgba(34,197,94,0.3)',
+                  color: 'var(--accent)',
+                }}
+              >
+                {t('backToSearch')}
+              </button>
+              <a
+                href={`mailto:hello@gonr.pro?subject=${encodeURIComponent('Protocol request: ' + stainSurface)}&body=${encodeURIComponent('No verified protocol yet for ' + stainSurface + '. Adding details so you can author it next:\n\n')}`}
+                className="flex-1 min-h-[44px] flex items-center justify-center rounded-xl text-sm font-semibold transition-colors"
+                style={{
+                  background: 'var(--surface-2)',
+                  border: '1px solid var(--border-strong)',
+                  color: 'var(--text)',
+                  textDecoration: 'none',
+                }}
+              >
+                Email the team
+              </a>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
     return (
       <div
         ref={resultRef}
