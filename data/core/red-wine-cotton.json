@@ -24,7 +24,7 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Red wine is a tannin stain — anthocyanin polyphenols give it the color, and those anthocyanins bond to cellulose through hydrogen bonding and van der Waals forces. Cotton is pure cellulose: chemically durable, tolerates enzymes, acidic tannin spotters, oxygen-side oxidizers (3% H₂O₂), and chlorine bleach on whites. The anthocyanin bond is resistant to water alone but vulnerable to oxidation and to acid-side disruption. Fresh stains move under hot water; aged stains need oxidation or the acid-side tannin lane.",
+  "stainChemistry": "Red wine is a tannin stain — anthocyanin polyphenols give it the color, and those anthocyanins bond to cellulose through hydrogen bonding and van der Waals forces. Cotton is pure cellulose: chemically durable, tolerates enzymes, acidic tannin spotters, and oxygen-side oxidizers (3% H₂O₂). The anthocyanin bond is resistant to water alone but vulnerable to oxidation and to acid-side disruption. Fresh stains move under hot water; aged stains need the oxidizer or acid-side tannin lane.",
   "whyThisWorks": "Fresh wine: a cold flush carries soluble pigment out before it can set. The canonical pro sequence is NSD to emulsify → acid-side tannin spotter to break hydrogen bonds → H₂O₂ to oxidize the residual chromophore → NSD flush to remove all chemistry before heat. White cotton's indifference to heat and oxidizers lets the whole sequence run aggressively. Aged stains skip the hot-water pour-through because heat sets older tannin; they go straight to the acid-side + oxidizer loop.",
   "defaultAssumption": "Assume fresh unless the user says otherwise — fresh wine on cotton is one of the easiest tannin wins. Aged (overnight+) jumps a tier in difficulty but stays in home/pro scope; only heat-set wine (already washed hot or ironed) trends toward escalation.",
   "spottingProtocol": [
@@ -60,9 +60,9 @@
       "side": "wet",
       "agent": "Tannin Spotter",
       "technique": "Drop, dwell, blot",
-      "equipment": "Pro tannin spotter (Chemspec Tannin Spotter, PRENETT-A, or dilute acetic acid 5% aqueous)",
+      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
       "dwellTime": "2–5 minutes",
-      "instruction": "If any orange-brown shadow remains, apply a tannin-side acid spotter by dropper. Acid-side chemistry disrupts the anthocyanin-cellulose hydrogen bond. Dwell 2–5 minutes, blot with a clean cotton towel. Flip the towel frequently. Repeat once if the shadow persists."
+      "instruction": "If any orange-brown shadow remains, apply a professional acid-side tannin spotter by dropper. Acid-side chemistry disrupts the anthocyanin-cellulose hydrogen bond. Dwell 2–5 minutes, blot with a clean cotton towel. Flip the towel frequently. Repeat once if the shadow persists before moving to the oxidizer step."
     },
     {
       "step": 5,
@@ -71,7 +71,7 @@
       "technique": "Drop-by-drop oxidation",
       "equipment": "3% H₂O₂",
       "dwellTime": "3–5 minutes",
-      "instruction": "For residual chromophore after the acid spotter pass, apply 3% hydrogen peroxide drop-by-drop. Peroxide oxidizes the conjugated anthocyanin system to colorless products. On whites, a stronger 6% solution or a dilute sodium hypochlorite pass (0.5%, 1–2 minutes maximum) can be used instead. Never layer oxidizers — one at a time, flushed between."
+      "instruction": "For residual chromophore after the acid spotter pass, apply 3% hydrogen peroxide drop-by-drop. Peroxide oxidizes the conjugated anthocyanin system to colorless products. Dwell 3–5 minutes, blot, and repeat once if any shadow survives the first pass. Escalate if two oxidizer passes don't clear it. Never layer oxidizers — one at a time, flushed between with NSD."
     },
     {
       "step": 6,
@@ -88,21 +88,19 @@
       "1. Cold flush from the back — fresh wine often clears 70%+ right here.",
       "2. NSD in cold water. Sponge, dwell 2–3 min, blot.",
       "3. FRESH ONLY (<30 min): hot pour-through from the back. Skip on aged stains.",
-      "4. Tannin spotter (Chemspec, PRENETT-A, or 5% acetic acid aqueous) — dropper, dwell 2–5 min, blot.",
-      "5. 3% H₂O₂ drop-by-drop on residual chromophore. On whites, 6% or dilute NaOCl 0.5% (1–2 min max) if needed.",
+      "4. Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — dropper, dwell 2–5 min, blot. Repeat once.",
+      "5. 3% H₂O₂ drop-by-drop on residual chromophore. Dwell 3–5 min, blot. Repeat once if shadow persists. Escalate if two passes don't clear it.",
       "6. NSD flush until clean. Hot wash per care label. Never layer oxidizers."
     ],
     "products": [
       "NSD (Neutral Synthetic Detergent)",
-      "Pro tannin spotter (Chemspec Tannin Spotter / PRENETT-A)",
-      "Hydrogen Peroxide 3% or 6%",
-      "Sodium hypochlorite 0.5% aqueous (whites only)"
+      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
+      "Hydrogen Peroxide 3%"
     ],
     "temperature": "cold throughout spotting; hot wash (60°C+) on whites after chemistry is fully flushed",
     "warnings": [
       "Never use hot water on aged wine — sets tannin permanently",
       "Never layer oxidizers — one at a time, NSD-flushed between",
-      "NaOCl on whites only; never on dyed or printed cotton",
       "Flush all chemistry before heat — residual oxidizer yellows under dryer"
     ]
   },
@@ -181,14 +179,14 @@
       "Chlorine bleach on whites only; never on dyed cotton"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates enzymes, tannin spotters, 3–6% H₂O₂, dilute NaOCl on whites, and hot water",
-      "Dyed cotton: skip bleach, test acid-side spotters on inside seam first",
+      "Cotton tolerates enzymes, acid-side tannin spotters, 3% H₂O₂, and hot water",
+      "Dyed cotton: test acid-side spotters on inside seam first",
       "Heat-safe overall — cotton is the most chemistry-tolerant common fiber"
     ]
   },
   "materialWarnings": [
     "Hot water only for fresh wine (<30 min) — sets aged tannin",
-    "Chlorine bleach on white cotton only, never on dyed",
+    "One oxidizer at a time — flush with NSD between passes",
     "Flush all chemistry before heat — residual oxidizer yellows under dryer"
   ],
   "escalation": {
