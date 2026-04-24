@@ -73,7 +73,26 @@
   "callPro": "This is MACHINE-LEVEL spotting, not individual garment spotting. If you're not trained in dry-cleaning machine operation and solvent recovery procedures, consult a professional equipment technician. Improper machine cleaning can damage the equipment or create solvent hazards.",
   "customerExplanation": "Ink load transfer occurs when the dry-cleaning machine's solvent becomes contaminated with accumulated dyes from non-colorfast garments. This is a machine problem, not a garment problem. We first cleaned the machine by running a milling cycle with fresh solvent and detergent to flush out accumulated inks from the circulation system and filter. Then we treated your individual garments with standard solvent spotting. The machine is now clean and will not re-contaminate future loads.",
   "homeSolutions": [
-    "This is an operational problem requiring machine-level intervention. Home users cannot address ink load transfer — it requires commercial dry-cleaning equipment access and training."
+    {
+      "step": 1,
+      "agent": "This isn't a garment stain — it's a dry-cleaning machine problem",
+      "instruction": "\"Ink load transfer\" is a technical dry-cleaning term for when a cleaner's machine has accumulated dye contamination in its solvent tank, and that contamination transfers to garments during the cycle. It shows up as a uniform discoloration or tint across a whole garment (not a localized spot). The fix is at the machine, not the garment — there is no home treatment that can undo a machine-level contamination."
+    },
+    {
+      "step": 2,
+      "agent": "Get the garment back to the original dry cleaner immediately",
+      "instruction": "Take the affected garment back to the cleaner that processed it, in the bag they returned it in. Tell them: \"This came back with a color shift across the whole piece — I think it's ink load transfer from your machine.\" A reputable cleaner will know what that means, will investigate their solvent tank, and will re-process your garment on their dime. If the cleaner denies it or offers you dry-side spotting on your individual garment, get a second opinion from another cleaner or their regional trade group."
+    },
+    {
+      "step": 3,
+      "agent": "Do NOT attempt home chemistry",
+      "instruction": "No amount of home spotting will fix this — you're trying to reverse a dye transfer that happened via pro-grade solvent. Isopropyl alcohol, peroxide, Dawn, OxiClean: all ineffective on load-transfer contamination and most will make the problem visually worse by partial bleaching. Leave the garment alone and let the pro handle it."
+    },
+    {
+      "step": 4,
+      "agent": "If the cleaner won't take responsibility",
+      "instruction": "If your original cleaner refuses to re-process or compensate, tell a second dry cleaner the full history: \"This came back from Cleaner X as cotton [garment type] with uniform color transfer — I think it's ink load transfer. I haven't applied anything at home. Can you assess?\" A second cleaner can identify it and use sequential reducing + oxidizing bleach (sodium hydrosulfite then peroxide) to reverse some of the dye transfer. This is not guaranteed, but it's the closest thing to a fix."
+    }
   ],
   "meta": {
     "riskLevel": "moderate",
