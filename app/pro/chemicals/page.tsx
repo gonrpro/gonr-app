@@ -134,6 +134,19 @@ const HIGH_RISK_FIBERS = ['silk', 'wool', 'cashmere']
 
 // ─── Shared Components ───────────────────────────────────────────────────────
 
+// TASK-badges-v1-b (Atlas 7997): normalize chemistry-badge text so what the
+// user reads matches the card title — no raw camelCase schema keys leaking
+// into visible UI. All-caps acronyms (NSD, POG, IPA) are preserved as-is;
+// camelCase and single-word lowercase become Title Case.
+function formatAgentKey(key: string): string {
+  if (key.length >= 2 && key === key.toUpperCase()) return key
+  return key
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
+    .split(/\s+/)
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(' ')
+}
+
 function Chevron({ open }: { open: boolean }) {
   return (
     <svg
@@ -198,7 +211,7 @@ function AgentTab() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap">
                   <h3 className="font-bold text-sm">{agent.genericName}</h3>
-                  <Badge tone="schema" size="sm" srLabel="Schema key">{key}</Badge>
+                  <Badge tone="schema" size="sm" mono={false}>{formatAgentKey(key)}</Badge>
                 </div>
               </div>
               <Chevron open={isExpanded} />
