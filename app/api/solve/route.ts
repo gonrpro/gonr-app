@@ -16,6 +16,7 @@ import { createClient } from '@supabase/supabase-js'
 import { identifyStain, readCareLabel } from '@/lib/vision'
 import { buildSolveContext } from '@/lib/solve/context'
 import type { SolveContext } from '@/lib/solve/context'
+import { logSolveReview } from '@/lib/solve/reviewQueue'
 
 // TASK-032 P0 fix: derive email from verified session cookie only.
 // Never trust email from request body — prevents tier escalation via
@@ -866,6 +867,16 @@ export async function POST(req: Request) {
         },
         correlation_id: correlationId,
       }).catch(() => {})
+      logSolveReview({
+        queryRaw: `${ctx.stain} on ${ctx.surface}`,
+        stain: ctx.stain,
+        surface: ctx.surface,
+        tierRequested: viewerTier,
+        matchedCardKey: (plantTunedCard as { id?: string }).id ?? null,
+        usedAiFallback: false,
+        userId: email,
+        sessionId: correlationId,
+      })
       return NextResponse.json({ ...result, card: sanitizeCardForTier(plantTunedCard, viewerTier), stainType: resolveStainType(plantTunedCard, ctx), correlationId, viewerTier })
     }
 
@@ -926,6 +937,16 @@ export async function POST(req: Request) {
       const plantTunedAi = applyPlantFilters(safeCard, userPlant)
       logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: plantTunedAi.title || ctx.stain, source: userPlant ? 'ai-plant-tuned' : 'ai', confidence: 0.5 }).catch(() => {})
 
+      logSolveReview({
+        queryRaw: `${ctx.stain} on ${ctx.surface}`,
+        stain: ctx.stain,
+        surface: ctx.surface,
+        tierRequested: viewerTier,
+        matchedCardKey: null,
+        usedAiFallback: true,
+        userId: email,
+        sessionId: correlationId,
+      })
       return NextResponse.json({ card: sanitizeCardForTier(plantTunedAi, viewerTier), tier: 4, confidence: 0.5, source: 'ai', stainType: resolveStainType(plantTunedAi, ctx), correlationId, viewerTier })
     } catch (err) {
       console.error('AI fallback failed:', err)
