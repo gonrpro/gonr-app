@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, type ReactNode } from 'react'
+import { useEffect } from 'react'
 import { X } from 'lucide-react'
 import Badge, { type BadgeTone } from './Badge'
 
@@ -22,13 +22,6 @@ import Badge, { type BadgeTone } from './Badge'
  * Nova can iterate on copy without touching layout.
  */
 
-export interface QuickReferenceExample {
-  brand: string
-  product: string
-  note?: string
-  tier?: 'home' | 'pro'
-}
-
 export interface QuickReferenceContent {
   /** Display name shown in the modal title. */
   title: string
@@ -40,8 +33,12 @@ export interface QuickReferenceContent {
   explainer: string
   /** Short caution / what to avoid. */
   caution?: string
-  /** A handful of real-world product examples, mixed home + pro. */
-  examples?: QuickReferenceExample[]
+  /**
+   * Quick-glance examples. Nova's locked content (AtlasOps 8061) uses the
+   * 3-line pattern: common stains → home recipe → pro recipe. Accepts plain
+   * strings so copy iteration stays fast.
+   */
+  examples?: string[]
   /** Deep link target — e.g. `/pro/chemicals?family=tannin`. */
   referenceHref?: string
   /** CTA label for the deep link. Defaults to "See full reference". */
@@ -135,31 +132,17 @@ export default function QuickReferenceModal({ open, onClose, content }: QuickRef
             </div>
           )}
 
-          {/* Examples */}
+          {/* Examples — Nova's 3-line pattern (stains · home · pro) */}
           {content.examples && content.examples.length > 0 && (
             <div className="space-y-1.5">
               <p className="text-[10px] font-mono font-bold tracking-wider" style={{ color: 'var(--text-secondary)' }}>
                 EXAMPLES
               </p>
               <ul className="space-y-1.5">
-                {content.examples.map((ex, i) => (
-                  <li key={i} className="flex items-start gap-2 text-xs" style={{ color: 'var(--text-secondary)' }}>
+                {content.examples.map((line, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                     <span className="flex-shrink-0 mt-0.5" style={{ color: 'var(--accent)' }}>•</span>
-                    <span>
-                      <span className="font-medium" style={{ color: 'var(--text)' }}>{ex.brand}</span>
-                      {' → '}
-                      <span className="font-bold" style={{ color: 'var(--text)' }}>{ex.product}</span>
-                      {ex.tier && (
-                        <Badge
-                          tone={ex.tier === 'pro' ? 'spotter' : 'home'}
-                          size="sm"
-                          className="ml-2 align-middle"
-                        >
-                          {ex.tier === 'pro' ? 'Pro' : 'Home'}
-                        </Badge>
-                      )}
-                      {ex.note && <span className="block italic opacity-70 mt-0.5">{ex.note}</span>}
-                    </span>
+                    <span style={{ color: 'var(--text)' }}>{line}</span>
                   </li>
                 ))}
               </ul>
@@ -189,19 +172,3 @@ export default function QuickReferenceModal({ open, onClose, content }: QuickRef
   )
 }
 
-export function useQuickReference(): {
-  open: (content: QuickReferenceContent) => void
-  close: () => void
-  state: { open: boolean; content: QuickReferenceContent | null }
-} {
-  // Placeholder — consumers should manage state themselves via useState
-  // until we need a cross-component singleton. Exported for future use.
-  throw new Error('useQuickReference is not implemented yet — manage modal state in the consumer component.')
-}
-
-export function QuickReferenceContentRef({
-  children,
-}: { children: ReactNode }): ReactNode {
-  // Re-export helper — reserved for a future provider pattern.
-  return children
-}

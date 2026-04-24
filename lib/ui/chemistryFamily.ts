@@ -47,19 +47,19 @@ export type FamilyKey =
   | 'combination'
   | 'unknown'
 
-// TODO(nova): final tone + label strings land here after the deep-dive.
-// Today's scaffold maps every family to a placeholder that renders with the
-// neutral tone so nothing breaks visually while we wait for palette lock-in.
-// As soon as the palette is approved, replace `neutral` with the approved
-// chemistry-family tones from Badge.tsx v2.
+// Palette locked by Atlas 8053 after Nova's industry deep-dive (8049).
+// Chemistry-family tones intentionally stay visually distinct from v1 safety
+// tones (danger / caution / safe) so a `protein` badge can never be misread
+// as "high risk" on a glance. See components/ui/Badge.tsx for the exact
+// Tailwind class mappings.
 const FAMILY_REGISTRY: Record<FamilyKey, FamilyBadge> = {
-  protein:     { tone: 'neutral', label: 'Protein',     familyKey: 'protein' },
-  tannin:      { tone: 'neutral', label: 'Tannin',      familyKey: 'tannin' },
-  oil:         { tone: 'neutral', label: 'Oil / Grease', familyKey: 'oil' },
-  dye:         { tone: 'neutral', label: 'Dye',         familyKey: 'dye' },
-  rust:        { tone: 'neutral', label: 'Rust',        familyKey: 'rust' },
-  combination: { tone: 'neutral', label: 'Combination', familyKey: 'combination' },
-  unknown:     { tone: 'neutral', label: 'Unknown',     familyKey: 'unknown' },
+  protein:     { tone: 'protein',     label: 'Protein',      familyKey: 'protein' },
+  tannin:      { tone: 'tannin',      label: 'Tannin',       familyKey: 'tannin' },
+  oil:         { tone: 'oil',         label: 'Oil / Grease', familyKey: 'oil' },
+  dye:         { tone: 'dye',         label: 'Dye',          familyKey: 'dye' },
+  rust:        { tone: 'rust',        label: 'Rust',         familyKey: 'rust' },
+  combination: { tone: 'combination', label: 'Combination',  familyKey: 'combination' },
+  unknown:     { tone: 'neutral',     label: 'Unknown',      familyKey: 'unknown' },
 }
 
 /**
