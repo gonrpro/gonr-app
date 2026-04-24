@@ -44,9 +44,17 @@ const surfaceCanonical = card?.meta?.surfaceCanonical
 // Fallback: derive card_key from filename or card.id when meta is missing
 // (some older cards don't carry meta.stainCanonical/surfaceCanonical yet).
 // card_key format in DB is `{stain}_{surface}`; filenames follow `stain-surface.json`.
+// Stain may itself contain hyphens (baby-formula, coffee-cream, red-wine), so the
+// LAST hyphen separates stain from surface — don't replace all hyphens.
 const fileBase = file.split('/').pop().replace(/\.json$/, '')
-const derivedFromFile = fileBase.replace('-', '_')
-const derivedFromId = card?.id ? String(card.id).replace('-', '_') : null
+function lastDashToUnderscore(s) {
+  const i = s.lastIndexOf('-')
+  return i === -1 ? s : `${s.slice(0, i)}_${s.slice(i + 1)}`
+}
+const derivedFromFile = lastDashToUnderscore(fileBase)
+// Cover old single-dash naming too, in case any card_key predates the convention
+const derivedFromFileSimple = fileBase.replace('-', '_')
+const derivedFromId = card?.id ? lastDashToUnderscore(String(card.id)) : null
 
 const supabase = createClient(url, key, { auth: { persistSession: false } })
 
@@ -61,7 +69,7 @@ if (stainCanonical && surfaceCanonical) {
     .is('plant_id', null)
     .maybeSingle())
 } else {
-  const candidates = [derivedFromFile, derivedFromId].filter(Boolean)
+  const candidates = [...new Set([derivedFromFile, derivedFromId, derivedFromFileSimple].filter(Boolean))]
   if (!candidates.length) {
     console.error('card has no meta + no id/filename to derive card_key')
     process.exit(1)
