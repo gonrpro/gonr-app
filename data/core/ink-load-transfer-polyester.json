@@ -65,7 +65,26 @@
   "callPro": "This is a MACHINE-LEVEL spotting problem. Only qualified dry-cleaning equipment operators should perform machine cleaning and solvent recovery. If you're not trained, consult a professional equipment technician.",
   "customerExplanation": "Ink load transfer occurs when the dry-cleaning machine solvent becomes contaminated with accumulated dyes from non-colorfast garments. We cleaned the machine by running a milling cycle with fresh solvent and detergent to flush the accumulated inks from the circulation system and filter. Then we treated your polyester garments with solvent spotting using the now-clean solvent. The machine is cleaned and will not re-contaminate future loads.",
   "homeSolutions": [
-    "This is an operational problem requiring machine-level intervention and professional dry-cleaning equipment access. Home users cannot address ink load transfer."
+    {
+      "step": 1,
+      "agent": "This isn't a garment stain — it's a dry-cleaning machine problem",
+      "instruction": "\"Ink load transfer\" is a technical dry-cleaning term for when a cleaner's machine has accumulated dye contamination in its solvent tank, and that contamination transfers to garments during the cycle. On polyester it often shows up as a uniform gray, blue, or purple shift across the whole piece (not a localized spot). The fix is at the machine, not the garment — there is no home treatment that can undo a machine-level contamination."
+    },
+    {
+      "step": 2,
+      "agent": "Get the garment back to the original dry cleaner immediately",
+      "instruction": "Take the affected garment back to the cleaner that processed it, in the bag they returned it in. Tell them: \"This came back with a color shift across the whole piece — I think it's ink load transfer from your machine.\" A reputable cleaner will recognize the term, investigate their solvent tank, and re-process your garment on their dime. Polyester is particularly prone to absorbing transferred dye — pros can sometimes lift much of it with a proper machine cycle."
+    },
+    {
+      "step": 3,
+      "agent": "Do NOT attempt home chemistry",
+      "instruction": "No home treatment fixes machine-level dye transfer. Alcohol, peroxide, Dawn, OxiClean — all ineffective, and most will make the problem visually worse by partial bleaching in splotchy patterns. On polyester specifically, avoid heat of any kind: heat fuses the transferred dye into the thermoplastic fiber at lower temperatures than on cotton."
+    },
+    {
+      "step": 4,
+      "agent": "If the cleaner refuses, ask a second opinion",
+      "instruction": "If your original cleaner won't take responsibility, tell a second cleaner: \"This came back from Cleaner X as polyester [garment type] with uniform color transfer — I think it's ink load transfer. I haven't applied anything at home.\" A second cleaner can assess and sometimes reverse some of the transfer using sequential reducing + oxidizing bleach on polyester. Not guaranteed, but it's the closest thing to a fix."
+    }
   ],
   "meta": {
     "riskLevel": "moderate",
