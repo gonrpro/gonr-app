@@ -66,9 +66,47 @@
   "callPro": "For valuable polyester garments or complex multi-fiber blends, professional dry-clean treatment is safer. Professional dry cleaners have access to stronger solvents and controlled environments. For garments with unknown fiber content or if you're unsure about fiber stability with organic solvents, professional treatment is recommended.",
   "customerExplanation": "Polyurethane coating transfers from bags or packaging through direct contact. Unlike water-soluble stains, polyurethane is a polymer that requires organic solvents to dissolve. We used volatile dry-clean solvent first to soften and lift the coating, then amyl acetate to dissolve and extract any remaining polymer. The garment was allowed to air dry completely to evaporate all solvent residue.",
   "homeSolutions": [
-    "Rubbing alcohol (70% isopropyl alcohol) sponged into the stain — weaker than professional solvents but may lighten fresh polyurethane stains. Test first on a seam.",
-    "Mineral spirits or paint thinner sponged gently into the stain — these are weak aromatic hydrocarbons that may partially dissolve fresh polyurethane, but are less effective than amyl acetate. Use in ventilated areas only.",
-    "For very light polymer stains, sometimes the transfer is thin enough that mechanical removal (gentle rubbing with a plastic scraper or soft brush) combined with heat can shrink the polymer slightly, but this is risky on polyester."
+    {
+      "step": 1,
+      "agent": "Polyurethane transfer on polyester: harder than on cotton",
+      "instruction": "Polyurethane from bag coatings, faux-leather linings, or stretch-fabric backings transfers to polyester and bonds more tightly than on cotton because polyester's own polymer chemistry has affinity for polyurethane. Home best-case: fresh thin transfers often come off with freeze-and-flake + alcohol. Thick or heat-set transfers usually need a pro dry-side solvent. Realistic: 30–60% improvement at home, rarely full removal on set transfers."
+    },
+    {
+      "step": 2,
+      "agent": "Polyester rule: no heat at any step",
+      "instruction": "Polyester is thermoplastic — and polyurethane softens at moderate heat. That means heat could theoretically help you lift the transfer, but it also permanently melts the polyester where the polyurethane sits. Any \"heat-shrinks-the-polymer\" trick is a fiber-damage trap on polyester. Cold water and air-dry at every step."
+    },
+    {
+      "step": 3,
+      "agent": "Patch test on a hidden seam",
+      "instruction": "Dab a drop of 91% isopropyl alcohol on an inside seam, wait 60 seconds, blot. If the polyester holds its color, proceed. Patch test matters more here because some polyester dyes (especially fast-fashion) are alcohol-sensitive."
+    },
+    {
+      "step": 4,
+      "agent": "Freeze-and-flake — best on fresh thin transfers",
+      "instruction": "Put the garment in a ziplock and into the freezer for 1–2 hours, or place an ice-pack-in-bag on top of the transfer for 30 minutes. Polyurethane gets brittle cold. Flex the fabric gently — if the deposit cracks and flakes off, lift the flakes with the edge of a plastic card. For thin transfers, this alone removes most of the polyurethane. Thick transfers usually won't flake cleanly; move to step 5."
+    },
+    {
+      "step": 5,
+      "agent": "Isopropyl alcohol — absorbent pad UNDER the fabric",
+      "instruction": "Lay the garment transfer-side DOWN on a stack of clean white paper towels. Dab 91% isopropyl alcohol from above with a white cloth. Alcohol partially dissolves polyurethane, and the pad underneath catches the dissolved polymer instead of letting it spread. Replace the pad every time it picks up residue. 2–3 minutes of careful dabbing beats 10 minutes of rubbing.",
+      "safetyNote": "Alcohol is flammable — ventilated area, no open flame. Safe on polyester per your patch test. NEVER mineral spirits or paint thinner on clothing at home — uncontrolled concentrations damage polyester finishes."
+    },
+    {
+      "step": 6,
+      "agent": "Dawn dish soap + cold wash",
+      "instruction": "After the alcohol dabs, put a small drop of Dawn on the treated spot, work in with a fingertip for 30 seconds, let sit 5 minutes, blot. Launder on COLD. The Dawn lifts the alcohol-loosened polymer residue and the cold wash ensures the polyester fiber doesn't get heat-softened during the cycle."
+    },
+    {
+      "step": 7,
+      "agent": "Air dry + daylight inspect — never tumble-dry on residual",
+      "instruction": "Hang or lay flat to air-dry. Inspect in daylight. If any polymer residue remains, repeat steps 4–5 before drying. Tumble-drying on heat fuses residual polyurethane into polyester permanently."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate for heavy or heat-set polyurethane",
+      "instruction": "If the transfer is thick, has been through a hot dryer, or survived two home rounds, take it in. Tell the pro: \"Polyurethane transfer on polyester, source [faux leather/bag coating/unknown]. Treated at home with freeze-and-flake + alcohol + Dawn + cold wash. No heat applied.\" They'll use amyl acetate or VDS (volatile dry-cleaning solvent) in a controlled environment that dissolves polyurethane without damaging polyester."
+    }
   ],
   "meta": {
     "riskLevel": "moderate",
