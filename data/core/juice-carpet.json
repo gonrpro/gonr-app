@@ -1,129 +1,252 @@
 {
   "id": "juice-carpet",
   "title": "Juice on Carpet",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Fruit juice contains anthocyanins or carotenoids (depending on fruit), citric acid, fructose, and tannins. On carpet, the pigment bonds through hydrogen bonding, and the sugar component creates a sticky matrix that traps the dye against the fiber. Oxidation over time deepens the color and makes the stain increasingly resistant to treatment.",
-  "whyThisWorks": "The acidic tannin spotter breaks pigment-fiber bonds on carpet. Hydrogen peroxide oxidizes the chromophore structures responsible for color. Quick treatment is key — fresh juice stains are water-soluble, but dried stains require significantly more effort as the sugars crystallize and tannins cross-link.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–45 minutes; artificial-dye juices take more rounds",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "juice",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "anthocyanin",
+      "sugar",
+      "carpet",
+      "no-alkaline",
+      "kid-spill",
+      "artificial-dye-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Juice color comes from one of three pigment classes: (1) natural anthocyanins (grape, cranberry, pomegranate, cherry — red-purple-blue), (2) natural carotenoids (orange, mango, carrot, pineapple — yellow-orange), or (3) ADDED synthetic dye — Red 40, Blue 1, Yellow 5 — engineered into almost all kid juice boxes, sports drinks, Gatorade, Kool-Aid, and flavored lemonades. Plus juice always has a lot of SUGAR (10–15g per cup typical), which creates a sticky matrix that caramelizes as it dries and attracts dirt for weeks if not removed. Natural juice responds to standard tannin chemistry. Artificial-dye juice is engineered to resist water (so the color stays in the drink) and often needs 2–3× more cycles plus UV assist (sunlight) to break down the dye. The sugar step is often skipped and is the reason \"clean\" juice spots re-collect dirt.",
+  "whyThisWorks": "Cold-water flush first removes sugar before chemistry starts (sugar left in the pad attracts future dirt). Dawn + 3% peroxide oxidizes the natural anthocyanin/carotenoid pigments and gradually breaks down artificial Red 40. White vinegar rinse keeps anthocyanins in their lighter (red) form rather than drifting to dark blue-purple. Weighted dry towels overnight prevent sugar + pigment from wicking back up as a ring. Sunlight is a legit final pass for stubborn artificial-dye cases — Red 40 is UV-degradable.",
+  "defaultAssumption": "Kid on the rug with a juice box or sippy cup. Fresh + natural juice (orange, apple) = easy. Fresh + Gatorade / Kool-Aid / sports drink = 2–3 rounds plus sunlight. Dried-in juice with sugar matrix = harder; the sugar has caramelized and the pigment is cross-linked.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify Juice Type",
+      "technique": "Natural vs artificial-dye pigment fork",
+      "equipment": "Good light, juice label if available",
+      "dwellTime": "30 seconds",
+      "instruction": "Natural anthocyanin (grape, cranberry, pomegranate) = standard tannin protocol. Natural carotenoid (orange, carrot) = similar, sometimes UV-sensitive. Artificial-dye (Red 40 / Blue 1 / Yellow 5 — kid juice boxes, sports drinks, Kool-Aid, Gatorade, flavored lemonade) = engineered to be water-resistant, budget 2–3× the cycles + sunlight finish."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Blot Outside-In",
+      "technique": "Absorb bulk before it reaches the pad",
+      "equipment": "White paper towels or cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Press white towels straight down on the spill. Lift, move to a dry section, press again. Work outside-in. Don't rub — rubbing spreads color and drives sugar deeper."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Cold Water Flush + Blot — Clear Sugar First",
+      "technique": "Small-volume cold dilute",
+      "equipment": "Cold water, white cloth",
+      "dwellTime": "1–2 min per pass",
+      "instruction": "Pour a small amount of cold water on the spot. Blot with dry cloth. Repeat 2–3 times. You're flushing SUGAR out first — sugar left in the fiber caramelizes and attracts dirt for weeks. Cold only. Don't flood — pad wicking is the enemy."
+    },
+    {
+      "step": 4,
+      "side": "dry",
+      "agent": "Hidden Peroxide Patch Test",
+      "technique": "Verify carpet color tolerance",
+      "equipment": "3% H₂O₂ + Dawn on white cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "Dab the Dawn + peroxide mix (step 5) on a hidden carpet area for 2 min. Color transfer to the cloth = carpet dye is lifting; skip peroxide. No transfer = proceed."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Dawn + 3% H₂O₂",
+      "technique": "Oxidize tannin / dye",
+      "equipment": "1 tbsp Dawn + 1 cup 3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Mix 1 tbsp Dawn + 1 cup 3% H₂O₂. Dip white cloth, wring damp, press on spot, dwell 5–10 min. Blot. Natural juice: 1–2 cycles. Red 40 / Blue 1 artificial: 2–3 cycles.",
+      "safetyNote": "Never mix peroxide with ammonia / bleach / alkaline cleaners."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Rinse",
+      "technique": "Neutralize peroxide + keep anthocyanin on the red side",
+      "equipment": "1 tbsp white vinegar + 1 cup cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Dilute vinegar on damp cloth. Press 5 min. Neutralizes peroxide + keeps anthocyanin in its lighter (acidic) color rather than drifting toward blue-purple. Blot dry."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Weighted Paper Towels Overnight",
+      "technique": "Prevent sugar+pigment wick-back",
+      "equipment": "White paper towels + heavy book",
+      "dwellTime": "8–12 hours",
+      "instruction": "Stack paper towels, weight with a heavy book, leave overnight. Pulls residual sugar + pigment out of the pad before wick-back. Especially important on juice because of sugar content."
+    },
+    {
+      "step": 8,
+      "side": "dry",
+      "agent": "Sunlight Finish — Artificial Dye Only",
+      "technique": "UV for residual Red 40",
+      "equipment": "Open blinds / daylight on the spot",
+      "dwellTime": "Several hours to a day",
+      "instruction": "If a pale artificial-dye ghost remains after two full cycles, open the blinds so sunlight falls on the spot for several hours. UV gradually breaks down Red 40 and Blue 1. This is a legit finishing pass for stubborn dye-spill cases, not a myth."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Identify — natural pigment vs artificial dye.",
+      "2. Blot outside-in; no rubbing.",
+      "3. Cold water flush + blot — sugar FIRST.",
+      "4. Hidden peroxide test.",
+      "5. Dawn + 3% peroxide, 5–10 min, 1–3 cycles.",
+      "6. White vinegar + cool water rinse.",
+      "7. Weighted paper towels overnight.",
+      "8. Sunlight finish for artificial-dye ghosts."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Paper towels + weight"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout — heat sets sugar + pigment",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color",
-      "Avoid over-wetting — extract excess moisture to prevent backing damage"
+      "NEVER alkaline cleaners on juice — locks tannin permanently",
+      "NEVER hot water — caramelizes sugar, cross-links pigment",
+      "Don't skip the sugar flush — sugar left behind attracts future stains",
+      "Hidden peroxide test on dyed carpet",
+      "Never flood water — pad wick-back"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test on a hidden spot",
-      "instruction": "Find a hidden patch of the same carpet — inside a closet, under furniture, behind a door. Dab a drop of the Dawn + 3% peroxide solution from step 5 and blot with a white cloth after two minutes. If the carpet holds its color, you're safe. If dye transfers or the fiber lightens, skip to step 9 — home peroxide will bleach the carpet dye."
+      "agent": "Figure Out If It's Natural Juice or Kid Juice",
+      "instruction": "Real 100% natural juice (orange, grape, apple, cranberry) has natural pigment and usually cleans up in 1–2 cycles. KID juice — the small boxes, sports drinks, Gatorade, Kool-Aid, Hi-C, Capri Sun, flavored lemonades — almost always contains synthetic Red 40 or Blue 1 food dye, which is engineered to stay colored in liquid. Plan for 2–3× the work plus a sunlight finish on artificial-dye spills. Both use the same protocol, just different patience."
     },
     {
       "step": 2,
-      "agent": "Identify the juice — artificial-dye juices need more patience",
-      "instruction": "Juice color comes from one of three things: natural anthocyanin (grape, cranberry, pomegranate), natural carotenoid (orange, mango, carrot), or ADDED Red #40 / Blue #1 food dye (most kid juice boxes, sports drinks, Gatorade, Kool-Aid). Artificial dyes are engineered to resist water — they often need 2–3x the cycles, plus a sunlight finish. Treat the same way, just plan for more rounds."
+      "agent": "Blot Immediately — Outside In",
+      "instruction": "Press a thick stack of white paper towels STRAIGHT DOWN on the spill. Lift, move to a dry section, press again. Work from the outside of the spill inward to keep the edge contained. Don't rub — rubbing drives juice into the pad and pad contamination is the cause of rings that return."
     },
     {
       "step": 3,
-      "agent": "The tannin rule + sugar warning",
-      "instruction": "Juice is a tannin stain plus a LOT of sugar. Two rules: (1) no alkaline cleaners (ammonia, baking soda, OxiClean on untreated tannin) — they lock the color in, and (2) don't skip step 4. The sugar in juice caramelizes as it dries into a sticky film that attracts dirt and makes the stain bigger over weeks. Cold water flush removes the sugar before chemistry starts."
+      "agent": "The Tannin Rule + Sugar Warning",
+      "instruction": "Juice is a tannin (like wine, tea, coffee) PLUS a lot of sugar. Two rules: (1) NO alkaline cleaners — no baking soda, OxiClean, ammonia, Mr. Clean, most all-purpose sprays — they permanently darken tannin, and (2) SUGAR FLUSH is non-negotiable. If you skip the water flush, sugar stays in the carpet pad, attracts dirt for weeks, and turns into a dark spot that keeps getting worse."
     },
     {
       "step": 4,
-      "agent": "Blot + cold-water dilute",
-      "instruction": "Press a folded white cloth or paper-towel stack straight down on the spill. Lift, move to a dry section, press again. Work from outside in. After blotting, pour a small amount of cold water on the spot and blot again. Repeat 2–3 times. You're flushing sugar and fresh pigment out before the real work starts. Don't flood — water that reaches the pad causes wicking rings."
+      "agent": "Cold Water Flush — Small Volume",
+      "instruction": "Pour a SMALL amount of cold water on the spot (about as much as spilled). Blot with a dry cloth. Repeat 2–3 times. Cold only — hot water caramelizes the sugar and sets the pigment. Don't flood — water that reaches the pad causes wicking rings. You're aiming to remove sugar + fresh pigment, not deep-clean."
     },
     {
       "step": 5,
-      "agent": "Dawn + 3% hydrogen peroxide solution",
-      "instruction": "Mix one tablespoon of Dawn with one cup of 3% hydrogen peroxide in a small bowl. Dip a white cloth, wring nearly dry, and dab the stain — outside edges in. Let it sit 5–10 minutes. Peroxide oxidizes natural tannin pigments and gradually breaks down artificial food dyes. Blot with a clean damp cloth. Expect 2–3 cycles for Red #40 and Blue #1.",
-      "safetyNote": "Never mix peroxide with ammonia or bleach. On dark carpet, skip this step if the patch test showed any dye transfer."
+      "agent": "Hidden Patch Test Before Peroxide",
+      "instruction": "In a closet or under furniture, dab the Dawn + peroxide mix (step 6) on a cloth, press on the hidden carpet 2 minutes. If the cloth picks up carpet color, skip peroxide and use Dawn + cold water alone. If clean, proceed."
     },
     {
       "step": 6,
-      "agent": "White vinegar rinse",
-      "instruction": "Mix one tablespoon of white vinegar with one cup of cold water. Dab onto the area with a clean white cloth. The mild acid neutralizes peroxide residue and keeps anthocyanin pigments in their lighter (red) form rather than drifting toward blue-purple. Blot dry."
+      "agent": "Dawn + 3% Peroxide Mix",
+      "instruction": "Mix 1 tablespoon Dawn dish soap with 1 cup 3% drugstore hydrogen peroxide. Dampen a white cloth, wring out, press on the spot 5–10 minutes. Peroxide oxidizes natural tannins and gradually breaks down artificial dye. Blot clean. Natural juice: 1–2 cycles. Artificial-dye kid juice: 2–3 cycles.",
+      "safetyNote": "Never mix peroxide with ammonia, bleach, OxiClean, or baking soda."
     },
     {
       "step": 7,
-      "agent": "Dry down — stop pad wicking overnight",
-      "instruction": "Stack six to ten sheets of white paper towels over the spot, weigh them down with a heavy book, and leave overnight. This pulls any residual juice up out of the pad before it can wick back as a ring. This step matters more for juice than for most stains because of the sugar — if any is left in the pad, it will keep attracting stains in the same spot."
+      "agent": "White Vinegar + Water Rinse",
+      "instruction": "Mix 1 tablespoon white vinegar with 1 cup cool water. Dab on a damp cloth 5 minutes. Neutralizes peroxide and keeps any remaining natural pigment in its lighter (red-acid) form rather than drifting to dark purple-blue. Blot dry. Don't skip this — it's why some people's \"clean\" juice spots turn blue-ish purple overnight."
     },
     {
       "step": 8,
-      "agent": "Daylight inspect — sunlight finish for artificial dye",
-      "instruction": "Inspect in natural light. If a pale shadow remains and the juice was an artificial-dye product (sports drink, kids' juice), consider opening blinds and letting sunlight fall on the spot for a few hours over the next day. UV naturally breaks down Red #40. If it's a natural juice (grape, cranberry), repeat steps 5–7 once more. Two full rounds is the home ceiling."
+      "agent": "Weighted Paper Towels Overnight",
+      "instruction": "Stack 6–10 white paper towels on the spot, put a heavy book on top, leave overnight. Pulls residual sugar AND pigment out of the pad before it can wick back as a ring. This step matters extra on juice because of the sugar."
     },
     {
       "step": 9,
-      "agent": "Escalate to a professional carpet cleaner",
-      "instruction": "If the patch test fails, the carpet is wool, or the stain survives two rounds, call a pro. Tell them: \"[Type] juice on [nylon/polyester/wool] carpet, treated with Dawn + 3% peroxide, vinegar rinse. No alkaline products used. Suspected artificial Red/Blue dye / natural anthocyanin.\" That handoff saves them 20 minutes of diagnosing pigment type."
+      "agent": "Sunlight Finish — For Artificial Dyes",
+      "instruction": "If a pale ring remains after two rounds AND the spill was an artificial-dye drink (Red 40 / Blue 1), open the blinds so sunlight falls on the spot for several hours over a day or two. UV naturally degrades synthetic food dye. Not a substitute for cleaning chemistry, but a legit finishing pass for stubborn dye ghosts."
+    },
+    {
+      "step": 10,
+      "agent": "Escalate for Wool or Ring Return",
+      "instruction": "Call a pro if the carpet is wool, if someone already hit the spot with baking soda / OxiClean / alkaline cleaner (tannin may be locked), or if a visible ring returns after two home rounds. Tell them: \"[Type] juice on [nylon / polyester / wool] carpet, age [fresh / overnight], home-treated with Dawn + 3% peroxide + vinegar + [sunlight]. [No alkaline used / alkaline was used before]. [Residual ring / color locked brown / artificial-dye ghost].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Identify — natural juice or artificial-dye kid drink?",
+      "2. Blot outside-in; no rubbing.",
+      "3. NO alkaline cleaners. DON'T skip the sugar flush.",
+      "4. Cold water small-volume flush + blot, 2–3 times.",
+      "5. Hidden peroxide test.",
+      "6. Dawn + 3% peroxide mix, 5–10 min, 1–3 cycles.",
+      "7. White vinegar + cool water rinse.",
+      "8. Weighted paper towels overnight.",
+      "9. Sunlight finish for stubborn artificial dye.",
+      "10. Wool / alkaline-set / ring return = pro."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% hydrogen peroxide",
+      "White vinegar",
+      "White paper towels + heavy book"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if baking soda / OxiClean / ammonia was already used (tannin likely locked), if the carpet is wool and peroxide lifts color, or if a ring returns after two rounds.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NEVER alkaline cleaners — locks tannin",
+      "NEVER hot water — caramelizes sugar",
+      "NEVER rub — spreads dye, drives sugar into pad",
+      "Never flood — pad wick-back",
+      "Sugar flush is mandatory — don't skip",
+      "Never mix peroxide with bleach / ammonia / alkaline"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never baking soda / OxiClean / alkaline cleaners on tannin",
+      "Never hot water on juice",
+      "Never skip the sugar flush",
+      "Never rub — spreads dye",
+      "Never mix peroxide with bleach / ammonia"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / olefin carpet: tolerates full protocol",
+      "Wool: pH-sensitive, peroxide risky — pro lane for tight spots",
+      "Dyed carpet: hidden peroxide test mandatory"
     ]
   },
+  "materialWarnings": [
+    "Artificial-dye juice needs more rounds + sunlight",
+    "Sugar matrix attracts future stains if not flushed",
+    "Alkaline cleaners are the classic mistake"
+  ],
   "escalation": {
-    "when": "If juice stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is juice on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Alkaline cleaner already used, wool carpet, ring returns after two rounds, or artificial-dye ghost persists after sunlight finish.",
+    "whatToTell": "\"[Type] juice on [nylon / polyester / wool] carpet, age [fresh / overnight / older], home-treated with Dawn + 3% peroxide + vinegar + [sunlight]. [No alkaline used / alkaline was used]. [Residual ring / locked brown / artificial-dye ghost].\"",
+    "specialistType": "professional carpet cleaner with tannin formula"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Natural juice (orange, apple, grape) or kid / sports drink (Gatorade, Kool-Aid, Capri Sun)?",
+      "Fresh or dried in?",
+      "Has anyone tried baking soda / OxiClean already?",
+      "Carpet fiber — nylon / polyester / wool?",
+      "Is there a sticky feel to the spot?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The artificial-dye fork matters — kid drinks are engineered to be colorfast. The sugar-flush step is the one most home guides skip and the reason \"clean\" juice spots re-collect dirt and turn dark over weeks."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

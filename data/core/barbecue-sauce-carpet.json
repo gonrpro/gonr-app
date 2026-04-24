@@ -1,80 +1,240 @@
 {
   "id": "barbecue-sauce-carpet",
   "title": "Barbecue Sauce on Carpet",
-  "stainFamily": "combo",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Barbecue sauce combines tomato (lycopene, tannins), sugar (caramelizes when set), vinegar, spices (turmeric/paprika pigments), and oil. On carpet, the sugar creates a sticky matrix that bonds pigment to fiber. Caramelized sugar from heat exposure becomes extremely adhesive. Multiple pigment sources (lycopene, turmeric, paprika) make this a persistent multi-colored stain.",
-  "whyThisWorks": "Cold water dissolves the sugar matrix on carpet before it can caramelize. Surfactant addresses the oil component. Tannin spotter targets the tomato polyphenols. An oxidizer addresses the turmeric and paprika pigments. Treating quickly before the sugar sets is the single biggest factor in successful removal.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–45 minutes; multi-component stain requires ordered treatment",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "barbecue-sauce",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "combination",
+      "tannin",
+      "oil",
+      "sugar",
+      "pigment",
+      "carpet",
+      "picnic",
+      "ordered-chemistry"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Barbecue sauce is a combination stain with FOUR active components: (1) TOMATO base (lycopene pigment, citric acid, tannins), (2) SUGAR (molasses / brown sugar / corn syrup — large fraction, caramelizes with heat), (3) OIL (vegetable oil + meat drippings if used with meat), (4) SPICE PIGMENTS (turmeric, paprika, smoked chili — yellow-orange, UV-sensitive). On carpet, the sugar creates a sticky matrix that binds tomato lycopene + turmeric-curcumin to the fiber. Caramelized sugar from heat (dryer, hot plate) becomes extremely adhesive and nearly permanent. Multiple pigment sources = multi-colored stain that can leave a yellow ghost after the red comes out — because turmeric/paprika are different chemistries than lycopene. Correct ordering: cold flush sugar → Dawn strip oil → enzyme + peroxide on pigment. Getting the order wrong is how this stain leaves a permanent ghost.",
+  "whyThisWorks": "Sugar flush FIRST prevents caramelization and removes the sticky matrix. Dawn then strips the oil fraction (which is a hydrophobic barrier blocking later chemistry). Only after oil is gone can peroxide reach lycopene and turmeric pigments. Sunlight finish for curcumin (UV-sensitive turmeric pigment). Wrong order = oil blocks oxidizer = permanent yellow ghost.",
+  "defaultAssumption": "Picnic / BBQ / Super Bowl / game-day plate that tipped. Fresh + caught fast = reasonable home job. Dried in with sugar fully caramelized = harder. Commercial sauce (Sweet Baby Ray's, KC Masterpiece, etc.) = high sugar content, skip the sugar flush at your peril. Mustard-based (Carolina) = bigger curcumin ghost problem. Vinegar-based (Eastern Carolina) = less sugar, easier.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Solid Bulk",
+      "technique": "Spoon or dull edge",
+      "equipment": "Spoon, plastic card",
+      "dwellTime": "1 minute",
+      "instruction": "Scoop solids into a garbage bag with a spoon or plastic card. Don't rub."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water Sugar Flush",
+      "technique": "Flush sugar BEFORE chemistry",
+      "equipment": "Cold water, white cloth",
+      "dwellTime": "2–3 min per pass",
+      "instruction": "Pour small amount of cold water, blot with dry cloth. Repeat 2–3 times. You're removing sugar first — if you skip this, sugar stays in the fiber and caramelizes when anything warm touches it. Cold only. Don't flood — pad wick."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush — Strip Oil",
+      "technique": "Remove oil so oxidizer can reach pigment",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Work Dawn into the spot with a soft toothbrush, 5 min. Dawn emulsifies the oil fraction. Damp-cloth rinse. Skip this step and peroxide can't reach the pigment — yellow ghost will persist."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat",
+      "technique": "Optional — for tannin + tomato base",
+      "equipment": "OxiClean Versatile in WARM (<100°F) water on damp cloth",
+      "dwellTime": "10–15 minutes",
+      "instruction": "Optional step for thick sauce residue: enzyme pretreat in warm (not hot) water, damp cloth, 10–15 min. Digests organic matrix between pigments."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ for Pigment",
+      "technique": "Oxidize lycopene + spice pigments",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Hidden-area color test first. 3% peroxide on damp cloth, press 5–10 min. Oxidizes lycopene (tomato red). 2–3 cycles for stubborn sauce. Blot between. Don't mix with ammonia / bleach / alkaline."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Sunlight Finish for Turmeric / Paprika Ghost",
+      "technique": "UV breaks down curcumin",
+      "equipment": "Open blinds / sunlight on the spot",
+      "dwellTime": "Several hours to 1–2 days",
+      "instruction": "If a yellow-orange ghost remains after peroxide (turmeric / paprika residual), sunlight is the finisher. Open blinds so UV falls on the spot for a few hours. Curcumin breaks down under UV. Multiple days may be needed."
+    },
+    {
+      "step": 7,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Rinse + Weighted Towels",
+      "technique": "Neutralize + extract",
+      "equipment": "White vinegar + cool water on damp cloth; paper towels + weight",
+      "dwellTime": "5 min vinegar + overnight towels",
+      "instruction": "Vinegar + cool water on damp cloth, 5 min. Neutralizes peroxide + keeps tannin on acid side. Weighted paper towels overnight to prevent wick-back ring."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove excess solids with dull edge — do not rub",
-      "2. Apply Tannin Formula for the plant-pigment component",
-      "3. Apply POG for the oil component",
-      "4. Flush with NSD and cool water",
-      "5. If color persists: apply H2O2 6% on colorfast fabrics",
-      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+      "1. Scrape solid bulk into garbage bag.",
+      "2. Cold water sugar flush FIRST — 2–3 passes, blot between.",
+      "3. Dawn / NSD + soft brush to strip oil.",
+      "4. Enzyme pretreat (warm, not hot) — optional.",
+      "5. 3% H₂O₂ for pigment — hidden test first.",
+      "6. Sunlight finish for turmeric / paprika ghost.",
+      "7. Vinegar rinse + weighted paper towels overnight."
     ],
     "products": [
-      "Tannin Formula",
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Spoon / plastic card",
+      "Dawn / NSD",
+      "OxiClean Versatile (optional)",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Paper towels + weight"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold throughout — never hot",
+    "warnings": [
+      "Sugar flush FIRST — prevents caramelization",
+      "Oil-strip (Dawn) BEFORE oxidizer — or oil blocks peroxide = yellow ghost",
+      "NEVER hot water — caramelizes sugar, cross-links tannin",
+      "NEVER alkaline cleaners on tomato tannin — locks color",
+      "NEVER skip sunlight step for turmeric / paprika residual",
+      "Hidden peroxide test on dyed carpet"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Know What You're Dealing With — This Stain Has FOUR Components",
+      "instruction": "Barbecue sauce is tomato + sugar + oil + spice pigment all at once. That's why it's harder than any one of those alone. Ordering matters: if you hit it with peroxide first, oil blocks the peroxide from reaching the pigment and you end up with a permanent yellow ghost. The order is: get the solids off, flush the sugar, strip the oil with Dawn, THEN oxidize the color, then finish turmeric/paprika residue with sunlight. Follow the order or you'll chase a ghost."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Solids, Don't Rub",
+      "instruction": "Spoon or plastic card to scoop any thick sauce off the carpet into a garbage bag. Don't rub. Don't wipe. Scrape outside-in."
+    },
+    {
+      "step": 3,
+      "agent": "COLD Water Flush — Sugar First, Not Chemistry First",
+      "instruction": "Pour a small amount of cold water on the spot, blot with a dry cloth, repeat 2–3 times. You're rinsing SUGAR out — if you leave sugar in the carpet, the moment anything warm touches it (even just the carpet drying in a sunny room), it caramelizes and locks. Cold only. Don't flood — water in the pad is the enemy. This step before any soap."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Soft Toothbrush — Strip the Oil",
+      "instruction": "Work a drop of Dawn with cool water into the spot with a soft toothbrush for 5 minutes. Dawn emulsifies the oil fraction in the sauce. This step is MANDATORY before peroxide. If you skip it, the oil coats the pigment and peroxide can't reach it — you'll end up with a faint yellow or orange ring that nothing touches. Damp-cloth rinse — don't pour water."
+    },
+    {
+      "step": 5,
+      "agent": "Hidden Patch Test Before Peroxide",
+      "instruction": "Find a hidden carpet area. Dab 3% hydrogen peroxide on a white cloth, press on the hidden spot 2 minutes. If carpet color transfers to the cloth, skip peroxide and escalate. If clean, proceed."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide on a Damp Cloth — Multiple Cycles",
+      "instruction": "Dab 3% drugstore hydrogen peroxide on a damp white cloth, press on the spot 5–10 minutes, blot. Oxidizes the red lycopene (tomato) pigment. Expect 2–3 cycles for a thick commercial sauce.",
+      "safetyNote": "Never mix peroxide with ammonia, bleach, OxiClean, or baking soda."
+    },
+    {
+      "step": 7,
+      "agent": "Sunlight for the Yellow Ghost",
+      "instruction": "After the red is gone, a pale yellow or orange ghost sometimes remains — that's turmeric or paprika pigment, which peroxide doesn't fully clear. UV (sunlight) breaks down those pigments naturally. Open the blinds so daylight falls on the spot for several hours, or lay the rug near a sunny window. Multiple days may be needed for stubborn cases. Patience wins here."
+    },
+    {
+      "step": 8,
+      "agent": "White Vinegar Rinse + Weighted Towels",
+      "instruction": "Dab 1 tbsp white vinegar + 1 cup cool water on a damp cloth, press on the spot 5 minutes. Neutralizes peroxide and keeps any lingering tannin on the lighter (acid) side of its color equilibrium. Then stack paper towels + heavy book overnight to prevent wick-back. Fan-dry in the morning."
+    },
+    {
+      "step": 9,
+      "agent": "Escalate If Sugar Caramelized or Ghost Persists",
+      "instruction": "If someone applied heat (dryer, hot plate, steam) before the sugar was flushed, or if a stubborn ghost remains after steps 4–7, call a pro. Tell them: \"Barbecue sauce on carpet, age [fresh / overnight / older], home-treated in order: cold flush → Dawn → 3% peroxide [× X cycles] → vinegar → sunlight. [Residual yellow / caramelized / heat was applied].\" The ordering disclosure helps — it tells them oil didn't block oxidizer, so ghost is real pigment."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub",
-      "2. Rinse with cold water to remove loose material",
-      "3. Apply Dawn dish soap. Work gently",
-      "4. Blot with clean white cloth. Repeat if needed",
-      "5. Air dry — no heat until stain is gone"
+      "1. Know the four components — ORDER matters.",
+      "2. Scrape solids into bag.",
+      "3. COLD water sugar flush — 2–3 passes, blot between.",
+      "4. Dawn + soft toothbrush to strip oil — MANDATORY before peroxide.",
+      "5. Hidden peroxide test.",
+      "6. 3% peroxide damp cloth, 5–10 min, 2–3 cycles.",
+      "7. Sunlight finish for yellow ghost.",
+      "8. White vinegar rinse + weighted towels overnight.",
+      "9. Caramelized sugar / persistent ghost = pro."
     ],
     "products": [
-      "Dawn dish soap"
+      "Dawn dish soap",
+      "3% hydrogen peroxide",
+      "White vinegar",
+      "Paper towels + heavy book",
+      "Sunlight"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if heat was applied before sugar was flushed (caramelized), if peroxide fails the hidden test, or if yellow ghost persists after multiple sunlight days.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "ORDER matters — sugar flush, then Dawn, THEN peroxide",
+      "Oil must be stripped before peroxide — or yellow ghost permanent",
+      "NEVER hot water — caramelizes sugar",
+      "NEVER alkaline cleaners on tomato tannin",
+      "Hidden peroxide test on dyed carpet",
+      "Never mix peroxide with ammonia / bleach / alkaline"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never hot water — caramelizes sugar, cross-links pigment",
+      "Never skip Dawn before peroxide",
+      "Never alkaline cleaners on tannin",
+      "Never mix peroxide with bleach / ammonia"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / olefin: tolerates full protocol",
+      "Wool: pH-sensitive, peroxide risky — pro lane",
+      "Dyed carpet: hidden peroxide test mandatory"
     ]
   },
+  "materialWarnings": [
+    "Four-component stain — order of operations is everything",
+    "Oil blocks oxidizer — strip oil first",
+    "Sunlight is the legit finisher for turmeric ghost",
+    "Sugar caramelization = permanent if heat touches it first"
+  ],
   "escalation": {
-    "when": "If barbecue sauce stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is barbecue sauce on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Heat was applied before sugar was flushed, wool carpet, yellow ghost persists after multiple sunlight sessions, or peroxide fails hidden test.",
+    "whatToTell": "\"Barbecue sauce on carpet, age [fresh / overnight / older], treated in order: cold flush → Dawn → 3% peroxide [× X cycles] → vinegar → sunlight. [Residual yellow / sugar caramelized / heat used].\"",
+    "specialistType": "professional carpet cleaner with combination-stain chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Tomato-based commercial sauce, vinegar-based Carolina, or mustard-based Carolina?",
+      "Fresh or dried in?",
+      "Did anyone apply heat (hot plate, dryer, steam) before flushing?",
+      "Is the remaining ghost yellow (turmeric / paprika) or red (lycopene)?",
+      "Carpet fiber?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Mustard-based Carolina sauce carries more turmeric and will leave a bigger yellow ghost. Vinegar-based sauces have less sugar and clear faster. Commercial sauces (Sweet Baby Ray's, KC Masterpiece) are the sugar-heaviest — sugar flush is mandatory. Order-of-operations discipline separates successful DIY from permanent ghost."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

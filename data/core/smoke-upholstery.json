@@ -1,78 +1,262 @@
 {
   "id": "smoke-upholstery",
   "title": "Smoke on Upholstery",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Smoke residue (soot) contains carbon particles, tar, nicotine (alkaloid), and volatile organic compounds. On upholstery, carbon particles lodge mechanically in fiber texture while tar creates a sticky film. Nicotine produces yellow-brown staining through chemical bonding. The odor comes from VOCs absorbed into the fiber matrix. Fire smoke also contains acidic gases that can damage fibers.",
-  "whyThisWorks": "Dry cleaning (professional) is most effective because solvent dissolves tar without driving soot deeper into upholstery. For DIY, surfactant with baking soda addresses the acidic soot. An oxidizer targets nicotine yellowing. Odor requires thorough airing or ozone treatment. Vacuuming loose soot BEFORE wet treatment prevents smearing.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "30 minutes for light smoke; fire smoke = pro remediation",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "smoke",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "smoke",
+      "soot",
+      "nicotine",
+      "upholstery",
+      "fire-vs-light-fork",
+      "odor-critical",
+      "remediation-threshold"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Smoke residue is a mix of carbon particulate (soot), tar, oily condensates, and — depending on source — nicotine, creosote, or combustion-byproduct acids. Two very different cases: (1) LIGHT SMOKE (cigarette / incense / one-time kitchen mishap / candle soot) = surface nicotine yellowing + loose soot that responds to careful cleaning, and (2) FIRE SMOKE (house fire, apartment fire, smoke contamination from a neighbor's fire) = heavy saturation of soot + tar + acidic condensates + health-hazard VOCs that have penetrated fiber and batting. The latter is a professional fire-restoration job, not a cleaning job. Attempting to DIY fire-smoke upholstery can cause inhaled health exposure and usually fails anyway because the cushion batting is saturated. On light smoke, the #1 mistake is WIPING with a damp cloth — that drags soot in rather than removing it, leaving a gray smear that's often worse than the original. Vacuum first, always.",
+  "whyThisWorks": "For light smoke: dry soot removal (vacuum / dry sponge / chemical sponge) pulls loose particulate OUT before any moisture makes it smear. Then solvent (Goo Gone / POG) dissolves tar. Dawn emulsifies. For nicotine yellowing, peroxide oxidizes the pigment. For fire smoke or heavy saturation, there is no home chemistry that reaches cushion batting or neutralizes acidic condensates — certified fire restoration (IICRC S500) is the correct tool. Knowing which case you're in is half the protocol.",
+  "defaultAssumption": "Home smoker / ex-smoker's furniture for resale = light smoke + nicotine. Incense / candle soot / kitchen mishap = light smoke. House fire / neighbor fire / smoke contamination from nearby structure fire = fire smoke = pro only. The scope check is the whole fork.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Fork: Light Smoke vs Fire Smoke",
+      "technique": "Identify scope before any cleaning",
+      "equipment": "Good light, mask, gloves",
+      "dwellTime": "5 minutes",
+      "instruction": "FIRE SMOKE (house fire, apartment fire, smoke from neighbor fire, commercial building fire): STOP. This is fire restoration, not cleaning. Call a licensed fire-restoration company (IICRC S500 certified). DIY risks inhaling VOCs that are health hazards, and the cushion batting is saturated with acidic condensates you can't reach. LIGHT SMOKE (cigarette, incense, candle soot, one-time kitchen): continue below. When in doubt, treat as fire smoke."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Code Check + PPE",
+      "technique": "Read tag + gloves + mask",
+      "equipment": "N95 mask, disposable gloves",
+      "dwellTime": "2 minutes",
+      "instruction": "Mask + gloves. Find the upholstery care code: W / W-S = full protocol OK. S-only = solvent only, no Dawn rinse. X = vacuum only, pro. Even for \"light\" smoke, nicotine and tar condensates can irritate skin and airways — PPE is not optional."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Vacuum Loose Soot — DRY Only",
+      "technique": "HEPA vacuum with upholstery attachment, no contact with surface",
+      "equipment": "HEPA vacuum (critical — non-HEPA recirculates soot)",
+      "dwellTime": "10–20 minutes",
+      "instruction": "HEPA vacuum the upholstery with an upholstery attachment. Keep the nozzle just above the surface — don't press it into the fabric, which would grind soot in. Work in overlapping passes across the whole piece, not just the visible dirty area. DO NOT wipe, damp-cloth, or damp-brush first — moisture turns loose soot into a gray smear that's MUCH harder to remove. Dry removal first, always."
+    },
+    {
+      "step": 4,
+      "side": "dry",
+      "agent": "Dry Chemical Sponge (Soot Sponge)",
+      "technique": "Mechanical pickup of embedded soot",
+      "equipment": "Vulcanized rubber / chemical sponge (Amazon $10)",
+      "dwellTime": "5–10 minutes",
+      "instruction": "A dry chemical sponge (also called a soot sponge or vulcanized rubber sponge) picks up soot mechanically. Wipe in long, straight strokes from clean area toward dirty area. DO NOT wet it. Discard the used sponge in a sealed bag — don't wash and re-use, and don't touch your face with the dirty side."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Goo Gone or POG for Tar Residue",
+      "technique": "Solvent tamp from top with cloth",
+      "equipment": "Goo Gone or POG on white cotton cloth",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply to white cloth, tamp the remaining tar / nicotine residue spots from the top. Outside-in. Ventilate. 2–3 passes. Don't pour on upholstery."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "Dawn Damp Cloth (W / W-S Only)",
+      "technique": "Emulsify solvent residue",
+      "equipment": "Dawn + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "W / W-S code: Dawn + cool water on damp cloth, work with soft brush, blot. S-only: skip — dry buff the solvent residue. Damp-cloth only, never pour."
+    },
+    {
+      "step": 7,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ for Nicotine Yellowing (Optional)",
+      "technique": "Oxidize residual yellow stain",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "If yellow nicotine staining remains after solvent + Dawn: hidden-area test, then 3% H₂O₂ on damp cloth 5 min. Blot. Only for nicotine residual — skip for non-smoker smoke."
+    },
+    {
+      "step": 8,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan-Dry + Ventilate",
+      "technique": "Extract + odor ventilation",
+      "equipment": "Dry towel + weight, fan, open windows",
+      "dwellTime": "Overnight",
+      "instruction": "Weighted dry towel 30 min. Fan the room, open windows. Smoke ODOR is the hardest part — ventilation over days is often needed. Ozone treatment is a pro option for persistent odor (specialized equipment, room cleared of people / pets / plants during use)."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Vacuum loose soot — do NOT brush or wipe (smears carbon into fiber)",
-      "2. Apply POG to dissolve tar component",
-      "3. Apply NSD to remove remaining soot and nicotine",
-      "4. If yellowing remains: apply H2O2 6%",
-      "5. Flush with cool water. Air dry in ventilated area"
+      "1. Fork: light smoke or fire smoke? Fire = IICRC S500 restoration, not cleaning.",
+      "2. Code tag check + N95 + gloves.",
+      "3. HEPA vacuum dry — no damp contact first.",
+      "4. Dry chemical sponge for embedded soot.",
+      "5. Goo Gone / POG tamp from top for tar residue.",
+      "6. Dawn damp cloth (W/W-S) or dry buff (S).",
+      "7. 3% H₂O₂ for nicotine yellowing (optional).",
+      "8. Weighted towel + fan-dry + ventilate. Ozone pro option for odor."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%"
+      "N95 mask + gloves",
+      "HEPA vacuum",
+      "Dry chemical sponge (vulcanized rubber)",
+      "Goo Gone / POG",
+      "Dawn / NSD",
+      "3% Hydrogen peroxide (nicotine)",
+      "Fan + ozone pro option"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout",
     "warnings": [
-      "Always test on hidden area first"
+      "FIRE SMOKE = IICRC S500 restoration, NOT cleaning",
+      "DO NOT WIPE WITH DAMP CLOTH before vacuuming — smears soot",
+      "PPE required — soot + nicotine + VOCs are respiratory hazards",
+      "Non-HEPA vacuum recirculates soot through the room",
+      "Code check — S/X change protocol",
+      "Odor remediation may need ozone treatment (pro)"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "First — Is This Fire Smoke or Light Smoke?",
+      "instruction": "This is the most important step. FIRE smoke (from a house fire, apartment fire, or even a neighbor's fire that sent smoke into your space) is NOT a cleaning job. It's fire restoration. The upholstery batting is saturated with acidic condensates that home chemistry can't reach, and the soot/VOCs are actual health hazards. Call a licensed fire restoration company (IICRC S500 certified) — your insurance likely covers this. LIGHT smoke (cigarette smoker's chair, incense, candle soot, one-time kitchen mishap, burned popcorn smell) — continue below. When in doubt, treat as fire smoke and call a pro."
+    },
+    {
+      "step": 2,
+      "agent": "Mask and Gloves — Not Optional",
+      "instruction": "Even \"light\" smoke residue has nicotine, tar, and VOCs that irritate lungs and skin. Put on an N95 mask (not cloth — actual N95) and disposable gloves before you start. If anyone in the house has asthma or respiratory issues, they should be out of the room during cleaning. Open windows for ventilation."
+    },
+    {
+      "step": 3,
+      "agent": "Find the Upholstery Code",
+      "instruction": "Tag under a cushion. W / W-S = full protocol including water cleaning. S-only = solvent only, no Dawn + water rinse. X = vacuum only, pro. If the cushion cover zips off and is W-marked, taking it off and machine-washing it cold is easier than treating in place."
+    },
+    {
+      "step": 4,
+      "agent": "DRY VACUUM FIRST — Do Not Wipe With a Damp Cloth",
+      "instruction": "This is the #1 mistake people make: they see a sooty couch and grab a damp cloth. DON'T. Wet contact with loose soot smears it into a gray film that's much harder to clean than the original. Vacuum FIRST with a HEPA vacuum (a regular vacuum recirculates fine soot back into the room air — a HEPA filter traps it). Use the upholstery attachment, keep the nozzle just above the fabric, don't press it in. Work in overlapping strips across the whole piece."
+    },
+    {
+      "step": 5,
+      "agent": "Dry Chemical Sponge (Soot Sponge) for Embedded Soot",
+      "instruction": "Get a \"chemical sponge\" or \"soot sponge\" — a vulcanized rubber sponge sold for fire cleanup (Amazon, $10). Wipe the upholstery in long straight strokes from a clean area toward a dirty one. DO NOT wet the sponge. It picks up embedded soot mechanically without smearing. As the sponge face gets dirty, slice it off with a knife to expose clean rubber, or replace. Bag used sponges sealed."
+    },
+    {
+      "step": 6,
+      "agent": "Goo Gone for Tar / Nicotine Residue Spots",
+      "instruction": "Spots of tar or heavy nicotine yellow stay after dry removal. Apply Goo Gone (orange bottle, hardware/grocery) to a clean white rag — never pour on upholstery. Tamp the spots from the TOP, flip the rag as it picks up brown/yellow. 2–3 passes. Open windows; Goo Gone is flammable — no flame."
+    },
+    {
+      "step": 7,
+      "agent": "Dawn + Damp Cloth (W / W-S Code Only)",
+      "instruction": "If the code is W or W-S: work a drop of Dawn with cool water into a damp cloth, press on the spots to clear Goo Gone residue, blot. If the code is S-only: skip. Dry buff with a clean cloth instead. Damp-cloth only, no pouring."
+    },
+    {
+      "step": 8,
+      "agent": "3% Peroxide for Residual Nicotine Yellow (Optional)",
+      "instruction": "For nicotine-yellowed upholstery (ex-smoker furniture), 3% peroxide on a damp cloth can further lift the yellow. Hidden-area test first — peroxide can lighten dyed fabric. Not needed for non-smoker smoke.",
+      "safetyNote": "Never mix peroxide with ammonia, bleach, or alkaline cleaners."
+    },
+    {
+      "step": 9,
+      "agent": "Fan + Ventilation + Odor Patience",
+      "instruction": "Weighted dry towel 30 min. Fan the room, keep windows open for days. Smoke ODOR takes time to clear — the residual VOCs diffuse out of fabric slowly. Baking soda dusted on the upholstery and left overnight (vacuum off) can help mild residual smell. For stubborn odor, a pro can run an OZONE TREATMENT — people, pets, and plants out of the room during use — which oxidizes the last of the VOCs."
+    },
+    {
+      "step": 10,
+      "agent": "Escalate for Heavy Smoke or Persistent Odor",
+      "instruction": "If the upholstery stays smelly after a full cleaning cycle + ventilation days, the cushion batting is likely contaminated and you need pro extraction or ozone. Fire smoke is ALWAYS pro. Tell them: \"Smoke on [W / W-S / S / X] upholstery, source [cigarette / incense / candle / FIRE SMOKE], home-treated with HEPA vacuum + dry chemical sponge + Goo Gone + [Dawn] + [peroxide]. [Persistent odor / residual yellow / fire-restoration needed].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove loose material — brush, blot, or scrape as appropriate",
-      "2. Apply Dawn dish soap mixed with cold water",
-      "3. Blot with clean white cloth. Repeat if needed",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat"
+      "1. FIRE SMOKE = PRO. Not a DIY cleaning problem.",
+      "2. Code check + N95 + gloves. Open windows.",
+      "3. HEPA vacuum DRY — do NOT wipe with damp cloth first.",
+      "4. Dry chemical sponge for embedded soot.",
+      "5. Goo Gone / POG on rag for tar spots.",
+      "6. Dawn damp cloth (W/W-S) or dry buff (S).",
+      "7. 3% peroxide for nicotine yellow (optional, hidden test).",
+      "8. Fan-dry + days of ventilation + baking soda overnight.",
+      "9. Persistent odor = pro ozone treatment."
     ],
     "products": [
-      "Dawn dish soap"
+      "N95 mask + disposable gloves",
+      "HEPA vacuum with upholstery attachment",
+      "Dry chemical sponge (vulcanized rubber)",
+      "Goo Gone / citrus solvent",
+      "Dawn dish soap",
+      "3% hydrogen peroxide (nicotine residual)",
+      "Baking soda",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if this is fire smoke (pro-restoration job), if smell persists after full ventilation (pro ozone), or if the piece is leather/silk/wool (different protocol).",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "FIRE SMOKE is a pro restoration job — not cleaning",
+      "NEVER damp-wipe before vacuuming — smears soot into film",
+      "Non-HEPA vacuum recirculates soot",
+      "PPE — soot + VOCs are respiratory hazards",
+      "Code check — S/X change protocol",
+      "Flammable solvent — no flame",
+      "Never pour solvent or water on upholstery"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never damp-wipe soot before dry-vacuuming",
+      "Never DIY fire smoke",
+      "Never use non-HEPA vacuum — spreads soot",
+      "Never work without PPE",
+      "Never use solvent near flame"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S upholstery: tolerates full protocol",
+      "S-only: solvent only, no water rinse",
+      "X: vacuum only — pro",
+      "Leather: different protocol — do not use solvent",
+      "Silk / wool: pro only"
     ]
   },
+  "materialWarnings": [
+    "LIGHT smoke vs FIRE smoke is the whole fork",
+    "Fire smoke is a restoration job — not cleaning",
+    "Dry removal BEFORE wet — don't smear soot",
+    "Odor = patience + ventilation + possibly ozone"
+  ],
   "escalation": {
-    "when": "If smoke stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is smoke on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "Fire smoke (any source), persistent odor after full ventilation, heavy nicotine saturation (years of smoker occupancy), leather / silk / wool, or any symptom of VOC exposure in the household.",
+    "whatToTell": "\"Smoke on [W / W-S / S / X] upholstery, source [cigarette / incense / candle / FIRE SMOKE], age [recent / long-term], home-treated with HEPA vacuum + dry chemical sponge + Goo Gone + [Dawn / peroxide]. [Persistent odor / residual yellow / fire restoration needed].\"",
+    "specialistType": "IICRC S500 fire/smoke restoration specialist (for fire smoke) OR professional upholstery cleaner with ozone capability (for persistent odor)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "LIGHT smoke (cigarette, candle, incense, one-time kitchen) or FIRE smoke (house / apartment / neighbor fire)?",
+      "Upholstery code — W, W-S, S, X, unknown?",
+      "Long-term smoker occupancy or recent one-time event?",
+      "Any respiratory symptoms in the household?",
+      "Is this about visible soot, odor, or both?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The fire-vs-light split determines everything. Fire smoke is NEVER a home-cleaning job. Long-term smoker yellowing is the tough subset of light smoke — nicotine saturates cushion batting, so surface treatment helps but may not fully clear. Ozone treatment is the pro option for persistent odor across all light-smoke variants."
   },
-  "difficulty": 6,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

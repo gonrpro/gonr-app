@@ -1,78 +1,224 @@
 {
   "id": "gum-upholstery",
-  "title": "Gum on Upholstery",
+  "title": "Chewing Gum on Upholstery",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Chewing gum is a hydrophobic polymer (polyisobutylene or chicle) mixed with softeners, sweeteners, and flavorings. On upholstery, the polymer adheres through mechanical bonding and surface tension. Warm gum is soft and sticky, spreading when touched. Cold gum becomes brittle and loses adhesion. The polymer is not water-soluble at any temperature.",
-  "whyThisWorks": "Freezing makes the gum polymer brittle on upholstery, breaking its mechanical bond and allowing it to be scraped or cracked off in pieces. POG or citrus-based solvent dissolves any remaining residue by breaking down the polymer. Ice in a bag (not direct ice) prevents water damage while providing the cold needed. Picking at warm gum spreads it — always freeze first.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "20 minutes with freeze method; avoid oily DIY hacks",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "gum",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "gum",
+      "polymer",
+      "mechanical-removal",
+      "upholstery",
+      "code-check",
+      "bad-advice-target"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Chewing gum is a hydrophobic polymer base (synthetic polyisobutylene / butyl rubber, or natural chicle) plus sweeteners, softeners, and flavorings. On upholstery, gum adheres mechanically — it's not a chemical stain, it's a sticky polymer stuck to fiber. Cold makes gum brittle and lose adhesion. Warm gum is soft and sticky and SPREADS when touched — the #1 way a small gum problem becomes a big one. The worst internet advice for gum is the \"use peanut butter / WD-40 / mayo\" family — these oily substances do soften gum, but they REPLACE one stain with a bigger greasy stain on fabric you can't rinse like clothing. Goo Gone or a similar citrus solvent is the clean pro path.",
+  "whyThisWorks": "Freeze + scrape + citrus solvent is the standard pro sequence because it handles gum as the physical deposit it is. Cold breaks the adhesion. Scraping removes bulk. Citrus solvent (d-limonene in Goo Gone) dissolves the sticky residue without leaving behind a grease halo that you now have to remove separately. Upholstery adds one important variable: the care code determines whether water is allowed at the end. S-only code = solvent only, no water rinse.",
+  "defaultAssumption": "Kid on couch, movie night, living room — very common. Fresh gum (still soft) = freeze first, don't touch. Hardened overnight = straight to cold + crack. W / W-S upholstery = full protocol. S-only = solvent only, Dawn rinse is out. X = vacuum only, pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Code Check + No Touching",
+      "technique": "Read tag, don't spread the gum",
+      "equipment": "Good light",
+      "dwellTime": "1 minute",
+      "instruction": "Find the upholstery care code (usually on a tag under the cushion): W / W-S = water-based cleaning OK. S-only = solvent only (no Dawn rinse at the end, just solvent + extraction). X = vacuum only, pro. Do NOT touch or pick at the gum yet — warm gum spreads. Don't try pulling it off with your fingers."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Freeze Gum Brittle",
+      "technique": "Ice bag or compressed-air freeze spray",
+      "equipment": "Ice in a plastic bag OR CO₂ / compressed-air duster (inverted)",
+      "dwellTime": "10–15 minutes ice; 30 seconds freeze spray",
+      "instruction": "Place ice sealed in a plastic bag on the gum. Leave 10–15 minutes until fully brittle. Alternative: compressed-air duster held INVERTED sprays propellant as a freezing liquid — works in 30 sec but use outdoors or well-ventilated. Never direct ice on upholstery — water damage."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Crack and Scrape Off",
+      "technique": "Mechanical removal while brittle",
+      "equipment": "Plastic card or dull knife",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Once frozen brittle, crack the gum by pressing and lifting with the edge of a plastic card. Most of it cracks off the fibers in pieces. Work gently — don't gouge the fabric. Re-freeze if it starts softening."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Citrus Solvent for Residue",
+      "technique": "Goo Gone / POG tamp from top",
+      "equipment": "Goo Gone or POG on white cotton cloth",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply Goo Gone or POG to a white cloth — never pour on upholstery. Press and tamp the residue area. Citrus solvent (d-limonene) dissolves sticky gum base without the grease halo that peanut butter / WD-40 / mayo would leave. Flip cloth as it picks up residue. Ventilate."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Dawn Damp Cloth (W / W-S Only)",
+      "technique": "Clear solvent residue",
+      "equipment": "Dawn + cool water on damp cloth",
+      "dwellTime": "3 minutes",
+      "instruction": "W or W-S code: Dawn in cool water on a damp cloth, press on the spot to clear solvent residue, blot. S-only code: skip — use a clean dry cloth to buff the solvent residue instead, do NOT add water. Damp cloth only, never pour."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan-Dry",
+      "technique": "Extract + verify",
+      "equipment": "Dry white towel + weight, fan",
+      "dwellTime": "15–30 min + fan",
+      "instruction": "Weighted dry towel 15–30 min. Fan dry. Inspect in daylight. Residual gum? Re-freeze + solvent. Most upholstery gum is a 1-round job."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Freeze with CO2 spray or ice to harden gum completely",
-      "2. Crack and scrape off hardened gum with dull edge",
-      "3. Apply POG to dissolve remaining residue",
-      "4. Apply NSD to remove final traces. Flush with cool water",
-      "5. Blot dry"
+      "1. Code tag check. S/X routes change endgame.",
+      "2. Freeze with ice bag 10–15 min (or freeze spray 30 sec).",
+      "3. Crack and scrape with plastic card.",
+      "4. Citrus solvent (Goo Gone / POG) tamp from top.",
+      "5. Dawn damp cloth (W / W-S) or dry buff (S-only).",
+      "6. Weighted dry towel + fan-dry."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)"
+      "Ice in sealed bag",
+      "Plastic card / dull knife",
+      "Goo Gone / POG",
+      "Dawn / NSD",
+      "White cotton cloths",
+      "Fan"
     ],
-    "temperature": "ambient",
+    "temperature": "cold (freeze) + ambient solvent",
     "warnings": [
-      "Always test on hidden area first"
+      "NEVER touch warm gum — spreads into bigger stain",
+      "Never direct ice on upholstery — water damage",
+      "NEVER peanut butter / WD-40 / mayo / oil tricks — replace gum with grease",
+      "Ventilate solvent — flammable",
+      "Code check before water — S-only means no water rinse",
+      "Never pour solvent or water on upholstery"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Don't Touch the Gum Yet",
+      "instruction": "The worst thing you can do with fresh gum is try to pull it off with your fingers or a cloth. Warm gum stretches, spreads, and gets MUCH bigger. Step one is always: leave it alone and get cold on it. Also: search results might tell you to use peanut butter, WD-40, or mayonnaise on gum. DON'T. Those work on hair or metal, but on upholstery they leave a grease stain that's harder to clean than the gum. Goo Gone is the clean answer."
+    },
+    {
+      "step": 2,
+      "agent": "Check the Upholstery Code",
+      "instruction": "Find the tag under a cushion. W or W-S = full protocol is fine. S-only = solvent cleaning only, no water at the end. X = vacuum-only, call a pro. If you have a zip-off cover that's machine-washable, you can also just freeze and scrape the gum off, then wash the cover normally. That's easier than treating in place."
+    },
+    {
+      "step": 3,
+      "agent": "Freeze the Gum Brittle",
+      "instruction": "Put ice in a zip-lock bag and press it on the gum for 10–15 minutes. Never put ice directly on the fabric — adds water damage. The gum will get hard and brittle. Alternative fast method: an aerosol \"canned air\" duster (the kind you use on keyboards) held UPSIDE DOWN sprays a freezing liquid that brittles gum in 30 seconds. Outdoors or open window — the propellant is potent."
+    },
+    {
+      "step": 4,
+      "agent": "Crack and Lift Off — Don't Dig",
+      "instruction": "Once the gum is brittle, use the edge of a plastic card (old credit card, gift card) or a dull butter knife to crack and lift the gum in pieces. Most of it will come off the fibers. If it softens as you work, refreeze. Don't gouge the fabric. Don't pick at it with sharp objects."
+    },
+    {
+      "step": 5,
+      "agent": "Goo Gone on a White Rag for Residue",
+      "instruction": "A thin sticky film usually remains after the bulk is off. Put Goo Gone (orange bottle, hardware/grocery store) on a clean white rag — never pour on upholstery. Press and tamp the residue, flipping the rag frequently. Work outside-in. Open windows; Goo Gone is flammable, don't use near a gas stove or candle."
+    },
+    {
+      "step": 6,
+      "agent": "Clear the Solvent — Code-Dependent",
+      "instruction": "W or W-S code: work a drop of Dawn with cool water into a damp cloth, press on the spot to lift the Goo Gone residue, blot dry. S-only code: don't add water. Instead, buff the area with a clean dry cloth to remove the solvent residue. Either way, no pouring liquid on upholstery."
+    },
+    {
+      "step": 7,
+      "agent": "Dry, Inspect, Re-Do If Needed",
+      "instruction": "Stack a dry towel on the spot with a heavy book for 30 minutes. Point a fan at it. Inspect in daylight. If any sticky or visible residue remains, re-freeze and repeat. Most upholstery gum is a 1-round job."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate for Stuck-In or X-Code",
+      "instruction": "If the gum worked deep into a woven fabric, the cushion has an X-code tag, the upholstery is leather or a delicate like silk/wool, or the gum has been there for weeks and is heavily oxidized: pro time. Tell them: \"Gum on [W / W-S / S / X / unknown] upholstery, age [fresh / older], home-treated with freeze + Goo Gone [+ Dawn]. [Residual stickiness / fiber damage / delicate fiber].\" Bring the care tag photo."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place ice in a bag on the gum for 15 minutes until completely hard",
-      "2. Crack the frozen gum and peel/scrape off with a dull edge",
-      "3. Apply Dawn dish soap to remaining residue. Work gently",
-      "4. Rinse with warm water. Repeat if needed",
-      "5. Air dry"
+      "1. Don't touch warm gum. No peanut butter / WD-40 / mayo / oil tricks.",
+      "2. Code tag check. X = pro. S = no water at end.",
+      "3. Freeze with ice-in-bag 10–15 min (or freeze spray 30 sec).",
+      "4. Crack and lift with plastic card. Don't dig.",
+      "5. Goo Gone on a rag, tamp from top. Ventilate.",
+      "6. Dawn damp cloth (W/W-S) OR dry buff (S).",
+      "7. Weighted towel + fan-dry.",
+      "8. Residual / X-code / delicate = pro."
     ],
     "products": [
+      "Ice + zip-lock bag",
+      "Plastic card / dull knife",
+      "Goo Gone (citrus solvent)",
       "Dawn dish soap",
-      "ice"
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if the upholstery is X-code, leather, silk, wool, or if gum has worked deep into a tight weave.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "NEVER pull / touch warm gum — spreads",
+      "NEVER peanut butter / WD-40 / mayo — replaces gum with grease halo",
+      "Never direct ice on upholstery",
+      "Goo Gone flammable — no flame, ventilate",
+      "Never pour solvent or water — cloth only",
+      "S-only code: no water rinse — dry buff instead"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never touch warm gum — spreads",
+      "Never oily DIY tricks on upholstery — grease halo",
+      "Never direct ice — water damage",
+      "Never pour solvent — tamp with cloth",
+      "Never near open flame"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S upholstery: tolerates Goo Gone + Dawn damp cloth",
+      "S-only: solvent only, no water rinse — dry buff",
+      "X: vacuum only — pro",
+      "Leather: pro, different protocol",
+      "Silk / wool: pro, solvent can affect dye"
     ]
   },
+  "materialWarnings": [
+    "Warm gum SPREADS — freeze before touching",
+    "Oily DIY hacks (PB / WD-40 / mayo) replace gum with grease",
+    "Goo Gone is the clean solvent, not oil",
+    "Code check before water"
+  ],
   "escalation": {
-    "when": "If gum stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is gum on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "X-code upholstery, leather, silk, wool, gum worked deep into tight weave, or residue persists after 2 freeze-and-solvent rounds.",
+    "whatToTell": "\"Gum on [W / W-S / S / X / unknown] upholstery, age [fresh / older], home-treated with freeze + Goo Gone [+ Dawn on W/W-S]. [Residual / delicate fiber / deep embed]. No oily DIY tricks used.\"",
+    "specialistType": "professional upholstery cleaner with solvent spotting"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Upholstery code — W, W-S, S, X, unknown?",
+      "Does the cushion cover zip off and machine-wash?",
+      "Is the gum still warm / fresh or hardened?",
+      "Has anyone already tried peanut butter / WD-40 / mayo on it?",
+      "Fabric type — cotton blend, leather, silk, wool, microfiber?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The oily-DIY-hack family is the worst piece of internet advice for gum on upholstery — it works on HAIR (oil + gum washes out of hair) but leaves a permanent grease ring on fabric. Freeze-and-solvent is the clean path. If the cushion cover zips off and is machine-washable, that's by far the easiest route."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

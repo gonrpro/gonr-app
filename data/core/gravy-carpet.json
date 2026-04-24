@@ -1,80 +1,222 @@
 {
   "id": "gravy-carpet",
   "title": "Gravy on Carpet",
-  "stainFamily": "combo",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Gravy is a starch-thickened mixture of meat protein, fat, and flavor compounds. On carpet, the starch creates a binding matrix that holds protein and fat against the fiber. The protein sets with heat. The fat penetrates the fiber. When dried, the starch hardens into a tough film that resists water alone.",
-  "whyThisWorks": "Scraping dry residue first removes the starch matrix from carpet. Cold water prevents protein from setting. Enzyme treatment (amylase for starch + protease for protein where safe) breaks down the organic components. Surfactant emulsifies the fat. The multi-component nature requires sequential treatment — protein-safe steps first.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–40 minutes; protein-before-heat ordering matters",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "gravy",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "combination",
+      "protein",
+      "oil",
+      "starch",
+      "carpet",
+      "thanksgiving",
+      "no-hot-water"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Gravy is a starch-thickened mix of meat drippings (fat + protein) + stock (meat protein + salt) + seasonings (sometimes tannin from herbs or wine). Three stain components are in play: (1) starch — creates a tough film when dried, binds everything else to the carpet fiber, (2) PROTEIN — small amount of meat protein that sets permanently with heat (invariant: protein before heat), and (3) FAT — dripping fat that drives into fiber and can polymerize under heat. Dark gravies from browned drippings also carry Maillard-reaction pigments that behave like mild tannins. Ordering matters: scrape starch → cold water → enzyme (for protein) → Dawn (for fat) → dry. Hot water first sets the protein fraction; oxidizer first can set the protein; heat anywhere before protein is cleared = permanent.",
+  "whyThisWorks": "Cold water softens and flushes the starch film without setting protein. Enzyme pretreat digests the small protein fraction before anything heat-related. Dawn then emulsifies the fat. Weighted extraction prevents the pad from wicking brown residue back up. Oxidizer is a last step for residual Maillard color, NOT a first step — one of the ways home attempts fail is hitting gravy with OxiClean or peroxide before the protein is digested, which sets the protein and leaves a permanent brown shadow.",
+  "defaultAssumption": "Thanksgiving / Sunday-dinner / takeout-spill context. Fresh gravy, caught in first 30 min = reasonable home win. Dried overnight with starch fully set + pad saturation = harder; tends to leave a darker ring. Pet / kid knocked a gravy boat = often bigger spill than tracked, check a 6-inch radius around the visible stain.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Solid + Liquid Bulk",
+      "technique": "Spoon or dull edge — don't rub",
+      "equipment": "Spoon, plastic card, garbage bag",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Scoop solids (meat bits, thickened gravy) into a garbage bag with a spoon or dull edge. Scrape, don't rub — rubbing drives the starch-fat-protein mix deeper into the pile and pad."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water Blot — Soften Starch",
+      "technique": "Damp cloth + weighted extract",
+      "equipment": "Cold water, white cloth, dry towel + weight",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Dampen a white cloth with COLD water. Press on the spot, lift, rotate, press again. Cold loosens starch without setting protein. Weighted dry towel 3–5 min to extract. Never pour water — over-wetting sinks the mess into the pad."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat",
+      "technique": "Protein digestion BEFORE oxidizer",
+      "equipment": "OxiClean Versatile / Biz / enzyme pretreat in WARM (not hot — <100°F / 38°C) water on damp cloth",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Dissolve enzyme pretreat in WARM water (bath temperature, not hot — hot water sets protein). Dampen a cloth, press on the spot, cover with damp towel to prevent drying. 15–20 min dwell. Digests the protein + some starch."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Emulsify fat",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Work Dawn into the spot with a soft toothbrush. Emulsifies the fat fraction. Damp-cloth rinse — never pour water."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ for Residual Maillard Color (Optional)",
+      "technique": "Oxidizer AFTER enzyme step — never before",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Only if a brown shadow remains after enzyme + Dawn. Hidden-area color test first. 3% peroxide on damp cloth, 5 min, blot. Clears residual browning from dark gravy. NEVER before enzyme step — oxidizer before enzyme sets protein."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Towel Overnight + Fan",
+      "technique": "Prevent wick-back ring",
+      "equipment": "Dry paper towels + weight, fan",
+      "dwellTime": "8–12 hours",
+      "instruction": "Stack paper towels on the spot, weigh with a book, leave overnight. Fan in the morning until fully dry. Prevents brown pigment from wicking back up from the pad as the carpet dries."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove excess solids with dull edge — do not rub",
-      "2. Apply Tannin Formula for the plant-pigment component",
-      "3. Apply POG for the oil component",
-      "4. Flush with NSD and cool water",
-      "5. If color persists: apply H2O2 6% on colorfast fabrics",
-      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+      "1. Scrape solid bulk into garbage bag.",
+      "2. Cold damp-cloth blot + weighted extract.",
+      "3. Enzyme pretreat in WARM (not hot) water, 15–20 min — BEFORE any oxidizer.",
+      "4. Dawn / NSD + soft brush for fat.",
+      "5. 3% H₂O₂ only for residual Maillard shadow (after enzyme step).",
+      "6. Weighted paper towels overnight + fan-dry."
     ],
     "products": [
-      "Tannin Formula",
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Spoon / plastic card",
+      "Enzyme pretreat (OxiClean Versatile / Biz / pet enzyme)",
+      "Dawn / NSD",
+      "3% Hydrogen peroxide (residual only)",
+      "Paper towels + weight",
+      "Fan"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold to warm (<100°F / 38°C) — never hot, never steam",
+    "warnings": [
+      "NEVER hot water — sets the protein fraction permanently",
+      "NEVER steam — sets protein",
+      "NEVER oxidizer BEFORE enzyme — sets protein permanently",
+      "Never pour liquid — pad wick-back",
+      "Order matters: scrape → cold → enzyme → Dawn → oxidizer-if-needed"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Scoop Solids and Extras First",
+      "instruction": "Get a spoon and gently scoop any thick gravy or meat bits into a garbage bag. Don't rub it into the carpet. Don't wipe. Scrape. The more bulk you remove before liquid cleaning, the less you have to chase through the fiber. Look at a 6-inch radius around the visible spot — gravy usually spread farther than you think."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Water Only — Heat Is the Enemy",
+      "instruction": "Here's the rule that trips most people: gravy has a small amount of MEAT PROTEIN in it, and protein sets PERMANENTLY with heat. That means no hot water, no steam cleaner, no hair dryer, no blow-drying the spot, and — most importantly — no putting a hot pan or hot plate near it to soak it up. Cold water softens starch without setting protein; hot water locks everything in. Even if the gravy was hot, you use cold now."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Damp Cloth — Blot, Don't Pour",
+      "instruction": "Dampen a clean white cloth with cold water. Press firmly on the spot, lift, rotate to a clean section, press again. Keep going until the cloth stops picking up brown. NEVER pour water on the spot — over-wetting sends gravy into the carpet pad where you can't reach it. Weighted dry towel on top for 3–5 minutes to pull moisture back up."
+    },
+    {
+      "step": 4,
+      "agent": "Enzyme Pretreat — BEFORE OxiClean Alone",
+      "instruction": "Dissolve a scoop of OxiClean Versatile or Biz (the pretreat versions, which contain enzymes) in WARM water — bath temperature, under 100°F. NOT hot. Dampen a cloth in the solution, press on the spot, cover with another damp towel, wait 15–20 minutes. The enzyme digests the protein + some starch. Don't skip this step to go straight to peroxide — hitting unhydrolyzed protein with peroxide locks it in as a permanent brown shadow."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn + Soft Toothbrush for the Grease",
+      "instruction": "Work a drop of Dawn dish soap with cool water into the spot using a soft toothbrush. Gravy has a lot of fat and Dawn is engineered for exactly this. Rinse with a damp cloth — don't pour water."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide for a Residual Brown Ghost (Optional)",
+      "instruction": "If a brown shadow remains after steps 4 and 5, dab 3% drugstore hydrogen peroxide on a damp white cloth and press on the spot for 5 minutes. Test on a hidden carpet area first. Only use this AFTER the enzyme step — hitting gravy with peroxide first sets the protein.",
+      "safetyNote": "Never mix peroxide with ammonia, bleach, or alkaline cleaners."
+    },
+    {
+      "step": 7,
+      "agent": "Weighted Towels Overnight + Fan",
+      "instruction": "Stack dry paper towels on the spot, put a heavy book on top, leave overnight. Fan the area in the morning until fully dry. This prevents gravy pigment and residual starch from wicking back up from the pad as the carpet dries, which is why some \"clean\" gravy spots turn back into a light brown ring next day."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate for Pad Saturation or Old Gravy",
+      "instruction": "If the gravy was a large spill that saturated the pad, if it dried overnight with the starch fully set, or if a brown ring keeps reappearing: call a pro. Tell them: \"Gravy on carpet, age [fresh / overnight], home-treated with cold + enzyme (warm, not hot) + Dawn + [3% peroxide]. No hot water used. No oxidizer before enzyme. [Residual ring / pad saturation suspected].\" That disclosure is useful — it tells them the protein wasn't set by heat mistakes."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub",
-      "2. Rinse with cold water to remove loose material",
-      "3. Apply Dawn dish soap. Work gently",
-      "4. Blot with clean white cloth. Repeat if needed",
-      "5. Air dry — no heat until stain is gone"
+      "1. Scoop solids with spoon.",
+      "2. NO hot water. NO steam. NO hair dryer.",
+      "3. Cold damp-cloth blot — no pouring.",
+      "4. Enzyme pretreat (OxiClean Versatile / Biz) in WARM (not hot) water, 15–20 min — BEFORE any oxidizer.",
+      "5. Dawn + soft toothbrush for fat.",
+      "6. 3% peroxide optional AFTER enzyme, for residual brown.",
+      "7. Weighted paper towels overnight + fan-dry.",
+      "8. Pad saturation / ring return = pro."
     ],
     "products": [
-      "Dawn dish soap"
+      "Spoon + plastic card",
+      "OxiClean Versatile or Biz pretreat",
+      "Dawn dish soap",
+      "3% hydrogen peroxide",
+      "White paper towels + heavy book",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if pad is saturated, if ring keeps returning after two rounds, or if hot water / steam was accidentally used early (protein may be set).",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "NEVER hot water — sets protein",
+      "NEVER steam — sets protein",
+      "NEVER oxidizer before enzyme — sets protein permanently",
+      "Never pour — pad wick-back",
+      "Order matters — scrape, cold, enzyme, Dawn, oxidizer-last"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never hot water or steam on gravy",
+      "Never put an oxidizer (OxiClean alone, peroxide) on before enzyme step",
+      "Never pour liquid on carpet",
+      "Never scrub — drives mess into pad"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / olefin carpet: tolerates full protocol",
+      "Wool: pH-sensitive — hidden peroxide test",
+      "Dyed carpet: hidden peroxide test mandatory"
     ]
   },
+  "materialWarnings": [
+    "Protein-before-heat — never skip enzyme step",
+    "Oxidizer AFTER enzyme, never before",
+    "Cold water only",
+    "Order of operations matters more than product choice"
+  ],
   "escalation": {
-    "when": "If gravy stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is gravy on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Pad saturation, gravy dried overnight with starch set, ring returns after two home rounds, or hot water / steam was accidentally used before the cold step.",
+    "whatToTell": "\"Gravy on carpet, age [fresh / overnight], home-treated with cold + enzyme (warm, not hot) + Dawn + [3% peroxide]. No hot water / no steam / no oxidizer before enzyme. [Residual ring / pad saturation / heat accidentally used].\"",
+    "specialistType": "professional carpet cleaner with combination-stain chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Turkey / beef / chicken gravy, or brown-gravy-from-packet?",
+      "Fresh or dried in?",
+      "Was the gravy hot when it spilled? Did it sit in a hot spot?",
+      "Has anyone hit it with OxiClean or peroxide directly without enzyme?",
+      "Carpet fiber — nylon / polyester / wool?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Dark gravy from well-browned drippings has more Maillard pigment — plan on the peroxide residual step. Gravy-from-packet is higher in starch and leaves a tougher film. Oxidizer-before-enzyme is the bad-advice failure mode — sets protein permanently."
   },
-  "difficulty": 4,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

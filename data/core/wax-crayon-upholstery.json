@@ -1,83 +1,246 @@
 {
   "id": "wax-crayon-upholstery",
   "title": "Wax Crayon on Upholstery",
-  "stainFamily": "dry_side",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Crayon is paraffin wax mixed with pigment (iron oxides, organic dyes). On upholstery, the wax penetrates the fiber and hardens, trapping concentrated pigment within the matrix. The combination of physical wax deposit and dye stain makes this a two-phase removal challenge. Heat can spread the wax and drive pigment deeper.",
-  "whyThisWorks": "Freezing first hardens the wax for mechanical removal from upholstery. POG then dissolves remaining wax residue. Surfactant lifts the liberated pigment. For persistent color, an oxidizer addresses the dye component after the wax matrix is fully removed. Working from the back of the fabric pushes wax out rather than deeper in.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–45 minutes; avoid oily DIY hacks",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "wax-crayon",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "wax",
+      "paraffin",
+      "pigment",
+      "upholstery",
+      "kid-classic",
+      "code-check",
+      "bad-advice-target"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Crayon is paraffin wax (petroleum hydrocarbon) + concentrated pigment (iron oxides for earth tones, organic dyes for brights). On upholstery, crayon leaves a physical wax deposit PLUS a pigment stain — two problems in one spot. The wax is the same chemistry as candle wax (freeze + solvent), but crayons load much more pigment than candles, so removing the wax often reveals a color stain underneath that's a separate job. Common mistakes: (1) wiping warm crayon, which smears wax in both directions, (2) ironing synthetic upholstery, which can melt the fabric, and (3) the oily-DIY family (peanut butter, WD-40, mayo, hair conditioner) that softens wax but replaces it with a grease halo on fabric that can't be flushed like clothing. Clean answer: freeze the wax brittle, crack it off, use citrus solvent for residue, then treat any remaining pigment as a separate dye stain.",
+  "whyThisWorks": "Freezing makes paraffin brittle so bulk lifts off mechanically. Goo Gone / POG dissolves residual wax + provides a solvent pathway to the trapped pigment. Dawn on damp cloth emulsifies the solvent. For residual dye color, 3% peroxide or dilute rubbing alcohol (for lighter / small spots) handles what's left. Upholstery code determines whether water rinse is allowed.",
+  "defaultAssumption": "Kid coloring on the couch / chair / car seat — extremely common. Fresh crayon (still chunky) = freeze and lift. Worked into the weave (smeared) = harder, more solvent passes. Heat-set crayon (kid sat on it in a warm room, something warm near it) = the wax has melted INTO the fiber and the pigment has set — pro job.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Code Check + No Wiping",
+      "technique": "Read tag, don't smear warm crayon",
+      "equipment": "Good light",
+      "dwellTime": "1 minute",
+      "instruction": "Upholstery code: W / W-S = full protocol. S-only = solvent only (no Dawn + water rinse). X = vacuum only, pro. Do NOT wipe the crayon at room temp — warm crayon smears and makes the stain bigger. If cushion cover zips off and is machine-washable, freeze + scrape off the wax first, then wash the cover cold."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Freeze Wax Brittle",
+      "technique": "Ice bag 10–15 min",
+      "equipment": "Ice in sealed plastic bag, plastic card / dull blade",
+      "dwellTime": "10–15 minutes",
+      "instruction": "Press a sealed bag of ice on the crayon. 10–15 min. Never direct ice — water damage. Wax gets hard and brittle."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Crack and Scrape Off",
+      "technique": "Mechanical lift while brittle",
+      "equipment": "Plastic card, dull knife",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Crack the wax with the edge of a plastic card. Lift off the bulk pieces. Re-freeze if it softens as you work. Don't gouge."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Goo Gone or POG for Residue",
+      "technique": "Citrus solvent tamp from top",
+      "equipment": "Goo Gone / POG on white cotton cloth",
+      "dwellTime": "30–60 sec per pass",
+      "instruction": "Apply to cloth, never to upholstery. Tamp the residual wax film from the top. Flip cloth as it picks up wax + pigment. Work outside-in. 2–3 passes. Ventilate — flammable."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Dawn Damp Cloth (W / W-S Code)",
+      "technique": "Clear solvent residue",
+      "equipment": "Dawn + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "W / W-S: Dawn on damp cloth, work with soft toothbrush, blot. S-only: dry buff residue instead. Damp cloth only, never pour."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "Handle Residual Pigment",
+      "technique": "Separate dye treatment after wax is fully gone",
+      "equipment": "3% H₂O₂ on damp cloth (W/W-S) OR IPA on cloth (S)",
+      "dwellTime": "5 minutes",
+      "instruction": "Once wax is gone, color often remains. Hidden-area test first. W/W-S code: 3% H₂O₂ damp cloth 5 min. S-only code: 91% isopropyl alcohol on cloth, tamp from top. Pigment is now the only remaining problem."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan-Dry",
+      "technique": "Extract + verify",
+      "equipment": "Dry towel + weight, fan",
+      "dwellTime": "30 min + fan",
+      "instruction": "Weighted dry towel 30 min. Fan-dry. Inspect in daylight. Ghost remaining = one more round of peroxide or IPA on pigment."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Freeze with ice bag to harden wax. Scrape off bulk with dull edge",
-      "2. Apply POG to dissolve remaining wax residue",
-      "3. Apply NSD to lift pigment (for colored wax). Flush with cool water",
-      "4. If dye remains: apply H2O2 6% carefully, monitor",
-      "5. Apply Acetic Acid 28% (diluted 1:10) for pH restoration. Blot dry"
+      "1. Code check. Don't wipe warm crayon.",
+      "2. Freeze with ice bag 10–15 min.",
+      "3. Crack and scrape off with plastic card.",
+      "4. Goo Gone / POG tamp from top.",
+      "5. Dawn damp cloth (W/W-S) or dry buff (S).",
+      "6. 3% H₂O₂ or IPA for residual pigment (code-dependent).",
+      "7. Weighted dry towel + fan-dry."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Ice in sealed bag",
+      "Plastic card / dull knife",
+      "Goo Gone / POG",
+      "Dawn / NSD",
+      "3% Hydrogen peroxide (W/W-S)",
+      "91% Isopropyl alcohol (S-code alternative)",
+      "Fan"
     ],
-    "temperature": "ambient",
+    "temperature": "cold (freeze) + ambient solvent",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains",
-      "Ensure adequate ventilation when using solvents — VOC fumes require extraction"
+      "Don't wipe warm crayon — smears the wax",
+      "NEVER peanut butter / WD-40 / mayo / conditioner — grease halo",
+      "NEVER iron synthetic upholstery — fabric melt risk",
+      "Never direct ice — water damage",
+      "Code check — S/X change protocol",
+      "Flammable solvent — no flame",
+      "Pigment is a separate stain after wax is gone"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Don't Wipe, Don't Panic — and Don't Iron",
+      "instruction": "Two things NOT to do first: (1) Don't wipe the crayon with a cloth while it's warm — warm crayon smears and makes the stain bigger. (2) Don't iron synthetic upholstery. The \"iron + paper bag\" trick from viral internet advice works on cotton fabric but NOT on upholstery — most modern upholstery is synthetic and can melt under a hot iron. Also DON'T use peanut butter, WD-40, or mayo — those soften crayon wax but leave a grease ring on upholstery that's worse than the crayon. Clean answer: freeze it."
+    },
+    {
+      "step": 2,
+      "agent": "Check the Upholstery Code",
+      "instruction": "Tag under a cushion. W / W-S = full protocol. S-only = solvent-only endgame, no Dawn + water rinse. X = vacuum only, pro. If the cushion cover zips off and is machine-washable, freeze and scrape the crayon off first, then wash the cover cold — much easier than treating in place."
+    },
+    {
+      "step": 3,
+      "agent": "Freeze the Crayon Brittle — 10 to 15 Minutes",
+      "instruction": "Put ice in a zip-lock bag, press it directly on the crayon for 10–15 minutes. NEVER put ice directly on the upholstery — water damage. The wax will freeze brittle."
+    },
+    {
+      "step": 4,
+      "agent": "Crack and Lift — Don't Dig",
+      "instruction": "Once frozen, crack the wax with the edge of a plastic card, credit card, or dull butter knife. Lift off the pieces. Most of the bulk comes off cleanly. If the wax starts softening, refreeze. Work gently — don't gouge the fabric."
+    },
+    {
+      "step": 5,
+      "agent": "Goo Gone or POG on a White Rag for Residue",
+      "instruction": "A thin wax film usually remains in the weave. Put Goo Gone (orange bottle, hardware/grocery store) on a clean white rag — NEVER pour on upholstery. Press and tamp the residue area from the TOP. Flip the rag as it picks up wax and pigment. Work outside-in. Open windows — Goo Gone is flammable, no flame."
+    },
+    {
+      "step": 6,
+      "agent": "Clear the Solvent — Dawn or Dry Buff Depending on Code",
+      "instruction": "W or W-S upholstery: work a drop of Dawn with cool water into a damp cloth, press on the spot 5 min to clear the Goo Gone, blot. S-only code: DON'T add water. Dry-buff the solvent residue with a clean cloth instead. Either way, no pouring."
+    },
+    {
+      "step": 7,
+      "agent": "Treat the Color That's Left",
+      "instruction": "Once the wax is gone, you'll often see the crayon's pigment color (red, blue, purple) still in the fabric. That's now a dye stain, not a wax stain. Hidden-area test first. W / W-S upholstery: dab 3% hydrogen peroxide on a damp white cloth, press 5 min, blot. S-only upholstery: dab 91% isopropyl alcohol on a cloth, tamp the color from the top. Dark crayons (red, purple, black) may need 2–3 rounds."
+    },
+    {
+      "step": 8,
+      "agent": "Weighted Dry Towel + Fan",
+      "instruction": "Stack a dry towel on the spot with a heavy book for 30 minutes. Fan-dry until fully dry. Inspect in daylight. Residual color = repeat step 7."
+    },
+    {
+      "step": 9,
+      "agent": "Escalate — Melted-In, X-Code, or Delicate Fiber",
+      "instruction": "If someone already ironed it and the wax melted into the fabric, if the code is X or the upholstery is leather / silk / wool, or if color persists after 2 rounds on pigment: pro. Tell them: \"Crayon on [W / W-S / S / X / unknown] upholstery, age [fresh / melted-in], home-treated with freeze + Goo Gone + [Dawn] + [3% peroxide OR 91% IPA]. [Residual color / melted into fiber / delicate fabric].\" Don't mention peanut butter even if someone tried it — just note what you actually used."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place ice in a bag on the wax for 10 minutes until brittle. Do NOT apply ice directly to fabric",
-      "2. Scrape off hardened wax with a dull knife or credit card edge",
-      "3. Place paper towels above and below the fabric (if possible). Iron on low heat to melt remaining wax into paper — check every 5 seconds",
-      "4. Apply Dawn dish soap to any remaining residue. Blot",
-      "5. Rinse with warm water. Air dry — inspect before using dryer"
+      "1. Don't wipe warm crayon. Don't iron. Don't use oily DIY hacks.",
+      "2. Code check + zip-off-cover option.",
+      "3. Freeze with ice-in-bag 10–15 min.",
+      "4. Crack and lift with plastic card.",
+      "5. Goo Gone on rag, tamp from top. Ventilate.",
+      "6. Dawn damp cloth (W/W-S) OR dry buff (S).",
+      "7. 3% peroxide (W/W-S) OR 91% IPA (S) for residual pigment.",
+      "8. Weighted towel + fan-dry.",
+      "9. Melted-in / X-code / delicate = pro."
     ],
     "products": [
+      "Ice + zip-lock bag",
+      "Plastic card / dull knife",
+      "Goo Gone (citrus solvent)",
       "Dawn dish soap",
-      "paper towels",
-      "ice"
+      "3% hydrogen peroxide (W/W-S) OR 91% isopropyl alcohol (S)",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if crayon has been ironed into the fiber, upholstery is X-code or leather/silk/wool, or color persists after 2 pigment rounds.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER wipe warm crayon — smears wax",
+      "NEVER iron synthetic upholstery — melts fiber",
+      "NEVER peanut butter / WD-40 / mayo / conditioner — grease halo on fabric",
+      "Never direct ice — water damage",
+      "Never pour solvent or water on upholstery",
+      "Never use solvent near flame",
+      "Code check before water"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never wipe warm crayon",
+      "Never iron synthetic upholstery",
+      "Never oily DIY tricks on fabric — grease halo",
+      "Never direct ice on upholstery",
+      "Never pour solvent or water on upholstery",
+      "Never use solvent near open flame"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S: tolerates freeze + Goo Gone + Dawn + 3% peroxide",
+      "S-only: freeze + Goo Gone + 91% IPA, no water rinse",
+      "X: vacuum only — pro",
+      "Leather: pro, different protocol (no solvent)",
+      "Silk / wool: pro, pigment chemistry varies"
     ]
   },
+  "materialWarnings": [
+    "Freeze-and-solvent is the universal-safe path",
+    "Ironing upholstery melts most synthetic fabrics",
+    "Oily DIY hacks replace crayon with grease",
+    "Pigment is a SEPARATE stain after wax is gone"
+  ],
   "escalation": {
-    "when": "If wax crayon stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is wax crayon on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "Crayon has been ironed into fabric (wax melted in), X-code upholstery, leather, silk, wool, or residual pigment persists after 2 rounds on fiber-tested code-appropriate chemistry.",
+    "whatToTell": "\"Crayon on [W / W-S / S / X / unknown] upholstery, age [fresh / melted-in], home-treated with freeze + Goo Gone [+ Dawn / + IPA / + 3% peroxide]. [Residual pigment / melted-in wax / delicate fiber]. No oily DIY tricks used.\"",
+    "specialistType": "professional upholstery cleaner with solvent spotting"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Upholstery code — W, W-S, S, X, unknown?",
+      "Does the cushion cover zip off and is it machine-washable?",
+      "Has anyone already ironed it or tried peanut butter / WD-40?",
+      "Fresh crayon or melted-in (warm room, sat on, etc.)?",
+      "Crayon color — light or dark (red / purple / black hardest)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The iron-method is dangerous on synthetic upholstery — don't do it. The oily-DIY-hack family leaves permanent grease halos on fabric. Freeze-and-solvent + separate pigment treatment is the clean path. Melted-in crayon (kid sat on it, warm room) is much harder because wax penetrated fiber — often a pro job."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,129 +1,235 @@
 {
   "id": "tea-carpet",
   "title": "Tea on Carpet",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Tea contains theaflavins and thearubigins — oxidized polyphenols that produce tea's amber-brown color. These tannins bond to carpet through hydrogen bonds and hydrophobic interactions. Tea stains darken significantly with oxidation and age. Black tea stains more aggressively than green tea due to higher oxidized tannin content.",
-  "whyThisWorks": "The acidic tannin spotter breaks the bonds between tea polyphenols and carpet fiber. Hydrogen peroxide oxidizes the chromophore groups, reversing the brown color. Treatment is most effective on fresh stains before oxidative cross-linking occurs.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "15–40 minutes; alkaline cleaners are the classic mistake",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "tea",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "polyphenol",
+      "carpet",
+      "no-alkaline",
+      "bad-advice-target",
+      "cold-water-critical"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Tea is theaflavins + thearubigins + catechins — oxidized polyphenols (tannins) responsible for the amber-brown color. Tannins bond to carpet fibers through hydrogen bonds and hydrophobic interactions. Two things make tea harder than it looks: (1) tannins DARKEN when they contact alkaline products (ammonia, baking soda, OxiClean, most all-purpose sprays) — a pH above 7 shifts the color equilibrium toward the darker form, turning a faint tea ring into a deep brown stain that's often permanent, and (2) oxidation over time makes tannins cross-link deeper into the fiber. Black tea is more pigmented than green tea — more polyphenol, more work. Heat (even hot tea still hot when it lands) cross-links tannin faster. The #1 internet advice mistake on tea stains is reaching for baking soda or OxiClean.",
+  "whyThisWorks": "Cold water + Dawn + 3% hydrogen peroxide is the correct tannin chemistry: cold keeps the tannin mobile, Dawn lifts fat (if the tea had milk) and emulsifies, peroxide OXIDIZES the theaflavins into colorless compounds. White vinegar rinse at the end keeps the acid side (lighter color) of the equilibrium. The dry-down step prevents the pad from wicking residual tea back up as a ring.",
+  "defaultAssumption": "Morning tea on the living room rug, iced tea spill, kid's tea party. Fresh + plain (black or green tea, no milk) = quick win with Dawn + peroxide. Older / bigger / with milk / artificial-flavor \"tea\" drinks = more rounds, but same protocol. If anyone already hit it with baking soda or OxiClean before you arrived, the color may be locked in.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot Immediately — Outside In",
+      "technique": "Absorb liquid before it reaches the pad",
+      "equipment": "White paper towels or cotton cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Press a stack of white paper towels or a clean cloth STRAIGHT DOWN on the spill. Lift, move to a dry section, press again. Work outside-in. Don't rub — rubbing drives tea deeper into the pile and pad."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water Dilute",
+      "technique": "Flush fresh tea with small amount of cold water",
+      "equipment": "Cold water + white cloth",
+      "dwellTime": "1–2 minutes per pass",
+      "instruction": "Pour a SMALL amount of cold water on the spot (don't flood — over-wetting sends tea into the pad). Blot immediately with a dry cloth. Repeat 2–3 times. Cold only — hot water cross-links tannin deeper, even if the tea itself was hot."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Hidden-Area Peroxide Test",
+      "technique": "Verify peroxide doesn't lift carpet dye",
+      "equipment": "3% H₂O₂, white cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "In a hidden area (closet, under furniture), dab the Dawn + peroxide solution (see step 4) on a white cloth. Press on the hidden carpet 2 min. If carpet color transfers to the cloth, skip peroxide — it will bleach the carpet. Use Dawn alone instead."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Dawn + 3% H₂O₂ Solution",
+      "technique": "Oxidize tannin pigment",
+      "equipment": "Dawn + 3% peroxide in cool water on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Mix 1 tbsp Dawn + 1 cup 3% H₂O₂ in a bowl. Dip a white cloth, wring damp (not dripping), press on the spot. Dwell 5–10 min. The peroxide oxidizes the theaflavins and thearubigins. Blot with a clean damp cloth. Fresh tea: 1–2 cycles. Black tea or older stain: 3 cycles.",
+      "safetyNote": "Never mix peroxide with ammonia, bleach, or alkaline cleaners."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Rinse",
+      "technique": "Neutralize peroxide + keep color on acid side",
+      "equipment": "1 tbsp white vinegar + 1 cup cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Dilute vinegar on a damp cloth. Press on the spot 5 min. Neutralizes peroxide residue and keeps tannin in its lighter (acid-side) form as it dries. Blot dry."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Paper Towels Overnight",
+      "technique": "Prevent wick-back ring",
+      "equipment": "White paper towels + heavy book",
+      "dwellTime": "8–12 hours",
+      "instruction": "Stack dry white paper towels on the spot, weigh them with a heavy book, leave overnight. Pulls residual tea up and out of the pad before it can wick back as a visible ring next morning."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Daylight Inspect + Repeat If Ghost",
+      "technique": "Verify + second round",
+      "equipment": "Daylight, fan",
+      "dwellTime": "2–4 more hours",
+      "instruction": "Inspect in natural light — tea rings that look gone when wet reappear as a pale tan halo when dry. Halo remaining = repeat steps 4–6 once more. Two home rounds is the ceiling."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Immediate blot outside-in — no rubbing.",
+      "2. Cold water dilute (small volume, blot between).",
+      "3. Hidden-area peroxide test.",
+      "4. Dawn + 3% H₂O₂ damp cloth, 5–10 min, 1–3 cycles.",
+      "5. White vinegar + cool water rinse.",
+      "6. Weighted paper towels overnight — prevents wick-back.",
+      "7. Daylight inspect; one more round if needed."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "White paper towels + cloth",
+      "Dawn / NSD",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Heavy book + weight"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout — never hot",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color",
-      "Avoid over-wetting — extract excess moisture to prevent backing damage"
+      "NEVER alkaline cleaners on tea — ammonia / baking soda / OxiClean / most all-purpose sprays PERMANENTLY DARKEN tannin",
+      "NEVER hot water — cross-links tannin deeper",
+      "Hidden-area test peroxide on dyed carpet",
+      "Never pour water — over-wetting sends tea into the pad",
+      "Never rub — drives tea deeper"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test on a hidden spot",
-      "instruction": "Find a hidden patch of the same carpet — inside a closet, under furniture, behind a door. Dab a drop of the Dawn + 3% peroxide solution from step 5 and blot with a white cloth after two minutes. If the carpet holds its color, you're safe. If dye transfers or the fiber lightens, skip to step 9 — home peroxide will lift the carpet dye."
+      "agent": "Blot Immediately — Don't Rub",
+      "instruction": "Press a thick stack of white paper towels or a clean white cloth STRAIGHT DOWN on the tea. Lift, move to a dry section, press again. Work from the OUTSIDE of the spill inward. Don't rub — rubbing pushes tea deeper into the pile and into the pad underneath, and pad contamination is where the ring comes back days later."
     },
     {
       "step": 2,
-      "agent": "The tannin rule: no alkaline cleaners",
-      "instruction": "Tea is a tannin, same family as coffee, wine, and berries. Alkaline products — ammonia, baking soda, OxiClean, most \"all-purpose\" carpet sprays — lock tannin into the fiber permanently and turn a light tea ring into a dark brown one. Use only: cold water, Dawn dish soap, 3% hydrogen peroxide, and white vinegar. Black tea is more pigmented than green — expect more cycles on black-tea spills."
+      "agent": "The Tannin Rule — No Alkaline Cleaners",
+      "instruction": "This is the hard rule for tea and every tannin stain (wine, coffee, berries). ALKALINE products (pH above 7) turn tannin brown and lock it in. That includes: baking soda, ammonia, OxiClean, Mr. Clean, Simple Green, most all-purpose sprays. If someone already hit this spot with one of those, the color may be locked. Do NOT reach for any of them now. Your toolkit here is: cold water, Dawn dish soap, 3% hydrogen peroxide (drugstore brown bottle), and white vinegar. Nothing else."
     },
     {
       "step": 3,
-      "agent": "Blot immediately — never rub",
-      "instruction": "Press a clean white cloth or stack of paper towels straight down on the spill. Lift, move to a dry section, press again. Work from the outside inward. Keep blotting until the cloth stops picking up tea. Rubbing drives tea deep into the pile and pad — pad contamination is where permanent rings come from."
+      "agent": "Cold Water Dilute — SMALL Volume",
+      "instruction": "Pour a SMALL amount of cold water on the spot — about as much as was spilled. Immediately blot with a dry cloth. Repeat 2–3 times. Fresh tea is water-soluble; early dilution pulls most of the color out. Cold only — even if the tea was hot, use cold now. Hot water cross-links the tannin deeper. DO NOT flood the spot with water — if it reaches the pad, it carries tea down there where you can't extract it."
     },
     {
       "step": 4,
-      "agent": "Cold water dilute",
-      "instruction": "Pour a small amount of cold water on the stain and blot immediately. Repeat two or three times. Fresh tea is water-soluble, so early dilution pulls most of the pigment out. Skip hot water — even if the spill was hot — heat drives tannin deeper and triggers browning as the stain dries."
+      "agent": "Hidden Patch Test Before Peroxide",
+      "instruction": "In a closet or under furniture, dab a tiny bit of the Dawn + peroxide mix (from step 5) on a white cloth, press on the carpet 2 minutes. If the cloth picks up carpet color, skip peroxide entirely — use Dawn + cold water alone. If the test is clean, proceed."
     },
     {
       "step": 5,
-      "agent": "Dawn + 3% hydrogen peroxide solution",
-      "instruction": "Mix one tablespoon of Dawn with one cup of 3% hydrogen peroxide in a small bowl. Dip a white cloth, wring nearly dry, and dab the stain. Let it sit 5–10 minutes. Peroxide oxidizes the theaflavins and thearubigins (the brown-pigment molecules in tea); Dawn lifts them. Blot with a clean damp cloth. Fresh tea usually lifts in 1–2 cycles; black tea may need 3.",
-      "safetyNote": "Never mix hydrogen peroxide with ammonia or bleach. On dark carpet, skip this step unless the patch test was clean."
+      "agent": "Dawn + 3% Hydrogen Peroxide",
+      "instruction": "Mix 1 tablespoon Dawn dish soap with 1 cup of 3% drugstore hydrogen peroxide. Dampen a white cloth in the mix, wring it out so it's damp not dripping, press on the spot. Let it sit 5–10 minutes. The peroxide oxidizes the brown tannin pigment into colorless compounds; the Dawn lifts. Blot with a clean damp cloth. Fresh tea clears in 1–2 cycles; black tea or older staining may need 3.",
+      "safetyNote": "Never mix hydrogen peroxide with bleach, ammonia, OxiClean, or any alkaline cleaner. Do not layer chemistries."
     },
     {
       "step": 6,
-      "agent": "White vinegar rinse",
-      "instruction": "Mix one tablespoon of white vinegar into one cup of cold water. Dab onto the treated spot with a clean white cloth. The mild acid neutralizes peroxide residue and keeps any residual tannin in its lighter form as it dries. Blot dry with a fresh cloth."
+      "agent": "White Vinegar + Cool Water Rinse",
+      "instruction": "Mix 1 tablespoon white vinegar with 1 cup cool water. Dab on a damp cloth, press on the spot 5 minutes. Neutralizes any peroxide residue and keeps any remaining tannin in its lighter (acidic) color rather than drifting back toward brown. Blot dry. Don't skip this step — it's what separates \"looks fine wet, ring comes back dry\" from actually clean."
     },
     {
       "step": 7,
-      "agent": "Dry down — prevent pad wicking",
-      "instruction": "Stack six to ten sheets of white paper towels over the spot, weigh them down with a heavy book, and leave overnight. This pulls any residual tea up out of the pad before it can wick back as a ring. Don't walk on the area or vacuum until fully dry."
+      "agent": "Weighted Towels Overnight",
+      "instruction": "Stack 6–10 sheets of white paper towels on the spot, put a heavy book on top, leave overnight. Pulls residual tea out of the pad before it wicks back as a visible ring. Don't walk on the spot or vacuum until fully dry."
     },
     {
       "step": 8,
-      "agent": "Daylight inspect — repeat if shadow remains",
-      "instruction": "Inspect in natural light. Tea rings often look gone when wet and reappear as a pale tan halo when dry. If you see one, repeat steps 5–7 once more. Two rounds is the home ceiling."
+      "agent": "Daylight Inspect, One More Round If Needed",
+      "instruction": "Inspect in daylight the next morning. Tea ghosts often look invisible when wet and reappear as a pale tan halo when dry. If you see one, repeat steps 5–7 once more. Two rounds is the home ceiling."
     },
     {
       "step": 9,
-      "agent": "Escalate to a professional carpet cleaner",
-      "instruction": "If the patch test fails, the carpet is wool, or the stain survives two rounds, call a pro. Tell them: \"Tea on [nylon/polyester/wool] carpet, treated with Dawn + 3% peroxide, vinegar rinse. No alkaline products used. Residual tan halo remains.\" That handoff lets them go straight to a tannin formula, 6% peroxide, and truck-mount extraction."
+      "agent": "Escalate — Pro for Wool, Alkaline-Set, or Ring Return",
+      "instruction": "Call a pro if: the carpet is wool (pH-sensitive, and peroxide is riskier), someone already hit the spot with baking soda / OxiClean / ammonia (tannin may be locked), the ring keeps coming back, or two full rounds haven't cleared it. Tell them: \"Tea on [nylon / polyester / wool] carpet, age [fresh / overnight / older], home-treated with Dawn + 3% peroxide + white vinegar rinse. No alkaline products used [or: baking soda/OxiClean was used before I started].\" That disclosure matters — it tells them what chemistry is still on the table."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Blot outside-in — no rubbing.",
+      "2. NO alkaline cleaners — no baking soda / OxiClean / ammonia.",
+      "3. Small-volume cold water dilute, blot between.",
+      "4. Hidden-area peroxide test.",
+      "5. Dawn + 3% peroxide solution, 5–10 min, 1–3 cycles.",
+      "6. White vinegar + cool water rinse — DON'T skip.",
+      "7. Weighted paper towels overnight.",
+      "8. Daylight inspect; one more round max.",
+      "9. Pro for wool, alkaline-set, ring return."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% hydrogen peroxide (drugstore brown bottle)",
+      "White vinegar",
+      "White paper towels + heavy book"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if baking soda / OxiClean / ammonia was already used (tannin may be locked), if the carpet is wool and peroxide lifts color on a hidden test, or if the ring keeps returning after two rounds.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NEVER alkaline cleaners — turns tea brown permanently",
+      "NEVER hot water — cross-links tannin deeper",
+      "Never rub — drives tea into the pad",
+      "Never flood with water — pad wicks tea back as a ring",
+      "Never mix peroxide with ammonia / bleach / alkaline"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never baking soda / OxiClean / ammonia — locks tannin",
+      "Never hot water on tea",
+      "Never rub — drives stain deeper",
+      "Never mix peroxide with bleach / ammonia / alkaline"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester carpet: tolerates Dawn + 3% peroxide + vinegar",
+      "Wool carpet: pH-sensitive — hidden test mandatory, peroxide risky",
+      "Olefin: tolerates protocol",
+      "Dyed carpet: hidden-area peroxide test mandatory"
     ]
   },
+  "materialWarnings": [
+    "Alkaline cleaners are the classic tannin mistake",
+    "Cold water only — even on hot-tea spills",
+    "Vinegar rinse prevents the ring from coming back"
+  ],
   "escalation": {
-    "when": "If tea stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is tea on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Alkaline cleaner already used on the spot, wool carpet, ring keeps returning after two home rounds, or carpet lifts color on peroxide hidden-test.",
+    "whatToTell": "\"Tea on [nylon / polyester / wool] carpet, age [fresh / overnight / older], home-treated with Dawn + 3% peroxide + white vinegar. [No alkaline used / alkaline was used before I got here]. [Ring returns / color locked in brown / hidden-test failed].\"",
+    "specialistType": "professional carpet cleaner with tannin formula"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Black tea, green tea, herbal, or a flavored bottled tea?",
+      "Was there milk / cream / sugar?",
+      "Fresh, overnight, or older?",
+      "Has anyone hit it with baking soda / OxiClean / ammonia?",
+      "Carpet fiber — nylon / polyester / wool?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Milk in the tea adds a small protein+fat component — Dawn handles it before peroxide. Bottled tea drinks with added artificial dye may need more rounds. The alkaline-locking phenomenon is the biggest bad-advice magnet — Google results commonly recommend baking soda and that's exactly wrong."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

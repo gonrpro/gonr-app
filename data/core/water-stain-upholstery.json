@@ -1,77 +1,228 @@
 {
   "id": "water-stain-upholstery",
-  "title": "Water on Upholstery",
+  "title": "Water Ring on Upholstery",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Water stains are mineral deposits (calcium, magnesium, iron) left behind when water evaporates from upholstery. Hard water leaves white/chalky residue. Iron-rich water leaves rust-colored marks. The minerals bond to fiber through electrostatic interactions and can etch certain surfaces (marble, glass) if left in contact. The 'stain' is actually a deposit, not absorbed color.",
-  "whyThisWorks": "A mild acid (white vinegar or citric acid) dissolves the mineral deposits on upholstery by converting them to soluble salts. For iron-based water stains, a reducing agent (oxalic acid) is more effective. On stone surfaces, only pH-neutral cleaners are safe — acid dissolves marble/limestone. Preventing mineral buildup is easier than removing it — squeegee/dry after water contact.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–40 minutes; wicking / ring mechanics are the whole problem",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "water-stain",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "water-ring",
+      "wicking",
+      "mineral-deposit",
+      "upholstery",
+      "code-check",
+      "common-confusion"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "\"Water stain\" on upholstery isn't water itself — water is clear. The visible ring or mark is one of three things: (1) MINERAL DEPOSITS left behind when hard water evaporates (calcium, magnesium, iron — white / chalky / pale yellow), (2) DISSOLVED DIRT from the upholstery itself that was carried to the surface by evaporating water and redeposited at the ring boundary (the 'coffee ring' effect — also called wicking), or (3) sizing / filler chemicals from the upholstery that got released when wet and migrated. (2) is by far the most common on home upholstery. Understanding this changes the protocol entirely: the ring isn't a deposit added to the fabric — it's existing dirt pulled to the surface by water movement. The solution isn't chemistry, it's re-wetting and re-distributing so the dirt doesn't concentrate at an edge. The classic bad advice — \"wait for it to dry and then spot clean\" — is exactly wrong; spot-cleaning a water ring creates a new, smaller water ring.",
+  "whyThisWorks": "Re-wet the ENTIRE AREA uniformly — not just the ring — with a damp cloth and a touch of surfactant. Work from the outside of the affected zone inward in gentle sweeping motions. Then dry the whole area UNIFORMLY with weighted towels + fan. Uniform wet + uniform dry = no ring. The counter-intuitive move is wetting MORE of the upholstery, not less. For hard-water mineral rings, acid (vinegar) chelates calcium. For pad / foam soak-through that persists after drying, pro low-moisture extraction.",
+  "defaultAssumption": "Spilled water / accidental over-wet during another cleaning / wet glass left on cushion / kid's water bottle. Fresh ring = easy fix with uniform re-wet. Dried ring that's been spot-cleaned already = bigger ring to redistribute. Hard-water mineral ring = vinegar step. Foam soak-through with permanent discoloration = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Code Check + Scope",
+      "technique": "Read tag, assess ring vs soak-through",
+      "equipment": "Good light",
+      "dwellTime": "2 minutes",
+      "instruction": "Upholstery code: W / W-S = full protocol. S-only = solvent only, no water method. X = vacuum only, pro. Determine: is this a visible RING (dirt migration from wicking — common) or a SOAK-THROUGH discoloration (foam saturated, different problem)? Ring = DIY. Soak-through with discoloration after drying = pro low-moisture extraction."
+    },
+    {
+      "step": 2,
+      "side": "wet-uniform",
+      "agent": "Uniform Damp Cloth — Re-Wet WIDER Than the Ring",
+      "technique": "Counter-intuitive: wet MORE area, not less",
+      "equipment": "Clean white cloth + cool water",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Dampen (don't soak) a clean white cloth with cool water. Work in gentle sweeping motions from OUTSIDE the ring inward, then back outward, covering a zone 3–4 inches larger than the ring on all sides. You're re-mobilizing the dirt so it doesn't concentrate at the edge. Don't concentrate effort on the ring itself — that creates a new smaller ring."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Dawn on Damp Cloth (W / W-S)",
+      "technique": "Gentle surfactant, uniform application",
+      "equipment": "Dawn + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "W or W-S code only: tiny amount of Dawn in cool water on damp cloth. Apply in gentle sweeping motions over the whole wider area (not just the ring). Lifts mobilized dirt. Flip cloth as it picks up. No pouring."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Rinse (Hard-Water Rings Only)",
+      "technique": "Acid chelation for mineral deposits",
+      "equipment": "1 tbsp white vinegar + 1 cup cool water on damp cloth",
+      "dwellTime": "3 minutes",
+      "instruction": "If the ring has a white / chalky / pale yellow mineral character (hard water, iron water), vinegar on damp cloth chelates the calcium / magnesium. Apply uniformly across the zone, not just the ring. For dirt-wicking rings (most common), skip this step."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Weighted Dry Towel — UNIFORM Dry",
+      "technique": "Extract across the wider area, not just the ring",
+      "equipment": "Dry white towel sized to cover the wider wet zone, weight",
+      "dwellTime": "30 min + overnight",
+      "instruction": "Stack a dry white towel over the ENTIRE wet zone (not just the ring). Weight down. 30 min minimum. Replace with fresh dry towel, repeat. Overnight with fresh towels = the best result. Uniform drying = no new ring."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Fan-Dry + Inspect",
+      "technique": "Aggressive even drying",
+      "equipment": "Fan pointed at the whole area",
+      "dwellTime": "4–12 hours",
+      "instruction": "Fan the wider area uniformly until fully dry. Don't point the fan at just the ring — that dries unevenly and creates a new ring. Inspect in daylight. New, smaller ring = one more round of steps 2–5 on an even wider zone."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove loose material mechanically — brush, scrape, or vacuum as appropriate",
-      "2. Apply NSD to the stain area",
-      "3. Apply appropriate secondary agent based on stain response",
-      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Code check + determine ring vs soak-through.",
+      "2. Uniform damp-cloth re-wet 3–4\" beyond the ring.",
+      "3. Dawn damp cloth (W/W-S) — sweep gently, don't spot-treat.",
+      "4. Vinegar rinse for mineral rings only.",
+      "5. Weighted dry towel over the ENTIRE wet zone.",
+      "6. Uniform fan-dry. Repeat if new ring forms."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "White cotton cloth",
+      "Dawn / NSD",
+      "White vinegar (hard-water rings)",
+      "Dry white towels + weight",
+      "Fan"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout",
     "warnings": [
-      "Always test on hidden area first"
+      "RING MECHANICS: wet UNIFORMLY wider, not just the ring",
+      "Spot-cleaning a water ring creates a new smaller water ring",
+      "NEVER pour water — controlled damp cloth only",
+      "NEVER point fan at only the ring — uneven drying = new ring",
+      "Code check — S/X change protocol",
+      "Foam soak-through with discoloration = pro"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Understand What a Water Ring Actually Is",
+      "instruction": "This matters because it's counter-intuitive. When water sits on upholstery and evaporates at the edges, it PULLS dirt that was already in the fabric toward the edge and deposits it there as the water retreats — that's the ring. The ring isn't \"water damage\" in the usual sense; it's dirt from the cushion redistributed to a line. Because of this, the solution is NOT to spot-clean the ring — spot-cleaning creates a new smaller ring. The solution is to wet a WIDER area uniformly, redistribute the dirt back, and dry it uniformly. This is the key mental model."
+    },
+    {
+      "step": 2,
+      "agent": "Code Check + Is It a Ring or Soak-Through?",
+      "instruction": "Upholstery tag: W / W-S = proceed. S-only = solvent only, different approach, call a pro. X = vacuum only, pro. Also determine: is this a visible RING on the surface (typical, fixable with this protocol), or did water soak THROUGH into the cushion and cause discoloration that's still there after the surface dried (foam saturation, pro job)? If water soaked into cushion foam and left a dark or discolored spot, home surface treatment won't reach it."
+    },
+    {
+      "step": 3,
+      "agent": "Damp Cloth — Wet WIDER Than the Ring",
+      "instruction": "Take a clean white cloth and dampen (don't soak) with cool water. Work the cloth in gentle sweeping motions starting OUTSIDE the ring, sweeping inward, then outward again, covering an area 3–4 inches larger than the ring on every side. You're deliberately making the whole zone uniformly damp — the counter-intuitive trick. DO NOT concentrate on the ring itself, DO NOT pour water, DO NOT soak the upholstery."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn on Damp Cloth (W / W-S Code)",
+      "instruction": "If the code is W or W-S: dilute a tiny drop of Dawn in cool water, damp another clean white cloth, continue the sweeping motion over the whole wider zone. The Dawn helps lift and redistribute the dirt that was at the ring edge. Flip the cloth as it picks up color. If the code is S-only, skip this and go to step 5 with just the damp cloth."
+    },
+    {
+      "step": 5,
+      "agent": "If the Ring Is White / Chalky — Vinegar",
+      "instruction": "Dirt-wicking rings are usually tan or gray. If your ring is WHITE, chalky, or pale yellow, it's likely hard-water mineral deposit (calcium, magnesium). Mix 1 tablespoon white vinegar in 1 cup cool water. Dab on a damp cloth, sweep it over the whole zone (not just the ring) for 3 minutes, then re-wipe with plain cool water damp cloth. The acid chelates the mineral. Skip this step for standard dirt-wicking rings."
+    },
+    {
+      "step": 6,
+      "agent": "Weighted Dry Towel — Cover the ENTIRE Wet Zone",
+      "instruction": "Get a dry white towel LARGER than the wet area you just created. Lay it flat over the WHOLE damp zone (not just the ring). Weigh it down with books. 30 minutes. Replace with a fresh dry towel, repeat. Overnight with a fresh towel is the best result. The towel wicks moisture uniformly, so the upholstery dries uniformly, so no new ring forms at the edge of the wet area."
+    },
+    {
+      "step": 7,
+      "agent": "Fan the Whole Area Evenly — Not Just the Ring",
+      "instruction": "Set a fan so airflow covers the whole upholstery area evenly. Don't point the fan directly at the original ring spot — that dries that spot faster than the edges and CREATES a new ring at the new drying boundary. Broad, even airflow. Full dry usually takes 4–12 hours."
+    },
+    {
+      "step": 8,
+      "agent": "Inspect — Repeat on an Even Wider Zone If Needed",
+      "instruction": "Check in daylight after full dry. If a new, smaller ring formed, you dried unevenly or didn't re-wet widely enough. Repeat steps 3–7 on an even WIDER area (5–6 inches beyond the new ring). You can keep going outward until the whole cushion or panel is uniformly clean. This isn't failure — it's the physics of the ring mechanic."
+    },
+    {
+      "step": 9,
+      "agent": "Escalate — Foam Soak / Mineral-Stained / S-Code",
+      "instruction": "Pro call if: water soaked into cushion foam and left discoloration that persists after surface drying, a mineral ring doesn't fade after two vinegar rounds, the code is S-only or X, or you've run the redistribute-and-dry protocol twice on progressively wider areas without success. Tell them: \"Water ring on [W / W-S / S / X] upholstery, source [hard water / standard], home-treated with uniform damp-cloth redistribution + [Dawn] + [vinegar] + weighted towel uniform dry. [New ring keeps forming / foam soak-through visible / mineral deposit persistent].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Mix equal parts white vinegar and water. Apply to mineral deposits",
-      "2. Blot with clean white cloth. Repeat if needed",
-      "3. Rinse with clean water to remove vinegar residue",
-      "4. For fabric: launder normally. For hard surfaces: wipe dry",
-      "5. Prevention: squeegee or dry surfaces after water contact"
+      "1. Understand: the ring is dirt redistributed, not water damage.",
+      "2. Code check + ring vs soak-through.",
+      "3. Damp cloth — wet UNIFORMLY 3–4\" wider than the ring.",
+      "4. Dawn damp cloth sweeping motion over whole zone (W/W-S).",
+      "5. Vinegar only if ring is white/chalky (hard-water mineral).",
+      "6. Dry white towel over ENTIRE wet zone, weighted, overnight.",
+      "7. Fan the whole area evenly, not just the ring.",
+      "8. New ring = redistribute on wider zone. Repeat.",
+      "9. Foam soak / S-code / mineral persistent = pro."
     ],
     "products": [
-      "white vinegar"
+      "Clean white cloths (damp + dry)",
+      "Dawn dish soap",
+      "White vinegar (mineral rings only)",
+      "Large dry white towel + weight",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if foam soak-through discoloration persists after surface treatment, if the ring is mineral and doesn't fade with vinegar, if the code is S-only or X, or if a new ring forms after two redistribution attempts.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "Don't spot-clean a water ring — creates a new ring",
+      "Wet UNIFORMLY wider, not more on the ring",
+      "NEVER pour — damp cloth only",
+      "Uniform drying is mandatory — uneven fan = new ring",
+      "Code check — S/X change protocol",
+      "Foam soak-through is a different problem (pro)"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never spot-treat a water ring — makes it worse",
+      "Never pour water on upholstery",
+      "Never point a fan at only the ring",
+      "Never assume the ring is chemistry when it's physics"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S: full protocol",
+      "S-only: solvent cleaning, different protocol",
+      "X: vacuum only — pro",
+      "Leather: different protocol entirely",
+      "Silk / wool: pro — highly wick-prone"
     ]
   },
+  "materialWarnings": [
+    "Water ring is dirt wicking, not water damage",
+    "Solution is redistribution, not spot-cleaning",
+    "Uniform wet + uniform dry = no ring",
+    "Spot-cleaning makes it worse"
+  ],
   "escalation": {
-    "when": "If water stain stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is water stain on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "Foam soak-through with persistent discoloration, mineral deposit ring that doesn't fade with vinegar, S-only / X code, silk / wool upholstery, or ring reformation after two redistribution attempts on progressively wider zones.",
+    "whatToTell": "\"Water ring on [W / W-S / S / X] upholstery, source [plain / hard / iron water], home-treated with uniform damp-cloth redistribution over wider zones + [Dawn] + [vinegar] + weighted uniform dry. [New ring keeps forming / foam soak-through / mineral ring persistent].\"",
+    "specialistType": "professional upholstery cleaner with low-moisture extraction"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Is the ring visible on the surface only, or is there discoloration from water soaked into the foam?",
+      "Upholstery code — W, W-S, S, X?",
+      "Hard water area? Any iron / well-water involvement?",
+      "Has anyone already spot-cleaned and made it worse?",
+      "Fabric — microfiber, velvet, woven cotton, leather?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The 'ring is physics, not chemistry' framing is the whole card. Users default to spot-cleaning because that's intuitive; the protocol depends on counter-intuitively wetting MORE area and drying uniformly. Microfiber is especially prone to wicking rings. Velvet often needs pro treatment even for rings because nap direction is affected by any wet process."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,82 +1,224 @@
 {
   "id": "candle-wax-carpet",
   "title": "Candle Wax on Carpet",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Candle wax (paraffin) is a solid petroleum hydrocarbon that solidifies on carpet as it cools, trapping any dye from colored candles within the wax matrix. The wax itself is not a stain — it's a physical deposit. However, dyed candles leave pigment behind after wax removal. The wax must be removed before the dye can be treated.",
-  "whyThisWorks": "Freezing makes wax brittle on carpet, allowing mechanical removal of the bulk deposit. Low heat (iron through paper towel) melts remaining wax into the absorbent paper by capillary action. POG dissolves any wax residue. If dye remains after wax removal, it's treated as a separate dye stain with appropriate chemistry.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "30 minutes to an hour; fiber check required before any heat",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "candle-wax",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "wax",
+      "paraffin",
+      "carpet",
+      "physical-deposit",
+      "fiber-heat-risk",
+      "bad-advice-target"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Candle wax is mostly paraffin (petroleum-derived hydrocarbon) or beeswax/soy wax, often with added fragrance oils and dye. On carpet, wax solidifies into a physical deposit that traps pigment inside — it's more a solid object sitting in the pile than a bonded stain. Two problems: (1) the wax itself is physical, not chemical, and responds to cold (brittle) or heat (melts into absorbent material), and (2) colored wax leaves dye behind that is a separate stain AFTER the wax is gone. The classic internet advice — iron + brown paper bag — works great on cotton but is DANGEROUS on synthetic carpet: nylon, polyester, and especially olefin (polypropylene) can soften, melt, or permanently change texture under a hot iron. Iron-on-carpet advice online is widespread and wrong for most modern carpet.",
+  "whyThisWorks": "Freezing makes paraffin brittle so the bulk lifts off mechanically — no heat, no risk. What remains goes into a solvent (POG / Goo Gone) that dissolves wax without heat. Dawn emulsifies the residue. Only if fiber is confirmed heat-tolerant (rare for synthetic carpet) is the iron method even considered — and even then only through a heavy barrier. Dye from colored wax is treated as a separate dye stain after the wax is fully gone.",
+  "defaultAssumption": "Spilled pillar candle / dripped taper / kid's birthday candle on living-room or bedroom carpet. Most home carpet is synthetic (nylon / polyester / olefin) — do NOT iron it. Wool carpet tolerates careful low heat through a barrier, but wool is also pro-lane for tight stains. When fiber is unknown, default to freeze-and-solvent, skip heat entirely.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Fiber Identification — Before Any Heat",
+      "technique": "Identify fiber or default to no-heat path",
+      "equipment": "Good light, carpet tag if available",
+      "dwellTime": "2 minutes",
+      "instruction": "Identify the carpet: synthetic (nylon, polyester, olefin/polypropylene, triexta) = NO IRON. Wool = iron OK through a heavy barrier with care. Unknown fiber = NO IRON, default to freeze-and-solvent only. Olefin softens under modest heat and will fuse. Polyester can distort. An iron on synthetic carpet can do more damage than the candle wax."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Freeze Wax Brittle",
+      "technique": "Ice bag on wax, 10–15 min",
+      "equipment": "Ice in a plastic bag (never direct ice), plastic card or dull blade",
+      "dwellTime": "10–15 minutes",
+      "instruction": "Place ice sealed in a plastic bag directly on the wax. Leave 10–15 minutes until the wax is fully frozen brittle. Never put ice directly on carpet — water damage. Once frozen, crack and lift the wax pieces off with the edge of a plastic card or dull knife. Most of the bulk comes off cleanly this way."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "POG or Goo Gone — Dissolve Residue",
+      "technique": "Solvent tamp from top with cloth",
+      "equipment": "POG or Goo Gone on white cotton cloth",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply POG (professional) or Goo Gone (consumer) to a white cloth. Tamp from the top, flip cloth frequently, work outside-in. Never pour solvent. Ventilate. No flames. 2–3 passes typical for residual wax film."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush — Emulsify",
+      "technique": "Surfactant rinse via damp cloth",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Work Dawn into the spot with a soft toothbrush. Emulsifies solvent residue and remaining wax. Damp-cloth rinse — never pour."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Dye Treatment (Colored Candles Only)",
+      "technique": "Targeted oxidizer if dye remains",
+      "equipment": "3% hydrogen peroxide on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "If the wax was colored and dye remains after wax is gone: 3% H₂O₂ on a damp cloth, 5 min, blot. Hidden-area color test first on dyed carpet. This is now a separate dye stain, not a wax stain."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan-Dry",
+      "technique": "Extract residual moisture + solvent",
+      "equipment": "Dry towel + weight, fan",
+      "dwellTime": "30 min + fan",
+      "instruction": "Weighted dry towel 30 min. Fan the area fully dry. Inspect in daylight."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Freeze with ice bag to harden wax. Scrape off bulk with dull edge",
-      "2. Apply POG to dissolve remaining wax residue",
-      "3. Apply NSD to lift pigment (for colored wax). Flush with cool water",
-      "4. If dye remains: apply H2O2 6% carefully, monitor",
-      "5. Apply Acetic Acid 28% (diluted 1:10) for pH restoration. Blot dry"
+      "1. Fiber ID: synthetic = NO iron. Unknown = NO iron. Wool = careful barrier only.",
+      "2. Freeze with ice bag 10–15 min. Crack and lift bulk.",
+      "3. POG tamp from top, outside-in. Ventilate.",
+      "4. Dawn / NSD + soft brush, damp-cloth rinse.",
+      "5. 3% H₂O₂ for residual dye (colored wax only).",
+      "6. Weighted dry towel + fan-dry."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Ice bag (sealed)",
+      "Plastic card / dull blade",
+      "POG (pro) or Goo Gone (consumer)",
+      "Dawn / NSD",
+      "3% Hydrogen peroxide (dye residual only)",
+      "Fan"
     ],
-    "temperature": "ambient",
+    "temperature": "cold (freeze) + ambient; no iron on synthetic carpet",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains",
-      "Ensure adequate ventilation when using solvents — VOC fumes require extraction"
+      "NEVER iron on synthetic carpet (nylon / polyester / olefin / triexta) — melts fiber",
+      "NEVER iron on unknown fiber — default to freeze + solvent",
+      "Iron on wool: low heat, heavy barrier, short passes, constant check",
+      "Flammable solvent — ventilate, no flames, no smoking",
+      "Never pour solvent on carpet — cloth only",
+      "Ice in a bag — never direct ice on carpet"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "STOP — Do Not Iron Synthetic Carpet",
+      "instruction": "The most common internet advice for candle wax on carpet is iron-plus-brown-paper-bag. That advice works on COTTON fabric. On carpet, it's often WRONG and can permanently ruin the pile. Most modern home carpet is synthetic — nylon, polyester, olefin (polypropylene), or triexta — and every one of those can soften, distort, melt, or fuse under a hot iron. Olefin is the most heat-sensitive. Before you do anything heat-related, figure out what your carpet is. Wool = careful iron through a heavy barrier is possible. Synthetic or unknown = freeze and dissolve, no iron."
+    },
+    {
+      "step": 2,
+      "agent": "Freeze Method — Safe for All Fibers",
+      "instruction": "Get a zip-lock bag, fill it with ice, and press it directly on the wax for 10 to 15 minutes. Never put ice directly on carpet — you'll add water damage to a wax problem. The wax will freeze brittle. Once hard, crack and lift the pieces off with the edge of a plastic card, dull butter knife, or credit card. Most of the bulk comes off cleanly this way. No heat, no fiber risk."
+    },
+    {
+      "step": 3,
+      "agent": "Goo Gone or POG to Dissolve Residue",
+      "instruction": "A thin wax film usually remains after freezing. Apply Goo Gone (orange solvent, any hardware / grocery store) to a clean white cloth — never pour directly on carpet. Press and tamp from the TOP, flipping the cloth as it picks up wax. Work outside-in so you don't spread the edge. 2–3 passes usually clears the film. Open windows. No flames nearby — solvents are flammable."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Soft Toothbrush",
+      "instruction": "Work a drop of Dawn in cool water into the spot with a soft toothbrush. Clears the solvent residue and any last bits of wax. Rinse with a damp cloth — never pour water on the carpet."
+    },
+    {
+      "step": 5,
+      "agent": "If Colored Candle — Treat the Dye",
+      "instruction": "Once the wax is gone, you might see a color ring (red wax = red dye, purple candle = purple stain). That's a separate dye stain now. Dab 3% hydrogen peroxide on a white damp cloth, press 5 min, blot. Test on a hidden area first — peroxide can lighten dyed carpet."
+    },
+    {
+      "step": 6,
+      "agent": "IF Wool Carpet — Iron Method OK With Barriers",
+      "instruction": "ONLY if you KNOW the carpet is wool (not synthetic — most modern carpet isn't wool): stack 3–4 layers of white paper towels or a clean brown paper bag on the wax spot. Set an iron to LOW, no steam. Press briefly — 5 seconds at a time — and check. The wax should wick up into the paper. Replace paper as it absorbs. Stop at the first sign of fiber damage. If you're not 100% sure it's wool, don't do this — use the freeze method."
+    },
+    {
+      "step": 7,
+      "agent": "Dry Down and Inspect",
+      "instruction": "Stack dry paper towels on the spot, weigh down with a book, 30 minutes. Point a fan at the area for 1–2 hours. Inspect in daylight. If residual wax or color remains, one more round of POG/Goo Gone + Dawn can sometimes finish."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate for Large Spills or Wool",
+      "instruction": "For large spills (melted pillar candle), heavily-pigmented wax, wool carpet with a tight spot, or if the freeze-and-solvent protocol doesn't clear the stain: call a pro carpet cleaner. Tell them: \"Candle wax on [fiber] carpet, [size], home-treated with ice + Goo Gone/POG + Dawn. [Residual wax / residual dye / didn't attempt iron]. Fiber [known: X / unknown].\" Don't let them iron synthetic carpet either."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place ice in a bag on the wax for 10 minutes until brittle. Do NOT apply ice directly to fabric",
-      "2. Scrape off hardened wax with a dull knife or credit card edge",
-      "3. Place paper towels above and below the fabric (if possible). Iron on low heat to melt remaining wax into paper — check every 5 seconds",
-      "4. Apply Dawn dish soap to any remaining residue. Blot",
-      "5. Rinse with warm water. Air dry — inspect before using dryer"
+      "1. Fiber ID FIRST. Synthetic or unknown = NO IRON.",
+      "2. Freeze with ice-in-bag 10–15 min. Crack and lift bulk.",
+      "3. Goo Gone / POG on a cloth, tamp from top, outside-in. Ventilate.",
+      "4. Dawn + soft toothbrush, damp-cloth rinse.",
+      "5. 3% H₂O₂ for residual dye (colored wax only; hidden-test first).",
+      "6. Wool carpet ONLY: careful iron through heavy paper barrier, 5 sec pulses.",
+      "7. Weighted dry towels + fan-dry.",
+      "8. Persistent or large = pro carpet cleaner."
     ],
     "products": [
+      "Ice in a zip-lock bag",
+      "Plastic card / dull knife",
+      "Goo Gone (or POG if pro-grade available)",
       "Dawn dish soap",
-      "paper towels",
-      "ice"
+      "3% Hydrogen peroxide (for colored-wax dye residual)",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if carpet fiber is synthetic/unknown and internet advice is telling you to iron. Stop if iron starts to affect fiber (melt, distort, discolor). Stop if dye ghost persists after 2 rounds of H₂O₂ on a fiber-tested spot.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER IRON ON SYNTHETIC CARPET — melts fiber",
+      "NEVER IRON ON UNKNOWN FIBER — default freeze + solvent",
+      "Never direct ice on carpet — water damage",
+      "Flammable solvent — ventilate, no flame",
+      "Never pour solvent or water on carpet",
+      "Dye treatment is a separate stain AFTER wax is fully gone"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never iron on synthetic or unknown fiber",
+      "Never direct ice on carpet",
+      "Never pour solvent on carpet",
+      "Never use solvent near flame"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / triexta: freeze + solvent. NO IRON.",
+      "Olefin (polypropylene): freeze + solvent. NO IRON — most heat-sensitive.",
+      "Wool: iron OK through heavy barrier, low heat, 5-sec pulses, constant monitor",
+      "Unknown fiber: treat as synthetic — no heat",
+      "Jute backing: over-wetting causes browning"
     ]
   },
+  "materialWarnings": [
+    "The viral iron-method is DANGEROUS on synthetic carpet",
+    "Fiber ID before any heat",
+    "Freeze-and-solvent is the universal-safe path",
+    "Dye is a separate stain after wax removal"
+  ],
   "escalation": {
-    "when": "If candle wax stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is candle wax on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Wool carpet with tight spot, large melted-candle spill, heavily-pigmented wax with residual dye, or freeze-and-solvent didn't clear the wax.",
+    "whatToTell": "\"Candle wax on [nylon / polyester / olefin / wool / unknown] carpet, [size], home-treated with ice + Goo Gone/POG + Dawn [+ H₂O₂ on dye]. No iron attempted [/ iron was attempted with X result]. [Residual wax / color ghost / fiber unknown].\"",
+    "specialistType": "professional carpet cleaner with solvent spotting"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "What's the carpet fiber — synthetic, wool, unknown?",
+      "How big is the wax deposit — drip, stream, pooled?",
+      "Was the candle white / unscented / dyed / heavily scented?",
+      "Has anyone already tried ironing it?",
+      "Is there color visible separate from the wax?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Iron-on-synthetic-carpet is the most dangerous piece of widespread internet advice for this stain. Olefin carpet is especially vulnerable because its melting point is low. Wool carpet tolerates careful heat, but most modern home carpet isn't wool. Default to freeze-and-solvent — it's safe on every fiber."
   },
-  "difficulty": 4,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,81 +1,218 @@
 {
   "id": "baby-formula-carpet",
   "title": "Baby Formula on Carpet",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Baby formula combines milk proteins (casein, whey), vegetable oils, lactose, and added vitamins/minerals. On carpet, the protein bonds to fibers, the oils create a hydrophobic barrier, and iron supplements can leave rust-like discoloration. Heat sets the protein rapidly and polymerizes the oil into a hard film.",
-  "whyThisWorks": "Cold water prevents protein from setting on carpet. Enzyme treatment targets the protein, surfactant emulsifies the oil component. The iron residue may need a secondary treatment after the organic components are removed. Working cold throughout is critical — any heat makes this stain permanent.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–30 minutes fresh; harder if hot water was used first",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "baby-formula",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "protein",
+      "milk-protein",
+      "fat",
+      "iron-fortified",
+      "carpet",
+      "parent-card",
+      "cold-water-critical"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Baby formula combines milk proteins (casein + whey, sometimes hydrolyzed) + vegetable oils + lactose + added iron + vitamins. Three stain components on carpet: (1) PROTEIN (casein/whey) that sets permanently with heat — protein-before-heat invariant applies, (2) FAT (vegetable oils) that resists water and needs surfactant, and (3) ADDED IRON from infant fortification that can leave a faint rust-colored ghost AFTER the protein + fat come out. The standard home mistake: \"it's just milk, rinse with warm water\" — warm/hot water sets the casein protein into the fiber. Cold water only. The iron ghost (if present) gets treated last with rust chemistry, not tannin chemistry.",
+  "whyThisWorks": "Cold water dissolves fresh lactose and keeps casein mobile. Enzyme pretreat digests the protein before fat or iron treatment. Dawn then emulsifies the vegetable oil. If a faint orange ghost remains from iron fortification, a small amount of lemon juice or 3% peroxide clears it. The limitation is simple: if someone poured hot water on it first, the casein is heat-set and no home chemistry reliably reverses that.",
+  "defaultAssumption": "Parent with newborn / young infant on the floor / changing area / nursery rug. Fresh spit-up or bottle spill = very winnable, especially if caught fresh. Dried overnight or hot-water-rinsed = harder, may leave residual yellow from denatured casein. Check for iron-fortified formula on the label — leaves a slight orange ghost some home guides mistake for tomato or turmeric.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot Immediately — Cold Only",
+      "technique": "Absorb liquid before protein sets",
+      "equipment": "White paper towels or cotton cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Press white towels straight down on the spill. Lift, rotate, press again. Outside-in. Don't rub — rubbing drives protein + fat into the pile and pad. Keep working until the towel stops picking up."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Water Dilute — NO WARM / HOT",
+      "technique": "Small-volume cold flush",
+      "equipment": "Cold water, white cloth",
+      "dwellTime": "1–2 min per pass",
+      "instruction": "Small amount of cold water on the spot, blot with dry cloth. Repeat 2–3 times. COLD ONLY — warm or hot water denatures casein and sets it permanently. Don't flood — pad wicking."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat in Warm Water (Not Hot)",
+      "technique": "Protein digestion",
+      "equipment": "OxiClean Versatile / Biz / pet enzyme in warm (<100°F / 38°C) water, damp cloth",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Dissolve enzyme pretreat in WARM water — bath temperature, under 100°F. NOT hot. Dampen a white cloth in the solution, press on the spot, cover with damp towel to prevent drying, 15–20 min. Enzyme digests casein before fat treatment."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush for Fat",
+      "technique": "Emulsify vegetable oil fraction",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Work Dawn into the spot with a soft toothbrush. Damp-cloth rinse. Clears fat fraction."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Lemon Juice for Iron Ghost (Optional)",
+      "technique": "Acid chelation for residual iron",
+      "equipment": "Fresh lemon juice on cotton swab",
+      "dwellTime": "5 minutes",
+      "instruction": "If a faint orange / rust-tinged ghost remains (iron-fortified formula residue): dab fresh lemon juice on a cotton swab, press on the spot 5 min, blot with damp cloth. Citric acid chelates iron. Skip if carpet is wool (pH-sensitive)."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Paper Towels + Fan-Dry",
+      "technique": "Extract + air-dry",
+      "equipment": "Paper towels + weight, fan",
+      "dwellTime": "4–8 hours + fan",
+      "instruction": "Stack paper towels with weight 30 min. Fan until fully dry. Inspect in daylight."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Immediate blot outside-in.",
+      "2. Cold water small-volume dilute — never warm/hot.",
+      "3. Enzyme pretreat in WARM (<100°F) water, 15–20 min.",
+      "4. Dawn / NSD + soft brush for vegetable oil fraction.",
+      "5. Lemon juice or 3% peroxide for residual iron ghost (optional).",
+      "6. Weighted paper towel + fan-dry."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "White paper towels",
+      "Enzyme pretreat (OxiClean Versatile / Biz)",
+      "Dawn / NSD",
+      "Lemon juice or 3% H₂O₂ (iron residual)",
+      "Fan"
     ],
-    "temperature": "cold",
+    "temperature": "cold through initial; warm (<100°F) for enzyme only; no hot, ever",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein",
-      "Avoid over-wetting — extract excess moisture to prevent backing/foam damage"
+      "NEVER warm or hot water first — sets casein",
+      "NEVER steam — sets protein",
+      "NEVER oxidizer before enzyme — sets protein",
+      "Don't skip the iron-ghost step if formula was iron-fortified",
+      "Cold throughout initial blotting"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Cold Water ONLY — This Is the Whole Rule",
+      "instruction": "The #1 mistake with formula stains: \"it's just milk, let's rinse it with warm water.\" Warm or hot water DENATURES the milk protein in formula and locks it into the carpet permanently — same chemistry as cooking an egg white. The rest of the protocol is reasonable and easy. Cold water is the rule that makes everything else work. Even if the formula was warmed in a bottle, USE COLD WATER NOW."
+    },
+    {
+      "step": 2,
+      "agent": "Blot Immediately — Don't Rub",
+      "instruction": "Press a thick stack of white paper towels or a clean cloth STRAIGHT DOWN on the spill. Lift, move to a dry section, press again. Work outside-in. Don't rub — rubbing drives protein and fat into the carpet pad where home chemistry can't reach. Keep blotting until nothing more transfers to the towel."
+    },
+    {
+      "step": 3,
+      "agent": "Small-Volume Cold Water Dilute",
+      "instruction": "Pour a SMALL amount of cold water on the spot — about as much as spilled. Blot with a dry cloth. Repeat 2–3 times. Cold only. Don't flood — water that reaches the pad carries protein + fat down there where you can't extract them."
+    },
+    {
+      "step": 4,
+      "agent": "Enzyme Pretreat — Warm, Not Hot",
+      "instruction": "Dissolve a scoop of OxiClean Versatile (the pretreat version, has enzymes) or Biz in WARM water — bath temperature, under 100°F. NOT hot. Dampen a white cloth in the solution, press on the spot, cover with a damp towel to keep it wet, wait 15–20 minutes. The enzyme digests the casein and whey proteins. Warm is necessary for enzyme activity, hot would set the protein."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn + Soft Toothbrush for the Oil",
+      "instruction": "Baby formula has added vegetable oils. Work a drop of Dawn in cool water into the spot with a soft toothbrush. Dawn is engineered for fat emulsion. Rinse with a damp cloth — never pour water."
+    },
+    {
+      "step": 6,
+      "agent": "Lemon Juice If You See an Orange Ghost",
+      "instruction": "After protein + fat are out, sometimes a faint orange ghost remains — that's the ADDED IRON in fortified formula, not a stain failure. Dab fresh lemon juice on a cotton swab, press on the spot 5 minutes, blot with a damp cloth. Citric acid chelates iron. If your carpet is wool, skip this — use the pro escalation instead. Test on a hidden area first on colored carpet."
+    },
+    {
+      "step": 7,
+      "agent": "Weighted Towels + Fan-Dry",
+      "instruction": "Stack dry paper towels on the spot, put a heavy book on top, 30 minutes. Fan the area until fully dry. Inspect in daylight. If a faint yellow ghost remains despite everything, that's likely casein that was partially set — one more enzyme round may help, or escalate."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate for Heat-Set or Wool",
+      "instruction": "If someone (you, a caregiver, or a prior \"cleaning\") already hit the stain with warm/hot water, steam, or put something hot on it, the casein may be heat-set. Tell a pro: \"Baby formula on [nylon / polyester / wool] carpet, age [fresh / overnight], home-treated with cold water + enzyme + Dawn + [lemon juice for iron ghost]. [Hot water / warm water / steam was used before I got to it — OR — no heat used].\" That disclosure matters — it tells them what's still possible."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. COLD WATER ONLY. Never warm or hot — sets milk protein.",
+      "2. Blot outside-in, don't rub.",
+      "3. Small-volume cold dilute, blot between, 2–3 passes.",
+      "4. Enzyme pretreat in WARM (<100°F) water, 15–20 min.",
+      "5. Dawn + soft toothbrush for fat.",
+      "6. Lemon juice on a swab for iron ghost (optional).",
+      "7. Weighted paper towels + fan-dry.",
+      "8. Heat-set or wool = pro."
     ],
     "products": [
+      "White paper towels",
+      "OxiClean Versatile pretreat or Biz",
       "Dawn dish soap",
-      "cold water"
+      "Fresh lemon juice",
+      "Fan + heavy book"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if someone used warm or hot water before you (casein may be set), if the carpet is wool and iron ghost remains, or if residual yellow persists after two rounds.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "NEVER warm or hot water — sets milk protein",
+      "NEVER steam or heat",
+      "NEVER oxidizer / OxiClean alone before enzyme — sets protein",
+      "Never rub — drives mess into pad",
+      "Cold water only on initial blotting"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never warm or hot water on milk-protein stains",
+      "Never steam-clean",
+      "Never skip enzyme step before oxidizer",
+      "Never scrub — drives stain deeper"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / olefin carpet: tolerates full protocol",
+      "Wool: acid-safe but pH-sensitive — hidden-test before lemon juice",
+      "Dyed carpet: hidden test before peroxide if used"
     ]
   },
+  "materialWarnings": [
+    "Cold water only — warm water sets casein",
+    "Iron ghost is real — use acid, not tannin chemistry",
+    "Enzyme before any oxidizer"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is baby formula on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Warm / hot water used before treatment (casein likely heat-set), wool carpet with iron ghost, residual yellow after two home rounds, or stain dried overnight with heat exposure.",
+    "whatToTell": "\"Baby formula on [nylon / polyester / wool] carpet, age [fresh / overnight / older], home-treated with cold + enzyme (warm, not hot) + Dawn + [lemon juice for iron]. [No heat used / warm water was used before I got here / steam used]. [Yellow ghost / rust ghost / heat-set suspected].\"",
+    "specialistType": "professional carpet cleaner with protein chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Fresh spill, overnight, or older?",
+      "Is the formula iron-fortified? (most infant formula is)",
+      "Did anyone use warm or hot water before you got to it?",
+      "Hydrolyzed (\"sensitive\") formula or standard?",
+      "Carpet fiber — nylon / polyester / wool?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Iron-fortified formula leaves a faint orange residual that home guides often misdiagnose as tomato or turmeric. It's iron — use acid chelation (lemon juice), not tannin chemistry. Hydrolyzed / sensitive formulas have pre-broken protein and are slightly easier; standard formulas are slightly harder. The warm-water-first mistake is the biggest failure mode on this stain."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
