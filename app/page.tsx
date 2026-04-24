@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useRef, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import ResultCard from '@/components/solve/ResultCard'
+import SolveLoadingSkeleton from '@/components/solve/SolveLoadingSkeleton'
 import StainChips from '@/components/solve/StainChips'
 import SurfaceChips from '@/components/solve/SurfaceChips'
 import PaywallModal from '@/components/paywall/PaywallModal'
@@ -307,6 +308,12 @@ function SolvePageInner() {
       setResult(data)
       incrementSolveCount()
 
+      // Haptic tap on result arrival — mobile only, fails silently elsewhere.
+      // Short single pulse (12ms) so it reads as a confirmation, not a buzz.
+      if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
+        try { navigator.vibrate(12) } catch { /* some browsers throw inside iframes */ }
+      }
+
       // Refresh usage state after solve so the badge counts down accurately.
       if (userTier === 'free') {
         try {
@@ -395,7 +402,10 @@ function SolvePageInner() {
   // --- Result view ---
   if (result) {
     return (
-      <div ref={resultRef}>
+      <div
+        ref={resultRef}
+        className="animate-in fade-in slide-in-from-bottom-2 duration-300"
+      >
         <button
           onClick={handleBack}
           className="flex items-center gap-1 mb-4 text-sm font-medium"
@@ -864,16 +874,8 @@ function SolvePageInner() {
         </div>
       )}
 
-      {/* Loading skeleton */}
-      {loading && (
-        <div className="space-y-3">
-          <div className="skeleton h-6 w-3/4" />
-          <div className="skeleton h-4 w-full" />
-          <div className="skeleton h-4 w-5/6" />
-          <div className="skeleton h-32 w-full" />
-          <div className="skeleton h-4 w-2/3" />
-        </div>
-      )}
+      {/* Loading skeleton — ResultCard-shaped so the reveal feels continuous */}
+      {loading && <SolveLoadingSkeleton />}
 
       {/* Error */}
       {error && (
