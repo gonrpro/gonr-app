@@ -45,9 +45,18 @@ function normalizeCard(card: any): any {
     card.spottingProtocol = card.professionalProtocol.steps.map((s: string, i: number) => {
       // Try to extract agent from step text (e.g. "1. Apply NSD to...")
       const agentMatch = s.match(/apply\s+([A-Z][A-Za-z₂0-9\s%°]+?)[\s,.]|use\s+([A-Z][A-Za-z₂0-9\s%°]+?)[\s,.]/i)
+      const rawAgent = agentMatch ? (agentMatch[1] || agentMatch[2]).trim() : 'Apply'
+      // Title-case the capture — the regex's /i flag lets lowercase first
+      // letters through (e.g. "apply amyl acetate" → "amyl"), which leaks
+      // schema-grammar to the user. Keep 2+ char all-caps acronyms
+      // (POG / NSD / IPA) intact, sentence-case everything else.
+      const agent = rawAgent
+        .split(/\s+/)
+        .map(w => (w.length >= 2 && w === w.toUpperCase()) ? w : w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+        .join(' ')
       return {
         step: i + 1,
-        agent: agentMatch ? (agentMatch[1] || agentMatch[2]).trim() : 'Apply',
+        agent,
         technique: '',
         temperature: '',
         dwellTime: '',
