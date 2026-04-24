@@ -880,7 +880,38 @@ export async function POST(req: Request) {
       return NextResponse.json({ ...result, card: sanitizeCardForTier(plantTunedCard, viewerTier), stainType: resolveStainType(plantTunedCard, ctx), correlationId, viewerTier })
     }
 
-    // ── AI fallback ────────────────────────────────────────────
+    // ── Pro-tier verified-only gate (Atlas 8088 + 8102) ────────
+    // Spotter and Operator must never see AI-generated chemistry —
+    // pros can't un-read a bad protocol, and "AI might be right" is
+    // not a defensible trust model for paid tiers. If the library
+    // didn't match, bail here with a "No verified protocol yet"
+    // response and log the query so it surfaces as a high-priority
+    // card to author next.
+    if (viewerTier === 'spotter' || viewerTier === 'operator') {
+      logSolveReview({
+        queryRaw: `${ctx.stain} on ${ctx.surface}`,
+        stain: ctx.stain,
+        surface: ctx.surface,
+        tierRequested: viewerTier,
+        matchedCardKey: null,
+        usedAiFallback: false,
+        userId: email,
+        sessionId: correlationId,
+      })
+      return NextResponse.json({
+        card: null,
+        tier: 4,
+        confidence: 0,
+        source: 'no-verified-protocol',
+        stainType: resolveStainType(null, ctx),
+        correlationId,
+        viewerTier,
+        noVerifiedProtocol: true,
+        message: 'No verified protocol yet for this combination. We log every uncovered query and add verified cards continuously — try again soon, or email support if it\'s urgent.',
+      })
+    }
+
+    // ── AI fallback (Home / Free / Anon only) ──────────────────
     try {
       // Stain Brain retrieval (TASK-005 Phase 2) — fetch grounded context
       // from sb_chunks when the kill switch is on. Returns a non-retrieving
