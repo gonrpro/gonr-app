@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback, useRef } from 'react'
+import { Play, Square, Loader2 } from 'lucide-react'
 import type { Step, ProtocolCard } from '@/lib/types'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { TtsPlayer, ttsAvailable } from '@/lib/tts/client'
@@ -23,6 +24,7 @@ interface FullCardModalProps {
 export default function FullCardModal({ card, steps, warnings, onClose }: FullCardModalProps) {
   const { lang, t } = useLanguage()
   const [isSpeaking, setIsSpeaking] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [activeStepIdx, setActiveStepIdx] = useState<number | null>(null)
   const playerRef = useRef<TtsPlayer | null>(null)
   const stepRefs = useRef<(HTMLDivElement | null)[]>([])
@@ -41,10 +43,16 @@ export default function FullCardModal({ card, steps, warnings, onClose }: FullCa
   }, [onClose])
 
   // Set up the shared TTS player for the modal's lifetime. Wire the end
-  // handler to clear the speaking state so the UI reflects when audio stops.
+  // handler to clear the speaking state, and the loading handler so the UI
+  // can show a spinner during the 1–2 s fetch window (covers Tyler's
+  // "it's not playing" confusion from the round-trip delay, 8057).
   useEffect(() => {
     const player = new TtsPlayer()
-    player.onEnd(() => setIsSpeaking(false))
+    player.onEnd(() => {
+      setIsSpeaking(false)
+      setIsLoading(false)
+    })
+    player.onLoadingChange((loading) => setIsLoading(loading))
     playerRef.current = player
     return () => {
       player.stop()
@@ -140,14 +148,30 @@ export default function FullCardModal({ card, steps, warnings, onClose }: FullCa
           style={{ borderBottom: '1px solid var(--border)' }}>
           <button
             onClick={handleReadAloud}
-            className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+            disabled={isLoading && !isSpeaking}
+            className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-70"
             style={{
               background: isSpeaking ? 'rgba(239,68,68,0.12)' : 'rgba(129,140,248,0.1)',
               border: `1px solid ${isSpeaking ? 'rgba(239,68,68,0.3)' : 'rgba(129,140,248,0.25)'}`,
               color: isSpeaking ? '#ef4444' : '#818cf8',
             }}
           >
-            {isSpeaking ? `⏹ ${t('stopReading')}` : `🔊 ${t('readAloud')}`}
+            {isLoading && !isSpeaking ? (
+              <>
+                <Loader2 size={14} strokeWidth={2} className="animate-spin" aria-hidden="true" />
+                {t('readAloud')}
+              </>
+            ) : isSpeaking ? (
+              <>
+                <Square size={14} strokeWidth={2} fill="currentColor" aria-hidden="true" />
+                {t('stopReading')}
+              </>
+            ) : (
+              <>
+                <Play size={14} strokeWidth={2} fill="currentColor" aria-hidden="true" />
+                {t('readAloud')}
+              </>
+            )}
           </button>
           <span className="text-xs" style={{ color: 'var(--text-secondary)' }}>
             {isSpeaking ? t('readingFullProtocol') : t('tapStepsToHear')}
@@ -224,8 +248,14 @@ export default function FullCardModal({ card, steps, warnings, onClose }: FullCa
                   )}
                 </div>
                 {hasSpeech && (
-                  <div className="flex-shrink-0 self-center text-xs" style={{ color: 'var(--text-secondary)' }}>
-                    🔊
+                  <div className="flex-shrink-0 self-center" style={{ color: activeStepIdx === i && isLoading ? '#818cf8' : 'var(--text-secondary)' }}>
+                    {activeStepIdx === i && isLoading ? (
+                      <Loader2 size={14} strokeWidth={2} className="animate-spin" aria-hidden="true" />
+                    ) : activeStepIdx === i && isSpeaking ? (
+                      <Square size={12} strokeWidth={2} fill="currentColor" aria-hidden="true" />
+                    ) : (
+                      <Play size={12} strokeWidth={2} fill="currentColor" aria-hidden="true" />
+                    )}
                   </div>
                 )}
               </div>

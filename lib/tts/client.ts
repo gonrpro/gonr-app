@@ -37,11 +37,22 @@ export class TtsPlayer {
   private audio: HTMLAudioElement | null = null
   private objectUrl: string | null = null
   private endHandler: (() => void) | null = null
+  private loadingHandler: ((loading: boolean) => void) | null = null
   private cancelFallback: (() => void) | null = null
   private aborter: AbortController | null = null
 
   onEnd(cb: (() => void) | null) {
     this.endHandler = cb
+  }
+
+  /**
+   * Fires with `true` right before fetching the TTS audio and `false` as
+   * soon as playback begins (or falls back, or errors). Consumers use this
+   * to show a spinner so the user knows the tap registered during the
+   * 1–2 second network round-trip.
+   */
+  onLoadingChange(cb: ((loading: boolean) => void) | null) {
+    this.loadingHandler = cb
   }
 
   async play(text: string, lang: string = 'en'): Promise<void> {
@@ -52,6 +63,7 @@ export class TtsPlayer {
       return
     }
 
+    this.loadingHandler?.(true)
     this.aborter = new AbortController()
     try {
       const res = await fetch('/api/tts', {
@@ -66,6 +78,10 @@ export class TtsPlayer {
       this.objectUrl = url
 
       const audio = new Audio(url)
+      audio.preload = 'auto'
+      // iOS Safari: required so <audio> obeys user-initiated play() without
+      // requiring a silent-mode toggle.
+      ;(audio as HTMLAudioElement & { playsInline?: boolean }).playsInline = true
       audio.onended = () => {
         this.cleanupAudio()
         this.endHandler?.()
@@ -73,17 +89,25 @@ export class TtsPlayer {
       audio.onerror = () => {
         // Server returned something that didn't decode — fall back.
         this.cleanupAudio()
+        this.loadingHandler?.(false)
         this.cancelFallback = playWithSpeechSynth(trimmed, lang, () => {
           this.endHandler?.()
         })
+      }
+      audio.onplaying = () => {
+        this.loadingHandler?.(false)
       }
       this.audio = audio
       await audio.play()
     } catch (err) {
       // Aborted (user tapped another step or closed) — stay silent.
-      if (err instanceof DOMException && err.name === 'AbortError') return
+      if (err instanceof DOMException && err.name === 'AbortError') {
+        this.loadingHandler?.(false)
+        return
+      }
       // Any other failure — fall back to browser speechSynthesis so the user
       // still gets audio even if the network or provider blips.
+      this.loadingHandler?.(false)
       this.cancelFallback = playWithSpeechSynth(trimmed, lang, () => {
         this.endHandler?.()
       })
@@ -103,6 +127,7 @@ export class TtsPlayer {
     if (speechSynthAvailable()) {
       try { window.speechSynthesis.cancel() } catch { /* noop */ }
     }
+    this.loadingHandler?.(false)
   }
 
   private cleanupAudio() {

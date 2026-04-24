@@ -4,13 +4,17 @@ import type { ReactNode, CSSProperties } from 'react'
 
 /**
  * Shared Badge component — single source of truth for color-coded labels.
- * Spec locked by Atlas 2026-04-24 (AtlasOps 7929 + 7932).
+ * v1 spec: Atlas 2026-04-24 (AtlasOps 7929 + 7932).
+ * v2 chemistry-family palette locked by Atlas 2026-04-24 (AtlasOps 8053)
+ * after Nova's industry deep-dive (AtlasOps 8049).
  *
  * Rules:
  *   - One meaning per tone. Same tone = same semantic meaning, everywhere.
  *   - Color is never the only signal — text must always carry meaning.
  *   - `gold` (operator) is reserved for the Operator tier. Do not reuse.
  *   - `locked` means unavailable/gated, not "bad".
+ *   - Chemistry-family tones stay visually distinct from safety tones so a
+ *     `protein` badge never reads as `danger` on a glance.
  *   - No ad-hoc tones. If a new semantic appears, add it here (after review).
  *
  * v1 tones:
@@ -19,9 +23,14 @@ import type { ReactNode, CSSProperties } from 'react'
  *   Status:  live / comingSoon / locked
  *   Utility: neutral / schema
  *
- * Deferred (not in v1):
- *   verified / provenance / experimental (trust)
- *   protein / tannin / oil / dye / rust / unknown (chemistry family)
+ * v2 tones (chemistry families — meaning carries across chemicals page +
+ * ResultCard stain badges, same family = same color everywhere):
+ *   protein (rose)      — PRENETT B tradition, safely distant from danger red
+ *   tannin  (blue)      — PRENETT A Blue, deeper than home blue
+ *   oil     (emerald)   — honors PRENETT C while protecting safe/live green
+ *   dye     (violet)    — distinct from spotter violet by weight
+ *   rust    (orange)    — clearly separated from caution amber
+ *   combination (slate) — neutral fallback with no emotional valence
  */
 
 export type BadgeTone =
@@ -36,6 +45,13 @@ export type BadgeTone =
   | 'locked'
   | 'neutral'
   | 'schema'
+  // v2 — chemistry families
+  | 'protein'
+  | 'tannin'
+  | 'oil'
+  | 'dye'
+  | 'rust'
+  | 'combination'
 
 export type BadgeSize = 'sm' | 'md' | 'lg'
 
@@ -71,6 +87,14 @@ const toneClasses: Record<BadgeTone, string> = {
   // Utility
   neutral:    'border-slate-400/20 bg-slate-500/5 text-slate-600 dark:text-slate-400',
   schema:     'border-slate-400/30 bg-slate-500/10 text-slate-600 dark:text-slate-400',
+
+  // Chemistry families (v2 — palette locked by Atlas 8053, Nova 8049):
+  protein:     'border-rose-600/30 bg-rose-600/10 text-rose-700 dark:text-rose-400',
+  tannin:      'border-blue-600/30 bg-blue-600/10 text-blue-700 dark:text-blue-400',
+  oil:         'border-emerald-600/30 bg-emerald-600/10 text-emerald-700 dark:text-emerald-400',
+  dye:         'border-violet-600/30 bg-violet-600/10 text-violet-700 dark:text-violet-400',
+  rust:        'border-orange-600/30 bg-orange-600/10 text-orange-700 dark:text-orange-400',
+  combination: 'border-slate-500/30 bg-slate-500/10 text-slate-700 dark:text-slate-300',
 }
 
 const sizeClasses: Record<BadgeSize, string> = {
