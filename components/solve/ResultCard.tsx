@@ -289,11 +289,21 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
             {card.title}
           </h2>
           <div className="flex items-center gap-1.5 flex-shrink-0 mt-0.5">
-            <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold
-              ${['verified','core'].includes(source) ? 'bg-green-500/15 text-green-600' : 'bg-purple-500/15 text-purple-500'}`}
-            >
-              {['verified','core'].includes(source) ? `✓ ${t('verified')}` : `🤖 ${t('ai')}`}
-            </span>
+            {/* Trust badge — Atlas 8053/8071 lock:
+                   card.verified === true        → green ✓ Verified
+                   source === 'ai'               → purple 🤖 AI
+                   curated-but-not-verified yet  → no badge (title carries weight)
+                Never let `source: "verified"` alone show the green badge —
+                that misrepresented 202 curated-but-unpolished cards today. */}
+            {card.verified === true ? (
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-green-500/15 text-green-600">
+                ✓ {t('verified')}
+              </span>
+            ) : source === 'ai' ? (
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-500">
+                🤖 {t('ai')}
+              </span>
+            ) : null}
             <SaveButton card={card} />
           </div>
         </div>
