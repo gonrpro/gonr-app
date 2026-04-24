@@ -835,14 +835,24 @@ function SolvePageInner() {
           transition: 'all 0.2s ease',
           opacity: loading ? 0.7 : 1,
         }}
-        className="flex flex-col items-center justify-center gap-0.5 px-4 py-3 active:scale-[0.98]"
+        className={`flex flex-col items-center justify-center gap-0.5 px-4 py-3 active:scale-[0.98] ${loading ? 'animate-pulse' : ''}`}
       >
-        <span style={{
-          color: hasSolveInput ? '#22c55e' : 'var(--text-secondary)',
-          fontSize: '17px',
-          fontWeight: 700,
-          transition: 'color 0.2s ease',
-        }}>
+        <span
+          className="flex items-center gap-2"
+          style={{
+            color: hasSolveInput ? '#22c55e' : 'var(--text-secondary)',
+            fontSize: '17px',
+            fontWeight: 700,
+            transition: 'color 0.2s ease',
+          }}
+        >
+          {loading && (
+            <span
+              className="inline-block w-2 h-2 rounded-full animate-pulse"
+              style={{ background: '#22c55e' }}
+              aria-hidden="true"
+            />
+          )}
           {loading ? (t('findingProtocol') || 'Analyzing…') : `${t('analyzeGarment')} →`}
         </span>
         {solveSubtext && !loading && hasSolveInput && (

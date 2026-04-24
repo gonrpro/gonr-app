@@ -10,6 +10,13 @@ interface SurfaceChipsProps {
   visible: boolean
 }
 
+// Shared with StainChips — kept local to avoid tiny cross-file imports for 4 lines.
+function chipHaptic() {
+  if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
+    try { navigator.vibrate(5) } catch { /* iframe sandbox etc. */ }
+  }
+}
+
 export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible }: SurfaceChipsProps) {
   const { t, lang } = useLanguage()
   const [showCottonMods, setShowCottonMods] = useState(false)
@@ -22,6 +29,7 @@ export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible
   ]
 
   function handleChipClick(surface: string) {
+    chipHaptic()
     if (surface === 'Cotton') {
       setShowCottonMods(!showCottonMods)
       onSurfaceSelect('cotton')
@@ -32,6 +40,7 @@ export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible
   }
 
   function handleCottonMod(id: string) {
+    chipHaptic()
     onSurfaceSelect(id)
   }
 
@@ -75,7 +84,7 @@ export default function SurfaceChips({ onSurfaceSelect, selectedSurface, visible
               <button
                 key={mod.id}
                 onClick={() => handleCottonMod(mod.id)}
-                className={`px-3 py-1.5 rounded-lg min-h-[44px] border text-sm font-medium transition-all ${
+                className={`px-3 py-1.5 rounded-lg min-h-[44px] border text-sm font-medium transition-all active:scale-[0.97] ${
                   isActive
                     ? 'bg-emerald-500 text-white border-emerald-500 shadow-[0_10px_24px_rgba(16,185,129,0.22)]'
                     : 'bg-white text-gray-600 border-gray-200 shadow-sm hover:border-emerald-300 hover:bg-emerald-50 dark:bg-[#0f172a] dark:text-gray-300 dark:border-white/10 dark:hover:bg-emerald-500/10 dark:hover:border-emerald-500/25'

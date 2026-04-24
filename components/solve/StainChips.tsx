@@ -9,11 +9,20 @@ interface StainChipsProps {
   selectedStain: string
 }
 
+// Tiny haptic confirmation for chip taps on mobile. 5ms is short enough to
+// read as a tap click, not a buzz. Fails silently on desktop/iOS Safari.
+function chipHaptic() {
+  if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
+    try { navigator.vibrate(5) } catch { /* iframe sandbox etc. */ }
+  }
+}
+
 export default function StainChips({ onStainSelect, selectedStain }: StainChipsProps) {
   const { t, lang } = useLanguage()
   const [expandedFamily, setExpandedFamily] = useState<string | null>(null)
 
   function handleFamilyClick(name: string) {
+    chipHaptic()
     const chip = STAIN_CHIPS.find((c) => c.name === name)
     if (chip && chip.subs.length === 0) {
       // No subs — toggle selection on the family name directly
@@ -33,6 +42,7 @@ export default function StainChips({ onStainSelect, selectedStain }: StainChipsP
   }
 
   function handleSubClick(sub: string) {
+    chipHaptic()
     onStainSelect(sub)
   }
 
@@ -76,7 +86,7 @@ export default function StainChips({ onStainSelect, selectedStain }: StainChipsP
               <button
                 key={sub}
                 onClick={() => handleSubClick(sub)}
-                className={`px-3 py-1.5 rounded-lg min-h-[44px] border text-sm font-medium transition-all ${
+                className={`px-3 py-1.5 rounded-lg min-h-[44px] border text-sm font-medium transition-all active:scale-[0.97] ${
                   isActive
                     ? 'bg-emerald-500 text-white border-emerald-500 shadow-[0_10px_24px_rgba(16,185,129,0.22)]'
                     : 'bg-white text-gray-600 border-gray-200 shadow-sm hover:border-emerald-300 hover:bg-emerald-50 dark:bg-[#0f172a] dark:text-gray-300 dark:border-white/10 dark:hover:bg-emerald-500/10 dark:hover:border-emerald-500/25'
