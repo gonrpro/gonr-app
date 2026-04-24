@@ -26,11 +26,18 @@ cd "$GIT_ROOT"
 
 # Read pre-push stdin: `<local ref> <local sha> <remote ref> <remote sha>` per ref.
 # If no stdin (called directly), scan the current HEAD commit as a smoke test.
-COMMITS=""
+CHANGED=""
 if [ -t 0 ]; then
-  # Direct invocation — scan HEAD only
-  COMMITS="HEAD"
+  # Direct invocation (smoke/debug) — scan what HEAD's commit itself changed.
+  # `git diff HEAD~1 HEAD` falls back to `git show HEAD` for root commits.
+  if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then
+    CHANGED=$(git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -E '\.(ts|tsx)$' | sort -u || true)
+  else
+    CHANGED=$(git show --name-only --pretty=format: HEAD 2>/dev/null | grep -E '\.(ts|tsx)$' | sort -u || true)
+  fi
 else
+  # Real pre-push invocation — stdin carries `<local ref> <local sha> <remote ref> <remote sha>` per ref.
+  COMMITS=""
   while IFS=' ' read -r local_ref local_sha remote_ref remote_sha; do
     if [ "$local_sha" = "0000000000000000000000000000000000000000" ]; then
       continue  # branch delete, nothing to check
@@ -47,14 +54,11 @@ else
       COMMITS="$COMMITS $remote_sha..$local_sha"
     fi
   done
+  if [ -z "$COMMITS" ]; then
+    exit 0
+  fi
+  CHANGED=$(git diff --name-only $COMMITS 2>/dev/null | grep -E '\.(ts|tsx)$' | sort -u || true)
 fi
-
-if [ -z "$COMMITS" ]; then
-  exit 0
-fi
-
-# Collect all .ts/.tsx files touched in the push payload
-CHANGED=$(git diff --name-only $COMMITS 2>/dev/null | grep -E '\.(ts|tsx)$' | sort -u || true)
 
 if [ -z "$CHANGED" ]; then
   exit 0
