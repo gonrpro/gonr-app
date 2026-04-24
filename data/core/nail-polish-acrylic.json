@@ -9,7 +9,7 @@
   "source": "lab-authored",
   "verified": false,
   "meta": {
-    "stainCanonical": "nail polish",
+    "stainCanonical": "nail-polish",
     "surfaceCanonical": "acrylic",
     "tier": "professional-only",
     "riskLevel": "high",
@@ -90,8 +90,25 @@
   "lastValidated": "2026-04-14",
   "aftercare": "If the polish is still wet, blot the excess gently from the outside of the stain inward. Do NOT rub, do NOT press the polish deeper into the fibers, and do NOT apply any liquid. Wet polish lifts off the surface much more of the color than dried polish. If the polish is already dry, skip to step 2 \u2014 nothing you can do at home will re-dissolve it safely on acrylic.",
   "homeSolutions": [
-    "Do not touch it. No water, no remover, no rubbing \u2014 any of these will make it worse.",
-    "Take it to a dry cleaner as soon as possible.",
-    "Tell them: nail polish on acrylic, nothing applied yet. They'll use a professional solvent that's safe for the fabric."
+    {
+      "step": 1,
+      "agent": "Acrylic + acetone = the fiber melts",
+      "instruction": "Acrylic (the synthetic knit fiber in sweaters, blankets, fleece) dissolves in acetone. This is not an exaggeration \u2014 acetone literally melts acrylic, leaving holes or a plastic smear where your sweater used to be. \"Non-acetone\" nail polish removers contain other ester solvents that can do similar damage. Rubbing alcohol is less dangerous but can still partially melt acrylic with extended contact. Your home job: don't apply any solvent, preserve the fiber, get it to a pro."
+    },
+    {
+      "step": 2,
+      "agent": "If wet, blot lightly \u2014 then stop",
+      "instruction": "If polish is still liquid, press a dry white cloth straight down on the pool, outside edges inward. Lift straight up. Two or three light dabs to lift surface liquid, then stop. Do NOT wipe, do NOT rub, do NOT press deeper. Acrylic fibers compress under pressure and polish smears into the yarn where later steps can't reach."
+    },
+    {
+      "step": 3,
+      "agent": "If dry, leave it alone",
+      "instruction": "A hardened polish deposit on acrylic sits on the surface \u2014 a pro can lift it with the right solvent. Do NOT scrape (tears synthetic fibers), do NOT pick, do NOT attempt to soften with heat (melts acrylic at lower temperatures than natural fibers)."
+    },
+    {
+      "step": 4,
+      "agent": "Go to a dry cleaner \u2014 confirm they treat acrylic with polymer-safe solvent",
+      "instruction": "Call ahead: \"Can you treat acrylic sweater/fabric with nail polish? You won't use acetone?\" If they say \"acetone is fine\" \u2014 find a different cleaner. Tell them: \"Nail polish on acrylic \u2014 [wet / dried]. NOTHING applied at home. No solvent, no water, no rubbing.\" Safe pros use a narrow-ester dry-side solvent (not acetone, not amyl acetate straight \u2014 usually a specialty blend) with fiber testing first."
+    }
   ]
 }
