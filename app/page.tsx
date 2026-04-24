@@ -199,27 +199,12 @@ function SolvePageInner() {
   const handleSolve = useCallback(async () => {
     if (!hasSolveInput) return
 
-    // Gate: require login before solving
-    const email = user?.email || localStorage.getItem('gonr_user_email')
-    if (!email) {
-      // TASK-065: persist solve intent so magic-link return auto-restores it.
-      // Keeps the first-solve UX smooth: query → email → click link → result,
-      // no re-typing on the other side.
-      try {
-        const pending = {
-          stain: selectedStain || stainInput.trim(),
-          surface: selectedSurface,
-          ts: Date.now(),
-        }
-        if (pending.stain || pending.surface) {
-          localStorage.setItem('gonr_pending_solve', JSON.stringify(pending))
-        }
-      } catch {
-        // storage unavailable — user re-types on return; acceptable fallback
-      }
-      setShowLoginGate(true)
-      return
-    }
+    // TASK-073: anon users get one free sample protocol before email gate.
+    // Server (/api/solve) enforces via IP-keyed ANON_SOLVE_LIMIT=1 and
+    // returns 402 `anon_limit` on attempt #2, which triggers PaywallModal
+    // below. No client-side short-circuit here — the server is the gate.
+    // TASK-065 pending-solve persistence moved into the 402 handler so
+    // it saves at the moment the user actually needs to come back.
 
     setLoading(true)
     setError('')
@@ -281,6 +266,22 @@ function SolvePageInner() {
       if (!res.ok) {
         const data = await res.json()
         if ((res.status === 402 || res.status === 403) && (data.error === 'trial_expired' || data.error === 'anon_limit')) {
+          // TASK-073: save the query the user just tried so that when they
+          // come back after email + magic-link, the solve auto-replays.
+          // (Moved from the old pre-solve email gate — now we save at the
+          // moment the paywall actually fires.)
+          try {
+            const pending = {
+              stain: selectedStain || stainInput.trim(),
+              surface: selectedSurface,
+              ts: Date.now(),
+            }
+            if (pending.stain || pending.surface) {
+              localStorage.setItem('gonr_pending_solve', JSON.stringify(pending))
+            }
+          } catch {
+            // storage unavailable — user re-types on return; acceptable fallback
+          }
           setShowPaywallReason(data.error === 'anon_limit' ? 'anon_limit' : 'trial_expired')
           setShowPaywall(true)
           return
@@ -333,7 +334,7 @@ function SolvePageInner() {
     } finally {
       setLoading(false)
     }
-  }, [hasSolveInput, capturedPhoto, careLabelFile, fabricDescription, garmentLocation, selectedStain, selectedSurface, stainInput, lang, t, incrementSolveCount, scrollToResult, userTier, solvesRemaining, user, translateProtocolCard])
+  }, [hasSolveInput, capturedPhoto, careLabelFile, fabricDescription, garmentLocation, selectedStain, selectedSurface, stainInput, lang, t, incrementSolveCount, scrollToResult, userTier, translateProtocolCard])
 
   // TASK-065: after magic-link return lands the user authenticated, restore
   // the stain/surface they were trying to solve and auto-run the solve once

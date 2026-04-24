@@ -530,6 +530,23 @@ export const strings: Record<string, Record<string, string>> = {
     es: "¿Interesado en asociarse? Escriba a tyler@gonr.pro con el nombre de su empresa y su propuesta de asociación."
   },
 
+  // ── TASK-073: Contact page ────────────────────────────────────
+  contactTitle: { en: "Contact GONR", es: "Contacta con GONR" },
+  contactSubtitle: {
+    en: "Questions, feedback, or need help with a protocol? We read every message.",
+    es: "¿Preguntas, comentarios o necesita ayuda con un protocolo? Leemos cada mensaje."
+  },
+  contactReachUs: { en: "Reach us directly", es: "Escríbenos directamente" },
+  contactReachUsContent: {
+    en: "Email hello@gonr.pro and we'll get back to you. For urgent stain issues, run a solve first — our protocol will likely answer faster than we can.",
+    es: "Escribe a hello@gonr.pro y te responderemos. Para manchas urgentes, usa el Solve primero — nuestro protocolo probablemente responderá más rápido."
+  },
+  contactPartnershipsTitle: { en: "Partnerships & press", es: "Asociaciones y prensa" },
+  contactPartnershipsContent: {
+    en: "Commercial partnerships, licensing, and press inquiries: tyler@gonr.pro. See our Brand Partners page for active collaborations.",
+    es: "Asociaciones comerciales, licencias y prensa: tyler@gonr.pro. Consulta nuestra página de Socios para ver colaboraciones activas."
+  },
+
   // ── Misc additions ────────────────────────────────────────────
   surfaceLabel: { en: "Surface", es: "Superficie" },
 

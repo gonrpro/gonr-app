@@ -183,10 +183,16 @@ async function consumeSolveAtomic(
 // preserves exact pre-P2-b behavior for free-tier 3-lifetime-solves.
 const FREE_SOLVE_LIMIT = 3
 
+// TASK-073: anon (no email) gets exactly one free sample protocol per IP
+// before the paywall fires. Separate from FREE_SOLVE_LIMIT so tightening
+// the trust gate doesn't change post-signup trial economics.
+const ANON_SOLVE_LIMIT = 1
+
 async function consumeSolveFromUsage(
   supabase: ReturnType<typeof getSupabaseAdmin>,
   key: string,
   reasonWhenBlocked: string,
+  limit: number = FREE_SOLVE_LIMIT,
 ): Promise<{ allowed: boolean; reason?: string }> {
   const { data: usage } = await supabase
     .from('solve_usage')
@@ -206,7 +212,7 @@ async function consumeSolveFromUsage(
     return { allowed: true }
   }
 
-  if (usage.solve_count >= FREE_SOLVE_LIMIT) {
+  if (usage.solve_count >= limit) {
     return { allowed: false, reason: reasonWhenBlocked }
   }
 
@@ -274,8 +280,11 @@ async function checkAndIncrementSolve(
       return { ...r, viewerTier: 'free' }
     }
 
-    // ── Unauthenticated path — anon, IP-keyed ────────────────────────────
-    const r = await consumeSolveFromUsage(supabase, `anon:${clientIp}`, 'anon_limit')
+    // ── Unauthenticated path — anon, IP-keyed (TASK-073) ────────────────
+    // One free sample protocol per IP before the paywall fires. Gives
+    // anon visitors a real protocol experience without handing over email
+    // first, while keeping post-signup trial economics (3 free) intact.
+    const r = await consumeSolveFromUsage(supabase, `anon:${clientIp}`, 'anon_limit', ANON_SOLVE_LIMIT)
     return { ...r, viewerTier: 'anon' }
   } catch (err) {
     console.warn('[SolveGate] Error — failing closed:', err)
