@@ -1,178 +1,199 @@
 {
   "id": "coffee-cream-cotton",
-  "version": "5.0",
-  "authored": "2026-03-22",
   "title": "Coffee with Cream on Cotton",
+  "stainType": "combination",
   "stainFamily": "combination",
-  "stainType": "combo-protein-tannin",
-  "surface": "cotton-white",
+  "surface": "cotton",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "10–30 minutes",
+  "lastValidated": "2026-04-24",
   "meta": {
     "stainCanonical": "coffee-cream",
     "surfaceCanonical": "cotton",
     "tier": "universal",
     "riskLevel": "low",
     "tags": [
-      "combo",
-      "two-stage",
-      "enzyme-safe",
-      "fast-removal"
+      "combination",
+      "protein",
+      "tannin",
+      "cotton",
+      "two-stage"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Coffee with cream combines protein (casein from milk) and combination tannin (from coffee) and oil (from cream)s (from coffee). White cotton's chemical robustness allows fast, aggressive treatment. Unlike delicate fibers, cotton tolerates enzymes (which digest proteins), heat, acid, and bleach. The two-component nature means sequential treatment still works best—enzymes for protein, oxidizers for combination tannin (from coffee) and oil (from cream)—but can be more aggressive than on natural fibers.",
-  "whyThisWorks": "Warm water and enzyme rapidly digest casein/whey proteins. H₂O₂ oxidizes tannin pigment. White cotton's tolerance for heat and oxidizers means this combination removes combo stains faster than any other surface. Multi-stage treatment still applies but with less risk of error.",
+  "stainChemistry": "Coffee with cream is a combination stain — protein (casein from the milk or cream) layered over tannin (polyphenols from the coffee) with a small oil fraction (milk fat). Each component needs a different chemistry: protein responds to enzymes, tannin to oxidation, oil to emulsification. Cotton is chemically durable — pure cellulose tolerates enzymes, acids, oxygen-side oxidizers (3% H₂O₂ or 6% on whites), and hot water. Because cotton is forgiving, the only sequencing constraint is biological: the enzyme step must run BEFORE any heat, or the residual protein cooks into the fiber.",
+  "whyThisWorks": "Protein first, tannin second, rinse third. Warm water (not hot) activates the enzymes that digest casein — casein is what holds the rest of the stain in the fiber. Once the protein is broken, the coffee's tannin pigment sits free on cellulose and lifts under 3% hydrogen peroxide (stronger on whites). An NSD flush removes all chemistry before the hot laundry cycle that finishes the job. Reversing the order — hot water or bleach before the enzyme — cooks the casein into the fiber and locks the stain in for good.",
+  "defaultAssumption": "Assume fresh, on white or light cotton. Fresh coffee-cream on white cotton is a high-confidence DIY win. Older stains (24h+) or dark cotton are still solvable but the oxidizer lane narrows.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "wet",
-      "agent": "Warm water (40-45°C), optional salt",
-      "technique": "Blot and flush from back",
-      "equipment": "White cloth, spray bottle",
-      "dwellTime": "1-2 minutes",
-      "instruction": "Spray warm water from back, blot hard. Salt helps osmotic transfer. Most fresh coffee-cream will flush out in the first 1-2 minutes. White cotton tolerates warmth—this accelerates protein release. Continue until blotting produces pale or clear water."
+      "agent": "Warm Water Flush",
+      "technique": "Flush from the back, blot hard",
+      "equipment": "Warm water (40–45°C / 100–115°F), white cotton terry towel",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Flush warm water (not hot — hot sets the casein) through the BACK of the stain. Blot hard from underneath. On fresh spills, this alone pulls out most of the cream-coffee mix before any chemistry touches the fiber. Continue until the blotting towel comes up pale or clear."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Enzyme spotter (e.g. Biz, Zout, or enzyme pre-soak)",
-      "technique": "Soak and brush work",
-      "equipment": "Basin, soft brush, white cloth",
-      "dwellTime": "20-30 minutes soak, then work",
-      "instruction": "Mix the enzyme spotter (Biz, Zout, or a biological laundry detergent) in warm water (40-45°C, enzyme-activation range). Submerge stained area. Enzymes break peptide bonds in casein/whey proteins—much faster than detergent alone. After 20 minutes, gently brush the spot with soft brush. Cotton is strong—you can apply more pressure than with delicate fibers. Blot repeatedly as protein fragments lift."
+      "agent": "Enzyme Digestant",
+      "technique": "Soak, brush, blot",
+      "equipment": "Liquid Protein Spotter (PRENETT B / protease-based digestant) OR enzyme pre-soak in warm water",
+      "dwellTime": "20–30 minutes soak, light brush work",
+      "instruction": "Apply liquid Protein Spotter directly, OR dissolve enzyme pre-soak powder in warm water (40–45°C — the enzyme activation window; under 30°C the reaction stalls, over 50°C the enzymes denature). Submerge the stained area. After 20 minutes, brush gently with a soft bristle brush. Cotton handles pressure — more than silk or wool — but brush the stain, not the weave. The protease hydrolyzes casein peptide bonds; you'll see the stain lift incrementally as the protein dissolves."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "H₂O₂ (3-6%, full strength)",
-      "technique": "Direct application or soak",
-      "equipment": "Spray bottle or basin, white cloth",
-      "dwellTime": "Brief — apply, check, blot",
-      "instruction": "If coffee color remains, apply H₂O₂. This oxidizes tannin pigment to colorless compounds. White cotton tolerates full-strength peroxide. For stubborn brown color, 6% peroxide works faster than 3%. After 3-5 minutes, blot thoroughly."
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop, dwell, blot",
+      "equipment": "3% H₂O₂ (or 6% on whites for stubborn tannin)",
+      "dwellTime": "3–5 minutes",
+      "instruction": "After the enzyme has cleared the protein layer, apply 3% hydrogen peroxide directly to the residual coffee color. Peroxide oxidizes the conjugated tannin pigment to colorless products. On white cotton you can jump to 6% for stubborn brown shadows. Watch the stain, not the clock — lift the peroxide the moment the color breaks. One pass per treatment; never layer with other oxidizers."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "NSD flush",
+      "agent": "NSD Flush",
       "technique": "Flush and blot",
-      "equipment": "Basin",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD to remove all H₂O₂, Protein, and Tannin residue. Work from back of fabric. Blot — do not rub. Residual oxidizer left in the fiber can continue H₂O₂ for white/light fabrics only."
+      "equipment": "NSD (Neutral Synthetic Detergent) in warm water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Flush thoroughly with NSD to clear all enzyme and peroxide residue. Work from the back of the fabric. Blot — do not rub. Any residual oxidizer left in the fiber will discolor under dryer heat and may yellow cotton over time."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Rinse water",
-      "technique": "Flush and wash",
-      "equipment": "Running water or machine",
-      "dwellTime": "Until rinse water runs clear",
-      "instruction": "Rinse thoroughly with clean water to remove all detergent and chemistry residue. Wash in warm water with regular detergent."
+      "agent": "Final Rinse + Wash",
+      "technique": "Clean rinse, hot wash per care label",
+      "equipment": "Running cool water, standard laundry",
+      "dwellTime": "Until rinse runs clear",
+      "instruction": "Rinse under running water until the water runs clear. Launder on the hottest setting the care label permits — cotton is heat-durable and hot wash drives out any final trace of chemistry or residual pigment. Inspect in daylight BEFORE running the dryer."
     }
   ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Warm water flush from the back — not hot, or casein sets.",
+      "2. Liquid Protein Spotter (PRENETT B) OR enzyme pre-soak in warm water (40–45°C). Dwell 20–30 min, light brush.",
+      "3. 3% H₂O₂ on the residual coffee color. 6% on whites if needed. One oxidizer at a time.",
+      "4. NSD flush — remove all enzyme + peroxide residue.",
+      "5. Hot wash per care label. Inspect in daylight before the dryer."
+    ],
+    "products": [
+      "Liquid Protein Spotter (PRENETT B or protease-based digestant)",
+      "Hydrogen Peroxide 3% or 6% (whites only)",
+      "NSD (Neutral Synthetic Detergent)"
+    ],
+    "temperature": "warm (40–45°C) through enzyme stage; hot wash on cotton post-chemistry",
+    "warnings": [
+      "Never use hot water on fresh coffee-cream — cooks the casein into the fiber",
+      "Enzymes denature above 50°C — warm means warm, not hot",
+      "Flush all chemistry before heat — residual oxidizer yellows cotton",
+      "Never layer oxidizers — peroxide then NSD flush, then NaOCl only if whites + still needed"
+    ]
+  },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Test in a hidden spot",
-      "instruction": "Dab a drop of cold water on an inside seam. If any color transfers to the cloth, stop immediately and take the garment to a dry cleaner."
+      "agent": "Cold Blot, From the Back",
+      "instruction": "Grab a clean white towel and blot the spill from the BACK of the fabric with cold water — not hot. Hot water cooks the cream's protein into the cotton and locks the stain in. Work edge-to-center. Never rub — rubbing grinds the coffee pigment deeper."
     },
     {
       "step": 2,
-      "agent": "Blot the fresh spill from the back",
-      "instruction": "Within the first few minutes, blot firmly from the reverse side using a clean white cloth and cold water only. Work edge-to-center. Never rub — rubbing drives the coffee tannins and cream proteins deeper."
+      "agent": "Dawn + Warm (Not Hot) Water",
+      "instruction": "Mix 1 teaspoon Dawn dish soap with 1 cup WARM water (about the temperature of a hot shower — around 100°F). Dab onto the stain and let it sit 5–10 minutes. The warmth activates the mild enzymes in most dish soaps; the soap itself lifts the cream's fat content. Blot with a clean white towel. Repeat once if color remains."
     },
     {
       "step": 3,
-      "agent": "Apply Dawn dish-soap solution",
-      "instruction": "Mix 1 tsp Dawn dish soap with 1 cup cold water. Sponge onto the stain and let it sit 5–10 minutes. Blot with a clean white cloth. If color remains, repeat this step once."
+      "agent": "Fresh vs Set — Decision Point",
+      "instruction": "Look at the stain after the soap pass. If it's gone or nearly gone, skip to rinse. If there's still a brown shadow: fresh stain (under an hour old) → proceed to peroxide. Older stain (overnight or longer) → soak the area in an enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout) dissolved in warm water for 20 minutes first, THEN peroxide. Enzymes break the protein layer that the peroxide can't touch on its own."
     },
     {
       "step": 4,
-      "agent": "Apply hydrogen peroxide for leftover color",
-      "instruction": "If any brown or yellow tint is still visible after the soap step, pour 3% hydrogen peroxide (the brown bottle from the pharmacy) directly on the stain. Let it bubble for 5 minutes, then blot. Skip this step on dark or colored fabrics and move straight to rinsing."
+      "agent": "Hydrogen Peroxide 3% for Brown Shadows",
+      "instruction": "If a brown or yellow tint is still visible: pour drugstore 3% hydrogen peroxide (the brown bottle) directly on the stain. Let it bubble for 3–5 minutes. Watch it — not the clock. Blot the moment the color breaks. Skip this step on dark or dyed cotton; go straight to rinsing."
     },
     {
       "step": 5,
-      "agent": "Rinse thoroughly from the back",
-      "instruction": "Flush with cold water from the reverse side until your blotting cloth runs completely clean. Cold water is non-negotiable — heat will permanently set the cream proteins."
+      "agent": "Cool Rinse From the Back",
+      "instruction": "Flush cool water through the BACK of the fabric until your blotting towel comes out clean. No soap, no peroxide residue. Residue under dryer heat is how cotton gets faintly yellow later."
     },
     {
       "step": 6,
-      "agent": "Inspect under bright light",
-      "instruction": "Check the fabric from both sides. If you still see any trace of the stain, repeat steps 3–5 one more time. Do not exceed three total rounds."
+      "agent": "Inspect in Daylight Before the Dryer",
+      "instruction": "Check the fabric in bright daylight — the laundry-room bulb isn't honest enough. If you still see any trace, repeat steps 2–5 once more. Do not exceed three total rounds; at that point home treatment has plateaued and a pro will do better."
     },
     {
       "step": 7,
-      "agent": "Launder on the care label cycle",
-      "instruction": "Wash in the coldest water the label allows. Before drying, inspect the stain again under good light. Never put it in the dryer if any color remains — heat sets the stain permanently."
+      "agent": "Wash Hot, Inspect Before the Dryer",
+      "instruction": "Launder on the hottest setting the care label allows — cotton handles it and hot water clears any remaining residue. Pull the garment OUT before the dryer step and inspect one more time. If you still see the stain, repeat the soap/peroxide round; never run it through a hot dryer with the stain still visible. Dryer heat sets any surviving pigment permanently."
     },
     {
       "step": 8,
-      "agent": "Escalate to a professional",
-      "instruction": "If any trace survives three full rounds, stop. Take it to a dry cleaner and tell them: \"Coffee with cream on cotton, treated at home with Dawn dish soap and hydrogen peroxide.\""
+      "agent": "Escalate to a Dry Cleaner",
+      "instruction": "If the stain survives three full rounds or has already been through a hot dryer, stop. Take it to a dry cleaner and tell them: \"Coffee with cream on cotton, age [fresh / overnight / older], treated at home with Dawn, enzyme pretreat, and 3% hydrogen peroxide.\""
     }
   ],
-  "materialWarnings": [
-    "DO NOT use bleach on colored cotton—fades dye",
-    "AVOID bleach on colored thread"
-  ],
-  "escalation": "Coffee-cream on white cotton rarely needs professional help. Home enzyme + peroxide treatment is very effective.",
-  "products": {
-    "household": [
-      {
-        "name": "Protein Detergent",
-        "brand": "Any laundry brand",
-        "icon": "🧬",
-        "amazonSearchQuery": "Protein laundry",
-        "affiliateTag": "gonr08-20",
-        "note": "Digests casein/whey proteins. 20-30 minute soak, then brush work."
-      },
-      {
-        "name": "3-6% H₂O₂",
-        "brand": "Drugstore",
-        "icon": "🧴",
-        "amazonSearchQuery": "H₂O₂ 3% or 6%",
-        "affiliateTag": "gonr08-20",
-        "note": "Oxidizes tannin color. Full strength safe on white cotton."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. Cold blot from the BACK of the fabric — never hot while the stain is visible.",
+      "2. Dawn + warm (not hot) water, dwell 5–10 min, blot.",
+      "3. Fresh → go to peroxide. Older (overnight+) → enzyme pretreat soak 20 min first, THEN peroxide.",
+      "4. 3% hydrogen peroxide on residual brown shadow. Watch, blot the moment color breaks. Skip on dark cotton.",
+      "5. Cool rinse from the back until towel runs clean.",
+      "6. Inspect in DAYLIGHT before any heat. Repeat once if needed. Stop at three rounds.",
+      "7. Hot wash per care label. Inspect BEFORE the dryer — heat sets residual pigment permanently."
     ],
-    "professional": [
-      {
-        "name": "Professional Protein concentrate",
-        "brand": "Huntsman or Chemspec",
-        "icon": "🧪",
-        "amazonSearchQuery": "Protein concentrate",
-        "affiliateTag": "gonr08-20",
-        "note": "Higher concentration than household. Faster protein digestion."
-      }
+    "products": [
+      "Dawn dish soap",
+      "Enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout)",
+      "3% hydrogen peroxide (drugstore brown bottle)",
+      "Clean white cotton towel"
+    ],
+    "whenToStop": "Stop if the stain has been through a hot wash + dryer cycle already, if it survives three full home rounds, or if the cotton is dark/dyed and the peroxide step isn't safe. Take it to a dry cleaner with the treatment history.",
+    "warnings": [
+      "Cold or warm water only while the stain is visible — hot water sets casein",
+      "Enzyme pretreat works in warm water, not hot — above 50°C the enzymes die",
+      "Never mix peroxide with chlorine bleach or ammonia — toxic fume risk",
+      "Skip peroxide on dark/dyed cotton — test an inside seam first if unsure"
     ]
   },
-  "customerExplanation": "Coffee with cream combines protein (from milk) and tannins (from coffee). Enzymes break down protein. H₂O₂ oxidizes tannin color. White cotton's chemical robustness means we can use all these tools aggressively and fast.",
-  "commonMistakes": [
-    "Using cold water—warmth helps enzyme and protein release on cotton",
-    "Not using enzyme—detergent alone doesn't remove proteins as well",
-    "Stopping after enzyme—peroxide step removes the brown tannin color"
+  "safetyMatrix": {
+    "neverDo": [
+      "Never use hot water on fresh coffee-cream — cooks casein into the fiber",
+      "Never run enzymes above 50°C — they denature and stop working",
+      "Never layer oxidizers — one at a time with a clean flush between",
+      "Never dry with residual peroxide or enzyme in the fiber — yellows cotton over time"
+    ],
+    "fiberSensitivities": [
+      "Cotton tolerates enzymes, 3–6% H₂O₂, and hot wash post-chemistry",
+      "Dyed cotton: skip peroxide or test on inside seam first",
+      "Cotton is heat-durable — hot laundry is fine ONLY after chemistry is fully flushed"
+    ]
+  },
+  "materialWarnings": [
+    "Warm water for enzymes, not hot — above 50°C the enzymes die",
+    "Flush all chemistry before heat — residual oxidizer yellows cotton",
+    "Peroxide on whites and lights; test inside seam on colored cotton first"
   ],
-  "scienceNote": "Casein (milk protein) is sensitive to both temperature and pH. Warmth and alkaline conditions denature it faster. Enzymes (proteases) cut peptide bonds between amino acids—much more efficient than detergent alone. Tannins oxidize over time in coffee-cream stains—the longer the stain sits, the browner it becomes. This is why enzyme + peroxide works so well: enzymes remove protein completely, and peroxide handles whatever tannin pigment remains.",
-  "callPro": "Very rarely needed for white cotton coffee-cream stains. Home treatment is usually sufficient.",
-  "components": [
-    "enzyme",
-    "oxidizer",
-    "finisher"
-  ],
-  "component_order": [
-    "enzyme",
-    "oxidizer",
-    "finisher"
-  ],
-  "difficulty": 3,
-  "difficulty_factors": [
-    "combo-manageable",
-    "enzyme-safe",
-    "fast-oxidation"
-  ],
-  "solventNote": "Professional: Warm enzyme soak (40-45°C, 20-30 min), follow with H₂O₂ (3-6%) or sodium percarbonate. For brown stains, reducing bleach (sodium hydrosulfite 0.5-1%) for 10-15 minutes reverses oxidation, then oxidize again to colorless. Cotton tolerates aggressive treatment.",
-  "aftercare": "White cotton tolerates heat. Machine dryer or line dry—both fine. Heat doesn't re-set combo stains on cotton.",
+  "escalation": {
+    "when": "Heat-set by hot wash or dryer, survived three home rounds, or dark/dyed cotton where the peroxide lane isn't safe.",
+    "whatToTell": "\"Coffee with cream on cotton, age [fresh / overnight / older], home-treated with Dawn + enzyme pretreat + 3% hydrogen peroxide. No heat applied.\"",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain — fresh, overnight, older?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Has it been through a hot wash or dryer since?",
+      "Any enzyme pretreat or peroxide tried already?"
+    ],
+    "modifierNotes": "The protein-then-tannin ordering is non-negotiable. Hot water, or any oxidizer before the enzyme, locks the casein in permanently. Fresh on white = high-confidence DIY. Older + dark = peroxide narrows; escalate earlier."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

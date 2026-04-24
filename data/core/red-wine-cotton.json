@@ -2,8 +2,14 @@
   "id": "red-wine-cotton",
   "title": "Red Wine on Cotton",
   "stainType": "tannin",
-  "surface": "cotton-white",
+  "stainFamily": "tannin",
+  "surface": "cotton",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "5–30 minutes (fresh) or up to 60 minutes (aged)",
+  "lastValidated": "2026-04-24",
   "meta": {
     "stainCanonical": "red-wine",
     "surfaceCanonical": "cotton",
@@ -11,186 +17,195 @@
     "riskLevel": "low",
     "tags": [
       "tannin",
+      "cotton",
       "cellulose",
-      "strong-fiber",
       "bleach-safe",
-      "hot-water-safe"
+      "time-sensitive"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Red wine contains anthocyanin polyphenols (tannins)—the pigments responsible for wine color. White cotton is pure cellulose, extremely tolerant of aggressive chemistry: enzymes, bleach, heat, strong alkali. Anthocyanins bond to cellulose through hydrogen bonding and van der Waals forces. The tannin color is resistant to water alone but vulnerable to oxidation and alkalinity. Fresh red wine can be removed with boiling water pour-through; older stains require oxidizer or bleach.",
-  "whyThisWorks": "Cold NSD (NSD) removes surface tannin while suspending pigment. Tannin spotter (acetic acid or specialized tannin remover) breaks hydrogen bonds in anthocyanin structure. H₂O₂ oxidizes remaining color into colorless compounds. White cotton's tolerance for heat and bleach makes red wine one of the easiest stains to eliminate completely.",
+  "stainChemistry": "Red wine is a tannin stain — anthocyanin polyphenols give it the color, and those anthocyanins bond to cellulose through hydrogen bonding and van der Waals forces. Cotton is pure cellulose: chemically durable, tolerates enzymes, acidic tannin spotters, oxygen-side oxidizers (3% H₂O₂), and chlorine bleach on whites. The anthocyanin bond is resistant to water alone but vulnerable to oxidation and to acid-side disruption. Fresh stains move under hot water; aged stains need oxidation or the acid-side tannin lane.",
+  "whyThisWorks": "Fresh wine: a cold flush carries soluble pigment out before it can set. The canonical pro sequence is NSD to emulsify → acid-side tannin spotter to break hydrogen bonds → H₂O₂ to oxidize the residual chromophore → NSD flush to remove all chemistry before heat. White cotton's indifference to heat and oxidizers lets the whole sequence run aggressively. Aged stains skip the hot-water pour-through because heat sets older tannin; they go straight to the acid-side + oxidizer loop.",
+  "defaultAssumption": "Assume fresh unless the user says otherwise — fresh wine on cotton is one of the easiest tannin wins. Aged (overnight+) jumps a tier in difficulty but stays in home/pro scope; only heat-set wine (already washed hot or ironed) trends toward escalation.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "wet",
-      "agent": "Cold water, blot immediately",
-      "technique": "Blot from back",
-      "equipment": "White cloth, spray bottle",
-      "dwellTime": "1 minute",
-      "instruction": "Immediately blot with cold water from the back. Press hard to absorb wine. Most fresh wine transfers to cloth in first 60 seconds. Flip cloth frequently and continue blotting. Cold water prevents tannin setting."
+      "agent": "Cold Flush",
+      "technique": "Flush from the back",
+      "equipment": "Cold running water, white cotton terry towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Flush cold water through the BACK of the fabric. Blot hard from underneath. Cotton absorbs fast, so hydraulic pressure pushes soluble pigment out the way it came in. Cold only — hot water on aged wine sets the tannin. On fresh wine (<30 minutes), 70–80% of the stain lifts here."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "NSD solution",
-      "technique": "Sponge work",
-      "equipment": "Sponge, white cloth",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Mix cold water with 1 teaspoon NSD . Sponge onto stain. NSD suspends anthocyanin pigment without setting it. Work gently with sponge. After 2-3 minutes, blot with white cloth. Stain should lighten noticeably."
+      "agent": "NSD",
+      "technique": "Sponge, dwell, blot",
+      "equipment": "NSD (Neutral Synthetic Detergent) in cold water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Apply NSD diluted in cold water to the stain. Sponge gently — NSD suspends remaining anthocyanin pigment so the next steps can act on what's bound, not what's loose. Blot with a clean white cotton towel. You should see noticeable lightening before moving on."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Hot water pour-through (fresh stains only)",
-      "technique": "Pour-through from back",
-      "equipment": "Kettle of boiling water, towel underneath",
-      "dwellTime": "1-2 pours",
-      "instruction": "For very fresh stains (within 30 minutes), hot water pour-through can be remarkably effective. Stretch fabric over a bowl or sink with towel underneath. Pour hot (not boiling) water through from the back. Heat helps break anthocyanin bonds on fresh stains. Do NOT use this for aged stains — heat can set older tannin permanently.",
-      "temperature": "Hot (not boiling) — fresh stains only"
+      "agent": "Hot-Water Pour-Through (Fresh Only)",
+      "technique": "Pour from the back",
+      "equipment": "Kettle of hot (not boiling) water, catch basin or towel underneath",
+      "dwellTime": "1–2 pours",
+      "instruction": "Only for stains under 30 minutes old. Stretch the fabric taut over a bowl, pour hot — not boiling — water through from the back. Heat breaks hydrogen bonds on fresh tannin. Skip entirely on aged stains: heat sets older tannin permanently. This step is a fresh-wine express lane; aged wine goes straight to step 4."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Tannin spotter + cold water",
-      "technique": "Dropper application",
-      "equipment": "Dropper, white cloth",
-      "dwellTime": "2-3 minutes",
-      "instruction": "If wine color remains (orange-brown), apply diluted 28% Acetic Acid (diluted) (1 part vinegar to 1 part cold water). Acetic acid further disrupts hydrogen bonds in anthocyanin. Apply with dropper. After 2-3 minutes, blot. Continue blotting until no more color transfers."
+      "agent": "Tannin Spotter",
+      "technique": "Drop, dwell, blot",
+      "equipment": "Pro tannin spotter (Chemspec Tannin Spotter, PRENETT-A, or dilute acetic acid 5% aqueous)",
+      "dwellTime": "2–5 minutes",
+      "instruction": "If any orange-brown shadow remains, apply a tannin-side acid spotter by dropper. Acid-side chemistry disrupts the anthocyanin-cellulose hydrogen bond. Dwell 2–5 minutes, blot with a clean cotton towel. Flip the towel frequently. Repeat once if the shadow persists."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "NSD flush",
-      "technique": "Flush and blot",
-      "equipment": "OxiClean powder, white cloth",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot — do not rub. All oxidizer and enzyme residue must be fully removed before drying."
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Drop-by-drop oxidation",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "3–5 minutes",
+      "instruction": "For residual chromophore after the acid spotter pass, apply 3% hydrogen peroxide drop-by-drop. Peroxide oxidizes the conjugated anthocyanin system to colorless products. On whites, a stronger 6% solution or a dilute sodium hypochlorite pass (0.5%, 1–2 minutes maximum) can be used instead. Never layer oxidizers — one at a time, flushed between."
     },
     {
       "step": 6,
       "side": "wet",
-      "agent": "Hot water wash with detergent",
-      "technique": "Machine wash or hand wash",
-      "equipment": "Hot water (60°C+), laundry detergent",
-      "dwellTime": "Normal wash cycle",
-      "instruction": "After spotting, wash in hot water with regular laundry detergent. Hot water removes residual tannin and any treatment chemicals. White cotton can tolerate boiling (95°C). Once washed and dried, any remaining faint color often fades with sunlight exposure."
+      "agent": "NSD Flush",
+      "technique": "Remove all chemistry",
+      "equipment": "NSD, clean running water",
+      "dwellTime": "Until rinse runs clear",
+      "instruction": "Flush thoroughly with NSD from the back. Residual oxidizer or acid-side spotter in the fiber will discolor under dryer heat. Rinse until the water runs clear. Launder hot per the care label — cotton is heat-durable and hot wash clears any final trace."
     }
   ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Cold flush from the back — fresh wine often clears 70%+ right here.",
+      "2. NSD in cold water. Sponge, dwell 2–3 min, blot.",
+      "3. FRESH ONLY (<30 min): hot pour-through from the back. Skip on aged stains.",
+      "4. Tannin spotter (Chemspec, PRENETT-A, or 5% acetic acid aqueous) — dropper, dwell 2–5 min, blot.",
+      "5. 3% H₂O₂ drop-by-drop on residual chromophore. On whites, 6% or dilute NaOCl 0.5% (1–2 min max) if needed.",
+      "6. NSD flush until clean. Hot wash per care label. Never layer oxidizers."
+    ],
+    "products": [
+      "NSD (Neutral Synthetic Detergent)",
+      "Pro tannin spotter (Chemspec Tannin Spotter / PRENETT-A)",
+      "Hydrogen Peroxide 3% or 6%",
+      "Sodium hypochlorite 0.5% aqueous (whites only)"
+    ],
+    "temperature": "cold throughout spotting; hot wash (60°C+) on whites after chemistry is fully flushed",
+    "warnings": [
+      "Never use hot water on aged wine — sets tannin permanently",
+      "Never layer oxidizers — one at a time, NSD-flushed between",
+      "NaOCl on whites only; never on dyed or printed cotton",
+      "Flush all chemistry before heat — residual oxidizer yellows under dryer"
+    ]
+  },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Patch test",
-      "instruction": "Test any solution on an inside seam first. If color transfers to the cloth, stop and take the garment to a dry cleaner immediately."
+      "agent": "Move Fast, Cold Water Only",
+      "instruction": "The clock matters — fresh red wine on cotton is one of the easiest stains to fully erase; aged wine gets harder every hour. Cold water only while the stain is still visible. Hot water on aged wine permanently sets the tannin into the cotton fiber."
     },
     {
       "step": 2,
-      "agent": "Blot from the reverse side",
-      "instruction": "If the spill is fresh, blot firmly from the back with a clean white cloth and cold water. Work edge-to-center. Never rub. Most fresh red wine lifts in the first 60 seconds."
+      "agent": "Blot from the Back of the Fabric",
+      "instruction": "Hold the BACK of the stained area under cold running water for 30–60 seconds. The wine pushes out the way it came in. Then press a clean white towel onto the stain from underneath — don't rub. Most fresh wine lifts in this step alone."
     },
     {
       "step": 3,
-      "agent": "Hot-water pour-through (fresh stains only)",
-      "instruction": "If the stain is under 30 minutes old, stretch the fabric over a bowl, place a towel underneath, and pour hot (not boiling) water through from the back. Skip this step if older — heat will set the tannin permanently."
+      "agent": "Hot-Water Pour-Through (Fresh Stains Only)",
+      "instruction": "If the spill is under 30 minutes old AND the care label doesn't forbid hot water: stretch the fabric taut over a bowl, place a clean towel underneath, and pour hot (not boiling) water through from the back. You'll see the stain lighten dramatically. Skip this step if the wine's been sitting longer than 30 minutes — heat sets older stains."
     },
     {
       "step": 4,
-      "agent": "Dish-soap and vinegar solution",
-      "instruction": "Mix 1 tsp Dawn dish soap, 2 tbsp white vinegar, and 1 cup cold water. Sponge onto the stain, let sit 3 minutes, then blot center outward. If color remains, repeat once."
+      "agent": "Dish Soap + White Vinegar Solution",
+      "instruction": "Mix 1 teaspoon Dawn dish soap, 2 tablespoons white vinegar, and 1 cup cold water in a bowl. Dab onto the stain with a clean white cloth, let sit 3 minutes, blot from center outward. The soap lifts pigment the water didn't; the vinegar (a mild acid) helps break the remaining tannin bond. Repeat once if color is still visible."
     },
     {
       "step": 5,
-      "agent": "Rinse from the back",
-      "instruction": "Flush with cold water from the reverse until your cloth runs clean. No soap or vinegar residue should remain."
+      "agent": "Rinse Cool From the Back",
+      "instruction": "Flush with cold water from the reverse side until your blotting towel comes away clean. No soap or vinegar residue should remain before the next step — oxidizers and residues don't mix well."
     },
     {
       "step": 6,
-      "agent": "OxiClean soak (if color lingers)",
-      "instruction": "Mix 1 scoop OxiClean in 1 cup cold water. Soak the stained area 15–30 minutes. Rinse cold.",
-      "safetyNote": "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide — one oxidizer at a time."
+      "agent": "OxiClean Soak for Any Lingering Color",
+      "instruction": "If you can still see a pink or brown shadow: mix one scoop of OxiClean in 1 cup cool water, fully dissolved. Soak the stained area for 15–30 minutes. Rinse thoroughly with cool water.",
+      "safetyNote": "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide — layering oxidizers produces toxic fumes. One oxidizer, then flush, then the next if needed."
     },
     {
       "step": 7,
-      "agent": "Hot machine wash",
-      "instruction": "Launder on the hottest setting the care label allows. Inspect the stain before drying — heat sets any remaining tannin."
+      "agent": "Hot Machine Wash (Care Label Permitting)",
+      "instruction": "Launder on the hottest setting the care label allows — cotton handles heat. Check the stain BEFORE you put it in the dryer. Any residual tannin sets permanently under dryer heat. If you can still see the stain, repeat the soap/vinegar/OxiClean pass before drying."
     },
     {
       "step": 8,
-      "agent": "Escalate to a professional",
-      "instruction": "If any trace remains after washing, take the garment to a dry cleaner. Tell them: \"Red wine on white cotton, pre-treated at home with dish soap, vinegar, and OxiClean.\""
+      "agent": "Escalate to a Dry Cleaner",
+      "instruction": "Escalate if: the wine's been through a hot wash and a dryer, the garment is 100% dark/dyed cotton you can't bleach, or the stain survived two full home rounds. Tell them: \"Red wine on cotton, age [fresh / overnight / older], treated at home with dish soap + vinegar + OxiClean.\""
     }
   ],
-  "materialWarnings": [
-    "Boiling water pour-through only for FRESH stains (within 30 min)",
-    "For aged wine stains, skip boiling water—heat can set tannin deeper",
-    "Chlorine bleach on white cotton only—don't use on colored fabrics"
-  ],
-  "escalation": "Red wine on white cotton rarely requires professional help. If stain persists after NSD + vinegar + OxiClean + bleach treatment, it may be a stubborn or very old stain—professional dry cleaning with specialized tannin solvents might help, but home treatment is usually sufficient.",
-  "products": {
-    "household": [
-      {
-        "name": "Mild Liquid Dish Soap (dye-free)",
-        "brand": "Dawn Free & Clear or similar",
-        "icon": "🧴",
-        "amazonSearchQuery": "dawn free clear dish soap",
-        "affiliateTag": "gonr08-20",
-        "note": "Use 1/4 tsp in 1 cup water. Household substitute for professional NSD. NSD for initial tannin suspension. 1 tsp per cup cold water."
-      },
-      {
-        "name": "White Vinegar",
-        "brand": "Standard",
-        "icon": "🍶",
-        "amazonSearchQuery": "white vinegar 5% acetic acid",
-        "affiliateTag": "gonr08-20",
-        "note": "Tannin spotter. Dilute 1:1 with cold water. 2-3 minutes. DO NOT substitute industrial-strength (28%) acetic acid — it causes chemical burns."
-      },
-      {
-        "name": "OxiClean",
-        "brand": "OxiClean",
-        "icon": "✨",
-        "amazonSearchQuery": "OxiClean powder",
-        "affiliateTag": "gonr08-20",
-        "note": "Oxygen bleach. 1 scoop per cup cold water. 15-30 min soak."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. Move fast — cold water only while the stain is visible.",
+      "2. Flush cold from the BACK of the fabric, blot with a clean white towel.",
+      "3. Fresh (<30 min) only: hot-water pour-through from the back.",
+      "4. Dish soap + white vinegar + cold water solution — dab, dwell, blot.",
+      "5. Flush cold from the back until towel runs clean.",
+      "6. OxiClean soak 15–30 minutes if shadow remains. Never layer with bleach or peroxide.",
+      "7. Hot machine wash per care label. Inspect BEFORE drying — heat sets residual tannin.",
+      "8. Escalate if heat-set, two rounds failed, or dark cotton that can't bleach."
     ],
-    "professional": [
-      {
-        "name": "Tannin Spotter (Professional)",
-        "brand": "Chemspec",
-        "icon": "🧪",
-        "amazonSearchQuery": "Chemspec tannin spotter",
-        "affiliateTag": "gonr08-20",
-        "note": "Professional-grade tannin remover for set stains."
-      }
+    "products": [
+      "Cold water",
+      "Dawn dish soap",
+      "White vinegar (household)",
+      "OxiClean (oxygen bleach)"
+    ],
+    "whenToStop": "Stop if the wine has already been through a hot wash + dryer cycle, if the cotton is dark dyed, or if two home rounds haven't cleared it. Take it to a dry cleaner.",
+    "warnings": [
+      "Hot water is a fresh-stain tool only — sets older tannin permanently",
+      "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide",
+      "Always inspect under good light BEFORE running through a dryer"
     ]
   },
-  "customerExplanation": "Red wine on white cotton is one of the easiest stains because cotton tolerates aggressive treatment. Fresh wine responds to boiling water; older wine needs vinegar, then oxygen bleach. We can even use chlorine bleach on white cotton if needed. Most cases resolve completely.",
-  "commonMistakes": [
-    "Using hot water on aged stains—sets tannin deeper instead of removing it",
-    "Skipping NSD and jumping to bleach—NSD removes much of the stain without chemicals",
-    "Not doing boiling water pour-through for fresh stains—this is remarkably effective and free"
+  "safetyMatrix": {
+    "neverDo": [
+      "Never layer oxidizers — one at a time, flushed between",
+      "Never use hot water on aged wine — sets tannin permanently",
+      "Never dry with residual chemistry in the fiber — discolors under heat",
+      "Chlorine bleach on whites only; never on dyed cotton"
+    ],
+    "fiberSensitivities": [
+      "Cotton tolerates enzymes, tannin spotters, 3–6% H₂O₂, dilute NaOCl on whites, and hot water",
+      "Dyed cotton: skip bleach, test acid-side spotters on inside seam first",
+      "Heat-safe overall — cotton is the most chemistry-tolerant common fiber"
+    ]
+  },
+  "materialWarnings": [
+    "Hot water only for fresh wine (<30 min) — sets aged tannin",
+    "Chlorine bleach on white cotton only, never on dyed",
+    "Flush all chemistry before heat — residual oxidizer yellows under dryer"
   ],
-  "scienceNote": "Anthocyanins are polyphenolic pigments that absorb light in the red-blue range. They bond to cellulose through hydrogen bonds and van der Waals forces. Heat breaks hydrogen bonds (which is why hot water removes fresh wine), and oxidation breaks the conjugated double-bond system in anthocyanins (which is why bleach and oxygen bleach remove color). This is why we use cold NSD first (for mechanical removal), then heat or oxidation (for chemical removal). White cotton's cellulose structure is unharmed by any of these approaches.",
-  "callPro": "Rarely needed on white cotton. If stain persists after full protocol, professional dry cleaning with tannin-specific solvents is possible but not usually necessary.",
-  "components": [
-    "detergent",
-    "acid-spotter",
-    "oxidizer"
-  ],
-  "component_order": [
-    "detergent",
-    "acid-spotter",
-    "oxidizer"
-  ],
-  "difficulty": 2,
-  "difficulty_factors": [
-    "responsive-fiber",
-    "easy-boiling-water-option"
-  ],
-  "solventNote": "Professional: Soak in cold NSD (Mulsolite, 5-10 min). Rinse. Tannin spotter (acetic acid or professional tannin remover, 5-10 min). Rinse. OxiClean or Clorox 2 soak (15-30 min). For white only: dilute chlorine bleach (NaOCl 0.5%, 1-2 min max). Hot water wash with detergent. VDS post-treatment if needed.",
-  "version": "5.0",
-  "authored": "2026-03-22",
+  "escalation": {
+    "when": "Wine heat-set by hot wash or dryer, dark/dyed cotton that can't take bleach, or two full home rounds without clearing it.",
+    "whatToTell": "\"Red wine on cotton, age [fresh / overnight / older], treated at home with [dish soap + vinegar / OxiClean]. [Washed hot / not yet laundered].\"",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How long ago did the spill happen?",
+      "Is the cotton white, light, or dark/dyed?",
+      "Has it been through a hot wash or dryer since?",
+      "Any solvent or bleach tried already?"
+    ],
+    "modifierNotes": "Fresh + white cotton = easy full win. Aged + dark cotton = skip bleach, oxidizer + acid-side only. Heat-set = pro territory."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }
