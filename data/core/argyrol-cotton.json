@@ -63,9 +63,42 @@
   "callPro": "For valuable cotton garments with old or dark argyrol stains, professional treatment is safer. If the stain is black and has been present for years, it may be permanent regardless of treatment method. Professional may recommend acceptance of the stain rather than risking fiber damage.",
   "customerExplanation": "Argyrol is a silver-containing compound that forms insoluble silver oxide stains on cotton. We used sodium thiosulfate, which forms soluble complexes with silver ions, allowing them to wash away. For any remaining brown residue, we applied hydrogen peroxide to complete the bleaching. The garment was thoroughly rinsed and neutralized to prevent re-oxidation.",
   "homeSolutions": [
-    "Soak the stained area in white vinegar (straight, undiluted) for 20 minutes. The acid will slow re-oxidation of any silver ions, and mild sulfur compounds in the vinegar may help slightly. Then rinse with cold water.",
-    "Apply a paste of baking soda and white vinegar to the stain, let sit for 10 minutes, then rinse. The combination of alkalinity and acidity provides minimal benefit but is safe.",
-    "For very light argyrol stains, repeated soaking in cool water with mild detergent (white vinegar + water) for 15-minute intervals, rinsing between each soak. This is weak but works on fresh, light stains."
+    {
+      "step": 1,
+      "agent": "This is a metallic-salt stain — do NOT reach for bleach",
+      "instruction": "Argyrol is a silver-containing antiseptic (old medical eye drops, some topical disinfectants). The stain is silver ions bonded into the cotton. Critical rule: NEVER use chlorine bleach on silver — it reacts to form black silver chloride, making the stain DARKER and more permanent. Also never hot water — heat accelerates silver oxidation and sets the stain. You have one real home option: sodium thiosulfate (photo \"hypo\" or pool chlorine neutralizer), which dissolves silver ions into a washable complex."
+    },
+    {
+      "step": 2,
+      "agent": "Get sodium thiosulfate — it's the home tool that matters",
+      "instruction": "Sodium thiosulfate is sold as \"hypo\" in photography stores (darkroom supply) and as \"chlorine neutralizer\" at pool-supply stores. A small bottle is under $10 and solves this stain. Without it, no amount of vinegar or dish soap will do more than slightly fade the stain. Realistic home outcome without thiosulfate: minimal. With thiosulfate: most fresh stains lift cleanly."
+    },
+    {
+      "step": 3,
+      "agent": "Patch test + cold water flush",
+      "instruction": "Dab a drop of your thiosulfate solution on an inside seam. Wait 60 seconds, blot with a white cloth. If the cotton holds its color, proceed. Then turn the garment inside out and flush the stain with cold water from the back for 30 seconds — removes any loose silver before chemistry."
+    },
+    {
+      "step": 4,
+      "agent": "Sodium thiosulfate solution — the whole game",
+      "instruction": "Mix 1 tablespoon of sodium thiosulfate crystals in 1 cup of cool (not warm) water. Dip a white cloth, wring nearly dry, press on the stain — outside-in. Keep the area moist by re-wetting every 2–3 minutes. Let dwell 8–10 minutes total. You'll see the brown or gray fade gradually as the thiosulfate forms soluble silver-thiosulfate complexes. Blot between cycles with a fresh cloth.",
+      "safetyNote": "Never mix sodium thiosulfate with chlorine bleach, acid, or hydrogen peroxide in the same dwell. Work in a ventilated area."
+    },
+    {
+      "step": 5,
+      "agent": "3% peroxide for residual brown (optional)",
+      "instruction": "After thiosulfate, if a brown trace remains, that's silver oxide. Dab 3% hydrogen peroxide on a clean white cloth and press onto the spot for 3–5 minutes. Peroxide oxidizes the residual brown compounds. Blot, then move to the rinse step. Skip this step on colored cotton — test first on the patch. Rinse any thiosulfate out fully before applying peroxide."
+    },
+    {
+      "step": 6,
+      "agent": "Multiple distilled-water rinses + vinegar finish",
+      "instruction": "Rinse the area thoroughly with cold distilled water (tap water has minerals that can react with residual silver). 3–4 rinses minimum. Any trace of silver thiosulfate left in the fiber will re-oxidize to brown within days if not removed. Finish with a vinegar rinse (1 tbsp white vinegar in 1 cup cold water) for 1 minute to prevent re-oxidation and restore fiber pH. Air dry — no heat."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate for old, dark, or heat-set argyrol",
+      "instruction": "If the argyrol is years old, black, or was already washed in hot water before you saw it, the silver has oxidized past what thiosulfate can dissolve. A pro may try thiourea (stronger silver complex-former) but it carries fiber-damage risk. Tell them: \"Argyrol (silver proteinate) on cotton, age [x], treated at home with sodium thiosulfate + 3% peroxide. No chlorine bleach used (confirmed). Residual black/brown remains.\" Realistic: very old argyrol stains are often permanent even with professional treatment."
+    }
   ],
   "meta": {
     "riskLevel": "high",
