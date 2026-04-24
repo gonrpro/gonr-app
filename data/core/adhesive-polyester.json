@@ -1,73 +1,121 @@
 {
   "id": "adhesive-polyester",
   "title": "Adhesive on Polyester",
-  "stainFamily": "specialty",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Adhesive residue (tape, sticker, glue) contains synthetic polymers (acrylate, rubber, vinyl) that bond to polyester through a combination of mechanical adhesion and Van der Waals forces. Different adhesive types require different solvents. Rubber-based adhesives dissolve in petroleum solvents; acrylic adhesives respond to alcohols; cyanoacrylate (super glue) requires acetone.",
-  "whyThisWorks": "POG or citrus-based solvent softens and dissolves the polymer adhesive on polyester. The solvent breaks the Van der Waals bonds between adhesive and fiber. For cyanoacrylate, acetone (where fiber-safe) is required — it's the only effective solvent. Mechanical removal after softening prevents fiber damage. Oil-based products (even cooking oil) can soften many adhesives as a first step.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "10–30 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "adhesive",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": ["adhesive", "polyester", "solvent-first", "test-first"],
+    "freePreview": true
+  },
+  "stainChemistry": "Adhesives on polyester split into four classes: (1) rubber / contact — petroleum solvent (POG); (2) acrylic / white / school — IPA or warm NSD; (3) cyanoacrylate / super glue — acetone, but acetone destroys acetate blends so verify fiber; (4) hot-melt — freeze, pick, treat residue. Polyester is solvent-tolerant at room temperature and heat-sensitive above 170°F.",
+  "whyThisWorks": "Glue bonds to polyester through Van der Waals and mechanical adhesion to fiber texture — dissolve the polymer and the bond goes with it. IPA lifts most acrylic/white-glue residues. NSD + gentle tamping lifts water-soluble residue. Acetone reserved for confirmed cyanoacrylate on confirmed polyester (not acetate). Reading the adhesive class first decides the path.",
+  "defaultAssumption": "Assume water-soluble or acrylic adhesive unless the user says otherwise. Cyanoacrylate gets called out explicitly if they mention super glue.",
+  "spottingProtocol": [
+    { "step": 1, "side": "dry", "agent": "ID + Pick", "technique": "Identify class, scrape bulk", "dwellTime": "brief",
+      "instruction": "Ask: what kind? Super glue → acetone, confirm polyester (not acetate). Rubber cement → POG. White / school / acrylic → IPA. Hot-melt → chill, pick, treat residue. Remove pickable bulk with a dull blade before wetting anything." },
+    { "step": 2, "side": "wet", "agent": "Cold Flush", "technique": "Flush from back", "dwellTime": "30 seconds",
+      "instruction": "Cold water flush from the back of the fabric. Loosens water-soluble glue and pushes mobilized residue back out the way it came in." },
+    { "step": 3, "side": "wet", "agent": "NSD", "technique": "Tamp, dwell, flush", "dwellTime": "1–2 min",
+      "instruction": "NSD directly on the spot. Tamp with a bristle brush. Water-soluble adhesives lift here." },
+    { "step": 4, "side": "wet", "agent": "IPA Tamp", "technique": "Solvent, light pressure", "dwellTime": "30–60 sec",
+      "instruction": "If residue persists, switch to isopropyl alcohol on a white cloth. Tamp — do not pour. Flip cloth frequently. IPA handles most acrylic and white-glue residues polyester tolerates." },
+    { "step": 5, "side": "wet", "agent": "Flush", "technique": "Cool water rinse", "dwellTime": "brief",
+      "instruction": "Flush the spot clean. Blot. Inspect. No heat until residue is gone — heat sets uncured adhesive into the fiber." },
+    { "step": 6, "side": "wet", "agent": "Repeat or Escalate", "technique": "Second pass or acetone", "dwellTime": "as needed",
+      "instruction": "Repeat steps 3–5 once if residue remains. Confirmed super glue on confirmed polyester: acetone on a cotton swab, tamp from back, fast flush. Never acetone on acetate." }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove loose material mechanically — brush, scrape, or vacuum as appropriate",
-      "2. Apply NSD to the stain area",
-      "3. Apply appropriate secondary agent based on stain response",
-      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. ID adhesive class. Scrape pickable bulk.",
+      "2. Cold flush from the back.",
+      "3. NSD, tamp, flush.",
+      "4. If residue remains: IPA on white cloth, tamp (not pour). Flip cloth.",
+      "5. Rinse cool. Blot. No heat until clean.",
+      "6. Repeat NSD+IPA once. For confirmed super glue on confirmed polyester: acetone on swab, tamp from back, fast flush."
     ],
-    "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
-    ],
-    "temperature": "ambient",
+    "products": ["NSD (Neutral Synthetic Detergent)", "Isopropyl alcohol 90%+", "Acetone (super glue only, polyester verified)", "POG (rubber cement / contact adhesive)"],
+    "temperature": "room temperature — no heat until residue is fully gone",
     "warnings": [
-      "Always test on hidden area first"
+      "Never use acetone on acetate — dissolves the fiber. Verify polyester first.",
+      "Never heat an uncured or residual adhesive — cures it into the fiber permanently.",
+      "Test every solvent on an inside seam on dyed or printed polyester."
     ]
   },
+  "homeSolutions": [
+    { "step": 1, "agent": "Name the glue first",
+      "instruction": "Different glues need different removers — skip this step and you'll guess wrong. Super glue? Acetone-based nail polish remover (only on real polyester, not acetate blends — acetone dissolves acetate). School / white glue? Warm water + dish soap. Rubber cement? Goo Gone or orange oil. Hot glue? Freeze the fabric and pick it off once brittle." },
+    { "step": 2, "agent": "Pick off anything solid first",
+      "instruction": "Before wetting anything, scrape off solid or rubbery bulk with the edge of a credit card or a dull butter knife. Don't pull hard on the fabric — if it doesn't come free easily, leave it for the solvent step." },
+    { "step": 3, "agent": "White / school glue → warm water + Dawn",
+      "instruction": "Water-soluble glues give up fast. Run warm water through the back of the stain for 60 seconds, then work a drop of Dawn into the spot with a fingertip. Let it sit 5 minutes, rinse. Two rounds clears most of it." },
+    { "step": 4, "agent": "Super glue → acetone on a cotton swab",
+      "instruction": "Confirm the garment is actually polyester and not an acetate blend — acetone dissolves acetate. Check the label. Dab acetone-based nail polish remover on a cotton swab from the BACK of the fabric, dab-and-blot, don't pour. Super glue lifts in seconds. Flush cold water immediately after." },
+    { "step": 5, "agent": "Rubber cement / contact glue → citrus or oil",
+      "instruction": "Apply Goo Gone, orange oil, or cooking oil to the residue. Let it sit 10 minutes — the adhesive gets gummy. Work gently with a soft toothbrush, lift dissolved residue with a paper towel. Wash the oil out with Dawn + warm water." },
+    { "step": 6, "agent": "Hot glue → freeze first",
+      "instruction": "Put the fabric in the freezer 20 minutes. Hot glue turns brittle when frozen and usually pops off with light pressure from a dull blade. Any film left behind goes through the Dawn + warm water pass." },
+    { "step": 7, "agent": "Air dry and inspect",
+      "instruction": "Let the fabric air-dry fully before throwing it in the dryer. Any adhesive residue will cure permanently under dryer heat. If you still see or feel a tacky spot, repeat the solvent step that matched your glue before drying." }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove loose material — brush, blot, or scrape as appropriate",
-      "2. Apply Dawn dish soap mixed with cold water",
-      "3. Blot with clean white cloth. Repeat if needed",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat"
+      "1. Identify the glue: super glue, school glue, rubber cement, or hot glue — different removers for each.",
+      "2. Scrape off any solid bulk with the edge of a credit card.",
+      "3. Super glue on polyester (not acetate): dab acetone-based nail polish remover on a cotton swab from the back of the fabric.",
+      "4. White / school / water-soluble glue: warm water + a drop of Dawn, work in, rinse.",
+      "5. Rubber / contact cement: Goo Gone or orange oil, 10-minute dwell, soft-brush lift, wash out with Dawn.",
+      "6. Hot glue: freeze the fabric, pick the brittle glue off, clean residue with warm water + Dawn.",
+      "7. Air-dry fully before the dryer — heat cures residual adhesive permanently."
     ],
-    "products": [
-      "Dawn dish soap"
-    ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "products": ["Acetone-based nail polish remover (super glue only)", "Dawn dish soap", "Goo Gone or orange oil (rubber / contact adhesive)", "A dull blade or credit card edge"],
+    "whenToStop": "Stop if the glue has been through a hot dryer or iron, if the fabric label says acetate and the glue is super glue, or if two home rounds haven't helped. Take it to a dry cleaner with the adhesive type identified.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "Never use acetone on acetate — dissolves the fiber",
+      "Never apply heat until the stain is fully gone — heat cures residual adhesive permanently",
+      "Test solvents on an inside seam first on colored or printed polyester"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never use acetone on acetate fibers — dissolves them",
+      "Never apply heat, iron, or dryer until residue is fully gone — cures adhesive permanently",
+      "Never pour solvent onto fabric — tamp with a cloth",
+      "Never mix acetone with other solvents"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester tolerates most common adhesive solvents at room temperature",
+      "Acetone safe on pure polyester, destroys acetate — verify blend before use",
+      "Heat-sensitive above 170°F — avoid iron, hot dryer, hair-dryer drying"
     ]
   },
+  "materialWarnings": [
+    "Verify polyester vs acetate on the care label before acetone",
+    "No heat until residue is fully gone",
+    "Test all solvents on an inside seam first"
+  ],
   "escalation": {
-    "when": "If adhesive stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is adhesive on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "If the adhesive has been heat-set, the label is acetate and the glue is cyanoacrylate, or two home rounds haven't cleared it — take it to a dry cleaner.",
+    "whatToTell": "Name the adhesive type if known: \"super glue / rubber cement / school glue / hot glue on polyester, treated with [solvent] — no heat applied.\" Gives the pro the exact solvent class to reach for.",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "What kind of glue is it — super glue, school glue, rubber cement, hot glue, something else?",
+      "Is the fabric 100% polyester or a blend (especially with acetate)?",
+      "Has the garment been through a dryer or iron since the glue hit it?",
+      "Any solvent tried already?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
-  },
-  "difficulty": 4,
-  "timeEstimate": "10-30 minutes",
-  "lastValidated": "2026-03-23"
+    "modifierNotes": "Adhesive class decides the solvent path — super glue = acetone (polyester only), white glue = water/Dawn, rubber cement = citrus/oil, hot glue = freeze. Polyester vs acetate blend is the critical label check before acetone."
+  }
 }

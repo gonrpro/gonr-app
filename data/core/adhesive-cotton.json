@@ -1,72 +1,120 @@
 {
   "id": "adhesive-cotton",
   "title": "Adhesive on Cotton",
-  "stainFamily": "specialty",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Adhesive residue (tape, sticker, glue) contains synthetic polymers (acrylate, rubber, vinyl) that bond to cotton through a combination of mechanical adhesion and Van der Waals forces. Different adhesive types require different solvents. Rubber-based adhesives dissolve in petroleum solvents; acrylic adhesives respond to alcohols; cyanoacrylate (super glue) requires acetone.",
-  "whyThisWorks": "POG or citrus-based solvent softens and dissolves the polymer adhesive on cotton. The solvent breaks the Van der Waals bonds between adhesive and fiber. For cyanoacrylate, acetone (where fiber-safe) is required — it's the only effective solvent. Mechanical removal after softening prevents fiber damage. Oil-based products (even cooking oil) can soften many adhesives as a first step.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "10–25 minutes",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "adhesive",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": ["adhesive", "cotton", "solvent-first"],
+    "freePreview": true
+  },
+  "stainChemistry": "Adhesives on cotton split into four working classes: (1) rubber / contact — petroleum solvent (POG); (2) acrylic / white / school — warm NSD or IPA; (3) cyanoacrylate / super glue — acetone (cotton tolerates it); (4) hot-melt — freeze, pick, treat residue. Cotton is the most chemically durable common fiber — tolerates acetone, IPA, warm water, and most common solvents without damage.",
+  "whyThisWorks": "Cotton's durability means the path is driven by adhesive class, not fiber sensitivity. Identify the glue first. Water-soluble glues give up to NSD + warm water. Acrylic adhesives lift with IPA. Cyanoacrylate needs acetone. Rubber cement breaks under petroleum solvents. Cotton handles all of these at room temperature; heat is the only thing to avoid until residue is fully gone.",
+  "defaultAssumption": "Assume a water-soluble or acrylic adhesive unless the user says otherwise — that's the majority case. Cyanoacrylate gets called out explicitly if they mention super glue.",
+  "spottingProtocol": [
+    { "step": 1, "side": "dry", "agent": "ID + Pick", "technique": "Identify class, scrape bulk", "dwellTime": "brief",
+      "instruction": "Ask: what kind? Super glue → acetone. Rubber cement → POG. White / school / acrylic → IPA or NSD. Hot-melt → chill, pick, treat residue. Remove pickable bulk with a dull blade before anything wet hits it." },
+    { "step": 2, "side": "wet", "agent": "Warm Flush", "technique": "Flush from back", "dwellTime": "30 seconds",
+      "instruction": "Warm water flush from the back of the fabric. Cotton tolerates warm; water-soluble glues loosen fast." },
+    { "step": 3, "side": "wet", "agent": "NSD", "technique": "Tamp, dwell, flush", "dwellTime": "1–2 min",
+      "instruction": "NSD directly on the spot. Tamp with a bristle brush. Water-soluble adhesives lift here." },
+    { "step": 4, "side": "wet", "agent": "IPA or Acetone", "technique": "Solvent tamp, cotton tolerates both", "dwellTime": "30–60 sec",
+      "instruction": "Residue remains: IPA on a white cloth for acrylic / white glue. Acetone on a cotton swab for confirmed cyanoacrylate — cotton tolerates acetone, unlike acetate blends. Tamp, don't pour. Flip cloth frequently." },
+    { "step": 5, "side": "wet", "agent": "Flush", "technique": "Warm rinse, no heat drying", "dwellTime": "brief",
+      "instruction": "Flush warm, blot, inspect. Air-dry only — heat sets residual adhesive into cotton fiber permanently." },
+    { "step": 6, "side": "wet", "agent": "Repeat or Escalate", "technique": "Second pass or escalate", "dwellTime": "as needed",
+      "instruction": "Repeat steps 3–5 once if residue persists. If the stain has been through a dryer or iron, escalate — heat-set adhesive on cotton usually needs pro chemistry." }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove loose material mechanically — brush, scrape, or vacuum as appropriate",
-      "2. Apply NSD to the stain area",
-      "3. Apply appropriate secondary agent based on stain response",
-      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. ID adhesive class. Scrape pickable bulk with dull blade.",
+      "2. Warm flush from the back.",
+      "3. NSD, tamp, flush warm.",
+      "4. If residue remains: IPA (acrylic/white) or acetone (super glue) on white cloth. Tamp, not pour.",
+      "5. Flush warm. Blot. Air-dry only — no heat until clean.",
+      "6. Repeat once. Escalate if heat-set."
     ],
-    "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
-    ],
-    "temperature": "ambient",
+    "products": ["NSD (Neutral Synthetic Detergent)", "Isopropyl alcohol 90%+", "Acetone (cotton-safe, not acetate)", "POG (rubber / contact cement)"],
+    "temperature": "room temperature through spotting — no heat drying until residue is gone",
     "warnings": [
-      "Always test on hidden area first"
+      "Never heat an uncured or residual adhesive — it cures into the fiber permanently.",
+      "Test every solvent on an inside seam on dyed or printed cotton.",
+      "Never pour solvent — tamp with a cloth for placement control."
     ]
   },
+  "homeSolutions": [
+    { "step": 1, "agent": "Name the glue first",
+      "instruction": "Different glues want different removers. Super glue? Acetone-based nail polish remover — cotton handles it. School / white glue? Warm water and dish soap. Rubber cement or contact cement? Goo Gone or orange oil. Hot glue? Freeze and pick off. Skip this step and you'll guess wrong." },
+    { "step": 2, "agent": "Pick off any solid bulk",
+      "instruction": "Before wetting anything, scrape the raised or rubbery bulk off with the edge of a credit card or a dull butter knife. Don't pull hard on the fabric — if it doesn't come free easily, leave it for the solvent step." },
+    { "step": 3, "agent": "White / school glue → warm water + Dawn",
+      "instruction": "Water-soluble glues give up fast on cotton. Run warm water through the back of the stain for 60 seconds. Work a drop of Dawn into the spot with a fingertip. Let it sit 5 minutes, rinse. Two passes clears most of it." },
+    { "step": 4, "agent": "Super glue → acetone on cotton swab",
+      "instruction": "Cotton tolerates acetone-based nail polish remover well. Dab a cotton swab from the BACK of the fabric. Tamp-and-blot, don't pour. Super glue dissolves in seconds. Flush cold water right after." },
+    { "step": 5, "agent": "Rubber cement / contact glue → citrus or oil",
+      "instruction": "Apply Goo Gone, orange oil, or cooking oil to the residue. Let it sit 10 minutes — the adhesive gets gummy. Work gently with a soft toothbrush, lift dissolved residue with a paper towel. Wash the oil out with Dawn + warm water." },
+    { "step": 6, "agent": "Hot glue → freeze first",
+      "instruction": "Put the garment in the freezer 20 minutes. Hot glue turns brittle when frozen and pops off with light pressure from a dull blade. Any film left behind runs through the Dawn + warm water pass." },
+    { "step": 7, "agent": "Air-dry, inspect in daylight",
+      "instruction": "Air-dry fully before the dryer. Adhesive residue cures permanently under dryer heat. Inspect in daylight — not the laundry-room bulb — before running hot. If you still see or feel a tacky spot, repeat the solvent step that matched your glue before drying." }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove loose material — brush, blot, or scrape as appropriate",
-      "2. Apply Dawn dish soap mixed with cold water",
-      "3. Blot with clean white cloth. Repeat if needed",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat"
+      "1. ID the glue: super glue, white/school, rubber cement, hot glue — each has its own solvent.",
+      "2. Scrape off bulk with a credit card edge.",
+      "3. Super glue: acetone nail polish remover on a cotton swab from the back.",
+      "4. White / school glue: warm water + Dawn, work in, rinse.",
+      "5. Rubber / contact: Goo Gone or orange oil, dwell 10 min, soft-brush, wash out with Dawn.",
+      "6. Hot glue: freeze, pick, clean residue with Dawn + warm water.",
+      "7. Air-dry fully before the dryer — heat cures residual adhesive permanently."
     ],
-    "products": [
-      "Dawn dish soap"
-    ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "products": ["Acetone-based nail polish remover", "Dawn dish soap", "Goo Gone or orange oil", "A dull blade or credit card"],
+    "whenToStop": "Stop if the adhesive has been through a dryer or iron, or two full rounds haven't improved it. Take it to a dry cleaner with the adhesive type identified.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "No heat until residue is gone — cures adhesive permanently into cotton",
+      "Test solvents on an inside seam first on printed or colored cotton",
+      "Cotton tolerates acetone; avoid acetone on cotton/acetate blends"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never heat / iron / dry an uncleaned adhesive — cures it into the fiber permanently",
+      "Never pour solvent — tamp with a cloth for placement control",
+      "Never use acetone if the label says acetate or rayon blend"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton is among the most solvent-tolerant common fibers — acetone, IPA, POG all safe",
+      "Heat is the only real restriction until residue is fully gone",
+      "Colored / printed cotton: test solvents on an inside seam first"
     ]
   },
+  "materialWarnings": [
+    "No heat until residue is fully gone",
+    "Verify fiber content — acetone on acetate blends is destructive",
+    "Test all solvents on an inside seam first on colored/printed cotton"
+  ],
   "escalation": {
-    "when": "If adhesive stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is adhesive on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "If the adhesive has been heat-set, ironed / dried with residue present, or two home rounds haven't cleared it — take it to a dry cleaner.",
+    "whatToTell": "Name the glue class: \"super glue / rubber cement / school glue / hot glue on cotton, treated with [solvent] — no heat applied.\" Gives the pro the solvent class to reach for.",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "What kind of glue — super glue, school glue, rubber cement, hot glue, or something else?",
+      "Has the fabric been through a dryer or iron since the glue hit it?",
+      "Any solvent tried already?",
+      "What's the fiber blend? (Pure cotton tolerates acetone; acetate blends do not.)"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
-  },
-  "difficulty": 4,
-  "timeEstimate": "10-30 minutes",
-  "lastValidated": "2026-03-23"
+    "modifierNotes": "Adhesive class decides the solvent path. Cotton is forgiving on solvent choice — the main restrictions are heat (before residue is gone) and acetone on acetate blends."
+  }
 }

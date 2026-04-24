@@ -1,73 +1,126 @@
 {
   "id": "adhesive-carpet",
   "title": "Adhesive on Carpet",
-  "stainFamily": "specialty",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Adhesive residue (tape, sticker, glue) contains synthetic polymers (acrylate, rubber, vinyl) that bond to carpet through a combination of mechanical adhesion and Van der Waals forces. Different adhesive types require different solvents. Rubber-based adhesives dissolve in petroleum solvents; acrylic adhesives respond to alcohols; cyanoacrylate (super glue) requires acetone.",
-  "whyThisWorks": "POG or citrus-based solvent softens and dissolves the polymer adhesive on carpet. The solvent breaks the Van der Waals bonds between adhesive and fiber. For cyanoacrylate, acetone (where fiber-safe) is required — it's the only effective solvent. Mechanical removal after softening prevents fiber damage. Oil-based products (even cooking oil) can soften many adhesives as a first step.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "15–45 minutes (plus extraction time)",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "adhesive",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": ["adhesive", "carpet", "no-saturation", "no-solvent-pool", "pad-risk"],
+    "freePreview": true
+  },
+  "stainChemistry": "Adhesives on carpet split into the usual four classes — rubber / contact (POG), acrylic / white (IPA or NSD), cyanoacrylate (acetone, fiber-dependent), hot-melt (freeze, pick, treat residue) — but carpet has a construction risk the fabrics don't: backing and pad underneath. Solvent pooling soaks through face yarn into backing adhesive and pad, where it can dissolve latex backing, delaminate the carpet, and leave an odor that lasts weeks. Nylon carpet face yarn tolerates most solvents; olefin / polyester face yarn is similar; wool carpet is the fragile one — no strong solvents, no hot water.",
+  "whyThisWorks": "Carpet adhesive removal is driven by two rules: (1) ID the glue class before you reach for a solvent; (2) never pool solvent — work damp-cloth transfer, not puddles. The face yarn resolves like any synthetic or wool fabric; the backing and pad are what fail first if you over-wet. Extract aggressively between passes to pull solvent back out of the pile rather than letting it migrate down.",
+  "defaultAssumption": "Assume nylon face yarn unless the user says wool or tells us otherwise — nylon dominates US residential carpet. Wool carpet routes to a specialist escalation far earlier.",
+  "spottingProtocol": [
+    { "step": 1, "side": "dry", "agent": "ID + Pick", "technique": "Identify class, scrape bulk", "dwellTime": "brief",
+      "instruction": "Ask: what glue? Super glue → acetone (synthetic carpet only). Rubber cement → POG. White / school / acrylic → IPA or NSD. Hot-melt → freeze, pick. Ask about fiber: nylon / olefin / polyester face yarn = solvent-tolerant; wool = escalate, no strong solvents. Scrape pickable bulk with a dull blade." },
+    { "step": 2, "side": "dry", "agent": "Chill First", "technique": "Ice cubes in a bag", "dwellTime": "5–10 min",
+      "instruction": "Place a bag of ice cubes on the residue for 5–10 minutes. Works on any adhesive class — chills the polymer so it pops off brittle instead of smearing under brush pressure. Works especially well on gum, hot-melt, and tacky contact cement." },
+    { "step": 3, "side": "wet-minimal", "agent": "Solvent on Cloth", "technique": "Transfer from cloth, never pour", "dwellTime": "30–60 sec",
+      "instruction": "Apply the matched solvent (POG / IPA / acetone) to a clean WHITE cloth — never directly onto the carpet. Press the damp cloth onto the spot, lift, rotate to a clean section, repeat. Solvent transfers into the residue; residue transfers onto the cloth. Zero pooling — pooling sinks solvent into backing and pad." },
+    { "step": 4, "side": "wet", "agent": "NSD + Extract", "technique": "Detergent pass, shop-vac extraction", "dwellTime": "1–2 min",
+      "instruction": "Apply NSD with a damp cloth, tamp with a soft bristle brush. Extract immediately with a wet/dry vac or absorbent white towel. Carpet pile holds far more water than it looks — do not leave NSD sitting to evaporate." },
+    { "step": 5, "side": "wet", "agent": "Cool Flush + Extract", "technique": "Rinse-and-extract cycles", "dwellTime": "brief",
+      "instruction": "Dab with a cool-water-dampened cloth to rinse. Extract. Repeat the damp-rinse-and-extract cycle until the extracted towel comes up clean. Extraction after every wet pass is the rule that protects the pad." },
+    { "step": 6, "side": "dry", "agent": "Air Dry + Inspect", "technique": "Fan the spot, weight the edge", "dwellTime": "4–8 hours",
+      "instruction": "Point a fan at the spot. Press a folded clean white towel down with a weight for 30 minutes to pull residual moisture up and out of the backing. Let the area air-dry fully before walking on it. Check for tacky residue, odor (indicates backing contamination), or delamination at the edges once dry. Any of those = specialist." }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove loose material mechanically — brush, scrape, or vacuum as appropriate",
-      "2. Apply NSD to the stain area",
-      "3. Apply appropriate secondary agent based on stain response",
-      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. ID adhesive class + face-yarn fiber. Scrape pickable bulk with dull blade.",
+      "2. Chill 5–10 min with an ice-pack to pop brittle residue.",
+      "3. Matched solvent (POG / IPA / acetone) applied to a white cloth — transfer, do not pool.",
+      "4. NSD tamp, immediate wet-vac extraction.",
+      "5. Cool flush on damp cloth + extraction cycle until towel comes up clean.",
+      "6. Fan-dry + weighted towel on the spot for 30 min. Inspect for backing odor, delamination, tacky residue — any of those = escalate."
     ],
-    "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
-    ],
-    "temperature": "ambient",
+    "products": ["NSD (Neutral Synthetic Detergent)", "POG (rubber / contact adhesive)", "Isopropyl alcohol 90%+", "Acetone (synthetic face yarn only)", "Wet/dry vacuum or heavy absorbent towels"],
+    "temperature": "room / cool — no hot water, which can activate backing adhesive",
     "warnings": [
-      "Always test on hidden area first"
+      "Never pool solvent on carpet — sinks into backing, dissolves latex, delaminates pile",
+      "Never use strong solvents on wool carpet — escalate immediately",
+      "Never skip extraction between wet passes — pad moisture causes odor + mold",
+      "Never use acetone on a carpet whose face yarn might be acetate"
     ]
   },
+  "homeSolutions": [
+    { "step": 1, "agent": "Name the glue, check the carpet",
+      "instruction": "Two questions before you touch the stain. (a) What kind of glue — super glue, school glue, rubber cement, or hot glue? (b) Is the carpet wool? If it's wool, stop here and call a professional carpet cleaner — wool is too fragile for most adhesive solvents at home. Synthetic carpet (nylon, olefin, polyester) tolerates the standard adhesive removers." },
+    { "step": 2, "agent": "Ice it first",
+      "instruction": "Put a sandwich bag full of ice cubes on the glue spot for 5–10 minutes. Works on almost any adhesive — the cold makes the polymer brittle so it pops off instead of smearing under brush pressure. After it's chilled, scrape off what you can with a dull butter knife or credit-card edge." },
+    { "step": 3, "agent": "Never pour — transfer from a cloth",
+      "instruction": "Whatever solvent you pick next — Goo Gone, IPA, acetone — put it on a clean white rag first, not directly on the carpet. Press the damp rag onto the residue, lift, rotate the rag to a clean spot, repeat. The glue transfers out of the carpet and onto the rag. Pouring solvent on carpet is what ruins the backing and pad underneath — hardest lesson to undo." },
+    { "step": 4, "agent": "White / school glue → warm water + Dawn, blot",
+      "instruction": "School glue and white glue give up to warm water. Dab a clean rag with warm water, press onto the spot, lift. Repeat. Then a drop of Dawn on a damp rag, press-and-lift a few times. Rinse with another cool damp rag. Blot dry with a dry towel weighted down for 20 minutes — this is how you pull water out of carpet before it sinks into the pad." },
+    { "step": 5, "agent": "Super glue → acetone on a rag, carefully",
+      "instruction": "Confirm the carpet is synthetic (nylon, olefin, polyester) — acetone dissolves acetate face yarn if any is present. Dab acetone-based nail polish remover onto a clean white rag. Press-and-lift on the residue. Super glue dissolves quickly. Follow immediately with a damp cool-water rag to rinse, then blot dry with a weighted towel." },
+    { "step": 6, "agent": "Rubber cement / contact glue → Goo Gone on a rag",
+      "instruction": "Goo Gone or an orange-oil product on a rag works well. Dwell 10 minutes (rag pressed onto the residue, not pooled), then work gently with a soft brush. Rinse with a Dawn + warm damp rag, then cool water, then blot dry with a weighted towel." },
+    { "step": 7, "agent": "Hot glue → freeze, pick, blot residue",
+      "instruction": "Bag of ice cubes on the hot glue for 10 minutes. It turns brittle. Pop it off with the edge of a credit card. Any film left behind gets a Dawn + warm damp rag press-and-lift pass, then rinse and dry." },
+    { "step": 8, "agent": "Dry fully — check for smell",
+      "instruction": "Point a fan at the spot. Put a folded dry towel on it with something heavy (a book, a heavy pan) for 30 minutes. Let the carpet air-dry before walking on it — this takes several hours. Once dry, smell it. A stale, chemical, or musty smell means moisture got into the pad — that usually needs a professional extraction to prevent mildew. Take it to a carpet-cleaning pro at that point." }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove loose material — brush, blot, or scrape as appropriate",
-      "2. Apply Dawn dish soap mixed with cold water",
-      "3. Blot with clean white cloth. Repeat if needed",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat"
+      "1. ID the glue (super glue, school glue, rubber cement, hot glue) and confirm the carpet is synthetic (not wool).",
+      "2. Ice the residue for 5–10 min. Scrape off brittle bulk with a credit-card edge.",
+      "3. Transfer the matched solvent from a clean white rag to the spot — never pour onto carpet.",
+      "4. White glue: warm water + Dawn on a damp rag, press-and-lift. Rinse with a cool damp rag.",
+      "5. Super glue: acetone nail polish remover on a rag (synthetic face yarn only). Press-and-lift. Rinse.",
+      "6. Rubber / contact cement: Goo Gone on a rag, dwell 10 min, soft-brush, rinse with Dawn + water.",
+      "7. Hot glue: freeze, pick brittle bulk off, clean residue with Dawn + warm damp rag.",
+      "8. Fan-dry + weighted towel on the spot for 30 min. Check for odor — musty smell = professional extraction."
     ],
-    "products": [
-      "Dawn dish soap"
-    ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "products": ["Ice cubes in a sandwich bag", "Acetone-based nail polish remover (synthetic carpet only)", "Dawn dish soap", "Goo Gone or orange oil", "A dull blade / credit card edge", "Clean white rags (several)", "Heavy dry towel + something heavy to weight it"],
+    "whenToStop": "Stop if the carpet is wool, if the backing smells odd after drying (musty / chemical), if the pile feels tacky or crunchy, or if you see any edge delamination. These mean moisture or solvent got into the pad and pro extraction is needed to prevent long-term damage.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "Never pour solvent directly onto carpet — ruins the backing and pad",
+      "Never attempt solvent work on wool carpet — escalate to a pro",
+      "Never use acetone if the face-yarn label shows acetate",
+      "Never skip the blot-dry / extraction step — pad moisture causes odor + mildew"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never pool or pour solvent onto carpet — sinks through to backing and pad",
+      "Never work strong solvents on wool carpet — escalate to a professional",
+      "Never use acetone if the face yarn is acetate",
+      "Never leave NSD or water sitting in the pile without extraction — pad damage"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / olefin / polyester face yarn: solvent-tolerant at room temperature",
+      "Wool carpet: fragile — enzyme-sensitive, strong-solvent-sensitive, heat-sensitive. Escalate early.",
+      "Backing latex: dissolved by pooled solvent and hot water — the real failure mode on carpet"
     ]
   },
+  "materialWarnings": [
+    "Transfer solvent from a cloth — never pour onto carpet",
+    "Extract moisture between every wet pass",
+    "Wool carpet: do not DIY — escalate to a carpet specialist"
+  ],
   "escalation": {
-    "when": "If adhesive stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is adhesive on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Wool carpet, any visible backing damage, a musty/chemical odor after drying, a tacky pile after drying, or two home passes without progress — take it to a carpet-cleaning professional.",
+    "whatToTell": "Tell them: \"[Glue type] on [nylon/wool/synthetic] carpet, treated at home with [solvent] on a rag — no pooling, no hot water. [Describe any odor or tackiness after dry.]\" That gives the pro the solvent exposure and lets them decide whether backing extraction is needed.",
+    "specialistType": "professional carpet cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "What kind of glue — super glue, school glue, rubber cement, hot glue, something else?",
+      "What fiber is the carpet — nylon, olefin, polyester, wool, or unknown?",
+      "Is the spot in a heavy-traffic area (suggests you may want to extract aggressively to prevent re-soil around the cleaned edge)?",
+      "Any tried solvent already? Any smell after drying?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
-  },
-  "difficulty": 4,
-  "timeEstimate": "10-30 minutes",
-  "lastValidated": "2026-03-23"
+    "modifierNotes": "Wool carpet + strong solvent = pro escalation every time. Synthetic face yarn tolerates the standard adhesive-class solvents. Backing/pad damage from pooled solvent is the invisible failure mode — extract between every wet pass."
+  }
 }
