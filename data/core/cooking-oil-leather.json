@@ -1,0 +1,202 @@
+{
+  "id": "cooking-oil-leather",
+  "title": "Cooking Oil on Leather",
+  "stainType": "oil",
+  "stainFamily": "oil",
+  "surface": "leather",
+  "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "30 minutes – 24 hours (powder preload is the slow step)",
+  "lastValidated": "2026-04-24",
+  "meta": {
+    "stainCanonical": "cooking-oil",
+    "surfaceCanonical": "leather",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": ["oil", "leather", "delicate", "heat-sensitive", "no-saturation"],
+    "freePreview": true
+  },
+  "stainChemistry": "Cooking oil on leather is harder than the same stain on a textile fiber. Leather is a biological substrate — a dense collagen matrix with its own natural oils, waxes, and dyes. Triglyceride cooking oil (vegetable, olive, canola) wicks into the pore structure quickly and binds with the leather's own lipid content, which is why water-based washing doesn't work here. Polyunsaturated oils (canola, soybean) oxidize over time, polymerizing into a varnish-like film the leather cannot recover from without professional treatment. Heat accelerates this polymerization dramatically.",
+  "whyThisWorks": "The sequence is absorb-first, solvent-sparingly, condition-after. Dry absorbent powder (cornstarch, cornmeal, or fuller's earth) wicks surface oil out of the pore structure over 15–60 minutes without introducing moisture — moisture is what cracks dried leather. A leather-safe spotter (silicone D5 or a specialty leather cleaner) then lifts residual oil in a tiny, controlled application — never a soak. A leather conditioner at the end replaces the natural oils the cleaning process pulled out, which is the step most home attempts skip.",
+  "defaultAssumption": "Assume the user does NOT have pro leather-spotting products on hand. The home path leans on cornstarch, a barely-damp microfiber, and a standard leather conditioner — these are on shelves at any grocery or hardware store. Pro path assumes silicone solvent + leather conditioner.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Blot",
+      "technique": "Press straight down, lift, repeat",
+      "equipment": "Clean white cloth or paper towels",
+      "dwellTime": "Immediate",
+      "instruction": "Before anything else, blot surface oil straight up with a clean white cloth or folded paper towel. Press down, lift, move to a dry section, press again. Do NOT rub — rubbing smears oil sideways across the leather's pore structure and makes the stain 2–3× bigger. Get as much surface oil out as possible before introducing any absorbent or solvent."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Absorbent Powder Preload",
+      "technique": "Cover, wait, brush off",
+      "equipment": "Cornstarch, cornmeal, or fuller's earth",
+      "dwellTime": "30–60 minutes (longer for aged stains)",
+      "instruction": "Cover the stain completely with cornstarch, cornmeal, or fuller's earth — apply a visibly thick layer, not a dusting. Let it sit 30 minutes minimum, longer on heavier stains (up to a few hours or overnight is fine). The powder pulls oil out of the leather pores without any moisture. Brush off with a soft brush or edge of a credit card. Repeat the powder step if the stain is still visibly wet-looking. This is the slow, quiet step that does most of the work — don't skip it."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Test Inside Seam",
+      "technique": "Test your spotter on a hidden area",
+      "equipment": "Spotter of choice, cotton swab",
+      "dwellTime": "30 seconds",
+      "instruction": "Before applying any spotter to the visible stain, test it on an inside seam or a part of the leather hidden from normal view. Watch for color change, finish stripping, or softening. Leather finishes vary widely — aniline, semi-aniline, pigmented, nubuck, suede all behave differently. Never skip this step, especially on darker or colored leathers."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Leather-Safe Spotter",
+      "technique": "Apply sparingly, blot",
+      "equipment": "Silicone solvent (SolvonK4 / GreenEarth D5) OR a specialty leather cleaner (Leather Honey, Leather Master, or equivalent)",
+      "dwellTime": "30 seconds – 2 minutes",
+      "instruction": "Apply a small amount of a leather-safe spotter to a clean white cloth — never directly onto the leather. Silicone solvents (D5, SolvonK4) are the safest class for dissolving residual oil without defatting the leather the way perc or hydrocarbon solvents do. Work in small circles with light pressure. Blot, move to a clean section of cloth, repeat. Use the smallest amount that makes progress — saturating leather causes tide-ring marks as it dries."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Air Dry",
+      "technique": "No heat, no sun",
+      "equipment": "Flat surface, out of direct sunlight",
+      "dwellTime": "4–12 hours",
+      "instruction": "Let the leather air-dry completely in a room-temperature spot, away from direct sunlight, hair dryers, or radiators. Heat drives any remaining oil deeper and can polymerize it into the leather permanently. Sun fades dye. Leather drying too fast cracks — patience here matters."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Leather Conditioner",
+      "technique": "Restore natural oils",
+      "equipment": "Leather conditioner (Leather Honey, Chamberlain's, Lexol, or equivalent)",
+      "dwellTime": "10–20 minutes dwell, then buff",
+      "instruction": "Once fully dry, apply a leather conditioner to the cleaned area and a generous ring around it — conditioning only the stain zone creates a visible halo. Let the conditioner dwell 10–20 minutes, then buff gently with a dry microfiber cloth. This step replaces the natural oils the cleaning pulled out. Skipping it is the most common reason home-cleaned leather looks dull or cracked afterwards."
+    }
+  ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Blot surface oil with clean white cloth — press straight down, do NOT rub.",
+      "2. Cover with cornstarch, cornmeal, or fuller's earth. Wait 30–60 minutes. Brush off. Repeat if still oily.",
+      "3. Test your spotter on an inside seam — watch for color change, finish stripping, or softening.",
+      "4. Apply a leather-safe spotter (silicone D5 / SolvonK4 / specialty leather cleaner) to a white cloth. Work the stain in small circles, light pressure. Blot, rotate cloth, repeat.",
+      "5. Air-dry fully at room temperature, away from direct sun and all heat sources.",
+      "6. Apply leather conditioner to the cleaned area and a ring around it. Dwell 10–20 minutes, buff with dry microfiber."
+    ],
+    "products": [
+      "Cornstarch, cornmeal, or fuller's earth (absorbent preload)",
+      "Silicone solvent (SolvonK4 or GreenEarth D5) — leather-safe dry cleaning solvent",
+      "Specialty leather cleaner (Leather Honey, Leather Master, or equivalent)",
+      "Leather conditioner (Leather Honey, Chamberlain's Leather Milk, Lexol)"
+    ],
+    "temperature": "room temperature throughout",
+    "warnings": [
+      "Never saturate leather with solvent or water — causes tide rings, cracking, or finish stripping",
+      "Never use perc or generic unknown dry-cleaning solvent on leather — many defat the substrate and cause long-term damage",
+      "Never skip the inside-seam test, especially on colored, aniline, or nubuck/suede leather",
+      "Never use heat (hair dryer, radiator, direct sun) to accelerate drying — cracks the leather",
+      "Never skip the conditioner step — cleaning strips natural oils"
+    ]
+  },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Blot, don't rub",
+      "instruction": "The first thing to do is also the most boring: press a folded white paper towel straight down on the stain. Lift, move to a dry section, press again. Repeat until nothing more transfers. No rubbing — rubbing smears oil sideways across the leather's pores and makes the stain bigger. Getting the surface oil off before you do anything else is 30% of the job.",
+      "safetyNote": "Never rub leather with an oil stain — it spreads and sets deeper."
+    },
+    {
+      "step": 2,
+      "agent": "Cornstarch preload — give it 30 minutes minimum",
+      "instruction": "Cover the stain with a thick layer of cornstarch, cornmeal, or baking soda. Not a dusting — pile it on so you can't see the leather through it. Walk away for at least 30 minutes. If the stain is heavy, leave it several hours or overnight. The powder wicks oil out of the leather pores without any water, which is exactly what you want — water is what cracks dried leather. Brush it off with a soft brush or the edge of a credit card. If the spot still looks oily, do it again."
+    },
+    {
+      "step": 3,
+      "agent": "Test on a hidden spot first",
+      "instruction": "Before you put anything liquid on the visible stain, test on an inside seam or somewhere no one will see. Dab a tiny amount of your spot-cleaner (see next step). Watch for color change, stiffness, or any finish stripping. Leather finishes vary — aniline and suede are very sensitive; pigmented leather handles more. If the test spot looks off, stop and take it to a leather specialist."
+    },
+    {
+      "step": 4,
+      "agent": "Tiny dab of Dawn on a damp microfiber — barely wet",
+      "instruction": "Put a single drop of clear Dawn on a BARELY damp microfiber cloth — the cloth should feel cool and slightly moist, not wet. Work the stain in small circles with light pressure. Blot, move to a dry section of the cloth, keep working. The goal is to lift remaining oil WITHOUT saturating the leather. Leather + standing water = tide rings and stiffness. This is the one step where less is better.",
+      "safetyNote": "Never soak leather. A wet-looking leather is already too wet."
+    },
+    {
+      "step": 5,
+      "agent": "Air-dry slow, no heat, no sun",
+      "instruction": "Let the leather air-dry at room temperature for several hours or overnight. Keep it away from direct sunlight, radiators, hair dryers, or heat vents. Fast drying cracks leather. Sun fades the dye. Slow, cool drying is what you want."
+    },
+    {
+      "step": 6,
+      "agent": "Condition — put the oils back",
+      "instruction": "Once fully dry, apply a leather conditioner (Leather Honey, Chamberlain's Leather Milk, Lexol, or whatever's at your hardware store) to the cleaned area AND a circle around it. If you only condition the spot, you'll see a visible halo. Let it dwell 10–20 minutes, then buff gently with a dry microfiber cloth. This step is the one most home attempts skip — and it's the difference between leather that looks cleaned and leather that looks damaged."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate to a leather specialist",
+      "instruction": "If the stain is older than a few days, has been through heat (a hot car, a dryer, an iron), or survives two full home rounds — take it to a leather specialist (not just a dry cleaner; a specialty leather restoration shop). Tell them: \"Cooking oil on leather, approximately [time] old, treated at home with cornstarch preload and a Dawn spot. No heat. No saturation.\" Pros have silicone solvents and leather-specific chemistry that are genuinely leather-safe."
+    }
+  ],
+  "diyProtocol": {
+    "steps": [
+      "1. Blot surface oil with a folded paper towel — press straight down, do NOT rub.",
+      "2. Pile cornstarch, cornmeal, or baking soda on the stain. Wait 30 minutes minimum, longer for heavy stains. Brush off. Repeat if still oily.",
+      "3. Test on an inside seam with a single drop of Dawn on a damp cloth. Watch for color change or stiffness.",
+      "4. Put one drop of Dawn on a barely-damp microfiber. Work the stain in small circles with light pressure. Blot, rotate cloth, repeat. Do NOT saturate.",
+      "5. Air-dry at room temperature, away from sun and all heat. Several hours to overnight.",
+      "6. Apply leather conditioner to the cleaned area AND a ring around it. Dwell 10–20 minutes, buff with a dry microfiber.",
+      "7. If the stain survives two rounds or has been heat-exposed, take it to a leather specialist."
+    ],
+    "products": [
+      "Cornstarch, cornmeal, or baking soda",
+      "Dawn dish soap (clear)",
+      "Microfiber cloths (barely damp for cleaning; dry for buffing)",
+      "Leather conditioner (Leather Honey, Chamberlain's Leather Milk, Lexol)"
+    ],
+    "whenToStop": "Stop if two full home rounds don't improve the stain, or if the leather looks stiff, darker, or cracked around the cleaned spot. Take it to a leather specialist — not a general dry cleaner. Leather restoration is its own trade.",
+    "warnings": [
+      "Never saturate leather — cracks, tide rings, and finish loss are near-impossible to reverse",
+      "Never use hot water, a hair dryer, or direct sun — leather cracks under rapid drying",
+      "Never rub — oil spreads sideways, the stain gets bigger",
+      "Never skip the conditioner — stripped natural oils leave leather dull and cracked"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never saturate leather with water or solvent — causes tide rings and finish loss",
+      "Never use generic unknown \"dry cleaning solvent\" on leather — many defat and damage the substrate",
+      "Never apply heat (hair dryer, radiator, hot car, sun) to wet leather",
+      "Never skip the inside-seam test on colored, aniline, or nubuck/suede leather",
+      "Never rub — oil spreads sideways through the pore structure"
+    ],
+    "fiberSensitivities": [
+      "Leather is a biological substrate — its own oils and dyes are stripped by many solvents",
+      "Aniline and semi-aniline leathers are the most sensitive; pigmented handles more but still tests",
+      "Nubuck and suede: treat as delicate — no liquid spotters; brush + powder only, escalate early",
+      "Leather never fully recovers from heat-set oil — speed matters more than on any textile"
+    ]
+  },
+  "materialWarnings": [
+    "No saturation — leather + standing moisture = cracking and tide rings",
+    "No heat — leather cracks under rapid drying",
+    "Test all spotters on an inside seam first",
+    "Condition after cleaning — restores the natural oils cleaning pulled out"
+  ],
+  "escalation": {
+    "when": "If the oil stain has been heat-exposed (hot car, dryer, iron), is older than 3–5 days, survives two full home rounds, or the leather is suede / nubuck / unfinished aniline — take it to a leather specialist.",
+    "whatToTell": "Tell them: \"Cooking oil on leather, [age] old, treated with cornstarch preload and a dilute Dawn spot on a barely-damp microfiber. No heat applied. No saturation.\" They'll know whether to use silicone solvent, leather-specific chemistry, or a full recoloring pass.",
+    "specialistType": "leather specialist (not a general dry cleaner)"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "What kind of leather is it — smooth pigmented, aniline, suede, nubuck, or something else?",
+      "How old is the stain?",
+      "Has the leather been exposed to heat (hot car, dryer, sun, etc.) since the stain happened?",
+      "What have you already tried? Any water or solvent already applied?"
+    ],
+    "modifierNotes": "Leather type is the single biggest modifier. Pigmented smooth leather tolerates cleaning; aniline, nubuck, and suede are all fragile and escalate fast. Heat exposure is the other decisive factor — any heat-set oil on leather generally needs a specialist."
+  }
+}
