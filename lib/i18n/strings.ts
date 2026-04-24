@@ -414,6 +414,11 @@ export const strings: Record<string, Record<string, string>> = {
   collapsibleSolvent: { en: "Solvent Note", es: "Nota de Solvente" },
   collapsibleHandoff: { en: "Customer Handoff", es: "Entrega al Cliente" },
 
+  // ── Trust block on ResultCard (Why/Caution/Escalate 3-tile) ──
+  trustWhyLabel: { en: "Why this path", es: "Por qué este método" },
+  trustCautionLabel: { en: "Use caution", es: "Precaución" },
+  trustEscalateLabel: { en: "Escalate if", es: "Escale si" },
+
   // ── Pro-shows-Home reveal (collapsible on Pro cards) ──────────
   proShowHomeToggle: {
     en: "Show the home version for customers",

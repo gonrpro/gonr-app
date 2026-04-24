@@ -64,6 +64,70 @@ function difficultyColor(d: number) {
 }
 
 /**
+ * TrustTile — one square in the 3-tile trust strip under the result title.
+ * Starts collapsed to a single line; tap expands to show the full body. Three
+ * colored variants map to the trust dimensions: green = Why, amber = Caution,
+ * red = Escalate. Matches the existing accent palette used elsewhere in the
+ * card so it reads like part of the same product, not a separate widget.
+ */
+function TrustTile({
+  icon,
+  label,
+  body,
+  accent,
+}: {
+  icon: LucideIcon
+  label: string
+  body: string
+  accent: 'green' | 'amber' | 'red'
+}) {
+  const [expanded, setExpanded] = useState(false)
+  const IconCmp = icon
+  const styles = {
+    green: {
+      background: 'rgba(34,197,94,0.06)',
+      border: '1px solid rgba(34,197,94,0.25)',
+      labelColor: 'var(--accent)',
+      iconColor: 'var(--accent)',
+    },
+    amber: {
+      background: 'rgba(234,179,8,0.06)',
+      border: '1px solid rgba(234,179,8,0.25)',
+      labelColor: '#ca8a04',
+      iconColor: '#ca8a04',
+    },
+    red: {
+      background: 'rgba(239,68,68,0.06)',
+      border: '1px solid rgba(239,68,68,0.25)',
+      labelColor: '#dc2626',
+      iconColor: '#dc2626',
+    },
+  }[accent]
+  return (
+    <button
+      type="button"
+      onClick={() => setExpanded((v) => !v)}
+      className="text-left rounded-xl p-3 min-h-[72px] transition-colors hover:brightness-[1.03] active:brightness-95"
+      style={{ background: styles.background, border: styles.border }}
+      aria-expanded={expanded}
+    >
+      <div className="flex items-center gap-1.5 mb-1">
+        <IconCmp size={14} strokeWidth={1.75} style={{ color: styles.iconColor }} aria-hidden="true" />
+        <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: styles.labelColor }}>
+          {label}
+        </span>
+      </div>
+      <p
+        className={`text-xs leading-snug ${expanded ? '' : 'line-clamp-2'}`}
+        style={{ color: 'var(--text)' }}
+      >
+        {body}
+      </p>
+    </button>
+  )
+}
+
+/**
  * Collapsible now accepts either a lucide component (preferred) or a string
  * (legacy; keeps any callsite we haven't migrated yet working). The lucide
  * path uses stroke="currentColor" so the icon always matches the header text
@@ -192,6 +256,17 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
     ?? rawCard.safetyMatrix?.neverDo
     ?? []
 
+  // ── Trust block data (Why / Caution / Escalate 3-tile under title) ──
+  // Pulls from existing fields — hide a tile entirely if source is weak/empty.
+  const trustWhy = (card.whyThisWorks ?? '').trim()
+  const trustCaution = (
+    (rawCard.safetyMatrix?.neverDo?.[0] as string | undefined)
+    ?? warnings[0]
+    ?? ''
+  ).trim()
+  const trustEscalate = (escalation?.when ?? '').trim()
+  const showTrustBlock = trustWhy.length > 20 || trustCaution.length > 20 || trustEscalate.length > 20
+
   // ── Tier telemetry on mount ───────────────────────────────────
   useEffect(() => {
     if (!correlationId) return
@@ -246,17 +321,38 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
         </div>
       )}
 
-      {/* ── 2. Chemistry overview ── */}
-      {card.whyThisWorks && (
+      {/* ── 2. Trust block — Why / Caution / Escalate 3-tile strip ──
+          Replaces the old "Chemistry overview" single-callout. Surfaces the
+          three questions a user/operator asks instinctively before executing:
+          (1) Why this path, (2) What should I watch for, (3) When do I stop.
+          Pulls from existing card fields; hides any tile whose source is weak. */}
+      {showTrustBlock && (
         <div className="px-4 pb-3">
-          <div className="rounded-xl p-3 space-y-1" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
-            <p className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5" style={{ color: 'var(--accent)' }}>
-              <FlaskConical size={14} strokeWidth={1.75} aria-hidden="true" />
-              {t('whyThisWorks')}
-            </p>
-            <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
-              {card.whyThisWorks}
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+            {trustWhy.length > 20 && (
+              <TrustTile
+                icon={FlaskConical}
+                label={t('trustWhyLabel')}
+                body={trustWhy}
+                accent="green"
+              />
+            )}
+            {trustCaution.length > 20 && (
+              <TrustTile
+                icon={AlertTriangle}
+                label={t('trustCautionLabel')}
+                body={trustCaution}
+                accent="amber"
+              />
+            )}
+            {trustEscalate.length > 20 && (
+              <TrustTile
+                icon={Phone}
+                label={t('trustEscalateLabel')}
+                body={trustEscalate}
+                accent="red"
+              />
+            )}
           </div>
         </div>
       )}
