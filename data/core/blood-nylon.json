@@ -1,0 +1,210 @@
+{
+  "id": "blood-nylon",
+  "title": "Blood on Nylon",
+  "stainType": "protein",
+  "stainFamily": "protein",
+  "surface": "nylon",
+  "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "meta": {
+    "stainCanonical": "blood",
+    "surfaceCanonical": "nylon",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": ["protein", "fresh", "nylon", "enzyme-safe"],
+    "freePreview": true
+  },
+  "difficulty": 4,
+  "timeEstimate": "10-25 minutes",
+  "lastValidated": "2026-04-24",
+  "stainChemistry": "Blood is a protein stain. Hemoglobin, fibrin, and albumin bond to nylon via hydrogen bonding and hydrophobic interactions. Nylon is a chemically durable synthetic — more tolerant of oxidizing agents, enzymes, and mild alkali than silk or wool, but heat-sensitive (nylon 6,6 softens around 220°C). Fresh blood is red and soluble in cold water; aged blood oxidizes to brown ferric hemoglobin and sets into the fiber. The critical window is the first 15–30 minutes before protein cross-linking begins.",
+  "whyThisWorks": "Cold water halts protein setting and flushes soluble hemoglobin out of the fiber before it can bind. A protein spotter (enzymatic digestant) then breaks peptide bonds on residual stain — nylon tolerates proteolytic enzymes safely, unlike wool or silk. Hydrogen peroxide oxidizes residual iron-porphyrin pigment to colorless products. Vinegar at the end neutralizes any alkali residue to prevent yellowing. The sequence stays cold throughout — heat is the one thing that will set blood permanently on any fiber.",
+  "defaultAssumption": "Assume the stain is fresh unless the user says otherwise. Start conservative — blood on nylon responds well to cold-water work when caught early.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Water",
+      "technique": "Flush from the back",
+      "equipment": "Spray bottle, white terry towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Work from the back of the fabric first. Flood with cold water and blot hard from underneath — hydraulic pressure pushes soluble hemoglobin back out the way it came in, rather than deeper through the fiber. Flip and blot from the front. Keep going until the towel comes away with only pale pink water. Cold only — any warmth at this stage cooks the protein into the nylon permanently."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Protein Spotter",
+      "technique": "Apply and dwell",
+      "equipment": "Enzyme digestant (PRENETT B or equivalent)",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Apply a protein spotter (enzymatic digestant) directly to the stain. Tamp with a soft bristle brush — no rubbing. The enzyme hydrolyzes peptide bonds on residual protein that cold water couldn't lift. Nylon is safe with proteolytic enzymes — this is not a silk/wool situation."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Cold Water Flush",
+      "technique": "Rinse",
+      "equipment": "Spray bottle",
+      "dwellTime": "Brief",
+      "instruction": "Flush the spotter through with cold water. Blot dry between applications. If a shadow remains, repeat step 2 before moving on — protein digestion is iterative."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "NSD",
+      "technique": "Emulsify residue",
+      "equipment": "Neutral Synthetic Detergent",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Work a small amount of NSD into the fiber with a soft brush. Emulsifies residual lipids and denatured protein fragments that the enzyme step loosened but didn't fully remove. Flush cold."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hydrogen Peroxide 3%",
+      "technique": "Oxidize pigment",
+      "equipment": "3% H₂O₂, eyedropper",
+      "dwellTime": "2–5 minutes",
+      "instruction": "If a brown or pink shadow remains after rinsing, apply 3% hydrogen peroxide drop-by-drop. Oxidizes residual iron-porphyrin pigment to colorless products. Test an inside seam first on colored nylon — some dyes lift. Monitor closely and flush the moment the shadow disappears."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Acetic Acid",
+      "technique": "Neutralize",
+      "equipment": "White vinegar (5% acetic acid) or 8% acetic solution",
+      "dwellTime": "30 seconds",
+      "instruction": "Finish with a brief acetic-acid rinse to neutralize any residual alkali and prevent yellowing. White vinegar (5%) is fine for most nylon; pro-strength 8% acetic is optional and not needed if the peroxide step went clean."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Air Dry",
+      "technique": "No heat",
+      "equipment": "Flat surface or hanger",
+      "dwellTime": "Until fully dry",
+      "instruction": "Blot, then air-dry flat or hung. Do not tumble-dry until you confirm in daylight that no shadow remains — dryer heat permanently sets any residual protein into nylon."
+    }
+  ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Flush with cold water from the back of the fabric for 30–60 seconds.",
+      "2. Apply Protein Spotter (PRENETT B or enzyme digestant). Dwell 5–10 minutes.",
+      "3. Flush with cold water. Repeat protein step if shadow remains.",
+      "4. Apply NSD to emulsify residue. Flush.",
+      "5. If shadow persists, apply 3% hydrogen peroxide drop-by-drop. Test inside seam first on colored nylon.",
+      "6. Neutralize with white vinegar or 8% acetic acid.",
+      "7. Blot and air-dry. No heat until the stain is fully gone."
+    ],
+    "products": [
+      "Protein Spotter (PRENETT B or enzyme digestant)",
+      "NSD (Neutral Synthetic Detergent)",
+      "Hydrogen Peroxide 3%",
+      "White vinegar (5%) or Acetic Acid 8%"
+    ],
+    "temperature": "cold throughout",
+    "warnings": [
+      "Never use hot water or heat — sets protein permanently into nylon",
+      "Never use chlorine bleach on nylon — weakens the fiber and can discolor",
+      "Test hydrogen peroxide on an inside seam first if the nylon is dyed",
+      "Avoid prolonged peroxide dwell — oxidative damage on some nylon dyes"
+    ]
+  },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Act fast — cold water only",
+      "instruction": "Blood on nylon is beatable if you get to it in the first 30 minutes. Cold water only. Hot water cooks the protein into the fiber and sets the stain permanently — this is the single most common reason blood stains \"never come out.\"",
+      "safetyNote": "Never use hot water, a warm dryer, or an iron on a blood stain that's still there."
+    },
+    {
+      "step": 2,
+      "agent": "Flush from the back",
+      "instruction": "Hold the fabric under cold running water with the BACK of the stain facing the tap. The water pushes the blood back out the way it came in, rather than through the fiber. Keep going until the water running off runs clear or only faintly pink. This step alone often gets 80% of a fresh stain out."
+    },
+    {
+      "step": 3,
+      "agent": "Salt or enzyme soak — 15 minutes",
+      "instruction": "For anything left, soak the spot in cold water with either (a) a tablespoon of table salt stirred in, or (b) an enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout) per the label. Let it sit 15 minutes. Salt loosens iron residue; enzymes digest the remaining protein. Either works on nylon — pick whichever you have on hand."
+    },
+    {
+      "step": 4,
+      "agent": "Dish soap + cold water — dry work",
+      "instruction": "Put a drop of clear Dawn (or any liquid dish soap) directly on the stain. Work it in gently with a fingertip or a soft toothbrush — no rubbing hard, which frays nylon fibers. Let sit 5 minutes, then rinse with cold water."
+    },
+    {
+      "step": 5,
+      "agent": "3% hydrogen peroxide — for stubborn shadows",
+      "instruction": "If a faint brown or pink shadow remains, dab 3% drugstore hydrogen peroxide on the spot. Watch it closely — you'll often see the stain lift in under a minute as the peroxide oxidizes the residual pigment. Rinse with cold water immediately once the shadow is gone. Test on an inside seam first if the nylon is a dark or vivid color."
+    },
+    {
+      "step": 6,
+      "agent": "White vinegar rinse — finish clean",
+      "instruction": "Finish with a quick rinse using a splash of white vinegar diluted in a cup of cold water. Neutralizes any residual alkali and prevents yellowing. Rinse plain cold water one more time after."
+    },
+    {
+      "step": 7,
+      "agent": "Air dry, inspect in daylight",
+      "instruction": "Lay flat or hang to air-dry. Inspect the dried fabric under daylight — not the dim laundry-room light — before tumble-drying. Any shadow you can still see will lock in permanently under dryer heat. If there's any doubt, repeat steps 3–5 before drying hot."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate to a dry cleaner",
+      "instruction": "If the blood has already been through a hot dryer, is older than 24–48 hours, or survives two full home rounds — bring it to a dry cleaner. Tell them: \"Blood on nylon, age [fresh / overnight / older], treated at home with cold water, enzyme pretreat, and hydrogen peroxide. No heat applied.\" Pros have enzymatic digestants and controlled oxidation that go further than drugstore peroxide without damaging the fiber."
+    }
+  ],
+  "diyProtocol": {
+    "steps": [
+      "1. Flush the stain with cold water from the back of the fabric until the water runs mostly clear.",
+      "2. Soak 15 minutes in cold water with 1 tablespoon of salt or an enzyme laundry pretreat.",
+      "3. Apply a drop of Dawn dish soap. Work in gently for 5 minutes. Rinse cold.",
+      "4. For remaining shadow, dab 3% hydrogen peroxide, watch closely, rinse as soon as it lifts. Test an inside seam first on colored nylon.",
+      "5. Finish with a vinegar-in-cold-water rinse.",
+      "6. Air dry. Do not tumble-dry until the stain is completely gone."
+    ],
+    "products": [
+      "Cold water",
+      "Table salt OR enzyme pretreat (OxiClean Versatile, Biz, or Zout)",
+      "Dawn dish soap",
+      "3% hydrogen peroxide (drugstore)",
+      "White vinegar"
+    ],
+    "whenToStop": "Stop if the stain hasn't improved after two full rounds. Professional dry cleaners have stronger enzymatic digestants and controlled oxidation that go further than home peroxide without damaging nylon.",
+    "warnings": [
+      "Never use hot water — heat sets protein permanently into nylon",
+      "Never use chlorine bleach on nylon — weakens the fiber and can discolor",
+      "Test peroxide on an inside seam first on dark or vivid-colored nylon"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never use hot water, warm dryer, or iron on blood — heat sets protein permanently",
+      "Never use chlorine bleach on nylon — weakens fiber and discolors",
+      "Never scrub hard — nylon fibers fray under pressure and the stain smears wider"
+    ],
+    "fiberSensitivities": [
+      "Nylon tolerates enzymes, mild alkali, and 3% hydrogen peroxide",
+      "Heat-sensitive: nylon 6,6 softens around 220°C — no ironing or dryer heat until the stain is fully gone",
+      "Colored nylon dyes can lift under prolonged peroxide — test an inside seam first"
+    ]
+  },
+  "materialWarnings": [
+    "No hot water — blood protein sets permanently on any fiber if heated",
+    "No chlorine bleach on nylon — weakens fiber, can discolor",
+    "Test 3% hydrogen peroxide on an inside seam first if the nylon is dyed"
+  ],
+  "escalation": {
+    "when": "If the blood has been heat-set, is older than 24–48 hours, or survives two full home rounds, take it to a professional dry cleaner.",
+    "whatToTell": "Tell them: \"Blood on nylon, age [fresh / overnight / older], treated at home with cold water, enzyme pretreat, and 3% hydrogen peroxide. No heat applied.\" Give them the age and prior treatment so they don't duplicate failed approaches.",
+    "specialistType": "professional dry cleaner"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How old is the stain?",
+      "Has it been through a dryer, iron, or warm water?",
+      "Is the nylon white or dyed?",
+      "What's the garment — carpet / hosiery / activewear / swimwear / other?"
+    ],
+    "modifierNotes": "Fresh + no heat exposure = high success rate. Heat-set or aged stains often need a pro. Dyed nylon requires peroxide testing on an inside seam."
+  }
+}
