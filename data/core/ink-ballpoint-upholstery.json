@@ -1,82 +1,237 @@
 {
   "id": "ink-ballpoint-upholstery",
   "title": "Ballpoint Ink on Upholstery",
-  "stainFamily": "dye",
+  "stainType": "ink",
+  "stainFamily": "ink",
   "surface": "upholstery",
   "sector": "upholstery",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Ballpoint ink contains dye (typically crystal violet or phthalocyanine), a glycol solvent, and a resin binder. On upholstery, the resin hardens as the solvent evaporates, trapping dye in a polymer matrix. The dye itself bonds through Van der Waals forces and can penetrate fiber structure. Aged ink is increasingly resistant as the resin fully polymerizes.",
-  "whyThisWorks": "Alcohol (isopropyl or denatured) dissolves the resin binder on upholstery, releasing the trapped dye. The freed dye transfers to a blotting cloth. Amyl acetate provides secondary solvent action for resistant resin. Working from the back pushes dissolved ink out. Multiple solvent applications are usually needed — ink releases in stages, not all at once.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "20–60 minutes home triage; care-code-gated, no overwetting, refusal-biased",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "ink-ballpoint",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "ink",
+      "ballpoint",
+      "upholstery",
+      "care-code-gated",
+      "no-hairspray",
+      "no-overwetting",
+      "blot-extract-only",
+      "stop-if-spreading",
+      "refusal-biased"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Ballpoint ink on upholstery is concentrated dye plus oily resin binder plus glycol solvent. The resin grips the fabric fiber once dried. Upholstery adds two complications that make this much harder than the same stain on a garment: (1) you can't pull it off and submerge it — every step is in-place, with overwetting risking water rings, foam saturation, and backing damage, and (2) care code rules apply — W (water-safe) tolerates Dawn cleanup, S (solvent-only) does not, WS allows both, X is vacuum / brush only and pro from minute one. The hairspray myth applies just as on garments — modern hairspray polymer leaves a sticky residue that makes the stain worse. The right home tool is 91% isopropyl alcohol on a cloth, with rigid blot-and-extract discipline (no pouring, no scrubbing, never saturate). Refusal bias on upholstery is high — it's easy to make this worse, hard to make it cleaner.",
+  "whyThisWorks": "91% isopropyl alcohol on a cloth dissolves the resin and lifts dye onto the cloth. With rigid blot-and-extract discipline (cloth-only application, never pouring, replacing cloth as it picks up ink), the ink transfers OUT instead of spreading. Care-code-gated finish: W / WS allows Dawn damp-cloth clearing, S-only stays dry-buff. The honest cap: ballpoint ink on upholstery often leaves a faint shadow — pro is the right call past a single home pass on most dyed upholstery.",
+  "defaultAssumption": "Pen leak on couch / armchair / sofa cushion, care code unknown or W. Dyed / patterned / S-only / X-code / vintage / leather upholstery = pro from minute one. Removable washable cushion cover = take it off and treat as garment instead.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Care Code Triage",
+      "technique": "Care label gate before any chemistry",
+      "equipment": "Care label, good light",
+      "dwellTime": "3 minutes",
+      "instruction": "Find the care code (under cushion, attached tag, manufacturer tag). W or WS = home protocol candidate. S-only = solvent only, no Dawn rinse. X = vacuum only, pro. Leather, vintage, designer pieces, dry-clean-only = pro from minute one. Removable washable cover? Take it off — treat as garment, easier."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "No Hairspray Myth",
+      "technique": "Reject the wrong solvent",
+      "equipment": "Awareness",
+      "dwellTime": "—",
+      "instruction": "Don't reach for hairspray — modern formulas leave sticky polymer residue that makes the stain worse and harder for any pro to clean later. The right home tool is 91% isopropyl alcohol on a cloth."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Test for Alcohol",
+      "technique": "Bleed test on dyed / patterned upholstery",
+      "equipment": "91% IPA on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Inside seam / hidden area: dab 91% IPA, blot with white cloth. If color transfers, skip alcohol — pro from there. Patterned upholstery often bleeds — extra caution."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "91% IPA Cloth Tamp — Blot and Extract",
+      "technique": "Cloth-only application, never pour",
+      "equipment": "91% IPA on white cotton cloth, ventilation",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply 91% IPA to a clean white cloth — NEVER pour on upholstery. Tamp the spot from the top, blot, lift, rotate to a clean section, tamp again. Replace cloth as it picks up ink. Outside-in. STOP if the spot starts SPREADING outward — that means the upholstery dye is bleeding too. 2 passes for stubborn, then assess. Open windows; flammable, no flame."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Dawn Damp-Cloth (W / WS Only)",
+      "technique": "Clear solvent residue, code-gated",
+      "equipment": "Dawn + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "W or WS code: Dawn worked into a DAMP (not wet) cloth, press the spot 5 min, blot. Damp-cloth only — never pour. S-only code: skip — dry buff with a clean cloth instead. NEVER saturate the cushion (foam mildew risk inside)."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Towel Plus Fan-Dry",
+      "technique": "Extract + verify",
+      "equipment": "Paper towels + weight, fan",
+      "dwellTime": "Overnight",
+      "instruction": "Stack paper towels on the spot, weight overnight to extract residual moisture and ink. Fan-dry the room. Inspect dry — wet upholstery hides residual color that reappears once dry. NEVER hot extractor / steam — heat locks ink."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate to dissolve the resin binder. Blot dissolved ink onto clean cloth",
-      "2. Repeat amyl acetate, blotting between applications — work from back of fabric when possible",
-      "3. Apply NSD to remove remaining residue. Flush with cool water",
-      "4. If color remains: apply H2O2 6% carefully on colorfast fabrics — 5-10 min dwell time, monitor",
-      "5. Apply Acetic Acid 28% (diluted 1:10) to neutralize. Blot dry"
+      "1. Care code triage — W/WS only, S/X/unknown/leather/vintage = pro.",
+      "2. No hairspray.",
+      "3. Hidden-area IPA test on dyed / patterned upholstery.",
+      "4. 91% IPA cloth tamp, blot-and-extract, never pour. Stop if spreading.",
+      "5. Dawn damp-cloth (W/WS only), or dry buff (S-only). Never saturate.",
+      "6. Weighted towel + fan-dry overnight. NO hot extractor / steam."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "91% Isopropyl alcohol",
+      "Dawn / NSD (W/WS code only)",
+      "Paper towels + weight",
+      "Fan",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — hot extractor / steam locks ink",
     "warnings": [
-      "Never rub ink — it spreads the dye",
-      "Work from back of fabric to push stain out"
+      "S, X, unknown care code, leather, vintage = pro from minute one",
+      "NEVER hairspray — sticky polymer residue makes worse",
+      "NEVER pour solvent / water on upholstery — apply to cloth only",
+      "NEVER saturate the cushion — foam mildew inside",
+      "NEVER hot extractor / steam until cleared — locks ink",
+      "STOP if the spot is SPREADING — pro from there",
+      "Hidden-area test on patterned / dyed upholstery before alcohol",
+      "Flammable solvent — no flame",
+      "Always blot, never rub"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Upholstery Ink Is Refusal-Biased — Easy to Make Worse",
+      "instruction": "Ballpoint ink on a sofa or armchair is one of the harder home jobs because every step is in-place — you can't pull the cushion off and rinse it. The biggest risks are spreading the ink, oversaturating the cushion (foam mildew inside), and using the wrong product. If you can take a removable washable cushion cover OFF, do that — it becomes a garment problem, much easier. Otherwise, expect refusal-style: minimal home work, fast escalation if it spreads."
+    },
+    {
+      "step": 2,
+      "agent": "Find the Care Code Before Anything",
+      "instruction": "Look under a cushion or on a hidden tag. W or WS = water-safe, home protocol candidate. S = solvent only, skip the Dawn step. X = vacuum only, pro. Leather, vintage, designer, or dry-clean-only = pro from minute one. No tag = pro."
+    },
+    {
+      "step": 3,
+      "agent": "Don't Use Hairspray",
+      "instruction": "Older home advice says hairspray works on ballpoint ink. It doesn't anymore. Modern hairsprays are mostly polymer + fragrance; they leave a sticky residue that makes the stain worse AND harder for any pro to clean later. Use plain 91% isopropyl alcohol from the drugstore."
+    },
+    {
+      "step": 4,
+      "agent": "Hidden-Area Test First",
+      "instruction": "Dab a drop of 91% isopropyl alcohol on an inside seam or hidden area, blot with a white cloth. If color transfers, skip alcohol — pro from there. Patterned and dyed upholstery often bleeds; this test is non-negotiable."
+    },
+    {
+      "step": 5,
+      "agent": "Alcohol on a Cloth — Tamp, Don't Pour",
+      "instruction": "Apply 91% isopropyl alcohol to a clean white cloth — NEVER pour on the upholstery. Tamp the spot from the top, blot, lift, rotate to a clean section, tamp again. Replace cloth as it picks up ink. Outside-in. STOP if the spot starts SPREADING outward — that means the upholstery dye is bleeding too, and continuing makes it worse. 2 passes for stubborn, then stop and assess. Open windows — alcohol is flammable, no flame nearby."
+    },
+    {
+      "step": 6,
+      "agent": "Dawn Damp Cloth — Only on W or WS Code",
+      "instruction": "If the code is W or WS: Dawn worked into a DAMP (not wet) cloth, press the spot 5 minutes to clear alcohol residue. Damp-cloth only — never pour. If the code is S: skip — dry buff with a clean cloth instead. NEVER saturate the cushion at any step — wet foam grows mildew inside within days."
+    },
+    {
+      "step": 7,
+      "agent": "Weighted Paper Towels Overnight Plus Fan-Dry",
+      "instruction": "Stack paper towels on the spot, weight with a heavy book, leave overnight. Fan the room. The towels extract residual moisture and any remaining ink. Inspect dry. NEVER use hot extractor or steam at any step — heat locks ink permanently."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate Past One Pass",
+      "instruction": "Honest cap on upholstery ink: even a single careful home pass often leaves a faint shadow. If two passes haven't fully cleared it, escalate. Tell them: \"Ballpoint ink on [W / WS / S / X / unknown / leather] upholstery, age [fresh / hours / days], home-treated with [91% IPA cloth tamp + Dawn damp-cloth (W/WS) + weighted towel overnight]. No hairspray, no saturation, no hot extractor. [Residual shadow / spreading observed].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place a clean white cloth under the stain to catch transferred ink",
-      "2. Apply hydrogen peroxide 3% to the stain. Blot gently — do NOT rub",
-      "3. Blot dissolved ink onto the cloth. Move to clean area frequently",
-      "4. Apply Dawn dish soap and blot",
-      "5. Rinse with cold water. Air dry — no heat until stain is gone"
+      "1. Care code triage — W/WS only at home; S/X/unknown/leather/vintage = pro.",
+      "2. NO hairspray.",
+      "3. Hidden-area IPA test on dyed / patterned upholstery.",
+      "4. 91% IPA on cloth, blot-and-extract from top, never pour. Stop if spreading.",
+      "5. Dawn damp-cloth on W/WS only. NEVER saturate.",
+      "6. Weighted paper towels overnight + fan-dry. No hot extractor.",
+      "7. Escalate past 2 passes with residual shadow."
     ],
     "products": [
-      "hydrogen peroxide 3%",
-      "Dawn dish soap"
+      "91% Isopropyl alcohol",
+      "Dawn dish soap (W/WS code only)",
+      "Paper towels + weight",
+      "Fan",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop on S, X, unknown care code, leather, vintage, designer pieces — pro from minute one. STOP if spot is SPREADING during alcohol contact — pro from there. Stop on hot-extracted / steamed ink (often permanent). Stop after 2 passes with residual shadow.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "S, X, unknown, leather, vintage = pro",
+      "NEVER hairspray — sticky polymer residue worsens stain",
+      "NEVER pour — cloth-only application",
+      "NEVER saturate cushion — foam mildew inside",
+      "NEVER hot extractor / steam — locks ink",
+      "STOP if spreading — pro",
+      "Hidden test on patterned / dyed upholstery",
+      "Flammable solvent — no flame",
+      "Always blot, never rub"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never treat S / X / unknown / leather / vintage upholstery at home",
+      "Never use hairspray on ink — myth, sticky polymer residue",
+      "Never pour alcohol or water on upholstery",
+      "Never saturate the cushion — foam mildew inside",
+      "Never hot extractor or steam until cleared",
+      "Never continue if the spot is SPREADING",
+      "Never solvent near flame"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / WS code synthetic upholstery: tolerates 91% IPA cloth tamp + Dawn damp-cloth",
+      "S code: solvent only — skip Dawn, dry buff residue",
+      "X code: vacuum / brush only — pro",
+      "Leather upholstery: different protocol — pro",
+      "Wool / silk blend upholstery: pro",
+      "Vintage / designer / patterned upholstery: pro from minute one",
+      "Foam cushions: never saturate — mildew inside within days"
     ]
   },
+  "materialWarnings": [
+    "Care code gates everything",
+    "Hairspray is the wrong solvent — modern formulas worsen stain",
+    "Never saturate — foam mildew is a worse problem",
+    "Stop if spreading — refusal bias is correct",
+    "Honest cap: faint shadow often remains; pro past one careful pass"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is ink ballpoint on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "Care code S, X, unknown, leather, vintage, or designer. Spot is SPREADING during alcohol contact. Hot extractor / steam already used (often permanent). Patterned / dyed upholstery where hidden test shows bleed. 2 passes plateau with residual shadow. Cushion shows oversaturation / musty smell from prior cleaning attempts.",
+    "whatToTell": "\"Ballpoint ink on [W / WS / S / X / unknown / leather / vintage] upholstery, [synthetic / wool / silk / mixed], [removable cover / fixed], age [fresh / hours / days], home-treated with [91% IPA cloth tamp from top + Dawn damp-cloth (W/WS) + weighted towel overnight]. No hairspray, no saturation, no hot. [Residual shadow / spreading observed / oversaturation suspected].\"",
+    "specialistType": "professional upholstery cleaning service with solvent spotting capability for synthetic upholstery; specialty conservator for vintage / designer / leather / silk / wool"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Care code — W, WS, S, X, unknown?",
+      "Removable washable cover or fixed upholstery?",
+      "Synthetic, wool, silk, leather, blend?",
+      "Vintage, designer, or standard piece?",
+      "Fresh, hours old, or has hot extractor / steam been used?",
+      "Patterned or solid color?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Care code gate is everything on upholstery — wrong code + wrong chemistry = ruined upholstery. The hairspray myth is the most common home failure. Foam saturation is the silent failure mode (mildew inside within days). Refusal bias is correct because upholstery ink is hard to fully clear at home and easy to make worse. If a removable washable cover comes off, treat as garment — much easier. Honest cap: faint shadow often remains."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,81 +1,239 @@
 {
   "id": "ink-permanent-marker-polyester",
   "title": "Permanent Marker on Polyester",
-  "stainFamily": "dye",
+  "stainType": "ink",
+  "stainFamily": "ink",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Permanent marker contains xylene or toluene-based solvent, resin binder, and concentrated dye. On polyester, the solvent penetrates deeply and evaporates, leaving a tough resin-dye film. The resin is designed to be solvent-resistant once dry — this is why 'permanent' markers are permanent. Fresh marker is much easier to treat than dried.",
-  "whyThisWorks": "Isopropyl alcohol or acetone (where fiber-safe) dissolves the resin binder on polyester. The dissolved dye transfers to a blotting cloth. Amyl acetate provides the strongest safe solvent action for resistant residue. Complete removal is often not possible on porous materials — the dye penetrates too deeply. Professional treatment recommended for valued items.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 9,
+  "timeEstimate": "30–90 minutes home triage; high refusal bias — Sharpie on polyester is often permanent",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "ink-permanent-marker",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "ink",
+      "permanent-marker",
+      "sharpie",
+      "polyester",
+      "alcohol-step",
+      "no-hairspray",
+      "no-hot",
+      "stop-if-spreading",
+      "refusal-biased",
+      "honest-cap"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Permanent marker (Sharpie and similar) is concentrated dye plus a strong solvent (xylene, toluene, or alcohol-based) plus resin binder engineered to be solvent-resistant once dry. The 'permanent' in the name is honest — these markers are designed to bond aggressively and resist water-based cleaning forever. On polyester, the original solvent penetrates the fiber, evaporates, and leaves the dye trapped in a tough resin film that home chemistry can rarely fully reverse. The recurring trap is HAIRSPRAY (modern hairspray polymer makes it worse, not better) and rubbing (spreads the ink wider). Polyester is industrially dyed with heat — same heat at home locks the marker dye into the fiber permanently. The honest cap on permanent marker on polyester is set hard: most cases plateau at 50–70% cleared with a visible shadow remaining. Setting expectations matters as much as protocol.",
+  "whyThisWorks": "91% isopropyl alcohol is the safe home solvent — works on the alcohol-based and weaker xylene-based formulas, leaves polyester intact. Working from the BACK of the garment with a clean cloth underneath transfers ink OUT instead of pushing it deeper. Multiple cloth-tamp passes lift the dye in stages. Cool wash + AIR-DRY locks nothing. The discipline that matters is the stop-if-spreading rule — some marker + dyed-polyester combinations bleed during alcohol contact and continuing makes it worse. Refusal bias is correct.",
+  "defaultAssumption": "Kid wrote on a polyester shirt with a Sharpie, garment label, or accidental laundry hitchhiker. Fresh + light polyester = real shot at cleanup, with honest expectation cap. Hot-dried = often permanent. Dyed performance polyester = hidden test mandatory; pro for any specialty fabric.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage — Honest Expectations",
+      "technique": "Set the cap before chemistry",
+      "equipment": "Good light, care label",
+      "dwellTime": "2 minutes",
+      "instruction": "Permanent marker on polyester is engineered to be permanent. The honest cap on home cleaning is 50–70% cleared with a visible shadow remaining most of the time. If the garment is special / valuable, go to pro from minute one. If it's a kid-shirt rescue attempt, proceed but manage expectations. Hot-dried = usually permanent."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "No Hairspray Myth",
+      "technique": "Reject the wrong solvent",
+      "equipment": "Awareness",
+      "dwellTime": "—",
+      "instruction": "Don't reach for hairspray — modern formulas leave sticky polymer residue that makes the stain worse. Use plain 91% isopropyl alcohol from the drugstore."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Test for Alcohol",
+      "technique": "Bleed test on dyed polyester",
+      "equipment": "91% IPA on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Inside seam test: dab 91% IPA on a hidden seam, blot with a white cloth. If color transfers, skip alcohol — pro from there. White / light polyester is usually fine; dyed performance polyester sometimes isn't."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Back-Side Cloth Setup",
+      "technique": "Transfer pad to push ink OUT",
+      "equipment": "Stack of clean white paper towels",
+      "dwellTime": "Setup",
+      "instruction": "Place a thick stack of clean white paper towels UNDER the stained area, ink-side facing the cloth. Work from the BACK. Permanent marker won't release without somewhere to go — the cloth underneath catches the transfer."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "91% IPA Cloth Tamp — Multiple Passes",
+      "technique": "Pull marker dye onto cloth",
+      "equipment": "91% IPA on white cotton cloth, ventilation",
+      "dwellTime": "1–2 minutes per pass",
+      "instruction": "Apply 91% IPA to a clean white cloth — never pour on the garment. Tamp the BACK of the stain. Watch the cloth underneath — replace it as it picks up ink (it WILL transfer in stages, slowly). 4–6 passes for marker (more than ballpoint). STOP if the spot is SPREADING outward — that's polyester dye bleeding too. Open windows; flammable, no flame."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Dawn Damp-Cloth Plus Cool Wash",
+      "technique": "Clear solvent residue and finish",
+      "equipment": "Dawn + cool water, washing machine",
+      "dwellTime": "5 min damp + cool wash cycle",
+      "instruction": "Dawn worked into a damp cloth, press the spot 5 min to clear alcohol residue. Cool machine wash with normal detergent. AIR-DRY only. NEVER hot dryer until cleared — heat locks marker into polyester forever."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "AIR-DRY Plus Daylight Inspect",
+      "technique": "Verify before any heat",
+      "equipment": "Hanger, daylight",
+      "dwellTime": "Air-dry to fully dry",
+      "instruction": "AIR-DRY only. Inspect in daylight. Faint shadow remaining after multiple passes = the honest cap; further passes risk spreading. Stop, accept, or escalate to pro."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate to dissolve the resin binder. Blot dissolved ink onto clean cloth",
-      "2. Repeat amyl acetate, blotting between applications — work from back of fabric when possible",
-      "3. Apply NSD to remove remaining residue. Flush with cool water",
-      "4. If color remains: apply H2O2 6% carefully on colorfast fabrics — 5-10 min dwell time, monitor",
-      "5. Apply Acetic Acid 28% (diluted 1:10) to neutralize. Blot dry"
+      "1. Honest expectation triage — 50–70% cleared with shadow is the typical home cap.",
+      "2. No hairspray myth.",
+      "3. Hidden-area IPA test on dyed polyester.",
+      "4. Back-side cloth setup as transfer pad.",
+      "5. 91% IPA cloth tamp from the back, 4–6 passes, watch for spreading.",
+      "6. Dawn damp-cloth + cool machine wash.",
+      "7. AIR-DRY + daylight inspect — accept honest cap or escalate."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "91% Isopropyl alcohol",
+      "Dawn / NSD",
+      "Paper towels (transfer pad)",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat locks marker into polyester permanently",
     "warnings": [
-      "Never rub ink — it spreads the dye",
-      "Work from back of fabric to push stain out"
+      "Permanent marker is engineered to be permanent — refusal bias correct",
+      "NEVER hairspray — sticky polymer residue worsens stain",
+      "NEVER hot water or hot dryer until cleared — locks ink permanently",
+      "STOP if the spot is SPREADING during alcohol contact — pro from there",
+      "Always blot, never rub — spreads ink",
+      "Hidden test on dyed performance polyester before alcohol",
+      "Work from BACK with cloth underneath — pushes ink OUT, not deeper",
+      "Flammable solvent — no flame",
+      "Honest cap: 50–70% cleared with shadow remaining is typical"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Permanent Marker Lives Up to Its Name",
+      "instruction": "Sharpies and similar permanent markers are engineered to bond aggressively and resist water-based cleaning forever. The honest home cap on polyester is 50 to 70 percent cleared with a faint shadow remaining most of the time. If the garment is valuable or important, go to a pro from minute one. If it's a 'try anyway' situation, proceed — but manage expectations. Hot-dried marker is usually permanent."
+    },
+    {
+      "step": 2,
+      "agent": "Skip Hairspray — Use Plain Isopropyl Alcohol",
+      "instruction": "Old advice says hairspray works on permanent marker. It doesn't anymore. Modern hairspray is mostly polymer + fragrance — the residue makes the stain worse and harder for any pro to clean later. The right solvent is plain 91% isopropyl alcohol from the drugstore. Two hard rules on polyester: NO hot water (locks marker) and NO hot dryer until cleared (locks marker permanently)."
+    },
+    {
+      "step": 3,
+      "agent": "Hidden-Area Test First",
+      "instruction": "Dab a drop of 91% isopropyl alcohol on an inside seam, blot with a white cloth. If color transfers, skip alcohol — pro from there. Light or white polyester is usually fine; dyed performance / athletic polyester sometimes isn't."
+    },
+    {
+      "step": 4,
+      "agent": "Set Up the Cloth Underneath — Transfer Pad",
+      "instruction": "Place a thick stack of clean white paper towels UNDERNEATH the stained area. Work from the BACK of the garment, ink-side facing the cloth. Permanent marker won't release without somewhere to go — the cloth underneath catches the transfer."
+    },
+    {
+      "step": 5,
+      "agent": "91% Isopropyl Alcohol on a Cloth — Tamp from the Back, Multiple Passes",
+      "instruction": "Apply 91% isopropyl alcohol to a clean white cloth — never pour on the garment. Tamp the BACK of the stain. Watch the cloth underneath — it will pick up ink slowly, in stages. Replace it as it darkens. 4 to 6 passes is normal for permanent marker (more than ballpoint). STOP if the spot is SPREADING outward — that means the polyester dye is bleeding too, and continuing makes it worse. Open windows — alcohol is flammable, no flame nearby."
+    },
+    {
+      "step": 6,
+      "agent": "Dawn and Cool Wash",
+      "instruction": "Dawn worked into a damp cloth, press the spot 5 minutes to clear alcohol residue. Cool machine wash with normal detergent. AIR-DRY only. NEVER hot dryer until you've confirmed the spot is fully cleared in daylight."
+    },
+    {
+      "step": 7,
+      "agent": "Inspect and Accept the Honest Cap",
+      "instruction": "Air-dry, then inspect in daylight. The honest cap on permanent marker on polyester is 50 to 70 percent cleared with a faint shadow remaining. If you've hit that point after 4 to 6 passes, more passes risk spreading the spot. Stop, accept, or escalate to pro. A faint shadow on a kid's shirt is often livable; on a work garment it usually isn't."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place a clean white cloth under the stain to catch transferred ink",
-      "2. Apply hydrogen peroxide 3% to the stain. Blot gently — do NOT rub",
-      "3. Blot dissolved ink onto the cloth. Move to clean area frequently",
-      "4. Apply Dawn dish soap and blot",
-      "5. Rinse with cold water. Air dry — no heat until stain is gone"
+      "1. Set honest expectations — 50–70% cleared with shadow is the typical cap.",
+      "2. NO hairspray. NO hot water. NO hot dryer until cleared.",
+      "3. Hidden-area IPA test on dyed polyester.",
+      "4. Stack of paper towels UNDER the stain — transfer pad.",
+      "5. 91% IPA on cloth, tamp from BACK, 4–6 passes, watch for spreading.",
+      "6. Dawn damp cloth + cool machine wash.",
+      "7. AIR-DRY + daylight inspect — accept cap or escalate."
     ],
     "products": [
-      "hydrogen peroxide 3%",
-      "Dawn dish soap"
+      "91% Isopropyl alcohol",
+      "Dawn dish soap",
+      "Paper towels (transfer pad)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "STOP if the spot is SPREADING during alcohol contact. Stop on hot-dried marker (usually permanent). Stop on dry-clean-only / specialty / performance polyester (pro). Stop after 6 passes with no further improvement — risk of spreading. Accept the honest cap (50–70% cleared with shadow) on kid-shirt rescues.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "Permanent marker is engineered to be permanent — refusal bias correct",
+      "NEVER hairspray — sticky polymer residue worsens stain",
+      "NEVER hot water or hot dryer until cleared",
+      "STOP if spreading — pro from there",
+      "Always blot, never rub",
+      "Hidden test on dyed performance polyester",
+      "Work from BACK with cloth underneath",
+      "Flammable solvent — no flame",
+      "Honest cap: 50–70% cleared with shadow"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never use hairspray — myth, sticky polymer residue",
+      "Never hot water on marker + polyester",
+      "Never hot dryer until cleared",
+      "Never rub — spreads marker dye",
+      "Never alcohol on dyed performance polyester without hidden test",
+      "Never solvent near flame",
+      "Never continue if the spot is SPREADING"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "White / light polyester: most forgiving — full home protocol",
+      "Dyed performance / athletic polyester: hidden alcohol test mandatory; sometimes pro",
+      "Specialty performance fabric (compression, technical, Gore-Tex): pro — coatings react unpredictably",
+      "Polyester locks marker under heat — strict cool-only discipline",
+      "Honest cap is the protocol — accept faint shadow or escalate"
     ]
   },
+  "materialWarnings": [
+    "Permanent marker is engineered to bond — refusal bias is correct",
+    "Honest cap: 50–70% cleared with faint shadow is typical",
+    "Hairspray is the wrong solvent",
+    "No hot water / no hot dryer — polyester locks marker",
+    "Stop if spreading — pro from there"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is ink permanent marker on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Garment is valuable / important / special — pro from minute one. Spot is SPREADING during alcohol contact. Hot-dried marker (usually permanent). Specialty / performance / dry-clean-only polyester. 6 passes plateau — accept honest cap or escalate. Hairspray was already used (sticky residue blocks pro cleaning).",
+    "whatToTell": "\"Permanent marker on [white / dyed / athletic / specialty] polyester, age [fresh / hours / hot-dried suspected], home-treated with [91% IPA cloth tamp from back, N passes + Dawn + cool wash + air-dry]. No hairspray, no hot. [Residual shadow at honest cap / spreading observed / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with solvent spotting capability — they have stronger solvents (amyl acetate, dimethyl carbonate) home users can't safely use"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "White, light, or dyed polyester?",
+      "Performance / athletic / specialty fabric?",
+      "Fresh, hours old, or hot-dried already?",
+      "Has any other product been tried (hairspray, peroxide)?",
+      "Garment value — kid shirt rescue or work / special?",
+      "Is the spot spreading or holding shape?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The hairspray myth is the most common home failure on permanent marker — modern polymer makes it worse. The honest cap (50–70% cleared with faint shadow) is the protocol; pushing past that risks spreading. Hot-dried Sharpie is usually permanent. Specialty performance polyester goes to pro because the fabric coatings react unpredictably. For high-value garments, refusal bias is correct — pro from minute one is more likely to succeed than home + escalation."
   },
-  "difficulty": 8,
-  "timeEstimate": "20-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

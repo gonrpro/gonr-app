@@ -1,80 +1,189 @@
 {
   "id": "grease-denim",
   "title": "Grease on Denim",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "denim",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Oil/Grease (lipid-based). Grease stains are hydrophobic triglycerides and fatty acids that resist water-based cleaning. They penetrate fiber interstices through capillary action and adhere through van der Waals forces. Polymerization occurs with heat (oxidative cross-linking), making stains permanent if heat-set. On denim (cellulose fiber): tolerates most chemicals well. Treatment: dry-side solvent (POG) to dissolve lipid phase, followed by surfactant emulsification to remove residual oil.",
-  "whyThisWorks": "Cooking grease is a thick oil that coats surfaces and resists water — water alone won't break it down. Denim is thick and tightly woven so the grease sits near the surface longer before soaking through. NSD or a degreaser breaks down the oil so it becomes water-soluble and can be rinsed away.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–45 minutes; powder preload + Dawn, ring-risk on dark denim",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "grease",
+    "surfaceCanonical": "denim",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "oil",
+      "grease",
+      "denim",
+      "powder-preload",
+      "indigo-loss-risk",
+      "no-hot-water",
+      "ring-risk",
+      "no-chlorine-bleach"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Grease is heavy oil — cooking grease, butter, animal fat, or mechanic / petroleum grease. The oil sits on the fiber and resists water because oil and water don't mix. Hot water plus heat at any step turns soft oil into a harder, polymerized residue that locks into denim permanently. Denim adds two complications: indigo dye sits on the surface of the fiber, so any aggressive oxidizer (chlorine bleach, concentrated peroxide) strips color along with the stain, and aggressive scrubbing on dark denim leaves a halo ring around the spot. Mechanic / petroleum grease is heavier and more tenacious than cooking grease — it usually needs a citrus-solvent step (Goo Gone) home users skip.",
+  "whyThisWorks": "Cornstarch or baking soda preload pulls bulk oil up before any moisture is added. Dawn (engineered for cooking grease) emulsifies remaining oil. For petroleum / mechanic grease, Goo Gone on a cloth dissolves what Dawn can't reach. Cool wash plus air-dry prevents heat from polymerizing residual oil into the denim. Indigo stays intact because no chlorine bleach is involved. The honest cap on denim: deep-set old grease and hot-dried grease often plateau and leave a permanent shadow.",
+  "defaultAssumption": "Cooking-grease splash from kitchen / takeout / pizza on jeans, fresh and not yet hot-dried. Mechanic / petroleum grease = same protocol but Goo Gone step is mandatory. Raw / selvage denim = pro from minute one (any moisture causes uneven fading). Hot-dried grease = often permanent shadow; manage expectations.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Powder Preload",
+      "technique": "Pull bulk oil out before water",
+      "equipment": "Cornstarch / baking soda",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Cover the grease spot with cornstarch or baking soda. Press gently into the spot. 20–30 min. Soft-brush off. Most surface oil comes off this way without water — water before powder spreads the stain into a wider ring on denim."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn — Generous, Cool, 10 Minutes",
+      "technique": "Emulsify remaining oil",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 10 min. Always blot, never rub — denim halos under aggressive scrubbing. Cool damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Goo Gone Cloth Tamp for Petroleum Grease",
+      "technique": "Citrus solvent for heavy / mechanic grease",
+      "equipment": "Goo Gone on white cloth, ventilation",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Petroleum / mechanic grease only. Apply Goo Gone to a clean white cloth — never pour on denim. Tamp the spot from the top. Hidden-seam test on dark / raw denim first. Open windows; flammable, no flame."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Wash Plus AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Full cool cycle plus AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY. Inspect dry — wet denim hides residual oil that reappears once dry. NEVER hot dryer until fully clear — heat polymerizes residual oil into denim permanently."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG directly to the oil stain. POG is a volatile dry solvent with strong affinity for lipids — it dissolves oil droplets on contact. Tamp gently and blot with absorbent cloth.",
-      "2. If POG plateaus, apply amyl acetate for stronger solvent action. Amyl acetate is especially effective on older or polymerized oil stains. Blot with clean absorbent cloth between applications. Never use on acetate fabrics.",
-      "3. Apply NSD to emulsify any remaining oil micro-droplets and remove solvent residue. Rinse thoroughly with cool water.",
-      "4. Apply diluted acetic acid (1:10) to restore fiber to its natural state. Blot dry and allow to air dry."
+      "1. Cornstarch / baking soda preload 20–30 min. Soft-brush off.",
+      "2. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "3. Goo Gone cloth tamp for petroleum / mechanic grease, hidden-seam test on dark denim.",
+      "4. Cool machine wash + AIR-DRY. Inspect dry before any heat."
     ],
     "products": [
-      "POG (POG remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "Dawn / NSD",
+      "Goo Gone / citrus solvent (petroleum grease only)",
+      "Cool water"
     ],
-    "temperature": "warm for rinsing — warm water helps emulsify residual oil; cold during solvent phase",
+    "temperature": "cool throughout — heat polymerizes oil into denim permanently",
     "warnings": [
-      "Rubbing instead of blotting — spreads the stain",
-      "Not testing in an inconspicuous area first",
-      "Using too aggressive a chemical without checking surface compatibility"
+      "NEVER hot water — polymerizes oil into denim",
+      "NEVER hot dryer until stain is fully clear",
+      "NEVER chlorine bleach on denim — strips indigo unevenly",
+      "Always blot, never rub — denim rings under scrubbing",
+      "Hidden-seam test before Goo Gone on dark / raw denim",
+      "Powder preload BEFORE water — water-first spreads oil into a ring",
+      "Flammable solvent — no flame"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Powder First, Water Second — Don't Skip the Order",
+      "instruction": "Grease on denim is a tractable home stain IF you do the powder step first. Cornstarch or baking soda pulls bulk oil up before any water touches it. If you wet the denim first, the oil spreads into a wider ring that's much harder to clean. Two hard rules: NO hot water (polymerizes oil into denim permanently) and NO chlorine bleach (strips indigo unevenly, leaves a halo)."
+    },
+    {
+      "step": 2,
+      "agent": "Cornstarch or Baking Soda — 20 to 30 Minutes",
+      "instruction": "Cover the grease spot with cornstarch, baking soda, or plain baby powder. Press gently into the spot. 20 to 30 minutes. Soft-brush off. Most surface oil comes off this way without water. Repeat with fresh powder if the first round saturates."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "instruction": "Apply a generous amount of Dawn dish soap directly on the spot. Work in with a soft toothbrush for 10 minutes — Dawn is engineered for cooking grease. Always blot, never rub — rubbing causes a halo on dark denim. Cool damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "agent": "Goo Gone for Petroleum or Mechanic Grease",
+      "instruction": "If the grease is from a car, bike chain, or mechanical work — heavier than cooking grease — Dawn alone will plateau. Apply Goo Gone (citrus solvent) to a clean white cloth, tamp the spot from the top. Never pour on the denim. Hidden-seam test on dark or raw denim first — Goo Gone can stress dye on some indigo. Open windows; flammable, no flame nearby."
+    },
+    {
+      "step": 5,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry — wet denim hides residual oil that reappears once it's fully dry. NEVER hot dryer until the spot is fully clear. Heat at any step polymerizes the remaining oil into the denim permanently and leaves a darker shadow."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain. Wait 5 minutes.",
-      "2. Brush off the powder with a clean white cloth.",
-      "3. Put a drop of Dawn dish soap on the stain. Blot it in.",
-      "4. Let it sit for 2–3 minutes. Rinse with cold water.",
-      "5. Repeat if needed. Air dry — don't use a dryer until the stain is gone."
+      "1. NO hot water. NO chlorine bleach.",
+      "2. Cornstarch / baking soda preload 20–30 min. Brush off softly.",
+      "3. Generous Dawn pretreat, cool, 10 min, soft toothbrush. Blot, don't rub.",
+      "4. Goo Gone cloth tamp for petroleum / mechanic grease, hidden-seam test on dark denim.",
+      "5. Cool machine wash + AIR-DRY. Inspect dry before any heat."
     ],
     "products": [
-      "Dawn NSD",
-      "baking soda or cornstarch"
+      "Cornstarch / baking soda",
+      "Dawn dish soap (generous)",
+      "Goo Gone / citrus solvent (petroleum grease)",
+      "Cool water"
     ],
-    "whenToStop": "Try a dry cleaning solvent (Carbona Stain Devil #5 or Goo Gone) — apply and let it soak for 30–60 minutes. If the stain survives two rounds, a professional cleaner can use concentrated agents.",
+    "whenToStop": "Stop if hot water or hot dryer was already used (often permanent shadow). Stop on raw / selvage denim from minute one. Stop on dark denim if hidden test shows indigo loss before Goo Gone. Stop after 2 home rounds without progress.",
     "warnings": [
-      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
-      "Never add water to an oil stain first — water and oil don't mix, and you'll spread it.",
-      "Avoid heat until the stain is completely gone."
+      "NEVER hot water — polymerizes oil",
+      "NEVER hot dryer until stain clear",
+      "NEVER chlorine bleach — strips indigo unevenly",
+      "Powder BEFORE water — water-first spreads oil into a ring",
+      "Always blot, never rub — denim halos",
+      "Hidden-seam test before Goo Gone on dark / raw denim",
+      "Goo Gone flammable — no flame"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Apply heat before the oil is removed — polymerizes the grease permanently into the fiber",
-      "Add water to a fresh oil stain first — spreads it before any treatment can work"
+      "Never hot water on grease + denim",
+      "Never hot dryer on residual grease",
+      "Never chlorine bleach on denim",
+      "Never rub denim during cleaning — causes ring",
+      "Never water-first on grease — spreads stain",
+      "Never solvent near flame"
     ],
     "fiberSensitivities": [
-      "On denim: test all agents in an inconspicuous area first. Monitor for color change, surface dulling, or texture damage during treatment."
+      "Indigo / dark denim: hidden-seam test before Goo Gone",
+      "Raw / selvage denim: pro from minute one — moisture causes uneven fading",
+      "Light-wash denim: most forgiving — full home protocol applicable",
+      "Stretch denim with elastane: cool only — Goo Gone can stress elastane",
+      "Black overdyed denim: pro — color-loss risk on solvent + scrubbing"
     ]
   },
+  "materialWarnings": [
+    "Powder preload is the unlock — never water-first",
+    "Heat polymerizes oil into denim permanently",
+    "No chlorine bleach on denim — strips indigo",
+    "Always blot, never rub — denim halos under scrubbing",
+    "Raw / selvage denim = pro from minute one"
+  ],
   "escalation": {
-    "when": "Grease stain remains after POG and amyl acetate treatment — likely old or polymerized",
-    "whatToTell": "Cooking grease stain on denim, oil-based. Treated at home with NSD. Please use professional dry-side solvent protocol.",
-    "specialistType": "dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent shadow). Raw / selvage / black-overdyed denim. Hidden-seam test shows indigo loss before Goo Gone. Petroleum / mechanic grease that didn't respond to Goo Gone after 2 passes. Halo ring already forming. Old set grease through multiple wash cycles.",
+    "whatToTell": "\"Grease on [light-wash / dark / indigo / raw / selvage] denim, type [cooking / butter / petroleum / mechanic], age [fresh / days / hot-dried suspected], home-treated with [cornstarch preload + Dawn cool + Goo Gone + cool wash + air-dry]. No hot, no chlorine. [Residual shadow / halo ring / indigo loss / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with denim experience plus dry-side solvent capability for petroleum grease"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the stain fresh or has it been sitting and drying?",
-      "Has the denim been through the dryer with the stain present?",
-      "What type of grease — cooking oil, butter, animal fat, mechanic grease?",
-      "Is the denim dark (indigo) or light washed?"
+      "Cooking grease, butter, animal fat, or petroleum / mechanic grease?",
+      "Light-wash, dark indigo, raw / selvage, or black-overdyed denim?",
+      "Fresh, days old, or hot-dried already?",
+      "Has chlorine bleach been used yet?",
+      "Stretch denim with elastane?"
     ],
-    "modifierNotes": "Dryer exposure polymerizes the oil and makes removal much harder. Mechanic or petroleum grease is heavier and more tenacious than cooking oil. Dark denim: test all solvents on a hidden seam first."
+    "modifierNotes": "Powder preload is the unlock — never water-first on oil + denim. Petroleum / mechanic grease needs the Goo Gone step that home users often skip. Indigo dye loss is the recurring trap; hidden-seam test before any solvent. Raw / selvage denim is pro from minute one because any moisture causes uneven fading. Hot-dried grease leaves a permanent shadow most of the time; manage expectations."
   },
-  "difficulty": 2,
-  "timeEstimate": "15–25 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

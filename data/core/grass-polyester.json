@@ -1,123 +1,221 @@
 {
   "id": "grass-polyester",
   "title": "Grass on Polyester",
-  "stainFamily": "protein",
+  "stainType": "tannin",
+  "stainFamily": "tannin",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Grass stains contain chlorophyll (green pigment), proteins, and cellulose fibers. The green color comes from chlorophyll's porphyrin ring, which bonds to polyester through a combination of protein adhesion and pigment staining. The protein component sets with heat. The chlorophyll pigment is soluble in alcohol and responds to oxidizers.",
-  "whyThisWorks": "Treatment addresses both components: enzyme or surfactant breaks down the protein matrix on polyester, then an oxidizer or alcohol-based solvent targets the chlorophyll pigment. Cold water prevents the protein from setting. The pigment requires a secondary treatment after the protein is addressed.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–40 minutes; chlorophyll plus protein, polyester locks both under heat",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "grass",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "grass",
+      "tannin",
+      "chlorophyll",
+      "polyester",
+      "no-hot-water",
+      "no-hot-dryer",
+      "alcohol-step",
+      "athletic-wear-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Grass on polyester is two stains stuck together: green chlorophyll pigment plus plant protein. Polyester is heat-sensitive — hot water sets the protein and locks the green into the fiber permanently, plus polyester yellows over time when heat is applied to oily / pigmented residue. Polyester is also OLEOPHILIC, meaning it grabs the waxy plant lipids in grass and holds them tight. Athletic-wear polyester adds a complication: fabric softener residue from prior washes coats the fiber and blocks any cleaner from reaching the stain. The recurring trap is reaching for hot water on what looks like a 'simple' green stain — that's exactly what makes it permanent.",
+  "whyThisWorks": "Cool water plus Dawn handles the protein side without setting it. Isopropyl alcohol on a cloth pulls out the chlorophyll — you can literally see the green transfer onto the cloth. Cool oxygen-bleach soak breaks down residual color. AIR-DRY is the close-out — hot dryer at any prior step locks residual chlorophyll into polyester forever and yellows the fabric. The honest cap: hot-dried grass on polyester or aged stains often plateau; pro is the right call.",
+  "defaultAssumption": "Kid soccer / yard work / athletic gear on polyester or polyester-blend. Fresh = high-confidence DIY. Hot-dried = often permanent. Athletic wear with prior fabric softener buildup = strip the softener first or expect plateau.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet-minimal",
+      "agent": "Cool Water Blot",
+      "technique": "Cold rinse, no hot",
+      "equipment": "Cool water, white cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Damp white cloth with COOL water. Press, lift, rotate. Cool only — heat sets protein and locks chlorophyll on polyester."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Cut the Protein",
+      "technique": "Generous cool Dawn pass",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush, work 5–10 min. Polyester is oleophilic — extended dwell needed for the waxy lipids in grass. Cool rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Test for Alcohol",
+      "technique": "Bleed test on dyed polyester",
+      "equipment": "91% IPA on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Hidden test: dab 91% IPA on an inside seam, blot with white cloth. If color transfers, skip alcohol. Light or white polyester is usually fine; deeply dyed performance polyester sometimes isn't."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Isopropyl Alcohol Cloth Tamp",
+      "technique": "Pull chlorophyll onto cloth",
+      "equipment": "91% IPA on white cotton cloth, ventilation",
+      "dwellTime": "2–3 minutes per pass",
+      "instruction": "Apply 91% IPA to a clean white cloth — never pour on the garment. Press the green spot, flip cloth as it picks up green. Outside-in. 2–3 passes. Open windows; flammable, no flame."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "OxiClean Cool Soak Plus Cool Wash",
+      "technique": "Full-garment finish, no heat",
+      "equipment": "OxiClean per label, COOL water, washing machine",
+      "dwellTime": "30 min soak + cool cycle",
+      "instruction": "OxiClean cool soak 30 min. Cool machine wash with normal detergent. NO fabric softener (coats fiber, blocks future cleaning). NEVER hot water — sets stain on polyester permanently."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "AIR-DRY Plus Daylight Inspect",
+      "technique": "No dryer until clear",
+      "equipment": "Hanger, fan, daylight",
+      "dwellTime": "Air-dry to fully dry",
+      "instruction": "AIR-DRY only. Inspect in daylight. Faint green = repeat alcohol pass. NEVER hot dryer until clear — heat locks chlorophyll into polyester permanently and yellows fabric over time."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Cool damp-cloth blot.",
+      "2. Generous Dawn pretreat, cool, 5–10 min, soft toothbrush.",
+      "3. Hidden-area IPA test on dyed polyester.",
+      "4. 91% IPA cloth tamp for chlorophyll, outside-in, 2–3 passes.",
+      "5. OxiClean cool soak 30 min plus cool machine wash.",
+      "6. AIR-DRY plus daylight inspect — never heat until clear."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "91% Isopropyl alcohol (hidden test on dyed polyester)",
+      "OxiClean / oxygen bleach",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets protein and locks chlorophyll on polyester",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "NEVER hot water — sets protein, locks chlorophyll into polyester",
+      "NEVER hot dryer until clear — locks chlorophyll, yellows polyester",
+      "NEVER chlorine bleach on polyester — damages fiber",
+      "NEVER fabric softener on athletic wear — coats fiber, blocks cleaning",
+      "Hidden test on dyed polyester before alcohol",
+      "Polyester is oleophilic — Dawn pretreat is the unlock",
+      "Flammable solvent — no flame near alcohol"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Two parts to fight: protein + chlorophyll",
-      "instruction": "Grass stain is the green pigment (chlorophyll) PLUS the plant protein it's bound to. Each needs different chemistry: Dawn + cold water handles the protein, rubbing alcohol handles the chlorophyll. Doing only one half is why half-treated grass stains come back green after the first wash."
+      "agent": "Two Stains Stuck Together — Pigment Plus Protein",
+      "instruction": "Grass is the green pigment plus plant protein. Each part needs different treatment: cool Dawn handles the protein, rubbing alcohol pulls out the chlorophyll. Doing only one half is why grass stains come back after the wash. Two hard rules on polyester: NO hot water (locks the green) and NO hot dryer until cleared (locks chlorophyll permanently and yellows the fabric)."
     },
     {
       "step": 2,
-      "agent": "Polyester + protein rules",
-      "instruction": "Polyester is heat-sensitive — cold water only (hot water shrinks/melts polyester AND sets plant protein). No tumble-dry, no iron until stain is fully gone — heat fuses chlorophyll into polyester at low dryer temps. On workout polyester specifically, skip fabric softener — it coats the fiber and blocks your enzyme step."
+      "agent": "Cool Damp-Cloth Blot",
+      "instruction": "Damp white cloth with COOL water. Press, lift, rotate. Cool only. Polyester punishes any heat at any step."
     },
     {
       "step": 3,
-      "agent": "Patch test on a hidden seam",
-      "instruction": "Dab a drop of isopropyl alcohol 91% on an inside seam and blot with a white cloth. If no dye transfers, you can use alcohol safely in step 5. If the seam loses color, skip alcohol and go step 4 → 6 only (alcohol is the heavy lifter for grass — without it, expect partial removal)."
+      "agent": "Dawn Pretreat — Polyester Loves Oil",
+      "instruction": "Polyester is oleophilic — it grabs the waxy plant lipids in grass tight. Apply a generous amount of Dawn directly to the spot. Work in with a soft toothbrush for 5 to 10 minutes. Cool rinse. Athletic-wear polyester sometimes has fabric softener buildup that blocks cleaning — if past treatments plateau on the same spot, that's the cause."
     },
     {
       "step": 4,
-      "agent": "Dawn dish soap — protein first",
-      "instruction": "Apply a small drop of Dawn directly on the stain. Work it in with a fingertip for 30 seconds. Let sit 5 minutes, then blot with a clean damp cloth. Dawn emulsifies the plant fats and loosens the protein matrix so the alcohol in step 5 can reach the chlorophyll underneath."
+      "agent": "Hidden-Area Test on Dyed Polyester",
+      "instruction": "Before alcohol on dyed performance polyester: dab a drop of 91% isopropyl alcohol on an inside seam, blot with a white cloth. If color transfers, skip alcohol. Light or white polyester is usually fine; deeply dyed athletic wear sometimes loses color."
     },
     {
       "step": 5,
-      "agent": "Isopropyl alcohol — the chlorophyll killer",
-      "instruction": "This is THE step for grass stains. Dab 91% isopropyl alcohol on a clean white cloth or Q-tip and press onto the green stain. Work from outside edges in. Replace the cloth as it picks up green — chlorophyll is alcohol-soluble, so you'll literally see the green transfer to the cloth. Keep going until no more green comes up. 2–3 minutes of patient dabbing does more than an hour of scrubbing with anything else.",
-      "safetyNote": "Never use alcohol on silk, rayon, wool, or acetate. Polyester and cotton tolerate it fine. Keep away from open flame — alcohol is flammable. Ventilate the room."
+      "agent": "Isopropyl Alcohol on a Cloth — Pulls the Green Out",
+      "instruction": "This is the chlorophyll step. Apply 91% isopropyl alcohol to a clean white cloth — never pour on the garment. Press the green spot. Flip the cloth as it picks up green. Outside-in. You'll see the chlorophyll transfer onto the cloth. 2 to 3 passes. Open windows — alcohol is flammable, no flame."
     },
     {
       "step": 6,
-      "agent": "Enzyme pretreat + cold wash",
-      "instruction": "Apply an enzyme stain remover (OxiClean Versatile, Biz, or Zout) per label and let dwell 20–30 minutes. Then launder on cold with your normal detergent. Enzymes digest any remaining plant protein. Skip fabric softener this wash — it can trap residual chlorophyll."
+      "agent": "OxiClean Cool Soak Plus Cool Wash — No Softener",
+      "instruction": "OxiClean per label in COOL water, soak 30 minutes. Then cool machine wash with normal detergent. SKIP fabric softener this wash — it coats the fiber and blocks any future cleaning. NEVER hot water at any step."
     },
     {
       "step": 7,
-      "agent": "Air dry + daylight inspect",
-      "instruction": "Hang or lay flat to air-dry. Inspect in daylight before going anywhere near the dryer. If any green trace remains — even faint — repeat steps 5–6. Only put it in the dryer once the stain is invisible in natural light. Heat on residual chlorophyll sets it permanently on polyester."
-    },
-    {
-      "step": 8,
-      "agent": "Escalate to a dry cleaner",
-      "instruction": "If the stain was already through a hot dryer, sat for more than a week, or survived two home rounds, take it in. Tell them: \"Grass on polyester, age [fresh/days/heat-set], treated with Dawn + isopropyl alcohol + enzyme. No hot water used at home.\" Pros use commercial chlorophyll solvents + protein digestants that outperform home alcohol."
+      "agent": "AIR-DRY and Inspect in Daylight",
+      "instruction": "Hang to AIR-DRY. Inspect in daylight before the dryer. Faint green = repeat the alcohol pass before any heat. Hot dryer on residual chlorophyll = permanent on polyester plus yellowing of the fabric over time."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. NO hot water. NO hot dryer until clear.",
+      "2. Cool damp-cloth blot.",
+      "3. Generous Dawn pretreat, cool, 5–10 min, soft toothbrush.",
+      "4. Hidden-area IPA test on dyed polyester.",
+      "5. 91% IPA on cloth, tamp green outside-in, 2–3 passes.",
+      "6. OxiClean cool soak 30 min plus cool wash, no fabric softener.",
+      "7. AIR-DRY plus daylight inspect — no dryer until fully clear."
     ],
     "products": [
       "Dawn dish soap",
-      "cold water"
+      "91% Isopropyl alcohol (hidden test on dyed polyester)",
+      "OxiClean Versatile",
+      "Cool water"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if hot water or hot dryer was already used (often permanent + yellowing on polyester). Stop if hidden-seam test shows color loss. Stop on performance / specialty / dry-clean-only polyester (pro). Stop after 2 home rounds without progress.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "NEVER hot water — sets protein, locks chlorophyll on polyester",
+      "NEVER hot dryer until stain gone — locks color, yellows fiber",
+      "NEVER chlorine bleach on polyester",
+      "NEVER fabric softener — coats fiber, blocks cleaning",
+      "Hidden test on dyed polyester before alcohol",
+      "Polyester is oleophilic — extended Dawn dwell needed",
+      "Flammable solvent — no flame"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on grass + polyester",
+      "Never hot dryer until stain clear — locks chlorophyll",
+      "Never chlorine bleach on polyester",
+      "Never fabric softener on athletic wear — blocks future cleaning",
+      "Never alcohol on dyed polyester without hidden test",
+      "Never solvent near flame"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs waxy plant lipids tightly",
+      "Polyester is heat-sensitive — hot sets stains and yellows fiber",
+      "Athletic / performance polyester: pro — coatings react unpredictably",
+      "Dyed polyester: hidden alcohol test mandatory",
+      "Polyester typically needs extended Dawn dwell for oily grass component"
     ]
   },
+  "materialWarnings": [
+    "No hot water / no hot dryer — polyester locks green permanently",
+    "Polyester loves oil — extended Dawn dwell needed",
+    "Athletic wear with fabric softener buildup blocks cleaning",
+    "Hidden test on dyed polyester before alcohol",
+    "Hot-dried grass on polyester is often permanent"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is grass on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent + yellowing). Performance / specialty / dry-clean-only polyester. Hidden-area test shows color loss. 2 home rounds plateau. Old grass through multiple wash cycles.",
+    "whatToTell": "\"Grass on [white / dyed / athletic / blend] polyester, age [fresh / days / hot-dried suspected], home-treated with [Dawn cool pretreat + IPA cloth tamp + OxiClean cool soak + cool wash + air-dry]. No hot, no chlorine, no softener. [Residual green / yellow shadow / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with polyester / athletic-wear experience"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Athletic wear, white tee, dyed performance fabric, or blend?",
+      "Fresh, days old, or hot-dried already?",
+      "Has fabric softener been used in past washes (athletic gear)?",
+      "Any mud component?",
+      "Visible green or just yellow shadow remaining?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Polyester is oleophilic AND heat-sensitive — both push toward strict cool discipline plus extended Dawn dwell. Athletic-wear fabric softener buildup is the hidden plateau cause. Hot-dried grass on polyester is often permanent because heat both sets the protein and locks the chlorophyll into the fiber. Performance polyester (compression, technical, Gore-Tex) goes to pro because the fabric coatings react unpredictably to alcohol and oxygen bleach."
   },
-  "difficulty": 4,
-  "timeEstimate": "10-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

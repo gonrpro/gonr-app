@@ -1,78 +1,225 @@
 {
   "id": "makeup-polyester",
-  "title": "Foundation/Makeup on Polyester",
+  "title": "Foundation and Makeup on Polyester",
+  "stainType": "combo",
   "stainFamily": "combo",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Liquid foundation contains pigment (iron oxides, titanium dioxide), oils (silicone, mineral oil), waxes, and emulsifiers. On polyester, the oil component penetrates the fiber while pigment particles lodge in the surface texture. Water-based foundations are easier to remove than oil-based, but both contain pigment that can stain. Setting powders and primers add additional polymer layers.",
-  "whyThisWorks": "Solvent or POG dissolves the oil/silicone matrix on polyester, releasing the trapped pigment particles. Surfactant then lifts the liberated pigment. For stubborn mineral pigment residue, a mild oxidizer addresses remaining discoloration. Working gently is key — aggressive rubbing drives pigment particles deeper into the fiber structure.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–45 minutes; oil + pigment combo, polyester locks oil under heat",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "makeup",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "makeup",
+      "foundation",
+      "concealer",
+      "blush",
+      "combo",
+      "oil",
+      "pigment",
+      "polyester",
+      "no-hot-water",
+      "no-hot-dryer",
+      "powder-preload",
+      "long-wear-formula-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Foundation, concealer, blush, BB cream, and similar liquid makeup are pigment (iron oxides, titanium dioxide) plus oil (silicone, mineral oil) plus emulsifiers and sometimes wax or polymer film-formers. The oil component penetrates the fiber while pigment particles lodge in the fiber's surface texture. Water-based foundations are easier to remove than oil-based; long-wear / 24-hour / matte foundations are harder because of polymer film-formers. Polyester is OLEOPHILIC (grabs the oil component aggressively) and heat-sensitive (hot water sets the oil into the fiber, hot dryer locks pigment plus yellows the fabric over time). Setting powders and primers add additional polymer layers that resist water-based cleaning. The recurring trap is rubbing — pushes pigment particles deeper into the polyester surface and makes the stain look set when it's not. Scrape gently first, then work from the back.",
+  "whyThisWorks": "Powder preload (cornstarch / baking soda) absorbs the oil component before any moisture spreads the stain. Generous Dawn pretreat handles the oil + silicone matrix that polyester grabs onto. Cool oxygen-bleach soak finishes residual pigment. Cool wash plus AIR-DRY locks nothing. The honest cap: silicone-heavy primers and long-wear / matte foundations sometimes plateau on dyed polyester.",
+  "defaultAssumption": "Foundation transfer onto a collar / shirt edge / sleeve / pillowcase. Standard liquid foundation = high-confidence DIY. Long-wear / 24-hour / matte formula = harder; pro for valuable garments. Hot-dried = often permanent yellow shadow.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Excess Gently — Don't Rub",
+      "technique": "Mechanical lift before chemistry",
+      "equipment": "Plastic spoon edge or dull butter knife",
+      "dwellTime": "1 minute",
+      "instruction": "If makeup is thick on the surface, scrape excess off with a plastic spoon edge. Flat-edge work only. NEVER rub — rubbing pushes pigment particles into polyester surface texture and makes the stain look set when it's not yet."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Powder Preload",
+      "technique": "Pull bulk oil up before water",
+      "equipment": "Cornstarch / baking soda",
+      "dwellTime": "10–15 minutes",
+      "instruction": "Cover the spot with cornstarch or baking soda. Press gently. 10–15 min absorb. Soft-brush off. Most surface oil comes off this way without water — water-first spreads makeup wider on polyester."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool",
+      "technique": "Emulsify oil and silicone",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 10 min. Polyester is oleophilic — extended dwell needed for the oil + silicone matrix in foundation. Cool damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Test Oily Feel — Repeat Dawn If Yes",
+      "technique": "Second pass for oleophilic affinity",
+      "equipment": "Clean fingertip, Dawn + cool water",
+      "dwellTime": "10 minutes",
+      "instruction": "Touch the spot with a clean fingertip. Oily feel = repeat Dawn. Polyester typically needs 2 Dawn passes for makeup oil component."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "OxiClean Cool Soak Plus Cool Wash",
+      "technique": "Finish residual pigment",
+      "equipment": "OxiClean per label, COOL water, washing machine",
+      "dwellTime": "30 min soak + cool cycle",
+      "instruction": "OxiClean cool soak 30 min. Cool machine wash with normal detergent. SKIP fabric softener — coats fiber, blocks future cleaning. AIR-DRY. NEVER hot water — sets oil + locks pigment + yellows polyester."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "AIR-DRY Plus Daylight Inspect",
+      "technique": "Verify before any heat",
+      "equipment": "Hanger, daylight",
+      "dwellTime": "Air-dry to fully dry",
+      "instruction": "AIR-DRY only. Inspect in daylight. Faint shadow = repeat Dawn pass. NEVER hot dryer until cleared — locks pigment and yellows polyester over time."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG to dissolve the oil/wax component",
-      "2. Apply NSD to lift dissolved residue and pigment",
-      "3. If color remains: apply H2O2 6% on colorfast fabrics — 5-10 min dwell time, monitor",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Scrape excess gently with plastic-edge. NEVER rub.",
+      "2. Cornstarch / baking soda preload 10–15 min, soft-brush off.",
+      "3. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "4. Repeat Dawn pass if oily feel remains.",
+      "5. OxiClean cool soak 30 min + cool machine wash. No softener.",
+      "6. AIR-DRY + daylight inspect. Never heat until clear."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "Dawn / NSD",
+      "OxiClean / oxygen bleach",
+      "Cool water"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool throughout — heat sets oil and locks pigment on polyester",
+    "warnings": [
+      "NEVER hot water — sets oil, locks pigment, yellows polyester",
+      "NEVER hot dryer until cleared",
+      "NEVER fabric softener — coats fiber, blocks cleaning",
+      "Always scrape gently, never rub — rubbing pushes pigment into fiber",
+      "Polyester is oleophilic — extended Dawn dwell + 2 passes needed",
+      "Long-wear / 24-hour / matte foundations — often plateau, pro for valuable garments",
+      "Powder preload BEFORE water — water-first spreads stain"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Powder First, Water Second",
+      "instruction": "Foundation on polyester is fixable IF you do the powder step first. Cornstarch or baking soda pulls the oil component up before any water spreads the stain wider. Two hard rules: NO hot water (locks the oil and yellows polyester) and NO hot dryer until cleared. The other big trap is rubbing — pushes pigment into the polyester surface texture and makes the stain look permanent when it's not yet."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Excess Gently — No Rubbing",
+      "instruction": "If there's a thick smear of foundation on the surface, scrape it off with a plastic spoon edge or dull butter knife. Flat-edge work only. NEVER rub. Rubbing is the #1 cause of foundation stains that look unrescuable but were just rubbed in."
+    },
+    {
+      "step": 3,
+      "agent": "Cornstarch or Baking Soda — 10 to 15 Minutes",
+      "instruction": "Cover the spot with cornstarch or baking soda. Press gently. 10 to 15 minutes. Soft-brush off. Most surface oil comes off this way without water."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "instruction": "Polyester is oleophilic — it grabs the oil and silicone in foundation tight. Apply a generous amount of Dawn dish soap directly on the spot. Work in with a soft toothbrush for 10 minutes. Cool damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "agent": "Test for Oily Feel — Repeat If Needed",
+      "instruction": "Touch the spot with a clean fingertip. Still feels oily? Repeat the Dawn step. Polyester typically needs 2 Dawn passes for foundation oil. The second pass usually does the job — silicone-heavy primers are the harder case and may need a third."
+    },
+    {
+      "step": 6,
+      "agent": "OxiClean Cool Soak and Cool Wash",
+      "instruction": "Mix OxiClean per label in COOL water. Soak the garment 30 minutes. Then cool machine wash with normal detergent. SKIP fabric softener — it coats the fiber and blocks any future cleaning. NEVER hot water — sets oil, locks pigment, yellows polyester."
+    },
+    {
+      "step": 7,
+      "agent": "AIR-DRY and Inspect Before Any Heat",
+      "instruction": "Hang to AIR-DRY. Inspect in daylight before the dryer. Faint shadow remaining? Repeat the Dawn pass. NEVER hot dryer until cleared — heat locks residual pigment and yellows polyester over time."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Scrape or blot excess — do NOT rub (spreading worsens it)",
-      "2. Apply Dawn dish soap directly to the stain. Work gently",
-      "3. Blot with clean white cloth. Repeat Dawn application until stain fades",
-      "4. Rinse with warm water (unless protein component present — then cold)",
-      "5. Air dry — no heat"
+      "1. NO hot water. NO hot dryer until cleared.",
+      "2. Scrape excess gently with plastic-edge. NEVER rub.",
+      "3. Cornstarch / baking soda preload 10–15 min, soft-brush off.",
+      "4. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "5. Repeat Dawn pass if oily feel remains.",
+      "6. OxiClean cool soak 30 min + cool wash, no softener.",
+      "7. AIR-DRY + daylight inspect. No dryer until cleared."
     ],
     "products": [
-      "Dawn dish soap"
+      "Plastic spoon edge / dull butter knife",
+      "Cornstarch / baking soda",
+      "Dawn dish soap (generous)",
+      "OxiClean Versatile",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if hot water or hot dryer was already used (often permanent yellow shadow). Stop on long-wear / 24-hour / matte foundation on dyed polyester — plateau likely, pro for valuable garments. Stop on specialty / performance polyester (pro). Stop after 3 home cycles without progress.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "NEVER hot water — sets oil + yellows polyester",
+      "NEVER hot dryer until cleared",
+      "NEVER fabric softener — coats fiber, blocks cleaning",
+      "Always scrape gently, NEVER rub — rubbing pushes pigment into fiber",
+      "Polyester is oleophilic — 2 Dawn passes typical",
+      "Powder preload BEFORE water"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never rub — pushes pigment into polyester surface texture",
+      "Never hot water on makeup + polyester",
+      "Never hot dryer until cleared",
+      "Never fabric softener after foundation",
+      "Never skip powder preload"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs foundation oil + silicone tightly",
+      "Polyester yellows under heat over time",
+      "Polyester typically needs 2 Dawn passes for makeup oil",
+      "Long-wear / 24-hour / matte foundations: often plateau because of polymer film-formers",
+      "Performance / specialty polyester: pro — coatings react unpredictably"
     ]
   },
+  "materialWarnings": [
+    "Scrape gently, never rub — rubbing pushes pigment into fiber",
+    "Powder preload before water — water-first spreads it wider",
+    "No hot water / no hot dryer — polyester locks oil + yellows",
+    "Long-wear formulas often plateau on dyed polyester",
+    "Polyester loves oil — 2 Dawn passes typical"
+  ],
   "escalation": {
-    "when": "If makeup stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is makeup on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent yellow shadow). Long-wear / 24-hour / matte foundation on dyed polyester (likely plateau). Performance / specialty / dry-clean-only polyester. Rubbing has pushed pigment into fiber surface. 3 home cycles plateau. Silicone-heavy primer residue.",
+    "whatToTell": "\"Foundation / makeup on [white / dyed / athletic / specialty] polyester, formula [standard liquid / long-wear / matte / mineral / silicone-primer], age [fresh / hours / hot-dried suspected], home-treated with [scrape + cornstarch preload + Dawn cool × 2 + OxiClean cool soak + cool wash + air-dry]. No hot, no rubbing. [Residual shadow / yellow shadow / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with solvent spotting capability for combo stains"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Standard liquid foundation, long-wear / 24-hour / matte, mineral, or silicone-heavy primer?",
+      "White, light, or dyed polyester?",
+      "Performance / athletic / specialty fabric?",
+      "Fresh, hours old, or hot-dried already?",
+      "Has anyone rubbed the stain trying to clean it?",
+      "Color of foundation — light, medium, deep?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Long-wear / matte / 24-hour foundations are the hard subset because of polymer film-formers — often plateau on dyed polyester. Standard liquid foundations respond well to the powder + Dawn × 2 + OxiClean sequence. Silicone-heavy primers are an underrated cause of plateau — silicone resists water-based cleaning. Rubbing during home attempts pushes pigment into polyester's surface texture and is the #1 cause of foundation stains that look permanent but aren't."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

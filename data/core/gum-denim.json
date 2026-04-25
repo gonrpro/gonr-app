@@ -1,76 +1,214 @@
 {
   "id": "gum-denim",
   "title": "Gum on Denim",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "denim",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Chewing gum is a hydrophobic polymer (polyisobutylene or chicle) mixed with softeners, sweeteners, and flavorings. On denim, the polymer adheres through mechanical bonding and surface tension. Warm gum is soft and sticky, spreading when touched. Cold gum becomes brittle and loses adhesion. The polymer is not water-soluble at any temperature.",
-  "whyThisWorks": "Freezing makes the gum polymer brittle on denim, breaking its mechanical bond and allowing it to be scraped or cracked off in pieces. POG or citrus-based solvent dissolves any remaining residue by breaking down the polymer. Ice in a bag (not direct ice) prevents water damage while providing the cold needed. Picking at warm gum spreads it — always freeze first.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "20–40 minutes; freeze + crack + Goo Gone, indigo-safe with hidden test",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "gum",
+    "surfaceCanonical": "denim",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "gum",
+      "chewing-gum",
+      "denim",
+      "freeze-and-lift",
+      "no-rubbing",
+      "indigo-loss-risk-on-solvent",
+      "no-chlorine-bleach"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Chewing gum is a sticky polymer (polyisobutylene or chicle base) plus softeners and sweeteners. The polymer doesn't dissolve in water — it has to be frozen brittle so it cracks off mechanically, or dissolved with a citrus / petroleum solvent. Warm gum is soft and spreads when touched, making it worse. Cold gum is brittle and lifts cleanly. On denim, three things matter: indigo dye sits on the surface and any solvent can lift color along with the residue, the weave is heavy enough that gum sits on top rather than penetrating fiber (good news), and aggressive scrubbing leaves a halo on dark denim. Don't pick at warm gum with fingernails — it spreads and pushes the polymer deeper into the weave.",
+  "whyThisWorks": "Freezing makes the gum polymer brittle and breaks its grip on the denim. Cracking with a plastic edge lifts most of it off in pieces. Goo Gone (citrus solvent) on a cloth dissolves residual stickiness without the dye-loss risk of acetone. Cool wash plus air-dry finishes. The honest cap on denim: tightly-set gum on raw / selvage denim or aggressive removal attempts often leave a permanent indent or color loss; pro is the right call there.",
+  "defaultAssumption": "Chewing gum on light-wash or medium-wash denim — sat on it at the park, kid stuck it under the table. Fresh = freeze + lift = high success. Raw / selvage / black overdyed denim = pro from minute one (any solvent + scrubbing risks color loss).",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage Plus Care",
+      "technique": "Don't pick at warm gum",
+      "equipment": "Good light",
+      "dwellTime": "1 minute",
+      "instruction": "Don't pick at warm gum with fingernails — it spreads and pushes the polymer deeper into the weave. Stop, freeze, then lift. Raw / selvage / black-overdyed denim = pro from minute one."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Ice-Bag Freeze",
+      "technique": "Brittle the polymer",
+      "equipment": "Ice in a sealed plastic bag",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Place a sealed bag of ice on the gum 15–20 minutes. NEVER direct ice on denim — water spotting causes its own ring. The gum should be hard and brittle when ready."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Plastic-Edge Crack and Lift",
+      "technique": "Mechanical pickup of frozen polymer",
+      "equipment": "Plastic card, plastic spoon, or dull butter knife",
+      "dwellTime": "2–5 minutes",
+      "instruction": "Crack the frozen gum with the edge of a plastic card. Lift off pieces. Never gouge denim — flat-edge work only. Most surface gum comes off this way."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hidden-Seam Test for Goo Gone",
+      "technique": "Indigo bleed test before solvent",
+      "equipment": "Goo Gone on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Inside seam: dab Goo Gone on a hidden seam, blot with white cloth. If indigo transfers, skip Goo Gone — Dawn-only finish. If clean, solvent is safe to use on the visible spot."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Goo Gone Cloth Tamp",
+      "technique": "Citrus solvent for sticky residue",
+      "equipment": "Goo Gone on white cloth, ventilation",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply Goo Gone to a clean white cloth — never pour on denim. Tamp the residue, flip cloth as it picks up sticky transfer. Outside-in. 2 passes. Open windows; flammable, no flame."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Dawn Damp-Cloth Plus Cool Wash",
+      "technique": "Clear solvent residue and finish",
+      "equipment": "Dawn + cool water, washing machine",
+      "dwellTime": "5 min damp + cool wash cycle",
+      "instruction": "Dawn + cool water on damp cloth, work the spot 5 min to clear Goo Gone residue. Cool machine wash, normal detergent. AIR-DRY. Inspect dry."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Freeze with CO2 spray or ice to harden gum completely",
-      "2. Crack and scrape off hardened gum with dull edge",
-      "3. Apply POG to dissolve remaining residue",
-      "4. Apply NSD to remove final traces. Flush with cool water",
-      "5. Blot dry"
+      "1. Don't pick at warm gum. Freeze first.",
+      "2. Ice-bag freeze 15–20 min — never direct ice.",
+      "3. Plastic-edge crack and lift hardened pieces.",
+      "4. Hidden-seam Goo Gone test on dark / raw denim.",
+      "5. Goo Gone cloth tamp for residue, outside-in.",
+      "6. Dawn damp-cloth + cool machine wash + AIR-DRY."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)"
+      "Ice + sealed plastic bag",
+      "Plastic card / plastic spoon / dull butter knife",
+      "Goo Gone / citrus solvent (hidden seam test on indigo)",
+      "Dawn / NSD",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cold for freeze + cool throughout cleaning",
     "warnings": [
-      "Always test on hidden area first"
+      "Never pick at warm gum — spreads polymer into weave",
+      "Never direct ice on denim — water spotting",
+      "NEVER chlorine bleach on denim — strips indigo unevenly",
+      "Hidden-seam test before Goo Gone on dark / raw denim",
+      "Always blot, never rub — denim halos under scrubbing",
+      "Flammable solvent — no flame"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Don't Pick at Warm Gum",
+      "instruction": "The instinct is to scrape warm gum off with a fingernail or kitchen knife. Don't. Warm gum is soft and spreads — picking pushes the polymer deeper into the denim weave and makes the stain wider. Stop, freeze it brittle first, then it lifts off cleanly."
+    },
+    {
+      "step": 2,
+      "agent": "Ice-Bag Freeze — 15 to 20 Minutes",
+      "instruction": "Put ice in a sealed plastic bag and place it on the gum for 15 to 20 minutes. NEVER direct ice on denim — direct water causes ring spotting that's its own stain. The gum is ready when it's hard and brittle."
+    },
+    {
+      "step": 3,
+      "agent": "Plastic Edge — Crack and Lift",
+      "instruction": "Use a plastic card, plastic spoon, or dull butter knife. Crack the frozen gum with the edge — most of it lifts off in pieces. Don't gouge the denim — flat-edge only. Most surface gum is gone at this point."
+    },
+    {
+      "step": 4,
+      "agent": "Hidden-Seam Test on Dark Denim",
+      "instruction": "Before any solvent on dark or indigo denim: dab a drop of Goo Gone on an inside seam, blot with a white cloth. If indigo transfers, skip the Goo Gone step — go straight to Dawn. If the cloth comes up clean, Goo Gone is safe on the visible spot."
+    },
+    {
+      "step": 5,
+      "agent": "Goo Gone for Sticky Residue",
+      "instruction": "Apply Goo Gone (citrus solvent, orange bottle) to a clean white cloth — never pour on denim. Tamp the residue from the top, flip the cloth as it picks up sticky transfer. Outside-in. 2 passes. Open windows — Goo Gone is flammable, no flame nearby."
+    },
+    {
+      "step": 6,
+      "agent": "Dawn Damp Cloth and Cool Wash",
+      "instruction": "Dawn worked into a damp cloth, press the spot for 5 minutes to clear Goo Gone residue. Cool machine wash with normal detergent. AIR-DRY. Inspect dry — wet denim sometimes hides residual stickiness that reappears once dry."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place ice in a bag on the gum for 15 minutes until completely hard",
-      "2. Crack the frozen gum and peel/scrape off with a dull edge",
-      "3. Apply Dawn dish soap to remaining residue. Work gently",
-      "4. Rinse with warm water. Repeat if needed",
-      "5. Air dry"
+      "1. Don't pick at warm gum. Stop, freeze first.",
+      "2. Ice-bag freeze 15–20 min — never direct ice on denim.",
+      "3. Plastic-edge crack and lift hardened pieces.",
+      "4. Hidden-seam Goo Gone test on dark / raw denim.",
+      "5. Goo Gone cloth tamp for residue, outside-in, 2 passes.",
+      "6. Dawn damp cloth + cool machine wash + AIR-DRY."
     ],
     "products": [
+      "Ice in sealed plastic bag",
+      "Plastic card / spoon / butter knife",
+      "Goo Gone / citrus solvent (hidden test on indigo)",
       "Dawn dish soap",
-      "ice"
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop on raw / selvage / black-overdyed denim from minute one (pro). Stop if hidden-seam test shows indigo loss — Dawn-only finish. Stop if gum has been ironed or hot-dried (often permanent indent).",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "Never pick at warm gum — spreads polymer",
+      "Never direct ice — water spotting",
+      "NEVER chlorine bleach on denim",
+      "Hidden-seam test before Goo Gone",
+      "Always blot, never rub — denim halos",
+      "Flammable solvent — no flame"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach — removes indigo unevenly",
-      "No strong detergent on raw denim"
+      "Never pick at warm gum",
+      "Never direct ice on denim",
+      "Never chlorine bleach on denim",
+      "Never rub denim under treatment",
+      "Never iron a gum spot",
+      "Never solvent near flame"
     ],
     "fiberSensitivities": [
-      "Indigo dye sits on surface — aggressive treatment causes uneven fading",
-      "Washed denim is more forgiving than raw"
+      "Indigo / dark denim: hidden-seam Goo Gone test mandatory",
+      "Raw / selvage denim: pro from minute one",
+      "Light-wash denim: most forgiving — full home protocol applicable",
+      "Stretch denim with elastane: cool only",
+      "Black overdyed denim: pro — color-loss risk on solvent"
     ]
   },
+  "materialWarnings": [
+    "Freeze before lift — never pick at warm gum",
+    "Never direct ice — water spotting",
+    "No chlorine bleach on denim",
+    "Always blot, never rub — denim halos",
+    "Raw / selvage denim = pro from minute one"
+  ],
   "escalation": {
-    "when": "If gum stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is gum on denim, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Raw / selvage / black-overdyed denim. Hidden-seam test shows indigo loss. Gum has been ironed or hot-dried (often permanent indent). Halo ring already forming around the spot. Polymer worked deep into the weave from prior picking attempts.",
+    "whatToTell": "\"Gum on [light-wash / dark / indigo / raw / selvage] denim, age [fresh / sat-on / hot-dried suspected], home-treated with [ice freeze + plastic-edge lift + Goo Gone cloth tamp + Dawn + cool wash]. No hot, no chlorine. [Residual stickiness / indent / indigo loss / halo].\"",
+    "specialistType": "professional dry cleaner with denim experience"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Light-wash, dark, raw / selvage, or black-overdyed denim?",
+      "Fresh, sat-on, or already hot-dried / ironed?",
+      "Has anyone picked at it warm?",
+      "Stretch denim with elastane?",
+      "Visible polymer or just sticky residue?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The freeze-and-lift method is high-success on washable denim. The recurring trap is picking at warm gum, which spreads the polymer into the weave and turns a small stain into a wider one. Indigo loss on dark denim is the second risk; hidden-seam test before any solvent. Raw / selvage / black-overdyed denim goes to pro because the dye is more fragile and any solvent + scrubbing risks visible damage."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

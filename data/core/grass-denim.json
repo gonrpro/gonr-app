@@ -1,84 +1,219 @@
 {
   "id": "grass-denim",
   "title": "Grass on Denim",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "denim",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Tannins are polyphenolic plant compounds that bond to fibers through hydrogen bonding and π-stacking interactions with cellulose and protein fibers. Fresh tannin stains are removable with NSD. Aged stains oxidize and darken: the brown/green color is caused by oxidation products. H₂O₂ 6% breaks the double bonds in the oxidized tannin molecules, reversing the browning. Sodium hydrosulfite provides a reducing alternative for fibers that cannot tolerate bleaching.",
-  "whyThisWorks": "Grass stains get their color from natural pigments (chlorophyll, carotenoids) that bond to surfaces and darken over time. Denim is thick and tightly woven, so stains sit near the surface longer. An oxygen-based treatment breaks apart the pigment molecules, removing the color rather than just spreading it around.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–40 minutes; protein + chlorophyll combo, indigo dye-loss risk",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "grass",
+    "surfaceCanonical": "denim",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "grass",
+      "tannin",
+      "chlorophyll",
+      "denim",
+      "indigo-loss-risk",
+      "no-hot-water",
+      "no-chlorine-bleach",
+      "ring-risk"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Grass is two stains in one: green chlorophyll pigment from the leaf plus plant protein the chlorophyll is bound to. The pigment is alcohol-soluble (rubbing alcohol pulls it out). The protein responds to cool water + Dawn. Hot water at any step sets the protein side and locks the green; once green sets, indigo denim is hard to recover without losing color too. Denim has its own complications: indigo sits on the surface of the fiber and any oxidizer (peroxide, chlorine bleach) will pull color along with the stain. Aggressive scrubbing on raw or dark denim leaves a halo ring around the treated spot. The recurring trap is reaching for hot water to 'lift' fresh grass — that's exactly what locks it.",
+  "whyThisWorks": "Cool water plus Dawn handles the protein component without setting it. Isopropyl alcohol on a cloth pulls the green chlorophyll out — you can literally see it transfer. On denim specifically, the safer move is to favor alcohol over peroxide because alcohol leaves indigo alone while peroxide bleaches it. Air-dry is non-negotiable until the stain is gone — once the dryer hits residual chlorophyll, it sets permanently and adds polymer cross-linking from the protein side.",
+  "defaultAssumption": "Kid soccer / yard work / lawn-tackle on dark or medium-wash denim. Fresh = high-confidence DIY. Hot-dried or sat-for-weeks = much harder; pro for dark indigo denim. Raw / selvage denim = pro from minute one (any moisture causes uneven fading).",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet-minimal",
+      "agent": "Cool Water Blot",
+      "technique": "Cold rinse first, no hot",
+      "equipment": "Cool water, white cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Damp white cloth with COOL water. Press, lift, rotate. Cool only — heat sets the protein side. Never pour water directly on denim — causes water rings."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn Cool Damp-Cloth",
+      "technique": "Cut the protein side first",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Drop of Dawn on damp cloth. Soft toothbrush. Always blot, never rub — denim ring-stains under aggressive scrubbing. Cool damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Hidden-Seam Test for Alcohol",
+      "technique": "Indigo bleed test",
+      "equipment": "91% Isopropyl alcohol on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Inside seam test: dab 91% IPA on a hidden seam, blot with white cloth. If indigo transfers, skip alcohol. If clean, alcohol is safe to use on the visible stain."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Isopropyl Alcohol Cloth Tamp",
+      "technique": "Pull chlorophyll onto a cloth",
+      "equipment": "91% IPA on white cotton cloth, ventilation",
+      "dwellTime": "2–3 minutes per pass",
+      "instruction": "Apply 91% IPA to a clean white cloth — never pour on denim. Tamp the green spot from the top, flip the cloth as it picks up green. Outside-in. 2–3 passes. Open windows; flammable, no flame."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cool Soak Plus Cool Wash",
+      "technique": "Full-garment finish",
+      "equipment": "OxiClean per label, COOL water, washing machine",
+      "dwellTime": "30 min soak + cool cycle",
+      "instruction": "OxiClean cool soak 30 min for the protein side. Then cool machine wash with normal detergent. NEVER hot water — heat sets residual chlorophyll plus protein."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Air-Dry Plus Daylight Inspect",
+      "technique": "Verify before any heat",
+      "equipment": "Hanger, fan, daylight",
+      "dwellTime": "Air-dry to fully dry",
+      "instruction": "AIR-DRY. Inspect in daylight. Faint green = repeat alcohol pass before the dryer touches it. Hot dryer on residual chlorophyll = permanent on denim plus indigo cross-linking."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin and tamp gently. This acidic spotter targets the bonds that grass pigments form with denim. Work from the edge toward the center. Check progress every few minutes.",
-      "2. Apply H₂O₂ 6% to the stain. Monitor carefully — check every 5 minutes. On colored denim, test an inconspicuous area first.",
-      "3. Flush with NSD and a mild leveling agent to remove broken-down tannin pigment and any excess oxidizer. Rinse thoroughly.",
-      "4. Apply diluted acetic acid (1:10) to stop any remaining oxidizer activity and restore the fabric to its natural state. Blot dry and air dry completely."
+      "1. Cool damp-cloth blot.",
+      "2. Dawn + soft toothbrush, cool, 5 min.",
+      "3. Hidden-seam IPA test on indigo / dark denim.",
+      "4. 91% IPA cloth tamp for chlorophyll, outside-in, 2–3 passes.",
+      "5. Cool OxiClean soak 30 min plus cool machine wash.",
+      "6. Air-dry plus daylight inspect — never heat until clear."
     ],
     "products": [
-      "Tannin",
-      "H₂O₂ 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Dawn / NSD",
+      "91% Isopropyl alcohol (hidden seam test on indigo first)",
+      "OxiClean / oxygen bleach",
+      "Cool water"
     ],
-    "temperature": "cold — hot water accelerates tannin oxidation and sets the color faster",
+    "temperature": "cool throughout — heat sets protein and locks chlorophyll on denim",
     "warnings": [
-      "Using hot water — accelerates oxidation and sets the tannin color faster",
-      "Applying H₂O₂ to colored denim without testing — peroxide bleaches color along with the stain",
-      "Oversaturation with peroxide — can cause yellowing on light-colored fabric",
-      "Not rinsing peroxide completely — residual peroxide continues bleaching and weakens fiber"
+      "NEVER hot water — sets the protein side permanently",
+      "NEVER chlorine bleach — strips indigo unevenly, leaves halo",
+      "NEVER hot dryer until stain is fully gone",
+      "Hidden-seam IPA test on indigo / dark / raw denim",
+      "Always blot, never rub — denim rings under aggressive scrubbing",
+      "Never pour solvent or water directly — pour on cloth instead",
+      "Flammable solvent — no flame"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Two Stains in One — Pigment Plus Protein",
+      "instruction": "Grass is the green pigment plus plant protein. Each part needs different treatment: cool Dawn for the protein side, rubbing alcohol for the green. Doing only one half is why grass stains come back after the first wash. Two hard rules on denim: NO hot water (sets the protein, locks the green) and NO chlorine bleach (strips indigo unevenly, leaves a halo)."
+    },
+    {
+      "step": 2,
+      "agent": "Cool Damp-Cloth Blot Only",
+      "instruction": "Damp a white cloth with COOL water. Press the spot, lift, rotate to a clean section, press again. Cool only. Never pour water directly on denim — it causes water rings that are their own stain. Always blot, never rub — rubbing causes a halo on dark denim."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn First — Cut the Protein Side",
+      "instruction": "Drop of Dawn on a damp cloth. Work it into the spot with a soft toothbrush for 5 minutes. Damp-cloth rinse. This handles the protein part of the stain. The chlorophyll is still in there — the alcohol step pulls it out next."
+    },
+    {
+      "step": 4,
+      "agent": "Hidden-Seam Test on Dark or Raw Denim",
+      "instruction": "Before any alcohol on dark or raw denim: dab a drop of 91% isopropyl alcohol on a hidden inside seam, blot with a white cloth. If the cloth picks up indigo, your denim isn't colorfast — skip alcohol and go to the cool wash step. If the cloth comes up clean, alcohol is safe on the visible stain. Light-wash denim is usually fine; raw / dark / selvage often isn't."
+    },
+    {
+      "step": 5,
+      "agent": "Isopropyl Alcohol on a Cloth — Pulls Out the Green",
+      "instruction": "Apply 91% isopropyl alcohol to a clean white cloth — never pour on the denim. Press the green spot, flip the cloth as it picks up green, repeat. Outside-in. You can literally see the chlorophyll transfer. 2 to 3 passes is usually enough. Open windows — alcohol is flammable, no flame."
+    },
+    {
+      "step": 6,
+      "agent": "Cool Soak Plus Cool Wash",
+      "instruction": "OxiClean per label in COOL water, soak 30 minutes. Then cool machine wash with normal detergent. NEVER hot water — heat at any step sets residual chlorophyll permanently. OxiClean is safer on indigo than chlorine bleach but still test hidden if your denim is raw or selvage."
+    },
+    {
+      "step": 7,
+      "agent": "Air-Dry and Inspect Before Any Dryer Heat",
+      "instruction": "Hang to AIR-DRY. Inspect in daylight before the dryer goes anywhere near it. Faint green left? Repeat the alcohol pass. Only put it in the dryer once the stain is invisible in natural light. Hot dryer on residual chlorophyll = permanent on denim."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot the stain with a clean white cloth to soak up as much as you can.",
-      "2. Apply the cleaning solution (1 tbsp dish soap + 1 cup 3% hydrogen peroxide (brown bottle from pharmacy)) and let it sit for 5–10 minutes.",
-      "3. Blot with a clean white cloth. Repeat until the color fades.",
-      "4. Rinse with cold water to remove all cleaning solution.",
-      "5. Air dry — don't use a dryer until the stain is gone."
+      "1. NO hot water. NO chlorine bleach.",
+      "2. Cool damp-cloth blot — never pour, never rub.",
+      "3. Dawn + soft toothbrush, cool, 5 min.",
+      "4. Hidden-seam IPA test on dark / raw denim before alcohol.",
+      "5. 91% IPA on cloth, tamp green spot outside-in, 2–3 passes.",
+      "6. OxiClean cool soak 30 min plus cool machine wash.",
+      "7. AIR-DRY plus daylight inspect — no dryer until fully clear."
     ],
     "products": [
-      "H₂O₂ 3%",
-      "Dawn NSD",
-      "OxiClean Versatile Stain Remover",
-      "cold water"
+      "Dawn dish soap",
+      "91% Isopropyl alcohol (hidden seam test on indigo)",
+      "OxiClean Versatile",
+      "Cool water"
     ],
-    "whenToStop": "For set-in tannin stains, mix baking soda with a little H₂O₂ to make a paste, apply for 15 minutes, then rinse. If stain persists after two rounds, take to a professional.",
+    "whenToStop": "Stop if hot water or hot dryer was already used (often permanent). Stop if hidden-seam test shows indigo loss — pro is the right call. Stop on raw / selvage denim from minute one. Stop after 2 home rounds without progress.",
     "warnings": [
-      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
-      "Use a white cloth to avoid transferring dye from a colored cloth.",
-      "Speed matters — fresh tannin stains lift much more easily than dried ones."
+      "NEVER hot water — sets protein, locks chlorophyll",
+      "NEVER chlorine bleach on denim — strips indigo unevenly",
+      "NEVER hot dryer until stain is gone",
+      "Hidden-seam IPA test on indigo / dark / raw denim",
+      "Always blot, never rub — denim halos under scrubbing",
+      "Flammable solvent — no flame near alcohol"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use ammonia, baking soda, or alkaline agents — permanently darken tannin stains",
-      "Apply heat before stain is completely gone — heat sets stains permanently",
-      "Use hot water — accelerates tannin oxidation"
+      "Never hot water on grass + denim — sets protein, locks chlorophyll",
+      "Never chlorine bleach on denim — strips indigo, leaves halo",
+      "Never hot dryer until stain is fully clear",
+      "Never rub denim under treatment — causes ring stain",
+      "Never pour solvent or water directly on denim — apply to cloth"
     ],
     "fiberSensitivities": [
-      "Cotton and denim tolerate peroxide well. On colored/dark denim: always test H₂O₂ on a hidden seam first — peroxide can bleach the indigo dye."
+      "Indigo / dark / dyed denim: hidden-seam IPA test mandatory",
+      "Raw / selvage denim: pro from minute one — any moisture causes uneven fading",
+      "Light-wash denim: most forgiving — full home protocol applicable",
+      "Stretch denim with elastane: cool only — alcohol can stress elastane over time",
+      "Black overdyed denim: pro — color-loss risk on any oxidizer"
     ]
   },
+  "materialWarnings": [
+    "Indigo dye loss is the central denim risk — hidden test before alcohol",
+    "Raw / selvage denim = pro from minute one",
+    "No hot water / no hot dryer — heat sets both halves of the stain",
+    "Always blot, never rub — denim halos under scrubbing",
+    "No chlorine bleach on denim — uneven stripping"
+  ],
   "escalation": {
-    "when": "Tannin has cross-linked with the fiber polymer after two professional-grade treatments",
-    "whatToTell": "Grass stain on denim, tannin-based. Treated at home with H₂O₂ and NSD. Please use professional tannin formula and oxidizer protocol.",
-    "specialistType": "wet cleaner or dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent). Hidden-seam IPA test shows indigo loss. Raw / selvage / black-overdyed denim. 2 home rounds plateau. Halo ring already forming around the spot.",
+    "whatToTell": "\"Grass on [light-wash / dark / indigo / raw / selvage] denim, age [fresh / days / hot-dried suspected], home-treated with [Dawn cool + IPA cloth tamp + OxiClean cool soak + cool wash + air-dry]. No hot, no chlorine. [Residual green / halo ring / indigo loss / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with denim experience"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the stain fresh or has it been sitting and drying?",
-      "Has the denim been through the dryer since the stain occurred?",
-      "Is this dark/indigo denim or lighter washed denim?",
-      "Does the stain also have a mud component?"
+      "Light-wash, dark indigo, raw / selvage, or black-overdyed denim?",
+      "Fresh, days old, or hot-dried already?",
+      "Stretch denim with elastane?",
+      "Has chlorine bleach been used yet?",
+      "Mud component along with the grass?"
     ],
-    "modifierNotes": "Dryer exposure before treatment sets the stain significantly. Dark/indigo denim is vulnerable to peroxide bleaching — always test first. Mud mixed with grass adds a clay/soil component that should be dried and brushed off first."
+    "modifierNotes": "Indigo dye loss is the recurring trap on denim. Hidden-seam IPA test is the safety check. Raw / selvage denim is pro from minute one because any moisture causes uneven fading. Black overdyed denim is similarly fragile. Mud + grass = brush mud off dry first, then run grass protocol. Hot-dried grass on denim is often permanent; managing expectations is part of the protocol."
   },
-  "difficulty": 5,
-  "timeEstimate": "10–20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

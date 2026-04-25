@@ -1,78 +1,227 @@
 {
   "id": "lipstick-polyester",
   "title": "Lipstick on Polyester",
+  "stainType": "combo",
   "stainFamily": "combo",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Lipstick is a four-component stain: pigment (iron oxides, lakes), oil (castor oil, lanolin), wax (beeswax, carnauba), and dye (D&C reds). On polyester, the wax creates a hydrophobic shell around the pigment, the oil penetrates the fiber, and the dye transfers color. Treatment must break through the wax barrier to access the underlying components.",
-  "whyThisWorks": "On polyester, the treatment addresses components in order: first dissolve the wax/oil matrix with POG or solvent, then lift the pigment with surfactant, then address any remaining dye with oxidizer. Scraping excess first prevents spreading. Working from the back of the fabric (when possible) pushes the stain out rather than deeper in.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–45 minutes; wax + oil + dye combo, polyester locks oil and dye under heat",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "lipstick",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "lipstick",
+      "combo",
+      "wax",
+      "oil",
+      "dye",
+      "polyester",
+      "no-hot-water",
+      "no-hot-dryer",
+      "scrape-first",
+      "long-wear-formula-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Lipstick is four stains in one: pigment (iron oxides, lakes), oil (castor, lanolin), wax (beeswax, carnauba), and dye (D&C reds, especially Red 27). Each part needs different treatment, in order: wax + oil first, dye last. Polyester adds two complications — it's OLEOPHILIC (grabs the oil component aggressively) and heat-sensitive (hot water sets the oil and locks Red 27 dye into the fiber permanently, plus polyester yellows over time when heat is applied to oily / pigmented residue). Long-wear / matte / 24-hour lipsticks are harder than standard formulas because they include polymer film-formers that extend the resin / film-binder challenge. The recurring trap is rubbing — pushing pigment into the fiber surface texture makes it nearly impossible to remove. Scrape excess gently first, then work from the back.",
+  "whyThisWorks": "Powder preload (cornstarch / baking soda) absorbs the oil component before any moisture can spread the stain. Generous Dawn pretreat handles the wax + oil matrix that polyester grabs onto. 91% isopropyl alcohol on a cloth lifts residual D&C dye onto a transfer pad. Cool wash plus AIR-DRY locks nothing. The honest cap on polyester: long-wear / 24-hour formulas often plateau because the polymer film-former resists home solvent.",
+  "defaultAssumption": "Standard lipstick — kiss mark on a collar, smear from face touch, transfer from face mask. White / light polyester = high-confidence. Long-wear / matte / 24-hour formulas = harder; pro for valuable garments. Hot-dried = often permanent.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Excess Gently — Don't Rub",
+      "technique": "Mechanical lift before any chemistry",
+      "equipment": "Plastic spoon edge or dull butter knife",
+      "dwellTime": "1 minute",
+      "instruction": "Scrape excess lipstick off with a plastic spoon edge or dull butter knife — flat-edge work only, never rub. Rubbing pushes pigment into the fiber surface texture and makes the stain nearly impossible to remove."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Powder Preload",
+      "technique": "Pull bulk oil up before water",
+      "equipment": "Cornstarch / baking soda",
+      "dwellTime": "10–15 minutes",
+      "instruction": "Cover the residue with cornstarch or baking soda. Press gently into the spot. 10–15 min absorb. Soft-brush off. Most surface oil and wax come off this way without water."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool",
+      "technique": "Emulsify wax and oil",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 10 min. Polyester is oleophilic — extended dwell needed for the wax + oil matrix. Cool damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Test for Alcohol",
+      "technique": "Bleed test on dyed polyester",
+      "equipment": "91% IPA on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Hidden seam: dab 91% IPA, blot with white cloth. If color transfers, skip alcohol — Dawn-only finish. White / light polyester is usually fine."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "91% IPA Cloth Tamp for Residual Dye",
+      "technique": "Pull D&C dye onto cloth",
+      "equipment": "91% IPA on white cloth, paper towels under spot",
+      "dwellTime": "1–2 minutes per pass",
+      "instruction": "Stack paper towels UNDER the spot as a transfer pad. Apply 91% IPA to a clean white cloth — never pour. Tamp the back of the spot. Replace underneath cloth as it picks up red. 2–3 passes for residual D&C dye. Ventilate; flammable, no flame."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cool Wash Plus AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Cool cycle + AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. SKIP fabric softener (coats fiber, blocks future cleaning). AIR-DRY only. Inspect dry — wet polyester hides residual pigment that reappears once dry. NEVER hot dryer until cleared."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG to dissolve the oil/wax component",
-      "2. Apply NSD to lift dissolved residue and pigment",
-      "3. If color remains: apply H2O2 6% on colorfast fabrics — 5-10 min dwell time, monitor",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Scrape excess gently with plastic-edge — never rub.",
+      "2. Cornstarch / baking soda preload 10–15 min, soft-brush off.",
+      "3. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "4. Hidden-area IPA test on dyed polyester.",
+      "5. 91% IPA cloth tamp from back with transfer pad underneath, 2–3 passes.",
+      "6. Cool machine wash + AIR-DRY. Inspect before any heat."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "Dawn / NSD",
+      "91% Isopropyl alcohol (hidden test on dyed polyester)",
+      "Cool water"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool throughout — heat sets oil and locks D&C dye on polyester",
+    "warnings": [
+      "NEVER hot water — sets oil, locks dye on polyester",
+      "NEVER hot dryer until cleared — locks dye, yellows fiber",
+      "NEVER fabric softener — coats fiber, blocks cleaning",
+      "Always scrape gently, never rub — rubbing pushes pigment into fiber",
+      "Hidden test on dyed polyester before alcohol",
+      "Polyester is oleophilic — extended Dawn dwell needed",
+      "Long-wear / 24-hour / matte formulas — often plateau, pro for valuable garments",
+      "Flammable solvent — no flame"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Lipstick Is Four Stains in One",
+      "instruction": "Lipstick combines wax, oil, pigment, and dye. Each part needs different treatment, in order: wax + oil first (powder + Dawn), then dye (alcohol). Polyester adds the heat trap — hot water sets the oil and locks Red 27 dye into the fiber permanently. Two hard rules: NO hot water and NO hot dryer until cleared. The other big trap is rubbing — pushes pigment into the fiber surface texture and makes the stain almost permanent."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Excess Gently — Plastic Spoon Edge",
+      "instruction": "Use a plastic spoon edge or dull butter knife to lift any excess lipstick off the surface. Flat-edge work only, never rub. Rubbing is the #1 cause of unrescuable lipstick stains — it grinds pigment into the fiber's surface texture."
+    },
+    {
+      "step": 3,
+      "agent": "Cornstarch or Baking Soda — Pull the Oil Up",
+      "instruction": "Cover the spot with cornstarch or baking soda. Press gently. 10 to 15 minutes absorb. Soft-brush off. Most surface oil and wax come off this way without any water — water-first spreads lipstick wider."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "instruction": "Polyester is oleophilic — it grabs the wax + oil matrix in lipstick tight. Apply a generous amount of Dawn dish soap. Work in with a soft toothbrush for 10 minutes. Cool damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "agent": "Hidden-Area Test on Dyed Polyester",
+      "instruction": "Before alcohol on dyed polyester: dab 91% isopropyl alcohol on an inside seam, blot with a white cloth. If color transfers, skip alcohol — Dawn-only finish. White / light polyester is usually fine."
+    },
+    {
+      "step": 6,
+      "agent": "91% Isopropyl Alcohol for Residual Red Dye",
+      "instruction": "After Dawn, you may still see a faint pink / red shadow — that's the D&C dye. Stack paper towels UNDER the spot as a transfer pad. Apply 91% isopropyl alcohol to a clean white cloth — never pour on the garment. Tamp from the BACK. Replace the underneath cloth as it picks up red. 2 to 3 passes. Open windows — alcohol is flammable, no flame."
+    },
+    {
+      "step": 7,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. SKIP fabric softener — it coats the fiber and blocks any future cleaning if needed. AIR-DRY only. Inspect dry — wet polyester sometimes hides residual pigment that reappears once dry."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Scrape or blot excess — do NOT rub (spreading worsens it)",
-      "2. Apply Dawn dish soap directly to the stain. Work gently",
-      "3. Blot with clean white cloth. Repeat Dawn application until stain fades",
-      "4. Rinse with warm water (unless protein component present — then cold)",
-      "5. Air dry — no heat"
+      "1. NO hot water. NO hot dryer until cleared.",
+      "2. Scrape excess gently with plastic-edge. NEVER rub.",
+      "3. Cornstarch / baking soda preload 10–15 min, soft-brush off.",
+      "4. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "5. Hidden-area IPA test on dyed polyester.",
+      "6. 91% IPA on cloth from BACK with paper towel transfer pad, 2–3 passes.",
+      "7. Cool machine wash (no softener) + AIR-DRY. Inspect dry."
     ],
     "products": [
-      "Dawn dish soap"
+      "Plastic spoon edge / dull butter knife",
+      "Cornstarch / baking soda",
+      "Dawn dish soap",
+      "91% Isopropyl alcohol (hidden test on dyed polyester)",
+      "Paper towels (transfer pad)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop on long-wear / 24-hour / matte lipstick on dyed polyester — plateau likely, pro for valuable garments. Stop if hot water or hot dryer was already used (often permanent). Stop on specialty / performance polyester (pro). Stop after 3 home cycles without progress.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "NEVER hot water — sets oil, locks D&C dye",
+      "NEVER hot dryer until cleared — locks dye, yellows polyester",
+      "NEVER fabric softener — coats fiber, blocks cleaning",
+      "Always scrape gently, NEVER rub — rubbing pushes pigment into fiber",
+      "Hidden test on dyed polyester before alcohol",
+      "Polyester is oleophilic — extended Dawn dwell needed",
+      "Flammable solvent — no flame"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never rub — pushes pigment into fiber surface texture",
+      "Never hot water on lipstick + polyester",
+      "Never hot dryer until cleared",
+      "Never fabric softener after lipstick — coats fiber",
+      "Never alcohol on dyed performance polyester without hidden test",
+      "Never solvent near flame"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs lipstick wax + oil tightly",
+      "Polyester is heat-sensitive — hot sets oil and locks D&C dye",
+      "Long-wear / 24-hour / matte formulas: often plateau because of polymer film-former",
+      "Performance / specialty polyester: pro — coatings react unpredictably",
+      "Dyed polyester: hidden alcohol test mandatory"
     ]
   },
+  "materialWarnings": [
+    "Scrape gently, never rub — rubbing is the #1 cause of permanent lipstick stains",
+    "Powder preload before water — water-first spreads it wider",
+    "No hot water / no hot dryer — polyester locks D&C dye",
+    "Long-wear formulas often plateau on dyed polyester",
+    "Polyester loves oil — extended Dawn dwell needed"
+  ],
   "escalation": {
-    "when": "If lipstick stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is lipstick on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent). Long-wear / 24-hour / matte lipstick on dyed polyester (likely plateau). Performance / specialty / dry-clean-only polyester. Rubbing has already pushed pigment into the fiber surface texture. 3 home cycles plateau. Valuable garment.",
+    "whatToTell": "\"Lipstick on [white / dyed / athletic / specialty] polyester, formula [standard / long-wear / matte / 24-hour], age [fresh / hours / hot-dried suspected], home-treated with [scrape + cornstarch preload + Dawn cool + 91% IPA cloth tamp from back + cool wash + air-dry]. No hot, no rubbing. [Residual shadow / hot-dried suspected / long-wear plateau].\"",
+    "specialistType": "professional dry cleaner with solvent spotting capability for combo stains"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Standard lipstick or long-wear / 24-hour / matte formula?",
+      "White, light, or dyed polyester?",
+      "Performance / athletic / specialty fabric?",
+      "Fresh, hours old, or hot-dried already?",
+      "Has anyone rubbed the stain trying to clean it?",
+      "Color of lipstick — red, pink, plum, nude?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Long-wear / matte / 24-hour formulas are the hard subset because of polymer film-formers — often plateau and need pro. Standard formulas respond well to the powder + Dawn + alcohol sequence. Rubbing during home attempts is the #1 cause of unrescuable lipstick stains because polyester surface texture grabs pigment particles aggressively. Red 27 D&C dye is the toughest color component — multiple alcohol passes needed."
   },
-  "difficulty": 7,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

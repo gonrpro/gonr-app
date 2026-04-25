@@ -1,78 +1,235 @@
 {
   "id": "mascara-polyester",
   "title": "Mascara on Polyester",
-  "stainFamily": "dye",
+  "stainType": "combo",
+  "stainFamily": "combo",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Mascara contains carbon black or iron oxide pigment, wax (beeswax, carnauba), polymer film-formers, and oils. Waterproof mascara adds additional silicone and acrylate polymers. On polyester, the wax-polymer matrix hardens and traps intense pigment against the fiber. Waterproof formulas are specifically engineered to resist water-based cleaning.",
-  "whyThisWorks": "POG or oil-based makeup remover dissolves the wax-polymer matrix on polyester. Surfactant then lifts the freed pigment particles. For waterproof mascara, an oil-based solvent is essential — water-based products cannot penetrate the silicone barrier. The carbon black pigment is extremely fine and can permanently stain porous fibers if rubbed.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "20–60 minutes; wax + carbon-pigment + waterproof film, polyester locks all under heat",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "mascara",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "mascara",
+      "combo",
+      "wax",
+      "carbon-black",
+      "polyester",
+      "no-hot-water",
+      "no-hot-dryer",
+      "scrape-first",
+      "waterproof-mascara-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Mascara is wax + intense carbon-black or iron-oxide pigment + polymer film-formers + oils. Waterproof mascara adds silicone and acrylate polymers specifically engineered to resist water cleaning — that's the whole point of waterproof. Two cases that need different handling: (1) STANDARD mascara — responds to powder + Dawn + cool wash; (2) WATERPROOF mascara — needs an oil-based makeup remover or solvent step because water-based products can't penetrate the silicone barrier. Polyester adds the heat trap (locks oil and pigment under heat, yellows over time) and is OLEOPHILIC (grabs the wax + oil tight). The recurring trap is rubbing — carbon-black pigment is extremely fine and gets pushed into fiber surface texture by aggressive scrubbing, leaving a permanent gray shadow.",
+  "whyThisWorks": "Powder preload absorbs the oil component. Dawn handles the wax + oil matrix. For waterproof mascara, an oil-based makeup remover (Neutrogena oil-free Makeup Remover, micellar water, or Bioderma) on a cloth dissolves the silicone film FIRST so Dawn can reach the pigment after. Cool wash + AIR-DRY locks nothing. The honest cap: long-wear / waterproof mascara on dyed polyester sometimes plateaus with a faint gray shadow.",
+  "defaultAssumption": "Mascara smudge on a pillowcase, collar, sleeve, or under-eye contact transfer onto a polyester garment. Standard mascara = high-confidence. Waterproof / smudge-proof / 24-hour formula = oil-based remover step is mandatory. Hot-dried = often permanent gray shadow.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify the Formula",
+      "technique": "Standard vs waterproof fork",
+      "equipment": "Mascara label or product name",
+      "dwellTime": "1 minute",
+      "instruction": "Identify whether it's standard or waterproof mascara. Waterproof / smudge-proof / 24-hour formulas need an oil-based remover step that standard formulas don't. If unknown, treat as waterproof — the oil-based step doesn't hurt standard mascara."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Scrape Excess Gently — Don't Rub",
+      "technique": "Mechanical lift before chemistry",
+      "equipment": "Plastic spoon edge",
+      "dwellTime": "1 minute",
+      "instruction": "Scrape excess mascara off with a plastic spoon edge. Flat-edge work only. NEVER rub — carbon-black pigment is extremely fine and rubbing pushes it into polyester surface texture, leaving a permanent gray shadow."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Powder Preload",
+      "technique": "Pull oil up before water",
+      "equipment": "Cornstarch / baking soda",
+      "dwellTime": "10 minutes",
+      "instruction": "Cover the spot with cornstarch or baking soda. Press gently. 10 min absorb. Soft-brush off."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Oil-Based Makeup Remover for Waterproof Mascara",
+      "technique": "Dissolve silicone film FIRST",
+      "equipment": "Neutrogena oil-free remover / micellar water / Bioderma on cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Waterproof mascara only. Apply makeup remover to a clean white cloth — never pour. Press the spot 5 min. The remover dissolves the silicone film so Dawn can reach the pigment after. Skip this step for confirmed standard mascara."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool",
+      "technique": "Emulsify wax and oil",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 10 min. Polyester is oleophilic — extended dwell needed. Cool damp-cloth rinse."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "OxiClean Cool Soak Plus Cool Wash",
+      "technique": "Finish residual pigment",
+      "equipment": "OxiClean per label, COOL water, washing machine",
+      "dwellTime": "30 min soak + cool cycle",
+      "instruction": "OxiClean cool soak 30 min. Cool machine wash with normal detergent. SKIP fabric softener. AIR-DRY."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "AIR-DRY Plus Daylight Inspect",
+      "technique": "Verify before any heat",
+      "equipment": "Hanger, daylight",
+      "dwellTime": "Air-dry to fully dry",
+      "instruction": "AIR-DRY only. Inspect in daylight. Faint gray shadow = repeat Dawn pass before any heat. NEVER hot dryer until cleared — locks pigment into polyester."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate or appropriate solvent to dissolve dye/pigment matrix",
-      "2. Apply NSD to lift loosened pigment. Flush with cool water",
-      "3. If color persists: apply H2O2 6% on colorfast fabrics to break chromophore bonds",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Identify standard vs waterproof formula. If unknown, treat as waterproof.",
+      "2. Scrape excess gently, never rub.",
+      "3. Cornstarch / baking soda preload 10 min.",
+      "4. Oil-based makeup remover for waterproof mascara — cloth tamp, 5 min.",
+      "5. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "6. OxiClean cool soak 30 min + cool machine wash.",
+      "7. AIR-DRY + daylight inspect."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "Oil-based makeup remover (Neutrogena, micellar water, Bioderma) for waterproof",
+      "Dawn / NSD",
+      "OxiClean / oxygen bleach",
+      "Cool water"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool throughout — heat locks oil and pigment on polyester",
+    "warnings": [
+      "NEVER hot water — sets oil, locks carbon-black pigment, yellows polyester",
+      "NEVER hot dryer until cleared",
+      "NEVER fabric softener — coats fiber, blocks cleaning",
+      "Always scrape gently, NEVER rub — rubbing pushes carbon pigment into fiber",
+      "Waterproof mascara needs oil-based remover step BEFORE Dawn",
+      "Polyester is oleophilic — extended Dawn dwell needed",
+      "Powder preload BEFORE water — water-first spreads stain"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Standard or Waterproof Mascara — That's the Fork",
+      "instruction": "Standard mascara responds to the usual oil-stain protocol. Waterproof mascara is engineered to resist water — it has a silicone barrier that Dawn can't get through. For waterproof formulas, you need an oil-based makeup remover step FIRST to dissolve the silicone film so Dawn can reach the pigment after. If you don't know which formula it is, treat as waterproof — the extra step doesn't hurt. Two hard rules on polyester: NO hot water and NO hot dryer until cleared."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Gently — Carbon Pigment Pushes In",
+      "instruction": "If there's a clump of mascara on the fabric, lift it off with a plastic spoon edge. Flat-edge work only. NEVER rub. Mascara's carbon-black pigment is extremely fine and rubbing pushes it into polyester's surface texture, leaving a permanent gray shadow."
+    },
+    {
+      "step": 3,
+      "agent": "Cornstarch or Baking Soda — 10 Minutes",
+      "instruction": "Cover the spot with cornstarch or baking soda. Press gently. 10 minutes. Soft-brush off. Pulls bulk oil up before water spreads it."
+    },
+    {
+      "step": 4,
+      "agent": "Oil-Based Makeup Remover for Waterproof Mascara",
+      "instruction": "Waterproof mascara only. Apply Neutrogena oil-free makeup remover, micellar water, or Bioderma to a clean white cloth — never pour on the garment. Press the spot for 5 minutes. The remover dissolves the silicone film so Dawn can reach the pigment after. SKIP this step if you've confirmed it's standard mascara."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "instruction": "Polyester is oleophilic — it grabs the wax + oil in mascara tight. Apply a generous amount of Dawn dish soap. Work in with a soft toothbrush for 10 minutes. Cool damp-cloth rinse."
+    },
+    {
+      "step": 6,
+      "agent": "OxiClean Cool Soak and Cool Wash",
+      "instruction": "Mix OxiClean per label in COOL water, soak 30 minutes. Cool machine wash with normal detergent. SKIP fabric softener. NEVER hot water — locks oil and carbon-black pigment, yellows polyester."
+    },
+    {
+      "step": 7,
+      "agent": "AIR-DRY and Inspect Before Any Heat",
+      "instruction": "Hang to AIR-DRY. Inspect in daylight. Faint gray shadow = repeat Dawn pass. NEVER hot dryer until cleared — locks residual pigment into polyester. Honest cap: long-wear / waterproof formulas on dyed polyester sometimes leave a faint gray shadow."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately — never rub (spreading dye worsens it)",
-      "2. Apply Dawn dish soap mixed with cold water. Blot gently",
-      "3. If stain persists: apply hydrogen peroxide 3% on colorfast fabrics — test hidden area first, 5-10 min dwell time",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat until stain is completely gone"
+      "1. Identify standard vs waterproof. Unknown = treat as waterproof.",
+      "2. NO hot water. NO hot dryer until cleared.",
+      "3. Scrape excess gently with plastic-edge. NEVER rub.",
+      "4. Cornstarch / baking soda preload 10 min.",
+      "5. Oil-based makeup remover for waterproof — cloth tamp 5 min.",
+      "6. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "7. OxiClean cool soak 30 min + cool wash, no softener.",
+      "8. AIR-DRY + daylight inspect. No dryer until cleared."
     ],
     "products": [
+      "Plastic spoon edge",
+      "Cornstarch / baking soda",
+      "Oil-based makeup remover (waterproof mascara)",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "OxiClean Versatile",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if hot water or hot dryer was already used (often permanent gray shadow). Stop on waterproof / 24-hour formula on dyed polyester — plateau likely, pro for valuable garments. Stop on specialty / performance polyester (pro). Stop after 3 home cycles without progress.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "NEVER hot water — locks oil and carbon-black pigment",
+      "NEVER hot dryer until cleared — yellows polyester",
+      "NEVER fabric softener — coats fiber, blocks cleaning",
+      "Always scrape gently, NEVER rub — rubbing pushes carbon pigment into fiber",
+      "Waterproof mascara needs oil-based remover BEFORE Dawn",
+      "Polyester is oleophilic — extended Dawn dwell needed",
+      "Powder preload BEFORE water"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never rub — pushes carbon-black pigment into polyester surface",
+      "Never hot water on mascara + polyester",
+      "Never hot dryer until cleared",
+      "Never fabric softener after mascara",
+      "Never skip the oil-based remover step on waterproof mascara"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs mascara wax + oil tightly",
+      "Polyester yellows under heat",
+      "Carbon-black pigment is extremely fine — fiber surface texture grabs it under rubbing",
+      "Waterproof mascara: silicone barrier blocks water-based cleaning until removed",
+      "Performance / specialty polyester: pro — coatings react unpredictably"
     ]
   },
+  "materialWarnings": [
+    "Standard vs waterproof is the fork — different protocol",
+    "Scrape gently, never rub — carbon pigment pushes in",
+    "Powder preload before water",
+    "No hot water / no hot dryer — polyester locks pigment + yellows",
+    "Honest cap: faint gray shadow on waterproof / long-wear formulas"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is mascara on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent gray shadow). Waterproof / 24-hour mascara on dyed polyester (likely plateau). Performance / specialty / dry-clean-only polyester. Rubbing has pushed carbon pigment into fiber surface. 3 home cycles plateau.",
+    "whatToTell": "\"Mascara on [white / dyed / athletic / specialty] polyester, formula [standard / waterproof / 24-hour], age [fresh / hours / hot-dried suspected], home-treated with [scrape + cornstarch preload + oil-based remover (waterproof) + Dawn cool + OxiClean cool soak + cool wash + air-dry]. No hot, no rubbing. [Residual gray shadow / hot-dried suspected / waterproof plateau].\"",
+    "specialistType": "professional dry cleaner with solvent spotting capability for combo / waterproof cosmetic stains"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Standard mascara or waterproof / 24-hour / smudge-proof?",
+      "White, light, or dyed polyester?",
+      "Performance / athletic / specialty fabric?",
+      "Fresh, hours old, or hot-dried already?",
+      "Has anyone rubbed the stain trying to clean it?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Standard vs waterproof is the entire fork. Waterproof mascara needs the oil-based remover step before Dawn — skipping it means Dawn never reaches the pigment. The carbon-black pigment is the second key issue: it's extremely fine and grabs polyester's surface texture aggressively under rubbing, leaving a permanent gray shadow that can look set when it's just rubbed in. Honest cap on long-wear / waterproof formulas on dyed polyester is faint gray shadow remaining."
   },
-  "difficulty": 5,
-  "timeEstimate": "10-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
