@@ -1,87 +1,205 @@
 {
   "id": "makeup-silk",
-  "title": "Foundation/Makeup on Silk",
-  "stainFamily": "combo",
+  "title": "Foundation / Makeup on Silk",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "silk",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Liquid foundation contains pigment (iron oxides, titanium dioxide), oils (silicone, mineral oil), waxes, and emulsifiers. On silk, the oil component penetrates the fiber while pigment particles lodge in the surface texture. Water-based foundations are easier to remove than oil-based, but both contain pigment that can stain. Setting powders and primers add additional polymer layers.",
-  "whyThisWorks": "Solvent or POG dissolves the oil/silicone matrix on silk, releasing the trapped pigment particles. Surfactant then lifts the liberated pigment. For stubborn mineral pigment residue, a mild oxidizer addresses remaining discoloration. Working gently is key — aggressive rubbing drives pigment particles deeper into the fiber structure.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "Pro-lane within hours; cold blot only at home",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "makeup",
+    "surfaceCanonical": "silk",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "combination",
+      "oil",
+      "pigment",
+      "silicone",
+      "silk",
+      "delicate-fiber",
+      "refusal-style",
+      "pro-lane-early"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Liquid foundation = pigment (iron oxide / titanium dioxide) + oils + silicone (dimethicone) + emulsifiers + sometimes polymer film former. Silicone is the difference vs lipstick — it's hydrophobic AND slick, so most household surfactants can't touch it. Silicone-based foundations need a silicone-targeting solvent. On silk, the cotton makeup-removal toolkit (Dawn + warm water + scrubbing) doesn't address silicone AND damages silk. Pro uses cold POG / petroleum ether + cold NSD + (occasionally) sodium hydrosulfite for residual color.",
+  "whyThisWorks": "Cold solvent (silicone-compatible) penetrates the silicone phase, releases oil and pigment, NSD lifts dissolved residue. Reducing bleach for any residual D&C dye color. Home protocol = lift bulk, cold blot, pro within hours.",
+  "defaultAssumption": "Silk + foundation = pro within hours. Most modern foundations contain silicone — home soap won't touch it. Tinted moisturizers (less polymer / silicone) are slightly easier.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Lift Surface Excess",
+      "technique": "Plastic card flat edge",
+      "equipment": "Plastic card, white cloth",
+      "dwellTime": "30 seconds",
+      "instruction": "Use the flat edge of a plastic card to lift surface excess. Wipe card on cloth between passes. No smearing or rubbing."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse",
+      "equipment": "Cold water, white catch towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Cold water through the BACK over a catch towel. Removes water-miscible fraction; silicone-based foundations resist this but it's worth attempting."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Cold POG (Pro)",
+      "technique": "Solvent for silicone + oil",
+      "equipment": "POG (cold) on white cloth",
+      "dwellTime": "Brief — apply, blot",
+      "instruction": "Cold solvent penetrates the silicone matrix. Tight blotting from edge inward. Refresh cloth each pass."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cold NSD (Pro)",
+      "technique": "Sponge press",
+      "equipment": "Cold-formula NSD",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Cold NSD lifts dissolved pigment + emulsifier. Press only."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Sodium Hydrosulfite (Pro, Optional)",
+      "technique": "Reducing bleach for residual color",
+      "equipment": "Sodium hydrosulfite per pro reference",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "For residual D&C dye color. Strict 60-sec dwell, silk-safer than peroxide."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cold Final Rinse + Press-Dry Flat",
+      "technique": "Flush, lay flat",
+      "equipment": "Cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "Cold final rinse. Press between dry towels, lay flat to air-dry."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG to dissolve the oil/wax component",
-      "2. Apply NSD to lift dissolved residue and pigment",
-      "3. If color remains: apply sodium hydrosulfite on colorfast fabrics — 5-10 min dwell time, monitor",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Plastic card flat-edge lift surface excess.",
+      "2. Cold water back-flush.",
+      "3. Cold POG / petroleum ether for silicone + oil.",
+      "4. Cold NSD sponge press for pigment.",
+      "5. Sodium hydrosulfite for residual dye color, 60-sec ceiling.",
+      "6. Cold final rinse, press dry flat."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "POG (cold) / petroleum ether",
+      "Cold-formula NSD",
+      "Sodium hydrosulfite (reducing bleach)",
+      "Cold/ice water"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout — silk denatures above 30°C",
     "warnings": [
-      "No peroxide on silk — use sodium hydrosulfite (reducing agent) instead"
+      "NEVER hot water — denatures silk",
+      "NEVER isopropyl alcohol on silk — strips dyes",
+      "NEVER acetone on silk — destroys fibroin",
+      "NEVER hydrogen peroxide on silk — yellows dyes",
+      "NEVER OxiClean / alkaline cleaners",
+      "Silicone-based foundations require silicone-compatible solvent",
+      "60-sec ceiling on reducing bleach"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Answer — Pro Within Hours",
+      "instruction": "Foundation on silk is harder than lipstick because of silicone. Most modern foundations contain dimethicone (silicone), which is hydrophobic AND slick — household soap can't touch it. Add silk's banned-tools list (no alcohol, no acetone, no peroxide, no OxiClean), and home options shrink to bulk-lift + cold-water back-flush. Pro chemistry has silicone-compatible solvents that home doesn't."
+    },
+    {
+      "step": 2,
+      "agent": "Lift Surface Excess — Plastic Card Edge",
+      "instruction": "Use the FLAT edge of a plastic card to lift any surface excess. Don't scrape or rub. Wipe the card on a separate cloth between passes."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Back-Flush",
+      "instruction": "Turn inside out. Place white towel under stain. Run COLD water through the BACK into the catch towel. Cold ONLY. The water-miscible fraction (water + emulsifier) lifts; the silicone fraction stays. That's expected — pro handles the silicone."
+    },
+    {
+      "step": 4,
+      "agent": "Press Dry — DO NOT Apply Anything Else",
+      "instruction": "Press silk between two dry white towels. No wringing. Lay flat at room temperature, out of sun. Do NOT apply rubbing alcohol (strips silk dyes), acetone, peroxide, OxiClean, or Dawn (Dawn won't touch silicone but WILL drive pigment in if you rub it). Silk's best outcome is reaching the pro with nothing applied."
+    },
+    {
+      "step": 5,
+      "agent": "Pro Silk Specialist Within Hours",
+      "instruction": "CALL FIRST — \"Do you treat foundation on silk with cold POG?\" If they don't know what POG is, try another cleaner. Tell them: \"Foundation on silk, [silicone-based / water-based / tinted moisturizer], age [hours]. Plastic-card lift + cold-water back-flush ONLY at home. No solvent, no detergent applied.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Scrape or blot excess — do NOT rub (spreading worsens it)",
-      "2. Apply Dawn dish soap directly to the stain. Work gently",
-      "3. Blot with clean white cloth. Repeat Dawn application until stain fades",
-      "4. Rinse with warm water (unless protein component present — then cold)",
-      "5. Air dry — no heat"
+      "1. Silk + foundation = pro-lane within hours.",
+      "2. Plastic card flat-edge lift of surface excess.",
+      "3. Cold water back-flush from the reverse, into catch towel.",
+      "4. Press dry between white towels — no other chemistry.",
+      "5. Pro silk specialist within hours."
     ],
     "products": [
-      "Dawn dish soap"
+      "Plastic card",
+      "Cold/ice water",
+      "Dry white towels"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop after the cold-water back-flush. Silicone-based foundations don't respond to home soap, and the household lipstick toolkit damages silk.",
     "warnings": [
-      "Always test on a hidden seam or inside hem first — silk dyes may not tolerate spotting agents.",
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "NEVER alcohol / IPA on silk — strips dyes",
+      "NEVER acetone on silk",
+      "NEVER hot water on silk",
+      "NEVER hydrogen peroxide on silk — yellows dyes",
+      "NEVER OxiClean / alkaline cleaners",
+      "NEVER rub foundation in — drives pigment + silicone deeper",
+      "Pour through, not on top — water rings"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No protease enzymes — silk IS protein; enzymes digest the fiber",
-      "No chlorine bleach — dissolves protein fibers",
-      "No alkaline detergents (pH >8) — breaks peptide bonds",
-      "No acetone — bleaches and damages fiber structure",
-      "No hot water — max 30°C / 86°F"
+      "Never alcohol / IPA on silk",
+      "Never acetone on silk",
+      "Never hot water",
+      "Never hydrogen peroxide on silk",
+      "Never OxiClean / alkaline",
+      "Never rub foundation"
     ],
     "fiberSensitivities": [
-      "Protein fiber — extremely sensitive to enzymes, alkali, and heat",
-      "Dyes bleed easily — always test first",
-      "Never wring or agitate vigorously"
+      "Silk fibroin damaged by acetone + most aggressive solvents",
+      "Silk dyes stripped by isopropyl alcohol",
+      "Silk yellows from peroxide",
+      "Silicone-based foundations need pro silicone solvent"
     ]
   },
+  "materialWarnings": [
+    "Pro within hours — silicone foundations require pro solvent",
+    "Cotton makeup-removal toolkit damages silk",
+    "Don't rub — drives pigment + silicone deeper"
+  ],
   "escalation": {
-    "when": "If makeup stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is makeup on silk, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "silk specialist or couture cleaner"
+    "when": "Always — silk + foundation is pro-lane within hours, especially silicone-based foundations.",
+    "whatToTell": "\"Foundation on silk, [silicone-based / water-based / tinted moisturizer if known], age [hours]. Plastic-card lift + cold-water back-flush ONLY at home. No alcohol, no acetone, no detergent, no peroxide applied.\"",
+    "specialistType": "professional dry cleaner specializing in silk (call ahead — confirm cold POG / silicone-compatible solvent capability)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Foundation type — silicone-based / water-based / oil-based / tinted moisturizer?",
+      "Color — light shade / dark / contour?",
+      "How long ago?",
+      "Has anyone applied alcohol / Dawn / acetone / micellar water?",
+      "Type of silk?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Silicone-based foundations are the hardest variant. Tinted moisturizers (less polymer) easier. Long-wear foundations have additional film former — even harder. Pre-applied alcohol = silk dye stripped where applied; pre-applied micellar water rings silk."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — silk dyes may not tolerate spotting agents."
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

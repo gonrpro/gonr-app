@@ -1,87 +1,195 @@
 {
   "id": "lipstick-silk",
   "title": "Lipstick on Silk",
-  "stainFamily": "combo",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "silk",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Lipstick is a four-component stain: pigment (iron oxides, lakes), oil (castor oil, lanolin), wax (beeswax, carnauba), and dye (D&C reds). On silk, the wax creates a hydrophobic shell around the pigment, the oil penetrates the fiber, and the dye transfers color. Treatment must break through the wax barrier to access the underlying components.",
-  "whyThisWorks": "On silk, the treatment addresses components in order: first dissolve the wax/oil matrix with POG or solvent, then lift the pigment with surfactant, then address any remaining dye with oxidizer. Scraping excess first prevents spreading. Working from the back of the fabric (when possible) pushes the stain out rather than deeper in.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "Pro-lane within hours; cold blot only at home",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "lipstick",
+    "surfaceCanonical": "silk",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "combination",
+      "wax",
+      "oil",
+      "pigment",
+      "dye",
+      "silk",
+      "delicate-fiber",
+      "refusal-style",
+      "pro-lane-early"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Lipstick is four-part: wax (beeswax / carnauba) + oil (castor / lanolin) + pigment (iron oxides + lakes) + dye (D&C reds). The wax forms a hydrophobic shell around pigment + dye, requiring solvent to penetrate. On silk, the cotton lipstick-removal toolkit fails: rubbing alcohol strips silk dyes, acetone destroys silk, peroxide yellows silk. Pro uses cold POG / petroleum ether for the wax + oil layer + cold NSD for residual pigment + sodium hydrosulfite for residual dye color. Home cannot match this safely.",
+  "whyThisWorks": "Cold solvent penetrates the wax shell to release pigment + dye, then NSD lifts the dissolved components. Silk-safe reducing bleach for residual dye color. Home protocol = blot wet bulk, no chemistry, pro within hours.",
+  "defaultAssumption": "Silk + lipstick = pro within hours. Home blots wet bulk, then escalates. Long-wear / matte lipsticks have more pigment + polymer = harder. Sheer / gloss lipsticks = slightly easier.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Lift Bulk — No Smearing",
+      "technique": "Plastic card edge, no rubbing",
+      "equipment": "Plastic card, white cloth",
+      "dwellTime": "30 seconds",
+      "instruction": "Use the FLAT edge of a plastic card to lift the bulk waxy deposit off. Don't scrape or smear. Lift, place on cloth, wipe card."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Cold POG (Pro)",
+      "technique": "Solvent dissolves wax + oil",
+      "equipment": "POG (cold) on white cloth",
+      "dwellTime": "Brief — apply, blot",
+      "instruction": "Cold solvent penetrates the wax shell. Tight blotting from edge inward, refresh cloth each pass."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Cold NSD (Pro)",
+      "technique": "Sponge press for pigment",
+      "equipment": "Cold-formula NSD",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Cold NSD lifts dissolved pigment. Press only, no agitation."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Sodium Hydrosulfite (Pro, Residual Dye)",
+      "technique": "Reducing bleach, strict timing",
+      "equipment": "Sodium hydrosulfite per pro reference",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "For residual D&C red dye color, reducing bleach is silk-safer than oxidizer. Strict 60-sec dwell."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cold Final Rinse + Press-Dry Flat",
+      "technique": "Flush + lay flat",
+      "equipment": "Cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "Final cold rinse. Press between dry towels, lay flat to air-dry."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG to dissolve the oil/wax component",
-      "2. Apply NSD to lift dissolved residue and pigment",
-      "3. If color remains: apply sodium hydrosulfite on colorfast fabrics — 5-10 min dwell time, monitor",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Plastic card flat-edge lift of waxy bulk.",
+      "2. Cold POG / petroleum ether for wax + oil.",
+      "3. Cold NSD sponge press for pigment.",
+      "4. Sodium hydrosulfite for residual dye, 60-sec ceiling.",
+      "5. Cold final rinse, press dry flat."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "POG (cold) / petroleum ether",
+      "Cold-formula NSD",
+      "Sodium hydrosulfite (reducing bleach)",
+      "Cold/ice water"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout — silk denatures above 30°C",
     "warnings": [
-      "No peroxide on silk — use sodium hydrosulfite (reducing agent) instead"
+      "NEVER isopropyl alcohol on silk — strips silk dyes",
+      "NEVER acetone on silk — destroys fibroin",
+      "NEVER hot water — denatures silk",
+      "NEVER hydrogen peroxide on silk — yellows dyes",
+      "NEVER OxiClean / alkaline cleaners",
+      "60-sec ceiling on reducing bleach"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Answer — Pro Within Hours",
+      "instruction": "Lipstick on silk is the rare combination where the cotton toolkit damages silk. Rubbing alcohol (the standard home lipstick remover) STRIPS SILK DYES. Acetone destroys silk fibroin. Peroxide yellows silk. Even the gentlest home detergent can drive lipstick deeper if applied with friction. Home protocol = lift bulk wax, cold-water back-flush, then pro within hours."
+    },
+    {
+      "step": 2,
+      "agent": "Lift Bulk Wax — Plastic Card Flat Edge",
+      "instruction": "Use the FLAT edge of a plastic card (gift card, credit card) to lift the waxy bulk off. Don't scrape or smear — lift the deposit straight up off the silk. Wipe the card on a separate cloth between passes. Most surface waxy bulk comes off cleanly without touching silk."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Back-Flush — Pour Through, Not On Top",
+      "instruction": "Turn inside out. Place a white towel under the stain. Run COLD water through the BACK of the stain into the catch towel. Cold ONLY. Pour through the silk, never pooled on top — water rings silk. 60 seconds usually pulls some pigment to a pale shadow."
+    },
+    {
+      "step": 4,
+      "agent": "Press Dry — DO NOT Apply Anything Else",
+      "instruction": "Press silk between two dry white towels. No wringing. Lay flat at room temperature, out of sun. Do NOT apply rubbing alcohol (strips silk dyes), acetone (destroys silk), peroxide (yellows silk), OxiClean, or any cleaner. Silk's best outcome is reaching the pro with nothing applied."
+    },
+    {
+      "step": 5,
+      "agent": "Pro Silk Specialist Within Hours",
+      "instruction": "CALL FIRST — \"Do you treat lipstick on silk with cold POG + sodium hydrosulfite?\" If they don't know what those are, try another cleaner. Tell them: \"Lipstick on silk, [color], age [hours]. Plastic-card lift + cold-water back-flush ONLY at home. No alcohol, no peroxide, no detergent applied.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Scrape or blot excess — do NOT rub (spreading worsens it)",
-      "2. Apply Dawn dish soap directly to the stain. Work gently",
-      "3. Blot with clean white cloth. Repeat Dawn application until stain fades",
-      "4. Rinse with warm water (unless protein component present — then cold)",
-      "5. Air dry — no heat"
+      "1. Silk + lipstick = pro-lane within hours.",
+      "2. Plastic card FLAT-EDGE lift of waxy bulk. No smearing.",
+      "3. Cold water back-flush from the reverse, into a catch towel.",
+      "4. Press dry between white towels — no other chemistry.",
+      "5. Pro silk specialist within hours."
     ],
     "products": [
-      "Dawn dish soap"
+      "Plastic card (gift card / credit card)",
+      "Cold/ice water",
+      "Dry white towels"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop after the cold-water back-flush. Anything else home-applied risks worse damage than the lipstick.",
     "warnings": [
-      "Always test on a hidden seam or inside hem first — silk dyes may not tolerate spotting agents.",
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "NEVER alcohol on silk — strips silk dyes",
+      "NEVER acetone on silk — destroys fibroin",
+      "NEVER hot water on silk",
+      "NEVER hydrogen peroxide on silk — yellows dyes",
+      "NEVER OxiClean / alkaline cleaners",
+      "NEVER rub or smear lipstick — drives pigment deeper",
+      "Pour through, not on top — water rings"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No protease enzymes — silk IS protein; enzymes digest the fiber",
-      "No chlorine bleach — dissolves protein fibers",
-      "No alkaline detergents (pH >8) — breaks peptide bonds",
-      "No acetone — bleaches and damages fiber structure",
-      "No hot water — max 30°C / 86°F"
+      "Never alcohol / IPA on silk",
+      "Never acetone on silk",
+      "Never hot water",
+      "Never hydrogen peroxide on silk",
+      "Never OxiClean / alkaline",
+      "Never rub or smear lipstick"
     ],
     "fiberSensitivities": [
-      "Protein fiber — extremely sensitive to enzymes, alkali, and heat",
-      "Dyes bleed easily — always test first",
-      "Never wring or agitate vigorously"
+      "Silk fibroin damaged by acetone + most aggressive solvents",
+      "Silk dyes stripped by isopropyl alcohol",
+      "Silk yellows from peroxide",
+      "Silk rings from water on top"
     ]
   },
+  "materialWarnings": [
+    "Pro within hours — no safe home solvent",
+    "Cotton lipstick-removal toolkit (alcohol) STRIPS silk dyes",
+    "Lift bulk only at home — no chemistry"
+  ],
   "escalation": {
-    "when": "If lipstick stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is lipstick on silk, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "silk specialist or couture cleaner"
+    "when": "Always — silk + lipstick is pro-lane within hours.",
+    "whatToTell": "\"Lipstick on silk, [color], age [hours]. Plastic-card lift + cold-water back-flush ONLY at home. No alcohol, no acetone, no peroxide, no detergent applied.\"",
+    "specialistType": "professional dry cleaner specializing in silk (call ahead — confirm cold POG + sodium hydrosulfite spotting)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Lipstick type — sheer / cream / matte / long-wear?",
+      "Color — light pink / red / dark / nude?",
+      "How long ago?",
+      "Has anyone applied alcohol / acetone / Dawn already?",
+      "Type of silk — charmeuse / chiffon / habotai?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Long-wear / matte lipsticks have more polymer + pigment — harder. Dark colors leave more dye ghost. Pre-applied alcohol = silk dye likely already stripped where applied. Pre-applied acetone = silk fibroin damaged."
   },
-  "difficulty": 7,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — silk dyes may not tolerate spotting agents."
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

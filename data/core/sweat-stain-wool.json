@@ -1,213 +1,203 @@
 {
   "id": "sweat-stain-wool",
-  "version": "5.0",
-  "authored": "2026-03-22",
-  "title": "Sweat Stains on Wool",
-  "stainType": "protein-salts-oxidation",
+  "title": "Sweat / Yellowing on Wool",
+  "stainType": "specialty",
+  "stainFamily": "specialty",
   "surface": "wool",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "Pro-lane for set yellowing; one home pass max for fresh",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "sweat-stain",
     "surfaceCanonical": "wool",
     "tier": "universal",
     "riskLevel": "high",
     "tags": [
-      "protein-salts",
+      "protein",
+      "salt",
+      "aluminum",
+      "yellowing",
       "wool",
       "felting-risk",
-      "oxidation-yellowing",
-      "no-enzyme"
+      "refusal-style",
+      "no-enzymes"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Sweat on wool is complex because wool itself is protein fiber (keratin), and sweat contains proteins (urea, salts, shed skin cells). Additionally, wool has natural affinity for both water (from urea and salts) and oils (body oils), leading to oxidative yellowing over time. Yellowing on wool occurs as body oils oxidize (Fe²⁺ → Fe³⁺ in iron-containing compounds from blood/rust). Wool's protein structure is delicate—protease enzymes digest wool's keratin along with sweat proteins, destroying fiber strength permanently. Temperature is critical: heat felts wool irreversibly. Dyes in colored wool are heat-sensitive. The approach must be extremely conservative.",
-  "whyThisWorks": "For wool, Protein must be avoided entirely—no Protein, ever. Instead, mild NSD surfactant + cool water + minimal mechanical action removes fresh sweat. For yellowing (oxidized oils), very dilute H₂O₂ on white wool only can help reverse oxidation. For colored wool, accept that yellow/brown discoloration may be permanent without professional solvent treatment. Reducing bleach (sodium hydrosulfite) is an option for white wool but requires professional expertise.",
+  "stainChemistry": "Sweat = salt + sweat protein + urea + (often) aluminum from antiperspirant. On wool (keratin), sweat protein bonds to keratin via hydrogen bonding. Aluminum-protein complex yellows over time and is heat-set by dryer / iron exposure into permanent halos. Wool's banned-tools list applies fully: no enzymes (digest keratin), no hot water (felts wool + sets aluminum-protein), no alkaline (felts wool + locks yellowing), no agitation (felts wet wool), no chlorine bleach (destroys keratin). Vinegar IS the right tool here at controlled dilution + 60-sec ceiling — same chemistry as on silk. Set yellowing on wool is pro-only.",
+  "whyThisWorks": "Fresh sweat on wool with cold water + dilute vinegar (60-sec ceiling) handles fresh aluminum-protein without felting. Pro adds cold NSD + sodium hydrosulfite for set yellowing. ONE home pass max — repeat rounds on wool felt the fiber.",
+  "defaultAssumption": "Wool + fresh sweat = ONE careful home pass with cold + 60-sec vinegar. Wool + set yellow = pro-only. Aluminum-free deodorant + no fabric softener prevents recurrence.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "wet",
-      "agent": "Cool water only, no detergent",
-      "technique": "Gentle rinse, minimal agitation",
-      "equipment": "Spray bottle or running cool water",
-      "dwellTime": "1-2 minutes",
-      "instruction": "Rinse gently under cool running water. This removes salt, urea, and some loose sweat residue from wool's surface. Do NOT rub or agitate—wool fibers snag and pill immediately under mechanical stress. Blot only, pressing gently with cloth. For fresh sweat stains, this rinse alone may be sufficient to remove the stain completely."
+      "agent": "Cold Water Press-Blot",
+      "technique": "Vertical press only",
+      "equipment": "Ice water spray, white cloth",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Press cold water on the BACK with vertical pressure. No rubbing. Removes salt + fresh protein."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "NSD solution (wool-specific detergent, pH-neutral, NO enzymes)",
-      "technique": "Gentle immersion soak",
-      "equipment": "Basin with cool water and wool detergent",
-      "dwellTime": "5-10 minutes gentle soak",
-      "instruction": "Mix pH-neutral wool detergent (NSD, Dreft) at . Immerse stained area gently. Wool tolerates mild surfactant action better than enzymes. Detergent molecules encapsulate sweat protein residue and suspend it. Keep temperature below 30°C (cold, never tepid). Keep hands still—no mechanical agitation. After 5-10 minutes, rinse immediately."
+      "agent": "Wool-Safe NSD (Pro)",
+      "technique": "Sponge press, no agitation",
+      "equipment": "Mulsolite or wool-safe NSD",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Cold NSD sponge press. No enzymes (digest wool). Suspends remaining protein."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Soft cloth with gentle pressure only",
-      "technique": "Blot ONLY, no rubbing or scrubbing",
-      "equipment": "Soft cloth",
-      "dwellTime": "1-2 minutes blotting",
-      "instruction": "With very soft cloth, dab stain GENTLY. DO NOT SCRUB OR RUB—wool fibers snag and pill immediately with friction. Press gently—the surfactant is doing the work, you're just blotting away loosened sweat protein. Light pressure only."
+      "agent": "Acetic Acid Spotter",
+      "technique": "Dropper, 60-sec ceiling",
+      "equipment": "Acetic Acid (diluted 1:10)",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "Acid breaks aluminum-protein complex behind yellow halos AND restores wool's natural pH (~5). STRICT 60-sec ceiling. Flush cold immediately."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Cool water rinse",
-      "technique": "Gentle rinse",
-      "equipment": "Spray bottle or running cool water",
-      "dwellTime": "1-2 minutes",
-      "instruction": "Rinse gently under cool running water until no soap remains. Blot gently with cloth to absorb excess water. Thoroughness prevents soap residue that attracts dirt later."
+      "agent": "Sodium Hydrosulfite (Pro, Set Yellow)",
+      "technique": "Reducing bleach, strict timing",
+      "equipment": "Sodium hydrosulfite per pro reference",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "For set yellow halos, reducing bleach is wool-safer than peroxide (peroxide yellows wool further). Strict 60-sec dwell."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Optional: Weak vinegar rinse (1 tbsp per liter cool water) for cuticle smoothing",
-      "technique": "Optional final soak",
-      "equipment": "Basin with weakly acidified cool water",
-      "dwellTime": "1-2 minutes if included",
-      "instruction": "Optional professional technique: final weak vinegar rinse helps smooth wool's cuticles and prevents felting. Gently squeeze (never wring) and proceed to drying. This step improves final appearance."
-    },
-    {
-      "step": 6,
-      "side": "damp",
-      "agent": "Optional: Dilute H₂O₂ for yellowing on WHITE WOOL ONLY",
-      "technique": "Cautious spot application, test first",
-      "equipment": "Hidden test area, 3% H₂O₂ from drugstore",
-      "dwellTime": "TEST 1-2 minutes on hidden seam first. If safe: 3-5 minutes on stain maximum",
-      "instruction": "For white wool only—if yellowing remains after detergent rinse, you can try very dilute H₂O₂ . ALWAYS test on hidden seam first for 1-2 minutes. Check for yellowing or weakening. If safe, apply to stain for maximum 5 minutes (never longer—oxidative action risks yellowing itself). DO NOT use on colored wool—bleaching risk. Blot immediately, rinse thoroughly with cool water."
+      "agent": "Cold Final Rinse + Press-Dry Flat",
+      "technique": "Flush, lay flat",
+      "equipment": "Cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "Cold final rinse. Press between dry towels, lay flat to air-dry."
     }
   ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Cold water press-blot.",
+      "2. Wool-safe NSD sponge press.",
+      "3. Acetic acid 60-sec spotter.",
+      "4. Sodium hydrosulfite 60-sec for set yellow.",
+      "5. Cold final rinse, press dry flat."
+    ],
+    "products": [
+      "Mulsolite or wool-safe NSD",
+      "Acetic Acid (diluted 1:10)",
+      "Sodium hydrosulfite (reducing bleach)",
+      "Cold/ice water"
+    ],
+    "temperature": "cold throughout — wool felts above 30°C when wet",
+    "warnings": [
+      "NEVER hot water — felts wool + sets aluminum-protein",
+      "NEVER agitation / scrubbing — felts wool",
+      "NEVER enzymes — digest keratin",
+      "NEVER alkaline cleaners — felt + lock yellow",
+      "NEVER chlorine bleach",
+      "NEVER hydrogen peroxide on wool — yellows wool further",
+      "60-sec ceiling on acid + reducing bleach"
+    ]
+  },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Wool + sweat: fresh resolves gracefully, yellow buildup is pro territory",
-      "instruction": "Sweat on wool has the same four parts as sweat on any other fabric: protein, oil, salt, and (if antiperspirant) aluminum. Fresh sweat on wool often rinses out with cool water alone. Yellow buildup on wool (weeks of antiperspirant + sweat) is almost always pro territory because home peroxide is limited to a strict 60-second ceiling on wool and that's rarely enough to finish old aluminum-protein complexes. Know which camp you're in before you start — it saves 20 minutes of hopeful scrubbing."
+      "agent": "Honest Answer — Fresh One Pass, Set Yellow Pro",
+      "instruction": "Sweat on wool has the same two cases as on silk. FRESH (today's wear) = one careful pass with cold + dilute vinegar can handle it. SET YELLOW (cumulative buildup, especially heat-exposed) = pro-only. Wool's banned-tools list eliminates almost everything cotton would use, AND repeat home rounds on wool felt the fiber. The aluminum-free-deodorant prevention path matters more on wool than treatment does."
     },
     {
       "step": 2,
-      "agent": "Wool rules + sweat specifics",
-      "instruction": "Wool bans: no enzymes (digest wool keratin — and most retail enzyme cleaners are blends you can't verify), no hot water, no chlorine bleach, no alkaline (pH > 7 opens scales and triggers felting), no scrubbing or wringing. Sweat-specific: vinegar is the home tool for aluminum-protein pit staining. It's wool-safe within the 60-second ceiling and does real work on the exact chemistry behind yellow marks."
+      "agent": "Cold Water Press-Blot from the BACK — Fresh Sweat Only",
+      "instruction": "Turn inside out. Place white towel under stain. Press a SECOND white cloth dampened in COLD water onto the BACK. Vertical pressure only — no rubbing. Cold ONLY — heat felts wool AND sets aluminum-protein. Skip if yellow is already set; go to step 5."
     },
     {
       "step": 3,
-      "agent": "Patch test + press-blot",
-      "instruction": "Dab cool water on an inside seam, wait 60 seconds, blot. If clean, proceed. Press a white cloth straight down on the stain. Lift, move to a dry section, press again. Work outside-in. Keep going until the cloth stops picking up yellow. Never rub — wool felts fast under wet friction."
+      "agent": "Wool-Safe Detergent — One Pass Only",
+      "instruction": "Half teaspoon Eucalan or Soak in two cups COLD water. Dip cloth, wring nearly dry, PRESS on stain. 3 minutes dwell. ONE PASS. Do NOT use OxiClean — alkaline opens wool scales AND locks yellow."
     },
     {
       "step": 4,
-      "agent": "Cool water rinse for fresh sweat",
-      "instruction": "For fresh sweat only (same day, no visible yellow): turn the garment inside out and run cool water through the BACK of the stain for 30–60 seconds. Press between dry towels. This alone often removes most of a fresh pit stain on wool. If you're seeing yellow, skip ahead to step 5."
+      "agent": "Dilute Vinegar — STRICT 60-Second Ceiling",
+      "instruction": "Mix 1 part white vinegar with 1 part cool water. Press a cotton swab on the stain for 60 SECONDS MAX — set a timer. Flush cool immediately. Vinegar IS the right tool: breaks aluminum-protein complex AND restores wool's natural pH. 60-sec is the ceiling — wool weakens with prolonged acid."
     },
     {
       "step": 5,
-      "agent": "Wool-safe detergent + dilute vinegar — 60-second ceiling",
-      "instruction": "Mix one teaspoon of Eucalan, Woolite, or Soak (NEVER OxiClean or \"bio\" detergents) in two cups of cool water. Dip a white cloth, wring nearly dry, press on the stain. 3–5 minutes dwell. Blot. Follow with 1 part white vinegar + 1 part cool water dabbed on the spot for 60 SECONDS MAX — set a timer. Rinse with cool water. Vinegar breaks aluminum-protein and restores wool's pH at the same time.",
-      "safetyNote": "Never combine vinegar with bleach or peroxide on the same dwell."
+      "agent": "Press Dry + Lay Flat",
+      "instruction": "Press wool between dry towels — stack, press, lift. No wringing. Lay flat on fresh towel, reshape damp, air-dry at room temperature out of sun. NEVER hang wet wool. NEVER apply heat — heat sets any residual aluminum-protein into permanent yellow."
     },
     {
       "step": 6,
-      "agent": "3% peroxide dab — STRICT 60-sec ceiling, white wool only",
-      "instruction": "If yellow remains AND the wool is white or cream AND your patch test came back clean: mix 1 part 3% peroxide with 1 part cool water. Dab with a cotton swab for 60 SECONDS MAX, flush with cool water immediately. Peroxide yellows wool at longer dwells. Skip entirely on colored wool — accept that yellowing may be permanent without professional help.",
-      "safetyNote": "Never exceed 60 seconds peroxide on wool. Never combine with ammonia or bleach."
-    },
-    {
-      "step": 7,
-      "agent": "Press dry + lay flat + don't double-dose",
-      "instruction": "Press between dry white towels to lift moisture. Lay flat, reshape while damp. Air-dry at room temperature, out of direct sun. Never hang wet wool. Never apply heat. If yellow persists after one round, DO NOT repeat the full protocol — repeat chemistry is the #1 cause of felting damage on wool. Escalate instead."
-    },
-    {
-      "step": 8,
-      "agent": "Escalate to a delicates specialist for set yellow",
-      "instruction": "Yellow pit-stain buildup on wool that survives one round is professional territory. Tell them: \"Sweat + antiperspirant yellowing on wool, age [x]. Treated at home with Eucalan + 1:1 vinegar + [60-sec peroxide on white] — one round, strict dwells. No enzymes, no bleach, no alkaline, no heat.\" Pros use reducing bleach with wool-safe technique that outperforms any home dwell window."
+      "agent": "Set Yellow Goes to Pro and Aluminum-Free Deodorant Prevents Recurrence",
+      "instruction": "Set yellow halos on wool need pro chemistry — reducing bleach at controlled dilution that home can't safely replicate, plus the tools that lift cumulative buildup from cotton (OxiClean, hot water) damage wool. Take to a wool specialist (call ahead). Tell them: \"Sweat / antiperspirant yellowing on wool, age [weeks / months], one fresh round at home with cold + 60-sec vinegar. No enzymes, no hot water, no peroxide.\" PREVENTION: aluminum-free deodorant + no fabric softener for wool you want to preserve."
     }
   ],
-  "materialWarnings": [
-    "NEVER Protein enzymes or household enzyme pre-treaters—they digest wool's keratin fiber. Forbidden entirely.",
-    "NEVER hot water above 30°C—wool felts permanently. Irreversible damage.",
-    "NEVER rub, scrub, or agitate—wool fibers snag and pill immediately.",
-    "NEVER use heat to dry (dryer, iron)—permanent felting.",
-    "NEVER use bleach on colored wool—dye damage. Oxygen bleach also damages wool protein.",
-    "NEVER hang to dry—gravity stretches wet wool."
-  ],
-  "escalation": "Sweat stains on wool rarely require professional help if treated when fresh. However, if stain has oxidized to yellow/brown (months old), professional dry cleaning is recommended. Professionals can assess whether discoloration is protein-based (removable with solvent) or true oxidized iron (may be permanent). They have solvent-based spotting equipment to safely treat without felting risk. For valuable wool or cashmere, professional assessment is safest.",
-  "products": {
-    "household": [
-      {
-        "name": "Wool-Safe Detergent (pH-neutral, enzyme-free)",
-        "brand": "Eucalan or Soak",
-        "icon": "🧴",
-        "amazonSearchQuery": "eucalan wool wash no rinse",
-        "affiliateTag": "gonr08-20",
-        "note": "Enzyme-free, pH-neutral wool wash. Household substitute for professional NSD. pH-neutral, no enzymes. Designed to protect wool fiber. Use minimally and at cool temperature."
-      },
-      {
-        "name": "Dreft",
-        "brand": "Dreft",
-        "icon": "🧴",
-        "amazonSearchQuery": "Dreft wool detergent",
-        "affiliateTag": "gonr08-20",
-        "note": "Gentle, pH-neutral. No enzymes. Safe for wool protein fiber."
-      },
-      {
-        "name": "White Vinegar (optional)",
-        "brand": "Generic",
-        "icon": "🧅",
-        "amazonSearchQuery": "white vinegar 5% acetic acid",
-        "affiliateTag": "gonr08-20",
-        "note": "Optional final rinse aid for cuticle smoothing. Prevents felting. 1 tbsp per liter. DO NOT substitute industrial-strength (28%) acetic acid — it causes chemical burns."
-      },
-      {
-        "name": "H₂O₂ 3% (optional, white wool only)",
-        "brand": "Generic drugstore",
-        "icon": "🧪",
-        "amazonSearchQuery": "H₂O₂ 3% solution",
-        "affiliateTag": "gonr08-20",
-        "note": "For yellowing on white wool only. Test first on hidden area. Never use on colored wool."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. Fresh sweat = one careful pass. Set yellow = pro-only.",
+      "2. Cold water press-blot from the BACK (no rubbing).",
+      "3. One pass with Eucalan / Soak, 3 min cold.",
+      "4. Dilute vinegar 60-sec ceiling — vinegar IS the right tool.",
+      "5. Press dry between towels, lay flat air-dry.",
+      "6. Set yellow / cumulative = pro wool specialist.",
+      "7. Going forward: aluminum-free deodorant, no fabric softener."
     ],
-    "professional": [
-      {
-        "name": "Professional Dry Cleaning (solvent-based)",
-        "brand": "Local dry cleaner",
-        "icon": "🧪",
-        "amazonSearchQuery": "wool dry cleaning near me",
-        "affiliateTag": "gonr08-20",
-        "note": "For aged or oxidized sweat stains on wool. Professionals assess stain type and use solvent-based spotting to avoid felting."
-      }
+    "products": [
+      "Cold / ice water",
+      "Eucalan or Soak (wool-specific, enzyme-free)",
+      "White vinegar (5%)",
+      "Dry white towels"
+    ],
+    "whenToStop": "Stop after one fresh-sweat pass. Set yellow on wool is pro-only. Repeat home rounds felt the wool.",
+    "warnings": [
+      "NEVER hot water — felts wool + sets aluminum-protein",
+      "NEVER enzymes / OxiClean / alkaline — felts + locks yellow",
+      "NEVER chlorine bleach",
+      "NEVER hydrogen peroxide on wool — yellows further",
+      "NEVER hang wet wool",
+      "Vinegar 60-sec ceiling — wool weakens with prolonged acid"
     ]
   },
-  "customerExplanation": "Sweat stains on wool require extreme caution because wool itself is protein fiber (keratin). We avoided enzymes entirely—protease would damage wool's structure. We used very mild, neutral-pH detergent and kept everything cold to prevent felting. For fresh sweat, cool water rinse alone works. For older sweat, we added gentle detergent wash. For yellowing, we offered very dilute H₂O₂ on white wool only. Air dry flat—never heat, which would felt the wool permanently.",
-  "commonMistakes": [
-    "Using Protein pre-treaters or enzyme products—they digest wool's keratin protein. Absolutely forbidden.",
-    "Using hot water—even 35°C triggers felting. Permanent damage.",
-    "Rubbing or scrubbing—wool fibers lock together immediately under friction.",
-    "Using heat to dry—wool felts permanently above 30°C.",
-    "Using bleach on colored wool—dye damage and fiber weakening.",
-    "Hanging wet wool to dry—gravity stretches the garment.",
-    "Repeated treatment for persistent yellowing—cumulative damage risk."
+  "safetyMatrix": {
+    "neverDo": [
+      "Never hot water on wool",
+      "Never agitate or scrub wet wool",
+      "Never enzymes / alkaline / OxiClean",
+      "Never chlorine bleach",
+      "Never hydrogen peroxide on wool — yellows further",
+      "Never dryer / iron heat on yellow wool"
+    ],
+    "fiberSensitivities": [
+      "Wool keratin felts when wet + warm + agitated",
+      "Disulfide bonds re-cross-link irreversibly under heat",
+      "Hydrogen peroxide yellows wool — opposite of what you want",
+      "Vinegar IS the right tool for sweat-on-wool at controlled dilution"
+    ]
+  },
+  "materialWarnings": [
+    "Vinegar is the right tool for fresh sweat on wool",
+    "Set yellow halos = pro-only",
+    "Repeat home rounds on wool = felting damage",
+    "Aluminum-free deodorant is the prevention path"
   ],
-  "scienceNote": "Wool's keratin has a triple-helix structure held together by hydrogen bonds and disulfide bonds. Cuticle scales overlap. Under neutral pH and cool water, scales lie flat. When pH rises above 7 (alkalinity) or temperature exceeds 30°C, scales swell and interlock (felting)—irreversible structural change. Protein enzymes are absolutely forbidden because they cleave peptide bonds in the triple helix, destroying fiber strength permanently. For yellowing: body oils oxidize over months (Fe²⁺ → Fe³⁺ in traces of iron), forming brown/yellow oxidized compounds. Very dilute H₂O₂ can reduce some oxidized iron, but extended oxidation may be permanent.",
-  "callPro": "For aged, oxidized sweat stains on wool, professional dry cleaning is recommended. Professionals assess whether discoloration is removable (protein-based residue vs. true oxidation) and have solvent-based equipment to safely treat without felting risk. For fine merino wool, cashmere, or valuable garments, professional assessment prevents accidental damage from home chemistry.",
-  "components": [
-    "detergent",
-    "optional-oxidation-reversal"
-  ],
-  "component_order": [
-    "detergent",
-    "optional-oxidation-reversal"
-  ],
-  "difficulty": 5,
-  "difficulty_factors": [
-    "felting-risk",
-    "enzyme-forbidden",
-    "oxidation-chemistry",
-    "temperature-critical",
-    "protein-fiber"
-  ],
-  "solventNote": "Wool is more solvent-stable than water-based treatment because organic solvents bypass the pH and temperature sensitivities that trigger felting. Professionals rely on solvent-based spotting for wool sweat stains—zero felting risk compared to water chemistry.",
-  "aftercare": "Lay wool garment flat on clean towel. Do NOT hang (gravity stretches wet wool and may distort shape permanently). Do NOT use heat (dryer, iron)—wool felts at temperature above 30°C. Open air circulation is ideal. Once completely dry, inspect. If yellowing persists, accept it—repeated treatment risks cumulative damage. For persistent yellowing, professional dry cleaning with optimized solvent-based treatment is the next step.",
+  "escalation": {
+    "when": "Yellow halos already set, cumulative buildup heat-exposed (dryer / iron), or one fresh-sweat round doesn't clear it.",
+    "whatToTell": "\"Sweat / antiperspirant yellowing on wool, age [today / weeks / months]. One fresh round at home with cold + 60-sec dilute vinegar + [Eucalan]. No enzymes, no hot water, no peroxide. [Yellow halos visible / aluminum buildup suspected].\"",
+    "specialistType": "professional dry cleaner specializing in wool (call ahead — confirm cold NSD + sodium hydrosulfite spotting capability)"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Fresh today, or yellow halos that have been there?",
+      "Aluminum-based antiperspirant or aluminum-free deodorant?",
+      "Has the wool been through a dryer / iron with sweat already?",
+      "Has fabric softener been used on this garment?",
+      "Wool type — merino / regular / felt / blend?"
+    ],
+    "modifierNotes": "Aluminum-free deodorant doesn't cause this. Fabric softener + antiperspirant = cumulative-yellow factory. Heat-set yellow on wool is the hardest variant; pro success rate is moderate."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

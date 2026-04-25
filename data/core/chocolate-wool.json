@@ -1,213 +1,229 @@
 {
   "id": "chocolate-wool",
-  "version": "5.0",
-  "authored": "2026-03-22",
   "title": "Chocolate on Wool",
   "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "wool",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "Pro-lane within hours; one home round max",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "chocolate",
     "surfaceCanonical": "wool",
     "tier": "universal",
     "riskLevel": "high",
     "tags": [
-      "oil",
+      "combination",
+      "fat",
       "protein",
       "tannin",
-      "combo-stain",
-      "delicate-fiber",
+      "wool",
       "felting-risk",
-      "no-enzyme"
+      "refusal-style",
+      "no-enzymes"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Wool is a protein fiber (keratin) with overlapping cuticle scales exquisitely sensitive to pH and mechanical stress. Chocolate on wool is a three-component stain: cocoa butter (lipid, wicks into medullary layer), milk casein (protein, bonds to keratin through sulfide bridges), tannins (pigments, embed in fiber matrix). Wool's cuticle scales lock together (felting) under heat, alkalinity, or friction—permanent structural damage. Protein enzymes digest wool's keratin protein along with chocolate's milk protein, destroying fiber strength. The challenge: remove chocolate's three components while keeping water below 30°C, pH 4.5-7, and zero friction.",
-  "whyThisWorks": "Cold water + pH-neutral soap mobilizes cocoa butter without raising pH (alkalinity triggers felting). Avoiding enzymes entirely protects wool's keratin structure. Mild acetic acid (vinegar) gently mobilizes tannin residue without dropping pH below safety floor (4.5). Optional: dilute H₂O₂ on white wool only for yellowing (cocoa butter oxidation). This protocol removes stain components while preventing felting.",
+  "stainChemistry": "Chocolate is four-part: cocoa butter + milk casein + cocoa tannin + sugar. Wool is keratin protein. The standard cotton attack (enzyme for casein, peroxide for tannin) is BANNED on wool — enzymes digest keratin equally with casein, peroxide yellows wool, alkaline cleaners felt wool AND lock tannin. Heat felts wool AND sets the casein AND sets tannin in one bad move. Home protocol is constrained: ice-lift solid bulk, cold-water-press-blot, ONE pass with wool-safe detergent, 60-sec vinegar, then pro.",
+  "whyThisWorks": "Wool specialist with cold POG (solvent for cocoa butter) + cold NSD (for casein) + timed acetic acid + dilute peroxide can lift fresh chocolate without felting. Home protocol does the bulk-lift and casein-soften with cold + Dawn-equivalent, then escalates. Repeat home rounds on wool felt the fiber.",
+  "defaultAssumption": "Wool + chocolate = pro within hours. ONE careful home round. Dark chocolate harder than milk; white chocolate is mostly fat (no tannin) — slightly easier.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cool water only",
-      "technique": "Gentle rinse, no agitation",
-      "equipment": "Spray bottle or soft cloth",
-      "dwellTime": "1-2 minutes",
-      "instruction": "Flush the stain with COOL water (cold, never tepid or warm). Work from back of fabric. Do NOT wring, twist, or agitate—fiber friction causes felting. Blot only, pressing gently with cloth. This removes loose chocolate particles and some cocoa butter before detergent step."
+      "side": "dry",
+      "agent": "Ice + Lift Solid Bulk",
+      "technique": "Ice bag harden + plastic card lift",
+      "equipment": "Ice in plastic bag, plastic card",
+      "dwellTime": "5 minutes ice + 30 sec lift",
+      "instruction": "Press ice bag on chocolate for 5 min to firm cocoa butter. Lift solids with flat edge of plastic card. Don't scrape wool — flat-edge lift only."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Wool-safe detergent at neutral pH (NSD, Dreft, lanolin-based) at 1 tsp per 2 cups cold water",
-      "technique": "Gentle immersion soak",
-      "equipment": "Basin, soft cloth, pH paper optional",
-      "dwellTime": "5-10 minutes maximum (no longer)",
-      "instruction": "Mix detergent in cold water to neutral pH (test with pH paper if available—target 6.5-7.0). Immerse stained area gently. Wool fibers slide past each other under lubricating action of mild soap, mobilizing cocoa butter without heat. Keep hands still, water temperature constant. DO NOT agitate or rub. After 5-10 minutes, rinse immediately with cold water. Longer soaking risks fiber stress."
+      "agent": "Cold Water Press-Blot",
+      "technique": "Vertical press only",
+      "equipment": "Ice water spray, white cloth",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Press cold water on the BACK with vertical pressure. No rubbing — agitates wool, felts fiber. Replace cloth as it picks up brown."
     },
     {
       "step": 3,
-      "side": "wet",
-      "agent": "Acetic acid spotter",
-      "technique": "Acid rinse for tannin mobilization",
-      "equipment": "Cloth or spray bottle",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Vinegar at pH 4.0-4.5 is SAFE for wool and mobilizes chocolate tannins (polyphenol pigments) remaining in fiber. Gently blot or rinse with dilute vinegar solution. This step also neutralizes any alkaline detergent residue—important to prevent felting. DO NOT leave vinegar on wool—rinse immediately with cool water to stop acid action."
+      "side": "wet-minimal",
+      "agent": "Cold POG (Pro)",
+      "technique": "Solvent for cocoa butter",
+      "equipment": "POG (cold) on white cloth",
+      "dwellTime": "Brief — apply, blot",
+      "instruction": "Cold solvent dissolves cocoa butter without water-based agitation. Press cloth, flip frequently."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Optional: Dilute H₂O₂ for yellowing on WHITE WOOL ONLY",
-      "technique": "Cautious soak, test first on hidden area",
-      "equipment": "Hidden seam test area, 3% H₂O₂ solution",
-      "dwellTime": "TEST 1 minute on hidden seam first. If safe: 3-5 minutes on stain maximum",
-      "instruction": "For white wool only—cocoa butter oxidizes yellow/brown over time. If yellowing persists after vinegar step, test dilute H₂O₂ on hidden seam for 1 minute. Check for color change or weakening. If safe, apply to stain for maximum 5 minutes (longer risks yellowing). DO NOT use on colored wool. Blot, rinse thoroughly with cool water. This oxidative treatment is optional and only for white wool."
+      "agent": "Cold Wool-Safe NSD",
+      "technique": "Sponge press for casein",
+      "equipment": "Cold-formula NSD",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Cold NSD handles casein without enzymes. Press only, no agitation."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Cool water with final trace of vinegar per gallon",
-      "technique": "Acidified final rinse",
-      "equipment": "Cloth or basin",
-      "dwellTime": "1-2 minutes",
-      "instruction": "A final very weak vinegar rinse helps set wool fiber cuticles in smooth position and prevents felting. This micro-acidification is a professional technique. Blot gently and press out excess water with your hands—do NOT wring."
-    }
-  ],
-  "homeSolutions": [
-    {
-      "step": 1,
-      "agent": "Three-part stain on a protein fiber — work in order",
-      "instruction": "Chocolate on wool is the hardest home stain combination in the library: cocoa butter (fat) + milk casein (protein) + cocoa tannin (pigment) on a fiber that CANNOT tolerate enzymes, heat, or alkaline. You have fewer tools than on cotton. Two realistic outcomes: caught fresh with cold-and-gentle chemistry, most comes out. Set or colored wool, you're looking at professional solvent spotting. Start with low expectations and escalate early if needed."
-    },
-    {
-      "step": 2,
-      "agent": "Patch test on a hidden seam",
-      "instruction": "Dab a drop of wool-safe detergent (Eucalan, Woolite, Soak) mixed with cold water on an inside seam. Wait 60 seconds, blot with a white cloth. If the seam loses color or feels rougher, stop — go to step 7. Wool dye is fragile and wool felts under moisture + friction. One test now saves a ruined garment later."
-    },
-    {
-      "step": 3,
-      "agent": "Lift solids — never rub or scrape hard",
-      "instruction": "If chocolate is still soft or melty, press a bag of ice against it for 5 minutes until it firms. Then lift solids off with the edge of a plastic card, held flat. Work away from the center. Do NOT scrape, scratch, or rub — friction on damp wool starts felting immediately. The goal is just removing the bulk deposit, not cleaning the fiber yet."
-    },
-    {
-      "step": 4,
-      "agent": "Wool-safe detergent cycle",
-      "instruction": "Mix one teaspoon of Eucalan, Woolite, or Soak with two cups of cold water (under 30°C / 86°F). Dip a white cloth, wring nearly dry, and PRESS onto the stain — never rub, never wring the garment. Let sit 5 minutes, then blot. Repeat 2–3 cycles. The detergent does double duty on wool: emulsifies the cocoa butter AND gently lifts the casein without digesting the wool. Plain Dawn also works if that's what you have; just make sure it's clear and fragrance-free.",
-      "safetyNote": "Never use OxiClean, Biz, Zout, or any \"bio\" detergent on wool — they contain enzymes that digest protein fiber along with protein stains."
-    },
-    {
-      "step": 5,
-      "agent": "White vinegar rinse — restore wool's pH",
-      "instruction": "Mix one tablespoon of white vinegar with one cup of cold water. Press onto the area with a white cloth. Two minutes dwell. Wool's natural pH is ~5; any detergent residue leaves it alkaline and keeps the scales open, which slowly damages the fiber over days. Vinegar closes the scales back up. On wool this step is load-bearing — skipping it shortens the garment's life even if the stain looks gone."
+      "agent": "Acetic Acid Spotter (Pro)",
+      "technique": "60-sec ceiling",
+      "equipment": "Acetic Acid (diluted 1:10)",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "For residual tannin. STRICT 60-sec dwell. Flush cold immediately."
     },
     {
       "step": 6,
-      "agent": "3% peroxide dab — WHITE wool only, strict 60-second ceiling",
-      "instruction": "If a tan shadow remains AND the wool is white or cream AND your step-2 patch test was clean: dab 3% hydrogen peroxide mixed 1:1 with cold water on a cotton swab and press onto the shadow. 60 SECONDS MAXIMUM, then flush with cold water immediately. Peroxide can yellow wool if left longer. Skip this step entirely on colored, dark, or patterned wool — and skip it if the patch test showed any dye transfer.",
-      "safetyNote": "Never exceed 60 seconds peroxide on wool. Never mix with ammonia or bleach."
+      "side": "wet",
+      "agent": "Dilute Hydrogen Peroxide for Oxidized Residue",
+      "technique": "Sponge with strict timing",
+      "equipment": "3% H₂O₂ diluted 1:1",
+      "dwellTime": "1–2 min monitored",
+      "instruction": "For oxidized brown, dilute peroxide 1–2 min monitored. Flush cold immediately."
     },
     {
       "step": 7,
-      "agent": "Blot dry and lay flat — NEVER hang wet wool",
-      "instruction": "Press the treated area between dry white towels — stack, press, don't wring. Lay the garment flat on a fresh dry towel, reshape while damp (wool holds the shape it dries in). Do NOT hang wet wool — gravity stretches the fiber. Do NOT use any heat source (dryer, iron, hair dryer). Let it air-dry slowly at room temperature, out of direct sunlight."
-    },
-    {
-      "step": 8,
-      "agent": "Escalate to a delicates specialist — don't double-dose at home",
-      "instruction": "If a shadow persists, or the wool is colored, or the chocolate was set by prior heat exposure, take it to a dry cleaner who specializes in delicates. Do NOT run another round of home chemistry — repeated treatment is the #1 cause of wool felting damage. Tell them: \"Chocolate on wool (fat + milk protein + tannin), treated once at home with wool-safe detergent + vinegar + [peroxide on white]. No hot water, no enzymes, no bleach used. Residual [tan/brown] shadow remains.\" Pros use solvent-based spotting (PERC or hydrocarbon) that's safer on wool than wet chemistry."
+      "side": "wet",
+      "agent": "Final Cold Rinse + Press-Dry Flat",
+      "technique": "Thorough rinse, lay flat",
+      "equipment": "Cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "Rinse until clear. Press between dry towels — never wring. Lay flat."
     }
   ],
-  "materialWarnings": [
-    "NEVER Protein enzymes—they digest wool's keratin fiber structure. Forbidden entirely.",
-    "NEVER hot water above 30°C—wool cuticles swell and lock permanently (felting begins).",
-    "NEVER alkaline cleaners (pH > 7)—alkalinity causes cuticles to stand up and lock together.",
-    "NEVER chlorine bleach—breaks disulfide bonds in keratin, destroying fiber.",
-    "NEVER agitate, rub, or wring—mechanical friction causes irreversible felting.",
-    "NEVER apply H₂O₂ to colored wool—bleaching risk."
-  ],
-  "escalation": "Professional dry cleaners can apply solvent-based POG (Petroleum Oil and Grease) spotting to wool chocolate stains at room temperature, avoiding any felting risk. For stubborn tannin discoloration, professionals may use mild tannin reducers formulated specifically for wool or dry-solvent extraction. This is recommended for fine wool, cashmere, or expensive garments.",
-  "products": {
-    "household": [
-      {
-        "name": "Wool-Safe Detergent (pH-neutral, enzyme-free)",
-        "brand": "Eucalan or Soak",
-        "icon": "🧴",
-        "amazonSearchQuery": "eucalan wool wash no rinse",
-        "affiliateTag": "gonr08-20",
-        "note": "Enzyme-free, pH-neutral wool wash. Household substitute for professional NSD. Lanolin-based; neutral pH; designed to protect wool cuticles. Use at cold temperature."
-      },
-      {
-        "name": "Dreft",
-        "brand": "Dreft",
-        "icon": "🧴",
-        "amazonSearchQuery": "Dreft wool detergent",
-        "affiliateTag": "gonr08-20",
-        "note": "Gentle, neutral-pH detergent. Safe for wool fiber. No enzymes."
-      },
-      {
-        "name": "White Vinegar",
-        "brand": "Generic",
-        "icon": "🧅",
-        "amazonSearchQuery": "white vinegar 5% acetic acid",
-        "affiliateTag": "gonr08-20",
-        "note": "Mild acid; mobilizes tannins and prevents felting by smoothing cuticles. DO NOT substitute industrial-strength (28%) acetic acid — it causes chemical burns."
-      },
-      {
-        "name": "H₂O₂ 3%",
-        "brand": "Generic drugstore",
-        "icon": "🧪",
-        "amazonSearchQuery": "H₂O₂ 3% solution",
-        "affiliateTag": "gonr08-20",
-        "note": "For yellowing on white wool only. Test first on hidden area. Do NOT use on colored wool."
-      }
+  "professionalProtocol": {
+    "steps": [
+      "1. Ice + flat-edge lift solid bulk.",
+      "2. Cold water press-blot.",
+      "3. Cold POG for cocoa butter.",
+      "4. Cold wool-safe NSD for casein.",
+      "5. Acetic acid 60-sec spotter.",
+      "6. Dilute H₂O₂ for oxidized residue, 1–2 min monitored.",
+      "7. Final cold rinse, press dry flat."
     ],
-    "professional": [
-      {
-        "name": "POG (Petroleum Oil and Grease)",
-        "brand": "Industry Standard",
-        "icon": "🧪",
-        "amazonSearchQuery": "POG solvent dry cleaning",
-        "affiliateTag": "gonr08-20",
-        "note": "Dissolves cocoa butter safely without water or heat risk. Professional-only."
-      },
-      {
-        "name": "Wool-Safe Tannin Reducer",
-        "brand": "Professional suppliers",
-        "icon": "🧴",
-        "amazonSearchQuery": "wool-safe tannin reducer",
-        "affiliateTag": "gonr08-20",
-        "note": "For stubborn chocolate tannin residue. Formulated for delicate fiber protection."
-      }
+    "products": [
+      "POG (cold)",
+      "Mulsolite or wool-safe NSD",
+      "Acetic Acid (diluted 1:10)",
+      "3% H₂O₂ (diluted 1:1)",
+      "Cold/ice water"
+    ],
+    "temperature": "cold throughout — wool felts above 30°C when wet",
+    "warnings": [
+      "NEVER hot water — felts wool + sets casein + sets tannin",
+      "NEVER agitation — felts wool",
+      "NEVER enzymes — digest keratin AND casein equally",
+      "NEVER alkaline cleaners — felt + darken tannin",
+      "NEVER chlorine bleach",
+      "60-sec ceiling on acid; 1–2 min on peroxide",
+      "Never wring wool"
     ]
   },
-  "customerExplanation": "Wool fibers have delicate scales that lock together (felting) under heat, alkalinity, or friction—permanent damage. Chocolate has three components: cocoa butter (we dissolved with neutral soap), milk protein (we never enzyme-treated because wool IS protein), and tannin (we mobilized with mild acid). Throughout, we kept water cold, used only gentle blotting, never rubbing, and avoided all heat and alkalinity.",
-  "commonMistakes": [
-    "Using warm water or even 35°C—triggers felting immediately.",
-    "Using alkaline cleaners designed for cotton—alkalinity locks wool cuticles together.",
-    "Agitating or rubbing—mechanical friction causes irreversible fiber interlocking.",
-    "Using Protein—this digests wool's keratin protein, destroying the garment.",
-    "Using heat to dry—permanent felting damage.",
-    "Hanging to dry—wet wool stretches under gravity and may not recover shape."
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "ONE Round Max — Felt Risk Stacks With Tannin Lock",
+      "instruction": "Chocolate on wool stacks four failure modes: heat felts wool AND sets casein AND sets tannin AND polymerizes the cocoa butter. Alkaline cleaners felt AND lock tannin. Enzymes digest wool. Repeat-round chemistry on wool is the #1 felting cause. ONE careful round, then stop."
+    },
+    {
+      "step": 2,
+      "agent": "Ice + Flat-Edge Lift Solid Chocolate",
+      "instruction": "Press a zip-lock bag of ice on the chocolate for 5 minutes to firm the cocoa butter. Lift solid pieces off with the FLAT edge of a plastic card. Don't scrape — wool fibers shred under any sharp edge. Just lift bulk."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Press-Blot from the BACK",
+      "instruction": "Turn inside out. Place white towel under the stain. Press a SECOND white cloth dampened in COLD water onto the BACK. Vertical pressure only — no rubbing, no scrubbing. Cold ONLY — heat felts wool, sets casein, sets tannin."
+    },
+    {
+      "step": 4,
+      "agent": "Wool-Safe Detergent — One Pass Only",
+      "instruction": "Mix half a teaspoon of Eucalan or Soak (or plain clear Dawn) in two cups COLD water. Dip cloth, wring nearly dry, PRESS on stain. 3 minutes dwell. ONE PASS. Do NOT use OxiClean or any \"bio\" detergent — they contain enzymes that digest wool."
+    },
+    {
+      "step": 5,
+      "agent": "Dilute Vinegar — STRICT 60-Second Ceiling",
+      "instruction": "Mix 1 part white vinegar with 1 part cool water. Press a cotton swab on the stain for 60 SECONDS MAX — set a timer. Flush with cool water immediately. Vinegar handles residual tannin AND keeps it on the lighter (acid) side."
+    },
+    {
+      "step": 6,
+      "agent": "Press Dry + Lay Flat",
+      "instruction": "Press wool between two dry white towels — stack, press, lift. No wringing or twisting. Lay flat on fresh towel, reshape damp, air-dry at room temperature out of sun. NEVER hang wet wool. NEVER apply heat."
+    },
+    {
+      "step": 7,
+      "agent": "Pro Within Hours If Anything Remains",
+      "instruction": "Take to a wool specialist (call ahead). Tell them: \"Chocolate on wool (cocoa butter + milk casein + tannin), age [hours], one round at home with ice-lift + cold + Dawn/Eucalan + 60-sec vinegar. No hot water, no enzymes, no OxiClean, no peroxide. [Residual brown / cocoa shadow].\""
+    }
   ],
-  "scienceNote": "Wool's cuticle structure is seven overlapping protein scales per micrometer. Under neutral pH and cool water, these scales lie flat and slide smoothly. When pH rises above 7 (alkalinity) or temperature exceeds 30°C, the scales swell and interlock—cuticle edge catches on cuticle edge and won't release. This is felting: irreversible structural damage. Weak acid (pH 4-5) actually helps prevent felting by smoothing the cuticle back down. Protein enzymes are absolutely forbidden because they cleave the peptide bonds that hold wool's triple-helix structure—identical mechanism to what makes them effective on blood protein, which is why they destroy wool fiber.",
-  "callPro": "Fine merino wool, cashmere, or expensive wool garments with chocolate stains should see a professional. Wool's felting risk means home treatment requires perfect temperature control, pH management, and mechanical restraint. Professionals have constant-temperature spotting cabinets, pH-controlled solutions, and solvent extraction equipment to guarantee success.",
-  "components": [
-    "chocolate-removal",
-    "wool-protection"
+  "diyProtocol": {
+    "steps": [
+      "1. Wool + chocolate = ONE home round max.",
+      "2. Ice + flat-edge lift solid bulk. No scraping.",
+      "3. Cold water press-blot from the BACK (no rubbing).",
+      "4. One pass with Eucalan / Soak / Dawn, 3 min cold.",
+      "5. Dilute vinegar 60-sec ceiling.",
+      "6. Press dry between towels, lay flat air-dry.",
+      "7. Anything remaining = pro. NO second home round."
+    ],
+    "products": [
+      "Ice + plastic bag",
+      "Plastic card (flat-edge lift)",
+      "Cold / ice water",
+      "Eucalan / Soak / clear Dawn",
+      "White vinegar (5%)",
+      "Dry white towels"
+    ],
+    "whenToStop": "Stop after one careful round. Repeat home chemistry on wool felts the fiber.",
+    "warnings": [
+      "NEVER hot water — felts wool + sets casein + sets tannin",
+      "NEVER enzymes / OxiClean / alkaline",
+      "NEVER chlorine bleach",
+      "NEVER scrape — flat-edge lift only",
+      "NEVER hang wet wool",
+      "ONE round home max"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never hot water on wool",
+      "Never agitate or scrub wet wool",
+      "Never enzymes — digests keratin AND casein",
+      "Never alkaline / OxiClean — felts + darkens tannin",
+      "Never chlorine bleach",
+      "Never repeat home chemistry"
+    ],
+    "fiberSensitivities": [
+      "Wool keratin felts when wet + warm + agitated",
+      "Disulfide bonds re-cross-link irreversibly under heat",
+      "Enzymes digest keratin equally with casein",
+      "Aggressive friction = pilling + felting"
+    ]
+  },
+  "materialWarnings": [
+    "ONE round home max — repeat chemistry felts wool",
+    "Four failure modes stack on this combination",
+    "Flat-edge lift only — never scrape wool"
   ],
-  "component_order": [
-    "chocolate-removal",
-    "wool-protection"
-  ],
-  "difficulty": 7,
-  "difficulty_factors": [
-    "felting-risk-high",
-    "enzyme-forbidden",
-    "temperature-critical",
-    "protein-fiber-sensitivity",
-    "cuticle-fragility"
-  ],
-  "solventNote": "Wool tolerates solvent-based treatment better than water-based because organic solvents bypass the pH and temperature sensitivities that trigger felting. Professionals rely on solvent-based POG spotting for wool chocolate stains—risk-free compared to home water chemistry.",
-  "aftercare": "If chocolate is still moist, blot gently with soft cloth—never rub (friction causes felting). For wet chocolate, apply ice pack wrapped in cloth to stain area for 5-10 minutes to firm it up, then gently lift loosened pieces. DO NOT scrape wool—the cuticle is delicate and metal tools damage fiber surface. This step prevents chocolate from wicking deeper into fiber. Lay wool garment flat on clean towel. Do NOT hang (gravity stretches wet wool and can distort shape). Do NOT use heat. Wool dries slowly but will not retain odor if dried in open air, away from sunlight and heat. Once dry, inspect. If any chocolate tannin remains (brownish shadow), do NOT repeat treatment—call professional dry cleaner who can safely use solvent-based spotting.",
+  "escalation": {
+    "when": "After one careful home round, regardless of result. Earlier for dark chocolate, large spills, or high-value garments.",
+    "whatToTell": "\"Chocolate on wool (cocoa butter + milk casein + tannin), age [hours], one round at home with ice-lift + cold + [wool-safe detergent] + 60-sec vinegar. No hot water, no enzymes, no peroxide. [Residual brown / cocoa shadow].\"",
+    "specialistType": "professional dry cleaner specializing in wool (call ahead — confirm cold POG + acetic acid spotting capability)"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Milk / dark / white chocolate?",
+      "How long ago — fresh, hours, or older?",
+      "Wool type — merino / regular / felt / blend?",
+      "Has anyone used hot water / OxiClean / agitation?"
+    ],
+    "modifierNotes": "Dark chocolate has more tannin — harder. White chocolate is mostly cocoa butter — slightly easier. Merino felts faster. Pre-applied enzyme = wool likely partially digested; disclose to pro."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

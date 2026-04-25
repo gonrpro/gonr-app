@@ -1,207 +1,199 @@
 {
   "id": "chocolate-silk",
-  "version": "5.1",
-  "authored": "2026-03-22",
-  "revised": "2026-04-14",
-  "revisionNote": "v5.1 — Replaced 28% industrial acetic acid references with 5% household white vinegar throughout DIY path. Moved 28% to professional products with dilution warning. Fixed unclosed parentheses on steps 2+3. Added common mistake about substituting industrial acid for vinegar.",
   "title": "Chocolate on Silk",
   "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "silk",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "Pro-lane within hours; cold-water blot only at home",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "chocolate",
     "surfaceCanonical": "silk",
     "tier": "universal",
     "riskLevel": "high",
     "tags": [
-      "oil",
+      "combination",
+      "fat",
       "protein",
       "tannin",
-      "combo-stain",
+      "silk",
       "delicate-fiber",
-      "no-enzyme"
+      "refusal-style",
+      "pro-lane-early"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Chocolate on silk presents a critical chemistry challenge: cocoa butter penetrates silk's protein structure (fibroin); milk casein bonds to silk's histidine residues; tannins stain the pigment substrate. Silk cannot tolerate proteases—enzymes cleave fibroin itself, weakening the fiber irreversibly. The silk fiber, being protein-based, is vulnerable to the very enzyme that would dissolve chocolate's milk protein. Treatment must remove oil and tannin without any enzyme assistance, relying instead on solvent action and careful oxidation.",
-  "whyThisWorks": "Silk requires a purely mechanical and solvent-based approach. We begin with cold water only (no heat—silk denatures at 40°C). Cocoa butter yields to dry-solvent spotting rather than aqueous surfactants. We use dilute acid (vinegar) to gently mobilize tannins without raising pH above silk's safety threshold. Peroxide on silk is risky, so we prefer alternative tannin removal: light spotting, repeat cycles, or professional treatment. This protocol prioritizes fiber preservation over stain removal speed.",
+  "stainChemistry": "Chocolate is four-part: cocoa butter (fat) + milk casein (protein) + cocoa tannin (pigment) + sugar. On silk (protein fiber: fibroin) the protein step is the trap — enzymes that lift casein from cotton DIGEST silk equally. Hot water denatures both casein and silk simultaneously. Hydrogen peroxide yellows silk dyes. OxiClean weakens silk + darkens tannin. The home tools that work for chocolate on cotton damage silk in three different ways. Pro uses cold solvent (POG / petroleum ether) for fat + cold NSD for protein + acetic acid for tannin + sodium hydrosulfite for residual color — all at controlled dilution and timing.",
+  "whyThisWorks": "A silk specialist with cold solvent + cold NSD + timed acid + reducing bleach can lift fresh chocolate without damaging fibroin. Home chemistry runs out of safe options fast. Cold-water blot is the entire safe home protocol; everything else risks fiber damage worse than the chocolate residue.",
+  "defaultAssumption": "Silk + chocolate = pro within hours. Cold-water blot is the entire home protocol. Fresh, light chocolate may resolve fully at the pro; aged or dark chocolate often leaves a faint pigment ghost regardless of treatment.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cold distilled water only",
-      "technique": "Gentle rinse",
-      "equipment": "Spray bottle or damp cloth",
-      "dwellTime": "1 minute",
-      "instruction": "Spray or blot with cold distilled water (tap water may contain minerals that spot silk). Do not rub or squeeze. Work from the back of the fabric if possible, flushing stain residue away from the fiber face. Stop immediately if the silk feels slippery or warm—this indicates fiber stress.",
-      "suggestedProducts": "Distilled water"
+      "side": "dry",
+      "agent": "Freeze + Lift Solid Bulk",
+      "technique": "Ice bag harden + plastic card scrape",
+      "equipment": "Ice in plastic bag, plastic card",
+      "dwellTime": "5 minutes ice + 30 sec scrape",
+      "instruction": "Press a sealed bag of ice on the chocolate for 5 min to firm cocoa butter. Lift solid pieces with the edge of a plastic card. Don't scrape silk — flat-edge lift only. Most surface bulk comes off cleanly."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Silk-safe detergent solution (NSD for Delicates or pH-neutral silk wash, 1 tsp per cup cold water)",
-      "technique": "Gentle spotting",
-      "equipment": "Soft cloth or natural sponge",
-      "dwellTime": "5-10 minutes (do not soak)",
-      "instruction": "Mix detergent per bottle instructions. Lightly dampen the stain with solution. Use a soft cloth to gently massage in circular motions. Silk's protein fibers benefit from mild surfactant action to mobilize cocoa butter, but prolonged soaking weakens fibroin. Keep dwell time short. Rinse immediately with cold water.",
-      "suggestedProducts": "NSD for Delicates"
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse",
+      "equipment": "Cold/ice water, white catch towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Flush cold water through the BACK of the stain over a white catch towel. Press, no rubbing. Removes residual cocoa + sugar."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "White vinegar (5% acetic acid)",
-      "technique": "Acid rinse",
-      "equipment": "Cloth or spray bottle",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Use plain household white vinegar (5% acetic acid, pH ~2.4). Its mild acidity helps mobilize remaining chocolate tannins without damaging silk fibers (which are stable down to pH 2). Never use oxidizing bleach on silk — it yellows the fiber. Spray or blot lightly. The acidity also removes residual detergent. Rinse immediately with cold distilled water to neutralize. Do not leave vinegar on the fabric — prolonged acid exposure causes yellowing. WARNING: Do NOT substitute industrial-strength 28% acetic acid for household vinegar — it causes chemical burns on skin and will strip silk fibroin. 28% is a professional-only agent that must be diluted 1:10 before any contact.",
-      "suggestedProducts": "White vinegar (5%)"
+      "agent": "Cold POG (Pro)",
+      "technique": "Solvent dissolves cocoa butter",
+      "equipment": "POG (cold) on white cloth",
+      "dwellTime": "Brief — apply, blot",
+      "instruction": "Cold solvent dissolves cocoa butter without water-based agitation. Press cloth on stain, flip frequently. 2–3 passes."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Cold distilled water",
-      "technique": "Final rinse",
-      "equipment": "Spray or damp cloth",
-      "dwellTime": "1-2 minutes",
-      "instruction": "Rinse thoroughly with cold distilled water until no vinegar smell or soap residue remains. Squeeze out excess moisture very gently—do not wring. The silk should feel smooth and dry to the touch, never slippery or tacky.",
-      "suggestedProducts": "Distilled water"
-    }
-  ],
-  "homeSolutions": [
-    {
-      "step": 1,
-      "agent": "Chocolate on silk: shorter tool list than cotton, earlier escalation",
-      "instruction": "Chocolate is a four-part stain (cocoa butter + milk casein + cocoa tannin + sugar). On silk, three of the four tools you'd use on cotton are off-limits: no enzymes (digest silk), no OxiClean (alkaline attacks silk), no peroxide beyond 45 seconds. That leaves cold water + silk-safe detergent + dilute vinegar. Fresh chocolate on silk caught within an hour usually resolves. Anything older is pro territory — don't escalate to peroxide or enzyme at home."
-    },
-    {
-      "step": 2,
-      "agent": "Patch test + freeze-scrape solids",
-      "instruction": "Dab cool water on an inside seam, wait 60 seconds, blot. If clean, proceed. If the chocolate is soft or melty, place a ziplock bag of ice ON TOP of it for 5 minutes to firm up the cocoa butter. Then lift solids off with the edge of a plastic card, working away from the center. Do not press, do not scrape hard, do not rub — silk fibroin ruptures under wet friction."
-    },
-    {
-      "step": 3,
-      "agent": "Cool water blot from the back",
-      "instruction": "Turn the garment inside out. Place a clean white towel underneath the stain. Dab cool water on the BACK of the stain with a cotton ball. Let the underside towel catch runoff; replace as it picks up brown. 30–60 seconds of targeted blotting — not a soak. Silk + saturation + any friction = rupture risk."
-    },
-    {
-      "step": 4,
-      "agent": "Silk-safe detergent soak — 5 minutes",
-      "instruction": "Mix half a teaspoon of Eucalan, Soak, or clear Dawn in one cup of cool water. Dip a white cloth, wring nearly dry, PRESS on the stain. 5 minutes dwell. Blot gently with a clean damp cloth. This handles the cocoa butter + milk casein — silk tolerates the detergent but NOT enzymes, so the protein comes out slowly (hence the repeat)."
+      "agent": "Cold NSD (Pro)",
+      "technique": "Sponge press for casein",
+      "equipment": "Cold-formula NSD",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Cold NSD handles casein without enzymes. Press only, no agitation."
     },
     {
       "step": 5,
-      "agent": "Second Dawn pass if any brown remains",
-      "instruction": "If a brown shadow remains after the first cycle, repeat step 4 once — fresh detergent solution, fresh white cloth, same 5-minute dwell. Blot. Two rounds of gentle Dawn on silk is the home ceiling; a third pass risks silk fiber damage from repeated wet cycles."
-    },
-    {
-      "step": 6,
-      "agent": "Dilute vinegar rinse — STRICT 60-second ceiling",
-      "instruction": "If ANY shadow still remains, mix 1 part white vinegar with 1 part cool water. Press a cotton swab on the spot for 60 SECONDS MAX — timer. Flush with cool water. Vinegar restores silk's pH and mobilizes any residual tannin. Skip if the stain is fully clear after step 5.",
-      "safetyNote": "Never full-strength vinegar on silk. No peroxide on silk for chocolate residue — not worth the yellowing risk."
-    },
-    {
-      "step": 7,
-      "agent": "Press dry + lay flat — never hang wet silk",
-      "instruction": "Press between dry white towels — no wringing, no twisting. Lay flat on a fresh dry towel, reshape while damp. Air-dry at room temperature out of direct sun. No heat source. If a shadow remains after drying, do NOT run another home round — you'll damage the fiber before you lift the stain."
-    },
-    {
-      "step": 8,
-      "agent": "Escalate to a silk specialist for any residual",
-      "instruction": "Take the garment to a silk specialist (call ahead — not every cleaner handles silk). Tell them: \"Chocolate on silk (cocoa butter + milk protein + tannin), age [x]. Treated at home with freeze-scrape + cool water + Dawn/Eucalan + 1:1 vinegar (60-sec dwell). No enzymes, no peroxide, no heat.\" Pros use solvent-based spotting (POG + silk-safe protein digestants) that home can't safely run."
+      "side": "wet",
+      "agent": "Acetic Acid + Sodium Hydrosulfite (Pro)",
+      "technique": "Sequential, strict timing",
+      "equipment": "Acetic Acid 1:10 + Sodium hydrosulfite",
+      "dwellTime": "60 seconds each, sequential",
+      "instruction": "Acetic acid 60 sec for residual tannin. If brown remains, sodium hydrosulfite 60 sec for oxidized residue. Flush cold between."
     }
   ],
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — silk dyes may not tolerate spotting agents.",
-    "NEVER use Protein enzymes on silk—they digest the fibroin protein structure.",
-    "NEVER use hot water—silk fibroin denatures irreversibly above 40°C.",
-    "NEVER use chlorine bleach—oxidation breaks peptide bonds in silk.",
-    "AVOID H₂O₂ on silk—may cause yellowing or fiber weakness.",
-    "AVOID prolonged soaking—over 10 minutes weakens fibroin bonds."
-  ],
-  "escalation": "Professional dry cleaners using petroleum ether or similar lipophilic solvents can remove cocoa butter from silk without any aqueous spotting. For stubborn tannin residue, professionals may use StreeTAN (tannin reducer specifically formulated for delicate fibers) or dry-solvent extraction with controlled heat. This is the recommended path for expensive silk garments with set chocolate stains.",
-  "products": {
-    "household": [
-      {
-        "name": "Mild Liquid Dish Soap (dye-free, fragrance-free)",
-        "brand": "Dawn Free & Clear or similar",
-        "icon": "🧴",
-        "amazonSearchQuery": "dawn free clear dish soap",
-        "affiliateTag": "gonr08-20",
-        "note": "Use 1/4 tsp in 1 cup cold water. Gentle pH-neutral substitute for professional NSD. Mild surfactant; pH-balanced for delicate fibers. No enzymes."
-      },
-      {
-        "name": "White Vinegar (5%)",
-        "brand": "Heinz / generic household",
-        "icon": "🧅",
-        "amazonSearchQuery": "white distilled vinegar 5 percent",
-        "affiliateTag": "gonr08-20",
-        "note": "5% acetic acid — mild enough for silk, available at any grocery store. DO NOT substitute 28% industrial acetic acid — it causes chemical burns."
-      },
-      {
-        "name": "Distilled Water",
-        "brand": "Generic",
-        "icon": "💧",
-        "amazonSearchQuery": "distilled water",
-        "affiliateTag": "gonr08-20",
-        "note": "Mineral-free rinse prevents water spotting on silk."
-      }
+  "professionalProtocol": {
+    "steps": [
+      "1. Ice + lift solid cocoa butter, no scraping into silk.",
+      "2. Cold water back-flush at first contact.",
+      "3. Cold POG / petroleum ether for cocoa butter.",
+      "4. Cold NSD sponge press for casein.",
+      "5. Acetic acid 60-sec spotter for tannin.",
+      "6. Sodium hydrosulfite 60-sec for oxidized residue.",
+      "7. Final cold rinse, press flat to air-dry."
     ],
-    "professional": [
-      {
-        "name": "Petroleum Ether (Solvent)",
-        "brand": "Industry Standard",
-        "icon": "🧪",
-        "amazonSearchQuery": "petroleum ether solvent dry cleaning",
-        "affiliateTag": "gonr08-20",
-        "note": "Dissolves cocoa butter without aqueous spotting risk."
-      },
-      {
-        "name": "StreeTAN (Tannin Reducer)",
-        "brand": "StreeTAN",
-        "icon": "🧴",
-        "amazonSearchQuery": "StreeTAN tannin reducer",
-        "affiliateTag": "gonr08-20",
-        "note": "Safe on delicate fibers; removes oxidized tannins without fiber damage."
-      },
-      {
-        "name": "28% Acetic Acid (professional, dilute 1:10 before use)",
-        "brand": "Laboratory / industrial grade",
-        "icon": "⚠️",
-        "amazonSearchQuery": "28 percent acetic acid lab grade",
-        "affiliateTag": "gonr08-20",
-        "note": "PROFESSIONAL ONLY. Must be diluted 1:10 with water before contact with any fabric or skin. Causes chemical burns at full strength. This is the standard dry-cleaning tannin rinse when used correctly. Home users should buy household white vinegar instead."
-      }
+    "products": [
+      "POG / petroleum ether (pro)",
+      "Cold-formula NSD",
+      "Acetic Acid (diluted 1:10)",
+      "Sodium hydrosulfite (reducing bleach)",
+      "Cold/ice water"
+    ],
+    "temperature": "cold throughout — silk denatures above 30°C",
+    "warnings": [
+      "NEVER enzymes on silk — digest fibroin",
+      "NEVER hot water — denatures silk + sets casein",
+      "NEVER hydrogen peroxide on silk — yellows dyes",
+      "NEVER OxiClean / alkaline — weakens silk + darkens tannin",
+      "NEVER scrape silk — tears fibroin",
+      "60-sec ceiling on acid + reducing bleach"
     ]
   },
-  "customerExplanation": "Silk is a protein fiber—it's vulnerable to enzymes that would normally break down the milk protein in chocolate. We removed cocoa butter with gentle soap, targeted tannin residue with mild acid (vinegar), and air-dried to prevent heat damage. Silk always requires slower, gentler treatment than cotton.",
-  "commonMistakes": [
-    "Using Protein—this permanently weakens the silk fiber itself.",
-    "Applying heat before complete chocolate removal—heat sets tannins and shrinks fibroin.",
-    "Using tap water—minerals in tap water leave visible water spots on silk.",
-    "Soaking for extended periods—even gentle solutions weaken silk if left on too long.",
-    "Using H₂O₂—it can yellow silk and weaken fiber integrity.",
-    "Substituting industrial-strength (28%) acetic acid for household white vinegar—this is a chemical burn risk for the operator and will strip silk fibroin. Household white vinegar is 5% acetic acid and is what the DIY protocol calls for."
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Answer — Pro Within Hours",
+      "instruction": "Chocolate on silk is the rare combination where every common home tool causes new damage. Enzymes (the cotton chocolate-protein-cleaning standard) DIGEST silk fibroin. Peroxide yellows silk dyes. OxiClean weakens silk AND darkens chocolate tannin. Home protocol = freeze and lift bulk, cold-water back-flush, then pro within hours. Fresh + careful gives the pro the best shot."
+    },
+    {
+      "step": 2,
+      "agent": "Ice + Lift Solid Chocolate — Don't Scrape Silk",
+      "instruction": "Press a zip-lock bag of ice on the chocolate for 5 minutes to firm the cocoa butter. Lift the solid pieces off with the FLAT edge of a plastic card. Don't scrape — silk fibroin tears under any sharp edge. Just lift the bulk. Refreeze if it softens."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Back-Flush from the BACK",
+      "instruction": "Turn inside out. Place a white towel under the stain. Run COLD water through the BACK of the stain into the catch towel. Cold ONLY — heat denatures silk, sets casein, sets tannin all at once. Pour through, not on top — water rings silk."
+    },
+    {
+      "step": 4,
+      "agent": "Press Dry — DO NOT Apply Anything Else",
+      "instruction": "Press silk between two dry white towels. No wringing. Lay flat at room temperature, out of sun. Do NOT apply enzyme cleaner (digests silk), peroxide (yellows silk), OxiClean (weakens silk + darkens tannin), bleach, or detergent. The cotton chocolate-removal toolkit damages silk."
+    },
+    {
+      "step": 5,
+      "agent": "Pro Silk Specialist Within Hours",
+      "instruction": "CALL FIRST — \"Do you treat chocolate on silk with cold POG + sodium hydrosulfite?\" If they don't understand, try another cleaner. Tell them: \"Chocolate on silk (cocoa butter + milk protein + tannin), age [hours], freeze-and-lift + cold-water back-flush ONLY at home. No enzymes, no peroxide, no detergent applied.\""
+    }
   ],
-  "scienceNote": "Silk fibroin contains amino acids like alanine and glycine that form crystalline β-sheet structures. Protein enzymes target peptide bonds—the very bonds that hold the silk protein together. Even gentle enzyme solutions cause microscopic fiber breakage. This is why silk requires solvent-based oil removal and acid-based tannin removal instead of the enzyme + surfactant approach used on cotton.",
-  "callPro": "Expensive or sentimental silk garments with chocolate stains should go to a professional dry cleaner immediately. Silk's chemical sensitivity means repeated home treatment can weaken the fiber. Professionals have access to solvent-based spotting and specialized tannin reducers that work on silk without risk.",
-  "components": [
-    "chocolate-stain-removal",
-    "silk-care"
+  "diyProtocol": {
+    "steps": [
+      "1. Silk + chocolate = pro-lane within hours.",
+      "2. Ice + lift solid bulk with flat edge of plastic card. No scraping.",
+      "3. Cold water back-flush from the reverse, into a catch towel.",
+      "4. Press dry between white towels — no other chemistry.",
+      "5. Pro silk specialist within hours."
+    ],
+    "products": [
+      "Ice + plastic bag",
+      "Plastic card",
+      "Cold/ice water",
+      "Dry white towels"
+    ],
+    "whenToStop": "Stop after the cold-water back-flush. Anything else home-applied risks worse damage than the chocolate.",
+    "warnings": [
+      "NEVER enzymes on silk — digests fibroin",
+      "NEVER hot water — denatures silk + sets casein",
+      "NEVER hydrogen peroxide on silk — yellows dyes",
+      "NEVER OxiClean / alkaline cleaners",
+      "NEVER chlorine bleach",
+      "NEVER scrape silk — tears fibroin (flat-edge lift only)",
+      "Pour through, not on top — water rings"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never enzymes on silk — digests fibroin",
+      "Never hot water on silk OR chocolate",
+      "Never hydrogen peroxide on silk",
+      "Never OxiClean / alkaline cleaners",
+      "Never chlorine bleach",
+      "Never scrape silk with a sharp edge"
+    ],
+    "fiberSensitivities": [
+      "Silk is protein fiber — same enzyme-digestion as casein",
+      "Heat-intolerant above 30°C",
+      "Hydrogen peroxide yellows silk dyes",
+      "Alkaline weakens silk AND darkens tannin"
+    ]
+  },
+  "materialWarnings": [
+    "Pro within hours — home is freeze-and-blot only",
+    "Cotton chocolate-removal toolkit damages silk three ways",
+    "Flat-edge lift only — never scrape silk",
+    "Cold + press + pro is the only safe path"
   ],
-  "component_order": [
-    "chocolate-stain-removal",
-    "silk-care"
-  ],
-  "difficulty": 8,
-  "difficulty_factors": [
-    "no enzyme allowed",
-    "protein-based fiber vulnerable",
-    "requires multiple gentle cycles",
-    "no heat or peroxide safe"
-  ],
-  "solventNote": "Dry solvents (perchloroethylene, petroleum ether) are ideal for silk chocolate stains. They dissolve cocoa butter without any aqueous spotting risk and avoid fiber damage entirely. Silk is more solvent-compatible than aqueous cleaner-compatible.",
-  "aftercare": "Allow chocolate to air-dry fully (do not refrigerate—cold silk becomes brittle). Once dry, use the soft edge of a credit card to gently lift flaked chocolate. Work with the grain of the silk weave. Apply minimal pressure—silk fibers slip sideways under stress. Remove only loose surface material; do not scrub. Lay the garment flat on a clean towel away from direct heat or sunlight. Silk is sensitive to temperature gradients and UV exposure. Do not use a dryer or iron. Once fully dry, inspect for any remaining chocolate. If faint tannin remains, repeat the vinegar rinse. Multiple gentle cycles are safer than aggressive one-time treatment.",
+  "escalation": {
+    "when": "Always — silk + chocolate is pro-lane within hours, regardless of stain age.",
+    "whatToTell": "\"Chocolate on silk (cocoa butter + milk protein + tannin), age [hours / overnight], freeze-and-lift + cold-water back-flush ONLY at home. No enzymes, no peroxide, no detergent applied.\"",
+    "specialistType": "professional dry cleaner specializing in silk (call ahead — confirm cold POG + sodium hydrosulfite spotting)"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How long ago — minutes, hours, or older?",
+      "Type — milk chocolate / dark chocolate / white?",
+      "Type of silk — charmeuse / chiffon / habotai / dupioni?",
+      "Has anyone applied anything yet?",
+      "White or dyed silk?"
+    ],
+    "modifierNotes": "Dark chocolate has more cocoa tannin — harder. White chocolate has less pigment but more cocoa butter (fat). Pre-applied enzyme = silk fibroin likely already partially digested. Pre-applied peroxide = silk likely yellowed."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

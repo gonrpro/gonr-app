@@ -1,197 +1,197 @@
 {
   "id": "sweat-stain-silk",
-  "version": "5.0",
-  "authored": "2026-03-22",
-  "title": "Sweat on Silk",
-  "stainType": "protein/salt-complex",
+  "title": "Sweat / Yellowing on Silk",
+  "stainType": "specialty",
+  "stainFamily": "specialty",
   "surface": "silk",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "Pro-lane for set yellowing; one home pass max for fresh",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "sweat-stain",
     "surfaceCanonical": "silk",
     "tier": "universal",
-    "riskLevel": "medium",
+    "riskLevel": "high",
     "tags": [
       "protein",
       "salt",
-      "organic-stain",
-      "protein-fiber"
+      "aluminum",
+      "yellowing",
+      "silk",
+      "delicate-fiber",
+      "refusal-style",
+      "no-enzymes"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Sweat is a complex mixture of salts (NaCl), proteins (primarily urea and proteins from skin), and sometimes deodorant/antiperspirant chemicals. On silk, proteins bind to the protein fiber structure while salts can crystallize and cause yellowing over time. Lipase enzymes digest the protein components; salt requires plain water rinse. Aged sweat stains oxidize and become insoluble—early treatment is critical.",
-  "whyThisWorks": "Lipase enzymes break down the protein and lipid components of sweat without damaging silk's delicate protein structure. Cool water rinses salt residue. Mild acid (28% Acetic Acid (diluted)) post-treatment stabilizes any remaining residues and prevents oxidation. Speed matters—fresh sweat responds to this protocol reliably.",
+  "stainChemistry": "Sweat is salt (NaCl) + sweat proteins + urea + (often) aluminum from antiperspirant. On silk (protein fiber), the sweat protein bonds to silk's fibroin via hydrogen bonding. Aluminum chlorohydrate forms an aluminum-protein complex that yellows over time and locks into the fiber. Silk + sweat has TWO failure modes: (1) the obvious — silk IS protein, so enzyme cleaners that lift sweat from cotton DIGEST silk, and (2) the cumulative — repeated sweat + heat (dryer or iron) sets aluminum-protein into yellow halos that home chemistry can't reverse. Vinegar IS the right tool here (acid breaks aluminum-protein complex AND silk-safe at controlled dilution + dwell). But the hot-water + alkaline + enzyme tools that lift cumulative buildup from cotton damage silk. Set yellow on silk = pro-only.",
+  "whyThisWorks": "For FRESH sweat on silk, cold water + a dab of dilute vinegar (60-sec ceiling) handles the fresh aluminum-protein complex without damaging fibroin. Pro adds cold NSD + sodium hydrosulfite for set yellowing. Home limit: one careful pass on fresh; set yellow is pro-only.",
+  "defaultAssumption": "FRESH (today's wear) = one home pass with cold water + dilute vinegar. SET YELLOW (months of buildup, especially with heat exposure) = pro-only. Aluminum-free deodorant prevents recurrence on silk garments worth preserving.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "wet",
-      "agent": "Cool water rinse",
-      "technique": "Salt dilution",
-      "equipment": "Clean cloth or spray bottle",
-      "dwellTime": "1-2 minutes",
-      "instruction": "Rinse the sweat-stained area with cool water to dissolve and remove salt residue. This is important—salt crystallization causes yellowing over time. Use gentle spray, don't rub. Support fabric underneath.",
-      "suggestedProducts": "None"
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse",
+      "equipment": "Cold/ice water, white catch towel",
+      "dwellTime": "60 seconds",
+      "instruction": "Cold water through the BACK over a catch towel. Removes salt + fresh protein."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Lipase enzyme solution",
-      "technique": "Enzymatic protein digestion",
-      "equipment": "White cloth, bowl",
-      "dwellTime": "10-15 minutes",
-      "instruction": "Apply lipase enzyme solution. Lipase breaks down the protein and lipid components in sweat. Do NOT use Protein—it will damage silk protein fiber. Allow 10-15 minutes for the enzyme to work. You may see slight color change as residue is digested.",
-      "suggestedProducts": "OxiClean MaxForce Enzyme Booster or Seventh Generation Enzyme Detergent"
+      "agent": "Cold NSD (Pro)",
+      "technique": "Sponge press",
+      "equipment": "Cold-formula NSD",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Cold NSD sponge press for residual protein. No enzymes — silk is protein."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Cool water rinse",
-      "technique": "Enzyme residue removal",
-      "equipment": "Clean cloth or spray bottle",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Rinse thoroughly with cool water to remove all enzyme solution. Be very gentle—silk weakens when wet. Residual enzyme can cause discoloration or fiber damage if left on the fabric.",
-      "suggestedProducts": "None"
+      "agent": "Acetic Acid Spotter",
+      "technique": "Dropper, 60-sec ceiling",
+      "equipment": "Acetic Acid (diluted 1:10)",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "Acid breaks aluminum-protein complex behind yellow halos AND restores silk's natural pH. STRICT 60-sec ceiling. Flush cold immediately."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Mild acid rinse in 1 cup cool water",
-      "technique": "Acid stabilization",
-      "equipment": "White cloth, bowl",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Apply vinegar solution. Mild acid stabilizes any remaining protein residues and prevents oxidative darkening. This is what creates the characteristic yellow underarm staining over time—the acid rinse prevents this. Blot gently.",
-      "suggestedProducts": "White Vinegar (5% acetic acid)"
+      "agent": "Sodium Hydrosulfite (Pro, Set Yellow)",
+      "technique": "Reducing bleach, strict timing",
+      "equipment": "Sodium hydrosulfite per pro reference",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "For set yellow halos (cumulative aluminum-protein), reducing bleach is silk-safer than peroxide. Strict 60-sec dwell."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Cool water final rinse",
-      "technique": "Rinsing",
-      "equipment": "Clean cloth or spray bottle",
-      "dwellTime": "Until rinse water runs clear",
-      "instruction": "Rinse multiple times with cool water. Remove all vinegar residue. Be very gentle—silk is weakened by water. Do not wring or squeeze.",
-      "suggestedProducts": "None"
+      "agent": "Cold Final Rinse + Press-Dry Flat",
+      "technique": "Flush, lay flat",
+      "equipment": "Cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "Cold final rinse. Press between dry towels, lay flat to air-dry."
     }
   ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Cold water back-flush.",
+      "2. Cold NSD sponge press.",
+      "3. Acetic acid 60-sec spotter.",
+      "4. Sodium hydrosulfite 60-sec for set yellow.",
+      "5. Cold final rinse, press dry flat."
+    ],
+    "products": [
+      "Cold-formula NSD",
+      "Acetic Acid (diluted 1:10)",
+      "Sodium hydrosulfite (reducing bleach)",
+      "Cold/ice water"
+    ],
+    "temperature": "cold throughout — silk denatures above 30°C",
+    "warnings": [
+      "NEVER enzymes on silk — digests fibroin",
+      "NEVER hot water — sets aluminum-protein + denatures silk",
+      "NEVER hydrogen peroxide on silk — yellows dyes (worse than the stain)",
+      "NEVER chlorine bleach",
+      "NEVER OxiClean / alkaline cleaners",
+      "60-sec ceiling on acid + reducing bleach",
+      "Set yellow halos = pro-only"
+    ]
+  },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Silk + sweat: gentle tools only, early escalation",
-      "instruction": "Sweat on silk has four parts: protein (albumin), oil (sebum), salt, and sometimes aluminum from antiperspirant. The obvious fix would be an enzyme cleaner — but enzymes digest silk protein along with sweat protein, so they're banned. Most retail pet enzyme cleaners are protease blends; lipase-only products exist but are rare. Conservative home path: cold water + Dawn + 1:1 dilute vinegar, then escalate. Fresh sweat caught within 24 hours is winnable; old yellow pit staining on silk is pro territory."
+      "agent": "Honest Answer — Fresh One Pass, Set Yellow Pro",
+      "instruction": "Sweat on silk has two cases. FRESH (today's wear, no yellow yet) = one careful home pass with cold water + dilute vinegar can handle it. SET YELLOW (months of underarm buildup, heat-set by dryer or iron) = pro-only. The aluminum-protein complex behind yellow halos doesn't lift with home chemistry on silk — peroxide yellows the silk worse than the stain, OxiClean weakens silk, hot water denatures fibroin. For valuable silk, prevention (aluminum-free deodorant) matters more than treatment."
     },
     {
       "step": 2,
-      "agent": "Silk rules + sweat specifics",
-      "instruction": "Silk bans: NO enzymes (even \"safe\" ones are blends you can't verify), no hot water, no alkaline, no chlorine bleach, no alcohol, no wringing or scrubbing. Sweat specifics: aluminum (antiperspirant) forms a complex with protein that acid breaks — vinegar is both safe on silk AND the right tool here. That lines up nicely."
+      "agent": "Cold Water Back-Flush — Fresh Sweat Only",
+      "instruction": "Turn inside out. Place white towel under stain. Run COLD water through the BACK into the catch towel. Cold ONLY. Removes salt + fresh protein. Skip if the yellow is set — go to step 5."
     },
     {
       "step": 3,
-      "agent": "Patch test + immediate blot",
-      "instruction": "Dab cool water on an inside seam, wait 60 seconds, blot. If the fabric holds color, proceed. Press a white cloth or paper-towel stack straight down on the stain (for fresh sweat) — lift, fresh section, press again. Work outside-in. No wiping, no rubbing."
+      "agent": "Dilute Vinegar — STRICT 60-Second Ceiling",
+      "instruction": "Mix 1 part white vinegar with 1 part cool water. Press a cotton swab on the stain for 60 SECONDS MAX — set a timer. Flush with cool water immediately. Vinegar is the RIGHT tool for sweat-on-silk because it (a) breaks the aluminum-protein complex behind yellow, (b) restores silk's natural pH (~5), (c) is silk-safe at this dilution + dwell. Skip baking soda pairing — it neutralizes vinegar AND opens silk fiber."
     },
     {
       "step": 4,
-      "agent": "Dawn dish soap — cut the sebum",
-      "instruction": "Mix one teaspoon of clear Dawn with two cups of cool water. Dip a white cloth, WRING NEARLY DRY, press on the stain. Let sit 5 minutes. Dawn emulsifies the oil (sebum) that's trapping sweat protein against the fiber. Blot with a clean damp cloth. Do NOT scrub or rub in circles — silk fibroin ruptures under wet friction."
+      "agent": "Press Dry + Lay Flat",
+      "instruction": "Press between dry white towels. No wringing. Lay flat to air-dry, out of sun. NEVER hang wet silk. NEVER apply heat — even residual heat sets any remaining aluminum-protein into permanent yellow."
     },
     {
       "step": 5,
-      "agent": "Dilute vinegar rinse — STRICT 60-second ceiling",
-      "instruction": "Mix 1 part white vinegar with 1 part cool water. Press a cotton swab or white cloth onto the stain. 60 SECONDS MAX — set a timer. Rinse with cool water immediately from the back. Vinegar does two critical things: restores silk's natural pH AND breaks the aluminum-protein complex behind yellow pit staining. Skip any baking-soda pairing — base + vinegar neutralize each other and alkaline weakens silk.",
-      "safetyNote": "Never full-strength vinegar on silk. Never pair with bleach or peroxide on the same dwell."
-    },
-    {
-      "step": 6,
-      "agent": "Press dry + lay flat — never hang wet silk",
-      "instruction": "Press between dry white towels to lift moisture. Lay flat on a fresh dry towel. Reshape while damp. Air-dry at room temperature out of direct sun. No heat source, ever. If you're treating a whole silk blouse, hand-wash very gently in a basin of cool water + a drop of silk-safe detergent, then press dry flat."
-    },
-    {
-      "step": 7,
-      "agent": "Escalate for yellow buildup or old stains",
-      "instruction": "Yellow pit-stain buildup on silk (weeks or months of antiperspirant + sweat) is almost always pro territory — the aluminum-protein complex cross-links deeper than home vinegar can reach in 60 seconds. Tell a silk specialist (call ahead — not every cleaner handles silk): \"Sweat + antiperspirant yellowing on silk, age [x]. Treated at home with Dawn + 1:1 vinegar (60-sec dwell). No enzymes, no alcohol, no heat.\" Pros use silk-safe reducing bleach with controlled dwell and often recover visible improvement on even old staining."
+      "agent": "Set Yellow Goes to Pro and Aluminum-Free Deodorant Prevents Recurrence",
+      "instruction": "If yellow halos are already set (visible after wash + dry, or have been there for weeks), home chemistry can't safely lift them. Take to a silk specialist (call ahead). Tell them: \"Cumulative sweat / antiperspirant yellowing on silk, age [weeks / months], one fresh round at home with cold + 60-sec vinegar. No enzymes, no peroxide, no heat.\" Pros use cold NSD + sodium hydrosulfite at controlled dilution. PREVENTION: switch to aluminum-free deodorant for silk garments you want to preserve. Stop using fabric softener (locks aluminum in)."
     }
   ],
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — silk dyes may not tolerate spotting agents.",
-    "NEVER use Protein enzymes on silk—will digest silk protein fiber structure and cause damage.",
-    "NEVER use hot water—denatures silk protein and sets sweat stains permanently.",
-    "NEVER use chlorine bleach—destroys silk fiber integrity.",
-    "NEVER use strong alkali—ammonia or lye damage silk irreversibly.",
-    "Be extremely gentle when wet—silk loses significant strength when saturated."
-  ],
-  "escalation": "If lipase enzyme and vinegar treatment don't fully remove the stain, professional dry cleaner can assess. Aged sweat stains sometimes require specialized oxidizing treatments that must be applied carefully to delicate silk.",
-  "products": {
-    "household": [
-      {
-        "name": "OxiClean MaxForce Enzyme Booster",
-        "brand": "OxiClean",
-        "icon": "💪",
-        "amazonSearchQuery": "OxiClean MaxForce enzyme booster",
-        "affiliateTag": "gonr08-20",
-        "note": "Lipase enzyme specifically (not Protein). Breaks down sweat proteins and lipids without damaging silk."
-      },
-      {
-        "name": "Seventh Generation Free & Clear Enzyme Laundry Detergent",
-        "brand": "Seventh Generation",
-        "icon": "🌿",
-        "amazonSearchQuery": "Seventh Generation free clear enzyme laundry detergent",
-        "affiliateTag": "gonr08-20",
-        "note": "Lipase-based detergent. Can be used as pre-soak for fresh sweat stains on silk."
-      },
-      {
-        "name": "White Vinegar (5% acetic acid)",
-        "brand": "Any",
-        "icon": "🍶",
-        "amazonSearchQuery": "white vinegar 5% acetic acid",
-        "affiliateTag": "gonr08-20",
-        "note": "Critical final step. Stabilizes any remaining protein and prevents oxidative yellowing. DO NOT substitute industrial-strength (28%) acetic acid — it causes chemical burns."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. Fresh sweat = one careful pass. Set yellow = pro-only.",
+      "2. Cold water back-flush from the reverse.",
+      "3. Dilute vinegar 60-sec ceiling — vinegar IS the right tool for fresh.",
+      "4. Press dry between towels, lay flat air-dry.",
+      "5. Set yellow / cumulative buildup = pro silk specialist.",
+      "6. Going forward: aluminum-free deodorant, no fabric softener."
     ],
-    "professional": [
-      {
-        "name": "Specialty Protein-Stain Removal",
-        "brand": "Professional dry cleaning",
-        "icon": "🧪",
-        "amazonSearchQuery": "protein stain removal dry cleaning",
-        "affiliateTag": "gonr08-20",
-        "note": "Professional shops can use specialized enzyme treatments safe on silk for set sweat stains."
-      }
+    "products": [
+      "Cold/ice water",
+      "White vinegar (5%)",
+      "Dry white towels"
+    ],
+    "whenToStop": "Stop after one fresh-sweat pass. Set yellow on silk is pro-only — home chemistry yellows silk worse than the stain.",
+    "warnings": [
+      "NEVER enzymes on silk — digests fibroin",
+      "NEVER hot water on silk",
+      "NEVER hydrogen peroxide on silk — yellows dyes",
+      "NEVER OxiClean / alkaline cleaners",
+      "NEVER chlorine bleach",
+      "NEVER bake silk in dryer with sweat — sets aluminum-protein permanently",
+      "Vinegar 60-sec ceiling — silk weakens with prolonged acid"
     ]
   },
-  "customerExplanation": "Sweat is a mixture of salt and body proteins. The proteins bind to silk's protein structure while salt crystallizes and causes yellowing. Lipase enzymes digest the protein components—the same enzymes that break down oils in your digestive system. Then we rinse the salt away and apply a mild acid to stabilize any remaining residue and prevent oxidation.",
-  "commonMistakes": [
-    "Using hot water—denatures sweat proteins and sets them permanently into silk protein fiber; causes yellowing.",
-    "Using Protein enzymes on silk—will damage the silk protein structure in addition to sweat; causes irreversible fiber weakening.",
-    "Skipping the vinegar rinse—leaves protein residues unstable; over time, they oxidize and darken, creating the classic yellow underarm staining.",
-    "Waiting more than 1 week before treating—sweat proteins oxidize through air exposure and become much harder to remove."
+  "safetyMatrix": {
+    "neverDo": [
+      "Never enzymes on silk",
+      "Never hot water on sweat-stained silk",
+      "Never hydrogen peroxide on silk",
+      "Never OxiClean / alkaline cleaners",
+      "Never chlorine bleach",
+      "Never dryer / iron heat on yellow silk"
+    ],
+    "fiberSensitivities": [
+      "Silk is protein fiber — same enzyme-digestion as sweat protein",
+      "Heat-intolerant above 30°C",
+      "Hydrogen peroxide yellows silk dyes",
+      "Vinegar IS the right acid for sweat-on-silk at controlled dilution + dwell"
+    ]
+  },
+  "materialWarnings": [
+    "Vinegar is the right tool for fresh sweat on silk",
+    "Set yellow halos = pro-only",
+    "Aluminum-free deodorant is the prevention path",
+    "Fabric softener locks deodorant residue into silk"
   ],
-  "scienceNote": "Sweat contains urea, ammonia, and proteins that form hydrogen bonds with silk's protein chains. Lipase (not Protein) preferentially cleaves the ester bonds in lipid components of sweat without attacking the amide bonds in silk protein. The mild acid rinse afterward protonates any remaining nitrogen-based residues (from urea/ammonia), making them less likely to oxidize into the yellow or brown compounds that give aged sweat stains their characteristic discoloration.",
-  "callPro": "If enzyme and vinegar treatment doesn't fully resolve the stain, or if the stain has visibly oxidized to yellow or brown, call a professional. Do not attempt bleach or repeated treatments—risk of weakening silk protein increases significantly.",
-  "components": [
-    "water-rinse-salt",
-    "lipase-enzyme",
-    "enzyme-rinse",
-    "mild-acid-rinse",
-    "final-water-rinse",
-    "air-dry-flat"
-  ],
-  "component_order": [
-    "water-rinse-salt",
-    "lipase-enzyme",
-    "enzyme-rinse",
-    "mild-acid-rinse",
-    "final-water-rinse",
-    "air-dry-flat"
-  ],
-  "difficulty": 3,
-  "difficulty_factors": [
-    "delicate-fiber-handling",
-    "enzyme-selection-critical",
-    "timing-important"
-  ],
-  "solventNote": "Professional shops: Lipase enzyme (not Protein) is correct choice for sweat on silk. Allow 10-15 minutes dwell time. Vinegar rinse is critical to prevent oxidative darkening—this is the secret to preventing set-in yellow underarm staining. Cool water throughout. Do not use heat, bleach, or strong alkali. Silk's delicate protein structure requires careful handling.",
-  "aftercare": "Lay flat or hang very loosely to dry. Never wring silk. As fabric dries, the protein structure strengthens. Monitor the treated area—stain should fade completely.",
+  "escalation": {
+    "when": "Yellow halos are already set (visible after wash + dry), cumulative buildup has been heat-exposed (dryer / iron), or one fresh-sweat pass doesn't clear it.",
+    "whatToTell": "\"Sweat / antiperspirant yellowing on silk, age [today / weeks / months]. One fresh round at home with cold water + 60-sec dilute vinegar. No enzymes, no peroxide, no OxiClean, no heat. [Yellow halos visible / aluminum buildup suspected].\"",
+    "specialistType": "professional dry cleaner specializing in silk (call ahead — confirm cold NSD + sodium hydrosulfite spotting capability for aluminum-protein removal)"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Fresh today, or yellow halos that have been there?",
+      "Aluminum-based antiperspirant or aluminum-free deodorant?",
+      "Has the silk been through a dryer / iron with sweat already?",
+      "Has fabric softener been used on this garment?",
+      "Type of silk?"
+    ],
+    "modifierNotes": "Aluminum-free deodorant doesn't cause this stain. Fabric softener + antiperspirant pair is the cumulative-yellow factory — switch one to break the cycle. Heat-set yellow halos are the hardest variant; pro success rate is moderate at best."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

@@ -1,168 +1,210 @@
 {
   "id": "tea-black-wool",
-  "version": "5.0",
-  "authored": "2026-03-22",
   "title": "Black Tea on Wool",
   "stainType": "tannin",
+  "stainFamily": "tannin",
   "surface": "wool",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "Pro-lane within hours; one home round max",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "tea-black",
     "surfaceCanonical": "wool",
     "tier": "universal",
-    "riskLevel": "medium",
+    "riskLevel": "high",
     "tags": [
       "tannin",
-      "cold-water",
-      "acid-spotter",
-      "felting-risk"
+      "wool",
+      "protein-fiber",
+      "felting-risk",
+      "refusal-style",
+      "pro-lane-early",
+      "no-alkaline",
+      "no-enzymes"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Black tea tannins (high concentration, highly polar) bond strongly to wool's protein structure. Tea oxidizes faster than coffee—within hours it browns significantly. Wool requires cold treatment, dilute acid (brief), and extreme care. High tannin concentration in tea means treatment must be prompt and precise.",
-  "whyThisWorks": "Immediate cold water flush removes bulk of fresh tea. Diluted acetic acid breaks remaining tannin bonds without weakening wool. Very brief peroxide (if needed) oxidizes residual color. Promptness is more critical with tea than other stains because oxidation happens fast.",
+  "stainChemistry": "Black tea is the high-tannin variant — theaflavins + thearubigins at higher concentration than green tea. Tannin bonds to wool keratin via hydrogen bonding. Wool failures stack: heat felts wool AND sets tannin, alkaline cleaners felt wool AND darken tannin permanently, agitation felts wet wool on contact. Black tea oxidizes faster than coffee — within hours fresh red-amber drifts to dark brown that's harder to lift. Same one-round home ceiling as red-wine-wool.",
+  "whyThisWorks": "Wool specialist with cold NSD + timed acetic acid + dilute peroxide can lift fresh tea tannin without felting. Home protocol: ONE round of cold water + wool-safe detergent + 60-sec vinegar dwell, then stop.",
+  "defaultAssumption": "Wool + black tea = pro within hours. ONE careful home round. Speed matters more than usual because black tea oxidizes fast.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "wet",
-      "agent": "Cold water",
-      "technique": "Blot from back, urgent action",
-      "equipment": "White cloth, spray bottle",
-      "dwellTime": "Immediate",
-      "instruction": "Tea oxidizes FAST. Treat immediately. cold water from back, blot hard. Concentric circles from edge inward. Never rub. Flip to front and continue. Work quickly—most of fresh tea will come out in the first 1-2 minutes. Delay past 2 minutes and oxidation accelerates."
+      "agent": "Cold Water Press-Blot",
+      "technique": "Vertical press only",
+      "equipment": "Ice water spray, white cloth",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Press cold water on the BACK with vertical pressure. No rubbing — agitation felts wool. Replace cloth as it picks up brown."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "White Vinegar",
-      "technique": "Sponge application",
-      "equipment": "Sponge, white cloth",
-      "dwellTime": "1-2 minutes, then blot",
-      "instruction": "Mix vinegar 1:1 with cold water. Sponge gently onto any remaining tan/brown. Acidity breaks tannin bonds. Tea tannins respond to acid very well. After 1-2 minutes, blot gently. Brown color should lighten noticeably."
+      "agent": "Wool-Safe NSD (Pro)",
+      "technique": "Sponge press, no agitation",
+      "equipment": "Mulsolite or wool-safe NSD",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Cold NSD sponge press. Suspends remaining tannin without alkalinity that weakens wool."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Cold water rinse (thorough)",
-      "technique": "Spray and blot",
-      "equipment": "Spray bottle, white cloth",
-      "dwellTime": "Until rinse water runs clear",
-      "instruction": "Rinse completely in cold water. Acid residue will weaken wool if left. Work from back to front. Water should run absolutely clear."
+      "agent": "Cold Rinse Until Clear",
+      "technique": "Press only",
+      "equipment": "Cold water spray",
+      "dwellTime": "Until clear",
+      "instruction": "Rinse until water runs clear. Residual NSD interferes with later steps."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Dilute H₂O₂ (1.5%, cold water) if needed",
-      "technique": "Sponge, light pressure",
-      "equipment": "Sponge, white cloth",
-      "dwellTime": "1-2 minutes only",
-      "instruction": "If brown color remains, dilute 3% peroxide 1:1 with cold water. Sponge gently. Wool is protein—dilute is critical. After 1-2 minutes, blot. Tea stains typically respond to acid alone, so peroxide is usually unnecessary."
+      "agent": "Acetic Acid Spotter (Pro)",
+      "technique": "Dropper, 60-sec ceiling",
+      "equipment": "Acetic Acid (diluted 1:10)",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "Diluted acetic acid via dropper for residual color. STRICT 60-sec dwell. Flush cold immediately."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Cold water final rinse",
-      "technique": "Spray and blot",
-      "equipment": "Spray bottle, white cloth",
-      "dwellTime": "Until rinse water runs clear",
-      "instruction": "Final rinse in cold water. Gentle pressure only. Wool should feel clean."
-    }
-  ],
-  "homeSolutions": [
-    {
-      "step": 1,
-      "agent": "Wool + tea: the same discipline as coffee-black, slightly gentler",
-      "instruction": "Black tea is tannin like coffee but less concentrated — easier on wool. Same rules though: no enzymes, no alkaline, no hot water, no scrubbing, no wringing. Fresh tea on wool usually lifts with cold water + a quick vinegar dab. Caught within a few minutes, this is one of the cleaner delicate-fabric wins."
-    },
-    {
-      "step": 2,
-      "agent": "Patch test + immediate blot",
-      "instruction": "Dab a drop of cold water on an inside seam. Wait 60 seconds, blot. If the seam loses color, skip to step 6. If clean, press a folded white cloth straight down on the stain — lift, move to a dry section, press again. Work outside-in. Keep going until the cloth stops picking up brown. No rubbing, ever."
-    },
-    {
-      "step": 3,
-      "agent": "Cold water back-flush",
-      "instruction": "Turn the garment inside out. Run COLD water through the BACK of the stain for 30–60 seconds. Short targeted flush — don't soak wool. Blot between dry towels. Fresh tea on wool often comes out completely at this step, especially within 1–2 minutes of the spill."
-    },
-    {
-      "step": 4,
-      "agent": "Dilute vinegar dab — 60-second ceiling",
-      "instruction": "If a shadow remains, mix 1 part white vinegar with 1 part cold water. Press a cotton swab onto the spot for up to 60 SECONDS — set a timer. Rinse with cold water immediately. Mild acid keeps tannin in its lighter form and restores wool's pH to ~5. Skip full-strength vinegar always; it weakens wool fibers.",
-      "safetyNote": "Never combine vinegar with bleach or peroxide on the same dwell. Flush fully between if you plan to use peroxide next."
-    },
-    {
-      "step": 5,
-      "agent": "3% peroxide dab — STRICT 60-sec, light wool only",
-      "instruction": "If a brown shadow persists AND the wool is white, cream, or very light AND the patch test was clean: mix 1 part 3% peroxide with 1 part cold water. Dab with a cotton swab for 60 SECONDS MAXIMUM, then flush with cold water. Skip on colored wool — peroxide lifts wool dye."
+      "agent": "Dilute Hydrogen Peroxide for Oxidized Residue",
+      "technique": "Sponge with strict timing",
+      "equipment": "3% H₂O₂ diluted 1:1",
+      "dwellTime": "1–2 min monitored",
+      "instruction": "For oxidized brown, dilute peroxide 1–2 min monitored. Flush cold immediately."
     },
     {
       "step": 6,
-      "agent": "Press dry + lay flat — never hang wet wool",
-      "instruction": "Press the area between dry white towels to lift moisture. Lay flat on a fresh dry towel, reshape while damp. Air-dry at room temperature out of direct sun. Never hang wet wool, never apply heat. If the stain isn't fully gone after drying, stop — don't double-dose home chemistry on wool."
-    },
-    {
-      "step": 7,
-      "agent": "Escalate to a wool specialist for persistent tea",
-      "instruction": "If the tea survives one round, take the garment to a delicates specialist. Tell them: \"Black tea on wool, age [x]. Treated at home with cold water + 1:1 vinegar + [peroxide on white]. One round, 60-sec dwells. No hot water, no enzymes, no alkaline.\" Pros use wool-safe tannin formulas + sodium hydrosulfite with controlled dwell."
+      "side": "wet",
+      "agent": "Final Cold Rinse + Press-Dry Flat",
+      "technique": "Thorough rinse, lay flat",
+      "equipment": "Cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "Rinse until clear. Press between dry towels — never wring. Lay flat to air-dry, reshape damp."
     }
   ],
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — wool dyes may not tolerate spotting agents.",
-    "NEVER use hot water—felting",
-    "NEVER use full-strength acid—weakens wool",
-    "NEVER use bleach",
-    "TREAT IMMEDIATELY—tea oxidizes fast and becomes harder to remove every hour",
-    "AVOID rubbing—felting and pilling"
-  ],
-  "escalation": "If tea stain on wool has already browned (oxidized) or if treatment doesn't fully remove color, call professional. Once oxidized, tannin removal becomes difficult and requires professional chemistry.",
-  "products": {
-    "household": [
-      {
-        "name": "White Vinegar",
-        "brand": "Standard",
-        "icon": "🍶",
-        "amazonSearchQuery": "white vinegar 5% acetic acid",
-        "affiliateTag": "gonr08-20",
-        "note": "For tea tannin removal. Dilute 1:1 with cold water. Very effective on tea. DO NOT substitute industrial-strength (28%) acetic acid — it causes chemical burns."
-      }
+  "professionalProtocol": {
+    "steps": [
+      "1. Cold press-blot at first contact.",
+      "2. Wool-safe NSD sponge press.",
+      "3. Cold thorough rinse.",
+      "4. Acetic acid 60-sec spotter.",
+      "5. Dilute H₂O₂ for oxidized residue, 1–2 min monitored.",
+      "6. Final cold rinse, press flat to air-dry."
     ],
-    "professional": [
-      {
-        "name": "StreeTAN",
-        "brand": "Chemspec",
-        "icon": "🧪",
-        "amazonSearchQuery": "StreeTAN tannin spotter",
-        "affiliateTag": "gonr08-20",
-        "note": "For aged/oxidized tea stains on wool. Professional strength."
-      }
+    "products": [
+      "Mulsolite or wool-safe NSD",
+      "Acetic Acid (diluted 1:10)",
+      "3% H₂O₂ (diluted 1:1)",
+      "Cold/ice water"
+    ],
+    "temperature": "cold throughout — wool felts above 30°C when wet",
+    "warnings": [
+      "NEVER hot water — felts wool + sets tannin",
+      "NEVER agitation / scrubbing — felts wool",
+      "NEVER enzymes — digest keratin",
+      "NEVER alkaline cleaners — felt + darken tannin",
+      "NEVER chlorine bleach",
+      "60-sec ceiling on acid; 1–2 min on peroxide",
+      "Black tea oxidizes fast — speed matters"
     ]
   },
-  "customerExplanation": "Black tea contains high tannin levels that bond to wool. SPEED IS CRITICAL—tea oxidizes and browns within 1-2 hours. Cold water removes most fresh tea immediately. Diluted acid breaks remaining bonds. Wool is delicate, so we use dilute chemistry and never heat.",
-  "commonMistakes": [
-    "Delaying treatment—tea oxidizes faster than any other common beverage",
-    "Using hot water—sets tannin AND causes felting",
-    "Not diluting acid—full-strength vinegar weakens wool"
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "ONE Round Max — Speed Matters on Black Tea",
+      "instruction": "Black tea oxidizes faster than coffee — within hours, fresh amber drifts to dark brown that's much harder to lift. Wool's failure modes (heat felts + sets, alkaline felts + darkens, agitation felts) stack with tea's fast oxidation. The one-round home rule on wool is non-negotiable. Move fast, careful, then stop."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Water Press-Blot from the BACK",
+      "instruction": "Turn inside out. Place white towel under the stain. Press a SECOND white cloth dampened in COLD/ice water onto the BACK. Vertical pressure only — no rubbing. Cold ONLY — heat felts wool AND sets tea tannin."
+    },
+    {
+      "step": 3,
+      "agent": "Wool-Safe Detergent — One Pass Only",
+      "instruction": "Half teaspoon Eucalan or Soak in two cups COLD water. Dip cloth, wring nearly dry, PRESS on stain. 3 minutes dwell. ONE PASS. Do NOT use OxiClean — alkaline opens wool scales AND turns tea tannin permanently darker."
+    },
+    {
+      "step": 4,
+      "agent": "Dilute Vinegar — STRICT 60-Second Ceiling",
+      "instruction": "Mix 1 part white vinegar with 1 part cool water. Press a cotton swab on the stain for 60 SECONDS MAX — set a timer. Flush with cool water immediately. Vinegar handles residual tannin AND keeps it on the lighter (acid) side of the color equilibrium."
+    },
+    {
+      "step": 5,
+      "agent": "Press Dry + Lay Flat",
+      "instruction": "Press wool between two dry white towels — stack, press, lift. No wringing or twisting. Lay flat on fresh towel, reshape damp, air-dry at room temperature out of sun. NEVER hang wet wool. NEVER apply heat."
+    },
+    {
+      "step": 6,
+      "agent": "Pro Within Hours If Anything Remains",
+      "instruction": "Take to a wool specialist (call ahead). Tell them: \"Black tea on wool, age [hours], one round at home with cold water + Eucalan + 60-sec vinegar. No hot water, no enzymes, no OxiClean. [Residual brown / fully clear].\""
+    }
   ],
-  "scienceNote": "Black tea tannins are even more oxidation-prone than coffee tannins. Fresh black tea is light tan; within hours it becomes dark brown; by next day it's nearly black. This rapid oxidation is because tea tannins have extended conjugated systems (many double bonds) that readily accept oxygen. Each oxidation step darkens the color and makes the tannin less soluble. This is why immediate treatment is absolutely critical for tea on wool—waiting even 2-3 hours significantly reduces the chances of full removal.",
-  "callPro": "If tea stain on wool has already browned or if it's older than 2-3 hours and treatment hasn't fully removed it, professional care is recommended. Once tea oxidizes on wool, removal becomes very difficult.",
-  "components": [
-    "acid-spotter",
-    "rinse"
+  "diyProtocol": {
+    "steps": [
+      "1. Wool + black tea = ONE home round max. Move fast.",
+      "2. Cold water press-blot from the BACK (no rubbing).",
+      "3. One pass with Eucalan / Soak, 3 min cold.",
+      "4. Dilute vinegar 60-sec ceiling.",
+      "5. Press dry between towels, lay flat air-dry.",
+      "6. Anything remaining = pro. NO second home round."
+    ],
+    "products": [
+      "Cold / ice water",
+      "Eucalan or Soak (wool-specific)",
+      "White vinegar (5%)",
+      "Dry white towels"
+    ],
+    "whenToStop": "Stop after one careful round. Repeat home chemistry on wool felts the fiber.",
+    "warnings": [
+      "NEVER hot water — felts wool + sets tannin",
+      "NEVER agitation / scrubbing wet wool",
+      "NEVER enzymes / OxiClean / alkaline — darkens tea tannin permanently",
+      "NEVER chlorine bleach",
+      "NEVER hang wet wool",
+      "ONE round home max"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never hot water on wool",
+      "Never agitate or scrub wet wool",
+      "Never OxiClean / alkaline — darkens tannin AND felts wool",
+      "Never chlorine bleach",
+      "Never hang wet wool",
+      "Never repeat home chemistry"
+    ],
+    "fiberSensitivities": [
+      "Wool keratin felts when wet + warm + agitated",
+      "Disulfide bonds re-cross-link irreversibly under heat",
+      "Alkaline opens scales AND locks tannin in dark form",
+      "Black tea oxidizes faster than coffee — speed matters"
+    ]
+  },
+  "materialWarnings": [
+    "ONE round home max — repeat chemistry felts wool",
+    "Black tea oxidizes fast — speed matters",
+    "Alkaline cleaners darken tannin permanently"
   ],
-  "component_order": [
-    "acid-spotter",
-    "rinse"
-  ],
-  "difficulty": 6,
-  "difficulty_factors": [
-    "rapid-oxidation",
-    "time-critical",
-    "felting-risk",
-    "dilution-critical"
-  ],
-  "solventNote": "Professional: IMMEDIATE cold treatment. Ice water flush, then diluted acetic acid (GAA 1:10 in cold water, max 2 minutes). For brown/aged tea, reducing bleach (StreePene sodium hydrosulfite 0.25-0.5%, cold, max 5 min) to reverse oxidation, then rinse thoroughly. If stain is days old, may be permanent. Temperature never exceeds 30°C. VDS post-treatment optional. Speed and promptness matter more with tea than any other beverage stain.",
-  "aftercare": "Squeeze gently—never wring. Lay flat. No heat. Slow, even drying.",
+  "escalation": {
+    "when": "After one careful home round, regardless of result. Earlier for chai with milk, large spills, or high-value garments.",
+    "whatToTell": "\"Black tea on wool, age [hours], one round at home with cold water + [wool-safe detergent] + 60-sec vinegar. No hot water, no enzymes, no OxiClean. [Residual brown / fully clear].\"",
+    "specialistType": "professional dry cleaner specializing in wool (call ahead)"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Black tea (this card) or chai with milk?",
+      "How long ago — fresh, hours, or older (oxidized)?",
+      "Wool type — merino / regular / felt / blend?",
+      "Has anyone used hot water / OxiClean / agitation?"
+    ],
+    "modifierNotes": "Black tea has the highest tannin load — tougher than green or herbal. Chai with milk adds casein — earlier escalation. Aged tea (4+ hours) drifts brown and needs reducing bleach (pro-only on wool)."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

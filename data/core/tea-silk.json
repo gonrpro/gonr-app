@@ -1,84 +1,176 @@
 {
   "id": "tea-silk",
   "title": "Tea on Silk",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "silk",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Tannin (polyphenolic). Tea contains theaflavins and thearubigins (oxidized catechin polymers) plus tannin polyphenols. Black tea stains more than green tea due to higher oxidation. The polyphenols bind to fiber through hydrogen bonding with amide groups in protein/nylon fibers. On silk: protein fiber — NEVER use Protein enzymes, chlorine bleach, or OxiClean (too alkaline). Tannin pigments bond through hydrogen bonding and van der Waals forces. Treatment: acidic tannin formula to break initial hydrogen bonds, followed by sodium hydrosulfite (reducing agent — safe for protein fibers).",
-  "whyThisWorks": "Tea gets its color from concentrated plant pigments that bind tightly and darken over time. Silk is a delicate protein fiber — tea pigments bond tightly to its structure. Heat or harsh chemicals will set the stain permanently and damage the fiber. Sodium hydrosulfite attacks tannin pigments without damaging protein fibers.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "Pro-lane within hours; cold-water back-flush only at home",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "tea",
+    "surfaceCanonical": "silk",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "tannin",
+      "silk",
+      "delicate-fiber",
+      "refusal-style",
+      "pro-lane-early",
+      "no-alkaline",
+      "no-enzymes"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Tea is theaflavins + thearubigins (oxidized catechin polymers) + tannin polyphenols. Black tea stains harder than green (more oxidation). Tannins bond to silk fibroin via hydrogen bonding to amino acid sites — same chemistry as wine tannin on silk. Silk's banned-tools list applies: no enzymes (digest fibroin), no hot water (denatures fiber + sets tannin), no OxiClean / alkaline (weakens silk + DARKENS tannin), no peroxide (yellows silk dyes), no scrubbing (ruptures wet silk). Tea-with-milk adds casein protein, which adds protein-before-heat ordering on top of all this. Home protocol = cold-water back-flush, then pro.",
+  "whyThisWorks": "A silk specialist with cold acetic acid + sodium hydrosulfite (reducing bleach, silk-safe) can lift fresh tea tannin without damaging silk. Home chemistry on silk for tea has too many ways to go wrong: vinegar over-dwell weakens fiber, peroxide yellows silk, OxiClean both weakens silk AND locks tannin into brown.",
+  "defaultAssumption": "Silk + tea = pro within hours. Black tea is the tougher variant; tea-with-milk is even tougher (casein adds protein step). Home is cold-water blot only.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse, into catch towel",
+      "equipment": "Cold/ice water, white catch towel",
+      "dwellTime": "Immediate",
+      "instruction": "Flush cold water through the BACK of the stain over a white catch towel. Press, no scrubbing."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Acetic Acid Spotter (Pro)",
+      "technique": "Dropper, 60-sec ceiling",
+      "equipment": "Acetic Acid (diluted 1:10)",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "Diluted acetic acid via dropper. Press cloth, no rubbing. Strict 60-sec ceiling. Flush cold immediately."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Sodium Hydrosulfite (Pro, Aged Stain)",
+      "technique": "Reducing bleach, strict timing",
+      "equipment": "Sodium hydrosulfite per pro reference",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "For oxidized brown only. Reducing bleach is silk-safer than peroxide. Strict 60-sec dwell."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "NSD + Cold Water Final Rinse",
+      "technique": "Flush + lay flat",
+      "equipment": "NSD, cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "NSD flush + cold rinse until clear. Press between dry towels, lay flat, never hang."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin carefully and tamp very gently. On silk, use shorter dwell time and lighter touch. The acidic spotter breaks tannin bonds without attacking the fiber. Monitor closely.",
-      "2. Apply sodium hydrosulfite solution. This reducing agent attacks tannin pigments without damaging protein fibers like silk — unlike oxidizing agents which can weaken these fabrics. Monitor carefully and flush when the color lifts.",
-      "3. Flush with NSD to remove all chemical residue and loosened tannin. Use cool water only.",
-      "4. Apply diluted acetic acid (1:10) with fiber conditioner to neutralize and restore the fiber. Follow with a fiber conditioner rinse to restore the hand and sheen that protein fibers lose during treatment. Air dry flat."
+      "1. Cold water back-flush at first contact.",
+      "2. Diluted acetic acid spotter, 60-sec ceiling.",
+      "3. Sodium hydrosulfite for oxidized residue, 60-sec ceiling.",
+      "4. NSD + cold rinse until clear.",
+      "5. Press between towels, air-dry flat."
     ],
     "products": [
-      "Tannin",
-      "sodium hydrosulfite",
+      "Acetic Acid (diluted 1:10)",
+      "Sodium hydrosulfite (reducing bleach)",
       "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Cold/ice water"
     ],
-    "temperature": "cold — heat damages silk fiber and sets tannin stains permanently",
+    "temperature": "cold throughout — silk denatures above 30°C",
     "warnings": [
-      "Using enzyme stain removers containing Protein on silk — digests the protein fiber",
-      "Using OxiClean or oxygen bleach — too alkaline for protein fibers",
-      "Using hot water — causes felting and setting",
-      "Using chlorine bleach — destroys silk fiber"
+      "NEVER hot water — denatures silk + sets tannin",
+      "NEVER enzymes — digest silk fibroin",
+      "NEVER OxiClean / alkaline — weakens silk + DARKENS tannin",
+      "NEVER chlorine bleach",
+      "NEVER hydrogen peroxide on silk — yellows dyes",
+      "60-sec ceiling on acid + reducing bleach"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Answer — Pro Within Hours",
+      "instruction": "Tea on silk is a pro-lane case. The tools that work on cotton (OxiClean, hot water, peroxide) all damage silk — and several of them DARKEN the tannin permanently while damaging the fiber. Home protocol = cold-water back-flush to extract bulk tea, get to a silk specialist within hours."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Water Back-Flush — Pour Through, Not On Top",
+      "instruction": "Turn inside out. Place a white towel under the stain. Run COLD water (ice cold preferred) through the BACK of the stain into the catch towel. Cold ONLY — heat denatures silk and sets tea tannin. The water runs THROUGH the silk into the towel, never pooled on top. 60 seconds usually pulls fresh tea to a pale shadow."
+    },
+    {
+      "step": 3,
+      "agent": "Press Dry — Don't Apply Anything Else",
+      "instruction": "Press silk between two dry white towels to lift moisture. No wringing. Lay flat at room temperature, out of sun. Do NOT apply OxiClean, peroxide, vinegar, baking soda, or any cleaner. Silk's best outcome is reaching the pro with nothing applied."
+    },
+    {
+      "step": 4,
+      "agent": "Pro Silk Specialist Within Hours",
+      "instruction": "CALL FIRST — \"Do you treat silk with acetic acid + sodium hydrosulfite for tannin?\" If they don't understand, try another cleaner. Tell them: \"Tea on silk, [black / green / herbal / with milk], age [hours], cold-water back-flush ONLY at home. No acid, no peroxide, no detergent applied.\" The black-vs-green and milk-vs-no-milk details matter for the pro plan."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot gently with a clean white cloth to soak up as much as you can.",
-      "2. Apply a small amount of mild dish soap diluted in cold water and let it sit for 5–10 minutes.",
-      "3. Blot gently with a clean white cloth. Repeat until the color fades.",
-      "4. Rinse gently with cold water to remove all cleaning solution.",
-      "5. Lay flat on a towel to air dry — no heat, no wringing."
+      "1. Silk + tea = pro-lane within hours.",
+      "2. Cold water back-flush from the reverse, into a catch towel.",
+      "3. Press dry between white towels — no other chemistry.",
+      "4. Pro silk specialist within hours."
     ],
     "products": [
-      "NSD",
-      "cold water"
+      "Cold/ice water",
+      "Dry white towels"
     ],
-    "whenToStop": "If the stain persists after two treatment attempts, take it to a professional. Silk is too delicate to risk aggressive home treatments.",
+    "whenToStop": "Stop after the cold-water back-flush. Anything else home-applied risks worse damage than the tea.",
     "warnings": [
-      "Never wring or twist silk — gently press out moisture between towels.",
-      "Test on an inside seam or hidden area first — silk can react unpredictably.",
-      "Never use bleach, enzyme cleaners, or hot water on silk."
+      "NEVER hot water on silk",
+      "NEVER OxiClean / alkaline — DARKENS tannin permanently",
+      "NEVER enzymes — digests silk",
+      "NEVER chlorine bleach or peroxide",
+      "NEVER scrub or wring wet silk",
+      "Pour through, not on top — water rings"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use enzyme stain removers containing Protein — digests the protein fiber",
-      "Use OxiClean or oxygen bleach — too alkaline for protein fibers",
-      "Use hot water — causes felting and setting",
-      "Use chlorine bleach — destroys silk fiber",
-      "Wring or aggressively scrub"
+      "Never hot water on silk",
+      "Never enzymes — digests fibroin",
+      "Never OxiClean / alkaline — darkens tannin",
+      "Never chlorine bleach",
+      "Never hydrogen peroxide on silk",
+      "Never wring or scrub wet silk"
     ],
     "fiberSensitivities": [
-      "Silk is a protein fiber — enzymes digest it. Safe agents: NSD, mild acetic acid, sodium hydrosulfite. Avoid H₂O₂ — can cause yellowing or discoloration on silk. Test dyes first. Never wring."
+      "Silk is protein fiber — same enzyme-digestion risk as wool",
+      "Heat-intolerant above 30°C",
+      "Hydrogen peroxide yellows silk dyes",
+      "Water rings if applied carelessly"
     ]
   },
+  "materialWarnings": [
+    "Pro within hours — home is damage-prevention only",
+    "Alkaline cleaners darken tannin AND weaken silk",
+    "Cold back-flush is the entire home protocol"
+  ],
   "escalation": {
-    "when": "Home treatment does not fully remove the stain after two gentle attempts",
-    "whatToTell": "Tea stain on silk, tannin-based. Treated at home with enzyme-free detergent and cold water. Please use enzyme-free chemistry only. Reducing agent preferred over oxidizer.",
-    "specialistType": "silk specialist or wet cleaner"
+    "when": "Always — silk + tea is pro-lane, regardless of stain age.",
+    "whatToTell": "\"Tea on silk, [black / green / herbal / with milk], age [hours], cold-water back-flush ONLY at home. No acid, no peroxide, no detergent applied.\"",
+    "specialistType": "professional dry cleaner specializing in silk (call ahead — confirm acetic acid + sodium hydrosulfite spotting)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is this black tea, green tea, or herbal tea?",
-      "Is the stain fresh or has it been sitting?",
-      "Has the item been ironed or put in a dryer?",
-      "What type of silk — charmeuse, chiffon, habotai?"
+      "Black tea, green tea, herbal, or chai (with milk)?",
+      "How long ago — minutes, hours, or older?",
+      "Type of silk — charmeuse / chiffon / habotai / dupioni?",
+      "Has anyone applied anything yet?",
+      "White or dyed silk?"
     ],
-    "modifierNotes": "Black tea stains more deeply. Tea with milk adds a protein component. Dryer or iron exposure makes removal very difficult. Fresh stains respond much better. Thinner silks like chiffon are more vulnerable — minimize dwell times."
+    "modifierNotes": "Black tea harder than green (more oxidation). Tea with milk adds casein — different ordering for pro. Thinner silks more vulnerable. Pre-applied OxiClean = tannin likely darkened permanently."
   },
-  "difficulty": 4,
-  "timeEstimate": "10–15 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
