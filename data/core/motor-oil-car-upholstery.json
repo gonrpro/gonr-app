@@ -1,81 +1,245 @@
 {
   "id": "motor-oil-car-upholstery",
   "title": "Motor Oil on Car Upholstery",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "car-upholstery",
   "sector": "automotive",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Motor oil is a petroleum distillate containing base oil, additives (zinc, phosphorus, detergents), and accumulated engine contaminants (carbon, metal particles). On car upholstery, the petroleum base penetrates rapidly and the additives leave metallic residue. Used motor oil also contains polycyclic aromatic hydrocarbons (PAHs) that add dark color and resist standard cleaning.",
-  "whyThisWorks": "POG or amyl acetate provides the strongest solvent action against petroleum compounds on car upholstery. The 'like dissolves like' principle applies — petroleum solvents dissolve petroleum stains. Surfactant then removes the dissolved residue. For the metallic/carbon component, repeated solvent-surfactant cycles are needed. This is a difficult stain that may require professional treatment for complete removal.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "30–90 minutes home triage; aged + leather / Alcantara = pro from minute one",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "motor-oil-car",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "motor-oil",
+      "petroleum",
+      "oil",
+      "car-upholstery",
+      "powder-preload",
+      "no-hot-water",
+      "no-overwetting",
+      "leather-fork",
+      "alcantara-fork",
+      "honest-cap",
+      "automotive"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Motor oil on car upholstery is one of the harder home jobs because car interiors layer multiple challenges. Car upholstery can be cloth (synthetic blend, often with stain-resistant coating), leather (full-grain, semi-aniline, or finished), or Alcantara (synthetic suede). Each needs a different protocol — and motor oil is heavier than cooking oil with petroleum compounds and (used oil) carbon contamination. The recurring traps: water-first instead of powder-first (drives petroleum into the foam below), hot water (polymerizes the residue), saturating the cushion (foam mildew + permanent water rings on cloth), and using harsh solvent on leather or Alcantara (damages finish and texture). Honest cap: aged set motor oil with carbon contamination on cloth car upholstery often leaves a dark shadow even after full sequence; leather and Alcantara go straight to pro.",
+  "whyThisWorks": "Powder preload absorbs bulk oil before water spreads it. On cloth car upholstery, Goo Gone on a cloth (citrus solvent) tamps petroleum residue from the top — strict damp-cloth-only application prevents foam saturation and mildew below. Dawn pretreat handles residual oil. Multi-pass is normal — motor oil on car upholstery typically needs Goo Gone × 2 and Dawn × 2 minimum. Leather and Alcantara go to pro from minute one — household solvents damage both finishes.",
+  "scienceNote": "Mechanism (pro-facing): motor oil is petroleum base oil + ZDDP additives + carbon particulate (used) + polycyclic aromatic hydrocarbons. Pro uses POG / petroleum ether on cloth car upholstery + NSD + sodium hydrosulfite for residual carbon. Leather requires conditioner-compatible solvent (specialty). Alcantara requires factory-spec cleaner only.",
+  "defaultAssumption": "Garage / driveway / oil-change drip on cloth car seat or floor mat. Cloth car upholstery (synthetic blend) = home protocol candidate with multi-pass expectation. Leather / Alcantara / suede = pro from minute one. Used motor oil with carbon contamination = honest cap (dark shadow may remain).",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage — Material Identification",
+      "technique": "Cloth vs leather vs Alcantara fork",
+      "equipment": "Good light, owner's manual or door-jamb sticker if uncertain",
+      "dwellTime": "2 minutes",
+      "instruction": "Cloth synthetic blend = home protocol candidate. Leather (full-grain, semi-aniline, finished) = pro from minute one. Alcantara / synthetic suede = pro from minute one — household solvents damage finish. If uncertain, treat as pro."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Heavy Powder Preload",
+      "technique": "Pull bulk oil up before water",
+      "equipment": "Cornstarch / baking soda / clay-based kitty litter",
+      "dwellTime": "30–60 minutes",
+      "instruction": "Cover the spot heavily with cornstarch or clay-based kitty litter (cheap unscented kind absorbs heavy petroleum faster). Press gently. 30–60 min absorb. Soft-brush off. HEPA vacuum residue."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Test for Goo Gone",
+      "technique": "Color and finish bleed test",
+      "equipment": "Goo Gone on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Hidden cloth area: dab Goo Gone, blot with white cloth. Color or finish transfer = skip Goo Gone, Dawn-only finish. Most modern cloth car upholstery has a stain-resistant coating that affects how solvent behaves."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Goo Gone Cloth Tamp — Strict Damp-Cloth Only",
+      "technique": "Citrus solvent for petroleum",
+      "equipment": "Goo Gone on white cloth, ventilation",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply Goo Gone to a clean white cloth — NEVER pour on car upholstery. Tamp the spot from the top, flip cloth as it picks up dark transfer. Outside-in. 2–3 passes. NEVER saturate the cushion — drives petroleum into the foam where it mildews. Open windows; flammable, no flame in the car."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Dawn Damp-Cloth Pretreat",
+      "technique": "Emulsify residual oil after solvent",
+      "equipment": "Dawn + cool water on damp cloth, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Dawn worked into a damp cloth — never pour. Press the spot, work soft toothbrush, blot. Damp-cloth only. 5–10 min. Damp-cloth rinse. NEVER saturate."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Repeat Goo Gone + Dawn If Oil Remains",
+      "technique": "Multi-pass is normal",
+      "equipment": "Goo Gone, Dawn, white cloth",
+      "dwellTime": "Per cycle",
+      "instruction": "Inspect — oily feel or dark color remaining? Repeat the Goo Gone + Dawn cycle. Motor oil on car upholstery typically needs Goo Gone × 2 and Dawn × 2 minimum."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Weighted Towels Plus Fan-Dry",
+      "technique": "Extract residual moisture",
+      "equipment": "Paper towels + weight, fan or open windows",
+      "dwellTime": "Several hours to overnight",
+      "instruction": "Stack paper towels on the spot, weight if possible, leave several hours. Open the windows or run a fan to dry the upholstery thoroughly. NEVER hot extractor or steam — locks petroleum residue. Inspect dry — honest cap is real on used motor oil."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Material identification — leather / Alcantara / suede = pro from minute one.",
+      "2. Heavy powder preload 30–60 min on cloth, soft-brush off + HEPA vacuum.",
+      "3. Hidden-area Goo Gone test on cloth.",
+      "4. Goo Gone cloth tamp 2–3 passes from top, outside-in. NEVER saturate.",
+      "5. Dawn damp-cloth pretreat. NEVER pour on upholstery.",
+      "6. Repeat Goo Gone + Dawn cycle (multi-pass is normal).",
+      "7. Weighted paper towels + fan-dry. NO hot extractor / steam."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda / clay-based kitty litter",
+      "Goo Gone / citrus solvent (cloth car upholstery, hidden test)",
+      "Dawn / NSD",
+      "Paper towels + weight",
+      "Fan / open windows",
+      "Cool water"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat polymerizes petroleum residue and stresses foam",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains",
-      "Ensure adequate ventilation when using solvents — VOC fumes require extraction"
+      "Leather, Alcantara, suede car upholstery = pro from minute one",
+      "NEVER hot water — polymerizes petroleum into upholstery",
+      "NEVER hot extractor / steam — locks petroleum residue",
+      "NEVER saturate the cushion — drives petroleum into foam, mildew risk",
+      "NEVER pour solvent or water on car upholstery — damp-cloth only",
+      "Hidden-area test on cloth car upholstery (stain-resistant coating)",
+      "Goo Gone flammable — no flame, ventilate the car",
+      "Multi-pass expected — Goo Gone × 2 and Dawn × 2 typical",
+      "Honest cap: used motor oil carbon shadow often plateaus"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Material Check First — Leather and Alcantara Go to Pro",
+      "instruction": "Before any chemistry, identify the car upholstery material. Leather (full-grain, semi-aniline, finished) and Alcantara / synthetic suede go to a pro from minute one — household solvents damage the finish and texture and the damage is irreversible. Cloth synthetic blends are home-protocol candidates. If you're not sure, treat as pro. Most modern cloth car upholstery also has a stain-resistant coating that affects how solvent behaves — hidden-area test is mandatory."
+    },
+    {
+      "step": 2,
+      "agent": "Heavy Powder Preload — Cornstarch or Kitty Litter",
+      "instruction": "Cover the oil spot heavily with cornstarch, baking soda, or clay-based kitty litter (the cheap unscented kind absorbs heavy petroleum faster). Press gently. 30 to 60 minutes — longer for heavier spills. Soft-brush off. HEPA vacuum the residue. Most surface oil comes off this way without water."
+    },
+    {
+      "step": 3,
+      "agent": "Hidden-Area Test on Cloth Car Upholstery",
+      "instruction": "In a hidden area (under-seat, side panel out of sight): dab Goo Gone on a Q-tip, blot with a white cloth. Any color or finish transfer = skip Goo Gone, Dawn-only finish. Modern car upholstery has a stain-resistant coating that can react unpredictably to solvent."
+    },
+    {
+      "step": 4,
+      "agent": "Goo Gone on a Cloth — Strict Damp-Cloth Only",
+      "instruction": "Apply Goo Gone (citrus solvent, orange bottle) to a clean white cloth — NEVER pour on the car upholstery. Tamp the spot from the top, flip the cloth as it picks up dark transfer. Outside-in. 2 to 3 passes. NEVER saturate the cushion — wet foam grows mildew and the petroleum that soaks into the foam is unreachable from the surface. Open windows in the car — Goo Gone is flammable, no flame nearby."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn Damp Cloth — Never Pour",
+      "instruction": "Dawn worked into a damp cloth (wrung nearly dry). Press the spot, work with a soft toothbrush, blot. Damp-cloth only. 5 to 10 minutes. Damp-cloth rinse. NEVER pour water on car upholstery — the foam below absorbs it and you can't dry it out properly."
+    },
+    {
+      "step": 6,
+      "agent": "Repeat If Oil Remains — Multi-Pass Is Normal",
+      "instruction": "Inspect the spot. Oily feel or dark color remaining? Repeat the Goo Gone + Dawn cycle. Motor oil on car upholstery typically needs Goo Gone × 2 and Dawn × 2 minimum to fully clear. Used motor oil with carbon contamination may leave a dark shadow regardless."
+    },
+    {
+      "step": 7,
+      "agent": "Weighted Paper Towels Plus Fan-Dry",
+      "instruction": "Stack paper towels on the spot, weight if possible (a flat object, not too heavy), leave several hours. Open the car windows or run a fan in the garage. NEVER use a hot extractor or steam — heat polymerizes any residual petroleum into the upholstery. Inspect dry. Honest cap on used motor oil with carbon: a dark shadow may persist; pro for valuable cars."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Material check — leather / Alcantara / suede = pro from minute one.",
+      "2. NO hot water. NO hot extractor / steam. NO saturating the cushion.",
+      "3. Heavy powder preload 30–60 min on cloth, soft-brush off + HEPA vacuum.",
+      "4. Hidden-area Goo Gone test on cloth.",
+      "5. Goo Gone cloth tamp 2–3 passes from top — NEVER pour.",
+      "6. Dawn damp-cloth pretreat 5–10 min — NEVER pour.",
+      "7. Repeat Goo Gone + Dawn cycle if oil remains (multi-pass is normal).",
+      "8. Weighted paper towels + fan-dry several hours."
     ],
     "products": [
+      "Cornstarch / baking soda / clay-based kitty litter",
+      "Goo Gone / citrus solvent (cloth car upholstery, hidden test)",
       "Dawn dish soap",
-      "baking soda"
+      "Paper towels + weight",
+      "Fan / open windows",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop on leather, Alcantara, or suede car upholstery (pro from minute one). Stop if hidden-area Goo Gone test shows finish damage. Stop if hot extractor / steam was already used (often permanent). Stop if foam below is damp / smells musty (mildew, replacement territory). Stop after multi-pass with used-oil carbon shadow remaining (honest cap).",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "Leather / Alcantara / suede = pro from minute one",
+      "NEVER hot water — polymerizes petroleum",
+      "NEVER hot extractor / steam — locks residue",
+      "NEVER saturate the cushion — foam mildew + unreachable residue",
+      "NEVER pour solvent or water on upholstery — damp-cloth only",
+      "Hidden test on cloth car upholstery (stain-resistant coating)",
+      "Goo Gone flammable — ventilate the car, no flame",
+      "Multi-pass is normal",
+      "Honest cap: used motor oil carbon shadow often plateaus"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach — damages automotive fabric",
-      "No excess water — soaks into seat foam and causes mold/mildew"
+      "Never treat leather / Alcantara / suede car upholstery at home — pro",
+      "Never hot water on motor oil + car upholstery",
+      "Never hot extractor / steam — locks petroleum",
+      "Never saturate the cushion — foam mildew + unreachable residue",
+      "Never pour solvent on car upholstery",
+      "Never use solvent near a flame or in unventilated car"
     ],
     "fiberSensitivities": [
-      "Automotive fabrics are usually synthetic (nylon/polyester) — chemically durable",
-      "Seat foam absorbs moisture — use minimum liquid, extract thoroughly",
-      "Test in hidden area (under seat) before visible treatment"
+      "Cloth synthetic blend car upholstery: tolerates damp-cloth Goo Gone + Dawn after hidden test",
+      "Leather (full-grain, semi-aniline, finished): pro from minute one — household solvents damage finish",
+      "Alcantara / synthetic suede: pro from minute one — solvent destroys texture",
+      "Stain-resistant coatings: hidden test mandatory; coatings can react unpredictably",
+      "Foam below: cannot be cleaned in place — saturation = unreachable residue"
     ]
   },
+  "materialWarnings": [
+    "Leather and Alcantara go to pro from minute one — household solvent damages finish",
+    "Powder before water — water-first spreads petroleum",
+    "Damp-cloth only — pouring saturates foam and creates worse problems",
+    "Multi-pass is normal — Goo Gone × 2 and Dawn × 2 typical",
+    "Honest cap: used motor oil carbon shadow often plateaus on cloth"
+  ],
   "escalation": {
-    "when": "If motor oil stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is motor oil on car upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional auto detailer"
+    "when": "Leather / Alcantara / suede car upholstery from minute one. Hidden-area Goo Gone test shows finish damage. Hot extractor / steam already used (often permanent). Foam saturation / mildew suspected. Spot SPREADING during Goo Gone application. Used-oil carbon shadow plateau after multi-pass.",
+    "whatToTell": "\"Motor oil on [cloth synthetic / leather / Alcantara / suede] car upholstery, [fresh / used oil / aged set], home-treated with [heavy powder preload + hidden Goo Gone test + Goo Gone × N damp-cloth tamp + Dawn × N damp-cloth + weighted towels + fan]. No hot water, no extractor, no saturation. [Residual dark shadow / leather / Alcantara / foam saturation suspected].\"",
+    "specialistType": "professional auto-detailing specialist with petroleum-spotting capability for cloth; specialty leather conditioner-compatible solvent for leather; factory-spec Alcantara cleaner for Alcantara"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Cloth synthetic blend, leather (full-grain / semi-aniline / finished), Alcantara, or suede car upholstery?",
+      "Fresh new oil or used oil with carbon?",
+      "Light or dark color upholstery?",
+      "Vehicle make / model / year (helps identify factory-spec material)?",
+      "Has hot extractor / steam been used yet?",
+      "Does the foam below feel damp or smell musty?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Leather and Alcantara go to pro from minute one because household solvents damage the finish and texture irreversibly. Used motor oil with carbon contamination is the harder case — manage expectations. Modern cloth car upholstery has stain-resistant coatings that affect solvent behavior; hidden-area test is mandatory. Foam saturation is the silent failure mode — damp-cloth only, never pour. Hot extractor / steam is the most common irreversible failure on cloth car upholstery."
   },
-  "difficulty": 7,
-  "timeEstimate": "20-45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

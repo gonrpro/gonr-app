@@ -1,87 +1,188 @@
 {
   "id": "cosmetic-oil-silk",
   "title": "Cosmetic Oil on Silk",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "silk",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Cosmetic oils (face serums, body oils, massage oils) typically contain a blend of botanical oils, silicones (dimethicone, cyclomethicone), and essential oils. On silk, silicones are particularly problematic — they coat fibers with a water-repellent film that prevents standard detergents from reaching the fiber surface. Non-silicone botanical oils penetrate and oxidize like cooking oils.",
-  "whyThisWorks": "Surfactant treatment breaks through the silicone barrier on silk. For pure silicone stains, isopropyl alcohol or POG provides better initial solvent action. Multiple wash cycles may be needed because silicones re-deposit from wash water. Pre-treating is essential — silicone-coated stains resist standard machine washing.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "Pro-lane within hours; home is bulk-lift + cold blot only",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "cosmetic-oil",
+    "surfaceCanonical": "silk",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "cosmetic-oil",
+      "silicone",
+      "oil",
+      "silk",
+      "delicate-fiber",
+      "refusal-style",
+      "pro-lane-early",
+      "no-alcohol-on-silk"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Cosmetic oils on silk are the rare combination where every standard home oil-removal tool damages silk. The botanical oil + silicone + essential oil mix grabs silk fast; silicone forms a slick water-repellent film. The household toolkit fails: water alone leaves permanent rings on silk, rubbing alcohol strips silk dye, acetone destroys the fiber, hot Dawn risks setting any sweat-protein contamination. The honest path: blot bulk gently, leave the rest alone, get to a silk specialist. Silk + cosmetic oil is pro-lane within hours.",
+  "whyThisWorks": "A pro spotter with cold POG / petroleum ether for the silicone phase + cold NSD for residual oil + acetic acid neutralization can clear cosmetic oil from silk without damage. Home protocol is to lift bulk wet oil with a clean cloth, leave the rest alone, and get to a specialist. The silk's best outcome is reaching the cleaner with nothing else applied.",
+  "scienceNote": "Mechanism (pro-facing): cosmetic oils combine triglyceride botanical oils + silicones (dimethicone, cyclomethicone) + essential oils. Silk is fibroin protein — solvent and pH-sensitive. Pro uses cold POG / petroleum ether for silicone + cold NSD + acetic acid (60-sec dwell) for pH restoration. Sodium hydrosulfite at controlled dilution for any residual chromophore from essential-oil pigments.",
+  "defaultAssumption": "Face serum / body oil drip on a silk blouse / scarf / dress. Pro-lane within hours. Home protocol = bulk-lift + cold blot only. The silk's best outcome is reaching the cleaner with nothing else applied.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage and Bulk-Lift",
+      "technique": "Plastic edge or cloth lift, no rubbing",
+      "equipment": "White cloth, plastic spoon edge",
+      "dwellTime": "1 minute",
+      "instruction": "If wet bulk visible: press a clean white cloth straight down on the pool, lift straight up, repeat 2–3 times with fresh cloth sections. Bulk surface only. NEVER rub, smear, or scrape with a sharp edge — silk silk protein tears."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Cold POG (Pro)",
+      "technique": "Cold solvent for silicone phase",
+      "equipment": "POG / petroleum ether (cold) on white cloth",
+      "dwellTime": "Brief — apply, tamp, blot",
+      "instruction": "Cold solvent dissolves silicone. Tight blotting from edge inward, refresh cloth each pass. Do NOT flood silk."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Cold NSD (Pro)",
+      "technique": "Sponge press, minimum moisture",
+      "equipment": "Cold-formula NSD",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Cold NSD lifts dissolved oil. Press only, no agitation. Minimum moisture to avoid water rings."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Acetic Acid Spotter (Pro)",
+      "technique": "Dropper, 60-sec ceiling",
+      "equipment": "Acetic Acid (diluted 1:10)",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "Dropper for pH restoration after solvent + NSD. STRICT 60-sec ceiling. Flush cold immediately."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cold Final Rinse + Press-Dry Flat",
+      "technique": "Flush, lay flat",
+      "equipment": "Cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "Cold final rinse. Press between dry towels, lay flat to air-dry, never hang wet."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Triage — silk + cosmetic oil is pro-lane within hours.",
+      "2. Bulk-lift wet oil with clean white cloth, no rubbing.",
+      "3. Cold POG / petroleum ether for silicone phase.",
+      "4. Cold NSD sponge press for residual oil.",
+      "5. Acetic acid 60-sec spotter for pH restoration.",
+      "6. Cold final rinse, press dry flat."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "POG (cold) / petroleum ether",
+      "Cold-formula NSD",
+      "Acetic Acid (diluted 1:10)",
+      "Cold/ice water"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout — silk sets above 30°C",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "NEVER alcohol on silk — strips silk dyes",
+      "NEVER acetone on silk — destroys silk protein",
+      "NEVER hot water — sets silk + sets any contaminant",
+      "NEVER flood silk with water — permanent rings",
+      "NEVER scrape with sharp edge — tears silk protein",
+      "Pro-lane within hours — home is bulk-lift only"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Answer — Pro Within Hours",
+      "instruction": "Cosmetic oil on silk is the rare combination where every standard home oil-removal tool damages silk. Water leaves permanent rings, rubbing alcohol strips silk dye, acetone destroys the fiber, even hot Dawn sets any sweat-protein contamination. The household oil-cleanup toolkit doesn't transfer to silk. Home protocol = bulk-lift wet oil, leave the rest alone, get to a silk specialist within hours. The silk's best outcome is reaching the cleaner with nothing else applied."
+    },
+    {
+      "step": 2,
+      "agent": "Wet Bulk — Lift Once, Then Stop",
+      "instruction": "If wet oil is still pooled on the silk, press a clean white cloth STRAIGHT DOWN on the pool — lift straight up, no smearing or rubbing. Repeat with fresh cloth sections 2 to 3 times. Bulk surface only. Don't try to lift more after 2 to 3 dabs — you'll start grinding oil into the fiber."
+    },
+    {
+      "step": 3,
+      "agent": "If Dry — Leave It Completely Alone",
+      "instruction": "If the oil has soaked in and dried, do NOT try to soften it with anything (water, alcohol, soap, solvent). Silk fragility means dry oil is BETTER for the pro to handle than disturbed oil. Just take it in."
+    },
+    {
+      "step": 4,
+      "agent": "Pro Silk Specialist — CALL FIRST",
+      "instruction": "Not every dry cleaner handles silk well. Call ahead: \"Do you treat cosmetic oil on silk with cold POG / petroleum ether?\" If they don't know what those are, try another cleaner. When you bring it in, tell them: \"Cosmetic oil [silicone-heavy / botanical / hair oil] on silk, age [hours / days]. Bulk-lift ONLY at home with clean white cloth. NO water, no alcohol, no soap, no solvent applied.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Silk + cosmetic oil = pro-lane within hours.",
+      "2. If wet: 2–3 light dabs straight down with white cloth, no rubbing.",
+      "3. If dry: leave alone. Do not apply anything.",
+      "4. Pro silk specialist with cosmetic oil type identified."
     ],
     "products": [
-      "Dawn dish soap",
-      "baking soda"
+      "White cloths"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop after the bulk-lift dab. Any home water, soap, alcohol, or solvent on silk creates new damage worse than the oil.",
     "warnings": [
-      "Always test on a hidden seam or inside hem first — silk dyes may not tolerate spotting agents.",
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER alcohol on silk — strips silk dyes",
+      "NEVER acetone on silk — destroys silk protein",
+      "NEVER water on silk for oil — permanent rings",
+      "NEVER hot Dawn on silk — sets any sweat-protein contamination",
+      "NEVER scrape dried oil with sharp edge — tears silk protein",
+      "Pro-lane within hours — bulk-lift only at home"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No protein-digesting enzymes — silk IS protein; enzymes digest the fiber",
-      "No chlorine bleach — dissolves protein fibers",
-      "No alkaline detergents (pH >8) — breaks protein bond",
-      "No acetone — bleaches and damages fiber structure",
-      "No hot water — max 30°C / 86°F"
+      "Never alcohol on silk — strips silk dyes",
+      "Never acetone on silk — destroys silk protein",
+      "Never water flooding on silk — permanent rings",
+      "Never hot water on silk",
+      "Never scrape dried oil with sharp edge",
+      "Never improvise solvent at home — pro-only"
     ],
     "fiberSensitivities": [
-      "Protein fiber — extremely sensitive to enzymes, alkali, and heat",
-      "Dyes bleed easily — always test first",
-      "Never wring or agitate vigorously"
+      "Silk is protein fiber — damaged by alcohol, acetone, alkaline cleaners, hot water",
+      "Silicone-heavy cosmetic oils especially difficult — silicone bonds to fibroin",
+      "Water rings on silk are as visible as the oil itself",
+      "Pro-lane chemistry (cold POG, cold NSD, acetic acid) is the only safe path"
     ]
   },
+  "materialWarnings": [
+    "Pro-lane within hours — home is bulk-lift only",
+    "Standard home oil-removal toolkit damages silk",
+    "Water leaves permanent rings on silk",
+    "Alcohol strips silk dyes; acetone destroys silk protein"
+  ],
   "escalation": {
-    "when": "If cosmetic oil stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is cosmetic oil on silk, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "silk specialist or couture cleaner"
+    "when": "Always — silk + cosmetic oil is pro-lane within hours. Earlier escalation if the oil has soaked in (dried), if the silk is dyed and someone applied alcohol-containing product, or if water was already poured on the spot.",
+    "whatToTell": "\"Cosmetic oil [silicone-heavy serum / body oil / hair oil / massage oil] on silk, age [hours / days], bulk-lift ONLY at home with clean white cloth. No water, no alcohol, no soap, no solvent applied.\"",
+    "specialistType": "professional dry cleaner specializing in silk (call ahead — confirm cold POG / petroleum ether spotting capability)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "What kind of cosmetic oil — face serum, body oil, hair oil, massage oil, primer?",
+      "Silicone-heavy product (smooth slick feel) or pure botanical oil?",
+      "Wet pool or already dried in?",
+      "Type of silk — charmeuse, chiffon, habotai, dupioni?",
+      "Has anyone applied anything to the spot (water, alcohol, soap)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Silicone-heavy serums are the harder case — silicone bonds particularly well to silk fibroin. Pure botanical oils are still pro-lane on silk but slightly easier. Thinner silks (chiffon, habotai) more vulnerable than charmeuse. Anything pre-applied at home (especially alcohol) makes the pro's job harder — disclose honestly."
   },
-  "difficulty": 4,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-04-25",
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — silk dyes may not tolerate spotting agents."
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,79 +1,227 @@
 {
   "id": "motor-oil-denim",
   "title": "Motor Oil on Denim",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "denim",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Motor oil is a petroleum distillate containing base oil, additives (zinc, phosphorus, detergents), and accumulated engine contaminants (carbon, metal particles). On denim, the petroleum base penetrates rapidly and the additives leave metallic residue. Used motor oil also contains polycyclic aromatic hydrocarbons (PAHs) that add dark color and resist standard cleaning.",
-  "whyThisWorks": "POG or amyl acetate provides the strongest solvent action against petroleum compounds on denim. The 'like dissolves like' principle applies — petroleum solvents dissolve petroleum stains. Surfactant then removes the dissolved residue. For the metallic/carbon component, repeated solvent-surfactant cycles are needed. This is a difficult stain that may require professional treatment for complete removal.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "30–90 minutes; powder + Goo Gone + Dawn cycles, indigo + ring-risk warnings, honest cap on aged",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "motor-oil",
+    "surfaceCanonical": "denim",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "motor-oil",
+      "petroleum",
+      "oil",
+      "denim",
+      "powder-preload",
+      "indigo-loss-risk",
+      "honest-cap",
+      "stop-if-spreading",
+      "no-chlorine-bleach"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Motor oil is heavier than cooking oil and harder to remove. Used motor oil is harder still because it carries engine contaminants: carbon particulate, metal particles, and dark petroleum compounds that add color along with the oily base. On denim, three complications stack: petroleum oil penetrates the heavy weave but the indigo dye sits on the surface and is fragile under solvent (Goo Gone, mineral spirits), aggressive scrubbing on dark denim leaves a halo ring, and used motor oil has a dark-color component (carbon + petroleum compounds) that may persist even after the oil is removed. The recurring traps: hot water (sets the petroleum residue), chlorine bleach (strips indigo unevenly), and skipping the hidden-seam test before solvent. Honest cap: aged set motor oil and used-oil residue often leave a dark shadow even after full sequence.",
+  "whyThisWorks": "Powder preload (cornstarch / kitty litter / sawdust for heavier spills) absorbs bulk oil before water spreads it. Goo Gone (citrus solvent) on a cloth dissolves petroleum residue — like dissolves like. Dawn pretreat handles the residual oil after the solvent step. Cool wash plus AIR-DRY locks nothing. Multi-pass is normal: motor oil typically needs Goo Gone × 2 and Dawn × 2 minimum. The honest cap is real — used motor oil with carbon contamination often leaves a dark shadow no matter how many cycles.",
+  "scienceNote": "Mechanism (pro-facing): motor oil is petroleum base oil + ZDDP additives + carbon particulate (used) + polycyclic aromatic hydrocarbons. Pro uses POG / petroleum ether for petroleum phase + amyl acetate for polymerized residue + NSD + sodium hydrosulfite for residual carbon shadow.",
+  "defaultAssumption": "Garage / driveway / home repair motor oil drip on jeans. Fresh = full sequence has a real shot. Used motor oil with carbon = honest cap (dark shadow may remain). Raw / selvage / black-overdyed denim = pro from minute one (any solvent + scrubbing risks visible color loss).",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Powder Preload — Heavy",
+      "technique": "Cat litter or cornstarch for bulk",
+      "equipment": "Cornstarch / baking soda / clay-based kitty litter, plastic spoon",
+      "dwellTime": "30–60 minutes",
+      "instruction": "Cover the oil spot heavily with cornstarch, baking soda, or clay-based kitty litter (the cheap kind). For heavy oil, kitty litter absorbs faster. Press gently. 30–60 min absorb. Soft-brush off."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Hidden-Seam Test for Goo Gone",
+      "technique": "Indigo bleed test before solvent",
+      "equipment": "Goo Gone on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Inside seam: dab Goo Gone on hidden seam, blot with white cloth. Indigo transfers = skip Goo Gone, Dawn × 3 only. Light-wash denim usually passes; raw / dark / selvage often doesn't."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Goo Gone Cloth Tamp — Petroleum Solvent",
+      "technique": "Citrus solvent for motor oil",
+      "equipment": "Goo Gone on white cotton cloth, ventilation",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply Goo Gone to a clean white cloth — never pour on denim. Tamp the spot from the top, flip cloth as it picks up dark transfer. Outside-in. 2–3 passes. Open windows; flammable, no flame. STOP if the spot starts SPREADING outward — that's an indigo-bleed signal even if hidden test passed."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "technique": "Emulsify residual oil after solvent",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 10 min. Always blot, never rub — denim halos under aggressive scrubbing. Cool damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Repeat Goo Gone + Dawn If Oil Remains",
+      "technique": "Motor oil typically needs multiple cycles",
+      "equipment": "Goo Gone, Dawn, white cloth",
+      "dwellTime": "Per cycle",
+      "instruction": "Inspect — oily feel or dark color remaining? Repeat Goo Gone + Dawn cycle. Motor oil typically needs Goo Gone × 2 and Dawn × 2 minimum."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cool Machine Wash + AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water",
+      "dwellTime": "Cool cycle + AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry — wet denim hides residual that reappears once dry. NEVER hot dryer until cleared. Honest cap: used motor oil with carbon often leaves a dark shadow that won't fully clear."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Heavy powder preload 30–60 min (cornstarch / kitty litter for bulk).",
+      "2. Hidden-seam Goo Gone test on dark / raw denim.",
+      "3. Goo Gone cloth tamp for petroleum, outside-in, 2–3 passes. Stop if spreading.",
+      "4. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "5. Repeat Goo Gone + Dawn if oil remains (motor oil typically multi-pass).",
+      "6. Cool machine wash + AIR-DRY. Honest cap on used oil with carbon."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda / clay-based kitty litter (heavy preload)",
+      "Goo Gone / citrus solvent (hidden seam test on indigo)",
+      "Dawn / NSD",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat polymerizes motor oil into denim",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "NEVER hot water — polymerizes petroleum residue into denim",
+      "NEVER hot dryer until stain fully cleared",
+      "NEVER chlorine bleach on denim — strips indigo unevenly, leaves halo",
+      "Hidden-seam Goo Gone test on dark / raw denim",
+      "STOP if spot is SPREADING during Goo Gone — pro from there",
+      "Always blot, never rub — denim halos under scrubbing",
+      "Goo Gone is flammable — no flame, ventilate",
+      "Honest cap: used motor oil with carbon shadow often plateaus"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Motor Oil on Denim Has an Honest Cap",
+      "instruction": "Motor oil is heavier than cooking oil and used motor oil carries dark carbon contamination that may not fully clear. Set realistic expectations from the start. Three hard rules: powder preload BEFORE water (water-first spreads petroleum into a wider ring), NO hot water (polymerizes petroleum into denim), and NO chlorine bleach (strips indigo unevenly on dark denim, leaves a halo). Multi-pass is normal — Goo Gone × 2 and Dawn × 2 is typical."
+    },
+    {
+      "step": 2,
+      "agent": "Heavy Powder Preload — Cornstarch or Kitty Litter",
+      "instruction": "Cover the oil spot heavily with cornstarch, baking soda, or clay-based kitty litter (the cheap unscented kind absorbs heavy petroleum faster than cornstarch). Press gently. 30 to 60 minutes absorb — longer for heavier spills. Soft-brush off. Most surface oil comes off this way."
+    },
+    {
+      "step": 3,
+      "agent": "Hidden-Seam Test on Dark Denim",
+      "instruction": "Before any Goo Gone on dark or raw denim: dab a drop of Goo Gone on an inside seam, blot with a white cloth. If indigo transfers, skip Goo Gone — Dawn × 3 only. Light-wash denim usually passes; raw / dark / selvage / black-overdyed often doesn't."
+    },
+    {
+      "step": 4,
+      "agent": "Goo Gone for Petroleum — Cloth Tamp",
+      "instruction": "Apply Goo Gone (citrus solvent, orange bottle) to a clean white cloth — never pour on the denim. Tamp the spot from the top, flip the cloth as it picks up dark oil transfer. Outside-in. 2 to 3 passes. Open windows — Goo Gone is flammable, no flame nearby. STOP if the spot starts SPREADING outward — that's an indigo-bleed signal even if hidden test passed; pro from there."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "instruction": "Generous Dawn dish soap directly on the spot. Work in with a soft toothbrush for 10 minutes. Always blot, never rub — rubbing causes a halo on dark denim. Cool damp-cloth rinse."
+    },
+    {
+      "step": 6,
+      "agent": "Repeat If Oil Remains — Multi-Pass Is Normal",
+      "instruction": "Inspect the spot. Oily feel or dark color remaining? Repeat the Goo Gone + Dawn cycle. Motor oil typically needs Goo Gone × 2 and Dawn × 2 minimum to fully clear. Used motor oil with carbon contamination may leave a dark shadow regardless."
+    },
+    {
+      "step": 7,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry — wet denim hides residual oil that reappears once dry. NEVER hot dryer until cleared. Honest cap: used motor oil with carbon contamination often leaves a dark shadow that won't fully clear at home — pro for valuable garments."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Set honest expectations — used motor oil with carbon often leaves a dark shadow.",
+      "2. NO hot water. NO chlorine bleach. Powder BEFORE water.",
+      "3. Heavy powder preload 30–60 min.",
+      "4. Hidden-seam Goo Gone test on dark / raw denim.",
+      "5. Goo Gone cloth tamp 2–3 passes — STOP if spreading.",
+      "6. Dawn pretreat cool 10 min.",
+      "7. Repeat Goo Gone + Dawn cycle (multi-pass is normal).",
+      "8. Cool machine wash + AIR-DRY. No dryer until cleared."
     ],
     "products": [
-      "Dawn dish soap",
-      "baking soda"
+      "Cornstarch / baking soda / clay-based kitty litter",
+      "Goo Gone / citrus solvent (hidden seam test on indigo)",
+      "Dawn dish soap (generous)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop on raw / selvage / black-overdyed denim from minute one (pro). Stop if hidden-seam Goo Gone test shows indigo loss. Stop if spot SPREADS during Goo Gone application. Stop if hot water or hot dryer was already used (often permanent). Stop after multi-pass with used-oil carbon shadow remaining (honest cap).",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER hot water — polymerizes petroleum into denim",
+      "NEVER hot dryer until cleared",
+      "NEVER chlorine bleach on denim — strips indigo unevenly",
+      "Hidden-seam Goo Gone test on dark / raw denim",
+      "STOP if spreading — pro from there",
+      "Always blot, never rub — denim halos",
+      "Goo Gone flammable — no flame",
+      "Honest cap: used motor oil carbon shadow often plateaus"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach — removes indigo unevenly",
-      "No strong detergent on raw denim"
+      "Never hot water on motor oil + denim",
+      "Never hot dryer until cleared",
+      "Never chlorine bleach on denim",
+      "Never rub denim during cleaning — causes halo ring",
+      "Never water-first on motor oil — spreads it wider",
+      "Never solvent near flame"
     ],
     "fiberSensitivities": [
-      "Indigo dye sits on surface — aggressive treatment causes uneven fading",
-      "Washed denim is more forgiving than raw"
+      "Indigo / dark denim: hidden-seam Goo Gone test mandatory",
+      "Raw / selvage denim: pro from minute one — moisture causes uneven fading",
+      "Light-wash denim: most forgiving — full home protocol",
+      "Stretch denim with elastane: cool only — solvent can stress elastane",
+      "Black overdyed denim: pro — color-loss risk on solvent"
     ]
   },
+  "materialWarnings": [
+    "Motor oil on denim has an HONEST CAP — used oil with carbon often leaves dark shadow",
+    "Multi-pass is normal — Goo Gone × 2 and Dawn × 2 typical",
+    "Indigo dye loss is the central risk — hidden test before Goo Gone",
+    "Powder before water — water-first spreads petroleum",
+    "No hot water / no hot dryer — heat polymerizes motor oil",
+    "STOP if spreading — pro from there"
+  ],
   "escalation": {
-    "when": "If motor oil stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is motor oil on denim, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent). Hidden-seam test shows indigo loss. Raw / selvage / black-overdyed denim from minute one. Spot SPREADING during Goo Gone (indigo bleed). Used-oil carbon shadow plateau after multi-pass. Heavy spill that soaked through to inside of garment.",
+    "whatToTell": "\"Motor oil on [light-wash / dark / indigo / raw / selvage] denim, [fresh / used oil / aged set], home-treated with [heavy cornstarch preload + Goo Gone × N + Dawn × N + cool wash + air-dry]. No hot, no chlorine. [Residual dark shadow / indigo loss / spreading observed / honest cap reached].\"",
+    "specialistType": "professional dry cleaner with denim experience plus dry-side solvent capability for petroleum (POG / amyl acetate)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Fresh new oil or used oil with carbon?",
+      "Light-wash, dark indigo, raw / selvage, or black-overdyed denim?",
+      "Fresh, hours old, or hot-dried already?",
+      "Stretch denim with elastane?",
+      "How heavy was the spill (drops vs soaked)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Used motor oil is much harder than fresh new oil because of carbon contamination — manage expectations. Heavy spills that soaked through to the inside of the garment usually need pro chemistry. Raw / selvage denim is pro from minute one because the dye is more fragile and any solvent risks visible color loss. Multi-pass (Goo Gone × 2, Dawn × 2) is the norm, not a failure mode."
   },
-  "difficulty": 7,
-  "timeEstimate": "20-45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

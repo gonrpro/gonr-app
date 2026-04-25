@@ -1,80 +1,243 @@
 {
   "id": "nail-polish-polyester",
   "title": "Nail Polish on Polyester",
-  "stainFamily": "dry_side",
+  "stainType": "resin",
+  "stainFamily": "resin",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Nail polish contains polish film (film former), plasticizers (dibutyl phthalate), colorants (pigments/dyes), and solvents (ethyl acetate, butyl acetate). On polyester, the solvents evaporate and the polish film hardens into a tough, pigmented film that is resistant to water, soap, and most common cleaners. The film bonds mechanically by penetrating fiber texture.",
-  "whyThisWorks": "Amyl acetate or acetone (where fiber-safe) dissolves the polish film film on polyester. The solvent reverses the hardening process, re-liquefying the polish so it can be blotted away. Acetone is faster but unsafe on acetate and many synthetics. Amyl acetate is safer for most fibers. The pigment transfers to the blotting cloth as the film dissolves.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "20–60 minutes home triage; acetone risk on polyester is real, hidden test mandatory",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "nail-polish",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "nail-polish",
+      "resin",
+      "pigment",
+      "polyester",
+      "no-acetone-on-some-polyester",
+      "non-acetone-remover-fork",
+      "stop-if-spreading",
+      "honest-cap"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Nail polish is a tough plastic film with concentrated pigment, designed to dry into a hard layer that doesn't come off easily. The chemistry that takes polish off — acetone, ester solvents — is exactly what risks damaging polyester. Pure 100% polyester usually tolerates acetone and non-acetone removers, but polyester blends commonly contain acetate, which acetone DESTROYS — acetate fibers melt on contact. Most polyester garments don't disclose blend percentages, so a hidden-area test is mandatory before any solvent. Non-acetone polish remover is the safer first try because it's mostly ethyl acetate and other esters with less risk to acetate components. The recurring traps: acetone on a polyester-acetate blend (irreversible damage), heat (sets pigment into polyester permanently), and rubbing (smears the polish into a wider area).",
+  "whyThisWorks": "Hidden-area test screens for acetate content (which would bleed or melt under acetone). Once tested, non-acetone polish remover (mostly ethyl acetate) softens the polish film without the acetate-destruction risk acetone has. Pure acetone is the harder-hitting option for stubborn polish on confirmed pure polyester only. Cloth tamping from the back with a transfer pad pushes polish out instead of deeper. Cool wash plus AIR-DRY locks nothing. The honest cap: aged polish on dyed polyester often plateaus with a faint pigment shadow.",
+  "scienceNote": "Mechanism (pro-facing): polish is nitrocellulose film former plus plasticizers plus pigment in ester solvents (ethyl acetate, butyl acetate, sometimes acetone). Acetone dissolves cellulose acetate fibers irreversibly. Polyester (PET) is solvent-resistant. Pro uses amyl acetate at controlled concentration plus tight blotting plus NSD rinse plus acetic acid neutralization.",
+  "defaultAssumption": "Nail polish drip on a polyester garment, fresh and not yet hot-dried. Pure 100% polyester = home protocol candidate with hidden test. Polyester blend with unknown content = pro is the right call. Hot-dried polish = often permanent.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Lift Excess Wet Polish — Plastic Edge",
+      "technique": "Bulk-lift, no smearing",
+      "equipment": "Plastic card, white cloth",
+      "dwellTime": "30 seconds",
+      "instruction": "If polish is still wet: use the FLAT edge of a plastic card to lift bulk wet polish off the surface. Don't smear or rub. Lift, place on cloth, wipe card. If polish is dry: leave the dry film alone — solvent dissolves it later."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Test — Mandatory",
+      "technique": "Acetate-content screening",
+      "equipment": "Non-acetone polish remover on Q-tip, acetone on Q-tip",
+      "dwellTime": "30 seconds each",
+      "instruction": "Mandatory before any solvent. Inside seam: dab non-acetone remover, blot with white cloth. Color or finish transfer = skip remover entirely. Then test acetone on a SEPARATE hidden seam: dab, blot. Fiber softens or fabric loses sheen = polyester contains acetate, ACETONE BANNED. Both clean = pure polyester, acetone option available."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Back-Side Cloth Setup — Transfer Pad",
+      "technique": "Push polish OUT, not deeper",
+      "equipment": "Stack of clean white paper towels under the spot",
+      "dwellTime": "Setup",
+      "instruction": "Place a thick stack of clean white paper towels UNDER the stained area, polish-side facing the cloth. Work from the BACK. Polish needs somewhere to go — the cloth underneath catches the transfer."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Non-Acetone Remover First — Safer Option",
+      "technique": "Cloth tamp, never pour",
+      "equipment": "Non-acetone nail polish remover on white cotton cloth",
+      "dwellTime": "1–2 minutes per pass",
+      "instruction": "Start with non-acetone remover (safer if blend has any acetate content). Apply to a clean white cloth — never pour on the garment. Tamp the BACK of the spot. Watch the cloth underneath — replace it as it picks up color. 2–3 passes. STOP if the spot starts SPREADING outward — that's a fiber-bleed signal."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Acetone — Pure Polyester Only, If Non-Acetone Plateaus",
+      "technique": "Stronger solvent, tight blotting",
+      "equipment": "100% acetone on white cotton cloth, ventilation",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "ONLY if hidden test confirmed pure polyester (no acetate bleed) AND non-acetone plateaued: 100% acetone on a white cloth, tamp from the back, 30–60 sec passes. Replace cloth often. STOP if spreading. Open windows; flammable, no flame. Acetate-blend polyester = SKIP, pro from there."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Dawn Damp-Cloth Plus Cool Wash",
+      "technique": "Clear solvent residue and finish",
+      "equipment": "Dawn + cool water, washing machine",
+      "dwellTime": "5 min damp + cool wash cycle",
+      "instruction": "Dawn worked into a damp cloth, press the spot 5 min to clear solvent residue. Cool machine wash with normal detergent. AIR-DRY only. Inspect dry — wet polyester can hide residual pigment that reappears once dry."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "AIR-DRY Plus Daylight Inspect",
+      "technique": "Verify before any heat",
+      "equipment": "Hanger, daylight",
+      "dwellTime": "Air-dry to fully dry",
+      "instruction": "AIR-DRY only. Inspect in daylight. Faint pigment shadow remaining = honest cap on dyed polyester; further passes risk fiber damage. Stop, accept, or escalate to pro."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate to soften and dissolve the polish film. Blot — do NOT rub",
-      "2. Repeat amyl acetate application, blotting dissolved polish onto clean cloth — 3-5 min per pass",
-      "3. Apply NSD to remove remaining residue. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for pH restoration",
-      "5. Blot dry. Air dry"
+      "1. Lift bulk wet polish with plastic-edge — no smearing.",
+      "2. Hidden-area test for acetate content (non-acetone + acetone separately).",
+      "3. Back-side cloth setup as transfer pad.",
+      "4. Non-acetone remover first — safer option.",
+      "5. Acetone only on pure polyester if non-acetone plateaus.",
+      "6. Dawn damp-cloth + cool machine wash.",
+      "7. AIR-DRY + daylight inspect — accept honest cap or escalate."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Plastic card",
+      "Non-acetone polish remover (ethyl acetate-based)",
+      "100% Acetone (pure polyester only, hidden test)",
+      "Dawn / NSD",
+      "Cool water"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat sets pigment into polyester",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains",
-      "NEVER use acetone on acetate fabric — dissolves it on contact"
+      "Hidden-area test for acetate content is mandatory — acetone destroys acetate fibers irreversibly",
+      "Most polyester garments don't disclose blend percentages — assume blend until tested",
+      "STOP if spot is SPREADING during solvent contact — fiber bleed",
+      "NEVER hot water or hot dryer until cleared",
+      "Always blot, never rub — rubbing smears polish",
+      "Work from BACK with cloth underneath — pushes polish OUT",
+      "Acetone is flammable — no flame, ventilate",
+      "Honest cap: aged polish on dyed polyester often plateaus"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Acetone on Polyester Is Bounded — Hidden Test First",
+      "instruction": "Polyester usually tolerates acetone, BUT polyester blends commonly contain acetate, and acetone DESTROYS acetate fibers — they melt on contact. Most polyester garments don't say 'I have acetate in me' on the tag. The hidden-area test before any solvent is mandatory. Two hard rules: (1) hidden test BEFORE acetone, and (2) NO hot water or hot dryer until cleared. Plus: stop if the spot starts spreading — that's a fiber-bleed signal."
+    },
+    {
+      "step": 2,
+      "agent": "Lift Wet Polish With a Plastic Card — Don't Smear",
+      "instruction": "If the polish is still wet: use the FLAT edge of a plastic card (gift card, credit card) to lift the bulk off the surface. Don't smear, rub, or wipe — that pushes polish into the fiber. Lift, place on cloth, wipe card. If the polish has dried, leave the dry film alone — solvent dissolves it later."
+    },
+    {
+      "step": 3,
+      "agent": "Hidden-Area Test — TWO Tests, Separate Spots",
+      "instruction": "On an inside seam, dab a drop of non-acetone polish remover, blot with a white cloth. Color or finish transfer = skip remover, go to pro. On a SEPARATE inside seam, dab a drop of pure acetone, blot. If the fabric softens, sheen disappears, or the fiber feels weird, your polyester has acetate in it — ACETONE BANNED. Both clean = pure polyester, acetone option is available later. If you skip this test and use acetone on an acetate blend, the damage is permanent."
+    },
+    {
+      "step": 4,
+      "agent": "Set Up Cloth Underneath — Transfer Pad",
+      "instruction": "Place a thick stack of clean white paper towels UNDERNEATH the stained area. Work from the BACK of the garment, polish-side facing the cloth. Polish needs somewhere to go — the cloth underneath catches the transfer."
+    },
+    {
+      "step": 5,
+      "agent": "Non-Acetone Remover First — Safer",
+      "instruction": "Start with non-acetone polish remover (safer if there's any acetate content). Apply to a clean white cloth — never pour on the garment. Tamp the BACK of the spot, replace the underneath cloth as it picks up color. 2 to 3 passes. STOP if the spot starts SPREADING outward — fiber-bleed signal."
+    },
+    {
+      "step": 6,
+      "agent": "Acetone — Only on Confirmed Pure Polyester",
+      "instruction": "ONLY if the hidden-area test confirmed pure polyester (no acetate bleed) AND non-acetone plateaued: 100% pure acetone on a white cloth, tamp from the back, 30 to 60 seconds per pass. Replace the cloth often as it picks up color. STOP if spreading. Open windows — acetone is flammable, no flame nearby. If the test showed acetate content, SKIP this step entirely — pro from there."
+    },
+    {
+      "step": 7,
+      "agent": "Dawn and Cool Wash",
+      "instruction": "Dawn worked into a damp cloth, press the spot for 5 minutes to clear solvent residue. Cool machine wash with normal detergent. AIR-DRY only. Inspect in daylight before the dryer."
+    },
+    {
+      "step": 8,
+      "agent": "Honest Cap — Faint Pigment Shadow Often Remains",
+      "instruction": "Aged polish on dyed polyester often plateaus at 70% to 80% cleared with a faint pigment shadow. If you've hit that point after 4 to 5 passes, more passes risk fiber damage. Stop, accept, or escalate to pro for valuable garments."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot excess polish — do NOT rub or spread",
-      "2. Test a hidden area with hydrogen peroxide 3% before proceeding",
-      "3. Apply hydrogen peroxide 3% to stain. Blot gently with white cloth",
-      "4. Apply Dawn dish soap and work gently. Rinse with warm water",
-      "5. Repeat if needed. Air dry — no heat until stain is gone"
+      "1. Hidden-area test FIRST for acetate content (non-acetone + acetone separately).",
+      "2. NO hot water. NO hot dryer until cleared.",
+      "3. Lift wet polish with plastic-edge — no smearing.",
+      "4. Stack of paper towels UNDER the spot — transfer pad.",
+      "5. Non-acetone remover cloth tamp from BACK first.",
+      "6. Acetone cloth tamp ONLY on pure polyester if non-acetone plateaus.",
+      "7. STOP if spot is SPREADING — pro from there.",
+      "8. Dawn damp cloth + cool machine wash.",
+      "9. AIR-DRY + daylight inspect — accept honest cap or escalate."
     ],
     "products": [
-      "hydrogen peroxide 3%",
-      "Dawn dish soap"
+      "Plastic card (lift bulk wet polish)",
+      "Non-acetone polish remover (safer first try)",
+      "100% Acetone (pure polyester only, hidden test required)",
+      "Dawn dish soap",
+      "Paper towels (transfer pad)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if hidden-area test shows acetate content (acetone BANNED, pro for stubborn polish). Stop if spot is SPREADING during solvent contact. Stop on hot-dried polish (often permanent). Stop on dry-clean-only / specialty polyester (pro). Stop after 4–5 passes plateau — accept honest cap.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "Hidden-area test for acetate content is MANDATORY — acetone destroys acetate fibers irreversibly",
+      "Most polyester garments don't disclose blend percentages — assume blend until tested",
+      "STOP if spreading — fiber bleed",
+      "NEVER hot water or hot dryer until cleared",
+      "Always blot, never rub — rubbing smears polish",
+      "Work from BACK with cloth underneath",
+      "Acetone is flammable — no flame, ventilate",
+      "Honest cap: aged polish on dyed polyester often plateaus"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never use acetone on polyester without hidden test — acetate blends destroyed irreversibly",
+      "Never hot water or hot dryer on nail polish + polyester — sets pigment",
+      "Never rub — smears polish into a wider area",
+      "Never continue if spot is SPREADING — fiber bleed",
+      "Never solvent near flame"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Pure 100% polyester (PET): tolerates acetone after hidden test",
+      "Polyester-acetate blend (common in dressy polyester): acetone DESTROYS acetate fibers — non-acetone only, often pro",
+      "Polyester-spandex / Lycra blend: acetate may be in the spandex coating — hidden test mandatory",
+      "Performance / specialty polyester (compression, technical): pro — coatings react unpredictably",
+      "Honest cap on dyed polyester for aged polish — partial removal is the norm"
     ]
   },
+  "materialWarnings": [
+    "Hidden-area test for acetate content is MANDATORY before acetone",
+    "Polyester-acetate blends are common — acetone destroys them irreversibly",
+    "Stop if spreading — fiber bleed signal",
+    "No hot water / no hot dryer — sets pigment",
+    "Honest cap: aged polish on dyed polyester often plateaus"
+  ],
   "escalation": {
-    "when": "If nail polish stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is nail polish on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hidden-area test shows acetate content (acetone BANNED). Spot is SPREADING during solvent contact. Hot-dried polish (often permanent). Dry-clean-only / specialty / performance polyester. 4–5 pass plateau on dyed polyester. Acetone was used without hidden test (acetate damage assessment).",
+    "whatToTell": "\"Nail polish on [pure 100% / blend / acetate-blend / athletic / specialty] polyester, [color], age [fresh / hours / hot-dried suspected], home-treated with [plastic-edge lift + non-acetone remover cloth tamp + acetone (if pure polyester) + Dawn + cool wash]. No hot. [Hidden test result / spreading observed / acetate damage suspected / honest cap reached].\"",
+    "specialistType": "professional dry cleaner with solvent spotting capability — they have stronger controlled solvents (amyl acetate at controlled concentration) home users can't safely match"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Pure 100% polyester or blend (acetate, spandex, Lycra)?",
+      "Care label content disclosure?",
+      "Standard polish, gel polish, or quick-dry formula?",
+      "Fresh, hours old, or hot-dried already?",
+      "Has acetone been used without hidden test?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The acetate-blend risk is the central polyester polish challenge — modern dressy polyester (especially shirts and dresses) often contains acetate for drape, and most garments don't disclose the percentage. Hidden-area test is the only way to know. Gel polish is harder than standard polish because of the photo-cured polymer; pro is often the right call. Quick-dry formulas have more solvent and dry harder. Honest cap applies on dyed polyester regardless."
   },
-  "difficulty": 7,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

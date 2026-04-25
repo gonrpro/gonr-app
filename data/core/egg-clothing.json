@@ -1,81 +1,206 @@
 {
   "id": "egg-clothing",
   "title": "Egg on Clothing",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "clothing",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Protein. Egg stains contain albumin protein (egg white) and lecithin fat (egg yolk), plus sulfur compounds. Albumin is a globular protein held together by protein bond and grip. When exposed to heat above 60°C, albumin sets and lock together into an insoluble cooked protein structure — literally cooking onto the fabric like frying an egg in a pan. Protein stains bond to fibers via peptide-to-fiber grip and hydrophobic interactions. Treatment: cold water flush to prevent heat-setting, followed by alkaline Protein digestion to hydrolyze protein bond.",
-  "whyThisWorks": "Egg is a protein that hardens and bonds when exposed to heat. Cold water prevents the protein from setting permanently; enzyme-based cleaners break the protein down so it rinses clean.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–40 minutes; cold-only protein, raw vs cooked-on fork",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "egg",
+    "surfaceCanonical": "clothing",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "egg",
+      "protein",
+      "fat",
+      "clothing",
+      "no-hot-water",
+      "no-hot-dryer",
+      "cold-critical",
+      "raw-vs-cooked-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Egg cooks. That's the whole trap. Egg white is concentrated protein that sets above ~60°C — even warm tap water will instantly cook a raw-egg stain into the fabric the same way it cooks in a pan, and once cooked, the stain is locked in. Egg yolk adds fat that sits next to the protein and needs a separate Dawn pass after the protein step. The fiber matters: cotton and washable synthetics tolerate the cool enzyme + Dawn protocol. Silk, wool, and other delicate fibers go to pro from minute one because enzymes that lift egg from cotton would damage protein-fiber clothing too. The recurring trap on any fiber: hot water at any step (even warm tap water) cooks raw egg into the fabric.",
+  "whyThisWorks": "Cool water keeps the raw egg protein soluble and rinses out the bulk before it sets. An enzyme pretreat (cool water only — heat damages enzymes AND cooks egg) breaks down residual protein. Dawn pretreat then handles the yolk fat. Cool wash plus AIR-DRY locks nothing. The honest cap: cooked-on egg or hot-washed egg is often permanent because the protein has bonded to the fiber the same way a cooked egg bonds to a hot pan. Pro is the right call for valuable garments where cooked-on egg is suspected.",
+  "scienceNote": "Mechanism (pro-facing): egg white is concentrated albumin protein; egg yolk adds lipid + lecithin. Albumin sets irreversibly above ~62°C. Pro uses cold liquid Protein Spotter (protease pretreat) plus cold NSD plus optional 3% peroxide on white cottons. For cooked-on egg, sodium hydrosulfite at controlled dilution may help residual color but the protein lock is mechanical and often plateaus. Silk / wool / delicate-fiber egg = pro from minute one — enzymes damage these fibers.",
+  "defaultAssumption": "Raw egg drop on cotton / poly-blend / washable synthetic clothing (cooking spatter, breakfast spill, kid mishap), fresh and not yet hot-rinsed or hot-dried. Cooked-on egg or hot-dried = often permanent. Silk / wool / delicate clothing = pro from minute one.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage and Scrape",
+      "technique": "Fiber check + bulk-lift",
+      "equipment": "Care label, plastic spoon edge",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Silk / wool / delicate fiber = pro from minute one. Washable cotton / poly-blend / synthetic = home protocol. Scrape thick egg off with a plastic spoon edge. Flat-edge work only — never rub. Don't pour water yet."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cool Water Blot",
+      "technique": "Cold flush, no warm",
+      "equipment": "Cool water, white cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Damp white cloth with COOL water. Press, lift, rotate. Cool only — even warm tap water cooks raw egg into the fabric instantly."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Enzyme Pretreat — Cool, Not Hot",
+      "technique": "Protein digestion before any heat",
+      "equipment": "OxiClean Versatile / Biz / Tide Plus per label, COOL water",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Dissolve enzyme pretreat in COOL water. Apply to spot, keep damp under a cloth, dwell 20–30 min. Hot water above bath temperature damages enzymes AND cooks the protein into the fiber. Cool only."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn — Cut the Yolk Fat",
+      "technique": "Emulsify the fat fraction",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 5–10 min. Cool damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water",
+      "dwellTime": "Cool cycle + AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry. NEVER hot dryer until cleared — locks any residual protein and yolk fat permanently."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein to the stain and tamp gently with a spotting brush. This digestant breaks down egg proteins. Work from the edge toward the center. On wool or silk, use reduced dwell time (3 minutes) to protect the fiber.",
-      "2. Apply NSD and work gently. This NSD removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray.",
-      "3. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue and restore the fabric's natural state. Blot dry with clean absorbent cloth."
+      "1. Fiber triage — silk / wool / delicate = pro from minute one.",
+      "2. Scrape excess gently with plastic-edge.",
+      "3. Cool damp-cloth blot.",
+      "4. Enzyme pretreat in COOL water, 20–30 min — BEFORE any heat.",
+      "5. Generous Dawn pretreat for yolk fat, cool, 5–10 min.",
+      "6. Cool machine wash + AIR-DRY. Inspect dry before any heat."
     ],
     "products": [
-      "Protein",
-      "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Plastic spoon edge",
+      "Enzyme pretreat (OxiClean Versatile / Biz / Tide Plus / liquid Protein Spotter)",
+      "Dawn / NSD",
+      "Cool water"
     ],
-    "temperature": "cold — applying heat before chemical treatment sets protein and lock together it to clothing permanently",
+    "temperature": "cool throughout — heat cooks egg protein into fabric permanently",
     "warnings": [
-      "Applying heat before chemical treatment — heat sets protein and lock together it to clothing permanently",
-      "Using tannin formula on protein — wrong chemistry, wastes time and can set the stain",
-      "Not flushing between enzyme and bleach steps — enzyme residue reduces bleach effectiveness",
-      "Rushing the enzyme dwell time — Protein needs 10+ minutes for full peptide hydrolysis"
+      "NEVER hot water — even warm tap water cooks raw egg into fabric",
+      "NEVER hot dryer until cleared",
+      "Order matters — enzyme FIRST (protein), Dawn SECOND (fat)",
+      "Enzymes denature above bath temperature — keep COOL",
+      "Cooked-on egg is often permanent — pro for valuable garments",
+      "Silk / wool / delicate fiber = pro from minute one (enzymes damage these)"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Egg Cooks. That's the Whole Trap.",
+      "instruction": "Egg protein cooks fast under heat. Even warm tap water will cook a raw-egg stain into the fabric instantly — same chemistry as frying an egg in a pan. Two hard rules: NO hot water (even warm — cool only) and NO hot dryer until cleared. The order matters too: enzyme pretreat first for the protein, Dawn second for the yolk fat. And one fiber rule: silk / wool / delicate clothing goes to pro from minute one — enzymes that lift egg from cotton would damage these protein-fiber clothes."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Excess Gently — No Rubbing",
+      "instruction": "If there's a thick bit of egg on the surface, scrape it off with a plastic spoon edge or dull butter knife. Flat-edge work only — never rub. Rubbing pushes egg into the fiber surface where it locks in."
+    },
+    {
+      "step": 3,
+      "agent": "Cool Damp-Cloth Blot",
+      "instruction": "Damp a white cloth with COOL water. Press, lift, rotate. Cool only — anything warmer than tap-cold cooks raw egg into the fiber. This is the most common failure mode: people grab warm or hot water 'to dissolve' the egg, and the egg cooks instead."
+    },
+    {
+      "step": 4,
+      "agent": "Enzyme Pretreat — Cool Water Only",
+      "instruction": "Dissolve an enzyme pretreat (OxiClean Versatile, Biz, or Tide Plus) in COOL water per the label. Apply to the spot, keep damp under a cloth, wait 20 to 30 minutes. The enzyme dismantles raw egg protein at cool temperature. Don't be tempted to use warm water 'to help' — heat above bath temperature damages the enzymes AND cooks the protein."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn — Cut the Yolk Fat",
+      "instruction": "Yolk has fat that sits next to the protein. Apply a generous amount of Dawn dish soap. Work in with a soft toothbrush for 5 to 10 minutes. Cool damp-cloth rinse."
+    },
+    {
+      "step": 6,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry. NEVER hot dryer until cleared — locks residual protein and yolk fat. If the egg has already been cooked or hot-washed, accept that recovery is partial — pro is the right call for valuable garments."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse with cold water right away. Blot with a clean white cloth — don't rub.",
-      "2. Mix a small squirt of mild dish soap into cold water. Blot the solution onto the stain.",
-      "3. Let it sit for 5–10 minutes. Don't use any heat.",
-      "4. Blot with a clean white cloth until the stain fades.",
-      "5. Rinse with cold water and air dry — don't use a dryer until the stain is gone."
+      "1. Fiber check — silk / wool / delicate = pro from minute one.",
+      "2. NO hot water (even warm). NO hot dryer until cleared.",
+      "3. Scrape excess gently with plastic-edge.",
+      "4. Cool damp-cloth blot.",
+      "5. Enzyme pretreat in COOL water, 20–30 min — protein FIRST.",
+      "6. Generous Dawn pretreat, cool, 5–10 min — fat SECOND.",
+      "7. Cool machine wash + AIR-DRY. Inspect dry."
     ],
     "products": [
-      "Dawn NSD",
-      "OxiClean Versatile Stain Remover",
-      "Nature's Miracle",
-      "cold water"
+      "Plastic spoon edge",
+      "Enzyme pretreat (OxiClean Versatile, Biz, Tide Plus)",
+      "Dawn dish soap",
+      "Cool water"
     ],
-    "whenToStop": "Try an enzyme presoak (Nature's Miracle or OxiClean Versatile) — apply and let it soak for 30–60 minutes. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment.",
+    "whenToStop": "Stop on silk / wool / delicate fiber clothing (pro from minute one). Stop if egg has been cooked or hot-washed (often permanent on most fibers). Stop on specialty / dry-clean-only fabric (pro). Stop after 2 home rounds without progress.",
     "warnings": [
-      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
-      "Never use hot water on a protein stain — heat permanently sets it.",
-      "Never use the dryer until the stain is completely gone."
+      "NEVER hot water — even warm tap water cooks raw egg",
+      "NEVER hot dryer until cleared",
+      "Order matters — enzyme FIRST, Dawn SECOND",
+      "Enzymes denature above bath temperature — keep cool",
+      "Silk / wool / delicate fiber = pro from minute one (enzymes damage)",
+      "Cooked-on egg is often permanent"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Apply heat before chemical treatment — sets protein and lock together it permanently",
-      "Use tannin formula on protein — wrong chemistry and can set the stain"
+      "Never warm or hot water on raw egg — cooks it into fabric instantly",
+      "Never hot dryer until cleared",
+      "Never skip the Dawn step — leaves yolk-fat shadow",
+      "Never use enzymes in hot water — destroys enzymes AND sets protein",
+      "Never use enzymes on silk / wool — digests these protein fibers"
     ],
     "fiberSensitivities": [
-      "On clothing: test all agents in an inconspicuous area first. Monitor for color change, surface dulling, or texture damage during treatment. Wool and silk require enzyme-free chemistry — Protein enzymes digest protein fibers."
+      "Cotton / cotton blend: tolerates cool enzyme + Dawn",
+      "Polyester / synthetic blend: tolerates cool enzyme + Dawn (oleophilic — extended Dawn dwell on yolk)",
+      "Silk: pro from minute one — enzymes digest silk protein",
+      "Wool: pro from minute one — enzymes digest wool protein, hot felting risk",
+      "Cooked-on egg: mechanical lock often permanent",
+      "Specialty / dry-clean-only fabric: pro"
     ]
   },
+  "materialWarnings": [
+    "Egg cooks at warm temperatures — cool water only",
+    "No hot water / no hot dryer — cooks egg into fabric permanently",
+    "Order matters — enzyme FIRST (protein), Dawn SECOND (fat)",
+    "Cooked-on egg is often permanent",
+    "Silk / wool / delicate fiber = pro from minute one (enzymes damage)"
+  ],
   "escalation": {
-    "when": "Stain persists after one complete wash cycle and two rounds of Protein, or stain has been heat-dried",
-    "whatToTell": "Egg stain on clothing, protein-based. Treated at home with NSD and cold water. Stain may have been heat-set. Please advise on enzyme-based recovery options.",
-    "specialistType": "wet cleaner"
+    "when": "Silk / wool / delicate fiber from minute one. Egg has already been cooked or hot-washed (often permanent). Specialty / dry-clean-only fabric. 2 home rounds plateau. Yellow yolk-fat shadow remains after Dawn.",
+    "whatToTell": "\"Egg on [cotton / poly blend / synthetic / silk / wool / delicate] clothing, [raw / cooked / hot-washed], age [fresh / hours / hot-dried suspected], home-treated with [cool enzyme pretreat + Dawn cool + cool wash + air-dry]. No hot, no dryer. [Residual film / yolk shadow / cooked-on suspected].\"",
+    "specialistType": "professional dry cleaner with combination-stain (protein + oil) chemistry; specialty silk / wool cleaner if delicate fiber"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the stain fresh or has it dried?",
-      "Has the garment been through the dryer or exposed to heat?",
-      "What type of fabric — cotton, wool, silk, synthetic?",
-      "Is this egg white, egg yolk, or whole egg?"
+      "Raw egg, scrambled, or cooked-on (eggs benedict yolk drop)?",
+      "Whole egg, white only, or yolk only?",
+      "Cotton, poly blend, synthetic, silk, wool, or specialty fabric?",
+      "Fresh, hours old, or hot-washed already?",
+      "Has anyone tried warm or hot water?"
     ],
-    "modifierNotes": "Egg yolk has a fat component (lecithin) in addition to protein — requires an extra solvent step. Heat exposure before treatment makes removal very difficult. Fresh stains respond significantly better. Wool and silk require enzyme-free chemistry."
+    "modifierNotes": "Raw egg on washable fiber is tractable IF caught before any heat. Even warm tap water cooks it. Cooked-on egg is often permanent because the protein bonds to fiber the same way it bonds to a hot pan. Yolk fat is the second-stage cleanup — polyester is oleophilic so extended Dawn dwell needed on synthetic blends. Silk and wool go to pro from minute one because enzymes digest these protein fibers along with the egg."
   },
-  "difficulty": 3,
-  "timeEstimate": "10–20 min",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

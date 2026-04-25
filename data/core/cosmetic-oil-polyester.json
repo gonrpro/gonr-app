@@ -1,80 +1,185 @@
 {
   "id": "cosmetic-oil-polyester",
   "title": "Cosmetic Oil on Polyester",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Cosmetic oils (face serums, body oils, massage oils) typically contain a blend of botanical oils, silicones (dimethicone, cyclomethicone), and essential oils. On polyester, silicones are particularly problematic — they coat fibers with a water-repellent film that prevents standard detergents from reaching the fiber surface. Non-silicone botanical oils penetrate and oxidize like cooking oils.",
-  "whyThisWorks": "Surfactant treatment breaks through the silicone barrier on polyester. For pure silicone stains, isopropyl alcohol or POG provides better initial solvent action. Multiple wash cycles may be needed because silicones re-deposit from wash water. Pre-treating is essential — silicone-coated stains resist standard machine washing.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–60 minutes; powder + Dawn × 2 (silicone barrier), polyester locks oil under heat",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "cosmetic-oil",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "cosmetic-oil",
+      "silicone",
+      "oil",
+      "polyester",
+      "powder-preload",
+      "no-hot-water",
+      "no-hot-dryer",
+      "oleophilic-fiber",
+      "silicone-barrier-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Cosmetic oils on polyester layer two complications. The oil itself is botanical + silicone + essential oils — silicone is the slick water-repellent film that resists single-pass cleaning. Polyester adds OLEOPHILIC affinity (grabs the oil tight) and heat-sensitivity (hot water sets the oil into the fiber, hot dryer locks any silicone residue and yellows the polyester over time). The recurring traps: hot water (sets oil + yellows polyester), hot dryer (locks silicone + permanent yellow), and skipping the second Dawn pass (silicone re-deposits from wash water). Polyester typically needs 2 Dawn passes minimum for silicone-heavy serums.",
+  "whyThisWorks": "Powder preload pulls bulk oil up before water spreads it. Generous Dawn breaks through the silicone barrier and emulsifies the botanical oil. Second Dawn pass clears residual silicone — silicone re-deposits from wash water unless fully removed. Cool wash plus AIR-DRY locks nothing. The honest cap on polyester: hot-dried cosmetic oil yellowing is often a permanent shadow because polyester yellows under heat once oil is in the fiber.",
+  "scienceNote": "Mechanism (pro-facing): cosmetic oils combine triglyceride botanical oils + silicones (dimethicone, cyclomethicone) + essential oils. Silicones are hydrophobic and form a water-repellent film. Polyester is hydrophobic and oleophilic — silicone bonds particularly well. Pro uses POG / petroleum ether for silicone phase + amyl acetate for stubborn film + NSD.",
+  "defaultAssumption": "Face serum / body oil / hair oil drip on a polyester shirt or athletic-wear. Fresh = real shot at full removal with powder + Dawn × 2. Hot-dried = often permanent yellow shadow. Performance / specialty / dry-clean-only polyester = pro from minute one.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Powder Preload",
+      "technique": "Pull bulk oil up before water",
+      "equipment": "Cornstarch / baking soda",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Cover the spot with cornstarch or baking soda. Press gently. 20–30 min absorb. Soft-brush off."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "technique": "Break through silicone barrier",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 10 min. Polyester is oleophilic — extended dwell needed. Cool damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Repeat Dawn — Silicone Re-Deposit",
+      "technique": "Second pass for silicone residue",
+      "equipment": "Dawn + cool water",
+      "dwellTime": "10 minutes",
+      "instruction": "Touch with a clean fingertip. Slick or oily feel = repeat Dawn. Polyester typically needs 2 Dawn passes for silicone-heavy serums. Without the second pass, silicone re-deposits from wash water."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Cool cycle + AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. SKIP fabric softener (coats fiber, blocks future cleaning). AIR-DRY only. Inspect dry. NEVER hot dryer until cleared — locks oil and yellows polyester."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "2. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "3. Repeat Dawn pass — polyester needs 2 typically for silicone.",
+      "4. Cool wash + AIR-DRY. No softener, no dryer until cleared."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "Dawn / NSD",
+      "Cool water"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat sets cosmetic oil into polyester and yellows over time",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "NEVER hot water — sets oil + yellows polyester",
+      "NEVER hot dryer until cleared",
+      "NEVER fabric softener — coats fiber, blocks future cleaning",
+      "Powder preload BEFORE water — water-first spreads oil",
+      "Polyester is oleophilic — Dawn × 2 typical for silicone-heavy serums",
+      "Honest cap: hot-dried yellowing on polyester is often permanent",
+      "Performance / specialty / dry-clean-only polyester = pro"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Polyester Loves Cosmetic Oil — Two Hard Rules",
+      "instruction": "Cosmetic oils on polyester combine two challenges: silicone (slick water-repellent film) plus polyester being oleophilic (grabs oil tight). The fix is the powder + Dawn × 2 sequence — without the second Dawn pass, silicone re-deposits from wash water. Two hard rules: NO hot water (sets the oil and yellows polyester) and NO hot dryer (locks silicone permanently and turns the yellow shadow permanent over time)."
+    },
+    {
+      "step": 2,
+      "agent": "Cornstarch or Baking Soda — 20 to 30 Minutes",
+      "instruction": "Cover the spot with cornstarch or baking soda. Press gently. 20 to 30 minutes. Soft-brush off. Most surface oil comes off this way without water."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "instruction": "Apply a generous amount of Dawn dish soap directly to the spot. Work in with a soft toothbrush for 10 minutes. Polyester needs longer dwell than cotton because it grabs oil tight. Cool damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "agent": "Test for Slick / Oily Feel — Repeat If Yes",
+      "instruction": "Touch the spot with a clean fingertip. Still slick or oily? Repeat the Dawn step. Silicone-heavy serums typically need 2 Dawn passes on polyester — silicone re-deposits from wash water without full removal first."
+    },
+    {
+      "step": 5,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. SKIP fabric softener — it coats the fiber and blocks any future cleaning if buildup recurs. AIR-DRY only. Inspect in daylight before any dryer. Faint yellow shadow = repeat the Dawn pass. NEVER hot dryer until cleared — heat at this step locks residual oil and silicone permanently."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. NO hot water. NO hot dryer until cleared. NO fabric softener.",
+      "2. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "3. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "4. Repeat Dawn pass if oily/slick feel remains (2 passes typical).",
+      "5. Cool machine wash, no softener.",
+      "6. AIR-DRY + daylight inspect. No dryer until cleared."
     ],
     "products": [
-      "Dawn dish soap",
-      "baking soda"
+      "Cornstarch / baking soda",
+      "Dawn dish soap (generous)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if hot water or hot dryer was already used (often permanent yellow shadow on polyester). Stop on performance / specialty / dry-clean-only polyester (pro). Stop after 3 home cycles plateau.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER hot water — sets oil + yellows polyester",
+      "NEVER hot dryer until cleared",
+      "NEVER fabric softener — coats fiber, blocks cleaning",
+      "Powder preload BEFORE water",
+      "Polyester is oleophilic — 2 Dawn passes typical",
+      "Aged hot-dried yellow is often permanent"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on cosmetic oil + polyester",
+      "Never hot dryer until cleared",
+      "Never fabric softener after cosmetic oil",
+      "Never skip the second Dawn pass on silicone-heavy serums"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs cosmetic oil tightly, needs 2 Dawn passes",
+      "Polyester yellows under heat over time when oil is in the fiber",
+      "Performance / specialty polyester (compression, technical): pro — coatings react unpredictably",
+      "Athletic wear with fabric softener buildup: strip softener first or expect plateau"
     ]
   },
+  "materialWarnings": [
+    "Powder preload before water — water-first spreads oil",
+    "Polyester loves cosmetic oil — Dawn × 2 typical",
+    "No hot water / no hot dryer — polyester yellows under heat with oil",
+    "No fabric softener — coats fiber, blocks future cleaning"
+  ],
   "escalation": {
-    "when": "If cosmetic oil stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is cosmetic oil on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent yellow on polyester). Performance / specialty / dry-clean-only polyester. 3 home cycles plateau. Aged hot-dried buildup over months.",
+    "whatToTell": "\"Cosmetic oil on [white / dyed / athletic / specialty] polyester, [silicone-heavy serum / body oil / hair oil], age [fresh / hours / hot-dried suspected], home-treated with [cornstarch preload + Dawn × 2 + cool wash + air-dry]. No hot, no softener, no dryer. [Residual yellow shadow / silicone re-deposit / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with solvent spotting capability for silicone-heavy cosmetic oils on polyester"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Face serum, body oil, hair oil, massage oil, or primer?",
+      "Silicone-heavy (smooth slick feel) or pure botanical oil?",
+      "White, dyed, athletic, or specialty polyester?",
+      "Fresh, hours old, or hot-dried already?",
+      "Has fabric softener been used in past washes?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Silicone is the entire challenge — silicone-heavy serums need 2 Dawn passes on polyester minimum. Pure botanical oils (jojoba, argan, marula, coconut) without silicone are easier — single Dawn pass usually sufficient. Athletic-wear fabric softener buildup is the hidden plateau cause. Performance polyester (compression, technical) goes to pro because coatings react unpredictably."
   },
-  "difficulty": 4,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
