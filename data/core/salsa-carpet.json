@@ -30,7 +30,7 @@
   "stainChemistry": "Salsa is a four-part stain: tomato (red color and mild tannin), chili (the red pepper pigment is suspended in oil — that's fat-soluble, which means water alone can't touch it), onion and garlic (mild trace), and cilantro/spices. The unique element vs other tomato stains is the chili oil — water-only cleaning rinses out the tomato red but the chili red stays behind in the carpet fiber, leaving a lingering orange ghost. The correct order is: scrape solids → cold water flush (rinses citric acid and loose tomato) → DAWN to strip the oil (this is the critical step — releases the chili pigment) → peroxide to oxidize the red → vinegar rinse. Skip the oil-strip step and the chili pigment stays locked behind a slick of oil that peroxide can't reach.",
   "whyThisWorks": "Cold water removes the water-soluble part fast. Dawn emulsifies the chili oil and releases the fat-soluble red pigment underneath. Only THEN can peroxide oxidize the pigment. Vinegar rinse keeps any remaining tannin on the lighter side of its color range. Correct order = clean. Wrong order (peroxide before Dawn) = oil blocks the peroxide = orange ghost remains.",
   "scienceNote": "Mechanism (pro-facing): salsa combines tomato (lycopene + tannin + citric acid), chili (capsaicin suspended in oil carrier + capsanthin red pigment, both fat-soluble), onion/garlic sulfur compounds, and cilantro tannin. Pro uses NSD oil-strip + 3% H₂O₂ for chromophore + acetic acid neutralizing rinse. Capsanthin requires the oil-strip step — peroxide alone can't reach it through the chili oil.",
-  "defaultAssumption": "Game-day / taco-Tuesday / Mexican takeout spill on living-room or kitchen carpet. Fresh + caught fast = reasonable win. Dried in = harder because of capsaicin-oil penetration. Restaurant salsa tends to be oilier than jarred (bigger oil-strip job). Store-bought jarred salsa has more vinegar and less oil (easier).",
+  "defaultAssumption": "Game-day / taco-Tuesday / Mexican takeout spill on living-room or kitchen carpet. Fresh + caught fast = reasonable win. Dried in = harder because of chili oil-oil penetration. Restaurant salsa tends to be oilier than jarred (bigger oil-strip job). Store-bought jarred salsa has more vinegar and less oil (easier).",
   "spottingProtocol": [
     {
       "step": 1,
@@ -57,7 +57,7 @@
       "technique": "CRITICAL step to release fat-soluble pigment",
       "equipment": "Dawn + cool water, soft toothbrush",
       "dwellTime": "5–10 minutes",
-      "instruction": "Work Dawn into the spot with soft toothbrush 5–10 min. Dawn emulsifies chili oil and releases capsanthin. Skip this and peroxide can't reach the pigment. Damp-cloth rinse."
+      "instruction": "Work Dawn into the spot with soft toothbrush 5–10 min. Dawn emulsifies chili oil and releases chili red pigment. Skip this and peroxide can't reach the pigment. Damp-cloth rinse."
     },
     {
       "step": 4,
@@ -72,7 +72,7 @@
       "step": 5,
       "side": "wet-minimal",
       "agent": "3% H₂O₂ for Pigment",
-      "technique": "Oxidize lycopene + capsanthin",
+      "technique": "Oxidize tomato red pigment + chili red pigment",
       "equipment": "3% H₂O₂ on damp cloth",
       "dwellTime": "5–10 minutes",
       "instruction": "3% peroxide on damp cloth, 5–10 min, blot. 2–3 cycles for restaurant-style salsa. Don't mix with ammonia / bleach / alkaline."
@@ -117,7 +117,7 @@
     "warnings": [
       "Oil-strip BEFORE oxidizer — chili pigment is fat-soluble",
       "NEVER alkaline cleaners on tomato tannin",
-      "NEVER hot water — cross-links tannin, caramelizes any sugar",
+      "NEVER hot water — lock tannin in, caramelizes any sugar",
       "Hidden peroxide test mandatory on dyed carpet",
       "Don't flood — pad wick"
     ]
@@ -126,7 +126,7 @@
     {
       "step": 1,
       "agent": "Why Salsa Leaves a Lingering Orange Ghost",
-      "instruction": "Salsa is tomato + onion + CHILI OIL + spices. The chili part — capsaicin and the red pigment capsanthin — is FAT-SOLUBLE. Water-only cleaning doesn't touch them. They stay in the carpet fiber after the tomato red rinses away, leaving an orange ghost. That's why a lot of \"cleaned\" salsa spots still have a faint orange tint. The fix is simple: strip the oil with Dawn BEFORE you use peroxide. Order matters."
+      "instruction": "Salsa is tomato + onion + CHILI OIL + spices. The chili part — chili oil and the red pigment chili red pigment — is FAT-SOLUBLE. Water-only cleaning doesn't touch them. They stay in the carpet fiber after the tomato red rinses away, leaving an orange ghost. That's why a lot of \"cleaned\" salsa spots still have a faint orange tint. The fix is simple: strip the oil with Dawn BEFORE you use peroxide. Order matters."
     },
     {
       "step": 2,
@@ -136,7 +136,7 @@
     {
       "step": 3,
       "agent": "Cold Water Blot — Small Volume",
-      "instruction": "Pour a SMALL amount of cold water on the spot and blot with a dry cloth. Repeat 2–3 times. Removes loose tomato pigment and citric acid. Cold only — hot water cross-links tannin and sets pigment. Don't flood — pad wicking is the enemy."
+      "instruction": "Pour a SMALL amount of cold water on the spot and blot with a dry cloth. Repeat 2–3 times. Removes loose tomato pigment and citric acid. Cold only — hot water lock tannin in and sets pigment. Don't flood — pad wicking is the enemy."
     },
     {
       "step": 4,
@@ -151,7 +151,7 @@
     {
       "step": 6,
       "agent": "3% Hydrogen Peroxide on Damp Cloth",
-      "instruction": "Dab 3% drugstore peroxide on a damp white cloth, press on the spot 5–10 minutes, blot. Oxidizes lycopene (tomato red) and capsanthin (chili red). Repeat 2–3 times for restaurant-style oilier salsa.",
+      "instruction": "Dab 3% drugstore peroxide on a damp white cloth, press on the spot 5–10 minutes, blot. Oxidizes tomato red pigment (tomato red) and chili red pigment (chili red). Repeat 2–3 times for restaurant-style oilier salsa.",
       "safetyNote": "Never mix peroxide with ammonia, chlorine bleach, OxiClean, or baking soda."
     },
     {
@@ -193,7 +193,7 @@
     "warnings": [
       "Oil-strip BEFORE peroxide — chili pigment is fat-soluble",
       "NEVER alkaline cleaners on tomato tannin",
-      "NEVER hot water — cross-links tannin",
+      "NEVER hot water — lock tannin in",
       "Hidden peroxide test mandatory on dyed carpet",
       "Never mix peroxide with bleach / ammonia / alkaline"
     ]
@@ -212,7 +212,7 @@
     ]
   },
   "materialWarnings": [
-    "Chili pigment (capsanthin) is FAT-SOLUBLE — oil-strip or ghost remains",
+    "Chili pigment is FAT-SOLUBLE — oil-strip or ghost remains",
     "Order matters more than product choice",
     "Alkaline cleaners lock tomato tannin"
   ],
@@ -224,12 +224,12 @@
   "deepSolveHooks": {
     "contextQuestions": [
       "Restaurant salsa (oilier) or jarred (more vinegar)?",
-      "Mild, medium, or hot? (hot = more capsaicin oil)",
+      "Mild, medium, or hot?",
       "Fresh or dried in?",
       "Has anyone used alkaline cleaner already?",
       "Carpet fiber?"
     ],
-    "modifierNotes": "Restaurant salsa has more chili oil than jarred. Hot salsa has more capsaicin than mild. Oilier + hotter = bigger fat-soluble pigment load = Dawn step is even more critical."
+    "modifierNotes": "Restaurant salsa has more chili oil than jarred. Hot salsa has more chili oil than mild. Oilier + hotter = bigger fat-soluble pigment load = Dawn step is even more critical."
   },
   "sources": [],
   "cross_refs": [],

@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 3,
   "timeEstimate": "15–30 minutes (fresh); aged milk adds odor",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "milk",
     "surfaceCanonical": "cotton",
@@ -23,9 +23,9 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Milk is a triple-component stain: casein (protein, ~80% of milk protein), whey (protein, ~20%), and butterfat (lipid). Lactose adds a sugar residue that attracts bacteria if the stain sits. Fresh milk is almost invisible on light cotton — the cleanup problem is usually the SMELL that develops after a few hours as casein sours. Cotton tolerates enzymes, NSD, 3% H₂O₂, and hot post-chemistry wash. The ordering constraint: protein before heat. Hot water on fresh casein cooks it into the fiber and locks the fat + lactose with it.",
-  "whyThisWorks": "Cold flush first pulls soluble protein before it denatures. Enzyme digests the casein matrix — the protein is what holds the butterfat and lactose onto the fiber. Once protein is gone, NSD handles the fat and lactose rinses out. Hot wash at the end finishes and kills any lingering souring bacteria. Reverse the order and the casein cooks in; the stain stays invisible but the smell stays forever.",
-  "defaultAssumption": "Fresh milk spills (within a few hours) are high-confidence DIY. Aged milk is less about the stain and more about the odor — bacteria have been metabolizing lactose and casein for hours, and hot wash becomes the non-negotiable finisher.",
+  "stainChemistry": "Milk is a triple-component stain: milk protein (protein, ~80% of milk protein), whey (protein, ~20%), and butterfat (lipid). Lactose adds a sugar residue that attracts bacteria if the stain sits. Fresh milk is almost invisible on light cotton — the cleanup problem is usually the SMELL that develops after a few hours as milk protein sours. Cotton tolerates enzymes, NSD, 3% H₂O₂, and hot post-chemistry wash. The ordering constraint: protein before heat. Hot water on fresh milk protein cooks it into the fiber and locks the fat + lactose with it.",
+  "whyThisWorks": "Cold flush first pulls soluble protein before it sets. Enzyme digests the milk protein matrix — the protein is what holds the butterfat and lactose onto the fiber. Once protein is gone, NSD handles the fat and lactose rinses out. Hot wash at the end finishes and kills any lingering souring bacteria. Reverse the order and the milk protein cooks in; the stain stays invisible but the smell stays forever.",
+  "defaultAssumption": "Fresh milk spills (within a few hours) are high-confidence DIY. Aged milk is less about the stain and more about the odor — bacteria have been metabolizing lactose and milk protein for hours, and hot wash becomes the non-negotiable finisher.",
   "spottingProtocol": [
     {
       "step": 1,
@@ -34,16 +34,16 @@
       "technique": "Flush from the back",
       "equipment": "Cold water, white cotton terry towel",
       "dwellTime": "30–60 seconds",
-      "instruction": "Cold flush from the BACK of the fabric. Blot with a towel from underneath. Cold only — warm water sets the casein into cotton and seals the butterfat in with it."
+      "instruction": "Cold flush from the BACK of the fabric. Blot with a towel from underneath. Cold only — warm water sets the milk protein into cotton and seals the butterfat in with it."
     },
     {
       "step": 2,
       "side": "wet",
       "agent": "Protein Spotter",
       "technique": "Apply, dwell, light brush",
-      "equipment": "Liquid Protein Spotter (PRENETT B / protease digestant) in warm water (30–38°C)",
+      "equipment": "Liquid Protein Spotter in warm water (30–38°C)",
       "dwellTime": "15–20 minutes",
-      "instruction": "Apply Protein Spotter or enzyme pretreat dissolved in warm water. Enzyme window is warm, not hot — above 50°C the protease denatures. Dwell 15–20 min, light brush after the first 5. Protease hydrolyzes the casein matrix so the butterfat and lactose can lift in the next step."
+      "instruction": "Apply Protein Spotter or enzyme pretreat dissolved in warm water. Enzyme window is warm, not hot — above 50°C the protein-digesting enzyme sets. Dwell 15–20 min, light brush after the first 5. protein-digesting enzyme hydrolyzes the milk protein matrix so the butterfat and lactose can lift in the next step."
     },
     {
       "step": 3,
@@ -67,17 +67,17 @@
   "professionalProtocol": {
     "steps": [
       "1. Cold flush from the back — never warm while the protein is still raw.",
-      "2. Liquid Protein Spotter (PRENETT B / protease) in warm water (30–38°C). Dwell 15–20 min.",
+      "2. Liquid Protein Spotter in warm water (30–38°C). Dwell 15–20 min.",
       "3. NSD to emulsify residual butterfat. Cool rinse.",
       "4. Hot wash per care label — finishes odor-kill."
     ],
     "products": [
-      "Liquid Protein Spotter (PRENETT B or protease digestant)",
+      "Liquid Protein Spotter",
       "NSD (Neutral Synthetic Detergent)"
     ],
     "temperature": "cold flush; warm (30–38°C) for enzyme; cool rinse; hot wash post-chemistry",
     "warnings": [
-      "Never warm-water-flush fresh milk — cooks the casein",
+      "Never warm-water-flush fresh milk — cooks the milk protein",
       "Enzymes die above 50°C — warm not hot",
       "Hot wash is the odor finisher — don't skip on aged stains",
       "Flush chemistry before heat"
@@ -130,7 +130,7 @@
     ],
     "whenToStop": "Stop if the smell returns after two full enzyme + hot-wash cycles. Take it to a dry cleaner.",
     "warnings": [
-      "Cold water for the first flush — warm sets casein",
+      "Cold water for the first flush — warm sets milk protein",
       "Enzymes die above 50°C — warm water, not hot",
       "Hot wash is the odor-kill — cold wash leaves bacteria alive",
       "Fresh milk looks invisible on light cotton; treat the SMELL as the real problem"
@@ -138,9 +138,9 @@
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never warm-flush fresh milk — cooks the casein, locks everything in",
+      "Never warm-flush fresh milk — cooks the milk protein, locks everything in",
       "Never skip the hot wash — odor returns from live bacteria",
-      "Never run enzymes above 50°C — protease denatures",
+      "Never run enzymes above 50°C — protein-digesting enzyme sets",
       "Never ignore fresh milk because it looks invisible — the smell is the late payment"
     ],
     "fiberSensitivities": [
@@ -150,7 +150,7 @@
     ]
   },
   "materialWarnings": [
-    "Cold during spotting — hot sets casein",
+    "Cold during spotting — hot sets milk protein",
     "Enzyme in warm water, not hot",
     "Hot wash is the odor-kill — never skip"
   ],

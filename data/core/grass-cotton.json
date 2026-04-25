@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 4,
   "timeEstimate": "15–40 minutes",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "grass",
     "surfaceCanonical": "cotton",
@@ -24,7 +24,7 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Grass is a three-component stain: chlorophyll (a fat-soluble magnesium-porphyrin pigment that gives grass its green color), plant proteins (RuBisCO and related enzymes crushed out during impact), and plant tannins (polyphenols common to most plant material). The chlorophyll is the visible green; the protein is the glue that holds it to the fiber; the tannin is the residual brown shadow after the green is gone. Cotton is pure cellulose — tolerates enzymes, IPA (isopropyl alcohol), NSD, and 3% H₂O₂ at room temperature. The one ordering constraint: protein before heat, or the stain sets.",
+  "stainChemistry": "Grass is a three-component stain: chlorophyll (a fat-soluble magnesium-iron compound pigment that gives grass its green color), plant proteins (RuBisCO and related enzymes crushed out during impact), and plant tannins (polyphenols common to most plant material). The chlorophyll is the visible green; the protein is the glue that holds it to the fiber; the tannin is the residual brown shadow after the green is gone. Cotton is pure cellulose — tolerates enzymes, IPA (isopropyl alcohol), NSD, and 3% H₂O₂ at room temperature. The one ordering constraint: protein before heat, or the stain sets.",
   "whyThisWorks": "Three chemistries, same ordering rule as every combination stain. Enzyme digests the plant protein that binds the chlorophyll to the fiber. IPA or Dawn (home) dissolves the chlorophyll once the protein matrix is broken — chlorophyll is fat-soluble, so water alone can't lift it. 3% H₂O₂ oxidizes the residual tannin shadow. Hot wash finishes. Reversing the order — peroxide before the protein is digested — leaves the chlorophyll locked behind the protein matrix and the whole treatment plateaus at faint green.",
   "defaultAssumption": "Fresh grass on cotton (kids' play clothes, sports uniforms) is a high-confidence DIY. Aged grass (days old) adds a peroxide cycle but stays in home scope. Heat-set grass (already hot-dried) is pro territory — the protein is cooked in.",
   "spottingProtocol": [
@@ -42,9 +42,9 @@
       "side": "wet",
       "agent": "Protein Spotter",
       "technique": "Apply, dwell, light brush",
-      "equipment": "Liquid Protein Spotter (PRENETT B / protease digestant) or enzyme pre-soak in warm water (30–38°C)",
+      "equipment": "Liquid Protein Spotter or enzyme pre-soak in warm water (30–38°C)",
       "dwellTime": "15–20 minutes",
-      "instruction": "Apply Protein Spotter directly or dissolve enzyme pretreat in warm water. The protease hydrolyzes the plant protein holding the chlorophyll in place. Brush gently with a soft bristle brush after the first 5 min. The stain doesn't visibly clear yet — it's preparing the chlorophyll for the next step."
+      "instruction": "Apply Protein Spotter directly or dissolve enzyme pretreat in warm water. The protein-digesting enzyme hydrolyzes the plant protein holding the chlorophyll in place. Brush gently with a soft bristle brush after the first 5 min. The stain doesn't visibly clear yet — it's preparing the chlorophyll for the next step."
     },
     {
       "step": 3,
@@ -62,7 +62,7 @@
       "technique": "Drop, dwell, blot",
       "equipment": "3% H₂O₂",
       "dwellTime": "3–5 minutes",
-      "instruction": "For the residual brown tannin shadow after the green is gone, apply 3% H₂O₂ drop-by-drop. Oxidizes the tannin chromophore. Dwell 3–5 min, blot. One oxidizer at a time."
+      "instruction": "For the residual brown tannin shadow after the green is gone, apply 3% H₂O₂ drop-by-drop. Oxidizes the tannin color. Dwell 3–5 min, blot. One oxidizer at a time."
     },
     {
       "step": 5,
@@ -77,13 +77,13 @@
   "professionalProtocol": {
     "steps": [
       "1. Cold flush from the back — won't visibly change the green yet.",
-      "2. Liquid Protein Spotter (PRENETT B / protease) in warm water (30–38°C). 15–20 min.",
+      "2. Liquid Protein Spotter in warm water (30–38°C). 15–20 min.",
       "3. IPA (90%+) on a white cloth, tamp — chlorophyll is fat-soluble. OR NSD for a slower alternative.",
       "4. 3% H₂O₂ on residual tannin shadow. 3–5 min. One pass.",
       "5. NSD flush, hot wash per care label."
     ],
     "products": [
-      "Liquid Protein Spotter (PRENETT B or protease digestant)",
+      "Liquid Protein Spotter",
       "Isopropyl alcohol 90%+",
       "NSD (Neutral Synthetic Detergent)",
       "Hydrogen Peroxide 3%"

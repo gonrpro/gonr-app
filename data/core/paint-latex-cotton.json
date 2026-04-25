@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 4,
   "timeEstimate": "5–30 minutes (wet) or 20+ min (dry — much harder)",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "paint-latex",
     "surfaceCanonical": "cotton",
@@ -23,7 +23,7 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Latex paint is a water-based emulsion — pigment + acrylic or vinyl polymer suspended in water. While WET, the polymer is dispersed and the whole stain is water-soluble. Once the water evaporates (15–30 min on fabric, faster in heat), the polymer films and cross-links into a flexible plastic coat. Dry latex on cotton is mechanically embedded in the fiber matrix; water no longer touches it, and removal requires a solvent that re-softens the polymer (methanol, acetone, or specialty latex paint remover — each with tradeoffs).",
+  "stainChemistry": "Latex paint is a water-based emulsion — pigment + acrylic or vinyl polymer suspended in water. While WET, the polymer is dispersed and the whole stain is water-soluble. Once the water evaporates (15–30 min on fabric, faster in heat), the polymer films and lock together into a flexible plastic coat. Dry latex on cotton is mechanically embedded in the fiber matrix; water no longer touches it, and removal requires a solvent that re-softens the polymer (methanol, acetone, or specialty latex paint remover — each with tradeoffs).",
   "whyThisWorks": "Time is the single biggest factor. If you catch it in the first 15 minutes, cold water + dish soap floods the polymer out of the fiber before it films. Once dry, the sequence is: soften the polymer (methanol or paint-specific solvent), emulsify the softened residue (NSD), flush, repeat. Heat accelerates polymerization — never run a painted garment through a warm wash or dryer until the paint is fully gone.",
   "defaultAssumption": "Assume the user may or may not have caught it wet. Home voice prioritizes the wet path (fast, clean win); pro voice handles both.",
   "spottingProtocol": [
@@ -65,7 +65,7 @@
       "agent": "Repeat or Escalate",
       "technique": "Second pass or specialist",
       "dwellTime": "as needed",
-      "instruction": "Repeat methanol + NSD once if residue persists. If the paint is fully dry and spans >2 cm², or has been through a wash/dryer cycle, escalate — cross-linked cured latex usually needs a professional."
+      "instruction": "Repeat methanol + NSD once if residue persists. If the paint is fully dry and spans >2 cm², or has been through a wash/dryer cycle, escalate — lock together cured latex usually needs a professional."
     }
   ],
   "professionalProtocol": {
@@ -83,7 +83,7 @@
     ],
     "temperature": "cold through spotting; no heat drying until residue is gone",
     "warnings": [
-      "Never heat a garment with residual latex — cross-links the polymer permanently",
+      "Never heat a garment with residual latex — lock together the polymer permanently",
       "Methanol is flammable + toxic if inhaled — ventilate the area",
       "Test methanol on an inside seam on dyed cotton — some dyes lift"
     ]
@@ -97,7 +97,7 @@
     {
       "step": 2,
       "agent": "Wet Paint → Cold Water + Dawn, from the Back",
-      "instruction": "Run cold water through the BACK of the fabric for 60 seconds. You'll see the paint rinse away. Then a drop of Dawn dish soap on the spot, work it in with a fingertip, rinse again. Two rounds usually clears fresh latex entirely from cotton. Do NOT use warm or hot water — heat speeds up the cross-linking."
+      "instruction": "Run cold water through the BACK of the fabric for 60 seconds. You'll see the paint rinse away. Then a drop of Dawn dish soap on the spot, work it in with a fingertip, rinse again. Two rounds usually clears fresh latex entirely from cotton. Do NOT use warm or hot water — heat speeds up the lock together."
     },
     {
       "step": 3,
@@ -107,7 +107,7 @@
     {
       "step": 4,
       "agent": "Dry Paint → Methanol or Goof Off, Dabbed on a Rag",
-      "instruction": "For the remaining dry film: dab methanol (denatured alcohol works; sold at any hardware store) or a paint-remover wipe like Goof Off onto a clean white rag. Press the rag onto the stain, don't pour. The methanol re-softens the dried paint. Flip to a clean section of rag, press again. The paint transfers out onto the rag. Ventilate — methanol has fumes."
+      "instruction": "For the remaining dry film: dab methanol or a paint-remover wipe like Goof Off onto a clean white rag. Press the rag onto the stain, don't pour. The methanol re-softens the dried paint. Flip to a clean section of rag, press again. The paint transfers out onto the rag. Ventilate — methanol has fumes."
     },
     {
       "step": 5,
@@ -122,7 +122,7 @@
     {
       "step": 7,
       "agent": "Escalate",
-      "instruction": "If the paint spans a large area, has already been through a washer + dryer cycle, or you can see it's cross-linked into the weave, take it to a dry cleaner. Tell them: \"Latex paint on cotton, [wet or dry when treated], used [methanol / no solvent] at home, no heat.\" Pros have stronger paint-removers that aren't shelf-safe at home."
+      "instruction": "If the paint spans a large area, has already been through a washer + dryer cycle, or you can see it's lock together into the weave, take it to a dry cleaner. Tell them: \"Latex paint on cotton, [wet or dry when treated], used [methanol / no solvent] at home, no heat.\" Pros have stronger paint-removers that aren't shelf-safe at home."
     }
   ],
   "diyProtocol": {
@@ -137,19 +137,19 @@
     ],
     "products": [
       "Dawn dish soap",
-      "Methanol (denatured alcohol — hardware store) OR Goof Off Paint Splatter / Motsenbocker's Lift Off 4",
+      "Methanol OR Goof Off Paint Splatter / Motsenbocker's Lift Off 4",
       "Dull blade or credit card"
     ],
     "whenToStop": "Stop if the paint's been through a warm/hot laundry cycle, covers more than a few square inches of cured film, or survives two full rounds. Take it to a dry cleaner.",
     "warnings": [
-      "Never heat a garment with residual paint — dryer heat cross-links latex permanently",
+      "Never heat a garment with residual paint — dryer heat lock together latex permanently",
       "Methanol is flammable and toxic to inhale — ventilate, don't smoke nearby",
       "Test methanol on an inside seam first on colored cotton"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never apply heat to fabric with residual latex — permanent cross-link",
+      "Never apply heat to fabric with residual latex — permanent lock together",
       "Never use methanol without ventilation",
       "Never pour solvent onto fabric — tamp with a cloth"
     ],

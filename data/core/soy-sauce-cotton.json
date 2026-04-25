@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 4,
   "timeEstimate": "15–40 minutes",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "soy-sauce",
     "surfaceCanonical": "cotton",
@@ -24,8 +24,8 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Soy sauce is a brown-black stain of melanoidins (caramel-type compounds from fermentation), tannin-like phenolics, amino acids, and — critically — salt. The melanoidins bond to cotton through hydrogen bonding AND some Maillard-type cross-linking. The salt content acts as a MORDANT — a dye fixative that locks the brown color deeper into the fiber the longer it sits. This makes soy sauce genuinely time-sensitive: the same spill caught in 5 minutes is twice as easy as the same spill at 30 minutes. Cotton is pure cellulose — tolerates acid-side spotters, NSD, 3% H₂O₂, and hot wash.",
-  "whyThisWorks": "Cold flush removes the salt before it can finish mordanting the color into the fiber. NSD suspends loose pigment. Acid-side tannin spotter disrupts the melanoidin-cellulose hydrogen bonds. 3% H₂O₂ oxidizes the residual brown chromophore. Hot wash finishes. The salt-flush first is the difference between soy-sauce-as-removable-tannin and soy-sauce-as-dye-fixed-by-its-own-salt.",
+  "stainChemistry": "Soy sauce is a brown-black stain of browning pigments (caramel-type compounds from fermentation), tannin-like phenolics, amino acids, and — critically — salt. The browning pigments bond to cotton tightlyAND some browning-type lock together. The salt content acts as a MORDANT — a dye fixative that locks the brown color deeper into the fiber the longer it sits. This makes soy sauce genuinely time-sensitive: the same spill caught in 5 minutes is twice as easy as the same spill at 30 minutes. Cotton is pure cellulose — tolerates acid-side spotters, NSD, 3% H₂O₂, and hot wash.",
+  "whyThisWorks": "Cold flush removes the salt before it can finish mordanting the color into the fiber. NSD suspends loose pigment. Acid-side tannin spotter disrupts the browning pigments-cellulose grip. 3% H₂O₂ oxidizes the residual brown color. Hot wash finishes. The salt-flush first is the difference between soy-sauce-as-removable-tannin and soy-sauce-as-dye-fixed-by-its-own-salt.",
   "defaultAssumption": "Time is the main variable. Fresh (within 10 min) is a high-confidence DIY. Hour-old adds a peroxide cycle. Overnight has set most of the way — expect a plateau at faint brown without pro chemistry.",
   "spottingProtocol": [
     {
@@ -53,7 +53,7 @@
       "technique": "Drop, dwell, blot",
       "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
       "dwellTime": "3–5 minutes",
-      "instruction": "Acid-side tannin spotter by dropper on the brown residue. Disrupts the melanoidin-cellulose bonds. Dwell 3–5 min, blot. Repeat once if needed."
+      "instruction": "Acid-side tannin spotter by dropper on the brown residue. Disrupts the browning pigments-cellulose bonds. Dwell 3–5 min, blot. Repeat once if needed."
     },
     {
       "step": 4,
@@ -62,7 +62,7 @@
       "technique": "Drop, dwell, blot",
       "equipment": "3% H₂O₂",
       "dwellTime": "3–5 minutes",
-      "instruction": "Residual brown: 3% H₂O₂ drop-by-drop. Oxidizes the melanoidin chromophore. Dwell, blot. One oxidizer at a time."
+      "instruction": "Residual brown: 3% H₂O₂ drop-by-drop. Oxidizes the browning pigments color. Dwell, blot. One oxidizer at a time."
     },
     {
       "step": 5,
@@ -113,7 +113,7 @@
     {
       "step": 4,
       "agent": "White Vinegar Dab for Residual Brown",
-      "instruction": "Mix 1 teaspoon white vinegar with 4 tablespoons cool water. Dab onto the remaining stain, let sit 3 minutes, blot. The vinegar's mild acidity breaks the melanoidin bond."
+      "instruction": "Mix 1 teaspoon white vinegar with 4 tablespoons cool water. Dab onto the remaining stain, let sit 3 minutes, blot. The vinegar's mild acidity breaks the browning pigments bond."
     },
     {
       "step": 5,
@@ -160,7 +160,7 @@
   "safetyMatrix": {
     "neverDo": [
       "Never let soy sauce sit without a flush — the salt will mordant the color in",
-      "Never hot-water-flush — sets melanoidins brown",
+      "Never hot-water-flush — sets browning pigments brown",
       "Never layer oxidizers — one at a time",
       "Never dry with residual color visible"
     ],
@@ -185,7 +185,7 @@
       "How long ago did the spill happen?",
       "Has the fabric been through any wash cycle yet?",
       "Is the cotton white, light, or dark/dyed?",
-      "Light or dark soy sauce? (dark / mushroom / tamari has more melanoidin — harder)"
+      "Light or dark soy sauce?"
     ],
     "modifierNotes": "The salt-mordant mechanism is the novel feature. A minute of extra cold flush time at the start of treatment saves two peroxide cycles later."
   },

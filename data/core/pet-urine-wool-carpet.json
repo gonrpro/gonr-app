@@ -63,11 +63,11 @@
     {
       "step": 4,
       "side": "wet-minimal",
-      "agent": "Wool-Safe Urease-Only Enzyme (Pro)",
+      "agent": "Wool-Safe Urine-Targeted Enzyme (Pro)",
       "technique": "Specialty enzyme, controlled application",
-      "equipment": "Pro wool-safe urease enzyme product",
+      "equipment": "Pro wool-safe urine-targeted enzyme enzyme product",
       "dwellTime": "Per pro reference",
-      "instruction": "Pro applies urease-ONLY enzyme (urease digests uric acid; protease would digest wool). Strict application without flooding. Cold sub-surface extraction follows."
+      "instruction": "Pro applies urine-targeted enzyme. Strict application without flooding. Cold sub-surface extraction follows."
     },
     {
       "step": 5,
@@ -93,7 +93,7 @@
       "1. Gloves + UV blacklight + tape edges of contaminated area.",
       "2. Cold damp-cloth press-blot.",
       "3. Cold wool-safe NSD sponge press for fresh urine.",
-      "4. Wool-safe urease-ONLY enzyme (NOT protease — protease digests wool).",
+      "4. Wool-safe urine-targeted enzyme.",
       "5. Acetic acid 60-sec spotter for ammonia neutralization.",
       "6. Cold sub-surface extraction.",
       "7. Press-dry overnight + blacklight verify."
@@ -102,7 +102,7 @@
       "UV blacklight",
       "Disposable gloves + N95 mask",
       "Mulsolite or wool-safe NSD",
-      "Wool-safe urease-only enzyme (pro)",
+      "Wool-safe urine-targeted enzyme (pro)",
       "Acetic Acid (diluted 1:10)",
       "Cold/ice water",
       "Dry white towels"
@@ -110,7 +110,7 @@
     "temperature": "cold throughout — wool felts above 30°C when wet",
     "warnings": [
       "Biohazard — gloves + mask + sealed disposal",
-      "NEVER protease enzymes — digest wool keratin",
+      "NEVER protein-digesting enzymes — digest wool keratin",
       "NEVER hot water / steam — felts wool + sets protein",
       "NEVER alkaline (OxiClean / ammonia) — felts wool + locks urine",
       "NEVER chlorine bleach — destroys wool",
@@ -123,7 +123,7 @@
     {
       "step": 1,
       "agent": "Honest Answer — Pro IMMEDIATELY for Wool Carpet",
-      "instruction": "Pet urine on wool carpet is the worst combination in the pet-urine family. Wool's banned tools (no enzymes, no hot water, no alkaline, no agitation) eliminate everything that lifts pet urine from synthetic carpet. Retail pet enzyme cleaners contain protease which DIGESTS WOOL. Home protocol = gloves + cold press-blot + pro IMMEDIATELY. Wool-safe pet-urine chemistry exists but is pro-only."
+      "instruction": "Pet urine on wool carpet is the worst combination in the pet-urine family. Wool's banned tools (no enzymes, no hot water, no alkaline, no agitation) eliminate everything that lifts pet urine from synthetic carpet. Retail pet enzyme cleaners contain protein-digesting enzyme which DIGESTS WOOL. Home protocol = gloves + cold press-blot + pro IMMEDIATELY. Wool-safe pet-urine chemistry exists but is pro-only."
     },
     {
       "step": 2,
@@ -143,14 +143,14 @@
     {
       "step": 5,
       "agent": "Pro Wool-Carpet Specialist IMMEDIATELY",
-      "instruction": "Don't wait. Don't apply Nature's Miracle or any retail pet enzyme — they contain protease that digests wool. Tell the pro: \"Pet urine on wool carpet, [cat / dog], age [hours / overnight], gloves + cold press-blot ONLY at home. NO enzyme cleaner, NO hot water, NO OxiClean, NO household pet products applied. Need wool-safe urease-only enzyme + cold sub-surface extraction.\""
+      "instruction": "Don't wait. Don't apply Nature's Miracle or any retail pet enzyme — they contain protein-digesting enzyme that digests wool. Tell the pro: \"Pet urine on wool carpet, [cat / dog], age [hours / overnight], gloves + cold press-blot ONLY at home. NO enzyme cleaner, NO hot water, NO OxiClean, NO household pet products applied. Need wool-safe urine-targeted enzyme + cold sub-surface extraction.\""
     }
   ],
   "diyProtocol": {
     "steps": [
       "1. Wool carpet + pet urine = pro IMMEDIATELY.",
       "2. Gloves on. UV blacklight to find full extent.",
-      "3. NO retail pet enzyme cleaners — they contain protease that digests wool.",
+      "3. NO retail pet enzyme cleaners — they contain protein-digesting enzyme that digests wool.",
       "4. Cold damp-cloth press-blot — vertical pressure, no rubbing.",
       "5. Weighted dry towels 30 min for extraction.",
       "6. Pro wool-carpet specialist immediately."
@@ -184,8 +184,8 @@
     ],
     "fiberSensitivities": [
       "Wool keratin felts when wet + warm + agitated",
-      "Protease enzymes digest wool keratin equally with sweat protein",
-      "Urease-only enzymes are wool-safe but pro-only",
+      "protein-digesting enzymes digest wool keratin equally with sweat protein",
+      "urine-targeted enzymes are wool-safe but pro-only",
       "Pad contamination on wool carpet may require pad replacement"
     ]
   },
@@ -197,8 +197,8 @@
   ],
   "escalation": {
     "when": "Always — wool carpet + pet urine is pro-only IMMEDIATELY. Pad contamination, recurring spots, or any retail enzyme already applied = even more urgent.",
-    "whatToTell": "\"Pet urine on wool carpet, [cat / dog], age [hours / overnight], gloves + cold press-blot ONLY at home. NO enzyme cleaner, NO hot water, NO OxiClean, NO household pet products applied. Need wool-safe urease-only enzyme + cold sub-surface extraction. UV blacklight extent: [size].\"",
-    "specialistType": "professional wool-carpet specialist (call ahead — confirm urease-only enzyme + sub-surface cold extraction; many cleaners can't safely treat pet urine on wool)"
+    "whatToTell": "\"Pet urine on wool carpet, [cat / dog], age [hours / overnight], gloves + cold press-blot ONLY at home. NO enzyme cleaner, NO hot water, NO OxiClean, NO household pet products applied. Need wool-safe urine-targeted enzyme + cold sub-surface extraction. UV blacklight extent: [size].\"",
+    "specialistType": "professional wool-carpet specialist"
   },
   "deepSolveHooks": {
     "contextQuestions": [

@@ -6,7 +6,7 @@
   "sector": "textile",
   "source": "verified",
   "verified": false,
-  "stainChemistry": "Classification: Dye (synthetic colorant). Mustard stains are caused by curcumin — the yellow pigment from turmeric. Curcumin is one of the most tenacious natural dyes: it binds to fibers through hydrogen bonding and is highly resistant to oxidative bleaching due to its stable diketo-enol chromophore system. UV light is the most effective decolorizer (photodegrades the chromophore). On polyester (synthetic fiber): chemically resistant to most cleaning agents. Dyes bond via ionic bonds, covalent bonds, or physical entrapment. Treatment: solvent to dissolve dye carrier, followed by oxidizing or reducing bleach to cleave chromophore bonds.",
+  "stainChemistry": "Classification: Dye (synthetic colorant). Mustard stains are caused by turmeric pigment — the yellow pigment from turmeric. turmeric pigment is one of the most tenacious natural dyes: it binds to fibers tightlyand is highly resistant to oxidative bleaching due to its stable pigment color system. UV light is the most effective decolorizer. On polyester (synthetic fiber): chemically resistant to most cleaning agents. Dyes bond via ionic bonds, covalent bonds, or physical entrapment. Treatment: solvent to dissolve dye carrier, followed by oxidizing or reducing bleach to cleave color bonds.",
   "whyThisWorks": "This dye-based stain is designed to bond permanently. Mustard sits on polyester's surface rather than absorbing in deeply. Alcohol or solvent dissolves the carrier holding the dye in place, letting you lift it away before it bonds permanently.",
   "defaultAssumption": "Treat as unknown age / possibly dried.",
   "professionalProtocol": {
@@ -19,7 +19,7 @@
       "amyl acetate",
       "NSD (Neutral Synthetic Detergent)"
     ],
-    "temperature": "cold — hot water sets curcumin dye permanently",
+    "temperature": "cold — hot water sets turmeric pigment dye permanently",
     "warnings": [
       "Using hot water on this stain — sets it permanently",
       "Rubbing instead of blotting — spreads the stain",
@@ -49,17 +49,17 @@
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use hot water — sets curcumin dye permanently",
+      "Use hot water — sets turmeric pigment dye permanently",
       "Rub instead of blot — spreads the stain",
       "Apply heat before the dye is removed"
     ],
     "fiberSensitivities": [
-      "Polyester is chemically resistant to most spotting agents. Avoid high heat (melts above 250°C). Safe for enzyme, oxidizer, and solvent treatment. Curcumin is extremely tenacious on polyester specifically."
+      "Polyester is chemically resistant to most spotting agents. Avoid high heat (melts above 250°C). Safe for enzyme, oxidizer, and solvent treatment. turmeric pigment is extremely tenacious on polyester specifically."
     ]
   },
   "escalation": {
-    "when": "Home treatment fails — curcumin is particularly resistant on polyester",
-    "whatToTell": "Mustard/turmeric stain on polyester, curcumin dye. Treated at home with IPA (IPA). Please use professional solvent protocol.",
+    "when": "Home treatment fails — turmeric pigment is particularly resistant on polyester",
+    "whatToTell": "Mustard/turmeric stain on polyester, turmeric pigment dye. Treated at home with IPA (IPA). Please use professional solvent protocol.",
     "specialistType": "dry cleaner"
   },
   "deepSolveHooks": {
@@ -69,11 +69,11 @@
       "Has the garment been through the dryer?",
       "Is the polyester white or colored?"
     ],
-    "modifierNotes": "Yellow mustard has the highest turmeric content. Dryer exposure locks the stain in permanently. Polyester tends to hold curcumin more tenaciously than cotton. Fresh stains have significantly better outcomes."
+    "modifierNotes": "Yellow mustard has the highest turmeric content. Dryer exposure locks the stain in permanently. Polyester tends to hold turmeric pigment more tenaciously than cotton. Fresh stains have significantly better outcomes."
   },
   "difficulty": 5,
   "timeEstimate": "20–30 min",
-  "lastValidated": "2026-03-23",
+  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
   "verification_level": "single_source"

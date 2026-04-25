@@ -97,10 +97,10 @@
     "temperature": "ambient solvent + cold rinse",
     "warnings": [
       "NEVER isopropyl alcohol on silk — strips silk dyes (cotton tool, silk poison)",
-      "NEVER acetone on silk — damages fibroin + dye bleed",
+      "NEVER acetone on silk — damages silk protein + dye bleed",
       "NEVER flood silk with water — permanent rings",
       "NEVER hydrogen peroxide on silk — yellows dyes",
-      "NEVER hot water — denatures silk",
+      "NEVER hot water — sets silk",
       "Solvent selection by ink type — the wrong solvent does nothing OR damages silk"
     ]
   },
@@ -108,7 +108,7 @@
     {
       "step": 1,
       "agent": "Honest Answer — Do Not Improvise",
-      "instruction": "Silk + ink is the rare combination where every common home tool causes new damage. Rubbing alcohol (the cotton ink-removal standard) STRIPS SILK DYES — leaves a paler patch wherever you apply it. Water alone leaves PERMANENT RINGS on silk. Acetone damages the fibroin AND can bleed silk dye. The cotton playbook doesn't transfer. Home protocol is exactly two things: blot any wet ink, then get to a silk specialist immediately. Do not try anything else."
+      "instruction": "Silk + ink is the rare combination where every common home tool causes new damage. Rubbing alcohol (the cotton ink-removal standard) STRIPS SILK DYES — leaves a paler patch wherever you apply it. Water alone leaves PERMANENT RINGS on silk. Acetone damages the silk protein AND can bleed silk dye. The cotton playbook doesn't transfer. Home protocol is exactly two things: blot any wet ink, then get to a silk specialist immediately. Do not try anything else."
     },
     {
       "step": 2,
@@ -118,7 +118,7 @@
     {
       "step": 3,
       "agent": "If Dry — Leave It Completely Alone",
-      "instruction": "Dried ink on silk is BETTER for a pro to handle than disturbed ink. Do NOT pick at it with a fingernail. Do NOT scrape — scraping tears silk fibroin. Do NOT attempt to soften with anything. Silk is fragile; leave the ink in place until the cleaner can apply controlled solvent."
+      "instruction": "Dried ink on silk is BETTER for a pro to handle than disturbed ink. Do NOT pick at it with a fingernail. Do NOT scrape — scraping tears silk protein. Do NOT attempt to soften with anything. Silk is fragile; leave the ink in place until the cleaner can apply controlled solvent."
     },
     {
       "step": 4,
@@ -140,9 +140,9 @@
     "warnings": [
       "NEVER alcohol on silk — strips silk dyes",
       "NEVER water on silk for ink — permanent rings",
-      "NEVER acetone — damages fibroin + dye bleed",
+      "NEVER acetone — damages silk protein + dye bleed",
       "NEVER hydrogen peroxide on silk — yellows dyes",
-      "NEVER scraping dried ink — tears fibroin",
+      "NEVER scraping dried ink — tears silk protein",
       "Wrong solvent selection = no progress OR new damage"
     ]
   },
@@ -156,7 +156,7 @@
       "Never improvise solvent selection at home"
     ],
     "fiberSensitivities": [
-      "Silk fibroin damaged by acetone + most aggressive solvents",
+      "Silk silk protein damaged by acetone + most aggressive solvents",
       "Silk dyes stripped by isopropyl alcohol",
       "Silk rings permanently from water alone",
       "Silk yellows from peroxide"

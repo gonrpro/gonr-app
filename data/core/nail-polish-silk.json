@@ -95,7 +95,7 @@
     {
       "step": 1,
       "agent": "Honest Answer — Don't",
-      "instruction": "Nail polish on silk is the rare combination where NO home solvent is safe. Acetone destroys silk's hand and creates permanent rings. \"Non-acetone\" removers contain uncontrolled ester concentrations that bleed silk dyes. Rubbing alcohol strips silk color wherever applied. Water alone leaves permanent rings on silk and does nothing to nitrocellulose anyway. The cotton playbook doesn't transfer. Best move: leave the stain alone, take to a silk-safe specialist within 24 hours."
+      "instruction": "Nail polish on silk is the rare combination where NO home solvent is safe. Acetone destroys silk's hand and creates permanent rings. \"Non-acetone\" removers contain uncontrolled ester concentrations that bleed silk dyes. Rubbing alcohol strips silk color wherever applied. Water alone leaves permanent rings on silk and does nothing to polish film anyway. The cotton playbook doesn't transfer. Best move: leave the stain alone, take to a silk-safe specialist within 24 hours."
     },
     {
       "step": 2,
@@ -105,7 +105,7 @@
     {
       "step": 3,
       "agent": "If Dry — Leave It Completely Alone",
-      "instruction": "Hardened polish on silk is EASIER for a pro to handle than disturbed polish. Do NOT pick at it with a fingernail. Do NOT scrape with a knife or card — scraping tears silk fibroin. Do NOT attempt to soften with anything (heat, water, alcohol). Silk is fragile; leave the polish in place until the cleaner can apply controlled amyl acetate."
+      "instruction": "Hardened polish on silk is EASIER for a pro to handle than disturbed polish. Do NOT pick at it with a fingernail. Do NOT scrape with a knife or card — scraping tears silk protein. Do NOT attempt to soften with anything (heat, water, alcohol). Silk is fragile; leave the polish in place until the cleaner can apply controlled amyl acetate."
     },
     {
       "step": 4,
@@ -129,7 +129,7 @@
       "NEVER nail polish remover (any kind) on silk",
       "NEVER alcohol / IPA on silk — strips dyes",
       "NEVER water on silk for polish — permanent rings",
-      "NEVER scrape dried polish — tears fibroin",
+      "NEVER scrape dried polish — tears silk protein",
       "NEVER improvise solvent at home — pro-only"
     ]
   },
@@ -143,7 +143,7 @@
       "Never improvise solvent at home"
     ],
     "fiberSensitivities": [
-      "Silk fibroin damaged by acetone + most aggressive solvents",
+      "Silk silk protein damaged by acetone + most aggressive solvents",
       "Silk dyes stripped by isopropyl alcohol",
       "Silk rings permanently from water alone",
       "Amyl acetate is the only known silk-safe solvent for nail polish — pro-only application"
@@ -158,7 +158,7 @@
   "escalation": {
     "when": "Always — silk + nail polish is pro-only IMMEDIATELY. The cleaner's best outcome is the one where you bring it in with NOTHING applied at home.",
     "whatToTell": "\"Nail polish on silk, [wet still / dried], age [hours / days]. NOTHING applied at home. No acetone, no remover, no alcohol, no water, no scrubbing.\"",
-    "specialistType": "professional dry cleaner specializing in silk (call ahead — confirm amyl acetate spotting + nitrocellulose-on-silk experience)"
+    "specialistType": "professional dry cleaner specializing in silk"
   },
   "deepSolveHooks": {
     "contextQuestions": [

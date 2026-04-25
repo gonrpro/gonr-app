@@ -2,7 +2,7 @@
   "id": "blood-wool",
   "version": "6.0",
   "authored": "2026-03-22",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "title": "Blood on Wool",
   "stainType": "protein",
   "stainFamily": "protein",
@@ -27,8 +27,8 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Blood and wool share a chemistry problem: both are protein. Wool is keratin — a cross-linked protein fiber itself — and the enzymatic digestants (protease) that safely dissolve blood on cotton ALSO dissolve wool. That rules out nearly every standard protein-stain tool. Wool is also heat-sensitive, alkali-sensitive, and chlorine-bleach-intolerant. The workable window is narrow: cool water (≤30°C / 86°F), gentle detergent, minimal agitation, maybe a short peroxide spot if the shadow is tannic-brown (old). Wet agitation felts wool permanently — the mechanical action, not the chemistry, is often what ruins a wool garment.",
-  "whyThisWorks": "Cold water halts protein setting without cooking wool keratin. Mild NSD or a wool-rated detergent lifts the soluble protein without attacking the fiber. 3% hydrogen peroxide in small quantity oxidizes residual iron-porphyrin pigment — safe on wool at short dwell times, unlike chlorine bleach. The critical rule is NO ENZYMES and NO WARM WATER — both destroy wool directly. Agitation is also a failure mode: rubbing, wringing, or machine action felts the fiber.",
+  "stainChemistry": "Blood and wool share a chemistry problem: both are protein. Wool is keratin — a lock together protein fiber itself — and the enzymatic digestants that safely dissolve blood on cotton ALSO dissolve wool. That rules out nearly every standard protein-stain tool. Wool is also heat-sensitive, alkali-sensitive, and chlorine-bleach-intolerant. The workable window is narrow: cool water (≤30°C / 86°F), gentle detergent, minimal agitation, maybe a short peroxide spot if the shadow is tannic-brown (old). Wet agitation felts wool permanently — the mechanical action, not the chemistry, is often what ruins a wool garment.",
+  "whyThisWorks": "Cold water halts protein setting without cooking wool keratin. Mild NSD or a wool-rated detergent lifts the soluble protein without attacking the fiber. 3% hydrogen peroxide in small quantity oxidizes residual iron-based brown pigment — safe on wool at short dwell times, unlike chlorine bleach. The critical rule is NO ENZYMES and NO WARM WATER — both destroy wool directly. Agitation is also a failure mode: rubbing, wringing, or machine action felts the fiber.",
   "defaultAssumption": "Wool is delicate enough that the home path routes to a specialist if the stain is anything beyond fresh. Pro spotters can do more, but carefully.",
   "spottingProtocol": [
     {
@@ -47,7 +47,7 @@
       "technique": "Apply gently, no enzymes ever",
       "equipment": "Neutral Synthetic Detergent or wool-rated detergent (Woolite, Eucalan)",
       "dwellTime": "3–5 minutes",
-      "instruction": "Apply a tiny amount of mild NSD or a wool-rated detergent directly to the stain. Work it in very gently with a fingertip — no brush, no scrubbing. NEVER use enzyme pretreats on wool — protease digests wool keratin as readily as it digests blood. This is the single most common way home attempts destroy a wool garment."
+      "instruction": "Apply a tiny amount of mild NSD or a wool-rated detergent directly to the stain. Work it in very gently with a fingertip — no brush, no scrubbing. NEVER use enzyme pretreats on wool — protein-digesting enzymes damage wool as readily as it digests blood. This is the single most common way home attempts destroy a wool garment."
     },
     {
       "step": 3,
@@ -92,7 +92,7 @@
     ],
     "temperature": "≤30°C / 86°F for any wet step; room temperature drying",
     "warnings": [
-      "NEVER use enzyme pretreats, protein spotters, or protease-based digestants on wool — they digest keratin",
+      "NEVER use enzyme pretreats, protein spotters, or protein-digesting enzyme-based digestants on wool — they digest keratin",
       "Never use hot water, warm water, or heat drying — shrinks and felts wool",
       "Never use chlorine bleach on wool — destroys the fiber",
       "Never rub, wring, or twist wet wool — felting is mechanical, permanent, and irreversible",
@@ -103,7 +103,7 @@
     {
       "step": 1,
       "agent": "No Enzymes. Ever.",
-      "instruction": "Before anything else, understand this: the enzyme pretreats (OxiClean, Biz, Zout, any \"enzyme\" stain remover) that work on cotton-blood will DESTROY wool. Wool is protein, and protease enzymes digest it. If you have enzyme stain remover and a wool garment, they don't go together.",
+      "instruction": "Before anything else, understand this: the enzyme pretreats (OxiClean, Biz, Zout, any \"enzyme\" stain remover) that work on cotton-blood will DESTROY wool. Wool is protein, and protein-digesting enzymes digest it. If you have enzyme stain remover and a wool garment, they don't go together.",
       "safetyNote": "Enzymes digest wool keratin. The most common way home attempts ruin wool is with an enzyme pretreat."
     },
     {
@@ -169,14 +169,14 @@
   },
   "safetyMatrix": {
     "neverDo": [
-      "NEVER use enzymes / protease / 'oxi' on wool — digests keratin",
+      "NEVER use enzymes / protein-digesting enzyme / 'oxi' on wool — digests keratin",
       "NEVER use hot or warm water — shrinks and felts",
       "NEVER rub, wring, or twist wet wool — mechanical felting is permanent",
       "NEVER use chlorine bleach — destroys wool",
       "NEVER hang wet wool — stretches out of shape"
     ],
     "fiberSensitivities": [
-      "Wool is protein (keratin) — any protease-based cleaner digests it",
+      "Wool is protein (keratin) — any protein-digesting enzyme-based cleaner digests it",
       "Wet agitation causes felting regardless of temperature",
       "Heat above 30°C shrinks wool permanently",
       "Wool is alkali-sensitive (no high-pH detergents) and chlorine-intolerant"

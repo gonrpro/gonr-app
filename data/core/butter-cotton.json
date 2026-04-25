@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 3,
   "timeEstimate": "10–25 minutes",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "butter",
     "surfaceCanonical": "cotton",
@@ -24,8 +24,8 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Butter is ~80% butterfat (saturated + monounsaturated triglycerides) + small milk protein (casein) + salt + water. The protein fraction is small enough that protein-before-heat ordering isn't as critical as for milk / chocolate, but not zero — if a butter stain is hot-washed immediately without surfactant, the casein fraction can yellow slightly. Cotton tolerates NSD, Dawn, 3% H₂O₂, hot wash. Butter is one of the simpler kitchen grease stains because saturated fats respond well to Dawn.",
-  "whyThisWorks": "Scrape bulk before chemistry. Dawn emulsifies butterfat quickly (it's specifically the kind of triglyceride Dawn was designed for). Hot wash finishes. For a small protein-yellow shadow (rare on butter), a dilute peroxide pass clears it.",
+  "stainChemistry": "Butter is ~80% butterfat + small milk protein + salt + water. The protein fraction is small enough that protein-before-heat ordering isn't as critical as for milk / chocolate, but not zero — if a butter stain is hot-washed immediately without surfactant, the milk protein fraction can yellow slightly. Cotton tolerates NSD, Dawn, 3% H₂O₂, hot wash. Butter is one of the simpler kitchen grease stains because saturated fats respond well to Dawn.",
+  "whyThisWorks": "Scrape bulk before chemistry. Dawn emulsifies butterfat quickly. Hot wash finishes. For a small protein-yellow shadow (rare on butter), a dilute peroxide pass clears it.",
   "defaultAssumption": "Butter on cotton is a trivially easy stain in most cases. Kid / breakfast context. Aged or hot-dried butter is a bit harder but still in DIY range.",
   "spottingProtocol": [
     {
@@ -35,7 +35,7 @@
       "technique": "Remove bulk butter before chemistry",
       "equipment": "Dull blade, cold water, white cotton towel",
       "dwellTime": "1 minute",
-      "instruction": "Scrape solid butter off with a dull blade. Cold flush from the BACK of the fabric — loosens remaining fat, removes the small casein fraction before heat."
+      "instruction": "Scrape solid butter off with a dull blade. Cold flush from the BACK of the fabric — loosens remaining fat, removes the small milk protein fraction before heat."
     },
     {
       "step": 2,
@@ -67,7 +67,7 @@
     ],
     "temperature": "cold flush; warm Dawn; hot wash post-chemistry",
     "warnings": [
-      "Small casein fraction — cold flush before hot wash",
+      "Small milk protein fraction — cold flush before hot wash",
       "Fresh butter is trivially easy; don't over-treat"
     ]
   },
@@ -106,7 +106,7 @@
     ],
     "whenToStop": "Rarely needs escalation. Only if butter was hot-dried and polymerized.",
     "warnings": [
-      "Cold flush first (small casein fraction)",
+      "Cold flush first",
       "Inspect BEFORE the dryer — heat polymerizes fat"
     ]
   },

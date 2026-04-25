@@ -30,7 +30,7 @@
   "stainChemistry": "BBQ sauce on carpet is a four-part combination: tomato (red color and mild tannin), sugar (a lot of it — caramelizes under heat into a nearly permanent sticky lock), oil (cooking oil and sometimes meat drippings), and spice pigments (yellow-orange from turmeric and paprika). On carpet, the sugar makes a sticky matrix that binds the red tomato color and yellow spice color to the fiber. If sugar caramelizes (from heat or even sun on the carpet), the whole stain becomes nearly permanent. The other big complication is the multi-pigment problem — even after the red comes out, a yellow ghost from turmeric and paprika often remains, because those pigments don't respond to the same chemistry as the red. The order matters: cold flush sugar → Dawn strip oil → peroxide for color → sunlight for the yellow ghost. Wrong order = permanent ghost.",
   "whyThisWorks": "Cold sugar flush FIRST prevents caramelization and gets the sticky matrix out. Dawn then strips the oil, which is a slick barrier that blocks any later chemistry from reaching the pigment underneath. Only AFTER the oil is gone can 3% peroxide reach the red tomato pigment. Sunlight is the finisher for the yellow ghost — UV breaks down the turmeric color over hours. Wrong order — peroxide before Dawn — leaves the oil blocking the oxidizer and you end up with a permanent yellow ghost.",
   "scienceNote": "Mechanism (pro-facing): BBQ sauce combines tomato (lycopene + tannin + citric acid), molasses/brown-sugar load (caramelizes above ~150°C), oil, and carotenoid spice pigments (curcumin from turmeric, capsanthin from paprika). Curcumin is UV-photodegradable; lycopene is peroxide-oxidizable; sugar is the matrix. Pro uses cold flush + NSD oil-strip + 3% H₂O₂ + UV-assist + acetic acid neutralizing rinse.",
-  "defaultAssumption": "Picnic / BBQ / Super Bowl / game-day plate that tipped. Fresh + caught fast = reasonable home job. Dried in with sugar fully caramelized = harder. Commercial sauce (Sweet Baby Ray's, KC Masterpiece, etc.) = high sugar content, skip the sugar flush at your peril. Mustard-based (Carolina) = bigger curcumin ghost problem. Vinegar-based (Eastern Carolina) = less sugar, easier.",
+  "defaultAssumption": "Picnic / BBQ / Super Bowl / game-day plate that tipped. Fresh + caught fast = reasonable home job. Dried in with sugar fully caramelized = harder. Commercial sauce (Sweet Baby Ray's, KC Masterpiece, etc.) = high sugar content, skip the sugar flush at your peril. Mustard-based (Carolina) = bigger turmeric pigment ghost problem. Vinegar-based (Eastern Carolina) = less sugar, easier.",
   "spottingProtocol": [
     {
       "step": 1,
@@ -72,19 +72,19 @@
       "step": 5,
       "side": "wet-minimal",
       "agent": "3% H₂O₂ for Pigment",
-      "technique": "Oxidize lycopene + spice pigments",
+      "technique": "Oxidize tomato red pigment + spice pigments",
       "equipment": "3% H₂O₂ on damp cloth",
       "dwellTime": "5–10 minutes",
-      "instruction": "Hidden-area color test first. 3% peroxide on damp cloth, press 5–10 min. Oxidizes lycopene (tomato red). 2–3 cycles for stubborn sauce. Blot between. Don't mix with ammonia / bleach / alkaline."
+      "instruction": "Hidden-area color test first. 3% peroxide on damp cloth, press 5–10 min. Oxidizes tomato red pigment (tomato red). 2–3 cycles for stubborn sauce. Blot between. Don't mix with ammonia / bleach / alkaline."
     },
     {
       "step": 6,
       "side": "dry",
       "agent": "Sunlight Finish for Turmeric / Paprika Ghost",
-      "technique": "UV breaks down curcumin",
+      "technique": "UV breaks down turmeric pigment",
       "equipment": "Open blinds / sunlight on the spot",
       "dwellTime": "Several hours to 1–2 days",
-      "instruction": "If a yellow-orange ghost remains after peroxide (turmeric / paprika residual), sunlight is the finisher. Open blinds so UV falls on the spot for a few hours. Curcumin breaks down under UV. Multiple days may be needed."
+      "instruction": "If a yellow-orange ghost remains after peroxide (turmeric / paprika residual), sunlight is the finisher. Open blinds so UV falls on the spot for a few hours. turmeric pigment breaks down under UV. Multiple days may be needed."
     },
     {
       "step": 7,
@@ -118,7 +118,7 @@
     "warnings": [
       "Sugar flush FIRST — prevents caramelization",
       "Oil-strip (Dawn) BEFORE oxidizer — or oil blocks peroxide = yellow ghost",
-      "NEVER hot water — caramelizes sugar, cross-links tannin",
+      "NEVER hot water — caramelizes sugar, lock tannin in",
       "NEVER alkaline cleaners on tomato tannin — locks color",
       "NEVER skip sunlight step for turmeric / paprika residual",
       "Hidden peroxide test on dyed carpet"
@@ -153,7 +153,7 @@
     {
       "step": 6,
       "agent": "3% Peroxide on a Damp Cloth — Multiple Cycles",
-      "instruction": "Dab 3% drugstore hydrogen peroxide on a damp white cloth, press on the spot 5–10 minutes, blot. Oxidizes the red lycopene (tomato) pigment. Expect 2–3 cycles for a thick commercial sauce.",
+      "instruction": "Dab 3% drugstore hydrogen peroxide on a damp white cloth, press on the spot 5–10 minutes, blot. Oxidizes the red tomato red pigment (tomato) pigment. Expect 2–3 cycles for a thick commercial sauce.",
       "safetyNote": "Never mix peroxide with ammonia, bleach, OxiClean, or baking soda."
     },
     {
@@ -203,7 +203,7 @@
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never hot water — caramelizes sugar, cross-links pigment",
+      "Never hot water — caramelizes sugar, lock together pigment",
       "Never skip Dawn before peroxide",
       "Never alkaline cleaners on tannin",
       "Never mix peroxide with bleach / ammonia"
@@ -230,7 +230,7 @@
       "Tomato-based commercial sauce, vinegar-based Carolina, or mustard-based Carolina?",
       "Fresh or dried in?",
       "Did anyone apply heat (hot plate, dryer, steam) before flushing?",
-      "Is the remaining ghost yellow (turmeric / paprika) or red (lycopene)?",
+      "Is the remaining ghost yellow (turmeric / paprika) or red?",
       "Carpet fiber?"
     ],
     "modifierNotes": "Mustard-based Carolina sauce carries more turmeric and will leave a bigger yellow ghost. Vinegar-based sauces have less sugar and clear faster. Commercial sauces (Sweet Baby Ray's, KC Masterpiece) are the sugar-heaviest — sugar flush is mandatory. Order-of-operations discipline separates successful DIY from permanent ghost."

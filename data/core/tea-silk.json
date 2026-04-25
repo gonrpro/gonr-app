@@ -29,7 +29,7 @@
   "stainChemistry": "Tea leaves a tannin stain — black tea harder than green because of more oxidation. The tannins grab silk fibers fast and most tannin-cleaning tools that work on cotton damage silk: hot water sets the stain, OxiClean and alkaline cleaners darken tannin permanently and weaken silk, peroxide yellows silk dye, and enzyme cleaners would damage silk's own protein. Tea with milk adds milk protein, which adds another set-by-heat trap on top of all this. Cold water back-flush is the entire safe home move.",
   "whyThisWorks": "Cold water flushes fresh tea out before it locks in. A specialist can then use cold detergent plus a controlled mild acid plus a silk-safe reducing bleach to clear residual color. Home chemistry on tea plus silk has too many failure modes — vinegar over-dwell weakens silk, peroxide yellows it, OxiClean both weakens the fiber and turns the tannin permanently brown. Home protocol stays minimal: cold blot, no escalation, pro fast.",
   "scienceNote": "Mechanism (pro-facing): tea is theaflavins + thearubigins (oxidized catechin polymers) plus tannin polyphenols. Tannins anchor to silk fibroin via hydrogen bonding to amino-acid sites — same chemistry as wine tannin on silk. Pro uses sodium hydrosulfite at controlled dilution to reduce the chromophore plus acetic acid under 60-second dwell to break tannin-fibroin bonds without weakening silk.",
-  "defaultAssumption": "Silk + tea = pro within hours. Black tea is the tougher variant; tea-with-milk is even tougher (casein adds protein step). Home is cold-water blot only.",
+  "defaultAssumption": "Silk + tea = pro within hours. Black tea is the tougher variant; tea-with-milk is even tougher. Home is cold-water blot only.",
   "spottingProtocol": [
     {
       "step": 1,
@@ -82,10 +82,10 @@
       "NSD (Neutral Synthetic Detergent)",
       "Cold/ice water"
     ],
-    "temperature": "cold throughout — silk denatures above 30°C",
+    "temperature": "cold throughout — silk sets above 30°C",
     "warnings": [
-      "NEVER hot water — denatures silk + sets tannin",
-      "NEVER enzymes — digest silk fibroin",
+      "NEVER hot water — sets silk + sets tannin",
+      "NEVER enzymes — digest silk protein",
       "NEVER OxiClean / alkaline — weakens silk + DARKENS tannin",
       "NEVER chlorine bleach",
       "NEVER hydrogen peroxide on silk — yellows dyes",
@@ -101,7 +101,7 @@
     {
       "step": 2,
       "agent": "Cold Water Back-Flush — Pour Through, Not On Top",
-      "instruction": "Turn inside out. Place a white towel under the stain. Run COLD water (ice cold preferred) through the BACK of the stain into the catch towel. Cold ONLY — heat denatures silk and sets tea tannin. The water runs THROUGH the silk into the towel, never pooled on top. 60 seconds usually pulls fresh tea to a pale shadow."
+      "instruction": "Turn inside out. Place a white towel under the stain. Run COLD water (ice cold preferred) through the BACK of the stain into the catch towel. Cold ONLY — heat sets silk and sets tea tannin. The water runs THROUGH the silk into the towel, never pooled on top. 60 seconds usually pulls fresh tea to a pale shadow."
     },
     {
       "step": 3,
@@ -138,7 +138,7 @@
   "safetyMatrix": {
     "neverDo": [
       "Never hot water on silk",
-      "Never enzymes — digests fibroin",
+      "Never enzymes — digests silk protein",
       "Never OxiClean / alkaline — darkens tannin",
       "Never chlorine bleach",
       "Never hydrogen peroxide on silk",
@@ -169,7 +169,7 @@
       "Has anyone applied anything yet?",
       "White or dyed silk?"
     ],
-    "modifierNotes": "Black tea harder than green (more oxidation). Tea with milk adds casein — different ordering for pro. Thinner silks more vulnerable. Pre-applied OxiClean = tannin likely darkened permanently."
+    "modifierNotes": "Black tea harder than green (more oxidation). Tea with milk adds milk protein — different ordering for pro. Thinner silks more vulnerable. Pre-applied OxiClean = tannin likely darkened permanently."
   },
   "sources": [],
   "cross_refs": [],

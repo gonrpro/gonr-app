@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 5,
   "timeEstimate": "10–45 minutes (wet) or up to a couple of hours (dry)",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "paint-latex",
     "surfaceCanonical": "carpet",
@@ -24,7 +24,7 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Same chemistry as latex paint on fabric — water-based acrylic / vinyl polymer in emulsion, water-soluble while wet, cross-linked plastic film when dry. Carpet adds construction risk: face yarn (nylon, olefin, polyester, wool) is what the stain sits on, but pooled solvent or water sinks through to latex backing and pad, where it can dissolve the backing adhesive and delaminate the carpet. Wet latex paint is a short-window easy fix on carpet; dry latex paint is a patient, extraction-heavy job.",
+  "stainChemistry": "Same chemistry as latex paint on fabric — water-based acrylic / vinyl polymer in emulsion, water-soluble while wet, lock together plastic film when dry. Carpet adds construction risk: face yarn (nylon, olefin, polyester, wool) is what the stain sits on, but pooled solvent or water sinks through to latex backing and pad, where it can dissolve the backing adhesive and delaminate the carpet. Wet latex paint is a short-window easy fix on carpet; dry latex paint is a patient, extraction-heavy job.",
   "whyThisWorks": "Time and extraction. If you catch it wet, cool water + NSD + aggressive wet-vac extraction lifts the polymer before it films on the face yarn. If it's dry, the polymer must be re-softened with a solvent (methanol or latex-specific remover), emulsified, and extracted. Extraction between every wet pass is the rule that protects the pad — pooled liquid is what ruins carpet, not the chemistry.",
   "defaultAssumption": "Assume nylon or olefin face yarn unless user says wool. Wool carpet escalates earlier (strong solvents not safe).",
   "spottingProtocol": [
@@ -97,7 +97,7 @@
       "Never pool or pour liquid on carpet — sinks to backing and pad",
       "Never use strong solvents on wool carpet — escalate",
       "Never skip extraction between wet passes — pad moisture causes odor + mildew",
-      "Heat cross-links residual latex permanently — no steaming or hot-water extraction until clean"
+      "Heat lock together residual latex permanently — no steaming or hot-water extraction until clean"
     ]
   },
   "homeSolutions": [
@@ -124,7 +124,7 @@
     {
       "step": 5,
       "agent": "Dry Paint → Methanol or Goof Off on a Rag",
-      "instruction": "For paint that already filmed: methanol (denatured alcohol, hardware store) or Goof Off on a white rag. Press onto the dried film, lift, rotate rag. Never pour on the carpet. The methanol softens the polymer and it transfers to the rag. Follow with Dawn + damp rag to pull out the softened residue. Extract again with a dry weighted towel."
+      "instruction": "For paint that already filmed: methanol or Goof Off on a white rag. Press onto the dried film, lift, rotate rag. Never pour on the carpet. The methanol softens the polymer and it transfers to the rag. Follow with Dawn + damp rag to pull out the softened residue. Extract again with a dry weighted towel."
     },
     {
       "step": 6,
@@ -149,7 +149,7 @@
     ],
     "products": [
       "Dawn dish soap",
-      "Methanol (denatured alcohol) or Goof Off",
+      "Methanol or Goof Off",
       "Dull blade or credit card edge",
       "Several clean white rags",
       "Heavy dry towel + something heavy"
@@ -159,7 +159,7 @@
       "Never pool or pour solvent/water on carpet — ruins backing and pad",
       "Never use strong solvents on wool carpet",
       "Never skip the weighted-dry-towel extraction between wet passes",
-      "Fan-dry slow; rushing with heat causes pad odor and cross-links residual paint"
+      "Fan-dry slow; rushing with heat causes pad odor and lock together residual paint"
     ]
   },
   "safetyMatrix": {
@@ -167,7 +167,7 @@
       "Never pool or pour solvent or water on carpet — backing and pad damage",
       "Never use methanol on wool carpet — escalate",
       "Never skip extraction between wet passes",
-      "Never apply heat with residual latex — cross-links permanently"
+      "Never apply heat with residual latex — lock together permanently"
     ],
     "fiberSensitivities": [
       "Nylon / olefin / polyester face yarn: methanol and Dawn safe at room temperature",

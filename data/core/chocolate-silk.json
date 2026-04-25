@@ -63,10 +63,10 @@
       "step": 4,
       "side": "wet",
       "agent": "Cold NSD (Pro)",
-      "technique": "Sponge press for casein",
+      "technique": "Sponge press for milk protein",
       "equipment": "Cold-formula NSD",
       "dwellTime": "2–3 minutes",
-      "instruction": "Cold NSD handles casein without enzymes. Press only, no agitation."
+      "instruction": "Cold NSD handles milk protein without enzymes. Press only, no agitation."
     },
     {
       "step": 5,
@@ -83,7 +83,7 @@
       "1. Ice + lift solid cocoa butter, no scraping into silk.",
       "2. Cold water back-flush at first contact.",
       "3. Cold POG / petroleum ether for cocoa butter.",
-      "4. Cold NSD sponge press for casein.",
+      "4. Cold NSD sponge press for milk protein.",
       "5. Acetic acid 60-sec spotter for tannin.",
       "6. Sodium hydrosulfite 60-sec for oxidized residue.",
       "7. Final cold rinse, press flat to air-dry."
@@ -95,13 +95,13 @@
       "Sodium hydrosulfite (reducing bleach)",
       "Cold/ice water"
     ],
-    "temperature": "cold throughout — silk denatures above 30°C",
+    "temperature": "cold throughout — silk sets above 30°C",
     "warnings": [
-      "NEVER enzymes on silk — digest fibroin",
-      "NEVER hot water — denatures silk + sets casein",
+      "NEVER enzymes on silk — digest silk protein",
+      "NEVER hot water — sets silk + sets milk protein",
       "NEVER hydrogen peroxide on silk — yellows dyes",
       "NEVER OxiClean / alkaline — weakens silk + darkens tannin",
-      "NEVER scrape silk — tears fibroin",
+      "NEVER scrape silk — tears silk protein",
       "60-sec ceiling on acid + reducing bleach"
     ]
   },
@@ -109,17 +109,17 @@
     {
       "step": 1,
       "agent": "Honest Answer — Pro Within Hours",
-      "instruction": "Chocolate on silk is the rare combination where every common home tool causes new damage. Enzymes (the cotton chocolate-protein-cleaning standard) DIGEST silk fibroin. Peroxide yellows silk dyes. OxiClean weakens silk AND darkens chocolate tannin. Home protocol = freeze and lift bulk, cold-water back-flush, then pro within hours. Fresh + careful gives the pro the best shot."
+      "instruction": "Chocolate on silk is the rare combination where every common home tool causes new damage. Enzymes (the cotton chocolate-protein-cleaning standard) DIGEST silk protein. Peroxide yellows silk dyes. OxiClean weakens silk AND darkens chocolate tannin. Home protocol = freeze and lift bulk, cold-water back-flush, then pro within hours. Fresh + careful gives the pro the best shot."
     },
     {
       "step": 2,
       "agent": "Ice + Lift Solid Chocolate — Don't Scrape Silk",
-      "instruction": "Press a zip-lock bag of ice on the chocolate for 5 minutes to firm the cocoa butter. Lift the solid pieces off with the FLAT edge of a plastic card. Don't scrape — silk fibroin tears under any sharp edge. Just lift the bulk. Refreeze if it softens."
+      "instruction": "Press a zip-lock bag of ice on the chocolate for 5 minutes to firm the cocoa butter. Lift the solid pieces off with the FLAT edge of a plastic card. Don't scrape — silk protein tears under any sharp edge. Just lift the bulk. Refreeze if it softens."
     },
     {
       "step": 3,
       "agent": "Cold Water Back-Flush from the BACK",
-      "instruction": "Turn inside out. Place a white towel under the stain. Run COLD water through the BACK of the stain into the catch towel. Cold ONLY — heat denatures silk, sets casein, sets tannin all at once. Pour through, not on top — water rings silk."
+      "instruction": "Turn inside out. Place a white towel under the stain. Run COLD water through the BACK of the stain into the catch towel. Cold ONLY — heat sets silk, sets milk protein, sets tannin all at once. Pour through, not on top — water rings silk."
     },
     {
       "step": 4,
@@ -148,18 +148,18 @@
     ],
     "whenToStop": "Stop after the cold-water back-flush. Anything else home-applied risks worse damage than the chocolate.",
     "warnings": [
-      "NEVER enzymes on silk — digests fibroin",
-      "NEVER hot water — denatures silk + sets casein",
+      "NEVER enzymes on silk — digests silk protein",
+      "NEVER hot water — sets silk + sets milk protein",
       "NEVER hydrogen peroxide on silk — yellows dyes",
       "NEVER OxiClean / alkaline cleaners",
       "NEVER chlorine bleach",
-      "NEVER scrape silk — tears fibroin (flat-edge lift only)",
+      "NEVER scrape silk — tears silk protein (flat-edge lift only)",
       "Pour through, not on top — water rings"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never enzymes on silk — digests fibroin",
+      "Never enzymes on silk — digests silk protein",
       "Never hot water on silk OR chocolate",
       "Never hydrogen peroxide on silk",
       "Never OxiClean / alkaline cleaners",
@@ -167,7 +167,7 @@
       "Never scrape silk with a sharp edge"
     ],
     "fiberSensitivities": [
-      "Silk is protein fiber — same enzyme-digestion as casein",
+      "Silk is protein fiber — same enzyme-digestion as milk protein",
       "Heat-intolerant above 30°C",
       "Hydrogen peroxide yellows silk dyes",
       "Alkaline weakens silk AND darkens tannin"
@@ -192,7 +192,7 @@
       "Has anyone applied anything yet?",
       "White or dyed silk?"
     ],
-    "modifierNotes": "Dark chocolate has more cocoa tannin — harder. White chocolate has less pigment but more cocoa butter (fat). Pre-applied enzyme = silk fibroin likely already partially digested. Pre-applied peroxide = silk likely yellowed."
+    "modifierNotes": "Dark chocolate has more cocoa tannin — harder. White chocolate has less pigment but more cocoa butter (fat). Pre-applied enzyme = silk protein likely already partially digested. Pre-applied peroxide = silk likely yellowed."
   },
   "sources": [],
   "cross_refs": [],

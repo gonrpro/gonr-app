@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 3,
   "timeEstimate": "15–40 minutes (fresh); aged formula adds odor + iron tint",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "baby-formula",
     "surfaceCanonical": "cotton",
@@ -25,8 +25,8 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Baby formula is milk's chemistry plus extras: casein + whey proteins, vegetable oils (palm / coconut / soy), lactose, and added vitamins + minerals — critically, iron fortification. On cotton, the protein bonds through hydrogen bonding, the oil creates a hydrophobic film, and the iron can leave a faint rust-colored shadow after the protein and fat are gone. Cotton tolerates enzymes, NSD, 3% H₂O₂, and hot post-chemistry wash. The ordering is protein-before-heat, same as milk, with an optional iron-reducing pass at the end for tinted residue.",
-  "whyThisWorks": "Cold flush keeps the casein soluble. Enzyme digests the protein matrix holding the rest in place. NSD emulsifies the vegetable oil. For residual iron tint (fortification iron reacts with air to leave a faint orange-brown shadow), a dilute acid rinse (lemon juice or citric acid at home, dilute acetic at pro) reduces the iron to a soluble form. Hot wash finishes and kills any souring bacteria.",
+  "stainChemistry": "Baby formula is milk's chemistry plus extras: milk protein + whey proteins, vegetable oils (palm / coconut / soy), lactose, and added vitamins + minerals — critically, iron fortification. On cotton, the protein bonds through grip, the oil creates a hydrophobic film, and the iron can leave a faint rust-colored shadow after the protein and fat are gone. Cotton tolerates enzymes, NSD, 3% H₂O₂, and hot post-chemistry wash. The ordering is protein-before-heat, same as milk, with an optional iron-reducing pass at the end for tinted residue.",
+  "whyThisWorks": "Cold flush keeps the milk protein soluble. Enzyme digests the protein matrix holding the rest in place. NSD emulsifies the vegetable oil. For residual iron tint (fortification iron reacts with air to leave a faint orange-brown shadow), a dilute acid rinse (lemon juice or citric acid at home, dilute acetic at pro) reduces the iron to a soluble form. Hot wash finishes and kills any souring bacteria.",
   "defaultAssumption": "Fresh formula on a bib / burp cloth / parent's shirt is a high-confidence DIY. Aged formula is more about the smell (souring milk) than the stain. Iron tint only shows up after the rest is gone.",
   "spottingProtocol": [
     {
@@ -36,16 +36,16 @@
       "technique": "Flush from the back",
       "equipment": "Cold water, white cotton terry towel",
       "dwellTime": "30–60 seconds",
-      "instruction": "Cold flush from the BACK of the fabric. Cold only — warm water sets the casein + polymerizes the vegetable oil. Blot with a towel from underneath."
+      "instruction": "Cold flush from the BACK of the fabric. Cold only — warm water sets the milk protein + polymerizes the vegetable oil. Blot with a towel from underneath."
     },
     {
       "step": 2,
       "side": "wet",
       "agent": "Protein Spotter",
       "technique": "Apply, dwell, light brush",
-      "equipment": "Liquid Protein Spotter (PRENETT B / protease digestant) in warm water (30–38°C)",
+      "equipment": "Liquid Protein Spotter in warm water (30–38°C)",
       "dwellTime": "15–20 minutes",
-      "instruction": "Apply Protein Spotter or enzyme pretreat in warm water. Enzyme window is warm, not hot. Dwell 15–20 min; light brush after the first 5. Protease hydrolyzes the casein + whey matrix."
+      "instruction": "Apply Protein Spotter or enzyme pretreat in warm water. Enzyme window is warm, not hot. Dwell 15–20 min; light brush after the first 5. protein-digesting enzyme hydrolyzes the milk protein + whey matrix."
     },
     {
       "step": 3,
@@ -78,19 +78,19 @@
   "professionalProtocol": {
     "steps": [
       "1. Cold flush from the back.",
-      "2. Liquid Protein Spotter (PRENETT B / protease) in warm water (30–38°C). 15–20 min.",
+      "2. Liquid Protein Spotter in warm water (30–38°C). 15–20 min.",
       "3. NSD — emulsify vegetable oil. Cool rinse.",
       "4. Dilute acetic acid 5% for residual iron fortification tint.",
       "5. Hot wash per care label."
     ],
     "products": [
-      "Liquid Protein Spotter (PRENETT B or protease digestant)",
+      "Liquid Protein Spotter",
       "NSD (Neutral Synthetic Detergent)",
       "Dilute acetic acid 5% aqueous"
     ],
     "temperature": "cold flush; warm (30–38°C) for enzyme; cool through NSD + acid; hot wash post-chemistry",
     "warnings": [
-      "Never warm-flush fresh formula — sets casein + polymerizes oil",
+      "Never warm-flush fresh formula — sets milk protein + polymerizes oil",
       "Enzyme window warm, not hot",
       "Iron tint is a SEPARATE stain visible only after protein + oil clear — don't skip the acid step",
       "Hot wash kills souring bacteria — non-negotiable on aged formula"
@@ -150,7 +150,7 @@
     ],
     "whenToStop": "Stop if the smell persists after two full enzyme + hot-wash cycles, or if the formula was hot-dried before enzyme treatment.",
     "warnings": [
-      "Cold flush only while fresh — warm cooks casein + polymerizes oil",
+      "Cold flush only while fresh — warm cooks milk protein + polymerizes oil",
       "Enzymes die above 50°C — warm water, not hot",
       "Hot wash is the bacterial-kill — cold wash leaves smell alive",
       "Iron shadow shows AFTER protein + oil clear — don't panic, lemon juice handles it"
@@ -158,7 +158,7 @@
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never warm-flush fresh formula — sets casein + polymerizes the vegetable oil",
+      "Never warm-flush fresh formula — sets milk protein + polymerizes the vegetable oil",
       "Never skip the hot wash — souring bacteria return if not heat-killed",
       "Never run enzymes above 50°C",
       "Never mistake iron tint for a persistent stain — treat it separately with acid"

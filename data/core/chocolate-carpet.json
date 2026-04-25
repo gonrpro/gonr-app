@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 5,
   "timeEstimate": "20–45 minutes with extraction between passes",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "chocolate",
     "surfaceCanonical": "carpet",
@@ -25,8 +25,8 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Same three-component chemistry as chocolate-cotton (protein + oil + tannin). Carpet-specific constraint: pooled liquid wicks into the pad, and heat / hot water during treatment sets the casein protein. Synthetic face yarn tolerates enzymes + NSD + 3% H₂O₂; wool narrows the lane. Protein-before-heat ordering is non-negotiable.",
-  "whyThisWorks": "Scrape chocolate bulk off carpet pile. Cold NSD via damp cloth for starter pigment. Enzyme damp-cloth for casein protein. NSD pulls cocoa butter. 3% H₂O₂ oxidizes phenolic tannin shadow. Weighted dry towel between every pass keeps the pad clean.",
+  "stainChemistry": "Same three-component chemistry as chocolate-cotton (protein + oil + tannin). Carpet-specific constraint: pooled liquid wicks into the pad, and heat / hot water during treatment sets the milk protein. Synthetic face yarn tolerates enzymes + NSD + 3% H₂O₂; wool narrows the lane. Protein-before-heat ordering is non-negotiable.",
+  "whyThisWorks": "Scrape chocolate bulk off carpet pile. Cold NSD via damp cloth for starter pigment. Enzyme damp-cloth for milk protein. NSD pulls cocoa butter. 3% H₂O₂ oxidizes phenolic tannin shadow. Weighted dry towel between every pass keeps the pad clean.",
   "defaultAssumption": "Kid / party context. Assume synthetic face yarn. Wool escalates. Pad contamination is the invisible failure mode.",
   "spottingProtocol": [
     {
@@ -51,10 +51,10 @@
       "step": 3,
       "side": "wet-minimal",
       "agent": "Enzyme Damp Cloth",
-      "technique": "Digest casein protein",
+      "technique": "Digest milk protein",
       "equipment": "Liquid Protein Spotter / enzyme pretreat in warm (30–38°C) water on damp cloth",
       "dwellTime": "15–20 minutes",
-      "instruction": "Dampen cloth with enzyme solution, press on spot, dwell 15–20 min. Digests the casein matrix that holds cocoa butter + tannin to the fiber. Never hot (denatures enzyme)."
+      "instruction": "Dampen cloth with enzyme solution, press on spot, dwell 15–20 min. Digests the milk protein matrix that holds cocoa butter + tannin to the fiber. Never hot."
     },
     {
       "step": 4,
@@ -111,7 +111,7 @@
     ],
     "temperature": "cold throughout spotting",
     "warnings": [
-      "Protein before heat — hot water cooks casein into pile + backing",
+      "Protein before heat — hot water cooks milk protein into pile + backing",
       "Never pool liquid on carpet",
       "Enzymes die above 50°C — warm water, not hot",
       "Wool = pro-lane"
@@ -175,7 +175,7 @@
     ],
     "whenToStop": "Stop for wool carpet, wicking back, patch-test fail, or two-round plateau.",
     "warnings": [
-      "Protein before heat — hot water cooks casein",
+      "Protein before heat — hot water cooks milk protein",
       "Enzymes die above 50°C",
       "Never pour on carpet",
       "Never mix peroxide with chlorine bleach or ammonia",
@@ -184,7 +184,7 @@
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never apply hot water before enzyme step — cooks the casein",
+      "Never apply hot water before enzyme step — cooks the milk protein",
       "Never run enzymes above 50°C",
       "Never pour liquid on carpet",
       "Never skip weighted extraction"

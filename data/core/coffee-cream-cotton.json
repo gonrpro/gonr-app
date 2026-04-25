@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 3,
   "timeEstimate": "10–30 minutes",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "coffee-cream",
     "surfaceCanonical": "cotton",
@@ -24,8 +24,8 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Coffee with cream is a combination stain — protein (casein from the milk or cream) layered over tannin (polyphenols from the coffee) with a small oil fraction (milk fat). Each component needs a different chemistry: protein responds to enzymes, tannin to oxidation, oil to emulsification. Cotton is chemically durable — pure cellulose tolerates enzymes, acids, oxygen-side oxidizers (3% H₂O₂ or 6% on whites), and hot water. Because cotton is forgiving, the only sequencing constraint is biological: the enzyme step must run BEFORE any heat, or the residual protein cooks into the fiber.",
-  "whyThisWorks": "Protein first, tannin second, rinse third. Warm water (not hot) activates the enzymes that digest casein — casein is what holds the rest of the stain in the fiber. Once the protein is broken, the coffee's tannin pigment sits free on cellulose and lifts under 3% hydrogen peroxide (stronger on whites). An NSD flush removes all chemistry before the hot laundry cycle that finishes the job. Reversing the order — hot water or bleach before the enzyme — cooks the casein into the fiber and locks the stain in for good.",
+  "stainChemistry": "Coffee with cream is a combination stain — protein layered over tannin (polyphenols from the coffee) with a small oil fraction (milk fat). Each component needs a different chemistry: protein responds to enzymes, tannin to oxidation, oil to emulsification. Cotton is chemically durable — pure cellulose tolerates enzymes, acids, oxygen-side oxidizers (3% H₂O₂ or 6% on whites), and hot water. Because cotton is forgiving, the only sequencing constraint is biological: the enzyme step must run BEFORE any heat, or the residual protein cooks into the fiber.",
+  "whyThisWorks": "Protein first, tannin second, rinse third. Warm water (not hot) activates the enzymes that digest milk protein — milk protein is what holds the rest of the stain in the fiber. Once the protein is broken, the coffee's tannin pigment sits free on cellulose and lifts under 3% hydrogen peroxide (stronger on whites). An NSD flush removes all chemistry before the hot laundry cycle that finishes the job. Reversing the order — hot water or bleach before the enzyme — cooks the milk protein into the fiber and locks the stain in for good.",
   "defaultAssumption": "Assume fresh, on white or light cotton. Fresh coffee-cream on white cotton is a high-confidence DIY win. Older stains (24h+) or dark cotton are still solvable but the oxidizer lane narrows.",
   "spottingProtocol": [
     {
@@ -35,16 +35,16 @@
       "technique": "Flush from the back, blot hard",
       "equipment": "Warm water (40–45°C / 100–115°F), white cotton terry towel",
       "dwellTime": "1–2 minutes",
-      "instruction": "Flush warm water (not hot — hot sets the casein) through the BACK of the stain. Blot hard from underneath. On fresh spills, this alone pulls out most of the cream-coffee mix before any chemistry touches the fiber. Continue until the blotting towel comes up pale or clear."
+      "instruction": "Flush warm water through the BACK of the stain. Blot hard from underneath. On fresh spills, this alone pulls out most of the cream-coffee mix before any chemistry touches the fiber. Continue until the blotting towel comes up pale or clear."
     },
     {
       "step": 2,
       "side": "wet",
       "agent": "Enzyme Digestant",
       "technique": "Soak, brush, blot",
-      "equipment": "Liquid Protein Spotter (PRENETT B / protease-based digestant) OR enzyme pre-soak in warm water",
+      "equipment": "Liquid Protein Spotter OR enzyme pre-soak in warm water",
       "dwellTime": "20–30 minutes soak, light brush work",
-      "instruction": "Apply liquid Protein Spotter directly, OR dissolve enzyme pre-soak powder in warm water (40–45°C — the enzyme activation window; under 30°C the reaction stalls, over 50°C the enzymes denature). Submerge the stained area. After 20 minutes, brush gently with a soft bristle brush. Cotton handles pressure — more than silk or wool — but brush the stain, not the weave. The protease hydrolyzes casein peptide bonds; you'll see the stain lift incrementally as the protein dissolves."
+      "instruction": "Apply liquid Protein Spotter directly, OR dissolve enzyme pre-soak powder in warm water. Submerge the stained area. After 20 minutes, brush gently with a soft bristle brush. Cotton handles pressure — more than silk or wool — but brush the stain, not the weave. The protein-digesting enzyme hydrolyzes milk protein bond; you'll see the stain lift incrementally as the protein dissolves."
     },
     {
       "step": 3,
@@ -76,21 +76,21 @@
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Warm water flush from the back — not hot, or casein sets.",
+      "1. Warm water flush from the back — not hot, or milk protein sets.",
       "2. Liquid Protein Spotter (PRENETT B) OR enzyme pre-soak in warm water (40–45°C). Dwell 20–30 min, light brush.",
       "3. 3% H₂O₂ on the residual coffee color. 6% on whites if needed. One oxidizer at a time.",
       "4. NSD flush — remove all enzyme + peroxide residue.",
       "5. Hot wash per care label. Inspect in daylight before the dryer."
     ],
     "products": [
-      "Liquid Protein Spotter (PRENETT B or protease-based digestant)",
+      "Liquid Protein Spotter",
       "Hydrogen Peroxide 3% or 6% (whites only)",
       "NSD (Neutral Synthetic Detergent)"
     ],
     "temperature": "warm (40–45°C) through enzyme stage; hot wash on cotton post-chemistry",
     "warnings": [
-      "Never use hot water on fresh coffee-cream — cooks the casein into the fiber",
-      "Enzymes denature above 50°C — warm means warm, not hot",
+      "Never use hot water on fresh coffee-cream — cooks the milk protein into the fiber",
+      "Enzymes lose function above 50°C — warm means warm, not hot",
       "Flush all chemistry before heat — residual oxidizer yellows cotton",
       "Never layer oxidizers — one at a time, NSD-flushed between passes"
     ]
@@ -155,7 +155,7 @@
     ],
     "whenToStop": "Stop if the stain has been through a hot wash + dryer cycle already, if it survives three full home rounds, or if the cotton is dark/dyed and the peroxide step isn't safe. Take it to a dry cleaner with the treatment history.",
     "warnings": [
-      "Cold or warm water only while the stain is visible — hot water sets casein",
+      "Cold or warm water only while the stain is visible — hot water sets milk protein",
       "Enzyme pretreat works in warm water, not hot — above 50°C the enzymes die",
       "Never mix peroxide with chlorine bleach or ammonia — toxic fume risk",
       "Skip peroxide on dark/dyed cotton — test an inside seam first if unsure"
@@ -163,8 +163,8 @@
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never use hot water on fresh coffee-cream — cooks casein into the fiber",
-      "Never run enzymes above 50°C — they denature and stop working",
+      "Never use hot water on fresh coffee-cream — cooks milk protein into the fiber",
+      "Never run enzymes above 50°C — they set and stop working",
       "Never layer oxidizers — one at a time with an NSD flush between",
       "Never dry with residual peroxide or enzyme in the fiber — yellows cotton over time"
     ],
@@ -191,7 +191,7 @@
       "Has it been through a hot wash or dryer since?",
       "Any enzyme pretreat or peroxide tried already?"
     ],
-    "modifierNotes": "The protein-then-tannin ordering is non-negotiable. Hot water, or any oxidizer before the enzyme, locks the casein in permanently. Fresh on white = high-confidence DIY. Older + dark = peroxide narrows; escalate earlier."
+    "modifierNotes": "The protein-then-tannin ordering is non-negotiable. Hot water, or any oxidizer before the enzyme, locks the milk protein in permanently. Fresh on white = high-confidence DIY. Older + dark = peroxide narrows; escalate earlier."
   },
   "sources": [],
   "cross_refs": [],

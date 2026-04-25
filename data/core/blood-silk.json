@@ -29,7 +29,7 @@
   },
   "stainChemistry": "Blood contains proteins that bond to silk fast and turn brown over hours as the iron in the blood oxidizes — once it goes brown, it grips harder. Silk is itself a protein fiber, so enzyme cleaners that lift blood from cotton would damage the silk too. Hot water at any step sets the blood AND damages the silk simultaneously. Hydrogen peroxide that works on cotton yellows silk dyes. Cold water, speed, and gentle handling are the only safe options at home.",
   "whyThisWorks": "Ice-cold water stops the blood from setting and flushes most of fresh blood through the back of the fabric before it locks in. A silk specialist can then use cold NSD plus a controlled mild acid plus a silk-safe reducing bleach to clear what's left without damaging the fiber. Reducing bleach is the chemistry home can't replicate safely — it pulls oxidized brown blood back to a removable state on silk where peroxide would yellow the dye. Home goal is extraction plus delivery; the cleaner does the rest.",
-  "scienceNote": "Mechanism (pro-facing): blood is hemoglobin + plasma proteins + iron. Hemoglobin oxidizes from Fe²⁺ (bright red) to Fe³⁺ (brown) over hours, which is why fresh blood is much easier than aged. Silk is fibroin protein — enzyme spotters cleave the same peptide bonds. Sodium hydrosulfite reduces Fe³⁺ → Fe²⁺ at controlled dilution and dwell, releasing oxidized hemoglobin from silk safely.",
+  "scienceNote": "Mechanism (pro-facing): blood is blood pigment + blood proteins + iron. blood pigment oxidizes from Fe²⁺ (bright red) to Fe³⁺ (brown) over hours, which is why fresh blood is much easier than aged. Silk is fibroin protein — enzyme spotters cleave the same peptide bonds. Sodium hydrosulfite reduces Fe³⁺ → Fe²⁺ at controlled dilution and dwell, releasing oxidized blood pigment from silk safely.",
   "defaultAssumption": "Silk + blood = pro within hours. Home is cold-water blot and delivery to a specialist. Cold-water rule is the difference between salvageable and permanent.",
   "spottingProtocol": [
     {
@@ -39,7 +39,7 @@
       "technique": "Flush from reverse, gloves on",
       "equipment": "Cold/ice water, white catch towel, gloves",
       "dwellTime": "Immediate",
-      "instruction": "Gloves on (biohazard). Flush cold water through the BACK of the stain over a white catch towel. Press, no scrubbing. Most fresh hemoglobin transfers in the first 60–90 seconds when caught immediately."
+      "instruction": "Gloves on (biohazard). Flush cold water through the BACK of the stain over a white catch towel. Press, no scrubbing. Most fresh blood pigment transfers in the first 60–90 seconds when caught immediately."
     },
     {
       "step": 2,
@@ -48,7 +48,7 @@
       "technique": "Sponge press, no agitation",
       "equipment": "Cold-formula NSD, sponge, white cloth",
       "dwellTime": "2–3 minutes",
-      "instruction": "Cold NSD sponge press only — never enzyme on silk. NSD suspends remaining hemoglobin without alkalinity that would weaken silk."
+      "instruction": "Cold NSD sponge press only — never enzyme on silk. NSD suspends remaining blood pigment without alkalinity that would weaken silk."
     },
     {
       "step": 3,
@@ -93,11 +93,11 @@
       "Cold/ice water",
       "Disposable gloves"
     ],
-    "temperature": "cold throughout — silk denatures above 30°C, blood sets above 30°C",
+    "temperature": "cold throughout — silk sets above 30°C, blood sets above 30°C",
     "warnings": [
       "Biohazard — gloves + sealed disposal",
-      "NEVER enzymes on silk — Protein digests fibroin like blood",
-      "NEVER hot water — denatures silk + sets blood permanently",
+      "NEVER enzymes on silk — Protein digests silk protein like blood",
+      "NEVER hot water — sets silk + sets blood permanently",
       "NEVER hydrogen peroxide on silk — yellows dyes",
       "NEVER OxiClean / alkaline — weakens silk",
       "NEVER chlorine bleach — destroys silk",
@@ -113,7 +113,7 @@
     {
       "step": 2,
       "agent": "Gloves + Cold Water Blot from the BACK",
-      "instruction": "Disposable gloves on (biohazard, especially if not your blood). Turn the silk inside out, place a white towel under the stain, run COLD water (ice cold preferred) through the BACK of the stain into the catch towel. Cold ONLY — anything warmer than tap-cold sets the blood AND denatures silk. Pour through the fabric, not on top — water rings on silk are as visible as blood. 60 seconds of patient flushing usually pulls fresh blood to a pale shadow."
+      "instruction": "Disposable gloves on (biohazard, especially if not your blood). Turn the silk inside out, place a white towel under the stain, run COLD water (ice cold preferred) through the BACK of the stain into the catch towel. Cold ONLY — anything warmer than tap-cold sets the blood AND sets silk. Pour through the fabric, not on top — water rings on silk are as visible as blood. 60 seconds of patient flushing usually pulls fresh blood to a pale shadow."
     },
     {
       "step": 3,
@@ -142,7 +142,7 @@
     "warnings": [
       "Biohazard — gloves + sealed disposal of contaminated cloths",
       "NEVER enzymes on silk — digests the fiber",
-      "NEVER hot water — sets blood + denatures silk",
+      "NEVER hot water — sets blood + sets silk",
       "NEVER hydrogen peroxide on silk — yellows dyes",
       "NEVER OxiClean / alkaline cleaners",
       "NEVER chlorine bleach",
@@ -151,7 +151,7 @@
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never enzymes on silk — digests fibroin",
+      "Never enzymes on silk — digests silk protein",
       "Never hot water on silk OR blood",
       "Never hydrogen peroxide on silk",
       "Never OxiClean / alkaline cleaners",
@@ -184,7 +184,7 @@
       "Has anyone applied anything yet (peroxide, enzyme cleaner, salt, etc.)?",
       "Whose blood (impacts biohazard handling for the cleaner)?"
     ],
-    "modifierNotes": "Oxidized brown blood is much harder than fresh red — needs reducing bleach, which is pro-only on silk. Thinner silks (chiffon, habotai) more vulnerable. Pre-applied enzyme cleaner is the worst case — may have already begun to digest the fibroin. Hydrogen peroxide pre-applied = silk likely yellowed."
+    "modifierNotes": "Oxidized brown blood is much harder than fresh red — needs reducing bleach, which is pro-only on silk. Thinner silks (chiffon, habotai) more vulnerable. Pre-applied enzyme cleaner is the worst case — may have already begun to digest the silk protein. Hydrogen peroxide pre-applied = silk likely yellowed."
   },
   "sources": [],
   "cross_refs": [],

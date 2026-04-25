@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 4,
   "timeEstimate": "15–45 minutes",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "chocolate",
     "surfaceCanonical": "cotton",
@@ -24,8 +24,8 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Chocolate is a three-component stain: cocoa butter (triglyceride oil, ~50% of cocoa solids mass) that wicks into cotton fiber; milk proteins (casein + whey) that denature under heat and act as adhesive for the other components; and cocoa solids — phenolic tannins + theobromine that produce the brown color. Cotton is pure cellulose: chemically durable, tolerates enzymes, NSD emulsification, and 3% H₂O₂ oxidation at room temperature. The only hard constraint is heat before the protein is cleared — hot water sets the casein into the fiber and the whole stain matrix with it.",
-  "whyThisWorks": "Three components, three chemistries, one ordering rule: protein before heat, oil before pigment. Start mechanical (scrape hardened cocoa butter off). Enzyme digests the casein matrix that binds the rest. NSD emulsifies the dispersed cocoa butter so it rinses out. H₂O₂ oxidizes the residual phenolic tannin to colorless. Hot wash at the end is safe — by then the casein is gone and can't set.",
+  "stainChemistry": "Chocolate is a three-component stain: cocoa butter that wicks into cotton fiber; milk proteins that set under heat and act as adhesive for the other components; and cocoa solids — phenolic tannins + theobromine that produce the brown color. Cotton is pure cellulose: chemically durable, tolerates enzymes, NSD emulsification, and 3% H₂O₂ oxidation at room temperature. The only hard constraint is heat before the protein is cleared — hot water sets the milk protein into the fiber and the whole stain matrix with it.",
+  "whyThisWorks": "Three components, three chemistries, one ordering rule: protein before heat, oil before pigment. Start mechanical (scrape hardened cocoa butter off). Enzyme digests the milk protein matrix that binds the rest. NSD emulsifies the dispersed cocoa butter so it rinses out. H₂O₂ oxidizes the residual phenolic tannin to colorless. Hot wash at the end is safe — by then the milk protein is gone and can't set.",
   "defaultAssumption": "Fresh chocolate on cotton is a high-confidence DIY. Set chocolate (hours old, ironed, or washed hot without enzyme first) climbs a tier but stays in home scope. Dark cotton narrows the peroxide lane.",
   "spottingProtocol": [
     {
@@ -42,9 +42,9 @@
       "side": "wet",
       "agent": "Protein Spotter",
       "technique": "Apply, dwell, light brush",
-      "equipment": "Liquid Protein Spotter (PRENETT B / protease digestant) or enzyme pre-soak dissolved in warm water (30–38°C)",
+      "equipment": "Liquid Protein Spotter or enzyme pre-soak dissolved in warm water (30–38°C)",
       "dwellTime": "20–30 minutes",
-      "instruction": "Apply the Protein Spotter directly to the stain or fully submerge in a pre-soak solution. Enzyme window is warm, not hot — protease denatures above 50°C. Dwell 20–30 min, brush gently with a soft bristle brush after the first 10 minutes. The casein matrix is what holds the rest of the chocolate in the fiber; once digested, the oil and pigment lift in the next two steps."
+      "instruction": "Apply the Protein Spotter directly to the stain or fully submerge in a pre-soak solution. Enzyme window is warm, not hot — protein-digesting enzyme sets above 50°C. Dwell 20–30 min, brush gently with a soft bristle brush after the first 10 minutes. The milk protein matrix is what holds the rest of the chocolate in the fiber; once digested, the oil and pigment lift in the next two steps."
     },
     {
       "step": 3,
@@ -71,26 +71,26 @@
       "technique": "Flush, launder per label",
       "equipment": "Running cool water, washing machine",
       "dwellTime": "Full wash cycle",
-      "instruction": "Rinse cool until water runs clear. Launder on the hottest setting the care label permits — by this point the casein is gone and hot wash won't set anything. Hot water clears any residual chemistry and finishes the job."
+      "instruction": "Rinse cool until water runs clear. Launder on the hottest setting the care label permits — by this point the milk protein is gone and hot wash won't set anything. Hot water clears any residual chemistry and finishes the job."
     }
   ],
   "professionalProtocol": {
     "steps": [
       "1. Scrape + cold flush from the back. Harden soft chocolate before scraping.",
-      "2. Liquid Protein Spotter (PRENETT B / protease) in warm water (30–38°C). Dwell 20–30 min.",
+      "2. Liquid Protein Spotter in warm water (30–38°C). Dwell 20–30 min.",
       "3. NSD to emulsify residual cocoa butter. Light brush.",
       "4. 3% H₂O₂ on residual tannin shadow. Dwell 3–5 min. Repeat once if needed.",
       "5. Cool rinse + hot wash per care label."
     ],
     "products": [
-      "Liquid Protein Spotter (PRENETT B or protease digestant)",
+      "Liquid Protein Spotter",
       "NSD (Neutral Synthetic Detergent)",
       "Hydrogen Peroxide 3%"
     ],
     "temperature": "cold flush; warm (30–38°C) for enzyme; cool through NSD + peroxide; hot wash post-chemistry",
     "warnings": [
-      "Never warm-water-flush fresh chocolate — sets the casein",
-      "Enzyme window is warm, not hot — above 50°C the protease dies",
+      "Never warm-water-flush fresh chocolate — sets the milk protein",
+      "Enzyme window is warm, not hot — above 50°C the protein-digesting enzyme dies",
       "One oxidizer at a time — NSD-flushed between if a second pass is needed",
       "Flush all chemistry before heat — residual oxidizer yellows cotton"
     ]
@@ -160,7 +160,7 @@
   "safetyMatrix": {
     "neverDo": [
       "Never apply hot water while milk protein is still in the fiber — cooks the stain in",
-      "Never run enzymes above 50°C — denatures the protease",
+      "Never run enzymes above 50°C — sets the protein-digesting enzyme",
       "Never layer oxidizers — one at a time, flushed between",
       "Never rub wet chocolate — smearing is worse than leaving it alone"
     ],
@@ -187,7 +187,7 @@
       "Is the cotton white, light, or dark/dyed?",
       "Milk chocolate, dark chocolate, or chocolate sauce? (more milk = more protein; more dark = more tannin)"
     ],
-    "modifierNotes": "Protein-first ordering is non-negotiable — hot water before the enzyme cooks the casein and locks every other component in. Fresh + white = high-confidence DIY. Hot-set = pro."
+    "modifierNotes": "Protein-first ordering is non-negotiable — hot water before the enzyme cooks the milk protein and locks every other component in. Fresh + white = high-confidence DIY. Hot-set = pro."
   },
   "sources": [],
   "cross_refs": [],

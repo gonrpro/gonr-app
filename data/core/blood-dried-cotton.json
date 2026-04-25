@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 5,
   "timeEstimate": "30–90 minutes; budget multiple cycles",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "blood-dried",
     "surfaceCanonical": "cotton",
@@ -24,27 +24,27 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Dried blood is fresh blood's chemistry plus oxidation. Hemoglobin has denatured and cross-linked with cellulose; iron has oxidized to iron oxide (the rust-brown part of the stain). The protein matrix is now insoluble in water and partially resistant to standard enzyme digestion. Heat at any point from drying onward sets the cross-links harder. Cotton tolerates enzymes, acid-side rinses, 3% H₂O₂, and hot wash — so the chemistry lane is wide. The issue is that dried blood responds incrementally: each cycle lifts another layer, and 2–3 cycles is the norm.",
-  "whyThisWorks": "Cold soak reactivates the outer layer of denatured protein so enzyme can reach it. Liquid Protein Spotter (extended dwell) digests what it can reach; the rest waits for the next cycle. A dilute acid pass converts the oxidized iron to a soluble form. 3% H₂O₂ oxidizes residual iron-porphyrin chromophore. Repeat until shadow fades. Never hot-wash between cycles — sets what the enzyme hasn't cleared.",
+  "stainChemistry": "Dried blood is fresh blood's chemistry plus oxidation. blood pigment has set with cellulose; iron has oxidized to iron oxide (the rust-brown part of the stain). The protein matrix is now insoluble in water and partially resistant to standard enzyme digestion. Heat at any point from drying onward sets the lock together harder. Cotton tolerates enzymes, acid-side rinses, 3% H₂O₂, and hot wash — so the chemistry lane is wide. The issue is that dried blood responds incrementally: each cycle lifts another layer, and 2–3 cycles is the norm.",
+  "whyThisWorks": "Cold soak reactivates the outer layer of set protein so enzyme can reach it. Liquid Protein Spotter (extended dwell) digests what it can reach; the rest waits for the next cycle. A dilute acid pass converts the oxidized iron to a soluble form. 3% H₂O₂ oxidizes residual iron-based pigment color. Repeat until shadow fades. Never hot-wash between cycles — sets what the enzyme hasn't cleared.",
   "defaultAssumption": "Expect 2–3 cycles. Fresh blood = easy single-pass; dried blood = patience. Any previous hot-water or hot-dryer exposure moves toward pro territory.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "wet",
       "agent": "Cold Water Soak",
-      "technique": "Rehydrate denatured protein",
+      "technique": "Rehydrate set protein",
       "equipment": "Cold water in a basin",
       "dwellTime": "30–60 minutes",
-      "instruction": "Submerge the stained area in cold water — soak 30–60 minutes. This rehydrates and softens the outer layer of denatured hemoglobin, letting the enzyme step reach protein that's been cross-linked."
+      "instruction": "Submerge the stained area in cold water — soak 30–60 minutes. This rehydrates and softens the outer layer of set blood pigment, letting the enzyme step reach protein that's been lock together."
     },
     {
       "step": 2,
       "side": "wet",
       "agent": "Protein Spotter — Extended Dwell",
       "technique": "Apply, dwell long, brush gently",
-      "equipment": "Liquid Protein Spotter (PRENETT B / protease digestant) in warm water (30–38°C)",
+      "equipment": "Liquid Protein Spotter in warm water (30–38°C)",
       "dwellTime": "30–60 minutes",
-      "instruction": "Apply Protein Spotter directly OR submerge the stain in warm (30–38°C) enzyme solution. Dwell 30–60 min — longer than fresh blood, because dried protein breaks incrementally. Gently brush with a soft brush every 15 min. Enzyme denatures above 50°C; keep warm, not hot."
+      "instruction": "Apply Protein Spotter directly OR submerge the stain in warm (30–38°C) enzyme solution. Dwell 30–60 min — longer than fresh blood, because dried protein breaks incrementally. Gently brush with a soft brush every 15 min. Enzyme sets above 50°C; keep warm, not hot."
     },
     {
       "step": 3,
@@ -53,13 +53,13 @@
       "technique": "Convert iron oxide to soluble form",
       "equipment": "Dilute acetic acid 5% aqueous OR lemon juice diluted 1:4",
       "dwellTime": "5–10 minutes",
-      "instruction": "After the enzyme pass, a rust-brown shadow often remains — that's iron oxide from the hemoglobin. Dab dilute acid on the shadow. Converts the iron to a soluble form that rinses out. Rinse cool."
+      "instruction": "After the enzyme pass, a rust-brown shadow often remains — that's iron oxide from the blood pigment. Dab dilute acid on the shadow. Converts the iron to a soluble form that rinses out. Rinse cool."
     },
     {
       "step": 4,
       "side": "wet",
       "agent": "Hydrogen Peroxide 3%",
-      "technique": "Oxidize residual iron-porphyrin",
+      "technique": "Oxidize residual iron-based pigment",
       "equipment": "3% H₂O₂",
       "dwellTime": "5–10 minutes",
       "instruction": "For residual pink / brown shadow, 3% H₂O₂ drop-by-drop. Dwell 5–10 min, blot. Skip on dark cotton."
@@ -85,7 +85,7 @@
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Cold water soak 30–60 min — rehydrate denatured protein.",
+      "1. Cold water soak 30–60 min — rehydrate set protein.",
       "2. Liquid Protein Spotter, extended 30–60 min dwell, warm (30–38°C).",
       "3. Dilute acetic acid for oxidized iron shadow.",
       "4. 3% H₂O₂ on residual pigment.",
@@ -93,7 +93,7 @@
       "6. Cold wash until stain is clear; only then a hot finishing wash."
     ],
     "products": [
-      "Liquid Protein Spotter (PRENETT B or protease digestant)",
+      "Liquid Protein Spotter",
       "Dilute acetic acid 5% aqueous",
       "Hydrogen Peroxide 3%"
     ],

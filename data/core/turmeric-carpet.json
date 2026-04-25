@@ -6,8 +6,8 @@
   "sector": "home",
   "source": "verified",
   "verified": false,
-  "stainChemistry": "Tannins are polyphenolic compounds that bond to fibers via hydrogen bonding to hydroxyl groups. On carpet, tannins oxidize over time, darkening the stain and making it harder to remove. Curcumin (turmeric's active pigment) is a diketo-enol compound with a highly conjugated chromophore that is particularly resistant to oxidative bleaching. Oxidizing agents (H₂O₂) attack the chromophore, rendering it colorless. Acidic rinse (acetic acid) prevents re-oxidation. The oil/waxy component of curry must be removed first with a dry-side solvent before wet-side treatment can reach the color.",
-  "whyThisWorks": "Tannins are polyphenolic pigments that bond via hydrogen bonding. H₂O₂ oxidizes the chromophore (colored part) of the molecule into colorless compounds. The oil carrier in curry must be removed first with dry-side solvent, or the color treatment cannot penetrate.",
+  "stainChemistry": "Tannins are tannin compounds that bond to fibers tightlyto hydroxyl groups. On carpet, tannins oxidize over time, darkening the stain and making it harder to remove. turmeric pigment (turmeric's active pigment) is a compound with a highly color that is particularly resistant to oxidative bleaching. Oxidizing agents (H₂O₂) attack the color, rendering it colorless. Acidic rinse (acetic acid) prevents re-oxidation. The oil/waxy component of curry must be removed first with a dry-side solvent before wet-side treatment can reach the color.",
+  "whyThisWorks": "Tannins are tannin-type pigments that bond via grip. H₂O₂ oxidizes the color (colored part) of the molecule into colorless compounds. The oil carrier in curry must be removed first with dry-side solvent, or the color treatment cannot penetrate.",
   "defaultAssumption": "Treat as unknown age / possibly dried.",
   "professionalProtocol": {
     "steps": [
@@ -43,7 +43,7 @@
       "OxiClean Wine Stain Remover",
       "28% Acetic Acid (diluted)"
     ],
-    "whenToStop": "If the stain persists after these steps, move to professional treatment. Curcumin is highly resistant and requires professional chemistry to avoid damaging the surface.",
+    "whenToStop": "If the stain persists after these steps, move to professional treatment. turmeric pigment is highly resistant and requires professional chemistry to avoid damaging the surface.",
     "warnings": [
       "Always test any solution on a hidden area first.",
       "Work from the outside of the stain inward to avoid spreading it.",
@@ -62,8 +62,8 @@
     ]
   },
   "escalation": {
-    "when": "Stain does not fully resolve after spotting protocol — some set-in curcumin stains require bleaching or professional dyeing",
-    "whatToTell": "Turmeric/curry stain on carpet, curcumin pigment — very resistant to oxidative treatment. Treated at home with H₂O₂. Please use professional tannin chemistry and oxidizer protocol.",
+    "when": "Stain does not fully resolve after spotting protocol — some set-in turmeric pigment stains require bleaching or professional dyeing",
+    "whatToTell": "Turmeric/curry stain on carpet, turmeric pigment pigment — very resistant to oxidative treatment. Treated at home with H₂O₂. Please use professional tannin chemistry and oxidizer protocol.",
     "specialistType": "professional carpet cleaner or textile restoration specialist"
   },
   "deepSolveHooks": {
@@ -73,11 +73,11 @@
       "Is the carpet synthetic or natural fiber?",
       "Has any cleaning attempt already been made?"
     ],
-    "modifierNotes": "Wet curry sauce has an oil carrier that must be removed first with dry-side solvent. Dry turmeric is almost pure curcumin and bonds very quickly. Fresh stains respond much better. Natural fiber carpets need gentler chemistry."
+    "modifierNotes": "Wet curry sauce has an oil carrier that must be removed first with dry-side solvent. Dry turmeric is almost pure turmeric pigment and bonds very quickly. Fresh stains respond much better. Natural fiber carpets need gentler chemistry."
   },
   "difficulty": 5,
   "timeEstimate": "10–15 min",
-  "lastValidated": "2026-03-23",
+  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
   "verification_level": "single_source"

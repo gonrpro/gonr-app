@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 5,
   "timeEstimate": "20–40 minutes; ordered multi-component treatment",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "coffee-cream",
     "surfaceCanonical": "carpet",
@@ -26,8 +26,8 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Coffee with cream is a three-component stain: (1) COFFEE TANNIN (theaflavins / chlorogenic acid, the brown pigment), (2) MILK PROTEIN (casein + whey from the cream), and (3) MILK FAT (butterfat from the cream). Ordering is critical because the three families respond to different and sometimes OPPOSITE chemistries: hot water and alkaline cleaners (OxiClean) set the protein permanently; alkaline cleaners also DARKEN the tannin permanently. Heat anywhere before protein is dealt with = locked in. The correct order is: cold water + Dawn (universal-safe, handles fresh tannin + lifts fat) → enzyme pretreat (warm, not hot — digests protein) → 3% peroxide (oxidizes residual tannin) → vinegar rinse. On carpet the additional constraint is PAD WICKING: over-wetting carries the mess into the pad where you can't reach it. Damp cloth, not pouring.",
-  "whyThisWorks": "Cold + Dawn deals with fresh tannin + fat in one step without setting protein. Enzyme in warm (not hot) water digests the casein. Peroxide then reaches residual tannin. Vinegar keeps tannin on the light (acid) side. Weighted paper towels overnight prevent pad wick-back. Order + cold + no-pouring = clean. Wrong order = ghost.",
+  "stainChemistry": "Coffee with cream is a three-component stain: (1) COFFEE TANNIN, (2) MILK PROTEIN, and (3) MILK FAT (butterfat from the cream). Ordering is critical because the three families respond to different and sometimes OPPOSITE chemistries: hot water and alkaline cleaners (OxiClean) set the protein permanently; alkaline cleaners also DARKEN the tannin permanently. Heat anywhere before protein is dealt with = locked in. The correct order is: cold water + Dawn (universal-safe, handles fresh tannin + lifts fat) → enzyme pretreat (warm, not hot — digests protein) → 3% peroxide (oxidizes residual tannin) → vinegar rinse. On carpet the additional constraint is PAD WICKING: over-wetting carries the mess into the pad where you can't reach it. Damp cloth, not pouring.",
+  "whyThisWorks": "Cold + Dawn deals with fresh tannin + fat in one step without setting protein. Enzyme in warm (not hot) water digests the milk protein. Peroxide then reaches residual tannin. Vinegar keeps tannin on the light (acid) side. Weighted paper towels overnight prevent pad wick-back. Order + cold + no-pouring = clean. Wrong order = ghost.",
   "defaultAssumption": "Morning spill on living-room / home-office carpet. Fresh = reasonable win. Overnight + carpet-pad-soaked = harder; tends to leave a tan halo that returns next day as moisture wicks back. Barista-style cappuccino (more milk) = bigger protein + fat component. Black coffee with a splash = closer to plain coffee chemistry.",
   "spottingProtocol": [
     {
@@ -46,7 +46,7 @@
       "technique": "Flush fresh tannin without pad saturation",
       "equipment": "Cold water, white cloth, dry towel + weight",
       "dwellTime": "2 min per pass",
-      "instruction": "Dampen a cloth with cold water, press. Lift, blot with dry cloth, repeat 2–3 passes. COLD only — warm/hot water sets the milk casein permanently. Never pour — pad soak = permanent ghost."
+      "instruction": "Dampen a cloth with cold water, press. Lift, blot with dry cloth, repeat 2–3 passes. COLD only — warm/hot water sets the milk milk protein permanently. Never pour — pad soak = permanent ghost."
     },
     {
       "step": 3,
@@ -61,7 +61,7 @@
       "step": 4,
       "side": "wet-minimal",
       "agent": "Enzyme Pretreat — WARM (Not Hot)",
-      "technique": "Digest casein before oxidizer",
+      "technique": "Digest milk protein before oxidizer",
       "equipment": "OxiClean Versatile / Biz in WARM water (<100°F / 38°C) on damp cloth",
       "dwellTime": "15–20 minutes",
       "instruction": "Dissolve enzyme pretreat in WARM water — bath temperature, NOT hot. Damp cloth, press on spot, cover with damp towel to keep enzyme wet. 15–20 min. Hot water = protein set."
@@ -114,7 +114,7 @@
     ],
     "temperature": "cold through initial; warm (<100°F) for enzyme; never hot",
     "warnings": [
-      "NEVER hot water — sets casein protein",
+      "NEVER hot water — sets milk protein",
       "NEVER oxidizer BEFORE enzyme — sets protein permanently",
       "NEVER alkaline cleaners (OxiClean alone, ammonia, baking soda) — sets protein AND darkens tannin",
       "Never pour — pad wick-back is the ceiling",
@@ -125,7 +125,7 @@
     {
       "step": 1,
       "agent": "Three Stains in One — Order Matters",
-      "instruction": "Coffee with cream is actually three stains at once: coffee tannin (brown pigment), milk protein (casein from the cream), and milk fat. These respond to DIFFERENT chemistries, and some are OPPOSITES — alkaline cleaners (OxiClean, ammonia) set the milk protein permanently AND darken the tannin permanently. Hot water cooks the milk protein into the carpet. The order is: cold water + Dawn first, then a WARM (not hot) enzyme soak to digest the protein, then peroxide for any remaining brown, then a vinegar rinse. Wrong order = permanent tan halo."
+      "instruction": "Coffee with cream is actually three stains at once: coffee tannin (brown pigment), milk protein, and milk fat. These respond to DIFFERENT chemistries, and some are OPPOSITES — alkaline cleaners (OxiClean, ammonia) set the milk protein permanently AND darken the tannin permanently. Hot water cooks the milk protein into the carpet. The order is: cold water + Dawn first, then a WARM (not hot) enzyme soak to digest the protein, then peroxide for any remaining brown, then a vinegar rinse. Wrong order = permanent tan halo."
     },
     {
       "step": 2,
@@ -145,7 +145,7 @@
     {
       "step": 5,
       "agent": "Enzyme Pretreat in WARM (Not Hot) Water",
-      "instruction": "Dissolve OxiClean Versatile or Biz in WARM water — bath temperature, under 100°F. NOT hot. Warm is necessary for enzyme activity; hot would set the protein you're trying to remove. Dampen a white cloth in the enzyme solution, press on the spot, cover with a second damp towel to keep it wet, wait 15–20 minutes. The enzyme digests the casein from the cream."
+      "instruction": "Dissolve OxiClean Versatile or Biz in WARM water — bath temperature, under 100°F. NOT hot. Warm is necessary for enzyme activity; hot would set the protein you're trying to remove. Dampen a white cloth in the enzyme solution, press on the spot, cover with a second damp towel to keep it wet, wait 15–20 minutes. The enzyme digests the milk protein from the cream."
     },
     {
       "step": 6,
@@ -191,7 +191,7 @@
     ],
     "whenToStop": "Stop if pad is saturated, if OxiClean / baking soda was used before you (tannin likely locked), if ring returns after two rounds, or if hot water was applied before the cold step.",
     "warnings": [
-      "NEVER hot water — sets casein permanently",
+      "NEVER hot water — sets milk protein permanently",
       "NEVER oxidizer before enzyme — sets protein",
       "NEVER alkaline cleaners on the tannin — darkens brown permanently",
       "Never pour — pad wick-back",

@@ -27,7 +27,7 @@
   "stainChemistry": "Salsa is tomato plus chili oil plus onion plus citric acid plus cilantro and garlic. Three things stain: tomato (red color and tannin), chili pepper (the red pepper pigment is carried in oil — that's the real lock), and onion (sulfur compounds that can darken over time). The chili oil is the catch — it's fat-soluble, which means water-only cleaning can't touch it, and the oil drives the red pepper pigment deep into cotton. Cotton tolerates the full home toolkit (Dawn, mild acid, 3% peroxide, hot wash) AFTER the oil is stripped. The order is oil-first (Dawn), then tannin (vinegar), then color (peroxide). Skip the oil-strip and the stain plateaus at a faint orange that won't budge.",
   "whyThisWorks": "Dawn strips the chili oil that's holding the red pepper pigment in place. Once the oil is gone, mild acid (vinegar) disrupts the tomato color. 3% peroxide oxidizes any residual red. Hot wash finishes — safe at this point because the oil is gone and the color is broken. Skip Dawn and peroxide can't reach the pigment underneath the oil — that's why a lot of 'cleaned' salsa stains have a faint orange ghost.",
   "scienceNote": "Mechanism (pro-facing): salsa combines tomato (lycopene + tannin), chili (capsaicin in oil carrier + capsanthin pigment, both fat-soluble), onion sulfur compounds, and citric acid. Pro uses NSD oil-strip + acid-side tannin spotter + 3% H₂O₂ for residual chromophore.",
-  "defaultAssumption": "Fresh salsa on cotton is a high-confidence DIY. Heavy-oil salsa (restaurant-style with visible oil film) adds a solvent pre-treatment. Aged salsa is tougher because both the lycopene and capsanthin oxidize deeper.",
+  "defaultAssumption": "Fresh salsa on cotton is a high-confidence DIY. Heavy-oil salsa (restaurant-style with visible oil film) adds a solvent pre-treatment. Aged salsa is tougher because both the tomato red pigment and chili red pigment oxidize deeper.",
   "spottingProtocol": [
     {
       "step": 1,
@@ -36,13 +36,13 @@
       "technique": "Remove chunks, cold flush",
       "equipment": "Dull blade, cold water, white cotton terry towel",
       "dwellTime": "1 minute",
-      "instruction": "Scrape solid salsa chunks off with a dull blade. Cold flush from the BACK of the fabric. Cold only — hot water drives capsaicin oil deeper into cotton."
+      "instruction": "Scrape solid salsa chunks off with a dull blade. Cold flush from the BACK of the fabric. Cold only — hot water drives chili oil deeper into cotton."
     },
     {
       "step": 2,
       "side": "wet",
       "agent": "NSD",
-      "technique": "Strip the capsaicin oil",
+      "technique": "Strip the chili oil",
       "equipment": "NSD in cool water",
       "dwellTime": "5 minutes",
       "instruction": "Apply NSD, work with a soft brush. Strips the chili oil carrier. Essential first step — peroxide can't reach the pigment while the oil is there."
@@ -63,7 +63,7 @@
       "technique": "Drop, dwell, blot",
       "equipment": "3% H₂O₂",
       "dwellTime": "3–5 minutes",
-      "instruction": "3% H₂O₂ on residual orange-red. Oxidizes lycopene + capsanthin. Skip on dark cotton."
+      "instruction": "3% H₂O₂ on residual orange-red. Oxidizes tomato red pigment + chili red pigment. Skip on dark cotton."
     },
     {
       "step": 5,
@@ -78,7 +78,7 @@
   "professionalProtocol": {
     "steps": [
       "1. Scrape chunks. Cold flush from the back.",
-      "2. NSD — strip capsaicin oil FIRST.",
+      "2. NSD — strip chili oil FIRST.",
       "3. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A).",
       "4. 3% H₂O₂ on residual orange-red.",
       "5. Hot wash per care label."
@@ -90,7 +90,7 @@
     ],
     "temperature": "cold through spotting; hot wash post-chemistry",
     "warnings": [
-      "Oil off FIRST — peroxide can't work through capsaicin oil",
+      "Oil off FIRST — peroxide can't work through chili oil",
       "Never hot-flush — drives chili oil deeper",
       "One oxidizer at a time"
     ]
@@ -145,7 +145,7 @@
     ],
     "whenToStop": "Stop if salsa has been hot-dried or two home rounds didn't clear it.",
     "warnings": [
-      "Oil off FIRST — peroxide blocked by capsaicin oil otherwise",
+      "Oil off FIRST — peroxide blocked by chili oil otherwise",
       "Cold water during spotting — hot drives oil deeper",
       "Never mix peroxide with chlorine bleach or ammonia",
       "Skip peroxide on dark/dyed cotton"

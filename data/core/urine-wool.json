@@ -63,11 +63,11 @@
     {
       "step": 4,
       "side": "wet-minimal",
-      "agent": "Wool-Safe Urease-Only Enzyme (Pro)",
+      "agent": "Wool-Safe Urine-Targeted Enzyme (Pro)",
       "technique": "Specialty enzyme for uric acid",
-      "equipment": "Pro wool-safe urease enzyme",
+      "equipment": "Pro wool-safe urine-targeted enzyme enzyme",
       "dwellTime": "Per pro reference",
-      "instruction": "Pro applies urease-ONLY enzyme (digests uric acid; protease would digest wool). Strict application without flooding."
+      "instruction": "Pro applies urine-targeted enzyme. Strict application without flooding."
     },
     {
       "step": 5,
@@ -92,14 +92,14 @@
     "steps": [
       "1. Gloves. Cold press-blot at first contact.",
       "2. Cold wool-safe NSD sponge press.",
-      "3. Wool-safe urease-ONLY enzyme (NOT protease — digests wool).",
+      "3. Wool-safe urine-targeted enzyme.",
       "4. Acetic acid 60-sec spotter for ammonia.",
       "5. Cold final rinse, press flat to air-dry."
     ],
     "products": [
       "Disposable gloves",
       "Mulsolite or wool-safe NSD",
-      "Wool-safe urease-only enzyme (pro)",
+      "Wool-safe urine-targeted enzyme (pro)",
       "Acetic Acid (diluted 1:10)",
       "Cold/ice water",
       "Dry white towels"
@@ -107,7 +107,7 @@
     "temperature": "cold throughout — wool felts above 30°C when wet",
     "warnings": [
       "Biohazard — gloves + sealed disposal",
-      "NEVER protease enzymes — digest wool keratin",
+      "NEVER protein-digesting enzymes — digest wool keratin",
       "NEVER hot water / steam — felts wool + sets protein",
       "NEVER alkaline (OxiClean / ammonia / baking soda) — felts wool + locks urine",
       "NEVER chlorine bleach — destroys wool",
@@ -119,7 +119,7 @@
     {
       "step": 1,
       "agent": "Honest Answer — Pro Within Hours",
-      "instruction": "Human urine on wool is pro-lane because every standard urine fix damages wool. Retail enzyme cleaners contain protease which DIGESTS WOOL. Hot water rinses felt wool. Alkaline cleaners (OxiClean) felt wool AND lock urine. Home protocol = gloves + cold press-blot, pro within hours."
+      "instruction": "Human urine on wool is pro-lane because every standard urine fix damages wool. Retail enzyme cleaners contain protein-digesting enzyme which DIGESTS WOOL. Hot water rinses felt wool. Alkaline cleaners (OxiClean) felt wool AND lock urine. Home protocol = gloves + cold press-blot, pro within hours."
     },
     {
       "step": 2,
@@ -139,7 +139,7 @@
     {
       "step": 5,
       "agent": "Pro Wool Specialist — What to Tell Them",
-      "instruction": "Don't apply retail enzyme cleaners — they digest wool. Tell the pro: \"Human urine on wool, age [hours / overnight], gloves + cold press-blot ONLY at home. NO enzyme cleaner, NO hot water, NO OxiClean, NO baking soda, NO household products applied. Need wool-safe urease-only enzyme + cold rinse.\""
+      "instruction": "Don't apply retail enzyme cleaners — they digest wool. Tell the pro: \"Human urine on wool, age [hours / overnight], gloves + cold press-blot ONLY at home. NO enzyme cleaner, NO hot water, NO OxiClean, NO baking soda, NO household products applied. Need wool-safe urine-targeted enzyme + cold rinse.\""
     }
   ],
   "diyProtocol": {
@@ -178,8 +178,8 @@
     ],
     "fiberSensitivities": [
       "Wool keratin felts when wet + warm + agitated",
-      "Protease enzymes digest wool keratin",
-      "Urease-only enzymes are wool-safe but pro-only",
+      "protein-digesting enzymes digest wool keratin",
+      "urine-targeted enzymes are wool-safe but pro-only",
       "Aluminum-protein complex (from sweat-mixed urine) sets faster on wool"
     ]
   },
@@ -191,8 +191,8 @@
   ],
   "escalation": {
     "when": "Always — wool + urine is pro-lane within hours. Earlier for valuable garments, mattress topping, or set-in / dried urine.",
-    "whatToTell": "\"Human urine on wool, age [hours / overnight], gloves + cold press-blot ONLY at home. NO enzyme cleaner, NO hot water, NO OxiClean, NO baking soda applied. Need wool-safe urease-only enzyme + cold rinse.\"",
-    "specialistType": "professional dry cleaner specializing in wool (call ahead — confirm urease-only enzyme + cold-water-only protocol)"
+    "whatToTell": "\"Human urine on wool, age [hours / overnight], gloves + cold press-blot ONLY at home. NO enzyme cleaner, NO hot water, NO OxiClean, NO baking soda applied. Need wool-safe urine-targeted enzyme + cold rinse.\"",
+    "specialistType": "professional dry cleaner specializing in wool"
   },
   "deepSolveHooks": {
     "contextQuestions": [

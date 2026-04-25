@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 4,
   "timeEstimate": "10–25 minutes",
-  "lastValidated": "2026-04-24",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "blood",
     "surfaceCanonical": "polyester",
@@ -23,8 +23,8 @@
     ],
     "freePreview": true
   },
-  "stainChemistry": "Blood is a protein stain — hemoglobin, fibrin, albumin. Polyester is a chemically durable synthetic: it tolerates enzymes, 3% hydrogen peroxide, and neutral detergents at room temperature. Heat is the constraint — polyester softens above ~170°F and sets protein into the fiber permanently at any hot-water or dryer temperature. Unlike cotton, polyester is hydrophobic, so water-soluble protein washes out faster than it rinses IN, which is why cold-water flush alone clears a fresh stain.",
-  "whyThisWorks": "Cold water halts protein setting and flushes soluble hemoglobin out before it can bind. Liquid Protein Spotter (enzymatic digestant) then breaks peptide bonds on residual stain — polyester handles protease enzymes safely. 3% hydrogen peroxide oxidizes residual iron-porphyrin pigment to colorless products. NSD removes all chemistry residue before any heat — critical because polyester is the fiber most vulnerable to heat-setting residual chemistry.",
+  "stainChemistry": "Blood is a protein stain — blood proteins (blood pigment and others). Polyester is a chemically durable synthetic: it tolerates enzymes, 3% hydrogen peroxide, and neutral detergents at room temperature. Heat is the constraint — polyester softens above ~170°F and sets protein into the fiber permanently at any hot-water or dryer temperature. Unlike cotton, polyester is hydrophobic, so water-soluble protein washes out faster than it rinses IN, which is why cold-water flush alone clears a fresh stain.",
+  "whyThisWorks": "Cold water halts protein setting and flushes soluble blood pigment out before it can bind. Liquid Protein Spotter (enzymatic digestant) then breaks protein bond on residual stain — polyester handles protein-digesting enzymes safely. 3% hydrogen peroxide oxidizes residual iron-based brown pigment to colorless products. NSD removes all chemistry residue before any heat — critical because polyester is the fiber most vulnerable to heat-setting residual chemistry.",
   "defaultAssumption": "Assume fresh unless the user says otherwise. Age branches the protocol: fresh (<1 hr) → the full sequence below runs at full speed and usually clears in 10–15 minutes. Aged (overnight to 48 hr) → enzyme dwell extends to 15–20 minutes and expect a second peroxide pass. Heat-set (already hot-washed or ironed) → escalate; polyester + cooked protein rarely comes back at home.",
   "spottingProtocol": [
     {
@@ -34,16 +34,16 @@
       "technique": "Flush from the back",
       "equipment": "Spray bottle, white cotton terry towel",
       "dwellTime": "30–60 seconds",
-      "instruction": "Work from the back of the fabric. Flood cold water and blot hard from underneath — hydraulic pressure pushes soluble hemoglobin out the way it came in. Polyester is hydrophobic, so fresh blood often rinses out almost completely in this step alone. Keep going until the towel comes up clear or pale pink. Cold only — hot water cooks the protein into polyester permanently."
+      "instruction": "Work from the back of the fabric. Flood cold water and blot hard from underneath — hydraulic pressure pushes soluble blood pigment out the way it came in. Polyester is hydrophobic, so fresh blood often rinses out almost completely in this step alone. Keep going until the towel comes up clear or pale pink. Cold only — hot water cooks the protein into polyester permanently."
     },
     {
       "step": 2,
       "side": "wet",
       "agent": "Protein Spotter",
       "technique": "Apply liquid directly, tamp",
-      "equipment": "Liquid Protein Spotter (PRENETT B / protease-based digestant)",
+      "equipment": "Liquid Protein Spotter",
       "dwellTime": "5–10 minutes",
-      "instruction": "Apply liquid Protein Spotter directly to the stained area. PRENETT B or any protease-based enzymatic digestant is the pro canonical — a clear liquid, not a powder. The enzyme window is pH 7–8 and temperature under 38°C / 100°F — warmer than that denatures the protease, colder stalls the reaction. Tamp gently with a soft bristle brush. Aged (overnight+) stains get a longer dwell — 15–20 minutes vs the 5–10 for fresh. If all you have is a powder enzyme pre-soak, dissolve it fully in cold water before applying — never sprinkle dry powder on fabric."
+      "instruction": "Apply liquid Protein Spotter directly to the stained area. PRENETT B or any protein-digesting enzyme-based enzymatic digestant is the pro canonical — a clear liquid, not a powder. The enzyme window is pH 7–8 and temperature under 38°C / 100°F — warmer than that sets the protein-digesting enzyme, colder stalls the reaction. Tamp gently with a soft bristle brush. Aged (overnight+) stains get a longer dwell — 15–20 minutes vs the 5–10 for fresh. If all you have is a powder enzyme pre-soak, dissolve it fully in cold water before applying — never sprinkle dry powder on fabric."
     },
     {
       "step": 3,
@@ -76,7 +76,7 @@
   "professionalProtocol": {
     "steps": [
       "1. Cold water flush from the back. Polyester clears fresh blood fast.",
-      "2. Liquid Protein Spotter (PRENETT B or protease digestant). Tamp. Dwell 5–10 min.",
+      "2. Liquid Protein Spotter. Tamp. Dwell 5–10 min.",
       "3. 3% hydrogen peroxide drop-by-drop for any shadow. Test inside seam on dyed polyester.",
       "4. NSD flush — remove all enzyme and peroxide residue before any heat.",
       "5. Cool rinse, cool-to-warm laundry. Never hot water, never hot dryer — polyester softens."
