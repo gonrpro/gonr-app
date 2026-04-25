@@ -1,80 +1,268 @@
 {
   "id": "pad-thai-carpet",
   "title": "Pad Thai / Noodle Sauce on Carpet",
+  "stainType": "combo",
   "stainFamily": "combo",
   "surface": "carpet",
   "sector": "carpet",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Pad Thai sauce contains tamarind (tannin), fish sauce (protein, salt), sugar (caramelizes), chili oil, and peanut oil. On carpet, this creates a multi-layer stain: sugar matrix traps pigment, protein bonds to fiber, oil penetrates deeply, and tannin adds color. The high sugar content means heat exposure caramelizes the stain rapidly.",
-  "whyThisWorks": "Cold water dissolves the sugar matrix on carpet before it caramelizes. Protein treatment addresses the fish sauce component (cold, no heat). Surfactant emulsifies the oils. Tannin spotter targets the tamarind discoloration. Speed matters — once the sugar sets, removal difficulty increases significantly.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "30–60 minutes; 4-component combo + carpet pad-saturation risk; wool = pro from minute one",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "pad-thai",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "pad-thai",
+      "noodle-sauce",
+      "combo",
+      "sugar",
+      "protein",
+      "oil",
+      "tannin",
+      "carpet",
+      "no-hot-water",
+      "no-alkaline",
+      "no-saturation",
+      "wool-fork",
+      "order-matters"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Pad Thai on carpet stacks the four-component combo (tamarind tannin + fish-sauce protein + caramelizing sugar + peanut/chili oil) with carpet-specific challenges: pad saturation (drives sticky sauce into the foam below where it wicks back as a permanent ring), wool carpet's banned-tools list (no broad-spectrum enzymes, no peroxide, no alkaline), and the impossibility of fully drying the carpet pile. Recurring traps: hot water (caramelizes sugar + cooks protein + sets tannin all at once), alkaline cleaners as first step (darken tannin permanently), pour-on saturation (drives sauce into the pad). Wool carpet = pro from minute one. Synthetic carpet = home protocol with strict damp-cloth-only application.",
+  "whyThisWorks": "Spoon-and-blot lifts solid bulk before chemistry. Cold damp-cloth blot dissolves sugar without saturating the pad. Cool enzyme pretreat handles fish-sauce protein. Dawn damp-cloth strips peanut and chili oil. Vinegar disrupts tamarind tannin. 3% peroxide on hidden-test-passed synthetic carpet handles residual color. Weighted paper towels overnight prevent wick-back from any moisture that reached the pad. Damp-cloth-only application throughout — never pour.",
+  "scienceNote": "Mechanism (pro-facing): pad-thai is tamarind tannin polyphenols + fish-sauce proteins + sucrose/palm sugar + peanut + chili oil with capsanthin pigment. Pro uses cold damp-cloth flush + protein spotter + NSD oil-strip + acid-side tannin spotter + 3% H₂O₂. Wool carpet requires urease-only enzyme + extreme dilution.",
+  "defaultAssumption": "Thai food / noodle takeout spill on synthetic (nylon / polyester / olefin) home carpet. Wool carpet = pro from minute one. Pad bleed-through = restoration territory.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage and Solid Bulk Lift",
+      "technique": "Wool fork + spoon",
+      "equipment": "Spoon, plastic card, garbage bag",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Wool carpet = pro from minute one. Synthetic carpet: scoop solid noodles, sauce, peanuts into a garbage bag with a spoon — never rub."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Damp-Cloth Blot",
+      "technique": "Dissolve sugar without pad saturation",
+      "equipment": "Cold water, white cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Damp white cloth with COLD water. Press the spot, lift, rotate to clean section, press again. NEVER pour water — pad saturation drives sauce into foam where it wicks back. 2–3 cycles to dissolve sugar."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat — Cool, Damp-Cloth Application",
+      "technique": "Protein digestion in place",
+      "equipment": "OxiClean Versatile / Biz / pet enzyme in COOL water on damp cloth",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Dissolve enzyme pretreat in COOL water per label. Apply with damp cloth — NEVER pour. Cover with damp towel to prevent drying. 15–20 min. Cool damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Dawn Damp-Cloth — Strip Oil",
+      "technique": "Peanut + chili oil strip",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn worked into a damp cloth — never pour. Press the spot, soft toothbrush. 5 min. Damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Damp-Cloth — Tannin Acid",
+      "technique": "Mild acid for tamarind tannin",
+      "equipment": "1 tbsp white vinegar + 1 cup cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar + cool water on damp cloth, 5 min. Damp-cloth rinse THOROUGHLY before peroxide."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Peroxide Test",
+      "technique": "Carpet bleed test",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "Hidden carpet area test before peroxide on dyed carpet. Color transfers = skip peroxide."
+    },
+    {
+      "step": 7,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Residual Color",
+      "technique": "Bounded oxidation on hidden-test-passed synthetic carpet",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Hidden-test-passed synthetic carpet only. 3% peroxide damp cloth 5–10 min for residual color. NEVER mix with chlorine, ammonia, or alkaline cleaners."
+    },
+    {
+      "step": 8,
+      "side": "dry",
+      "agent": "Weighted Paper Towels Overnight + Fan",
+      "technique": "Prevent wick-back from pad",
+      "equipment": "Paper towels + heavy book, fan",
+      "dwellTime": "8–12 hours",
+      "instruction": "Stack paper towels on the spot, weight overnight. Fan in the morning until fully dry. Prevents brown shadow from wicking back from any moisture that reached the pad."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove excess solids with dull edge — do not rub",
-      "2. Apply Tannin Formula for the plant-pigment component",
-      "3. Apply POG for the oil component",
-      "4. Flush with NSD and cool water",
-      "5. If color persists: apply H2O2 6% on colorfast fabrics",
-      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+      "1. Wool carpet = pro from minute one.",
+      "2. Solid bulk lift with spoon.",
+      "3. Cold damp-cloth blot 2–3 passes — never pour.",
+      "4. Enzyme pretreat in COOL water on damp cloth, 15–20 min.",
+      "5. Dawn damp-cloth oil-strip 5 min.",
+      "6. Vinegar damp-cloth 5 min — rinse before peroxide.",
+      "7. Hidden-area peroxide test on dyed carpet.",
+      "8. 3% peroxide damp cloth on hidden-test-passed synthetic carpet.",
+      "9. Weighted paper towels overnight + fan."
     ],
     "products": [
-      "Tannin Formula",
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Spoon",
+      "Enzyme pretreat (OxiClean Versatile / Biz / pet enzyme)",
+      "Dawn / NSD",
+      "White vinegar",
+      "3% Hydrogen peroxide (synthetic carpet, hidden test)",
+      "Paper towels + weight",
+      "Fan",
+      "Cool water"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool throughout — heat sets every component",
+    "warnings": [
+      "Wool carpet = pro from minute one",
+      "ORDER MATTERS — sugar flush, then protein, then oil, then tannin acid, then peroxide",
+      "NEVER hot water — caramelizes sugar + cooks protein + sets tannin",
+      "NEVER alkaline cleaners as first step — DARKEN tannin permanently",
+      "NEVER pour water or chemistry on carpet — damp-cloth only",
+      "NEVER hot extractor / steam — locks residue",
+      "Hidden peroxide test on dyed carpet",
+      "Pad bleed-through = restoration"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Wool Carpet Goes to Pro — Synthetic Carpet Has the 5-Step Sequence",
+      "instruction": "Pad Thai on carpet is a four-component combo (sugar + protein + oil + tannin) with carpet-specific challenges. Wool carpet = pro from minute one (broad-spectrum enzymes damage wool, peroxide yellows wool). Synthetic carpet (nylon, polyester, olefin) follows: solid bulk → cold blot (sugar) → cool enzyme (protein) → Dawn (oil) → vinegar (tannin) → peroxide on hidden-test-passed → weighted towels. Three hard rules: NO hot water (caramelizes sugar, cooks protein, sets tannin), NO alkaline cleaners as first step (darken tannin permanently), NO pour-on water (saturates the pad)."
+    },
+    {
+      "step": 2,
+      "agent": "Scoop Solids — Don't Rub",
+      "instruction": "Spoon or plastic card to scoop noodles, peanuts, sauce into a garbage bag. Don't wipe or rub — that drives the sticky sauce into the carpet pile."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Damp-Cloth Blot — Sugar Flush",
+      "instruction": "Damp a white cloth with COLD water. Press the spot, lift, rotate to a clean section, press again. NEVER pour water on the carpet — pour-on saturation drives sauce into the pad below where you can't reach it. 2 to 3 cycles to dissolve sugar."
+    },
+    {
+      "step": 4,
+      "agent": "Enzyme Pretreat — Cool Water, Damp-Cloth Only",
+      "instruction": "Dissolve enzyme pretreat (OxiClean Versatile, Biz, pet enzyme) in COOL water per label. Apply with a damp cloth — NEVER pour. Cover with a damp towel to prevent drying. 15 to 20 minutes. Damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn Damp Cloth — Strip Peanut + Chili Oil",
+      "instruction": "Dawn worked into a damp cloth, soft toothbrush, 5 minutes. Strips peanut and chili oil. Damp-cloth rinse — never pour."
+    },
+    {
+      "step": 6,
+      "agent": "White Vinegar Damp Cloth — Tannin Acid",
+      "instruction": "Mix 1 tablespoon white vinegar with 1 cup cool water. Apply with a damp cloth, 5 minutes. Damp-cloth rinse THOROUGHLY before peroxide."
+    },
+    {
+      "step": 7,
+      "agent": "Hidden Patch Test Before Peroxide",
+      "instruction": "In a hidden carpet area, dab 3% peroxide on a white cloth, press 2 minutes. Color transfers = skip peroxide."
+    },
+    {
+      "step": 8,
+      "agent": "3% Peroxide for Residual Color",
+      "instruction": "Hidden-test-passed synthetic carpet only: 3% drugstore peroxide on a damp cloth, press 5 to 10 minutes, blot.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners — toxic fumes."
+    },
+    {
+      "step": 9,
+      "agent": "Weighted Paper Towels Overnight Plus Fan",
+      "instruction": "Stack paper towels on the spot, weight with a heavy book, leave overnight. Fan-dry in the morning. Pulls residual moisture and prevents brown shadow from wicking back up from the pad."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub",
-      "2. Rinse with cold water to remove loose material",
-      "3. Apply Dawn dish soap. Work gently",
-      "4. Blot with clean white cloth. Repeat if needed",
-      "5. Air dry — no heat until stain is gone"
+      "1. Wool carpet = pro from minute one. NO alkaline cleaners. NO hot water. NO pouring water.",
+      "2. Solid bulk lift with spoon.",
+      "3. Cold damp-cloth blot 2–3 passes for sugar.",
+      "4. Enzyme pretreat in COOL water on damp cloth, 15–20 min — protein FIRST.",
+      "5. Dawn damp-cloth oil-strip 5 min.",
+      "6. Diluted white vinegar damp-cloth 5 min — rinse before peroxide.",
+      "7. Hidden-area peroxide test on dyed carpet.",
+      "8. 3% peroxide damp cloth on hidden-test-passed synthetic carpet.",
+      "9. Weighted paper towels overnight + fan."
     ],
     "products": [
-      "Dawn dish soap"
+      "Spoon",
+      "Enzyme pretreat (OxiClean Versatile, Biz, pet enzyme)",
+      "Dawn dish soap",
+      "White vinegar",
+      "3% Hydrogen peroxide (synthetic carpet, hidden test)",
+      "Paper towels + heavy book",
+      "Fan",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop on wool carpet (pro). Stop on pad bleed-through (restoration). Stop if hot water / steam / hot vacuum was used (often locks every component). Stop if alkaline cleaner was used as first step. Stop if hidden peroxide test fails on dyed carpet.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "Wool carpet = pro from minute one",
+      "ORDER MATTERS — 5-step sequence",
+      "NEVER hot water — locks every component",
+      "NEVER alkaline cleaners — DARKEN tannin permanently",
+      "NEVER pour water — pad saturation",
+      "NEVER hot extractor / steam — locks residue",
+      "Hidden test on dyed carpet"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never wool carpet at home — pro from minute one",
+      "Never hot water on pad-thai + carpet",
+      "Never alkaline cleaners as first step on tannin",
+      "Never pour water on carpet — pad saturation",
+      "Never hot extractor / steam — locks residue",
+      "Never mix peroxide + chlorine + ammonia + OxiClean"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Synthetic (nylon / polyester / olefin) carpet: tolerates damp-cloth 5-step sequence",
+      "Wool carpet: pro from minute one — broad-spectrum enzymes damage wool, peroxide yellows wool",
+      "Dyed carpet: hidden peroxide test mandatory",
+      "Carpet pad: cannot be cleaned in place — saturation = pad replacement"
     ]
   },
+  "materialWarnings": [
+    "Wool carpet = pro from minute one",
+    "Order matters — 5-step sequence in cool damp-cloth",
+    "No pour-on water — pad saturation drives sauce into foam",
+    "No alkaline cleaners — DARKEN tannin permanently"
+  ],
   "escalation": {
-    "when": "If pad thai stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is pad thai on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Wool carpet from minute one. Hot water / steam / hot vacuum already used. Alkaline cleaner used as first step. Pour-on water saturation visible. Pad bleed-through (restoration territory). 3 home cycles plateau.",
+    "whatToTell": "\"Pad Thai / noodle sauce on [synthetic / wool] carpet, age [fresh / hours / days], home-treated with [solid lift + cold damp-cloth blot + cool enzyme + Dawn + vinegar + 3% peroxide on hidden-test-passed + weighted towels overnight]. No hot, no alkaline, no pouring. [Residual sticky shadow / pad bleed-through suspected].\"",
+    "specialistType": "professional carpet cleaner with combination-stain (sugar + protein + oil + tannin) chemistry; specialty wool carpet cleaner if wool"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Synthetic (nylon / polyester / olefin) carpet or wool?",
+      "Pad Thai, lo mein, drunken noodles, or other Asian sauce?",
+      "Has hot water / steam / hot vacuum been used?",
+      "Has alkaline cleaner been used as first step?",
+      "Pad bleed-through visible?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Wool carpet protocol is pro because peroxide yellows wool and broad-spectrum enzymes damage the keratin. Sugar caramelization plus pour-on saturation are the two silent failure modes — both lock the stain in ways pro chemistry can't easily reverse. Damp-cloth-only application is non-negotiable on carpet."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,80 +1,242 @@
 {
   "id": "tomato-sauce-polyester",
   "title": "Tomato Sauce on Polyester",
-  "stainFamily": "tannin",
+  "stainType": "combo",
+  "stainFamily": "combo",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Tomato sauce contains tomato red pigment, citric acid, tannins, and oils (from cooking). The tomato red pigment is fat-soluble and bonds to polyester through hydrophobic interactions. The tannin component grip to fiber. The combination of oil and tannin makes this a two-phase stain that requires sequential treatment.",
-  "whyThisWorks": "Surfactant emulsifies the oil component and breaks through the lipid barrier on polyester. The tannin spotter then targets the polyphenol bonds. An oxidizer addresses the tomato red pigment pigment. Avoiding heat is important — heat polymerizes the tomato red pigment and locks the color into the fiber permanently.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–60 minutes; oleophilic 2 Dawn passes + sunlight finisher; honest cap on dyed",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "tomato-sauce",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "tomato-sauce",
+      "tannin",
+      "oil",
+      "combo",
+      "polyester",
+      "no-alkaline",
+      "no-hot-water",
+      "no-hot-dryer",
+      "oleophilic-fiber",
+      "sunlight-finisher",
+      "honest-cap"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Tomato sauce on polyester is a tougher version of the linen / cotton case. Three components: tomato red pigment (lycopene, fat-soluble), plant tannin, and oil. Polyester adds OLEOPHILIC affinity (grabs the oil tight) and heat-sensitivity (hot water sets tannin and lycopene into the fiber, hot dryer locks the orange shadow permanently and yellows polyester over time). The oil-strip step is even more important on polyester than on cotton — Dawn × 2 typical. Recurring traps: hot water (sets), alkaline cleaners (darken tannin permanently), and skipping the oil-strip (orange ghost remains). Honest cap on dyed polyester: faint orange shadow often plateaus.",
+  "whyThisWorks": "Powder preload pulls bulk before water spreads it. Generous Dawn × 2 strips the oil that polyester grabbed onto and that's holding lycopene in place. Vinegar disrupts tannin grip. 3% peroxide on white polyester partially oxidizes lycopene. Sunlight is the most reliable finisher — UV photodegrades lycopene over hours-to-days. Cool wash plus AIR-DRY locks nothing.",
+  "scienceNote": "Mechanism (pro-facing): tomato sauce is lycopene (fat-soluble carotenoid) + tannin polyphenols + olive/canola oil. Polyester is hydrophobic and oleophilic — lycopene partitions strongly into the fiber via the oil carrier. Pro uses NSD oil-strip + acid-side tannin spotter + 3% H₂O₂ + UV-assist + acetic acid neutralizing rinse.",
+  "defaultAssumption": "Pasta night spill on a polyester shirt. Fresh = real shot. Hot-dried = often a permanent orange shadow. Performance / specialty / dry-clean-only polyester = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Solids + Powder Preload",
+      "technique": "Bulk-lift then absorb",
+      "equipment": "Plastic spoon, cornstarch / baking soda",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Scrape solid sauce off with plastic spoon edge — never rub. Cover spot with cornstarch / baking soda. 20–30 min absorb. Soft-brush off."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "technique": "Strip oil — mandatory before peroxide",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly. Soft toothbrush 10 min. Polyester is oleophilic — extended dwell. Cool damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Repeat Dawn — Polyester Needs 2 Passes",
+      "technique": "Second pass for stubborn oil",
+      "equipment": "Dawn + cool water",
+      "dwellTime": "10 minutes",
+      "instruction": "Touch with fingertip. Oily feel = repeat Dawn. 2 Dawn passes typical on polyester for tomato oil."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "White Vinegar — Tannin Acid",
+      "technique": "Mild acid disrupts tannin",
+      "equipment": "1:1 white vinegar + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar + cool water on damp cloth, 5 min. Damp-cloth rinse THOROUGHLY before any peroxide."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for White Polyester",
+      "technique": "Oxidize lycopene",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE polyester only. Hidden test on dyed. 3% peroxide damp cloth 5–10 min. NEVER mix with chlorine, ammonia, or alkaline cleaners."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Sunlight Finisher",
+      "technique": "UV photodegrades residual orange",
+      "equipment": "Direct sunlight",
+      "dwellTime": "Several hours, multi-day if needed",
+      "instruction": "Hang in direct sunlight while damp. UV breaks down residual lycopene — most reliable finisher. Multi-day for stubborn orange ghost."
+    },
+    {
+      "step": 7,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water",
+      "dwellTime": "Cool cycle + AIR-DRY",
+      "instruction": "Cool machine wash. AIR-DRY only. Inspect dry. NEVER hot dryer until cleared. Honest cap on dyed polyester: faint orange shadow may remain."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Scrape solids + cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "2. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "3. Repeat Dawn pass — polyester needs 2 typically.",
+      "4. White vinegar 1:1 cool 5 min — rinse before peroxide.",
+      "5. 3% H₂O₂ for white polyester, hidden test on dyed.",
+      "6. Sunlight finisher — UV photodegrades residual orange.",
+      "7. Cool wash + AIR-DRY. Honest cap on dyed."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "Dawn / NSD",
+      "White vinegar",
+      "3% Hydrogen peroxide (white polyester)",
+      "Sunlight",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets tannin and lycopene into polyester",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color"
+      "Oil-strip BEFORE peroxide — Dawn × 2 typical on polyester",
+      "NEVER hot water — sets tannin and lycopene into polyester",
+      "NEVER alkaline cleaners — DARKEN tannin permanently",
+      "NEVER hot dryer until cleared",
+      "Hidden test on dyed polyester before peroxide",
+      "Performance / specialty polyester = pro",
+      "Honest cap on dyed polyester for residual orange"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Polyester Loves Tomato Oil — Powder Plus Two Dawn Passes Plus Sunlight",
+      "instruction": "Tomato sauce on polyester is harder than on cotton because polyester is oleophilic (grabs the oil tight) and locks color under heat. The lycopene is fat-soluble — locked behind the oil until Dawn strips it. Path: scrape + powder → Dawn × 2 → vinegar → 3% peroxide on white → sunlight → cool wash. Three hard rules: NO hot water (sets tannin and lycopene), NO alkaline cleaners (darken tannin permanently), NO hot dryer until cleared (locks orange shadow + yellows polyester). Honest cap on dyed polyester — faint orange shadow may persist."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Solids + Cornstarch Preload",
+      "instruction": "Scrape solid sauce off with a plastic spoon edge — flat-edge work only, never rub. Cover the spot with cornstarch or baking soda. 20 to 30 minutes. Soft-brush off."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn Pretreat — Mandatory Oil-Strip",
+      "instruction": "Generous Dawn dish soap directly on the spot. Work in with a soft toothbrush for 10 minutes. Polyester is oleophilic — extended dwell. This step is MANDATORY — without oil-strip, peroxide can't reach lycopene. Cool damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "agent": "Repeat Dawn — Polyester Needs Two Passes",
+      "instruction": "Touch the spot with a clean fingertip. Still oily? Repeat Dawn. Polyester typically needs 2 Dawn passes for tomato oil."
+    },
+    {
+      "step": 5,
+      "agent": "White Vinegar — Tannin Acid",
+      "instruction": "Mix 1 part white vinegar with 1 part cool water. Apply with a damp cloth, press 5 minutes. Disrupts tannin grip. Damp-cloth rinse THOROUGHLY before any peroxide."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide for White Polyester",
+      "instruction": "WHITE polyester only: 3% drugstore peroxide on a damp cloth, press 5 to 10 minutes for residual lycopene color. Hidden-area test on dyed polyester first.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners — toxic fumes."
+    },
+    {
+      "step": 7,
+      "agent": "Sunlight — The Real Finisher",
+      "instruction": "Hang the damp polyester in direct sunlight for several hours. UV breaks down residual lycopene — most reliable finisher. Multi-day for stubborn orange ghost."
+    },
+    {
+      "step": 8,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash. AIR-DRY only. Inspect dry. NEVER hot dryer until cleared — locks orange shadow into polyester and yellows fiber over time. Honest cap on dyed polyester: faint shadow may remain."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. NO hot water. NO alkaline. NO hot dryer until cleared.",
+      "2. Scrape solids + cornstarch preload 20–30 min.",
+      "3. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "4. Repeat Dawn pass — 2 passes typical.",
+      "5. Diluted white vinegar 5 min — rinse before peroxide.",
+      "6. 3% peroxide damp cloth on white polyester only.",
+      "7. Sunlight finisher — hours to multi-day.",
+      "8. Cool wash + AIR-DRY."
     ],
     "products": [
-      "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "Cornstarch / baking soda",
+      "Dawn dish soap (generous)",
+      "White vinegar",
+      "3% Hydrogen peroxide (white polyester)",
+      "Sunlight",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if hot water or hot dryer was already used (often permanent on polyester). Stop if alkaline cleaner was used as first step. Stop on performance / specialty polyester. Stop after multi-day sunlight plateau on dyed.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "Oil-strip BEFORE peroxide — Dawn × 2 typical",
+      "NEVER hot water — sets tannin and lycopene",
+      "NEVER alkaline cleaners — DARKEN tannin permanently",
+      "NEVER hot dryer until cleared",
+      "Hidden test on dyed polyester",
+      "Honest cap on dyed for residual orange"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on tomato sauce + polyester",
+      "Never alkaline cleaners on tannin",
+      "Never hot dryer until cleared",
+      "Never skip Dawn oil-strip before peroxide",
+      "Never mix peroxide + chlorine + ammonia + alkaline"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — needs 2 Dawn passes for tomato oil",
+      "Polyester locks color under heat",
+      "Performance / specialty polyester: pro",
+      "Dyed polyester: hidden test + honest cap"
     ]
   },
+  "materialWarnings": [
+    "Polyester loves tomato oil — Dawn × 2 mandatory",
+    "Sunlight is the most reliable finisher for residual orange",
+    "No hot water / no hot dryer — polyester locks color",
+    "Honest cap on dyed polyester"
+  ],
   "escalation": {
-    "when": "If tomato sauce stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is tomato sauce on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used. Alkaline cleaner used as first step. Performance / specialty polyester. Multi-day sunlight plateau on dyed.",
+    "whatToTell": "\"Tomato sauce on [white / dyed / athletic / specialty] polyester, [marinara / vodka / pizza / cream-based], age [fresh / hours / hot-dried suspected], home-treated with [scrape + cornstarch + Dawn × 2 + vinegar + 3% peroxide on white + sunlight × N hours/days + cool wash]. No hot, no alkaline. [Residual orange / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with combination-stain chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Marinara, vodka sauce, pizza sauce, cream-based?",
+      "White, dyed, athletic, or specialty polyester?",
+      "Has alkaline cleaner been used as first step?",
+      "Has hot water or hot dryer been used?",
+      "Sunny location available?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Cream-based tomato sauces add the milk-protein step (use coffee-cream-polyester order). Polyester loves tomato oil — Dawn × 2 mandatory. Sunlight is the most reliable finisher. Honest cap on dyed polyester for residual orange shadow."
   },
-  "difficulty": 4,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

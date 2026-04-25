@@ -1,79 +1,237 @@
 {
   "id": "pad-thai-cotton",
   "title": "Pad Thai / Noodle Sauce on Cotton",
+  "stainType": "combo",
   "stainFamily": "combo",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Pad Thai sauce contains tamarind (tannin), fish sauce (protein, salt), sugar (caramelizes), chili oil, and peanut oil. On cotton, this creates a multi-layer stain: sugar matrix traps pigment, protein bonds to fiber, oil penetrates deeply, and tannin adds color. The high sugar content means heat exposure caramelizes the stain rapidly.",
-  "whyThisWorks": "Cold water dissolves the sugar matrix on cotton before it caramelizes. Protein treatment addresses the fish sauce component (cold, no heat). Surfactant emulsifies the oils. Tannin spotter targets the tamarind discoloration. Speed matters — once the sugar sets, removal difficulty increases significantly.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–60 minutes; 4-component combo (sugar + protein + oil + tannin), order matters",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "pad-thai",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "pad-thai",
+      "noodle-sauce",
+      "combo",
+      "sugar",
+      "protein",
+      "oil",
+      "tannin",
+      "cotton",
+      "no-hot-water",
+      "no-alkaline",
+      "order-matters"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Pad Thai / noodle sauce is a four-component combo: tamarind (tannin), fish sauce (protein and salt), sugar (caramelizes under heat into a sticky lock), peanut oil and chili oil (fat-soluble carriers for any pigments). The sugar is the trap — it's a sticky matrix that holds everything else against the cotton, and heat caramelizes it into a near-permanent sticky residue. Order matters: cold flush sugar FIRST → cool enzyme for protein → Dawn for oil → vinegar for tannin → peroxide on white for residual color. Recurring traps: hot water (caramelizes sugar + cooks protein + sets tannin all at once), alkaline cleaners as first step (darken tannin permanently), and skipping the Dawn oil-strip (peanut/chili oil holds residual color). Cotton has the widest home bench but order discipline matters most on this stain.",
+  "whyThisWorks": "Long cold flush dissolves sugar before it caramelizes. Cool enzyme pretreat handles the fish-sauce protein at cool temperature. Dawn strips the peanut and chili oil. Vinegar disrupts the tamarind tannin. 3% peroxide on white cotton finishes residual color. Hot wash AFTER chemistry is safe — protein is gone, oil is stripped, tannin is acid-treated. AIR-DRY first time prevents heat-locking any residual sugar.",
+  "scienceNote": "Mechanism (pro-facing): pad-thai is tamarind tannin polyphenols + fish-sauce proteins + sucrose/palm sugar (caramelizes above ~150°C) + peanut oil + chili oil with capsanthin pigment. Pro uses cold flush + protein spotter (cool) + NSD oil-strip + acid-side tannin spotter + 3% H₂O₂ for residual chromophore.",
+  "defaultAssumption": "Thai food / noodle takeout spill on a cotton shirt or napkin. Fresh = full sequence has a real shot. Hot-dried = often a sticky brown shadow with caramelized sugar. Cotton's widest bench applies.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Solids",
+      "technique": "Lift bulk noodles + sauce",
+      "equipment": "Plastic spoon edge",
+      "dwellTime": "1 minute",
+      "instruction": "Scrape solid noodles and sauce off with plastic spoon edge — flat-edge work only, never rub."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Long Cold Water Back-Flush",
+      "technique": "Dissolve sugar before caramelization",
+      "equipment": "Cold running water, white catch towel",
+      "dwellTime": "90 seconds",
+      "instruction": "Hold the BACK of the spot under cold running water 90+ sec — longer than standard because sugar is the lock. Cold only — heat caramelizes sugar AND cooks protein AND sets tannin."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Enzyme Pretreat — Cool, Protein FIRST",
+      "technique": "Protein digestion before tannin acid",
+      "equipment": "OxiClean Versatile / Biz / Tide Plus per label, COOL water",
+      "dwellTime": "20 minutes",
+      "instruction": "Dissolve enzyme pretreat in COOL water. Apply to spot, keep damp under a cloth, 20 min. Handles the fish-sauce protein. Cool only — heat damages enzymes AND sets the protein."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Strip Oil",
+      "technique": "Peanut / chili oil strip",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Generous Dawn. Soft toothbrush 5–10 min. Strips peanut and chili oil that's holding any pigment. Cool damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "White Vinegar — Tannin Acid",
+      "technique": "Mild acid for tamarind tannin",
+      "equipment": "1:1 white vinegar + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar + cool water on damp cloth, 5 min. Damp-cloth rinse THOROUGHLY before any peroxide."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for White Cotton",
+      "technique": "Oxidize residual color",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE cotton: 3% peroxide damp cloth 5–10 min. Hidden test on dyed cotton. NEVER mix with chlorine bleach, ammonia, or alkaline cleaners."
+    },
+    {
+      "step": 7,
+      "side": "wet",
+      "agent": "Hot Wash — Safe AFTER Chemistry",
+      "technique": "Launder hot per care label",
+      "equipment": "Washing machine, hot water (per care label)",
+      "dwellTime": "Full hot cycle",
+      "instruction": "Hot wash per care label. Safe at this point — sugar flushed, protein digested, oil stripped, tannin acid-treated. Cotton tolerates hot up to 200°F. AIR-DRY first time + inspect."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove excess solids with dull edge — do not rub",
-      "2. Apply Tannin Formula for the plant-pigment component",
-      "3. Apply POG for the oil component",
-      "4. Flush with NSD and cool water",
-      "5. If color persists: apply H2O2 6% on colorfast fabrics",
-      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+      "1. Scrape solids gently.",
+      "2. Long cold water back-flush 90+ sec — dissolve sugar.",
+      "3. Enzyme pretreat in COOL water, 20 min — protein FIRST.",
+      "4. Generous Dawn pretreat, cool, 5–10 min — oil strip.",
+      "5. White vinegar 1:1 cool 5 min — tannin acid, rinse before peroxide.",
+      "6. 3% H₂O₂ damp cloth on white cotton.",
+      "7. Hot wash per care label — safe AFTER chemistry. AIR-DRY first time."
     ],
     "products": [
-      "Tannin Formula",
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Enzyme pretreat (OxiClean Versatile / Biz / Tide Plus / liquid Protein Spotter)",
+      "Dawn / NSD",
+      "White vinegar",
+      "3% Hydrogen peroxide (white cotton)",
+      "Cool water for chemistry, hot wash AFTER"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool through chemistry; hot wash AFTER protein/oil cleared",
+    "warnings": [
+      "ORDER MATTERS — sugar flush, then protein, then oil, then tannin acid, then peroxide",
+      "NEVER hot water — caramelizes sugar + cooks protein + sets tannin",
+      "NEVER alkaline cleaners as first step — DARKEN tannin permanently",
+      "NEVER hot dryer with residual sticky sugar — locks permanently",
+      "Hidden test on dyed cotton before peroxide",
+      "Cotton's widest bench applies AFTER chemistry — hot wash safe at the end"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Four Stains in One — Order Matters",
+      "instruction": "Pad Thai sauce is sugar + protein + oil + tannin all at once. The sugar is the trap — it's sticky, holds everything else against the fabric, and caramelizes if any heat touches it. Order: long cold flush (sugar) → cool enzyme (protein) → Dawn (oil) → vinegar (tannin) → 3% peroxide on white cotton (residual color) → hot wash AFTER. Two hard rules: NO hot water (caramelizes sugar + cooks protein + sets tannin all at once) and NO alkaline cleaners as first step (darken tannin permanently)."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Solids — No Rubbing",
+      "instruction": "Scrape solid noodles, peanuts, sauce off with a plastic spoon edge. Flat-edge work only — never rub. Rubbing pushes the sticky sauce into the cotton weave."
+    },
+    {
+      "step": 3,
+      "agent": "Long Cold Water Back-Flush — Ninety Seconds Plus",
+      "instruction": "Turn the cotton inside out. Hold the BACK of the spot under cold running water for at least 90 seconds — longer than most stains because sugar is the lock. Cold only — heat caramelizes the sugar."
+    },
+    {
+      "step": 4,
+      "agent": "Enzyme Pretreat — Cool Water, Protein FIRST",
+      "instruction": "Dissolve an enzyme pretreat (OxiClean Versatile, Biz, or Tide Plus) in COOL water per the label. Apply to the spot, keep damp under a cloth, 20 minutes. The enzyme dismantles the fish-sauce protein. Cool only — heat damages enzymes AND sets the protein."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn Pretreat — Strip Peanut + Chili Oil",
+      "instruction": "Generous Dawn dish soap directly on the spot. Work in with a soft toothbrush for 5 to 10 minutes. Cuts the peanut and chili oil that's holding any residual pigment. Cool damp-cloth rinse."
+    },
+    {
+      "step": 6,
+      "agent": "White Vinegar — Tannin Acid",
+      "instruction": "Mix 1 part white vinegar with 1 part cool water. Apply with a damp cloth, press 5 minutes. Disrupts the tamarind tannin grip. Damp-cloth rinse THOROUGHLY before any peroxide."
+    },
+    {
+      "step": 7,
+      "agent": "3% Peroxide for White Cotton",
+      "instruction": "WHITE cotton: 3% drugstore peroxide on a damp cloth, press 5 to 10 minutes for residual color. Hidden-area test on dyed cotton first.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners — toxic fumes."
+    },
+    {
+      "step": 8,
+      "agent": "Hot Wash — Safe AFTER Chemistry",
+      "instruction": "Hot machine wash per care label. Safe at this point because sugar is flushed, protein is digested, oil is stripped, tannin is acid-treated. Cotton tolerates hot up to 200°F. AIR-DRY first time + inspect before any dryer."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub",
-      "2. Rinse with cold water to remove loose material",
-      "3. Apply Dawn dish soap. Work gently",
-      "4. Blot with clean white cloth. Repeat if needed",
-      "5. Air dry — no heat until stain is gone"
+      "1. NO hot water. NO alkaline cleaners as first step. NO hot dryer until cleared.",
+      "2. Scrape solids with plastic edge.",
+      "3. Long cold back-flush 90+ sec — dissolve sugar.",
+      "4. Enzyme pretreat in COOL water, 20 min — protein FIRST.",
+      "5. Generous Dawn pretreat, cool, 5–10 min — oil strip.",
+      "6. Diluted white vinegar 5 min — tannin acid, rinse before peroxide.",
+      "7. 3% peroxide damp cloth on white cotton.",
+      "8. Hot wash per care label — safe AFTER chemistry. AIR-DRY first time."
     ],
     "products": [
-      "Dawn dish soap"
+      "Enzyme pretreat (OxiClean Versatile, Biz, Tide Plus)",
+      "Dawn dish soap",
+      "White vinegar",
+      "3% Hydrogen peroxide (white cotton)",
+      "Cool water for chemistry, hot wash AFTER"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if hot water or hot dryer was used (often locks sugar + cooked protein + set tannin). Stop if alkaline cleaner was used as first step. Stop after 3 home cycles plateau.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "ORDER MATTERS — sugar flush FIRST, protein SECOND, oil THIRD, tannin acid FOURTH, peroxide LAST",
+      "NEVER hot water at any pre-wash step",
+      "NEVER alkaline cleaners as first step — darken tannin permanently",
+      "NEVER hot dryer with sticky residue",
+      "Hidden test on dyed cotton before peroxide"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never hot water during pre-wash chemistry",
+      "Never alkaline cleaners as first step on tannin",
+      "Never hot dryer with sticky residue",
+      "Never reverse the order — sugar FIRST, then protein, then oil, then acid, then peroxide",
+      "Never mix peroxide + chlorine + ammonia + OxiClean"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "Cotton: widest bench AFTER chemistry — hot wash safe at the end",
+      "Dyed cotton: hidden peroxide test mandatory",
+      "Cotton blend with polyester: cool only — heat sets oil into polyester even if cotton tolerates it",
+      "Cotton blend with elastane: skip chlorine bleach (destroys elastane)"
     ]
   },
+  "materialWarnings": [
+    "Order matters more than chemistry choice — sugar / protein / oil / tannin / color in sequence",
+    "No hot water during chemistry — caramelizes sugar, cooks protein, sets tannin",
+    "Hot wash is finishing-side AFTER chemistry, not setting-side",
+    "No alkaline cleaners as first step — darken tannin permanently"
+  ],
   "escalation": {
-    "when": "If pad thai stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is pad thai on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer was used early (often locks sugar + cooked protein + set tannin permanently). Alkaline cleaner was used as first step. Cotton blend with polyester (cool-only rules apply). 3 home cycles plateau.",
+    "whatToTell": "\"Pad Thai / noodle sauce on [white / dyed / blend] cotton, age [fresh / hours / hot-dried suspected], home-treated with [scrape + long cold back-flush + cool enzyme + Dawn + vinegar + 3% peroxide on white + hot wash + air-dry]. Order followed. No hot pre-wash, no alkaline first. [Residual sticky shadow / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with combination-stain (sugar + protein + oil + tannin) chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Pad Thai, lo mein, drunken noodles, or other Asian sauce?",
+      "White, dyed, or blend cotton?",
+      "Has hot water or hot dryer been used?",
+      "Has alkaline cleaner been used as first step?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Pad Thai is the four-component combo template — same protocol applies to similar Asian noodle sauces (lo mein, drunken noodles, Singapore noodles). Sugar caramelization is the lock that home users most commonly fail; long cold flush is the unlock. Order discipline matters more than product choice."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

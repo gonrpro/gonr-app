@@ -1,83 +1,224 @@
 {
   "id": "coffee-cream-polyester",
   "title": "Coffee with Cream on Polyester",
+  "stainType": "combo",
   "stainFamily": "combo",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Coffee with cream is a triple-component stain: tannins from coffee, milk protein, and butterfat. On polyester, each component bonds differently — tannins through grip, protein through hydrophobic interactions, and fat through lipid-fiber affinity. The protein must be addressed first because heat used to remove other components would set it permanently.",
-  "whyThisWorks": "Treatment order is non-negotiable on polyester: tannin first (acidic spotter), then protein (cold enzyme or surfactant), then fat (POG or degreaser). This sequence prevents cross-contamination between treatment chemistries. The tannin must be addressed before the protein because alkaline protein treatment would permanently darken the tannin component.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–45 minutes; cool-only protein FIRST, vinegar SECOND, peroxide on white only",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "coffee-cream",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "coffee",
+      "cream",
+      "tannin",
+      "milk-protein",
+      "combo",
+      "polyester",
+      "no-hot-water",
+      "no-alkaline",
+      "no-hot-dryer",
+      "order-matters"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Coffee with cream on polyester is a three-part combo: tannin (coffee), milk protein (cream), and milk fat (cream). Order matters: cool enzyme handles the protein FIRST, then vinegar handles the tannin, then 3% peroxide on white polyester handles residual color. The recurring traps stack up: (1) hot water (cooks the milk protein into the polyester AND sets the tannin AND yellows the polyester over time), (2) alkaline cleaners as the first step (lock tannin into a darker brown — OxiClean alone before peroxide is the classic failure), and (3) skipping the protein step (going straight to peroxide locks unhydrolyzed protein into the fiber as a permanent brown shadow). Polyester is OLEOPHILIC and grabs the milk fat tight too, so 2 Dawn passes are typical for the fat component.",
+  "whyThisWorks": "Cool enzyme pretreat dismantles the milk protein at cool temperature. Diluted vinegar then disrupts the tannin grip and keeps it on the lighter side. 3% peroxide on white polyester finishes residual chromophore. Cool wash plus AIR-DRY locks nothing. The order is non-negotiable: protein FIRST, then tannin acid, then oxidizer — reverse the order and the protein cooks in.",
+  "scienceNote": "Mechanism (pro-facing): coffee-cream is tannin polyphenols + casein protein + butterfat. Pro uses cold liquid Protein Spotter (protease pretreat) plus acid-side tannin spotter plus 3% H₂O₂ for residual chromophore plus acetic acid neutralizing rinse. Casein denatures and locks above ~50°C; tannin darkens under alkaline conditions.",
+  "defaultAssumption": "Latte / cappuccino / coffee-with-cream spill on a polyester shirt or athletic wear. Fresh = real shot at full removal. Hot-dried = often permanent brown shadow with cooked-in protein. Performance / specialty / dry-clean-only polyester = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet-minimal",
+      "agent": "Cool Water Blot",
+      "technique": "Cold flush before any heat",
+      "equipment": "Cool water, white cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Damp white cloth with COOL water. Press, lift, rotate. Cool only — heat cooks the milk protein AND sets the tannin AND yellows the polyester."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Enzyme Pretreat — Cool, Not Hot — PROTEIN FIRST",
+      "technique": "Protein digestion BEFORE tannin or peroxide",
+      "equipment": "OxiClean Versatile / Biz / Tide Plus per label, COOL water",
+      "dwellTime": "20 minutes",
+      "instruction": "Dissolve enzyme pretreat in COOL water. Apply to spot, keep damp under a cloth, dwell 20 min. ORDER MATTERS — protein first. Hot water above bath temperature damages enzymes AND sets the protein. Cool only."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "White Vinegar — Tannin SECOND",
+      "technique": "Mild acid disrupts tannin grip",
+      "equipment": "1:1 white vinegar + cool water on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "After enzyme step: vinegar + cool water on damp cloth, press 5–10 min. Damp-cloth rinse THOROUGHLY before any peroxide (acid + peroxide degrades the peroxide)."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Cut the Milk Fat",
+      "technique": "Emulsify fat fraction",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Generous Dawn on the spot. Soft toothbrush 5–10 min. Polyester is oleophilic — extended dwell needed. Cool damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Residual Brown — White Polyester Only",
+      "technique": "Bounded oxidation for residual color",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE polyester only. Hidden test on dyed polyester. 3% peroxide damp cloth 5–10 min for residual brown chromophore. NEVER mix with chlorine bleach, ammonia, or alkaline cleaners."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water",
+      "dwellTime": "Cool cycle + AIR-DRY",
+      "instruction": "Cool machine wash. SKIP fabric softener. AIR-DRY only. Inspect dry. NEVER hot dryer until cleared."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic spotter) first to address coffee tannin",
-      "2. Apply Protein Formula to address the milk protein component. Tamp gently",
-      "3. Apply POG to address the butterfat component",
-      "4. Flush with NSD and cool water to remove all residue",
-      "5. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse — 1-2 min. Blot dry"
+      "1. Cool damp-cloth blot.",
+      "2. Enzyme pretreat in COOL water, 20 min — PROTEIN FIRST.",
+      "3. White vinegar 1:1 cool — tannin SECOND, rinse before peroxide.",
+      "4. Generous Dawn pretreat for milk fat, cool, 5–10 min.",
+      "5. 3% H₂O₂ damp cloth for residual brown on white polyester only.",
+      "6. Cool wash + AIR-DRY. No softener, no dryer until cleared."
     ],
     "products": [
-      "Tannin Formula",
-      "Protein Formula",
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Enzyme pretreat (OxiClean Versatile / Biz / Tide Plus / liquid Protein Spotter)",
+      "White vinegar",
+      "Dawn / NSD",
+      "3% Hydrogen peroxide (white polyester)",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets protein and tannin and yellows polyester",
     "warnings": [
-      "Treatment order: tannin first, then protein, then fat — do not reverse",
-      "COLD water throughout — heat sets the protein component"
+      "ORDER MATTERS — protein FIRST (enzyme cool), tannin SECOND (vinegar), peroxide LAST",
+      "NEVER hot water — cooks milk protein, sets tannin, yellows polyester",
+      "NEVER alkaline cleaners (baking soda, ammonia, OxiClean alone before peroxide) — DARKEN tannin",
+      "NEVER hot dryer until cleared",
+      "NEVER fabric softener — coats fiber, blocks future cleaning",
+      "Polyester is oleophilic — Dawn dwell on milk fat",
+      "Hidden test on dyed polyester before peroxide"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Three Stains, One Order — Protein First",
+      "instruction": "Coffee with cream is three stains stuck together: milk protein, milk fat, and coffee tannin. The order matters more than the products. Protein FIRST (enzyme pretreat in cool water), tannin SECOND (vinegar), residual color LAST (peroxide on white polyester). Reverse the order and the protein cooks in or the tannin darkens permanently. Two hard rules: NO hot water (cooks protein, sets tannin, yellows polyester) and NO alkaline cleaners (baking soda, ammonia, OxiClean alone) — darken tannin permanently."
+    },
+    {
+      "step": 2,
+      "agent": "Cool Damp-Cloth Blot",
+      "instruction": "Damp white cloth with COOL water. Press, lift, rotate. Cool only. Polyester punishes any heat at any step on this combo."
+    },
+    {
+      "step": 3,
+      "agent": "Enzyme Pretreat — Cool Water, Protein FIRST",
+      "instruction": "Dissolve an enzyme pretreat (OxiClean Versatile, Biz, or Tide Plus) in COOL water per the label. Apply to the spot, keep damp under a cloth, wait 20 minutes. The enzyme dismantles the milk protein at cool temperature. Protein has to be cleared FIRST — if you skip this and go straight to peroxide, the protein cooks into the polyester as a permanent brown shadow."
+    },
+    {
+      "step": 4,
+      "agent": "White Vinegar — Tannin SECOND, Rinse Before Peroxide",
+      "instruction": "After the enzyme step: mix 1 part white vinegar with 1 part cool water. Apply with a damp cloth, press 5 to 10 minutes. The mild acid keeps the tannin on the lighter side and disrupts its grip. Damp-cloth rinse THOROUGHLY before any peroxide — acid plus peroxide in the same dwell degrades the peroxide and makes it ineffective."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn — Cut the Milk Fat",
+      "instruction": "Polyester is oleophilic — it grabs the cream's milk fat tight. Apply a generous amount of Dawn dish soap. Work in with a soft toothbrush for 5 to 10 minutes. Cool damp-cloth rinse."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide for Residual Brown — White Polyester Only",
+      "instruction": "WHITE polyester only: 3% drugstore peroxide on a damp cloth, press 5 to 10 minutes for residual brown color. Hidden-area test on dyed polyester first — skip if color transfers.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners — toxic fumes."
+    },
+    {
+      "step": 7,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. SKIP fabric softener. AIR-DRY only. Inspect in daylight before any dryer. NEVER hot dryer until cleared — locks anything residual into polyester permanently."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth — never rub",
-      "2. Apply Dawn dish soap mixed with cold water to address the tannin and fat",
-      "3. Blot. If stain persists, apply hydrogen peroxide 3% for the color component",
-      "4. Rinse thoroughly with COLD water — cold is critical for the protein (cream) component",
-      "5. Air dry — no heat, no dryer"
+      "1. NO hot water. NO alkaline cleaners. NO hot dryer until cleared.",
+      "2. Cool damp-cloth blot.",
+      "3. Enzyme pretreat in COOL water, 20 min — PROTEIN FIRST.",
+      "4. White vinegar 1:1 cool 5–10 min — tannin SECOND, rinse THOROUGHLY before peroxide.",
+      "5. Generous Dawn pretreat, cool, 5–10 min — milk fat.",
+      "6. 3% peroxide damp cloth on white polyester only — residual brown.",
+      "7. Cool wash + AIR-DRY. No softener, no dryer until cleared."
     ],
     "products": [
+      "Enzyme pretreat (OxiClean Versatile, Biz, Tide Plus)",
+      "White vinegar",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% Hydrogen peroxide (white polyester only)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if hot water or hot dryer was already used (often permanent — protein cooked + tannin set + polyester yellowed). Stop if alkaline cleaner was used as first step (darkened tannin permanently). Stop on performance / specialty / dry-clean-only polyester (pro). Stop after 3 home cycles plateau.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "ORDER MATTERS — protein FIRST, tannin SECOND, peroxide LAST",
+      "NEVER hot water — cooks protein, sets tannin, yellows polyester",
+      "NEVER alkaline cleaners — DARKEN tannin permanently",
+      "NEVER hot dryer until cleared",
+      "NEVER fabric softener — coats fiber, blocks cleaning",
+      "Polyester is oleophilic — extended Dawn dwell on milk fat",
+      "Hidden test on dyed polyester before peroxide"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on coffee-cream + polyester — cooks protein, sets tannin, yellows fiber",
+      "Never alkaline cleaners on tannin — darken permanently",
+      "Never hot dryer until cleared",
+      "Never reverse the order — protein FIRST, then tannin, then peroxide",
+      "Never mix peroxide + chlorine + ammonia + OxiClean"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs milk fat tightly",
+      "Polyester yellows under heat over time",
+      "Performance / specialty polyester (compression, technical): pro — coatings react unpredictably",
+      "Dyed polyester: hidden peroxide test mandatory"
     ]
   },
+  "materialWarnings": [
+    "ORDER MATTERS — protein FIRST, tannin SECOND, peroxide LAST",
+    "No hot water — cooks protein, sets tannin, yellows polyester",
+    "No alkaline cleaners — darken tannin permanently",
+    "Polyester loves milk fat — extended Dawn dwell needed"
+  ],
   "escalation": {
-    "when": "If coffee cream stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is coffee cream on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent — protein cooked + tannin set + polyester yellowed). Alkaline cleaner already used as first step (darkened tannin). Performance / specialty / dry-clean-only polyester. 3 home cycles plateau.",
+    "whatToTell": "\"Coffee with cream on [white / dyed / athletic / specialty] polyester, age [fresh / hours / hot-dried suspected], home-treated with [cool enzyme pretreat (protein first) + diluted vinegar (tannin second) + Dawn for milk fat + 3% peroxide on white + cool wash + air-dry]. No hot, no alkaline. [Residual brown shadow / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with combination-stain (protein + tannin + oil) chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Latte, cappuccino, coffee-with-cream, or coffee-with-half-and-half?",
+      "White, dyed, athletic, or specialty polyester?",
+      "Fresh, hours old, or hot-dried already?",
+      "Has alkaline cleaner been used (darkens tannin permanently)?",
+      "Has hot water or hot dryer been used (cooks protein)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The order discipline is the entire job — protein FIRST or the protein cooks into the polyester. Latte with whole milk has more protein and fat than cappuccino with skim; manage the Dawn step accordingly. Hot-dried coffee-cream on polyester is the trifecta failure: cooked protein + set tannin + yellowed polyester — often unrecoverable."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

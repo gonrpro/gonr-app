@@ -1,92 +1,206 @@
 {
   "id": "coffee-black-carpet",
-  "title": "Coffee (Black) on Carpet",
+  "title": "Black Coffee on Carpet",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "carpet",
-  "sector": "home",
+  "sector": "carpet",
   "source": "verified",
-  "stainChemistry": "Tannins are tannin-type plant compounds (from tea, coffee, red wine, fruit juices) that bond to fibers tightlyand π-stacking interactions with cellulose and protein fibers. Fresh tannin stains are removable with NSD. Aged stains oxidize and darken: the brown color is caused by oxidation products. H₂O₂ 6% breaks the double bonds in the oxidized tannin molecules, reversing the browning. Sodium hydrosulfite provides a reducing alternative for fibers that cannot tolerate bleaching. Black coffee is a pure tannin stain — no fat, no protein components.",
-  "whyThisWorks": "Coffee soaks through carpet into the padding below. Surface cleaning alone won't reach the full stain — it hides underneath and wicks back up as the material dries. Tannin (acidic) breaks the grip between coffee pigment and carpet fiber. H₂O₂ 6% cleaves the color double bonds. Dwell time matters more than scrubbing force — the chemistry needs time to reach the depth the stain reached.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "20–40 minutes; cold flush + vinegar + 3% peroxide on hidden-test-passed synthetic carpet",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "coffee-black",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "coffee",
+      "tannin",
+      "carpet",
+      "no-alkaline",
+      "no-hot-water",
+      "no-saturation",
+      "vinegar-eligible",
+      "pad-saturation-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Black coffee on carpet is a tannin stain — no milk protein component (that's the coffee-cream version). The tannin grips fast on carpet fiber and gets WORSE under alkaline conditions (baking soda, ammonia, OxiClean alone before peroxide all darken tannin permanently). The recurring traps: (1) hot water (sets the tannin into the fiber), (2) alkaline cleaners as the first step (lock the tannin into a darker brown), (3) saturating the carpet (drives coffee into the pad below where it wicks back as a permanent ring), and (4) chlorine bleach panic moves (strips carpet dye unevenly). Wool carpet narrows the bench sharply — pro from minute one.",
+  "whyThisWorks": "Cold water blot extracts bulk tannin before it sets. Diluted vinegar's mild acid keeps tannin on the lighter side of its color range and disrupts the fiber grip. 3% peroxide on a damp cloth (hidden-test-passed synthetic carpet) handles residual brown chromophore. Weighted paper towels overnight prevent wick-back from the pad. The honest cap: hot-vacuumed or steam-cleaned coffee on dyed carpet often plateaus with a faint shadow.",
+  "scienceNote": "Mechanism (pro-facing): black coffee is melanoidins from Maillard browning + chlorogenic acid + tannin polyphenols. Tannin anchors to carpet fiber via hydrogen bonding. Pro uses cold acid-side tannin spotter (Chemspec Tannin Spotter or PRENETT-A) plus 3% H₂O₂ + acetic acid neutralizing rinse. Sodium hydrosulfite for set chromophore on synthetic carpet.",
+  "defaultAssumption": "Black coffee spill on living-room or office synthetic (nylon / polyester / olefin) carpet, fresh and not yet hot-extracted. Wool carpet = pro from minute one. Pad bleed-through visible = restoration territory.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet-minimal",
+      "agent": "Cold Water Damp-Cloth Blot",
+      "technique": "Extract bulk before tannin sets",
+      "equipment": "Cold water, white cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Wool carpet = pro from minute one. Synthetic carpet: damp white cloth with COLD water. Press, lift, rotate to clean section, press again. NEVER pour water on carpet — saturation drives coffee into the pad."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Pretreat",
+      "technique": "Mild acid disrupts tannin grip",
+      "equipment": "1 tbsp white vinegar + 1 cup cool water on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Vinegar + cool water on damp cloth, press the spot 5–10 min. Damp-cloth rinse with cool water. NEVER mix vinegar with chlorine bleach — toxic chloramine gas."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Peroxide Test",
+      "technique": "Carpet bleed test",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "Hidden carpet area: dab 3% peroxide on white cloth, press 2 min. Color transfers = skip peroxide, vinegar-only finish. Synthetic carpet usually passes; dyed wool carpet doesn't."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Residual Brown",
+      "technique": "Bounded oxidation on hidden-test-passed synthetic carpet",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Hidden-test-passed synthetic carpet only. 3% peroxide damp cloth 5–10 min for residual brown."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Weighted Paper Towels Overnight Plus Fan",
+      "technique": "Prevent wick-back from pad",
+      "equipment": "Paper towels + heavy book, fan",
+      "dwellTime": "8–12 hours",
+      "instruction": "Stack paper towels on the spot, weight overnight. Fan-dry in the morning. Pulls residual moisture and tannin out of the pile and prevents brown wicking back from the pad."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin (acidic tannin spotter) and tamp gently. Dwell 5–10 minutes. This acidic spotter targets the bonds that coffee, wine, tea, and fruit juice pigments form with carpet fiber. Work from edge toward center.",
-      "2. Apply H₂O₂ 6% (professional-grade oxidizer) to the stain. Dwell 5–15 minutes, checking every 5 minutes. This oxidizer breaks down the double bonds that make tannin stains brown. Test an inconspicuous area of carpet first.",
-      "3. Flush with NSD (Neutral Synthetic Detergent) with a mild leveling agent. Dwell 2–3 minutes. Removes broken-down tannin pigment and excess oxidizer. Rinse thoroughly.",
-      "4. Apply 28% Acetic acid (diluted 1:10) to stop oxidizer activity and restore the carpet fiber. Dwell 1–2 minutes. Blot dry and allow to air dry completely."
+      "1. Wool carpet = pro from minute one.",
+      "2. Cold damp-cloth blot — never pour.",
+      "3. Diluted white vinegar 5–10 min on damp cloth.",
+      "4. Hidden-area peroxide test on dyed carpet.",
+      "5. 3% H₂O₂ damp cloth for residual brown on hidden-test-passed synthetic carpet.",
+      "6. Weighted paper towels overnight + fan."
     ],
     "products": [
-      "Tannin (acidic tannin spotter)",
-      "H₂O₂ 6% (professional-grade oxidizer)",
-      "NSD (Neutral Synthetic Detergent) with leveling agent",
-      "28% Acetic acid (diluted 1:10)"
+      "Cold water (back-flush)",
+      "White vinegar",
+      "3% Hydrogen peroxide (synthetic carpet, hidden test)",
+      "Paper towels + weight"
     ],
-    "temperature": "ambient — never use hot water on tannin stains in carpet. Heat accelerates tannin polymerization and permanently sets the brown color.",
+    "temperature": "cool throughout — heat sets tannin",
     "warnings": [
-      "Using hot water — accelerates oxidation and sets the tannin color faster.",
-      "Applying H₂O₂ to colored carpet without testing — may bleach carpet dye.",
-      "Oversaturation with peroxide — can cause yellowing.",
-      "Not rinsing peroxide completely — residual peroxide continues bleaching.",
-      "NEVER use ammonia or alkaline agents — permanently darkens tannin stains.",
-      "Test all agents on an inconspicuous carpet area first."
+      "Wool carpet = pro from minute one",
+      "NEVER hot water — sets tannin into carpet fiber",
+      "NEVER alkaline cleaners (baking soda, ammonia, OxiClean alone) — DARKEN tannin permanently",
+      "NEVER chlorine bleach — strips carpet dye, doesn't reach pad coffee",
+      "NEVER pour water — pad saturation drives coffee into pad",
+      "Hidden peroxide test mandatory on dyed carpet",
+      "NEVER mix vinegar / peroxide with chlorine — toxic chloramine gas"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Cold and Acid First — No Alkaline Panic Moves",
+      "instruction": "Black coffee on carpet is a tannin stain. The recurring traps: hot water (sets the tannin), and alkaline cleaners — baking soda, ammonia, OxiClean alone before peroxide — all DARKEN tannin permanently. Don't reach for those. The path: cold blot → vinegar → 3% peroxide on hidden-test-passed synthetic carpet → weighted towels overnight. Wool carpet = pro from minute one."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Damp-Cloth Blot — Never Pour Water",
+      "instruction": "Damp a white cloth with COLD water. Press the spot, lift, rotate to a clean section, press again. NEVER pour water on the carpet — pour-on saturation sends coffee into the pad below where you can't reach it and it wicks back up later as a permanent ring."
+    },
+    {
+      "step": 3,
+      "agent": "Diluted White Vinegar — 5 to 10 Minutes",
+      "instruction": "Mix 1 tablespoon white vinegar with 1 cup cool water. Apply with a damp cloth, press the spot 5 to 10 minutes. The mild acid keeps tannin on the lighter side and disrupts its grip on the carpet fiber. Damp-cloth rinse with cool water. Never mix vinegar with chlorine bleach — toxic gas."
+    },
+    {
+      "step": 4,
+      "agent": "Hidden Patch Test Before Peroxide",
+      "instruction": "In a hidden carpet area, dab 3% peroxide on a white cloth, press 2 minutes. Carpet color transfers = skip peroxide. Synthetic carpet usually passes the test; dyed wool carpet doesn't (and wool went to pro at step 1 anyway)."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide for Residual Brown",
+      "instruction": "Hidden-test-passed synthetic carpet only: 3% drugstore peroxide on a damp cloth, press 5 to 10 minutes, blot.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners (baking soda, OxiClean) — toxic fumes."
+    },
+    {
+      "step": 6,
+      "agent": "Weighted Paper Towels Overnight Plus Fan",
+      "instruction": "Stack paper towels on the spot, weight with a heavy book, leave overnight. Fan-dry in the morning. This pulls residual moisture and tannin out of the carpet pile and prevents the brown shadow from wicking back up from the pad — the most common cause of 'cleaned' coffee stains reappearing as a faint ring."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot the stain with a clean white cloth to soak up as much as you can.",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup 3% hydrogen peroxide (the brown bottle from the pharmacy). Apply the solution and let it sit for 5–10 minutes.",
-      "3. Blot with a clean white cloth. Repeat until the color fades.",
-      "4. Blot with a cloth dampened with plain water to rinse — remove all cleaning solution.",
-      "5. Place a stack of paper towels over the spot and weigh them down. Let it dry completely. This prevents the stain from wicking back up from the carpet pad."
+      "1. Wool carpet = pro from minute one. NO alkaline cleaners. NO hot water.",
+      "2. Cold damp-cloth blot — NEVER pour water on carpet.",
+      "3. Diluted white vinegar 5–10 min on damp cloth.",
+      "4. Hidden-area peroxide test on dyed carpet.",
+      "5. 3% peroxide damp cloth for residual brown on hidden-test-passed synthetic carpet.",
+      "6. Weighted paper towels overnight + fan-dry."
     ],
     "products": [
-      "Dawn NSD",
-      "3% H₂O₂",
-      "OxiClean Versatile Stain Remover (for set stains)",
-      "Folex Carpet Spot Remover",
-      "28% Acetic Acid (diluted) (separate spray bottle for stubborn stains)"
+      "Cold water",
+      "White vinegar",
+      "3% Hydrogen peroxide (synthetic carpet, hidden test)",
+      "Paper towels + heavy book",
+      "Fan"
     ],
-    "whenToStop": "For set-in tannin stains, mix baking soda with a little H₂O₂ to make a paste, apply for 15 minutes, then rinse. If the stain survives two rounds of treatment, a professional cleaner can use concentrated agents and specialized equipment that outperform any home method.",
+    "whenToStop": "Stop on wool carpet (pro). Stop if hot water, hot extractor, or steam was used (often locks tannin). Stop if alkaline cleaner was used as first step (often darkens tannin permanently). Stop if hidden peroxide test fails on dyed carpet. Stop after 2 home cycles plateau.",
     "warnings": [
-      "Always blot — never rub. Rubbing damages carpet fibers and spreads the stain.",
-      "Place paper towels over the wet spot and weigh them down to prevent wicking overnight.",
-      "Never use hot water on tannin stains in carpet — heat permanently sets the color.",
-      "Test any cleaning solution on an inconspicuous area of carpet first.",
-      "Avoid over-wetting — too much liquid soaks through to the pad and causes wicking."
+      "Wool carpet = pro from minute one",
+      "NEVER hot water — sets tannin",
+      "NEVER alkaline cleaners — DARKEN tannin permanently",
+      "NEVER chlorine bleach on carpet — strips dye",
+      "NEVER pour water — pad saturation",
+      "Hidden test on dyed carpet before peroxide",
+      "NEVER mix vinegar / peroxide with chlorine — toxic chloramine gas"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never use hot water — heat sets tannins permanently into carpet fiber.",
-      "Never rub or scrub — spreads the stain and drives it deeper into the pad.",
-      "Never use ammonia or alkaline agents — permanently darkens tannin stains.",
-      "Never mix ammonia with chlorine bleach — produces toxic chloramine gas.",
-      "Never over-wet the carpet — moisture soaks into the pad causing wicking and delamination."
+      "Never alkaline cleaners on tannin — darken permanently",
+      "Never hot water on coffee + carpet",
+      "Never chlorine bleach on carpet",
+      "Never pour water — pad saturation",
+      "Never mix vinegar / peroxide with chlorine — toxic chloramine gas"
     ],
     "fiberSensitivities": [
-      "Synthetic carpet (nylon/polyester) tolerates most cleaning agents.",
-      "Test all agents on an inconspicuous area first — carpet dyes vary in bleach tolerance.",
-      "Avoid over-wetting — excess moisture causes delamination and browning from carpet backing."
+      "Synthetic (nylon / polyester / olefin) carpet: tolerates vinegar + 3% peroxide on hidden-test-passed",
+      "Wool carpet: pro from minute one — peroxide yellows wool, alkaline lifts wool scales",
+      "Dyed carpet: hidden peroxide test mandatory",
+      "Carpet pad: cannot be cleaned in place — saturation = pad replacement"
     ]
   },
+  "materialWarnings": [
+    "Alkaline cleaners DARKEN tannin permanently — don't reach for baking soda / ammonia / OxiClean alone",
+    "No hot water — sets tannin into carpet fiber",
+    "No saturation — drives coffee into the pad",
+    "Wool carpet = pro from minute one"
+  ],
   "escalation": {
-    "when": "If peroxide bleaching reaches a plateau, the tannin has likely lock together with the carpet fiber polymer. Try sequential treating: alternate between peroxide and leveling agent. For stains larger than 12 inches or on natural fiber carpet, call a professional carpet cleaner.",
-    "whatToTell": "We've treated the coffee on your carpet. Coffee darkens with air exposure and sets deeper the longer it sits.",
-    "specialistType": "professional carpet cleaner"
+    "when": "Wool carpet from minute one. Hot water / steam / hot vacuum already used (often locks tannin). Alkaline cleaner already used as first step (darkened tannin). Hidden peroxide test fails on dyed carpet. Pad bleed-through visible (restoration). 2 home cycles plateau.",
+    "whatToTell": "\"Black coffee on [synthetic / wool] carpet, age [fresh / hours / days], home-treated with [cold blot + diluted white vinegar + 3% peroxide on hidden-test-passed synthetic carpet + weighted towels overnight]. No hot, no alkaline, no chlorine. [Residual brown / pad bleed-through suspected / hot-extracted suspected].\"",
+    "specialistType": "professional carpet cleaner with truck-mount extraction; specialty wool carpet cleaner if wool"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain — was it treated immediately or has it been sitting?",
-      "Is this black coffee or coffee with cream/sugar? (changes the protocol)",
-      "Is this synthetic carpet (nylon/polyester) or natural fiber (wool)?",
-      "How large is the stain and does it appear to have soaked through to the pad?"
+      "Synthetic (nylon / polyester / olefin) carpet or wool?",
+      "Dyed or solid color?",
+      "Has hot water / steam / hot vacuum been used yet?",
+      "Has alkaline cleaner (baking soda, ammonia, OxiClean alone) been used as first step?",
+      "Pad bleed-through visible?"
     ],
-    "modifierNotes": "Black coffee is pure tannin — straightforward. Coffee with cream adds a fat component that needs POG or NSD pre-treatment before tannin formula. Natural fiber carpet (wool) requires the wool-safe reducing agent protocol instead of H₂O₂. Stains that soaked into the pad will wick back up and require extraction equipment."
+    "modifierNotes": "Black coffee is the easier coffee variant on carpet — no milk protein component. Coffee-cream-carpet adds the protein step. The most common home failure is reaching for baking soda or OxiClean alone first — alkaline darkens tannin permanently. The second-most-common failure is pour-on saturation that drives coffee into the pad. Wool carpet protocol is pro because peroxide yellows wool and alkaline opens the scales."
   },
-  "difficulty": 2,
-  "timeEstimate": "10–20 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

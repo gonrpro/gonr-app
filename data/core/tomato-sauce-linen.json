@@ -1,84 +1,241 @@
 {
   "id": "tomato-sauce-linen",
   "title": "Tomato Sauce on Linen",
-  "stainFamily": "tannin",
+  "stainType": "combo",
+  "stainFamily": "combo",
   "surface": "linen",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Tomato sauce contains tomato red pigment, citric acid, tannins, and oils (from cooking). The tomato red pigment is fat-soluble and bonds to linen through hydrophobic interactions. The tannin component grip to fiber. The combination of oil and tannin makes this a two-phase stain that requires sequential treatment.",
-  "whyThisWorks": "Surfactant emulsifies the oil component and breaks through the lipid barrier on linen. The tannin spotter then targets the polyphenol bonds. An oxidizer addresses the tomato red pigment pigment. Avoiding heat is important — heat polymerizes the tomato red pigment and locks the color into the fiber permanently.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–60 minutes; oil-strip + tannin acid + peroxide on white linen, sunlight finisher",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "tomato-sauce",
+    "surfaceCanonical": "linen",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "tomato-sauce",
+      "tannin",
+      "oil",
+      "combo",
+      "linen",
+      "no-alkaline",
+      "no-hot-water",
+      "sunlight-finisher",
+      "structured-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Tomato sauce on linen is a three-part combo: tomato red pigment (lycopene, fat-soluble), plant tannin, and oil (olive oil + cooking oils). The oil is the key: lycopene is fat-soluble, which means it's locked behind the oil until the oil is stripped. Order matters: Dawn FIRST (oil-strip), then vinegar (tannin acid), then 3% peroxide on white linen for residual color, then sunlight finisher (UV photodegrades lycopene). Skip the oil-strip and peroxide can't reach the pigment — that's why tomato stains plateau at faint orange. Two hard rules: NO hot water (sets tannin and lycopene) and NO alkaline cleaners (baking soda, ammonia, OxiClean alone before peroxide DARKEN tannin permanently). Structured / lined / dry-clean-only / vintage linen = pro.",
+  "whyThisWorks": "Dawn strips the oil carrier holding lycopene in place. Once the oil is gone, vinegar disrupts the tannin grip. 3% peroxide on white linen partially oxidizes lycopene. Sunlight is the most reliable finisher — UV photodegrades lycopene over hours. Cool wash plus AIR-DRY FLAT (linen wrinkles aggressively wet) finishes. The honest cap on dyed linen: faint orange shadow may remain.",
+  "scienceNote": "Mechanism (pro-facing): tomato sauce is lycopene (fat-soluble carotenoid) + tannin polyphenols + olive/canola oil. Pro uses NSD oil-strip + acid-side tannin spotter + 3% H₂O₂ + UV-assist + acetic acid neutralizing rinse.",
+  "defaultAssumption": "Pasta night / pizza / Italian dinner spill on a simple flat washable linen napkin or shirt. Fresh = full sequence has a real shot. Hot-dried = often a faint orange shadow. Structured / lined / vintage linen = pro from minute one.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage and Scrape Solids",
+      "technique": "Care label + lift bulk",
+      "equipment": "Care label, plastic spoon",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Dry-clean-only / structured / lined / vintage linen = pro from minute one. Simple flat washable linen = home candidate. Scrape solid sauce off with plastic spoon edge — never rub."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush water-soluble fraction",
+      "equipment": "Cold running water, white catch towel",
+      "dwellTime": "60–90 seconds",
+      "instruction": "Hold the BACK of the spot under cold running water. 60–90 sec. Cold only — heat sets tannin and lycopene."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn Pretreat — OIL-STRIP, MANDATORY",
+      "technique": "Strip oil so peroxide can reach pigment",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Generous Dawn. Soft toothbrush 5–10 min. CRITICAL — without oil-strip, peroxide can't reach lycopene and the orange stays. Damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "White Vinegar — Tannin Acid",
+      "technique": "Mild acid disrupts tannin grip",
+      "equipment": "1:1 white vinegar + cool water on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Vinegar + cool water on damp cloth, press 5–10 min. Damp-cloth rinse THOROUGHLY before any peroxide."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for White Linen",
+      "technique": "Oxidize residual lycopene",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE linen only. Hidden test on dyed. 3% peroxide damp cloth 5–10 min. NEVER mix with chlorine bleach, ammonia, or alkaline cleaners."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Sunlight Finisher",
+      "technique": "UV photodegrades residual orange",
+      "equipment": "Direct sunlight",
+      "dwellTime": "Several hours",
+      "instruction": "Hang in direct sunlight while damp. UV breaks down residual lycopene — most reliable finisher for tomato. Multi-day for stubborn cases."
+    },
+    {
+      "step": 7,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY Flat",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Cool cycle + AIR-DRY flat",
+      "instruction": "Cool machine wash. AIR-DRY FLAT — linen wrinkles aggressively when hung wet. NEVER hot dryer until cleared."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Care label triage + scrape solids gently.",
+      "2. Cold water back-flush 60–90 sec.",
+      "3. Dawn oil-strip cool 5–10 min — MANDATORY before peroxide.",
+      "4. White vinegar 1:1 cool 5–10 min — rinse thoroughly before peroxide.",
+      "5. 3% H₂O₂ for white linen, hidden test on dyed.",
+      "6. Sunlight finisher — UV photodegrades residual orange.",
+      "7. Cool wash + AIR-DRY flat."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "White vinegar",
+      "3% Hydrogen peroxide (white linen)",
+      "Sunlight",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets tannin and lycopene",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color"
+      "Structured / lined / vintage linen = pro from minute one",
+      "Oil-strip BEFORE peroxide — Dawn first or orange persists",
+      "NEVER hot water — sets tannin and lycopene",
+      "NEVER alkaline cleaners — DARKEN tannin permanently",
+      "NEVER hot dryer until cleared",
+      "Linen air-dries FLAT — hanging stretches the fiber",
+      "Hidden test on dyed linen before peroxide"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Oil-Strip First, Then Color",
+      "instruction": "Tomato sauce stains because the red pigment (lycopene) is fat-soluble — water alone can't touch it. The oil in the sauce holds the pigment in the fiber. Order matters: Dawn FIRST to strip the oil, then vinegar for the tannin, then 3% peroxide on white linen for residual color, then sunlight finisher. Skip the Dawn step and the orange ghost stays. Two hard rules: NO hot water (sets tannin and lycopene) and NO alkaline cleaners (baking soda, ammonia, OxiClean alone darken tannin permanently)."
+    },
+    {
+      "step": 2,
+      "agent": "Care Label Triage + Scrape Solids",
+      "instruction": "Dry-clean-only / structured / lined / vintage linen = pro from minute one. Simple flat washable linen (napkin, plain shirt, basic tablecloth) = home candidate. Scrape solid sauce off with a plastic spoon edge — flat-edge work only, never rub."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Back-Flush — 60 to 90 Seconds",
+      "instruction": "Turn the linen inside out. Hold the BACK of the spot under cold running water with a white towel underneath. 60 to 90 seconds. Cold only — heat sets tannin and lycopene into the fiber."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn Pretreat — Mandatory Oil-Strip",
+      "instruction": "Generous Dawn dish soap directly on the spot. Work in with a soft toothbrush for 5 to 10 minutes. This step is MANDATORY — without it, the oil coats the lycopene and peroxide can't reach the pigment. Damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "agent": "White Vinegar — Tannin Acid",
+      "instruction": "Mix 1 part white vinegar with 1 part cool water. Apply with a damp cloth, press 5 to 10 minutes. Disrupts the tannin grip. Damp-cloth rinse THOROUGHLY before any peroxide — acid plus peroxide degrades the peroxide."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide for White Linen",
+      "instruction": "WHITE linen only: 3% peroxide on a damp cloth, press 5 to 10 minutes, blot. Hidden-area test on dyed linen first.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners — toxic fumes."
+    },
+    {
+      "step": 7,
+      "agent": "Sunlight — The Real Finisher",
+      "instruction": "Hang the damp linen in direct sunlight for several hours. UV breaks down residual lycopene. This is the most reliable finisher for tomato — patience over hours-to-days beats more chemistry. Multi-day for stubborn orange ghosts."
+    },
+    {
+      "step": 8,
+      "agent": "Cool Wash and AIR-DRY FLAT",
+      "instruction": "Cool machine wash. AIR-DRY FLAT — linen wrinkles aggressively when wet, hanging stretches the fiber. NEVER hot dryer until cleared."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Structured / vintage linen = pro from minute one. NO alkaline cleaners. NO hot water.",
+      "2. Scrape solids gently with plastic edge.",
+      "3. Cold back-flush 60–90 sec from BACK.",
+      "4. Dawn oil-strip cool 5–10 min — MANDATORY.",
+      "5. Diluted white vinegar 5–10 min — rinse thoroughly before peroxide.",
+      "6. 3% peroxide damp cloth on white linen only.",
+      "7. Sunlight finisher — hours to multi-day.",
+      "8. Cool wash + AIR-DRY FLAT."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "White vinegar",
+      "3% Hydrogen peroxide (white linen)",
+      "Sunlight",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop on dry-clean-only / structured / lined / vintage linen (pro). Stop if hot water or hot dryer was used (often locks orange shadow). Stop if alkaline cleaner was used as first step (darkened tannin). Stop after multi-day sunlight plateau on dyed linen.",
     "warnings": [
-      "Always test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents.",
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "Structured / vintage linen = pro from minute one",
+      "Oil-strip BEFORE peroxide",
+      "NEVER hot water — sets tannin and lycopene",
+      "NEVER alkaline cleaners — DARKEN tannin permanently",
+      "NEVER hot dryer until cleared",
+      "Linen air-dries FLAT",
+      "Hidden test on dyed linen"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong concentrated acids — weakens cellulose",
-      "No chlorine bleach on colored linen"
+      "Never alkaline cleaners on tannin — darken permanently",
+      "Never hot water on tomato sauce + linen",
+      "Never hot dryer until cleared",
+      "Never skip Dawn oil-strip before peroxide",
+      "Never mix peroxide + chlorine + ammonia + alkaline"
     ],
     "fiberSensitivities": [
-      "Strongest natural fiber when wet — very durable",
-      "Wrinkles easily but tolerates aggressive cleaning",
-      "Neutralize acid spotters after use on cellulose"
+      "White / light washable linen: tolerates Dawn + vinegar + 3% peroxide",
+      "Dyed linen: hidden test mandatory before peroxide",
+      "Structured / lined linen: pro — warps wet",
+      "Vintage linen: pro — fiber fragility",
+      "Linen air-dries FLAT"
     ]
   },
+  "materialWarnings": [
+    "Order matters — Dawn oil-strip FIRST, then color treatment",
+    "No alkaline cleaners — DARKEN tannin permanently",
+    "No hot water — sets tannin and lycopene",
+    "Sunlight is the most reliable finisher for residual orange",
+    "Linen air-dries flat, not hanging"
+  ],
   "escalation": {
-    "when": "If tomato sauce stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is tomato sauce on linen, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Dry-clean-only / structured / lined / vintage linen. Hot water or hot dryer already used. Alkaline cleaner used as first step (darkened tannin). Multi-day sunlight plateau on dyed linen with orange shadow.",
+    "whatToTell": "\"Tomato sauce on [white / dyed / structured / vintage] linen, age [fresh / hours / hot-dried suspected], home-treated with [scrape + cold back-flush + Dawn oil-strip + diluted vinegar + 3% peroxide on white + sunlight × N hours/days + cool wash + air-dry flat]. No hot, no alkaline. [Residual orange / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with combination-stain (tannin + oil) chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Marinara, vodka sauce, pizza sauce, or with cream / cheese?",
+      "Simple flat linen, structured / lined, or vintage?",
+      "White, light, or dyed linen?",
+      "Has alkaline cleaner been used as first step?",
+      "Sunny location available for sunlight finisher?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Cream-based tomato sauces (vodka sauce) add the protein step (use coffee-cream-style ordering: protein FIRST). Pizza grease + tomato is heavier on the oil component — extended Dawn dwell. Sunlight is genuinely the most reliable finisher because lycopene is photodegradable. Structured / lined linen warps under wet handling — pro from minute one."
   },
-  "difficulty": 4,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-04-25",
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents."
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

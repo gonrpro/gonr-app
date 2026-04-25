@@ -1,80 +1,255 @@
 {
   "id": "pad-thai-polyester",
   "title": "Pad Thai / Noodle Sauce on Polyester",
+  "stainType": "combo",
   "stainFamily": "combo",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Pad Thai sauce contains tamarind (tannin), fish sauce (protein, salt), sugar (caramelizes), chili oil, and peanut oil. On polyester, this creates a multi-layer stain: sugar matrix traps pigment, protein bonds to fiber, oil penetrates deeply, and tannin adds color. The high sugar content means heat exposure caramelizes the stain rapidly.",
-  "whyThisWorks": "Cold water dissolves the sugar matrix on polyester before it caramelizes. Protein treatment addresses the fish sauce component (cold, no heat). Surfactant emulsifies the oils. Tannin spotter targets the tamarind discoloration. Speed matters — once the sugar sets, removal difficulty increases significantly.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "30–60 minutes; 4-component combo + polyester heat-lock + oleophilic 2 Dawn passes",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "pad-thai",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "pad-thai",
+      "noodle-sauce",
+      "combo",
+      "sugar",
+      "protein",
+      "oil",
+      "tannin",
+      "polyester",
+      "no-hot-water",
+      "no-alkaline",
+      "no-hot-dryer",
+      "oleophilic-fiber",
+      "order-matters"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Pad Thai on polyester is the four-component combo (tamarind tannin + fish-sauce protein + caramelizing sugar + peanut/chili oil) plus polyester's oleophilic + heat-sensitive complications. Polyester grabs the peanut and chili oil tight (Dawn × 2 typical) and locks color under heat. The recurring traps stack: hot water (caramelizes sugar + cooks protein + sets tannin + locks color into polyester all at once), alkaline cleaners as first step (darken tannin permanently), and hot dryer (yellows polyester over time with the residue). Order is the same as cotton (sugar → protein → oil → tannin → peroxide) but cool-throughout and no hot wash finish.",
+  "whyThisWorks": "Long cold flush dissolves sugar before caramelization. Cool enzyme handles fish-sauce protein. Dawn × 2 strips peanut and chili oil polyester grabbed. Vinegar disrupts tamarind tannin. 3% peroxide on white polyester finishes residual color. Cool wash plus AIR-DRY locks nothing. The honest cap on dyed polyester: faint shadow may remain.",
+  "scienceNote": "Mechanism (pro-facing): pad-thai is tamarind tannin polyphenols + fish-sauce proteins + sucrose/palm sugar + peanut + chili oil with capsanthin pigment. Polyester is hydrophobic and oleophilic. Pro uses cold flush + protein spotter + NSD oil-strip × 2 + acid-side tannin spotter + 3% H₂O₂ for residual chromophore.",
+  "defaultAssumption": "Thai food / noodle takeout spill on a polyester shirt or blend. Fresh = real shot with full sequence. Hot-dried = often a sticky brown shadow with locked-in color. Performance / specialty / dry-clean-only polyester = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Solids",
+      "technique": "Lift bulk noodles + sauce",
+      "equipment": "Plastic spoon edge",
+      "dwellTime": "1 minute",
+      "instruction": "Scrape solid noodles and sauce with plastic spoon edge. Flat-edge work only — never rub."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Long Cold Water Back-Flush",
+      "technique": "Dissolve sugar before caramelization",
+      "equipment": "Cold running water, white catch towel",
+      "dwellTime": "90 seconds",
+      "instruction": "Hold the BACK of the spot under cold running water 90+ sec. Cold only — heat caramelizes sugar + cooks protein + sets tannin + locks color into polyester."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Enzyme Pretreat — Cool, Protein FIRST",
+      "technique": "Protein digestion before tannin acid",
+      "equipment": "OxiClean Versatile / Biz / Tide Plus per label, COOL water",
+      "dwellTime": "20 minutes",
+      "instruction": "Dissolve enzyme pretreat in COOL water. Apply to spot, keep damp under a cloth, 20 min. Cool only."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "technique": "Strip peanut + chili oil",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn. Soft toothbrush 10 min. Polyester is oleophilic — extended dwell needed. Cool damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Repeat Dawn — Polyester Needs 2 Passes",
+      "technique": "Second oil-strip pass",
+      "equipment": "Dawn + cool water",
+      "dwellTime": "10 minutes",
+      "instruction": "Touch with fingertip. Oily feel = repeat Dawn. 2 passes typical on polyester for noodle oils."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "White Vinegar — Tannin Acid",
+      "technique": "Mild acid for tamarind",
+      "equipment": "1:1 white vinegar + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar + cool water on damp cloth, 5 min. Damp-cloth rinse THOROUGHLY before peroxide."
+    },
+    {
+      "step": 7,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for White Polyester",
+      "technique": "Oxidize residual color",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE polyester only. Hidden test on dyed. 3% peroxide damp cloth 5–10 min. NEVER mix with chlorine, ammonia, or alkaline cleaners."
+    },
+    {
+      "step": 8,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water",
+      "dwellTime": "Cool cycle + AIR-DRY",
+      "instruction": "Cool machine wash. AIR-DRY only. NEVER hot dryer until cleared — locks residue into polyester."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove excess solids with dull edge — do not rub",
-      "2. Apply Tannin Formula for the plant-pigment component",
-      "3. Apply POG for the oil component",
-      "4. Flush with NSD and cool water",
-      "5. If color persists: apply H2O2 6% on colorfast fabrics",
-      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+      "1. Scrape solids gently.",
+      "2. Long cold back-flush 90+ sec — dissolve sugar.",
+      "3. Enzyme pretreat in COOL water, 20 min — protein FIRST.",
+      "4. Dawn pretreat × 2 — polyester needs 2 oil-strip passes.",
+      "5. White vinegar 1:1 cool 5 min — tannin acid, rinse before peroxide.",
+      "6. 3% H₂O₂ damp cloth on white polyester only.",
+      "7. Cool wash + AIR-DRY. No softener, no dryer until cleared."
     ],
     "products": [
-      "Tannin Formula",
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Enzyme pretreat (OxiClean Versatile / Biz / Tide Plus / liquid Protein Spotter)",
+      "Dawn / NSD",
+      "White vinegar",
+      "3% Hydrogen peroxide (white polyester)",
+      "Cool water"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool throughout — heat sets every component on polyester",
+    "warnings": [
+      "ORDER MATTERS — sugar flush, then protein, then oil × 2, then tannin acid, then peroxide",
+      "NEVER hot water — caramelizes sugar + cooks protein + sets tannin + locks color into polyester",
+      "NEVER alkaline cleaners as first step — DARKEN tannin permanently",
+      "NEVER hot dryer until cleared",
+      "Polyester is oleophilic — Dawn × 2 typical for noodle oils",
+      "Hidden test on dyed polyester before peroxide",
+      "Performance / specialty polyester = pro"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Four Stains + Polyester Heat-Lock — Order Matters",
+      "instruction": "Pad Thai on polyester combines four components (sugar, protein, oil, tannin) plus polyester being oleophilic and heat-sensitive. Order is the same as cotton (sugar → protein → oil → tannin → peroxide) but COOL throughout and no hot wash finish — polyester locks color under heat. Three hard rules: NO hot water (caramelizes sugar + cooks protein + sets tannin + locks color all at once), NO alkaline cleaners as first step (darken tannin permanently), NO hot dryer until cleared (yellows polyester with the residue)."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Solids — No Rubbing",
+      "instruction": "Scrape solid noodles, sauce, and peanuts off with a plastic spoon edge. Flat-edge work only."
+    },
+    {
+      "step": 3,
+      "agent": "Long Cold Water Back-Flush — Ninety Seconds Plus",
+      "instruction": "Turn the polyester inside out. Hold the BACK of the spot under cold running water 90+ seconds. Cold only — heat caramelizes the sugar AND cooks the fish-sauce protein AND sets the tannin AND drives color into polyester."
+    },
+    {
+      "step": 4,
+      "agent": "Enzyme Pretreat — Cool Water, Protein FIRST",
+      "instruction": "Dissolve enzyme pretreat in COOL water per label. Apply to spot, keep damp under a cloth, 20 minutes. Cool only — heat damages enzymes AND sets the protein."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "instruction": "Generous Dawn dish soap. Work in with a soft toothbrush for 10 minutes. Polyester is oleophilic — extended dwell needed. Cool damp-cloth rinse."
+    },
+    {
+      "step": 6,
+      "agent": "Repeat Dawn — Polyester Needs Two Passes",
+      "instruction": "Touch with a clean fingertip. Still oily? Repeat Dawn. Polyester typically needs 2 Dawn passes for the peanut and chili oil in pad-thai."
+    },
+    {
+      "step": 7,
+      "agent": "White Vinegar — Tannin Acid",
+      "instruction": "1 part white vinegar + 1 part cool water on damp cloth, 5 minutes. Disrupts tamarind tannin. Damp-cloth rinse THOROUGHLY before any peroxide."
+    },
+    {
+      "step": 8,
+      "agent": "3% Peroxide for White Polyester",
+      "instruction": "WHITE polyester only: 3% peroxide on a damp cloth, press 5 to 10 minutes. Hidden-area test on dyed polyester first.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners — toxic fumes."
+    },
+    {
+      "step": 9,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash. AIR-DRY only. NEVER hot dryer until cleared — locks residue into polyester. Honest cap on dyed polyester: faint shadow may remain."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub",
-      "2. Rinse with cold water to remove loose material",
-      "3. Apply Dawn dish soap. Work gently",
-      "4. Blot with clean white cloth. Repeat if needed",
-      "5. Air dry — no heat until stain is gone"
+      "1. NO hot water. NO alkaline cleaners as first step. NO hot dryer until cleared.",
+      "2. Scrape solids with plastic edge.",
+      "3. Long cold back-flush 90+ sec — dissolve sugar.",
+      "4. Enzyme pretreat in COOL water, 20 min — protein FIRST.",
+      "5. Generous Dawn pretreat × 2 (polyester is oleophilic).",
+      "6. Diluted white vinegar 5 min — tannin acid, rinse before peroxide.",
+      "7. 3% peroxide damp cloth on white polyester only.",
+      "8. Cool wash + AIR-DRY. No dryer until cleared."
     ],
     "products": [
-      "Dawn dish soap"
+      "Enzyme pretreat (OxiClean Versatile, Biz, Tide Plus)",
+      "Dawn dish soap (generous)",
+      "White vinegar",
+      "3% Hydrogen peroxide (white polyester)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if hot water or hot dryer was used (often locks every component). Stop if alkaline cleaner was used as first step. Stop on performance / specialty polyester. Stop after 3 home cycles plateau.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "ORDER MATTERS — sugar / protein / oil × 2 / tannin acid / peroxide in sequence",
+      "NEVER hot water — locks every component on polyester",
+      "NEVER alkaline cleaners as first step — DARKEN tannin",
+      "NEVER hot dryer until cleared",
+      "Polyester is oleophilic — Dawn × 2 typical",
+      "Hidden test on dyed polyester before peroxide"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on pad-thai + polyester",
+      "Never alkaline cleaners as first step on tannin",
+      "Never hot dryer until cleared",
+      "Never reverse the order — sugar FIRST, then protein, then oil × 2, then tannin acid, then peroxide",
+      "Never mix peroxide + chlorine + ammonia + OxiClean"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — needs 2 Dawn passes for noodle oils",
+      "Polyester locks color under heat — strict cool discipline",
+      "Performance / specialty polyester (compression, technical): pro",
+      "Dyed polyester: hidden test mandatory; honest cap is partial removal"
     ]
   },
+  "materialWarnings": [
+    "Order matters — 5-step sequence in cool water",
+    "Polyester loves noodle oils — Dawn × 2 mandatory",
+    "No hot water / no hot dryer — polyester locks color",
+    "Honest cap on dyed polyester for residual shadow"
+  ],
   "escalation": {
-    "when": "If pad thai stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is pad thai on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer was used (often locks every component on polyester). Alkaline cleaner used as first step. Performance / specialty polyester. 3 home cycles plateau.",
+    "whatToTell": "\"Pad Thai / noodle sauce on [white / dyed / athletic / specialty] polyester, age [fresh / hours / hot-dried suspected], home-treated with [scrape + long cold back-flush + cool enzyme + Dawn × 2 + vinegar + 3% peroxide on white + cool wash + air-dry]. Order followed. No hot, no alkaline. [Residual shadow / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with combination-stain (sugar + protein + oil + tannin) chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Pad Thai, lo mein, drunken noodles, or other Asian sauce?",
+      "White, dyed, athletic, or specialty polyester?",
+      "Has hot water or hot dryer been used?",
+      "Has alkaline cleaner been used as first step?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Same four-component template as cotton with polyester's oleophilic + heat-lock complications. Sugar caramelization and the polyester heat-lock together make this a tougher case than the cotton variant. Sunny location for sun-drying after wash adds finishing power on residual color (UV photodegrades capsanthin from chili oil)."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

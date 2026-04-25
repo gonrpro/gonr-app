@@ -1,84 +1,204 @@
 {
   "id": "tea-linen",
   "title": "Tea on Linen",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "linen",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Tea contains tea browning pigments — oxidized polyphenols that produce tea's amber-brown color. These tannins bond to linen through grip and hydrophobic interactions. Tea stains darken significantly with oxidation and age. Black tea stains more aggressively than green tea due to higher oxidized tannin content.",
-  "whyThisWorks": "The acidic tannin spotter breaks the bonds between tea polyphenols and linen fiber. Hydrogen peroxide oxidizes the color groups, reversing the brown color. Treatment is most effective on fresh stains before oxidative lock together occurs.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "20–40 minutes; cold flush + vinegar + 3% peroxide on white linen, structured = pro",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "tea",
+    "surfaceCanonical": "linen",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "tea",
+      "tannin",
+      "linen",
+      "no-alkaline",
+      "no-hot-water",
+      "vinegar-eligible",
+      "structured-fork",
+      "air-dry-flat"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Tea on linen is a tannin stain — black tea harder than green because of more oxidation. The recurring traps: hot water (sets tannin), alkaline cleaners (baking soda, ammonia, OxiClean alone before peroxide all DARKEN tannin permanently), and chlorine bleach (locks azo-type tannin variants). Linen is cellulose (similar to cotton) but more delicate when wet — wrinkles aggressively, structured / lined / vintage / dry-clean-only linen warps under aggressive handling. Tea with milk adds milk protein and milk fat — needs the protein-first order discipline (this card covers black tea; tea-with-milk follows coffee-cream-style ordering).",
+  "whyThisWorks": "Cold water back-flush extracts bulk tannin before it sets. Diluted vinegar's mild acid keeps tannin on the lighter side and disrupts the fiber grip. 3% peroxide on white linen handles residual brown. Cool wash plus AIR-DRY FLAT (linen wrinkles aggressively when hung wet) finishes. Structured / vintage linen narrows the bench sharply.",
+  "scienceNote": "Mechanism (pro-facing): tea is theaflavins + thearubigins (oxidized catechin polymers) + tannin polyphenols. Tannin anchors to linen cellulose via hydrogen bonding. Pro uses cold acid-side tannin spotter + 3% H₂O₂ + acetic acid neutralizing rinse. Sodium hydrosulfite for set chromophore.",
+  "defaultAssumption": "Tea spill on a simple flat washable linen napkin / shirt / tablecloth, fresh and not yet hot-dried. Black tea is the harder variant; tea with milk needs protein-first order. Structured / lined / dry-clean-only / vintage linen = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Care Label Triage",
+      "technique": "Structured = pro check",
+      "equipment": "Care label",
+      "dwellTime": "1 minute",
+      "instruction": "Dry-clean-only / structured / lined / vintage linen = pro from minute one. Simple flat washable linen = home candidate."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse",
+      "equipment": "Cold running water, white catch towel",
+      "dwellTime": "60–90 seconds",
+      "instruction": "Hold the BACK of the spot under cold running water with a white towel underneath the front. 60–90 sec. Cold only — heat sets tannin into linen permanently."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Pretreat",
+      "technique": "Mild acid keeps tannin on light side",
+      "equipment": "1:1 white vinegar + cool water on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Vinegar + cool water on damp cloth, press 5–10 min. Damp-cloth rinse THOROUGHLY before any peroxide."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for White Linen",
+      "technique": "Oxidize residual brown",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE or light linen only. Hidden test on dyed linen. 3% peroxide damp cloth 5–10 min. NEVER mix with chlorine bleach, ammonia, or alkaline cleaners — toxic fumes."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY Flat",
+      "technique": "Heat-free finish, lay flat",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Cool cycle + AIR-DRY flat",
+      "instruction": "Cool machine wash. AIR-DRY FLAT — linen wrinkles aggressively when hung wet. NEVER hot dryer until cleared."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Care label triage — structured / vintage = pro.",
+      "2. Cold water back-flush 60–90 sec.",
+      "3. Diluted white vinegar 5–10 min on damp cloth.",
+      "4. 3% H₂O₂ for white linen, 5–10 min — hidden test on dyed.",
+      "5. Cool wash + AIR-DRY flat. No heat until cleared."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cold water (back-flush)",
+      "White vinegar",
+      "3% Hydrogen peroxide (white linen)",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout — heat sets tannin into linen",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color"
+      "Structured / lined / vintage linen = pro from minute one",
+      "NEVER hot water — sets tannin",
+      "NEVER alkaline cleaners — DARKEN tannin permanently",
+      "NEVER chlorine bleach — locks tannin",
+      "NEVER hot dryer until cleared",
+      "Hidden test on dyed linen before peroxide",
+      "Linen air-dries FLAT — hanging stretches the fiber"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Cold and Acid First — No Alkaline Panic",
+      "instruction": "Tea on linen is a tannin stain. Two hard rules: NO hot water (sets tannin) and NO alkaline cleaners (baking soda, ammonia, OxiClean alone before peroxide all darken tannin permanently). The path: cold back-flush → vinegar → 3% peroxide on white linen → cool wash + AIR-DRY FLAT. Structured / lined / dry-clean-only / vintage linen goes to pro from minute one — wet handling warps these pieces."
+    },
+    {
+      "step": 2,
+      "agent": "Care Label Check",
+      "instruction": "Find the care tag. Dry-clean-only / structured / lined / vintage linen = pro from minute one. Simple flat washable linen (napkin, plain shirt, basic tablecloth) = home candidate."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Back-Flush — 60 to 90 Seconds",
+      "instruction": "Turn the linen inside out. Hold the BACK of the stained area under cold running water with a white towel underneath the front. 60 to 90 seconds. Cold only — heat sets tannin into linen permanently."
+    },
+    {
+      "step": 4,
+      "agent": "Diluted White Vinegar — 5 to 10 Minutes",
+      "instruction": "Mix 1 part white vinegar with 1 part cool water. Apply with a damp cloth, press 5 to 10 minutes. The mild acid keeps tannin on the lighter side. Damp-cloth rinse THOROUGHLY before any peroxide — acid plus peroxide degrades the peroxide."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide for White Linen",
+      "instruction": "WHITE or very light linen only: 3% drugstore peroxide on a damp cloth, press 5 to 10 minutes, blot. Hidden-area test on dyed linen first.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners — toxic fumes."
+    },
+    {
+      "step": 6,
+      "agent": "Cool Wash and AIR-DRY FLAT",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY FLAT — linen wrinkles aggressively when wet, and hanging it stretches the fiber. Inspect dry before any iron. NEVER hot dryer until cleared."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Structured / vintage linen = pro from minute one. NO alkaline cleaners. NO hot water.",
+      "2. Cold back-flush 60–90 sec from BACK.",
+      "3. Diluted white vinegar 5–10 min on damp cloth.",
+      "4. 3% peroxide damp cloth on white linen only — hidden test on dyed.",
+      "5. Cool wash + AIR-DRY FLAT. No iron until cleared."
     ],
     "products": [
-      "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "Cold water",
+      "White vinegar",
+      "3% Hydrogen peroxide (white linen)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop on dry-clean-only / structured / lined / vintage linen (pro). Stop if hot water or hot dryer was used (often locks tannin). Stop if alkaline cleaner was used as first step (darkened tannin permanently). Stop after 2 home cycles plateau.",
     "warnings": [
-      "Always test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents.",
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "Structured / vintage linen = pro from minute one",
+      "NEVER hot water — sets tannin",
+      "NEVER alkaline cleaners — DARKEN tannin permanently",
+      "NEVER chlorine bleach — locks tannin",
+      "NEVER hot dryer until cleared",
+      "Linen air-dries FLAT — hanging stretches it",
+      "Hidden test on dyed linen"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong concentrated acids — weakens cellulose",
-      "No chlorine bleach on colored linen"
+      "Never alkaline cleaners on tannin — darken permanently",
+      "Never hot water on tea + linen",
+      "Never hot dryer until cleared",
+      "Never iron over a brown stain",
+      "Never mix peroxide with bleach / ammonia / alkaline"
     ],
     "fiberSensitivities": [
-      "Strongest natural fiber when wet — very durable",
-      "Wrinkles easily but tolerates aggressive cleaning",
-      "Neutralize acid spotters after use on cellulose"
+      "White / light washable linen: tolerates vinegar + 3% peroxide",
+      "Dyed linen: hidden test mandatory before peroxide",
+      "Structured / lined linen: pro — warps under wet handling",
+      "Vintage linen: pro — fiber fragility",
+      "Linen wrinkles aggressively wet — air-dry FLAT"
     ]
   },
+  "materialWarnings": [
+    "Alkaline cleaners DARKEN tannin permanently",
+    "No hot water — sets tannin into linen",
+    "Structured / vintage linen = pro from minute one",
+    "Linen air-dries flat, not hanging"
+  ],
   "escalation": {
-    "when": "If tea stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is tea on linen, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Dry-clean-only / structured / lined / vintage linen. Hot water or hot dryer already used. Alkaline cleaner used as first step (darkened tannin). 2 home cycles plateau. Hidden test fails on dyed linen.",
+    "whatToTell": "\"Tea on [white / dyed / structured / vintage] linen, [black / green / herbal / with milk], age [fresh / hours / hot-dried suspected], home-treated with [cold back-flush + diluted vinegar + 3% peroxide on white + cool wash + air-dry flat]. No hot, no alkaline. [Residual brown / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with linen experience plus tannin-spotter chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Black tea, green tea, or herbal?",
+      "With milk (adds protein step) or black tea only?",
+      "Simple flat linen, structured / lined, or vintage?",
+      "White, light, or dyed?",
+      "Has alkaline cleaner been used as first step?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Black tea has the most tannin — hardest variant. Tea with milk adds the milk-protein step (use coffee-cream protocol order: protein FIRST, tannin SECOND). The most common home failure is reaching for OxiClean alone or baking soda first — alkaline darkens tannin permanently. Linen-specific: wet handling on structured / lined linen warps the piece — pro from minute one."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-04-25",
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents."
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
