@@ -31,6 +31,7 @@ type CardData = {
   surface?: string
   sector?: string
   verified?: boolean
+  verification_level?: string
   difficulty?: number
   timeEstimate?: string
   lastValidated?: string
@@ -100,15 +101,20 @@ type DeepSolveHooks = {
   modifierNotes?: string
 }
 
+type LevelBucket = {
+  draft: number
+  single_source: number
+  cross_ref: number
+  pro_verified: number
+  unknown: number
+}
+
 type ApiResponse = {
   summary: {
     total: number
-    verified: number
-    draft: number
-    single_source: number
-    cross_ref: number
-    pro_verified: number
-    unknown: number
+    content_verified: number
+    internal_content_level: LevelBucket
+    founder_approval_level: LevelBucket
   }
   cards: CardRow[]
 }
@@ -118,15 +124,26 @@ function fmtTs(iso: string): string {
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
 
-function LevelBadge({ level }: { level: string | null }) {
+function LevelBadge({ level, axis }: { level: string | null; axis?: 'founder' | 'internal' }) {
   if (!level) return <span className="text-[10px] text-gray-400">—</span>
-  const colors: Record<string, string> = {
-    draft: 'bg-slate-500/15 text-slate-700 dark:text-slate-300 border-slate-500/30',
-    single_source: 'bg-blue-500/15 text-blue-700 dark:text-blue-400 border-blue-500/30',
-    cross_ref: 'bg-violet-500/15 text-violet-700 dark:text-violet-400 border-violet-500/30',
+  // Two axes share the level vocabulary (draft/single_source/cross_ref/pro_verified) but
+  // mean different things. We tint by axis so the eye can tell them apart at a glance:
+  //   founder  → amber-leaning (the approval ladder mutated by the review endpoint)
+  //   internal → cyan-leaning (the in-payload content readiness from the JSON file)
+  const founderColors: Record<string, string> = {
+    draft: 'bg-amber-500/10 text-amber-800 dark:text-amber-300 border-amber-500/30',
+    single_source: 'bg-amber-500/15 text-amber-800 dark:text-amber-300 border-amber-500/40',
+    cross_ref: 'bg-amber-500/25 text-amber-900 dark:text-amber-200 border-amber-500/50',
     pro_verified: 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30',
   }
-  const cls = colors[level] ?? 'bg-slate-500/10 text-slate-600 border-slate-500/30'
+  const internalColors: Record<string, string> = {
+    draft: 'bg-slate-500/15 text-slate-700 dark:text-slate-300 border-slate-500/30',
+    single_source: 'bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30',
+    cross_ref: 'bg-cyan-500/25 text-cyan-900 dark:text-cyan-200 border-cyan-500/50',
+    pro_verified: 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30',
+  }
+  const palette = axis === 'internal' ? internalColors : founderColors
+  const cls = palette[level] ?? 'bg-slate-500/10 text-slate-600 border-slate-500/30'
   return (
     <span className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-bold border ${cls}`}>
       {level}
@@ -138,9 +155,15 @@ function VerifiedBadge({ verified }: { verified: boolean | undefined }) {
   if (!verified) return null
   return (
     <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-bold border bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30">
-      verified
+      content verified
     </span>
   )
+}
+
+function internalLevel(card: CardRow): string {
+  // Legacy unverified/draft payloads may omit data.verification_level.
+  // Treat missing internal level as draft; founder approval still comes only from the DB column.
+  return card.data?.verification_level ?? 'draft'
 }
 
 export default function AdminProtocolLibraryPage() {
@@ -152,7 +175,8 @@ export default function AdminProtocolLibraryPage() {
   const [search, setSearch] = useState('')
   const [stainFilter, setStainFilter] = useState<string>('')
   const [surfaceFilter, setSurfaceFilter] = useState<string>('')
-  const [levelFilter, setLevelFilter] = useState<string>('')
+  const [founderLevelFilter, setFounderLevelFilter] = useState<string>('')
+  const [internalLevelFilter, setInternalLevelFilter] = useState<string>('')
   const [verifiedOnly, setVerifiedOnly] = useState(false)
   const [selectedKey, setSelectedKey] = useState<string | null>(null)
   const detailRef = useRef<HTMLElement | null>(null)
@@ -195,14 +219,15 @@ export default function AdminProtocolLibraryPage() {
       if (verifiedOnly && !row.data?.verified) return false
       if (stainFilter && row.stain_canonical !== stainFilter) return false
       if (surfaceFilter && row.surface_canonical !== surfaceFilter) return false
-      if (levelFilter && (row.verification_level ?? 'unknown') !== levelFilter) return false
+      if (founderLevelFilter && (row.verification_level ?? 'unknown') !== founderLevelFilter) return false
+      if (internalLevelFilter && internalLevel(row) !== internalLevelFilter) return false
       if (q) {
         const hay = `${row.card_key} ${row.stain_canonical ?? ''} ${row.surface_canonical ?? ''} ${row.data?.title ?? ''}`.toLowerCase()
         if (!hay.includes(q)) return false
       }
       return true
     })
-  }, [data, search, stainFilter, surfaceFilter, levelFilter, verifiedOnly])
+  }, [data, search, stainFilter, surfaceFilter, founderLevelFilter, internalLevelFilter, verifiedOnly])
 
   const selectedCard = useMemo(() => {
     if (!selectedKey || !data) return null
@@ -257,32 +282,58 @@ export default function AdminProtocolLibraryPage() {
         <div className="min-w-0">
           <h1 className="text-2xl font-semibold">Protocol Library</h1>
           <p className="mt-1 text-sm text-gray-500">
-            Book view for quality audit · {data.summary.total} active canonical cards · {data.summary.verified} marked <code>verified: true</code>.
+            Book view for quality audit · {data.summary.total} active canonical cards · {data.summary.content_verified} content-verified.
           </p>
         </div>
         <button onClick={() => void load()} className="text-xs text-gray-500 underline">refresh</button>
       </header>
 
       <section className="border border-sky-500/30 bg-sky-500/5 rounded p-3 text-xs text-gray-700 dark:text-gray-300 space-y-1">
-        <div><strong>Two different &ldquo;verified&rdquo; concepts below — they measure different things:</strong></div>
-        <div><code>verified: true</code> → card has been <strong>voice-reviewed</strong> (passes the presentation validator for pro/home tone). This is the Tranche-2 voice-rewrite scoreboard.</div>
-        <div><code>verification_level</code> → <strong>provenance</strong> from TASK-055 (how well-sourced the chemistry claims are): <code>draft</code> (no verified source) · <code>single_source</code> · <code>cross_ref</code> (2+ agree) · <code>pro_verified</code> (pro sign-off).</div>
-        <div className="text-gray-500">A card can be <code>verified: true</code> (voice good) and still be <code>draft</code> (chemistry needs sourcing), and vice versa.</div>
+        <div><strong>Three independent quality axes — do not collapse them:</strong></div>
+        <div>
+          1. <strong>Content verified</strong> = <code>data.verified === true</code> — card passes voice/content review (pro &amp; home tone validator). Boolean.
+        </div>
+        <div>
+          2. <strong>Internal content level</strong> = <code>data.verification_level</code> — in-payload sourcing readiness from the JSON file (<code>draft</code> · <code>single_source</code> · <code>cross_ref</code> · <code>pro_verified</code>). Legacy missing values are displayed as <code>draft</code>. Snapshot of how well-cited the chemistry claims are at author time.
+        </div>
+        <div>
+          3. <strong>Founder approval level</strong> = DB <code>verification_level</code> column — founder approval ladder, mutated by the founder review actions below. Same vocabulary, different axis: this is who-signed-off, not what-the-file-says.
+        </div>
+        <div className="text-gray-500">A card can be content-verified (voice good), still <code>draft</code> internally (chemistry needs sourcing), and already <code>cross_ref</code> on the founder ladder — three independent reads.</div>
       </section>
 
-      <section>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-          <SummaryTile label="total" value={data.summary.total} tone="gray" hint="active canonical" />
-          <SummaryTile label="verified" value={data.summary.verified} tone="emerald" hint="voice-reviewed" />
-          <SummaryTile label="draft" value={data.summary.draft} tone="slate" hint="no source" />
-          <SummaryTile label="single_source" value={data.summary.single_source} tone="blue" hint="1 source" />
-          <SummaryTile label="cross_ref" value={data.summary.cross_ref} tone="violet" hint="2+ agree" />
-          <SummaryTile label="pro_verified" value={data.summary.pro_verified} tone="emerald" hint="pro sign-off" />
+      <section className="space-y-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <SummaryTile label="total active" value={data.summary.total} tone="gray" hint="canonical cards" />
+          <SummaryTile label="content verified" value={data.summary.content_verified} tone="emerald" hint="data.verified = true" />
+          <div className="hidden sm:block" />
+        </div>
+
+        <div>
+          <div className="text-[11px] uppercase tracking-wide text-cyan-700 dark:text-cyan-400 font-semibold mb-1">Internal content level <span className="font-normal text-gray-500">(data.verification_level)</span></div>
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+            <SummaryTile label="draft" value={data.summary.internal_content_level.draft} tone="slate" hint="no source" />
+            <SummaryTile label="single_source" value={data.summary.internal_content_level.single_source} tone="cyan" hint="1 source" />
+            <SummaryTile label="cross_ref" value={data.summary.internal_content_level.cross_ref} tone="cyan" hint="2+ agree" />
+            <SummaryTile label="pro_verified" value={data.summary.internal_content_level.pro_verified} tone="emerald" hint="pro sign-off" />
+            <SummaryTile label="unknown" value={data.summary.internal_content_level.unknown} tone="gray" hint="missing" />
+          </div>
+        </div>
+
+        <div>
+          <div className="text-[11px] uppercase tracking-wide text-amber-700 dark:text-amber-400 font-semibold mb-1">Founder approval level <span className="font-normal text-gray-500">(DB verification_level — founder ladder)</span></div>
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+            <SummaryTile label="draft" value={data.summary.founder_approval_level.draft} tone="amber" hint="not yet approved" />
+            <SummaryTile label="single_source" value={data.summary.founder_approval_level.single_source} tone="amber" hint="1 founder approve" />
+            <SummaryTile label="cross_ref" value={data.summary.founder_approval_level.cross_ref} tone="amber" hint="2+ founder approves" />
+            <SummaryTile label="pro_verified" value={data.summary.founder_approval_level.pro_verified} tone="emerald" hint="pro sign-off" />
+            <SummaryTile label="unknown" value={data.summary.founder_approval_level.unknown} tone="gray" hint="missing" />
+          </div>
         </div>
       </section>
 
       <section className="border border-gray-200 dark:border-gray-800 rounded p-4 space-y-3">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-3">
           <div className="md:col-span-2">
             <label className="block text-[10px] uppercase tracking-wide text-gray-500 mb-1">Search</label>
             <input
@@ -316,10 +367,25 @@ export default function AdminProtocolLibraryPage() {
             </select>
           </div>
           <div>
-            <label className="block text-[10px] uppercase tracking-wide text-gray-500 mb-1">Level</label>
+            <label className="block text-[10px] uppercase tracking-wide text-cyan-700 dark:text-cyan-400 mb-1">Internal level <span className="text-gray-500 normal-case">(data)</span></label>
             <select
-              value={levelFilter}
-              onChange={e => setLevelFilter(e.target.value)}
+              value={internalLevelFilter}
+              onChange={e => setInternalLevelFilter(e.target.value)}
+              className="w-full px-2 py-1.5 text-sm border border-gray-300 dark:border-gray-700 bg-transparent rounded"
+            >
+              <option value="">all</option>
+              <option value="draft">draft</option>
+              <option value="single_source">single_source</option>
+              <option value="cross_ref">cross_ref</option>
+              <option value="pro_verified">pro_verified</option>
+              <option value="unknown">unknown</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-[10px] uppercase tracking-wide text-amber-700 dark:text-amber-400 mb-1">Founder approval <span className="text-gray-500 normal-case">(DB)</span></label>
+            <select
+              value={founderLevelFilter}
+              onChange={e => setFounderLevelFilter(e.target.value)}
               className="w-full px-2 py-1.5 text-sm border border-gray-300 dark:border-gray-700 bg-transparent rounded"
             >
               <option value="">all</option>
@@ -334,7 +400,7 @@ export default function AdminProtocolLibraryPage() {
         <div className="flex items-center gap-4 text-sm">
           <label className="inline-flex items-center gap-2">
             <input type="checkbox" checked={verifiedOnly} onChange={e => setVerifiedOnly(e.target.checked)} />
-            <span>Only <code>verified: true</code></span>
+            <span>Content verified only <code className="text-gray-500">(data.verified)</code></span>
           </label>
           <div className="text-xs text-gray-500 ml-auto">
             showing {filteredCards.length} of {data.cards.length}
@@ -355,7 +421,10 @@ export default function AdminProtocolLibraryPage() {
               <div className="font-semibold text-sm">{row.data?.title ?? row.card_key}</div>
               <div className="mt-1 font-mono text-[11px] text-gray-500 break-all">{row.card_key}</div>
               <div className="mt-2 flex flex-wrap items-center gap-2">
-                <LevelBadge level={row.verification_level} />
+                <span className="text-[10px] text-amber-700 dark:text-amber-400">founder:</span>
+                <LevelBadge level={row.verification_level} axis="founder" />
+                <span className="text-[10px] text-cyan-700 dark:text-cyan-400">internal:</span>
+                <LevelBadge level={internalLevel(row)} axis="internal" />
                 <VerifiedBadge verified={row.data?.verified} />
                 {row.data?.meta?.tier && <span className="text-[10px] text-gray-500">tier: {row.data.meta.tier}</span>}
                 <span className="text-[10px] text-gray-500 ml-auto">{fmtTs(row.updated_at)}</span>
@@ -378,8 +447,9 @@ export default function AdminProtocolLibraryPage() {
               <tr>
                 <th className="text-left px-3 py-2">Card</th>
                 <th className="text-left px-3 py-2">Title</th>
-                <th className="text-left px-3 py-2">Level</th>
-                <th className="text-left px-3 py-2">Verified</th>
+                <th className="text-left px-3 py-2 text-amber-700 dark:text-amber-400">Founder approval</th>
+                <th className="text-left px-3 py-2 text-cyan-700 dark:text-cyan-400">Internal level</th>
+                <th className="text-left px-3 py-2">Content verified</th>
                 <th className="text-left px-3 py-2">Tier</th>
                 <th className="text-left px-3 py-2">Updated</th>
               </tr>
@@ -395,7 +465,8 @@ export default function AdminProtocolLibraryPage() {
                   >
                     <td className="px-3 py-2 font-mono text-xs">{row.card_key}</td>
                     <td className="px-3 py-2">{row.data?.title ?? '—'}</td>
-                    <td className="px-3 py-2"><LevelBadge level={row.verification_level} /></td>
+                    <td className="px-3 py-2"><LevelBadge level={row.verification_level} axis="founder" /></td>
+                    <td className="px-3 py-2"><LevelBadge level={internalLevel(row)} axis="internal" /></td>
                     <td className="px-3 py-2"><VerifiedBadge verified={row.data?.verified} /></td>
                     <td className="px-3 py-2 text-xs text-gray-500">{row.data?.meta?.tier ?? '—'}</td>
                     <td className="px-3 py-2 text-xs text-gray-500">{fmtTs(row.updated_at)}</td>
@@ -404,7 +475,7 @@ export default function AdminProtocolLibraryPage() {
               })}
               {filteredCards.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="px-3 py-6 text-center text-sm text-gray-500">
+                  <td colSpan={7} className="px-3 py-6 text-center text-sm text-gray-500">
                     No cards match these filters.
                   </td>
                 </tr>
@@ -465,7 +536,18 @@ function CardDetail({ card, onReviewed }: { card: CardRow; onReviewed: () => voi
         </div>
         <div className="space-y-1 text-xs text-gray-500 min-w-0 break-words">
           <div>last validated: <code>{d.lastValidated ?? '—'}</code></div>
-          <div>verification_level: <LevelBadge level={card.verification_level} /></div>
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <span className="text-amber-700 dark:text-amber-400">founder approval:</span>
+            <LevelBadge level={card.verification_level} axis="founder" />
+          </div>
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <span className="text-cyan-700 dark:text-cyan-400">internal content level:</span>
+            <LevelBadge level={internalLevel(card)} axis="internal" />
+          </div>
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <span>content verified:</span>
+            {d.verified ? <VerifiedBadge verified={true} /> : <span className="text-gray-400">no</span>}
+          </div>
           <div>sources: {card.sources && card.sources.length > 0 ? card.sources.join(', ') : '—'}</div>
         </div>
       </div>
@@ -687,9 +769,12 @@ function VerificationPanel({ card, onReviewed }: { card: CardRow; onReviewed: ()
   return (
     <section className="border border-amber-500/30 bg-amber-500/5 rounded p-3 space-y-3 min-w-0">
       <div className="flex items-baseline justify-between gap-2 flex-wrap">
-        <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-500">Verification</h4>
+        <div>
+          <h4 className="text-xs font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-400">Founder approval</h4>
+          <p className="text-[10px] text-gray-500 mt-0.5">Mutates the DB <code>verification_level</code> column. Does not change the in-payload internal content level.</p>
+        </div>
         <div className="text-[11px] text-gray-500">
-          current: <LevelBadge level={card.verification_level} />
+          current: <LevelBadge level={card.verification_level} axis="founder" />
         </div>
       </div>
 
@@ -732,7 +817,7 @@ function VerificationPanel({ card, onReviewed }: { card: CardRow; onReviewed: ()
         </button>
         {action === 'approve' && (
           <span className="text-[11px] text-gray-500">
-            promotes verification_level → {nextLevelLabel(card.verification_level)}
+            promotes founder approval → {nextLevelLabel(card.verification_level)}
           </span>
         )}
         {feedback && (
@@ -829,13 +914,15 @@ function ProtocolBlock({ protocol }: { protocol: ProProtocol | DiyProtocol }) {
   )
 }
 
-function SummaryTile({ label, value, tone, hint }: { label: string; value: number; tone: 'slate' | 'blue' | 'violet' | 'emerald' | 'gray'; hint: string }) {
+function SummaryTile({ label, value, tone, hint }: { label: string; value: number; tone: 'slate' | 'blue' | 'violet' | 'emerald' | 'gray' | 'amber' | 'cyan'; hint: string }) {
   const tones: Record<typeof tone, string> = {
     slate: 'border-slate-500/30 bg-slate-500/5',
     blue: 'border-blue-500/30 bg-blue-500/5',
     violet: 'border-violet-500/30 bg-violet-500/5',
     emerald: 'border-emerald-500/30 bg-emerald-500/5',
     gray: 'border-gray-500/30 bg-gray-500/5',
+    amber: 'border-amber-500/30 bg-amber-500/5',
+    cyan: 'border-cyan-500/30 bg-cyan-500/5',
   }
   return (
     <div className={`rounded border p-3 min-w-0 ${tones[tone]}`}>

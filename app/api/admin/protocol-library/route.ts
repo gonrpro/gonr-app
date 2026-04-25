@@ -53,6 +53,39 @@ type CardRow = {
   data: Record<string, unknown> | null
 }
 
+// Three distinct axes, do not collapse them:
+//   1. content_verified         — boolean from data.verified (voice/content review pass)
+//   2. internal_content_level   — string from data.verification_level (internal cross-ref / sourcing readiness inside the JSON payload)
+//      Legacy draft payloads may omit this field; treat missing internal level as draft, not founder-approved.
+//   3. founder_approval_level   — string from the DB column verification_level (founder approval ladder mutated by the review endpoint)
+type LevelBucket = {
+  draft: number
+  single_source: number
+  cross_ref: number
+  pro_verified: number
+  unknown: number
+}
+
+function emptyBucket(): LevelBucket {
+  return { draft: 0, single_source: 0, cross_ref: 0, pro_verified: 0, unknown: 0 }
+}
+
+function normalizeInternalLevel(level: string | null | undefined): string {
+  // Missing in-payload level only appears on legacy unverified/draft card payloads.
+  // Show those as draft so the UI doesn't imply a separate unknown approval state.
+  return level ?? 'draft'
+}
+
+function bumpBucket(bucket: LevelBucket, level: string | null | undefined): void {
+  switch (level) {
+    case 'draft': bucket.draft++; break
+    case 'single_source': bucket.single_source++; break
+    case 'cross_ref': bucket.cross_ref++; break
+    case 'pro_verified': bucket.pro_verified++; break
+    default: bucket.unknown++
+  }
+}
+
 export async function GET() {
   const email = await getSessionEmail()
   if (!email || !FOUNDER_EMAILS.includes(email)) {
@@ -76,24 +109,15 @@ export async function GET() {
 
     const summary = {
       total: rows.length,
-      verified: 0,
-      draft: 0,
-      single_source: 0,
-      cross_ref: 0,
-      pro_verified: 0,
-      unknown: 0,
+      content_verified: 0,
+      internal_content_level: emptyBucket(),
+      founder_approval_level: emptyBucket(),
     }
     for (const row of rows) {
-      const level = row.verification_level ?? 'unknown'
-      if (level === 'draft') summary.draft++
-      else if (level === 'single_source') summary.single_source++
-      else if (level === 'cross_ref') summary.cross_ref++
-      else if (level === 'pro_verified') summary.pro_verified++
-      else summary.unknown++
-
-      // A "verified" card (for the voice-rewrite scoreboard) is anything promoted past draft
-      const data = row.data as { verified?: boolean } | null
-      if (data?.verified === true) summary.verified++
+      const data = row.data as { verified?: boolean; verification_level?: string } | null
+      if (data?.verified === true) summary.content_verified++
+      bumpBucket(summary.internal_content_level, normalizeInternalLevel(data?.verification_level))
+      bumpBucket(summary.founder_approval_level, row.verification_level)
     }
 
     return NextResponse.json({ summary, cards: rows })
