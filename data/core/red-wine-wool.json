@@ -2,8 +2,14 @@
   "id": "red-wine-wool",
   "title": "Red Wine on Wool",
   "stainType": "tannin",
+  "stainFamily": "tannin",
   "surface": "wool",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "Pro-lane within hours; one home round max",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "red-wine",
     "surfaceCanonical": "wool",
@@ -11,180 +17,187 @@
     "riskLevel": "high",
     "tags": [
       "tannin",
+      "wool",
       "protein-fiber",
-      "cold-only",
+      "felting-risk",
+      "refusal-style",
+      "pro-lane-early",
       "no-enzymes",
-      "felting-risk"
+      "no-bleach"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Red wine anthocyanins (tannin pigments) bond to wool's keratin protein through hydrogen bonding and hydrophobic interactions. Wool is delicate: heat above 30°C triggers felting (cross-linking of disulfide bridges in wool protein), and this happens FASTER when wool is wet. Fresh wine penetrates wool deeply because tannins are attracted to protein. We cannot use enzymes (Protein digests wool), strong bleach, or heat. Acetic acid and dilute oxidizers are the only safe options for wool, and dwell times must be minimal to avoid fiber weakening.",
-  "whyThisWorks": "Cold NSD removes surface anthocyanin without agitation risk. Dilute acetic acid (28% Acetic Acid (diluted)) breaks hydrogen bonds in tannin-wool complex with minimal dwell. Dilute H₂O₂ (not chlorine) oxidizes remaining color. Every step stays cold and brief. The sequence prioritizes wool integrity over complete stain removal—if residual color remains, professional is safer than aggressive home treatment.",
+  "stainChemistry": "Wool is keratin, a protein fiber held together by disulfide bonds. Hot water + agitation triggers FELTING — the disulfide bonds re-cross-link and fibers permanently mat together. This is irreversible. Red wine adds anthocyanin tannins that bond to wool keratin through hydrogen bonding. Two failure modes stack: wrong-water-temp permanently sets the tannin AND felts the fiber simultaneously. Wool's banned-tools list mirrors silk: no enzymes (digest keratin), no chlorine bleach (destroys protein), no alkaline cleaners (open scales + lock tannin), no aggressive scrubbing (felts on contact when wet). Home wool care has a one-round ceiling — repeat chemistry is the most common cause of felting.",
+  "whyThisWorks": "A specialist with cold-water cycle, wool-safe detergent, and timed acid spotter can lift fresh wine without felting. Home tools work for damage prevention only — cold press-and-blot to extract bulk wine before tannin sets, then pro for everything else. Repeat home rounds on wool almost always cause felting damage worse than the original stain.",
+  "defaultAssumption": "Wool + red wine = pro within hours. One home round MAX, then stop regardless of result. Repeat friction on wet wool felts the fiber permanently.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "wet",
-      "agent": "Cold water, blot from back",
-      "technique": "Blot gently, no agitation",
-      "equipment": "White cloth, spray bottle with ice water",
-      "dwellTime": "1-2 minutes",
-      "instruction": "Immediately blot from the back with cold water. Press downward—never rub or agitate wool. Most fresh anthocyanin transfers in the first 1-2 minutes. Flip cloth and continue blotting. Work concentric circles from edge inward. Every motion must be vertical pressure only."
+      "agent": "Cold Water Press-Blot",
+      "technique": "Vertical press only, no rubbing",
+      "equipment": "Ice water spray, white cloth",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Press cold water onto the BACK of the stain with a white cloth. Vertical press only — never rub. Most fresh anthocyanin transfers in 1–2 min when caught immediately. Replace cloth as it picks up red."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "NSD solution (NSD, 10% cold)",
-      "technique": "Sponge work, vertical pressing only",
-      "equipment": "Natural sponge, white cloth",
-      "dwellTime": "Brief — apply, work, blot",
-      "instruction": "Sponge gently onto stain. Press vertically—never rub. NSD suspends remaining anthocyanin. After 2-3 minutes, blot gently downward. Stain should lighten noticeably. This step removes most of the wine color."
+      "agent": "Wool-Safe NSD (Pro)",
+      "technique": "Sponge press, vertical only",
+      "equipment": "Mulsolite or wool-safe NSD, cold water",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Sponge cold NSD solution gently. Press only — agitation felts wool. Blot vertically. NSD suspends remaining anthocyanin without alkalinity that would weaken keratin."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Cold water rinse, thorough",
-      "technique": "Spray and blot",
-      "equipment": "Spray bottle, white cloth",
-      "dwellTime": "Until rinse water runs clear",
-      "instruction": "Rinse completely in cold water. NSD left behind will interfere with acid treatment. Work from back to front, pressing gently. Water must run absolutely clear with no bubbles. Thorough rinsing is critical."
+      "agent": "Cold Water Rinse",
+      "technique": "Thorough rinse, no agitation",
+      "equipment": "Cold water spray, white cloth",
+      "dwellTime": "Until clear",
+      "instruction": "Rinse until water runs clear. Residual NSD interferes with later steps. Press, don't squeeze."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Acetic acid spotter + cold water",
-      "technique": "Dropper or sponge, light press",
-      "equipment": "Dropper, white cloth",
-      "dwellTime": "1 minute maximum",
-      "instruction": "Now apply acidity for remaining tannin color. Apply in small amounts with dropper or sponge. Press gently. Acetic acid breaks hydrogen bonds in the tannin-wool complex. After exactly 1 minute, blot completely. Do not extend—wool weakens with prolonged acid exposure."
+      "agent": "Acetic Acid Spotter (Pro)",
+      "technique": "Dropper, strict 60-sec dwell",
+      "equipment": "Acetic Acid (diluted 1:10), dropper, white cloth",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "Dropper-apply diluted acetic acid to residual color. Press gently. STRICT 60-second ceiling — wool weakens with prolonged acid exposure. Flush cold immediately."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Dilute H₂O₂ (1.5%, cold)",
-      "technique": "Sponge if needed, watch closely",
-      "equipment": "Sponge, white cloth, 3% peroxide diluted 1:1 with cold water",
-      "dwellTime": "1-2 minutes maximum, monitor carefully",
-      "instruction": "If brown tannin color remains, 5% solution). Sponge gently. Peroxide oxidizes anthocyanin pigment into colorless compounds. Wool is protein—dilute peroxide is safer. After 1-2 minutes maximum, blot completely. Do not oversoak."
+      "agent": "Dilute Hydrogen Peroxide for Oxidized Residue",
+      "technique": "Sponge with strict timing",
+      "equipment": "3% H₂O₂ diluted 1:1 with cold water",
+      "dwellTime": "1–2 min, monitored",
+      "instruction": "If oxidized brown remains, dilute peroxide can lift it. STRICT 1–2 min on wool, monitored. Flush cold immediately."
     },
     {
       "step": 6,
       "side": "wet",
-      "agent": "Cold water final rinse",
-      "technique": "Multiple rinses",
-      "equipment": "Spray bottle, white cloth",
-      "dwellTime": "Until rinse water runs clear",
-      "instruction": "Final thorough rinse in cold water. All acid and peroxide must be removed. Residual chemicals will continue reacting and may damage wool. Work from back to front. Water must run clear."
+      "agent": "Final Cold Rinse + Press-Dry Flat",
+      "technique": "Thorough rinse, blot, lay flat",
+      "equipment": "Cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "Rinse until clear. Press between dry towels — never wring. Lay flat to air-dry, reshape while damp. NO heat, NO hanging wet."
     }
   ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Cold press-blot at first contact.",
+      "2. Wool-safe NSD sponge press, no agitation.",
+      "3. Cold water thorough rinse.",
+      "4. Acetic acid spotter, 60-sec dwell, flush cold.",
+      "5. Dilute H₂O₂ (1.5% max) for oxidized residue, 1–2 min monitored.",
+      "6. Final cold rinse, press between towels, air-dry flat."
+    ],
+    "products": [
+      "Mulsolite or wool-safe NSD",
+      "Acetic Acid (diluted 1:10)",
+      "3% H₂O₂ (diluted 1:1)",
+      "Cold/ice water"
+    ],
+    "temperature": "cold throughout — wool above 30°C felts when wet",
+    "warnings": [
+      "NEVER hot water — felts wool AND sets tannin simultaneously",
+      "NEVER agitation / scrubbing — felts wool on contact when wet",
+      "NEVER enzymes — digest wool keratin",
+      "NEVER alkaline cleaners — open scales + lock tannin",
+      "NEVER chlorine bleach",
+      "60-sec ceiling on acid; 1–2 min on dilute peroxide",
+      "Never wring wool — press between towels"
+    ]
+  },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Wool + red wine: the two rules stack",
-      "instruction": "Red wine is a tannin stain; wool is a protein fiber. Both have their own \"never\" lists that carry into this one protocol: no enzymes (digest wool), no hot water (felts wool AND sets tannin), no alkaline cleaners (permanently darken tannin AND open wool scales), no scrubbing (felts wool). Fresh caught within the first hour resolves cleanly. Dried or heat-set is pro territory — don't push home chemistry past one round on wool, ever."
+      "agent": "One Round Max — Then Stop",
+      "instruction": "Wool's worst failure mode isn't the stain — it's felting from repeat home chemistry. Wool felts permanently when wet wool is agitated, when temperature crosses 30°C, when alkaline cleaners open the scales. Most home advice that \"didn't work the first time, try again\" causes felting damage worse than the wine. The one-round rule on wool is non-negotiable. If your one careful round doesn't clear it, pro is the answer. Don't repeat."
     },
     {
       "step": 2,
-      "agent": "Patch test + immediate cold blot",
-      "instruction": "Dab a drop of cold water on an inside seam, wait 60 seconds, blot with a white cloth. If the seam loses color, stop — go to step 7. If clean, immediately press a fresh white cloth or paper-towel stack straight down on the wine stain. Lift, move to a dry section, press again. Work outside-in. Do NOT wipe or rub. Keep going — fresh sections each time — until the cloth stops picking up red."
+      "agent": "Cold Water Press-Blot from the BACK",
+      "instruction": "Turn inside out. Place white towel under the stain. Press a SECOND white cloth dampened in COLD/ice water onto the BACK of the stain. Vertical pressure only — no rubbing, no scrubbing, no wiping. Lift, refresh the cloth, press again. Cold water + protein-fiber rules: heat felts AND sets tannin. The two failures stack."
     },
     {
       "step": 3,
-      "agent": "Cold-water back-flush — ice water if possible",
-      "instruction": "Turn the garment inside out. Run COLD (ice-cold preferred, under 30°C / 86°F always) water through the BACK of the stain for 30–60 seconds. On wool this is a careful flush, not a soak — wool absorbs water rapidly and the wetter it gets under friction, the higher the felt risk. Hold the area under the tap; don't plunge the garment. Blot gently between each flush with a clean damp cloth pressed, not wrung."
+      "agent": "Wool-Safe Detergent — Eucalan or Soak (Optional, One Pass)",
+      "instruction": "If pink remains after cold water alone: mix half a teaspoon of wool-specific detergent (Eucalan or Soak) in two cups of cold water. Dip a cloth, wring nearly dry, PRESS onto the stain. 2–3 minutes. Lift, blot. ONE PASS. Do NOT repeat. Do NOT use OxiClean, Biz, regular detergent — alkalinity opens wool scales and locks tannin."
     },
     {
       "step": 4,
-      "agent": "Wool-safe detergent soak — Eucalan or Dawn",
-      "instruction": "Mix one teaspoon of wool-specific detergent (Eucalan, Soak, or Woolite) OR plain clear Dawn in two cups of cold water. Dip a white cloth, wring nearly dry, PRESS onto the stain. Let sit 2–3 minutes. Lift, re-wet the cloth, press again. Two or three cycles. Never the enzyme-based stuff — OxiClean, Biz, Zout are bans.",
-      "safetyNote": "Never wring or twist wool. Press between folded dry towels to lift moisture."
+      "agent": "Press Dry + Lay Flat — DO NOT Hang Wet",
+      "instruction": "Press the wool between two dry white towels — stack, press, lift moisture. No wringing, no twisting. Lay flat on a fresh dry towel, reshape while damp, air-dry at room temperature out of direct sun. NEVER hang wet wool — gravity stretches the fiber. NEVER apply heat — even residual moisture + heat = felting."
     },
     {
       "step": 5,
-      "agent": "Dilute vinegar dab — strict 60-second dwell",
-      "instruction": "If pink remains after the soap cycle, mix 1 part white vinegar with 1 part cold water. Press a cotton swab onto the remaining stain. 60 SECONDS MAXIMUM — set a timer. Rinse with cold water immediately. The mild acid restores wool's natural pH AND keeps residual tannin in its lighter red form. Over-dwell and vinegar starts weakening wool fibers."
-    },
-    {
-      "step": 6,
-      "agent": "3% peroxide dab — STRICT 60-second ceiling, white/light wool only",
-      "instruction": "If a BROWN shadow remains (not pink — pink lifts with more vinegar) AND the wool is white, cream, or very light, AND your step-2 patch test came back clean: mix 1 part 3% peroxide with 1 part cold water. Dab with a cotton swab. 60 SECONDS MAXIMUM, then flush with cold water immediately. Peroxide yellows wool at longer dwells. Skip entirely on colored or dark wool.",
-      "safetyNote": "Never exceed 60 seconds peroxide dwell on wool. Never combine with ammonia or bleach."
-    },
-    {
-      "step": 7,
-      "agent": "Press dry + lay flat + escalate if shadow persists",
-      "instruction": "Press the area between dry white towels — stack, press, don't wring. Lay flat on a fresh towel, reshape while damp. Air-dry at room temperature, out of direct sun. NEVER hang wet wool (gravity stretches fiber). NEVER apply heat. If any shadow remains after drying, DO NOT run a second home round — repeat chemistry is the #1 cause of felting. Take it to a delicates specialist. Tell them: \"Red wine on wool, age [x], treated at home with Eucalan + vinegar + [peroxide on white]. One round. No hot water, no enzymes, no alkaline.\" Pros use sodium hydrosulfite with timed dwell — safer on wool than repeated home attempts."
+      "agent": "Pro Within Hours If Anything Remains",
+      "instruction": "If a shadow remains after one careful cold-water round, STOP. A second home round is much more likely to felt the wool than to lift more wine. Take to a wool specialist (call ahead). Tell them: \"Red wine on wool, age [hours], one round at home with cold water + [Eucalan]. No hot water, no enzymes, no OxiClean, no scrubbing.\" Pros use timed acetic acid + dilute peroxide with controlled dwell — won't felt, will lift."
     }
   ],
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — wool dyes may not tolerate spotting agents.",
-    "NEVER use hot water—felting occurs faster when wet + warm",
-    "NEVER rub or agitate—causes pilling and structural damage",
-    "NEVER use enzymes—protease digests wool's own keratin",
-    "NEVER use bleach (chlorine or strong oxidizers)—weakens wool",
-    "NEVER use strong alkaline cleaners—damage wool protein structure"
-  ],
-  "escalation": "If red wine stain is older than 6-8 hours or if home treatment doesn't fully remove color, STOP and call professional wool specialist. Risk of damage increases exponentially with extended treatment. Professional may use solvent system or inhibitor-formula enzymes designed specifically for wool.",
-  "products": {
-    "household": [
-      {
-        "name": "Wool-Safe Detergent (pH-neutral, enzyme-free)",
-        "brand": "Eucalan or Soak",
-        "icon": "🧴",
-        "amazonSearchQuery": "eucalan wool wash no rinse",
-        "affiliateTag": "gonr08-20",
-        "note": "Enzyme-free, pH-neutral wool wash. Household substitute for professional NSD. Gentle NSD for protein fiber. 10% in cold water. Essential first step."
-      },
-      {
-        "name": "White Vinegar",
-        "brand": "Standard",
-        "icon": "🍶",
-        "amazonSearchQuery": "white vinegar 5% acetic acid",
-        "affiliateTag": "gonr08-20",
-        "note": "Tannin spotter. Dilute 1:1 with cold water. 1 minute max. DO NOT substitute industrial-strength (28%) acetic acid — it causes chemical burns."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. Wool + red wine = ONE round at home, max.",
+      "2. Cold water press-blot from the BACK (no rubbing, no scrubbing).",
+      "3. Optional one pass with wool-safe detergent (Eucalan / Soak), 2–3 min.",
+      "4. Press dry between towels, lay flat to air-dry.",
+      "5. Anything remaining = pro within hours. NO second round."
     ],
-    "professional": [
-      {
-        "name": "Mulsolite NSD",
-        "brand": "Chemspec",
-        "icon": "🧪",
-        "amazonSearchQuery": "Mulsolite NSD wool",
-        "affiliateTag": "gonr08-20",
-        "note": "Professional cold NSD for wool protein cleaning."
-      }
+    "products": [
+      "Cold / ice water",
+      "Eucalan or Soak (wool-specific detergent)",
+      "Dry white towels"
+    ],
+    "whenToStop": "Stop after one careful round. Repeat home chemistry on wool felts the fiber — damage worse than the stain.",
+    "warnings": [
+      "NEVER hot water — felts wool + sets tannin",
+      "NEVER agitation / scrubbing wet wool — felts on contact",
+      "NEVER enzymes / OxiClean / alkaline cleaners",
+      "NEVER chlorine bleach",
+      "NEVER wring or hang wet wool",
+      "ONE round home max"
     ]
   },
-  "customerExplanation": "Red wine on wool is tricky because wool is delicate protein fiber. We use cold water and NSD for safety—but this means we can't be aggressive. Fresh wine responds well to this gentle approach. Older wine may require professional cleaning because risk of damage increases with extended home treatment. Oxygen bleach (sodium percarbonate) is safer than chlorine on wool and effectively removes tannin discoloration.",
-  "commonMistakes": [
-    "Using warm water—this sets tannin AND triggers felting simultaneously",
-    "Rubbing or scrubbing—causes pilling and weakens the fiber",
-    "Using enzymes—people assume enzymes help. Protein digests wool's keratin protein.",
-    "Extending acid/peroxide dwell times—wool weakens rapidly with chemical exposure"
+  "safetyMatrix": {
+    "neverDo": [
+      "Never hot water on wool",
+      "Never agitate or scrub wet wool",
+      "Never enzymes / alkaline / OxiClean",
+      "Never chlorine bleach",
+      "Never hang wet wool",
+      "Never repeat home chemistry"
+    ],
+    "fiberSensitivities": [
+      "Wool keratin felts when wet + warm + agitated",
+      "Disulfide bonds re-cross-link irreversibly under heat",
+      "Alkaline cleaners open the scales — can't be undone",
+      "Aggressive friction = pilling + felting"
+    ]
+  },
+  "materialWarnings": [
+    "ONE round home max — repeat chemistry felts wool",
+    "Pro-lane within hours of spill",
+    "Cold + press, never warm + scrub"
   ],
-  "scienceNote": "Wool protein (keratin) is held together by disulfide bridges (covalent bonds) and hydrogen bonds. Anthocyanins form hydrogen bonds with these same wool protein sites. Water above 30°C triggers hydrolysis of disulfide bonds, allowing wool to cross-link and felt. This felting is FASTER and more pronounced when the wool is wet—exactly when we're treating the stain. This is why every step must be cold and brief. Acetic acid breaks anthocyanin hydrogen bonds (tannin removal), and peroxide oxidizes the remaining anthocyanin double-bond system (color removal) without targeting wool's protein structure.",
-  "callPro": "If color remains after NSD + vinegar + dilute peroxide treatment, or if wool shows signs of pilling, stiffness, or texture change, STOP and call professional immediately. Wool is expensive and recovery becomes risky after extended home treatment.",
-  "components": [
-    "detergent",
-    "acid-spotter",
-    "oxidizer"
-  ],
-  "component_order": [
-    "detergent",
-    "acid-spotter",
-    "oxidizer"
-  ],
-  "difficulty": 6,
-  "difficulty_factors": [
-    "protein-fiber",
-    "cold-only",
-    "felting-risk",
-    "two-stage-tannin-removal"
-  ],
-  "solventNote": "Professional: Cold soak in Mulsolite (5-10 min), gentle squeeze-out. Rinse thoroughly cold water. For remaining color, acetic acid spotter (dilute, cold, 1-2 min max). If needed, 1.5% dilute H₂O₂ (cold, max 2 min). Absolutely no heat. No reducing bleach. For aged stains, solvent system (perc or Stoddard) safer than extended aqueous treatment. VDS post-treatment recommended.",
-  "version": "5.0",
-  "authored": "2026-03-22",
-  "aftercare": "Squeeze gently in towel—never wring. Lay flat on clean dry towel. Reshape while damp if needed. NEVER use heat. Wool must dry slowly and evenly. Hot air triggers felting. Once dry, check for residual color—if faint brown remains, do not retreat. Call professional instead.",
+  "escalation": {
+    "when": "After one careful home round, regardless of result. Earlier if the spill is large, dried, or on a high-value wool garment.",
+    "whatToTell": "\"Red wine on wool, age [hours], one round at home with cold water + [wool-safe detergent if applicable]. No hot water, no enzymes, no OxiClean, no scrubbing. [Residual pink / brown shadow / fully clear].\"",
+    "specialistType": "professional dry cleaner specializing in wool (call ahead — confirm sodium hydrosulfite + acetic acid spotting capability)"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How long ago — fresh, hours, or older?",
+      "Wool type — merino, regular knit, woven, felt?",
+      "Has anyone used hot water / OxiClean / agitation already?",
+      "How valuable / sentimental is the garment?"
+    ],
+    "modifierNotes": "Merino is finer than standard wool — felts faster. Felt fabric is already pre-felted, so additional felting risk is lower but tannin removal is harder. Hot-water / OxiClean / agitation pre-applied = wool may already be partially felted; disclose to pro. Repeat home rounds are the single most common cause of permanent damage on wool."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

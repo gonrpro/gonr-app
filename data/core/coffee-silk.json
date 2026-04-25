@@ -1,84 +1,175 @@
 {
   "id": "coffee-silk",
   "title": "Coffee on Silk",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "silk",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Tannin (polyphenolic). Coffee contains melanoidins (Maillard reaction products), chlorogenic acid, and tannin polyphenols that bind to fibers via hydrogen bonding. The brown color comes from conjugated chromophore systems in the melanoidin polymers. On silk: protein fiber — NEVER use Protein enzymes, chlorine bleach, or OxiClean (too alkaline). Tannin pigments bond through hydrogen bonding and van der Waals forces. Treatment: acidic tannin formula to break initial hydrogen bonds, followed by sodium hydrosulfite (reducing agent — safe for protein fibers) to cleave chromophore conjugation.",
-  "whyThisWorks": "Coffee pigments bond tightly to silk's protein structure. Heat or harsh chemicals will set the stain permanently and damage the fiber. Cold water and mild treatment prevent heat-setting. Sodium hydrosulfite attacks tannin pigments without damaging protein fibers.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "Pro-lane within hours; home is damage-prevention only",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "coffee",
+    "surfaceCanonical": "silk",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "tannin",
+      "silk",
+      "delicate-fiber",
+      "refusal-style",
+      "pro-lane-early",
+      "no-enzymes",
+      "no-bleach"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Coffee is melanoidins (Maillard browning products) + chlorogenic acid + tannin polyphenols. The brown chromophore is conjugated melanoidin, which bonds to silk fibroin via hydrogen bonds. Coffee with milk adds milk casein protein + butterfat — protein-before-heat adds an extra failure mode (heat sets casein into silk permanently). Silk's banned-tools list applies fully: no enzymes (digest fibroin), no hot water (denatures fiber + sets stain), no alkaline cleaners (weaken silk + darken tannin), no chlorine bleach, no aggressive scrubbing. Hydrogen peroxide YELLOWS silk dyes — also banned. The coffee-with-cream variant adds Dawn-emulsifies-fat, but on silk you can't safely deploy enough wet chemistry to address all three components without risking the fiber.",
+  "whyThisWorks": "A specialist with cold acetic acid + sodium hydrosulfite (reducing bleach, silk-safe) can lift fresh coffee tannin without damaging silk. Home chemistry has too many ways to make this worse: vinegar over-dwell weakens fiber, peroxide yellows silk, hot water denatures + sets, OxiClean weakens. Home protocol: cold blot, no chemistry escalation, pro within hours.",
+  "defaultAssumption": "Silk + coffee = pro within hours. Home is damage-prevention before pro sees it. Black coffee is slightly easier than coffee-with-cream (no protein); both are pro-lane on silk.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse",
+      "equipment": "Cold/ice water, white catch towel",
+      "dwellTime": "Immediate",
+      "instruction": "Flush cold water through the BACK over a white catch towel. Press, no scrubbing. Most fresh coffee tannin transfers in 60–90 seconds when caught immediately."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Acetic Acid Spotter (Pro)",
+      "technique": "Dropper, 60-sec ceiling",
+      "equipment": "Acetic Acid (diluted 1:10), dropper, white cloth",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "Diluted acetic acid via dropper on residual stain. Press cloth — no rubbing. STRICT 60-sec ceiling on silk. Flush cold immediately."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Sodium Hydrosulfite (Pro, Aged Stain)",
+      "technique": "Reducing bleach, strict timing",
+      "equipment": "Sodium hydrosulfite per pro reference",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "For oxidized brown only. Reducing bleach is silk-safe at controlled dilution. Strict 60-sec dwell, then thorough cold rinse."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "NSD + Cold Water Final Rinse",
+      "technique": "Flush + lay flat",
+      "equipment": "NSD, cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "NSD flush to remove all residue. Cold water final rinse until clear. Press between dry towels, lay flat to air-dry, never hang."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin carefully and tamp very gently. On silk, use shorter dwell time and lighter touch. The acidic spotter breaks tannin bonds without attacking the fiber. Monitor closely.",
-      "2. Apply sodium hydrosulfite solution. This reducing agent attacks tannin pigments without damaging protein fibers like silk — unlike oxidizing agents which can weaken the fabric. Monitor carefully and flush when the color lifts.",
-      "3. Flush with NSD to remove all chemical residue and loosened tannin. Use cool water only.",
-      "4. Apply diluted acetic acid (1:10) with fiber conditioner to neutralize and restore the fiber. Follow with a fiber conditioner rinse to restore the hand and sheen that protein fibers lose during treatment. Air dry flat."
+      "1. Cold water back-flush at first contact.",
+      "2. Diluted acetic acid spotter, 60-sec ceiling.",
+      "3. Sodium hydrosulfite for oxidized residue, 60-sec ceiling.",
+      "4. NSD + cold rinse until clear.",
+      "5. Press between towels, air-dry flat."
     ],
     "products": [
-      "Tannin",
-      "sodium hydrosulfite",
+      "Acetic Acid (diluted 1:10)",
+      "Sodium hydrosulfite (reducing bleach)",
       "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Cold/ice water"
     ],
-    "temperature": "cold — heat causes felting and sets protein stains; always use cool water on silk",
+    "temperature": "cold throughout — silk denatures above 30°C",
     "warnings": [
-      "Using enzyme stain removers containing Protein on silk — digests the protein fiber",
-      "Using OxiClean or oxygen bleach — too alkaline for protein fibers",
-      "Using hot water — causes felting and setting",
-      "Using chlorine bleach — destroys silk fiber"
+      "NEVER hot water — denatures silk + sets tannin",
+      "NEVER enzymes — Protein digests silk fibroin",
+      "NEVER OxiClean / alkaline cleaners — weakens silk",
+      "NEVER chlorine bleach",
+      "NEVER hydrogen peroxide on silk — yellows dyes",
+      "60-sec ceiling on acid + reducing bleach"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Answer — Pro Within Hours",
+      "instruction": "Coffee on silk is a pro-lane case. The tools that work on cotton (OxiClean, hot water, peroxide) all damage silk. Even gentle home chemistry risks more than it lifts. Your home job is exactly two things: cold-water back-flush to extract bulk coffee, and get to a silk specialist within hours. The garment's best outcome is the one where you bring it in with nothing else applied."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Water Back-Flush — Pour Through, Not On Top",
+      "instruction": "Turn inside out. Place a white towel under the stain. Run COLD water (ice cold preferred) through the BACK of the stain into the catch towel. Cold only — heat denatures silk and sets coffee tannin. The water runs THROUGH the silk, not pooled on top. 60 seconds of patient flushing usually pulls fresh coffee to a pale shadow."
+    },
+    {
+      "step": 3,
+      "agent": "Press Dry — Don't Apply Anything Else",
+      "instruction": "Press silk between two dry white towels to lift moisture. No wringing, no twisting, no hanging wet. Lay flat at room temperature, out of sun. Do NOT apply OxiClean, peroxide, vinegar, baking soda, or any other home cleaner. The silk's best outcome is reaching a pro with nothing but a cold-water rinse already attempted."
+    },
+    {
+      "step": 4,
+      "agent": "Pro Silk Specialist Within Hours",
+      "instruction": "CALL FIRST — \"Do you treat silk with acetic acid + sodium hydrosulfite for tannin?\" If they don't understand the question, try another cleaner. When you bring it in, tell them: \"Coffee on silk, age [hours], cold-water back-flush ONLY at home. No acid, no peroxide, no detergent applied. [Black coffee / with milk].\" The milk-vs-black detail matters — adds protein to the chemistry plan."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot gently with a clean white cloth to soak up as much as you can.",
-      "2. Apply a small amount of mild dish soap diluted in cold water and let it sit for 5–10 minutes.",
-      "3. Blot gently with a clean white cloth. Repeat until the color fades.",
-      "4. Rinse gently with cold water to remove all cleaning solution.",
-      "5. Lay flat on a towel to air dry — no heat, no wringing."
+      "1. Silk + coffee = pro-lane within hours.",
+      "2. Cold water back-flush from the reverse, into a catch towel.",
+      "3. Press dry between white towels — no other chemistry.",
+      "4. Pro silk specialist within hours."
     ],
     "products": [
-      "NSD",
-      "cold water"
+      "Cold/ice water",
+      "Dry white towels"
     ],
-    "whenToStop": "If the stain persists after two treatment attempts, take it to a professional. Silk is too delicate to risk aggressive home treatments.",
+    "whenToStop": "Stop after the cold-water back-flush. Anything else home-applied risks worse damage than the coffee.",
     "warnings": [
-      "Never wring or twist silk — gently press out moisture between towels.",
-      "Test on an inside seam or hidden area first.",
-      "Never use bleach, enzyme cleaners, or hot water on silk."
+      "NEVER hot water on silk",
+      "NEVER OxiClean / enzymes / alkaline cleaners",
+      "NEVER chlorine bleach or peroxide",
+      "NEVER scrub or wring wet silk",
+      "Pour through, not on top — water rings are as visible as coffee"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use enzyme stain removers containing Protein — digests the protein fiber",
-      "Use OxiClean or oxygen bleach — too alkaline for protein fibers",
-      "Use hot water — causes felting and setting",
-      "Use chlorine bleach — destroys fiber",
-      "Wring or aggressively scrub"
+      "Never hot water on silk",
+      "Never enzyme cleaners — digests silk",
+      "Never OxiClean / alkaline cleaners",
+      "Never chlorine bleach",
+      "Never hydrogen peroxide on silk",
+      "Never wring or scrub wet silk"
     ],
     "fiberSensitivities": [
-      "Silk is a protein fiber — enzymes digest it. Safe agents: NSD, mild acetic acid, amyl acetate, sodium hydrosulfite. Test dyes first. Never wring. Avoid H₂O₂ — can cause yellowing or discoloration on silk."
+      "Silk is protein fiber — same enzyme-digestion risk as wool/cashmere",
+      "Heat-intolerant above 30°C",
+      "Hydrogen peroxide yellows silk dyes",
+      "Water rings on careless application"
     ]
   },
+  "materialWarnings": [
+    "Pro within hours — home is damage-prevention only",
+    "Cold back-flush is the entire home protocol",
+    "No vinegar, no peroxide, no OxiClean at home"
+  ],
   "escalation": {
-    "when": "Home treatment does not fully remove the stain after two gentle attempts",
-    "whatToTell": "Coffee stain on silk, treated at home with enzyme-free detergent and cold water. Please use enzyme-free chemistry only. Tannin stain — needs reducing agent, not oxidizer.",
-    "specialistType": "silk specialist or wet cleaner"
+    "when": "Always — silk + coffee is pro-lane, regardless of stain age.",
+    "whatToTell": "\"Coffee on silk, [black / with milk], age [hours], cold-water back-flush ONLY at home. No acid, no peroxide, no detergent applied.\"",
+    "specialistType": "professional dry cleaner specializing in silk (call ahead — confirm acetic acid + sodium hydrosulfite spotting)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the stain fresh or has it been sitting and drying?",
-      "Has the item been ironed or put in a dryer since the stain occurred?",
-      "Is this black coffee or coffee with milk/cream?",
-      "What type of silk — charmeuse, chiffon, habotai?"
+      "Black coffee or coffee with milk/cream?",
+      "How long ago — minutes, hours, or older?",
+      "Type of silk — charmeuse / chiffon / habotai / dupioni?",
+      "Has anyone applied anything yet?",
+      "White or dyed silk?"
     ],
-    "modifierNotes": "Coffee with milk or cream adds a protein component that requires additional attention. Dryer or iron exposure makes removal very difficult or impossible. Fresh stains respond much better. Thinner silks like chiffon are more vulnerable to damage."
+    "modifierNotes": "Coffee with cream adds protein — pro plans differently (cold approach + protein step before tannin). Thinner silks (chiffon, habotai) are more vulnerable. Anything pre-applied at home — especially vinegar, peroxide, or OxiClean — disclose honestly; changes what's still possible."
   },
-  "difficulty": 4,
-  "timeEstimate": "10–15 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

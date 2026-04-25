@@ -1,82 +1,203 @@
 {
   "id": "red-wine-leather",
   "title": "Red Wine on Leather",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "leather",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Tannin (polyphenolic). Red wine contains anthocyanin pigments (pH-dependent color: red at acidic, blue at alkaline, colorless when reduced), condensed tannins, and ethanol. Anthocyanins bond strongly to protein and cellulose fibers. The flavylium cation (red form) is the primary staining species. On leather (pigmented/finished): leather requires gentle, pH-neutral treatment. CRITICAL: Never use H₂O₂, sodium percarbonate, or any oxidizer on leather — permanently strips finish, dye, and natural oils. Use sodium hydrosulfite (reducing bleach) for color removal instead.",
-  "whyThisWorks": "Red wine gets its deep color from grape skin pigments that bond to surfaces and darken with air exposure. Leather has a protective finish that resists most spills, but red wine penetrates through wear spots. Gentle leather-safe cleaning followed by conditioning protects the hide and replaces the natural oils lost during treatment.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "Pro-lane; home is blot + condition only",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "red-wine",
+    "surfaceCanonical": "leather",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "tannin",
+      "leather",
+      "no-oxidizer",
+      "no-bleach",
+      "refusal-style",
+      "pro-lane",
+      "finished-vs-aniline-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Leather is animal hide preserved by tanning + dyed + (usually) topcoated with a polymer finish. Two leather variants matter: (1) FINISHED / pigmented leather — has a polymer topcoat that resists most spills; common on furniture, handbags, jackets. (2) ANILINE / unfinished — topcoat-free, dyed-through, much more porous; even water can leave permanent marks. Red wine anthocyanins penetrate through wear spots in finished leather, and soak into aniline directly. The CRITICAL leather rule: NO oxidizers — peroxide, OxiClean, chlorine bleach all permanently strip the finish + dye + natural oils. Only safe path is mild soap + thorough condition, OR a leather specialist with sodium hydrosulfite (reducing bleach, NOT oxidizer) + leather conditioner. Most home advice for wine on leather is wrong because it carries over fabric chemistry that destroys leather.",
+  "whyThisWorks": "Quick blot prevents wine from soaking past the topcoat into the dyed layer. Mild soap + minimum water + thorough conditioning preserves the hide. The CHEMISTRY that lifts tannin (sodium hydrosulfite — reducing bleach) is leather-safe but pro-only. Home oxidizer attempts strip the finish in seconds. The honest home protocol: blot quickly, use minimum gentle cleaner, condition immediately, escalate fast.",
+  "defaultAssumption": "Finished/pigmented leather with topcoat. Aniline / unfinished is pro-only from minute one — even water rings it. Most furniture / handbag / shoe leather is finished; high-end aniline is rarer but exists.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify Leather Type",
+      "technique": "Inspection + hidden-area water drop",
+      "equipment": "Cloth, drop of water",
+      "dwellTime": "1 minute",
+      "instruction": "Place a single drop of water on a hidden leather area. If it beads on top = finished/pigmented (topcoat present, proceed). If it darkens / soaks in immediately = aniline / unfinished (call leather specialist now, no DIY). Bead-then-soak after a few minutes = semi-aniline (treat as aniline)."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Immediate Blot",
+      "technique": "Press, no rubbing",
+      "equipment": "Clean white cloth or absorbent paper",
+      "dwellTime": "30 seconds",
+      "instruction": "Press a clean white cloth onto the wine pool. Lift straight up, press fresh cloth, repeat until no more wine transfers. Do not rub — rubbing pushes wine through the topcoat into the dyed layer where it cannot be reached without re-dyeing."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Mild Soap + Damp Cloth",
+      "technique": "Barely-damp wipe, outside-in",
+      "equipment": "1–2 drops mild soap (Dawn) in a cup of warm water, white cloth wrung nearly dry",
+      "dwellTime": "2 minutes",
+      "instruction": "Mix 1–2 drops of mild dish soap in a cup of warm water. Dampen a white cloth, wring NEARLY DRY (no dripping). Wipe the stain area in gentle circles, outside-in. Do not soak the leather. Wipe with a plain-water-damp cloth to clear soap residue."
+    },
+    {
+      "step": 4,
+      "side": "dry",
+      "agent": "Sodium Hydrosulfite (Pro Only)",
+      "technique": "Reducing bleach for tannin pigment",
+      "equipment": "Sodium hydrosulfite per pro reference + leather conditioner",
+      "dwellTime": "Per pro protocol",
+      "instruction": "Pro-only step. Reducing bleach (NOT oxidizer) lifts oxidized anthocyanin from finished leather without stripping. Requires controlled application + immediate conditioning. Home cannot replicate safely."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Leather Conditioner",
+      "technique": "Apply per product, gentle work-in",
+      "equipment": "Lexol, Bickmore, or pro leather conditioner",
+      "dwellTime": "Per product label",
+      "instruction": "Apply leather conditioner with a soft cloth. Cleaning strips natural oils — un-conditioned leather cracks. This step is non-negotiable after any wet treatment, even minor."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin and tamp gently. This acidic spotter targets the bonds that wine, tea, and fruit juice pigments form with the surface. Work from the edge toward the center. Check progress every few minutes.",
-      "2. Apply sodium hydrosulfite solution to the stain. Monitor carefully — check every 2–3 minutes for color change. This reducing agent is safe on leather and does not oxidize or strip the finish, dye, or natural oils the way peroxide does. Do NOT follow with oxidizing agents without thorough flushing first.",
-      "3. Flush with NSD and a mild leveling agent to remove broken-down tannin pigment and any excess reducing agent. Rinse thoroughly.",
-      "4. Apply diluted acetic acid (1:10) to stop any remaining activity and restore the surface to its natural state. Blot dry and allow to air dry completely."
+      "1. Identify leather type — aniline = pro from minute one.",
+      "2. Immediate blot, no rubbing.",
+      "3. Mild soap on barely-damp cloth, outside-in.",
+      "4. Sodium hydrosulfite for residual tannin (reducing bleach, NOT oxidizer).",
+      "5. Leather conditioner — non-negotiable post-treatment."
     ],
     "products": [
-      "Tannin",
-      "sodium hydrosulfite",
-      "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Mild dish soap (Dawn, 1–2 drops in water)",
+      "Sodium hydrosulfite (reducing bleach, pro-only)",
+      "Leather conditioner (Lexol / Bickmore / pro-grade)",
+      "White cloths"
     ],
-    "temperature": "ambient — no heat; heat dries out leather and causes cracking",
+    "temperature": "ambient — no heat (heat dries out leather, causes cracking)",
     "warnings": [
-      "Using household cleaners not designed for leather — strips finish",
-      "Using excess water — causes water spots and stiffening",
-      "Not conditioning after cleaning — leads to cracking",
-      "Rubbing aggressively — damages surface finish"
+      "NEVER oxidizers — peroxide / OxiClean / chlorine bleach strip finish + dye + oils",
+      "NEVER acetone — destroys leather finish on contact",
+      "NEVER undiluted alcohol — strips finish",
+      "NEVER excess water — warps leather, causes spotting",
+      "NEVER skip conditioner after cleaning — leads to cracking",
+      "NEVER aggressive rubbing — damages topcoat",
+      "Aniline / unfinished leather = pro from minute one"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Identify Your Leather First — One Drop of Water",
+      "instruction": "Before doing anything else, drop ONE bead of water on a hidden leather area (under a cushion, inside a flap, behind a strap). Wait 30 seconds. If it BEADS on top = finished leather, has a topcoat, you can proceed carefully below. If it SOAKS IN immediately and darkens the leather = aniline / unfinished — STOP. Do nothing. Aniline leather is pro-only from minute one — even water rings it permanently. Anything in between (semi-aniline) — treat as aniline, go pro."
+    },
+    {
+      "step": 2,
+      "agent": "What NOT To Do — The Bad-Advice List",
+      "instruction": "The internet's worst leather advice: hydrogen peroxide, OxiClean, chlorine bleach, baking soda paste, hairspray, white wine, salt. ALL of these strip the leather's finish, dye, and natural oils — usually permanently. The damage from these is much worse than the wine. Also do NOT use acetone, undiluted alcohol, or anything labeled \"degreaser.\" Your safe toolkit is exactly four things: clean white cloth, mild dish soap (1–2 drops), water, and a leather conditioner. Nothing else."
+    },
+    {
+      "step": 3,
+      "agent": "Blot the Wine Immediately — Press, Don't Rub",
+      "instruction": "Press a clean white cloth straight down on the wine. Lift straight up, press fresh part of the cloth, repeat. Do NOT wipe or rub — rubbing pushes wine through any wear spots in the topcoat into the dyed layer underneath, where home cleaning can't reach it. Just press and lift. Get as much wet wine off the surface as possible before any chemistry."
+    },
+    {
+      "step": 4,
+      "agent": "Mild Soap on a BARELY-Damp Cloth",
+      "instruction": "Mix 1 to 2 drops of Dawn (just two drops, not a tablespoon) in a cup of warm water. Dampen a clean white cloth in it and WRING IT OUT until it's barely damp — no dripping, no wet smear. Wipe the stained area in gentle circles, working from the OUTSIDE of the stain inward. Then wipe again with a plain-water-damp cloth to remove the soap. The leather should never be visibly wet — barely damp throughout."
+    },
+    {
+      "step": 5,
+      "agent": "Condition the Leather — Non-Negotiable",
+      "instruction": "Even gentle cleaning strips leather's natural oils. If you skip this step, the leather will dry out and crack over weeks. Apply a leather conditioner (Lexol or Bickmore at any drugstore / hardware store) with a soft cloth, work it in per the label, let it absorb. This isn't optional — it's the difference between a clean spot and a dry, cracked leather over time."
+    },
+    {
+      "step": 6,
+      "agent": "Pro for Anything Remaining — Don't Repeat at Home",
+      "instruction": "If a shadow remains after one careful home pass, take it to a leather care specialist. NOT a regular dry cleaner — leather is its own discipline. Tell them: \"Red wine on [finished / aniline / unknown] leather, age [hours / days], one home pass with mild soap + barely-damp cloth + conditioner. No oxidizer, no acetone, no alcohol used.\" Pros use sodium hydrosulfite (REDUCING bleach, leather-safe) + re-dye if needed — chemistry home cannot do safely."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Dab any wet residue immediately with a clean white cloth. Do NOT rub.",
-      "2. Mix 1–2 drops of Dawn dish soap into 1 cup of lukewarm water. Dampen a clean cloth — wring it out so it's barely damp, not dripping.",
-      "3. Gently dab and wipe the stained area from the outside inward. Do NOT scrub or soak the leather.",
-      "4. Wipe with a clean cloth dampened with plain water to remove soap residue. Immediately dry with a clean, dry cloth.",
-      "5. Apply a leather conditioner after the area is fully dry to restore moisture stripped during cleaning."
+      "1. Identify leather: drop water test. Aniline = pro from minute one.",
+      "2. NO oxidizers, NO acetone, NO alcohol, NO baking soda.",
+      "3. Press-blot wine immediately, no rubbing.",
+      "4. Mild soap (1–2 drops Dawn) on a BARELY-damp cloth, outside-in.",
+      "5. Plain-water damp wipe to clear soap.",
+      "6. Leather conditioner — mandatory after any wet treatment.",
+      "7. Residual = pro leather specialist. NO second home pass."
     ],
     "products": [
-      "Dawn NSD (1–2 drops only)",
-      "leather conditioner (Lexol or similar)"
+      "Mild dish soap (Dawn — 1–2 drops, no more)",
+      "White cloths",
+      "Leather conditioner (Lexol or Bickmore)"
     ],
-    "whenToStop": "If the stain persists after two gentle attempts, take it to a professional leather care specialist.",
+    "whenToStop": "Stop if leather is aniline / unfinished, if a stain remains after one careful pass, or if anyone else has already applied oxidizer / acetone / alcohol.",
     "warnings": [
-      "Always condition leather after any cleaning — cleaning strips natural oils.",
-      "Use a clean, soft cloth — rough materials scratch the leather finish.",
-      "Never use bleach, H₂O₂, or undiluted alcohol on leather."
+      "NEVER peroxide / OxiClean / chlorine bleach on leather — strip finish + dye permanently",
+      "NEVER acetone — destroys leather on contact",
+      "NEVER undiluted alcohol — strips finish",
+      "NEVER excess water — warps leather + spotting",
+      "NEVER baking soda paste — abrasive + alkaline + dries leather",
+      "NEVER skip conditioner — leather cracks over weeks",
+      "Aniline = pro from minute one"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use acetone, bleach, H₂O₂, or any oxidizer — strips finish and dye permanently",
-      "Use excess water — causes warping and spotting",
-      "Skip conditioning after cleaning — leads to cracking"
+      "Never any oxidizer (peroxide / OxiClean / chlorine) on leather",
+      "Never acetone on leather — destroys finish",
+      "Never undiluted alcohol — strips finish",
+      "Never excess water — warps leather",
+      "Never baking soda — abrasive + alkaline",
+      "Never skip conditioner after wet cleaning"
     ],
     "fiberSensitivities": [
-      "Leather: avoid bleach and all oxidizers — they strip color and finish. Always condition after cleaning. Test product on inconspicuous area first; leather varies greatly in dye stability. Avoid extended water saturation — causes warping and spotting."
+      "Finished / pigmented leather: tolerates mild soap + barely-damp cloth + conditioner",
+      "Aniline / unfinished: pro-only — even water rings it",
+      "Semi-aniline: treat as aniline, go pro",
+      "Suede: different protocol entirely (no liquid at all)",
+      "Patent leather: own protocol — no abrasion"
     ]
   },
+  "materialWarnings": [
+    "Aniline = pro from minute one (even water rings)",
+    "NO oxidizers — destroys leather permanently",
+    "Conditioner after every wet treatment, mandatory",
+    "Leather chemistry is its own discipline — fabric chemistry doesn't transfer"
+  ],
   "escalation": {
-    "when": "Stain has penetrated past the protective topcoat, or home treatment leaves residual discoloration",
-    "whatToTell": "Red wine stain on leather, tannin-based (anthocyanin pigments). Treated at home with mild soap and conditioner. Stain may have penetrated the finish. May require re-dyeing or professional restoration.",
-    "specialistType": "leather care specialist"
+    "when": "Aniline / unfinished leather (always), shadow remaining after one home pass, or anyone has applied oxidizer / acetone / alcohol previously.",
+    "whatToTell": "\"Red wine on [finished / aniline / unknown] leather, age [hours / days], one home pass with mild soap + barely-damp cloth + conditioner. No oxidizer, no acetone, no alcohol used [or: someone applied X before I got here].\"",
+    "specialistType": "leather care specialist (NOT a regular dry cleaner — leather is its own discipline; ask if they handle red wine on aniline leather)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the leather finished/pigmented or aniline/unfinished?",
-      "Is the stain fresh or has it been sitting and drying?",
-      "Has any product already been applied to the stain?",
-      "Is this a garment, handbag, furniture, or car interior?"
+      "Did the water-drop test bead, soak, or in-between?",
+      "Furniture / handbag / jacket / shoes / car seat?",
+      "Color — light leather shows residual stain more",
+      "Has anyone applied peroxide / OxiClean / acetone / hairspray / baking soda?",
+      "How valuable / how visible is the area?"
     ],
-    "modifierNotes": "Unfinished/aniline leather is far more porous and vulnerable — even water can leave marks. Fresh stains have much better outcomes. Car interior leather often has heavy topcoat that provides more protection. Any prior product application may have set the stain or damaged the finish."
+    "modifierNotes": "Aniline leather is the unforgiving variant — common on high-end furniture and luxury handbags. Car interior leather is usually finished + heavily topcoated, more forgiving. Light-colored leather shows residual better than dark — set expectations accordingly. Any prior application of harsh chemistry usually strips finish before the cleaner sees it; honest disclosure changes the pro's plan."
   },
-  "difficulty": 7,
-  "timeEstimate": "10–15 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

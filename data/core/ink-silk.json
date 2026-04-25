@@ -1,81 +1,188 @@
 {
   "id": "ink-silk",
   "title": "Ink on Silk",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "silk",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Dye (synthetic colorant). Ballpoint ink contains dye (Crystal Violet or eosin) dissolved in an oil-based vehicle (phenoxyethanol, benzyl alcohol) with resin binder. The resin anchors dye to fiber at a molecular level. Gel pen ink uses suspended pigment particles. Synthetic dyes bond to silk (protein fiber) via ionic bonds, covalent bonds, or physical entrapment. Treatment: gentle solvent (VDS) to dissolve dye carrier, followed by sodium hydrosulfite (reducing agent safe for protein fibers) — oxidizing agents must not be used on silk.",
-  "whyThisWorks": "Ink is a dye in an oil-based carrier designed to permanently mark surfaces. Silk is a delicate protein fiber — ink pigments bond tightly to its structure. Heat or harsh chemicals will set the stain permanently and damage the fiber. Cold water and mild treatment prevent heat-setting.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 9,
+  "timeEstimate": "Pro-lane immediately; do not improvise at home",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "ink",
+    "surfaceCanonical": "silk",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "dye",
+      "silk",
+      "delicate-fiber",
+      "solvent-sensitive",
+      "refusal-style",
+      "pro-lane-immediate",
+      "no-alcohol-on-silk",
+      "ink-type-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Ballpoint ink = concentrated dye (Crystal Violet, eosin) in oil-based vehicle (phenoxyethanol, benzyl alcohol) + resin binder. Gel pen ink = pigment particles in water-glycol vehicle. Permanent marker (Sharpie) = solvent dye in xylene/toluene + resin. Each variant requires different solvent. ON SILK, the failure mode is the SOLVENT, not the ink: isopropyl alcohol STRIPS silk dyes (turns colored silk pale wherever applied), water alone leaves permanent rings on silk, and aggressive solvents (acetone, xylene) damage silk fibroin. The home tools that lift ink from cotton (IPA tamp, Goo Gone) damage silk in three different ways. Pro uses VDS (volatile dry solvent) + sodium hydrosulfite for residual color — controlled chemistry that lifts ink without dye-stripping. Home chemistry has no safe path here.",
+  "whyThisWorks": "A pro spotter with VDS or amyl acetate + tight blotting + NSD rinse can lift ink from silk without stripping dye. The solvent is selected per ink type; concentration and dwell are controlled. Home cannot match this: alcohol strips silk dye, water rings silk, stronger solvents damage fiber. The honest home protocol = blot wet ink, do nothing else, get to a silk specialist immediately.",
+  "defaultAssumption": "Silk + ink = pro IMMEDIATELY. Any home solvent attempt creates a worse problem than the ink. Treat as professional-only from minute one.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Identify Ink Type + Catch Cloth Under",
+      "technique": "Inspection + setup",
+      "equipment": "Good light, clean white cotton cloth",
+      "dwellTime": "1 minute",
+      "instruction": "Identify: ballpoint (oil + dye), gel (water + pigment), or permanent marker (solvent + dye + resin). Each takes a different pro solvent. Slip a clean white catch cloth UNDER the silk where possible — dissolved ink transfers DOWN."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "VDS or Amyl Acetate (Pro)",
+      "technique": "Tight tamp blotting, outside-in",
+      "equipment": "VDS or amyl acetate per ink type, white cloth",
+      "dwellTime": "Brief — apply, tamp, blot",
+      "instruction": "Pro selects solvent by ink type. Apply to cloth, tamp tight concentric passes from edge inward. Flip cloth frequently. Do NOT flood silk."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "NSD Rinse (Pro)",
+      "technique": "Sponge press, gentle",
+      "equipment": "Cold-formula NSD",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Cold NSD removes residual pigment + solvent. Press only, no agitation."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Sodium Hydrosulfite (Pro, Stubborn Color)",
+      "technique": "Reducing bleach, strict timing",
+      "equipment": "Sodium hydrosulfite per pro reference",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "For residual dye color, reducing bleach is silk-safer than oxidizer. Strict 60-sec ceiling."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cold Water Final Rinse + Press-Dry Flat",
+      "technique": "Flush + lay flat",
+      "equipment": "Cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "Flush until clear. Press between dry towels, lay flat to air-dry."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply VDS carefully. On protein fibers like silk, avoid aggressive tamping. VDS dissolves dye pigments without attacking the fiber. Blot gently with clean cloth.",
-      "2. Apply sodium hydrosulfite to reduce the remaining dye color. This is safer than oxidizing agents on silk. Monitor closely and flush as soon as the color lifts.",
-      "3. Flush with NSD to remove all chemical residue. Follow with a fiber conditioner rinse to restore hand and sheen. Air dry flat."
+      "1. Identify ink type — selects solvent.",
+      "2. Catch cloth under + tight tamp blotting from edge in.",
+      "3. VDS or amyl acetate per ink type, controlled dwell.",
+      "4. Cold NSD rinse, gentle press.",
+      "5. Sodium hydrosulfite for residual color, 60-sec ceiling.",
+      "6. Cold final rinse, press dry, lay flat."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite"
+      "VDS (Volatile Dry Solvent)",
+      "Amyl Acetate (per ink type)",
+      "Cold-formula NSD",
+      "Sodium hydrosulfite (reducing bleach)",
+      "Cold/ice water"
     ],
-    "temperature": "cold — heat damages silk fiber and sets protein stains permanently",
+    "temperature": "ambient solvent + cold rinse",
     "warnings": [
-      "Using enzyme stain removers containing Protein on silk — digests the protein fiber",
-      "Using OxiClean or oxygen bleach — too alkaline for protein fibers",
-      "Using hot water — causes felting and setting",
-      "Using chlorine bleach — destroys silk fiber"
+      "NEVER isopropyl alcohol on silk — strips silk dyes (cotton tool, silk poison)",
+      "NEVER acetone on silk — damages fibroin + dye bleed",
+      "NEVER flood silk with water — permanent rings",
+      "NEVER hydrogen peroxide on silk — yellows dyes",
+      "NEVER hot water — denatures silk",
+      "Solvent selection by ink type — the wrong solvent does nothing OR damages silk"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Answer — Do Not Improvise",
+      "instruction": "Silk + ink is the rare combination where every common home tool causes new damage. Rubbing alcohol (the cotton ink-removal standard) STRIPS SILK DYES — leaves a paler patch wherever you apply it. Water alone leaves PERMANENT RINGS on silk. Acetone damages the fibroin AND can bleed silk dye. The cotton playbook doesn't transfer. Home protocol is exactly two things: blot any wet ink, then get to a silk specialist immediately. Do not try anything else."
+    },
+    {
+      "step": 2,
+      "agent": "If Wet — Blot Once, Outside-In, Then Stop",
+      "instruction": "If the ink is still wet (just dropped), press a clean white cloth STRAIGHT DOWN on the pool — outside edges first, working toward the center. Lift straight up, press a fresh part of the cloth, repeat 2–3 light dabs. Lift bulk wet ink only. Do NOT rub, smear, or wipe — wiping spreads ink across more silk. Do NOT add water — water rings silk."
+    },
+    {
+      "step": 3,
+      "agent": "If Dry — Leave It Completely Alone",
+      "instruction": "Dried ink on silk is BETTER for a pro to handle than disturbed ink. Do NOT pick at it with a fingernail. Do NOT scrape — scraping tears silk fibroin. Do NOT attempt to soften with anything. Silk is fragile; leave the ink in place until the cleaner can apply controlled solvent."
+    },
+    {
+      "step": 4,
+      "agent": "Pro Silk Specialist IMMEDIATELY — Identify Ink Type",
+      "instruction": "Call ahead: \"Do you treat ink on silk with VDS or amyl acetate?\" If they don't know what those are, try another cleaner. When you bring it in, tell them BOTH: (1) the ink type — ballpoint, gel pen, or permanent marker (each takes a different solvent), and (2) \"NOTHING applied at home. No alcohol, no water, no acetone, no scrubbing.\" That handoff is valuable — the pro can go straight to the right solvent at the right concentration."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Dab the stain with a cloth dipped in IPA (IPA) (isopropyl 70%).",
-      "2. Work from the outside edge toward the center. Swap to a clean part of the cloth often.",
-      "3. Keep dabbing until no more color transfers to the cloth.",
-      "4. Rinse gently with cold water.",
-      "5. Lay flat on a towel to air dry — no heat, no wringing."
+      "1. Silk + ink = pro IMMEDIATELY. Do not improvise.",
+      "2. If wet: 2–3 light dabs straight down with white cloth. Stop.",
+      "3. If dry: leave alone. Do not pick, scrape, or apply anything.",
+      "4. Pro silk specialist with ink type identified: ballpoint / gel / Sharpie."
     ],
     "products": [
-      "IPA (IPA) (isopropyl 70%)",
-      "NSD"
+      "White cloths"
     ],
-    "whenToStop": "If the stain persists after two treatment attempts, take it to a professional. Silk is too delicate to risk aggressive home treatments.",
+    "whenToStop": "Stop after the initial dab on wet ink. Any solvent or water at home creates new damage worse than the ink.",
     "warnings": [
-      "Never wring or twist silk — gently press out moisture between towels.",
-      "Test on an inside seam or hidden area first — silk can react unpredictably.",
-      "Never use bleach, enzyme cleaners, or hot water on silk."
+      "NEVER alcohol on silk — strips silk dyes",
+      "NEVER water on silk for ink — permanent rings",
+      "NEVER acetone — damages fibroin + dye bleed",
+      "NEVER hydrogen peroxide on silk — yellows dyes",
+      "NEVER scraping dried ink — tears fibroin",
+      "Wrong solvent selection = no progress OR new damage"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use enzyme stain removers containing Protein — digests the protein fiber",
-      "Use OxiClean or oxygen bleach — too alkaline for protein fibers",
-      "Use hot water — causes felting and setting",
-      "Use chlorine bleach — destroys silk fiber",
-      "Wring or aggressively scrub"
+      "Never IPA / rubbing alcohol on silk",
+      "Never acetone on silk",
+      "Never water flooding on silk",
+      "Never hydrogen peroxide on silk",
+      "Never scrape dried ink — tears silk",
+      "Never improvise solvent selection at home"
     ],
     "fiberSensitivities": [
-      "Silk is a protein fiber — enzymes digest it. Safe agents: NSD, mild acetic acid, amyl acetate, sodium hydrosulfite, VDS. Test dyes first. Never wring."
+      "Silk fibroin damaged by acetone + most aggressive solvents",
+      "Silk dyes stripped by isopropyl alcohol",
+      "Silk rings permanently from water alone",
+      "Silk yellows from peroxide"
     ]
   },
+  "materialWarnings": [
+    "The cotton ink-removal playbook DAMAGES silk",
+    "Alcohol strips silk dyes — pale patch where you apply it",
+    "Water rings silk — as visible as ink",
+    "Pro IMMEDIATELY — do not improvise"
+  ],
   "escalation": {
-    "when": "Home treatment does not fully remove the stain after two gentle attempts",
-    "whatToTell": "Ink stain on silk, dye-based. Treated at home with IPA and cold water. Please use enzyme-free chemistry only. Reducing agent preferred over oxidizer.",
-    "specialistType": "silk specialist or wet cleaner"
+    "when": "Always — silk + ink is pro-only IMMEDIATELY. Even minor home attempts create new damage.",
+    "whatToTell": "\"Ink on silk — type [ballpoint / gel pen / permanent marker], age [wet still / dried]. NOTHING applied at home. No alcohol, no water, no acetone, no scrubbing.\"",
+    "specialistType": "professional dry cleaner specializing in silk (call ahead — confirm VDS / amyl acetate spotting + ink type chemistry)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is this ballpoint, gel pen, or marker ink?",
-      "Is the stain fresh or has it been sitting?",
-      "Has the item been ironed or put in a dryer?",
-      "What type of silk — charmeuse, chiffon, habotai, dupioni?"
+      "Ink type — ballpoint (oil/dye), gel pen (water/pigment), or permanent marker (solvent/dye/resin)?",
+      "Wet or dried in?",
+      "Has anyone applied anything yet?",
+      "Type of silk — charmeuse / chiffon / habotai / dupioni?",
+      "White or dyed silk?"
     ],
-    "modifierNotes": "Gel pen ink uses pigment particles that may respond differently. Dryer or iron exposure makes removal very difficult. Fresh stains respond much better. Thinner silks like chiffon are more vulnerable to solvent damage — minimize dwell time."
+    "modifierNotes": "Ink type drives solvent selection — pro can't help without knowing. Pre-applied IPA = silk dye likely already stripped. Pre-applied water = ring already present. Disclose honestly. Permanent marker (Sharpie) is the hardest variant on silk."
   },
-  "difficulty": 6,
-  "timeEstimate": "20–30 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -2,8 +2,14 @@
   "id": "blood-cashmere",
   "title": "Blood on Cashmere",
   "stainType": "protein",
+  "stainFamily": "protein",
   "surface": "cashmere",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 9,
+  "timeEstimate": "Pro-lane immediately; home is cold blot, no chemistry",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "blood",
     "surfaceCanonical": "cashmere",
@@ -11,185 +17,187 @@
     "riskLevel": "high",
     "tags": [
       "protein",
+      "cashmere",
       "delicate-fiber",
-      "cold-only",
+      "biohazard-adjacent",
+      "refusal-style",
+      "pro-lane-immediate",
       "no-enzymes",
-      "no-bleach"
+      "felt-on-friction"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Blood is hemoglobin protein carrying iron (Fe²⁺ when fresh, Fe³⁺ when oxidized). Cashmere is protein fiber—the most delicate of all: finer than wool, prone to pilling and shrinkage. Hemoglobin bonds to cashmere's keratin through hydrogen bonding and hydrophobic interactions. Cashmere tolerates zero heat, zero agitation, zero enzymes (Protein would digest the cashmere itself). Cold water is essential for protein removal without setting or damaging fiber.",
-  "whyThisWorks": "Cold water dissolves hemoglobin without agitation risk. Baby shampoo suspends protein gently without alkalinity that would damage cashmere. No bleach, no peroxide (both weaken delicate protein fiber). Acetic acid aids oxidized stain remnants. The sequence respects cashmere's extreme delicacy while removing protein systematically.",
+  "stainChemistry": "Cashmere fibers are 14–15 microns in diameter — finer than wool (20–30 microns), and the most delicate keratin protein fiber in common use. Same chemistry as wool but everything happens FASTER: felts on lighter friction, opens scales at lower alkaline exposure, weakens with shorter chemistry dwell. Blood adds protein-on-protein layering: enzymes digest cashmere just like blood. Hot water denatures cashmere AND sets hemoglobin in seconds. The home failure mode for blood-on-cashmere isn't \"the stain didn't come out\" — it's \"the cashmere felted and now it's permanently ruined.\" The honest answer for high-value cashmere is to apply NO home chemistry and go straight to a delicates specialist.",
+  "whyThisWorks": "A cashmere specialist with cold ice water + baby-shampoo-grade NSD + strict-timed acetic acid + extreme-dilution peroxide can lift fresh blood without felting. Reducing bleach for oxidized blood is also possible at controlled dilution. Home tools work for ONE thing: cold-water blot to extract bulk blood before it sets. Anything else is felt-risk territory.",
+  "defaultAssumption": "Cashmere + blood = pro IMMEDIATELY. For high-value garments (most cashmere), home protocol is zero chemistry, just cold-water blot in transit to the cleaner. Repeat home rounds on cashmere felt the fiber every time.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "wet",
-      "agent": "Cold water, blot immediately",
-      "technique": "Blot from back, no rubbing",
-      "equipment": "White cloth, spray bottle with ice water",
-      "dwellTime": "1-2 minutes",
-      "instruction": "Work from the back of the fabric (reverse side). Blot hard—let the cloth absorb hemoglobin. Never rub cashmere; even gentle rubbing causes pilling. Flip cloth and continue blotting. cold water prevents protein setting and begins hemoglobin transfer. Most fresh blood transfers in the first 2 minutes if you work immediately."
+      "agent": "Cold Water Press-Blot",
+      "technique": "Vertical press only, gloves on",
+      "equipment": "Ice water spray, white cloth, gloves",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Gloves on (biohazard). Vertical press cold water onto the BACK with a white cloth. Pressure ONLY, never agitation — cashmere felts on lighter friction than wool. Replace cloth as it picks up red."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Baby shampoo solution (1 tbsp per cup cold water)",
-      "technique": "Sponge work, gentle press only",
-      "equipment": "Natural sponge, white cloth",
-      "dwellTime": "Brief — apply, work, blot",
-      "instruction": "Mix baby shampoo (like Cetaphil Baby Wash, 2% concentration) with cold water. Sponge solution onto stain gently. Press downward only—never rub or scrub. Baby shampoo is pH-neutral and encapsulates residual hemoglobin without alkalinity that would weaken cashmere. After 2-3 minutes, blot gently. Stain lightens as protein suspends."
+      "agent": "Cold Baby-Shampoo NSD (Pro)",
+      "technique": "Sponge press, gentle",
+      "equipment": "Baby shampoo (Cetaphil / Johnson's) at 2% in cold water, sponge",
+      "dwellTime": "Brief — apply, press, blot",
+      "instruction": "Baby shampoo is pH-neutral — gentlest household-grade NSD. Sponge press only, never rub. Suspends blood without alkalinity."
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Cold water rinse, multiple passes",
-      "technique": "Spray and blot",
-      "equipment": "Spray bottle, white cloth",
-      "dwellTime": "Until rinse water runs clear",
-      "instruction": "Rinse thoroughly in cold water. Residual baby shampoo will interfere with oxidizer treatment if present. Work from back to front. Water must run clear with no bubbles or soap film. Each rinse removes a layer of residue. Cashmere is small and densely packed—thorough rinsing is critical."
+      "agent": "Cold Rinse, Multiple Passes",
+      "technique": "Press, never squeeze",
+      "equipment": "Cold water spray, white cloth",
+      "dwellTime": "Until clear",
+      "instruction": "Multiple cold rinses until water runs clear. Cashmere holds residue tightly — thorough rinsing essential. Press, never squeeze."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "White Vinegar",
-      "technique": "Dropper application, light press",
-      "equipment": "Dropper bottle, white cloth",
-      "dwellTime": "1 minute maximum",
-      "instruction": "For lingering red-brown stain (oxidized hemoglobin), apply diluted 28% Acetic Acid (diluted) (1 part vinegar to 2 parts cold water) with dropper. Acid breaks iron-protein bonds. Press gently with cloth. After 1 minute, blot. Do not extend treatment—cashmere weakens with prolonged acid exposure. Color should fade visibly."
+      "agent": "Acetic Acid Spotter (Pro, Diluted Further)",
+      "technique": "Dropper, strict 60-sec ceiling",
+      "equipment": "Acetic Acid (diluted 1:20 — more dilute than wool)",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "More dilute than wool (1:20 not 1:10). Dropper, press cloth, 60-sec ceiling. Cashmere weakens faster than wool with acid."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Dilute H₂O₂",
-      "technique": "Sponge if needed, watch color",
-      "equipment": "Sponge, white cloth, 3% peroxide diluted 1:2 with cold water",
-      "dwellTime": "1-2 minutes maximum, monitor closely",
-      "instruction": "If brown iron oxide remains, Sponge gently onto stain. Peroxide oxidizes iron pigment. Cashmere is protein—use extreme dilution. After 1-2 minutes, blot completely. Never oversoak cashmere."
+      "agent": "Extreme-Dilute H₂O₂ (Pro Only)",
+      "technique": "Sponge with strict timing",
+      "equipment": "3% H₂O₂ diluted 1:2 with cold water",
+      "dwellTime": "1–2 min strict, monitored",
+      "instruction": "More dilute than wool (1:2). Sponge press, strict 1–2 min, monitor. Cashmere yellows faster than wool with peroxide."
     },
     {
       "step": 6,
       "side": "wet",
-      "agent": "Cold water final rinse",
-      "technique": "Multiple rinses, gentle blotting",
-      "equipment": "Spray bottle, white cloth",
-      "dwellTime": "Until rinse water runs clear",
-      "instruction": "Rinse thoroughly. All acid and peroxide must be removed before drying. Cashmere retains moisture—residual chemicals will set in fiber. Work back to front. Squeegee gently with cloth to remove excess water."
+      "agent": "Final Cold Rinse + Press-Dry Flat",
+      "technique": "Multiple rinses, gentle press",
+      "equipment": "Cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "Multiple rinses, residue sets in cashmere fast. Press between dry towels. Lay flat to air-dry, reshape damp."
     }
   ],
+  "professionalProtocol": {
+    "steps": [
+      "1. Gloves. Cold press-blot at first contact, no agitation.",
+      "2. Baby shampoo NSD sponge press, 2% in cold water.",
+      "3. Multiple cold rinses until clear.",
+      "4. Acetic acid 1:20 spotter, 60-sec strict ceiling.",
+      "5. H₂O₂ 1:2 dilute for oxidized residue, 1–2 min strict.",
+      "6. Final cold rinse, press dry, lay flat."
+    ],
+    "products": [
+      "Baby shampoo (Cetaphil / Johnson's) — household-grade cashmere NSD",
+      "Acetic Acid (diluted 1:20)",
+      "3% H₂O₂ (diluted 1:2)",
+      "Cold/ice water",
+      "Disposable gloves"
+    ],
+    "temperature": "cold throughout — cashmere felts even faster than wool",
+    "warnings": [
+      "Biohazard — gloves + sealed disposal",
+      "NEVER hot water — felts cashmere in seconds + sets blood",
+      "NEVER agitation / rubbing — felts cashmere on contact when wet",
+      "NEVER enzymes — digests cashmere keratin",
+      "NEVER alkaline / OxiClean — opens scales irreversibly",
+      "NEVER chlorine bleach",
+      "Strict 60-sec acid + 1–2 min peroxide — both more dilute than wool",
+      "ONE round home max"
+    ]
+  },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Cashmere is the most delicate fabric you'll treat at home",
-      "instruction": "Cashmere is fine wool — same protein rules as regular wool but a much faster felt risk under any friction. Nail the basics fast on fresh blood (ice water + gentle blotting usually handles it) and ESCALATE earlier than you would on wool proper. If the garment is expensive cashmere, sending it straight to a delicates specialist with zero home treatment is often the smartest move. Your home job is to preserve fiber integrity."
+      "agent": "Honest Answer — Pro Immediately for High-Value Cashmere",
+      "instruction": "Cashmere is the most delicate common fiber. The wool felting risk is amplified — friction that wouldn't felt regular wool DOES felt cashmere. Home rounds on cashmere felt the fiber more often than they lift the stain. For any meaningful cashmere garment (most cashmere), the right answer is to apply NO chemistry at home and take it straight to a delicates specialist. Time-wise, your home job is cold-water blot to prevent blood from setting in transit, and that's it."
     },
     {
       "step": 2,
-      "agent": "Cashmere rules: all wool bans + extra caution on friction",
-      "instruction": "Cashmere bans: NO enzymes (digest keratin), no hot water (felts in seconds on cashmere), no alkaline (opens scales fast), no chlorine bleach, no alcohol, no wringing, no scrubbing. The wet-friction window before felting on cashmere is much shorter than on regular wool — every touch while damp has to be a press, not a wipe."
+      "agent": "Gloves + Cold Water Press-Blot — Pressure Only",
+      "instruction": "Disposable gloves on (biohazard). Place a white towel under the stain. Press a SECOND white cloth dampened in COLD/ice water onto the BACK of the stain. PRESSURE ONLY — no rubbing, no scrubbing, no wiping motion. Cashmere felts on lighter friction than wool. Lift the cloth, refresh, press again. 60–90 seconds of patient pressing usually pulls fresh blood to a pale shadow."
     },
     {
       "step": 3,
-      "agent": "Patch test + immediate ice-water blot",
-      "instruction": "Dab cool water on an inside seam. 60 seconds, blot. If clean, proceed. Place a white paper-towel stack underneath. Dab ICE-cold water on the BACK of the stain with a cotton ball. The underside towel catches runoff — replace as it picks up red. Fresh hemoglobin usually transfers within the first 2 minutes on cashmere. Light dabs only — no wiping."
+      "agent": "Press Dry — DO NOT Apply Anything Else",
+      "instruction": "Press the cashmere between two dry white towels to lift moisture. No wringing, no twisting, no hanging wet. Lay flat on a fresh towel at room temperature, out of sun. Do NOT apply baby shampoo, vinegar, peroxide, or anything else at home. Even gentle chemistry is an unnecessary felt risk. The garment's best outcome is reaching the cleaner with nothing applied."
     },
     {
       "step": 4,
-      "agent": "Baby shampoo cycle — the gentle home NSD substitute",
-      "instruction": "Baby shampoo (Johnson's or similar) is roughly pH-neutral and enzyme-free — safer on cashmere than most adult detergents. Mix half a teaspoon in one cup of COOL (not cold-shock) water. Dip a white cloth, wring nearly dry, PRESS on the stain. 2–3 minutes dwell. Blot. Alternative: Eucalan or Soak wool wash (both enzyme-free and cashmere-safe) instead of baby shampoo."
-    },
-    {
-      "step": 5,
-      "agent": "Dilute vinegar — STRICT 60-second ceiling",
-      "instruction": "If pink remains, mix 1 part white vinegar with 2 parts cool water (more dilute than on regular wool). Press a cotton swab onto the spot for 60 SECONDS MAX. Set a timer. Flush with cool water. Vinegar restores pH and keeps tannin/iron residues in their lighter form.",
-      "safetyNote": "Never full-strength vinegar on cashmere. Never combine with peroxide or bleach on the same pass."
-    },
-    {
-      "step": 6,
-      "agent": "Very dilute peroxide — STRICT 60-sec, white cashmere only",
-      "instruction": "If a RED-BROWN shadow remains AND the cashmere is white, cream, or very light AND your patch test came back clean: mix 1 part 3% peroxide with 2 parts cool water (more dilute than regular wool). Dab a cotton swab for 60 SECONDS MAX. Flush with cool water immediately. Skip on colored cashmere. Don't extend dwell; cashmere yellows faster than regular wool.",
-      "safetyNote": "Never exceed 60 seconds peroxide on cashmere."
-    },
-    {
-      "step": 7,
-      "agent": "Press dry + flat — no agitation, no repeat",
-      "instruction": "Press between dry white towels — very gentle. Lay flat on a fresh dry towel, reshape while damp. Air-dry at room temperature, out of direct sun. Never hang wet cashmere. Never apply heat. One round max — if the stain survives, DO NOT run a second round at home. Repeat friction on cashmere is almost always where felting damage happens."
-    },
-    {
-      "step": 8,
-      "agent": "Escalate to a cashmere specialist — earlier than you'd think",
-      "instruction": "If the stain survives one round or the blood was dried/heat-set, take the garment to a cleaner who specializes in cashmere (NOT every dry cleaner — call first). Tell them: \"Blood on cashmere, age [x]. Treated at home with ice water + baby shampoo + 1:2 vinegar + [60-sec dilute peroxide on white]. One round, no enzymes, no bleach, no heat.\" Pros use silk/cashmere-safe reducing bleach with controlled dwell — the only reliable path for anything past fresh."
+      "agent": "Pro Cashmere Specialist IMMEDIATELY",
+      "instruction": "Don't wait — cashmere has the narrowest treatment window. Call ahead: \"Do you handle cashmere?\" Many cleaners say no to cashmere. When you bring it in, tell them: \"Blood on cashmere, age [hours], cold-water press-blot ONLY at home. No detergent, no chemistry applied. [Color: still red / drifting brown].\" Pro uses cold NSD + 1:20 acetic acid + extreme-dilute peroxide with strict timing — chemistry tuned for cashmere's friction sensitivity that home cannot replicate."
     }
   ],
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — cashmere dyes may not tolerate spotting agents.",
-    "NEVER use hot water—shrinks and sets protein irreversibly",
-    "NEVER rub or agitate—causes pilling and weakens delicate fiber",
-    "NEVER use Protein enzymes—digest cashmere protein",
-    "NEVER use bleach (chlorine or oxygen)—weakens cashmere",
-    "NEVER use strong alkaline cleaners—damage keratin structure"
-  ],
-  "escalation": "If blood stain persists after home treatment (ice water + baby shampoo + gentle oxidizer), stop immediately. Professional dry cleaning with cold NSD or solvent system is required. Cashmere is expensive and overtreatment risks permanent damage.",
-  "products": {
-    "household": [
-      {
-        "name": "Cetaphil Baby Wash",
-        "brand": "Cetaphil",
-        "icon": "🧴",
-        "amazonSearchQuery": "Cetaphil Baby Wash",
-        "affiliateTag": "gonr08-20",
-        "note": "Gentle, pH-neutral shampoo. 2% solution for cashmere protein removal. No sulfates."
-      },
-      {
-        "name": "White Vinegar",
-        "brand": "Standard",
-        "icon": "🍶",
-        "amazonSearchQuery": "white vinegar 5% acetic acid",
-        "affiliateTag": "gonr08-20",
-        "note": "For oxidized hemoglobin. Dilute 1:2 with cold water. 1 minute max. DO NOT substitute industrial-strength (28%) acetic acid — it causes chemical burns."
-      }
+  "diyProtocol": {
+    "steps": [
+      "1. Cashmere + blood = pro IMMEDIATELY for any high-value garment.",
+      "2. Gloves on. Cold-water press-blot from the BACK, pressure only.",
+      "3. Press dry between white towels — no other chemistry.",
+      "4. Pro cashmere specialist immediately."
     ],
-    "professional": [
-      {
-        "name": "Mulsolite NSD",
-        "brand": "Chemspec",
-        "icon": "🧪",
-        "amazonSearchQuery": "Mulsolite NSD",
-        "affiliateTag": "gonr08-20",
-        "note": "Professional NSD for cashmere protein removal."
-      }
+    "products": [
+      "Disposable gloves",
+      "Cold / ice water",
+      "Dry white towels"
+    ],
+    "whenToStop": "Stop after cold-water press-blot. Any chemistry at home is felt-risk territory.",
+    "warnings": [
+      "Biohazard — gloves + sealed disposal",
+      "NEVER hot water — felts cashmere in seconds",
+      "NEVER agitation / friction — felts cashmere on lighter touch than wool",
+      "NEVER enzymes / OxiClean / alkaline",
+      "NEVER chlorine bleach",
+      "NEVER hang wet cashmere",
+      "PRESSURE only on every step, no wiping motion"
     ]
   },
-  "customerExplanation": "Blood on cashmere requires immediate cold water treatment. Cashmere is delicate—zero heat, zero rubbing, no enzymes. We use baby shampoo for protein, dilute acid for color, and extreme caution throughout. If fresh treatment doesn't clear it completely, professional cleaning is safer than risking damage to expensive fiber.",
-  "commonMistakes": [
-    "Using warm water—sets protein and causes shrinkage in cashmere",
-    "Rubbing or scrubbing—cashmere pills easily even with gentle pressure",
-    "Assuming enzymes help—protease enzymes digest cashmere's own protein structure",
-    "Using bleach—cashmere weakens and yellows under bleach exposure"
+  "safetyMatrix": {
+    "neverDo": [
+      "Never hot water on cashmere",
+      "Never agitation / friction wet cashmere",
+      "Never enzymes / alkaline / OxiClean",
+      "Never chlorine bleach",
+      "Never bare-handed (biohazard)",
+      "Never repeat home chemistry",
+      "Never hang wet cashmere"
+    ],
+    "fiberSensitivities": [
+      "Cashmere keratin felts faster than wool",
+      "Friction sensitivity higher than wool",
+      "Yellows faster than wool with peroxide",
+      "Weakens faster than wool with acid"
+    ]
+  },
+  "materialWarnings": [
+    "Pro IMMEDIATELY for any meaningful cashmere garment",
+    "Cold press-blot is the entire home protocol",
+    "Friction = felt — cashmere felts on lighter friction than wool",
+    "Repeat home chemistry = permanent damage"
   ],
-  "scienceNote": "Cashmere fiber is 14-15 microns in diameter—finer than sheep's wool (20-30 microns). This fineness creates surface area for protein bonding but also makes cashmere prone to pilling and weak to mechanical stress. Hemoglobin's iron core (heme group) is what gives blood its color when oxidized. Cold treatment prevents the protein-cashmere bond from strengthening, which would happen under heat. This is why cold-only treatment is non-negotiable.",
-  "callPro": "If stain remains after baby shampoo + vinegar + dilute peroxide treatment, or if the cashmere shows signs of pilling, color loss, or texture change, stop and call a professional dry cleaner. Cashmere is expensive and recovery becomes risky after extended home treatment.",
-  "components": [
-    "detergent",
-    "acid-spotter",
-    "oxidizer"
-  ],
-  "component_order": [
-    "detergent",
-    "acid-spotter",
-    "oxidizer"
-  ],
-  "difficulty": 7,
-  "difficulty_factors": [
-    "delicate-fiber",
-    "high-damage-risk",
-    "cold-only",
-    "no-enzymes"
-  ],
-  "solventNote": "Professional: Cold soak in Mulsolite (5-10 min), gentle squeeze-out (no wringing). Rinse thoroughly cold water. For oxidized hemoglobin, acetic acid spotter (GAA diluted 1:20, cold, 1 min max). If needed, 1.5% dilute H₂O₂ cold (max 2 min). Absolutely no heat. No reducing bleach. VDS post-treatment optional if needed.",
-  "version": "5.0",
-  "authored": "2026-03-22",
-  "aftercare": "Squeeze gently in white towel—never wring or twist cashmere. Lay flat on clean dry towel. Reshape while damp if needed. Never use heat, even low. Cashmere dries slowly and must dry flat. Once completely dry, brush gently with soft brush to restore nap.",
+  "escalation": {
+    "when": "Always — cashmere + blood is pro-lane immediately. The garment's best outcome is reaching the specialist with no home chemistry applied.",
+    "whatToTell": "\"Blood on cashmere, age [hours / overnight], cold-water press-blot ONLY at home. No chemistry applied. [Color: still red / drifting brown].\"",
+    "specialistType": "delicates / cashmere specialist (call ahead — many cleaners decline cashmere; confirm baby-shampoo NSD + reducing bleach capability)"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "How long ago — minutes, hours, or older?",
+      "Color — still bright red, or drifting brown (oxidized)?",
+      "Cashmere weight — fine knit, heavier knit, woven?",
+      "Has anyone applied anything yet?",
+      "Garment value — sweater, scarf, coat?"
+    ],
+    "modifierNotes": "Fine-gauge cashmere knits felt faster than heavier knits. Oxidized brown blood is much harder — needs reducing bleach at controlled dilution, pro-only on cashmere. Pre-applied enzyme cleaner = cashmere may already be partially digested; pre-applied hot water = may already be partially felted. Disclose honestly."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

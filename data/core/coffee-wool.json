@@ -1,86 +1,202 @@
 {
   "id": "coffee-wool",
   "title": "Coffee on Wool",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "wool",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Tannin (polyphenolic). Coffee tannins are polyphenolic compounds that bind to keratin (wool's protein fiber) primarily through hydrogen bonding. The aromatic hydroxyl groups in tannins form multiple hydrogen bonds with the amide groups and peptide backbone of wool fibers. When coffee is applied to wool, tannins immediately begin bonding to the fiber, making time-critical response essential. Over time, tannin oxidizes and polymerizes, shifting from bright (reversible) to brown (resistant). Treatment: acidic tannin formula to break initial hydrogen bonds, followed by sodium hydrosulfite (reducing agent safe for protein fibers).",
-  "whyThisWorks": "Coffee gets its dark color from plant pigments that bond tightly to wool's keratin structure. Heat or harsh chemicals will set the stain permanently and felt the fiber. Sodium hydrosulfite attacks tannin pigments without damaging protein fibers like wool.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "Pro-lane within hours; one home round max",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "coffee",
+    "surfaceCanonical": "wool",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "tannin",
+      "wool",
+      "protein-fiber",
+      "felting-risk",
+      "refusal-style",
+      "pro-lane-early",
+      "no-enzymes"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Coffee = melanoidins + tannins + (if cream) milk casein + butterfat. Wool is keratin protein with disulfide bonds. The two failures stack on wool exactly like with red wine: heat felts the fiber permanently AND sets tannin, alkaline cleaners weaken keratin AND lock tannin, agitation when wet felts on contact. Coffee with cream is harder than black on wool because the casein adds protein-before-heat ordering — and on wool you can't safely deploy enough chemistry to address both. Same one-round home ceiling as red-wine-wool.",
+  "whyThisWorks": "A wool specialist with cold NSD + timed acetic acid + dilute peroxide can lift fresh coffee tannin without felting. Home ceiling is one careful cold-water round. Repeat home rounds on wool felt the fiber more often than they lift more coffee.",
+  "defaultAssumption": "Wool + coffee = pro within hours. ONE home round max, then stop. Coffee with cream = even earlier escalation (protein adds complexity).",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Water Press-Blot",
+      "technique": "Vertical press only",
+      "equipment": "Ice water spray, white cloth",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Press cold water on the BACK with vertical pressure only. No rubbing — agitates wool, felts fiber. Replace cloth as it picks up brown."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Wool-Safe NSD (Pro)",
+      "technique": "Sponge press, no agitation",
+      "equipment": "Mulsolite or wool-safe NSD",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Cold NSD sponge press only. Suspends remaining tannin without alkalinity that weakens wool."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Cold Rinse Until Clear",
+      "technique": "Press, no squeeze",
+      "equipment": "Cold water spray",
+      "dwellTime": "Until clear",
+      "instruction": "Rinse until water runs clear. Residual NSD interferes with later steps."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Acetic Acid Spotter (Pro)",
+      "technique": "Dropper, 60-sec ceiling",
+      "equipment": "Acetic Acid (diluted 1:10)",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "For residual color, diluted acetic acid via dropper. STRICT 60-sec dwell. Flush cold immediately — wool weakens with prolonged acid."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Dilute Hydrogen Peroxide for Oxidized Residue",
+      "technique": "Sponge with strict timing",
+      "equipment": "3% H₂O₂ diluted 1:1",
+      "dwellTime": "1–2 min monitored",
+      "instruction": "For oxidized brown, dilute peroxide 1–2 min monitored. Flush cold immediately."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Final Cold Rinse + Press-Dry Flat",
+      "technique": "Thorough rinse, lay flat",
+      "equipment": "Cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "Rinse until clear. Press between dry towels — never wring. Lay flat to air-dry, reshape damp."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin carefully and tamp very gently. On wool, use shorter dwell time and lighter touch. The acidic spotter breaks tannin bonds without attacking the fiber. Monitor closely.",
-      "2. Apply sodium hydrosulfite solution. This reducing agent attacks tannin pigments without damaging protein fibers like wool — unlike oxidizing agents which can weaken these fabrics. Monitor carefully and flush when the color lifts.",
-      "3. Flush with NSD to remove all chemical residue and loosened tannin. Use cool water only. On wool, avoid any agitation that could felt the fiber.",
-      "4. Apply diluted acetic acid (1:10) with fiber conditioner to neutralize and restore the fiber. Follow with a fiber conditioner rinse to restore the hand and sheen that protein fibers lose during treatment. Air dry flat."
+      "1. Cold press-blot at first contact.",
+      "2. Wool-safe NSD sponge press.",
+      "3. Cold thorough rinse.",
+      "4. Acetic acid 60-sec spotter.",
+      "5. Dilute H₂O₂ for residual brown, 1–2 min monitored.",
+      "6. Final cold rinse, press flat to air-dry."
     ],
     "products": [
-      "Tannin",
-      "sodium hydrosulfite",
-      "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Mulsolite or wool-safe NSD",
+      "Acetic Acid (diluted 1:10)",
+      "3% H₂O₂ (diluted 1:1)",
+      "Cold/ice water"
     ],
-    "temperature": "cold — hot water immediately felts wool while simultaneously setting the tannin stain permanently",
+    "temperature": "cold throughout — wool felts above 30°C when wet",
     "warnings": [
-      "Using hot water — felts wool immediately while setting the tannin stain permanently",
-      "Rubbing or agitating wet wool — even gentle rubbing of wet wool causes scale interlock and irreversible felting",
-      "Using regular laundry detergent (alkaline, pH 8–10) — alkalinity damages wool's keratin structure",
-      "Using enzyme stain removers containing Protein — digests wool's protein fibers"
+      "NEVER hot water — felts wool + sets tannin",
+      "NEVER agitation / scrubbing — felts wool",
+      "NEVER enzymes — digests keratin",
+      "NEVER alkaline cleaners",
+      "NEVER chlorine bleach",
+      "60-sec ceiling on acid; 1–2 min on peroxide",
+      "Never wring wool"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "ONE Round Max — Felt Risk Is the Real Failure",
+      "instruction": "Wool's worst home failure isn't \"the stain didn't come out\" — it's felting from repeat chemistry. Wool felts permanently when wet wool is agitated, when temp goes over 30°C, when alkaline cleaners open the scales. The one-round rule is non-negotiable. If your one careful cold-water round doesn't clear it, pro is the answer. Don't repeat."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Water Press-Blot from the BACK",
+      "instruction": "Turn inside out. Place white towel under the stain. Press a SECOND white cloth dampened in COLD water onto the BACK. Vertical pressure only — no rubbing, no scrubbing. Lift, refresh cloth, press again. Cold ONLY — heat felts wool AND sets coffee tannin. Both failures stack at warm + agitate."
+    },
+    {
+      "step": 3,
+      "agent": "Wool-Safe Detergent — One Pass Only",
+      "instruction": "If brown remains after cold water alone: half teaspoon Eucalan or Soak (wool-specific, enzyme-free, pH-neutral) in two cups COLD water. Dip a cloth, wring nearly dry, PRESS on the stain. 2–3 minutes dwell. ONE PASS. Do NOT use OxiClean, Biz, or regular detergent — alkaline opens scales and locks tannin."
+    },
+    {
+      "step": 4,
+      "agent": "Press Dry + Lay Flat",
+      "instruction": "Press wool between two dry white towels — stack, press, lift. No wringing or twisting. Lay flat on fresh towel, reshape damp, air-dry at room temperature out of sun. NEVER hang wet wool. NEVER apply heat — even residual heat felts the fiber."
+    },
+    {
+      "step": 5,
+      "agent": "Pro Within Hours If Anything Remains",
+      "instruction": "If brown remains after one careful round, STOP. Take to a wool specialist (call ahead). Tell them: \"Coffee on wool, [black / with cream], age [hours], one round at home with cold water + [Eucalan]. No hot water, no enzymes, no OxiClean.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot gently with a clean white cloth to soak up as much as you can.",
-      "2. Apply a small amount of mild dish soap diluted in cold water and let it sit for 5–10 minutes.",
-      "3. Blot gently with a clean white cloth. Repeat until the color fades.",
-      "4. Rinse gently with cold water to remove all cleaning solution.",
-      "5. Lay flat on a towel to air dry — no heat, no wringing."
+      "1. Wool + coffee = ONE home round max.",
+      "2. Cold water press-blot from the BACK (no rubbing).",
+      "3. Optional one pass with Eucalan / Soak, 2–3 min cold.",
+      "4. Press dry between towels, lay flat air-dry.",
+      "5. Anything remaining = pro. NO second home round."
     ],
     "products": [
-      "NSD",
-      "cold water"
+      "Cold / ice water",
+      "Eucalan or Soak (wool-specific)",
+      "Dry white towels"
     ],
-    "whenToStop": "If the stain persists after two treatment attempts, take it to a professional. Wool is too delicate to risk aggressive home treatments. For very dark, old, or set-in coffee stains, professional treatment is recommended before home attempts.",
+    "whenToStop": "Stop after one careful round — repeat home chemistry on wool felts the fiber.",
     "warnings": [
-      "Always test on a hidden seam or inside hem first — wool dyes may not tolerate spotting agents.",
-      "Never wring or twist delicate fabrics — gently press out moisture between towels.",
-      "Use cold water only — hot water felts wool.",
-      "Never use bleach, enzyme cleaners, or hot water on wool."
+      "NEVER hot water — felts wool + sets tannin",
+      "NEVER agitation / scrubbing wet wool",
+      "NEVER enzymes / OxiClean / alkaline",
+      "NEVER chlorine bleach",
+      "NEVER wring or hang wet wool",
+      "ONE round home max"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use hot water — felts wool and permanently sets tannin stain",
-      "Rub or agitate wet wool — causes irreversible felting",
-      "Use bleach, chlorine, or Protein enzymes — destroys or digests wool fiber"
+      "Never hot water on wool",
+      "Never agitate or scrub wet wool",
+      "Never enzymes / alkaline / OxiClean",
+      "Never chlorine bleach",
+      "Never hang wet wool",
+      "Never repeat home chemistry"
     ],
     "fiberSensitivities": [
-      "Wool is a protein fiber — enzymes digest it. Safe agents: NSD, mild acetic acid, H₂O₂ (dilute, cool), amyl acetate, sodium hydrosulfite. Protein fiber felts with heat + agitation. Keep cool and gentle at all times."
+      "Wool keratin felts when wet + warm + agitated",
+      "Disulfide cross-links irreversibly under heat",
+      "Alkaline opens scales — irreversible",
+      "Aggressive friction = pilling + felting"
     ]
   },
+  "materialWarnings": [
+    "ONE round home max — repeat chemistry felts wool",
+    "Coffee with cream = earlier pro escalation (protein layer)",
+    "Cold + press, never warm + scrub"
+  ],
   "escalation": {
-    "when": "Stain persists after step 4 and remains visible; do not attempt additional chemical treatment or heat",
-    "whatToTell": "Coffee stain on wool, treated at home with enzyme-free detergent and cold water. Please use enzyme-free chemistry only and avoid all heat. Tannin stain — needs reducing agent approach.",
-    "specialistType": "dry cleaner specializing in wool"
+    "when": "After one careful home round, regardless of result. Earlier for coffee with cream, large spills, or high-value garments.",
+    "whatToTell": "\"Coffee on wool, [black / with cream], age [hours], one round at home with cold water + [wool-safe detergent]. No hot water, no enzymes. [Residual brown / fully clear].\"",
+    "specialistType": "professional dry cleaner specializing in wool (call ahead)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the stain fresh or has it been sitting and drying?",
-      "Has the wool been wet-agitated or machine-washed since the stain occurred?",
-      "Is this black coffee or coffee with milk/cream?",
-      "What type of wool — merino, cashmere, standard knit, woven?"
+      "Black coffee or coffee with cream?",
+      "How long ago — fresh, hours, or older?",
+      "Wool type — merino / regular / felt / blend?",
+      "Has anyone used hot water / OxiClean / agitation already?"
     ],
-    "modifierNotes": "Coffee with milk or cream adds a protein component. Prior machine washing or wet agitation may have partially felted the wool. Finer wools (merino, cashmere) are more vulnerable to agitation damage. Tannins bond to wool within minutes — delays in treatment make removal progressively harder."
+    "modifierNotes": "Coffee with cream adds milk protein — different ordering (cold flush, then handle protein BEFORE tannin chemistry). Merino is finer + felts faster. Pre-applied OxiClean or hot-water = wool may already be partially compromised; disclose to pro."
   },
-  "difficulty": 3,
-  "timeEstimate": "10–15 min",
-  "lastValidated": "2026-03-23",
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — wool dyes may not tolerate spotting agents."
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

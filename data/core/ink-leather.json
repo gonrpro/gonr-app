@@ -1,80 +1,192 @@
 {
   "id": "ink-leather",
   "title": "Ink on Leather",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "leather",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Dye (synthetic colorant). Ballpoint ink contains dye (Crystal Violet or eosin) dissolved in an oil-based vehicle (phenoxyethanol, benzyl alcohol) with resin binder. The resin anchors dye to fiber at a molecular level. Gel pen ink uses suspended pigment particles. Synthetic dyes bond to fibers via ionic bonds, covalent bonds, or physical entrapment. Treatment: solvent to dissolve dye carrier, followed by gentle reducing bleach to cleave chromophore bonds — oxidizers must NOT be used on leather.",
-  "whyThisWorks": "Ink is a dye in an oil-based carrier — designed to permanently mark surfaces. Leather has a protective finish that resists most spills, but ink penetrates through wear spots and scratches. Gentle leather-safe solvent treatment followed by conditioning protects the hide and replaces natural oils lost during treatment.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "Pro-lane; minimal home attempt only on finished leather",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "ink",
+    "surfaceCanonical": "leather",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "dye",
+      "leather",
+      "no-acetone",
+      "no-bleach",
+      "refusal-style",
+      "pro-lane",
+      "finished-vs-aniline-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Ink chemistry varies by type (ballpoint / gel / Sharpie) — see ink-cotton chemistry detail. On leather, the substrate matters more than the ink: (1) FINISHED / pigmented leather has a polymer topcoat — ink may sit on the surface, sometimes responding to mild solvent + leather conditioner. (2) ANILINE / unfinished leather absorbs ink directly into the dyed hide — pro-only from minute one. The CRITICAL leather rules: NO acetone (destroys finish on contact), NO undiluted alcohol (strips finish), NO hydrogen peroxide (strips dye + finish + oils), NO chlorine bleach (destroys hide). Pro uses VDS or amyl acetate at controlled concentration + immediate leather conditioning. Home tool that lifts ink from cotton (90% IPA) damages leather finish.",
+  "whyThisWorks": "On finished leather, a brief gentle approach (mild soap + leather-safe solvent applied carefully + immediate conditioning) can lift FRESH surface ink — sometimes. On aniline leather, even a fresh attempt risks dye stripping. Pro chemistry is leather-tuned (controlled VDS/amyl, leather conditioner) and home cannot match. The honest home protocol: identify finish, attempt minimal mild action only on finished leather, escalate fast.",
+  "defaultAssumption": "Finished/pigmented leather assumed; aniline = pro from minute one. Most furniture / handbag / shoe leather is finished. Always condition after any wet treatment.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify Leather + Ink Type",
+      "technique": "Inspection + water-drop test",
+      "equipment": "Drop of water, good light",
+      "dwellTime": "1 minute",
+      "instruction": "Water-drop test: beads = finished, soaks in = aniline (pro from minute one). Identify ink: ballpoint / gel / Sharpie — each takes different pro solvent."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Immediate Blot",
+      "technique": "Press, no rubbing",
+      "equipment": "Clean white cloth",
+      "dwellTime": "30 seconds",
+      "instruction": "Press white cloth on wet ink. Lift straight up, fresh cloth, repeat. No rubbing — pushes ink past topcoat."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "VDS or Amyl Acetate (Pro)",
+      "technique": "Cloth-applied, brief tamp",
+      "equipment": "VDS / amyl acetate per ink type, white cloth",
+      "dwellTime": "Brief — apply, tamp, blot",
+      "instruction": "Pro applies controlled solvent to white cloth, tamps lightly on the stain. Brief contact. Hidden-area test before attempt."
+    },
+    {
+      "step": 4,
+      "side": "dry",
+      "agent": "Leather Conditioner",
+      "technique": "Apply per product",
+      "equipment": "Lexol / Bickmore / pro leather conditioner",
+      "dwellTime": "Per label",
+      "instruction": "Mandatory after any wet treatment. Cleaning strips natural oils — un-conditioned leather cracks."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply VDS (Volatile Dry Solvent) to dissolve the dye pigment and its binder. VDS is gentle and effective — it lifts color molecules from the leather. Blot with clean cloth, replacing often as it picks up dye. Work from outside in.",
-      "2. If VDS plateaus, switch to amyl acetate for stronger solvent action. This targets dye molecules that have bonded more deeply to the leather. Test on a hidden area first. Never use on acetate fabrics.",
-      "3. Flush with NSD to remove all solvent residue and any remaining pigment particles. Rinse thoroughly with cool water."
+      "1. Identify leather (water-drop test) + ink type. Aniline = pro-only.",
+      "2. Immediate blot, no rubbing.",
+      "3. Hidden-area solvent test (VDS / amyl acetate per ink type).",
+      "4. Cloth-applied controlled solvent, brief tamp.",
+      "5. Leather conditioner — mandatory."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)"
+      "VDS (Volatile Dry Solvent)",
+      "Amyl Acetate (per ink type)",
+      "Leather conditioner (Lexol / Bickmore / pro-grade)",
+      "White cloths"
     ],
-    "temperature": "ambient — no heat; heat dries out leather and causes cracking",
+    "temperature": "ambient — no heat",
     "warnings": [
-      "Using household cleaners not designed for leather — strips finish",
-      "Using excess water — causes water spots and stiffening",
-      "Not conditioning after cleaning — leads to cracking",
-      "Rubbing aggressively — damages surface finish"
+      "NEVER acetone on leather — destroys finish on contact",
+      "NEVER undiluted alcohol — strips finish",
+      "NEVER hydrogen peroxide / OxiClean / chlorine bleach — strip dye + oils",
+      "NEVER excess water — warps leather",
+      "NEVER skip conditioner after cleaning",
+      "Aniline leather = pro from minute one"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Identify Your Leather First — Water-Drop Test",
+      "instruction": "Drop ONE bead of water on a hidden leather area. If it BEADS on top = finished/pigmented (proceed cautiously below). If it SOAKS IN immediately = aniline (STOP — pro from minute one). Aniline absorbs ink directly into the dyed hide; even fresh attempts risk stripping leather dye along with the ink. Don't gamble on aniline."
+    },
+    {
+      "step": 2,
+      "agent": "What NOT To Do — The Bad-Advice List for Ink",
+      "instruction": "The internet's worst leather-ink advice: hairspray (Aqua Net contains alcohol that strips finish), acetone, undiluted rubbing alcohol, peroxide, OxiClean, baking soda paste, magic eraser. ALL of these damage leather worse than ink. Magic eraser is a melamine sponge — abrasive — strips leather finish on contact. Hairspray is the most common bad recommendation; the alcohol content damages leather."
+    },
+    {
+      "step": 3,
+      "agent": "If Wet — Blot Immediately, No Rubbing",
+      "instruction": "Press a clean white cloth straight down on the wet ink. Lift straight up, press a fresh part of the cloth, repeat. Do NOT rub or wipe — rubbing pushes ink past wear spots in the topcoat into the dyed layer underneath. Get as much wet ink off the surface as possible before any chemistry."
+    },
+    {
+      "step": 4,
+      "agent": "Mild Soap on a BARELY-Damp Cloth — One Pass",
+      "instruction": "Mix 1–2 drops of Dawn (just two drops) in a cup of warm water. Dampen a clean white cloth, WRING IT OUT until barely damp. Wipe the stain area in gentle circles, OUTSIDE-IN. Then wipe with a plain-water-damp cloth to clear soap. Leather should never look visibly wet. ONE PASS — repeat strips finish."
+    },
+    {
+      "step": 5,
+      "agent": "Condition the Leather — Mandatory",
+      "instruction": "Apply leather conditioner (Lexol or Bickmore) with a soft cloth per the label. Cleaning strips leather's natural oils; conditioning is non-negotiable to prevent cracking."
+    },
+    {
+      "step": 6,
+      "agent": "Pro for Anything Remaining",
+      "instruction": "If a shadow remains after one careful pass, take it to a leather care specialist (NOT a regular dry cleaner). Tell them: \"Ink on [finished / aniline / unknown] leather, type [ballpoint / gel / Sharpie], age [hours / days], one home pass with mild soap + barely-damp cloth + conditioner. No oxidizer, no acetone, no alcohol, no hairspray applied.\" Pros use VDS or amyl acetate at controlled concentration + leather conditioning — ink-type-specific chemistry home can't safely deploy."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "0. Test for colorfastness on a hidden area first — some leather dyes may bleed or fade when treated with solvent.",
-      "1. Dab the stain with a cloth dipped in IPA (IPA) (isopropanol 70%).",
-      "2. Work from the outside edge toward the center. Swap to a clean part of the cloth often.",
-      "3. Keep dabbing until no more color transfers to the cloth.",
-      "4. Wipe with a cloth barely dampened with water.",
-      "5. Let it air dry away from heat and sunlight. Condition the leather after it dries."
+      "1. Identify leather: water-drop test. Aniline = pro from minute one.",
+      "2. NO acetone, NO alcohol, NO peroxide, NO hairspray, NO magic eraser.",
+      "3. Press-blot wet ink immediately, no rubbing.",
+      "4. Mild soap (1–2 drops Dawn) on a BARELY-damp cloth, outside-in.",
+      "5. Plain-water damp wipe to clear soap.",
+      "6. Leather conditioner — mandatory.",
+      "7. Residual = pro leather specialist with ink type identified."
     ],
     "products": [
-      "IPA (IPA) (isopropanol 70%)",
-      "leather conditioner"
+      "Mild dish soap (Dawn — 1–2 drops, no more)",
+      "White cloths",
+      "Leather conditioner (Lexol / Bickmore)"
     ],
-    "whenToStop": "If the stain persists after two treatment attempts, take it to a professional leather care specialist.",
+    "whenToStop": "Stop if leather is aniline / unfinished, if a stain remains after one careful pass, or if anyone has applied harsh chemistry previously.",
     "warnings": [
-      "Always condition leather after any cleaning — cleaning strips natural oils.",
-      "Use a clean, soft cloth — rough materials scratch the leather finish.",
-      "Never use acetone, bleach, H₂O₂, or undiluted alcohol on leather."
+      "NEVER acetone — destroys leather on contact",
+      "NEVER undiluted alcohol — strips finish",
+      "NEVER hydrogen peroxide / OxiClean / chlorine — strip dye + oils",
+      "NEVER hairspray — alcohol-based, damages leather",
+      "NEVER magic eraser — abrasive, strips finish",
+      "NEVER skip conditioner after wet cleaning",
+      "Aniline = pro from minute one"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use acetone, bleach, H₂O₂, or abrasives — strips finish and dye permanently",
-      "Use excess water — causes warping and spotting",
-      "Skip conditioning after cleaning — leads to cracking"
+      "Never acetone on leather",
+      "Never undiluted alcohol",
+      "Never hydrogen peroxide / OxiClean / chlorine",
+      "Never hairspray (alcohol-based)",
+      "Never magic eraser (abrasive)",
+      "Never skip conditioner"
     ],
     "fiberSensitivities": [
-      "Leather: NEVER use acetone, bleach, alcohol (undiluted), or abrasives. Safe agents: saddle soap, leather cleaner, mild soap solution, amyl acetate. Always condition after cleaning."
+      "Finished / pigmented leather: tolerates mild soap + barely-damp cloth + conditioner",
+      "Aniline / unfinished: pro-only — even water rings",
+      "Suede: own protocol (no liquid)",
+      "Patent leather: own protocol (no abrasion)"
     ]
   },
+  "materialWarnings": [
+    "Aniline = pro from minute one",
+    "Cotton ink-removal tools (IPA) DAMAGE leather",
+    "Hairspray and magic eraser are the worst bad-advice items",
+    "Conditioner after wet treatment, mandatory"
+  ],
   "escalation": {
-    "when": "Ink has penetrated past the protective topcoat, stain remains after solvent treatment",
-    "whatToTell": "Ink stain on leather, penetrated the finish. Treated at home with IPA. May require re-dyeing or professional leather restoration.",
-    "specialistType": "leather care specialist"
+    "when": "Aniline / unfinished leather (always), shadow remaining after one pass, or anyone has applied harsh chemistry previously.",
+    "whatToTell": "\"Ink on [finished / aniline / unknown] leather, type [ballpoint / gel / Sharpie], age [hours / days], one home pass with mild soap + barely-damp cloth + conditioner. No oxidizer, no acetone, no alcohol, no hairspray, no magic eraser used.\"",
+    "specialistType": "leather care specialist (NOT a regular dry cleaner — ask about VDS / amyl acetate spotting on leather)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is this ballpoint, gel pen, or marker ink?",
-      "Is the leather finished/pigmented or aniline/unfinished?",
-      "Is the stain fresh or has it been sitting?",
-      "What color is the leather — light, dark, or patterned?"
+      "Water-drop test: bead, soak, or in-between?",
+      "Ink type — ballpoint / gel pen / Sharpie?",
+      "Furniture / handbag / jacket / shoes / car seat?",
+      "Has anyone applied hairspray, acetone, alcohol, peroxide, or magic eraser?",
+      "Color — light leather shows residual ink more"
     ],
-    "modifierNotes": "Gel pen ink uses pigment particles that may respond differently than ballpoint dye. Unfinished/aniline leather is far more porous and stains penetrate much deeper. Fresh ink has better removal odds. Light-colored leather shows residual staining more."
+    "modifierNotes": "Aniline leather is the unforgiving variant — common on high-end handbags + furniture. Sharpie on aniline is essentially permanent. Hairspray pre-applied = leather likely already stripped where the alcohol hit. Magic eraser pre-applied = finish abraded; pro will see fading where you used it."
   },
-  "difficulty": 5,
-  "timeEstimate": "20–30 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
