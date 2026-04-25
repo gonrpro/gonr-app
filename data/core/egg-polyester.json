@@ -1,80 +1,201 @@
 {
   "id": "egg-polyester",
   "title": "Egg on Polyester",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Egg contains concentrated albumin protein that coagulates rapidly when exposed to heat. On polyester, raw egg is water-soluble and relatively easy to remove. Cooked or heat-set egg forms a tough, insoluble protein film that bonds mechanically and chemically to fiber surfaces. The fat content in yolk adds a secondary oil component.",
-  "whyThisWorks": "Cold water is critical — warm water instantly cooks the albumin into an insoluble solid on polyester. A digestant enzyme breaks down the protein chains, while a surfactant emulsifies the fat component from the yolk. Sequential treatment (protein first, then oil) ensures complete removal.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–40 minutes; cold-only protein, raw vs cooked fork",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "egg",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "egg",
+      "protein",
+      "fat",
+      "polyester",
+      "no-hot-water",
+      "no-hot-dryer",
+      "cold-critical",
+      "raw-vs-cooked-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Egg is concentrated protein from the white plus fat from the yolk. The protein cooks fast under heat — even warm tap water will instantly cook a raw-egg stain into the fiber and turn a tractable cleanup into a permanent film. Polyester locks egg in two ways: heat sets the protein into the fiber AND the polyester is OLEOPHILIC, grabbing the yolk fat tight. Raw egg responds to a cool enzyme pretreat plus Dawn. Cooked egg (already heat-set on the fiber) is much harder — the protein is locked, and home recovery is unreliable; pro is often the right call. The recurring trap is reaching for warm water to 'help dissolve' egg — exactly the wrong move.",
+  "whyThisWorks": "Cool water keeps raw egg protein soluble. An enzyme pretreat dismantles the protein BEFORE Dawn handles the yolk fat. Cool wash plus AIR-DRY locks nothing. The honest cap: cooked or hot-washed egg on polyester is often permanent because the protein has bonded to the fiber the same way a cooked egg bonds to a hot pan.",
+  "scienceNote": "Mechanism (pro-facing): egg white is concentrated albumin protein; egg yolk adds lipid + lecithin. Albumin denatures and cross-links irreversibly above ~62°C, forming an insoluble protein film. Pro uses cold liquid Protein Spotter (protease pretreat) plus cold NSD; for cooked-on egg, sodium hydrosulfite at controlled dilution may help residual chromophore but the protein lock is mechanical and often plateaus.",
+  "defaultAssumption": "Raw egg drop on a polyester garment (cooking spatter, breakfast spill, kid mishap), fresh and not yet hot-rinsed or hot-dried. Cooked-on egg or hot-dried = often permanent; pro for valuable garments.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Excess Gently",
+      "technique": "Lift solid bulk first",
+      "equipment": "Plastic spoon edge or dull butter knife",
+      "dwellTime": "1 minute",
+      "instruction": "Scrape any thick egg off the surface with a plastic spoon edge. Flat-edge work only — don't rub. Don't pour water yet."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cool Water Blot",
+      "technique": "Cold flush, no warm",
+      "equipment": "Cool water, white cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Damp white cloth with COOL water. Press, lift, rotate. Cool only — even warm tap water cooks raw egg into the polyester instantly."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Enzyme Pretreat — Cool, Not Hot",
+      "technique": "Protein digestion before any heat",
+      "equipment": "OxiClean Versatile / Biz / Tide Plus per label, COOL water",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Dissolve enzyme pretreat in COOL water. Apply to spot, keep damp under a cloth, dwell 20–30 min. Enzyme dismantles raw egg protein at cool temperature. Hot water above bath temperature damages enzymes AND cooks the protein into the polyester."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn — Cut the Yolk Fat",
+      "technique": "Emulsify the fat fraction",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 5–10 min. Polyester is oleophilic — extended dwell needed. Cool damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cool Wash Plus AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Full cool cycle plus AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry. NEVER hot dryer until cleared — locks residual yolk fat and yellows polyester."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Scrape excess gently with plastic-edge.",
+      "2. Cool damp-cloth blot.",
+      "3. Enzyme pretreat in COOL water, 20–30 min — BEFORE any heat.",
+      "4. Generous Dawn pretreat for yolk fat, cool, 5–10 min.",
+      "5. Cool machine wash + AIR-DRY. Inspect dry before any heat."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Plastic spoon edge",
+      "Enzyme pretreat (OxiClean Versatile / Biz / Tide Plus / liquid Protein Spotter)",
+      "Dawn / NSD",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat cooks egg protein into polyester permanently",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "NEVER hot water — even warm tap water cooks raw egg into the fiber",
+      "NEVER hot dryer until cleared",
+      "Order matters — enzyme FIRST (protein), Dawn SECOND (fat)",
+      "Polyester is oleophilic — extended Dawn dwell needed",
+      "Enzymes denature above bath temperature — keep COOL",
+      "Cooked-on egg is often permanent — pro for valuable garments"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Egg Cooks. That's the Whole Trap.",
+      "instruction": "Egg protein cooks fast under heat. Even warm tap water will cook a raw-egg stain into the polyester instantly and turn a tractable cleanup into a permanent film. Two hard rules: NO hot water (even warm — cool only) and NO hot dryer until cleared. The order also matters: enzyme pretreat first for the protein, Dawn second for the yolk fat."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Excess Gently — No Rubbing",
+      "instruction": "If there's a thick bit of egg on the surface, scrape it off with a plastic spoon edge or dull butter knife. Flat-edge work only — never rub. Rubbing pushes egg into the fiber surface."
+    },
+    {
+      "step": 3,
+      "agent": "Cool Damp-Cloth Blot",
+      "instruction": "Damp white cloth with COOL water. Press, lift, rotate. Cool only — anything warmer than tap-cold cooks raw egg into the fiber."
+    },
+    {
+      "step": 4,
+      "agent": "Enzyme Pretreat — Cool Water Only",
+      "instruction": "Dissolve an enzyme pretreat (OxiClean Versatile, Biz, or Tide Plus) in COOL water per the label. Apply to the spot, keep damp under a cloth, wait 20 to 30 minutes. The enzyme dismantles raw egg protein at cool temperature. Don't be tempted to use warm water 'to dissolve' the egg — heat above bath temperature damages the enzymes AND cooks the protein."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn — Cut the Yolk Fat",
+      "instruction": "Yolk has fat that polyester grabs onto. Apply a generous amount of Dawn dish soap. Work in with a soft toothbrush for 5 to 10 minutes. Cool damp-cloth rinse."
+    },
+    {
+      "step": 6,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry. NEVER hot dryer until cleared — locks residual fat and yellows polyester. If the egg has already been cooked or hot-washed, accept that recovery is partial — pro is the right call for valuable garments."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. NO hot water. NO hot dryer until cleared.",
+      "2. Scrape excess gently with plastic-edge.",
+      "3. Cool damp-cloth blot.",
+      "4. Enzyme pretreat in COOL water, 20–30 min — protein FIRST.",
+      "5. Generous Dawn pretreat, cool, 5–10 min — fat SECOND.",
+      "6. Cool machine wash + AIR-DRY. Inspect dry."
     ],
     "products": [
+      "Plastic spoon edge",
+      "Enzyme pretreat (OxiClean Versatile, Biz, Tide Plus)",
       "Dawn dish soap",
-      "cold water"
+      "Cool water"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if egg has been cooked or hot-washed (often permanent on polyester). Stop on specialty / performance / dry-clean-only polyester (pro). Stop after 2 home rounds without progress.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "NEVER hot water — even warm tap water cooks raw egg",
+      "NEVER hot dryer until cleared",
+      "Order matters — enzyme FIRST, Dawn SECOND",
+      "Polyester is oleophilic — extended Dawn dwell needed",
+      "Enzymes denature above bath temperature — keep cool",
+      "Cooked egg is often permanent on polyester"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never warm or hot water on raw egg + polyester",
+      "Never hot dryer until cleared",
+      "Never skip the Dawn step — leaves yolk-fat shadow",
+      "Never use enzymes in hot water — destroys enzymes AND sets protein"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs yolk fat tightly",
+      "Polyester is heat-sensitive — yellows under heat",
+      "Cooked egg on polyester is often mechanically permanent",
+      "Performance / specialty polyester: pro — coatings react unpredictably"
     ]
   },
+  "materialWarnings": [
+    "Egg cooks at warm temperatures — cool water only",
+    "No hot water / no hot dryer — polyester locks egg",
+    "Order matters — enzyme FIRST (protein), Dawn SECOND (fat)",
+    "Cooked-on egg is often permanent",
+    "Polyester loves yolk fat — extended Dawn dwell needed"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is egg on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Egg has already been cooked or hot-washed (often permanent). Performance / specialty / dry-clean-only polyester. 2 home rounds plateau. Yellow yolk-fat shadow remains after Dawn.",
+    "whatToTell": "\"Egg on [white / dyed / athletic / specialty] polyester, [raw / cooked / hot-washed], age [fresh / hours / hot-dried suspected], home-treated with [cool enzyme pretreat + Dawn cool + cool wash + air-dry]. No hot, no dryer. [Residual film / yolk shadow / cooked-on suspected].\"",
+    "specialistType": "professional dry cleaner with combination-stain (protein + oil) chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Raw egg, scrambled, or cooked-on (eggs benedict yolk drop)?",
+      "Whole egg, white only, or yolk only?",
+      "White, dyed, athletic, or specialty polyester?",
+      "Fresh, hours old, or hot-washed already?",
+      "Has anyone tried warm or hot water?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Raw egg on polyester is tractable IF caught before any heat. Even warm tap water cooks it. Cooked-on egg is often permanent because the protein bonds to polyester the same way a cooked egg bonds to a hot pan. Yolk fat is the second-stage cleanup — polyester is oleophilic, so extended Dawn dwell is needed to release it."
   },
-  "difficulty": 4,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

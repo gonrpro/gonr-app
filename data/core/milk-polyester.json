@@ -1,80 +1,187 @@
 {
   "id": "milk-polyester",
   "title": "Milk on Polyester",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Milk contains casein (protein), lactose (sugar), and butterfat (lipid) — a triple-component stain. The casein bonds to polyester through hydrogen bonding and becomes increasingly insoluble as it dries. Butterfat leaves a greasy residue that traps the protein component against the fiber. Heat causes the casein to denature and cross-link permanently.",
-  "whyThisWorks": "Cold water keeps the casein protein soluble on polyester. Enzyme treatment breaks down the casein chains. Surfactant emulsifies the butterfat. The treatment order matters: protein first (cold), then fat (surfactant), because hot water used for fat removal would set the protein.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "15–35 minutes; cold-only protein protocol, polyester locks oil under heat",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "milk",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "milk",
+      "protein",
+      "fat",
+      "polyester",
+      "no-hot-water",
+      "no-hot-dryer",
+      "cold-critical",
+      "souring-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Milk is three stains in one: protein, milk fat, and milk sugar. The protein sets with heat — once warm water hits it the protein cooks into the polyester and the stain locks. Polyester is also OLEOPHILIC, meaning it grabs the milk fat tight, and heat-sensitive — hot water at any step locks the fat into the fiber and yellows the polyester over time. The hard line is order: cool flush plus enzyme handles the protein FIRST, Dawn handles the fat SECOND, then a cool wash. If milk has been sitting long enough to sour, add a baking-soda or vinegar pre-treat for the smell — but stay cool through the whole sequence.",
+  "whyThisWorks": "Cool water keeps the protein from setting and rinses out the milk sugar before it dries sticky. An enzyme pretreat dismantles the protein in cool water — that's why we don't reach for hot. Dawn then emulsifies the milk fat that polyester grabbed onto. Cool wash plus AIR-DRY locks nothing. Source-the-fat skipping is what causes the residual greasy yellow shadow on polyester after a 'clean' wash.",
+  "scienceNote": "Mechanism (pro-facing): milk is casein protein + lactose + butterfat. Casein denatures and cross-links irreversibly above ~50°C, locking residual color into polyester. Pro uses cold liquid Protein Spotter (protease pretreat) plus cold NSD plus optional 3% peroxide for residual chromophore on white polyester.",
+  "defaultAssumption": "Kid's bottle leak / cereal spill / coffee-with-milk on a polyester garment, fresh and not yet hot-dried. Hot-dried milk = often permanent yellow shadow plus locked fat. Sour milk adds odor handling but not extra protein difficulty.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet-minimal",
+      "agent": "Cool Water Blot",
+      "technique": "Cold flush, no hot",
+      "equipment": "Cool water, white cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Damp white cloth with COOL water. Press, lift, rotate. Cool only — heat sets the milk protein on polyester permanently."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Enzyme Pretreat — Cool, Not Hot",
+      "technique": "Protein digestion before fat",
+      "equipment": "OxiClean Versatile / Biz / Tide Plus per label, COOL water",
+      "dwellTime": "15–30 minutes",
+      "instruction": "Dissolve enzyme pretreat in COOL water. Apply to spot, keep damp under a cloth, dwell 15–30 min. The enzyme dismantles the protein at cool temperature. Hot water above bath temperature damages enzymes AND sets the protein."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn — Cut the Milk Fat",
+      "technique": "Emulsify the fat fraction",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 5–10 min. Polyester is oleophilic — extended dwell needed to release the milk fat. Cool damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Wash Plus AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Full cool cycle plus AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry — wet polyester sometimes hides residual yellow that reappears once dry. NEVER hot dryer until cleared — locks fat and yellows polyester."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Cool damp-cloth blot.",
+      "2. Enzyme pretreat in COOL water, 15–30 min — protein FIRST.",
+      "3. Generous Dawn pretreat for fat, cool, 5–10 min, soft toothbrush.",
+      "4. Cool machine wash + AIR-DRY. Inspect dry before any heat."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Enzyme pretreat (OxiClean Versatile / Biz / Tide Plus / liquid Protein Spotter)",
+      "Dawn / NSD",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets protein and locks milk fat on polyester",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "NEVER hot water — sets protein, locks fat, yellows polyester",
+      "NEVER hot dryer until stain fully cleared",
+      "Order matters — protein FIRST (enzyme), fat SECOND (Dawn)",
+      "Polyester is oleophilic — extended Dawn dwell needed",
+      "Enzymes denature above bath temperature — keep COOL"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Three Stains in One — Order Matters",
+      "instruction": "Milk has protein, fat, and sugar all at once. The protein sets with heat — that's the trap. If you reach for warm or hot water, the protein cooks into the polyester and you can't get it out. Two hard rules: NO hot water (locks the protein and yellows polyester) and NO hot dryer until cleared (locks the fat). The order also matters: enzyme pretreat first for the protein, Dawn second for the fat."
+    },
+    {
+      "step": 2,
+      "agent": "Cool Damp-Cloth Blot",
+      "instruction": "Damp a white cloth with COOL water. Press the spot, lift, rotate. Cool only. Polyester punishes any heat at any step on a milk stain."
+    },
+    {
+      "step": 3,
+      "agent": "Enzyme Pretreat — Cool Water Only",
+      "instruction": "Dissolve an enzyme pretreat (OxiClean Versatile, Biz, or Tide Plus) in COOL water per the label. Apply to the spot, keep it damp under a cloth, wait 15 to 30 minutes. The enzyme dismantles the protein at cool temperature. Don't be tempted to use warm water 'to help' — heat above bath temperature damages the enzymes AND sets the protein. Cool only."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn — Cut the Milk Fat",
+      "instruction": "Polyester is oleophilic — it grabs the milk fat tight. Apply a generous amount of Dawn dish soap. Work in with a soft toothbrush for 5 to 10 minutes. Cool damp-cloth rinse. Skipping this step is the #1 cause of the residual yellow shadow on polyester after a 'clean' wash."
+    },
+    {
+      "step": 5,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry before the dryer. Faint yellow shadow = repeat the Dawn pass. NEVER hot dryer until cleared — heat at this step locks the residual fat into polyester and yellows the fabric over time."
+    },
+    {
+      "step": 6,
+      "agent": "Sour Milk — Smell Handling",
+      "instruction": "If the milk sat long enough to sour, the protocol stays the same but add a step: after the enzyme pretreat, sprinkle baking soda on the dry spot, leave 30 minutes, brush off. Or add 1/2 cup white vinegar to the cool wash water. Both handle the sour smell. Don't reach for hot water 'to kill the smell' — that sets the stain."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. NO hot water. NO hot dryer until cleared.",
+      "2. Cool damp-cloth blot.",
+      "3. Enzyme pretreat in COOL water, 15–30 min — protein FIRST.",
+      "4. Generous Dawn pretreat, cool, 5–10 min, soft toothbrush — fat SECOND.",
+      "5. Cool machine wash + AIR-DRY. Inspect dry.",
+      "6. Sour milk: baking soda dry pretreat OR vinegar in wash water."
     ],
     "products": [
+      "Enzyme pretreat (OxiClean Versatile, Biz, Tide Plus)",
       "Dawn dish soap",
-      "cold water"
+      "Cool water",
+      "Baking soda or white vinegar (sour milk only)"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if hot water or hot dryer was already used (often permanent yellow shadow on polyester). Stop on specialty / performance / dry-clean-only polyester (pro). Stop after 2 home rounds without progress.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "NEVER hot water — sets protein, locks fat, yellows polyester",
+      "NEVER hot dryer until cleared",
+      "Order matters — enzyme FIRST, Dawn SECOND",
+      "Polyester is oleophilic — extended Dawn dwell needed",
+      "Enzymes denature above bath temperature — keep cool"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on milk + polyester — sets protein permanently",
+      "Never hot dryer until stain cleared",
+      "Never skip the Dawn step — leaves yellow fat shadow",
+      "Never use enzymes in hot water — destroys enzymes AND sets protein"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs milk fat tightly; extended Dawn dwell",
+      "Polyester is heat-sensitive — yellows under heat over time",
+      "Performance / specialty polyester: pro — coatings react unpredictably",
+      "Polyester typically needs 2 Dawn passes for milk-fat residue"
     ]
   },
+  "materialWarnings": [
+    "No hot water / no hot dryer — polyester locks milk forever",
+    "Order matters — enzyme FIRST (protein), Dawn SECOND (fat)",
+    "Polyester loves milk fat — extended Dawn dwell needed",
+    "Hot-dried milk on polyester is often permanent yellow shadow"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is milk on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent yellow shadow). Performance / specialty / dry-clean-only polyester. 2 home rounds plateau. Milk has been sour for days with set ring. Yellow shadow remains after Dawn.",
+    "whatToTell": "\"Milk on [white / dyed / athletic / specialty] polyester, age [fresh / hours / hot-dried suspected], home-treated with [cool enzyme pretreat + Dawn cool + cool wash + air-dry]. No hot, no dryer. [Residual yellow shadow / hot-dried suspected / sour smell].\"",
+    "specialistType": "professional dry cleaner with combination-stain (protein + oil) chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Whole milk, formula, half-and-half, or plant milk?",
+      "White, dyed, athletic, or specialty polyester?",
+      "Fresh, hours old, or hot-dried already?",
+      "Has the milk soured (smell)?",
+      "Has anyone tried hot water already?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Whole milk and half-and-half have more fat and need extended Dawn dwell. Formula has added oils and proteins; same protocol. Plant milks (oat, almond) have less protein but more starch/sugar — protein step still matters because most also contain emulsifiers. Hot-dried milk on polyester often leaves a permanent yellow shadow because polyester yellows under heat once oil is in the fiber."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

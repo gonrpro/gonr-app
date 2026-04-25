@@ -1,80 +1,188 @@
 {
   "id": "soy-sauce-polyester",
   "title": "Soy Sauce on Polyester",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Soy sauce contains caramel color compounds (melanoidins), salt, amino acids, and tannin-like phenolics from fermentation. On polyester, the melanoidins bond to fiber through a combination of hydrogen bonding and Maillard-type crosslinks. The high salt content acts as a mordant, fixing the brown color deeper into the fiber matrix.",
-  "whyThisWorks": "Flushing with cold water immediately removes salt and loose pigment from polyester. The tannin spotter breaks melanoidin-fiber bonds. An oxidizer addresses the persistent brown color. Pre-rinsing is unusually important for soy sauce — the salt component acts as a dye fixative, so removing it quickly prevents the stain from becoming permanent.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "15–35 minutes; cold flush plus salt-rinse, polyester locks brown under heat",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "soy-sauce",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "soy-sauce",
+      "tannin",
+      "salt-mordant",
+      "polyester",
+      "no-hot-water",
+      "no-hot-dryer",
+      "no-alkaline",
+      "speed-critical"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Soy sauce is dark brown caramel color plus salt plus the tannin-like browning compounds from fermentation. Salt is the catch — it acts as a fixing agent that drives the brown deeper into the fiber the longer it sits. On polyester, two more complications stack: heat sets the brown into polyester permanently AND polyester is industrially dyed with heat (the same heat at home drives soy-sauce chromophore into the fiber forever). The two hard lines: NO hot water (sets the brown plus locks chromophore into polyester) and NO alkaline cleaners (baking soda, ammonia, OxiClean alone before peroxide) — alkaline darkens tannin permanently into a deeper brown. The recurring trap is reaching for hot water 'to dissolve' the soy sauce — exactly the wrong move.",
+  "whyThisWorks": "Cold water flush rinses out the salt before it can fix the color. Mild acid (white vinegar) keeps the tannin on the lighter side of its color range and disrupts the grip on polyester. 3% peroxide on white polyester oxidizes residual brown. Cool wash plus AIR-DRY locks nothing. The honest cap: hot-dried soy sauce on polyester is often a permanent brown shadow because polyester locks color under heat.",
+  "scienceNote": "Mechanism (pro-facing): soy sauce is melanoidins from fermentation Maillard browning + salt + amino acids + phenolic tannin. Salt acts as a mordant, fixing chromophore to polyester. Pro uses cold acid-side tannin spotter (Chemspec Tannin Spotter or PRENETT-A) plus 3% H₂O₂ for residual chromophore plus acetic acid neutralizing rinse.",
+  "defaultAssumption": "Sushi night / takeout splash on a polyester shirt or blend, fresh and not yet hot-dried. Hot-dried = often permanent. Performance / specialty / dry-clean-only polyester = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Water Flush from BACK",
+      "technique": "Rinse salt before it sets color",
+      "equipment": "Cold running water, white catch towel",
+      "dwellTime": "60–90 seconds",
+      "instruction": "Hold the BACK of the stained area under cold running water with a white towel underneath. 60–90 seconds. Cold only — heat sets the brown into polyester permanently. Salt rinses out fast at the start; if you wait, salt fixes the color deeper."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Dab",
+      "technique": "Mild acid keeps tannin on light side",
+      "equipment": "1 tsp white vinegar + 4 tbsp cool water on cloth",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Dab diluted vinegar on the spot, 3–5 min. Disrupts tannin grip and keeps it on the lighter side of its color range. Hidden test on dyed polyester first."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "3% Hydrogen Peroxide for White Polyester",
+      "technique": "Oxidize residual brown",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE polyester only. Hidden test on dyed polyester. 3% peroxide damp cloth, 5–10 min, blot. Oxidizes residual brown. NEVER mix with chlorine bleach, ammonia, or alkaline cleaners."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Wash Plus AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Cool cycle plus AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry — wet polyester sometimes hides residual brown that reappears once dry. NEVER hot dryer until cleared — locks brown into polyester."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cold water back-flush 60–90 sec — rinse salt before it fixes color.",
+      "2. Diluted white vinegar dab, 3–5 min — keeps tannin on light side.",
+      "3. 3% H₂O₂ for white polyester, 5–10 min — hidden test on dyed.",
+      "4. Cool wash + AIR-DRY. No heat until cleared."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cold water (back-flush)",
+      "White vinegar (1:5 dilution)",
+      "3% Hydrogen peroxide (white polyester)",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets brown into polyester permanently",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color"
+      "NEVER hot water — sets brown into polyester permanently",
+      "NEVER alkaline cleaners (baking soda, ammonia, OxiClean alone) — locks tannin permanently darker",
+      "NEVER hot dryer until cleared",
+      "Speed matters — salt fixes color the longer you wait",
+      "Hidden test on dyed polyester before vinegar and peroxide",
+      "Never mix peroxide with bleach / ammonia / alkaline",
+      "Performance / specialty / dry-clean-only polyester = pro"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Speed Beats Chemistry — Salt Is the Catch",
+      "instruction": "Soy sauce has a lot of salt, and salt fixes the brown color into polyester the longer it sits. So the protocol leads with a fast cold-water rinse, not chemistry. Two hard rules: NO hot water (sets the brown plus locks the chromophore into polyester forever — polyester is industrially dyed with heat, so the same heat at home does the same thing) and NO alkaline cleaners (baking soda, ammonia, OxiClean alone before peroxide) — alkaline locks tannin into permanent darker brown."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Water Flush From the Back — 60 to 90 Seconds",
+      "instruction": "Hold the BACK of the stained area under cold running water with a white towel underneath the front. Let the water push the soy sauce out the way it came in. 60 to 90 seconds. Cold only. The salt rinses out fast at the beginning of the rinse — if you wait or use warm water, salt fixes the color deeper into the polyester."
+    },
+    {
+      "step": 3,
+      "agent": "Diluted White Vinegar Dab",
+      "instruction": "Mix 1 teaspoon white vinegar with 4 tablespoons cool water. Dab on the spot, let sit 3 to 5 minutes, blot. Vinegar keeps the tannin on the lighter side of its color range. Hidden-area test on dyed polyester first — vinegar can lighten some dyes."
+    },
+    {
+      "step": 4,
+      "agent": "3% Peroxide for White Polyester",
+      "instruction": "WHITE polyester only: dab 3% drugstore hydrogen peroxide on a damp cloth, press 5 to 10 minutes, blot. Oxidizes residual brown. Hidden-area test on dyed polyester first — skip if color transfers.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners (baking soda, OxiClean) — toxic fumes plus locks tannin."
+    },
+    {
+      "step": 5,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry — wet polyester can hide residual brown that reappears once dry. NEVER hot dryer until the spot is fully cleared. Heat at this step locks the brown into polyester permanently and yellows the fabric over time."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. NO hot water. NO alkaline cleaners (baking soda, ammonia, OxiClean alone before peroxide).",
+      "2. Cold water back-flush 60–90 sec — speed beats chemistry.",
+      "3. Diluted white vinegar dab, 3–5 min — hidden test on dyed polyester.",
+      "4. 3% peroxide for white polyester, 5–10 min — hidden test on dyed.",
+      "5. Cool wash + AIR-DRY. No dryer until cleared."
     ],
     "products": [
-      "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "Cold running water",
+      "White vinegar",
+      "3% Hydrogen peroxide (white polyester only)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if hot water or hot dryer was already used (often permanent on polyester). Stop if alkaline cleaner (baking soda, ammonia, OxiClean alone) was already applied (tannin locked). Stop on performance / specialty / dry-clean-only polyester (pro). Stop after 2 home rounds without progress.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NEVER hot water — sets brown into polyester permanently",
+      "NEVER alkaline cleaners — locks tannin permanently darker",
+      "NEVER hot dryer until cleared",
+      "Speed matters — salt fixes color over time",
+      "Hidden test on dyed polyester before vinegar and peroxide",
+      "Never mix peroxide with bleach / ammonia / alkaline"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on soy sauce + polyester — locks brown forever",
+      "Never alkaline cleaners on tannin — permanent darker lock",
+      "Never hot dryer until cleared",
+      "Never iron the stained area before clearing",
+      "Never mix peroxide with bleach / ammonia / alkaline"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "White polyester: tolerates vinegar + 3% peroxide",
+      "Dyed polyester: hidden test mandatory before vinegar and peroxide",
+      "Performance / specialty polyester (compression, technical, Gore-Tex): pro — coatings react unpredictably",
+      "Polyester locks color under heat — strict cool-only discipline"
     ]
   },
+  "materialWarnings": [
+    "Salt fixes color — speed beats chemistry on soy sauce",
+    "No hot water / no hot dryer — polyester locks brown forever",
+    "No alkaline cleaners — locks tannin permanently darker",
+    "Performance / specialty polyester = pro from minute one",
+    "Hidden test on dyed polyester before any chemistry"
+  ],
   "escalation": {
-    "when": "If soy sauce stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is soy sauce on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent on polyester). Alkaline cleaner already applied (tannin locked permanently darker). Performance / specialty / dry-clean-only polyester. 2 home rounds plateau. Hidden-area test fails on dyed polyester.",
+    "whatToTell": "\"Soy sauce on [white / dyed / athletic / specialty] polyester, age [fresh / hours / hot-dried suspected], home-treated with [cold back-flush + diluted vinegar + 3% peroxide on white + cool wash + air-dry]. No hot, no alkaline. [Residual brown / hot-dried suspected / alkaline used].\"",
+    "specialistType": "professional dry cleaner with polyester experience plus tannin-spotter chemistry"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "White, light, or dyed polyester?",
+      "Performance / athletic / specialty fabric?",
+      "Fresh, hours old, or hot-dried already?",
+      "Has alkaline cleaner (baking soda, ammonia, OxiClean alone) been used?",
+      "Light or dark soy sauce (dark soy is more concentrated)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Salt-fixing means speed beats chemistry — every minute that passes makes the stain harder. Dark / aged soy sauce concentrate is harder than light soy. Polyester adds the heat-lock complication on top of soy sauce's salt-fixing — the same chromophore that polyester is industrially dyed with at high heat is what hot water at home will lock into the fiber permanently. Performance polyester (athletic, technical) goes to pro because the fabric coatings react unpredictably to peroxide."
   },
-  "difficulty": 4,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
