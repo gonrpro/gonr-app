@@ -1,82 +1,207 @@
 {
   "id": "blood-denim",
   "title": "Blood on Denim",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "denim",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Blood contains blood pigment — an iron-bearing protein that bonds to denim tightlyand hydrophobic interactions. When fresh, the protein is water-soluble in cold conditions. Heat or time causes the protein chains to lock together, making the stain insoluble and far harder to remove. The iron component can leave a secondary rust-like discoloration after the protein is removed.",
-  "whyThisWorks": "Cold water keeps the protein from setting and locking into the denim fiber. A digestant enzyme (professional) or surfactant (DIY) breaks down the protein chains into soluble fragments that rinse away. The key is treating before any heat exposure — heat permanently lock together the protein.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "10–30 minutes; cold-only protein, indigo + ring-risk warnings",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "blood",
+    "surfaceCanonical": "denim",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "blood",
+      "protein",
+      "denim",
+      "biohazard-adjacent",
+      "no-hot-water",
+      "no-hot-dryer",
+      "indigo-loss-risk",
+      "no-chlorine-bleach"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Blood is protein with iron in it. Fresh blood is water-soluble in cold conditions and lifts easily. Heat or time turns the iron from red to brown and locks the protein into the fabric — once that happens, the stain is much harder. On denim, two complications stack: indigo dye sits on the surface of the fiber and any oxidizer (chlorine bleach, concentrated peroxide) strips color along with the stain, and aggressive scrubbing on dark denim leaves a halo ring. The recurring trap on blood is reaching for hot water — exactly what locks it. The other trap is reaching for chlorine bleach on dark denim — strips indigo unevenly.",
+  "whyThisWorks": "Cold water keeps the protein from setting and rinses out the soluble portion fast. An enzyme pretreat (cool water only — heat damages the enzymes AND the protein) breaks down the residual protein. 3% peroxide on a damp cloth handles any iron-brown shadow on light-wash denim where a hidden test passes — bounded application is key. Cool wash plus AIR-DRY locks nothing.",
+  "scienceNote": "Mechanism (pro-facing): blood is hemoglobin + plasma proteins + iron. Hemoglobin oxidizes from Fe²⁺ (red) to Fe³⁺ (brown) over hours. Pro uses cold liquid Protein Spotter (protease pretreat) plus NSD plus sodium hydrosulfite at controlled dilution for set/oxidized blood — reducing bleach is denim-safer than chlorine bleach because it doesn't strip indigo as aggressively.",
+  "defaultAssumption": "Cut, kid scrape, period stain, or kitchen mishap on jeans, fresh and not yet hot-washed. Hot-washed or hot-dried = often permanent brown shadow. Raw / selvage / black-overdyed denim = pro from minute one (any moisture causes uneven fading).",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse, gloves on",
+      "equipment": "Cold/ice water, white catch towel, gloves",
+      "dwellTime": "60–90 seconds",
+      "instruction": "Gloves on (biohazard, especially if not your blood). Hold the BACK of the stained area under cold running water with a white towel underneath. 60–90 seconds. Cold only — heat sets the protein into denim permanently."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Enzyme Pretreat — Cool, Not Hot",
+      "technique": "Protein digestion before any heat",
+      "equipment": "OxiClean Versatile / Biz / Tide Plus per label, COOL water",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Dissolve enzyme pretreat in COOL water. Apply to spot, keep damp under a cloth, 15–20 min. Hot water above bath temperature damages enzymes AND sets the protein. Cool only."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Hidden-Seam Test for Peroxide",
+      "technique": "Indigo bleed test on dark / dyed denim",
+      "equipment": "3% H₂O₂ on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Inside seam: dab 3% peroxide, blot with white cloth. If indigo transfers, skip peroxide. Light-wash denim is usually fine; raw / dark / selvage often isn't."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Iron-Brown Shadow",
+      "technique": "Bounded application on hidden-test-passed denim",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Hidden-test-passed denim only: 3% peroxide damp cloth 5 min for residual iron-brown shadow. Damp-cloth rinse. Stop if indigo starts to lift."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cool Wash Plus AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Cool cycle plus AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. NEVER hot dryer until cleared — locks any residual protein and brown shadow into denim."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Gloves. Cold water back-flush 60–90 sec.",
+      "2. Enzyme pretreat in COOL water, 15–20 min — never hot.",
+      "3. Hidden-seam peroxide test on dark / dyed denim.",
+      "4. 3% H₂O₂ for iron-brown shadow on hidden-test-passed denim, 5 min.",
+      "5. Cool wash + AIR-DRY. No heat until cleared."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Disposable gloves",
+      "Enzyme pretreat (OxiClean Versatile / Biz / Tide Plus / liquid Protein Spotter)",
+      "3% Hydrogen peroxide (hidden-test-passed denim)",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets blood protein into denim",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "NEVER hot water — sets the protein permanently into denim",
+      "NEVER hot dryer until stain fully cleared",
+      "NEVER chlorine bleach on denim — strips indigo unevenly, leaves halo",
+      "NEVER alcohol on blood — alcohol sets the protein stain",
+      "Hidden-seam peroxide test on dark / raw / selvage denim",
+      "Always blot, never rub — denim halos under aggressive scrubbing",
+      "Biohazard — gloves required, sealed disposal"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Cold Water Is the Whole First Move",
+      "instruction": "Blood on denim is fixable IF you keep it cold. The recurring trap is hot water — it locks the protein into the fabric and turns the iron from red to brown permanently. Two hard rules: NO hot water (sets the stain) and NO chlorine bleach (strips indigo unevenly on denim). Gloves on if it's not your blood — biohazard."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Water Back-Flush from the BACK",
+      "instruction": "Turn the jeans inside out. Hold the BACK of the stained area under cold running water with a white towel underneath the front. Let cold water push the blood out the way it came in. 60 to 90 seconds. Cold only — even warm tap water sets the protein."
+    },
+    {
+      "step": 3,
+      "agent": "Enzyme Pretreat — Cool Water Only",
+      "instruction": "Dissolve an enzyme pretreat (OxiClean Versatile, Biz, or Tide Plus) in COOL water per the label. Apply to the spot, keep damp under a cloth, wait 15 to 20 minutes. The enzyme dismantles the protein at cool temperature. Don't be tempted to use warm water 'to help' — heat above bath temperature damages the enzymes AND sets the protein."
+    },
+    {
+      "step": 4,
+      "agent": "Hidden-Seam Test on Dark Denim",
+      "instruction": "Before any peroxide on dark or indigo denim: dab a drop of 3% peroxide on an inside seam, blot with a white cloth. If indigo transfers to the cloth, skip peroxide — your denim isn't peroxide-safe. Light-wash denim usually passes; raw / dark / selvage often doesn't."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide for Iron-Brown Shadow — Bounded",
+      "instruction": "If the hidden-seam test passed: 3% drugstore peroxide on a damp cloth, press the spot 5 minutes, blot. Handles the iron-brown shadow that sometimes remains after the protein is gone. Stop if indigo starts to lift mid-application — the test passed but extended dwell can still strip color."
+    },
+    {
+      "step": 6,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. NEVER hot dryer until cleared. Heat at this step locks any residual protein or brown shadow into the denim permanently."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. For stubborn stains on whites: apply 3% hydrogen peroxide directly — test colorfastness first, 5 min dwell time",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. Gloves on (biohazard).",
+      "2. NO hot water. NO chlorine bleach. NO alcohol on blood.",
+      "3. Cold water back-flush 60–90 sec from the BACK.",
+      "4. Enzyme pretreat in COOL water, 15–20 min.",
+      "5. Hidden-seam peroxide test on dark / raw denim.",
+      "6. 3% peroxide damp cloth 5 min for iron-brown shadow on hidden-test-passed denim.",
+      "7. Cool wash + AIR-DRY. No dryer until cleared."
     ],
     "products": [
-      "Dawn dish soap",
-      "cold water",
-      "hydrogen peroxide 3%"
+      "Disposable gloves",
+      "Enzyme pretreat (OxiClean Versatile, Biz, Tide Plus)",
+      "3% Hydrogen peroxide (hidden-test-passed denim)",
+      "Cool water"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if hot water or hot dryer was already used (often permanent brown shadow). Stop if hidden-seam test shows indigo loss — pro is the right call. Stop on raw / selvage / black-overdyed denim from minute one (pro). Stop if indigo lifts during peroxide application even after test passed.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "NEVER use alcohol on blood — alcohol permanently sets protein stains",
-      "Always test cleaning solution on a hidden area first"
+      "NEVER hot water — sets blood permanently",
+      "NEVER hot dryer until cleared",
+      "NEVER chlorine bleach on denim — strips indigo unevenly",
+      "NEVER alcohol on blood — alcohol sets the protein",
+      "Hidden-seam peroxide test on dark / raw denim",
+      "Always blot, never rub — denim halos",
+      "Biohazard — gloves on"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach — removes indigo unevenly",
-      "No strong detergent on raw denim"
+      "Never hot water on blood + denim",
+      "Never hot dryer until cleared",
+      "Never chlorine bleach on denim",
+      "Never alcohol on blood",
+      "Never rub denim during cleaning — causes halo ring",
+      "Never bare-handed if blood isn't your own"
     ],
     "fiberSensitivities": [
-      "Indigo dye sits on surface — aggressive treatment causes uneven fading",
-      "Washed denim is more forgiving than raw"
+      "Indigo / dark / dyed denim: hidden-seam peroxide test mandatory",
+      "Raw / selvage denim: pro from minute one — moisture causes uneven fading",
+      "Light-wash denim: most forgiving — full home protocol applicable",
+      "Stretch denim with elastane: cool only — peroxide can stress elastane",
+      "Black overdyed denim: pro — color-loss risk on any oxidizer"
     ]
   },
+  "materialWarnings": [
+    "No hot water — sets blood permanently",
+    "No chlorine bleach on denim — strips indigo unevenly",
+    "Hidden-seam peroxide test before bounded application on dark denim",
+    "Raw / selvage denim = pro from minute one",
+    "Always blot, never rub — denim halos"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is blood on denim, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent brown shadow). Hidden-seam test shows indigo loss. Raw / selvage / black-overdyed denim. 2 home rounds plateau. Aged set blood through multiple wash cycles.",
+    "whatToTell": "\"Blood on [light-wash / dark / indigo / raw / selvage] denim, age [fresh / hours / hot-dried suspected], home-treated with [cold back-flush + cool enzyme pretreat + 3% peroxide on hidden-test-passed denim + cool wash + air-dry]. No hot, no chlorine, no alcohol. [Residual brown / indigo loss / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with denim experience plus protein/iron-stain spotting capability"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Light-wash, dark indigo, raw / selvage, or black-overdyed denim?",
+      "Fresh, hours old, or hot-washed / hot-dried already?",
+      "Stretch denim with elastane?",
+      "Has alcohol or chlorine bleach been used on the spot?",
+      "Whose blood (biohazard handling)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Indigo dye loss is the recurring denim risk on blood — hidden-seam peroxide test is non-negotiable. Raw / selvage / black-overdyed denim goes to pro because the dye is more fragile and any oxidizer + scrubbing risks visible damage. Hot-dried blood leaves a permanent brown shadow most of the time; manage expectations. Alcohol pre-applied (rubbing alcohol or hand sanitizer to clean the cut first) often sets the protein — disclose to the cleaner."
   },
-  "difficulty": 4,
-  "timeEstimate": "5-15 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,131 +1,263 @@
 {
   "id": "sweat-cotton",
   "title": "Sweat on Cotton",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Protein. Sweat stains have three components: proteins (albumin, immunoglobulins), lipids (sebum from skin), and minerals (sodium chloride, urea). The yellow discoloration on white fabric is caused by the reaction between aluminum (from antiperspirant) and sweat proteins — aluminum-protein complexes that bond to cellulose. On cotton (cellulose fiber): protein stains bond to fibers via peptide-to-fiber grip and hydrophobic interactions. Heat sets the protein, lock together it to the substrate. Treatment: cold water flush to prevent heat-setting, followed by alkaline Protein digestion to hydrolyze protein bond.",
-  "whyThisWorks": "Sweat contains proteins and salts that build up and bond over time. Cotton absorbs liquids quickly and holds stains deep in the weave. Cold water prevents the protein from setting permanently, and enzyme-based cleaners break it down so it rinses clean.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "15–45 minutes; fresh + yellow-pit forks; bounded chlorine on solid white cotton only",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "sweat",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "sweat",
+      "protein",
+      "yellowing",
+      "cotton",
+      "fresh-vs-set-fork",
+      "vinegar-eligible",
+      "no-hot-water",
+      "no-alcohol-on-protein",
+      "chlorine-bleach-bounded"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Sweat on cotton is two stains layered together: fresh sweat (protein + skin oil + salt) which lifts easily with cool water + Dawn + enzyme, and the cumulative yellow pit stain (aluminum from antiperspirant + sweat protein) that builds over weeks and months and locks under heat. The two need different approaches. Fresh sweat: cold flush + Dawn + cool wash. Yellow pit stain: vinegar pretreat to dissolve the aluminum-sweat complex first, THEN Dawn + OxiClean + bounded peroxide. The hard rules: NO hot water (sets the protein), NO alcohol on sweat (sets the protein beyond pro recovery), NO chlorine + acid in same dwell (toxic chloramine gas). Chlorine bleach on cotton is bounded — only with care label permission, on solid white cotton with no elastane / colored trim.",
+  "whyThisWorks": "Cool water keeps fresh sweat protein from setting. Dawn handles the skin-oil component. For yellow pit stains, vinegar's mild acid breaks the aluminum-sweat bond — that's the unlock that Dawn and OxiClean can't reach without it. OxiClean cool soak plus 3% peroxide handle residual yellow on white cotton. Sun-dry is a free finishing tool — UV photodegrades residual yellow on damp white cotton without any chemistry. The honest cap: years of hot-dried yellow pit buildup sometimes plateau even after the full sequence; pro reducing-bleach is the next step.",
+  "scienceNote": "Mechanism (pro-facing): sweat is salt + sweat proteins + urea + sebum. Aluminum chlorohydrate (in antiperspirants) forms aluminum-protein complexes that yellow under heat. Pro uses dilute acetic acid (1:5–1:10) to break the complex + NSD + 3% H₂O₂ for residual chromophore. Sodium hydrosulfite (reducing bleach) is the pro nuclear option for set yellow; chlorine bleach is bounded by elastane / trim presence.",
+  "defaultAssumption": "Two-fork stain. FRESH (today's wear, damp shirt) = cool Dawn + enzyme handles it. YELLOW PIT (months / years of antiperspirant buildup on a white shirt) = full sequence with vinegar pretreat first. Modern dress shirts and athletic wear with elastane in collar / cuffs = NO chlorine bleach.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify Fresh vs Yellow Pit",
+      "technique": "Two protocols branch here",
+      "equipment": "Good light",
+      "dwellTime": "1 minute",
+      "instruction": "Fresh sweat (today's wear, damp) = cool Dawn + enzyme is enough. Yellow pit stain (cumulative buildup, white shirt) = vinegar pretreat FIRST, then full sequence."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush (Fresh Sweat)",
+      "technique": "Flush salt and protein out the way they came in",
+      "equipment": "Cold running water, white catch towel",
+      "dwellTime": "30–60 seconds",
+      "instruction": "Fresh sweat only: turn inside out, hold the BACK of the spot under cold running water 30–60 sec with a white towel under the front. Cool only — heat sets the protein."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Pretreat (Yellow Pit Stain)",
+      "technique": "Mild acid breaks aluminum-sweat complex",
+      "equipment": "1:1 white vinegar + cool water on damp cloth",
+      "dwellTime": "10–15 minutes",
+      "instruction": "Yellow pit stain only: 1 part white vinegar + 1 part cool water on damp cloth, press 10–15 min. The acid breaks the aluminum-sweat bond that Dawn and OxiClean can't touch alone. Damp-cloth rinse THOROUGHLY before any peroxide."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Cut the Skin Oil",
+      "technique": "Emulsify oily film",
+      "equipment": "Dawn + cool/warm water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 5–10 min. White cotton tolerates warm Dawn (warm, not hot) for the oil step. Cool damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Enzyme Pretreat (Fresh Sweat) or OxiClean Cool Soak (Yellow Pit)",
+      "technique": "Protein digestion (fresh) or yellow oxidation (set)",
+      "equipment": "Enzyme pretreat or OxiClean per label, COOL water",
+      "dwellTime": "20 min (fresh) or 30–60 min (yellow pit)",
+      "instruction": "Fresh sweat: enzyme pretreat (OxiClean Versatile, Biz, Tide Plus) in COOL water, 20 min. Yellow pit: OxiClean cool soak 30–60 min. NEVER mix with chlorine — chlorine + alkaline OxiClean = toxic fumes."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Stubborn Yellow",
+      "technique": "Direct peroxide pass on white cotton",
+      "equipment": "3% H₂O₂ on damp cloth or as soak additive",
+      "dwellTime": "10 minutes",
+      "instruction": "Yellow pit only, white cotton: 3% peroxide damp cloth 10 min, OR add 1/2 cup to OxiClean soak. NEVER mix with chlorine bleach, ammonia, or other oxidizers — toxic fumes."
+    },
+    {
+      "step": 7,
+      "side": "wet",
+      "agent": "Cool Wash Plus Sun-Dry on White Cotton",
+      "technique": "Heat-free finish, UV photodegradation for residual yellow",
+      "equipment": "Washing machine, cool water, sunlight",
+      "dwellTime": "Full cool cycle plus 1–3 hours sun",
+      "instruction": "Cool machine wash with normal detergent. White cotton: lay damp in direct sunlight 1–3 hours — UV photodegrades residual yellow without chemistry. AIR-DRY only. Inspect dry. NEVER hot dryer until cleared."
+    },
+    {
+      "step": 8,
+      "side": "wet",
+      "agent": "Bounded Chlorine Bleach — Last Resort, Solid White Cotton Only",
+      "technique": "Care-label-gated, no-elastane / no-trim / no-mix",
+      "equipment": "Chlorine bleach per label, hot wash",
+      "dwellTime": "Full chlorine cycle per label",
+      "instruction": "Bounded last resort for set yellow pit. ONLY if: (1) care label permits chlorine bleach, (2) garment is SOLID white cotton with no colored trim, (3) NO elastane / spandex / Lycra in collar / cuffs / waistband (chlorine destroys elastane permanently), (4) NO other oxidizer in the same wash. Skip if any condition is uncertain. THOROUGHLY rinse out any vinegar / peroxide first — chlorine + acid = toxic chloramine gas."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein to the stain and tamp gently with a spotting brush. This digestant breaks down blood, milk, egg, and body fluid proteins. Work from the edge toward the center. On wool or silk, use reduced dwell time (3 minutes) to protect the fiber.",
-      "2. Apply NSD and work gently. This NSD removes the digested protein particles and any residual spotting agent. Flush with steam gun or cool water spray.",
-      "3. Apply diluted acetic acid (1:10) to neutralize any remaining alkaline residue and restore the fabric's natural state. Blot dry with clean absorbent cloth."
+      "1. Identify fresh vs yellow pit fork.",
+      "2. Cold water back-flush for fresh sweat.",
+      "3. White vinegar 1:1 cool pretreat for yellow pit, 10–15 min, damp cloth.",
+      "4. Dawn pretreat warm 5–10 min for oil component.",
+      "5. Enzyme pretreat cool 20 min (fresh) OR OxiClean cool soak 30–60 min (yellow pit).",
+      "6. 3% H₂O₂ damp cloth or soak additive for stubborn yellow on white cotton.",
+      "7. Cool wash + sun-dry on white cotton + AIR-DRY.",
+      "8. Bounded chlorine bleach only on solid white cotton, no elastane / trim, no oxidizer mix, vinegar fully rinsed."
     ],
     "products": [
-      "Protein",
-      "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "White vinegar (yellow pit pretreat)",
+      "Dawn / NSD",
+      "Enzyme pretreat (OxiClean Versatile / Biz / Tide Plus / liquid Protein Spotter)",
+      "OxiClean Versatile / oxygen bleach (yellow pit soak)",
+      "3% Hydrogen peroxide (white cotton)",
+      "Chlorine bleach (bounded)",
+      "Sunlight (free finisher on white cotton)",
+      "Cool water for chemistry, hot wash AFTER if care label permits"
     ],
-    "temperature": "cold — hot water sets protein stains permanently",
+    "temperature": "cool through chemistry; hot wash AFTER protein cleared (care label permitting)",
     "warnings": [
-      "Using hot water on this stain — sets it permanently",
-      "Rubbing instead of blotting — spreads the stain",
-      "Not testing in an inconspicuous area first",
-      "Using too aggressive a chemical without checking surface compatibility"
+      "NEVER hot water on fresh sweat — sets the protein permanently",
+      "NEVER alcohol on sweat — sets protein beyond pro recovery",
+      "NEVER chlorine bleach in same dwell as vinegar / acid — toxic chloramine gas",
+      "NEVER mix peroxide + chlorine + ammonia + OxiClean — toxic fumes",
+      "Chlorine bleach: ONLY with care label permission AND solid white cotton AND no elastane AND no trim",
+      "Modern dress shirts almost always have elastane in collar / cuffs — chlorine destroys it",
+      "Years of hot-dried yellow pit sometimes plateau — pro reducing-bleach is next step"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Identify which sweat problem you have",
-      "instruction": "There are two separate sweat stains with different fixes. Fresh sweat (damp shirt, same-day): a protein stain — handle with Dawn + enzyme. Yellow pit stain (weeks or months of buildup on a white shirt): an aluminum-protein complex from antiperspirant. Yellow stains need an acid pre-step (step 5) before the enzyme or they won't budge. Check which one you have before starting."
+      "agent": "Two Sweat Stains — Different Fixes",
+      "instruction": "Sweat on cotton has two cases that need different protocols. FRESH sweat (today's wear, damp shirt) = cool Dawn + enzyme handles it. YELLOW PIT STAIN (months or years of antiperspirant buildup on a white shirt) = vinegar pretreat FIRST to break the aluminum-sweat bond, then the rest of the sequence. Two hard rules apply to both: NO hot water (sets the protein) and NO alcohol on sweat (sets the protein beyond pro recovery)."
     },
     {
       "step": 2,
-      "agent": "Patch test + protein rule",
-      "instruction": "On an inside seam, dab a drop of Dawn solution and (if using) a drop of 3% peroxide. Blot with a white cloth. If the fabric holds its color, proceed. Two hard rules: (1) no hot water — heat sets the protein and locks the yellow in permanently, (2) no alcohol-based products (hand sanitizer, sprays with isopropyl) — alcohol sets protein beyond even professional recovery."
+      "agent": "Cold Back-Flush from the BACK (Fresh Sweat)",
+      "instruction": "Fresh sweat: turn the shirt inside out, hold the BACK of the spot under cold running water for 30 to 60 seconds with a white towel under the front. Cool only — even warm tap water sets the protein. Skip this step if it's set yellow pit buildup; go to step 3."
     },
     {
       "step": 3,
-      "agent": "Cold rinse + lemon juice back-flush (fresh sweat)",
-      "instruction": "Turn the fabric inside out. If the stain is damp or recent, run cold water through the BACK of the fabric for 30 seconds. For dry old sweat, skip to step 4. Working from the back prevents pushing sweat salts deeper into the fiber."
+      "agent": "White Vinegar Pretreat — Yellow Pit Stain Only",
+      "instruction": "Yellow pit stain only: mix 1 part white vinegar with 1 part cool water. Apply with a damp cloth, press 10 to 15 minutes. Vinegar's mild acid breaks the aluminum-sweat complex that Dawn and OxiClean alone can't touch. THIS is the step that makes the rest work on yellow buildup. Damp-cloth rinse THOROUGHLY before any peroxide."
     },
     {
       "step": 4,
-      "agent": "Dawn dish soap — cut the sebum first",
-      "instruction": "Dab a small amount of Dawn directly on the stain — no water. Sweat has sebum (skin oil) mixed with the protein; Dawn cuts the oil so the enzyme in step 6 can reach the protein underneath. Work it in with a fingertip for 30 seconds, let sit 5 minutes, blot with a clean damp cloth."
+      "agent": "Dawn — Cut the Skin Oil",
+      "instruction": "Generous Dawn directly on the spot. Work in with a soft toothbrush for 5 to 10 minutes. White cotton tolerates warm (warm, not hot) water for the Dawn step. Damp-cloth rinse. Sweat has skin oil mixed with the protein; Dawn cuts the oil so the next step can reach the protein underneath."
     },
     {
       "step": 5,
-      "agent": "Acid pre-step — ONLY for yellow pit stains",
-      "instruction": "If you're fighting yellow antiperspirant buildup: mix two tablespoons of white vinegar with one cup of cold water, or squeeze fresh lemon juice straight onto the stain. Let it sit 10 minutes. The acid breaks the aluminum-protein bond that Dawn and enzymes can't touch. Then rinse cold. Skip this step entirely for fresh, clear sweat — it's not needed and wastes time.",
-      "safetyNote": "Never combine acid (vinegar/lemon) with bleach or peroxide in the same dwell — gas. You can use peroxide in step 6 AFTER thoroughly rinsing the acid out."
+      "agent": "Enzyme Pretreat (Fresh) or OxiClean Cool Soak (Yellow Pit)",
+      "instruction": "Fresh sweat: enzyme pretreat (OxiClean Versatile, Biz, or Tide Plus) in COOL water per label, 20 minutes. Yellow pit stain: OxiClean cool soak 30 to 60 minutes. Cool only — heat above bath temperature damages the enzymes AND sets the protein."
     },
     {
       "step": 6,
-      "agent": "Peroxide + baking soda paste (white cotton) or enzyme (colored)",
-      "instruction": "For white cotton with yellow staining: mix one tablespoon of 3% hydrogen peroxide, one tablespoon of baking soda, and one teaspoon of Dawn into a paste. Apply to the stain, let sit 30 minutes, scrub gently with an old toothbrush. This is the home equivalent of professional whitening. For colored cotton or fresh sweat: skip the paste and apply an enzyme cleaner (OxiClean Versatile, Biz) per label, dwell 30 minutes. Enzyme only — peroxide will lighten colored dye."
+      "agent": "3% Peroxide for Stubborn Yellow",
+      "instruction": "Yellow pit stain on WHITE cotton only: 3% peroxide on a damp cloth, press 10 minutes, blot. OR add 1/2 cup to the OxiClean soak. Do NOT mix with chlorine bleach, ammonia, or any other oxidizer — toxic fumes."
     },
     {
       "step": 7,
-      "agent": "Cold machine wash + check before dryer",
-      "instruction": "Launder on cold with your normal detergent. Hang or lay flat to air-dry. Inspect in daylight before anywhere near the dryer. Any yellow shadow will LOCK IN under dryer heat and become permanent. If a trace remains, repeat steps 5–6 before the next wash."
+      "agent": "Cool Wash Plus Sun-Dry on White Cotton",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY. White cotton bonus: lay the damp shirt in direct sunlight for 1 to 3 hours — UV naturally bleaches residual yellow without any chemistry (this is why old-school clotheslines kept whites brighter). Skip the sun step on colored cotton."
     },
     {
       "step": 8,
-      "agent": "Sunlight finish for white cotton",
-      "instruction": "If a pale yellow shadow persists on white cotton after washing, lay the DAMP garment flat in direct sunlight for 1–3 hours. UV naturally bleaches residual yellowing without chemistry. A big reason old-school laundry on a clothesline worked so well. Skip on colored cotton."
+      "agent": "Bounded Chlorine Bleach — Check Elastane First",
+      "instruction": "Set yellow pit that survived the full sequence: chlorine bleach is the home nuclear option but it's BOUNDED. ONLY use chlorine if (1) the care label permits, (2) the garment is SOLID white cotton with no colored trim, (3) NO elastane / spandex / Lycra in the collar / cuffs / waistband (chlorine destroys elastane — most modern dress shirts have it; feel for stretch in the collar to test), and (4) NO other oxidizer in the same wash. THOROUGHLY rinse out any vinegar before chlorine — chlorine + acid = toxic chloramine gas. Per label dilution. Skip if any condition is uncertain."
     },
     {
       "step": 9,
-      "agent": "Escalate for old, heat-set yellow pit stains",
-      "instruction": "Yellow pit stains that have been through a hot dryer repeatedly are among the hardest consumer stains. If home treatment doesn't fully clear them, take to a wet cleaner (not all dry cleaners do this — ask first). Tell them: \"Sweat + antiperspirant yellow pit stain on cotton, [fresh/set]. Treated at home with [acid rinse / Dawn / peroxide paste / enzyme]. No heat applied at home.\" They have 28% acetic acid and strong reducing agents that can recover what home chemistry can't."
+      "agent": "Switch to Aluminum-Free Deodorant for Repeat Yellow Pit",
+      "instruction": "If you keep getting yellow pit stains, the cause is the aluminum in your antiperspirant reacting with sweat. Aluminum-free deodorants don't form the yellow complex — switch for shirts you want to keep white. Skip fabric softener (locks aluminum in). Let deodorant dry completely before dressing."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse with cold water right away. Blot with a clean white cloth — don't rub.",
-      "2. Mix a small squirt of mild dish soap into cold water. Blot the solution onto the stain.",
-      "3. Let it sit for 5–10 minutes. Don't use any heat.",
-      "4. Blot with a clean white cloth until the stain fades.",
-      "5. Rinse with cold water and air dry — don't use a dryer until the stain is gone."
+      "1. Identify fresh vs yellow pit fork.",
+      "2. NO hot water. NO alcohol on sweat. NO chlorine + acid in same dwell.",
+      "3. Cold back-flush for fresh sweat.",
+      "4. White vinegar 1:1 cool pretreat for yellow pit, 10–15 min, damp cloth.",
+      "5. Dawn pretreat warm 5–10 min for oil component.",
+      "6. Enzyme pretreat cool 20 min (fresh) OR OxiClean cool soak 30–60 min (yellow pit).",
+      "7. 3% peroxide damp cloth or soak additive for stubborn yellow on white cotton.",
+      "8. Cool wash + sun-dry on white cotton.",
+      "9. Bounded chlorine bleach only on solid white cotton, no elastane / trim, vinegar fully rinsed."
     ],
     "products": [
-      "Dawn NSD",
-      "OxiClean Versatile Stain Remover",
-      "Nature's Miracle",
-      "28% Acetic Acid (diluted)",
-      "baking soda (paste for yellowing)"
+      "White vinegar (yellow pit pretreat)",
+      "Dawn dish soap",
+      "Enzyme pretreat (OxiClean Versatile, Biz, Tide Plus)",
+      "OxiClean Versatile (yellow pit soak)",
+      "3% Hydrogen peroxide (white cotton)",
+      "Chlorine bleach (bounded)",
+      "Sunlight"
     ],
-    "whenToStop": "Try an enzyme presoak (Nature's Miracle or OxiClean Versatile) — apply and let it soak for 30–60 minutes. If the stain survives two rounds, a professional cleaner can use concentrated agents.",
+    "whenToStop": "Stop if hot dryer was used on yellow pit for years (often plateau). Stop if chlorine bleach already damaged collar elastane (irreversible). Stop if alcohol-based product was used on the sweat (often sets protein). Stop after full sequence + bounded chlorine plateau.",
     "warnings": [
-      "Always blot — never rub. Rubbing pushes the stain deeper into the fabric.",
-      "Never use hot water on a protein stain — heat permanently sets it.",
-      "Never use the dryer until the stain is completely gone."
+      "NEVER hot water — sets sweat protein permanently",
+      "NEVER alcohol on sweat — sets protein beyond pro recovery",
+      "NEVER chlorine bleach in same dwell as vinegar / acid — toxic chloramine gas",
+      "NEVER mix peroxide + chlorine + ammonia + OxiClean",
+      "NEVER chlorine bleach on cotton with elastane — destroys elastane permanently",
+      "Modern dress shirts almost always have elastane in collar / cuffs",
+      "Switch to aluminum-free deodorant to prevent recurrence"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use hot water — sets protein stain permanently",
-      "Apply heat before stain is fully treated",
-      "Use alcohol-based products — alcohol permanently sets protein stains beyond professional recovery"
+      "Never hot water on sweat — sets protein permanently",
+      "Never alcohol on sweat — sets protein beyond pro recovery",
+      "Never chlorine bleach in same dwell as vinegar / acid — toxic chloramine gas",
+      "Never mix peroxide + chlorine + ammonia + OxiClean",
+      "Never chlorine bleach on cotton with elastane",
+      "Never iron over yellow pit — heat sets it"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates most agents including bleach on whites. For colored cotton, test peroxide first. High heat can set protein stains. OxiClean safe on cotton."
+      "Solid white cotton (no elastane, no trim): widest bench — vinegar, Dawn, OxiClean, 3% peroxide, sun-dry, bounded chlorine bleach",
+      "White cotton with elastane (modern dress shirts, athletic wear): NO chlorine bleach",
+      "White cotton with colored trim: NO chlorine bleach",
+      "Colored cotton: skip peroxide + chlorine; vinegar + Dawn + enzyme + cool wash sequence only",
+      "Tolerates hot wash up to 200°F AFTER chemistry"
     ]
   },
+  "materialWarnings": [
+    "Two-fork stain — fresh sweat vs yellow pit have different protocols",
+    "Vinegar is the unlock for yellow pit — without it, OxiClean and peroxide can't reach the lock",
+    "No alcohol on sweat — sets protein beyond pro recovery",
+    "Chlorine + acid = toxic chloramine gas — fully rinse vinegar before chlorine",
+    "Aluminum-free deodorant prevents recurrence"
+  ],
   "escalation": {
-    "when": "Sweat stain persists after full protocol — particularly aluminum-protein pit stains",
-    "whatToTell": "Sweat stain on cotton, protein and mineral components. Aluminum-protein complex if antiperspirant involved. Treated at home with NSD and cold water. Please use enzyme-based protocol.",
-    "specialistType": "wet cleaner"
+    "when": "Years of hot-dried yellow pit buildup that survived full sequence (often plateau). Chlorine bleach used on cotton with elastane (irreversible damage). Alcohol-based product (hand sanitizer, body spray) was applied to the spot (often sets protein). Chlorine + vinegar/peroxide mixed (toxic fume incident — ventilate, redo without mix). Cotton blend with polyester (cool-only rules).",
+    "whatToTell": "\"Sweat on [solid white / white-with-trim / white-with-elastane / colored / blend] cotton, [fresh / yellow pit buildup, age weeks / months / years], home-treated with [cold back-flush + vinegar pretreat (yellow pit only) + Dawn + enzyme/OxiClean + 3% peroxide + sun-dry + bounded chlorine if eligible]. No hot, no alcohol. [Residual yellow / collar elastane damaged / hot-dried suspected].\"",
+    "specialistType": "professional wet cleaner with reducing-bleach (sodium hydrosulfite) chemistry for set yellow pit"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is this a fresh stain or long-term pit stain buildup?",
-      "Was antiperspirant (aluminum) or just deodorant (no aluminum) involved?",
-      "Is the fabric white (showing yellow) or colored?",
-      "Has the garment been through the dryer with the stain present?"
+      "Fresh sweat (today's wear) or yellow pit stain (months / years of buildup)?",
+      "Solid white cotton, white with colored trim, white with elastane, or colored?",
+      "Aluminum-based antiperspirant or aluminum-free deodorant?",
+      "Has the garment been hot-dried with the yellow buildup?",
+      "Has alcohol-based product (hand sanitizer, body spray) been applied to the spot?",
+      "Care label — hot-wash and chlorine-bleach permitted?"
     ],
-    "modifierNotes": "Long-term pit stains with antiperspirant are much harder to remove than fresh sweat stains. The yellow aluminum-protein complex requires a different approach — 28% Acetic Acid (diluted) or citric acid can help break down the aluminum component before Protein. Dryer exposure sets the stain significantly."
+    "modifierNotes": "The two-fork structure (fresh vs yellow pit) is the entire job. Fresh sweat is easy; yellow pit stain is the cumulative aluminum-sweat lock and needs the vinegar pretreat to break the bond before any cleaning step works. Aluminum-free deodorant is the prevention path — eliminates recurrence. Modern dress shirts and athletic wear almost always contain elastane in the collar / cuffs / waistband, which chlorine destroys permanently — chlorine option is bounded. Alcohol pre-applied (hand sanitizer, body spray) is the irreversible-failure mode that sets the protein."
   },
-  "difficulty": 3,
-  "timeEstimate": "10–20 min",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

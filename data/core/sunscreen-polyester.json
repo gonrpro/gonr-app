@@ -1,78 +1,207 @@
 {
   "id": "sunscreen-polyester",
   "title": "Sunscreen on Polyester",
+  "stainType": "combo",
   "stainFamily": "combo",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Sunscreen contains UV filters (avobenzone, oxybenzone), oils (mineral oil, silicone), titanium dioxide or zinc oxide (physical blockers), and emulsifiers. On polyester, the oil base penetrates deeply while mineral particles create visible white or yellow residue. Avobenzone reacts with iron in water to produce rust-colored stains. Heat and chlorine accelerate yellowing.",
-  "whyThisWorks": "POG or solvent dissolves the oil-based matrix on polyester. Surfactant then emulsifies the remaining oil and lifts mineral particles. An oxidizer addresses the avobenzone-iron discoloration. Avoiding hot water and chlorine is critical — both react with sunscreen chemicals to produce permanent yellow staining.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "20–60 minutes; oil + mineral combo, polyester locks oil and avobenzone-iron yellowing",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "sunscreen",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "sunscreen",
+      "combo",
+      "oil",
+      "mineral",
+      "polyester",
+      "avobenzone-iron-yellowing",
+      "no-hot-water",
+      "no-chlorine-bleach",
+      "oleophilic-fiber"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Sunscreen is three things stuck together: oil base (mineral oil, silicone), UV filters (chemical blockers like avobenzone), and mineral blockers (titanium dioxide or zinc oxide — visible white residue). On polyester, two complications stack: polyester is OLEOPHILIC, so it grabs the oil tight and holds it through normal washing, and the chemical UV filter avobenzone reacts with iron in water (especially well water) to produce rust-colored yellow stains that get worse under heat. The recurring traps: (1) hot water — sets the oil and accelerates avobenzone-iron yellowing, (2) chlorine bleach — reacts with sunscreen chemicals to produce a permanent yellow stain (worse than the original), and (3) skipping the oil-strip — Dawn FIRST, then any color treatment.",
+  "whyThisWorks": "Powder preload pulls bulk oil up before water spreads it. Generous Dawn pretreat handles the oily film polyester grabbed onto. 3% peroxide on a damp cloth (white polyester only, hidden test on dyed) handles residual avobenzone-iron yellow. Cool wash plus AIR-DRY locks nothing. The honest cap on polyester: aged hot-dried sunscreen yellowing is often a permanent shadow because polyester yellows under heat once oil is in the fiber.",
+  "scienceNote": "Mechanism (pro-facing): sunscreen is mineral oil / silicone carrier + chemical UV filters (avobenzone, oxybenzone, octinoxate) + physical blockers (TiO₂, ZnO) + emulsifiers. Avobenzone forms ferric complexes with iron in water — the source of the rust-yellow ring. Pro uses POG / petroleum ether for oil + NSD for emulsifier + 3% H₂O₂ for the avobenzone-iron color; sodium hydrosulfite is the reducing-bleach option for set yellow.",
+  "defaultAssumption": "Beach day / pool day / sport sunscreen rub-off on a polyester swimsuit, athletic-wear, or rashguard, fresh-to-weeks. Mineral-only sunscreens (zinc oxide / titanium dioxide) leave white residue but no yellow lock. Chemical sunscreens (avobenzone, oxybenzone) produce the rust-yellow ring under heat. Hot-dried = often permanent.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Powder Preload",
+      "technique": "Pull oil up before water",
+      "equipment": "Cornstarch / baking soda",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Cover the spot with cornstarch or baking soda. Press gently. 20–30 min absorb. Soft-brush off. Most surface oil and mineral residue come off this way without water."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "technique": "Emulsify oily film",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 10 min. Polyester is oleophilic — extended dwell needed. Cool damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Test Oily Feel — Repeat Dawn If Yes",
+      "technique": "Second pass for stubborn affinity",
+      "equipment": "Clean fingertip, Dawn + cool water",
+      "dwellTime": "10 minutes",
+      "instruction": "Touch the spot with a clean fingertip. Oily feel = repeat Dawn. Polyester typically needs 2 Dawn passes for sunscreen oil."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Avobenzone-Iron Yellow",
+      "technique": "White polyester only, hidden test on dyed",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE polyester only. Hidden-area test on dyed polyester first. 3% peroxide damp cloth 5–10 min for residual avobenzone-iron yellow ring. NEVER mix with chlorine bleach — produces permanent yellow worse than original."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cool Wash, No Chlorine, No Fabric Softener",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water, normal detergent",
+      "dwellTime": "Full cool cycle",
+      "instruction": "Cool machine wash with normal detergent. NEVER chlorine bleach — locks avobenzone-iron yellow permanently. SKIP fabric softener — coats fiber, blocks future cleaning. AIR-DRY only."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG to dissolve the oil/wax component",
-      "2. Apply NSD to lift dissolved residue and pigment",
-      "3. If color remains: apply H2O2 6% on colorfast fabrics — 5-10 min dwell time, monitor",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "2. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "3. Repeat Dawn pass if oily feel remains.",
+      "4. 3% H₂O₂ damp cloth for avobenzone-iron yellow on white polyester, hidden test on dyed.",
+      "5. Cool machine wash + AIR-DRY. No chlorine bleach, no fabric softener."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "Dawn / NSD",
+      "3% Hydrogen peroxide (white polyester, hidden test on dyed)",
+      "Cool water"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool throughout — heat sets sunscreen oil and avobenzone-iron yellow on polyester",
+    "warnings": [
+      "NEVER hot water — sets oil and accelerates avobenzone-iron yellowing",
+      "NEVER hot dryer until cleared",
+      "NEVER chlorine bleach — reacts with sunscreen chemicals to produce permanent yellow stain (worse than original)",
+      "NEVER fabric softener — coats fiber, blocks future cleaning",
+      "Hidden test on dyed polyester before peroxide",
+      "Polyester is oleophilic — expect 2 Dawn passes",
+      "Avobenzone-iron yellow gets worse with heat — strict cool discipline",
+      "Performance / specialty / dry-clean-only polyester = pro"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Sunscreen Has Three Parts — Order Matters",
+      "instruction": "Sunscreen leaves oily residue + mineral residue + (with chemical sunscreens) a yellow ring that comes from the UV filter avobenzone reacting with iron in water. Three hard rules on polyester: NO hot water (sets the oil and makes the yellow ring worse), NO chlorine bleach (reacts with sunscreen chemicals to produce a permanent yellow that's worse than the original stain), and NO fabric softener (coats the fiber and blocks future cleaning). Powder preload BEFORE water — water-first spreads oil into a wider ring."
+    },
+    {
+      "step": 2,
+      "agent": "Cornstarch or Baking Soda Preload — 20 to 30 Minutes",
+      "instruction": "Cover the spot with cornstarch or baking soda. Press gently. 20 to 30 minutes. Soft-brush off. Most surface oil and mineral residue come off this way without any water."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "instruction": "Apply a generous amount of Dawn dish soap. Work in with a soft toothbrush for 10 minutes. Polyester is oleophilic — it grabs the oily sunscreen carrier tight, so extended dwell is needed. Cool damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "agent": "Test for Oily Feel — Repeat If Needed",
+      "instruction": "Touch the spot with a clean fingertip. Still feels oily? Repeat the Dawn step. Polyester typically needs 2 Dawn passes for sunscreen oil."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide for the Yellow Ring (White Polyester Only)",
+      "instruction": "If a yellow ring remains on WHITE polyester (avobenzone reacted with iron in your water): 3% drugstore peroxide on a damp cloth, press 5 to 10 minutes, blot. Hidden-area test on dyed polyester first — skip if color transfers. NEVER mix with chlorine bleach — produces a permanent yellow stain worse than the original."
+    },
+    {
+      "step": 6,
+      "agent": "Cool Wash — No Chlorine, No Softener",
+      "instruction": "Cool machine wash with normal detergent. NEVER chlorine bleach on sunscreen residue — chlorine reacts with the UV filters to lock the yellow ring permanently. SKIP fabric softener — coats the fiber and blocks future cleaning. AIR-DRY only. Inspect dry before any heat."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Scrape or blot excess — do NOT rub (spreading worsens it)",
-      "2. Apply Dawn dish soap directly to the stain. Work gently",
-      "3. Blot with clean white cloth. Repeat Dawn application until stain fades",
-      "4. Rinse with warm water (unless protein component present — then cold)",
-      "5. Air dry — no heat"
+      "1. NO hot water. NO chlorine bleach. NO fabric softener.",
+      "2. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "3. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "4. Repeat Dawn pass if oily feel remains (2 passes typical).",
+      "5. 3% peroxide damp cloth for avobenzone-iron yellow on white polyester only, hidden test on dyed.",
+      "6. Cool machine wash + AIR-DRY. No dryer until cleared."
     ],
     "products": [
-      "Dawn dish soap"
+      "Cornstarch / baking soda",
+      "Dawn dish soap (generous)",
+      "3% Hydrogen peroxide (white polyester only)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if hot water or hot dryer was already used (often permanent yellow ring on polyester). Stop if chlorine bleach was already used (produced permanent yellow — pro is the only escalation). Stop on performance / specialty polyester (pro). Stop after 3 home cycles plateau.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "NEVER hot water — sets oil + accelerates yellow ring",
+      "NEVER hot dryer until cleared",
+      "NEVER chlorine bleach — produces permanent yellow stain worse than original",
+      "NEVER fabric softener — coats fiber, blocks cleaning",
+      "Powder preload BEFORE water",
+      "Polyester is oleophilic — 2 Dawn passes typical",
+      "Hidden test on dyed polyester before peroxide"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on sunscreen + polyester",
+      "Never hot dryer until cleared",
+      "Never chlorine bleach on sunscreen residue — locks yellow permanently",
+      "Never fabric softener after sunscreen",
+      "Never skip powder preload"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs sunscreen oil tightly",
+      "Polyester yellows under heat over time",
+      "Performance / athletic / specialty polyester (rashguards, swimsuits): pro — coatings react unpredictably",
+      "Avobenzone-iron yellow is the polyester-specific lock — heat + chlorine make it permanent"
     ]
   },
+  "materialWarnings": [
+    "Avobenzone-iron yellow is real — chemical sunscreens leave rust-colored rings on polyester",
+    "Chlorine bleach LOCKS the yellow permanently — never reach for it",
+    "No hot water / no hot dryer — heat accelerates the yellow",
+    "Polyester loves sunscreen oil — 2 Dawn passes typical",
+    "Performance polyester (swimsuits, rashguards) goes to pro"
+  ],
   "escalation": {
-    "when": "If sunscreen stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is sunscreen on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent yellow ring). Chlorine bleach already used on sunscreen (produced a permanent yellow stain that's worse than original — pro is the only escalation). Performance / specialty / dry-clean-only polyester. 3 home cycles plateau.",
+    "whatToTell": "\"Sunscreen on [white / dyed / athletic / swimwear / specialty] polyester, [chemical (avobenzone) / mineral (zinc / titanium) / mixed], age [fresh / hours / hot-dried suspected], home-treated with [cornstarch preload + Dawn cool × 2 + 3% peroxide on white + cool wash + air-dry]. No hot, no chlorine, no fabric softener. [Residual yellow ring / chlorine reaction / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with reducing-bleach (sodium hydrosulfite) chemistry for set avobenzone-iron yellow"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Chemical sunscreen (avobenzone, oxybenzone) or mineral (zinc / titanium dioxide) or mixed?",
+      "White, dyed, athletic, swimsuit / rashguard, or specialty polyester?",
+      "Fresh oil residue or aged yellow ring?",
+      "Has the garment been hot-washed or hot-dried with the residue?",
+      "Has chlorine bleach been used (produces permanent yellow)?",
+      "Well water or city water (well water has more iron, more avobenzone reaction)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Mineral-only sunscreens (pure zinc oxide or titanium dioxide) leave white residue without the avobenzone-iron yellow problem — easier case. Chemical sunscreens with avobenzone are the hard case because the rust-yellow ring is the polyester-specific lock. Well water makes this worse (more iron). Chlorine bleach reaction is irreversible — disclose to the cleaner. Performance polyester (swimsuits, rashguards) goes to pro because the fabric coatings react unpredictably to extended Dawn dwell."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

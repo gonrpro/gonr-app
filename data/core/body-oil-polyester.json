@@ -1,82 +1,203 @@
 {
   "id": "body-oil-polyester",
   "title": "Body Oil on Polyester",
-  "stainFamily": "protein",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Body oil (sebum) contains fat, wax esters, squalene, and cholesterol. On polyester, these lipids penetrate the fiber and oxidize over time, becoming increasingly polymerized and resistant to standard washing. The yellowing associated with collar and cuff rings is caused by oxidized squalene and protein residue from sweat combining with the oils.",
-  "whyThisWorks": "A degreasing surfactant (POG professionally, Dawn at home) emulsifies the oils and makes them water-soluble on polyester. For oxidized/polymerized oils, a solvent pre-treatment dissolves the hardened residue before the surfactant can work. The protein component from sweat is addressed with enzyme or cold-water surfactant treatment.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–45 minutes; oleophilic polyester needs 2 Dawn passes, no hot dryer until clear",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "body-oil",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "body-oil",
+      "sebum",
+      "oil",
+      "polyester",
+      "yellowing-prevention",
+      "no-hot-water",
+      "no-hot-dryer",
+      "oleophilic-fiber",
+      "athletic-wear-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Body oil (sebum) is the natural oil from skin — fats, wax esters, and other lipids that build up on collars, cuffs, and athletic-wear necklines. On polyester, two complications stack: polyester is OLEOPHILIC, so it grabs body oil tight and holds it through normal washing, and polyester yellows under heat over time when oily residue is present — that's where the gradual yellowing of polyester collars comes from. Plus body oil mixed with sweat protein adds a second component that sets if it sees heat. The recurring trap is hot water and hot dryer — both lock the oil into the fiber and yellow the polyester permanently. The other trap on athletic wear is fabric softener buildup from prior washes, which coats the fiber and blocks any cleaner from reaching the oil.",
+  "whyThisWorks": "Powder preload (cornstarch or baking soda) pulls bulk oil up before any water can spread it. Generous Dawn pretreat handles the oily film that polyester grabbed. Polyester's oleophilic nature usually requires 2 Dawn passes for body oil. Cool wash plus AIR-DRY locks nothing. The honest cap on polyester: aged hot-dried body oil yellowing is often a permanent shadow because polyester yellows under heat once oil is in the fiber.",
+  "scienceNote": "Mechanism (pro-facing): sebum is triglyceride fats + wax esters + squalene + cholesterol; oxidized squalene combined with sweat-protein residue causes the yellow discoloration. Pro uses NSD or POG plus enzyme spotter for any sweat-protein component. Polyester's hydrophobic surface holds non-polar lipids tightly — extended dwell needed.",
+  "defaultAssumption": "Collar / cuff / armpit yellowing on a polyester shirt or athletic-wear neckline, fresh-to-weeks. Fresh = high-confidence DIY. Aged hot-dried yellow = often permanent shadow; manage expectations. Athletic wear with fabric softener buildup needs softener strip first.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Powder Preload",
+      "technique": "Pull bulk oil up before water",
+      "equipment": "Cornstarch / baking soda",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Cover the oily area with cornstarch or baking soda. Press gently. 20–30 min absorb. Soft-brush off. Most surface oil comes off this way without water — water-first spreads oil into a wider ring on polyester."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "technique": "Emulsify oily film",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 10 min. Polyester is oleophilic — extended dwell needed. Cool damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Test Oily Feel — Repeat Dawn If Yes",
+      "technique": "Second pass for stubborn oleophilic affinity",
+      "equipment": "Clean fingertip, Dawn + cool water",
+      "dwellTime": "10 minutes",
+      "instruction": "Touch the spot with a clean fingertip. Oily feel = repeat Dawn. Polyester typically needs 2 Dawn passes for body oil."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Wash, No Fabric Softener",
+      "technique": "Strip prevents future cleaning blocks",
+      "equipment": "Washing machine, cool water, normal detergent",
+      "dwellTime": "Full cool cycle",
+      "instruction": "Cool machine wash with normal detergent. SKIP fabric softener — it coats the fiber and blocks future cleaning if buildup recurs. NEVER hot water — sets oil and yellows polyester."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "AIR-DRY Plus Daylight Inspect",
+      "technique": "Verify before any heat",
+      "equipment": "Hanger, daylight",
+      "dwellTime": "Air-dry to fully dry",
+      "instruction": "AIR-DRY only. Inspect in daylight. Faint yellow shadow remaining = repeat Dawn pass. NEVER hot dryer until cleared — locks residual oil and yellows polyester over time."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "2. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "3. Repeat Dawn pass if oily feel remains.",
+      "4. Cool machine wash, no fabric softener.",
+      "5. AIR-DRY + daylight inspect. Never heat until clear."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "Dawn / NSD",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets body oil and yellows polyester over time",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "NEVER hot water — sets oil and yellows polyester",
+      "NEVER hot dryer until cleared — locks oil, yellows fiber",
+      "NEVER chlorine bleach on polyester — damages fiber, yellows it long-term",
+      "NEVER fabric softener after body oil — coats fiber, blocks future cleaning",
+      "Always powder preload BEFORE water — water-first spreads oil",
+      "Polyester is oleophilic — expect 2 Dawn passes",
+      "Aged hot-dried yellowing on polyester is often permanent"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Polyester Loves Body Oil — Powder First",
+      "instruction": "Body oil on polyester is the source of yellow collar / cuff rings. Polyester is oleophilic — it grabs the oil tight and holds it through normal washing. Two hard rules: NO hot water (locks the oil and yellows polyester) and NO hot dryer until cleared (heat seals the oil into the fiber and turns the yellow shadow permanent over time). Plus: powder preload BEFORE water — water-first spreads oil into a wider ring."
+    },
+    {
+      "step": 2,
+      "agent": "Cornstarch or Baking Soda — 20 to 30 Minutes",
+      "instruction": "Cover the oily area with cornstarch or baking soda. Press gently into the spot. 20 to 30 minutes. Soft-brush off. Most surface oil comes off this way without any water."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "instruction": "Apply a generous amount of Dawn dish soap directly to the spot. Work it in with a soft toothbrush for 10 minutes. Cool damp-cloth rinse. Polyester needs longer dwell than cotton — it grabs body oil tight."
+    },
+    {
+      "step": 4,
+      "agent": "Test for Oily Feel — Repeat If Needed",
+      "instruction": "Touch the spot with a clean fingertip. Still feels oily? Repeat the Dawn step. Polyester typically needs 2 Dawn passes for body oil — that's the norm, not a failure."
+    },
+    {
+      "step": 5,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. SKIP fabric softener — it coats the fiber and makes any future yellowing harder to clean. AIR-DRY only. Inspect in daylight before the dryer. Faint yellow shadow = repeat the Dawn pass."
+    },
+    {
+      "step": 6,
+      "agent": "Aged Hot-Dried Yellowing — Manage Expectations",
+      "instruction": "Body oil that's been through hot dryers for weeks or months on polyester often leaves a permanent yellow shadow because polyester yellows under heat once oil is in the fiber. Home cleaning helps fade it but rarely clears it fully. Going forward: switch to aluminum-free deodorant, skip fabric softener, AIR-DRY workout polyester to prevent recurrence."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. NO hot water. NO hot dryer until cleared. NO fabric softener.",
+      "2. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "3. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "4. Repeat Dawn pass if oily feel remains (2 passes typical on polyester).",
+      "5. Cool machine wash, no fabric softener.",
+      "6. AIR-DRY + daylight inspect. No dryer until cleared."
     ],
     "products": [
-      "Dawn dish soap",
-      "cold water",
-      "enzyme laundry detergent (Tide or Persil)"
+      "Cornstarch / baking soda",
+      "Dawn dish soap (generous)",
+      "Cool water"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if hot water or hot dryer was already used for weeks (often permanent yellow shadow on polyester). Stop on specialty / performance / dry-clean-only polyester (pro). Stop after 3 home cycles plateau.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first",
-      "Do NOT use OxiClean or oxidizing agents on protein stains — they can set the stain permanently"
+      "NEVER hot water — sets oil + yellows polyester",
+      "NEVER hot dryer until cleared",
+      "NEVER chlorine bleach on polyester — damages fiber, yellows long-term",
+      "NEVER fabric softener — coats fiber, blocks future cleaning",
+      "Powder preload BEFORE water",
+      "Polyester is oleophilic — 2 Dawn passes typical",
+      "Aged hot-dried yellow is often permanent"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on body oil + polyester",
+      "Never hot dryer until cleared",
+      "Never chlorine bleach on polyester",
+      "Never fabric softener after body oil",
+      "Never skip powder preload"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs body oil tightly, needs 2 Dawn passes",
+      "Polyester yellows under heat over time when oily residue is present",
+      "Performance / specialty polyester (athletic compression, technical): pro — coatings react unpredictably",
+      "Dyed polyester: cool only — heat locks any pigment in residue"
     ]
   },
+  "materialWarnings": [
+    "Powder preload before water — water-first spreads oil",
+    "No hot water / no hot dryer — polyester yellows under heat with oil",
+    "Polyester loves body oil — 2 Dawn passes typical",
+    "No fabric softener — coats fiber, blocks future cleaning",
+    "Aged hot-dried yellow is often a permanent shadow"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is body oil on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot dryer used on body oil for weeks or months (often permanent yellow). Performance / specialty / dry-clean-only polyester. 3 home cycles plateau. Yellowing across the entire collar / cuff / underarm region (cumulative buildup).",
+    "whatToTell": "\"Body oil yellowing on [white / dyed / athletic / specialty] polyester, age [days / weeks / months], home-treated with [cornstarch preload + Dawn cool × 2 + cool wash + air-dry]. No hot, no fabric softener. [Residual yellow shadow / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with solvent spotting capability for set yellow on polyester"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "White, dyed, athletic, or specialty polyester?",
+      "Fresh oil residue or aged yellow shadow?",
+      "Has fabric softener been used in past washes?",
+      "Has the garment been hot-dried with the residue on it?",
+      "Cumulative yellowing or single-event spot?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Cumulative yellowing is the harder case — months of body oil + heat on polyester is often a permanent shadow. Athletic-wear fabric softener buildup is the hidden plateau cause; strip the softener (white vinegar pre-wash) before treatment if past washes used softener. Performance polyester (compression, Gore-Tex) goes to pro because the coatings react unpredictably to extended Dawn dwell."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

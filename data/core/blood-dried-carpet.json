@@ -1,81 +1,259 @@
 {
   "id": "blood-dried-carpet",
-  "title": "Blood Dried on Carpet",
+  "title": "Dried Blood on Carpet",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "carpet",
   "sector": "carpet",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Dried blood has undergone protein setting and oxidation. On carpet, the blood pigment lock together with the fiber polymer, and the iron component oxidizes to form rust-colored iron oxide. The protein matrix becomes insoluble and forms a tough film. The older the stain, the more lock together has occurred, and the harder removal becomes. Heat exposure at any point makes this nearly permanent.",
-  "whyThisWorks": "Extended enzyme treatment (where fiber-safe) slowly breaks down the lock together protein matrix on carpet. Cold water throughout — any heat further sets the remaining protein. For the iron component that remains after protein removal, a reducing agent addresses the rust discoloration. Multiple treatment cycles are usually needed — dried blood rarely comes out in one pass.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "45–90 minutes home triage; aged + heat-set = pro / restoration territory",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "blood-dried",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "blood",
+      "dried",
+      "protein",
+      "carpet",
+      "biohazard-adjacent",
+      "no-hot-water",
+      "no-saturation",
+      "iron-brown-shadow",
+      "multi-pass-expected"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Dried blood is the harder case — the protein has already set and the iron has turned the stain from red to brown. The brown stays even after the protein lifts because it's iron oxide, not protein. On carpet, two extra complications stack: the carpet pad below absorbs blood that soaks through (saturation = harder cleanup, possible mildew), and aggressive scrubbing on dyed carpet leaves a halo. Two hard rules: NO hot water (locks anything still loose) and NO saturation (drives blood into the pad where you can't reach it). Multi-pass is the norm on dried blood — expect 2 to 3 cycles minimum.",
+  "whyThisWorks": "Cold-water moistening softens the dried protein crust without setting it deeper. An enzyme pretreat (cool water only) breaks down the residual protein over 20 to 30 minutes. Dawn handles any oily film. 3% peroxide on a damp cloth (hidden test on dyed carpet) handles the iron-brown shadow that's left after the protein is gone. Weighted towels overnight prevent wick-back from the pad. The honest cap: aged blood + hot vacuum / hot dryer / steam already used = often a permanent shadow; pro / restoration is the right call.",
+  "scienceNote": "Mechanism (pro-facing): dried blood combines set protein matrix + Fe³⁺ iron-based pigment. Pro uses cold liquid Protein Spotter (protease pretreat at controlled dilution) plus NSD plus sodium hydrosulfite for set/oxidized iron component — reducing bleach is more effective than peroxide on the iron-brown shadow.",
+  "defaultAssumption": "Cut, kid scrape, period stain, or mishap on carpet that wasn't caught fresh — sat overnight or longer and dried in. Synthetic (nylon / polyester / olefin) carpet = home protocol candidate. Wool carpet = pro from minute one (pet-urine-wool-carpet rules apply: no broad-spectrum enzymes, cold-only). Visible bleed-through to the pad = restoration / pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage and PPE",
+      "technique": "Pad assessment + biohazard PPE",
+      "equipment": "Gloves, good light",
+      "dwellTime": "2 minutes",
+      "instruction": "Gloves on (biohazard). Wool carpet = pro from minute one. Press the carpet — if the pad below is damp / shows visible blood / smells musty, stop and call a pro. Synthetic carpet with surface dried blood = home candidate."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Lift Crusted Surface",
+      "technique": "Plastic-edge crack and vacuum",
+      "equipment": "Plastic card, HEPA vacuum",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Crack the dried crust with the flat edge of a plastic card. HEPA vacuum the loose flakes. Don't rub or grind into the pile."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Cold Water Damp-Cloth Soften",
+      "technique": "Moisten without saturating",
+      "equipment": "Cold water, white cloth",
+      "dwellTime": "10 minutes",
+      "instruction": "Damp white cloth with COLD water — wrung nearly dry. Press on the spot, let sit 10 min to soften the dried crust. Damp-cloth only — never pour water (sinks blood into the pad). Lift, rotate to clean section, press again."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat — Cool, Damp-Cloth Application",
+      "technique": "Protein digestion in place",
+      "equipment": "OxiClean Versatile / Biz / pet enzyme in COOL water on damp cloth",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Dissolve enzyme pretreat in COOL water per label. Apply with damp cloth — never pour. Cover with a damp towel to prevent drying. 20–30 min dwell. Cool damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Test for Peroxide",
+      "technique": "Carpet color bleed test",
+      "equipment": "3% H₂O₂ on Q-tip",
+      "dwellTime": "2 minutes",
+      "instruction": "Hidden carpet area: dab 3% peroxide, blot with white cloth. Color transfers = skip peroxide. Clean = proceed."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Iron-Brown Shadow",
+      "technique": "Bounded application for residual brown",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Hidden-test-passed synthetic carpet only. 3% peroxide damp cloth 5–10 min for residual iron-brown shadow. Damp-cloth rinse. NEVER mix with chlorine bleach, ammonia, or alkaline cleaners. Skip on wool carpet."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Weighted Paper Towels Overnight Plus Fan",
+      "technique": "Prevent wick-back from pad",
+      "equipment": "Paper towels + heavy book, fan",
+      "dwellTime": "8–12 hours",
+      "instruction": "Stack paper towels on the spot, weight overnight. Fan the room. Prevents brown pigment wicking back up from the pad as the carpet dries. Inspect dry — multi-pass is the norm; repeat enzyme + peroxide if shadow remains."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. PPE + pad assessment. Wool carpet / pad bleed-through = pro / restoration.",
+      "2. Plastic-edge crack and HEPA vacuum dried crust.",
+      "3. Cold damp-cloth soften, 10 min.",
+      "4. Enzyme pretreat in COOL water on damp cloth, 20–30 min.",
+      "5. Hidden-area peroxide test on dyed carpet.",
+      "6. 3% H₂O₂ damp cloth for iron-brown shadow on hidden-test-passed synthetic carpet.",
+      "7. Weighted paper towels overnight + fan. Multi-pass expected."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Disposable gloves",
+      "Plastic card",
+      "HEPA vacuum",
+      "Enzyme pretreat (OxiClean Versatile / Biz / pet enzyme)",
+      "3% Hydrogen peroxide (synthetic carpet, hidden test)",
+      "Paper towels + weight",
+      "Fan",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets residual blood and iron-brown",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein",
-      "Avoid over-wetting — extract excess moisture to prevent backing/foam damage"
+      "NEVER hot water — sets the protein and iron-brown shadow permanently",
+      "NEVER saturate the carpet — drives blood into the pad",
+      "NEVER chlorine bleach panic moves on carpet — strips carpet dye, doesn't reach pad blood",
+      "NEVER alcohol on blood — sets the protein",
+      "Wool carpet = pro from minute one",
+      "Pad contamination = restoration, not stain cleaning",
+      "Hidden peroxide test mandatory on dyed carpet",
+      "Multi-pass expected — 2 to 3 cycles is normal",
+      "Biohazard — gloves required, sealed disposal",
+      "Never mix peroxide with bleach / ammonia / alkaline"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Dried Blood Is Multi-Pass — Set Expectations",
+      "instruction": "Dried blood on carpet rarely comes out in one cleaning cycle. Plan on 2 to 3 passes minimum. Two hard rules: NO hot water (sets the protein and iron-brown shadow permanently) and NO saturation (drives blood into the pad below where you can't reach it). Gloves on — biohazard, especially if it's not your blood."
+    },
+    {
+      "step": 2,
+      "agent": "Wool Carpet Goes to Pro From Minute One",
+      "instruction": "If your carpet is wool — pro from minute one. Wool's banned-tools list (no broad-spectrum enzymes, no peroxide, no agitation) eliminates everything that lifts dried blood from synthetic carpet. Synthetic carpet (nylon, polyester, olefin) = home protocol candidate."
+    },
+    {
+      "step": 3,
+      "agent": "Check the Pad Before Anything",
+      "instruction": "Press the carpet down with your hand. If the pad below feels damp, has visible blood bleed-through, or smells musty, STOP — that's pad contamination, not a stain job. Call a pro. The pad has to come up; it can't be cleaned in place."
+    },
+    {
+      "step": 4,
+      "agent": "Crack the Crust and HEPA Vacuum",
+      "instruction": "Use the flat edge of a plastic card to crack the dried blood crust. HEPA vacuum the loose flakes (regular vacuum spreads them; HEPA traps them). Don't rub or grind."
+    },
+    {
+      "step": 5,
+      "agent": "Cold Damp-Cloth Soften — Don't Pour",
+      "instruction": "Damp a white cloth with COLD water — wring it nearly dry. Press on the spot, let it sit 10 minutes to soften the dried crust. Lift, rotate to a clean section, press again. NEVER pour water on the carpet — pour-on saturation sends blood into the pad where it grows mildew."
+    },
+    {
+      "step": 6,
+      "agent": "Enzyme Pretreat — Cool Water Only",
+      "instruction": "Dissolve an enzyme pretreat (OxiClean Versatile, Biz, or a pet-specific enzyme) in COOL water per the label. Apply with a damp cloth — never pour. Cover with a damp towel so it doesn't dry out. 20 to 30 minutes. Damp-cloth rinse with cool water. Don't be tempted to use warm water 'to help' — heat above bath temperature damages the enzymes AND sets any remaining protein."
+    },
+    {
+      "step": 7,
+      "agent": "Hidden Patch Test Before Peroxide",
+      "instruction": "In a hidden carpet area, dab 3% peroxide on a white cloth, press 2 minutes. Carpet color transfers = skip peroxide entirely. No transfer = proceed."
+    },
+    {
+      "step": 8,
+      "agent": "3% Peroxide for the Iron-Brown Shadow",
+      "instruction": "Hidden-test-passed synthetic carpet only: 3% drugstore peroxide on a damp cloth, press the spot 5 to 10 minutes, blot. Handles the iron-brown shadow that's left after the protein is gone. Damp-cloth rinse. NEVER mix with bleach, ammonia, or OxiClean — toxic fumes. Skip entirely on wool carpet."
+    },
+    {
+      "step": 9,
+      "agent": "Weighted Paper Towels Overnight Plus Fan",
+      "instruction": "Stack paper towels on the spot, weight with a heavy book, leave overnight. Fan the room in the morning. This pulls residual moisture and pigment out of the pile and prevents brown wicking back up from the pad. Inspect dry. Faint shadow remaining = repeat the enzyme + peroxide cycle. Multi-pass is normal."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. Gloves on (biohazard). Wool carpet = pro.",
+      "2. Pad bleed-through / saturation = restoration, not stain cleaning.",
+      "3. Crack crust with plastic edge + HEPA vacuum.",
+      "4. Cold damp-cloth soften 10 min — never pour.",
+      "5. Enzyme pretreat in COOL water on damp cloth, 20–30 min.",
+      "6. Hidden-area peroxide test on dyed carpet.",
+      "7. 3% peroxide damp cloth for iron-brown shadow on hidden-test-passed synthetic carpet.",
+      "8. Weighted paper towels overnight + fan. Repeat 2–3 cycles as needed."
     ],
     "products": [
-      "Dawn dish soap",
-      "cold water"
+      "Disposable gloves",
+      "Plastic card",
+      "HEPA vacuum",
+      "Enzyme pretreat (OxiClean Versatile, Biz, pet enzyme)",
+      "3% Hydrogen peroxide (synthetic carpet, hidden test)",
+      "Paper towels + heavy book",
+      "Fan",
+      "Cool water"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop on wool carpet (pro). Stop on pad contamination — that's restoration. Stop if hot water / steam / hot vacuum was already used (often permanent brown shadow). Stop if hidden-area peroxide test fails on dyed carpet. Stop after 3 home cycles plateau.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first"
+      "NEVER hot water — sets blood and iron-brown shadow permanently",
+      "NEVER saturate carpet — drives blood into the pad",
+      "NEVER chlorine bleach on carpet — strips carpet dye, leaves halo",
+      "NEVER alcohol on blood",
+      "Wool carpet = pro from minute one",
+      "Pad contamination = restoration, not home cleaning",
+      "Hidden peroxide test on dyed carpet",
+      "Multi-pass expected — 2–3 cycles normal",
+      "Biohazard — gloves on",
+      "Never mix peroxide with bleach / ammonia / alkaline"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never hot water on dried blood — sets it permanently",
+      "Never saturate carpet — drives blood into pad",
+      "Never chlorine bleach on dyed carpet",
+      "Never alcohol on blood",
+      "Never broad-spectrum enzymes on wool carpet",
+      "Never bare-handed if blood isn't your own",
+      "Never mix peroxide with bleach / ammonia / OxiClean"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Synthetic (nylon / polyester / olefin) carpet: tolerates enzyme pretreat + 3% peroxide on hidden-test-passed",
+      "Wool carpet: pro from minute one — broad-spectrum enzymes damage wool, peroxide yellows wool",
+      "Dyed carpet: hidden peroxide test mandatory",
+      "Carpet pad: cannot be cleaned in place — saturation = pad replacement / restoration"
     ]
   },
+  "materialWarnings": [
+    "Multi-pass is the norm on dried blood — set expectations",
+    "No hot water / no saturation — both lock the stain",
+    "Wool carpet = pro from minute one",
+    "Pad contamination = restoration territory",
+    "Hidden peroxide test mandatory on dyed carpet"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is blood dried on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Wool carpet from minute one. Pad contamination — damp pad, visible bleed-through, musty smell from below. Hot water / steam / hot vacuum already used (often permanent brown shadow). Hidden peroxide test fails on dyed carpet. 3 home cycles plateau. Aged set blood through multiple cleaning attempts.",
+    "whatToTell": "\"Dried blood on [synthetic / wool] carpet, age [overnight / days / weeks], home-treated with [crack and HEPA vacuum + cool enzyme pretreat × N + 3% peroxide on hidden-test-passed synthetic + weighted towels overnight]. No hot, no saturation, no chlorine bleach, no alcohol. [Residual brown shadow / pad contamination suspected / hot already used].\"",
+    "specialistType": "professional carpet cleaner with truck-mount sub-surface extraction for synthetic carpet; specialty wool carpet cleaner OR mold remediation specialist if pad contamination"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Synthetic (nylon / polyester / olefin) carpet or wool?",
+      "Dyed or solid color?",
+      "Age — overnight, days, or weeks?",
+      "Has hot water / steam / hot vacuum been used yet?",
+      "Does the pad below feel damp or smell musty?",
+      "Whose blood (biohazard handling)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Dried blood is multi-pass — manage expectations. The two hard pad-contamination signals (damp pad, musty smell from below) move this from a stain job to a restoration job. Hot vacuum / steam pre-used is the most common home failure mode because it sets the protein. Wool carpet has its own protocol (pet-urine-wool-carpet rules apply: cold only, no broad-spectrum enzymes, no peroxide). The iron-brown shadow that remains after protein removal is a separate sub-stain — peroxide handles it on synthetic, sodium hydrosulfite is the pro tool on more delicate fibers."
   },
-  "difficulty": 7,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

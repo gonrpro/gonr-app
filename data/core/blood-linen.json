@@ -1,83 +1,210 @@
 {
   "id": "blood-linen",
   "title": "Blood on Linen",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "linen",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Blood contains blood pigment — an iron-bearing protein that bonds to linen tightlyand hydrophobic interactions. When fresh, the protein is water-soluble in cold conditions. Heat or time causes the protein chains to lock together, making the stain insoluble and far harder to remove. The iron component can leave a secondary rust-like discoloration after the protein is removed.",
-  "whyThisWorks": "Cold water keeps the protein from setting and locking into the linen fiber. A digestant enzyme (professional) or surfactant (DIY) breaks down the protein chains into soluble fragments that rinse away. The key is treating before any heat exposure — heat permanently lock together the protein.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "10–30 minutes; cold-only protein, structured / vintage = pro",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "blood",
+    "surfaceCanonical": "linen",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "blood",
+      "protein",
+      "linen",
+      "biohazard-adjacent",
+      "no-hot-water",
+      "no-hot-dryer",
+      "no-alcohol-on-blood",
+      "structured-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Blood is protein with iron in it. Fresh blood is water-soluble in cold conditions and lifts easily. Heat or time turns the iron from red to brown and locks the protein into the linen — once that happens, the stain is much harder. Linen tolerates cold-water and cool-enzyme protocols (it's cellulose, similar to cotton) but is more delicate when wet — wrinkles aggressively and structured / lined / vintage / dry-clean-only linen warps under aggressive handling. The hard lines: NO hot water (sets protein) and NO alcohol on blood (sets protein). Chlorine bleach on white linen is bounded — only with care label permission and on solid white pieces with no elastane / colored trim.",
+  "whyThisWorks": "Cold water keeps the protein from setting and rinses out the soluble portion. An enzyme pretreat in cool water (heat damages the enzymes AND the protein) breaks down residual protein. 3% peroxide on white or light linen handles the iron-brown shadow. Cool wash plus AIR-DRY flat (linen wrinkles aggressively when hung wet) finishes. Structured / vintage / dry-clean-only linen narrows the bench sharply — pro is the right call.",
+  "scienceNote": "Mechanism (pro-facing): blood is hemoglobin + plasma proteins + iron. Hemoglobin oxidizes Fe²⁺ → Fe³⁺ (red → brown) over hours. Linen is cellulose; tolerates cold liquid Protein Spotter (protease pretreat) plus NSD plus dilute peroxide on whites or sodium hydrosulfite at controlled dilution for set/oxidized residue. Structured pieces require pro because wet handling warps lining.",
+  "defaultAssumption": "Cut, period stain, or kitchen mishap on a simple flat washable linen napkin / shirt / tablecloth, fresh and not yet hot-dried. Hot-dried = often permanent brown shadow. Structured / lined / vintage / dry-clean-only linen = pro from minute one.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage and PPE",
+      "technique": "Care label + biohazard PPE",
+      "equipment": "Care label, gloves",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Gloves on (biohazard). Dry-clean-only / structured / lined / vintage linen = pro from minute one. Simple flat washable linen = home candidate."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse",
+      "equipment": "Cold/ice water, white catch towel",
+      "dwellTime": "60–90 seconds",
+      "instruction": "Hold the BACK of the stained area under cold running water with a white towel underneath. 60–90 seconds. Cold only — heat sets blood into linen permanently."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Enzyme Pretreat — Cool, Not Hot",
+      "technique": "Protein digestion before any heat",
+      "equipment": "OxiClean Versatile / Biz / Tide Plus per label, COOL water",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Dissolve enzyme pretreat in COOL water. Apply to spot, keep damp under a cloth, 15–20 min. Hot water above bath temperature damages enzymes AND sets the protein. Cool only."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Iron-Brown Shadow",
+      "technique": "White or light linen only, hidden test on dyed",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE or very light linen only. Hidden-area test on dyed linen first. 3% peroxide damp cloth 5–10 min for residual iron-brown. Damp-cloth rinse. NEVER mix with bleach / ammonia / alkaline."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cool Wash Plus AIR-DRY Flat",
+      "technique": "Heat-free finish, lay flat",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Cool cycle plus AIR-DRY flat",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY FLAT — linen wrinkles aggressively when wet, hanging stretches the fiber. Inspect dry before any iron. NEVER hot dryer until cleared."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Care label triage. Gloves. Structured / vintage = pro.",
+      "2. Cold water back-flush 60–90 sec.",
+      "3. Enzyme pretreat in COOL water, 15–20 min — never hot.",
+      "4. 3% H₂O₂ damp cloth for iron-brown on white / light linen, hidden test on dyed.",
+      "5. Cool wash + AIR-DRY flat. No heat until cleared."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Disposable gloves",
+      "Enzyme pretreat (OxiClean Versatile / Biz / Tide Plus / liquid Protein Spotter)",
+      "3% Hydrogen peroxide (white / light linen)",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets blood protein and iron-brown",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "NEVER hot water — sets protein permanently",
+      "NEVER hot dryer until cleared",
+      "NEVER alcohol on blood — sets the protein",
+      "Structured / lined / vintage linen = pro from minute one",
+      "Linen wrinkles aggressively wet — air-dry FLAT, not hanging",
+      "Hidden test on dyed linen before peroxide",
+      "Chlorine bleach on white linen — bounded, only with care label permission and no elastane / colored trim",
+      "Biohazard — gloves required",
+      "Never mix peroxide with bleach / ammonia / alkaline"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Cold Water Is the Whole First Move",
+      "instruction": "Blood on linen is fixable IF you keep it cold. The recurring trap is hot water — locks the protein and turns the iron from red to brown permanently. Two hard rules: NO hot water (sets the stain) and NO alcohol on blood (sets the protein). Gloves on if it's not your blood — biohazard."
+    },
+    {
+      "step": 2,
+      "agent": "Structured Linen Goes to Pro",
+      "instruction": "Dry-clean-only linen, structured pieces (lined jackets, drapery), or vintage linen all narrow the bench sharply — pro from minute one. Simple flat washable linen (napkin, plain shirt, basic tablecloth) = home candidate."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Back-Flush from the BACK",
+      "instruction": "Turn the linen inside out. Hold the BACK of the stained area under cold running water with a white towel underneath the front. Let cold water push the blood out the way it came in. 60 to 90 seconds. Cold only — even warm tap water sets the protein."
+    },
+    {
+      "step": 4,
+      "agent": "Enzyme Pretreat — Cool Water Only",
+      "instruction": "Dissolve an enzyme pretreat (OxiClean Versatile, Biz, or Tide Plus) in COOL water per the label. Apply to the spot, keep it damp under a cloth, wait 15 to 20 minutes. Don't be tempted to use warm water 'to help' — heat above bath temperature damages the enzymes AND sets the protein. Cool only."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide for Iron-Brown Shadow on White Linen",
+      "instruction": "WHITE or very light linen only: 3% drugstore peroxide on a damp cloth, press the spot 5 to 10 minutes, blot. Handles the iron-brown shadow that sometimes remains after the protein is gone. Hidden-area test on dyed linen first — skip if color transfers.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners — toxic fumes."
+    },
+    {
+      "step": 6,
+      "agent": "Cool Wash and AIR-DRY Flat",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY FLAT — linen wrinkles aggressively when wet, and hanging it stretches the fiber. Inspect dry before any iron. NEVER hot dryer until cleared. Heat at this step locks any residual protein or brown into the linen permanently."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. For stubborn stains on whites: apply 3% hydrogen peroxide directly — test colorfastness first, 5 min dwell time",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. Gloves on (biohazard). Structured / vintage linen = pro.",
+      "2. NO hot water. NO alcohol on blood.",
+      "3. Cold water back-flush 60–90 sec from the BACK.",
+      "4. Enzyme pretreat in COOL water, 15–20 min.",
+      "5. 3% peroxide damp cloth for iron-brown on white linen only, hidden test on dyed.",
+      "6. Cool wash + AIR-DRY FLAT. No iron until cleared."
     ],
     "products": [
-      "Dawn dish soap",
-      "cold water",
-      "hydrogen peroxide 3%"
+      "Disposable gloves",
+      "Enzyme pretreat (OxiClean Versatile, Biz, Tide Plus)",
+      "3% Hydrogen peroxide (white linen only)",
+      "Cool water"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop on dry-clean-only / structured / lined / vintage linen (pro). Stop if hot water or hot dryer was already used (often permanent brown shadow). Stop if hidden-area peroxide test fails on dyed linen. Stop after 2 home rounds without progress.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "NEVER use alcohol on blood — alcohol permanently sets protein stains",
-      "Always test cleaning solution on a hidden area first"
+      "NEVER hot water — sets blood permanently",
+      "NEVER hot dryer until cleared",
+      "NEVER alcohol on blood — sets the protein",
+      "Structured / vintage linen = pro from minute one",
+      "Linen air-dries FLAT, not hanging — wrinkles aggressively",
+      "Hidden test on dyed linen",
+      "Biohazard — gloves on",
+      "Never mix peroxide with bleach / ammonia / alkaline"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong concentrated acids — weakens cellulose",
-      "No chlorine bleach on colored linen"
+      "Never hot water on blood + linen",
+      "Never hot dryer until cleared",
+      "Never alcohol on blood",
+      "Never iron over a stained area before clearing",
+      "Never bare-handed if blood isn't your own",
+      "Never mix peroxide with bleach / ammonia / alkaline"
     ],
     "fiberSensitivities": [
-      "Strongest natural fiber when wet — very durable",
-      "Wrinkles easily but tolerates aggressive cleaning",
-      "Neutralize acid spotters after use on cellulose"
+      "White or light washable linen: tolerates cool enzyme + 3% peroxide",
+      "Dyed linen: hidden test mandatory before peroxide",
+      "Structured / lined linen: pro — warps under wet handling",
+      "Vintage / antique linen: pro — fiber fragility under aggressive chemistry",
+      "Linen wrinkles aggressively wet — air-dry FLAT, not hanging"
     ]
   },
+  "materialWarnings": [
+    "No hot water — sets blood permanently",
+    "No alcohol on blood — sets the protein",
+    "Structured / vintage linen = pro from minute one",
+    "Linen air-dries flat, not hanging",
+    "Iron-brown shadow needs separate peroxide pass on whites"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is blood on linen, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Dry-clean-only / structured / lined / vintage linen. Hot water or hot dryer already used (often permanent). Alcohol pre-applied (often sets protein). 2 home rounds plateau. Hidden-area test fails on dyed linen.",
+    "whatToTell": "\"Blood on [white / dyed / structured / vintage] linen, age [fresh / hours / hot-dried suspected], home-treated with [cold back-flush + cool enzyme pretreat + 3% peroxide on white + cool wash + air-dry flat]. No hot, no alcohol. [Residual brown / hot-dried suspected / structured piece].\"",
+    "specialistType": "professional dry cleaner with linen experience plus protein/iron-stain spotting capability"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Simple flat linen, structured / lined, or vintage?",
+      "White, light, or dyed?",
+      "Fresh, hours old, or hot-dried already?",
+      "Has alcohol been used on the spot?",
+      "Whose blood (biohazard handling)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Linen is more delicate than cotton when wet — wrinkles aggressively, structured pieces warp. Hot-dried blood leaves a permanent brown shadow most of the time. Alcohol pre-applied (rubbing alcohol or hand sanitizer to clean a cut) often sets the protein — disclose to the cleaner. The iron-brown shadow that remains after protein removal is a separate sub-stain — peroxide handles it on white linen, sodium hydrosulfite is the pro tool on dyed pieces."
   },
-  "difficulty": 4,
-  "timeEstimate": "5-15 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

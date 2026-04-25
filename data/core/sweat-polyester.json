@@ -1,126 +1,233 @@
 {
   "id": "sweat-polyester",
   "title": "Sweat on Polyester",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Sweat stains are a combination of proteins (primarily albumin), lipids (sebaceous oils), salts (sodium chloride), and urea. On polyester, the protein and oil components bond to fibers over time. Yellow discoloration is caused by a reaction between aluminum in antiperspirant and proteins in sweat — this compound polymerizes with heat and becomes increasingly resistant to removal.",
-  "whyThisWorks": "The treatment addresses multiple components: a bio-enzymatic (enzyme) detergent breaks down the protein (sweat is a biological/bio stain), a degreasing agent lifts the oil component, and an oxidizer addresses the yellow discoloration. For athletic polyester, a dedicated sport wash like WIN Sports Detergent or Hex Performance (technical-fabric enzyme detergent) is ideal because it combines bio-enzymatic action with odor control without coating fibers. Cold water prevents further protein polymerization in the polyester fiber.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "30–60 minutes plus 30-min vinegar soak; oleophilic + odor-trap fiber, no fabric softener",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "sweat",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "sweat",
+      "protein",
+      "yellowing",
+      "odor",
+      "polyester",
+      "athletic-wear-fork",
+      "vinegar-soak",
+      "no-fabric-softener",
+      "no-hot-water",
+      "no-tumble-dry"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Sweat on polyester is a different problem than sweat on cotton because polyester is OLEOPHILIC — it grabs and holds the oily component of sweat (sebum from skin) along with the bacteria that feed on it. That's why athletic polyester gets permanently funky where cotton doesn't. Two layered problems: (1) yellow pit stain (if antiperspirant was used) — aluminum-sweat complex bonded to the polyester, and (2) the lingering odor — bacteria trapped in the oily film inside the fiber. Fabric softener buildup makes both worse — it coats the fiber with a waxy film that traps oils and bacteria deeper. Treatment: vinegar soak (kills bacteria + breaks aluminum-sweat bond), Dawn (cuts oil), enzyme (digests protein), cool wash with sport detergent, NO fabric softener, AIR-DRY (tumble-dry sets residual odor on polyester).",
+  "whyThisWorks": "Vinegar soak does double duty: kills the odor-causing bacteria AND breaks the aluminum-sweat bond behind yellow pit stains. Dawn cuts the oily film that polyester grabbed. Enzyme pretreat digests the residual protein. Sport-specific detergent (WIN, Hex Performance) doesn't leave residue that traps future odor. Cool wash plus AIR-DRY keeps heat from setting the residue and yellow. The honest cap on athletic polyester: deeply set odor or yellow pit stains that cycled through hot dryer for years are sometimes unrecoverable; the oily film has bonded with the fiber and pro chemistry plateaus too.",
+  "scienceNote": "Mechanism (pro-facing): polyester is hydrophobic and oleophilic — sebum lipids penetrate the fiber and bacteria colonize the oil. Aluminum chlorohydrate forms aluminum-protein complexes that yellow under heat. Pro uses vinegar soak (acid breaks aluminum complex + reduces bacterial load) + NSD + enzyme spotter + sport detergent. Sodium hydrosulfite is the pro nuclear option for set yellow pit on polyester.",
+  "defaultAssumption": "Athletic-wear polyester (workout shirts, athletic socks, performance polos) with funky odor + visible yellow pit stains. Fresh sweat = quick win with cool Dawn + enzyme. Set odor + yellow buildup = full sequence including 30-min vinegar soak. Performance / specialty polyester (compression, technical fabrics) = pro from minute one.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage — Identify the Two Problems",
+      "technique": "Yellow vs odor (often both)",
+      "equipment": "Good light, smell test",
+      "dwellTime": "1 minute",
+      "instruction": "Two layered problems on polyester: yellow pit stain + lingering odor. Often both. Plan on the full sequence — vinegar soak handles both, but Dawn + enzyme are needed for the protein/oil component."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Vinegar Cool Soak — 30 Minutes",
+      "technique": "Acid breaks aluminum-sweat bond + reduces bacteria",
+      "equipment": "1 cup white vinegar + 2 gallons cool water, basin",
+      "dwellTime": "30 minutes",
+      "instruction": "Mix 1 cup white vinegar in 2 gallons cool water. Submerge the garment 30 min — longer (60 min) for set odor. Vinegar does double duty: kills odor-causing bacteria AND breaks the aluminum-sweat complex behind yellow pit. Cool only — heat sets the protein."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Cut the Oil",
+      "technique": "Emulsify oily film polyester grabbed",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Lift the garment out of the vinegar soak. Generous Dawn directly on visible yellow / gray pit areas. Soft toothbrush 5–10 min. Polyester is oleophilic — extended dwell needed. Cool damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Enzyme Pretreat — Cool, 20–30 Minutes",
+      "technique": "Protein digestion before any heat",
+      "equipment": "OxiClean Versatile / Biz / Tide Plus per label, COOL water",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Dissolve enzyme pretreat in COOL water per label. Apply to spot, keep damp under a cloth, 20–30 min. Cool only — heat above bath temperature damages enzymes AND sets the protein. Do NOT mix enzyme products with chlorine bleach (deactivates enzymes)."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cool Wash — Sport Detergent, NO Fabric Softener",
+      "technique": "Heat-free cycle without residue",
+      "equipment": "Sport detergent (WIN / Hex Performance / Nathan Sport Wash) or normal detergent, cool water",
+      "dwellTime": "Full cool cycle",
+      "instruction": "Cool machine wash with sport detergent if available — sport detergents don't leave residue that traps future odor. Add 1/2 cup white vinegar to the rinse cycle. ABSOLUTELY NO fabric softener — coats the fiber and locks oil and bacteria back in."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "AIR-DRY — Never Tumble-Dry Athletic Polyester",
+      "technique": "Heat-free finish",
+      "equipment": "Hanger, drying rack, sunlight if possible",
+      "dwellTime": "Air-dry to fully dry",
+      "instruction": "Hang or lay flat to AIR-DRY. NEVER tumble-dry athletic polyester at any temperature — heat sets residual odor compounds and can shrink technical fabric. Outdoor sun-dry is even better — UV neutralizes some residual odor."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Triage — yellow + odor combination is typical.",
+      "2. Vinegar cool soak 30 min (60 min for set odor).",
+      "3. Dawn pretreat cool 5–10 min for oil component.",
+      "4. Enzyme pretreat cool 20–30 min for protein.",
+      "5. Cool machine wash with sport detergent + 1/2 cup vinegar rinse, NO fabric softener.",
+      "6. AIR-DRY only — never tumble-dry athletic polyester."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "White vinegar (soak + rinse)",
+      "Dawn / NSD",
+      "Enzyme pretreat (OxiClean Versatile / Biz / Tide Plus / liquid Protein Spotter)",
+      "Sport detergent (WIN Sports Detergent / Hex Performance / Nathan Sport Wash)",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets sweat protein and odor on polyester",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "NEVER hot water — sets sweat protein and yellow pit on polyester",
+      "NEVER tumble-dry athletic polyester — sets residual odor compounds",
+      "NEVER fabric softener — coats fiber, locks oil and bacteria in",
+      "NEVER mix enzyme products with chlorine bleach — deactivates enzymes",
+      "NEVER alcohol on sweat — sets protein beyond pro recovery",
+      "Skip OxiClean on polyester-acetate blends (check care tag)",
+      "Performance / specialty polyester (compression, technical) = pro",
+      "Set odor + hot-dried for years sometimes unrecoverable — manage expectations"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Polyester + sweat is the funk combo",
-      "instruction": "Polyester is oleophilic — it grabs and HOLDS the oils in sweat and the bacteria that feed on them. This is why workout polyester gets permanently stinky where cotton doesn't. Two battles here: the yellow pit stain (if you use antiperspirant on polyester) and the lingering odor (from oil-trapped bacteria). You'll treat them separately."
+      "agent": "Polyester Plus Sweat Is the Funk Combo",
+      "instruction": "Polyester is oleophilic — it grabs and HOLDS the oils in sweat and the bacteria that feed on them. That's why workout polyester gets permanently funky in a way cotton doesn't. Two battles here: yellow pit stains (if you use antiperspirant) and lingering odor (oil-trapped bacteria). The fix is the same sequence, run carefully. Three rules: NO hot water (sets the protein and odor), NO tumble-dry (sets residual odor compounds), NO fabric softener (coats the fiber and locks oil and bacteria in)."
     },
     {
       "step": 2,
-      "agent": "Skip fabric softener from now on",
-      "instruction": "Fabric softener coats polyester fiber with a waxy film that traps sweat oils and bacteria. If you've been using softener on workout gear, that's most of your odor problem — stop using it going forward. Do NOT use softener in this treatment load."
+      "agent": "Stop Using Fabric Softener on Athletic Wear",
+      "instruction": "Fabric softener is the hidden cause of stuck-funk on workout polyester. It coats the fiber with a waxy film that traps sweat oils and bacteria. If you've been using softener, that's a big chunk of your odor problem. Stop using it on athletic wear going forward, and skip it in this treatment load."
     },
     {
       "step": 3,
-      "agent": "Pre-soak in vinegar water",
-      "instruction": "Fill a sink or bucket with 2 gallons of cold water and add 1 cup of white vinegar. Soak the garment for 30 minutes — longer if it's been smelly for a while. Vinegar's mild acid kills the odor-causing bacteria and breaks the aluminum-protein bond behind yellow pit stains. It also neutralizes residual alkaline detergent left in the fiber from previous washes."
+      "agent": "Vinegar Cool Soak — 30 Minutes (60 If Smelly)",
+      "instruction": "Fill a sink or bucket with 2 gallons of cool water and add 1 cup of white vinegar. Submerge the garment for 30 minutes — go to 60 minutes if it's been smelly for a while. Vinegar does double duty: kills the odor-causing bacteria AND breaks the aluminum-sweat bond behind yellow pit stains. Cool only — even warm water sets the sweat protein."
     },
     {
       "step": 4,
-      "agent": "Dawn + cold water on visible pit stains",
-      "instruction": "Lift the garment out of the vinegar soak. On any visible yellow or gray pit stains, apply a small drop of Dawn directly, work it in with a fingertip for 30 seconds, let sit 5 minutes. Dawn cuts the oil component that's trapping the protein. Blot with a clean damp cloth; don't rinse yet."
+      "agent": "Dawn on Visible Pit Stains",
+      "instruction": "Lift the garment out of the vinegar soak. On any visible yellow or gray pit stains, apply Dawn directly, work in with a soft toothbrush for 5 to 10 minutes. Polyester needs longer Dawn dwell than cotton because it grabs oil tighter. Damp-cloth rinse."
     },
     {
       "step": 5,
-      "agent": "Enzyme pretreat for the protein (20–30 min)",
-      "instruction": "Apply an enzyme stain remover — OxiClean Versatile, Biz, or Zout — per the label. Let it dwell 20–30 minutes. Enzymes digest the sweat protein (albumin) that's bonded to the polyester. This step does most of the odor work for set-in funk.",
-      "safetyNote": "Don't mix enzyme products with chlorine bleach — it deactivates the enzymes. Skip OxiClean if the polyester has any acetate blend (check care tag); safe on pure polyester."
+      "agent": "Enzyme Pretreat — Cool Water Only",
+      "instruction": "Apply an enzyme pretreat (OxiClean Versatile, Biz, or Tide Plus) per label in COOL water. 20 to 30 minutes. The enzyme dismantles the sweat protein bonded to the fiber. This step does most of the odor work on set-in funk. Don't mix enzyme products with chlorine bleach — chlorine deactivates the enzymes. Skip OxiClean on polyester-acetate blends (check the care tag)."
     },
     {
       "step": 6,
-      "agent": "Cold machine wash — sport detergent if you have it",
-      "instruction": "Launder on cold with a technical-fabric detergent if you have one (WIN Sports Detergent, Hex Performance, Nathan Sport Wash, or any \"stink-busting\" detergent). Regular detergent works too but leaves more residue on polyester. Add a half-cup of white vinegar to the rinse cycle. Absolutely no fabric softener in this wash."
+      "agent": "Cool Machine Wash — Sport Detergent, No Softener",
+      "instruction": "Cool wash with a sport / technical-fabric detergent if you have one (WIN Sports Detergent, Hex Performance, Nathan Sport Wash). Regular detergent works too but leaves more residue. Add 1/2 cup white vinegar to the rinse cycle. ABSOLUTELY NO fabric softener — that's how the funk came back last time."
     },
     {
       "step": 7,
-      "agent": "Air dry — never tumble-dry athletic polyester",
-      "instruction": "Hang or lay flat to air-dry. Tumble-drying polyester at any temperature sets residual stink and can shrink technical fabric. Outdoor drying in direct sun is even better — UV neutralizes some of the residual odor compounds. On activewear, this also extends the life of the fabric's performance features."
+      "agent": "AIR-DRY — Never the Dryer for Athletic Polyester",
+      "instruction": "Hang or lay flat to AIR-DRY. NEVER tumble-dry athletic polyester at any temperature — heat sets residual odor compounds AND can shrink technical fabric / break down compression. Outdoor sun-dry is the bonus move — UV neutralizes some of the residual odor. Inside or out, just no dryer."
     },
     {
       "step": 8,
-      "agent": "Escalate — or replace",
-      "instruction": "If the garment still smells after air-drying, or the pit stain is heavy and heat-set, try one more round (steps 3–6). If it still doesn't clear, be honest with yourself: set-in odor and yellow stains on polyester sometimes can't be recovered — the oils have permanently bonded. Tell a pro cleaner: \"Sweat + deodorant on polyester athletic wear, treated with vinegar soak + Dawn + enzyme, cold wash, no softener, no heat.\" Expect partial, not full, removal on heavily set items."
+      "agent": "Set Odor / Yellow That Won't Move — Honest Cap",
+      "instruction": "If the funk or yellow survived the full sequence after a single round, repeat it. If it survived two rounds, the oils have probably bonded permanently with the fiber — pro chemistry plateaus too on this case. Workout shirts that have been hot-dried for years sometimes can't be fully recovered. Tell a pro: \"Sweat + deodorant on polyester athletic wear, treated with vinegar soak + Dawn + enzyme + cool wash, no softener, no heat.\" Expect partial, not full, removal on heavily set items. Going forward: switch to aluminum-free deodorant, no softener, no tumble-dry."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. NO hot water. NO tumble-dry. NO fabric softener.",
+      "2. Vinegar cool soak 30 min (60 min for set odor).",
+      "3. Dawn pretreat cool 5–10 min for oil component.",
+      "4. Enzyme pretreat cool 20–30 min for protein.",
+      "5. Cool machine wash with sport detergent + 1/2 cup vinegar in rinse, NO softener.",
+      "6. AIR-DRY only — never tumble-dry athletic polyester.",
+      "7. Going forward: aluminum-free deodorant, no softener, no dryer."
     ],
     "products": [
+      "White vinegar (soak + rinse)",
       "Dawn dish soap",
-      "cold water",
-      "enzyme laundry detergent (Tide or Persil)",
-      "sport wash (WIN or Hex Performance) for athletic polyester"
+      "Enzyme pretreat (OxiClean Versatile, Biz, Tide Plus)",
+      "Sport detergent (WIN, Hex Performance, Nathan)",
+      "Cool water"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if hot dryer was used on yellow pit / set odor for years (often unrecoverable). Stop if alcohol-based product (hand sanitizer, body spray) was applied to sweat (often sets protein). Stop on performance / specialty polyester (compression, Gore-Tex) — pro. Stop after 2 full sequences plateau.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first",
-      "Do NOT use OxiClean or oxidizing agents on protein stains — they can set the stain permanently"
+      "NEVER hot water — sets sweat protein and yellow on polyester",
+      "NEVER tumble-dry athletic polyester — sets residual odor compounds",
+      "NEVER fabric softener — coats fiber, locks oil and bacteria in",
+      "NEVER mix enzyme products with chlorine bleach",
+      "NEVER alcohol on sweat — sets protein beyond pro recovery",
+      "Skip OxiClean on polyester-acetate blends",
+      "Set odor + hot-dried for years sometimes unrecoverable"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on sweat + polyester",
+      "Never tumble-dry athletic polyester — sets odor",
+      "Never fabric softener after sweat",
+      "Never mix enzyme + chlorine bleach",
+      "Never alcohol on sweat — sets protein",
+      "Never iron over yellow pit on polyester"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs sweat oil and bacteria tightly",
+      "Polyester yellows under heat over time",
+      "Polyester-acetate blends: skip OxiClean — damages acetate",
+      "Performance / specialty polyester (compression, Gore-Tex, technical): pro — coatings react unpredictably",
+      "Athletic-wear typically has elastane in compression panels — chlorine destroys elastane"
     ]
   },
+  "materialWarnings": [
+    "Fabric softener is the hidden cause of stuck-funk on athletic polyester",
+    "No tumble-dry — sets residual odor compounds permanently",
+    "Vinegar soak does double duty (kills bacteria + breaks aluminum-sweat)",
+    "No alcohol on sweat — sets protein",
+    "Aluminum-free deodorant prevents recurrence on athletic wear"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is sweat on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot dryer used on yellow pit / set odor for years (often unrecoverable). Performance / specialty polyester (compression, Gore-Tex). Set odor that survived 2 full sequences. Alcohol-based product applied (often sets protein).",
+    "whatToTell": "\"Sweat on [white / dyed / athletic / specialty / compression] polyester, [yellow pit / set odor / both], age [days / weeks / months / years], home-treated with [vinegar cool soak + Dawn + enzyme + cool wash with sport detergent + air-dry]. No hot, no softener, no tumble-dry. [Persistent odor / yellow / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with athletic-wear / odor-removal experience plus reducing-bleach (sodium hydrosulfite) for set yellow pit"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Yellow pit stain, lingering odor, or both?",
+      "White, dyed, athletic, compression, or specialty polyester?",
+      "Aluminum-based antiperspirant or aluminum-free deodorant?",
+      "Has fabric softener been used on the garment?",
+      "Has the garment been tumble-dried with the residue / odor?",
+      "Has alcohol-based product been applied to sweat?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Polyester's oleophilic nature is the entire reason athletic-wear funk is harder than cotton sweat. Fabric softener buildup is the hidden cause of recurring odor — eliminating softener is half the long-term fix. Tumble-drying athletic polyester sets residual odor permanently — air-dry is non-negotiable. Performance polyester (compression, Gore-Tex, technical) goes to pro because the fabric coatings react unpredictably to extended chemistry. Aluminum-free deodorant prevents yellow pit recurrence."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

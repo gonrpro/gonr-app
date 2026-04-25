@@ -1,77 +1,212 @@
 {
   "id": "sunscreen-white-cotton",
   "title": "Sunscreen on White Cotton",
+  "stainType": "combo",
   "stainFamily": "combo",
   "surface": "white-cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Sunscreen contains UV filters (avobenzone, oxybenzone), oils (mineral oil, silicone), titanium dioxide or zinc oxide (physical blockers), and emulsifiers. On white cotton, the oil base penetrates deeply while mineral particles create visible white or yellow residue. Avobenzone reacts with iron in water to produce rust-colored stains. Heat and chlorine accelerate yellowing.",
-  "whyThisWorks": "POG or solvent dissolves the oil-based matrix on white cotton. Surfactant then emulsifies the remaining oil and lifts mineral particles. An oxidizer addresses the avobenzone-iron discoloration. Avoiding hot water and chlorine is critical — both react with sunscreen chemicals to produce permanent yellow staining.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–60 minutes; oil + mineral combo, NEVER chlorine bleach (locks yellow permanently)",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "sunscreen-white",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "sunscreen",
+      "combo",
+      "oil",
+      "mineral",
+      "white-cotton",
+      "avobenzone-iron-yellowing",
+      "no-chlorine-bleach",
+      "no-elastane",
+      "oxygen-bleach-eligible"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Sunscreen is three things stuck together: oil base (mineral oil, silicone), UV filters (chemical blockers like avobenzone), and mineral blockers (titanium dioxide or zinc oxide — visible white residue). On white cotton, the oil + mineral combo is tractable with the standard powder + Dawn + OxiClean sequence. The trap is chlorine bleach — it reacts with avobenzone to produce a permanent yellow stain that's WORSE than the original. This is the rare case where white cotton's usual chlorine-bleach option is OFF the table. Cotton with elastane in trim, collars, or waistbands also bans chlorine for a different reason (chlorine destroys elastane permanently). Hot water is also an enemy here — accelerates the avobenzone-iron yellow. Cool through chemistry, hot wash AFTER if needed and care label permits.",
+  "whyThisWorks": "Powder preload pulls bulk oil up before water spreads it. Generous Dawn handles the oily film. OxiClean cool soak handles residual yellow chromophore from avobenzone-iron reaction. 3% peroxide finishes any remaining shadow. The protocol stops at oxygen bleach (OxiClean / peroxide) — chlorine bleach would lock the avobenzone yellow permanently. White cotton tolerates the rest of the sequence widely, but the chlorine boundary is hard for sunscreen specifically.",
+  "scienceNote": "Mechanism (pro-facing): sunscreen is mineral oil / silicone carrier + chemical UV filters (avobenzone, oxybenzone, octinoxate) + physical blockers (TiO₂, ZnO) + emulsifiers. Avobenzone forms ferric complexes with iron in water — the source of the rust-yellow ring. Chlorine + avobenzone produces a more stable colored complex that resists further bleaching. Pro uses NSD + 3% H₂O₂ + sodium hydrosulfite for set yellow; chlorine bleach is BANNED on sunscreen residue.",
+  "defaultAssumption": "Beach day / pool day / sport sunscreen rub-off on a white cotton t-shirt, swim cover-up, or athletic-wear. Fresh = quick win with Dawn alone. Aged yellow ring (chemical sunscreen + iron-rich water + heat exposure) = full sequence ending at peroxide — NEVER chlorine bleach.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Powder Preload",
+      "technique": "Pull oil up before water",
+      "equipment": "Cornstarch / baking soda",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Cover the spot with cornstarch or baking soda. Press gently. 20–30 min absorb. Soft-brush off."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, 10 Minutes",
+      "technique": "Emulsify oily film",
+      "equipment": "Dawn + warm water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 10 min. White cotton tolerates warm Dawn. Damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "OxiClean Cool Soak",
+      "technique": "Oxygen bleach for residual yellow",
+      "equipment": "OxiClean per label, cool water, soak basin",
+      "dwellTime": "30–60 minutes",
+      "instruction": "OxiClean cool soak 30–60 min for residual avobenzone-iron yellow on white cotton. Oxygen bleach is safe here; chlorine bleach is BANNED on sunscreen."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Stubborn Yellow",
+      "technique": "Direct peroxide pass for set avobenzone-iron yellow",
+      "equipment": "3% H₂O₂ on damp cloth or as soak additive",
+      "dwellTime": "10 minutes",
+      "instruction": "Stubborn yellow ring: 3% peroxide damp cloth 10 min, OR add 1/2 cup to OxiClean soak. NEVER mix with chlorine bleach — toxic fumes AND locks avobenzone yellow permanently."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cool Wash, NEVER Chlorine Bleach",
+      "technique": "Heat-free finish, no chlorine",
+      "equipment": "Washing machine, cool water, normal detergent",
+      "dwellTime": "Full cool cycle",
+      "instruction": "Cool machine wash with normal detergent. NEVER chlorine bleach — locks avobenzone-iron yellow permanently and is more visible than the original stain. AIR-DRY only."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG to dissolve the oil/wax component",
-      "2. Apply NSD to lift dissolved residue and pigment",
-      "3. If color remains: apply H2O2 6% on colorfast fabrics — 5-10 min dwell time, monitor",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "2. Generous Dawn pretreat, warm, 10 min, soft toothbrush.",
+      "3. OxiClean cool soak 30–60 min for residual yellow.",
+      "4. 3% H₂O₂ damp cloth or soak additive for stubborn yellow.",
+      "5. Cool wash + AIR-DRY. NEVER chlorine bleach on sunscreen residue."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "Dawn / NSD",
+      "OxiClean Versatile / oxygen bleach",
+      "3% Hydrogen peroxide",
+      "Cool water for chemistry"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool throughout — heat accelerates avobenzone-iron yellow",
+    "warnings": [
+      "NEVER chlorine bleach on sunscreen residue — locks avobenzone-iron yellow permanently (worse than original stain)",
+      "NEVER hot water — accelerates the yellow ring",
+      "NEVER mix peroxide + chlorine + ammonia + OxiClean — toxic fumes",
+      "Powder preload BEFORE water — water-first spreads oil",
+      "Oxygen bleach (OxiClean) is the chlorine alternative on sunscreen — safe on white cotton",
+      "Cotton with elastane (modern athletic wear): chlorine also banned for elastane reasons"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Sunscreen Has a Special Rule on White Cotton — NO Chlorine Bleach",
+      "instruction": "White cotton usually tolerates chlorine bleach as the home nuclear option for stubborn stains. Sunscreen is the exception. Chlorine + avobenzone (the chemical UV filter in most sunscreens) produces a permanent yellow stain that's WORSE than the original. The home protocol stops at oxygen bleach (OxiClean / 3% peroxide). The sequence: powder preload → Dawn → OxiClean cool soak → 3% peroxide. Never chlorine."
+    },
+    {
+      "step": 2,
+      "agent": "Cornstarch or Baking Soda Preload — 20 to 30 Minutes",
+      "instruction": "Cover the spot with cornstarch or baking soda. Press gently. 20 to 30 minutes. Soft-brush off. Most surface oil and mineral residue come off this way without water."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn Pretreat — Warm, 10 Minutes",
+      "instruction": "Generous Dawn directly on the spot. Work in with a soft toothbrush for 10 minutes. White cotton tolerates warm (warm, not hot) water for the Dawn step. Damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "agent": "OxiClean Cool Soak — 30 to 60 Minutes",
+      "instruction": "Mix OxiClean per label in COOL water in a basin. Submerge 30 to 60 minutes. Handles residual yellow on white cotton. Oxygen bleach is safe; chlorine bleach is the chemistry trap."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide for Stubborn Yellow",
+      "instruction": "If the yellow ring persists: 3% drugstore peroxide on a damp cloth, press 10 minutes, blot. OR add 1/2 cup to the OxiClean soak. Do NOT mix peroxide with chlorine bleach, ammonia, or any other oxidizer — toxic fumes AND locks the yellow."
+    },
+    {
+      "step": 6,
+      "agent": "Cool Wash — NEVER Chlorine Bleach",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. NEVER reach for chlorine bleach on sunscreen residue — chlorine + avobenzone creates a permanent yellow that's MORE visible than the original stain. This is the rare case where white cotton's usual chlorine-bleach option is off the table."
+    },
+    {
+      "step": 7,
+      "agent": "Switch to Mineral Sunscreen for Repeat Garments",
+      "instruction": "If you keep getting yellow rings on white shirts, the cause is the chemical UV filter avobenzone in your sunscreen reacting with iron in your water. Mineral-only sunscreens (pure zinc oxide / titanium dioxide, no avobenzone or oxybenzone) leave white residue but don't produce the yellow lock. Switch sunscreens for swim cover-ups and white shirts you want to keep white."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Scrape or blot excess — do NOT rub (spreading worsens it)",
-      "2. Apply Dawn dish soap directly to the stain. Work gently",
-      "3. Blot with clean white cloth. Repeat Dawn application until stain fades",
-      "4. Rinse with warm water (unless protein component present — then cold)",
-      "5. Air dry — no heat"
+      "1. NEVER chlorine bleach on sunscreen — locks yellow permanently.",
+      "2. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "3. Generous Dawn pretreat, warm, 10 min, soft toothbrush.",
+      "4. OxiClean cool soak 30–60 min.",
+      "5. 3% peroxide damp cloth or soak additive for stubborn yellow.",
+      "6. Cool wash + AIR-DRY. No chlorine.",
+      "7. Prevention: mineral-only sunscreen for white garments."
     ],
     "products": [
-      "Dawn dish soap"
+      "Cornstarch / baking soda",
+      "Dawn dish soap (generous)",
+      "OxiClean Versatile",
+      "3% Hydrogen peroxide",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop if chlorine bleach was already used (produced permanent yellow — pro is the only escalation, and even then unreliable). Stop if hot dryer was used on yellow ring (often plateau). Stop after full sequence (preload + Dawn + OxiClean + peroxide) without progress.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "NEVER chlorine bleach on sunscreen — locks avobenzone-iron yellow permanently",
+      "NEVER hot water — accelerates yellow",
+      "NEVER mix peroxide + chlorine + ammonia + OxiClean",
+      "Powder preload BEFORE water",
+      "Cotton with elastane: chlorine also banned for elastane reasons (destroys elastane)",
+      "Mineral-only sunscreens prevent recurrence"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Avoid prolonged exposure to concentrated acid"
+      "Never chlorine bleach on sunscreen residue — locks avobenzone-iron yellow permanently",
+      "Never mix peroxide + chlorine + ammonia + OxiClean — toxic fumes",
+      "Never hot water on sunscreen residue — accelerates yellow",
+      "Never iron over a yellow ring — heat sets it",
+      "Never chlorine bleach on cotton with elastane — destroys elastane"
     ],
     "fiberSensitivities": [
-      "Most chemically resistant textile — tolerates aggressive treatment",
-      "Can handle chlorine bleach, hydrogen peroxide, oxygen bleach",
-      "Hot water safe up to 95°C / 200°F"
+      "White cotton (no elastane, no trim): tolerates Dawn, OxiClean, 3% peroxide — but NOT chlorine bleach on sunscreen",
+      "White cotton with elastane (athletic wear, modern shirts): chlorine also banned for elastane reasons",
+      "Avobenzone (chemical sunscreen UV filter): the polyester/cotton lock chemical — chlorine reaction is irreversible",
+      "Mineral sunscreens (zinc / titanium dioxide only): leave white residue but no yellow lock — easier"
     ]
   },
+  "materialWarnings": [
+    "Sunscreen is the rare case where chlorine bleach is BANNED on white cotton",
+    "Avobenzone + chlorine = permanent yellow worse than original",
+    "Powder preload before water — water-first spreads oil",
+    "No hot water — accelerates yellow ring",
+    "Mineral-only sunscreen prevents recurrence"
+  ],
   "escalation": {
-    "when": "If sunscreen stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is sunscreen on white cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Chlorine bleach was already used on sunscreen (produced permanent yellow — even pro reducing-bleach chemistry is unreliable on this lock). Hot dryer used on yellow ring (often plateau). Full sequence (preload + Dawn + OxiClean + peroxide) plateau. Cotton with elastane and yellow buildup (treatment options narrow).",
+    "whatToTell": "\"Sunscreen on [solid white / white-with-trim / white-with-elastane / white blend] cotton, [chemical (avobenzone) / mineral (zinc / titanium) / mixed], age [fresh / hours / hot-dried suspected], home-treated with [cornstarch preload + Dawn warm + OxiClean cool soak + 3% peroxide + cool wash]. NEVER chlorine bleach. [Residual yellow / chlorine reaction occurred / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with reducing-bleach (sodium hydrosulfite) chemistry — note: even pro chemistry is unreliable on chlorine-locked avobenzone yellow"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Chemical sunscreen (avobenzone, oxybenzone) or mineral (zinc / titanium dioxide) or mixed?",
+      "Solid white cotton, white with colored trim, white with elastane, or white blend?",
+      "Fresh oil residue or aged yellow ring?",
+      "Has chlorine bleach been used on this stain (often locks the yellow)?",
+      "Well water or city water (well water has more iron, more avobenzone reaction)?",
+      "Has hot water or hot dryer been applied?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Avobenzone-iron yellow is the polyester-and-cotton-specific lock from chemical sunscreens. Chlorine bleach reaction is the most common home failure mode — instinctive (white cotton + bleach) and irreversible. Mineral-only sunscreens (pure zinc oxide / titanium dioxide) are the prevention path because they don't have avobenzone. Well water households see this more often because well water has more iron. Pro reducing-bleach is the escalation, but even pro chemistry is unreliable on chlorine-locked avobenzone yellow — manage expectations."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

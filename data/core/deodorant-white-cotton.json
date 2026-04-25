@@ -1,79 +1,225 @@
 {
   "id": "deodorant-white-cotton",
   "title": "Deodorant on White Cotton",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "white-cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Deodorant/antiperspirant stains are caused by aluminum compounds (aluminum chlorohydrate) reacting with sweat proteins and fabric dyes. On white cotton, the aluminum salt creates a white residue that bonds to fiber. Over time, the aluminum-protein complex yellows and hardens, becoming increasingly resistant to standard washing. The buildup is cumulative — it gets worse with each wear.",
-  "whyThisWorks": "An acidic treatment (white vinegar or dilute acetic acid) dissolves the aluminum salt deposits on white cotton. Surfactant lifts the dissolved residue. For yellowish buildup, an oxidizer addresses the protein-aluminum complex. Prevention is equally important: applying deodorant and letting it dry completely before dressing dramatically reduces fiber transfer.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–45 minutes; vinegar + Dawn + OxiClean, prevention beats treatment",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "deodorant-white",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "deodorant",
+      "antiperspirant",
+      "aluminum",
+      "yellowing",
+      "white-cotton",
+      "vinegar-eligible",
+      "no-elastane",
+      "prevention-matters"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Deodorant and antiperspirant stains come from the aluminum compounds in antiperspirants reacting with sweat — over weeks and months, this builds into the white residue you can see on dark shirts and the yellow halos on white shirts. On white cotton, the aluminum-sweat complex bonds to the fiber and gets harder to remove the longer it sits, especially under heat from the dryer or iron. White vinegar is the right tool because mild acid breaks the aluminum-sweat bond — and white cotton tolerates the full sequence (vinegar + Dawn + OxiClean + bounded peroxide). The hard rule on cotton with elastane (modern dress-shirt collars, athletic wear): NO chlorine bleach — chlorine destroys elastane permanently. Prevention matters more than treatment: aluminum-free deodorant + skip fabric softener + let deodorant dry completely before dressing prevents recurrence.",
+  "whyThisWorks": "White vinegar at low dilution dissolves the aluminum-sweat complex on white cotton — the same chemistry that works on silk and wool, but white cotton tolerates a longer dwell. Dawn handles any oily residue from skin contact. OxiClean cool soak handles residual yellow chromophore. Hot wash AFTER chemistry is safe on white cotton. Bounded chlorine bleach (last resort) is reserved for solid white cotton with no elastane / colored trim, never mixed with other oxidizers. The prevention path (aluminum-free deodorant) eliminates the cause; treatment without prevention is a recurring battle.",
+  "scienceNote": "Mechanism (pro-facing): aluminum chlorohydrate (the active in antiperspirants) forms aluminum-protein complexes with sweat proteins; the complex yellows under heat and locks to cellulose. Pro uses dilute acetic acid (1:5) plus NSD plus 3% H₂O₂ for residual chromophore. Sodium hydrosulfite (reducing bleach) is the pro nuclear option for set yellow; chlorine bleach is bounded by elastane / trim presence.",
+  "defaultAssumption": "Yellow halo at the underarm of a white cotton shirt, weeks-to-months of buildup. Fresh white residue (today's wear) = quick win with vinegar + Dawn. Aged yellow halo = full sequence (vinegar + Dawn + OxiClean + peroxide + hot wash + bounded chlorine bleach if eligible). Modern dress shirt with elastane in collar / cuffs = NO chlorine bleach.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Pretreat",
+      "technique": "Mild acid dissolves aluminum-sweat complex",
+      "equipment": "1:1 white vinegar + cool water on damp cloth",
+      "dwellTime": "10–15 minutes",
+      "instruction": "Mix 1 part white vinegar + 1 part cool water. Apply with damp cloth, press 10–15 min. Mild acid breaks the aluminum-sweat bond. Damp-cloth rinse."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, 5 Minutes",
+      "technique": "Emulsify any oily residue",
+      "equipment": "Dawn + warm water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 5 min. Handles any oily residue from skin contact. Damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "OxiClean Cool Soak",
+      "technique": "Oxygen bleach for residual yellow",
+      "equipment": "OxiClean per label, cool water, soak basin",
+      "dwellTime": "30–60 minutes",
+      "instruction": "OxiClean cool soak 30–60 min for residual yellow chromophore. White cotton tolerates this without color-loss risk."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Stubborn Yellow",
+      "technique": "Direct peroxide pass on white cotton",
+      "equipment": "3% H₂O₂ on damp cloth or as soak additive",
+      "dwellTime": "10 minutes",
+      "instruction": "Stubborn yellow shadow: 3% peroxide damp cloth 10 min, OR add 1/2 cup to OxiClean soak. NEVER mix with chlorine bleach, ammonia, or other oxidizers."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hot Wash — Safe AFTER Chemistry",
+      "technique": "Launder hot per care label",
+      "equipment": "Washing machine, hot water (per care label)",
+      "dwellTime": "Full hot cycle",
+      "instruction": "Hot wash per care label. Safe at this point — chemistry has cleared the aluminum-sweat residue. White cotton tolerates hot up to 200°F. Inspect before dryer."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Bounded Chlorine Bleach — Last Resort, Solid White Cotton Only",
+      "technique": "Care-label-gated, no-elastane / no-trim / no-mix",
+      "equipment": "Chlorine bleach per label, hot wash",
+      "dwellTime": "Full chlorine cycle per label",
+      "instruction": "Bounded last resort for set yellow. ONLY if: (1) care label permits chlorine bleach, (2) garment is SOLID white cotton with no colored trim, no buttons that could discolor, (3) NO elastane / spandex / Lycra in collar / cuffs / waistband (chlorine destroys elastane permanently — most modern dress shirts have it), and (4) NO other oxidizer in the same wash. Per label dilution. Skip entirely if any condition is uncertain."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Acetic Acid 28% (diluted 1:5) to dissolve aluminum salt deposits",
-      "2. Apply NSD to lift dissolved residue",
-      "3. If yellowing remains: apply H2O2 6% on colorfast fabrics",
-      "4. Flush with cool water. Apply dilute acetic acid as final rinse",
-      "5. Blot dry. Air dry completely"
+      "1. White vinegar 1:1 cool pretreat, 10–15 min, damp cloth.",
+      "2. Generous Dawn pretreat, warm, 5 min, soft toothbrush.",
+      "3. OxiClean cool soak 30–60 min for residual yellow.",
+      "4. 3% H₂O₂ damp cloth or soak additive for stubborn yellow.",
+      "5. Hot wash per care label — safe AFTER chemistry.",
+      "6. Bounded chlorine bleach only on solid white cotton, no elastane / trim, no oxidizer mix."
     ],
     "products": [
-      "Acetic Acid 28% (diluted 1:5)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%"
+      "White vinegar",
+      "Dawn / NSD",
+      "OxiClean Versatile",
+      "3% Hydrogen peroxide",
+      "Chlorine bleach (bounded)",
+      "Cool water for chemistry, hot for wash"
     ],
-    "temperature": "ambient",
+    "temperature": "cool through chemistry; hot wash AFTER",
     "warnings": [
-      "Always test on hidden area first"
+      "NEVER chlorine bleach on cotton with elastane — destroys elastane permanently",
+      "NEVER chlorine bleach with other oxidizers in the same wash — toxic fumes",
+      "NEVER mix peroxide + chlorine + ammonia + OxiClean — toxic fumes",
+      "Most modern dress shirts have elastane in the collar / cuffs — check before chlorine",
+      "Aged hot-dried yellow buildup sometimes plateaus — pro for set cases"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Vinegar Is the Right Tool — Plus Prevention",
+      "instruction": "Deodorant yellowing on white cotton has a clear path: vinegar dissolves the aluminum-sweat residue, Dawn handles oily skin contact, OxiClean lifts residual yellow, and hot wash finishes. White cotton tolerates the full sequence. Two notes: (1) most modern dress shirts have elastane in the collar / cuffs — chlorine bleach destroys elastane, so the chlorine option is bounded, and (2) prevention beats treatment: aluminum-free deodorant + letting it dry before you dress + skipping fabric softener prevents the buildup."
+    },
+    {
+      "step": 2,
+      "agent": "White Vinegar Pretreat — 10 to 15 Minutes",
+      "instruction": "Mix 1 part white vinegar with 1 part cool water. Apply with a damp cloth, press the spot for 10 to 15 minutes. The mild acid breaks the aluminum-sweat bond. Damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn Pretreat — Warm, 5 Minutes",
+      "instruction": "Generous Dawn directly on the spot. Work in with a soft toothbrush for 5 minutes. White cotton tolerates warm Dawn — that helps any oily residue release. Damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "agent": "OxiClean Cool Soak — 30 to 60 Minutes",
+      "instruction": "Mix OxiClean per label in COOL water in a basin. Submerge the garment 30 to 60 minutes. Handles residual yellow. White cotton tolerates this without color-loss risk."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide for Stubborn Yellow",
+      "instruction": "If yellow shadow persists: 3% drugstore peroxide on a damp cloth, press 10 minutes, blot. OR add 1/2 cup to the OxiClean soak. Do NOT mix peroxide with chlorine, ammonia, or any other oxidizer — toxic fumes."
+    },
+    {
+      "step": 6,
+      "agent": "Hot Wash — Safe AFTER Chemistry",
+      "instruction": "Hot machine wash per care label. Safe at this point because the chemistry has cleared the residue. White cotton tolerates hot water up to 200°F."
+    },
+    {
+      "step": 7,
+      "agent": "Bounded Chlorine Bleach — Check Elastane First",
+      "instruction": "If yellow persists, chlorine bleach is the home nuclear option — but it's BOUNDED. ONLY use chlorine if: (1) the care label permits it, (2) the garment is SOLID white cotton with no colored trim or buttons that could discolor, (3) NO elastane / spandex / Lycra in the collar, cuffs, or waistband (chlorine destroys elastane permanently — feel for stretch in the collar; if it stretches, it has elastane), and (4) NO other oxidizer in the same wash. Per label dilution. Skip if any condition is uncertain. Modern dress shirts almost always have elastane — check before reaching for chlorine."
+    },
+    {
+      "step": 8,
+      "agent": "Prevention — Aluminum-Free Deodorant",
+      "instruction": "Treatment without prevention is a recurring battle. Switch to aluminum-free deodorant for shirts you want to preserve white. Skip fabric softener (locks aluminum residue in). Let deodorant dry completely before dressing. These three changes eliminate the cause; treatment alone keeps the cycle going."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Apply white vinegar directly to the stain to dissolve aluminum deposits",
-      "2. Blot with clean white cloth. Repeat vinegar if needed",
-      "3. Apply Dawn dish soap and work gently",
-      "4. Rinse with cold water"
+      "1. White vinegar 1:1 cool pretreat, 10–15 min, damp cloth.",
+      "2. Generous Dawn pretreat, warm, 5 min, soft toothbrush.",
+      "3. OxiClean cool soak 30–60 min.",
+      "4. 3% peroxide damp cloth or soak additive for stubborn yellow.",
+      "5. Hot wash per care label — SAFE after chemistry.",
+      "6. Bounded chlorine bleach only on solid white cotton, no elastane / trim, no oxidizer mix.",
+      "7. Prevention: aluminum-free deodorant + no fabric softener + let dry before dressing."
     ],
     "products": [
-      "white vinegar",
+      "White vinegar",
       "Dawn dish soap",
-      "enzyme laundry detergent (Tide or Persil)",
-      "cold water"
+      "OxiClean Versatile",
+      "3% Hydrogen peroxide",
+      "Chlorine bleach (bounded)",
+      "Cool water for chemistry, hot for wash"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if hot dryer was used on yellow buildup for years (often plateau). Stop if chlorine bleach already damaged collar elastane (irreversible). Stop after full sequence + bounded chlorine plateau.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains",
-      "Do NOT use OxiClean or oxidizing agents on protein stains — they can set the stain permanently"
+      "NEVER chlorine bleach on cotton with elastane — destroys elastane permanently",
+      "NEVER chlorine bleach with other oxidizers — toxic fumes",
+      "NEVER mix peroxide + chlorine + ammonia + OxiClean",
+      "Most modern dress shirts have elastane — check the collar before chlorine",
+      "Aged hot-dried yellow sometimes plateaus — pro for set cases"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Avoid prolonged exposure to concentrated acid"
+      "Never chlorine bleach on cotton with elastane — destroys elastane permanently",
+      "Never chlorine bleach in the same wash as other oxidizers",
+      "Never mix peroxide + chlorine + ammonia + OxiClean",
+      "Never chlorine bleach on cotton with colored trim — strips trim color",
+      "Never iron over yellow buildup — heat sets it permanently"
     ],
     "fiberSensitivities": [
-      "Most chemically resistant textile — tolerates aggressive treatment",
-      "Can handle chlorine bleach, hydrogen peroxide, oxygen bleach",
-      "Hot water safe up to 95°C / 200°F"
+      "Solid white cotton (no elastane, no trim): widest bench — vinegar, Dawn, OxiClean, 3% peroxide, hot wash, bounded chlorine bleach",
+      "White cotton with elastane (modern dress shirts, athletic wear): NO chlorine bleach",
+      "White cotton with colored trim: NO chlorine bleach",
+      "White cotton blend with polyester: cool only — heat sets oil into polyester even if cotton tolerates it",
+      "Tolerates hot wash up to 200°F AFTER chemistry"
     ]
   },
+  "materialWarnings": [
+    "Vinegar is the right tool — aluminum-sweat complex dissolves in mild acid",
+    "Chlorine bleach is BOUNDED — check elastane, trim, and oxidizer-mix before use",
+    "Modern dress shirts have elastane in the collar — chlorine destroys it",
+    "Prevention beats treatment — aluminum-free deodorant + no fabric softener + let dry"
+  ],
   "escalation": {
-    "when": "If deodorant stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is deodorant on white cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Aged yellow buildup from years of hot-dried wash cycles (often plateau). Chlorine bleach was used on cotton with elastane (irreversible damage). Chlorine bleach mixed with other oxidizers in the same wash (toxic fume incident — ventilate, redo without mix). Full sequence + bounded chlorine plateau.",
+    "whatToTell": "\"Deodorant yellowing on [solid white / white with trim / white with elastane / white blend] cotton, age [weeks / months / years], home-treated with [white vinegar pretreat + Dawn + OxiClean cool soak + 3% peroxide + hot wash + bounded chlorine bleach if eligible]. [Residual yellow / collar elastane damaged / hot-dried suspected / fume incident].\"",
+    "specialistType": "professional dry cleaner with reducing-bleach (sodium hydrosulfite) chemistry for set yellow"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Solid white cotton, white with colored trim, white with elastane (collar / cuff), or white blend?",
+      "Fresh white residue (today's wear) or aged yellow halo (months / years)?",
+      "Has the garment been hot-dried with the buildup?",
+      "Has chlorine bleach been used? On a piece with elastane?",
+      "Aluminum-free deodorant or standard antiperspirant?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Modern dress shirts and athletic wear almost always contain elastane in the collar / cuffs / waistband — chlorine destroys it permanently. The most common home failure is reaching for chlorine without checking elastane content. Aluminum-free deodorant is the prevention path that eliminates recurrence — treatment alone keeps the buildup cycle going. Aged hot-dried yellow halos sometimes plateau even with full sequence; pro reducing-bleach chemistry is the next escalation."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

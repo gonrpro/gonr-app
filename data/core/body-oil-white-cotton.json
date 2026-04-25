@@ -1,81 +1,222 @@
 {
   "id": "body-oil-white-cotton",
   "title": "Body Oil on White Cotton",
-  "stainFamily": "protein",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "white-cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Body oil (sebum) contains fat, wax esters, squalene, and cholesterol. On white cotton, these lipids penetrate the fiber and oxidize over time, becoming increasingly polymerized and resistant to standard washing. The yellowing associated with collar and cuff rings is caused by oxidized squalene and protein residue from sweat combining with the oils.",
-  "whyThisWorks": "A degreasing surfactant (POG professionally, Dawn at home) emulsifies the oils and makes them water-soluble on white cotton. For oxidized/polymerized oils, a solvent pre-treatment dissolves the hardened residue before the surfactant can work. The protein component from sweat is addressed with enzyme or cold-water surfactant treatment.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–45 minutes; widest home bench, oxygen-bleach friendly, hot wash safe AFTER chemistry",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "body-oil-white",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "body-oil",
+      "sebum",
+      "yellowing",
+      "white-cotton",
+      "oxygen-bleach-eligible",
+      "chlorine-bleach-bounded",
+      "no-elastane",
+      "hot-wash-after-chemistry"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Body oil (sebum) is the natural oil from skin — fats, wax esters, and other lipids that build up on collars, cuffs, and underarm areas of white shirts. Mixed with sweat protein, it leaves the classic yellow ring on white cotton. White cotton has the widest home bench of any fiber for body oil: it tolerates oxygen bleach (OxiClean), 3% peroxide, hot wash AFTER chemistry, and chlorine bleach in bounded cases (only with care label permission, no elastane / colored trim, no other oxidizer in the same wash). The order matters: powder preload + Dawn handles the oil first, then OxiClean / peroxide / bounded chlorine handles any residual yellow chromophore. Skipping the oil-strip leaves a yellow shadow chemistry can't fully reach.",
+  "whyThisWorks": "Powder preload pulls bulk oil up before water spreads it. Generous Dawn handles the oily film. OxiClean cool soak handles residual yellow on white cotton. 3% peroxide on a damp cloth or as a soak additive finishes any remaining shadow. Hot wash is safe AFTER the oil chemistry has done its work — the protein and oil are gone, so heat is finishing-side, not setting-side. Chlorine bleach is bounded: ONLY with care label permission, on solid white cotton with NO elastane (chlorine destroys elastane fibers in collars / waistbands) and NO colored trim, and NEVER mixed with other oxidizers in the same wash.",
+  "scienceNote": "Mechanism (pro-facing): sebum is triglyceride fats + wax esters + squalene + cholesterol; oxidized squalene combined with sweat-protein residue causes the yellow chromophore. White cotton is cellulose; tolerates NSD, enzyme spotter, 3% H₂O₂, and bounded chlorine bleach. Pro uses enzyme pretreat plus NSD for protein/oil component plus oxygen bleach soak; chlorine reserved for solid white cotton without trim/elastane.",
+  "defaultAssumption": "Yellow ring on a white cotton dress shirt collar / cuff / underarm, weeks-to-months of buildup. Fresh oil = quick win with Dawn alone. Cumulative yellow = full sequence (preload + Dawn + OxiClean + peroxide). Care label hot-wash-safe + no elastane / trim = chlorine bleach is the home nuclear option.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Powder Preload",
+      "technique": "Pull bulk oil up before water",
+      "equipment": "Cornstarch / baking soda",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Cover the oily area with cornstarch or baking soda. Press gently. 20–30 min absorb. Soft-brush off."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, 10 Minutes",
+      "technique": "Emulsify oily film",
+      "equipment": "Dawn + warm water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 10 min. White cotton tolerates warm Dawn (warm, not hot) for body oil. Damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "OxiClean Cool Soak",
+      "technique": "Oxygen bleach for residual yellow",
+      "equipment": "OxiClean per label, cool water, soak basin",
+      "dwellTime": "30–60 minutes",
+      "instruction": "OxiClean cool soak 30–60 min for residual yellow chromophore on white cotton. White cotton has the widest bench — tolerates this without color-loss risk."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Stubborn Yellow",
+      "technique": "Direct peroxide pass for set yellow",
+      "equipment": "3% H₂O₂ on damp cloth or as soak additive",
+      "dwellTime": "10 minutes",
+      "instruction": "Stubborn yellow shadow: 3% peroxide damp cloth 10 min, OR add 1/2 cup to OxiClean soak. NEVER mix with chlorine bleach, ammonia, or other oxidizers — toxic fumes."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Hot Wash — Safe AFTER Chemistry",
+      "technique": "Launder hot per care label",
+      "equipment": "Washing machine, hot water (per care label), normal detergent",
+      "dwellTime": "Full hot cycle",
+      "instruction": "Hot wash per care label. Safe at this point — protein and oil have been broken down, so heat is finishing-side, not setting-side. White cotton tolerates hot up to 200°F. Inspect before dryer."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Bounded Chlorine Bleach — Last Resort, Solid White Cotton Only",
+      "technique": "Care-label-gated, no-elastane / no-trim / no-mix",
+      "equipment": "Chlorine bleach per label, hot wash",
+      "dwellTime": "Full chlorine cycle per label",
+      "instruction": "Bounded last resort. ONLY if: (1) care label permits chlorine bleach, (2) garment is SOLID white cotton with no colored trim, no elastane in collar / waistband / cuffs, no spandex / Lycra blend, (3) no other oxidizer (peroxide / OxiClean) in the same wash. Per label dilution. Hot wash. Skip entirely if any condition is uncertain — chlorine destroys elastane permanently."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "2. Generous Dawn pretreat, warm, 10 min, soft toothbrush.",
+      "3. OxiClean cool soak 30–60 min for residual yellow.",
+      "4. 3% H₂O₂ damp cloth or soak additive for stubborn yellow.",
+      "5. Hot wash per care label — safe AFTER chemistry.",
+      "6. Bounded chlorine bleach only on solid white cotton, no elastane / trim, no oxidizer mix."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "Dawn / NSD",
+      "OxiClean Versatile / oxygen bleach",
+      "3% Hydrogen peroxide",
+      "Chlorine bleach (bounded — solid white cotton, no elastane, no trim, no mix)",
+      "Cool water for chemistry, hot for wash"
     ],
-    "temperature": "cold",
+    "temperature": "cool through chemistry; hot wash AFTER protein/oil cleared",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein"
+      "Powder preload BEFORE water — water-first spreads oil",
+      "Hot wash is SAFE only AFTER enzyme/oil chemistry has cleared the protein component",
+      "Chlorine bleach: ONLY with care label permission AND solid white cotton AND no elastane AND no trim AND no other oxidizer in the wash",
+      "NEVER mix peroxide + chlorine + ammonia + OxiClean — toxic fumes",
+      "Chlorine destroys elastane permanently — check waistbands, collars, cuffs before use"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "White Cotton Has the Widest Bench — Use the Whole Toolkit",
+      "instruction": "White cotton tolerates more products than any other fiber for body oil yellowing: Dawn, OxiClean, 3% peroxide, hot wash AFTER chemistry, and (in bounded cases) chlorine bleach. The order matters: oil first (powder + Dawn), then yellow (OxiClean / peroxide), then hot wash. The chlorine bleach option is bounded — read step 6 carefully before reaching for it."
+    },
+    {
+      "step": 2,
+      "agent": "Cornstarch or Baking Soda Preload — 20 to 30 Minutes",
+      "instruction": "Cover the yellow area with cornstarch or baking soda. Press gently. 20 to 30 minutes. Soft-brush off. Most surface oil comes off this way without water — water-first spreads oil into a wider ring."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn Pretreat — Generous, Warm, 10 Minutes",
+      "instruction": "Apply a generous amount of Dawn dish soap directly to the spot. Work in with a soft toothbrush for 10 minutes. White cotton tolerates warm (warm, not hot) water for the Dawn step — that helps the oil release. Damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "agent": "OxiClean Cool Soak — 30 to 60 Minutes",
+      "instruction": "Mix OxiClean per label in COOL water in a basin. Submerge the garment 30 to 60 minutes. Handles residual yellow chromophore on white cotton. White cotton's widest-bench advantage shows here — tolerates oxygen bleach without color-loss risk."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide for Stubborn Yellow",
+      "instruction": "If yellow shadow persists: 3% drugstore peroxide on a damp cloth, press 10 minutes, blot. OR add 1/2 cup peroxide to the OxiClean soak. Do NOT mix peroxide with chlorine bleach, ammonia, or any other oxidizer — toxic fumes."
+    },
+    {
+      "step": 6,
+      "agent": "Hot Wash — Safe AFTER Chemistry",
+      "instruction": "Hot machine wash per care label. Safe at this point because the protein and oil have been broken down — heat is on the finishing side now, not the setting side. White cotton tolerates hot water up to 200°F. Inspect before dryer."
+    },
+    {
+      "step": 7,
+      "agent": "Bounded Chlorine Bleach — Only on Solid White Cotton, No Elastane",
+      "instruction": "If yellow persists after OxiClean + peroxide + hot wash, chlorine bleach is the home nuclear option — but it's bounded. ONLY use chlorine bleach if ALL of these are true: (1) the care label permits chlorine bleach, (2) the garment is SOLID white cotton with no colored trim, no buttons that could discolor, (3) NO elastane / spandex / Lycra in the collar, waistband, cuffs (chlorine destroys elastane permanently — most modern dress shirt collars and athletic-wear contain elastane), and (4) NO other oxidizer (peroxide, OxiClean) in the same wash. Per label dilution, hot wash. Skip entirely if any condition is uncertain — chlorine damage to elastane is irreversible."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "2. Generous Dawn pretreat, warm, 10 min, soft toothbrush.",
+      "3. OxiClean cool soak 30–60 min for residual yellow.",
+      "4. 3% peroxide damp cloth or soak additive for stubborn yellow.",
+      "5. Hot wash per care label — SAFE after chemistry.",
+      "6. Bounded chlorine bleach only on solid white cotton, no elastane / trim, no oxidizer mix."
     ],
     "products": [
-      "Dawn dish soap",
-      "cold water",
-      "enzyme laundry detergent (Tide or Persil)"
+      "Cornstarch / baking soda",
+      "Dawn dish soap (generous)",
+      "OxiClean Versatile",
+      "3% Hydrogen peroxide",
+      "Chlorine bleach (bounded — solid white cotton, no elastane, no trim, no mix)",
+      "Cool water for chemistry, hot for wash"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop if hot dryer was used on yellow buildup for years (often permanent shadow). Stop if chlorine bleach already damaged collar elastane (irreversible). Stop after full sequence (preload + Dawn + OxiClean + peroxide + hot wash + chlorine if eligible) without progress.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first",
-      "Do NOT use OxiClean or oxidizing agents on protein stains — they can set the stain permanently"
+      "Powder preload BEFORE water — water-first spreads oil",
+      "Hot wash is SAFE only AFTER chemistry clears the protein/oil",
+      "Chlorine bleach is BOUNDED — check care label, no elastane, no trim, no oxidizer mix",
+      "NEVER mix peroxide + chlorine + ammonia + OxiClean — toxic fumes (chloramine gas)",
+      "Chlorine destroys elastane permanently — collars and waistbands often contain it",
+      "Aged yellow on hot-dried white cotton sometimes plateaus — pro is the right call"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Avoid prolonged exposure to concentrated acid"
+      "Never skip powder preload — water-first spreads oil",
+      "Never mix peroxide + chlorine + ammonia + OxiClean — toxic fumes",
+      "Never chlorine bleach on cotton with elastane — destroys elastane permanently",
+      "Never chlorine bleach on cotton with colored trim — strips dye",
+      "Never chlorine bleach without care label permission",
+      "Never use chlorine in the same wash as other oxidizers"
     ],
     "fiberSensitivities": [
-      "Most chemically resistant textile — tolerates aggressive treatment",
-      "Can handle chlorine bleach, hydrogen peroxide, oxygen bleach",
-      "Hot water safe up to 95°C / 200°F"
+      "Solid white cotton: widest bench — Dawn, OxiClean, 3% peroxide, hot wash, bounded chlorine bleach",
+      "White cotton with elastane (modern dress shirts, athletic wear): NO chlorine bleach — destroys elastane",
+      "White cotton with colored trim: NO chlorine bleach — strips trim color",
+      "White cotton blend with polyester: cool only — heat sets oil into polyester even if cotton tolerates it",
+      "Tolerates hot wash up to 200°F AFTER chemistry"
     ]
   },
+  "materialWarnings": [
+    "White cotton has the widest bench — use the whole toolkit in order",
+    "Powder preload before water — water-first spreads oil",
+    "Hot wash is finishing-side AFTER chemistry, not setting-side",
+    "Chlorine bleach is BOUNDED — check care label, no elastane, no trim, no oxidizer mix",
+    "Aged yellow on hot-dried white cotton sometimes plateaus"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is body oil on white cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Aged yellow buildup that hot-dried for years (often plateau). Chlorine bleach was used on cotton with elastane (irreversible elastane damage). Chlorine bleach mixed with other oxidizers in the same wash (fume incident — ventilate, redo without mix). Full sequence + bounded chlorine plateau. Cotton blend with polyester (cool-only rules apply).",
+    "whatToTell": "\"Body oil yellowing on [solid white / white-with-trim / white-with-elastane / white-blend] cotton, age [weeks / months / years], home-treated with [cornstarch preload + Dawn warm + OxiClean cool soak + 3% peroxide + hot wash + bounded chlorine bleach if eligible]. [Residual yellow / collar elastane damaged / blend complication].\"",
+    "specialistType": "professional dry cleaner with solvent spotting capability for set yellow on cotton"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Solid white cotton, white with colored trim, white with elastane (collar / waistband / cuff), or white blend?",
+      "Fresh oil residue or aged yellow shadow?",
+      "How long has it been hot-dried with the residue?",
+      "Has chlorine bleach been used? On a piece with elastane?",
+      "Care label — hot-wash and chlorine-bleach permitted?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "White cotton's widest-bench advantage is real but conditional — chlorine bleach is the home nuclear option for stubborn yellow but requires solid white cotton, no elastane, no trim, no oxidizer mix. Modern dress shirts and athletic wear almost always contain elastane in the collar / waistband / cuffs, which chlorine destroys permanently. The most common home failure is reaching for chlorine without checking elastane content. Aged hot-dried yellow buildup over years sometimes plateaus even with full sequence — manage expectations."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
