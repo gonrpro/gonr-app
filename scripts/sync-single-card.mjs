@@ -22,6 +22,7 @@
 
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { spawnSync } from 'node:child_process'
 import { createClient } from '@supabase/supabase-js'
 import { validateCardObject } from './validate-card.mjs'
 
@@ -42,6 +43,21 @@ if (!url || !key) {
 
 const card = JSON.parse(readFileSync(resolve(file), 'utf-8'))
 
+function runProVoiceGate(cardId) {
+  if (!cardId || process.env.ALLOW_PRO_VOICE_P0_SYNC === '1') return
+  const audit = spawnSync(process.execPath, ['scripts/audit-pro-voice.mjs', '--strict', '--card', String(cardId)], {
+    cwd: process.cwd(),
+    encoding: 'utf8',
+  })
+  if (audit.status !== 0) {
+    if (audit.stdout) process.stderr.write(audit.stdout)
+    if (audit.stderr) process.stderr.write(audit.stderr)
+    console.error(`\n❌ ${cardId} failed pro/home divergence gate. Refusing DB sync.`)
+    console.error('Fix the Pro lane or set ALLOW_PRO_VOICE_P0_SYNC=1 only for an intentional emergency override.')
+    process.exit(1)
+  }
+}
+
 // Validator gate: a card marked verified:true must pass presentation rules
 // (Atlas 8184). Blocks sync; unverified cards just print warnings.
 if (!skipValidation) {
@@ -58,6 +74,12 @@ if (!skipValidation) {
     for (const v of blocking) console.warn(`   warn  ${v.code}  ${v.message}`)
   }
 }
+
+// Substance gate: presentation-clean is not enough. Any verified card must
+// pass the pro/home divergence validator before it can be synced live.
+// This closes the 2026-04-25 quality incident path where consumer methods
+// leaked into Spotter/Operator Pro lanes.
+if (card?.verified === true) runProVoiceGate(card.id)
 
 const stainCanonical = card?.meta?.stainCanonical
 const surfaceCanonical = card?.meta?.surfaceCanonical

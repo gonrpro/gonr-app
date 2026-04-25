@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:auth-smoke": "vitest run __tests__/auth-routes.test.ts"
+    "test:auth-smoke": "vitest run __tests__/auth-routes.test.ts",
+    "audit:pro-voice": "node scripts/audit-pro-voice.mjs",
+    "audit:pro-voice:strict": "node scripts/audit-pro-voice.mjs --strict"
   },
   "dependencies": {
     "@supabase/ssr": "^0.9.0",
