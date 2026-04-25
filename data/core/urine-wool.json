@@ -1,174 +1,209 @@
 {
   "id": "urine-wool",
-  "version": "5.0",
-  "authored": "2026-03-22",
-  "title": "Urine on Wool — Urease Enzyme Cold Soak, Gentle Handling",
-  "stainType": "biological",
+  "title": "Human Urine on Wool",
+  "stainType": "protein",
+  "stainFamily": "protein",
   "surface": "wool",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "Pro-lane within hours; cold blot only at home",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "urine",
     "surfaceCanonical": "wool",
     "tier": "universal",
     "riskLevel": "high",
     "tags": [
+      "protein",
       "uric-acid",
-      "ammonia",
-      "protease-risky",
-      "cold-sensitive",
-      "animal-fiber"
+      "wool",
+      "delicate-fiber",
+      "felting-risk",
+      "biohazard-adjacent",
+      "no-enzymes",
+      "refusal-style",
+      "pro-lane-immediate"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Uric acid and urea in urine bind to wool's alpha-keratin protein. Wool fiber swells in warm water, which allows protein-damaging enzymes (protease) to penetrate. Ammonia odor comes from bacterial urease activity on urea. Cold water keeps wool compact and protects fiber. Urease breaks down urea without damaging wool (unlike protease). Uric acid crystals settle into wool's scales when dried.",
-  "whyThisWorks": "Cold water prevents wool swelling and fiber damage. Urease-only enzyme breaks down urea (odor) without attacking wool protein. Gentle tamping (never rubbing) protects delicate wet wool. If fresh, cold water rinse often removes most stain and odor.",
+  "stainChemistry": "Human urine = urea + uric acid + salts + protein, less concentrated than pet urine but same uric-acid-crystal failure mode. On wool (keratin protein), the standard urine fix (enzyme cleaner) is BANNED — protease digests wool just as it would digest urine protein. Hot water sets uric acid + felts wool simultaneously. Alkaline cleaners (OxiClean) felt wool + lock urine. Wool's narrow tolerance window: cold + dilute acid + minimum moisture + zero agitation. Pro uses urease-only enzyme + cold acetic acid + cold extraction. Home protocol: gloves + cold blot + pro within hours.",
+  "whyThisWorks": "A wool specialist with cold urease-only enzyme + cold acetic acid + cold rinse can lift fresh urine without felting. Home cannot match: every retail urine product contains protease (digests wool) AND hot-water rinse cycles felt wool. Cold press-blot extracts bulk urine without setting protein or felting fiber.",
+  "defaultAssumption": "Wool + human urine = pro within hours. Mattresses with urine on wool = pro early because over-wetting is impossible. Garments easier than mattresses but still pro-lane.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cold water (immediate rinse)",
-      "technique": "Gentle blot rinse",
-      "equipment": "White cloth, cold water (50°F or colder)",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Blot fresh urine with white cloth immediately. Rinse with cold water and continue blotting gently. Work from outside inward. Cold temperature keeps wool fiber compact and prevents uric acid from setting. Squeeze gently; do not wring.",
-      "suggestedProducts": "Cold water"
+      "side": "dry",
+      "agent": "Gloves + Identify Extent",
+      "technique": "Biohazard PPE",
+      "equipment": "Gloves, optional UV blacklight",
+      "dwellTime": "1 minute",
+      "instruction": "Gloves on (biohazard). Optional UV blacklight in dark to find full extent — urine spreads farther than visible."
     },
     {
       "step": 2,
-      "side": "wet",
-      "agent": "Urease enzyme (urea-digesting only)",
-      "technique": "Gentle enzyme soak",
-      "equipment": "Urease enzymatic cleaner, cold water, white cloth",
-      "dwellTime": "30-60 minutes or overnight",
-      "instruction": "Mix urease-based enzymatic cleaner in cold water (use per instructions). Apply to stain or soak gently. Urease breaks down urea into ammonia and CO2, eliminating odor. Tamp very gently with white cloth — no rubbing. Let sit for 30 minutes minimum; overnight is better for old stains. Ammonia smell will fade as urea is broken down.",
-      "suggestedProducts": "Nature's Miracle, Rocco & Roxie (applied in cold water)"
-    },
-    {
-      "step": 3,
-      "side": "wet",
-      "agent": "Cold water (rinse)",
-      "technique": "Gentle squeeze rinse",
+      "side": "wet-minimal",
+      "agent": "Cold Damp-Cloth Press-Blot",
+      "technique": "Vertical pressure only",
       "equipment": "Cold water, white cloth",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Rinse thoroughly with cold water, squeezing gently to remove enzyme and dissolved urine. Continue until cloth comes away clean. Do not wring or agitate.",
-      "suggestedProducts": "Cold water"
-    }
-  ],
-  "homeSolutions": [
-    {
-      "step": 1,
-      "agent": "Wool + urine: the enzyme question needs care",
-      "instruction": "Fresh urine on wool usually lifts with cold water + gentle detergent. The tricky part is odor — uric acid crystals bond tightly and the standard home tool (enzyme pet cleaners) is risky on wool because most are blends containing proteases that digest wool protein. Pure urease-only products exist but are rare at retail. Safer home approach: handle the stain and surface odor with cold water + vinegar, and if odor persists deeply, escalate rather than soak wool in a multi-enzyme blend."
-    },
-    {
-      "step": 2,
-      "agent": "Patch test + immediate blot",
-      "instruction": "Dab cold water on an inside seam, wait 60 seconds, blot. If the seam loses color, skip to step 7. If clean, press a white paper-towel stack straight down on the stain. Work outside-in. Replace towels as they pick up yellow. Speed matters more than technique — every minute before the urea breaks down to ammonia is a minute on your side."
+      "dwellTime": "5 minutes",
+      "instruction": "Press cloth dampened with COLD water on the BACK of the spot (if garment) or directly on wool surface. Vertical pressure only — no rubbing. Cold dilutes uric acid + prevents protein setting + reduces felt risk."
     },
     {
       "step": 3,
-      "agent": "Cold water back-flush — localized, don't soak wool",
-      "instruction": "Turn the garment inside out. Place a clean white towel underneath to catch runoff. Dab cold water on the BACK of the stain with a cotton ball. Replace the underside towel as it picks up yellow. 30–60 seconds of targeted dabbing, not a full soak. Fresh urine is 70–80% water-soluble and flushes readily."
+      "side": "wet-minimal",
+      "agent": "Cold Wool-Safe NSD (Pro)",
+      "technique": "Sponge press, no agitation",
+      "equipment": "Mulsolite or wool-safe NSD",
+      "dwellTime": "Brief",
+      "instruction": "Cold NSD sponge press. Suspends fresh urea + protein without enzymes."
     },
     {
       "step": 4,
-      "agent": "Wool-safe detergent — Eucalan, Woolite, or clear Dawn",
-      "instruction": "Mix one teaspoon of Eucalan/Woolite/Soak (or clear Dawn) in two cups of cold water. Dip a white cloth, wring nearly dry, PRESS onto the stain. 3–5 minutes dwell. Blot with a clean damp cloth. Repeat once. Do NOT use OxiClean, Biz, Zout, or any \"bio\" detergent — the protease enzymes digest wool protein along with urine protein."
+      "side": "wet-minimal",
+      "agent": "Wool-Safe Urease-Only Enzyme (Pro)",
+      "technique": "Specialty enzyme for uric acid",
+      "equipment": "Pro wool-safe urease enzyme",
+      "dwellTime": "Per pro reference",
+      "instruction": "Pro applies urease-ONLY enzyme (digests uric acid; protease would digest wool). Strict application without flooding."
     },
     {
       "step": 5,
-      "agent": "Dilute vinegar rinse — 60-second ceiling",
-      "instruction": "Mix 1 part white vinegar with 1 part cold water. Press a cotton swab onto the spot. 60 SECONDS MAX, then flush with cold water. Vinegar does two important things: restores wool's pH (~5) and breaks down some uric acid salts. It does not fully neutralize uric acid crystals, but it's the safest tool wool will tolerate.",
-      "safetyNote": "Never full-strength vinegar on wool. Never combine with bleach on the same pass."
+      "side": "wet-minimal",
+      "agent": "Acetic Acid Spotter (Pro)",
+      "technique": "60-sec ammonia neutralization",
+      "equipment": "Acetic Acid (diluted 1:10)",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "Diluted acetic acid neutralizes residual ammonia. STRICT 60-sec ceiling. Flush cold immediately."
     },
     {
       "step": 6,
-      "agent": "Press-dry + smell check — don't double-dose enzymes",
-      "instruction": "Press between dry white towels to lift moisture. Lay flat, reshape while damp. Air-dry at room temperature out of direct sun. Once dry, do a nose-check up close. If you still smell urine, do NOT soak the wool in a standard pet enzyme cleaner — the protease risk outweighs the benefit. Escalate instead."
-    },
-    {
-      "step": 7,
-      "agent": "Escalate for stubborn odor or aged stains",
-      "instruction": "If odor persists, urine has set, or the stain was discovered hours later, take the garment to a wool specialist (call ahead — not every dry cleaner is wool-safe). Tell them: \"Urine on wool, age [x]. Treated at home with cold water + wool-safe detergent + 1:1 vinegar (60-sec dwell). No pet enzyme cleaner used. Persistent [odor / yellow].\" Pros have urease-specific spotters and low-pH treatments controlled for wool. If the backing is saturated (big spills on wool carpet/blankets), sub-surface extraction may be needed."
+      "side": "wet",
+      "agent": "Cold Final Rinse + Press-Dry Flat",
+      "technique": "Flush + lay flat",
+      "equipment": "Cold water, dry white towels",
+      "dwellTime": "Until clear",
+      "instruction": "Cold final rinse. Press between dry towels, lay flat to air-dry (or for wool carpet — weighted overnight + fan)."
     }
   ],
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — wool dyes may not tolerate spotting agents.",
-    "NEVER use warm or hot water — swells wool fiber and allows protein-damaging enzymes to penetrate",
-    "NEVER use protease enzyme — will damage wool's protein structure",
-    "NEVER wring or agitate — wool breaks when wet",
-    "NEVER use chlorine bleach — irreversibly damages wool protein"
-  ],
-  "escalation": "If odor persists after urease enzyme treatment, or if urine has penetrated backing, stop. Professional dry cleaning is safer. Solvent-based spotting and odor treatment will address persistent problems without risking wool fiber damage.",
-  "products": {
-    "household": [
-      {
-        "name": "Nature's Miracle Enzymatic Cleaner",
-        "brand": "Nature's Miracle",
-        "icon": "🌿",
-        "amazonSearchQuery": "Nature's Miracle enzymatic cleaner",
-        "affiliateTag": "gonr08-20",
-        "note": "Urease enzyme; safe for wool when used cold"
-      },
-      {
-        "name": "Rocco & Roxie Professional Enzyme Cleaner",
-        "brand": "Rocco & Roxie",
-        "icon": "🐾",
-        "amazonSearchQuery": "Rocco Roxie enzyme cleaner",
-        "affiliateTag": "gonr08-20",
-        "note": "Urease dominant formula; works cold for wool"
-      },
-      {
-        "name": "Wool Conditioner",
-        "brand": "Eucalan",
-        "icon": "✨",
-        "amazonSearchQuery": "wool conditioner Eucalan",
-        "affiliateTag": "gonr08-20",
-        "note": "Optional fiber care after enzyme treatment"
-      }
+  "professionalProtocol": {
+    "steps": [
+      "1. Gloves. Cold press-blot at first contact.",
+      "2. Cold wool-safe NSD sponge press.",
+      "3. Wool-safe urease-ONLY enzyme (NOT protease — digests wool).",
+      "4. Acetic acid 60-sec spotter for ammonia.",
+      "5. Cold final rinse, press flat to air-dry."
     ],
-    "professional": [
-      {
-        "name": "Professional Dry Cleaning Service",
-        "brand": "Local dry cleaner",
-        "icon": "🎩",
-        "amazonSearchQuery": "professional dry cleaning wool",
-        "affiliateTag": "gonr08-20",
-        "note": "Recommended for persistent odor or old stains"
-      }
+    "products": [
+      "Disposable gloves",
+      "Mulsolite or wool-safe NSD",
+      "Wool-safe urease-only enzyme (pro)",
+      "Acetic Acid (diluted 1:10)",
+      "Cold/ice water",
+      "Dry white towels"
+    ],
+    "temperature": "cold throughout — wool felts above 30°C when wet",
+    "warnings": [
+      "Biohazard — gloves + sealed disposal",
+      "NEVER protease enzymes — digest wool keratin",
+      "NEVER hot water / steam — felts wool + sets protein",
+      "NEVER alkaline (OxiClean / ammonia / baking soda) — felts wool + locks urine",
+      "NEVER chlorine bleach — destroys wool",
+      "NEVER agitation — felts wool on contact",
+      "NEVER pour solution on wool — flood = felt"
     ]
   },
-  "customerExplanation": "Wool is a delicate protein fiber. We used only urease enzyme (which breaks down urea, the odor source) in cold water. Warm water would have swollen the fiber and allowed protein-damaging enzymes to penetrate. Everything was done cold and gently to protect the delicate fiber.",
-  "commonMistakes": [
-    "Using warm or hot water — opens wool fiber and allows enzyme penetration; cold is essential",
-    "Using protease enzyme — damages wool protein; urease-only is safe",
-    "Wringing or agitating — wet wool breaks easily; squeeze gently only",
-    "Incomplete enzyme soak — urine needs extended time; overnight is ideal"
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Answer — Pro Within Hours",
+      "instruction": "Human urine on wool is pro-lane because every standard urine fix damages wool. Retail enzyme cleaners contain protease which DIGESTS WOOL. Hot water rinses felt wool. Alkaline cleaners (OxiClean) felt wool AND lock urine. Home protocol = gloves + cold press-blot, pro within hours."
+    },
+    {
+      "step": 2,
+      "agent": "Gloves On",
+      "instruction": "Disposable gloves — biohazard. Especially if not your urine."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Damp-Cloth Press-Blot — No Agitation",
+      "instruction": "Turn garment inside out (if applicable). Press a clean white cloth dampened with COLD water onto the BACK of the spot. Vertical pressure only — never rub or scrub. Cold dilutes the uric acid + prevents protein setting. Lift, refresh cloth, press. Never pour water on wool — flood + agitation = felt."
+    },
+    {
+      "step": 4,
+      "agent": "Press-Dry With Dry Towels",
+      "instruction": "Press the wool between two dry white towels — stack, press, lift moisture. No wringing, no twisting. Lay flat at room temperature."
+    },
+    {
+      "step": 5,
+      "agent": "Pro Wool Specialist — What to Tell Them",
+      "instruction": "Don't apply retail enzyme cleaners — they digest wool. Tell the pro: \"Human urine on wool, age [hours / overnight], gloves + cold press-blot ONLY at home. NO enzyme cleaner, NO hot water, NO OxiClean, NO baking soda, NO household products applied. Need wool-safe urease-only enzyme + cold rinse.\""
+    }
   ],
-  "scienceNote": "Wool alpha-keratin protein structure depends on hydrogen bonds and disulfide bonds. Warm water disrupts hydrogen bonds and causes swelling. Protease cuts peptide bonds, breaking the protein chains. Urease, conversely, breaks C-N bonds in urea (NH2-CO-NH2) without touching protein. Urease produces ammonia gas (volatile) and CO2, both of which escape, eliminating odor at the molecular level. Cold water prevents swelling and protects wool structure.",
-  "callPro": "If odor persists after urease treatment, professional dry cleaning is the safer choice. Solvents and professional odor treatments will address stubborn odor without risk of enzyme damaging wool fiber. This is especially important for fine wools (cashmere, merino).",
-  "components": [
-    "cold-rinse",
-    "urease-soak",
-    "cold-rinse-repeat",
-    "conditioner-optional"
+  "diyProtocol": {
+    "steps": [
+      "1. Wool + urine = pro-lane within hours.",
+      "2. Gloves on. NO retail enzyme cleaners — they digest wool.",
+      "3. Cold damp-cloth press-blot — vertical pressure, no rubbing.",
+      "4. Press-dry with dry white towels.",
+      "5. Pro wool specialist within hours."
+    ],
+    "products": [
+      "Disposable gloves",
+      "Cold / ice water",
+      "Dry white towels"
+    ],
+    "whenToStop": "Stop after cold press-blot. Any retail enzyme cleaner on wool digests the wool.",
+    "warnings": [
+      "Biohazard — gloves + sealed disposal",
+      "NEVER Nature's Miracle / any retail urine enzyme — DIGESTS WOOL",
+      "NEVER hot water — felts wool + sets protein",
+      "NEVER OxiClean / alkaline / baking soda — felts wool + locks urine",
+      "NEVER chlorine bleach",
+      "NEVER scrubbing / agitation wet wool",
+      "NEVER pour solution"
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never retail urine enzyme cleaners on wool — digests wool",
+      "Never hot water on wool",
+      "Never OxiClean / alkaline cleaners",
+      "Never baking soda on wool urine",
+      "Never chlorine bleach",
+      "Never agitate / scrub wet wool",
+      "Never bare-handed"
+    ],
+    "fiberSensitivities": [
+      "Wool keratin felts when wet + warm + agitated",
+      "Protease enzymes digest wool keratin",
+      "Urease-only enzymes are wool-safe but pro-only",
+      "Aluminum-protein complex (from sweat-mixed urine) sets faster on wool"
+    ]
+  },
+  "materialWarnings": [
+    "Pro within hours — retail enzymes destroy wool",
+    "Cold press-blot is the safe home action",
+    "Wool-safe pet-urine chemistry exists but is pro-only",
+    "Aluminum + heat sets urine on wool permanently"
   ],
-  "component_order": [
-    "water-cold",
-    "urease-enzyme-cold",
-    "water-cold-rinse",
-    "wool-conditioner-optional"
-  ],
-  "difficulty": 6,
-  "difficulty_factors": [
-    "protease-intolerance",
-    "cold-water-requirement",
-    "fiber-damage-risk",
-    "odor-persistence"
-  ],
-  "solventNote": "Professional dry cleaners use solvent spotting for urine on wool, not aqueous enzyme. Tetrachloroethylene (perc) removes uric acid effectively. For odor, professionals might use ozone treatment or odor-neutralizing compounds applied during solvent cleaning, avoiding aqueous enzyme altogether to prevent wool damage.",
-  "aftercare": "If any urine odor remains or if wool feels stiff, apply small amount of wool conditioner. This relaxes fiber and helps remove remaining odor molecules. Optional but recommended.",
+  "escalation": {
+    "when": "Always — wool + urine is pro-lane within hours. Earlier for valuable garments, mattress topping, or set-in / dried urine.",
+    "whatToTell": "\"Human urine on wool, age [hours / overnight], gloves + cold press-blot ONLY at home. NO enzyme cleaner, NO hot water, NO OxiClean, NO baking soda applied. Need wool-safe urease-only enzyme + cold rinse.\"",
+    "specialistType": "professional dry cleaner specializing in wool (call ahead — confirm urease-only enzyme + cold-water-only protocol)"
+  },
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Age — fresh, overnight, or older?",
+      "Garment / wool blanket / wool carpet (use pet-urine-wool-carpet for pet on wool carpet)?",
+      "Has anyone applied retail enzyme cleaner / OxiClean / baking soda?",
+      "Wool type — merino / regular / blend?",
+      "Whose urine (biohazard handling)?"
+    ],
+    "modifierNotes": "Mattress with urine through to wool topping = different escalation (low pro threshold, can't be flooded). Pre-applied retail enzyme = wool likely partially digested where applied; disclose. Pre-applied OxiClean = wool likely partially felted + urine locked; disclose."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

@@ -1,140 +1,215 @@
 {
   "id": "pet-urine-wool-carpet",
-  "version": "1.0",
-  "authored": "2026-04-15",
-  "title": "Pet Urine on Wool Carpet — Cold + Urease Enzyme (Wool-Safe)",
-  "stainFamily": "protein",
+  "title": "Pet Urine on Wool Carpet",
   "stainType": "protein",
+  "stainFamily": "protein",
   "surface": "wool-carpet",
   "sector": "textile",
+  "source": "verified",
+  "verified": true,
+  "difficulty": 9,
+  "timeEstimate": "Pro-lane immediately; cold blot only at home",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "pet-urine",
     "surfaceCanonical": "wool-carpet",
     "tier": "universal",
     "riskLevel": "high",
     "tags": [
+      "protein",
       "uric-acid",
-      "urease-only",
-      "protease-forbidden",
-      "cold-water-only",
-      "animal-fiber",
-      "backing-sensitive",
-      "wool-rug",
-      "pro-referral-candidate"
+      "pet",
+      "wool-carpet",
+      "delicate-fiber",
+      "felting-risk",
+      "no-enzymes",
+      "refusal-style",
+      "pro-lane-immediate"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Pet urine contains urea, uric acid, urobilin pigment, and bacterial byproducts. On wool carpet the uric acid crystallizes into the alpha-keratin scales and binds tightly as it dries. Warm water swells wool fiber and opens scales, which lets standard protein-digesting enzymes (protease) penetrate and permanently damage the keratin. A urease-only enzymatic cleaner breaks down urea into ammonia and CO2 without attacking the wool itself, which is why it is the only enzyme class considered wool-safe. Wool carpet adds a second failure mode: over-wetting saturates the jute or latex backing and causes shrinkage, brown-out wicking, and mold.",
-  "whyThisWorks": "Cold water with a urease-based enzymatic / bio-enzymatic cleaner addresses the odor chemistry without breaking the wool. Gentle blotting and damp (not wet) application protects the carpet backing. Pile-direction handling prevents matting of the tufts. This protocol is deliberately conservative — for deeply saturated, aged, or backing-penetrating pet urine the correct answer is a professional wool rug specialist, not a more aggressive chemistry.",
+  "stainChemistry": "Pet urine on wool carpet stacks the worst of both pet-urine-carpet AND wool: uric acid crystals reactivate with humidity AND wool keratin felts under hot water + agitation + alkaline cleaners. The standard pet-urine fix on synthetic carpet (saturate with enzyme cleaner) is BANNED on wool — enzymes digest keratin equally with uric acid. Hot water sets protein AND felts wool. Alkaline cleaners (OxiClean, ammonia) felt wool AND lock urine deeper. Chlorine bleach destroys keratin. Wool carpet's pad-saturation failure mode is the same as synthetic carpet, but the fiber is more vulnerable. Pro chemistry uses specialty wool-safe enzymes (urease only, not protease) at controlled dilution + cold extraction. Home protocol = blot what you can with cold water, then pro IMMEDIATELY.",
+  "whyThisWorks": "A wool-carpet specialist with cold urease-only enzyme + cold sub-surface extraction can lift fresh pet urine without felting wool or stripping keratin. Home cannot match: every retail pet-urine product contains protease (digests wool), every aggressive home extraction risks felting. Cold press-blot is the safe home action; everything else needs pro chemistry.",
+  "defaultAssumption": "Wool carpet + pet urine = pro IMMEDIATELY. Home protocol: gloves + cold press-blot + pro within hours. UV blacklight to find full extent (urine spreads farther than visible). For Oriental wool rugs, even fresher action.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cold water",
-      "technique": "Absorb and blot (never rub)",
-      "equipment": "White terry towel, cold water, weighted object",
-      "dwellTime": "2-3 minutes",
-      "instruction": "Blot up as much pet urine as possible with a dry white towel. Press — do not rub — to avoid distorting the wool pile. Once the towel stops picking up moisture, lightly mist the area with cold water and continue blotting. Keep the carpet damp, never soaking — over-wetting the backing is the main cause of wool rug damage.",
-      "suggestedProducts": "Cold water, white cotton towels"
+      "side": "dry",
+      "agent": "UV Blacklight + Gloves + Tape Edges",
+      "technique": "Identify full extent + biohazard PPE",
+      "equipment": "UV blacklight, gloves, painter's tape",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Gloves on. UV blacklight in dark room — urine glows yellow-green. Tape outer edge with painter's tape. Pet urine spreads farther than visible — treating too small means recurrence."
     },
     {
       "step": 2,
-      "side": "wet",
-      "agent": "Urease-based enzymatic / bio-enzymatic cleaner",
-      "technique": "Cold enzyme dwell",
-      "equipment": "Urease-only enzymatic pet cleaner, cold water, white cloth",
-      "dwellTime": "30-60 minutes (extend to 4-6 hours for aged stains)",
-      "instruction": "Apply a urease-based bio-enzymatic pet cleaner diluted in COLD water per product instructions. Urease is the wool-safe enzyme class — it breaks down urea and neutralizes odor without digesting wool keratin. Standard protease-based enzyme cleaners will permanently damage wool and MUST NOT be used. Keep the area damp, covered with a clean white towel, and allow the enzyme to work. For aged or crystallized pet urine, extend the dwell time rather than increasing concentration or temperature.",
-      "suggestedProducts": "Nature's Miracle (cold water application only), Rocco & Roxie Professional Strength, Anti Icky Poo — all urease-based, all applied cold"
+      "side": "wet-minimal",
+      "agent": "Cold Damp-Cloth Press-Blot",
+      "technique": "Vertical pressure, no agitation",
+      "equipment": "Cold water, white cloth, dry towel + weight",
+      "dwellTime": "5 minutes",
+      "instruction": "Press a cloth dampened with COLD water on the spot. Vertical pressure only — no rubbing. Cold dilutes uric acid + prevents protein setting. Weighted dry towel 5 min after to extract."
     },
     {
       "step": 3,
-      "side": "wet",
-      "agent": "Cold water rinse",
-      "technique": "Damp blot rinse",
-      "equipment": "Cold water, clean white towels",
-      "dwellTime": "5-10 minutes",
-      "instruction": "Lightly mist the treated area with cold water and blot repeatedly with clean white towels until the towels come away clean. Do not flood the carpet. The goal is to lift the dissolved urine and enzyme residue without driving water into the backing.",
-      "suggestedProducts": "Cold water"
-    }
-  ],
-  "homeSolutions": [
-    {
-      "step": 1,
-      "agent": "Wool rug + pet urine: the enzyme question matters",
-      "instruction": "Pet urine on wool carpet is the hardest home job in the urine family. Wool bans enzymes (digest keratin) — but urease-based cleaners specifically targeting uric acid are sometimes safe IF you can verify the product is pure urease rather than a protease blend. Most consumer pet enzyme cleaners (Nature's Miracle, Rocco & Roxie, Simple Solution) are blends and NOT safe for prolonged wool contact. Safer home path: fresh accidents resolve with cold water + wool-safe detergent + vinegar. Aged urine that needs enzyme work should go to a wool rug specialist."
-    },
-    {
-      "step": 2,
-      "agent": "Wool rules + urine specifics",
-      "instruction": "Wool bans: no enzymes from blends (verify purity — most retail products aren't pure urease), no hot water (swells scales and accelerates enzyme penetration into the keratin), no alkaline, no chlorine bleach, no scrubbing, no ammonia (makes the urine smell worse and triggers pet re-marking). Urine specifics: uric acid crystals bond tightly — plain water won't remove them, but repeated dilute treatments help."
-    },
-    {
-      "step": 3,
-      "agent": "Find the full spot + absorb fresh urine",
-      "instruction": "In a dark room, sweep a UV blacklight across the rug to find the full edges of the wet area (urine spreads in wool backing beyond what you can see). Mark with painter's tape. Stack 6–8 layers of white paper towels over the spot and step on it (wearing a shoe you don't love) to absorb as much fresh urine as possible. Replace towels until they come up nearly dry. Work from the outside of the marked area inward."
+      "side": "wet-minimal",
+      "agent": "Cold Wool-Safe NSD (Pro)",
+      "technique": "Sponge press for fresh urine",
+      "equipment": "Mulsolite or wool-safe NSD",
+      "dwellTime": "Brief",
+      "instruction": "Cold NSD sponge press. Suspends fresh sweat-and-protein component without enzymes. NEVER pour on wool — flood + felt risk."
     },
     {
       "step": 4,
-      "agent": "Cold water dilute — localized, don't soak the backing",
-      "instruction": "Pour a small amount of cold water on the treated area (half a cup for a small accident; more for larger), blot with white towels under pressure. Repeat 2–3 times. You're flushing surface salts before anything else. Wool carpet backing is susceptible to mildew under saturation — keep water use targeted and always blot dry between pours."
+      "side": "wet-minimal",
+      "agent": "Wool-Safe Urease-Only Enzyme (Pro)",
+      "technique": "Specialty enzyme, controlled application",
+      "equipment": "Pro wool-safe urease enzyme product",
+      "dwellTime": "Per pro reference",
+      "instruction": "Pro applies urease-ONLY enzyme (urease digests uric acid; protease would digest wool). Strict application without flooding. Cold sub-surface extraction follows."
     },
     {
       "step": 5,
-      "agent": "Wool-safe detergent + dilute vinegar",
-      "instruction": "Mix one teaspoon of Eucalan, Woolite, or clear Dawn (NEVER OxiClean or any \"bio\" detergent) in two cups of cool water. Dip a white cloth, wring nearly dry, press on the spot. 3 minutes dwell. Blot. Follow with 1 part white vinegar in 1 part cool water dabbed on the area for 60 SECONDS MAX, then blot. Vinegar handles surface uric-acid salts AND restores wool's natural pH.",
-      "safetyNote": "Never combine vinegar with bleach or peroxide on the same dwell. Never leave wool saturated overnight."
+      "side": "wet-minimal",
+      "agent": "Acetic Acid Spotter (Pro)",
+      "technique": "60-sec ceiling for ammonia neutralization",
+      "equipment": "Acetic Acid (diluted 1:10)",
+      "dwellTime": "60 seconds maximum",
+      "instruction": "Diluted acetic acid neutralizes residual ammonia. STRICT 60-sec ceiling. Flush cold immediately."
     },
     {
       "step": 6,
-      "agent": "Dry down + blacklight re-check",
-      "instruction": "Stack 6–10 layers of white paper towels over the treated area, weigh down with a heavy object (book, small weight plate). Leave 4–8 hours. This pulls residual moisture out of the wool backing. Then uncover, smell-check up close, and re-sweep with the blacklight. If odor or fluorescence persists, move to step 7 — do NOT double-dose home chemistry."
-    },
-    {
-      "step": 7,
-      "agent": "Escalate to a wool rug specialist — don't use retail enzyme cleaners",
-      "instruction": "If odor or blacklight signal remains, take the rug (or have it picked up) by a wool rug specialist — NOT a general carpet cleaner. Tell them: \"Pet urine on wool rug, age [x]. Treated with cold water + Eucalan + 1:1 vinegar (60-sec dwell). NO enzyme cleaner used. Possible backing contamination.\" Specialists have verified pure urease spotters + controlled-pH treatments + sub-surface extraction that home users can't replicate safely. Reminder: do not reach for a pet-store enzyme cleaner on wool — most are protease blends that damage the fiber."
+      "side": "dry",
+      "agent": "Cold Press-Dry Overnight + Blacklight Verify",
+      "technique": "Aggressive extraction + UV check",
+      "equipment": "Dry towels + weight, fan, UV blacklight",
+      "dwellTime": "Overnight + verification",
+      "instruction": "Weighted dry towels overnight. Fan-dry. Re-blacklight verify all areas treated. Persistent UV signal = pad contamination, sub-surface extraction next."
     }
   ],
-  "materialWarnings": [
-    "NEVER use hot water or warm water — swells wool fiber, opens keratin scales, and allows enzyme penetration into the protein",
-    "NEVER use protease-based enzyme cleaners — protease digests wool keratin and causes permanent fiber damage",
-    "NEVER use chlorine bleach — destroys wool keratin on contact",
-    "NEVER use hydrogen peroxide on untested wool — can yellow or bleach the fiber",
-    "NEVER use ammonia — already present in the urine chemistry and further alkali attacks wool",
-    "NEVER over-wet the carpet — backing saturation causes shrinkage, brown-out wicking, and mold",
-    "NEVER rub or scrub — distorts the pile and breaks wet wool fibers"
+  "professionalProtocol": {
+    "steps": [
+      "1. Gloves + UV blacklight + tape edges of contaminated area.",
+      "2. Cold damp-cloth press-blot.",
+      "3. Cold wool-safe NSD sponge press for fresh urine.",
+      "4. Wool-safe urease-ONLY enzyme (NOT protease — protease digests wool).",
+      "5. Acetic acid 60-sec spotter for ammonia neutralization.",
+      "6. Cold sub-surface extraction.",
+      "7. Press-dry overnight + blacklight verify."
+    ],
+    "products": [
+      "UV blacklight",
+      "Disposable gloves + N95 mask",
+      "Mulsolite or wool-safe NSD",
+      "Wool-safe urease-only enzyme (pro)",
+      "Acetic Acid (diluted 1:10)",
+      "Cold/ice water",
+      "Dry white towels"
+    ],
+    "temperature": "cold throughout — wool felts above 30°C when wet",
+    "warnings": [
+      "Biohazard — gloves + mask + sealed disposal",
+      "NEVER protease enzymes — digest wool keratin",
+      "NEVER hot water / steam — felts wool + sets protein",
+      "NEVER alkaline (OxiClean / ammonia) — felts wool + locks urine",
+      "NEVER chlorine bleach — destroys wool",
+      "NEVER agitation / scrubbing — felts wool on contact",
+      "NEVER pour solution on wool carpet — flood = felt",
+      "Pad contamination on wool carpet = pad replacement, not extraction"
+    ]
+  },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Honest Answer — Pro IMMEDIATELY for Wool Carpet",
+      "instruction": "Pet urine on wool carpet is the worst combination in the pet-urine family. Wool's banned tools (no enzymes, no hot water, no alkaline, no agitation) eliminate everything that lifts pet urine from synthetic carpet. Retail pet enzyme cleaners contain protease which DIGESTS WOOL. Home protocol = gloves + cold press-blot + pro IMMEDIATELY. Wool-safe pet-urine chemistry exists but is pro-only."
+    },
+    {
+      "step": 2,
+      "agent": "Gloves + Find Full Extent (UV Blacklight)",
+      "instruction": "Disposable gloves (biohazard). If you have a UV blacklight (cheap on Amazon, ~$15), turn off the lights and scan the area — pet urine glows yellow-green, often spreading WAY farther than the visible spot. Mark the full edge with painter's tape. Treating too small = the dog re-marks the area or odor returns."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Damp-Cloth Press-Blot — No Agitation",
+      "instruction": "Press a clean white cloth dampened with COLD water onto the spot. Vertical pressure only — never rub or scrub. Cold dilutes the uric acid + prevents protein setting. Lift, refresh cloth, press again until cloth comes up clean. Don't pour water on wool carpet — flood + agitation = felt."
+    },
+    {
+      "step": 4,
+      "agent": "Press-Dry With Weighted Towels",
+      "instruction": "Stack dry paper towels on the spot, weight with a heavy book, leave 30 minutes. Wool carpet retains moisture deep — extract aggressively (without rubbing) before pro arrives."
+    },
+    {
+      "step": 5,
+      "agent": "Pro Wool-Carpet Specialist IMMEDIATELY",
+      "instruction": "Don't wait. Don't apply Nature's Miracle or any retail pet enzyme — they contain protease that digests wool. Tell the pro: \"Pet urine on wool carpet, [cat / dog], age [hours / overnight], gloves + cold press-blot ONLY at home. NO enzyme cleaner, NO hot water, NO OxiClean, NO household pet products applied. Need wool-safe urease-only enzyme + cold sub-surface extraction.\""
+    }
   ],
+  "diyProtocol": {
+    "steps": [
+      "1. Wool carpet + pet urine = pro IMMEDIATELY.",
+      "2. Gloves on. UV blacklight to find full extent.",
+      "3. NO retail pet enzyme cleaners — they contain protease that digests wool.",
+      "4. Cold damp-cloth press-blot — vertical pressure, no rubbing.",
+      "5. Weighted dry towels 30 min for extraction.",
+      "6. Pro wool-carpet specialist immediately."
+    ],
+    "products": [
+      "Disposable gloves",
+      "UV blacklight (recommended)",
+      "Cold / ice water",
+      "Dry white towels + weight"
+    ],
+    "whenToStop": "Stop after cold press-blot. Any retail pet enzyme cleaner on wool carpet digests the wool — don't apply.",
+    "warnings": [
+      "Biohazard — gloves + sealed disposal",
+      "NEVER Nature's Miracle / Rocco & Roxie / any retail pet enzyme — DIGESTS WOOL",
+      "NEVER hot water — felts wool + sets protein",
+      "NEVER OxiClean / alkaline — felts wool + locks urine",
+      "NEVER chlorine bleach",
+      "NEVER scrubbing / agitation wet wool carpet",
+      "NEVER pour solution — flood = felt"
+    ]
+  },
   "safetyMatrix": {
     "neverDo": [
-      "Apply protease enzyme cleaner to wool carpet",
-      "Use hot water on wool rugs at any stage",
-      "Apply chlorine bleach or peroxide to wool carpet",
-      "Flood the carpet — keep moisture shallow to protect backing",
-      "Rub or agitate wet wool pile"
-    ]
-  },
-  "escalation": "If pet urine has soaked into the backing, if odor persists after two full urease treatments, if the rug is antique, hand-knotted, or silk-blend, or if brown wicking appears during drying — stop home treatment. A professional wool rug specialist with an in-plant bath and controlled-drying room is the safe path. DIY escalation on a compromised wool rug causes more damage than the original stain.",
-  "products": {
-    "household": [
-      "Urease-based bio-enzymatic pet cleaner (cold water only)",
-      "Clean white terry towels",
-      "Room-temperature fan",
-      "Amazon: https://www.amazon.com/s?k=urease+enzymatic+pet+cleaner&tag=gonr08-20"
+      "Never retail pet enzyme cleaners on wool carpet — they digest wool",
+      "Never hot water on wool carpet",
+      "Never OxiClean / alkaline",
+      "Never chlorine bleach",
+      "Never agitate / scrub wet wool carpet",
+      "Never bare-handed (biohazard)",
+      "Never pour solution — flood = felt"
     ],
-    "professional": [
-      "In-plant wool rug wash with pH-neutral shampoo",
-      "Controlled-humidity drying room",
-      "Post-treatment wool conditioner and pile-reset grooming"
+    "fiberSensitivities": [
+      "Wool keratin felts when wet + warm + agitated",
+      "Protease enzymes digest wool keratin equally with sweat protein",
+      "Urease-only enzymes are wool-safe but pro-only",
+      "Pad contamination on wool carpet may require pad replacement"
     ]
   },
-  "professionalProtocol": {
-    "callPro": "recommended",
-    "reason": "Wool rugs with pet urine saturation are the single most common wool-rug damage scenario. A specialist shop with immersion washing and a drying room is dramatically safer than any topical home treatment once the urine reaches the backing.",
-    "findPro": "Search for 'wool rug cleaner' or 'oriental rug specialist' in your area — not a general carpet cleaner."
+  "materialWarnings": [
+    "Pro IMMEDIATELY — retail pet enzymes destroy wool",
+    "UV blacklight to find full extent",
+    "Cold press-blot is the safe home action",
+    "Wool-safe pet-urine chemistry exists but is pro-only"
+  ],
+  "escalation": {
+    "when": "Always — wool carpet + pet urine is pro-only IMMEDIATELY. Pad contamination, recurring spots, or any retail enzyme already applied = even more urgent.",
+    "whatToTell": "\"Pet urine on wool carpet, [cat / dog], age [hours / overnight], gloves + cold press-blot ONLY at home. NO enzyme cleaner, NO hot water, NO OxiClean, NO household pet products applied. Need wool-safe urease-only enzyme + cold sub-surface extraction. UV blacklight extent: [size].\"",
+    "specialistType": "professional wool-carpet specialist (call ahead — confirm urease-only enzyme + sub-surface cold extraction; many cleaners can't safely treat pet urine on wool)"
   },
-  "aftercare": "Blot the area as dry as possible. If the rug is small enough to lift, raise the affected area off the floor with blocks or upturned glasses so air can reach both faces — this prevents brown-out wicking and backing mold. Use a fan on low, never heat. Do not vacuum until fully dry. Brush the pile back into direction once the fiber is barely damp.",
+  "deepSolveHooks": {
+    "contextQuestions": [
+      "Cat or dog?",
+      "Age — fresh, overnight, or older?",
+      "Has anyone applied retail pet enzyme (Nature's Miracle / Rocco & Roxie)?",
+      "Wool-carpet type — wall-to-wall / Oriental rug?",
+      "Recurring spot or one-off?"
+    ],
+    "modifierNotes": "Cat urine harder than dog (felinine + mercaptans). Recurring same-spot accidents = pad almost certainly contaminated. Oriental wool rugs need specialist with hand-knot expertise. Pre-applied retail pet enzyme = wool likely partially digested where applied; disclose honestly."
+  },
   "sources": [],
   "cross_refs": [],
-  "verification_level": "draft"
+  "verification_level": "cross_ref"
 }

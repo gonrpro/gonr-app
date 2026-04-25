@@ -1,90 +1,211 @@
 {
   "id": "grease-leather",
-  "title": "Grease / Oil on Leather",
+  "title": "Grease on Leather",
+  "stainType": "oil",
   "stainFamily": "oil",
   "surface": "leather",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Oil/Grease (non-polar lipid). Grease and cooking oils are non-polar hydrocarbons that penetrate leather's porous structure through capillary action. On pigmented/finished leather, the topcoat slows absorption but grease still migrates through micro-scratches and wear points. On aniline leather, grease absorbs immediately into the unprotected hide, permanently darkening the area. Treatment: absorb excess with talcum powder or cornstarch, then lift residual oil with POG (Paint/Oil/Grease remover) followed by NSD flush and leather conditioning.",
-  "whyThisWorks": "Grease is a non-polar molecule that won't dissolve in water alone. Absorbent powder draws oil out of the leather by capillary action before it sets. POG emulsifies remaining oil so it can be flushed away with NSD. Conditioning after treatment replaces the natural oils stripped during cleaning, preventing cracking and stiffness.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "Pro-lane; home is powder + condition only",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "grease",
+    "surfaceCanonical": "leather",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "oil",
+      "grease",
+      "leather",
+      "no-oxidizer",
+      "no-solvent-home",
+      "refusal-style",
+      "pro-lane",
+      "finished-vs-aniline-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "\"Grease\" on leather covers thick fats — kitchen grease, cooking-pan splatter, food drippings. Heavier and more adherent than thin cooking oil; slower to penetrate but harder to lift once set. On leather, grease that gets past the topcoat polymerizes over time into a darker shadow that's nearly impossible to remove without re-dyeing. Same leather-banned-tools list as cooking-oil-leather: NO household solvents (acetone / alcohol / mineral spirits — destroy finish), NO oxidizers (peroxide / OxiClean / chlorine — strip finish + dye + oils). For motor oil / mechanical grease, see motor-oil-* cards. Pro uses VDS at controlled dilution + immediate conditioning.",
+  "whyThisWorks": "Cornstarch / fuller's earth preload pulls surface grease up via capillary action — works even better on thick grease than on thin oil because higher surface tension gives powder more to grab. Mild soap handles surface residue. Pro VDS for residual penetrated grease. Conditioner restores hide.",
+  "defaultAssumption": "Finished leather assumed; aniline = pro from minute one. Most leather furniture / handbag / car interior is finished. Suede: separate card. For motor oil specifically, see motor-oil-* cards (different chemistry).",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify Leather + Lift Solid Bulk",
+      "technique": "Water-drop test + dull-edge lift",
+      "equipment": "Drop of water, plastic card",
+      "dwellTime": "1 minute",
+      "instruction": "Water-drop test: beads = finished, soaks = aniline (pro from minute one). If grease is solid (cooled bacon grease, hardened fat), lift bulk with the FLAT edge of a plastic card. No scraping leather."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Cornstarch / Fuller's Earth Powder Preload",
+      "technique": "Wick grease via capillary",
+      "equipment": "Cornstarch, baking soda, or fuller's earth",
+      "dwellTime": "30–60 minutes",
+      "instruction": "Cover with thick layer of powder. 30–60 min absorb. Soft brush off. Repeat with fresh powder if first saturated."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Mild Soap on Barely-Damp Cloth",
+      "technique": "Outside-in, minimum water",
+      "equipment": "1–2 drops Dawn in warm water, white cloth wrung nearly dry",
+      "dwellTime": "2 minutes",
+      "instruction": "Dawn in warm water, wring cloth nearly dry. Wipe outside-in. Plain-water damp wipe to clear soap."
+    },
+    {
+      "step": 4,
+      "side": "dry",
+      "agent": "VDS (Pro Only)",
+      "technique": "Controlled solvent for penetrated grease",
+      "equipment": "VDS per pro reference",
+      "dwellTime": "Per pro protocol",
+      "instruction": "Pro applies VDS to a white cloth, controlled tamp on residual penetrated grease. Strict dilution + immediate conditioning."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Leather Conditioner",
+      "technique": "Apply per product",
+      "equipment": "Lexol / Bickmore / pro conditioner",
+      "dwellTime": "Per label",
+      "instruction": "Mandatory after any wet or solvent treatment."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply generous layer of talcum powder or cornstarch over the grease stain. Press gently into the surface without rubbing. Let sit 15 minutes to absorb excess oil from the leather. Brush off with soft brush. Repeat if powder darkens significantly.",
-      "2. Apply POG (Paint/Oil/Grease remover) to remaining stain. Blot gently from outside edge toward center — never rub. POG emulsifies the non-polar oil molecules so they release from the leather grain. Replace cloth frequently as it picks up oil.",
-      "3. Flush with NSD (Neutral Synthetic Detergent) to remove all POG residue and loosened oil. Use minimal moisture — leather should not be saturated. Blot with clean damp cloth.",
-      "4. Rinse with cool water applied via damp cloth — wring cloth nearly dry before use. Blot away all soap residue. Never flood leather with water.",
-      "5. Air dry away from direct heat and sunlight. Once fully dry, apply leather conditioner to restore suppleness and replace natural oils lost during treatment. Buff gently with soft cloth."
+      "1. Water-drop leather test. Aniline = pro from minute one.",
+      "2. Lift solid grease bulk with flat-edge plastic card.",
+      "3. Cornstarch / fuller's earth preload 30–60 min. Brush off.",
+      "4. Mild soap on barely-damp cloth, outside-in.",
+      "5. Plain-water damp wipe to clear soap.",
+      "6. VDS for residual penetrated grease (pro-only).",
+      "7. Leather conditioner — mandatory."
     ],
     "products": [
-      "Talcum powder or cornstarch (absorbent)",
-      "POG (Paint/Oil/Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "Leather conditioner"
+      "Cornstarch / fuller's earth",
+      "Mild dish soap (Dawn — 1–2 drops)",
+      "VDS (pro only)",
+      "Leather conditioner (Lexol / Bickmore / pro-grade)",
+      "Plastic card",
+      "White cloths"
     ],
-    "temperature": "cool — no heat; heat drives grease deeper into leather and causes drying/cracking",
+    "temperature": "ambient — no heat (heat dries leather + polymerizes grease)",
     "warnings": [
-      "Using hot water or heat — drives oil deeper into leather grain and causes cracking",
-      "Rubbing aggressively — spreads grease and damages leather finish",
-      "Using acetone, bleach, or H₂O₂ — strips finish and dye permanently",
-      "Skipping conditioning after cleaning — leads to drying and cracking",
-      "Using abrasive cloths or scrub pads — scratches leather surface"
+      "NEVER hydrogen peroxide / OxiClean / chlorine — strip leather permanently",
+      "NEVER acetone / undiluted alcohol / mineral spirits at home",
+      "NEVER hot water — dries leather",
+      "NEVER skip conditioner",
+      "Aniline = pro from minute one (grease soaks straight in)"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Identify Your Leather First — One Drop of Water",
+      "instruction": "Water-drop test on hidden leather: beads = finished, soaks in = aniline (STOP, pro from minute one). Aniline absorbs grease directly into the dyed hide and home cleaning won't reach it."
+    },
+    {
+      "step": 2,
+      "agent": "What NOT To Do",
+      "instruction": "The internet's worst leather-grease advice: WD-40, mineral spirits, acetone, peroxide, OxiClean. ALL of those strip the leather's finish + dye + oils, permanently. The damage is worse than the grease. Stick to powder + mild soap + condition."
+    },
+    {
+      "step": 3,
+      "agent": "Lift Solid Bulk — Flat Edge of Plastic Card",
+      "instruction": "If the grease is solid (cooled bacon grease, hardened fat), use the FLAT edge of a plastic card to lift it off. Don't scrape leather — flat-edge lift only. Most surface bulk comes off."
+    },
+    {
+      "step": 4,
+      "agent": "Cornstarch Powder Preload — 30 to 60 Minutes",
+      "instruction": "Cover the grease spot with cornstarch (or baking soda, or fuller's earth — fuller's earth works best on thick grease). 30–60 min absorb. Soft brush off. Repeat with fresh layer if the first looks saturated."
+    },
+    {
+      "step": 5,
+      "agent": "Mild Soap on a BARELY-Damp Cloth",
+      "instruction": "1 to 2 drops of Dawn in warm water. Dampen a clean white cloth, WRING IT OUT until barely damp. Wipe outside-in. Plain-water-damp wipe to clear soap. Leather should never look visibly wet."
+    },
+    {
+      "step": 6,
+      "agent": "Condition the Leather — Mandatory",
+      "instruction": "Apply leather conditioner (Lexol or Bickmore) per the label. Cleaning + grease both strip natural oils — conditioning prevents cracking."
+    },
+    {
+      "step": 7,
+      "agent": "Pro for Anything Remaining — What to Tell Them",
+      "instruction": "Take to a leather care specialist. Tell them: \"Grease on [finished / aniline / unknown] leather, age [hours / days], one home pass with cornstarch preload + mild soap + conditioner. No oxidizer, no acetone, no alcohol, no mineral spirits, no WD-40 used.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot any excess grease immediately with a clean paper towel. Do not rub — press gently.",
-      "2. Cover the stain generously with cornstarch or baking soda. Let it sit for at least 15 minutes (overnight for set stains). The powder absorbs oil from the leather.",
-      "3. Brush off the powder with a soft brush. Repeat if the powder absorbed significant oil.",
-      "4. Apply a small amount of leather-safe saddle soap or pH-neutral leather cleaner to a soft, damp cloth. Gently work in small circles over the stain — do not scrub. Never use dish soap on aniline or unfinished leather.",
-      "5. Wipe clean with a cloth dampened with cool water. Blot dry with a clean towel.",
-      "6. Let air dry completely away from heat and sunlight. Apply leather conditioner once dry."
+      "1. Water-drop test. Aniline = pro from minute one.",
+      "2. NO oxidizer, NO acetone, NO alcohol, NO mineral spirits, NO WD-40.",
+      "3. Lift solid grease with flat-edge plastic card.",
+      "4. Cornstarch preload 30–60 min. Brush off.",
+      "5. Mild soap (1–2 drops Dawn) on a BARELY-damp cloth, outside-in.",
+      "6. Plain-water damp wipe to clear soap.",
+      "7. Leather conditioner — mandatory.",
+      "8. Residual = pro leather specialist."
     ],
     "products": [
-      "Cornstarch or baking soda",
-      "Leather-safe saddle soap or pH-neutral leather cleaner",
-      "Leather conditioner"
+      "Plastic card (flat-edge lift)",
+      "Cornstarch / fuller's earth",
+      "Mild dish soap (Dawn — 1–2 drops)",
+      "White cloths",
+      "Leather conditioner (Lexol / Bickmore)"
     ],
-    "whenToStop": "If the stain persists after two treatment attempts, or if the leather has darkened permanently, take it to a professional leather care specialist.",
+    "whenToStop": "Stop if leather is aniline, if grease remains after powder + mild soap, or if anyone has applied harsh chemistry previously.",
     "warnings": [
-      "Always condition leather after any cleaning — cleaning strips natural oils.",
-      "Use a clean, soft cloth — rough materials scratch the leather finish.",
-      "Never use acetone, bleach, H₂O₂, or undiluted alcohol on leather.",
-      "Never use dish soap on aniline or unfinished leather — it strips the dye.",
-      "Never use heat (hair dryer, radiator) to speed drying — causes cracking."
+      "NEVER WD-40 / acetone / alcohol / mineral spirits on leather",
+      "NEVER peroxide / OxiClean / chlorine bleach",
+      "NEVER hot water — dries leather",
+      "NEVER excess water — warps leather",
+      "NEVER skip conditioner",
+      "Aniline = pro from minute one",
+      "For motor oil specifically, see motor-oil-* cards"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use hot water or heat — drives grease deeper and dries out leather",
-      "Use acetone, bleach, H₂O₂, or abrasives — strips finish and dye permanently",
-      "Use excess water — causes warping, water spots, and stiffening",
-      "Skip conditioning after cleaning — leads to cracking and brittleness",
-      "Rub or scrub aggressively — spreads oil and damages finish"
+      "Never WD-40 / acetone / alcohol / mineral spirits on leather",
+      "Never peroxide / OxiClean / chlorine",
+      "Never hot water on leather",
+      "Never excess water",
+      "Never skip conditioner"
     ],
     "fiberSensitivities": [
-      "Leather: NEVER use acetone, bleach, H₂O₂, alcohol (undiluted), or abrasives. Safe agents: talcum/cornstarch, POG, saddle soap, mild dish soap, leather cleaner. Always condition after cleaning."
+      "Finished / pigmented leather: tolerates cornstarch + mild soap + conditioner",
+      "Aniline / unfinished: pro-only",
+      "Suede: own protocol (no liquid, no powder paste)"
     ]
   },
+  "materialWarnings": [
+    "Aniline = pro from minute one",
+    "Cotton/carpet grease-removal solvents DESTROY leather",
+    "Cornstarch + mild soap + condition is the safe home path",
+    "Conditioner after every wet treatment, mandatory"
+  ],
   "escalation": {
-    "when": "Grease has penetrated deeply into aniline/unfinished leather, stain remains after absorbent + POG treatment, or leather has permanently darkened",
-    "whatToTell": "Grease/oil stain on leather, treated at home with absorbent powder and mild soap. Oil may have penetrated past the finish. May require professional degreasing or re-dyeing.",
-    "specialistType": "leather care specialist"
+    "when": "Aniline / unfinished leather (always), grease remaining after powder + mild soap pass, or anyone has applied harsh chemistry previously.",
+    "whatToTell": "\"Grease on [finished / aniline / unknown] leather, age [hours / days], one home pass with cornstarch preload + mild soap + conditioner. No oxidizer, no acetone, no alcohol, no mineral spirits, no WD-40 used.\"",
+    "specialistType": "leather care specialist (NOT a regular dry cleaner)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the leather finished/pigmented or aniline/unfinished?",
-      "How old is the grease stain — fresh or set?",
-      "Has heat been applied to the leather (hair dryer, radiator, sunlight)?",
-      "What type of grease — cooking oil, motor oil, body oil, butter?"
+      "Water-drop test: bead, soak, or in-between?",
+      "Type of grease — kitchen / cooking pan / engine?",
+      "Furniture / handbag / jacket / car seat?",
+      "Has anyone applied solvent / oxidizer / WD-40?",
+      "How long ago — fresh or aged?"
     ],
-    "modifierNotes": "Aniline leather is far more porous than pigmented leather — grease penetrates deeper and may permanently darken the hide. Motor oil is heavier than cooking oil and requires stronger degreasing. Heat exposure after grease contact accelerates permanent bonding. Fresh grease responds well to absorbent treatment; set grease requires professional intervention."
+    "modifierNotes": "Motor oil = different protocol (see motor-oil-* cards). Aged grease that polymerized into the hide leaves a near-permanent shadow. Aniline absorbs grease directly — pro from minute one."
   },
-  "difficulty": 4,
-  "timeEstimate": "20–30 min",
-  "lastValidated": "2026-04-08",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

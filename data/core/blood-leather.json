@@ -1,81 +1,209 @@
 {
   "id": "blood-leather",
   "title": "Blood on Leather",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "leather",
-  "sector": "leather",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Blood contains hemoglobin — an iron-bearing protein that bonds to leather through hydrogen bonding and hydrophobic interactions. When fresh, the protein is water-soluble in cold conditions. Heat or time causes the protein chains to cross-link (denature), making the stain insoluble and far harder to remove. The iron component can leave a secondary rust-like discoloration after the protein is removed.",
-  "whyThisWorks": "Cold water keeps the protein from denaturing and locking into the leather fiber. A digestant enzyme (professional) or surfactant (DIY) breaks down the protein chains into soluble fragments that rinse away. The key is treating before any heat exposure — heat permanently cross-links the protein.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "Pro-lane; home is blot + condition only",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "blood",
+    "surfaceCanonical": "leather",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "protein",
+      "leather",
+      "biohazard-adjacent",
+      "no-oxidizer",
+      "refusal-style",
+      "pro-lane",
+      "finished-vs-aniline-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Blood is hemoglobin protein + iron (oxidizes Fe²⁺ → Fe³⁺ over hours). Leather is animal hide, finished or aniline. Two paths: (1) FINISHED leather has a polymer topcoat — fresh blood often blots off the surface before reaching the dyed hide; gentle soap + condition handles light cases. (2) ANILINE leather absorbs blood directly into the dyed-through hide — pro-only, no DIY. Critical leather rule: NO oxidizers (peroxide / OxiClean / chlorine) — strip finish + dye + oils permanently. Pro uses sodium hydrosulfite (REDUCING bleach, leather-safe) for oxidized hemoglobin. Standard blood-removal toolkit (peroxide on cotton) destroys leather.",
+  "whyThisWorks": "Quick blot prevents blood from soaking past the topcoat. Mild soap + minimum water + immediate conditioning preserves the hide. Sodium hydrosulfite is the only safe oxidized-hemoglobin chemistry on leather, and it's pro-only. Home protocol: blot, mild soap if finished + visible bulk, condition, escalate.",
+  "defaultAssumption": "Finished leather assumed; aniline = pro from minute one. Most car interior / handbag / shoe leather is finished. High-end aniline upholstery exists. Always condition after any wet treatment.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify Leather + Gloves",
+      "technique": "Water-drop test + biohazard PPE",
+      "equipment": "Drop of water, gloves",
+      "dwellTime": "1 minute",
+      "instruction": "Gloves on (biohazard). Water-drop test on hidden leather: beads = finished, soaks in = aniline (pro from minute one). Aniline absorbs blood directly into the dyed hide."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Cold Damp-Cloth Blot",
+      "technique": "Press only, no rubbing",
+      "equipment": "Clean white cloth, cold water",
+      "dwellTime": "30 seconds",
+      "instruction": "Dampen white cloth with COLD water (cold prevents protein from setting). Press straight down on blood. Lift, fresh part of cloth, repeat. No rubbing — pushes blood past the topcoat."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Mild Soap on Barely-Damp Cloth",
+      "technique": "Outside-in, minimum water",
+      "equipment": "1–2 drops Dawn in cup of cold water, white cloth wrung nearly dry",
+      "dwellTime": "2 minutes",
+      "instruction": "1–2 drops Dawn in cold water. Wring cloth nearly dry. Wipe outside-in. Plain-water-damp wipe to clear soap. Leather should never look visibly wet."
+    },
+    {
+      "step": 4,
+      "side": "dry",
+      "agent": "Sodium Hydrosulfite (Pro Only)",
+      "technique": "Reducing bleach for oxidized hemoglobin",
+      "equipment": "Sodium hydrosulfite per pro reference",
+      "dwellTime": "Per pro protocol",
+      "instruction": "Pro-only step. Reducing bleach reverses Fe³⁺ → Fe²⁺ on leather without stripping finish. Home cannot replicate safely. NEVER use peroxide as substitute — strips leather."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Leather Conditioner",
+      "technique": "Apply per product",
+      "equipment": "Lexol / Bickmore / pro conditioner",
+      "dwellTime": "Per label",
+      "instruction": "Mandatory after any wet treatment. Cleaning strips natural oils — un-conditioned leather cracks."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply NSD (Neutral Synthetic Detergent) to the stain and tamp gently with a spotting brush. Work from edge to center using COLD water only",
-      "2. Flush with cold water. Repeat NSD application if stain persists",
-      "3. Apply Acetic Acid 28% (diluted 1:10) as a neutralizing rinse to restore fabric pH",
-      "4. Blot dry with clean absorbent cloth. Air dry completely — no heat"
+      "1. Water-drop test for leather type. Aniline = pro from minute one.",
+      "2. Gloves. Cold damp-cloth press-blot. Cold prevents protein setting.",
+      "3. Mild soap on barely-damp cloth, outside-in.",
+      "4. Plain-water damp wipe to clear soap.",
+      "5. Sodium hydrosulfite for oxidized hemoglobin (REDUCING, not oxidizer).",
+      "6. Leather conditioner — mandatory."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Mild dish soap (Dawn — 1–2 drops)",
+      "Sodium hydrosulfite (reducing bleach, pro-only)",
+      "Leather conditioner (Lexol / Bickmore / pro-grade)",
+      "Disposable gloves",
+      "White cloths"
     ],
-    "temperature": "cold",
+    "temperature": "cold for blood, ambient for conditioner — no heat (heat sets protein + dries leather)",
     "warnings": [
-      "NO enzyme treatments on leather — enzymes digest protein fibers",
-      "COLD water only throughout — heat permanently sets protein"
+      "Biohazard — gloves + sealed disposal",
+      "NEVER hydrogen peroxide on leather — strips finish + dye + oils permanently",
+      "NEVER OxiClean / chlorine bleach — destroys leather",
+      "NEVER hot water — sets blood protein",
+      "NEVER acetone or undiluted alcohol — destroys leather finish",
+      "NEVER excess water — warps leather",
+      "NEVER skip conditioner",
+      "Aniline / unfinished leather = pro from minute one",
+      "Reducing bleach (sodium hydrosulfite) is the ONLY safe oxidized-hemoglobin chemistry on leather — pro-only"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Identify Your Leather First — One Drop of Water",
+      "instruction": "Drop ONE bead of water on a hidden leather area. If it BEADS on top = finished/pigmented (proceed cautiously). If it SOAKS IN immediately = aniline (STOP — pro from minute one). Aniline absorbs blood directly into the dyed hide; even fresh attempts risk staining the leather permanently."
+    },
+    {
+      "step": 2,
+      "agent": "What NOT To Do — The Bad-Advice List",
+      "instruction": "The internet's worst leather + blood advice: hydrogen peroxide, OxiClean, chlorine bleach, salt paste. ALL of them strip leather's finish + dye + natural oils, permanently. The damage is worse than the blood. Also: NO acetone, NO undiluted alcohol, NO baking soda paste. Your safe toolkit is exactly four things: gloves, mild soap (1–2 drops), water, leather conditioner. The peroxide-on-cotton blood-removal trick destroys leather."
+    },
+    {
+      "step": 3,
+      "agent": "Gloves On + Cold Damp-Cloth Blot",
+      "instruction": "Disposable gloves (biohazard, especially if not your blood). Dampen a clean white cloth with COLD water — cold prevents protein from setting. Press the cloth straight down on the blood. Lift straight up, press a fresh part of the cloth, repeat. Do NOT rub or wipe — rubbing pushes blood past wear spots in the topcoat into the dyed hide where home can't reach it."
+    },
+    {
+      "step": 4,
+      "agent": "Mild Soap on a BARELY-Damp Cloth",
+      "instruction": "Mix 1 to 2 drops of Dawn (just two drops) in a cup of COLD water. Dampen a clean white cloth, WRING IT OUT until barely damp — no dripping. Wipe the area in gentle circles, OUTSIDE-IN. Then wipe with a plain-water-damp cloth to clear soap. The leather should never look visibly wet."
+    },
+    {
+      "step": 5,
+      "agent": "Condition the Leather — Mandatory",
+      "instruction": "Apply leather conditioner (Lexol or Bickmore at any drugstore / hardware store) with a soft cloth per the label. Cleaning strips leather's natural oils; conditioning prevents cracking over weeks."
+    },
+    {
+      "step": 6,
+      "agent": "Pro for Anything Remaining — What to Tell Them",
+      "instruction": "Take to a leather care specialist (NOT a regular dry cleaner). Tell them: \"Blood on [finished / aniline / unknown] leather, age [hours / days], one home pass with mild soap + barely-damp cloth + conditioner. No oxidizer, no acetone, no alcohol, no hot water used.\" Pros use sodium hydrosulfite (REDUCING bleach, leather-safe) for oxidized hemoglobin — chemistry home cannot do safely."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Rinse immediately with COLD water. Blot with a clean white cloth — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup cold water. Apply to stain and blot",
-      "3. Blot with clean white cloth. Repeat soap application until stain fades",
-      "4. Rinse with cold water to remove all soap residue",
-      "5. Air dry — do NOT use dryer or any heat until stain is completely gone"
+      "1. Water-drop test. Aniline = pro from minute one.",
+      "2. Gloves on. NO oxidizer, NO acetone, NO alcohol, NO baking soda.",
+      "3. Cold damp-cloth press-blot, no rubbing.",
+      "4. Mild soap (1–2 drops Dawn) on a BARELY-damp cloth, outside-in.",
+      "5. Plain-water damp wipe to clear soap.",
+      "6. Leather conditioner — mandatory.",
+      "7. Residual = pro leather specialist. NO second home pass."
     ],
     "products": [
-      "Dawn dish soap",
-      "cold water"
+      "Disposable gloves",
+      "Mild dish soap (Dawn — 1–2 drops, no more)",
+      "White cloths",
+      "Leather conditioner (Lexol / Bickmore)"
     ],
-    "whenToStop": "Stop and take to a professional who specializes in leather care. Do not attempt enzyme-based products at home — they will damage this fiber",
+    "whenToStop": "Stop if leather is aniline / unfinished, if blood remains after one careful pass, or if anyone has applied harsh chemistry previously.",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "NEVER use alcohol on blood — alcohol permanently sets protein stains",
-      "Always test cleaning solution on a hidden area first"
+      "Biohazard — gloves + sealed disposal",
+      "NEVER hydrogen peroxide on leather — strips finish permanently (the cotton trick)",
+      "NEVER OxiClean / chlorine bleach",
+      "NEVER acetone or undiluted alcohol",
+      "NEVER hot water — sets protein",
+      "NEVER excess water — warps leather",
+      "NEVER skip conditioner",
+      "Aniline = pro from minute one"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No acetone — strips finish and dye",
-      "No chlorine bleach — destroys leather protein",
-      "No alkaline cleaners — strips tanning agents",
-      "No excess water on aniline leather — causes permanent marks"
+      "Never any oxidizer (peroxide / OxiClean / chlorine) on leather",
+      "Never acetone on leather",
+      "Never undiluted alcohol",
+      "Never hot water — sets blood protein",
+      "Never excess water — warps leather",
+      "Never skip conditioner",
+      "Never bare-handed — biohazard"
     ],
     "fiberSensitivities": [
-      "Pigmented leather has protective topcoat — more forgiving",
-      "Aniline leather has no topcoat — extremely stain-susceptible",
-      "Always condition after cleaning to prevent cracking"
+      "Finished / pigmented leather: tolerates mild soap + barely-damp cloth + conditioner",
+      "Aniline / unfinished: pro-only — even water rings",
+      "Suede: own protocol (no liquid)",
+      "Patent leather: own protocol (no abrasion)"
     ]
   },
+  "materialWarnings": [
+    "Aniline = pro from minute one",
+    "Peroxide is the worst piece of bad internet advice for blood on leather",
+    "Conditioner after every wet treatment, mandatory",
+    "Cotton blood-removal toolkit DESTROYS leather"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is blood on leather, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "leather restoration specialist"
+    "when": "Aniline / unfinished leather (always), blood remaining after one home pass, or anyone has applied oxidizer / acetone / alcohol previously.",
+    "whatToTell": "\"Blood on [finished / aniline / unknown] leather, age [hours / days], one home pass with mild soap + barely-damp cloth + conditioner. No oxidizer, no acetone, no alcohol, no hot water used [or: someone applied X before I got here].\"",
+    "specialistType": "leather care specialist (NOT a regular dry cleaner — confirm sodium hydrosulfite + leather-safe chemistry)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Water-drop test: bead, soak, or in-between?",
+      "Furniture / handbag / jacket / shoes / car seat?",
+      "Color — light leather shows residual stain more",
+      "Has anyone applied peroxide / OxiClean / acetone / alcohol?",
+      "Whose blood (biohazard handling)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Aniline leather is the unforgiving variant. Car interior leather is usually heavily topcoated — more forgiving. Light-colored leather shows residual better. Pre-applied peroxide = leather likely already stripped where applied. Honest disclosure changes pro plan."
   },
-  "difficulty": 4,
-  "timeEstimate": "5-15 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,103 +1,193 @@
 {
   "id": "mud-wool-carpet",
   "title": "Mud on Wool Carpet",
-  "stainFamily": "combo",
+  "stainType": "specialty",
+  "stainFamily": "specialty",
   "surface": "wool-carpet",
-  "sector": "home",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "30 minutes home, then pro if residual; controlled blot OK",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "mud",
     "surfaceCanonical": "wool-carpet",
     "tier": "universal",
     "riskLevel": "medium",
     "tags": [
-      "combo-organic-mineral",
-      "cold-water-only",
-      "animal-fiber",
-      "wool-rug",
-      "dry-brush-first"
+      "mud",
+      "wool-carpet",
+      "controlled-blot-OK",
+      "no-enzymes",
+      "felting-risk-controlled",
+      "let-dry-first"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Combination stains contain protein, fat, and tannin or mineral components. Mud contains organic material (plant matter, tannins), clay/mineral particles, and sometimes protein components. Each component requires different chemistry: protein needs detergent, fat needs solvent, tannin needs peroxide, minerals need acid. Standard approach: let mud dry completely first (wet scrubbing drives particles deeper), then dry-brush, then detergent, then solvent, then tannin treatment.",
-  "whyThisWorks": "This combination stain contains multiple components — organic pigments, clay, and tannins — that each need separate treatment. Mud soaks through carpet into the padding below. Surface cleaning won't reach it — the stain hides underneath and wicks back up as the material dries. On wool carpet the chemistry has to stay cold and gentle: wool keratin sets permanently with hot water and is destroyed by chlorine bleach. Dwell time matters more than scrubbing force.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "stainChemistry": "Mud is mineral particulate (clay + silt + sand) + organic matter (decomposed plant + soil microbes) + water. Sometimes adds tannin (from grass / leaf decay). On wool carpet, the universal-safe trick: LET MUD DRY FIRST. Wet mud spreads with any contact. Dried mud crumbles and vacuums up. The dry-first approach is safer on wool than aggressive wet treatment because wet wool + agitation = felt risk. Wool carpet's banned-tools list: NO enzymes (digest keratin), NO hot water (felts + can't extract), NO alkaline cleaners, NO chlorine bleach. Wool carpet IS more forgiving than wool garments because it doesn't move under treatment, but the felt risk still applies.",
+  "whyThisWorks": "Letting mud dry completely is the single most important step on wool carpet — wet mud drags into the pile under any contact, dried mud crumbles cleanly. Then vacuum carefully. For residual stain, cold press-blot with wool-safe detergent (no agitation). Pro escalation for set-in mud uses cold extraction with wool-safe NSD. Home protocol: dry-first, vacuum, cold blot, escalate if residual.",
+  "defaultAssumption": "Wool carpet (knit / woven / Berber). LET MUD DRY first — most home failures on this stain come from rushing wet treatment. After dry, vacuum + cold blot is forgiving. Set-in mud (walked on for weeks, ground in) needs pro extraction.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Let Mud Dry Completely",
+      "technique": "Air-dry untouched",
+      "equipment": "Time + airflow",
+      "dwellTime": "Several hours to overnight",
+      "instruction": "Let the mud dry completely before any contact. Wet mud + any pressure spreads it through the wool pile. Dry mud crumbles cleanly. This is the universal-safe wool-carpet rule for mud."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Vacuum Carefully",
+      "technique": "Standard vacuum, dried mud only",
+      "equipment": "Vacuum with carpet attachment",
+      "dwellTime": "5 minutes",
+      "instruction": "Vacuum dried mud thoroughly. Most particulate comes up clean. If a brown stain residue remains under the dried mud, continue."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Cold Wool-Safe NSD Press",
+      "technique": "Damp cloth press, controlled extraction",
+      "equipment": "Mulsolite or wool-safe NSD on damp white cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Cold NSD on a damp white cloth (NEVER pour on wool carpet). Press onto residual stain. No rubbing. Lift, refresh cloth, press again. Wool carpet tolerates controlled blot; never flooding."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Acetic Acid Spotter (Pro)",
+      "technique": "Dropper for tannin residue",
+      "equipment": "Acetic Acid (diluted 1:10)",
+      "dwellTime": "60 seconds",
+      "instruction": "If brown tannin residue remains (from grass / leaf decay in mud), pro applies diluted acetic acid via dropper. 60-sec dwell. Flush with cold damp cloth."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Cold Press-Dry + Fan",
+      "technique": "Extract moisture, no heat",
+      "equipment": "Dry white towels + weight, fan",
+      "dwellTime": "Overnight",
+      "instruction": "Press dry towels on the spot, weight overnight. Fan the area until fully dry. NO heat — even residual heat felts wool fibers in carpet."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Let the mud dry completely. Once dry, brush and vacuum the loose dry material out of the wool pile before any wet step.",
-      "2. Apply NSD and work gently into the stain. NSD is wool-safe at neutral pH — it targets the protein component and emulsifies surface oils. Blot thoroughly between passes. Dwell 5 minutes. Use cold water only.",
-      "3. Apply POG or VDS to extract the oil and grease component. Blot with clean absorbent cloth.",
-      "4. If browning or color remains, apply Tannin to target the plant-based pigments. Tamp gently — do not scrub the wool pile.",
-      "5. Apply diluted acetic acid (1:10) to neutralize residual chemistry and restore the fiber. Blot dry."
+      "1. Let mud dry completely first.",
+      "2. Vacuum dried mud carefully.",
+      "3. Cold wool-safe NSD on damp cloth, press only.",
+      "4. Acetic acid spotter for tannin residue (pro), 60-sec ceiling.",
+      "5. Cold press-dry + fan overnight."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "POG (Paint-Oil-Grease remover)",
-      "Tannin",
-      "acetic acid (diluted 1:10)"
+      "Mulsolite or wool-safe NSD",
+      "Acetic Acid (diluted 1:10)",
+      "Cold/ice water",
+      "Dry white towels"
     ],
-    "temperature": "cold only — hot water sets the protein component permanently and felts wool fibers",
+    "temperature": "cold throughout — wool carpet felts at 30°C+ when wet",
     "warnings": [
-      "Never use chlorine bleach on wool — destroys keratin permanently",
-      "Never use hot or warm water — felts the wool and sets the stain",
-      "Never use protease enzyme cleaners on wool — they digest keratin like they digest the stain",
-      "Skip the dry-brush step and you drive clay particles deeper into the wool pile",
-      "Over-agitating the stain — spreads each component deeper and crushes the pile"
+      "NEVER touch wet mud — spreads into pile",
+      "NEVER hot water — felts wool carpet",
+      "NEVER enzymes — digest keratin",
+      "NEVER alkaline cleaners — open scales + risk wool damage",
+      "NEVER agitation / scrubbing — felts wool fibers",
+      "NEVER chlorine bleach"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Wait for Mud to Dry — This Is the Whole Trick",
+      "instruction": "The single biggest home mistake on mud + wool carpet is touching wet mud. Wet mud spreads into the pile under any contact — wiping, blotting, even pressing makes the stain bigger. Let it dry completely. A few hours to overnight, depending on the size. Don't walk on it. Don't blot it. Just wait."
+    },
+    {
+      "step": 2,
+      "agent": "Vacuum the Dried Mud",
+      "instruction": "Once mud is fully dry and crumbly, vacuum thoroughly with the carpet attachment. Most particulate comes up clean. If you see a brown stain residue UNDER the dried mud, continue. If the carpet looks clean, stop here."
+    },
+    {
+      "step": 3,
+      "agent": "Wool-Safe Detergent on a DAMP Cloth — Press, Don't Pour",
+      "instruction": "Mix half a teaspoon of Eucalan or Soak (or plain clear Dawn) in two cups of COLD water. Dip a clean white cloth, WRING NEARLY DRY, press onto the residual stain. 3 minutes dwell. Lift, refresh cloth, press again. NEVER pour on wool carpet — flooding + agitation = felt risk. Damp-cloth press only. Wool carpet IS more forgiving than wool garments here, but flooding is still a no-go."
+    },
+    {
+      "step": 4,
+      "agent": "Cold Press-Dry + Fan Overnight",
+      "instruction": "Stack dry paper towels on the spot, weight with a heavy book, leave overnight. Fan the area in the morning. NO heat — even residual heat from a dryer or hair dryer felts wool fibers in the carpet pile."
+    },
+    {
+      "step": 5,
+      "agent": "Pro Carpet Cleaner for Set-In Mud — What to Tell Them",
+      "instruction": "Take to or call a wool-carpet specialist if mud has been ground in for weeks, if a brown stain ring remains, or if anyone applied hot water / OxiClean before you got there. Tell them: \"Mud on wool carpet, age [days / weeks], let dry + vacuum + cold wool-safe detergent press. No hot water, no enzymes, no OxiClean, no scrubbing.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Let the mud dry completely before touching it. Wet scrubbing drives clay particles deeper into the wool pile.",
-      "2. Once fully dry, brush off the loose dry material with a soft brush, then vacuum the area thoroughly.",
-      "3. Mix a small amount of wool-safe detergent (a mild, pH-neutral wash like Woolite) into cold water (never hot — hot water felts wool and sets stains).",
-      "4. Blot the cold solution onto the stain with a clean white cloth. Do not scrub or rub the wool pile.",
-      "5. Let it dwell 5–10 minutes, then blot with a cloth dampened with plain cold water to rinse.",
-      "6. Place a stack of paper towels over the spot and weigh them down so the area dries slowly without wicking."
+      "1. LET MUD DRY COMPLETELY. Don't touch wet mud.",
+      "2. Vacuum dried mud thoroughly.",
+      "3. Cold wool-safe detergent on a DAMP cloth, press only.",
+      "4. Cold press-dry + fan overnight.",
+      "5. Set-in / residual = pro wool-carpet specialist."
     ],
     "products": [
-      "wool-safe NSD",
-      "OxiClean Versatile Stain Remover (cold water only)",
-      "cold water"
+      "Vacuum (carpet attachment)",
+      "Eucalan / Soak / clear Dawn",
+      "Cold / ice water",
+      "Dry white towels + heavy book",
+      "Fan"
     ],
-    "whenToStop": "If the stain is still visible after multiple cold treatments, stop. Wool carpet damage from over-treatment is worse than the original stain. Call a professional carpet cleaner experienced with wool.",
+    "whenToStop": "Stop after one careful damp-cloth pass. Repeat home rounds on wool carpet add felt risk.",
     "warnings": [
-      "Always blot — never rub or scrub. Rubbing damages wool fibers and crushes the pile.",
-      "Cold water only — hot water felts wool and sets the stain permanently.",
-      "Never use chlorine bleach on wool carpet — it destroys the fiber.",
-      "Let mud dry first and brush it out before any wet step — wet scrubbing drives clay deeper."
+      "NEVER touch wet mud — spreads into pile",
+      "NEVER hot water — felts wool carpet",
+      "NEVER enzymes / OxiClean / alkaline",
+      "NEVER chlorine bleach",
+      "NEVER pour solution on carpet — damp cloth only",
+      "NEVER scrub or rub wet wool carpet"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use chlorine bleach on wool — destroys keratin permanently",
-      "Use hot or warm water — felts wool and sets the protein component",
-      "Use protease enzyme cleaners on wool — they digest the fiber",
-      "Scrub wet mud — drives clay particles deeper into the wool pile",
-      "Apply all treatments simultaneously — creates a harder-to-remove chemical slurry"
+      "Never touch wet mud on wool carpet",
+      "Never hot water on wool carpet",
+      "Never enzymes / OxiClean / alkaline",
+      "Never chlorine bleach",
+      "Never pour cleaning solution on carpet",
+      "Never scrub wet wool carpet"
     ],
     "fiberSensitivities": [
-      "Wool is a protein fiber. It needs cold water, neutral-pH chemistry, gentle agitation, and zero chlorine bleach. Heat, alkalinity, and chlorine all destroy the fiber permanently."
+      "Wool carpet keratin felts when wet + warm + agitated",
+      "Wool carpet tolerates damp-cloth press if cold",
+      "Dry-first approach safest on wool carpet for mud",
+      "Jute backing common — over-wetting causes browning"
     ]
   },
+  "materialWarnings": [
+    "Let mud DRY first — universal-safe rule",
+    "Damp cloth press, never flood",
+    "Wool carpet is more forgiving than wool garments — but felt risk still applies"
+  ],
   "escalation": {
-    "when": "Sequential cold treating fails, or stain components have cross-linked together, or the wool pile is starting to crush or felt",
-    "whatToTell": "Mud stain on wool carpet, combination of organic pigment, clay, and tannins. Treated at home with cold-water NSD only. Please use multi-step sequential protocol with wool-safe chemistry — no chlorine, no heat.",
-    "specialistType": "professional carpet cleaner experienced with wool"
+    "when": "Mud has been ground in for weeks, brown stain ring persists after dry-vacuum + cold blot, hot water / OxiClean was applied previously, or wool carpet shows signs of felting.",
+    "whatToTell": "\"Mud on wool carpet, age [days / weeks], let dry + vacuum + one round cold wool-safe detergent press on damp cloth. No hot water, no enzymes, no OxiClean, no scrubbing. [Residual brown / ring / felting concern].\"",
+    "specialistType": "professional carpet cleaner specializing in wool carpet (call ahead — confirm cold extraction + wool-safe NSD)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Was the mud tracked in from outdoors (clay-heavy) or from a garden/potting soil?",
-      "Is the stain fresh or has it dried?",
-      "Has anyone already applied hot water, bleach, or an enzyme cleaner to it?",
-      "Was there grass mixed with the mud?"
+      "Fresh wet mud or dried in?",
+      "How big — track-in / spill / large area?",
+      "Wool carpet type — Berber / cut pile / loop / Oriental rug?",
+      "Has anyone touched the wet mud / poured water?",
+      "Has hot water or OxiClean been used?"
     ],
-    "modifierNotes": "Clay-heavy mud is more tenacious on wool and needs the dry-brush step done thoroughly before any wet step. Garden/potting soil often has higher organic content. Grass mixed with mud adds a tannin/chlorophyll component. Wool requires gentler chemistry and zero heat throughout."
+    "modifierNotes": "Oriental wool rugs need specialist treatment — different from wall-to-wall wool carpet. Pre-applied hot water = wool may already be partially felted. Anyone touching wet mud likely spread it through the pile — disclose to pro."
   },
-  "difficulty": 4,
-  "timeEstimate": "20–40 minutes",
-  "lastValidated": "2026-04-15",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

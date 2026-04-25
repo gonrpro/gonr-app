@@ -1,82 +1,195 @@
 {
   "id": "coffee-leather",
   "title": "Coffee on Leather",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "leather",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Classification: Tannin (polyphenolic). Coffee contains melanoidins (Maillard reaction products), chlorogenic acid, and tannin polyphenols that bind to fibers via hydrogen bonding. The brown color comes from conjugated chromophore systems in the melanoidin polymers. On leather (pigmented/finished): leather requires gentle, pH-neutral treatment. No strong solvents, no bleach, no excess water. CRITICAL: Never use H₂O₂, sodium percarbonate, or any oxidizer on leather — permanently strips finish, dye, and natural oils. Use sodium hydrosulfite (reducing bleach) for color removal instead.",
-  "whyThisWorks": "Coffee gets its dark color from plant pigments that bond to surfaces and darken with air exposure. Leather has a protective finish but coffee penetrates through wear spots. Gentle leather-safe cleaning followed by conditioner protects the hide and replaces the natural oils lost during treatment.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "Pro-lane for any meaningful spot; home is blot + condition only",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "coffee",
+    "surfaceCanonical": "leather",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "tannin",
+      "leather",
+      "no-oxidizer",
+      "refusal-style",
+      "pro-lane",
+      "finished-vs-aniline-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Coffee = melanoidins + chlorogenic acid + tannin. Coffee with cream adds milk casein + butterfat. On finished leather, fresh coffee often blots off the topcoat before reaching the dyed hide. On aniline leather, coffee soaks straight into the dye. The CRITICAL leather rule applies: NO oxidizers — peroxide / OxiClean / chlorine strip the finish + dye + oils permanently. Pro uses sodium hydrosulfite (REDUCING bleach, leather-safe) for residual tannin. Cotton coffee-removal toolkit (peroxide) destroys leather.",
+  "whyThisWorks": "Quick blot prevents coffee from soaking past the topcoat. Mild soap + minimum water + conditioning preserves the hide. Pro reducing-bleach chemistry handles residual tannin without stripping leather. Home options: blot fast, mild wipe, condition, escalate.",
+  "defaultAssumption": "Finished leather assumed; aniline = pro from minute one. Coffee with cream adds protein-before-heat ordering — cold blot, then pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify Leather + Immediate Blot",
+      "technique": "Water-drop test + cold press-blot",
+      "equipment": "Drop of water, white cloth, cold water",
+      "dwellTime": "1 minute",
+      "instruction": "Water-drop test: beads = finished, soaks = aniline (pro from minute one). Press white cloth on coffee. Lift, fresh part, repeat. No rubbing. Cold matters if the coffee was hot — cold prevents tannin + casein setting."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Mild Soap on Barely-Damp Cloth",
+      "technique": "Outside-in, minimum water",
+      "equipment": "1–2 drops Dawn in cold water",
+      "dwellTime": "2 minutes",
+      "instruction": "Dawn in cold water, wring cloth nearly dry. Wipe outside-in. Plain-water damp wipe to clear soap."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Sodium Hydrosulfite (Pro Only)",
+      "technique": "Reducing bleach for residual tannin",
+      "equipment": "Sodium hydrosulfite per pro reference",
+      "dwellTime": "Per pro protocol",
+      "instruction": "Pro-only. Reducing bleach lifts oxidized tannin from leather without stripping. Home cannot replicate. NEVER use peroxide as substitute."
+    },
+    {
+      "step": 4,
+      "side": "dry",
+      "agent": "Leather Conditioner",
+      "technique": "Apply per product",
+      "equipment": "Lexol / Bickmore / pro conditioner",
+      "dwellTime": "Per label",
+      "instruction": "Mandatory after any wet treatment."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin and tamp gently. This acidic spotter targets the bonds that coffee, wine, tea, and fruit juice pigments form with the surface. Work from the edge toward the center. Check progress every few minutes.",
-      "2. Apply sodium hydrosulfite solution to the stain. Monitor carefully — check every 2–3 minutes for color change. This reducing agent is safe on leather and does not oxidize or strip the finish, dye, or natural oils the way peroxide does.",
-      "3. Flush with NSD and a mild leveling agent to remove broken-down tannin pigment and any excess reducing agent. Rinse thoroughly.",
-      "4. Apply diluted acetic acid (1:10) to stop any remaining activity and restore the surface to its natural state. Blot dry and allow to air dry completely."
+      "1. Water-drop leather test. Aniline = pro from minute one.",
+      "2. Cold press-blot at first contact (cold blocks tannin + casein setting).",
+      "3. Mild soap on barely-damp cloth, outside-in.",
+      "4. Plain-water damp wipe to clear soap.",
+      "5. Sodium hydrosulfite for residual tannin (REDUCING bleach, NOT oxidizer).",
+      "6. Leather conditioner — mandatory."
     ],
     "products": [
-      "Tannin",
-      "sodium hydrosulfite",
-      "NSD (Neutral Synthetic Detergent)",
-      "acetic acid (diluted 1:10)"
+      "Mild dish soap (Dawn — 1–2 drops)",
+      "Sodium hydrosulfite (reducing bleach, pro-only)",
+      "Leather conditioner (Lexol / Bickmore / pro-grade)",
+      "White cloths"
     ],
-    "temperature": "ambient — no heat; heat dries out leather and causes cracking",
+    "temperature": "cold for blood/coffee initial blot; ambient for conditioner — no heat",
     "warnings": [
-      "Using household cleaners not designed for leather — strips finish",
-      "Using excess water — causes water spots and stiffening",
-      "Not conditioning after cleaning — leads to cracking",
-      "Rubbing aggressively — damages surface finish"
+      "NEVER hydrogen peroxide / OxiClean / chlorine — strip leather permanently",
+      "NEVER acetone / undiluted alcohol",
+      "NEVER hot water — sets casein (with cream) + dries leather",
+      "NEVER excess water — warps leather",
+      "NEVER skip conditioner",
+      "Aniline = pro from minute one"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Identify Your Leather First — One Drop of Water",
+      "instruction": "Water-drop test on hidden leather: beads = finished, soaks in = aniline (STOP, pro from minute one). Aniline absorbs coffee directly into the dyed hide; even fresh attempts may stain permanently."
+    },
+    {
+      "step": 2,
+      "agent": "What NOT To Do",
+      "instruction": "The internet's worst leather-coffee advice: hydrogen peroxide, OxiClean, chlorine bleach, vinegar straight on the finish (strips the topcoat over time), baking soda paste (alkaline + abrasive). The cotton coffee-removal toolkit (peroxide) destroys leather permanently."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Damp-Cloth Blot — Press, Don't Rub",
+      "instruction": "Press a clean white cloth (dampened with COLD water) straight down on the coffee. Lift straight up, press fresh cloth, repeat. No rubbing — pushes coffee past the topcoat into the dyed hide. Cold matters even if the coffee was hot — cold blocks tannin and casein from setting."
+    },
+    {
+      "step": 4,
+      "agent": "Mild Soap on a BARELY-Damp Cloth",
+      "instruction": "1 to 2 drops of Dawn in a cup of cold water. Dampen a clean white cloth, wring IT OUT until barely damp. Wipe outside-in. Plain-water-damp wipe to clear soap. Leather should never look visibly wet."
+    },
+    {
+      "step": 5,
+      "agent": "Condition the Leather — Mandatory",
+      "instruction": "Apply leather conditioner (Lexol or Bickmore) per the label. Cleaning strips natural oils."
+    },
+    {
+      "step": 6,
+      "agent": "Pro for Anything Remaining — What to Tell Them",
+      "instruction": "Take to a leather care specialist. Tell them: \"Coffee on [finished / aniline / unknown] leather, [black / with milk / cream], age [hours / days], one home pass with cold damp cloth + mild soap + conditioner. No oxidizer, no peroxide, no acetone used.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Dab gently with a clean soft cloth to soak up as much coffee as you can.",
-      "2. Mix 1–2 drops of Dawn dish soap into 1 cup of lukewarm water. Dampen a clean cloth — wring it out so it's barely damp, not dripping.",
-      "3. Gently dab and wipe the stained area from the outside inward. Do NOT scrub or soak the leather.",
-      "4. Wipe with a clean cloth dampened with plain water to remove soap residue. Immediately dry with a clean, dry cloth.",
-      "5. Apply a leather conditioner after the area is fully dry to restore moisture stripped during cleaning."
+      "1. Water-drop test. Aniline = pro from minute one.",
+      "2. NO peroxide / OxiClean / chlorine — DESTROYS leather.",
+      "3. NO acetone / alcohol / vinegar at home.",
+      "4. Cold damp-cloth press-blot, no rubbing.",
+      "5. Mild soap (1–2 drops Dawn) on a BARELY-damp cloth, outside-in.",
+      "6. Plain-water damp wipe.",
+      "7. Leather conditioner — mandatory.",
+      "8. Residual = pro leather specialist."
     ],
     "products": [
-      "Dawn NSD (1–2 drops only)",
-      "leather conditioner (Lexol or similar)"
+      "Mild dish soap (Dawn — 1–2 drops)",
+      "White cloths",
+      "Leather conditioner (Lexol / Bickmore)"
     ],
-    "whenToStop": "If the stain persists after two gentle attempts, take it to a professional leather care specialist. Leather is too delicate to risk aggressive home treatments.",
+    "whenToStop": "Stop if leather is aniline, if coffee remains after one careful pass, or if anyone has applied harsh chemistry previously.",
     "warnings": [
-      "Always condition leather after any cleaning — cleaning strips natural oils.",
-      "Use a clean, soft cloth — rough materials scratch the leather finish.",
-      "Never use bleach, H₂O₂, or undiluted alcohol on leather."
+      "NEVER hydrogen peroxide on leather — strips permanently (the cotton trick)",
+      "NEVER OxiClean / chlorine bleach",
+      "NEVER acetone / undiluted alcohol",
+      "NEVER straight vinegar (strips finish over time)",
+      "NEVER baking soda paste (alkaline + abrasive)",
+      "NEVER hot water — sets casein + dries leather",
+      "NEVER skip conditioner",
+      "Aniline = pro from minute one"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use acetone, bleach, alcohol (undiluted), or H₂O₂ — strips finish and dye",
-      "Use excess water — causes warping and spotting",
-      "Skip conditioning after cleaning — leads to cracking"
+      "Never any oxidizer (peroxide / OxiClean / chlorine) on leather",
+      "Never acetone or undiluted alcohol",
+      "Never straight vinegar on leather finish",
+      "Never baking soda paste",
+      "Never hot water — sets casein + dries leather",
+      "Never excess water",
+      "Never skip conditioner"
     ],
     "fiberSensitivities": [
-      "Leather: avoid bleach and all oxidizers — they strip color and finish. Always condition after cleaning. Test product on inconspicuous area first; leather varies greatly in dye stability."
+      "Finished / pigmented leather: tolerates mild soap + barely-damp cloth + conditioner",
+      "Aniline / unfinished: pro-only",
+      "Suede: own protocol",
+      "Patent leather: own protocol"
     ]
   },
+  "materialWarnings": [
+    "Aniline = pro from minute one",
+    "Peroxide is the worst piece of bad advice for coffee on leather",
+    "Conditioner after every wet treatment, mandatory",
+    "Cold blot — even if coffee was hot"
+  ],
   "escalation": {
-    "when": "Stain has penetrated past the protective topcoat, or home treatment leaves residual discoloration",
-    "whatToTell": "Coffee stain on leather, treated at home with mild soap and conditioner. Stain may have penetrated the finish. May require re-dyeing or professional restoration.",
-    "specialistType": "leather care specialist"
+    "when": "Aniline / unfinished leather (always), coffee remaining after one home pass, or anyone has applied harsh chemistry previously.",
+    "whatToTell": "\"Coffee on [finished / aniline / unknown] leather, [black / with milk / cream], age [hours / days], one home pass with cold damp cloth + mild soap + conditioner. No oxidizer, no acetone, no alcohol used.\"",
+    "specialistType": "leather care specialist (NOT a regular dry cleaner — confirm sodium hydrosulfite + leather-safe chemistry)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the leather finished/pigmented or aniline/unfinished?",
-      "Is the stain fresh or has it been sitting and drying?",
-      "Has any product already been applied to the stain?",
-      "Is this a garment, handbag, or furniture?"
+      "Water-drop test: bead, soak, or in-between?",
+      "Black coffee or coffee with milk/cream?",
+      "Furniture / handbag / jacket / car seat?",
+      "Has anyone applied peroxide / OxiClean / acetone?",
+      "How long ago — fresh or aged?"
     ],
-    "modifierNotes": "Unfinished/aniline leather is far more porous and vulnerable — even water can leave marks. Fresh stains have much better outcomes. Any prior product application may have set the stain or damaged the finish."
+    "modifierNotes": "Coffee with cream adds protein (casein) — cold blot is even more important. Aged oxidized coffee stain on leather drifts darker and is nearly permanent without re-dyeing. Aniline leather is the unforgiving variant."
   },
-  "difficulty": 3,
-  "timeEstimate": "10–15 min",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
