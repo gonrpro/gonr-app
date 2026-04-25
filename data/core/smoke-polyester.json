@@ -1,77 +1,254 @@
 {
   "id": "smoke-polyester",
   "title": "Smoke on Polyester",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Smoke residue (soot) contains carbon particles, tar, nicotine (alkaloid), and volatile organic compounds. On polyester, carbon particles lodge mechanically in fiber texture while tar creates a sticky film. Nicotine produces yellow-brown staining through chemical bonding. The odor comes from VOCs absorbed into the fiber matrix. Fire smoke also contains acidic gases that can damage fibers.",
-  "whyThisWorks": "Dry cleaning (professional) is most effective because solvent dissolves tar without driving soot deeper into polyester. For DIY, surfactant with baking soda addresses the acidic soot. An oxidizer targets nicotine yellowing. Odor requires thorough airing or ozone treatment. Vacuuming loose soot BEFORE wet treatment prevents smearing.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–60 minutes home protocol; fire smoke = pro restoration",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "smoke",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "smoke",
+      "soot",
+      "nicotine",
+      "polyester",
+      "fire-vs-light-fork",
+      "ppe-required",
+      "oleophilic-fiber",
+      "odor-critical"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Smoke residue on polyester is carbon particulate (soot), tar, oily condensates, and — depending on source — nicotine, creosote, or combustion-byproduct acids. Polyester is OLEOPHILIC, meaning it grabs the tar and oily condensate component aggressively and holds onto residual odor longer than cotton. Two cases: (1) LIGHT SMOKE — cigarette, candle, incense, one-time kitchen mishap — surface yellowing and loose soot that respond to careful cleaning. (2) FIRE SMOKE — house fire, apartment fire, smoke from a neighbor's fire — heavy saturation of soot, tar, and acidic condensates that have penetrated the fiber. Fire smoke clothing is a fire-restoration job (IICRC S500 textile track), not a home wash. The biggest mistake on light smoke polyester: hot water or hot dryer. Heat sets oily smoke residue into polyester permanently AND yellows the fiber. Cool throughout, every step.",
+  "whyThisWorks": "Dry removal first lifts loose soot without smearing. Goo Gone (citrus solvent) cuts the tar and oily condensate that polyester holds onto so tightly. Dawn (engineered for cooking oil) emulsifies residual oil. Cool wash (NEVER hot) prevents heat from setting the residue into the fiber or yellowing the polyester. 3% peroxide on white polyester only oxidizes residual nicotine yellow without chlorine bleach (which damages polyester and yellows it long-term). The honest cap: heavy long-term smoker polyester or fire smoke polyester is often beyond home recovery.",
+  "defaultAssumption": "Smoker household clothing, candle / incense exposure, one-time kitchen smoke, polyester garment / blend / kitchen apron / restaurant wear. Fire smoke clothing = pro restoration. Long-term smoker fabric = often plateau-prone; manage expectations.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Fork — Light or Fire Smoke",
+      "technique": "Scope before any cleaning",
+      "equipment": "Good light, mask, gloves",
+      "dwellTime": "5 minutes",
+      "instruction": "FIRE SMOKE (any structure fire) = pro restoration, not home wash. LIGHT SMOKE (cigarette, candle, incense, one-time kitchen): continue. Heavy long-term smoker fabric: expect plateau, manage expectations."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "PPE and Care Label",
+      "technique": "Mask, gloves, label check",
+      "equipment": "N95 mask, disposable gloves, care label",
+      "dwellTime": "2 minutes",
+      "instruction": "N95 + gloves. Read the care label — most polyester is machine-washable cool. Dry-clean-only blends = pro. Open windows."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Shake and HEPA Vacuum Loose Soot Outdoors",
+      "technique": "Lift loose particulate before any moisture",
+      "equipment": "HEPA vacuum, outdoor space",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Take the garment outdoors. Shake gently downwind. HEPA vacuum surface soot. Never damp-cloth first — moisture turns loose soot into a smear that's harder to remove."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Goo Gone Pretreat for Tar Spots",
+      "technique": "Citrus solvent on tar / nicotine spots",
+      "equipment": "Goo Gone on white cloth, ventilation",
+      "dwellTime": "30–60 seconds per spot",
+      "instruction": "Apply Goo Gone to a white cloth — never pour on the garment. Tamp visible tar / nicotine spots from the back side with the front facing a clean towel (transfer pad). Hidden test on dyed polyester. Open windows, no flame."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool",
+      "technique": "Emulsify oily smoke residue",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Apply generous Dawn directly to spots. Soft toothbrush 10 min cool. Polyester is oleophilic — extended dwell needed. Cool rinse."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cool Soak Plus Cool Wash",
+      "technique": "Full-garment treatment",
+      "equipment": "OxiClean per label, cool water, washing machine",
+      "dwellTime": "30–60 min soak + full cool wash cycle",
+      "instruction": "OxiClean per label in COOL water 30–60 min soak. Then cool machine wash with detergent. Repeat soak if smell persists. NEVER hot — hot sets oily residue into polyester permanently."
+    },
+    {
+      "step": 7,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Nicotine Yellow",
+      "technique": "White polyester only",
+      "equipment": "3% H₂O₂ on cloth or in soak",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE polyester only — hidden test on dyed polyester first. 3% peroxide on residual nicotine-yellow areas, 5–10 min, cool rinse. Skip chlorine bleach — damages polyester and yellows over time."
+    },
+    {
+      "step": 8,
+      "side": "dry",
+      "agent": "Air-Dry Plus Outdoor Ventilation",
+      "technique": "Heat-free dry plus odor airing",
+      "equipment": "Hanger, outdoor air, fan",
+      "dwellTime": "Multi-day for odor",
+      "instruction": "AIR-DRY only. Hang outdoors if possible. Smoke odor in polyester is the slowest part — VOCs diffuse out gradually over days. NEVER hot dryer until smell is fully gone — heat sets residual oily smoke + yellows fiber."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Vacuum loose soot — do NOT brush or wipe (smears carbon into fiber)",
-      "2. Apply POG to dissolve tar component",
-      "3. Apply NSD to remove remaining soot and nicotine",
-      "4. If yellowing remains: apply H2O2 6%",
-      "5. Flush with cool water. Air dry in ventilated area"
+      "1. Fork — light vs fire smoke. Fire = IICRC S500 textile restoration.",
+      "2. PPE and care label check.",
+      "3. Outdoor shake plus HEPA vacuum loose soot.",
+      "4. Goo Gone pretreat for tar / nicotine spots, hidden test on dyed.",
+      "5. Generous Dawn pretreat, cool, 10 min, soft brush.",
+      "6. OxiClean cool soak plus cool machine wash.",
+      "7. 3% peroxide for nicotine yellow on white polyester.",
+      "8. Air-dry plus multi-day outdoor airing for odor."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%"
+      "N95 mask + gloves",
+      "HEPA vacuum",
+      "Goo Gone / citrus solvent",
+      "Dawn / NSD",
+      "OxiClean / oxygen bleach",
+      "3% Hydrogen peroxide (white polyester)",
+      "Cool water"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat sets oily smoke residue into polyester and yellows the fiber",
     "warnings": [
-      "Always test on hidden area first"
+      "FIRE SMOKE = pro restoration, not home wash",
+      "NEVER hot water or hot dryer — sets oily smoke and yellows polyester",
+      "NEVER chlorine bleach on polyester — damages and yellows fiber",
+      "Polyester is oleophilic — Dawn pretreat is critical",
+      "PPE — VOC and particulate exposure",
+      "Hidden test on dyed polyester before peroxide",
+      "Flammable solvent — no flame near Goo Gone"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Light Smoke or Fire Smoke",
+      "instruction": "Fire smoke (house fire, apartment fire, neighbor fire) on clothing is a restoration job, not a home wash. Soot, tar, and acidic condensates have penetrated the fiber, and the VOCs are health hazards. Restoration cleaners have specialized solvent baths and ozone for textiles. Light smoke (cigarette, candle, incense, one-time kitchen) — continue. Heavy long-term smoker fabric: this protocol helps but may not fully clear odor; ozone may be the finish."
+    },
+    {
+      "step": 2,
+      "agent": "Mask, Gloves, Care Label",
+      "instruction": "N95 mask and disposable gloves before handling. Open windows. Read the care label — most polyester is machine-washable cool. Dry-clean-only blends go to a pro. Two hard rules for polyester: NO hot water (sets oily smoke residue forever) and NO chlorine bleach (damages polyester and yellows it over time)."
+    },
+    {
+      "step": 3,
+      "agent": "Take It Outside and Shake the Loose Soot Off",
+      "instruction": "Outdoors, shake the garment gently downwind. HEPA vacuum (with brush attachment) any visible soot. Never damp-cloth or wet the fabric before this — moisture turns loose soot into a gray smear."
+    },
+    {
+      "step": 4,
+      "agent": "Goo Gone on a Cloth for Tar Spots",
+      "instruction": "Visible tar or heavy nicotine yellow spots: Goo Gone (orange bottle, citrus solvent) on a clean white cloth. Tamp the spot from the BACK with the front of the fabric over a folded clean towel that catches the transfer. Never pour on the garment. Hidden-area test on dyed polyester first. Ventilate. Goo Gone is flammable — no flame nearby."
+    },
+    {
+      "step": 5,
+      "agent": "Dawn Pretreat — Generous and Cool",
+      "instruction": "Polyester is oleophilic — it loves the oily component of smoke residue and holds it tight. Apply a generous amount of Dawn dish soap directly to the spotted areas. Work in with a soft toothbrush for 10 minutes. Cool water only. Polyester typically needs 2 Dawn passes for smoke-oil component."
+    },
+    {
+      "step": 6,
+      "agent": "OxiClean Cool Soak Plus Cool Machine Wash",
+      "instruction": "Mix OxiClean per label in COOL water. Soak the garment 30 to 60 minutes. Then run a cool machine wash with normal detergent. Repeat the soak if smell persists. NEVER use hot water — heat sets the oily smoke residue into polyester permanently and yellows the fiber."
+    },
+    {
+      "step": 7,
+      "agent": "3% Peroxide for Nicotine Yellow on White Polyester",
+      "instruction": "WHITE polyester only: 3% drugstore peroxide on residual nicotine-yellow areas, 5 to 10 minutes, then cool rinse. Hidden-area test on any dyed polyester first — peroxide can lighten color. Skip chlorine bleach entirely on polyester (damages fiber, yellows over time)."
+    },
+    {
+      "step": 8,
+      "agent": "AIR-DRY ONLY Plus Multi-Day Outdoor Airing for Odor",
+      "instruction": "Hang to AIR-DRY — never the hot dryer until the smell is fully gone. Hang outdoors if you can. Smoke odor in polyester is the slowest part because the fiber holds VOCs tightly. Multiple days of outdoor airing can finish what the wash started. Persistent odor = pro ozone treatment for textiles."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove loose material — brush, blot, or scrape as appropriate",
-      "2. Apply Dawn dish soap mixed with cold water",
-      "3. Blot with clean white cloth. Repeat if needed",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat"
+      "1. FIRE SMOKE = pro textile restoration, not home wash.",
+      "2. N95 + gloves + windows open. Care label check.",
+      "3. Outdoor shake plus HEPA vacuum loose soot.",
+      "4. Goo Gone pretreat for tar / nicotine spots, hidden test on dyed.",
+      "5. Generous Dawn pretreat, cool, 10 min, soft brush.",
+      "6. OxiClean cool soak 30–60 min plus cool machine wash.",
+      "7. 3% peroxide for nicotine yellow on white polyester only.",
+      "8. AIR-DRY + multi-day outdoor airing. Persistent odor = pro ozone."
     ],
     "products": [
-      "Dawn dish soap"
+      "N95 mask + disposable gloves",
+      "HEPA vacuum",
+      "Goo Gone / citrus solvent",
+      "Dawn dish soap",
+      "OxiClean Versatile",
+      "3% Hydrogen peroxide (white polyester only)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if this is fire smoke (pro restoration). Stop if smell persists after full wash + multi-day airing (pro ozone). Stop if hot water or hot dryer was already used (often permanent yellowing on polyester). Stop after 3 home cycles without progress.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "FIRE SMOKE is restoration, not home wash",
+      "NEVER hot water or hot dryer — sets oily smoke + yellows polyester",
+      "NEVER chlorine bleach on polyester — damages and yellows fiber",
+      "Polyester is oleophilic — Dawn pretreat is the unlock",
+      "PPE — soot, nicotine, VOC exposure",
+      "Hidden test on dyed polyester before peroxide",
+      "Goo Gone flammable — no flame"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on smoke + polyester — sets oily residue permanently",
+      "Never hot dryer until smell fully gone — heat sets and yellows",
+      "Never chlorine bleach on polyester",
+      "Never DIY fire smoke",
+      "Never damp-wipe loose soot before HEPA vacuum",
+      "Never pour solvent on garment",
+      "Never use solvent near flame"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs oily smoke residue tenaciously",
+      "Polyester yellows under heat over time",
+      "Polyester typically needs 2 Dawn passes for oil-component smoke",
+      "Polyester holds residual odor longer than cotton — patience and ventilation",
+      "Dyed polyester: hidden peroxide test mandatory"
     ]
   },
+  "materialWarnings": [
+    "Light smoke vs fire smoke is the whole fork",
+    "Fire smoke = pro textile restoration",
+    "No hot water / no hot dryer — heat sets oily smoke into polyester forever",
+    "Polyester loves smoke oil — Dawn pretreat is the unlock",
+    "Odor is the slowest part — patience plus ventilation"
+  ],
   "escalation": {
-    "when": "If smoke stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is smoke on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Fire smoke (any source). Heavy long-term smoker fabric — years of saturation through the fiber. Persistent odor after full wash + multi-day airing. Hot water or hot dryer already used (often permanent yellowing). 3 home cycles plateau. Dry-clean-only polyester blends.",
+    "whatToTell": "\"Smoke on polyester [white / dyed], source [cigarette / candle / incense / FIRE SMOKE], age [recent / long-term smoker], home-treated with [HEPA vacuum + Goo Gone pretreat + Dawn pretreat + OxiClean cool soak + cool wash + 3% peroxide on white]. No hot water / no hot dryer / no chlorine bleach. [Persistent odor / yellow shadow / fire restoration needed].\"",
+    "specialistType": "IICRC S500 fire and smoke textile restoration specialist for fire smoke; professional dry cleaner with solvent and ozone capability for persistent light-smoke odor"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Light smoke (cigarette / candle / incense / one-time kitchen) or fire smoke (structure fire)?",
+      "White or dyed polyester?",
+      "How long was the exposure — one-time event or long-term smoker home?",
+      "Has hot water or hot dryer been used yet?",
+      "Is the issue visible spots, residual yellow, odor, or all three?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The fire-vs-light split determines everything. Fire smoke = pro restoration. Long-term smoker polyester is the hardest light-smoke subset because polyester is oleophilic — it traps the oily condensate component and holds residual odor longer than cotton. Hot dryer at any prior step typically yellows polyester permanently and sets oily residue. Patience plus multi-day airing is the close-out — persistent odor needs pro ozone."
   },
-  "difficulty": 6,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

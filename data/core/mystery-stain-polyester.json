@@ -1,80 +1,231 @@
 {
   "id": "mystery-stain-polyester",
-  "title": "Mystery on Polyester",
+  "title": "Mystery Stain on Polyester",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Mystery stains have unknown composition and origin. On polyester, the stain could be protein, tannin, oil, dye, or any combination. Misidentifying the stain family leads to wrong treatment — and potentially setting the stain permanently (e.g., hot water on hidden protein, alkali on hidden tannin). Systematic testing is required.",
-  "whyThisWorks": "The systematic approach on polyester: start with the safest, most universal treatment (cold water + NSD) to avoid setting any component. Then test: does cold water dissolve it (water-soluble)? Does it feel greasy (oil)? Is it stiff/crusty (protein)? Is it colored without texture (dye/tannin)? Once identified, apply the correct family protocol. When in doubt, professional assessment prevents damage.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "10–30 minutes triage; outcome depends entirely on what the stain actually is",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "mystery-stain",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "mystery",
+      "unknown",
+      "polyester",
+      "triage-first",
+      "no-random-chemistry-stacking",
+      "cool-only-default",
+      "identify-before-treat"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "A mystery stain is a stain whose origin is unknown — a spot found on a garment, returned-from-laundry surprise, an unidentifiable mark on a kid's clothing. Misidentification is the central risk: hot water on protein sets it, alkali on tannin can set it, oxygen bleach on a dye stain can fix it but on an oil stain can do nothing, solvent on water-soluble dye can drive it deeper. Polyester adds two complications: (1) it is OLEOPHILIC, so any oil component grabs the fiber and resists casual cleaning, and (2) it is heat-sensitive — hot water sets oil and yellows the fabric, hot dryer locks dye permanently. The right move on a mystery stain is triage first: characterize the stain BEFORE applying chemistry, and start with the safest universal step (cool water + Dawn) that doesn't preclude later moves. The recurring trap is randomly stacking products — peroxide, then bleach, then ammonia, then solvent — which can lock the stain permanently AND mix dangerous combinations.",
+  "whyThisWorks": "Triage-first on polyester avoids the catastrophic mistakes (hot water on protein, chlorine on dye, peroxide stack with other oxidizers). Cool water + Dawn is the universal first step because it doesn't set anything: it's mild, neutral, cool, and can be followed by any other family-specific protocol if the stain reveals itself. Visual + tactile clues narrow the family — color tells dye / tannin, oily feel tells fat / cooking oil, stiffness tells protein, no texture but flat color tells dye or tannin. After identification, the standard family protocol applies. The honest cap on polyester: oily mystery stains, hot-dried mystery stains, and old-set mystery stains often plateau or fail at home — pro is the right call.",
+  "defaultAssumption": "Spot-on-laundry / returned-from-trip / kid's-clothes mystery, age unknown but possibly hot-dried, fiber confirmed polyester. Cool-only default. No chemistry stacking. Hot-dried = expect plateau.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage Visual and Tactile",
+      "technique": "Identify family before any chemistry",
+      "equipment": "Good light, fingertip, clean white cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Look closely. Color clues: red / brown / pink = food, blood, wine, dye? Yellow = oil, sweat, urine, age? Black / gray = ink, soot, mildew? Touch: oily feel = oil family. Stiff / crusty = protein family (blood, egg, milk, vomit). Flat color no texture = dye / tannin family. Smell — sour / sweet / chemical clues. Don't apply anything yet."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Has It Been Heat-Set?",
+      "technique": "Hot-dried assessment",
+      "equipment": "Care label history check",
+      "dwellTime": "1 minute",
+      "instruction": "If the item went through a hot wash or hot dryer with the stain on it, expectations drop sharply on polyester. Hot sets oil permanently and yellows the fiber. Manage outcome: many heat-set polyester mystery stains do not fully clear at home."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Cold Water Test First",
+      "technique": "Universal safe starting move",
+      "equipment": "Cold water on damp cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Press cold water through the back of the spot with a clean cloth on the front catching transfer. If the stain releases meaningfully, it's water-soluble (fresh tannin, fresh dye, fresh protein) — continue with cool Dawn. If nothing transfers, it's set or oil/dye/protein dependent."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Dawn — Universal Mild Step",
+      "technique": "Safe surfactant first pass",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Dawn + cool water on damp cloth, soft toothbrush 5–10 min. Cool rinse. This is the universal first pass — works on oil, breaks up many mild stains, doesn't set anything. Polyester is oleophilic so extended dwell helps."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Reassess Before Escalating",
+      "technique": "Identify, then commit to one family",
+      "equipment": "Clean fingertip, good light",
+      "dwellTime": "2 minutes",
+      "instruction": "Did Dawn lift it? If gone — done. Still oily feel = oil family — second Dawn pass. Stiff / crusty = protein family — cool soak with enzyme detergent. Color but no texture = dye / tannin — switch to OxiClean cool soak. Pick ONE family. Do NOT stack peroxide + bleach + ammonia + solvent randomly — locks stains permanently and creates dangerous fumes."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Family-Specific Second Pass",
+      "technique": "Commit to one identified family",
+      "equipment": "OxiClean OR enzyme detergent OR repeat Dawn — not all three",
+      "dwellTime": "30 minutes to 2 hours",
+      "instruction": "Oil family: repeat Dawn + cornstarch preload. Protein family: cool enzyme detergent soak (Persil ProClean / Tide Plus) 30 min, then cool wash. Dye / tannin family: OxiClean cool soak 1–6 hr. ONE family per session — reassess before stacking another."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Air-Dry and Inspect",
+      "technique": "Heat-free verification",
+      "equipment": "Hanger, fan, good light",
+      "dwellTime": "Air-dry to fully dry",
+      "instruction": "AIR-DRY only. Inspect dry — wet polyester can hide residual stain that reappears dry. NEVER hot dryer until fully clear (heat sets oil and dye into polyester permanently). If still present, escalate to pro rather than stacking another product."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Test with cold water first — if it dissolves, likely water-soluble (tannin or fresh protein)",
-      "2. If greasy texture: start dry side — apply POG, then NSD",
-      "3. If stiff/crusty: treat as protein — apply Protein Formula (enzyme-safe fibers) or NSD (delicates)",
-      "4. If colored/flat: treat as tannin — apply Tannin Formula, then H2O2 6% on colorfast",
-      "5. Flush with NSD after any treatment. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse"
+      "1. Triage visual and tactile — characterize the family before chemistry.",
+      "2. Heat-set assessment — hot-dried = sharply lower expectations.",
+      "3. Cold water test for water-solubility.",
+      "4. Cool Dawn universal first pass.",
+      "5. Reassess. Commit to ONE family — no random stacking.",
+      "6. Family-specific second pass (Dawn for oil, enzyme cool for protein, OxiClean for dye / tannin).",
+      "7. Air-dry, inspect, escalate to pro before stacking another family."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "POG (Paint Oil Grease remover)",
-      "Protein Formula",
-      "Tannin Formula",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD (universal first pass)",
+      "Cornstarch (oil preload)",
+      "Cool-enzyme detergent — Persil ProClean / Tide Plus (protein family)",
+      "OxiClean / oxygen bleach (dye / tannin family)",
+      "Cool water"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat sets nearly every stain family on polyester",
     "warnings": [
-      "Always test on hidden area first"
+      "Triage BEFORE chemistry — random stacking locks stains permanently",
+      "NEVER mix peroxide + chlorine + ammonia — toxic gas",
+      "NEVER hot water on protein, oil, or dye — sets all of them",
+      "Polyester is oleophilic and heat-sensitive — cool only",
+      "Hot-dried mystery stains on polyester are often permanent",
+      "One family per session — escalate before adding another"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Stop and Look Before You Apply Anything",
+      "instruction": "The biggest mistake on a mystery stain is reaching for the most aggressive product first. On polyester especially, that approach locks stains permanently and risks dangerous chemistry combinations. The right move is triage: figure out what family the stain belongs to before applying anything. Look at the color, the texture, the smell. Touch it with a clean fingertip. Oily? Stiff? Flat color? Each tells you something different."
+    },
+    {
+      "step": 2,
+      "agent": "Has It Been Hot-Dried?",
+      "instruction": "If the garment went through a hot wash or hot dryer with the stain on it, lower your expectations. Polyester punishes heat — hot sets oil into the fiber permanently and yellows the fabric. Many heat-set polyester mystery stains don't fully clear at home, no matter the chemistry."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Test — Safe Starting Move",
+      "instruction": "Press cold water through the BACK of the spot with a clean cloth on the front catching the transfer. If the stain releases meaningfully, it's water-soluble — fresh tannin (coffee, tea, juice), fresh dye, fresh protein. Continue with cool Dawn. If nothing transfers, the stain is set or non-water-soluble — likely oil, set dye, or set protein."
+    },
+    {
+      "step": 4,
+      "agent": "Cool Dawn — Universal First Pass",
+      "instruction": "Dawn + cool water on a damp cloth, soft toothbrush 5 to 10 minutes. Cool rinse. This is the safest universal first move — works on oil, helps with many mild stains, doesn't set anything. Polyester is oleophilic, so give it a few extra minutes."
+    },
+    {
+      "step": 5,
+      "agent": "Reassess — Pick ONE Family, Don't Stack",
+      "instruction": "Did Dawn clear it? Done. Still feels oily? Oil family — second Dawn pass with a cornstarch preload first (cornstarch on the spot 20 min, brush off, then Dawn). Stiff / crusty? Protein family — cool soak in an enzyme detergent like Persil ProClean or Tide Plus, 30 minutes, cool wash. Flat color, no texture? Dye / tannin family — OxiClean cool soak 1 to 6 hours. PICK ONE. Do NOT stack peroxide + bleach + ammonia + solvent randomly. That locks stains permanently AND can create toxic fumes (chlorine + ammonia = chloramine gas)."
+    },
+    {
+      "step": 6,
+      "agent": "Air-Dry and Inspect Before Any Heat",
+      "instruction": "AIR-DRY the polyester after each pass. Inspect dry — wet polyester can hide residual stain that reappears once dry. NEVER hot dryer until the stain is fully clear — heat sets oil and dye into polyester permanently. If the stain is still present after one family pass, escalate to a pro rather than stacking another product family."
+    },
+    {
+      "step": 7,
+      "agent": "When to Stop and Call a Pro",
+      "instruction": "Stop and escalate if: stain is hot-dried, multiple family passes haven't cleared it, the polyester is performance / specialty / dry-clean-only, you can't safely identify the family, or the stain is spreading. Tell them: \"Mystery stain on polyester [white / dyed], appearance [oily / stiff / flat color / mixed], age [fresh / unknown / hot-dried suspected], home-treated with [cool Dawn + cornstarch preload / enzyme cool soak / OxiClean cool soak]. No chemistry stacking. [Residual / unidentified family].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove loose material — brush, blot, or scrape as appropriate",
-      "2. Apply Dawn dish soap mixed with cold water",
-      "3. Blot with clean white cloth. Repeat if needed",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat"
+      "1. STOP. Look. Triage before any chemistry.",
+      "2. Heat-set assessment — hot-dried = lower expectations.",
+      "3. Cold water test for water-solubility.",
+      "4. Cool Dawn universal first pass.",
+      "5. Reassess — pick ONE family, don't stack.",
+      "6. Family-specific second pass: Dawn + cornstarch (oil), enzyme cool soak (protein), OxiClean cool soak (dye / tannin).",
+      "7. AIR-DRY + inspect dry. NEVER hot dryer until clear.",
+      "8. Escalate to pro before stacking another family."
     ],
     "products": [
-      "Dawn dish soap"
+      "Dawn dish soap (universal first pass)",
+      "Cornstarch (oil family preload)",
+      "Cool-enzyme detergent — Persil ProClean / Tide Plus (protein family)",
+      "OxiClean Versatile (dye / tannin family)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if hot-dried (often permanent on polyester). Stop if you can't identify the family. Stop after one family pass without progress — escalate, don't stack. Stop if performance / specialty / dry-clean-only polyester (pro). Stop if any other product is in the pipeline that could create a toxic mix.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "Triage BEFORE chemistry — wrong family sets the stain permanently",
+      "NEVER stack random products — locks stains and can create toxic fumes",
+      "NEVER mix peroxide + chlorine + ammonia",
+      "NEVER hot water until family is confirmed safe (most aren't)",
+      "NEVER hot dryer until the stain is fully clear",
+      "Polyester is oleophilic + heat-sensitive — cool only",
+      "Hot-dried polyester mystery stains are often permanent"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never apply chemistry without triage on a mystery stain",
+      "Never stack peroxide + chlorine + ammonia + solvent",
+      "Never hot water on a mystery stain",
+      "Never hot dryer until stain is confirmed clear",
+      "Never use chlorine bleach on polyester mystery stain — damages fiber, can lock dye"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — oil-family mystery stains grab the fiber tenaciously",
+      "Polyester is heat-sensitive — hot sets oil and yellows fabric",
+      "Polyester typically needs 2 Dawn passes for any oil component",
+      "Performance / specialty polyester: pro from minute one — coatings react unpredictably",
+      "Dyed polyester: hidden test before any oxidizer"
     ]
   },
+  "materialWarnings": [
+    "Triage first, chemistry second — mystery stains punish guessers",
+    "One family per session — don't stack random products",
+    "No hot water / no hot dryer on polyester mystery stains",
+    "Polyester is oleophilic + heat-sensitive — cool discipline matters",
+    "Hot-dried mystery stains on polyester are often permanent"
+  ],
   "escalation": {
-    "when": "If mystery stain stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is mystery stain on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Stain is hot-dried (often permanent). Family cannot be identified after triage. One family pass plateau — escalate before stacking another. Performance / specialty / dry-clean-only polyester. Stain is spreading during home treatment. Multiple unknown contributors (e.g., kid's shirt with several spots).",
+    "whatToTell": "\"Mystery stain on polyester [white / dyed / blend], appearance [oily / stiff / flat color / mixed / unknown], age [fresh / unknown / hot-dried suspected], home-treated with [cool Dawn + cornstarch preload / enzyme cool soak / OxiClean cool soak] — one family per session, no stacking. [Residual / unidentified family / spreading].\"",
+    "specialistType": "professional dry cleaner with spotting expertise — they have a much wider chemistry bench and can identify the family before treating"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "What does it look like — color, texture (oily, stiff, flat)?",
+      "Where did it come from — laundry, returned-from-trip, kid?",
+      "Has it been hot-washed or hot-dried with the stain on it?",
+      "Have you already tried any product? Which one?",
+      "Solid polyester, blend (with cotton, spandex), or performance fabric?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Triage is the entire job. Misidentification + chemistry = permanent stain. Random stacking = permanent stain plus possible toxic fumes. The heuristic: cold water test → cool Dawn → reassess → ONE family-specific second pass → escalate before stacking another. Hot-dried polyester mystery stains often plateau no matter the chemistry — manage expectations. Performance / technical polyester goes to a pro because the fabric coatings react unpredictably."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

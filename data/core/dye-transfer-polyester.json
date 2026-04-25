@@ -1,80 +1,217 @@
 {
   "id": "dye-transfer-polyester",
   "title": "Dye Transfer on Polyester",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Dye transfer occurs when loose dye from one garment migrates to polyester during washing — typically from dark denim, new colored items, or non-colorfast fabrics. The transferred dye bonds to the recipient fiber through the same mechanisms as intentional dyeing: hydrogen bonds, Van der Waals forces, and in some cases ionic bonds. Once set by heat or time, the dye behaves as if it were part of the fiber.",
-  "whyThisWorks": "An oxygen-based bleach (for colorfast items) or reducing agent (sodium hydrosulfite for whites) breaks the chromophore bonds in the transferred dye on polyester. Speed is critical — fresh transfers respond dramatically better than set ones. Re-washing immediately in cold water with color-safe bleach is the most effective first response. Heat (dryer) makes dye transfer permanent.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "1–6 hour cool soak; speed-critical, polyester locks set dye",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "dye-transfer",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "dye",
+      "color-run",
+      "polyester",
+      "speed-critical",
+      "no-heat",
+      "no-chlorine-bleach",
+      "polyester-locks-set-dye",
+      "white-only-color-remover"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Dye transfer on polyester is bleed from one garment onto another in the wash — typically dark denim, new colored items, or non-colorfast goods. Polyester is dyed industrially with disperse dyes at high temperature, which is exactly the trap on dye transfer: any heat at home (hot wash, hot dryer) drives the transferred dye INTO the polyester fiber the same way intentional dyeing does, and the result is permanent. Polyester also tends to lock set dye more aggressively than cotton because the fiber is hydrophobic and the dye bonds are non-polar (Van der Waals + hydrogen bonds). Two hard lines: (1) NEVER chlorine bleach (locks azo dyes into a yellow oxidation product permanently and damages polyester) and (2) NEVER hot water or hot dryer until cleared. White polyester tolerates oxygen bleach + reducing-bleach color removers. Dyed polyester narrows sharply because color removers strip garment dye too.",
+  "whyThisWorks": "Speed plus oxygen bleach in cool water is the most reliable home approach: re-wash IMMEDIATELY in cool before the dye sets through heat exposure, then OxiClean cool soak to break chromophore bonds. For partially set transfer on white polyester, a reducing-bleach color remover (Carbona / Rit) is the home nuclear option. The honest cap on polyester: once heat-set, it behaves like an intentional dye job and is essentially permanent. Polyester is more punishing than cotton on dye transfer — speed and cool-only discipline matter more.",
+  "defaultAssumption": "White polyester garment / blend / sportswear + dye transfer from a dark item in a recent wash, fresh and not yet hot-dried. Hot-dried polyester = usually permanent. Dyed polyester = pro is often the right call.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage — Has It Been Hot-Dried",
+      "technique": "Set assessment plus care label",
+      "equipment": "Care label, good light",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Hot-dried polyester with dye transfer is usually permanent — escalate or accept-as-is. Care label dry-clean-only / specialty performance fabric = pro. Otherwise act fast, do NOT dry the item again."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cool Re-Wash Immediately",
+      "technique": "Repeat the wash before any heat exposure",
+      "equipment": "Washing machine, cool water, normal detergent",
+      "dwellTime": "Full cool cycle",
+      "instruction": "Cool wash NOW, normal detergent. Do NOT dry. Polyester punishes any heat — keep it strictly cool until cleared."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "OxiClean Cool Soak",
+      "technique": "Oxygen bleach to break chromophore bonds",
+      "equipment": "OxiClean per label, cool water, soak basin",
+      "dwellTime": "1–6 hours, check hourly",
+      "instruction": "Mix OxiClean per label in COOL water. Soak 1–6 hours. Check hourly — pull when transfer clears. Cool rinse, cool re-wash. Repeat soak if partial."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Color Remover for White Polyester Only — Nuclear",
+      "technique": "Reducing bleach (sodium hydrosulfite)",
+      "equipment": "Carbona Color Run Remover or Rit Color Remover, ventilation",
+      "dwellTime": "Per label",
+      "instruction": "WHITE polyester only. Per label — Carbona Color Run Remover or Rit Color Remover (sodium hydrosulfite). Strips ALL dye. Ventilate (sulfur smell). Cool rinse, cool wash. Some Rit formulations call for warm water — stay on the cool end of the label and skip if the label demands hot."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% Hydrogen Peroxide for Residual Color",
+      "technique": "Spot oxidation on white polyester",
+      "equipment": "3% H₂O₂ on damp cloth or as soak additive",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE polyester only — hidden test on dyed polyester first. 3% peroxide damp cloth or add to OxiClean soak. Cool rinse."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "AIR-DRY in Direct Sun — No Heat Until Clear",
+      "technique": "UV finish, no dryer",
+      "equipment": "Hanger, direct sunlight, fan",
+      "dwellTime": "Half-day plus inspection",
+      "instruction": "AIR-DRY in direct sunlight. UV breaks down residual dye. NEVER hot dryer or iron until transfer is fully gone — polyester locks dye under heat permanently. If color remains, repeat OxiClean soak before any heat."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply sodium hydrosulfite (reducing agent) to break the transferred dye bonds",
-      "2. Flush with NSD and cool water",
-      "3. If color remains: apply H2O2 6% as oxidizing bleach — 5-15 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Repeat full cycle if needed"
+      "1. Triage — hot-dried (usually permanent), dry-clean-only / specialty = pro.",
+      "2. Cool re-wash immediately. No dryer.",
+      "3. OxiClean cool soak 1–6 hr, check hourly.",
+      "4. Color Remover (reducing bleach) for white polyester only, ventilation.",
+      "5. 3% H₂O₂ for residual color on white polyester.",
+      "6. AIR-DRY plus sun-dry. NO heat until clear."
     ],
     "products": [
-      "sodium hydrosulfite",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "OxiClean / oxygen bleach",
+      "Carbona Color Run Remover or Rit Color Remover (white polyester only)",
+      "3% Hydrogen peroxide (white polyester)",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat permanently sets dye into polyester",
     "warnings": [
-      "Speed is critical — treat immediately before dye bonds",
-      "Heat makes dye transfer permanent"
+      "NEVER chlorine bleach — locks dye permanently and damages polyester",
+      "NEVER hot water or hot dryer — heat sets dye into polyester forever",
+      "Color Remover is white-only — strips all dye including the polyester's",
+      "Polyester locks set dye more aggressively than cotton — speed matters",
+      "Dry-clean-only / specialty performance fabric = pro",
+      "Sulfur smell from reducing bleach — ventilate"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Polyester Punishes Heat on Dye Transfer",
+      "instruction": "Polyester is industrially dyed with heat — and the same heat at home drives transferred dye into the fiber permanently. If the item has already been through a hot wash or hot dryer with the transfer on it, the dye is usually set. If not, you have a real shot — but only with strict cool discipline. Two hard rules: NO chlorine bleach (permanent yellow lock) and NO heat until cleared."
+    },
+    {
+      "step": 2,
+      "agent": "Care Label Triage",
+      "instruction": "Dry-clean-only polyester, specialty performance fabric (Gore-Tex, athletic compression), or dyed colored polyester narrow your home options sharply. White or light washable polyester = home protocol candidate. Anything else = pro."
+    },
+    {
+      "step": 3,
+      "agent": "Cool Re-Wash Immediately — Don't Dry",
+      "instruction": "Run the polyester through a cool wash cycle right now with normal detergent. Do NOT dry. The dye is partially soluble in cool water during the first wash — every hour of delay reduces success."
+    },
+    {
+      "step": 4,
+      "agent": "OxiClean Cool Soak — 1 to 6 Hours",
+      "instruction": "Mix OxiClean per label in COOL water. Submerge the polyester. Check every hour — many transfers clear within 2 to 3 hours. Cool rinse, second cool wash with detergent. Repeat soak if partial improvement."
+    },
+    {
+      "step": 5,
+      "agent": "Color Remover — White Polyester Only, Last Resort",
+      "instruction": "If white polyester still has color after the OxiClean soak: Carbona Color Run Remover or Rit Color Remover (sodium hydrosulfite). Per label. Ventilate. DO NOT use on dyed polyester — strips ALL dye including the garment's. If the label calls for hot water, skip this step on polyester — hot sets any unrecovered dye permanently."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide for Residual Color on White",
+      "instruction": "Residual color on WHITE polyester: 3% drugstore peroxide on a damp cloth, or add to the OxiClean soak. Hidden-area test on dyed polyester first."
+    },
+    {
+      "step": 7,
+      "agent": "AIR-DRY in Direct Sun — No Heat Until Clear",
+      "instruction": "Hang in direct sunlight to dry. UV breaks down residual dye on polyester. NEVER hot dryer or iron until the transfer is fully gone — heat permanently sets dye into polyester. If color remains after sun-dry, repeat OxiClean soak before any heat."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Re-wash IMMEDIATELY in cold water — do NOT dry",
-      "2. Dissolve 1 scoop OxiClean in cold water. Soak the item for 1-6 hours",
-      "3. Check progress every hour. Re-wash in cold water with detergent",
-      "4. Repeat soak if needed — some dye transfers require multiple cycles",
-      "5. Air dry only — dryer heat permanently sets dye transfer"
+      "1. NO chlorine bleach. NO heat until fully clear.",
+      "2. Triage — hot-dried = usually permanent. Dry-clean-only / specialty = pro.",
+      "3. Cool re-wash IMMEDIATELY. No dryer.",
+      "4. OxiClean cool soak 1–6 hr, check hourly.",
+      "5. Carbona / Rit Color Remover for WHITE polyester only, ventilate.",
+      "6. 3% peroxide for residual color on white polyester, hidden test on dyed.",
+      "7. AIR-DRY plus sun-dry. NO heat until fully clear."
     ],
     "products": [
-      "OxiClean Versatile Stain Remover"
+      "OxiClean Versatile",
+      "Carbona Color Run Remover / Rit Color Remover (white polyester only)",
+      "3% Hydrogen peroxide (white polyester)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if hot-dried (usually permanent). Stop if dyed / specialty performance / dry-clean-only polyester (pro). Stop if Color Remover label requires hot water (would set unrecovered dye). Stop after 2 OxiClean soaks plus Color Remover (if eligible) without progress.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "NEVER chlorine bleach — permanent lock on polyester",
+      "NEVER hot water or hot dryer — permanent dye set",
+      "Color Remover is white-only",
+      "Polyester locks set dye more than cotton — speed matters",
+      "Dyed polyester / specialty performance fabric = pro"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never chlorine bleach on polyester — damages fiber + permanent dye lock",
+      "Never hot water or hot dryer until cleared",
+      "Never Color Remover on dyed polyester",
+      "Never iron the stained area before clearing",
+      "Never mix peroxide + chlorine + ammonia"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "White polyester: tolerates OxiClean cool soak, Color Remover (white only), 3% peroxide",
+      "Dyed polyester: hidden test mandatory before peroxide; Color Remover banned",
+      "Performance polyester (athletic, technical): pro — coatings react unpredictably",
+      "Polyester is hydrophobic — set dye locks more aggressively than on cotton",
+      "Polyester yellows under heat — additional reason no hot dryer"
     ]
   },
+  "materialWarnings": [
+    "Speed matters more than any product choice",
+    "No chlorine bleach — permanent lock",
+    "No heat until fully clear — polyester locks dye under heat",
+    "Color Remover is white-only",
+    "Performance / specialty polyester = pro from minute one"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is dye transfer on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot dryer already used (usually permanent). Dyed polyester. Performance / dry-clean-only / specialty polyester. 2 OxiClean soaks plus eligible Color Remover plateau. Active dye spread continuing during home treatment.",
+    "whatToTell": "\"Dye transfer on [white / dyed] polyester, [fresh / hot-dried], source [denim / red garment / mixed wash], home-treated with [cool re-wash + OxiClean cool soak × N + Color Remover on white + 3% peroxide on white + sun-dry]. No chlorine bleach, no heat. [Residual color / hot-dried suspected / spreading].\"",
+    "specialistType": "professional dry cleaner with reducing-bleach chemistry (sodium hydrosulfite controlled dilution) and polyester color-stripping experience"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "How fresh — current wash or hot-dried already?",
+      "White polyester or dyed / colored?",
+      "Source of the transfer — denim / red / mixed?",
+      "Care label — washable, dry-clean-only, performance, specialty?",
+      "Has the item been ironed since the transfer?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Fresh + white + not hot-dried = real shot at home recovery. Hot-dried = usually permanent. Dyed polyester = sharply narrowed bench. Performance / technical polyester = pro from minute one because the fabric coatings react unpredictably to oxygen bleach and reducing bleach. Red and navy transfers are the toughest — budget extra OxiClean cycles."
   },
-  "difficulty": 6,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

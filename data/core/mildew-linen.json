@@ -1,77 +1,222 @@
 {
   "id": "mildew-linen",
   "title": "Mildew on Linen",
-  "stainFamily": "specialty",
+  "stainType": "biological",
+  "stainFamily": "biological",
   "surface": "linen",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Mildew is a living fungal organism that digests organic material in linen for nutrition. The visible discoloration (gray, black, green) comes from fungal spores and metabolic byproducts. Mildew roots (hyphae) penetrate into the fiber structure, making surface cleaning insufficient. The organism thrives in warm, humid, dark conditions and produces musty volatile organic compounds (odor).",
-  "whyThisWorks": "An oxidizer (H2O2 or oxygen bleach) kills the mildew organism and breaks down the pigmented metabolic byproducts on linen. Surfactant removes the dead fungal material. For persistent staining, sunlight exposure provides additional UV oxidation. Preventing recurrence requires addressing the moisture source — mildew returns if conditions remain favorable.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "30–90 minutes home treatment; structural mildew or vintage linen = pro / remediation specialist",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "mildew",
+    "surfaceCanonical": "linen",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "biological",
+      "fungal",
+      "linen",
+      "moisture-source-fix",
+      "ppe-required",
+      "refusal-biased",
+      "structured-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Mildew on linen is a living fungal colony — hyphae penetrate fiber, spores release on contact, metabolic byproducts cause gray / black / green staining, and microbial volatile organic compounds cause the musty odor. Linen is cellulose (similar to cotton) and tolerates oxygen-bleach chemistry, but it's more delicate than cotton when wet — linen wrinkles aggressively and structured / lined / vintage linen warps under aggressive handling. Two cases: (1) SURFACE MILDEW on simple flat washable linen — tractable home job. (2) STRUCTURAL MILDEW — heavily saturated linen, vintage / antique pieces with fiber-level penetration, or linen attached to a structure (curtains in a damp basement, lined drapery with mold inside the lining) — that's a remediation / specialty conservator situation, not a stain. The hard line that separates the two is moisture: if the linen is in a permanently damp environment, every cleaning is temporary until the moisture source is fixed. The second hard line is chlorine bleach — strips dye on dyed linen, weakens cellulose at concentration, and doesn't fix the cause.",
+  "whyThisWorks": "OxiClean / sodium percarbonate cool soak on white or color-fast washable linen kills surface mildew organisms and oxidizes pigmented byproducts. Linen tolerates this without the damage chlorine bleach causes. 3% peroxide on whites adds a residual-stain pass. Sun-dry adds UV antimicrobial finish AND drives moisture out. The hard prerequisite: moisture-source fix. Mildew returns to the same spot if humidity, leak, or condensation remain. Without that fix, every cleaning is temporary.",
+  "defaultAssumption": "Simple flat washable linen — napkin, plain shirt, basic tablecloth, plain pillowcase — with surface mildew from a damp closet, basement storage, or extended damp folding. Structured / lined / vintage / dyed-saturated linen, structural mildew, or curtains attached to wet windows = pro or remediation specialist.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage and Care Label",
+      "technique": "Surface vs structural assessment",
+      "equipment": "Care label, good light, N95 mask, gloves",
+      "dwellTime": "5 minutes",
+      "instruction": "Dry-clean-only / structured / lined / vintage linen = pro from minute one. Simple flat washable linen = home candidate. PPE: N95 mask + gloves before touching mildew. Inspect: visible spots vs heavy saturation through the fiber. Heavy saturation, fiber weakness, or musty smell from a lining = remediation."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Outdoor Spore Removal",
+      "technique": "Brush + vacuum outdoors",
+      "equipment": "Soft brush, HEPA vacuum, outdoor space",
+      "dwellTime": "5 minutes",
+      "instruction": "Outdoors. Soft-brush spores away from face, downwind. HEPA vacuum follows the brush. Never indoors — spores aerosolize and recolonize new fabric."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "OxiClean Cool Soak",
+      "technique": "Oxygen bleach kills organism + oxidizes pigment",
+      "equipment": "OxiClean per label, COOL water, basin",
+      "dwellTime": "30 min – 2 hours",
+      "instruction": "Mix OxiClean per label in COOL water. Submerge the linen 30 min – 2 hr. Check at 30 min — pull when pigment clears. Cool rinse, then second cool wash with normal detergent."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "3% Hydrogen Peroxide for Residual Pigment",
+      "technique": "White / light linen only",
+      "equipment": "3% H₂O₂ on damp cloth or as soak additive",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE or very light linen only. Hidden-area test on dyed linen first. 3% peroxide damp cloth or as add to OxiClean soak. Cool rinse."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Sun-Dry Antimicrobial Finish",
+      "technique": "UV finish + moisture extraction",
+      "equipment": "Direct sunlight, drying rack outdoors",
+      "dwellTime": "Half-day minimum, multi-day for thick weave",
+      "instruction": "Hang in direct sunlight several hours. UV kills residual spores and drives moisture out. AIR-DRY only — NEVER hot dryer until fully clear (heat sets pigmented byproducts)."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Moisture Source Fix",
+      "technique": "Eliminate recurrence conditions",
+      "equipment": "Dehumidifier, leak repair, ventilation",
+      "dwellTime": "Permanent",
+      "instruction": "Identify and fix the moisture source — humidity above 60%, basement leak, condensation, damp closet. Without this, mildew returns to the same fabric. Dehumidifier under 50% RH, repair leaks, add ventilation. Don't store linen in a damp space."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Brush off loose mildew spores outdoors or in ventilated area",
-      "2. Apply H2O2 6% to kill remaining organism and bleach discoloration",
-      "3. Apply NSD to remove dead fungal material",
-      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Air dry in sunlight if possible — UV provides additional antimicrobial action"
+      "1. Triage — surface vs structural; structured / vintage = pro.",
+      "2. PPE up. Outdoor HEPA vacuum and brush spore removal.",
+      "3. OxiClean cool soak 30 min – 2 hr.",
+      "4. 3% H₂O₂ for residual pigment on white / light linen, hidden test.",
+      "5. Sun-dry plus AIR-DRY. NO heat until clear.",
+      "6. Moisture-source fix — dehumidifier, leak repair, ventilation."
     ],
     "products": [
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "OxiClean / sodium percarbonate",
+      "3% Hydrogen peroxide (white / light linen)",
+      "HEPA vacuum",
+      "Dehumidifier",
+      "PPE — N95, gloves, ventilation"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat sets pigmented byproducts",
     "warnings": [
-      "Always test on hidden area first"
+      "Structured / lined / vintage linen = pro from minute one",
+      "Structural mildew (heavy fiber penetration, lining contamination, fabric weakness) = remediation specialist",
+      "NEVER chlorine bleach — strips color, weakens cellulose at concentration",
+      "PPE required — mildew spores are inhalation hazards",
+      "Hidden test on dyed linen before peroxide",
+      "Moisture-source fix is non-negotiable for durability"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Mildew Is a Living Organism, Not a Stain",
+      "instruction": "Mildew is fungus growing on your linen. Surface mildew on a washable piece is fixable. Heavy saturation, vintage linen, fiber weakness, or mold inside a lining is a remediation / conservator job, not a peroxide bottle. Don't breathe spores. N95 mask and gloves before you start. Open windows."
+    },
+    {
+      "step": 2,
+      "agent": "Care Label and Triage",
+      "instruction": "Dry-clean-only linen, structured pieces (lined jackets, drapery), or vintage linen all narrow your home options sharply — that's pro from minute one. Simple flat washable linen (napkin, plain shirt, basic tablecloth, pillowcase) = home candidate. If the linen feels brittle or the fabric is weakening, that's fiber-level damage from prolonged mildew — pro."
+    },
+    {
+      "step": 3,
+      "agent": "Take It Outside and Get the Loose Spores Off",
+      "instruction": "Outdoors only. Soft-brush the visible spores away from your face, downwind. Follow with a HEPA vacuum. Never do this indoors — spores aerosolize and start growing on other fabric in the room. Wear the N95 the whole time."
+    },
+    {
+      "step": 4,
+      "agent": "OxiClean Cool Soak — 30 Minutes to 2 Hours",
+      "instruction": "Mix OxiClean per label in COOL water. Submerge the linen. Check every 30 minutes — pull when the pigment clears. Cool rinse, then a second cool wash with normal detergent. NEVER hot water — heat sets pigmented mildew byproducts into linen."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide for Residual Pigment on White Linen",
+      "instruction": "WHITE or very light linen only: 3% drugstore peroxide on a damp cloth, or add to the OxiClean soak. Hidden-area test on dyed linen first — peroxide can lighten color. Skip on dyed unless hidden test passes."
+    },
+    {
+      "step": 6,
+      "agent": "Sun-Dry — UV Finishes the Job",
+      "instruction": "Hang the linen in direct sunlight for several hours. UV kills residual spores and drives moisture out of the weave. AIR-DRY only — NEVER hot dryer until you've confirmed the pigment is fully gone. Heat sets residual mildew byproducts."
+    },
+    {
+      "step": 7,
+      "agent": "Fix the Moisture Source — This Is Not Optional",
+      "instruction": "Mildew returns to the same fabric if the conditions return. Identify the cause: damp closet, basement humidity, condensation, leak, storage in a wet space. Run a dehumidifier under 50% relative humidity. Repair leaks. Don't fold and store linen damp. Without this, every cleaning is temporary."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Brush off loose mildew spores outdoors — wear a mask",
-      "2. Mix 1 scoop OxiClean per gallon of warm water. Apply or soak",
-      "3. Scrub gently with soft brush. Rinse thoroughly",
-      "4. Air dry in direct sunlight if possible — UV kills remaining spores",
-      "5. Repeat if stain persists"
+      "1. PPE: N95 + gloves. Open windows.",
+      "2. Care label triage — dry-clean-only / structured / vintage = pro.",
+      "3. Outdoor brush + HEPA vacuum spore removal away from face.",
+      "4. OxiClean cool soak 30 min – 2 hr.",
+      "5. 3% peroxide for residual pigment on white linen only, hidden test on dyed.",
+      "6. Sun-dry several hours + AIR-DRY. NEVER hot dryer until clear.",
+      "7. Fix the moisture source — dehumidifier, leak repair, dry storage."
     ],
     "products": [
-      "OxiClean Versatile Stain Remover"
+      "OxiClean Versatile",
+      "3% Hydrogen peroxide (white linen only)",
+      "HEPA vacuum",
+      "Dehumidifier",
+      "N95 mask + gloves",
+      "Soft brush + cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if linen is dry-clean-only, structured, lined, vintage, or showing fiber weakness. Stop if mildew returns within days — moisture source needs professional diagnosis. Stop after 2 OxiClean soaks plus sun-dry without progress.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "Structured / lined / vintage linen = pro from minute one",
+      "Heavy saturation or fiber weakness = remediation, not stain",
+      "NEVER chlorine bleach — strips color, weakens cellulose",
+      "NEVER hot dryer until pigment fully cleared",
+      "PPE required — mildew spores are inhalation hazards",
+      "Moisture-source fix is non-negotiable"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong concentrated acids — weakens cellulose",
-      "No chlorine bleach on colored linen"
+      "Never treat structured / lined / vintage linen at home",
+      "Never chlorine bleach on linen mildew",
+      "Never brush mildew indoors — spores aerosolize",
+      "Never skip PPE — N95 and gloves required",
+      "Never skip the moisture-source fix",
+      "Never hot water or hot dryer until pigment cleared"
     ],
     "fiberSensitivities": [
-      "Strongest natural fiber when wet — very durable",
-      "Wrinkles easily but tolerates aggressive cleaning",
-      "Neutralize acid spotters after use on cellulose"
+      "White / light washable linen: tolerates OxiClean cool soak + 3% peroxide",
+      "Dyed linen: hidden test mandatory before peroxide",
+      "Structured / lined linen: pro — warps under wet handling",
+      "Vintage / antique linen: pro — fiber fragility under oxidizers",
+      "Heavily saturated linen with fiber weakness: remediation, not cleaning"
     ]
   },
+  "materialWarnings": [
+    "Structured / vintage linen = pro from minute one",
+    "Heavy saturation or fiber weakness = remediation specialist territory",
+    "No chlorine bleach — strips dye and weakens cellulose",
+    "Moisture-source fix is part of the protocol, not optional",
+    "PPE is required — spore inhalation is a real hazard"
+  ],
   "escalation": {
-    "when": "If mildew stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is mildew on linen, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Dry-clean-only / structured / lined / vintage linen. Heavy saturation through the weave or fiber weakness from prolonged mildew. Mildew returns within days of home cleaning (moisture source not fixed). 2 home OxiClean soaks plus sun-dry plateau. Lining contamination on a structured piece. Health concerns — anyone with asthma, immune issues, or mold sensitivity in the home.",
+    "whatToTell": "\"Mildew on [white / light / dyed / vintage / structured] linen, [surface only / heavy saturation / fiber weakness], age [days / weeks / months], moisture source [identified — humidity / leak / unknown], home-treated with [PPE + outdoor HEPA + OxiClean cool soak + 3% peroxide on white + sun-dry] — no chlorine bleach, no hot. [Recurring within days / not improving / suspect lining contamination / suspect fiber damage].\"",
+    "specialistType": "professional dry cleaner with mildew / mold experience for surface mildew on simple linen; specialty textile conservator for vintage or heavily saturated pieces; licensed mold remediation specialist if structural / lining contamination or recurring environmental source"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Simple flat washable linen, structured / lined, or vintage?",
+      "Surface visible spots, or has the mildew penetrated the weave?",
+      "Where is the moisture coming from — humidity, damp closet, leak, condensation?",
+      "How long has the linen been stored damp?",
+      "Anyone in the home with asthma or mold sensitivity?",
+      "White, light, or dyed?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Care label is the first gate — washable simple linen proceeds, structured / lined / vintage goes to pro. Heavy fiber-level saturation means the linen has structural damage and a stain protocol won't recover it. Moisture-source fix is what makes the cleaning durable. Health-sensitive household = pro / remediation regardless of fabric. Linen wrinkles aggressively wet — handle gently, no aggressive agitation."
   },
-  "difficulty": 5,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

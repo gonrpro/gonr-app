@@ -1,77 +1,268 @@
 {
   "id": "smoke-carpet",
   "title": "Smoke on Carpet",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "carpet",
   "sector": "carpet",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Smoke residue (soot) contains carbon particles, tar, nicotine (alkaloid), and volatile organic compounds. On carpet, carbon particles lodge mechanically in fiber texture while tar creates a sticky film. Nicotine produces yellow-brown staining through chemical bonding. The odor comes from VOCs absorbed into the fiber matrix. Fire smoke also contains acidic gases that can damage fibers.",
-  "whyThisWorks": "Dry cleaning (professional) is most effective because solvent dissolves tar without driving soot deeper into carpet. For DIY, surfactant with baking soda addresses the acidic soot. An oxidizer targets nicotine yellowing. Odor requires thorough airing or ozone treatment. Vacuuming loose soot BEFORE wet treatment prevents smearing.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "30–90 minutes home triage; fire smoke = IICRC S500 restoration, not cleaning",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "smoke",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "smoke",
+      "soot",
+      "nicotine",
+      "carpet",
+      "fire-vs-light-fork",
+      "ppe-required",
+      "dry-removal-first",
+      "odor-critical"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Smoke residue on carpet is a mix of carbon particulate (soot), tar, oily condensates, and — depending on source — nicotine, creosote, or combustion-byproduct acids. Two cases that need different responses: (1) LIGHT SMOKE — cigarette / candle / incense / one-time kitchen mishap — surface yellowing and loose soot that responds to careful dry removal plus targeted cleaning, and (2) FIRE SMOKE — house fire, apartment fire, or smoke from a neighbor's fire — heavy saturation of soot, tar, and acidic condensates that have penetrated the carpet pile, backing, and pad. Fire smoke carpet is a fire-restoration job (IICRC S500 standard), not a stain job. Attempting DIY on fire smoke risks inhaled VOC exposure and almost always fails because the pad is contaminated. The number-one mistake on light smoke is wiping with a damp cloth before vacuuming — moisture turns loose soot into a gray smear that's harder to clean than the original.",
+  "whyThisWorks": "For light smoke: dry removal first (HEPA vacuum + dry chemical sponge) lifts loose soot OUT of the pile before any moisture can smear it. Then citrus solvent (Goo Gone) on a cloth dissolves tar residue, Dawn emulsifies, and 3% peroxide on white-only synthetic carpet oxidizes residual nicotine yellow. For fire smoke or pad contamination, no home chemistry reaches the pad or neutralizes acidic condensates. Knowing which case you're in is half the protocol. Odor is the slowest part — VOCs diffuse out of carpet over days; ozone treatment is the pro escalation.",
+  "defaultAssumption": "Cigarette smoker household, candle soot, incense residue, or one-time kitchen mishap on synthetic (nylon / polyester / olefin) carpet. House fire, apartment fire, smoke contamination from a neighbor's fire, or visible pad saturation = restoration specialist, not home cleaning. Wool carpet = pro on smoke from minute one.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Fork — Light Smoke or Fire Smoke",
+      "technique": "Scope before any cleaning",
+      "equipment": "Good light, mask, gloves",
+      "dwellTime": "5 minutes",
+      "instruction": "FIRE SMOKE (any building fire, neighbor fire, structure smoke that came into the home): STOP. Restoration job, not cleaning. Call IICRC S500 certified company — insurance typically covers it. LIGHT SMOKE (cigarette, candle, incense, one-time kitchen): continue. When in doubt, treat as fire smoke."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "PPE and Pad Check",
+      "technique": "Mask, gloves, pad assessment",
+      "equipment": "N95 mask, disposable gloves",
+      "dwellTime": "2 minutes",
+      "instruction": "N95 + gloves. Press the carpet — if the pad below feels damp, smells musty, or has visible black staining through the carpet, the pad is contaminated. Stop and call a pro. Even light smoke residue has nicotine + tar + VOCs that are respiratory irritants."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "HEPA Vacuum Dry — No Damp Cloth First",
+      "technique": "Lift loose soot before any moisture",
+      "equipment": "HEPA vacuum (non-HEPA recirculates fine soot)",
+      "dwellTime": "15–20 minutes",
+      "instruction": "HEPA vacuum the carpet in slow overlapping passes — entire affected area, not just the visible spot. Don't grind the head into the pile. Non-HEPA vacuums blow fine soot back into the room. NEVER damp-cloth or damp-brush before vacuuming — moisture turns loose soot into a gray smear that's much harder to clean."
+    },
+    {
+      "step": 4,
+      "side": "dry",
+      "agent": "Dry Chemical Sponge for Embedded Soot",
+      "technique": "Mechanical pickup with vulcanized rubber",
+      "equipment": "Dry chemical sponge (soot sponge, ~$10)",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Wipe the carpet pile in long straight strokes from clean toward dirty area. DO NOT wet the sponge. As the face darkens, slice off the dirty layer with a knife to expose clean rubber. Bag used sponge sealed."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Goo Gone Cloth Tamp for Tar Spots",
+      "technique": "Citrus solvent on white cloth",
+      "equipment": "Goo Gone on white cotton cloth, ventilation",
+      "dwellTime": "30–60 seconds per pass",
+      "instruction": "Apply Goo Gone to a white cloth — never pour on carpet. Tamp visible tar / nicotine residue spots from the top. Flip cloth as it picks up brown / yellow. 2–3 passes. Hidden test on dyed carpet first. Open windows — flammable, no flame."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "Dawn Damp-Cloth Pass",
+      "technique": "Emulsify solvent residue",
+      "equipment": "Dawn + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn + cool water on a damp cloth. Press, work soft brush, blot. Damp-cloth only — never pour. 2 passes for residue."
+    },
+    {
+      "step": 7,
+      "side": "wet-minimal",
+      "agent": "3% Hydrogen Peroxide for Nicotine Yellow",
+      "technique": "White synthetic carpet only",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE synthetic carpet only — hidden test mandatory on dyed carpet (peroxide can lighten carpet dye). 3% peroxide damp cloth 5–10 min for residual nicotine yellow. Skip on wool carpet (yellows wool)."
+    },
+    {
+      "step": 8,
+      "side": "dry",
+      "agent": "Weighted Towels Plus Fan-Dry Plus Ventilation",
+      "technique": "Extract moisture, ventilate odor",
+      "equipment": "Paper towels + weight, fan, open windows",
+      "dwellTime": "Overnight + multi-day ventilation",
+      "instruction": "Weighted paper towels overnight. Fan + windows open for days. Smoke odor is the slowest part — VOCs diffuse out gradually. Baking soda dusted overnight + vacuumed off helps mild residual smell. Persistent odor = pro ozone treatment (room cleared of people, pets, plants during use)."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Vacuum loose soot — do NOT brush or wipe (smears carbon into fiber)",
-      "2. Apply POG to dissolve tar component",
-      "3. Apply NSD to remove remaining soot and nicotine",
-      "4. If yellowing remains: apply H2O2 6%",
-      "5. Flush with cool water. Air dry in ventilated area"
+      "1. Fork — light smoke vs fire smoke. Fire = IICRC S500, not cleaning.",
+      "2. PPE and pad assessment. Pad contamination = restoration.",
+      "3. HEPA vacuum dry — no damp contact first.",
+      "4. Dry chemical sponge for embedded soot.",
+      "5. Goo Gone cloth tamp for tar / nicotine residue.",
+      "6. Dawn damp-cloth pass for solvent residue.",
+      "7. 3% H₂O₂ for nicotine yellow on white synthetic carpet only.",
+      "8. Weighted towels plus fan-dry plus multi-day ventilation. Ozone for persistent odor."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%"
+      "N95 mask + gloves",
+      "HEPA vacuum",
+      "Dry chemical sponge (vulcanized rubber)",
+      "Goo Gone / citrus solvent",
+      "Dawn / NSD",
+      "3% Hydrogen peroxide (white synthetic only)",
+      "Baking soda + ozone (pro option)"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat sets pigmented byproducts",
     "warnings": [
-      "Always test on hidden area first"
+      "FIRE SMOKE = IICRC S500 restoration, NOT cleaning",
+      "Pad contamination = restoration, not home cleaning",
+      "Never damp-wipe loose soot — smears into gray film",
+      "Non-HEPA vacuum recirculates fine soot through the room",
+      "PPE required — soot, nicotine, and VOCs are inhalation hazards",
+      "Wool carpet = pro on smoke from minute one",
+      "Ozone treatment requires people, pets, plants out of the room"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Light Smoke or Fire Smoke — This Is the Whole Fork",
+      "instruction": "FIRE smoke (house fire, apartment fire, neighbor fire that came into your space) is NOT a cleaning job. The carpet pad is saturated with acidic condensates that home chemistry can't reach, and the soot and VOCs are real health hazards. Call a licensed fire-restoration company (IICRC S500 certified) — insurance usually covers it. LIGHT smoke (cigarette, candle, incense, one-time kitchen mishap) — continue below. When in doubt, treat as fire smoke."
+    },
+    {
+      "step": 2,
+      "agent": "Mask and Gloves Before You Touch It",
+      "instruction": "Light smoke residue still contains nicotine, tar, and VOCs that irritate lungs and skin. N95 mask (the actual rated kind, not a cloth mask) and disposable gloves before you start. Anyone with asthma or respiratory issues should be out of the room. Open windows the whole time."
+    },
+    {
+      "step": 3,
+      "agent": "Check the Pad",
+      "instruction": "Press the carpet down with your hand. If the pad below feels damp, smells musty, or you can see black staining bleeding through, the pad is contaminated and this is no longer a stain job. Call a pro. The pad cannot be cleaned in place — it has to come up."
+    },
+    {
+      "step": 4,
+      "agent": "DRY VACUUM FIRST — Do Not Grab a Damp Cloth",
+      "instruction": "This is the #1 mistake people make on smoke. They see a sooty carpet and reach for a damp cloth. DON'T. Wet contact with loose soot smears it into a gray film that's much harder to clean than the original. HEPA vacuum first — a regular vacuum just blows the fine soot back into the room. Slow overlapping passes across the entire affected area."
+    },
+    {
+      "step": 5,
+      "agent": "Dry Chemical Sponge for Embedded Soot",
+      "instruction": "Get a vulcanized rubber soot sponge — about $10 on Amazon, sold for fire cleanup. Wipe the pile in long straight strokes from clean toward dirty. DO NOT wet the sponge. As the face darkens, slice off the dirty layer to expose fresh rubber. Bag used pieces sealed."
+    },
+    {
+      "step": 6,
+      "agent": "Goo Gone on a Cloth for Tar Spots",
+      "instruction": "Visible tar or heavy nicotine yellow spots: Goo Gone (orange bottle, citrus solvent) on a white cloth — never pour on carpet. Tamp from the top. Flip the cloth as it picks up brown / yellow. 2 to 3 passes. Open windows — Goo Gone is flammable, no flame nearby. Hidden-area test on dyed carpet first."
+    },
+    {
+      "step": 7,
+      "agent": "Dawn + Damp Cloth to Clear Solvent Residue",
+      "instruction": "After Goo Gone: a drop of Dawn worked into a damp cloth, press the spot, work with a soft brush, blot. Damp-cloth only — never pour water on carpet. 2 passes."
+    },
+    {
+      "step": 8,
+      "agent": "3% Peroxide for Nicotine Yellow — White Synthetic Carpet Only",
+      "instruction": "White synthetic carpet (nylon, polyester, olefin) only: 3% drugstore peroxide on a damp cloth, 5 to 10 minutes for residual nicotine yellowing. Hidden-area test mandatory on any dyed carpet — peroxide can lighten carpet dye. Skip on wool carpet (peroxide yellows wool)."
+    },
+    {
+      "step": 9,
+      "agent": "Weighted Towels and a Fan and a Few Days of Patience",
+      "instruction": "Stack paper towels on the treated spot, weight overnight. Fan the room. Keep windows open for several days — smoke odor is the slowest part because VOCs diffuse out of carpet over time. Baking soda dusted overnight and vacuumed off helps mild residual smell."
+    },
+    {
+      "step": 10,
+      "agent": "Persistent Odor or Heavy Saturation — Call a Pro",
+      "instruction": "If smell stays after a full clean plus days of ventilation, the residue has reached the pad and you need professional extraction or ozone treatment. Tell them: \"Smoke on [synthetic / wool] carpet, source [cigarette / candle / incense / FIRE SMOKE], home-treated with HEPA vacuum + dry sponge + Goo Gone + Dawn + [3% peroxide on white]. [Persistent odor / pad suspected / fire restoration needed].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove loose material — brush, blot, or scrape as appropriate",
-      "2. Apply Dawn dish soap mixed with cold water",
-      "3. Blot with clean white cloth. Repeat if needed",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat"
+      "1. FIRE SMOKE = pro restoration, not cleaning.",
+      "2. N95 + gloves, pad check, windows open.",
+      "3. HEPA vacuum DRY — never damp-wipe first.",
+      "4. Dry chemical sponge for embedded soot.",
+      "5. Goo Gone cloth tamp for tar / nicotine residue spots, hidden test on dyed.",
+      "6. Dawn damp-cloth pass for solvent residue.",
+      "7. 3% peroxide for nicotine yellow on white synthetic carpet only.",
+      "8. Weighted paper towels overnight + fan-dry + multi-day ventilation.",
+      "9. Persistent odor = pro ozone treatment."
     ],
     "products": [
-      "Dawn dish soap"
+      "N95 mask + disposable gloves",
+      "HEPA vacuum",
+      "Dry chemical sponge (vulcanized rubber)",
+      "Goo Gone / citrus solvent",
+      "Dawn dish soap",
+      "3% Hydrogen peroxide (white synthetic carpet only)",
+      "Baking soda",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if this is fire smoke (pro restoration). Stop if pad is damp / musty / visibly contaminated (pad replacement). Stop if odor persists after full ventilation (pro ozone). Stop on wool carpet (pro on smoke from minute one).",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "FIRE SMOKE is restoration, not cleaning",
+      "Pad contamination = pro, not home",
+      "Never damp-wipe before HEPA vacuuming",
+      "Non-HEPA vacuum recirculates soot",
+      "PPE required — VOC and particulate exposure",
+      "Hidden test on dyed carpet before peroxide",
+      "Goo Gone is flammable — no flame",
+      "Wool carpet = pro on smoke"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never damp-wipe loose soot before HEPA vacuum",
+      "Never DIY fire smoke",
+      "Never use a non-HEPA vacuum on smoke",
+      "Never work without PPE",
+      "Never pour Goo Gone or water on carpet",
+      "Never use peroxide on wool carpet",
+      "Never use chlorine bleach panic moves on carpet",
+      "Never use solvent near flame"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Synthetic carpet (nylon / polyester / olefin): tolerates Goo Gone + Dawn + 3% peroxide on white",
+      "Wool carpet: pro from minute one — peroxide yellows wool, solvents stress fiber",
+      "Dyed carpet: hidden peroxide test mandatory",
+      "Pad contamination: not a stain job — replacement"
     ]
   },
+  "materialWarnings": [
+    "Light smoke vs fire smoke is the whole fork",
+    "Fire smoke = restoration, not cleaning",
+    "Dry removal BEFORE wet contact — never smear soot",
+    "Wool carpet on smoke = pro from minute one",
+    "Odor takes patience plus ventilation plus possibly ozone"
+  ],
   "escalation": {
-    "when": "If smoke stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is smoke on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Fire smoke (any source). Visible pad contamination — damp pad, musty smell from below, black bleed-through. Persistent odor after a full clean plus ventilation. Wool carpet on any smoke. Heavy long-term smoker carpet through the entire pile. Anyone in the household with respiratory illness or VOC sensitivity.",
+    "whatToTell": "\"Smoke on [synthetic / wool] carpet, source [cigarette / candle / incense / FIRE SMOKE], age [recent / long-term smoker home], home-treated with [HEPA vacuum + dry chemical sponge + Goo Gone + Dawn + 3% peroxide on white synthetic]. [Persistent odor / pad contamination suspected / fire restoration needed].\"",
+    "specialistType": "IICRC S500 fire and smoke restoration specialist for fire smoke or pad contamination; professional carpet cleaner with truck-mount extraction and ozone capability for persistent odor"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Light smoke (cigarette / candle / incense / one-time kitchen) or fire smoke (house / apartment / neighbor fire)?",
+      "Synthetic carpet or wool?",
+      "How long was the exposure — one-time event or long-term smoker home?",
+      "Does the pad below feel damp or smell musty?",
+      "Anyone in the home with respiratory issues?",
+      "Is the concern visible soot, odor, or both?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The fire-vs-light split determines the entire response. Fire smoke is never a home job. Long-term smoker yellowing is the hardest light-smoke subset because nicotine has saturated the pile and possibly the pad — surface treatment helps but may not fully clear, and ozone treatment is often needed. Wool carpet on any smoke = pro from minute one (peroxide yellows wool, solvents stress fiber)."
   },
-  "difficulty": 6,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

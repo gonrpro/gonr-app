@@ -1,75 +1,213 @@
 {
   "id": "water-stain-cotton",
-  "title": "Water on Cotton",
+  "title": "Water Stain on Cotton",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Water stains are mineral deposits (calcium, magnesium, iron) left behind when water evaporates from cotton. Hard water leaves white/chalky residue. Iron-rich water leaves rust-colored marks. The minerals bond to fiber through electrostatic interactions and can etch certain surfaces (marble, glass) if left in contact. The 'stain' is actually a deposit, not absorbed color.",
-  "whyThisWorks": "A mild acid (white vinegar or citric acid) dissolves the mineral deposits on cotton by converting them to soluble salts. For iron-based water stains, a reducing agent (oxalic acid) is more effective. On stone surfaces, only pH-neutral cleaners are safe — acid dissolves marble/limestone. Preventing mineral buildup is easier than removing it — squeegee/dry after water contact.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "10–30 minutes for water rings; mineral / iron stains need acid or oxalic chemistry",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "water-stain",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "water-stain",
+      "mineral",
+      "ring",
+      "iron",
+      "cotton",
+      "no-heat",
+      "vinegar-eligible",
+      "hardwater-vs-iron-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Water stains on cotton are not water — they are what the water LEFT BEHIND. Two distinct cases that need different chemistry: (1) HARD WATER RINGS / MINERAL DEPOSITS — calcium and magnesium salts left when water evaporated, leaving white-to-pale crusty residue or a halo ring around where the water dried, OR concentrated dissolved-impurity rings (sediment, soap residue, surfactant residue from incomplete rinse). (2) IRON STAINS — orange / rust-colored rings from iron-rich water (well water, old plumbing) where dissolved iron oxidized on contact with air. Hard-water and dissolved-impurity rings respond to mild acid (white vinegar, citric acid). Iron stains do NOT respond to oxidizers like peroxide or oxygen bleach (those make iron WORSE) — iron needs a reducing agent (oxalic acid). Heat is the third trap: hot water and hot iron set water rings into cotton. The biggest mistake is hot ironing the wet ring trying to dry it — that locks the mineral deposit.",
+  "whyThisWorks": "White vinegar on cotton dissolves calcium / magnesium / soap-residue mineral deposits by converting them to soluble salts. The acid also helps redistribute the residual water-soluble component of the ring (sediment, soap, surfactant) so it doesn't leave a sharp halo. For iron stains, oxalic acid (Bar Keepers Friend / Iron Out / Whink) reduces the oxidized iron and dissolves it. Cool water re-wash plus normal detergent finishes mineral cases. Sun-dry adds UV finish. The honest cap: very old set iron stains and certain well-water iron stains often need pro-grade reducing chemistry.",
+  "defaultAssumption": "Cotton t-shirt / sheet / curtain / tablecloth + water ring after spill, leak, hand-washing splash, or hard-water spotting. White cotton — easiest case. Dyed cotton — hidden test before vinegar. Iron stain (orange / rust ring) needs different chemistry from hard-water ring.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify Hard-Water vs Iron",
+      "technique": "Visual ring assessment",
+      "equipment": "Good light, magnifier optional",
+      "dwellTime": "2 minutes",
+      "instruction": "WHITE / pale / chalky ring or crusty residue = hard-water mineral or dissolved-impurity ring (calcium, magnesium, sediment, soap residue). Vinegar pathway. ORANGE / RUST / brown ring = iron stain (iron-rich water, well water, old plumbing). Oxalic acid pathway. Wrong identification means wrong chemistry — peroxide on iron makes it worse."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Brush Off Loose Mineral",
+      "technique": "Mechanical removal of dry deposit",
+      "equipment": "Soft brush, lint roller",
+      "dwellTime": "2 minutes",
+      "instruction": "Soft-brush any loose chalky / crusty residue first. Lint roller helps. Don't dampen yet — dry mineral comes off mechanically without smearing."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Pretreat (Hard-Water Cases)",
+      "technique": "Mild acid dissolves mineral deposits",
+      "equipment": "White vinegar 1:1 with cool water, white cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "HARD-WATER ring only. Mix 1:1 white vinegar + cool water. Dampen a white cloth, press the ring 5–10 min. Hidden test on dyed cotton first — vinegar can lighten some dyes. Cool rinse with damp cloth."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Wash Plus Normal Detergent (Hard-Water Cases)",
+      "technique": "Full-garment finish",
+      "equipment": "Washing machine, cool water, normal detergent",
+      "dwellTime": "Full cool cycle",
+      "instruction": "Cool wash with normal detergent. AIR-DRY. Inspect dry — most hard-water rings clear at this point."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Oxalic Acid for Iron Stains Only",
+      "technique": "Reducing chemistry for oxidized iron",
+      "equipment": "Bar Keepers Friend, Iron Out, or Whink Rust Stain Remover; gloves; ventilation",
+      "dwellTime": "Per label, typically 5–15 minutes",
+      "instruction": "IRON / RUST ring only. Per label — Bar Keepers Friend or Iron Out or Whink. WEAR GLOVES — oxalic acid is a skin irritant. Ventilate. Cool rinse fully after dwell. Hidden test on dyed cotton first."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cool Wash Plus AIR-DRY",
+      "technique": "Finish, no heat",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Full cool cycle plus AIR-DRY",
+      "instruction": "Cool wash, normal detergent. AIR-DRY, ideally in direct sunlight. NEVER hot dryer or iron until ring is fully clear — hot sets residual mineral or iron into cotton."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove loose material mechanically — brush, scrape, or vacuum as appropriate",
-      "2. Apply NSD to the stain area",
-      "3. Apply appropriate secondary agent based on stain response",
-      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Identify hard-water (mineral) vs iron stain.",
+      "2. Soft-brush dry deposit first.",
+      "3. White vinegar 1:1 cool pretreat for hard-water rings, hidden test on dyed.",
+      "4. Cool wash, normal detergent.",
+      "5. Oxalic acid (BKF / Iron Out) for iron stains only — gloves, ventilation, hidden test.",
+      "6. Cool wash, AIR-DRY in direct sun. NO heat until clear."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "White vinegar (hard-water rings)",
+      "Bar Keepers Friend / Iron Out / Whink Rust Stain Remover (iron stains)",
+      "Normal detergent",
+      "Cool water"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat sets residual mineral or iron into cotton",
     "warnings": [
-      "Always test on hidden area first"
+      "Hard-water vs iron must be identified first — different chemistry families",
+      "NEVER use peroxide or oxygen bleach on iron stains — makes them worse",
+      "NEVER hot iron a wet ring trying to dry it — locks the mineral",
+      "Oxalic acid is a skin irritant — gloves required",
+      "Hidden test on dyed cotton before vinegar or oxalic",
+      "Vinegar can lighten some dyes"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Water Stains Are What the Water Left Behind",
+      "instruction": "A water stain on cotton isn't water — the water already evaporated. What's left is either hard-water mineral (calcium, magnesium, sediment, soap residue) or dissolved iron (from well water or old plumbing). The two need different chemistry. White or chalky ring = mineral case, treat with vinegar. Orange / rust ring = iron case, treat with oxalic acid. Mix them up and you make the stain worse."
+    },
+    {
+      "step": 2,
+      "agent": "Identify the Ring Type First",
+      "instruction": "Look closely. White / pale / chalky / halo around where water dried = hard-water mineral or dissolved-impurity ring. Orange / brown / rust-colored = iron stain. Iron stains often appear after washing in well water or after a leak from old galvanized pipes."
+    },
+    {
+      "step": 3,
+      "agent": "Soft-Brush Loose Deposit First",
+      "instruction": "Before any liquid, soft-brush any chalky or crusty residue off. A lint roller helps. Dry mineral comes off mechanically without smearing — once you wet it, removal gets harder."
+    },
+    {
+      "step": 4,
+      "agent": "Vinegar for Hard-Water Rings",
+      "instruction": "Hard-water ring only. Mix equal parts white vinegar and cool water. Dampen a white cloth, press the ring for 5 to 10 minutes. Hidden-area test on dyed cotton first — vinegar can lighten some dyes. Damp-cloth rinse with cool water. Then a cool wash with normal detergent and air-dry."
+    },
+    {
+      "step": 5,
+      "agent": "Oxalic Acid for Iron Stains — Gloves On",
+      "instruction": "Iron / rust ring only. Use Bar Keepers Friend (powder, mix to paste with water), Iron Out, or Whink Rust Stain Remover per label. WEAR GLOVES — oxalic acid is a skin irritant. Ventilate. NEVER reach for peroxide or oxygen bleach on iron stains — those oxidize the iron further and lock the rust color permanently. Cool rinse, cool wash, air-dry."
+    },
+    {
+      "step": 6,
+      "agent": "AIR-DRY in Direct Sun — Never Hot Iron a Wet Ring",
+      "instruction": "Air-dry the cotton, ideally in direct sunlight (UV adds a finish). NEVER take a hot iron to a wet water ring trying to dry it — heat locks the mineral deposit into the cotton permanently. Inspect dry. If the ring remains, repeat the appropriate pretreat (vinegar for hard-water, oxalic for iron)."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Mix equal parts white vinegar and water. Apply to mineral deposits",
-      "2. Blot with clean white cloth. Repeat if needed",
-      "3. Rinse with clean water to remove vinegar residue",
-      "4. For fabric: launder normally. For hard surfaces: wipe dry",
-      "5. Prevention: squeegee or dry surfaces after water contact"
+      "1. Identify hard-water (white / chalky) vs iron (orange / rust) — different chemistry.",
+      "2. Soft-brush dry deposit first.",
+      "3. HARD-WATER: 1:1 white vinegar + cool water on damp cloth, 5–10 min, hidden test on dyed.",
+      "4. IRON: Bar Keepers Friend / Iron Out / Whink with gloves and ventilation, hidden test on dyed.",
+      "5. Cool wash, normal detergent.",
+      "6. AIR-DRY in direct sun. NEVER hot iron a wet ring."
     ],
     "products": [
-      "white vinegar"
+      "White vinegar (hard-water rings)",
+      "Bar Keepers Friend / Iron Out / Whink Rust Stain Remover (iron rings)",
+      "Normal detergent",
+      "Cool water",
+      "Gloves (oxalic acid)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if you cannot identify hard-water vs iron — wrong chemistry sets the stain. Stop if peroxide or oxygen bleach has already been applied to an iron stain (often locks color). Stop if hot iron has already been used on a wet ring (often permanent). Stop after 2 pretreat passes plus cool wash without progress.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "Identify hard-water vs iron FIRST",
+      "NEVER peroxide or oxygen bleach on iron — locks rust",
+      "NEVER hot iron a wet water ring — locks mineral",
+      "Oxalic acid is a skin irritant — gloves",
+      "Hidden test on dyed cotton",
+      "Vinegar can lighten some dyes"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No prolonged acid exposure on colored cotton",
-      "No chlorine bleach on colored cotton — strips dyes"
+      "Never use peroxide or oxygen bleach on iron stains",
+      "Never hot iron a wet water ring — locks mineral",
+      "Never apply oxalic acid without gloves",
+      "Never mix oxalic acid with bleach — toxic fumes",
+      "Never skip the hard-water vs iron identification"
     ],
     "fiberSensitivities": [
-      "Most chemically durable textile fiber",
-      "Test colorfastness on colored cotton before peroxide"
+      "White cotton: tolerates vinegar pretreat and oxalic acid (gloves)",
+      "Dyed cotton: hidden test before vinegar (can lighten dye) and oxalic acid",
+      "Vintage / antique cotton: pro for iron stains (fiber fragility under oxalic acid)",
+      "Cotton blends with spandex: oxalic acid can damage spandex — pro for iron on blends"
     ]
   },
+  "materialWarnings": [
+    "Hard-water vs iron is the whole fork — different chemistry",
+    "Peroxide on iron stains locks rust permanently",
+    "Hot iron on a wet water ring locks the mineral",
+    "Oxalic acid requires gloves and ventilation",
+    "Hidden test on dyed cotton before either pretreat"
+  ],
   "escalation": {
-    "when": "If water stain stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is water stain on cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Cannot identify hard-water vs iron. Peroxide or oxygen bleach already applied to a suspected iron stain (locked rust color). Hot iron already used on a wet ring (often permanent). 2 pretreat passes plus cool wash plateau. Vintage / antique cotton with iron stain. Cotton blend with spandex and iron stain. Persistent ring after correct chemistry — usually means something else (sweat residue, soap residue, or set protein in the ring).",
+    "whatToTell": "\"Water stain on cotton, ring color [white-chalky / orange-rust / brown / unclear], cotton type [white / dyed / blend / vintage], home-treated with [vinegar pretreat / oxalic acid (BKF / Iron Out / Whink)], no heat applied. [Residual ring / locked rust suspected / hot iron history].\"",
+    "specialistType": "professional dry cleaner with reducing-bleach chemistry experience for stubborn iron stains; specialty textile conservator for vintage cotton with iron staining"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "What color is the ring — white / chalky / orange / rust / brown?",
+      "Where did the water come from — tap, well, leak, hand-wash splash?",
+      "Has the cotton been hot-ironed since the ring appeared?",
+      "Has any other product (peroxide, bleach) been applied to the ring?",
+      "White cotton or dyed?",
+      "Vintage or antique piece?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Hard-water vs iron is the entire fork. Wrong chemistry sets the stain. Peroxide on iron is the most common error and is irreversible. Hot iron on a wet ring is the second-most common error and usually locks the mineral. Vinegar lightens some dyes — hidden test mandatory. Old set iron stains in well-water households often need pro-grade reducing chemistry. Cotton-spandex blends + iron stain = pro because oxalic acid can damage spandex."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

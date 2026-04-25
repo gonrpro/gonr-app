@@ -1,88 +1,217 @@
 {
   "id": "dye-transfer-linen",
-  "title": "Dye Transfer on White Linen",
+  "title": "Dye Transfer on Linen",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "linen",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Dye transfer occurs when loose dye from one garment migrates to linen during washing — typically from dark denim, new colored items, or non-colorfast fabrics. The transferred dye bonds to linen's cellulose fibers through hydrogen bonds and Van der Waals forces. Linen is a cellulose fiber like cotton and tolerates similar chemistry, but is more prone to wrinkling and needs gentler agitation. Once set by heat or time, the dye behaves as if it were part of the fiber.",
-  "whyThisWorks": "Oxygen bleach or a reducing agent (sodium hydrosulfite) breaks the chromophore bonds in the transferred dye. Speed is critical — fresh transfers respond dramatically better than set ones. Re-washing immediately in cold water with oxygen bleach is the most effective first response. Linen tolerates oxygen bleach well. Heat (dryer) makes dye transfer permanent.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "1–6 hour cool soak; speed-critical, heat sets transfer permanently",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "dye-transfer",
+    "surfaceCanonical": "linen",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "dye",
+      "color-run",
+      "linen",
+      "speed-critical",
+      "no-heat",
+      "no-chlorine-bleach",
+      "white-linen-bounded",
+      "structured-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Dye transfer is bleed from one garment onto another during washing — usually dark denim, new colored items, red or navy goods, or non-colorfast fabric. The migrating dye bonds to linen's cellulose fibers through hydrogen bonds and Van der Waals forces, the same mechanism as intentional dyeing. Once heat-set (hot wash or hot dryer) the bond is essentially permanent. Linen is more delicate than cotton — it wrinkles aggressively when wet and tolerates less mechanical agitation. White linen tolerates oxygen bleach and reducing-bleach approaches. Dyed linen is more constrained because color removers strip carpet/garment dye too. The single hard line: NEVER chlorine bleach on dye transfer — chlorine can lock azo dyes into a yellow oxidation product that is permanent. Heat is the second hard line.",
+  "whyThisWorks": "Speed plus oxygen bleach on white linen is the most reliable home approach: re-wash IMMEDIATELY in cool water before the dye bonds, then OxiClean cool soak to break chromophore bonds. For stubborn or partially set transfer on white linen, a reducing-bleach color remover (Carbona Color Run Remover or Rit Color Remover) is the home nuclear option — but it strips ALL dye, so it's whites-only. For dyed linen, options narrow sharply — pro is often the right call because the bench is shorter. The recurring trap: chlorine bleach. People reach for it instinctively and it makes the stain permanent.",
+  "defaultAssumption": "White or light linen garment / napkin / tablecloth + dye transfer from a dark item in the wash, fresh and not yet hot-dried. Hot-dried = often permanent. Dyed / structured / vintage / dry-clean-only linen = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage and Care Label",
+      "technique": "Speed assessment plus label",
+      "equipment": "Care label, good light",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Has it been hot-dried? If yes, often permanent — escalate. Care label dry-clean-only / structured / vintage = pro. Otherwise: act fast, don't dry the item again until clear."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cool Re-Wash Immediately",
+      "technique": "Repeat the wash before dye sets further",
+      "equipment": "Washing machine, cool water, normal detergent",
+      "dwellTime": "Full cool cycle",
+      "instruction": "Re-wash the item in cool water with normal detergent IMMEDIATELY. Do NOT put it in the dryer. The dye is still partly soluble in cool water within the first wash — speed is everything."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "OxiClean Cool Soak",
+      "technique": "Oxygen bleach to break chromophore bonds",
+      "equipment": "OxiClean per label, cool water, soak basin",
+      "dwellTime": "1–6 hours, check hourly",
+      "instruction": "Mix OxiClean per label in COOL water. Soak the linen 1–6 hours. Check every hour — pull when transfer clears. Cool rinse, cool re-wash. Repeat soak if partial improvement."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Color Remover for White Linen Only — Nuclear Option",
+      "technique": "Reducing bleach (sodium hydrosulfite)",
+      "equipment": "Carbona Color Run Remover or Rit Color Remover, ventilation",
+      "dwellTime": "Per label",
+      "instruction": "WHITE linen only. Per label — Carbona Color Run Remover or Rit Color Remover (sodium hydrosulfite). Strips ALL dye, including any colored carpet dye it lands on. Ventilate (sulfur smell). Cool rinse, cool wash."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% Hydrogen Peroxide Spot Pass for Residual Yellow",
+      "technique": "Oxidize residual chromophore on white linen",
+      "equipment": "3% H₂O₂ on damp cloth or as soak additive",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE linen only — hidden test on dyed linen first. 3% peroxide damp cloth or as add to OxiClean soak. Cool rinse."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Sun-Dry Plus AIR-DRY Inspection",
+      "technique": "UV finish, no heat",
+      "equipment": "Direct sunlight, drying rack",
+      "dwellTime": "Half-day plus inspection",
+      "instruction": "AIR-DRY in direct sunlight. UV photodegrades residual dye. Inspect dry — if clear, normal wash going forward. If color remains, NEVER hot dryer / iron until cleared — heat permanently sets dye."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply sodium hydrosulfite (reducing agent) to break the transferred dye bonds. This is the most effective color run remover for cellulose fibers.",
-      "2. Flush with NSD and cool water to remove loosened dye and reducing agent residue.",
-      "3. If color remains: apply H₂O₂ 6% as oxygen bleach. Monitor carefully — do not over-bleach.",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse.",
-      "5. Blot dry. Repeat full cycle if needed. Air dry only — never apply heat."
+      "1. Triage — hot-dried (often permanent) vs fresh, structured / vintage = pro.",
+      "2. Cool re-wash immediately, no dryer.",
+      "3. OxiClean cool soak 1–6 hr, check hourly.",
+      "4. Color Remover (reducing bleach) for white linen only, ventilation.",
+      "5. 3% H₂O₂ spot for residual yellow on white linen.",
+      "6. Sun-dry plus air-dry inspection. NO heat until clear."
     ],
     "products": [
-      "Sodium hydrosulfite (reducing agent)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H₂O₂ 6% (oxygen bleach)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "OxiClean / oxygen bleach",
+      "Carbona Color Run Remover or Rit Color Remover (white linen only)",
+      "3% Hydrogen peroxide (white linen)",
+      "Cool water"
     ],
-    "temperature": "cold — heat permanently sets dye transfer",
+    "temperature": "cool throughout — heat permanently sets dye transfer",
     "warnings": [
-      "Speed is critical — treat immediately before dye bonds permanently",
-      "Never use chlorine bleach — oxygen bleach or reducing agent only",
-      "Heat makes dye transfer permanent — never tumble dry until stain is fully removed",
-      "Do not rub — rubbing spreads the transferred dye"
+      "NEVER chlorine bleach — locks dye into permanent yellow oxidation",
+      "NEVER hot water or hot dryer — sets dye transfer permanently",
+      "Color Remover is white-only — strips all dye including the linen's",
+      "Speed matters more than chemistry choice",
+      "Structured / vintage / dyed linen = pro",
+      "Sulfur smell from reducing bleach — ventilate"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Speed Beats Chemistry — Don't Dry It",
+      "instruction": "Dye transfer is recoverable when fresh. Once hot-dried, often permanent. Two hard rules: (1) NO chlorine bleach (locks the dye into a yellow oxidation product permanently — instinctive and wrong) and (2) NO heat until the transfer is fully cleared. The order: act fast, cool re-wash, oxygen bleach soak, then escalate."
+    },
+    {
+      "step": 2,
+      "agent": "Care Label Triage",
+      "instruction": "Dry-clean-only linen, structured pieces (lined jackets, blazers), vintage linen, or dyed colored linen all narrow your home options sharply. White or light washable linen = home protocol candidate. Anything else = pro."
+    },
+    {
+      "step": 3,
+      "agent": "Cool Re-Wash Immediately — Don't Dry",
+      "instruction": "Run the linen through a cool water cycle with normal detergent right now. Do NOT dry it. The dye is still partly soluble in cool water for the first wash — every hour you delay reduces success."
+    },
+    {
+      "step": 4,
+      "agent": "OxiClean Cool Soak — 1 to 6 Hours",
+      "instruction": "Mix OxiClean per label in COOL water in a basin or sink. Submerge the linen. Check every hour. Many transfers clear within 2 to 3 hours. Cool rinse, then a second cool wash with detergent. Repeat soak if it's most of the way there."
+    },
+    {
+      "step": 5,
+      "agent": "Color Remover — White Linen Only, Last Resort",
+      "instruction": "If white linen still has color after the OxiClean soak: Carbona Color Run Remover or Rit Color Remover (sodium hydrosulfite). Per label. Ventilate (sulfur smell). DO NOT use on colored / dyed linen — these strip ALL dye, including the linen's. Skip if you can't confirm white."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide for Residual Yellow on White Linen",
+      "instruction": "Residual yellow shadow on WHITE linen: 3% drugstore peroxide on a damp cloth, or add to the OxiClean soak. Hidden test on dyed linen first."
+    },
+    {
+      "step": 7,
+      "agent": "Sun-Dry Plus AIR-DRY ONLY — No Heat Until Clear",
+      "instruction": "Hang in direct sunlight to dry. UV photodegrades residual dye. NEVER hot dryer or iron until the transfer is fully gone — heat permanently sets it. If color remains after sun-dry, repeat OxiClean soak before any heat."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Re-wash IMMEDIATELY in cold water — do NOT dry the item.",
-      "2. Dissolve 1 scoop OxiClean (oxygen bleach) in cold water. Soak the linen item for 1–6 hours.",
-      "3. Check progress every hour. Re-wash in cold water with detergent.",
-      "4. If color remains, try a color remover product (Carbona Color Run Remover or Rit Color Remover). Follow package directions.",
-      "5. Repeat soak if needed — some dye transfers require multiple cycles.",
-      "6. Air dry only — dryer heat permanently sets dye transfer."
+      "1. NO chlorine bleach. NO heat until clear.",
+      "2. Care label check — dry-clean-only / structured / vintage / dyed = pro.",
+      "3. Cool re-wash IMMEDIATELY. No dryer.",
+      "4. OxiClean cool soak 1–6 hr. Check hourly.",
+      "5. Carbona / Rit Color Remover for WHITE linen only, ventilate.",
+      "6. 3% peroxide for residual yellow on white linen, hidden test on dyed.",
+      "7. AIR-DRY plus sun-dry. NO heat until fully clear."
     ],
     "products": [
-      "OxiClean Versatile Stain Remover (oxygen bleach)",
-      "Carbona Color Run Remover or Rit Color Remover"
+      "OxiClean Versatile",
+      "Carbona Color Run Remover / Rit Color Remover (white only)",
+      "3% Hydrogen peroxide (white linen)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized reducing agents like sodium hydrosulfite.",
+    "whenToStop": "Stop if the linen has been hot-dried (often permanent). Stop if it's dyed / structured / vintage / dry-clean-only linen (pro). Stop if Color Remover would strip linen dye. Stop after 2 OxiClean soaks plus Color Remover (if eligible) without progress.",
     "warnings": [
-      "Always test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents.",
-      "Never rub dye stains — rubbing spreads the color.",
-      "Never use chlorine bleach on dye transfer — it can set the stain permanently.",
-      "Heat permanently sets dye stains — air dry only."
+      "NEVER chlorine bleach — permanent yellow oxidation",
+      "NEVER hot water or hot dryer — permanent dye set",
+      "Color Remover is white-only",
+      "Speed matters more than chemistry choice",
+      "Structured / vintage / dyed = pro"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use chlorine bleach — can set dye transfer permanently on linen",
-      "Apply heat (dryer, iron) before stain is fully removed — makes it permanent",
-      "Rub or scrub — spreads transferred dye to clean areas"
+      "Never chlorine bleach on dye transfer — locks dye permanently",
+      "Never hot water or hot dryer until clear",
+      "Never Color Remover on dyed linen",
+      "Never iron a stained area before clearing",
+      "Never mix peroxide + chlorine + ammonia"
     ],
     "fiberSensitivities": [
-      "Linen: cellulose fiber, tolerates oxygen bleach and reducing agents well. Avoid chlorine bleach on dye transfers. Handle gently when wet — linen wrinkles easily."
+      "White linen: tolerates OxiClean cool soak, Color Remover, 3% peroxide",
+      "Dyed linen: hidden test mandatory before peroxide; Color Remover banned",
+      "Structured linen: pro from minute one (warps under wet handling)",
+      "Vintage linen: pro from minute one (fiber fragility)",
+      "Linen wrinkles aggressively wet — handle gently, no aggressive agitation"
     ]
   },
+  "materialWarnings": [
+    "Speed matters more than any product choice",
+    "No chlorine bleach — locks the stain permanently",
+    "No heat until fully clear",
+    "Color Remover is white-only",
+    "Structured / vintage = pro from minute one"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 treatment cycles), or if the linen is expensive/antique, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is dye transfer (color run) on white linen, how old it is, and what products were already used. This helps the professional choose the right reducing agent without duplicating failed approaches.",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot dryer already used (often permanent). Structured / vintage / dyed / dry-clean-only linen. Color Remover ineligible (dyed linen). 2 OxiClean soaks plus eligible Color Remover plateau. Active dye spread continuing during home treatment.",
+    "whatToTell": "\"Dye transfer on [white / dyed] linen, [fresh / hot-dried], source [denim / red garment / mixed wash], home-treated with [cool re-wash + OxiClean soak × N + Color Remover on white + 3% peroxide on white + sun-dry]. No chlorine bleach, no heat. [Residual color / hot-dried suspected / spreading].\"",
+    "specialistType": "professional dry cleaner with reducing-bleach chemistry (sodium hydrosulfite controlled dilution) and color-stripping experience"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the dye transfer stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "What caused the color run (new jeans, red garment, mixed wash)?"
+      "How fresh — current wash or has it been hot-dried already?",
+      "White linen or dyed / colored?",
+      "Source of the transfer — denim / red garment / mixed?",
+      "Care label — washable, dry-clean-only, structured, vintage?",
+      "Has the item been ironed since the transfer?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment with reducing agents."
+    "modifierNotes": "Fresh + white + not hot-dried = high-confidence home recovery. Hot-dried = often permanent. Dyed linen = sharply narrowed bench (no Color Remover, hidden test on peroxide). Red and navy transfers are the toughest — budget extra OxiClean cycles. Vintage linen is always pro because the fiber doesn't tolerate aggressive home chemistry."
   },
-  "difficulty": 6,
-  "timeEstimate": "30–60 min",
-  "lastValidated": "2026-04-08",
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents."
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

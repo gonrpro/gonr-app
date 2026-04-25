@@ -1,78 +1,224 @@
 {
   "id": "mildew-upholstery",
   "title": "Mildew on Upholstery",
-  "stainFamily": "specialty",
+  "stainType": "biological",
+  "stainFamily": "biological",
   "surface": "upholstery",
   "sector": "upholstery",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Mildew is a living fungal organism that digests organic material in upholstery for nutrition. The visible discoloration (gray, black, green) comes from fungal spores and metabolic byproducts. Mildew roots (hyphae) penetrate into the fiber structure, making surface cleaning insufficient. The organism thrives in warm, humid, dark conditions and produces musty volatile organic compounds (odor).",
-  "whyThisWorks": "An oxidizer (H2O2 or oxygen bleach) kills the mildew organism and breaks down the pigmented metabolic byproducts on upholstery. Surfactant removes the dead fungal material. For persistent staining, sunlight exposure provides additional UV oxidation. Preventing recurrence requires addressing the moisture source — mildew returns if conditions remain favorable.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "30–90 minutes home triage; structural mildew = remediation specialist, not a stain job",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "mildew",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "biological",
+      "fungal",
+      "upholstery",
+      "care-code-gated",
+      "moisture-source-fix",
+      "ppe-required",
+      "refusal-biased",
+      "pro-leaning"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Mildew on upholstery is a living fungal colony — hyphae penetrate fiber and foam, spores release on contact, metabolic byproducts cause gray/black/green staining, and microbial volatile organic compounds cause the musty odor. Surface mildew on a removable, washable cushion cover is a tractable home job. Structural mildew — fungus in the foam, batting, or frame — is not a stain; it is mold contamination, and the right move is a remediation specialist, not a peroxide bottle. Care code matters: W (water-safe) tolerates the home protocol, S (solvent-only) does not, WS allows both, X is brush/vacuum only. Wool blend, silk blend, vintage upholstery, or unknown care code = pro from minute one. Over-wetting saturates foam and creates a second mildew problem inside the cushion.",
+  "whyThisWorks": "OxiClean / sodium percarbonate at cool temperature on water-safe upholstery kills surface mildew organisms and oxidizes pigmented byproducts without the chlorine-bleach risks (color-stripping, fiber damage, foam degradation). Sun-dry adds UV antimicrobial finish and helps drive residual moisture out of foam. The hard prerequisite: fix the moisture source. Mildew returns to the same spot if humidity, leak, or condensation is unresolved. Without the moisture fix, every cleaning is temporary.",
+  "defaultAssumption": "Care-code W or WS upholstery with surface mildew on a removable cover or accessible fabric, fresh-to-weeks-old, in a known damp location (basement, garage, bathroom-adjacent). Structural mildew, foam saturation, S/X care codes, vintage, wool, or silk = pro / remediation specialist. Removable washable covers handle better than fixed upholstery.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Care Code Check and Triage",
+      "technique": "Inspection + structural assessment",
+      "equipment": "Good light, care tag, N95 mask, gloves",
+      "dwellTime": "5 minutes",
+      "instruction": "Find the care tag. W or WS = home protocol candidate. S, X, unknown, vintage, wool, silk = pro. Press the cushion. Foam squishes back to dry = surface only. Foam stays compressed or smells musty inside = structural mildew, stop and call remediation. PPE: N95 + gloves before touching mildew."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Outdoor Spore Removal",
+      "technique": "Brush + vacuum outdoors",
+      "equipment": "Soft brush, HEPA vacuum, outdoor space",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Take the cushion outdoors. Soft-brush loose spores away from yourself, downwind. HEPA vacuum follows the brush. Never indoors — spores aerosolize and recolonize."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Cool OxiClean Damp-Cloth Application",
+      "technique": "Surface oxidizer with controlled moisture",
+      "equipment": "OxiClean per label, COOL water, white cloth, soft brush",
+      "dwellTime": "15–20 minutes",
+      "instruction": "Mix OxiClean per label in COOL water. Apply with damp cloth — do NOT pour or saturate. Soft-brush gently. 15–20 min dwell. Cool damp-cloth rinse 2–3 passes. Foam saturation = bigger mildew problem inside."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "3% Hydrogen Peroxide Spot Pass",
+      "technique": "Whites and light fabrics only",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "White or near-white water-safe upholstery only. Hidden test mandatory on dyed fabric. 3% peroxide damp cloth, 5–10 min, damp-cloth rinse. Skip on dyed, vintage, wool, silk, or any S/X care code."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Sun-Dry Antimicrobial Finish",
+      "technique": "UV finish plus moisture extraction",
+      "equipment": "Direct sunlight, fan",
+      "dwellTime": "Half-day minimum, multi-day for thick cushions",
+      "instruction": "Direct sunlight on the treated area for several hours. UV kills residual spores and drives moisture out of foam. Cushion must be fully dry inside before reuse — fan-dry indoors after sun. Damp foam = mildew returns within days."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Moisture Source Fix",
+      "technique": "Eliminate recurrence conditions",
+      "equipment": "Dehumidifier, leak repair, ventilation",
+      "dwellTime": "Permanent",
+      "instruction": "Identify and fix the moisture source — humidity above 60%, basement leak, condensation, wet-room adjacency. Without this, mildew returns to the same spot. Dehumidifier to under 50% RH, repair leaks, add ventilation."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Brush off loose mildew spores outdoors or in ventilated area",
-      "2. Apply H2O2 6% to kill remaining organism and bleach discoloration",
-      "3. Apply NSD to remove dead fungal material",
-      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Air dry in sunlight if possible — UV provides additional antimicrobial action"
+      "1. Care code and structural assessment. Surface vs structural fork.",
+      "2. PPE up. Outdoor HEPA vacuum and brush spore removal.",
+      "3. Controlled OxiClean / dilute oxygen bleach application, cool, damp not saturated.",
+      "4. 3% H₂O₂ spot pass on whites and light fabrics with hidden test.",
+      "5. Sun-dry UV finish plus full-cushion moisture extraction.",
+      "6. Moisture-source remediation handoff if structural."
     ],
     "products": [
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "OxiClean / sodium percarbonate (water-safe upholstery)",
+      "3% Hydrogen peroxide (whites and light fabrics, hidden test)",
+      "HEPA vacuum",
+      "Dehumidifier",
+      "PPE — N95, gloves, ventilation"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat sets pigmented byproducts and stresses foam",
     "warnings": [
-      "Always test on hidden area first"
+      "Structural mildew (foam, batting, frame) = remediation specialist, not a stain job",
+      "S, X, unknown care codes, vintage, wool, silk = pro from minute one",
+      "Never saturate the cushion — foam mildew is worse than surface",
+      "Never chlorine bleach — color-strips dyed fabric, damages many synthetics, degrades foam",
+      "PPE required — mildew spores aerosolize and are inhalation hazards",
+      "Moisture-source fix is non-negotiable for durability"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Mildew Is a Living Organism, Not a Stain",
+      "instruction": "Mildew is fungus growing in your upholstery. Surface mildew on a washable cushion cover is fixable. Mildew inside the foam, batting, or frame is mold contamination — that is a remediation job, not a peroxide bottle. Press the cushion. If the foam smells musty inside or stays damp, stop here and call a specialist. Do not breathe spores. N95 mask and gloves before you start."
+    },
+    {
+      "step": 2,
+      "agent": "Check the Care Code Before Anything Else",
+      "instruction": "Find the care tag. W or WS means water-safe and you can proceed. S means solvent only — pro job. X means brush and vacuum only — pro. Vintage, wool, silk, or no tag = pro. Wrong care code + water = ruined upholstery."
+    },
+    {
+      "step": 3,
+      "agent": "Remove Spores Outdoors First",
+      "instruction": "Take the cushion outside. Soft-brush the loose mildew away from your face, downwind. Follow with a HEPA vacuum. Never do this indoors — spores spread and start growing in new spots. Wear the N95 the whole time."
+    },
+    {
+      "step": 4,
+      "agent": "OxiClean on a Damp Cloth — Do Not Saturate",
+      "instruction": "Mix OxiClean per label in COOL water. Apply with a damp cloth — do NOT pour and do NOT saturate. Wet foam grows new mildew inside the cushion. Soft-brush gently for 15 to 20 minutes. Damp-cloth rinse with cool water 2 to 3 passes."
+    },
+    {
+      "step": 5,
+      "agent": "Hydrogen Peroxide on Whites Only",
+      "instruction": "WHITE or very light water-safe upholstery only: 3% drugstore peroxide on a damp cloth, 5 to 10 minutes, damp-cloth rinse. Hidden-area test first on anything dyed. Skip on dyed, vintage, wool, silk, or any S/X care code."
+    },
+    {
+      "step": 6,
+      "agent": "Sun-Dry Until Fully Dry — Inside and Out",
+      "instruction": "Direct sun on the treated area for several hours. UV finishes off residual spores and drives moisture out of the foam. Cushion must be fully dry inside before going back on the couch. Fan-dry afterward. Damp foam = mildew is back in days."
+    },
+    {
+      "step": 7,
+      "agent": "Fix the Moisture Source — This Is Not Optional",
+      "instruction": "Mildew returns to the same spot if the conditions return. Find the cause: basement humidity above 60%, leaky window, wet-room adjacency, condensation. Run a dehumidifier under 50% RH. Repair leaks. Improve ventilation. Without this, every cleaning is temporary."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Brush off loose mildew spores outdoors — wear a mask",
-      "2. Mix 1 scoop OxiClean per gallon of warm water. Apply or soak",
-      "3. Scrub gently with soft brush. Rinse thoroughly",
-      "4. Air dry in direct sunlight if possible — UV kills remaining spores",
-      "5. Repeat if stain persists"
+      "1. Care code check. W or WS only. S, X, unknown, vintage, wool, silk = pro.",
+      "2. Press the cushion. Musty inside or wet foam = remediation specialist, not home.",
+      "3. PPE: N95 + gloves. Take cushion outdoors.",
+      "4. Soft-brush + HEPA vacuum spores away from face, downwind.",
+      "5. OxiClean cool damp-cloth — do NOT saturate. 15–20 min. Cool damp-cloth rinse.",
+      "6. 3% peroxide spot pass on white / light fabric only, hidden test.",
+      "7. Sun-dry several hours + fan-dry until foam is fully dry inside.",
+      "8. Fix the moisture source — dehumidifier, leak repair, ventilation."
     ],
     "products": [
-      "OxiClean Versatile Stain Remover"
+      "OxiClean Versatile (water-safe upholstery)",
+      "3% Hydrogen peroxide (whites and light only)",
+      "HEPA vacuum",
+      "Dehumidifier",
+      "N95 mask + gloves",
+      "Soft brush + white cloths"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if care code is S, X, unknown, vintage, wool, or silk. Stop if foam is damp, smells musty inside, or stays compressed — that is structural mildew. Stop if mildew returns within days — moisture source needs professional diagnosis. Stop after 2 home cycles without progress.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "Structural mildew = remediation specialist, NOT home cleaning",
+      "S, X, unknown care codes, vintage, wool, silk = pro from minute one",
+      "Never saturate — wet foam grows new mildew inside",
+      "Never chlorine bleach — strips color, damages foam, doesn't fix the cause",
+      "PPE is required — mildew spores are an inhalation hazard",
+      "Moisture-source fix is non-negotiable"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never treat S, X, or unknown-care-code upholstery at home",
+      "Never saturate upholstery with mildew solutions — foam mildew is worse",
+      "Never chlorine bleach on upholstery",
+      "Never brush mildew indoors — spores aerosolize",
+      "Never skip PPE — N95 and gloves are required",
+      "Never skip the moisture-source fix"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W (water-safe) and WS care codes: tolerate cool OxiClean damp-cloth method",
+      "S (solvent-only) and X (vacuum-only) care codes: pro from minute one",
+      "Wool / silk blend upholstery: pro — peroxide yellows wool, OxiClean damages silk",
+      "Vintage / antique upholstery: pro — fiber and stuffing degradation risk",
+      "Foam cushions: saturation creates structural mildew inside the cushion",
+      "Mixed-fiber upholstery: treat for the most sensitive fiber present"
     ]
   },
+  "materialWarnings": [
+    "Structural mildew is mold contamination — remediation specialist territory",
+    "Care code gates everything — W/WS only, otherwise pro",
+    "Foam saturation creates a worse mildew problem inside",
+    "Moisture-source fix is part of the protocol, not optional"
+  ],
   "escalation": {
-    "when": "If mildew stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is mildew on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "Care code S, X, unknown, vintage, wool, or silk upholstery. Foam smells musty inside or stays damp (structural mildew). Mildew returns within days of home cleaning (moisture source not fixed). 2 home cycles without progress. Visible mold on the frame or backing. Health concerns — anyone in the home with asthma, immune issues, or mold sensitivity.",
+    "whatToTell": "\"Mildew on [W/WS/S/X/unknown] upholstery, [synthetic / wool / silk / vintage / mixed], [surface only / suspect structural — foam smells musty], [single spot / multiple cushions / whole piece], age [days / weeks / months], moisture source [identified — humidity / leak / unknown], home-treated with [PPE + outdoor HEPA + cool OxiClean damp-cloth + 3% peroxide on whites + sun-dry] — no chlorine bleach, no saturation. [Recurring within days / not improving / suspect mold inside cushion].\"",
+    "specialistType": "professional upholstery cleaning service for surface mildew on water-safe fabric; licensed mold remediation specialist if structural mildew, foam saturation, visible mold on frame, or recurring contamination"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Care code — W, S, WS, X, or unknown?",
+      "Surface mildew on the cushion cover, or does the foam smell musty inside?",
+      "Removable washable cover or fixed upholstery?",
+      "Where is the moisture coming from — humidity, leak, condensation?",
+      "Anyone in the home with asthma, mold sensitivity, or immune concerns?",
+      "Vintage / antique / wool / silk piece?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Care code is the first gate — W/WS proceed, S/X/unknown to pro. Removable washable covers tolerate the protocol better than fixed upholstery. Foam saturation is the silent failure mode — wet foam grows mildew inside the cushion within days. Moisture-source fix is what makes the cleaning durable. Health-sensitive household = pro / remediation regardless of fabric."
   },
-  "difficulty": 5,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

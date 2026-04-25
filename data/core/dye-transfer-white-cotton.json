@@ -1,79 +1,208 @@
 {
   "id": "dye-transfer-white-cotton",
   "title": "Dye Transfer on White Cotton",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "white-cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Dye transfer occurs when loose dye from one garment migrates to white cotton during washing — typically from dark denim, new colored items, or non-colorfast fabrics. The transferred dye bonds to the recipient fiber through the same mechanisms as intentional dyeing: hydrogen bonds, Van der Waals forces, and in some cases ionic bonds. Once set by heat or time, the dye behaves as if it were part of the fiber.",
-  "whyThisWorks": "A color remover or dye remover (oxygen bleach such as OxiClean, or hydrogen peroxide for whites) or reducing agent (sodium hydrosulfite for whites) breaks the chromophore bonds in the transferred dye on white cotton. Speed is critical — fresh transfers respond dramatically better than set ones. Re-washing immediately in cold water with oxygen bleach is the most effective first response. Heat (dryer) makes dye transfer permanent.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "1–6 hour cool soak; speed-critical, white cotton has the widest bench but heat still sets it",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "dye-transfer-white",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "dye",
+      "color-run",
+      "white-cotton",
+      "speed-critical",
+      "no-heat",
+      "no-chlorine-bleach",
+      "color-remover-eligible",
+      "widest-home-bench"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Dye transfer on white cotton is bleed from a colored item onto white cotton during washing — typically dark denim, new colored items, red socks, or non-colorfast goods. The migrating dye bonds to cotton's cellulose fibers via hydrogen bonds and Van der Waals forces, the same mechanism as intentional dyeing. White cotton has the widest home bench of any fiber for dye transfer because: (1) it tolerates oxygen bleach (OxiClean) at cool temperature, (2) it tolerates reducing bleach (Color Remover) on white-only basis, and (3) it tolerates 3% hydrogen peroxide for residual color. The hard line that people get wrong: chlorine bleach. Reaching for chlorine on dye transfer locks azo dyes into a permanent yellow oxidation product — instinctive and wrong. Heat is the second hard line — hot wash or hot dryer permanently sets the transfer.",
+  "whyThisWorks": "Speed plus oxygen bleach in cool water is the standard play: re-wash IMMEDIATELY in cool before the dye sets, then OxiClean cool soak 1–6 hours to break chromophore bonds. For stubborn or partially set transfer, Color Remover (Carbona or Rit, sodium hydrosulfite reducing bleach) on white cotton breaks azo dye bonds reductively rather than oxidatively. White cotton tolerates the reducing bleach because there's no garment dye to lose. 3% peroxide finishes residual yellow shadow. Sun-dry adds UV photodegradation. The recurring trap: chlorine bleach panic moves and any hot step.",
+  "defaultAssumption": "White cotton t-shirt, sheet, towel, sock, or napkin + dye transfer from a dark item in a recent wash, fresh and not yet hot-dried. White cotton has the widest home recovery window. Hot-dried = often permanent.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage — Has It Been Hot-Dried",
+      "technique": "Set assessment",
+      "equipment": "Care label, good light",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Hot-dried = often permanent — escalate or accept. Otherwise act fast. Do NOT dry the item again until cleared. White cotton has the widest bench — confidence justified IF caught fresh."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cool Re-Wash Immediately",
+      "technique": "Repeat the wash before any heat",
+      "equipment": "Washing machine, cool water, normal detergent",
+      "dwellTime": "Full cool cycle",
+      "instruction": "Cool wash NOW with normal detergent. Do NOT dry. Speed matters more than any single product choice."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "OxiClean Cool Soak",
+      "technique": "Oxygen bleach to break chromophore bonds",
+      "equipment": "OxiClean per label, cool water, soak basin",
+      "dwellTime": "1–6 hours, check hourly",
+      "instruction": "Mix OxiClean per label in COOL water. Soak the white cotton 1–6 hours. Check every hour — pull when transfer clears. Cool rinse, second cool wash. Repeat soak if partial."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Color Remover — Reducing Bleach for White Cotton",
+      "technique": "Sodium hydrosulfite reductive cleavage",
+      "equipment": "Carbona Color Run Remover or Rit Color Remover, ventilation",
+      "dwellTime": "Per label",
+      "instruction": "Eligible because the cotton is white. Per label — Carbona or Rit (sodium hydrosulfite). Ventilate (sulfur smell). Cool rinse, cool wash. Confirm white before any Color Remover step — never on colored garments."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% Hydrogen Peroxide for Residual Yellow",
+      "technique": "Oxidize residual chromophore",
+      "equipment": "3% H₂O₂ on damp cloth or as soak additive",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Residual yellow shadow: 3% peroxide damp cloth or add to OxiClean soak. White cotton tolerates this — no hidden test needed."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Sun-Dry Plus AIR-DRY ONLY",
+      "technique": "UV finish, no dryer until clear",
+      "equipment": "Direct sunlight, drying rack",
+      "dwellTime": "Half-day plus inspection",
+      "instruction": "AIR-DRY in direct sunlight — UV photodegrades residual dye. NEVER hot dryer or iron until cleared. If color remains after sun-dry, repeat OxiClean soak before any heat."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply sodium hydrosulfite (reducing agent) to break the transferred dye bonds",
-      "2. Flush with NSD and cool water",
-      "3. If color remains: apply H2O2 6% as oxidizing bleach — 5-15 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Repeat full cycle if needed"
+      "1. Triage — hot-dried (often permanent) vs fresh.",
+      "2. Cool re-wash immediately. No dryer.",
+      "3. OxiClean cool soak 1–6 hr, check hourly.",
+      "4. Color Remover (sodium hydrosulfite) — confirmed white only, ventilation.",
+      "5. 3% H₂O₂ for residual yellow shadow.",
+      "6. Sun-dry plus AIR-DRY. NO heat until clear."
     ],
     "products": [
-      "sodium hydrosulfite",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "OxiClean / oxygen bleach",
+      "Carbona Color Run Remover or Rit Color Remover (white cotton)",
+      "3% Hydrogen peroxide",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat permanently sets dye transfer",
     "warnings": [
-      "Speed is critical — treat immediately before dye bonds",
-      "Heat makes dye transfer permanent"
+      "NEVER chlorine bleach — locks dye into permanent yellow oxidation",
+      "NEVER hot water or hot dryer — permanent dye set",
+      "Color Remover is white-only — confirm before use",
+      "Speed matters more than any product choice",
+      "Sulfur smell from reducing bleach — ventilate"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "White Cotton Has the Widest Bench — But Speed Still Wins",
+      "instruction": "White cotton tolerates the most products of any fiber on dye transfer: OxiClean, Color Remover, 3% peroxide, sun-dry. That makes it the most recoverable. But two hard rules still apply: (1) NO chlorine bleach (locks azo dyes into a permanent yellow oxidation product — instinctive and wrong) and (2) NO heat until cleared (hot wash or hot dryer permanently sets the transfer). The order matters — speed and cool discipline beat any single product."
+    },
+    {
+      "step": 2,
+      "agent": "Cool Re-Wash Immediately — Don't Dry",
+      "instruction": "Run the white cotton through a cool wash cycle right now with normal detergent. Do NOT put it in the dryer. The dye is still partly soluble in cool water during the first wash — every hour of delay reduces success."
+    },
+    {
+      "step": 3,
+      "agent": "OxiClean Cool Soak — 1 to 6 Hours",
+      "instruction": "Mix OxiClean per label in COOL water in a basin or sink. Submerge the white cotton. Check every hour — many transfers clear within 2 to 3 hours. Cool rinse, second cool wash with detergent. Repeat soak if it's most of the way there."
+    },
+    {
+      "step": 4,
+      "agent": "Color Remover — Confirmed White Only",
+      "instruction": "If white cotton still has color after OxiClean: Carbona Color Run Remover or Rit Color Remover (sodium hydrosulfite). Per label. Ventilate (sulfur smell). White cotton is the friendliest fiber for this product — no garment dye to lose. Confirm the item is fully white before this step. Never on colored cotton."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide for Residual Yellow Shadow",
+      "instruction": "Residual yellow on white cotton: 3% drugstore peroxide on a damp cloth, or add to the OxiClean soak. White cotton tolerates this without hidden testing."
+    },
+    {
+      "step": 6,
+      "agent": "Sun-Dry Plus AIR-DRY Inspection",
+      "instruction": "Hang in direct sunlight. UV photodegrades residual dye. Inspect dry. NEVER hot dryer or iron until the transfer is fully gone — heat permanently sets the stain. If color remains after sun-dry, repeat OxiClean soak before any heat."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Re-wash IMMEDIATELY in cold water — do NOT dry",
-      "2. Dissolve 1 scoop OxiClean in cold water. Soak the item for 1-6 hours",
-      "3. Check progress every hour. Re-wash in cold water with detergent",
-      "4. Repeat soak if needed — some dye transfers require multiple cycles",
-      "5. Air dry only — dryer heat permanently sets dye transfer"
+      "1. NO chlorine bleach. NO heat until fully clear.",
+      "2. Cool re-wash IMMEDIATELY. No dryer.",
+      "3. OxiClean cool soak 1–6 hr, check hourly.",
+      "4. Carbona / Rit Color Remover (white cotton — confirmed white only), ventilate.",
+      "5. 3% peroxide for residual yellow shadow.",
+      "6. AIR-DRY plus sun-dry. NO heat until fully clear."
     ],
     "products": [
-      "OxiClean Versatile Stain Remover"
+      "OxiClean Versatile",
+      "Carbona Color Run Remover / Rit Color Remover (white cotton)",
+      "3% Hydrogen peroxide",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if the cotton has been hot-dried (often permanent). Stop after 2 OxiClean soaks plus Color Remover plus peroxide without progress. Stop if you cannot confirm the item is fully white before using Color Remover.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "NEVER chlorine bleach — permanent yellow lock on dye transfer",
+      "NEVER hot water or hot dryer — permanent dye set",
+      "Color Remover for confirmed white cotton only",
+      "Speed matters more than chemistry choice"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Avoid prolonged exposure to concentrated acid"
+      "Never chlorine bleach on dye transfer — permanent yellow lock",
+      "Never hot water or hot dryer until cleared",
+      "Never Color Remover on colored cotton",
+      "Never iron the stained area before clearing",
+      "Never mix peroxide + chlorine + ammonia"
     ],
     "fiberSensitivities": [
-      "Most chemically resistant textile — tolerates aggressive treatment",
-      "Can handle chlorine bleach, hydrogen peroxide, oxygen bleach",
-      "Hot water safe up to 95°C / 200°F"
+      "White cotton: widest bench — OxiClean, Color Remover, 3% peroxide all eligible",
+      "White cotton tolerates 3% peroxide without hidden test",
+      "White cotton blends (with polyester / spandex): polyester rules apply — cool only",
+      "Vintage / antique white cotton: pro — fiber fragility under reducing bleach"
     ]
   },
+  "materialWarnings": [
+    "White cotton is the friendliest fiber for dye transfer recovery",
+    "Speed still matters — fresh and not hot-dried = high success",
+    "No chlorine bleach — permanent yellow lock",
+    "No heat until fully clear",
+    "Hot-dried = often permanent regardless of fiber"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is dye transfer on white cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot dryer already used (often permanent). White cotton blend with polyester or spandex where heat at any prior step set the polyester component. 2 OxiClean soaks plus Color Remover plus peroxide plateau. Vintage / antique white cotton (fiber fragility under reducing bleach).",
+    "whatToTell": "\"Dye transfer on white cotton [solid white / blend with polyester or spandex], [fresh / hot-dried], source [denim / red garment / mixed wash], home-treated with [cool re-wash + OxiClean soak × N + Color Remover + 3% peroxide + sun-dry]. No chlorine bleach, no heat. [Residual color / hot-dried suspected / blend complication].\"",
+    "specialistType": "professional dry cleaner with reducing-bleach chemistry experience"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "How fresh — current wash or hot-dried already?",
+      "Solid white cotton or a blend (polyester, spandex, modal)?",
+      "Source of the transfer — denim, red, mixed?",
+      "Has the item been ironed since the transfer?",
+      "Vintage / antique piece?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "White cotton has the widest home bench of any fiber on dye transfer. Fresh + not hot-dried = high-confidence home recovery. Hot-dried = often permanent regardless. Blends with polyester or spandex narrow the bench (cool-only discipline matters more, and Color Remover may damage spandex). Red and navy transfers are the toughest azo dyes — budget extra cycles."
   },
-  "difficulty": 6,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
