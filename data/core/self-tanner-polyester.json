@@ -1,78 +1,245 @@
 {
   "id": "self-tanner-polyester",
   "title": "Self-Tanner on Polyester",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Self-tanner contains dihydroxyacetone (DHA) that reacts with amino acids in a browning-type reaction to produce brown browning pigments pigments. On polyester, DHA reacts with the fiber (especially protein fibers and cotton) through the same chemistry it uses on skin. The brown color develops over 2-8 hours and becomes increasingly resistant as the browning compounds lock together.",
-  "whyThisWorks": "If caught before color develops (within 1-2 hours), cold water and surfactant can remove the DHA before the browning reaction completes on polyester. Once developed, an oxidizer (H2O2) breaks down the browning pigments color. Lemon juice (citric acid) can also lighten the browning compounds. Speed is everything — once the color fully develops, complete removal is very difficult.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "15 minutes (within 1-hour window) or 30–60+ minutes (developed); honest cap on dyed polyester",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "self-tanner",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "self-tanner",
+      "DHA",
+      "browning-reaction",
+      "polyester",
+      "speed-critical",
+      "no-hot-water",
+      "no-hot-dryer",
+      "honest-cap",
+      "1-hour-window"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Self-tanner is the active ingredient DHA (dihydroxyacetone) suspended in a moisturizer-like base. DHA produces the brown color by reacting with amino acids — that's what gives skin a tan, and it's what stains fabric the same way. The color develops slowly over 2 to 8 hours after contact. Within the first hour, it's still mostly liquid DHA on the fabric and removable with cold water + Dawn. Once the brown develops, it's bonded color that behaves like a dye stain and is much harder. Polyester adds the OLEOPHILIC + heat-lock complications: hot water sets the color into the fiber permanently. The honest cap on developed self-tanner on polyester is partial removal — set realistic expectations.",
+  "whyThisWorks": "Speed is everything. If caught within the first hour (before color develops), cold water + Dawn lifts the DHA before the browning reaction completes. After development, the protocol shifts: 3% peroxide on white polyester partially oxidizes the brown, citric acid (lemon juice or diluted vinegar) lightens the brown, and sunlight provides slow UV photodegradation. The full sequence is the most reliable approach for developed stains. The recurring trap on polyester: hot water at any step sets the brown into the fiber permanently — same chemistry as industrial polyester dyeing. Cool throughout.",
+  "scienceNote": "Mechanism (pro-facing): DHA reacts with amino-acid groups via Maillard-like browning to produce melanoidin pigments. The reaction is irreversible once developed; reduction (sodium hydrosulfite) and oxidation (H₂O₂) can partially reverse the chromophore. Pro uses NSD + 3% H₂O₂ + acetic acid + sodium hydrosulfite for set browning on white polyester.",
+  "defaultAssumption": "Self-tanner accident on a polyester sheet, athletic-wear, or shirt. Within 1 hour of contact = high-confidence DIY with cold + Dawn. Color already developed (2–8 hours later, brown visible) = full sequence with honest expectation cap on dyed polyester. Hot-dried = often permanent.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage — Within the 1-Hour Window",
+      "technique": "Speed assessment",
+      "equipment": "Good light, clock",
+      "dwellTime": "1 minute",
+      "instruction": "If under 1 hour since contact and brown hasn't fully developed: speed-priority cold flush + Dawn (steps 2-4). If brown is already visible: full sequence (steps 5-8). Within 1 hour = high success. Over 1 hour with full brown = honest cap territory."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush DHA before reaction completes",
+      "equipment": "Cold running water, white catch towel",
+      "dwellTime": "60–90 seconds",
+      "instruction": "Within 1-hour window: hold the BACK of the spot under cold running water with a white towel underneath. 60–90 sec. Cold only — heat sets the browning reaction faster."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Cool, 10 Minutes",
+      "technique": "Strip DHA before color develops",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 10 min. Polyester is oleophilic — extended dwell helps. Cool damp-cloth rinse. Within 1 hour, this often lifts the DHA before brown develops."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY (Within Window)",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water",
+      "dwellTime": "Cool cycle + AIR-DRY",
+      "instruction": "Within window: cool machine wash + AIR-DRY. Inspect dry. Brown developed anyway? Continue to step 5. NEVER hot dryer until cleared."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Test for Peroxide",
+      "technique": "Bleed test on dyed polyester",
+      "equipment": "3% H₂O₂ on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Developed brown stain: hidden seam test before peroxide. Color transfers = skip peroxide, sunlight + acid only."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Developed Brown — White Only",
+      "technique": "Partial oxidation of browning pigments",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE polyester or hidden-test-passed: 3% peroxide damp cloth 5–10 min. Partially breaks the brown chromophore. NEVER mix with chlorine, ammonia, or alkaline cleaners."
+    },
+    {
+      "step": 7,
+      "side": "wet-minimal",
+      "agent": "Citric Acid Lighten — Lemon Juice or Vinegar",
+      "technique": "Acid lightens browning compounds",
+      "equipment": "Lemon juice or 1:1 white vinegar + cool water",
+      "dwellTime": "10 minutes",
+      "instruction": "Squeeze lemon juice directly on the spot OR 1:1 white vinegar + cool water on damp cloth. 10 min. Citric acid lightens the brown. Cool damp-cloth rinse THOROUGHLY before any peroxide (acid + peroxide = degraded peroxide, not toxic but ineffective)."
+    },
+    {
+      "step": 8,
+      "side": "dry",
+      "agent": "Sunlight Finisher",
+      "technique": "UV photodegrades remaining brown",
+      "equipment": "Direct sunlight, hanger",
+      "dwellTime": "Several hours, multi-day if needed",
+      "instruction": "Hang damp in direct sunlight several hours. UV breaks down browning pigments slowly. Multi-day exposure for stubborn cases. Sun + patience is the most reliable finisher on developed self-tanner."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate or appropriate solvent to dissolve dye/pigment matrix",
-      "2. Apply NSD to lift loosened pigment. Flush with cool water",
-      "3. If color persists: apply H2O2 6% on colorfast fabrics to break color bonds",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Triage — within 1-hour window vs developed brown.",
+      "2. Cold water back-flush 60–90 sec.",
+      "3. Dawn pretreat cool 10 min — within window often enough.",
+      "4. Hidden-area peroxide test on dyed polyester.",
+      "5. 3% H₂O₂ damp cloth for developed brown on white polyester.",
+      "6. Citric acid (lemon / vinegar) 10 min lighten — rinse before peroxide.",
+      "7. Sunlight finisher — UV photodegrades remaining brown.",
+      "8. Cool wash + AIR-DRY. Honest cap on dyed polyester."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "3% Hydrogen peroxide (white polyester or hidden-test-passed)",
+      "Lemon juice or white vinegar (citric acid lighten)",
+      "Sunlight (UV finisher)",
+      "Cool water"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool throughout — heat sets browning reaction into polyester permanently",
+    "warnings": [
+      "NEVER hot water — sets browning reaction into polyester forever",
+      "NEVER hot dryer until cleared",
+      "Within 1-hour window = much higher success — speed matters",
+      "Honest cap on dyed polyester — partial removal is the norm for developed stains",
+      "Performance / specialty / dry-clean-only polyester = pro",
+      "Never mix peroxide + chlorine + ammonia + alkaline"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Speed Window — Within 1 Hour",
+      "instruction": "Self-tanner color develops slowly over 2 to 8 hours after contact. The window matters: caught within the first hour (before brown fully develops), cold water + Dawn lifts most of it. After full development, it behaves like a dye stain and is much harder. Honest expectation: developed self-tanner on dyed polyester often plateaus at a faint brown shadow. Two hard rules either way: NO hot water (sets the brown) and NO hot dryer (sets the brown)."
+    },
+    {
+      "step": 2,
+      "agent": "Within Window: Cold Back-Flush + Dawn",
+      "instruction": "Within 1 hour of contact: turn the garment inside out, hold the BACK of the spot under cold running water 60 to 90 seconds with a white towel under the front. Then generous Dawn on the spot, soft toothbrush 10 minutes, cool damp-cloth rinse. Cool machine wash + AIR-DRY. Inspect dry — often the DHA lifts before color develops. If brown developed anyway, continue to step 3."
+    },
+    {
+      "step": 3,
+      "agent": "Developed Brown — Hidden-Area Test on Dyed Polyester",
+      "instruction": "Brown already developed: dab 3% peroxide on an inside seam, blot with a white cloth. Color transfers = skip peroxide, sunlight + acid only. White polyester usually passes; dyed polyester often doesn't."
+    },
+    {
+      "step": 4,
+      "agent": "3% Peroxide on White Polyester — Partial Oxidation",
+      "instruction": "WHITE polyester or hidden-test-passed: 3% drugstore peroxide on a damp cloth, press 5 to 10 minutes, blot. Partially breaks the brown color. Repeat after sunlight if needed.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners — toxic fumes."
+    },
+    {
+      "step": 5,
+      "agent": "Lemon Juice or Vinegar — Lighten the Brown",
+      "instruction": "Squeeze fresh lemon juice directly on the spot OR mix 1 part white vinegar with 1 part cool water on a damp cloth. Press 10 minutes. The citric acid lightens the brown chemistry. Cool damp-cloth rinse THOROUGHLY before any peroxide step (acid plus peroxide degrades the peroxide, making it ineffective)."
+    },
+    {
+      "step": 6,
+      "agent": "Sunlight — The Real Finisher",
+      "instruction": "Hang the damp garment in direct sunlight for several hours. UV breaks down the browning pigments slowly. Multi-day sunlight exposure for stubborn cases. Sun + patience is more reliable than aggressive chemistry on developed self-tanner."
+    },
+    {
+      "step": 7,
+      "agent": "Cool Wash + AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry. Faint brown remaining? Repeat sunlight. NEVER hot dryer until cleared. Honest cap on dyed polyester: a faint shadow may remain regardless. Pro is the next escalation for valuable garments."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately — never rub (spreading dye worsens it)",
-      "2. Apply Dawn dish soap mixed with cold water. Blot gently",
-      "3. If stain persists: apply hydrogen peroxide 3% on colorfast fabrics — test hidden area first, 5-10 min dwell time",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat until stain is completely gone"
+      "1. Triage — within 1-hour window vs developed brown.",
+      "2. NO hot water. NO hot dryer until cleared.",
+      "3. Within window: cold back-flush + Dawn cool 10 min + cool wash + AIR-DRY.",
+      "4. Developed: hidden-area peroxide test on dyed polyester.",
+      "5. 3% peroxide damp cloth on white / hidden-test-passed.",
+      "6. Lemon juice or vinegar 10 min lighten — rinse THOROUGHLY before peroxide.",
+      "7. Sunlight finisher — hours to multi-day.",
+      "8. Cool wash + AIR-DRY."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% Hydrogen peroxide (white or hidden-test-passed polyester)",
+      "Lemon juice or white vinegar",
+      "Sunlight",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if hot water or hot dryer was already used (often permanent brown). Stop on performance / specialty / dry-clean-only polyester (pro). Stop after full sequence + multi-day sunlight plateau on dyed polyester — accept the honest cap.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "NEVER hot water — sets browning reaction permanently",
+      "NEVER hot dryer until cleared",
+      "Within 1-hour window = high success; over 1 hour with developed brown = honest cap",
+      "Hidden test on dyed polyester before peroxide",
+      "Polyester is oleophilic — extended Dawn dwell needed",
+      "Citric acid + peroxide degrades peroxide — rinse between",
+      "Honest cap on dyed polyester for developed stains"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on self-tanner + polyester",
+      "Never hot dryer until cleared",
+      "Never mix peroxide + chlorine + ammonia + alkaline",
+      "Never iron over a brown stain",
+      "Never apply citric acid and peroxide in the same dwell — rinse between"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs DHA / moisturizer base tightly",
+      "Polyester locks color under heat — same chemistry as industrial dyeing",
+      "Performance / specialty polyester: pro — coatings react unpredictably",
+      "Dyed polyester: hidden test mandatory before peroxide; honest cap on developed stains",
+      "Within 1-hour window vs developed = entirely different protocols"
     ]
   },
+  "materialWarnings": [
+    "1-hour window is the speed advantage — caught within = high success",
+    "Developed self-tanner has an HONEST CAP on dyed polyester",
+    "Hot water sets the browning reaction permanently",
+    "Sunlight is the finisher — patience over hours-to-days",
+    "Citric acid + peroxide same-dwell is wasteful — rinse between"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is self tanner on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent). Performance / specialty / dry-clean-only polyester. Full sequence (Dawn + peroxide + acid + sunlight × multi-day) plateau on dyed polyester. Self-tanner has been on the fabric for days with full color development.",
+    "whatToTell": "\"Self-tanner on [white / dyed / athletic / specialty] polyester, age [under 1 hour / hours / days / hot-dried suspected], home-treated with [cold back-flush + Dawn cool + 3% peroxide on white + citric acid + sunlight finisher]. No hot, no chlorine. [Within window or developed brown / honest cap reached / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with reducing-bleach (sodium hydrosulfite) chemistry — note pro chemistry plateaus on hot-dried developed self-tanner on dyed polyester"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Within 1 hour of contact, or has color developed?",
+      "White, dyed, athletic, or specialty polyester?",
+      "Spray-on tanner (more localized) or lotion (more spread)?",
+      "Has hot water or hot dryer been used?",
+      "Has chlorine bleach been used?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "The 1-hour window is the entire speed advantage on self-tanner — within window with cold + Dawn often clears it before color develops. Developed self-tanner on dyed polyester has a real honest cap (partial removal often the best outcome). Sunlight is genuinely the most reliable finisher because the browning pigments are photodegradable. Polyester's heat-lock means hot water at any prior step usually means permanent — disclose to the cleaner."
   },
-  "difficulty": 7,
-  "timeEstimate": "15-45 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

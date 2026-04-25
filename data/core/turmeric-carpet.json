@@ -1,84 +1,255 @@
 {
   "id": "turmeric-carpet",
-  "title": "Turmeric / Curry on Carpet",
-  "stainFamily": "tannin",
+  "title": "Turmeric on Carpet",
+  "stainType": "dye",
+  "stainFamily": "dye",
   "surface": "carpet",
-  "sector": "home",
+  "sector": "carpet",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Tannins are tannin compounds that bond to fibers tightlyto hydroxyl groups. On carpet, tannins oxidize over time, darkening the stain and making it harder to remove. turmeric pigment (turmeric's active pigment) is a compound with a highly color that is particularly resistant to oxidative bleaching. Oxidizing agents (H₂O₂) attack the color, rendering it colorless. Acidic rinse (acetic acid) prevents re-oxidation. The oil/waxy component of curry must be removed first with a dry-side solvent before wet-side treatment can reach the color.",
-  "whyThisWorks": "Tannins are tannin-type pigments that bond via grip. H₂O₂ oxidizes the color (colored part) of the molecule into colorless compounds. The oil carrier in curry must be removed first with dry-side solvent, or the color treatment cannot penetrate.",
-  "defaultAssumption": "Treat as unknown age / possibly dried.",
+  "verified": true,
+  "difficulty": 9,
+  "timeEstimate": "30–90 minutes plus multi-day sunlight finisher; honest cap on dyed carpet",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "turmeric",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "turmeric",
+      "yellow-dye",
+      "carpet",
+      "no-alkaline",
+      "no-chlorine-bleach",
+      "sunlight-finisher",
+      "honest-cap",
+      "no-overwetting"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Turmeric on carpet is the toughest yellow-dye case in common use because the bright yellow turmeric pigment grips fibers fast and resists conventional oxidation. The recurring traps: (1) chlorine bleach (turns the turmeric yellow into RED-BROWN — worse than original), (2) alkaline cleaners (baking soda, ammonia, OxiClean alone before peroxide all DARKEN turmeric permanently), and (3) hot water (sets the pigment). Carpet adds two more complications: pad saturation (over-wetting drives the yellow into the pad where you can't reach it), and dyed-carpet color-loss risk if you reach for peroxide without a hidden test. The saving feature on turmeric is photodegradation — UV light gradually breaks down the yellow color over hours-to-days. Honest cap: full removal on dyed carpet is often impossible. Manage expectations.",
+  "whyThisWorks": "On wet curry: Dawn first to strip the oil carrier, then peroxide can reach the pigment. On dry turmeric (spice spill): the powder is the bulk — vacuum it dry first, then chemistry. Cool damp-cloth peroxide on hidden-test-passed synthetic carpet partially oxidizes the yellow. Sunlight is the real finisher — UV photodegrades turmeric over hours-to-days. Patience plus sunlight beats aggressive chemistry. The home protocol stops at oxygen-based oxidation (3% peroxide). Chlorine bleach is BANNED — produces a permanent red-brown reaction worse than the original yellow.",
+  "scienceNote": "Mechanism (pro-facing): turmeric's pigment is curcumin — a diketo-enol compound with a stable conjugated chromophore. Curcumin shifts color with pH (yellow in acid, RED-BROWN in alkali). Photodegradable under UV (250–400 nm). Pro uses NSD oil-strip + 3% H₂O₂ at controlled dilution + UV-assist + acetic acid neutralizing rinse. Sodium hydrosulfite is the pro nuclear option for set yellow on synthetic carpet.",
+  "defaultAssumption": "Curry / turmeric spill on synthetic (nylon / polyester / olefin) home carpet. Wet curry = full sequence with Dawn oil-strip first. Dry turmeric (spice powder spill) = vacuum first. Wool carpet = pro from minute one. Honest cap: full removal on dyed carpet is often impossible.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage — Wet Curry vs Dry Turmeric",
+      "technique": "Solid bulk strategy",
+      "equipment": "HEPA vacuum, plastic spoon",
+      "dwellTime": "2 minutes",
+      "instruction": "Dry turmeric (powder spill): HEPA vacuum bulk dry — never wet first (water turns powder into a paste that spreads). Wet curry: scrape solids with plastic spoon edge into a garbage bag — never rub. Wool carpet = pro from minute one."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Dawn + Soft Brush — Strip Oil (Wet Curry)",
+      "technique": "Mandatory before peroxide on wet curry",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Wet curry only: work Dawn into the spot with a soft toothbrush 5–10 min. Dawn emulsifies the oil carrier so peroxide can reach the pigment. Damp-cloth rinse — NEVER pour water (pad saturation). Skip on dry turmeric."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Peroxide Test",
+      "technique": "Carpet bleed test",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "Hidden carpet area: dab 3% peroxide on a white cloth, press 2 min. Color transfers = skip peroxide. Sunlight + acid only finish."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Yellow",
+      "technique": "Hidden-test-passed synthetic carpet only",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Hidden-test-passed synthetic carpet: 3% peroxide damp cloth 5–10 min. Damp-cloth rinse. NEVER mix with chlorine bleach (turns yellow red-brown), ammonia, or alkaline cleaners (darken turmeric)."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Acid Rinse",
+      "technique": "Keep tannin on lighter side, neutralize peroxide",
+      "equipment": "1 tbsp white vinegar + 1 cup cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar + cool water on damp cloth 5 min. Neutralizes peroxide AND keeps any tannin component on the lighter side of its color range. Damp-cloth rinse."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Sunlight Finisher",
+      "technique": "UV photodegrades turmeric over hours-to-days",
+      "equipment": "Open blinds for sunlight, fan",
+      "dwellTime": "Several hours, multi-day if needed",
+      "instruction": "Open blinds so direct sunlight falls on the spot for several hours. UV breaks down turmeric pigment slowly. Multi-day sunlight is the most reliable finisher. For movable area rugs, take outdoors for direct sun."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Weighted Paper Towels Overnight Plus Fan",
+      "technique": "Prevent wick-back from pad",
+      "equipment": "Paper towels + heavy book, fan",
+      "dwellTime": "8–12 hours",
+      "instruction": "Stack paper towels + weight overnight to extract residual moisture and pigment from the pad. Fan-dry. Inspect dry. Faint yellow remaining = repeat sunlight, not chemistry."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Spray or sponge VDS through the stain. Blot from back side into white absorbent. Ventilate. This removes any waxy or oily component of the curry.",
-      "2. Apply Tannin. For old curry/turmeric stains, allow up to 15 min dwell. Watch color fade.",
-      "3. Apply diluted acetic acid (1:1 dilute) to stop the oxidation and prevent color rebound.",
-      "4. Flush with cool water until cloth shows no residue color. Gentle pressure only."
+      "1. Triage — wet curry vs dry turmeric. Wool carpet = pro.",
+      "2. HEPA vacuum dry powder OR scrape wet curry solids gently.",
+      "3. Dawn oil-strip on wet curry — mandatory before peroxide.",
+      "4. Hidden-area peroxide test on carpet.",
+      "5. 3% H₂O₂ damp cloth on hidden-test-passed synthetic carpet.",
+      "6. White vinegar acid rinse — neutralize peroxide.",
+      "7. Sunlight finisher — UV photodegrades turmeric over hours-to-days.",
+      "8. Weighted paper towels overnight + fan."
     ],
     "products": [
-      "Tannin",
-      "NSD (Neutral Synthetic Detergent)",
-      "H₂O₂ 6%",
-      "acetic acid"
+      "HEPA vacuum (dry turmeric powder)",
+      "Dawn / NSD (wet curry oil-strip)",
+      "3% Hydrogen peroxide (synthetic carpet, hidden test)",
+      "White vinegar",
+      "Sunlight (UV finisher)",
+      "Paper towels + weight"
     ],
-    "temperature": "cold/cool — hot water sets tannin stains and accelerates pigment bonding",
+    "temperature": "cool throughout — heat sets turmeric pigment permanently",
     "warnings": [
-      "Using hot water on protein stains — heat permanently sets the protein",
-      "Rubbing the stain instead of blotting — friction drives the stain deeper and damages fibers",
-      "Not testing chemicals on a hidden area first — dyes can bleed or bleach unexpectedly"
+      "NEVER chlorine bleach — turns turmeric yellow to RED-BROWN (worse than original)",
+      "NEVER alkaline cleaners (baking soda, ammonia, OxiClean alone before peroxide) — darken turmeric permanently",
+      "NEVER hot water — sets pigment",
+      "NEVER pour water — pad saturation drives yellow into pad",
+      "Wool carpet = pro from minute one",
+      "Hidden-area peroxide test mandatory on dyed carpet",
+      "Sunlight is the finisher — patience over hours-to-days",
+      "Honest cap: dyed carpet often plateaus at faint yellow shadow"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Turmeric on Carpet Has an Honest Cap",
+      "instruction": "Turmeric is the toughest yellow-dye stain in common use. Three hard rules: NO chlorine bleach (turns the yellow RED-BROWN — worse than original), NO alkaline cleaners (baking soda, ammonia, OxiClean alone all darken turmeric permanently), and NO hot water (sets the pigment). The path: oil-strip (wet curry only) → bounded peroxide on hidden-test-passed synthetic carpet → sunlight finisher over hours-to-days. Honest cap: full removal on dyed carpet is often impossible. Wool carpet = pro from minute one."
+    },
+    {
+      "step": 2,
+      "agent": "Dry Turmeric Powder vs Wet Curry — Different Starts",
+      "instruction": "Dry turmeric (spice spill): HEPA vacuum the bulk powder DRY first. Never wet it first — water turns the powder into a paste that spreads. Wet curry (sauce spill): scrape solid bulk with a plastic spoon edge into a garbage bag — never rub, rubbing pushes pigment into the carpet."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn Oil-Strip — Wet Curry Only",
+      "instruction": "Wet curry only: work Dawn dish soap into the spot with a soft toothbrush for 5 to 10 minutes. The oil in curry holds the turmeric pigment in place — Dawn strips the oil so peroxide can reach the pigment underneath. Damp-cloth rinse — NEVER pour water on the carpet, that drives the yellow into the pad. Skip this step on dry turmeric powder."
+    },
+    {
+      "step": 4,
+      "agent": "Hidden-Area Patch Test Before Peroxide",
+      "instruction": "In a hidden carpet area, dab 3% peroxide on a white cloth, press 2 minutes. Color transfers = skip peroxide entirely. No transfer = proceed."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide on Damp Cloth — Bounded",
+      "instruction": "Hidden-test-passed synthetic carpet only: 3% drugstore peroxide on a damp cloth, press the spot 5 to 10 minutes, blot. Partially oxidizes the yellow.",
+      "safetyNote": "NEVER mix peroxide with chlorine bleach (turns turmeric red-brown), ammonia (toxic chloramine gas), or alkaline cleaners (darken turmeric)."
+    },
+    {
+      "step": 6,
+      "agent": "White Vinegar Acid Rinse",
+      "instruction": "Mix 1 tablespoon white vinegar with 1 cup cool water. Apply with damp cloth, press 5 minutes. Neutralizes any peroxide AND keeps any tannin part of the stain on its lighter side. Damp-cloth rinse."
+    },
+    {
+      "step": 7,
+      "agent": "Sunlight — The Real Finisher",
+      "instruction": "Open blinds so direct sunlight falls on the spot for several hours. UV breaks down turmeric pigment slowly — this is the most reliable finisher. Multi-day sunlight exposure is normal for stubborn yellow. For movable area rugs, take outside for direct sun. Patience over hours-to-days beats aggressive chemistry."
+    },
+    {
+      "step": 8,
+      "agent": "Weighted Paper Towels Overnight",
+      "instruction": "Stack paper towels on the spot, weight with a heavy book, leave overnight. Fan-dry in the morning. Pulls residual moisture and pigment out of the pile and prevents yellow wicking back up from the pad. Inspect dry — faint yellow remaining? Repeat sunlight, not more chemistry."
+    },
+    {
+      "step": 9,
+      "agent": "Honest Cap and Pro Escalation",
+      "instruction": "Full sequence + multi-day sunlight didn't fully clear it? On dyed carpet, that's often the honest cap — pro chemistry plateaus on this stain too. For wool carpet, pro from minute one. Tell them: \"Turmeric on [synthetic / wool] carpet, age [fresh / hours / days], home-treated with [HEPA vacuum / Dawn oil-strip + 3% peroxide on hidden-test-passed + vinegar + sunlight × N days]. No chlorine, no alkaline, no hot, no over-wetting. [Residual yellow / honest cap reached].\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot up excess. Apply baking soda paste (baking soda + a little water). Wait 5 minutes.",
-      "2. Flush the area with cool water. Blot dry.",
-      "3. Apply 3% hydrogen peroxide from the pharmacy + dish soap solution. Wait 3–5 minutes.",
-      "4. Blot. If stain remains, repeat. Rinse thoroughly. Blot dry."
+      "1. Set honest expectations — dyed carpet often plateaus at partial yellow shadow.",
+      "2. NO chlorine bleach. NO alkaline cleaners. NO hot water. NO over-wetting. Wool carpet = pro.",
+      "3. Triage — wet curry (scrape) vs dry turmeric (HEPA vacuum dry first).",
+      "4. Dawn oil-strip on wet curry only — MANDATORY before peroxide.",
+      "5. Hidden-area peroxide test on carpet.",
+      "6. 3% peroxide damp cloth on hidden-test-passed synthetic carpet, 5–10 min.",
+      "7. White vinegar acid rinse 5 min.",
+      "8. Sunlight finisher — hours to multi-day.",
+      "9. Weighted paper towels overnight + fan."
     ],
     "products": [
-      "H₂O₂ 3%",
-      "Dawn NSD",
-      "baking soda",
-      "OxiClean Wine Stain Remover",
-      "28% Acetic Acid (diluted)"
+      "HEPA vacuum (dry turmeric powder)",
+      "Dawn dish soap (wet curry)",
+      "3% Hydrogen peroxide (hidden-test-passed synthetic carpet)",
+      "White vinegar",
+      "Sunlight",
+      "Paper towels + heavy book"
     ],
-    "whenToStop": "If the stain persists after these steps, move to professional treatment. turmeric pigment is highly resistant and requires professional chemistry to avoid damaging the surface.",
+    "whenToStop": "Stop on wool carpet (pro). Stop if hot water / steam / hot vacuum was used on the spot (often permanent). Stop if chlorine bleach was used (turned yellow to red-brown — irreversible). Stop if alkaline cleaner was used (darkened yellow permanently). Stop after full sequence + multi-day sunlight plateau on dyed carpet — accept honest cap.",
     "warnings": [
-      "Always test any solution on a hidden area first.",
-      "Work from the outside of the stain inward to avoid spreading it.",
-      "Use cool or warm water, never hot — heat sets many stains.",
-      "Blot, don't rub — friction damages fibers."
+      "NEVER chlorine bleach — RED-BROWN reaction worse than original yellow",
+      "NEVER alkaline cleaners — darken turmeric permanently",
+      "NEVER hot water or hot dryer — locks pigment",
+      "NEVER pour water — pad saturation drives pigment into pad",
+      "Wool carpet = pro from minute one",
+      "Hidden test on dyed carpet before peroxide",
+      "Sunlight is the finisher — patience over hours-to-days",
+      "Honest cap on dyed carpet — partial removal is the norm"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Use hot water — sets stains permanently",
-      "Use ammonia or alkaline cleaners on carpet — can set tannin stains",
-      "Rub instead of blot — drives stain deeper and damages fibers"
+      "Never chlorine bleach on turmeric — turns yellow to red-brown permanently",
+      "Never alkaline cleaners on turmeric — darken permanently",
+      "Never hot water on turmeric + carpet",
+      "Never pour water — pad saturation",
+      "Never skip oil-strip on wet curry before peroxide",
+      "Never mix peroxide + chlorine + ammonia + OxiClean"
     ],
     "fiberSensitivities": [
-      "Test all treatments on a hidden area first. Carpet may have specific vulnerabilities depending on fiber type or coating. Avoid over-wetting — excess moisture causes delamination from carpet backing."
+      "Synthetic (nylon / polyester / olefin) carpet: tolerates 3% peroxide on hidden-test-passed",
+      "Wool carpet: pro from minute one — peroxide yellows wool, alkaline lifts wool scales",
+      "Dyed carpet: hidden peroxide test mandatory; honest cap is partial removal",
+      "Carpet pad: cannot be cleaned in place — pad saturation = pad replacement",
+      "Turmeric pigment is the polyester-cotton-carpet-specific lock — UV photodegradation is the safest finisher"
     ]
   },
+  "materialWarnings": [
+    "Turmeric on carpet has an HONEST CAP — full removal often impossible on dyed",
+    "Chlorine bleach is the most common irreversible failure — yellow to red-brown",
+    "Alkaline cleaners darken turmeric permanently",
+    "Pad saturation drives the yellow where you can't reach it",
+    "Sunlight is the finisher — patience over hours-to-days",
+    "Wool carpet = pro from minute one"
+  ],
   "escalation": {
-    "when": "Stain does not fully resolve after spotting protocol — some set-in turmeric pigment stains require bleaching or professional dyeing",
-    "whatToTell": "Turmeric/curry stain on carpet, turmeric pigment pigment — very resistant to oxidative treatment. Treated at home with H₂O₂. Please use professional tannin chemistry and oxidizer protocol.",
-    "specialistType": "professional carpet cleaner or textile restoration specialist"
+    "when": "Wool carpet from minute one. Hot water / steam / hot vacuum already used (often permanent). Chlorine bleach already used (turned yellow to red-brown — irreversible). Alkaline cleaner already used (darkened yellow permanently). Pad saturation visible (yellow bleed-through to pad). Full sequence + multi-day sunlight plateau on dyed carpet.",
+    "whatToTell": "\"Turmeric / curry on [synthetic / wool] carpet, [wet curry / dry powder / dried-in], age [fresh / hours / days], home-treated with [HEPA vacuum / Dawn oil-strip + 3% peroxide on hidden-test-passed + vinegar + sunlight × N days + weighted towels]. No chlorine, no alkaline, no hot, no over-wetting. [Residual yellow / red-brown reaction occurred / pad saturation suspected].\"",
+    "specialistType": "professional carpet cleaner with reducing-bleach (sodium hydrosulfite) chemistry for synthetic carpet; specialty wool carpet cleaner if wool"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is this fresh or has it been sitting and drying?",
-      "Was this a wet curry sauce or a dry turmeric spice?",
-      "Is the carpet synthetic or natural fiber?",
-      "Has any cleaning attempt already been made?"
+      "Wet curry sauce or dry turmeric spice powder?",
+      "Synthetic (nylon / polyester / olefin) carpet or wool?",
+      "Dyed carpet or solid color?",
+      "Has chlorine bleach been used (often produces red-brown lock)?",
+      "Has alkaline cleaner (baking soda, ammonia, OxiClean alone) been used?",
+      "Has water been poured (pad saturation risk)?",
+      "Sunny location available for sunlight finisher?"
     ],
-    "modifierNotes": "Wet curry sauce has an oil carrier that must be removed first with dry-side solvent. Dry turmeric is almost pure turmeric pigment and bonds very quickly. Fresh stains respond much better. Natural fiber carpets need gentler chemistry."
+    "modifierNotes": "Wet curry vs dry turmeric powder are different starting protocols — never wet dry powder, always Dawn oil-strip wet curry. Sunlight is genuinely the most reliable finisher because turmeric pigment is photodegradable. Honest cap on dyed carpet is real — pro chemistry plateaus too. Wool carpet adds banned-tools list (no broad-spectrum enzymes, no peroxide, no alkaline) and goes to pro from minute one. Pad saturation is the silent failure mode — always damp-cloth, never pour."
   },
-  "difficulty": 5,
-  "timeEstimate": "10–15 min",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

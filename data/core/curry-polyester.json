@@ -1,80 +1,244 @@
 {
   "id": "curry-polyester",
-  "title": "Curry/Turmeric on Polyester",
+  "title": "Curry on Polyester",
+  "stainType": "combo",
   "stainFamily": "combo",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Curry stains are dominated by turmeric pigment from turmeric — one of the most persistent natural dyes. On polyester, turmeric pigment bonds through strong grip and is intensified by alkaline conditions and UV light. The oil base (ghee, coconut oil) drives the pigment deep into fibers. Secondary spices add additional pigments and oils.",
-  "whyThisWorks": "Avoiding sunlight and alkali is the first priority — both permanently intensify turmeric pigment color on polyester. Oil is addressed first with POG or surfactant. An oxidizer (H2O2) then breaks the color in turmeric pigment that produce the yellow color. This is one of the hardest stains to fully remove — professional treatment may be necessary for complete resolution.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "30–90 minutes; oil-strip mandatory + sunlight finish; honest cap on dyed polyester",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "curry",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "curry",
+      "turmeric",
+      "combo",
+      "oil",
+      "yellow-dye",
+      "polyester",
+      "no-alkaline",
+      "no-chlorine-bleach",
+      "sunlight-finisher",
+      "honest-cap",
+      "oleophilic-fiber"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Curry is the toughest yellow-dye stain in common use because it has every category at once: turmeric pigment (the bright yellow that grips fibers fast and gets WORSE with alkaline cleaners), oil base (ghee, coconut oil, vegetable oil), other spice pigments (paprika, chili), and onion / garlic. On polyester, two complications stack: polyester is OLEOPHILIC and grabs the oil + dye combination tight, AND polyester is industrially dyed with disperse dyes at high heat — so any heat at home drives the turmeric pigment into the fiber the same way intentional dyeing does. The recurring traps: (1) hot water (sets the pigment), (2) chlorine bleach (turns turmeric pigment from yellow to RED-BROWN — worse than the original), and (3) alkaline cleaners (baking soda, ammonia, OxiClean alone before peroxide all darken turmeric). Honest cap: full removal on dyed polyester is often impossible — manage expectations.",
+  "whyThisWorks": "Dawn strips the oil carrier that's holding the turmeric pigment in place. Once the oil is gone, 3% peroxide on white polyester partially oxidizes the yellow color. Sunlight is the second finisher — UV photodegrades turmeric pigment slowly over hours-to-days. The full sequence (Dawn oil-strip → cool peroxide → sunlight) is the most reliable home approach. Skip the oil-strip and peroxide can't reach the pigment. Use chlorine bleach and the yellow turns red-brown permanently. Use alkaline cleaners and the yellow darkens permanently. Order and bounded chemistry matter more on curry than on almost any other stain.",
+  "scienceNote": "Mechanism (pro-facing): curry is dominated by curcumin (the turmeric pigment) — a diketo-enol compound with a stable conjugated chromophore that turns red-brown under alkaline conditions and is photodegradable under UV. Pro uses POG / petroleum ether for oil + NSD + 3% H₂O₂ at controlled dilution + sunlight assist + acetic acid neutralizing rinse. Sodium hydrosulfite (reducing bleach) is the pro nuclear option for set yellow on white polyester.",
+  "defaultAssumption": "Indian / Thai / Asian dinner spill on a polyester shirt or blend. Fresh = full sequence has a real shot. Hot-dried = often permanent yellow shadow. Dyed polyester = honest cap is partial removal; pro is the right call for valuable garments.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Solids — No Rubbing",
+      "technique": "Plastic edge lift",
+      "equipment": "Plastic spoon edge or dull butter knife",
+      "dwellTime": "1 minute",
+      "instruction": "Scrape solid bulk off with a plastic spoon edge. Flat-edge work only — never rub. Rubbing pushes pigment into the polyester surface texture."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "technique": "Strip oil carrier — mandatory before peroxide",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 10 min. Polyester is oleophilic — extended dwell needed. CRITICAL — peroxide can't reach the pigment until the oil is stripped. Cool damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Repeat Dawn If Oily Feel Remains",
+      "technique": "Second pass for oleophilic affinity",
+      "equipment": "Dawn + cool water",
+      "dwellTime": "10 minutes",
+      "instruction": "Touch with a clean fingertip. Oily feel = repeat Dawn. Polyester typically needs 2 Dawn passes for curry oil."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Test for Peroxide",
+      "technique": "Bleed test on dyed polyester",
+      "equipment": "3% H₂O₂ on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Inside seam: dab 3% peroxide, blot with white cloth. If color transfers, skip peroxide. White polyester usually passes; dyed performance polyester often doesn't."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Yellow — Bounded",
+      "technique": "White polyester or hidden-test-passed only",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE polyester only or hidden-test-passed: 3% peroxide damp cloth 5–10 min. NEVER mix with chlorine bleach (turns yellow to red-brown), ammonia, or alkaline cleaners (darken turmeric)."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Sunlight Finisher",
+      "technique": "UV photodegrades turmeric over hours",
+      "equipment": "Direct sunlight, hanger / drying rack",
+      "dwellTime": "Several hours, multi-day if needed",
+      "instruction": "Hang the damp garment in direct sunlight for several hours. UV breaks down turmeric pigment slowly. Multi-day exposure for stubborn yellow. The most reliable finisher for curry — patience over hours-to-days, not aggressive chemistry."
+    },
+    {
+      "step": 7,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Cool cycle + AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry. Faint yellow remaining = repeat sunlight, not chemistry. NEVER hot dryer until fully cleared — locks pigment into polyester permanently."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove excess solids with dull edge — do not rub",
-      "2. Apply Tannin Formula for the plant-pigment component",
-      "3. Apply POG for the oil component",
-      "4. Flush with NSD and cool water",
-      "5. If color persists: apply H2O2 6% on colorfast fabrics",
-      "6. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse. Blot dry"
+      "1. Scrape solid bulk gently — no rubbing.",
+      "2. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "3. Repeat Dawn pass — polyester needs 2 typically.",
+      "4. Hidden-area peroxide test on dyed polyester.",
+      "5. 3% H₂O₂ damp cloth for yellow on hidden-test-passed polyester.",
+      "6. Sunlight finisher — UV photodegrades turmeric over hours-to-days.",
+      "7. Cool wash + AIR-DRY. Honest cap on dyed polyester."
     ],
     "products": [
-      "Tannin Formula",
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD (oil-strip)",
+      "3% Hydrogen peroxide (white polyester or hidden-test-passed)",
+      "Sunlight (UV finisher)",
+      "Cool water"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool throughout — heat sets turmeric pigment into polyester permanently",
+    "warnings": [
+      "NEVER chlorine bleach — turns turmeric yellow to RED-BROWN (worse than original)",
+      "NEVER alkaline cleaners (baking soda, ammonia, OxiClean alone before peroxide) — darken turmeric permanently",
+      "NEVER hot water — sets the pigment into polyester",
+      "NEVER hot dryer until fully cleared",
+      "Oil-strip BEFORE peroxide — Dawn first, peroxide second",
+      "Polyester is oleophilic — 2 Dawn passes typical",
+      "Honest cap: dyed polyester often plateaus at partial yellow shadow",
+      "Performance / specialty / dry-clean-only polyester = pro"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Curry on Polyester Has an Honest Cap",
+      "instruction": "Curry is the toughest yellow-dye stain in common use because it's turmeric pigment + oil + heat-locking on polyester all at once. Full removal on dyed polyester is often impossible — set realistic expectations from the start. Three hard rules: NO chlorine bleach (turns the yellow RED-BROWN — worse than original), NO alkaline cleaners (baking soda, ammonia, OxiClean alone before peroxide all darken turmeric permanently), and NO hot water / hot dryer (locks the pigment into polyester forever). The path: oil-strip → peroxide on white only → sunlight for the rest."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Solids — Don't Rub",
+      "instruction": "Scrape solid curry off with a plastic spoon edge. Flat-edge work only. NEVER rub — rubbing pushes turmeric pigment into the polyester's surface texture and locks it in."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn Pretreat — Mandatory Before Peroxide",
+      "instruction": "Apply a generous amount of Dawn dish soap directly to the spot. Work in with a soft toothbrush for 10 minutes. Polyester is oleophilic — it grabs the curry oil tight, so extended dwell is needed. This step is MANDATORY before peroxide. Without it, oil coats the pigment and peroxide can't reach it. Cool damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "agent": "Test for Oily Feel — Repeat If Needed",
+      "instruction": "Touch the spot with a clean fingertip. Still feels oily? Repeat the Dawn step. Polyester typically needs 2 Dawn passes for curry oil."
+    },
+    {
+      "step": 5,
+      "agent": "Hidden-Area Test on Dyed Polyester",
+      "instruction": "Before peroxide on dyed polyester: dab 3% peroxide on an inside seam, blot with a white cloth. If color transfers, skip peroxide entirely. White polyester usually passes; dyed athletic / performance polyester often doesn't."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide for the Yellow — White Only",
+      "instruction": "WHITE polyester only or hidden-test-passed: 3% drugstore peroxide on a damp cloth, press 5 to 10 minutes, blot. Partially oxidizes the yellow.",
+      "safetyNote": "NEVER mix peroxide with chlorine bleach (toxic AND turns turmeric to red-brown), ammonia, or alkaline cleaners (toxic AND darken turmeric)."
+    },
+    {
+      "step": 7,
+      "agent": "Sunlight Is the Real Finisher — Patience Wins",
+      "instruction": "Hang the damp garment in direct sunlight for several hours. UV breaks down turmeric pigment slowly — this is the most reliable finisher for curry. Multi-day exposure is normal for stubborn yellow. Sun + patience beats aggressive chemistry on this stain. If you don't have sun, a sunny window over multiple days works too."
+    },
+    {
+      "step": 8,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry — faint yellow remaining? Repeat the sunlight, not more chemistry. NEVER hot dryer until cleared. Honest cap on dyed polyester: a faint yellow shadow may remain regardless. Pro is the next step for valuable garments."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Remove solids with a spoon or dull edge — scrape, don't rub",
-      "2. Rinse with cold water to remove loose material",
-      "3. Apply Dawn dish soap. Work gently",
-      "4. Blot with clean white cloth. Repeat if needed",
-      "5. Air dry — no heat until stain is gone"
+      "1. Set honest expectations — dyed polyester often plateaus at partial yellow shadow.",
+      "2. NO chlorine bleach. NO alkaline cleaners. NO hot water / hot dryer.",
+      "3. Scrape solids gently with plastic edge.",
+      "4. Dawn pretreat cool 10 min — MANDATORY before peroxide.",
+      "5. Repeat Dawn pass if oily feel remains (2 passes typical).",
+      "6. Hidden-area peroxide test on dyed polyester.",
+      "7. 3% peroxide damp cloth for yellow on white / hidden-test-passed polyester.",
+      "8. Sunlight finisher — hours to multi-day.",
+      "9. Cool wash + AIR-DRY."
     ],
     "products": [
-      "Dawn dish soap"
+      "Dawn dish soap",
+      "3% Hydrogen peroxide (white polyester or hidden-test-passed)",
+      "Sunlight",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 rounds of treatment. Combo stains are inherently harder — a professional cleaner has specialized chemistry for each component",
+    "whenToStop": "Stop on hot-dried curry (often permanent yellow). Stop if hidden-test fails on dyed polyester. Stop if chlorine bleach was already used (turned yellow to red-brown — irreversible). Stop on performance / specialty polyester. Stop after full sequence + multi-day sunlight plateau — accept the honest cap.",
     "warnings": [
-      "Treat each component in order — don't skip steps",
-      "Cold water always — heat sets protein components permanently"
+      "NEVER chlorine bleach — RED-BROWN reaction worse than original yellow",
+      "NEVER alkaline cleaners — darken turmeric permanently",
+      "NEVER hot water or hot dryer — locks pigment into polyester",
+      "Oil-strip BEFORE peroxide",
+      "Polyester is oleophilic — 2 Dawn passes typical",
+      "Sunlight is the finisher — patience over hours-to-days",
+      "Honest cap on dyed polyester — partial removal is the norm"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never chlorine bleach on curry — turns yellow to red-brown permanently",
+      "Never alkaline cleaners on turmeric — darken permanently",
+      "Never hot water or hot dryer on curry + polyester",
+      "Never skip the Dawn oil-strip before peroxide",
+      "Never mix peroxide + chlorine + ammonia + OxiClean"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs curry oil tightly, needs 2 Dawn passes",
+      "Polyester locks dye under heat — same chemistry as industrial dyeing",
+      "Performance / specialty polyester (compression, technical): pro — coatings react unpredictably",
+      "Dyed polyester: hidden test mandatory before peroxide; honest cap is partial removal",
+      "Turmeric is the polyester-and-cotton-specific lock pigment — UV photodegradation is the safest finisher"
     ]
   },
+  "materialWarnings": [
+    "Curry on polyester has an HONEST CAP — full removal is often impossible on dyed",
+    "Chlorine bleach is the most common irreversible failure — turns yellow to red-brown",
+    "Alkaline cleaners darken turmeric permanently",
+    "Sunlight is the finisher — patience over hours-to-days",
+    "Polyester loves curry oil — Dawn × 2 is mandatory before peroxide"
+  ],
   "escalation": {
-    "when": "If curry stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is curry on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent). Chlorine bleach already used (turned yellow to red-brown — irreversible). Alkaline cleaner already used (darkened yellow permanently). Performance / specialty / dry-clean-only polyester. Full sequence + multi-day sunlight plateau on dyed polyester (often the honest cap).",
+    "whatToTell": "\"Curry on [white / dyed / athletic / specialty] polyester, age [fresh / hours / hot-dried suspected], home-treated with [scrape + Dawn × 2 + 3% peroxide on white + sunlight finisher × N hours/days + cool wash + air-dry]. No chlorine, no alkaline, no hot. [Residual yellow / red-brown reaction occurred / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with reducing-bleach (sodium hydrosulfite) chemistry — note even pro chemistry plateaus on hot-dried curry on dyed polyester"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Can you identify the specific components?",
-      "Is there a greasy/oily feel to the stain?"
+      "Restaurant curry (more oil) or home-cooked (less oil)?",
+      "White, dyed, athletic, or specialty polyester?",
+      "Fresh, hours old, or hot-dried already?",
+      "Has chlorine bleach been used (often produces red-brown lock)?",
+      "Has alkaline cleaner (baking soda, ammonia, OxiClean alone) been used?",
+      "Sunny location available for sunlight finisher?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Curry's turmeric pigment (curcumin) is chemically the same lock as mustard and pure turmeric — same irreversibility under chlorine, same alkaline-darkening, same UV photodegradation. Polyester adds the oleophilic + heat-lock complications. Restaurant curry is harder than home-cooked because of more oil. Sunlight is genuinely the most reliable finisher — patience over multiple days beats aggressive chemistry. Honest cap is partial removal on dyed polyester; pro chemistry doesn't reliably do better."
   },
-  "difficulty": 8,
-  "timeEstimate": "20-45 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

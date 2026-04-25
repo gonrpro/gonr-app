@@ -1,78 +1,241 @@
 {
   "id": "turmeric-polyester",
   "title": "Turmeric on Polyester",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Turmeric contains turmeric pigment — a polyphenol that bonds to polyester through exceptionally strong grip. turmeric pigment is fat-soluble, pH-sensitive (yellow in acid, red-brown in base), and photosensitive (UV light intensifies the color permanently). It has been used as a textile dye for thousands of years because of its tenacious bonding properties.",
-  "whyThisWorks": "An oxidizer (H2O2) breaks the color in turmeric pigment that produce color on polyester. Keeping conditions acidic prevents the color shift to darker red-brown. Avoiding sunlight exposure is critical — UV permanently intensifies turmeric pigment. This is genuinely one of the hardest natural pigment stains to fully remove. Professional treatment recommended for valued items.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 9,
+  "timeEstimate": "30–90 minutes plus multi-day sunlight finisher; honest cap on dyed polyester",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "turmeric",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "turmeric",
+      "yellow-dye",
+      "polyester",
+      "no-alkaline",
+      "no-chlorine-bleach",
+      "sunlight-finisher",
+      "honest-cap",
+      "oleophilic-fiber"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Turmeric on polyester is the toughest yellow-dye stain in common use. The bright yellow turmeric pigment grips polyester fast and resists conventional oxidation. Three recurring traps: (1) chlorine bleach (turns the turmeric yellow into RED-BROWN — worse than original), (2) alkaline cleaners (baking soda, ammonia, OxiClean alone before peroxide all DARKEN turmeric permanently), and (3) hot water / hot dryer (sets the pigment into polyester, same chemistry as industrial polyester dyeing). Polyester adds the OLEOPHILIC complication — when turmeric is in oil (curry), the oil holds the pigment in place. The saving feature: turmeric is photodegradable — UV light gradually breaks down the yellow over hours-to-days. Honest cap: full removal on dyed polyester is often impossible. Manage expectations.",
+  "whyThisWorks": "If the turmeric is in oil (curry), Dawn strips the oil first so peroxide can reach the pigment. 3% peroxide on white polyester partially oxidizes the yellow. Sunlight is the real finisher — UV photodegrades turmeric over hours-to-days. The full sequence (Dawn oil-strip → bounded peroxide on white → sunlight) is the most reliable home approach. Skip the oil-strip and peroxide can't reach the pigment. Use chlorine bleach and the yellow turns red-brown permanently. Use alkaline cleaners and the yellow darkens permanently. Order and bounded chemistry matter on turmeric more than almost any other stain.",
+  "scienceNote": "Mechanism (pro-facing): turmeric's pigment is curcumin — a diketo-enol compound with a stable conjugated chromophore. pH-sensitive (yellow in acid, RED-BROWN in alkali). Photodegradable under UV (250–400 nm). On polyester (hydrophobic), curcumin partitions into the fiber and oil carrier holds it tighter. Pro uses NSD oil-strip + 3% H₂O₂ at controlled dilution + UV-assist + acetic acid neutralizing rinse. Sodium hydrosulfite (reducing bleach) is the pro nuclear option for set yellow on white polyester.",
+  "defaultAssumption": "Curry / turmeric spice / golden milk / spice rub spill on a polyester shirt or blend. Fresh = full sequence has a real shot. Hot-dried = often permanent yellow shadow. Dyed polyester = honest cap is partial removal; pro is the right call for valuable garments.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Solids — No Rubbing",
+      "technique": "Plastic edge lift",
+      "equipment": "Plastic spoon edge or dull butter knife",
+      "dwellTime": "1 minute",
+      "instruction": "Scrape solid bulk off with a plastic spoon edge. Flat-edge work only — never rub. Rubbing pushes turmeric pigment into polyester surface texture."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "technique": "Strip oil carrier — mandatory before peroxide",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly on the spot. Soft toothbrush 10 min. Polyester is oleophilic — extended dwell needed. CRITICAL — peroxide can't reach the pigment until oil is stripped. Cool damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Repeat Dawn If Oily Feel Remains",
+      "technique": "Second pass for oleophilic affinity",
+      "equipment": "Dawn + cool water",
+      "dwellTime": "10 minutes",
+      "instruction": "Touch with a clean fingertip. Oily feel = repeat Dawn. Polyester typically needs 2 Dawn passes for oily turmeric / curry."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Test for Peroxide",
+      "technique": "Bleed test on dyed polyester",
+      "equipment": "3% H₂O₂ on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Inside seam: dab 3% peroxide, blot with white cloth. Color transfers = skip peroxide, sunlight + acid only finish. White polyester usually passes; dyed performance polyester often doesn't."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Yellow — Bounded",
+      "technique": "White polyester or hidden-test-passed only",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE polyester only or hidden-test-passed: 3% peroxide damp cloth 5–10 min. NEVER mix with chlorine bleach (turns yellow to red-brown), ammonia, or alkaline cleaners (darken turmeric)."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Sunlight Finisher",
+      "technique": "UV photodegrades turmeric over hours-to-days",
+      "equipment": "Direct sunlight, hanger / drying rack",
+      "dwellTime": "Several hours, multi-day if needed",
+      "instruction": "Hang the damp garment in direct sunlight for several hours. UV breaks down turmeric pigment slowly. Multi-day exposure for stubborn yellow. The most reliable finisher on turmeric — patience over hours-to-days, not aggressive chemistry."
+    },
+    {
+      "step": 7,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water",
+      "dwellTime": "Cool cycle + AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry — faint yellow remaining = repeat sunlight, not chemistry. NEVER hot dryer until cleared — locks pigment into polyester permanently."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate or appropriate solvent to dissolve dye/pigment matrix",
-      "2. Apply NSD to lift loosened pigment. Flush with cool water",
-      "3. If color persists: apply H2O2 6% on colorfast fabrics to break color bonds",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Scrape solid bulk gently — no rubbing.",
+      "2. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "3. Repeat Dawn pass — polyester needs 2 typically.",
+      "4. Hidden-area peroxide test on dyed polyester.",
+      "5. 3% H₂O₂ damp cloth for yellow on hidden-test-passed polyester.",
+      "6. Sunlight finisher — UV photodegrades turmeric over hours-to-days.",
+      "7. Cool wash + AIR-DRY. Honest cap on dyed polyester."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD (oil-strip)",
+      "3% Hydrogen peroxide (white polyester or hidden-test-passed)",
+      "Sunlight (UV finisher)",
+      "Cool water"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cool throughout — heat sets turmeric pigment into polyester permanently",
+    "warnings": [
+      "NEVER chlorine bleach — turns turmeric yellow to RED-BROWN (worse than original)",
+      "NEVER alkaline cleaners — darken turmeric permanently",
+      "NEVER hot water — sets pigment into polyester",
+      "NEVER hot dryer until cleared",
+      "Oil-strip BEFORE peroxide — Dawn first, peroxide second",
+      "Polyester is oleophilic — 2 Dawn passes typical",
+      "Honest cap: dyed polyester often plateaus at partial yellow shadow",
+      "Performance / specialty / dry-clean-only polyester = pro"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Turmeric on Polyester Has an Honest Cap",
+      "instruction": "Turmeric is the toughest yellow-dye stain because the pigment grips fast, oil holds it in place, and polyester locks dye under heat. Full removal on dyed polyester is often impossible — set realistic expectations. Three hard rules: NO chlorine bleach (turns yellow RED-BROWN — worse than original), NO alkaline cleaners (baking soda, ammonia, OxiClean alone darken turmeric permanently), and NO hot water / hot dryer (locks pigment forever). The path: oil-strip → bounded peroxide → sunlight."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Solids — Don't Rub",
+      "instruction": "Scrape solid bulk off with a plastic spoon edge. Flat-edge only. NEVER rub — rubbing pushes turmeric pigment into polyester surface texture and locks it in."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn Pretreat — Mandatory Before Peroxide",
+      "instruction": "Generous Dawn directly on the spot. Work in with a soft toothbrush for 10 minutes. Polyester is oleophilic — extended dwell needed. This step is MANDATORY before peroxide. Without it, oil coats the pigment and peroxide can't reach. Cool damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "agent": "Test for Oily Feel — Repeat If Needed",
+      "instruction": "Touch with a clean fingertip. Still feels oily? Repeat Dawn. Polyester typically needs 2 Dawn passes for oily turmeric / curry."
+    },
+    {
+      "step": 5,
+      "agent": "Hidden-Area Test on Dyed Polyester",
+      "instruction": "Before peroxide on dyed polyester: dab 3% peroxide on an inside seam, blot with a white cloth. Color transfers = skip peroxide. White polyester usually passes; dyed athletic polyester often doesn't."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide for the Yellow — White Only",
+      "instruction": "WHITE polyester or hidden-test-passed: 3% drugstore peroxide on a damp cloth, press 5 to 10 minutes, blot. Partially oxidizes the yellow.",
+      "safetyNote": "NEVER mix peroxide with chlorine bleach (toxic AND turns turmeric red-brown), ammonia, or alkaline cleaners (toxic AND darken turmeric)."
+    },
+    {
+      "step": 7,
+      "agent": "Sunlight Is the Real Finisher — Patience Wins",
+      "instruction": "Hang the damp garment in direct sunlight for several hours. UV breaks down turmeric pigment slowly. Multi-day exposure is normal for stubborn yellow. Sun + patience beats aggressive chemistry on this stain."
+    },
+    {
+      "step": 8,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. Inspect dry — faint yellow remaining? Repeat sunlight, not more chemistry. NEVER hot dryer until cleared. Honest cap on dyed polyester: a faint shadow may remain."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately — never rub (spreading dye worsens it)",
-      "2. Apply Dawn dish soap mixed with cold water. Blot gently",
-      "3. If stain persists: apply hydrogen peroxide 3% on colorfast fabrics — test hidden area first, 5-10 min dwell time",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat until stain is completely gone"
+      "1. Set honest expectations — dyed polyester often plateaus at partial yellow shadow.",
+      "2. NO chlorine bleach. NO alkaline cleaners. NO hot water / hot dryer.",
+      "3. Scrape solids gently with plastic edge.",
+      "4. Dawn pretreat cool 10 min — MANDATORY before peroxide.",
+      "5. Repeat Dawn pass if oily feel remains (2 passes typical).",
+      "6. Hidden-area peroxide test on dyed polyester.",
+      "7. 3% peroxide damp cloth for yellow on white / hidden-test-passed.",
+      "8. Sunlight finisher — hours to multi-day.",
+      "9. Cool wash + AIR-DRY."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% Hydrogen peroxide (white or hidden-test-passed polyester)",
+      "Sunlight",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop on hot-dried turmeric (often permanent yellow). Stop if hidden-test fails on dyed polyester. Stop if chlorine bleach was used (turned yellow red-brown irreversibly). Stop if alkaline cleaner was used (darkened yellow permanently). Stop on performance / specialty polyester. Stop after full sequence + multi-day sunlight plateau on dyed — accept the honest cap.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "NEVER chlorine bleach — RED-BROWN reaction worse than original",
+      "NEVER alkaline cleaners — darken turmeric permanently",
+      "NEVER hot water or hot dryer — locks pigment",
+      "Oil-strip BEFORE peroxide",
+      "Polyester is oleophilic — 2 Dawn passes typical",
+      "Sunlight is the finisher — patience over hours-to-days",
+      "Honest cap on dyed polyester — partial removal is the norm"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never chlorine bleach on turmeric — turns yellow to red-brown permanently",
+      "Never alkaline cleaners on turmeric — darken permanently",
+      "Never hot water or hot dryer on turmeric + polyester",
+      "Never skip the Dawn oil-strip before peroxide",
+      "Never mix peroxide + chlorine + ammonia + OxiClean"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs turmeric oil tightly, needs 2 Dawn passes",
+      "Polyester locks dye under heat — same chemistry as industrial dyeing",
+      "Performance / specialty polyester (compression, technical): pro — coatings react unpredictably",
+      "Dyed polyester: hidden test mandatory before peroxide; honest cap is partial removal",
+      "Turmeric pigment is the polyester-and-cotton-specific lock — UV photodegradation is the safest finisher"
     ]
   },
+  "materialWarnings": [
+    "Turmeric on polyester has an HONEST CAP — full removal often impossible on dyed",
+    "Chlorine bleach is the most common irreversible failure — yellow to red-brown",
+    "Alkaline cleaners darken turmeric permanently",
+    "Sunlight is the finisher — patience over hours-to-days",
+    "Polyester loves oily turmeric — Dawn × 2 mandatory before peroxide"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is turmeric on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer already used (often permanent). Chlorine bleach already used (turned yellow red-brown — irreversible). Alkaline cleaner already used (darkened yellow permanently). Performance / specialty / dry-clean-only polyester. Full sequence + multi-day sunlight plateau on dyed polyester (often the honest cap).",
+    "whatToTell": "\"Turmeric / curry on [white / dyed / athletic / specialty] polyester, age [fresh / hours / hot-dried suspected], home-treated with [scrape + Dawn × 2 + 3% peroxide on white + sunlight × N hours/days + cool wash + air-dry]. No chlorine, no alkaline, no hot. [Residual yellow / red-brown reaction occurred / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with reducing-bleach (sodium hydrosulfite) chemistry — note pro chemistry plateaus on hot-dried turmeric on dyed polyester"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Curry sauce, dry turmeric powder, golden milk, or spice rub?",
+      "White, dyed, athletic, or specialty polyester?",
+      "Fresh, hours old, or hot-dried already?",
+      "Has chlorine bleach been used (often produces red-brown lock)?",
+      "Has alkaline cleaner (baking soda, ammonia, OxiClean alone) been used?",
+      "Sunny location available for sunlight finisher?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Turmeric in curry / golden milk / oil-based spice rub is harder than dry turmeric powder because the oil holds the pigment in place — Dawn oil-strip × 2 is mandatory. Sunlight is genuinely the most reliable finisher because turmeric is photodegradable. Polyester adds the heat-lock complication: hot water at any prior step usually means permanent. Honest cap is partial removal on dyed polyester; pro chemistry doesn't reliably do better."
   },
-  "difficulty": 8,
-  "timeEstimate": "20-45 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
