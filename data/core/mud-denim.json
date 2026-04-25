@@ -1,75 +1,212 @@
 {
   "id": "mud-denim",
   "title": "Mud on Denim",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "denim",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Mud contains mineral particles (clay, silt, sand), organic matter (decomposed plant material), and water. On denim, the clay particles bond electrostatically to fiber and the organic matter stains through tannin-like mechanisms. Wet mud is actually harder to remove than dry mud — water causes clay particles to penetrate deeper. Dry mud brushes off relatively easily.",
-  "whyThisWorks": "Let the mud dry completely on denim first — this is counterintuitive but critical. Dry mud loses its cohesion and clay particles release from the fiber surface. Brushing and vacuuming removes the majority of dry mud mechanically. Surfactant then addresses the remaining organic discoloration. For clay-heavy mud, a mild acid rinse helps release electrostatically-bound particles.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 3,
+  "timeEstimate": "20–40 minutes; DRY first, then chemistry; indigo / ring-risk warnings",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "mud",
+    "surfaceCanonical": "denim",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "mud",
+      "soil",
+      "denim",
+      "dry-first-rule",
+      "indigo-loss-risk",
+      "no-chlorine-bleach",
+      "ring-risk"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Mud on denim is the textbook DRY-FIRST stain: wet mud + water = a bigger spread, dried mud + brush = clean lift. The recurring trap is reaching for a damp cloth on wet mud — that smears the soil into a wider ring and drives clay particles deeper into the denim weave. The right move is to LET MUD DRY FULLY first (hours or overnight), then brush off the bulk dry, then deal with the residual color. Denim adds two complications: indigo dye loss (hidden test before any solvent), and aggressive scrubbing on dark denim leaves a halo ring. Heavy clay-rich mud (red clay) carries iron that adds a rust-component shadow — that's harder than ordinary garden mud.",
+  "whyThisWorks": "Letting mud dry fully turns it into brittle particles that brush off cleanly. Wet-cloth-first is the most common home failure on mud — water turns soil into a slurry that smears wider. After dry-brush, Dawn pretreat handles any oily / organic component. Cool wash plus AIR-DRY locks nothing. Iron-rich red-clay residue may need a separate mineral / oxalic pass, but skip chlorine bleach (strips indigo) and skip peroxide hidden-test failures.",
+  "scienceNote": "Mechanism (pro-facing): mud is mineral particulate (clay, silt, sand) + organic matter + sometimes iron oxides (red clay). Pro uses HEPA vacuum after dry + NSD + iron-spotter (oxalic acid) for red-clay residue + acetic acid neutralizing rinse.",
+  "defaultAssumption": "Garden / playground / hike mud on denim. Fresh and wet = wait for it to dry, then chemistry. Already dry = brush + Dawn + cool wash. Red-clay regions = iron-residue may persist, oxalic acid spot for stubborn rust shadow.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "LET DRY — Don't Touch Wet Mud",
+      "technique": "Wait for dry, then brush",
+      "equipment": "Patience",
+      "dwellTime": "Hours to overnight",
+      "instruction": "If mud is still wet, LET IT DRY COMPLETELY before any chemistry. Wet mud + water = bigger spread. Wait for it to harden into brittle particles."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Dry Brush + HEPA Vacuum",
+      "technique": "Mechanical lift of dried particles",
+      "equipment": "Stiff brush, HEPA vacuum",
+      "dwellTime": "5 minutes",
+      "instruction": "Once dry: stiff-brush the mud off the denim outdoors or over a sheet. HEPA vacuum residue. Most dried mud comes off this way."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Hidden-Seam Test for Peroxide",
+      "technique": "Indigo bleed test",
+      "equipment": "3% H₂O₂ on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Inside seam: dab 3% peroxide, blot with white cloth. Indigo transfers = skip peroxide. Light-wash denim usually passes; raw / dark / selvage often doesn't."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Cool, 5 Minutes",
+      "technique": "Emulsify organic residue",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn directly on residue. Soft toothbrush 5 min. Always blot, never rub — denim halos under aggressive scrubbing. Cool damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Oxalic Acid for Red-Clay Iron Residue",
+      "technique": "Bounded mineral spotter",
+      "equipment": "Bar Keepers Friend (oxalic acid) per label",
+      "dwellTime": "5 minutes",
+      "instruction": "If red-clay rust shadow remains: Bar Keepers Friend per label, light scrub, rinse THOROUGHLY. Hidden-seam test on dark denim first — oxalic acid can lighten indigo."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cool Machine Wash + AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water",
+      "dwellTime": "Cool cycle + AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only. NEVER hot dryer with residual color. NEVER chlorine bleach on denim — strips indigo unevenly."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove loose material mechanically — brush, scrape, or vacuum as appropriate",
-      "2. Apply NSD to the stain area",
-      "3. Apply appropriate secondary agent based on stain response",
-      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. LET DRY completely before chemistry.",
+      "2. Stiff brush + HEPA vacuum dried particles.",
+      "3. Hidden-seam peroxide test on dark denim.",
+      "4. Dawn pretreat cool 5 min, soft toothbrush.",
+      "5. Oxalic acid (BKF) for red-clay iron residue, hidden test on dark denim.",
+      "6. Cool wash + AIR-DRY."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Stiff brush",
+      "HEPA vacuum",
+      "Dawn / NSD",
+      "Bar Keepers Friend (oxalic acid for red-clay rust)",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets organic residue",
     "warnings": [
-      "Always test on hidden area first"
+      "DRY FIRST — wet mud + water = bigger spread",
+      "NEVER hot water — sets organic residue",
+      "NEVER chlorine bleach on denim — strips indigo unevenly",
+      "Hidden-seam test on dark / raw denim before peroxide or oxalic",
+      "Always blot, never rub — denim halos",
+      "Red-clay regions: oxalic for iron shadow, hidden test mandatory"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Let Mud Dry First — Don't Touch Wet",
+      "instruction": "Mud on denim is the classic DRY-FIRST stain. The recurring failure is grabbing a damp cloth and dabbing — water turns mud into a slurry that smears into a wider ring. Wait. Let the mud dry completely (hours, or overnight). Once it's brittle, it brushes off cleanly. THIS is the unlock — patience beats chemistry on mud."
+    },
+    {
+      "step": 2,
+      "agent": "Dry Brush + Vacuum",
+      "instruction": "Once dry: stiff-brush the mud off the denim outdoors or over a sheet (otherwise you spread dust around the room). HEPA vacuum the residue. Most dried mud comes off this way without any liquid."
+    },
+    {
+      "step": 3,
+      "agent": "Hidden-Seam Test on Dark Denim",
+      "instruction": "Before any peroxide on dark or raw denim: dab 3% peroxide on an inside seam, blot with a white cloth. Indigo transfers = skip peroxide. Light-wash denim usually passes; raw / dark / selvage often doesn't."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn Pretreat for Organic Residue",
+      "instruction": "Dawn dish soap directly on residue. Work in with a soft toothbrush for 5 minutes. Cool damp-cloth rinse. Always blot, never rub — rubbing causes a halo on dark denim."
+    },
+    {
+      "step": 5,
+      "agent": "Bar Keepers Friend for Red-Clay Iron Shadow",
+      "instruction": "If your mud was red clay (Georgia clay, terracotta soil), iron oxide leaves a rust-colored shadow even after Dawn. Bar Keepers Friend (oxalic acid powder, mix to paste with water) per label, light scrub, rinse THOROUGHLY. Hidden-seam test on dark denim first — oxalic can lighten indigo."
+    },
+    {
+      "step": 6,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY only first time. NEVER chlorine bleach on denim — strips indigo unevenly and leaves a halo. NEVER hot dryer with residual color."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Let the mud dry COMPLETELY — this is counterintuitive but critical",
-      "2. Brush off dried mud. Vacuum remaining particles",
-      "3. Apply Dawn dish soap mixed with cold water for remaining discoloration",
-      "4. Blot with clean white cloth. Rinse with cold water",
-      "5. Air dry"
+      "1. LET DRY completely. Don't touch wet mud with water.",
+      "2. Stiff brush + HEPA vacuum dried particles outdoors / over sheet.",
+      "3. Hidden-seam peroxide test on dark denim (skip if indigo transfers).",
+      "4. Dawn pretreat cool 5 min, soft toothbrush.",
+      "5. Bar Keepers Friend (oxalic acid) for red-clay iron shadow — hidden test on dark denim.",
+      "6. Cool wash + AIR-DRY. NO chlorine bleach."
     ],
     "products": [
-      "Dawn dish soap"
+      "Stiff brush",
+      "HEPA vacuum",
+      "Dawn dish soap",
+      "Bar Keepers Friend (oxalic acid for red-clay rust)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop if denim is raw / selvage / black-overdyed (pro). Stop if hidden-seam test shows indigo loss before BKF. Stop after 2 home cycles plateau.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "DRY FIRST — wet mud + water = bigger spread",
+      "NEVER hot water during chemistry",
+      "NEVER chlorine bleach on denim — strips indigo unevenly",
+      "Hidden-seam test on dark / raw denim before peroxide or oxalic",
+      "Always blot, never rub — denim halos",
+      "Red-clay residue may need oxalic acid (BKF), bounded"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach — removes indigo unevenly",
-      "No strong detergent on raw denim"
+      "Never wet mud first — turns into slurry and spreads",
+      "Never chlorine bleach on denim — strips indigo unevenly",
+      "Never hot water during chemistry",
+      "Never rub denim — halos under aggressive scrubbing",
+      "Never use BKF without gloves — oxalic acid is a skin irritant"
     ],
     "fiberSensitivities": [
-      "Indigo dye sits on surface — aggressive treatment causes uneven fading",
-      "Washed denim is more forgiving than raw"
+      "Indigo / dark denim: hidden-seam test before peroxide and BKF",
+      "Raw / selvage denim: pro from minute one",
+      "Light-wash denim: most forgiving — full home protocol",
+      "Stretch denim with elastane: cool only — BKF can stress elastane"
     ]
   },
+  "materialWarnings": [
+    "DRY-FIRST is the entire unlock — wet mud + water spreads",
+    "No chlorine bleach on denim — strips indigo",
+    "Red-clay iron residue is a separate sub-stain (oxalic acid)",
+    "Hidden test on dark denim before BKF — oxalic can lighten indigo"
+  ],
   "escalation": {
-    "when": "If mud stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is mud on denim, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Raw / selvage / black-overdyed denim. Hidden-seam test shows indigo loss before peroxide or oxalic. Wet mud was already smeared with damp cloth (spread into wider ring). Hot dryer was used on residual color. 2 home cycles plateau.",
+    "whatToTell": "\"Mud on [light-wash / dark / indigo / raw / selvage] denim, type [garden / clay / red-clay / playground], age [fresh wet / dried], home-treated with [DRY first + brush + Dawn + BKF for red-clay if applicable + cool wash]. No chlorine, no hot. [Residual shadow / indigo loss / wet smeared].\"",
+    "specialistType": "professional dry cleaner with denim experience plus iron-spotter capability for red-clay residue"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Wet mud (let dry first) or already dried in?",
+      "Garden soil, playground mud, or red clay (iron-rich)?",
+      "Light-wash, dark indigo, raw / selvage denim?",
+      "Has water been applied to wet mud (smeared into wider ring)?",
+      "Stretch denim with elastane?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "DRY-FIRST is the entire unlock on mud — patience beats chemistry. Red-clay regions add iron residue that needs oxalic acid (BKF). Indigo dye loss is the recurring denim risk. Most home failures are wet-cloth-first; the second-most-common is reaching for chlorine bleach which strips indigo unevenly."
   },
-  "difficulty": 2,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

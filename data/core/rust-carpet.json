@@ -1,79 +1,198 @@
 {
   "id": "rust-carpet",
   "title": "Rust on Carpet",
-  "stainFamily": "dye",
+  "stainType": "specialty",
+  "stainFamily": "specialty",
   "surface": "carpet",
   "sector": "carpet",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Rust (iron oxide, Fe2O3) is an inorganic metal stain, not an organic dye. On carpet, iron oxide particles lodge in fiber texture and bond through electrostatic interactions. Standard detergents and bleach are ineffective — bleach actually sets rust stains darker by further oxidizing the iron. Only reducing agents or chelating agents can dissolve iron oxide back into soluble form.",
-  "whyThisWorks": "A reducing agent (sodium hydrosulfite professionally, oxalic acid at consumer level) converts insoluble iron oxide back into soluble iron ions on carpet, which then rinse away. Lemon juice or white vinegar provide mild acid chelation for light rust. The key rule: NEVER use chlorine bleach on rust — it oxidizes the iron further, making the stain permanent.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–45 minutes; oxalic acid bounded; NO chlorine bleach (sets rust); wool = pro",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "rust",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "rust",
+      "iron",
+      "oxalic-acid",
+      "carpet",
+      "no-chlorine-bleach",
+      "no-peroxide",
+      "wool-fork",
+      "ppe-required"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Rust on carpet is iron oxide bonded to the fiber — usually from a metal furniture leg, a leaky planter, or a rusty tool dropped on the carpet. The recurring traps: chlorine bleach (LOCKS rust into a permanent darker stain — chlorine + iron is the classic irreversible failure), 3% peroxide (oxidizes iron further, makes rust WORSE), and hot water (sets iron-fiber bond). The right tool is REDUCING chemistry — oxalic acid (Bar Keepers Friend, Iron Out, Whink Rust Stain Remover) which reduces Fe³⁺ back to Fe²⁺ and makes the iron water-soluble. Wool carpet narrows the bench sharply (oxalic acid weakens wool keratin) — pro from minute one.",
+  "whyThisWorks": "Oxalic acid (BKF, Iron Out, Whink) is the reducing chemistry that pulls iron oxide off carpet fibers. It's the OPPOSITE of bleach — bleach oxidizes (locks rust), oxalic acid reduces (releases rust). On synthetic carpet (nylon, polyester, olefin), bounded oxalic acid + cool rinse + weighted towels is the home protocol. Wool carpet goes to pro because oxalic acid weakens wool keratin. Honest cap: aged set rust with deep penetration sometimes plateaus.",
+  "scienceNote": "Mechanism (pro-facing): rust is Fe³⁺ iron oxide bonded to cellulose / synthetic fiber. Pro uses oxalic acid (Bar Keepers Friend, Iron Out, Whink) at controlled dilution + cool rinse + acetic acid neutralization. Wool carpet requires specialty wool-safe iron-removers; oxalic damages keratin.",
+  "defaultAssumption": "Rust spot from metal furniture leg, leaky planter, rusty tool, or wet metal contact on synthetic home carpet. Wool carpet = pro from minute one. Aged set rust = honest cap; pro chemistry available.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage and PPE",
+      "technique": "Wool fork + gloves",
+      "equipment": "Care info, gloves",
+      "dwellTime": "1 minute",
+      "instruction": "Wool carpet = pro from minute one. Synthetic carpet (nylon / polyester / olefin) = home candidate. Gloves on — oxalic acid is a skin irritant."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Test for Oxalic Acid",
+      "technique": "Carpet bleed test",
+      "equipment": "BKF or Iron Out per label on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Hidden carpet area: dab oxalic acid solution on white cloth, press 30 sec. Color transfers = skip oxalic, pro for residual rust."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Oxalic Acid Pretreat — Damp-Cloth Application",
+      "technique": "Reducing chemistry for rust",
+      "equipment": "Bar Keepers Friend / Iron Out / Whink per label, gloves",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Mix oxalic acid product per label (BKF as paste with water; Iron Out as liquid). Apply with damp cloth — never pour. 5–10 min. Cool damp-cloth rinse THOROUGHLY (oxalic acid is a skin irritant, residue must be rinsed)."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Cool Rinse + Weighted Towels Overnight",
+      "technique": "Extract residue + prevent wick-back",
+      "equipment": "Cool water, paper towels + heavy book",
+      "dwellTime": "Overnight",
+      "instruction": "Cool damp-cloth rinse 2–3 passes. Weighted paper towels overnight. Fan-dry. Inspect dry."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply sodium hydrosulfite (reducing agent) to the rust stain — this converts insoluble iron oxide back to soluble form",
-      "2. Flush with NSD and cool water to remove dissolved iron",
-      "3. If rust persists: repeat sodium hydrosulfite application",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Wool carpet = pro from minute one.",
+      "2. Gloves + hidden-area oxalic acid test on dyed carpet.",
+      "3. Oxalic acid pretreat (BKF / Iron Out / Whink) per label, damp-cloth application, 5–10 min.",
+      "4. Cool damp-cloth rinse THOROUGHLY (oxalic acid skin irritant).",
+      "5. Weighted paper towels overnight + fan."
     ],
     "products": [
-      "sodium hydrosulfite",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Disposable gloves",
+      "Bar Keepers Friend (oxalic acid)",
+      "Iron Out (sodium hydrosulfite)",
+      "Whink Rust Stain Remover",
+      "Paper towels + weight",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets iron-fiber bond",
     "warnings": [
-      "NEVER use chlorine bleach on rust — it oxidizes iron further, making the stain permanent"
+      "Wool carpet = pro from minute one — oxalic acid weakens wool",
+      "NEVER chlorine bleach on rust — LOCKS rust into permanent darker stain",
+      "NEVER 3% peroxide on rust — oxidizes iron further, makes worse",
+      "NEVER hot water — sets iron-fiber bond",
+      "Oxalic acid is a skin irritant — gloves required, rinse thoroughly",
+      "NEVER mix oxalic acid with chlorine bleach — toxic chlorine gas",
+      "Hidden test on dyed carpet before oxalic acid"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Reducing Chemistry, Not Oxidizing — Bleach BANNED",
+      "instruction": "Rust on carpet is iron oxide bonded to the fiber. The most common home failure is reaching for chlorine bleach — chlorine + iron LOCKS rust into a permanent darker stain (irreversible). 3% peroxide is the second-most-common failure — peroxide oxidizes the iron further and makes rust WORSE, not better. The right tool is REDUCING chemistry: oxalic acid (Bar Keepers Friend, Iron Out, or Whink) which pulls iron off the fiber. Two hard rules: NO chlorine bleach (locks rust), NO peroxide (makes rust worse). Wool carpet goes to pro from minute one."
+    },
+    {
+      "step": 2,
+      "agent": "Wool Carpet Goes to Pro from Minute One",
+      "instruction": "Oxalic acid weakens wool keratin. If your carpet is wool, this is a pro job from the start. Synthetic carpet (nylon, polyester, olefin) is the home protocol candidate."
+    },
+    {
+      "step": 3,
+      "agent": "Gloves On + Hidden-Area Test",
+      "instruction": "Disposable gloves before any oxalic acid handling — it's a skin irritant. In a hidden carpet area, dab Bar Keepers Friend paste or Iron Out solution on a white cloth, press 30 seconds. Color transfers = skip oxalic, pro for residual rust."
+    },
+    {
+      "step": 4,
+      "agent": "Bar Keepers Friend or Iron Out — Damp-Cloth Application",
+      "instruction": "Bar Keepers Friend (powder, mix to paste with water per label) OR Iron Out (liquid per label) OR Whink Rust Stain Remover. Apply with a damp cloth — NEVER pour on carpet. Press 5 to 10 minutes. Cool damp-cloth rinse THOROUGHLY — oxalic acid is a skin irritant and the residue needs to come out."
+    },
+    {
+      "step": 5,
+      "agent": "Cool Rinse + Weighted Paper Towels Overnight",
+      "instruction": "Cool damp-cloth rinse 2 to 3 passes. Stack paper towels on the spot, weight overnight. Fan-dry in the morning. Pulls residual moisture and oxalic out of the pile and prevents brown wicking back from the pad."
+    },
+    {
+      "step": 6,
+      "agent": "Honest Cap — Aged Set Rust",
+      "instruction": "Aged rust that's been on the carpet for weeks or months sometimes plateaus even after the full sequence. Pro auto-detailers and specialty carpet cleaners have specialty iron-removers home users can't safely access. For valuable carpet, escalate sooner."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Apply white vinegar or lemon juice to the rust stain. Let sit",
-      "2. Sprinkle salt over the vinegar-soaked area for mild abrasion",
-      "3. Blot with clean white cloth. Repeat application if needed",
-      "4. Rinse thoroughly with cold water",
-      "5. Air dry — do NOT use heat"
+      "1. Wool carpet = pro from minute one. NO chlorine bleach. NO peroxide.",
+      "2. Gloves on (oxalic acid is skin irritant).",
+      "3. Hidden-area test on dyed carpet.",
+      "4. Bar Keepers Friend / Iron Out / Whink per label, damp-cloth application, 5–10 min.",
+      "5. Cool damp-cloth rinse THOROUGHLY.",
+      "6. Weighted paper towels overnight + fan."
     ],
     "products": [
-      "white vinegar",
-      "lemon juice (alternative)"
+      "Disposable gloves",
+      "Bar Keepers Friend (oxalic acid powder)",
+      "Iron Out (sodium hydrosulfite liquid)",
+      "Whink Rust Stain Remover",
+      "Paper towels + heavy book",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop on wool carpet (pro). Stop if hidden-area test shows carpet color loss. Stop if chlorine bleach or peroxide was already used (locked / made worse — irreversible, pro escalation). Stop after 2 home cycles plateau.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "Wool carpet = pro from minute one",
+      "NEVER chlorine bleach on rust — LOCKS rust permanently",
+      "NEVER 3% peroxide on rust — makes rust WORSE",
+      "NEVER hot water — sets iron-fiber bond",
+      "Oxalic acid is skin irritant — gloves + thorough rinse",
+      "NEVER mix oxalic acid with chlorine — toxic chlorine gas",
+      "Hidden test on dyed carpet"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never chlorine bleach on rust — LOCKS rust permanently",
+      "Never 3% peroxide on rust — oxidizes iron further, makes worse",
+      "Never hot water on rust — sets iron-fiber bond",
+      "Never mix oxalic acid with chlorine bleach — toxic chlorine gas",
+      "Never bare-handed with oxalic acid — skin irritant"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Synthetic (nylon / polyester / olefin) carpet: tolerates oxalic acid (BKF / Iron Out / Whink)",
+      "Wool carpet: pro from minute one — oxalic acid weakens wool keratin",
+      "Dyed carpet: hidden test mandatory before oxalic",
+      "Iron oxide is a REDUCTION chemistry stain — opposite of most stains"
     ]
   },
+  "materialWarnings": [
+    "Bleach LOCKS rust permanently — most common irreversible failure",
+    "Peroxide makes rust WORSE — second-most-common failure",
+    "Reducing chemistry (oxalic acid) is the right tool",
+    "Wool carpet = pro from minute one"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is rust on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Wool carpet from minute one. Chlorine bleach already used (locked rust permanently). Peroxide already used (made rust worse). Hidden-area test shows carpet color loss. 2 home cycles plateau. Aged set rust with deep penetration.",
+    "whatToTell": "\"Rust on [synthetic / wool] carpet, source [furniture leg / planter / metal tool], age [fresh / weeks / months], home-treated with [Bar Keepers Friend / Iron Out per label damp-cloth + cool rinse + weighted towels]. NO chlorine bleach, NO peroxide applied. [Residual rust / locked by chlorine / oxidized by peroxide].\"",
+    "specialistType": "professional carpet cleaner with iron-removal capability; specialty wool carpet cleaner if wool"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Synthetic (nylon / polyester / olefin) carpet or wool?",
+      "Source of rust — furniture leg, planter, tool, water?",
+      "Age — fresh, weeks, or months?",
+      "Has chlorine bleach or peroxide been applied (often irreversible)?",
+      "Dyed or solid color carpet?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Rust is the rare REDUCTION chemistry stain — the opposite of most stains. Bleach and peroxide both make it worse, not better. Oxalic acid (the active in BKF, Iron Out, Whink) is the right tool. Wool carpet adds the keratin-damage risk that puts the whole protocol in pro territory."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-45 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

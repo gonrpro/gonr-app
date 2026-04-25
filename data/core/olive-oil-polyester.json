@@ -1,80 +1,182 @@
 {
   "id": "olive-oil-polyester",
   "title": "Olive Oil on Polyester",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Olive oil contains oleic acid (monounsaturated fat) that penetrates polyester quickly. Unlike polyunsaturated oils, olive oil polymerizes slowly, giving a wider treatment window. However, it is darker than most cooking oils and leaves a visible stain even in small amounts. Extra virgin olive oil also contains chlorophyll and polyphenols that add green-yellow color.",
-  "whyThisWorks": "Surfactant emulsifies the oleic acid on polyester. Pre-treating with absorbent powder (cornstarch, baking soda) pulls surface oil from the fiber before surfactant is applied. For aged stains, POG provides stronger solvent action against the penetrated oil. Olive oil responds well to treatment when caught early.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–45 minutes; powder + Dawn × 2, cool wash, no fabric softener",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "olive-oil",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "olive-oil",
+      "oil",
+      "polyester",
+      "powder-preload",
+      "no-water-first",
+      "no-hot-water",
+      "no-hot-dryer",
+      "oleophilic-fiber",
+      "no-fabric-softener"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Olive oil on polyester adds the oleophilic + heat-sensitive complications: polyester grabs the oil tight (Dawn × 2 typical) and locks oil under heat (yellows polyester over time when oil is in the fiber). Olive oil is slower to oxidize than vegetable oils so a bit more forgiving on aging, but hot-dried oil yellows polyester permanently either way. Recurring traps: water-first instead of powder-first (spreads oil), hot water (sets oil + yellows polyester), hot dryer (locks residue + permanent yellow), fabric softener (coats fiber, blocks future cleaning).",
+  "whyThisWorks": "Powder preload pulls bulk oil up. Dawn × 2 strips the oil polyester grabbed onto. Cool wash plus AIR-DRY locks nothing. Skipping the second Dawn pass leaves oil that polymerizes under any subsequent heat as a permanent yellow shadow.",
+  "scienceNote": "Mechanism (pro-facing): olive oil is mostly oleic acid (monounsaturated triglyceride). Polyester is hydrophobic and oleophilic — extended Dawn dwell needed. Pro uses POG / petroleum ether for oil + NSD.",
+  "defaultAssumption": "Cooking spatter or salad dressing drip on a polyester shirt or athletic-wear. Performance / specialty / dry-clean-only polyester = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Powder Preload",
+      "technique": "Pull bulk oil up before water",
+      "equipment": "Cornstarch / baking soda",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Cover the spot with cornstarch / baking soda. Press gently. 20–30 min absorb. Soft-brush off."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "technique": "Emulsify oily film",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly. Soft toothbrush 10 min. Polyester is oleophilic — extended dwell. Cool damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Repeat Dawn — Polyester Needs 2 Passes",
+      "technique": "Second pass for stubborn affinity",
+      "equipment": "Dawn + cool water",
+      "dwellTime": "10 minutes",
+      "instruction": "Touch with fingertip. Oily feel = repeat Dawn. Polyester typically needs 2 Dawn passes for cooking oil."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water",
+      "dwellTime": "Full cool cycle + AIR-DRY",
+      "instruction": "Cool machine wash. SKIP fabric softener (coats fiber, blocks future cleaning). AIR-DRY only. NEVER hot dryer until cleared."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "2. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "3. Repeat Dawn pass if oily feel remains (2 passes typical).",
+      "4. Cool wash, no softener.",
+      "5. AIR-DRY + daylight inspect."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "Dawn / NSD",
+      "Cool water"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat sets oil into polyester and yellows over time",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "Powder BEFORE water — water-first spreads oil",
+      "NEVER hot water — sets oil + yellows polyester",
+      "NEVER hot dryer until cleared",
+      "NEVER fabric softener — coats fiber, blocks cleaning",
+      "Polyester is oleophilic — Dawn × 2 typical",
+      "Performance / specialty / dry-clean-only polyester = pro"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Polyester Loves Oil — Powder First, Dawn Twice",
+      "instruction": "Olive oil on polyester is harder than on cotton because polyester grabs the oil tight and locks it under heat. The path: powder preload → Dawn → repeat Dawn → cool wash → AIR-DRY. Three hard rules: powder BEFORE water (water-first spreads oil into a wider ring), NO hot water (sets oil + yellows polyester), and NO hot dryer until cleared (locks residue + yellows fiber)."
+    },
+    {
+      "step": 2,
+      "agent": "Cornstarch or Baking Soda — 20 to 30 Minutes",
+      "instruction": "Cover the oil spot with cornstarch or baking soda. Press gently. 20 to 30 minutes. Soft-brush off."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "instruction": "Generous Dawn dish soap directly on the spot. Work in with a soft toothbrush for 10 minutes. Polyester needs longer dwell than cotton because it grabs oil tight. Cool damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "agent": "Test for Oily Feel — Repeat If Needed",
+      "instruction": "Touch with a clean fingertip. Still oily? Repeat Dawn. Polyester typically needs 2 Dawn passes for cooking oil."
+    },
+    {
+      "step": 5,
+      "agent": "Cool Wash, No Softener, AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. SKIP fabric softener — coats fiber and blocks future cleaning. AIR-DRY only. NEVER hot dryer with residual oil — heat polymerizes the oil into polyester and yellows the fiber permanently."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. NO hot water. NO hot dryer until cleared. NO fabric softener.",
+      "2. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "3. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "4. Repeat Dawn pass if oily feel remains (2 passes typical).",
+      "5. Cool machine wash, no softener.",
+      "6. AIR-DRY + daylight inspect."
     ],
     "products": [
-      "Dawn dish soap",
-      "baking soda"
+      "Cornstarch / baking soda",
+      "Dawn dish soap (generous)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if hot water or hot dryer was used (often permanent yellow shadow). Stop on performance / specialty / dry-clean-only polyester (pro). Stop after 3 home cycles plateau.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "Powder BEFORE water — water-first spreads oil",
+      "NEVER hot water — sets oil + yellows polyester",
+      "NEVER hot dryer until cleared",
+      "NEVER fabric softener — coats fiber, blocks cleaning",
+      "Polyester is oleophilic — 2 Dawn passes typical"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never water-first on oil — spreads it",
+      "Never hot water on oil + polyester — sets it permanently",
+      "Never hot dryer until cleared",
+      "Never fabric softener after oil"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs oil tightly, needs 2 Dawn passes",
+      "Polyester yellows under heat over time when oil is present",
+      "Performance / specialty polyester (compression, technical): pro"
     ]
   },
+  "materialWarnings": [
+    "Powder before water — water-first spreads oil",
+    "No hot water / no hot dryer — polyester yellows under heat with oil",
+    "Polyester loves cooking oil — Dawn × 2 typical",
+    "No fabric softener — coats fiber"
+  ],
   "escalation": {
-    "when": "If olive oil stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is olive oil on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot water or hot dryer used (often permanent yellow). Performance / specialty polyester. 3 home cycles plateau.",
+    "whatToTell": "\"Olive oil on [white / dyed / athletic / specialty] polyester, age [fresh / hours / hot-dried suspected], home-treated with [cornstarch preload + Dawn × 2 + cool wash + air-dry]. No hot, no fabric softener. [Residual yellow shadow].\"",
+    "specialistType": "professional dry cleaner with solvent spotting capability for set yellow on polyester"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Cooking spatter, salad dressing, or aged buildup?",
+      "White, dyed, athletic, or specialty polyester?",
+      "Fresh or hot-dried already?",
+      "Has fabric softener been used in past washes?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Olive oil's slower oxidation gives a bit more forgiveness on aging vs canola / soybean / corn oil, but polyester's heat-lock makes the difference smaller. Athletic-wear softener buildup is the hidden plateau cause."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

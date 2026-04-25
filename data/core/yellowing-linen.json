@@ -1,76 +1,256 @@
 {
   "id": "yellowing-linen",
   "title": "Yellowing on Linen",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "linen",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Yellowing on linen has multiple causes: oxidized body oils (most common on white clothing), degradation of optical brighteners in detergent, cellulose oxidation from age/storage, and residual product buildup. The yellow color comes from color formation in oxidized organic compounds. Heat and time accelerate the process. Chlorine bleach can cause permanent yellowing on synthetics.",
-  "whyThisWorks": "An oxygen-based bleach (OxiClean/sodium percarbonate) oxidizes the yellow color back to colorless on linen. For body oil yellowing, a degreasing pre-treatment addresses the oil that oxidized in the first place. Sunlight provides additional natural bleaching through UV oxidation. For whites, a borax soak can help restore brightness by boosting the detergent's cleaning power.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "30–60 minutes; identify cause first, then bounded sequence; vintage = pro / conservator",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "yellowing",
+    "surfaceCanonical": "linen",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "yellowing",
+      "linen",
+      "identify-cause-first",
+      "no-chlorine-panic",
+      "no-hot-water",
+      "structured-fork",
+      "vintage-conservator-fork",
+      "sun-dry-finisher"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Yellowing on linen has multiple possible causes — identify the cause before chemistry. (1) Sweat / antiperspirant yellowing (aluminum-protein complex; vinegar pretreat is the unlock). (2) Body oil / cooking oil residue heat-locked into linen (Dawn × 2 + sun finisher). (3) Storage yellowing on white linen (oxidized cellulose from light + air; OxiClean cool soak + sun-dry). (4) Mineral / iron deposits from hard water (oxalic acid bounded). (5) Vintage / antique yellowing (cellulose age, often pro / conservator territory). The recurring trap is reaching for chlorine bleach without identifying cause — chlorine LOCKS aluminum-protein yellowing, makes iron yellowing WORSE, and weakens linen at concentration. Structured / lined / vintage linen = pro from minute one.",
+  "whyThisWorks": "Identifying the cause picks the right chemistry. Sweat / antiperspirant: vinegar pretreat → enzyme → peroxide on white. Body oil: Dawn × 2 → cool wash → sun-dry. Storage yellowing: OxiClean cool soak + sunlight (UV photodegrades the chromophore). Iron / hard water: oxalic acid (Bar Keepers Friend) bounded. Sunlight is genuinely the most reliable finisher across most yellowing causes — UV photodegrades many of the chromophores responsible. Cool wash + AIR-DRY FLAT preserves the linen.",
+  "scienceNote": "Mechanism (pro-facing): cellulose yellowing has multiple causes — aluminum-protein complex (sweat-stain), oxidized lipids (body oil), oxidized cellulose (storage), iron oxide (hard water), or natural aging (vintage cellulose). Pro identifies cause first, then uses targeted chemistry: dilute acetic acid + 3% H₂O₂ for protein/aluminum; NSD oil-strip for body oil; sodium hydrosulfite for storage / cellulose age; oxalic acid for iron.",
+  "defaultAssumption": "Yellowing on a simple flat washable white linen napkin / shirt / tablecloth — most often sweat / antiperspirant or body-oil residue heat-locked. Vintage / antique linen with age yellowing = pro / specialty textile conservator. Structured / lined / dry-clean-only linen = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify the Cause",
+      "technique": "Cause picks the chemistry",
+      "equipment": "Good light, history",
+      "dwellTime": "2 minutes",
+      "instruction": "Underarm / collar yellowing = sweat / antiperspirant. All-over uniform yellow = storage yellowing or body-oil residue. Spot yellow with rust shadow = iron / hard water. Vintage piece (decades old) = cellulose age, pro / conservator. Triage first."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Care Label Check + Vintage Triage",
+      "technique": "Structured / vintage = pro",
+      "equipment": "Care label",
+      "dwellTime": "1 minute",
+      "instruction": "Dry-clean-only / structured / lined / vintage linen = pro from minute one. Simple flat washable linen = home candidate."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Pretreat (Sweat / Antiperspirant)",
+      "technique": "Mild acid for aluminum-protein",
+      "equipment": "1:1 white vinegar + cool water on damp cloth",
+      "dwellTime": "10–15 minutes",
+      "instruction": "Sweat / antiperspirant yellowing only: 1:1 white vinegar + cool water on damp cloth, press 10–15 min. Damp-cloth rinse THOROUGHLY before peroxide."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn Pretreat (Body Oil)",
+      "technique": "Strip oil residue",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Body-oil residue yellowing: generous Dawn, soft toothbrush 10 min. Cool damp-cloth rinse. Repeat if oily feel remains."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "OxiClean Cool Soak (Storage / General Yellowing)",
+      "technique": "Oxygen bleach for cellulose chromophore",
+      "equipment": "OxiClean per label, cool water, soak basin",
+      "dwellTime": "30–60 minutes",
+      "instruction": "Storage / general yellowing on white linen: OxiClean cool soak 30–60 min. Cool rinse."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Stubborn Yellow",
+      "technique": "Direct peroxide on white linen",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "10 minutes",
+      "instruction": "WHITE linen only: 3% peroxide damp cloth 10 min. NEVER mix with chlorine bleach, ammonia, or alkaline cleaners."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Sunlight Finisher",
+      "technique": "UV photodegrades residual yellow",
+      "equipment": "Direct sunlight",
+      "dwellTime": "Several hours, multi-day if needed",
+      "instruction": "Hang damp linen in direct sunlight for several hours — sometimes all day. UV photodegrades residual yellow chromophore on white linen. The most reliable finisher across yellowing causes."
+    },
+    {
+      "step": 8,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY Flat",
+      "technique": "Heat-free finish, lay flat",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Cool cycle + AIR-DRY flat",
+      "instruction": "Cool machine wash. AIR-DRY FLAT — linen wrinkles aggressively when hung wet. Inspect dry."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove loose material mechanically — brush, scrape, or vacuum as appropriate",
-      "2. Apply NSD to the stain area",
-      "3. Apply appropriate secondary agent based on stain response",
-      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Identify cause — sweat / oil / storage / iron / vintage age.",
+      "2. Vintage / structured / lined / dry-clean-only linen = pro / conservator.",
+      "3. Apply targeted pretreat per cause (vinegar / Dawn / OxiClean / oxalic acid).",
+      "4. 3% H₂O₂ for residual yellow on white linen.",
+      "5. Sunlight finisher — UV photodegrades residual yellow.",
+      "6. Cool wash + AIR-DRY flat."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "White vinegar (sweat / antiperspirant cause)",
+      "Dawn / NSD (body-oil cause)",
+      "OxiClean Versatile (storage / general)",
+      "Bar Keepers Friend (iron / hard water cause, bounded)",
+      "3% Hydrogen peroxide (white linen)",
+      "Sunlight",
+      "Cool water"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat sets most yellowing causes",
     "warnings": [
-      "Always test on hidden area first"
+      "Identify cause FIRST — wrong chemistry makes worse",
+      "NEVER chlorine bleach without cause-identification — locks sweat / iron yellowing",
+      "NEVER hot water — sets most yellowing types",
+      "Vintage / structured / lined / dry-clean-only linen = pro from minute one",
+      "Linen air-dries FLAT — hanging stretches",
+      "Sunlight is the safest finisher across causes",
+      "NEVER mix peroxide + chlorine + ammonia + alkaline"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Identify the Cause Before Any Chemistry",
+      "instruction": "Yellowing on linen has multiple causes and the right chemistry depends on the cause. Underarm / collar yellowing = sweat / antiperspirant (vinegar pretreat). All-over uniform yellow = storage yellowing or body-oil residue (OxiClean / Dawn). Spot yellow with rust shadow = iron / hard water (oxalic acid). Vintage piece = cellulose age, pro / conservator. The recurring trap is reaching for chlorine bleach without identifying cause — chlorine LOCKS aluminum-protein yellowing, makes iron WORSE, and weakens linen at concentration. Triage first."
+    },
+    {
+      "step": 2,
+      "agent": "Vintage / Structured Linen Goes to Pro",
+      "instruction": "Dry-clean-only / structured / lined / vintage / antique linen narrows the bench sharply. Vintage cellulose age yellowing in particular goes to a textile conservator — they have controlled chemistry that works without weakening the aged fiber. Simple flat washable linen = home candidate."
+    },
+    {
+      "step": 3,
+      "agent": "Sweat / Antiperspirant — White Vinegar Pretreat",
+      "instruction": "Sweat / antiperspirant yellowing only: mix 1 part white vinegar + 1 part cool water. Apply with damp cloth, press 10 to 15 minutes. The mild acid breaks the aluminum-sweat complex (the unlock). Damp-cloth rinse THOROUGHLY before any peroxide."
+    },
+    {
+      "step": 4,
+      "agent": "Body Oil — Two Dawn Passes",
+      "instruction": "Body-oil residue yellowing: generous Dawn, soft toothbrush 10 minutes. Cool damp-cloth rinse. Touch with fingertip — oily feel = repeat Dawn. Body-oil residue typically needs 2 passes."
+    },
+    {
+      "step": 5,
+      "agent": "Storage / General Yellowing — OxiClean Cool Soak",
+      "instruction": "All-over storage yellowing on white linen: OxiClean per label in COOL water, soak 30 to 60 minutes. Cool rinse."
+    },
+    {
+      "step": 6,
+      "agent": "Iron / Hard Water — Bar Keepers Friend Bounded",
+      "instruction": "Spot yellow with a rust-colored shadow: Bar Keepers Friend per label, gloves on (oxalic acid is a skin irritant), 5 to 10 minutes, cool rinse THOROUGHLY. Hidden-seam test on dyed linen first."
+    },
+    {
+      "step": 7,
+      "agent": "3% Peroxide for Stubborn Yellow on White Linen",
+      "instruction": "WHITE linen only: 3% drugstore peroxide on a damp cloth, press 10 minutes. Hidden-area test on dyed linen first.",
+      "safetyNote": "Never mix peroxide with chlorine bleach, ammonia, or alkaline cleaners — toxic fumes."
+    },
+    {
+      "step": 8,
+      "agent": "Sunlight — The Most Reliable Finisher",
+      "instruction": "Hang the damp linen in direct sunlight for several hours, sometimes all day. UV photodegrades residual yellow across most causes. This is the safest finisher because it's free, gentle on linen, and works on most yellowing chromophores."
+    },
+    {
+      "step": 9,
+      "agent": "Cool Wash and AIR-DRY FLAT",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY FLAT — linen wrinkles aggressively when hung wet, hanging stretches the fiber. Inspect dry. NEVER hot dryer until cleared."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Dissolve 1-2 scoops OxiClean in hottest water safe for the fabric. Soak — 1-6 hours",
-      "2. Check progress every hour — some yellowing requires extended soak time",
-      "3. Wash in appropriate temperature water with regular detergent",
-      "4. Air dry in direct sunlight if possible — UV provides additional whitening",
-      "5. Repeat cycle if needed — stubborn yellowing may require 2-3 treatments"
+      "1. Identify cause — sweat / body oil / storage / iron / vintage.",
+      "2. Vintage / structured / lined / dry-clean-only linen = pro / conservator.",
+      "3. Targeted pretreat per cause: vinegar (sweat) / Dawn × 2 (body oil) / OxiClean cool soak (storage) / BKF (iron, gloves).",
+      "4. 3% peroxide damp cloth on white linen for stubborn yellow.",
+      "5. Sunlight finisher — hours to multi-day.",
+      "6. Cool wash + AIR-DRY FLAT."
     ],
     "products": [
-      "OxiClean Versatile Stain Remover"
+      "White vinegar (sweat cause)",
+      "Dawn dish soap (body-oil cause)",
+      "OxiClean Versatile (storage / general)",
+      "Bar Keepers Friend (iron cause, bounded)",
+      "3% Hydrogen peroxide (white linen)",
+      "Sunlight",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop on dry-clean-only / structured / lined / vintage linen (pro). Stop if hot water or hot dryer was used (often sets yellowing). Stop if chlorine bleach was used without cause-identification (often locks the yellowing). Stop after full sequence + multi-day sunlight plateau.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "Identify cause FIRST — wrong chemistry makes worse",
+      "NEVER chlorine bleach without cause-identification — locks sweat / iron yellowing",
+      "NEVER hot water — sets most yellowing types",
+      "Vintage / structured linen = pro / conservator",
+      "Linen air-dries FLAT — hanging stretches",
+      "Sunlight is the safest finisher across causes",
+      "NEVER mix peroxide + chlorine + ammonia + alkaline"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong concentrated acids — weakens cellulose",
-      "No chlorine bleach on colored linen"
+      "Never apply chlorine bleach without identifying yellowing cause first",
+      "Never hot water during chemistry — sets most yellowing types",
+      "Never mix peroxide + chlorine + ammonia + alkaline",
+      "Never bare-handed with oxalic acid — skin irritant",
+      "Never iron over yellow buildup — sets it"
     ],
     "fiberSensitivities": [
-      "Strongest natural fiber when wet — very durable",
-      "Wrinkles easily but tolerates aggressive cleaning",
-      "Neutralize acid spotters after use on cellulose"
+      "White / light washable linen: tolerates the full toolkit",
+      "Dyed linen: hidden-seam test before peroxide and BKF",
+      "Structured / lined linen: pro — wet handling warps",
+      "Vintage / antique linen: textile conservator — fiber fragility under aggressive chemistry",
+      "Linen-rayon blend: pro — rayon doesn't tolerate aggressive Dawn or oxalic"
     ]
   },
+  "materialWarnings": [
+    "Identify cause FIRST — wrong chemistry makes yellowing worse",
+    "Chlorine bleach can LOCK sweat / iron yellowing permanently",
+    "Vintage linen = textile conservator territory",
+    "Sunlight is the safest reliable finisher across yellowing causes",
+    "Linen air-dries flat, not hanging"
+  ],
   "escalation": {
-    "when": "If yellowing stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is yellowing on linen, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Vintage / antique / structured / lined / dry-clean-only linen. Hot water or hot dryer already used (often sets yellowing). Chlorine bleach already used without cause-identification (often locked). 2 home cycles + multi-day sunlight plateau. Yellowing returns within weeks of cleaning (untreated cause).",
+    "whatToTell": "\"Yellowing on [white / light / dyed / structured / vintage] linen, suspected cause [sweat / body oil / storage / iron / vintage age], home-treated with [targeted pretreat per cause + 3% peroxide on white + sunlight × N days + cool wash + air-dry flat]. No hot, no chlorine without cause-id. [Residual yellow / locked by chlorine / vintage piece].\"",
+    "specialistType": "professional dry cleaner with reducing-bleach (sodium hydrosulfite) chemistry; specialty textile conservator for vintage / antique linen"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Underarm / collar yellowing (sweat) or all-over (storage / oil)?",
+      "Spot yellow with rust shadow (iron / hard water)?",
+      "Vintage piece (decades old)?",
+      "White, light, or dyed linen?",
+      "Has chlorine bleach been used without cause-identification?",
+      "Linen-cotton or linen-rayon blend?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Identifying cause is the entire first step on yellowing — wrong chemistry makes most yellowing types worse. Chlorine + sweat = locked yellowing. Chlorine + iron = locked rust. Chlorine + cellulose age = weakens fiber. The honest path is triage first, then targeted chemistry. Sunlight is the safest finisher across causes. Vintage / antique linen needs a textile conservator because the cellulose is fragile under aggressive chemistry."
   },
-  "difficulty": 4,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

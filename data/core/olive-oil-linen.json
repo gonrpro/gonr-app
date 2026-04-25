@@ -1,84 +1,170 @@
 {
   "id": "olive-oil-linen",
   "title": "Olive Oil on Linen",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "linen",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Olive oil contains oleic acid (monounsaturated fat) that penetrates linen quickly. Unlike polyunsaturated oils, olive oil polymerizes slowly, giving a wider treatment window. However, it is darker than most cooking oils and leaves a visible stain even in small amounts. Extra virgin olive oil also contains chlorophyll and polyphenols that add green-yellow color.",
-  "whyThisWorks": "Surfactant emulsifies the oleic acid on linen. Pre-treating with absorbent powder (cornstarch, baking soda) pulls surface oil from the fiber before surfactant is applied. For aged stains, POG provides stronger solvent action against the penetrated oil. Olive oil responds well to treatment when caught early.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "20–40 minutes; powder + Dawn, AIR-DRY FLAT, structured = pro",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "olive-oil",
+    "surfaceCanonical": "linen",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "olive-oil",
+      "oil",
+      "linen",
+      "powder-preload",
+      "no-water-first",
+      "no-hot-dryer-with-oil",
+      "structured-fork",
+      "air-dry-flat"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Olive oil on linen follows the same protocol as cotton (powder + Dawn) but with two linen-specific complications: (1) structured / lined / dry-clean-only / vintage linen warps under wet handling — pro from minute one, and (2) linen wrinkles aggressively when wet, so AIR-DRY FLAT is non-negotiable (hanging stretches the fiber). Recurring traps stay the same: water-first instead of powder-first (spreads oil), and hot dryer with residual oil (locks it as permanent yellow shadow).",
+  "whyThisWorks": "Powder preload pulls bulk oil up before water spreads it. Dawn emulsifies the olive oil. Cool wash plus AIR-DRY FLAT locks nothing. Linen's natural wrinkle behavior means the flat-dry step matters more than on cotton.",
+  "scienceNote": "Mechanism (pro-facing): olive oil is mostly oleic acid (monounsaturated triglyceride). Linen is cellulose, similar to cotton — tolerates Dawn + cool wash. Pro uses POG / petroleum ether for oil + NSD on structured linen.",
+  "defaultAssumption": "Cooking spatter or salad dressing drip on a simple flat washable linen napkin / shirt / tablecloth. Structured / lined / vintage linen = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Care Label Triage + Powder Preload",
+      "technique": "Pro check + powder absorb",
+      "equipment": "Care label, cornstarch / baking soda",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Dry-clean-only / structured / lined / vintage linen = pro. Simple flat washable linen: cover oil spot with cornstarch / baking soda. 20–30 min absorb. Soft-brush off."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "technique": "Emulsify oil",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn directly. Soft toothbrush 10 min. Cool damp-cloth rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY Flat",
+      "technique": "Heat-free finish, lay flat",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Cool cycle + AIR-DRY flat",
+      "instruction": "Cool machine wash. AIR-DRY FLAT — linen wrinkles aggressively when hung wet. Inspect dry. NEVER hot dryer with residual oil."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Care label triage — structured / vintage = pro.",
+      "2. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "3. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "4. Cool wash + AIR-DRY flat. No heat with residual oil."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "Dawn / NSD",
+      "Cool water"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat-locks residual oil",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "Structured / lined / vintage linen = pro from minute one",
+      "Powder BEFORE water — water-first spreads oil",
+      "NEVER hot dryer with residual oil — yellow shadow",
+      "Linen air-dries FLAT — hanging stretches the fiber"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Powder First, Dawn Second, AIR-DRY Flat",
+      "instruction": "Olive oil on linen follows the same powder + Dawn sequence as cotton, with two linen-specific notes: structured / lined / dry-clean-only / vintage linen goes to pro from minute one, and linen wrinkles aggressively when wet so AIR-DRY FLAT is non-negotiable. Two hard rules: powder BEFORE water (water-first spreads oil into a wider ring), and NO hot dryer with residual oil (locks it as a permanent yellow shadow)."
+    },
+    {
+      "step": 2,
+      "agent": "Care Label Check",
+      "instruction": "Find the care tag. Dry-clean-only / structured / lined / vintage linen = pro. Simple flat washable linen (napkin, plain shirt, basic tablecloth) = home candidate."
+    },
+    {
+      "step": 3,
+      "agent": "Cornstarch or Baking Soda — 20 to 30 Minutes",
+      "instruction": "Cover the oil spot with cornstarch or baking soda. Press gently. 20 to 30 minutes. Soft-brush off."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
+      "instruction": "Generous Dawn dish soap directly on the spot. Soft toothbrush 10 minutes. Cool damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "agent": "Cool Wash and AIR-DRY FLAT",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY FLAT — linen wrinkles aggressively when wet, hanging stretches the fiber. Inspect dry. NEVER hot dryer with residual oil — heat polymerizes the oil into the linen as a permanent yellow shadow."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Structured / lined / vintage linen = pro from minute one.",
+      "2. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
+      "3. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
+      "4. Cool wash + AIR-DRY FLAT.",
+      "5. Repeat Dawn pass if yellow shadow remains."
     ],
     "products": [
-      "Dawn dish soap",
-      "baking soda"
+      "Cornstarch / baking soda",
+      "Dawn dish soap (generous)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop on dry-clean-only / structured / lined / vintage linen (pro). Stop if hot dryer was used on residual oil (often permanent yellow shadow). Stop after 3 home cycles plateau.",
     "warnings": [
-      "Always test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents.",
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "Structured / vintage linen = pro from minute one",
+      "Powder BEFORE water — water-first spreads oil",
+      "NEVER hot dryer with residual oil",
+      "Linen air-dries FLAT — hanging stretches",
+      "Aged hot-dried yellowing sometimes plateaus"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong concentrated acids — weakens cellulose",
-      "No chlorine bleach on colored linen"
+      "Never water-first on oil — spreads it",
+      "Never hot dryer with residual oil — yellow shadow",
+      "Never iron over a yellow shadow — sets it",
+      "Never hang wet linen — stretches"
     ],
     "fiberSensitivities": [
-      "Strongest natural fiber when wet — very durable",
-      "Wrinkles easily but tolerates aggressive cleaning",
-      "Neutralize acid spotters after use on cellulose"
+      "Simple flat washable linen: tolerates Dawn + cool wash",
+      "Structured / lined linen: pro — wet handling warps",
+      "Vintage linen: pro — fiber fragility",
+      "Linen-cotton blend: same protocol",
+      "Linen-rayon blend: pro — rayon doesn't tolerate aggressive Dawn"
     ]
   },
+  "materialWarnings": [
+    "Structured / vintage linen = pro from minute one",
+    "Powder before water — water-first spreads oil",
+    "Air-dry FLAT — linen wrinkles and stretches when hung wet",
+    "No hot dryer with residual oil — yellow shadow"
+  ],
   "escalation": {
-    "when": "If olive oil stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is olive oil on linen, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Dry-clean-only / structured / lined / vintage linen. Hot dryer used on residual oil. 3 home cycles plateau. Aged buildup over weeks/months.",
+    "whatToTell": "\"Olive oil on [simple / structured / lined / vintage] linen, age [fresh / hours / weeks of buildup], home-treated with [cornstarch preload + Dawn cool + cool wash + air-dry flat]. No hot dryer. [Residual yellow shadow].\"",
+    "specialistType": "professional dry cleaner with linen experience"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Cooking spatter, salad dressing, or aged buildup?",
+      "Simple flat linen, structured / lined, or vintage?",
+      "Fresh, hours old, or weeks of hot-dried buildup?",
+      "Linen-cotton or linen-rayon blend?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Linen-cotton blends follow the same protocol. Linen-rayon blends go to pro because rayon doesn't tolerate the Dawn dwell. AIR-DRY FLAT is non-negotiable on any linen — hanging stretches the fiber."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents."
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

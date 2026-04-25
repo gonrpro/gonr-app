@@ -1,83 +1,194 @@
 {
   "id": "rust-linen",
   "title": "Rust on Linen",
-  "stainFamily": "dye",
+  "stainType": "specialty",
+  "stainFamily": "specialty",
   "surface": "linen",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Rust (iron oxide, Fe2O3) is an inorganic metal stain, not an organic dye. On linen, iron oxide particles lodge in fiber texture and bond through electrostatic interactions. Standard detergents and bleach are ineffective — bleach actually sets rust stains darker by further oxidizing the iron. Only reducing agents or chelating agents can dissolve iron oxide back into soluble form.",
-  "whyThisWorks": "A reducing agent (sodium hydrosulfite professionally, oxalic acid at consumer level) converts insoluble iron oxide back into soluble iron ions on linen, which then rinse away. Lemon juice or white vinegar provide mild acid chelation for light rust. The key rule: NEVER use chlorine bleach on rust — it oxidizes the iron further, making the stain permanent.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–45 minutes; oxalic acid bounded; NO chlorine bleach (sets rust); structured = pro",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "rust",
+    "surfaceCanonical": "linen",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "rust",
+      "iron",
+      "oxalic-acid",
+      "linen",
+      "no-chlorine-bleach",
+      "no-peroxide",
+      "structured-fork",
+      "ppe-required",
+      "air-dry-flat"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Rust on linen is iron oxide bonded to the cellulose fiber — usually from a metal hanger, leaky pipe, rusty zipper, or wet metal contact. The recurring traps: chlorine bleach (LOCKS rust into a permanent darker stain — chlorine + iron is the classic irreversible failure), 3% peroxide (oxidizes iron further, makes rust WORSE), and hot water (sets iron-fiber bond). The right tool is REDUCING chemistry — oxalic acid (Bar Keepers Friend, Iron Out, Whink Rust Stain Remover). Linen-specific: structured / lined / dry-clean-only / vintage linen narrows the bench (oxalic can stress the fiber under prolonged contact) — pro from minute one. AIR-DRY FLAT is non-negotiable on linen.",
+  "whyThisWorks": "Oxalic acid pulls iron oxide off cellulose fibers — it's the OPPOSITE of bleach (bleach oxidizes iron, locking rust; oxalic acid reduces iron, releasing it). Bounded application on simple flat washable white linen + cool rinse + AIR-DRY FLAT is the home protocol. Cool wash AFTER chemistry is safe on white linen. Honest cap: aged set rust with fiber-deep penetration sometimes plateaus.",
+  "scienceNote": "Mechanism (pro-facing): rust is Fe³⁺ iron oxide bonded to cellulose. Pro uses oxalic acid (BKF, Iron Out, Whink) at controlled dilution + cool rinse + acetic acid neutralization. Sodium hydrosulfite is the alternative reducing bleach for delicate fibers.",
+  "defaultAssumption": "Rust spot from a metal hanger / leaky pipe / rusty zipper on a simple flat washable white linen napkin / shirt / tablecloth. Structured / lined / dry-clean-only / vintage linen = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Triage and PPE",
+      "technique": "Care label + gloves",
+      "equipment": "Care label, gloves",
+      "dwellTime": "1 minute",
+      "instruction": "Dry-clean-only / structured / lined / vintage linen = pro. Simple flat washable linen = home candidate. Gloves on — oxalic acid is a skin irritant."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Test for Oxalic Acid",
+      "technique": "Linen bleed test",
+      "equipment": "BKF or Iron Out per label on Q-tip",
+      "dwellTime": "30 seconds",
+      "instruction": "Inside seam: dab oxalic acid solution on white cloth, press 30 sec. Color or fiber damage = skip oxalic, pro for residual rust. White linen usually passes; dyed linen often doesn't."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Oxalic Acid Pretreat",
+      "technique": "Reducing chemistry for rust",
+      "equipment": "Bar Keepers Friend / Iron Out / Whink per label, gloves",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Mix oxalic acid product per label. Apply to spot — never saturate. 5–10 min. Cool water rinse THOROUGHLY (oxalic acid skin irritant)."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY Flat",
+      "technique": "Heat-free finish, lay flat",
+      "equipment": "Washing machine, cool water, drying rack",
+      "dwellTime": "Cool cycle + AIR-DRY flat",
+      "instruction": "Cool machine wash. AIR-DRY FLAT — linen wrinkles aggressively when hung wet. Inspect dry. NEVER hot dryer."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply sodium hydrosulfite (reducing agent) to the rust stain — this converts insoluble iron oxide back to soluble form",
-      "2. Flush with NSD and cool water to remove dissolved iron",
-      "3. If rust persists: repeat sodium hydrosulfite application",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Care label triage — structured / vintage = pro.",
+      "2. Gloves + hidden-seam oxalic acid test on dyed linen.",
+      "3. Oxalic acid pretreat (BKF / Iron Out / Whink) per label, 5–10 min.",
+      "4. Cool water rinse THOROUGHLY (oxalic acid skin irritant).",
+      "5. Cool wash + AIR-DRY flat."
     ],
     "products": [
-      "sodium hydrosulfite",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Disposable gloves",
+      "Bar Keepers Friend (oxalic acid)",
+      "Iron Out (sodium hydrosulfite)",
+      "Whink Rust Stain Remover",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets iron-fiber bond",
     "warnings": [
-      "NEVER use chlorine bleach on rust — it oxidizes iron further, making the stain permanent"
+      "Structured / lined / vintage linen = pro from minute one",
+      "NEVER chlorine bleach on rust — LOCKS rust permanently",
+      "NEVER 3% peroxide on rust — oxidizes iron further, makes worse",
+      "NEVER hot water — sets iron-fiber bond",
+      "Oxalic acid is a skin irritant — gloves required, rinse thoroughly",
+      "NEVER mix oxalic acid with chlorine bleach — toxic chlorine gas",
+      "Hidden-seam test on dyed linen before oxalic",
+      "Linen air-dries FLAT — hanging stretches"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Reducing Chemistry, Not Bleach — Oxalic Acid",
+      "instruction": "Rust on linen is iron oxide bonded to the fiber. The most common home failure is chlorine bleach — chlorine + iron LOCKS rust into a permanent darker stain (irreversible). Peroxide is the second-most-common failure — oxidizes iron and makes rust WORSE. The right tool is REDUCING chemistry: oxalic acid (Bar Keepers Friend, Iron Out, or Whink). Two hard rules: NO chlorine bleach (locks rust), NO peroxide (makes rust worse). Structured / lined / dry-clean-only / vintage linen goes to pro from minute one."
+    },
+    {
+      "step": 2,
+      "agent": "Care Label Triage + Gloves",
+      "instruction": "Find the care tag. Dry-clean-only / structured / lined / vintage linen = pro. Simple flat washable white linen = home candidate. Gloves on before any oxalic acid handling — it's a skin irritant."
+    },
+    {
+      "step": 3,
+      "agent": "Hidden-Seam Test on Dyed Linen",
+      "instruction": "Inside seam: dab oxalic acid (BKF paste or Iron Out) on a white cloth, press 30 seconds. Color or fiber damage transfers = skip oxalic, pro from there. White linen usually passes."
+    },
+    {
+      "step": 4,
+      "agent": "Bar Keepers Friend or Iron Out — Bounded",
+      "instruction": "Bar Keepers Friend (powder, mix to paste with water) OR Iron Out (liquid) OR Whink Rust Stain Remover. Apply to the spot — never saturate the linen. Press 5 to 10 minutes. Cool water rinse THOROUGHLY — oxalic acid is a skin irritant and the residue needs to come out."
+    },
+    {
+      "step": 5,
+      "agent": "Cool Wash and AIR-DRY FLAT",
+      "instruction": "Cool machine wash with normal detergent. AIR-DRY FLAT — linen wrinkles aggressively when hung wet, hanging stretches the fiber. Inspect dry. NEVER hot dryer until cleared."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Apply white vinegar or lemon juice to the rust stain. Let sit",
-      "2. Sprinkle salt over the vinegar-soaked area for mild abrasion",
-      "3. Blot with clean white cloth. Repeat application if needed",
-      "4. Rinse thoroughly with cold water",
-      "5. Air dry — do NOT use heat"
+      "1. Structured / vintage linen = pro from minute one. NO chlorine bleach. NO peroxide.",
+      "2. Gloves on (oxalic acid is skin irritant).",
+      "3. Hidden-seam test on dyed linen.",
+      "4. Bar Keepers Friend / Iron Out / Whink per label, 5–10 min.",
+      "5. Cool water rinse THOROUGHLY.",
+      "6. Cool wash + AIR-DRY FLAT."
     ],
     "products": [
-      "white vinegar",
-      "lemon juice (alternative)"
+      "Disposable gloves",
+      "Bar Keepers Friend (oxalic acid powder)",
+      "Iron Out (sodium hydrosulfite liquid)",
+      "Whink Rust Stain Remover",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop on dry-clean-only / structured / lined / vintage linen (pro). Stop if hidden-seam test shows damage. Stop if chlorine bleach or peroxide was already used (locked / made worse — irreversible). Stop after 2 home cycles plateau.",
     "warnings": [
-      "Always test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents.",
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "Structured / vintage linen = pro from minute one",
+      "NEVER chlorine bleach on rust — LOCKS rust permanently",
+      "NEVER 3% peroxide on rust — makes rust WORSE",
+      "NEVER hot water — sets iron-fiber bond",
+      "Oxalic acid is skin irritant — gloves + thorough rinse",
+      "NEVER mix oxalic acid with chlorine — toxic chlorine gas",
+      "Linen air-dries FLAT"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong concentrated acids — weakens cellulose",
-      "No chlorine bleach on colored linen"
+      "Never chlorine bleach on rust — LOCKS rust permanently",
+      "Never 3% peroxide on rust — oxidizes iron further",
+      "Never hot water on rust",
+      "Never mix oxalic acid with chlorine — toxic chlorine gas",
+      "Never bare-handed with oxalic acid"
     ],
     "fiberSensitivities": [
-      "Strongest natural fiber when wet — very durable",
-      "Wrinkles easily but tolerates aggressive cleaning",
-      "Neutralize acid spotters after use on cellulose"
+      "White / light washable linen: tolerates oxalic acid bounded",
+      "Dyed linen: hidden-seam test mandatory",
+      "Structured / lined linen: pro — wet handling warps",
+      "Vintage linen: pro — fiber fragility",
+      "Linen-rayon blend: pro — rayon doesn't tolerate oxalic"
     ]
   },
+  "materialWarnings": [
+    "Bleach LOCKS rust permanently — most common irreversible failure",
+    "Peroxide makes rust WORSE — second-most-common failure",
+    "Oxalic acid (BKF / Iron Out / Whink) is the right reducing tool",
+    "Structured / vintage linen = pro from minute one"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is rust on linen, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Dry-clean-only / structured / lined / vintage linen. Chlorine bleach already used (locked rust). Peroxide already used (made worse). Hidden-seam test fails. 2 home cycles plateau.",
+    "whatToTell": "\"Rust on [white / dyed / structured / vintage] linen, source [hanger / pipe / zipper / metal contact], age [fresh / weeks / months], home-treated with [BKF / Iron Out per label + cool rinse + air-dry flat]. NO chlorine bleach, NO peroxide. [Residual rust / locked by chlorine / vintage piece].\"",
+    "specialistType": "professional dry cleaner with iron-removal capability"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Simple flat washable linen, structured / lined, or vintage?",
+      "White, light, or dyed?",
+      "Source of rust — hanger, pipe, zipper, metal contact?",
+      "Has chlorine bleach or peroxide been applied (often irreversible)?",
+      "Linen-cotton or linen-rayon blend?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Rust is the rare REDUCTION chemistry stain — bleach and peroxide both make it worse. Oxalic acid is the right tool. Linen-rayon blends go to pro because rayon doesn't tolerate oxalic. AIR-DRY FLAT is non-negotiable on linen — hanging stretches the fiber."
   },
-  "difficulty": 6,
-  "timeEstimate": "15-45 minutes",
-  "lastValidated": "2026-03-23",
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents."
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

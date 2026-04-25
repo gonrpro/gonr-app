@@ -1,76 +1,262 @@
 {
   "id": "yellowing-polyester",
   "title": "Yellowing on Polyester",
+  "stainType": "specialty",
   "stainFamily": "specialty",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Yellowing on polyester has multiple causes: oxidized body oils (most common on white clothing), degradation of optical brighteners in detergent, cellulose oxidation from age/storage, and residual product buildup. The yellow color comes from color formation in oxidized organic compounds. Heat and time accelerate the process. Chlorine bleach can cause permanent yellowing on synthetics.",
-  "whyThisWorks": "An oxygen-based bleach (OxiClean/sodium percarbonate) oxidizes the yellow color back to colorless on polyester. For body oil yellowing, a degreasing pre-treatment addresses the oil that oxidized in the first place. Sunlight provides additional natural bleaching through UV oxidation. For whites, a borax soak can help restore brightness by boosting the detergent's cleaning power.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "30–60 minutes; identify cause first; honest cap on aged hot-dried yellowing",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "yellowing",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "yellowing",
+      "polyester",
+      "identify-cause-first",
+      "no-chlorine-bleach",
+      "no-hot-water",
+      "no-hot-dryer",
+      "honest-cap",
+      "oleophilic-fiber",
+      "sunlight-finisher"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Yellowing on polyester is harder than on linen because polyester locks color under heat (the same chemistry as industrial dyeing). Multiple causes: (1) Body oil / sweat residue heat-locked into polyester (cumulative collar/cuff yellowing — Dawn × 2 + cool sequence). (2) Aluminum-sweat-protein complex (vinegar pretreat + cool sequence). (3) Aged polyester yellowing from heat-set residual oil (often permanent — pro plateau too). (4) Chlorine-bleach damage (chlorine yellows polyester and damages fiber irreversibly — STOP, replacement). The recurring traps: chlorine bleach (yellows polyester permanently — irreversible damage), hot water (sets oil and locks aluminum-protein), hot dryer (yellows polyester over time with any residue). Honest cap is real on aged hot-dried polyester yellowing — manage expectations.",
+  "whyThisWorks": "Identifying the cause picks the chemistry. Body oil residue: powder + Dawn × 2 + cool wash. Sweat / antiperspirant: vinegar pretreat → enzyme → 3% peroxide on white. Aged hot-dried yellowing: pro reducing-bleach is the next step but plateaus too. Chlorine-bleach damage: irreversible — replacement or live with it. Sunlight on damp polyester adds free UV photodegradation. Cool wash + AIR-DRY locks nothing.",
+  "scienceNote": "Mechanism (pro-facing): polyester yellowing has multiple causes — oxidized lipids from body oil, aluminum-protein complex from antiperspirant, heat-set residual oil polymerization, or chlorine-induced fiber damage. Pro identifies cause first; uses NSD oil-strip + dilute acetic acid + 3% H₂O₂ for protein/aluminum + sodium hydrosulfite for set chromophore. Chlorine damage to polyester is irreversible.",
+  "defaultAssumption": "Yellowing on polyester shirt collar / cuff / underarm — most often body oil + sweat heat-locked into the fiber over years of hot-washing and hot-drying. Aged + cumulative = honest cap; pro reducing-bleach the next step but plateaus too. Performance / specialty / dry-clean-only polyester = pro from minute one.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Identify the Cause",
+      "technique": "Cause picks the chemistry",
+      "equipment": "Good light, history",
+      "dwellTime": "2 minutes",
+      "instruction": "Underarm / collar yellowing = sweat / antiperspirant + body oil. All-over yellow on athletic wear = body oil + softener buildup. Aged shirt with heat-set yellow = honest cap. Chlorine-damaged yellow = irreversible (was chlorine used recently?)."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Performance Polyester / Specialty Triage",
+      "technique": "Pro fork",
+      "equipment": "Care label",
+      "dwellTime": "1 minute",
+      "instruction": "Performance / compression / technical / dry-clean-only polyester = pro from minute one. Standard polyester = home candidate. Chlorine-damaged polyester = often replacement."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Cornstarch / Baking Soda Preload (Body Oil Cause)",
+      "technique": "Pull bulk oil up before water",
+      "equipment": "Cornstarch / baking soda",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Body-oil cause: cover with cornstarch / baking soda, 20–30 min absorb. Soft-brush off."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Pretreat (Sweat / Antiperspirant)",
+      "technique": "Mild acid for aluminum-protein",
+      "equipment": "1:1 white vinegar + cool water on damp cloth",
+      "dwellTime": "10–15 minutes",
+      "instruction": "Sweat / antiperspirant cause: 1:1 white vinegar + cool water on damp cloth, press 10–15 min. Damp-cloth rinse THOROUGHLY before peroxide."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Dawn Pretreat — Generous, Cool, Two Passes",
+      "technique": "Strip oil residue",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes per pass",
+      "instruction": "Body-oil cause: generous Dawn, soft toothbrush 10 min. Polyester is oleophilic — extended dwell. Cool damp-cloth rinse. Repeat if oily feel remains (2 passes typical on polyester)."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "3% Peroxide for Stubborn Yellow on White Polyester",
+      "technique": "Direct peroxide on white",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "10 minutes",
+      "instruction": "WHITE polyester only. Hidden test on dyed polyester. 3% peroxide damp cloth 10 min. NEVER mix with chlorine bleach (irreversible damage to polyester), ammonia, or alkaline cleaners."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Sunlight Finisher",
+      "technique": "UV photodegradation",
+      "equipment": "Direct sunlight",
+      "dwellTime": "Several hours",
+      "instruction": "Hang damp polyester in direct sunlight for several hours. UV photodegrades residual yellow chromophore. Multi-day for stubborn cases. Honest cap on aged hot-dried polyester yellowing — partial removal is the realistic outcome."
+    },
+    {
+      "step": 8,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY",
+      "technique": "Heat-free finish",
+      "equipment": "Washing machine, cool water",
+      "dwellTime": "Cool cycle + AIR-DRY",
+      "instruction": "Cool machine wash. SKIP fabric softener. AIR-DRY only. NEVER hot dryer until cleared."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Remove loose material mechanically — brush, scrape, or vacuum as appropriate",
-      "2. Apply NSD to the stain area",
-      "3. Apply appropriate secondary agent based on stain response",
-      "4. Flush with cool water. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Identify cause — body oil / sweat / aged / chlorine damage.",
+      "2. Performance / specialty polyester = pro. Chlorine-damaged = often replacement.",
+      "3. Cornstarch / baking soda preload (body oil cause).",
+      "4. White vinegar 1:1 cool 10–15 min (sweat / antiperspirant cause).",
+      "5. Generous Dawn × 2 (body oil) — polyester needs 2 passes.",
+      "6. 3% H₂O₂ damp cloth on white polyester for stubborn yellow.",
+      "7. Sunlight finisher — UV photodegradation.",
+      "8. Cool wash + AIR-DRY. Honest cap on aged."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "White vinegar (sweat cause)",
+      "Dawn / NSD",
+      "3% Hydrogen peroxide (white polyester)",
+      "Sunlight",
+      "Cool water"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat sets every yellowing type into polyester",
     "warnings": [
-      "Always test on hidden area first"
+      "Identify cause FIRST — wrong chemistry makes worse",
+      "NEVER chlorine bleach on polyester — yellows fiber permanently (irreversible damage)",
+      "NEVER hot water — sets every yellowing type",
+      "NEVER hot dryer until cleared",
+      "NEVER fabric softener — coats fiber, blocks future cleaning",
+      "Polyester is oleophilic — Dawn × 2 typical",
+      "Performance / specialty polyester = pro from minute one",
+      "Honest cap: aged hot-dried polyester yellowing often plateaus — pro plateau too",
+      "NEVER mix peroxide + chlorine + ammonia + alkaline"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Polyester Yellowing Has an Honest Cap",
+      "instruction": "Polyester yellowing is harder than linen yellowing because polyester locks color under heat. Aged hot-dried yellowing on polyester is often a permanent shadow — set realistic expectations. Identify the cause before any chemistry. Three hard rules: NO chlorine bleach (yellows polyester permanently — irreversible damage), NO hot water (sets every yellowing type), NO hot dryer until cleared (locks residue + yellows fiber over time)."
+    },
+    {
+      "step": 2,
+      "agent": "Identify the Cause",
+      "instruction": "Underarm / collar yellow = sweat / antiperspirant + body oil. All-over yellow on athletic wear = body-oil + fabric-softener buildup. Aged shirt with heat-set yellow = honest cap (years of hot-washed body oil, often unrecoverable). Chlorine-damaged yellow = irreversible (was chlorine bleach used recently? Polyester yellows permanently from chlorine)."
+    },
+    {
+      "step": 3,
+      "agent": "Performance Polyester Goes to Pro",
+      "instruction": "Performance / compression / technical / dry-clean-only polyester goes to pro from minute one — coatings react unpredictably to extended chemistry."
+    },
+    {
+      "step": 4,
+      "agent": "Body Oil Cause — Cornstarch Plus Two Dawn Passes",
+      "instruction": "Body-oil cumulative yellowing: cover spot with cornstarch / baking soda 20 to 30 minutes, soft-brush off. Generous Dawn dish soap, soft toothbrush 10 minutes. Cool damp-cloth rinse. Touch with fingertip — oily feel = repeat Dawn. Polyester needs 2 Dawn passes for body oil."
+    },
+    {
+      "step": 5,
+      "agent": "Sweat / Antiperspirant Cause — Vinegar Pretreat",
+      "instruction": "Sweat / antiperspirant yellowing only: 1:1 white vinegar + cool water on damp cloth, press 10 to 15 minutes. The mild acid breaks the aluminum-sweat complex. Damp-cloth rinse THOROUGHLY before any peroxide."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide for Stubborn Yellow on White Polyester",
+      "instruction": "WHITE polyester only: 3% peroxide on a damp cloth, press 10 minutes. Hidden-area test on dyed polyester first.",
+      "safetyNote": "Never mix peroxide with chlorine bleach (toxic AND yellows polyester permanently), ammonia, or alkaline cleaners — toxic fumes."
+    },
+    {
+      "step": 7,
+      "agent": "Sunlight Finisher",
+      "instruction": "Hang the damp polyester in direct sunlight for several hours. UV photodegrades residual yellow chromophore. Multi-day for stubborn cases. Honest cap on aged hot-dried polyester yellowing — a faint shadow may remain regardless."
+    },
+    {
+      "step": 8,
+      "agent": "Cool Wash and AIR-DRY",
+      "instruction": "Cool machine wash with normal detergent. SKIP fabric softener — coats fiber and blocks future cleaning if yellowing recurs. AIR-DRY only. NEVER hot dryer until cleared."
+    },
+    {
+      "step": 9,
+      "agent": "Prevention Going Forward",
+      "instruction": "Aluminum-free deodorant prevents underarm yellowing recurrence. Skip fabric softener on polyester. AIR-DRY athletic wear instead of tumble-drying. Hot-dried oil residue is the long-term cause — break that cycle going forward."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Dissolve 1-2 scoops OxiClean in hottest water safe for the fabric. Soak — 1-6 hours",
-      "2. Check progress every hour — some yellowing requires extended soak time",
-      "3. Wash in appropriate temperature water with regular detergent",
-      "4. Air dry in direct sunlight if possible — UV provides additional whitening",
-      "5. Repeat cycle if needed — stubborn yellowing may require 2-3 treatments"
+      "1. Identify cause — body oil / sweat / aged / chlorine damage.",
+      "2. NO chlorine bleach. NO hot water. NO hot dryer until cleared. NO fabric softener.",
+      "3. Performance / specialty polyester = pro from minute one.",
+      "4. Cornstarch preload (body oil cause).",
+      "5. White vinegar 1:1 cool pretreat (sweat cause).",
+      "6. Generous Dawn × 2 cool 10 min — polyester is oleophilic.",
+      "7. 3% peroxide damp cloth on white polyester for stubborn yellow.",
+      "8. Sunlight finisher — hours to multi-day.",
+      "9. Cool wash + AIR-DRY. No softener.",
+      "10. Prevention: aluminum-free deodorant, no softener, AIR-DRY athletic wear."
     ],
     "products": [
-      "OxiClean Versatile Stain Remover"
+      "Cornstarch / baking soda",
+      "White vinegar (sweat cause)",
+      "Dawn dish soap (generous)",
+      "3% Hydrogen peroxide (white polyester)",
+      "Sunlight",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional for specialized treatment",
+    "whenToStop": "Stop on performance / specialty polyester (pro). Stop if chlorine bleach was used (irreversible yellowing damage to polyester — replacement). Stop on aged hot-dried polyester yellowing (honest cap, pro plateau). Stop after full sequence + multi-day sunlight plateau.",
     "warnings": [
-      "Always test cleaning solution on a hidden area first",
-      "Air dry until stain is confirmed gone — heat sets most stains"
+      "Identify cause FIRST",
+      "NEVER chlorine bleach on polyester — yellows permanently (irreversible damage)",
+      "NEVER hot water — sets every yellowing type",
+      "NEVER hot dryer until cleared",
+      "NEVER fabric softener — coats fiber",
+      "Polyester is oleophilic — Dawn × 2 typical",
+      "Honest cap: aged hot-dried polyester yellowing often plateaus"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never chlorine bleach on polyester — yellows fiber permanently (irreversible)",
+      "Never hot water during chemistry — sets every yellowing type",
+      "Never hot dryer until cleared",
+      "Never fabric softener after yellowing",
+      "Never mix peroxide + chlorine + ammonia + alkaline"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Standard white polyester: tolerates Dawn × 2 + 3% peroxide + sunlight",
+      "Dyed polyester: hidden test before peroxide; honest cap on aged",
+      "Performance / compression / technical polyester: pro — coatings react unpredictably",
+      "Polyester locks every yellowing type under heat",
+      "Chlorine damage to polyester is irreversible"
     ]
   },
+  "materialWarnings": [
+    "Identify cause FIRST — wrong chemistry makes yellowing worse",
+    "Chlorine bleach yellows polyester PERMANENTLY (irreversible damage)",
+    "Aged hot-dried polyester yellowing has an honest cap",
+    "Polyester locks every yellowing type under heat",
+    "Sunlight is the safest finisher across causes"
+  ],
   "escalation": {
-    "when": "If yellowing stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is yellowing on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Performance / compression / technical / dry-clean-only polyester. Chlorine bleach already used (irreversible polyester damage — replacement). Hot dryer used on yellowing for years (honest cap reached). Aged cumulative yellowing across collar / cuff / underarm. Full sequence + multi-day sunlight plateau on dyed.",
+    "whatToTell": "\"Yellowing on [white / dyed / athletic / specialty] polyester, suspected cause [body oil / sweat / aged / chlorine damage], home-treated with [cornstarch preload + vinegar pretreat (sweat) + Dawn × 2 + 3% peroxide on white + sunlight × N days + cool wash]. No chlorine, no hot. [Residual yellow / chlorine-damaged / hot-dried suspected].\"",
+    "specialistType": "professional dry cleaner with reducing-bleach (sodium hydrosulfite) chemistry — note pro chemistry plateaus on aged hot-dried polyester yellowing"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?"
+      "Underarm / collar (sweat / body oil) or all-over (storage / softener buildup)?",
+      "White, dyed, athletic, or specialty polyester?",
+      "Has chlorine bleach been used (irreversible damage)?",
+      "Has hot water or hot dryer been used (often locks yellowing)?",
+      "Aged shirt (years of accumulated buildup)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Polyester yellowing has a real honest cap because polyester locks color under heat — same chemistry as industrial polyester dyeing. Chlorine bleach damage is irreversible (chlorine yellows polyester permanently). Aluminum-free deodorant + skip fabric softener + AIR-DRY athletic wear breaks the long-term yellowing cycle going forward."
   },
-  "difficulty": 4,
-  "timeEstimate": "30-60 minutes",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

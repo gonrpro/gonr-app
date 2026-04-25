@@ -1,143 +1,217 @@
 {
   "id": "urine-carpet",
-  "title": "Urine on Carpet",
+  "title": "Human Urine on Carpet",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "carpet",
-  "sector": "home",
+  "sector": "carpet",
   "source": "verified",
-  "stainChemistry": "Fresh urine is an acidic solution (pH 5-6) containing urea, uric acid, creatinine, ammonia precursors, and trace proteins. As urine dries, bacteria break down urea into ammonia, shifting the pH alkaline (8-9+) and creating the characteristic odor. Uric acid crystals form and bond to carpet fibers — these crystals are extremely difficult to remove because they are insoluble in water and re-activate with moisture, causing phantom odors to return even after cleaning. The protein components can also set into the carpet backing and pad under the alkaline conditions of aging urine.",
-  "whyThisWorks": "Enzyme cleaners containing urine-targeted enzyme (breaks uric acid crystals) and Protein (addresses protein components) are the only truly effective treatment for urine. Standard cleaners mask the odor but leave the uric acid crystals intact — which reactivate with humidity. Complete dwell time and extraction is critical. The enzymatic reaction must be allowed to complete fully before the area is dried.",
-  "defaultAssumption": "Treat as possibly dried with uric acid crystal formation. Even if the area looks dry and odor-free, uric acid crystals remain active and will re-odor with moisture.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "30–60 minutes home triage; pad bleed-through = pad replacement / restoration",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "urine",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "urine",
+      "human-urine",
+      "protein",
+      "carpet",
+      "biohazard-adjacent",
+      "no-hot-water",
+      "no-saturation",
+      "no-chlorine-bleach",
+      "wool-fork",
+      "uv-blacklight"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Human urine on carpet is a protein + uric acid + ammonia stain. The uric acid forms crystals that reactivate with humidity (re-smell on humid days), and the ammonia can yellow synthetic fibers if hot water sets it. Three home traps: hot water (sets protein, yellows fiber, ammonia bonds), saturating the carpet (drives urine into the pad below where you can't reach it and it wicks back as a permanent ring), and chlorine bleach (locks ammonia residue and strips carpet dye unevenly). Wool carpet narrows the bench sharply (broad-spectrum enzymes damage wool keratin) — pro from minute one. Pad bleed-through visible = restoration territory, not a stain job.",
+  "whyThisWorks": "Cold damp-cloth blot extracts bulk urine without saturating the pad. Cool enzyme pretreat (urine-targeted enzyme like Nature's Miracle, Anti-Icky-Poo, or pet-specific urine cleaner) digests the urea / uric acid / protein at cool temperature. Vinegar disrupts the ammonia residue. Weighted paper towels overnight prevent wick-back from any moisture that reached the pad. UV blacklight in dark to find the full extent — urine often spreads farther than visible.",
+  "scienceNote": "Mechanism (pro-facing): human urine is urea + uric acid crystals + salts + protein + sometimes blood (medical). Pro uses urease + protease enzyme blend at controlled dilution + cold acetic acid for ammonia neutralization + sub-surface extraction. Wool carpet requires urease-only (no protease) — protease damages wool keratin.",
+  "defaultAssumption": "Bedwetting / illness accident / overnight cat-urine event on synthetic (nylon / polyester / olefin) home carpet. Wool carpet = pro from minute one. Pad bleed-through visible = restoration territory.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "PPE + UV Blacklight + Pad Check",
+      "technique": "Identify full extent + biohazard PPE",
+      "equipment": "Gloves, UV blacklight (~$15 Amazon)",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Gloves on (biohazard, especially if not your urine). Wool carpet = pro from minute one. UV blacklight in dark — urine glows yellow-green and spreads farther than visible. Press the carpet — pad bleed-through visible / musty smell from below = restoration, not stain cleaning."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Damp-Cloth Press-Blot",
+      "technique": "Extract bulk without pad saturation",
+      "equipment": "Cold water, white cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Damp white cloth with COLD water. Press the spot vertically — never rub. Lift, refresh cloth, press. NEVER pour water — saturation drives urine into pad. Weighted dry towel to extract."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Cool Enzyme Pretreat — Damp-Cloth Application",
+      "technique": "Urine-targeted enzyme",
+      "equipment": "Nature's Miracle / Anti-Icky-Poo / pet-specific urine cleaner per label, COOL water",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Apply urine-targeted enzyme cleaner with damp cloth — NEVER pour. Cover with damp towel to prevent drying. 20–30 min. Cool damp-cloth rinse."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Damp-Cloth — Ammonia Neutralization",
+      "technique": "Mild acid for residual ammonia",
+      "equipment": "1:1 white vinegar + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar + cool water on damp cloth, 5 min. Neutralizes ammonia residue. Damp-cloth rinse. NEVER mix vinegar with chlorine bleach — toxic chloramine gas."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Weighted Paper Towels Overnight + Fan",
+      "technique": "Prevent wick-back from pad",
+      "equipment": "Paper towels + heavy book, fan",
+      "dwellTime": "8–12 hours",
+      "instruction": "Stack paper towels on the spot, weight overnight. Fan-dry. Re-blacklight verify in dark — persistent UV signal = pad contamination, sub-surface extraction next."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Blot fresh urine thoroughly — do not rub",
-      "2. Extract as much liquid as possible — wet-vac preferred",
-      "3. Rinse with cold water — extract again",
-      "4. Apply Protein (Biokleen Bac-Out, Bridgepoint Urine Destroyer, or equivalent) generously — saturate to reach pad if possible",
-      "5. Cover with plastic wrap to prevent drying — allow minimum 24-hour dwell",
-      "6. Extract thoroughly with wet-vac",
-      "7. Apply fresh enzyme solution for second pass — dwell another hour",
-      "8. Final cold water rinse and extraction",
-      "9. Fan dry completely — do not cover until fully dry"
+      "1. PPE + UV blacklight + pad check — wool / pad bleed = pro / restoration.",
+      "2. Cold damp-cloth press-blot — never pour.",
+      "3. Cool urine-targeted enzyme pretreat 20–30 min, damp-cloth application.",
+      "4. White vinegar 1:1 cool damp-cloth, 5 min.",
+      "5. Weighted paper towels overnight + fan + blacklight verify."
     ],
     "products": [
-      "Bridgepoint Urine Destroyer",
-      "Biokleen Bac-Out",
-      "wet-vac",
-      "plastic wrap",
-      "cold water"
+      "Disposable gloves",
+      "UV blacklight (~$15 Amazon)",
+      "Nature's Miracle / Anti-Icky-Poo / pet-specific urine enzyme cleaner",
+      "White vinegar",
+      "Paper towels + weight",
+      "Fan",
+      "Cool water"
     ],
-    "temperature": "cold throughout — never use hot water (sets protein) or steam before Protein",
+    "temperature": "cool throughout — heat sets protein and ammonia",
     "warnings": [
-      "NEVER use steam before Protein — sets protein permanently",
-      "NEVER use ammonia-based cleaners — matches urine pH and does not remove odor compounds",
-      "Thorough extraction is critical — leaving enzyme solution in carpet can cause browning",
-      "Large or old stains may have penetrated pad — pad replacement may be necessary for full odor elimination"
+      "Wool carpet = pro from minute one",
+      "Pad bleed-through = restoration, not stain cleaning",
+      "NEVER hot water — sets protein and ammonia",
+      "NEVER chlorine bleach on carpet — locks ammonia, strips dye unevenly",
+      "NEVER pour water or enzyme cleaner — pad saturation",
+      "NEVER mix vinegar with chlorine bleach — toxic chloramine gas",
+      "Biohazard — gloves required",
+      "UV blacklight finds urine that spreads farther than visible"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Find the full spot — it's bigger than you think",
-      "instruction": "Urine always spreads beyond what's visible. In a dark room, sweep a UV blacklight across the area — urine glows pale yellow-green. Mark the edges with painter's tape. No blacklight? Treat an area at least 4 inches larger than the visible stain on every side. Treating too small is the #1 reason odor comes back days later."
+      "agent": "Wool Carpet Goes to Pro — Synthetic Has the Sequence",
+      "instruction": "Human urine on carpet has two big risks: (1) the pad below absorbs urine that wicks back later as a permanent ring, and (2) wool carpet's banned-tools list (no broad-spectrum enzymes, no peroxide, no alkaline) eliminates everything that lifts urine from synthetic carpet. Wool = pro from minute one. Synthetic carpet (nylon, polyester, olefin) follows: cold blot → cool enzyme → vinegar → weighted towels overnight. Three hard rules: NO hot water (sets protein and ammonia), NO saturation (drives urine into pad), NO chlorine bleach (locks ammonia + strips carpet dye)."
     },
     {
       "step": 2,
-      "agent": "The protein + enzyme rule",
-      "instruction": "Urine is a protein + uric acid mix. Two rules: (1) no hot water — heat sets the protein and bakes the odor in, and (2) no ammonia cleaners — they smell like urine and make the problem worse. Skip vinegar + baking soda combinations (they cancel each other out). The actual fix is an enzyme cleaner — it's the only thing that breaks uric acid crystals."
+      "agent": "Gloves + UV Blacklight to Find Full Extent",
+      "instruction": "Disposable gloves on (biohazard, especially if not your urine). If you have a UV blacklight (cheap on Amazon, ~$15), turn off the lights — urine glows yellow-green. Mark the full edge with painter's tape. Urine spreads farther than visible. Press the carpet — pad bleed-through / musty smell from below = restoration, not stain cleaning."
     },
     {
       "step": 3,
-      "agent": "Absorb fresh urine — stand on the towels",
-      "instruction": "If it's fresh: stack six to eight sheets of white paper towels over the area, press down firmly with your foot (wearing a shoe you don't love), and let the towels pull the urine up out of the pile and the pad. Replace and repeat until the towels come up nearly dry. If it's already dried: lay a cold damp towel over it for 10 minutes to rehydrate before you do anything else."
+      "agent": "Cold Damp-Cloth Press-Blot",
+      "instruction": "Damp a white cloth with COLD water. Press the spot down vertically — never rub. Lift, refresh the cloth, press again. NEVER pour water on the carpet — pad saturation drives urine into the foam below where you can't reach it. Weighted dry towel on top for a few minutes after to extract."
     },
     {
       "step": 4,
-      "agent": "Cold water dilute — small amounts, big blots",
-      "instruction": "Pour a small amount of cold water over the area, then blot hard with white paper towels or a clean white towel. Repeat two or three times. You're flushing surface salts before the enzyme step, not flooding the pad. Fresh accidents often lose most of their intensity in this step alone."
+      "agent": "Cool Urine-Targeted Enzyme — Damp-Cloth Only",
+      "instruction": "Apply a urine-targeted enzyme cleaner — Nature's Miracle, Anti-Icky-Poo, or any pet-specific enzyme cleaner — per the label, in COOL water. Apply with a damp cloth — NEVER pour. Cover with a damp towel to keep it from drying. 20 to 30 minutes. Damp-cloth rinse with cool water. Cool only — heat damages enzymes AND sets protein."
     },
     {
       "step": 5,
-      "agent": "Dish-soap cycle",
-      "instruction": "Mix one tablespoon of Dawn dish soap with two cups of cold water. Dab the area with a white cloth, let sit 5 minutes, then blot. Dawn removes surface residue and any trace fats before the enzyme hits the uric acid underneath. Do NOT use OxiClean, baking soda, or other alkaline products — they set protein and neutralize the enzyme."
+      "agent": "White Vinegar — Ammonia Neutralization",
+      "instruction": "Mix 1 part white vinegar with 1 part cool water. Apply with a damp cloth, press 5 minutes. Neutralizes residual ammonia (the smell). Damp-cloth rinse. Never mix vinegar with chlorine bleach — toxic gas."
     },
     {
       "step": 6,
-      "agent": "Enzyme cleaner — saturate the whole area",
-      "instruction": "Apply an enzyme cleaner labeled for pet urine (Nature's Miracle, Rocco & Roxie, Simple Solution, or Anti Icky Poo — these work on human urine too). Read the label, but saturate the area enough to reach the pad, not just the surface. Use 2–3x the volume of urine you estimate was absorbed. The enzyme needs to reach wherever the urine reached.",
-      "safetyNote": "Enzymes are deactivated by heat, chlorine bleach, and strong alkaline cleaners. Don't mix. Don't steam-clean before or during the enzyme stage."
-    },
-    {
-      "step": 7,
-      "agent": "Covered dwell — 8 to 24 hours, stay damp",
-      "instruction": "Lay a damp (not dripping) white towel over the treated area, then cover with plastic wrap and tape the edges down. This keeps the enzyme working at full moisture instead of drying out. Leave 8 hours for a fresh accident; 24 hours for older or larger ones. The enzyme is digesting uric acid and needs the time — rushing this step is why home treatments usually fail."
-    },
-    {
-      "step": 8,
-      "agent": "Dry down + smell and blacklight check",
-      "instruction": "Uncover, blot any surface moisture dry. Stack paper towels over the spot with a heavy book on top, leave overnight to pull moisture out of the pad. In the morning, smell the area — nose close to the pile — and sweep the blacklight again. If you can still smell it or the light still fluoresces, repeat steps 6–7 with fresh enzyme and longer dwell. Don't vacuum or return the area to normal use until it's fully dry and odor-free."
-    },
-    {
-      "step": 9,
-      "agent": "Escalate — especially if pad is soaked or odor keeps returning",
-      "instruction": "If odor returns when humidity rises, or if the pad is clearly saturated (big spills, or days-old accidents you just discovered), the uric acid is in the pad or subfloor. Call an IICRC-certified carpet cleaner and tell them: \"Urine on [nylon/polyester/wool] carpet, treated with Dawn + enzyme (2 rounds), no heat, no ammonia used. Odor or blacklight signal still present — likely pad contamination.\" They have sub-surface injection tools and in worst cases will replace the pad in that area."
+      "agent": "Weighted Paper Towels Overnight Plus Blacklight Verify",
+      "instruction": "Stack paper towels on the spot, weight overnight. Fan-dry in the morning. Re-blacklight in the dark — if the UV signal is still bright, the pad is contaminated and you need pro sub-surface extraction. Smell test in humid weather a few weeks later — uric acid crystals reactivate with humidity, so persistent re-smell = pad still contaminated."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with clean cloths — extract as much as possible",
-      "2. Pour cold water over area — blot again to dilute",
-      "3. Apply enzyme pet cleaner (Nature's Miracle, Rocco & Roxie) — saturate area",
-      "4. Cover with plastic wrap — dwell minimum 8-24 hours",
-      "5. Blot dry — fan dry thoroughly",
-      "6. Baking soda on dried area — vacuum after 30 minutes for residual odor"
+      "1. Wool carpet = pro from minute one.",
+      "2. Pad bleed-through visible = restoration, not stain cleaning.",
+      "3. Gloves + UV blacklight to find full extent.",
+      "4. Cold damp-cloth press-blot — NEVER pour water.",
+      "5. Cool urine-targeted enzyme on damp cloth, 20–30 min.",
+      "6. White vinegar 1:1 cool damp-cloth, 5 min for ammonia.",
+      "7. Weighted paper towels overnight + fan + blacklight verify."
     ],
     "products": [
-      "Nature's Miracle",
-      "Rocco & Roxie Protein",
-      "baking soda",
-      "cold water"
+      "Disposable gloves",
+      "UV blacklight",
+      "Nature's Miracle / Anti-Icky-Poo / pet-specific urine enzyme cleaner",
+      "White vinegar",
+      "Paper towels + heavy book",
+      "Fan",
+      "Cool water"
     ],
-    "whenToStop": "If odor returns with humidity after treatment, the uric acid crystals have not been fully broken down — professional extraction and fresh enzyme application is needed. If pad is soaked through, pad replacement may be the only solution.",
+    "whenToStop": "Stop on wool carpet (pro). Stop on pad bleed-through (restoration). Stop if hot water / steam / hot vacuum was already used (often locks protein and ammonia). Stop if chlorine bleach was used (locked ammonia + stripped dye). Stop if persistent UV signal after full sequence (pad contamination).",
     "warnings": [
-      "Do not use bleach — does not remove uric acid",
-      "Do not use ammonia cleaners — makes it worse",
-      "Grocery store carpet cleaners (Resolve, etc.) mask odor but don't remove uric acid crystals",
-      "Do not cover area until completely dry — traps moisture and causes mold"
+      "Wool carpet = pro from minute one",
+      "Pad bleed-through = restoration",
+      "NEVER hot water — sets protein and ammonia",
+      "NEVER pour — pad saturation drives urine into foam",
+      "NEVER chlorine bleach — locks ammonia + strips dye",
+      "NEVER mix vinegar with chlorine — toxic chloramine gas",
+      "Biohazard — gloves on",
+      "Persistent UV signal = pad contamination"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Ammonia-based cleaners — matches urine odor compounds",
-      "Steam before Protein",
-      "Hot water",
-      "Covering while still damp"
+      "Never wool carpet at home — pro from minute one",
+      "Never hot water on urine + carpet",
+      "Never pour water on carpet — pad saturation",
+      "Never chlorine bleach on carpet — locks ammonia + strips dye",
+      "Never mix vinegar with chlorine — toxic chloramine gas",
+      "Never bare-handed if not your urine"
     ],
     "fiberSensitivities": [
-      "Wool carpet: enzyme cleaners must be urine-targeted enzyme-based (not Protein-heavy) — brief contact only",
-      "Nylon/polyester/olefin: enzyme cleaners safe",
-      "All carpets: extraction quality determines final outcome — wet-vac significantly better than blotting alone"
+      "Synthetic (nylon / polyester / olefin) carpet: tolerates urine-targeted enzyme + vinegar damp-cloth",
+      "Wool carpet: pro from minute one — broad-spectrum enzymes damage wool keratin, peroxide yellows wool",
+      "Carpet pad: cannot be cleaned in place — saturation = pad replacement",
+      "Uric acid crystals reactivate with humidity — re-smell test a few weeks later"
     ]
   },
+  "materialWarnings": [
+    "Wool carpet = pro from minute one",
+    "Pad bleed-through = restoration territory",
+    "No pour-on water — pad saturation drives urine into foam",
+    "Uric acid reactivates with humidity — persistent UV signal = pad contamination",
+    "Aged set urine has the wick-back ring problem"
+  ],
   "escalation": {
-    "when": "Odor returns with humidity after multiple treatments, stain covers large area, or pad is soaked through",
-    "whatToTell": "Urine stain — possibly deep in pad. Ask for enzyme injection into pad if available, or pad replacement in affected area. No steam before enzyme.",
-    "specialistType": "IICRC-certified water damage or carpet cleaning specialist"
+    "when": "Wool carpet from minute one. Pad bleed-through visible / musty smell from below (restoration). Hot water / steam / hot vacuum already used (often locks protein + ammonia). Chlorine bleach already used (locked ammonia + stripped dye). Persistent UV signal after full sequence (pad contamination). Recurring re-smell on humid days (pad replacement).",
+    "whatToTell": "\"Human urine on [synthetic / wool] carpet, age [fresh / overnight / days / weeks], home-treated with [PPE + UV blacklight + cold damp-cloth blot + cool urine-targeted enzyme on damp cloth + vinegar damp-cloth + weighted towels overnight]. No hot, no pour, no chlorine. [Residual UV signal / pad bleed-through suspected / re-smell on humid days].\"",
+    "specialistType": "professional carpet cleaner with truck-mount sub-surface extraction; specialty wool carpet cleaner if wool; mold remediation specialist if pad contamination + recurring smell"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is it fresh or old?",
-      "Pet or human?",
-      "How large is the area?",
-      "Has anything else been applied?",
-      "Is odor present when area is dry?"
+      "Synthetic (nylon / polyester / olefin) carpet or wool?",
+      "Fresh, overnight, days, or weeks old?",
+      "Has hot water / steam / hot vacuum been used?",
+      "Has chlorine bleach been used (locked ammonia)?",
+      "Does the pad below feel damp or smell musty?",
+      "Re-smell on humid days (uric acid reactivation)?"
     ],
-    "modifierNotes": "Fresh urine: excellent enzyme results. Old dried urine with uric acid crystals: 24-hour enzyme dwell essential. Pet urine vs human: similar treatment, pet urine often more concentrated. Odor when dry = uric acid crystals still present, need fresh enzyme pass. Pad soaked through: professional or pad replacement."
+    "modifierNotes": "Wool carpet protocol is pro because broad-spectrum enzymes damage the keratin. Pad bleed-through is the silent failure mode that turns a stain job into restoration. UV blacklight is genuinely useful — urine often spreads 2–3× the visible area. Persistent re-smell on humid days means uric acid crystals are still in the pad."
   },
-  "difficulty": 5,
-  "timeEstimate": "24-48 hours full treatment",
-  "lastValidated": "2026-04-25",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

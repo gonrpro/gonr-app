@@ -1,86 +1,238 @@
 {
   "id": "urine-mattress",
   "title": "Urine on Mattress",
+  "stainType": "protein",
   "stainFamily": "protein",
   "surface": "mattress",
-  "sector": "bedding",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Urine contains urea, uric acid, and proteins. Fresh urine is mildly acidic and water-soluble. As it dries, bacteria break down urea into ammonia (alkaline shift) and uric acid crystals form — these crystals are extremely difficult to dissolve and bind tightly to mattress. The yellow color comes from urochrome pigment. Odor is caused by volatile ammonia and bacterial decomposition products.",
-  "whyThisWorks": "Enzyme-based treatment breaks down the protein and uric acid components. Cold water prevents the protein from setting into mattress. The surfactant component lifts soluble waste while the enzyme digests the protein bonds. For odor, the enzyme must reach all contaminated material — surface cleaning alone leaves odor-causing residue in the substrate.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 8,
+  "timeEstimate": "30–60 minutes home triage; deep saturation = mattress replacement / pro extraction",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "urine",
+    "surfaceCanonical": "mattress",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "urine",
+      "mattress",
+      "protein",
+      "biohazard-adjacent",
+      "no-saturation",
+      "no-hot-water",
+      "no-chlorine-bleach",
+      "moisture-mold-warning",
+      "deep-saturation-replacement-fork",
+      "ppe-required"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Urine on mattress is the harder version of urine on carpet because mattresses can't be flipped, hosed, or extracted aggressively — moisture trapped inside breeds mold and mildew, and the foam holds urine residue indefinitely. The recurring traps: hot water (sets protein, yellows fabric, makes mold worse), saturating the mattress (drives urine into the foam, where mold takes over within days), chlorine bleach (locks ammonia + strips fabric color + leaves residue that can irritate skin during sleep). The honest cap: deep-saturation events on adult mattresses (puddle-soaked, repeated overnight events) often mean replacement is the right call — recovery from full saturation isn't reliable. Surface contact is recoverable; deep saturation isn't.",
+  "whyThisWorks": "Strict damp-cloth-only application is the entire mattress protocol. Cold damp-cloth blot extracts surface residue. Cool urine-targeted enzyme on a barely-damp cloth penetrates surface contamination without saturating foam. Vinegar damp-cloth neutralizes ammonia. Drying is the bigger challenge — fans / open windows / sunshine through bedroom windows for hours, then UV blacklight verify. Mattress protectors after the fact prevent recurrence. The honest cap on deep saturation is real — pro mattress extraction has water-claw extractors that home users can't replicate, and even those plateau on aged urine in foam.",
+  "scienceNote": "Mechanism (pro-facing): urine is urea + uric acid crystals + salts + protein. Mattress fabric is typically polyester or polyester-cotton; foam is polyurethane. Pro uses urease + protease enzyme blend at controlled dilution + cold acetic acid + sub-surface extraction (water-claw). For deep saturation, mattress replacement is often more cost-effective than restoration.",
+  "defaultAssumption": "Bedwetting / illness accident on a foam or innerspring mattress. Surface contact (caught fresh, blotted within minutes) = recoverable with home protocol. Puddle-soaked / overnight event / repeated incidents = deep saturation, often replacement is the right call. Pro mattress extraction is the middle path.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "PPE + Surface vs Deep-Saturation Triage",
+      "technique": "Pad-down test + biohazard PPE",
+      "equipment": "Gloves, paper towel, pressure",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Gloves on (biohazard, especially if not your urine). Press a dry paper towel firmly into the spot. Towel comes up wet = surface contact, recoverable. Towel comes up sopping or you can squeeze water out of the foam = deep saturation, replacement / pro extraction territory."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Damp-Cloth Press-Blot",
+      "technique": "Extract surface residue without saturation",
+      "equipment": "Cold water, white cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Damp white cloth with COLD water — wrung NEARLY DRY. Press the spot vertically — never rub. Lift, refresh cloth, press. NEVER pour water on a mattress — saturation drives urine deeper into foam where mold takes over. Multiple light passes."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Cool Urine-Targeted Enzyme — Barely Damp Cloth",
+      "technique": "Surface treatment without foam saturation",
+      "equipment": "Nature's Miracle / Anti-Icky-Poo / pet-specific urine cleaner per label, COOL water",
+      "dwellTime": "20 minutes",
+      "instruction": "Apply urine-targeted enzyme cleaner to a barely-damp cloth — NEVER pour. Press the spot, cover with damp towel to prevent drying. 20 min. Cool damp-cloth rinse with bare-minimum moisture."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Damp-Cloth — Ammonia",
+      "technique": "Mild acid for residual ammonia",
+      "equipment": "1:1 white vinegar + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar + cool water on barely-damp cloth, press 5 min. NEVER mix with chlorine bleach. Damp-cloth rinse."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Aggressive Drying — Fans, Sun, Hours",
+      "technique": "Prevent mold growth in foam",
+      "equipment": "Box fan / ceiling fan / sunlight through window",
+      "dwellTime": "Several hours to all day",
+      "instruction": "Strip the bed. Open windows. Run a fan directly on the spot for several hours minimum — all day if possible. Sunshine through bedroom windows helps. Mattress MUST dry fully inside before re-making the bed — damp foam = mold within days."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Mattress Protector Going Forward",
+      "technique": "Prevent recurrence",
+      "equipment": "Waterproof / urine-proof mattress protector",
+      "dwellTime": "Permanent",
+      "instruction": "Add a waterproof mattress protector before re-making the bed. For ongoing bedwetting context (kids, elderly, illness), this is the prevention path that matters more than treatment."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Protein Formula (digestant spotter) and tamp gently with spotting brush. Work from edge to center",
-      "2. Apply NSD (Neutral Synthetic Detergent) and work gently to remove loosened protein and digestant residue. Flush with cold water",
-      "3. If stain persists: apply sodium hydrosulfite (reducing agent) for stubborn oxidized protein — 5-10 min dwell time, monitor carefully",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse to restore fabric pH",
-      "5. Blot dry with clean absorbent cloth. Air dry — no heat"
+      "1. PPE + surface vs deep-saturation triage.",
+      "2. Cold damp-cloth press-blot — never pour, never saturate.",
+      "3. Cool urine-targeted enzyme on barely-damp cloth, 20 min.",
+      "4. White vinegar 1:1 cool damp-cloth, 5 min for ammonia.",
+      "5. Aggressive drying — fans / open windows / sun — several hours minimum.",
+      "6. Mattress protector going forward.",
+      "7. Deep saturation = pro mattress extraction or replacement."
     ],
     "products": [
-      "Protein Formula",
-      "NSD (Neutral Synthetic Detergent)",
-      "sodium hydrosulfite",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Disposable gloves",
+      "UV blacklight",
+      "Nature's Miracle / Anti-Icky-Poo / pet-specific urine enzyme cleaner",
+      "White vinegar",
+      "Box fan / ceiling fan",
+      "Waterproof mattress protector (going forward)",
+      "Cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cool throughout — heat sets protein and ammonia",
     "warnings": [
-      "COLD water only throughout — heat permanently sets protein",
-      "Avoid over-wetting — extract excess moisture to prevent backing/foam damage"
+      "Deep saturation = replacement / pro extraction — not a stain job",
+      "NEVER hot water — sets protein and grows mold faster",
+      "NEVER pour water or enzyme cleaner on a mattress — foam saturation drives urine deeper",
+      "NEVER chlorine bleach — locks ammonia, strips fabric, residue irritates skin during sleep",
+      "NEVER mix vinegar with chlorine — toxic chloramine gas",
+      "Aggressive drying is non-negotiable — damp foam = mold within days",
+      "Biohazard — gloves required",
+      "Mattress protector prevents recurrence"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Surface Contact vs Deep Saturation — Different Outcomes",
+      "instruction": "Urine on a mattress has two cases with very different recovery odds. SURFACE CONTACT (caught fresh, only the top fabric is wet) = recoverable with strict damp-cloth-only protocol. DEEP SATURATION (puddle, overnight event, foam is wet inside) = often replacement is the honest answer. The home protocol is the same either way (cold blot → cool enzyme → vinegar → aggressive drying), but deep saturation has a real failure rate because the foam holds urine residue indefinitely. Three hard rules: NO hot water (sets protein + grows mold), NO pouring water on the mattress (foam saturation = mold within days), NO chlorine bleach (locks ammonia, strips fabric, residue irritates skin during sleep)."
+    },
+    {
+      "step": 2,
+      "agent": "Press-Down Test for Saturation",
+      "instruction": "Gloves on. Press a dry paper towel firmly into the spot. Towel comes up wet but not sopping = surface contact, proceed with home protocol. Towel comes up sopping or you can squeeze water out of the foam = deep saturation, you're better off calling a pro mattress extractor or just replacing the mattress."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Damp-Cloth Press-Blot — Barely Damp",
+      "instruction": "Damp a white cloth with COLD water and wring it NEARLY DRY. Press the spot down vertically — never rub. Lift, refresh the cloth, press again. NEVER pour water on the mattress. NEVER use a damp cloth that's saturated — every drop of water you add will go into the foam below."
+    },
+    {
+      "step": 4,
+      "agent": "Cool Urine-Targeted Enzyme — Barely-Damp Cloth Only",
+      "instruction": "Apply a urine-targeted enzyme cleaner (Nature's Miracle, Anti-Icky-Poo, or pet-specific urine cleaner) to a BARELY-DAMP cloth — NEVER pour on the mattress. Cover with a damp towel. 20 minutes. Damp-cloth rinse with bare-minimum cold water. Cool only — heat damages enzymes AND sets protein."
+    },
+    {
+      "step": 5,
+      "agent": "White Vinegar — Ammonia Neutralization",
+      "instruction": "Mix 1 part white vinegar with 1 part cool water. Apply with a barely-damp cloth, press 5 minutes. Neutralizes residual ammonia (the smell). Damp-cloth rinse. Never mix vinegar with chlorine bleach — toxic gas."
+    },
+    {
+      "step": 6,
+      "agent": "Aggressive Drying — Fans, Sun, All Day",
+      "instruction": "Strip the bed completely. Open the bedroom windows. Run a box fan directly on the wet spot for several hours — all day if possible. Sunshine through the window helps. The mattress MUST dry fully inside before you re-make the bed — damp foam = mold within days, and once mold takes hold inside a mattress, the only fix is replacement."
+    },
+    {
+      "step": 7,
+      "agent": "Mattress Protector Going Forward",
+      "instruction": "Add a waterproof / urine-proof mattress protector before re-making the bed. For ongoing bedwetting context (kids, elderly, illness recovery), this is the prevention that matters more than treatment. Treating recurrent events without a protector is a losing battle."
+    },
+    {
+      "step": 8,
+      "agent": "Honest Cap — Replacement May Be the Right Call",
+      "instruction": "If the spot is large and saturated, the urine is from days ago, or there's already a musty smell from inside the mattress, replacement is often the right call. Mattress replacement starts around $200-$400 for budget mattresses; pro mattress extraction (water-claw) is similar cost and unreliable on aged urine in foam. For valuable mattresses, pro extraction is worth trying. For older / cheap mattresses, replacement + protector is usually more practical."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot up as much liquid as possible with clean white cloths — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 2 cups cold water. Apply to stain and blot",
-      "3. Mix equal parts white vinegar and cold water. Apply to neutralize odor",
-      "4. Sprinkle baking soda over the area to absorb remaining moisture and odor — let sit 15-30 min",
-      "5. Blot thoroughly and air dry — no heat"
+      "1. Press-down test — surface vs deep saturation.",
+      "2. Gloves on. NO hot water. NO pouring. NO chlorine bleach.",
+      "3. Cold damp-cloth press-blot — barely damp.",
+      "4. Cool urine-targeted enzyme on barely-damp cloth, 20 min.",
+      "5. White vinegar 1:1 cool damp-cloth, 5 min for ammonia.",
+      "6. Aggressive drying — fan / open windows / sun for hours.",
+      "7. Mattress protector going forward.",
+      "8. Deep saturation / aged urine = replacement or pro mattress extraction."
     ],
     "products": [
-      "Dawn dish soap",
-      "white vinegar",
-      "baking soda",
-      "Enzyme cleaner (Nature's Miracle or Rocco & Roxie)",
-      "cold water",
-      "white vinegar (odor)"
+      "Disposable gloves",
+      "Nature's Miracle / Anti-Icky-Poo / pet-specific urine enzyme cleaner",
+      "White vinegar",
+      "Box fan / ceiling fan",
+      "Waterproof mattress protector (going forward)",
+      "Cool water"
     ],
-    "whenToStop": "Stop and take to a professional if the stain has been heat-set, if multiple home treatments haven't improved it, or if the fabric is delicate/expensive",
+    "whenToStop": "Stop on deep saturation — replacement / pro extraction. Stop if hot water / steam was used (cooked protein + grew mold). Stop if chlorine bleach was used (locked ammonia + stripped fabric). Stop if musty smell from inside the mattress (mold already present). Stop if aged urine through multiple events (foam holds residue indefinitely).",
     "warnings": [
-      "NEVER use hot water on protein stains — heat sets them permanently",
-      "Always test cleaning solution on a hidden area first",
-      "Do NOT use OxiClean or oxidizing agents on protein stains — they can set the stain permanently"
+      "Deep saturation = replacement / pro extraction",
+      "NEVER hot water — sets protein + grows mold",
+      "NEVER pour water on mattress — foam saturation = mold",
+      "NEVER chlorine bleach — locks ammonia + irritates skin during sleep",
+      "NEVER mix vinegar with chlorine — toxic chloramine gas",
+      "Aggressive drying is non-negotiable",
+      "Biohazard — gloves on",
+      "Mattress protector prevents recurrence"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — mattress foam absorbs and retains moisture, leading to mold",
-      "No chlorine bleach — damages fabric cover and foam"
+      "Never hot water on urine + mattress",
+      "Never pour water on a mattress — foam saturation",
+      "Never chlorine bleach on a mattress — irritates skin during sleep",
+      "Never mix vinegar with chlorine — toxic chloramine gas",
+      "Never bare-handed if not your urine",
+      "Never put a damp mattress back into use — mold within days"
     ],
     "fiberSensitivities": [
-      "Cannot be machine washed — spot treatment only",
-      "Interior foam retains moisture — use minimum liquid, extract thoroughly",
-      "Vacuum before and after treatment"
+      "Mattress fabric (polyester / polyester-cotton): tolerates damp-cloth enzyme + vinegar",
+      "Mattress foam (polyurethane): cannot be cleaned in place — saturation = mold growth",
+      "Memory foam: more vulnerable to saturation than spring mattress core",
+      "Pillow-top: top layer saturates fast, drying is harder"
     ]
   },
+  "materialWarnings": [
+    "Deep saturation = replacement / pro extraction is the honest cap",
+    "Mattresses can't be flipped or hosed — moisture inside breeds mold",
+    "Aggressive drying is the entire success metric on home cleanup",
+    "Mattress protector prevents recurrence — more important than treatment for recurring incidents"
+  ],
   "escalation": {
-    "when": "If the protein has been heat-set (hot water, dryer, or iron exposure), or if the stain is older than 48 hours without treatment, or if 3 treatment cycles haven't resolved it",
-    "whatToTell": "Explain that the stain is urine on mattress, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional mattress cleaning service"
+    "when": "Deep saturation visible (squeezable water in foam). Hot water / steam already used (cooked protein + grew mold). Chlorine bleach already used (locked ammonia + stripped fabric). Musty smell from inside the mattress (mold already present). Aged urine through multiple bedwetting events (foam contamination). Memory foam mattress with saturation (replacement is usually right).",
+    "whatToTell": "\"Human urine on [foam / spring / pillow-top / memory foam] mattress, [surface contact / deep saturation], age [fresh / overnight / days / repeated events], home-treated with [press-down test + cold damp-cloth blot + cool urine-targeted enzyme on barely-damp cloth + vinegar damp-cloth + aggressive fan-drying]. No hot, no pour, no chlorine. [Surface only / suspect deep saturation / musty smell / aged through multiple events].\"",
+    "specialistType": "professional mattress extraction service (water-claw sub-surface extraction); mattress replacement is often more cost-effective than restoration for deep saturation"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the stain fresh and wet, or dried/crusty?"
+      "Foam, spring, pillow-top, or memory foam mattress?",
+      "Surface contact (caught fresh) or deep saturation?",
+      "Fresh, overnight, or repeated events?",
+      "Has hot water / steam been used?",
+      "Has chlorine bleach been used?",
+      "Musty smell from inside the mattress?",
+      "Mattress protector currently in use?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Deep saturation is the honest-cap fork — replacement is often more practical than restoration. Memory foam is more vulnerable than spring mattresses. Pro mattress extraction (water-claw) exists but plateaus on aged urine in foam. The mattress-protector prevention path matters more than treatment for recurring incidents (kids, elderly, illness)."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
