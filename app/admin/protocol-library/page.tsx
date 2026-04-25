@@ -3,16 +3,12 @@
 // app/admin/protocol-library/page.tsx
 //
 // Founder-only "book view" of the protocol library (Task #40).
-// v1.1 changes (Atlas 8401):
-//   - Mobile: stacked card list (no horizontal scroll)
-//   - Desktop: table view
-//   - Expanded detail renders BELOW the list in a full-width block (escapes
-//     table-forced width, so mobile scrolls vertically with zero side-scroll)
-//   - min-w-0 + break-words everywhere inside detail
-//   - Added Task #42 explanation: verified: true (voice-reviewed) vs
-//     verification_level (TASK-055 provenance) — two different concepts.
-//
-// Scope (Atlas 8392): no PDF/export, no schema changes, no plant overlay.
+// v1.1 (Atlas 8401): mobile-first layout + verified/provenance explanation.
+// v1.2 (Tyler 8404): scrollIntoView on detail when card tapped.
+// Task #44 additions (Atlas 8414): verification actions inside the detail —
+//   approve / flag / note buttons, audit trail, founder-only promotion.
+//   Promotion rule: 1 founder approve → next verification_level tier.
+//   Flag requires a note. External-portal expansion is Task #43.
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
@@ -436,19 +432,21 @@ export default function AdminProtocolLibraryPage() {
               close
             </button>
           </div>
-          <CardDetail card={selectedCard} />
+          <CardDetail card={selectedCard} onReviewed={() => void load()} />
         </section>
       )}
     </main>
   )
 }
 
-function CardDetail({ card }: { card: CardRow }) {
+function CardDetail({ card, onReviewed }: { card: CardRow; onReviewed: () => void }) {
   const d = card.data
   if (!d) return <p className="text-sm text-gray-500">No card data.</p>
 
   return (
     <div className="space-y-6 min-w-0 break-words">
+      <VerificationPanel card={card} onReviewed={onReviewed} />
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
         <div className="space-y-2 min-w-0">
           <div className="text-xs text-gray-500 space-x-3 break-words">
@@ -596,6 +594,183 @@ function CardDetail({ card }: { card: CardRow }) {
       )}
     </div>
   )
+}
+
+type ReviewRow = {
+  id: string
+  card_key: string
+  reviewer_email: string
+  reviewer_role: string
+  action: 'approve' | 'flag' | 'note'
+  note: string | null
+  card_version: string | null
+  reviewed_at: string
+}
+
+function VerificationPanel({ card, onReviewed }: { card: CardRow; onReviewed: () => void }) {
+  const [action, setAction] = useState<'approve' | 'flag' | 'note'>('approve')
+  const [note, setNote] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+  const [feedback, setFeedback] = useState<{ kind: 'ok' | 'err'; text: string } | null>(null)
+  const [reviews, setReviews] = useState<ReviewRow[]>([])
+  const [reviewsLoading, setReviewsLoading] = useState(false)
+  const [migrationPending, setMigrationPending] = useState(false)
+
+  const loadReviews = useCallback(async () => {
+    setReviewsLoading(true)
+    try {
+      const res = await fetch(`/api/admin/protocol-library/review?card_key=${encodeURIComponent(card.card_key)}`, { cache: 'no-store' })
+      if (!res.ok) return
+      const json = (await res.json()) as { reviews: ReviewRow[]; _migrationPending?: boolean }
+      setReviews(json.reviews ?? [])
+      if (json._migrationPending) setMigrationPending(true)
+    } finally {
+      setReviewsLoading(false)
+    }
+  }, [card.card_key])
+
+  useEffect(() => {
+    void loadReviews()
+    setNote('')
+    setFeedback(null)
+  }, [card.card_key, loadReviews])
+
+  const cardVersion = useMemo(() => `${card.updated_at}`, [card.updated_at])
+
+  async function submit() {
+    if (submitting) return
+    if (action === 'flag' && !note.trim()) {
+      setFeedback({ kind: 'err', text: 'Flag requires a note.' })
+      return
+    }
+    setSubmitting(true)
+    setFeedback(null)
+    try {
+      const res = await fetch('/api/admin/protocol-library/review', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          card_key: card.card_key,
+          action,
+          note: note.trim() || undefined,
+          card_version: cardVersion,
+        }),
+      })
+      const json = await res.json()
+      if (!res.ok) {
+        if (res.status === 503 && json.error === 'migration_pending') {
+          setMigrationPending(true)
+          setFeedback({ kind: 'err', text: 'Migration pending — Atlas DDL apply needed first.' })
+        } else {
+          setFeedback({ kind: 'err', text: json.error ?? 'review failed' })
+        }
+        return
+      }
+      const promoted = json.promoted ? ` · promoted to ${json.newLevel}` : ''
+      setFeedback({ kind: 'ok', text: `Recorded ${action}${promoted}.` })
+      setNote('')
+      await loadReviews()
+      onReviewed()
+    } catch (err) {
+      setFeedback({ kind: 'err', text: err instanceof Error ? err.message : 'review failed' })
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  const actionStyles: Record<typeof action, string> = {
+    approve: 'border-emerald-500/50 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400',
+    flag: 'border-red-500/50 bg-red-500/10 text-red-700 dark:text-red-400',
+    note: 'border-slate-500/50 bg-slate-500/10 text-slate-700 dark:text-slate-300',
+  }
+
+  return (
+    <section className="border border-amber-500/30 bg-amber-500/5 rounded p-3 space-y-3 min-w-0">
+      <div className="flex items-baseline justify-between gap-2 flex-wrap">
+        <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-500">Verification</h4>
+        <div className="text-[11px] text-gray-500">
+          current: <LevelBadge level={card.verification_level} />
+        </div>
+      </div>
+
+      {migrationPending && (
+        <div className="text-xs border border-amber-600/40 bg-amber-600/10 rounded p-2">
+          <strong>Migration pending:</strong> the <code>card_reviews</code> table isn&apos;t live yet.
+          Apply <code>supabase/migrations/20260425000000_card_reviews.sql</code> via Supabase Management API or dashboard, then retry.
+        </div>
+      )}
+
+      <div className="flex gap-2 flex-wrap">
+        {(['approve', 'flag', 'note'] as const).map(a => (
+          <button
+            key={a}
+            type="button"
+            onClick={() => setAction(a)}
+            className={`px-3 py-1.5 text-xs font-mono uppercase rounded border ${action === a ? actionStyles[a] : 'border-gray-300 dark:border-gray-700 text-gray-500'}`}
+          >
+            {a === 'approve' ? '✅ approve' : a === 'flag' ? '⚠ flag' : '📝 note'}
+          </button>
+        ))}
+      </div>
+
+      <textarea
+        value={note}
+        onChange={e => setNote(e.target.value)}
+        placeholder={action === 'flag' ? 'Required: describe the correction needed' : 'Optional note'}
+        rows={2}
+        className="w-full px-2 py-1.5 text-sm border border-gray-300 dark:border-gray-700 bg-transparent rounded resize-y min-w-0"
+      />
+
+      <div className="flex items-center gap-3">
+        <button
+          type="button"
+          onClick={() => void submit()}
+          disabled={submitting}
+          className="px-3 py-1.5 text-xs font-semibold rounded bg-gray-900 text-white dark:bg-white dark:text-gray-900 disabled:opacity-50"
+        >
+          {submitting ? 'submitting…' : `submit ${action}`}
+        </button>
+        {action === 'approve' && (
+          <span className="text-[11px] text-gray-500">
+            promotes verification_level → {nextLevelLabel(card.verification_level)}
+          </span>
+        )}
+        {feedback && (
+          <span className={`text-[11px] ${feedback.kind === 'ok' ? 'text-emerald-700 dark:text-emerald-400' : 'text-red-700 dark:text-red-400'}`}>
+            {feedback.text}
+          </span>
+        )}
+      </div>
+
+      <div className="border-t border-amber-500/20 pt-3">
+        <div className="text-[11px] uppercase tracking-wide text-gray-500 mb-2">Audit trail</div>
+        {reviewsLoading ? (
+          <div className="text-xs text-gray-500">Loading…</div>
+        ) : reviews.length === 0 ? (
+          <div className="text-xs text-gray-500">No reviews yet for this card.</div>
+        ) : (
+          <ul className="space-y-1 text-xs">
+            {reviews.map(r => (
+              <li key={r.id} className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 break-words">
+                <span className="font-mono uppercase text-[10px] px-1.5 py-0.5 rounded bg-gray-200/60 dark:bg-gray-800/60">{r.action}</span>
+                <span className="text-gray-700 dark:text-gray-300">{r.reviewer_email}</span>
+                <span className="text-gray-400">·</span>
+                <span className="text-gray-500">{new Date(r.reviewed_at).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</span>
+                {r.note && <span className="basis-full text-gray-600 dark:text-gray-400 italic">{r.note}</span>}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </section>
+  )
+}
+
+function nextLevelLabel(current: string | null): string {
+  const ladder = ['draft', 'single_source', 'cross_ref', 'pro_verified']
+  const idx = ladder.indexOf(current ?? 'draft')
+  if (idx < 0) return 'single_source'
+  return ladder[Math.min(idx + 1, ladder.length - 1)]
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
