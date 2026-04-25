@@ -8,8 +8,8 @@
   "source": "verified",
   "verified": true,
   "difficulty": 7,
-  "timeEstimate": "30 minutes to 24 hours depending on enzyme dwell; pro-lane for pad contamination",
-  "lastValidated": "2026-04-24",
+  "timeEstimate": "30 min – 24 hr enzyme dwell; pad contamination = pro",
+  "lastValidated": "2026-04-25",
   "meta": {
     "stainCanonical": "pet-urine",
     "surfaceCanonical": "carpet",
@@ -21,208 +21,218 @@
       "pet",
       "carpet",
       "pad-risk",
-      "odor-critical",
-      "enzyme-required"
+      "enzyme-bounded",
+      "wool-fork",
+      "no-ammonia",
+      "no-heat"
     ],
     "freePreview": true
   },
-  "stainChemistry": "Pet urine is more concentrated than human urine — higher urea, uric acid, pheromones, and protein. The special failure mode is uric acid crystallization: as the urine dries, uric acid forms insoluble crystals that lodge in fiber and carpet pad. Those crystals don't just sit there — they reactivate with humidity, bacteria metabolize them, and the smell returns days or weeks after \"cleaning.\" Cat urine is the hardest variant because of felinine (a sulfur amino acid unique to cats) that bacterially decomposes into mercaptans — the sharp, persistent cat-pee smell. Ammonia-based cleaners are a trap: they smell like urine to a pet, which triggers re-marking. Vinegar + baking soda home-remedies cancel each other chemically and do effectively nothing. The actual unlock is a pet-specific enzyme cleaner that digests uric acid.",
-  "whyThisWorks": "Enzyme cleaner digests uric acid crystals — no other common chemistry does. Saturation matters more than product: the enzyme has to reach wherever the urine reached, which on carpet usually means through the pile and into the pad. Spraying the surface does almost nothing. Cold water, Dawn, and covering the treated area to keep the enzyme wet are the mechanics that actually deliver the enzyme to the crystal.",
-  "defaultAssumption": "Cat or dog accident. Fresh + caught-in-the-act = high-confidence DIY. Dried overnight or older = home chemistry still works but needs full 24-hour enzyme dwell. Blacklight-still-glowing after two full enzyme rounds = pad contamination = pro sub-surface extraction.",
+  "stainChemistry": "Pet urine = urea + uric acid + pheromones + protein. Uric acid CRYSTALLIZES on drying — bonds tightly to carpet fiber. Crystals reactivate with humidity, bacteria metabolize them, smell returns weeks after \"cleaning.\" Cat urine adds felinine (sulfur-amino-acid) → bacterial breakdown → mercaptans (the sharp persistent cat-pee smell). The CHEMISTRY UNLOCK on synthetic carpet (nylon / polyester / olefin) is enzyme cleaner — uric acid digests enzymatically. NO other common chemistry does this. CRITICAL FORK: WOOL CARPET = different card (pet-urine-wool-carpet). Retail pet enzymes contain protease which DIGESTS WOOL. On synthetic carpet, retail pet enzymes are safe and effective.",
+  "whyThisWorks": "Enzyme cleaner digests uric acid crystals — required step. Saturation matters more than product: enzyme has to reach wherever urine reached. Cover with damp towel + plastic wrap to keep enzyme wet during dwell. Cold water, Dawn before enzyme to clear surface fats. Aggressive weighted extraction prevents pad wick-back. The hard ceiling: pad contamination = pro sub-surface extraction (truck-mount NOT enough — water pressure injection needed). 2 home rounds max.",
+  "defaultAssumption": "Synthetic carpet (nylon / polyester / olefin) — most home wall-to-wall. WOOL carpet = pet-urine-wool-carpet card (different protocol, pro lane). Cat urine harder than dog (felinine + mercaptans). Recurring same-spot accidents = pad almost certainly contaminated, sub-surface extraction.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "dry",
-      "agent": "UV Blacklight — Find the Whole Spot",
-      "technique": "Blacklight scan + tape the edges",
-      "equipment": "UV blacklight (cheap on Amazon), painter's tape",
+      "agent": "UV Blacklight + Tape Edges",
+      "technique": "Find full extent",
+      "equipment": "UV blacklight, painter's tape",
       "dwellTime": "2–3 minutes",
-      "instruction": "In a dark room, sweep a UV blacklight over the area. Urine glows pale yellow-green. Mark edges with painter's tape. Pet urine almost always spreads farther than the visible stain — treating too small is the #1 reason the odor returns and the pet re-marks. If no blacklight, treat 4 inches outside the visible edge on all sides."
+      "instruction": "UV blacklight in dark — urine glows yellow-green. Tape outer edge with painter's tape. Pet urine spreads farther than visible — treating too small means the dog re-marks."
     },
     {
       "step": 2,
       "side": "wet-minimal",
-      "agent": "Cold Water Blot + Extract",
-      "technique": "Damp-cloth flush + weighted extract",
-      "equipment": "Cold water, white towels + weight",
-      "dwellTime": "3–5 minutes",
-      "instruction": "Dampen a white towel with cold water. Press hard on the spot. Lift, flip, repeat. Never pour — over-wetting carries urine deeper into the pad. Weighted dry towel 3–5 min to extract surface moisture."
+      "agent": "Cold Damp-Cloth Blot",
+      "technique": "Press + extract",
+      "equipment": "Cold water, white cloth, dry towel + weight",
+      "dwellTime": "5 minutes",
+      "instruction": "Dampen cloth with cold water, press on spot, lift, rotate. Cold dilutes uric acid + prevents protein setting. Weighted dry towel 5 min. Never pour."
     },
     {
       "step": 3,
       "side": "wet-minimal",
-      "agent": "Dawn — Clear Surface Residue",
-      "technique": "Dawn on damp cloth",
-      "equipment": "Dawn dish soap + cold water on damp cloth",
+      "agent": "Dawn Damp Cloth — Clear Surface",
+      "technique": "Surfactant lifts surface fat + salts",
+      "equipment": "Dawn + cold water on damp cloth",
       "dwellTime": "5 minutes",
-      "instruction": "Dawn on a damp white cloth, press on the spot 5 min, blot. Clears surface fats and salts so the enzyme (next step) can reach uric acid crystals underneath. Do NOT use OxiClean or alkaline cleaners — they can set protein."
+      "instruction": "Dawn damp cloth before enzyme step. Lifts surface fat / salts so enzyme reaches uric acid below. NO OxiClean — alkaline can set protein."
     },
     {
       "step": 4,
       "side": "wet-saturate",
-      "agent": "Enzyme Cleaner — Saturate to Pad Depth",
-      "technique": "Enzyme dwell under plastic wrap",
-      "equipment": "Pet-specific enzyme cleaner (Nature's Miracle / Rocco & Roxie / Anti Icky Poo), damp towel, plastic wrap, tape",
-      "dwellTime": "30–60 min fresh, 24 hours older",
-      "instruction": "Apply 2–3× the volume of urine you estimate reached the area. The enzyme must reach wherever the urine reached, so saturate through the pile to pad depth on pre-dried accidents. Cover with a damp white towel + plastic wrap taped at the edges to keep the enzyme wet. Fresh: 30–60 min. Overnight accident: 24 hours under cover.",
-      "safetyNote": "Enzymes deactivated by heat, chlorine bleach, and strong alkali. Don't layer chemistry. No steam cleaning during or before enzyme step."
+      "agent": "Pet Enzyme Cleaner — Saturate to Pad Depth",
+      "technique": "Dwell under cover, bounded application",
+      "equipment": "Pet-specific enzyme cleaner (Nature's Miracle / Rocco & Roxie / Anti Icky Poo / Simple Solution); damp towel + plastic wrap; tape",
+      "dwellTime": "30–60 min fresh, 24 hr older",
+      "instruction": "On SYNTHETIC carpet only. Apply 2–3× the urine volume — enzyme reaches uric-acid depth. Cover with damp towel + plastic wrap, tape edges. Fresh: 30–60 min. Overnight accident: 24 hr.",
+      "safetyNote": "WOOL carpet = different card (retail pet enzymes contain protease which digests wool). Enzymes deactivated by heat / chlorine / strong alkali — don't layer."
     },
     {
       "step": 5,
       "side": "dry",
-      "agent": "Weighted Towel Extract + Fan-Dry",
-      "technique": "Overnight moisture wick",
+      "agent": "Weighted Towel Extract + Fan",
+      "technique": "Overnight wick from pad",
       "equipment": "Paper towels + weight, fan",
       "dwellTime": "8–12 hours",
-      "instruction": "Uncover. Stack paper towels, weight down, leave overnight to wick residual moisture from the pad. Fan the area fully dry."
+      "instruction": "Uncover. Weighted paper towels overnight. Fan-dry."
     },
     {
       "step": 6,
       "side": "dry",
-      "agent": "Smell + Blacklight Re-Check",
-      "technique": "Verify odor + fluorescence cleared",
+      "agent": "Smell + Blacklight Re-Check — 2 Rounds Max",
+      "technique": "Verify cleared",
       "equipment": "UV blacklight",
       "dwellTime": "2 minutes",
-      "instruction": "Nose to pile in daylight. Blacklight in a dark room. Still smells or still glows = repeat steps 4–5 once more with more enzyme, longer dwell. Still positive after 2 full rounds = pad contamination = pro sub-surface extraction."
+      "instruction": "Nose to pile + blacklight in dark. Still positive = ONE more enzyme round + 24-hr dwell. Still positive after 2 rounds = pad contamination, sub-surface extraction."
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Blacklight scan + tape the full contaminated area.",
+      "1. Blacklight scan + tape full contaminated area.",
       "2. Cold damp-cloth extract + weighted extract.",
-      "3. Dawn / NSD damp cloth to clear surface residue.",
-      "4. Pet enzyme — saturate to pad depth. Cover + dwell 30 min–24 hr.",
-      "5. Paper towel + weight overnight extract. Fan-dry.",
-      "6. Re-blacklight + smell check. Pad contamination = pro."
+      "3. Dawn damp cloth — clear surface for enzyme.",
+      "4. Pet enzyme — saturate to pad depth, cover, dwell 30 min – 24 hr.",
+      "5. Weighted paper towels overnight + fan-dry.",
+      "6. Re-blacklight + smell. 2 rounds max. Positive = sub-surface extraction.",
+      "7. WOOL CARPET: separate card (pet-urine-wool-carpet) — protease digests wool."
     ],
     "products": [
       "UV blacklight + painter's tape",
-      "Pet enzyme cleaner (Nature's Miracle / Rocco & Roxie / Anti Icky Poo)",
+      "Pet enzyme cleaner (Nature's Miracle / Rocco & Roxie / Anti Icky Poo / Simple Solution) — synthetic carpet only",
       "Dawn / NSD",
       "Damp towel + plastic wrap",
       "Paper towels + weight",
       "Fan"
     ],
-    "temperature": "cold through spotting; no heat until enzyme cycle complete",
+    "temperature": "cold throughout — heat sets protein + deactivates enzyme",
     "warnings": [
-      "NEVER ammonia-based cleaners — triggers pet re-marking",
-      "NEVER hot water / steam — sets protein + deactivates future enzyme rounds",
-      "NEVER chlorine bleach — deactivates enzymes and damages carpet",
-      "NEVER OxiClean before enzyme — alkaline can set protein",
-      "Over-wetting carries urine into pad — tamp, don't pour",
-      "Blacklight-positive after 2 full rounds = pad contamination = pro"
+      "WOOL CARPET = different card (protease digests wool)",
+      "NEVER ammonia-based cleaners — pets re-mark",
+      "NEVER hot water / steam — sets protein + deactivates enzymes",
+      "NEVER OxiClean / alkaline before enzyme — can set protein",
+      "NEVER chlorine bleach — deactivates enzymes",
+      "Over-wetting carries urine into pad — saturate enzyme, not water",
+      "2 home rounds max — pad contamination = pro sub-surface extraction (NOT truck-mount)"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Find the Whole Spot — Blacklight It",
-      "instruction": "Pet urine almost always spreads farther than you can see. Get a cheap UV blacklight off Amazon (under $15). In a dark room, sweep it across the area — urine glows pale yellow-green. Mark the edges with painter's tape. Without a blacklight, treat at least 4 inches beyond the visible edge on every side. Treating too small is the #1 reason odor returns and your pet re-marks."
+      "agent": "Wool Carpet? Different Card.",
+      "instruction": "Before anything: is this wool carpet? Wool carpet has its own protocol (pet-urine-wool-carpet) because retail pet enzyme cleaners (Nature's Miracle, Rocco & Roxie, Anti Icky Poo, Simple Solution) all contain protease — protease digests wool just like it digests urine protein. If your carpet is wool, stop and use the pet-urine-wool-carpet card. This card is for SYNTHETIC carpet (nylon, polyester, olefin)."
     },
     {
       "step": 2,
-      "agent": "The Two Rules — No Heat, No Ammonia",
-      "instruction": "Two hard rules before you touch anything: (1) NO hot water, no steam, no dryer — heat sets the protein permanently and bakes the odor in, and (2) NO ammonia-based cleaners — they smell like urine to your pet and invite re-marking. Skip the vinegar+baking soda combo from Pinterest — they cancel each other chemically and don't touch uric acid. The real workhorse is an enzyme cleaner made for pets."
+      "agent": "UV Blacklight — Find the Whole Spot",
+      "instruction": "Pet urine almost always spreads farther than the visible spot. Get a cheap UV blacklight off Amazon (~$15). In a dark room, sweep it across the area — urine glows pale yellow-green. Mark the edges with painter's tape. Without a blacklight, treat at least 4 inches beyond the visible edge. Treating too small = the dog re-marks the same spot."
     },
     {
       "step": 3,
-      "agent": "Blot Fresh or Rehydrate Dried",
-      "instruction": "Fresh spot: stack paper towels, step on them to wick urine up, replace until towels come up dry. Dried / crusty: lay a COLD damp white towel on the spot for 10 minutes to rehydrate, then blot. Don't scrub dried crystals — mashing them into the fiber spreads the odor. No pouring water on the carpet."
+      "agent": "The Two Rules — No Heat, No Ammonia",
+      "instruction": "(1) NO hot water / steam / dryer — heat permanently sets the protein, kills uric acid enzymes, AND bakes the odor in. (2) NO ammonia-based cleaners — they smell like urine to your pet and invite re-marking. Skip vinegar+baking soda Pinterest tricks — they cancel each other and don't touch uric acid."
     },
     {
       "step": 4,
-      "agent": "Dawn + Cold Water — Clears the Way for Enzyme",
-      "instruction": "Mix a tablespoon of Dawn with two cups of cold water. Dab onto the area with a white cloth, wait 5 minutes, blot with a clean damp cloth. Dawn lifts surface fat and salts so the enzyme in step 5 can actually reach the uric-acid crystals underneath. Do NOT use OxiClean, baking soda, or alkaline cleaners — they can set the protein."
+      "agent": "Cold Blot Fresh / Rehydrate Dried + Dawn First",
+      "instruction": "Fresh: stack paper towels, step on them with shoe-weight, wick urine up. Dried / crusty: lay a COLD damp white towel on the spot 10 min to rehydrate, then blot. Then mix 1 tablespoon Dawn in 2 cups cold water. Dab onto the area with a white cloth, wait 5 minutes, blot. Dawn lifts surface fat + salts so the enzyme (next step) can reach the uric-acid crystals below. NO OxiClean — alkaline can set protein."
     },
     {
       "step": 5,
-      "agent": "Enzyme Cleaner — Saturate, Don't Mist",
-      "instruction": "Apply a pet-specific enzyme cleaner — Nature's Miracle, Rocco & Roxie, Simple Solution, or Anti Icky Poo. Read the label, but most work best when you SATURATE the area to the pad, not spray the surface. Use 2–3× the volume of urine you think soaked in. The enzyme has to reach wherever the urine reached. This is the single most important step — the one that actually digests the uric acid.",
-      "safetyNote": "Enzymes are deactivated by heat, chlorine bleach, and strong alkaline cleaners. Don't mix. Don't steam before, during, or after."
+      "agent": "Enzyme Cleaner — SATURATE, Don't Mist",
+      "instruction": "Apply a pet-specific enzyme cleaner (Nature's Miracle, Rocco & Roxie, Anti Icky Poo, Simple Solution). Saturate the area to PAD DEPTH — use 2–3× the volume of urine you estimate soaked in. The enzyme has to reach wherever the urine reached. This is the single most important step.",
+      "safetyNote": "Wool carpet bans these — different card. Don't mix with steam, bleach, or strong alkali."
     },
     {
       "step": 6,
       "agent": "Cover and Dwell — Keep It Wet",
-      "instruction": "Lay a damp (not dripping) white towel over the treated area and cover with plastic wrap. Tape the edges down. This keeps the enzyme wet instead of drying on the surface. Fresh spots: 30–60 minutes. Older or overnight spots: a full 24 hours. The enzyme is literally digesting the uric acid and needs time to finish."
+      "instruction": "Lay a damp (not dripping) white towel over the treated area and cover with plastic wrap, tape edges. Keeps enzyme wet during dwell. Fresh: 30–60 min. Older / overnight: full 24 hours. The enzyme is digesting uric acid and needs time."
     },
     {
       "step": 7,
-      "agent": "Weighted Towels Overnight + Fan-Dry",
-      "instruction": "Uncover. Stack paper towels over the spot, weigh them down with a heavy book, leave overnight to wick residual moisture out of the pad. Point a fan at it. Don't vacuum until fully dry. A damp carpet pad is mold territory."
+      "agent": "Weighted Paper Towels Overnight + Fan-Dry",
+      "instruction": "Uncover. Stack paper towels, weight with a heavy book, leave overnight to wick residual moisture out of pad. Fan-dry. Don't vacuum until fully dry."
     },
     {
       "step": 8,
-      "agent": "Smell + Blacklight Check — Two Rounds Max",
-      "instruction": "Nose right down into the pile in daylight. Blacklight in a dark room. Smell gone + no fluorescence = win. Still positive = one more round of steps 5–6 with more enzyme and a full 24-hour dwell. Still positive after TWO full rounds = the urine is in the pad or subfloor, and home chemistry is at its ceiling."
+      "agent": "Smell + Blacklight Check — 2 Rounds MAX",
+      "instruction": "Nose right down into the pile in daylight. Blacklight in a dark room. Smell gone + no fluorescence = win. Still positive = ONE more round of steps 5–7 with full 24-hour dwell. Still positive after TWO full rounds = urine is in the pad / subfloor — pro sub-surface extraction (NOT regular truck-mount cleaning)."
     },
     {
       "step": 9,
-      "agent": "Escalate — Sub-Surface Extraction",
-      "instruction": "Tell the pro: \"Pet urine on [nylon / polyester / wool] carpet, blacklight still positive after two enzyme rounds (Nature's Miracle / Rocco & Roxie). No heat, no ammonia. Possible pad or subfloor contamination.\" They'll run a sub-surface extraction tool that flushes the pad with clean water at pressure; worst case the pad gets cut out and replaced. That handoff saves them diagnostic time and prevents them from starting over."
+      "agent": "Pro Sub-Surface Extraction for Pad Contamination",
+      "instruction": "Tell them: \"Pet urine on [nylon / polyester / olefin] synthetic carpet, blacklight still positive after 2 enzyme rounds (Nature's Miracle / Rocco & Roxie). No heat, no ammonia. Possible pad or subfloor contamination — need sub-surface extraction tool, NOT truck-mount.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blacklight-scan + tape the full area; treat 4\" beyond visible edge.",
-      "2. Two rules: NO hot water / steam / dryer. NO ammonia cleaners.",
-      "3. Blot fresh or rehydrate dried with cold damp towel.",
-      "4. Dawn + cold water damp cloth, 5 min. No OxiClean.",
-      "5. Pet enzyme — SATURATE to pad depth, 2–3× urine volume.",
-      "6. Cover with damp towel + plastic wrap. Dwell 30 min (fresh) or 24 hr (older).",
-      "7. Weighted paper towels overnight. Fan-dry.",
-      "8. Re-blacklight + smell. 2 rounds max — then pro sub-surface extraction."
+      "1. WOOL CARPET? Use pet-urine-wool-carpet — retail enzymes digest wool.",
+      "2. UV blacklight + tape full contaminated area; treat 4\" beyond visible.",
+      "3. Two rules: NO hot water / steam / dryer. NO ammonia cleaners.",
+      "4. Cold blot fresh OR rehydrate dried with cold damp towel.",
+      "5. Dawn cold damp cloth, 5 min — clears surface for enzyme. NO OxiClean.",
+      "6. Pet enzyme — SATURATE to pad depth (2–3× urine volume).",
+      "7. Cover with damp towel + plastic wrap. Dwell 30 min (fresh) / 24 hr (older).",
+      "8. Weighted paper towels overnight + fan-dry.",
+      "9. Re-blacklight + smell. 2 rounds max — then pro sub-surface extraction."
     ],
     "products": [
-      "UV blacklight (Amazon, under $15)",
-      "Pet enzyme cleaner (Nature's Miracle / Rocco & Roxie / Anti Icky Poo / Simple Solution)",
+      "UV blacklight (Amazon, ~$15)",
+      "Pet enzyme cleaner (Nature's Miracle / Rocco & Roxie / Anti Icky Poo / Simple Solution) — SYNTHETIC carpet only",
       "Dawn dish soap",
       "Plastic wrap + painter's tape",
       "Paper towels + weight",
       "Fan"
     ],
-    "whenToStop": "Stop if blacklight/smell stays positive after 2 full enzyme rounds — pad or subfloor is contaminated, home chemistry can't reach it.",
+    "whenToStop": "Stop after 2 full enzyme rounds — pad / subfloor contamination needs pro sub-surface extraction. Wool carpet = use wool-specific card from minute one.",
     "warnings": [
-      "NEVER hot water / steam / dryer — sets protein + kills future enzyme rounds",
-      "NEVER ammonia cleaners — invites re-marking",
+      "WOOL CARPET = different card (retail enzymes digest wool)",
+      "NEVER hot water / steam / dryer — sets protein, kills enzymes",
+      "NEVER ammonia-based cleaners — invites re-marking",
       "NEVER OxiClean / alkaline before enzyme — can set protein",
       "NEVER chlorine bleach — deactivates enzymes",
-      "Never pour — saturation is enzyme-delivery, not carpet-flooding",
-      "Blacklight-positive after 2 rounds = pro sub-surface extraction"
+      "Over-wetting carries urine into pad — saturate enzyme, not water",
+      "2 home rounds max — then pro sub-surface extraction"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never hot water, steam, or dryer on pet urine",
+      "Never on wool carpet (retail pet enzymes digest wool)",
+      "Never hot water / steam / dryer on pet urine",
       "Never ammonia-based cleaners",
-      "Never OxiClean or alkaline before enzyme step",
-      "Never chlorine bleach"
+      "Never OxiClean / alkaline before enzyme step",
+      "Never chlorine bleach",
+      "Never repeat home rounds beyond 2 — pad contamination needs pro"
     ],
     "fiberSensitivities": [
-      "Nylon / polyester carpet: tolerates full protocol",
-      "Wool carpet: pH-sensitive — pro route, enzyme selection matters",
-      "Olefin (polypropylene): tolerates enzyme; avoid solvent",
-      "Jute backing: over-wetting causes browning"
+      "Synthetic carpet (nylon / polyester / olefin / triexta): tolerates full enzyme protocol",
+      "Wool carpet: protease digests keratin — separate card (pet-urine-wool-carpet)",
+      "Jute backing: over-wetting browns",
+      "Heat sets protein permanently across all fibers"
     ]
   },
   "materialWarnings": [
-    "Pad contamination is the real ceiling — pro sub-surface extraction, not truck-mount",
-    "Ammonia cleaners trigger re-marking",
-    "Heat sets protein permanently"
+    "Wool carpet = different card",
+    "Enzymes are the chemistry unlock for uric acid",
+    "Saturation to pad depth, not surface mist",
+    "2 rounds max — pad contamination = pro sub-surface extraction"
   ],
   "escalation": {
-    "when": "Blacklight or smell positive after 2 full enzyme rounds, large area, cat urine with persistent felinine odor, wool carpet, or suspected subfloor contamination.",
-    "whatToTell": "\"Pet urine on [nylon / polyester / wool] carpet, [cat / dog], age [fresh / overnight / older], home-treated with enzyme ([brand]) × 2 rounds. Blacklight still positive. No heat, no ammonia. Possible pad or subfloor contamination — sub-surface extraction needed.\"",
-    "specialistType": "professional carpet cleaner with sub-surface extraction tool (truck-mount is NOT the same)"
+    "when": "Blacklight or smell positive after 2 full enzyme rounds, recurring same-spot accidents (pad almost certainly contaminated), wool carpet, or cat urine with persistent felinine mercaptan smell.",
+    "whatToTell": "\"Pet urine on [nylon / polyester / olefin] carpet, [cat / dog], age [fresh / overnight / older], home-treated with enzyme ([brand]) × 2 rounds with 24-hr dwells. Blacklight still positive. No heat, no ammonia, no OxiClean. Possible pad or subfloor contamination — need sub-surface extraction tool, NOT truck-mount.\"",
+    "specialistType": "professional carpet cleaner with sub-surface extraction tool (truck-mount alone is NOT sufficient for pad contamination)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
+      "Is this WOOL carpet? (different card — retail enzymes digest wool)",
+      "Cat or dog? (cat = harder, felinine + mercaptans)",
       "Fresh accident, overnight, or older?",
-      "Cat or dog? (cat urine is harder — felinine + mercaptans)",
-      "Has anyone used an ammonia cleaner, vinegar-baking soda, or steam yet?",
-      "Do you have a blacklight?",
-      "Is this a one-off accident or a recurring spot (pad saturation suspicion)?"
+      "Has anyone applied ammonia / steam / OxiClean?",
+      "UV blacklight available?",
+      "One-off accident or recurring same-spot?"
     ],
-    "modifierNotes": "Cat urine with felinine is the hardest variant; budget a full 24-hour enzyme cycle even for fresh. Recurring same-spot accidents almost always mean pad contamination — skip home rounds 3+ and go pro. Wool carpet always pro-lane."
+    "modifierNotes": "Cat urine with felinine + mercaptans is the hardest variant — full 24-hr enzyme cycle even for fresh. Recurring same-spot accidents = pad contamination almost certain — skip home rounds 3+ and go pro. Wool carpet = always pet-urine-wool-carpet card."
   },
   "sources": [],
   "cross_refs": [],

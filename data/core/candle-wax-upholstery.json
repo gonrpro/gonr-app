@@ -1,83 +1,227 @@
 {
   "id": "candle-wax-upholstery",
   "title": "Candle Wax on Upholstery",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Candle wax (paraffin) is a solid petroleum hydrocarbon that solidifies on upholstery as it cools, trapping any dye from colored candles within the wax matrix. The wax itself is not a stain — it's a physical deposit. However, dyed candles leave pigment behind after wax removal. The wax must be removed before the dye can be treated.",
-  "whyThisWorks": "Freezing makes wax brittle on upholstery, allowing mechanical removal of the bulk deposit. Low heat (iron through paper towel) melts remaining wax into the absorbent paper by capillary action. POG dissolves any wax residue. If dye remains after wax removal, it's treated as a separate dye stain with appropriate chemistry.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "30–60 minutes; freeze + lift only at home, NO iron",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "candle-wax",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "wax",
+      "paraffin",
+      "upholstery",
+      "code-check",
+      "no-iron-synthetic-upholstery",
+      "freeze-and-lift",
+      "bad-advice-target",
+      "dye-fork-for-colored-wax"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Candle wax is paraffin (petroleum hydrocarbon) + sometimes fragrance + sometimes dye. Upholstery is mostly synthetic (polyester, microfiber, sometimes acetate / olefin). The classic iron-through-paper trick that works on COTTON FABRIC is DANGEROUS on synthetic upholstery — heat melts polyester / acetate / olefin permanently. Even on natural-fiber upholstery (cotton, linen blends), the iron + structured-furniture combination risks shape change. Universal-safe path on upholstery: freeze + lift mechanically + Goo Gone for residue + treat any colored-wax dye separately. NO iron on upholstery at home.",
+  "whyThisWorks": "Cold makes paraffin brittle, lifts off mechanically without water or heat. Goo Gone (citrus solvent) on a cloth tamps residual wax film. Pro applies controlled solvent for stubborn residue. Code check determines if water-based steps allowed. The iron-through-paper trick is a COTTON FABRIC technique — does NOT transfer to upholstery.",
+  "defaultAssumption": "Synthetic upholstery (most furniture). NO iron. Code tag determines water step. Zip-off washable cushion cover = wash separately.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Code Check + Freeze",
+      "technique": "Tag read + ice bag harden",
+      "equipment": "Good light, ice in plastic bag",
+      "dwellTime": "10–15 minutes",
+      "instruction": "Find code tag (W / W-S / S / X). X = vacuum only, pro. Ice bag on wax 10–15 min until brittle. NEVER direct ice on upholstery."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Crack and Scrape Bulk",
+      "technique": "Plastic card flat-edge",
+      "equipment": "Plastic card / dull knife",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Crack frozen wax with the edge of a plastic card. Lift off bulk pieces. Don't gouge upholstery — flat-edge lift only."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Goo Gone on Cloth (Pro Application)",
+      "technique": "Citrus solvent, cloth-applied",
+      "equipment": "Goo Gone on white cloth",
+      "dwellTime": "30–60 sec per pass",
+      "instruction": "Apply Goo Gone to cloth (NEVER pour on upholstery). Tight blotting on residual wax film. Flip cloth as it picks up. Ventilate. Hidden-area test on dyed upholstery."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Dawn Damp Cloth (W / W-S Only)",
+      "technique": "Clear solvent residue",
+      "equipment": "Dawn + cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "W / W-S: Dawn damp cloth to clear Goo Gone residue. S-only: skip — dry buff with clean cloth."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Treat Residual Pigment Separately (Colored Wax)",
+      "technique": "Hidden-area test + 3% peroxide",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "If colored wax left dye: hidden-area test 3% peroxide. Damp cloth 5 min. Pigment is a separate stain after wax is gone."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan",
+      "technique": "Extract solvent residue",
+      "equipment": "Dry towel + weight, fan",
+      "dwellTime": "30 min + fan",
+      "instruction": "Weighted dry towel 30 min. Fan-dry. Inspect in daylight."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Freeze with ice bag to harden wax. Scrape off bulk with dull edge",
-      "2. Apply POG to dissolve remaining wax residue",
-      "3. Apply NSD to lift pigment (for colored wax). Flush with cool water",
-      "4. If dye remains: apply H2O2 6% carefully, monitor",
-      "5. Apply Acetic Acid 28% (diluted 1:10) for pH restoration. Blot dry"
+      "1. Code tag check.",
+      "2. Ice freeze 10–15 min. Crack and scrape bulk with flat-edge.",
+      "3. Goo Gone / POG on cloth, tight blotting.",
+      "4. Dawn damp cloth (W/W-S) or dry buff (S).",
+      "5. 3% H₂O₂ for residual colored-wax dye (hidden test).",
+      "6. Weighted dry towel + fan-dry."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Ice + sealed plastic bag",
+      "Plastic card / dull knife",
+      "Goo Gone (citrus solvent) / POG",
+      "Dawn / NSD",
+      "3% Hydrogen peroxide (dye residue, hidden test)",
+      "Heavy dry towels + weight",
+      "Fan"
     ],
-    "temperature": "ambient",
+    "temperature": "cold (freeze) + ambient solvent — NO heat / NO iron",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains",
-      "Ensure adequate ventilation when using solvents — VOC fumes require extraction"
+      "NEVER iron on upholstery — synthetic upholstery melts under iron",
+      "NEVER direct ice on upholstery — water damage",
+      "CODE CHECK — S-only / X change protocol",
+      "NEVER pour solvent on upholstery — flood = batting saturation",
+      "Flammable solvent — ventilate, no flame",
+      "Pigment is a separate stain after wax is gone"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "DO NOT Iron Upholstery — That Trick Is for Cotton Fabric",
+      "instruction": "The classic \"iron + brown paper bag\" wax trick is for COTTON FABRIC. It is DANGEROUS on upholstery. Most upholstery is synthetic (polyester, microfiber, sometimes acetate or olefin) — heat from an iron MELTS those fibers permanently. Even on natural-fiber upholstery, the iron + structured-furniture combination risks shape change AND batting saturation. Universal-safe upholstery wax path: freeze + lift mechanically + Goo Gone for residue."
+    },
+    {
+      "step": 2,
+      "agent": "Code Check + Cushion Cover Option",
+      "instruction": "Find the upholstery tag (under cushion). W or W-S = full protocol. S-only = solvent only. X = vacuum only, pro. If the cushion cover zips off and is washable, take the cover off and machine-wash cold (with the wax already removed via freeze + lift). Far easier than treating in place."
+    },
+    {
+      "step": 3,
+      "agent": "Freeze the Wax — 10 to 15 Minutes",
+      "instruction": "Press a zip-lock bag of ice on the wax for 10–15 minutes. NEVER put ice directly on the upholstery — water damage. The wax gets hard and brittle."
+    },
+    {
+      "step": 4,
+      "agent": "Crack and Lift — Flat Edge of Plastic Card",
+      "instruction": "Once frozen, use the FLAT edge of a plastic card to crack and lift the wax pieces off. Don't scrape — flat-edge lift only. Most surface bulk comes off this way."
+    },
+    {
+      "step": 5,
+      "agent": "Goo Gone on a White Cloth — Never Poured",
+      "instruction": "Put Goo Gone (orange bottle, citrus solvent) on a clean white cloth. NEVER pour on upholstery. Press and tamp the residual wax film. Flip cloth as it picks up wax. Open windows — flammable. Hidden-area test on dyed upholstery first."
+    },
+    {
+      "step": 6,
+      "agent": "Dawn or Dry Buff Depending on Code",
+      "instruction": "W / W-S code: Dawn in cool water on a damp cloth, press 5 min, blot. Clears solvent residue. S-only code: skip — dry buff with a clean cloth instead."
+    },
+    {
+      "step": 7,
+      "agent": "If Colored Wax — Treat the Dye Separately",
+      "instruction": "Once wax is gone, you might see the candle's pigment color (red, blue) still in the upholstery. That's now a dye stain. Hidden-area test 3% peroxide. Damp cloth 5 min on a tested-clean spot."
+    },
+    {
+      "step": 8,
+      "agent": "Weighted Dry Towel + Fan",
+      "instruction": "Stack a dry towel on the spot, weight with a book, 30 min. Fan-dry. Inspect in daylight."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place ice in a bag on the wax for 10 minutes until brittle. Do NOT apply ice directly to fabric",
-      "2. Scrape off hardened wax with a dull knife or credit card edge",
-      "3. Place paper towels above and below the fabric (if possible). Iron on low heat to melt remaining wax into paper — check every 5 seconds",
-      "4. Apply Dawn dish soap to any remaining residue. Blot",
-      "5. Rinse with warm water. Air dry — inspect before using dryer"
+      "1. NO IRON on upholstery — synthetic fabric melts.",
+      "2. Code tag check. X = pro. Zip-off cover = wash separately.",
+      "3. Ice freeze 10–15 min. Crack and lift bulk with flat-edge plastic card.",
+      "4. Goo Gone on cloth, tight blotting. Ventilate.",
+      "5. Dawn damp cloth (W/W-S) or dry buff (S).",
+      "6. 3% peroxide for colored-wax dye (hidden test).",
+      "7. Weighted dry towel + fan-dry."
     ],
     "products": [
+      "Ice + plastic bag",
+      "Plastic card / dull knife",
+      "Goo Gone (citrus solvent)",
       "Dawn dish soap",
-      "paper towels",
-      "ice"
+      "3% Hydrogen peroxide (dye residue)",
+      "Dry towels + weight",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if upholstery is X-code, structured silk / wool / leather, or wax has been ironed in (likely melted into fiber).",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER IRON on upholstery — synthetic fabric melts",
+      "NEVER direct ice — water damage",
+      "Code check — S/X change protocol",
+      "Flammable solvent — no flame, ventilate",
+      "NEVER pour solvent or water on upholstery",
+      "Pigment is a separate stain after wax",
+      "Cushion cover wash is the easy path when available"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never iron on upholstery",
+      "Never direct ice on upholstery",
+      "Never pour solvent on upholstery",
+      "Never use solvent near flame"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "Synthetic upholstery (polyester, microfiber, olefin) melts under iron",
+      "Acetate upholstery destroyed by acetone",
+      "Code check determines water step",
+      "Pigment is a separate stain after wax"
     ]
   },
+  "materialWarnings": [
+    "NEVER iron on upholstery — that's a cotton-fabric trick",
+    "Freeze + lift + Goo Gone is the safe upholstery path",
+    "Pigment is a separate stain after wax",
+    "Cushion cover wash is the easy path when available"
+  ],
   "escalation": {
-    "when": "If candle wax stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is candle wax on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "X-code upholstery, silk / wool / leather upholstery, wax already ironed in (melted), residual colored-wax pigment after peroxide.",
+    "whatToTell": "\"Candle wax on [W / W-S / S / X / unknown] upholstery, [white / colored wax], age [fresh / aged / ironed-in], home-treated with freeze + flat-edge lift + Goo Gone + [Dawn / dry buff] + [3% peroxide on colored-wax dye]. NO iron used. [Residual wax / pigment / iron damage suspected].\"",
+    "specialistType": "professional upholstery cleaner with solvent spotting"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Upholstery code — W / W-S / S / X / unknown?",
+      "Cushion cover zip-off and washable?",
+      "White wax or colored?",
+      "Has anyone tried ironing it?",
+      "Fabric — polyester / microfiber / cotton / silk / leather?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Microfiber often contains acetate — acetone-sensitive. Olefin (Berber-style upholstery) softens under modest heat. Silk / wool / leather upholstery = pro from minute one. Pre-ironed wax = melted into fiber, pro."
   },
-  "difficulty": 4,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

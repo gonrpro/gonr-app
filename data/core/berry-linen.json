@@ -1,84 +1,222 @@
 {
   "id": "berry-linen",
   "title": "Berry on Linen",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "linen",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Berry stains contain anthocyanins — the same pH-sensitive pigments found in red wine but in higher concentration. On linen, these pigments bond through hydrogen bonding and electrostatic interactions. Alkaline conditions shift the color from red to blue-purple and strengthen the bond. The sugar content creates a sticky matrix that holds pigment against the fiber.",
-  "whyThisWorks": "Acidic treatment keeps anthocyanins in their most removable form on linen. The oxidizer then breaks the chromophore bonds responsible for color. Avoiding alkali is essential — ammonia, baking soda, and alkaline detergents permanently darken berry stains. Fresh treatment dramatically improves success rates.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–40 minutes; structured/trimmed = pro",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "berry",
+    "surfaceCanonical": "linen",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "tannin",
+      "anthocyanin",
+      "linen",
+      "no-alkaline",
+      "shrink-bleed-risk",
+      "structured-fork"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Berries (blueberry, raspberry, blackberry, strawberry) carry anthocyanin pigments + tannin polyphenols + sugar. Anthocyanin is pH-sensitive (red in acid, blue-purple in alkaline) — alkaline cleaners DARKEN it. On linen (cellulose), tannin chemistry transfers from cotton (cold + Dawn + 3% peroxide + vinegar). Linen-specific: shrinks under hot water, dyed linen bleeds, structured pieces warp under wet treatment. The standard tannin protocol works on simple flat linen; structured = pro.",
+  "whyThisWorks": "Cold water + Dawn lifts fresh anthocyanin + sugar. 3% peroxide oxidizes residual tannin. Vinegar keeps anthocyanin red (light/acid side) instead of drifting blue-purple. Cool wash + air-dry flat preserves linen shape.",
+  "defaultAssumption": "Simple flat linen napkin / shirt / plain skirt = home protocol. Structured / lined / trimmed / dry-clean-only / vintage = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Care Label + Structure Check",
+      "technique": "Inspection",
+      "equipment": "Good light",
+      "dwellTime": "1 minute",
+      "instruction": "Dry-clean-only / structured / lined / trimmed / vintage = pro. Simple flat linen = proceed."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse",
+      "equipment": "Cold water, sink",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Flip inside out. Cold water through the BACK 1–2 min. Anthocyanin + sugar flush out fast."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Hidden Dye Test",
+      "technique": "Dyed linen often bleeds",
+      "equipment": "Cold water + Dawn on cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "Colored linen: hidden-seam test mandatory. Color transfer = pro. Skip for white linen."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Dawn + Cold Water",
+      "technique": "Lift fresh anthocyanin + sugar",
+      "equipment": "Dawn + cold water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn cold water on damp cloth, 5 min. Skip OxiClean — alkaline darkens anthocyanin permanently."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ on Damp Cloth",
+      "technique": "Oxidize residual tannin",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Hidden test on dyed linen first. 3% peroxide damp cloth 5–10 min. Don't mix with bleach / ammonia / alkaline."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "White Vinegar Rinse",
+      "technique": "Neutralize + acid-side anthocyanin",
+      "equipment": "1 tbsp vinegar + 1 cup cool water",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar rinse. Keeps anthocyanin red (light) instead of drifting blue-purple."
+    },
+    {
+      "step": 7,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY FLAT",
+      "technique": "Launder + lay flat",
+      "equipment": "Washing machine",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cool wash — NEVER hot (linen shrinks). Air-DRY FLAT. Inspect before any heat."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Care label + structure check.",
+      "2. Cold back-flush.",
+      "3. Hidden dye test on colored linen.",
+      "4. Dawn + cold damp cloth.",
+      "5. 3% H₂O₂ damp cloth, 5–10 min.",
+      "6. White vinegar rinse.",
+      "7. Cool wash + air-dry flat."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Cold water"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout — linen shrinks under hot",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color"
+      "NEVER hot water — linen shrinks aggressively",
+      "NEVER alkaline cleaners on tannin — darkens permanently",
+      "NEVER chlorine bleach on dyed linen",
+      "NEVER tumble-dry until fully clear",
+      "Hidden-area dye test mandatory on colored linen",
+      "Structured / lined / trimmed = pro"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Structured Linen Goes to Pro; Simple Linen Stays Home",
+      "instruction": "Linen has two cases. SIMPLE LINEN (napkin, basic shirt, plain skirt) = standard tannin home protocol. STRUCTURED LINEN (suits, lined dresses, tablecloths with stiffeners, dry-clean-only) = pro from minute one. Wet treatment risks shape change AND dyed linen bleeds easily."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Back-Flush",
+      "instruction": "Flip inside out. Cold tap water through the BACK for 1–2 minutes. Most effective fast move on berry stains."
+    },
+    {
+      "step": 3,
+      "agent": "Hidden Patch Test on Dyed Linen",
+      "instruction": "If colored, dab Dawn + cold water on a hidden seam, press 2 min. Color transfer = pro. Clean = proceed."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Cold Water + Soft Toothbrush",
+      "instruction": "Dawn in cold water, soft toothbrush 5 min. NO OxiClean — alkaline turns berry anthocyanin DARKER permanently."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide for Residual",
+      "instruction": "3% peroxide damp cloth 5–10 min. Hidden test on dyed linen first."
+    },
+    {
+      "step": 6,
+      "agent": "White Vinegar Rinse",
+      "instruction": "1 tbsp vinegar + 1 cup cool water, 5 min. Critical step on berries — vinegar keeps anthocyanin RED (light) instead of drifting blue-purple as it dries."
+    },
+    {
+      "step": 7,
+      "agent": "Cool Wash + AIR-DRY FLAT",
+      "instruction": "Cool wash. AIR-DRY FLAT. NEVER tumble-dry until fully clear — heat shrinks linen + sets berry tannin."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Structured / lined / trimmed = pro. Simple linen = home.",
+      "2. NO alkaline cleaners. NO hot water. NO chlorine bleach.",
+      "3. Cold water back-flush.",
+      "4. Hidden dye test on colored linen.",
+      "5. Dawn + cold water + soft toothbrush, 5 min.",
+      "6. 3% peroxide damp cloth, 5–10 min.",
+      "7. White vinegar rinse — keeps anthocyanin RED.",
+      "8. Cool wash + AIR-DRY FLAT."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% Hydrogen peroxide",
+      "White vinegar"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if linen is structured, dye bleeds on hidden test, hot water / dryer was used previously.",
     "warnings": [
-      "Always test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents.",
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NEVER hot water — linen shrinks",
+      "NEVER alkaline cleaners on tannin",
+      "NEVER chlorine bleach on dyed linen",
+      "NEVER tumble-dry until clear",
+      "Don't skip vinegar — keeps anthocyanin red (light), not blue-purple"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong concentrated acids — weakens cellulose",
-      "No chlorine bleach on colored linen"
+      "Never hot water on linen",
+      "Never alkaline cleaners on tannin",
+      "Never chlorine bleach on dyed linen",
+      "Never tumble-dry residual berry"
     ],
     "fiberSensitivities": [
-      "Strongest natural fiber when wet — very durable",
-      "Wrinkles easily but tolerates aggressive cleaning",
-      "Neutralize acid spotters after use on cellulose"
+      "Linen shrinks aggressively under hot water",
+      "Dyed linen bleeds — hidden test mandatory",
+      "Structured linen warps under wet treatment",
+      "Vintage linen is fragile"
     ]
   },
+  "materialWarnings": [
+    "Structured = pro from minute one",
+    "Cool water only — linen shrinks",
+    "Air-dry flat",
+    "Vinegar keeps berry anthocyanin RED, not blue-purple"
+  ],
   "escalation": {
-    "when": "If berry stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is berry on linen, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Structured / lined / trimmed linen, dyed linen failed hidden test, hot water / dryer used previously, vintage piece.",
+    "whatToTell": "\"Berry on [simple / structured / dyed / vintage] linen, [type], age [hours / days], home-treated with cold + Dawn + 3% peroxide + vinegar + cool wash. No hot water / no alkaline. [Residual / structured concerns].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Type — blueberry / raspberry / blackberry / strawberry?",
+      "Simple flat linen or structured?",
+      "Care label?",
+      "White / natural / dyed?",
+      "Has it been through a hot wash or dryer?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Blueberry has the most anthocyanin — hardest. Strawberry has more sugar but less anthocyanin. Pre-applied OxiClean = anthocyanin darkened permanently into blue-purple."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents."
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

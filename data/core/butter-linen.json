@@ -1,84 +1,171 @@
 {
   "id": "butter-linen",
   "title": "Butter on Linen",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "linen",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Butter is primarily butterfat (triglycerides, 80%) with milk proteins and water. On linen, the fat penetrates the fiber while the protein component creates a secondary bond. Clarified butter stains are pure fat. Salted butter adds sodium chloride that can affect dyes. The fat component is relatively easy to emulsify compared to petroleum oils.",
-  "whyThisWorks": "Surfactant is highly effective against butterfat on linen — the triglycerides emulsify readily in warm water. Absorbing excess fat with cornstarch or baking soda first removes surface oil before treatment. The protein component is minor and addresses with standard washing after the fat is removed.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "15–30 minutes; structured/trimmed = pro",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "butter",
+    "surfaceCanonical": "linen",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "oil",
+      "butterfat",
+      "trace-protein",
+      "linen",
+      "structured-fork",
+      "no-hot-water"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Butter is ~80% butterfat (saturated + monounsaturated triglycerides) + small milk casein fraction + salt + water. The protein fraction is small but heat-sets — cold water flush before warm Dawn. Linen fiber tolerates the standard butter protocol on simple flat pieces; structured / lined / dry-clean-only linen = pro. Linen-specific cautions apply: cool water (shrinks under hot), air-dry flat (heat shrinks + sets butterfat).",
+  "whyThisWorks": "Cold water flush handles the casein fraction first. Dawn emulsifies butterfat (Dawn is engineered for this). Cool wash + air-dry preserves linen shape and prevents residual fat from polymerizing. Standard butter protocol.",
+  "defaultAssumption": "Simple linen napkin / shirt = home protocol. Structured / lined / vintage = pro.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Care Label + Scrape Solid",
+      "technique": "Inspection + dull-blade lift",
+      "equipment": "Good light, dull blade",
+      "dwellTime": "1 minute",
+      "instruction": "Dry-clean-only / structured = pro. Simple flat linen = proceed. Scrape any solid butter with a dull blade."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse",
+      "equipment": "Cold water, sink",
+      "dwellTime": "1 minute",
+      "instruction": "Flip inside out. Cold water through the BACK. Cold flush handles the small casein fraction before warm Dawn."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Emulsify butterfat",
+      "equipment": "Dawn + warm (not hot) water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn in warm water (after cold flush handled casein). Soft toothbrush 5 min. Cool rinse."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY FLAT",
+      "technique": "Launder + lay flat",
+      "equipment": "Washing machine",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cool wash — NEVER hot (linen shrinks). AIR-DRY FLAT. Inspect before any heat."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Care label + structure check.",
+      "2. Scrape solid butter.",
+      "3. Cold water back-flush — casein step.",
+      "4. Dawn + soft toothbrush warm water — fat step.",
+      "5. Cool wash + air-dry flat."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "Cool / cold water"
     ],
-    "temperature": "ambient",
+    "temperature": "cold flush + warm Dawn (not hot) + cool wash",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "NEVER hot water — linen shrinks",
+      "NEVER tumble-dry until fully clear — heat shrinks + polymerizes residual fat",
+      "Structured / lined = pro",
+      "Cold flush before warm Dawn — casein step before fat step"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Structured Linen Goes to Pro; Simple Linen Stays Home",
+      "instruction": "Linen has two cases. SIMPLE LINEN (napkin, basic shirt) = standard butter protocol. STRUCTURED LINEN (suits, lined dresses, dry-clean-only) = pro. Wet treatment risks shape change."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Solid Butter",
+      "instruction": "Scrape any solid butter off with a dull butter knife. Just lift the bulk."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Flush — Casein First",
+      "instruction": "Flip inside out. Cold tap water through the BACK 1 minute. Butter has a small milk-protein fraction (casein); cold flush handles it before warm water touches the fat."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Warm (Not Hot) Water + Soft Toothbrush",
+      "instruction": "Mix Dawn in WARM water — not hot, just warm enough to help emulsify butterfat. Work into spot with soft toothbrush 5 min. Cool rinse."
+    },
+    {
+      "step": 5,
+      "agent": "Cool Wash + AIR-DRY FLAT",
+      "instruction": "Cool wash per care label — NEVER hot (linen shrinks). AIR-DRY FLAT — never tumble-dry until fully clear (heat shrinks linen + polymerizes residual butterfat)."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Structured / lined / trimmed = pro.",
+      "2. Scrape solid butter.",
+      "3. Cold water back-flush — casein step.",
+      "4. Dawn + WARM (not hot) water + soft toothbrush, 5 min.",
+      "5. Cool wash + AIR-DRY FLAT."
     ],
     "products": [
+      "Dull blade",
       "Dawn dish soap",
-      "baking soda"
+      "Cool / warm water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if linen is structured / lined / trimmed / dry-clean-only.",
     "warnings": [
-      "Always test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents.",
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER hot water — linen shrinks",
+      "NEVER tumble-dry until fully clear — heat shrinks + polymerizes butterfat",
+      "Structured = pro",
+      "Cold flush BEFORE warm Dawn — handles casein first"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong concentrated acids — weakens cellulose",
-      "No chlorine bleach on colored linen"
+      "Never hot water on linen",
+      "Never tumble-dry residual butter",
+      "Never wet-treat structured linen at home"
     ],
     "fiberSensitivities": [
-      "Strongest natural fiber when wet — very durable",
-      "Wrinkles easily but tolerates aggressive cleaning",
-      "Neutralize acid spotters after use on cellulose"
+      "Linen shrinks aggressively under hot water",
+      "Cool wash + air-dry flat preserves shape",
+      "Heat polymerizes residual butterfat into linen"
     ]
   },
+  "materialWarnings": [
+    "Cool water only — linen shrinks",
+    "Cold flush handles small casein fraction first",
+    "Air-dry flat — heat polymerizes butterfat"
+  ],
   "escalation": {
-    "when": "If butter stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is butter on linen, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Structured / lined / trimmed linen, hot water / dryer used previously, vintage piece, or polymerized residual butterfat after one home cycle.",
+    "whatToTell": "\"Butter on [simple / structured / vintage] linen, age [hours / days], home-treated with cold flush + Dawn warm water + cool wash + air-dry flat. No hot water / no dryer until clear. [Residual oily feel / structured concerns].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Plain butter or compound (garlic / herb)?",
+      "Simple flat linen or structured?",
+      "How long ago — fresh / dried in / weeks?",
+      "Has it been through a hot wash or dryer?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Compound butter (garlic, herb) adds minor pigment that may need 3% peroxide step. Hot-dried butter polymerizes into a near-permanent stain on linen."
   },
-  "difficulty": 2,
-  "timeEstimate": "10-15 minutes",
-  "lastValidated": "2026-03-23",
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents."
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

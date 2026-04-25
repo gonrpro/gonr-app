@@ -1,80 +1,190 @@
 {
   "id": "berry-polyester",
   "title": "Berry on Polyester",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Berry stains contain anthocyanins — the same pH-sensitive pigments found in red wine but in higher concentration. On polyester, these pigments bond through hydrogen bonding and electrostatic interactions. Alkaline conditions shift the color from red to blue-purple and strengthen the bond. The sugar content creates a sticky matrix that holds pigment against the fiber.",
-  "whyThisWorks": "Acidic treatment keeps anthocyanins in their most removable form on polyester. The oxidizer then breaks the chromophore bonds responsible for color. Avoiding alkali is essential — ammonia, baking soda, and alkaline detergents permanently darken berry stains. Fresh treatment dramatically improves success rates.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "20–40 minutes; standard tannin protocol",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "berry",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "anthocyanin",
+      "polyester",
+      "no-alkaline",
+      "no-hot-water"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Berries (blueberry, raspberry, blackberry, strawberry) carry anthocyanin pigments + tannin polyphenols + sugar. Anthocyanin is pH-sensitive — alkaline cleaners DARKEN it. On polyester, the standard tannin protocol (cold + Dawn + 3% peroxide + vinegar) works directly. Polyester yellows under heat over time, so hot dryer + residual berry = permanent yellow shadow.",
+  "whyThisWorks": "Cold water + Dawn lifts fresh anthocyanin + sugar. 3% peroxide oxidizes residual tannin. Vinegar keeps anthocyanin red (light/acid side). Cool wash + air-dry preserves polyester long-term.",
+  "defaultAssumption": "Polyester garment / blend / kid clothes. Fresh berry = quick win. Hot-dried = permanent.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse",
+      "equipment": "Cold water, sink",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Flip inside out. Cold water through the BACK. Anthocyanin + sugar flush out fast."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Lift fresh berry",
+      "equipment": "Dawn + cold water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn into spot with soft toothbrush. Cool rinse. Skip OxiClean — alkaline darkens anthocyanin."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ on Damp Cloth",
+      "technique": "Oxidize residual tannin",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Hidden-area test on dyed polyester. 3% peroxide damp cloth 5–10 min. Don't mix with bleach / ammonia / alkaline."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "White Vinegar Rinse",
+      "technique": "Neutralize + acid-side anthocyanin",
+      "equipment": "1 tbsp vinegar + 1 cup cool water",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar rinse. Keeps anthocyanin red (light) instead of drifting blue-purple."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cool Wash + Air-Dry",
+      "technique": "Launder + inspect before dryer",
+      "equipment": "Washing machine",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cool wash. Air-dry. Inspect BEFORE dryer — heat sets residual berry on polyester."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cold back-flush.",
+      "2. Dawn + soft toothbrush.",
+      "3. 3% H₂O₂ damp cloth, 5–10 min.",
+      "4. White vinegar rinse.",
+      "5. Cool wash + air-dry."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Cold water"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color"
+      "NEVER hot water — sets anthocyanin",
+      "NEVER alkaline cleaners — darkens permanently",
+      "NEVER chlorine bleach on polyester — yellows fiber",
+      "NEVER hot dryer until fully clear",
+      "Hidden-area peroxide test on dyed polyester"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Polyester Is the Easy Fiber for Berry",
+      "instruction": "Standard tannin protocol works on polyester: cold water + Dawn + 3% peroxide + vinegar + cool wash. Two rules: NO alkaline cleaners (OxiClean / baking soda turn anthocyanin DARKER permanently), NO hot water until fully clear (sets berry + yellows polyester)."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Back-Flush",
+      "instruction": "Flip inside out. Cold tap water through the BACK 1–2 minutes."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Cold Water + Soft Toothbrush",
+      "instruction": "Dawn in cold water, soft toothbrush 5 min. Cool rinse. NO OxiClean."
+    },
+    {
+      "step": 4,
+      "agent": "3% Peroxide for Residual",
+      "instruction": "3% drugstore peroxide damp cloth 5–10 min. Hidden-area test on dyed polyester first."
+    },
+    {
+      "step": 5,
+      "agent": "White Vinegar Rinse",
+      "instruction": "1 tbsp vinegar + 1 cup cool water, 5 min. Keeps anthocyanin red (light) — critical step."
+    },
+    {
+      "step": 6,
+      "agent": "Cool Wash, AIR-DRY Until Clear",
+      "instruction": "Cool wash. Air-dry. Inspect BEFORE dryer."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. NO alkaline cleaners. NO hot water until fully clear.",
+      "2. Cold water back-flush.",
+      "3. Dawn + soft toothbrush, 5 min.",
+      "4. 3% peroxide damp cloth, 5–10 min, hidden test on dyed.",
+      "5. White vinegar + water rinse, 5 min.",
+      "6. Cool wash + AIR-DRY. Inspect before dryer."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% Hydrogen peroxide",
+      "White vinegar"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if hot dryer was used on residual berry, alkaline cleaner was applied, or set-in stain weeks old.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NEVER hot water on berry",
+      "NEVER alkaline cleaners on tannin",
+      "NEVER chlorine bleach on polyester — yellows fiber",
+      "NEVER hot dryer until fully clear",
+      "NEVER mix peroxide with bleach / ammonia"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on berry",
+      "Never alkaline cleaners on tannin",
+      "Never chlorine bleach on polyester",
+      "Never hot dryer until fully clear"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester yellows under heat over time",
+      "Polyester tolerates 3% peroxide on dyed (with hidden test)",
+      "Standard tannin chemistry works"
     ]
   },
+  "materialWarnings": [
+    "No alkaline — darkens anthocyanin",
+    "No hot water — sets berry + yellows polyester",
+    "Vinegar keeps anthocyanin RED (light)"
+  ],
   "escalation": {
-    "when": "If berry stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is berry on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Hot dryer used on residual berry, alkaline applied, set-in weeks old.",
+    "whatToTell": "\"Berry on polyester, [type], age [hours / days], home-treated with cold + Dawn + 3% peroxide + vinegar + cool wash. No hot water / no alkaline. [Residual].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Type — blueberry / raspberry / blackberry / strawberry?",
+      "How long ago — fresh / overnight / older?",
+      "Has it been through a hot wash or dryer?",
+      "White or dyed polyester?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Blueberry has the most anthocyanin — hardest. Pre-applied OxiClean = anthocyanin darkened permanently. Hot-dried = often permanent."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,85 +1,217 @@
 {
   "id": "candle-wax-linen",
   "title": "Candle Wax on Linen",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "linen",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Candle wax (paraffin) is a solid petroleum hydrocarbon that solidifies on linen as it cools, trapping any dye from colored candles within the wax matrix. The wax itself is not a stain — it's a physical deposit. However, dyed candles leave pigment behind after wax removal. The wax must be removed before the dye can be treated.",
-  "whyThisWorks": "Freezing makes wax brittle on linen, allowing mechanical removal of the bulk deposit. Low heat (iron through paper towel) melts remaining wax into the absorbent paper by capillary action. POG dissolves any wax residue. If dye remains after wax removal, it's treated as a separate dye stain with appropriate chemistry.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–40 minutes; freeze + scrape + iron-through-paper (linen tolerates careful heat)",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "candle-wax",
+    "surfaceCanonical": "linen",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "wax",
+      "paraffin",
+      "linen",
+      "freeze-and-lift",
+      "iron-through-paper-OK",
+      "structured-fork",
+      "dye-fork-for-colored-wax"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Candle wax is paraffin (petroleum hydrocarbon) or beeswax/soy wax + sometimes fragrance + sometimes dye. On linen (cellulose, similar to cotton), the iron-through-paper trick that works on cotton ALSO works on linen — careful low heat through 3–4 paper towels with a brown paper bag transfers the wax up into the absorbent paper. Linen tolerates this better than synthetic carpet (which would melt). Two cautions: (1) structured / lined / dry-clean-only linen = pro from minute one (heat + structure = warping), (2) colored wax leaves a separate dye stain after the wax is gone — treat as dye.",
+  "whyThisWorks": "Freeze + scrape + iron-through-paper transfers paraffin wax cleanly off linen. Linen is heat-tolerant (vs synthetics) AND iron-friendly when supported with absorbent paper. Goo Gone for residual wax. Separate dye treatment for colored wax. Standard protocol works on simple flat linen.",
+  "defaultAssumption": "Simple flat linen (napkin, basic tablecloth, plain shirt) = home protocol. Structured / lined / dry-clean-only / vintage = pro. Colored candle wax = treat dye separately after wax is fully gone.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Care Label + Freeze",
+      "technique": "Inspection + ice bag harden",
+      "equipment": "Good light, ice in plastic bag",
+      "dwellTime": "10–15 minutes",
+      "instruction": "Dry-clean-only / structured / vintage = pro. Simple flat linen = proceed. Place sealed ice bag on wax 10–15 min."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Crack and Scrape Bulk",
+      "technique": "Dull edge, outward from center",
+      "equipment": "Plastic card / dull knife",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Crack frozen wax with the edge of a plastic card. Scrape off bulk pieces. Don't gouge linen — flat-edge lift only."
+    },
+    {
+      "step": 3,
+      "side": "dry",
+      "agent": "Iron-Through-Paper",
+      "technique": "Absorbent transfer with low heat",
+      "equipment": "3–4 paper towels or brown paper bag, iron on LOW",
+      "dwellTime": "5–10 seconds per pass",
+      "instruction": "Stack 3–4 paper towels (or a brown paper bag) ON TOP of the wax spot. Iron on LOW for 5–10 sec at a time. Wax wicks UP into the paper. Replace paper as it absorbs. STOP if linen feels hot — linen tolerates careful heat but not extended."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Goo Gone for Residual Wax (Pro)",
+      "technique": "Citrus solvent on cloth",
+      "equipment": "Goo Gone on white cloth",
+      "dwellTime": "30–60 sec per pass",
+      "instruction": "If thin wax film remains after iron-through-paper, Goo Gone on a white cloth tamps the residue. Ventilate. Hidden test on dyed linen first."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ for Colored Wax Dye Residue",
+      "technique": "Treat dye separately",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "If wax was colored and dye remains after wax is gone: 3% peroxide damp cloth 5 min. Hidden test on dyed linen."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY FLAT",
+      "technique": "Launder + lay flat",
+      "equipment": "Washing machine",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cool wash per care label. AIR-DRY FLAT — inspect before any iron / dryer."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Freeze with ice bag to harden wax. Scrape off bulk with dull edge",
-      "2. Apply POG to dissolve remaining wax residue",
-      "3. Apply NSD to lift pigment (for colored wax). Flush with cool water",
-      "4. If dye remains: apply H2O2 6% carefully, monitor",
-      "5. Apply Acetic Acid 28% (diluted 1:10) for pH restoration. Blot dry"
+      "1. Care label + structure check.",
+      "2. Ice freeze 10–15 min. Crack and scrape bulk.",
+      "3. Iron-through-paper transfer, low heat, 5–10 sec passes.",
+      "4. Goo Gone on cloth for residual wax film.",
+      "5. 3% H₂O₂ for residual colored-wax dye (hidden test).",
+      "6. Cool wash + air-dry flat."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Ice + sealed plastic bag",
+      "Plastic card / dull knife",
+      "Paper towels / brown paper bag",
+      "Iron (low heat)",
+      "Goo Gone (citrus solvent)",
+      "3% Hydrogen peroxide (dye residue, hidden test)"
     ],
-    "temperature": "ambient",
+    "temperature": "cold (freeze) + low heat for iron transfer + cool wash",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "STRUCTURED / lined / vintage linen = pro",
+      "Iron on LOW, 5–10 sec passes only — linen tolerates careful heat but not extended",
+      "Replace paper as it absorbs — saturated paper drips wax back",
+      "Hidden test before peroxide on dyed linen",
+      "Flammable solvent for residual film — ventilate",
+      "Pigment is a separate stain after wax is gone"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Linen Tolerates the Iron-Through-Paper Trick",
+      "instruction": "Linen is one of the few fibers where the classic \"iron + brown paper bag\" wax trick works safely. Linen is heat-tolerant (unlike synthetic carpet which would melt). Two rules: (1) structured / lined / dry-clean-only linen = pro from minute one, and (2) colored wax leaves a separate dye stain after the wax is gone — treat that as a dye stain after."
+    },
+    {
+      "step": 2,
+      "agent": "Freeze the Wax — 10 to 15 Minutes",
+      "instruction": "Press a zip-lock bag of ice on the wax for 10–15 minutes. NEVER direct ice on linen. The wax will get hard and brittle."
+    },
+    {
+      "step": 3,
+      "agent": "Crack and Scrape Bulk — Plastic Card",
+      "instruction": "Once frozen, crack the wax with the edge of a plastic card. Lift off bulk pieces. Most surface wax comes off this way."
+    },
+    {
+      "step": 4,
+      "agent": "Iron-Through-Paper Transfer",
+      "instruction": "Stack 3–4 paper towels (or a brown paper bag, no print) ON TOP of the wax spot. Set the iron to LOW. Press for 5 to 10 seconds at a time, NOT longer. Wax wicks UP into the absorbent paper. Replace paper as it picks up wax. Repeat until no more wax transfers. STOP if the linen feels hot under the iron — linen tolerates careful heat but extended heat scorches."
+    },
+    {
+      "step": 5,
+      "agent": "Goo Gone for Residual Wax Film",
+      "instruction": "If a thin wax film remains, dab Goo Gone (orange bottle, citrus solvent) on a clean white cloth and press the residue. Open windows — Goo Gone is flammable. Hidden test on dyed linen first."
+    },
+    {
+      "step": 6,
+      "agent": "If Colored Candle — Treat the Dye",
+      "instruction": "Once the wax is fully gone, you might see the candle's color (red, blue, etc.) still in the linen. That's now a dye stain. Hidden-area test 3% peroxide on white linen 5 min. Skip on dyed linen."
+    },
+    {
+      "step": 7,
+      "agent": "Cool Wash + AIR-DRY FLAT",
+      "instruction": "Cool wash per care label. AIR-DRY FLAT. Inspect before any iron or dryer."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Place ice in a bag on the wax for 10 minutes until brittle. Do NOT apply ice directly to fabric",
-      "2. Scrape off hardened wax with a dull knife or credit card edge",
-      "3. Place paper towels above and below the fabric (if possible). Iron on low heat to melt remaining wax into paper — check every 5 seconds",
-      "4. Apply Dawn dish soap to any remaining residue. Blot",
-      "5. Rinse with warm water. Air dry — inspect before using dryer"
+      "1. Structured / lined / dry-clean-only = pro.",
+      "2. Ice freeze 10–15 min. Crack and scrape bulk.",
+      "3. Iron-through-paper, LOW heat, 5–10 sec passes.",
+      "4. Goo Gone on cloth for residual wax film.",
+      "5. 3% peroxide for colored-wax dye (white linen only, hidden test).",
+      "6. Cool wash + AIR-DRY FLAT."
     ],
     "products": [
-      "Dawn dish soap",
-      "paper towels",
-      "ice"
+      "Ice + plastic bag",
+      "Plastic card / dull knife",
+      "Paper towels / brown paper bag",
+      "Iron (low heat)",
+      "Goo Gone",
+      "3% Hydrogen peroxide (white linen)"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if linen is structured / lined / dry-clean-only / vintage. Stop if iron starts to scorch the fiber.",
     "warnings": [
-      "Always test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents.",
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "Structured = pro",
+      "Iron on LOW only, 5–10 sec passes — extended heat scorches linen",
+      "Replace paper as it absorbs — saturated paper drips wax back",
+      "Hidden test on dyed linen before peroxide",
+      "Pigment is a SEPARATE stain after wax is fully gone",
+      "Flammable solvent — no flame near Goo Gone"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong concentrated acids — weakens cellulose",
-      "No chlorine bleach on colored linen"
+      "Never extended iron heat on linen — scorches",
+      "Never iron on structured / lined linen",
+      "Never direct ice on linen",
+      "Never use solvent near flame"
     ],
     "fiberSensitivities": [
-      "Strongest natural fiber when wet — very durable",
-      "Wrinkles easily but tolerates aggressive cleaning",
-      "Neutralize acid spotters after use on cellulose"
+      "Linen tolerates LOW careful iron heat with paper barrier",
+      "Linen scorches under extended heat",
+      "Vintage linen = pro (heat risk)",
+      "Structured linen warps under heat"
     ]
   },
+  "materialWarnings": [
+    "Linen is one of the few fibers where iron-through-paper works",
+    "LOW heat, short passes — extended heat scorches",
+    "Pigment is a separate stain after wax",
+    "Structured = pro from minute one"
+  ],
   "escalation": {
-    "when": "If candle wax stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is candle wax on linen, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Structured / lined / vintage linen, dry-clean-only label, iron scorched fiber, residual colored wax dye after peroxide, polymerized wax from being walked on/sat on for weeks.",
+    "whatToTell": "\"Candle wax on [simple / structured / vintage] linen, [white / colored wax], age [fresh / aged], home-treated with freeze + scrape + iron-through-paper + Goo Gone + [3% peroxide on white]. Cool wash + air-dry flat. [Residual wax / pigment / scorch].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "White wax or colored?",
+      "Simple flat linen or structured?",
+      "Care label?",
+      "How long ago — fresh / aged?",
+      "Vintage piece?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Colored candle wax leaves dye after wax — separate treatment. Vintage linen needs cooler everything; pro for any wax stain. Synthetic-blend linen (linen-cotton blend) follows linen rules; linen-rayon blend = pro (rayon doesn't tolerate heat)."
   },
-  "difficulty": 4,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents."
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

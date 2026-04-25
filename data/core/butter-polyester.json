@@ -1,80 +1,190 @@
 {
   "id": "butter-polyester",
   "title": "Butter on Polyester",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Butter is primarily butterfat (triglycerides, 80%) with milk proteins and water. On polyester, the fat penetrates the fiber while the protein component creates a secondary bond. Clarified butter stains are pure fat. Salted butter adds sodium chloride that can affect dyes. The fat component is relatively easy to emulsify compared to petroleum oils.",
-  "whyThisWorks": "Surfactant is highly effective against butterfat on polyester — the triglycerides emulsify readily in warm water. Absorbing excess fat with cornstarch or baking soda first removes surface oil before treatment. The protein component is minor and addresses with standard washing after the fat is removed.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "15–30 minutes; cold flush + Dawn",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "butter",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "oil",
+      "butterfat",
+      "trace-protein",
+      "polyester",
+      "oleophilic",
+      "no-hot-water"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Butter is ~80% butterfat + small casein + salt. Polyester is OLEOPHILIC — grabs butterfat tenaciously. Two ordering rules: (1) cold flush BEFORE warm Dawn handles the small casein fraction first, (2) NO hot water until fully clear (heat sets butterfat into polyester permanently AND yellows the fiber over time). Standard butter protocol with polyester-specific Dawn × 2 if oily feel remains.",
+  "whyThisWorks": "Cold water removes casein fraction. Warm Dawn emulsifies butterfat (Dawn is engineered for triglyceride). Cool wash + air-dry until fully clear preserves polyester. Polyester typically needs Dawn × 2 because of the oleophilic affinity.",
+  "defaultAssumption": "Polyester garment / blend / kid clothes. Fresh butter = quick win. Hot-dried = harder; sometimes permanent.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Scrape Solid Butter",
+      "technique": "Dull blade lift",
+      "equipment": "Dull blade",
+      "dwellTime": "30 seconds",
+      "instruction": "Scrape solid butter off with a dull blade. Lift bulk only."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse",
+      "equipment": "Cold water, sink",
+      "dwellTime": "1 minute",
+      "instruction": "Flip inside out. Cold water through the BACK. Handles small casein fraction before warm Dawn touches the fat."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Emulsify butterfat",
+      "equipment": "Dawn + warm (not hot) water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn in warm water (NOT hot — heat sets butterfat into polyester). Soft toothbrush 5 min. Cool rinse."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Repeat Dawn If Oily Feel Remains",
+      "technique": "Second pass for oleophilic affinity",
+      "equipment": "Dawn + cool water",
+      "dwellTime": "5 minutes",
+      "instruction": "Test with clean fingertip. Oily feel = repeat Dawn. Polyester typically needs 2 passes."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cool Wash + Air-Dry",
+      "technique": "Launder cool, inspect before dryer",
+      "equipment": "Washing machine",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cool wash. Air-dry. Inspect BEFORE dryer — heat sets butterfat into polyester permanently."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Scrape solid butter.",
+      "2. Cold water back-flush — casein step.",
+      "3. Dawn + soft toothbrush warm water (not hot), 5 min.",
+      "4. Repeat Dawn pass if oily feel remains.",
+      "5. Cool wash + air-dry. Inspect before dryer."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "Cool / warm water (not hot)"
     ],
-    "temperature": "ambient",
+    "temperature": "cold flush + warm Dawn (not hot) + cool wash",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "NEVER hot water — sets butterfat into polyester + yellows fiber",
+      "NEVER chlorine bleach on polyester — yellows fiber",
+      "NEVER hot dryer until fully clear",
+      "Polyester is oleophilic — expect 2 Dawn passes",
+      "Cold flush BEFORE warm Dawn — casein first"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Polyester + Butter — Cold First, Then Warm Dawn",
+      "instruction": "Butter has a small milk-protein fraction (casein) — cold flush handles that first. Polyester is oleophilic (grabs oil) — Dawn × 2 typical for the butterfat. Two rules: NO hot water (sets butterfat into polyester permanently) and NO chlorine bleach (yellows polyester)."
+    },
+    {
+      "step": 2,
+      "agent": "Scrape Solid Butter",
+      "instruction": "Scrape solid butter off with a dull butter knife. Just lift the bulk."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Water Flush — Casein First",
+      "instruction": "Flip inside out. Cold tap water through the BACK 1 minute. Cold flush handles the small casein fraction before warm water touches the fat."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Warm (Not Hot) Water — Soft Toothbrush 5 Minutes",
+      "instruction": "Dawn in WARM water — not hot, just warm enough to emulsify butterfat. Work into spot with soft toothbrush 5 min. Cool rinse."
+    },
+    {
+      "step": 5,
+      "agent": "Test for Oily Feel — Repeat Dawn If Yes",
+      "instruction": "Touch the spot with a clean fingertip. Still feels oily? Repeat Dawn. Polyester typically needs 2 passes."
+    },
+    {
+      "step": 6,
+      "agent": "Cool Wash, AIR-DRY Until Clear",
+      "instruction": "Cool wash per care label. Air-dry. Inspect BEFORE dryer. Residual butterfat + dryer heat = permanent on polyester."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Cool water only. NO hot water until fully clear.",
+      "2. Scrape solid butter.",
+      "3. Cold water back-flush — casein step first.",
+      "4. Dawn + WARM (not hot) water + soft toothbrush, 5 min.",
+      "5. Repeat Dawn if oily feel remains.",
+      "6. Cool wash + AIR-DRY. Inspect before dryer."
     ],
     "products": [
+      "Dull blade",
       "Dawn dish soap",
-      "baking soda"
+      "Cool / warm water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if hot dryer was used on residual butterfat (likely permanent on polyester).",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER hot water — sets butterfat + yellows polyester",
+      "NEVER chlorine bleach on polyester",
+      "NEVER hot dryer until fully clear",
+      "Polyester loves oil — expect 2 Dawn passes",
+      "Cold flush BEFORE warm Dawn"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on butter + polyester",
+      "Never chlorine bleach on polyester",
+      "Never hot dryer until fully clear",
+      "Never skip cold-flush casein step"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs butterfat",
+      "Polyester yellows under heat over time",
+      "Polyester typically needs 2 Dawn passes for oil",
+      "Heat sets butterfat permanently"
     ]
   },
+  "materialWarnings": [
+    "No hot water / hot dryer — heat sets butterfat",
+    "Cold flush before warm Dawn",
+    "Polyester loves oil — expect 2 Dawn passes"
+  ],
   "escalation": {
-    "when": "If butter stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is butter on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Hot dryer used on residual butterfat, alkaline applied, or 3 home rounds plateau.",
+    "whatToTell": "\"Butter on polyester, age [hours / days], home-treated with cold flush + Dawn warm water × 2 + cool wash + air-dry. No hot water / no chlorine bleach. [Residual oily feel].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Plain butter or compound (garlic / herb)?",
+      "How long ago — fresh / dried in / weeks?",
+      "Has it been through a hot wash or dryer?",
+      "White or dyed polyester?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Compound butter (garlic, herb) adds minor pigment that may need a 3% peroxide step on white polyester. Hot-dried butterfat = often permanent on polyester."
   },
-  "difficulty": 2,
-  "timeEstimate": "10-15 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

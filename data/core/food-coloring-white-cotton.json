@@ -1,77 +1,230 @@
 {
   "id": "food-coloring-white-cotton",
   "title": "Food Coloring on White Cotton",
+  "stainType": "dye",
   "stainFamily": "dye",
-  "surface": "white-cotton",
+  "surface": "cotton",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Synthetic food dyes (FD&C Red 40, Blue 1, Yellow 5) are water-soluble acid dyes designed for maximum color intensity. On white cotton, they bond through ionic and hydrogen bonds. Fresh food coloring is highly water-soluble. However, once dried or heat-set, the dye bonds become increasingly resistant. Some food dyes (Red 40 especially) are notoriously persistent on porous materials.",
-  "whyThisWorks": "Immediate cold water flushing removes the majority of fresh food dye from white cotton because these dyes are designed to be water-soluble. For set stains, oxygen bleach breaks the chromophore bonds. White vinegar helps restore pH after treatment. The speed of initial treatment is the single biggest factor — a 5-minute delay can dramatically increase difficulty.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "20–60 minutes; HEAT SETS permanently",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "food-coloring-white",
+    "surfaceCanonical": "cotton",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "dye",
+      "azo-dye",
+      "white-cotton",
+      "time-critical",
+      "no-hot-water",
+      "rit-color-remover-OK",
+      "heat-set-permanent"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Food coloring is concentrated synthetic dye (Red 40, Blue 1, Yellow 5 / Tartrazine — FDA-approved azo / triphenylmethane dyes) in water + glycerin carrier. White cotton is the FORGIVING substrate for food coloring — tolerates the full toolkit (Dawn, OxiClean, 3% peroxide, sun, Rit Color Remover) without risk of stripping fabric dye (white = no fabric dye to strip). Heat is the only invariant: hot water / hot dryer permanently sets food coloring on white cotton just like it sets it on any cellulose fiber.",
+  "whyThisWorks": "White cotton tolerates aggressive home chemistry safely (no fabric dye to lose). Cold flush + Dawn + OxiClean soak + 3% peroxide + sun + Rit Color Remover gives the full ladder. Heat is the only thing that locks food coloring permanently. Simple cotton garment / napkin / pillowcase = high success rate IF caught fresh.",
+  "defaultAssumption": "White cotton T-shirt / napkin / kid clothes / pillowcase. Fresh = high success. Hot-dried = often permanent. White cotton is the easiest substrate for food coloring removal because it tolerates the full toolkit.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse",
+      "equipment": "Cold water, sink",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Flip inside out. Cold water through the BACK 1–2 min. Pulls fresh food dye out fast — most effective fast move."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Lift residual dye",
+      "equipment": "Dawn + cold water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn into the spot with a soft toothbrush 5 min. Cool rinse. Repeat if color transfers to cloth."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "OxiClean Soak (White Cotton Only)",
+      "technique": "Oxygen bleach soak",
+      "equipment": "OxiClean Versatile in warm water (NOT hot — under 100°F)",
+      "dwellTime": "1–4 hours, overnight for stubborn",
+      "instruction": "WHITE cotton only. Submerge stained area in OxiClean + WARM (NOT hot) water. 1–4 hours; overnight for stubborn. Oxidizes dye chromophore on white cotton. NEVER hot water — sets food coloring."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ for Residual",
+      "technique": "Direct application to remaining color",
+      "equipment": "3% H₂O₂",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Drop, dwell, blot. 3% peroxide directly on residual stain. Don't mix with bleach / ammonia."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Sunlight for Red 40 Residual",
+      "technique": "UV photodegrades artificial dye",
+      "equipment": "Direct sunlight on damp cotton",
+      "dwellTime": "Hours to days",
+      "instruction": "Lay damp cotton in direct sunlight for hours. UV breaks down Red 40 + Blue 1 gradually. Multi-day exposure if needed."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Rit Color Remover (Nuclear Option)",
+      "technique": "Sodium hydrosulfite reducing bleach",
+      "equipment": "Rit Color Remover per label",
+      "dwellTime": "Per label",
+      "instruction": "Per label, sodium hydrosulfite. Strong sulfur smell — ventilate, gloves. Strips residual food dye. WHITE cotton only — strips ALL dye, so don't use on colored cotton (this card is white cotton only)."
+    },
+    {
+      "step": 7,
+      "side": "wet",
+      "agent": "Cool Wash + AIR-DRY UNTIL CLEAR",
+      "technique": "Launder cool, air-dry",
+      "equipment": "Washing machine",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cool wash per care label. AIR-DRY until stain is fully gone in daylight. ANY heat on residual food coloring = permanent."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate or appropriate solvent to dissolve dye/pigment matrix",
-      "2. Apply NSD to lift loosened pigment. Flush with cool water",
-      "3. If color persists: apply H2O2 6% on colorfast fabrics to break chromophore bonds",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cold back-flush.",
+      "2. Dawn + soft toothbrush, 2–3 cycles.",
+      "3. OxiClean soak in WARM (not hot) water, 1–4 hr to overnight.",
+      "4. 3% H₂O₂ direct on residual.",
+      "5. Sunlight finish.",
+      "6. Rit Color Remover (sulfur smell, ventilate).",
+      "7. Cool wash + air-dry until fully clear."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "OxiClean Versatile",
+      "3% Hydrogen peroxide",
+      "Rit Color Remover (sodium hydrosulfite)",
+      "Sunlight",
+      "Cool water"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold for initial; warm (not hot) for OxiClean; never hot wash; air-dry until clear",
+    "warnings": [
+      "HEAT SETS food coloring permanently",
+      "NEVER hot water — locks dye into cellulose",
+      "Rit Color Remover strips ALL dye — WHITE cotton only",
+      "Sulfur smell from Rit — ventilate, gloves",
+      "Speed matters most — fresh is winnable, hot-dried is permanent"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "White Cotton Is the Forgiving Substrate",
+      "instruction": "White cotton tolerates the full home toolkit on food coloring — Dawn, OxiClean soak, 3% peroxide, sun, Rit Color Remover. No fabric dye to lose, so aggressive home chemistry is safe. The only hard line: HEAT. Hot water and hot dryer permanently set food coloring. Cold/cool throughout, air-dry until visibly clear in daylight."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Back-Flush — The Most Effective Fast Move",
+      "instruction": "Flip inside out. Cold tap water through the BACK of the stain for 1–2 minutes. Most fresh food coloring rinses out fast on white cotton."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Cold Water + Soft Toothbrush",
+      "instruction": "Dawn in cold water, soft toothbrush 5 min. Cool rinse. Repeat 2–3 cycles for concentrated colors (Red 40 is the toughest)."
+    },
+    {
+      "step": 4,
+      "agent": "OxiClean Soak — Warm (Not Hot) Water",
+      "instruction": "Fill a basin with WARM (not hot — under 100°F) water + 1 scoop OxiClean per gallon. Submerge the stained area. Soak 1 to 4 hours; overnight for stubborn stains. White cotton tolerates OxiClean well — oxidizes the food dye chromophore."
+    },
+    {
+      "step": 5,
+      "agent": "3% Peroxide for Residual Color",
+      "instruction": "Dab 3% drugstore peroxide directly on residual color. 5–10 min. Don't mix with ammonia or bleach. Rinse cool."
+    },
+    {
+      "step": 6,
+      "agent": "Sunlight Finish for Red 40",
+      "instruction": "Lay the still-damp cotton in direct sunlight for several hours. UV breaks down Red 40 and Blue 1 gradually. Multi-day exposure for stubborn artificial dye."
+    },
+    {
+      "step": 7,
+      "agent": "Rit Color Remover — Nuclear Option for WHITE Cotton",
+      "instruction": "If color persists after sun + peroxide, Rit Color Remover (sodium hydrosulfite) at any craft / fabric store. Per label. Strong sulfur smell — gloves + ventilation. Strips residual food dye. White cotton only — would strip colored fabric."
+    },
+    {
+      "step": 8,
+      "agent": "Cool Wash, AIR-DRY UNTIL VISIBLY CLEAR",
+      "instruction": "Cool wash per care label. AIR-DRY in daylight. ANY residual food coloring + dryer heat = permanent. Once visibly clear, normal dryer is fine going forward."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately — never rub (spreading dye worsens it)",
-      "2. Apply Dawn dish soap mixed with cold water. Blot gently",
-      "3. If stain persists: apply hydrogen peroxide 3% on colorfast fabrics — test hidden area first, 5-10 min dwell time",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat until stain is completely gone"
+      "1. Cold/cool throughout. NEVER hot water until fully clear.",
+      "2. Cold back-flush 1–2 min.",
+      "3. Dawn + cold water + soft toothbrush, 2–3 cycles.",
+      "4. OxiClean soak in WARM (NOT hot) water, 1–4 hr to overnight.",
+      "5. 3% peroxide direct on residual, 5–10 min.",
+      "6. Sunlight finish for Red 40 / Blue 1.",
+      "7. Rit Color Remover (white cotton only, sulfur smell, ventilate).",
+      "8. Cool wash + AIR-DRY until visibly clear."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "OxiClean Versatile",
+      "3% Hydrogen peroxide",
+      "Rit Color Remover (white-only nuclear option)",
+      "Sunlight",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if hot water / hot dryer was used on residual food coloring (likely permanent), or if 3 home cycles + sunlight + Rit don't fully clear it.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "HEAT SETS food coloring permanently — air-dry until visibly clear",
+      "NEVER hot water until fully clear",
+      "Rit Color Remover = WHITE cotton ONLY (strips colored fabric)",
+      "Sulfur smell from Rit — gloves + ventilation",
+      "NEVER mix peroxide + bleach + ammonia"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Avoid prolonged exposure to concentrated acid"
+      "Never hot water on food coloring",
+      "Never hot dryer until fully clear",
+      "Never Rit Color Remover on colored fabric",
+      "Never mix peroxide + bleach + ammonia"
     ],
     "fiberSensitivities": [
-      "Most chemically resistant textile — tolerates aggressive treatment",
-      "Can handle chlorine bleach, hydrogen peroxide, oxygen bleach",
-      "Hot water safe up to 95°C / 200°F"
+      "White cotton tolerates full toolkit (Dawn / OxiClean / 3% peroxide / sun / Rit)",
+      "Heat is the only invariant for food coloring",
+      "OxiClean warm not hot — water temp matters even on cotton"
     ]
   },
+  "materialWarnings": [
+    "Heat sets food coloring permanently",
+    "White cotton is the forgiving substrate — full toolkit available",
+    "Speed matters most",
+    "Rit is the home nuclear option (white only)"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is food coloring on white cotton, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Hot water / dryer used on residual food coloring (likely permanent), 3 home cycles + sun + Rit don't fully clear, or expensive cotton garment with sentimental value.",
+    "whatToTell": "\"Food coloring on white cotton, color [Red 40 / Blue 1 / Yellow 5 / mixed], age [fresh / hot-dried], home-treated with cold + Dawn + OxiClean soak + 3% peroxide + sun + [Rit Color Remover]. No hot water until visibly clear. [Residual / hot-dried suspected].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Color — Red 40 / Blue 1 / Yellow 5 / mixed?",
+      "How long ago — fresh / overnight / hot-dried?",
+      "Has it been through a hot wash or dryer?",
+      "How concentrated — drop / spill / soaked?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Red 40 is the toughest variant. Hot-dried = often permanent. White cotton is the forgiving substrate — full home toolkit available. Concentrated soaks (kid stuck a bottle in their lap) need overnight OxiClean + multi-day sun."
   },
-  "difficulty": 5,
-  "timeEstimate": "10-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

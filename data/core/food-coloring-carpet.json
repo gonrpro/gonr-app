@@ -1,78 +1,218 @@
 {
   "id": "food-coloring-carpet",
   "title": "Food Coloring on Carpet",
+  "stainType": "dye",
   "stainFamily": "dye",
   "surface": "carpet",
-  "sector": "carpet",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Synthetic food dyes (FD&C Red 40, Blue 1, Yellow 5) are water-soluble acid dyes designed for maximum color intensity. On carpet, they bond through ionic and hydrogen bonds. Fresh food coloring is highly water-soluble. However, once dried or heat-set, the dye bonds become increasingly resistant. Some food dyes (Red 40 especially) are notoriously persistent on porous materials.",
-  "whyThisWorks": "Immediate cold water flushing removes the majority of fresh food dye from carpet because these dyes are designed to be water-soluble. For set stains, oxygen bleach breaks the chromophore bonds. White vinegar helps restore pH after treatment. The speed of initial treatment is the single biggest factor — a 5-minute delay can dramatically increase difficulty.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 7,
+  "timeEstimate": "20–60 minutes; HEAT SETS permanently",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "food-coloring",
+    "surfaceCanonical": "carpet",
+    "tier": "universal",
+    "riskLevel": "high",
+    "tags": [
+      "dye",
+      "azo-dye",
+      "carpet",
+      "time-critical",
+      "no-chlorine-bleach",
+      "no-hot-water"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Food coloring is concentrated synthetic dye (Red 40, Blue 1, Yellow 5 / Tartrazine — FDA-approved azo / triphenylmethane dyes) in water + glycerin carrier. Engineered to bond to fabric / cellulose dramatically through hydrogen bonds — same mechanism as deliberate dye application. On carpet, fresh food coloring rinses with cold water + Dawn. Set / hot-dried food coloring is often permanent. Red 40 is the hardest variant. NO chlorine bleach panic moves — bleach can lighten food dye on white synthetic carpet but strips carpet dye AND damages fiber on most synthetic carpet. Safer path: Dawn + 3% peroxide (whites) + sun, with reducing-bleach (Rit Color Remover) as nuclear option for white-only carpet.",
+  "whyThisWorks": "Cold water + Dawn lifts fresh undeveloped dye before it bonds permanently. 3% peroxide oxidizes azo / triphenylmethane chromophore on white carpet. Sunlight (UV) photodegrades Red 40. Rit Color Remover (sodium hydrosulfite) is the home nuclear option for whites — strips ALL dye, so colored-carpet bans. Speed + escalation discipline matter most. Heat is the hard line — hot dryer / hot extractor sets food coloring permanently.",
+  "defaultAssumption": "Kid baking / crafts / Easter eggs / homemade playdough on living-room carpet. Fresh = high-confidence DIY. Dried-after-dryer = often permanent or accept-as-is.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet-minimal",
+      "agent": "Cold Damp-Cloth Blot",
+      "technique": "Press + extract bulk dye",
+      "equipment": "Cold water, white cloth",
+      "dwellTime": "2–3 minutes",
+      "instruction": "Dampen cloth with COLD water. Press on stain, lift, rotate, repeat. Cold only — heat sets food coloring permanently. Never pour."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Lift fresh dye",
+      "equipment": "Dawn + cold water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn cold water on damp cloth. Soft brush. Damp-cloth rinse — never pour. 2–3 cycles for concentrated colors (Red 40 is the toughest)."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ for White Carpet",
+      "technique": "Oxidize chromophore",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "WHITE carpet only: 3% peroxide damp cloth 5–10 min. Hidden test on dyed carpet first — peroxide can lighten carpet dye."
+    },
+    {
+      "step": 4,
+      "side": "dry",
+      "agent": "Sunlight Finish for Residual Red 40",
+      "technique": "UV photodegrades artificial dye",
+      "equipment": "Open blinds / direct sunlight",
+      "dwellTime": "Several hours",
+      "instruction": "Open blinds so daylight falls on the spot for several hours. UV breaks down Red 40 + Blue 1 gradually. Multi-day if needed."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "Rit Color Remover (WHITE Carpet Only, Nuclear Option)",
+      "technique": "Sodium hydrosulfite reducing bleach",
+      "equipment": "Rit Color Remover per label, ventilation",
+      "dwellTime": "Per label",
+      "instruction": "WHITE carpet only. NEVER on colored / dyed carpet — strips carpet dye too. Per label, ventilation required (sulfur smell). Skip on synthetic carpet that may be heat-sensitive — Rit needs warm water in some formulations."
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Weighted Paper Towels + Fan-Dry",
+      "technique": "Extract + verify",
+      "equipment": "Paper towels + weight, fan",
+      "dwellTime": "Overnight",
+      "instruction": "Weighted paper towels overnight. Fan-dry. Inspect in daylight. Air-dry — NO hot extractor / steam — heat sets food coloring permanently."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply amyl acetate or appropriate solvent to dissolve dye/pigment matrix",
-      "2. Apply NSD to lift loosened pigment. Flush with cool water",
-      "3. If color persists: apply H2O2 6% on colorfast fabrics to break chromophore bonds",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cold damp-cloth blot.",
+      "2. Dawn + soft toothbrush, 5 min cold, 2–3 cycles.",
+      "3. 3% H₂O₂ damp cloth (white carpet only), 5–10 min.",
+      "4. Sunlight finish for residual Red 40.",
+      "5. Rit Color Remover (white carpet only, sodium hydrosulfite, ventilation).",
+      "6. Weighted paper towels overnight + fan-dry."
     ],
     "products": [
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "H2O2 6%",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "3% Hydrogen peroxide (white carpet)",
+      "Rit Color Remover (white carpet only, nuclear option)",
+      "Cold water",
+      "Paper towels + weight",
+      "Fan"
     ],
-    "temperature": "cold",
-    "warnings": []
+    "temperature": "cold throughout — heat sets food coloring permanently",
+    "warnings": [
+      "NEVER hot water — sets food coloring permanently",
+      "NEVER hot dryer / hot extractor / steam — heat = permanent",
+      "NEVER chlorine bleach panic moves — strips carpet dye, damages synthetic fiber",
+      "Rit Color Remover = WHITE carpet only (strips ALL dye)",
+      "Sulfur smell from Rit — ventilate",
+      "Hidden-area peroxide test on dyed carpet"
+    ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Speed Matters — Heat Sets It Forever",
+      "instruction": "Food coloring is concentrated dye engineered to BOND. Caught fresh = high success. Set or hot-dried = often permanent. Two rules: NO hot water (sets the dye), NO chlorine bleach panic moves (strips carpet dye + damages synthetic fiber). The safe escalation ladder: cold water → Dawn → 3% peroxide on white only → sun → Rit Color Remover (white-carpet nuclear option only)."
+    },
+    {
+      "step": 2,
+      "agent": "Cold Damp-Cloth Blot",
+      "instruction": "Dampen a clean white cloth with COLD water. Press firmly on the spot, lift, rotate to a clean section, press again. Cold ONLY — anything warmer than cold sets food coloring permanently. NEVER pour water on the carpet."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Cold Water — 2 to 3 Cycles",
+      "instruction": "Mix 1 tablespoon Dawn in 2 cups cold water. Dampen a cloth, work into the spot with a soft toothbrush 5 minutes. Damp-cloth rinse. Repeat 2–3 cycles for concentrated colors. Red 40 is the toughest — budget extra rounds."
+    },
+    {
+      "step": 4,
+      "agent": "3% Peroxide for WHITE Carpet Only",
+      "instruction": "WHITE carpet only: dab 3% drugstore peroxide on a damp cloth, press 5–10 minutes. SKIP on dyed carpet — peroxide can lighten carpet dye. Hidden-area test first if uncertain."
+    },
+    {
+      "step": 5,
+      "agent": "Sunlight for Residual Color",
+      "instruction": "Open blinds so daylight falls on the spot for several hours. UV breaks down Red 40 + Blue 1 gradually. Multi-day exposure if needed. Movable area rugs can go outside in sun."
+    },
+    {
+      "step": 6,
+      "agent": "Rit Color Remover — Last Resort for WHITE Carpet ONLY",
+      "instruction": "If WHITE carpet still has color after sun + peroxide, Rit Color Remover (sodium hydrosulfite) is the home nuclear option. Per label. Ventilate (sulfur smell). DO NOT use on colored carpet — strips ALL dye including the carpet's. Skip if you can't confirm white carpet."
+    },
+    {
+      "step": 7,
+      "agent": "Weighted Paper Towels Overnight + AIR-DRY",
+      "instruction": "Stack paper towels on the spot, weight with a heavy book, leave overnight. Fan-dry in the morning. NO hot extractor / steam — heat sets food coloring permanently."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately — never rub (spreading dye worsens it)",
-      "2. Apply Dawn dish soap mixed with cold water. Blot gently",
-      "3. If stain persists: apply hydrogen peroxide 3% on colorfast fabrics — test hidden area first, 5-10 min dwell time",
-      "4. Rinse with cold water",
-      "5. Air dry — no heat until stain is completely gone"
+      "1. NO hot water. NO chlorine bleach panic moves.",
+      "2. Cold damp-cloth blot — never pour.",
+      "3. Dawn + cold water + soft toothbrush, 2–3 cycles.",
+      "4. 3% peroxide damp cloth (WHITE carpet only), 5–10 min.",
+      "5. Sunlight finish for residual Red 40.",
+      "6. Rit Color Remover (WHITE carpet only, nuclear option, ventilate).",
+      "7. Weighted paper towels overnight + AIR-DRY. No hot extractor."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% Hydrogen peroxide (white carpet only)",
+      "Rit Color Remover (white-only nuclear)",
+      "Cold water",
+      "Paper towels + weight",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 attempts. Take to a professional — they have specialized dye-stripping agents",
+    "whenToStop": "Stop if hot water / hot dryer was used (likely permanent), if Rit Color Remover would strip carpet dye (colored carpet), or after 3 home cycles + sunlight without progress.",
     "warnings": [
-      "Never rub dye stains — rubbing spreads the color",
-      "Heat permanently sets dye stains"
+      "NEVER hot water — sets food coloring permanently",
+      "NEVER hot dryer / hot extractor / steam — heat permanent",
+      "NEVER chlorine bleach — strips carpet dye + damages fiber",
+      "Rit Color Remover = WHITE carpet ONLY",
+      "Sulfur smell from Rit — ventilate",
+      "Speed matters more than chemistry choice"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No chlorine bleach on colored carpet",
-      "Avoid over-wetting — causes backing damage and mold"
+      "Never hot water on food coloring",
+      "Never hot dryer / hot extractor / steam",
+      "Never chlorine bleach on carpet",
+      "Never Rit Color Remover on colored carpet",
+      "Never mix peroxide + bleach + ammonia"
     ],
     "fiberSensitivities": [
-      "Most synthetic carpet (nylon/polyester) tolerates standard chemistry",
-      "Always blot from outside in to prevent spreading",
-      "Extract excess moisture to prevent backing damage"
+      "Nylon / polyester / olefin synthetic carpet: tolerates Dawn + 3% peroxide (white)",
+      "Wool carpet: pro-only for food coloring (peroxide yellows wool)",
+      "Dyed carpet: hidden peroxide test mandatory",
+      "Heat sets food coloring permanently across all fibers"
     ]
   },
+  "materialWarnings": [
+    "Heat sets food coloring permanently",
+    "No chlorine bleach panic moves on carpet",
+    "Rit Color Remover is white-only nuclear option",
+    "Speed matters more than chemistry choice"
+  ],
   "escalation": {
-    "when": "If the dye has penetrated the fiber (no improvement after 3 solvent passes), or if the fabric is expensive/delicate, or if dye continues to spread during treatment",
-    "whatToTell": "Explain that the stain is food coloring on carpet, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional carpet cleaning service with truck-mount extraction"
+    "when": "Hot water / dryer used previously, Rit Color Remover would strip carpet dye, 3 home cycles + sunlight plateau, or wool carpet (always).",
+    "whatToTell": "\"Food coloring on [white / colored / wool] carpet, color [Red 40 / Blue 1 / Yellow 5 / mixed], age [fresh / hot-dried / older], home-treated with cold + Dawn × 2–3 + [3% peroxide on white] + sunlight + [Rit Color Remover white-only]. No hot water / no chlorine bleach. [Residual color / hot-dried suspected].\"",
+    "specialistType": "professional carpet cleaner with reducing-agent chemistry (sodium hydrosulfite at controlled dilution)"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the color still actively spreading or has it dried?"
+      "Color — Red 40 / Blue 1 / Yellow 5 / mixed?",
+      "How long ago — fresh / overnight / hot-dried?",
+      "White or dyed/colored carpet?",
+      "Has hot extractor / steam been used?",
+      "Wool carpet?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Red 40 is the toughest variant — budget extra rounds. Yellow 5 (Tartrazine) easier. Hot-dried = often permanent. Wool carpet + food coloring = pro from minute one (peroxide yellows wool, Rit damages keratin)."
   },
-  "difficulty": 5,
-  "timeEstimate": "10-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
