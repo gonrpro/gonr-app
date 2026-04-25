@@ -1,123 +1,212 @@
 {
   "id": "coffee-polyester",
   "title": "Coffee on Polyester",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Coffee contains tannins (polyphenolic compounds from roasted beans) that bond to polyester through hydrogen bonding and pi-stacking interactions. Fresh coffee is water-soluble. Aged stains oxidize and darken — the brown color intensifies as tannin molecules cross-link. Melanoidins from the roasting process add additional brown pigment that is highly resistant to removal.",
-  "whyThisWorks": "An acidic tannin spotter (professional) or oxidizer (DIY) breaks the chromophore bonds — the colored structures — in the tannin molecules on polyester. Hydrogen peroxide specifically targets the double bonds that make oxidized tannin brown. The key is avoiding heat and alkaline products, both of which permanently darken tannin stains.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "20–40 minutes; cold water + Dawn + peroxide if needed",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "coffee",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "polyester",
+      "no-alkaline",
+      "no-hot-water",
+      "oleophilic-fiber"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Coffee = melanoidins + chlorogenic acid + tannin polyphenols. On polyester, tannins bond through hydrogen bonding to the fiber, but polyester is OLEOPHILIC — it grabs and holds oil tenaciously. Coffee with cream adds milk casein + butterfat; on polyester, the butterfat is the harder fraction (oleophilic affinity). Tannin rules apply: NO alkaline cleaners (OxiClean, baking soda, ammonia) — turn tannin permanently darker. NO hot water — cross-links tannin AND can permanently set the polymer film of coffee around polyester fibers. Polyester tolerates standard tannin chemistry (cold water, Dawn, 3% peroxide) well.",
+  "whyThisWorks": "Cold water + Dawn lifts the fat fraction (oleophilic polyester needs Dawn). 3% peroxide on a damp cloth oxidizes residual tannin. Vinegar rinse keeps tannin on the lighter (acid) side of the color equilibrium. Polyester doesn't felt or denature — tolerates the protocol. The honest cap: polyester yellows under heat exposure, so any residual coffee + dryer = permanent.",
+  "defaultAssumption": "Polyester garment / blend / workout wear. Fresh coffee = quick win. Hot-dried coffee = hard. Coffee with cream needs the protein step (warm enzyme pretreat at <100°F) before peroxide.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse",
+      "equipment": "Cold water, sink",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Flip garment inside out. Run cold water through the BACK of the stain into the sink. Cold pulls fresh tannin out the way it came in."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Emulsify oleophilic fat",
+      "equipment": "Dawn + cold water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Work Dawn into the spot with a soft toothbrush. Polyester is oleophilic — Dawn lifts butterfat (if cream was added) and emulsifies coffee residue. Cold rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat (Cream-Coffee Only)",
+      "technique": "Warm (not hot) enzyme",
+      "equipment": "OxiClean Versatile / Biz in WARM (<100°F) water",
+      "dwellTime": "15 minutes",
+      "instruction": "If coffee had cream: enzyme pretreat in WARM water — bath temperature, not hot. Damp cloth on spot 15 min. Skip for black coffee."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ on Damp Cloth",
+      "technique": "Oxidize residual tannin",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Hidden-area test if dyed polyester. 3% peroxide on damp cloth, 5–10 min. Don't mix with ammonia / bleach / alkaline."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "White Vinegar Rinse",
+      "technique": "Neutralize + acid-side tannin",
+      "equipment": "1 tbsp vinegar + 1 cup cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar + water rinse. Neutralizes peroxide + keeps tannin light."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Cool Wash + Air-Dry",
+      "technique": "Launder + inspect before dryer",
+      "equipment": "Washing machine, drying line",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cool wash per care label (NOT hot — heat sets coffee tannin AND yellows polyester over time). Air-dry. Inspect BEFORE dryer — heat permanently sets residual coffee on polyester."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cold water back-flush.",
+      "2. Dawn + soft toothbrush.",
+      "3. Enzyme pretreat WARM (not hot) for cream-coffee, 15 min.",
+      "4. 3% H₂O₂ damp cloth, 5–10 min.",
+      "5. White vinegar + water rinse.",
+      "6. Cool wash + air-dry. Inspect before dryer."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "OxiClean Versatile / Biz pretreat (cream-coffee)",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Cold/cool water"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout for tannin; warm (<100°F) for enzyme; never hot wash",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color"
+      "NEVER hot water — sets coffee tannin + yellows polyester",
+      "NEVER alkaline cleaners on tannin — darkens permanently",
+      "NEVER chlorine bleach on polyester — yellows fiber",
+      "NEVER hot dryer on residual coffee — sets permanently",
+      "Polyester is oleophilic — Dawn step is mandatory for cream-coffee"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Polyester rule: surface-bound, no high heat",
-      "instruction": "Polyester's low absorbency works in your favor — coffee sits on the fiber rather than soaking in. But polyester is heat-sensitive: hot coffee on polyester cools quickly (good for your counter-attack), but hot water later will shrink or melt the fiber. Cold water at every step, no tumble-dry until the stain is fully out."
+      "agent": "Polyester + Coffee — Two Easy Rules",
+      "instruction": "Coffee on polyester is one of the easier high-frequency stains IF you follow two rules: (1) NO alkaline cleaners (no OxiClean, no baking soda, no ammonia) — they turn tannin DARKER permanently, and (2) NO hot water (no hot wash, no hot dryer until the stain is fully gone — heat sets coffee + yellows polyester)."
     },
     {
       "step": 2,
-      "agent": "Patch test + tannin rule",
-      "instruction": "On an inside seam, dab a drop of Dawn + 3% peroxide solution; blot with a white cloth after 60 seconds. If it holds color, proceed. Tannin rule: no ammonia, baking soda, or OxiClean on untreated tannin — all lock brown into the fiber permanently."
+      "agent": "Cold Back-Flush First",
+      "instruction": "Flip the garment inside out. Run cold tap water through the BACK of the stain for 1–2 minutes. Cold pulls fresh coffee out the way it came in — the most effective fast move."
     },
     {
       "step": 3,
-      "agent": "Cold back-flush",
-      "instruction": "Turn the fabric inside out and run cold water through the BACK of the stain for 30–60 seconds. On polyester, cold-water flush alone often lifts most of a fresh coffee spill. Skip hot water — it drives tannin into the fiber."
+      "agent": "Dawn + Cold Water",
+      "instruction": "Work a drop of Dawn dish soap into the wet stain with a soft toothbrush. Polyester is oleophilic (loves oil), so Dawn is essential — especially if the coffee had cream (butterfat). 5 minutes dwell. Rinse cool."
     },
     {
       "step": 4,
-      "agent": "Dawn + 3% hydrogen peroxide solution",
-      "instruction": "Mix one tablespoon of Dawn with one cup of 3% hydrogen peroxide in a bowl. Dip a white cloth, wring nearly dry, dab the stain outside-in. Let sit 5–10 minutes, blot with a clean damp cloth. Most polyester coffee stains lift in one cycle — the stain is surface-bound. Repeat once if a shadow remains.",
-      "safetyNote": "Never mix peroxide with ammonia or bleach."
+      "agent": "Cream-Coffee? Enzyme Pretreat in Warm (Not Hot) Water",
+      "instruction": "If the coffee had cream, dissolve OxiClean Versatile or Biz in WARM water — bath temperature, under 100°F. NOT hot. Apply to the spot for 15 minutes. The enzyme digests milk casein. Skip for black coffee."
     },
     {
       "step": 5,
-      "agent": "White vinegar rinse",
-      "instruction": "Mix one tablespoon of white vinegar with one cup of cold water. Dab onto the spot with a white cloth. Neutralizes peroxide residue and keeps residual tannin in its lighter form. Blot dry with a fresh cloth."
+      "agent": "3% Peroxide for Residual Brown",
+      "instruction": "Dab 3% drugstore peroxide directly on residual stain, 5–10 minutes. Hidden-area test first on dyed polyester. Skip on chlorine-bleach-treated polyester (already yellowed)."
     },
     {
       "step": 6,
-      "agent": "Cold wash + air dry",
-      "instruction": "Launder on cold with your normal detergent. Air-dry; do NOT put in the dryer until you've inspected in daylight. Polyester fuses pigment at dryer heat — any remaining shadow will become permanent on the first hot cycle."
+      "agent": "White Vinegar Rinse",
+      "instruction": "Mix 1 tablespoon white vinegar + 1 cup cool water. Apply for 5 minutes. Neutralizes peroxide + keeps any residual tannin in its lighter (acid) color. Rinse cool."
     },
     {
       "step": 7,
-      "agent": "Daylight inspect — repeat or escalate",
-      "instruction": "Inspect in natural light. If a pale tan shadow remains, repeat steps 4–6 once more. Two rounds is the home ceiling. A brown halo (rather than tan) after two rounds means the tannin has polymerized — escalate."
-    },
-    {
-      "step": 8,
-      "agent": "Escalate to a dry cleaner",
-      "instruction": "If the stain has been through a hot dryer, sat for days, or survived two home rounds, take it in. Tell them: \"Coffee on polyester, age [fresh/days/heat-set], treated with Dawn + 3% peroxide + vinegar rinse. No alkaline, no hot water.\" Polyester is one of the easier fibers for pros because the stain is surface-bound — they'll finish it with 6% peroxide + a tannin formula fast."
+      "agent": "Cool Wash, AIR-DRY Until Clear",
+      "instruction": "Wash on COOL per care label — NOT hot. Air-dry. Inspect BEFORE the dryer. ANY residual coffee + dryer heat = permanent stain on polyester. Once you can confirm the stain is fully gone in daylight, normal dryer is fine."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. NO alkaline cleaners. NO hot water until clear.",
+      "2. Cold water back-flush.",
+      "3. Dawn + soft toothbrush, 5 min cold.",
+      "4. Cream-coffee: enzyme pretreat WARM (<100°F), 15 min.",
+      "5. 3% peroxide damp cloth, 5–10 min, hidden test on dyed.",
+      "6. White vinegar + water rinse, 5 min.",
+      "7. Cool wash + AIR-DRY. Inspect BEFORE dryer."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "OxiClean Versatile or Biz (cream-coffee only)",
+      "3% Hydrogen peroxide",
+      "White vinegar"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if hot dryer was used on residual coffee (likely permanent), if alkaline was applied (tannin locked), or if the stain has been there for weeks with heat exposure.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NEVER hot water — sets coffee + yellows polyester",
+      "NEVER alkaline cleaners on tannin — darkens permanently",
+      "NEVER chlorine bleach on polyester — yellows fiber",
+      "NEVER hot dryer until fully clear — heat sets residual coffee",
+      "NEVER mix peroxide with bleach / ammonia / alkaline"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on coffee — sets tannin",
+      "Never OxiClean / baking soda / ammonia — darkens tannin",
+      "Never chlorine bleach on polyester — yellows fiber",
+      "Never hot dryer until stain is fully clear",
+      "Never mix peroxide with bleach / ammonia"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — Dawn step matters for cream-coffee",
+      "Polyester yellows under heat over time",
+      "Polyester tolerates 3% peroxide on dyed (with hidden test)",
+      "Polyester is heat-sensitive at high temps — air-dry safer"
     ]
   },
+  "materialWarnings": [
+    "No alkaline cleaners — locks tannin",
+    "No hot water — sets coffee + yellows polyester",
+    "Air-dry until fully clear; dryer heat permanent",
+    "Polyester loves oil — Dawn is mandatory for cream-coffee"
+  ],
   "escalation": {
-    "when": "If coffee stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is coffee on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Hot dryer used on residual coffee, alkaline cleaner applied previously, set-in stain weeks old with heat exposure, or polyester is delicate fabric (chiffon-style polyester / peau de soie).",
+    "whatToTell": "\"Coffee on polyester, [black / with cream], age [hours / days], home-treated with cold + Dawn + 3% peroxide + vinegar + cool wash. No hot water / no alkaline / no chlorine bleach. [Residual brown / hot-dried / weeks-old].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Black coffee or with cream?",
+      "How long ago — fresh / overnight / older?",
+      "Has it been through a hot wash or dryer?",
+      "White or dyed polyester?",
+      "Standard polyester or delicate (chiffon-style)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Cream coffee adds protein step (warm enzyme). Hot-dried coffee = often permanent. Delicate polyester (chiffon-style) = treat closer to silk protocol. Pre-applied OxiClean = tannin darkened permanently."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

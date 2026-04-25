@@ -1,84 +1,169 @@
 {
   "id": "cooking-oil-linen",
   "title": "Cooking Oil on Linen",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "linen",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Cooking oil (vegetable, olive, canola) contains long-chain triglycerides that penetrate linen rapidly due to low viscosity. Fresh oil is easily dissolved by surfactants. Aged oil oxidizes and polymerizes — especially polyunsaturated oils (canola, soybean) which cross-link into a varnish-like film. Heat accelerates this polymerization.",
-  "whyThisWorks": "Surfactant (Dawn is the consumer standard) breaks the oil into micelles — tiny droplets surrounded by surfactant molecules that water can carry away from linen. For polymerized oil, a solvent pre-treatment dissolves the hardened film before surfactant can work. Avoid heat until the oil is fully removed — it polymerizes the residue.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–40 minutes; structured/trimmed = pro",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "cooking-oil",
+    "surfaceCanonical": "linen",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "oil",
+      "linen",
+      "powder-preload",
+      "shrink-bleed-risk",
+      "structured-fork",
+      "no-hot-water"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Cooking oil on linen: thin triglycerides on cellulose fiber. Linen is more absorbent than cotton — oil penetrates fast and weave is open. Standard powder preload + Dawn protocol works on simple flat linen. Linen-specific cautions: hot water shrinks aggressively, dyed linen bleeds, structured pieces (linen suits, lined dresses, table runners) warp under wet treatment. Polyunsaturated oils polymerize fastest under heat.",
+  "whyThisWorks": "Cornstarch / fuller's earth pulls bulk oil up via capillary on linen's open weave. Dawn handles residual oil. Cool wash + air-dry flat preserves linen shape. Honest fork: simple linen napkin / shirt = home protocol; structured / vintage / dry-clean-only = pro.",
+  "defaultAssumption": "Simple linen napkin / shirt = home protocol. Structured / lined / trimmed / vintage / dry-clean-only = pro from minute one.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Care Label + Structure Check",
+      "technique": "Inspection",
+      "equipment": "Good light",
+      "dwellTime": "1 minute",
+      "instruction": "Dry-clean-only label = pro. Structured / lined / trimmed / vintage = pro. Simple flat linen = proceed."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Powder Preload",
+      "technique": "Wick bulk oil via capillary",
+      "equipment": "Cornstarch / baking soda / fuller's earth",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Cover oil spot with thick layer of powder. 20–30 min absorb. Brush off softly."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Emulsify residual oil",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Dawn in cool water, soft toothbrush 5–10 min. Cool rinse."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Wash + Air-Dry FLAT",
+      "technique": "Launder + lay flat",
+      "equipment": "Washing machine, drying surface",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cool wash per care label — NEVER hot (linen shrinks). Air-DRY FLAT — never tumble-dry until fully clear."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Care label + structure check. Structured = pro.",
+      "2. Cornstarch / fuller's earth preload 20–30 min.",
+      "3. Dawn + soft toothbrush, 5–10 min cool.",
+      "4. Cool wash + air-dry flat."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda / fuller's earth",
+      "Dawn / NSD",
+      "Cool water"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — linen shrinks under hot",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "NEVER hot water — linen shrinks aggressively",
+      "NEVER tumble-dry until fully clear — heat shrinks + sets oil",
+      "Structured / lined / trimmed = pro",
+      "Polyunsaturated oils polymerize fastest under heat"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Structured Linen Goes to Pro; Simple Linen Stays Home",
+      "instruction": "Linen has two cases. SIMPLE LINEN (napkin, basic shirt, plain skirt) = standard powder + Dawn protocol works. STRUCTURED LINEN (suits, lined dresses, tablecloths with stiffeners, dry-clean-only) = pro from minute one. Wet treatment on structured linen risks shape change."
+    },
+    {
+      "step": 2,
+      "agent": "Cornstarch Preload — 20 to 30 Minutes",
+      "instruction": "Cover oil with cornstarch, baking soda, or fuller's earth (works best on oil). 20 to 30 minutes. Soft brush off."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn + Soft Toothbrush",
+      "instruction": "Mix 1 tablespoon Dawn in 2 cups cool water. Work into the spot with a soft toothbrush 5–10 min. Cool rinse."
+    },
+    {
+      "step": 4,
+      "agent": "Cool Wash + AIR-DRY FLAT",
+      "instruction": "Cool wash per care label — NEVER hot (linen shrinks). AIR-DRY FLAT — do NOT tumble-dry until fully clear. Heat shrinks linen + sets residual oil."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Structured / lined / trimmed = pro. Simple linen = home.",
+      "2. NO hot water. NO chlorine bleach.",
+      "3. Cornstarch preload 20–30 min. Brush off.",
+      "4. Dawn + soft toothbrush, 5–10 min cool.",
+      "5. Cool wash + AIR-DRY FLAT."
     ],
     "products": [
+      "Cornstarch / fuller's earth",
       "Dawn dish soap",
-      "baking soda"
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if linen is structured, hot water / dryer was applied previously, or oil is aged + polymerized.",
     "warnings": [
-      "Always test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents.",
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER hot water — linen shrinks",
+      "NEVER tumble-dry until clear",
+      "Structured = pro",
+      "Vintage linen = pro"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong concentrated acids — weakens cellulose",
-      "No chlorine bleach on colored linen"
+      "Never hot water on linen",
+      "Never tumble-dry residual oil",
+      "Never wet-treat structured linen at home"
     ],
     "fiberSensitivities": [
-      "Strongest natural fiber when wet — very durable",
-      "Wrinkles easily but tolerates aggressive cleaning",
-      "Neutralize acid spotters after use on cellulose"
+      "Linen shrinks aggressively under hot water",
+      "Open weave = oil penetrates fast",
+      "Structured linen warps under wet treatment",
+      "Vintage linen is fragile"
     ]
   },
+  "materialWarnings": [
+    "Structured = pro from minute one",
+    "Cool water only — linen shrinks",
+    "Air-dry flat",
+    "Open weave + oil = penetrates fast"
+  ],
   "escalation": {
-    "when": "If cooking oil stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is cooking oil on linen, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Structured / lined / trimmed linen, dry-clean-only label, hot water / dryer used previously, vintage piece, 3 home rounds plateau.",
+    "whatToTell": "\"Cooking oil on [simple / structured / dyed / vintage] linen, age [hours / days / weeks], home-treated with powder preload + Dawn + cool wash + air-dry flat. No hot water / no chlorine bleach. [Residual oily feel / structured concerns].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Simple flat linen or structured?",
+      "Care label?",
+      "Type of oil — olive / canola / vegetable / peanut?",
+      "Vintage piece?",
+      "Has it been through a hot wash or dryer?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Vintage linen needs cool everything. Structured linen needs professional finishing. Polyunsaturated oils polymerize fastest under heat — hot-dried = often permanent."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
-  "materialWarnings": [
-    "ALWAYS test on a hidden seam or inside hem first — linen dyes may not tolerate spotting agents."
-  ],
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

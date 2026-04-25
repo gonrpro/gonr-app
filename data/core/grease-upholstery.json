@@ -1,82 +1,200 @@
 {
   "id": "grease-upholstery",
   "title": "Grease on Upholstery",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Cooking grease is a thick triglyceride that coats upholstery surfaces and resists water — water alone cannot break it down. Fresh grease sits on fiber surfaces; aged grease penetrates and polymerizes into a hard, oxidized film. The oleophilic nature of many fibers (especially polyester) means grease bonds preferentially to synthetic materials.",
-  "whyThisWorks": "POG (volatile dry solvent) dissolves the grease on contact from upholstery. The principle is 'like dissolves like' — a non-polar solvent dissolves non-polar oils. Surfactant then emulsifies remaining micro-droplets so water can rinse them away. Applying solvent BEFORE water is critical — water causes the oil to emulsify and spread deeper.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 6,
+  "timeEstimate": "30–60 minutes; powder preload + code check",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "grease",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "oil",
+      "grease",
+      "upholstery",
+      "code-check",
+      "powder-preload",
+      "no-overwetting"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Grease on upholstery: thick fat (kitchen / cooking grease) that needs to be lifted before chemistry. Cushion batting saturation is the failure mode — never pour. Code tag (W / W-S / S / X) determines if water-based cleaning is allowed. Powder preload is universal-safe across all upholstery codes (no liquid contact). Pro uses POG / mineral spirits at controlled concentration on cloth + cold blot for residue. Home: powder + Dawn damp cloth (W/W-S only) + weighted extraction.",
+  "whyThisWorks": "Cornstarch / fuller's earth pulls bulk grease up before any liquid touches the upholstery. Dawn on a damp cloth (W / W-S code only) emulsifies residual grease. Weighted dry towel extraction prevents batting saturation. Pro escalation for aged polymerized grease (mineral spirits or amyl acetate at controlled concentration on cloth).",
+  "defaultAssumption": "Living-room couch / dining chair grease spill. W or W-S code = home protocol. S-only = solvent only, water-based Dawn is mismatched (pro). X = vacuum only, pro. Zip-off washable cushion cover = wash cover separately.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Code Check + Lift Solid Bulk",
+      "technique": "Read tag + flat-edge lift",
+      "equipment": "Good light, plastic card",
+      "dwellTime": "1 minute",
+      "instruction": "Find code tag (W / W-S / S / X). W or W-S proceed; S-only / X = pro. If grease is solid (cooled bacon grease), lift bulk with flat-edge plastic card. No scraping."
+    },
+    {
+      "step": 2,
+      "side": "dry",
+      "agent": "Cornstarch / Fuller's Earth Powder Preload",
+      "technique": "Wick bulk grease via capillary",
+      "equipment": "Cornstarch, baking soda, or fuller's earth",
+      "dwellTime": "30–60 minutes",
+      "instruction": "Cover grease with thick layer of powder. 30–60 min absorb. Vacuum off. Powder preload is the universal-safe step — works on every code."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Dawn + Soft Brush on Damp Cloth (W / W-S Only)",
+      "technique": "Surfactant on damp cloth, never poured",
+      "equipment": "Dawn + cool water, soft toothbrush, damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Dawn in cool water on damp cloth (NEVER pour on upholstery). Work with soft toothbrush. Press 5–10 min. S-only code: skip Dawn step entirely (water mismatch with solvent-only upholstery)."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Goo Gone (Pro, Aged Grease)",
+      "technique": "Citrus solvent on cloth, controlled tamp",
+      "equipment": "Goo Gone on white cloth",
+      "dwellTime": "30–60 sec per pass",
+      "instruction": "For aged / polymerized grease, pro applies Goo Gone to a white cloth (NEVER pour). Tight blotting from edge inward. Ventilate."
+    },
+    {
+      "step": 5,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan",
+      "technique": "Aggressive extraction",
+      "equipment": "Dry towels + weight, fan",
+      "dwellTime": "30 min × 2–3 + overnight",
+      "instruction": "Weighted dry towel 30 min × 2–3 rounds + overnight. Fan-dry. Aggressive extraction prevents grease from wicking back up from batting."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Code check + flat-edge lift solid bulk.",
+      "2. Cornstarch / fuller's earth preload 30–60 min.",
+      "3. Dawn + soft toothbrush on damp cloth (W/W-S only).",
+      "4. Goo Gone or POG for aged grease (pro), tight blotting from edge in.",
+      "5. Weighted dry towels × 2–3 + overnight + fan."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / fuller's earth",
+      "Dawn / NSD",
+      "Goo Gone / POG (aged grease, pro on cloth)",
+      "Heavy dry towels + weight",
+      "Fan"
     ],
-    "temperature": "ambient",
+    "temperature": "ambient — no heat",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains",
-      "Ensure adequate ventilation when using solvents — VOC fumes require extraction"
+      "CODE CHECK — S/X = pro",
+      "NEVER pour solvent or water on upholstery — flood = batting saturation",
+      "NEVER hot water — sets grease into batting",
+      "NEVER hot dryer (if cushion cover) until fully clear",
+      "Aggressive extraction matters more than aggressive chemistry",
+      "Flammable solvent — ventilate"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Code Check + Powder Preload (Universal Safe)",
+      "instruction": "Find the upholstery tag (under cushion). W / W-S = full protocol. S-only = solvent cleaning, water-based Dawn won't work — pro. X = vacuum only, pro. The good news: powder preload works on every code — it's a dry technique. So step 1 (powder) is always safe."
+    },
+    {
+      "step": 2,
+      "agent": "Lift Solid Bulk — Flat Edge Only",
+      "instruction": "If the grease is solid (cooled bacon grease, hardened fat), use the FLAT edge of a plastic card to lift it. Don't scrape upholstery — flat-edge lift only."
+    },
+    {
+      "step": 3,
+      "agent": "Cornstarch Powder Preload — 30 to 60 Minutes",
+      "instruction": "Cover the grease spot with a thick layer of cornstarch, baking soda, or fuller's earth (best on grease, Amazon ~$10). 30 to 60 minutes — longer than for thin oil, grease takes time to wick. Vacuum off thoroughly with upholstery attachment. Most surface bulk comes off this way."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn on a Damp Cloth (W / W-S Code Only)",
+      "instruction": "If your code is W or W-S: work a drop of Dawn with cool water into a damp cloth, press on the spot with a soft toothbrush 5–10 minutes. Damp-cloth rinse. NEVER pour — flood = cushion batting saturation. If the code is S-only, skip this step and go to pro escalation."
+    },
+    {
+      "step": 5,
+      "agent": "Aggressive Weighted Dry Towel + Fan",
+      "instruction": "Stack heavy dry towels on the spot, weight with a book, 30 minutes. Replace with fresh towels, repeat 2–3 times. Finish with fresh towels overnight. Fan-dry in the morning. Aggressive extraction prevents grease from wicking back up from batting as the cushion dries."
+    },
+    {
+      "step": 6,
+      "agent": "Pro for Aged Grease, Polymerized, or S-Only Code",
+      "instruction": "Take to a pro upholstery cleaner if: code is S-only / X, grease is aged with stiff/shiny film (polymerized), batting saturation suspected, or visible feel of grease remains after one full cycle. Tell them: \"Grease on [W / W-S / S / X] upholstery, age [fresh / aged], home-treated with cornstarch preload + Dawn damp cloth + weighted extraction. No hot water, no pouring.\""
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Code check. S / X = pro. Zip-off cover = wash separately.",
+      "2. Lift solid bulk with flat-edge plastic card.",
+      "3. Cornstarch preload 30–60 min. Vacuum.",
+      "4. Dawn on damp cloth (W/W-S only), 5–10 min. NEVER pour.",
+      "5. Aggressive weighted dry towels × 2–3 + overnight + fan.",
+      "6. Aged / S-code / persistent = pro low-moisture extraction."
     ],
     "products": [
+      "Plastic card",
+      "Cornstarch / baking soda / fuller's earth",
       "Dawn dish soap",
-      "baking soda"
+      "Heavy dry towels + weight",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if upholstery code is S-only or X, if grease is aged + polymerized, or if cushion batting saturation suspected.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "CODE CHECK FIRST — S/X = pro",
+      "NEVER pour anything on upholstery — flood = batting saturation",
+      "NEVER hot water — sets grease into batting",
+      "Powder preload is universal-safe; Dawn is W/W-S only",
+      "Aggressive extraction matters more than aggressive chemistry",
+      "Solvent escalation = pro, not home"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never pour solvent or water on upholstery",
+      "Never hot water on grease + upholstery",
+      "Never skip powder preload",
+      "Never DIY solvent escalation on upholstery"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S upholstery: tolerates Dawn damp cloth",
+      "S-only: solvent cleaning, water-based mismatched — pro",
+      "X: vacuum only — pro",
+      "Leather: separate card",
+      "Microfiber: tolerates Dawn but care with wetting"
     ]
   },
+  "materialWarnings": [
+    "Code check before any liquid",
+    "Powder preload is universal-safe",
+    "Aggressive extraction > aggressive chemistry",
+    "Batting saturation is the upholstery ceiling"
+  ],
   "escalation": {
-    "when": "If grease stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is grease on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "S-only / X code, aged polymerized grease, batting saturation suspected, persistent grease film after one full home cycle.",
+    "whatToTell": "\"Grease on [W / W-S / S / X] upholstery, age [fresh / aged / polymerized], home-treated with cornstarch preload + Dawn damp cloth + weighted extraction. No pouring, no hot water. [Residual greasy feel / batting saturation / aged film].\"",
+    "specialistType": "professional upholstery cleaner with low-moisture extraction"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Upholstery code — W / W-S / S / X?",
+      "Cushion cover zip-off and washable?",
+      "Type of grease — kitchen / cooking / motor?",
+      "Fresh or aged / polymerized?",
+      "Has anyone applied solvent or hot water?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Motor oil = separate protocol. Aged polymerized grease = pro from minute one. Pre-applied solvent on home wool/cotton playbook DESTROYS upholstery (especially S-code)."
   },
-  "difficulty": 3,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

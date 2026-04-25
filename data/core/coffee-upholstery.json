@@ -1,130 +1,239 @@
 {
   "id": "coffee-upholstery",
   "title": "Coffee on Upholstery",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "upholstery",
-  "sector": "upholstery",
+  "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Coffee contains tannins (polyphenolic compounds from roasted beans) that bond to upholstery through hydrogen bonding and pi-stacking interactions. Fresh coffee is water-soluble. Aged stains oxidize and darken — the brown color intensifies as tannin molecules cross-link. Melanoidins from the roasting process add additional brown pigment that is highly resistant to removal.",
-  "whyThisWorks": "An acidic tannin spotter (professional) or oxidizer (DIY) breaks the chromophore bonds — the colored structures — in the tannin molecules on upholstery. Hydrogen peroxide specifically targets the double bonds that make oxidized tannin brown. The key is avoiding heat and alkaline products, both of which permanently darken tannin stains.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–40 minutes; code check + blot/extract only",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "coffee",
+    "surfaceCanonical": "upholstery",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "tannin",
+      "upholstery",
+      "code-check",
+      "no-alkaline",
+      "no-overwetting"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Coffee = melanoidins + chlorogenic acid + tannin polyphenols. Coffee with cream adds milk casein (protein) + butterfat. On upholstery, the tannin-tools-list and code-check apply: NO alkaline cleaners (OxiClean, ammonia, baking soda) — turn tannin permanently darker. NO hot water — sets tannin AND any casein. Cushion batting saturation is the real ceiling — never pour, only damp-cloth blot. Code tag (W / W-S / S / X) determines if water-based cleaning is allowed.",
+  "whyThisWorks": "Cold water + Dawn + 3% peroxide on a damp cloth oxidizes tannin without damaging the upholstery. Vinegar rinse keeps tannin on the lighter (acid) side. Damp-cloth-only application + weighted extraction prevents pad saturation. Coffee with cream adds an enzyme step before peroxide (protein-before-heat).",
+  "defaultAssumption": "Living-room couch / favorite chair coffee spill. W or W-S code = home-treatable with this protocol. S-only = solvent only, water-based coffee is mismatched (pro). X = vacuum only, pro. If cushion cover zips off and is washable, take the cover off and machine-wash — that's far easier.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Code Check + Immediate Blot",
+      "technique": "Read tag + outside-in absorb",
+      "equipment": "Good light, white paper towels",
+      "dwellTime": "1 minute",
+      "instruction": "Find code tag (W / W-S / S / X). W or W-S proceed; S-only = pro for water-based coffee; X = pro. Press paper towels straight down on the spill. Lift, refresh, repeat outside-in. No rubbing."
+    },
+    {
+      "step": 2,
+      "side": "wet-minimal",
+      "agent": "Cold Damp-Cloth Blot",
+      "technique": "Press + weighted extract",
+      "equipment": "Cold water, white cloth, dry towel + weight",
+      "dwellTime": "3–5 minutes",
+      "instruction": "Dampen white cloth with cold water. Press on spot, lift, rotate, press. Cold only — heat sets tannin. Weighted dry towel 3–5 min after to extract surface moisture. Never pour."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "Dawn + Cold Water Damp Cloth",
+      "technique": "Lift residue without flooding",
+      "equipment": "Dawn + cold water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Dawn in cold water on damp cloth. Press 5 min. Blot. NO OxiClean — alkaline darkens tannin permanently."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Hidden-Area Peroxide Test",
+      "technique": "Verify upholstery color tolerance",
+      "equipment": "3% H₂O₂ on white cloth",
+      "dwellTime": "2 minutes",
+      "instruction": "Hidden test (under cushion seam). 3% peroxide on damp cloth 2 min. Color transfer = skip peroxide. Clean = proceed."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ on Damp Cloth",
+      "technique": "Oxidize residual tannin",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "3% peroxide on damp cloth, press 5–10 min, blot. 1–2 cycles. Don't mix with ammonia / bleach / alkaline."
+    },
+    {
+      "step": 6,
+      "side": "wet-minimal",
+      "agent": "White Vinegar Rinse",
+      "technique": "Neutralize peroxide + acid-side tannin",
+      "equipment": "1 tbsp vinegar + 1 cup cool water on damp cloth",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar rinse 5 min. Neutralizes peroxide + keeps tannin light. Blot."
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Weighted Dry Towel + Fan",
+      "technique": "Prevent batting wick-back",
+      "equipment": "Dry towel + weight, fan",
+      "dwellTime": "30 min × 2–3 + overnight",
+      "instruction": "Weighted dry towel 30 min × 2–3 rounds + overnight. Fan-dry. Aggressive extraction matters more than chemistry on upholstery."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Code tag check. S/X = pro lane.",
+      "2. Outside-in blot.",
+      "3. Cold damp-cloth blot + weighted extract.",
+      "4. Dawn / NSD damp cloth.",
+      "5. Hidden peroxide test.",
+      "6. 3% H₂O₂ damp cloth, 5–10 min, 1–2 cycles.",
+      "7. Vinegar + cool water rinse.",
+      "8. Weighted dry towels × 2–3 + overnight + fan."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Dry white towels + weight",
+      "Fan"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color",
-      "Avoid over-wetting — extract excess moisture to prevent backing damage"
+      "CODE CHECK — S/X = pro",
+      "NEVER hot water — sets tannin",
+      "NEVER pour — batting saturation is the ceiling",
+      "NEVER alkaline cleaners — darkens tannin permanently",
+      "NEVER mix peroxide with bleach / ammonia",
+      "Aggressive extraction > aggressive chemistry on upholstery"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Check the care code FIRST",
-      "instruction": "Look for the manufacturer's tag sewn into a seam under a cushion. One letter tells you everything: W = water-safe, S = solvent only (dry cleaning), WS = both okay, X = vacuum only. If it's S or X, stop here and call a pro — water will ring the fabric worse than coffee ever could. If it's W or WS, continue. No tag? Treat as S and call a pro."
+      "agent": "Code Check + Zip-Off Cover Option",
+      "instruction": "Find the upholstery tag (under a cushion). W / W-S = proceed below. S-only = solvent cleaning, water-based coffee chemistry doesn't match — call a pro. X = vacuum only, pro. If the cushion cover zips off and is washable, that's the easiest path: take it off, machine-wash cold per care label."
     },
     {
       "step": 2,
-      "agent": "Patch test on a hidden section",
-      "instruction": "Flip the cushion or find the back of the frame. Dab a drop of the Dawn + 3% peroxide solution from step 5 and blot with a white cloth after two minutes. If the fabric holds its color, proceed. If dye transfers, stop — upholstery dye is delicate and home peroxide can lighten it permanently. Skip to step 9."
+      "agent": "Blot Immediately — Outside In",
+      "instruction": "Press a thick stack of white paper towels straight down on the coffee. Lift, move to a dry section, press again. Work from outside the spill inward. Do NOT rub — rubbing pushes coffee into cushion batting where home chemistry can't reach."
     },
     {
       "step": 3,
-      "agent": "The tannin rule: no alkaline cleaners",
-      "instruction": "Coffee is a tannin stain, just like wine, tea, and berries. Alkaline products — ammonia, baking soda, OxiClean, most \"all-purpose\" upholstery sprays — lock tannin into the fiber permanently and turn a light brown ring into a dark brown one you can't reverse. Use only cold water, Dawn dish soap, 3% peroxide, and white vinegar."
+      "agent": "Cold Damp Cloth — Never Pour",
+      "instruction": "Dampen a clean white cloth with COLD water. Press firmly on the spot, lift, rotate to a clean section, press again. Cold ONLY — heat sets coffee tannin. Don't pour — over-wetting drives coffee into the batting. Weighted dry towel 3–5 min after to extract."
     },
     {
       "step": 4,
-      "agent": "Blot immediately — never rub, never saturate",
-      "instruction": "Press a stack of clean white paper towels or a folded white cloth straight down on the spill. Lift, move to a dry section, press again. Work from outside in. Keep going until the cloth stops picking up brown. The critical difference from carpet: foam absorbs liquid fast and hides it — more blotting and less pouring is always right on upholstery."
+      "agent": "Dawn + Cold Water on a Damp Cloth",
+      "instruction": "Mix 1 tablespoon Dawn in 2 cups cold water. Dampen a white cloth, press on the spot 5 minutes. Blot with a clean damp cloth. Do NOT use OxiClean or baking soda — alkaline cleaners turn coffee tannin DARKER and lock it in."
     },
     {
       "step": 5,
-      "agent": "Damp-cloth chemistry — never pour on upholstery",
-      "instruction": "Mix one tablespoon of Dawn with one cup of 3% hydrogen peroxide in a bowl. Dip a white cloth, WRING NEARLY DRY, and press onto the stain — outside edges inward. Let it sit 5–10 minutes, then blot with a clean damp cloth. Wet the cloth, never the cushion. Repeat the cycle 2–3 times until the stain lifts.",
-      "safetyNote": "Never mix peroxide with ammonia or bleach. On dark or patterned upholstery, skip this step unless the patch test was clean."
+      "agent": "Hidden Patch Test Before Peroxide",
+      "instruction": "Find a hidden upholstery area (under a cushion, inside a seam). Dab 3% peroxide on a white cloth, press 2 min. Color transfer = skip peroxide. Clean = proceed."
     },
     {
       "step": 6,
-      "agent": "White vinegar rinse",
-      "instruction": "Mix one tablespoon of white vinegar with one cup of cold water. Dip a white cloth, wring nearly dry, dab the area. Vinegar neutralizes peroxide residue and keeps any residual tannin in its lighter form as it dries. Blot dry with a fresh clean cloth."
+      "agent": "3% Peroxide on a Damp Cloth",
+      "instruction": "Dab 3% drugstore peroxide on a damp cloth, press on the spot 5–10 minutes, blot. Repeat once if needed. Don't mix with ammonia, bleach, or OxiClean."
     },
     {
       "step": 7,
-      "agent": "Fan-dry — never a hair dryer",
-      "instruction": "Blot until no more moisture transfers to a dry cloth. Point a room fan at the area for 4–8 hours. Good airflow prevents mildew inside the cushion and prevents water rings from forming at the damp-zone edges. Don't use heat (dryer, hair dryer) — heat sets tannin and can also shrink upholstery fabric."
+      "agent": "White Vinegar + Cool Water Rinse",
+      "instruction": "1 tablespoon white vinegar + 1 cup cool water. Dab on damp cloth, press 5 min. Neutralizes peroxide and keeps any residual tannin in its lighter (acid) form. Blot."
     },
     {
       "step": 8,
-      "agent": "Daylight inspect — repeat if shadow remains",
-      "instruction": "Inspect under natural light. Coffee rings often look gone when wet and reappear as a pale tan halo when dry. If you see one, repeat steps 5–7 once more. Two rounds is the home ceiling. If a shadow persists, escalate."
+      "agent": "Weighted Dry Towels + Fan Overnight",
+      "instruction": "Stack heavy dry towels on the spot, weight with a book, 30 min. Replace with fresh towels, repeat 2–3 times. Finish with fresh towels overnight. Fan-dry in the morning. Aggressive extraction prevents the brown ring from coming back as the cushion dries."
     },
     {
       "step": 9,
-      "agent": "Escalate to a professional upholstery cleaner",
-      "instruction": "If care code is S or X, the patch test failed, or the stain survived two home rounds, call a pro. Tell them: \"Coffee on [W/WS/unknown] upholstery, treated with Dawn + 3% peroxide, vinegar rinse. No alkaline products used, damp-cloth only — no pouring.\" That handoff lets them go straight to a tannin formula + 6% peroxide + low-moisture extraction."
+      "agent": "Pro for Persistent Ring or Code S/X",
+      "instruction": "Take to a pro upholstery cleaner if: code is S-only / X, ring returns after a full cycle, OxiClean was applied before you got there, or pad saturation is suspected. Tell them: \"Coffee on [W / W-S / S / X] upholstery, [black / with milk], age [hours], home-treated with cold + Dawn + 3% peroxide + vinegar + extraction. No hot water, no OxiClean, no alkaline.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Code tag check. S / X = pro. Zip-off cover = wash cover cold.",
+      "2. Blot outside-in; no rubbing.",
+      "3. Cold damp-cloth blot + weighted extract; never pour.",
+      "4. Dawn + cold water damp cloth, 5 min.",
+      "5. Hidden peroxide test.",
+      "6. 3% peroxide damp cloth, 5–10 min, 1–2 cycles.",
+      "7. White vinegar rinse.",
+      "8. Weighted dry towels × 2–3 + overnight + fan.",
+      "9. Persistent ring / S-code = pro low-moisture extraction."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Heavy dry towels + weight",
+      "Fan"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if upholstery code is S or X, if ring keeps returning after one full home cycle, or if alkaline cleaner was used previously.",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "CODE CHECK FIRST — S/X = pro",
+      "NEVER hot water — sets tannin",
+      "NEVER pour — batting saturation is permanent",
+      "NEVER OxiClean / alkaline — darkens tannin",
+      "NEVER mix peroxide with bleach / ammonia",
+      "Aggressive extraction matters more than aggressive chemistry"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No over-wetting — causes water rings and backing damage",
-      "No chlorine bleach on colored fabric",
-      "Always check care code (W, S, WS, X) before treating"
+      "Never hot water on coffee",
+      "Never alkaline cleaners on tannin (OxiClean / baking soda / ammonia)",
+      "Never pour solution on upholstery",
+      "Never rub — drives coffee into batting",
+      "Never mix peroxide with bleach / ammonia"
     ],
     "fiberSensitivities": [
-      "Mixed fiber blends common — treat for the most sensitive fiber present",
-      "Cushion foam absorbs moisture — avoid saturation",
-      "Test in hidden area before treating visible sections"
+      "W / W-S upholstery: full protocol",
+      "S-only: solvent cleaning, water-based coffee mismatched — pro",
+      "X: vacuum only — pro",
+      "Leather: separate card",
+      "Silk / velvet: pro"
     ]
   },
+  "materialWarnings": [
+    "Code check before water — S/X is pro",
+    "Alkaline cleaners darken tannin permanently",
+    "Batting saturation is the upholstery ceiling",
+    "Aggressive extraction > aggressive chemistry"
+  ],
   "escalation": {
-    "when": "If coffee stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is coffee on upholstery, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional upholstery cleaning service"
+    "when": "S-only / X code, persistent ring after one full home cycle, alkaline cleaner used previously, cushion batting saturation suspected.",
+    "whatToTell": "\"Coffee on [W / W-S / S / X] upholstery, [black / with milk], age [hours], home-treated with cold + Dawn + 3% peroxide + vinegar + weighted extraction. No hot water, no OxiClean, no alkaline. [Residual ring / batting saturation suspected].\"",
+    "specialistType": "professional upholstery cleaner with low-moisture extraction"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Upholstery code — W / W-S / S / X?",
+      "Black coffee or with milk/cream?",
+      "Cushion cover zip-off and washable?",
+      "How long ago?",
+      "Has anyone applied OxiClean / baking soda?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Coffee with cream adds protein-before-heat ordering. Cushion-cover-washable is the easy path. Pre-applied OxiClean = tannin likely darkened permanently."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

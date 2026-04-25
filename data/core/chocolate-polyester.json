@@ -1,80 +1,233 @@
 {
   "id": "chocolate-polyester",
   "title": "Chocolate on Polyester",
-  "stainFamily": "tannin",
+  "stainType": "combination",
+  "stainFamily": "combination",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Chocolate is a combination stain: cocoa tannins (polyphenols), cocoa butter (fat), milk protein (in milk chocolate), and sugar. On polyester, the fat component creates a hydrophobic barrier while the tannin bonds to fiber beneath. Heat melts the cocoa butter and drives the tannin deeper into the fiber matrix.",
-  "whyThisWorks": "Treatment order is critical on polyester: first address the fat with a surfactant or POG to break through the cocoa butter barrier, then treat the tannin with an acidic spotter or oxidizer. Cold water prevents the protein component from setting (in milk chocolate). The sugar rinses away with water once the fat barrier is broken.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–40 minutes; ordered protocol (oil-strip first)",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "chocolate",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "combination",
+      "fat",
+      "protein",
+      "tannin",
+      "polyester",
+      "oleophilic",
+      "no-alkaline",
+      "no-hot-water"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Chocolate is four-part: cocoa butter (fat) + milk casein (protein) + cocoa tannin (pigment) + sugar. On polyester, the OLEOPHILIC fiber holds onto cocoa butter tenaciously — Dawn / NSD step is mandatory before peroxide can reach the pigment. Standard protocol: scrape solid bulk → cold water sugar flush → Dawn (oil-strip) → enzyme pretreat WARM (not hot) for casein → 3% peroxide for tannin → vinegar rinse → cool wash. Tannin rules apply (no alkaline alone — locks tannin). Polyester rules apply (no hot water / hot dryer until clear — yellows fiber over time AND sets residual chocolate).",
+  "whyThisWorks": "Polyester tolerates the standard chocolate combo protocol. Order matters: oil-strip BEFORE oxidizer (oil blocks peroxide on oleophilic polyester especially). Warm enzyme handles casein without setting it. Vinegar keeps residual tannin light. Cool wash + air-dry preserves polyester long-term.",
+  "defaultAssumption": "Polyester garment / blend / kid clothes / workout wear. Fresh chocolate = quick win. Hot-dried chocolate = permanent. Dark chocolate harder than milk; white chocolate is mostly fat (no tannin) — slightly easier.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Ice + Lift Solid Bulk",
+      "technique": "Ice bag firm + flat-edge lift",
+      "equipment": "Ice in bag, plastic card",
+      "dwellTime": "5 min ice + 30 sec lift",
+      "instruction": "Ice bag on chocolate 5 min. Lift solid pieces with flat edge of plastic card."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Cold Water Sugar Flush",
+      "technique": "Flush from back",
+      "equipment": "Cold water, sink",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Flip inside out. Cold water through the BACK 1–2 min. Sugar flushes out fast; cocoa butter stays."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush — Oil-Strip",
+      "technique": "Mandatory before peroxide on polyester",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Dawn into the spot with soft toothbrush 5–10 min. Polyester is oleophilic — Dawn step is mandatory or the cocoa butter blocks peroxide from reaching tannin."
+    },
+    {
+      "step": 4,
+      "side": "wet-minimal",
+      "agent": "Enzyme Pretreat WARM (Not Hot)",
+      "technique": "Digest casein",
+      "equipment": "OxiClean Versatile / Biz in WARM (<100°F) water",
+      "dwellTime": "15 minutes",
+      "instruction": "Dissolve enzyme in WARM water — bath temp, not hot. Damp cloth on spot 15 min. Digests casein."
+    },
+    {
+      "step": 5,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ on Damp Cloth",
+      "technique": "Oxidize residual tannin",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Hidden-area test on dyed polyester. 3% peroxide damp cloth 5–10 min. Don't mix with bleach / ammonia / alkaline."
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "White Vinegar Rinse",
+      "technique": "Neutralize + acid-side",
+      "equipment": "1 tbsp vinegar + 1 cup cool water",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar rinse 5 min. Neutralizes peroxide + keeps tannin light."
+    },
+    {
+      "step": 7,
+      "side": "wet",
+      "agent": "Cool Wash + Air-Dry",
+      "technique": "Launder + inspect before dryer",
+      "equipment": "Washing machine",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cool wash per care label. Air-dry. Inspect BEFORE dryer — heat permanently sets residual chocolate on polyester."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Ice + flat-edge lift solid bulk.",
+      "2. Cold water back-flush — sugar.",
+      "3. Dawn + soft toothbrush — oil-strip BEFORE peroxide.",
+      "4. Enzyme pretreat WARM (not hot), 15 min.",
+      "5. 3% H₂O₂ damp cloth, 5–10 min.",
+      "6. White vinegar rinse.",
+      "7. Cool wash + air-dry."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "OxiClean Versatile / Biz pretreat",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Cold water"
     ],
-    "temperature": "cold",
+    "temperature": "cold for tannin / sugar flush; warm (<100°F) for enzyme; never hot wash",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color"
+      "NEVER hot water — sets tannin + casein + yellows polyester",
+      "NEVER alkaline cleaners alone on tannin — darkens permanently",
+      "NEVER chlorine bleach on polyester — yellows fiber",
+      "NEVER hot dryer until fully clear — heat permanent",
+      "Oil-strip BEFORE peroxide — polyester is oleophilic"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Polyester + Chocolate — Order Matters",
+      "instruction": "Chocolate is four-part (cocoa butter + milk casein + tannin + sugar). On polyester, two rules: (1) ORDER matters — Dawn (oil-strip) BEFORE peroxide, because polyester loves oil and oil blocks peroxide from reaching tannin, and (2) NO hot water / hot dryer until fully clear — heat sets residual chocolate AND yellows polyester."
+    },
+    {
+      "step": 2,
+      "agent": "Ice + Lift Solid Bulk",
+      "instruction": "Ice bag on chocolate 5 minutes to firm cocoa butter. Lift solid pieces with the flat edge of a plastic card."
+    },
+    {
+      "step": 3,
+      "agent": "Cold Back-Flush — Sugar Out First",
+      "instruction": "Flip the garment inside out. Run cold tap water through the BACK of the stain for 1–2 minutes. Sugar flushes out fast; cocoa butter stays for the next step."
+    },
+    {
+      "step": 4,
+      "agent": "Dawn + Soft Toothbrush — MANDATORY Oil-Strip",
+      "instruction": "Mix 1 tablespoon Dawn in 2 cups cool water. Work into the spot with a soft toothbrush 5–10 minutes. Polyester GRABS oil — without this step, peroxide can't reach the tannin underneath. Cool rinse."
+    },
+    {
+      "step": 5,
+      "agent": "Cream / Milk Chocolate? Warm (Not Hot) Enzyme",
+      "instruction": "Dissolve OxiClean Versatile or Biz in WARM water — bath temperature, under 100°F. NOT hot. Damp cloth 15 min. Digests milk casein. Skip for dark chocolate without milk."
+    },
+    {
+      "step": 6,
+      "agent": "3% Peroxide for Residual Tannin",
+      "instruction": "3% drugstore peroxide damp cloth 5–10 min. Hidden-area test on dyed polyester first. Skip if test fails."
+    },
+    {
+      "step": 7,
+      "agent": "White Vinegar Rinse",
+      "instruction": "1 tbsp vinegar + 1 cup cool water, 5 min. Neutralizes peroxide + keeps any residual tannin light."
+    },
+    {
+      "step": 8,
+      "agent": "Cool Wash, AIR-DRY Until Clear",
+      "instruction": "Cool wash per care label. Air-dry. Inspect BEFORE dryer. Residual chocolate + dryer heat = permanent on polyester."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. ORDER matters — oil-strip before peroxide.",
+      "2. Ice + flat-edge lift solid bulk.",
+      "3. Cold back-flush, 1–2 min.",
+      "4. Dawn + soft toothbrush — MANDATORY oil-strip — 5–10 min.",
+      "5. Cream-chocolate: warm enzyme pretreat (<100°F), 15 min.",
+      "6. 3% peroxide damp cloth, 5–10 min, hidden test on dyed.",
+      "7. White vinegar rinse, 5 min.",
+      "8. Cool wash + AIR-DRY. Inspect before dryer."
     ],
     "products": [
+      "Ice + plastic card",
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "OxiClean Versatile or Biz (cream-chocolate)",
+      "3% Hydrogen peroxide",
+      "White vinegar"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if hot dryer was used on residual chocolate, if alkaline was applied (tannin darkened), or if oil-strip step was skipped (polyester locks oil).",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NEVER hot water — sets all three components",
+      "NEVER alkaline cleaners on tannin — darkens",
+      "NEVER chlorine bleach on polyester — yellows fiber",
+      "NEVER hot dryer until fully clear",
+      "ORDER matters — oil-strip BEFORE peroxide on polyester",
+      "NEVER mix peroxide with bleach / ammonia"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on chocolate",
+      "Never alkaline alone on tannin",
+      "Never chlorine bleach on polyester",
+      "Never hot dryer on residual chocolate",
+      "Never skip oil-strip step on polyester",
+      "Never mix peroxide with bleach / ammonia"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — Dawn step mandatory",
+      "Polyester yellows under heat over time",
+      "Polyester tolerates 3% peroxide on dyed (with hidden test)",
+      "Heat sets residual chocolate permanently"
     ]
   },
+  "materialWarnings": [
+    "Order matters — oil-strip before peroxide",
+    "No alkaline cleaners — darkens tannin",
+    "No hot water / hot dryer — sets chocolate + yellows polyester",
+    "Polyester loves oil — Dawn is mandatory"
+  ],
   "escalation": {
-    "when": "If chocolate stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is chocolate on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Hot dryer used on residual chocolate, alkaline applied, oil-strip skipped, set-in stain weeks old.",
+    "whatToTell": "\"Chocolate on polyester, [milk / dark / white], age [hours / days], home-treated in order: ice-lift + cold back-flush + Dawn oil-strip + enzyme + 3% peroxide + vinegar + cool wash. No hot water / no alkaline. [Residual / hot-dried].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "Milk / dark / white chocolate?",
+      "How long ago — fresh / overnight / older?",
+      "Has it been through a hot wash or dryer?",
+      "White or dyed polyester?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Dark chocolate has more tannin — harder. White chocolate mostly cocoa butter — easier. Pre-applied OxiClean = tannin darkened permanently. Pre-applied hot dryer = permanent."
   },
-  "difficulty": 4,
-  "timeEstimate": "15-25 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

@@ -1,123 +1,193 @@
 {
   "id": "red-wine-polyester",
   "title": "Red Wine on Polyester",
+  "stainType": "tannin",
   "stainFamily": "tannin",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Red wine contains anthocyanins (red-purple pigments), condensed tannins, and tartaric acid. Anthocyanins bond to polyester immediately through hydrogen bonding and color intensifies with pH changes — alkaline conditions turn wine stains blue-purple and more difficult to remove. The tannin component oxidizes and darkens over time, cross-linking with the fiber polymer.",
-  "whyThisWorks": "The acidic tannin spotter maintains correct pH (acidic) which keeps anthocyanins in their most removable red form on polyester. The oxidizer then breaks the chromophore bonds in the anthocyanin molecule. Avoiding alkaline products is critical — ammonia, baking soda, and alkaline detergents permanently darken wine stains by shifting the anthocyanin into its blue form.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 4,
+  "timeEstimate": "20–40 minutes; cold + Dawn + peroxide standard tannin protocol",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "red-wine",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "low",
+    "tags": [
+      "tannin",
+      "anthocyanin",
+      "polyester",
+      "no-alkaline",
+      "no-hot-water"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Red wine = anthocyanin pigments + condensed tannins. On polyester, tannins bond through hydrogen bonding. Polyester tolerates standard tannin chemistry (cold + Dawn + 3% peroxide) well — it doesn't shrink, doesn't denature at moderate temperatures, doesn't bleed dye easily. The only polyester-specific caution: heat over time yellows polyester, so hot dryer + residual wine = permanent yellow shadow on the fiber even after the wine itself is gone. Tannin rules apply: NO alkaline cleaners (OxiClean, baking soda) — turn anthocyanin permanently darker.",
+  "whyThisWorks": "Cold water + Dawn lifts fresh anthocyanin. 3% peroxide oxidizes residual tannin. Vinegar keeps anthocyanin on its lighter (red, acid-side) form rather than drifting to dark blue-purple. Polyester is the easy fiber for red wine — tolerates all the standard tannin tools. Heat is the only invariant.",
+  "defaultAssumption": "Polyester garment / blend / workout wear / bedding. Fresh red wine = quick win. Hot-dried = permanent. Polyester at home is one of the more forgiving wine surfaces.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "wet",
+      "agent": "Cold Water Back-Flush",
+      "technique": "Flush from reverse",
+      "equipment": "Cold water, sink",
+      "dwellTime": "1–2 minutes",
+      "instruction": "Flip inside out. Run cold water through the BACK of the stain. Cold pulls fresh anthocyanin out the way it came in."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Lift fresh wine",
+      "equipment": "Dawn + cold water, soft toothbrush",
+      "dwellTime": "5 minutes",
+      "instruction": "Work Dawn into the spot with a soft toothbrush. Cool rinse. Skip OxiClean — alkaline darkens tannin."
+    },
+    {
+      "step": 3,
+      "side": "wet-minimal",
+      "agent": "3% H₂O₂ on Damp Cloth",
+      "technique": "Oxidize residual tannin",
+      "equipment": "3% H₂O₂ on damp cloth",
+      "dwellTime": "5–10 minutes",
+      "instruction": "Hidden-area test if dyed polyester. 3% peroxide damp cloth 5–10 min. Don't mix with bleach / ammonia / alkaline."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "White Vinegar Rinse",
+      "technique": "Neutralize + acid-side anthocyanin",
+      "equipment": "1 tbsp vinegar + 1 cup cool water",
+      "dwellTime": "5 minutes",
+      "instruction": "Vinegar rinse 5 min. Neutralizes peroxide + keeps anthocyanin on the red (light) side rather than drifting blue-purple."
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Cool Wash + Air-Dry",
+      "technique": "Launder + inspect before dryer",
+      "equipment": "Washing machine",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cool wash per care label — NOT hot. Air-dry. Inspect BEFORE dryer — heat permanently sets residual wine on polyester."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply Tannin Formula (acidic tannin spotter) and tamp gently. Work from edge to center",
-      "2. Apply H2O2 6% (professional oxidizer) to break down color-causing bonds. Monitor every 5 min",
-      "3. Flush with NSD (Neutral Synthetic Detergent) and leveling agent to remove broken-down tannin",
-      "4. Apply Acetic Acid 28% (diluted 1:10) as neutralizing rinse",
-      "5. Blot dry. Air dry completely"
+      "1. Cold water back-flush.",
+      "2. Dawn + soft toothbrush.",
+      "3. 3% H₂O₂ damp cloth, 5–10 min.",
+      "4. White vinegar + water rinse.",
+      "5. Cool wash + air-dry. Inspect before dryer."
     ],
     "products": [
-      "Tannin Formula",
-      "H2O2 6%",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Dawn / NSD",
+      "3% Hydrogen peroxide",
+      "White vinegar",
+      "Cold water"
     ],
-    "temperature": "cold",
+    "temperature": "cold throughout — heat sets tannin + yellows polyester",
     "warnings": [
-      "NEVER use ammonia or alkaline products on tannin stains — permanently darkens the color"
+      "NEVER hot water — sets anthocyanin",
+      "NEVER alkaline cleaners — darkens permanently",
+      "NEVER chlorine bleach on polyester — yellows fiber",
+      "NEVER hot dryer until fully clear — heat permanent",
+      "Hidden-area peroxide test on dyed polyester"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Polyester rule: surface-bound, no high heat",
-      "instruction": "Polyester doesn't absorb liquid the way cotton does — red wine sits on the fiber surface and bonds weakly through hydrogen bonds. Good news: the stain is shallower than it looks. Bad news: polyester is heat-sensitive and dye-oleophilic. Never use hot water (melts/shrinks the fiber), never tumble-dry until the stain is fully gone (heat fuses the pigment into the fiber)."
+      "agent": "Polyester Is the Easy Fiber for Red Wine",
+      "instruction": "Among the fibers, polyester is one of the easier surfaces for red wine. The standard tannin protocol (cold water + Dawn + 3% peroxide + vinegar + cool wash) works directly. Two rules: (1) NO alkaline cleaners (OxiClean, baking soda) — they turn wine tannin DARKER permanently, and (2) NO hot water / hot dryer until the stain is fully gone — heat sets wine + yellows polyester."
     },
     {
       "step": 2,
-      "agent": "Patch test on a hidden seam",
-      "instruction": "On an inside seam, dab a drop of Dawn + 3% peroxide. Blot with a white cloth after 60 seconds. Most polyester is colorfast but some cheap fast-fashion dye lifts under peroxide. If dye transfers, stop and go to step 8."
+      "agent": "Cold Back-Flush First",
+      "instruction": "Flip the garment inside out. Run cold tap water through the BACK of the stain for 1–2 minutes. The most effective fast move."
     },
     {
       "step": 3,
-      "agent": "Tannin rule: no alkaline cleaners",
-      "instruction": "Red wine is a tannin — anthocyanins plus polyphenols. Alkaline products (ammonia, baking soda, OxiClean on untreated tannin, most all-purpose sprays) permanently lock and darken the color. Use cold water, Dawn, 3% peroxide, and white vinegar only. Salt is neutral — doesn't help or hurt."
+      "agent": "Dawn + Cold Water + Soft Toothbrush",
+      "instruction": "Work a drop of Dawn into the wet stain with a soft toothbrush 5 minutes. Cool rinse."
     },
     {
       "step": 4,
-      "agent": "Cold back-flush",
-      "instruction": "Turn the fabric inside out and run cold water through the BACK of the stain for 30–60 seconds. Polyester's low absorbency means a surface stain often rinses nearly out just with cold water pressure from the back. Skip warm or hot — polyester is heat-sensitive and warm water drives tannin into the fiber."
+      "agent": "3% Peroxide for Residual",
+      "instruction": "Dab 3% drugstore peroxide on the spot 5–10 minutes. Hidden-area test on dyed polyester first. Don't mix with bleach / ammonia / OxiClean."
     },
     {
       "step": 5,
-      "agent": "Dawn + 3% hydrogen peroxide solution",
-      "instruction": "Mix one tablespoon of Dawn dish soap with one cup of 3% hydrogen peroxide in a bowl. Dip a white cloth, wring nearly dry, dab the stain — outside edges inward. Let sit 5–10 minutes, blot with a clean damp cloth. Polyester stains usually lift faster than cotton because the stain is on the fiber surface rather than absorbed deep. 1–2 cycles usually enough.",
-      "safetyNote": "Never mix peroxide with ammonia or bleach — gas. On brightly colored polyester, the step-2 patch test is your safeguard."
+      "agent": "White Vinegar Rinse",
+      "instruction": "1 tablespoon white vinegar + 1 cup cool water. 5 minutes. Neutralizes peroxide + keeps any residual anthocyanin in its lighter (red) form."
     },
     {
       "step": 6,
-      "agent": "White vinegar rinse",
-      "instruction": "Mix one tablespoon of white vinegar with one cup of cold water. Dab onto the treated spot with a clean white cloth. Neutralizes peroxide residue and keeps residual tannin in its lighter form. Blot dry with a fresh cloth."
-    },
-    {
-      "step": 7,
-      "agent": "Cold wash + air dry",
-      "instruction": "Launder on cold with your normal detergent. Hang or lay flat to air-dry. DO NOT tumble-dry until you've inspected in daylight. Dryer heat on residual wine locks the pigment into polyester permanently — polyester fuses pigment at temperatures lower than cotton's tolerance."
-    },
-    {
-      "step": 8,
-      "agent": "Escalate to a dry cleaner",
-      "instruction": "If the stain has been through a hot dryer, sat for days, or survived two home rounds, take it in. Tell them: \"Red wine on polyester, age [fresh / days / heat-set], treated with Dawn + 3% peroxide + vinegar rinse. No alkaline products, no hot water.\" Pros use commercial tannin formula + 6% peroxide; polyester is one of the easier pro surfaces to treat because the stain is surface-bound."
+      "agent": "Cool Wash, AIR-DRY Until Clear",
+      "instruction": "Wash on COOL — NOT hot. Air-dry. Inspect BEFORE dryer. ANY residual wine + dryer heat = permanent on polyester. Once you can confirm fully clear in daylight, normal dryer is fine."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Blot immediately with a clean white cloth to absorb as much liquid as possible — never rub",
-      "2. Mix 1 tbsp Dawn dish soap with 1 cup hydrogen peroxide 3%. Apply to stain",
-      "3. Blot with clean white cloth. Repeat until color fades",
-      "4. Rinse with cold water to remove all cleaning solution",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. NO alkaline cleaners. NO hot water until fully clear.",
+      "2. Cold water back-flush.",
+      "3. Dawn + soft toothbrush, 5 min.",
+      "4. 3% peroxide damp cloth, 5–10 min, hidden test on dyed.",
+      "5. White vinegar + water rinse, 5 min.",
+      "6. Cool wash + AIR-DRY. Inspect before dryer."
     ],
     "products": [
       "Dawn dish soap",
-      "hydrogen peroxide 3%"
+      "3% Hydrogen peroxide",
+      "White vinegar"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 applications, or if you see any color change in the fabric. Take to a professional dry cleaner",
+    "whenToStop": "Stop if hot dryer was used on residual wine (likely permanent), if alkaline was applied (tannin darkened), or if the polyester is delicate-finish (chiffon-style).",
     "warnings": [
-      "NEVER use baking soda, ammonia, or alkaline cleaners on tannin stains — they permanently darken the color",
-      "Avoid heat until stain is fully removed"
+      "NEVER hot water on red wine",
+      "NEVER alkaline cleaners on tannin",
+      "NEVER chlorine bleach on polyester — yellows fiber",
+      "NEVER hot dryer until fully clear",
+      "NEVER mix peroxide with bleach / ammonia"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on red wine",
+      "Never OxiClean / baking soda / ammonia on tannin",
+      "Never chlorine bleach on polyester",
+      "Never hot dryer on residual wine",
+      "Never mix peroxide with bleach / ammonia"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester tolerates 3% peroxide on dyed (with hidden test)",
+      "Polyester yellows under heat over time",
+      "Polyester doesn't shrink at moderate temperatures",
+      "Delicate polyester (chiffon-style) needs gentler handling"
     ]
   },
+  "materialWarnings": [
+    "No alkaline cleaners — locks tannin",
+    "No hot water — sets wine + yellows polyester",
+    "Air-dry until fully clear",
+    "Polyester is the forgiving fiber for red wine"
+  ],
   "escalation": {
-    "when": "If red wine stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is red wine on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
+    "when": "Hot dryer used on residual wine, alkaline cleaner applied, set-in stain weeks old with heat, or delicate polyester.",
+    "whatToTell": "\"Red wine on polyester, age [hours / days], home-treated with cold + Dawn + 3% peroxide + vinegar + cool wash. No hot water / no alkaline. [Residual / hot-dried].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Has it been exposed to any alkaline products (baking soda, ammonia)?"
+      "How long ago — fresh / overnight / older?",
+      "Has it been through a hot wash or dryer?",
+      "White or dyed polyester?",
+      "Standard polyester or delicate (chiffon-style)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Polyester is one of the easier fibers for red wine. Hot-dried = permanent. Pre-applied OxiClean = tannin darkened permanently. Delicate polyester = closer to silk protocol."
   },
-  "difficulty": 5,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

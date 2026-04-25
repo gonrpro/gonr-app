@@ -1,80 +1,171 @@
 {
   "id": "grease-polyester",
   "title": "Grease on Polyester",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Cooking grease is a thick triglyceride that coats polyester surfaces and resists water — water alone cannot break it down. Fresh grease sits on fiber surfaces; aged grease penetrates and polymerizes into a hard, oxidized film. The oleophilic nature of many fibers (especially polyester) means grease bonds preferentially to synthetic materials.",
-  "whyThisWorks": "A degreaser (POG, or a dish-soap degreaser for home use) dissolves the grease on contact from polyester. The principle is 'like dissolves like' — a non-polar degreaser dissolves non-polar oils. Surfactant then emulsifies remaining micro-droplets so water can rinse them away. Applying degreaser BEFORE water is critical — water causes the oil to emulsify and spread deeper.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–40 minutes; powder preload + Dawn",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "grease",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "oil",
+      "grease",
+      "polyester",
+      "oleophilic",
+      "no-hot-water",
+      "powder-preload"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Grease is thick fat (kitchen / cooking grease, drippings). Polyester is OLEOPHILIC — fiber that grabs and holds oil tenaciously through hydrophobic interactions. The oleophilic affinity makes grease on polyester one of the harder oil + fiber combos at home: Dawn alone often plateaus, requires powder preload to wick bulk oil up before chemistry. Heat sets oil into polyester permanently AND yellows the fiber over time. The ordering rule: powder preload → Dawn → cool wash → air-dry until fully clear, then dryer. NO hot water until clear. NO chlorine bleach on polyester (yellows fiber).",
+  "whyThisWorks": "Cornstarch / baking soda preload pulls bulk grease up via capillary action — works even better on oleophilic polyester than on cotton because surface oil hasn't fully penetrated the fiber yet. Dawn emulsifies remaining grease (Dawn is engineered exactly for this). Cool wash + air-dry until verifiably clear prevents heat from setting residual grease into polyester permanently.",
+  "defaultAssumption": "Polyester garment / blend / kitchen apron / restaurant uniform. Fresh grease = quick win. Hot-dried = permanent. The oleophilic affinity makes timing matter more on polyester than on natural fibers.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Powder Preload",
+      "technique": "Wick bulk grease via capillary",
+      "equipment": "Cornstarch, baking soda, or fuller's earth",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Cover grease with cornstarch / baking soda. 20–30 min absorb. Brush off softly. Repeat with fresh layer if first saturated."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Emulsify residual grease",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Generous Dawn + cool water. Work into spot with soft toothbrush 10 min — polyester is oleophilic, requires longer dwell. Cool rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Repeat Dawn If Oily Feel Remains",
+      "technique": "Second pass for oleophilic affinity",
+      "equipment": "Dawn + cool water",
+      "dwellTime": "10 minutes",
+      "instruction": "If the spot still feels oily after first Dawn pass (test with clean fingertip), repeat. Polyester often needs 2 passes."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Wash + Air-Dry",
+      "technique": "Launder cool, air-dry until clear",
+      "equipment": "Washing machine",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cool wash per care label. Air-dry. Inspect BEFORE dryer. Residual grease + dryer heat = permanent on polyester."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Powder preload 20–30 min. Brush off.",
+      "2. Generous Dawn + soft toothbrush, 10 min cool.",
+      "3. Repeat Dawn pass if oily feel remains.",
+      "4. Cool wash + air-dry. Inspect before dryer."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda / fuller's earth",
+      "Dawn / NSD",
+      "Cool water"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout — heat sets grease + yellows polyester",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "NEVER hot water — sets grease into oleophilic polyester permanently",
+      "NEVER chlorine bleach on polyester — yellows fiber",
+      "NEVER hot dryer until fully clear",
+      "Polyester is oleophilic — expect 2 Dawn passes",
+      "Powder preload cuts work in half"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Polyester Loves Oil — Powder First",
+      "instruction": "Polyester is oleophilic — it grabs and holds oil tenaciously. Dawn alone often plateaus on polyester grease. Powder preload (cornstarch, baking soda, or fuller's earth) wicks bulk oil up via capillary action BEFORE Dawn touches it — that's the unlock that makes polyester grease tractable at home. Two rules: NO hot water (sets grease into polyester permanently) and NO chlorine bleach (yellows polyester)."
+    },
+    {
+      "step": 2,
+      "agent": "Cornstarch or Baking Soda Preload — 20 to 30 Minutes",
+      "instruction": "Cover the grease spot with a thick layer of cornstarch, baking soda, or plain baby powder. 20 to 30 minutes — fuller's earth (Amazon, ~$10) works even better if you have it. Soft brush off. If the powder visibly saturated, repeat with fresh layer. This step alone often removes most of the stain."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn — Generous, Work It In",
+      "instruction": "Apply a generous amount of Dawn dish soap directly to the spot. Work it in with a soft toothbrush for 10 minutes — polyester needs longer dwell than cotton because of the oleophilic affinity. Cool rinse. Test the spot with a clean fingertip — if it still feels oily, repeat."
+    },
+    {
+      "step": 4,
+      "agent": "Cool Wash, AIR-DRY Until Fully Clear",
+      "instruction": "Cool wash per care label — NOT hot. Air-dry. Inspect BEFORE the dryer. Residual grease + dryer heat = permanent on polyester. Once fully clear in daylight, normal dryer is fine going forward."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Cool water only. NO hot water until fully clear.",
+      "2. Cornstarch / baking soda preload 20–30 min. Brush off.",
+      "3. Generous Dawn + soft toothbrush, 10 min cool.",
+      "4. Repeat Dawn pass if oily feel remains.",
+      "5. Cool wash + AIR-DRY. Inspect before dryer."
     ],
     "products": [
-      "Dawn dish soap",
-      "baking soda"
+      "Cornstarch / baking soda / fuller's earth",
+      "Dawn dish soap (generous)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if hot dryer was used on residual grease (likely permanent on polyester) or if grease has been there for weeks with multiple wash cycles.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER hot water — sets grease + yellows polyester",
+      "NEVER chlorine bleach on polyester — yellows fiber",
+      "NEVER hot dryer until fully clear — heat permanent",
+      "Polyester loves oil — expect 2 Dawn passes",
+      "Powder preload cuts work in half"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on grease + polyester",
+      "Never chlorine bleach on polyester",
+      "Never hot dryer until fully clear",
+      "Never skip powder preload on polyester grease — Dawn alone often plateaus"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs oil tenaciously",
+      "Polyester yellows under heat over time",
+      "Polyester requires 2 Dawn passes typically",
+      "Heat sets grease into polyester permanently"
     ]
   },
+  "materialWarnings": [
+    "Powder preload is the unlock on polyester grease",
+    "No hot water / hot dryer — heat sets grease + yellows fiber",
+    "Expect 2 Dawn passes",
+    "Polyester loves oil — timing matters"
+  ],
   "escalation": {
-    "when": "If grease stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is grease on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot dryer used on residual grease, weeks-old grease through multiple wash cycles, or 3 home rounds plateau.",
+    "whatToTell": "\"Grease on polyester, age [hours / days / weeks], home-treated with cornstarch preload + Dawn × 2 + cool wash. No hot water / no chlorine bleach used. [Residual oily feel / yellow shadow].\"",
+    "specialistType": "professional dry cleaner with solvent spotting"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Type of grease — kitchen / cooking pan / engine / motor?",
+      "How long ago — fresh / dried in / weeks?",
+      "Has it been through a hot wash or dryer?",
+      "Standard polyester or delicate (chiffon-style)?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Motor oil = different protocol (see motor-oil-* cards). Kitchen grease (this card) is the most common variant. Hot-dried grease = often permanent on polyester due to oleophilic affinity + heat. Pre-applied chlorine bleach = polyester yellowed permanently."
   },
-  "difficulty": 3,
-  "timeEstimate": "15-30 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }

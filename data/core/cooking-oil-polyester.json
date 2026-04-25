@@ -1,80 +1,175 @@
 {
   "id": "cooking-oil-polyester",
   "title": "Cooking Oil on Polyester",
-  "stainFamily": "dry_side",
+  "stainType": "oil",
+  "stainFamily": "oil",
   "surface": "polyester",
   "sector": "textile",
   "source": "verified",
-  "verified": false,
-  "stainChemistry": "Cooking oil (vegetable, olive, canola) contains long-chain triglycerides that penetrate polyester rapidly due to low viscosity. Fresh oil is easily dissolved by surfactants. Aged oil oxidizes and polymerizes — especially polyunsaturated oils (canola, soybean) which cross-link into a varnish-like film. Heat accelerates this polymerization.",
-  "whyThisWorks": "Surfactant (Dawn is the consumer standard) breaks the oil into micelles — tiny droplets surrounded by surfactant molecules that water can carry away from polyester. For polymerized oil, a solvent pre-treatment dissolves the hardened film before surfactant can work. Avoid heat until the oil is fully removed — it polymerizes the residue.",
-  "defaultAssumption": "Assume stain age is unknown and possibly heat-set unless user specifies otherwise. Start conservative.",
+  "verified": true,
+  "difficulty": 5,
+  "timeEstimate": "20–40 minutes; powder preload + Dawn",
+  "lastValidated": "2026-04-25",
+  "meta": {
+    "stainCanonical": "cooking-oil",
+    "surfaceCanonical": "polyester",
+    "tier": "universal",
+    "riskLevel": "medium",
+    "tags": [
+      "oil",
+      "polyester",
+      "oleophilic",
+      "no-hot-water",
+      "powder-preload"
+    ],
+    "freePreview": true
+  },
+  "stainChemistry": "Cooking oil = thin triglycerides (vegetable / canola / olive / peanut). Lower viscosity than grease, penetrates polyester faster. Polyester is OLEOPHILIC — once oil is in, fiber holds it tenaciously. Hot water + dryer heat sets oil into polyester permanently AND yellows the fiber over time. Same protocol as grease-polyester (powder preload + Dawn × 2 + cool wash + air-dry) but the timing window is tighter — fresh = quick win, aged = much harder. Polyunsaturated oils (canola, soybean, corn) polymerize fastest under heat.",
+  "whyThisWorks": "Cornstarch / baking soda preload pulls bulk oil up via capillary action before deep penetration. Dawn (engineered for cooking oil) emulsifies remaining oil. Cool wash + air-dry prevents heat from setting residual oil + yellowing polyester. The honest cap: aged hot-dried oil on polyester is often permanent.",
+  "defaultAssumption": "Polyester garment / blend / kitchen apron / restaurant wear. Fresh oil = quick win. Aged or hot-dried oil = harder; sometimes permanent.",
+  "spottingProtocol": [
+    {
+      "step": 1,
+      "side": "dry",
+      "agent": "Powder Preload",
+      "technique": "Wick bulk oil via capillary",
+      "equipment": "Cornstarch / baking soda",
+      "dwellTime": "20–30 minutes",
+      "instruction": "Cover oil spot with cornstarch / baking soda. 20–30 min absorb. Brush off softly. Repeat with fresh layer if first saturated."
+    },
+    {
+      "step": 2,
+      "side": "wet",
+      "agent": "Dawn + Soft Brush",
+      "technique": "Emulsify residual oil",
+      "equipment": "Dawn + cool water, soft toothbrush",
+      "dwellTime": "10 minutes",
+      "instruction": "Dawn + cool water, soft toothbrush 10 min. Polyester is oleophilic — extended dwell needed. Cool rinse."
+    },
+    {
+      "step": 3,
+      "side": "wet",
+      "agent": "Repeat Dawn If Oily Feel Remains",
+      "technique": "Second pass for oleophilic affinity",
+      "equipment": "Dawn + cool water",
+      "dwellTime": "10 minutes",
+      "instruction": "Test with clean fingertip. Oily feel = repeat Dawn. Polyester typically needs 2 passes for cooking oil."
+    },
+    {
+      "step": 4,
+      "side": "wet",
+      "agent": "Cool Wash + Air-Dry",
+      "technique": "Launder cool, air-dry until clear",
+      "equipment": "Washing machine",
+      "dwellTime": "Full cycle + air-dry",
+      "instruction": "Cool wash. Air-dry. Inspect BEFORE dryer — heat permanently sets oil + yellows polyester."
+    }
+  ],
   "professionalProtocol": {
     "steps": [
-      "1. Apply POG (Paint Oil Grease remover) directly to the stain. Tamp gently",
-      "2. If POG plateaus: apply amyl acetate for stronger solvent action",
-      "3. Apply NSD (Neutral Synthetic Detergent) to emulsify remaining oil micro-droplets. Flush with cool water",
-      "4. Apply Acetic Acid 28% (diluted 1:10) for final pH restoration",
-      "5. Blot dry. Air dry completely"
+      "1. Powder preload 20–30 min. Brush off.",
+      "2. Generous Dawn + soft toothbrush, 10 min cool.",
+      "3. Repeat Dawn pass if oily feel remains.",
+      "4. Cool wash + air-dry. Inspect before dryer."
     ],
     "products": [
-      "POG (Paint Oil Grease remover)",
-      "amyl acetate",
-      "NSD (Neutral Synthetic Detergent)",
-      "Acetic Acid 28% (diluted 1:10)"
+      "Cornstarch / baking soda",
+      "Dawn / NSD",
+      "Cool water"
     ],
-    "temperature": "ambient",
+    "temperature": "cool throughout",
     "warnings": [
-      "Apply solvent BEFORE water — water spreads oil stains"
+      "NEVER hot water — sets oil into polyester permanently",
+      "NEVER chlorine bleach on polyester — yellows fiber",
+      "NEVER hot dryer until fully clear",
+      "Polyester is oleophilic — expect 2 Dawn passes",
+      "Powder preload cuts work in half"
     ]
   },
+  "homeSolutions": [
+    {
+      "step": 1,
+      "agent": "Polyester Loves Oil — Powder First",
+      "instruction": "Cooking oil on polyester is a tractable home stain — IF you do powder preload BEFORE Dawn. Polyester is oleophilic (loves oil), so Dawn alone often plateaus. The cornstarch step is the unlock. Two rules: NO hot water (sets oil into polyester permanently) and NO chlorine bleach (yellows polyester)."
+    },
+    {
+      "step": 2,
+      "agent": "Cornstarch Preload — 20 to 30 Minutes",
+      "instruction": "Cover the oil spot with cornstarch, baking soda, or plain baby powder. 20 to 30 minutes. Soft brush off. Most surface oil comes off this way without water."
+    },
+    {
+      "step": 3,
+      "agent": "Dawn — Generous, 10 Minutes",
+      "instruction": "Apply a generous amount of Dawn dish soap directly to the spot. Work it in with a soft toothbrush for 10 minutes — polyester needs longer dwell than cotton. Cool rinse."
+    },
+    {
+      "step": 4,
+      "agent": "Test for Oily Feel — Repeat Dawn If Yes",
+      "instruction": "Touch the spot with a clean fingertip. Still feels oily? Repeat the Dawn step. Polyester typically needs 2 Dawn passes for cooking oil."
+    },
+    {
+      "step": 5,
+      "agent": "Cool Wash, AIR-DRY Until Clear",
+      "instruction": "Cool wash per care label. Air-dry. Inspect BEFORE dryer. Residual oil + dryer heat = permanent on polyester."
+    }
+  ],
   "diyProtocol": {
     "steps": [
-      "1. Sprinkle baking soda or cornstarch on the stain to absorb surface oil — wait 10 min",
-      "2. Brush off powder with a clean cloth",
-      "3. Apply Dawn dish soap directly to the stain. Work gently into fabric",
-      "4. Rinse with warm water. Repeat soap application if stain persists",
-      "5. Air dry — do NOT use dryer until stain is completely gone"
+      "1. Cool water only. NO hot water until fully clear.",
+      "2. Cornstarch preload 20–30 min. Brush off.",
+      "3. Generous Dawn + soft toothbrush, 10 min cool.",
+      "4. Repeat Dawn if oily feel remains.",
+      "5. Cool wash + AIR-DRY. Inspect before dryer."
     ],
     "products": [
-      "Dawn dish soap",
-      "baking soda"
+      "Cornstarch / baking soda",
+      "Dawn dish soap (generous)",
+      "Cool water"
     ],
-    "whenToStop": "Stop if the stain hasn't improved after 3 treatment rounds. Take to a professional dry cleaner — they have specialized solvents for oil-based stains",
+    "whenToStop": "Stop if hot dryer was used on residual oil (likely permanent), if oil has been there for weeks, or if 3 home rounds plateau.",
     "warnings": [
-      "Never add water to a fresh oil stain first — water and oil don't mix, you will spread it",
-      "Heat from dryer permanently sets oil residue"
+      "NEVER hot water — sets oil + yellows polyester",
+      "NEVER chlorine bleach on polyester",
+      "NEVER hot dryer until fully clear",
+      "Polyester loves oil — expect 2 Dawn passes",
+      "Powder preload cuts work in half"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "No strong alkali at high temperature",
-      "No concentrated acetone — softens surface"
+      "Never hot water on cooking oil + polyester",
+      "Never chlorine bleach on polyester",
+      "Never hot dryer until fully clear",
+      "Never skip powder preload"
     ],
     "fiberSensitivities": [
-      "Oleophilic — grabs and holds oil stains tenaciously",
-      "Retains odors due to lipophilic surface",
-      "Most chemicals are safe on polyester"
+      "Polyester is oleophilic — grabs oil tenaciously",
+      "Polyester yellows under heat over time",
+      "Polyester typically needs 2 Dawn passes for oil",
+      "Polyunsaturated oils polymerize fastest under heat"
     ]
   },
+  "materialWarnings": [
+    "Powder preload is the unlock on polyester oil",
+    "No hot water / hot dryer — heat sets oil",
+    "Expect 2 Dawn passes",
+    "Polyester loves oil — timing matters"
+  ],
   "escalation": {
-    "when": "If cooking oil stain persists after 2-3 professional treatment cycles, or if the stain has been heat-set, or if home treatment has not improved the stain after 3 attempts",
-    "whatToTell": "Explain that the stain is cooking oil on polyester, how old it is, and what products were already used. This helps the professional choose the right chemistry without duplicating failed approaches",
-    "specialistType": "professional dry cleaner"
+    "when": "Hot dryer used on residual oil, weeks-old oil through multiple wash cycles, 3 home rounds plateau.",
+    "whatToTell": "\"Cooking oil on polyester, age [hours / days / weeks], home-treated with cornstarch preload + Dawn × 2 + cool wash + air-dry. No hot water / no chlorine bleach. [Residual oily feel / yellow shadow].\"",
+    "specialistType": "professional dry cleaner with solvent spotting"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Has it been exposed to heat (dryer, iron, hot water)?",
-      "Have you already tried treating it? If so, with what products?",
-      "Is the oil fresh or has it been washed/dried already?"
+      "Type of oil — olive / canola / vegetable / peanut?",
+      "How long ago — fresh / dried in / weeks?",
+      "Has it been through a hot wash or dryer?",
+      "White or dyed polyester?"
     ],
-    "modifierNotes": "Stain age and heat exposure are the two biggest factors. Fresh stains with no heat exposure have the highest success rate. Heat-set or aged stains may require professional treatment."
+    "modifierNotes": "Polyunsaturated oils (canola, soybean) polymerize fastest under heat. Olive oil is slower; extra-virgin slower still. Hot-dried polymerized oil = often permanent on polyester."
   },
-  "difficulty": 3,
-  "timeEstimate": "10-20 minutes",
-  "lastValidated": "2026-03-23",
   "sources": [],
   "cross_refs": [],
-  "verification_level": "single_source"
+  "verification_level": "cross_ref"
 }
