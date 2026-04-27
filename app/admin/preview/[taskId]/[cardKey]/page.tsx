@@ -7,7 +7,7 @@ import { readFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import path from 'node:path'
 import Link from 'next/link'
-import { cookies } from 'next/headers'
+import { cookies, headers } from 'next/headers'
 import { createServerClient } from '@supabase/ssr'
 import ResultCard from '@/components/solve/ResultCard'
 import type { ProtocolCard, Tier } from '@/lib/types'
@@ -21,6 +21,13 @@ const FOUNDER_EMAILS = [
 ]
 
 const LAB_OUTPUT_ROOT = path.resolve(process.env.LAB_OUTPUT_ROOT ?? path.join(process.env.HOME ?? '/Users/tyler', 'lab/output'))
+
+async function isLocalDevPreviewBypass() {
+  if (process.env.NODE_ENV !== 'development') return false
+  const h = await headers()
+  const host = h.get('host') ?? ''
+  return host.startsWith('localhost:') || host.startsWith('127.0.0.1:')
+}
 
 async function getSessionEmail(): Promise<string | null> {
   try {
@@ -79,8 +86,9 @@ export default async function DraftPreviewPage({
 }: {
   params: Promise<{ taskId: string; cardKey: string }>
 }) {
-  const email = await getSessionEmail()
-  if (!email || !FOUNDER_EMAILS.includes(email)) {
+  const localDevBypass = await isLocalDevPreviewBypass()
+  const email = localDevBypass ? 'local-dev-founder-preview@gonr.local' : await getSessionEmail()
+  if (!localDevBypass && (!email || !FOUNDER_EMAILS.includes(email))) {
     return <div className="p-6 text-sm text-red-700">Founder access required.</div>
   }
 
@@ -112,6 +120,9 @@ export default async function DraftPreviewPage({
       <div className="mb-4 rounded border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
         This is a Lab draft rendered from <code>~/lab/output</code>. It is not live, imported, or published.
         Use this page for founder preview only; promotion/import remains a separate gate.
+        {localDevBypass ? (
+          <span className="mt-1 block font-medium">Local dev founder bypass active for localhost preview only.</span>
+        ) : null}
       </div>
 
       <section className="mb-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
