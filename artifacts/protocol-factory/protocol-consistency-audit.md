@@ -1,34 +1,122 @@
 # Protocol Consistency Audit
 
-Generated: 2026-04-27T03:20:27.152Z
+Generated: 2026-04-27T03:23:39.756Z
 
-Files: 359
-Flagged: 289
+Card files scanned: 332
+Flagged: 264
+Skipped non-card JSON: 27
+
+## Flag category breakdown
+
+| Category | Count |
+|---|---:|
+| step_safety_note_missing | 1433 |
+| sources_missing | 262 |
+| title_mismatch | 78 |
+| safety_matrix_missing | 30 |
+| step_title_missing | 6 |
+| instruction_missing | 6 |
+
+## Title normalization preview (no writes)
+
+| Combo | Source | Current | Canonical preview |
+|---|---|---|---|
+| angora-shrinkage-cashmere | core | Cashmere Shrinkage on Cashmere | Angora Shrinkage on Cashmere |
+| berry-carpet | core | Berry Stain on Carpet | Berry on Carpet |
+| berry-cotton | core | Berry Stain on Cotton | Berry on Cotton |
+| blood-dried-cotton | core-draft | Blood Dried on Cotton | Dried Blood on Cotton |
+| blood-dried-cotton | lab-draft | Blood Dried on Cotton | Dried Blood on Cotton |
+| body-oil-white-cotton | core | Body Oil on White Cotton | Body Oil White on Cotton |
+| coffee-black-carpet | core | Black Coffee on Carpet | Coffee Black on Carpet |
+| coffee-black-cotton | core | Black Coffee on Cotton | Coffee Black on Cotton |
+| coffee-black-silk | core | Black Coffee on Silk | Coffee Black on Silk |
+| coffee-black-wool | core | Black Coffee on Wool | Coffee Black on Wool |
+| deodorant-white-cotton | core | Deodorant on White Cotton | Deodorant White on Cotton |
+| dye-transfer-white-cotton | core | Dye Transfer on White Cotton | Dye Transfer on White on Cotton |
+| food-coloring-white-cotton | core | Food Coloring on White Cotton | Food Coloring White on Cotton |
+| gabardine-shine-wool-gabardine | core | Gabardine Shine on Wool | Gabardine Shine Wool on Gabardine |
+| gentian-violet-cotton | core | Gentian Violet on Cotton — Sequential Bleaching Protocol | Gentian Violet on Cotton |
+| gentian-violet-polyester | core | Gentian Violet on Polyester — Thermoplastic-Aware Bleaching | Gentian Violet on Polyester |
+| grass-cotton | core | Grass Stain on Cotton | Grass on Cotton |
+| grass-silk | core | Grass Stains on Silk | Grass on Silk |
+| grease-cooking-oil-cotton | core | Cooking Grease / Oil on Cotton | Grease Cooking Oil on Cotton |
+| grease-cooking-oil-polyester | core | Cooking Grease / Oil on Polyester | Grease Cooking Oil on Polyester |
+| gum-carpet | core | Chewing Gum on Carpet | Gum on Carpet |
+| gum-cotton | core | Chewing Gum on Cotton | Gum on Cotton |
+| gum-upholstery | core | Chewing Gum on Upholstery | Gum on Upholstery |
+| ink-ballpoint-cotton | core | Ballpoint Ink on Cotton | Ink Ballpoint on Cotton |
+| ink-ballpoint-leather | core | Ballpoint Ink on Leather | Ink Ballpoint on Leather |
+| ink-ballpoint-polyester | core | Ballpoint Ink on Polyester | Ink Ballpoint on Polyester |
+| ink-ballpoint-silk | core | Ink-Ballpoint on Silk | Ink Ballpoint on Silk |
+| ink-ballpoint-upholstery | core | Ballpoint Ink on Upholstery | Ink Ballpoint on Upholstery |
+| ink-load-transfer-cotton | core | Ink Load Transfer on Cotton — Machine Contamination Protocol | Ink Load Transfer on Cotton |
+| ink-load-transfer-polyester | core | Ink Load Transfer on Polyester — Machine Cleaning & Solvent Treatment | Ink Load Transfer on Polyester |
+| ink-permanent-marker-carpet | core | Permanent Marker on Carpet | Ink Permanent Marker on Carpet |
+| ink-permanent-marker-cotton | core | Permanent Marker on Cotton | Ink Permanent Marker on Cotton |
+| ink-permanent-marker-polyester | core | Permanent Marker on Polyester | Ink Permanent Marker on Polyester |
+| ink-permanent-marker-upholstery | core | Permanent Marker on Upholstery | Ink Permanent Marker on Upholstery |
+| ink-polyester | core | Ink on Polyester (Generic) | Ink on Polyester |
+| iodine-cotton | core | Iodine on Cotton — Sodium Thiosulfate Reduction | Iodine on Cotton |
+| iodine-linen | core | Iodine on Linen — Deep Penetration Reduction | Iodine on Linen |
+| juice-cotton | core | Fruit Juice on Cotton | Juice on Cotton |
+| juice-upholstery | core | Fruit Juice on Upholstery | Juice on Upholstery |
+| makeup-polyester | core | Foundation and Makeup on Polyester | Makeup on Polyester |
+| makeup-silk | core | Foundation / Makeup on Silk | Makeup on Silk |
+| motor-oil-alcantara | core | Motor Oil on Alcantara / Microsuede | Motor Oil on Alcantara |
+| motor-oil-car-upholstery | core | Motor Oil on Car Upholstery | Motor Oil Car on Upholstery |
+| mustard-silk | core | Mustard on Silk — Glycerin + Minimal Detergent | Mustard on Silk |
+| mystery-stain-carpet | core | Unknown Stain on Carpet | Mystery Stain on Carpet |
+| mystery-stain-cotton | core | Unknown Stain on Cotton | Mystery Stain on Cotton |
+| oxidized-oil-cotton | core | Oxidized Oil on Cotton — Alkaline Saponification & Polymer Breaking | Oxidized Oil on Cotton |
+| oxidized-oil-polyester | core | Oxidized Oil on Polyester — Sequential Solvent & Alkaline Treatment | Oxidized Oil on Polyester |
+| pad-thai-carpet | core | Pad Thai / Noodle Sauce on Carpet | Pad Thai on Carpet |
+| pad-thai-cotton | core | Pad Thai / Noodle Sauce on Cotton | Pad Thai on Cotton |
+| pad-thai-polyester | core | Pad Thai / Noodle Sauce on Polyester | Pad Thai on Polyester |
+| paint-acrylic-cotton | core | Acrylic Craft Paint on Cotton | Paint Acrylic on Cotton |
+| paint-latex-carpet | core | Latex Paint on Carpet | Paint Latex on Carpet |
+| paint-latex-cotton | core | Latex Paint on Cotton | Paint Latex on Cotton |
+| paint-oil-cotton | core | Oil-Based Paint on Cotton | Paint Oil on Cotton |
+| polyurethane-transfer-cotton | core | Polyurethane Transfer on Cotton — Solvent-Based Polymer Extraction | Polyurethane Transfer on Cotton |
+| polyurethane-transfer-polyester | core | Polyurethane Transfer on Polyester — Dual-Solvent Extraction | Polyurethane Transfer on Polyester |
+| rayon-sizing-discoloration-rayon | core | Rayon Sizing on Rayon | Rayon Sizing Discoloration on Rayon |
+| rust-silk | core | Rust Stains on Silk | Rust on Silk |
+| rust-white-cotton | core | Rust on White Cotton | Rust White on Cotton |
+| self-tanner-cotton | core | Self-Tanner on Cotton | Self Tanner on Cotton |
+| self-tanner-polyester | core | Self-Tanner on Polyester | Self Tanner on Polyester |
+| sunscreen-white-cotton | core | Sunscreen on White Cotton | Sunscreen White on Cotton |
+| sweat-stain-silk | core | Sweat / Yellowing on Silk | Sweat Stain on Silk |
+| sweat-stain-wool | core | Sweat / Yellowing on Wool | Sweat Stain on Wool |
+| sweat-white-cotton | core | Sweat on White Cotton | Sweat White on Cotton |
+| tea-black-cotton | core | Black Tea on Cotton | Tea Black on Cotton |
+| tea-black-silk | core | Black Tea on Silk — Cold Rinse, Mild Oxidation, Gentle Treatment | Tea Black on Silk |
+| tea-black-wool | core | Black Tea on Wool | Tea Black on Wool |
+| turmeric-cotton | core | Turmeric / Curry on Cotton | Turmeric on Cotton |
+| urine-carpet | core | Human Urine on Carpet | Urine on Carpet |
+| urine-silk | core | Urine on Silk — Cool Water + NSD, Acid Rinse | Urine on Silk |
+| urine-upholstery | core | Human Urine on Upholstery | Urine on Upholstery |
+| urine-wool | core | Human Urine on Wool | Urine on Wool |
+| vomit-car-upholstery | core | Vomit on Car Upholstery | Vomit Car on Upholstery |
+| water-stain-carpet | core | Water Ring on Carpet | Water Stain on Carpet |
+| water-stain-upholstery | core | Water Ring on Upholstery | Water Stain on Upholstery |
+| yellowing-white-cotton | core | Yellowing on White Cotton | Yellowing White on Cotton |
+
+## Per-card audit
 
 | Combo | Source | Title | Flags |
 |---|---|---|---|
 | adhesive-carpet | core | Adhesive on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | adhesive-cotton | core | Adhesive on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | adhesive-polyester | core | Adhesive on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| al-wilson-product-system.manifest | lab-draft | A.L. Wilson Chemical Co. — Complete Product System | title mismatch: expected "Al Wilson Product on System.manifest"<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | angora-shrinkage-angora | core | Angora Shrinkage on Angora | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | angora-shrinkage-cashmere | core | Cashmere Shrinkage on Cashmere | title mismatch: expected "Angora Shrinkage on Cashmere"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
-| apollo-enriched-companies | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
-| apollo-people-enriched | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | argyrol-cotton | core | Argyrol on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
-| audit-full262 | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
-| audit-golden42 | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
-| audit-prose-times-2026-04-17 | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | baby-formula-carpet | core | Baby Formula on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | baby-formula-cotton | core | Baby Formula on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | barbecue-sauce-carpet | core | Barbecue Sauce on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
 | barbecue-sauce-cotton | core | Barbecue Sauce on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
-| baseline-counts | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
-| baseline-scan | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | beer-carpet | core | Beer on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | beer-cotton | core | Beer on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | beer-upholstery | core | Beer on Upholstery | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| before-after-table | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | berry-carpet | core | Berry Stain on Carpet | title mismatch: expected "Berry on Carpet"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | berry-cotton | core | Berry Stain on Cotton | title mismatch: expected "Berry on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | berry-linen | core | Berry on Linen | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
@@ -42,10 +130,10 @@ Flagged: 289
 | blood-denim | core | Blood on Denim | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | blood-denim | core-draft | Blood on Denim | clean |
 | blood-denim | lab-draft | Blood on Denim | clean |
-| blood-dried-carpet | core | Dried Blood on Carpet | title mismatch: expected "Blood Dried on Carpet"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
-| blood-dried-cotton | core | Dried Blood on Cotton | title mismatch: expected "Blood Dried on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| blood-dried-cotton | core-draft | Blood Dried on Cotton | clean |
-| blood-dried-cotton | lab-draft | Blood Dried on Cotton | clean |
+| blood-dried-carpet | core | Dried Blood on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
+| blood-dried-cotton | core | Dried Blood on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
+| blood-dried-cotton | core-draft | Blood Dried on Cotton | title mismatch: expected "Dried Blood on Cotton" |
+| blood-dried-cotton | lab-draft | Blood Dried on Cotton | title mismatch: expected "Dried Blood on Cotton" |
 | blood-leather | core | Blood on Leather | clean |
 | blood-leather | core-draft | Blood on Leather | clean |
 | blood-leather | lab-draft | Blood on Leather | clean |
@@ -60,7 +148,6 @@ Flagged: 289
 | blood-silk | core | Blood on Silk | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | blood-upholstery | core | Blood on Upholstery | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
 | blood-wool | core | Blood on Wool | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
-| blood-wool-retry | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | body-oil-cotton | core | Body Oil on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
 | body-oil-polyester | core | Body Oil on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | body-oil-white-cotton | core | Body Oil on White Cotton | title mismatch: expected "Body Oil White on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
@@ -89,12 +176,12 @@ Flagged: 289
 | coffee-cotton | lab-draft | Coffee on Cotton | clean |
 | coffee-cotton | lab-draft | Coffee on Cotton | clean |
 | coffee-cotton | lab-draft | Coffee on Cotton | clean |
-| coffee-cream-carpet | core | Coffee with Cream on Carpet | title mismatch: expected "Coffee Cream on Carpet"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
-| coffee-cream-cotton | core | Coffee with Cream on Cotton | title mismatch: expected "Coffee Cream on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
-| coffee-cream-polyester | core | Coffee with Cream on Polyester | title mismatch: expected "Coffee Cream on Polyester"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| coffee-cream-silk | core | Coffee with Cream on Silk | title mismatch: expected "Coffee Cream on Silk"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| coffee-cream-upholstery | core | Coffee with Cream on Upholstery | title mismatch: expected "Coffee Cream on Upholstery"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
-| coffee-cream-wool | core | Coffee with Cream on Wool | title mismatch: expected "Coffee Cream on Wool"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
+| coffee-cream-carpet | core | Coffee with Cream on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
+| coffee-cream-cotton | core | Coffee with Cream on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
+| coffee-cream-polyester | core | Coffee with Cream on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
+| coffee-cream-silk | core | Coffee with Cream on Silk | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
+| coffee-cream-upholstery | core | Coffee with Cream on Upholstery | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
+| coffee-cream-wool | core | Coffee with Cream on Wool | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | coffee-leather | core | Coffee on Leather | clean |
 | coffee-leather | core-draft | Coffee on Leather | clean |
 | coffee-leather | lab-draft | Coffee on Leather | clean |
@@ -112,10 +199,9 @@ Flagged: 289
 | coffee-polyester | core | Coffee on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | coffee-silk | core | Coffee on Silk | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |
 | coffee-upholstery | core | Coffee on Upholstery | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
-| coffee-with-cream-cotton | core | Coffee with Cream on Cotton | title mismatch: expected "Coffee With Cream on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>home step 1: missing step title/agent<br>home step 1: missing instruction<br>home step 2: missing step title/agent<br>home step 2: missing instruction<br>home step 3: missing step title/agent<br>home step 3: missing instruction<br>missing safetyMatrix.neverDo<br>missing sources |
-| coffee-with-cream-linen | core | Coffee with Cream on Linen | title mismatch: expected "Coffee With Cream on Linen"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
+| coffee-with-cream-cotton | core | Coffee with Cream on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>home step 1: missing step title/agent<br>home step 1: missing instruction<br>home step 2: missing step title/agent<br>home step 2: missing instruction<br>home step 3: missing step title/agent<br>home step 3: missing instruction<br>missing safetyMatrix.neverDo<br>missing sources |
+| coffee-with-cream-linen | core | Coffee with Cream on Linen | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | coffee-wool | core | Coffee on Wool | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| conversion-preview-2026-04-17 | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | cooking-oil-carpet | core | Cooking Oil on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |
 | cooking-oil-cotton | core | Cooking Oil on Cotton | clean |
 | cooking-oil-cotton | core-draft | Cooking Oil on Cotton | clean |
@@ -127,27 +213,23 @@ Flagged: 289
 | cooking-oil-leather | core | Cooking Oil on Leather | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |
 | cooking-oil-linen | core | Cooking Oil on Linen | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | cooking-oil-polyester | core | Cooking Oil on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |
-| corpus-manifest | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | cosmetic-oil-cotton | core | Cosmetic Oil on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | cosmetic-oil-polyester | core | Cosmetic Oil on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |
 | cosmetic-oil-silk | core | Cosmetic Oil on Silk | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
-| current-titles | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | curry-carpet | core | Curry on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | curry-cotton | core | Curry on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | curry-polyester | core | Curry on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
 | deodorant-cotton | core | Deodorant on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |
 | deodorant-polyester | core | Deodorant on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 7: missing safety note<br>pro step 8: missing safety note<br>pro step 9: missing safety note<br>missing sources |
 | deodorant-white-cotton | core | Deodorant on White Cotton | title mismatch: expected "Deodorant White on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| dwell-audit-2026-04-17 | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | dye-transfer-cotton | core | Dye Transfer on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | dye-transfer-linen | core | Dye Transfer on Linen | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | dye-transfer-polyester | core | Dye Transfer on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| dye-transfer-white-cotton | core | Dye Transfer on White Cotton | title mismatch: expected "Dye Transfer White on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
+| dye-transfer-white-cotton | core | Dye Transfer on White Cotton | title mismatch: expected "Dye Transfer on White on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | egg-carpet | core | Egg on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | egg-clothing | core | Egg on Clothing | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | egg-cotton | core | Egg on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | egg-polyester | core | Egg on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
-| eval-results | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | food-coloring-carpet | core | Food Coloring on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | food-coloring-cotton | core | Food Coloring on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | food-coloring-white-cotton | core | Food Coloring on White Cotton | title mismatch: expected "Food Coloring White on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
@@ -155,8 +237,6 @@ Flagged: 289
 | gentian-violet-cotton | core | Gentian Violet on Cotton — Sequential Bleaching Protocol | title mismatch: expected "Gentian Violet on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | gentian-violet-polyester | core | Gentian Violet on Polyester — Thermoplastic-Aware Bleaching | title mismatch: expected "Gentian Violet on Polyester"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | glue-polyester | core | Glue on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| gonr-spotting-reference-master.manifest | lab-draft | GONR Spotting Reference Master (DEMOTED — AI synthesis) | title mismatch: expected "Gonr Spotting Reference on Master.manifest"<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
-| gonr-test-results-2026-04-08 | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | grass-cotton | core | Grass Stain on Cotton | title mismatch: expected "Grass on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | grass-denim | core | Grass on Denim | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | grass-polyester | core | Grass on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
@@ -207,8 +287,6 @@ Flagged: 289
 | makeup-cotton | core | Makeup on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | makeup-polyester | core | Foundation and Makeup on Polyester | title mismatch: expected "Makeup on Polyester"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | makeup-silk | core | Foundation / Makeup on Silk | title mismatch: expected "Makeup on Silk"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| manifest-schema | lab-draft | Stain Brain Source Manifest Entry | title mismatch: expected "Manifest on Schema"<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
-| mapping | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | mascara-cotton | core | Mascara on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |
 | mascara-polyester | core | Mascara on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
 | mildew-carpet | core | Mildew on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
@@ -264,11 +342,8 @@ Flagged: 289
 | pet-urine-mattress | core | Pet Urine on Mattress | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | pet-urine-upholstery | core | Pet Urine on Upholstery | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | pet-urine-wool-carpet | core | Pet Urine on Wool Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| phase1-mass-preview | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
-| phase1-sample-output | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | polyurethane-transfer-cotton | core | Polyurethane Transfer on Cotton — Solvent-Based Polymer Extraction | title mismatch: expected "Polyurethane Transfer on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | polyurethane-transfer-polyester | core | Polyurethane Transfer on Polyester — Dual-Solvent Extraction | title mismatch: expected "Polyurethane Transfer on Polyester"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
-| premium-p0-quarantine-backup-2026-04-25t11-52-33-850z | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | rayon-sizing-discoloration-rayon | core | Rayon Sizing on Rayon | title mismatch: expected "Rayon Sizing Discoloration on Rayon"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | red-wine-carpet | core | Red Wine on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | red-wine-cotton | core | Red Wine on Cotton | clean |
@@ -296,17 +371,13 @@ Flagged: 289
 | rust-white-cotton | core | Rust on White Cotton | title mismatch: expected "Rust White on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | salsa-carpet | core | Salsa on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
 | salsa-cotton | core | Salsa on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
-| sanity-test-2 | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
-| scan-results | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | self-tanner-cotton | core | Self-Tanner on Cotton | title mismatch: expected "Self Tanner on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | self-tanner-polyester | core | Self-Tanner on Polyester | title mismatch: expected "Self Tanner on Polyester"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>pro step 8: missing safety note<br>missing sources |
 | silk-luster-loss-silk | core | Silk Luster Loss on Silk | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
-| skills-lock | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | smoke-carpet | core | Smoke on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>pro step 8: missing safety note<br>missing sources |
 | smoke-cotton | core | Smoke on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | smoke-polyester | core | Smoke on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>pro step 8: missing safety note<br>missing sources |
 | smoke-upholstery | core | Smoke on Upholstery | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>pro step 8: missing safety note<br>missing sources |
-| source-manifest.example | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | soy-sauce-cotton | core | Soy Sauce on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | soy-sauce-linen | core | Soy Sauce on Linen | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | soy-sauce-polyester | core | Soy Sauce on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |
@@ -337,7 +408,6 @@ Flagged: 289
 | tea-polyester | lab-draft | Tea on Polyester | clean |
 | tea-polyester | lab-draft | Tea on Polyester | clean |
 | tea-silk | core | Tea on Silk | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |
-| tier1-quarantine-backup-2026-04-25t11-50-22-951z | lab-draft |  | missing title<br>id/card key mismatch<br>missing spottingProtocol<br>missing homeSolutions<br>missing chemistry/why-this-works text<br>missing safetyMatrix.neverDo<br>missing meta.tags badges<br>missing sources |
 | tomato-sauce-carpet | core | Tomato Sauce on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | tomato-sauce-cotton | core | Tomato Sauce on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | tomato-sauce-linen | core | Tomato Sauce on Linen | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
@@ -366,3 +436,35 @@ Flagged: 289
 | yellowing-linen | core | Yellowing on Linen | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>pro step 8: missing safety note<br>missing sources |
 | yellowing-polyester | core | Yellowing on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>pro step 8: missing safety note<br>missing sources |
 | yellowing-white-cotton | core | Yellowing on White Cotton | title mismatch: expected "Yellowing White on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
+
+## Skipped non-card JSON
+
+| Source | File | Reason |
+|---|---|---|
+| lab-draft | ~/lab/output/TASK-005/eval-results.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-029/audit-full262.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-029/audit-golden42.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-029/blood-wool-retry.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-029/sanity-test-2.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-037/conversion-preview-2026-04-17.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-037/dwell-audit-2026-04-17.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-038/audit-prose-times-2026-04-17.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-038/phase1-mass-preview.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-038/phase1-sample-output.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-075-pro-quality-incident-audit/premium-p0-quarantine-backup-2026-04-25T11-52-33-850Z.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-075-pro-quality-incident-audit/scan-results.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-075-pro-quality-incident-audit/tier1-quarantine-backup-2026-04-25T11-50-22-951Z.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-077-pro-quality-validator/baseline-scan.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-082-source-extractor-expanded/baseline-counts.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-082-source-extractor-expanded/before-after-table.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-092-source-corpus-intake-framework/al-wilson-product-system.manifest.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-092-source-corpus-intake-framework/gonr-spotting-reference-master.manifest.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-092-source-corpus-intake-framework/manifest-schema.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-092-source-corpus-intake-framework/source-manifest.example.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-093-corpus-audit-under-framework/corpus-manifest.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-EVAL-FIX/gonr-test-results-2026-04-08.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-title-sweep-2026-04-24/current-titles.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-title-sweep-2026-04-24/mapping.json | not card-shaped json |
+| lab-draft | ~/lab/output/gonr-leads/apollo-enriched-companies.json | not card-shaped json |
+| lab-draft | ~/lab/output/gonr-leads/apollo-people-enriched.json | not card-shaped json |
+| lab-draft | ~/lab/output/hyperframes-spike/skills-lock.json | not card-shaped json |
