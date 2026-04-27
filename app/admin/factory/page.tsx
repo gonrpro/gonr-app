@@ -183,6 +183,7 @@ export default async function ProtocolFactoryPage() {
       <header className="mb-4">
         <h1 className="text-2xl font-semibold text-slate-900">Protocol Factory Console</h1>
         <p className="text-sm text-slate-600">One local review surface for planned combos, live core cards, drafts, Lab output, badges, and consistency issues.</p>
+        <Link href="/admin/coverage" className="text-xs text-blue-700 hover:underline">Open coverage matrix →</Link>
         {localDev ? <p className="mt-1 text-xs font-medium text-amber-800">Local dev founder bypass active. Production remains auth-gated.</p> : null}
       </header>
 
