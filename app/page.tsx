@@ -119,6 +119,11 @@ export default function LandingPage() {
     }
 
     document.documentElement.classList.add('dark')
+    document.body.classList.add('gonr-landing-active')
+
+    return () => {
+      document.body.classList.remove('gonr-landing-active')
+    }
   }, [setLang])
 
   const theme = {
