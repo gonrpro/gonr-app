@@ -168,9 +168,9 @@ export default function LandingPage() {
   }
 
   return (
-    <main className={`relative -mx-4 -mb-4 -mt-2 min-h-[calc(100dvh-178px)] overflow-y-auto ${theme.page}`}>
+    <main className={`relative -mx-4 -mb-4 -mt-2 min-h-screen ${theme.page}`}>
       <div className={`pointer-events-none absolute inset-0 ${theme.orb}`} />
-      <div className="relative mx-auto flex min-h-[calc(100dvh-178px)] w-full max-w-[1120px] flex-col px-5 py-5 sm:px-8 lg:px-10 lg:py-8">
+      <div className="relative mx-auto flex min-h-screen w-full max-w-[1120px] flex-col px-5 py-5 sm:px-8 lg:px-10 lg:py-8">
         <header className="mb-3 flex shrink-0 items-center justify-between lg:mb-8">
           <div className="flex items-end gap-2">
             <div className="select-none" style={{ fontSize: '28px', fontWeight: 900, letterSpacing: '-1.5px', lineHeight: 1 }}>
@@ -248,7 +248,7 @@ export default function LandingPage() {
               </form>
             </section>
 
-            <section className="hidden min-h-0 flex-1 space-y-2 lg:mt-0 lg:block lg:space-y-4">
+            <section className="mt-4 space-y-2 lg:mt-0 lg:space-y-4">
               {copy.cards.map((card) => {
                 const Icon = card.icon
                 return (
