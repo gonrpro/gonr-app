@@ -40,7 +40,7 @@ const COPY: Record<Lang, Copy> = {
     headline: 'Know what to do before the stain sets.',
     subhead: 'Fabric-aware stain guidance in seconds — safe first steps, risk warnings, and when to stop.',
     emailPlaceholder: 'your@email.com',
-    cta: 'Get my free stain plan',
+    cta: 'Start free',
     sending: 'Sending secure link…',
     helper: 'No password. Secure magic link when needed.',
     trust: 'Safety-first · Fabric-aware · Professional textile-care sources',
