@@ -109,6 +109,11 @@ export default function LandingPage() {
   const [error, setError] = useState('')
 
   useEffect(() => {
+    let cancelled = false
+    createClient().auth.getSession().then(({ data }) => {
+      if (!cancelled && data.session) window.location.replace('/solve')
+    }).catch(() => {})
+
     const params = new URLSearchParams(window.location.search)
     const requestedLang = params.get('lang')
     if (requestedLang === 'en' || requestedLang === 'es') {
@@ -123,6 +128,7 @@ export default function LandingPage() {
     document.body.classList.add('gonr-landing-active')
 
     return () => {
+      cancelled = true
       document.body.classList.remove('gonr-landing-active')
     }
   }, [setLang])
