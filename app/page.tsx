@@ -248,7 +248,7 @@ export default function LandingPage() {
               </form>
             </section>
 
-            <section className="mt-3 min-h-0 flex-1 space-y-2 lg:mt-0 lg:space-y-4">
+            <section className="hidden min-h-0 flex-1 space-y-2 lg:mt-0 lg:block lg:space-y-4">
               {copy.cards.map((card) => {
                 const Icon = card.icon
                 return (
