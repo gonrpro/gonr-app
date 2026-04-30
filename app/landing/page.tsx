@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-import { AlertTriangle, CheckCircle2, Droplets, Mail, ShieldCheck, Sparkles } from 'lucide-react'
+import { AlertTriangle, BookOpen, CheckCircle2, Droplets, Mail, ShieldCheck, Sparkles } from 'lucide-react'
 
 type Lang = 'en' | 'es'
 
@@ -20,7 +20,7 @@ type Copy = {
   headline: string
   subhead: string
   proof: string
-  cardBadge: string
+  socialProof: string
   examplesIntro: string
   examples: string[]
   emailPlaceholder: string
@@ -36,6 +36,7 @@ type Copy = {
   cards: Array<{
     icon: typeof Droplets
     eyebrow: string
+    family: string
     title: string
     action: string
     warning: string
@@ -51,7 +52,7 @@ const COPY: Record<Lang, Copy> = {
     headline: 'Know what to do before the stain sets.',
     subhead: 'Fabric-aware stain guidance in seconds — safe first steps, risk warnings, and when to stop.',
     proof: 'Not generic tips. GONR checks the stain, fabric, color risk, and stop signs before you make it worse.',
-    cardBadge: 'Solve',
+    socialProof: '270+ verified protocols · Trusted by dry cleaning pros',
     examplesIntro: 'Examples you can trust',
     examples: ['Red wine', 'Ink', 'Oil', 'Silk', 'Wool', 'Mystery stain'],
     emailPlaceholder: 'your@email.com',
@@ -65,9 +66,9 @@ const COPY: Record<Lang, Copy> = {
     reset: 'Use a different email',
     failed: 'Failed to send link',
     cards: [
-      { icon: Droplets, eyebrow: 'SAFE FIRST STEP', title: 'Red wine on cotton', action: 'Blot. Flush cool from the back.', warning: 'Avoid heat until tannin is out.', color: '#22c55e', glow: 'rgba(34,197,94,0.12)' },
-      { icon: AlertTriangle, eyebrow: 'RISK CHECK', title: 'Ink on polyester', action: 'Test solvent on a hidden seam.', warning: 'Do not spread the dye ring.', color: '#f59e0b', glow: 'rgba(245,158,11,0.13)' },
-      { icon: ShieldCheck, eyebrow: 'STOP SIGNAL', title: 'Silk / unknown stain', action: 'Stop before water rings set.', warning: 'High-risk fiber. Pro route.', color: '#ef4444', glow: 'rgba(239,68,68,0.12)' },
+      { icon: Droplets, eyebrow: 'SAFE FIRST STEP', family: 'TANNIN', title: 'Red wine on cotton', action: 'Blot. Flush cool from the back.', warning: 'Avoid heat until tannin is out.', color: '#22c55e', glow: 'rgba(34,197,94,0.12)' },
+      { icon: AlertTriangle, eyebrow: 'RISK CHECK', family: 'INK', title: 'Ink on polyester', action: 'Test solvent on a hidden seam.', warning: 'Do not spread the dye ring.', color: '#f59e0b', glow: 'rgba(245,158,11,0.13)' },
+      { icon: ShieldCheck, eyebrow: 'STOP SIGNAL', family: 'HIGH-RISK', title: 'Silk / unknown stain', action: 'Stop before water rings set.', warning: 'High-risk fiber. Pro route.', color: '#ef4444', glow: 'rgba(239,68,68,0.12)' },
     ],
   },
   es: {
@@ -76,7 +77,7 @@ const COPY: Record<Lang, Copy> = {
     headline: 'Sepa qué hacer antes de que la mancha se fije.',
     subhead: 'Guía según tela y riesgo en segundos: primeros pasos seguros, alertas y cuándo parar.',
     proof: 'No son consejos genéricos. GONR revisa la mancha, la tela, el riesgo de color y cuándo parar.',
-    cardBadge: 'Resolver',
+    socialProof: '270+ protocolos verificados · Confianza de profesionales de tintorería',
     examplesIntro: 'Ejemplos confiables',
     examples: ['Vino tinto', 'Tinta', 'Aceite', 'Seda', 'Lana', 'Mancha desconocida'],
     emailPlaceholder: 'tu@email.com',
@@ -90,9 +91,9 @@ const COPY: Record<Lang, Copy> = {
     reset: 'Usar otro email',
     failed: 'No se pudo enviar el enlace',
     cards: [
-      { icon: Droplets, eyebrow: 'PASO SEGURO', title: 'Vino tinto en algodón', action: 'Absorba. Enjuague frío desde atrás.', warning: 'Evite calor hasta sacar el tanino.', color: '#22c55e', glow: 'rgba(34,197,94,0.12)' },
-      { icon: AlertTriangle, eyebrow: 'REVISAR RIESGO', title: 'Tinta en poliéster', action: 'Pruebe solvente en costura oculta.', warning: 'No extienda el aro de tinte.', color: '#f59e0b', glow: 'rgba(245,158,11,0.13)' },
-      { icon: ShieldCheck, eyebrow: 'SEÑAL DE PARAR', title: 'Seda / mancha desconocida', action: 'Pare antes de dejar marcas de agua.', warning: 'Tela delicada. Ruta profesional.', color: '#ef4444', glow: 'rgba(239,68,68,0.12)' },
+      { icon: Droplets, eyebrow: 'PASO SEGURO', family: 'TANINO', title: 'Vino tinto en algodón', action: 'Absorba. Enjuague frío desde atrás.', warning: 'Evite calor hasta sacar el tanino.', color: '#22c55e', glow: 'rgba(34,197,94,0.12)' },
+      { icon: AlertTriangle, eyebrow: 'REVISAR RIESGO', family: 'TINTA', title: 'Tinta en poliéster', action: 'Pruebe solvente en costura oculta.', warning: 'No extienda el aro de tinte.', color: '#f59e0b', glow: 'rgba(245,158,11,0.13)' },
+      { icon: ShieldCheck, eyebrow: 'SEÑAL DE PARAR', family: 'ALTO RIESGO', title: 'Seda / mancha desconocida', action: 'Pare antes de dejar marcas de agua.', warning: 'Tela delicada. Ruta profesional.', color: '#ef4444', glow: 'rgba(239,68,68,0.12)' },
     ],
   },
 }
@@ -219,6 +220,10 @@ export default function LandingPage() {
                   <span key={item} className={`rounded-full px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.08em] ${theme.tag}`}>{item}</span>
                 ))}
               </div>
+              <div className={`mt-3 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.08em] sm:text-[11px] ${theme.faint}`}>
+                <BookOpen size={12} className="shrink-0 text-[var(--accent)]" />
+                <span>{copy.socialProof}</span>
+              </div>
 
               <form onSubmit={handleSubmit} className="mt-4 space-y-2 lg:mt-8 lg:max-w-[520px]">
                 <div className={`rounded-2xl border p-1.5 ${theme.inputWrap}`}>
@@ -270,7 +275,12 @@ export default function LandingPage() {
                     </div>
                     <div className="mt-2 grid grid-cols-[1fr_auto] gap-2 pl-[52px] lg:mt-4 lg:pl-[68px]">
                       <p className={`text-[12px] font-semibold leading-snug lg:text-[15px] text-white/76`}>{card.action}</p>
-                      <span className={`rounded-full px-2 py-1 text-[9px] font-bold uppercase ${theme.tag}`}>{copy.cardBadge}</span>
+                      <span
+                        className="rounded-full px-2 py-1 text-[9px] font-black uppercase tracking-[0.14em]"
+                        style={{ background: card.glow, color: card.color }}
+                      >
+                        {card.family}
+                      </span>
                     </div>
                     <p className={`mt-1 pl-[52px] text-[11px] font-medium leading-snug lg:pl-[68px] lg:text-[13px] ${theme.cardMuted}`}>{card.warning}</p>
                   </article>
