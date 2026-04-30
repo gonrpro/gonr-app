@@ -168,7 +168,7 @@ export default function LandingPage() {
   }
 
   return (
-    <main className={`relative -mx-4 -mb-4 -mt-2 min-h-[calc(100dvh-178px)] overflow-hidden ${theme.page}`}>
+    <main className={`relative -mx-4 -mb-4 -mt-2 min-h-[calc(100dvh-178px)] overflow-y-auto ${theme.page}`}>
       <div className={`pointer-events-none absolute inset-0 ${theme.orb}`} />
       <div className="relative mx-auto flex min-h-[calc(100dvh-178px)] w-full max-w-[1120px] flex-col px-5 py-5 sm:px-8 lg:px-10 lg:py-8">
         <header className="mb-3 flex shrink-0 items-center justify-between lg:mb-8">
