@@ -36,7 +36,7 @@ type Copy = {
 const COPY: Record<Lang, Copy> = {
   en: {
     noApp: 'No app needed',
-    freeChecks: '3 free solves',
+    freeChecks: '3 free stain checks',
     headline: 'Know what to do before the stain sets.',
     subhead: 'Fabric-aware stain guidance in seconds — safe first steps, risk warnings, and when to stop.',
     emailPlaceholder: 'your@email.com',
@@ -46,7 +46,7 @@ const COPY: Record<Lang, Copy> = {
     trust: 'Safety-first · Fabric-aware · Professional textile-care sources',
     checkEmail: 'Check your email',
     sentPrefix: 'We sent a secure link to',
-    sentSuffix: 'Tap it to start your 3 free solves.',
+    sentSuffix: 'Tap it to start your 3 free stain checks.',
     reset: 'Use a different email',
     failed: 'Failed to send link',
     cards: [
@@ -57,7 +57,7 @@ const COPY: Record<Lang, Copy> = {
   },
   es: {
     noApp: 'Sin app',
-    freeChecks: '3 resoluciones gratis',
+    freeChecks: '3 revisiones gratis',
     headline: 'Sepa qué hacer antes de que la mancha se fije.',
     subhead: 'Guía según tela y riesgo en segundos: primeros pasos seguros, alertas y cuándo parar.',
     emailPlaceholder: 'tu@email.com',
@@ -67,7 +67,7 @@ const COPY: Record<Lang, Copy> = {
     trust: 'Primero seguridad · Según la tela · Fuentes profesionales',
     checkEmail: 'Revise su email',
     sentPrefix: 'Enviamos un enlace seguro a',
-    sentSuffix: 'Tóquelo para empezar sus 3 resoluciones gratis.',
+    sentSuffix: 'Tóquelo para empezar sus 3 revisiones gratis.',
     reset: 'Usar otro email',
     failed: 'No se pudo enviar el enlace',
     cards: [
@@ -172,14 +172,10 @@ export default function LandingPage() {
       <div className={`pointer-events-none absolute inset-0 ${theme.orb}`} />
       <div className="relative mx-auto flex h-full w-full max-w-[1120px] flex-col px-5 py-5 sm:px-8 lg:px-10 lg:py-8">
         <header className="mb-3 flex shrink-0 items-center justify-between lg:mb-8">
-          {/* Brand wordmark — matches global Header.tsx ("GON" + green "R" + ™). */}
-          <div className="flex items-center gap-3 lg:gap-4">
-            <div
-              className="select-none"
-              style={{ fontSize: '28px', fontWeight: 900, letterSpacing: '-1.5px', lineHeight: 1 }}
-            >
+          <div className="flex items-end gap-2">
+            <div className="select-none" style={{ fontSize: '28px', fontWeight: 900, letterSpacing: '-1.5px', lineHeight: 1 }}>
               <span className={theme.text}>GON</span>
-              <span style={{ color: '#22c55e' }}>R</span>
+              <span style={{ color: 'var(--accent)' }}>R</span>
               <span
                 aria-hidden="true"
                 style={{
@@ -194,9 +190,7 @@ export default function LandingPage() {
                 ™
               </span>
             </div>
-            <span className={`text-[10px] font-bold uppercase tracking-[0.18em] lg:text-[11px] ${theme.faint}`}>
-              Stain Brain
-            </span>
+            <p className={`pb-[2px] text-[9px] font-bold uppercase tracking-[0.18em] ${theme.faint}`}>Stain Brain</p>
           </div>
           <div className="flex items-center gap-1.5">
             <button type="button" onClick={() => { const next = activeLang === 'en' ? 'es' : 'en'; setLang(next); setLandingLang(next) }} className={`rounded-full border px-2.5 py-1 text-[10px] font-black ${theme.pill}`}>
@@ -213,7 +207,7 @@ export default function LandingPage() {
         ) : (
           <div className="flex min-h-0 flex-1 flex-col lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-10 xl:gap-14">
             <section className={`rounded-[30px] border p-4 shadow-2xl backdrop-blur sm:p-6 lg:rounded-[42px] lg:p-8 ${theme.panel}`}>
-              <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-[#22c55e]/10 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-[#22c55e]">
+              <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-[var(--accent)]/10 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-[var(--accent)]">
                 <Sparkles size={12} /> {copy.freeChecks}
               </div>
 
@@ -227,7 +221,7 @@ export default function LandingPage() {
               <form onSubmit={handleSubmit} className="mt-4 space-y-2 lg:mt-8 lg:max-w-[520px]">
                 <div className={`rounded-2xl border p-1.5 ${theme.inputWrap}`}>
                   <div className="flex items-center gap-2 px-2 pb-1.5 pt-1">
-                    <Mail size={17} className="text-[#22c55e]" />
+                    <Mail size={17} className="text-[var(--accent)]" />
                     <input
                       type="email"
                       value={email}
@@ -243,7 +237,7 @@ export default function LandingPage() {
                   <button
                     type="submit"
                     disabled={sending || !email.trim()}
-                    className="min-h-[48px] w-full rounded-xl bg-[#22c55e] px-4 text-[15px] font-black text-white shadow-[0_10px_28px_rgba(34,197,94,0.34)] transition active:scale-[0.99] disabled:opacity-50 lg:min-h-[56px] lg:text-[17px]"
+                    className="min-h-[48px] w-full rounded-xl bg-[var(--accent)] px-4 text-[15px] font-black text-white shadow-[0_10px_28px_rgba(34,197,94,0.34)] transition active:scale-[0.99] disabled:opacity-50 lg:min-h-[56px] lg:text-[17px]"
                   >
                     {sending ? copy.sending : copy.cta}
                   </button>
@@ -266,7 +260,7 @@ export default function LandingPage() {
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">
                           <p className="text-[9px] font-black uppercase tracking-[0.14em] lg:text-[11px]" style={{ color: card.color }}>{card.eyebrow}</p>
-                          <CheckCircle2 size={13} className="text-[#22c55e]" />
+                          <CheckCircle2 size={13} className="text-[var(--accent)]" />
                         </div>
                         <p className={`truncate text-[14px] font-black leading-tight lg:text-[20px] ${theme.text}`}>{card.title}</p>
                       </div>
@@ -300,7 +294,7 @@ function SentState({ email, copy, theme, onReset }: { email: string; copy: Copy;
         <p className={`mt-2 text-sm leading-relaxed ${theme.muted}`}>
           {copy.sentPrefix} <strong className={theme.text}>{email}</strong>.<br />{copy.sentSuffix}
         </p>
-        <button type="button" onClick={onReset} className="mt-5 text-xs font-bold text-[#22c55e]">
+        <button type="button" onClick={onReset} className="mt-5 text-xs font-bold text-[var(--accent)]">
           {copy.reset}
         </button>
       </div>
