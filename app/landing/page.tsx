@@ -170,8 +170,8 @@ export default function LandingPage() {
   return (
     <main className={`fixed inset-0 z-[100] overflow-hidden ${theme.page}`}>
       <div className={`pointer-events-none absolute inset-0 ${theme.orb}`} />
-      <div className="relative mx-auto flex h-full w-full max-w-[430px] flex-col px-5 py-5">
-        <header className="mb-3 flex shrink-0 items-center justify-between">
+      <div className="relative mx-auto flex h-full w-full max-w-[1120px] flex-col px-5 py-5 sm:px-8 lg:px-10 lg:py-8">
+        <header className="mb-3 flex shrink-0 items-center justify-between lg:mb-8">
           <div className="flex items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-[#22c55e] shadow-[0_0_28px_rgba(34,197,94,0.42)]">
               <span className="text-sm font-black text-white">G</span>
@@ -194,20 +194,20 @@ export default function LandingPage() {
         {sent ? (
           <SentState email={email} copy={copy} theme={theme} onReset={() => { setSent(false); setEmail('') }} />
         ) : (
-          <>
-            <section className={`rounded-[30px] border p-4 shadow-2xl backdrop-blur ${theme.panel}`}>
+          <div className="flex min-h-0 flex-1 flex-col lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-10 xl:gap-14">
+            <section className={`rounded-[30px] border p-4 shadow-2xl backdrop-blur sm:p-6 lg:rounded-[42px] lg:p-8 ${theme.panel}`}>
               <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-[#22c55e]/10 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-[#22c55e]">
                 <Sparkles size={12} /> {copy.freeChecks}
               </div>
 
-              <h1 className={`text-[31px] font-black leading-[0.99] tracking-[-0.06em] ${theme.text}`}>
+              <h1 className={`text-[31px] font-black leading-[0.99] tracking-[-0.06em] sm:text-[42px] lg:text-[64px] lg:leading-[0.92] ${theme.text}`}>
                 {copy.headline}
               </h1>
-              <p className={`mt-2 text-[13px] font-medium leading-snug ${theme.muted}`}>
+              <p className={`mt-2 text-[13px] font-medium leading-snug sm:text-[15px] lg:mt-5 lg:max-w-[520px] lg:text-[20px] lg:leading-snug ${theme.muted}`}>
                 {copy.subhead}
               </p>
 
-              <form onSubmit={handleSubmit} className="mt-4 space-y-2">
+              <form onSubmit={handleSubmit} className="mt-4 space-y-2 lg:mt-8 lg:max-w-[520px]">
                 <div className={`rounded-2xl border p-1.5 ${theme.inputWrap}`}>
                   <div className="flex items-center gap-2 px-2 pb-1.5 pt-1">
                     <Mail size={17} className="text-[#22c55e]" />
@@ -226,7 +226,7 @@ export default function LandingPage() {
                   <button
                     type="submit"
                     disabled={sending || !email.trim()}
-                    className="min-h-[48px] w-full rounded-xl bg-[#22c55e] px-4 text-[15px] font-black text-white shadow-[0_10px_28px_rgba(34,197,94,0.34)] transition active:scale-[0.99] disabled:opacity-50"
+                    className="min-h-[48px] w-full rounded-xl bg-[#22c55e] px-4 text-[15px] font-black text-white shadow-[0_10px_28px_rgba(34,197,94,0.34)] transition active:scale-[0.99] disabled:opacity-50 lg:min-h-[56px] lg:text-[17px]"
                   >
                     {sending ? copy.sending : copy.cta}
                   </button>
@@ -237,37 +237,37 @@ export default function LandingPage() {
               </form>
             </section>
 
-            <section className="mt-3 min-h-0 flex-1 space-y-2">
+            <section className="mt-3 min-h-0 flex-1 space-y-2 lg:mt-0 lg:space-y-4">
               {copy.cards.map((card) => {
                 const Icon = card.icon
                 return (
-                  <article key={card.title} className={`rounded-2xl border p-3 shadow-lg ${theme.card}`}>
+                  <article key={card.title} className={`rounded-2xl border p-3 shadow-lg lg:rounded-[28px] lg:p-5 ${theme.card}`}>
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl" style={{ background: card.glow, color: card.color }}>
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl lg:h-14 lg:w-14 lg:rounded-[22px]" style={{ background: card.glow, color: card.color }}>
                         <Icon size={19} strokeWidth={2.5} />
                       </div>
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">
-                          <p className="text-[9px] font-black uppercase tracking-[0.14em]" style={{ color: card.color }}>{card.eyebrow}</p>
+                          <p className="text-[9px] font-black uppercase tracking-[0.14em] lg:text-[11px]" style={{ color: card.color }}>{card.eyebrow}</p>
                           <CheckCircle2 size={13} className="text-[#22c55e]" />
                         </div>
-                        <p className={`truncate text-[14px] font-black leading-tight ${theme.text}`}>{card.title}</p>
+                        <p className={`truncate text-[14px] font-black leading-tight lg:text-[20px] ${theme.text}`}>{card.title}</p>
                       </div>
                     </div>
-                    <div className="mt-2 grid grid-cols-[1fr_auto] gap-2 pl-[52px]">
-                      <p className={`text-[12px] font-semibold leading-snug ${dark ? 'text-white/76' : 'text-slate-700'}`}>{card.action}</p>
+                    <div className="mt-2 grid grid-cols-[1fr_auto] gap-2 pl-[52px] lg:mt-4 lg:pl-[68px]">
+                      <p className={`text-[12px] font-semibold leading-snug lg:text-[15px] ${dark ? 'text-white/76' : 'text-slate-700'}`}>{card.action}</p>
                       <span className={`rounded-full px-2 py-1 text-[9px] font-bold uppercase ${theme.tag}`}>Plan</span>
                     </div>
-                    <p className={`mt-1 pl-[52px] text-[11px] font-medium leading-snug ${theme.cardMuted}`}>{card.warning}</p>
+                    <p className={`mt-1 pl-[52px] text-[11px] font-medium leading-snug lg:pl-[68px] lg:text-[13px] ${theme.cardMuted}`}>{card.warning}</p>
                   </article>
                 )
               })}
             </section>
 
-            <footer className={`shrink-0 pt-3 text-center text-[10px] font-bold uppercase tracking-[0.08em] ${theme.faint}`}>
+            <footer className={`shrink-0 pt-3 text-center text-[10px] font-bold uppercase tracking-[0.08em] lg:col-span-2 lg:pt-8 lg:text-[11px] ${theme.faint}`}>
               {copy.trust}
             </footer>
-          </>
+          </div>
         )}
       </div>
     </main>
