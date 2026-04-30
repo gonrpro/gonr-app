@@ -1,17 +1,28 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-import { AlertTriangle, CheckCircle2, Droplets, Mail, Moon, ShieldCheck, Sparkles, Sun } from 'lucide-react'
+import { AlertTriangle, CheckCircle2, Droplets, Mail, ShieldCheck, Sparkles } from 'lucide-react'
 
 type Lang = 'en' | 'es'
+
+
+type LandingTheme = {
+  panel: string
+  text: string
+  muted: string
+}
 
 type Copy = {
   noApp: string
   freeChecks: string
   headline: string
   subhead: string
+  proof: string
+  cardBadge: string
+  examplesIntro: string
+  examples: string[]
   emailPlaceholder: string
   cta: string
   sending: string
@@ -39,6 +50,10 @@ const COPY: Record<Lang, Copy> = {
     freeChecks: '3 free solves',
     headline: 'Know what to do before the stain sets.',
     subhead: 'Fabric-aware stain guidance in seconds — safe first steps, risk warnings, and when to stop.',
+    proof: 'Not generic tips. GONR checks the stain, fabric, color risk, and stop signs before you make it worse.',
+    cardBadge: 'Solve',
+    examplesIntro: 'Examples you can trust',
+    examples: ['Red wine', 'Ink', 'Oil', 'Silk', 'Wool', 'Mystery stain'],
     emailPlaceholder: 'your@email.com',
     cta: 'Start free',
     sending: 'Sending secure link…',
@@ -60,8 +75,12 @@ const COPY: Record<Lang, Copy> = {
     freeChecks: '3 resoluciones gratis',
     headline: 'Sepa qué hacer antes de que la mancha se fije.',
     subhead: 'Guía según tela y riesgo en segundos: primeros pasos seguros, alertas y cuándo parar.',
+    proof: 'No son consejos genéricos. GONR revisa la mancha, la tela, el riesgo de color y cuándo parar.',
+    cardBadge: 'Resolver',
+    examplesIntro: 'Ejemplos confiables',
+    examples: ['Vino tinto', 'Tinta', 'Aceite', 'Seda', 'Lana', 'Mancha desconocida'],
     emailPlaceholder: 'tu@email.com',
-    cta: 'Obtener mi plan gratis',
+    cta: 'Empezar gratis',
     sending: 'Enviando enlace seguro…',
     helper: 'Sin contraseña. Enlace seguro cuando haga falta.',
     trust: 'Primero seguridad · Según la tela · Fuentes profesionales',
@@ -87,11 +106,9 @@ export default function LandingPage() {
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
   const [error, setError] = useState('')
-  const [dark, setDark] = useState(true)
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
-    const requestedTheme = params.get('theme')
     const requestedLang = params.get('lang')
     if (requestedLang === 'en' || requestedLang === 'es') {
       setLang(requestedLang)
@@ -101,14 +118,10 @@ export default function LandingPage() {
       if (storedLang === 'en' || storedLang === 'es') setLandingLang(storedLang)
     }
 
-    const stored = localStorage.getItem('gonr_theme')
-    const isDark = requestedTheme === 'light' ? false : requestedTheme === 'dark' ? true : stored ? stored === 'dark' : true
-    setDark(isDark)
-    document.documentElement.classList.toggle('dark', isDark)
-    localStorage.setItem('gonr_theme', isDark ? 'dark' : 'light')
+    document.documentElement.classList.add('dark')
   }, [setLang])
 
-  const theme = useMemo(() => dark ? {
+  const theme = {
     page: 'bg-[#05070b] text-white',
     orb: 'bg-[radial-gradient(circle_at_50%_-10%,rgba(34,197,94,0.28),transparent_38%),radial-gradient(circle_at_0%_90%,rgba(34,197,94,0.10),transparent_35%)]',
     panel: 'border-white/10 bg-white/[0.06] shadow-black/30',
@@ -121,27 +134,8 @@ export default function LandingPage() {
     card: 'border-white/10 bg-white/[0.055] shadow-black/20',
     cardMuted: 'text-white/42',
     tag: 'bg-white/8 text-white/42',
-  } : {
-    page: 'bg-[#f5f7fa] text-slate-950',
-    orb: 'bg-[radial-gradient(circle_at_50%_-10%,rgba(34,197,94,0.22),transparent_38%),radial-gradient(circle_at_0%_90%,rgba(34,197,94,0.10),transparent_35%)]',
-    panel: 'border-black/5 bg-white shadow-slate-200/80',
-    pill: 'border-black/5 bg-slate-100 text-slate-500',
-    text: 'text-slate-950',
-    muted: 'text-slate-600',
-    faint: 'text-slate-400',
-    inputWrap: 'border-[#22c55e]/40 bg-white shadow-[0_0_0_1px_rgba(34,197,94,0.08),0_16px_40px_rgba(34,197,94,0.12)]',
-    input: 'text-slate-950 placeholder:text-slate-400',
-    card: 'border-black/5 bg-white shadow-slate-200/70',
-    cardMuted: 'text-slate-500',
-    tag: 'bg-slate-100 text-slate-500',
-  }, [dark])
-
-  function toggleTheme() {
-    const next = !dark
-    setDark(next)
-    document.documentElement.classList.toggle('dark', next)
-    localStorage.setItem('gonr_theme', next ? 'dark' : 'light')
   }
+
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -192,14 +186,9 @@ export default function LandingPage() {
             </div>
             <p className={`pb-[2px] text-[9px] font-bold uppercase tracking-[0.18em] ${theme.faint}`}>Stain Brain</p>
           </div>
-          <div className="flex items-center gap-1.5">
-            <button type="button" onClick={() => { const next = activeLang === 'en' ? 'es' : 'en'; setLang(next); setLandingLang(next) }} className={`rounded-full border px-2.5 py-1 text-[10px] font-black ${theme.pill}`}>
-              {activeLang === 'en' ? 'ES' : 'EN'}
-            </button>
-            <button type="button" onClick={toggleTheme} aria-label="Toggle theme" className={`flex h-7 w-7 items-center justify-center rounded-full border ${theme.pill}`}>
-              {dark ? <Sun size={13} /> : <Moon size={13} />}
-            </button>
-          </div>
+          <button type="button" onClick={() => { const next = activeLang === 'en' ? 'es' : 'en'; setLang(next); setLandingLang(next) }} className={`rounded-full border px-3 py-1.5 text-[10px] font-black ${theme.pill}`}>
+            {activeLang === 'en' ? 'Español' : 'English'}
+          </button>
         </header>
 
         {sent ? (
@@ -217,6 +206,14 @@ export default function LandingPage() {
               <p className={`mt-2 text-[13px] font-medium leading-snug sm:text-[15px] lg:mt-5 lg:max-w-[520px] lg:text-[20px] lg:leading-snug ${theme.muted}`}>
                 {copy.subhead}
               </p>
+              <p className={`mt-3 max-w-[520px] text-[12px] font-semibold leading-snug sm:text-[13px] lg:mt-4 lg:text-[15px] ${theme.text}`}>
+                {copy.proof}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-1.5 lg:mt-5">
+                {copy.examples.map((item) => (
+                  <span key={item} className={`rounded-full px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.08em] ${theme.tag}`}>{item}</span>
+                ))}
+              </div>
 
               <form onSubmit={handleSubmit} className="mt-4 space-y-2 lg:mt-8 lg:max-w-[520px]">
                 <div className={`rounded-2xl border p-1.5 ${theme.inputWrap}`}>
@@ -249,6 +246,7 @@ export default function LandingPage() {
             </section>
 
             <section className="mt-4 space-y-2 lg:mt-0 lg:space-y-4">
+              <p className={`px-1 text-[10px] font-black uppercase tracking-[0.16em] lg:text-[12px] ${theme.faint}`}>{copy.examplesIntro}</p>
               {copy.cards.map((card) => {
                 const Icon = card.icon
                 return (
@@ -266,8 +264,8 @@ export default function LandingPage() {
                       </div>
                     </div>
                     <div className="mt-2 grid grid-cols-[1fr_auto] gap-2 pl-[52px] lg:mt-4 lg:pl-[68px]">
-                      <p className={`text-[12px] font-semibold leading-snug lg:text-[15px] ${dark ? 'text-white/76' : 'text-slate-700'}`}>{card.action}</p>
-                      <span className={`rounded-full px-2 py-1 text-[9px] font-bold uppercase ${theme.tag}`}>Plan</span>
+                      <p className={`text-[12px] font-semibold leading-snug lg:text-[15px] text-white/76`}>{card.action}</p>
+                      <span className={`rounded-full px-2 py-1 text-[9px] font-bold uppercase ${theme.tag}`}>{copy.cardBadge}</span>
                     </div>
                     <p className={`mt-1 pl-[52px] text-[11px] font-medium leading-snug lg:pl-[68px] lg:text-[13px] ${theme.cardMuted}`}>{card.warning}</p>
                   </article>
@@ -285,7 +283,7 @@ export default function LandingPage() {
   )
 }
 
-function SentState({ email, copy, theme, onReset }: { email: string; copy: Copy; theme: any; onReset: () => void }) {
+function SentState({ email, copy, theme, onReset }: { email: string; copy: Copy; theme: LandingTheme; onReset: () => void }) {
   return (
     <section className="flex flex-1 items-center justify-center">
       <div className={`w-full rounded-[30px] border p-6 text-center shadow-2xl ${theme.panel}`}>
