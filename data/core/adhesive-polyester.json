@@ -9,7 +9,7 @@
   "verified": true,
   "difficulty": 5,
   "timeEstimate": "10–30 minutes",
-  "lastValidated": "2026-04-25",
+  "lastValidated": "2026-04-30",
   "meta": {
     "stainCanonical": "adhesive",
     "surfaceCanonical": "polyester",
@@ -33,7 +33,8 @@
       "agent": "ID + Pick",
       "technique": "Identify class, scrape bulk",
       "dwellTime": "brief",
-      "instruction": "Ask: what kind? Super glue → acetone, confirm polyester (not acetate). Rubber cement → POG. White / school / acrylic → IPA. Hot-melt → chill, pick, treat residue. Remove pickable bulk with a dull blade before wetting anything."
+      "instruction": "Ask: what kind? Super glue → acetone, confirm polyester (not acetate). Rubber cement → POG. White / school / acrylic → IPA. Hot-melt → chill, pick, treat residue. Remove pickable bulk with a dull blade before wetting anything.",
+      "safetyNote": "Verify polyester vs acetate before solvent work; acetone can dissolve acetate and blends must be treated as higher risk."
     },
     {
       "step": 2,
@@ -41,7 +42,8 @@
       "agent": "Cold Flush",
       "technique": "Flush from back",
       "dwellTime": "30 seconds",
-      "instruction": "Cold water flush from the back of the fabric. Loosens water-soluble glue and pushes mobilized residue back out the way it came in."
+      "instruction": "Cold water flush from the back of the fabric. Loosens water-soluble glue and pushes mobilized residue back out the way it came in.",
+      "safetyNote": "Use cool water and avoid heat; polyester can hold adhesive residue that cures harder under warmth."
     },
     {
       "step": 3,
@@ -49,7 +51,8 @@
       "agent": "NSD",
       "technique": "Tamp, dwell, flush",
       "dwellTime": "1–2 min",
-      "instruction": "NSD directly on the spot. Tamp with a bristle brush. Water-soluble adhesives lift here."
+      "instruction": "NSD directly on the spot. Tamp with a bristle brush. Water-soluble adhesives lift here.",
+      "safetyNote": "Tamp gently instead of scrubbing; softened adhesive can smear wider across polyester face yarns."
     },
     {
       "step": 4,
@@ -57,7 +60,8 @@
       "agent": "IPA Tamp",
       "technique": "Solvent, light pressure",
       "dwellTime": "30–60 sec",
-      "instruction": "If residue persists, switch to isopropyl alcohol on a white cloth. Tamp — do not pour. Flip cloth frequently. IPA handles most acrylic and white-glue residues polyester tolerates."
+      "instruction": "If residue persists, switch to isopropyl alcohol on a white cloth. Tamp — do not pour. Flip cloth frequently. IPA handles most acrylic and white-glue residues polyester tolerates.",
+      "safetyNote": "Use IPA sparingly with ventilation and a white cloth; never pour solvent directly onto the fabric."
     },
     {
       "step": 5,
@@ -65,7 +69,8 @@
       "agent": "Flush",
       "technique": "Cool water rinse",
       "dwellTime": "brief",
-      "instruction": "Flush the spot clean. Blot. Inspect. No heat until residue is gone — heat sets uncured adhesive into the fiber."
+      "instruction": "Flush the spot clean. Blot. Inspect. No heat until residue is gone — heat sets uncured adhesive into the fiber.",
+      "safetyNote": "Rinse solvent/detergent fully and air-dry only; dryer or iron heat can set remaining adhesive permanently."
     },
     {
       "step": 6,
@@ -73,7 +78,8 @@
       "agent": "Repeat or Escalate",
       "technique": "Second pass or acetone",
       "dwellTime": "as needed",
-      "instruction": "Repeat steps 3–5 once if residue remains. Confirmed super glue on confirmed polyester: acetone on a cotton swab, tamp from back, fast flush. Never acetone on acetate."
+      "instruction": "Repeat steps 3–5 once if residue remains. Confirmed super glue on confirmed polyester: acetone on a cotton swab, tamp from back, fast flush. Never acetone on acetate.",
+      "safetyNote": "Use acetone only for confirmed super glue on confirmed polyester, then flush fast; stop after one repeat if residue persists."
     }
   ],
   "professionalProtocol": {
