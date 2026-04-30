@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/layout/Nav'
 import Header from '@/components/layout/Header'
@@ -8,8 +7,6 @@ import HtmlLangSetter from '@/components/layout/HtmlLangSetter'
 import PreviewBanner from '@/components/ui/PreviewBanner'
 import { LanguageProvider } from '@/lib/i18n/LanguageContext'
 import { AuthProvider } from '@/lib/auth/AuthContext'
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
   title: 'GONR™ — AI Stain Intelligence',
@@ -36,7 +33,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         <AuthProvider>
           <LanguageProvider>
             <HtmlLangSetter />
