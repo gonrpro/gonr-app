@@ -36,7 +36,7 @@ type Copy = {
 const COPY: Record<Lang, Copy> = {
   en: {
     noApp: 'No app needed',
-    freeChecks: '3 free stain checks',
+    freeChecks: '3 free solves',
     headline: 'Know what to do before the stain sets.',
     subhead: 'Fabric-aware stain guidance in seconds — safe first steps, risk warnings, and when to stop.',
     emailPlaceholder: 'your@email.com',
@@ -46,7 +46,7 @@ const COPY: Record<Lang, Copy> = {
     trust: 'Safety-first · Fabric-aware · Professional textile-care sources',
     checkEmail: 'Check your email',
     sentPrefix: 'We sent a secure link to',
-    sentSuffix: 'Tap it to start your 3 free stain checks.',
+    sentSuffix: 'Tap it to start your 3 free solves.',
     reset: 'Use a different email',
     failed: 'Failed to send link',
     cards: [
@@ -57,7 +57,7 @@ const COPY: Record<Lang, Copy> = {
   },
   es: {
     noApp: 'Sin app',
-    freeChecks: '3 revisiones gratis',
+    freeChecks: '3 resoluciones gratis',
     headline: 'Sepa qué hacer antes de que la mancha se fije.',
     subhead: 'Guía según tela y riesgo en segundos: primeros pasos seguros, alertas y cuándo parar.',
     emailPlaceholder: 'tu@email.com',
@@ -67,7 +67,7 @@ const COPY: Record<Lang, Copy> = {
     trust: 'Primero seguridad · Según la tela · Fuentes profesionales',
     checkEmail: 'Revise su email',
     sentPrefix: 'Enviamos un enlace seguro a',
-    sentSuffix: 'Tóquelo para empezar sus 3 revisiones gratis.',
+    sentSuffix: 'Tóquelo para empezar sus 3 resoluciones gratis.',
     reset: 'Usar otro email',
     failed: 'No se pudo enviar el enlace',
     cards: [
