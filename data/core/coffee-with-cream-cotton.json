@@ -28,7 +28,8 @@
       "technique": "Tamp and flush",
       "temperature": "Cool water",
       "dwellTime": "3-5 minutes",
-      "instruction": "Apply Tannin spotter to break the coffee pigment bonds first. Tannin must go first on combo stains — if you use enzyme (Protein) first, it can fix the tannin pigment permanently. Tamp gently from the edges to center, flush with cool water. Watch for color lift."
+      "instruction": "Apply Tannin spotter to break the coffee pigment bonds first. Tannin must go first on combo stains — if you use enzyme (Protein) first, it can fix the tannin pigment permanently. Tamp gently from the edges to center, flush with cool water. Watch for color lift.",
+      "safetyNote": "Keep the first pass cool and test colored cotton first; heat or enzyme before tannin removal can lock the coffee pigment in."
     },
     {
       "step": 2,
@@ -36,7 +37,8 @@
       "technique": "Soak and brush work",
       "temperature": "Warm (40-45°C)",
       "dwellTime": "Brief — apply, work, check",
-      "instruction": "Apply Protein (enzyme digester) warm to address the milk protein/whey from the cream component. Enzymes break protein bond in milk proteins — warm temperature accelerates the reaction. Gently brush with soft brush after 10 minutes. Blot repeatedly as protein fragments lift."
+      "instruction": "Apply Protein (enzyme digester) warm to address the milk protein/whey from the cream component. Enzymes break protein bond in milk proteins — warm temperature accelerates the reaction. Gently brush with soft brush after 10 minutes. Blot repeatedly as protein fragments lift.",
+      "safetyNote": "Use only warm—not hot—enzyme conditions and avoid enzyme use on wool, silk, or unknown protein fibers."
     },
     {
       "step": 3,
@@ -44,7 +46,8 @@
       "technique": "Dry solvent application",
       "temperature": "Room temperature",
       "dwellTime": "2-3 minutes",
-      "instruction": "Apply POG (Paint Oil Grease remover) to address the fat component from cream. Coffee with cream leaves an oily residue that neither Tannin nor Protein will break. Apply POG, tamp lightly, blot. Do not over-saturate."
+      "instruction": "Apply POG (Paint Oil Grease remover) to address the fat component from cream. Coffee with cream leaves an oily residue that neither Tannin nor Protein will break. Apply POG, tamp lightly, blot. Do not over-saturate.",
+      "safetyNote": "Use POG with ventilation, sparingly, and away from flame; stop if dye transfers or the fabric finish changes."
     },
     {
       "step": 4,
@@ -52,21 +55,44 @@
       "technique": "Direct application or soak",
       "temperature": "Room temperature",
       "dwellTime": "Brief — apply, check, blot",
-      "instruction": "If coffee color remains after Tannin treatment, apply H₂O₂ to oxidize residual tannin pigment to colorless compounds. White cotton tolerates full-strength. For colored cotton, test a hidden seam first — peroxide can affect dyes."
+      "instruction": "If coffee color remains after Tannin treatment, apply H₂O₂ to oxidize residual tannin pigment to colorless compounds. White cotton tolerates full-strength. For colored cotton, test a hidden seam first — peroxide can affect dyes.",
+      "safetyNote": "Test colored cotton before peroxide and never mix peroxide with chlorine bleach or ammonia."
     },
     {
       "step": 5,
-      "agent": "NSD flush",
+      "agent": "NSD Flush",
       "technique": "Flush and blot",
       "temperature": "Cool water",
       "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD to remove all H₂O₂, Protein, Tannin, and POG residue. Work from back of fabric. Blot — do not rub. Residual oxidizer left in the fiber can continue bleaching over time."
+      "instruction": "Flush thoroughly with NSD to remove all H₂O₂, Protein, Tannin, and POG residue. Work from back of fabric. Blot — do not rub. Residual oxidizer left in the fiber can continue bleaching over time.",
+      "safetyNote": "Rinse all chemistry completely and confirm the spot is gone before dryer heat or pressing."
     }
   ],
   "homeSolutions": [
-    "FRESH: Warm water + salt flush. Blot hard. Most stain comes out immediately.",
-    "REMAINING: Protein soak (per product directions), 20-30 minutes, then brush gently, blot.",
-    "BROWN COLOR: hydrogen peroxide 3% from the pharmacy, 3-5 minutes. Or OxiClean soak, 30-60 minutes."
+    {
+      "step": 1,
+      "agent": "Cool Tannin Flush First",
+      "instruction": "Blot with a clean white cloth, then flush cool water from the back of the fabric before using enzyme or warm water.",
+      "safetyNote": "Do not start with heat or enzyme; coffee tannins can set if treated in the wrong order."
+    },
+    {
+      "step": 2,
+      "agent": "Warm Enzyme Soak",
+      "instruction": "Use an enzyme laundry pretreat or detergent per label directions in warm water for 20–30 minutes, then brush gently and blot.",
+      "safetyNote": "Warm is enough; avoid hot water and avoid enzyme products on wool, silk, or unknown delicate fibers."
+    },
+    {
+      "step": 3,
+      "agent": "3% Hydrogen Peroxide for White / Light Cotton",
+      "instruction": "If brown coffee color remains on white or light cotton, apply drugstore 3% hydrogen peroxide for 3–5 minutes, then rinse thoroughly.",
+      "safetyNote": "Patch-test colored cotton first and never mix peroxide with chlorine bleach or ammonia."
+    },
+    {
+      "step": 4,
+      "agent": "Wash + Air-Dry Check",
+      "instruction": "Wash per the care label, air-dry, and inspect in good light before using a dryer or iron.",
+      "safetyNote": "Heat can permanently set remaining protein, fat, or tannin residue."
+    }
   ],
   "materialWarnings": [
     "DO NOT use bleach on colored cotton—fades dye",
@@ -131,5 +157,37 @@
   "sources": [],
   "cross_refs": [],
   "verification_level": "draft",
-  "lastValidated": "2026-04-25"
+  "lastValidated": "2026-04-30",
+  "diyProtocol": {
+    "steps": [
+      "1. Blot and cool-flush from the back first to move coffee tannin out before warmth or enzyme.",
+      "2. Use a warm enzyme pretreat or detergent soak for 20–30 minutes to digest the cream protein component.",
+      "3. On white/light cotton only, use 3% hydrogen peroxide for 3–5 minutes on residual brown color, then rinse thoroughly.",
+      "4. Wash per care label, air-dry, and inspect before dryer heat or pressing."
+    ],
+    "products": [
+      "Clean white cloth",
+      "Cool water",
+      "Enzyme laundry pretreat or detergent",
+      "3% hydrogen peroxide for white/light cotton only"
+    ],
+    "whenToStop": "Stop and call a pro if the item is colored and dye transfers, Dry Clean Only, structured, vintage, or still stained after cool/enzyme treatment.",
+    "warnings": [
+      "Do not use hot water or dryer heat while the stain remains visible.",
+      "Do not mix hydrogen peroxide with chlorine bleach or ammonia.",
+      "Do not use enzyme products on wool, silk, or unknown protein fibers."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never start coffee-with-cream treatment with dryer heat, hot water, or pressing heat.",
+      "Never use enzyme products on wool, silk, or unknown protein fibers.",
+      "Never mix hydrogen peroxide with chlorine bleach or ammonia.",
+      "Never use chlorine bleach on colored cotton, printed cotton, or colored thread."
+    ],
+    "fiberSensitivities": [
+      "Test colored cotton, prints, trims, and finishes before peroxide or stronger chemistry.",
+      "Cotton is more tolerant than delicate fibers, but cream residue still needs full rinsing before heat."
+    ]
+  }
 }

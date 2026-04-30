@@ -1,6 +1,6 @@
 # Protocol Consistency Audit
 
-Generated: 2026-04-30T16:54:09.231Z
+Generated: 2026-04-30T18:22:07.941Z
 
 Card files scanned: 332
 Flagged: 263
@@ -10,12 +10,10 @@ Skipped non-card JSON: 30
 
 | Category | Count |
 |---|---:|
-| step_safety_note_missing | 1423 |
+| step_safety_note_missing | 1418 |
 | sources_missing | 261 |
 | title_mismatch | 78 |
-| safety_matrix_missing | 29 |
-| step_title_missing | 3 |
-| instruction_missing | 3 |
+| safety_matrix_missing | 28 |
 
 ## Title normalization preview (no writes)
 
@@ -199,7 +197,7 @@ Skipped non-card JSON: 30
 | coffee-polyester | core | Coffee on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | coffee-silk | core | Coffee on Silk | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |
 | coffee-upholstery | core | Coffee on Upholstery | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
-| coffee-with-cream-cotton | core | Coffee with Cream on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>home step 1: missing step title/agent<br>home step 1: missing instruction<br>home step 2: missing step title/agent<br>home step 2: missing instruction<br>home step 3: missing step title/agent<br>home step 3: missing instruction<br>missing safetyMatrix.neverDo<br>missing sources |
+| coffee-with-cream-cotton | core | Coffee with Cream on Cotton | missing sources |
 | coffee-with-cream-linen | core | Coffee with Cream on Linen | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | coffee-wool | core | Coffee on Wool | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | cooking-oil-carpet | core | Cooking Oil on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |

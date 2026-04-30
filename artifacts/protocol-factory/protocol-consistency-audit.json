@@ -1,15 +1,13 @@
 {
-  "generatedAt": "2026-04-30T16:54:09.231Z",
+  "generatedAt": "2026-04-30T18:22:07.941Z",
   "total": 332,
   "flagged": 263,
   "skipped": 30,
   "categoryCounts": {
-    "step_safety_note_missing": 1423,
+    "step_safety_note_missing": 1418,
     "sources_missing": 261,
-    "safety_matrix_missing": 29,
-    "title_mismatch": 78,
-    "step_title_missing": 3,
-    "instruction_missing": 3
+    "safety_matrix_missing": 28,
+    "title_mismatch": 78
   },
   "titlePreview": [
     {
@@ -2479,27 +2477,11 @@
       "canonicalTitle": "Coffee with Cream on Cotton",
       "stain": "coffee-with-cream",
       "surface": "cotton",
-      "issueCount": 13,
+      "issueCount": 1,
       "issues": [
-        "pro step 1: missing safety note",
-        "pro step 2: missing safety note",
-        "pro step 3: missing safety note",
-        "pro step 4: missing safety note",
-        "pro step 5: missing safety note",
-        "home step 1: missing step title/agent",
-        "home step 1: missing instruction",
-        "home step 2: missing step title/agent",
-        "home step 2: missing instruction",
-        "home step 3: missing step title/agent",
-        "home step 3: missing instruction",
-        "missing safetyMatrix.neverDo",
         "missing sources"
       ],
       "categories": [
-        "step_safety_note_missing",
-        "step_title_missing",
-        "instruction_missing",
-        "safety_matrix_missing",
         "sources_missing"
       ]
     },
