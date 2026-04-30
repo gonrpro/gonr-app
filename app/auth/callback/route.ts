@@ -7,7 +7,7 @@
 // missing when the user clicks the magic link in a different tab or
 // browser than the one where they submitted the email.
 //
-// Exchange success → redirect back to `/` (or the `next` query param if
+// Exchange success → redirect to `/solve` by default (or the `next` query param if
 // present — caller-controlled deep link, same-origin only for safety).
 // Exchange failure → redirect to /auth/error?error=... so the
 // existing page.tsx renders the "Authentication Error" surface with
@@ -19,9 +19,9 @@ import { createServerSupabaseClient } from '@/lib/supabase/server'
 export const dynamic = 'force-dynamic'
 
 function safeRedirectTarget(origin: string, next: string | null): string {
-  if (!next) return `${origin}/`
+  if (!next) return `${origin}/solve`
   // Only allow same-origin relative paths; reject external redirects.
-  if (!next.startsWith('/') || next.startsWith('//')) return `${origin}/`
+  if (!next.startsWith('/') || next.startsWith('//')) return `${origin}/solve`
   return `${origin}${next}`
 }
 
