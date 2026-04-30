@@ -168,7 +168,7 @@ export default function LandingPage() {
   }
 
   return (
-    <main className={`relative -mx-4 -mb-4 -mt-2 min-h-screen ${theme.page}`}>
+    <main className={`relative -mx-4 -mb-4 -mt-2 min-h-screen md:fixed md:inset-0 md:z-[100] md:m-0 md:overflow-y-auto ${theme.page}`}>
       <div className={`pointer-events-none absolute inset-0 ${theme.orb}`} />
       <div className="relative mx-auto flex min-h-screen w-full max-w-[1120px] flex-col px-5 py-5 sm:px-8 lg:px-10 lg:py-8">
         <header className="mb-3 flex shrink-0 items-center justify-between lg:mb-8">
