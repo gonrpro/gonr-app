@@ -25,20 +25,22 @@
     {
       "step": 1,
       "side": "wet",
-      "agent": "Cold water (immediate flush)",
+      "agent": "Cold Water (Immediate Flush)",
       "technique": "Blot from back",
       "equipment": "White cloth, spray bottle",
       "dwellTime": "Within 1-2 minutes of contact",
-      "instruction": "Cold water from back, blot hard. Most fresh tea will flush out if treated immediately. Flip to front and continue. Water will turn tan/brown. Because tea oxidizes quickly, speed is important here—treat within the first few minutes if possible."
+      "instruction": "Cold water from back, blot hard. Most fresh tea will flush out if treated immediately. Flip to front and continue. Water will turn tan/brown. Because tea oxidizes quickly, speed is important here—treat within the first few minutes if possible.",
+      "safetyNote": "Use cool water only and blot instead of rubbing; heat or abrasion can set tannin shadows deeper into cotton."
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Acetic Acid 28% (diluted)",
+      "agent": "Acetic Acid 28% (Diluted)",
       "technique": "Direct application or soak",
       "equipment": "Dropper or spray, white cloth",
       "dwellTime": "2-3 minutes",
-      "instruction": "Apply diluted 28% acetic acid directly to remaining tan/brown stain — safe on white cotton at working dilution. Acidity breaks tannin bonds aggressively. Watch stain lighten noticeably. Tea tannins respond to acid very well. After 2-3 minutes, blot thoroughly."
+      "instruction": "Apply diluted 28% acetic acid directly to remaining tan/brown stain — safe on white cotton at working dilution. Acidity breaks tannin bonds aggressively. Watch stain lighten noticeably. Tea tannins respond to acid very well. After 2-3 minutes, blot thoroughly.",
+      "safetyNote": "Use only diluted professional acetic acid with PPE and ventilation; never substitute industrial-strength acid in home instructions."
     },
     {
       "step": 3,
@@ -47,31 +49,55 @@
       "technique": "Direct application",
       "equipment": "Spray or dropper, white cloth",
       "dwellTime": "3-5 minutes",
-      "instruction": "If stain is brown or color remains, apply peroxide. Full strength safe. Watch oxidation happen—stain fades to colorless. For aged tea (very brown), 6% works faster than 3%. After 3-5 minutes, blot. Safe for white and light-colored cotton. For dark or colored fabrics, skip this step and proceed to NSD flush — test a hidden area first if unsure."
+      "instruction": "If stain is brown or color remains, apply peroxide. Full strength safe. Watch oxidation happen—stain fades to colorless. For aged tea (very brown), 6% works faster than 3%. After 3-5 minutes, blot. Safe for white and light-colored cotton. For dark or colored fabrics, skip this step and proceed to NSD flush — test a hidden area first if unsure.",
+      "safetyNote": "Test dark, printed, or colored cotton first; keep peroxide away from chlorine bleach or ammonia and rinse fully before any heat."
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "NSD flush",
+      "agent": "NSD Flush",
       "technique": "Flush and blot",
       "equipment": "Basin",
       "dwellTime": "2-3 minutes",
-      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot — do not rub. All oxidizer and enzyme residue must be fully removed before drying."
+      "instruction": "Flush thoroughly with NSD (Neutral Synthetic Detergent) to remove all chemistry residue. Work from back of fabric. Blot — do not rub. All oxidizer and enzyme residue must be fully removed before drying.",
+      "safetyNote": "Flush residue completely and avoid aggressive agitation; detergent or oxidizer left behind can cause rings or fiber irritation."
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Rinse water",
+      "agent": "Rinse Water",
       "technique": "Flush and wash",
       "equipment": "Running water or machine",
       "dwellTime": "Until rinse water runs clear",
-      "instruction": "Rinse thoroughly to remove all acid, peroxide, and H₂O₂ for white/light fabrics only. Then wash in warm or hot water with regular detergent."
+      "instruction": "Rinse thoroughly to remove all acid, peroxide, and H₂O₂ for white/light fabrics only. Then wash in warm or hot water with regular detergent.",
+      "safetyNote": "Confirm the stain is gone before dryer heat, ironing, or pressing; heat can permanently set any remaining tannin shadow."
     }
   ],
   "homeSolutions": [
-    "FRESH: Cold water flush, blot hard. Most comes out immediately.",
-    "REMAINING: white vinegar, 2-3 minutes, blot. Then hydrogen peroxide 3% from the pharmacy, 3-5 minutes, blot.",
-    "BROWN/AGED: hydrogen peroxide 3% from the pharmacy, soak 30-60 min, blot thoroughly."
+    {
+      "step": 1,
+      "agent": "Cool Back-Flush + Blot",
+      "instruction": "Hold the stained area under cool running water from the back of the fabric, then blot with a clean white cloth. Work immediately if possible.",
+      "safetyNote": "Do not use hot water and do not rub; heat and abrasion can set tea tannins into cotton."
+    },
+    {
+      "step": 2,
+      "agent": "White Vinegar Dab",
+      "instruction": "If a tan shadow remains, dab household white vinegar onto the area for 2–3 minutes, then blot and rinse cool.",
+      "safetyNote": "Use household white vinegar only; do not use industrial-strength acetic acid at home."
+    },
+    {
+      "step": 3,
+      "agent": "3% Hydrogen Peroxide for White / Light Cotton",
+      "instruction": "For white or light cotton only, apply drugstore 3% hydrogen peroxide for 3–5 minutes, then blot and rinse thoroughly.",
+      "safetyNote": "Patch-test first on any colored fabric and never mix peroxide with chlorine bleach or ammonia."
+    },
+    {
+      "step": 4,
+      "agent": "Cool Wash + Inspect Before Heat",
+      "instruction": "Wash per the care label, then air-dry and inspect. Repeat cool treatment if any brown shadow remains.",
+      "safetyNote": "Do not tumble-dry or iron until the stain is fully gone; heat can permanently set tannin residue."
+    }
   ],
   "materialWarnings": [
     "DO NOT use bleach on colored cotton",
@@ -137,5 +163,37 @@
   "sources": [],
   "cross_refs": [],
   "verification_level": "draft",
-  "lastValidated": "2026-04-25"
+  "lastValidated": "2026-04-30",
+  "diyProtocol": {
+    "steps": [
+      "1. Back-flush with cool water and blot with a clean white cloth; do not rub.",
+      "2. Dab household white vinegar for 2–3 minutes, then cool-rinse.",
+      "3. On white/light cotton only, use 3% hydrogen peroxide for 3–5 minutes, then rinse thoroughly.",
+      "4. Cool wash per care label, air-dry, and inspect before any heat."
+    ],
+    "products": [
+      "Cool water",
+      "Clean white cloth",
+      "Household white vinegar",
+      "3% hydrogen peroxide for white/light cotton only"
+    ],
+    "whenToStop": "Stop and call a pro if the item is colored/printed and dye bleeds, Dry Clean Only, structured, vintage, or still stained after cool treatment.",
+    "warnings": [
+      "Never use hot water, dryer heat, or an iron while a tea stain remains visible.",
+      "Never mix hydrogen peroxide with chlorine bleach or ammonia.",
+      "Never use industrial-strength acetic acid at home."
+    ]
+  },
+  "safetyMatrix": {
+    "neverDo": [
+      "Never use hot water, dryer heat, or pressing heat before the tannin shadow is fully gone.",
+      "Never use chlorine bleach on colored cotton, printed cotton, or colored thread.",
+      "Never mix hydrogen peroxide with chlorine bleach or ammonia.",
+      "Never substitute industrial-strength acetic acid for household vinegar in home treatment."
+    ],
+    "fiberSensitivities": [
+      "Test colored cotton, prints, and trims before peroxide or acidic spotting.",
+      "White cotton tolerates stronger treatment than colored cotton, but residue still must be rinsed fully."
+    ]
+  }
 }

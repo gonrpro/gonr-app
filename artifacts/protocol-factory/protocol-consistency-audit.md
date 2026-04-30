@@ -1,21 +1,21 @@
 # Protocol Consistency Audit
 
-Generated: 2026-04-27T03:23:39.756Z
+Generated: 2026-04-30T16:54:09.231Z
 
 Card files scanned: 332
-Flagged: 264
-Skipped non-card JSON: 27
+Flagged: 263
+Skipped non-card JSON: 30
 
 ## Flag category breakdown
 
 | Category | Count |
 |---|---:|
-| step_safety_note_missing | 1433 |
-| sources_missing | 262 |
+| step_safety_note_missing | 1423 |
+| sources_missing | 261 |
 | title_mismatch | 78 |
-| safety_matrix_missing | 30 |
-| step_title_missing | 6 |
-| instruction_missing | 6 |
+| safety_matrix_missing | 29 |
+| step_title_missing | 3 |
+| instruction_missing | 3 |
 
 ## Title normalization preview (no writes)
 
@@ -127,7 +127,7 @@ Skipped non-card JSON: 27
 | blood-cotton | core | Blood on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | blood-cotton | core-draft | Blood on Cotton | clean |
 | blood-cotton | lab-draft | Blood on Cotton | clean |
-| blood-denim | core | Blood on Denim | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
+| blood-denim | core | Blood on Denim | clean |
 | blood-denim | core-draft | Blood on Denim | clean |
 | blood-denim | lab-draft | Blood on Denim | clean |
 | blood-dried-carpet | core | Dried Blood on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
@@ -394,7 +394,7 @@ Skipped non-card JSON: 27
 | sweat-white-cotton | core | Sweat on White Cotton | title mismatch: expected "Sweat White on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>pro step 8: missing safety note<br>missing sources |
 | tar-carpet | core | Tar on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | tar-cotton | core | Tar on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
-| tea-black-cotton | core | Black Tea on Cotton | title mismatch: expected "Tea Black on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>home step 1: missing step title/agent<br>home step 1: missing instruction<br>home step 2: missing step title/agent<br>home step 2: missing instruction<br>home step 3: missing step title/agent<br>home step 3: missing instruction<br>missing safetyMatrix.neverDo<br>missing sources |
+| tea-black-cotton | core | Black Tea on Cotton | title mismatch: expected "Tea Black on Cotton"<br>missing sources |
 | tea-black-silk | core | Black Tea on Silk — Cold Rinse, Mild Oxidation, Gentle Treatment | title mismatch: expected "Tea Black on Silk"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | tea-black-wool | core | Black Tea on Wool | title mismatch: expected "Tea Black on Wool"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | tea-carpet | core | Tea on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
@@ -462,6 +462,9 @@ Skipped non-card JSON: 27
 | lab-draft | ~/lab/output/TASK-092-source-corpus-intake-framework/manifest-schema.json | not card-shaped json |
 | lab-draft | ~/lab/output/TASK-092-source-corpus-intake-framework/source-manifest.example.json | not card-shaped json |
 | lab-draft | ~/lab/output/TASK-093-corpus-audit-under-framework/corpus-manifest.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-117/package-lock.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-117/package.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-118-voice-fix/apply-payload.json | not card-shaped json |
 | lab-draft | ~/lab/output/TASK-EVAL-FIX/gonr-test-results-2026-04-08.json | not card-shaped json |
 | lab-draft | ~/lab/output/TASK-title-sweep-2026-04-24/current-titles.json | not card-shaped json |
 | lab-draft | ~/lab/output/TASK-title-sweep-2026-04-24/mapping.json | not card-shaped json |

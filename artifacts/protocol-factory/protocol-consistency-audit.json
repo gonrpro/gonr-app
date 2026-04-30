@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-04-27T03:23:39.756Z",
+  "generatedAt": "2026-04-30T16:54:09.231Z",
   "total": 332,
-  "flagged": 264,
-  "skipped": 27,
+  "flagged": 263,
+  "skipped": 30,
   "categoryCounts": {
-    "step_safety_note_missing": 1433,
-    "sources_missing": 262,
-    "safety_matrix_missing": 30,
+    "step_safety_note_missing": 1423,
+    "sources_missing": 261,
+    "safety_matrix_missing": 29,
     "title_mismatch": 78,
-    "step_title_missing": 6,
-    "instruction_missing": 6
+    "step_title_missing": 3,
+    "instruction_missing": 3
   },
   "titlePreview": [
     {
@@ -1104,19 +1104,9 @@
       "canonicalTitle": "Blood on Denim",
       "stain": "blood",
       "surface": "denim",
-      "issueCount": 6,
-      "issues": [
-        "pro step 1: missing safety note",
-        "pro step 2: missing safety note",
-        "pro step 3: missing safety note",
-        "pro step 4: missing safety note",
-        "pro step 5: missing safety note",
-        "missing sources"
-      ],
-      "categories": [
-        "step_safety_note_missing",
-        "sources_missing"
-      ]
+      "issueCount": 0,
+      "issues": [],
+      "categories": []
     },
     {
       "key": "blood-denim",
@@ -6890,29 +6880,13 @@
       "canonicalTitle": "Tea Black on Cotton",
       "stain": "tea-black",
       "surface": "cotton",
-      "issueCount": 14,
+      "issueCount": 2,
       "issues": [
         "title mismatch: expected \"Tea Black on Cotton\"",
-        "pro step 1: missing safety note",
-        "pro step 2: missing safety note",
-        "pro step 3: missing safety note",
-        "pro step 4: missing safety note",
-        "pro step 5: missing safety note",
-        "home step 1: missing step title/agent",
-        "home step 1: missing instruction",
-        "home step 2: missing step title/agent",
-        "home step 2: missing instruction",
-        "home step 3: missing step title/agent",
-        "home step 3: missing instruction",
-        "missing safetyMatrix.neverDo",
         "missing sources"
       ],
       "categories": [
         "title_mismatch",
-        "step_safety_note_missing",
-        "step_title_missing",
-        "instruction_missing",
-        "safety_matrix_missing",
         "sources_missing"
       ]
     },
@@ -7981,6 +7955,24 @@
       "source": "lab-draft",
       "file": "/Users/tyler/lab/output/TASK-093-corpus-audit-under-framework/corpus-manifest.json",
       "taskId": "TASK-093-corpus-audit-under-framework",
+      "reason": "not card-shaped json"
+    },
+    {
+      "source": "lab-draft",
+      "file": "/Users/tyler/lab/output/TASK-117/package-lock.json",
+      "taskId": "TASK-117",
+      "reason": "not card-shaped json"
+    },
+    {
+      "source": "lab-draft",
+      "file": "/Users/tyler/lab/output/TASK-117/package.json",
+      "taskId": "TASK-117",
+      "reason": "not card-shaped json"
+    },
+    {
+      "source": "lab-draft",
+      "file": "/Users/tyler/lab/output/TASK-118-voice-fix/apply-payload.json",
+      "taskId": "TASK-118-voice-fix",
       "reason": "not card-shaped json"
     },
     {
