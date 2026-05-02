@@ -43,12 +43,12 @@ export async function POST(req: Request) {
       `Step ${i + 1}: [${s.agent}] ${s.instruction}${s.dwellTime ? ` (${s.dwellTime})` : ''}`
     ).join('\n')
 
-    const enrichPrompt = `You are an expert textile care chemist. Dan Eisen (DLI Hall of Fame, 40 years experience) has provided a professional spotting protocol. Your job is to add the scientific context around his steps — NOT change his steps.
+    const enrichPrompt = `You are GONR's professional textile-care reasoning engine, grounded in dry-cleaning chemistry, textile safety, manufacturer guidance, and field-tested spotting practice. A professional spotter has submitted a spotting protocol. Your job is to add the scientific context around the submitted steps — NOT change the steps.
 
 Stain: ${card.stain}
 Fiber: ${card.fiber}
 
-Dan's Protocol Steps:
+Submitted Protocol Steps:
 ${stepsText}
 
 ${card.warnings?.length ? `Safety Warnings:\n${card.warnings.join('\n')}` : ''}
@@ -57,7 +57,7 @@ ${card.neverDo?.length ? `Never Do:\n${card.neverDo.join('\n')}` : ''}
 Return ONLY valid JSON:
 {
   "stainChemistry": "2-3 sentences on WHY this stain bonds to this fiber — professional chemistry level",
-  "whyThisWorks": "2-3 sentences explaining why Dan's protocol works — the mechanism behind the agents he chose",
+  "whyThisWorks": "2-3 sentences explaining why this protocol works — the mechanism behind the agents chosen",
   "customerHandoff": "1-2 plain language sentences a counter person can say to a customer about this stain on this fiber. No jargon.",
   "homeTips": ["tip 1", "tip 2", "tip 3"],
   "escalation": "One sentence: when should this go to a specialist and what should the customer tell them"
@@ -91,13 +91,13 @@ Return ONLY valid JSON:
       title: `${card.stain} on ${card.fiber}`,
       stainFamily: detectFamily(card.stain),
       surface: fiberSlug,
-      source: 'dan-eisen',
-      danVerified: true,
+      source: 'pro-submission',
+      proVerified: true,
       meta: {
         stainCanonical: stainSlug,
         surfaceCanonical: fiberSlug,
-        danReview: true,
-        sourceKnowledge: ['dan-eisen'],
+        proReview: true,
+        sourceKnowledge: ['pro-submission'],
       },
       stainChemistry: enriched.stainChemistry || '',
       whyThisWorks: enriched.whyThisWorks || '',
@@ -121,7 +121,7 @@ Return ONLY valid JSON:
     await saveToSupabase(fullCard)
 
     // Step 4: Send email to atlas@gonr.pro
-    const emailBody = `New Dan Eisen Protocol Submission
+    const emailBody = `New Professional Protocol Submission
 
 Card ID: ${id}
 Stain: ${card.stain}
@@ -146,8 +146,8 @@ Save to ~/Desktop/gonr-app/data/core/${id}.json and git push to deploy.`
         },
         body: JSON.stringify({
           personalizations: [{ to: [{ email: 'atlas@gonr.pro' }] }],
-          from: { email: 'atlas@gonr.pro', name: 'GONR Dan Builder' },
-          subject: `New Dan Protocol: ${card.stain} on ${card.fiber}`,
+          from: { email: 'atlas@gonr.pro', name: 'GONR Protocol Builder' },
+          subject: `New Pro Protocol: ${card.stain} on ${card.fiber}`,
           content: [{ type: 'text/plain', value: emailBody }],
         }),
       })
@@ -155,7 +155,7 @@ Save to ~/Desktop/gonr-app/data/core/${id}.json and git push to deploy.`
 
     return NextResponse.json({ ok: true, id, card: fullCard })
   } catch (err) {
-    console.error('Dan submit error:', err)
+    console.error('Pro submit error:', err)
     return NextResponse.json({ error: 'Save failed' }, { status: 500 })
   }
 }

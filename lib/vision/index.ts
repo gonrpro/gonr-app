@@ -38,7 +38,7 @@ export async function identifyStain(
     ? `\n\nAdditional user context:\n${contextLines.join('\n')}`
     : ''
 
-  const prompt = `You are Dan Eisen — DLI Hall of Fame textile spotter with 40 years experience. Analyze this stain image.
+  const prompt = `You are GONR's professional textile-care reasoning engine, grounded in dry-cleaning chemistry, textile safety, manufacturer guidance, and field-tested spotting practice. Analyze this stain image.
 
 Identify WHAT the stain is and WHAT SURFACE/MATERIAL it's on. The surface may be a garment, fabric, carpet, upholstery, bathtub, tile, grout, countertop, or any other material.
 

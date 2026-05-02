@@ -49,7 +49,7 @@ const NEGATIVE_CONTEXTS = [
 ] as const
 
 const NEUTRALIZATION_STEP_INSTRUCTION =
-  'Neutralize: Apply acetic acid 28% diluted 1:10 (or 1 cup white vinegar per gallon of clean water). Dwell 1–2 minutes, blot, then flush thoroughly with clean water. Deactivates residual oxidizer and prevents delayed yellowing or fiber weakening. Per Dan Eisen archive (086, 096), mandatory after every bleach step.'
+  'Neutralize: Apply acetic acid 28% diluted 1:10 (or 1 cup white vinegar per gallon of clean water). Dwell 1–2 minutes, blot, then flush thoroughly with clean water. Deactivates residual oxidizer and prevents delayed yellowing or fiber weakening. Mandatory after every bleach step per professional bleaching practice.'
 
 const NEUTRALIZATION_WARNING =
   'Mandatory post-bleach neutralization: rinse with dilute acetic acid / white vinegar to deactivate residual oxidizer. See Spotter → Bleaching Guide.'

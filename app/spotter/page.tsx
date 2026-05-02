@@ -23,16 +23,6 @@ const COURSES = [
     ),
   },
   {
-    titleKey: 'courseDanEisenTitle',
-    descKey: 'courseDanEisenDesc',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="8" r="6" />
-        <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
-      </svg>
-    ),
-  },
-  {
     titleKey: 'courseFiberMasteryTitle',
     descKey: 'courseFiberMasteryDesc',
     icon: (
@@ -230,7 +220,7 @@ function SpotterPageInner() {
             <h2 className="text-base font-bold">Bleaching Guide</h2>
           </div>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            Oxidizing vs reducing, the 18°F rule, color-fastness testing, and the mandatory post-bleach neutralization rinse. Consolidated from the Dan Eisen archive.
+            Oxidizing vs reducing, the 18°F rule, color-fastness testing, and the mandatory post-bleach neutralization rinse.
           </p>
         </Link>
       </div>
@@ -248,7 +238,7 @@ function SpotterPageInner() {
             <h2 className="text-base font-bold">Stain Brain</h2>
           </div>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            Chat with the AI about any stain scenario. Ask why. Ask what if. Dan Eisen methodology.
+            Chat with the AI about any stain scenario. Ask why. Ask what if.
           </p>
         </button>
 

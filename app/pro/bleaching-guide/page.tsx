@@ -1,12 +1,7 @@
 'use client'
 
 // Bleaching Guide — canonical Spotter-tab reference card
-// Authored 2026-04-14 (TASK-018) — consolidates Dan Eisen archive files:
-//   105 THE ART OF PROFESSIONAL BLEACHING FOR THE CONSUMER
-//   086 PROPER USE OF HOUSEHOLD BLEACH
-//   096 RESTORING WHITE FABRICS
-//   063 OLD OXIDIZED STAINS REQUIRE HYDROGEN PEROXIDE
-//
+// Authored 2026-04-14 (TASK-018).
 // Scope rule: textile substrate only. No stone/masonry/countertop references.
 
 import Link from 'next/link'
@@ -18,7 +13,7 @@ export default function BleachingGuidePage() {
         <h1 className="text-xl font-bold" style={{ color: 'var(--text)' }}>Bleaching Guide</h1>
         <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
           Professional bleaching reference — oxidizing vs reducing, the 18°F rule, neutralization, and the safety
-          boundaries every operator must respect. Consolidated from the Dan Eisen archive.
+          boundaries every operator must respect.
         </p>
       </div>
 
@@ -176,7 +171,7 @@ export default function BleachingGuidePage() {
 
       <section className="rounded-xl p-4" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
         <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: '#22c55e' }}>
-          💡 Dan's Rules
+          💡 Pro Rules
         </p>
         <ul className="text-sm space-y-1.5" style={{ color: 'var(--text)' }}>
           <li>• Buy the smallest container of chlorine bleach you can — it dissipates in months, not years</li>
@@ -204,7 +199,7 @@ export default function BleachingGuidePage() {
       </section>
 
       <p className="text-[11px] mt-2 text-center" style={{ color: 'var(--text-secondary)' }}>
-        Source: Dan Eisen archive files 105, 086, 096, 063 · Consolidated 2026-04-14
+        Built from professional textile-care sources and GONR field expertise.
       </p>
     </div>
   )
