@@ -22,7 +22,7 @@
 //   6. Bottom action bar fixed on mobile, integrated on desktop
 //   7. Mobile-first
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   SEED_SCENARIOS,
   AXIS_OPTIONS,
@@ -317,63 +317,46 @@ function useGoogleFonts() {
 // ---------------------------------------------------------------------------
 export default function PlantBrainIntakeClient() {
   useGoogleFonts()
-  const [state, setState] = useState<SessionState | null>(null)
+  const [state, setState] = useState<SessionState>(() => loadSession())
   const [showResetConfirm, setShowResetConfirm] = useState(false)
   const [showAddScenario, setShowAddScenario] = useState(false)
   const [showExportMenu, setShowExportMenu] = useState(false)
 
-  useEffect(() => {
-    setState(loadSession())
-  }, [])
+  const scenario = state.scenarios[state.currentIndex]
 
   useEffect(() => {
-    if (state) saveSession(state)
+    saveSession(state)
   }, [state])
 
   // Card timer
   useEffect(() => {
-    if (!state) return
-    const scenario = state.scenarios[state.currentIndex]
     if (!scenario) return
-    const response = state.responses[scenario.id]
-    if (!response) return
-    if (!response.startedAt) {
+    const scenarioId = scenario.id
+    const startTimer = window.setTimeout(() => {
       setState((prev) => {
-        if (!prev) return prev
+        const r = prev.responses[scenarioId]
+        if (!r || r.startedAt) return prev
         const next = { ...prev, responses: { ...prev.responses } }
-        next.responses[scenario.id] = { ...next.responses[scenario.id], startedAt: new Date().toISOString() }
+        next.responses[scenarioId] = { ...r, startedAt: new Date().toISOString() }
         return next
       })
-    }
-    const interval = setInterval(() => {
+    }, 0)
+    const interval = window.setInterval(() => {
       setState((prev) => {
-        if (!prev) return prev
-        const r = prev.responses[scenario.id]
+        const r = prev.responses[scenarioId]
         if (!r || !r.startedAt) return prev
         const elapsed = Date.now() - new Date(r.startedAt).getTime()
         if (elapsed === r.timeOnCardMs) return prev
         const next = { ...prev, responses: { ...prev.responses } }
-        next.responses[scenario.id] = { ...r, timeOnCardMs: elapsed }
+        next.responses[scenarioId] = { ...r, timeOnCardMs: elapsed }
         return next
       })
     }, 1000)
-    return () => clearInterval(interval)
-  }, [state?.currentIndex, state?.scenarios.length])
-
-  if (!state) {
-    return (
-      <div
-        style={{ background: TOKENS.cream, color: TOKENS.ink, fontFamily: TOKENS.fontSans }}
-        className="min-h-screen flex items-center justify-center"
-      >
-        <p style={{ fontFamily: TOKENS.fontMono, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase' }} className="text-stone-500">
-          Loading your plant brain…
-        </p>
-      </div>
-    )
-  }
-
-  const scenario = state.scenarios[state.currentIndex]
+    return () => {
+      window.clearTimeout(startTimer)
+      window.clearInterval(interval)
+    }
+  }, [scenario])
   if (!scenario) {
     return (
       <div style={{ background: TOKENS.cream }} className="min-h-screen flex items-center justify-center p-8">
@@ -647,7 +630,7 @@ export default function PlantBrainIntakeClient() {
         {/* Card 2 — Decision */}
         <Section eyebrow="How does YOUR plant handle this?">
           <p style={{ fontFamily: TOKENS.fontSerif, fontSize: 19, fontStyle: 'italic', fontWeight: 300, color: TOKENS.inkSoft, marginBottom: 20 }}>
-            Here's how GONR would handle this. Is that how your plant does it?
+            Here&rsquo;s how GONR would handle this. Is that how your plant does it?
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {([
@@ -683,7 +666,7 @@ export default function PlantBrainIntakeClient() {
 
         {/* Card 3 — Axes (only if Different) */}
         {showAxes && (
-          <Section eyebrow="Your plant's protocol — five decisions">
+          <Section eyebrow="Your plant&rsquo;s protocol — five decisions">
             <p style={{ fontFamily: TOKENS.fontSerif, fontSize: 17, fontStyle: 'italic', fontWeight: 300, color: TOKENS.muted, marginBottom: 20 }}>
               Tap the chip for each axis. Industry baseline is highlighted.
             </p>
@@ -692,7 +675,6 @@ export default function PlantBrainIntakeClient() {
                 <AxisRow
                   key={axisKey}
                   label={AXIS_LABELS[axisKey]}
-                  axisKey={axisKey}
                   options={AXIS_OPTIONS[axisKey] as readonly string[]}
                   value={response.axes[axisKey]}
                   stockValue={scenario.stockAxes[axisKey]}
@@ -775,7 +757,7 @@ export default function PlantBrainIntakeClient() {
                 activeColor={TOKENS.ink}
               />
               <SignalRow
-                question="Does your plant's answer conflict with safety guidance?"
+                question="Does your plant&rsquo;s answer conflict with safety guidance?"
                 value={response.safetyConflict}
                 options={[
                   { value: 'none', label: 'No conflict' },
@@ -999,14 +981,12 @@ function Section({ eyebrow, children }: { eyebrow: string; children: React.React
 
 function AxisRow({
   label,
-  axisKey,
   options,
   value,
   stockValue,
   onChange,
 }: {
   label: string
-  axisKey: string
   options: readonly string[]
   value: string
   stockValue: string
@@ -1212,8 +1192,6 @@ function AddScenarioModal({
   const [garment, setGarment] = useState('')
   const [stain, setStain] = useState('')
   const [stockDefault, setStockDefault] = useState('')
-  const valid = description.trim().length > 0
-
   return (
     <Modal onCancel={onCancel}>
       <h2 style={{ fontFamily: TOKENS.fontSerif, fontSize: 28, fontWeight: 400, marginBottom: 16, letterSpacing: '-0.02em' }}>
