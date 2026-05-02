@@ -126,7 +126,7 @@ export default function ReviewProtocolsPage() {
 
       <section className="text-xs text-gray-500 space-y-1 leading-relaxed">
         <p>This page is dark-launched per Atlas 8420 — route/UI scaffold and reviewer auth model are committed, but no external invites, no public discoverability, no reviewer-facing promises until Tyler approves the access model.</p>
-        <p>When activated: external reviewers (Dan Eisen for chemistry, NCA team for industry/safety) will see only cards assigned to them with Approve / Approve-with-note / Needs-correction actions, audit trail, and required note on corrections. cross_ref → pro_verified requires 2 independent pro approvals.</p>
+        <p>When activated: external reviewers (NCA team for industry/safety, plus assigned chemistry reviewers as scoped) will see only cards assigned to them with Approve / Approve-with-note / Needs-correction actions, audit trail, and required note on corrections. cross_ref → pro_verified requires 2 independent pro approvals.</p>
       </section>
     </main>
   )

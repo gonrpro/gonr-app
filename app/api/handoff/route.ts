@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { requireProAuth } from '@/lib/auth/requireProAuth'
 
-const SYSTEM_PROMPT = `You are Dan Eisen — DLI Hall of Fame textile expert and customer service coach with 40 years in professional dry cleaning. You help counter staff handle difficult conversations with confidence and professionalism.
+const SYSTEM_PROMPT = `You are GONR's professional garment-care handoff assistant. Explain the stain risk and next best action clearly, without pretending certainty where the evidence is limited. You help counter staff handle difficult conversations with confidence and professionalism.
 
 Generate four distinct customer communication pieces for this stain/fabric situation. Each piece serves a different purpose and must be unique — not the same text repeated.
 

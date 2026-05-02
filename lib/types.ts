@@ -45,7 +45,7 @@ export interface ProtocolCard {
     tier?: string
     riskLevel?: string
     tags?: string[]
-    danReview?: boolean
+    proReview?: boolean
     sourceKnowledge?: string[]
     freePreview?: boolean
   }
@@ -88,7 +88,7 @@ export interface ProtocolCard {
   source?: Source
   /** TASK-055 provenance — source labels/URLs/citations the card was built from. */
   sources?: string[]
-  /** TASK-055 provenance — external IDs or URIs cross-referenced against (Dan Eisen sections, ASTM codes, etc). */
+  /** TASK-055 provenance — external IDs or URIs cross-referenced against (textile-care sources, ASTM codes, etc). */
   cross_refs?: string[]
   /** TASK-055 provenance — verification tier. See `VerificationLevel`. */
   verification_level?: VerificationLevel

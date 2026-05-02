@@ -279,7 +279,7 @@ export function formatRetrievedContext(result: RetrievalResult): string {
   return [
     '## GROUNDED CONTEXT (retrieved from verified professional references)',
     '',
-    'The following excerpts were retrieved from the Stain Brain knowledge base (Dan Eisen, Stamford Fabritec, NCA, UCLA, internal GONR chemistry + safety notes, etc.) for this specific query. Use them as primary source-of-truth. If an excerpt contradicts the generic methodology earlier in this prompt, prefer the excerpt for this specific stain × fiber case.',
+    'The following excerpts were retrieved from the Stain Brain knowledge base (textile-care primary sources, Stamford Fabritec, NCA, UCLA, internal GONR chemistry + safety notes, etc.) for this specific query. Use them as primary source-of-truth. If an excerpt contradicts the generic methodology earlier in this prompt, prefer the excerpt for this specific stain × fiber case.',
     '',
     'Do NOT quote excerpts verbatim. Synthesize into the protocol JSON. Acknowledge grounding by including up to three source family names in `whyThisWorks`.',
     '',

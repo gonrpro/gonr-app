@@ -292,7 +292,7 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
   // RULE 13: Alkali/ammonia on tannin stains (BLOCK — nuclear)
   // Added 2026-04-18 after beer-cotton eval FAIL. Tannin stains (coffee,
   // tea, wine, beer, juice, chocolate) are permanently darkened by alkali.
-  // Eisen Method rule: acid side only, never ammonia or alkali.
+  // GONR rule: tannin = acid side only, never ammonia or alkali.
   // Extended with generic "alkaline ..." pattern after second-pass eval
   // still flagged beer-cotton (AI wrote "alkaline detergent" not "ammonia").
   if (ctx.isTannin) {

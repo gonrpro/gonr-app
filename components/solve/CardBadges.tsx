@@ -24,8 +24,6 @@ interface CardBadgesProps {
 //   `stainFamily(stainType)` — same color for the same family across
 //   ResultCard and the chemicals page (Atlas 8053 + Nova 8049).
 // - risk / difficulty / safety tags remain on the shared Badge (v1 tones).
-// - `eisen-method` source badge is still inline (v1 scope) — the
-//   verified/provenance tones are separate and haven't landed yet.
 
 export default function CardBadges({ stainType, riskLevel, difficulty, tags, source }: CardBadgesProps) {
   const { t } = useLanguage()
@@ -109,32 +107,7 @@ export default function CardBadges({ stainType, riskLevel, difficulty, tags, sou
     )
   }
 
-  // 4. Eisen Method Badge — INLINE (trust/verification tones deferred).
-  if (source === 'eisen-method') {
-    const eisenColors = { bg: 'rgba(180,150,50,0.08)', color: '#a87d20', border: 'rgba(180,150,50,0.25)' }
-    badges.push(
-      <span
-        key="eisen"
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          padding: '1px 6px',
-          borderRadius: '9999px',
-          fontSize: '10px',
-          fontWeight: 500,
-          lineHeight: '16px',
-          backgroundColor: eisenColors.bg,
-          color: eisenColors.color,
-          border: `1px solid ${eisenColors.border}`,
-          whiteSpace: 'nowrap',
-        }}
-      >
-        {t('eisenMethod')}
-      </span>
-    )
-  }
-
-  // 5. Key Tag Badges — max 2, only allowed tags. Neutral tone.
+  // 4. Key Tag Badges — max 2, only allowed tags. Neutral tone.
   if (tags && tags.length > 0) {
     const allowedTags = tags.filter(tag => tag in tagKeyMap).slice(0, 2)
     allowedTags.forEach((tag, i) => {
