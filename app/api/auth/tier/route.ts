@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { resolveTier } from '@/lib/auth/tier'
+import { assertRequiredEnv, REQUIRED_TIER_AUTH_ENV } from '@/lib/env-check'
+
+// TASK-142 Step 2 (C2): fail-closed at module load if Supabase auth env missing.
+assertRequiredEnv(REQUIRED_TIER_AUTH_ENV, 'tier-auth route')
 
 // TASK-032 P0 fix: route previously accepted email from request body with no
 // session verification, allowing unauthenticated callers to enumerate any
