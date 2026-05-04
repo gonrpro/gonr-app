@@ -1,6 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { createHmac, timingSafeEqual } from 'crypto'
+import { assertRequiredEnv, REQUIRED_LS_WEBHOOK_ENV, warnRecommendedLsVariantEnv } from '@/lib/env-check'
+
+// TASK-142 Step 2 (C2): fail-closed at module load if required env is missing.
+// Symptom shifts from "first paying customer silently lost" to "deploy smoke
+// test 500s immediately." Variant IDs are recommended-not-required (webhook
+// falls back to product-name match) so they only warn.
+assertRequiredEnv(REQUIRED_LS_WEBHOOK_ENV, 'LemonSqueezy webhook')
+warnRecommendedLsVariantEnv()
 
 // Use service-role client for webhook writes (bypasses RLS)
 function getSupabaseAdmin() {
