@@ -54,17 +54,17 @@ const COPY: Record<Lang, {
   en: {
     navWizardCta: 'Start',
     langToggleAria: 'Switch language',
-    heroEyebrow: 'GONR Plant Brain',
+    heroEyebrow: 'SpottingBoard by GONR',
     heroLine1: 'Your plant should not stop running',
     heroLine2: 'because one person is out.',
     heroSub:
-      'Twenty minutes from your senior operator. A bilingual, printable, searchable plant brain forever.',
-    heroPrimaryCta: 'Start your Plant Brain',
+      'SpottingBoard turns twenty minutes with your senior operator into a bilingual, printable, searchable Plant Brain for your floor.',
+    heroPrimaryCta: 'Build your Plant Brain',
     heroSecondaryLink: 'See a sample guide',
     guideEyebrow: 'The reward',
     guideHeading: 'Walk away with the guide your team will actually pin to the board.',
     guideSub:
-      'Bilingual English and Spanish. Built from your operator’s answers in their own words. Printable. Updated automatically when your operators teach Plant Brain new things.',
+      'Bilingual English and Spanish. Built from your operator’s answers in their own words. Printable. Updated automatically when your operators teach SpottingBoard new things.',
     paperBadge: 'PLANT GUIDE · DRAFT',
     paperPlantTitle: 'Jerry’s Cleaners — Plant Guide',
     paperVersion: 'V1 · GENERATED 2026-05-02',
@@ -77,12 +77,12 @@ const COPY: Record<Lang, {
     paperSection3Label: 'Escalation triggers',
     paperSection3Body:
       'Aniline leather, vintage silk, pre-set protein, customer-applied product. Anything escalated gets a board entry with photo plus spotter notes before the second-touch.',
-    paperFooter: 'GONR Plant Brain · Generated from your wizard answers',
+    paperFooter: 'SpottingBoard · Plant Brain generated from your answers',
     storyEyebrow: 'Why now',
     storyHeadline:
       'The knowledge that runs your plant lives in your operators’ heads.',
     storyParagraph:
-      'When your senior spotter calls in sick. When the night shift inherits the morning escalation. When a new hire walks in on day one. When a forty-year veteran retires next year. Every one of those moments is the moment your plant stops running well — unless the knowledge has somewhere to live. Plant Brain is the somewhere.',
+      'When your senior spotter calls in sick. When the night shift inherits the morning escalation. When a new hire walks in on day one. When a forty-year veteran retires next year. Every one of those moments is the moment your plant stops running well — unless the knowledge has somewhere to live. SpottingBoard is where that knowledge becomes your Plant Brain.',
     statsHeading: 'Built on real protocol craft.',
     stats: [
       { value: '30', label: 'sharp questions, not 300 generic ones' },
@@ -92,24 +92,24 @@ const COPY: Record<Lang, {
     ],
     closingHeading: 'Twenty minutes. A living plant brain forever.',
     closingSub: 'Start with your senior operator. End with a guide for your whole floor.',
-    closingCta: 'Start your Plant Brain',
+    closingCta: 'Build your Plant Brain',
     footerLine:
-      'GONR Plant Brain · Built for plant operators.',
+      'SpottingBoard by GONR · Built for plant operators.',
   },
   es: {
     navWizardCta: 'Empezar',
     langToggleAria: 'Cambiar idioma',
-    heroEyebrow: 'GONR Plant Brain',
+    heroEyebrow: 'SpottingBoard por GONR',
     heroLine1: 'Tu planta no debería detenerse',
     heroLine2: 'porque falta una persona.',
     heroSub:
-      'Veinte minutos de tu operador principal. Un cerebro de planta bilingüe, imprimible y buscable para siempre.',
-    heroPrimaryCta: 'Empieza tu Plant Brain',
+      'SpottingBoard convierte veinte minutos con tu operador principal en un Plant Brain bilingüe, imprimible y buscable para tu piso.',
+    heroPrimaryCta: 'Construye tu Plant Brain',
     heroSecondaryLink: 'Ver una guía de ejemplo',
     guideEyebrow: 'La recompensa',
     guideHeading: 'Llévate la guía que tu equipo de verdad pegará al tablero.',
     guideSub:
-      'Bilingüe inglés y español. Construida desde las respuestas de tu operador en sus propias palabras. Imprimible. Se actualiza automáticamente cuando tus operadores le enseñan cosas nuevas.',
+      'Bilingüe inglés y español. Construida desde las respuestas de tu operador en sus propias palabras. Imprimible. Se actualiza automáticamente cuando tus operadores le enseñan cosas nuevas a SpottingBoard.',
     paperBadge: 'PLANT GUIDE · BORRADOR',
     paperPlantTitle: 'Jerry’s Cleaners — Guía de Planta',
     paperVersion: 'V1 · GENERADO 2026-05-02',
@@ -122,12 +122,12 @@ const COPY: Record<Lang, {
     paperSection3Label: 'Disparadores de escalación',
     paperSection3Body:
       'Cuero anilina, seda vintage, proteína fijada, producto aplicado por el cliente. Cualquier escalación entra al tablero con foto y notas del manchador antes del segundo toque.',
-    paperFooter: 'GONR Plant Brain · Generado desde tus respuestas del wizard',
+    paperFooter: 'SpottingBoard · Plant Brain generado desde tus respuestas',
     storyEyebrow: 'Por qué ahora',
     storyHeadline:
       'El conocimiento que mantiene viva tu planta vive en la cabeza de tus operadores.',
     storyParagraph:
-      'Cuando tu manchador principal no viene. Cuando el turno de noche hereda la escalación de la mañana. Cuando un empleado nuevo entra el primer día. Cuando un veterano de cuarenta años se jubila el año que viene. Cada uno de esos momentos es el momento en que tu planta deja de funcionar bien — a menos que el conocimiento tenga dónde vivir. Plant Brain es ese dónde.',
+      'Cuando tu manchador principal no viene. Cuando el turno de noche hereda la escalación de la mañana. Cuando un empleado nuevo entra el primer día. Cuando un veterano de cuarenta años se jubila el año que viene. Cada uno de esos momentos es el momento en que tu planta deja de funcionar bien — a menos que el conocimiento tenga dónde vivir. SpottingBoard convierte ese conocimiento en tu Plant Brain.',
     statsHeading: 'Construido sobre el oficio real del protocolo.',
     stats: [
       { value: '30', label: 'preguntas agudas, no 300 genéricas' },
@@ -137,9 +137,9 @@ const COPY: Record<Lang, {
     ],
     closingHeading: 'Veinte minutos. Un cerebro de planta vivo para siempre.',
     closingSub: 'Empieza con tu operador principal. Termina con una guía para todo tu piso.',
-    closingCta: 'Empieza tu Plant Brain',
+    closingCta: 'Construye tu Plant Brain',
     footerLine:
-      'GONR Plant Brain · Construido para operadores de planta.',
+      'SpottingBoard por GONR · Construido para operadores de planta.',
   },
 }
 
@@ -162,8 +162,8 @@ export default function PlantBrainLandingClient() {
       {/* ── Top nav (sticky, hairline border, restrained) ─────────────── */}
       <header className="sticky top-0 z-30 border-b border-white/[0.06] bg-[#0a0a0c]/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4 lg:px-10">
-          <Link href="/plant-brain" className="text-[15px] font-medium tracking-tight text-white">
-            GONR <span className="text-white/50">·</span> <span className="font-normal text-white/70">Plant Brain</span>
+          <Link href="/spottingboard" className="text-[15px] font-medium tracking-tight text-white">
+            SpottingBoard <span className="text-white/50">·</span> <span className="font-normal text-white/70">by GONR</span>
           </Link>
           <div className="flex items-center gap-2 sm:gap-3">
             <button
@@ -175,7 +175,7 @@ export default function PlantBrainLandingClient() {
               {lang === 'en' ? 'EN  /  ES' : 'EN  /  ES'}
             </button>
             <Link
-              href="/plant-brain-builder"
+              href="/spottingboard/builder"
               className="rounded-full bg-[#c8442a] px-4 py-1.5 text-[13px] font-medium tracking-tight text-white transition hover:bg-[#d85432]"
             >
               {t.navWizardCta}
@@ -205,7 +205,7 @@ export default function PlantBrainLandingClient() {
           </p>
           <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
             <Link
-              href="/plant-brain-builder"
+              href="/spottingboard/builder"
               className="group inline-flex items-center gap-2 rounded-full bg-[#c8442a] px-7 py-3.5 text-[15px] font-medium tracking-tight text-white transition hover:bg-[#d85432]"
             >
               {t.heroPrimaryCta}

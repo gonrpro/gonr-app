@@ -222,7 +222,7 @@ function freshSession(): SessionState {
     kind: 'assistant',
     type: 'info',
     body:
-      "Welcome. I'm GONR Intelligence — I'll help you build your plant's private brain by asking sharp, specific questions about how your shop actually runs. Your answers stay in your browser. Nothing leaves your plant unless you decide to share it. Let's start.",
+      "Welcome. I'm SpottingBoard — I'll help you build your plant's private Plant Brain by asking sharp, specific questions about how your shop actually runs. Your answers stay in your browser. Nothing leaves your plant unless you decide to share it. Let's start with the facts that shape every safe recommendation.",
     tone: 'milestone',
   }
   session.conversation.push(welcome)
@@ -259,6 +259,26 @@ function saveSession(s: SessionState) {
 // ============================================================================
 function pickNextQuestion(s: SessionState): Question | null {
   const answered = new Set(s.answeredQuestionIds)
+
+  // The first run should feel like an expert plant interview, not a generic
+  // form. Lock the opening sequence to the highest-signal context first:
+  // process reality → hard safety boundaries → authority chain → useful
+  // scenario → actual tools → customer-facing policy.
+  const openingSequence = [
+    'chem-primary-solvent',
+    'chem-bleach-policy',
+    'escalation-spotter-tier',
+    'spotting-blood-on-cotton',
+    'chem-spotting-products',
+    'comm-disclosure-policy',
+  ]
+  if (s.phase === 'discovery') {
+    const pinnedNext = openingSequence
+      .map((id) => QUESTIONS.find((q) => q.id === id))
+      .find((q): q is Question => Boolean(q && !answered.has(q.id)))
+    if (pinnedNext) return pinnedNext
+  }
+
   // Score = weight * (low coverage of its module + 1)
   let best: Question | null = null
   let bestScore = -Infinity
