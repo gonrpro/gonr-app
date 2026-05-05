@@ -1,10 +1,10 @@
-import PlantBrainIntakeClient from '../admin/plant-brain-intake/PlantBrainIntakeClient'
+import PlantBrainBuilderClient from './PlantBrainBuilderClient'
 
 export const metadata = {
-  title: 'Build Your Plant Brain | GONR',
-  description: 'Turn your shop knowledge into a clean plant-specific ops plan.',
+  title: 'Plant Brain Builder — GONR Intelligence',
+  description: 'Build plant-specific GONR solve cards through an intelligent chat cockpit.',
 }
 
 export default function PlantBrainBuilderPage() {
-  return <PlantBrainIntakeClient />
+  return <PlantBrainBuilderClient />
 }

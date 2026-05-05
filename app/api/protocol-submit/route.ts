@@ -10,6 +10,7 @@ async function saveToSupabase(card: any) {
 
   // Ensure table exists and insert
   const { data, error } = await supabase
+    // legacy table name; route neutralized; DB rename deferred to Supabase migration pass
     .from('dan_submissions')
     .insert({
       stain: card.stain,

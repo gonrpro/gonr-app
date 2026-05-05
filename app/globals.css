@@ -276,3 +276,34 @@ body.gonr-landing-active > nav {
 body.gonr-landing-active > main {
   padding: 0 !important;
 }
+
+/* ============================================================================
+   Plant Brain shell escape (TASK-131)
+   ============================================================================
+   When body has class `plant-brain-shell` (added by
+   components/plant-brain/PlantBrainShell on Plant Brain routes), opt out of
+   the global mobile-app constraints so the routes can render full-width
+   premium product UI.
+
+   The class is added/removed on mount/unmount by the route layouts at:
+     - app/plant-brain/layout.tsx
+     - app/plant-brain-builder/layout.tsx
+   ============================================================================ */
+body.plant-brain-shell {
+  max-width: none;
+  padding-bottom: 0;
+  background: #0b0c10;
+  color: #e8eaed;
+}
+
+body.plant-brain-shell > header,
+body.plant-brain-shell > footer,
+body.plant-brain-shell > nav,
+body.plant-brain-shell > [data-preview-banner] {
+  display: none !important;
+}
+
+body.plant-brain-shell > main {
+  max-width: none;
+  padding: 0;
+}
