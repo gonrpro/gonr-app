@@ -36,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: 'GONR™ — Professional Stain Protocols',
     description: 'Professional stain-removal protocols built from real dry-cleaning experience.',
     icons: {
-      icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='96' fill='%230A0A0A'/%3E%3Cg transform='translate(270,256)'%3E%3Cpath d='M74-76L36-38C20-56-2-68-30-68C-80-68-108-30-108 8C-108 46-80 84-30 84C0 84 20 70 30 44L30 28L-22 28L-22-8L84-8L84 60C62 110 22 138-30 138C-118 138-166 74-166 8C-166-58-118-122-30-122C16-122 46-106 74-76Z' fill='%233f7f52'/%3E%3C/g%3E%3C/svg%3E"
+      icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='96' fill='%230A0A0A'/%3E%3Cg transform='translate(270,256)'%3E%3Cpath d='M74-76L36-38C20-56-2-68-30-68C-80-68-108-30-108 8C-108 46-80 84-30 84C0 84 20 70 30 44L30 28L-22 28L-22-8L84-8L84 60C62 110 22 138-30 138C-118 138-166 74-166 8C-166-58-118-122-30-122C16-122 46-106 74-76Z' fill='%2322C55E'/%3E%3C/g%3E%3C/svg%3E"
     },
     openGraph: {
       title: 'GONR™ — Professional Stain Protocols',
