@@ -217,7 +217,7 @@ describe('applyReviewTransition — RPC integration (mocked)', () => {
         rpcSpy(name, args)
         return { data: { ok: true, applied: args.p_change_type }, error: null }
       },
-    } as unknown as Parameters<typeof applyReviewTransition>[1]['client']
+    } as unknown as NonNullable<Parameters<typeof applyReviewTransition>[1]>['client']
   }
 
   it('calls apply_plant_brain_item_change with the expected RPC parameter shape', async () => {

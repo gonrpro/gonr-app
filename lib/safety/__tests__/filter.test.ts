@@ -1,6 +1,7 @@
 // lib/safety/__tests__/filter.test.ts
 // Unit tests for the GONR safety filter
 
+import { describe, test, expect } from 'vitest'
 import { runSafetyFilter, SAFE_FALLBACK } from '../filter'
 
 // Helper: build a minimal AI card for testing
