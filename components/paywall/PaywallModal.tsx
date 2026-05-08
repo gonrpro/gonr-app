@@ -158,7 +158,7 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.checkoutBtn}
-                  style={{ background: '#22c55e' }}
+                  style={{ background: 'var(--accent)' }}
                 >
                   Get GONR™ Home
                 </a>

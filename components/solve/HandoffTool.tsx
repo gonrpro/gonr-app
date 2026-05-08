@@ -157,7 +157,7 @@ export default function HandoffTool({ prefill = '', onAuthError }: HandoffToolPr
             <button
               onClick={() => copy(section.text, section.key)}
               className="text-xs font-semibold px-2 py-1 rounded-lg transition-colors"
-              style={{ background: 'var(--surface)', color: copied === section.key ? '#22c55e' : 'var(--text-secondary)', border: '1px solid var(--border)' }}
+              style={{ background: 'var(--surface)', color: copied === section.key ? 'var(--accent)' : 'var(--text-secondary)', border: '1px solid var(--border)' }}
             >
               {copied === section.key ? (lang === 'es' ? '✓ Copiado' : '✓ Copied') : (lang === 'es' ? 'Copiar' : 'Copy')}
             </button>

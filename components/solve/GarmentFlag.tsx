@@ -119,7 +119,7 @@ export default function GarmentFlag({
           className="w-14 h-14 rounded-full flex items-center justify-center"
           style={{ background: 'rgba(34,197,94,0.12)', border: '1.5px solid rgba(34,197,94,0.35)' }}
         >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
@@ -165,7 +165,7 @@ export default function GarmentFlag({
     ...chipBase,
     background: 'rgba(34,197,94,0.1)',
     borderColor: 'rgba(34,197,94,0.45)',
-    color: '#22c55e',
+    color: 'var(--accent)',
   }
 
   const inputStyle: React.CSSProperties = {
@@ -318,7 +318,7 @@ export default function GarmentFlag({
           <div
             className="relative inline-flex items-center w-10 h-6 rounded-full transition-colors"
             style={{
-              background: previousTreatment ? '#22c55e' : 'var(--border)',
+              background: previousTreatment ? 'var(--accent)' : 'var(--border)',
             }}
           >
             <span

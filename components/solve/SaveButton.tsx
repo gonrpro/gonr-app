@@ -93,8 +93,8 @@ export default function SaveButton({ card }: SaveButtonProps) {
           width="18"
           height="18"
           viewBox="0 0 24 24"
-          fill={saved ? '#22c55e' : 'none'}
-          stroke={saved ? '#22c55e' : 'currentColor'}
+          fill={saved ? 'var(--accent)' : 'none'}
+          stroke={saved ? 'var(--accent)' : 'currentColor'}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"

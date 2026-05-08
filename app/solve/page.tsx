@@ -650,7 +650,7 @@ function SolvePageInner() {
       {showUpgradeBanner && (
         <div
           className="rounded-xl px-4 py-3 text-center text-sm font-semibold"
-          style={{ background: 'rgba(34,197,94,0.15)', color: '#22c55e', border: '1px solid rgba(34,197,94,0.3)' }}
+          style={{ background: 'rgba(34,197,94,0.15)', color: 'var(--accent)', border: '1px solid rgba(34,197,94,0.3)' }}
         >
           Welcome to Spotter! You&apos;re all set. 🎉
         </div>
@@ -703,11 +703,11 @@ function SolvePageInner() {
               }}
               className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98]"
             >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
                 <circle cx="12" cy="13" r="3" />
               </svg>
-              <span style={{ color: '#22c55e', fontSize: '14px', fontWeight: 600 }}>{t('scanStain')}</span>
+              <span style={{ color: 'var(--accent)', fontSize: '14px', fontWeight: 600 }}>{t('scanStain')}</span>
             </button>
             <button
               onClick={() => handleScanStain(false)}
@@ -722,10 +722,10 @@ function SolvePageInner() {
               }}
               className="flex items-center justify-center gap-1.5 px-3 py-1.5 hover:opacity-80 active:scale-[0.98]"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
               </svg>
-              <span style={{ color: '#22c55e', fontSize: '11px', fontWeight: 500 }}>{t('uploadPhoto') || 'Upload photo'}</span>
+              <span style={{ color: 'var(--accent)', fontSize: '11px', fontWeight: 500 }}>{t('uploadPhoto') || 'Upload photo'}</span>
             </button>
           </div>
         ) : (
@@ -783,7 +783,7 @@ function SolvePageInner() {
                 borderRadius: '4px',
                 padding: '1px 6px',
                 fontSize: '11px',
-                color: '#22c55e',
+                color: 'var(--accent)',
                 fontWeight: 600,
               }}
             >
@@ -1031,7 +1031,7 @@ function SolvePageInner() {
         <span
           className="flex items-center gap-2"
           style={{
-            color: hasSolveInput ? '#22c55e' : 'var(--text-secondary)',
+            color: hasSolveInput ? 'var(--accent)' : 'var(--text-secondary)',
             fontSize: '17px',
             fontWeight: 700,
             transition: 'color 0.2s ease',
@@ -1040,7 +1040,7 @@ function SolvePageInner() {
           {loading && (
             <span
               className="inline-block w-2 h-2 rounded-full animate-pulse"
-              style={{ background: '#22c55e' }}
+              style={{ background: 'var(--accent)' }}
               aria-hidden="true"
             />
           )}
@@ -1068,7 +1068,7 @@ function SolvePageInner() {
           background: 'rgba(34, 197, 94, 0.08)',
           borderRadius: '6px',
           fontSize: '12px',
-          color: '#22c55e',
+          color: 'var(--accent)',
           fontWeight: 500,
         }}>
           {getRemainingTextFromState(usageState)}

@@ -147,7 +147,7 @@ export default function ChemistryPage() {
                       <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>Time Factor</p>
                       <div className="flex flex-col gap-2">
                         {[
-                          { key: 'fresh', label: 'Fresh', color: '#22c55e', bg: 'rgba(34,197,94,0.08)', border: 'rgba(34,197,94,0.2)' },
+                          { key: 'fresh', label: 'Fresh', color: 'var(--accent)', bg: 'rgba(34,197,94,0.08)', border: 'rgba(34,197,94,0.2)' },
                           { key: 'aged', label: 'Aged', color: '#f59e0b', bg: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.2)' },
                           { key: 'heatSet', label: 'Heat Set', color: '#ef4444', bg: 'rgba(239,68,68,0.08)', border: 'rgba(239,68,68,0.2)' },
                         ].map(({ key, label, color, bg, border }) => timeFactor[key] ? (

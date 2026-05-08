@@ -83,7 +83,7 @@ export default function Header({ brand = 'gonr' }: { brand?: 'gonr' | 'spottingb
       <div className="flex items-center justify-between px-4 py-3">
         <div className="select-none" style={{ fontSize: '28px', fontWeight: 900, letterSpacing: '-1.5px', lineHeight: 1 }}>
           <span className="text-gray-900 dark:text-white">GON</span>
-          <span style={{ color: '#22c55e' }}>R</span>
+          <span style={{ color: 'var(--accent)' }}>R</span>
           <span
             aria-hidden="true"
             style={{

@@ -10,7 +10,7 @@ function VisualBadge({ type }: { type: string }) {
       label: 'Decision Framework',
       labelEs: 'Marco de Decisión',
       bg: 'rgba(34,197,94,0.08)',
-      color: '#22c55e',
+      color: 'var(--accent)',
       border: 'rgba(34,197,94,0.3)',
     },
     'tip': {
@@ -42,7 +42,7 @@ function VisualBadge({ type }: { type: string }) {
       label: 'Key Concept',
       labelEs: 'Concepto Clave',
       bg: 'rgba(34,197,94,0.06)',
-      color: '#22c55e',
+      color: 'var(--accent)',
       border: 'rgba(34,197,94,0.25)',
     },
   }
@@ -90,7 +90,7 @@ export default function LessonCard({ lesson, lessonIndex, totalLessons }: Lesson
           className="rounded-xl px-3 py-2 text-xs"
           style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.15)', color: 'var(--text-secondary)' }}
         >
-          <span style={{ color: '#22c55e', fontWeight: 600 }}>
+          <span style={{ color: 'var(--accent)', fontWeight: 600 }}>
             {lang === 'es' ? 'Objetivo' : 'Objective'}:
           </span>{' '}
           {objective}
@@ -133,7 +133,7 @@ export default function LessonCard({ lesson, lessonIndex, totalLessons }: Lesson
           border: '1.5px solid rgba(34,197,94,0.3)',
         }}
       >
-        <p className="text-[10px] font-mono font-bold tracking-wider uppercase" style={{ color: '#22c55e' }}>
+        <p className="text-[10px] font-mono font-bold tracking-wider uppercase" style={{ color: 'var(--accent)' }}>
           {lang === 'es' ? '💡 Punto Clave' : '💡 Key Takeaway'}
         </p>
         <p className="text-sm font-semibold" style={{ color: 'var(--text)' }}>

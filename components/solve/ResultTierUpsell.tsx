@@ -45,7 +45,7 @@ const TIERS: TierConfig[] = [
     priceKey: 'tierHomePrice',
     blurbKey: 'tierHomeBlurb',
     ctaKey: 'tierHomeCta',
-    accent: '#22c55e',
+    accent: 'var(--accent)',
     bg: 'rgba(34, 197, 94, 0.04)',
     border: 'rgba(34, 197, 94, 0.28)',
     priceColor: '#16a34a',

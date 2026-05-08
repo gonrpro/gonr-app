@@ -303,7 +303,7 @@ function SpotterPageInner() {
             <span className="text-lg">🧠</span>
             <h2 className="text-base font-bold">The Spotter&apos;s Mindset</h2>
             <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border ml-auto"
-              style={{ background: 'rgba(34,197,94,0.08)', color: '#22c55e', borderColor: 'rgba(34,197,94,0.3)' }}>
+              style={{ background: 'rgba(34,197,94,0.08)', color: 'var(--accent)', borderColor: 'rgba(34,197,94,0.3)' }}>
               4 lessons
             </span>
           </div>
@@ -322,7 +322,7 @@ function SpotterPageInner() {
             <span className="text-lg">🧪</span>
             <h2 className="text-base font-bold">Stain Families</h2>
             <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border ml-auto"
-              style={{ background: 'rgba(34,197,94,0.08)', color: '#22c55e', borderColor: 'rgba(34,197,94,0.3)' }}>
+              style={{ background: 'rgba(34,197,94,0.08)', color: 'var(--accent)', borderColor: 'rgba(34,197,94,0.3)' }}>
               7 lessons
             </span>
           </div>
@@ -342,7 +342,7 @@ function SpotterPageInner() {
           <CourseCard key={course.titleKey} course={course} />
         ))}
         <div className="card space-y-2" style={{ background: 'rgba(34,197,94,0.04)', borderColor: 'rgba(34,197,94,0.2)' }}>
-          <p className="text-sm font-semibold" style={{ color: '#22c55e' }}>
+          <p className="text-sm font-semibold" style={{ color: 'var(--accent)' }}>
             Preparing for DLI or NCA certification?
           </p>
           <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>

@@ -27,7 +27,7 @@ export default function CustomerHandoff({ handoff }: CustomerHandoffProps) {
   const { t } = useLanguage()
 
   const canTreatConfig = {
-    yes: { icon: '✅', label: t('canTreatYes'), color: '#22c55e', bg: 'rgba(34,197,94,0.08)', border: 'rgba(34,197,94,0.25)' },
+    yes: { icon: '✅', label: t('canTreatYes'), color: 'var(--accent)', bg: 'rgba(34,197,94,0.08)', border: 'rgba(34,197,94,0.25)' },
     likely: { icon: '⚠️', label: t('canTreatLikely'), color: '#d97706', bg: 'rgba(245,158,11,0.10)', border: 'rgba(245,158,11,0.30)' },
     'high-risk': { icon: '🔴', label: t('canTreatHighRisk'), color: '#ef4444', bg: 'rgba(239,68,68,0.08)', border: 'rgba(239,68,68,0.25)' },
   }

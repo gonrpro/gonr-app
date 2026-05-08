@@ -58,7 +58,7 @@ export default function StepEnlargeModal({ steps, currentIndex, onClose, onNavig
         {/* Agent badge */}
         {step.agent && (
           <p className="text-sm font-bold uppercase tracking-wider mb-3"
-            style={{ color: '#22c55e' }}>
+            style={{ color: 'var(--accent)' }}>
             {step.agent}
           </p>
         )}
@@ -108,7 +108,7 @@ export default function StepEnlargeModal({ steps, currentIndex, onClose, onNavig
           className="flex-1 min-h-[48px] rounded-xl text-sm font-semibold transition-opacity"
           style={{
             background: isLast ? 'rgba(34,197,94,0.15)' : 'rgba(34,197,94,0.12)',
-            color: '#22c55e',
+            color: 'var(--accent)',
             border: '1px solid rgba(34,197,94,0.3)',
           }}
         >

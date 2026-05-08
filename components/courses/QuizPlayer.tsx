@@ -68,7 +68,7 @@ export default function QuizPlayer({ questions, passThreshold, onComplete }: Qui
             border: `2px solid ${passed ? 'rgba(34,197,94,0.3)' : 'rgba(245,158,11,0.3)'}`,
           }}
         >
-          <p className="text-3xl font-bold" style={{ color: passed ? '#22c55e' : '#f59e0b' }}>
+          <p className="text-3xl font-bold" style={{ color: passed ? 'var(--accent)' : '#f59e0b' }}>
             {pct}%
           </p>
           <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>
@@ -92,7 +92,7 @@ export default function QuizPlayer({ questions, passThreshold, onComplete }: Qui
               border: '1.5px solid rgba(34,197,94,0.4)',
             }}
           >
-            <p className="text-sm font-bold" style={{ color: '#22c55e' }}>
+            <p className="text-sm font-bold" style={{ color: 'var(--accent)' }}>
               🏅 {lang === 'es' ? 'Insignia Desbloqueada: Mentalidad del Spotter' : 'Badge Unlocked: Spotter Mindset'}
             </p>
           </div>
@@ -121,7 +121,7 @@ export default function QuizPlayer({ questions, passThreshold, onComplete }: Qui
             className="h-full rounded-full transition-all duration-300"
             style={{
               width: `${((current + 1) / questions.length) * 100}%`,
-              background: '#22c55e',
+              background: 'var(--accent)',
             }}
           />
         </div>
@@ -178,7 +178,7 @@ export default function QuizPlayer({ questions, passThreshold, onComplete }: Qui
                 <span
                   className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold"
                   style={{
-                    background: isSelected ? (revealed ? (isCorrect ? '#22c55e' : '#ef4444') : '#22c55e') : 'var(--surface-2)',
+                    background: isSelected ? (revealed ? (isCorrect ? 'var(--accent)' : '#ef4444') : 'var(--accent)') : 'var(--surface-2)',
                     color: isSelected ? '#fff' : 'var(--text-secondary)',
                     border: `1px solid ${isSelected ? 'transparent' : 'var(--border)'}`,
                   }}
@@ -188,7 +188,7 @@ export default function QuizPlayer({ questions, passThreshold, onComplete }: Qui
                 {optText}
               </span>
               {revealed && isCorrect && (
-                <span className="ml-2 text-xs" style={{ color: '#22c55e' }}>✓</span>
+                <span className="ml-2 text-xs" style={{ color: 'var(--accent)' }}>✓</span>
               )}
             </button>
           )
@@ -205,7 +205,7 @@ export default function QuizPlayer({ questions, passThreshold, onComplete }: Qui
             color: 'var(--text-secondary)',
           }}
         >
-          <p className="font-semibold mb-1" style={{ color: selected === q.correctIndex ? '#22c55e' : '#f59e0b' }}>
+          <p className="font-semibold mb-1" style={{ color: selected === q.correctIndex ? 'var(--accent)' : '#f59e0b' }}>
             {selected === q.correctIndex
               ? (lang === 'es' ? '✓ ¡Correcto!' : '✓ Correct!')
               : (lang === 'es' ? '✗ No exactamente' : '✗ Not quite')}
@@ -220,7 +220,7 @@ export default function QuizPlayer({ questions, passThreshold, onComplete }: Qui
           onClick={handleCheck}
           disabled={selected === null}
           className="w-full py-3 rounded-xl text-sm font-bold transition-all disabled:opacity-30"
-          style={{ background: '#22c55e', color: '#fff' }}
+          style={{ background: 'var(--accent)', color: '#fff' }}
         >
           {lang === 'es' ? 'Verificar Respuesta' : 'Check Answer'}
         </button>

@@ -32,7 +32,7 @@ export default function BleachingGuidePage() {
           </ul>
         </div>
         <div className="rounded-xl p-3" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
-          <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: '#22c55e' }}>
+          <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--accent)' }}>
             ✓ Always
           </p>
           <ul className="text-sm space-y-1" style={{ color: 'var(--text)' }}>
@@ -170,7 +170,7 @@ export default function BleachingGuidePage() {
       </section>
 
       <section className="rounded-xl p-4" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
-        <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: '#22c55e' }}>
+        <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--accent)' }}>
           💡 Pro Rules
         </p>
         <ul className="text-sm space-y-1.5" style={{ color: 'var(--text)' }}>
