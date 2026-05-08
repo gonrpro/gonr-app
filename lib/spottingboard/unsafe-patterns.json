@@ -1,0 +1,264 @@
+{
+  "schema_name": "spottingboard_unsafe_patterns",
+  "version": "0.1.1",
+  "date": "2026-05-07",
+  "owner": "Stain Brain",
+  "purpose": "Fail-closed pattern set for future SpottingBoard classifier/review gate. This is not invoked by the first raw module insert loop, but should be attached before plant-local rules become runtime guidance or central candidates. v0.1.1 clarification: classifier may quarantine/downgrade at capture, but must not auto-review or auto-reject rows.",
+  "default_action": "requires_supervisor_review",
+  "authority_mapping": {
+    "unsafe_or_contraindicated": {
+      "authority_class": "plant-local",
+      "risk_tier": "high-risk",
+      "review_status": "unreviewed",
+      "safety_label": "unsafe_do_not_use",
+      "runtime_eligible": false,
+      "promotion_status": "never-promoted",
+      "note": "Do not auto-set rejected/reviewed-reject at capture; supervisor review performs explicit rejection if warranted."
+    },
+    "supervisor_only": {
+      "authority_class": "supervisor-only",
+      "risk_tier": "requires-supervisor",
+      "review_status": "unreviewed"
+    },
+    "claim_sensitive": {
+      "authority_class": "plant-local",
+      "risk_tier": "claim-sensitive",
+      "review_status": "unreviewed"
+    },
+    "unverified_tribal": {
+      "authority_class": "unverified-tribal",
+      "risk_tier": "requires-supervisor",
+      "review_status": "unreviewed"
+    }
+  },
+  "hard_blocks": [
+    {
+      "id": "rust_bleach_or_oxidizer_first",
+      "match_terms_any": [
+        "rust",
+        "iron",
+        "mineral"
+      ],
+      "match_terms_with_any": [
+        "chlorine bleach",
+        "bleach first",
+        "hypochlorite",
+        "peroxide first",
+        "oxidizer first"
+      ],
+      "reason": "Rust/iron stains can darken, set, or worsen with chlorine bleach/oxidizers; rust belongs in controlled acid/chelator lane with product-specific warnings.",
+      "required_display": "Do not publish as staff guidance. Escalate for GONR review if operator disputes the guardrail.",
+      "classification": "unsafe_or_contraindicated"
+    },
+    {
+      "id": "hf_or_fluoride_rust_remover_casual_use",
+      "match_terms_any": [
+        "hydrofluoric",
+        "HF",
+        "ammonium bifluoride",
+        "fluoride rust remover",
+        "Whink",
+        "RustGo"
+      ],
+      "reason": "HF/fluoride rust removers are severe-burn/toxicity chemistry and cannot be treated as routine consumer or unsupervised staff procedure.",
+      "required_display": "Professional/supervisor-only with SDS/TDS controls; do not generalize or expose as safe default.",
+      "classification": "unsafe_or_contraindicated"
+    },
+    {
+      "id": "chemical_mixing_red_flag",
+      "match_terms_any": [
+        "mix",
+        "combine",
+        "together",
+        "same bath",
+        "without rinsing"
+      ],
+      "match_terms_with_any": [
+        "chlorine bleach",
+        "ammonia",
+        "acid",
+        "rust remover",
+        "vinegar",
+        "peroxide",
+        "reducer",
+        "oxidizer",
+        "alkali"
+      ],
+      "reason": "Mixing bleach/acids/ammonia/oxidizers/reducers or unknown spotters can create toxic gases, corrosive reactions, or uncontrolled textile damage.",
+      "required_display": "Block until exact chemistry sequence, rinse/neutralization, SDS/TDS compatibility, PPE, and authority are reviewed.",
+      "classification": "unsafe_or_contraindicated"
+    },
+    {
+      "id": "heat_before_protein_or_unknown_identification",
+      "match_terms_any": [
+        "blood",
+        "egg",
+        "milk",
+        "cream",
+        "urine",
+        "vomit",
+        "protein",
+        "unknown stain"
+      ],
+      "match_terms_with_any": [
+        "hot water",
+        "steam first",
+        "dryer",
+        "heat set",
+        "press first",
+        "boiling"
+      ],
+      "reason": "Heat can set protein stains and can worsen unknown stains before identification/pretest.",
+      "required_display": "Stop or revise to cool/controlled pretest path before procedural guidance.",
+      "classification": "unsafe_or_contraindicated"
+    },
+    {
+      "id": "unknown_fiber_or_dye_aggressive_chemistry",
+      "match_terms_any": [
+        "unknown fiber",
+        "unknown dye",
+        "untested dye",
+        "not pretested",
+        "unknown trim",
+        "delicate trim"
+      ],
+      "match_terms_with_any": [
+        "oxidizer",
+        "reducer",
+        "rust remover",
+        "strong acid",
+        "strong alkali",
+        "amyl acetate",
+        "acetone",
+        "POG",
+        "VDS",
+        "chlorine bleach",
+        "steam"
+      ],
+      "reason": "Unknown fiber/dye/trim plus aggressive chemistry or heat is a damage/claim risk; pretest and authority gate required.",
+      "required_display": "Requires supervisor review, hidden-area pretest, and documented stop conditions before staff-facing use.",
+      "classification": "supervisor_only"
+    },
+    {
+      "id": "leather_suede_aniline_or_finish_work",
+      "match_terms_any": [
+        "leather",
+        "suede",
+        "nubuck",
+        "aniline",
+        "painted finish",
+        "coated finish",
+        "trim"
+      ],
+      "reason": "Leather/suede/finish systems are high variance and claim-sensitive; plant-local shortcuts must not become general guidance.",
+      "required_display": "Supervisor/specialist review; preserve refusal/escalation and customer approval notes.",
+      "classification": "claim_sensitive"
+    },
+    {
+      "id": "dye_bleed_color_loss_or_recolor_claim",
+      "match_terms_any": [
+        "dye bleed",
+        "color bleed",
+        "color loss",
+        "crocking",
+        "restore color",
+        "re-dye",
+        "color correction"
+      ],
+      "reason": "Dye movement/color correction is claim-sensitive and often irreversible; requires strict authority and expectation copy.",
+      "required_display": "No removal promise; show uncertainty, pretest, approval/waiver, and escalation path.",
+      "classification": "claim_sensitive"
+    },
+    {
+      "id": "guaranteed_removal_or_absolute_safe_copy",
+      "match_terms_any": [
+        "guaranteed",
+        "will remove",
+        "always works",
+        "safe on all",
+        "no risk",
+        "damage-free",
+        "permanent fix"
+      ],
+      "reason": "Overconfident copy violates TASK-145 copy rules and increases claim risk.",
+      "required_display": "Replace with safest-next-step language, uncertainty note, stop conditions, and no guarantee.",
+      "classification": "claim_sensitive"
+    }
+  ],
+  "review_required_patterns": [
+    {
+      "id": "one_cleaner_habit_as_rule",
+      "match_terms_any": [
+        "we always",
+        "I usually",
+        "old trick",
+        "secret",
+        "habit",
+        "tribal"
+      ],
+      "classification": "unverified_tribal",
+      "reason": "Anecdote/habit is signal, not source-backed guidance."
+    },
+    {
+      "id": "plant_policy_presented_as_universal",
+      "match_terms_any": [
+        "everyone should",
+        "all cleaners",
+        "universal",
+        "GONR approved"
+      ],
+      "classification": "claim_sensitive",
+      "reason": "Plant-local preference must not masquerade as central/source-backed guidance."
+    },
+    {
+      "id": "missing_pretest_for_moderate_high_risk",
+      "match_terms_any": [
+        "skip pretest",
+        "no test needed",
+        "go straight to"
+      ],
+      "classification": "supervisor_only",
+      "reason": "Moderate/high-risk procedural guidance needs pretest/default stop conditions."
+    }
+  ],
+  "required_fields_before_runtime_guidance": [
+    "authority_class",
+    "risk_tier",
+    "review_status",
+    "source_basis",
+    "recommendation_reason",
+    "material_safety_reason",
+    "stop_conditions",
+    "escalation_path",
+    "uncertainty_note",
+    "confidence_level"
+  ],
+  "public_copy_rules": [
+    "Use 'safest next step,' not absolute 'safe'.",
+    "Never promise stain removal.",
+    "Do not present Dan Eisen as public authority, partner, validator, reviewer, method, or certification path.",
+    "Do not collapse authority_class/risk_tier/review_status into a generic verified badge."
+  ],
+  "sources": [
+    "~/shared-workspace/stainbrain-output/spottingboard-contamination-control-requirements.md",
+    "~/shared-workspace/stainbrain-output/TASK-145-sb-review-gate-v0-2026-05-06.md",
+    "~/shared-workspace/stainbrain-output/rust-claim-ledger-2026-05-05.md",
+    "~/shared-workspace/stainbrain-output/industry-expert-kb/acquisition/manufacturer-sds-lane-2026-05-03.md",
+    "~/shared-workspace/stainbrain-output/industry-expert-kb/acquisition/regulatory-university-lane-2026-05-03.md"
+  ],
+  "capture_semantics": {
+    "rule": "Unsafe classifier matches can downgrade/quarantine only. They must not promote, mark reviewed, or auto-reject at capture.",
+    "allowed_overrides": [
+      "safety_label",
+      "risk_tier",
+      "conflict_flags_append"
+    ],
+    "forbidden_overrides": [
+      "authority_class=source-backed",
+      "review_status=reviewed-accept",
+      "review_status=reviewed-reject",
+      "runtime_eligible=true",
+      "promotion_status=promoted"
+    ]
+  }
+}

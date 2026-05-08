@@ -34,9 +34,14 @@ export const REQUIRED_TIER_AUTH_ENV = [
 // Variant IDs are not strictly required (webhook falls back to product-name
 // match) but missing them increases mis-tier risk. Logged as warning, not throw.
 const RECOMMENDED_LS_VARIANT_ENV = [
+  // Existing GONR consumer/individual-spotter products (user-scoped):
   'LS_HOME_VARIANT_ID',
   'LS_SPOTTER_VARIANT_ID',
   'LS_OPERATOR_VARIANT_ID',
+  // TASK-154 SpottingBoard plant-scoped products:
+  'LS_SBPRO_VARIANT_ID',
+  'LS_PLANT_BRAIN_RUNTIME_VARIANT_ID',
+  'LS_STARTER_PACK_VARIANT_ID',
 ] as const
 
 export function warnRecommendedLsVariantEnv(): void {

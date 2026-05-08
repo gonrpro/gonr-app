@@ -24,6 +24,7 @@ describe('canAccessFeature — home tier gating', () => {
     expect(canAccessFeature('home', 'dashboard')).toBe(false)
     expect(canAccessFeature('home', 'team')).toBe(false)
     expect(canAccessFeature('home', 'counter')).toBe(false)
+    expect(canAccessFeature('home', 'incident_desk')).toBe(false)
   })
 
   it('free tier can access solve (preserved)', () => {
@@ -34,6 +35,7 @@ describe('canAccessFeature — home tier gating', () => {
     expect(canAccessFeature('free', 'spotter')).toBe(false)
     expect(canAccessFeature('free', 'stain_brain')).toBe(false)
     expect(canAccessFeature('free', 'handoff')).toBe(false)
+    expect(canAccessFeature('free', 'incident_desk')).toBe(false)
   })
 
   it('spotter tier can access spotter features (preserved)', () => {
@@ -47,6 +49,7 @@ describe('canAccessFeature — home tier gating', () => {
     expect(canAccessFeature('spotter', 'dashboard')).toBe(false)
     expect(canAccessFeature('spotter', 'team')).toBe(false)
     expect(canAccessFeature('spotter', 'counter')).toBe(false)
+    expect(canAccessFeature('spotter', 'incident_desk')).toBe(false)
   })
 
   it('operator tier can access everything except founder-only items', () => {
@@ -54,10 +57,11 @@ describe('canAccessFeature — home tier gating', () => {
     expect(canAccessFeature('operator', 'spotter')).toBe(true)
     expect(canAccessFeature('operator', 'dashboard')).toBe(true)
     expect(canAccessFeature('operator', 'counter')).toBe(true)
+    expect(canAccessFeature('operator', 'incident_desk')).toBe(true)
   })
 
   it('founder tier can access everything', () => {
-    const features = ['solve', 'spotter', 'stain_brain', 'deep_solve', 'garment_analysis', 'handoff', 'dashboard', 'team', 'counter']
+    const features = ['solve', 'spotter', 'stain_brain', 'deep_solve', 'garment_analysis', 'handoff', 'dashboard', 'team', 'counter', 'incident_desk']
     for (const f of features) {
       expect(canAccessFeature('founder', f)).toBe(true)
     }
@@ -85,6 +89,7 @@ describe('minTierForFeature', () => {
   it('returns operator as the minimum for operator features', () => {
     expect(minTierForFeature('dashboard')).toBe('operator')
     expect(minTierForFeature('team')).toBe('operator')
+    expect(minTierForFeature('incident_desk')).toBe('operator')
   })
 
   it('returns null for unknown features', () => {

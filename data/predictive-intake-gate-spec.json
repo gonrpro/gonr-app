@@ -1,0 +1,364 @@
+{
+  "schema_version": "0.1",
+  "task": "TASK-156",
+  "owner": "Stain Brain",
+  "status": "draft_machine_readable_gate_spec",
+  "generated_at": "2026-05-06T22:00:00-04:00",
+  "principle": "Predictive intake may skip friction, never safety. Any high-risk flag true or unknown downgrades to full intake, supervisor confirmation, or unsafe/cannot-infer.",
+  "inference_labels": [
+    "source_backed_default",
+    "plant_local_preference",
+    "predicted_plant_pattern",
+    "needs_supervisor_confirmation",
+    "unsafe_cannot_infer"
+  ],
+  "global_rules": [
+    {
+      "id": "GLOBAL-001",
+      "rule": "unknown_high_risk_flag_blocks_shortcut",
+      "if_any_flag_true_or_unknown": [
+        "fiber_is_delicate_or_specialty",
+        "material_is_leather_suede_aniline_alcantara",
+        "dye_stability_unknown_or_failed",
+        "stain_identity_unknown",
+        "prior_home_treatment_unknown_or_present",
+        "heat_exposure_unknown_or_present",
+        "garment_is_luxury_claim_sensitive_or_trimmed",
+        "chemical_incompatibility_possible"
+      ],
+      "action": "force_full_intake_or_supervisor_confirmation",
+      "label": "needs_supervisor_confirmation"
+    },
+    {
+      "id": "GLOBAL-002",
+      "rule": "do_not_infer_aggressive_chemistry_from_operator_fingerprint",
+      "blocked_inferences": [
+        "bleach_or_oxidizer_permission",
+        "reducer_permission",
+        "strong_solvent_permission",
+        "heat_or_steam_permission",
+        "dye_removal_permission",
+        "leather_suede_spotting_permission"
+      ],
+      "action": "require_explicit_plant_rule_or_supervisor_confirmation",
+      "label": "needs_supervisor_confirmation"
+    },
+    {
+      "id": "GLOBAL-003",
+      "rule": "counter_promise_block",
+      "applies_to": [
+        "dye_transfer",
+        "color_loss",
+        "unknown_stain",
+        "aged_oil_or_oxidation",
+        "yellowing",
+        "luxury_garment",
+        "leather",
+        "suede",
+        "silk",
+        "wool",
+        "cashmere",
+        "rayon",
+        "heirloom_or_claim_sensitive_item"
+      ],
+      "action": "block_complete_removal_promise",
+      "label": "source_backed_default"
+    }
+  ],
+  "decision_families": [
+    {
+      "family_id": "oil-grease-delicate-dryclean",
+      "display_name": "Oil/grease/cosmetic/lipstick on dry-clean or delicate garments",
+      "shortcut_allowed_when_all_known": [
+        "fiber_not_delicate_or_specialty",
+        "dye_stability_known_pass",
+        "no_leather_suede_aniline_alcantara",
+        "no_unknown_trim_embellishment",
+        "stain_is_confirmed_oil_grease_lipid_cosmetic",
+        "no_prior_home_solvent_or_heat_attempt"
+      ],
+      "hard_blocks": [
+        {
+          "combo": ["aniline_or_unfinished_leather", "oil_or_grease"],
+          "action": "unsafe_cannot_infer",
+          "reason": "Aniline/unfinished leather can darken, ring, lose finish, or absorb solvent/oil unpredictably. No shortcut."
+        },
+        {
+          "combo": ["suede_or_nubuck", "oil_or_grease"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Texture/color change risk; requires specialist/supervisor handling."
+        },
+        {
+          "combo": ["silk_or_acetate", "strong_solvent_needed_or_unknown"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Solvent/fiber/dye risk cannot be inferred from commodity oil handling."
+        },
+        {
+          "combo": ["unknown_trim_or_embellishment", "dry_side_solvent"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Trims/adhesives/finishes may fail under solvent."
+        }
+      ],
+      "required_disambiguation": [
+        "fiber_material",
+        "finish_type_if_leather",
+        "dye_stability",
+        "trim_embellishment_presence",
+        "prior_treatment",
+        "heat_exposure",
+        "who_is_authorized_for_solvent"
+      ]
+    },
+    {
+      "family_id": "tannin-household-linens",
+      "display_name": "Tannin stains on household/table linens",
+      "shortcut_allowed_when_all_known": [
+        "fiber_is_plain_linen_or_cotton",
+        "color_or_embroidery_stability_known",
+        "stain_confirmed_tannin",
+        "not_heirloom_or_claim_sensitive",
+        "no_prior_alkaline_or_chlorine_attempt"
+      ],
+      "hard_blocks": [
+        {
+          "combo": ["tannin_or_anthocyanin", "alkaline_product_used_or_planned"],
+          "action": "unsafe_cannot_infer",
+          "reason": "Alkaline chemistry can darken/set tannin/anthocyanin stains."
+        },
+        {
+          "combo": ["colored_or_embroidered_linen", "oxidizer_needed"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Color/embroidery stability must be confirmed before oxidation."
+        },
+        {
+          "combo": ["aged_yellow_brown_stain", "linen"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Oxidation/age/previous chemistry may create claim risk."
+        }
+      ],
+      "required_disambiguation": [
+        "stain_age",
+        "heat_exposure",
+        "alkaline_or_chlorine_exposure",
+        "fiber_color_embroidery",
+        "heirloom_or_claim_sensitive",
+        "oxidizer_authorization"
+      ]
+    },
+    {
+      "family_id": "protein-biological-washables",
+      "display_name": "Protein/biological stains on washable cotton and household goods",
+      "shortcut_allowed_when_all_known": [
+        "fiber_is_washable_cellulose_or_durable_synthetic",
+        "stain_confirmed_protein_biological",
+        "no_heat_exposure",
+        "no_delicate_fiber",
+        "no_saturation_or_biohazard_claim_risk"
+      ],
+      "hard_blocks": [
+        {
+          "combo": ["protein_biological", "heat_or_steam_before_release"],
+          "action": "unsafe_cannot_infer",
+          "reason": "Heat can set protein stains and worsen removability."
+        },
+        {
+          "combo": ["blood_or_urine_or_vomit", "silk_wool_leather_suede"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Bio/protein chemistry plus delicate/specialty surface requires supervisor path."
+        },
+        {
+          "combo": ["urine_or_vomit", "mattress_or_upholstery_saturation"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Depth/odor/contamination cannot be resolved by surface stain shortcut."
+        }
+      ],
+      "required_disambiguation": [
+        "fiber_material",
+        "fresh_or_dried",
+        "heat_exposure",
+        "odor_or_saturation",
+        "biohazard_handling_rule",
+        "enzyme_permission"
+      ]
+    },
+    {
+      "family_id": "unknown-delicate-fibers",
+      "display_name": "Unknown stains on delicate fibers",
+      "shortcut_allowed_when_all_known": [],
+      "default_action": "needs_supervisor_confirmation",
+      "hard_blocks": [
+        {
+          "combo": ["unknown_stain", "silk_wool_cashmere_rayon_leather_suede_aniline_alcantara"],
+          "action": "unsafe_cannot_infer",
+          "reason": "Unknown chemistry on delicate/specialty material is not shortcut-safe."
+        },
+        {
+          "combo": ["unknown_prior_home_treatment", "delicate_fiber"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Prior chemistry may have changed dye/fiber response."
+        }
+      ],
+      "required_disambiguation": [
+        "fiber_material",
+        "dye_stability_test",
+        "stain_identity_attempt",
+        "prior_treatment",
+        "heat_exposure",
+        "customer_approval_or_waiver"
+      ]
+    },
+    {
+      "family_id": "dye-transfer-color-risk",
+      "display_name": "Dye transfer / color risk",
+      "shortcut_allowed_when_all_known": [
+        "plain_white_or_colorfast_durable_fiber",
+        "fresh_transfer_no_heat",
+        "supervisor_or_explicit_plant_rule_allows_attempt",
+        "customer_expectation_note_present"
+      ],
+      "hard_blocks": [
+        {
+          "combo": ["dye_transfer", "colored_garment_dye_stability_unknown"],
+          "action": "unsafe_cannot_infer",
+          "reason": "Dye removal can remove garment dye or spread transfer."
+        },
+        {
+          "combo": ["dye_transfer", "heat_set_or_dryer_exposed"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Heat-set transfer has lower success and higher claim risk."
+        },
+        {
+          "combo": ["dye_or_color_loss", "luxury_or_delicate_fiber"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Color correction/removal is not operator-fingerprint-inferable."
+        }
+      ],
+      "required_disambiguation": [
+        "fresh_or_heat_set",
+        "fiber_material",
+        "garment_color",
+        "dye_stability",
+        "prior_bleach_or_home_attempt",
+        "who_authorizes_dye_work",
+        "customer_expectation_note"
+      ]
+    },
+    {
+      "family_id": "household-body-oil-bedding",
+      "display_name": "Household body oil / bedding / comforters",
+      "shortcut_allowed_when_all_known": [
+        "washable_household_item",
+        "no_delicate_fill_or_shell",
+        "soil_level_known",
+        "odor_saturation_absent_or_disclosed",
+        "expectation_note_present_for_aged_yellowing"
+      ],
+      "hard_blocks": [
+        {
+          "combo": ["down_wool_silk_fill_or_shell", "body_oil_or_urine"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Fill/shell behavior and odor/saturation risk require full intake."
+        },
+        {
+          "combo": ["mildew_or_urine_odor", "bedding_or_mattress"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Odor/sanitation outcome cannot be promised by stain shortcut."
+        },
+        {
+          "combo": ["yellowing_or_oxidized_body_oil", "customer_expects_restoration"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Aged oxidation may not reverse; customer communication required."
+        }
+      ],
+      "required_disambiguation": [
+        "shell_fiber",
+        "fill_type",
+        "odor_or_saturation",
+        "age_of_soil",
+        "prior_washing_or_bleach",
+        "customer_expectation_note"
+      ]
+    },
+    {
+      "family_id": "wine-wax-food-table-linens",
+      "display_name": "Wine/wax/food combinations on table linens",
+      "shortcut_allowed_when_all_known": [
+        "plain_white_or_colorfast_linen_cotton",
+        "dominant_components_identified",
+        "sequence_rule_confirmed_by_plant",
+        "no_embroidery_heirloom_claim_risk"
+      ],
+      "hard_blocks": [
+        {
+          "combo": ["wax_or_oil", "tannin_or_red_dye"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Wrong sequence can spread oil/wax or set tannin/dye."
+        },
+        {
+          "combo": ["event_linen", "unknown_multi_component_stain"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Batch/customer claim context and sequence must be confirmed."
+        },
+        {
+          "combo": ["colored_or_embroidered_linen", "bleach_or_oxidizer_needed"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Color/embroidery stability required."
+        }
+      ],
+      "required_disambiguation": [
+        "components_present",
+        "sequence_rule",
+        "fiber_color_embroidery",
+        "event_customer_claim_context",
+        "heat_exposure",
+        "prior_attempts"
+      ]
+    },
+    {
+      "family_id": "claim-sensitive-luxury-specialty",
+      "display_name": "Claim-sensitive luxury/specialty garments",
+      "shortcut_allowed_when_all_known": [],
+      "default_action": "needs_supervisor_confirmation",
+      "hard_blocks": [
+        {
+          "combo": ["leather_suede_aniline_alcantara", "any_stain"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Specialty material; no commodity protocol inference."
+        },
+        {
+          "combo": ["silk_cashmere_angora_rayon_wool_gabardine", "unknown_or_aggressive_chemistry"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Texture/luster/shrinkage/color risk."
+        },
+        {
+          "combo": ["luxury_claim_sensitive_item", "any_uncertain_fact"],
+          "action": "needs_supervisor_confirmation",
+          "reason": "Customer approval/documentation required before risk-bearing work."
+        }
+      ],
+      "required_disambiguation": [
+        "fiber_or_material",
+        "brand_value_claim_sensitivity",
+        "photos_required",
+        "dye_stability",
+        "trim_finish_condition",
+        "supervisor_or_specialist_approval",
+        "counter_script_acknowledged"
+      ]
+    }
+  ],
+  "lab_encoding_notes": {
+    "deny_precedence": "hard_blocks override shortcut_allowed_when_all_known and any operator/plant fingerprint confidence.",
+    "unknown_semantics": "For high-risk flags, unknown must be treated the same as true until answered.",
+    "output_contract": "safe-shortcut-rules.ts should return one of: allow_fast_path, force_full_intake, needs_supervisor_confirmation, unsafe_cannot_infer.",
+    "audit_fields_required": [
+      "matched_family_id",
+      "matched_rule_ids",
+      "blocked_flags",
+      "source_label",
+      "operator_or_plant_fingerprint_used",
+      "confirmation_required",
+      "explanation_for_ui"
+    ]
+  }
+}
