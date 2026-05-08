@@ -616,12 +616,14 @@ function SolvePageInner() {
             </div>
           </div>
         )}
-        <ResultCard
-          card={showTranslated && translatedCard ? translatedCard : result.card}
-          source={result.source}
-          correlationId={result.correlationId}
-          viewerTier={result.viewerTier}
-        />
+        {(showTranslated && translatedCard != null ? translatedCard : result.card) != null && (
+          <ResultCard
+            card={(showTranslated && translatedCard != null ? translatedCard : result.card)!}
+            source={result.source}
+            correlationId={result.correlationId}
+            viewerTier={result.viewerTier}
+          />
+        )}
         {(userTier === 'free' && !authLoading) && (
           <ResultTierUpsell
             correlationId={result.correlationId ?? 'no-correlation'}
