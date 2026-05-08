@@ -52,24 +52,24 @@ const COPY: Record<Lang, Copy> = {
     noApp: 'No app needed',
     freeChecks: '3 sample solves',
     headline: 'Know what to do before the stain sets.',
-    subhead: 'Fabric-aware stain guidance in seconds — safe first steps, risk warnings, and when to stop.',
+    subhead: 'Fabric-aware stain guidance in seconds — cautious first steps, risk warnings, and when to stop.',
     proof: 'Not generic tips. GONR checks the stain, fabric, color risk, and stop signs before you make it worse.',
-    socialProof: '270+ verified protocols · Trusted by dry cleaning pros',
+    socialProof: 'Reviewed protocol cards · Built with professional textile-care references',
     examplesIntro: 'Tap a solve to preview',
     examples: ['Red wine', 'Ink', 'Oil', 'Silk', 'Wool', 'Mystery stain'],
-    unlockHint: 'Sign up to run GONR on your own stain.',
+    unlockHint: 'Use GONR on your own stain.',
     emailPlaceholder: 'your@email.com',
     cta: 'Start free',
     sending: 'Sending secure link…',
     helper: 'No password. Secure magic link when needed.',
-    trust: 'Safety-first · Fabric-aware · Professional textile-care sources',
+    trust: 'Safety-first · Fabric-aware · Draws from professional textile-care references',
     checkEmail: 'Check your email',
     sentPrefix: 'We sent a secure link to',
     sentSuffix: 'Tap it to start solving stains.',
     reset: 'Use a different email',
     failed: 'Failed to send link',
     cards: [
-      { icon: Droplets, eyebrow: 'SAFE FIRST STEP', family: 'TANNIN', title: 'Red wine on cotton', action: 'Blot. Flush cool from the back.', warning: 'Avoid heat until tannin is out.', color: '#22c55e', glow: 'rgba(34,197,94,0.12)', preview: [ { label: 'First move', text: 'Blot with a white towel, then flush cool water from the back of the fabric.' }, { label: 'Why', text: 'Wine is tannin-heavy. Cool flushing moves pigment out before heat locks it in.' }, { label: 'Stop if', text: 'The fabric is silk, wool, dry-clean-only, or the color starts moving.' } ] },
+      { icon: Droplets, eyebrow: 'CAUTIOUS FIRST STEP', family: 'TANNIN', title: 'Red wine on cotton', action: 'If washable and colorfast: blot, then flush cool from the back.', warning: 'Avoid heat until tannin is out.', color: '#3f7f52', glow: 'rgba(63,127,82,0.10)', preview: [ { label: 'First move', text: 'If the cotton is washable and colorfast: blot with a white towel, then flush cool water from the back. Stop if color moves or the garment is dry-clean-only or structured.' }, { label: 'Why', text: 'Wine is tannin-heavy. Cool flushing moves pigment out before heat locks it in.' }, { label: 'Stop if', text: 'The fabric is silk, wool, dry-clean-only, or the color starts moving.' } ] },
       { icon: AlertTriangle, eyebrow: 'RISK CHECK', family: 'INK', title: 'Ink on polyester', action: 'Test solvent on a hidden seam.', warning: 'Do not spread the dye ring.', color: '#f59e0b', glow: 'rgba(245,158,11,0.13)', preview: [ { label: 'First move', text: 'Do not scrub. Test alcohol or ink remover on a hidden seam before touching the spot.' }, { label: 'Why', text: 'Ink can migrate fast on synthetics; testing prevents a small dot becoming a halo.' }, { label: 'Stop if', text: 'Color transfers to the towel, the ring grows, or the garment has special trim.' } ] },
       { icon: ShieldCheck, eyebrow: 'STOP SIGNAL', family: 'HIGH-RISK', title: 'Silk / unknown stain', action: 'Stop before water rings set.', warning: 'High-risk fiber. Pro route.', color: '#ef4444', glow: 'rgba(239,68,68,0.12)', preview: [ { label: 'First move', text: 'Pause. Blot dry only and identify the fiber before adding water or chemistry.' }, { label: 'Why', text: 'Silk can water-ring, lose luster, or bleed dye even when the stain looks simple.' }, { label: 'Stop if', text: 'The item is valuable, lined, vintage, structured, or already shows a ring.' } ] },
     ],
@@ -83,7 +83,7 @@ const COPY: Record<Lang, Copy> = {
     socialProof: '270+ protocolos verificados · Confianza de profesionales de tintorería',
     examplesIntro: 'Toque una resolución',
     examples: ['Vino tinto', 'Tinta', 'Aceite', 'Seda', 'Lana', 'Mancha desconocida'],
-    unlockHint: 'Regístrese para usar GONR con su propia mancha.',
+    unlockHint: 'Use GONR con su propia mancha.',
     emailPlaceholder: 'tu@email.com',
     cta: 'Empezar gratis',
     sending: 'Enviando enlace seguro…',
@@ -95,7 +95,7 @@ const COPY: Record<Lang, Copy> = {
     reset: 'Usar otro email',
     failed: 'No se pudo enviar el enlace',
     cards: [
-      { icon: Droplets, eyebrow: 'PASO SEGURO', family: 'TANINO', title: 'Vino tinto en algodón', action: 'Absorba. Enjuague frío desde atrás.', warning: 'Evite calor hasta sacar el tanino.', color: '#22c55e', glow: 'rgba(34,197,94,0.12)', preview: [ { label: 'Primer paso', text: 'Absorba con una toalla blanca y enjuague con agua fría desde atrás.' }, { label: 'Por qué', text: 'El vino tiene taninos. El agua fría mueve el pigmento antes de que el calor lo fije.' }, { label: 'Pare si', text: 'La tela es seda, lana, solo tintorería, o el color empieza a moverse.' } ] },
+      { icon: Droplets, eyebrow: 'PASO CAUTELOSO', family: 'TANINO', title: 'Vino tinto en algodón', action: 'Si se puede lavar y no destiñe: absorba y enjuague frío desde atrás.', warning: 'Evite calor hasta sacar el tanino.', color: '#3f7f52', glow: 'rgba(63,127,82,0.10)', preview: [ { label: 'Primer paso', text: 'Si el algodón se puede lavar y no destiñe: absorba con una toalla blanca y enjuague con agua fría desde atrás. Pare si el color se mueve o la prenda es solo tintorería o estructurada.' }, { label: 'Por qué', text: 'El vino tiene taninos. El agua fría mueve el pigmento antes de que el calor lo fije.' }, { label: 'Pare si', text: 'La tela es seda, lana, solo tintorería, o el color empieza a moverse.' } ] },
       { icon: AlertTriangle, eyebrow: 'REVISAR RIESGO', family: 'TINTA', title: 'Tinta en poliéster', action: 'Pruebe solvente en costura oculta.', warning: 'No extienda el aro de tinte.', color: '#f59e0b', glow: 'rgba(245,158,11,0.13)', preview: [ { label: 'Primer paso', text: 'No frote. Pruebe alcohol o removedor de tinta en una costura oculta.' }, { label: 'Por qué', text: 'La tinta puede migrar rápido en telas sintéticas; probar evita un aro más grande.' }, { label: 'Pare si', text: 'El color se transfiere a la toalla, el aro crece, o la prenda tiene adornos.' } ] },
       { icon: ShieldCheck, eyebrow: 'SEÑAL DE PARAR', family: 'ALTO RIESGO', title: 'Seda / mancha desconocida', action: 'Pare antes de dejar marcas de agua.', warning: 'Tela delicada. Ruta profesional.', color: '#ef4444', glow: 'rgba(239,68,68,0.12)', preview: [ { label: 'Primer paso', text: 'Pausa. Absorba en seco solamente e identifique la fibra antes de agregar agua o química.' }, { label: 'Por qué', text: 'La seda puede dejar marcas de agua, perder brillo o soltar tinte aunque la mancha parezca simple.' }, { label: 'Pare si', text: 'La pieza es valiosa, forrada, vintage, estructurada, o ya muestra un aro.' } ] },
     ],
@@ -140,17 +140,17 @@ export default function LandingPage() {
 
   const theme = {
     page: 'bg-[#05070b] text-white',
-    orb: 'bg-[radial-gradient(circle_at_50%_-10%,rgba(34,197,94,0.28),transparent_38%),radial-gradient(circle_at_0%_90%,rgba(34,197,94,0.10),transparent_35%)]',
-    panel: 'border-white/10 bg-white/[0.06] shadow-black/30',
-    pill: 'border-white/10 bg-white/5 text-white/60',
+    orb: '',
+    panel: 'border-white/12 bg-[#0b1017] shadow-black/20',
+    pill: 'border-white/12 bg-transparent text-white/60',
     text: 'text-white',
     muted: 'text-white/58',
     faint: 'text-white/35',
-    inputWrap: 'border-[#22c55e]/35 bg-black/24 shadow-[0_0_0_1px_rgba(34,197,94,0.08),0_16px_40px_rgba(34,197,94,0.10)]',
+    inputWrap: 'border-[var(--accent)]/35 bg-black/24 shadow-sm',
     input: 'text-white placeholder:text-white/32',
-    card: 'border-white/10 bg-white/[0.055] shadow-black/20',
+    card: 'border-white/12 bg-[#0c121a] shadow-sm',
     cardMuted: 'text-white/42',
-    tag: 'bg-white/8 text-white/42',
+    tag: 'bg-transparent text-white/42',
   }
 
 
@@ -166,7 +166,7 @@ export default function LandingPage() {
       const supabase = createClient()
       const { error: authError } = await supabase.auth.signInWithOtp({
         email: trimmed,
-        options: { emailRedirectTo: `${window.location.origin}/auth/callback` },
+        options: { emailRedirectTo: `${window.location.origin}/auth/callback?next=/solve` },
       })
       if (authError) throw authError
       try { localStorage.setItem('gonr_user_email', trimmed.toLowerCase()) } catch {}
@@ -180,7 +180,7 @@ export default function LandingPage() {
 
   return (
     <main className={`relative -mx-4 -mb-4 -mt-2 min-h-screen md:fixed md:inset-0 md:z-[100] md:m-0 md:overflow-y-auto ${theme.page}`}>
-      <div className={`pointer-events-none absolute inset-0 ${theme.orb}`} />
+      {theme.orb ? <div className={`pointer-events-none absolute inset-0 ${theme.orb}`} /> : null}
       <div className="relative mx-auto flex min-h-screen w-full max-w-[1120px] flex-col px-5 py-5 sm:px-8 lg:px-10 lg:py-8">
         <header className="mb-3 flex shrink-0 items-center justify-between lg:mb-8">
           <div className="flex items-end gap-2">
@@ -237,7 +237,7 @@ export default function LandingPage() {
               </div>
 
               <form onSubmit={handleSubmit} className="mt-4 space-y-2 lg:mt-8 lg:max-w-[520px]">
-                <div className={`rounded-2xl border p-1.5 ${theme.inputWrap}`}>
+                <div className={`rounded-lg border p-1.5 ${theme.inputWrap}`}>
                   <div className="flex items-center gap-2 px-2 pb-1.5 pt-1">
                     <Mail size={17} className="text-[var(--accent)]" />
                     <input
@@ -255,7 +255,7 @@ export default function LandingPage() {
                   <button
                     type="submit"
                     disabled={sending || !email.trim()}
-                    className="min-h-[48px] w-full rounded-xl bg-[var(--accent)] px-4 text-[15px] font-black text-white shadow-[0_10px_28px_rgba(34,197,94,0.34)] transition active:scale-[0.99] disabled:opacity-50 lg:min-h-[56px] lg:text-[17px]"
+                    className="min-h-[48px] w-full rounded-xl bg-[var(--accent)] px-4 text-[15px] font-black text-white shadow-sm transition active:scale-[0.99] disabled:opacity-50 lg:min-h-[56px] lg:text-[17px]"
                   >
                     {sending ? copy.sending : copy.cta}
                   </button>
@@ -276,10 +276,10 @@ export default function LandingPage() {
                     type="button"
                     key={card.title}
                     onClick={() => setOpenCard(index)}
-                    className={`w-full rounded-2xl border p-3 text-left shadow-lg transition hover:border-white/20 lg:rounded-[28px] lg:p-5 ${theme.card}`}
+                    className={`w-full rounded-lg border p-3 text-left transition hover:border-white/20 lg:p-5 ${theme.card}`}
                   >
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl lg:h-14 lg:w-14 lg:rounded-[22px]" style={{ background: card.glow, color: card.color }}>
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg lg:h-14 lg:w-14" style={{ background: card.glow, color: card.color }}>
                         <Icon size={19} strokeWidth={2.5} />
                       </div>
                       <div className="min-w-0 flex-1">
@@ -301,7 +301,7 @@ export default function LandingPage() {
                     </div>
                     <p className={`mt-1 pl-[52px] text-[11px] font-medium leading-snug lg:pl-[68px] lg:text-[13px] ${theme.cardMuted}`}>{card.warning}</p>
                     {isOpen ? (
-                      <div className="mt-3 space-y-2 rounded-2xl border border-white/10 bg-black/18 p-3 lg:ml-[68px] lg:mt-4">
+                      <div className="mt-3 space-y-2 rounded-lg border border-white/12 bg-black/18 p-3 lg:ml-[68px] lg:mt-4">
                         {card.preview.map((item) => (
                           <div key={item.label}>
                             <p className="text-[9px] font-black uppercase tracking-[0.14em]" style={{ color: card.color }}>{item.label}</p>

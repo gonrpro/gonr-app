@@ -37,7 +37,7 @@ export default function SignupPage() {
       const supabase = createClient()
       const { error: authError } = await supabase.auth.signInWithOtp({
         email: trimmed,
-        options: { emailRedirectTo: `${window.location.origin}/auth/callback` },
+        options: { emailRedirectTo: `${window.location.origin}/auth/callback?next=/solve` },
       })
       if (authError) throw authError
       // Store the email locally so the first authed solve can prefill it

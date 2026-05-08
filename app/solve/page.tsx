@@ -75,10 +75,10 @@ function SolvePageInner() {
   const solvesRemaining = usageState?.solvesRemaining ?? 3
 
   // Translation state for solve result
-  const [translatedCard, setTranslatedCard] = useState<any>(null)
+  const [translatedCard, setTranslatedCard] = useState<ProtocolCard | null>(null)
   const [showTranslated, setShowTranslated] = useState(false)
 
-  const translateProtocolCard = useCallback(async (protocolJson: any, targetLang: 'en' | 'es') => {
+  const translateProtocolCard = useCallback(async (protocolJson: ProtocolCard, targetLang: 'en' | 'es') => {
     if (targetLang !== 'es') return null
     const res = await fetch('/api/protocols/translate', {
       method: 'POST',
@@ -523,17 +523,17 @@ function SolvePageInner() {
             <div className="flex items-center gap-2">
               <span className="text-2xl" aria-hidden="true">🔬</span>
               <h2 className="text-lg font-bold" style={{ color: 'var(--text)' }}>
-                No verified protocol yet
+                No reviewed protocol card yet
               </h2>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
-              We don&apos;t have a verified protocol for <span className="font-semibold">{stainSurface}</span> yet.
+              We don&apos;t have a reviewed protocol card for <span className="font-semibold">{stainSurface}</span> yet.
               Pro tiers only see protocols that have passed chemistry review, so we don&apos;t guess here —
               we&apos;d rather stay silent than ship shaky chemistry to a spotter in motion.
             </p>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
               Your query was logged. Pro-tier misses are the highest-priority signal on our
-              &ldquo;what to author next&rdquo; list — we add verified cards continuously. Try again soon.
+              &ldquo;what to author next&rdquo; list — we use misses to prioritize the next reviewed cards. Try again soon.
             </p>
             <div className="flex gap-2 pt-2">
               <button
@@ -548,7 +548,7 @@ function SolvePageInner() {
                 {t('backToSearch')}
               </button>
               <a
-                href={`mailto:hello@gonr.pro?subject=${encodeURIComponent('Protocol request: ' + stainSurface)}&body=${encodeURIComponent('No verified protocol yet for ' + stainSurface + '. Adding details so you can author it next:\n\n')}`}
+                href={`mailto:hello@gonr.pro?subject=${encodeURIComponent('Protocol request: ' + stainSurface)}&body=${encodeURIComponent('No reviewed protocol card yet for ' + stainSurface + '. Adding details so you can author it next:\n\n')}`}
                 className="flex-1 min-h-[44px] flex items-center justify-center rounded-xl text-sm font-semibold transition-colors"
                 style={{
                   background: 'var(--surface-2)',
@@ -652,7 +652,7 @@ function SolvePageInner() {
           className="rounded-xl px-4 py-3 text-center text-sm font-semibold"
           style={{ background: 'rgba(34,197,94,0.15)', color: '#22c55e', border: '1px solid rgba(34,197,94,0.3)' }}
         >
-          Welcome to Spotter! You're all set. 🎉
+          Welcome to Spotter! You&apos;re all set. 🎉
         </div>
       )}
 
@@ -926,17 +926,17 @@ function SolvePageInner() {
               href="/spotter?tool=stain_brain"
               className="flex flex-col items-center justify-center gap-1 px-3 py-3 hover:opacity-90 active:scale-[0.98] transition-all"
               style={{
-                background: 'rgba(147,51,234,0.08)',
+                background: 'rgba(71,85,105,0.08)',
                 borderRadius: '12px',
                 minHeight: '100px',
-                border: '1.5px solid rgba(147,51,234,0.35)',
+                border: '1.5px solid rgba(71,85,105,0.35)',
               }}
             >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9333ea" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#475569" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
                 <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
               </svg>
-              <span style={{ color: '#9333ea', fontSize: '14px', fontWeight: 600 }}>{t('stainBrain') || 'Stain Brain'}</span>
+              <span style={{ color: '#475569', fontSize: '14px', fontWeight: 600 }}>{t('stainBrain') || 'Stain Notes'}</span>
             </a>
             <div style={{ minHeight: '36px' }} />
           </div>

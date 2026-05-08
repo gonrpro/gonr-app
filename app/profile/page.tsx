@@ -207,7 +207,7 @@ export default function ProfilePage() {
       const supabase = createClient()
       const { error } = await supabase.auth.signInWithOtp({
         email: email.trim(),
-        options: { emailRedirectTo: `${window.location.origin}/auth/callback` },
+        options: { emailRedirectTo: `${window.location.origin}/auth/callback?next=/profile` },
       })
       if (error) throw error
       setSent(true)
@@ -796,7 +796,7 @@ export default function ProfilePage() {
             <span className="text-base">🏛️</span>
             <h3 className="text-sm font-bold">Drycleaning & Laundry Institute (DLI)</h3>
           </div>
-          <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Education, certification, and technical resources. The gold standard for professional development.</p>
+          <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Education, certification, and technical resources from established industry organizations.</p>
         </a>
         <a href="https://www.nca-i.com" target="_blank" rel="noopener noreferrer"
           className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block">
@@ -818,7 +818,7 @@ export default function ProfilePage() {
           className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block">
           <div className="flex items-center gap-2">
             <span className="text-base">🧴</span>
-            <h3 className="text-sm font-bold">Cleaner's Supply</h3>
+            <h3 className="text-sm font-bold">Cleaner&apos;s Supply</h3>
           </div>
           <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>28,000+ products. The leading wholesale supplier for dry cleaners since 1992.</p>
         </a>
@@ -879,11 +879,11 @@ export default function ProfilePage() {
             boxShadow: '0 0 20px rgba(147, 51, 234, 0.1)',
           }}
         >
-          <p className="text-base font-bold" style={{ color: '#a855f7' }}>{t('profileUpgradeCta')}</p>
+          <p className="text-base font-bold" style={{ color: 'var(--accent)' }}>{t('profileUpgradeCta')}</p>
           <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{t('profileUpgradeDesc')}</p>
           <span
             className="inline-block mt-1 px-5 py-2 rounded-xl text-sm font-bold text-white"
-            style={{ background: 'linear-gradient(135deg, #9333ea, #a855f7)' }}
+            style={{ background: 'linear-gradient(135deg, var(--accent), #0f3f25)' }}
           >
             Upgrade Now
           </span>

@@ -88,12 +88,14 @@ function SpotterPageInner() {
     const toolParam = searchParams.get('tool')
     if (toolParam === 'stain_brain') {
       const hasAuth = email || localStorage.getItem('gonr_user_email')
-      if (hasAuth) {
-        setActiveTool('stain_brain')
-      } else {
-        setPendingTool('stain_brain')
-        setShowLoginGate(true)
-      }
+      window.setTimeout(() => {
+        if (hasAuth) {
+          setActiveTool('stain_brain')
+        } else {
+          setPendingTool('stain_brain')
+          setShowLoginGate(true)
+        }
+      }, 0)
     }
   }, [searchParams, email])
 
@@ -178,7 +180,7 @@ function SpotterPageInner() {
       <div>
         <h1 className="text-xl font-bold tracking-tight">Spotter</h1>
         <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
-          Reference, chemistry, and expert tools for professional spotters.
+          Reference, chemistry, and workflow tools for professional spotters.
         </p>
       </div>
 
@@ -231,14 +233,14 @@ function SpotterPageInner() {
 
         <button
           onClick={() => requireAuth('stain_brain')}
-          className="card w-full text-left space-y-1 transition-colors hover:border-purple-500/30"
+          className="card w-full text-left space-y-1 transition-colors hover:border-[var(--accent)]/30"
         >
           <div className="flex items-center gap-2">
             <span className="text-lg">🧠</span>
             <h2 className="text-base font-bold">Stain Brain</h2>
           </div>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            Chat with the AI about any stain scenario. Ask why. Ask what if.
+            Ask Stain Brain about stain scenarios, edge cases, risks, and why a step may or may not fit.
           </p>
         </button>
 
@@ -277,7 +279,7 @@ function SpotterPageInner() {
             <h2 className="text-base font-bold">Flag for Garment Analysis</h2>
           </div>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            Capture a problem garment for operator review. Photo + notes sent to your operator for full AI assessment.
+            Capture a problem garment for operator review. Photo + notes sent to your operator for structured operator review with photo, notes, and AI-assisted context.
           </p>
         </button>
       </div>
@@ -363,7 +365,7 @@ function SpotterPageInner() {
               boxShadow: '0 0 20px rgba(147, 51, 234, 0.1)',
             }}
           >
-            <p className="text-base font-bold" style={{ color: '#a855f7' }}>
+            <p className="text-base font-bold" style={{ color: 'var(--accent)' }}>
               Get Spotter — $49/mo
             </p>
             <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
@@ -371,7 +373,7 @@ function SpotterPageInner() {
             </p>
             <span
               className="inline-block mt-1 px-5 py-2 rounded-xl text-sm font-bold text-white"
-              style={{ background: 'linear-gradient(135deg, #9333ea, #a855f7)' }}
+              style={{ background: 'linear-gradient(135deg, var(--accent), #0f3f25)' }}
             >
               Upgrade Now
             </span>

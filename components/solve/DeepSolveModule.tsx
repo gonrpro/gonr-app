@@ -76,19 +76,19 @@ export default function DeepSolveModule({ stain, surface, cardId, onResult }: De
     return (
       <button
         onClick={() => setExpanded(true)}
-        className="w-full min-h-[44px] rounded-xl bg-purple-600 hover:bg-purple-700
-          text-white text-sm font-semibold transition-colors shadow-lg shadow-purple-600/25"
+        className="w-full min-h-[44px] rounded-md bg-[var(--accent)] hover:opacity-90
+          text-white text-sm font-semibold transition-colors shadow-sm"
       >
-        {'\uD83D\uDD2E'} {t('deepSolveExpandCta')}
+        {t('deepSolveExpandCta')}
       </button>
     )
   }
 
   return (
-    <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-4 space-y-4
+    <div className="rounded-md border border-[var(--border-strong)] bg-[var(--surface)] p-4 space-y-4
       animate-in fade-in slide-in-from-top-2 duration-200">
-      <h3 className="text-sm font-semibold text-purple-300 flex items-center gap-2">
-        {'\uD83D\uDD2E'} {t('deepSolveModuleHeader')}
+      <h3 className="text-sm font-semibold flex items-center gap-2" style={{ color: 'var(--accent)' }}>
+        {t('deepSolveModuleHeader')}
       </h3>
 
       {/* Textarea */}
@@ -99,7 +99,7 @@ export default function DeepSolveModule({ stain, surface, cardId, onResult }: De
         placeholder={t('deepSolveDetailPlaceholder')}
         className="w-full rounded-lg bg-white dark:bg-[#0e131b] border border-gray-200 dark:border-white/10
           text-sm text-gray-800 dark:text-gray-200 p-3 resize-none
-          focus:outline-none focus:ring-2 focus:ring-purple-500/50
+          focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/30
           placeholder:text-gray-400 dark:placeholder:text-gray-600"
       />
 
@@ -111,8 +111,8 @@ export default function DeepSolveModule({ stain, surface, cardId, onResult }: De
             onClick={() => toggleChip(chip.value)}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium min-h-[44px] transition-all
               ${activeChips.has(chip.value)
-                ? 'bg-purple-500 text-white'
-                : 'bg-white dark:bg-[#0e131b] text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10 hover:border-purple-500/50'
+                ? 'bg-[var(--accent)] text-white'
+                : 'bg-white dark:bg-[#0e131b] text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10 hover:border-[var(--accent)]/50'
               }`}
           >
             {t(chip.tKey)}
@@ -124,16 +124,16 @@ export default function DeepSolveModule({ stain, surface, cardId, onResult }: De
       <button
         onClick={handleSubmit}
         disabled={loading}
-        className="w-full min-h-[44px] rounded-xl bg-purple-600 hover:bg-purple-700
+        className="w-full min-h-[44px] rounded-md bg-[var(--accent)] hover:opacity-90
           text-white text-sm font-semibold transition-colors disabled:opacity-50
-          shadow-lg shadow-purple-600/25"
+          shadow-sm"
       >
-        {loading ? t('deepSolveGenerating') : `\uD83D\uDD2E ${t('deepSolveGenerateBtn')}`}
+        {loading ? t('deepSolveGenerating') : t('deepSolveGenerateBtn')}
       </button>
 
       {/* Result */}
       {result && (
-        <div className="rounded-lg bg-white dark:bg-[#0e131b] border border-purple-500/20 p-4">
+        <div className="rounded-lg bg-white dark:bg-[#0e131b] border border-[var(--border-strong)] p-4">
           <p className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed whitespace-pre-wrap">
             {result}
           </p>

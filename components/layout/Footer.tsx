@@ -3,8 +3,10 @@
 import Link from 'next/link'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
-export default function Footer() {
+export default function Footer({ brand = 'gonr' }: { brand?: 'gonr' | 'spottingboard' }) {
   const { lang } = useLanguage()
+
+  if (brand === 'spottingboard') return null
 
   return (
     <footer

@@ -13,7 +13,7 @@ export const strings: Record<string, Record<string, string>> = {
   landingNoAppNeeded: { en: 'No app needed', es: 'Sin instalar app' },
   landingFreeChecksPill: { en: '3 free stain checks', es: '3 chequeos gratis' },
   landingHeadline: { en: 'Know what to do before the stain sets.', es: 'Sepa qué hacer antes de que la mancha se fije.' },
-  landingSubhead: { en: 'Fabric-aware stain guidance in seconds — safe first steps, risk warnings, and when to stop.', es: 'Guía de manchas según la fibra en segundos — primeros pasos seguros, advertencias de riesgo y cuándo detenerse.' },
+  landingSubhead: { en: 'Fabric-aware stain guidance in seconds — cautious first steps, risk warnings, and when to stop.', es: 'Guía de manchas según la fibra en segundos — primeros pasos cautelosos, advertencias de riesgo y cuándo detenerse.' },
   landingEmailPlaceholder: { en: 'your@email.com', es: 'tucorreo@email.com' },
   landingCtaSending: { en: 'Sending secure link…', es: 'Enviando enlace seguro…' },
   landingCtaIdle: { en: 'Get my free stain plan', es: 'Obtener mi plan gratis' },
@@ -98,13 +98,13 @@ export const strings: Record<string, Record<string, string>> = {
   doNotWash: { en: "Do Not Wash", es: "No Lavar" },
   noIron: { en: "No Iron", es: "No Planchar" },
   scanStainSubtext: { en: "Built by cleaners. Trusted by pros.", es: "Creado por limpiadores. Confiado por profesionales." },
-  aiStainIntelligence: { en: "Type the stain and fabric. Get the exact removal protocol — step by step.", es: "Escribe la mancha y la tela. Recibe el protocolo exacto de eliminación — paso a paso." },
+  aiStainIntelligence: { en: "Type the stain and fabric. Get a fabric-aware protocol with steps, risks, and stop signs.", es: "Escribe la mancha y la tela. Recibe el protocolo exacto de eliminación — paso a paso." },
   masterSpotter: { en: "What's the stain?", es: "¿Qué mancha es?" },
   heroBadgeProtocols: { en: "264+ stain protocols", es: "264+ protocolos de manchas" },
   heroBadgeTrial: { en: "Start free, upgrade anytime", es: "Empieza gratis, sube de plan cuando quieras" },
-  heroBadgeTrusted: { en: "Trusted by dry cleaning pros", es: "Respaldado por profesionales" },
+  heroBadgeTrusted: { en: "Built for dry cleaning pros", es: "Respaldado por profesionales" },
   poweredBy: { en: "Powered by", es: "Impulsado por" },
-  careLabelSubtext: { en: "Reads fiber + care symbols instantly", es: "Lee fibra y símbolos de cuidado al instante" },
+  careLabelSubtext: { en: "Reads fiber + care symbols from a photo", es: "Lee fibra y símbolos de cuidado desde una foto" },
   solveBtn: { en: "Solve →", es: "Resolver →" },
   scanCareLabel: { en: "Scan Care Label", es: "Escanear Etiqueta" },
   addContextOptional: { en: "Add context (optional)", es: "Agregar contexto (opcional)" },
@@ -266,10 +266,10 @@ export const strings: Record<string, Record<string, string>> = {
   garmentAnalysis: { en: "Garment Analysis", es: "Análisis de Prendas" },
   garmentAnalysisDesc: { en: "Photo of damage → AI reasoning → root cause + repair protocol + customer handoff.", es: "Foto del daño → razonamiento IA → causa raíz + protocolo de reparación + respuesta al cliente." },
   deepSolveTitle: { en: "Deep Solve", es: "Deep Solve" },
-  deepSolveDesc: { en: "AI-powered deep analysis of complex or multi-layered stains.", es: "Análisis profundo con IA de manchas complejas o multicapa." },
+  deepSolveDesc: { en: "Risk-aware review for complex or multi-layered stains.", es: "Revisión con enfoque de riesgo para manchas complejas o multicapa." },
   customerHandoffDesc: { en: "Generate professional customer-facing messages for intake, release, and tough stains.", es: "Genera mensajes profesionales para clientes sobre ingreso, entrega y manchas difíciles." },
   stainBrain: { en: "Ask Stain Brain", es: "Pregunta a Stain Brain" },
-  stainBrainDesc: { en: "Chat with GONR\u2019s AI about any stain scenario. Ask anything.", es: "Chatea con la IA de GONR sobre cualquier escenario de manchas. Pregunta lo que sea." },
+  stainBrainDesc: { en: "Ask Stain Brain about stain scenarios, edge cases, risks, and why a step may or may not fit.", es: "Pregunta a Stain Brain sobre escenarios de manchas, casos límite, riesgos y por qué un paso puede o no aplicar." },
   backUpper: { en: "← BACK", es: "← VOLVER" },
   operatorBadge: { en: "OPERATOR", es: "OPERADOR" },
   proBadge: { en: "PRO", es: "PRO" },
@@ -536,13 +536,13 @@ export const strings: Record<string, Record<string, string>> = {
   // ── Partners page ─────────────────────────────────────────────
   partnersTitle: { en: "Partner with GONR™", es: "Asóciese con GONR™" },
   partnersSubtitle: {
-    en: "Built by a 3rd generation dry cleaner. 250+ expert protocols. Let's work together.",
-    es: "Creado por un tintorero de tercera generación. Más de 250 protocolos expertos. Trabajemos juntos."
+    en: "Built by a 3rd generation dry cleaner. Reviewed protocol cards. Let's work together.",
+    es: "Creado por un tintorero de tercera generación. Tarjetas de protocolo revisadas. Trabajemos juntos."
   },
   partnersWhyPartner: { en: "Why Partner with GONR™?", es: "¿Por Qué Asociarse con GONR™?" },
   partnersWhyPartnerContent: {
-    en: "GONR is the only AI-powered stain intelligence platform built by industry professionals. Our protocols are chemistry-grounded, surface-specific, and safety-validated against a comprehensive material compatibility matrix. We serve both professional dry cleaners and home consumers.",
-    es: "GONR es la única plataforma de inteligencia de manchas con IA creada por profesionales de la industria. Nuestros protocolos están fundamentados en química, son específicos por superficie y validados contra una matriz integral de compatibilidad de materiales. Servimos tanto a tintorerías profesionales como a consumidores del hogar."
+    en: "GONR is a fabric-aware stain guidance platform built with professional textile-care experience. Protocol cards are chemistry-grounded, surface-specific, and written with risk warnings and stop signs for professional cleaners and home users.",
+    es: "GONR es una plataforma de guía de manchas según la fibra creada con experiencia profesional en cuidado textil. Las tarjetas de protocolo están fundamentadas en química, son específicas por superficie e incluyen advertencias de riesgo y señales para detenerse para tintorerías y usuarios del hogar."
   },
   partnersModels: { en: "Partnership Models", es: "Modelos de Asociación" },
   partnersModelsContent: {
@@ -712,9 +712,9 @@ export const strings: Record<string, Record<string, string>> = {
   spotterBack: { en: "Back to Spotter", es: "Volver a Spotter" },
   spotterChemRefDesc: { en: "Professional cleaning agents, solvents, and safety data.", es: "Agentes de limpieza profesional, solventes y datos de seguridad." },
   spotterChemCardsDesc: { en: "Quick-reference chemistry cards for common agents.", es: "Tarjetas de referencia rápida de química para agentes comunes." },
-  spotterStainBrainDesc: { en: "Chat with GONR\u2019s AI about any stain scenario.", es: "Chatea con la IA de GONR sobre cualquier escenario de manchas." },
-  spotterDeepSolveDesc: { en: "AI-powered deep analysis for complex stains.", es: "Análisis profundo con IA para manchas complejas." },
-  spotterGarmentFlagDesc: { en: "Flag a garment for AI photo analysis and root cause.", es: "Marca una prenda para análisis fotográfico con IA y causa raíz." },
+  spotterStainBrainDesc: { en: "Ask Stain Brain about stain scenarios, edge cases, and risks.", es: "Pregunta a Stain Brain sobre escenarios de manchas, casos límite y riesgos." },
+  spotterDeepSolveDesc: { en: "Risk-aware deep review for complex stains.", es: "Revisión profunda con enfoque de riesgo para manchas complejas." },
+  spotterGarmentFlagDesc: { en: "Flag a garment for photo-supported review and possible cause patterns.", es: "Marca una prenda para revisión con foto y posibles patrones de causa." },
   // ── Handoff standalone page ──
   handoffPageSubtitle: { en: "Professional scripts for counter staff", es: "Guiones profesionales para personal de mostrador" },
   handoffGarmentLabel: { en: "Garment / Stain", es: "Prenda / Mancha" },
@@ -819,7 +819,7 @@ export const strings: Record<string, Record<string, string>> = {
   wizardSolventBodyMulti: { en: 'Pick all that apply. Most plants run more than one — we use this to tune which agents make it into your protocols.', es: 'Selecciona todos los que apliquen. La mayoría de las plantas usan más de uno — usamos esto para ajustar qué agentes aparecen en tus protocolos.' },
   wizardSolventBody: { en: 'Pick the primary dry-cleaning chemistry on site.', es: 'Elige la química principal de limpieza en seco en el sitio.' },
   wizardSolventPerc: { en: 'Perc', es: 'Perc' },
-  wizardSolventPercReaction: { en: "Perc is the gold standard for grease and oil. We'll prioritize protocols that lean on it.", es: 'Perc es el estándar para grasa y aceite. Priorizaremos protocolos que lo aprovechen.' },
+  wizardSolventPercReaction: { en: "Perc is commonly used for grease and oil. We'll prioritize protocols that account for it.", es: 'Perc se usa comúnmente para grasa y aceite. Priorizaremos protocolos que lo tomen en cuenta.' },
   wizardSolventHydrocarbon: { en: 'Hydrocarbon (DF-2000)', es: 'Hidrocarburo (DF-2000)' },
   wizardSolventHydrocarbonReaction: { en: 'Hydrocarbon is gentler on dyes and trims. Slower on heavy grease, so we\'ll suggest pre-spotting more often.', es: 'Hidrocarburo es más suave con tintes y adornos. Más lento con grasa pesada, así que sugeriremos pre-tratamiento con más frecuencia.' },
   wizardSolventGreenEarth: { en: 'GreenEarth (silicone D5)', es: 'GreenEarth (silicona D5)' },

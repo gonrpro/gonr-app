@@ -252,7 +252,7 @@ function DeepSolveModule({
             onChange={e => setStainInput(e.target.value)}
             placeholder={t('deepSolveStainPlaceholder')}
             className="w-full rounded-lg px-3 py-2 text-sm border outline-none
-              focus:ring-2 focus:ring-purple-500/40"
+              focus:ring-2 focus:ring-[var(--accent)]/30"
             style={{
               backgroundColor: 'var(--bg)',
               borderColor: 'var(--border, rgba(128,128,128,0.15))',
@@ -272,8 +272,8 @@ function DeepSolveModule({
               onClick={() => toggleSituation(chip.key)}
               className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
                 active
-                  ? 'bg-purple-600 text-white border-purple-600'
-                  : 'border-gray-300 dark:border-white/15 hover:border-purple-400'
+                  ? 'bg-[var(--accent)] text-white border-[var(--accent)]'
+                  : 'border-gray-300 dark:border-white/15 hover:border-[var(--accent)]/50'
               }`}
               style={!active ? { color: 'var(--text-secondary)' } : undefined}
             >
@@ -290,7 +290,7 @@ function DeepSolveModule({
         placeholder={t('deepSolvePlaceholder')}
         rows={2}
         className="w-full rounded-lg px-3 py-2 text-sm border outline-none resize-none
-          focus:ring-2 focus:ring-purple-500/40 mb-3"
+          focus:ring-2 focus:ring-[var(--accent)]/30 mb-3"
         style={{
           backgroundColor: 'var(--bg)',
           borderColor: 'var(--border, rgba(128,128,128,0.15))',
@@ -308,8 +308,8 @@ function DeepSolveModule({
         <button
           onClick={runDeepSolve}
           disabled={status === 'loading' || !stainInput.trim()}
-          className="w-full min-h-[44px] rounded-xl bg-purple-600 hover:bg-purple-700
-            text-white text-sm font-semibold transition-colors shadow-lg shadow-purple-600/25
+          className="w-full min-h-[44px] rounded-md bg-[var(--accent)] hover:opacity-90
+            text-white text-sm font-semibold transition-colors shadow-sm
             disabled:opacity-50"
         >
           {status === 'loading' ? `🔄 ${t('deepSolveRunning')}` : `🔬 ${t('deepSolveRunButton')}`}
@@ -561,7 +561,7 @@ function CustomerHandoffModule({
           placeholder={t('handoffNeedsContext')}
           rows={2}
           className="w-full rounded-lg px-3 py-2 text-sm border outline-none resize-none
-            focus:ring-2 focus:ring-purple-500/40 mb-3"
+            focus:ring-2 focus:ring-[var(--accent)]/30 mb-3"
           style={{
             backgroundColor: 'var(--bg)',
             borderColor: 'var(--border, rgba(128,128,128,0.15))',
@@ -584,8 +584,8 @@ function CustomerHandoffModule({
                 onClick={() => setTone(t_.key)}
                 className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
                   active
-                    ? 'bg-purple-600 text-white border-purple-600'
-                    : 'border-gray-300 dark:border-white/15 hover:border-purple-400'
+                    ? 'bg-[var(--accent)] text-white border-[var(--accent)]'
+                    : 'border-gray-300 dark:border-white/15 hover:border-[var(--accent)]/50'
                 }`}
                 style={!active ? { color: 'var(--text-secondary)' } : undefined}
               >
@@ -603,8 +603,8 @@ function CustomerHandoffModule({
         <button
           onClick={generateHandoff}
           disabled={loading || !tone || !hasContext}
-          className="w-full min-h-[44px] rounded-xl bg-purple-600 hover:bg-purple-700
-            text-white text-sm font-semibold transition-colors shadow-lg shadow-purple-600/25
+          className="w-full min-h-[44px] rounded-md bg-[var(--accent)] hover:opacity-90
+            text-white text-sm font-semibold transition-colors shadow-sm
             disabled:opacity-50"
         >
           {loading ? `🔄 ${t('generatingHandoff')}` : `📋 ${t('generateHandoff')}`}

@@ -63,7 +63,7 @@ export default function Module1Page() {
           <div className="flex items-center gap-3">
             <span className="text-3xl">{meta.icon}</span>
             <div>
-              <p className="text-[10px] font-mono font-bold tracking-wider uppercase" style={{ color: '#22c55e' }}>
+              <p className="text-[10px] font-mono font-bold tracking-wider uppercase" style={{ color: 'var(--accent)' }}>
                 {lang === 'es' ? 'Módulo' : 'Module'} {meta.number}
               </p>
               <h1 className="text-xl font-bold tracking-tight">
@@ -92,7 +92,7 @@ export default function Module1Page() {
               className="h-full rounded-full transition-all duration-500"
               style={{
                 width: `${(completedLessons.size / lessons.length) * 100}%`,
-                background: 'linear-gradient(90deg, #22c55e, #16a34a)',
+                background: 'var(--accent)',
               }}
             />
           </div>
@@ -108,14 +108,14 @@ export default function Module1Page() {
               <button
                 key={lesson.id}
                 onClick={() => handleStartLesson(idx)}
-                className="card w-full text-left transition-all hover:border-green-500/30"
-                style={done ? { borderColor: 'rgba(34,197,94,0.3)', background: 'rgba(34,197,94,0.03)' } : undefined}
+                className="card w-full text-left transition-all hover:border-[var(--accent)]/30"
+                style={done ? { borderColor: 'rgba(22,101,52,0.25)', background: 'rgba(22,101,52,0.04)' } : undefined}
               >
                 <div className="flex items-center gap-3">
                   <span
                     className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm"
                     style={{
-                      background: done ? '#22c55e' : 'var(--surface-2)',
+                      background: done ? 'var(--accent)' : 'var(--surface-2)',
                       color: done ? '#fff' : 'var(--text-secondary)',
                       border: `1px solid ${done ? 'transparent' : 'var(--border)'}`,
                     }}
@@ -141,9 +141,9 @@ export default function Module1Page() {
         <button
           onClick={() => setPhase('quiz')}
           disabled={!allLessonsComplete}
-          className="w-full py-3 rounded-xl text-sm font-bold transition-all"
+          className="w-full py-3 rounded-lg text-sm font-bold transition-all"
           style={{
-            background: allLessonsComplete ? 'linear-gradient(135deg, #22c55e, #16a34a)' : 'var(--surface-2)',
+            background: allLessonsComplete ? 'var(--accent)' : 'var(--surface-2)',
             color: allLessonsComplete ? '#fff' : 'var(--text-secondary)',
             border: allLessonsComplete ? 'none' : '1px solid var(--border)',
             cursor: allLessonsComplete ? 'pointer' : 'default',
@@ -152,7 +152,7 @@ export default function Module1Page() {
         >
           {allLessonsComplete
             ? (lang === 'es' ? '🧪 Tomar el Quiz del Módulo' : '🧪 Take Module Quiz')
-            : (lang === 'es' ? '🔒 Completa todas las lecciones para desbloquear el quiz' : '🔒 Complete all lessons to unlock quiz')}
+            : (lang === 'es' ? 'Complete todas las lecciones para abrir la evaluación' : 'Complete all lessons to open the competency check')}
         </button>
       </div>
     )
@@ -182,8 +182,8 @@ export default function Module1Page() {
 
         <button
           onClick={handleCompleteLesson}
-          className="w-full py-3 rounded-xl text-sm font-bold transition-all"
-          style={{ background: '#22c55e', color: '#fff' }}
+          className="w-full py-3 rounded-lg text-sm font-bold transition-all"
+          style={{ background: 'var(--accent)', color: '#fff' }}
         >
           {currentLesson + 1 < lessons.length
             ? (lang === 'es' ? 'Siguiente Lección →' : 'Next Lesson →')
@@ -239,32 +239,32 @@ export default function Module1Page() {
       </h1>
       {quizPassed && (
         <div
-          className="rounded-2xl px-6 py-4 mx-auto max-w-xs"
+          className="rounded-lg px-6 py-4 mx-auto max-w-xs"
           style={{
-            background: 'linear-gradient(135deg, rgba(34,197,94,0.12), rgba(34,197,94,0.04))',
-            border: '2px solid rgba(34,197,94,0.4)',
+            background: 'rgba(22,101,52,0.08)',
+            border: '1px solid rgba(22,101,52,0.35)',
           }}
         >
-          <p className="text-lg font-bold" style={{ color: '#22c55e' }}>
+          <p className="text-lg font-bold" style={{ color: 'var(--accent)' }}>
             🧠 {lang === 'es' ? 'Mentalidad del Spotter' : "Spotter's Mindset"}
           </p>
           <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>
-            {lang === 'es' ? 'Insignia desbloqueada' : 'Badge unlocked'}
+            {lang === 'es' ? 'Competencia registrada' : 'Competency recorded'}
           </p>
         </div>
       )}
       <div className="flex gap-3 justify-center mt-4">
         <button
           onClick={() => { setPhase('overview'); setCompletedLessons(new Set()); }}
-          className="px-4 py-2 rounded-xl text-sm font-semibold"
+          className="px-4 py-2 rounded-lg text-sm font-semibold"
           style={{ background: 'var(--surface-2)', border: '1px solid var(--border)', color: 'var(--text)' }}
         >
           {lang === 'es' ? 'Revisar Lecciones' : 'Review Lessons'}
         </button>
         <Link
           href="/spotter"
-          className="px-4 py-2 rounded-xl text-sm font-semibold"
-          style={{ background: '#22c55e', color: '#fff' }}
+          className="px-4 py-2 rounded-lg text-sm font-semibold"
+          style={{ background: 'var(--accent)', color: '#fff' }}
         >
           {lang === 'es' ? 'Volver a Spotter' : 'Back to Spotter'}
         </Link>

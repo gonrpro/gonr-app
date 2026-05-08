@@ -77,11 +77,13 @@ const NAV_ITEMS = [
   },
 ] as const
 
-export default function Nav() {
+export default function Nav({ brand = 'gonr' }: { brand?: 'gonr' | 'spottingboard' }) {
   const pathname = usePathname()
   const { t } = useLanguage()
   const { user, tier } = useOptionalAuth()
   const effectiveTier = getEffectiveViewerTier(tier, user?.email ?? null) as typeof tier
+
+  if (brand === 'spottingboard') return null
 
   const visibleItems = NAV_ITEMS.filter(item => {
     if (!('feature' in item) || !item.feature) return true
