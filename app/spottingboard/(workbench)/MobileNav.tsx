@@ -1,38 +1,30 @@
 'use client'
 
-// app/spottingboard/(workbench)/MobileNav.tsx — TASK-169
+// app/spottingboard/(workbench)/MobileNav.tsx — TASK-186
 //
-// Mobile slide-out drawer for workbench nav. Hamburger button in topbar
-// (visible only ≤760px), tap → drawer slides in from left, tap backdrop
-// or any nav item → drawer closes. Body scroll locked while open.
-// Escape key closes. Initial focus moves to the close button for keyboard.
+// Rewrite of TASK-169 MobileNav using @radix-ui/react-dialog primitive.
+// Replaces the bespoke drawer + backdrop + portal logic with Radix's
+// Dialog primitive, which:
+//   - Portals the drawer + overlay to document.body automatically (escapes
+//     any sticky/fixed/transform parent stacking context — root cause of
+//     the prior "drawer behind page" bug)
+//   - Handles focus trap + return focus on close
+//   - Handles Escape + outside click to close
+//   - Manages aria-modal / aria-hidden / aria-labelledby for screen readers
+//   - Locks body scroll while open
+//
+// Same public API as before: <MobileNav items={WORKBENCH_NAV} />.
 
-import { useEffect, useRef, useState } from 'react'
+import * as Dialog from '@radix-ui/react-dialog'
 import { usePathname, useRouter } from 'next/navigation'
+import { useState } from 'react'
 import type { WorkbenchNavItem } from './nav'
+import './mobile-nav-sheet.css'
 
 export function MobileNav({ items }: { items: WorkbenchNavItem[] }) {
   const [isOpen, setIsOpen] = useState(false)
-  const closeButtonRef = useRef<HTMLButtonElement | null>(null)
   const pathname = usePathname()
   const router = useRouter()
-
-  // Lock body scroll while open + focus close button + escape closes
-  useEffect(() => {
-    if (!isOpen) return
-    const prevOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    closeButtonRef.current?.focus()
-
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setIsOpen(false)
-    }
-    window.addEventListener('keydown', onKey)
-    return () => {
-      document.body.style.overflow = prevOverflow
-      window.removeEventListener('keydown', onKey)
-    }
-  }, [isOpen])
 
   function navigateTo(href: string) {
     setIsOpen(false)
@@ -40,69 +32,59 @@ export function MobileNav({ items }: { items: WorkbenchNavItem[] }) {
   }
 
   return (
-    <>
-      <button
-        type="button"
-        className="sb-mobile-nav-trigger"
-        aria-label="Open navigation"
-        aria-expanded={isOpen}
-        aria-controls="sb-mobile-drawer"
-        onClick={() => setIsOpen(true)}
-      >
-        <span className="sb-mobile-nav-trigger-bars" aria-hidden="true">
-          <span /><span /><span />
-        </span>
-        <span className="sb-mobile-nav-trigger-label">Menu</span>
-      </button>
+    <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
+      <Dialog.Trigger asChild>
+        <button
+          type="button"
+          className="sb-mobile-nav-trigger"
+          aria-label="Open navigation"
+        >
+          <span className="sb-mobile-nav-trigger-bars" aria-hidden="true">
+            <span /><span /><span />
+          </span>
+          <span className="sb-mobile-nav-trigger-label">Menu</span>
+        </button>
+      </Dialog.Trigger>
 
-      {/* Backdrop + drawer always rendered for transition; visibility
-          controlled by data-state attribute so CSS transitions can run. */}
-      <div
-        className="sb-mobile-nav-backdrop"
-        data-state={isOpen ? 'open' : 'closed'}
-        onClick={() => setIsOpen(false)}
-        aria-hidden="true"
-      />
+      <Dialog.Portal>
+        <Dialog.Overlay className="sb-sheet-overlay" />
+        <Dialog.Content
+          className="sb-sheet-content"
+          aria-describedby={undefined}
+        >
+          <header className="sb-sheet-head">
+            <Dialog.Title className="sb-sheet-title">Workbench</Dialog.Title>
+            <Dialog.Close asChild>
+              <button
+                type="button"
+                className="sb-sheet-close"
+                aria-label="Close navigation"
+              >
+                ✕
+              </button>
+            </Dialog.Close>
+          </header>
 
-      <aside
-        id="sb-mobile-drawer"
-        className="sb-mobile-nav-drawer"
-        data-state={isOpen ? 'open' : 'closed'}
-        aria-label="Workbench navigation"
-        aria-hidden={!isOpen}
-      >
-        <header className="sb-mobile-nav-head">
-          <span className="sb-mobile-nav-title">Workbench</span>
-          <button
-            type="button"
-            ref={closeButtonRef}
-            className="sb-mobile-nav-close"
-            aria-label="Close navigation"
-            onClick={() => setIsOpen(false)}
-          >
-            ✕
-          </button>
-        </header>
-
-        <ul className="sb-mobile-nav-list">
-          {items.map((item) => {
-            const active = pathname === item.href || pathname.startsWith(`${item.href}/`)
-            return (
-              <li key={item.href}>
-                <button
-                  type="button"
-                  className="sb-mobile-nav-item"
-                  data-active={active ? 'true' : undefined}
-                  onClick={() => navigateTo(item.href)}
-                >
-                  <span className="sb-mobile-nav-item-label">{item.label}</span>
-                  <span className="sb-mobile-nav-item-desc">{item.description}</span>
-                </button>
-              </li>
-            )
-          })}
-        </ul>
-      </aside>
-    </>
+          <ul className="sb-sheet-list">
+            {items.map((item) => {
+              const active = pathname === item.href || pathname.startsWith(`${item.href}/`)
+              return (
+                <li key={item.href}>
+                  <button
+                    type="button"
+                    className="sb-sheet-item"
+                    data-active={active ? 'true' : undefined}
+                    onClick={() => navigateTo(item.href)}
+                  >
+                    <span className="sb-sheet-item-label">{item.label}</span>
+                    <span className="sb-sheet-item-desc">{item.description}</span>
+                  </button>
+                </li>
+              )
+            })}
+          </ul>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   )
 }
