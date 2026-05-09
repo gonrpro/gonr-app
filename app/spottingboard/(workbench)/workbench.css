@@ -741,3 +741,64 @@
 .sb-coach-safety-escalation_required { border-color: var(--sb-purple); color: var(--sb-purple); }
 .sb-form-success-classifier { margin-top: 0.65rem; font-size: 0.82rem; color: var(--sb-text-dim); }
 .sb-form-success-version    { color: var(--sb-text-mute); font-size: 0.75rem; }
+
+/* ── Dashboard overview ─────────────────────────────────────────────── */
+.sb-dashboard-hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, rgba(0, 212, 170, 0.10), rgba(91, 158, 255, 0.06));
+  border: 1px solid rgba(0, 212, 170, 0.22);
+  border-radius: var(--sb-radius-lg);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+.sb-dashboard-eyebrow {
+  color: var(--sb-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+.sb-dashboard-hero h2 {
+  font-size: 1.35rem;
+  line-height: 1.15;
+  margin-bottom: 0.55rem;
+}
+.sb-dashboard-hero p { color: var(--sb-text-dim); font-size: 0.9rem; line-height: 1.55; max-width: 68ch; }
+.sb-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+.sb-dashboard-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-height: 126px;
+  background: var(--sb-bg-card);
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius);
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  color: var(--sb-text);
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+.sb-dashboard-card:hover,
+.sb-dashboard-card:focus-visible {
+  background: var(--sb-bg-card-hover);
+  border-color: rgba(0, 212, 170, 0.32);
+  outline: none;
+  transform: translateY(-1px);
+}
+.sb-dashboard-card-title { font-weight: 700; font-size: 0.98rem; }
+.sb-dashboard-card-body { color: var(--sb-text-dim); font-size: 0.84rem; line-height: 1.5; }
+
+@media (max-width: 760px) {
+  .sb-dashboard-hero { flex-direction: column; padding: 1rem; }
+  .sb-dashboard-grid { grid-template-columns: 1fr; }
+  .sb-dashboard-card { min-height: auto; }
+}

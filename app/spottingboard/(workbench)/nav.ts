@@ -11,6 +11,7 @@ export interface WorkbenchNavItem {
 }
 
 export const WORKBENCH_NAV: WorkbenchNavItem[] = [
+  { href: '/spottingboard/dashboard',  label: 'Dashboard',         description: 'Workbench overview' },
   { href: '/spottingboard/library',    label: 'Brain Library',     description: 'Plant-owned protocol cards' },
   { href: '/spottingboard/intake',     label: 'Capture rule',      description: 'Add chemistry, procedure, or plant rule' },
   { href: '/spottingboard/chemistry',  label: 'Chemistry Stack',   description: 'Agents · solvents · equipment' },
