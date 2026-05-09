@@ -50,10 +50,14 @@
 @media (max-width: 760px) {
   .sb-app {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto auto minmax(0, 1fr);
-    grid-template-areas: "topbar" "sidebar" "main";
+    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-areas: "topbar" "main";
     min-height: 100dvh;
     height: 100dvh;
+  }
+  /* Sidebar hidden on mobile — the drawer takes over */
+  .sb-sidebar {
+    display: none !important;
   }
   .sb-topbar {
     align-items: flex-start;
