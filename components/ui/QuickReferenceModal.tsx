@@ -157,8 +157,8 @@ export default function QuickReferenceModal({ open, onClose, content }: QuickRef
               href={content.referenceHref}
               className="block w-full text-center min-h-[44px] flex items-center justify-center rounded-xl text-sm font-semibold transition-[transform,opacity] duration-150 active:scale-[0.98] hover:opacity-90"
               style={{
-                background: 'rgba(34,197,94,0.08)',
-                border: '1px solid rgba(34,197,94,0.3)',
+                background: 'rgba(var(--brand-green-rgb), 0.08)',
+                border: '1px solid rgba(var(--brand-green-rgb), 0.3)',
                 color: 'var(--accent)',
                 textDecoration: 'none',
               }}

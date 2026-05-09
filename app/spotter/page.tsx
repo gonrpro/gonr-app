@@ -297,13 +297,13 @@ function SpotterPageInner() {
         <Link
           href="/courses/module-1"
           className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block"
-          style={{ borderColor: 'rgba(34,197,94,0.25)' }}
+          style={{ borderColor: 'rgba(var(--brand-green-rgb), 0.25)' }}
         >
           <div className="flex items-center gap-2">
             <span className="text-lg">🧠</span>
             <h2 className="text-base font-bold">The Spotter&apos;s Mindset</h2>
             <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border ml-auto"
-              style={{ background: 'rgba(34,197,94,0.08)', color: 'var(--accent)', borderColor: 'rgba(34,197,94,0.3)' }}>
+              style={{ background: 'rgba(var(--brand-green-rgb), 0.08)', color: 'var(--accent)', borderColor: 'rgba(var(--brand-green-rgb), 0.3)' }}>
               4 lessons
             </span>
           </div>
@@ -316,13 +316,13 @@ function SpotterPageInner() {
         <Link
           href="/courses/module-2"
           className="card w-full text-left space-y-1 transition-colors hover:border-green-500/30 block"
-          style={{ borderColor: 'rgba(34,197,94,0.25)' }}
+          style={{ borderColor: 'rgba(var(--brand-green-rgb), 0.25)' }}
         >
           <div className="flex items-center gap-2">
             <span className="text-lg">🧪</span>
             <h2 className="text-base font-bold">Stain Families</h2>
             <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border ml-auto"
-              style={{ background: 'rgba(34,197,94,0.08)', color: 'var(--accent)', borderColor: 'rgba(34,197,94,0.3)' }}>
+              style={{ background: 'rgba(var(--brand-green-rgb), 0.08)', color: 'var(--accent)', borderColor: 'rgba(var(--brand-green-rgb), 0.3)' }}>
               7 lessons
             </span>
           </div>
@@ -341,7 +341,7 @@ function SpotterPageInner() {
         {COURSES.slice(1).map((course) => (
           <CourseCard key={course.titleKey} course={course} />
         ))}
-        <div className="card space-y-2" style={{ background: 'rgba(34,197,94,0.04)', borderColor: 'rgba(34,197,94,0.2)' }}>
+        <div className="card space-y-2" style={{ background: 'rgba(var(--brand-green-rgb), 0.04)', borderColor: 'rgba(var(--brand-green-rgb), 0.2)' }}>
           <p className="text-sm font-semibold" style={{ color: 'var(--accent)' }}>
             Preparing for DLI or NCA certification?
           </p>

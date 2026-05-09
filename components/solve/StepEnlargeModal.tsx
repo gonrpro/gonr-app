@@ -107,9 +107,9 @@ export default function StepEnlargeModal({ steps, currentIndex, onClose, onNavig
           onClick={() => isLast ? onClose() : onNavigate(currentIndex + 1)}
           className="flex-1 min-h-[48px] rounded-xl text-sm font-semibold transition-opacity"
           style={{
-            background: isLast ? 'rgba(34,197,94,0.15)' : 'rgba(34,197,94,0.12)',
+            background: isLast ? 'rgba(var(--brand-green-rgb), 0.15)' : 'rgba(var(--brand-green-rgb), 0.12)',
             color: 'var(--accent)',
-            border: '1px solid rgba(34,197,94,0.3)',
+            border: '1px solid rgba(var(--brand-green-rgb), 0.3)',
           }}
         >
           {isLast ? '✓ Done' : 'Next →'}

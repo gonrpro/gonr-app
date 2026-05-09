@@ -125,7 +125,7 @@ export default function FullCardModal({ card, steps, warnings, onClose }: FullCa
         style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="flex items-center gap-3 flex-1 min-w-0">
           <span className="text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
-            style={{ background: 'rgba(34,197,94,0.15)', color: 'var(--accent)' }}>
+            style={{ background: 'rgba(var(--brand-green-rgb), 0.15)', color: 'var(--accent)' }}>
             {t('fullProtocol')}
           </span>
           <span className="text-sm font-medium truncate" style={{ color: 'var(--text-secondary)' }}>
@@ -184,7 +184,7 @@ export default function FullCardModal({ card, steps, warnings, onClose }: FullCa
 
         {/* Why This Works */}
         {card.whyThisWorks && (
-          <div className="rounded-xl p-4" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
+          <div className="rounded-xl p-4" style={{ background: 'rgba(var(--brand-green-rgb), 0.06)', border: '1px solid rgba(var(--brand-green-rgb), 0.2)' }}>
             <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--accent)' }}>
               {t('whyThisWorks')}
             </p>
@@ -219,12 +219,12 @@ export default function FullCardModal({ card, steps, warnings, onClose }: FullCa
                 onClick={() => handleStepTap(i)}
                 className="flex gap-3 rounded-xl p-3 transition-colors cursor-pointer"
                 style={{
-                  background: activeStepIdx === i ? 'rgba(34,197,94,0.08)' : 'var(--surface)',
-                  border: `1px solid ${activeStepIdx === i ? 'rgba(34,197,94,0.3)' : 'var(--border)'}`,
+                  background: activeStepIdx === i ? 'rgba(var(--brand-green-rgb), 0.08)' : 'var(--surface)',
+                  border: `1px solid ${activeStepIdx === i ? 'rgba(var(--brand-green-rgb), 0.3)' : 'var(--border)'}`,
                 }}
               >
                 <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold"
-                  style={{ background: 'rgba(34,197,94,0.15)', color: 'var(--accent)' }}>
+                  style={{ background: 'rgba(var(--brand-green-rgb), 0.15)', color: 'var(--accent)' }}>
                   {step.step ?? i + 1}
                 </div>
                 <div className="flex-1 space-y-1">
@@ -300,9 +300,9 @@ export default function FullCardModal({ card, steps, warnings, onClose }: FullCa
           onClick={handleClose}
           className="flex-1 min-h-[48px] rounded-xl text-sm font-semibold"
           style={{
-            background: 'rgba(34,197,94,0.12)',
+            background: 'rgba(var(--brand-green-rgb), 0.12)',
             color: 'var(--accent)',
-            border: '1px solid rgba(34,197,94,0.3)',
+            border: '1px solid rgba(var(--brand-green-rgb), 0.3)',
           }}
         >
           {t('done')}

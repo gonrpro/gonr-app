@@ -540,8 +540,8 @@ function SolvePageInner() {
                 onClick={handleBack}
                 className="flex-1 min-h-[44px] rounded-xl text-sm font-semibold transition-colors"
                 style={{
-                  background: 'rgba(34,197,94,0.08)',
-                  border: '1px solid rgba(34,197,94,0.3)',
+                  background: 'rgba(var(--brand-green-rgb), 0.08)',
+                  border: '1px solid rgba(var(--brand-green-rgb), 0.3)',
                   color: 'var(--accent)',
                 }}
               >
@@ -650,7 +650,7 @@ function SolvePageInner() {
       {showUpgradeBanner && (
         <div
           className="rounded-xl px-4 py-3 text-center text-sm font-semibold"
-          style={{ background: 'rgba(34,197,94,0.15)', color: 'var(--accent)', border: '1px solid rgba(34,197,94,0.3)' }}
+          style={{ background: 'rgba(var(--brand-green-rgb), 0.15)', color: 'var(--accent)', border: '1px solid rgba(var(--brand-green-rgb), 0.3)' }}
         >
           Welcome to Spotter! You&apos;re all set. 🎉
         </div>
@@ -692,11 +692,11 @@ function SolvePageInner() {
               onClick={() => handleScanStain(true)}
               disabled={loading}
               style={{
-                background: 'rgba(34,197,94,0.08)',
+                background: 'rgba(var(--brand-green-rgb), 0.08)',
                 borderRadius: '12px',
                 flex: 1,
                 minHeight: '100px',
-                border: '1.5px solid rgba(34,197,94,0.35)',
+                border: '1.5px solid rgba(var(--brand-green-rgb), 0.35)',
                 cursor: 'pointer',
                 transition: 'all 0.15s ease',
                 width: '100%',
@@ -713,10 +713,10 @@ function SolvePageInner() {
               onClick={() => handleScanStain(false)}
               disabled={loading}
               style={{
-                background: 'rgba(34,197,94,0.04)',
+                background: 'rgba(var(--brand-green-rgb), 0.04)',
                 borderRadius: '10px',
                 minHeight: '36px',
-                border: '1px dashed rgba(34,197,94,0.3)',
+                border: '1px dashed rgba(var(--brand-green-rgb), 0.3)',
                 cursor: 'pointer',
                 width: '100%',
               }}
@@ -737,7 +737,7 @@ function SolvePageInner() {
               minHeight: '70px',
               borderRadius: '12px',
               overflow: 'hidden',
-              border: '1px solid rgba(34, 197, 94, 0.4)',
+              border: '1px solid rgba(var(--brand-green-rgb), 0.4)',
             }}
           >
             <img
@@ -1017,11 +1017,11 @@ function SolvePageInner() {
         onClick={handleSolve}
         disabled={!hasSolveInput || loading}
         style={{
-          background: hasSolveInput ? 'rgba(34,197,94,0.08)' : 'transparent',
+          background: hasSolveInput ? 'rgba(var(--brand-green-rgb), 0.08)' : 'transparent',
           borderRadius: '12px',
           minHeight: '56px',
           width: '100%',
-          border: `1.5px solid ${hasSolveInput ? 'rgba(34,197,94,0.4)' : 'rgba(150,150,150,0.25)'}`,
+          border: `1.5px solid ${hasSolveInput ? 'rgba(var(--brand-green-rgb), 0.4)' : 'rgba(150,150,150,0.25)'}`,
           cursor: hasSolveInput && !loading ? 'pointer' : 'default',
           transition: 'all 0.2s ease',
           opacity: loading ? 0.7 : 1,
@@ -1065,7 +1065,7 @@ function SolvePageInner() {
         <div style={{
           textAlign: 'center',
           padding: '8px 12px',
-          background: 'rgba(34, 197, 94, 0.08)',
+          background: 'rgba(var(--brand-green-rgb), 0.08)',
           borderRadius: '6px',
           fontSize: '12px',
           color: 'var(--accent)',

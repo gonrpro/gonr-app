@@ -64,9 +64,9 @@ export default function CardRatingBadges({ cardId }: { cardId: string | undefine
         <span
           className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-1 rounded-full"
           style={{
-            background: 'rgba(34,197,94,0.1)',
+            background: 'rgba(var(--brand-green-rgb), 0.1)',
             color: 'var(--accent)',
-            border: '1px solid rgba(34,197,94,0.3)',
+            border: '1px solid rgba(var(--brand-green-rgb), 0.3)',
           }}
           title="Verified by the GONR™ team"
         >

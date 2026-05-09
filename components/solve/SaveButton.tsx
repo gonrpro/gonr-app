@@ -77,9 +77,9 @@ export default function SaveButton({ card }: SaveButtonProps) {
       disabled={saving}
       className="flex items-center justify-center w-9 h-9 rounded-lg transition-colors"
       style={{
-        background: saved ? 'rgba(34,197,94,0.15)' : 'transparent',
+        background: saved ? 'rgba(var(--brand-green-rgb), 0.15)' : 'transparent',
         border: '1px solid',
-        borderColor: saved ? 'rgba(34,197,94,0.3)' : 'var(--border-strong)',
+        borderColor: saved ? 'rgba(var(--brand-green-rgb), 0.3)' : 'var(--border-strong)',
       }}
       aria-label={saved ? t('savedUnsave') : t('savedSave')}
       title={saved ? t('savedUnsave') : t('savedSave')}

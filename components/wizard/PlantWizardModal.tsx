@@ -201,7 +201,7 @@ export default function PlantWizardModal({ open, onClose, onComplete, existingPl
         {/* Progress bar */}
         <div className="h-1" style={{ background: 'var(--surface-2)' }}>
           <div className="h-full transition-all duration-300"
-            style={{ background: '#22c55e', width: `${((step + 1) / TOTAL_STEPS) * 100}%` }} />
+            style={{ background: 'var(--brand-green)', width: `${((step + 1) / TOTAL_STEPS) * 100}%` }} />
         </div>
 
         {/* Step body */}
@@ -232,9 +232,9 @@ export default function PlantWizardModal({ open, onClose, onComplete, existingPl
           <button onClick={next} disabled={saving || !canAdvance(step, state)}
             className="flex-1 min-h-[44px] rounded-lg text-sm font-semibold transition-opacity"
             style={{
-              background: 'rgba(34,197,94,0.12)',
-              color: '#22c55e',
-              border: '1px solid rgba(34,197,94,0.3)',
+              background: 'rgba(var(--brand-green-rgb), 0.12)',
+              color: 'var(--brand-green)',
+              border: '1px solid rgba(var(--brand-green-rgb), 0.3)',
               opacity: (saving || !canAdvance(step, state)) ? 0.5 : 1,
             }}>
             {saving ? '…' : (step === TOTAL_STEPS - 1 ? t('wizardFinish') : t('wizardNext'))}
@@ -451,7 +451,7 @@ function StepReveal({ state, t }: { state: WizardState; t: (k: string) => string
       <h2 className="text-lg font-bold">{t('wizardRevealTitle')}</h2>
       <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{t('wizardRevealBody')}</p>
       <div className="rounded-lg p-3 space-y-1.5 text-sm"
-        style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
+        style={{ background: 'rgba(var(--brand-green-rgb), 0.06)', border: '1px solid rgba(var(--brand-green-rgb), 0.2)' }}>
         <div><strong>{t('wizardSummaryName')}:</strong> {state.name || '—'}</div>
         <div><strong>{t('wizardSummarySolvent')}:</strong> {state.solvents.length > 0 ? state.solvents.join(', ') + (state.solventOther ? ` (${state.solventOther})` : '') : '—'}</div>
         <div><strong>{t('wizardSummaryBoard')}:</strong> {state.board ?? '—'}</div>
@@ -471,9 +471,9 @@ function ChoiceChip({ active, label, onClick }: { active: boolean; label: string
     <button onClick={onClick}
       className="w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors"
       style={{
-        background: active ? 'rgba(34,197,94,0.12)' : 'var(--surface)',
-        border: `1px solid ${active ? 'rgba(34,197,94,0.4)' : 'var(--border)'}`,
-        color: active ? '#22c55e' : 'var(--text)',
+        background: active ? 'rgba(var(--brand-green-rgb), 0.12)' : 'var(--surface)',
+        border: `1px solid ${active ? 'rgba(var(--brand-green-rgb), 0.4)' : 'var(--border)'}`,
+        color: active ? 'var(--brand-green)' : 'var(--text)',
         fontWeight: active ? 600 : 400,
       }}>
       {label}

@@ -346,7 +346,7 @@ export default function ProfilePage() {
               <p className="text-sm font-medium mt-0.5" style={{ color: 'var(--text)' }}>{user.email}</p>
             </div>
             <span className="text-[10px] font-bold px-2 py-1 rounded-full"
-              style={{ background: 'rgba(34,197,94,0.1)', color: 'var(--accent)', border: '1px solid rgba(34,197,94,0.3)' }}>
+              style={{ background: 'rgba(var(--brand-green-rgb), 0.1)', color: 'var(--accent)', border: '1px solid rgba(var(--brand-green-rgb), 0.3)' }}>
               {t('profileSignedIn')}
             </span>
           </div>
@@ -659,8 +659,8 @@ export default function ProfilePage() {
                     key={badge.id}
                     className="flex flex-col items-center gap-1 rounded-xl p-2 text-center"
                     style={{
-                      background: earned ? 'rgba(34,197,94,0.06)' : 'var(--surface-2)',
-                      border: `1px solid ${earned ? 'rgba(34,197,94,0.3)' : 'var(--border)'}`,
+                      background: earned ? 'rgba(var(--brand-green-rgb), 0.06)' : 'var(--surface-2)',
+                      border: `1px solid ${earned ? 'rgba(var(--brand-green-rgb), 0.3)' : 'var(--border)'}`,
                       opacity: earned ? 1 : 0.4,
                     }}
                   >

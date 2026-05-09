@@ -140,7 +140,7 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
           <div className={styles.plansGrid}>
             {/* Home — primary consumer tier (TASK-051) */}
             {isCheckoutLive('home') && (
-              <div className={styles.planCard} style={{ border: '1px solid rgba(34,197,94,0.4)', background: 'rgba(34,197,94,0.03)' }}>
+              <div className={styles.planCard} style={{ border: '1px solid rgba(var(--brand-green-rgb), 0.4)', background: 'rgba(var(--brand-green-rgb), 0.03)' }}>
                 <h3 className={styles.planName}>Home</h3>
                 <p className={styles.planDescription}>Confident stain removal at home</p>
                 <ul style={{ fontSize: '12px', color: '#6b7280', marginBottom: '12px', paddingLeft: '16px', lineHeight: '1.8' }}>

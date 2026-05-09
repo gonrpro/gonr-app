@@ -31,7 +31,7 @@ export default function BleachingGuidePage() {
             <li>• Skip the neutralization rinse after a bleach step</li>
           </ul>
         </div>
-        <div className="rounded-xl p-3" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
+        <div className="rounded-xl p-3" style={{ background: 'rgba(var(--brand-green-rgb), 0.06)', border: '1px solid rgba(var(--brand-green-rgb), 0.2)' }}>
           <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--accent)' }}>
             ✓ Always
           </p>
@@ -169,7 +169,7 @@ export default function BleachingGuidePage() {
         </div>
       </section>
 
-      <section className="rounded-xl p-4" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
+      <section className="rounded-xl p-4" style={{ background: 'rgba(var(--brand-green-rgb), 0.06)', border: '1px solid rgba(var(--brand-green-rgb), 0.2)' }}>
         <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--accent)' }}>
           💡 Pro Rules
         </p>

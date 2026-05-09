@@ -190,7 +190,7 @@ export default function CustomProtocolForm({ onCreated, onClose }: CustomProtoco
               style={{
                 background: 'var(--accent-soft)',
                 color: 'var(--accent)',
-                border: '1px dashed rgba(34,197,94,0.3)',
+                border: '1px dashed rgba(var(--brand-green-rgb), 0.3)',
               }}
             >
               + {t('customAddStep')}

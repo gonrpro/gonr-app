@@ -89,8 +89,8 @@ function TrustTile({
   const IconCmp = icon
   const styles = {
     green: {
-      background: 'rgba(34,197,94,0.06)',
-      border: '1px solid rgba(34,197,94,0.25)',
+      background: 'rgba(var(--brand-green-rgb), 0.06)',
+      border: '1px solid rgba(var(--brand-green-rgb), 0.25)',
       labelColor: 'var(--accent)',
       iconColor: 'var(--accent)',
     },
@@ -417,7 +417,7 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
                 className="flex gap-3 w-full text-left rounded-lg p-2 -mx-2 transition-colors hover:bg-white/5 active:bg-white/10 cursor-pointer"
               >
                 <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
-                  style={{ background: 'rgba(34,197,94,0.15)', color: 'var(--accent)' }}>
+                  style={{ background: 'rgba(var(--brand-green-rgb), 0.15)', color: 'var(--accent)' }}>
                   {stepObj.step ?? i + 1}
                 </div>
                 <div className="flex-1 space-y-0.5">
@@ -518,7 +518,7 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
                     <div key={i} className="flex gap-3">
                       <div
                         className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
-                        style={{ background: 'rgba(34,197,94,0.15)', color: 'var(--accent)' }}
+                        style={{ background: 'rgba(var(--brand-green-rgb), 0.15)', color: 'var(--accent)' }}
                       >
                         {stepObj.step ?? i + 1}
                       </div>
@@ -557,8 +557,8 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
               href={`/deep-solve?stain=${encodeURIComponent(prefill)}`}
               className="flex items-center justify-center gap-2 flex-1 min-h-[44px] rounded-xl text-sm font-semibold transition-[transform,opacity] duration-150 active:scale-[0.98] hover:opacity-90"
               style={{
-                background: 'rgba(34,197,94,0.08)',
-                border: '1px solid rgba(34,197,94,0.3)',
+                background: 'rgba(var(--brand-green-rgb), 0.08)',
+                border: '1px solid rgba(var(--brand-green-rgb), 0.3)',
                 color: 'var(--accent)',
                 textDecoration: 'none',
               }}

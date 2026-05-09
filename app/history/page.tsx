@@ -39,7 +39,7 @@ function outcomeBadge(outcome: string | null) {
   if (!outcome) {
     return { label: 'No report', bg: 'rgba(148,163,184,0.12)', color: 'var(--text-secondary)' }
   }
-  if (outcome === 'solved') return { label: 'Solved', bg: 'rgba(34,197,94,0.12)', color: '#22c55e' }
+  if (outcome === 'solved') return { label: 'Solved', bg: 'rgba(var(--brand-green-rgb), 0.12)', color: 'var(--brand-green)' }
   if (outcome === 'partial') return { label: 'Partial', bg: 'rgba(234,179,8,0.14)', color: '#eab308' }
   if (outcome === 'failed') return { label: 'Failed', bg: 'rgba(220,38,38,0.12)', color: 'var(--danger)' }
   if (outcome === 'escalated') return { label: 'Escalated', bg: 'rgba(147,51,234,0.12)', color: 'var(--purple)' }
@@ -161,7 +161,7 @@ export default function HistoryPage() {
                 style={{
                   background: active ? 'var(--accent-soft)' : 'var(--surface)',
                   color: active ? 'var(--accent)' : 'var(--text-secondary)',
-                  border: `1px solid ${active ? 'rgba(34,197,94,0.3)' : 'var(--border)'}`,
+                  border: `1px solid ${active ? 'rgba(var(--brand-green-rgb), 0.3)' : 'var(--border)'}`,
                 }}
               >
                 {o.label}

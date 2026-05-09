@@ -110,7 +110,7 @@ export default function SavedPage() {
           style={{
             background: 'var(--accent-soft)',
             color: 'var(--accent)',
-            border: '1px solid rgba(34,197,94,0.3)',
+            border: '1px solid rgba(var(--brand-green-rgb), 0.3)',
           }}
           aria-label={t('customTitle')}
         >

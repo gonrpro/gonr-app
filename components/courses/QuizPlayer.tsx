@@ -64,8 +64,8 @@ export default function QuizPlayer({ questions, passThreshold, onComplete }: Qui
         <div
           className="inline-block rounded-2xl px-6 py-4"
           style={{
-            background: passed ? 'rgba(34,197,94,0.08)' : 'rgba(245,158,11,0.08)',
-            border: `2px solid ${passed ? 'rgba(34,197,94,0.3)' : 'rgba(245,158,11,0.3)'}`,
+            background: passed ? 'rgba(var(--brand-green-rgb), 0.08)' : 'rgba(245,158,11,0.08)',
+            border: `2px solid ${passed ? 'rgba(var(--brand-green-rgb), 0.3)' : 'rgba(245,158,11,0.3)'}`,
           }}
         >
           <p className="text-3xl font-bold" style={{ color: passed ? 'var(--accent)' : '#f59e0b' }}>
@@ -88,8 +88,8 @@ export default function QuizPlayer({ questions, passThreshold, onComplete }: Qui
           <div
             className="rounded-xl px-4 py-3 mt-2"
             style={{
-              background: 'linear-gradient(135deg, rgba(34,197,94,0.12), rgba(34,197,94,0.04))',
-              border: '1.5px solid rgba(34,197,94,0.4)',
+              background: 'linear-gradient(135deg, rgba(var(--brand-green-rgb), 0.12), rgba(var(--brand-green-rgb), 0.04))',
+              border: '1.5px solid rgba(var(--brand-green-rgb), 0.4)',
             }}
           >
             <p className="text-sm font-bold" style={{ color: 'var(--accent)' }}>
@@ -150,15 +150,15 @@ export default function QuizPlayer({ questions, passThreshold, onComplete }: Qui
           let textColor = 'var(--text)'
 
           if (revealed && isCorrect) {
-            borderColor = 'rgba(34,197,94,0.5)'
-            bg = 'rgba(34,197,94,0.08)'
+            borderColor = 'rgba(var(--brand-green-rgb), 0.5)'
+            bg = 'rgba(var(--brand-green-rgb), 0.08)'
           } else if (revealed && isSelected && !isCorrect) {
             borderColor = 'rgba(239,68,68,0.5)'
             bg = 'rgba(239,68,68,0.06)'
             textColor = '#ef4444'
           } else if (isSelected) {
-            borderColor = 'rgba(34,197,94,0.4)'
-            bg = 'rgba(34,197,94,0.04)'
+            borderColor = 'rgba(var(--brand-green-rgb), 0.4)'
+            bg = 'rgba(var(--brand-green-rgb), 0.04)'
           }
 
           return (
@@ -200,8 +200,8 @@ export default function QuizPlayer({ questions, passThreshold, onComplete }: Qui
         <div
           className="rounded-xl px-4 py-3 text-sm leading-relaxed"
           style={{
-            background: selected === q.correctIndex ? 'rgba(34,197,94,0.06)' : 'rgba(245,158,11,0.06)',
-            border: `1px solid ${selected === q.correctIndex ? 'rgba(34,197,94,0.2)' : 'rgba(245,158,11,0.2)'}`,
+            background: selected === q.correctIndex ? 'rgba(var(--brand-green-rgb), 0.06)' : 'rgba(245,158,11,0.06)',
+            border: `1px solid ${selected === q.correctIndex ? 'rgba(var(--brand-green-rgb), 0.2)' : 'rgba(245,158,11,0.2)'}`,
             color: 'var(--text-secondary)',
           }}
         >

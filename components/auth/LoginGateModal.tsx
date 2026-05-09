@@ -63,7 +63,7 @@ export default function LoginGateModal({ onClose, onLoggedIn, redirectPath, stai
             <div className="flex justify-center">
               <div
                 className="w-14 h-14 rounded-full flex items-center justify-center"
-                style={{ background: 'rgba(34,197,94,0.12)' }}
+                style={{ background: 'rgba(var(--brand-green-rgb), 0.12)' }}
               >
                 <span className="text-2xl">📧</span>
               </div>
@@ -91,7 +91,7 @@ export default function LoginGateModal({ onClose, onLoggedIn, redirectPath, stai
             <div className="flex justify-center">
               <div
                 className="w-14 h-14 rounded-full flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, rgba(147,51,234,0.15), rgba(34,197,94,0.15))' }}
+                style={{ background: 'linear-gradient(135deg, rgba(147,51,234,0.15), rgba(var(--brand-green-rgb), 0.15))' }}
               >
                 <span className="text-2xl">🧪</span>
               </div>

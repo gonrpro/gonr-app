@@ -9,9 +9,9 @@ function VisualBadge({ type }: { type: string }) {
       icon: '🔄',
       label: 'Decision Framework',
       labelEs: 'Marco de Decisión',
-      bg: 'rgba(34,197,94,0.08)',
+      bg: 'rgba(var(--brand-green-rgb), 0.08)',
       color: 'var(--accent)',
-      border: 'rgba(34,197,94,0.3)',
+      border: 'rgba(var(--brand-green-rgb), 0.3)',
     },
     'tip': {
       icon: '💡',
@@ -41,9 +41,9 @@ function VisualBadge({ type }: { type: string }) {
       icon: '🎯',
       label: 'Key Concept',
       labelEs: 'Concepto Clave',
-      bg: 'rgba(34,197,94,0.06)',
+      bg: 'rgba(var(--brand-green-rgb), 0.06)',
       color: 'var(--accent)',
-      border: 'rgba(34,197,94,0.25)',
+      border: 'rgba(var(--brand-green-rgb), 0.25)',
     },
   }
 
@@ -88,7 +88,7 @@ export default function LessonCard({ lesson, lessonIndex, totalLessons }: Lesson
         </div>
         <div
           className="rounded-xl px-3 py-2 text-xs"
-          style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.15)', color: 'var(--text-secondary)' }}
+          style={{ background: 'rgba(var(--brand-green-rgb), 0.06)', border: '1px solid rgba(var(--brand-green-rgb), 0.15)', color: 'var(--text-secondary)' }}
         >
           <span style={{ color: 'var(--accent)', fontWeight: 600 }}>
             {lang === 'es' ? 'Objetivo' : 'Objective'}:
@@ -129,8 +129,8 @@ export default function LessonCard({ lesson, lessonIndex, totalLessons }: Lesson
       <div
         className="rounded-xl px-4 py-3 space-y-1"
         style={{
-          background: 'linear-gradient(135deg, rgba(34,197,94,0.1), rgba(34,197,94,0.04))',
-          border: '1.5px solid rgba(34,197,94,0.3)',
+          background: 'linear-gradient(135deg, rgba(var(--brand-green-rgb), 0.1), rgba(var(--brand-green-rgb), 0.04))',
+          border: '1.5px solid rgba(var(--brand-green-rgb), 0.3)',
         }}
       >
         <p className="text-[10px] font-mono font-bold tracking-wider uppercase" style={{ color: 'var(--accent)' }}>

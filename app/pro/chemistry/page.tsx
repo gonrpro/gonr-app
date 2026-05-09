@@ -97,7 +97,7 @@ export default function ChemistryPage() {
                 onClick={() => setSelected(selected === c.id ? null : c.id)}
                 className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-all"
                 style={{
-                  background: selected === c.id ? 'rgba(34,197,94,0.12)' : 'var(--surface)',
+                  background: selected === c.id ? 'rgba(var(--brand-green-rgb), 0.12)' : 'var(--surface)',
                   border: `1.5px solid ${selected === c.id ? 'var(--accent)' : 'var(--border-strong)'}`,
                   color: selected === c.id ? 'var(--accent)' : 'var(--text)',
                 }}
@@ -147,7 +147,7 @@ export default function ChemistryPage() {
                       <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>Time Factor</p>
                       <div className="flex flex-col gap-2">
                         {[
-                          { key: 'fresh', label: 'Fresh', color: 'var(--accent)', bg: 'rgba(34,197,94,0.08)', border: 'rgba(34,197,94,0.2)' },
+                          { key: 'fresh', label: 'Fresh', color: 'var(--accent)', bg: 'rgba(var(--brand-green-rgb), 0.08)', border: 'rgba(var(--brand-green-rgb), 0.2)' },
                           { key: 'aged', label: 'Aged', color: '#f59e0b', bg: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.2)' },
                           { key: 'heatSet', label: 'Heat Set', color: '#ef4444', bg: 'rgba(239,68,68,0.08)', border: 'rgba(239,68,68,0.2)' },
                         ].map(({ key, label, color, bg, border }) => timeFactor[key] ? (
@@ -203,7 +203,7 @@ export default function ChemistryPage() {
 
                   {/* Dan's tips */}
                   {tips.length > 0 && (
-                    <div className="rounded-xl p-3" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
+                    <div className="rounded-xl p-3" style={{ background: 'rgba(var(--brand-green-rgb), 0.06)', border: '1px solid rgba(var(--brand-green-rgb), 0.2)' }}>
                       <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--accent)' }}>💡 Dan's Tips</p>
                       <div className="space-y-2">
                         {tips.map((t, i) => (

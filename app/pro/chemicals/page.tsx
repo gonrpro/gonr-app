@@ -476,7 +476,7 @@ function CompanyDetails({ company }: { company: CompanyData }) {
                       </p>
                     </div>
                     {company.gonrIntegration.agentCrossReference && (
-                      <div className="rounded-lg p-3 border border-green-500/20" style={{ background: 'rgba(34,197,94,0.04)' }}>
+                      <div className="rounded-lg p-3 border border-green-500/20" style={{ background: 'rgba(var(--brand-green-rgb), 0.04)' }}>
                         <p className="text-[10px] font-mono font-bold mb-1" style={{ color: 'var(--text-secondary)' }}>
                           {t('protocolMapping')}
                         </p>

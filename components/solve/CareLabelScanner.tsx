@@ -86,7 +86,7 @@ export default function CareLabelScanner({ onFiberDetected, onReset }: CareLabel
       {state === 'done' && result && (
         <div className="flex flex-col gap-2 w-full">
           <div className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm w-full"
-            style={{ background: 'rgba(34,197,94,0.1)', color: 'var(--accent)' }}>
+            style={{ background: 'rgba(var(--brand-green-rgb), 0.1)', color: 'var(--accent)' }}>
             <span>🏷️</span>
             <span className="font-semibold capitalize">{result.fiber}</span>
             {result.careSymbols?.length > 0 && (

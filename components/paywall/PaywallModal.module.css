@@ -79,7 +79,7 @@
 .price {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--accent, #22c55e);
+  color: var(--accent, var(--brand-green));
 }
 
 .period {
@@ -89,7 +89,7 @@
 }
 
 .checkoutBtn {
-  background-color: var(--accent, #22c55e);
+  background-color: var(--accent, var(--brand-green));
   color: white;
   border: none;
   padding: 0.5rem 1rem;
