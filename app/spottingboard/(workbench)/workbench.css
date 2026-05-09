@@ -60,21 +60,25 @@
     display: none !important;
   }
   .sb-topbar {
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 0.85rem 1rem;
-    flex-direction: column;
-  }
-  .sb-topbar-left,
-  .sb-topbar-right {
-    width: 100%;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     gap: 0.5rem;
-    flex-wrap: wrap;
+    padding: 0 0.75rem;
+    height: 52px;
+    min-height: 52px;
+  }
+  .sb-topbar-left {
+    flex: 1 1 auto;
+    min-width: 0;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .sb-topbar-right {
+    flex-shrink: 0;
   }
   .sb-brand-tagline,
   .sb-brand-sep { display: none; }
-  .sb-main { padding: 1rem 0.9rem 2rem; }
+  .sb-main { padding: 1rem 0.9rem max(5rem, calc(3rem + env(safe-area-inset-bottom))); }
   .sb-surface-head h1 { font-size: 1.35rem; }
   .sb-surface-tagline { font-size: 0.88rem; margin-bottom: 1rem; }
 }
@@ -126,13 +130,9 @@
 
 @media (max-width: 760px) {
   .sb-sidebar {
-    border-right: 0;
-    border-bottom: 1px solid var(--sb-border);
-    padding: 0.6rem 0.75rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
+    display: none !important;
   }
+  /* Keep these rules for reference but sidebar is hidden — drawer is nav */
   .sb-sidebar ul { display: flex; gap: 0.5rem; min-width: max-content; }
   .sb-sidebar li { margin: 0; }
   .sb-nav-desc { display: none; }
