@@ -11,6 +11,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { headers } from 'next/headers'
 import './workbench.css'
+import './mobile-nav-sheet.css'
 import { WORKBENCH_NAV } from './nav'
 import { MobileNav } from './MobileNav'
 

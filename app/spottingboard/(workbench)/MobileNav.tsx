@@ -19,7 +19,6 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState } from 'react'
 import type { WorkbenchNavItem } from './nav'
-import './mobile-nav-sheet.css'
 
 export function MobileNav({ items }: { items: WorkbenchNavItem[] }) {
   const [isOpen, setIsOpen] = useState(false)
