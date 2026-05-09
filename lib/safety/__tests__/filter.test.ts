@@ -4,8 +4,20 @@
 import { describe, test, expect } from 'vitest'
 import { runSafetyFilter, SAFE_FALLBACK } from '../filter'
 
+interface TestCardOverrides {
+  title?: string
+  surface?: string
+  spottingProtocol?: Array<{ step: number; agent?: string; technique?: string; instruction?: string }>
+  agent?: string
+  technique?: string
+  instruction?: string
+  homeSolutions?: string[]
+  materialWarnings?: string[]
+  escalation?: string | { whatToTell: string }
+}
+
 // Helper: build a minimal AI card for testing
-function makeCard(overrides: any = {}) {
+function makeCard(overrides: TestCardOverrides = {}) {
   return {
     title: overrides.title || 'Test Protocol',
     stainFamily: 'protein',
@@ -73,12 +85,12 @@ describe('RULE 1: Hot water on protein stains', () => {
 // =====================================================
 
 describe('RULE 2: Enzymes on silk/wool', () => {
-  test('replaces enzyme cleaner on silk', () => {
+  test('blocks enzyme cleaner on silk', () => {
     const card = makeCard({ agent: 'enzyme cleaner' })
     const result = runSafetyFilter(card, 'coffee', 'silk')
-    expect(result.safe).toBe(true)
-    expect(result.filtered).toBe(true)
-    expect(result.card.spottingProtocol[0].agent).toContain('pH-neutral protein spotter')
+    expect(result.safe).toBe(false)
+    expect(result.filtered).toBe(false)
+    expect(result.violations.some(v => v.rule.includes('RULE-2S') && v.action === 'blocked')).toBe(true)
   })
 
   test('replaces OxiClean on cashmere', () => {
@@ -258,7 +270,7 @@ describe('Warning context detection', () => {
 // =====================================================
 
 describe('Combined scenarios', () => {
-  test('blood on silk: RULE-1 (protein+hot water) + RULE-2 (enzyme+silk) both fire', () => {
+  test('blood on silk: RULE-1 (protein+hot water) fires, RULE-2S blocks enzyme on silk', () => {
     const card = makeCard({
       spottingProtocol: [
         { step: 1, agent: 'enzyme cleaner', technique: 'soak', instruction: 'Soak in hot water with enzyme.' },
@@ -266,14 +278,13 @@ describe('Combined scenarios', () => {
       ],
     })
     const result = runSafetyFilter(card, 'blood', 'silk blouse')
-    expect(result.safe).toBe(true)
-    expect(result.filtered).toBe(true)
-    // Both rules should have fired
+    expect(result.safe).toBe(false)
+    expect(result.filtered).toBe(false)
+    // Heat is replaceable, but enzyme/protein spotter language on silk is nuclear.
     const rules = result.violations.map(v => v.rule)
     expect(rules.some(r => r.includes('RULE-1'))).toBe(true)
-    expect(rules.some(r => r.includes('RULE-2'))).toBe(true)
-    // Verify replacements
-    expect(result.card.spottingProtocol[0].agent).toContain('pH-neutral protein spotter')
+    expect(rules.some(r => r.includes('RULE-2S'))).toBe(true)
+    expect(result.violations.some(v => v.rule.includes('RULE-2S') && v.action === 'blocked')).toBe(true)
     expect(result.card.spottingProtocol[0].instruction).toContain('cold water')
     expect(result.card.spottingProtocol[0].instruction).not.toContain('hot water')
   })
