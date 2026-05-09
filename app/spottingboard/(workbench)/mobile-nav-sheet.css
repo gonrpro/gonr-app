@@ -1,0 +1,180 @@
+/* TASK-186 — Mobile nav drawer (Radix Dialog Sheet) styles
+ *
+ * IMPORTANT: Radix Dialog uses Dialog.Portal which renders content as a
+ * direct child of document.body. Selectors below target the portaled
+ * elements at body root — NOT inside .sb-app or .sb-topbar. This is the
+ * fix for the prior "drawer rendered behind page" bug, where the bespoke
+ * drawer lived inside the sticky <header> stacking context.
+ *
+ * The hamburger trigger lives inside the topbar and uses the existing
+ * .sb-mobile-nav-trigger class from workbench.css — no change there.
+ *
+ * Hide the sheet entirely on desktop (≥ 761px) since the desktop sidebar
+ * takes over. Trigger button is also hidden on desktop by workbench.css.
+ */
+
+/* ──────────────────────────────────────────────────────────────────────
+ * Overlay (portal child)
+ * ────────────────────────────────────────────────────────────────────── */
+.sb-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.62);
+  z-index: 1000;
+  animation: sb-sheet-overlay-in 180ms ease-out;
+}
+
+.sb-sheet-overlay[data-state='closed'] {
+  animation: sb-sheet-overlay-out 140ms ease-in;
+}
+
+@keyframes sb-sheet-overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes sb-sheet-overlay-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+ * Sheet panel (portal child) — slides in from left
+ * ────────────────────────────────────────────────────────────────────── */
+.sb-sheet-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(86vw, 320px);
+  background: #0b0f14;
+  color: #e6edf3;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: max(env(safe-area-inset-top, 0px), 0.5rem) 0
+           max(env(safe-area-inset-bottom, 0px), 0.5rem) 0;
+  animation: sb-sheet-slide-in 220ms cubic-bezier(0.32, 0.72, 0, 1);
+  outline: none;
+}
+
+.sb-sheet-content[data-state='closed'] {
+  animation: sb-sheet-slide-out 180ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes sb-sheet-slide-in {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes sb-sheet-slide-out {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+/* Hide on desktop — desktop sidebar takes over ≥ 761px */
+@media (min-width: 761px) {
+  .sb-sheet-overlay,
+  .sb-sheet-content {
+    display: none !important;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+ * Sheet header
+ * ────────────────────────────────────────────────────────────────────── */
+.sb-sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.sb-sheet-title {
+  margin: 0;
+  font-family: 'Geist Sans', system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(230, 237, 243, 0.7);
+}
+
+.sb-sheet-close {
+  appearance: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e6edf3;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.sb-sheet-close:hover,
+.sb-sheet-close:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  outline: none;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+ * Sheet list + items
+ * ────────────────────────────────────────────────────────────────────── */
+.sb-sheet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  flex: 1 1 auto;
+}
+
+.sb-sheet-item {
+  appearance: none;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  color: inherit;
+  padding: 0.75rem 0.875rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.sb-sheet-item:hover,
+.sb-sheet-item:focus-visible {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+.sb-sheet-item[data-active='true'] {
+  background: rgba(0, 212, 170, 0.08);
+  border-color: rgba(0, 212, 170, 0.32);
+}
+
+.sb-sheet-item-label {
+  font-family: 'Geist Sans', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #e6edf3;
+}
+
+.sb-sheet-item-desc {
+  font-family: 'Geist Sans', system-ui, sans-serif;
+  font-size: 0.78rem;
+  color: rgba(230, 237, 243, 0.55);
+  line-height: 1.35;
+}
