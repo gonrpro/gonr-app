@@ -8,12 +8,14 @@
 // Escape key closes. Initial focus moves to the close button for keyboard.
 
 import { useEffect, useRef, useState } from 'react'
-import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
 import type { WorkbenchNavItem } from './nav'
 
 export function MobileNav({ items }: { items: WorkbenchNavItem[] }) {
   const [isOpen, setIsOpen] = useState(false)
   const closeButtonRef = useRef<HTMLButtonElement | null>(null)
+  const pathname = usePathname()
+  const router = useRouter()
 
   // Lock body scroll while open + focus close button + escape closes
   useEffect(() => {
@@ -31,6 +33,11 @@ export function MobileNav({ items }: { items: WorkbenchNavItem[] }) {
       window.removeEventListener('keydown', onKey)
     }
   }, [isOpen])
+
+  function navigateTo(href: string) {
+    setIsOpen(false)
+    if (pathname !== href) router.push(href)
+  }
 
   return (
     <>
@@ -78,18 +85,22 @@ export function MobileNav({ items }: { items: WorkbenchNavItem[] }) {
         </header>
 
         <ul className="sb-mobile-nav-list">
-          {items.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className="sb-mobile-nav-item"
-                onClick={() => setIsOpen(false)}
-              >
-                <span className="sb-mobile-nav-item-label">{item.label}</span>
-                <span className="sb-mobile-nav-item-desc">{item.description}</span>
-              </Link>
-            </li>
-          ))}
+          {items.map((item) => {
+            const active = pathname === item.href || pathname.startsWith(`${item.href}/`)
+            return (
+              <li key={item.href}>
+                <button
+                  type="button"
+                  className="sb-mobile-nav-item"
+                  data-active={active ? 'true' : undefined}
+                  onClick={() => navigateTo(item.href)}
+                >
+                  <span className="sb-mobile-nav-item-label">{item.label}</span>
+                  <span className="sb-mobile-nav-item-desc">{item.description}</span>
+                </button>
+              </li>
+            )
+          })}
         </ul>
       </aside>
     </>
