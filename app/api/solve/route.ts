@@ -437,6 +437,15 @@ const STAIN_FAMILY_OVERRIDES: [RegExp, string][] = [
   [/\bhard\s*water\b/i, 'mineral'],
 ]
 
+// Tannin overrides: stains that classify as "tannin" via card or
+// family-keywords but are multi-component (cocoa butter + dye + tannin)
+// and should be reported as "combination" for protocol selection.
+// Eval G18 chocolate-on-silk regression: card classifies as tannin,
+// expected combination.
+const STAIN_TANNIN_OVERRIDES: [RegExp, string][] = [
+  [/\bchocolate\b/i, 'combination'],
+]
+
 function resolveStainType(card: any | null, ctx: SolveContext): string {
   // Check card fields — cards use stainFamily (newer) or stainType (v5)
   let cardFamily = card?.stainFamily || card?.stainType
@@ -460,6 +469,11 @@ function resolveStainType(card: any | null, ctx: SolveContext): string {
         if (pattern.test(ctx.stain)) return override
       }
     }
+    if (cardFamily === 'tannin') {
+      for (const [pattern, override] of STAIN_TANNIN_OVERRIDES) {
+        if (pattern.test(ctx.stain)) return override
+      }
+    }
     return cardFamily
   }
   // Fallback: detect from stain name via family-keywords
@@ -468,6 +482,11 @@ function resolveStainType(card: any | null, ctx: SolveContext): string {
     // Apply same overrides to keyword-detected family
     if (detected === 'oxidizable') {
       for (const [pattern, override] of STAIN_FAMILY_OVERRIDES) {
+        if (pattern.test(ctx.stain)) return override
+      }
+    }
+    if (detected === 'tannin') {
+      for (const [pattern, override] of STAIN_TANNIN_OVERRIDES) {
         if (pattern.test(ctx.stain)) return override
       }
     }
