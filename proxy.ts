@@ -14,7 +14,7 @@ function isStaticAsset(pathname: string): boolean {
   )
 }
 
-function redirectToSpottingBoardLogin(request: NextRequest, nextPath = '/spottingboard/intake') {
+function redirectToSpottingBoardLogin(request: NextRequest, nextPath = '/spottingboard/onboarding') {
   const url = request.nextUrl.clone()
   url.pathname = '/auth/login'
   url.searchParams.set('next', nextPath)
@@ -33,7 +33,7 @@ export function proxy(request: NextRequest) {
       if (pathname === '/auth/login' && request.nextUrl.searchParams.get('brand') !== 'spottingboard') {
         const url = request.nextUrl.clone()
         url.searchParams.set('brand', 'spottingboard')
-        if (!url.searchParams.get('next')) url.searchParams.set('next', '/spottingboard/intake')
+        if (!url.searchParams.get('next')) url.searchParams.set('next', '/spottingboard/onboarding')
         return NextResponse.redirect(url)
       }
       return NextResponse.next()
