@@ -13,6 +13,8 @@ import PaywallModal from '@/components/paywall/PaywallModal'
 import LanguageToggle from '@/components/protocols/LanguageToggle'
 import LoginGateModal from '@/components/auth/LoginGateModal'
 import ResultTierUpsell from '@/components/solve/ResultTierUpsell'
+import { OperatorFeedbackModal } from '@/components/feedback/OperatorFeedbackModal'
+import { LegalIntakeModal } from '@/components/feedback/LegalIntakeModal'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { useOptionalAuth } from '@/lib/auth/AuthContext'
 import { canAccessFeature } from '@/lib/auth/features'
@@ -72,6 +74,14 @@ function SolvePageInner() {
   const [showPaywallReason, setShowPaywallReason] = useState<'trial_expired' | 'anon_limit'>('trial_expired')
   const [usageState, setUsageState] = useState<UsageState | null>(null)
   const [userTier, setUserTier] = useState<'free' | 'home' | 'spotter' | 'operator' | 'founder'>('free')
+
+  // TASK-144 — operator-week feedback capture
+  const [plantId, setPlantId] = useState<string | null>(null)
+  const [feedbackBannerVisible, setFeedbackBannerVisible] = useState(false)
+  const [feedbackModalOpen, setFeedbackModalOpen] = useState(false)
+  const [legalIntakeOpen, setLegalIntakeOpen] = useState(false)
+  const [feedbackTrigger, setFeedbackTrigger] = useState<'post-recommendation' | 'manual'>('manual')
+  const appVersion = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ?? 'local'
   const solvesRemaining = usageState?.solvesRemaining ?? 3
 
   // Translation state for solve result
@@ -142,6 +152,65 @@ function SolvePageInner() {
     // Refresh usage state when auth state changes (signup, login, logout).
     fetchUsageState().then(setUsageState).catch(() => setUsageState(null))
   }, [authLoading, user?.email, authTier])
+
+  useEffect(() => {
+    if (authLoading || !user?.email) {
+      setPlantId(null)
+      return
+    }
+
+    fetch('/api/plant')
+      .then(r => (r.ok ? r.json() : null))
+      .then(data => setPlantId(typeof data?.plant?.id === 'string' ? data.plant.id : null))
+      .catch(() => setPlantId(null))
+  }, [authLoading, user?.email])
+
+  useEffect(() => {
+    setFeedbackBannerVisible(false)
+    setFeedbackModalOpen(false)
+    setLegalIntakeOpen(false)
+    if (!result || !plantId || result.noVerifiedProtocol) return
+
+    const protocolId = result.card?.id ?? result.correlationId ?? 'unknown'
+    const storageKey = `gonr_feedback_prompt_seen:${protocolId}`
+    if (typeof window !== 'undefined' && window.localStorage.getItem(storageKey) === '1') return
+
+    const timer = window.setTimeout(() => {
+      setFeedbackTrigger('post-recommendation')
+      setFeedbackBannerVisible(true)
+      if (typeof window !== 'undefined') window.localStorage.setItem(storageKey, '1')
+    }, 30_000)
+    return () => window.clearTimeout(timer)
+  }, [result, plantId])
+
+  const submitOperatorFeedback = useCallback(async (payload: Record<string, unknown>) => {
+    const res = await fetch('/api/operator-feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+    if (!res.ok) throw new Error('feedback_submit_failed')
+    setFeedbackModalOpen(false)
+    setFeedbackBannerVisible(false)
+  }, [])
+
+  const submitLegalIntake = useCallback(async (payload: Record<string, unknown>) => {
+    const res = await fetch('/api/operator-legal-intake', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+    if (!res.ok) throw new Error('legal_intake_submit_failed')
+    setLegalIntakeOpen(false)
+    setFeedbackModalOpen(false)
+    setFeedbackBannerVisible(false)
+  }, [])
+
+  const openFeedbackModal = useCallback((trigger: 'post-recommendation' | 'manual') => {
+    setFeedbackTrigger(trigger)
+    setLegalIntakeOpen(false)
+    setFeedbackModalOpen(true)
+  }, [])
 
   useEffect(() => {
     return () => {
@@ -626,6 +695,60 @@ function SolvePageInner() {
           <ResultTierUpsell
             correlationId={result.correlationId ?? 'no-correlation'}
             cardId={result.card?.id ?? null}
+          />
+        )}
+
+        {plantId && feedbackBannerVisible && !feedbackModalOpen && !legalIntakeOpen && (
+          <div
+            className="mt-4 rounded-2xl p-4 flex items-center justify-between gap-3"
+            style={{ background: 'var(--surface)', border: '1px solid var(--border-strong)' }}
+          >
+            <p className="text-sm font-semibold" style={{ color: 'var(--text)' }}>
+              Quick — was this useful? 30 seconds.
+            </p>
+            <button
+              type="button"
+              onClick={() => openFeedbackModal('post-recommendation')}
+              className="min-h-[40px] rounded-xl px-4 text-sm font-bold"
+              style={{ background: 'var(--accent)', color: '#fff' }}
+            >
+              Give feedback
+            </button>
+          </div>
+        )}
+
+        {plantId && (
+          <button
+            type="button"
+            onClick={() => openFeedbackModal('manual')}
+            className="mt-3 w-full min-h-[44px] rounded-xl text-sm font-semibold"
+            style={{ background: 'var(--surface-2)', border: '1px solid var(--border-strong)', color: 'var(--text)' }}
+          >
+            Give Feedback
+          </button>
+        )}
+
+        {plantId && feedbackModalOpen && !legalIntakeOpen && (
+          <OperatorFeedbackModal
+            plantId={plantId}
+            protocolId={result.card?.id ?? result.correlationId}
+            surface="gonr-runtime"
+            trigger={feedbackTrigger}
+            appVersion={appVersion}
+            onSubmit={submitOperatorFeedback}
+            onDismiss={() => {
+              setFeedbackModalOpen(false)
+              setFeedbackBannerVisible(false)
+            }}
+            legalIntakeOpen={() => setLegalIntakeOpen(true)}
+          />
+        )}
+
+        {plantId && legalIntakeOpen && (
+          <LegalIntakeModal
+            plantId={plantId}
+            onSubmit={submitLegalIntake}
+            onCancel={() => setLegalIntakeOpen(false)}
           />
         )}
       </div>
