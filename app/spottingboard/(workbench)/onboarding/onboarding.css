@@ -1,0 +1,306 @@
+/* TASK-165 — Onboarding cockpit styles.
+ *
+ * Reuses workbench.css custom properties; no new design tokens. Scoped via
+ * .sb-intake-cockpit / .sb-surface-onboarding so the cockpit lives alongside
+ * the rest of (workbench) without leaking styles.
+ */
+
+.sb-surface-onboarding {
+  padding: 0;
+}
+
+.sb-intake-cockpit {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.5rem;
+  min-height: calc(100dvh - var(--sb-topbar-height, 56px));
+  padding: 0.75rem clamp(0.75rem, 3vw, 1.25rem) 0;
+}
+
+@media (min-width: 1024px) {
+  .sb-intake-cockpit {
+    grid-template-rows: none;
+    grid-template-columns: minmax(260px, 320px) 1fr;
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+}
+
+/* ─── Plant Brain build status ─────────────────────────────────────────── */
+.sb-intake-status {
+  border: 1px solid var(--sb-border, rgba(255, 255, 255, 0.08));
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--sb-surface-2, rgba(255, 255, 255, 0.02));
+  font-size: 0.875rem;
+}
+
+@media (min-width: 1024px) {
+  .sb-intake-status {
+    align-self: start;
+    position: sticky;
+    top: 1rem;
+  }
+}
+
+.sb-intake-status-title {
+  margin: 0 0 0.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.sb-intake-status-sub {
+  margin: 0 0 0.5rem;
+  color: var(--sb-text-secondary, rgba(255, 255, 255, 0.65));
+  font-size: 0.8125rem;
+}
+
+.sb-intake-status-list {
+  list-style: none;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.sb-intake-status-list li {
+  color: var(--sb-text-secondary, rgba(255, 255, 255, 0.65));
+  font-size: 0.8125rem;
+}
+
+.sb-intake-status-list li[data-done='true'] {
+  color: var(--sb-text, rgba(255, 255, 255, 0.95));
+}
+
+.sb-intake-status-count {
+  margin: 0 0 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.sb-intake-status-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0 0;
+  border-top: 1px solid var(--sb-border, rgba(255, 255, 255, 0.08));
+  display: grid;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  color: var(--sb-text-secondary, rgba(255, 255, 255, 0.65));
+}
+
+/* ─── Transcript ───────────────────────────────────────────────────────── */
+.sb-intake-main {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  min-height: 0;
+}
+
+.sb-intake-transcript {
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0;
+  display: grid;
+  gap: 0.5rem;
+  overflow-y: auto;
+}
+
+.sb-intake-transcript li[data-role='assistant'] {
+  justify-self: start;
+  max-width: min(560px, 86%);
+}
+
+.sb-intake-transcript li[data-role='operator'] {
+  justify-self: end;
+  max-width: min(560px, 86%);
+}
+
+.sb-intake-bubble {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.875rem;
+  background: var(--sb-surface, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--sb-border, rgba(255, 255, 255, 0.08));
+}
+
+.sb-intake-transcript li[data-role='operator'] .sb-intake-bubble {
+  background: var(--sb-accent-soft, rgba(99, 174, 153, 0.12));
+  border-color: var(--sb-accent, rgba(99, 174, 153, 0.45));
+}
+
+.sb-intake-bubble-role {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sb-text-secondary, rgba(255, 255, 255, 0.55));
+}
+
+.sb-intake-bubble p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* ─── Provenance pills ─────────────────────────────────────────────────── */
+.sb-pill {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  border: 1px solid currentColor;
+  background: transparent;
+}
+
+.sb-pill-plant-dna {
+  color: var(--sb-accent, #63ae99);
+}
+
+.sb-pill-plant-local {
+  color: #c0c0c0;
+}
+
+.sb-pill-needs-review {
+  color: #e5a945;
+}
+
+.sb-pill-unsafe {
+  color: #e25b5b;
+  background: rgba(226, 91, 91, 0.08);
+}
+
+/* ─── Chips ────────────────────────────────────────────────────────────── */
+.sb-intake-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  padding: 0.5rem 0;
+}
+
+.sb-intake-chip {
+  appearance: none;
+  background: var(--sb-surface, rgba(255, 255, 255, 0.04));
+  color: inherit;
+  border: 1px solid var(--sb-border, rgba(255, 255, 255, 0.14));
+  border-radius: 999px;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.sb-intake-chip:hover:not(:disabled) {
+  background: var(--sb-surface-2, rgba(255, 255, 255, 0.08));
+}
+
+.sb-intake-chip[data-selected='true'] {
+  background: var(--sb-accent-soft, rgba(99, 174, 153, 0.18));
+  border-color: var(--sb-accent, #63ae99);
+  color: var(--sb-accent, #63ae99);
+}
+
+.sb-intake-chip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sb-intake-chip-confirm {
+  appearance: none;
+  background: var(--sb-accent, #63ae99);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sb-intake-chip-confirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ─── Composer ─────────────────────────────────────────────────────────── */
+.sb-intake-composer {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.5rem;
+  align-items: end;
+  padding: 0.5rem 0 max(0.75rem, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--sb-border, rgba(255, 255, 255, 0.08));
+}
+
+.sb-intake-mic {
+  /* Hidden on mobile to avoid shipping a broken affordance on the floor surface. */
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--sb-border, rgba(255, 255, 255, 0.14));
+  background: var(--sb-surface, rgba(255, 255, 255, 0.04));
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+
+.sb-intake-mic[aria-disabled='true'] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .sb-intake-mic { display: inline-flex; align-items: center; justify-content: center; }
+}
+
+.sb-intake-textarea {
+  width: 100%;
+  resize: none;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--sb-border, rgba(255, 255, 255, 0.14));
+  border-radius: 0.625rem;
+  background: var(--sb-surface, rgba(255, 255, 255, 0.03));
+  color: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.sb-intake-textarea:focus {
+  outline: 2px solid var(--sb-accent, #63ae99);
+  outline-offset: 1px;
+}
+
+.sb-intake-send {
+  appearance: none;
+  background: var(--sb-accent, #63ae99);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 0.625rem;
+  padding: 0.625rem 1rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.sb-intake-send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sb-intake-error {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(226, 91, 91, 0.12);
+  color: #f3b8b8;
+  font-size: 0.875rem;
+}
+
+.sb-intake-complete {
+  padding: 2rem clamp(1rem, 5vw, 2rem);
+  text-align: center;
+}
+
+.sb-intake-complete h1 {
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  margin: 0 0 0.5rem;
+}

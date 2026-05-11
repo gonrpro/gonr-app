@@ -38,7 +38,8 @@ function LoginForm() {
 
     try {
       const supabase = createClient()
-      const nextPath = safeNextPath(searchParams.get('next')) ?? (spottingBoardBrand ? '/spottingboard/intake' : '/solve')
+      // TASK-165: SB users land in the conversational intake cockpit, not the bare capture form.
+      const nextPath = safeNextPath(searchParams.get('next')) ?? (spottingBoardBrand ? '/spottingboard/onboarding' : '/solve')
       const { error: authError } = await supabase.auth.signInWithOtp({
         email: email.trim(),
         options: {
@@ -67,7 +68,7 @@ function LoginForm() {
             <h1>Check your email</h1>
             <p>
               We sent a secure Spotting Board magic link to <strong>{email}</strong>.
-              Tap it to open Jerry’s Cleaners’ plant brain workbench.
+              Tap it to open Jerry&rsquo;s Cleaners&rsquo; plant brain workbench.
             </p>
             <button
               onClick={() => { setSent(false); setEmail('') }}
@@ -85,7 +86,7 @@ function LoginForm() {
         <section className="sb-login-card" aria-label="Spotting Board sign in">
           <h1>Sign in to your plant brain</h1>
           <p className="sb-login-copy">
-            Operator-owned capture, review, and export for your plant’s stain knowledge. No runtime guidance goes live without review.
+            Operator-owned capture, review, and export for your plant&rsquo;s stain knowledge. No runtime guidance goes live without review.
           </p>
 
           <form onSubmit={handleSubmit} className="sb-login-form">
