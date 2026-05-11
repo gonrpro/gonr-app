@@ -1,14 +1,11 @@
 // TASK-187 — Guided Spotting Board Dashboard.
+// TASK-189 (2026-05-11): added the chat-setup gate. Incomplete plants
+// redirect to /spottingboard/setup; the dashboard renders only when the
+// plant brain has the minimum core data (Atlas + Tyler product reset).
 //
 // The dashboard is the AI-led workbench, not a card grid. Server resolves
 // session + plant + DB-backed counts + recent items, then hands hydrated
 // state to GuidedDashboardClient which derives the next best question.
-//
-// Continues TASK-182 server pattern (mirror of library/intake/supervisor/
-// export/profile/onboarding): session via getSessionEmail, plant via
-// getUserPlant, items + queue via Promise.all. No DDL, no new server
-// routes — all writes go through the existing /api/plant + /api/spottingboard
-// /items paths that the cockpit already uses.
 
 import { redirect } from 'next/navigation'
 import { cookies, headers } from 'next/headers'
@@ -16,6 +13,8 @@ import { createServerClient } from '@supabase/ssr'
 import { getUserPlant } from '@/lib/auth/getUserPlant'
 import { listPlantBrainItems, type BrainLibraryItem } from '@/lib/spottingboard/items'
 import { listReviewQueue } from '@/lib/spottingboard/review'
+import { fromPlantBrainItem } from '@/lib/spottingboard/plant-build-engine/normalize'
+import { buildPhaseTargets, isBuildComplete } from '../setup/setup-spine'
 import { GuidedDashboardClient } from './GuidedDashboardClient'
 import './guided-dashboard.css'
 
@@ -23,7 +22,7 @@ const COUNT_CAP = 1000
 
 export const metadata = {
   title: 'Spotting Board — Guided plant brain workbench',
-  description: 'AI-led plant brain workbench: one best question at a time, real DB-backed progress, supervisor review and export at hand.',
+  description: 'Compiled view of the plant brain: rules, inventory, training, review queue, and exports.',
 }
 
 async function getSessionEmail(): Promise<string | null> {
@@ -82,6 +81,38 @@ export default async function SpottingBoardDashboardPage() {
     listPlantBrainItems(plant.plantId, { limit: COUNT_CAP }),
     listReviewQueue(plant.plantId, { limit: COUNT_CAP }),
   ])
+
+  // TASK-189 gate: incomplete plant brains land in /setup. The dashboard is
+  // a compiled view; it shouldn't be the first-run state.
+  if (plant.role !== 'spotter') {
+    const records = items.map(row =>
+      fromPlantBrainItem({
+        id: row.id,
+        plant_id: plant.plantId,
+        module: row.module,
+        title: row.title ?? null,
+        body: row.body,
+        authority_class: row.authority_class,
+        feed_mode: 'private-only',
+        consent: {},
+        tenant_provenance: {},
+        review_status: row.review_status,
+        promotion_status: 'never-promoted',
+        source_evidence: [],
+        runtime_eligible: row.runtime_eligible,
+        conflict_flags: row.conflict_flags ?? [],
+        safety_label: row.safety_label,
+        reviewer_email: row.reviewer_email,
+        reviewed_at: null,
+        created_at: row.created_at,
+        updated_at: row.created_at,
+      }),
+    )
+    const phaseTargets = buildPhaseTargets(records)
+    if (!isBuildComplete(phaseTargets)) {
+      redirect('/spottingboard/setup')
+    }
+  }
 
   return (
     <GuidedDashboardClient

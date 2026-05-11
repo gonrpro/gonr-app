@@ -1,11 +1,9 @@
-// app/spottingboard/(workbench)/layout.tsx — TASK-169 mobile polish
+// app/spottingboard/(workbench)/layout.tsx — TASK-169 mobile polish + TASK-189 assistant-rail removal
 //
-// Changes vs prior version:
-//   - Imports WORKBENCH_NAV from ./nav (single source of truth)
-//   - Mounts <MobileNav /> client component inside the topbar; CSS hides
-//     it on desktop and hides the desktop sidebar on mobile
-//   - Brand mark + topbar gain safe-area-inset-top padding (workbench.css
-//     append handles the rule)
+// TASK-189 (2026-05-11): removed the static "Workbench assistant" right rail.
+// It was a placeholder with no backing function; Tyler flagged it as fake UI.
+// The right-rail real estate now belongs to the surface route — /setup
+// renders a live Plant Brain preview in that slot.
 
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -26,7 +24,7 @@ export default async function SpottingBoardLayout({
 }: {
   children: React.ReactNode
 }) {
-  const _h = await headers()
+  await headers()
 
   return (
     <div className="sb-app">
@@ -59,21 +57,6 @@ export default async function SpottingBoardLayout({
       </nav>
 
       <main className="sb-main">{children}</main>
-
-      <aside className="sb-assistant hidden md:block" aria-label="Workbench assistant">
-        <header className="sb-assistant-head">
-          <h2 className="sb-assistant-title">Workbench assistant</h2>
-          <span className="sb-assistant-status">
-            <span className="sb-assistant-status-dot" aria-hidden="true" /> ready
-          </span>
-        </header>
-        <div className="sb-assistant-body">
-          <p className="sb-assistant-placeholder">
-            Ask the workbench assistant about a stain, a chemical interaction, or a plant rule.
-            Provenance + risk tier + review status will be visible on every answer.
-          </p>
-        </div>
-      </aside>
     </div>
   )
 }
