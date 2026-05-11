@@ -180,7 +180,7 @@ export default function SpottingBoardPage() {
               {lang === 'en' ? 'EN  /  ES' : 'EN  /  ES'}
             </button>
             <Link
-              href="/auth/login?next=/spottingboard/intake&brand=spottingboard"
+              href="/auth/login?next=/spottingboard/setup&brand=spottingboard"
               className="rounded-full bg-[#00d4aa] px-4 py-1.5 text-[13px] font-medium tracking-tight text-white transition hover:bg-[#00a085]"
             >
               {t.navWizardCta}
@@ -210,7 +210,7 @@ export default function SpottingBoardPage() {
           </p>
           <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
             <Link
-              href="/auth/login?next=/spottingboard/intake&brand=spottingboard"
+              href="/auth/login?next=/spottingboard/setup&brand=spottingboard"
               className="group inline-flex items-center gap-2 rounded-full bg-[#00d4aa] px-7 py-3.5 text-[15px] font-medium tracking-tight text-white transition hover:bg-[#00a085]"
             >
               {t.heroPrimaryCta}
@@ -304,7 +304,7 @@ export default function SpottingBoardPage() {
           </p>
           <div className="mt-12">
             <Link
-              href="/auth/login?next=/spottingboard/intake&brand=spottingboard"
+              href="/auth/login?next=/spottingboard/setup&brand=spottingboard"
               className="group inline-flex items-center gap-2 rounded-full bg-[#00d4aa] px-8 py-4 text-[15px] font-medium tracking-tight text-white transition hover:bg-[#00a085]"
             >
               {t.closingCta}

@@ -59,7 +59,7 @@ export default async function SpottingBoardDashboardPage() {
 
   const email = await getSessionEmail()
   if (!email) {
-    redirect('/auth/login?next=/spottingboard/dashboard')
+    redirect('/auth/login?brand=spottingboard&next=/spottingboard/setup')
   }
 
   const plant = await getUserPlant(email)
