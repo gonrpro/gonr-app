@@ -1,14 +1,19 @@
-// TASK-158 — Capture rule — chemistry_rule capture form (minimum-loop replacement of TASK-147 stub).
-// Server component that resolves session + active plant, then hands off to the
-// client form component. No classifier in this loop; raw chemistry_rule capture
-// only per Atlas TASK-158 lock.
+// TASK-188 — Guided capture lands at /spottingboard/intake.
+//
+// Server resolves session + plant + role, then hands a GuidedTriageClient
+// that consumes the shared lib/spottingboard/scenario-engine/ as its first
+// real-world surface. Marketing's "Guided capture" promise now exists in the
+// authenticated app.
+//
+// Spotter handling matches the existing pattern: read-only role gets a
+// no-capture notice with a route to Library.
 
 import { redirect } from 'next/navigation'
-import { headers } from 'next/headers'
+import { cookies, headers } from 'next/headers'
 import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
 import { getUserPlant } from '@/lib/auth/getUserPlant'
-import { IntakeChemistryRuleForm } from './IntakeChemistryRuleForm'
+import { GuidedTriageClient } from './GuidedTriageClient'
+import './triage.css'
 
 async function getSessionEmail(): Promise<string | null> {
   try {
@@ -30,9 +35,14 @@ async function getSessionEmail(): Promise<string | null> {
   }
 }
 
+export const metadata = {
+  title: 'Spotting Board — Guided capture',
+  description: 'Chip-driven stain triage backed by the GONR protocol library and plant-local capture for supervisor review.',
+}
+
 export default async function CaptureRulePage() {
   // Read headers to opt out of static rendering — this page depends on session.
-  const _h = await headers()
+  await headers()
 
   const email = await getSessionEmail()
   if (!email) {
@@ -41,20 +51,19 @@ export default async function CaptureRulePage() {
 
   const plant = await getUserPlant(email)
 
-  // No plant yet — send the user to the existing plant create flow. The
-  // /api/plant POST endpoint creates a plant + auto-adds the user as owner.
-  // Routing here mirrors the GONR runtime no-plant path.
   if (!plant) {
     return (
       <div className="sb-surface sb-surface-intake">
         <header className="sb-surface-head">
-          <h1>Capture a rule</h1>
-          <p className="sb-surface-tagline">Capture a chemistry rule for your plant.</p>
+          <h1>Guided capture</h1>
+          <p className="sb-surface-tagline">
+            Chip-driven triage for the stains in front of you.
+          </p>
         </header>
         <div className="sb-stub-card">
           <h2>You don&apos;t have a plant yet</h2>
           <p>
-            Capture is plant-scoped. Create your plant first, then come back here to capture chemistry rules.
+            Capture is plant-scoped. Create your plant first, then come back here to walk through scenarios.
           </p>
           <a className="sb-link-button" href="/plant-brain-builder">
             Set up your plant
@@ -64,40 +73,13 @@ export default async function CaptureRulePage() {
     )
   }
 
-  // Spotter role can read but cannot capture chemistry rules per TASK-152 §3.
-  // We could either show the form disabled or redirect to library; show a message.
-  if (plant.role === 'spotter') {
-    return (
-      <div className="sb-surface sb-surface-intake">
-        <header className="sb-surface-head">
-          <h1>Capture a rule</h1>
-          <p className="sb-surface-tagline">Capture a chemistry rule for your plant.</p>
-        </header>
-        <div className="sb-stub-card">
-          <h2>Spotter role: read-only on capture</h2>
-          <p>
-            Chemistry rules need owner or operator role to capture. Ask your supervisor to bump your role
-            or hand off the capture session.
-          </p>
-          <a className="sb-link-button" href="/spottingboard/library">
-            Go to Brain Library
-          </a>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div className="sb-surface sb-surface-intake">
-      <header className="sb-surface-head">
-        <h1>Capture a rule</h1>
-        <p className="sb-surface-tagline">
-          Capture a chemistry rule for <strong>{plant.name}</strong>. Every saved rule starts unreviewed and
-          requires supervisor review before it can become runtime guidance.
-        </p>
-      </header>
-
-      <IntakeChemistryRuleForm plantId={plant.plantId} />
+      <GuidedTriageClient
+        plantId={plant.plantId}
+        plantName={plant.name}
+        role={plant.role}
+      />
     </div>
   )
 }
