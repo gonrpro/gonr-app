@@ -5,167 +5,272 @@
   "stainFamily": "oil",
   "surface": "linen",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 4,
-  "timeEstimate": "15–30 minutes; structured/trimmed = pro",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "15–30 minutes; structured / lined / dry-clean-only linen escalates to a pro",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "butter",
     "surfaceCanonical": "linen",
     "tier": "universal",
-    "riskLevel": "low",
+    "riskLevel": "medium",
     "tags": [
       "oil",
-      "butterfat",
-      "trace-protein",
+      "fat",
       "linen",
+      "care-label",
       "structured-fork",
-      "no-hot-water"
+      "conservative-home"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Butter is ~80% butterfat + small milk protein fraction + salt + water. The protein fraction is small but heat-sets — cold water flush before warm Dawn. Linen fiber tolerates the standard butter protocol on simple flat pieces; structured / lined / dry-clean-only linen = pro. Linen-specific cautions apply: cool water (shrinks under hot), air-dry flat (heat shrinks + sets butterfat).",
-  "whyThisWorks": "Cold water flush handles the milk protein fraction first. Dawn emulsifies butterfat (Dawn is engineered for this). Cool wash + air-dry preserves linen shape and prevents residual fat from polymerizing. Standard butter protocol.",
-  "defaultAssumption": "Simple linen napkin / shirt = home protocol. Structured / lined / vintage = pro.",
+  "stainChemistry": "Butter is an oil/fat-family stain. Oil-based stains require a surfactant (liquid laundry detergent) to emulsify and lift the fat from the fiber. Linen is a cellulose (flax) fiber; it can tolerate controlled, conservative laundering when the care label allows, but colored linen, structured pieces, and lined / embellished garments need extra caution and often a professional dry cleaner.",
+  "whyThisWorks": "A small amount of liquid laundry detergent provides surfactant action to break up butterfat. Cool or lukewarm water (per care label) avoids unnecessary heat exposure. Air-drying and inspecting before any heat keeps residual oil from being baked into the fiber.",
+  "defaultAssumption": "Simple flat linen (napkin, plain shirt) on a washable care label is a Home candidate. Structured, lined, embellished, vintage, dry-clean-only, or unstable-dye linen is a professional case from the start.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "dry",
-      "agent": "Care Label + Scrape Solid",
-      "technique": "Inspection + dull-blade lift",
-      "equipment": "Good light, dull blade",
+      "agent": "Inspect and confirm care label",
+      "action": "intake",
+      "instruction": "Read the care label and inspect the garment construction. Structured, lined, embellished, dry-clean-only, vintage, or unstable-dye linen routes to the professional path and stops here.",
       "dwellTime": "1 minute",
-      "instruction": "Dry-clean-only / structured = pro. Simple flat linen = proceed. Scrape any solid butter with a dull blade."
+      "safetyNote": "Reject too-soiled or non-colorfast linen per care-label guidance. Do not proceed if the care label disallows wet treatment.",
+      "proOnly": true
     },
     {
       "step": 2,
-      "side": "wet",
-      "agent": "Cold Water Back-Flush",
-      "technique": "Flush from reverse",
-      "equipment": "Cold water, sink",
-      "dwellTime": "1 minute",
-      "instruction": "Flip inside out. Cold water through the BACK. Cold flush handles the small milk protein fraction before warm Dawn."
+      "side": "dry",
+      "agent": "Lift excess butter",
+      "action": "mechanical",
+      "instruction": "Use a dull edge to gently lift any solid butter off the linen. Do not rub or press into the weave.",
+      "dwellTime": "30 seconds",
+      "safetyNote": "Minimal mechanical action only. Aggressive rubbing can spread oil or damage the linen weave.",
+      "proOnly": true
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Dawn + Soft Brush",
-      "technique": "Emulsify butterfat",
-      "equipment": "Dawn + warm (not hot) water, soft toothbrush",
-      "dwellTime": "5 minutes",
-      "instruction": "Dawn in warm water. Soft toothbrush 5 min. Cool rinse."
+      "agent": "Colorfastness test on a hidden seam",
+      "action": "test",
+      "instruction": "Dab a small amount of liquid laundry detergent and cool water on an inside seam using a clean white cloth. Press for one minute and check the cloth for color transfer.",
+      "dwellTime": "1 minute, until checked",
+      "safetyNote": "Stop if dye transfers. Colored or unstable-dye linen routes to the professional path.",
+      "proOnly": true
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Cool Wash + AIR-DRY FLAT",
-      "technique": "Launder + lay flat",
-      "equipment": "Washing machine",
-      "dwellTime": "Full cycle + air-dry",
-      "instruction": "Cool wash — NEVER hot (linen shrinks). AIR-DRY FLAT. Inspect before any heat."
+      "agent": "Surfactant pretreat",
+      "action": "detergent",
+      "instruction": "Apply a small amount of liquid laundry detergent directly to the stain. Work it in lightly with a fingertip or soft cloth.",
+      "dwellTime": "Brief dwell per product label, then rinse cool",
+      "safetyNote": "Follow the detergent product label. Do not mix cleaning agents.",
+      "proOnly": true
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Launder per care label, cool or lukewarm only",
+      "action": "wash",
+      "instruction": "Wash on the cool or lukewarm setting permitted by the care label. Rinse thoroughly.",
+      "dwellTime": "Full machine cycle",
+      "safetyNote": "Do not exceed the temperature limit on the care label; controlled temperatures protect the linen.",
+      "proOnly": true
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Air-dry flat and inspect",
+      "action": "dry",
+      "instruction": "Lay flat to air-dry and inspect for residual oil before any heat. If oil remains, repeat the pretreat and laundering step; do not tumble-dry until the stain is fully gone.",
+      "dwellTime": "Until dry and inspected",
+      "safetyNote": "Heat applied to residual oil sets the stain into the fiber.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Care label + structure check.",
-      "2. Scrape solid butter.",
-      "3. Cold water back-flush — milk protein step.",
-      "4. Dawn + soft toothbrush warm water — fat step.",
-      "5. Cool wash + air-dry flat."
+      "1. Inspect fiber, dye stability, construction, and care label before any wet treatment.",
+      "2. Lift excess oil with a dull edge; minimal mechanical action.",
+      "3. Apply surfactant pretreat appropriate to the oil family; rinse and assess.",
+      "4. Launder cool or lukewarm per the care label; do not exceed.",
+      "5. Air-dry flat and inspect before any heat. Escalation to controlled oxidizer chemistry only when the care label permits, colorfastness is confirmed, and PPE / ventilation per product SDS are in place."
     ],
     "products": [
-      "Dawn / NSD",
-      "Cool / cold water"
+      "Liquid laundry detergent (consumer-grade)",
+      "Cool / lukewarm water per care label"
     ],
-    "temperature": "cold flush + warm Dawn (not hot) + cool wash",
+    "temperature": "Cool to lukewarm per care label; no heat on residual oil",
     "warnings": [
-      "NEVER hot water — linen shrinks",
-      "NEVER tumble-dry until fully clear — heat shrinks + polymerizes residual fat",
-      "Structured / lined = pro",
-      "Cold flush before warm Dawn — milk protein step before fat step"
+      "Use cool or lukewarm water unless the care label specifically permits warmer washing; avoid hot water in the Home path for uncertain, colored, structured, or high-value linen",
+      "Never tumble-dry linen with residual oil — heat sets the stain",
+      "Never apply chlorine bleach on colored linen",
+      "Structured / lined / embellished / dry-clean-only / vintage linen is a professional case from the start",
+      "Pro chemistry beyond consumer detergent requires SDS-driven PPE and ventilation"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Structured Linen Goes to Pro; Simple Linen Stays Home",
-      "instruction": "Linen has two cases. SIMPLE LINEN (napkin, basic shirt) = standard butter protocol. STRUCTURED LINEN (suits, lined dresses, dry-clean-only) = pro. Wet treatment risks shape change."
+      "agent": "Care Label and Construction Check First",
+      "instruction": "Read the care label. If it says dry-clean-only, or the linen is structured, lined, embellished, or vintage, stop and take it to a professional dry cleaner. Simple flat linen (napkin, plain shirt) on a washable care label can continue."
     },
     {
       "step": 2,
-      "agent": "Scrape Solid Butter",
-      "instruction": "Scrape any solid butter off with a dull butter knife. Just lift the bulk."
+      "agent": "Lift Excess Butter Gently",
+      "instruction": "Use a dull butter knife or spoon edge to gently lift any solid butter off the linen. Do not rub — that pushes oil into the weave."
     },
     {
       "step": 3,
-      "agent": "Cold Water Flush — Milk Protein First",
-      "instruction": "Flip inside out. Cold tap water through the BACK 1 minute. Butter has a small milk-protein fraction; cold flush handles it before warm water touches the fat."
+      "agent": "Hidden-Area Test on Colored Linen",
+      "instruction": "On colored linen, dab a little liquid laundry detergent and cool water on an inside seam with a clean white cloth. Press one minute. If color transfers to the cloth, stop and take to a professional. White linen can skip this step."
     },
     {
       "step": 4,
-      "agent": "Dawn + Warm (Not Hot) Water + Soft Toothbrush",
-      "instruction": "Mix Dawn in WARM water — not hot, just warm enough to help emulsify butterfat. Work into spot with soft toothbrush 5 min. Cool rinse."
+      "agent": "Apply Liquid Laundry Detergent",
+      "instruction": "Put a small amount of mild liquid laundry detergent directly on the stain. Work it in gently with your fingertip or a soft cloth — do not scrub."
     },
     {
       "step": 5,
-      "agent": "Cool Wash + AIR-DRY FLAT",
-      "instruction": "Cool wash per care label — NEVER hot (linen shrinks). AIR-DRY FLAT — never tumble-dry until fully clear (heat shrinks linen + polymerizes residual butterfat)."
+      "agent": "Cool or Lukewarm Wash Per Care Label",
+      "instruction": "Wash the linen on the cool or lukewarm setting your care label allows. Rinse thoroughly. Use cool or lukewarm water unless the care label specifically permits warmer washing. Avoid hot water for uncertain, colored, structured, or high-value linen."
+    },
+    {
+      "step": 6,
+      "agent": "Air-Dry Flat and Inspect",
+      "instruction": "Lay the linen flat to air-dry and look closely for any remaining oily mark before any heat. If a stain remains, repeat steps 4 and 5 once. Do not tumble-dry until the stain is fully gone."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate If It Doesn't Clear",
+      "instruction": "If the stain persists after two careful passes, or if it has already been through a hot wash or dryer, take it to a professional dry cleaner. Tell them: \"Butter on [simple / colored] linen, age [fresh / overnight / older], home-treated with liquid laundry detergent and a cool care-label wash, air-dried flat.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Structured / lined / trimmed = pro.",
-      "2. Scrape solid butter.",
-      "3. Cold water back-flush — milk protein step.",
-      "4. Dawn + WARM (not hot) water + soft toothbrush, 5 min.",
-      "5. Cool wash + AIR-DRY FLAT."
+      "1. Read care label and construction; escalate dry-clean-only / structured / lined / embellished / vintage to a pro.",
+      "2. Lift excess butter gently with a dull edge — do not rub.",
+      "3. On colored linen, hidden-area colorfastness test before detergent.",
+      "4. Apply a small amount of liquid laundry detergent.",
+      "5. Cool or lukewarm wash per care label — no hot water on linen.",
+      "6. Air-dry flat and inspect for residual oil before any heat.",
+      "7. Repeat once if needed; escalate if it doesn't clear or has been heat-set."
     ],
     "products": [
-      "Dull blade",
-      "Dawn dish soap",
-      "Cool / warm water"
+      "Mild liquid laundry detergent",
+      "Cool / lukewarm water",
+      "Clean white cotton cloth",
+      "Dull blade or spoon edge"
     ],
-    "whenToStop": "Stop if linen is structured / lined / trimmed / dry-clean-only.",
+    "whenToStop": "Stop if the linen is dry-clean-only, structured, lined, embellished, vintage, or unstable-dye; if the hidden-area test shows color transfer; if the garment has been through a hot wash or dryer; or if two conservative passes do not clear it. Escalate to a professional dry cleaner in any of those cases.",
     "warnings": [
-      "NEVER hot water — linen shrinks",
-      "NEVER tumble-dry until fully clear — heat shrinks + polymerizes butterfat",
-      "Structured = pro",
-      "Cold flush BEFORE warm Dawn — handles milk protein first"
+      "Use cool or lukewarm water unless the care label specifically permits warmer washing; avoid hot water in the Home path for uncertain, colored, structured, or high-value linen",
+      "Never tumble-dry residual oil — heat sets the stain",
+      "Never use chlorine bleach on colored linen",
+      "Do not rub or scrub — pushes oil into the weave",
+      "Do not mix cleaning agents",
+      "Pro-strength oxidizers, solvents, and bleaches are not Home steps"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never hot water on linen",
-      "Never tumble-dry residual butter",
-      "Never wet-treat structured linen at home"
+      "Use cool or lukewarm water unless the care label specifically permits warmer washing; avoid hot water in the Home path for uncertain, colored, structured, or high-value linen",
+      "Never tumble-dry a linen garment with residual butter — heat sets the oil",
+      "Never use chlorine bleach on colored linen",
+      "Do not wet-treat structured, lined, embellished, dry-clean-only, or high-value linen at home unless the care label permits and construction is stable; route to a professional when uncertain",
+      "Never mix cleaning agents",
+      "Never apply professional-strength oxidizers, solvents, or acids in the Home path"
     ],
     "fiberSensitivities": [
-      "Linen shrinks aggressively under hot water",
-      "Cool wash + air-dry flat preserves shape",
-      "Heat polymerizes residual butterfat into linen"
-    ]
+      "Linen is cellulose (flax); colored linen requires controlled temperature and a colorfastness check",
+      "Structured, lined, embellished, or vintage linen may warp, distort, shrink, bleed, or lose finish under wet treatment; route to a professional",
+      "Use cool or lukewarm water unless the care label specifically permits warmer washing; high heat is not in the Home path for uncertain, colored, structured, or high-value linen"
+    ],
+    "chemicalBoundaries": [
+      "Home path: mild liquid laundry detergent and water only",
+      "No peroxide, oxygen bleach, or chlorine bleach as a default Home step on linen",
+      "Pro path may use controlled oxidizer chemistry only when care label permits, colorfastness is confirmed, and SDS-driven PPE / ventilation are in place"
+    ],
+    "homeAllowed": [
+      "Mild liquid laundry detergent",
+      "Cool or lukewarm water per care label",
+      "Clean white cloth and dull edge for mechanical lift",
+      "Air-drying flat and visual inspection before any heat"
+    ],
+    "proOnly": [
+      "Concentrated surfactants, solvents, and oxidizers used in a controlled professional environment with PPE and ventilation per product SDS"
+    ],
+    "testFirst": [
+      "Hidden-area colorfastness test (white cloth on an inside seam) before any detergent dwell on colored linen"
+    ],
+    "flushNeutralizeDry": [
+      "Rinse thoroughly after each detergent application",
+      "Air-dry flat and inspect before any heat"
+    ],
+    "escalationTriggers": [
+      "Care label is dry-clean-only or restricts wet treatment",
+      "Linen is structured / lined / embellished / vintage / high-value",
+      "Hidden-area test shows dye transfer",
+      "Stain has already been through a hot wash or dryer",
+      "Two conservative passes do not clear the stain"
+    ],
+    "sourceConfidence": "medium",
+    "ppeVentilation": [
+      "Follow the product label for any concentrate",
+      "Gloves and eye protection for any pro-strength chemistry",
+      "Ventilate the work area; keep cleaning agents away from children and pets"
+    ],
+    "homeVsProBoundary": "Home users use only mild liquid laundry detergent and care-label cool / lukewarm laundering. Pro chemistry (concentrated oxidizers, solvents) is hidden from the Home path and requires SDS-driven PPE / ventilation in a controlled environment."
   },
   "materialWarnings": [
-    "Cool water only — linen shrinks",
-    "Cold flush handles small milk protein fraction first",
-    "Air-dry flat — heat polymerizes butterfat"
+    "Avoid hot water in the Home path for uncertain, colored, structured, or high-value linen unless the care label specifically permits warmer washing",
+    "Never tumble-dry residual oil — heat sets the stain",
+    "Structured / lined linen is a pro case from the start",
+    "Hidden-area colorfastness test on colored linen before detergent"
   ],
   "escalation": {
-    "when": "Structured / lined / trimmed linen, hot water / dryer used previously, vintage piece, or polymerized residual butterfat after one home cycle.",
-    "whatToTell": "\"Butter on [simple / structured / vintage] linen, age [hours / days], home-treated with cold flush + Dawn warm water + cool wash + air-dry flat. No hot water / no dryer until clear. [Residual oily feel / structured concerns].\"",
+    "when": "Dry-clean-only, structured, lined, embellished, vintage, or unstable-dye linen; colored linen that fails a hidden-area test; stain that has been through a hot wash or dryer; or no improvement after two conservative passes.",
+    "whatToTell": "\"Butter on [simple / structured / colored / vintage] linen, age [fresh / overnight / older], home-treated with liquid laundry detergent and a cool care-label wash, air-dried flat. [Hot wash or dryer applied? — yes / no].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Plain butter or compound (garlic / herb)?",
-      "Simple flat linen or structured?",
-      "How long ago — fresh / dried in / weeks?",
-      "Has it been through a hot wash or dryer?"
+      "Is the linen plain and washable, or structured / lined / embellished / dry-clean-only?",
+      "White, natural, or dyed linen?",
+      "How old is the stain — fresh, overnight, or older?",
+      "Has the garment been through a hot wash or dryer since the spill?"
     ],
-    "modifierNotes": "Compound butter (garlic, herb) adds minor pigment that may need 3% peroxide step. Hot-dried butter polymerizes into a near-permanent stain on linen."
+    "modifierNotes": "Simple flat linen with a washable care label is the only Home candidate. Anything structured, lined, embellished, vintage, or with unstable dye is a professional case from the start. Compound butters (garlic, herb) add pigment that may need additional pro treatment beyond the conservative Home steps."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "17-32, 56-61, 83-99",
+      "evidence": "Oil-family classification; conservative unknown-stain fallback (cool water, liquid detergent, rinse, air-dry); blot rather than rub; do not iron or dry stained fabric until removal is confirmed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "164-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Surfactant chemistry for oily soils; care-label gate; product-label and PPE / ventilation requirements for concentrates.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "169-179, 326-343, 520-525, 540-548",
+      "evidence": "Linen fiber tolerances and limits; controlled temperature for colored linen; chlorine bleach only for white / colorfast linen; lipase / fat use cases respond to surfactant action; absolute safety gates including no cleaner-mixing.",
+      "confidence": "high"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

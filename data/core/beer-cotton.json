@@ -5,11 +5,11 @@
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 2,
-  "timeEstimate": "10–20 minutes (fresh); aged beer adds a light-brown ring",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "10–20 minutes; longer if dried in or hot-set",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "beer",
     "surfaceCanonical": "cotton",
@@ -17,170 +17,256 @@
     "riskLevel": "low",
     "tags": [
       "tannin",
+      "beverage",
       "cotton",
-      "sugar-residue",
-      "low-pigment"
+      "care-label",
+      "conservative-home"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Beer is a low-tannin, low-sugar, low-protein stain — malt tannins (polyphenols) + hop resins + barley proteins + dissolved sugars. The stain is light and often invisible on dark cotton while fresh; it's the DRIED version that shows up as a faint tan / yellow-brown ring after the sugar caramelizes and the tannin oxidizes. Cotton is pure cellulose — tolerates NSD, acid-side spotters, 3% H₂O₂, and hot post-chemistry wash.",
-  "whyThisWorks": "Beer is one of the easier tannin stains because the pigment load is low. NSD dissolves the sugar and surface residue in one pass. For the residual ring — usually only visible on white or light fabric — an acid-side rinse or peroxide clears the oxidized tannin. Hot wash finishes.",
-  "defaultAssumption": "Fresh beer on cotton rinses out almost fully with water. Aged or dried beer is the harder version — faint ring that shows up only after drying. Expectation: fresh = trivial; aged = one chemistry pass.",
+  "stainChemistry": "Beer is a tannin / beverage-family stain. Tannin-family stains respond to conservative water-and-detergent treatment when handled before they dry. Cotton is cellulose: white cotton is generally tolerant of conservative laundering, while colored cotton requires lower heat and a colorfastness check before any escalation.",
+  "whyThisWorks": "Cool water blotting and rinsing from the back of the fabric carries away the bulk of fresh beer. A small amount of liquid laundry detergent lifts the remaining residue. Care-label laundering and air-drying with inspection prevent any residual color from being heat-set into the fiber.",
+  "defaultAssumption": "Most beer on cotton is a fresh, light spill on a washable garment. Fresh beer typically rinses out with conservative cool-water and detergent treatment plus a care-label wash. Beer that has dried in or already been through a hot wash or dryer is harder and may need a professional dry cleaner.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cold Flush",
-      "technique": "Flush from the back",
-      "equipment": "Cold water, white cotton terry towel",
-      "dwellTime": "30 seconds",
-      "instruction": "Cold flush from the BACK of the fabric. Blot from underneath. Most fresh beer lifts here because the pigment is light and water-soluble."
+      "side": "dry",
+      "agent": "Inspect and confirm care label",
+      "action": "intake",
+      "instruction": "Confirm fiber, color, and care-label limits. Dry-clean-only or structured pieces escalate to the professional path.",
+      "dwellTime": "1 minute",
+      "safetyNote": "Reject too-soiled or non-colorfast garments per care-label guidance. Do not proceed if the care label disallows wet treatment.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "NSD",
-      "technique": "Sponge, dwell, blot",
-      "equipment": "NSD in cool water",
-      "dwellTime": "2–3 minutes",
-      "instruction": "Apply NSD, sponge gently. NSD handles the sugar residue + residual barley protein + any remaining pigment."
+      "agent": "Cool water rinse from the back",
+      "action": "rinse",
+      "instruction": "Hold the back of the stained area under cool running water and let the rinse carry the beer out through the front. Blot underneath with a clean white cotton cloth — do not rub.",
+      "dwellTime": "30–60 seconds",
+      "safetyNote": "Cool water only. Hot water can set the tannin color into the fiber. Avoid mechanical scrubbing.",
+      "proOnly": true
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Tannin Spotter (Aged Stains)",
-      "technique": "Dropper on residual ring",
-      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
-      "dwellTime": "2–3 minutes",
-      "instruction": "For aged beer where a faint ring remains, acid-side tannin spotter by dropper. Dwell 2–3 min, blot. Fresh beer rarely needs this step."
+      "agent": "Colorfastness test",
+      "action": "test",
+      "instruction": "On colored cotton, dab a small amount of liquid laundry detergent and cool water on an inside seam using a clean white cloth. Press for one minute and check the cloth for color transfer.",
+      "dwellTime": "1 minute, until checked",
+      "safetyNote": "Stop if dye transfers. Colored or unstable-dye garments escalate to the professional path.",
+      "proOnly": true
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Hydrogen Peroxide 3% (Aged on Whites)",
-      "technique": "Drop, dwell, blot",
-      "equipment": "3% H₂O₂",
-      "dwellTime": "3 minutes",
-      "instruction": "Optional: 3% H₂O₂ on aged oxidized rings on white cotton. One oxidizer at a time. Skip on dark cotton."
+      "agent": "Surfactant pretreat",
+      "action": "detergent",
+      "instruction": "Apply a small amount of liquid laundry detergent directly to the stain. Work it in lightly with a fingertip or soft cloth.",
+      "dwellTime": "Brief dwell per product label, then rinse cool",
+      "safetyNote": "Follow the detergent product label. Do not mix cleaning agents.",
+      "proOnly": true
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Hot Wash",
-      "technique": "Launder per care label",
-      "equipment": "Washing machine",
-      "dwellTime": "Full wash cycle",
-      "instruction": "Rinse. Launder hot per care label."
+      "agent": "Launder per care label",
+      "action": "wash",
+      "instruction": "Launder using the temperature setting permitted by the care label; favor cool or lukewarm when uncertain. Rinse thoroughly.",
+      "dwellTime": "Full machine cycle",
+      "safetyNote": "Do not exceed the temperature limit on the care label.",
+      "proOnly": true
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Air-dry and inspect",
+      "action": "dry",
+      "instruction": "Air-dry the garment and inspect for any residual color before any dryer heat. If a faint ring remains, repeat the pretreat and laundering step; do not machine-dry until the stain is fully gone.",
+      "dwellTime": "Until dry and inspected",
+      "safetyNote": "Heat applied to residual tannin can set the color into the fiber.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Cold flush from the back — fresh beer mostly lifts here.",
-      "2. NSD in cool water. Sponge, 2–3 min.",
-      "3. Aged ring only: acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A). 2–3 min.",
-      "4. Aged white: 3% H₂O₂ on residual oxidized ring.",
-      "5. Hot wash per care label."
+      "1. Identify fiber, dye stability, and care-label limits before any wet treatment.",
+      "2. Rinse fresh beer with cool water from the back of the fabric.",
+      "3. Apply surfactant pretreat appropriate to the tannin / beverage family; rinse and assess.",
+      "4. Launder per care-label temperature limit; do not exceed.",
+      "5. Air-dry and inspect before any heat. Escalation to controlled oxidizer chemistry only when the care label permits, colorfastness is confirmed, and PPE / ventilation per product SDS are in place."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — aged only",
-      "Hydrogen Peroxide 3% — aged whites only"
+      "Liquid laundry detergent (consumer-grade)",
+      "Cool / lukewarm water per care label"
     ],
-    "temperature": "cold through spotting; hot wash post-chemistry",
+    "temperature": "Cool through spotting; care-label cool / lukewarm wash",
     "warnings": [
-      "Beer's low pigment means most fresh spills are a 2-step job — don't over-treat",
-      "Aged beer stains oxidize to a light brown; inspect dried fabric to confirm residual color",
-      "One oxidizer at a time"
+      "Do not exceed care-label temperature limits",
+      "Hot water on residual tannin can set the color",
+      "Confirm colorfastness via hidden-area test before any escalation",
+      "Do not mix cleaning agents",
+      "Pro chemistry beyond consumer detergent requires SDS-driven PPE and ventilation"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Cold Water Flush Is Often Enough for Fresh",
-      "instruction": "Beer is a light stain compared to wine or coffee. Fresh beer usually rinses right out of cotton with cold water alone — hold the BACK of the stained area under cold running water for 30 seconds and you'll often be done. The tough variant is BEER THAT DRIED overnight, which oxidizes into a faint tan ring."
+      "agent": "Confirm Care Label First",
+      "instruction": "Check the care label. If it says dry-clean-only, or the garment is structured / lined / embellished / vintage, stop and take it to a professional dry cleaner. For washable cotton, continue."
     },
     {
       "step": 2,
-      "agent": "Dawn + Cool Water",
-      "instruction": "For anything that didn't rinse out: a drop of Dawn dish soap worked into the spot with a fingertip for a minute. Rinse cool. This handles the sugar and barley residue the water left behind."
+      "agent": "Cool Water Rinse from the Back",
+      "instruction": "Flip the fabric inside out and hold the back of the stained area under cool running water for 30–60 seconds. Most fresh beer rinses out at this step. Blot underneath with a clean white cloth — do not rub."
     },
     {
       "step": 3,
-      "agent": "White Vinegar Dab for Aged Ring",
-      "instruction": "If a faint tan ring remains from beer that sat overnight, mix 1 teaspoon white vinegar with 3 tablespoons cool water. Dab on the ring, let sit 2–3 minutes, blot. The mild acidity breaks the oxidized tannin."
+      "agent": "Hidden-Area Test on Colored Cotton",
+      "instruction": "On colored cotton, dab a little liquid laundry detergent and cool water on an inside seam with a clean white cloth. Press one minute. If color transfers to the cloth, stop and take to a professional. White cotton can skip this step."
     },
     {
       "step": 4,
-      "agent": "3% Hydrogen Peroxide for Stubborn Rings (Whites)",
-      "instruction": "For a stubborn aged ring on WHITE cotton: dab 3% drugstore hydrogen peroxide, let it bubble 3 minutes, blot. Skip on dark or dyed cotton.",
-      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fume risk."
+      "agent": "Apply Liquid Laundry Detergent",
+      "instruction": "Put a small amount of mild liquid laundry detergent directly on what remains of the stain. Work it in gently with your fingertip or a soft cloth — do not scrub."
     },
     {
       "step": 5,
-      "agent": "Hot Wash, Inspect Before the Dryer",
-      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. Fresh beer that's been flushed is usually fully clear before wash; aged rings may need one more soap + vinegar pass."
+      "agent": "Launder Per Care Label",
+      "instruction": "Wash the garment using the temperature your care label allows. If you are unsure, use cool or lukewarm water. Rinse thoroughly."
     },
     {
       "step": 6,
-      "agent": "Escalate Only for Unusual Cases",
-      "instruction": "Beer rarely needs a pro. If the stain has been ironed or gone through a hot dryer AND you can still see it after home treatment, take to a dry cleaner. Tell them: \"Beer on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% peroxide on whites.\""
+      "agent": "Air-Dry and Inspect Before the Dryer",
+      "instruction": "Air-dry the garment and look closely for any remaining mark before putting it in the dryer. If a faint ring remains, repeat steps 4 and 5 once. Do not machine-dry until the stain is fully gone — heat can set residual tannin into cotton."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate If It Doesn't Clear",
+      "instruction": "If a faint ring is still there after two careful passes, or if the stain has already been through a hot wash or dryer, take the garment to a professional dry cleaner. Tell them: \"Beer on cotton, age [fresh / overnight / older], home-treated with cool rinse, liquid laundry detergent, and a care-label wash.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Cold water flush from the BACK — often enough by itself for fresh beer.",
-      "2. Dawn + cool water for residual sugar / protein.",
-      "3. Diluted white vinegar dab for aged tan ring.",
-      "4. 3% hydrogen peroxide on stubborn oxidized ring (whites only).",
-      "5. Hot wash per care label. Inspect BEFORE the dryer.",
-      "6. Escalate only if heat-set + home round fails."
+      "1. Read care label; escalate dry-clean-only / structured / vintage to a pro.",
+      "2. Cool water rinse from the BACK of the fabric.",
+      "3. On colored cotton, hidden-area colorfastness test before detergent.",
+      "4. Apply a small amount of liquid laundry detergent.",
+      "5. Launder per care label (favor cool / lukewarm if uncertain).",
+      "6. Air-dry and inspect for any residual ring before any dryer heat.",
+      "7. Repeat once if needed; escalate if it doesn't clear or was heat-set."
     ],
     "products": [
-      "Cold water",
-      "Dawn dish soap",
-      "White vinegar",
-      "3% hydrogen peroxide (whites only)"
+      "Mild liquid laundry detergent",
+      "Cool / lukewarm water",
+      "Clean white cotton cloth"
     ],
-    "whenToStop": "Stop if beer has been iron-set or hot-dried AND home round didn't clear the residue. Take to a dry cleaner. But most beer on cotton clears without ever needing a pro.",
+    "whenToStop": "Stop if the care label is dry-clean-only, the garment is structured / lined / embellished, the hidden-area test shows color transfer, the stain has already been through a hot wash or dryer, or two conservative passes do not clear it. In any of those cases, escalate to a professional dry cleaner.",
     "warnings": [
-      "Cold water first — fresh beer rinses out easily",
-      "Hot water on aged stains sets the oxidized tannin",
-      "Never mix peroxide with chlorine bleach or ammonia",
-      "Skip peroxide on dark/dyed cotton"
+      "Do not use hot water on aged or dried beer — can set the tannin",
+      "Do not rub or scrub — spreads the stain",
+      "Do not machine-dry residual color — heat can set the stain",
+      "Do not mix cleaning agents",
+      "Pro-strength oxidizers, solvents, and bleaches are not Home steps"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never hot-water-flush aged beer — sets the tan ring",
-      "Never over-treat fresh beer — usually one step gets it out",
-      "Never layer oxidizers"
+      "Never machine-dry a garment with residual beer color — heat can set the tannin",
+      "Never rub or scrub the stain aggressively",
+      "Never mix cleaning agents",
+      "Never use chlorine bleach on colored cotton",
+      "Never apply professional-strength oxidizers, solvents, or acids in the Home path"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, hot wash",
-      "Dyed cotton: skip or inside-seam-test peroxide",
-      "Heat-durable once chemistry is cleared"
-    ]
+      "Cotton is cellulose; white cotton is generally tolerant of conservative laundering",
+      "Colored cotton requires lower heat and a colorfastness check before escalation",
+      "Aged or hot-dried beer residue is harder to remove and may need a professional dry cleaner"
+    ],
+    "chemicalBoundaries": [
+      "Home path: mild liquid laundry detergent and water only",
+      "No peroxide, oxygen bleach, or chlorine bleach as a default Home step",
+      "Pro path may use controlled oxidizer chemistry only when care label permits, colorfastness is confirmed, and SDS-driven PPE and ventilation are in place"
+    ],
+    "homeAllowed": [
+      "Mild liquid laundry detergent",
+      "Cool or lukewarm water per care label",
+      "Clean white cotton cloth for blotting",
+      "Air-drying and visual inspection before any heat"
+    ],
+    "proOnly": [
+      "Concentrated surfactants, solvents, and oxidizers used in a controlled professional environment with PPE and ventilation per product SDS"
+    ],
+    "testFirst": [
+      "Hidden-area colorfastness test (white cloth on an inside seam) before detergent dwell or any escalation on colored cotton"
+    ],
+    "flushNeutralizeDry": [
+      "Rinse thoroughly with cool water from the back of the fabric",
+      "Rinse again after each detergent application",
+      "Air-dry and inspect before any dryer heat"
+    ],
+    "escalationTriggers": [
+      "Care label is dry-clean-only or restricts wet treatment",
+      "Garment is structured / lined / embellished / vintage / high-value",
+      "Hidden-area test shows dye transfer",
+      "Stain has already been through a hot wash or dryer",
+      "Two conservative passes do not clear the stain"
+    ],
+    "sourceConfidence": "medium",
+    "ppeVentilation": [
+      "Follow the product label for any concentrate",
+      "Gloves and eye protection for any pro-strength chemistry",
+      "Ventilate the work area; keep cleaning agents away from children and pets"
+    ],
+    "homeVsProBoundary": "Home users use only cool-water rinsing and mild liquid laundry detergent with a care-label wash. Pro chemistry (concentrated oxidizers, solvents) is hidden from the Home path and requires SDS-driven PPE / ventilation in a controlled environment."
   },
   "materialWarnings": [
-    "Fresh beer is easy; aged beer leaves a tan ring",
-    "Don't over-treat — often one rinse suffices",
-    "Peroxide on whites only"
+    "Cool water only on beer — hot water can set the tannin",
+    "Inspect for any residual ring before any dryer heat",
+    "Aged or hot-dried beer is harder to remove and may need a pro"
   ],
   "escalation": {
-    "when": "Beer heat-set by iron or dryer AND home round didn't clear residual. This is rare.",
-    "whatToTell": "\"Beer on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + [3% H₂O₂ on whites].\"",
+    "when": "Dry-clean-only, structured, or vintage cotton; colored cotton that fails a hidden-area test; beer that has been through a hot wash or dryer; or no improvement after two conservative passes.",
+    "whatToTell": "\"Beer on cotton, age [fresh / overnight / older], home-treated with cool rinse, liquid laundry detergent, and a care-label wash. [Hot wash or dryer applied? — yes / no].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain — fresh or overnight+?",
-      "Is the cotton white, light, or dark/dyed?",
-      "Regular beer or stout/dark? (dark beers have more tannin)",
-      "Has it been through a hot wash or dryer?"
+      "How old is the stain — fresh, overnight, or older?",
+      "White, light, or dark / dyed cotton?",
+      "Has the garment been through a hot wash or dryer since the spill?",
+      "Is the garment dry-clean-only, structured, or embellished?"
     ],
-    "modifierNotes": "Beer is the lightest-pigment common tannin stain. Fresh = usually just water. Aged is the real stain. Dark / stout beers raise the tannin load a notch but stay in the same protocol."
+    "modifierNotes": "Fresh beer is among the lighter tannin-family stains and typically clears with a cool rinse and a care-label wash. Beer that dried overnight or was already heated may leave a faint tan ring; if conservative Home steps do not clear it, escalate to a professional dry cleaner rather than reaching for stronger Home chemistry."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "17-32, 56-61, 83-99",
+      "evidence": "Tannin-family classification including beer and berries; conservative unknown-stain fallback (cool water, liquid detergent, rinse, air-dry); blot rather than rub; do not iron or dry stained fabric until removal is confirmed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "164-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Surfactant action of detergents on water-soluble and oily soils; test new detergents on inconspicuous areas; follow product labels and PPE / ventilation for concentrates; clean per care label or reject inappropriate garments.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "181-199, 520-525, 540-548",
+      "evidence": "Cotton fiber tolerances: white cotton tolerant, colored cotton requires lower heat and no chlorine bleach or strong peroxide; colorfastness test methodology; absolute safety gates including no cleaner-mixing.",
+      "confidence": "high"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

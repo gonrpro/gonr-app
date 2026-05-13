@@ -5,186 +5,272 @@
   "stainFamily": "tannin",
   "surface": "polyester",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 4,
-  "timeEstimate": "20–40 minutes; standard tannin protocol",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "20–40 minutes; longer if dried in or hot-set",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "berry",
     "surfaceCanonical": "polyester",
     "tier": "universal",
-    "riskLevel": "low",
+    "riskLevel": "medium",
     "tags": [
       "tannin",
-      "anthocyanin",
+      "dye",
       "polyester",
-      "no-alkaline",
-      "no-hot-water"
+      "care-label",
+      "conservative-home"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Berries (blueberry, raspberry, blackberry, strawberry) carry anthocyanin pigments + tannins + sugar. Anthocyanin is pH-sensitive — alkaline cleaners DARKEN it. On polyester, the standard tannin protocol (cold + Dawn + 3% peroxide + vinegar) works directly. Polyester yellows under heat over time, so hot dryer + residual berry = permanent yellow shadow.",
-  "whyThisWorks": "Cold water + Dawn lifts fresh anthocyanin + sugar. 3% peroxide oxidizes residual tannin. Vinegar keeps anthocyanin red (light/acid side). Cool wash + air-dry preserves polyester long-term.",
-  "defaultAssumption": "Polyester garment / blend / kid clothes. Fresh berry = quick win. Hot-dried = permanent.",
+  "stainChemistry": "Berries (blueberry, raspberry, blackberry, strawberry) fall into the tannin and dye families and carry sugar residue. Polyester is chemically resistant but can still hold dye and oily soils; colored polyester can fade or yellow under aggressive chemistry. Berry on polyester is not a trivial stain — it responds to conservative cool-water and detergent treatment with care-label limits.",
+  "whyThisWorks": "Cool water rinsing from the back of the fabric carries away the bulk of fresh berry juice and sugar. A small amount of liquid laundry detergent lifts remaining residue. Care-label laundering and air-drying with inspection avoid heat that could set residual color into the fiber.",
+  "defaultAssumption": "Most berry on polyester is a fresh spill on a washable garment. Fresh berry typically responds to conservative cool-water and detergent treatment plus a care-label wash. Berry that has dried in or been through a hot wash or dryer is harder and may need a professional dry cleaner.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cold Water Back-Flush",
-      "technique": "Flush from reverse",
-      "equipment": "Cold water, sink",
-      "dwellTime": "1–2 minutes",
-      "instruction": "Flip inside out. Cold water through the BACK. Anthocyanin + sugar flush out fast."
+      "side": "dry",
+      "agent": "Inspect and confirm care label",
+      "action": "intake",
+      "instruction": "Confirm fiber, color, and care-label limits. Dry-clean-only or structured pieces escalate to the professional path.",
+      "dwellTime": "1 minute",
+      "safetyNote": "Reject too-soiled or non-colorfast garments per care-label guidance. Do not proceed if the care label disallows wet treatment.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Dawn + Soft Brush",
-      "technique": "Lift fresh berry",
-      "equipment": "Dawn + cold water, soft toothbrush",
-      "dwellTime": "5 minutes",
-      "instruction": "Dawn into spot with soft toothbrush. Cool rinse. Skip OxiClean — alkaline darkens anthocyanin."
+      "agent": "Cool water rinse from the back",
+      "action": "rinse",
+      "instruction": "Flip the fabric inside out and hold the back of the stained area under cool running water. Blot underneath with a clean white cotton cloth — do not rub.",
+      "dwellTime": "1–2 minutes",
+      "safetyNote": "Cool water only. Hot water can set the color into the fiber. Avoid mechanical scrubbing.",
+      "proOnly": true
     },
     {
       "step": 3,
-      "side": "wet-minimal",
-      "agent": "3% H₂O₂ on Damp Cloth",
-      "technique": "Oxidize residual tannin",
-      "equipment": "3% H₂O₂ on damp cloth",
-      "dwellTime": "5–10 minutes",
-      "instruction": "Hidden-area test on dyed polyester. 3% peroxide damp cloth 5–10 min. Don't mix with bleach / ammonia / alkaline."
+      "side": "wet",
+      "agent": "Colorfastness test on colored polyester",
+      "action": "test",
+      "instruction": "On colored polyester, dab a small amount of liquid laundry detergent and cool water on an inside seam using a clean white cloth. Press for one minute and check the cloth for color transfer.",
+      "dwellTime": "1 minute, until checked",
+      "safetyNote": "Stop if dye transfers. Colored or unstable-dye garments escalate to the professional path.",
+      "proOnly": true
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "White Vinegar Rinse",
-      "technique": "Neutralize + acid-side anthocyanin",
-      "equipment": "1 tbsp vinegar + 1 cup cool water",
-      "dwellTime": "5 minutes",
-      "instruction": "Vinegar rinse. Keeps anthocyanin red (light) instead of drifting blue-purple."
+      "agent": "Surfactant pretreat",
+      "action": "detergent",
+      "instruction": "Apply a small amount of liquid laundry detergent directly to the stain. Work it in lightly with a fingertip or soft cloth.",
+      "dwellTime": "Brief dwell per product label, then rinse cool",
+      "safetyNote": "Follow the detergent product label. Do not mix cleaning agents.",
+      "proOnly": true
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Cool Wash + Air-Dry",
-      "technique": "Launder + inspect before dryer",
-      "equipment": "Washing machine",
-      "dwellTime": "Full cycle + air-dry",
-      "instruction": "Cool wash. Air-dry. Inspect BEFORE dryer — heat sets residual berry on polyester."
+      "agent": "Launder per care label",
+      "action": "wash",
+      "instruction": "Wash on the cool or lukewarm setting permitted by the care label. Rinse thoroughly.",
+      "dwellTime": "Full machine cycle",
+      "safetyNote": "Do not exceed the temperature limit on the care label.",
+      "proOnly": true
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Air-dry and inspect",
+      "action": "dry",
+      "instruction": "Air-dry the garment and inspect for any residual color before any dryer heat. If a faint mark remains, repeat the pretreat and laundering step; do not machine-dry until the stain is fully gone.",
+      "dwellTime": "Until dry and inspected",
+      "safetyNote": "Heat applied to residual color can set the stain into the fiber.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Cold back-flush.",
-      "2. Dawn + soft toothbrush.",
-      "3. 3% H₂O₂ damp cloth, 5–10 min.",
-      "4. White vinegar rinse.",
-      "5. Cool wash + air-dry."
+      "1. Identify fiber, dye stability, and care-label limits before any wet treatment.",
+      "2. Rinse fresh berry with cool water from the back of the fabric.",
+      "3. Apply surfactant pretreat appropriate to the tannin / dye family; rinse and assess.",
+      "4. Launder per care-label temperature limit; do not exceed.",
+      "5. Air-dry and inspect before any heat. Escalation to controlled oxidizer chemistry only when the care label permits, colorfastness is confirmed, and PPE / ventilation per product SDS are in place; colored polyester remains chlorine-restricted."
     ],
     "products": [
-      "Dawn / NSD",
-      "3% Hydrogen peroxide",
-      "White vinegar",
-      "Cold water"
+      "Liquid laundry detergent (consumer-grade)",
+      "Cool / lukewarm water per care label"
     ],
-    "temperature": "cold throughout",
+    "temperature": "Cool through spotting; care-label cool / lukewarm wash; avoid heat on residual color",
     "warnings": [
-      "NEVER hot water — sets anthocyanin",
-      "NEVER alkaline cleaners — darkens permanently",
-      "NEVER chlorine bleach on polyester — yellows fiber",
-      "NEVER hot dryer until fully clear",
-      "Hidden-area peroxide test on dyed polyester"
+      "Do not exceed care-label temperature limits",
+      "Hot water on residual berry can set the color",
+      "Never use chlorine bleach on colored polyester",
+      "Confirm colorfastness via hidden-area test before any escalation",
+      "Do not mix cleaning agents",
+      "Pro chemistry beyond consumer detergent requires SDS-driven PPE and ventilation"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Polyester Is the Easy Fiber for Berry",
-      "instruction": "Standard tannin protocol works on polyester: cold water + Dawn + 3% peroxide + vinegar + cool wash. Two rules: NO alkaline cleaners (OxiClean / baking soda turn anthocyanin DARKER permanently), NO hot water until fully clear (sets berry + yellows polyester)."
+      "agent": "Confirm Care Label First",
+      "instruction": "Check the care label. If it says dry-clean-only, or the garment is structured / lined / embellished, stop and take it to a professional dry cleaner. For washable polyester, continue. Note: polyester is not automatically easy for berry — treat it with the same care as any tannin / dye stain."
     },
     {
       "step": 2,
-      "agent": "Cold Back-Flush",
-      "instruction": "Flip inside out. Cold tap water through the BACK 1–2 minutes."
+      "agent": "Cool Water Rinse from the Back",
+      "instruction": "Flip the fabric inside out and hold the back of the stained area under cool running water for 1–2 minutes. Blot underneath with a clean white cloth — do not rub. Most fresh berry juice and sugar will rinse out at this step."
     },
     {
       "step": 3,
-      "agent": "Dawn + Cold Water + Soft Toothbrush",
-      "instruction": "Dawn in cold water, soft toothbrush 5 min. Cool rinse. NO OxiClean."
+      "agent": "Hidden-Area Test on Colored Polyester",
+      "instruction": "On colored polyester, dab a little liquid laundry detergent and cool water on an inside seam with a clean white cloth. Press one minute. If color transfers to the cloth, stop and take to a professional. White polyester can skip this step."
     },
     {
       "step": 4,
-      "agent": "3% Peroxide for Residual",
-      "instruction": "3% drugstore peroxide damp cloth 5–10 min. Hidden-area test on dyed polyester first."
+      "agent": "Apply Liquid Laundry Detergent",
+      "instruction": "Put a small amount of mild liquid laundry detergent directly on what remains of the stain. Work it in gently with your fingertip or a soft cloth — do not scrub."
     },
     {
       "step": 5,
-      "agent": "White Vinegar Rinse",
-      "instruction": "1 tbsp vinegar + 1 cup cool water, 5 min. Keeps anthocyanin red (light) — critical step."
+      "agent": "Cool or Lukewarm Wash Per Care Label",
+      "instruction": "Wash the garment on the cool or lukewarm setting your care label allows. Rinse thoroughly. Do not use hot water on residual berry."
     },
     {
       "step": 6,
-      "agent": "Cool Wash, AIR-DRY Until Clear",
-      "instruction": "Cool wash. Air-dry. Inspect BEFORE dryer."
+      "agent": "Air-Dry and Inspect Before the Dryer",
+      "instruction": "Air-dry the garment and look closely for any remaining color before putting it in the dryer. If a faint mark remains, repeat steps 4 and 5 once. Do not machine-dry until the stain is fully gone — heat can set residual color into polyester."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate If It Doesn't Clear",
+      "instruction": "If a mark is still there after two careful passes, or if the stain has already been through a hot wash or dryer, take the garment to a professional dry cleaner. Tell them: \"Berry on polyester, [type — blueberry / raspberry / blackberry / strawberry], age [fresh / overnight / older], home-treated with cool rinse, liquid laundry detergent, and a care-label wash.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. NO alkaline cleaners. NO hot water until fully clear.",
-      "2. Cold water back-flush.",
-      "3. Dawn + soft toothbrush, 5 min.",
-      "4. 3% peroxide damp cloth, 5–10 min, hidden test on dyed.",
-      "5. White vinegar + water rinse, 5 min.",
-      "6. Cool wash + AIR-DRY. Inspect before dryer."
+      "1. Read care label; escalate dry-clean-only / structured / embellished to a pro.",
+      "2. Cool water rinse from the BACK of the fabric.",
+      "3. On colored polyester, hidden-area colorfastness test before detergent.",
+      "4. Apply a small amount of liquid laundry detergent.",
+      "5. Cool or lukewarm wash per care label.",
+      "6. Air-dry and inspect for any residual color before any dryer heat.",
+      "7. Repeat once if needed; escalate if it doesn't clear or was heat-set."
     ],
     "products": [
-      "Dawn dish soap",
-      "3% Hydrogen peroxide",
-      "White vinegar"
+      "Mild liquid laundry detergent",
+      "Cool / lukewarm water",
+      "Clean white cotton cloth"
     ],
-    "whenToStop": "Stop if hot dryer was used on residual berry, alkaline cleaner was applied, or set-in stain weeks old.",
+    "whenToStop": "Stop if the care label is dry-clean-only, the garment is structured / lined / embellished, the hidden-area test shows color transfer, the stain has already been through a hot wash or dryer, or two conservative passes do not clear it. In any of those cases, escalate to a professional dry cleaner.",
     "warnings": [
-      "NEVER hot water on berry",
-      "NEVER alkaline cleaners on tannin",
-      "NEVER chlorine bleach on polyester — yellows fiber",
-      "NEVER hot dryer until fully clear",
-      "NEVER mix peroxide with bleach / ammonia"
+      "Do not assume polyester is an easy fiber for berry — it still holds dye",
+      "Do not use hot water — can set residual color",
+      "Never use chlorine bleach on colored polyester",
+      "Do not rub or scrub — spreads the stain",
+      "Do not machine-dry residual color — heat can set the stain",
+      "Do not mix cleaning agents",
+      "Pro-strength oxidizers, solvents, and bleaches are not Home steps"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never hot water on berry",
-      "Never alkaline cleaners on tannin",
-      "Never chlorine bleach on polyester",
-      "Never hot dryer until fully clear"
+      "Never machine-dry a polyester garment with residual berry — heat can set the color",
+      "Never use chlorine bleach on colored polyester",
+      "Never rub or scrub the stain aggressively",
+      "Never mix cleaning agents",
+      "Never apply professional-strength oxidizers, solvents, or acids in the Home path"
     ],
     "fiberSensitivities": [
-      "Polyester yellows under heat over time",
-      "Polyester tolerates 3% peroxide on dyed (with hidden test)",
-      "Standard tannin chemistry works"
-    ]
+      "Polyester is chemically resistant but can still hold dye and oily soils",
+      "Colored polyester can fade or yellow under aggressive chemistry; chlorine bleach is restricted on colored polyester",
+      "Polyester is not automatically easy for berry — treat with the same care as any tannin / dye stain"
+    ],
+    "chemicalBoundaries": [
+      "Home path: mild liquid laundry detergent and water only",
+      "No peroxide, oxygen bleach, or chlorine bleach as a default Home step",
+      "Pro path may use controlled oxidizer chemistry only when care label permits, colorfastness is confirmed, and SDS-driven PPE and ventilation are in place; colored polyester remains chlorine-restricted"
+    ],
+    "homeAllowed": [
+      "Mild liquid laundry detergent",
+      "Cool or lukewarm water per care label",
+      "Clean white cotton cloth for blotting",
+      "Air-drying and visual inspection before any heat"
+    ],
+    "proOnly": [
+      "Concentrated surfactants, solvents, and oxidizers used in a controlled professional environment with PPE and ventilation per product SDS"
+    ],
+    "testFirst": [
+      "Hidden-area colorfastness test (white cloth on an inside seam) before detergent dwell or any escalation on colored polyester"
+    ],
+    "flushNeutralizeDry": [
+      "Rinse thoroughly with cool water from the back of the fabric",
+      "Rinse again after each detergent application",
+      "Air-dry and inspect before any dryer heat"
+    ],
+    "escalationTriggers": [
+      "Care label is dry-clean-only or restricts wet treatment",
+      "Garment is structured / lined / embellished / vintage / high-value",
+      "Hidden-area test shows dye transfer",
+      "Stain has already been through a hot wash or dryer",
+      "Two conservative passes do not clear the stain"
+    ],
+    "sourceConfidence": "medium",
+    "ppeVentilation": [
+      "Follow the product label for any concentrate",
+      "Gloves and eye protection for any pro-strength chemistry",
+      "Ventilate the work area; keep cleaning agents away from children and pets"
+    ],
+    "homeVsProBoundary": "Home users use only cool-water rinsing and mild liquid laundry detergent with a care-label wash. Pro chemistry (concentrated oxidizers, solvents) is hidden from the Home path and requires SDS-driven PPE / ventilation in a controlled environment."
   },
   "materialWarnings": [
-    "No alkaline — darkens anthocyanin",
-    "No hot water — sets berry + yellows polyester",
-    "Vinegar keeps anthocyanin RED (light)"
+    "Polyester is not automatically easy for berry — treat with care",
+    "Cool water only — hot water can set residual color",
+    "Never use chlorine bleach on colored polyester",
+    "Inspect for any residual color before any dryer heat"
   ],
   "escalation": {
-    "when": "Hot dryer used on residual berry, alkaline applied, set-in weeks old.",
-    "whatToTell": "\"Berry on polyester, [type], age [hours / days], home-treated with cold + Dawn + 3% peroxide + vinegar + cool wash. No hot water / no alkaline. [Residual].\"",
+    "when": "Dry-clean-only, structured, or embellished polyester; colored polyester that fails a hidden-area test; berry that has been through a hot wash or dryer; or no improvement after two conservative passes.",
+    "whatToTell": "\"Berry on polyester, [type], age [fresh / overnight / older], home-treated with cool rinse, liquid laundry detergent, and a care-label wash. [Hot wash or dryer applied? — yes / no].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Type — blueberry / raspberry / blackberry / strawberry?",
-      "How long ago — fresh / overnight / older?",
-      "Has it been through a hot wash or dryer?",
-      "White or dyed polyester?"
+      "Berry type — blueberry, raspberry, blackberry, or strawberry?",
+      "White or colored polyester?",
+      "How old is the stain — fresh, overnight, or older?",
+      "Has the garment been through a hot wash or dryer since the spill?"
     ],
-    "modifierNotes": "Blueberry has the most anthocyanin — hardest. Pre-applied OxiClean = anthocyanin darkened permanently. Hot-dried = often permanent."
+    "modifierNotes": "Berry-family stains carry both dye and sugar residue. Polyester is chemically resistant but is not automatically easy for berry — conservative care-label treatment is the Home path, and stronger chemistry belongs in the professional environment."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "17-32, 56-61, 83-99",
+      "evidence": "Berries fit the tannin and dye families; conservative unknown-stain fallback (cool water, liquid detergent, rinse, air-dry); blot rather than rub; do not iron or dry stained fabric until removal is confirmed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "164-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Surfactant action of detergents on water-soluble and oily soils; test new detergents on inconspicuous areas; follow product labels and PPE / ventilation for concentrates; clean per care label or reject inappropriate garments.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "99-109, 361-366, 520-525, 540-548",
+      "evidence": "Polyester is chemically resistant but oil-grabbing; colored polyester restricted from chlorine bleach; oxidizer chemistry only on white / colorfast fabric with control; absolute safety gates including no cleaner-mixing.",
+      "confidence": "high"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }
