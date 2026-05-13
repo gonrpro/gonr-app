@@ -5,11 +5,11 @@
   "stainFamily": "tannin",
   "surface": "linen",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 6,
-  "timeEstimate": "20–40 minutes; structured/trimmed = pro",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "20–45 minutes for fresh washable unstructured linen",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "red-wine",
     "surfaceCanonical": "linen",
@@ -17,206 +17,294 @@
     "riskLevel": "medium",
     "tags": [
       "tannin",
-      "anthocyanin",
       "linen",
       "no-alkaline",
       "shrink-bleed-risk",
       "structured-fork"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Red wine = anthocyanins + tannins. Linen is cellulose fiber that shrinks under heat AND bleeds dye easily AND warps under wet treatment when structured. Same tannin chemistry as wine on cotton (cold + Dawn + peroxide + vinegar), but linen-specific cautions apply: structured pieces (linen suits, lined dresses, tablecloths with stiffeners) lose shape; dyed linen bleeds; vintage linen is fragile. NO alkaline cleaners on tannin (universal rule). NO hot water (linen shrinks aggressively).",
-  "whyThisWorks": "Standard tannin chemistry on simple flat linen. Cold water + Dawn + 3% peroxide + vinegar handles fresh wine without setting tannin or shrinking linen. The honest fork: simple linen napkin / shirt = home protocol; structured linen = pro from minute one (shape change risk + dyed-linen bleed).",
-  "defaultAssumption": "Simple flat linen (napkin, basic shirt, plain skirt) = home protocol. Structured / lined / trimmed / dry-clean-only = pro from minute one. Vintage linen = pro.",
+  "stainChemistry": "Red wine is treated only as a tannin/beverage-family stain. This card avoids unsupported color-chemistry mechanisms and does not use hot or boiling water as a Home default. Linen guidance is bounded to washable, unstructured, colorfast fabric.",
+  "whyThisWorks": "Blotting removes liquid without abrasion. Cool back-rinsing/flush can move water-soluble beverage residue out from the wrong side, and a small amount of generic liquid detergent supports care-label laundering. Air-drying before heat prevents residual color from being set.",
+  "defaultAssumption": "Use only for washable, unstructured linen. Dry-clean-only, structured, lined, embellished, vintage, high-value, or unstable-dye linen should go to a professional.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "dry",
-      "agent": "Care Label + Structure Check",
-      "technique": "Inspection",
-      "equipment": "Good light",
-      "dwellTime": "1 minute",
-      "instruction": "Dry-clean-only label = pro. Structured / lined / trimmed / vintage = pro. Simple flat linen = proceed."
+      "side": "assessment",
+      "agent": "Professional Intake and Testing",
+      "technique": "Care-label, construction, fiber, and colorfastness assessment",
+      "equipment": "Clean white cloth, hidden seam/hem test",
+      "dwellTime": "Stop immediately on transfer or change",
+      "instruction": "Confirm linen is safe for wet treatment and document any Home attempts. Test colorfastness on a hidden seam or hem before any spotting.",
+      "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Cold Water Back-Flush",
-      "technique": "Flush from reverse",
-      "equipment": "Cold water, sink",
-      "dwellTime": "1–2 minutes",
-      "instruction": "Flip inside out. Cold water through the BACK. Pulls anthocyanin out fast."
+      "agent": "Controlled Detergent / Family-Specific Spotting",
+      "technique": "Use the mildest source-supported professional path first",
+      "equipment": "Product-labeled detergent or family-specific spotter; clean towels",
+      "dwellTime": "Use product-label dwell only; stop on dye movement or texture change",
+      "instruction": "Treat red wine on linen as a tannin/beverage stain and begin with controlled detergent/water action before any stronger chemistry. Keep chemistry bounded by SDS/label and fabric test results.",
+      "safetyNote": "Pro-only. Use PPE/ventilation required by product SDS; do not expose Home users to pro solvents, acids, oxidizers, or concentrated spotters.",
+      "proOnly": true
     },
     {
       "step": 3,
-      "side": "wet",
-      "agent": "Hidden-Area Dye Test",
-      "technique": "Dyed linen often bleeds",
-      "equipment": "Cold water + Dawn on cloth",
-      "dwellTime": "2 minutes",
-      "instruction": "Dyed linen: hidden-seam test mandatory. Color transfer = pro lane. Clean = proceed. Skip for white linen."
-    },
-    {
-      "step": 4,
-      "side": "wet",
-      "agent": "Dawn + Cold Water",
-      "technique": "Lift fresh anthocyanin",
-      "equipment": "Dawn + cold water on damp cloth",
-      "dwellTime": "5 minutes",
-      "instruction": "Dawn cold water on damp cloth. Press 5 min. Skip OxiClean — alkaline darkens anthocyanin permanently."
-    },
-    {
-      "step": 5,
-      "side": "wet-minimal",
-      "agent": "3% H₂O₂ on Damp Cloth",
-      "technique": "Oxidize residual tannin",
-      "equipment": "3% H₂O₂ on damp cloth",
-      "dwellTime": "5–10 minutes",
-      "instruction": "Hidden test on dyed linen first. 3% peroxide damp cloth 5–10 min. Don't mix with bleach / ammonia / alkaline."
-    },
-    {
-      "step": 6,
-      "side": "wet",
-      "agent": "White Vinegar Rinse",
-      "technique": "Neutralize + acid-side",
-      "equipment": "1 tbsp vinegar + 1 cup cool water",
-      "dwellTime": "5 minutes",
-      "instruction": "Vinegar rinse 5 min. Keeps anthocyanin red (light) instead of drifting blue-purple."
-    },
-    {
-      "step": 7,
-      "side": "wet",
-      "agent": "Cool Wash + AIR-DRY FLAT",
-      "technique": "Launder + lay flat",
-      "equipment": "Washing machine, drying surface",
-      "dwellTime": "Full cycle + air-dry",
-      "instruction": "Cool wash per care label — NEVER hot (linen shrinks aggressively). Air-DRY FLAT — never tumble-dry until fully clear."
+      "side": "rinse",
+      "agent": "Flush, Rinse, and Air-Dry Inspection",
+      "technique": "Flush between products and inspect dry",
+      "equipment": "Water/steam only if fabric and product label permit; drying rack",
+      "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+      "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+      "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Care label + structure check. Structured = pro.",
-      "2. Cold back-flush.",
-      "3. Hidden dye test on colored linen.",
-      "4. Dawn + cold damp cloth.",
-      "5. 3% H₂O₂ damp cloth, 5–10 min.",
-      "6. White vinegar rinse.",
-      "7. Cool wash + air-dry flat."
+      {
+        "step": 1,
+        "side": "assessment",
+        "agent": "Professional Intake and Testing",
+        "technique": "Care-label, construction, fiber, and colorfastness assessment",
+        "equipment": "Clean white cloth, hidden seam/hem test",
+        "dwellTime": "Stop immediately on transfer or change",
+        "instruction": "Confirm linen is safe for wet treatment and document any Home attempts. Test colorfastness on a hidden seam or hem before any spotting.",
+        "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles.",
+        "proOnly": true
+      },
+      {
+        "step": 2,
+        "side": "wet",
+        "agent": "Controlled Detergent / Family-Specific Spotting",
+        "technique": "Use the mildest source-supported professional path first",
+        "equipment": "Product-labeled detergent or family-specific spotter; clean towels",
+        "dwellTime": "Use product-label dwell only; stop on dye movement or texture change",
+        "instruction": "Treat red wine on linen as a tannin/beverage stain and begin with controlled detergent/water action before any stronger chemistry. Keep chemistry bounded by SDS/label and fabric test results.",
+        "safetyNote": "Pro-only. Use PPE/ventilation required by product SDS; do not expose Home users to pro solvents, acids, oxidizers, or concentrated spotters.",
+        "proOnly": true
+      },
+      {
+        "step": 3,
+        "side": "rinse",
+        "agent": "Flush, Rinse, and Air-Dry Inspection",
+        "technique": "Flush between products and inspect dry",
+        "equipment": "Water/steam only if fabric and product label permit; drying rack",
+        "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+        "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+        "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+        "proOnly": true
+      }
     ],
     "products": [
-      "Dawn / NSD",
-      "3% Hydrogen peroxide",
-      "White vinegar",
-      "Cold water"
+      "Product-labeled professional tannin/color-removal systems only, used per SDS/label"
     ],
-    "temperature": "cold throughout — linen shrinks under hot",
+    "temperature": "Cool/cold first; warmer or stronger professional escalation only if care label, colorfastness, and SDS/label controls permit",
     "warnings": [
-      "NEVER hot water — linen shrinks aggressively",
-      "NEVER alkaline cleaners on tannin",
-      "NEVER chlorine bleach on dyed linen",
-      "NEVER tumble-dry until fully clear",
-      "Hidden-area dye test mandatory on colored linen",
-      "Structured / lined / trimmed = pro"
+      "Pro-only tannin acids or oxidizer/color-removal steps can shift dye and require SDS/label controls, PPE, ventilation, brief contact, flush/rinse/neutralize controls, and linen hem testing."
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Structured Linen Goes to Pro; Simple Linen Stays Home",
-      "instruction": "Linen has two cases. SIMPLE LINEN (napkin, basic shirt, plain skirt) = standard tannin home protocol. STRUCTURED LINEN (suits, lined dresses, tablecloths with stiffeners, anything dry-clean-only or with embroidery / trim) = pro from minute one. Wet treatment on structured linen risks shape change AND dyed linen bleeds easily."
+      "agent": "Care Label and Linen Boundary",
+      "instruction": "Confirm the linen is washable and unstructured. Stop for dry-clean-only, structured, lined, embellished, vintage, high-value, or unstable-dye linen."
     },
     {
       "step": 2,
-      "agent": "Cold Back-Flush",
-      "instruction": "Flip inside out. Run cold tap water through the BACK of the stain for 1–2 minutes. Most effective fast move."
+      "agent": "Blot — Do Not Rub",
+      "instruction": "Blot wine with a clean white cloth. Do not rub; rubbing can spread color and abrade linen."
     },
     {
       "step": 3,
-      "agent": "Hidden Patch Test on Dyed Linen",
-      "instruction": "If colored, dab Dawn + cold water on a hidden seam, press 2 min. Color transfer = pro lane. Clean = proceed."
+      "agent": "Cool Back-Rinse if Washable",
+      "instruction": "Rinse or flush from the back with cool water if the care label allows. Do not use hot or boiling water."
     },
     {
       "step": 4,
-      "agent": "Dawn + Cold Water + Soft Toothbrush",
-      "instruction": "Dawn in cold water, soft toothbrush 5 min. Cool rinse. NO OxiClean — alkaline darkens wine."
+      "agent": "Hidden Hem Test",
+      "instruction": "On colored linen, test detergent and cool water on a hidden hem with a clean white cloth. Stop if dye transfers or texture changes."
     },
     {
       "step": 5,
-      "agent": "3% Peroxide for Residual",
-      "instruction": "3% peroxide damp cloth 5–10 min. Hidden test on dyed linen FIRST."
+      "agent": "Small Amount Generic Liquid Detergent",
+      "instruction": "Apply a small amount of generic liquid laundry detergent to what remains. Work gently without scrubbing, then launder according to the care label."
     },
     {
       "step": 6,
-      "agent": "White Vinegar Rinse",
-      "instruction": "1 tbsp vinegar + 1 cup cool water, 5 min. Neutralizes peroxide + keeps wine on the red (light) side."
-    },
-    {
-      "step": 7,
-      "agent": "Cool Wash + AIR-DRY FLAT",
-      "instruction": "Cool wash. AIR-DRY FLAT. NEVER tumble-dry until fully clear — heat shrinks linen + sets wine."
+      "agent": "Air-Dry, Inspect, Repeat Once Only if Improving",
+      "instruction": "Air-dry and inspect before heat. Repeat the cool rinse/detergent path once only if the mark is clearly improving. Escalate for persistent color, dye shift, ring, texture change, or no improvement."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Structured / lined / trimmed = pro. Simple linen = home.",
-      "2. NO alkaline cleaners. NO hot water. NO chlorine bleach.",
-      "3. Cold water back-flush.",
-      "4. Hidden dye test on colored linen.",
-      "5. Dawn + cold water + soft toothbrush, 5 min.",
-      "6. 3% peroxide damp cloth, 5–10 min.",
-      "7. White vinegar rinse.",
-      "8. Cool wash + AIR-DRY FLAT."
+      "1. Care Label and Linen Boundary: Confirm the linen is washable and unstructured. Stop for dry-clean-only, structured, lined, embellished, vintage, high-value, or unstable-dye linen.",
+      "2. Blot — Do Not Rub: Blot wine with a clean white cloth. Do not rub; rubbing can spread color and abrade linen.",
+      "3. Cool Back-Rinse if Washable: Rinse or flush from the back with cool water if the care label allows. Do not use hot or boiling water.",
+      "4. Hidden Hem Test: On colored linen, test detergent and cool water on a hidden hem with a clean white cloth. Stop if dye transfers or texture changes.",
+      "5. Small Amount Generic Liquid Detergent: Apply a small amount of generic liquid laundry detergent to what remains. Work gently without scrubbing, then launder according to the care label.",
+      "6. Air-Dry, Inspect, Repeat Once Only if Improving: Air-dry and inspect before heat. Repeat the cool rinse/detergent path once only if the mark is clearly improving. Escalate for persistent color, dye shift, ring, texture change, or no improvement."
     ],
     "products": [
-      "Dawn dish soap",
-      "3% Hydrogen peroxide",
-      "White vinegar"
+      "Generic liquid laundry detergent"
     ],
-    "whenToStop": "Stop if linen is structured, dye bleeds on hidden test, hot water / dryer was used previously.",
+    "whenToStop": "Escalate dye shift/bleed, ring formation, persistent color after the detergent path, texture change, dry-clean-only/structured/valuable linen, or no improvement after one repeat.",
     "warnings": [
-      "NEVER hot water — linen shrinks",
-      "NEVER alkaline cleaners on tannin",
-      "NEVER chlorine bleach on dyed linen",
-      "NEVER tumble-dry until clear",
-      "Hidden-area dye test mandatory"
+      "No hot or boiling water Home default",
+      "No routine Home peroxide, chlorine, oxygen bleach, acidic tannin spotters, concentrated acids, or pro chemistry",
+      "Any oxidizer belongs only to guarded Pro/trace-color escalation when care-label-safe, white/colorfast, hidden-test-passed, and never mixed"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never hot water on linen",
-      "Never alkaline cleaners on tannin",
-      "Never chlorine bleach on dyed linen",
-      "Never tumble-dry residual wine"
+      "Never put the item in a dryer, use an iron, or apply heat until the stain is gone after air-drying inspection",
+      "Never rub or scrub aggressively; blot, lift, or gently work only enough to avoid driving soil deeper",
+      "Never mix cleaning agents, bleach, ammonia, acids, solvents, or professional spotters",
+      "Never use chlorine bleach unless the care label allows it and the fabric is white or confirmed colorfast",
+      "Never use professional-strength oxidizers, acids, dry-side solvents, rust/mineral removers, adhesive removers, or named pro products in the Home path",
+      "Never use hot water, boiling water, steam, hot dryer, or iron on red wine linen before the stain is gone",
+      "Never use chlorine bleach on colored linen",
+      "Never use routine Home peroxide, oxygen bleach, acidic tannin spotters, concentrated acids, or professional oxidizer/acid chemistry"
     ],
     "fiberSensitivities": [
-      "Linen shrinks aggressively under hot water",
-      "Dyed linen bleeds — hidden test mandatory",
-      "Structured linen warps under wet treatment",
-      "Vintage linen is fragile"
-    ]
+      "Linen is cellulose/flax; colored linen needs controlled temperature and a hidden hem/colorfastness test",
+      "Structured, lined, embellished, vintage, high-value, dry-clean-only, or unstable-dye linen can distort, bleed, or lose finish under wet treatment and should route to Pro",
+      "Avoid strong acids or prolonged acid contact on linen outside professional controls"
+    ],
+    "chemicalBoundaries": [
+      "Home path is limited to water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "Use any detergent, enzyme detergent, or pretreat only according to its product label and only after a hidden-area test on colored fabric",
+      "Oxidizers are not routine Home steps; any trace-color escalation must be care-label-safe, white/colorfast, hidden-test-passed, and never mixed with other cleaners",
+      "Professional chemistry is Pro-only and requires SDS/label controls, PPE, ventilation, colorfastness testing, and flush/rinse controls",
+      "Home red-wine path is cool water plus generic liquid detergent only",
+      "If any trace-color oxidizer escalation is considered, it must be Pro/guarded: care-label-safe, white/colorfast, hidden-test-passed, never mixed, and fully rinsed"
+    ],
+    "chemicalControls": [
+      "Home path is limited to water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "Use any detergent, enzyme detergent, or pretreat only according to its product label and only after a hidden-area test on colored fabric",
+      "Oxidizers are not routine Home steps; any trace-color escalation must be care-label-safe, white/colorfast, hidden-test-passed, and never mixed with other cleaners",
+      "Professional chemistry is Pro-only and requires SDS/label controls, PPE, ventilation, colorfastness testing, and flush/rinse controls",
+      "Home red-wine path is cool water plus generic liquid detergent only",
+      "If any trace-color oxidizer escalation is considered, it must be Pro/guarded: care-label-safe, white/colorfast, hidden-test-passed, never mixed, and fully rinsed"
+    ],
+    "homeAllowed": [
+      "Cool/cold water or care-label-safe lukewarm water",
+      "Generic liquid laundry detergent or heavy-duty liquid laundry detergent",
+      "Hidden-area colorfastness test",
+      "Care-label laundering",
+      "Air-dry and inspect before heat"
+    ],
+    "proOnly": [
+      "Professional spotters, dry-side solvents, acids, oxidizers, reducers, concentrated chemistry, steam, and heat escalation require SDS/label controls, PPE, ventilation, flush/rinse controls, and documented fabric testing"
+    ],
+    "testFirst": [
+      "Test detergent, warmer water, enzyme detergent, oxidizer escalation, alcohol/solvent, acid spotter, or any pro chemistry on a hidden seam/hem with a clean white cloth before treating the visible area"
+    ],
+    "colorfastnessTest": "On a hidden seam or hem, press a clean white cloth with the planned detergent/water mix for one minute; stop if dye transfers, color changes, or texture changes.",
+    "flushNeutralizeDry": "Rinse or flush out each cleaning agent before changing products; air-dry fully and inspect before any dryer, iron, heat, or professional escalation.",
+    "temperatureLimits": "Cool/cold first for red wine/tannin. No hot or boiling water, steam, dryer, or iron until the stain is gone; lukewarm only if the care label allows and the fabric is stable.",
+    "escalationTriggers": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate dye shift/bleed, ring formation, persistent color after detergent path, texture change, structured/dry-clean-only/valuable linen, or no improvement after one repeat"
+    ],
+    "stopAndEscalate": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate dye shift/bleed, ring formation, persistent color after detergent path, texture change, structured/dry-clean-only/valuable linen, or no improvement after one repeat"
+    ],
+    "ppeVentilation": "For Home detergent use, follow the product label and keep products away from children and pets. For concentrates or Pro chemistry, use gloves/eye protection as the SDS requires and work with ventilation.",
+    "homeVsProBoundary": "Home guidance excludes professional-strength oxidizers, acids, solvents, named pro products, exact pro concentrations, steam, and heat escalation; those belong only in a professional workflow with SDS/label controls.",
+    "sourceConfidence": "medium"
   },
   "materialWarnings": [
-    "Structured = pro from minute one",
-    "Cool water only — linen shrinks",
-    "Air-dry flat",
-    "Dyed linen bleeds — hidden test always"
+    "Washable unstructured linen only",
+    "Colored linen requires hidden hem/colorfastness testing",
+    "No hot/boiling water or routine oxidizers in Home"
   ],
   "escalation": {
-    "when": "Structured / lined / trimmed linen, dry-clean-only label, dyed linen failed hidden test, hot water / dryer used previously, vintage piece.",
-    "whatToTell": "\"Red wine on [simple / structured / dyed / vintage] linen, age [hours / days], home-treated with cold + Dawn + 3% peroxide + vinegar + cool wash. No hot water / no alkaline. [Residual / structured concerns].\"",
-    "specialistType": "professional dry cleaner"
+    "when": "Escalate dye shift/bleed, ring formation, persistent color after the detergent path, texture change, dry-clean-only/structured/valuable linen, or no improvement after one repeat.",
+    "whatToTell": "Red wine on linen; care label/construction; whether cool back-rinse and detergent were used; any dye shift, ring, persistent color, or texture change.",
+    "specialistType": "professional textile cleaner or dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Simple flat linen or structured?",
-      "Care label?",
-      "White / natural / dyed?",
-      "Vintage piece?",
-      "Has it been through a hot wash or dryer?"
+      "Is the linen washable and unstructured?",
+      "Is the wine fresh or dried?",
+      "Is the fabric white or colored, and did the hem test transfer dye?",
+      "Has hot water, salt, club soda, peroxide, or dryer heat been used?"
     ],
-    "modifierNotes": "Vintage linen is fragile fiber-wise. Structured pieces need professional finishing after wet treatment. Dyed linen bleeds — pre-applied wet treatment may have already caused bleed; disclose."
+    "modifierNotes": "Keep tannin wording bounded; avoid unsupported color-chemistry claims and hot-water defaults."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "11-32, 34-61, 65-79, 83-99, 105-113",
+      "evidence": "Consumer stain-family guidance for protein, tannin, oil, combination and unknown stains; blot rather than rub, work from the wrong side where appropriate, test first, and do not iron or dry until the stain is removed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "145-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Safety and process gates: heat, concentration, oxidation, abrasion and mismanaged water can damage textiles; detergents/surfactants suspend oily soils; test hidden areas, follow product labels, ventilate, use PPE for concentrates, avoid incompatible mixes, and clean only according to care label or reject/escalate.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "169-199, 326-367, 445-449, 484-495, 540-549",
+      "evidence": "Internal cotton/linen safety boundaries; protein, oil, tannin and oxidizer controls; dry-side solvent/pro chemistry boundaries; no hot water on protein stains; never mix chlorine bleach with ammonia or acids.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-4S-01",
+      "title": "R.R. Street 4Streets On-the-Spot",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/R.R. Street — 4Streets/On-the-Spot.md",
+      "lines": "22-36, 48-53, 128-146",
+      "evidence": "Professional classification and operator workflow context for food/beverage, oil, tannin, protein and combination stains; pro-only product taxonomy.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-ADC-01",
+      "title": "American Drycleaner Spotting Techniques",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Trade & Media/American Drycleaner/Spotting-Techniques.md",
+      "lines": "8-13, 69-75, 96-109",
+      "evidence": "Professional solvent/oil, tannin, flushing and controlled last-resort bleaching cautions; low suitability for Home copy.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-BUFA-01",
+      "title": "BÜFA DetaProfi Spotting Chart",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/DetaProfi-Spotting-Chart.md",
+      "lines": "7-14, 50-70",
+      "evidence": "Professional chart support for oil, red wine, sauce/tannin and linen hem testing; rinse between products; pro-only chemistry sequence reference.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-BUFA-02",
+      "title": "BÜFA Professional Spotting Guide",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/Professional-Spotting-Guide.md",
+      "lines": "145-179",
+      "evidence": "Professional training support for heat-sensitive food/sugar residues, protein coagulation/enzymes, and wine/fruit tannin classification; low suitability for Home copy.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-SMITH-01",
+      "title": "Smithsonian Conservation Spotting",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/Smithsonian/Smithsonian-Conservation-Spotting.md",
+      "lines": "107-113",
+      "evidence": "Conservation caution that boiling-water fruit-on-cotton exception is not recommended; used to block hot/boiling-water Home defaults.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

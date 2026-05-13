@@ -1,18 +1,18 @@
 # Protocol Consistency Audit
 
-Generated: 2026-04-30T18:22:07.941Z
+Generated: 2026-05-12T17:03:57.540Z
 
-Card files scanned: 332
-Flagged: 263
-Skipped non-card JSON: 30
+Card files scanned: 319
+Flagged: 272
+Skipped non-card JSON: 57
 
 ## Flag category breakdown
 
 | Category | Count |
 |---|---:|
-| step_safety_note_missing | 1418 |
-| sources_missing | 261 |
-| title_mismatch | 78 |
+| step_safety_note_missing | 1444 |
+| sources_missing | 271 |
+| title_mismatch | 77 |
 | safety_matrix_missing | 28 |
 
 ## Title normalization preview (no writes)
@@ -22,7 +22,6 @@ Skipped non-card JSON: 30
 | angora-shrinkage-cashmere | core | Cashmere Shrinkage on Cashmere | Angora Shrinkage on Cashmere |
 | berry-carpet | core | Berry Stain on Carpet | Berry on Carpet |
 | berry-cotton | core | Berry Stain on Cotton | Berry on Cotton |
-| blood-dried-cotton | core-draft | Blood Dried on Cotton | Dried Blood on Cotton |
 | blood-dried-cotton | lab-draft | Blood Dried on Cotton | Dried Blood on Cotton |
 | body-oil-white-cotton | core | Body Oil on White Cotton | Body Oil White on Cotton |
 | coffee-black-carpet | core | Black Coffee on Carpet | Coffee Black on Carpet |
@@ -102,16 +101,16 @@ Skipped non-card JSON: 30
 
 | Combo | Source | Title | Flags |
 |---|---|---|---|
-| adhesive-carpet | core | Adhesive on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| adhesive-cotton | core | Adhesive on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| adhesive-polyester | core | Adhesive on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
+| adhesive-carpet | core | Adhesive on Carpet | missing sources |
+| adhesive-cotton | core | Adhesive on Cotton | missing sources |
+| adhesive-polyester | core | Adhesive on Polyester | missing sources |
 | angora-shrinkage-angora | core | Angora Shrinkage on Angora | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | angora-shrinkage-cashmere | core | Cashmere Shrinkage on Cashmere | title mismatch: expected "Angora Shrinkage on Cashmere"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | argyrol-cotton | core | Argyrol on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | baby-formula-carpet | core | Baby Formula on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| baby-formula-cotton | core | Baby Formula on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
+| baby-formula-cotton | core | Baby Formula on Cotton | missing sources |
 | barbecue-sauce-carpet | core | Barbecue Sauce on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
-| barbecue-sauce-cotton | core | Barbecue Sauce on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
+| barbecue-sauce-cotton | core | Barbecue Sauce on Cotton | missing sources |
 | beer-carpet | core | Beer on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | beer-cotton | core | Beer on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | beer-upholstery | core | Beer on Upholstery | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
@@ -123,17 +122,13 @@ Skipped non-card JSON: 30
 | blood-carpet | core | Blood on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | blood-cashmere | core | Blood on Cashmere | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | blood-cotton | core | Blood on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
-| blood-cotton | core-draft | Blood on Cotton | clean |
 | blood-cotton | lab-draft | Blood on Cotton | clean |
-| blood-denim | core | Blood on Denim | clean |
-| blood-denim | core-draft | Blood on Denim | clean |
+| blood-denim | core | Blood on Denim | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | blood-denim | lab-draft | Blood on Denim | clean |
 | blood-dried-carpet | core | Dried Blood on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
 | blood-dried-cotton | core | Dried Blood on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| blood-dried-cotton | core-draft | Blood Dried on Cotton | title mismatch: expected "Dried Blood on Cotton" |
 | blood-dried-cotton | lab-draft | Blood Dried on Cotton | title mismatch: expected "Dried Blood on Cotton" |
-| blood-leather | core | Blood on Leather | clean |
-| blood-leather | core-draft | Blood on Leather | clean |
+| blood-leather | core | Blood on Leather | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | blood-leather | lab-draft | Blood on Leather | clean |
 | blood-leather | lab-draft | Blood on Leather | clean |
 | blood-leather | lab-draft | Blood on Leather | clean |
@@ -167,8 +162,7 @@ Skipped non-card JSON: 30
 | coffee-black-silk | core | Black Coffee on Silk | title mismatch: expected "Coffee Black on Silk"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | coffee-black-wool | core | Black Coffee on Wool | title mismatch: expected "Coffee Black on Wool"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | coffee-carpet | core | Coffee on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
-| coffee-cotton | core | Coffee on Cotton | clean |
-| coffee-cotton | core-draft | Coffee on Cotton | clean |
+| coffee-cotton | core | Coffee on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | coffee-cotton | lab-draft | Coffee on Cotton | clean |
 | coffee-cotton | lab-draft | Coffee on Cotton | clean |
 | coffee-cotton | lab-draft | Coffee on Cotton | clean |
@@ -180,15 +174,13 @@ Skipped non-card JSON: 30
 | coffee-cream-silk | core | Coffee with Cream on Silk | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | coffee-cream-upholstery | core | Coffee with Cream on Upholstery | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
 | coffee-cream-wool | core | Coffee with Cream on Wool | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| coffee-leather | core | Coffee on Leather | clean |
-| coffee-leather | core-draft | Coffee on Leather | clean |
+| coffee-leather | core | Coffee on Leather | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |
 | coffee-leather | lab-draft | Coffee on Leather | clean |
 | coffee-leather | lab-draft | Coffee on Leather | clean |
 | coffee-leather | lab-draft | Coffee on Leather | clean |
 | coffee-leather | lab-draft | Coffee on Leather | clean |
 | coffee-leather | lab-draft | Coffee on Leather | clean |
-| coffee-linen | core | Coffee on Linen | clean |
-| coffee-linen | core-draft | Coffee on Linen | clean |
+| coffee-linen | core | Coffee on Linen | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>pro step 8: missing safety note<br>missing sources |
 | coffee-linen | lab-draft | Coffee on Linen | clean |
 | coffee-linen | lab-draft | Coffee on Linen | clean |
 | coffee-linen | lab-draft | Coffee on Linen | clean |
@@ -201,8 +193,7 @@ Skipped non-card JSON: 30
 | coffee-with-cream-linen | core | Coffee with Cream on Linen | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | coffee-wool | core | Coffee on Wool | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | cooking-oil-carpet | core | Cooking Oil on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |
-| cooking-oil-cotton | core | Cooking Oil on Cotton | clean |
-| cooking-oil-cotton | core-draft | Cooking Oil on Cotton | clean |
+| cooking-oil-cotton | core | Cooking Oil on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | cooking-oil-cotton | lab-draft | Cooking Oil on Cotton | clean |
 | cooking-oil-cotton | lab-draft | Cooking Oil on Cotton | clean |
 | cooking-oil-cotton | lab-draft | Cooking Oil on Cotton | clean |
@@ -298,8 +289,7 @@ Skipped non-card JSON: 30
 | motor-oil-car-upholstery | core | Motor Oil on Car Upholstery | title mismatch: expected "Motor Oil Car on Upholstery"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
 | motor-oil-carpet | core | Motor Oil on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | motor-oil-cotton | core | Motor Oil on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
-| motor-oil-denim | core | Motor Oil on Denim | clean |
-| motor-oil-denim | core-draft | Motor Oil on Denim | clean |
+| motor-oil-denim | core | Motor Oil on Denim | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | motor-oil-denim | lab-draft | Motor Oil on Denim | clean |
 | motor-oil-denim | lab-draft | Motor Oil on Denim | clean |
 | motor-oil-denim | lab-draft | Motor Oil on Denim | clean |
@@ -344,15 +334,13 @@ Skipped non-card JSON: 30
 | polyurethane-transfer-polyester | core | Polyurethane Transfer on Polyester — Dual-Solvent Extraction | title mismatch: expected "Polyurethane Transfer on Polyester"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | rayon-sizing-discoloration-rayon | core | Rayon Sizing on Rayon | title mismatch: expected "Rayon Sizing Discoloration on Rayon"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing safetyMatrix.neverDo<br>missing sources |
 | red-wine-carpet | core | Red Wine on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
-| red-wine-cotton | core | Red Wine on Cotton | clean |
-| red-wine-cotton | core-draft | Red Wine on Cotton | clean |
+| red-wine-cotton | core | Red Wine on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | red-wine-cotton | lab-draft | Red Wine on Cotton | clean |
 | red-wine-cotton | lab-draft | Red Wine on Cotton | clean |
 | red-wine-cotton | lab-draft | Red Wine on Cotton | clean |
 | red-wine-cotton | lab-draft | Red Wine on Cotton | clean |
 | red-wine-cotton | lab-draft | Red Wine on Cotton | clean |
-| red-wine-leather | core | Red Wine on Leather | clean |
-| red-wine-leather | core-draft | Red Wine on Leather | clean |
+| red-wine-leather | core | Red Wine on Leather | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | red-wine-leather | lab-draft | Red Wine on Leather | clean |
 | red-wine-leather | lab-draft | Red Wine on Leather | clean |
 | red-wine-leather | lab-draft | Red Wine on Leather | clean |
@@ -383,7 +371,6 @@ Skipped non-card JSON: 30
 | sunscreen-polyester | core | Sunscreen on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | sunscreen-white-cotton | core | Sunscreen on White Cotton | title mismatch: expected "Sunscreen White on Cotton"<br>pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
 | sweat-cotton | core | Sweat on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>pro step 8: missing safety note<br>missing sources |
-| sweat-cotton | core-draft | Sweat on Cotton | clean |
 | sweat-cotton | lab-draft | Sweat on Cotton | clean |
 | sweat-polyester | core | Sweat on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | sweat-stain-cotton | core | Sweat Stain on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
@@ -398,8 +385,7 @@ Skipped non-card JSON: 30
 | tea-carpet | core | Tea on Carpet | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>pro step 7: missing safety note<br>missing sources |
 | tea-cotton | core | Tea on Cotton | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>pro step 6: missing safety note<br>missing sources |
 | tea-linen | core | Tea on Linen | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>pro step 5: missing safety note<br>missing sources |
-| tea-polyester | core | Tea on Polyester | clean |
-| tea-polyester | core-draft | Tea on Polyester | clean |
+| tea-polyester | core | Tea on Polyester | pro step 1: missing safety note<br>pro step 2: missing safety note<br>pro step 3: missing safety note<br>pro step 4: missing safety note<br>missing sources |
 | tea-polyester | lab-draft | Tea on Polyester | clean |
 | tea-polyester | lab-draft | Tea on Polyester | clean |
 | tea-polyester | lab-draft | Tea on Polyester | clean |
@@ -463,6 +449,33 @@ Skipped non-card JSON: 30
 | lab-draft | ~/lab/output/TASK-117/package-lock.json | not card-shaped json |
 | lab-draft | ~/lab/output/TASK-117/package.json | not card-shaped json |
 | lab-draft | ~/lab/output/TASK-118-voice-fix/apply-payload.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-129-claim-ledger-ci-gate/package-lock.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-129-claim-ledger-ci-gate/package.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-130-claim-evidence-export/claim-evidence-export.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-130-claim-evidence-export/package.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-131-card-risk-rank/package.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-133-protocol-self-improvement/package.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-134-ledger-continuous/package.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-135-rank-cron-card-health/package.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-138-challenge-loop/package.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-138-challenge-loop/verdict.schema.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-139-heartbeat-watchdog/lanes.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-139-heartbeat-watchdog/package.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-140-tyler-resume-brief/package.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-152-intake-classification-spec/capture-defaults.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-154-phase-2-build/tsconfig.lab-check.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-155-garment-incident-analysis/tsconfig.lab-check.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-156-question-engine/tsconfig.lab-check.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-158-spottingboard-minimum-loop/tsconfig.lab-check.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-160-spottingboard-classifier-patch/tsconfig.lab-check.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-161-spottingboard-supervisor-review/tsconfig.lab-check.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-162-spottingboard-ops-book-export/tsconfig.lab-check.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-164-capture-coach-v1/tsconfig.lab-check.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-165-predictive-intake/tsconfig.lab-check.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-165-spottingboard-login-brand-pass/tsconfig.lab-check.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-166-spottingboard-home-page/tsconfig.lab-check.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-168-live-chat-demo/tsconfig.lab-check.json | not card-shaped json |
+| lab-draft | ~/lab/output/TASK-169-workbench-mobile-polish/tsconfig.lab-check.json | not card-shaped json |
 | lab-draft | ~/lab/output/TASK-EVAL-FIX/gonr-test-results-2026-04-08.json | not card-shaped json |
 | lab-draft | ~/lab/output/TASK-title-sweep-2026-04-24/current-titles.json | not card-shaped json |
 | lab-draft | ~/lab/output/TASK-title-sweep-2026-04-24/mapping.json | not card-shaped json |

@@ -5,11 +5,11 @@
   "stainFamily": "protein",
   "surface": "cotton",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
-  "difficulty": 4,
-  "timeEstimate": "20 minutes to overnight soak",
-  "lastValidated": "2026-04-25",
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
+  "difficulty": 3,
+  "timeEstimate": "20–45 minutes plus label-directed dwell/soak; chronic yellowing may need professional review",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "sweat-stain",
     "surfaceCanonical": "cotton",
@@ -17,186 +17,270 @@
     "riskLevel": "low",
     "tags": [
       "protein",
-      "yellowing",
-      "antiperspirant",
       "cotton",
-      "chronic"
+      "perspiration",
+      "cleanup-required"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "What people call a 'sweat stain' is usually NOT sweat alone — it's the brown-yellow armpit crust that forms when sweat proteins (albumin, urea) react with aluminum salts from antiperspirant over many wash cycles. Pure sweat on cotton is nearly invisible; aluminum-protein complexes build up in the fiber over weeks and yellow progressively with heat. Cotton tolerates enzymes, oxygen bleach, and hot wash, but the fix has to BOTH digest the protein AND dissolve or chelate the aluminum complex — enzyme alone leaves the yellowing; oxidizer alone leaves the protein; the combination clears both.",
-  "whyThisWorks": "Enzyme pretreat digests the albumin-urea protein matrix. Acidic (vinegar) soak or a dedicated chelator loosens the aluminum salts from the fiber. Oxygen-side bleach (OxiClean or 3% H₂O₂ for whites) oxidizes the yellow color. Hot wash finishes. The reason most home attempts plateau is they use bleach alone — which sets the protein lock together and can actually DARKEN a sweat stain. Enzyme first, chelator/acid second, oxidizer third.",
-  "defaultAssumption": "Assume the stain is chronic — built up over multiple wash cycles rather than a single event. A single-wash sweat stain is rare; the typical home complaint is 'my white t-shirts have yellow armpits.' Chronic stains take longer than acute ones — expect overnight enzyme soak + peroxide pass + hot wash for a full result.",
+  "stainChemistry": "Treat sweat/perspiration residue as a protein-type stain that may also include deodorant or antiperspirant residue. The packet supports cold/cool start and detergent/enzyme-detergent boundaries; it does not support exact albumin/urea/aluminum-complex, vinegar-chelation, peroxide-plus-sunlight, or prevention lifestyle claims.",
+  "whyThisWorks": "Cold/cool water avoids setting protein-type residue. Generic liquid detergent loosens washable residue, and a care-label-safe enzyme detergent or pretreat may help protein residue on cotton when used per product label. Air-drying before heat keeps remaining yellowing or odor from being locked in.",
+  "defaultAssumption": "Use only for washable cotton. Chronic yellowing may improve with one repeat conservative detergent/enzyme round, but old or deodorant-complicated yellowing may not fully clear at Home.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cold Flush",
-      "technique": "Rinse sweat + antiperspirant off",
-      "equipment": "Cold water",
-      "dwellTime": "1 minute",
-      "instruction": "Cold flush the armpit area from both sides. The flush removes loose antiperspirant residue and any surface sweat. Cold only — warm water at this stage sets protein deeper."
+      "side": "assessment",
+      "agent": "Professional Intake and Fabric Testing",
+      "technique": "Care-label, construction, fiber, and colorfastness assessment",
+      "equipment": "Clean white cloth, hidden seam/hem test",
+      "dwellTime": "Stop immediately on transfer or change",
+      "instruction": "Confirm the cotton item is safe for professional wet-side treatment and document Home attempts. Treat sweat/perspiration only within source-supported family guidance, not unsupported exact chemistry claims.",
+      "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles. Use PPE/ventilation required by any product SDS.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Protein Spotter + Soak",
-      "technique": "Submerge, dwell long",
-      "equipment": "Liquid Protein Spotter in warm water (30–38°C) basin",
-      "dwellTime": "1–4 hours, or overnight for chronic stains",
-      "instruction": "Submerge the armpit area in a warm (30–38°C) enzyme solution. For chronic yellowing, overnight soak. protein-digesting enzyme hydrolyzes the albumin protein matrix that's anchoring the aluminum-protein complex to the fiber. Agitate occasionally."
+      "agent": "Controlled Detergent / Family-Specific Professional Spotting",
+      "technique": "Use the mildest source-supported professional path first",
+      "equipment": "Product-labeled detergent or family-specific professional spotter; clean towels",
+      "dwellTime": "Use product-label dwell only; stop on dye movement, ring formation, or texture change",
+      "instruction": "Begin with controlled water/detergent action for sweat/perspiration. Any family-specific professional spotter must remain Pro-only, label-directed, and bounded by fabric test results.",
+      "safetyNote": "Pro-only. Do not expose Home users to pro solvents, acids, oxidizers, concentrated spotters, steam, or exact percentages. Use SDS/label controls, PPE, ventilation, and do not mix incompatible chemistry.",
+      "proOnly": true
     },
     {
       "step": 3,
-      "side": "wet",
-      "agent": "Acid Chelator",
-      "technique": "Soak or spot with acid",
-      "equipment": "Dilute acetic acid 5% aqueous OR citric acid 5% solution",
-      "dwellTime": "15–30 minutes",
-      "instruction": "After enzyme, soak or spot the yellowing area with dilute acetic or citric acid. The weak acid loosens the aluminum salts that the protein-digesting enzyme exposed. Cotton tolerates acids at these concentrations."
-    },
-    {
-      "step": 4,
-      "side": "wet",
-      "agent": "Hydrogen Peroxide 3% + Sun",
-      "technique": "Saturate, dwell, sunlight",
-      "equipment": "3% H₂O₂, outdoor line or sunny window",
-      "dwellTime": "10 minutes wet + 1–2 hours in sunlight",
-      "instruction": "Saturate the yellowed area with 3% H₂O₂. Dwell 10 min wet, then hang in direct sunlight while damp. UV + peroxide oxidize the yellow color. Chronic stains often need 2–3 peroxide + sun cycles across two afternoons."
-    },
-    {
-      "step": 5,
-      "side": "wet",
-      "agent": "NSD Flush + Hot Wash",
-      "technique": "Clear chemistry, launder",
-      "equipment": "NSD, washing machine",
-      "dwellTime": "Full wash cycle",
-      "instruction": "Flush with NSD until rinse runs clear. Launder hot per care label. Sun-dry if possible — extends the fade. Inspect in daylight before the dryer."
+      "side": "rinse",
+      "agent": "Flush, Rinse, and Air-Dry Inspection",
+      "technique": "Flush between products and inspect dry",
+      "equipment": "Water/steam only if fabric and product label permit; drying rack",
+      "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+      "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+      "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Cold flush the armpit area.",
-      "2. Protein Spotter soak in warm water (30–38°C). Overnight for chronic.",
-      "3. Dilute acetic or citric acid soak — 15–30 min, loosens aluminum salts.",
-      "4. 3% H₂O₂ saturate + 1–2 hours in sunlight. 2–3 cycles on chronic yellowing.",
-      "5. NSD flush, hot wash + sun dry."
+      {
+        "step": 1,
+        "side": "assessment",
+        "agent": "Professional Intake and Fabric Testing",
+        "technique": "Care-label, construction, fiber, and colorfastness assessment",
+        "equipment": "Clean white cloth, hidden seam/hem test",
+        "dwellTime": "Stop immediately on transfer or change",
+        "instruction": "Confirm the cotton item is safe for professional wet-side treatment and document Home attempts. Treat sweat/perspiration only within source-supported family guidance, not unsupported exact chemistry claims.",
+        "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles. Use PPE/ventilation required by any product SDS.",
+        "proOnly": true
+      },
+      {
+        "step": 2,
+        "side": "wet",
+        "agent": "Controlled Detergent / Family-Specific Professional Spotting",
+        "technique": "Use the mildest source-supported professional path first",
+        "equipment": "Product-labeled detergent or family-specific professional spotter; clean towels",
+        "dwellTime": "Use product-label dwell only; stop on dye movement, ring formation, or texture change",
+        "instruction": "Begin with controlled water/detergent action for sweat/perspiration. Any family-specific professional spotter must remain Pro-only, label-directed, and bounded by fabric test results.",
+        "safetyNote": "Pro-only. Do not expose Home users to pro solvents, acids, oxidizers, concentrated spotters, steam, or exact percentages. Use SDS/label controls, PPE, ventilation, and do not mix incompatible chemistry.",
+        "proOnly": true
+      },
+      {
+        "step": 3,
+        "side": "rinse",
+        "agent": "Flush, Rinse, and Air-Dry Inspection",
+        "technique": "Flush between products and inspect dry",
+        "equipment": "Water/steam only if fabric and product label permit; drying rack",
+        "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+        "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+        "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+        "proOnly": true
+      }
     ],
     "products": [
-      "Liquid Protein Spotter",
-      "Dilute acetic acid 5% aqueous OR citric acid 5% solution",
-      "Hydrogen Peroxide 3%",
-      "NSD (Neutral Synthetic Detergent)"
+      "Product-labeled professional detergent/family-specific spotting systems only, used per SDS/label"
     ],
-    "temperature": "cold flush; warm (30–38°C) for enzyme; cool through acid + peroxide; hot wash post-chemistry; sun during dry",
+    "temperature": "Cold/cool first for protein-type residue; any warmer professional step only after testing and label review",
     "warnings": [
-      "Never chlorine bleach sweat-stained cotton — darkens the protein lock together",
-      "Enzyme window is warm, not hot",
-      "Chronic stains are patient-removal — set expectations: 2–3 cycles over 1–2 days",
-      "Flush all chemistry before heat — residual oxidizer yellows cotton further"
+      "Pro-only chemistry requires SDS/label controls, PPE, ventilation, hidden-area testing, and flush/rinse/neutralization controls.",
+      "Do not expose Home users to professional-strength acids, solvents, oxidizers, named pro products, exact concentrations, steam, or heat escalation."
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Chlorine Bleach Makes It Worse",
-      "instruction": "This is the one rule most people get backwards. Chlorine bleach (Clorox) is the first thing most home guides recommend for yellow armpit stains on white shirts — and it's the worst thing you can use. Chlorine reacts with the protein + aluminum in sweat stains and DARKENS them, sometimes permanently. Use OxiClean or hydrogen peroxide instead. Never chlorine bleach."
+      "agent": "Care Label and Colorfastness Gate",
+      "instruction": "Check the care label. If the cotton is dry-clean-only, structured, embellished, vintage, high-value, or dye-unstable, stop before wet treatment and use a professional."
     },
     {
       "step": 2,
-      "agent": "Cold Rinse, Both Sides",
-      "instruction": "Rinse the armpit area under cold running water, front and back. The rinse removes fresh sweat and loose antiperspirant. Cold only — warm water sets sweat protein deeper."
+      "agent": "Cool Rinse Fresh Residue",
+      "instruction": "For washable cotton, rinse fresh perspiration residue with cold or cool water. Do not use hot water while protein-type residue may remain."
     },
     {
       "step": 3,
-      "agent": "White Vinegar Soak — 30 Minutes",
-      "instruction": "Fill a basin with warm water + 1 cup white vinegar. Submerge the armpit area and let it soak 30 minutes to 1 hour. The vinegar's mild acidity loosens the aluminum salts that built up from antiperspirant. This is the step most home guides skip, and it's why the yellowing comes back."
+      "agent": "Generic Detergent or Care-Label-Safe Enzyme Detergent",
+      "instruction": "Apply generic liquid laundry detergent. If the care label and product label allow an enzyme detergent or pretreat, use it only as directed and test colored cotton on a hidden seam first."
     },
     {
       "step": 4,
-      "agent": "OxiClean Paste OR Enzyme Pretreat",
-      "instruction": "After the vinegar soak, make a thick paste: 1 scoop OxiClean + just enough warm water to make a spreadable paste. Apply directly to the yellow area, let sit 1–2 hours. For heavier build-up, use an enzyme pretreat (Biz, OxiClean Versatile) dissolved in warm water per the label, soak the area overnight."
+      "agent": "Label-Directed Dwell or Soak",
+      "instruction": "Let detergent or enzyme detergent dwell/soak only for the product-label time. Stop if dye transfers, color changes, or texture changes."
     },
     {
       "step": 5,
-      "agent": "Hydrogen Peroxide 3% + Sunlight",
-      "instruction": "Pour 3% drugstore hydrogen peroxide directly on the yellow area. Hang the shirt in direct sunlight for 1–2 hours while still damp. UV + peroxide fade the yellow color. Chronic stains often need 2–3 rounds of this over a day or two.",
-      "safetyNote": "Never mix hydrogen peroxide with chlorine bleach or ammonia — toxic fume risk. And do NOT use chlorine bleach at any point in this sequence — it darkens sweat stains permanently."
+      "agent": "Care-Label Wash, Then Air-Dry",
+      "instruction": "Wash according to the care label using cool or care-label-safe water. Air-dry completely and inspect before any dryer or iron."
     },
     {
       "step": 6,
-      "agent": "Hot Wash, Line-Dry in Sun",
-      "instruction": "Launder on the hottest setting the care label allows. Line-dry in direct sunlight rather than machine-drying when possible — sunlight keeps fading any residual yellow the peroxide left. Inspect before storing."
-    },
-    {
-      "step": 7,
-      "agent": "Prevent the Recurrence",
-      "instruction": "Sweat stains build up from antiperspirant over many wash cycles. To prevent them: let antiperspirant fully dry before dressing (damp + fabric = stain), switch to aluminum-free deodorant if the yellowing is severe, and wash workout shirts separately in hot water with enzyme detergent every time — never let sweat sit in the fabric in the laundry hamper."
-    },
-    {
-      "step": 8,
-      "agent": "Escalate for Deeply Set Yellowing",
-      "instruction": "If the yellow doesn't fade after two full vinegar + OxiClean + peroxide + sun cycles, the protein-aluminum complex is locked in and home chemistry has plateaued. Take it to a dry cleaner. Tell them: \"Chronic sweat / antiperspirant yellowing on white cotton, treated at home with vinegar soak + OxiClean + 3% hydrogen peroxide + sun. NO chlorine bleach used.\""
+      "agent": "Repeat Once or Escalate",
+      "instruction": "If yellowing or odor is improving, repeat the conservative detergent/enzyme path once. Escalate chronic yellowing, odor after air-drying, dye bleed, texture change, prior strong-chemical damage, or no improvement after two rounds."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. NEVER use chlorine bleach — darkens sweat stains. Use OxiClean or peroxide.",
-      "2. Cold rinse both sides of the armpit area.",
-      "3. White vinegar soak 30 min–1 hour to loosen aluminum salts from antiperspirant.",
-      "4. OxiClean paste 1–2 hours OR enzyme pretreat overnight.",
-      "5. 3% hydrogen peroxide + 1–2 hours direct sunlight. Repeat 2–3 cycles on chronic.",
-      "6. Hot wash, line-dry in sun.",
-      "7. Prevent recurrence: antiperspirant fully dry before dressing; enzyme detergent for workout shirts."
+      "1. Care Label and Colorfastness Gate: Check the care label. If the cotton is dry-clean-only, structured, embellished, vintage, high-value, or dye-unstable, stop before wet treatment and use a professional.",
+      "2. Cool Rinse Fresh Residue: For washable cotton, rinse fresh perspiration residue with cold or cool water. Do not use hot water while protein-type residue may remain.",
+      "3. Generic Detergent or Care-Label-Safe Enzyme Detergent: Apply generic liquid laundry detergent. If the care label and product label allow an enzyme detergent or pretreat, use it only as directed and test colored cotton on a hidden seam first.",
+      "4. Label-Directed Dwell or Soak: Let detergent or enzyme detergent dwell/soak only for the product-label time. Stop if dye transfers, color changes, or texture changes.",
+      "5. Care-Label Wash, Then Air-Dry: Wash according to the care label using cool or care-label-safe water. Air-dry completely and inspect before any dryer or iron.",
+      "6. Repeat Once or Escalate: If yellowing or odor is improving, repeat the conservative detergent/enzyme path once. Escalate chronic yellowing, odor after air-drying, dye bleed, texture change, prior strong-chemical damage, or no improvement after two rounds."
     ],
     "products": [
-      "White vinegar (household)",
-      "OxiClean Versatile",
-      "3% hydrogen peroxide (drugstore brown bottle)",
-      "Enzyme laundry pretreat (Biz, OxiClean Versatile) — optional for heavier build-up"
+      "Cool/cold water",
+      "Generic liquid laundry detergent",
+      "Care-label-safe enzyme-containing laundry detergent or pretreat"
     ],
-    "whenToStop": "Stop if two full vinegar + OxiClean + peroxide + sun cycles don't fade the yellow. Take it to a dry cleaner. Chronic sweat stains can plateau at a faint permanent shadow — professionals have stronger chelators and sometimes reducing bleaches that home chemistry doesn't cover.",
+    "whenToStop": "If yellowing or odor is improving, repeat the conservative detergent/enzyme path once. Escalate chronic yellowing, odor after air-drying, dye bleed, texture change, prior strong-chemical damage, or no improvement after two rounds.",
     "warnings": [
-      "NEVER chlorine bleach sweat stains — darkens them permanently",
-      "Cold water at the flush stage — warm sets protein",
-      "Enzymes die above 50°C — warm water for the pretreat, not hot",
-      "Never mix peroxide with chlorine bleach or ammonia",
-      "Sweat stain removal is a patient process — 2–3 cycles is normal on chronic yellowing"
+      "No dryer, iron, or heat until the stain is gone after air-drying inspection",
+      "Do not mix cleaners",
+      "Do not rub aggressively",
+      "No Home vinegar/acids, peroxide, chlorine bleach, pro spotters, solvents, sunlight/UV claims, or hot-wash default"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never chlorine bleach sweat-yellowing — darkens instead of removing",
-      "Never warm-water flush fresh sweat — sets the protein",
-      "Never layer OxiClean + peroxide + chlorine bleach — toxic fumes",
-      "Never ignore chronic recurrence — the antiperspirant / wash habit is the root cause"
+      "Never put the item in a dryer, use an iron, or apply heat until the stain is gone after air-drying inspection",
+      "Never rub or scrub aggressively; blot, lift, scrape, or gently work only enough to avoid driving soil deeper",
+      "Never mix cleaning agents, bleach, ammonia, acids, solvents, or professional spotters",
+      "Never use chlorine bleach unless the care label allows it and the fabric is white or confirmed colorfast",
+      "Never use professional-strength oxidizers, acids, dry-side solvents, rust/mineral removers, adhesive removers, exact pro percentages, or named pro products in the Home path",
+      "Never use hot water on protein or perspiration residue before the protein path is complete"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates enzymes, acids, OxiClean, 3% H₂O₂, UV sunlight, hot wash",
-      "Dyed cotton: skip or inside-seam-test peroxide",
-      "Heat-durable fiber — the sweat-stain chemistry, not the fiber, is the limiting factor"
-    ]
+      "Cotton is cellulose; washable cotton can generally tolerate generic liquid detergent and care-label laundering",
+      "Colored cotton needs lower-temperature caution and a hidden white-cloth colorfastness test before detergent dwell or any escalation",
+      "White cotton may tolerate more than colored cotton, but this Home path does not assume chlorine, strong peroxide, professional spotters, or hot-water treatment"
+    ],
+    "chemicalBoundaries": [
+      "Home path is limited to cool/cold or care-label-safe lukewarm water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "Care-label-safe enzyme detergent or enzyme pretreat may be used only when both the product label and garment care label allow it; do not generalize enzymes to silk, wool, or protein fibers",
+      "Use detergent or pretreat only according to its product label and only after a hidden-area test on colored fabric",
+      "Oxidizers are not routine Home steps in this repair; any future trace-color escalation must be care-label-safe, white/colorfast, hidden-test-passed, never mixed with other cleaners, and separately sourced",
+      "Professional chemistry is Pro-only and requires SDS/label controls, PPE, ventilation, colorfastness testing, and flush/rinse/neutralization controls"
+    ],
+    "chemicalControls": [
+      "Home path is limited to water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "For perspiration/protein, enzyme detergent is allowed only if the care label and product label allow it, with label-directed dwell/soak and hidden-area testing",
+      "No vinegar/acids, peroxide, chlorine bleach, dry-side solvent, professional tannin spotter, neutral synthetic detergent product claim, branded cleaner claim, or exact pro concentration in the Home path",
+      "Professional chemistry is Pro-only with SDS/label, PPE/ventilation, colorfastness testing, and flush/rinse/neutralization controls"
+    ],
+    "homeAllowed": [
+      "Blot, lift, or gently scrape excess before adding water",
+      "Cool/cold water or care-label-safe lukewarm water",
+      "Generic liquid laundry detergent or heavy-duty liquid laundry detergent",
+      "Care-label-safe enzyme-containing detergent or pretreat used only per product label",
+      "Hidden-area colorfastness test",
+      "Care-label laundering",
+      "Air-dry and inspect before heat"
+    ],
+    "proOnly": [
+      "Professional spotters, dry-side solvents, acids, oxidizers, reducers, concentrated chemistry, steam, and heat escalation require SDS/label controls, PPE, ventilation, flush/rinse/neutralization controls, and documented fabric testing"
+    ],
+    "testFirst": [
+      "Test detergent, warmer water, enzyme detergent, oxidizer escalation, acid spotter, solvent, or any pro chemistry on a hidden seam/hem with a clean white cloth before treating the visible area"
+    ],
+    "colorfastnessTest": "On a hidden seam or hem, press a clean white cloth with the planned detergent/water mix for one minute; stop if dye transfers, color changes, or texture changes.",
+    "flushNeutralizeDry": "Rinse or flush out each cleaning agent before changing products; air-dry fully and inspect before any dryer, iron, heat, or professional escalation.",
+    "temperatureLimits": "Cold/cool first for protein/perspiration residue; use warmer water only if the product label and care label allow it after the protein path is underway. No dryer, iron, or heat until clean.",
+    "escalationTriggers": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, odor after air-drying, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate chronic yellowing not improving after two conservative rounds, odor after air-drying, dye bleed/color loss, texture change, prior chlorine/strong-chemical damage, or valuable/dry-clean-only/structured items"
+    ],
+    "stopAndEscalate": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, odor after air-drying, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate chronic yellowing not improving after two conservative rounds, odor after air-drying, dye bleed/color loss, texture change, prior chlorine/strong-chemical damage, or valuable/dry-clean-only/structured items"
+    ],
+    "ppeVentilation": "For Home detergent use, follow the product label and keep products away from children and pets. For concentrates or Pro chemistry, use gloves/eye protection as the SDS requires and work with ventilation.",
+    "homeVsProBoundary": "Home guidance excludes professional-strength oxidizers, acids, solvents, named pro products, exact pro concentrations, steam, and heat escalation; those belong only in a professional workflow with SDS/label controls.",
+    "sourceConfidence": "medium"
   },
   "materialWarnings": [
-    "NO chlorine bleach on sweat stains — darkens permanently",
-    "Peroxide + sunlight is the fade workhorse for chronic yellowing",
-    "Address the antiperspirant habit or the stain recurs"
+    "Washable cotton only; colored cotton needs hidden-area white-cloth dye-transfer testing",
+    "Protein/perspiration residue starts cold/cool; no heat until gone",
+    "Home path uses generic detergent only; no vinegar/acids, peroxide, chlorine bleach, solvents, sunlight/UV, branded cleaners, or pro spotters"
   ],
   "escalation": {
-    "when": "Two full vinegar + OxiClean + peroxide + sun cycles haven't faded the yellow, or the stain has been chlorine-bleached already (permanent darkening).",
-    "whatToTell": "\"Chronic sweat / antiperspirant yellowing on white cotton. Home-treated with vinegar soak + OxiClean + 3% H₂O₂ + sunlight. [No chlorine bleach used / chlorine bleach was applied before I knew.] [Fade plateaued / accidentally darkened.]\"",
-    "specialistType": "professional dry cleaner"
+    "when": "Escalate chronic yellowing not improving after two conservative rounds, odor after air-drying, dye bleed/color loss, texture change, prior chlorine/strong-chemical damage, or valuable/dry-clean-only/structured items",
+    "whatToTell": "Sweat Stain on Cotton; age of stain; care label/fabric color; whether cool/cold water and generic detergent were used; whether dye transfer, ring/halo, odor, heat exposure, or prior Home chemistry occurred.",
+    "specialistType": "professional textile cleaner or dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How long has the yellowing been building up — weeks, months, longer?",
-      "Has chlorine bleach ever been used on this shirt? (important — that worsens sweat stains)",
-      "What antiperspirant brand / type — aluminum-based or aluminum-free?",
-      "Are workout shirts stored in the hamper before washing?"
+      "How old is the stain?",
+      "Has it been through hot water, a dryer, or an iron?",
+      "Is the cotton washable and colorfast?",
+      "Was any detergent, bleach, acid, peroxide, solvent, or branded cleaner already used?"
     ],
-    "modifierNotes": "Chlorine bleach is the #1 home mistake on this stain class. Chronic sweat-yellowing is a slow-removal problem, not a fast one. The prevention half (aluminum-free deodorant, enzyme detergent, dry-before-dress) matters as much as the removal half."
+    "modifierNotes": "Use only for washable cotton. Chronic yellowing may improve with one repeat conservative detergent/enzyme round, but old or deodorant-complicated yellowing may not fully clear at Home."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "11-21, 28-35, 47-61, 65-79, 83-99, 123-126, 173-177",
+      "evidence": "Consumer stain-family guidance: cold/cool first for protein/unknown stains, tannin and combination stain families, liquid detergent/lukewarm fallback, blot/do not rub, work from the wrong side where appropriate, test first, and do not iron or dry until the stain is removed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "145-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Textile safety/process gates: heat, alkalinity, oxidation, concentration, water/heat mismanagement and rubbing can damage textiles; detergents/surfactants suspend soils; hidden-area testing, product-label following, PPE/ventilation, no incompatible mixes, care-label cleaning and reject/escalate gates.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "169-199, 326-367, 369-381, 492-495, 540-549",
+      "evidence": "Internal cotton/linen safety boundaries, enzyme/protein/oil/tannin/oxidizer controls, colored-fabric testing, no hot water on protein stains, and never-mix chlorine/acids/ammonia safety.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-4S-01",
+      "title": "R.R. Street 4Streets On-the-Spot",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/R.R. Street — 4Streets/On-the-Spot.md",
+      "lines": "48-53, 120-135",
+      "evidence": "Professional classification of perspiration as protein and deodorant/antiperspirant residue as a mixed pro-context issue; hot water can set protein.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-ADC-01",
+      "title": "American Drycleaner Spotting Techniques",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Trade & Media/American Drycleaner/Spotting-Techniques.md",
+      "lines": "18-22, 113-114, 153-159",
+      "evidence": "Trade classification includes perspiration among protein-type stains; pro-context support only.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

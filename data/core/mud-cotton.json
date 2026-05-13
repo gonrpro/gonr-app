@@ -1,15 +1,15 @@
 {
   "id": "mud-cotton",
   "title": "Mud on Cotton",
-  "stainType": "specialty",
-  "stainFamily": "specialty",
+  "stainType": "soil",
+  "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 2,
-  "timeEstimate": "5–20 minutes plus drying time",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "20–45 minutes plus drying time if wet mud is allowed to dry safely",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "mud",
     "surfaceCanonical": "cotton",
@@ -22,174 +22,256 @@
       "dry-first",
       "easy"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Mud is soil particles suspended in water — clay + silt + sand + some organic matter (plant debris, microbes). The particles bond to cotton mechanically, not chemically; water helps them settle between fibers. The #1 rule: LET IT DRY COMPLETELY first. Wet mud grinds deeper and spreads when touched; dry mud flakes off cleanly with a brush. Cotton tolerates NSD, enzymes (for any organic fraction), 3% H₂O₂, and hot wash at room temperature. Most of the 'cleanup' is mechanical.",
-  "whyThisWorks": "Drying + brushing off removes 80–90% of the mud physically, no chemistry needed. What remains is the fine-particle residue plus any organic tint from plant debris or soil microbes. NSD + warm water handles that residue; enzyme pretreat covers any organic component; peroxide clears any residual earth-tone shadow on whites. Resist the urge to rinse fresh mud — it makes the stain bigger.",
-  "defaultAssumption": "Mud on cotton is one of the easiest common stains if the dry-first rule is followed. The typical home-treatment failure is rinsing wet mud immediately, which spreads and grinds particles into the weave.",
+  "stainChemistry": "Mud on cotton is treated conservatively as dirt/dry soil with possible organic or protein components. The evidence supports gentle mechanical removal of loose dry soil and a cool-water detergent path, not one exact chemistry or routine oxidizer/hot-wash treatment.",
+  "whyThisWorks": "Loose dry soil is best lifted mechanically before wet washing when it is safe and practical; cool back-rinsing and detergent then remove remaining water-soluble and suspended soil without grinding particles into the weave. Air-drying before heat confirms the mud is gone.",
+  "defaultAssumption": "Use for washable cotton only. Let wet mud dry only when waiting is safe and practical; do not grind, scrub, or delay if the fabric is delicate, dye-unstable, or valuable.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "dry",
-      "agent": "Let It Dry Completely",
-      "technique": "Hang flat, no touching",
-      "equipment": "Drying surface, patience",
-      "dwellTime": "1–4 hours depending on mud volume",
-      "instruction": "Lay the garment flat in a well-ventilated spot. Let the mud dry completely — do NOT rinse, dab, or rub it while wet. Dry mud flakes off; wet mud smears."
+      "side": "assessment",
+      "agent": "Professional Intake and Testing",
+      "technique": "Care-label, construction, fiber, and colorfastness assessment",
+      "equipment": "Clean white cloth, hidden seam/hem test",
+      "dwellTime": "Stop immediately on transfer or change",
+      "instruction": "Confirm cotton is safe for wet treatment and document any Home attempts. Test colorfastness on a hidden seam or hem before any spotting.",
+      "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles.",
+      "proOnly": true
     },
     {
       "step": 2,
-      "side": "dry",
-      "agent": "Brush + Tap Off",
-      "technique": "Soft brush, shake loose",
-      "equipment": "Stiff-bristle brush or an old toothbrush",
-      "dwellTime": "2–3 minutes",
-      "instruction": "Over a trash can or outside, brush the dried mud off with a stiff brush. Work against the weave to lift particles. Tap the fabric to shake loose dust. 80–90% of the mud leaves in this step alone."
+      "side": "wet",
+      "agent": "Controlled Detergent / Family-Specific Spotting",
+      "technique": "Use the mildest source-supported professional path first",
+      "equipment": "Product-labeled detergent or family-specific spotter; clean towels",
+      "dwellTime": "Use product-label dwell only; stop on dye movement or texture change",
+      "instruction": "Treat mud on cotton as a dry soil plus possible organic/protein component stain and begin with controlled detergent/water action before any stronger chemistry. Keep chemistry bounded by SDS/label and fabric test results.",
+      "safetyNote": "Pro-only. Use PPE/ventilation required by product SDS; do not expose Home users to pro solvents, acids, oxidizers, or concentrated spotters.",
+      "proOnly": true
     },
     {
       "step": 3,
-      "side": "wet",
-      "agent": "NSD",
-      "technique": "Emulsify residual soil",
-      "equipment": "NSD in warm water",
-      "dwellTime": "3–5 minutes",
-      "instruction": "Apply NSD, work with a soft brush. Clears residual fine-particle soil and any light organic tint."
-    },
-    {
-      "step": 4,
-      "side": "wet",
-      "agent": "Enzyme Pretreat (If Organic Tint Remains)",
-      "technique": "Enzyme pass for plant/microbial residue",
-      "equipment": "Enzyme pretreat OR Liquid Protein Spotter if heavy organic",
-      "dwellTime": "10–15 minutes",
-      "instruction": "If mud contained grass, leaf fragments, or microbial residue (common in yard mud), an enzyme pretreat handles the organic component. Skip if the mud was clean clay / sand."
-    },
-    {
-      "step": 5,
-      "side": "wet",
-      "agent": "Hot Wash",
-      "technique": "Launder per care label",
-      "equipment": "Washing machine",
-      "dwellTime": "Full wash cycle",
-      "instruction": "Launder hot per care label."
+      "side": "rinse",
+      "agent": "Flush, Rinse, and Air-Dry Inspection",
+      "technique": "Flush between products and inspect dry",
+      "equipment": "Water/steam only if fabric and product label permit; drying rack",
+      "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+      "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+      "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Let mud dry completely — never treat wet.",
-      "2. Brush + tap off. Removes 80–90% mechanically.",
-      "3. NSD for residual fine-particle soil.",
-      "4. Enzyme pretreat if organic (grass, leaves) was in the mud.",
-      "5. Hot wash per care label."
+      {
+        "step": 1,
+        "side": "assessment",
+        "agent": "Professional Intake and Testing",
+        "technique": "Care-label, construction, fiber, and colorfastness assessment",
+        "equipment": "Clean white cloth, hidden seam/hem test",
+        "dwellTime": "Stop immediately on transfer or change",
+        "instruction": "Confirm cotton is safe for wet treatment and document any Home attempts. Test colorfastness on a hidden seam or hem before any spotting.",
+        "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles.",
+        "proOnly": true
+      },
+      {
+        "step": 2,
+        "side": "wet",
+        "agent": "Controlled Detergent / Family-Specific Spotting",
+        "technique": "Use the mildest source-supported professional path first",
+        "equipment": "Product-labeled detergent or family-specific spotter; clean towels",
+        "dwellTime": "Use product-label dwell only; stop on dye movement or texture change",
+        "instruction": "Treat mud on cotton as a dry soil plus possible organic/protein component stain and begin with controlled detergent/water action before any stronger chemistry. Keep chemistry bounded by SDS/label and fabric test results.",
+        "safetyNote": "Pro-only. Use PPE/ventilation required by product SDS; do not expose Home users to pro solvents, acids, oxidizers, or concentrated spotters.",
+        "proOnly": true
+      },
+      {
+        "step": 3,
+        "side": "rinse",
+        "agent": "Flush, Rinse, and Air-Dry Inspection",
+        "technique": "Flush between products and inspect dry",
+        "equipment": "Water/steam only if fabric and product label permit; drying rack",
+        "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+        "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+        "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+        "proOnly": true
+      }
     ],
     "products": [
-      "Stiff-bristle brush or old toothbrush",
-      "NSD (Neutral Synthetic Detergent)",
-      "Enzyme pretreat (optional, for organic-heavy mud)"
+      "Product-labeled professional detergent/soil-removal systems only, used per SDS/label"
     ],
-    "temperature": "dry through mechanical phase; warm NSD; hot wash post-chemistry",
+    "temperature": "Cool first; any warmer professional laundering only after care-label and colorfastness checks",
     "warnings": [
-      "Never rinse wet mud — spreads particles + grinds into weave",
-      "Brush outside or over a trash can — fine dust scatters",
-      "Red clay / iron-rich mud may leave a rust-like tint; treat with a dilute acid rinse if needed"
+      "Pro-only escalation requires SDS/label controls, PPE, ventilation, and fabric testing. Avoid routine oxidizer layering and heat-first treatment."
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Let the Mud Dry — Don't Rinse It",
-      "instruction": "This is the single most important rule for mud: LEAVE IT ALONE until it's completely dry. Do NOT rinse, dab, or scrub wet mud — that spreads the particles and grinds them into the fabric. Hang the garment flat somewhere ventilated and wait 1–4 hours. Patience here saves you the hardest part."
+      "agent": "Care Label and Practical Drying Check",
+      "instruction": "Check the care label. If wet mud can safely wait, let it dry so loose soil can be lifted. If waiting risks dye movement, odor, or damage, skip to cool back-rinsing and escalate if uncertain."
     },
     {
       "step": 2,
-      "agent": "Brush Dry Mud Off Outside",
-      "instruction": "Take the garment outside (or over a trash can). Use a stiff-bristle brush or an old toothbrush and brush the dried mud off in short strokes against the weave. Tap the fabric to shake loose fine dust. Most of the mud comes off here — you'll be surprised how much."
+      "agent": "Gently Lift Loose Dry Soil",
+      "instruction": "Shake outside or use a soft brush/spoon edge to lift loose dry mud. Work lightly and avoid grinding particles into the cotton."
     },
     {
       "step": 3,
-      "agent": "Dawn + Warm Water for Residue",
-      "instruction": "What's left is fine-particle residue plus maybe a faint earth-tone shadow. Work a drop of Dawn dish soap into the spot with a soft toothbrush, rinse warm. Repeat if a shadow remains."
+      "agent": "Cool Back-Rinse if Washable",
+      "instruction": "Rinse from the back with cool water if the care label allows washing. Do not start with hot water and do not scrub."
     },
     {
       "step": 4,
-      "agent": "OxiClean Soak for Stubborn Shadow",
-      "instruction": "If a brown shadow is still visible after the Dawn pass (often from organic matter in yard mud), dissolve 1 scoop OxiClean in 1 cup warm water, soak the spot 15–30 min, rinse.",
-      "safetyNote": "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide — one oxidizer at a time."
+      "agent": "Generic Liquid Detergent",
+      "instruction": "Apply a small amount of generic liquid laundry detergent. For colored cotton, test on a hidden seam with a clean white cloth first and stop if dye transfers."
     },
     {
       "step": 5,
-      "agent": "Hot Wash, Inspect Before the Dryer",
-      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. If any shadow remains, repeat Dawn / OxiClean first."
+      "agent": "Care-Label Wash and Air-Dry",
+      "instruction": "Wash according to the care label. Air-dry and inspect before any dryer or iron."
     },
     {
       "step": 6,
-      "agent": "Red Clay? One Extra Step",
-      "instruction": "If the mud was red clay (Southeastern US soil, for instance), there may be a rust-like tint from iron content. Dab a few drops of lemon juice or dilute white vinegar on it for 3 minutes, rinse cool. The mild acid converts the iron to a soluble form. Re-wash if needed."
-    },
-    {
-      "step": 7,
-      "agent": "Escalate Rarely",
-      "instruction": "Mud rarely requires a professional — dry-and-brush handles most cases. If the mud has been run through a hot dryer (particles locked into the fiber) and two home rounds didn't clear it, take to a dry cleaner. Tell them: \"Mud on cotton, age [fresh / dried / washed-through], home-treated with dry brush + Dawn + OxiClean + [lemon juice for red clay].\""
+      "agent": "Repeat Once or Escalate",
+      "instruction": "If soil remains but is improving, repeat the conservative loose-soil/detergent path once. Escalate for embedded mud, abrasion/fuzzing, dye transfer, ring formation, structured items, or no improvement after two rounds."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. LET MUD DRY completely — do not rinse, dab, or scrub wet mud.",
-      "2. Brush + tap dried mud off outside or over a trash can.",
-      "3. Dawn + warm water for residue.",
-      "4. OxiClean soak 15–30 min if brown shadow remains.",
-      "5. Hot wash per care label. Inspect BEFORE the dryer.",
-      "6. Red clay: extra lemon juice / vinegar step for iron tint.",
-      "7. Escalate rarely — mostly unneeded."
+      "1. Care Label and Practical Drying Check: Check the care label. If wet mud can safely wait, let it dry so loose soil can be lifted. If waiting risks dye movement, odor, or damage, skip to cool back-rinsing and escalate if uncertain.",
+      "2. Gently Lift Loose Dry Soil: Shake outside or use a soft brush/spoon edge to lift loose dry mud. Work lightly and avoid grinding particles into the cotton.",
+      "3. Cool Back-Rinse if Washable: Rinse from the back with cool water if the care label allows washing. Do not start with hot water and do not scrub.",
+      "4. Generic Liquid Detergent: Apply a small amount of generic liquid laundry detergent. For colored cotton, test on a hidden seam with a clean white cloth first and stop if dye transfers.",
+      "5. Care-Label Wash and Air-Dry: Wash according to the care label. Air-dry and inspect before any dryer or iron.",
+      "6. Repeat Once or Escalate: If soil remains but is improving, repeat the conservative loose-soil/detergent path once. Escalate for embedded mud, abrasion/fuzzing, dye transfer, ring formation, structured items, or no improvement after two rounds."
     ],
     "products": [
-      "Time + patience (drying phase)",
-      "Stiff-bristle brush or old toothbrush",
-      "Dawn dish soap",
-      "OxiClean Versatile",
-      "Lemon juice OR white vinegar (red clay only)"
+      "Generic liquid laundry detergent"
     ],
-    "whenToStop": "Stop if mud has been hot-dried into the fiber and home chemistry doesn't clear the shadow.",
+    "whenToStop": "Stop on embedded mud that will not lift, dye transfer, abrasion/fuzzing, ring formation, dry-clean-only/structured items, or no improvement after two conservative rounds.",
     "warnings": [
-      "NEVER rinse wet mud — spreads and grinds",
-      "Brush outside — fine dust scatters",
-      "Never mix OxiClean with chlorine bleach or hydrogen peroxide",
-      "Red clay iron content may need a separate acid step"
+      "Do not grind mud into cotton",
+      "Cool water first for possible organic/protein components",
+      "No routine Home oxidizer, peroxide, branded oxygen bleach, hot wash, or pro chemistry"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never rinse or rub wet mud — grinds into weave",
-      "Never skip the brush-off — skipping doubles the chemistry work",
-      "Never layer oxidizers",
-      "Never hot-dry until the mud is fully gone"
+      "Never put the item in a dryer, use an iron, or apply heat until the stain is gone after air-drying inspection",
+      "Never rub or scrub aggressively; blot, lift, or gently work only enough to avoid driving soil deeper",
+      "Never mix cleaning agents, bleach, ammonia, acids, solvents, or professional spotters",
+      "Never use chlorine bleach unless the care label allows it and the fabric is white or confirmed colorfast",
+      "Never use professional-strength oxidizers, acids, dry-side solvents, rust/mineral removers, adhesive removers, or named pro products in the Home path",
+      "Never grind or scrub mud into the weave",
+      "Never use hot water as the first step for mud with possible organic/protein components",
+      "Never layer oxidizers or use branded oxygen bleach/peroxide as a routine Home mud step"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates NSD, enzymes, OxiClean, 3% H₂O₂, hot wash",
-      "Dyed cotton: no peroxide needed usually",
-      "Heat-durable once mud is cleared"
-    ]
+      "Cotton is cellulose; white cotton may tolerate more laundering than colored cotton",
+      "Colored cotton requires a hidden seam dye-transfer/colorfastness test and lower-temperature caution"
+    ],
+    "chemicalBoundaries": [
+      "Home path is limited to water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "Use any detergent, enzyme detergent, or pretreat only according to its product label and only after a hidden-area test on colored fabric",
+      "Oxidizers are not routine Home steps; any trace-color escalation must be care-label-safe, white/colorfast, hidden-test-passed, and never mixed with other cleaners",
+      "Professional chemistry is Pro-only and requires SDS/label controls, PPE, ventilation, colorfastness testing, and flush/rinse controls",
+      "Home mud path is mechanical loose-soil removal plus generic detergent/care-label wash only",
+      "No routine Home oxidizer, peroxide, branded oxygen bleach, solvent, or professional soil-removal chemistry"
+    ],
+    "chemicalControls": [
+      "Home path is limited to water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "Use any detergent, enzyme detergent, or pretreat only according to its product label and only after a hidden-area test on colored fabric",
+      "Oxidizers are not routine Home steps; any trace-color escalation must be care-label-safe, white/colorfast, hidden-test-passed, and never mixed with other cleaners",
+      "Professional chemistry is Pro-only and requires SDS/label controls, PPE, ventilation, colorfastness testing, and flush/rinse controls",
+      "Home mud path is mechanical loose-soil removal plus generic detergent/care-label wash only",
+      "No routine Home oxidizer, peroxide, branded oxygen bleach, solvent, or professional soil-removal chemistry"
+    ],
+    "homeAllowed": [
+      "Cool/cold water or care-label-safe lukewarm water",
+      "Generic liquid laundry detergent or heavy-duty liquid laundry detergent",
+      "Hidden-area colorfastness test",
+      "Care-label laundering",
+      "Air-dry and inspect before heat"
+    ],
+    "proOnly": [
+      "Professional spotters, dry-side solvents, acids, oxidizers, reducers, concentrated chemistry, steam, and heat escalation require SDS/label controls, PPE, ventilation, flush/rinse controls, and documented fabric testing"
+    ],
+    "testFirst": [
+      "Test detergent, warmer water, enzyme detergent, oxidizer escalation, alcohol/solvent, acid spotter, or any pro chemistry on a hidden seam/hem with a clean white cloth before treating the visible area"
+    ],
+    "colorfastnessTest": "On a hidden seam or hem, press a clean white cloth with the planned detergent/water mix for one minute; stop if dye transfers, color changes, or texture changes.",
+    "flushNeutralizeDry": "Rinse or flush out each cleaning agent before changing products; air-dry fully and inspect before any dryer, iron, heat, or professional escalation.",
+    "temperatureLimits": "Cool/cold first for mud because it can include organic/protein components; use warmer water only if care label allows after loose soil is removed and stain is improving.",
+    "escalationTriggers": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate embedded mud, dye transfer, abrasion/fuzzing, ring formation, structured/dry-clean-only items, or no improvement after two rounds"
+    ],
+    "stopAndEscalate": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate embedded mud, dye transfer, abrasion/fuzzing, ring formation, structured/dry-clean-only items, or no improvement after two rounds"
+    ],
+    "ppeVentilation": "For Home detergent use, follow the product label and keep products away from children and pets. For concentrates or Pro chemistry, use gloves/eye protection as the SDS requires and work with ventilation.",
+    "homeVsProBoundary": "Home guidance excludes professional-strength oxidizers, acids, solvents, named pro products, exact pro concentrations, steam, and heat escalation; those belong only in a professional workflow with SDS/label controls.",
+    "sourceConfidence": "medium"
   },
   "materialWarnings": [
-    "LET MUD DRY before treating",
-    "Brush outside — dust scatters",
-    "Red clay has iron — separate treatment"
+    "Avoid grinding mud into cotton",
+    "Colored cotton needs hidden-area dye-transfer testing",
+    "No dryer/iron until air-dry inspection shows mud is gone"
   ],
   "escalation": {
-    "when": "Mud has been hot-dried into the fabric AND home round didn't clear it (rare).",
-    "whatToTell": "\"Mud on cotton, age [fresh / dried / washed-through], home-treated with dry brush + Dawn + OxiClean + [lemon juice for red clay].\"",
-    "specialistType": "professional dry cleaner"
+    "when": "Stop on embedded mud that will not lift, dye transfer, abrasion/fuzzing, ring formation, dry-clean-only/structured items, or no improvement after two conservative rounds.",
+    "whatToTell": "Mud on cotton; whether it was wet or dried before treatment; whether loose soil was lifted; detergent used; any dye transfer, abrasion, ring, or remaining embedded soil.",
+    "specialistType": "professional textile cleaner or dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the mud fresh or dried already?",
-      "What kind of mud — garden / yard / red clay / construction?",
-      "Has it been through a hot dryer?",
-      "Is the cotton white, light, or dark/dyed?"
+      "Is the mud still wet or already dry?",
+      "Is the cotton white or colored?",
+      "Has anyone scrubbed it or put it in the dryer?",
+      "Is there embedded grit, fuzzing, or a ring?"
     ],
-    "modifierNotes": "Mud is the stain where PATIENCE > chemistry. Drying + brushing is the whole game. Red clay's iron content is the only real variant that changes treatment."
+    "modifierNotes": "Use dry-soil-first language conservatively; do not claim wetting is always wrong."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "11-32, 34-61, 65-79, 83-99, 105-113",
+      "evidence": "Consumer stain-family guidance for protein, tannin, oil, combination and unknown stains; blot rather than rub, work from the wrong side where appropriate, test first, and do not iron or dry until the stain is removed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "145-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Safety and process gates: heat, concentration, oxidation, abrasion and mismanaged water can damage textiles; detergents/surfactants suspend oily soils; test hidden areas, follow product labels, ventilate, use PPE for concentrates, avoid incompatible mixes, and clean only according to care label or reject/escalate.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "169-199, 326-367, 445-449, 484-495, 540-549",
+      "evidence": "Internal cotton/linen safety boundaries; protein, oil, tannin and oxidizer controls; dry-side solvent/pro chemistry boundaries; no hot water on protein stains; never mix chlorine bleach with ammonia or acids.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-4S-01",
+      "title": "R.R. Street 4Streets On-the-Spot",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/R.R. Street — 4Streets/On-the-Spot.md",
+      "lines": "22-36, 48-53, 128-146",
+      "evidence": "Professional classification and operator workflow context for food/beverage, oil, tannin, protein and combination stains; pro-only product taxonomy.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

@@ -5,11 +5,11 @@
   "stainFamily": "oil",
   "surface": "linen",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 4,
-  "timeEstimate": "20–40 minutes; powder + Dawn, AIR-DRY FLAT, structured = pro",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "20–40 minutes for washable unstructured linen; longer if oil has aged",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "olive-oil",
     "surfaceCanonical": "linen",
@@ -25,146 +25,276 @@
       "structured-fork",
       "air-dry-flat"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Olive oil on linen follows the same protocol as cotton (powder + Dawn) but with two linen-specific complications: (1) structured / lined / dry-clean-only / vintage linen warps under wet handling — pro from minute one, and (2) linen wrinkles aggressively when wet, so AIR-DRY FLAT is non-negotiable (hanging stretches the fiber). Recurring traps stay the same: water-first instead of powder-first (spreads oil), and hot dryer with residual oil (locks it as permanent yellow shadow).",
-  "whyThisWorks": "Powder preload pulls bulk oil up before water spreads it. Dawn emulsifies the olive oil. Cool wash plus AIR-DRY FLAT locks nothing. Linen's natural wrinkle behavior means the flat-dry step matters more than on cotton.",
-  "scienceNote": "Mechanism (pro-facing): olive oil is mostly oleic acid (monounsaturated triglyceride). Linen is cellulose, similar to cotton — tolerates Dawn + cool wash. Pro uses POG / petroleum ether for oil + NSD on structured linen.",
-  "defaultAssumption": "Cooking spatter or salad dressing drip on a simple flat washable linen napkin / shirt / tablecloth. Structured / lined / vintage linen = pro.",
+  "stainChemistry": "Olive oil is treated as an oil/fat stain. Detergent/surfactant pretreat is source-backed, but linen handling must be bounded to washable, unstructured, colorfast items. Home guidance excludes branded detergent claims and professional solvents/acids.",
+  "whyThisWorks": "Blotting removes excess oil without spreading it. Generic liquid or heavy-duty laundry detergent supplies surfactants that help suspend oily soil so care-label laundering can carry it away. Air-drying before heat prevents residual oil from setting or darkening.",
+  "scienceNote": "This card does not claim all linen blends behave the same. Rayon blends, structured/valuable linen, vintage pieces, unstable dyes, and dry-clean-only construction require professional review.",
+  "defaultAssumption": "Use only for washable, unstructured linen or flat linen goods. Escalate dry-clean-only, lined, structured, embellished, vintage, high-value, or unstable-dye linen.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "dry",
-      "agent": "Care Label Triage + Powder Preload",
-      "technique": "Pro check + powder absorb",
-      "equipment": "Care label, cornstarch / baking soda",
-      "dwellTime": "20–30 minutes",
-      "instruction": "Dry-clean-only / structured / lined / vintage linen = pro. Simple flat washable linen: cover oil spot with cornstarch / baking soda. 20–30 min absorb. Soft-brush off."
+      "side": "assessment",
+      "agent": "Professional Intake and Testing",
+      "technique": "Care-label, construction, fiber, and colorfastness assessment",
+      "equipment": "Clean white cloth, hidden seam/hem test",
+      "dwellTime": "Stop immediately on transfer or change",
+      "instruction": "Confirm linen is safe for wet treatment and document any Home attempts. Test colorfastness on a hidden seam or hem before any spotting.",
+      "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
-      "technique": "Emulsify oil",
-      "equipment": "Dawn + cool water, soft toothbrush",
-      "dwellTime": "10 minutes",
-      "instruction": "Generous Dawn directly. Soft toothbrush 10 min. Cool damp-cloth rinse."
+      "agent": "Controlled Detergent / Family-Specific Spotting",
+      "technique": "Use the mildest source-supported professional path first",
+      "equipment": "Product-labeled detergent or family-specific spotter; clean towels",
+      "dwellTime": "Use product-label dwell only; stop on dye movement or texture change",
+      "instruction": "Treat olive oil on linen as a oil/fat stain and begin with controlled detergent/water action before any stronger chemistry. Keep chemistry bounded by SDS/label and fabric test results.",
+      "safetyNote": "Pro-only. Use PPE/ventilation required by product SDS; do not expose Home users to pro solvents, acids, oxidizers, or concentrated spotters.",
+      "proOnly": true
     },
     {
       "step": 3,
-      "side": "wet",
-      "agent": "Cool Wash + AIR-DRY Flat",
-      "technique": "Heat-free finish, lay flat",
-      "equipment": "Washing machine, cool water, drying rack",
-      "dwellTime": "Cool cycle + AIR-DRY flat",
-      "instruction": "Cool machine wash. AIR-DRY FLAT — linen wrinkles aggressively when hung wet. Inspect dry. NEVER hot dryer with residual oil."
+      "side": "rinse",
+      "agent": "Flush, Rinse, and Air-Dry Inspection",
+      "technique": "Flush between products and inspect dry",
+      "equipment": "Water/steam only if fabric and product label permit; drying rack",
+      "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+      "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+      "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Care label triage — structured / vintage = pro.",
-      "2. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
-      "3. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
-      "4. Cool wash + AIR-DRY flat. No heat with residual oil."
+      {
+        "step": 1,
+        "side": "assessment",
+        "agent": "Professional Intake and Testing",
+        "technique": "Care-label, construction, fiber, and colorfastness assessment",
+        "equipment": "Clean white cloth, hidden seam/hem test",
+        "dwellTime": "Stop immediately on transfer or change",
+        "instruction": "Confirm linen is safe for wet treatment and document any Home attempts. Test colorfastness on a hidden seam or hem before any spotting.",
+        "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles.",
+        "proOnly": true
+      },
+      {
+        "step": 2,
+        "side": "wet",
+        "agent": "Controlled Detergent / Family-Specific Spotting",
+        "technique": "Use the mildest source-supported professional path first",
+        "equipment": "Product-labeled detergent or family-specific spotter; clean towels",
+        "dwellTime": "Use product-label dwell only; stop on dye movement or texture change",
+        "instruction": "Treat olive oil on linen as a oil/fat stain and begin with controlled detergent/water action before any stronger chemistry. Keep chemistry bounded by SDS/label and fabric test results.",
+        "safetyNote": "Pro-only. Use PPE/ventilation required by product SDS; do not expose Home users to pro solvents, acids, oxidizers, or concentrated spotters.",
+        "proOnly": true
+      },
+      {
+        "step": 3,
+        "side": "rinse",
+        "agent": "Flush, Rinse, and Air-Dry Inspection",
+        "technique": "Flush between products and inspect dry",
+        "equipment": "Water/steam only if fabric and product label permit; drying rack",
+        "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+        "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+        "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+        "proOnly": true
+      }
     ],
     "products": [
-      "Cornstarch / baking soda",
-      "Dawn / NSD",
-      "Cool water"
+      "Product-labeled professional oil/detergent systems only, used per SDS/label"
     ],
-    "temperature": "cool throughout — heat-locks residual oil",
+    "temperature": "Cool or care-label-safe lukewarm; professional heat only if care label, construction, and test results permit",
     "warnings": [
-      "Structured / lined / vintage linen = pro from minute one",
-      "Powder BEFORE water — water-first spreads oil",
-      "NEVER hot dryer with residual oil — yellow shadow",
-      "Linen air-dries FLAT — hanging stretches the fiber"
+      "Pro-only oil/solvent path requires SDS/label controls, gloves/eye protection, ventilation, linen hem test, and flush/rinse controls."
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Powder First, Dawn Second, AIR-DRY Flat",
-      "instruction": "Olive oil on linen follows the same powder + Dawn sequence as cotton, with two linen-specific notes: structured / lined / dry-clean-only / vintage linen goes to pro from minute one, and linen wrinkles aggressively when wet so AIR-DRY FLAT is non-negotiable. Two hard rules: powder BEFORE water (water-first spreads oil into a wider ring), and NO hot dryer with residual oil (locks it as a permanent yellow shadow)."
+      "agent": "Care Label and Linen Construction Check",
+      "instruction": "Confirm the linen is washable and unstructured. Stop for dry-clean-only, lined, structured, embellished, vintage, high-value, or unstable-dye linen."
     },
     {
       "step": 2,
-      "agent": "Care Label Check",
-      "instruction": "Find the care tag. Dry-clean-only / structured / lined / vintage linen = pro. Simple flat washable linen (napkin, plain shirt, basic tablecloth) = home candidate."
+      "agent": "Blot or Lift Excess Oil",
+      "instruction": "Blot with a clean white cloth or lift excess oil gently. Do not rub and do not spread the oil halo."
     },
     {
       "step": 3,
-      "agent": "Cornstarch or Baking Soda — 20 to 30 Minutes",
-      "instruction": "Cover the oil spot with cornstarch or baking soda. Press gently. 20 to 30 minutes. Soft-brush off."
+      "agent": "Hidden Hem Test",
+      "instruction": "On colored linen, test a small amount of detergent and cool water on a hidden hem with a clean white cloth. Stop if color transfers or texture changes."
     },
     {
       "step": 4,
-      "agent": "Dawn Pretreat — Generous, Cool, 10 Minutes",
-      "instruction": "Generous Dawn dish soap directly on the spot. Soft toothbrush 10 minutes. Cool damp-cloth rinse."
+      "agent": "Generic Liquid or Heavy-Duty Detergent",
+      "instruction": "Apply a small amount of generic liquid laundry detergent or heavy-duty liquid laundry detergent to the oily area. Work it in gently with a fingertip or soft cloth; do not scrub."
     },
     {
       "step": 5,
-      "agent": "Cool Wash and AIR-DRY FLAT",
-      "instruction": "Cool machine wash with normal detergent. AIR-DRY FLAT — linen wrinkles aggressively when wet, hanging stretches the fiber. Inspect dry. NEVER hot dryer with residual oil — heat polymerizes the oil into the linen as a permanent yellow shadow."
+      "agent": "Cool/Lukewarm Care-Label Wash",
+      "instruction": "Wash according to the care label using cool or care-label-safe lukewarm water. Avoid hot water unless the care label clearly permits it and the fabric is stable."
+    },
+    {
+      "step": 6,
+      "agent": "Air-Dry and Inspect",
+      "instruction": "Air-dry flat or as the care label directs. Inspect before any dryer or iron. Repeat once if improving; escalate for spreading halo, ring, dye bleed, texture change, or no improvement."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Structured / lined / vintage linen = pro from minute one.",
-      "2. Cornstarch / baking soda preload 20–30 min, soft-brush off.",
-      "3. Generous Dawn pretreat, cool, 10 min, soft toothbrush.",
-      "4. Cool wash + AIR-DRY FLAT.",
-      "5. Repeat Dawn pass if yellow shadow remains."
+      "1. Care Label and Linen Construction Check: Confirm the linen is washable and unstructured. Stop for dry-clean-only, lined, structured, embellished, vintage, high-value, or unstable-dye linen.",
+      "2. Blot or Lift Excess Oil: Blot with a clean white cloth or lift excess oil gently. Do not rub and do not spread the oil halo.",
+      "3. Hidden Hem Test: On colored linen, test a small amount of detergent and cool water on a hidden hem with a clean white cloth. Stop if color transfers or texture changes.",
+      "4. Generic Liquid or Heavy-Duty Detergent: Apply a small amount of generic liquid laundry detergent or heavy-duty liquid laundry detergent to the oily area. Work it in gently with a fingertip or soft cloth; do not scrub.",
+      "5. Cool/Lukewarm Care-Label Wash: Wash according to the care label using cool or care-label-safe lukewarm water. Avoid hot water unless the care label clearly permits it and the fabric is stable.",
+      "6. Air-Dry and Inspect: Air-dry flat or as the care label directs. Inspect before any dryer or iron. Repeat once if improving; escalate for spreading halo, ring, dye bleed, texture change, or no improvement."
     ],
     "products": [
-      "Cornstarch / baking soda",
-      "Dawn dish soap (generous)",
-      "Cool water"
+      "Generic liquid laundry detergent",
+      "Generic heavy-duty liquid laundry detergent"
     ],
-    "whenToStop": "Stop on dry-clean-only / structured / lined / vintage linen (pro). Stop if hot dryer was used on residual oil (often permanent yellow shadow). Stop after 3 home cycles plateau.",
+    "whenToStop": "Escalate spreading oil halo, ring formation, dye bleed, texture change, structured/valuable/vintage/dry-clean-only linen, unstable dye, or no improvement after one or two detergent attempts.",
     "warnings": [
-      "Structured / vintage linen = pro from minute one",
-      "Powder BEFORE water — water-first spreads oil",
-      "NEVER hot dryer with residual oil",
-      "Linen air-dries FLAT — hanging stretches",
-      "Aged hot-dried yellowing sometimes plateaus"
+      "Washable unstructured linen only",
+      "No branded detergent framing",
+      "No Home dry-side solvents, concentrated acids, strong alkali, or professional oil removers",
+      "No heat until oil is gone"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never water-first on oil — spreads it",
-      "Never hot dryer with residual oil — yellow shadow",
-      "Never iron over a yellow shadow — sets it",
-      "Never hang wet linen — stretches"
+      "Never put the item in a dryer, use an iron, or apply heat until the stain is gone after air-drying inspection",
+      "Never rub or scrub aggressively; blot, lift, or gently work only enough to avoid driving soil deeper",
+      "Never mix cleaning agents, bleach, ammonia, acids, solvents, or professional spotters",
+      "Never use chlorine bleach unless the care label allows it and the fabric is white or confirmed colorfast",
+      "Never use professional-strength oxidizers, acids, dry-side solvents, rust/mineral removers, adhesive removers, or named pro products in the Home path",
+      "Never use chlorine bleach on colored linen",
+      "Never apply hot water, steam, hot dryer, or iron to linen with residual oil",
+      "Never use dry-side solvents, concentrated acids, strong alkali, or professional oil removers in the Home path"
     ],
     "fiberSensitivities": [
-      "Simple flat washable linen: tolerates Dawn + cool wash",
-      "Structured / lined linen: pro — wet handling warps",
-      "Vintage linen: pro — fiber fragility",
-      "Linen-cotton blend: same protocol",
-      "Linen-rayon blend: pro — rayon doesn't tolerate aggressive Dawn"
-    ]
+      "Linen is cellulose/flax; colored linen needs controlled temperature and a hidden hem/colorfastness test",
+      "Structured, lined, embellished, vintage, high-value, dry-clean-only, or unstable-dye linen can distort, bleed, or lose finish under wet treatment and should route to Pro",
+      "Avoid abrasion and over-wetting structured linen"
+    ],
+    "chemicalBoundaries": [
+      "Home path is limited to water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "Use any detergent, enzyme detergent, or pretreat only according to its product label and only after a hidden-area test on colored fabric",
+      "Oxidizers are not routine Home steps; any trace-color escalation must be care-label-safe, white/colorfast, hidden-test-passed, and never mixed with other cleaners",
+      "Professional chemistry is Pro-only and requires SDS/label controls, PPE, ventilation, colorfastness testing, and flush/rinse controls",
+      "Home oil path is generic liquid/heavy-duty laundry detergent only; oxidizers are not needed for the oil Home path",
+      "Professional solvent or stronger oil chemistry is Pro-only with SDS/label, PPE/ventilation, linen hem test, and flush/rinse controls"
+    ],
+    "chemicalControls": [
+      "Home path is limited to water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "Use any detergent, enzyme detergent, or pretreat only according to its product label and only after a hidden-area test on colored fabric",
+      "Oxidizers are not routine Home steps; any trace-color escalation must be care-label-safe, white/colorfast, hidden-test-passed, and never mixed with other cleaners",
+      "Professional chemistry is Pro-only and requires SDS/label controls, PPE, ventilation, colorfastness testing, and flush/rinse controls",
+      "Home oil path is generic liquid/heavy-duty laundry detergent only; oxidizers are not needed for the oil Home path",
+      "Professional solvent or stronger oil chemistry is Pro-only with SDS/label, PPE/ventilation, linen hem test, and flush/rinse controls"
+    ],
+    "homeAllowed": [
+      "Cool/cold water or care-label-safe lukewarm water",
+      "Generic liquid laundry detergent or heavy-duty liquid laundry detergent",
+      "Hidden-area colorfastness test",
+      "Care-label laundering",
+      "Air-dry and inspect before heat"
+    ],
+    "proOnly": [
+      "Professional spotters, dry-side solvents, acids, oxidizers, reducers, concentrated chemistry, steam, and heat escalation require SDS/label controls, PPE, ventilation, flush/rinse controls, and documented fabric testing"
+    ],
+    "testFirst": [
+      "Test detergent, warmer water, enzyme detergent, oxidizer escalation, alcohol/solvent, acid spotter, or any pro chemistry on a hidden seam/hem with a clean white cloth before treating the visible area"
+    ],
+    "colorfastnessTest": "On a hidden seam or hem, press a clean white cloth with the planned detergent/water mix for one minute; stop if dye transfers, color changes, or texture changes.",
+    "flushNeutralizeDry": "Rinse or flush out each cleaning agent before changing products; air-dry fully and inspect before any dryer, iron, heat, or professional escalation.",
+    "temperatureLimits": "Use cool or care-label-safe lukewarm water on washable linen; no hot water, steam, dryer, or iron until residual oil is gone and the fabric has air-dried for inspection.",
+    "escalationTriggers": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate spreading oil halo, ring formation, dye bleed, texture change, structured/valuable/vintage/dry-clean-only linen, or no improvement after one or two detergent attempts"
+    ],
+    "stopAndEscalate": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate spreading oil halo, ring formation, dye bleed, texture change, structured/valuable/vintage/dry-clean-only linen, or no improvement after one or two detergent attempts"
+    ],
+    "ppeVentilation": "For Home detergent use, follow the product label and keep products away from children and pets. For concentrates or Pro chemistry, use gloves/eye protection as the SDS requires and work with ventilation.",
+    "homeVsProBoundary": "Home guidance excludes professional-strength oxidizers, acids, solvents, named pro products, exact pro concentrations, steam, and heat escalation; those belong only in a professional workflow with SDS/label controls.",
+    "sourceConfidence": "medium-high"
   },
   "materialWarnings": [
-    "Structured / vintage linen = pro from minute one",
-    "Powder before water — water-first spreads oil",
-    "Air-dry FLAT — linen wrinkles and stretches when hung wet",
-    "No hot dryer with residual oil — yellow shadow"
+    "Washable unstructured linen only",
+    "Colored linen requires hidden hem/colorfastness testing",
+    "Residual oil plus heat can set a darker mark"
   ],
   "escalation": {
-    "when": "Dry-clean-only / structured / lined / vintage linen. Hot dryer used on residual oil. 3 home cycles plateau. Aged buildup over weeks/months.",
-    "whatToTell": "\"Olive oil on [simple / structured / lined / vintage] linen, age [fresh / hours / weeks of buildup], home-treated with [cornstarch preload + Dawn cool + cool wash + air-dry flat]. No hot dryer. [Residual yellow shadow].\"",
-    "specialistType": "professional dry cleaner with linen experience"
+    "when": "Escalate spreading oil halo, ring formation, dye bleed, texture change, structured/valuable/vintage/dry-clean-only linen, unstable dye, or no improvement after one or two detergent attempts.",
+    "whatToTell": "Olive oil on linen; item construction and care label; whether oil was blotted; detergent used; any spreading halo, ring, dye bleed, or texture change.",
+    "specialistType": "professional textile cleaner or dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Cooking spatter, salad dressing, or aged buildup?",
-      "Simple flat linen, structured / lined, or vintage?",
-      "Fresh, hours old, or weeks of hot-dried buildup?",
-      "Linen-cotton or linen-rayon blend?"
+      "Is the linen washable, lined, structured, embellished, vintage, or high-value?",
+      "Is the stain fresh or aged?",
+      "Is the linen colored and did the hem test transfer dye?",
+      "Has heat or a dryer been used?"
     ],
-    "modifierNotes": "Linen-cotton blends follow the same protocol. Linen-rayon blends go to pro because rayon doesn't tolerate the Dawn dwell. AIR-DRY FLAT is non-negotiable on any linen — hanging stretches the fiber."
+    "modifierNotes": "Avoid absolute water-first/oil claims; the supported Home move is blot/lift excess oil, then detergent on washable linen."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "11-32, 34-61, 65-79, 83-99, 105-113",
+      "evidence": "Consumer stain-family guidance for protein, tannin, oil, combination and unknown stains; blot rather than rub, work from the wrong side where appropriate, test first, and do not iron or dry until the stain is removed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "145-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Safety and process gates: heat, concentration, oxidation, abrasion and mismanaged water can damage textiles; detergents/surfactants suspend oily soils; test hidden areas, follow product labels, ventilate, use PPE for concentrates, avoid incompatible mixes, and clean only according to care label or reject/escalate.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "169-199, 326-367, 445-449, 484-495, 540-549",
+      "evidence": "Internal cotton/linen safety boundaries; protein, oil, tannin and oxidizer controls; dry-side solvent/pro chemistry boundaries; no hot water on protein stains; never mix chlorine bleach with ammonia or acids.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-4S-01",
+      "title": "R.R. Street 4Streets On-the-Spot",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/R.R. Street — 4Streets/On-the-Spot.md",
+      "lines": "22-36, 48-53, 128-146",
+      "evidence": "Professional classification and operator workflow context for food/beverage, oil, tannin, protein and combination stains; pro-only product taxonomy.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-ADC-01",
+      "title": "American Drycleaner Spotting Techniques",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Trade & Media/American Drycleaner/Spotting-Techniques.md",
+      "lines": "8-13, 69-75, 96-109",
+      "evidence": "Professional solvent/oil, tannin, flushing and controlled last-resort bleaching cautions; low suitability for Home copy.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-BUFA-01",
+      "title": "BÜFA DetaProfi Spotting Chart",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/DetaProfi-Spotting-Chart.md",
+      "lines": "7-14, 50-70",
+      "evidence": "Professional chart support for oil, red wine, sauce/tannin and linen hem testing; rinse between products; pro-only chemistry sequence reference.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

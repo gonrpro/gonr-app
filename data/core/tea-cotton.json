@@ -5,11 +5,11 @@
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 3,
-  "timeEstimate": "10–30 minutes (fresh); aged adds a peroxide cycle",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "15–40 minutes for fresh washable fabric; aged or heat-set stains may need professional review",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "tea",
     "surfaceCanonical": "cotton",
@@ -18,185 +18,265 @@
     "tags": [
       "tannin",
       "cotton",
-      "time-sensitive",
-      "general-tea"
+      "tea",
+      "cleanup-required"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Tea is a classic tannin stain: tea browning pigments (oxidized catechin polymers) + general polyphenols. Black tea has the heaviest tannin load from oxidation during processing; green and white teas are lighter; herbal teas vary depending on ingredients. Polyphenols bond to cellulose through grip. Fresh tea rinses easily; aged tea oxidizes to a deeper brown. If the tea had MILK in it, treat as a combination stain — protein first — similar to coffee-cream-cotton. This card is straight tea. Cotton tolerates acid-side spotters, NSD, 3% H₂O₂, and hot wash.",
-  "whyThisWorks": "Same tannin sequence as coffee: cold flush, NSD, acid-side spotter for residual color, 3% H₂O₂ for color, hot wash. The novelty versus coffee is that tea is generally lighter — most fresh spills don't need the peroxide step. Aged black tea approaches coffee in difficulty.",
-  "defaultAssumption": "Most tea spills are lighter than coffee — fresh tea rinses out with cold water + NSD. Aged black tea with milk adds the protein-before-heat rule; redirect to coffee-cream protocol if milk is involved.",
+  "stainChemistry": "Plain tea is treated as a tannin/beverage stain. If milk or cream was present, treat it as a protein/combination stain and keep the start cold/cool; this repair does not use catechin/polyphenol comparisons, hot pour-through, vinegar, routine peroxide, or pro spotters in Home guidance.",
+  "whyThisWorks": "Blotting and cool/cold back-rinsing move loose beverage color out of washable cotton. Generic liquid/heavy-duty detergent helps suspend remaining residue, and care-label laundering followed by air-dry inspection avoids heat-setting residual tannin color.",
+  "defaultAssumption": "Use this card for plain tea on washable cotton. If milk/cream was present, use the protein/combination cold-start fork and avoid heat.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cold Flush",
-      "technique": "Flush from the back",
-      "equipment": "Cold water, white cotton terry towel",
-      "dwellTime": "30 seconds",
-      "instruction": "Cold flush from the BACK of the fabric. Most fresh tea lifts here."
+      "side": "assessment",
+      "agent": "Professional Intake and Fabric Testing",
+      "technique": "Care-label, construction, fiber, and colorfastness assessment",
+      "equipment": "Clean white cloth, hidden seam/hem test",
+      "dwellTime": "Stop immediately on transfer or change",
+      "instruction": "Confirm the cotton item is safe for professional wet-side treatment and document Home attempts. Treat tea only within source-supported family guidance, not unsupported exact chemistry claims.",
+      "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles. Use PPE/ventilation required by any product SDS.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "NSD",
-      "technique": "Sponge, dwell, blot",
-      "equipment": "NSD in cold water",
-      "dwellTime": "2–3 minutes",
-      "instruction": "Apply NSD, sponge gently. Blot."
+      "agent": "Controlled Detergent / Family-Specific Professional Spotting",
+      "technique": "Use the mildest source-supported professional path first",
+      "equipment": "Product-labeled detergent or family-specific professional spotter; clean towels",
+      "dwellTime": "Use product-label dwell only; stop on dye movement, ring formation, or texture change",
+      "instruction": "Begin with controlled water/detergent action for tea. Any family-specific professional spotter must remain Pro-only, label-directed, and bounded by fabric test results.",
+      "safetyNote": "Pro-only. Do not expose Home users to pro solvents, acids, oxidizers, concentrated spotters, steam, or exact percentages. Use SDS/label controls, PPE, ventilation, and do not mix incompatible chemistry.",
+      "proOnly": true
     },
     {
       "step": 3,
-      "side": "wet",
-      "agent": "Hot Pour-Through (Fresh Only)",
-      "technique": "Pour from the back",
-      "equipment": "Kettle of hot water",
-      "dwellTime": "1–2 pours",
-      "instruction": "Under 30 minutes old only. Hot pour-through from the back. Skip on aged stains."
-    },
-    {
-      "step": 4,
-      "side": "wet",
-      "agent": "Tannin Spotter (Aged or Black Tea)",
-      "technique": "Drop, dwell, blot",
-      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
-      "dwellTime": "2–5 minutes",
-      "instruction": "For aged or black-tea stains with residual brown, acid-side spotter by dropper. Dwell 2–5 min, blot. Skip for fresh light tea."
-    },
-    {
-      "step": 5,
-      "side": "wet",
-      "agent": "Hydrogen Peroxide 3% (Aged Whites)",
-      "technique": "Drop, dwell, blot",
-      "equipment": "3% H₂O₂",
-      "dwellTime": "3–5 minutes",
-      "instruction": "For residual color on white cotton: 3% H₂O₂ drop-by-drop. Skip on dark cotton."
-    },
-    {
-      "step": 6,
-      "side": "wet",
-      "agent": "Hot Wash",
-      "technique": "Launder per care label",
-      "equipment": "Washing machine",
-      "dwellTime": "Full wash cycle",
-      "instruction": "Launder hot per care label."
+      "side": "rinse",
+      "agent": "Flush, Rinse, and Air-Dry Inspection",
+      "technique": "Flush between products and inspect dry",
+      "equipment": "Water/steam only if fabric and product label permit; drying rack",
+      "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+      "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+      "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Cold flush from the back.",
-      "2. NSD in cold water. 2–3 min.",
-      "3. Fresh only (<30 min): hot pour-through.",
-      "4. Aged / black tea: acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A).",
-      "5. 3% H₂O₂ on residual color (whites only).",
-      "6. Hot wash per care label."
+      {
+        "step": 1,
+        "side": "assessment",
+        "agent": "Professional Intake and Fabric Testing",
+        "technique": "Care-label, construction, fiber, and colorfastness assessment",
+        "equipment": "Clean white cloth, hidden seam/hem test",
+        "dwellTime": "Stop immediately on transfer or change",
+        "instruction": "Confirm the cotton item is safe for professional wet-side treatment and document Home attempts. Treat tea only within source-supported family guidance, not unsupported exact chemistry claims.",
+        "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles. Use PPE/ventilation required by any product SDS.",
+        "proOnly": true
+      },
+      {
+        "step": 2,
+        "side": "wet",
+        "agent": "Controlled Detergent / Family-Specific Professional Spotting",
+        "technique": "Use the mildest source-supported professional path first",
+        "equipment": "Product-labeled detergent or family-specific professional spotter; clean towels",
+        "dwellTime": "Use product-label dwell only; stop on dye movement, ring formation, or texture change",
+        "instruction": "Begin with controlled water/detergent action for tea. Any family-specific professional spotter must remain Pro-only, label-directed, and bounded by fabric test results.",
+        "safetyNote": "Pro-only. Do not expose Home users to pro solvents, acids, oxidizers, concentrated spotters, steam, or exact percentages. Use SDS/label controls, PPE, ventilation, and do not mix incompatible chemistry.",
+        "proOnly": true
+      },
+      {
+        "step": 3,
+        "side": "rinse",
+        "agent": "Flush, Rinse, and Air-Dry Inspection",
+        "technique": "Flush between products and inspect dry",
+        "equipment": "Water/steam only if fabric and product label permit; drying rack",
+        "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+        "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+        "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+        "proOnly": true
+      }
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — aged / black tea",
-      "Hydrogen Peroxide 3% — aged whites only"
+      "Product-labeled professional detergent/family-specific spotting systems only, used per SDS/label"
     ],
-    "temperature": "cold through spotting; hot wash post-chemistry",
+    "temperature": "Cool/cold first; any warmer professional step only after care-label review, testing, and chemistry removal controls",
     "warnings": [
-      "Never use hot water on aged tea — sets tannin",
-      "If tea had milk / cream, use coffee-cream-cotton protocol — protein first",
-      "One oxidizer at a time"
+      "Pro-only chemistry requires SDS/label controls, PPE, ventilation, hidden-area testing, and flush/rinse/neutralization controls.",
+      "Do not expose Home users to professional-strength acids, solvents, oxidizers, named pro products, exact concentrations, steam, or heat escalation."
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Cold Water, Act Fast",
-      "instruction": "Tea lifts easier than coffee. Hold the BACK of the stained area under cold running water for 30 seconds. Cold only."
+      "agent": "Care Label and Colorfastness Gate",
+      "instruction": "Check the care label. If the cotton is dry-clean-only, structured, embellished, vintage, high-value, or dye-unstable, stop before wet treatment and use a professional."
     },
     {
       "step": 2,
-      "agent": "Tea With Milk? Different Protocol",
-      "instruction": "If the tea had milk or cream in it (English breakfast, chai, milk tea), use the coffee-cream-cotton protocol — protein from the milk has to be digested before heat touches it. Plain tea: continue below."
+      "agent": "Blot or Lift Excess",
+      "instruction": "Blot liquid or lift excess with a clean white cloth. Do not rub."
     },
     {
       "step": 3,
-      "agent": "Dawn + Cold Water",
-      "instruction": "Drop of Dawn worked into the spot with a fingertip for a minute. Rinse cool."
+      "agent": "Cool/Cold Back-Rinse If Washable",
+      "instruction": "Hold the back of the stained area under cool or cold running water if the care label allows. If the tea had milk or cream, keep the path cold/cool and treat as protein/combination rather than plain tea."
     },
     {
       "step": 4,
-      "agent": "White Vinegar Dab for Residual Brown",
-      "instruction": "Mix 1 teaspoon white vinegar with 3 tablespoons cool water. Dab on the stain, let sit 3 min, blot."
+      "agent": "Generic Liquid/Heavy-Duty Laundry Detergent",
+      "instruction": "Apply a small amount of generic liquid laundry detergent or heavy-duty liquid laundry detergent. Use only product-label directions and test colored fabric on a hidden seam or hem first."
     },
     {
       "step": 5,
-      "agent": "3% Hydrogen Peroxide for Shadow (Whites)",
-      "instruction": "For stubborn brown on white cotton: dab 3% drugstore hydrogen peroxide, let bubble 3–5 min, blot. Skip on dark cotton.",
-      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia."
+      "agent": "Care-Label Wash, Then Air-Dry",
+      "instruction": "Wash according to the care label using cool, cold, or care-label-safe water. Air-dry completely and inspect before any dryer or iron."
     },
     {
       "step": 6,
-      "agent": "Hot Wash, Inspect Before the Dryer",
-      "instruction": "Launder hot per care label. Inspect BEFORE the dryer."
-    },
-    {
-      "step": 7,
-      "agent": "Escalate Rarely",
-      "instruction": "Tea on cotton almost never needs a pro. Escalate only if the stain has been hot-dried and home round didn't clear it."
+      "agent": "Repeat Once If Improving or Escalate",
+      "instruction": "If the stain is clearly improving, repeat this conservative water-and-detergent path once. Escalate if color remains, dye bleeds, a ring or oily halo spreads, texture changes, the stain was heat-dried/ironed, or there is no improvement after two rounds."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Tea WITH MILK? Use coffee-cream-cotton — different chemistry.",
-      "2. Cold water flush from the BACK.",
-      "3. Dawn + cold water, 1 min, rinse.",
-      "4. Diluted white vinegar for residual brown.",
-      "5. 3% hydrogen peroxide on shadow (whites only).",
-      "6. Hot wash per care label.",
-      "7. Escalate only if heat-set."
+      "1. Care Label and Colorfastness Gate: Check the care label. If the cotton is dry-clean-only, structured, embellished, vintage, high-value, or dye-unstable, stop before wet treatment and use a professional.",
+      "2. Blot or Lift Excess: Blot liquid or lift excess with a clean white cloth. Do not rub.",
+      "3. Cool/Cold Back-Rinse If Washable: Hold the back of the stained area under cool or cold running water if the care label allows. If the tea had milk or cream, keep the path cold/cool and treat as protein/combination rather than plain tea.",
+      "4. Generic Liquid/Heavy-Duty Laundry Detergent: Apply a small amount of generic liquid laundry detergent or heavy-duty liquid laundry detergent. Use only product-label directions and test colored fabric on a hidden seam or hem first.",
+      "5. Care-Label Wash, Then Air-Dry: Wash according to the care label using cool, cold, or care-label-safe water. Air-dry completely and inspect before any dryer or iron.",
+      "6. Repeat Once If Improving or Escalate: If the stain is clearly improving, repeat this conservative water-and-detergent path once. Escalate if color remains, dye bleeds, a ring or oily halo spreads, texture changes, the stain was heat-dried/ironed, or there is no improvement after two rounds."
     ],
     "products": [
-      "Cold water",
-      "Dawn dish soap",
-      "White vinegar",
-      "3% hydrogen peroxide (whites only)"
+      "Cool/cold water",
+      "Generic liquid laundry detergent or heavy-duty liquid laundry detergent"
     ],
-    "whenToStop": "Stop if tea has been hot-dried and home round didn't clear it.",
+    "whenToStop": "If the stain is clearly improving, repeat this conservative water-and-detergent path once. Escalate if color remains, dye bleeds, a ring or oily halo spreads, texture changes, the stain was heat-dried/ironed, or there is no improvement after two rounds.",
     "warnings": [
-      "Tea with milk = different protocol (protein first)",
-      "Hot water sets aged tannin",
-      "Never mix peroxide with chlorine bleach or ammonia",
-      "Skip peroxide on dark/dyed cotton"
+      "No dryer, iron, or heat until the stain is gone after air-drying inspection",
+      "Do not mix cleaners",
+      "Do not rub aggressively",
+      "No Home vinegar/acids, peroxide, chlorine bleach, pro spotters, solvents, sunlight/UV claims, or hot-wash default"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never use hot water on aged tea — sets tannin",
-      "Never treat tea-with-milk as plain tea — protein needs enzyme first",
-      "Never layer oxidizers"
+      "Never put the item in a dryer, use an iron, or apply heat until the stain is gone after air-drying inspection",
+      "Never rub or scrub aggressively; blot, lift, scrape, or gently work only enough to avoid driving soil deeper",
+      "Never mix cleaning agents, bleach, ammonia, acids, solvents, or professional spotters",
+      "Never use chlorine bleach unless the care label allows it and the fabric is white or confirmed colorfast",
+      "Never use professional-strength oxidizers, acids, dry-side solvents, rust/mineral removers, adhesive removers, exact pro percentages, or named pro products in the Home path",
+      "Never treat milk- or cream-containing tea as plain tea; keep the protein/combination path cold or cool first"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, hot wash",
-      "Dyed cotton: skip or inside-seam-test peroxide",
-      "Heat-durable"
-    ]
+      "Cotton is cellulose; washable cotton can generally tolerate generic liquid detergent and care-label laundering",
+      "Colored cotton needs lower-temperature caution and a hidden white-cloth colorfastness test before detergent dwell or any escalation",
+      "White cotton may tolerate more than colored cotton, but this Home path does not assume chlorine, strong peroxide, professional spotters, or hot-water treatment"
+    ],
+    "chemicalBoundaries": [
+      "Home path is limited to cool/cold or care-label-safe lukewarm water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "Use detergent or pretreat only according to its product label and only after a hidden-area test on colored fabric",
+      "Oxidizers are not routine Home steps in this repair; any future trace-color escalation must be care-label-safe, white/colorfast, hidden-test-passed, never mixed with other cleaners, and separately sourced",
+      "Professional chemistry is Pro-only and requires SDS/label controls, PPE, ventilation, colorfastness testing, and flush/rinse/neutralization controls"
+    ],
+    "chemicalControls": [
+      "Home path is limited to water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "No vinegar/acids, peroxide, chlorine bleach, dry-side solvent, professional tannin spotter, neutral synthetic detergent product claim, branded cleaner claim, or exact pro concentration in the Home path",
+      "Professional chemistry is Pro-only with SDS/label, PPE/ventilation, colorfastness testing, and flush/rinse/neutralization controls"
+    ],
+    "homeAllowed": [
+      "Blot, lift, or gently scrape excess before adding water",
+      "Cool/cold water or care-label-safe lukewarm water",
+      "Generic liquid laundry detergent or heavy-duty liquid laundry detergent",
+      "Hidden-area colorfastness test",
+      "Care-label laundering",
+      "Air-dry and inspect before heat"
+    ],
+    "proOnly": [
+      "Professional spotters, dry-side solvents, acids, oxidizers, reducers, concentrated chemistry, steam, and heat escalation require SDS/label controls, PPE, ventilation, flush/rinse/neutralization controls, and documented fabric testing"
+    ],
+    "testFirst": [
+      "Test detergent, warmer water, enzyme detergent, oxidizer escalation, acid spotter, solvent, or any pro chemistry on a hidden seam/hem with a clean white cloth before treating the visible area"
+    ],
+    "colorfastnessTest": "On a hidden seam or hem, press a clean white cloth with the planned detergent/water mix for one minute; stop if dye transfers, color changes, or texture changes.",
+    "flushNeutralizeDry": "Rinse or flush out each cleaning agent before changing products; air-dry fully and inspect before any dryer, iron, heat, or professional escalation.",
+    "temperatureLimits": "Cool/cold first for tannin-adjacent, beverage, unknown, or mixed food stains. Use care-label-safe lukewarm/wash temperature only after initial lift/rinse. No dryer, iron, or heat until clean.",
+    "escalationTriggers": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, odor after air-drying, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate milk/cream combination stains needing protein handling, heat-dried residual tea, dye bleed/color loss, old dark tea not improving after two rounds, or dry-clean-only/valuable items"
+    ],
+    "stopAndEscalate": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, odor after air-drying, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate milk/cream combination stains needing protein handling, heat-dried residual tea, dye bleed/color loss, old dark tea not improving after two rounds, or dry-clean-only/valuable items"
+    ],
+    "ppeVentilation": "For Home detergent use, follow the product label and keep products away from children and pets. For concentrates or Pro chemistry, use gloves/eye protection as the SDS requires and work with ventilation.",
+    "homeVsProBoundary": "Home guidance excludes professional-strength oxidizers, acids, solvents, named pro products, exact pro concentrations, steam, and heat escalation; those belong only in a professional workflow with SDS/label controls.",
+    "sourceConfidence": "medium"
   },
   "materialWarnings": [
-    "Tea with milk = coffee-cream-cotton protocol",
-    "Hot water only for fresh — sets aged tannin",
-    "Peroxide on whites"
+    "Washable cotton only; colored cotton needs hidden-area white-cloth dye-transfer testing",
+    "Start cool/cold and avoid dryer/iron/heat until the stain is gone",
+    "Home path uses generic detergent only; no vinegar/acids, peroxide, chlorine bleach, solvents, sunlight/UV, branded cleaners, or pro spotters"
   ],
   "escalation": {
-    "when": "Tea heat-set by iron or dryer and home round didn't clear it.",
-    "whatToTell": "\"Tea on cotton — [black / green / with milk], age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% H₂O₂.\"",
-    "specialistType": "professional dry cleaner"
+    "when": "Escalate milk/cream combination stains needing protein handling, heat-dried residual tea, dye bleed/color loss, old dark tea not improving after two rounds, or dry-clean-only/valuable items",
+    "whatToTell": "Tea on Cotton; age of stain; care label/fabric color; whether cool/cold water and generic detergent were used; whether dye transfer, ring/halo, odor, heat exposure, or prior Home chemistry occurred.",
+    "specialistType": "professional textile cleaner or dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Black, green, white, or herbal tea?",
-      "Plain or with milk/cream?",
+      "Was the tea plain, or did it contain milk/cream?",
       "How old is the stain?",
-      "Is the cotton white, light, or dark/dyed?"
+      "Has it been through hot water, a dryer, or an iron?",
+      "Is the cotton washable and colorfast?"
     ],
-    "modifierNotes": "Black tea approaches coffee in tannin load. Milk in the tea changes the whole protocol — use coffee-cream-cotton."
+    "modifierNotes": "Use this card for plain tea on washable cotton. If milk/cream was present, use the protein/combination cold-start fork and avoid heat."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "11-21, 28-35, 47-61, 65-79, 83-99, 123-126, 173-177",
+      "evidence": "Consumer stain-family guidance: cold/cool first for protein/unknown stains, tannin and combination stain families, liquid detergent/lukewarm fallback, blot/do not rub, work from the wrong side where appropriate, test first, and do not iron or dry until the stain is removed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "145-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Textile safety/process gates: heat, alkalinity, oxidation, concentration, water/heat mismanagement and rubbing can damage textiles; detergents/surfactants suspend soils; hidden-area testing, product-label following, PPE/ventilation, no incompatible mixes, care-label cleaning and reject/escalate gates.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "169-199, 326-367, 369-381, 492-495, 540-549",
+      "evidence": "Internal cotton/linen safety boundaries, enzyme/protein/oil/tannin/oxidizer controls, colored-fabric testing, no hot water on protein stains, and never-mix chlorine/acids/ammonia safety.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-4S-01",
+      "title": "R.R. Street 4Streets On-the-Spot",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/R.R. Street — 4Streets/On-the-Spot.md",
+      "lines": "48-53, 126-128, 132-135",
+      "evidence": "Professional classification recognizes tea as tannin and protein cold-start boundaries; pro-only taxonomy, not Home product endorsement.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-BUFA-01",
+      "title": "BÜFA DetaProfi Spotting Chart",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/DetaProfi-Spotting-Chart.md",
+      "lines": "7-14, 59-70",
+      "evidence": "Professional tea/tannin workflow classification and hem-test/rinse controls; pro-only source.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

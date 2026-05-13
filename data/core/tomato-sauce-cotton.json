@@ -1,196 +1,289 @@
 {
   "id": "tomato-sauce-cotton",
   "title": "Tomato Sauce on Cotton",
-  "stainType": "combination",
-  "stainFamily": "combination",
+  "stainType": "tannin",
+  "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 4,
-  "timeEstimate": "15–40 minutes (fresh) or overnight (aged)",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "15–40 minutes for fresh washable fabric; aged or heat-set stains may need professional review",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "tomato-sauce",
     "surfaceCanonical": "cotton",
     "tier": "universal",
     "riskLevel": "low",
     "tags": [
-      "combination",
       "tannin",
-      "oil",
-      "tomato-pigment",
-      "cotton"
+      "cotton",
+      "mixed-food",
+      "cleanup-required"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Tomato sauce is a three-component stain: tomato red pigment, plant tannins (polyphenols), and oil (olive oil + pan oils used in cooking). tomato red pigment is what makes tomato stains stubborn — it's a fat-soluble dye that gets locked onto the fiber by the oil carrier, just like mustard's turmeric pigment but darker and less UV-responsive. Cotton is pure cellulose, tolerant of IPA, NSD, 3% H₂O₂, and hot post-chemistry wash. The ordering rule is oil-first (strip the carrier) then tannin then oxidizer — skip the oil strip and the rest of the sequence plateaus.",
-  "whyThisWorks": "Oil carrier must come off first or the rest of the chemistry can't reach the tomato red pigment. NSD (pro) or Dawn (home) pulls the oil. Acid-side tannin spotter disrupts the plant-tannin grip. 3% H₂O₂ oxidizes the residual tomato red pigment color; sunlight accelerates it because tomato red pigment is mildly photosensitive. Hot wash finishes. This is the same oil-then-tannin-then-oxidizer pattern as red wine's sibling stains.",
-  "defaultAssumption": "Fresh tomato sauce on cotton is a high-confidence DIY; aged tomato sauce (overnight+) may need a peroxide + sunlight cycle in addition to the oil + tannin pass. Heat-set (ironed or hot-dried) climbs into pro territory.",
+  "stainChemistry": "Treat tomato sauce as a mixed tomato/ketchup/red-sauce food stain with possible oil, sugar, and tannin-like color. The packet supports detergent-first mixed-stain handling; it does not support exact lycopene/tomato-pigment, oil-first mandatory ordering, sunlight/UV, vinegar, peroxide, or hot-wash guarantees.",
+  "whyThisWorks": "Gently lifting solids and blotting liquid keeps sauce from spreading. Cool/cold back-rinse moves water-soluble residue out of the fabric, while generic liquid/heavy-duty detergent helps suspend mixed food and possible oily residue before care-label laundering.",
+  "defaultAssumption": "Use only for washable cotton. Persistent red/orange color, oily halo, heat-dried stains, dye movement, or no improvement after two conservative rounds should escalate.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "dry",
-      "agent": "Scrape + Cold Flush",
-      "technique": "Remove bulk, then cold flush",
-      "equipment": "Dull blade, cold water, white cotton terry towel",
-      "dwellTime": "1 minute",
-      "instruction": "Scrape solid sauce off with a dull blade — don't rub. Cold flush from the BACK of the fabric. Cold only — heat combined with the oil carrier drives tomato red pigment deeper into cotton and makes subsequent chemistry less effective."
+      "side": "assessment",
+      "agent": "Professional Intake and Fabric Testing",
+      "technique": "Care-label, construction, fiber, and colorfastness assessment",
+      "equipment": "Clean white cloth, hidden seam/hem test",
+      "dwellTime": "Stop immediately on transfer or change",
+      "instruction": "Confirm the cotton item is safe for professional wet-side treatment and document Home attempts. Treat tomato sauce only within source-supported family guidance, not unsupported exact chemistry claims.",
+      "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles. Use PPE/ventilation required by any product SDS.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "NSD",
-      "technique": "Strip the oil carrier",
-      "equipment": "NSD in cool water",
-      "dwellTime": "5–10 minutes",
-      "instruction": "Apply NSD, work with a soft bristle brush. The oil carrier (olive oil, pan oils) must come off before peroxide can reach the pigment. Tamp, don't scrub hard. Rinse cool. Repeat if oil residue is still visible."
+      "agent": "Controlled Detergent / Family-Specific Professional Spotting",
+      "technique": "Use the mildest source-supported professional path first",
+      "equipment": "Product-labeled detergent or family-specific professional spotter; clean towels",
+      "dwellTime": "Use product-label dwell only; stop on dye movement, ring formation, or texture change",
+      "instruction": "Begin with controlled water/detergent action for tomato sauce. Any family-specific professional spotter must remain Pro-only, label-directed, and bounded by fabric test results.",
+      "safetyNote": "Pro-only. Do not expose Home users to pro solvents, acids, oxidizers, concentrated spotters, steam, or exact percentages. Use SDS/label controls, PPE, ventilation, and do not mix incompatible chemistry.",
+      "proOnly": true
     },
     {
       "step": 3,
-      "side": "wet",
-      "agent": "Tannin Spotter",
-      "technique": "Drop, dwell, blot",
-      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
-      "dwellTime": "3–5 minutes",
-      "instruction": "Acid-side tannin spotter by dropper on the residual color. Disrupts the tannin-cellulose grip. Dwell 3–5 min, blot. Repeat once if shadow persists."
-    },
-    {
-      "step": 4,
-      "side": "wet",
-      "agent": "Hydrogen Peroxide 3% + Sun Assist",
-      "technique": "Oxidize, optional UV",
-      "equipment": "3% H₂O₂, optional sunny window",
-      "dwellTime": "5–10 minutes wet, optional 30–60 min sunlight",
-      "instruction": "Apply 3% H₂O₂ to residual tomato red pigment shadow. For aged stains, hang the damp garment in sunlight — UV accelerates tomato red pigment oxidation. Fresh stains usually clear without the sun step."
-    },
-    {
-      "step": 5,
-      "side": "wet",
-      "agent": "NSD Flush + Hot Wash",
-      "technique": "Clear chemistry, launder",
-      "equipment": "NSD, washing machine",
-      "dwellTime": "Full wash cycle",
-      "instruction": "Rinse until water runs clear. Launder hot per care label."
+      "side": "rinse",
+      "agent": "Flush, Rinse, and Air-Dry Inspection",
+      "technique": "Flush between products and inspect dry",
+      "equipment": "Water/steam only if fabric and product label permit; drying rack",
+      "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+      "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+      "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Scrape bulk. Cold flush from the back.",
-      "2. NSD — strip the oil carrier first. Tamp, not scrub.",
-      "3. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A). Dropper, 3–5 min.",
-      "4. 3% H₂O₂ on residual tomato red pigment. Sunlight assist on aged stains.",
-      "5. NSD flush, hot wash per care label."
+      {
+        "step": 1,
+        "side": "assessment",
+        "agent": "Professional Intake and Fabric Testing",
+        "technique": "Care-label, construction, fiber, and colorfastness assessment",
+        "equipment": "Clean white cloth, hidden seam/hem test",
+        "dwellTime": "Stop immediately on transfer or change",
+        "instruction": "Confirm the cotton item is safe for professional wet-side treatment and document Home attempts. Treat tomato sauce only within source-supported family guidance, not unsupported exact chemistry claims.",
+        "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles. Use PPE/ventilation required by any product SDS.",
+        "proOnly": true
+      },
+      {
+        "step": 2,
+        "side": "wet",
+        "agent": "Controlled Detergent / Family-Specific Professional Spotting",
+        "technique": "Use the mildest source-supported professional path first",
+        "equipment": "Product-labeled detergent or family-specific professional spotter; clean towels",
+        "dwellTime": "Use product-label dwell only; stop on dye movement, ring formation, or texture change",
+        "instruction": "Begin with controlled water/detergent action for tomato sauce. Any family-specific professional spotter must remain Pro-only, label-directed, and bounded by fabric test results.",
+        "safetyNote": "Pro-only. Do not expose Home users to pro solvents, acids, oxidizers, concentrated spotters, steam, or exact percentages. Use SDS/label controls, PPE, ventilation, and do not mix incompatible chemistry.",
+        "proOnly": true
+      },
+      {
+        "step": 3,
+        "side": "rinse",
+        "agent": "Flush, Rinse, and Air-Dry Inspection",
+        "technique": "Flush between products and inspect dry",
+        "equipment": "Water/steam only if fabric and product label permit; drying rack",
+        "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+        "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+        "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+        "proOnly": true
+      }
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
-      "Hydrogen Peroxide 3%"
+      "Product-labeled professional detergent/family-specific spotting systems only, used per SDS/label"
     ],
-    "temperature": "cold through spotting; hot wash post-chemistry; sun during dry for aged",
+    "temperature": "Cool/cold first; any warmer professional step only after care-label review, testing, and chemistry removal controls",
     "warnings": [
-      "Oil carrier off FIRST — peroxide can't reach tomato red pigment otherwise",
-      "Never use hot water before the oil is stripped — drives pigment deeper",
-      "One oxidizer at a time, NSD-flushed between",
-      "Flush all chemistry before heat"
+      "Pro-only chemistry requires SDS/label controls, PPE, ventilation, hidden-area testing, and flush/rinse/neutralization controls.",
+      "Do not expose Home users to professional-strength acids, solvents, oxidizers, named pro products, exact concentrations, steam, or heat escalation."
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Scrape Off the Bulk First",
-      "instruction": "Lift solid sauce off the fabric with a dull butter knife or credit card edge. Don't rub — rubbing drives the sauce into the weave. Scrape what will come off easily."
+      "agent": "Care Label and Colorfastness Gate",
+      "instruction": "Check the care label. If the cotton is dry-clean-only, structured, embellished, vintage, high-value, or dye-unstable, stop before wet treatment and use a professional."
     },
     {
       "step": 2,
-      "agent": "Cold Water From the Back",
-      "instruction": "Hold the BACK of the stained area under cold running water. The sauce pushes out the way it came in. Cold only — hot water drives the oily red pigment deeper into cotton."
+      "agent": "Blot or Lift Excess",
+      "instruction": "Gently lift or scrape sauce solids with a dull edge, then blot liquid with a clean white cloth. Do not rub."
     },
     {
       "step": 3,
-      "agent": "Dawn First — Before Any Color Work",
-      "instruction": "Tomato sauce has an oil carrier (olive oil, the pan oil it was cooked in). That oil protects the red pigment from everything else until the oil is removed. Work a drop of Dawn dish soap into the stain with a fingertip or soft toothbrush, let sit 10 minutes, rinse cool. You should see the stain lighten noticeably once the oil is gone."
+      "agent": "Cool/Cold Back-Rinse If Washable",
+      "instruction": "Hold the back of the stained area under cool or cold running water if the care label allows."
     },
     {
       "step": 4,
-      "agent": "White Vinegar Dab for Stubborn Red",
-      "instruction": "Mix 1 teaspoon white vinegar with 4 tablespoons cool water. Dab onto residual red with a white cloth, let sit 3 minutes, blot. The vinegar's mild acidity breaks the tannin grip. Repeat once if needed."
+      "agent": "Generic Liquid/Heavy-Duty Laundry Detergent",
+      "instruction": "Apply a small amount of generic liquid laundry detergent or heavy-duty liquid laundry detergent. Use only product-label directions and test colored fabric on a hidden seam or hem first."
     },
     {
       "step": 5,
-      "agent": "Hydrogen Peroxide 3% + Sunlight",
-      "instruction": "For stubborn residual color: dab 3% drugstore hydrogen peroxide on the spot, let it bubble 3–5 min. For aged stains, hang the damp shirt in direct sunlight for 30–60 min — UV helps fade the tomato red pigment pigment. Skip on dark or dyed cotton.",
-      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fume risk."
+      "agent": "Care-Label Wash, Then Air-Dry",
+      "instruction": "Wash according to the care label using cool, cold, or care-label-safe water. Air-dry completely and inspect before any dryer or iron."
     },
     {
       "step": 6,
-      "agent": "Hot Wash, Inspect Before the Dryer",
-      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer — dryer heat sets any residual tomato red pigment permanently. If you still see orange, repeat the Dawn + peroxide round."
-    },
-    {
-      "step": 7,
-      "agent": "Escalate to a Dry Cleaner",
-      "instruction": "If the sauce has been hot-dried or two home rounds haven't cleared it, take it to a dry cleaner. Tell them: \"Tomato sauce on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% hydrogen peroxide + sun.\""
+      "agent": "Repeat Once If Improving or Escalate",
+      "instruction": "If the stain is clearly improving, repeat this conservative water-and-detergent path once. Escalate if color remains, dye bleeds, a ring or oily halo spreads, texture changes, the stain was heat-dried/ironed, or there is no improvement after two rounds."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Scrape solid sauce off with a dull blade — don't rub.",
-      "2. Cold water flush from the BACK of the fabric.",
-      "3. Dawn dish soap FIRST — strips the oil carrier. Dwell 10 min, rinse cool.",
-      "4. Diluted white vinegar dab for residual red. 3 min, blot.",
-      "5. 3% hydrogen peroxide + 30–60 min sunlight on stubborn stains. Skip on dark cotton.",
-      "6. Hot wash per care label. Inspect BEFORE the dryer.",
-      "7. Escalate if heat-set or two rounds failed."
+      "1. Care Label and Colorfastness Gate: Check the care label. If the cotton is dry-clean-only, structured, embellished, vintage, high-value, or dye-unstable, stop before wet treatment and use a professional.",
+      "2. Blot or Lift Excess: Gently lift or scrape sauce solids with a dull edge, then blot liquid with a clean white cloth. Do not rub.",
+      "3. Cool/Cold Back-Rinse If Washable: Hold the back of the stained area under cool or cold running water if the care label allows.",
+      "4. Generic Liquid/Heavy-Duty Laundry Detergent: Apply a small amount of generic liquid laundry detergent or heavy-duty liquid laundry detergent. Use only product-label directions and test colored fabric on a hidden seam or hem first.",
+      "5. Care-Label Wash, Then Air-Dry: Wash according to the care label using cool, cold, or care-label-safe water. Air-dry completely and inspect before any dryer or iron.",
+      "6. Repeat Once If Improving or Escalate: If the stain is clearly improving, repeat this conservative water-and-detergent path once. Escalate if color remains, dye bleeds, a ring or oily halo spreads, texture changes, the stain was heat-dried/ironed, or there is no improvement after two rounds."
     ],
     "products": [
-      "Dull blade or credit-card edge",
-      "Dawn dish soap",
-      "White vinegar (household)",
-      "3% hydrogen peroxide (drugstore brown bottle)"
+      "Cool/cold water",
+      "Generic liquid laundry detergent or heavy-duty liquid laundry detergent"
     ],
-    "whenToStop": "Stop if tomato sauce has been through a hot dryer or iron, if two home rounds don't clear it, or if the cotton is dark dyed and peroxide isn't safe.",
+    "whenToStop": "If the stain is clearly improving, repeat this conservative water-and-detergent path once. Escalate if color remains, dye bleeds, a ring or oily halo spreads, texture changes, the stain was heat-dried/ironed, or there is no improvement after two rounds.",
     "warnings": [
-      "Oil first, then color — peroxide can't work through the oil carrier",
-      "Cold water during spotting — heat drives the oily pigment deeper",
-      "Never mix peroxide with chlorine bleach or ammonia",
-      "Skip peroxide on dark/dyed cotton",
-      "Inspect before the dryer — heat sets tomato red pigment permanently"
+      "No dryer, iron, or heat until the stain is gone after air-drying inspection",
+      "Do not mix cleaners",
+      "Do not rub aggressively",
+      "No Home vinegar/acids, peroxide, chlorine bleach, pro spotters, solvents, sunlight/UV claims, or hot-wash default"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never hot-water-flush tomato sauce before the oil is stripped — drives tomato red pigment deeper",
-      "Never skip the Dawn/NSD step — the oil protects the dye from everything else",
-      "Never layer oxidizers — one at a time",
-      "Never dry with residual chemistry in the fiber"
+      "Never put the item in a dryer, use an iron, or apply heat until the stain is gone after air-drying inspection",
+      "Never rub or scrub aggressively; blot, lift, scrape, or gently work only enough to avoid driving soil deeper",
+      "Never mix cleaning agents, bleach, ammonia, acids, solvents, or professional spotters",
+      "Never use chlorine bleach unless the care label allows it and the fabric is white or confirmed colorfast",
+      "Never use professional-strength oxidizers, acids, dry-side solvents, rust/mineral removers, adhesive removers, exact pro percentages, or named pro products in the Home path"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, sunlight, hot wash",
-      "Dyed cotton: skip or inside-seam-test peroxide",
-      "Heat-safe fiber once chemistry is cleared"
-    ]
+      "Cotton is cellulose; washable cotton can generally tolerate generic liquid detergent and care-label laundering",
+      "Colored cotton needs lower-temperature caution and a hidden white-cloth colorfastness test before detergent dwell or any escalation",
+      "White cotton may tolerate more than colored cotton, but this Home path does not assume chlorine, strong peroxide, professional spotters, or hot-water treatment"
+    ],
+    "chemicalBoundaries": [
+      "Home path is limited to cool/cold or care-label-safe lukewarm water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "Use detergent or pretreat only according to its product label and only after a hidden-area test on colored fabric",
+      "Oxidizers are not routine Home steps in this repair; any future trace-color escalation must be care-label-safe, white/colorfast, hidden-test-passed, never mixed with other cleaners, and separately sourced",
+      "Professional chemistry is Pro-only and requires SDS/label controls, PPE, ventilation, colorfastness testing, and flush/rinse/neutralization controls"
+    ],
+    "chemicalControls": [
+      "Home path is limited to water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "No vinegar/acids, peroxide, chlorine bleach, dry-side solvent, professional tannin spotter, neutral synthetic detergent product claim, branded cleaner claim, or exact pro concentration in the Home path",
+      "Professional chemistry is Pro-only with SDS/label, PPE/ventilation, colorfastness testing, and flush/rinse/neutralization controls"
+    ],
+    "homeAllowed": [
+      "Blot, lift, or gently scrape excess before adding water",
+      "Cool/cold water or care-label-safe lukewarm water",
+      "Generic liquid laundry detergent or heavy-duty liquid laundry detergent",
+      "Hidden-area colorfastness test",
+      "Care-label laundering",
+      "Air-dry and inspect before heat"
+    ],
+    "proOnly": [
+      "Professional spotters, dry-side solvents, acids, oxidizers, reducers, concentrated chemistry, steam, and heat escalation require SDS/label controls, PPE, ventilation, flush/rinse/neutralization controls, and documented fabric testing"
+    ],
+    "testFirst": [
+      "Test detergent, warmer water, enzyme detergent, oxidizer escalation, acid spotter, solvent, or any pro chemistry on a hidden seam/hem with a clean white cloth before treating the visible area"
+    ],
+    "colorfastnessTest": "On a hidden seam or hem, press a clean white cloth with the planned detergent/water mix for one minute; stop if dye transfers, color changes, or texture changes.",
+    "flushNeutralizeDry": "Rinse or flush out each cleaning agent before changing products; air-dry fully and inspect before any dryer, iron, heat, or professional escalation.",
+    "temperatureLimits": "Cool/cold first for tannin-adjacent, beverage, unknown, or mixed food stains. Use care-label-safe lukewarm/wash temperature only after initial lift/rinse. No dryer, iron, or heat until clean.",
+    "escalationTriggers": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, odor after air-drying, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate persistent red/orange color, oily halo spreading, dye bleed/color loss, no improvement after two conservative rounds, heat-dried/ironed stains, or dry-clean-only/valuable/unstable-dye items"
+    ],
+    "stopAndEscalate": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, odor after air-drying, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate persistent red/orange color, oily halo spreading, dye bleed/color loss, no improvement after two conservative rounds, heat-dried/ironed stains, or dry-clean-only/valuable/unstable-dye items"
+    ],
+    "ppeVentilation": "For Home detergent use, follow the product label and keep products away from children and pets. For concentrates or Pro chemistry, use gloves/eye protection as the SDS requires and work with ventilation.",
+    "homeVsProBoundary": "Home guidance excludes professional-strength oxidizers, acids, solvents, named pro products, exact pro concentrations, steam, and heat escalation; those belong only in a professional workflow with SDS/label controls.",
+    "sourceConfidence": "medium"
   },
   "materialWarnings": [
-    "Oil carrier off first, then color work",
-    "Cold during spotting, hot at wash",
-    "Peroxide on whites; test inside seam on dark cotton"
+    "Washable cotton only; colored cotton needs hidden-area white-cloth dye-transfer testing",
+    "Start cool/cold and avoid dryer/iron/heat until the stain is gone",
+    "Home path uses generic detergent only; no vinegar/acids, peroxide, chlorine bleach, solvents, sunlight/UV, branded cleaners, or pro spotters"
   ],
   "escalation": {
-    "when": "Tomato sauce heat-set by iron or hot dryer, two home rounds failed, or dark dyed cotton where peroxide isn't safe.",
-    "whatToTell": "\"Tomato sauce on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% H₂O₂ + sunlight. [Hot-washed / not yet laundered.]\"",
-    "specialistType": "professional dry cleaner"
+    "when": "Escalate persistent red/orange color, oily halo spreading, dye bleed/color loss, no improvement after two conservative rounds, heat-dried/ironed stains, or dry-clean-only/valuable/unstable-dye items",
+    "whatToTell": "Tomato Sauce on Cotton; age of stain; care label/fabric color; whether cool/cold water and generic detergent were used; whether dye transfer, ring/halo, odor, heat exposure, or prior Home chemistry occurred.",
+    "specialistType": "professional textile cleaner or dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
       "How old is the stain?",
-      "Has it been through a hot wash or dryer?",
-      "Is the cotton white, light, or dark/dyed?",
-      "Was the sauce oily (pan-cooked, restaurant-style) or lean (jarred marinara straight)? Oilier = harder."
+      "Has it been through hot water, a dryer, or an iron?",
+      "Is the cotton washable and colorfast?",
+      "Was any detergent, bleach, acid, peroxide, solvent, or branded cleaner already used?"
     ],
-    "modifierNotes": "tomato red pigment + oil carrier is the engine. Remove the oil and the rest of the chemistry can reach the pigment; skip it and everything stalls at faint orange. Sunlight + 3% peroxide is a patient finisher for aged residual."
+    "modifierNotes": "Use only for washable cotton. Persistent red/orange color, oily halo, heat-dried stains, dye movement, or no improvement after two conservative rounds should escalate."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "11-21, 28-35, 47-61, 65-79, 83-99, 123-126, 173-177",
+      "evidence": "Consumer stain-family guidance: cold/cool first for protein/unknown stains, tannin and combination stain families, liquid detergent/lukewarm fallback, blot/do not rub, work from the wrong side where appropriate, test first, and do not iron or dry until the stain is removed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "145-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Textile safety/process gates: heat, alkalinity, oxidation, concentration, water/heat mismanagement and rubbing can damage textiles; detergents/surfactants suspend soils; hidden-area testing, product-label following, PPE/ventilation, no incompatible mixes, care-label cleaning and reject/escalate gates.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "169-199, 326-367, 369-381, 492-495, 540-549",
+      "evidence": "Internal cotton/linen safety boundaries, enzyme/protein/oil/tannin/oxidizer controls, colored-fabric testing, no hot water on protein stains, and never-mix chlorine/acids/ammonia safety.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-4S-01",
+      "title": "R.R. Street 4Streets On-the-Spot",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/R.R. Street — 4Streets/On-the-Spot.md",
+      "lines": "22-31, 120-124",
+      "evidence": "Professional classification of food/beverage and red sauce combination stains, including possible oil components; pro-only context.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-BUFA-01",
+      "title": "BÜFA DetaProfi Spotting Chart",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/DetaProfi-Spotting-Chart.md",
+      "lines": "7-14, 42, 50-70",
+      "evidence": "Professional sauce/oil/tannin workflow classification with rinse and hem-test controls; pro-only source.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-BUFA-02",
+      "title": "BÜFA Professional Spotting Guide",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/Professional-Spotting-Guide.md",
+      "lines": "145-152",
+      "evidence": "Professional support that heat can darken/fix sugar-related food residues; used only as a heat caution.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

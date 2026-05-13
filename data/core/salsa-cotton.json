@@ -5,11 +5,11 @@
   "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 4,
-  "timeEstimate": "15–40 minutes",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "20–45 minutes for fresh washable cotton",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "salsa",
     "surfaceCanonical": "cotton",
@@ -22,168 +22,282 @@
       "capsaicin",
       "cotton"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Salsa is tomato plus chili oil plus onion plus citric acid plus cilantro and garlic. Three things stain: tomato (red color and tannin), chili pepper (the red pepper pigment is carried in oil — that's the real lock), and onion (sulfur compounds that can darken over time). The chili oil is the catch — it's fat-soluble, which means water-only cleaning can't touch it, and the oil drives the red pepper pigment deep into cotton. Cotton tolerates the full home toolkit (Dawn, mild acid, 3% peroxide, hot wash) AFTER the oil is stripped. The order is oil-first (Dawn), then tannin (vinegar), then color (peroxide). Skip the oil-strip and the stain plateaus at a faint orange that won't budge.",
-  "whyThisWorks": "Dawn strips the chili oil that's holding the red pepper pigment in place. Once the oil is gone, mild acid (vinegar) disrupts the tomato color. 3% peroxide oxidizes any residual red. Hot wash finishes — safe at this point because the oil is gone and the color is broken. Skip Dawn and peroxide can't reach the pigment underneath the oil — that's why a lot of 'cleaned' salsa stains have a faint orange ghost.",
-  "scienceNote": "Mechanism (pro-facing): salsa combines tomato (lycopene + tannin), chili (capsaicin in oil carrier + capsanthin pigment, both fat-soluble), onion sulfur compounds, and citric acid. Pro uses NSD oil-strip + acid-side tannin spotter + 3% H₂O₂ for residual chromophore.",
-  "defaultAssumption": "Fresh salsa on cotton is a high-confidence DIY. Heavy-oil salsa (restaurant-style with visible oil film) adds a solvent pre-treatment. Aged salsa is tougher because both the tomato red pigment and chili red pigment oxidize deeper.",
+  "stainChemistry": "Salsa is treated as a mixed food/sauce stain: tomato/tannin or dye-like color plus possible oil, spice, and sugar. The supported Home path is detergent-first and conservative; this card does not claim precise salsa/chile chemistry or that every salsa stain requires a dry-side-first sequence.",
+  "whyThisWorks": "Lifting solids and blotting liquid reduce load without rubbing. Cool back-rinsing moves water-soluble sauce components away from the face of the fabric, while generic liquid/heavy-duty detergent provides surfactant action for mixed food and any oily residue. Air-drying before heat prevents remaining red/orange color or sugar/oil residue from setting.",
+  "scienceNote": "Heat can worsen some food/sugar residues, so avoid dryer/iron/heat until inspection shows the stain is gone. No salsa-specific chile/oil mechanism is claimed.",
+  "defaultAssumption": "Use for washable cotton. Colored cotton needs a hidden seam dye-transfer test and lower-temperature caution; dry-clean-only, valuable, or unstable-dye items should escalate.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "dry",
-      "agent": "Scrape + Cold Flush",
-      "technique": "Remove chunks, cold flush",
-      "equipment": "Dull blade, cold water, white cotton terry towel",
-      "dwellTime": "1 minute",
-      "instruction": "Scrape solid salsa chunks off with a dull blade. Cold flush from the BACK of the fabric. Cold only — hot water drives chili oil deeper into cotton."
+      "side": "assessment",
+      "agent": "Professional Intake and Testing",
+      "technique": "Care-label, construction, fiber, and colorfastness assessment",
+      "equipment": "Clean white cloth, hidden seam/hem test",
+      "dwellTime": "Stop immediately on transfer or change",
+      "instruction": "Confirm cotton is safe for wet treatment and document any Home attempts. Test colorfastness on a hidden seam or hem before any spotting.",
+      "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "NSD",
-      "technique": "Strip the chili oil",
-      "equipment": "NSD in cool water",
-      "dwellTime": "5 minutes",
-      "instruction": "Apply NSD, work with a soft brush. Strips the chili oil carrier. Essential first step — peroxide can't reach the pigment while the oil is there."
+      "agent": "Controlled Detergent / Family-Specific Spotting",
+      "technique": "Use the mildest source-supported professional path first",
+      "equipment": "Product-labeled detergent or family-specific spotter; clean towels",
+      "dwellTime": "Use product-label dwell only; stop on dye movement or texture change",
+      "instruction": "Treat salsa on cotton as a mixed food/sauce stain and begin with controlled detergent/water action before any stronger chemistry. Keep chemistry bounded by SDS/label and fabric test results.",
+      "safetyNote": "Pro-only. Use PPE/ventilation required by product SDS; do not expose Home users to pro solvents, acids, oxidizers, or concentrated spotters.",
+      "proOnly": true
     },
     {
       "step": 3,
-      "side": "wet",
-      "agent": "Tannin Spotter",
-      "technique": "Drop, dwell, blot",
-      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
-      "dwellTime": "3–5 minutes",
-      "instruction": "Acid-side tannin spotter by dropper on tomato tannin. Dwell 3–5 min, blot."
-    },
-    {
-      "step": 4,
-      "side": "wet",
-      "agent": "Hydrogen Peroxide 3%",
-      "technique": "Drop, dwell, blot",
-      "equipment": "3% H₂O₂",
-      "dwellTime": "3–5 minutes",
-      "instruction": "3% H₂O₂ on residual orange-red. Oxidizes tomato red pigment + chili red pigment. Skip on dark cotton."
-    },
-    {
-      "step": 5,
-      "side": "wet",
-      "agent": "Hot Wash",
-      "technique": "Launder per care label",
-      "equipment": "Washing machine",
-      "dwellTime": "Full wash cycle",
-      "instruction": "Launder hot per care label."
+      "side": "rinse",
+      "agent": "Flush, Rinse, and Air-Dry Inspection",
+      "technique": "Flush between products and inspect dry",
+      "equipment": "Water/steam only if fabric and product label permit; drying rack",
+      "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+      "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+      "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Scrape chunks. Cold flush from the back.",
-      "2. NSD — strip chili oil FIRST.",
-      "3. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A).",
-      "4. 3% H₂O₂ on residual orange-red.",
-      "5. Hot wash per care label."
+      {
+        "step": 1,
+        "side": "assessment",
+        "agent": "Professional Intake and Testing",
+        "technique": "Care-label, construction, fiber, and colorfastness assessment",
+        "equipment": "Clean white cloth, hidden seam/hem test",
+        "dwellTime": "Stop immediately on transfer or change",
+        "instruction": "Confirm cotton is safe for wet treatment and document any Home attempts. Test colorfastness on a hidden seam or hem before any spotting.",
+        "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles.",
+        "proOnly": true
+      },
+      {
+        "step": 2,
+        "side": "wet",
+        "agent": "Controlled Detergent / Family-Specific Spotting",
+        "technique": "Use the mildest source-supported professional path first",
+        "equipment": "Product-labeled detergent or family-specific spotter; clean towels",
+        "dwellTime": "Use product-label dwell only; stop on dye movement or texture change",
+        "instruction": "Treat salsa on cotton as a mixed food/sauce stain and begin with controlled detergent/water action before any stronger chemistry. Keep chemistry bounded by SDS/label and fabric test results.",
+        "safetyNote": "Pro-only. Use PPE/ventilation required by product SDS; do not expose Home users to pro solvents, acids, oxidizers, or concentrated spotters.",
+        "proOnly": true
+      },
+      {
+        "step": 3,
+        "side": "rinse",
+        "agent": "Flush, Rinse, and Air-Dry Inspection",
+        "technique": "Flush between products and inspect dry",
+        "equipment": "Water/steam only if fabric and product label permit; drying rack",
+        "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+        "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+        "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+        "proOnly": true
+      }
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
-      "Hydrogen Peroxide 3%"
+      "Product-labeled professional sauce/tannin/oil systems only, used per SDS/label"
     ],
-    "temperature": "cold through spotting; hot wash post-chemistry",
+    "temperature": "Cool/cold first; warmer professional laundering only after care-label and colorfastness checks",
     "warnings": [
-      "Oil off FIRST — peroxide can't work through chili oil",
-      "Never hot-flush — drives chili oil deeper",
-      "One oxidizer at a time"
+      "Pro-only sauce/tannin/oil sequence requires SDS/label controls, PPE, ventilation, rinse/flush controls, and fabric testing. Do not expose Home users to acid spotters, solvents, oxidizers, or pro products."
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Scrape + Cold Water From the Back",
-      "instruction": "Scrape salsa chunks off with a dull butter knife. Hold the BACK of the fabric under cold running water for a minute. Cold only — hot water drives the chili oil deeper."
+      "agent": "Care Label and Solids First",
+      "instruction": "Check that the cotton is washable. Gently lift salsa solids with a spoon edge or dull knife. Do not rub the sauce into the weave."
     },
     {
       "step": 2,
-      "agent": "Dawn FIRST — Strip the Oil",
-      "instruction": "Salsa has chili oil that carries the red pepper pigment. That oil has to come off BEFORE anything else can reach the pigment. Work Dawn dish soap into the stain with a fingertip or soft toothbrush, let sit 10 min, rinse cool. The stain should lighten noticeably."
+      "agent": "Blot Liquid",
+      "instruction": "Blot remaining liquid with a clean white cloth. Avoid spreading the red/orange area or any oily halo."
     },
     {
       "step": 3,
-      "agent": "White Vinegar Dab for Red",
-      "instruction": "Mix 1 tsp white vinegar with 3 tbsp cool water. Dab on the stain, let sit 3 min, blot. Breaks the tomato tannin bond."
+      "agent": "Cool Back-Rinse if Washable",
+      "instruction": "Rinse from the back with cool water if the care label allows. Do not hot-flush or use heat while mixed food residue remains."
     },
     {
       "step": 4,
-      "agent": "3% Hydrogen Peroxide for Residual Color (Whites)",
-      "instruction": "For residual orange-red on white cotton: dab 3% drugstore hydrogen peroxide, let it bubble 3–5 min, blot. Skip on dark cotton.",
-      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia."
+      "agent": "Hidden Seam Test on Colored Cotton",
+      "instruction": "Test detergent and cool water on a hidden seam with a clean white cloth. Stop if dye transfers or the fabric changes."
     },
     {
       "step": 5,
-      "agent": "Hot Wash, Inspect Before the Dryer",
-      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer."
+      "agent": "Generic Liquid or Heavy-Duty Detergent",
+      "instruction": "Apply a small amount of generic liquid laundry detergent or heavy-duty liquid laundry detergent. Work gently; do not scrub. Launder according to the care label."
     },
     {
       "step": 6,
-      "agent": "Escalate If Heat-Set",
-      "instruction": "If salsa's been hot-dried or two home rounds haven't cleared it, take to a dry cleaner. Tell them: \"Salsa on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% hydrogen peroxide.\""
+      "agent": "Air-Dry and Inspect",
+      "instruction": "Air-dry before dryer or iron. Repeat the conservative cool rinse/detergent path once if improving. Escalate for persistent red/orange color, spreading oily halo, dye bleed/color loss, or no improvement after two rounds."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Scrape chunks. Cold water flush from the BACK.",
-      "2. Dawn FIRST — strip the chili oil. 10 min dwell, rinse cool.",
-      "3. Diluted white vinegar dab for red residue.",
-      "4. 3% hydrogen peroxide on residual color (whites only).",
-      "5. Hot wash per care label. Inspect BEFORE the dryer.",
-      "6. Escalate if heat-set."
+      "1. Care Label and Solids First: Check that the cotton is washable. Gently lift salsa solids with a spoon edge or dull knife. Do not rub the sauce into the weave.",
+      "2. Blot Liquid: Blot remaining liquid with a clean white cloth. Avoid spreading the red/orange area or any oily halo.",
+      "3. Cool Back-Rinse if Washable: Rinse from the back with cool water if the care label allows. Do not hot-flush or use heat while mixed food residue remains.",
+      "4. Hidden Seam Test on Colored Cotton: Test detergent and cool water on a hidden seam with a clean white cloth. Stop if dye transfers or the fabric changes.",
+      "5. Generic Liquid or Heavy-Duty Detergent: Apply a small amount of generic liquid laundry detergent or heavy-duty liquid laundry detergent. Work gently; do not scrub. Launder according to the care label.",
+      "6. Air-Dry and Inspect: Air-dry before dryer or iron. Repeat the conservative cool rinse/detergent path once if improving. Escalate for persistent red/orange color, spreading oily halo, dye bleed/color loss, or no improvement after two rounds."
     ],
     "products": [
-      "Dull blade or credit-card edge",
-      "Dawn dish soap",
-      "White vinegar",
-      "3% hydrogen peroxide (whites only)"
+      "Generic liquid laundry detergent",
+      "Generic heavy-duty liquid laundry detergent"
     ],
-    "whenToStop": "Stop if salsa has been hot-dried or two home rounds didn't clear it.",
+    "whenToStop": "Escalate persistent red/orange color, oily halo spreading, dye bleed/color loss, dry-clean-only/valuable/unstable-dye items, or no improvement after two conservative rounds.",
     "warnings": [
-      "Oil off FIRST — peroxide blocked by chili oil otherwise",
-      "Cold water during spotting — hot drives oil deeper",
-      "Never mix peroxide with chlorine bleach or ammonia",
-      "Skip peroxide on dark/dyed cotton"
+      "No hot-flush or precise salsa/chile chemistry claims",
+      "No branded detergent or mandatory oil-first step",
+      "No routine Home acid spotters, peroxide, hot wash, tannin spotters, concentrated acids, solvents, or pro chemistry"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never hot-flush fresh salsa — drives chili oil deeper",
-      "Never skip the Dawn / oil-strip step",
-      "Never layer oxidizers",
-      "Never dry with residual color"
+      "Never put the item in a dryer, use an iron, or apply heat until the stain is gone after air-drying inspection",
+      "Never rub or scrub aggressively; blot, lift, or gently work only enough to avoid driving soil deeper",
+      "Never mix cleaning agents, bleach, ammonia, acids, solvents, or professional spotters",
+      "Never use chlorine bleach unless the care label allows it and the fabric is white or confirmed colorfast",
+      "Never use professional-strength oxidizers, acids, dry-side solvents, rust/mineral removers, adhesive removers, or named pro products in the Home path",
+      "Never hot-flush salsa or use dryer/iron/heat while mixed food residue remains",
+      "Never claim all salsa needs an oil-first or dry-side solvent-first path",
+      "Never use routine Home acid spotters, peroxide, tannin spotters, concentrated acids, solvents, hot wash, or professional chemistry"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, hot wash",
-      "Dyed cotton: skip or inside-seam-test peroxide",
-      "Heat-durable once chemistry is cleared"
-    ]
+      "Cotton is cellulose; white cotton may tolerate more laundering than colored cotton",
+      "Colored cotton requires hidden seam colorfastness testing, lower-temperature caution, and no chlorine/strong peroxide default"
+    ],
+    "chemicalBoundaries": [
+      "Home path is limited to water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "Use any detergent, enzyme detergent, or pretreat only according to its product label and only after a hidden-area test on colored fabric",
+      "Oxidizers are not routine Home steps; any trace-color escalation must be care-label-safe, white/colorfast, hidden-test-passed, and never mixed with other cleaners",
+      "Professional chemistry is Pro-only and requires SDS/label controls, PPE, ventilation, colorfastness testing, and flush/rinse controls",
+      "Home salsa path is cool water plus generic liquid/heavy-duty detergent only",
+      "If residual color escalation is ever considered, it must be care-label-safe, white/colorfast, hidden-test-passed, never mixed, and preferably handled by Pro"
+    ],
+    "chemicalControls": [
+      "Home path is limited to water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "Use any detergent, enzyme detergent, or pretreat only according to its product label and only after a hidden-area test on colored fabric",
+      "Oxidizers are not routine Home steps; any trace-color escalation must be care-label-safe, white/colorfast, hidden-test-passed, and never mixed with other cleaners",
+      "Professional chemistry is Pro-only and requires SDS/label controls, PPE, ventilation, colorfastness testing, and flush/rinse controls",
+      "Home salsa path is cool water plus generic liquid/heavy-duty detergent only",
+      "If residual color escalation is ever considered, it must be care-label-safe, white/colorfast, hidden-test-passed, never mixed, and preferably handled by Pro"
+    ],
+    "homeAllowed": [
+      "Cool/cold water or care-label-safe lukewarm water",
+      "Generic liquid laundry detergent or heavy-duty liquid laundry detergent",
+      "Hidden-area colorfastness test",
+      "Care-label laundering",
+      "Air-dry and inspect before heat"
+    ],
+    "proOnly": [
+      "Professional spotters, dry-side solvents, acids, oxidizers, reducers, concentrated chemistry, steam, and heat escalation require SDS/label controls, PPE, ventilation, flush/rinse controls, and documented fabric testing"
+    ],
+    "testFirst": [
+      "Test detergent, warmer water, enzyme detergent, oxidizer escalation, alcohol/solvent, acid spotter, or any pro chemistry on a hidden seam/hem with a clean white cloth before treating the visible area"
+    ],
+    "colorfastnessTest": "On a hidden seam or hem, press a clean white cloth with the planned detergent/water mix for one minute; stop if dye transfers, color changes, or texture changes.",
+    "flushNeutralizeDry": "Rinse or flush out each cleaning agent before changing products; air-dry fully and inspect before any dryer, iron, heat, or professional escalation.",
+    "temperatureLimits": "Cool/cold first for mixed sauce/unknown components. Use care-label-safe lukewarm only if needed after initial removal; no dryer/iron/heat until gone.",
+    "escalationTriggers": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate persistent red/orange color, spreading oily halo, dye bleed/color loss, dry-clean-only/valuable/unstable-dye items, or no improvement after two conservative rounds"
+    ],
+    "stopAndEscalate": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate persistent red/orange color, spreading oily halo, dye bleed/color loss, dry-clean-only/valuable/unstable-dye items, or no improvement after two conservative rounds"
+    ],
+    "ppeVentilation": "For Home detergent use, follow the product label and keep products away from children and pets. For concentrates or Pro chemistry, use gloves/eye protection as the SDS requires and work with ventilation.",
+    "homeVsProBoundary": "Home guidance excludes professional-strength oxidizers, acids, solvents, named pro products, exact pro concentrations, steam, and heat escalation; those belong only in a professional workflow with SDS/label controls.",
+    "sourceConfidence": "medium"
   },
   "materialWarnings": [
-    "Oil carrier off first, color second",
-    "Cold spotting, hot wash",
-    "Peroxide on whites"
+    "Treat salsa as a mixed sauce stain, not one precise chemistry",
+    "Colored cotton requires hidden seam dye-transfer testing",
+    "Avoid heat until red/orange color and any oily halo are gone"
   ],
   "escalation": {
-    "when": "Salsa heat-set by iron or dryer, or two home rounds plateau.",
-    "whatToTell": "\"Salsa on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% H₂O₂.\"",
-    "specialistType": "professional dry cleaner"
+    "when": "Escalate persistent red/orange color, oily halo spreading, dye bleed/color loss, dry-clean-only/valuable/unstable-dye items, or no improvement after two conservative rounds.",
+    "whatToTell": "Salsa on cotton; whether solids were lifted; whether cool back-rinse and detergent were used; any persistent red/orange color, oily halo, dye transfer, heat exposure, or prior products.",
+    "specialistType": "professional textile cleaner or dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Oily restaurant-style salsa or lean homemade?",
-      "Has it been through a hot wash or dryer?",
-      "Is the cotton white, light, or dark/dyed?"
+      "What kind of salsa/sauce and how old is it?",
+      "Is the cotton white or colored?",
+      "Was heat, peroxide, vinegar, dish soap, or a dryer used?",
+      "Is there a red/orange mark, oily halo, or both?"
     ],
-    "modifierNotes": "Salsa + chili oil is tomato sauce plus extra chili pigment. Same oil-first-then-color pattern. Heavy oil restaurant salsa trends harder — more solvent passes."
+    "modifierNotes": "Keep as mixed-stain detergent-first guidance; avoid precise chili chemistry or mandatory oil-first instructions."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "11-32, 34-61, 65-79, 83-99, 105-113",
+      "evidence": "Consumer stain-family guidance for protein, tannin, oil, combination and unknown stains; blot rather than rub, work from the wrong side where appropriate, test first, and do not iron or dry until the stain is removed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "145-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Safety and process gates: heat, concentration, oxidation, abrasion and mismanaged water can damage textiles; detergents/surfactants suspend oily soils; test hidden areas, follow product labels, ventilate, use PPE for concentrates, avoid incompatible mixes, and clean only according to care label or reject/escalate.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "169-199, 326-367, 445-449, 484-495, 540-549",
+      "evidence": "Internal cotton/linen safety boundaries; protein, oil, tannin and oxidizer controls; dry-side solvent/pro chemistry boundaries; no hot water on protein stains; never mix chlorine bleach with ammonia or acids.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-4S-01",
+      "title": "R.R. Street 4Streets On-the-Spot",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/R.R. Street — 4Streets/On-the-Spot.md",
+      "lines": "22-36, 48-53, 128-146",
+      "evidence": "Professional classification and operator workflow context for food/beverage, oil, tannin, protein and combination stains; pro-only product taxonomy.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-ADC-01",
+      "title": "American Drycleaner Spotting Techniques",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Trade & Media/American Drycleaner/Spotting-Techniques.md",
+      "lines": "8-13, 69-75, 96-109",
+      "evidence": "Professional solvent/oil, tannin, flushing and controlled last-resort bleaching cautions; low suitability for Home copy.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-BUFA-01",
+      "title": "BÜFA DetaProfi Spotting Chart",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/DetaProfi-Spotting-Chart.md",
+      "lines": "7-14, 50-70",
+      "evidence": "Professional chart support for oil, red wine, sauce/tannin and linen hem testing; rinse between products; pro-only chemistry sequence reference.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-BUFA-02",
+      "title": "BÜFA Professional Spotting Guide",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/Professional-Spotting-Guide.md",
+      "lines": "145-179",
+      "evidence": "Professional training support for heat-sensitive food/sugar residues, protein coagulation/enzymes, and wine/fruit tannin classification; low suitability for Home copy.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

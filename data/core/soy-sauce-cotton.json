@@ -5,11 +5,11 @@
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 4,
-  "timeEstimate": "15–40 minutes",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "15–40 minutes for fresh washable fabric; aged or heat-set stains may need professional review",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "soy-sauce",
     "surfaceCanonical": "cotton",
@@ -17,179 +17,265 @@
     "riskLevel": "low",
     "tags": [
       "tannin",
-      "melanoidin",
-      "salt-mordant",
       "cotton",
-      "time-sensitive"
+      "soy-sauce",
+      "cleanup-required"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Soy sauce is a brown-black stain of browning pigments (caramel-type compounds from fermentation), tannin-like phenolics, amino acids, and — critically — salt. The browning pigments bond to cotton tightlyAND some browning-type lock together. The salt content acts as a MORDANT — a dye fixative that locks the brown color deeper into the fiber the longer it sits. This makes soy sauce genuinely time-sensitive: the same spill caught in 5 minutes is twice as easy as the same spill at 30 minutes. Cotton is pure cellulose — tolerates acid-side spotters, NSD, 3% H₂O₂, and hot wash.",
-  "whyThisWorks": "Cold flush removes the salt before it can finish mordanting the color into the fiber. NSD suspends loose pigment. Acid-side tannin spotter disrupts the browning pigments-cellulose grip. 3% H₂O₂ oxidizes the residual brown color. Hot wash finishes. The salt-flush first is the difference between soy-sauce-as-removable-tannin and soy-sauce-as-dye-fixed-by-its-own-salt.",
-  "defaultAssumption": "Time is the main variable. Fresh (within 10 min) is a high-confidence DIY. Hour-old adds a peroxide cycle. Overnight has set most of the way — expect a plateau at faint brown without pro chemistry.",
+  "stainChemistry": "Treat soy sauce on cotton conservatively as a dark food/beverage/tannin-adjacent spill. The available packet supports family-level food/beverage/tannin-adjacent handling, not soy-specific salt mordant, melanoidin, caramel, amino-acid, or timing chemistry claims.",
+  "whyThisWorks": "Blotting and back-rinsing reduce loose, water-soluble spill material before it spreads deeper. Generic liquid/heavy-duty laundry detergent helps suspend remaining residue, while care-label laundering and air-dry inspection avoid heat-setting any residual brown color.",
+  "defaultAssumption": "Use only for washable cotton. Old, heat-dried, dark/dyed, or no-improvement stains should stay conservative and escalate rather than adding Home acids, peroxide, pro spotters, or hot wash defaults.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cold Flush — Salt First",
-      "technique": "Flush from the back",
-      "equipment": "Cold water, white cotton terry towel",
-      "dwellTime": "1 minute",
-      "instruction": "Cold flush from the BACK of the fabric. This step is doing TWO jobs: moving soluble pigment AND flushing out the salt that would otherwise mordant the color into the fiber. Flush longer than you would for a straight tannin — 60+ seconds. The longer the salt sits, the harder the stain fixes."
+      "side": "assessment",
+      "agent": "Professional Intake and Fabric Testing",
+      "technique": "Care-label, construction, fiber, and colorfastness assessment",
+      "equipment": "Clean white cloth, hidden seam/hem test",
+      "dwellTime": "Stop immediately on transfer or change",
+      "instruction": "Confirm the cotton item is safe for professional wet-side treatment and document Home attempts. Treat soy sauce only within source-supported family guidance, not unsupported exact chemistry claims.",
+      "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles. Use PPE/ventilation required by any product SDS.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "NSD",
-      "technique": "Sponge, dwell, blot",
-      "equipment": "NSD in cold water",
-      "dwellTime": "2–3 minutes",
-      "instruction": "Apply NSD, sponge gently. Suspends residual pigment. Blot with a clean towel."
+      "agent": "Controlled Detergent / Family-Specific Professional Spotting",
+      "technique": "Use the mildest source-supported professional path first",
+      "equipment": "Product-labeled detergent or family-specific professional spotter; clean towels",
+      "dwellTime": "Use product-label dwell only; stop on dye movement, ring formation, or texture change",
+      "instruction": "Begin with controlled water/detergent action for soy sauce. Any family-specific professional spotter must remain Pro-only, label-directed, and bounded by fabric test results.",
+      "safetyNote": "Pro-only. Do not expose Home users to pro solvents, acids, oxidizers, concentrated spotters, steam, or exact percentages. Use SDS/label controls, PPE, ventilation, and do not mix incompatible chemistry.",
+      "proOnly": true
     },
     {
       "step": 3,
-      "side": "wet",
-      "agent": "Tannin Spotter",
-      "technique": "Drop, dwell, blot",
-      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
-      "dwellTime": "3–5 minutes",
-      "instruction": "Acid-side tannin spotter by dropper on the brown residue. Disrupts the browning pigments-cellulose bonds. Dwell 3–5 min, blot. Repeat once if needed."
-    },
-    {
-      "step": 4,
-      "side": "wet",
-      "agent": "Hydrogen Peroxide 3%",
-      "technique": "Drop, dwell, blot",
-      "equipment": "3% H₂O₂",
-      "dwellTime": "3–5 minutes",
-      "instruction": "Residual brown: 3% H₂O₂ drop-by-drop. Oxidizes the browning pigments color. Dwell, blot. One oxidizer at a time."
-    },
-    {
-      "step": 5,
-      "side": "wet",
-      "agent": "NSD Flush + Hot Wash",
-      "technique": "Clear chemistry, launder",
-      "equipment": "NSD, washing machine",
-      "dwellTime": "Full wash cycle",
-      "instruction": "Rinse until water runs clear. Launder hot per care label."
+      "side": "rinse",
+      "agent": "Flush, Rinse, and Air-Dry Inspection",
+      "technique": "Flush between products and inspect dry",
+      "equipment": "Water/steam only if fabric and product label permit; drying rack",
+      "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+      "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+      "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Cold flush from the back — longer than a standard tannin. Salt removal is job #1.",
-      "2. NSD in cold water. Sponge, 2–3 min.",
-      "3. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A). 3–5 min.",
-      "4. 3% H₂O₂ on residual brown. 3–5 min. One pass.",
-      "5. NSD flush, hot wash per care label."
+      {
+        "step": 1,
+        "side": "assessment",
+        "agent": "Professional Intake and Fabric Testing",
+        "technique": "Care-label, construction, fiber, and colorfastness assessment",
+        "equipment": "Clean white cloth, hidden seam/hem test",
+        "dwellTime": "Stop immediately on transfer or change",
+        "instruction": "Confirm the cotton item is safe for professional wet-side treatment and document Home attempts. Treat soy sauce only within source-supported family guidance, not unsupported exact chemistry claims.",
+        "safetyNote": "Pro-only intake. Follow care label; reject or escalate unstable dye, structured construction, or high-value textiles. Use PPE/ventilation required by any product SDS.",
+        "proOnly": true
+      },
+      {
+        "step": 2,
+        "side": "wet",
+        "agent": "Controlled Detergent / Family-Specific Professional Spotting",
+        "technique": "Use the mildest source-supported professional path first",
+        "equipment": "Product-labeled detergent or family-specific professional spotter; clean towels",
+        "dwellTime": "Use product-label dwell only; stop on dye movement, ring formation, or texture change",
+        "instruction": "Begin with controlled water/detergent action for soy sauce. Any family-specific professional spotter must remain Pro-only, label-directed, and bounded by fabric test results.",
+        "safetyNote": "Pro-only. Do not expose Home users to pro solvents, acids, oxidizers, concentrated spotters, steam, or exact percentages. Use SDS/label controls, PPE, ventilation, and do not mix incompatible chemistry.",
+        "proOnly": true
+      },
+      {
+        "step": 3,
+        "side": "rinse",
+        "agent": "Flush, Rinse, and Air-Dry Inspection",
+        "technique": "Flush between products and inspect dry",
+        "equipment": "Water/steam only if fabric and product label permit; drying rack",
+        "dwellTime": "Until residues are flushed and fabric is dry enough to inspect",
+        "instruction": "Flush or rinse out chemistry before switching products. Air-dry/inspect before considering any heat, oxidizer, solvent, or additional professional escalation.",
+        "safetyNote": "Pro-only. Do not mix incompatible chemistry; use PPE/ventilation and document any last-resort escalation.",
+        "proOnly": true
+      }
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
-      "Hydrogen Peroxide 3%"
+      "Product-labeled professional detergent/family-specific spotting systems only, used per SDS/label"
     ],
-    "temperature": "cold through spotting; hot wash post-chemistry",
+    "temperature": "Cool/cold first; any warmer professional step only after care-label review, testing, and chemistry removal controls",
     "warnings": [
-      "Cold flush first AND longer — the salt mordants the color if it sits",
-      "One oxidizer at a time, NSD-flushed between",
-      "Flush all chemistry before heat"
+      "Pro-only chemistry requires SDS/label controls, PPE, ventilation, hidden-area testing, and flush/rinse/neutralization controls.",
+      "Do not expose Home users to professional-strength acids, solvents, oxidizers, named pro products, exact concentrations, steam, or heat escalation."
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Speed Matters — Flush Salt Fast",
-      "instruction": "Soy sauce is different from most stains: it has a lot of salt, and the salt LOCKS the brown color into cotton the longer it sits. The more seconds tick by, the harder it fixes. Move fast. If you can get cold water on it in the first 30 seconds, you're in great shape."
+      "agent": "Care Label and Colorfastness Gate",
+      "instruction": "Check the care label. If the cotton is dry-clean-only, structured, embellished, vintage, high-value, or dye-unstable, stop before wet treatment and use a professional."
     },
     {
       "step": 2,
-      "agent": "Cold Water, Back of Fabric, Longer Than Usual",
-      "instruction": "Hold the BACK of the stained area under cold running water for at least a full minute — longer than you'd use on most tannin stains. You're flushing BOTH the pigment AND the salt out. The salt is what would otherwise fix the stain permanently."
+      "agent": "Blot or Lift Excess",
+      "instruction": "Blot liquid or lift excess with a clean white cloth. Do not rub."
     },
     {
       "step": 3,
-      "agent": "Dawn + Cold Water",
-      "instruction": "Work a drop of Dawn dish soap into the stain with a fingertip or soft toothbrush. Let it sit 5 minutes. Rinse cool."
+      "agent": "Cool/Cold Back-Rinse If Washable",
+      "instruction": "Hold the back of the stained area under cool or cold running water if the care label allows."
     },
     {
       "step": 4,
-      "agent": "White Vinegar Dab for Residual Brown",
-      "instruction": "Mix 1 teaspoon white vinegar with 4 tablespoons cool water. Dab onto the remaining stain, let sit 3 minutes, blot. The vinegar's mild acidity breaks the browning pigments bond."
+      "agent": "Generic Liquid/Heavy-Duty Laundry Detergent",
+      "instruction": "Apply a small amount of generic liquid laundry detergent or heavy-duty liquid laundry detergent. Use only product-label directions and test colored fabric on a hidden seam or hem first."
     },
     {
       "step": 5,
-      "agent": "3% Hydrogen Peroxide for Stubborn Shadow",
-      "instruction": "If brown remains: dab 3% drugstore hydrogen peroxide on the spot, let it bubble 3–5 min, blot. Skip on dark or dyed cotton.",
-      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fume risk."
+      "agent": "Care-Label Wash, Then Air-Dry",
+      "instruction": "Wash according to the care label using cool, cold, or care-label-safe water. Air-dry completely and inspect before any dryer or iron."
     },
     {
       "step": 6,
-      "agent": "Hot Wash, Inspect Before the Dryer",
-      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer — dryer heat sets any residual brown permanently."
-    },
-    {
-      "step": 7,
-      "agent": "Escalate If the Stain Sat",
-      "instruction": "If the soy sauce sat for hours before treatment, the salt has already done its job and home chemistry may plateau at a faint brown. Take it to a dry cleaner. Tell them: \"Soy sauce on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% hydrogen peroxide.\""
+      "agent": "Repeat Once If Improving or Escalate",
+      "instruction": "If the stain is clearly improving, repeat this conservative water-and-detergent path once. Escalate if color remains, dye bleeds, a ring or oily halo spreads, texture changes, the stain was heat-dried/ironed, or there is no improvement after two rounds."
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Move fast — salt in soy sauce mordants the color.",
-      "2. Cold water flush from the BACK for 60+ seconds (longer than regular tannin).",
-      "3. Dawn + cold water, 5 min dwell, rinse.",
-      "4. Diluted white vinegar dab for residual brown.",
-      "5. 3% hydrogen peroxide on stubborn shadow. Skip on dark cotton.",
-      "6. Hot wash per care label. Inspect BEFORE the dryer.",
-      "7. Escalate if aged / plateau."
+      "1. Care Label and Colorfastness Gate: Check the care label. If the cotton is dry-clean-only, structured, embellished, vintage, high-value, or dye-unstable, stop before wet treatment and use a professional.",
+      "2. Blot or Lift Excess: Blot liquid or lift excess with a clean white cloth. Do not rub.",
+      "3. Cool/Cold Back-Rinse If Washable: Hold the back of the stained area under cool or cold running water if the care label allows.",
+      "4. Generic Liquid/Heavy-Duty Laundry Detergent: Apply a small amount of generic liquid laundry detergent or heavy-duty liquid laundry detergent. Use only product-label directions and test colored fabric on a hidden seam or hem first.",
+      "5. Care-Label Wash, Then Air-Dry: Wash according to the care label using cool, cold, or care-label-safe water. Air-dry completely and inspect before any dryer or iron.",
+      "6. Repeat Once If Improving or Escalate: If the stain is clearly improving, repeat this conservative water-and-detergent path once. Escalate if color remains, dye bleeds, a ring or oily halo spreads, texture changes, the stain was heat-dried/ironed, or there is no improvement after two rounds."
     ],
     "products": [
-      "Cold water",
-      "Dawn dish soap",
-      "White vinegar",
-      "3% hydrogen peroxide"
+      "Cool/cold water",
+      "Generic liquid laundry detergent or heavy-duty liquid laundry detergent"
     ],
-    "whenToStop": "Stop if soy sauce sat for hours before treatment and home chemistry plateaus at a faint brown shadow. Take it to a dry cleaner.",
+    "whenToStop": "If the stain is clearly improving, repeat this conservative water-and-detergent path once. Escalate if color remains, dye bleeds, a ring or oily halo spreads, texture changes, the stain was heat-dried/ironed, or there is no improvement after two rounds.",
     "warnings": [
-      "Speed matters — salt fixes the color",
-      "Cold water only during spotting",
-      "Never mix peroxide with chlorine bleach or ammonia",
-      "Skip peroxide on dark/dyed cotton",
-      "Inspect before the dryer"
+      "No dryer, iron, or heat until the stain is gone after air-drying inspection",
+      "Do not mix cleaners",
+      "Do not rub aggressively",
+      "No Home vinegar/acids, peroxide, chlorine bleach, pro spotters, solvents, sunlight/UV claims, or hot-wash default"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never let soy sauce sit without a flush — the salt will mordant the color in",
-      "Never hot-water-flush — sets browning pigments brown",
-      "Never layer oxidizers — one at a time",
-      "Never dry with residual color visible"
+      "Never put the item in a dryer, use an iron, or apply heat until the stain is gone after air-drying inspection",
+      "Never rub or scrub aggressively; blot, lift, scrape, or gently work only enough to avoid driving soil deeper",
+      "Never mix cleaning agents, bleach, ammonia, acids, solvents, or professional spotters",
+      "Never use chlorine bleach unless the care label allows it and the fabric is white or confirmed colorfast",
+      "Never use professional-strength oxidizers, acids, dry-side solvents, rust/mineral removers, adhesive removers, exact pro percentages, or named pro products in the Home path"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, hot wash",
-      "Dyed cotton: skip or inside-seam-test peroxide",
-      "Heat-durable once chemistry is cleared"
-    ]
+      "Cotton is cellulose; washable cotton can generally tolerate generic liquid detergent and care-label laundering",
+      "Colored cotton needs lower-temperature caution and a hidden white-cloth colorfastness test before detergent dwell or any escalation",
+      "White cotton may tolerate more than colored cotton, but this Home path does not assume chlorine, strong peroxide, professional spotters, or hot-water treatment"
+    ],
+    "chemicalBoundaries": [
+      "Home path is limited to cool/cold or care-label-safe lukewarm water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "Use detergent or pretreat only according to its product label and only after a hidden-area test on colored fabric",
+      "Oxidizers are not routine Home steps in this repair; any future trace-color escalation must be care-label-safe, white/colorfast, hidden-test-passed, never mixed with other cleaners, and separately sourced",
+      "Professional chemistry is Pro-only and requires SDS/label controls, PPE, ventilation, colorfastness testing, and flush/rinse/neutralization controls"
+    ],
+    "chemicalControls": [
+      "Home path is limited to water, generic liquid laundry detergent or heavy-duty liquid laundry detergent, and care-label laundering",
+      "No vinegar/acids, peroxide, chlorine bleach, dry-side solvent, professional tannin spotter, neutral synthetic detergent product claim, branded cleaner claim, or exact pro concentration in the Home path",
+      "Professional chemistry is Pro-only with SDS/label, PPE/ventilation, colorfastness testing, and flush/rinse/neutralization controls"
+    ],
+    "homeAllowed": [
+      "Blot, lift, or gently scrape excess before adding water",
+      "Cool/cold water or care-label-safe lukewarm water",
+      "Generic liquid laundry detergent or heavy-duty liquid laundry detergent",
+      "Hidden-area colorfastness test",
+      "Care-label laundering",
+      "Air-dry and inspect before heat"
+    ],
+    "proOnly": [
+      "Professional spotters, dry-side solvents, acids, oxidizers, reducers, concentrated chemistry, steam, and heat escalation require SDS/label controls, PPE, ventilation, flush/rinse/neutralization controls, and documented fabric testing"
+    ],
+    "testFirst": [
+      "Test detergent, warmer water, enzyme detergent, oxidizer escalation, acid spotter, solvent, or any pro chemistry on a hidden seam/hem with a clean white cloth before treating the visible area"
+    ],
+    "colorfastnessTest": "On a hidden seam or hem, press a clean white cloth with the planned detergent/water mix for one minute; stop if dye transfers, color changes, or texture changes.",
+    "flushNeutralizeDry": "Rinse or flush out each cleaning agent before changing products; air-dry fully and inspect before any dryer, iron, heat, or professional escalation.",
+    "temperatureLimits": "Cool/cold first for tannin-adjacent, beverage, unknown, or mixed food stains. Use care-label-safe lukewarm/wash temperature only after initial lift/rinse. No dryer, iron, or heat until clean.",
+    "escalationTriggers": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, odor after air-drying, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate old or heat-set brown stains, dye bleed, color loss, ring/spread, dark/dyed cotton that fails hidden testing, or no improvement after two conservative rounds"
+    ],
+    "stopAndEscalate": [
+      "Stop and escalate on dye bleed, color loss, texture change, ring formation, spreading halo, odor after air-drying, or fabric distortion",
+      "Stop and escalate dry-clean-only, non-washable, lined, structured, embellished, vintage, high-value, or unstable-dye items",
+      "Escalate old or heat-set brown stains, dye bleed, color loss, ring/spread, dark/dyed cotton that fails hidden testing, or no improvement after two conservative rounds"
+    ],
+    "ppeVentilation": "For Home detergent use, follow the product label and keep products away from children and pets. For concentrates or Pro chemistry, use gloves/eye protection as the SDS requires and work with ventilation.",
+    "homeVsProBoundary": "Home guidance excludes professional-strength oxidizers, acids, solvents, named pro products, exact pro concentrations, steam, and heat escalation; those belong only in a professional workflow with SDS/label controls.",
+    "sourceConfidence": "medium"
   },
   "materialWarnings": [
-    "Flush salt fast — it fixes the color",
-    "Cold during spotting, hot at wash",
-    "Peroxide on whites; test inside seam on dark cotton"
+    "Washable cotton only; colored cotton needs hidden-area white-cloth dye-transfer testing",
+    "Start cool/cold and avoid dryer/iron/heat until the stain is gone",
+    "Home path uses generic detergent only; no vinegar/acids, peroxide, chlorine bleach, solvents, sunlight/UV, branded cleaners, or pro spotters"
   ],
   "escalation": {
-    "when": "Soy sauce sat for hours before treatment, heat-set by iron or dryer, or two home rounds plateau at faint brown.",
-    "whatToTell": "\"Soy sauce on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar + 3% H₂O₂. [Hot-washed / not yet laundered.]\"",
-    "specialistType": "professional dry cleaner"
+    "when": "Escalate old or heat-set brown stains, dye bleed, color loss, ring/spread, dark/dyed cotton that fails hidden testing, or no improvement after two conservative rounds",
+    "whatToTell": "Soy Sauce on Cotton; age of stain; care label/fabric color; whether cool/cold water and generic detergent were used; whether dye transfer, ring/halo, odor, heat exposure, or prior Home chemistry occurred.",
+    "specialistType": "professional textile cleaner or dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How long ago did the spill happen?",
-      "Has the fabric been through any wash cycle yet?",
-      "Is the cotton white, light, or dark/dyed?",
-      "Light or dark soy sauce?"
+      "How old is the stain?",
+      "Has it been through hot water, a dryer, or an iron?",
+      "Is the cotton washable and colorfast?",
+      "Was any detergent, bleach, acid, peroxide, solvent, or branded cleaner already used?"
     ],
-    "modifierNotes": "The salt-mordant mechanism is the novel feature. A minute of extra cold flush time at the start of treatment saves two peroxide cycles later."
+    "modifierNotes": "Use only for washable cotton. Old, heat-dried, dark/dyed, or no-improvement stains should stay conservative and escalate rather than adding Home acids, peroxide, pro spotters, or hot wash defaults."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "11-21, 28-35, 47-61, 65-79, 83-99, 123-126, 173-177",
+      "evidence": "Consumer stain-family guidance: cold/cool first for protein/unknown stains, tannin and combination stain families, liquid detergent/lukewarm fallback, blot/do not rub, work from the wrong side where appropriate, test first, and do not iron or dry until the stain is removed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "145-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Textile safety/process gates: heat, alkalinity, oxidation, concentration, water/heat mismanagement and rubbing can damage textiles; detergents/surfactants suspend soils; hidden-area testing, product-label following, PPE/ventilation, no incompatible mixes, care-label cleaning and reject/escalate gates.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "169-199, 326-367, 369-381, 492-495, 540-549",
+      "evidence": "Internal cotton/linen safety boundaries, enzyme/protein/oil/tannin/oxidizer controls, colored-fabric testing, no hot water on protein stains, and never-mix chlorine/acids/ammonia safety.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-4S-01",
+      "title": "R.R. Street 4Streets On-the-Spot",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/R.R. Street — 4Streets/On-the-Spot.md",
+      "lines": "22-31, 48-53, 120-128",
+      "evidence": "Professional family classification for food/beverage, wet-side tannin/sugar, and sauce/combination stains; does not support soy-specific salt chemistry.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-ADC-01",
+      "title": "American Drycleaner Spotting Techniques",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Trade & Media/American Drycleaner/Spotting-Techniques.md",
+      "lines": "18-22, 63-75",
+      "evidence": "Trade tannin/protein examples and pro tannin cautions including color testing and flushing; pro-only source.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }
