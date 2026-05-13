@@ -14,7 +14,9 @@
     "infra:check": "node scripts/check-env.mjs && node scripts/check-backend-infra.mjs && bash scripts/check-migrations.sh",
     "audit:pro-voice": "node scripts/audit-pro-voice.mjs",
     "audit:pro-voice:strict": "node scripts/audit-pro-voice.mjs --strict",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "schema:gate": "node scripts/validate-protocol-schema-gate.mjs",
+    "schema:gate:strict": "node scripts/validate-protocol-schema-gate.mjs --strict --scope changed"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
