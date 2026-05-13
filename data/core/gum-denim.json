@@ -5,210 +5,305 @@
   "stainFamily": "specialty",
   "surface": "denim",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
-  "difficulty": 3,
-  "timeEstimate": "20–40 minutes; freeze + crack + Goo Gone, indigo-safe with hidden test",
-  "lastValidated": "2026-04-25",
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
+  "difficulty": 5,
+  "timeEstimate": "20–40 minutes for the conservative path on washed denim; raw / dark / selvedge / high-value denim escalates from the start",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "gum",
     "surfaceCanonical": "denim",
     "tier": "universal",
-    "riskLevel": "low",
+    "riskLevel": "medium",
     "tags": [
-      "gum",
-      "chewing-gum",
+      "specialty",
+      "adhesive",
+      "dry-side",
       "denim",
-      "freeze-and-lift",
-      "no-rubbing",
-      "indigo-loss-risk-on-solvent",
-      "no-chlorine-bleach"
+      "indigo-fade-risk",
+      "care-label",
+      "conservative-home"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Chewing gum is a sticky polymer plus softeners and sweeteners. The polymer doesn't dissolve in water — it has to be frozen brittle so it cracks off mechanically, or dissolved with a citrus / petroleum solvent. Warm gum is soft and spreads when touched, making it worse. Cold gum is brittle and lifts cleanly. On denim, three things matter: indigo dye sits on the surface and any solvent can lift color along with the residue, the weave is heavy enough that gum sits on top rather than penetrating fiber (good news), and aggressive scrubbing leaves a halo on dark denim. Don't pick at warm gum with fingernails — it spreads and pushes the polymer deeper into the weave.",
-  "whyThisWorks": "Freezing makes the gum polymer brittle and breaks its grip on the denim. Cracking with a plastic edge lifts most of it off in pieces. Goo Gone (citrus solvent) on a cloth dissolves residual stickiness without the dye-loss risk of acetone. Cool wash plus air-dry finishes. The honest cap on denim: tightly-set gum on raw / selvage denim or aggressive removal attempts often leave a permanent indent or color loss; pro is the right call there.",
-  "defaultAssumption": "Chewing gum on light-wash or medium-wash denim — sat on it at the park, kid stuck it under the table. Fresh = freeze + lift = high success. Raw / selvage / black overdyed denim = pro from minute one (any solvent + scrubbing risks color loss).",
+  "stainChemistry": "Chewing gum behaves like a sticky / adhesive dry-side soil with a possible oily carrier. In professional spotting it is handled with controlled dry-side product systems. Denim is a cotton weave dyed with indigo (or overdyed black), and the dye sits on the surface of the yarn rather than penetrating the fiber. That means: (1) raw, dark, selvedge, or high-value denim is dye-fragile — water, agitation, hot water, bleach, or solvent can transfer or lift color and create rings or fading; (2) washed denim is more forgiving but is still chlorine-restricted; (3) gum chemistry and denim color chemistry must be considered together.",
+  "whyThisWorks": "Letting the gum firm or harden, and then gently lifting off only what releases on its own, reduces the chance of grinding the polymer deeper into the weave or pulling indigo dye with it. On washed denim only, after a hidden-area white-cloth dye-transfer test, a small amount of liquid laundry detergent on any residual mark in cold water provides surfactant action without the agitation that risks fading. Raw, dark, selvedge, or high-value denim is escalated from the start rather than risking dye loss in a Home attempt.",
+  "defaultAssumption": "Most gum on denim is a small piece picked up on washed denim of unknown construction. The conservative default is to triage construction first: raw / dark / selvedge / high-value / intentionally faded denim is a pro case from minute one; washed denim that passes a hidden-area dye-transfer test is the only Home candidate. Embedded, smeared, or already-heat-set gum is harder and usually needs a professional dry cleaner with denim experience.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "dry",
-      "agent": "Triage Plus Care",
-      "technique": "Don't pick at warm gum",
-      "equipment": "Good light",
+      "agent": "Inspect denim construction and care label",
+      "action": "intake",
+      "instruction": "Confirm denim construction (raw, dark, selvedge, overdyed black, intentionally faded, high-value, washed) and read the care label. Raw, dark, selvedge, overdyed, intentionally faded, or high-value denim routes to the professional path and stops here. Washed denim with a permissive care label may continue.",
       "dwellTime": "1 minute",
-      "instruction": "Don't pick at warm gum with fingernails — it spreads and pushes the polymer deeper into the weave. Stop, freeze, then lift. Raw / selvage / black-overdyed denim = pro from minute one."
+      "safetyNote": "Indigo and dark denim dyes are dye-fragile; conservative refusal on dye-fragile denim is the safer move.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "dry",
-      "agent": "Ice-Bag Freeze",
-      "technique": "Brittle the polymer",
-      "equipment": "Ice in a sealed plastic bag",
-      "dwellTime": "15–20 minutes",
-      "instruction": "Place a sealed bag of ice on the gum 15–20 minutes. NEVER direct ice on denim — water spotting causes its own ring. The gum should be hard and brittle when ready."
+      "agent": "Allow gum to firm and lift only what releases",
+      "action": "mechanical",
+      "instruction": "Let the gum firm or harden so it is less sticky. Use a dull edge (a plastic card or dull knife) to gently lift only the gum that releases on its own. Do not scrape, grind sideways across the weave, gouge the denim, or apply pressure to soft / sticky gum.",
+      "dwellTime": "Until firm, then 1–2 minutes",
+      "safetyNote": "Minimal mechanical action only. Aggressive scraping spreads gum and can damage the weave; agitation on denim can pull indigo.",
+      "proOnly": true
     },
     {
       "step": 3,
-      "side": "dry",
-      "agent": "Plastic-Edge Crack and Lift",
-      "technique": "Mechanical pickup of frozen polymer",
-      "equipment": "Plastic card, plastic spoon, or dull butter knife",
-      "dwellTime": "2–5 minutes",
-      "instruction": "Crack the frozen gum with the edge of a plastic card. Lift off pieces. Never gouge denim — flat-edge work only. Most surface gum comes off this way."
+      "side": "wet",
+      "agent": "Hidden-area dye-transfer test (mandatory)",
+      "action": "test",
+      "instruction": "Dab a small amount of liquid laundry detergent and cold water on an inside seam using a clean white cloth. Press for one minute and check the cloth for indigo / dye transfer.",
+      "dwellTime": "1 minute, until checked",
+      "safetyNote": "Stop if indigo / dye transfers to the white cloth. Dye-fragile denim routes to the professional path; no further Home wet work.",
+      "proOnly": true
     },
     {
       "step": 4,
-      "side": "wet-minimal",
-      "agent": "Hidden-Seam Test for Goo Gone",
-      "technique": "Indigo bleed test before solvent",
-      "equipment": "Goo Gone on Q-tip",
-      "dwellTime": "30 seconds",
-      "instruction": "Inside seam: dab Goo Gone on a hidden seam, blot with white cloth. If indigo transfers, skip Goo Gone — Dawn-only finish. If clean, solvent is safe to use on the visible spot."
+      "side": "wet",
+      "agent": "Surfactant pretreat for residual mark (washed denim only)",
+      "action": "detergent",
+      "instruction": "If a residual mark remains after the gum has been gently lifted and the hidden-area dye-transfer test has passed, apply a small amount of liquid laundry detergent in cold water directly to the mark. Press lightly with a fingertip or soft cloth — do not rub or scrub across the denim.",
+      "dwellTime": "Brief dwell per product label, then rinse cold",
+      "safetyNote": "Cold water only. Follow the detergent product label. Do not mix cleaning agents. Agitation pulls indigo.",
+      "proOnly": true
     },
     {
       "step": 5,
-      "side": "wet-minimal",
-      "agent": "Goo Gone Cloth Tamp",
-      "technique": "Citrus solvent for sticky residue",
-      "equipment": "Goo Gone on white cloth, ventilation",
-      "dwellTime": "30–60 seconds per pass",
-      "instruction": "Apply Goo Gone to a clean white cloth — never pour on denim. Tamp the residue, flip cloth as it picks up sticky transfer. Outside-in. 2 passes. Open windows; flammable, no flame."
+      "side": "wet",
+      "agent": "Cold rinse and minimal launder per care label",
+      "action": "wash",
+      "instruction": "Rinse minimally in cold water. Launder using the cold setting permitted by the care label; avoid hot water, strong detergent, agitation, or oxygen / chlorine bleach.",
+      "dwellTime": "Cold cycle",
+      "safetyNote": "Do not use hot water, strong detergent, or any bleach on denim.",
+      "proOnly": true
     },
     {
       "step": 6,
-      "side": "wet",
-      "agent": "Dawn Damp-Cloth Plus Cool Wash",
-      "technique": "Clear solvent residue and finish",
-      "equipment": "Dawn + cool water, washing machine",
-      "dwellTime": "5 min damp + cool wash cycle",
-      "instruction": "Dawn + cool water on damp cloth, work the spot 5 min to clear Goo Gone residue. Cool machine wash, normal detergent. AIR-DRY. Inspect dry."
+      "side": "dry",
+      "agent": "Air-dry and inspect",
+      "action": "dry",
+      "instruction": "Air-dry the garment and inspect for any residual gum, stickiness, or dye change before any dryer heat. If gum, stickiness, fading, or a halo remains, escalate rather than repeat aggressive treatment at home. Do not machine-dry until the garment is fully clear.",
+      "dwellTime": "Until dry and inspected",
+      "safetyNote": "Heat applied to residual gum sets the stain into the fiber; dryer heat on denim can also accentuate fade rings.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Don't pick at warm gum. Freeze first.",
-      "2. Ice-bag freeze 15–20 min — never direct ice.",
-      "3. Plastic-edge crack and lift hardened pieces.",
-      "4. Hidden-seam Goo Gone test on dark / raw denim.",
-      "5. Goo Gone cloth tamp for residue, outside-in.",
-      "6. Dawn damp-cloth + cool machine wash + AIR-DRY."
+      "1. Inspect denim construction (raw / dark / selvedge / overdyed / intentionally faded / high-value vs. washed) and care label before any wet treatment; dye-fragile denim is a pro case from the start.",
+      "2. Allow gum to firm; lift only what releases gently with a dull edge; minimal mechanical action.",
+      "3. Apply pro dry-side / adhesive chemistry appropriate to gum as a controlled product, with flushing and PPE / ventilation per product SDS; disclose denim color-loss risk to the customer.",
+      "4. Cold launder per care label; do not exceed cold settings; no bleach, no agitation, no strong detergent.",
+      "5. Air-dry and inspect before any heat. Pro escalation chemistry stays in a controlled environment with PPE / ventilation per product SDS."
     ],
     "products": [
-      "Ice + sealed plastic bag",
-      "Plastic card / plastic spoon / dull butter knife",
-      "Goo Gone / citrus solvent (hidden seam test on indigo)",
-      "Dawn / NSD",
-      "Cool water"
+      "Liquid laundry detergent (consumer-grade)",
+      "Cold water per care label"
     ],
-    "temperature": "cold for freeze + cool throughout cleaning",
+    "temperature": "Ambient mechanical lift; cold-only wash and rinse; no heat on residual gum or softener",
     "warnings": [
-      "Never pick at warm gum — spreads polymer into weave",
-      "Never direct ice on denim — water spotting",
-      "NEVER chlorine bleach on denim — strips indigo unevenly",
-      "Hidden-seam test before Goo Gone on dark / raw denim",
-      "Always blot, never rub — denim halos under scrubbing",
-      "Flammable solvent — no flame"
+      "Never use chlorine bleach on denim — strips indigo unevenly",
+      "Never use oxygen bleach or strong detergent on denim",
+      "Never use hot water or aggressive agitation on denim",
+      "Never apply Home solvents or adhesive removers in the Home path",
+      "Pro dry-side / adhesive chemistry requires SDS-driven PPE, ventilation, and flushing; denim color-loss risk must be disclosed",
+      "Confirm dye stability via hidden-area test before any Home wet work; raw / dark / selvedge / overdyed / high-value denim is a pro case from the start"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Don't Pick at Warm Gum",
-      "instruction": "The instinct is to scrape warm gum off with a fingernail or kitchen knife. Don't. Warm gum is soft and spreads — picking pushes the polymer deeper into the denim weave and makes the stain wider. Stop, freeze it brittle first, then it lifts off cleanly."
+      "agent": "Denim Construction Check First",
+      "instruction": "Look at the denim. Raw denim, dark indigo, selvedge, overdyed black, intentionally faded, or high-value denim is a pro case from the start — the dye on these is fragile and Home wet treatment can pull color, leave rings, or fade unevenly. Washed denim (the everyday kind, already softened from prior washes) is the only Home candidate, and only after a dye-transfer test."
     },
     {
       "step": 2,
-      "agent": "Ice-Bag Freeze — 15 to 20 Minutes",
-      "instruction": "Put ice in a sealed plastic bag and place it on the gum for 15 to 20 minutes. NEVER direct ice on denim — direct water causes ring spotting that's its own stain. The gum is ready when it's hard and brittle."
+      "agent": "Let the Gum Firm — Don't Pick at Soft Gum",
+      "instruction": "Wait until the gum is firm rather than soft and sticky. Do not pick, press, or rub at soft gum — that pushes the polymer into the denim weave and turns a small spot into a wider one."
     },
     {
       "step": 3,
-      "agent": "Plastic Edge — Crack and Lift",
-      "instruction": "Use a plastic card, plastic spoon, or dull butter knife. Crack the frozen gum with the edge — most of it lifts off in pieces. Don't gouge the denim — flat-edge only. Most surface gum is gone at this point."
+      "agent": "Lift Only What Releases on Its Own",
+      "instruction": "Use a plastic card or dull butter knife to gently lift only the gum that comes away easily. Do not scrape hard, gouge the denim, or grind sideways across the weave — that spreads gum and can damage the dyed surface. If most of the gum is still stuck, this is a pro case."
     },
     {
       "step": 4,
-      "agent": "Hidden-Seam Test on Dark Denim",
-      "instruction": "Before any solvent on dark or indigo denim: dab a drop of Goo Gone on an inside seam, blot with a white cloth. If indigo transfers, skip the Goo Gone step — go straight to Dawn. If the cloth comes up clean, Goo Gone is safe on the visible spot."
+      "agent": "Hidden-Area Dye-Transfer Test — Mandatory on Denim",
+      "instruction": "Dab a little liquid laundry detergent and cold water on an inside seam with a clean white cloth. Press one minute. If any indigo or dye transfers to the white cloth, stop and take to a professional. If the white cloth comes up clean, the washed denim is OK for the next step."
     },
     {
       "step": 5,
-      "agent": "Goo Gone for Sticky Residue",
-      "instruction": "Apply Goo Gone (citrus solvent, orange bottle) to a clean white cloth — never pour on denim. Tamp the residue from the top, flip the cloth as it picks up sticky transfer. Outside-in. 2 passes. Open windows — Goo Gone is flammable, no flame nearby."
+      "agent": "Cold Liquid Laundry Detergent on Residual Mark",
+      "instruction": "If a residual mark is left and the hidden-area test passed, put a small amount of mild liquid laundry detergent on the mark in cold water. Press gently with a fingertip or soft cloth — do not rub or scrub across the denim. Rubbing pulls indigo and leaves a halo."
     },
     {
       "step": 6,
-      "agent": "Dawn Damp Cloth and Cool Wash",
-      "instruction": "Dawn worked into a damp cloth, press the spot for 5 minutes to clear Goo Gone residue. Cool machine wash with normal detergent. AIR-DRY. Inspect dry — wet denim sometimes hides residual stickiness that reappears once dry."
+      "agent": "Cold Wash and Air-Dry",
+      "instruction": "Rinse minimally in cold water. Wash the denim on the cold setting your care label allows — avoid hot water, strong detergent, agitation, and any bleach. Air-dry and look closely for any remaining gum, stickiness, or dye change before any heat."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate If It Doesn't Clear or Denim Looks Off",
+      "instruction": "Household solvents (peanut butter / oils, WD-40, rubbing alcohol, acetone, nail-polish remover, mineral spirits, dry-cleaning solvents, adhesive removers), freezer / ice 'guarantees,' and any bleach are not in scope for this Home path on denim. If the gum is embedded, smeared, or has been hot-washed or hot-dried, the hidden-area test showed dye transfer, or the denim now shows a fade ring or halo, take the garment to a professional dry cleaner with denim experience. Tell them: \"Gum on [washed / dark / raw / selvedge / overdyed] denim, age [fresh / older / hot-set], home-treated with let-it-firm, gentle lift, hidden dye-transfer test, cold liquid laundry detergent on residual mark, cold wash, air-dried. [Any solvent / bleach / freezer used at home? — no].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Don't pick at warm gum. Stop, freeze first.",
-      "2. Ice-bag freeze 15–20 min — never direct ice on denim.",
-      "3. Plastic-edge crack and lift hardened pieces.",
-      "4. Hidden-seam Goo Gone test on dark / raw denim.",
-      "5. Goo Gone cloth tamp for residue, outside-in, 2 passes.",
-      "6. Dawn damp cloth + cool machine wash + AIR-DRY."
+      "1. Inspect denim construction; escalate raw / dark / selvedge / overdyed / intentionally faded / high-value to a pro from the start.",
+      "2. Let the gum firm — do not pick at soft / sticky gum.",
+      "3. Lift only what releases on its own; do not scrape, gouge, or grind sideways.",
+      "4. Hidden-area dye-transfer test on an inside seam (mandatory).",
+      "5. Apply a small amount of liquid laundry detergent in cold water to any residual mark — washed denim only, only after the dye-transfer test passes.",
+      "6. Cold rinse and cold wash per care label; no hot water, no strong detergent, no agitation, no bleach.",
+      "7. Air-dry and inspect for residual gum / stickiness / dye change before any heat.",
+      "8. Escalate if it doesn't clear in one conservative pass."
     ],
     "products": [
-      "Ice in sealed plastic bag",
-      "Plastic card / spoon / butter knife",
-      "Goo Gone / citrus solvent (hidden test on indigo)",
-      "Dawn dish soap",
-      "Cool water"
+      "Mild liquid laundry detergent",
+      "Cold water",
+      "Clean white cotton cloth",
+      "Plastic card or dull blade"
     ],
-    "whenToStop": "Stop on raw / selvage / black-overdyed denim from minute one (pro). Stop if hidden-seam test shows indigo loss — Dawn-only finish. Stop if gum has been ironed or hot-dried (often permanent indent).",
+    "whenToStop": "Stop if the denim is raw / dark / selvedge / overdyed / intentionally faded / high-value, or has dry-clean-only / structured / lined / embellished construction. Stop if the hidden-area dye-transfer test shows indigo / dye loss. Stop if the gum is embedded, smeared, or has been hot-washed or hot-dried. Stop if a residual mark or dye change remains after one conservative pass. Escalate to a professional dry cleaner with denim experience in any of those cases.",
     "warnings": [
-      "Never pick at warm gum — spreads polymer",
-      "Never direct ice — water spotting",
-      "NEVER chlorine bleach on denim",
-      "Hidden-seam test before Goo Gone",
-      "Always blot, never rub — denim halos",
-      "Flammable solvent — no flame"
+      "Never use chlorine bleach on denim — strips indigo unevenly",
+      "Never use oxygen bleach or strong detergent on denim",
+      "Never use hot water on denim in the gum Home path",
+      "Never use aggressive agitation or scrubbing on denim — pulls indigo, leaves halo",
+      "Do not use peanut butter, oils, WD-40, rubbing alcohol, acetone, nail-polish remover, mineral spirits, dry-cleaning solvents, or adhesive removers on gum in the Home path",
+      "Do not rely on freezer / ice 'guarantees' — not source-supported here as a Home method",
+      "Do not pick at soft / sticky gum — pushes polymer into the weave",
+      "Do not apply heat (iron, dryer, hairdryer) to gum or its residual mark — sets the stain",
+      "No 'no fade / no damage' promises — denim color-loss risk is real and conservative refusal on dye-fragile denim is the safer move",
+      "Pro-strength oxidizers, solvents, and adhesive removers are not Home steps"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never pick at warm gum",
-      "Never direct ice on denim",
-      "Never chlorine bleach on denim",
-      "Never rub denim under treatment",
-      "Never iron a gum spot",
-      "Never solvent near flame"
+      "Never use chlorine bleach on denim — strips indigo unevenly",
+      "Never use oxygen bleach or strong detergent on denim",
+      "Never use hot water on denim in the gum Home path",
+      "Never apply aggressive agitation, scrubbing, or sideways grinding on denim",
+      "Never apply heat (iron, dryer, hairdryer) to gum or its residual mark in the Home path",
+      "Never use Home solvents (peanut butter / oils, WD-40, rubbing alcohol, acetone, nail-polish remover, mineral spirits, dry-cleaning solvents, adhesive removers) on gum",
+      "Never pick, press, or rub soft / sticky gum",
+      "Never machine-dry a garment with residual gum or stickiness — heat sets the stain",
+      "Never mix cleaning agents",
+      "Never apply professional-strength oxidizers, solvents, or adhesive removers in the Home path",
+      "Never wet-treat raw / dark / selvedge / overdyed / intentionally faded / high-value denim at home"
     ],
     "fiberSensitivities": [
-      "Indigo / dark denim: hidden-seam Goo Gone test mandatory",
-      "Raw / selvage denim: pro from minute one",
-      "Light-wash denim: most forgiving — full home protocol applicable",
-      "Stretch denim with elastane: cool only",
-      "Black overdyed denim: pro — color-loss risk on solvent"
-    ]
+      "Denim is a cotton weave dyed with indigo or overdye; dye sits on the surface and is dye-fragile",
+      "Raw / dark / selvedge / overdyed / intentionally faded / high-value denim is a pro case from the start — Home wet treatment risks dye transfer, rings, or fading",
+      "Washed denim is more forgiving but still chlorine-restricted and intolerant of hot water, strong detergent, agitation, or oxygen bleach in the gum path",
+      "Cotton substrate tolerates conservative laundering, but the denim dye constrains the Home approach"
+    ],
+    "chemicalBoundaries": [
+      "Home path: gentle mechanical lift after firming, mild liquid laundry detergent in cold water (washed denim only, after hidden-area dye-transfer test), and cold wash only",
+      "No Home solvents, freezer 'guarantees,' peroxide, oxygen bleach, or chlorine bleach as a default Home step on denim",
+      "Pro path may use controlled dry-side / adhesive chemistry only when care label permits, dye stability is confirmed, and SDS-driven PPE / ventilation are in place; denim color-loss risk must be disclosed"
+    ],
+    "homeAllowed": [
+      "Mild liquid laundry detergent",
+      "Cold water per care label",
+      "Clean white cloth and dull edge (plastic card) for gentle mechanical lift after the gum has firmed",
+      "Air-drying and visual inspection before any heat"
+    ],
+    "proOnly": [
+      "Dry-side / adhesive pro products and oxidizers used in a controlled professional environment with PPE, ventilation, and flushing per product SDS; denim color-loss risk disclosed to the customer"
+    ],
+    "testFirst": [
+      "Hidden-area dye-transfer test (white cloth on an inside seam) is mandatory on any denim before detergent dwell or any wet step"
+    ],
+    "flushNeutralizeDry": [
+      "Rinse minimally in cold water after the detergent application",
+      "Air-dry and inspect before any heat"
+    ],
+    "escalationTriggers": [
+      "Raw, dark, selvedge, overdyed, intentionally faded, or high-value denim (escalates from the start)",
+      "Care label is dry-clean-only or restricts wet treatment",
+      "Garment is structured / lined / embellished",
+      "Hidden-area dye-transfer test shows indigo / dye loss",
+      "Gum is embedded, smeared, or large",
+      "Gum has been hot-washed or hot-dried",
+      "Residual mark, fade ring, halo, or dye change remains after one conservative pass"
+    ],
+    "sourceConfidence": "medium",
+    "ppeVentilation": [
+      "Follow the product label for any concentrate",
+      "Gloves and eye protection for any pro-strength chemistry",
+      "Ventilate the work area; keep cleaning agents away from children and pets"
+    ],
+    "homeVsProBoundary": "Home users on washed denim use only gentle mechanical lift after the gum has firmed, a mandatory hidden-area dye-transfer test, mild liquid laundry detergent in cold water on any residual mark, and a cold wash. Pro dry-side / adhesive chemistry is a controlled professional technique and is hidden from the Home path; dye-fragile denim is escalated from the start."
   },
   "materialWarnings": [
-    "Freeze before lift — never pick at warm gum",
-    "Never direct ice — water spotting",
-    "No chlorine bleach on denim",
-    "Always blot, never rub — denim halos",
-    "Raw / selvage denim = pro from minute one"
+    "Raw / dark / selvedge / overdyed / intentionally faded / high-value denim = pro from minute one",
+    "Hidden-area dye-transfer test is mandatory before any Home wet step on denim",
+    "Cold only — no hot water on denim in the gum path",
+    "No bleach (chlorine or oxygen), no strong detergent, no agitation on denim",
+    "Home solvents, peanut butter, oils, and freezer 'guarantees' are not in the Home path",
+    "Detergent does not dissolve gum itself — it is for the residual mark on washed denim"
   ],
   "escalation": {
-    "when": "Raw / selvage / black-overdyed denim. Hidden-seam test shows indigo loss. Gum has been ironed or hot-dried (often permanent indent). Halo ring already forming around the spot. Polymer worked deep into the weave from prior picking attempts.",
-    "whatToTell": "\"Gum on [light-wash / dark / indigo / raw / selvage] denim, age [fresh / sat-on / hot-dried suspected], home-treated with [ice freeze + plastic-edge lift + Goo Gone cloth tamp + Dawn + cool wash]. No hot, no chlorine. [Residual stickiness / indent / indigo loss / halo].\"",
+    "when": "Raw / dark / selvedge / overdyed / intentionally faded / high-value denim from the start; dry-clean-only or structured construction; hidden-area dye-transfer test shows indigo / dye loss; gum is embedded, smeared, dyed, or already heat-set; or a residual mark, fade ring, halo, or dye change remains after one conservative pass.",
+    "whatToTell": "\"Gum on [washed / dark / raw / selvedge / overdyed] denim, age [fresh / older / hot-set], home-treated with let-it-firm, gentle lift, hidden dye-transfer test, cold liquid laundry detergent on residual mark, cold wash, air-dried. [Any solvent / bleach / freezer used at home? — no].\"",
     "specialistType": "professional dry cleaner with denim experience"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Light-wash, dark, raw / selvage, or black-overdyed denim?",
-      "Fresh, sat-on, or already hot-dried / ironed?",
-      "Has anyone picked at it warm?",
-      "Stretch denim with elastane?",
-      "Visible polymer or just sticky residue?"
+      "What kind of denim — washed / dark / raw / selvedge / overdyed black / intentionally faded / high-value?",
+      "Is the gum fresh, smeared, embedded, or has it been through a hot wash or dryer?",
+      "Did the hidden-area dye-transfer test pass cleanly?",
+      "Has anyone picked at it while it was still soft?"
     ],
-    "modifierNotes": "The freeze-and-lift method is high-success on washable denim. The recurring trap is picking at warm gum, which spreads the polymer into the weave and turns a small stain into a wider one. Indigo loss on dark denim is the second risk; hidden-seam test before any solvent. Raw / selvage / black-overdyed denim goes to pro because the dye is more fragile and any solvent + scrubbing risks visible damage."
+    "modifierNotes": "Denim has two simultaneous risks for gum: the polymer can grind into the weave, and the dye can transfer / fade under water, agitation, hot temperatures, bleach, or solvent. Conservative refusal on dye-fragile denim is the safer move. Home solvents and bleach are not in scope. Source-quality note: consumer-grade gum-specific Home methods are weaker than oil / tannin in the current packet, and denim adds dye-fragility on top — Home stays minimal."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "56-61, 83-99",
+      "evidence": "Conservative unknown-stain fallback (cool water, liquid detergent, rinse, air-dry); blot rather than rub; do not iron or dry stained fabric until removal is confirmed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "153-175, 313-340, 4580-4590, 4630-4638",
+      "evidence": "Heat / chemical concentration / abrasion can damage fabric; test new detergents on inconspicuous areas; follow product labels and PPE / ventilation for concentrates; clean per care label or reject inappropriate garments.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "200-222, 431-449, 464-479, 540-549",
+      "evidence": "Raw denim requires cold water, no bleach / strong detergent / hot water / agitation; washed denim is more forgiving but chlorine bleach causes fading; pro dry-side solvent / adhesive class belongs outside Home unless explicit label / SDS supports consumer use; absolute safety gates including no cleaner-mixing.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-BUFA-01",
+      "title": "BÜFA DetaProfi Spotting Chart",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/DetaProfi-Spotting-Chart.md",
+      "lines": "7-14, 27-37, 65-70",
+      "evidence": "Chewing gum is handled by pro dry-side / oil-family products in a professional environment; hem test required for natural fibers and brilliant colors; pro classification only.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-ADC-01",
+      "title": "American Drycleaner Spotting Techniques",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Trade & Media/American Drycleaner/Spotting-Techniques.md",
+      "lines": "18-31, 96-109",
+      "evidence": "Adhesive / glue may require pro dry-side solvents; POG / OTPR handling requires product-specific compatibility, ventilation, and flushing.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

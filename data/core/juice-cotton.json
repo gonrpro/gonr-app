@@ -5,11 +5,11 @@
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 3,
-  "timeEstimate": "10–30 minutes (fresh); aged adds a peroxide cycle",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "10–30 minutes (fresh); longer if dried in or hot-set",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "juice",
     "surfaceCanonical": "cotton",
@@ -17,181 +17,279 @@
     "riskLevel": "low",
     "tags": [
       "tannin",
-      "anthocyanin",
+      "fruit-juice",
+      "sugar",
       "cotton",
-      "time-sensitive",
-      "sugar-residue"
+      "care-label",
+      "conservative-home"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Fruit juice is anthocyanin (grape, berry, cranberry, pomegranate) or yellow-orange pigments (orange, mango, carrot) pigment + citric acid + fructose. The anthocyanin bond to cotton is grip; the sugar creates a sticky residue that, if allowed to dry, traps the pigment against the fiber. Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, and hot wash. Grape and cranberry juice carry the heaviest anthocyanin load; orange and apple are lighter. This is essentially the red-wine pattern at lower concentration.",
-  "whyThisWorks": "Same tannin sequence: cold flush, NSD for sugar + surface pigment, acid-side spotter for anthocyanin grip, 3% H₂O₂ for residual color, hot wash. Dark-anthocyanin juices may need an extra peroxide cycle; light yellow-orange pigments juices often clear in one pass.",
-  "defaultAssumption": "Most juice spills are kid-centric (apple, orange, grape). Fresh = high-confidence DIY. Dark-anthocyanin juices on light cotton = two cycles. Heat-set = pro.",
+  "stainChemistry": "Fruit juice is a tannin / plant-origin beverage stain that also typically carries sugar residue. Different juices have different pigment loads (grape and dark berry juices are heavier than apple or pear), but the conservative Home approach is the same across the family. Cotton is cellulose: white cotton is generally tolerant of conservative laundering, while colored cotton requires lower heat and a colorfastness check before any escalation.",
+  "whyThisWorks": "Cool water rinsing from the back of the fabric carries away most of the fresh juice (sugar plus surface pigment). A small amount of liquid laundry detergent lifts the remaining residue. Care-label laundering and air-drying with inspection prevent any residual color from being heat-set into the fiber.",
+  "defaultAssumption": "Most juice on cotton is a fresh spill on a washable garment. Fresh juice typically responds to conservative cool-water and detergent treatment plus a care-label wash. Juice that has dried in, been through a hot wash or dryer, or sat for a long time is harder and may need a professional dry cleaner.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cold Flush",
-      "technique": "Flush from the back",
-      "equipment": "Cold water, white cotton terry towel",
-      "dwellTime": "30–60 seconds",
-      "instruction": "Cold flush from the BACK of the fabric. Most fresh juice lifts here — sugar and pigment are water-soluble while fresh."
+      "side": "dry",
+      "agent": "Inspect and confirm care label",
+      "action": "intake",
+      "instruction": "Confirm fiber, color, and care-label limits. Dry-clean-only or structured pieces escalate to the professional path.",
+      "dwellTime": "1 minute",
+      "safetyNote": "Reject too-soiled or non-colorfast garments per care-label guidance. Do not proceed if the care label disallows wet treatment.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "NSD",
-      "technique": "Sponge, dwell, blot",
-      "equipment": "NSD in cold water",
-      "dwellTime": "2–3 minutes",
-      "instruction": "Apply NSD, sponge gently. Handles residual sugar + pigment."
+      "agent": "Cool water rinse from the back",
+      "action": "rinse",
+      "instruction": "Hold the back of the stained area under cool running water and let the rinse carry the juice out through the front. Blot underneath with a clean white cotton cloth — do not rub.",
+      "dwellTime": "30–60 seconds",
+      "safetyNote": "Cool water only. Hot water can set the tannin color into the fiber. Avoid mechanical scrubbing.",
+      "proOnly": true
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Hot-Water Pour-Through (Fresh Only)",
-      "technique": "Pour from the back",
-      "equipment": "Kettle of hot water",
-      "dwellTime": "1–2 pours",
-      "instruction": "Under 30 min old only. Hot pour-through from the back. Skip on aged stains."
+      "agent": "Colorfastness test",
+      "action": "test",
+      "instruction": "On colored cotton, dab a small amount of liquid laundry detergent and cool water on an inside seam using a clean white cloth. Press for one minute and check the cloth for color transfer.",
+      "dwellTime": "1 minute, until checked",
+      "safetyNote": "Stop if dye transfers. Colored or unstable-dye garments escalate to the professional path.",
+      "proOnly": true
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Tannin Spotter (Aged / Dark-Anthocyanin)",
-      "technique": "Drop, dwell, blot",
-      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
-      "dwellTime": "3–5 minutes",
-      "instruction": "Acid-side spotter by dropper on residual color. Dwell 3–5 min, blot. Skip for fresh light-juice."
+      "agent": "Surfactant pretreat",
+      "action": "detergent",
+      "instruction": "Apply a small amount of liquid laundry detergent directly to the stain. Work it in lightly with a fingertip or soft cloth.",
+      "dwellTime": "Brief dwell per product label, then rinse cool",
+      "safetyNote": "Follow the detergent product label. Do not mix cleaning agents.",
+      "proOnly": true
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Hydrogen Peroxide 3%",
-      "technique": "Drop, dwell, blot",
-      "equipment": "3% H₂O₂",
-      "dwellTime": "3–5 minutes",
-      "instruction": "3% H₂O₂ on residual color. Skip on dark cotton."
+      "agent": "Launder per care label",
+      "action": "wash",
+      "instruction": "Launder using the temperature setting permitted by the care label; favor cool or lukewarm when uncertain. Rinse thoroughly.",
+      "dwellTime": "Full machine cycle",
+      "safetyNote": "Do not exceed the temperature limit on the care label.",
+      "proOnly": true
     },
     {
       "step": 6,
-      "side": "wet",
-      "agent": "NSD Flush + Hot Wash",
-      "technique": "Clear chemistry, launder",
-      "equipment": "NSD, washing machine",
-      "dwellTime": "Full wash cycle",
-      "instruction": "Rinse until water runs clear. Hot wash per care label."
+      "side": "dry",
+      "agent": "Air-dry and inspect",
+      "action": "dry",
+      "instruction": "Air-dry the garment and inspect for any residual color before any dryer heat. If a faint shadow remains on white / colorfast cotton, a single guarded oxidizer pass may be considered per the pro path — only when the care label permits and a hidden-area test has passed. If color remains on colored cotton or the care label does not support oxidizer escalation, escalate to a pro instead.",
+      "dwellTime": "Until dry and inspected",
+      "safetyNote": "Heat applied to residual tannin can set the color into the fiber. Oxidizer escalation is not a Home default and is never routine.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Cold flush from the back.",
-      "2. NSD in cold water. 2–3 min.",
-      "3. Fresh only (<30 min): hot pour-through.",
-      "4. Aged / dark juice: acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A).",
-      "5. 3% H₂O₂ on residual. 3–5 min.",
-      "6. NSD flush, hot wash per care label."
+      "1. Identify fiber, dye stability, and care-label limits before any wet treatment.",
+      "2. Rinse fresh juice with cool water from the back of the fabric.",
+      "3. Apply surfactant pretreat appropriate to the tannin / sugar family; rinse and assess.",
+      "4. Launder per care-label temperature limit; do not exceed.",
+      "5. Air-dry and inspect before any heat. If escalation is warranted on a remaining trace color, apply a pro tannin product or controlled oxidizer only when the care label permits, the fabric is white / colorfast, colorfastness is confirmed, and PPE / ventilation per product SDS are in place; tannin formulas can shift dye color and must be flushed thoroughly."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — aged / dark only",
-      "Hydrogen Peroxide 3%"
+      "Liquid laundry detergent (consumer-grade)",
+      "Cool / lukewarm water per care label"
     ],
-    "temperature": "cold through spotting; hot wash post-chemistry",
+    "temperature": "Cool through spotting; care-label cool / lukewarm wash; no heat on residual color",
     "warnings": [
-      "Never use hot water on aged juice — sets tannin",
-      "One oxidizer at a time",
-      "Dark juice on light cotton = budget 2 cycles"
+      "Do not exceed care-label temperature limits",
+      "Hot water on residual juice can set the color; boiling-water pour-through Home techniques are not recommended in this Home path",
+      "Confirm colorfastness via hidden-area test before any escalation",
+      "Tannin formulas can shift dye color and must be flushed thoroughly",
+      "Do not mix cleaning agents",
+      "Pro chemistry beyond consumer detergent requires SDS-driven PPE and ventilation"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Cold Water, Act Fast",
-      "instruction": "Fresh juice on cotton comes out easily. Hold the BACK of the stained area under cold running water for 30–60 seconds. Cold only."
+      "agent": "Confirm Care Label First",
+      "instruction": "Check the care label. If it says dry-clean-only, or the garment is structured / lined / embellished / vintage, stop and take it to a professional dry cleaner. For washable cotton, continue."
     },
     {
       "step": 2,
-      "agent": "Hot-Water Pour-Through (Fresh Only)",
-      "instruction": "If the spill is under 30 minutes old, stretch the fabric over a bowl and pour hot (not boiling) water through from the back. Skip for aged stains — sets the color."
+      "agent": "Cool Water Rinse from the Back",
+      "instruction": "Flip the fabric inside out and hold the back of the stained area under cool running water for 30–60 seconds. Most fresh juice rinses out at this step. Blot underneath with a clean white cloth — do not rub."
     },
     {
       "step": 3,
-      "agent": "Dawn + White Vinegar + Cold Water",
-      "instruction": "Mix 1 tsp Dawn + 1 tbsp white vinegar + 1 cup cold water. Dab on the spot, let sit 3 min, blot from center outward. Repeat once if color remains."
+      "agent": "Hidden-Area Test on Colored Cotton",
+      "instruction": "On colored cotton, dab a little liquid laundry detergent and cool water on an inside seam with a clean white cloth. Press one minute. If color transfers to the cloth, stop and take to a professional. White cotton can skip this step."
     },
     {
       "step": 4,
-      "agent": "OxiClean or 3% Peroxide for Stubborn Shadow",
-      "instruction": "Dissolve 1 scoop OxiClean in 1 cup cool water, soak stained area 15–30 min. Or 3% peroxide on spot for whites 3–5 min. Skip on dark cotton.",
-      "safetyNote": "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide."
+      "agent": "Apply Liquid Laundry Detergent",
+      "instruction": "Put a small amount of mild liquid laundry detergent directly on what remains of the stain. Work it in gently with your fingertip or a soft cloth — do not scrub."
     },
     {
       "step": 5,
-      "agent": "Hot Wash, Inspect Before the Dryer",
-      "instruction": "Launder hot per care label. Inspect BEFORE the dryer."
+      "agent": "Launder Per Care Label",
+      "instruction": "Wash the garment using the temperature your care label allows. If you are unsure, use cool or lukewarm water. Rinse thoroughly."
     },
     {
       "step": 6,
-      "agent": "Escalate for Heat-Set",
-      "instruction": "If juice has been hot-dried or two rounds don't clear, take to a dry cleaner."
+      "agent": "Air-Dry and Inspect Before the Dryer",
+      "instruction": "Air-dry the garment and look closely for any remaining shadow before putting it in the dryer. If a faint mark remains on white cotton and the care label allows, you can repeat the detergent pretreat and laundering step once. Do not pour boiling or very hot water through the stain — heat sets tannin color. Do not machine-dry until the stain is fully gone."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate If It Doesn't Clear",
+      "instruction": "If a shadow is still there after two careful passes, or if the stain has already been through a hot wash or dryer, take the garment to a professional dry cleaner. Tell them: \"Fruit juice on cotton — [type, if known], age [fresh / overnight / older], home-treated with cool rinse, liquid laundry detergent, and a care-label wash.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Cold flush from the BACK.",
-      "2. Fresh (<30 min) only: hot-water pour-through.",
-      "3. Dawn + vinegar + cold water, 3 min.",
-      "4. OxiClean soak OR 3% peroxide on residual. Never layer oxidizers.",
-      "5. Hot wash per care label. Inspect BEFORE the dryer.",
-      "6. Escalate if heat-set or plateau."
+      "1. Read care label; escalate dry-clean-only / structured / vintage to a pro.",
+      "2. Cool water rinse from the BACK of the fabric.",
+      "3. On colored cotton, hidden-area colorfastness test before detergent.",
+      "4. Apply a small amount of liquid laundry detergent.",
+      "5. Launder per care label (favor cool / lukewarm if uncertain).",
+      "6. Air-dry and inspect for any residual shadow before any dryer heat.",
+      "7. Repeat once if needed on white / colorfast cotton; escalate if it doesn't clear or was heat-set."
     ],
     "products": [
-      "Cold water",
-      "Dawn dish soap",
-      "White vinegar",
-      "OxiClean or 3% hydrogen peroxide"
+      "Mild liquid laundry detergent",
+      "Cool / lukewarm water",
+      "Clean white cotton cloth"
     ],
-    "whenToStop": "Stop if juice has been hot-dried and home round doesn't clear it.",
+    "whenToStop": "Stop if the care label is dry-clean-only, the garment is structured / lined / embellished, the hidden-area test shows color transfer, the stain has already been through a hot wash or dryer, or two conservative passes do not clear it. In any of those cases, escalate to a professional dry cleaner.",
     "warnings": [
-      "Hot water only for fresh — sets aged tannin",
-      "Never mix OxiClean with chlorine bleach or hydrogen peroxide",
-      "Skip peroxide on dark/dyed cotton",
-      "Inspect before the dryer"
+      "Do not use hot water on aged or dried juice — can set the tannin color",
+      "Boiling-water pour-through is not in the Home path on this card",
+      "Do not rub or scrub — spreads the stain",
+      "Do not machine-dry residual color — heat can set the stain",
+      "Do not mix cleaning agents",
+      "Pro-strength oxidizers, solvents, and tannin acids are not Home steps; oxidizer escalation is never routine"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never use hot water on aged juice — sets tannin",
-      "Never layer oxidizers",
-      "Never dry with residual color"
+      "Never use hot or boiling water on aged or dried juice — can set the tannin color",
+      "Never machine-dry a garment with residual juice color — heat can set the tannin",
+      "Never rub or scrub the stain aggressively",
+      "Never mix cleaning agents",
+      "Never use chlorine bleach on colored cotton",
+      "Never apply professional-strength oxidizers, solvents, or tannin acids in the Home path"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates NSD, acid-side spotters, 3% H₂O₂, hot wash",
-      "Dyed cotton: inside-seam-test peroxide",
-      "Heat-durable once chemistry is cleared"
-    ]
+      "Cotton is cellulose; white cotton is generally tolerant of conservative laundering",
+      "Colored cotton requires lower heat and a colorfastness check before escalation",
+      "Aged or hot-dried tannin residue is harder to remove and may need a professional dry cleaner"
+    ],
+    "chemicalBoundaries": [
+      "Home path: mild liquid laundry detergent and water only",
+      "No peroxide, oxygen bleach, or chlorine bleach as a default Home step",
+      "Pro path may use controlled tannin chemistry or oxidizers only when care label permits, fabric is white / colorfast, colorfastness is confirmed, and SDS-driven PPE and ventilation are in place"
+    ],
+    "homeAllowed": [
+      "Mild liquid laundry detergent",
+      "Cool or lukewarm water per care label",
+      "Clean white cotton cloth for blotting",
+      "Air-drying and visual inspection before any heat"
+    ],
+    "proOnly": [
+      "Pro tannin formulas, concentrated surfactants, and oxidizers used in a controlled professional environment with PPE / ventilation per product SDS; tannin chemistry can shift dye color and must be flushed thoroughly"
+    ],
+    "testFirst": [
+      "Hidden-area colorfastness test (white cloth on an inside seam) before detergent dwell or any escalation on colored cotton"
+    ],
+    "flushNeutralizeDry": [
+      "Rinse thoroughly with cool water from the back of the fabric",
+      "Rinse again after each detergent application",
+      "Air-dry and inspect before any dryer heat"
+    ],
+    "escalationTriggers": [
+      "Care label is dry-clean-only or restricts wet treatment",
+      "Garment is structured / lined / embellished / vintage / high-value",
+      "Hidden-area test shows dye transfer",
+      "Stain has already been through a hot wash or dryer",
+      "Two conservative passes do not clear the stain",
+      "Color remains on colored cotton (oxidizer escalation is not safe as a Home default on colored cotton)"
+    ],
+    "sourceConfidence": "medium",
+    "ppeVentilation": [
+      "Follow the product label for any concentrate",
+      "Gloves and eye protection for any pro-strength chemistry",
+      "Ventilate the work area; keep cleaning agents away from children and pets"
+    ],
+    "homeVsProBoundary": "Home users use only cool-water rinsing and mild liquid laundry detergent with a care-label wash. Pro chemistry (concentrated surfactants, tannin formulas, oxidizers) is hidden from the Home path and requires SDS-driven PPE / ventilation in a controlled environment."
   },
   "materialWarnings": [
-    "Hot water only for fresh",
-    "Dark juice = more peroxide passes",
-    "Peroxide on whites"
+    "Cool water only — hot water can set the tannin color",
+    "Boiling-water pour-through is not in the Home path on this card",
+    "Inspect for any residual shadow before any dryer heat",
+    "Aged or hot-dried juice is harder to remove and may need a pro"
   ],
   "escalation": {
-    "when": "Heat-set by iron or dryer, or two home rounds plateau.",
-    "whatToTell": "\"Fruit juice on cotton — [type], age [fresh / overnight / older], home-treated with Dawn + vinegar + OxiClean / 3% peroxide.\"",
+    "when": "Dry-clean-only, structured, or vintage cotton; colored cotton that fails a hidden-area test; juice that has been through a hot wash or dryer; no improvement after two conservative passes; or any case where color remains on colored cotton (oxidizer escalation is not safe as a Home default).",
+    "whatToTell": "\"Fruit juice on cotton — [type, if known], age [fresh / overnight / older], home-treated with cool rinse, liquid laundry detergent, and a care-label wash. [Hot wash or dryer applied? — yes / no].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Which juice — grape / cherry / cranberry (heavy anthocyanin) or orange / apple (lighter)?",
-      "How old is the stain?",
-      "Has it been hot-washed or dryer-cycled?",
-      "Is the cotton white, light, or dark/dyed?"
+      "What kind of juice — light (apple, pear) or heavily pigmented (grape, dark berry)?",
+      "How old is the stain — fresh, overnight, or older?",
+      "White, light, or dark / dyed cotton?",
+      "Has the garment been through a hot wash or dryer since the spill?",
+      "Is the garment dry-clean-only, structured, or embellished?"
     ],
-    "modifierNotes": "Dark-anthocyanin juices (grape, blackcurrant, cranberry) carry 3–4× the pigment load of orange or apple — budget accordingly."
+    "modifierNotes": "Different juices carry different pigment loads — grape and dark berry juices are heavier than apple or pear — but the conservative Home approach is the same across the family. Boiling / hot-water pour-through techniques are explicitly out of scope on this card. Oxidizer escalation is never routine; it is a guarded pro / white-colorfast move only."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "18-32, 56-61, 65-76, 83-99",
+      "evidence": "Fruit juice fits the tannin family with possible sugar residue; conservative unknown-stain fallback (cool water, liquid detergent, rinse, air-dry); guarded bleach ladder; blot rather than rub; do not iron or dry stained fabric until removal is confirmed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "153-175, 313-340, 4580-4590, 4630-4638",
+      "evidence": "Heat / alkalinity / oxidation / abrasion can damage fabric; surfactant action of detergents; test new detergents on inconspicuous areas; follow product labels and PPE / ventilation for concentrates; clean per care label or reject inappropriate garments.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "181-199, 353-367, 484-490, 540-549",
+      "evidence": "Cotton fiber tolerances; oxidizer safety boundaries (white / colorfast / care-label only); tannin removers used for fruit juice / beer / soda / coffee / tea but are pro-context chemistry; absolute safety gates including no cleaner-mixing.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-BUFA-02",
+      "title": "BÜFA Professional Spotting Guide",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/Professional-Spotting-Guide.md",
+      "lines": "145-149, 174-179",
+      "evidence": "Fruit juices are tannin / sugar examples; sugar plus protein fiber plus heat can create yellow-brown staining; heat and alkali can bond tannin to certain fibers.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-SMITH-01",
+      "title": "Smithsonian Conservation Spotting",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/Smithsonian/Smithsonian-Conservation-Spotting.md",
+      "lines": "111",
+      "evidence": "Boiling-water fruit-on-cotton method is explicitly not recommended.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

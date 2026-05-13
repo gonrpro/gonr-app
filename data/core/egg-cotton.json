@@ -5,11 +5,11 @@
   "stainFamily": "protein",
   "surface": "cotton",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 3,
-  "timeEstimate": "10–30 minutes (raw); heat-set egg climbs a tier",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "10–30 minutes (raw); harder if heat-set",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "egg",
     "surfaceCanonical": "cotton",
@@ -18,177 +18,291 @@
     "tags": [
       "protein",
       "cotton",
-      "heat-sensitive",
-      "yolk-oil-fraction"
+      "cold-start",
+      "care-label",
+      "conservative-home"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Egg is mostly albumin protein (in the white) with a fat and pigment fraction in the yolk. Albumin is the textbook heat-coagulating protein — it cooks into an insoluble film on cotton the moment warm water touches raw egg, which is why eggs on shirts are fine until someone rinses with hot water. Yolk adds lecithin emulsifier and the yellow yellow-orange pigments. Cotton tolerates enzymes, NSD, 3% H₂O₂, and hot post-chemistry wash; the narrow window is that first flush.",
-  "whyThisWorks": "Cold flush keeps the albumin soluble. Enzyme hydrolyzes the egg-white protein and frees whatever yolk fat the white was holding in the fiber. NSD emulsifies residual yolk oil. For any lingering yellow from the yolk pigment, 3% H₂O₂ oxidizes the yellow-orange pigments to colorless. Hot wash finishes. Reverse the order — hot water on raw egg — and the whole stain cooks into an insoluble film that chemistry can't reach.",
-  "defaultAssumption": "Fresh raw egg on cotton is a high-confidence DIY. Heat-set egg (ironed, hot-washed, or cooked onto the fabric somehow — e.g., sitting on a warm car hood) climbs to pro territory: the albumin has lock together into a film.",
+  "stainChemistry": "Egg is a protein-family stain (egg-white albumin plus a yolk fat / pigment fraction). Protein stains coagulate and set under heat, so the absolute first rule is cold start — no hot water, no steam, no iron, no dryer until the protein is removed. Cotton is cellulose: white cotton is generally tolerant of conservative laundering and enzyme-containing detergents; colored cotton requires lower heat and a colorfastness check before any escalation. This card is scoped to cotton — enzyme / protein chemistry is not safe on protein fibers (silk, wool) and should not be generalized.",
+  "whyThisWorks": "A cold rinse keeps the egg-white protein soluble and carries away the bulk of the stain before any heat can set it. An enzyme-containing laundry detergent (per its own product label and used at the label's specified temperature) breaks down protein bonds in the residue. Care-label laundering and air-drying with inspection prevent any residual yolk pigment or protein from being heat-set into the fiber.",
+  "defaultAssumption": "Most egg on cotton is a kitchen / breakfast stain on a washable garment. Fresh raw egg responds to a cold rinse, an enzyme-containing detergent applied per its product label, and a care-label wash. Egg that has been through warm or hot water, an iron, or a dryer before treatment is meaningfully harder and may need a professional dry cleaner.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "dry",
-      "agent": "Scrape + Cold Flush",
-      "technique": "Lift yolk bulk, cold flush from back",
-      "equipment": "Dull blade, cold water, white cotton terry towel",
+      "agent": "Inspect and confirm care label",
+      "action": "intake",
+      "instruction": "Confirm fiber, color, and care-label limits. Dry-clean-only or structured pieces escalate to the professional path. Confirm no heat (hot water, iron, dryer) has touched the stain yet.",
       "dwellTime": "1 minute",
-      "instruction": "Scrape any solid yolk off with a dull blade. Cold flush from the BACK of the fabric. Cold only — warm water cooks the albumin instantly and locks the stain permanently."
+      "safetyNote": "Reject too-soiled or non-colorfast garments per care-label guidance. Do not proceed if the care label disallows wet treatment.",
+      "proOnly": true
     },
     {
       "step": 2,
-      "side": "wet",
-      "agent": "Protein Spotter",
-      "technique": "Apply, dwell, light brush",
-      "equipment": "Liquid Protein Spotter in warm water (30–38°C)",
-      "dwellTime": "15–20 minutes",
-      "instruction": "Apply Protein Spotter directly or dissolve enzyme pretreat in warm water. Enzyme window is warm, not hot. Dwell 15–20 min. Light brush after the first 5. protein-digesting enzyme hydrolyzes the albumin matrix."
+      "side": "dry",
+      "agent": "Lift excess egg",
+      "action": "mechanical",
+      "instruction": "Use a dull edge to gently lift any solid egg or yolk off the fabric. Do not rub or press into the fiber.",
+      "dwellTime": "30 seconds",
+      "safetyNote": "Minimal mechanical action only. Aggressive rubbing can spread the stain or push protein into the fiber.",
+      "proOnly": true
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "NSD",
-      "technique": "Emulsify yolk oil",
-      "equipment": "NSD in warm water",
-      "dwellTime": "3–5 minutes",
-      "instruction": "Apply NSD, work with a soft brush. Emulsifies the yolk lipid residue. Rinse cool from the back."
+      "agent": "Cold water rinse from the back",
+      "action": "rinse",
+      "instruction": "Hold the back of the stained area under cold running water and let the rinse carry the egg out through the front. Blot underneath with a clean white cotton cloth — do not rub.",
+      "dwellTime": "30–60 seconds",
+      "safetyNote": "Cold water only. Warm or hot water coagulates egg protein and sets the stain into the fiber.",
+      "proOnly": true
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Hydrogen Peroxide 3%",
-      "technique": "Drop, dwell, blot",
-      "equipment": "3% H₂O₂",
-      "dwellTime": "3–5 minutes",
-      "instruction": "For any residual yellow yolk pigment shadow: 3% H₂O₂ drop-by-drop. Oxidizes the yellow-orange pigments color. Dwell 3–5 min, blot. Skip on dark or dyed cotton."
+      "agent": "Colorfastness test",
+      "action": "test",
+      "instruction": "On colored cotton, dab a small amount of laundry detergent and cool water on an inside seam using a clean white cloth. Press for one minute and check the cloth for color transfer.",
+      "dwellTime": "1 minute, until checked",
+      "safetyNote": "Stop if dye transfers. Colored or unstable-dye garments escalate to the professional path.",
+      "proOnly": true
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Hot Wash",
-      "technique": "Launder per care label",
-      "equipment": "Washing machine",
-      "dwellTime": "Full wash cycle",
-      "instruction": "Rinse until water runs clear. Launder hot per care label."
+      "agent": "Enzyme-containing detergent pretreat",
+      "action": "detergent",
+      "instruction": "Apply an enzyme-containing laundry detergent (per its product label) directly to the stain at the temperature specified on the product label. Work it in lightly with a fingertip or soft cloth.",
+      "dwellTime": "Per product-label dwell time; do not exceed",
+      "safetyNote": "Follow the product label exactly. Do not exceed the product-label temperature; high heat denatures the enzyme. Do not mix cleaning agents.",
+      "proOnly": true
+    },
+    {
+      "step": 6,
+      "side": "wet",
+      "agent": "Launder per care label",
+      "action": "wash",
+      "instruction": "Launder using the temperature setting permitted by the care label; favor cool or lukewarm when uncertain. Rinse thoroughly.",
+      "dwellTime": "Full machine cycle",
+      "safetyNote": "Do not exceed the temperature limit on the care label.",
+      "proOnly": true
+    },
+    {
+      "step": 7,
+      "side": "dry",
+      "agent": "Air-dry and inspect",
+      "action": "dry",
+      "instruction": "Air-dry the garment and inspect for any residual stain or yolk shadow before any dryer heat. If a stain remains, repeat the cold rinse and enzyme pretreat once; do not machine-dry until the stain is fully gone.",
+      "dwellTime": "Until dry and inspected",
+      "safetyNote": "Heat applied to residual protein can coagulate it permanently into the fiber.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Scrape yolk bulk. Cold flush from the back.",
-      "2. Liquid Protein Spotter in warm water (30–38°C). Dwell 15–20 min.",
-      "3. NSD — emulsify yolk oil. Cool rinse.",
-      "4. 3% H₂O₂ on residual yellow pigment. 3–5 min.",
-      "5. Hot wash per care label."
+      "1. Identify fiber, dye stability, and care-label limits before any wet treatment; confirm no heat has touched the stain yet.",
+      "2. Lift excess egg with a dull edge; minimal mechanical action.",
+      "3. Cold rinse from the back of the fabric.",
+      "4. Apply a pro protein-digester appropriate to the protein family, per product SDS / label; rinse and assess.",
+      "5. Launder per care-label temperature limit; do not exceed.",
+      "6. Air-dry and inspect before any heat. If a residual yolk pigment shadow remains, apply controlled oxidizer only when the care label permits, colorfastness is confirmed, and PPE / ventilation per product SDS are in place."
     ],
     "products": [
-      "Liquid Protein Spotter",
-      "NSD (Neutral Synthetic Detergent)",
-      "Hydrogen Peroxide 3%"
+      "Enzyme-containing laundry detergent (consumer-grade) for the Home path",
+      "Cool / lukewarm water per care label"
     ],
-    "temperature": "cold flush; warm (30–38°C) for enzyme; cool through NSD + peroxide; hot wash post-chemistry",
+    "temperature": "Cold rinse; care-label cool / lukewarm wash; no heat on residual protein",
     "warnings": [
-      "Never warm-water-flush fresh egg — albumin cooks instantly",
-      "Enzyme window is warm, not hot — above 50°C the protein-digesting enzyme sets",
-      "One oxidizer at a time, NSD-flushed between",
-      "Flush chemistry before heat"
+      "Never use hot water, steam, an iron, or a dryer on egg until the protein has been removed",
+      "Never use chlorine bleach as a protein treatment",
+      "Confirm colorfastness via hidden-area test before any escalation",
+      "Do not exceed the enzyme product-label temperature; high heat denatures the enzyme",
+      "Enzymes / protein digesters are not safe on protein fibers (silk, wool) — this card is cotton-only",
+      "Do not mix cleaning agents",
+      "Pro chemistry beyond consumer enzyme detergent requires SDS-driven PPE and ventilation"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Cold Water, Not Warm — This One Is Absolute",
-      "instruction": "Of all the stains, egg on fabric has the narrowest window. Warm or hot water on raw egg cooks the white INSTANTLY into an insoluble film you can't remove at home. Cold water only. If you just dropped an egg on your shirt, get cold water on it in the next 60 seconds and the rest of this is easy."
+      "agent": "Confirm Care Label — Cold Only From Here",
+      "instruction": "Check the care label. If it says dry-clean-only, or the garment is structured / lined / embellished / vintage, stop and take it to a professional dry cleaner. For washable cotton, continue. Keep everything cold until the egg is out — warm or hot water cooks the egg protein into the fiber permanently."
     },
     {
       "step": 2,
-      "agent": "Scrape Yolk, Flush From the Back",
-      "instruction": "Scrape any yolk off with a dull butter knife. Then hold the BACK of the stained area under cold running water. The egg pushes out the way it came in."
+      "agent": "Lift Excess Egg Gently",
+      "instruction": "Use a dull butter knife or spoon edge to gently lift any solid egg or yolk off the fabric. Do not rub — that pushes the protein into the fiber."
     },
     {
       "step": 3,
-      "agent": "Enzyme Pretreat — Warm, Not Hot",
-      "instruction": "Use an enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout). Dissolve in WARM water per the label — hot kills the enzymes. Apply to the stain, let sit 15–20 minutes. The enzymes digest the egg-white protein."
+      "agent": "Cold Water Rinse from the Back",
+      "instruction": "Flip the fabric inside out and hold the back of the stained area under cold running water for 30–60 seconds. Most fresh egg rinses out at this step. Blot underneath with a clean white cloth — do not rub."
     },
     {
       "step": 4,
-      "agent": "Dawn + Soft Brush for Yolk Oil",
-      "instruction": "Work a drop of Dawn dish soap into the spot with a soft toothbrush. Dawn lifts the yolk's fat content. Rinse cool."
+      "agent": "Hidden-Area Test on Colored Cotton",
+      "instruction": "On colored cotton, dab a little laundry detergent and cool water on an inside seam with a clean white cloth. Press one minute. If color transfers to the cloth, stop and take to a professional. White cotton can skip this step."
     },
     {
       "step": 5,
-      "agent": "Hydrogen Peroxide 3% for Yellow Shadow (Whites Only)",
-      "instruction": "If a yellow shadow remains from the yolk: dab 3% drugstore hydrogen peroxide on the spot, let it bubble 3–5 min, blot. Skip on dark or dyed cotton.",
-      "safetyNote": "Never mix peroxide with chlorine bleach or ammonia — toxic fume risk."
+      "agent": "Enzyme-Containing Laundry Detergent",
+      "instruction": "Apply an enzyme-containing laundry detergent directly to the stain per its product label (use the temperature the product label specifies — usually cool or lukewarm). Work it in gently with your fingertip or a soft cloth. Do not exceed the product label's recommended temperature — hot water destroys the enzyme."
     },
     {
       "step": 6,
-      "agent": "Hot Wash, Inspect Before the Dryer",
-      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. If you still see the stain, repeat the enzyme pass first."
+      "agent": "Launder Per Care Label",
+      "instruction": "Wash the garment using the temperature your care label allows. If you are unsure, use cool or lukewarm water. Rinse thoroughly."
     },
     {
       "step": 7,
-      "agent": "Escalate If Heat-Set",
-      "instruction": "If the egg has been through a hot wash or dryer before enzyme treatment, the albumin has cooked into the fiber and home chemistry plateaus. Take it to a dry cleaner. Tell them: \"Egg on cotton, age [fresh / overnight / heat-set], home-treated with enzyme pretreat + Dawn + 3% hydrogen peroxide.\""
+      "agent": "Air-Dry and Inspect Before the Dryer",
+      "instruction": "Air-dry the garment and look closely for any remaining mark before putting it in the dryer. If a stain remains, repeat the cold rinse and enzyme pretreat once. Do not machine-dry until the stain is fully gone — heat sets any residual protein into cotton permanently."
+    },
+    {
+      "step": 8,
+      "agent": "Escalate If It Doesn't Clear",
+      "instruction": "If the stain is still there after two careful passes, or if the egg has already been through warm / hot water, an iron, or a dryer, take the garment to a professional dry cleaner. Tell them: \"Egg on cotton, age [fresh / overnight / older], home-treated with cold rinse, enzyme-containing laundry detergent, and a care-label wash. [Any heat applied before treatment? — yes / no].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. COLD water only while the stain is raw — hot water cooks egg white into an insoluble film.",
-      "2. Scrape yolk, cold flush from the BACK.",
-      "3. Enzyme pretreat (OxiClean Versatile, Biz, Zout) dissolved in WARM water. Dwell 15–20 min.",
-      "4. Dawn + soft toothbrush for yolk oil.",
-      "5. 3% hydrogen peroxide on yellow shadow (whites only).",
-      "6. Hot wash per care label. Inspect BEFORE the dryer.",
-      "7. Escalate if heat-set."
+      "1. Read care label; escalate dry-clean-only / structured / vintage to a pro. Keep everything cold until the egg is out.",
+      "2. Lift excess egg gently with a dull edge — do not rub.",
+      "3. Cold water rinse from the BACK of the fabric.",
+      "4. On colored cotton, hidden-area colorfastness test before detergent.",
+      "5. Apply enzyme-containing laundry detergent per product label (do not exceed product-label temperature).",
+      "6. Launder per care label (favor cool / lukewarm if uncertain).",
+      "7. Air-dry and inspect for any residual mark before any dryer heat.",
+      "8. Repeat once if needed; escalate if it doesn't clear or any heat was applied before treatment."
     ],
     "products": [
-      "Enzyme laundry pretreat (OxiClean Versatile, Biz, or Zout)",
-      "Dawn dish soap",
-      "3% hydrogen peroxide (whites only)"
+      "Enzyme-containing laundry detergent (consumer-grade)",
+      "Cool / lukewarm water",
+      "Clean white cotton cloth",
+      "Dull blade or spoon edge"
     ],
-    "whenToStop": "Stop if egg has been through a hot wash or dryer before enzyme treatment — albumin is cooked in. Take it to a dry cleaner.",
+    "whenToStop": "Stop if the care label is dry-clean-only, the garment is structured / lined / embellished, the hidden-area test shows color transfer, the egg has already been through warm / hot water / an iron / a dryer, or two conservative passes do not clear it. In any of those cases, escalate to a professional dry cleaner.",
     "warnings": [
-      "COLD water only — warm cooks egg white permanently",
-      "Enzymes die above 50°C — warm water, not hot",
-      "Never mix peroxide with chlorine bleach or ammonia",
-      "Skip peroxide on dark/dyed cotton",
-      "Inspect before the dryer"
+      "Do not use warm or hot water on raw egg — protein coagulates and sets the stain",
+      "Do not use a steam, iron, or dryer until the protein is fully out",
+      "Do not exceed the enzyme product-label temperature",
+      "Do not rub or scrub — pushes protein into the fiber",
+      "Do not use chlorine bleach as a protein treatment",
+      "Do not mix cleaning agents",
+      "Enzyme protein chemistry is cotton-only on this card — not for silk / wool",
+      "Pro-strength oxidizers, solvents, and protein digesters are not Home steps"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never use warm water on raw egg — cooks the albumin instantly",
-      "Never skip the enzyme step on dried egg — water won't touch lock together protein",
-      "Never layer oxidizers — one at a time",
-      "Never dry with residual stain visible"
+      "Never use warm or hot water on raw egg — protein coagulates and sets the stain",
+      "Never apply steam, an iron, or a dryer to egg before the protein is removed",
+      "Never use chlorine bleach as a protein treatment",
+      "Never exceed the enzyme product-label temperature; high heat denatures the enzyme",
+      "Never apply enzymes / protein digesters to silk or wool (this card is cotton-only)",
+      "Never rub or scrub aggressively",
+      "Never mix cleaning agents",
+      "Never apply professional-strength oxidizers or solvents in the Home path"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates enzymes, NSD, 3% H₂O₂, hot wash post-chemistry",
-      "Dyed cotton: skip or inside-seam-test peroxide",
-      "Heat-durable once chemistry is cleared"
-    ]
+      "Cotton is cellulose; white cotton is generally tolerant of conservative laundering and enzyme-containing detergents",
+      "Colored cotton requires lower heat and a colorfastness check before escalation",
+      "Heat-set or aged egg residue is harder to remove and may need a professional dry cleaner"
+    ],
+    "chemicalBoundaries": [
+      "Home path: cold rinse plus an enzyme-containing or mild liquid laundry detergent used per its product label",
+      "No peroxide, oxygen bleach, or chlorine bleach as a default Home step",
+      "Pro path may use controlled protein-digester chemistry or, only for a residual yolk pigment shadow, controlled oxidizer chemistry when care label permits, colorfastness is confirmed, and SDS-driven PPE / ventilation are in place"
+    ],
+    "homeAllowed": [
+      "Enzyme-containing or mild liquid laundry detergent, used per product label",
+      "Cold water for rinse; cool / lukewarm wash water per care label",
+      "Clean white cotton cloth and dull edge for gentle mechanical lift",
+      "Air-drying and visual inspection before any heat"
+    ],
+    "proOnly": [
+      "Pro protein-digester formulas and oxidizers used in a controlled professional environment with PPE / ventilation per product SDS"
+    ],
+    "testFirst": [
+      "Hidden-area colorfastness test (white cloth on an inside seam) before detergent dwell or any escalation on colored cotton"
+    ],
+    "flushNeutralizeDry": [
+      "Rinse thoroughly with cold water from the back of the fabric",
+      "Rinse again after detergent application",
+      "Air-dry and inspect before any dryer heat"
+    ],
+    "escalationTriggers": [
+      "Care label is dry-clean-only or restricts wet treatment",
+      "Garment is structured / lined / embellished / vintage / high-value",
+      "Hidden-area test shows dye transfer",
+      "Stain has been through warm / hot water, an iron, or a dryer before treatment",
+      "Two conservative passes do not clear the stain"
+    ],
+    "sourceConfidence": "medium",
+    "ppeVentilation": [
+      "Follow the product label for any concentrate",
+      "Gloves and eye protection for any pro-strength chemistry",
+      "Ventilate the work area; keep cleaning agents away from children and pets"
+    ],
+    "homeVsProBoundary": "Home users use cold rinse plus an enzyme-containing or mild liquid laundry detergent used per product label, with a care-label wash. Pro chemistry (concentrated protein digesters, oxidizers) is hidden from the Home path and requires SDS-driven PPE / ventilation in a controlled environment."
   },
   "materialWarnings": [
-    "COLD during spotting — warm cooks egg white permanently",
-    "Enzyme in warm water, not hot",
-    "Peroxide on whites; test inside seam on dark cotton"
+    "Cold only on raw egg — warm or hot water sets the protein",
+    "No iron / no steam / no dryer until the protein is out",
+    "Enzymes are cotton-safe on this card — not for silk / wool",
+    "Inspect for any residual mark before any dryer heat"
   ],
   "escalation": {
-    "when": "Egg heat-set by iron or hot dryer before enzyme treatment.",
-    "whatToTell": "\"Egg on cotton, age [fresh / overnight / heat-set], home-treated with enzyme pretreat + Dawn + 3% H₂O₂.\"",
+    "when": "Egg has been through warm / hot water, an iron, or a dryer before treatment; dry-clean-only, structured, or vintage cotton; colored cotton that fails a hidden-area test; or no improvement after two conservative passes.",
+    "whatToTell": "\"Egg on cotton, age [fresh / overnight / older], home-treated with cold rinse, enzyme-containing laundry detergent, and a care-label wash. [Any heat applied before treatment? — yes / no].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Has the stain been rinsed with warm or hot water yet? (if yes, the chemistry is different — see heat-set path)",
-      "Raw egg or cooked (e.g., scrambled egg bit)?",
-      "How old is the stain?",
-      "Is the cotton white, light, or dark/dyed?"
+      "Has any warm / hot water, iron, or dryer touched the stain since the spill?",
+      "Raw egg or cooked egg residue?",
+      "How old is the stain — fresh, overnight, or older?",
+      "White, light, or dark / dyed cotton?",
+      "Is the garment dry-clean-only, structured, or embellished?"
     ],
-    "modifierNotes": "Egg is the stain where ONE wrong move (warm water flush) turns an easy fix into a permanent problem. Temperature is the whole protocol."
+    "modifierNotes": "Egg is a protein stain on cotton — the absolute rule is cold start until the protein is removed. Enzyme-containing laundry detergent (per product label) handles fresh raw egg on cotton; the card does not generalize that chemistry to silk or wool, where protein digesters are unsafe. Heat-set egg is meaningfully harder and should be escalated to a professional dry cleaner rather than treated with stronger Home chemistry."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "12-15, 56-61, 77-79, 83-99",
+      "evidence": "Egg is a protein stain; cold water / enzyme presoak / warm wash sequence; hot water can cook / set protein; chlorine bleach warning for protein stains; enzymes are unsafe on silk / wool; blot rather than rub; do not iron or dry stained fabric until removal is confirmed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "164-175, 313-340, 3337, 4580-4590, 4630-4638",
+      "evidence": "Soil classes including water-soluble and combination soils; surfactant / enzyme principles; protein-remover use for blood and egg; test new detergents on inconspicuous areas; follow product labels and PPE / ventilation for concentrates; clean per care label or reject inappropriate garments.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "181-199, 326-332, 353-367, 493-495, 540-549",
+      "evidence": "Cotton fiber tolerances; protease enzymes break protein bonds and are used for egg, safe on cotton / cellulose / synthetics but never on protein fibers; hot water denatures enzymes; oxidizer safety boundaries (white / colorfast / care-label only); protein formula used for egg / sweat; absolute safety gates including no hot water on protein stains and no cleaner-mixing.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-BUFA-02",
+      "title": "BÜFA Professional Spotting Guide",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/Professional-Spotting-Guide.md",
+      "lines": "159-165, 242-248",
+      "evidence": "Fresh protein is water-soluble; old / coagulated protein needs enzymatic treatment; protein denatures around 40°C; older protein may need enzymes.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

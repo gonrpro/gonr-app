@@ -5,11 +5,11 @@
   "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 3,
-  "timeEstimate": "10–30 minutes for fresh white marks; chronic yellowing needs the sweat-stain protocol",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "10–30 minutes for fresh white marks; aged yellow / brown / stiff buildup escalates",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "deodorant",
     "surfaceCanonical": "cotton",
@@ -17,159 +17,276 @@
     "riskLevel": "low",
     "tags": [
       "combination",
-      "aluminum-salts",
-      "wax",
+      "body-soil",
       "cotton",
-      "fresh-white-marks"
+      "care-label",
+      "conservative-home"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Two different deodorant stains live under the same word: (1) FRESH white marks — the waxy/oily base plus aluminum salts that rub off onto cotton as you pull a shirt over antiperspirant-dry skin. Typically goes away with one pass. (2) CHRONIC yellowing — aluminum-protein complex that builds up over many wash cycles when sweat and antiperspirant react in the fiber over time. That's a separate problem (see sweat-stain-cotton). This card is the fresh-white-mark path. Cotton tolerates IPA, NSD, hot wash.",
-  "whyThisWorks": "Fresh deodorant is a wax + oil + aluminum-salt mix. IPA or POG dissolves the wax-oil carrier. NSD emulsifies residual antiperspirant. Rinse cool. Hot wash finishes. The key ordering is solvent BEFORE water — water alone beads off the wax and leaves the stain behind.",
-  "defaultAssumption": "Most 'deodorant on cotton' calls are the fresh white-mark variant — dressing after antiperspirant, deodorant transferred onto the shirt. Chronic yellow armpit stains are a different chemistry (sweat-stain-cotton). Read the complaint: white smudges = this card; yellow set-in = sweat-stain-cotton.",
+  "stainChemistry": "Deodorant marks on cotton are a combination stain: deodorant / antiperspirant residue (a mix of waxy or oily carrier plus mineral salts depending on the product) together with perspiration and body-soil risk from the wear surface. The exact chemistry varies by product, so this card does not assume one universal mechanism. Cotton is cellulose: white cotton is generally tolerant of conservative laundering, while colored cotton requires lower heat and a colorfastness check before any escalation.",
+  "whyThisWorks": "Gently lifting any dry residue first reduces what gets pushed into the fiber. A small amount of liquid laundry detergent provides surfactant action consistent with the conservative oil / body-soil approach on cotton. Care-label laundering and air-drying with inspection prevent any residual mark from being heat-set into the fiber.",
+  "defaultAssumption": "Most deodorant on cotton is a fresh transfer (white smudge, hairline mark) on a washable shirt. Fresh marks respond to gentle dry lift plus a conservative surfactant pretreat and a care-label wash. Aged yellow / brown / stiff underarm buildup, persistent odor, or fabric weakening is a different, harder case and should be escalated to a professional dry cleaner.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "dry",
-      "agent": "Dry Rub-Off",
-      "technique": "Rub the marks with the fabric itself",
-      "equipment": "Clean section of the same garment, or a pair of nylon stockings",
-      "dwellTime": "30 seconds",
-      "instruction": "Fresh white deodorant marks often rub off without any chemistry. Rub the mark gently with a clean section of the same fabric (fabric-on-fabric friction lifts the wax), or use a balled-up pair of nylon stockings. This alone clears most fresh transfers and saves the chemistry for cases that need it."
+      "agent": "Inspect and confirm care label",
+      "action": "intake",
+      "instruction": "Confirm fiber, color, and care-label limits. Dry-clean-only or structured pieces escalate to the professional path. Note the type of mark — a fresh white / hairline transfer differs from aged yellow / brown / stiff underarm buildup.",
+      "dwellTime": "1 minute",
+      "safetyNote": "Reject too-soiled or non-colorfast garments per care-label guidance. Do not proceed if the care label disallows wet treatment.",
+      "proOnly": true
     },
     {
       "step": 2,
-      "side": "wet-minimal",
-      "agent": "IPA or POG on a White Cloth",
-      "technique": "Solvent tamp",
-      "equipment": "Isopropyl alcohol 90%+ OR POG on clean white cloth",
-      "dwellTime": "30–60 seconds",
-      "instruction": "If the mark persists: tamp with IPA or POG on a white cloth. Solvent dissolves the wax + oil base. Flip cloth frequently. Never pour — tamp only. Cotton tolerates both solvents at room temp."
+      "side": "dry",
+      "agent": "Gently lift dry residue",
+      "action": "mechanical",
+      "instruction": "If dry deodorant residue is visible on the surface, gently lift or brush it off with a clean white cloth or soft brush. Do not rub aggressively or press into the fiber.",
+      "dwellTime": "30 seconds",
+      "safetyNote": "Minimal mechanical action only. Aggressive rubbing can spread residue or damage the fiber.",
+      "proOnly": true
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "NSD",
-      "technique": "Emulsify residual",
-      "equipment": "NSD in cool water",
-      "dwellTime": "2–3 minutes",
-      "instruction": "Apply NSD, work with a soft brush. NSD emulsifies the residual aluminum-salt film the solvent freed from the fiber. Flush cool from the back."
+      "agent": "Colorfastness test",
+      "action": "test",
+      "instruction": "On colored cotton, dab a small amount of liquid laundry detergent and cool water on an inside seam using a clean white cloth. Press for one minute and check the cloth for color transfer.",
+      "dwellTime": "1 minute, until checked",
+      "safetyNote": "Stop if dye transfers. Colored or unstable-dye garments escalate to the professional path.",
+      "proOnly": true
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Cool Rinse + Hot Wash",
-      "technique": "Clear chemistry, launder",
-      "equipment": "Running cool water, washing machine",
-      "dwellTime": "Full wash cycle",
-      "instruction": "Rinse cool until water runs clear. Launder hot per care label. Fresh deodorant clears fully in one cycle; if yellow shadow appears over time, the stain has transitioned to chronic sweat-stain chemistry — see the sweat-stain-cotton protocol."
+      "agent": "Surfactant pretreat",
+      "action": "detergent",
+      "instruction": "Apply a small amount of liquid laundry detergent directly to the mark. Work it in lightly with a fingertip or soft cloth.",
+      "dwellTime": "Brief dwell per product label, then rinse cool",
+      "safetyNote": "Follow the detergent product label. Do not mix cleaning agents.",
+      "proOnly": true
+    },
+    {
+      "step": 5,
+      "side": "wet",
+      "agent": "Launder per care label",
+      "action": "wash",
+      "instruction": "Launder using the temperature setting permitted by the care label; favor cool or lukewarm when uncertain. Rinse thoroughly.",
+      "dwellTime": "Full machine cycle",
+      "safetyNote": "Do not exceed the temperature limit on the care label.",
+      "proOnly": true
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Air-dry and inspect",
+      "action": "dry",
+      "instruction": "Air-dry the garment and inspect before any dryer heat. If the mark remains after one repeat pass, escalate to a professional dry cleaner rather than chasing with stronger Home chemistry. Do not machine-dry until the mark is fully gone.",
+      "dwellTime": "Until dry and inspected",
+      "safetyNote": "Heat applied to residual deodorant or body soil can set the mark into the fiber.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Dry rub with fabric-on-fabric or stockings. Many fresh marks clear here alone.",
-      "2. IPA or POG on a white cloth. Tamp, not pour.",
-      "3. NSD. Emulsify residual aluminum salts. Cool flush.",
-      "4. Cool rinse + hot wash per care label.",
-      "5. Chronic yellowing → escalate to sweat-stain-cotton protocol (different chemistry)."
+      "1. Identify fiber, dye stability, and care-label limits before any wet treatment; note fresh transfer vs. aged underarm buildup.",
+      "2. Lift dry residue gently; minimal mechanical action.",
+      "3. Apply pro chemistry appropriate to a deodorant + perspiration combination stain (protein / mineral path) per product SDS, with flushing and PPE / ventilation as required.",
+      "4. Launder per care-label temperature limit; do not exceed.",
+      "5. Air-dry and inspect before any heat. Aged yellow / brown / stiff underarm buildup is a different chemistry and may need more aggressive controlled pro chemistry under SDS and ventilation."
     ],
     "products": [
-      "Isopropyl alcohol 90%+",
-      "POG (Paint-Oil-Grease remover)",
-      "NSD (Neutral Synthetic Detergent)"
+      "Liquid laundry detergent (consumer-grade)",
+      "Cool / lukewarm water per care label"
     ],
-    "temperature": "cool through spotting; hot wash post-chemistry",
+    "temperature": "Cool to lukewarm per care label; no heat on residual deodorant or body soil",
     "warnings": [
-      "Solvent before water — water alone beads off the wax base",
-      "Fresh white marks vs chronic yellow are different stains — don't apply this protocol to chronic yellowing",
-      "Tamp solvent, never pour"
+      "Do not exceed care-label temperature limits",
+      "Never use chlorine bleach on colored cotton",
+      "Never mix cleaning agents — chlorine bleach must not contact ammonia or acids",
+      "Confirm colorfastness via hidden-area test before any escalation",
+      "Pro chemistry beyond consumer detergent (protein / mineral / oxidizer / rust-remover classes) requires SDS-driven PPE and ventilation"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Try Fabric Rub First — Often Works",
-      "instruction": "Before chemistry: rub the white deodorant mark with a clean section of the same shirt. The friction of fabric-on-fabric lifts the wax without any product. An old pair of nylon stockings balled up works even better. This clears most fresh deodorant transfers in seconds and is the step most people skip."
+      "agent": "Confirm Care Label and Mark Type",
+      "instruction": "Check the care label. If it says dry-clean-only, or the garment is structured / lined / embellished / vintage, stop and take it to a professional dry cleaner. Note the mark type — a fresh white / hairline transfer is the Home path; aged yellow / brown / stiff underarm buildup, persistent odor, or weakened fiber should be escalated to a pro from the start."
     },
     {
       "step": 2,
-      "agent": "Rubbing Alcohol on a White Cloth",
-      "instruction": "If the rub-off didn't clear it: dab 70%+ rubbing alcohol (drugstore isopropyl) on a clean white cloth, press onto the mark, flip cloth frequently. The alcohol dissolves the wax and oil in the deodorant. Cotton is fine with it."
+      "agent": "Gently Lift Dry Residue",
+      "instruction": "If there is dry deodorant residue on the surface, gently brush or lift it off with a clean white cloth or a soft brush. Do not rub hard or scrub — that pushes residue into the fiber."
     },
     {
       "step": 3,
-      "agent": "Dawn + Warm Water",
-      "instruction": "Work a drop of Dawn dish soap into the spot with a fingertip or soft toothbrush. Dawn lifts any aluminum-salt residue the alcohol freed. Rinse warm — warm is OK here (no protein is holding anything together yet)."
+      "agent": "Hidden-Area Test on Colored Cotton",
+      "instruction": "On colored cotton, dab a little liquid laundry detergent and cool water on an inside seam with a clean white cloth. Press one minute. If color transfers to the cloth, stop and take to a professional. White cotton can skip this step."
     },
     {
       "step": 4,
-      "agent": "Hot Wash, Inspect Before the Dryer",
-      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. If a yellow shadow is emerging instead of a fresh white mark, that's chronic sweat-stain chemistry — see the sweat-stain-cotton protocol, which has different steps."
+      "agent": "Apply Liquid Laundry Detergent",
+      "instruction": "Put a small amount of mild liquid laundry detergent directly on the mark. Work it in gently with your fingertip or a soft cloth — do not scrub."
     },
     {
       "step": 5,
-      "agent": "Prevent the Recurrence",
-      "instruction": "Fresh deodorant marks happen when you pull a shirt over antiperspirant that hasn't fully dried. Let antiperspirant dry 1–2 minutes before dressing and the white marks stop appearing. If white marks keep happening on the same shirts, switch to a non-staining clear antiperspirant formula."
+      "agent": "Launder Per Care Label",
+      "instruction": "Wash the garment using the temperature your care label allows. If unsure, use cool or lukewarm water. Rinse thoroughly."
     },
     {
       "step": 6,
-      "agent": "Escalate If Yellowing Appears",
-      "instruction": "If the deodorant on this shirt has built up over many cycles and is now yellow instead of white, this protocol won't fully clear it. Run the sweat-stain-cotton protocol (vinegar soak + OxiClean + peroxide + sun) instead. If that plateaus, take it to a dry cleaner."
+      "agent": "Air-Dry and Inspect Before the Dryer",
+      "instruction": "Air-dry the garment and look closely for any remaining mark before putting it in the dryer. If a mark remains, repeat the pretreat-and-wash pass once. Do not machine-dry until the mark is fully gone."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate If It Doesn't Clear",
+      "instruction": "Vinegar, baking soda, peroxide, ammonia, and rust / mineral removers are not in scope for this Home path on deodorant — they are not consistently supported for the mixed chemistry of deodorant plus perspiration on cotton. If the mark is yellow / brown / stiff, has persistent odor, has weakened the fabric, or doesn't clear after two conservative passes, take the garment to a professional dry cleaner. Tell them: \"Deodorant on cotton — [fresh white transfer / aged yellow underarm], home-treated with gentle dry lift, liquid laundry detergent, and a care-label wash, air-dried.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Try fabric-on-fabric rub first — lifts most fresh deodorant without product.",
-      "2. Rubbing alcohol on a white cloth if the mark persists.",
-      "3. Dawn + warm water to clear residual.",
-      "4. Hot wash per care label. Inspect BEFORE the dryer.",
-      "5. Let antiperspirant dry 1–2 min before dressing to prevent recurrence.",
-      "6. Chronic yellowing → run sweat-stain-cotton protocol instead."
+      "1. Read care label and note mark type; escalate dry-clean-only / structured / aged-underarm-buildup to a pro.",
+      "2. Gently lift dry residue with a clean white cloth or soft brush — do not rub.",
+      "3. On colored cotton, hidden-area colorfastness test before detergent.",
+      "4. Apply a small amount of liquid laundry detergent to the mark.",
+      "5. Launder per care label (favor cool / lukewarm if uncertain).",
+      "6. Air-dry and inspect for any residual mark before any dryer heat.",
+      "7. Repeat once if needed; escalate if it doesn't clear, has yellowed / stiffened, or has weakened the fabric."
     ],
     "products": [
-      "An old pair of nylon stockings (best) OR the same garment's fabric",
-      "70%+ rubbing alcohol (drugstore isopropyl)",
-      "Dawn dish soap"
+      "Mild liquid laundry detergent",
+      "Cool / lukewarm water",
+      "Clean white cotton cloth",
+      "Soft brush"
     ],
-    "whenToStop": "Stop this protocol and switch to sweat-stain-cotton if the mark is yellow instead of white. Escalate to a dry cleaner if both protocols plateau.",
+    "whenToStop": "Stop if the care label is dry-clean-only, the garment is structured / lined / embellished, the hidden-area test shows color transfer, the mark is yellow / brown / stiff with persistent odor or weakened fiber, or two conservative passes do not clear it. In any of those cases, escalate to a professional dry cleaner.",
     "warnings": [
-      "Solvent before water — water alone doesn't lift the wax",
-      "Fresh white marks and chronic yellowing need different protocols",
-      "Never mix alcohol with chlorine bleach or ammonia"
+      "Do not use vinegar, baking soda, peroxide, ammonia, or rust / mineral removers on deodorant in the Home path",
+      "Never use chlorine bleach on colored cotton",
+      "Never mix cleaning agents",
+      "Do not rub or scrub — pushes residue into the fiber",
+      "Do not machine-dry residual mark — heat sets the stain",
+      "Pro-strength oxidizers, solvents, acids, and mineral removers are not Home steps; not every deodorant mark is removable, and aged underarm buildup is a different chemistry"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never assume yellow armpit stains are the same as fresh white deodorant marks — different chemistry",
-      "Never pour alcohol on fabric — tamp with a cloth",
-      "Never use chlorine bleach on white deodorant marks — dulls cotton over time with no benefit here"
+      "Never assume deodorant marks are always removable — aged underarm buildup is a different, harder chemistry",
+      "Never use chlorine bleach on colored cotton",
+      "Never mix cleaning agents — chlorine bleach must not contact ammonia or acids",
+      "Never use vinegar, baking soda, peroxide, ammonia, or rust / mineral removers on deodorant in the Home path",
+      "Never rub or scrub the mark aggressively",
+      "Never machine-dry a garment with a residual deodorant mark — heat sets the stain",
+      "Never apply professional-strength oxidizers, solvents, acids, or mineral removers in the Home path"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates IPA, POG, NSD, hot wash",
-      "Dyed cotton: test alcohol on inside seam if concerned about dye stability",
-      "Heat-durable fiber — hot wash is the finisher"
-    ]
+      "Cotton is cellulose; white cotton is generally tolerant of conservative laundering",
+      "Colored cotton requires lower heat and a colorfastness check before escalation",
+      "Aged yellow / brown / stiff underarm buildup is a different chemistry from fresh deodorant transfer and may need a professional dry cleaner"
+    ],
+    "chemicalBoundaries": [
+      "Home path: gentle dry lift, mild liquid laundry detergent, and water only",
+      "No Home vinegar / baking soda / peroxide / ammonia / rust or mineral remover routines on deodorant",
+      "Pro path may use controlled protein / mineral / oxidizer chemistry only when care label permits, colorfastness is confirmed, and SDS-driven PPE and ventilation are in place"
+    ],
+    "homeAllowed": [
+      "Mild liquid laundry detergent",
+      "Cool or lukewarm water per care label",
+      "Clean white cotton cloth and soft brush for gentle dry lift",
+      "Air-drying and visual inspection before any heat"
+    ],
+    "proOnly": [
+      "Concentrated protein-digester, mineral / rust remover, and oxidizer chemistry used in a controlled professional environment with PPE / ventilation per product SDS"
+    ],
+    "testFirst": [
+      "Hidden-area colorfastness test (white cloth on an inside seam) before detergent dwell or any escalation on colored cotton"
+    ],
+    "flushNeutralizeDry": [
+      "Rinse thoroughly after detergent application",
+      "Air-dry and inspect before any dryer heat"
+    ],
+    "escalationTriggers": [
+      "Care label is dry-clean-only or restricts wet treatment",
+      "Garment is structured / lined / embellished / vintage / high-value",
+      "Hidden-area test shows dye transfer",
+      "Mark is aged yellow / brown / stiff, has persistent odor, or has weakened the fabric",
+      "Two conservative passes do not clear the mark"
+    ],
+    "sourceConfidence": "medium",
+    "ppeVentilation": [
+      "Follow the product label for any concentrate",
+      "Gloves and eye protection for any pro-strength chemistry",
+      "Ventilate the work area; keep cleaning agents away from children and pets"
+    ],
+    "homeVsProBoundary": "Home users use only gentle dry lift, mild liquid laundry detergent, and a care-label wash. Pro chemistry (concentrated protein / mineral / oxidizer products) is hidden from the Home path and requires SDS-driven PPE / ventilation in a controlled environment."
   },
   "materialWarnings": [
-    "Solvent before water — wax base beads off water",
-    "White marks vs yellow stains = different protocols",
-    "Let antiperspirant dry before dressing to prevent"
+    "Vinegar / baking soda / peroxide / ammonia / rust or mineral removers are not in the Home path on this card",
+    "Inspect before any dryer heat — residual mark sets under heat",
+    "Aged yellow / brown / stiff underarm buildup is a different chemistry and escalates"
   ],
   "escalation": {
-    "when": "The mark is yellow rather than white (chronic sweat-stain chemistry), or the fresh-mark protocol plateaus on a shirt that's been worn through many cycles.",
-    "whatToTell": "\"Deodorant on cotton — [fresh white marks / chronic yellowing]. Home-treated with fabric rub + rubbing alcohol + Dawn. [Mark cleared / yellow remains.]\"",
+    "when": "Care label is dry-clean-only; garment is structured / lined / embellished / vintage / high-value; the mark is aged yellow / brown / stiff, has persistent odor, or has weakened the fabric; hidden-area test shows dye transfer; or no improvement after two conservative passes.",
+    "whatToTell": "\"Deodorant on cotton — [fresh white transfer / aged yellow underarm], home-treated with gentle dry lift, liquid laundry detergent, and a care-label wash, air-dried. [Any vinegar / peroxide / other product used at home before this? — no].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Is the mark white (fresh transfer) or yellow (chronic build-up)?",
-      "Was the antiperspirant applied just before dressing?",
-      "Has this shirt yellowed across many wash cycles?",
-      "Aluminum-based antiperspirant or aluminum-free deodorant?"
+      "Is the mark fresh (white / hairline transfer) or aged (yellow / brown / stiff underarm buildup)?",
+      "Is the cotton white or colored / dyed?",
+      "Is there persistent odor, fabric weakening, or stiffness in the area?",
+      "Has the garment been through a hot wash or dryer with the mark on it?",
+      "Is the garment dry-clean-only, structured, or embellished?"
     ],
-    "modifierNotes": "Fresh white marks on a shirt worn once = this protocol. Yellow armpit stains across many wash cycles = run sweat-stain-cotton, which addresses the aluminum-protein complex properly."
+    "modifierNotes": "Deodorant marks on cotton are a combination of deodorant residue plus perspiration and body soil; exact chemistry varies by product and is not universal. Fresh white transfer is the Home candidate. Aged yellow / brown / stiff underarm buildup is a different, harder chemistry and is escalated."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "56-61, 83-99",
+      "evidence": "Conservative unknown-stain fallback (cool water, liquid detergent, rinse, air-dry); blot rather than rub; do not iron or dry stained fabric until removal is confirmed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "164-175, 313-340, 2424-2448, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Surfactant action of detergents; soil classes including perspiration / body oils; test new detergents on inconspicuous areas; follow product labels and PPE / ventilation for concentrates; clean per care label or reject inappropriate garments.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "181-199, 353-367, 493-495, 540-549",
+      "evidence": "Cotton fiber tolerances; oxidizer safety boundaries (white / colorfast / care-label only); protein formula used for sweat and other protein components; absolute safety gates including no cleaner-mixing.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-4S-01",
+      "title": "R.R. Street 4Streets On-the-Spot",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/R.R. Street — 4Streets/On-the-Spot.md",
+      "lines": "22-36, 48-53, 124, 134-136",
+      "evidence": "Deodorant is recognized as a combination stain (mineral salt + fragrance with protein / perspiration carrier) in pro spotting; protein digesters apply to perspiration and dairy / eggs; pro classification only.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-BUFA-02",
+      "title": "BÜFA Professional Spotting Guide",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/Professional-Spotting-Guide.md",
+      "lines": "71, 117-136",
+      "evidence": "Some perfume / deodorant damage to certain dyes is not removable; armpit area maps to perspiration; not every deodorant mark is removable — used here as a claim-blocker for 'always removable' framing.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

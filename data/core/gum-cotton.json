@@ -5,184 +5,295 @@
   "stainFamily": "specialty",
   "surface": "cotton",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
-  "difficulty": 3,
-  "timeEstimate": "10–30 minutes plus freezer time",
-  "lastValidated": "2026-04-25",
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
+  "difficulty": 4,
+  "timeEstimate": "15–40 minutes for the conservative path; embedded, smeared, or hot-set gum often needs a professional dry cleaner",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "gum",
     "surfaceCanonical": "cotton",
     "tier": "universal",
-    "riskLevel": "low",
+    "riskLevel": "medium",
     "tags": [
-      "polymer",
-      "hydrophobic",
+      "specialty",
+      "adhesive",
+      "dry-side",
       "cotton",
-      "freeze-first"
+      "care-label",
+      "conservative-home"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Chewing gum is a hydrophobic polymer blended with softeners, sweeteners, and flavorings. It adheres to cotton through mechanical and surface-tension bonding, not chemical bonding. Warm gum is sticky and smears; cold gum is brittle and cracks off. Water does nothing — the polymer is hydrophobic at any temperature. Cotton tolerates citrus oils, POG, IPA, and 3% H₂O₂ at room temperature, so the chemistry lane is wide; the key is mechanical removal first.",
-  "whyThisWorks": "Cold-brittling + mechanical removal clears 80% of the gum mass before any solvent touches the fiber. Residue — the staining flavorings + dye + softener — is then handled with a citrus or petroleum solvent. NSD emulsifies the last traces. Skip the freeze and go straight to solvent and you dissolve the gum into a much bigger, stickier stain than you started with.",
-  "defaultAssumption": "Fresh gum on cotton is a high-confidence DIY with a freezer and a scraper. Sugar-free gum has slightly different softeners but the same physics. Dried / old gum that's been washed already is a pro-lane job.",
+  "stainChemistry": "Chewing gum behaves like a sticky / adhesive dry-side soil with a possible oily carrier from softeners and flavorings. In professional spotting it is classified with adhesives and glues and handled with controlled dry-side product systems. Laundry detergent does not dissolve gum itself; the conservative Home approach is to remove what comes off mechanically without spreading the polymer, then treat any residual mark on washable cotton with surfactant. Cotton is cellulose: white cotton is generally tolerant of conservative laundering, while colored cotton requires lower heat and a colorfastness check before any escalation.",
+  "whyThisWorks": "Letting the gum firm or harden, and then gently lifting off only what releases on its own, reduces the chance of grinding the polymer deeper into the weave. A small amount of liquid laundry detergent applied to any remaining mark provides surfactant action consistent with conservative cotton care. Air-drying and inspecting before any heat prevents residual stickiness or softener from being heat-set into the fiber.",
+  "defaultAssumption": "Most chewing gum on cotton is a small piece picked up incidentally on a washable garment. Once the gum has firmed and only what releases easily has been lifted, fresh undyed gum often clears with a conservative surfactant pretreat on the remaining mark and a care-label wash. Embedded, smeared, or already-heat-set gum is harder and usually needs a professional dry cleaner. Source support for consumer-grade gum-specific methods is weaker than for oil or tannin stains.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "dry",
-      "agent": "Freeze to Brittle",
-      "technique": "Sealed bag in freezer",
-      "equipment": "Zip-top bag, freezer",
-      "dwellTime": "20–30 minutes",
-      "instruction": "Put the gummed area of the garment in a zip-top bag and place it in the freezer. Wait 20–30 minutes. Polymer transitions from sticky to brittle; the gum loses adhesion to the fiber. For large garments, use an ice pack wrapped in plastic directly on the gum instead."
+      "agent": "Inspect and confirm care label",
+      "action": "intake",
+      "instruction": "Confirm fiber, color, and care-label limits. Dry-clean-only, structured, lined, embellished, or vintage pieces escalate to the professional path. Note whether the gum is fresh / smeared / embedded / dyed.",
+      "dwellTime": "1 minute",
+      "safetyNote": "Reject too-soiled or non-colorfast garments per care-label guidance. Do not proceed if the care label disallows wet treatment.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "dry",
-      "agent": "Scrape + Pick",
-      "technique": "Remove brittle mass cleanly",
-      "equipment": "Dull blade, credit card, or butter knife",
-      "dwellTime": "1–2 minutes",
-      "instruction": "Immediately after removal from freezer, pry the brittle gum off with a dull blade. Flakes come free in pieces. Work fast — once it warms back up, it goes sticky again. If any film remains, re-freeze and repeat."
+      "agent": "Allow gum to firm and lift only what releases",
+      "action": "mechanical",
+      "instruction": "Let the gum firm or harden so it is less sticky. Use a dull edge to gently lift only the gum that releases on its own. Do not scrape, grind sideways across the fabric, or apply pressure to soft / sticky gum — that pushes the polymer into the weave.",
+      "dwellTime": "Until firm, then 1–2 minutes",
+      "safetyNote": "Minimal mechanical action only. Aggressive scraping spreads gum into the fiber and can damage the weave. Do not apply heat or Home solvents.",
+      "proOnly": true
     },
     {
       "step": 3,
-      "side": "wet-minimal",
-      "agent": "Solvent Residue Pass",
-      "technique": "Solvent on cloth, tamp",
-      "equipment": "POG OR citrus oil (Goo Gone) OR IPA on a clean white cloth",
-      "dwellTime": "30–60 seconds",
-      "instruction": "Any remaining residue from flavoring or dye: tamp with POG, Goo Gone, or IPA on a white cloth. Flip cloth frequently — residue transfers out. Never pour solvent on cotton directly."
+      "side": "wet",
+      "agent": "Colorfastness test",
+      "action": "test",
+      "instruction": "On colored cotton, dab a small amount of liquid laundry detergent and cool water on an inside seam using a clean white cloth. Press for one minute and check the cloth for color transfer.",
+      "dwellTime": "1 minute, until checked",
+      "safetyNote": "Stop if dye transfers. Colored or unstable-dye garments escalate to the professional path.",
+      "proOnly": true
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "NSD",
-      "technique": "Emulsify residual",
-      "equipment": "NSD in warm water",
-      "dwellTime": "3–5 minutes",
-      "instruction": "Apply NSD, work with a soft brush. Emulsifies the last traces of solvent + residue. Rinse cool."
+      "agent": "Surfactant pretreat for residual mark",
+      "action": "detergent",
+      "instruction": "If a residual mark remains after the gum has been gently lifted, apply a small amount of liquid laundry detergent directly to the mark. Work it in lightly with a fingertip or soft cloth.",
+      "dwellTime": "Brief dwell per product label, then rinse cool",
+      "safetyNote": "Follow the detergent product label. Do not mix cleaning agents.",
+      "proOnly": true
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Hot Wash",
-      "technique": "Launder per care label",
-      "equipment": "Washing machine",
-      "dwellTime": "Full wash cycle",
-      "instruction": "Launder hot per care label. Inspect before the dryer."
+      "agent": "Launder per care label",
+      "action": "wash",
+      "instruction": "Launder using the temperature setting permitted by the care label; favor cool or lukewarm when uncertain. Rinse thoroughly.",
+      "dwellTime": "Full machine cycle",
+      "safetyNote": "Do not exceed the temperature limit on the care label.",
+      "proOnly": true
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Air-dry and inspect",
+      "action": "dry",
+      "instruction": "Air-dry the garment and inspect for any residual gum or stickiness before any dryer heat. If gum or stickiness remains, escalate rather than repeat aggressive treatment at home. Do not machine-dry until the garment is fully clear.",
+      "dwellTime": "Until dry and inspected",
+      "safetyNote": "Heat applied to residual gum or softener sets the stain into the fiber.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Freeze the garment 20–30 min — polymer goes brittle.",
-      "2. Scrape the brittle gum off with a dull blade immediately post-freezer.",
-      "3. Residue: POG, citrus oil, or IPA on a white cloth. Tamp, don't pour.",
-      "4. NSD — emulsify final residue. Cool rinse.",
-      "5. Hot wash per care label."
+      "1. Identify fiber, dye stability, and care-label limits before any wet treatment.",
+      "2. Allow gum to firm; lift only what releases gently with a dull edge; minimal mechanical action.",
+      "3. Apply pro dry-side / adhesive chemistry appropriate to gum as a controlled product, with flushing and PPE / ventilation per product SDS.",
+      "4. Launder per care-label temperature limit; do not exceed.",
+      "5. Air-dry and inspect before any heat. Pro escalation chemistry stays in a controlled environment with PPE / ventilation per product SDS."
     ],
     "products": [
-      "Zip-top freezer bag OR ice pack",
-      "Dull blade or credit-card edge",
-      "POG, citrus oil (Goo Gone), or IPA",
-      "NSD (Neutral Synthetic Detergent)"
+      "Liquid laundry detergent (consumer-grade)",
+      "Cool / lukewarm water per care label"
     ],
-    "temperature": "cold (freezer) for mechanical phase; room-temp solvent; hot wash post-chemistry",
+    "temperature": "Ambient mechanical lift; care-label cool / lukewarm wash; no heat on residual gum or softener",
     "warnings": [
-      "Never try solvent first — dissolves gum into a bigger, stickier stain",
-      "Work fast post-freezer — gum re-softens in minutes",
-      "Never pour solvent on cotton — tamp with cloth",
-      "Ventilate — POG and citrus oils have flammable fumes"
+      "Do not exceed care-label temperature limits",
+      "Never use chlorine bleach on colored cotton",
+      "Do not apply heat to gum in the Home path; pro dry-side / adhesive chemistry is a controlled professional technique with documented sources and is out of scope here",
+      "Confirm colorfastness via hidden-area test before any escalation",
+      "Do not mix cleaning agents",
+      "Pro dry-side / solvent / adhesive chemistry requires SDS-driven PPE, ventilation, and flushing"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Freeze It Solid First — This Is the Whole Trick",
-      "instruction": "Put the gummed fabric in a zip-top bag (so it doesn't stick to other food) and toss it in the freezer for 20–30 minutes. Don't skip this step or try to work around it. Warm gum smears into a bigger mess; frozen gum goes brittle and pops off. An ice pack pressed directly against the gum through a plastic bag also works if freezing the whole garment is impractical."
+      "agent": "Confirm Care Label and Note Gum Condition",
+      "instruction": "Check the care label. If it says dry-clean-only, or the garment is structured / lined / embellished / vintage, stop and take it to a professional dry cleaner. Note whether the gum is fresh / smeared / embedded — embedded or smeared gum is a pro case from the start, not a Home job."
     },
     {
       "step": 2,
-      "agent": "Scrape It Off Right After the Freezer",
-      "instruction": "Take the garment out and IMMEDIATELY scrape the frozen gum off with a dull butter knife or the edge of a credit card. It should come off in brittle flakes. You have a few minutes before it warms and re-softens — work fast. If any chunk stays stuck, put it back in the freezer for another 10 minutes and repeat."
+      "agent": "Let the Gum Firm — Don't Pick at Soft Gum",
+      "instruction": "Wait until the gum is firm rather than soft and sticky. Do not pick, press, or rub at soft gum — that pushes the polymer deeper into the weave and turns a small spot into a wider one."
     },
     {
       "step": 3,
-      "agent": "Goo Gone or Rubbing Alcohol for Residue",
-      "instruction": "Usually a faint oily / colored spot remains from the gum's softeners or flavoring. Dab Goo Gone (or 70%+ rubbing alcohol) on a clean white cloth and press it onto the spot. Flip the cloth frequently. The residue transfers out. Never pour — always dab from a cloth."
+      "agent": "Lift Only What Releases on Its Own",
+      "instruction": "Use a dull butter knife or spoon edge to gently lift only the gum that comes away easily. Do not scrape hard, gouge the fiber, or grind sideways across the weave — that spreads the gum. If most of the gum is still stuck, this is a pro case."
     },
     {
       "step": 4,
-      "agent": "Dawn + Warm Water to Finish",
-      "instruction": "Work a drop of Dawn dish soap into the remaining spot. Dawn breaks up the solvent residue. Rinse cool."
+      "agent": "Hidden-Area Test on Colored Cotton",
+      "instruction": "On colored cotton, dab a little liquid laundry detergent and cool water on an inside seam with a clean white cloth. Press one minute. If color transfers to the cloth, stop and take to a professional. White cotton can skip this step."
     },
     {
       "step": 5,
-      "agent": "Hot Wash, Inspect Before the Dryer",
-      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer. If you can still see color or feel stickiness, repeat the Goo Gone + Dawn round."
+      "agent": "Apply Liquid Laundry Detergent to Any Residual Mark",
+      "instruction": "If a residual mark is left after the gum has been gently lifted, put a small amount of mild liquid laundry detergent on that mark. Work it in gently with your fingertip or a soft cloth — do not scrub. Detergent does not dissolve gum itself; it is for the residual mark on the fabric."
     },
     {
       "step": 6,
-      "agent": "Escalate for Old Gum or Heat-Set",
-      "instruction": "If the gum has already been through a hot wash or dryer (sometimes gum in a pocket gets discovered AFTER laundry), it may have melted and spread. Take the garment to a dry cleaner. Tell them: \"Chewing gum on cotton, age [fresh / dried / washed-through], home-treated with freezer + Goo Gone + Dawn.\""
+      "agent": "Launder Per Care Label and Air-Dry",
+      "instruction": "Wash the garment using the temperature your care label allows. If unsure, use cool or lukewarm water. Rinse thoroughly. Lay flat or hang to air-dry and look closely for any remaining gum, stickiness, or mark before any dryer heat. Do not machine-dry until the garment is fully clear."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate If It Doesn't Clear",
+      "instruction": "Peanut butter, oils, WD-40, rubbing alcohol, acetone, nail-polish remover, mineral spirits, dry-cleaning solvents, adhesive removers, and freezer / ice 'guarantees' are not in scope for this Home path on gum. If the gum is embedded, smeared, dyed, has been hot-washed or hot-dried, or a residual mark remains after one conservative pass, take the garment to a professional dry cleaner. Tell them: \"Chewing gum on cotton, age [fresh / older / hot-set], home-treated with let-it-firm, gentle lift, liquid laundry detergent on residual mark, care-label wash, air-dried. [Any solvent or freezer used at home? — no].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. FREEZE the gummed area 20–30 min in a zip-top bag. Or ice pack direct.",
-      "2. Scrape brittle gum off IMMEDIATELY with a dull blade.",
-      "3. Goo Gone or rubbing alcohol on a clean white cloth for residue.",
-      "4. Dawn + warm water for final cleanup.",
-      "5. Hot wash per care label. Inspect BEFORE the dryer.",
-      "6. Escalate if gum was hot-washed or hot-dried into the fabric."
+      "1. Read care label and note gum condition; escalate dry-clean-only / structured / vintage / embedded / smeared to a pro.",
+      "2. Let the gum firm — do not pick at soft / sticky gum.",
+      "3. Lift only what releases on its own; do not scrape or grind sideways.",
+      "4. On colored cotton, hidden-area colorfastness test before detergent.",
+      "5. Apply a small amount of liquid laundry detergent to any residual mark.",
+      "6. Launder per care label (favor cool / lukewarm if uncertain).",
+      "7. Air-dry and inspect for any residual gum / stickiness / mark before any dryer heat.",
+      "8. Escalate if it doesn't clear in one conservative pass."
     ],
     "products": [
-      "Zip-top freezer bag OR ice pack",
-      "Dull butter knife or credit-card edge",
-      "Goo Gone OR 70%+ rubbing alcohol",
-      "Dawn dish soap"
+      "Mild liquid laundry detergent",
+      "Cool / lukewarm water",
+      "Clean white cotton cloth",
+      "Dull blade or spoon edge"
     ],
-    "whenToStop": "Stop if gum has melted through a hot wash or dryer cycle. Take it to a dry cleaner.",
+    "whenToStop": "Stop if the gum is embedded, smeared, dyed, or has been hot-washed or hot-dried. Stop if the care label is dry-clean-only, the garment is structured / lined / embellished, or the hidden-area test shows dye transfer. Stop if a residual mark remains after one conservative pass. Escalate to a professional dry cleaner in any of those cases.",
     "warnings": [
-      "FREEZE FIRST — solvent on warm gum makes a bigger stain",
-      "Never pour solvent on fabric — tamp with cloth",
-      "Ventilate when using Goo Gone or alcohol",
-      "Work fast post-freezer — gum re-softens within minutes"
+      "Do not use peanut butter, oils, WD-40, rubbing alcohol, acetone, nail-polish remover, mineral spirits, dry-cleaning solvents, or adhesive removers on gum in the Home path",
+      "Do not rely on freezer / ice 'guarantees' — not source-supported here as a Home method",
+      "Do not pick at soft / sticky gum — pushes polymer into the weave",
+      "Do not scrape or grind sideways — spreads gum",
+      "Do not apply heat (iron, dryer, hairdryer) to gum residue — sets the stain",
+      "Never use chlorine bleach on colored cotton",
+      "Do not mix cleaning agents",
+      "Pro-strength oxidizers, solvents, and adhesive removers are not Home steps"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never skip the freeze step — solvent on warm gum spreads the stain",
-      "Never rub warm gum — grinds it into the weave",
-      "Never pour solvent on cotton directly",
-      "Never hot-dry with any residual stickiness — sets the softener residue"
+      "Never apply heat (iron, dryer, hairdryer) to gum or its residual mark in the Home path",
+      "Never use Home solvents (peanut butter / oils, WD-40, rubbing alcohol, acetone, nail-polish remover, mineral spirits, dry-cleaning solvents, adhesive removers) on gum",
+      "Never pick, press, or rub soft / sticky gum — pushes polymer into the fiber",
+      "Never scrape aggressively or grind sideways across the weave",
+      "Never machine-dry a garment with residual gum or stickiness — heat sets the stain",
+      "Never use chlorine bleach on colored cotton",
+      "Never mix cleaning agents",
+      "Never apply professional-strength oxidizers, solvents, or adhesive removers in the Home path"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates POG, citrus oil, IPA, and hot wash",
-      "Dyed cotton: IPA / Goo Gone usually safe; test inside seam if concerned",
-      "Heat-durable once the gum is off"
-    ]
+      "Cotton is cellulose; white cotton is generally tolerant of conservative laundering",
+      "Colored cotton requires lower heat and a colorfastness check before escalation",
+      "Embedded, smeared, or hot-set gum is harder to remove and usually needs a professional dry cleaner"
+    ],
+    "chemicalBoundaries": [
+      "Home path: gentle mechanical lift after firming, mild liquid laundry detergent, and water only",
+      "No Home solvents, freezer 'guarantees,' peroxide, oxygen bleach, or chlorine bleach as a default Home step on gum",
+      "Pro path may use controlled dry-side / adhesive chemistry only when care label permits, colorfastness is confirmed, and SDS-driven PPE / ventilation are in place"
+    ],
+    "homeAllowed": [
+      "Mild liquid laundry detergent",
+      "Cool or lukewarm water per care label",
+      "Clean white cloth and dull edge for gentle mechanical lift after the gum has firmed",
+      "Air-drying and visual inspection before any heat"
+    ],
+    "proOnly": [
+      "Dry-side / adhesive pro products and oxidizers used in a controlled professional environment with PPE, ventilation, and flushing per product SDS"
+    ],
+    "testFirst": [
+      "Hidden-area colorfastness test (white cloth on an inside seam) before detergent dwell or any escalation on colored cotton"
+    ],
+    "flushNeutralizeDry": [
+      "Rinse thoroughly after the detergent application",
+      "Air-dry and inspect before any dryer heat"
+    ],
+    "escalationTriggers": [
+      "Care label is dry-clean-only or restricts wet treatment",
+      "Garment is structured / lined / embellished / vintage / high-value",
+      "Hidden-area test shows dye transfer",
+      "Gum is embedded, smeared, dyed, or large",
+      "Gum has been hot-washed or hot-dried",
+      "Residual mark or stickiness remains after one conservative pass"
+    ],
+    "sourceConfidence": "medium",
+    "ppeVentilation": [
+      "Follow the product label for any concentrate",
+      "Gloves and eye protection for any pro-strength chemistry",
+      "Ventilate the work area; keep cleaning agents away from children and pets"
+    ],
+    "homeVsProBoundary": "Home users use only gentle mechanical lift after the gum has firmed, mild liquid laundry detergent on any residual mark, and a care-label wash. Pro dry-side / adhesive chemistry is a controlled professional technique and is hidden from the Home path."
   },
   "materialWarnings": [
-    "FREEZE first — the whole protocol depends on it",
-    "Work fast post-freezer",
-    "Solvent tamp, not pour"
+    "Do not iron / heat-transfer gum at home — sets the stain",
+    "Do not use Home solvents, peanut butter, oils, or freezer 'guarantees' on gum — out of scope for this Home path",
+    "Embedded, smeared, or hot-set gum is a pro case from the start",
+    "Detergent does not dissolve gum itself — it is for the residual mark"
   ],
   "escalation": {
-    "when": "Gum has been through a hot wash or dryer and melted into the fabric, or home scrape + solvent round didn't clear the residue.",
-    "whatToTell": "\"Chewing gum on cotton, age [fresh / dried / washed-through], home-treated with freezer + Goo Gone + Dawn. [Hot-washed previously / not yet laundered.]\"",
+    "when": "Gum is embedded, smeared, dyed, large, or already heat-set; the care label is dry-clean-only; the garment is structured / lined / embellished / vintage; the hidden-area test shows dye transfer; or a residual mark or stickiness remains after one conservative pass.",
+    "whatToTell": "\"Chewing gum on cotton, age [fresh / older / hot-set], home-treated with let-it-firm, gentle lift, liquid laundry detergent on residual mark, care-label wash, air-dried. [Any solvent or freezer used at home? — no].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Has the gum been through a hot wash or dryer already?",
-      "Regular sugar gum or sugar-free?",
-      "How old is the gum — fresh, dried, days?",
-      "Is the cotton white, light, or dark/dyed?"
+      "Is the gum fresh, smeared, embedded, or has it been through a hot wash or dryer?",
+      "Is the cotton white or colored / dyed?",
+      "Is the garment dry-clean-only, structured, lined, or embellished?",
+      "Has anyone picked at it while it was still soft?"
     ],
-    "modifierNotes": "Gum is a mechanical-first, chemistry-second stain. Freeze step is the unlock; skip it and solvent makes everything worse."
+    "modifierNotes": "Gum is an adhesive / dry-side family in the professional taxonomy; pro chemistry stays in a controlled professional environment. The conservative Home path is let-it-firm plus a surfactant on any residual mark — Home solvents, peanut butter / oils, WD-40, and freezer 'guarantees' are not in scope on this card without additional consumer-grade source support. Source-quality note: consumer-grade gum-specific Home methods are weaker than oil / tannin in the current packet — keep Home conservative."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "56-61, 83-99",
+      "evidence": "Conservative unknown-stain fallback (cool water, liquid detergent, rinse, air-dry); blot rather than rub; do not iron or dry stained fabric until removal is confirmed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "153-175, 313-340, 4580-4590, 4630-4638",
+      "evidence": "Heat / chemical concentration / abrasion can damage fabric; surfactant chemistry; test new detergents on inconspicuous areas; follow product labels and PPE / ventilation for concentrates; clean per care label or reject inappropriate garments.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "181-199, 431-449, 464-479, 540-549",
+      "evidence": "Cotton fiber tolerances; pro dry-side solvent / adhesive class belongs outside Home unless explicit label / SDS supports consumer use; absolute safety gates including no cleaner-mixing.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-BUFA-01",
+      "title": "BÜFA DetaProfi Spotting Chart",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/DetaProfi-Spotting-Chart.md",
+      "lines": "7-14, 27-37, 65-70",
+      "evidence": "Chewing gum is handled by pro dry-side / oil-family products (Lacex / Detasolv) in a professional environment; hem test required for natural fibers and brilliant colors; pro classification only.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-ADC-01",
+      "title": "American Drycleaner Spotting Techniques",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Trade & Media/American Drycleaner/Spotting-Techniques.md",
+      "lines": "18-31, 96-109",
+      "evidence": "Adhesive / glue may require pro dry-side solvents; POG / OTPR handling requires product-specific compatibility, ventilation, and flushing; bleaching is a controlled last-resort pro tool.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }
