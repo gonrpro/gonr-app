@@ -1,15 +1,15 @@
 {
   "id": "candle-wax-linen",
   "title": "Candle Wax on Linen",
-  "stainType": "oil",
-  "stainFamily": "oil",
+  "stainType": "specialty",
+  "stainFamily": "specialty",
   "surface": "linen",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 5,
-  "timeEstimate": "20–40 minutes; freeze + scrape + iron-through-paper (linen tolerates careful heat)",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "20–40 minutes for the conservative path; embedded, dyed, structured, or vintage linen often needs a professional dry cleaner",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "candle-wax",
     "surfaceCanonical": "linen",
@@ -17,201 +17,286 @@
     "riskLevel": "medium",
     "tags": [
       "wax",
-      "paraffin",
+      "dry-side",
       "linen",
-      "freeze-and-lift",
-      "iron-through-paper-OK",
+      "care-label",
       "structured-fork",
+      "conservative-home",
       "dye-fork-for-colored-wax"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Candle wax is paraffin (petroleum hydrocarbon) or beeswax/soy wax + sometimes fragrance + sometimes dye. On linen (cellulose, similar to cotton), the iron-through-paper trick that works on cotton ALSO works on linen — careful low heat through 3–4 paper towels with a brown paper bag transfers the wax up into the absorbent paper. Linen tolerates this better than synthetic carpet (which would melt). Two cautions: (1) structured / lined / dry-clean-only linen = pro from minute one (heat + structure = warping), (2) colored wax leaves a separate dye stain after the wax is gone — treat as dye.",
-  "whyThisWorks": "Freeze + scrape + iron-through-paper transfers paraffin wax cleanly off linen. Linen is heat-tolerant (vs synthetics) AND iron-friendly when supported with absorbent paper. Goo Gone for residual wax. Separate dye treatment for colored wax. Standard protocol works on simple flat linen.",
-  "defaultAssumption": "Simple flat linen (napkin, basic tablecloth, plain shirt) = home protocol. Structured / lined / dry-clean-only / vintage = pro. Colored candle wax = treat dye separately after wax is fully gone.",
+  "stainChemistry": "Candle wax is a dry-side, wax / oil-family deposit (paraffin, soy, or beeswax, sometimes with added fragrance or dye). Once the bulk is gently lifted off, what often remains on washable linen is a residual oily mark that can be approached with conservative surfactant treatment. Dyed candles can leave a separate pigment shadow that is a different stain class. Linen is a cellulose (flax) fiber; it can tolerate controlled, conservative laundering when the care label allows, but colored linen, structured pieces, and lined / embellished garments need extra caution and often a professional dry cleaner.",
+  "whyThisWorks": "Letting wax fully cool and harden makes it easier to gently lift the bulk off without smearing it deeper into the weave. A small amount of liquid laundry detergent applied to any residual oily mark provides surfactant action consistent with the conservative oil-stain approach for linen. Cool / lukewarm water per care label and air-drying with inspection prevent residual wax or oil from being heat-set into the fiber.",
+  "defaultAssumption": "Simple flat linen (napkin, plain shirt) on a washable care label is a Home candidate for a fresh undyed wax drip. Structured, lined, embellished, vintage, dry-clean-only, or unstable-dye linen is a professional case from the start. Embedded, dyed, large, or already-heat-set wax is harder and usually needs a professional dry cleaner.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "dry",
-      "agent": "Care Label + Freeze",
-      "technique": "Inspection + ice bag harden",
-      "equipment": "Good light, ice in plastic bag",
-      "dwellTime": "10–15 minutes",
-      "instruction": "Dry-clean-only / structured / vintage = pro. Simple flat linen = proceed. Place sealed ice bag on wax 10–15 min."
+      "agent": "Inspect and confirm care label",
+      "action": "intake",
+      "instruction": "Read the care label and inspect construction. Structured, lined, embellished, dry-clean-only, vintage, or unstable-dye linen routes to the professional path and stops here. Note candle type (undyed or colored).",
+      "dwellTime": "1 minute",
+      "safetyNote": "Reject too-soiled or non-colorfast linen per care-label guidance. Do not proceed if the care label disallows wet treatment.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "dry",
-      "agent": "Crack and Scrape Bulk",
-      "technique": "Dull edge, outward from center",
-      "equipment": "Plastic card / dull knife",
-      "dwellTime": "2–3 minutes",
-      "instruction": "Crack frozen wax with the edge of a plastic card. Scrape off bulk pieces. Don't gouge linen — flat-edge lift only."
+      "agent": "Allow wax to cool and lift excess gently",
+      "action": "mechanical",
+      "instruction": "Let the wax fully cool and harden. Use a dull edge to gently lift any solid wax off the weave in flakes. Do not scrape aggressively, gouge the fiber, or grind wax sideways across the linen.",
+      "dwellTime": "Until fully hardened, then 1–2 minutes",
+      "safetyNote": "Minimal mechanical action only. Aggressive scraping spreads wax and can damage the weave. Do not apply heat or solvent at home.",
+      "proOnly": true
     },
     {
       "step": 3,
-      "side": "dry",
-      "agent": "Iron-Through-Paper",
-      "technique": "Absorbent transfer with low heat",
-      "equipment": "3–4 paper towels or brown paper bag, iron on LOW",
-      "dwellTime": "5–10 seconds per pass",
-      "instruction": "Stack 3–4 paper towels (or a brown paper bag) ON TOP of the wax spot. Iron on LOW for 5–10 sec at a time. Wax wicks UP into the paper. Replace paper as it absorbs. STOP if linen feels hot — linen tolerates careful heat but not extended."
+      "side": "wet",
+      "agent": "Colorfastness test on a hidden seam",
+      "action": "test",
+      "instruction": "Dab a small amount of liquid laundry detergent and cool water on an inside seam using a clean white cloth. Press for one minute and check the cloth for color transfer.",
+      "dwellTime": "1 minute, until checked",
+      "safetyNote": "Stop if dye transfers. Colored or unstable-dye linen routes to the professional path.",
+      "proOnly": true
     },
     {
       "step": 4,
-      "side": "wet-minimal",
-      "agent": "Goo Gone for Residual Wax (Pro)",
-      "technique": "Citrus solvent on cloth",
-      "equipment": "Goo Gone on white cloth",
-      "dwellTime": "30–60 sec per pass",
-      "instruction": "If thin wax film remains after iron-through-paper, Goo Gone on a white cloth tamps the residue. Ventilate. Hidden test on dyed linen first."
+      "side": "wet",
+      "agent": "Surfactant pretreat for residual oily mark",
+      "action": "detergent",
+      "instruction": "If a residual oily mark remains after the bulk wax is lifted, apply a small amount of liquid laundry detergent directly to the mark. Work it in lightly with a fingertip or soft cloth.",
+      "dwellTime": "Brief dwell per product label, then rinse cool",
+      "safetyNote": "Follow the detergent product label. Do not mix cleaning agents.",
+      "proOnly": true
     },
     {
       "step": 5,
-      "side": "wet-minimal",
-      "agent": "3% H₂O₂ for Colored Wax Dye Residue",
-      "technique": "Treat dye separately",
-      "equipment": "3% H₂O₂ on damp cloth",
-      "dwellTime": "5 minutes",
-      "instruction": "If wax was colored and dye remains after wax is gone: 3% peroxide damp cloth 5 min. Hidden test on dyed linen."
+      "side": "wet",
+      "agent": "Launder per care label, cool or lukewarm only",
+      "action": "wash",
+      "instruction": "Wash on the cool or lukewarm setting permitted by the care label. Rinse thoroughly.",
+      "dwellTime": "Full machine cycle",
+      "safetyNote": "Do not exceed the temperature limit on the care label; controlled temperatures protect the linen.",
+      "proOnly": true
     },
     {
       "step": 6,
-      "side": "wet",
-      "agent": "Cool Wash + AIR-DRY FLAT",
-      "technique": "Launder + lay flat",
-      "equipment": "Washing machine",
-      "dwellTime": "Full cycle + air-dry",
-      "instruction": "Cool wash per care label. AIR-DRY FLAT — inspect before any iron / dryer."
+      "side": "dry",
+      "agent": "Air-dry flat and inspect",
+      "action": "dry",
+      "instruction": "Lay flat to air-dry and inspect for any residual wax, oil, or pigment before any heat. If a stain remains, escalate rather than repeat aggressive treatment at home. Do not tumble-dry until the garment is fully clear.",
+      "dwellTime": "Until dry and inspected",
+      "safetyNote": "Heat applied to residual wax or oil sets the stain into the fiber.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Care label + structure check.",
-      "2. Ice freeze 10–15 min. Crack and scrape bulk.",
-      "3. Iron-through-paper transfer, low heat, 5–10 sec passes.",
-      "4. Goo Gone on cloth for residual wax film.",
-      "5. 3% H₂O₂ for residual colored-wax dye (hidden test).",
-      "6. Cool wash + air-dry flat."
+      "1. Inspect fiber, dye stability, construction, candle type, and care label before any wet treatment.",
+      "2. Allow wax to cool; lift bulk gently with a dull edge; minimal mechanical action.",
+      "3. Apply pro dry-side / oil-family chemistry appropriate to wax as a controlled product, with flushing and PPE / ventilation per product SDS.",
+      "4. Treat any residual pigment from a dyed candle separately, as its own stain class, only with care-label and colorfastness limits in place.",
+      "5. Launder cool or lukewarm per care label; do not exceed.",
+      "6. Air-dry flat and inspect before any heat. Pro escalation chemistry stays in a controlled environment with PPE / ventilation per product SDS."
     ],
     "products": [
-      "Ice + sealed plastic bag",
-      "Plastic card / dull knife",
-      "Paper towels / brown paper bag",
-      "Iron (low heat)",
-      "Goo Gone (citrus solvent)",
-      "3% Hydrogen peroxide (dye residue, hidden test)"
+      "Liquid laundry detergent (consumer-grade)",
+      "Cool / lukewarm water per care label"
     ],
-    "temperature": "cold (freeze) + low heat for iron transfer + cool wash",
+    "temperature": "Ambient mechanical lift; care-label cool / lukewarm wash; no heat on residual wax or oil",
     "warnings": [
-      "STRUCTURED / lined / vintage linen = pro",
-      "Iron on LOW, 5–10 sec passes only — linen tolerates careful heat but not extended",
-      "Replace paper as it absorbs — saturated paper drips wax back",
-      "Hidden test before peroxide on dyed linen",
-      "Flammable solvent for residual film — ventilate",
-      "Pigment is a separate stain after wax is gone"
+      "Use cool or lukewarm water unless the care label specifically permits warmer washing; avoid hot water for uncertain, colored, structured, or high-value linen",
+      "Never tumble-dry linen with residual wax or oil — heat sets the stain",
+      "Never use chlorine bleach on colored linen",
+      "Structured / lined / embellished / dry-clean-only / vintage linen is a professional case from the start",
+      "Do not apply heat to wax in a Home path; pro heat transfer is a controlled professional technique with documented sources and is out of scope here",
+      "Confirm colorfastness via hidden-area test before any escalation",
+      "Pro dry-side / solvent chemistry requires SDS-driven PPE, ventilation, and flushing"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Linen Tolerates the Iron-Through-Paper Trick",
-      "instruction": "Linen is one of the few fibers where the classic \"iron + brown paper bag\" wax trick works safely. Linen is heat-tolerant (unlike synthetic carpet which would melt). Two rules: (1) structured / lined / dry-clean-only linen = pro from minute one, and (2) colored wax leaves a separate dye stain after the wax is gone — treat that as a dye stain after."
+      "agent": "Care Label, Construction, and Candle Type Check",
+      "instruction": "Read the care label. If it says dry-clean-only, or the linen is structured, lined, embellished, or vintage, stop and take it to a professional dry cleaner. Simple flat linen (napkin, plain shirt) on a washable care label can continue. Note whether the candle was undyed (white) or colored — colored wax can leave a separate pigment shadow that is its own stain class."
     },
     {
       "step": 2,
-      "agent": "Freeze the Wax — 10 to 15 Minutes",
-      "instruction": "Press a zip-lock bag of ice on the wax for 10–15 minutes. NEVER direct ice on linen. The wax will get hard and brittle."
+      "agent": "Let the Wax Fully Cool",
+      "instruction": "Wait until the wax has fully hardened. Do not press, rub, or apply heat to soft wax — that drives it deeper into the weave."
     },
     {
       "step": 3,
-      "agent": "Crack and Scrape Bulk — Plastic Card",
-      "instruction": "Once frozen, crack the wax with the edge of a plastic card. Lift off bulk pieces. Most surface wax comes off this way."
+      "agent": "Lift the Bulk Gently",
+      "instruction": "Use a dull butter knife or spoon edge to gently lift any solid wax off the linen in flakes. Do not scrape aggressively or grind the wax sideways across the weave — that spreads it. Work outward from the edge of the spot."
     },
     {
       "step": 4,
-      "agent": "Iron-Through-Paper Transfer",
-      "instruction": "Stack 3–4 paper towels (or a brown paper bag, no print) ON TOP of the wax spot. Set the iron to LOW. Press for 5 to 10 seconds at a time, NOT longer. Wax wicks UP into the absorbent paper. Replace paper as it picks up wax. Repeat until no more wax transfers. STOP if the linen feels hot under the iron — linen tolerates careful heat but extended heat scorches."
+      "agent": "Hidden-Area Test on Colored Linen",
+      "instruction": "On colored linen, dab a little liquid laundry detergent and cool water on an inside seam with a clean white cloth. Press one minute. If color transfers to the cloth, stop and take to a professional. White linen can skip this step."
     },
     {
       "step": 5,
-      "agent": "Goo Gone for Residual Wax Film",
-      "instruction": "If a thin wax film remains, dab Goo Gone (orange bottle, citrus solvent) on a clean white cloth and press the residue. Open windows — Goo Gone is flammable. Hidden test on dyed linen first."
+      "agent": "Apply Liquid Laundry Detergent to Any Oily Mark",
+      "instruction": "If a residual oily mark is left after the bulk wax is lifted, put a small amount of mild liquid laundry detergent on that mark. Work it in gently with your fingertip or a soft cloth — do not scrub."
     },
     {
       "step": 6,
-      "agent": "If Colored Candle — Treat the Dye",
-      "instruction": "Once the wax is fully gone, you might see the candle's color (red, blue, etc.) still in the linen. That's now a dye stain. Hidden-area test 3% peroxide on white linen 5 min. Skip on dyed linen."
+      "agent": "Cool or Lukewarm Wash and Air-Dry Flat",
+      "instruction": "Wash the linen on the cool or lukewarm setting your care label allows. Rinse thoroughly. Lay flat to air-dry and look closely for any remaining wax, oily mark, or pigment before any heat. Do not tumble-dry until the linen is fully clear."
     },
     {
       "step": 7,
-      "agent": "Cool Wash + AIR-DRY FLAT",
-      "instruction": "Cool wash per care label. AIR-DRY FLAT. Inspect before any iron or dryer."
+      "agent": "Escalate If It Doesn't Clear",
+      "instruction": "Heat-transfer methods (irons through paper), freezing protocols, and Home solvents are not in scope for this Home path on linen. If the wax is embedded, dyed, large, already heat-set, or a residual mark / pigment shadow remains after one conservative pass, take the garment to a professional dry cleaner. Tell them: \"Candle wax on [simple / colored] linen — [undyed / colored] candle, age [fresh / older], home-treated with cool-down, gentle lift, liquid laundry detergent on residual mark, cool care-label wash, air-dried flat. [Wax cleared / residual oily mark / pigment shadow].\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Structured / lined / dry-clean-only = pro.",
-      "2. Ice freeze 10–15 min. Crack and scrape bulk.",
-      "3. Iron-through-paper, LOW heat, 5–10 sec passes.",
-      "4. Goo Gone on cloth for residual wax film.",
-      "5. 3% peroxide for colored-wax dye (white linen only, hidden test).",
-      "6. Cool wash + AIR-DRY FLAT."
+      "1. Read care label and construction; escalate dry-clean-only / structured / lined / embellished / vintage to a pro. Note candle type.",
+      "2. Let wax fully cool and harden — do not press, rub, or heat.",
+      "3. Lift bulk wax gently with a dull edge — do not scrape or grind sideways.",
+      "4. On colored linen, hidden-area colorfastness test before detergent.",
+      "5. Apply a small amount of liquid laundry detergent to any residual oily mark.",
+      "6. Cool or lukewarm wash per care label.",
+      "7. Air-dry flat and inspect for residual wax / oil / pigment before any heat.",
+      "8. Escalate if it doesn't clear in one conservative pass."
     ],
     "products": [
-      "Ice + plastic bag",
-      "Plastic card / dull knife",
-      "Paper towels / brown paper bag",
-      "Iron (low heat)",
-      "Goo Gone",
-      "3% Hydrogen peroxide (white linen)"
+      "Mild liquid laundry detergent",
+      "Cool / lukewarm water",
+      "Clean white cotton cloth",
+      "Dull blade or spoon edge"
     ],
-    "whenToStop": "Stop if linen is structured / lined / dry-clean-only / vintage. Stop if iron starts to scorch the fiber.",
+    "whenToStop": "Stop if the linen is dry-clean-only, structured, lined, embellished, vintage, or unstable-dye; if the hidden-area test shows color transfer; if the wax is embedded, dyed, large, or has been heat-set; or if a residual mark or pigment shadow remains after one conservative pass. Escalate to a professional dry cleaner in any of those cases.",
     "warnings": [
-      "Structured = pro",
-      "Iron on LOW only, 5–10 sec passes — extended heat scorches linen",
-      "Replace paper as it absorbs — saturated paper drips wax back",
-      "Hidden test on dyed linen before peroxide",
-      "Pigment is a SEPARATE stain after wax is fully gone",
-      "Flammable solvent — no flame near Goo Gone"
+      "Do not apply heat (iron, dryer, hairdryer) to wax in the Home path",
+      "Do not use Home solvents (Goo Gone, mineral spirits, rubbing alcohol, dry-spotters) on wax",
+      "Do not scrape aggressively or grind wax sideways — spreads the stain",
+      "Use cool or lukewarm water unless the care label specifically permits warmer washing; avoid hot water for uncertain, colored, structured, or high-value linen",
+      "Do not tumble-dry residual wax or oil — heat sets the stain",
+      "Never use chlorine bleach on colored linen",
+      "Do not mix cleaning agents",
+      "Pro-strength oxidizers, solvents, and dry-side spotters are not Home steps"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never extended iron heat on linen — scorches",
-      "Never iron on structured / lined linen",
-      "Never direct ice on linen",
-      "Never use solvent near flame"
+      "Never apply heat (iron, dryer, hairdryer) to wax in the Home path",
+      "Never use Home solvents (Goo Gone, mineral spirits, rubbing alcohol, dry-spotters) on wax",
+      "Never tumble-dry a linen garment with residual wax or oil — heat sets the stain",
+      "Never use chlorine bleach on colored linen",
+      "Never wet-treat structured / lined / embellished / dry-clean-only linen at home",
+      "Never mix cleaning agents",
+      "Never apply professional-strength oxidizers, solvents, or dry-side spotters in the Home path"
     ],
     "fiberSensitivities": [
-      "Linen tolerates LOW careful iron heat with paper barrier",
-      "Linen scorches under extended heat",
-      "Vintage linen = pro (heat risk)",
-      "Structured linen warps under heat"
-    ]
+      "Linen is cellulose (flax); colored linen requires controlled temperature and a colorfastness check",
+      "Structured, lined, embellished, or vintage linen warps or fails under wet treatment and routes to a pro",
+      "Linen Home path uses cool / lukewarm water unless the care label specifically permits warmer washing"
+    ],
+    "chemicalBoundaries": [
+      "Home path: gentle mechanical lift, mild liquid laundry detergent, and water only",
+      "No Home solvents, dry-side spotters, peroxide, oxygen bleach, or chlorine bleach as a default Home step on wax",
+      "Pro path may use controlled dry-side / oil-family chemistry only when care label permits, colorfastness is confirmed, and SDS-driven PPE / ventilation are in place"
+    ],
+    "homeAllowed": [
+      "Mild liquid laundry detergent",
+      "Cool or lukewarm water per care label",
+      "Clean white cloth and dull edge for gentle mechanical lift",
+      "Air-drying flat and visual inspection before any heat"
+    ],
+    "proOnly": [
+      "Dry-side / oil-family pro products and oxidizers used in a controlled professional environment with PPE, ventilation, and flushing per product SDS"
+    ],
+    "testFirst": [
+      "Hidden-area colorfastness test (white cloth on an inside seam) before any detergent dwell on colored linen"
+    ],
+    "flushNeutralizeDry": [
+      "Rinse thoroughly after the detergent application",
+      "Air-dry flat and inspect before any heat"
+    ],
+    "escalationTriggers": [
+      "Care label is dry-clean-only or restricts wet treatment",
+      "Linen is structured / lined / embellished / vintage / high-value",
+      "Hidden-area test shows dye transfer",
+      "Wax is dyed, large, embedded, or has been heat-set",
+      "Residual oily mark or pigment shadow remains after one conservative pass"
+    ],
+    "sourceConfidence": "medium",
+    "ppeVentilation": [
+      "Follow the product label for any concentrate",
+      "Gloves and eye protection for any pro-strength chemistry",
+      "Ventilate the work area; keep cleaning agents away from children and pets"
+    ],
+    "homeVsProBoundary": "Home users use only gentle mechanical lift after cool-down, mild liquid laundry detergent on any residual oily mark, and a cool / lukewarm care-label wash. Pro dry-side / wax chemistry is a controlled professional technique and is hidden from the Home path."
   },
   "materialWarnings": [
-    "Linen is one of the few fibers where iron-through-paper works",
-    "LOW heat, short passes — extended heat scorches",
-    "Pigment is a separate stain after wax",
-    "Structured = pro from minute one"
+    "Do not iron / heat-transfer wax at home — pro technique only",
+    "Do not freeze / ice or use Home solvents — out of scope for this Home path",
+    "Use cool or lukewarm water unless the care label specifically permits warmer washing",
+    "Structured / lined linen is a pro case from the start",
+    "Dyed candle wax can leave a separate pigment shadow — escalate rather than chase with stronger chemistry at home"
   ],
   "escalation": {
-    "when": "Structured / lined / vintage linen, dry-clean-only label, iron scorched fiber, residual colored wax dye after peroxide, polymerized wax from being walked on/sat on for weeks.",
-    "whatToTell": "\"Candle wax on [simple / structured / vintage] linen, [white / colored wax], age [fresh / aged], home-treated with freeze + scrape + iron-through-paper + Goo Gone + [3% peroxide on white]. Cool wash + air-dry flat. [Residual wax / pigment / scorch].\"",
+    "when": "Dry-clean-only, structured, lined, embellished, vintage, or unstable-dye linen; wax that is dyed, large, embedded, or already heat-set; colored linen that fails a hidden-area test; or a residual oily mark or pigment shadow that remains after one conservative pass.",
+    "whatToTell": "\"Candle wax on [simple / structured / colored / vintage] linen — [undyed / colored] candle, age [fresh / older], home-treated with cool-down, gentle lift, liquid laundry detergent on residual mark, cool care-label wash, air-dried flat. [Wax cleared / residual oily mark / pigment shadow]. [Heat or solvent applied? — no].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "White wax or colored?",
-      "Simple flat linen or structured?",
-      "Care label?",
-      "How long ago — fresh / aged?",
-      "Vintage piece?"
+      "Is the linen plain and washable, or structured / lined / embellished / dry-clean-only?",
+      "Was the candle undyed (white) or colored?",
+      "White, natural, or dyed linen?",
+      "How old is the wax — fresh drip or older / set in?",
+      "Has the garment been through a hot wash or dryer since the wax was deposited?"
     ],
-    "modifierNotes": "Colored candle wax leaves dye after wax — separate treatment. Vintage linen needs cooler everything; pro for any wax stain. Synthetic-blend linen (linen-cotton blend) follows linen rules; linen-rayon blend = pro (rayon doesn't tolerate heat)."
+    "modifierNotes": "Simple flat linen with a washable care label is the only Home candidate. Anything structured, lined, embellished, vintage, or with unstable dye is a professional case from the start. The conservative Home path is gentle mechanical lift after cool-down plus a surfactant on any residual oily mark — heat-transfer and freezing methods are out of scope here. Dyed candle wax leaves a separate pigment shadow class — escalate rather than chase with stronger Home chemistry."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "23-26, 56-61, 83-99",
+      "evidence": "Oil / fat / wax family responds to surfactant action; conservative unknown-stain fallback (cool water, liquid detergent, rinse, air-dry); blot rather than rub; do not iron or dry stained fabric until removal is confirmed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "153-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Surfactant chemistry for oily soils; heat / chemical concentration / abrasion can damage fabric; test new detergents on inconspicuous areas; follow product labels and PPE / ventilation for concentrates; clean per care label or reject inappropriate garments.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "169-179, 445-449, 540-549",
+      "evidence": "Linen fiber tolerances and limits; controlled temperature for colored linen; chlorine bleach restricted on colored linen; pro dry-side solvent class belongs outside Home unless explicit label / SDS supports consumer use; absolute safety gates including no cleaner-mixing.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-4S-01",
+      "title": "R.R. Street 4Streets On-the-Spot",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/R.R. Street — 4Streets/On-the-Spot.md",
+      "lines": "29-31, 105-112",
+      "evidence": "Wax / oil / grease / paint / lipstick / ink are dry-side stain families with pro dry-side workflow.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-BUFA-01",
+      "title": "BÜFA DetaProfi Spotting Chart",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Vendor Systems/BÜFA/DetaProfi-Spotting-Chart.md",
+      "lines": "7-14, 50-63, 65-70",
+      "evidence": "Pro dry-side / oil-family products (Lacex / Detasolv) cover grease / oil / resin / wax problems in a professional environment; hem test required for linen and brilliant colors on natural fibers.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

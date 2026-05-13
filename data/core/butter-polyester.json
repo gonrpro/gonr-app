@@ -5,186 +5,270 @@
   "stainFamily": "oil",
   "surface": "polyester",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 4,
-  "timeEstimate": "15–30 minutes; cold flush + Dawn",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "15–30 minutes; longer if set in or hot-dried",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "butter",
     "surfaceCanonical": "polyester",
     "tier": "universal",
-    "riskLevel": "low",
+    "riskLevel": "medium",
     "tags": [
       "oil",
-      "butterfat",
-      "trace-protein",
+      "fat",
       "polyester",
-      "oleophilic",
-      "no-hot-water"
+      "care-label",
+      "conservative-home"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Butter is ~80% butterfat + small milk protein + salt. Polyester is OLEOPHILIC — grabs butterfat tenaciously. Two ordering rules: (1) cold flush BEFORE warm Dawn handles the small milk protein fraction first, (2) NO hot water until fully clear (heat sets butterfat into polyester permanently AND yellows the fiber over time). Standard butter protocol with polyester-specific Dawn × 2 if oily feel remains.",
-  "whyThisWorks": "Cold water removes milk protein fraction. Warm Dawn emulsifies butterfat. Cool wash + air-dry until fully clear preserves polyester. Polyester typically needs Dawn × 2 because of the oleophilic affinity.",
-  "defaultAssumption": "Polyester garment / blend / kid clothes. Fresh butter = quick win. Hot-dried = harder; sometimes permanent.",
+  "stainChemistry": "Butter is an oil/fat-family stain. Oil-based stains require a surfactant (liquid laundry detergent) to emulsify and lift the fat from the fiber. Polyester is chemically resistant but oleophilic — it can grab and hold oil-based soils, so a butter stain on polyester is not a trivial case. Colored polyester is also chlorine-restricted.",
+  "whyThisWorks": "A small amount of liquid laundry detergent applied directly to the stain provides surfactant action to break up butterfat. Cool or lukewarm water (per care label) reduces risk to the polyester fiber. Air-drying and inspecting before machine heat prevents residual oil from being heat-set into the fiber.",
+  "defaultAssumption": "Most butter on polyester is a kitchen / breakfast stain on a washable garment. Fresh butter responds to conservative surfactant pretreat plus care-label laundering, but polyester's affinity for oil means a second pretreat-and-wash pass is common before the stain clears. Stains that have already been through a hot wash or dryer are harder and may need a professional dry cleaner.",
   "spottingProtocol": [
     {
       "step": 1,
       "side": "dry",
-      "agent": "Scrape Solid Butter",
-      "technique": "Dull blade lift",
-      "equipment": "Dull blade",
-      "dwellTime": "30 seconds",
-      "instruction": "Scrape solid butter off with a dull blade. Lift bulk only."
+      "agent": "Inspect and confirm care label",
+      "action": "intake",
+      "instruction": "Confirm fiber, color, and care-label instructions. Dry-clean-only or structured pieces escalate to the professional path.",
+      "dwellTime": "1 minute",
+      "safetyNote": "Reject too-soiled or non-colorfast garments per care-label guidance. Do not proceed if the care label disallows wet treatment.",
+      "proOnly": true
     },
     {
       "step": 2,
-      "side": "wet",
-      "agent": "Cold Water Back-Flush",
-      "technique": "Flush from reverse",
-      "equipment": "Cold water, sink",
-      "dwellTime": "1 minute",
-      "instruction": "Flip inside out. Cold water through the BACK. Handles small milk protein fraction before warm Dawn touches the fat."
+      "side": "dry",
+      "agent": "Lift excess butter",
+      "action": "mechanical",
+      "instruction": "Use a dull edge to gently lift any solid butter off the polyester. Do not rub or press into the fiber.",
+      "dwellTime": "30 seconds",
+      "safetyNote": "Minimal mechanical action only. Aggressive rubbing can spread the stain or damage the fiber finish.",
+      "proOnly": true
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Dawn + Soft Brush",
-      "technique": "Emulsify butterfat",
-      "equipment": "Dawn + warm (not hot) water, soft toothbrush",
-      "dwellTime": "5 minutes",
-      "instruction": "Dawn in warm water (NOT hot — heat sets butterfat into polyester). Soft toothbrush 5 min. Cool rinse."
+      "agent": "Colorfastness test",
+      "action": "test",
+      "instruction": "On colored polyester, dab a small amount of liquid laundry detergent and cool water on an inside seam using a clean white cloth. Press for one minute and check the cloth for color transfer.",
+      "dwellTime": "1 minute, until checked",
+      "safetyNote": "Stop if dye transfers to the white cloth. Colored or unstable-dye garments escalate to the professional path.",
+      "proOnly": true
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Repeat Dawn If Oily Feel Remains",
-      "technique": "Second pass for oleophilic affinity",
-      "equipment": "Dawn + cool water",
-      "dwellTime": "5 minutes",
-      "instruction": "Test with clean fingertip. Oily feel = repeat Dawn. Polyester typically needs 2 passes."
+      "agent": "Surfactant pretreat",
+      "action": "detergent",
+      "instruction": "Apply a small amount of liquid laundry detergent directly to the stain. Work it in lightly with a fingertip or soft cloth. Polyester's affinity for oil often means a second pretreat-and-wash pass is needed before the stain fully clears.",
+      "dwellTime": "Brief dwell per product label, then rinse cool",
+      "safetyNote": "Follow the detergent product label. Do not mix cleaning agents.",
+      "proOnly": true
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Cool Wash + Air-Dry",
-      "technique": "Launder cool, inspect before dryer",
-      "equipment": "Washing machine",
-      "dwellTime": "Full cycle + air-dry",
-      "instruction": "Cool wash. Air-dry. Inspect BEFORE dryer — heat sets butterfat into polyester permanently."
+      "agent": "Launder per care label",
+      "action": "wash",
+      "instruction": "Launder using the temperature setting permitted by the care label; favor cool or lukewarm when uncertain. Rinse thoroughly.",
+      "dwellTime": "Full machine cycle",
+      "safetyNote": "Do not exceed the temperature limit on the care label.",
+      "proOnly": true
+    },
+    {
+      "step": 6,
+      "side": "dry",
+      "agent": "Air-dry and inspect",
+      "action": "dry",
+      "instruction": "Air-dry the garment and inspect for residual oil before any dryer heat. If oil remains, repeat the surfactant pretreat and laundering step. Do not machine-dry until the stain is fully gone.",
+      "dwellTime": "Until dry and inspected",
+      "safetyNote": "Heat applied to residual oil sets the stain into the fiber.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Scrape solid butter.",
-      "2. Cold water back-flush — milk protein step.",
-      "3. Dawn + soft toothbrush warm water (not hot), 5 min.",
-      "4. Repeat Dawn pass if oily feel remains.",
-      "5. Cool wash + air-dry. Inspect before dryer."
+      "1. Identify fiber, dye stability, and care-label limits before any wet treatment.",
+      "2. Lift excess oil with a dull edge; minimal mechanical action.",
+      "3. Apply surfactant pretreat appropriate to the oil family; rinse and assess. Polyester typically benefits from a second pretreat-and-wash pass.",
+      "4. Launder per care-label temperature limit; do not exceed.",
+      "5. Air-dry and inspect before any heat. If escalation is warranted, apply controlled oxidizer or dry-side chemistry only when the care label permits and colorfastness has been confirmed, per product SDS and with PPE / ventilation."
     ],
     "products": [
-      "Dawn / NSD",
-      "Cool / warm water (not hot)"
+      "Liquid laundry detergent (consumer-grade)",
+      "Cool / lukewarm water per care label"
     ],
-    "temperature": "cold flush + warm Dawn (not hot) + cool wash",
+    "temperature": "Cool to lukewarm per care label; no heat on residual oil",
     "warnings": [
-      "NEVER hot water — sets butterfat into polyester + yellows fiber",
-      "NEVER chlorine bleach on polyester — yellows fiber",
-      "NEVER hot dryer until fully clear",
-      "Polyester is oleophilic — expect 2 Dawn passes",
-      "Cold flush BEFORE warm Dawn — milk protein first"
+      "Do not exceed care-label temperature limits",
+      "Never use chlorine bleach on colored polyester",
+      "Confirm colorfastness via hidden-area test before any escalation",
+      "Do not mix cleaning agents",
+      "Pro chemistry beyond consumer detergent requires SDS-driven PPE and ventilation"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Polyester + Butter — Cold First, Then Warm Dawn",
-      "instruction": "Butter has a small milk-protein fraction — cold flush handles that first. Polyester is oleophilic (grabs oil) — Dawn × 2 typical for the butterfat. Two rules: NO hot water (sets butterfat into polyester permanently) and NO chlorine bleach (yellows polyester)."
+      "agent": "Confirm Care Label First",
+      "instruction": "Check the care label. If it says dry-clean-only, or the garment is structured / lined / embellished / vintage, stop and take it to a professional dry cleaner. For washable polyester, continue. Note: polyester is not automatically easy for butter — oil grabs the fiber, so expect to repeat a pretreat-and-wash pass."
     },
     {
       "step": 2,
-      "agent": "Scrape Solid Butter",
-      "instruction": "Scrape solid butter off with a dull butter knife. Just lift the bulk."
+      "agent": "Lift Excess Butter Gently",
+      "instruction": "Use a dull butter knife or spoon edge to gently lift any solid butter off the fabric. Do not rub — that pushes the oil deeper into the fiber."
     },
     {
       "step": 3,
-      "agent": "Cold Water Flush — Milk Protein First",
-      "instruction": "Flip inside out. Cold tap water through the BACK 1 minute. Cold flush handles the small milk protein fraction before warm water touches the fat."
+      "agent": "Hidden-Area Test on Colored Polyester",
+      "instruction": "On colored polyester, dab a little liquid laundry detergent and cool water on an inside seam with a clean white cloth. Press one minute. If color transfers to the cloth, stop and take to a professional. White polyester can skip this step."
     },
     {
       "step": 4,
-      "agent": "Dawn + Warm (Not Hot) Water — Soft Toothbrush 5 Minutes",
-      "instruction": "Dawn in WARM water — not hot, just warm enough to emulsify butterfat. Work into spot with soft toothbrush 5 min. Cool rinse."
+      "agent": "Apply Liquid Laundry Detergent",
+      "instruction": "Put a small amount of mild liquid laundry detergent directly on the stain. Work it in gently with your fingertip or a soft cloth — do not scrub."
     },
     {
       "step": 5,
-      "agent": "Test for Oily Feel — Repeat Dawn If Yes",
-      "instruction": "Touch the spot with a clean fingertip. Still feels oily? Repeat Dawn. Polyester typically needs 2 passes."
+      "agent": "Launder Per Care Label",
+      "instruction": "Wash the garment using the temperature your care label allows. If you are unsure, use cool or lukewarm water. Rinse thoroughly."
     },
     {
       "step": 6,
-      "agent": "Cool Wash, AIR-DRY Until Clear",
-      "instruction": "Cool wash per care label. Air-dry. Inspect BEFORE dryer. Residual butterfat + dryer heat = permanent on polyester."
+      "agent": "Air-Dry and Inspect Before the Dryer",
+      "instruction": "Lay the garment flat or hang to air-dry and look closely for any remaining oily mark before putting it in the dryer. If a stain remains, repeat steps 4 and 5 once. Do not machine-dry until the stain is fully gone — heat sets residual oil into polyester."
+    },
+    {
+      "step": 7,
+      "agent": "Escalate If It Doesn't Clear",
+      "instruction": "If the stain is still there after two careful passes, or if it has already been through a hot wash or dryer, take it to a professional dry cleaner. Tell them: \"Butter on polyester, age [fresh / overnight / older], home-treated with liquid laundry detergent and a care-label wash, air-dried.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Cool water only. NO hot water until fully clear.",
-      "2. Scrape solid butter.",
-      "3. Cold water back-flush — milk protein step first.",
-      "4. Dawn + WARM (not hot) water + soft toothbrush, 5 min.",
-      "5. Repeat Dawn if oily feel remains.",
-      "6. Cool wash + AIR-DRY. Inspect before dryer."
+      "1. Read care label; escalate dry-clean-only / structured / vintage to a pro.",
+      "2. Lift excess butter gently with a dull edge — do not rub.",
+      "3. On colored polyester, hidden-area colorfastness test before detergent.",
+      "4. Apply a small amount of liquid laundry detergent.",
+      "5. Launder per care label (favor cool / lukewarm if uncertain).",
+      "6. Air-dry and inspect for residual oil before any dryer heat.",
+      "7. Repeat once if needed; escalate if it doesn't clear or was heat-set."
     ],
     "products": [
-      "Dull blade",
-      "Dawn dish soap",
-      "Cool / warm water"
+      "Mild liquid laundry detergent",
+      "Cool / lukewarm water",
+      "Clean white cotton cloth",
+      "Dull blade or spoon edge"
     ],
-    "whenToStop": "Stop if hot dryer was used on residual butterfat (likely permanent on polyester).",
+    "whenToStop": "Stop if the care label is dry-clean-only, the garment is structured / lined / embellished, the hidden-area test shows color transfer, the stain has already been through a hot wash or dryer, or two conservative passes do not clear it. In any of those cases, escalate to a professional dry cleaner.",
     "warnings": [
-      "NEVER hot water — sets butterfat + yellows polyester",
-      "NEVER chlorine bleach on polyester",
-      "NEVER hot dryer until fully clear",
-      "Polyester loves oil — expect 2 Dawn passes",
-      "Cold flush BEFORE warm Dawn"
+      "Do not rub — pushes oil into the fiber",
+      "Do not exceed care-label temperature",
+      "Do not machine-dry residual oil — heat sets the stain",
+      "Never use chlorine bleach on colored polyester",
+      "Do not mix cleaning agents",
+      "Pro-strength oxidizers, solvents, and bleaches are not Home steps"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never hot water on butter + polyester",
-      "Never chlorine bleach on polyester",
-      "Never hot dryer until fully clear",
-      "Never skip cold-flush milk protein step"
+      "Never machine-dry a polyester garment with residual butter — heat sets oil into the fiber",
+      "Never use chlorine bleach on colored polyester",
+      "Never rub or scrub the stain aggressively",
+      "Never mix cleaning agents",
+      "Never apply professional-strength oxidizers, solvents, or acids in the Home path"
     ],
     "fiberSensitivities": [
-      "Polyester is oleophilic — grabs butterfat",
-      "Polyester yellows under heat over time",
-      "Polyester typically needs 2 Dawn passes for oil",
-      "Heat sets butterfat permanently"
-    ]
+      "Polyester is chemically resistant but oleophilic — it grabs and holds oil-based soils",
+      "Colored polyester is chlorine-restricted; chlorine bleach can yellow or fade the fiber",
+      "Polyester is not automatically easy for butter — expect to repeat a pretreat-and-wash pass"
+    ],
+    "chemicalBoundaries": [
+      "Home path: mild liquid laundry detergent and water only",
+      "No peroxide, oxygen bleach, or chlorine bleach as a default Home step",
+      "Pro path may use controlled oxidizer or dry-side chemistry only when care label permits, colorfastness is confirmed, and SDS-driven PPE / ventilation are in place; colored polyester remains chlorine-restricted"
+    ],
+    "homeAllowed": [
+      "Mild liquid laundry detergent",
+      "Cool or lukewarm water per care label",
+      "Clean white cloth and dull edge for mechanical lift",
+      "Air-drying and visual inspection before any heat"
+    ],
+    "proOnly": [
+      "Concentrated surfactants, dry-side oil / grease products, and oxidizers used in a controlled professional environment with PPE and ventilation per product SDS"
+    ],
+    "testFirst": [
+      "Hidden-area colorfastness test (white cloth on an inside seam) before detergent dwell or any escalation on colored polyester"
+    ],
+    "flushNeutralizeDry": [
+      "Rinse thoroughly after each detergent application",
+      "Air-dry and inspect before any dryer heat"
+    ],
+    "escalationTriggers": [
+      "Care label is dry-clean-only or restricts wet treatment",
+      "Garment is structured / lined / embellished / vintage / high-value",
+      "Hidden-area test shows dye transfer",
+      "Stain has already been through a hot wash or dryer",
+      "Two conservative passes do not clear the stain"
+    ],
+    "sourceConfidence": "medium",
+    "ppeVentilation": [
+      "Follow the product label for any concentrate",
+      "Gloves and eye protection for any pro-strength chemistry",
+      "Ventilate the work area; keep cleaning agents away from children and pets"
+    ],
+    "homeVsProBoundary": "Home users use only mild liquid laundry detergent and care-label laundering. Pro chemistry (concentrated surfactants, dry-side oil/grease products, oxidizers) is hidden from the Home path and requires SDS-driven PPE / ventilation in a controlled environment."
   },
   "materialWarnings": [
-    "No hot water / hot dryer — heat sets butterfat",
-    "Cold flush before warm Dawn",
-    "Polyester loves oil — expect 2 Dawn passes"
+    "Inspect for residual oil before any dryer heat",
+    "Colored polyester: hidden-area colorfastness test before detergent dwell",
+    "Polyester is not automatically easy for butter — expect to repeat a pretreat-and-wash pass",
+    "Never use chlorine bleach on colored polyester"
   ],
   "escalation": {
-    "when": "Hot dryer used on residual butterfat, alkaline applied, or 3 home rounds plateau.",
-    "whatToTell": "\"Butter on polyester, age [hours / days], home-treated with cold flush + Dawn warm water × 2 + cool wash + air-dry. No hot water / no chlorine bleach. [Residual oily feel].\"",
+    "when": "Dry-clean-only, structured, or vintage polyester; colored polyester that fails a hidden-area test; stain that has been through a hot wash or dryer; or no improvement after two conservative passes.",
+    "whatToTell": "\"Butter on polyester, age [fresh / overnight / older], home-treated with liquid laundry detergent and a care-label wash, air-dried. [Hot wash or dryer applied? — yes / no].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "Plain butter or compound (garlic / herb)?",
-      "How long ago — fresh / dried in / weeks?",
-      "Has it been through a hot wash or dryer?",
-      "White or dyed polyester?"
+      "Is the polyester white or colored / dyed?",
+      "How old is the stain — fresh, overnight, or older?",
+      "Has the garment been through a hot wash or dryer since the spill?",
+      "Is the garment dry-clean-only, structured, or embellished?"
     ],
-    "modifierNotes": "Compound butter (garlic, herb) adds minor pigment that may need a 3% peroxide step on white polyester. Hot-dried butterfat = often permanent on polyester."
+    "modifierNotes": "Polyester is chemically resistant but oleophilic — butter holds tenaciously and a second pretreat-and-wash pass is common. Hot-dried or aged residue is meaningfully harder and should be escalated to a professional dry cleaner rather than treated with stronger Home chemistry."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "17-32, 56-61, 83-99",
+      "evidence": "Oil-family classification; conservative unknown-stain fallback (cool water, liquid detergent, rinse, air-dry); blot rather than rub; do not iron or dry stained fabric until removal is confirmed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "164-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Surfactant chemistry for oily soils; care-label gate; product-label and PPE / ventilation requirements for concentrates.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "99-109, 326-343, 540-549",
+      "evidence": "Polyester is chemically resistant but oil-grabbing / oleophilic; colored polyester restricted from chlorine bleach; lipase / fat use cases respond to surfactant action; absolute safety gates including no cleaner-mixing.",
+      "confidence": "high"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }

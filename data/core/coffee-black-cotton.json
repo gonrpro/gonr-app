@@ -5,11 +5,11 @@
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
-  "source": "verified",
-  "verified": true,
+  "source": "source_grounded_pending_lab_repair",
+  "verified": false,
   "difficulty": 2,
-  "timeEstimate": "5–20 minutes (fresh)",
-  "lastValidated": "2026-04-25",
+  "timeEstimate": "5–20 minutes (fresh); longer if dried in or hot-set",
+  "lastValidated": "2026-05-13",
   "meta": {
     "stainCanonical": "coffee-black",
     "surfaceCanonical": "cotton",
@@ -17,185 +17,270 @@
     "riskLevel": "low",
     "tags": [
       "tannin",
+      "beverage",
       "cotton",
-      "time-sensitive"
+      "care-label",
+      "conservative-home"
     ],
-    "freePreview": true
+    "freePreview": true,
+    "triageGroup": "cleanup_required"
   },
-  "stainChemistry": "Black coffee (no cream, no sugar) is a single-component tannin stain — chlorogenic acid and phenolic polyphenols dissolved in water. No protein, no oil to complicate the sequence. Anthocyanin-like bonds form tightlybetween the coffee polyphenols and cotton cellulose. Fresh black coffee rinses out easily; aged coffee oxidizes slowly into a browner, more resistant form. Cotton is pure cellulose — tolerates acid-side tannin spotters, 3% H₂O₂, and hot post-chemistry wash.",
-  "whyThisWorks": "Without milk protein in the way, black coffee is a straightforward tannin job: cold flush to move what's loose, NSD to emulsify bound pigment, acid-side tannin spotter to disrupt the grip, 3% H₂O₂ to oxidize the color, hot wash to finish. Simpler than coffee-with-cream because there's no milk protein layer that has to be digested first.",
-  "defaultAssumption": "Black coffee on cotton is the easiest coffee variant. Fresh clears in minutes; aged (overnight+) adds a peroxide or tannin-spotter cycle but rarely escalates beyond home treatment unless heat-set.",
+  "stainChemistry": "Black coffee is a tannin / plant-origin beverage stain — no milk, no cream, no oil. The card is scoped to black coffee only; coffee containing milk or cream is a different stain class and is not handled here. Cotton is cellulose: white cotton is generally tolerant of conservative laundering, while colored cotton requires lower heat and a colorfastness check before any escalation.",
+  "whyThisWorks": "Cool water rinsing from the back of the fabric carries away most of the fresh coffee. A small amount of liquid laundry detergent lifts remaining residue. Care-label laundering and air-drying with inspection prevent any residual tannin color from being heat-set into the fiber.",
+  "defaultAssumption": "Most black coffee on cotton is a fresh spill on a washable garment. Fresh black coffee typically responds to conservative cool-water and detergent treatment plus a care-label wash. Coffee that has dried in or already been through a hot wash or dryer is harder and may need a professional dry cleaner.",
   "spottingProtocol": [
     {
       "step": 1,
-      "side": "wet",
-      "agent": "Cold Flush",
-      "technique": "Flush from the back",
-      "equipment": "Cold running water, white cotton terry towel",
-      "dwellTime": "30–60 seconds",
-      "instruction": "Cold flush from the BACK of the fabric. Blot from underneath. On fresh black coffee (<15 min), 80%+ of the stain lifts here. Cold only — hot water on aged coffee sets the tannin brown."
+      "side": "dry",
+      "agent": "Inspect and confirm care label",
+      "action": "intake",
+      "instruction": "Confirm fiber, color, and care-label limits. Dry-clean-only or structured pieces escalate to the professional path. Confirm the coffee was black — if it contained milk or cream, route to the combination-stain workflow instead.",
+      "dwellTime": "1 minute",
+      "safetyNote": "Reject too-soiled or non-colorfast garments per care-label guidance. Do not proceed if the care label disallows wet treatment.",
+      "proOnly": true
     },
     {
       "step": 2,
       "side": "wet",
-      "agent": "NSD",
-      "technique": "Sponge, dwell, blot",
-      "equipment": "NSD in cold water",
-      "dwellTime": "2–3 minutes",
-      "instruction": "Apply NSD to the stain, sponge gently. NSD suspends residual pigment so the next steps act on what's bound to the fiber. Blot with a clean towel. Should see noticeable lightening."
+      "agent": "Cool water rinse from the back",
+      "action": "rinse",
+      "instruction": "Hold the back of the stained area under cool running water and let the rinse carry the coffee out through the front. Blot underneath with a clean white cotton cloth — do not rub.",
+      "dwellTime": "30–60 seconds",
+      "safetyNote": "Cool water only. Hot water can set the tannin color into the fiber. Avoid mechanical scrubbing.",
+      "proOnly": true
     },
     {
       "step": 3,
       "side": "wet",
-      "agent": "Hot-Water Pour-Through (Fresh Only)",
-      "technique": "Pour from the back",
-      "equipment": "Kettle of hot — not boiling — water",
-      "dwellTime": "1–2 pours",
-      "instruction": "Only for stains under 30 minutes old. Stretch the fabric taut over a bowl, pour hot water through from the back. Heat breaks grip on fresh tannin. Skip on aged — heat sets older tannin permanently."
+      "agent": "Colorfastness test",
+      "action": "test",
+      "instruction": "On colored cotton, dab a small amount of liquid laundry detergent and cool water on an inside seam using a clean white cloth. Press for one minute and check the cloth for color transfer.",
+      "dwellTime": "1 minute, until checked",
+      "safetyNote": "Stop if dye transfers. Colored or unstable-dye garments escalate to the professional path.",
+      "proOnly": true
     },
     {
       "step": 4,
       "side": "wet",
-      "agent": "Tannin Spotter",
-      "technique": "Drop, dwell, blot",
-      "equipment": "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A) — acid-side tannin treatment",
-      "dwellTime": "2–5 minutes",
-      "instruction": "If any brown shadow remains, apply acid-side tannin spotter by dropper. Disrupts the polyphenol-cellulose grip. Dwell 2–5 min, blot. Repeat once if shadow persists."
+      "agent": "Surfactant pretreat",
+      "action": "detergent",
+      "instruction": "Apply a small amount of liquid laundry detergent directly to the stain. Work it in lightly with a fingertip or soft cloth.",
+      "dwellTime": "Brief dwell per product label, then rinse cool",
+      "safetyNote": "Follow the detergent product label. Do not mix cleaning agents.",
+      "proOnly": true
     },
     {
       "step": 5,
       "side": "wet",
-      "agent": "Hydrogen Peroxide 3%",
-      "technique": "Drop, dwell, blot",
-      "equipment": "3% H₂O₂",
-      "dwellTime": "3–5 minutes",
-      "instruction": "For residual color: 3% H₂O₂ drop-by-drop. Oxidizes the conjugated polyphenol to colorless. Dwell 3–5 min, blot. Repeat once if needed. One oxidizer at a time, NSD-flushed between."
+      "agent": "Launder per care label",
+      "action": "wash",
+      "instruction": "Launder using the temperature setting permitted by the care label; favor cool or lukewarm when uncertain. Rinse thoroughly.",
+      "dwellTime": "Full machine cycle",
+      "safetyNote": "Do not exceed the temperature limit on the care label.",
+      "proOnly": true
     },
     {
       "step": 6,
-      "side": "wet",
-      "agent": "NSD Flush + Hot Wash",
-      "technique": "Clear chemistry, launder",
-      "equipment": "NSD, washing machine",
-      "dwellTime": "Full wash cycle",
-      "instruction": "Flush with NSD until rinse runs clear. Launder hot per care label."
+      "side": "dry",
+      "agent": "Air-dry and inspect",
+      "action": "dry",
+      "instruction": "Air-dry the garment and inspect for any residual color before any dryer heat. If a faint shadow remains, repeat the pretreat and laundering step; do not machine-dry until the stain is fully gone.",
+      "dwellTime": "Until dry and inspected",
+      "safetyNote": "Heat applied to residual tannin can set the color into the fiber.",
+      "proOnly": true
     }
   ],
   "professionalProtocol": {
     "steps": [
-      "1. Cold flush from the back — fresh black coffee mostly lifts here.",
-      "2. NSD in cold water. Sponge, dwell 2–3 min, blot.",
-      "3. FRESH ONLY (<30 min): hot pour-through. Skip on aged.",
-      "4. Acid-side tannin spotter (Chemspec Tannin Spotter / PRENETT-A) — dropper, 2–5 min, blot.",
-      "5. 3% H₂O₂ on residual. 3–5 min. One pass, NSD-flush between repeats.",
-      "6. NSD flush, hot wash per care label."
+      "1. Identify fiber, dye stability, and care-label limits before any wet treatment; confirm the coffee is black (no milk / cream).",
+      "2. Rinse fresh coffee with cool water from the back of the fabric.",
+      "3. Apply surfactant pretreat appropriate to the tannin family; rinse and assess.",
+      "4. Launder per care-label temperature limit; do not exceed.",
+      "5. Air-dry and inspect before any heat. If escalation is warranted, apply a pro tannin product or controlled oxidizer only when the care label permits, colorfastness is confirmed, and PPE / ventilation per product SDS are in place; tannin formulas can shift dye color and must be flushed thoroughly."
     ],
     "products": [
-      "NSD (Neutral Synthetic Detergent)",
-      "Professional tannin spotter (Chemspec Tannin Spotter or PRENETT-A)",
-      "Hydrogen Peroxide 3%"
+      "Liquid laundry detergent (consumer-grade)",
+      "Cool / lukewarm water per care label"
     ],
-    "temperature": "cold through spotting; hot wash post-chemistry",
+    "temperature": "Cool through spotting; care-label cool / lukewarm wash; no heat on residual color",
     "warnings": [
-      "Never use hot water on aged black coffee — sets tannin permanently",
-      "One oxidizer at a time — NSD-flushed between",
-      "Flush all chemistry before heat — residual oxidizer yellows cotton"
+      "Do not exceed care-label temperature limits",
+      "Hot water on residual tannin can set the color",
+      "Confirm colorfastness via hidden-area test before any escalation",
+      "Tannin formulas can shift dye color and must be flushed thoroughly",
+      "Do not mix cleaning agents",
+      "Pro chemistry beyond consumer detergent requires SDS-driven PPE and ventilation"
     ]
   },
   "homeSolutions": [
     {
       "step": 1,
-      "agent": "Move Fast, Cold Water",
-      "instruction": "Black coffee on cotton is easy to beat if you move fast. Cold water only — hot water sets the tannin. Most fresh spills lift with the next step alone."
+      "agent": "Black Coffee Only — Confirm and Check Care Label",
+      "instruction": "This page is for black coffee — no milk and no cream. If your coffee had milk or cream in it, the chemistry is different; treat it as a combination stain and take it to a professional dry cleaner. Check the care label. If it says dry-clean-only, or the garment is structured / lined / embellished / vintage, stop and take it to a professional dry cleaner. For washable cotton, continue."
     },
     {
       "step": 2,
-      "agent": "Flush From the Back of the Fabric",
-      "instruction": "Hold the BACK of the stained area under cold running water for 30–60 seconds. The coffee pushes out the way it came in. Blot with a clean white towel from underneath — don't rub."
+      "agent": "Cool Water Rinse from the Back",
+      "instruction": "Flip the fabric inside out and hold the back of the stained area under cool running water for 30–60 seconds. Most fresh black coffee rinses out at this step. Blot underneath with a clean white cloth — do not rub."
     },
     {
       "step": 3,
-      "agent": "Hot-Water Pour-Through (Fresh Only)",
-      "instruction": "If the stain is under 30 minutes old: stretch the fabric taut over a bowl, place a clean towel underneath, pour hot (not boiling) water through from the back. You'll see the coffee fade dramatically. Skip this if the coffee's been sitting longer than 30 minutes — heat sets older tannin."
+      "agent": "Hidden-Area Test on Colored Cotton",
+      "instruction": "On colored cotton, dab a little liquid laundry detergent and cool water on an inside seam with a clean white cloth. Press one minute. If color transfers to the cloth, stop and take to a professional. White cotton can skip this step."
     },
     {
       "step": 4,
-      "agent": "Dawn + White Vinegar for Stubborn Shadow",
-      "instruction": "If any brown shadow remains, mix 1 teaspoon Dawn dish soap, 1 tablespoon white vinegar, and 1 cup cold water. Dab onto the stain with a clean cloth, let sit 3 minutes, blot from outside toward center. Repeat once if color persists."
+      "agent": "Apply Liquid Laundry Detergent",
+      "instruction": "Put a small amount of mild liquid laundry detergent directly on what remains of the stain. Work it in gently with your fingertip or a soft cloth — do not scrub."
     },
     {
       "step": 5,
-      "agent": "OxiClean or 3% Hydrogen Peroxide for Lingering Color",
-      "instruction": "For stubborn shadows: dissolve 1 scoop OxiClean in 1 cup cool water, soak the stain 15–30 minutes. OR dab 3% drugstore hydrogen peroxide on the spot and let it bubble 3–5 min, blot. Skip on dark or dyed cotton.",
-      "safetyNote": "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide at the same time — one oxidizer at a time."
+      "agent": "Launder Per Care Label",
+      "instruction": "Wash the garment using the temperature your care label allows. If you are unsure, use cool or lukewarm water. Rinse thoroughly."
     },
     {
       "step": 6,
-      "agent": "Hot Wash, Inspect Before the Dryer",
-      "instruction": "Launder on the hottest setting the care label allows. Inspect BEFORE the dryer — dryer heat sets any residual tannin permanently."
+      "agent": "Air-Dry and Inspect Before the Dryer",
+      "instruction": "Air-dry the garment and look closely for any remaining shadow before putting it in the dryer. If a faint mark remains, repeat steps 4 and 5 once. Do not machine-dry until the stain is fully gone — heat can set residual tannin into cotton."
     },
     {
       "step": 7,
-      "agent": "Escalate on Heat-Set or Plateau",
-      "instruction": "If the coffee has already been through a hot dryer or two home rounds haven't cleared it, take it to a dry cleaner. Tell them: \"Black coffee on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar / OxiClean / 3% hydrogen peroxide.\""
+      "agent": "Escalate If It Doesn't Clear",
+      "instruction": "If a shadow is still there after two careful passes, or if the stain has already been through a hot wash or dryer, take the garment to a professional dry cleaner. Tell them: \"Black coffee on cotton, age [fresh / overnight / older], home-treated with cool rinse, liquid laundry detergent, and a care-label wash.\""
     }
   ],
   "diyProtocol": {
     "steps": [
-      "1. Move fast — cold water only while the stain is visible.",
-      "2. Flush cold from the BACK of the fabric, blot from underneath.",
-      "3. Fresh (<30 min) only: hot-water pour-through.",
-      "4. Dawn + vinegar + cold water solution, 3 min dwell, blot.",
-      "5. OxiClean soak OR 3% peroxide on residual shadow. Never layer oxidizers.",
-      "6. Hot wash per care label. Inspect BEFORE the dryer.",
-      "7. Escalate if heat-set or two rounds failed."
+      "1. Confirm coffee was BLACK (no milk / cream). Read care label; escalate dry-clean-only / structured / vintage to a pro.",
+      "2. Cool water rinse from the BACK of the fabric.",
+      "3. On colored cotton, hidden-area colorfastness test before detergent.",
+      "4. Apply a small amount of liquid laundry detergent.",
+      "5. Launder per care label (favor cool / lukewarm if uncertain).",
+      "6. Air-dry and inspect for any residual shadow before any dryer heat.",
+      "7. Repeat once if needed; escalate if it doesn't clear or was heat-set."
     ],
     "products": [
-      "Cold water",
-      "Dawn dish soap",
-      "White vinegar (household)",
-      "OxiClean or 3% hydrogen peroxide"
+      "Mild liquid laundry detergent",
+      "Cool / lukewarm water",
+      "Clean white cotton cloth"
     ],
-    "whenToStop": "Stop if black coffee has been through a hot dryer, if two home rounds don't clear it, or if the cotton is dark dyed where peroxide isn't safe.",
+    "whenToStop": "Stop if the coffee contained milk or cream (different stain class), the care label is dry-clean-only, the garment is structured / lined / embellished, the hidden-area test shows color transfer, the stain has already been through a hot wash or dryer, or two conservative passes do not clear it. Escalate to a professional dry cleaner in any of those cases.",
     "warnings": [
-      "Hot water only for fresh — sets aged tannin",
-      "Never mix OxiClean with chlorine bleach, ammonia, or hydrogen peroxide",
-      "Skip peroxide on dark/dyed cotton — test inside seam first",
-      "Inspect before the dryer"
+      "Black coffee only — coffee with milk or cream is a different stain class",
+      "Do not use hot water on aged or dried coffee — can set the tannin",
+      "Do not rub or scrub — spreads the stain",
+      "Do not machine-dry residual color — heat can set the stain",
+      "Do not mix cleaning agents",
+      "Pro-strength oxidizers, solvents, and tannin acids are not Home steps"
     ]
   },
   "safetyMatrix": {
     "neverDo": [
-      "Never use hot water on aged black coffee — sets tannin brown",
-      "Never layer oxidizers — one at a time",
-      "Never dry with residual chemistry in the fiber",
-      "Never rub — blot"
+      "Never machine-dry a garment with residual coffee color — heat can set the tannin",
+      "Never treat coffee containing milk or cream with this protocol — it is a combination stain",
+      "Never rub or scrub the stain aggressively",
+      "Never mix cleaning agents",
+      "Never use chlorine bleach on colored cotton",
+      "Never apply professional-strength oxidizers, solvents, or tannin acids in the Home path"
     ],
     "fiberSensitivities": [
-      "Cotton tolerates NSD, acid-side tannin spotters, 3% H₂O₂, hot wash post-chemistry",
-      "Dyed cotton: inside-seam-test peroxide",
-      "Heat-safe fiber once chemistry is cleared"
-    ]
+      "Cotton is cellulose; white cotton is generally tolerant of conservative laundering",
+      "Colored cotton requires lower heat and a colorfastness check before escalation",
+      "Aged or hot-dried tannin residue is harder to remove and may need a professional dry cleaner"
+    ],
+    "chemicalBoundaries": [
+      "Home path: mild liquid laundry detergent and water only",
+      "No peroxide, oxygen bleach, or chlorine bleach as a default Home step",
+      "Pro path may use controlled tannin chemistry or oxidizers only when care label permits, colorfastness is confirmed, and SDS-driven PPE and ventilation are in place"
+    ],
+    "homeAllowed": [
+      "Mild liquid laundry detergent",
+      "Cool or lukewarm water per care label",
+      "Clean white cotton cloth for blotting",
+      "Air-drying and visual inspection before any heat"
+    ],
+    "proOnly": [
+      "Pro tannin formulas, concentrated surfactants, and oxidizers used in a controlled professional environment with PPE / ventilation per product SDS; tannin chemistry can shift dye color and must be flushed thoroughly"
+    ],
+    "testFirst": [
+      "Hidden-area colorfastness test (white cloth on an inside seam) before detergent dwell or any escalation on colored cotton"
+    ],
+    "flushNeutralizeDry": [
+      "Rinse thoroughly with cool water from the back of the fabric",
+      "Rinse again after each detergent application",
+      "Air-dry and inspect before any dryer heat"
+    ],
+    "escalationTriggers": [
+      "Coffee contained milk or cream (combination stain)",
+      "Care label is dry-clean-only or restricts wet treatment",
+      "Garment is structured / lined / embellished / vintage / high-value",
+      "Hidden-area test shows dye transfer",
+      "Stain has already been through a hot wash or dryer",
+      "Two conservative passes do not clear the stain"
+    ],
+    "sourceConfidence": "medium",
+    "ppeVentilation": [
+      "Follow the product label for any concentrate",
+      "Gloves and eye protection for any pro-strength chemistry",
+      "Ventilate the work area; keep cleaning agents away from children and pets"
+    ],
+    "homeVsProBoundary": "Home users use only cool-water rinsing and mild liquid laundry detergent with a care-label wash. Pro chemistry (concentrated surfactants, tannin formulas, oxidizers) is hidden from the Home path and requires SDS-driven PPE / ventilation in a controlled environment."
   },
   "materialWarnings": [
-    "Hot water only for fresh — sets aged tannin",
-    "One oxidizer at a time",
-    "Peroxide on whites; test inside seam on dark cotton"
+    "Black coffee only — coffee with milk or cream is a different stain class",
+    "Cool water only — hot water can set the tannin",
+    "Inspect for any residual shadow before any dryer heat",
+    "Aged or hot-dried coffee is harder to remove and may need a pro"
   ],
   "escalation": {
-    "when": "Heat-set by dryer or iron, two home rounds failed, or dark dyed cotton where peroxide isn't safe.",
-    "whatToTell": "\"Black coffee on cotton, age [fresh / overnight / older], home-treated with Dawn + vinegar / OxiClean / 3% H₂O₂. [Washed hot / not yet laundered.]\"",
+    "when": "Coffee contained milk or cream; dry-clean-only, structured, or vintage cotton; colored cotton that fails a hidden-area test; coffee that has been through a hot wash or dryer; or no improvement after two conservative passes.",
+    "whatToTell": "\"Black coffee on cotton, age [fresh / overnight / older], home-treated with cool rinse, liquid laundry detergent, and a care-label wash. [Hot wash or dryer applied? — yes / no].\"",
     "specialistType": "professional dry cleaner"
   },
   "deepSolveHooks": {
     "contextQuestions": [
-      "How old is the stain?",
-      "Is the cotton white, light, or dark/dyed?",
-      "Has it been through a hot wash or dryer since?"
+      "Was the coffee actually black (no milk / cream)?",
+      "How old is the stain — fresh, overnight, or older?",
+      "White, light, or dark / dyed cotton?",
+      "Has the garment been through a hot wash or dryer since the spill?",
+      "Is the garment dry-clean-only, structured, or embellished?"
     ],
-    "modifierNotes": "Black coffee is the simplest coffee variant — no protein, no oil. Fresh = trivial DIY. Heat-set or dyed cotton narrows options."
+    "modifierNotes": "Black coffee is a single-component tannin stain and is the simpler of the coffee variants. Adding milk or cream changes the chemistry and is out of scope for this card — escalate or use the combination-stain workflow instead. Heat-set or aged tannin residue is meaningfully harder and should be escalated to a professional dry cleaner."
   },
-  "sources": [],
+  "sources": [
+    {
+      "id": "V-UE-01",
+      "title": "University Stain Science (compiled extension reference)",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Academic & Conservation/University Extension/University-Stain-Science.md",
+      "lines": "17-21, 56-61, 83-99",
+      "evidence": "Coffee fits the tannin family; conservative unknown-stain fallback (cool water, liquid detergent, rinse, air-dry); blot rather than rub; do not iron or dry stained fabric until removal is confirmed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "V-EPA-01",
+      "title": "EPA Alternative Cleaning Curriculum",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Regulatory & Standards/EPA/EPA-Alternative-Cleaning-Curriculum.md",
+      "lines": "164-175, 313-340, 2542-2586, 4580-4590, 4630-4638",
+      "evidence": "Surfactant action of detergents; test new detergents on inconspicuous areas; follow product labels and PPE / ventilation for concentrates; clean per care label or reject inappropriate garments.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-GONR-01",
+      "title": "GONR Material Safety Matrix v2",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/GONR Internal/Safety/GONR-Material-Safety-Matrix-v2.md",
+      "lines": "181-199, 353-367, 484-487, 540-549",
+      "evidence": "Cotton fiber tolerances: white cotton tolerant, colored cotton requires lower heat and no chlorine bleach or strong peroxide; tannin / coffee escalation chemistry restricted to white / colorfast fabric with control; tannin removers are pro-context; absolute safety gates including no cleaner-mixing.",
+      "confidence": "high"
+    },
+    {
+      "id": "V-ADC-01",
+      "title": "American Drycleaner Spotting Techniques",
+      "path": "100 GONR Labs/Product/Stain Brain/Sources/Trade & Media/American Drycleaner/Spotting-Techniques.md",
+      "lines": "69-75",
+      "evidence": "Coffee is plant-origin / tannin group; tannin formulas are acidic, need full flushing, and can shift dye color.",
+      "confidence": "medium"
+    }
+  ],
   "cross_refs": [],
-  "verification_level": "cross_ref"
+  "verification_level": "source_grounded_pending_lab_repair"
 }
