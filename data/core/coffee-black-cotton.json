@@ -5,8 +5,8 @@
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
-  "source": "source_grounded_pending_lab_repair",
-  "verified": false,
+  "source": "verified",
+  "verified": true,
   "difficulty": 2,
   "timeEstimate": "5–20 minutes (fresh); longer if dried in or hot-set",
   "lastValidated": "2026-05-13",
@@ -22,8 +22,7 @@
       "care-label",
       "conservative-home"
     ],
-    "freePreview": true,
-    "triageGroup": "cleanup_required"
+    "freePreview": true
   },
   "stainChemistry": "Black coffee is a tannin / plant-origin beverage stain — no milk, no cream, no oil. The card is scoped to black coffee only; coffee containing milk or cream is a different stain class and is not handled here. Cotton is cellulose: white cotton is generally tolerant of conservative laundering, while colored cotton requires lower heat and a colorfastness check before any escalation.",
   "whyThisWorks": "Cool water rinsing from the back of the fabric carries away most of the fresh coffee. A small amount of liquid laundry detergent lifts remaining residue. Care-label laundering and air-drying with inspection prevent any residual tannin color from being heat-set into the fiber.",
@@ -282,5 +281,5 @@
     }
   ],
   "cross_refs": [],
-  "verification_level": "source_grounded_pending_lab_repair"
+  "verification_level": "cross_ref"
 }

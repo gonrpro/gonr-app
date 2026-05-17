@@ -5,8 +5,8 @@
   "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
-  "source": "source_grounded_pending_lab_repair",
-  "verified": false,
+  "source": "verified",
+  "verified": true,
   "difficulty": 4,
   "timeEstimate": "20–45 minutes for fresh washable cotton",
   "lastValidated": "2026-05-13",
@@ -22,8 +22,7 @@
       "capsaicin",
       "cotton"
     ],
-    "freePreview": true,
-    "triageGroup": "cleanup_required"
+    "freePreview": true
   },
   "stainChemistry": "Salsa is treated as a mixed food/sauce stain: tomato/tannin or dye-like color plus possible oil, spice, and sugar. The supported Home path is detergent-first and conservative; this card does not claim precise salsa/chile chemistry or that every salsa stain requires a dry-side-first sequence.",
   "whyThisWorks": "Lifting solids and blotting liquid reduce load without rubbing. Cool back-rinsing moves water-soluble sauce components away from the face of the fabric, while generic liquid/heavy-duty detergent provides surfactant action for mixed food and any oily residue. Air-drying before heat prevents remaining red/orange color or sugar/oil residue from setting.",
@@ -299,5 +298,5 @@
     }
   ],
   "cross_refs": [],
-  "verification_level": "source_grounded_pending_lab_repair"
+  "verification_level": "cross_ref"
 }

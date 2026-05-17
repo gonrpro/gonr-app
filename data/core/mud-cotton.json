@@ -5,8 +5,8 @@
   "stainFamily": "combination",
   "surface": "cotton",
   "sector": "textile",
-  "source": "source_grounded_pending_lab_repair",
-  "verified": false,
+  "source": "verified",
+  "verified": true,
   "difficulty": 2,
   "timeEstimate": "20–45 minutes plus drying time if wet mud is allowed to dry safely",
   "lastValidated": "2026-05-13",
@@ -22,8 +22,7 @@
       "dry-first",
       "easy"
     ],
-    "freePreview": true,
-    "triageGroup": "cleanup_required"
+    "freePreview": true
   },
   "stainChemistry": "Mud on cotton is treated conservatively as dirt/dry soil with possible organic or protein components. The evidence supports gentle mechanical removal of loose dry soil and a cool-water detergent path, not one exact chemistry or routine oxidizer/hot-wash treatment.",
   "whyThisWorks": "Loose dry soil is best lifted mechanically before wet washing when it is safe and practical; cool back-rinsing and detergent then remove remaining water-soluble and suspended soil without grinding particles into the weave. Air-drying before heat confirms the mud is gone.",
@@ -273,5 +272,5 @@
     }
   ],
   "cross_refs": [],
-  "verification_level": "source_grounded_pending_lab_repair"
+  "verification_level": "cross_ref"
 }

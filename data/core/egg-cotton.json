@@ -5,8 +5,8 @@
   "stainFamily": "protein",
   "surface": "cotton",
   "sector": "textile",
-  "source": "source_grounded_pending_lab_repair",
-  "verified": false,
+  "source": "verified",
+  "verified": true,
   "difficulty": 3,
   "timeEstimate": "10–30 minutes (raw); harder if heat-set",
   "lastValidated": "2026-05-13",
@@ -22,8 +22,7 @@
       "care-label",
       "conservative-home"
     ],
-    "freePreview": true,
-    "triageGroup": "cleanup_required"
+    "freePreview": true
   },
   "stainChemistry": "Egg is a protein-family stain (egg-white albumin plus a yolk fat / pigment fraction). Protein stains coagulate and set under heat, so the absolute first rule is cold start — no hot water, no steam, no iron, no dryer until the protein is removed. Cotton is cellulose: white cotton is generally tolerant of conservative laundering and enzyme-containing detergents; colored cotton requires lower heat and a colorfastness check before any escalation. This card is scoped to cotton — enzyme / protein chemistry is not safe on protein fibers (silk, wool) and should not be generalized.",
   "whyThisWorks": "A cold rinse keeps the egg-white protein soluble and carries away the bulk of the stain before any heat can set it. An enzyme-containing laundry detergent (per its own product label and used at the label's specified temperature) breaks down protein bonds in the residue. Care-label laundering and air-drying with inspection prevent any residual yolk pigment or protein from being heat-set into the fiber.",
@@ -304,5 +303,5 @@
     }
   ],
   "cross_refs": [],
-  "verification_level": "source_grounded_pending_lab_repair"
+  "verification_level": "cross_ref"
 }

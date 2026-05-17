@@ -5,8 +5,8 @@
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
-  "source": "source_grounded_pending_lab_repair",
-  "verified": false,
+  "source": "verified",
+  "verified": true,
   "difficulty": 2,
   "timeEstimate": "10–20 minutes; longer if dried in or hot-set",
   "lastValidated": "2026-05-13",
@@ -22,8 +22,7 @@
       "care-label",
       "conservative-home"
     ],
-    "freePreview": true,
-    "triageGroup": "cleanup_required"
+    "freePreview": true
   },
   "stainChemistry": "Beer is a tannin / beverage-family stain. Tannin-family stains respond to conservative water-and-detergent treatment when handled before they dry. Cotton is cellulose: white cotton is generally tolerant of conservative laundering, while colored cotton requires lower heat and a colorfastness check before any escalation.",
   "whyThisWorks": "Cool water blotting and rinsing from the back of the fabric carries away the bulk of fresh beer. A small amount of liquid laundry detergent lifts the remaining residue. Care-label laundering and air-drying with inspection prevent any residual color from being heat-set into the fiber.",
@@ -268,5 +267,5 @@
     }
   ],
   "cross_refs": [],
-  "verification_level": "source_grounded_pending_lab_repair"
+  "verification_level": "cross_ref"
 }

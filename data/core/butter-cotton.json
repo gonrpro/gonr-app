@@ -5,8 +5,8 @@
   "stainFamily": "oil",
   "surface": "cotton",
   "sector": "textile",
-  "source": "source_grounded_pending_lab_repair",
-  "verified": false,
+  "source": "verified",
+  "verified": true,
   "difficulty": 3,
   "timeEstimate": "10–25 minutes; longer if set in or hot-dried",
   "lastValidated": "2026-05-13",
@@ -22,8 +22,7 @@
       "care-label",
       "conservative-home"
     ],
-    "freePreview": true,
-    "triageGroup": "cleanup_required"
+    "freePreview": true
   },
   "stainChemistry": "Butter is an oil/fat-family stain. Oil-based stains require a surfactant (liquid laundry detergent) to emulsify and lift the fat from the fiber; surfactants surround the soil and suspend it in water so it rinses away. Cotton is cellulose: white cotton is generally tolerant of conservative laundering, while colored cotton requires lower heat and a colorfastness check before any escalation.",
   "whyThisWorks": "A small amount of liquid laundry detergent applied directly to the stain provides surfactant action to break up butterfat. Cool or lukewarm water (per care label) reduces risk of setting any small protein fraction. Air-drying and inspecting before machine heat prevents residual oil from being baked into the fiber.",
@@ -267,5 +266,5 @@
     }
   ],
   "cross_refs": [],
-  "verification_level": "source_grounded_pending_lab_repair"
+  "verification_level": "cross_ref"
 }

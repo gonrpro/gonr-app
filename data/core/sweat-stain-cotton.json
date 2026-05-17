@@ -5,8 +5,8 @@
   "stainFamily": "protein",
   "surface": "cotton",
   "sector": "textile",
-  "source": "source_grounded_pending_lab_repair",
-  "verified": false,
+  "source": "verified",
+  "verified": true,
   "difficulty": 3,
   "timeEstimate": "20–45 minutes plus label-directed dwell/soak; chronic yellowing may need professional review",
   "lastValidated": "2026-05-13",
@@ -21,8 +21,7 @@
       "perspiration",
       "cleanup-required"
     ],
-    "freePreview": true,
-    "triageGroup": "cleanup_required"
+    "freePreview": true
   },
   "stainChemistry": "Treat sweat/perspiration residue as a protein-type stain that may also include deodorant or antiperspirant residue. The packet supports cold/cool start and detergent/enzyme-detergent boundaries; it does not support exact albumin/urea/aluminum-complex, vinegar-chelation, peroxide-plus-sunlight, or prevention lifestyle claims.",
   "whyThisWorks": "Cold/cool water avoids setting protein-type residue. Generic liquid detergent loosens washable residue, and a care-label-safe enzyme detergent or pretreat may help protein residue on cotton when used per product label. Air-drying before heat keeps remaining yellowing or odor from being locked in.",
@@ -282,5 +281,5 @@
     }
   ],
   "cross_refs": [],
-  "verification_level": "source_grounded_pending_lab_repair"
+  "verification_level": "cross_ref"
 }

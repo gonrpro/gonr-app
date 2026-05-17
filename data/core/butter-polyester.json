@@ -5,8 +5,8 @@
   "stainFamily": "oil",
   "surface": "polyester",
   "sector": "textile",
-  "source": "source_grounded_pending_lab_repair",
-  "verified": false,
+  "source": "verified",
+  "verified": true,
   "difficulty": 4,
   "timeEstimate": "15–30 minutes; longer if set in or hot-dried",
   "lastValidated": "2026-05-13",
@@ -22,8 +22,7 @@
       "care-label",
       "conservative-home"
     ],
-    "freePreview": true,
-    "triageGroup": "cleanup_required"
+    "freePreview": true
   },
   "stainChemistry": "Butter is an oil/fat-family stain. Oil-based stains require a surfactant (liquid laundry detergent) to emulsify and lift the fat from the fiber. Polyester is chemically resistant but oleophilic — it can grab and hold oil-based soils, so a butter stain on polyester is not a trivial case. Colored polyester is also chlorine-restricted.",
   "whyThisWorks": "A small amount of liquid laundry detergent applied directly to the stain provides surfactant action to break up butterfat. Cool or lukewarm water (per care label) reduces risk to the polyester fiber. Air-drying and inspecting before machine heat prevents residual oil from being heat-set into the fiber.",
@@ -270,5 +269,5 @@
     }
   ],
   "cross_refs": [],
-  "verification_level": "source_grounded_pending_lab_repair"
+  "verification_level": "cross_ref"
 }

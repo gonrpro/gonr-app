@@ -5,8 +5,8 @@
   "stainFamily": "tannin",
   "surface": "cotton",
   "sector": "textile",
-  "source": "source_grounded_pending_lab_repair",
-  "verified": false,
+  "source": "verified",
+  "verified": true,
   "difficulty": 3,
   "timeEstimate": "15–40 minutes for fresh washable fabric; aged or heat-set stains may need professional review",
   "lastValidated": "2026-05-13",
@@ -21,8 +21,7 @@
       "tea",
       "cleanup-required"
     ],
-    "freePreview": true,
-    "triageGroup": "cleanup_required"
+    "freePreview": true
   },
   "stainChemistry": "Plain tea is treated as a tannin/beverage stain. If milk or cream was present, treat it as a protein/combination stain and keep the start cold/cool; this repair does not use catechin/polyphenol comparisons, hot pour-through, vinegar, routine peroxide, or pro spotters in Home guidance.",
   "whyThisWorks": "Blotting and cool/cold back-rinsing move loose beverage color out of washable cotton. Generic liquid/heavy-duty detergent helps suspend remaining residue, and care-label laundering followed by air-dry inspection avoids heat-setting residual tannin color.",
@@ -278,5 +277,5 @@
     }
   ],
   "cross_refs": [],
-  "verification_level": "source_grounded_pending_lab_repair"
+  "verification_level": "cross_ref"
 }
