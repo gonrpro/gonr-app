@@ -133,6 +133,37 @@ function stripCosmeticPrefix(input: string): string {
   return stripped || input
 }
 
+// Buyer inputs often include the garment or object after the actual substrate,
+// e.g. "Cotton sheet" or "Polyester athletic shirt". Keep this literal and
+// substrate-safe so specific cards still win before the generic fiber card.
+const GARMENT_SUFFIX = /\s+((athletic|dress|polo|pillow|bed)\s+)?(t[-\s]?shirt|shirts?|blouse|dress|jeans|pants|trousers|slacks|skirt|sweater|hoodie|cardigan|coat|jacket|tie|scarf|hat|cap|gloves?|socks?|underwear|tank\s?top|polo|tunic|vest|robe|pajamas|nightgown|napkins?|tablecloth|sheets?|pillowcase|towels?|rug|mat|cushions?|cases?|covers?|blankets?|throws?|seats?|sofa|chair|recliner)$/i
+
+function stripGarmentSuffix(input: string): string {
+  const stripped = input.replace(GARMENT_SUFFIX, '').trim()
+  return stripped || input
+}
+
+function stripBoth(input: string): string {
+  return stripGarmentSuffix(stripCosmeticPrefix(input))
+}
+
+const STAIN_PARENTHETICAL = /\s*\([^)]*\)\s*/g
+const STAIN_QUALIFIER_SUFFIX = /\s+(makeup|cosmetic|cosmetics|stain|stains|spot|spots|mark|marks)$/i
+
+function stripStainParenthetical(input: string): string {
+  const stripped = input.replace(STAIN_PARENTHETICAL, ' ').replace(/\s+/g, ' ').trim()
+  return stripped || input
+}
+
+function stripStainQualifierSuffix(input: string): string {
+  const stripped = input.replace(STAIN_QUALIFIER_SUFFIX, '').trim()
+  return stripped || input
+}
+
+function stripStainAll(input: string): string {
+  return stripStainQualifierSuffix(stripStainParenthetical(input))
+}
+
 function toSlug(input: string): string {
   return normalize(input)
     .replace(/\s+/g, '-')
@@ -361,48 +392,72 @@ export async function lookupProtocol(
 
   const stainNorm = normalize(stainInput)
   const surfaceNorm = normalize(surfaceInput)
-  const surfaceNormStripped = stripCosmeticPrefix(surfaceNorm)
-  const stainSlug = toSlug(stainInput)
-  const surfaceSlug = normalizeSurface(surfaceInput)
-  const surfaceSlugStripped = normalizeSurface(surfaceNormStripped)
 
-  // Surface variants to try, in preference order (specific → general)
+  // Stain variants to try, in preference order (specific -> general).
+  type StainVariant = { norm: string; slug: string }
+  const seenStainSlugs = new Set<string>()
+  const stainVariants: StainVariant[] = []
+  for (const norm of [
+    stainNorm,
+    stripStainParenthetical(stainNorm),
+    stripStainQualifierSuffix(stainNorm),
+    stripStainAll(stainNorm),
+  ]) {
+    const slug = toSlug(norm)
+    if (!slug || seenStainSlugs.has(slug)) continue
+    seenStainSlugs.add(slug)
+    stainVariants.push({ norm, slug })
+  }
+  // Surface variants to try, in preference order (specific -> general).
   type SurfaceVariant = { norm: string; slug: string }
-  const surfaceVariants: SurfaceVariant[] = [{ norm: surfaceNorm, slug: surfaceSlug }]
-  if (surfaceNormStripped !== surfaceNorm || surfaceSlugStripped !== surfaceSlug) {
-    surfaceVariants.push({ norm: surfaceNormStripped, slug: surfaceSlugStripped })
+  const seenSurfaceSlugs = new Set<string>()
+  const surfaceVariants: SurfaceVariant[] = []
+  for (const norm of [
+    surfaceNorm,
+    stripCosmeticPrefix(surfaceNorm),
+    stripGarmentSuffix(surfaceNorm),
+    stripBoth(surfaceNorm),
+  ]) {
+    const slug = normalizeSurface(norm)
+    if (seenSurfaceSlugs.has(slug)) continue
+    seenSurfaceSlugs.add(slug)
+    surfaceVariants.push({ norm, slug })
   }
 
   // ── Tier 1: Exact canonical match ─────────────────────────────────────
-  for (const { slug } of surfaceVariants) {
-    const exactKey = `${stainSlug}+${slug}`
-    const exactKeyDash = `${stainSlug}-${slug}`
-    const exactCard = coreIndex.get(exactKey) ?? coreIndex.get(exactKeyDash)
-    if (exactCard) {
-      return { card: normalizeCard(exactCard), tier: 1, confidence: 1.0, source: 'core' }
+  for (const { slug: stSlug } of stainVariants) {
+    for (const { slug } of surfaceVariants) {
+      const exactKey = `${stSlug}+${slug}`
+      const exactKeyDash = `${stSlug}-${slug}`
+      const exactCard = coreIndex.get(exactKey) ?? coreIndex.get(exactKeyDash)
+      if (exactCard) {
+        return { card: normalizeCard(exactCard), tier: 1, confidence: 1.0, source: 'core' }
+      }
     }
   }
 
   // ── Tier 2: Alias resolution ──────────────────────────────────────────
-  const resolvedStain = stainAliases[stainNorm] ?? stainAliases[stainSlug] ?? stainSlug
+  for (const { norm: stNorm, slug: stSlug } of stainVariants) {
+    const resolvedStain = stainAliases[stNorm] ?? stainAliases[stSlug] ?? stSlug
 
-  for (const { norm, slug } of surfaceVariants) {
-    const resolvedSurface = surfaceAliases[norm] ?? surfaceAliases[slug] ?? slug
-    const aliasKey = `${resolvedStain}+${resolvedSurface}`
-    const baseKey = `${stainSlug}+${slug}`
+    for (const { norm, slug } of surfaceVariants) {
+      const resolvedSurface = surfaceAliases[norm] ?? surfaceAliases[slug] ?? slug
+      const aliasKey = `${resolvedStain}+${resolvedSurface}`
+      const baseKey = `${stSlug}+${slug}`
 
-    // Prefer preserving the more specific user stain when only the surface
-    // needs alias resolution, e.g. "black tea" + "cotton tablecloth" should
-    // hit black-tea-cotton before falling back to a generic tea-cotton card.
-    for (const tryKey of [
-      `${stainSlug}+${resolvedSurface}`,
-      `${resolvedStain}+${slug}`,
-      aliasKey,
-    ]) {
-      if (tryKey !== baseKey) {
-        const card = coreIndex.get(tryKey)
-        if (card) {
-          return { card: normalizeCard(card), tier: 2, confidence: tryKey === aliasKey ? 0.9 : 0.85, source: 'core' }
+      // Prefer preserving the more specific user stain when only the surface
+      // needs alias resolution, e.g. "black tea" + "cotton tablecloth" should
+      // hit black-tea-cotton before falling back to a generic tea-cotton card.
+      for (const tryKey of [
+        `${stSlug}+${resolvedSurface}`,
+        `${resolvedStain}+${slug}`,
+        aliasKey,
+      ]) {
+        if (tryKey !== baseKey) {
+          const card = coreIndex.get(tryKey)
+          if (card) {
+            return { card: normalizeCard(card), tier: 2, confidence: tryKey === aliasKey ? 0.9 : 0.85, source: 'core' }
+          }
         }
       }
     }

@@ -8,6 +8,7 @@ import { recordEvent, newCorrelationId, EVENT_TYPES } from '@/lib/events/record'
 import { getUserPlant } from '@/lib/auth/getUserPlant'
 import { applyPlantFilters } from '@/lib/protocols/applyPlantFilters'
 import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
+import { checkHardRefuseCombo } from '@/lib/solve/hard-refuse'
 import { normalizeAICard } from '@/lib/protocols/normalizeAICard'
 import { retrieveForQuery, formatRetrievedContext, applyGroundedAttribution, isRetrievalEnabled, type RetrievalResult } from '@/lib/stainbrain/retrieve'
 import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
@@ -986,6 +987,53 @@ export async function POST(req: Request) {
         noVerifiedProtocol: true,
         message: 'No verified protocol yet for this combination. We log every uncovered query and add verified cards continuously — try again soon, or email support if it\'s urgent.',
       })
+    }
+
+    // Known dangerous gaps get a deterministic refusal before AI fallback, so
+    // model variance cannot produce unsafe solvent steps.
+    {
+      const refuse = checkHardRefuseCombo(ctx.stain, ctx.surface)
+      if (refuse) {
+        logSolveHistory({
+          stain: ctx.stain,
+          surface: ctx.surface,
+          title: refuse.title,
+          source: 'hard-refuse',
+          confidence: 0,
+        }).catch(() => {})
+        logSolveReview({
+          queryRaw: `${ctx.stain} on ${ctx.surface}`,
+          stain: ctx.stain,
+          surface: ctx.surface,
+          tierRequested: viewerTier,
+          matchedCardKey: null,
+          usedAiFallback: false,
+          userId: email,
+          sessionId: correlationId,
+        })
+        recordEvent({
+          type: EVENT_TYPES.SOLVE_AI_FALLBACK_SERVED,
+          actor_id: email ?? null,
+          plant_id: (userPlant as { id?: string } | null)?.id ?? null,
+          payload: {
+            stain: ctx.stain,
+            surface: ctx.surface,
+            tier: viewerTier,
+            hard_refuse_rule: 'HR-1',
+          },
+          correlation_id: correlationId,
+        }).catch(() => {})
+        return NextResponse.json({
+          card: sanitizeCardForTier(refuse, viewerTier),
+          tier: 4,
+          confidence: 0,
+          source: 'hard-refuse',
+          stainType: resolveStainType(null, ctx),
+          correlationId,
+          viewerTier,
+          _hardRefuse: true,
+        })
+      }
     }
 
     // ── AI fallback (Home / Free / Anon only) ──────────────────
