@@ -436,6 +436,8 @@ const STAIN_FAMILY_OVERRIDES: [RegExp, string][] = [
   [/\biron\b/i, 'mineral'],
   [/\bcopper\b/i, 'mineral'],
   [/\bhard\s*water\b/i, 'mineral'],
+  [/\b(?:chewing\s*)?gum\b/i, 'wax-gum'],
+  [/\bsticker\s+residue\b/i, 'wax-gum'],
 ]
 
 // Tannin overrides: stains that classify as "tannin" via card or
@@ -464,11 +466,11 @@ function resolveStainType(card: any | null, ctx: SolveContext): string {
   }
 
   if (cardFamily && cardFamily !== 'unknown' && VALID_FAMILIES.has(cardFamily)) {
-    // Apply stain-name overrides when card classification is less specific
-    if (cardFamily === 'oxidizable') {
-      for (const [pattern, override] of STAIN_FAMILY_OVERRIDES) {
-        if (pattern.test(ctx.stain)) return override
-      }
+    // Apply stain-name overrides when card classification is less specific.
+    // Some AI/library fallbacks return broad legacy families like "resin" for
+    // gum; the stain text is the safer source for these deterministic cases.
+    for (const [pattern, override] of STAIN_FAMILY_OVERRIDES) {
+      if (pattern.test(ctx.stain)) return override
     }
     if (cardFamily === 'tannin') {
       for (const [pattern, override] of STAIN_TANNIN_OVERRIDES) {
