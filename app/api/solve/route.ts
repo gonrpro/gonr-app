@@ -482,11 +482,9 @@ function resolveStainType(card: any | null, ctx: SolveContext): string {
   // Fallback: detect from stain name via family-keywords
   const detected = detectFamily(ctx.stain)
   if (detected) {
-    // Apply same overrides to keyword-detected family
-    if (detected === 'oxidizable') {
-      for (const [pattern, override] of STAIN_FAMILY_OVERRIDES) {
-        if (pattern.test(ctx.stain)) return override
-      }
+    // Apply same overrides to keyword-detected family.
+    for (const [pattern, override] of STAIN_FAMILY_OVERRIDES) {
+      if (pattern.test(ctx.stain)) return override
     }
     if (detected === 'tannin') {
       for (const [pattern, override] of STAIN_TANNIN_OVERRIDES) {
