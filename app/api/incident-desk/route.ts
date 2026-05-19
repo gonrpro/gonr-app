@@ -41,8 +41,11 @@ export async function POST(req: NextRequest) {
   try {
     const auth = await requireProAuth()
     if (!auth.allowed) return auth.response
+
+    // Operator-tier gate. requireProAuth allows spotter+; incident_desk is
+    // operator-and-up only. Enforce here before any AI cost is incurred.
     if (!canAccessFeature(auth.tier as Tier, 'incident_desk')) {
-      return errorResponse('Operator tier required for Incident Desk', 403)
+      return errorResponse('incident_desk requires Operator plan', 403)
     }
 
     const body = (await req.json()) as Partial<IncidentRequest>
