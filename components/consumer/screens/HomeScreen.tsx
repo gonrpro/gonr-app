@@ -34,12 +34,9 @@ export default function HomeScreen() {
     <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5">
       {/* top bar: wordmark + settings */}
       <div className="flex items-center justify-between">
-        <div className="leading-none">
-          <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
-          <span className="ml-2 text-[10px] font-extrabold tracking-[0.22em] text-gonr-textgray">
-            STAIN SOLUTIONS
-          </span>
-        </div>
+        {/* GONR-only mark (Tyler: no "stain solutions" in the logo). Gradient wordmark
+            matches the brand logo; swap for the transparent sparkle-O asset when available. */}
+        <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
         <Link href="/solve-v2/settings" aria-label="Settings" className="text-gonr-navy/60">
           <Settings size={22} />
         </Link>
