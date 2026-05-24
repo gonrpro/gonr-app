@@ -388,5 +388,74 @@ body.plant-brain-shell > main {
 .sb-login-trust { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.1rem; }
 .sb-login-trust span { padding: 0.28rem 0.65rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; color: rgba(255,255,255,0.48); font-size: 0.68rem; font-weight: 650; }
 
+/* ===== TASK-218: GONR consumer brand tokens (mockup-faithful shell) — GREEN-FREE ===== */
+@theme {
+  --color-gonr-navy: #071B55;
+  --color-gonr-hotpink: #F70A75;
+  --color-gonr-magenta: #D70BFF;
+  --color-gonr-orange: #FF5A18;
+  --color-gonr-softpink: #FFF0F7;
+  --color-gonr-lightgray: #F5F6FA;
+  --color-gonr-textgray: #5B6275;
+}
+
+/*
+  Semantic layer — consumer components consume THESE, not raw colors.
+  Brand = pink/magenta/orange/navy. NO green anywhere (Tyler: green out for good).
+  Verdict states differentiate via label / icon / border / copy hierarchy, NOT a
+  generic success color (Nova).
+*/
+.gonr-consumer {
+  --gonr-primary: #F70A75;
+  --gonr-gradient-hero: linear-gradient(90deg, #F70A75 0%, #E40B86 38%, #FF5A18 100%);
+  --gonr-bg: #FFF0F7;
+  --gonr-surface: #ffffff;
+  --gonr-text: #071B55;
+  --gonr-text-2: #5B6275;
+  --gonr-border: rgba(7, 27, 85, 0.08);
+  /* verdict-state accents — green-free; safe differentiates via check icon + label + border */
+  --gonr-state-safe: #071B55;     /* diy_safe — navy, NOT green */
+  --gonr-state-limited: #E8920C;  /* diy_limited — amber, constrained permission */
+  --gonr-state-stop: #F70A75;     /* stop_use_pro / do_not_attempt — hot pink */
+  --gonr-state-info: #5B6275;     /* insufficient_info / research_gap — neutral */
+
+  background: var(--gonr-bg);
+  color: var(--gonr-text);
+  font-family: var(--font-nunito), 'Nunito Sans', ui-rounded, system-ui, sans-serif;
+}
+
+.gonr-gradient { background: var(--gonr-gradient-hero); }
+.gonr-gradient-text {
+  background: var(--gonr-gradient-hero);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.gonr-card {
+  background: var(--gonr-surface);
+  border: 1px solid var(--gonr-border);
+  border-radius: 22px;
+  box-shadow: 0 12px 34px -20px rgba(7, 27, 85, 0.22);
+}
+
+/* Full-screen PWA shell: suppress the app's global chrome on consumer routes so
+   the consumer experience owns the viewport (not nested in legacy GONR chrome). */
+body.gonr-consumer-shell {
+  max-width: none;
+  padding-bottom: 0;
+  background: #FFF0F7;
+}
+body.gonr-consumer-shell > header,
+body.gonr-consumer-shell > footer,
+body.gonr-consumer-shell > nav,
+body.gonr-consumer-shell > [data-preview-banner] {
+  display: none !important;
+}
+body.gonr-consumer-shell > main {
+  max-width: none;
+  padding: 0;
+}
+
 /* TASK-144 operator-week feedback capture */
 .ofm-root,.lim-root{position:fixed;inset:0;z-index:80;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.42);padding:16px}.ofm-sheet,.lim-sheet{width:100%;max-width:560px;max-height:88dvh;overflow:auto;border-radius:24px 24px 16px 16px;background:var(--surface);border:1px solid var(--border-strong);box-shadow:0 24px 60px rgba(0,0,0,.28);padding:18px}.ofm-head,.lim-head,.ofm-foot,.lim-foot{display:flex;align-items:center;justify-content:space-between;gap:12px}.ofm-close,.lim-close{min-width:40px;min-height:40px;border-radius:999px;border:1px solid var(--border-strong);background:var(--surface-2);color:var(--text);font-size:24px}.ofm-dots{display:flex;gap:6px}.ofm-dot{width:8px;height:8px;border-radius:999px;background:var(--border-strong)}.ofm-dot.active{background:var(--accent)}.ofm-body{padding:18px 0}.ofm-q-title,.lim-title{font-size:20px;font-weight:900;line-height:1.15;color:var(--text);margin:0 0 16px}.ofm-chips{display:grid;gap:10px}.ofm-chip,.lim-cat,.lim-cm{min-height:44px;border-radius:14px;border:1px solid var(--border-strong);background:var(--surface-2);color:var(--text);font-weight:700;padding:10px 12px;text-align:left}.ofm-chip.selected,.lim-cat.selected,.lim-cm.selected{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}.ofm-note,.lim-textarea,.lim-contact-input{width:100%;margin-top:12px;border-radius:14px;border:1px solid var(--border-strong);background:var(--surface-2);color:var(--text);padding:12px}.ofm-note-toggle,.ofm-legal-link{margin-top:14px;color:var(--text-secondary);font-size:13px;text-decoration:underline}.ofm-primary,.lim-primary{min-height:44px;border-radius:14px;background:var(--accent);color:#fff;font-weight:900;padding:0 18px}.ofm-secondary,.lim-secondary{min-height:44px;border-radius:14px;border:1px solid var(--border-strong);background:var(--surface-2);color:var(--text);font-weight:700;padding:0 18px}.lim-explainer,.lim-field-label,.lim-legend,.lim-cat-help{color:var(--text-secondary);font-size:13px}.lim-cats,.lim-contact{display:grid;gap:10px;margin:14px 0;border:0;padding:0}.lim-cat{display:grid;gap:2px}.lim-cat input,.lim-cm input{margin-right:8px}.lim-contact-method{display:flex;gap:8px;flex-wrap:wrap}
