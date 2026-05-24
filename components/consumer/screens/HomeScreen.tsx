@@ -78,9 +78,9 @@ export default function HomeScreen() {
       <div className="mt-6 grid grid-cols-4 gap-1">
         {[
           { label: 'Scan it', Icon: Camera },
-          { label: 'Analyze it', Icon: Sparkles },
-          { label: 'Get guidance', Icon: ShieldCheck },
-          { label: 'See results', Icon: CheckCircle2 },
+          { label: 'Understand it', Icon: Sparkles },
+          { label: 'Get verdict', Icon: ShieldCheck },
+          { label: 'Next step', Icon: CheckCircle2 },
         ].map(({ label, Icon }, i) => (
           <div key={label} className="flex flex-col items-center gap-1 text-center">
             <span className="gonr-gradient grid h-9 w-9 place-items-center rounded-full text-xs font-black text-white">
