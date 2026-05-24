@@ -9,8 +9,12 @@ import {
   ChevronRight,
   Home,
   Clock,
-  Heart,
-  User,
+  Lightbulb,
+  MapPin,
+  Camera,
+  Sparkles,
+  ShieldCheck,
+  CheckCircle2,
 } from 'lucide-react'
 
 // TASK-218 — mockup-faithful GONR consumer home / scan-entry screen.
@@ -70,6 +74,24 @@ export default function HomeScreen() {
         </span>
       </Link>
 
+      {/* 4-step journey */}
+      <div className="mt-6 grid grid-cols-4 gap-1">
+        {[
+          { label: 'Scan it', Icon: Camera },
+          { label: 'Analyze it', Icon: Sparkles },
+          { label: 'Get guidance', Icon: ShieldCheck },
+          { label: 'See results', Icon: CheckCircle2 },
+        ].map(({ label, Icon }, i) => (
+          <div key={label} className="flex flex-col items-center gap-1 text-center">
+            <span className="gonr-gradient grid h-9 w-9 place-items-center rounded-full text-xs font-black text-white">
+              {i + 1}
+            </span>
+            <Icon size={15} className="text-gonr-hotpink" />
+            <span className="text-[10px] font-bold leading-tight text-gonr-textgray">{label}</span>
+          </div>
+        ))}
+      </div>
+
       {/* popular right now */}
       <div className="mt-7 flex items-center justify-between">
         <h2 className="text-sm font-extrabold uppercase tracking-wide text-gonr-textgray">
@@ -123,8 +145,8 @@ function BottomNav() {
   const items = [
     { label: 'Home', Icon: Home, href: '/solve-v2', active: true },
     { label: 'History', Icon: Clock, href: '/solve-v2/history', active: false },
-    { label: 'Favorites', Icon: Heart, href: '/solve-v2/favorites', active: false },
-    { label: 'Profile', Icon: User, href: '/solve-v2/profile', active: false },
+    { label: 'Tips', Icon: Lightbulb, href: '/solve-v2/tips', active: false },
+    { label: 'Find Pros', Icon: MapPin, href: '/solve-v2/find-pros', active: false },
   ] as const
   return (
     <nav className="fixed inset-x-0 bottom-0 z-20 mx-auto max-w-[480px] border-t border-[var(--gonr-border)] bg-white/95 backdrop-blur">
