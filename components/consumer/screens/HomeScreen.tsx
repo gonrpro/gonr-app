@@ -92,10 +92,10 @@ export default function HomeScreen() {
         ))}
       </div>
 
-      {/* popular right now */}
+      {/* common stains (honest: no telemetry claim) */}
       <div className="mt-7 flex items-center justify-between">
         <h2 className="text-sm font-extrabold uppercase tracking-wide text-gonr-textgray">
-          Popular right now
+          Common stains
         </h2>
         <Link href="/solve-v2/solve" className="text-sm font-bold text-gonr-hotpink">
           View all
@@ -114,10 +114,10 @@ export default function HomeScreen() {
         ))}
       </div>
 
-      {/* recommended for you */}
+      {/* start with these (honest: no personalization claim) */}
       <div className="mt-7">
         <h2 className="text-sm font-extrabold uppercase tracking-wide text-gonr-textgray">
-          Recommended for you
+          Start with these
         </h2>
         <Link
           href="/solve-v2/solve?stain=coffee"
