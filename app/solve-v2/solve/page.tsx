@@ -3,7 +3,7 @@ import ConsumerSolveShell from '@/components/consumer/ConsumerSolveShell'
 
 export const metadata: Metadata = {
   title: 'GONR — Solve a stain',
-  description: 'Get the safe first move for a stain before treating the item.',
+  description: 'Get the next guided move before treating the item.',
 }
 
 // Phase 0 functional triage shell, PRESERVED from the base as a step in the
