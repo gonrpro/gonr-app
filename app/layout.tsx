@@ -14,6 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const isSpottingBoardHost = host === 'spottingboard.com' || host === 'www.spottingboard.com'
   const gonrTitle = 'GONR — Know what to do. Know what not to.'
   const gonrDescription = 'Show us the stain. GONR reads what it can and asks only what matters.'
+  const gonrShareImage = '/og-image-20260609.png'
 
   if (isSpottingBoardHost) {
     return {
@@ -50,16 +51,16 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: gonrTitle,
       description: gonrDescription,
-      url: 'https://gonr.app',
+      url: 'https://gonr.app/solve-v2',
       siteName: 'GONR™',
-      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+      images: [{ url: gonrShareImage, width: 1200, height: 630 }],
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
       title: gonrTitle,
       description: gonrDescription,
-      images: ['/og-image.png'],
+      images: [gonrShareImage],
     },
   }
 }
