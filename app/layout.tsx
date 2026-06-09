@@ -12,6 +12,8 @@ import { AuthProvider } from '@/lib/auth/AuthContext'
 export async function generateMetadata(): Promise<Metadata> {
   const host = (await headers()).get('host')?.split(':')[0]?.toLowerCase()
   const isSpottingBoardHost = host === 'spottingboard.com' || host === 'www.spottingboard.com'
+  const gonrTitle = 'GONR — Know what to do. Know what not to.'
+  const gonrDescription = 'Show us the stain. GONR reads what it can and asks only what matters.'
 
   if (isSpottingBoardHost) {
     return {
@@ -35,8 +37,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL('https://gonr.app'),
-    title: 'GONR™ — Professional Stain Protocols',
-    description: 'Professional stain-removal protocols built from real dry-cleaning experience.',
+    title: gonrTitle,
+    description: gonrDescription,
     icons: {
       icon: [
         { url: '/brand/gonr-o-icon.png', type: 'image/png' },
@@ -46,8 +48,8 @@ export async function generateMetadata(): Promise<Metadata> {
       apple: '/brand/gonr-o-icon.png',
     },
     openGraph: {
-      title: 'GONR™ — Professional Stain Protocols',
-      description: 'Professional stain-removal protocols built from real dry-cleaning experience.',
+      title: gonrTitle,
+      description: gonrDescription,
       url: 'https://gonr.app',
       siteName: 'GONR™',
       images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -55,8 +57,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'GONR™ — Professional Stain Protocols',
-      description: 'Professional stain-removal protocols built from real dry-cleaning experience.',
+      title: gonrTitle,
+      description: gonrDescription,
       images: ['/og-image.png'],
     },
   }
