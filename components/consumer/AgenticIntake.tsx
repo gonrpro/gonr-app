@@ -301,7 +301,7 @@ export default function AgenticIntake({
         <span className="gonr-gradient grid h-7 w-7 place-items-center rounded-full text-white">
           <Sparkles size={15} aria-hidden="true" />
         </span>
-        <span className="text-sm font-black text-gonr-navy">GONR</span>
+        <span className="gonr-gradient-text text-sm font-black">GONR</span>
       </div>
 
       {showRead && read ? (

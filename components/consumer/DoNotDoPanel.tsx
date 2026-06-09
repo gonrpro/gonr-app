@@ -103,7 +103,7 @@ export default function DoNotDoPanel({
           <li key={index} className="gonr-donotdo-row">
             <XCircle size={20} strokeWidth={2.25} className="mt-0.5 shrink-0 text-[var(--gonr-danger)]" aria-hidden="true" />
             <div className="min-w-0">
-              <p className="text-[15px] font-bold leading-6 text-gonr-navy">{row.prohibition}</p>
+              <p className="text-[15px] font-extrabold leading-6 text-gonr-navy">{row.prohibition}</p>
               {row.reason ? (
                 <p className="mt-0.5 text-sm font-medium leading-5 text-gonr-textgray">{row.reason}</p>
               ) : null}
