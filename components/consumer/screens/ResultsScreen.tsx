@@ -265,7 +265,7 @@ export default function ResultsScreen({
   onSave,
   onLogOutcome,
 }: ResultsScreenProps) {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   // When the orchestrator already fetched the verdict, seed state from it so the
   // first render shows the engine answer without another call (no setState-in-effect).
   const [status, setStatus] = useState<LoadState>(() => (prefetched ? 'loaded' : 'loading'))
@@ -314,7 +314,7 @@ export default function ResultsScreen({
         const res = await fetch('/api/solve', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ...body, lang: 'en' }),
+          body: JSON.stringify({ ...body, lang }),
           signal: controller.signal,
         })
         const json = (await res.json().catch(() => ({}))) as SolveResponse
@@ -335,7 +335,7 @@ export default function ResultsScreen({
       ignore = true
       controller.abort()
     }
-  }, [body, nonce, prefetched, override])
+  }, [body, nonce, prefetched, override, lang])
 
   function retry() {
     setShowFullPlan(false)

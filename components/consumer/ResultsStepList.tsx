@@ -48,7 +48,7 @@ export interface ResultsStepListProps {
 //  • Heat-PROCESS wording (dryer / iron / high heat) → the generic "only if the
 //    care label allows it" (the hot-wash phrasing would not fit those steps).
 const HOT_WASH_PHRASES =
-  /(?:\b(?:hot|hottest|warm)\s+(?:water|wash))|(?:\bhottest\s+setting)|(?:\bboiling\s+water)/i
+  /(?:\b(?:hot|hottest|warm)\s+(?:water|wash))|(?:\bhottest\s+setting)|(?:\bboiling\s+water)|(?:\bagua\s+(?:caliente|tibia|hirviendo|hirviente))|(?:\blavar?\s+(?:con\s+)?agua\s+caliente)|(?:\blavado\s+(?:en\s+)?caliente)|(?:\b(?:temperatura|ajuste)\s+m[áa]s\s+(?:alta|caliente))/i
 // Heat-PROCESS wording (dryer / iron / high heat). Phrase-list detection is
 // brittle, so cover the common engine variants explicitly:
 //  • "high heat" / "highest heat" / "hottest heat"
@@ -58,7 +58,7 @@ const HOT_WASH_PHRASES =
 //    matched NEITHER prior list and read as a flat safe move
 //  • bare "dryer" / "iron"
 const HEAT_PROCESS_PHRASES =
-  /\b(?:high|highest|hottest)\s+heat\b|\b(?:hottest|highest)\s+(?:\w+\s+){0,3}?(?:cycle|setting|heat)\b|\btumble\s+dry\b[^.]*?\bhigh|\bdryer\b|\biron\b/i
+  /\b(?:high|highest|hottest)\s+heat\b|\b(?:hottest|highest)\s+(?:\w+\s+){0,3}?(?:cycle|setting|heat)\b|\btumble\s+dry\b[^.]*?\bhigh|\bdryer\b|\biron\b|\bcalor\s+(?:alto|elevado|intenso)\b|\bfuego\s+alto\b|\btemperatura\s+alta\b|\bsecadora\b|\bplancha(?:r|do)?\b|\bvapor\b|\bsecar\s+(?:en|a|con)\b/i
 // Don't double-append if the engine (or a prior caveat) ALREADY conditions on the
 // CARE LABEL. Must require the care-label sense — a bare "only if" (e.g. "rinse
 // with hot water only if colorfast") is an UNRELATED conditional and must NOT
@@ -93,7 +93,7 @@ const DEFAULT_CAVEATS: HeatCaveats = { hotWash: HOT_WASH_CAVEAT, heatProcess: HE
 // don't bolt on a misleading hot-wash permission. The negation must PRECEDE the heat word
 // (within the sentence) so a genuine "wash in hot water (avoid wringing)" step keeps its caveat.
 const STEERS_AWAY_FROM_HEAT =
-  /\b(?:avoid|never|no|not|don'?t|do not|skip|without)\s+(?:\w+\s+){0,4}?(?:hot|warm|heat)\b|\b(?:cold|cool)\s+water\b/i
+  /\b(?:avoid|never|no|not|don'?t|do not|skip|without)\s+(?:\w+\s+){0,4}?(?:hot|warm|heat)\b|\b(?:cold|cool)\s+water\b|\b(?:evite|evitar|no\s+use|no\s+aplique|no\s+utilice|nunca|sin)\s+(?:\w+\s+){0,4}?(?:calor|caliente|tibia)\b|\bagua\s+(?:fr[íi]a|fresca)\b/i
 
 export function applyHeatCaveat(instruction: string, caveats: HeatCaveats = DEFAULT_CAVEATS): string {
   if (ALREADY_CONDITIONAL.test(instruction)) return instruction

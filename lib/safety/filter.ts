@@ -107,7 +107,10 @@ function detectContext(stain: string, surface: string, card: any) {
 
 function isWarningContext(text: string, matchIndex: number): boolean {
   const lookback = text.slice(Math.max(0, matchIndex - 120), matchIndex).toLowerCase()
-  return /\b(never|do not|avoid|don't|not recommended|not safe|harmful|dangerous)\b/.test(lookback)
+  // English + Spanish negations (TASK-218): now that the banned-agent rules match
+  // Spanish chemical names, a Spanish safety WARNING ("nunca use amoníaco") must be
+  // recognized as educational, not a recommendation, to avoid false-positive blocks.
+  return /\b(never|do not|avoid|don't|not recommended|not safe|harmful|dangerous|nunca|no use|no aplique|no utilice|evite|evitar|no recomendado|no es seguro|peligroso|da[ñn]ino|no debe)\b/.test(lookback)
 }
 
 // ---------------------------------------------------------------------------
@@ -320,7 +323,7 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
   if (ctx.isSilk) {
     activeRules.push({
       id: 'RULE-2S: Enzyme/protein spotter on silk',
-      pattern: /\b(enzyme|protease|enzymatic|biological detergent|protein spotter|protein formula|protein solution|digestant|digestive)\b/gi,
+      pattern: /\b(enzyme|protease|enzymatic|biological detergent|protein spotter|protein formula|protein solution|digestant|digestive|enzima|proteasa|enzim[áa]tico|detergente biol[óo]gico|quitamanchas proteico|f[óo]rmula proteica|digestante)\b/gi,
       replacement: null, // nuclear
       action: 'blocked',
     })
@@ -335,7 +338,11 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
   if (ctx.isTannin) {
     activeRules.push({
       id: 'RULE-13: Alkali on tannin stain',
-      pattern: /\b(ammonia|ammonium hydroxide|sodium carbonate|sodium hydroxide|lye|caustic soda|washing soda|borax|baking soda|sodium bicarbonate|potassium hydroxide)\b/gi,
+      // Spanish synonyms appended (TASK-218): an ES→AI-tier card may name the agent
+      // in Spanish despite the prompt directive. Adding them keeps this nuclear rule
+      // language-robust; a wrong synonym can only over-block (the safe direction).
+      // SB to review the ES chemical list.
+      pattern: /\b(ammonia|ammonium hydroxide|sodium carbonate|sodium hydroxide|lye|caustic soda|washing soda|borax|baking soda|sodium bicarbonate|potassium hydroxide|amon[ií]aco|hidr[óo]xido de amonio|carbonato (?:de sodio|s[óo]dico)|hidr[óo]xido de sodio|sosa c[áa]ustica|soda c[áa]ustica|b[óo]rax|bicarbonato (?:de sodio|s[óo]dico)|hidr[óo]xido de potasio|potasa c[áa]ustica)\b/gi,
       replacement: null, // nuclear
       action: 'blocked',
     })
@@ -343,7 +350,7 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
     // without enumerating every compound name.
     activeRules.push({
       id: 'RULE-13b: Alkaline agent on tannin stain',
-      pattern: /\balkaline\s+(?:detergent|solution|cleaner|spotter|agent|rinse|bath|formula|product)\b/gi,
+      pattern: /\b(?:alkaline|alcalin[oa])\s+(?:detergent|solution|cleaner|spotter|agent|rinse|bath|formula|product|detergente|soluci[óo]n|limpiador|agente|enjuague|producto)\b/gi,
       replacement: null, // nuclear
       action: 'blocked',
     })
@@ -363,7 +370,7 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
   if (ctx.isAcetate) {
     activeRules.push({
       id: 'RULE-4: Acetone on acetate',
-      pattern: /\b(acetone|nail polish remover)\b/gi,
+      pattern: /\b(acetone|nail polish remover|acetona|quitaesmalte|removedor de esmalte)\b/gi,
       replacement: null, // nuclear
       action: 'blocked',
     })
@@ -385,13 +392,13 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
   if (ctx.isSilk) {
     activeRules.push({
       id: 'RULE-7: Hydrogen peroxide on silk',
-      pattern: /\b(hydrogen peroxide|h2o2|h₂o₂|peroxide)\b/gi,
+      pattern: /\b(hydrogen peroxide|h2o2|h₂o₂|peroxide|per[óo]xido de hidr[óo]geno|agua oxigenada|per[óo]xido)\b/gi,
       replacement: null, // nuclear — block entire response
       action: 'blocked',
     })
     activeRules.push({
       id: 'RULE-8: Ammonia on silk',
-      pattern: /\b(ammonia|ammonium hydroxide)\b/gi,
+      pattern: /\b(ammonia|ammonium hydroxide|amon[ií]aco|hidr[óo]xido de amonio)\b/gi,
       replacement: null, // nuclear — block entire response
       action: 'blocked',
     })
