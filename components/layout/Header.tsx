@@ -1,17 +1,17 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import GonrLogo from '@/components/brand/GonrLogo'
 
 export default function Header({ brand = 'gonr' }: { brand?: 'gonr' | 'spottingboard' }) {
   const pathname = usePathname()
   const { lang, setLang } = useLanguage()
-  const [dark, setDark] = useState(false)
-
-  useEffect(() => {
-    setDark(document.documentElement.classList.contains('dark'))
-  }, [])
+  const [dark, setDark] = useState(() => (
+    typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
+  ))
 
   const toggleTheme = useCallback(() => {
     const next = !dark
@@ -32,7 +32,7 @@ export default function Header({ brand = 'gonr' }: { brand?: 'gonr' | 'spottingb
     return (
       <header className="sticky top-0 z-50 border-b border-white/5 bg-[#0a0e1a]/95 backdrop-blur-md">
         <div className="flex items-center justify-between px-4 py-3 sm:px-6">
-          <a href="/" aria-label="Spotting Board home" className="flex select-none items-center gap-2.5">
+          <Link href="/" aria-label="Spotting Board home" className="flex select-none items-center gap-2.5">
             <span
               aria-hidden="true"
               style={{
@@ -63,7 +63,7 @@ export default function Header({ brand = 'gonr' }: { brand?: 'gonr' | 'spottingb
                 Plant brain workbench
               </span>
             </span>
-          </a>
+          </Link>
 
           <button
             onClick={toggleLang}
@@ -81,23 +81,9 @@ export default function Header({ brand = 'gonr' }: { brand?: 'gonr' | 'spottingb
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-[#05070b] backdrop-blur-md">
       <div className="flex items-center justify-between px-4 py-3">
-        <div className="select-none" style={{ fontSize: '28px', fontWeight: 900, letterSpacing: '-1.5px', lineHeight: 1 }}>
-          <span className="text-gray-900 dark:text-white">GON</span>
-          <span style={{ color: 'var(--brand-green)' }}>R</span>
-          <span
-            aria-hidden="true"
-            style={{
-              fontSize: '10px',
-              fontWeight: 700,
-              verticalAlign: 'super',
-              marginLeft: '1px',
-              letterSpacing: 0,
-              opacity: 0.6,
-            }}
-          >
-            ™
-          </span>
-        </div>
+        <Link href="/" aria-label="GONR home" className="flex min-h-[44px] items-center">
+          <GonrLogo className="w-[112px] sm:w-[124px]" priority tmClassName="text-[6px] sm:text-[7px]" />
+        </Link>
         <div className="flex items-center gap-1">
           <button
             onClick={toggleLang}
@@ -118,7 +104,7 @@ export default function Header({ brand = 'gonr' }: { brand?: 'gonr' | 'spottingb
           </button>
         </div>
       </div>
-      <div className="h-[2px] bg-gradient-to-r from-green-500/80 via-green-500 to-green-500/80" />
+      <div className="h-[2px] bg-gradient-to-r from-[#f70a75] via-[#e40b86] to-[#ff5a18]" />
     </header>
   )
 }

@@ -18,6 +18,7 @@ import type { User } from '@supabase/supabase-js'
 import BottomNav from '@/components/consumer/BottomNav'
 import BetaBadge from '@/components/consumer/BetaBadge'
 import LanguageToggle from '@/components/consumer/LanguageToggle'
+import GonrLogo from '@/components/brand/GonrLogo'
 import { createClient } from '@/lib/supabase/client'
 import { getStoredUserEmail } from '@/lib/auth/clientEmail'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
@@ -237,7 +238,7 @@ export default function ProfileScreen() {
           <ArrowLeft size={22} />
         </Link>
         <span className="flex items-center gap-2">
-          <span className="gonr-gradient-text text-xl font-black tracking-tight">GONR</span>
+          <GonrLogo className="w-[88px]" priority tmClassName="text-[5px]" />
           <BetaBadge />
         </span>
         <LanguageToggle />

@@ -34,6 +34,7 @@ import ResultsStepList from '@/components/consumer/ResultsStepList'
 import DoNotDoPanel from '@/components/consumer/DoNotDoPanel'
 import DoNotDoScreen from '@/components/consumer/screens/DoNotDoScreen'
 import ProductsList, { type ProductItem } from '@/components/consumer/ProductsList'
+import GonrLogo from '@/components/brand/GonrLogo'
 import { buildRepFacts, logDataRep, newRepId } from '@/lib/consumer-safety/data-rep'
 
 // TASK-218 Screen 5 — RESULTS / SOLUTION.
@@ -236,7 +237,7 @@ function ScreenShell({ children }: { children: React.ReactNode }) {
           <ArrowLeft size={22} />
         </Link>
         <span className="flex items-center gap-2">
-          <span className="gonr-gradient-text text-xl font-black tracking-tight">GONR</span>
+          <GonrLogo className="w-[88px]" priority tmClassName="text-[5px]" />
           <BetaBadge />
         </span>
         <span className="w-[22px]" aria-hidden="true" />

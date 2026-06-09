@@ -8,6 +8,7 @@ import BottomNav from '@/components/consumer/BottomNav'
 import BetaBadge from '@/components/consumer/BetaBadge'
 import ResultsStepList from '@/components/consumer/ResultsStepList'
 import DoNotDoPanel from '@/components/consumer/DoNotDoPanel'
+import GonrLogo from '@/components/brand/GonrLogo'
 import { useSessionEmail } from '@/components/consumer/useSessionEmail'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import {
@@ -65,7 +66,7 @@ export default function SavedScreen() {
     <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5">
       <div className="flex items-center justify-between">
         <span className="flex items-center gap-2">
-          <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
+          <GonrLogo className="w-[104px]" priority tmClassName="text-[6px]" />
           <BetaBadge />
         </span>
         <Link href="/solve-v2/profile" aria-label={t('common.settingsAria')} className="text-gonr-navy/60 transition-colors hover:text-gonr-navy">

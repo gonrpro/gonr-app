@@ -8,6 +8,7 @@ import BottomNav from '@/components/consumer/BottomNav'
 import BetaBadge from '@/components/consumer/BetaBadge'
 import LanguageToggle from '@/components/consumer/LanguageToggle'
 import AttachMenu, { type AttachInitialAction } from '@/components/consumer/AttachMenu'
+import GonrLogo from '@/components/brand/GonrLogo'
 import { EXAMPLE_CHIPS } from '@/lib/consumer-safety/solve-input'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
@@ -129,7 +130,7 @@ export default function HomeScreen() {
       {/* top bar: approved GONR-only gradient wordmark + settings */}
       <div className="flex items-center justify-between">
         <span className="flex items-center gap-2">
-          <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
+          <GonrLogo className="w-[104px]" priority tmClassName="text-[6px]" />
           <BetaBadge />
         </span>
         <span className="flex items-center gap-3">

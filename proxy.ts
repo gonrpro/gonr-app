@@ -6,8 +6,10 @@ function isStaticAsset(pathname: string): boolean {
   return (
     pathname.startsWith('/_next/') ||
     pathname === '/favicon.ico' ||
+    pathname === '/favicon.svg' ||
     pathname === '/robots.txt' ||
     pathname === '/sitemap.xml' ||
+    pathname.startsWith('/brand/') ||
     pathname.startsWith('/images/') ||
     pathname.startsWith('/assets/') ||
     pathname.startsWith('/og-image')

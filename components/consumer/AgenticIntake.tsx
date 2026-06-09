@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Sparkles, Shirt, Send, Loader2, ChevronDown, ShieldCheck, AlertTriangle } from 'lucide-react'
 import BottomNav from '@/components/consumer/BottomNav'
+import GonrLogo from '@/components/brand/GonrLogo'
 import ResultsScreen, {
   type SolveResponse,
   type PrefetchedSolve,
@@ -449,7 +450,7 @@ function Shell({
   return (
     <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5">
       <div className="flex items-center justify-between">
-        <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
+        <GonrLogo className="w-[104px]" priority tmClassName="text-[6px]" />
         <span className="text-xs font-extrabold uppercase tracking-wide text-gonr-textgray">
           {t('intake.tagline')}
         </span>

@@ -1,6 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="96" fill="#0A0A0A"/>
-  <g transform="translate(270,256)">
-    <path d="M74-76L36-38C20-56-2-68-30-68C-80-68-108-30-108 8C-108 46-80 84-30 84C0 84 20 70 30 44L30 28L-22 28L-22-8L84-8L84 60C62 110 22 138-30 138C-118 138-166 74-166 8C-166-58-118-122-30-122C16-122 46-106 74-76Z" fill="#22C55E"/>
-  </g>
+  <defs>
+    <linearGradient id="gonr" x1="72" y1="88" x2="440" y2="424" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f70a75"/>
+      <stop offset=".52" stop-color="#ef2955"/>
+      <stop offset="1" stop-color="#ff5a18"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#fff"/>
+  <circle cx="256" cy="256" r="176" fill="url(#gonr)"/>
+  <path fill="#fff" d="M256 90c19 95 71 147 166 166-95 19-147 71-166 166-19-95-71-147-166-166 95-19 147-71 166-166Z"/>
+  <path fill="#fff" d="M149 207c8 39 29 60 68 68-39 8-60 29-68 68-8-39-29-60-68-68 39-8 60-29 68-68ZM363 155c5 27 20 42 47 47-27 5-42 20-47 47-5-27-20-42-47-47 27-5 42-20 47-47Z" opacity=".95"/>
 </svg>

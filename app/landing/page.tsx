@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { AlertTriangle, BookOpen, CheckCircle2, Droplets, Mail, ShieldCheck, Sparkles } from 'lucide-react'
+import GonrLogo from '@/components/brand/GonrLogo'
 
 type Lang = 'en' | 'es'
 
@@ -183,24 +184,8 @@ export default function LandingPage() {
       {theme.orb ? <div className={`pointer-events-none absolute inset-0 ${theme.orb}`} /> : null}
       <div className="relative mx-auto flex min-h-screen w-full max-w-[1120px] flex-col px-5 py-5 sm:px-8 lg:px-10 lg:py-8">
         <header className="mb-3 flex shrink-0 items-center justify-between lg:mb-8">
-          <div className="flex items-end gap-2">
-            <div className="select-none" style={{ fontSize: '28px', fontWeight: 900, letterSpacing: '-1.5px', lineHeight: 1 }}>
-              <span className={theme.text}>GON</span>
-              <span style={{ color: 'var(--accent)' }}>R</span>
-              <span
-                aria-hidden="true"
-                style={{
-                  fontSize: '10px',
-                  fontWeight: 700,
-                  verticalAlign: 'super',
-                  marginLeft: '1px',
-                  letterSpacing: 0,
-                  opacity: 0.6,
-                }}
-              >
-                ™
-              </span>
-            </div>
+          <div className="flex items-end gap-3">
+            <GonrLogo className="w-[116px] sm:w-[132px]" priority tmClassName="text-[6px] sm:text-[7px]" />
             <p className={`pb-[2px] text-[9px] font-bold uppercase tracking-[0.18em] ${theme.faint}`}>Stain Brain</p>
           </div>
           <button type="button" onClick={() => { const next = activeLang === 'en' ? 'es' : 'en'; setLang(next); setLandingLang(next) }} className={`rounded-full border px-3 py-1.5 text-[10px] font-black ${theme.pill}`}>
