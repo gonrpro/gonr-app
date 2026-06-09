@@ -409,7 +409,15 @@ const SPECIALTY_FIBER =
   /silk|cashmere|wool|angora|mohair|acetate|rayon|viscose|chiffon|organza|leather|suede|nubuck|aniline|alcantara|velvet|down|gore-?tex/i
 const UNKNOWN = /unknown|not sure|unsure|unclear|can'?t tell|n\/a|none|^$/i
 const PRIOR_AGGRESSIVE = /bleach|solvent|ammonia|alkali|acetone|peroxide|oxidiz/i
-const HEAT = /heat|hot\s*wash|dryer|dried|iron|press|steam/i
+// Heat that was ACTUALLY APPLIED to the garment (hot/warm water, dryer, iron, press,
+// steam) — it sets protein/tannin and genuinely changes the safe move. This is DISTINCT
+// from heat named only as a RISK or care-label restriction ("care-label could restrict
+// water/heat", "avoid heat", "no heat"), where the bare word "heat" appears but nothing
+// was done to the garment. Reading that awareness as application folds a phantom
+// "warm/hot water already applied" note into the stain, misses the curated card, and
+// over-cautions a fresh stain. Care-label no-heat RESTRICTIONS still arm via careSymbols.
+const HEAT_APPLIED =
+  /\b(?:hot|warm|boiling)\s+(?:water|wash)\b|\btumble[\s-]?dr\w*|\bblow[\s-]?dr\w*|\bdryer\b|\biron(?:ed|ing)?\b|\bpress(?:ed|ing)?\b|\bsteam(?:ed|ing)?\b|\bhot\s+(?:setting|cycle|dry\w*)|\balready\s+(?:washed|dried|heated|ironed|pressed|steamed)\b/i
 const DYE = /dye|color|colour|bleed|fade/i
 
 /** Imperative treatment / chemical-action verbs the model must never emit. */
@@ -553,7 +561,7 @@ function normalize(raw: Partial<IntakeModelOutput>, fallback: IntakeQuestion): I
   if (PRIOR_AGGRESSIVE.test(rawDescriptive) && !PRIOR_AGGRESSIVE.test(flagsBlob)) {
     riskFlags.push('prior_aggressive_chemistry')
   }
-  if (HEAT.test(rawCareRisk) && !HEAT.test(flagsBlob)) riskFlags.push('heat_exposure')
+  if (HEAT_APPLIED.test(rawCareRisk) && !HEAT_APPLIED.test(flagsBlob)) riskFlags.push('heat_exposure')
 
   // Deny-scrub the untrusted, model-authored descriptive fields.
   const fabric = scrubProse(rawFabric)
@@ -895,7 +903,7 @@ function computeFailClosed(
   if (PRIOR_AGGRESSIVE.test(flags) || PRIOR_AGGRESSIVE.test(careBlob) || PRIOR_AGGRESSIVE.test(rawUser)) {
     reasons.push('prior_aggressive_chemistry')
   }
-  if (HEAT.test(flags) || HEAT.test(careBlob) || HEAT.test(rawUser)) reasons.push('heat_exposure')
+  if (HEAT_APPLIED.test(flags) || HEAT_APPLIED.test(careBlob) || HEAT_APPLIED.test(rawUser)) reasons.push('heat_exposure')
   if (DYE.test(flags) && UNKNOWN.test(out.read.careRisk)) reasons.push('dye_uncertain')
 
   return reasons
@@ -1026,7 +1034,7 @@ function assembleInput(
   // Heat is folded in from the model's flags/careRisk AND the user's own raw words, so
   // "I tossed it in the dryer" reaches the engine even if the model never flagged it.
   const heatExposure: HeatExposure =
-    HEAT.test(flags) || HEAT.test(careRisk) || HEAT.test(rawUser) ? 'warm_hot_wash' : 'unknown'
+    HEAT_APPLIED.test(flags) || HEAT_APPLIED.test(careRisk) || HEAT_APPLIED.test(rawUser) ? 'warm_hot_wash' : 'unknown'
   const colorfastness: Colorfastness = DYE.test(flags) ? 'prone_to_bleed' : 'unknown'
   const stainAge: StainAge = /set|old|dried|aged/.test(flags) ? 'set_in' : 'unknown'
   const itemValue: ItemValue = /luxur|valuab|sentiment|heirloom|high_value/.test(flags) ? 'valuable' : 'everyday'
