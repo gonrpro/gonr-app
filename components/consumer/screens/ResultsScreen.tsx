@@ -287,6 +287,12 @@ export default function ResultsScreen({
   // Lets the inferred-fabric "confirm or change" affordance jump the user to the
   // follow-up field so they can correct an assumed fabric without leaving Results.
   const followUpRef = useRef<HTMLInputElement>(null)
+  // The language the currently-shown verdict was generated in. A prefetched verdict
+  // arrives in the mount-time language; if the user later toggles EN/ES (global header
+  // toggle is on every route, including Results), the engine content — steps, warnings,
+  // neverDo — must re-solve in the new language instead of staying stale while only the
+  // chrome flips. Updated on every successful solve so toggling back also re-fetches.
+  const renderedLangRef = useRef(lang)
   // Save-to-library CTA lifecycle (screen 10 / S5). 'idle' until the user taps Save.
   const [saveState, setSaveState] = useState<'idle' | 'saving' | 'saved' | 'needs-auth' | 'error'>(
     'idle',
@@ -301,8 +307,10 @@ export default function ResultsScreen({
   useEffect(() => {
     // The orchestrator already called the engine — its verdict seeded state via
     // the lazy initializers above, so there is nothing to fetch until the user
-    // types a follow-up (override) that needs a fresh solve.
-    if (prefetched && override === null) return
+    // types a follow-up (override) that needs a fresh solve, OR toggles the
+    // language (the prefetched verdict is in the old language — re-solve so the
+    // engine content matches the chrome).
+    if (prefetched && override === null && lang === renderedLangRef.current) return
 
     if (!body.stain) return
 
@@ -323,6 +331,9 @@ export default function ResultsScreen({
         setHttp(res.status)
         setData(json)
         setStatus('loaded')
+        // Mark the language this verdict is now in, so a subsequent toggle (incl.
+        // back to the original) re-solves rather than showing stale-language content.
+        renderedLangRef.current = lang
       } catch (err) {
         if (ignore) return
         if (err instanceof DOMException && err.name === 'AbortError') return
