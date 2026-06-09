@@ -120,6 +120,48 @@ describe('intake orchestrator — confident input hands off to the deterministic
     expect(decision.solveBody?.surface?.toLowerCase()).toContain('cotton')
     expect(decision.assembledInput?.material).toBe('cotton')
   })
+
+  it('does not show a redundant confirm card after the user answers the freshness question', async () => {
+    stubModel({
+      read: {
+        fabric: 'indigo-dyed denim',
+        stain: 'grass stain',
+        careRisk: 'possible dye bleed or fading from the denim',
+        confidence: 'medium',
+      },
+      knows: ['fabric: denim', 'stain: grass'],
+      suspects: ['indigo dye may bleed'],
+      cannotKnow: [],
+      nextQuestion: { text: 'I see denim and grass stain — is that right?', options: ['Yes, that is right', 'No, let me fix it'] },
+      readyForVerdict: false,
+      riskFlags: [],
+    })
+
+    const decision = await runIntakeTurn(
+      req({
+        hints: {
+          stain: {
+            stain: 'grass stain',
+            surface: 'indigo-dyed denim',
+            family: 'tannin',
+            confidence: 'medium',
+          },
+        },
+        transcript: [
+          { role: 'assistant', text: 'Quick one: is the grass stain fresh (still wet) or already dried/set?' },
+          { role: 'user', text: 'Fresh (wet)' },
+        ],
+      }),
+      KEY,
+    )
+
+    expect(decision.action).toBe('solve')
+    expect(decision.nextQuestion).toBeNull()
+    expect(decision.assembledInput?.material).toBe('denim')
+    expect(decision.assembledInput?.stainAge).toBe('fresh')
+    expect(decision.solveBody?.stain.toLowerCase()).toContain('grass')
+    expect(decision.solveBody?.surface?.toLowerCase()).toContain('denim')
+  })
 })
 
 describe('intake orchestrator — fails closed on delicate / high-risk-unknown', () => {

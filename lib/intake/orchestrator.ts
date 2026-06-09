@@ -783,6 +783,12 @@ export function extractParsedFacts(req: IntakeRequest): ParsedFacts {
 
 const AGE_DISCLOSED =
   /\b(fresh|just (?:happened|now|spilled|did|got)|moments? ago|minutes? ago|right now|an hour ago|hours? (?:ago|old)|this (?:morning|afternoon|evening)|yesterday|last (?:night|week)|days? (?:ago|old)|weeks? (?:ago|old)|months? (?:ago|old)|old stain|set[- ]?in|dried[- ]?in|already (?:dried|set))\b/i
+const FRESH_AGE_DISCLOSED =
+  /\b(fresh|just (?:happened|now|spilled|did|got)|moments? ago|minutes? ago|right now|still wet|wet)\b/i
+const HOURS_AGE_DISCLOSED =
+  /\b(an hour ago|hours? (?:ago|old)|this (?:morning|afternoon|evening)|today)\b/i
+const SET_IN_AGE_DISCLOSED =
+  /\b(yesterday|last (?:night|week)|days? (?:ago|old)|weeks? (?:ago|old)|months? (?:ago|old)|old stain|set[- ]?in|dried[- ]?in|dried|already (?:dried|set|washed)|washed)\b/i
 const PRIOR_DISCLOSED =
   /\b(already (?:tried|used|applied|put|poured|did|treated|washed|soaked|sprayed|scrubbed)|i (?:tried|used|applied|put|poured|washed|soaked|rinsed|sprayed|scrubbed|rubbed|blotted|dabbed)|nothing (?:yet|so far)|haven'?t (?:tried|used|done|put|applied)|didn'?t (?:try|use|do|apply)|untreated)\b/i
 const PRIOR_AGENT_DISCLOSED =
@@ -844,6 +850,11 @@ function safetyFallbackQuestion(pf: ParsedFacts, req: IntakeRequest): IntakeQues
   if (!pf.fabricKnown) return FABRIC_QUESTION
   if (!pf.stainKnown) return STAIN_QUESTION
   return pickSafetyQuestion(pf, req)?.question ?? GENERIC_SAFETY_QUESTION
+}
+
+function hasConcreteReadValue(value: string): boolean {
+  const trimmed = value.trim()
+  return trimmed.length > 0 && !UNKNOWN.test(trimmed)
 }
 
 // ── AUTHORITATIVE SUPPRESSION (the deterministic guard) ──────────────────────
@@ -1064,7 +1075,14 @@ function assembleInput(
   const heatExposure: HeatExposure =
     HEAT_APPLIED.test(flags) || HEAT_APPLIED.test(careRisk) || HEAT_APPLIED.test(rawUser) ? 'warm_hot_wash' : 'unknown'
   const colorfastness: Colorfastness = DYE.test(flags) ? 'prone_to_bleed' : 'unknown'
-  const stainAge: StainAge = /set|old|dried|aged/.test(flags) ? 'set_in' : 'unknown'
+  const stainAge: StainAge =
+    /set|old|dried|aged/.test(flags) || SET_IN_AGE_DISCLOSED.test(rawUser)
+      ? 'set_in'
+      : FRESH_AGE_DISCLOSED.test(rawUser)
+        ? 'fresh'
+        : HOURS_AGE_DISCLOSED.test(rawUser)
+          ? 'hours_old'
+          : 'unknown'
   const itemValue: ItemValue = /luxur|valuab|sentiment|heirloom|high_value/.test(flags) ? 'valuable' : 'everyday'
   // CRITICAL fail-closed: forward the ACTUAL disclosed aggressive token(s)
   // ('bleach' / 'ammonia' / 'acetone' / …), NOT a placeholder. buildEngineSolveBody
@@ -1220,10 +1238,12 @@ export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise
 
   const ready = out.readyForVerdict && failClosedReasons.length === 0
   const budgetSpent = asked >= MAX_QUESTIONS
+  const hasUsableCoreRead =
+    (parsedFacts.stainKnown || hasConcreteReadValue(out.read.stain)) &&
+    (parsedFacts.fabricKnown || resolved.material !== 'unknown')
   const practicalReady =
-    parsedFacts.stainKnown &&
-    parsedFacts.fabricKnown &&
-    parsedFacts.fabricConfidence === 'high' &&
+    hasUsableCoreRead &&
+    out.read.confidence !== 'low' &&
     AGE_DISCLOSED.test(normalizeText(rawUser)) &&
     failClosedReasons.length === 0
 
