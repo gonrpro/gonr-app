@@ -25,7 +25,7 @@ export function useSaveProtocol(): (protocol: EngineCard) => Promise<SaveResult>
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
-          body: JSON.stringify({ email, protocol }),
+          body: JSON.stringify({ protocol }),
         })
         return res.ok ? 'saved' : 'error'
       } catch {

@@ -5,17 +5,18 @@ import { useLanguage } from '@/lib/i18n/LanguageContext'
 import ResultCard from '@/components/solve/ResultCard'
 import LanguageToggle from '@/components/protocols/LanguageToggle'
 import CustomProtocolForm from '@/components/protocols/CustomProtocolForm'
+import type { ProtocolCard } from '@/lib/types'
 
 interface SavedProtocol {
   id: string
   user_email: string
-  protocol_json: any
+  protocol_json: ProtocolCard
   is_custom: boolean
   title: string
   stain: string
   surface: string
   language: string
-  translated_json: any | null
+  translated_json: ProtocolCard | null
   notes: string | null
   created_at: string
 }
@@ -38,7 +39,7 @@ export default function SavedPage() {
       return
     }
     try {
-      const res = await fetch(`/api/protocols/saved?email=${encodeURIComponent(email)}`)
+      const res = await fetch('/api/protocols/saved', { credentials: 'include' })
       const data = await res.json()
       setProtocols(data.protocols || [])
     } catch {
@@ -67,7 +68,7 @@ export default function SavedPage() {
     }
   }
 
-  function handleTranslated(protocolId: string, translated: any) {
+  function handleTranslated(protocolId: string, translated: ProtocolCard) {
     setProtocols(prev =>
       prev.map(p =>
         p.id === protocolId ? { ...p, translated_json: translated } : p

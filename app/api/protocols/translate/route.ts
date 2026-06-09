@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
+import { createServerSupabaseClient } from '@/lib/supabase/server'
 
 const OPENAI_API = 'https://api.openai.com/v1'
 
@@ -8,6 +9,20 @@ function getSupabaseAdmin() {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY
   if (!url || !key) throw new Error('Supabase credentials not configured')
   return createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } })
+}
+
+function errorMessage(err: unknown, fallback: string): string {
+  return err instanceof Error ? err.message : fallback
+}
+
+async function getSessionEmail(): Promise<string | null> {
+  try {
+    const supabase = await createServerSupabaseClient()
+    const { data } = await supabase.auth.getUser()
+    return data.user?.email?.toLowerCase() ?? null
+  } catch {
+    return null
+  }
 }
 
 export async function POST(req: Request) {
@@ -66,6 +81,10 @@ Return ONLY the translated JSON object, no extra text.`
 
     // Cache translation in DB if we have a protocol ID
     if (protocolId) {
+      const email = await getSessionEmail()
+      if (!email) {
+        return NextResponse.json({ error: 'login_required' }, { status: 401 })
+      }
       const sb = getSupabaseAdmin()
       await sb
         .from('saved_protocols')
@@ -75,11 +94,12 @@ Return ONLY the translated JSON object, no extra text.`
           updated_at: new Date().toISOString(),
         })
         .eq('id', protocolId)
+        .eq('user_email', email)
     }
 
     return NextResponse.json({ translated: translatedJson })
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('[protocols/translate]', err)
-    return NextResponse.json({ error: err.message || 'Translation failed' }, { status: 500 })
+    return NextResponse.json({ error: errorMessage(err, 'Translation failed') }, { status: 500 })
   }
 }

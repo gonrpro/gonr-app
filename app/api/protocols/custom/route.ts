@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
+import { createServerSupabaseClient } from '@/lib/supabase/server'
 
 const OPENAI_API = 'https://api.openai.com/v1'
 
@@ -10,13 +11,32 @@ function getSupabaseAdmin() {
   return createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } })
 }
 
+function errorMessage(err: unknown, fallback: string): string {
+  return err instanceof Error ? err.message : fallback
+}
+
+async function getSessionEmail(): Promise<string | null> {
+  try {
+    const supabase = await createServerSupabaseClient()
+    const { data } = await supabase.auth.getUser()
+    return data.user?.email?.toLowerCase() ?? null
+  } catch {
+    return null
+  }
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json()
-    const { email, stain, surface, steps, notes } = body
+    const { stain, surface, steps, notes } = body
+    const email = await getSessionEmail()
 
-    if (!email || !stain || !surface) {
-      return NextResponse.json({ error: 'Missing required fields: email, stain, surface' }, { status: 400 })
+    if (!email) {
+      return NextResponse.json({ error: 'login_required' }, { status: 401 })
+    }
+
+    if (!stain || !surface) {
+      return NextResponse.json({ error: 'Missing required fields: stain, surface' }, { status: 400 })
     }
 
     if (!steps || !Array.isArray(steps) || steps.length === 0) {
@@ -103,7 +123,7 @@ ${notes ? `Notes: ${notes}` : ''}`
     const { data, error } = await sb
       .from('saved_protocols')
       .insert({
-        user_email: email.toLowerCase(),
+        user_email: email,
         protocol_json: protocolCard,
         is_custom: true,
         title: protocolCard.title || `${stain} on ${surface}`,
@@ -117,8 +137,8 @@ ${notes ? `Notes: ${notes}` : ''}`
     if (error) throw error
 
     return NextResponse.json({ id: data.id, card: protocolCard })
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('[protocols/custom]', err)
-    return NextResponse.json({ error: err.message || 'Custom protocol creation failed' }, { status: 500 })
+    return NextResponse.json({ error: errorMessage(err, 'Custom protocol creation failed') }, { status: 500 })
   }
 }

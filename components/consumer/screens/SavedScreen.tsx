@@ -135,10 +135,10 @@ function SavedTab({ email, emailLoading }: { email: string | null; emailLoading:
   const [expanded, setExpanded] = useState<string | null>(null)
   const [deleting, setDeleting] = useState<string | null>(null)
 
-  const fetchSaved = useCallback(async (userEmail: string) => {
+  const fetchSaved = useCallback(async () => {
     setLoading(true)
     try {
-      const res = await fetch(`/api/protocols/saved?email=${encodeURIComponent(userEmail)}`)
+      const res = await fetch('/api/protocols/saved', { credentials: 'include' })
       if (!res.ok) {
         setRows([])
         return
@@ -158,7 +158,7 @@ function SavedTab({ email, emailLoading }: { email: string | null; emailLoading:
       setLoading(false)
       return
     }
-    void fetchSaved(email)
+    void fetchSaved()
   }, [email, emailLoading, fetchSaved])
 
   const handleDelete = useCallback(

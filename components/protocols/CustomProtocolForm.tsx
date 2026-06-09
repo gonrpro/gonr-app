@@ -63,7 +63,6 @@ export default function CustomProtocolForm({ onCreated, onClose }: CustomProtoco
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          email,
           stain: stain.trim(),
           surface: surface.trim(),
           steps: validSteps,
@@ -77,8 +76,8 @@ export default function CustomProtocolForm({ onCreated, onClose }: CustomProtoco
       }
 
       onCreated()
-    } catch (err: any) {
-      setError(err.message)
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to create protocol')
     } finally {
       setSubmitting(false)
     }

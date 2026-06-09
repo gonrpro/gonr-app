@@ -8,6 +8,14 @@ interface SaveButtonProps {
   card: ProtocolCard
 }
 
+interface SavedProtocolRow {
+  id: string
+  protocol_json?: {
+    id?: string
+    title?: string
+  }
+}
+
 export default function SaveButton({ card }: SaveButtonProps) {
   const { t } = useLanguage()
   const [saved, setSaved] = useState(false)
@@ -19,11 +27,11 @@ export default function SaveButton({ card }: SaveButtonProps) {
   // Check if already saved on mount
   useEffect(() => {
     if (!email) return
-    fetch(`/api/protocols/saved?email=${encodeURIComponent(email)}`)
+    fetch('/api/protocols/saved', { credentials: 'include' })
       .then(r => r.json())
       .then(data => {
         const match = data.protocols?.find(
-          (p: any) => p.protocol_json?.id === card.id || p.protocol_json?.title === card.title
+          (p: SavedProtocolRow) => p.protocol_json?.id === card.id || p.protocol_json?.title === card.title
         )
         if (match) {
           setSaved(true)
@@ -52,7 +60,8 @@ export default function SaveButton({ card }: SaveButtonProps) {
         const res = await fetch('/api/protocols/save', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, protocol: card }),
+          credentials: 'include',
+          body: JSON.stringify({ protocol: card }),
         })
         const data = await res.json()
         if (res.ok) {
