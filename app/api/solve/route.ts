@@ -76,6 +76,20 @@ function getSupabaseAdmin() {
   return createClient(url, key)
 }
 
+const PRIOR_CHEMICAL_RE =
+  /\b(bleach|ammonia|acetone|peroxide|hydrogen\s*peroxide|solvent|alkali|oxidiz\w*|nail\s*polish\s*remover|rubbing\s*alcohol|cloro|lej[ií]a|amon[ií]aco|acetona|per[oó]xido|solvente|quitaesmalte|removedor\s+de\s+esmalte|alcohol\s+isoprop[ií]lico)\b/i
+
+function hasPriorChemicalInContext(ctx: SolveContext): boolean {
+  return [
+    ctx.stain,
+    ctx.surface,
+    ctx.fabricDescription,
+    ctx.garmentLocation,
+    ctx.brief,
+    ...ctx.labelWarnings,
+  ].some((value) => PRIOR_CHEMICAL_RE.test(value))
+}
+
 // ── Server-side solve gating ───────────────────────────────────
 const FOUNDER_EMAILS = ['tyler@gonr.pro', 'tyler@nexshift.co', 'twfyke@me.com', 'eval@gonr.app', 'jeff@cleanersupply.com']
 
@@ -410,10 +424,7 @@ function buildContextualFallback(ctx: SolveContext): any {
   // ONLY when the item can tolerate a gentle home action. Delicate fiber / dry-clean-only
   // / a chemical already applied => refuse-only (strip the try-this steps). The Do-Not-Do
   // material warnings above are NOT stripped — they are always shown.
-  const hasPriorChemical =
-    /\b(bleach|ammonia|acetone|peroxide|solvent|alkali|oxidiz|nail\s*polish\s*remover|rubbing\s*alcohol)\b/i.test(
-      ctx.stain,
-    )
+  const hasPriorChemical = hasPriorChemicalInContext(ctx)
   const cautiousOk = cautiousFallbackEligible({
     isDelicateFiber: ctx.isDelicateFiber,
     isDryCleanOnly: ctx.isDryCleanOnly,
@@ -999,12 +1010,10 @@ export async function POST(req: Request) {
     // response and log the query so it surfaces as a high-priority
     // card to author next.
     //
-    // TASK-056 exception: if the user explicitly picked the Unknown
-    // option in the disambiguation UI (`-unknown-general` suffix),
-    // they've consented to the general baseline. Let that fall through
-    // to the AI fallback below, where it'll land with the prominent
-    // ai_fallback_disclosure banner.
-    if ((viewerTier === 'spotter' || viewerTier === 'operator') && !explicitAiConsent) {
+    // No exception for the Unknown/general disambiguation path on paid pro tiers:
+    // those tiers are verified-only, so never fall through to AI-generated
+    // chemistry when a verified library card is missing.
+    if (viewerTier === 'spotter' || viewerTier === 'operator') {
       logSolveReview({
         queryRaw: `${ctx.stain} on ${ctx.surface}`,
         stain: ctx.stain,
@@ -1176,7 +1185,7 @@ export async function POST(req: Request) {
     } catch (err) {
       console.error('AI fallback failed:', err)
       return NextResponse.json({
-        card: buildContextualFallback(ctx),
+        card: sanitizeCardForTier(buildContextualFallback(ctx), viewerTier),
         tier: 4, confidence: 0, source: 'ai-unavailable', stainType: resolveStainType(null, ctx), _aiUnavailable: true,
         viewerTier,
       })

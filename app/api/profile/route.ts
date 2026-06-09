@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
+import { createServerSupabaseClient } from '@/lib/supabase/server'
 
 function getAdminClient() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL!
@@ -7,10 +8,20 @@ function getAdminClient() {
   return createClient(url, key)
 }
 
-export async function GET(req: NextRequest) {
+async function getSessionEmail(): Promise<string | null> {
   try {
-    const email = req.nextUrl.searchParams.get('email')
-    if (!email) return NextResponse.json({ error: 'Email required' }, { status: 400 })
+    const supabase = await createServerSupabaseClient()
+    const { data } = await supabase.auth.getUser()
+    return data.user?.email?.toLowerCase() ?? null
+  } catch {
+    return null
+  }
+}
+
+export async function GET() {
+  try {
+    const email = await getSessionEmail()
+    if (!email) return NextResponse.json({ error: 'login_required' }, { status: 401 })
 
     const supabase = getAdminClient()
     const { data, error } = await supabase
@@ -29,15 +40,15 @@ export async function GET(req: NextRequest) {
 export async function PATCH(req: NextRequest) {
   try {
     const body = await req.json()
-    const { email, name, shop_name, role, dli_member, nca_member, years_experience, specialties } = body
+    const { name, shop_name, dli_member, nca_member, years_experience, specialties } = body
 
-    if (!email) return NextResponse.json({ error: 'Email required' }, { status: 400 })
+    const email = await getSessionEmail()
+    if (!email) return NextResponse.json({ error: 'login_required' }, { status: 401 })
 
     const supabase = getAdminClient()
     const updates: Record<string, unknown> = {}
     if (name !== undefined) updates.name = name
     if (shop_name !== undefined) updates.shop_name = shop_name
-    if (role !== undefined) updates.role = role
     if (dli_member !== undefined) updates.dli_member = dli_member
     if (nca_member !== undefined) updates.nca_member = nca_member
     if (years_experience !== undefined) updates.years_experience = years_experience
