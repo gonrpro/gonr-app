@@ -308,7 +308,7 @@ export default function DetailsCollectedScreen({
         <button
           type="button"
           onClick={onContinue}
-          className="gonr-gradient mt-6 flex w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-[15px] font-extrabold text-white shadow-[0_12px_30px_-12px_rgba(247,10,117,0.8)] transition-transform active:scale-[0.99]"
+          className="gonr-gradient gonr-cta mt-6 flex w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-[15px] font-extrabold text-white transition-transform active:scale-[0.99]"
         >
           {t('details.cta')}
           <ArrowRight size={18} aria-hidden="true" />
@@ -320,7 +320,7 @@ export default function DetailsCollectedScreen({
         <label htmlFor="details-follow-up" className="sr-only">
           {t('details.followUp.srLabel')}
         </label>
-        <div className="gonr-card flex items-center gap-2 p-2 pl-4">
+        <div className="gonr-card flex items-center gap-2 p-2 pl-4 transition-shadow focus-within:ring-2 focus-within:ring-gonr-hotpink/40">
           <input
             id="details-follow-up"
             type="text"
@@ -332,7 +332,7 @@ export default function DetailsCollectedScreen({
           <button
             type="submit"
             disabled={followUp.trim().length === 0}
-            className="gonr-gradient grid h-10 w-10 shrink-0 place-items-center rounded-full text-white shadow-lg transition-opacity disabled:opacity-40"
+            className="gonr-gradient gonr-cta grid h-10 w-10 shrink-0 place-items-center rounded-full text-white transition-transform active:scale-[0.97] disabled:opacity-40"
             aria-label={t('details.followUp.ariaSend')}
           >
             <ArrowRight size={18} aria-hidden="true" />

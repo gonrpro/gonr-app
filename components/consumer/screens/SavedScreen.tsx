@@ -375,7 +375,7 @@ function EmptyState({
       {cta ? (
         <Link
           href="/solve-v2"
-          className="gonr-gradient mt-4 inline-flex min-h-[44px] items-center justify-center rounded-full px-6 text-sm font-extrabold text-white shadow-lg transition-transform duration-150 active:scale-95"
+          className="gonr-gradient gonr-cta mt-4 inline-flex min-h-[44px] items-center justify-center rounded-full px-6 text-sm font-extrabold text-white transition-transform duration-150 active:scale-95"
         >
           {t('library.startCheckCta')}
         </Link>

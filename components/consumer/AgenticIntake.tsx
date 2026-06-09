@@ -268,7 +268,7 @@ export default function AgenticIntake({
             <button
               type="button"
               onClick={onFallback}
-              className="gonr-gradient mt-5 inline-flex min-h-[48px] w-full items-center justify-center rounded-full px-5 text-[15px] font-extrabold text-white shadow-lg"
+              className="gonr-gradient gonr-cta mt-5 inline-flex min-h-[48px] w-full items-center justify-center rounded-full px-5 text-[15px] font-extrabold text-white"
             >
               {t('intake.unavailable.cta')}
             </button>
@@ -443,7 +443,7 @@ export default function AgenticIntake({
               type="submit"
               aria-label={t('intake.input.ariaSendAnswer')}
               disabled={draft.trim().length === 0}
-              className="gonr-gradient grid h-9 w-9 shrink-0 place-items-center rounded-full text-white shadow-md disabled:opacity-40"
+              className="gonr-gradient gonr-cta grid h-9 w-9 shrink-0 place-items-center rounded-full text-white disabled:opacity-40"
             >
               <Send size={16} aria-hidden="true" />
             </button>

@@ -484,7 +484,7 @@ function ErrorPanel({
         <button
           type="button"
           onClick={onRetry}
-          className="gonr-gradient w-full rounded-2xl py-3.5 text-base font-extrabold text-white shadow-lg"
+          className="gonr-gradient gonr-cta w-full rounded-2xl py-3.5 text-base font-extrabold text-white transition-transform active:scale-[0.98]"
         >
           {t('attach.errorRetry')}
         </button>
@@ -526,7 +526,7 @@ function UnavailablePanel({
         <button
           type="button"
           onClick={onContinue}
-          className="gonr-gradient w-full rounded-2xl py-3.5 text-base font-extrabold text-white shadow-lg"
+          className="gonr-gradient gonr-cta w-full rounded-2xl py-3.5 text-base font-extrabold text-white transition-transform active:scale-[0.98]"
         >
           {cta}
         </button>
