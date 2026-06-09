@@ -914,18 +914,16 @@ function questionsAsked(transcript: IntakeTurn[]): number {
   return transcript.filter((t) => t.role === 'assistant').length
 }
 
-/** Should the cheap pass escalate to the authoritative model? */
-function shouldEscalate(
-  out: IntakeModelOutput,
-  hardConstraints: string[],
-  rawUser: string,
-): boolean {
-  return (
-    out.read.confidence !== 'high' ||
-    out.riskFlags.length > 0 ||
-    !out.readyForVerdict ||
-    computeFailClosed(out, hardConstraints, rawUser).length > 0
-  )
+/** Should the cheap pass escalate to the authoritative model? Kept deliberately RARE:
+ *  the intake LLM only INTERPRETS + ASKS — the deterministic engine, computeFailClosed,
+ *  and the alias-based parsedFacts own the verdict and ALL fail-closed safety regardless
+ *  of model tier. The old trigger escalated on `!readyForVerdict` / any risk flag, which
+ *  is true on essentially every question-asking turn, so gpt-5.2 was double-called on the
+ *  common path and the intake felt very slow. Escalate ONLY when the fast model itself
+ *  reports a genuinely LOW-confidence read, where a stronger model has a real chance of
+ *  reading it better — otherwise stay on the fast model. */
+function shouldEscalate(out: IntakeModelOutput): boolean {
+  return out.read.confidence === 'low'
 }
 
 // ── Read → SolveInput / solve body (deterministic mapping for the engine) ─────
@@ -1122,7 +1120,7 @@ export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise
   try {
     // Cheap first pass; escalate to the authoritative model on any risk/uncertainty.
     const cheap = await callModel(VISION_CHEAP_MODEL, context, apiKey, fallback)
-    if (shouldEscalate(cheap, hardConstraints, rawUser)) {
+    if (shouldEscalate(cheap)) {
       try {
         out = await callModel(VISION_PRIMARY_MODEL, context, apiKey, fallback)
         model = VISION_PRIMARY_MODEL
