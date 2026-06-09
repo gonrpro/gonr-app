@@ -96,3 +96,41 @@ describe('authoritative suppression', () => {
     expect(question?.text).toBe('Have you tried anything on it yet?')
   })
 })
+
+// Tyler live bug (2026-06-09): the intake re-asked "do you know what caused the stain?"
+// after the user answered "grass" — because grass isn't in the deterministic dictionary
+// (stainKnown stayed false), and the stain question had no "already-asked" dedup.
+describe('repeat-question guard — never re-ask an answered identity question', () => {
+  const stainIdentityQ: IntakeQuestion = {
+    text: 'Quick one — do you know what caused the stain?',
+    options: ['Yes, I know what it is', 'Not sure'],
+  }
+
+  it('suppresses a SECOND stain-identity ask once already asked, even when stain is unresolved', () => {
+    // The live bug: the stain question was already asked + answered, but the answer is
+    // not resolvable by the deterministic dictionary (stainKnown=false). The pre-existing
+    // known-fact guard does NOT fire — only the new already-asked guard does. Re-asking
+    // the same identity question is the "it asked me the same thing again" bug.
+    const req: IntakeRequest = {
+      transcript: [
+        { role: 'user', text: 'something spilled on my shirt' },
+        { role: 'assistant', text: 'Quick one — do you know what caused the stain?' },
+        { role: 'user', text: 'not totally sure what it was' },
+      ],
+    }
+    const pf = extractParsedFacts(req)
+    expect(pf.stainKnown).toBe(false) // unresolved → known-fact guard alone wouldn't catch it
+    const { question, suppressions } = applySuppression(stainIdentityQ, pf, req)
+    expect(suppressions).toHaveLength(1)
+    expect(suppressions[0].reason).toBe('stain_identity_already_known')
+    // it must move ON, never re-ask the same identity question
+    expect(question?.text ?? '').not.toMatch(/do you know what caused the stain/i)
+  })
+
+  it('does NOT suppress the FIRST stain-identity ask (only repeats)', () => {
+    const req = chatReq('something spilled on my shirt')
+    const pf = extractParsedFacts(req)
+    const { suppressions } = applySuppression(stainIdentityQ, pf, req)
+    expect(suppressions).toHaveLength(0)
+  })
+})

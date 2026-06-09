@@ -810,8 +810,12 @@ function pickSafetyQuestion(
 /** The deterministic fail-closed question: if a core fact is still unknown ask for it,
  *  otherwise the highest-priority safety variable, never re-asking a resolved fact. */
 function safetyFallbackQuestion(pf: ParsedFacts, req: IntakeRequest): IntakeQuestion {
-  if (!pf.fabricKnown) return FABRIC_QUESTION
-  if (!pf.stainKnown) return STAIN_QUESTION
+  // Never re-ask stain/fabric IDENTITY once it's already been asked — the user has
+  // answered it, even when their answer isn't in our deterministic dictionary (e.g.
+  // "grass"). Re-asking is the "it asked me the same thing again" bug; fall through to
+  // the next still-open safety variable (or proceed) instead of looping on it.
+  if (!pf.fabricKnown && !askedInTranscript(req.transcript, FABRIC_TOPIC_Q)) return FABRIC_QUESTION
+  if (!pf.stainKnown && !askedInTranscript(req.transcript, STAIN_IDENTITY_Q)) return STAIN_QUESTION
   return pickSafetyQuestion(pf, req)?.question ?? GENERIC_SAFETY_QUESTION
 }
 
@@ -849,8 +853,16 @@ export function applySuppression(
   pf: ParsedFacts,
   req: IntakeRequest,
 ): { question: IntakeQuestion | null; suppressions: Suppression[] } {
-  const reAsksFabric = pf.fabricKnown && pf.fabricConfidence === 'high' && questionAsksFabric(q.text)
-  const reAsksStain = pf.stainKnown && pf.stainConfidence !== 'medium' && questionAsksStain(q.text)
+  // Suppress an identity re-ask either because the fact is KNOWN, or because we ALREADY
+  // asked it earlier (the user answered — re-asking the same identity question is the
+  // "same question again" bug, even for a stain/fabric not in our deterministic dictionary).
+  const t = req.transcript
+  const reAsksFabric =
+    questionAsksFabric(q.text) &&
+    ((pf.fabricKnown && pf.fabricConfidence === 'high') || askedInTranscript(t, FABRIC_TOPIC_Q))
+  const reAsksStain =
+    questionAsksStain(q.text) &&
+    ((pf.stainKnown && pf.stainConfidence !== 'medium') || askedInTranscript(t, STAIN_IDENTITY_Q))
   if (!reAsksFabric && !reAsksStain) return { question: q, suppressions: [] }
 
   const picked = pickSafetyQuestion(pf, req)
