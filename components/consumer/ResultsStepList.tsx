@@ -48,7 +48,7 @@ export interface ResultsStepListProps {
 //  • Heat-PROCESS wording (dryer / iron / high heat) → the generic "only if the
 //    care label allows it" (the hot-wash phrasing would not fit those steps).
 const HOT_WASH_PHRASES =
-  /(?:\b(?:hot|hottest|warm)\s+(?:water|wash))|(?:\bhottest\s+setting)|(?:\bboiling\s+water)|(?:\bagua\s+(?:caliente|tibia|hirviendo|hirviente))|(?:\blavar?\s+(?:con\s+)?agua\s+caliente)|(?:\blavado\s+(?:en\s+)?caliente)|(?:\b(?:temperatura|ajuste)\s+m[áa]s\s+(?:alta|caliente))/i
+  /(?:\b(?:hot|hottest|hotter|warm)\s+(?:water|wash|setting|cycle))|(?:\bboiling\s+water)|(?:\bagua\s+(?:caliente|tibia|hirviendo|hirviente))|(?:\blavar?\s+(?:con\s+)?agua\s+caliente)|(?:\blavado\s+(?:en\s+)?caliente)|(?:\b(?:temperatura|ajuste|ciclo)\s+(?:m[áa]s\s+)?(?:alta|alto|caliente))/i
 // Heat-PROCESS wording (dryer / iron / high heat). Phrase-list detection is
 // brittle, so cover the common engine variants explicitly:
 //  • "high heat" / "highest heat" / "hottest heat"

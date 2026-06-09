@@ -85,4 +85,14 @@ describe('applyHeatCaveat — Spanish heat detection (#8)', () => {
     const out = applyHeatCaveat('Wash in hot water')
     expect(out).toMatch(/care label/i)
   })
+  // #20 — "warm setting" / "hot cycle" fell through both regexes before.
+  test('caveats "warm setting" (#20)', () => {
+    expect(applyHeatCaveat('Machine wash on the warm setting')).toMatch(/care label/i)
+  })
+  test('caveats "hot cycle" (#20)', () => {
+    expect(applyHeatCaveat('Run a hot cycle')).toMatch(/care label/i)
+  })
+  test('still caveats "hottest setting" (no regression after consolidating the branch)', () => {
+    expect(applyHeatCaveat('Use the hottest setting')).toMatch(/care label/i)
+  })
 })
