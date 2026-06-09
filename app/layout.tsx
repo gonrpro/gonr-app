@@ -15,6 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   if (isSpottingBoardHost) {
     return {
+      metadataBase: new URL('https://spottingboard.com'),
       title: 'Spotting Board — Plant Brain Workbench',
       description: 'Private plant brain workbench for dry cleaners.',
       openGraph: {
@@ -33,6 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
+    metadataBase: new URL('https://gonr.app'),
     title: 'GONR™ — Professional Stain Protocols',
     description: 'Professional stain-removal protocols built from real dry-cleaning experience.',
     icons: {
