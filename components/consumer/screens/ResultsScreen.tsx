@@ -192,6 +192,26 @@ function inferredFabric(input: SolveInput, title: string | undefined): string | 
   return null
 }
 
+/** A tier-4 AI card.title can be a verbose run-on that repeats the stain and crams
+ *  the hero (e.g. "Professional Assessment Required — Coffee with Cream. Coffee with
+ *  cream (tannins + oils/proteins) — warm/hot water already applied on Cotton…").
+ *  Split it into a concise HEAD for the H1 and the remaining DETAIL, rendered as a
+ *  calm subtitle, so the hero reads clean and NO engine text is dropped. A normal
+ *  curated title ("Coffee on Cotton") has no sentence break and passes through. */
+export function splitTitle(raw: string | undefined): { head: string; detail: string } {
+  const t = (raw ?? '').trim()
+  if (!t) return { head: 'Your rescue plan', detail: '' }
+  const m = t.match(/^(.*?[.!?])\s+(.+)$/)
+  let head = (m ? m[1] : t).replace(/[.!?]\s*$/, '').trim()
+  let detail = m ? m[2].trim() : ''
+  if (head.length > 80) {
+    const cut = head.slice(0, 80).replace(/\s+\S*$/, '').trim()
+    detail = detail ? `${head}. ${detail}` : head
+    head = `${cut}…`
+  }
+  return { head: head || 'Your rescue plan', detail }
+}
+
 /** Human one-line of the captured context, for the result header chip. */
 function contextSummary(input: SolveInput, override: string | null): string {
   const base = (override ?? input.stainDescription).trim()
@@ -631,6 +651,7 @@ export default function ResultsScreen({
   // never stated, flag it as an assumption with a confirm/change affordance — never
   // present an inferred fabric as certain.
   const assumedFabric = inferredFabric(input, card?.title)
+  const titleParts = splitTitle(card?.title)
 
   return (
     <ScreenShell>
@@ -675,19 +696,22 @@ export default function ResultsScreen({
         </div>
       ) : null}
 
-      <div className="mt-6 flex items-center justify-between gap-3">
+      <div className="mt-6 flex items-start justify-between gap-3">
         <h1 className="text-2xl font-black leading-tight text-gonr-navy">
-          {card?.title ?? 'Your rescue plan'}
+          {titleParts.head}
         </h1>
         {risk ? (
           <span
-            className="shrink-0 rounded-full px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide"
+            className="mt-1 shrink-0 rounded-full px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide"
             style={{ color: risk.color, background: risk.bg }}
           >
             {risk.label}
           </span>
         ) : null}
       </div>
+      {titleParts.detail ? (
+        <p className="mt-1.5 text-sm font-medium leading-6 text-gonr-textgray">{titleParts.detail}</p>
+      ) : null}
 
       {/* Inferred-fabric confidence — the fabric in the title was assumed, not
           confirmed by the user; surface it with a confirm/change affordance. */}
