@@ -395,7 +395,15 @@ function buildContextualFallback(ctx: SolveContext): any {
   }
 
   if (warnings.length > 0) fallback.materialWarnings = [...warnings, ...fallback.materialWarnings]
-  if (steps.length > 0) fallback.spottingProtocol = [...steps, ...fallback.spottingProtocol]
+  if (steps.length > 0) {
+    fallback.spottingProtocol = [...steps, ...fallback.spottingProtocol]
+    fallback.homeSolutions = [
+      ...steps
+        .map((step) => (typeof step.instruction === 'string' ? step.instruction : ''))
+        .filter(Boolean),
+      ...(Array.isArray(fallback.homeSolutions) ? fallback.homeSolutions : []),
+    ]
+  }
 
   return fallback
 }
