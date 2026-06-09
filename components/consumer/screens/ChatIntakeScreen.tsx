@@ -1,10 +1,11 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { Sparkles, ShieldCheck, Shirt, Send } from 'lucide-react'
+import { ShieldCheck, Shirt, Send } from 'lucide-react'
 import BottomNav from '@/components/consumer/BottomNav'
 import BetaBadge from '@/components/consumer/BetaBadge'
 import GonrLogo from '@/components/brand/GonrLogo'
+import GonrOIcon from '@/components/brand/GonrOIcon'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import {
   type SolveInput,
@@ -454,8 +455,8 @@ export default function ChatIntakeScreen({
 
       {/* assistant bubble */}
       <div className="mt-5 flex items-center gap-2">
-        <span className="gonr-gradient grid h-7 w-7 place-items-center rounded-full text-white">
-          <Sparkles size={15} aria-hidden="true" />
+        <span className="grid h-7 w-7 place-items-center overflow-hidden rounded-full bg-white shadow-[0_4px_12px_rgba(239,41,85,0.22)] ring-1 ring-white/80">
+          <GonrOIcon />
         </span>
         <span className="gonr-gradient-text text-sm font-black">GONR</span>
       </div>
