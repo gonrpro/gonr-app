@@ -41,6 +41,12 @@ export interface SolveInput {
   priorTreatment: string[]
   itemValue: ItemValue
   locationText?: string
+  /** Restrictive care-label symbol tokens (no-bleach / no-heat / no-iron / dry-clean-only
+   *  / hand-wash-only / do-not-wash) captured from a scanned label. They are HARD
+   *  constraints with no CareStatus slot of their own, so they ride here and are forwarded
+   *  to the engine via buildEngineSolveBody's `careSymbols` opt — the same restriction the
+   *  agentic path arms through hints.hardConstraints. */
+  careSymbols?: string[]
 }
 
 export type VerdictLevel = 'diy_safe' | 'diy_with_constraints' | 'stop_use_pro' | 'do_not_attempt'

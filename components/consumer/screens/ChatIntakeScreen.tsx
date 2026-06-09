@@ -409,6 +409,10 @@ export default function ChatIntakeScreen({
       stainAge: (currentValue('stainAge') || 'unknown') as StainAge,
       itemValue: (currentValue('itemValue') || 'everyday') as ItemValue,
       priorTreatment: prior,
+      // Restrictive care-label symbols (no-bleach/no-heat/no-iron) ride through from the
+      // scan as hard constraints — they have no editable form field, so carry them
+      // verbatim from the detected hints so the fallback engine call still arms them.
+      ...(detected?.careSymbols?.length ? { careSymbols: detected.careSymbols } : {}),
       locationText: context?.locationText ?? '',
     }
     onComplete(input)

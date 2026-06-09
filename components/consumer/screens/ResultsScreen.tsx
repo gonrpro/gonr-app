@@ -302,7 +302,13 @@ export default function ResultsScreen({
   // treatment constraints as the orchestrator's first engine call — the shared
   // helper folds them into stain/surface so a follow-up never strips a do-not-wash
   // or prior-bleach constraint the verdict depends on.
-  const body = useMemo(() => buildEngineSolveBody(input, { override }), [input, override])
+  // Forward any restrictive care-label symbols (no-bleach/no-heat/no-iron) the fallback
+  // captured — the engine reads careSymbols as hard constraints. Without this the
+  // deterministic fallback would drop the label-specific override the agentic path keeps.
+  const body = useMemo(
+    () => buildEngineSolveBody(input, { override, careSymbols: input.careSymbols }),
+    [input, override],
+  )
 
   useEffect(() => {
     // The orchestrator already called the engine — its verdict seeded state via
