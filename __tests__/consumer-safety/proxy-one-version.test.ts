@@ -12,9 +12,12 @@ function req(url: string): NextRequest {
 }
 
 describe('proxy — GONR one-version routing', () => {
-  it('redirects bare gonr.app/ → /solve-v2', () => {
-    const loc = proxy(req('https://gonr.app/')).headers.get('location')
-    expect(loc).toContain('/solve-v2')
+  it('rewrites bare gonr.app/ → /solve-v2 (rewrite, not redirect, so the share URL stays gonr.app/ and social caches re-scrape clean)', () => {
+    const res = proxy(req('https://gonr.app/'))
+    // Rewrite serves /solve-v2 content at the bare URL: no Location redirect,
+    // but the internal rewrite target points at /solve-v2.
+    expect(res.headers.get('location')).toBeNull()
+    expect(res.headers.get('x-middleware-rewrite')).toContain('/solve-v2')
   })
 
   it('redirects the old /solve → /solve-v2', () => {
