@@ -1040,7 +1040,7 @@ export async function POST(req: Request) {
     // Known dangerous gaps get a deterministic refusal before AI fallback, so
     // model variance cannot produce unsafe solvent steps.
     {
-      const refuse = checkHardRefuseCombo(ctx.stain, ctx.surface)
+      const refuse = checkHardRefuseCombo(ctx.stain, ctx.surface, lang)
       if (refuse) {
         logSolveHistory({
           stain: ctx.stain,

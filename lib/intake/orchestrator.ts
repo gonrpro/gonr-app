@@ -645,6 +645,28 @@ const SURFACE_ALIASES = (surfaceAliasesData as { aliases: Record<string, string>
 const STAIN_ALIAS_KEYS = Object.keys(STAIN_ALIASES).sort((a, b) => b.length - a.length)
 const SURFACE_ALIAS_KEYS = Object.keys(SURFACE_ALIASES).sort((a, b) => b.length - a.length)
 
+const STAIN_SLOT_QUESTION =
+  /\b(what (?:is |was )?(?:the )?stain|which stain|what stain|type of stain|kind of stain|what (?:caused|spilled)|do you know what (?:it is|caused|the stain|happened)|identify the stain|what kind of (?:stain|spill)|what happened to)\b/i
+const GENERIC_STAIN_SLOT_ANSWER =
+  /^(?:yes|yes[,!. ]+i know(?: what it is)?|i know(?: what it is)?|not sure|unsure|unknown|i don'?t know|do not know|no idea|maybe|probably)$/i
+
+/** When GONR asks a stain-identity question, the next concrete user answer is a
+ *  resolved slot even if the alias table misses the exact wording. This keeps the
+ *  agent from re-asking "what caused it?" after a plain answer like "grass from
+ *  falling while playing." Alias matches still win when available. */
+function stainAnswerFromTranscript(transcript: IntakeTurn[]): string | undefined {
+  let answer: string | undefined
+  for (let i = 0; i < transcript.length - 1; i++) {
+    const q = transcript[i]
+    const a = transcript[i + 1]
+    if (q.role !== 'assistant' || a.role !== 'user') continue
+    const text = a.text.trim()
+    if (!STAIN_SLOT_QUESTION.test(q.text) || !text || GENERIC_STAIN_SLOT_ANSWER.test(text)) continue
+    answer = text
+  }
+  return answer
+}
+
 // Fiber words a user may state DIRECTLY — the highest-confidence fabric signal (each
 // maps to a clean display word). Matched against normalized (hyphen→space) user text.
 const DIRECT_FIBER: ReadonlyArray<readonly [RegExp, string]> = [
@@ -696,6 +718,15 @@ export function extractParsedFacts(req: IntakeRequest): ParsedFacts {
       stainFamily = inferStainType(STAIN_ALIASES[alias].replace(/-/g, ' '))
       stainConfidence = 'high'
       break
+    }
+  }
+  if (!stain) {
+    const slotAnswer = stainAnswerFromTranscript(req.transcript)
+    if (slotAnswer) {
+      const slotText = normalizeText(slotAnswer)
+      stain = slotText
+      stainFamily = inferStainType(slotText)
+      stainConfidence = 'high'
     }
   }
   // Fall back to a stain-photo HINT (a hint, not the user's own word → medium).
@@ -830,8 +861,7 @@ const FABRIC_CHOICE_Q = new RegExp(
   `\\bis it (?:made of |a |an )?(?:${FIBER_WORD})\\b|(?:${FIBER_WORD})\\s*,?\\s*(?:or|vs\\.?)\\s*(?:a |an )?(?:${FIBER_WORD})`,
   'i',
 )
-const STAIN_IDENTITY_Q =
-  /\b(what (?:is |was )?(?:the )?stain|which stain|what stain|type of stain|kind of stain|what (?:caused|spilled)|do you know what (?:it is|caused|the stain|happened)|identify the stain|what kind of (?:stain|spill)|what happened to)\b/i
+const STAIN_IDENTITY_Q = STAIN_SLOT_QUESTION
 
 function questionAsksFabric(s: string): boolean {
   return FABRIC_TOPIC_Q.test(s) || FABRIC_CHOICE_Q.test(s)
@@ -1190,6 +1220,12 @@ export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise
 
   const ready = out.readyForVerdict && failClosedReasons.length === 0
   const budgetSpent = asked >= MAX_QUESTIONS
+  const practicalReady =
+    parsedFacts.stainKnown &&
+    parsedFacts.fabricKnown &&
+    parsedFacts.fabricConfidence === 'high' &&
+    AGE_DISCLOSED.test(normalizeText(rawUser)) &&
+    failClosedReasons.length === 0
 
   // Assemble the facts ONCE, then build the engine body FROM them so the body the
   // engine receives carries the same care/heat/prior-treatment constraints the
@@ -1206,7 +1242,7 @@ export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise
   // SOLVE when: the user opted to proceed, the read is genuinely ready, or we have
   // asked enough — at which point the deterministic engine (final safety authority)
   // takes over rather than interrogating forever.
-  if (req.proceed || ready || budgetSpent) {
+  if (req.proceed || ready || practicalReady || budgetSpent) {
     return solveDecision
   }
 

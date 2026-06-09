@@ -79,23 +79,23 @@ export const REFUSE_ONLY_FALLBACK = {
 function detectContext(stain: string, surface: string, card: any) {
   const surfaceText = (surface + ' ' + (card.title || '')).toLowerCase()
   const stainText = stain.toLowerCase()
-  const isLeather = /\bleather\b/i.test(surface) && !/faux|vegan|pleather/i.test(surface)
+  const isLeather = /\b(leather|cuero|piel)\b/i.test(surface) && !/faux|vegan|pleather|imitaci[óo]n|sint[ée]tic/i.test(surface)
 
   return {
-    isSilk: /\bsilk\b/i.test(surfaceText),
-    isWool: /\bwool\b|\bcashmere\b|\bmerino\b/i.test(surfaceText),
-    isMarble: /\bmarble\b|\blimestone\b|\btravertine\b/i.test(surfaceText),
-    isAcetate: /\bacetate\b|\btriacetate\b/i.test(surfaceText),
+    isSilk: /\b(silk|seda)\b/i.test(surfaceText),
+    isWool: /\b(wool|cashmere|merino|lana|cachemir)\b/i.test(surfaceText),
+    isMarble: /\b(marble|limestone|travertine|m[áa]rmol|piedra caliza|travertino)\b/i.test(surfaceText),
+    isAcetate: /\b(acetate|triacetate|tri[-\s]?acetate|acetato|triacetato)\b/i.test(surfaceText),
     // Extended 2026-04-18: combination stains carrying a protein component
     // (chocolate = milk protein; gravy / dairy / meat / baby formula etc.)
     // need the same cold-water-pre-rinse discipline as pure protein stains,
     // per eval judge flag on chocolate-cotton.
-    isProtein: /\b(blood|urine|sweat|egg|milk|vomit|chocolate|gravy|baby[-\s]?formula|ice[-\s]?cream|yogurt|cheese|meat|fish|custard|pudding|dairy)\b/i.test(stainText),
-    isWood: /\bwood\b|\bhardwood\b/i.test(surfaceText),
+    isProtein: /\b(blood|urine|sweat|egg|milk|vomit|chocolate|gravy|baby[-\s]?formula|ice[-\s]?cream|yogurt|cheese|meat|fish|custard|pudding|dairy|sangre|orina|sudor|huevo|leche|v[óo]mito|salsa|f[óo]rmula|helado|yogur|queso|carne|pescado|l[áa]cteo)\b/i.test(stainText),
+    isWood: /\b(wood|hardwood|madera)\b/i.test(surfaceText),
     isLeather,
-    isAnilineLeather: isLeather && /\baniline\b/i.test(surfaceText),
+    isAnilineLeather: isLeather && /\b(aniline|anilina)\b/i.test(surfaceText),
     isAlcantara: /\balcantara\b/i.test(surfaceText),
-    isTannin: /\bwine\b|\bcoffee\b|\btea\b|\bjuice\b|\bbeer\b|\bchocolate\b/i.test(stainText),
+    isTannin: /\b(wine|coffee|tea|juice|beer|chocolate|vino|caf[ée]|t[ée]|jugo|zumo|cerveza)\b/i.test(stainText),
   }
 }
 
@@ -272,7 +272,7 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
   if (ctx.isProtein) {
     activeRules.push({
       id: 'RULE-1: Heat on protein stain',
-      pattern: /\b(hot water|warm water|boiling water|steam(?:er|ing|\s+gun|\s+wand)?|heated water|elevated temperature)\b/gi,
+      pattern: /\b(hot water|warm water|boiling water|steam(?:er|ing|\s+gun|\s+wand)?|heated water|elevated temperature|agua caliente|agua tibia|agua templada|agua hirviendo|vapor(?:izador|izar)?)\b/gi,
       replacement: 'cold water',
       note: '[cold water only — heat permanently sets protein]',
       action: 'replaced',
@@ -360,7 +360,7 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
   if (ctx.isMarble) {
     activeRules.push({
       id: 'RULE-3: Acid on marble/limestone',
-      pattern: /\b(vinegar|citric acid|lemon juice|CLR|muriatic acid|oxalic acid)\b/gi,
+      pattern: /\b(vinegar|citric acid|lemon juice|CLR|muriatic acid|oxalic acid|vinagre|[áa]cido c[íi]trico|jugo de lim[óo]n|zumo de lim[óo]n|[áa]cido muri[áa]tico|[áa]cido ox[áa]lico)\b/gi,
       replacement: null, // nuclear
       action: 'blocked',
     })
@@ -380,7 +380,7 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
   if (ctx.isSilk || ctx.isWool) {
     activeRules.push({
       id: 'RULE-5: Chlorine bleach on silk/wool',
-      pattern: /\b(chlorine bleach|sodium hypochlorite|clorox)\b/gi,
+      pattern: /\b(chlorine bleach|sodium hypochlorite|clorox|lej[ií]a|cloro|hipoclorito de sodio|blanqueador con cloro)\b/gi,
       replacement: 'oxygen-based cleaner (not chlorine)',
       action: 'replaced',
     })
@@ -430,7 +430,7 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
   if (ctx.isAlcantara) {
     activeRules.push({
       id: 'RULE-10: Solvents on Alcantara',
-      pattern: /\b(acetone|petroleum solvent|mineral spirits|dry cleaning solvent|rubbing alcohol|isopropyl alcohol|isopropanol|ethanol|steam(?:er|ing|\s+gun)?)\b/gi,
+      pattern: /\b(acetone|petroleum solvent|mineral spirits|dry cleaning solvent|rubbing alcohol|isopropyl alcohol|isopropanol|ethanol|steam(?:er|ing|\s+gun)?|acetona|solvente de petr[óo]leo|alcohol isoprop[ií]lico|etanol|vapor(?:izador|izar)?)\b/gi,
       replacement: 'water-based cleaner',
       note: '[Alcantara — use water-based cleaners only; solvents dissolve the polyurethane binder]',
       action: 'replaced',
@@ -442,7 +442,7 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
   if (ctx.isTannin) {
     activeRules.push({
       id: 'RULE-11: Rub/scrub on tannin',
-      pattern: /\b(rub|scrub|rubbing|scrubbing)\b/gi,
+      pattern: /\b(rub|scrub|rubbing|scrubbing|frotar|restriegar|restregar|tallar)\b/gi,
       replacement: 'blot',
       note: '[blot — never rub tannin stains; rubbing spreads and sets them]',
       action: 'replaced',

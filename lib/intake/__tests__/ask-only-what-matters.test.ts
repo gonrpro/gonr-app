@@ -95,4 +95,27 @@ describe('authoritative suppression', () => {
     )
     expect(question?.text).toBe('Have you tried anything on it yet?')
   })
+
+  it('does not re-ask stain cause after the user answered grass in the chat', () => {
+    const req = {
+      transcript: [
+        { role: 'user' as const, text: 'cotton shorts' },
+        { role: 'assistant' as const, text: 'Quick one: is the grass stain still fresh/wet or has it dried/set?' },
+        { role: 'user' as const, text: 'Fresh / still wet' },
+        { role: 'assistant' as const, text: 'Quick one — do you know what caused the stain?' },
+        { role: 'user' as const, text: 'Grass from falling while playing' },
+      ],
+    }
+    const pf = extractParsedFacts(req)
+    expect(pf.stain).toBe('grass')
+    expect(pf.stainKnown).toBe(true)
+
+    const { question, suppressions } = applySuppression(
+      { text: 'Quick one — do you know what caused the stain?', options: [] },
+      pf,
+      req,
+    )
+    expect(suppressions[0].reason).toBe('stain_identity_already_known')
+    expect(question?.text).not.toMatch(/caused the stain/i)
+  })
 })
