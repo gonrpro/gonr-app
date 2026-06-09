@@ -33,6 +33,8 @@ const ALLOWED_EVENT_TYPES = new Set([
   'home_monthly_cap.upgrade_clicked',
   // TASK-056 — disambiguation flow telemetry
   'solve.ai_fallback_disclosure_rendered',
+  // TASK-218 — consumer data-rep (the 7-point data moat; anon-friendly)
+  'solve.data_rep',
 ])
 
 async function getSessionEmail(): Promise<string | null> {

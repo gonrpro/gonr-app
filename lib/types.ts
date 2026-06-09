@@ -23,6 +23,14 @@ export interface Step {
   dwellTime?: string
   why?: string
   safetyNote?: string
+  /**
+   * ENGINE CONTRACT: an inline, per-step safety caveat authored by the
+   * deterministic engine / deep-solve (e.g. "do NOT use on the reverse — test
+   * first"). It is attached to a specific action step and MUST be rendered
+   * verbatim alongside that step's instruction — never normalized away. See
+   * ResultsStepList.normalize().
+   */
+  warning?: string
 }
 
 export interface ProtocolCard {

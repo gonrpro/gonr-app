@@ -413,11 +413,16 @@ body.plant-brain-shell > main {
   --gonr-text: #071B55;
   --gonr-text-2: #5B6275;
   --gonr-border: rgba(7, 27, 85, 0.08);
-  /* verdict-state accents — green-free; safe differentiates via check icon + label + border */
-  --gonr-state-safe: #071B55;     /* diy_safe — navy, NOT green */
-  --gonr-state-limited: #E8920C;  /* diy_limited — amber, constrained permission */
+  /* verdict-state accents.
+     OVERRIDES 2026-06-08 (Atlas): GONR OWNS a calm premium green as its expert /
+     safe-action color. Danger states (do-not-do / stop / fail-closed / material
+     warnings) stay hot-pink / amber / red and MUST NEVER read green. */
+  --gonr-safe: #0E7A53;           /* diy_safe — calm premium green (safe-action / expert accent) */
+  --gonr-state-safe: #0E7A53;     /* alias kept for callers referencing state-safe */
+  --gonr-state-limited: #E8920C;  /* diy_with_constraints — amber, constrained permission */
   --gonr-state-stop: #F70A75;     /* stop_use_pro / do_not_attempt — hot pink */
   --gonr-state-info: #5B6275;     /* insufficient_info / research_gap — neutral */
+  --gonr-danger: #E11D48;         /* do-not-do / prohibition red (never softened, never green) */
 
   background: var(--gonr-bg);
   color: var(--gonr-text);
@@ -439,6 +444,55 @@ body.plant-brain-shell > main {
   box-shadow: 0 12px 34px -20px rgba(7, 27, 85, 0.22);
 }
 
+/* ── Verdict / severity skins (TASK-218 shared foundation) ──────────────────
+   Apply ONE wrapper class to a verdict block; it sets a tinted surface, a left
+   accent rail, and `--gonr-accent` so the label/icon inside can inherit the
+   severity color via `.gonr-severity-text` or `color: var(--gonr-accent)`.
+   Safe-action = calm premium green (OVERRIDES). Caution = amber. Stop = hot pink.
+   Danger NEVER reads green; safe-green and do-not-do are unmistakably different. */
+.gonr-consumer .gonr-verdict-safe,
+.gonr-consumer .gonr-verdict-caution,
+.gonr-consumer .gonr-verdict-stop {
+  border-radius: 18px;
+  border: 1px solid transparent;
+  border-left-width: 4px;
+  padding: 0.875rem 1rem;
+}
+.gonr-consumer .gonr-verdict-safe {
+  --gonr-accent: var(--gonr-safe);
+  background: rgba(14, 122, 83, 0.06);
+  border-color: rgba(14, 122, 83, 0.22);
+  border-left-color: var(--gonr-safe);
+}
+.gonr-consumer .gonr-verdict-caution {
+  --gonr-accent: var(--gonr-state-limited);
+  background: rgba(232, 146, 12, 0.08);
+  border-color: rgba(232, 146, 12, 0.26);
+  border-left-color: var(--gonr-state-limited);
+}
+.gonr-consumer .gonr-verdict-stop {
+  --gonr-accent: var(--gonr-state-stop);
+  background: rgba(247, 10, 117, 0.06);
+  border-color: rgba(247, 10, 117, 0.26);
+  border-left-color: var(--gonr-state-stop);
+}
+.gonr-consumer .gonr-severity-text {
+  color: var(--gonr-accent);
+}
+
+/* Distinct do-not-do row — used by DoNotDoPanel for each prohibition. Red-tinted
+   surface + red rail so prohibitions are never confused with allowed steps. */
+.gonr-consumer .gonr-donotdo-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  padding: 0.75rem 0.875rem;
+  border-radius: 14px;
+  background: rgba(225, 29, 72, 0.05);
+  border: 1px solid rgba(225, 29, 72, 0.18);
+  border-left: 4px solid var(--gonr-danger);
+}
+
 /* Full-screen PWA shell: suppress the app's global chrome on consumer routes so
    the consumer experience owns the viewport (not nested in legacy GONR chrome). */
 body.gonr-consumer-shell {
@@ -455,6 +509,70 @@ body.gonr-consumer-shell > [data-preview-banner] {
 body.gonr-consumer-shell > main {
   max-width: none;
   padding: 0;
+}
+
+/* ── TASK-218 consumer motion + depth (BRAND/UX polish) ───────────────────────
+   Premium entrance motion + tactile depth for the consumer surface. Subtle, fast,
+   GPU-friendly (opacity/transform only). Honors prefers-reduced-motion. Additive —
+   no token redefinition. Makes the surface feel "alive in the pocket", not a form. */
+@keyframes gonr-fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.gonr-consumer .gonr-fade-up {
+  animation: gonr-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Tactile press feedback for tap targets — premium CPG, not a flat web form. */
+.gonr-consumer .gonr-pressable {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  will-change: transform;
+}
+.gonr-consumer .gonr-pressable:active {
+  transform: scale(0.97);
+}
+
+/* Raised card depth — deeper, layered shadow for hero/entry tiles so the pink
+   surface reads premium CPG with contrast, not flat baby-app soft. A crisp top
+   inner highlight + a slightly firmer navy hairline give the on-ramp tiles a
+   molded, tactile edge (no new hues — white highlight + navy depth only). */
+.gonr-consumer .gonr-card-raised {
+  border-color: rgba(7, 27, 85, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    0 22px 48px -24px rgba(7, 27, 85, 0.40),
+    0 6px 14px -8px rgba(7, 27, 85, 0.18);
+}
+
+/* Molded gradient CTA depth — inset top highlight + brand-pink ambient glow over
+   a navy drop so the primary action reads premium CPG, not a flat web button.
+   Brand colors only (white highlight, pink glow, navy depth); never green. */
+.gonr-consumer .gonr-cta {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.34),
+    0 10px 22px -10px rgba(247, 10, 117, 0.55),
+    0 4px 10px -6px rgba(7, 27, 85, 0.30);
+}
+
+/* Soft brand glow wash behind the hero — adds depth/vibrancy (magenta + orange at
+   low opacity) without any green and without competing with foreground content. */
+.gonr-consumer .gonr-hero-glow {
+  background:
+    radial-gradient(120% 80% at 88% -12%, rgba(255, 90, 24, 0.12), transparent 58%),
+    radial-gradient(110% 80% at -5% -8%, rgba(215, 11, 255, 0.10), transparent 55%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gonr-consumer .gonr-fade-up {
+    animation: none;
+  }
+  .gonr-consumer .gonr-pressable {
+    transition: none;
+  }
+  .gonr-consumer .gonr-pressable:active {
+    transform: none;
+  }
 }
 
 /* TASK-144 operator-week feedback capture */

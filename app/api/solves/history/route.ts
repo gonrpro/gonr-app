@@ -13,6 +13,7 @@ import { createClient } from '@supabase/supabase-js'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { getUserPlant } from '@/lib/auth/getUserPlant'
+import { recordEvent } from '@/lib/events/record'
 
 const DEFAULT_LIMIT = 25
 const MAX_LIMIT = 100
@@ -114,6 +115,22 @@ export async function GET(req: Request) {
       created_at: string
     }>
 
+    // Step 1b: soft "clear history" support. A DELETE on this route appends an
+    // append-only `solve.history_cleared` marker (the rep moat is preserved — reps
+    // are never destroyed). Here we read the user's latest marker and hide any
+    // checks served at or before it, so "Clear history" actually clears the view.
+    const { data: clearRows } = await (supabase.from('events') as ReturnType<typeof supabase.from>)
+      .select('created_at')
+      .eq('type', 'solve.history_cleared')
+      .eq('actor_id', actor)
+      .order('created_at', { ascending: false })
+      .limit(1)
+    const clearMarker = Array.isArray(clearRows) ? clearRows[0] : null
+    const clearedAtMs =
+      clearMarker && typeof clearMarker.created_at === 'string'
+        ? new Date(clearMarker.created_at).getTime()
+        : null
+
     // Step 2: batch-fetch outcomes for those correlation_ids.
     const correlationIds = events.map(e => e.correlation_id).filter(Boolean)
     const outcomeMap = new Map<string, { outcome: string; notes: string | null; reported_at: string }>()
@@ -149,6 +166,7 @@ export async function GET(req: Request) {
     // Step 3: merge + apply client-side filters (stain, surface, outcome)
     const results: SolveHistoryRow[] = []
     for (const e of events) {
+      if (clearedAtMs !== null && new Date(e.created_at).getTime() <= clearedAtMs) continue
       const payload = e.payload ?? {}
       const req = reqMap.get(e.correlation_id) ?? null
       const stain =
@@ -179,6 +197,25 @@ export async function GET(req: Request) {
     return NextResponse.json({ ok: true, count: results.length, results })
   } catch (err) {
     console.error('[history] unexpected:', err instanceof Error ? err.message : err)
+    return NextResponse.json({ ok: false, error: 'internal_error' }, { status: 500 })
+  }
+}
+
+// DELETE /api/solves/history — soft "clear history" for the signed-in user.
+// SOFT by design: we append an append-only `solve.history_cleared` marker rather
+// than deleting any rows. The data-rep moat (training/outcomes) is preserved; the
+// GET above hides every check served at or before the latest marker, so the user's
+// history view is cleared. Anon → 401 (nothing to clear without a session).
+export async function DELETE() {
+  try {
+    const email = await getSessionEmail()
+    if (!email) {
+      return NextResponse.json({ ok: false, error: 'auth_required' }, { status: 401 })
+    }
+    await recordEvent({ type: 'solve.history_cleared', actor_id: email.toLowerCase() })
+    return NextResponse.json({ ok: true })
+  } catch (err) {
+    console.error('[history] clear failed:', err instanceof Error ? err.message : err)
     return NextResponse.json({ ok: false, error: 'internal_error' }, { status: 500 })
   }
 }

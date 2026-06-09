@@ -1,14 +1,16 @@
 import type { Metadata } from 'next'
-import ConsumerSolveShell from '@/components/consumer/ConsumerSolveShell'
+import SolveFlow from '@/components/consumer/SolveFlow'
 
 export const metadata: Metadata = {
   title: 'GONR — Solve a stain',
   description: 'Get the next guided move before treating the item.',
 }
 
-// Phase 0 functional triage shell, PRESERVED from the base as a step in the
-// consumer journey. The home/scan-entry screen links here. (Not replaced — the
-// mockup-faithful result-screen reskin is a later packet.)
+// TASK-218 consumer spine: Chat (clarify) → Details (confirm) → Results + Do-Not-Do,
+// threaded with one shared SolveInput against the live /api/solve engine. Reached
+// from Home via ?stain=… and from the Attach sheet via a one-shot vision hint.
+// The Phase 0 ConsumerSolveShell is retained in the repo as a reference triage
+// surface; the orchestrated spine is now the canonical journey.
 export default function SolvePage() {
-  return <ConsumerSolveShell />
+  return <SolveFlow />
 }

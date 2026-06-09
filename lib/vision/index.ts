@@ -1,7 +1,9 @@
 // lib/vision/index.ts
 // Single vision pipeline — one place, one prompt, used by all routes
 
-const OPENAI_API = 'https://api.openai.com/v1'
+import { OPENAI_API_BASE, LEGACY_VISION_MODEL } from './models'
+
+const OPENAI_API = OPENAI_API_BASE
 
 export interface StainIdentification {
   stain: string       // e.g. "Red Wine"
@@ -66,7 +68,7 @@ Return ONLY valid JSON:
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: 'gpt-4.1',
+        model: LEGACY_VISION_MODEL,
         messages: [{
           role: 'user',
           content: [
@@ -129,7 +131,7 @@ Return ONLY valid JSON:
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: 'gpt-4.1',
+        model: LEGACY_VISION_MODEL,
         messages: [{
           role: 'user',
           content: [

@@ -51,6 +51,12 @@ export function buildSolveContext(params: {
   surfaceHint?: string
   fabricDescription?: string
   garmentLocation?: string
+  /** Restrictive care-label symbol tokens carried on the JSON solve body (frontier
+   *  text-only path, where labelResult is null). The multipart image path gets these
+   *  from labelResult.careSymbols; this param threads the SAME hard constraints when
+   *  the frontier orchestrator already scanned the label and POSTs JSON — so
+   *  hasNoBleach / hasNoHeat / isDryCleanOnly arm on BOTH paths, not just the image one. */
+  careSymbols?: string[]
 }): SolveContext {
   const {
     stainResult,
@@ -59,6 +65,7 @@ export function buildSolveContext(params: {
     surfaceHint,
     fabricDescription = '',
     garmentLocation = '',
+    careSymbols: careSymbolsParam = [],
   } = params
 
   // ── Stain resolution ──────────────────────────────────────
@@ -88,7 +95,10 @@ export function buildSolveContext(params: {
   }
 
   // ── Care label flags ──────────────────────────────────────
-  const careSymbols = labelResult?.careSymbols || []
+  // Care-label scan (multipart path) wins; otherwise fall back to the restrictive
+  // symbols threaded on the JSON body (frontier text-only path). Either way these
+  // are care-label ground truth, so hasNoBleach / hasNoHeat / isDryCleanOnly arm.
+  const careSymbols = labelResult?.careSymbols?.length ? labelResult.careSymbols : careSymbolsParam
   const labelWarnings = labelResult?.warnings || []
   const isDryCleanOnly = careSymbols.includes('dry-clean-only')
   const isDelicateFiber = DELICATE_FIBERS.test(fiber) || DELICATE_FIBERS.test(fabricDescription)

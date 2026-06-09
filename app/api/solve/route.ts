@@ -773,12 +773,19 @@ export async function POST(req: Request) {
       // email intentionally NOT read from body — session-only (TASK-032 P0 fix)
       lang = body.lang || 'en'
 
-      // Text-only solve — no vision needed
+      // Text-only solve — no vision needed. The frontier intake path POSTs JSON and
+      // may carry restrictive care-label symbols (no-bleach / no-heat / dry-clean-only)
+      // it already scanned; thread them so ctx.hasNoBleach / hasNoHeat / isDryCleanOnly
+      // arm here too — NOT only on the multipart image path (the silent-override bug).
+      const bodyCareSymbols = Array.isArray(body.careSymbols)
+        ? (body.careSymbols as unknown[]).filter((s): s is string => typeof s === 'string')
+        : []
       ctx = buildSolveContext({
         stainResult: null,
         labelResult: null,
         stainHint: body.stain || '',
         surfaceHint: body.surface || '',
+        careSymbols: bodyCareSymbols,
       })
     }
 

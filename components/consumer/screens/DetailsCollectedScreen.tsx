@@ -1,0 +1,337 @@
+'use client'
+
+import { useState, type FormEvent } from 'react'
+import { Shirt, Pencil, ArrowRight, BookOpenCheck, Info } from 'lucide-react'
+import BottomNav from '@/components/consumer/BottomNav'
+import {
+  type SolveInput,
+  MATERIAL_OPTIONS,
+  STAIN_OPTIONS,
+  CARE_OPTIONS,
+  HEAT_OPTIONS,
+  COLOR_OPTIONS,
+  AGE_OPTIONS,
+  VALUE_OPTIONS,
+  labelFor,
+} from '@/lib/consumer-safety/solve-input'
+import { type SolveSource, resolveSourceLabel } from '@/lib/consumer-safety/solve-source'
+
+// TASK-218 Screen 4 — DETAILS COLLECTED (consent / transparency checkpoint).
+//
+// The calm moment before the engine answers: GONR plays back the facts it
+// actually collected (rendered FROM STATE, never hardcoded defaults), names where
+// the answer will come from (honest source line — verified card vs AI analysis,
+// never both), and gives the user a way to correct a wrong fact first. There is NO
+// treatment preview here — steps and prohibitions live on the Results screen so a
+// bad fact can be caught before it shapes advice. Premium fabric-care feel,
+// green-free; nothing on this screen is authored — every value comes from state or
+// the engine response.
+
+/** Verbatim AI-fallback disclosure object as the engine returns it. */
+export interface AiFallbackDisclosure {
+  label: string
+  body: string
+}
+
+/** A single played-back fact row. `field` lets the user jump back to fix it. */
+interface FactRow {
+  field: keyof SolveInput
+  label: string
+  value: string
+  note?: string
+}
+
+export interface DetailsCollectedScreenProps {
+  /** The SolveInput assembled across intake — the only source of the fact rows. */
+  input: SolveInput
+  /** Engine `response.source`, when /api/solve has already responded. */
+  source?: SolveSource
+  /** Engine `response.ai_fallback_disclosure`, rendered verbatim when present. */
+  aiFallbackDisclosure?: AiFallbackDisclosure
+  /** Captured stain photo (data/blob/remote URL) for the context chip. */
+  imageUrl?: string
+  /** Short human summary for the context chip; falls back to the stain text. */
+  contextLabel?: string
+  /** Continue to the recommended approach (Results screen). */
+  onContinue?: () => void
+  /** User typed a correction/clarification — re-open or patch intake with it. */
+  onFollowUp?: (text: string) => void
+  /** Tap a listed fact to re-open intake on that field. */
+  onEditFact?: (field: keyof SolveInput) => void
+  className?: string
+}
+
+const DEFAULTS: Pick<
+  SolveInput,
+  'material' | 'careStatus' | 'heatExposure' | 'colorfastness' | 'stainAge' | 'itemValue'
+> = {
+  material: 'unknown',
+  careStatus: 'unknown',
+  heatExposure: 'unknown',
+  colorfastness: 'unknown',
+  stainAge: 'unknown',
+  itemValue: 'everyday',
+}
+
+/**
+ * Build the fact rows straight from state. A field is shown only when the user
+ * actually engaged it (value differs from the fail-closed default / is non-empty),
+ * so an untouched form never fabricates a "fact" the user never gave.
+ */
+function buildFactRows(input: SolveInput): FactRow[] {
+  const rows: FactRow[] = []
+
+  const stainText = input.stainDescription.trim()
+  if (stainText.length > 0) {
+    rows.push({
+      field: 'stainDescription',
+      label: 'Stain',
+      value: stainText,
+      note:
+        input.stainType !== undefined
+          ? labelFor(STAIN_OPTIONS, input.stainType)
+          : undefined,
+    })
+  }
+
+  if (input.material !== DEFAULTS.material) {
+    rows.push({ field: 'material', label: 'Fabric', value: labelFor(MATERIAL_OPTIONS, input.material) })
+  }
+  if (input.careStatus !== DEFAULTS.careStatus) {
+    rows.push({ field: 'careStatus', label: 'Care', value: labelFor(CARE_OPTIONS, input.careStatus) })
+  }
+  if (input.colorfastness !== DEFAULTS.colorfastness) {
+    rows.push({ field: 'colorfastness', label: 'Colour', value: labelFor(COLOR_OPTIONS, input.colorfastness) })
+  }
+  if (input.stainAge !== DEFAULTS.stainAge) {
+    rows.push({ field: 'stainAge', label: 'Stain age', value: labelFor(AGE_OPTIONS, input.stainAge) })
+  }
+  if (input.heatExposure !== DEFAULTS.heatExposure) {
+    rows.push({ field: 'heatExposure', label: 'Heat so far', value: labelFor(HEAT_OPTIONS, input.heatExposure) })
+  }
+  if (input.itemValue !== DEFAULTS.itemValue) {
+    rows.push({ field: 'itemValue', label: 'Item value', value: labelFor(VALUE_OPTIONS, input.itemValue) })
+  }
+  if (input.priorTreatment.length > 0) {
+    rows.push({ field: 'priorTreatment', label: 'Already tried', value: input.priorTreatment.join(', ') })
+  }
+  const location = input.locationText?.trim()
+  if (location && location.length > 0) {
+    rows.push({ field: 'locationText', label: 'Where', value: location })
+  }
+
+  return rows
+}
+
+/**
+ * Resolve the engine source to its honest, SHARED one-line attribution (same map
+ * Results renders, so one source never shows two strings). Returns null when the
+ * source is unknown OR an AI-fallback disclosure is present (we never show a
+ * source line alongside the disclosure — one true source, never both). Verified
+ * wording is earned only by `library*` sources; AI tiers never borrow it.
+ */
+function sourceLine(
+  source: SolveSource | undefined,
+  hasDisclosure: boolean,
+): { text: string; verified: boolean } | null {
+  if (hasDisclosure || source === undefined) return null
+  // Fail-safe: never crash on a source value the UI has not mapped.
+  const entry = resolveSourceLabel(source)
+  if (!entry) return null
+  return { text: entry.label, verified: entry.verified }
+}
+
+export default function DetailsCollectedScreen({
+  input,
+  source,
+  aiFallbackDisclosure,
+  imageUrl,
+  contextLabel,
+  onContinue,
+  onFollowUp,
+  onEditFact,
+  className,
+}: DetailsCollectedScreenProps) {
+  const [followUp, setFollowUp] = useState('')
+
+  const rows = buildFactRows(input)
+  const chipLabel = (contextLabel ?? input.stainDescription).trim()
+  const attribution = sourceLine(source, aiFallbackDisclosure !== undefined)
+
+  function handleFollowUp(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const text = followUp.trim()
+    if (text.length === 0) return
+    onFollowUp?.(text)
+    setFollowUp('')
+  }
+
+  return (
+    <main
+      className={`relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5${
+        className ? ` ${className}` : ''
+      }`}
+    >
+      {/* context chip — what GONR understood the situation to be */}
+      <div className="gonr-card flex items-center gap-3 p-3">
+        {imageUrl ? (
+          <span
+            role="img"
+            aria-label="Captured stain photo"
+            className="h-12 w-12 shrink-0 rounded-2xl bg-gonr-softpink bg-cover bg-center"
+            style={{ backgroundImage: `url(${imageUrl})` }}
+          />
+        ) : (
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gonr-softpink text-gonr-hotpink">
+            <Shirt size={22} aria-hidden="true" />
+          </span>
+        )}
+        <div className="min-w-0">
+          <p className="text-[11px] font-extrabold uppercase tracking-wide text-gonr-textgray">
+            Your situation
+          </p>
+          {chipLabel.length > 0 ? (
+            <p className="truncate text-[15px] font-extrabold text-gonr-navy">{chipLabel}</p>
+          ) : (
+            <p className="text-[15px] font-bold text-gonr-textgray">Details below</p>
+          )}
+        </div>
+      </div>
+
+      {/* "Your details" — the collected facts, played back FROM STATE */}
+      <section className="mt-6" aria-label="Your details">
+        <h1 className="text-2xl font-black leading-tight text-gonr-navy">Your details</h1>
+        <p className="mt-1 text-sm font-semibold text-gonr-textgray">
+          Make sure this looks right before we answer.
+        </p>
+
+        {rows.length > 0 ? (
+          <ul className="mt-4 grid gap-2">
+            {rows.map((row) => {
+              const editable = onEditFact !== undefined
+              const content = (
+                <>
+                  <span className="min-w-0">
+                    <span className="block text-[11px] font-extrabold uppercase tracking-wide text-gonr-textgray">
+                      {row.label}
+                    </span>
+                    <span className="block text-[15px] font-bold leading-6 text-gonr-navy">
+                      {row.value}
+                      {row.note ? (
+                        <span className="font-semibold text-gonr-textgray"> · {row.note}</span>
+                      ) : null}
+                    </span>
+                  </span>
+                  {editable ? (
+                    <Pencil size={16} className="mt-1 shrink-0 text-gonr-hotpink" aria-hidden="true" />
+                  ) : null}
+                </>
+              )
+              return (
+                <li key={row.field}>
+                  {editable ? (
+                    <button
+                      type="button"
+                      onClick={() => onEditFact?.(row.field)}
+                      className="gonr-card flex w-full items-start justify-between gap-3 p-3 text-left transition-transform active:scale-[0.99]"
+                      aria-label={`Edit ${row.label}: ${row.value}`}
+                    >
+                      {content}
+                    </button>
+                  ) : (
+                    <div className="gonr-card flex items-start justify-between gap-3 p-3">{content}</div>
+                  )}
+                </li>
+              )
+            })}
+          </ul>
+        ) : (
+          <div className="gonr-card mt-4 p-4">
+            <p className="text-sm font-semibold text-gonr-textgray">
+              No details captured yet. Add a few above so GONR can tailor the safest approach.
+            </p>
+          </div>
+        )}
+      </section>
+
+      {/* transition line — no treatment preview here, just the handoff */}
+      <p className="mt-6 text-[15px] font-bold leading-6 text-gonr-navy">
+        Got it. Here&rsquo;s the best approach for this situation.
+      </p>
+
+      {/* honest Sources footer — verified card vs AI analysis, never both */}
+      {attribution || aiFallbackDisclosure ? (
+        <section className="mt-4" aria-label="Sources">
+          <p className="mb-2 text-[11px] font-extrabold uppercase tracking-wide text-gonr-textgray">
+            Sources
+          </p>
+          {aiFallbackDisclosure ? (
+            <div className="gonr-card flex items-start gap-3 border-l-4 border-l-[var(--gonr-state-limited)] p-3">
+              <Info
+                size={18}
+                strokeWidth={2.25}
+                className="mt-0.5 shrink-0 text-[var(--gonr-state-limited)]"
+                aria-hidden="true"
+              />
+              <div className="min-w-0">
+                <p className="text-[13px] font-extrabold text-gonr-navy">{aiFallbackDisclosure.label}</p>
+                <p className="mt-0.5 text-[13px] font-medium leading-5 text-gonr-textgray">
+                  {aiFallbackDisclosure.body}
+                </p>
+              </div>
+            </div>
+          ) : attribution ? (
+            <div className="gonr-card flex items-center gap-3 p-3">
+              <BookOpenCheck
+                size={18}
+                strokeWidth={2.25}
+                className={attribution.verified ? 'shrink-0 text-gonr-hotpink' : 'shrink-0 text-gonr-textgray'}
+                aria-hidden="true"
+              />
+              <p className="text-[13px] font-bold text-gonr-navy">{attribution.text}</p>
+            </div>
+          ) : null}
+        </section>
+      ) : null}
+
+      {/* primary handoff to the answer */}
+      {onContinue ? (
+        <button
+          type="button"
+          onClick={onContinue}
+          className="gonr-gradient mt-6 flex w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-[15px] font-extrabold text-white shadow-[0_12px_30px_-12px_rgba(247,10,117,0.8)] transition-transform active:scale-[0.99]"
+        >
+          See the approach
+          <ArrowRight size={18} aria-hidden="true" />
+        </button>
+      ) : null}
+
+      {/* correct a fact before the engine answers — the consent checkpoint */}
+      <form onSubmit={handleFollowUp} className="mt-3">
+        <label htmlFor="details-follow-up" className="sr-only">
+          Ask a follow-up or correct a detail
+        </label>
+        <div className="gonr-card flex items-center gap-2 p-2 pl-4">
+          <input
+            id="details-follow-up"
+            type="text"
+            value={followUp}
+            onChange={(event) => setFollowUp(event.target.value)}
+            placeholder="Ask a follow-up or fix a detail…"
+            className="min-w-0 flex-1 bg-transparent text-[15px] font-semibold text-gonr-navy placeholder:font-medium placeholder:text-gonr-navy/40 focus:outline-none"
+          />
+          <button
+            type="submit"
+            disabled={followUp.trim().length === 0}
+            className="gonr-gradient grid h-10 w-10 shrink-0 place-items-center rounded-full text-white shadow-lg transition-opacity disabled:opacity-40"
+            aria-label="Send follow-up"
+          >
+            <ArrowRight size={18} aria-hidden="true" />
+          </button>
+        </div>
+      </form>
+
+      <BottomNav />
+    </main>
+  )
+}

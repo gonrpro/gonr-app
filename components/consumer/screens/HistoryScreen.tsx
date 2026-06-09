@@ -1,0 +1,219 @@
+'use client'
+
+import { useEffect, useMemo, useState } from 'react'
+import Link from 'next/link'
+import { Settings, Shirt, ChevronRight, Search, CheckCircle2, Clock, Sparkles } from 'lucide-react'
+import BottomNav from '@/components/consumer/BottomNav'
+import { EXAMPLE_CHIPS } from '@/lib/consumer-safety/solve-input'
+
+// TASK-218 Screen 11 — HISTORY. Every past stain check in one calm, premium list,
+// bound to the REAL /api/solves/history endpoint (session-cookie auth; no signup
+// wall). Rows re-open the intake pre-filled so a user can pick a check back up.
+// The search field is a demoted client-side filter — history stays the hero.
+// No fabricated telemetry; an empty list reads as consumer language, never an
+// internal "no events" string.
+
+interface HistoryRow {
+  correlation_id: string
+  stain: string | null
+  surface: string | null
+  served_at: string
+  outcome: string | null
+}
+
+interface HistoryResponse {
+  ok?: boolean
+  results?: HistoryRow[]
+}
+
+function titleCase(value: string): string {
+  return value.replace(/(^|[\s-])([a-z])/g, (_m, sep: string, ch: string) => sep + ch.toUpperCase())
+}
+
+function rowTitle(row: HistoryRow): string {
+  const stain = row.stain ? titleCase(row.stain) : 'Stain check'
+  return row.surface ? `${stain} on ${titleCase(row.surface)}` : stain
+}
+
+function relativeWhen(iso: string): string {
+  const d = new Date(iso)
+  if (Number.isNaN(d.getTime())) return ''
+  const now = new Date()
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime()
+  const t = d.getTime()
+  if (t >= startOfToday) return 'Today'
+  if (t >= startOfToday - 86_400_000) return 'Yesterday'
+  return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
+}
+
+type Load = 'loading' | 'ready' | 'auth' | 'error'
+
+export default function HistoryScreen() {
+  const [rows, setRows] = useState<HistoryRow[]>([])
+  const [state, setState] = useState<Load>('loading')
+  const [filter, setFilter] = useState('')
+
+  useEffect(() => {
+    let cancelled = false
+    void (async () => {
+      try {
+        const res = await fetch('/api/solves/history?limit=50', { credentials: 'include' })
+        if (cancelled) return
+        if (res.status === 401) {
+          setState('auth')
+          return
+        }
+        if (!res.ok) {
+          setState('error')
+          return
+        }
+        const data = (await res.json()) as HistoryResponse
+        if (cancelled) return
+        setRows(data.ok && Array.isArray(data.results) ? data.results : [])
+        setState('ready')
+      } catch {
+        if (!cancelled) setState('error')
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const visible = useMemo(() => {
+    const q = filter.trim().toLowerCase()
+    if (!q) return rows
+    return rows.filter((r) => `${r.stain ?? ''} ${r.surface ?? ''}`.toLowerCase().includes(q))
+  }, [rows, filter])
+
+  return (
+    <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5">
+      <div className="flex items-center justify-between">
+        <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
+        <Link href="/solve-v2/profile" aria-label="Settings" className="text-gonr-navy/60">
+          <Settings size={22} />
+        </Link>
+      </div>
+
+      <h1 className="mt-7 text-[2rem] font-black leading-tight tracking-tight text-gonr-navy">History</h1>
+      <p className="mt-1 text-sm font-semibold text-gonr-textgray">
+        Every stain check you have run, in one place.
+      </p>
+
+      {/* demoted search filter */}
+      {state === 'ready' && rows.length > 0 ? (
+        <div className="mt-5 flex items-center gap-2 rounded-full border border-[var(--gonr-border)] bg-white px-4 py-2">
+          <Search size={16} className="shrink-0 text-gonr-navy/40" aria-hidden="true" />
+          <input
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            placeholder="Search your history"
+            aria-label="Search your history"
+            className="min-h-[36px] flex-1 bg-transparent text-sm font-semibold text-gonr-navy outline-none placeholder:font-medium placeholder:text-gonr-navy/40"
+          />
+        </div>
+      ) : null}
+
+      <section className="mt-6 flex-1" aria-label="Past checks">
+        {state === 'loading' ? (
+          <div className="space-y-2" aria-hidden="true">
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className="gonr-card h-[68px] animate-pulse opacity-60" />
+            ))}
+          </div>
+        ) : state === 'error' ? (
+          <div className="gonr-card flex flex-col items-center px-6 py-10 text-center">
+            <p className="text-sm font-extrabold text-gonr-navy">We could not load your history</p>
+            <p className="mt-1 text-xs font-semibold text-gonr-textgray">
+              Check your connection and try again in a moment.
+            </p>
+          </div>
+        ) : state === 'auth' || rows.length === 0 ? (
+          <EmptyHistory signedOut={state === 'auth'} />
+        ) : visible.length === 0 ? (
+          <div className="gonr-card flex flex-col items-center px-6 py-10 text-center">
+            <p className="text-sm font-extrabold text-gonr-navy">No matches</p>
+            <p className="mt-1 text-xs font-semibold text-gonr-textgray">
+              Nothing in your history matches that search.
+            </p>
+          </div>
+        ) : (
+          <ul className="space-y-2">
+            {visible.map((row) => (
+              <li key={row.correlation_id}>
+                <Link
+                  href={`/solve-v2/solve?stain=${encodeURIComponent(row.stain ?? '')}`}
+                  className="gonr-card flex items-center justify-between gap-3 p-3"
+                >
+                  <span className="flex min-w-0 items-center gap-3">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-gonr-softpink text-gonr-hotpink">
+                      <Shirt size={20} aria-hidden="true" />
+                    </span>
+                    <span className="flex min-w-0 flex-col">
+                      <span className="truncate text-sm font-extrabold text-gonr-navy">{rowTitle(row)}</span>
+                      <span className="mt-0.5 flex items-center gap-2">
+                        <span className="text-xs font-semibold text-gonr-textgray">{relativeWhen(row.served_at)}</span>
+                        <OutcomeChip outcome={row.outcome} />
+                      </span>
+                    </span>
+                  </span>
+                  <ChevronRight size={18} className="shrink-0 text-gonr-navy/35" aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <BottomNav />
+    </main>
+  )
+}
+
+function OutcomeChip({ outcome }: { outcome: string | null }) {
+  if (!outcome) return null
+  if (outcome === 'worked') {
+    return (
+      <span className="inline-flex items-center gap-1 rounded-full bg-gonr-softpink px-2 py-0.5 text-[10px] font-extrabold text-gonr-navy">
+        <CheckCircle2 size={11} aria-hidden="true" />
+        Worked
+      </span>
+    )
+  }
+  if (outcome === 'not_yet') {
+    return (
+      <span className="inline-flex items-center gap-1 rounded-full bg-gonr-lightgray px-2 py-0.5 text-[10px] font-extrabold text-gonr-textgray">
+        <Clock size={11} aria-hidden="true" />
+        Following up
+      </span>
+    )
+  }
+  return null
+}
+
+function EmptyHistory({ signedOut }: { signedOut: boolean }) {
+  return (
+    <div className="gonr-card flex flex-col items-center px-6 py-10 text-center">
+      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gonr-softpink text-gonr-hotpink">
+        <Sparkles size={22} aria-hidden="true" />
+      </span>
+      <p className="mt-3 text-sm font-extrabold text-gonr-navy">Start your first stain check</p>
+      <p className="mt-1 text-xs font-semibold text-gonr-textgray">
+        {signedOut
+          ? 'Your checks show up here. Sign in on Profile to keep them across devices.'
+          : 'Ask about a stain and it will show up here. Start with one of these:'}
+      </p>
+      <div className="mt-4 flex flex-wrap justify-center gap-2">
+        {EXAMPLE_CHIPS.map((example) => (
+          <Link
+            key={example}
+            href={`/solve-v2/solve?stain=${encodeURIComponent(example)}`}
+            className="rounded-full bg-gonr-softpink px-3 py-1.5 text-xs font-bold text-gonr-navy"
+          >
+            {example}
+          </Link>
+        ))}
+      </div>
+    </div>
+  )
+}
