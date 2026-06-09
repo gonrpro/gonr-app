@@ -9,6 +9,7 @@ import BetaBadge from '@/components/consumer/BetaBadge'
 import ResultsStepList from '@/components/consumer/ResultsStepList'
 import DoNotDoPanel from '@/components/consumer/DoNotDoPanel'
 import { useSessionEmail } from '@/components/consumer/useSessionEmail'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import {
   deleteSavedLabel,
   subscribeSavedLabels,
@@ -23,7 +24,9 @@ import {
 //  • Labels  — scanned care labels (thin localStorage store, no backend). Care
 //              warnings render as do-not constraints, verbatim.
 // Premium fabric-care brand surface; green-free skin; no signup wall (a calm
-// sign-in invite when we have no email, never a hard wall).
+// sign-in invite when we have no email, never a hard wall). Fully bilingual:
+// chrome resolves through t(key); engine/card fields render verbatim, and the
+// Do-Not-Do safety panel is always passed through untouched.
 
 // Consumer-safe projection of a saved protocol card. Pro fields (spottingProtocol,
 // products.professional) are intentionally absent — the consumer view never
@@ -54,6 +57,7 @@ interface SavedResponse {
 type Tab = 'saved' | 'labels'
 
 export default function SavedScreen() {
+  const { t } = useLanguage()
   const { email, loading: emailLoading } = useSessionEmail()
   const [tab, setTab] = useState<Tab>('saved')
 
@@ -64,22 +68,22 @@ export default function SavedScreen() {
           <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
           <BetaBadge />
         </span>
-        <Link href="/solve-v2/profile" aria-label="Settings" className="text-gonr-navy/60">
+        <Link href="/solve-v2/profile" aria-label={t('common.settingsAria')} className="text-gonr-navy/60 transition-colors hover:text-gonr-navy">
           <Settings size={22} />
         </Link>
       </div>
 
-      <h1 className="mt-7 text-[2rem] font-black leading-tight tracking-tight text-gonr-navy">My Library</h1>
-      <p className="mt-1 text-sm font-semibold text-gonr-textgray">Your saved rescues, notes, and labels.</p>
+      <h1 className="mt-7 text-[2rem] font-black leading-tight tracking-tight text-gonr-navy">{t('library.title')}</h1>
+      <p className="mt-1 text-sm font-semibold text-gonr-textgray">{t('library.subtitle')}</p>
 
       {/* segmented Saved | Labels */}
       <div
         role="tablist"
-        aria-label="Library sections"
+        aria-label={t('library.sectionsAria')}
         className="mt-5 grid grid-cols-2 gap-1 rounded-full bg-gonr-lightgray p-1"
       >
-        <TabButton active={tab === 'saved'} onClick={() => setTab('saved')} Icon={Bookmark} label="Saved" />
-        <TabButton active={tab === 'labels'} onClick={() => setTab('labels')} Icon={Tag} label="Labels" />
+        <TabButton active={tab === 'saved'} onClick={() => setTab('saved')} Icon={Bookmark} label={t('library.tabSaved')} />
+        <TabButton active={tab === 'labels'} onClick={() => setTab('labels')} Icon={Tag} label={t('library.tabLabels')} />
       </div>
 
       <section className="mt-6 flex-1">
@@ -124,6 +128,7 @@ function TabButton({
 
 // ── Saved protocols ─────────────────────────────────────────────────────────
 function SavedTab({ email, emailLoading }: { email: string | null; emailLoading: boolean }) {
+  const { t } = useLanguage()
   const [rows, setRows] = useState<SavedProtocolRow[]>([])
   const [loading, setLoading] = useState(true)
   const [expanded, setExpanded] = useState<string | null>(null)
@@ -187,8 +192,8 @@ function SavedTab({ email, emailLoading }: { email: string | null; emailLoading:
     return (
       <EmptyState
         Icon={Bookmark}
-        title="Save your rescues"
-        body="Sign in on Profile, then save any result to keep its safe steps here and synced across devices."
+        title={t('library.savedSignedOutTitle')}
+        body={t('library.savedSignedOutBody')}
       />
     )
   }
@@ -197,8 +202,8 @@ function SavedTab({ email, emailLoading }: { email: string | null; emailLoading:
     return (
       <EmptyState
         Icon={Sparkles}
-        title="No saved rescues yet"
-        body="When a result helps, save it here so the safe steps are one tap away next time."
+        title={t('library.savedEmptyTitle')}
+        body={t('library.savedEmptyBody')}
         cta
       />
     )
@@ -217,7 +222,7 @@ function SavedTab({ email, emailLoading }: { email: string | null; emailLoading:
               type="button"
               onClick={() => setExpanded(open ? null : row.id)}
               aria-expanded={open}
-              className="flex w-full items-start justify-between gap-3 p-4 text-left"
+              className="flex w-full items-start justify-between gap-3 p-4 text-left transition-colors"
             >
               <span className="flex min-w-0 items-start gap-3">
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-gonr-softpink text-gonr-hotpink">
@@ -243,11 +248,9 @@ function SavedTab({ email, emailLoading }: { email: string | null; emailLoading:
             {open ? (
               <div className="border-t border-[var(--gonr-border)] px-4 pb-4 pt-3">
                 {steps.length > 0 ? (
-                  <ResultsStepList steps={steps} heading="The safe steps" />
+                  <ResultsStepList steps={steps} heading={t('library.safeStepsHeading')} />
                 ) : (
-                  <p className="text-sm font-semibold text-gonr-textgray">
-                    Open this one again to re-run the full guidance.
-                  </p>
+                  <p className="text-sm font-semibold text-gonr-textgray">{t('library.reRunBody')}</p>
                 )}
 
                 <DoNotDoPanel
@@ -260,10 +263,10 @@ function SavedTab({ email, emailLoading }: { email: string | null; emailLoading:
                   type="button"
                   onClick={() => handleDelete(row.id)}
                   disabled={deleting === row.id}
-                  className="mt-5 inline-flex min-h-[40px] items-center gap-2 rounded-full border border-[var(--gonr-border)] bg-white px-4 text-xs font-extrabold text-gonr-navy/70 disabled:opacity-50"
+                  className="mt-5 inline-flex min-h-[40px] items-center gap-2 rounded-full border border-[var(--gonr-border)] bg-white px-4 text-xs font-extrabold text-gonr-navy/70 transition-colors disabled:opacity-50"
                 >
                   <Trash2 size={15} aria-hidden="true" />
-                  {deleting === row.id ? 'Removing…' : 'Remove from library'}
+                  {deleting === row.id ? t('library.removing') : t('library.removeFromLibrary')}
                 </button>
               </div>
             ) : null}
@@ -276,6 +279,7 @@ function SavedTab({ email, emailLoading }: { email: string | null; emailLoading:
 
 // ── Saved care labels (localStorage via external store) ──────────────────────
 function LabelsTab() {
+  const { t } = useLanguage()
   // useSyncExternalStore reads the localStorage-backed store with a stable server
   // snapshot ([]), so there is no setState-in-effect and no hydration mismatch.
   const labels = useSyncExternalStore(
@@ -292,8 +296,8 @@ function LabelsTab() {
     return (
       <EmptyState
         Icon={ScanLine}
-        title="No saved labels yet"
-        body="Scan a care label and save it here. We keep the fabric and the do-not rules so your next check starts safer."
+        title={t('library.labelsEmptyTitle')}
+        body={t('library.labelsEmptyBody')}
       />
     )
   }
@@ -319,7 +323,7 @@ function LabelsTab() {
             <button
               type="button"
               onClick={() => handleDelete(label.id)}
-              aria-label="Delete saved label"
+              aria-label={t('library.deleteLabelAria')}
               className="shrink-0 text-gonr-navy/40 transition-colors hover:text-gonr-hotpink"
             >
               <Trash2 size={16} aria-hidden="true" />
@@ -340,7 +344,7 @@ function LabelsTab() {
           ) : null}
 
           {label.warnings.length > 0 ? (
-            <DoNotDoPanel className="mt-4" heading="From the label" materialWarnings={label.warnings} />
+            <DoNotDoPanel className="mt-4" heading={t('library.fromLabelHeading')} materialWarnings={label.warnings} />
           ) : null}
         </li>
       ))}
@@ -359,6 +363,7 @@ function EmptyState({
   body: string
   cta?: boolean
 }) {
+  const { t } = useLanguage()
   return (
     <div className="gonr-card flex flex-col items-center px-6 py-10 text-center">
       <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gonr-softpink text-gonr-hotpink">
@@ -369,9 +374,9 @@ function EmptyState({
       {cta ? (
         <Link
           href="/solve-v2"
-          className="gonr-gradient mt-4 inline-flex min-h-[44px] items-center justify-center rounded-full px-6 text-sm font-extrabold text-white shadow-lg"
+          className="gonr-gradient mt-4 inline-flex min-h-[44px] items-center justify-center rounded-full px-6 text-sm font-extrabold text-white shadow-lg transition-transform duration-150 active:scale-95"
         >
-          Start a stain check
+          {t('library.startCheckCta')}
         </Link>
       ) : null}
     </div>

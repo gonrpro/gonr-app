@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { ChevronDown, XCircle } from 'lucide-react'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 // TASK-218 SHARED FOUNDATION — the highest-stakes teaching surface.
 // Renders EVERY prohibition the engine returns: safetyMatrix.neverDo +
@@ -74,23 +75,28 @@ export default function DoNotDoPanel({
   materialWarnings,
   avoid,
   items,
-  heading = 'Things to avoid (for this stain)',
+  heading,
   className,
   collapsible = false,
   initialVisible = 5,
 }: DoNotDoPanelProps) {
+  const { t } = useLanguage()
   const rows = dedupeMerge([neverDo, materialWarnings, avoid], items)
   const [showAll, setShowAll] = useState(false)
   if (rows.length === 0) return null
+
+  // `null` explicitly suppresses the eyebrow (DoNotDoScreen owns the canonical
+  // headline); a passed string overrides; undefined falls back to the catalog default.
+  const resolvedHeading = heading === null ? null : (heading ?? t('doNotDo.panelHeadingDefault'))
 
   // Progressive disclosure: hide (never drop) the tail beyond the highest-risk head.
   const canCollapse = collapsible && rows.length > initialVisible
   const visibleRows = canCollapse && !showAll ? rows.slice(0, initialVisible) : rows
 
   return (
-    <section className={className} aria-label="Things to avoid">
-      {heading ? (
-        <p className="mb-3 text-sm font-extrabold uppercase tracking-wide text-gonr-textgray">{heading}</p>
+    <section className={className} aria-label={t('doNotDo.panelAria')}>
+      {resolvedHeading ? (
+        <p className="mb-3 text-sm font-extrabold uppercase tracking-wide text-gonr-textgray">{resolvedHeading}</p>
       ) : null}
       <ul className="grid gap-2">
         {visibleRows.map((row, index) => (
@@ -112,7 +118,9 @@ export default function DoNotDoPanel({
           aria-expanded={showAll}
           className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-full border border-[var(--gonr-border)] bg-white px-4 py-2 text-sm font-extrabold text-gonr-navy"
         >
-          {showAll ? 'Show fewer' : `Show all ${rows.length} warnings`}
+          {showAll
+            ? t('doNotDo.showFewer')
+            : t('doNotDo.showAllWarnings').replace('{count}', String(rows.length))}
           <ChevronDown
             size={16}
             className={`shrink-0 transition-transform duration-200 ${showAll ? 'rotate-180' : ''}`}

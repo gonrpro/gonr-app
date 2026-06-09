@@ -3,25 +3,28 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Home, Clock, Bookmark, User, type LucideIcon } from 'lucide-react'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 // TASK-218 SHARED FOUNDATION — canonical consumer bottom nav.
 // Extracted out of HomeScreen so every /solve-v2 screen renders ONE identical nav.
 // Mockup screen 1 is the visual source of truth: 4 tabs (Home / History / Saved /
-// Profile), NO center FAB. Premium fabric-care feel — active tab reads in brand
-// hot-pink with a soft-pink pill + gradient indicator dot; inactive is calm navy.
-// Screen agents import this verbatim and MUST NOT redefine the nav.
+// Profile), NO center FAB. This is the ONLY sticky chrome on the consumer surface —
+// nothing else competes with the stain action. Premium fabric-care feel — active
+// tab reads in brand hot-pink with a soft-pink pill + gradient indicator dot;
+// inactive is calm navy. Labels are i18n key-based; screen agents import this
+// verbatim and MUST NOT redefine the nav.
 
 type NavItem = {
-  label: string
+  tKey: string
   href: string
   Icon: LucideIcon
 }
 
 const NAV_ITEMS: readonly NavItem[] = [
-  { label: 'Home', href: '/solve-v2', Icon: Home },
-  { label: 'History', href: '/solve-v2/history', Icon: Clock },
-  { label: 'Saved', href: '/solve-v2/saved', Icon: Bookmark },
-  { label: 'Profile', href: '/solve-v2/profile', Icon: User },
+  { tKey: 'nav.home', href: '/solve-v2', Icon: Home },
+  { tKey: 'nav.history', href: '/solve-v2/history', Icon: Clock },
+  { tKey: 'nav.saved', href: '/solve-v2/saved', Icon: Bookmark },
+  { tKey: 'nav.profile', href: '/solve-v2/profile', Icon: User },
 ] as const
 
 function isActive(pathname: string, href: string): boolean {
@@ -32,17 +35,19 @@ function isActive(pathname: string, href: string): boolean {
 
 export default function BottomNav() {
   const pathname = usePathname() ?? '/solve-v2'
+  const { t } = useLanguage()
 
   return (
     <nav
-      aria-label="Primary"
+      aria-label={t('nav.primaryAria')}
       className="fixed inset-x-0 bottom-0 z-30 mx-auto max-w-[480px] border-t border-[var(--gonr-border)] bg-white/95 px-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur-xl"
     >
       <ul className="grid grid-cols-4">
-        {NAV_ITEMS.map(({ label, href, Icon }) => {
+        {NAV_ITEMS.map(({ tKey, href, Icon }) => {
           const active = isActive(pathname, href)
+          const label = t(tKey)
           return (
-            <li key={label} className="flex justify-center">
+            <li key={href} className="flex justify-center">
               <Link
                 href={href}
                 aria-current={active ? 'page' : undefined}

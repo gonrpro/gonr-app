@@ -43,5 +43,24 @@ export async function decide(input: DecideInput): Promise<LookupResult> {
   // For now: the callsite in /api/solve still handles plant + safety after
   // this call, so we keep decide() as a drop-in for lookupProtocol and pull
   // logic inward over time.
-  return lookupProtocol(input.stain, input.surface)
+  const base = await lookupProtocol(input.stain, input.surface)
+
+  // ── ES→AI-tier fallback (TASK-218, Tyler 2026-06-09) ──────────────────────
+  // The curated card library is English-only today. Serving an English library
+  // card to a non-English request would mix languages and — far worse — ship
+  // English safety prose to someone who asked in Spanish. Until SB authors
+  // localized cards, suppress any library hit for a non-English lang so the
+  // solve route falls through to the AI tier, which generates IN the requested
+  // language. We mirror lookupProtocol's own no-match shape exactly
+  // ({card:null, tier:4, confidence:0, source:'ai'}) so the route's
+  // `if (result.card)` branch is skipped and the AI path runs unchanged.
+  //
+  // Fail-safe: lang defaults to 'en', so an absent/unknown lang is treated as
+  // English and English behavior is byte-for-byte unchanged.
+  const lang = (input.lang ?? 'en').toLowerCase()
+  if (lang !== 'en' && base.card) {
+    return { card: null, tier: 4, confidence: 0, source: 'ai' }
+  }
+
+  return base
 }

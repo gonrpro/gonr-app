@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import {
   Camera,
   ImageIcon,
@@ -94,12 +95,10 @@ type SheetView = 'menu' | 'scanning' | 'error'
 
 type ScanKind = 'stain' | 'care'
 
-/** Which not-yet-wired feature the user tapped, so we can degrade honestly. */
-type Unavailable = {
-  title: string
-  body: string
-  cta: string
-}
+/** Which not-yet-wired feature the user tapped, so we can degrade honestly. Stored
+ *  as a KIND (not resolved copy) so the honest-degrade panel re-translates live when
+ *  the language toggle flips while the sheet is open. */
+type Unavailable = 'product' | 'voice'
 
 const EXIT_MS = 240
 
@@ -110,6 +109,7 @@ export default function AttachMenu({
   initialAction = 'menu',
 }: AttachMenuProps) {
   const router = useRouter()
+  const { t } = useLanguage()
 
   // Two-phase mount so the sheet can animate in AND out without a transition lib.
   const [mounted, setMounted] = useState(open)
@@ -284,7 +284,7 @@ export default function AttachMenu({
       {/* Scrim */}
       <button
         type="button"
-        aria-label="Close"
+        aria-label={t('common.close')}
         onClick={onClose}
         className={`absolute inset-0 bg-gonr-navy/35 backdrop-blur-[2px] transition-opacity duration-200 ${
           shown ? 'opacity-100' : 'opacity-0'
@@ -303,11 +303,11 @@ export default function AttachMenu({
         {/* header */}
         <div className="flex items-center justify-between">
           <h2 id="attach-menu-title" className="text-xl font-black text-gonr-navy">
-            What&rsquo;s going on?
+            {t('attach.sheetTitle')}
           </h2>
           <button
             type="button"
-            aria-label="Close"
+            aria-label={t('common.close')}
             onClick={onClose}
             className="grid h-9 w-9 place-items-center rounded-full bg-gonr-lightgray text-gonr-navy/60 transition-colors hover:text-gonr-navy"
           >
@@ -330,7 +330,7 @@ export default function AttachMenu({
 
         {view === 'menu' && unavailable && (
           <UnavailablePanel
-            feature={unavailable}
+            kind={unavailable}
             onContinue={goToChat}
             onBack={() => setUnavailable(null)}
           />
@@ -340,14 +340,14 @@ export default function AttachMenu({
           <div className="mt-4 flex flex-col gap-2.5">
             <MenuRow
               Icon={Camera}
-              title="Take Photo"
-              sub="Use your camera"
+              title={t('attach.takePhotoTitle')}
+              sub={t('attach.takePhotoSub')}
               onClick={() => takePhotoRef.current?.click()}
             />
             <MenuRow
               Icon={ImageIcon}
-              title="Choose Photo"
-              sub="From your library"
+              title={t('attach.choosePhotoTitle')}
+              sub={t('attach.choosePhotoSub')}
               onClick={() => choosePhotoRef.current?.click()}
             />
 
@@ -356,27 +356,15 @@ export default function AttachMenu({
 
             <MenuRow
               Icon={SprayCan}
-              title="Add Product Label"
-              sub="Ingredients & warnings"
-              onClick={() =>
-                setUnavailable({
-                  title: 'Tell GONR about the product',
-                  body: "Reading a product label from a photo isn't available yet. Type which product you're using and GONR will factor it in.",
-                  cta: 'Describe it in chat',
-                })
-              }
+              title={t('attach.productLabelTitle')}
+              sub={t('attach.productLabelSub')}
+              onClick={() => setUnavailable('product')}
             />
             <MenuRow
               Icon={Mic}
-              title="Voice Note"
-              sub="Describe what happened"
-              onClick={() =>
-                setUnavailable({
-                  title: 'Type what happened',
-                  body: "Voice capture isn't available yet. Typing what happened works exactly the same.",
-                  cta: 'Type it instead',
-                })
-              }
+              title={t('attach.voiceTitle')}
+              sub={t('attach.voiceSub')}
+              onClick={() => setUnavailable('voice')}
             />
 
             <button
@@ -384,7 +372,7 @@ export default function AttachMenu({
               onClick={onClose}
               className="mt-1.5 w-full rounded-2xl bg-gonr-lightgray py-3.5 text-center text-base font-extrabold text-gonr-navy transition-colors hover:bg-gonr-softpink"
             >
-              Cancel
+              {t('common.cancel')}
             </button>
           </div>
         )}
@@ -425,6 +413,7 @@ function MenuRow({
 
 /** Care-label row, elevated with a gradient hairline + a "safety first" tag. */
 function CareLabelRow({ onClick }: { onClick: () => void }) {
+  const { t } = useLanguage()
   return (
     <button
       type="button"
@@ -437,13 +426,13 @@ function CareLabelRow({ onClick }: { onClick: () => void }) {
         </span>
         <span className="flex min-w-0 flex-1 flex-col">
           <span className="flex items-center gap-2">
-            <span className="text-base font-extrabold text-gonr-navy">Scan Care Label</span>
+            <span className="text-base font-extrabold text-gonr-navy">{t('attach.careLabelTitle')}</span>
             <span className="inline-flex items-center gap-1 rounded-full bg-gonr-softpink px-2 py-0.5 text-[10px] font-black uppercase tracking-wide text-gonr-hotpink">
               <ShieldCheck size={11} />
-              Safety first
+              {t('attach.careLabelTag')}
             </span>
           </span>
-          <span className="truncate text-sm text-gonr-textgray">Read fabric &amp; care info</span>
+          <span className="truncate text-sm text-gonr-textgray">{t('attach.careLabelSub')}</span>
         </span>
         <ChevronRight size={20} className="shrink-0 text-gonr-hotpink" aria-hidden="true" />
       </span>
@@ -453,16 +442,17 @@ function CareLabelRow({ onClick }: { onClick: () => void }) {
 
 /** Calm loading state while a photo is read. No verdict, no certainty promise. */
 function ScanningPanel({ kind }: { kind: ScanKind }) {
+  const { t } = useLanguage()
   return (
     <div className="flex flex-col items-center gap-3 py-12 text-center">
       <span className="gonr-gradient grid h-14 w-14 place-items-center rounded-full text-white">
         <Loader2 size={26} className="animate-spin" />
       </span>
       <p className="text-base font-extrabold text-gonr-navy">
-        {kind === 'care' ? 'Reading the care label…' : 'Reading your photo…'}
+        {kind === 'care' ? t('attach.scanningCare') : t('attach.scanningPhoto')}
       </p>
       <p className="max-w-[18rem] text-sm text-gonr-textgray">
-        Getting a first read. You&rsquo;ll confirm the details before any advice.
+        {t('attach.scanningConfirm')}
       </p>
     </div>
   )
@@ -478,16 +468,17 @@ function ErrorPanel({
   onRetry: () => void
   onTypeInstead: () => void
 }) {
+  const { t } = useLanguage()
   return (
     <div className="flex flex-col items-center gap-3 py-8 text-center">
       <span className="grid h-14 w-14 place-items-center rounded-full bg-gonr-softpink text-gonr-hotpink">
         <AlertTriangle size={26} />
       </span>
       <p className="text-base font-extrabold text-gonr-navy">
-        {kind === 'care' ? "Couldn't read that label" : "Couldn't read that photo"}
+        {kind === 'care' ? t('attach.errorCare') : t('attach.errorPhoto')}
       </p>
       <p className="max-w-[18rem] text-sm text-gonr-textgray">
-        It happens. Try another shot, or just tell GONR what happened.
+        {t('attach.errorBody')}
       </p>
       <div className="mt-2 flex w-full flex-col gap-2.5">
         <button
@@ -495,51 +486,56 @@ function ErrorPanel({
           onClick={onRetry}
           className="gonr-gradient w-full rounded-2xl py-3.5 text-base font-extrabold text-white shadow-lg"
         >
-          Try again
+          {t('attach.errorRetry')}
         </button>
         <button
           type="button"
           onClick={onTypeInstead}
           className="w-full rounded-2xl bg-gonr-lightgray py-3.5 text-base font-extrabold text-gonr-navy transition-colors hover:bg-gonr-softpink"
         >
-          Describe it instead
+          {t('attach.errorTypeInstead')}
         </button>
       </div>
     </div>
   )
 }
 
-/** Honest degrade for inputs without a backing endpoint — routes to the chat path. */
+/** Honest degrade for inputs without a backing endpoint — routes to the chat path.
+ *  Resolves its copy from the tapped feature KIND so it re-translates live. */
 function UnavailablePanel({
-  feature,
+  kind,
   onContinue,
   onBack,
 }: {
-  feature: Unavailable
+  kind: Unavailable
   onContinue: () => void
   onBack: () => void
 }) {
+  const { t } = useLanguage()
+  const title = kind === 'product' ? t('attach.productUnavailableTitle') : t('attach.voiceUnavailableTitle')
+  const body = kind === 'product' ? t('attach.productUnavailableBody') : t('attach.voiceUnavailableBody')
+  const cta = kind === 'product' ? t('attach.productUnavailableCta') : t('attach.voiceUnavailableCta')
   return (
     <div className="flex flex-col items-center gap-3 py-8 text-center">
       <span className="grid h-14 w-14 place-items-center rounded-full bg-gonr-softpink text-gonr-hotpink">
         <MessageCircle size={26} />
       </span>
-      <p className="text-base font-extrabold text-gonr-navy">{feature.title}</p>
-      <p className="max-w-[18rem] text-sm text-gonr-textgray">{feature.body}</p>
+      <p className="text-base font-extrabold text-gonr-navy">{title}</p>
+      <p className="max-w-[18rem] text-sm text-gonr-textgray">{body}</p>
       <div className="mt-2 flex w-full flex-col gap-2.5">
         <button
           type="button"
           onClick={onContinue}
           className="gonr-gradient w-full rounded-2xl py-3.5 text-base font-extrabold text-white shadow-lg"
         >
-          {feature.cta}
+          {cta}
         </button>
         <button
           type="button"
           onClick={onBack}
           className="w-full rounded-2xl bg-gonr-lightgray py-3.5 text-base font-extrabold text-gonr-navy transition-colors hover:bg-gonr-softpink"
         >
-          Back
+          {t('back')}
         </button>
       </div>
     </div>

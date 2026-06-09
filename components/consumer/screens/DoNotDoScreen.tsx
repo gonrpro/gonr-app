@@ -1,5 +1,8 @@
+'use client'
+
 import { AlertTriangle } from 'lucide-react'
 import DoNotDoPanel, { type DoNotDoItem } from '@/components/consumer/DoNotDoPanel'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 // TASK-218 SCREEN 6 — DO-NOT-DO.
 // Premium severity wrapper around the scaffold DoNotDoPanel. Co-located with the
@@ -51,6 +54,7 @@ export default function DoNotDoScreen({
   className,
   collapsible = false,
 }: DoNotDoScreenProps) {
+  const { t } = useLanguage()
   if (!hasContent([neverDo, materialWarnings, avoid], items)) return null
 
   return (
@@ -68,10 +72,10 @@ export default function DoNotDoScreen({
             id="gonr-donotdo-title"
             className="text-lg font-black leading-tight text-gonr-navy"
           >
-            {heading ?? 'Do not do'}
+            {heading ?? t('doNotDo.screenHeadingDefault')}
           </h2>
           <p className="text-sm font-medium leading-5 text-gonr-textgray">
-            Clear guidance on what could make it worse.
+            {t('doNotDo.screenSubhead')}
           </p>
         </div>
       </div>

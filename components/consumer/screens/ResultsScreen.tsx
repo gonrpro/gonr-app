@@ -27,6 +27,7 @@ import {
   labelFor,
 } from '@/lib/consumer-safety/solve-input'
 import { type SolveSource, resolveSourceLabel } from '@/lib/consumer-safety/solve-source'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import BottomNav from '@/components/consumer/BottomNav'
 import BetaBadge from '@/components/consumer/BetaBadge'
 import ResultsStepList from '@/components/consumer/ResultsStepList'
@@ -148,11 +149,12 @@ export interface ResultsScreenProps {
 }
 
 // Risk badge — green-free. Low reads calm navy (never a green "all-clear"),
-// medium amber, high hot-pink. Differentiated by label + color, not green.
-const RISK_STYLE: Record<string, { label: string; color: string; bg: string }> = {
-  low: { label: 'Low risk', color: 'var(--gonr-text)', bg: 'var(--color-gonr-lightgray)' },
-  medium: { label: 'Some risk', color: 'var(--gonr-state-limited)', bg: 'rgba(232,146,12,0.10)' },
-  high: { label: 'High risk', color: 'var(--gonr-state-stop)', bg: 'rgba(247,10,117,0.08)' },
+// medium amber, high hot-pink. Differentiated by label + color, not green. The
+// label is an i18n key resolved at render so the badge speaks the user's language.
+const RISK_STYLE: Record<string, { labelKey: string; color: string; bg: string }> = {
+  low: { labelKey: 'results.riskLow', color: 'var(--gonr-text)', bg: 'var(--color-gonr-lightgray)' },
+  medium: { labelKey: 'results.riskMedium', color: 'var(--gonr-state-limited)', bg: 'rgba(232,146,12,0.10)' },
+  high: { labelKey: 'results.riskHigh', color: 'var(--gonr-state-stop)', bg: 'rgba(247,10,117,0.08)' },
 }
 
 // Concrete fiber tokens, drawn from the canonical material vocabulary, used ONLY to
@@ -198,9 +200,14 @@ function inferredFabric(input: SolveInput, title: string | undefined): string | 
  *  Split it into a concise HEAD for the H1 and the remaining DETAIL, rendered as a
  *  calm subtitle, so the hero reads clean and NO engine text is dropped. A normal
  *  curated title ("Coffee on Cotton") has no sentence break and passes through. */
+// English sentinel returned by splitTitle when there is no engine title. The render
+// layer swaps it for the localized results.titleFallback; kept as an exported const
+// so the (English) unit test and the render-time localization agree on one value.
+export const RESCUE_PLAN_FALLBACK = 'Your rescue plan'
+
 export function splitTitle(raw: string | undefined): { head: string; detail: string } {
   const t = (raw ?? '').trim()
-  if (!t) return { head: 'Your rescue plan', detail: '' }
+  if (!t) return { head: RESCUE_PLAN_FALLBACK, detail: '' }
   const m = t.match(/^(.*?[.!?])\s+(.+)$/)
   let head = (m ? m[1] : t).replace(/[.!?]\s*$/, '').trim()
   let detail = m ? m[2].trim() : ''
@@ -209,21 +216,23 @@ export function splitTitle(raw: string | undefined): { head: string; detail: str
     detail = detail ? `${head}. ${detail}` : head
     head = `${cut}…`
   }
-  return { head: head || 'Your rescue plan', detail }
+  return { head: head || RESCUE_PLAN_FALLBACK, detail }
 }
 
-/** Human one-line of the captured context, for the result header chip. */
-function contextSummary(input: SolveInput, override: string | null): string {
+/** Human one-line of the captured context, for the result header chip. The caller
+ *  passes the localized fallback so an empty/unknown context still reads in-language. */
+function contextSummary(input: SolveInput, override: string | null, stainFallback: string): string {
   const base = (override ?? input.stainDescription).trim()
   if (base) return base
-  return input.material !== 'unknown' ? labelFor(MATERIAL_OPTIONS, input.material) : 'Your stain'
+  return input.material !== 'unknown' ? labelFor(MATERIAL_OPTIONS, input.material) : stainFallback
 }
 
 function ScreenShell({ children }: { children: React.ReactNode }) {
+  const { t } = useLanguage()
   return (
     <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-[calc(7rem_+_env(safe-area-inset-bottom))] pt-5">
       <div className="flex items-center justify-between">
-        <Link href="/solve-v2/solve" aria-label="Back to intake" className="text-gonr-navy/60">
+        <Link href="/solve-v2/solve" aria-label={t('results.backToIntakeAria')} className="text-gonr-navy/60">
           <ArrowLeft size={22} />
         </Link>
         <span className="flex items-center gap-2">
@@ -256,6 +265,7 @@ export default function ResultsScreen({
   onSave,
   onLogOutcome,
 }: ResultsScreenProps) {
+  const { t } = useLanguage()
   // When the orchestrator already fetched the verdict, seed state from it so the
   // first render shows the engine answer without another call (no setState-in-effect).
   const [status, setStatus] = useState<LoadState>(() => (prefetched ? 'loaded' : 'loading'))
@@ -419,7 +429,7 @@ export default function ResultsScreen({
     }
   }
 
-  const headerContext = contextSummary(input, override)
+  const headerContext = contextSummary(input, override, t('results.contextFallback'))
 
   // ── 0. Nothing to solve yet — ask for the stain (no engine call) ───────────
   // A pre-fetched verdict always renders, even if the assembled stain text is thin.
@@ -430,14 +440,14 @@ export default function ResultsScreen({
           <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-gonr-softpink text-gonr-hotpink">
             <Sparkles size={24} aria-hidden="true" />
           </span>
-          <h1 className="mt-4 text-xl font-black text-gonr-navy">What’s the stain?</h1>
+          <h1 className="mt-4 text-xl font-black text-gonr-navy">{t('results.emptyHeading')}</h1>
           <p className="mt-2 text-sm font-medium leading-6 text-gonr-textgray">
-            Tell us what happened and we’ll find the safest first move.
+            {t('results.emptyBody')}
           </p>
         </section>
         <FollowUp
           value={followUp}
-          placeholder="e.g. red wine on white cotton shirt…"
+          placeholder={t('results.emptyPlaceholder')}
           onChange={setFollowUp}
           onSubmit={() => resolveWith(followUp)}
         />
@@ -452,9 +462,9 @@ export default function ResultsScreen({
         <ContextChip text={headerContext} />
         <div className="mt-8 flex flex-col items-center justify-center gap-4 py-10 text-center">
           <Loader2 size={30} className="animate-spin text-gonr-hotpink" aria-hidden="true" />
-          <p className="text-base font-bold text-gonr-navy">Reading your details…</p>
+          <p className="text-base font-bold text-gonr-navy">{t('results.loadingTitle')}</p>
           <p className="max-w-[20rem] text-sm font-medium text-gonr-textgray">
-            Checking the verified library and safety rules for the safest first move.
+            {t('results.loadingBody')}
           </p>
         </div>
       </ScreenShell>
@@ -465,7 +475,7 @@ export default function ResultsScreen({
   if (status === 'error' && !data) {
     return (
       <ScreenShell>
-        <ErrorState heading="Couldn’t reach GONR" message="Check your connection and try again." onRetry={retry} />
+        <ErrorState heading={t('results.errorNetworkHeading')} message={t('results.errorNetworkBody')} onRetry={retry} />
       </ScreenShell>
     )
   }
@@ -483,18 +493,16 @@ export default function ResultsScreen({
             <Lock size={24} aria-hidden="true" />
           </span>
           <h1 className="mt-4 text-xl font-black text-gonr-navy">
-            {limit ? 'You’ve used your free reads' : 'Your trial has ended'}
+            {limit ? t('results.paywallLimitHeading') : t('results.paywallTrialHeading')}
           </h1>
           <p className="mt-2 text-sm font-medium leading-6 text-gonr-textgray">
-            {limit
-              ? 'Come back a little later for more free guidance, or sign in to keep going.'
-              : 'Sign in to keep getting verified stain guidance.'}
+            {limit ? t('results.paywallLimitBody') : t('results.paywallTrialBody')}
           </p>
           <Link
             href="/solve-v2/profile"
             className="gonr-gradient mt-5 inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full px-5 text-[15px] font-extrabold text-white shadow-lg"
           >
-            Continue
+            {t('results.continue')}
             <ChevronRight size={18} aria-hidden="true" />
           </Link>
         </section>
@@ -512,14 +520,14 @@ export default function ResultsScreen({
           <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gonr-softpink text-gonr-hotpink">
             <ScanLine size={24} aria-hidden="true" />
           </span>
-          <h1 className="mt-4 text-xl font-black text-gonr-navy">We read the care label</h1>
+          <h1 className="mt-4 text-xl font-black text-gonr-navy">{t('results.careLabelHeading')}</h1>
           {res.message ? (
             <p className="mt-2 text-sm font-medium leading-6 text-gonr-textgray">{res.message}</p>
           ) : null}
 
           {fiber?.fiber ? (
             <p className="mt-4 text-sm font-bold text-gonr-navy">
-              Fabric: <span className="font-extrabold">{fiber.fiber}</span>
+              {t('results.fabricLabel')} <span className="font-extrabold">{fiber.fiber}</span>
             </p>
           ) : null}
 
@@ -537,13 +545,13 @@ export default function ResultsScreen({
           ) : null}
 
           {fiber?.warnings && fiber.warnings.length > 0 ? (
-            <DoNotDoPanel className="mt-5" heading="From the label" materialWarnings={fiber.warnings} />
+            <DoNotDoPanel className="mt-5" heading={t('results.fromTheLabel')} materialWarnings={fiber.warnings} />
           ) : null}
         </section>
 
         <FollowUp
           value={followUp}
-          placeholder="Add the stain (e.g. red wine)…"
+          placeholder={t('results.addStainPlaceholder')}
           onChange={setFollowUp}
           onSubmit={() => resolveWith(followUp)}
         />
@@ -555,7 +563,7 @@ export default function ResultsScreen({
   if (http === 429) {
     return (
       <ScreenShell>
-        <ErrorState heading="One moment" message="A lot of requests just came in. Try again in a few seconds." onRetry={retry} />
+        <ErrorState heading={t('results.rateLimitHeading')} message={t('results.rateLimitBody')} onRetry={retry} />
       </ScreenShell>
     )
   }
@@ -563,8 +571,8 @@ export default function ResultsScreen({
     return (
       <ScreenShell>
         <ErrorState
-          heading="We couldn’t finish that"
-          message={res.error === 'Stain required' ? 'Tell us what the stain is and we’ll take another look.' : (res.message || 'Something went wrong on our side. Please try again.')}
+          heading={t('results.errorGenericHeading')}
+          message={res.error === 'Stain required' ? t('results.errorStainRequiredBody') : (res.message || t('results.errorGenericBody'))}
           onRetry={retry}
         />
       </ScreenShell>
@@ -578,7 +586,7 @@ export default function ResultsScreen({
       <ScreenShell>
         <ContextChip text={headerContext} />
         <section className="gonr-card mt-6 p-5">
-          <p className="text-xs font-extrabold uppercase tracking-wide text-gonr-hotpink">One quick question</p>
+          <p className="text-xs font-extrabold uppercase tracking-wide text-gonr-hotpink">{t('results.disambiguationEyebrow')}</p>
           <h1 className="mt-2 text-lg font-black leading-snug text-gonr-navy">{prompt.question}</h1>
           <div className="mt-4 grid gap-2">
             {prompt.options.map((option) => (
@@ -607,7 +615,7 @@ export default function ResultsScreen({
           <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gonr-softpink text-gonr-hotpink">
             <ShieldAlert size={24} aria-hidden="true" />
           </span>
-          <h1 className="mt-4 text-xl font-black text-gonr-navy">No verified protocol yet</h1>
+          <h1 className="mt-4 text-xl font-black text-gonr-navy">{t('results.noProtocolHeading')}</h1>
           {res.message ? (
             <p className="mt-2 text-sm font-medium leading-6 text-gonr-textgray">{res.message}</p>
           ) : null}
@@ -615,7 +623,7 @@ export default function ResultsScreen({
         </section>
         <FollowUp
           value={followUp}
-          placeholder="Add a detail and we’ll re-check…"
+          placeholder={t('results.addDetailPlaceholder')}
           onChange={setFollowUp}
           onSubmit={() => resolveWith(followUp)}
         />
@@ -652,6 +660,9 @@ export default function ResultsScreen({
   // present an inferred fabric as certain.
   const assumedFabric = inferredFabric(input, card?.title)
   const titleParts = splitTitle(card?.title)
+  // Engine titles render verbatim; only the no-title sentinel is localized.
+  const displayTitle =
+    titleParts.head === RESCUE_PLAN_FALLBACK ? t('results.titleFallback') : titleParts.head
 
   return (
     <ScreenShell>
@@ -662,14 +673,14 @@ export default function ResultsScreen({
         <div className="gonr-verdict-stop mt-5 flex items-start gap-3">
           <AlertTriangle size={20} className="gonr-severity-text mt-0.5 shrink-0" aria-hidden="true" />
           <p className="gonr-severity-text text-sm font-extrabold leading-6">
-            Safety stop — don’t treat this yet. Follow the guidance below exactly.
+            {t('results.safetyStop')}
           </p>
         </div>
       ) : res._safetyBlocked ? (
         <div className="gonr-verdict-caution mt-5 flex items-start gap-3">
           <ShieldAlert size={20} className="gonr-severity-text mt-0.5 shrink-0" aria-hidden="true" />
           <p className="gonr-severity-text text-sm font-extrabold leading-6">
-            Safety-adjusted guidance — we replaced a riskier step with a safer one.
+            {t('results.safetyAdjusted')}
           </p>
         </div>
       ) : null}
@@ -690,7 +701,7 @@ export default function ResultsScreen({
           <div className="flex items-start gap-2">
             <Info size={18} className="mt-0.5 shrink-0 text-gonr-textgray" aria-hidden="true" />
             <p className="text-sm font-medium leading-6 text-gonr-textgray">
-              This is general guidance, not stain-specific — our AI assist is temporarily unavailable.
+              {t('results.aiUnavailable')}
             </p>
           </div>
         </div>
@@ -698,14 +709,14 @@ export default function ResultsScreen({
 
       <div className="mt-6 flex items-start justify-between gap-3">
         <h1 className="text-2xl font-black leading-tight text-gonr-navy">
-          {titleParts.head}
+          {displayTitle}
         </h1>
         {risk ? (
           <span
             className="mt-1 shrink-0 rounded-full px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide"
             style={{ color: risk.color, background: risk.bg }}
           >
-            {risk.label}
+            {t(risk.labelKey)}
           </span>
         ) : null}
       </div>
@@ -735,7 +746,7 @@ export default function ResultsScreen({
           rest live in a collapsed "Full rescue plan" accordion. No step is dropped. */}
       {steps.length > 0 ? (
         <div className="gonr-card mt-4 p-5">
-          <ResultsStepList steps={primarySteps} heading="Do this now" />
+          <ResultsStepList steps={primarySteps} heading={t('results.doThisNow')} />
 
           {restSteps.length > 0 ? (
             <div className="mt-4 border-t border-[var(--gonr-border)] pt-4">
@@ -747,8 +758,10 @@ export default function ResultsScreen({
               >
                 <span className="text-sm font-extrabold text-gonr-navy">
                   {showFullPlan
-                    ? 'Full rescue plan'
-                    : `Full rescue plan — ${restSteps.length} more ${restSteps.length === 1 ? 'step' : 'steps'}`}
+                    ? t('results.fullRescuePlan')
+                    : restSteps.length === 1
+                      ? t('results.fullRescuePlanMoreOne')
+                      : t('results.fullRescuePlanMoreOther').replace('{count}', String(restSteps.length))}
                 </span>
                 <ChevronDown
                   size={18}
@@ -798,7 +811,7 @@ export default function ResultsScreen({
               className="flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-gonr-hotpink/30 bg-white px-5 text-[15px] font-extrabold text-gonr-hotpink"
             >
               <Bookmark size={18} aria-hidden="true" />
-              Sign in to save
+              {t('results.signInToSave')}
             </Link>
           ) : (
             <button
@@ -810,22 +823,22 @@ export default function ResultsScreen({
               {saveState === 'saved' ? (
                 <>
                   <BookmarkCheck size={18} aria-hidden="true" />
-                  Saved just now
+                  {t('results.savedJustNow')}
                 </>
               ) : saveState === 'saving' ? (
                 <>
                   <Loader2 size={18} className="animate-spin" aria-hidden="true" />
-                  Saving…
+                  {t('results.saving')}
                 </>
               ) : saveState === 'error' ? (
                 <>
                   <Bookmark size={18} aria-hidden="true" />
-                  Couldn’t save — tap to retry
+                  {t('results.saveErrorRetry')}
                 </>
               ) : (
                 <>
                   <Bookmark size={18} aria-hidden="true" />
-                  Save to My Library
+                  {t('results.saveToLibrary')}
                 </>
               )}
             </button>
@@ -835,7 +848,7 @@ export default function ResultsScreen({
           {outcome === null ? (
             <>
               <p className="text-xs font-extrabold uppercase tracking-wide text-gonr-textgray">
-                Did this help?
+                {t('results.didThisHelp')}
               </p>
               <div className="mt-3 grid grid-cols-2 gap-2">
                 <button
@@ -843,22 +856,20 @@ export default function ResultsScreen({
                   onClick={() => handleOutcome(true)}
                   className="min-h-[44px] rounded-full bg-gonr-softpink px-4 text-sm font-extrabold text-gonr-hotpink"
                 >
-                  It worked
+                  {t('results.itWorked')}
                 </button>
                 <button
                   type="button"
                   onClick={() => handleOutcome(false)}
                   className="min-h-[44px] rounded-full border border-[var(--gonr-border)] bg-white px-4 text-sm font-extrabold text-gonr-navy"
                 >
-                  Not yet
+                  {t('results.notYet')}
                 </button>
               </div>
             </>
           ) : (
             <p className="text-sm font-bold leading-6 text-gonr-navy">
-              {outcome
-                ? 'Glad it helped — thanks for letting us know.'
-                : 'Thanks — noted. If the stain is stubborn, a professional cleaner is the safest next step.'}
+              {outcome ? t('results.outcomeWorked') : t('results.outcomeNotYet')}
             </p>
           )}
         </div>
@@ -867,7 +878,7 @@ export default function ResultsScreen({
       <FollowUp
         inputRef={followUpRef}
         value={followUp}
-        placeholder="Ask a follow-up…"
+        placeholder={t('results.followUpPlaceholder')}
         onChange={setFollowUp}
         onSubmit={() => resolveWith(followUp)}
       />
@@ -882,6 +893,7 @@ function InferredFabricNote({
   fabric: string
   onConfirm: () => void
 }) {
+  const { t } = useLanguage()
   const label = fabric.charAt(0).toUpperCase() + fabric.slice(1)
   return (
     <div className="mt-3 flex items-start gap-2.5 rounded-2xl border border-[var(--gonr-border)] bg-gonr-lightgray px-4 py-3">
@@ -892,17 +904,18 @@ function InferredFabricNote({
         aria-hidden="true"
       />
       <div className="min-w-0">
-        <p className="text-sm font-bold leading-5 text-gonr-navy">We assumed the fabric is {label}.</p>
+        <p className="text-sm font-bold leading-5 text-gonr-navy">
+          {t('results.assumedFabric').replace('{fabric}', label)}
+        </p>
         <p className="mt-0.5 text-[13px] font-medium leading-5 text-gonr-textgray">
-          You didn’t confirm the material, so this is our best read. If it’s not {label}, tell us so we
-          keep the advice safe.
+          {t('results.assumedFabricBody').replace(/\{fabric\}/g, label)}
         </p>
         <button
           type="button"
           onClick={onConfirm}
           className="mt-2 text-[13px] font-extrabold text-gonr-hotpink underline-offset-2 hover:underline"
         >
-          Confirm or change fabric
+          {t('results.confirmOrChangeFabric')}
         </button>
       </div>
     </div>
@@ -910,17 +923,19 @@ function InferredFabricNote({
 }
 
 function SourceLine({ source }: { source?: SolveSource }) {
+  const { t } = useLanguage()
   // Fail-safe: an engine source the UI has not mapped must NOT crash the result.
   const entry = resolveSourceLabel(source)
   if (!entry) return null
   return (
     <p className="mt-6 text-center text-xs font-bold text-gonr-textgray">
-      Source: {entry.label}
+      {t('results.sourcePrefix')} {entry.label}
     </p>
   )
 }
 
 function Escalation({ escalation }: { escalation: string | EngineEscalation }) {
+  const { t } = useLanguage()
   if (typeof escalation === 'string') {
     const text = escalation.trim()
     if (!text) return null
@@ -931,7 +946,7 @@ function Escalation({ escalation }: { escalation: string | EngineEscalation }) {
             <MapPin size={20} aria-hidden="true" />
           </span>
           <div className="min-w-0">
-            <p className="text-xs font-extrabold uppercase tracking-wide text-gonr-textgray">When to see a pro</p>
+            <p className="text-xs font-extrabold uppercase tracking-wide text-gonr-textgray">{t('results.whenToSeePro')}</p>
             <p className="mt-1 text-[15px] font-semibold leading-6 text-gonr-navy">{text}</p>
           </div>
         </div>
@@ -948,16 +963,16 @@ function Escalation({ escalation }: { escalation: string | EngineEscalation }) {
           <MapPin size={20} aria-hidden="true" />
         </span>
         <div className="min-w-0">
-          <p className="text-xs font-extrabold uppercase tracking-wide text-gonr-textgray">When to see a pro</p>
+          <p className="text-xs font-extrabold uppercase tracking-wide text-gonr-textgray">{t('results.whenToSeePro')}</p>
           {when ? <p className="mt-1 text-[15px] font-semibold leading-6 text-gonr-navy">{when}</p> : null}
           {whatToTell ? (
             <p className="mt-2 text-sm font-medium leading-6 text-gonr-textgray">
-              <span className="font-extrabold text-gonr-navy">Tell them:</span> {whatToTell}
+              <span className="font-extrabold text-gonr-navy">{t('results.escalationTellThem')}</span> {whatToTell}
             </p>
           ) : null}
           {specialistType ? (
             <p className="mt-2 text-sm font-medium leading-6 text-gonr-textgray">
-              <span className="font-extrabold text-gonr-navy">Who:</span> {specialistType}
+              <span className="font-extrabold text-gonr-navy">{t('results.escalationWho')}</span> {specialistType}
             </p>
           ) : null}
         </div>
@@ -975,6 +990,7 @@ function ErrorState({
   message: string
   onRetry: () => void
 }) {
+  const { t } = useLanguage()
   return (
     <section className="gonr-card mt-8 p-6 text-center">
       <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-gonr-softpink text-gonr-hotpink">
@@ -988,7 +1004,7 @@ function ErrorState({
         className="gonr-gradient mt-5 inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 text-[15px] font-extrabold text-white shadow-lg"
       >
         <RefreshCw size={18} aria-hidden="true" />
-        Try again
+        {t('results.tryAgain')}
       </button>
     </section>
   )
@@ -1007,6 +1023,7 @@ function FollowUp({
   onSubmit: () => void
   inputRef?: React.Ref<HTMLInputElement>
 }) {
+  const { t } = useLanguage()
   return (
     <form
       onSubmit={(event) => {
@@ -1024,7 +1041,7 @@ function FollowUp({
       />
       <button
         type="submit"
-        aria-label="Send follow-up"
+        aria-label={t('results.sendFollowUpAria')}
         disabled={value.trim().length === 0}
         className="gonr-gradient grid h-9 w-9 shrink-0 place-items-center rounded-full text-white shadow-md disabled:opacity-40"
       >

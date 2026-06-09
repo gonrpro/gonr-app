@@ -6,8 +6,12 @@ import Link from 'next/link'
 import { Settings, ArrowRight, ChevronRight, Shirt, Sparkles, Camera, ScanLine, ShieldCheck } from 'lucide-react'
 import BottomNav from '@/components/consumer/BottomNav'
 import BetaBadge from '@/components/consumer/BetaBadge'
+import LanguageToggle from '@/components/consumer/LanguageToggle'
 import AttachMenu, { type AttachInitialAction } from '@/components/consumer/AttachMenu'
 import { EXAMPLE_CHIPS } from '@/lib/consumer-safety/solve-input'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
+
+type Translate = (key: string) => string
 
 // TASK-218 Screen 1 — HOME. Premium fabric-care brand surface, GREEN-FREE.
 //
@@ -44,24 +48,28 @@ function titleCase(value: string): string {
   return value.replace(/(^|[\s-])([a-z])/g, (_match, sep: string, ch: string) => sep + ch.toUpperCase())
 }
 
-function recentTitle(row: RecentRow): string {
-  const stain = row.stain ? titleCase(row.stain) : 'Stain check'
-  return row.surface ? `${stain} on ${titleCase(row.surface)}` : stain
+function recentTitle(row: RecentRow, t: Translate): string {
+  const stain = row.stain ? titleCase(row.stain) : t('home.recentDefaultTitle')
+  if (!row.surface) return stain
+  return t('home.recentOnSurface')
+    .replace('{stain}', stain)
+    .replace('{surface}', titleCase(row.surface))
 }
 
-function relativeWhen(iso: string): string {
+function relativeWhen(iso: string, t: Translate, lang: string): string {
   const d = new Date(iso)
   if (Number.isNaN(d.getTime())) return ''
   const now = new Date()
   const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime()
-  const t = d.getTime()
-  if (t >= startOfToday) return 'Today'
-  if (t >= startOfToday - 86_400_000) return 'Yesterday'
-  return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
+  const at = d.getTime()
+  if (at >= startOfToday) return t('home.relativeToday')
+  if (at >= startOfToday - 86_400_000) return t('home.relativeYesterday')
+  return d.toLocaleDateString(lang === 'es' ? 'es' : 'en', { month: 'short', day: 'numeric' })
 }
 
 export default function HomeScreen() {
   const router = useRouter()
+  const { t, lang } = useLanguage()
   const [query, setQuery] = useState('')
   const [recent, setRecent] = useState<RecentRow[]>([])
   const [recentLoaded, setRecentLoaded] = useState(false)
@@ -103,6 +111,16 @@ export default function HomeScreen() {
     [query, router],
   )
 
+  // Two-clause headline treatment that survives translation: the catalog string is
+  // two sentences ("Know what to do. Know what not to." / "Sabe qué hacer. Y qué no
+  // hacer."). Split on the sentence break so the SECOND clause — the "what NOT to"
+  // safety hook — stacks on its own line in brand hot-pink, in either language. If a
+  // future string has no break, it renders cleanly as one line.
+  const headline = t('home.heroHeadline')
+  const firstBreak = headline.indexOf('. ')
+  const headlineLead = firstBreak === -1 ? headline : `${headline.slice(0, firstBreak)}.`
+  const headlineHook = firstBreak === -1 ? '' : headline.slice(firstBreak + 2)
+
   return (
     <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5">
       {/* soft brand glow wash — premium depth/vibrancy behind the hero (green-free) */}
@@ -114,24 +132,31 @@ export default function HomeScreen() {
           <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
           <BetaBadge />
         </span>
-        <Link href="/solve-v2/profile" aria-label="Settings" className="text-gonr-navy/60">
-          <Settings size={22} />
-        </Link>
+        <span className="flex items-center gap-3">
+          <LanguageToggle />
+          <Link href="/solve-v2/profile" aria-label={t('home.settingsAria')} className="text-gonr-navy/60 transition-colors hover:text-gonr-navy">
+            <Settings size={22} />
+          </Link>
+        </span>
       </div>
 
-      {/* hero promise line — keeps the "know what NOT to" safety hook */}
-      <h1 className="mt-9 text-[2.1rem] font-black leading-[1.12] tracking-tight text-gonr-navy">
-        Know what to <span className="text-gonr-hotpink">do</span>.
-        <br />
-        Know what{' '}
-        <span className="whitespace-nowrap">
-          <span className="text-gonr-hotpink">not</span> to.
-        </span>
+      {/* hero promise line — keeps the "know what NOT to" safety hook. The second
+          clause carries the brand hot-pink emphasis; works in EN and ES alike. */}
+      <h1 className="gonr-fade-up mt-9 text-[2.1rem] font-black leading-[1.12] tracking-tight text-gonr-navy">
+        {headlineHook ? (
+          <>
+            {headlineLead}
+            <br />
+            <span className="text-gonr-hotpink">{headlineHook}</span>
+          </>
+        ) : (
+          headline
+        )}
       </h1>
 
       {/* magic-read invitation — sets the "show me the stain" expectation */}
       <p className="mt-3 text-[15px] font-semibold leading-6 text-gonr-textgray">
-        Show us the stain. GONR reads what it can and asks only what matters.
+        {t('home.heroSubhead')}
       </p>
 
       {/* NATIVE ON-RAMPS — photo + care-label up front, equal weight to chat. Each
@@ -147,8 +172,8 @@ export default function HomeScreen() {
             <Camera size={24} strokeWidth={2.2} aria-hidden="true" />
           </span>
           <span className="flex flex-col">
-            <span className="text-base font-extrabold text-gonr-navy">Snap the stain</span>
-            <span className="mt-0.5 text-xs font-semibold text-gonr-textgray">Photo-first read</span>
+            <span className="text-base font-extrabold text-gonr-navy">{t('home.tilePhotoTitle')}</span>
+            <span className="mt-0.5 text-xs font-semibold text-gonr-textgray">{t('home.tilePhotoSub')}</span>
           </span>
         </button>
 
@@ -162,10 +187,10 @@ export default function HomeScreen() {
           </span>
           <span className="flex flex-col">
             <span className="flex items-center gap-1.5 text-base font-extrabold text-gonr-navy">
-              Scan label
+              {t('home.tileLabelTitle')}
               <ShieldCheck size={14} className="text-gonr-hotpink" aria-hidden="true" />
             </span>
-            <span className="mt-0.5 text-xs font-semibold text-gonr-textgray">Fabric &amp; care first</span>
+            <span className="mt-0.5 text-xs font-semibold text-gonr-textgray">{t('home.tileLabelSub')}</span>
           </span>
         </button>
       </div>
@@ -183,8 +208,8 @@ export default function HomeScreen() {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Or describe what happened…"
-          aria-label="Describe your stain or fabric"
+          placeholder={t('home.describePlaceholder')}
+          aria-label={t('home.describeAria')}
           enterKeyHint="search"
           className="w-full bg-transparent px-1.5 py-1.5 text-base font-bold text-gonr-navy outline-none placeholder:font-semibold placeholder:text-gonr-navy/40"
         />
@@ -193,19 +218,19 @@ export default function HomeScreen() {
           disabled={query.trim().length === 0}
           className="gonr-gradient gonr-cta gonr-pressable inline-flex w-full items-center justify-center gap-1.5 rounded-full px-5 py-3 text-sm font-extrabold text-white transition-opacity duration-200 disabled:opacity-40"
         >
-          Ask GONR
+          {t('home.startCheck')}
           <ArrowRight size={16} strokeWidth={2.6} aria-hidden="true" />
         </button>
       </form>
 
       {/* recent activity — bound to real history data, calm empty state */}
-      <section className="mt-9" aria-label="Recent checks">
+      <section className="mt-9" aria-label={t('home.recentSectionAria')}>
         <div className="flex items-center justify-between">
           <h2 className="text-xs font-extrabold uppercase tracking-[0.14em] text-gonr-textgray">
-            Recent
+            {t('home.recentHeading')}
           </h2>
-          <Link href="/solve-v2/history" className="text-sm font-bold text-gonr-hotpink">
-            View all
+          <Link href="/solve-v2/history" className="text-sm font-bold text-gonr-hotpink transition-opacity hover:opacity-80">
+            {t('home.viewAll')}
           </Link>
         </div>
 
@@ -229,10 +254,10 @@ export default function HomeScreen() {
                     </span>
                     <span className="flex min-w-0 flex-col">
                       <span className="truncate text-sm font-extrabold text-gonr-navy">
-                        {recentTitle(row)}
+                        {recentTitle(row, t)}
                       </span>
                       <span className="text-xs font-semibold text-gonr-textgray">
-                        {relativeWhen(row.served_at)}
+                        {relativeWhen(row.served_at, t, lang)}
                       </span>
                     </span>
                   </span>
@@ -246,9 +271,9 @@ export default function HomeScreen() {
             <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gonr-softpink text-gonr-hotpink">
               <Sparkles size={22} aria-hidden="true" />
             </span>
-            <p className="mt-3 text-sm font-extrabold text-gonr-navy">No saved rescues yet</p>
+            <p className="mt-3 text-sm font-extrabold text-gonr-navy">{t('home.emptyTitle')}</p>
             <p className="mt-1 text-xs font-semibold text-gonr-textgray">
-              Start your first stain check — it&rsquo;ll show up here. Try one of these:
+              {t('home.emptyHelper')}
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-2">
               {EXAMPLE_CHIPS.map((example) => (

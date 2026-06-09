@@ -39,6 +39,59 @@ describe('proxy — GONR one-version routing', () => {
     expect(proxy(req('https://gonr.app/api/solve')).headers.get('location')).toBeNull()
   })
 
+  // ── API allowlist (TASK-218): consumer APIs pass; operator/legacy APIs 404 ──
+  it('passes every consumer API on the GONR host (no redirect, not 404)', () => {
+    const consumer = [
+      '/api/intake',
+      '/api/solve',
+      '/api/solves',
+      '/api/solves/history',
+      '/api/profile',
+      '/api/protocols/save',
+      '/api/protocols/saved',
+      '/api/protocols/saved/abc123',
+      '/api/scan-stain',
+      '/api/scan-label',
+      // server-side-only (intake calls it) + payment webhook — must stay reachable
+      '/api/scan-packet',
+      '/api/webhooks/lemonsqueezy',
+    ]
+    for (const path of consumer) {
+      const res = proxy(req(`https://gonr.app${path}`))
+      expect(res.headers.get('location')).toBeNull()
+      expect(res.status).not.toBe(404)
+    }
+  })
+
+  it('blocks pro/operator/admin APIs on the GONR host with a 404', () => {
+    const pro = [
+      '/api/deep-solve',
+      '/api/handoff',
+      '/api/plant',
+      '/api/stain-brain',
+      '/api/tts',
+      '/api/usage',
+      '/api/auth/tier',
+      '/api/events/record',
+      '/api/operator-waitlist',
+      '/api/garment-analysis',
+      '/api/flag-garment',
+      '/api/admin/protocol-library',
+      '/api/ratings/submit',
+      '/api/mission-control/protocols',
+      // look-alikes by name that are legacy-only, NOT consumer:
+      '/api/solve/outcome',
+      '/api/protocols/translate',
+      '/api/protocols/custom',
+    ]
+    for (const path of pro) {
+      const res = proxy(req(`https://gonr.app${path}`))
+      expect(res.status).toBe(404)
+      // blocked APIs 404 rather than redirect, so fetch() callers get API semantics
+      expect(res.headers.get('location')).toBeNull()
+    }
+  })
+
   it('does NOT redirect /auth (login / magic link)', () => {
     expect(proxy(req('https://gonr.app/auth/login')).headers.get('location')).toBeNull()
   })

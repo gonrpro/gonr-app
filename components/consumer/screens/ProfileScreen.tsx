@@ -17,14 +17,18 @@ import {
 import type { User } from '@supabase/supabase-js'
 import BottomNav from '@/components/consumer/BottomNav'
 import BetaBadge from '@/components/consumer/BetaBadge'
+import LanguageToggle from '@/components/consumer/LanguageToggle'
 import { createClient } from '@/lib/supabase/client'
 import { getStoredUserEmail } from '@/lib/auth/clientEmail'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 // TASK-218 Screen 15 — SETTINGS / PROFILE. Lean consumer settings, premium and
 // green-free. Marketing toggles (alerts / product recs) are LOCAL preferences and
 // NEVER suppress safety content. Clear history is destructive → two-step confirm →
 // soft-clear via DELETE /api/solves/history (the rep moat is preserved server-side).
-// No operator/plant/credential sections here — this is the consumer view.
+// No operator/plant/credential sections here — this is the consumer view. Fully
+// bilingual: every label resolves through t(key); the EN/ES toggle lives in the
+// header so a user can switch language right where they manage their account.
 
 const PREF_ALERTS = 'gonr_pref_stain_alerts'
 const PREF_RECS = 'gonr_pref_product_recs'
@@ -52,6 +56,7 @@ function writePref(key: string, value: boolean): void {
 }
 
 export default function ProfileScreen() {
+  const { t } = useLanguage()
   const [user, setUser] = useState<User | null>(null)
   const [authResolved, setAuthResolved] = useState(false)
 
@@ -146,12 +151,12 @@ export default function ProfileScreen() {
         }
         setSent(true)
       } catch (err) {
-        setAuthError(err instanceof Error ? err.message : 'Could not send the link. Try again.')
+        setAuthError(err instanceof Error ? err.message : t('profile.sendLinkError'))
       } finally {
         setSending(false)
       }
     },
-    [emailInput],
+    [emailInput, t],
   )
 
   const handleSignOut = useCallback(async () => {
@@ -223,21 +228,22 @@ export default function ProfileScreen() {
 
   const storedEmail = getStoredUserEmail()
   const accountEmail = user?.email ?? null
+  const linkTarget = storedEmail ?? t('profile.yourInbox')
 
   return (
     <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5">
-      <div className="flex items-center justify-between">
-        <Link href="/solve-v2" aria-label="Back to home" className="text-gonr-navy/60">
+      <div className="flex items-center justify-between gap-3">
+        <Link href="/solve-v2" aria-label={t('profile.backAria')} className="text-gonr-navy/60 transition-colors hover:text-gonr-navy">
           <ArrowLeft size={22} />
         </Link>
         <span className="flex items-center gap-2">
           <span className="gonr-gradient-text text-xl font-black tracking-tight">GONR</span>
           <BetaBadge />
         </span>
-        <span className="w-[22px]" aria-hidden="true" />
+        <LanguageToggle />
       </div>
 
-      <h1 className="mt-6 text-[2rem] font-black leading-tight tracking-tight text-gonr-navy">Settings</h1>
+      <h1 className="mt-6 text-[2rem] font-black leading-tight tracking-tight text-gonr-navy">{t('profile.title')}</h1>
 
       {/* ── Account / profile ─────────────────────────────────────────────── */}
       <section className="mt-6">
@@ -250,28 +256,28 @@ export default function ProfileScreen() {
                 <UserIcon size={22} aria-hidden="true" />
               </span>
               <div className="min-w-0">
-                <p className="text-xs font-extrabold uppercase tracking-wide text-gonr-textgray">Profile</p>
+                <p className="text-xs font-extrabold uppercase tracking-wide text-gonr-textgray">{t('profile.accountLabel')}</p>
                 <p className="truncate text-sm font-bold text-gonr-navy">{accountEmail}</p>
               </div>
             </div>
             <label className="mt-4 block text-xs font-extrabold uppercase tracking-wide text-gonr-textgray">
-              Display name
+              {t('profile.displayNameLabel')}
             </label>
             <div className="mt-2 flex items-center gap-2">
               <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Add your name"
-                aria-label="Display name"
-                className="min-w-0 flex-1 rounded-2xl border border-[var(--gonr-border)] bg-white px-4 py-2.5 text-sm font-bold text-gonr-navy outline-none placeholder:font-semibold placeholder:text-gonr-navy/40"
+                placeholder={t('profile.displayNamePlaceholder')}
+                aria-label={t('profile.displayNameLabel')}
+                className="min-w-0 flex-1 rounded-2xl border border-[var(--gonr-border)] bg-white px-4 py-2.5 text-sm font-bold text-gonr-navy outline-none transition-colors focus:border-gonr-hotpink/40 placeholder:font-semibold placeholder:text-gonr-navy/40"
               />
               <button
                 type="button"
                 onClick={handleSaveName}
                 disabled={nameSaving}
-                className="gonr-gradient shrink-0 rounded-full px-4 py-2.5 text-sm font-extrabold text-white shadow-md disabled:opacity-50"
+                className="gonr-gradient shrink-0 rounded-full px-4 py-2.5 text-sm font-extrabold text-white shadow-md transition-transform duration-150 active:scale-95 disabled:opacity-50"
               >
-                {nameSaving ? 'Saving…' : nameSaved ? 'Saved' : 'Save'}
+                {nameSaving ? t('profile.saving') : nameSaved ? t('profile.saved') : t('profile.save')}
               </button>
             </div>
           </div>
@@ -280,9 +286,9 @@ export default function ProfileScreen() {
             <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-gonr-softpink text-gonr-hotpink">
               <Sparkles size={22} aria-hidden="true" />
             </span>
-            <p className="mt-3 text-sm font-extrabold text-gonr-navy">Check your email</p>
+            <p className="mt-3 text-sm font-extrabold text-gonr-navy">{t('profile.checkEmailTitle')}</p>
             <p className="mt-1 text-xs font-semibold text-gonr-textgray">
-              We sent a sign-in link to {storedEmail ?? 'your inbox'}.
+              {t('profile.linkSentBody').replace('{target}', linkTarget)}
             </p>
             <button
               type="button"
@@ -292,32 +298,30 @@ export default function ProfileScreen() {
               }}
               className="mt-3 text-xs font-bold text-gonr-hotpink"
             >
-              Use a different email
+              {t('profile.useDifferentEmail')}
             </button>
           </div>
         ) : (
           <div className="gonr-card p-5">
-            <p className="text-sm font-extrabold text-gonr-navy">Sign in to sync your library</p>
-            <p className="mt-1 text-xs font-semibold text-gonr-textgray">
-              You can solve stains without an account. Sign in to keep your saved rescues across devices.
-            </p>
+            <p className="text-sm font-extrabold text-gonr-navy">{t('profile.signInTitle')}</p>
+            <p className="mt-1 text-xs font-semibold text-gonr-textgray">{t('profile.signInBody')}</p>
             <form onSubmit={handleSignIn} className="mt-3 space-y-2">
               <input
                 type="email"
                 value={emailInput}
                 onChange={(e) => setEmailInput(e.target.value)}
-                placeholder="you@email.com"
-                aria-label="Email address"
-                className="w-full rounded-2xl border border-[var(--gonr-border)] bg-white px-4 py-2.5 text-sm font-bold text-gonr-navy outline-none placeholder:font-semibold placeholder:text-gonr-navy/40"
+                placeholder={t('profile.emailPlaceholder')}
+                aria-label={t('profile.emailAria')}
+                className="w-full rounded-2xl border border-[var(--gonr-border)] bg-white px-4 py-2.5 text-sm font-bold text-gonr-navy outline-none transition-colors focus:border-gonr-hotpink/40 placeholder:font-semibold placeholder:text-gonr-navy/40"
                 required
               />
               {authError ? <p className="text-xs font-semibold text-gonr-hotpink">{authError}</p> : null}
               <button
                 type="submit"
                 disabled={sending || emailInput.trim().length === 0}
-                className="gonr-gradient w-full rounded-full py-2.5 text-sm font-extrabold text-white shadow-md disabled:opacity-40"
+                className="gonr-gradient w-full rounded-full py-2.5 text-sm font-extrabold text-white shadow-md transition-transform duration-150 active:scale-[0.98] disabled:opacity-40"
               >
-                {sending ? 'Sending…' : 'Send magic link'}
+                {sending ? t('profile.sending') : t('profile.sendMagicLink')}
               </button>
             </form>
           </div>
@@ -326,32 +330,32 @@ export default function ProfileScreen() {
 
       {/* ── Preferences (marketing only — never affect safety) ────────────── */}
       <section className="mt-6">
-        <h2 className="px-1 text-xs font-extrabold uppercase tracking-[0.14em] text-gonr-textgray">Preferences</h2>
+        <h2 className="px-1 text-xs font-extrabold uppercase tracking-[0.14em] text-gonr-textgray">{t('profile.preferencesHeading')}</h2>
         <div className="gonr-card mt-2 divide-y divide-[var(--gonr-border)] p-0">
           <ToggleRow
             Icon={Bell}
-            title="Stain type alerts"
-            sub="Occasional fabric-care tips. Never affects safety warnings."
+            title={t('profile.alertsTitle')}
+            sub={t('profile.alertsSub')}
             on={alerts}
             onToggle={toggleAlerts}
           />
           <ToggleRow
             Icon={ShoppingBag}
-            title="Product recommendations"
-            sub="Show optional product suggestions in results."
+            title={t('profile.recsTitle')}
+            sub={t('profile.recsSub')}
             on={recs}
             onToggle={toggleRecs}
           />
         </div>
         <p className="mt-2 flex items-center gap-1.5 px-1 text-[11px] font-semibold text-gonr-textgray">
           <ShieldCheck size={13} aria-hidden="true" />
-          Safety warnings and do-not-do guidance always show, no matter what.
+          {t('profile.safetyAlways')}
         </p>
       </section>
 
       {/* ── Data ──────────────────────────────────────────────────────────── */}
       <section className="mt-6">
-        <h2 className="px-1 text-xs font-extrabold uppercase tracking-[0.14em] text-gonr-textgray">Data</h2>
+        <h2 className="px-1 text-xs font-extrabold uppercase tracking-[0.14em] text-gonr-textgray">{t('profile.dataHeading')}</h2>
         <div className="gonr-card mt-2 p-0">
           <button
             type="button"
@@ -363,9 +367,9 @@ export default function ProfileScreen() {
                 <Trash2 size={18} aria-hidden="true" />
               </span>
               <span className="flex flex-col">
-                <span className="text-sm font-extrabold text-gonr-navy">Clear history</span>
+                <span className="text-sm font-extrabold text-gonr-navy">{t('profile.clearHistory')}</span>
                 <span className="text-xs font-semibold text-gonr-textgray">
-                  {cleared ? 'History cleared.' : 'Hide your past checks from this app.'}
+                  {cleared ? t('profile.historyCleared') : t('profile.clearHistorySub')}
                 </span>
               </span>
             </span>
@@ -375,27 +379,23 @@ export default function ProfileScreen() {
 
       {/* ── About ─────────────────────────────────────────────────────────── */}
       <section className="mt-6">
-        <h2 className="px-1 text-xs font-extrabold uppercase tracking-[0.14em] text-gonr-textgray">About</h2>
+        <h2 className="px-1 text-xs font-extrabold uppercase tracking-[0.14em] text-gonr-textgray">{t('profile.aboutHeading')}</h2>
         <div className="gonr-card mt-2 divide-y divide-[var(--gonr-border)] p-0">
           <InfoRow
             Icon={Info}
-            title="About GONR"
+            title={t('profile.aboutGonrTitle')}
             open={openInfo === 'about'}
             onToggle={() => setOpenInfo((c) => (c === 'about' ? null : 'about'))}
           >
-            GONR is a free stain and fabric-care guide. Show it the problem, it reads what it can, asks only what
-            matters, and gives you the safest first move — and what not to do. Built on sourced textile science, not
-            guesswork.
+            {t('profile.aboutGonrBody')}
           </InfoRow>
           <InfoRow
             Icon={Sparkles}
-            title="How GONR works"
+            title={t('profile.howGonrTitle')}
             open={openInfo === 'how'}
             onToggle={() => setOpenInfo((c) => (c === 'how' ? null : 'how'))}
           >
-            GONR combines the structured knowledge of the GONR Encyclopedia — textile science, stain chemistry, and
-            care rules — with a frontier model that reads your situation. The safety engine always makes the final
-            call, so the guidance stays sourced and safe for the fabric.
+            {t('profile.howGonrBody')}
           </InfoRow>
         </div>
       </section>
@@ -405,10 +405,10 @@ export default function ProfileScreen() {
         <button
           type="button"
           onClick={handleSignOut}
-          className="mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border border-gonr-hotpink/30 bg-white px-5 text-sm font-extrabold text-gonr-hotpink"
+          className="mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border border-gonr-hotpink/30 bg-white px-5 text-sm font-extrabold text-gonr-hotpink transition-colors"
         >
           <LogOut size={18} aria-hidden="true" />
-          Log out
+          {t('profile.logOut')}
         </button>
       ) : null}
 
@@ -417,17 +417,15 @@ export default function ProfileScreen() {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Clear history"
+          aria-label={t('profile.clearConfirmAria')}
           className="fixed inset-0 z-50 mx-auto flex max-w-[480px] flex-col justify-end bg-gonr-navy/30 px-5 pb-6 backdrop-blur-sm"
           onClick={() => {
             if (!clearing) setConfirmClear(false)
           }}
         >
           <div className="gonr-card p-5" onClick={(e) => e.stopPropagation()}>
-            <p className="text-base font-black text-gonr-navy">Clear your history?</p>
-            <p className="mt-1 text-sm font-semibold leading-6 text-gonr-textgray">
-              This hides your past checks from the app. Your saved rescues in My Library are not affected.
-            </p>
+            <p className="text-base font-black text-gonr-navy">{t('profile.clearConfirmTitle')}</p>
+            <p className="mt-1 text-sm font-semibold leading-6 text-gonr-textgray">{t('profile.clearConfirmBody')}</p>
             <div className="mt-4 grid grid-cols-2 gap-2">
               <button
                 type="button"
@@ -435,7 +433,7 @@ export default function ProfileScreen() {
                 disabled={clearing}
                 className="min-h-[48px] rounded-full border border-[var(--gonr-border)] bg-white px-4 text-sm font-extrabold text-gonr-navy disabled:opacity-50"
               >
-                Cancel
+                {t('profile.cancel')}
               </button>
               <button
                 type="button"
@@ -444,7 +442,7 @@ export default function ProfileScreen() {
                 className="min-h-[48px] rounded-full px-4 text-sm font-extrabold text-white shadow-md disabled:opacity-50"
                 style={{ background: 'var(--gonr-danger)' }}
               >
-                {clearing ? 'Clearing…' : 'Clear history'}
+                {clearing ? t('profile.clearing') : t('profile.clearHistory')}
               </button>
             </div>
           </div>

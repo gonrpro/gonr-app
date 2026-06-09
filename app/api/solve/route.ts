@@ -17,6 +17,7 @@ import { createClient } from '@supabase/supabase-js'
 import { identifyStain, readCareLabel } from '@/lib/vision'
 import { buildSolveContext } from '@/lib/solve/context'
 import type { SolveContext } from '@/lib/solve/context'
+import { langOutputDirective } from '@/lib/solve/langDirective'
 import { logSolveReview } from '@/lib/solve/reviewQueue'
 import { isAmbiguousStainInput, getDisambiguationPrompt, parseUnknownMetaStain } from '@/lib/protocols/ambiguity'
 
@@ -527,7 +528,7 @@ function resolveStainType(card: any | null, ctx: SolveContext): string {
 }
 
 // ── AI protocol generator ──────────────────────────────────────
-async function generateAIProtocol(ctx: SolveContext, retrieval?: RetrievalResult): Promise<any> {
+async function generateAIProtocol(ctx: SolveContext, retrieval?: RetrievalResult, lang?: string): Promise<any> {
   const apiKey = process.env.OPENAI_API_KEY
   if (!apiKey) throw new Error('OpenAI API key not configured')
 
@@ -667,9 +668,11 @@ Return ONLY valid JSON:
   // Prepend retrieved grounding context when available. Sits at the top of
   // the system prompt so the model weighs excerpts above the generic
   // methodology when they conflict (see formatRetrievedContext).
-  const fullSystemPrompt = groundedContext
+  // Language directive last so it has recency weight over the methodology prose.
+  const langDirective = langOutputDirective(lang)
+  const fullSystemPrompt = (groundedContext
     ? `${groundedContext}\n${systemPrompt}`
-    : systemPrompt
+    : systemPrompt) + langDirective
 
   const res = await fetch(`${OPENAI_API}/chat/completions`, {
     method: 'POST',
@@ -1090,7 +1093,7 @@ export async function POST(req: Request) {
         })
       }
 
-      const aiCardRaw = await generateAIProtocol(ctx, retrieval)
+      const aiCardRaw = await generateAIProtocol(ctx, retrieval, lang)
       // Normalize shape before any downstream processing — caps step count,
       // merges adjacent rinses, strips numeric dwell, caps instruction length.
       // See lib/protocols/normalizeAICard.ts (2026-04-18 Atlas call).

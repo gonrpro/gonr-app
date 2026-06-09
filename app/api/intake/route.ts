@@ -22,6 +22,12 @@ interface RequestBody {
   transcript?: unknown
   hints?: unknown
   proceed?: unknown
+  lang?: unknown
+}
+
+// Only languages the engine is wired to answer in. Anything else falls back to 'en'.
+function asLang(v: unknown): 'en' | 'es' {
+  return v === 'es' ? 'es' : 'en'
 }
 
 function asTranscript(v: unknown): IntakeTurn[] {
@@ -86,6 +92,7 @@ export async function POST(req: NextRequest) {
     )
   }
 
+  const lang = asLang(body.lang)
   const intakeReq: IntakeRequest = {
     transcript: asTranscript(body.transcript),
     hints: asHints(body.hints),
@@ -148,7 +155,7 @@ export async function POST(req: NextRequest) {
     const solveRes = await fetch(`${origin}/api/solve`, {
       method: 'POST',
       headers: fwdHeaders,
-      body: JSON.stringify({ ...decision.solveBody, lang: 'en' }),
+      body: JSON.stringify({ ...decision.solveBody, lang }),
     })
     solveHttp = solveRes.status
     solveData = await solveRes.json().catch(() => ({}))

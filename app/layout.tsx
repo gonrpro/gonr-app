@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { headers } from 'next/headers'
+import { cookies, headers } from 'next/headers'
 import Nav from '@/components/layout/Nav'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
@@ -59,11 +59,19 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const host = (await headers()).get('host')?.split(':')[0]?.toLowerCase()
   const isSpottingBoardHost = host === 'spottingboard.com' || host === 'www.spottingboard.com'
 
+  // Server-read the persisted language cookie so the FIRST paint is rendered in
+  // the user's language (the server can't read localStorage, but it can read
+  // this cookie, which setLang mirrors). This makes the server, the html lang
+  // attribute, and the provider's first client render all agree — removing the
+  // one-frame English flash on a fresh/direct /solve-v2 (or subroute) load.
+  const langCookie = (await cookies()).get('gonr_lang')?.value
+  const initialLang = langCookie === 'es' ? 'es' : 'en'
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={initialLang} suppressHydrationWarning>
       <body className="font-sans antialiased">
         <AuthProvider>
-          <LanguageProvider>
+          <LanguageProvider initialLang={initialLang}>
             <HtmlLangSetter />
             <PreviewBanner />
             <Header brand={isSpottingBoardHost ? 'spottingboard' : 'gonr'} />

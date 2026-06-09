@@ -1,4 +1,7 @@
+'use client'
+
 import { ShoppingBag } from 'lucide-react'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 // TASK-218 SHARED FOUNDATION — consumer/household product rail.
 // Re-skin of ResultCard's products section. Renders card.products.consumer and
@@ -20,6 +23,7 @@ export interface ProductsListProps {
 }
 
 export default function ProductsList({ consumer, household, className }: ProductsListProps) {
+  const { t } = useLanguage()
   // Household-first, then branded consumer SKUs.
   const items: ProductItem[] = [...(household ?? []), ...(consumer ?? [])].filter(
     (item) => item.name.trim().length > 0,
@@ -27,11 +31,11 @@ export default function ProductsList({ consumer, household, className }: Product
   if (items.length === 0) return null
 
   return (
-    <section className={className} aria-label="Recommended products">
+    <section className={className} aria-label={t('products.sectionAria')}>
       <div className="mb-3 flex items-center gap-2">
-        <p className="text-sm font-extrabold uppercase tracking-wide text-gonr-textgray">Recommended products</p>
+        <p className="text-sm font-extrabold uppercase tracking-wide text-gonr-textgray">{t('products.heading')}</p>
         <span className="rounded-full bg-gonr-lightgray px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-gonr-textgray">
-          Optional
+          {t('products.optionalBadge')}
         </span>
       </div>
       <ul className="grid gap-2">

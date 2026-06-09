@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react'
 import { Sparkles, ShieldCheck, Shirt, Send } from 'lucide-react'
 import BottomNav from '@/components/consumer/BottomNav'
 import BetaBadge from '@/components/consumer/BetaBadge'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import {
   type SolveInput,
   type FactOption,
@@ -75,28 +76,42 @@ type FactKey =
   | 'priorTreatment'
 
 interface QuestionConfig {
-  prompt: string
   options: ReadonlyArray<FactOption<string>>
-  multi?: boolean
 }
 
-// Intake question copy + the answer vocabulary (verbatim from the shared lists).
+// Answer vocabulary (verbatim from the shared lists). Question wording is
+// localized via QUESTION_KEYS → the i18n catalog, never hand-authored here.
 const QUESTIONS: Record<FactKey, QuestionConfig> = {
-  stainType: { prompt: 'Do you know what the stain is?', options: STAIN_OPTIONS },
-  material: { prompt: 'What is it on?', options: MATERIAL_OPTIONS },
-  colorfastness: { prompt: 'Could the color run or bleed?', options: COLOR_OPTIONS },
-  careStatus: { prompt: 'What does the care label say?', options: CARE_OPTIONS },
-  heatExposure: { prompt: 'Has heat touched it?', options: HEAT_OPTIONS },
-  stainAge: { prompt: 'How fresh is the stain?', options: AGE_OPTIONS },
-  itemValue: { prompt: 'How valuable is the item?', options: VALUE_OPTIONS },
+  stainType: { options: STAIN_OPTIONS },
+  material: { options: MATERIAL_OPTIONS },
+  colorfastness: { options: COLOR_OPTIONS },
+  careStatus: { options: CARE_OPTIONS },
+  heatExposure: { options: HEAT_OPTIONS },
+  stainAge: { options: AGE_OPTIONS },
+  itemValue: { options: VALUE_OPTIONS },
   priorTreatment: {
-    prompt: 'What did you already try?',
-    multi: true,
-    options: PRIOR_TREATMENTS.map((t) => ({
-      value: t,
-      label: t.charAt(0).toUpperCase() + t.slice(1),
+    options: PRIOR_TREATMENTS.map((value) => ({
+      value,
+      label: value.charAt(0).toUpperCase() + value.slice(1),
     })),
   },
+}
+
+// Each clarifying question's i18n key (EN/ES wording lives in the catalog).
+const QUESTION_KEYS: Record<FactKey, string> = {
+  stainType: 'chat.q.stainType',
+  material: 'chat.q.material',
+  colorfastness: 'chat.q.colorfastness',
+  careStatus: 'chat.q.careStatus',
+  heatExposure: 'chat.q.heatExposure',
+  stainAge: 'chat.q.stainAge',
+  itemValue: 'chat.q.itemValue',
+  priorTreatment: 'chat.q.priorTreatment',
+}
+
+/** Interpolate {name} placeholders in a catalog string (t() is key-only). */
+function fill(template: string, vars: Record<string, string | number>): string {
+  return template.replace(/\{(\w+)\}/g, (_, k: string) => String(vars[k] ?? ''))
 }
 
 // Stable intake order (a subset of these renders, depending on the matched family).
@@ -233,6 +248,7 @@ export default function ChatIntakeScreen({
   onComplete,
   className,
 }: ChatIntakeScreenProps) {
+  const { t } = useLanguage()
   const detected = context?.detected
   const [answers, setAnswers] = useState<Partial<Record<FactKey, string>>>({})
   const [prior, setPrior] = useState<string[]>(() => detected?.priorTreatment ?? [])
@@ -242,8 +258,9 @@ export default function ChatIntakeScreen({
   const [draft, setDraft] = useState('')
   // One-question-at-a-time cursor: this path is a CONVERSATION, not a form. We walk
   // the active questions one at a time (answered ones collapse into a chat thread)
-  // so even this degraded, no-key fallback reads like talking to GONR — never a
-  // wizard with a global "answer everything to continue" gate or an "X of Y" count.
+  // so even this degraded, no-key fallback reads like talking to GONR. There is no
+  // global "answer everything to continue" gate; a quiet "1 of N" counter (total is
+  // known from the step list) just orients the user without turning it into a wizard.
   const [stepIndex, setStepIndex] = useState(0)
 
   // Which questions to ask: GLOBAL-001 safety set (mandatory) ∪ matched-family
@@ -340,14 +357,14 @@ export default function ChatIntakeScreen({
   function stepPrompt(step: Step): string {
     return step.kind === 'disambig'
       ? disambiguation?.question ?? ''
-      : QUESTIONS[step.key].prompt
+      : t(QUESTION_KEYS[step.key])
   }
   function stepAnswerLabel(step: Step): string {
     if (step.kind === 'disambig') {
       return disambiguation?.options.find((o) => o.value === disambigValue)?.label ?? '—'
     }
     if (step.key === 'priorTreatment') {
-      return prior.length > 0 ? prior.map((v) => optionLabel('priorTreatment', v)).join(', ') : 'Nothing yet'
+      return prior.length > 0 ? prior.map((v) => optionLabel('priorTreatment', v)).join(', ') : t('chat.prior.nothingYet')
     }
     const v = currentValue(step.key)
     return v ? optionLabel(step.key, v) : '—'
@@ -406,7 +423,7 @@ export default function ChatIntakeScreen({
           <BetaBadge />
         </span>
         <span className="text-xs font-extrabold uppercase tracking-wide text-gonr-textgray">
-          Stain expert, on it
+          {t('intake.tagline')}
         </span>
       </div>
 
@@ -415,7 +432,7 @@ export default function ChatIntakeScreen({
         {context?.thumbnailUrl ? (
           <span
             role="img"
-            aria-label="Captured photo"
+            aria-label={t('intake.ariaCapturedPhoto')}
             className="h-12 w-12 shrink-0 rounded-2xl bg-gonr-softpink bg-cover bg-center"
             style={{ backgroundImage: `url(${context.thumbnailUrl})` }}
           />
@@ -426,10 +443,10 @@ export default function ChatIntakeScreen({
         )}
         <div className="min-w-0">
           <p className="text-[11px] font-extrabold uppercase tracking-wide text-gonr-textgray">
-            What you told us
+            {t('chat.contextTold')}
           </p>
           <p className="truncate text-[15px] font-extrabold text-gonr-navy">
-            {context?.text?.trim() || 'A stain to look at'}
+            {context?.text?.trim() || t('intake.contextEmptyStain')}
           </p>
         </div>
       </div>
@@ -444,29 +461,29 @@ export default function ChatIntakeScreen({
       <div className="gonr-card mt-2 p-4">
         {detectedStainLabel || detectedMaterialLabel ? (
           <p className="text-[15px] font-bold leading-6 text-gonr-navy">
-            Looks like{' '}
+            {t('chat.read.looksLike')}{' '}
             {detectedStainLabel ? (
               <span className="text-gonr-hotpink">{detectedStainLabel.toLowerCase()}</span>
             ) : (
-              'a stain'
+              t('chat.read.stainFallback')
             )}
             {detectedMaterialLabel ? (
               <>
-                {' '}on{' '}
+                {' '}{t('chat.read.on')}{' '}
                 <span className="text-gonr-hotpink">
                   {detectedMaterialLabel.toLowerCase()}
                 </span>
               </>
             ) : null}
-            . Confirm below so I don&apos;t guess.
+            {t('chat.read.confirmBelow')}
           </p>
         ) : (
           <p className="text-[15px] font-bold leading-6 text-gonr-navy">
-            Before I say anything, a couple of quick questions so I don&apos;t guess.
+            {t('chat.read.noVisionPrompt')}
           </p>
         )}
         <p className="mt-1 text-sm font-medium leading-5 text-gonr-textgray">
-          &ldquo;I&apos;m not sure&rdquo; is always a safe answer.
+          {t('chat.notSureSafeAnswer')}
         </p>
       </div>
 
@@ -490,9 +507,19 @@ export default function ChatIntakeScreen({
         </div>
       ) : null}
 
+      {/* quiet "1 of N" — orients without becoming a wizard (total is real) */}
+      {currentStep && steps.length > 1 ? (
+        <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.12em] text-gonr-textgray">
+          {fill(t('intake.progress'), {
+            current: Math.min(safeStepIndex + 1, steps.length),
+            total: steps.length,
+          })}
+        </p>
+      ) : null}
+
       {/* the ONE current question — chips, not a form; answering advances us on */}
       {currentStep ? (
-        <fieldset className="mt-5">
+        <fieldset className="mt-3">
           <legend className="text-[17px] font-extrabold leading-7 text-gonr-navy">
             {stepPrompt(currentStep)}
           </legend>
@@ -502,7 +529,7 @@ export default function ChatIntakeScreen({
             ? (detected?.priorTreatment?.length ?? 0) > 0
             : Boolean(detectedString(detected, currentStep.key))) ? (
             <p className="mt-1 text-xs font-bold text-[var(--gonr-state-limited)]">
-              Looks like this from the photo — tap to confirm.
+              {t('chat.confirmFromPhoto')}
             </p>
           ) : null}
 
@@ -529,7 +556,7 @@ export default function ChatIntakeScreen({
                   onClick={() => togglePrior(NONE_VALUE)}
                   className={chipClass(answered.has('priorTreatment') && prior.length === 0)}
                 >
-                  Nothing yet
+                  {t('chat.prior.nothingYet')}
                 </button>
                 {QUESTIONS.priorTreatment.options.map((opt) => {
                   const selected = prior.includes(opt.value)
@@ -551,7 +578,7 @@ export default function ChatIntakeScreen({
                 onClick={confirmPrior}
                 className="gonr-gradient mt-4 inline-flex min-h-[44px] items-center justify-center rounded-full px-5 text-sm font-extrabold text-white shadow-md"
               >
-                {prior.length > 0 ? 'That’s everything' : 'Nothing else'}
+                {prior.length > 0 ? t('chat.prior.confirmDone') : t('chat.prior.confirmNone')}
               </button>
             </>
           ) : currentStep.kind === 'fact' ? (
@@ -586,8 +613,7 @@ export default function ChatIntakeScreen({
             aria-hidden="true"
           />
           <p className="text-sm font-bold leading-5 text-gonr-navy">
-            This looks like a higher-care item, so I&apos;ll stay cautious and won&apos;t
-            guess — better to be sure than sorry.
+            {t('chat.highCareNote')}
           </p>
         </div>
       ) : null}
@@ -611,13 +637,13 @@ export default function ChatIntakeScreen({
           type="text"
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
-          placeholder="Ask a follow-up…"
-          aria-label="Ask a follow-up"
+          placeholder={t('chat.followUp.placeholder')}
+          aria-label={t('chat.followUp.aria')}
           className="min-w-0 flex-1 rounded-full border border-[var(--gonr-border)] bg-white px-4 py-3 text-[15px] font-medium text-gonr-navy placeholder:text-gonr-navy/40 focus:border-gonr-hotpink focus:outline-none"
         />
         <button
           type="submit"
-          aria-label="Send follow-up"
+          aria-label={t('chat.followUp.ariaSend')}
           disabled={draft.trim().length === 0}
           className="gonr-gradient grid h-11 w-11 shrink-0 place-items-center rounded-full text-white shadow-lg disabled:opacity-40"
         >
@@ -635,7 +661,7 @@ export default function ChatIntakeScreen({
           onClick={handleContinue}
           className="gonr-gradient mt-6 w-full rounded-full py-4 text-base font-black text-white shadow-lg"
         >
-          See my safe next step
+          {t('chat.seeSafeNextStep')}
         </button>
       ) : null}
 

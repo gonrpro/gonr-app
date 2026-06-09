@@ -14,6 +14,39 @@ function isStaticAsset(pathname: string): boolean {
   )
 }
 
+// ── GONR consumer-host API allowlist ────────────────────────────────────────
+// Only the APIs the TASK-218 consumer surface actually needs are reachable on the
+// GONR host. Everything else under /api/* (operator/legacy/admin) 404s here. The
+// consumer surface (components/consumer/** + app/solve-v2/**) has ZERO imports
+// from components/solve|protocols|wizard|paywall|lib/events|lib/tts|lib/ratings.
+//   Blocked-by-name look-alikes (legacy-only, NOT consumer): /api/solve/outcome,
+//   /api/protocols/translate, /api/protocols/custom, /api/events/record, /api/tts,
+//   /api/usage, /api/auth/tier, /api/garment-analysis, /api/flag-garment, etc.
+const CONSUMER_API_EXACT = new Set<string>([
+  '/api/intake', // POST — AgenticIntake / SolveFlow
+  '/api/solve', // POST — solve flow (NOT /api/solve/outcome, which is legacy)
+  '/api/solves', // GET — history (also matched as a prefix below)
+  '/api/profile', // GET ?email / POST save
+  '/api/protocols/save', // POST — useSaveProtocol
+  '/api/protocols/saved', // GET ?email (also matched as a prefix below for DELETE :id)
+  '/api/scan-stain', // POST — AttachMenu photo hint
+  '/api/scan-label', // POST — AttachMenu care-label hint
+  // Server-side only, never called by consumer client code, but required because
+  // app/api/intake/route.ts fetches ${origin}/api/scan-packet through this host.
+  '/api/scan-packet',
+  // Infra/non-UI: LemonSqueezy payment webhook. Not a consumer API, but must stay
+  // reachable so inbound payment events are not dropped on the GONR host.
+  '/api/webhooks/lemonsqueezy',
+])
+const CONSUMER_API_PREFIXES = [
+  '/api/solves/', // /api/solves/history (GET ?limit / DELETE)
+  '/api/protocols/saved/', // /api/protocols/saved/:id (DELETE)
+]
+function isConsumerApi(pathname: string): boolean {
+  if (CONSUMER_API_EXACT.has(pathname)) return true
+  return CONSUMER_API_PREFIXES.some((prefix) => pathname.startsWith(prefix))
+}
+
 function redirectToSpottingBoardLogin(request: NextRequest, nextPath = '/spottingboard/onboarding') {
   const url = request.nextUrl.clone()
   url.pathname = '/auth/login'
@@ -66,10 +99,18 @@ export function proxy(request: NextRequest) {
   // The SpottingBoard host is handled above and never reaches here. NOTE: "/solve-v2" is
   // matched exactly + with a trailing slash so it is never itself redirected.
   if (!host || !SPOTTING_BOARD_HOSTS.has(host)) {
+    // API lane: tight allowlist. Only consumer (+ intake's server-side scan-packet
+    // and the payment webhook) pass; every operator/legacy/admin API 404s so it is
+    // not reachable from gonr.app. 404 (not redirect) keeps API semantics for
+    // fetch() callers instead of handing back an HTML page.
+    if (pathname.startsWith('/api/')) {
+      if (isConsumerApi(pathname)) return NextResponse.next()
+      return NextResponse.json({ error: 'not_found' }, { status: 404 })
+    }
+
     const isConsumerSurface =
       pathname === '/solve-v2' ||
       pathname.startsWith('/solve-v2/') ||
-      pathname.startsWith('/api/') ||
       pathname.startsWith('/auth/') ||
       pathname === '/privacy' ||
       pathname === '/terms' ||

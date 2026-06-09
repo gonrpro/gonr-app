@@ -1,5 +1,8 @@
+'use client'
+
 import { AlertTriangle } from 'lucide-react'
 import type { Step } from '@/lib/types'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 // TASK-218 SHARED FOUNDATION — numbered gradient-pill step list.
 // Re-skin of ConsumerSolveShell's step list + ResultCard's protocol renderer,
@@ -62,9 +65,25 @@ const HEAT_PROCESS_PHRASES =
 // suppress the heat caveat, or the engine's hot-water wording reads as
 // unconditionally safe. The authorized caveat strings below contain "care label",
 // so the double-append guard still fires once a caveat has been attached.
-const ALREADY_CONDITIONAL = /care label|laundry symbol|if the label/i
+// English and Spanish "care label" senses both count as already-conditional so a
+// localized caveat is never double-appended across re-renders (the ES caveat reads
+// "solo si la etiqueta de cuidado…", which the English-only guard would miss).
+const ALREADY_CONDITIONAL = /care label|laundry symbol|if the label|etiqueta de cuidado/i
+
+// The two Atlas-authorized caveat strings. These English literals are the DEFAULT
+// (the safety unit tests pin them), but the rendered UI passes the localized
+// strings from the i18n catalog so the Spanish caveat is safety-correct.
 const HOT_WASH_CAVEAT = ' — only if the care label allows hot wash'
 const HEAT_PROCESS_CAVEAT = ' — only if the care label allows it'
+
+export interface HeatCaveats {
+  /** Appended to hot-WASH wording (matches HOT_WASH_PHRASES). */
+  hotWash: string
+  /** Appended to heat-PROCESS wording — dryer / iron / high heat. */
+  heatProcess: string
+}
+
+const DEFAULT_CAVEATS: HeatCaveats = { hotWash: HOT_WASH_CAVEAT, heatProcess: HEAT_PROCESS_CAVEAT }
 
 // The step is steering AWAY from heat: it NEGATES hot/warm/heat ("avoid using warm or
 // hot water", "never use hot", "no hot water") or prescribes cold/cool water as the action.
@@ -76,13 +95,13 @@ const HEAT_PROCESS_CAVEAT = ' — only if the care label allows it'
 const STEERS_AWAY_FROM_HEAT =
   /\b(?:avoid|never|no|not|don'?t|do not|skip|without)\s+(?:\w+\s+){0,4}?(?:hot|warm|heat)\b|\b(?:cold|cool)\s+water\b/i
 
-export function applyHeatCaveat(instruction: string): string {
+export function applyHeatCaveat(instruction: string, caveats: HeatCaveats = DEFAULT_CAVEATS): string {
   if (ALREADY_CONDITIONAL.test(instruction)) return instruction
   if (STEERS_AWAY_FROM_HEAT.test(instruction)) return instruction
   // Strip a single trailing period/whitespace so the em-dash caveat reads clean.
   const base = instruction.replace(/\.\s*$/, '')
-  if (HOT_WASH_PHRASES.test(instruction)) return `${base}${HOT_WASH_CAVEAT}`
-  if (HEAT_PROCESS_PHRASES.test(instruction)) return `${base}${HEAT_PROCESS_CAVEAT}`
+  if (HOT_WASH_PHRASES.test(instruction)) return `${base}${caveats.hotWash}`
+  if (HEAT_PROCESS_PHRASES.test(instruction)) return `${base}${caveats.heatProcess}`
   return instruction
 }
 
@@ -90,9 +109,10 @@ function normalize(
   step: StepLike,
   index: number,
   startIndex: number,
+  caveats: HeatCaveats,
 ): { number: number; agent?: string; instruction: string; warning?: string } {
   if (typeof step === 'string') {
-    return { number: startIndex + index + 1, instruction: applyHeatCaveat(step) }
+    return { number: startIndex + index + 1, instruction: applyHeatCaveat(step, caveats) }
   }
   // ENGINE CONTRACT: step.warning is an engine-authored, per-step safety caveat.
   // It is rendered VERBATIM (no applyHeatCaveat, no copy framing) and must NEVER
@@ -103,13 +123,21 @@ function normalize(
   return {
     number: step.step ?? startIndex + index + 1,
     agent: step.agent && step.agent.trim().length > 0 ? step.agent : undefined,
-    instruction: applyHeatCaveat(step.instruction),
+    instruction: applyHeatCaveat(step.instruction, caveats),
     warning,
   }
 }
 
 export default function ResultsStepList({ steps, heading, className, startIndex = 0 }: ResultsStepListProps) {
+  const { t } = useLanguage()
   if (steps.length === 0) return null
+
+  // Localized, safety-correct caveat strings handed to applyHeatCaveat so the
+  // Spanish "care label" conditional reads correctly (never a flat safe move).
+  const caveats: HeatCaveats = {
+    hotWash: t('stepList.hotWashCaveat'),
+    heatProcess: t('stepList.heatProcessCaveat'),
+  }
 
   return (
     <div className={className}>
@@ -118,7 +146,7 @@ export default function ResultsStepList({ steps, heading, className, startIndex 
       ) : null}
       <ol className="grid gap-3">
         {steps.map((step, index) => {
-          const { number, agent, instruction, warning } = normalize(step, index, startIndex)
+          const { number, agent, instruction, warning } = normalize(step, index, startIndex, caveats)
           return (
             <li key={index} className="flex gap-3">
               <span className="gonr-gradient mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full text-sm font-black text-white shadow-[0_6px_16px_-8px_rgba(247,10,117,0.7)]">
