@@ -57,6 +57,23 @@ describe('canonicalization gate — assembled term hits the core library', () =>
     expect(r.source).not.toBe('core')
   })
 
+  // Surface side of the same miss: the engine surface is built fiber-first with
+  // care/colour constraints appended ("silk, dry clean only, prone to bleed"), and
+  // the intake's fabric read can carry a verbose tail. The lookup's leading-clause
+  // variant reduces it to the fiber so the curated card is still hit. Fixtures use the
+  // exact verbose surfaces Atlas observed live.
+  it('verbose silk surface (constraints appended) still hits the core card', async () => {
+    const r = await lookupProtocol('red wine', 'silk, dry clean only, prone to bleed')
+    expect(r.source).toBe('core')
+    expect(r.tier).toBe(1)
+  })
+
+  it('verbose cotton surface (LLM read tail) still hits the core card', async () => {
+    const r = await lookupProtocol('coffee', 'Cotton shirt; machine-washable; user reports white and colorfast')
+    expect(r.source).toBe('core')
+    expect(r.tier).toBe(1)
+  })
+
   // End-to-end through the REAL engine body the orchestrator builds (description ->
   // buildEngineSolveBody -> /api/solve lookup), to lock the full fold path, not just
   // the helper in isolation.

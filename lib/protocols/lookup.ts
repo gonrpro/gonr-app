@@ -412,11 +412,23 @@ export async function lookupProtocol(
   type SurfaceVariant = { norm: string; slug: string }
   const seenSurfaceSlugs = new Set<string>()
   const surfaceVariants: SurfaceVariant[] = []
+  // Leading clause before the first care/colour-constraint delimiter. The engine
+  // surface is built fiber-FIRST ("<fiber>, <care/colour constraints>"), and the
+  // agentic intake's fabric read can carry a "; machine-washable; colorfast" tail.
+  // The curated card is keyed on the fiber alone, so a verbose surface like
+  // "silk, dry clean only, prone to bleed" must still reduce to "silk" — without this
+  // a case WITH a core card silently falls to the tier-4 AI card (TASK-218 surface
+  // canonicalization miss; constraints still ride careSymbols + the full surface text
+  // for safety, so nothing is dropped here).
+  const firstClauseNorm = normalize(surfaceInput.split(/[;,]/)[0] ?? '')
   for (const norm of [
     surfaceNorm,
     stripCosmeticPrefix(surfaceNorm),
     stripGarmentSuffix(surfaceNorm),
     stripBoth(surfaceNorm),
+    firstClauseNorm,
+    stripGarmentSuffix(firstClauseNorm),
+    stripBoth(firstClauseNorm),
   ]) {
     const slug = normalizeSurface(norm)
     if (seenSurfaceSlugs.has(slug)) continue
