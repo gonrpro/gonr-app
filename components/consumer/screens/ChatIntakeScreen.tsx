@@ -1,7 +1,8 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { Sparkles, ShieldCheck, Shirt, Send } from 'lucide-react'
+import Image from 'next/image'
+import { ShieldCheck, Shirt, Send } from 'lucide-react'
 import BottomNav from '@/components/consumer/BottomNav'
 import BetaBadge from '@/components/consumer/BetaBadge'
 import GonrLogo from '@/components/brand/GonrLogo'
@@ -454,9 +455,7 @@ export default function ChatIntakeScreen({
 
       {/* assistant bubble */}
       <div className="mt-5 flex items-center gap-2">
-        <span className="gonr-gradient grid h-7 w-7 place-items-center rounded-full text-white">
-          <Sparkles size={15} aria-hidden="true" />
-        </span>
+        <Image src="/brand/gonr-o.png" alt="" aria-hidden="true" width={28} height={28} priority className="h-7 w-7" />
         <span className="gonr-gradient-text text-sm font-black">GONR</span>
       </div>
       <div className="gonr-card mt-2 p-4">

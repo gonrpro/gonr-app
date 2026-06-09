@@ -36,7 +36,12 @@ export async function generateMetadata(): Promise<Metadata> {
     title: 'GONR™ — Professional Stain Protocols',
     description: 'Professional stain-removal protocols built from real dry-cleaning experience.',
     icons: {
-      icon: '/favicon.svg',
+      // The GONR sparkle-"O" mark (extracted from the approved logo) as the favicon.
+      icon: [
+        { url: '/brand/gonr-o-32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/brand/gonr-o-512.png', sizes: '512x512', type: 'image/png' },
+      ],
+      apple: '/brand/gonr-o-180.png',
     },
     openGraph: {
       title: 'GONR™ — Professional Stain Protocols',

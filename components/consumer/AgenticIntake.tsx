@@ -1,7 +1,8 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Sparkles, Shirt, Send, Loader2, ChevronDown, ShieldCheck, AlertTriangle } from 'lucide-react'
+import Image from 'next/image'
+import { Shirt, Send, Loader2, ChevronDown, ShieldCheck, AlertTriangle } from 'lucide-react'
 import BottomNav from '@/components/consumer/BottomNav'
 import GonrLogo from '@/components/brand/GonrLogo'
 import ResultsScreen, {
@@ -298,9 +299,7 @@ export default function AgenticIntake({
     <Shell thumbnailUrl={thumbnailUrl} contextText={initialText}>
       {/* GONR's synthesized read — shown fast, calm, confident. */}
       <div className="mt-5 flex items-center gap-2">
-        <span className="gonr-gradient grid h-7 w-7 place-items-center rounded-full text-white">
-          <Sparkles size={15} aria-hidden="true" />
-        </span>
+        <Image src="/brand/gonr-o.png" alt="" aria-hidden="true" width={28} height={28} priority className="h-7 w-7" />
         <span className="gonr-gradient-text text-sm font-black">GONR</span>
       </div>
 
