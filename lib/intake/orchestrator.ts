@@ -521,7 +521,7 @@ const CARE_LABEL_QUESTION: IntakeQuestion = {
   options: ['Machine wash', 'Hand wash', 'Dry clean only', 'No bleach / no heat', 'Not sure'],
 }
 const GENERIC_SAFETY_QUESTION: IntakeQuestion = {
-  text: 'One more thing so I keep this safe — anything already tried on it, or anything delicate about the item?',
+  text: 'One more thing — anything you’ve already tried on it, or anything delicate about the item?',
   options: ['Nothing tried yet', 'Already treated it', 'It is delicate or valuable', 'Not sure'],
 }
 
