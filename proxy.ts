@@ -57,17 +57,25 @@ export function proxy(request: NextRequest) {
     }
   }
 
-  // ── GONR host: lock to the single consumer version (Tyler: one visible app) ──
-  // The bare domain and the old /solve operator/editorial surface redirect to the new
-  // consumer app at /solve-v2. The new app (/solve-v2/*), its APIs, /auth, and static
-  // assets pass through; any pro/operator tools remain only at their own direct paths and
-  // are not linked from root or nav. The SpottingBoard host is handled above and never
-  // reaches here. NOTE: "/solve-v2" is matched exactly — startsWith('/solve/') does not
-  // catch "/solve-v2/..." (the char after "solve" is "-", not "/").
+  // ── GONR host: ONE visible consumer version (Tyler: nothing else available) ──
+  // Hard-close every legacy/pro surface by ALLOWLIST: on the GONR host, only the consumer
+  // app (/solve-v2[/*]), its APIs, /auth, the legal pages, and static assets are reachable;
+  // everything else (the old editorial /, /landing, /profile, /operator, /pro, /spotter,
+  // /deep-solve, /spottingboard on this host, etc.) redirects to /solve-v2. Pro/operator
+  // tools are salvaged separately as their own product lane, not reachable from gonr.app.
+  // The SpottingBoard host is handled above and never reaches here. NOTE: "/solve-v2" is
+  // matched exactly + with a trailing slash so it is never itself redirected.
   if (!host || !SPOTTING_BOARD_HOSTS.has(host)) {
-    const isOldPublicSurface =
-      pathname === '/' || pathname === '/solve' || pathname.startsWith('/solve/')
-    if (isOldPublicSurface && !isStaticAsset(pathname)) {
+    const isConsumerSurface =
+      pathname === '/solve-v2' ||
+      pathname.startsWith('/solve-v2/') ||
+      pathname.startsWith('/api/') ||
+      pathname.startsWith('/auth/') ||
+      pathname === '/privacy' ||
+      pathname === '/terms' ||
+      pathname === '/contact' ||
+      isStaticAsset(pathname)
+    if (!isConsumerSurface) {
       const url = request.nextUrl.clone()
       url.pathname = '/solve-v2'
       url.search = ''

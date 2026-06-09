@@ -47,4 +47,26 @@ describe('proxy — GONR one-version routing', () => {
     const loc = proxy(req('https://spottingboard.com/')).headers.get('location')
     if (loc) expect(loc).not.toContain('/solve-v2')
   })
+
+  // The specific legacy/pro leaks Atlas found live on gonr.app (returned 200) — these
+  // MUST redirect to the one consumer version, plus a few more legacy surfaces.
+  it.each([
+    '/landing',
+    '/profile',
+    '/operator',
+    '/pro',
+    '/spotter',
+    '/deep-solve',
+    '/spottingboard',
+    '/plant-brain',
+    '/courses',
+  ])('redirects legacy/pro surface %s → /solve-v2', (path) => {
+    expect(proxy(req(`https://gonr.app${path}`)).headers.get('location')).toContain('/solve-v2')
+  })
+
+  it('keeps legal pages reachable (privacy / terms / contact)', () => {
+    expect(proxy(req('https://gonr.app/privacy')).headers.get('location')).toBeNull()
+    expect(proxy(req('https://gonr.app/terms')).headers.get('location')).toBeNull()
+    expect(proxy(req('https://gonr.app/contact')).headers.get('location')).toBeNull()
+  })
 })
