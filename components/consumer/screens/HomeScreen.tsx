@@ -119,7 +119,10 @@ export default function HomeScreen() {
       <h1 className="mt-9 text-[2.1rem] font-black leading-[1.12] tracking-tight text-gonr-navy">
         Know what to <span className="text-gonr-hotpink">do</span>.
         <br />
-        Know what <span className="text-gonr-hotpink">not</span> to.
+        Know what{' '}
+        <span className="whitespace-nowrap">
+          <span className="text-gonr-hotpink">not</span> to.
+        </span>
       </h1>
 
       {/* magic-read invitation — sets the "show me the stain" expectation */}

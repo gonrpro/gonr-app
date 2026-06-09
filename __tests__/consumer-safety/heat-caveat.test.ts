@@ -59,3 +59,27 @@ describe('applyHeatCaveat — no double-append / no over-fire', () => {
     expect(applyHeatCaveat(input)).toBe(input)
   })
 })
+
+describe('applyHeatCaveat — never contradicts an avoid-heat / cold-water step (tier-4 coffee bug)', () => {
+  it('does NOT bolt a hot-wash permission onto an avoid-hot/use-cold step', () => {
+    const input =
+      'Avoid using warm or hot water as it sets the coffee stain. Instead, blot the stain with cold water and mild detergent.'
+    const out = applyHeatCaveat(input)
+    expect(out).not.toContain('hot wash')
+    expect(out).toBe(input)
+  })
+
+  it('leaves a plain cold-water step untouched', () => {
+    const input = 'Blot the stain with cold water'
+    expect(applyHeatCaveat(input)).toBe(input)
+  })
+
+  it('leaves a "do not apply heat or hot water" prohibition untouched', () => {
+    const input = 'Do not apply heat or hot water as this will permanently set the stain'
+    expect(applyHeatCaveat(input)).toBe(input)
+  })
+
+  it('STILL flags a genuine hot-water step when an unrelated "do not" follows (no false-suppress)', () => {
+    expect(applyHeatCaveat('Wash in hot water; do not wring the garment')).toContain(HOT_WASH_CAVEAT)
+  })
+})

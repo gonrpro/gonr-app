@@ -261,7 +261,7 @@ export default function AgenticIntake({
             <p className="mt-1 text-sm font-semibold leading-5 text-gonr-navy">{read.careRisk.trim()}</p>
           ) : null}
           <p className="mt-1 text-sm font-medium leading-5 text-gonr-textgray">
-            {CONFIDENCE_NOTE[read.confidence]} I&apos;ll double-check the safest move before I tell you — I won&apos;t guess.
+            {CONFIDENCE_NOTE[read.confidence]}{' '}I&apos;ll double-check the safest move before I tell you — I won&apos;t guess.
           </p>
 
           {/* "Why" — no visible complexity unless the user wants it. */}

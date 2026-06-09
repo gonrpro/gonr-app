@@ -66,8 +66,19 @@ const ALREADY_CONDITIONAL = /care label|laundry symbol|if the label/i
 const HOT_WASH_CAVEAT = ' — only if the care label allows hot wash'
 const HEAT_PROCESS_CAVEAT = ' — only if the care label allows it'
 
+// The step is steering AWAY from heat: it NEGATES hot/warm/heat ("avoid using warm or
+// hot water", "never use hot", "no hot water") or prescribes cold/cool water as the action.
+// Appending "— only if the care label allows hot wash" here CONTRADICTS the engine's own
+// cold-water instruction (the tier-4 coffee bug: "blot with cold water — only if the care
+// label allows hot wash"). Skip the caveat — never drop the engine's avoid-heat text, just
+// don't bolt on a misleading hot-wash permission. The negation must PRECEDE the heat word
+// (within the sentence) so a genuine "wash in hot water (avoid wringing)" step keeps its caveat.
+const STEERS_AWAY_FROM_HEAT =
+  /\b(?:avoid|never|no|not|don'?t|do not|skip|without)\s+(?:\w+\s+){0,4}?(?:hot|warm|heat)\b|\b(?:cold|cool)\s+water\b/i
+
 export function applyHeatCaveat(instruction: string): string {
   if (ALREADY_CONDITIONAL.test(instruction)) return instruction
+  if (STEERS_AWAY_FROM_HEAT.test(instruction)) return instruction
   // Strip a single trailing period/whitespace so the em-dash caveat reads clean.
   const base = instruction.replace(/\.\s*$/, '')
   if (HOT_WASH_PHRASES.test(instruction)) return `${base}${HOT_WASH_CAVEAT}`
