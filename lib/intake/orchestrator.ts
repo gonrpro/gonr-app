@@ -756,6 +756,24 @@ export function extractParsedFacts(req: IntakeRequest): ParsedFacts {
       }
     }
   }
+  const surfaceHint = req.hints?.stain?.surface?.trim()
+  if (!fabric && surfaceHint) {
+    const hintText = normalizeText(surfaceHint)
+    for (const [re, name] of DIRECT_FIBER) {
+      if (re.test(hintText)) {
+        fabric = name
+        fabricConfidence = 'medium'
+        break
+      }
+    }
+    if (!fabric) {
+      const matchedSurface = SURFACE_ALIAS_KEYS.find((alias) => containsTerm(hintText, alias))
+      if (matchedSurface) {
+        fabric = fabricFromCanonicalSurface(SURFACE_ALIASES[matchedSurface])
+        fabricConfidence = 'medium'
+      }
+    }
+  }
   if (!fabric) {
     const garment = SURFACE_ALIAS_KEYS.find((alias) => containsTerm(text, alias))
     if (garment) {
@@ -1220,7 +1238,7 @@ export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise
   // model's read. A recognized label fiber wins material selection; a disagreement
   // with a recognized model fabric is a deterministic fail-closed reason so the
   // engine takes its conservative path rather than trusting a contradicted read.
-  const resolved = resolveFiber(out.read.fabric, req.hints?.careLabel?.fiber ?? '')
+  const resolved = resolveFiber(out.read.fabric || parsedFacts.fabric || '', req.hints?.careLabel?.fiber ?? '')
   const failClosedReasons = computeFailClosed(out, hardConstraints, rawUser)
   if (resolved.labelConflict) failClosedReasons.push('label_fiber_conflict')
   const base = {
@@ -1238,6 +1256,7 @@ export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise
 
   const ready = out.readyForVerdict && failClosedReasons.length === 0
   const budgetSpent = asked >= MAX_QUESTIONS
+  const blockingFailClosedReasons = failClosedReasons.filter((reason) => reason !== 'dye_uncertain')
   const hasUsableCoreRead =
     (parsedFacts.stainKnown || hasConcreteReadValue(out.read.stain)) &&
     (parsedFacts.fabricKnown || resolved.material !== 'unknown')
@@ -1245,7 +1264,7 @@ export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise
     hasUsableCoreRead &&
     out.read.confidence !== 'low' &&
     AGE_DISCLOSED.test(normalizeText(rawUser)) &&
-    failClosedReasons.length === 0
+    blockingFailClosedReasons.length === 0
 
   // Assemble the facts ONCE, then build the engine body FROM them so the body the
   // engine receives carries the same care/heat/prior-treatment constraints the

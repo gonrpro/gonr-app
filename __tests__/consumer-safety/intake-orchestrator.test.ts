@@ -124,9 +124,9 @@ describe('intake orchestrator — confident input hands off to the deterministic
   it('does not show a redundant confirm card after the user answers the freshness question', async () => {
     stubModel({
       read: {
-        fabric: 'indigo-dyed denim',
+        fabric: 'likely indigo-dyed denim (cotton)',
         stain: 'grass stain',
-        careRisk: 'possible dye bleed or fading from the denim',
+        careRisk: 'moderate risk: possible dye transfer / unknown colorfastness',
         confidence: 'medium',
       },
       knows: ['fabric: denim', 'stain: grass'],
@@ -134,7 +134,7 @@ describe('intake orchestrator — confident input hands off to the deterministic
       cannotKnow: [],
       nextQuestion: { text: 'I see denim and grass stain — is that right?', options: ['Yes, that is right', 'No, let me fix it'] },
       readyForVerdict: false,
-      riskFlags: [],
+      riskFlags: ['dye_bleed'],
     })
 
     const decision = await runIntakeTurn(
@@ -157,6 +157,8 @@ describe('intake orchestrator — confident input hands off to the deterministic
 
     expect(decision.action).toBe('solve')
     expect(decision.nextQuestion).toBeNull()
+    expect(decision.parsedFacts.fabric).toBe('denim')
+    expect(decision.failClosedReasons).toContain('dye_uncertain')
     expect(decision.assembledInput?.material).toBe('denim')
     expect(decision.assembledInput?.stainAge).toBe('fresh')
     expect(decision.solveBody?.stain.toLowerCase()).toContain('grass')
