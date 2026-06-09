@@ -33,8 +33,8 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
-    title: 'GONR™ — Professional Stain Protocols',
-    description: 'Professional stain-removal protocols built from real dry-cleaning experience.',
+    title: 'GONR — Know what to do. Know what not to.',
+    description: 'Show us the stain. GONR reads what it can and asks only what matters — then tells you what to do, and what not to.',
     icons: {
       // The GONR sparkle-"O" mark (extracted from the approved logo) as the favicon.
       icon: [
@@ -44,8 +44,8 @@ export async function generateMetadata(): Promise<Metadata> {
       apple: '/brand/gonr-o-180.png',
     },
     openGraph: {
-      title: 'GONR™ — Professional Stain Protocols',
-      description: 'Professional stain-removal protocols built from real dry-cleaning experience.',
+      title: 'GONR — Know what to do. Know what not to.',
+      description: 'Show us the stain. GONR reads what it can and asks only what matters — then tells you what to do, and what not to.',
       url: 'https://gonr.app',
       siteName: 'GONR™',
       images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -53,8 +53,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'GONR™ — Professional Stain Protocols',
-      description: 'Professional stain-removal protocols built from real dry-cleaning experience.',
+      title: 'GONR — Know what to do. Know what not to.',
+      description: 'Show us the stain. GONR reads what it can and asks only what matters — then tells you what to do, and what not to.',
       images: ['/og-image.png'],
     },
   }
