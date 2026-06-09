@@ -32,7 +32,18 @@ export interface SolveContext {
   brief: string
 }
 
-const DELICATE_FIBERS = /silk|cashmere|wool|angora|mohair|acetate|rayon|viscose|chiffon|organza/i
+// TASK-218 (#17): added water/solvent-sensitive materials that were slipping the
+// delicacy gate — velvet/velour, suede, leather, satin, taffeta, tulle, lace,
+// brocade, down, fur, georgette. These must NOT get water-based cautious holding
+// steps (the gate routes them to refuse-only). Over-flagging is the safe direction.
+// SB to review the delicate-material list. (Spanish surface terms included so the
+// ES path flags them too: seda/lana/cuero/ante/terciopelo/raso/plumón.)
+// Word-bounded so short tokens (down/fur/lace/ante/tul/piel) match the whole word
+// only — not substrings like "furniture"/"necklace"/"ante todo". "down" matches
+// "down jacket"/"goose down" (delicate), not arbitrary prose; these fields are
+// material descriptors so collision risk is low, but bounding makes it exact.
+const DELICATE_FIBERS =
+  /\b(?:silk|cashmere|wool|angora|mohair|acetate|rayon|viscose|chiffon|organza|velvet|velour|suede|leather|satin|taffeta|tulle|lace|brocade|down|fur|georgette|seda|lana|cachemir|cuero|ante|gamuza|terciopelo|raso|tul|encaje|plum[óo]n|piel)\b/i
 
 // Location-specific complications known to affect protocol
 const LOCATION_NOTES: Record<string, string> = {
