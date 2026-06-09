@@ -527,7 +527,25 @@ const GENERIC_SAFETY_QUESTION: IntakeQuestion = {
 
 /** A CONFIRM question for a fact we resolved at LOW confidence (rule (a)). */
 function confirmQuestion(pf: ParsedFacts): IntakeQuestion {
-  const facts = [pf.fabric, pf.stain].filter(Boolean).join(' and ')
+  // Confirm ONLY the genuinely uncertain fact. A fact we committed to with high/medium
+  // confidence (e.g. "I'm fairly sure it's coffee") must NOT be re-litigated — bundling
+  // it into "is that right?" reads as the agent second-guessing what it just stated. So
+  // a low-confidence INFERRED fabric is confirmed on its own; the stain is only included
+  // when the stain itself is the uncertain fact.
+  const fabricUncertain = Boolean(pf.fabric) && pf.fabricConfidence === 'low'
+  const stainUncertain = Boolean(pf.stain) && pf.stainConfidence === 'medium'
+  const toConfirm: string[] = []
+  if (stainUncertain) toConfirm.push(pf.stain as string)
+  if (fabricUncertain) toConfirm.push(pf.fabric as string)
+  if (toConfirm.length === 1 && fabricUncertain && !stainUncertain) {
+    // Only the inferred fabric is in doubt — ask about it specifically, without
+    // dragging the committed stain back into question.
+    return {
+      text: `Is it ${pf.fabric}? I inferred that — tell me if it's something else.`,
+      options: ['Yes, that is right', 'No, let me fix it'],
+    }
+  }
+  const facts = toConfirm.join(' and ')
   return {
     text: facts ? `I see ${facts} — is that right?` : 'Let me make sure I have this right — can you confirm?',
     options: ['Yes, that is right', 'No, let me fix it'],
@@ -867,10 +885,23 @@ function pickSafetyQuestion(
   const text = normalizeText(rawUserText(req))
   const t = req.transcript
 
-  // (a) a known fact we are NOT sure about → confirm it before anything else.
+  // (a) a known fact we are NOT sure about → confirm it, but ONLY before the
+  // conversation has moved on. Once the user has answered a downstream safety
+  // variable (age / prior treatment / care label), tacking a belated identity
+  // confirm on as an extra step is backtracking — it reads as "why is it asking
+  // again?". In that case fall through to the next genuinely-open variable
+  // (or verdict) instead of adding a redundant confirm beat.
+  const downstreamAlreadyAnswered =
+    AGE_DISCLOSED.test(text) ||
+    PRIOR_DISCLOSED.test(text) ||
+    PRIOR_AGENT_DISCLOSED.test(text) ||
+    CARE_DISCLOSED.test(text) ||
+    askedInTranscript(t, AGE_ASKED) ||
+    askedInTranscript(t, PRIOR_ASKED) ||
+    askedInTranscript(t, CARE_ASKED)
   const lowConfFact =
     (pf.fabricKnown && pf.fabricConfidence === 'low') || (pf.stainKnown && pf.stainConfidence === 'medium')
-  if (lowConfFact && !askedInTranscript(t, CONFIRM_ASKED)) {
+  if (lowConfFact && !askedInTranscript(t, CONFIRM_ASKED) && !downstreamAlreadyAnswered) {
     return { question: confirmQuestion(pf), reason: 'confirm_low_confidence_fact' }
   }
   // (b) stain age
@@ -937,6 +968,12 @@ function questionAsksFabric(s: string): boolean {
 function questionAsksStain(s: string): boolean {
   return STAIN_IDENTITY_Q.test(s)
 }
+// An identity-CONFIRM question ("I see X — is that right?", "can you confirm?"). This is
+// phrased differently from the identity SLOT questions, so the slot matchers above miss
+// it. We suppress it specifically when the conversation has already moved past identity.
+function questionAsksConfirm(s: string): boolean {
+  return CONFIRM_ASKED.test(s)
+}
 /** Apply the deterministic guard to the model's question. If it re-asks a KNOWN fact,
  *  suppress it and substitute the highest-priority unknown safety variable (or null →
  *  proceed to verdict when none remain). A LOW-confidence fabric guess is NOT treated
@@ -956,15 +993,35 @@ export function applySuppression(
   const reAsksStain =
     questionAsksStain(q.text) &&
     ((pf.stainKnown && pf.stainConfidence !== 'medium') || answeredStainIdentityInTranscript(t))
-  if (!reAsksFabric && !reAsksStain) return { question: q, suppressions: [] }
+  // A belated identity CONFIRM — "I see X — is that right?" — is backtracking once the
+  // user has already answered a downstream safety variable (age / prior / care). At that
+  // point identity is functionally committed; re-confirming it adds a redundant step and
+  // reads as the agent second-guessing itself. Suppress it and move to the next open
+  // variable (or verdict). Before any downstream answer, a confirm is still allowed.
+  const userText = normalizeText(rawUserText(req))
+  const movedPastIdentity =
+    AGE_DISCLOSED.test(userText) ||
+    PRIOR_DISCLOSED.test(userText) ||
+    PRIOR_AGENT_DISCLOSED.test(userText) ||
+    CARE_DISCLOSED.test(userText) ||
+    askedInTranscript(t, AGE_ASKED) ||
+    askedInTranscript(t, PRIOR_ASKED) ||
+    askedInTranscript(t, CARE_ASKED)
+  const reAsksConfirm = questionAsksConfirm(q.text) && movedPastIdentity
+  if (!reAsksFabric && !reAsksStain && !reAsksConfirm) return { question: q, suppressions: [] }
 
   const substitute = nextQuestionAfterIdentitySuppression(pf, req)
+  const reason = reAsksConfirm
+    ? 'identity_confirm_after_downstream_answered'
+    : reAsksStain
+      ? 'stain_identity_already_known'
+      : 'fabric_already_known'
   return {
     question: substitute,
     suppressions: [
       {
         suppressedQuestion: q.text,
-        reason: reAsksStain ? 'stain_identity_already_known' : 'fabric_already_known',
+        reason,
         substituted: substitute?.text ?? '(no safety variable left — proceeding to verdict)',
       },
     ],

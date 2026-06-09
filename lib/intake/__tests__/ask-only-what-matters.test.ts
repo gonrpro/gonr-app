@@ -287,3 +287,40 @@ describe('repeat-question guard — never re-ask an answered identity question',
     expect(question?.text).toBe('Quick one — do you know what caused the stain?')
   })
 })
+
+describe('no redundant identity-confirm after the conversation moved on (Tyler 2026-06-09)', () => {
+  // Repro of the reported beat: agent narrates "coffee on what seems to be cotton",
+  // asks freshness, user answers "still wet" — then it asked "I see cotton and coffee
+  // — is that right?" That belated confirm is backtracking and must be suppressed.
+  const confirmQ: IntakeQuestion = {
+    text: 'I see cotton and coffee — is that right?',
+    options: ['Yes, that is right', 'No, let me fix it'],
+  }
+
+  it('suppresses a model-emitted identity confirm AFTER the freshness answer', () => {
+    const req: IntakeRequest = {
+      transcript: [
+        { role: 'user', text: 'coffee on my shirt' },
+        { role: 'assistant', text: 'How long has the stain been there?' },
+        { role: 'user', text: 'still wet, just happened' },
+      ],
+    }
+    const pf = extractParsedFacts(req)
+    const { question, suppressions } = applySuppression(confirmQ, pf, req)
+    expect(suppressions).toHaveLength(1)
+    expect(suppressions[0].reason).toBe('identity_confirm_after_downstream_answered')
+    // Must NOT re-ask "is that right?" — moves to the next open variable or verdict.
+    expect(question?.text ?? '').not.toContain('is that right')
+  })
+
+  it('still ALLOWS a confirm before any downstream variable is answered', () => {
+    const req: IntakeRequest = {
+      transcript: [{ role: 'user', text: 'coffee on my shirt' }],
+    }
+    const pf = extractParsedFacts(req)
+    const { question, suppressions } = applySuppression(confirmQ, pf, req)
+    // Nothing downstream yet → confirm passes through untouched.
+    expect(suppressions).toHaveLength(0)
+    expect(question?.text).toBe('I see cotton and coffee — is that right?')
+  })
+})
