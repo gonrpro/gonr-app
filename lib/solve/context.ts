@@ -101,7 +101,14 @@ export function buildSolveContext(params: {
   const careSymbols = labelResult?.careSymbols?.length ? labelResult.careSymbols : careSymbolsParam
   const labelWarnings = labelResult?.warnings || []
   const isDryCleanOnly = careSymbols.includes('dry-clean-only')
-  const isDelicateFiber = DELICATE_FIBERS.test(fiber) || DELICATE_FIBERS.test(fabricDescription)
+  // Also read the resolved SURFACE text — on the frontier JSON path a delicate fiber
+  // ("silk dress") often arrives only via surfaceHint, with no care-label fiber, so
+  // delicacy would otherwise be missed and the cautious-fallback gate would wrongly show
+  // holding steps on silk/wool. (surface = surfaceHint > care-label fiber > vision.)
+  const isDelicateFiber =
+    DELICATE_FIBERS.test(fiber) ||
+    DELICATE_FIBERS.test(fabricDescription) ||
+    DELICATE_FIBERS.test(surface)
   const hasNoBleach = careSymbols.includes('no-bleach')
   const hasNoHeat = careSymbols.includes('no-heat')
 
