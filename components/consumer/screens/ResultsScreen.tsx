@@ -461,12 +461,31 @@ export default function ResultsScreen({
     return (
       <ScreenShell>
         <ContextChip text={headerContext} />
-        <div className="mt-8 flex flex-col items-center justify-center gap-4 py-10 text-center">
-          <Loader2 size={30} className="animate-spin text-gonr-hotpink" aria-hidden="true" />
-          <p className="text-base font-bold text-gonr-navy">{t('results.loadingTitle')}</p>
-          <p className="max-w-[20rem] text-sm font-medium text-gonr-textgray">
-            {t('results.loadingBody')}
-          </p>
+        {/* Skeleton that MIRRORS the loaded result (verdict card + gradient-pill step
+            rows) so the layout is reserved and real content fades in without a reflow
+            jump — feels faster than a centered spinner. Screen readers get the loading
+            status; the shapes are decorative. */}
+        <div className="mt-6 gonr-fade-up space-y-4" aria-busy="true" aria-live="polite">
+          <span className="sr-only">{t('results.loadingTitle')}</span>
+          <div className="gonr-card p-4">
+            <div className="h-3 w-24 animate-pulse rounded-full bg-gonr-navy/10" />
+            <div className="mt-3 h-5 w-3/4 animate-pulse rounded-full bg-gonr-navy/10" />
+            <div className="mt-2 h-4 w-1/2 animate-pulse rounded-full bg-gonr-navy/10" />
+          </div>
+          <div className="gonr-card p-4">
+            <div className="h-3 w-28 animate-pulse rounded-full bg-gonr-navy/10" />
+            <div className="mt-4 space-y-3">
+              {[0, 1, 2].map((i) => (
+                <div key={i} className="flex gap-3">
+                  <span className="gonr-gradient mt-0.5 h-8 w-8 shrink-0 animate-pulse rounded-full opacity-30" />
+                  <div className="flex-1 space-y-2 pt-1">
+                    <div className="h-3.5 w-full animate-pulse rounded-full bg-gonr-navy/10" />
+                    <div className="h-3.5 w-2/3 animate-pulse rounded-full bg-gonr-navy/10" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </ScreenShell>
     )
