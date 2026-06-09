@@ -175,7 +175,11 @@ export default function AgenticIntake({
         }
 
         if (data.phase === 'question' && data.nextQuestion) {
-          setRead(data.read ?? null)
+          // Pin the read: set GONR's "here's what I think" impression ONCE and never
+          // rewrite it on later turns. That wholesale rewrite each turn was the
+          // re-reading problem — the conversation now moves forward via the appended
+          // Q&A thread below, not by re-rendering the summary.
+          setRead((prev) => prev ?? data.read ?? null)
           setKnows(data.knows ?? [])
           setCannotKnow(data.cannotKnow ?? [])
           setQuestion(data.nextQuestion)
@@ -278,6 +282,18 @@ export default function AgenticIntake({
   // ── ASKING / THINKING: the live conversation. ──────────────────────────────
   const showRead = Boolean(read && (read.stain || read.fabric))
 
+  // Append-only conversation thread: GONR's asked questions + the user's answers as
+  // persistent chat bubbles. The user never re-reads a rewriting summary — each turn
+  // only ADDS a bubble. The opening text lives in the context chip (so we skip the
+  // leading initial-user turn); the LIVE question (the last assistant turn while
+  // asking) renders interactively below, so it isn't duplicated here.
+  const hasInitial = Boolean(initialText && initialText.trim())
+  const threadEnd =
+    phase === 'asking' && turns.length > 0 && turns[turns.length - 1].role === 'assistant'
+      ? turns.length - 1
+      : turns.length
+  const threadTurns = turns.slice(hasInitial ? 1 : 0, threadEnd)
+
   return (
     <Shell thumbnailUrl={thumbnailUrl} contextText={initialText}>
       {/* GONR's synthesized read — shown fast, calm, confident. */}
@@ -333,6 +349,32 @@ export default function AgenticIntake({
               ) : null}
             </div>
           ) : null}
+        </div>
+      ) : null}
+
+      {/* Append-only conversation thread — every prior Q&A stays put; a new turn
+          only ADDS a bubble (no summary rewrite, nothing to re-read). The just-given
+          answer appears here instantly (optimistic echo) since answerWith() pushes it
+          to `turns` before the network turn. */}
+      {threadTurns.length > 0 ? (
+        <div className="mt-4 flex flex-col gap-2">
+          {threadTurns.map((turn, i) =>
+            turn.role === 'user' ? (
+              <div
+                key={i}
+                className="gonr-gradient max-w-[85%] self-end rounded-2xl rounded-br-md px-4 py-2 text-[15px] font-bold text-white shadow-[0_6px_16px_-10px_rgba(247,10,117,0.7)]"
+              >
+                {turn.text}
+              </div>
+            ) : (
+              <div
+                key={i}
+                className="max-w-[85%] self-start rounded-2xl rounded-bl-md border border-[var(--gonr-border)] bg-white px-4 py-2 text-[15px] font-semibold text-gonr-navy"
+              >
+                {turn.text}
+              </div>
+            ),
+          )}
         </div>
       ) : null}
 
