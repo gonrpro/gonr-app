@@ -996,12 +996,29 @@ function toCareStatus(hardConstraints: string[], careRisk: string): CareStatus {
 /** Build the SolveInput used for data-rep + the Results header (not for advice).
  *  `resolved` carries the engine material — care-label fiber when recognized,
  *  otherwise the model's read — so a stain-photo guess can never override the label. */
+/** The stain TERM the engine's library lookup matches on. When the deterministic
+ *  extractor already resolved a canonical stain (matched against the alias maps —
+ *  e.g. "coffee", "red wine"), lead with THAT clean term so /api/solve's library
+ *  lookup hits the curated core card. The verbose "userNote. model-read" blob (e.g.
+ *  "coffee on cotton shirt. coffee (tannin-based beverage stain)") does NOT reduce to
+ *  the canonical slug — it silently falls through to the tier-4 AI card even when a
+ *  core card exists (TASK-218 canonicalization miss; confirmed: canonical "coffee"/
+ *  "cotton" -> source=core, the blob -> source=ai). Heat / prior-treatment / care
+ *  constraints are folded in SEPARATELY by buildEngineSolveBody, so the clean term
+ *  loses no safety signal. Falls back to the free-text blob when no stain was
+ *  resolved, so the engine can still infer the family. */
+export function engineStainTerm(parsedFacts: ParsedFacts, userNote: string, readStain: string): string {
+  if (parsedFacts.stainKnown && parsedFacts.stain?.trim()) return parsedFacts.stain.trim()
+  return [userNote, readStain].map((s) => s.trim()).filter(Boolean).join('. ') || 'this stain'
+}
+
 function assembleInput(
   out: IntakeModelOutput,
   hardConstraints: string[],
   userNote: string,
   resolved: ResolvedFiber,
   rawUser: string,
+  parsedFacts: ParsedFacts,
 ): SolveInput {
   const flags = out.riskFlags.join(' ').toLowerCase()
   const careRisk = out.read.careRisk
@@ -1027,8 +1044,7 @@ function assembleInput(
     `${flags} ${careRisk} ${rawUser}`.match(new RegExp(PRIOR_AGGRESSIVE.source, 'gi')) ?? []
   const priorTreatment = Array.from(new Set(priorMatches.map((token) => token.toLowerCase())))
 
-  const description =
-    [userNote, out.read.stain].map((s) => s.trim()).filter(Boolean).join('. ') || 'this stain'
+  const description = engineStainTerm(parsedFacts, userNote, out.read.stain)
 
   return {
     ...emptySolveInput(),
@@ -1172,7 +1188,7 @@ export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise
   // Assemble the facts ONCE, then build the engine body FROM them so the body the
   // engine receives carries the same care/heat/prior-treatment constraints the
   // Results screen will render — they can never diverge or be silently dropped.
-  const assembledInput = assembleInput(out, hardConstraints, userNote, resolved, rawUser)
+  const assembledInput = assembleInput(out, hardConstraints, userNote, resolved, rawUser, parsedFacts)
   const solveDecision = {
     ...base,
     action: 'solve' as const,
