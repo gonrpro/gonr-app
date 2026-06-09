@@ -119,3 +119,171 @@ describe('authoritative suppression', () => {
     expect(question?.text).not.toMatch(/caused the stain/i)
   })
 })
+
+// Tyler live bug (2026-06-09): the intake re-asked "do you know what caused the stain?"
+// after the identity question had already been asked. Unknown/medium-confidence stain
+// reads must move on to the next safety variable instead of looping on identity.
+describe('repeat-question guard — never re-ask an answered identity question', () => {
+  const stainIdentityQ: IntakeQuestion = {
+    text: 'Quick one — do you know what caused the stain?',
+    options: ['Yes, I know what it is', 'Not sure'],
+  }
+
+  it('suppresses a SECOND stain-identity ask once already asked, even when stain is unresolved', () => {
+    // The live bug: the stain question was already asked + answered, but the answer is
+    // not resolvable by the deterministic dictionary (stainKnown=false). The pre-existing
+    // known-fact guard does NOT fire — only the new already-asked guard does. Re-asking
+    // the same identity question is the "it asked me the same thing again" bug.
+    const req: IntakeRequest = {
+      transcript: [
+        { role: 'user', text: 'something spilled on my shirt' },
+        { role: 'assistant', text: 'Quick one — do you know what caused the stain?' },
+        { role: 'user', text: 'not sure' },
+      ],
+    }
+    const pf = extractParsedFacts(req)
+    expect(pf.stainKnown).toBe(false) // unresolved → known-fact guard alone wouldn't catch it
+    const { question, suppressions } = applySuppression(stainIdentityQ, pf, req)
+    expect(suppressions).toHaveLength(1)
+    expect(suppressions[0].reason).toBe('stain_identity_already_known')
+    // it must move ON, never re-ask the same identity question
+    expect(question?.text ?? '').not.toMatch(/do you know what caused the stain/i)
+  })
+
+  it('does NOT suppress the FIRST stain-identity ask (only repeats)', () => {
+    const req = chatReq('something spilled on my shirt')
+    const pf = extractParsedFacts(req)
+    const { suppressions } = applySuppression(stainIdentityQ, pf, req)
+    expect(suppressions).toHaveLength(0)
+  })
+
+  it('does NOT suppress the follow-up after a bare affirmative stain answer', () => {
+    const req: IntakeRequest = {
+      transcript: [
+        { role: 'user', text: 'something spilled on my shirt' },
+        { role: 'assistant', text: 'Quick one — do you know what caused the stain?' },
+        { role: 'user', text: 'Yes, I know what it is' },
+      ],
+    }
+    const pf = extractParsedFacts(req)
+    expect(pf.stainKnown).toBe(false)
+    const { question, suppressions } = applySuppression(stainIdentityQ, pf, req)
+    expect(suppressions).toHaveLength(0)
+    expect(question).toBe(stainIdentityQ)
+  })
+
+  it('does NOT suppress the follow-up after a casual bare affirmative stain answer', () => {
+    const req: IntakeRequest = {
+      transcript: [
+        { role: 'user', text: 'something spilled on my shirt' },
+        { role: 'assistant', text: 'Quick one — do you know what caused the stain?' },
+        { role: 'user', text: 'yeah' },
+      ],
+    }
+    const pf = extractParsedFacts(req)
+    expect(pf.stainKnown).toBe(false)
+    const { question, suppressions } = applySuppression(stainIdentityQ, pf, req)
+    expect(suppressions).toHaveLength(0)
+    expect(question).toBe(stainIdentityQ)
+  })
+
+  it('does NOT suppress the follow-up after a punctuated bare affirmative stain answer', () => {
+    const req: IntakeRequest = {
+      transcript: [
+        { role: 'user', text: 'something spilled on my shirt' },
+        { role: 'assistant', text: 'Quick one — do you know what caused the stain?' },
+        { role: 'user', text: 'yeah!' },
+      ],
+    }
+    const pf = extractParsedFacts(req)
+    expect(pf.stainKnown).toBe(false)
+    const { question, suppressions } = applySuppression(stainIdentityQ, pf, req)
+    expect(suppressions).toHaveLength(0)
+    expect(question).toBe(stainIdentityQ)
+  })
+
+  it('suppresses a SECOND fabric-identity ask after prior choice wording', () => {
+    const req: IntakeRequest = {
+      transcript: [
+        { role: 'user', text: 'there is a mark on this item' },
+        { role: 'assistant', text: 'Is it silk, wool, or cotton?' },
+        { role: 'user', text: 'not sure' },
+      ],
+    }
+    const pf = extractParsedFacts(req)
+    expect(pf.fabricKnown).toBe(false)
+    const { question, suppressions } = applySuppression(
+      { text: 'Quick one — what is the fabric?', options: [] },
+      pf,
+      req,
+    )
+    expect(suppressions).toHaveLength(1)
+    expect(suppressions[0].reason).toBe('fabric_already_known')
+    expect(question?.text).toBe('Quick one — do you know what caused the stain?')
+  })
+
+  it('does NOT suppress the follow-up after a bare affirmative fabric answer', () => {
+    const fabricIdentityQ: IntakeQuestion = { text: 'Quick one — what is the fabric?', options: [] }
+    const req: IntakeRequest = {
+      transcript: [
+        { role: 'user', text: 'there is a mark on this item' },
+        { role: 'assistant', text: 'Do you know the fabric?' },
+        { role: 'user', text: 'yes' },
+      ],
+    }
+    const pf = extractParsedFacts(req)
+    expect(pf.fabricKnown).toBe(false)
+    const { question, suppressions } = applySuppression(fabricIdentityQ, pf, req)
+    expect(suppressions).toHaveLength(0)
+    expect(question).toBe(fabricIdentityQ)
+  })
+
+  it('does NOT suppress the follow-up after a casual bare affirmative fabric answer', () => {
+    const fabricIdentityQ: IntakeQuestion = { text: 'Quick one — what is the fabric?', options: [] }
+    const req: IntakeRequest = {
+      transcript: [
+        { role: 'user', text: 'there is a mark on this item' },
+        { role: 'assistant', text: 'Do you know the fabric?' },
+        { role: 'user', text: 'I do' },
+      ],
+    }
+    const pf = extractParsedFacts(req)
+    expect(pf.fabricKnown).toBe(false)
+    const { question, suppressions } = applySuppression(fabricIdentityQ, pf, req)
+    expect(suppressions).toHaveLength(0)
+    expect(question).toBe(fabricIdentityQ)
+  })
+
+  it('does NOT suppress the follow-up after a punctuated bare affirmative fabric answer', () => {
+    const fabricIdentityQ: IntakeQuestion = { text: 'Quick one — what is the fabric?', options: [] }
+    const req: IntakeRequest = {
+      transcript: [
+        { role: 'user', text: 'there is a mark on this item' },
+        { role: 'assistant', text: 'Do you know the fabric?' },
+        { role: 'user', text: 'yes.' },
+      ],
+    }
+    const pf = extractParsedFacts(req)
+    expect(pf.fabricKnown).toBe(false)
+    const { question, suppressions } = applySuppression(fabricIdentityQ, pf, req)
+    expect(suppressions).toHaveLength(0)
+    expect(question).toBe(fabricIdentityQ)
+  })
+
+  it('suppresses a SECOND fabric-identity ask after a negative fabric answer', () => {
+    const fabricIdentityQ: IntakeQuestion = { text: 'Quick one — what is the fabric?', options: [] }
+    const req: IntakeRequest = {
+      transcript: [
+        { role: 'user', text: 'there is a mark on this item' },
+        { role: 'assistant', text: 'Do you know the fabric?' },
+        { role: 'user', text: 'no' },
+      ],
+    }
+    const pf = extractParsedFacts(req)
+    expect(pf.fabricKnown).toBe(false)
+    const { question, suppressions } = applySuppression(fabricIdentityQ, pf, req)
+    expect(suppressions).toHaveLength(1)
+    expect(suppressions[0].reason).toBe('fabric_already_known')
+    expect(question?.text).toBe('Quick one — do you know what caused the stain?')
+  })
+})

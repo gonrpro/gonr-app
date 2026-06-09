@@ -647,8 +647,14 @@ const SURFACE_ALIAS_KEYS = Object.keys(SURFACE_ALIASES).sort((a, b) => b.length 
 
 const STAIN_SLOT_QUESTION =
   /\b(what (?:is |was )?(?:the )?stain|which stain|what stain|type of stain|kind of stain|what (?:caused|spilled)|do you know what (?:it is|caused|the stain|happened)|identify the stain|what kind of (?:stain|spill)|what happened to)\b/i
+const AFFIRMATIVE_IDENTITY_SLOT_ANSWER =
+  /^(?:yes|yeah|yep|yup|sure|correct|right|yes[,!. ]+i (?:do|know(?: what it is)?)|i (?:do|know(?: what it is)?))$/i
 const GENERIC_STAIN_SLOT_ANSWER =
-  /^(?:yes|yes[,!. ]+i know(?: what it is)?|i know(?: what it is)?|not sure|unsure|unknown|i don'?t know|do not know|no idea|maybe|probably)$/i
+  /^(?:yes|yeah|yep|yup|sure|correct|right|yes[,!. ]+i (?:do|know(?: what it is)?)|i (?:do|know(?: what it is)?)|not sure|unsure|unknown|i don'?t know|do not know|no idea|maybe|probably)$/i
+
+function cleanSlotAnswer(text: string): string {
+  return text.trim().replace(/[.!?]+$/g, '').trim()
+}
 
 /** When GONR asks a stain-identity question, the next concrete user answer is a
  *  resolved slot even if the alias table misses the exact wording. This keeps the
@@ -660,7 +666,7 @@ function stainAnswerFromTranscript(transcript: IntakeTurn[]): string | undefined
     const q = transcript[i]
     const a = transcript[i + 1]
     if (q.role !== 'assistant' || a.role !== 'user') continue
-    const text = a.text.trim()
+    const text = cleanSlotAnswer(a.text)
     if (!STAIN_SLOT_QUESTION.test(q.text) || !text || GENERIC_STAIN_SLOT_ANSWER.test(text)) continue
     answer = text
   }
@@ -824,6 +830,32 @@ function askedInTranscript(transcript: IntakeTurn[], re: RegExp): boolean {
   return transcript.some((t) => t.role === 'assistant' && re.test(t.text))
 }
 
+function answeredStainIdentityInTranscript(transcript: IntakeTurn[]): boolean {
+  for (let i = 0; i < transcript.length - 1; i++) {
+    const q = transcript[i]
+    const a = transcript[i + 1]
+    if (q.role !== 'assistant' || a.role !== 'user') continue
+    const text = cleanSlotAnswer(a.text)
+    if (!STAIN_IDENTITY_Q.test(q.text) || !text) continue
+    if (AFFIRMATIVE_IDENTITY_SLOT_ANSWER.test(text)) continue
+    return true
+  }
+  return false
+}
+
+function answeredFabricIdentityInTranscript(transcript: IntakeTurn[]): boolean {
+  for (let i = 0; i < transcript.length - 1; i++) {
+    const q = transcript[i]
+    const a = transcript[i + 1]
+    if (q.role !== 'assistant' || a.role !== 'user') continue
+    const text = cleanSlotAnswer(a.text)
+    if (!questionAsksFabric(q.text) || !text) continue
+    if (AFFIRMATIVE_IDENTITY_SLOT_ANSWER.test(text)) continue
+    return true
+  }
+  return false
+}
+
 /** The highest-priority STILL-UNKNOWN safety variable to ask about, computed from what
  *  is already known. Order: (a) confirm a low-confidence known fact, (b) stain age,
  *  (c) prior treatment, (d) care-label facts. Returns null when nothing valuable is
@@ -864,10 +896,17 @@ function pickSafetyQuestion(
 
 /** The deterministic fail-closed question: if a core fact is still unknown ask for it,
  *  otherwise the highest-priority safety variable, never re-asking a resolved fact. */
+function nextQuestionAfterIdentitySuppression(pf: ParsedFacts, req: IntakeRequest): IntakeQuestion | null {
+  // Never re-ask stain/fabric IDENTITY once it has a usable answer. Re-asking is the
+  // "it asked me the same thing again" bug; fall through to the next still-open safety
+  // variable (or proceed) instead of looping on it.
+  if (!pf.fabricKnown && !answeredFabricIdentityInTranscript(req.transcript)) return FABRIC_QUESTION
+  if (!pf.stainKnown && !answeredStainIdentityInTranscript(req.transcript)) return STAIN_QUESTION
+  return pickSafetyQuestion(pf, req)?.question ?? null
+}
+
 function safetyFallbackQuestion(pf: ParsedFacts, req: IntakeRequest): IntakeQuestion {
-  if (!pf.fabricKnown) return FABRIC_QUESTION
-  if (!pf.stainKnown) return STAIN_QUESTION
-  return pickSafetyQuestion(pf, req)?.question ?? GENERIC_SAFETY_QUESTION
+  return nextQuestionAfterIdentitySuppression(pf, req) ?? GENERIC_SAFETY_QUESTION
 }
 
 function hasConcreteReadValue(value: string): boolean {
@@ -898,7 +937,6 @@ function questionAsksFabric(s: string): boolean {
 function questionAsksStain(s: string): boolean {
   return STAIN_IDENTITY_Q.test(s)
 }
-
 /** Apply the deterministic guard to the model's question. If it re-asks a KNOWN fact,
  *  suppress it and substitute the highest-priority unknown safety variable (or null →
  *  proceed to verdict when none remain). A LOW-confidence fabric guess is NOT treated
@@ -908,12 +946,19 @@ export function applySuppression(
   pf: ParsedFacts,
   req: IntakeRequest,
 ): { question: IntakeQuestion | null; suppressions: Suppression[] } {
-  const reAsksFabric = pf.fabricKnown && pf.fabricConfidence === 'high' && questionAsksFabric(q.text)
-  const reAsksStain = pf.stainKnown && pf.stainConfidence !== 'medium' && questionAsksStain(q.text)
+  // Suppress an identity re-ask either because the fact is KNOWN, or because we ALREADY
+  // asked it earlier. Re-asking the same identity question is the "same question again"
+  // bug, even when the answer is still not enough to resolve a deterministic stain/fabric.
+  const t = req.transcript
+  const reAsksFabric =
+    questionAsksFabric(q.text) &&
+    ((pf.fabricKnown && pf.fabricConfidence === 'high') || answeredFabricIdentityInTranscript(t))
+  const reAsksStain =
+    questionAsksStain(q.text) &&
+    ((pf.stainKnown && pf.stainConfidence !== 'medium') || answeredStainIdentityInTranscript(t))
   if (!reAsksFabric && !reAsksStain) return { question: q, suppressions: [] }
 
-  const picked = pickSafetyQuestion(pf, req)
-  const substitute = picked?.question ?? null
+  const substitute = nextQuestionAfterIdentitySuppression(pf, req)
   return {
     question: substitute,
     suppressions: [
