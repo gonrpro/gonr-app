@@ -119,6 +119,12 @@ export function proxy(request: NextRequest) {
       pathname === '/contact' ||
       isStaticAsset(pathname)
     if (!isConsumerSurface) {
+      if (pathname === '/') {
+        const url = request.nextUrl.clone()
+        url.pathname = '/solve-v2'
+        url.search = ''
+        return NextResponse.rewrite(url)
+      }
       const url = request.nextUrl.clone()
       url.pathname = '/solve-v2'
       url.search = ''

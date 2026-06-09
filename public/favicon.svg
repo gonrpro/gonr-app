@@ -1,13 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="GONR O mark">
   <defs>
-    <linearGradient id="gonr" x1="72" y1="88" x2="440" y2="424" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#f70a75"/>
-      <stop offset=".52" stop-color="#ef2955"/>
-      <stop offset="1" stop-color="#ff5a18"/>
+    <linearGradient id="gonr-o" x1="64" y1="424" x2="448" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f00678"/>
+      <stop offset=".52" stop-color="#f52a4e"/>
+      <stop offset="1" stop-color="#ff6418"/>
     </linearGradient>
   </defs>
-  <rect width="512" height="512" rx="112" fill="#fff"/>
-  <circle cx="256" cy="256" r="176" fill="url(#gonr)"/>
-  <path fill="#fff" d="M256 90c19 95 71 147 166 166-95 19-147 71-166 166-19-95-71-147-166-166 95-19 147-71 166-166Z"/>
-  <path fill="#fff" d="M149 207c8 39 29 60 68 68-39 8-60 29-68 68-8-39-29-60-68-68 39-8 60-29 68-68ZM363 155c5 27 20 42 47 47-27 5-42 20-47 47-5-27-20-42-47-47 27-5 42-20 47-47Z" opacity=".95"/>
+  <circle cx="256" cy="256" r="246" fill="url(#gonr-o)"/>
+  <path fill="#fff" d="M256 54c23 117 86 179 202 202-116 23-179 85-202 202-23-117-86-179-202-202 116-23 179-85 202-202Z"/>
+  <path fill="#fff" d="M136 164c8 39 29 60 68 68-39 8-60 29-68 68-8-39-29-60-68-68 39-8 60-29 68-68ZM380 132c5 28 20 43 48 48-28 5-43 20-48 48-5-28-20-43-48-48 28-5 43-20 48-48ZM138 306c6 31 23 48 54 54-31 6-48 23-54 54-6-31-23-48-54-54 31-6 48-23 54-54Z"/>
 </svg>

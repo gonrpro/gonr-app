@@ -12,9 +12,13 @@ import { AuthProvider } from '@/lib/auth/AuthContext'
 export async function generateMetadata(): Promise<Metadata> {
   const host = (await headers()).get('host')?.split(':')[0]?.toLowerCase()
   const isSpottingBoardHost = host === 'spottingboard.com' || host === 'www.spottingboard.com'
+  const gonrTitle = 'GONR — Know what to do. Know what not to.'
+  const gonrDescription = 'Show us the stain. GONR reads what it can and asks only what matters.'
+  const gonrShareImage = '/og-image-20260609.png'
 
   if (isSpottingBoardHost) {
     return {
+      metadataBase: new URL('https://spottingboard.com'),
       title: 'Spotting Board — Plant Brain Workbench',
       description: 'Private plant brain workbench for dry cleaners.',
       openGraph: {
@@ -33,29 +37,30 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
-    title: 'GONR — Know what to do. Know what not to.',
-    description: 'Show us the stain. GONR reads what it can and asks only what matters — then tells you what to do, and what not to.',
+    metadataBase: new URL('https://gonr.app'),
+    title: gonrTitle,
+    description: gonrDescription,
     icons: {
-      // The GONR sparkle-"O" mark (extracted from the approved logo) as the favicon.
       icon: [
-        { url: '/brand/gonr-o-32.png', sizes: '32x32', type: 'image/png' },
-        { url: '/brand/gonr-o-512.png', sizes: '512x512', type: 'image/png' },
+        { url: '/brand/gonr-o-icon.png', type: 'image/png' },
+        { url: '/favicon.svg', type: 'image/svg+xml' },
       ],
-      apple: '/brand/gonr-o-180.png',
+      shortcut: '/favicon.ico',
+      apple: '/brand/gonr-o-icon.png',
     },
     openGraph: {
-      title: 'GONR — Know what to do. Know what not to.',
-      description: 'Show us the stain. GONR reads what it can and asks only what matters — then tells you what to do, and what not to.',
-      url: 'https://gonr.app',
+      title: gonrTitle,
+      description: gonrDescription,
+      url: 'https://gonr.app/solve-v2',
       siteName: 'GONR™',
-      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+      images: [{ url: gonrShareImage, width: 1200, height: 630 }],
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'GONR — Know what to do. Know what not to.',
-      description: 'Show us the stain. GONR reads what it can and asks only what matters — then tells you what to do, and what not to.',
-      images: ['/og-image.png'],
+      title: gonrTitle,
+      description: gonrDescription,
+      images: [gonrShareImage],
     },
   }
 }
