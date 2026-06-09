@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Settings, Bookmark, Tag, ChevronDown, Trash2, ScanLine, Sparkles } from 'lucide-react'
 import type { Step } from '@/lib/types'
 import BottomNav from '@/components/consumer/BottomNav'
+import BetaBadge from '@/components/consumer/BetaBadge'
 import ResultsStepList from '@/components/consumer/ResultsStepList'
 import DoNotDoPanel from '@/components/consumer/DoNotDoPanel'
 import { useSessionEmail } from '@/components/consumer/useSessionEmail'
@@ -59,7 +60,10 @@ export default function SavedScreen() {
   return (
     <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5">
       <div className="flex items-center justify-between">
-        <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
+        <span className="flex items-center gap-2">
+          <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
+          <BetaBadge />
+        </span>
         <Link href="/solve-v2/profile" aria-label="Settings" className="text-gonr-navy/60">
           <Settings size={22} />
         </Link>

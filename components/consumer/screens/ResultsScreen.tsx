@@ -28,6 +28,7 @@ import {
 } from '@/lib/consumer-safety/solve-input'
 import { type SolveSource, resolveSourceLabel } from '@/lib/consumer-safety/solve-source'
 import BottomNav from '@/components/consumer/BottomNav'
+import BetaBadge from '@/components/consumer/BetaBadge'
 import ResultsStepList from '@/components/consumer/ResultsStepList'
 import DoNotDoPanel from '@/components/consumer/DoNotDoPanel'
 import DoNotDoScreen from '@/components/consumer/screens/DoNotDoScreen'
@@ -205,7 +206,10 @@ function ScreenShell({ children }: { children: React.ReactNode }) {
         <Link href="/solve-v2/solve" aria-label="Back to intake" className="text-gonr-navy/60">
           <ArrowLeft size={22} />
         </Link>
-        <span className="gonr-gradient-text text-xl font-black tracking-tight">GONR</span>
+        <span className="flex items-center gap-2">
+          <span className="gonr-gradient-text text-xl font-black tracking-tight">GONR</span>
+          <BetaBadge />
+        </span>
         <span className="w-[22px]" aria-hidden="true" />
       </div>
       {children}

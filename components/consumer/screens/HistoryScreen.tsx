@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { Settings, Shirt, ChevronRight, Search, CheckCircle2, Clock, Sparkles } from 'lucide-react'
 import BottomNav from '@/components/consumer/BottomNav'
+import BetaBadge from '@/components/consumer/BetaBadge'
 import { EXAMPLE_CHIPS } from '@/lib/consumer-safety/solve-input'
 
 // TASK-218 Screen 11 — HISTORY. Every past stain check in one calm, premium list,
@@ -89,7 +90,10 @@ export default function HistoryScreen() {
   return (
     <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5">
       <div className="flex items-center justify-between">
-        <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
+        <span className="flex items-center gap-2">
+          <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
+          <BetaBadge />
+        </span>
         <Link href="/solve-v2/profile" aria-label="Settings" className="text-gonr-navy/60">
           <Settings size={22} />
         </Link>

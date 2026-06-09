@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import type { User } from '@supabase/supabase-js'
 import BottomNav from '@/components/consumer/BottomNav'
+import BetaBadge from '@/components/consumer/BetaBadge'
 import { createClient } from '@/lib/supabase/client'
 import { getStoredUserEmail } from '@/lib/auth/clientEmail'
 
@@ -229,7 +230,10 @@ export default function ProfileScreen() {
         <Link href="/solve-v2" aria-label="Back to home" className="text-gonr-navy/60">
           <ArrowLeft size={22} />
         </Link>
-        <span className="gonr-gradient-text text-xl font-black tracking-tight">GONR</span>
+        <span className="flex items-center gap-2">
+          <span className="gonr-gradient-text text-xl font-black tracking-tight">GONR</span>
+          <BetaBadge />
+        </span>
         <span className="w-[22px]" aria-hidden="true" />
       </div>
 

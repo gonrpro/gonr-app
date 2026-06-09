@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Settings, ArrowRight, ChevronRight, Shirt, Sparkles, Camera, ScanLine, ShieldCheck } from 'lucide-react'
 import BottomNav from '@/components/consumer/BottomNav'
+import BetaBadge from '@/components/consumer/BetaBadge'
 import AttachMenu, { type AttachInitialAction } from '@/components/consumer/AttachMenu'
 import { EXAMPLE_CHIPS } from '@/lib/consumer-safety/solve-input'
 
@@ -109,7 +110,10 @@ export default function HomeScreen() {
 
       {/* top bar: approved GONR-only gradient wordmark + settings */}
       <div className="flex items-center justify-between">
-        <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
+        <span className="flex items-center gap-2">
+          <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
+          <BetaBadge />
+        </span>
         <Link href="/solve-v2/profile" aria-label="Settings" className="text-gonr-navy/60">
           <Settings size={22} />
         </Link>

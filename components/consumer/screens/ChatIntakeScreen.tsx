@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react'
 import { Sparkles, ShieldCheck, Shirt, Send } from 'lucide-react'
 import BottomNav from '@/components/consumer/BottomNav'
+import BetaBadge from '@/components/consumer/BetaBadge'
 import {
   type SolveInput,
   type FactOption,
@@ -400,7 +401,10 @@ export default function ChatIntakeScreen({
     >
       {/* identity */}
       <div className="flex items-center justify-between">
-        <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
+        <span className="flex items-center gap-2">
+          <span className="gonr-gradient-text text-2xl font-black tracking-tight">GONR</span>
+          <BetaBadge />
+        </span>
         <span className="text-xs font-extrabold uppercase tracking-wide text-gonr-textgray">
           Stain expert, on it
         </span>
