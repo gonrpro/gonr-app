@@ -57,6 +57,24 @@ export function proxy(request: NextRequest) {
     }
   }
 
+  // ── GONR host: lock to the single consumer version (Tyler: one visible app) ──
+  // The bare domain and the old /solve operator/editorial surface redirect to the new
+  // consumer app at /solve-v2. The new app (/solve-v2/*), its APIs, /auth, and static
+  // assets pass through; any pro/operator tools remain only at their own direct paths and
+  // are not linked from root or nav. The SpottingBoard host is handled above and never
+  // reaches here. NOTE: "/solve-v2" is matched exactly — startsWith('/solve/') does not
+  // catch "/solve-v2/..." (the char after "solve" is "-", not "/").
+  if (!host || !SPOTTING_BOARD_HOSTS.has(host)) {
+    const isOldPublicSurface =
+      pathname === '/' || pathname === '/solve' || pathname.startsWith('/solve/')
+    if (isOldPublicSurface && !isStaticAsset(pathname)) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/solve-v2'
+      url.search = ''
+      return NextResponse.redirect(url)
+    }
+  }
+
   return NextResponse.next()
 }
 

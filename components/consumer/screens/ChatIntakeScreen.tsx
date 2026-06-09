@@ -83,14 +83,14 @@ interface QuestionConfig {
 // Intake question copy + the answer vocabulary (verbatim from the shared lists).
 const QUESTIONS: Record<FactKey, QuestionConfig> = {
   stainType: { prompt: 'Do you know what the stain is?', options: STAIN_OPTIONS },
-  material: { prompt: 'What is the fabric?', options: MATERIAL_OPTIONS },
+  material: { prompt: 'What is it on?', options: MATERIAL_OPTIONS },
   colorfastness: { prompt: 'Could the color run or bleed?', options: COLOR_OPTIONS },
   careStatus: { prompt: 'What does the care label say?', options: CARE_OPTIONS },
-  heatExposure: { prompt: 'Has it been through any heat yet?', options: HEAT_OPTIONS },
+  heatExposure: { prompt: 'Has heat touched it?', options: HEAT_OPTIONS },
   stainAge: { prompt: 'How fresh is the stain?', options: AGE_OPTIONS },
   itemValue: { prompt: 'How valuable is the item?', options: VALUE_OPTIONS },
   priorTreatment: {
-    prompt: 'Have you already tried anything on it?',
+    prompt: 'What did you already try?',
     multi: true,
     options: PRIOR_TREATMENTS.map((t) => ({
       value: t,
