@@ -1106,6 +1106,10 @@ export const strings: Record<string, Record<string, string>> = {
   "results.sendFollowUpAria": { en: "Send follow-up", es: "Enviar pregunta de seguimiento" },
   "stepList.hotWashCaveat": { en: " — only if the care label allows hot wash", es: " — solo si la etiqueta de cuidado permite lavar con agua caliente" },
   "stepList.heatProcessCaveat": { en: " — only if the care label allows it", es: " — solo si la etiqueta de cuidado lo permite" },
+  // a11y (TASK-218): visually-hidden prefix so screen readers announce a per-step
+  // safety caveat as a caution — sighted users get the red text + icon, SR users
+  // get the severity in words (the AlertTriangle icon is aria-hidden).
+  "stepList.warningLabel": { en: "Caution:", es: "Precaución:" },
   "doNotDo.panelHeadingDefault": { en: "Things to avoid (for this stain)", es: "Qué evitar (para esta mancha)" },
   "doNotDo.panelAria": { en: "Things to avoid", es: "Qué evitar" },
   "doNotDo.showFewer": { en: "Show fewer", es: "Ver menos" },

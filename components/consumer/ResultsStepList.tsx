@@ -163,7 +163,10 @@ export default function ResultsStepList({ steps, heading, className, startIndex 
                     style={{ color: 'var(--gonr-danger)' }}
                   >
                     <AlertTriangle size={15} className="mt-0.5 shrink-0" aria-hidden="true" />
-                    <span>{warning}</span>
+                    <span>
+                      <span className="sr-only">{t('stepList.warningLabel')} </span>
+                      {warning}
+                    </span>
                   </p>
                 ) : null}
               </div>
