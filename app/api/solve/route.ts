@@ -7,7 +7,7 @@ import { decide } from '@/lib/decision/engine'
 import { recordEvent, newCorrelationId, EVENT_TYPES } from '@/lib/events/record'
 import { getUserPlant } from '@/lib/auth/getUserPlant'
 import { applyPlantFilters } from '@/lib/protocols/applyPlantFilters'
-import { runSafetyFilter, SAFE_FALLBACK } from '@/lib/safety/filter'
+import { runSafetyFilter, SAFE_FALLBACK, cautiousFallbackEligible, REFUSE_ONLY_FALLBACK } from '@/lib/safety/filter'
 import { checkHardRefuseCombo } from '@/lib/solve/hard-refuse'
 import { normalizeAICard } from '@/lib/protocols/normalizeAICard'
 import { retrieveForQuery, formatRetrievedContext, applyGroundedAttribution, isRetrievalEnabled, type RetrievalResult } from '@/lib/stainbrain/retrieve'
@@ -404,6 +404,27 @@ function buildContextualFallback(ctx: SolveContext): any {
       ...(Array.isArray(fallback.homeSolutions) ? fallback.homeSolutions : []),
     ]
   }
+
+  // SB cautious-copy gate: the "if you're going to try anything" holding steps may show
+  // ONLY when the item can tolerate a gentle home action. Delicate fiber / dry-clean-only
+  // / a chemical already applied => refuse-only (strip the try-this steps). The Do-Not-Do
+  // material warnings above are NOT stripped — they are always shown.
+  const hasPriorChemical =
+    /\b(bleach|ammonia|acetone|peroxide|solvent|alkali|oxidiz|nail\s*polish\s*remover|rubbing\s*alcohol)\b/i.test(
+      ctx.stain,
+    )
+  const cautiousOk = cautiousFallbackEligible({
+    isDelicateFiber: ctx.isDelicateFiber,
+    isDryCleanOnly: ctx.isDryCleanOnly,
+    hasPriorChemical,
+  })
+  if (!cautiousOk) {
+    fallback.homeSolutions = [...REFUSE_ONLY_FALLBACK.homeSolutions]
+    fallback.spottingProtocol = REFUSE_ONLY_FALLBACK.spottingProtocol.map((s) => ({ ...s }))
+    fallback.whyThisWorks = REFUSE_ONLY_FALLBACK.whyThisWorks
+    fallback.escalation = REFUSE_ONLY_FALLBACK.escalation
+  }
+  fallback.meta.cautiousHoldingSteps = cautiousOk
 
   return fallback
 }

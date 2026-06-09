@@ -41,6 +41,37 @@ export const SAFE_FALLBACK = {
   meta: { stainCanonical: '', surfaceCanonical: '', tier: 'safety-blocked' },
 }
 
+// SB cautious-copy gate (signed 2026-06-08). The SAFE_FALLBACK holding steps ("if you
+// are going to do anything…") may ONLY be shown when the item can plausibly tolerate a
+// gentle home holding action: washable, NOT a delicate/specialty fiber, NOT dry-clean-
+// only, and NO chemical already applied. When any of those is true, the cautious "try
+// this first" steps are stripped and the fallback stays refuse-only. (The acutely-
+// dangerous chemical-mixing / acetone-on-acetate / fume cases already route through
+// hard-refuse separately, so they never reach this fallback.)
+export function cautiousFallbackEligible(flags: {
+  isDelicateFiber: boolean
+  isDryCleanOnly: boolean
+  hasPriorChemical: boolean
+}): boolean {
+  return !flags.isDelicateFiber && !flags.isDryCleanOnly && !flags.hasPriorChemical
+}
+
+// Fields the caller swaps onto the contextual fallback when cautious holding steps are
+// NOT eligible — no "try this" guidance, just the safe escalation. Do-Not-Do / material
+// warnings are added by the caller and are ALWAYS shown.
+export const REFUSE_ONLY_FALLBACK = {
+  whyThisWorks:
+    'For a delicate or dry-clean-only item, or one where a chemical has already been used, the wrong home step can cause permanent damage. A professional cleaner has the safest options here.',
+  homeSolutions: [] as string[],
+  spottingProtocol: [
+    { step: 1, instruction: 'Do not treat this at home — for this material or situation, the wrong step risks permanent damage.' },
+    { step: 2, instruction: 'Keep it away from heat and do not apply any product.' },
+    { step: 3, instruction: 'Take it to a professional cleaner soon, and tell them the stain, when it happened, and anything already used.' },
+  ],
+  escalation:
+    'Take this to a professional cleaner. Given the material/situation, home treatment risks permanent damage — let a pro handle it.',
+}
+
 // ---------------------------------------------------------------------------
 // Surface / stain context detectors
 // ---------------------------------------------------------------------------
