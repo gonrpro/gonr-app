@@ -60,6 +60,9 @@ describe('proxy — GONR one-version routing', () => {
       // server-side-only (intake calls it) + payment webhook — must stay reachable
       '/api/scan-packet',
       '/api/webhooks/lemonsqueezy',
+      // TASK-233 — consumer QA/feedback events: the client posts here; the old
+      // hard-close silently dropped every event (pressure-test P0 #8).
+      '/api/events/record',
     ]
     for (const path of consumer) {
       const res = proxy(req(`https://gonr.app${path}`))
@@ -76,8 +79,10 @@ describe('proxy — GONR one-version routing', () => {
       '/api/stain-brain',
       '/api/tts',
       '/api/usage',
+      // /api/auth/tier stays BLOCKED (TASK-233): consumer beta has no tiers and
+      // the client no longer calls it. /api/events/record moved to the ALLOWED
+      // list above (TASK-233) — blocking it dropped every consumer QA event.
       '/api/auth/tier',
-      '/api/events/record',
       '/api/operator-waitlist',
       '/api/garment-analysis',
       '/api/flag-garment',

@@ -34,37 +34,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     const supabase = createClient()
 
-    // Shared tier-fetch helper. On failure, logs loudly and leaves tier UNCHANGED
-    // rather than silently downgrading a paid user to 'free'. Silent downgrade was
-    // the root of the results-page CTA bug (TASK-022): a transient backend hiccup
-    // flipped a founder into 'free' and surfaced the upgrade CTA.
-    const fetchAndSetTier = async (email: string | null | undefined): Promise<void> => {
-      if (!email) {
-        setTier('free')
-        setUserTier('free')
-        return
-      }
-      try {
-        const res = await fetch('/api/auth/tier', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email }),
-        })
-        if (!res.ok) {
-          console.error('[Auth] tier fetch failed', res.status, 'for', email, '— leaving tier unchanged')
-          return
-        }
-        const data = await res.json()
-        const resolved = data.tier as Tier | undefined
-        if (!resolved) {
-          console.error('[Auth] tier fetch returned empty tier for', email, '— leaving tier unchanged')
-          return
-        }
-        setTier(resolved)
-        setUserTier(resolved)
-      } catch (err) {
-        console.error('[Auth] tier fetch threw for', email, err, '— leaving tier unchanged')
-      }
+    // TASK-233 — consumer beta has NO tiers: /api/auth/tier is deliberately
+    // hard-closed by the consumer proxy (every call 404'd in prod, and the old
+    // failure log printed the user's EMAIL to the console — the pressure
+    // test's PII finding). Resolve 'free' locally; when Pro tiers become real,
+    // rewire this through an allowed endpoint. NEVER log emails or account
+    // identifiers here.
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const fetchAndSetTier = async (_email: string | null | undefined): Promise<void> => {
+      setTier('free')
+      setUserTier('free')
     }
 
     // Initial session check

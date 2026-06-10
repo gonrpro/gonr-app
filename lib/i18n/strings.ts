@@ -1099,6 +1099,7 @@ export const strings: Record<string, Record<string, string>> = {
   "results.errorGenericHeading": { en: "We couldn't finish that", es: "No pudimos completar eso" },
   "results.errorStainRequiredBody": { en: "Tell us what the stain is and we'll take another look.", es: "Dinos cuál es la mancha y lo revisamos de nuevo." },
   "results.errorGenericBody": { en: "Something went wrong on our side. Please try again.", es: "Algo salió mal de nuestro lado. Inténtalo de nuevo." },
+  "results.errorSafeFallbackLine": { en: "If the stain is fresh, the steps above are the safe move while you wait — and a professional cleaner can always take it from here.", es: "Si la mancha es reciente, los pasos de arriba son lo seguro mientras esperas — y una tintorería profesional siempre puede encargarse." },
   "results.disambiguationEyebrow": { en: "One quick question", es: "Una pregunta rápida" },
   "results.noProtocolHeading": { en: "No verified protocol yet", es: "Aún no hay un protocolo verificado" },
   "results.addDetailPlaceholder": { en: "Add a detail and we'll re-check…", es: "Agrega un detalle y lo revisamos otra vez…" },

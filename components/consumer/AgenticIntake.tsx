@@ -154,12 +154,24 @@ export default function AgenticIntake({
       setPhase('thinking')
       setLoadingStep(0)
       try {
-        const res = await fetch('/api/intake', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          credentials: 'include',
-          body: JSON.stringify({ transcript, hints: hintsRef.current, proceed, lang: langRef.current }),
-        })
+        // TASK-233 — a hung /api/intake (model latency / 504) must never
+        // strand the user in 'thinking' forever: hard 75s client timeout
+        // drops to the fail-closed 'unavailable' state, which carries
+        // first-aid + the deterministic guided-intake fallback.
+        const abort = new AbortController()
+        const timeout = setTimeout(() => abort.abort(), 75_000)
+        let res: Response
+        try {
+          res = await fetch('/api/intake', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ transcript, hints: hintsRef.current, proceed, lang: langRef.current }),
+            signal: abort.signal,
+          })
+        } finally {
+          clearTimeout(timeout)
+        }
         if (res.status === 503) {
           setPhase('unavailable')
           return
@@ -266,6 +278,9 @@ export default function AgenticIntake({
           <p className="mt-2 text-sm font-medium leading-6 text-gonr-textgray">
             {t('intake.unavailable.body')}
           </p>
+          {/* TASK-233 — failure is never a dead end: the protect-first move
+              renders right here, before the user decides anything. */}
+          <FirstAidBanner className="mt-4" />
           {onFallback ? (
             <button
               type="button"

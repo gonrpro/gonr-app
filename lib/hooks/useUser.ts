@@ -55,18 +55,10 @@ export function useUser(): UserState {
     let cancelled = false
 
     async function fetchTier(): Promise<{ tier: Tier; isFounder: boolean } | null> {
-      try {
-        const res = await fetch('/api/auth/tier', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({}),
-        })
-        if (!res.ok) return null
-        const json = await res.json()
-        return { tier: json.tier as Tier, isFounder: json.isFounder ?? false }
-      } catch {
-        return null
-      }
+      // TASK-233 — consumer beta has no tiers and the consumer proxy
+      // hard-closes /api/auth/tier (the call 404'd on every session, spamming
+      // the console). Resolve null locally; rewire when Pro tiers are real.
+      return null
     }
 
     function clearLsCompletedParam(): void {

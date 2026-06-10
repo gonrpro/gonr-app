@@ -31,6 +31,11 @@ const CONSUMER_API_EXACT = new Set<string>([
   '/api/profile', // GET ?email / POST save
   '/api/protocols/save', // POST — useSaveProtocol
   '/api/protocols/saved', // GET ?email (also matched as a prefix below for DELETE :id)
+  // TASK-233 — consumer QA/telemetry events (solve served, feedback,
+  // disclosure beacons). This was hard-closed while the client still called
+  // it, silently dropping every event (pressure-test P0 #8); the route is a
+  // consumer-safe fire-and-forget insert.
+  '/api/events/record',
   '/api/scan-stain', // POST — AttachMenu photo hint
   '/api/scan-label', // POST — AttachMenu care-label hint
   '/api/partner-inquiry', // POST — public Brand/Vendor partner form on /partners

@@ -605,10 +605,15 @@ export default function ResultsScreen({
   }
 
   // ── 5. Other engine errors (400 / 429 / 503 / 500 / explicit error) ─────────
+  // TASK-233 — backend failure is never a dead end: every error state carries
+  // the deterministic protect-first guidance (blot / no heat / no chemistry /
+  // check label) so the stain doesn't set while the user retries or walks away.
   if (http === 429) {
     return (
       <ScreenShell>
         <ErrorState heading={t('results.rateLimitHeading')} message={t('results.rateLimitBody')} onRetry={retry} />
+        <FirstAidBanner className="mt-5" />
+        <p className="mt-3 text-sm font-semibold leading-6 text-gonr-textgray">{t('results.errorSafeFallbackLine')}</p>
       </ScreenShell>
     )
   }
@@ -620,6 +625,8 @@ export default function ResultsScreen({
           message={res.error === 'Stain required' ? t('results.errorStainRequiredBody') : (res.message || t('results.errorGenericBody'))}
           onRetry={retry}
         />
+        <FirstAidBanner className="mt-5" />
+        <p className="mt-3 text-sm font-semibold leading-6 text-gonr-textgray">{t('results.errorSafeFallbackLine')}</p>
       </ScreenShell>
     )
   }
