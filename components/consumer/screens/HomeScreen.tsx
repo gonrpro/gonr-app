@@ -9,6 +9,7 @@ import BetaBadge from '@/components/consumer/BetaBadge'
 import LanguageToggle from '@/components/consumer/LanguageToggle'
 import AttachMenu, { type AttachInitialAction } from '@/components/consumer/AttachMenu'
 import GonrLogo from '@/components/brand/GonrLogo'
+import FooterContent from '@/components/layout/FooterContent'
 import { EXAMPLE_CHIPS } from '@/lib/consumer-safety/solve-input'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
@@ -276,6 +277,15 @@ export default function HomeScreen() {
           </div>
         )}
       </section>
+
+      {/* In-app footer: the consumer shell CSS-hides the global <footer>, so the
+          links + liability + faded trademark mark are rendered HERE inside the
+          scrollable home <main> (the pb-28 on <main> already clears the fixed
+          BottomNav). Shared <FooterContent> = single source of truth with the
+          legal pages' footer. */}
+      <div className="mt-10 pt-6" style={{ borderTop: '1px solid var(--gonr-border)' }}>
+        <FooterContent />
+      </div>
 
       {/* Attach action-sheet (screen 2). Photo / care-label capture runs the live
           vision endpoints and carries the hint into the intake flow; no dead tap.
