@@ -106,6 +106,24 @@ describe('proxy — GONR one-version routing', () => {
     if (loc) expect(loc).not.toContain('/solve-v2')
   })
 
+  // ── Canonical host: www.gonr.app → apex (so the two can't drift onto different deploys) ──
+  it('permanently redirects www.gonr.app → bare gonr.app, preserving path + query', () => {
+    const res = proxy(req('https://www.gonr.app/partners?ref=footer'))
+    expect(res.status).toBe(308)
+    expect(res.headers.get('location')).toBe('https://gonr.app/partners?ref=footer')
+  })
+
+  it('redirects the www apex root → gonr.app/', () => {
+    const res = proxy(req('https://www.gonr.app/'))
+    expect(res.status).toBe(308)
+    expect(res.headers.get('location')).toBe('https://gonr.app/')
+  })
+
+  it('does NOT redirect www.spottingboard.com to gonr.app (www rule is gonr-only)', () => {
+    const loc = proxy(req('https://www.spottingboard.com/')).headers.get('location')
+    if (loc) expect(loc).not.toContain('gonr.app')
+  })
+
   // The specific legacy/pro leaks Atlas found live on gonr.app (returned 200) — these
   // MUST redirect to the one consumer version, plus a few more legacy surfaces.
   it.each([

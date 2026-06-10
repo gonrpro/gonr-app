@@ -102,6 +102,16 @@ export function proxy(request: NextRequest) {
   // The SpottingBoard host is handled above and never reaches here. NOTE: "/solve-v2" is
   // matched exactly + with a trailing slash so it is never itself redirected.
   if (!host || !SPOTTING_BOARD_HOSTS.has(host)) {
+    // Canonical host: www.gonr.app permanently redirects to the bare apex so the
+    // two can never drift onto different deployments again (the www alias was left
+    // on an old build after a promote). 308 preserves method + path + query.
+    // Scoped to www.gonr.app only — www.spottingboard.com is handled by the
+    // SpottingBoard block above and never reaches here.
+    if (host === 'www.gonr.app') {
+      const dest = new URL(pathname + request.nextUrl.search, 'https://gonr.app')
+      return NextResponse.redirect(dest, 308)
+    }
+
     // API lane: tight allowlist. Only consumer (+ intake's server-side scan-packet
     // and the payment webhook) pass; every operator/legacy/admin API 404s so it is
     // not reachable from gonr.app. 404 (not redirect) keeps API semantics for
