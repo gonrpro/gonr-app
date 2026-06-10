@@ -164,6 +164,29 @@ describe('TASK-232 — direct answers and first aid', () => {
   })
 })
 
+describe('TASK-232 — i18n keys resolve to real copy (Atlas review blocker)', () => {
+  it('every TASK-232 UI key exists in the catalog for en AND es — t() never leaks a raw key', async () => {
+    const { strings, t } = await import('@/lib/i18n/strings')
+    const keys = [
+      'results.directAnswerNo',
+      'firstaid.aria',
+      'firstaid.headline',
+      'firstaid.blot',
+      'firstaid.noheat',
+      'firstaid.nochem',
+      'firstaid.label',
+    ]
+    for (const key of keys) {
+      expect(strings[key], `${key} missing from catalog`).toBeDefined()
+      for (const lang of ['en', 'es'] as const) {
+        const resolved = t(key, lang)
+        expect(resolved, `${key}/${lang} resolved to raw key`).not.toBe(key)
+        expect(resolved.length).toBeGreaterThan(2)
+      }
+    }
+  })
+})
+
 describe('TASK-232 — contract extensions (pressure-test title/template classes)', () => {
   const req = { requestText: 'coffee on cotton' }
 

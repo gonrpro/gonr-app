@@ -1017,6 +1017,7 @@ export const strings: Record<string, Record<string, string>> = {
   "firstaid.noheat": { en: "Keep heat away — no hot water, hair dryer, or ironing.", es: "Evita el calor — nada de agua caliente, secadora ni plancha." },
   "firstaid.nochem": { en: "Don't apply any cleaning product yet — and never mix bleach with vinegar, ammonia, or any other cleaner.", es: "No apliques ningún producto todavía — y nunca mezcles cloro con vinagre, amoníaco u otro limpiador." },
   "firstaid.label": { en: "Check the care label before anything touches the fabric.", es: "Revisa la etiqueta de cuidado antes de que algo toque la tela." },
+  "results.directAnswerNo": { en: "No — don't.", es: "No — no lo hagas." },
   "intake.loading.thinking": { en: "Thinking about that…", es: "Analizando eso…" },
   "intake.loading.fabricRisk": { en: "Reading the fabric…", es: "Analizando la tela…" },
   "intake.loading.stopSigns": { en: "Looking for stop signs", es: "Buscando señales de alerta" },
