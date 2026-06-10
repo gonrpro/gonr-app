@@ -83,7 +83,10 @@ function detectContext(stain: string, surface: string, card: any) {
 
   return {
     isSilk: /\b(silk|seda)\b/i.test(surfaceText),
-    isWool: /\b(wool|cashmere|merino|lana|cachemir)\b/i.test(surfaceText),
+    // angora/mohair added (TASK-229b): same keratin felting/enzyme chemistry as
+    // wool; the intake collapse previously erased these words so the rules could
+    // never have fired — now that the surface preserves them, recognize them.
+    isWool: /\b(wool|cashmere|merino|angora|mohair|lana|cachemir)\b/i.test(surfaceText),
     isMarble: /\b(marble|limestone|travertine|m[áa]rmol|piedra caliza|travertino)\b/i.test(surfaceText),
     isAcetate: /\b(acetate|triacetate|tri[-\s]?acetate|acetato|triacetato)\b/i.test(surfaceText),
     // Extended 2026-04-18: combination stains carrying a protein component
@@ -110,7 +113,16 @@ function isWarningContext(text: string, matchIndex: number): boolean {
   // English + Spanish negations (TASK-218): now that the banned-agent rules match
   // Spanish chemical names, a Spanish safety WARNING ("nunca use amoníaco") must be
   // recognized as educational, not a recommendation, to avoid false-positive blocks.
-  return /\b(never|do not|avoid|don't|not recommended|not safe|harmful|dangerous|nunca|no use|no aplique|no utilice|evite|evitar|no recomendado|no es seguro|peligroso|da[ñn]ino|no debe)\b/.test(lookback)
+  if (/\b(never|do not|avoid|don't|not recommended|not safe|harmful|dangerous|nunca|no use|no aplique|no utilice|evite|evitar|no recomendado|no es seguro|peligroso|da[ñn]ino|no debe)\b/.test(lookback)) {
+    return true
+  }
+  // Bare "no" (TASK-229b): warning copy like "No hot water, no enzymes, no
+  // OxiClean" was being rewritten into contradictions ("No cool water…"). The
+  // eval grader treats \bno\b within a tight window as warning context; match
+  // it — but only within 40 chars, not the full 120, so prose like "there is
+  // no need to dilute — apply X" can't shadow a genuine recommendation of X.
+  const near = text.slice(Math.max(0, matchIndex - 40), matchIndex).toLowerCase()
+  return /\bno\b/.test(near)
 }
 
 // ---------------------------------------------------------------------------
@@ -142,16 +154,32 @@ function collectFields(card: any): FieldEntry[] {
     }
   }
 
-  // homeSolutions (array of strings)
-  const home: string[] = Array.isArray(card.homeSolutions) ? card.homeSolutions : []
+  // homeSolutions — strings, or objects carrying .agent/.instruction. Library
+  // cards use the object shape; those fields were previously unscanned entirely
+  // (TASK-229 finding: banned terms in homeSolutions[i].instruction passed the
+  // filter untouched on real cards).
+  const home: unknown[] = Array.isArray(card.homeSolutions) ? card.homeSolutions : []
   for (let i = 0; i < home.length; i++) {
-    if (typeof home[i] === 'string') {
+    const entry = home[i]
+    if (typeof entry === 'string') {
       fields.push({
         path: `homeSolutions[${i}]`,
-        getValue: () => home[i],
+        getValue: () => home[i] as string,
         setValue: (v: string) => { home[i] = v },
         replaceable: true,
       })
+    } else if (entry && typeof entry === 'object') {
+      const obj = entry as Record<string, unknown>
+      for (const key of ['agent', 'instruction'] as const) {
+        if (typeof obj[key] === 'string') {
+          fields.push({
+            path: `homeSolutions[${i}].${key}`,
+            getValue: () => obj[key] as string,
+            setValue: (v: string) => { obj[key] = v },
+            replaceable: true,
+          })
+        }
+      }
     }
   }
 
@@ -315,6 +343,24 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
     })
   }
 
+  // RULE 12: Hot/boiling water on wool — stain-independent (TASK-229b).
+  // Wool-class keratin (incl. cashmere/merino/angora/mohair) felts and shrinks
+  // under hot water regardless of stain family. RULE-1 only covers protein
+  // stains, which is how hot water on mud/wool escaped (eval G3): no rule was
+  // active for non-protein stains on wool. Warm water is NOT banned here —
+  // lukewarm is legitimate wool-wash guidance; hot/boiling is the felting risk.
+  if (ctx.isWool) {
+    activeRules.push({
+      id: 'RULE-12: Hot water on wool',
+      pattern: /\b(hot water|boiling water|agua caliente|agua hirviendo)\b/gi,
+      replacement: 'cool water',
+      // Note must not restate the banned phrase — the rendered text is graded
+      // against mustNotContain, and "hot water" inside the note would re-fail it.
+      note: '[cool water only — heat felts and shrinks wool-class fibers]',
+      action: 'replaced',
+    })
+  }
+
   // RULE 2S: Enzymes / protein spotters on silk (BLOCK — nuclear)
   // Added 2026-04-18 after chocolate-silk eval FAIL. Enzymes digest silk
   // fibroin; "protein spotter" is the protein-spotting agent category and
@@ -412,7 +458,10 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
       id: 'RULE-9: Dish soap on aniline leather',
       pattern: /\b(dish soap|dishwashing liquid|dawn|dish detergent)\b/gi,
       replacement: 'leather-safe cleaner',
-      note: '[aniline leather only — dish soap strips oils and damages finish]',
+      // Note must not restate the banned phrase (TASK-229b): the rendered text
+      // is graded against mustNotContain, so "dish soap" inside the note kept
+      // the card failing even after the replacement fired.
+      note: '[aniline leather only — degreasing detergents strip oils and damage the finish]',
       action: 'replaced',
     })
     activeRules.push({

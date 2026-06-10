@@ -696,7 +696,16 @@ function stainAnswerFromTranscript(transcript: IntakeTurn[]): string | undefined
 const DIRECT_FIBER: ReadonlyArray<readonly [RegExp, string]> = [
   [/\bsilk\b/, 'silk'],
   [/\bcashmere\b/, 'cashmere'],
-  [/\b(?:wool|merino|angora|mohair)\b/, 'wool'],
+  // TASK-229b: safety-critical qualifiers survive the collapse. Erasing
+  // "aniline"/"angora"/"mohair" here meant the safety filter never saw them in
+  // the engine surface, so fiber-specific vetoes (RULE-9 dish-soap-on-aniline,
+  // the wool heat/enzyme rules on angora) could not activate. The preserved
+  // forms resolve the same engine material (toMaterial substring-matches) and
+  // the same library card ("aniline leather" is an alias of leather; "angora
+  // wool"/"mohair wool" contain "wool") — only the filter gains signal.
+  [/\bangora\b/, 'angora wool'],
+  [/\bmohair\b/, 'mohair wool'],
+  [/\b(?:wool|merino)\b/, 'wool'],
   [/\bcotton\b/, 'cotton'],
   [/\blinen\b/, 'linen'],
   [/\bdenim\b/, 'denim'],
@@ -704,7 +713,8 @@ const DIRECT_FIBER: ReadonlyArray<readonly [RegExp, string]> = [
   [/\bnylon\b/, 'nylon'],
   [/\b(?:rayon|viscose)\b/, 'rayon'],
   [/\bacetate\b/, 'acetate'],
-  [/\b(?:leather|aniline)\b/, 'leather'],
+  [/\baniline\b/, 'aniline leather'],
+  [/\bleather\b/, 'leather'],
   [/\b(?:suede|nubuck)\b/, 'suede'],
   [/\bvelvet\b/, 'velvet'],
   [/\bsatin\b/, 'satin'],
