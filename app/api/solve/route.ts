@@ -10,7 +10,6 @@ import { applyPlantFilters } from '@/lib/protocols/applyPlantFilters'
 import { runSafetyFilter, SAFE_FALLBACK, cautiousFallbackEligible, REFUSE_ONLY_FALLBACK } from '@/lib/safety/filter'
 import { checkHardRefuseCombo } from '@/lib/solve/hard-refuse'
 import { normalizeAICard } from '@/lib/protocols/normalizeAICard'
-import { retrieveForQuery, formatRetrievedContext, applyGroundedAttribution, isRetrievalEnabled, type RetrievalResult } from '@/lib/stainbrain/retrieve'
 import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
 import { buildConsumerSolvePrompt } from '@/lib/solve/consumer-prompt'
 import { enforceConsumerCard, buildRequestDisclosureText } from '@/lib/solve/consumer-output-guard'
@@ -541,11 +540,10 @@ function resolveStainType(card: any | null, ctx: SolveContext): string {
 }
 
 // ── AI protocol generator ──────────────────────────────────────
-async function generateAIProtocol(ctx: SolveContext, retrieval?: RetrievalResult, lang?: string): Promise<any> {
+async function generateAIProtocol(ctx: SolveContext, lang?: string): Promise<any> {
   const apiKey = process.env.OPENAI_API_KEY
   if (!apiKey) throw new Error('OpenAI API key not configured')
 
-  const groundedContext = retrieval ? formatRetrievedContext(retrieval) : ''
 
   // TASK-231 Sprint 0 — the consumer fallback prompt lives in
   // lib/solve/consumer-prompt.ts so tests can grep it for pro-term leaks.
@@ -559,14 +557,14 @@ async function generateAIProtocol(ctx: SolveContext, retrieval?: RetrievalResult
   // founder is an Atlas product decision, not a Sprint 0 change.
   const systemPrompt = buildConsumerSolvePrompt()
 
-  // Prepend retrieved grounding context when available. Sits at the top of
-  // the system prompt so the model weighs excerpts above the generic
-  // methodology when they conflict (see formatRetrievedContext).
   // Language directive last so it has recency weight over the methodology prose.
   const langDirective = langOutputDirective(lang)
-  const fullSystemPrompt = (groundedContext
-    ? `${groundedContext}\n${systemPrompt}`
-    : systemPrompt) + langDirective
+  // TASK-231 review fix (Atlas blocking finding): NO retrieval context on the
+  // consumer prompt. Stain Brain chunks are professional/internal references
+  // and the retrieval formatter explicitly tells the model to prefer them over
+  // the generic method — prepending them re-contaminates the detoxed prompt.
+  // Consumer AI runs ungrounded until Packet 6 ships an audience-gated corpus.
+  const fullSystemPrompt = systemPrompt + langDirective
 
   const res = await fetch(`${OPENAI_API}/chat/completions`, {
     method: 'POST',
@@ -1000,33 +998,17 @@ export async function POST(req: Request) {
 
     // ── AI fallback (Home / Free / Anon only) ──────────────────
     try {
-      // Stain Brain retrieval (TASK-005 Phase 2) — fetch grounded context
-      // from sb_chunks when the kill switch is on. Returns a non-retrieving
-      // result when disabled or on missing creds — no behavior change.
-      let retrieval: RetrievalResult | undefined
-      if (isRetrievalEnabled()) {
-        retrieval = await retrieveForQuery(`${ctx.stain} on ${ctx.surface}`, { topK: 5 })
-        console.log('[stainbrain] retrieval', {
-          query: retrieval.query,
-          retrieved: retrieval.retrieved,
-          chunks: retrieval.chunks.length,
-          top_source_ids: retrieval.top_source_ids,
-          latency_ms: retrieval.latency_ms,
-          error: retrieval.error,
-        })
-      }
-
-      const aiCardRaw = await generateAIProtocol(ctx, retrieval, lang)
+      // TASK-231: Stain Brain retrieval is DISABLED on this path — it is the
+      // consumer (+founder) AI fallback, and sb_chunks are professional/
+      // internal references that must not reach the consumer prompt (Atlas
+      // review finding, 2026-06-10). Packet 6 rebuilds grounding with an
+      // audience-gated corpus; until then consumer AI runs ungrounded and the
+      // output guard + safety filter remain the rendering gates.
+      const aiCardRaw = await generateAIProtocol(ctx, lang)
       // Normalize shape before any downstream processing — caps step count,
       // merges adjacent rinses, strips numeric dwell, caps instruction length.
       // See lib/protocols/normalizeAICard.ts (2026-04-18 Atlas call).
       const aiCard = normalizeAICard(aiCardRaw)
-      // Deterministic source attribution — don't trust the model to self-cite
-      // (preview verification 2026-04-18 showed the model ignored the "name
-      // source families" directive). Populates `grounded_sources` and
-      // appends a grounded-in tail to whyThisWorks if absent. No-op when
-      // retrieval didn't run.
-      if (retrieval?.retrieved) applyGroundedAttribution(aiCard, retrieval)
       injectContextWarnings(aiCard, ctx)
       if (ctx.fiber) aiCard._fiberContext = { fiber: ctx.fiber, careSymbols: ctx.careSymbols, warnings: ctx.labelWarnings }
 

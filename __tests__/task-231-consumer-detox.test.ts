@@ -8,6 +8,8 @@
 // plus the named hazard red-cells via the existing safety filter.
 
 import { describe, it, expect } from 'vitest'
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { buildConsumerSolvePrompt } from '@/lib/solve/consumer-prompt'
 import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
 import {
@@ -61,6 +63,22 @@ describe('TASK-231 — consumer prompt is household-safe', () => {
     expect(prompt).toMatch(/never mix bleach with vinegar, ammonia/i)
     // The anti-fabrication rule is in the prompt itself
     expect(prompt).toMatch(/NEVER CLAIM THE USER DID SOMETHING/i)
+  })
+})
+
+describe('TASK-231 — consumer AI prompt path has no retrieval contamination (Atlas review)', () => {
+  it('solve route neither imports nor injects Stain Brain retrieval', () => {
+    // Source-level lock: sb_chunks are professional/internal references and
+    // formatRetrievedContext tells the model to PREFER them — prepending them
+    // would re-contaminate the detoxed consumer prompt regardless of how
+    // clean buildConsumerSolvePrompt() is. Packet 6 may re-enable grounding
+    // behind an audience gate; until then this test pins the path closed.
+    const src = readFileSync(join(process.cwd(), 'app/api/solve/route.ts'), 'utf8')
+    expect(src).not.toMatch(/formatRetrievedContext/)
+    expect(src).not.toMatch(/retrieveForQuery/)
+    expect(src).not.toMatch(/applyGroundedAttribution/)
+    expect(src).not.toMatch(/groundedContext\s*\?/)
+    expect(src).not.toMatch(/lib\/stainbrain\/retrieve/)
   })
 })
 
