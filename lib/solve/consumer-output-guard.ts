@@ -82,6 +82,87 @@ function fabricatedHistoryPatterns(agent: string): RegExp[] {
 const BLEACH_MIX_RE = /\bmix(?:ing)?\b[^.;\n]{0,60}\bbleach\b|\bbleach\b[^.;\n]{0,40}\bmix(?:ing)?\b/i
 const NEGATION_NEAR = /\b(?:never|don'?t|do\s+not|avoid|must\s+not|no)\b/i
 
+// TASK-232 contract additions ────────────────────────────────────────────
+// Title sanity: truncation artifacts and raw classifier fragments are the
+// pressure test's "…(care label: dry…" / "user is unsure what caused it. on
+// what seems" class. Length cap is generous — verified titles run short.
+const TITLE_MAX_LEN = 90
+const TITLE_ARTIFACT_RES: ReadonlyArray<{ id: string; re: RegExp }> = [
+  { id: 'ellipsis-truncation', re: /(?:…|\.\.\.)\s*\(?[^)]*$/ },
+  { id: 'double-period', re: /\.\.(?!\.)/ },
+  { id: 'classifier-fragment', re: /user\s+is\s+unsure|on\s+what\s+seems\s+to\s+be|\blabeled\b.*\(fiber/i },
+]
+function titleViolations(title: unknown): GuardViolation[] {
+  if (typeof title !== 'string' || title.length === 0) return []
+  const v: GuardViolation[] = []
+  if (title.length > TITLE_MAX_LEN) v.push({ rule: 'title-too-long', match: title.slice(0, 40) })
+  const open = (title.match(/\(/g) ?? []).length
+  const close = (title.match(/\)/g) ?? []).length
+  if (open !== close) v.push({ rule: 'title-unbalanced-parens', match: title.slice(-30) })
+  for (const { id, re } of TITLE_ARTIFACT_RES) {
+    if (re.test(title)) v.push({ rule: `title-${id}`, match: title.slice(0, 40) })
+  }
+  return v
+}
+
+// Absent-step references: escalation/why copy citing a chemical treatment the
+// steps never gave ("after gentle detergent and peroxide treatment" with no
+// peroxide step). Checked only in treatment-context phrasing so plain
+// warnings ("never use peroxide here") don't trip it.
+const STEP_CHEMS = ['peroxide', 'bleach', 'ammonia', 'enzyme', 'vinegar', 'acetone', 'alcohol'] as const
+function absentStepViolations(card: Card): GuardViolation[] {
+  if (!card || typeof card !== 'object') return []
+  const stepsText = [
+    ...(Array.isArray(card.spottingProtocol)
+      ? card.spottingProtocol.map((s: { agent?: string; instruction?: string }) => `${s?.agent ?? ''} ${s?.instruction ?? ''}`)
+      : []),
+    ...(Array.isArray(card.homeSolutions) ? card.homeSolutions : []),
+  ]
+    .join(' ')
+    .toLowerCase()
+  const refText = [
+    card?.escalation?.when,
+    card?.escalation?.whatToTell,
+    card?.whyThisWorks,
+    card?.stainChemistry,
+  ]
+    .filter((s): s is string => typeof s === 'string')
+    .join(' ')
+  const v: GuardViolation[] = []
+  for (const chem of STEP_CHEMS) {
+    if (stepsText.includes(chem)) continue
+    const re = new RegExp(`(?:after|following|once|post)[^.;\\n]{0,40}\\b${chem}\\b|\\b${chem}\\b[^.;\\n]{0,20}\\btreatment\\b`, 'i')
+    const m = refText.match(re)
+    if (m && !NEGATION_NEAR.test(refText.slice(Math.max(0, refText.indexOf(m[0]) - 40), refText.indexOf(m[0])))) {
+      v.push({ rule: `absent-step-reference:${chem}`, match: m[0] })
+    }
+  }
+  return v
+}
+
+// Unsupported direct recommendations: positively instructing chlorine bleach,
+// household ammonia, or acetone anywhere in a consumer card (TASK-231 prompt
+// bans generating them; this catches template/card sources too).
+const DIRECT_REC_RE =
+  /\b(?:apply|use|add|dab|pour|mix\s+in|treat\s+with|work\s+in)\b[^.;\n]{0,40}\b(?:chlorine\s+bleach|ammonia|acetone)\b/i
+function directRecViolation(text: string): GuardViolation | null {
+  const m = text.match(DIRECT_REC_RE)
+  if (!m) return null
+  const idx = text.indexOf(m[0])
+  const lookback = text.slice(Math.max(0, idx - 60), idx)
+  const boundary = Math.max(
+    lookback.lastIndexOf('.'),
+    lookback.lastIndexOf(';'),
+    lookback.lastIndexOf('!'),
+    lookback.lastIndexOf('?'),
+    lookback.lastIndexOf('\\n'),
+    lookback.lastIndexOf('","'),
+  )
+  const clause = lookback.slice(boundary + 1) + m[0]
+  if (NEGATION_NEAR.test(clause)) return null
+  return { rule: 'unsupported-direct-recommendation', match: m[0] }
+}
+
 function collectCardText(card: Card): string {
   // Serialize every string the consumer renderer could show. JSON.stringify
   // covers nested fields (steps, escalation, products, warnings) in one pass;
@@ -179,6 +260,12 @@ export function validateConsumerCard(
       violations.push({ rule: 'bleach-mixing-instruction', match: mix[0] })
     }
   }
+
+  // TASK-232 contract additions
+  violations.push(...titleViolations(card?.title))
+  violations.push(...absentStepViolations(card))
+  const directRec = directRecViolation(text)
+  if (directRec) violations.push(directRec)
 
   return violations
 }

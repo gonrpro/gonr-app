@@ -13,6 +13,9 @@ import { normalizeAICard } from '@/lib/protocols/normalizeAICard'
 import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
 import { buildConsumerSolvePrompt } from '@/lib/solve/consumer-prompt'
 import { enforceConsumerCard, buildRequestDisclosureText } from '@/lib/solve/consumer-output-guard'
+import { parseSessionEvidence } from '@/lib/solve/session-evidence'
+import { applyTerminalGate } from '@/lib/solve/terminal-safety-gate'
+import { buildFirstAid, buildDirectAnswer } from '@/lib/solve/first-aid'
 import { enrichProductsWithAffiliates } from '@/lib/protocols/enrichProducts'
 import { createClient } from '@supabase/supabase-js'
 import { identifyStain, readCareLabel } from '@/lib/vision'
@@ -667,7 +670,33 @@ function finalizeCardForResponse(card: any, viewerTier: SolveTier | 'anon' | nul
   if (res.blocked) {
     console.error(`[ConsumerGuard] card blocked: ${res.violations.map((v) => v.rule).join(', ')}`)
   }
-  return res.card
+  // TASK-232 — terminal safety gate: the LAST decision point. Re-gates the
+  // surviving card (verified, AI, template, or fallback) against parsed
+  // session evidence; red cells with active treatment downgrade to
+  // protect+refer. Runs after guard + sanitize so nothing can re-mutate the
+  // card after this.
+  const evidence = parseSessionEvidence({
+    stain: ctx?.stain,
+    surface: ctx?.surface,
+    careSymbols: ctx?.careSymbols,
+  })
+  const gated = applyTerminalGate(res.card, evidence, {
+    stain: ctx?.stain ?? '',
+    surface: ctx?.surface ?? '',
+  })
+  if (gated.downgraded) {
+    console.error(`[TerminalGate] downgraded card: ${gated.reasons.join(', ')}`)
+  }
+  const finalCard = gated.card
+  if (finalCard && typeof finalCard === 'object') {
+    // Immediate first-aid on EVERY consumer card (incl. refusals/downgrades)
+    // and an explicit answer when the user directly asked about a hazard.
+    finalCard.firstAid = buildFirstAid(evidence)
+    if (evidence.directHazardQuestion) {
+      finalCard.directAnswer = buildDirectAnswer(evidence.directHazardQuestion)
+    }
+  }
+  return finalCard
 }
 
 export async function POST(req: Request) {
