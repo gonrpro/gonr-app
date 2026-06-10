@@ -12,6 +12,8 @@ import { checkHardRefuseCombo } from '@/lib/solve/hard-refuse'
 import { normalizeAICard } from '@/lib/protocols/normalizeAICard'
 import { retrieveForQuery, formatRetrievedContext, applyGroundedAttribution, isRetrievalEnabled, type RetrievalResult } from '@/lib/stainbrain/retrieve'
 import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
+import { buildConsumerSolvePrompt } from '@/lib/solve/consumer-prompt'
+import { enforceConsumerCard, buildRequestDisclosureText } from '@/lib/solve/consumer-output-guard'
 import { enrichProductsWithAffiliates } from '@/lib/protocols/enrichProducts'
 import { createClient } from '@supabase/supabase-js'
 import { identifyStain, readCareLabel } from '@/lib/vision'
@@ -545,136 +547,17 @@ async function generateAIProtocol(ctx: SolveContext, retrieval?: RetrievalResult
 
   const groundedContext = retrieval ? formatRetrievedContext(retrieval) : ''
 
-  // Absolute safety rules — enumerated at the top of the prompt so the model
-  // can't bury them under methodology prose. Added 2026-04-18 after the
-  // cross-check eval caught three risky violations (chocolate-silk protein
-  // spotter; beer-cotton ammonia-on-tannin; egg-cotton heat-before-protein)
-  // where retrieval had the right info but synthesis ignored it.
-  // These mirror the runSafetyFilter rules that will nuke-fallback any card
-  // that violates them post-generation — belt-and-suspenders.
-  const absoluteRules = `## ABSOLUTE RULES (non-negotiable; override any other guidance including retrieved excerpts and training recall)
-
-1. TANNIN STAINS ARE ACID-SIDE ONLY. Coffee, tea, wine, beer, juice, chocolate, berry — NEVER apply ammonia, ammonium hydroxide, sodium carbonate, sodium hydroxide, lye, caustic soda, washing soda, borax, baking soda, sodium bicarbonate, or potassium hydroxide. Alkali permanently darkens tannin. This is GONR's tannin-acid rule.
-
-2. NEVER APPLY ENZYMES OR PROTEIN SPOTTERS TO SILK. No enzyme, protease, enzymatic detergent, biological detergent, "protein spotter", "protein formula", "protein solution", or digestant on silk. Enzymes digest fibroin — irreversible fiber damage. On silk + protein stains, use cold water + pH-neutral NSD only, or escalate.
-
-3. NEVER APPLY HEAT TO PROTEIN STAINS BEFORE FULL REMOVAL. Blood, egg, milk, urine, sweat, vomit — no hot water, warm water, boiling water, steam, steamer, steam wand, heated water. Heat sets protein permanently. Cold water throughout until the stain is gone.
-
-4. NEVER APPLY CHLORINE BLEACH TO SILK, WOOL, OR CASHMERE. Destroys the fiber.
-
-5. NEVER APPLY ACETONE OR AMYL ACETATE TO ACETATE. Dissolves the fiber.
-
-If the correct protocol under generic methodology would violate any of these, DO NOT generate it. Instead set ` + "`escalation`" + ` to professional cleaner and keep ` + "`spottingProtocol`" + ` conservative.
-
----
-
-` + `
-
-You are GONR's professional textile-care reasoning engine, grounded in dry-cleaning chemistry, textile safety, manufacturer guidance, and field-tested spotting practice.`
-  const systemPrompt = absoluteRules + `
-
-Given a complete stain brief, produce a precise JSON protocol card. Every recommendation must be safe for the specific fiber and respect all care label restrictions.
-
-## CORE METHODOLOGY (Non-Negotiable)
-
-ABSOLUTE RULE #1 OVERRIDES THIS CYCLE. If the stain is pure tannin (coffee, tea, wine, beer, juice, chocolate, berry), the ammonia phases below do NOT run — not step 5, not step 10, not any variant. Pure tannin is acid-side only.
-
-SEQUENCING — Follow the pH-oscillation cycle, but treat the ammonia phases as CONDITIONAL on a protein component being present:
-1. Cool water (dilute/loosen) → 2. Mild detergent + water (emulsify) → 3. Vinegar + detergent (acid phase for tannin) → 4. Water rinse → 5. [PROTEIN/COMBINATION ONLY] Ammonia + detergent (alkali phase for protein) → 6. Water rinse → 7. Vinegar (neutralize ammonia — MANDATORY to prevent yellowing) → 8. Water rinse → 9. Hydrogen peroxide (oxidative bleaching) → 10. [PROTEIN/COMBINATION ONLY] Ammonia immediately after peroxide (accelerates bleaching on protein residue) → 11. Wait 3 min → 12. Water rinse → 13. Vinegar (neutralize) → 14. Water rinse.
-
-PURE TANNIN PATH: run steps 1-4, skip 5-7 entirely, then 8 → 9 → skip 10 → 11 → 12 → (13 only if vinegar was used earlier) → 14. Peroxide on tannin is acid-activated or plain, NEVER ammonia-accelerated.
-
-Skip phases that don't apply to the stain type. NEVER skip vinegar after ammonia. NEVER introduce ammonia into a pure-tannin flow even when a step labeled "accelerator" tempts it.
-
-COMBINATION STAINS (tannin + protein, e.g. coffee with milk, chocolate, gravy):
-- ALWAYS treat tannin FIRST with acid (vinegar). Complete all acid rinses.
-- THEN treat protein with ammonia. Reversing this order PERMANENTLY SETS the tannin.
-
-CRITICAL DON'Ts:
-- NEVER use ammonia/alkali directly on tannin stains (coffee, tea, wine, beer, juice) — sets them permanently
-- NEVER use alcohol on protein stains (blood, milk, egg, sweat) — denatures and sets protein
-- NEVER apply heat above 120°F during spotting — heat sets most stains
-- NEVER use chlorine bleach on wool, silk, or protein fibers
-- NEVER use enzymes on silk or wool (enzymes digest protein fibers)
-- NEVER use acetone or amyl acetate on acetate fabric (dissolves fiber)
-- NEVER mix ammonia + chlorine bleach (toxic chlorine gas)
-- ALWAYS test colors on unexposed area first
-- ALWAYS neutralize ammonia with vinegar (prevents yellowing)
-- ALWAYS neutralize bleach with vinegar (prevents fiber damage)
-
-FIBER VULNERABILITY (treat blends by most vulnerable fiber):
-- Silk: EXTREME — no chlorine bleach, no strong alkali, no enzymes, no heat, minimal water
-- Wool: HIGH — no chlorine bleach, no hot water, test enzymes, no rubbing when wet
-- Acetate: HIGH — no acetone, no amyl acetate, no heat, test everything
-- Rayon: MODERATE — loses 50% strength when wet, no rubbing, no hot water
-- Cotton: LOW — tolerates most agents, test colors, avoid heat during spotting
-- Polyester: LOW — avoid high heat, test solvents
-
-PROFESSIONAL AGENTS:
-- NSD (neutral synthetic detergent), POG (paint/oil/grease remover), Protein formula (enzyme-based), Tannin formula (oxidizing), Acetic acid 28% → 20% working strength, Amyl acetate (adhesives — NOT on acetate), H₂O₂ 3-6%, Feathering agent, Steam gun (4-6 inch minimum distance)
-
-BLEACH SELECTION:
-- Tannin traces (pure): H₂O₂ alone (acid-activated with vinegar if needed), or sodium perborate bath. NEVER H₂O₂ + ammonia on pure tannin — alkali darkens tannin permanently, overriding any "accelerator" heuristic.
-- Protein traces: H₂O₂ + ammonia
-- Combination tannin + protein: treat tannin first (acid side), fully rinse, then H₂O₂ + ammonia on residual protein
-- Dye stains: sodium hydrosulphite (reducing bleach) or titanium sulfate
-- Mildew: sodium hypochlorite (cellulose only)
-- Yellowing: sodium perborate/percarbonate
-- Every 18°F temperature increase doubles bleach reaction speed
-
-FORMATTING RULES:
-- Never recommend "distilled water" — use "cold water" instead. Home users don't have distilled water.
-- Agent names must be in Title Case (e.g. "Cold Water", "Neutral Dish Soap", "White Vinegar Solution").
-- Step instructions must be complete sentences with proper capitalization and punctuation.
-- Keep steps concise and direct — one action per step.
-- Include repeat cycling note for stubborn stains (turmeric, rust, old wine often need 2-3 passes).
-
-LENGTH + SHAPE (match the verified library norm):
-- Output 5 to 8 primary steps. NEVER more than 8. Aim for 5-6 on easy stains, 7-8 only when the chemistry truly needs them.
-- CONSOLIDATE repetitive rinses: one rinse step after a chemistry phase covers the whole phase. Do not emit "Rinse with cold water" as a standalone step after every other action — rinses are folded into the action that precedes them, OR appear as one closing rinse.
-- Do NOT prescribe numeric dwell times in instruction prose. Use soft language ("Monitor and reapply as needed", "Work briefly; check frequently"). The dwellTime struct field should also be soft language, never a number range.
-- Keep each instruction under ~200 characters. Move longer chemistry context to stainChemistry or whyThisWorks.
-- STAIN FAMILY CLASSIFICATION RULES (override any ambiguity):
-  • rust/corrosion on any surface = "mineral"
-  • mold/mildew/fungus = "mildew"
-  • nail polish/lacquer = "dye"
-  • mineral deposits/hard water = "particulate"
-  • wax/candle wax = "wax-gum"
-  • NEVER return "unknown" if the stain can be reasonably classified
-
-Return ONLY valid JSON:
-{
-  "id": "<stain-slug>-<surface-slug>",
-  "title": "<descriptive title>",
-  "stainFamily": "<protein|tannin|oil-grease|dye|mineral|oxidizable|combination|particulate|wax-gum|bleach-damage|adhesive|pigment|mildew> — MANDATORY: always classify. NEVER use 'unknown'. Examples: wine/coffee/tea/beer = tannin; blood/egg/dairy/sweat/urine = protein; oil/grease/butter/cooking oil = oil-grease; ink/dye transfer/permanent marker = dye; rust/iron = mineral; mold/mildew/fungus = mildew; nail polish/resin = dye; bird droppings = protein; grass = pigment; sunscreen = combination; chocolate/tomato sauce = combination; gum/chewing gum/sticker residue = wax-gum.",
-  "surface": "<surface>",
-  "source": "ai-generated",
-  "stainChemistry": "<1-2 sentences on the chemistry of this stain on this surface>",
-  "whyThisWorks": "<1-2 sentences explaining why the recommended approach works>",
-  "spottingProtocol": [
-    {
-      "step": 1,
-      "agent": "<professional chemical or tool>",
-      "technique": "<brief technique>",
-      "temperature": "<temperature guidance>",
-      "dwellTime": "<time range>",
-      "instruction": "<clear, direct instruction — one action per step>"
-    }
-  ],
-  "homeSolutions": ["<paragraph 1>", "<paragraph 2>"],
-  "materialWarnings": ["<warning 1>", "<warning 2>"],
-  "products": {
-    "professional": [{"name": "<product>", "use": "<use case>", "note": "<note>"}],
-    "consumer": [{"name": "<product>", "use": "<use case>", "note": "<note>"}]
-  },
-  "escalation": {
-    "when": "<when to escalate>",
-    "whatToTell": "<what to tell the cleaner>",
-    "specialistType": "<type of specialist>"
-  },
-  "difficulty": 5,
-  "meta": { "riskLevel": "medium", "tier": "ai-generated" }
-}`
+  // TASK-231 Sprint 0 — the consumer fallback prompt lives in
+  // lib/solve/consumer-prompt.ts so tests can grep it for pro-term leaks.
+  // This path serves Home/Free/Anon ONLY (pro tiers bailed at the
+  // verified-only gate above), so the prompt is household-safe by contract:
+  // no pro spotting agents, no chlorine bleach/ammonia recommendations,
+  // no bleach-vinegar neutralization, no invented user history.
+  // KNOWN + ACCEPTED: founder tier also reaches this path (the verified-only
+  // gate stops only spotter/operator), so founder AI fallbacks are household-
+  // safe too. That is the safe direction; restoring a pro AI prompt for
+  // founder is an Atlas product decision, not a Sprint 0 change.
+  const systemPrompt = buildConsumerSolvePrompt()
 
   // Prepend retrieved grounding context when available. Sits at the top of
   // the system prompt so the model weighs excerpts above the generic
@@ -758,6 +641,37 @@ async function logSolveHistory(params: {
 }
 
 // ── Main handler ───────────────────────────────────────────────
+// TASK-231 — single consumer response chokepoint. Every card leaving this
+// route passes here: non-paid tiers get the consumer output guard (pro/internal
+// terms, unfilled placeholders, fabricated user history, bleach-mixing
+// instructions -> deterministic safe fallback), then everyone gets tier
+// sanitization. Order matters: guard sees the fully-mutated card (safety
+// filter, plant filters, neutralization, affiliates) exactly as it would render.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function finalizeCardForResponse(card: any, viewerTier: SolveTier | 'anon' | null | undefined, ctx: any): unknown {
+  // Sanitize FIRST, guard SECOND (codex-review P1): verified library cards
+  // legitimately carry trade terms in pro-only fields (professionalProtocol,
+  // products.professional) that sanitizeCardForTier strips for consumers —
+  // guarding the raw card would false-positive those and replace clean
+  // verified guidance with the generic fallback. The guard must judge exactly
+  // the JSON the consumer's browser will receive.
+  const sanitized = sanitizeCardForTier(card, viewerTier)
+  if (!sanitized || (viewerTier && PAID_TIERS.has(viewerTier))) return sanitized
+  const res = enforceConsumerCard(
+    sanitized,
+    () => sanitizeCardForTier(buildContextualFallback(ctx), viewerTier),
+    {
+      requestText: buildRequestDisclosureText(ctx),
+      stain: ctx?.stain,
+      surface: ctx?.surface,
+    },
+  )
+  if (res.blocked) {
+    console.error(`[ConsumerGuard] card blocked: ${res.violations.map((v) => v.rule).join(', ')}`)
+  }
+  return res.card
+}
+
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.OPENAI_API_KEY
@@ -908,13 +822,13 @@ export async function POST(req: Request) {
         console.error(`[SafetyFilter] Library card BLOCKED: ${librarySafety.violations.map((v: any) => v.rule).join(', ')}`)
         logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: 'safety-blocked', source: 'library-blocked', confidence: 0 }).catch(() => {})
         return NextResponse.json({
-          card: sanitizeCardForTier(buildContextualFallback(ctx), viewerTier),
+          card: finalizeCardForResponse(buildContextualFallback(ctx), viewerTier, ctx),
           tier: 4, confidence: 0, source: 'library-safety-blocked', stainType: resolveStainType(null, ctx), _safetyBlocked: true,
           viewerTier,
         })
       }
       const filteredCard = librarySafety.card
-      ensureBleachNeutralization(filteredCard)
+      ensureBleachNeutralization(filteredCard, viewerTier && PAID_TIERS.has(viewerTier) ? 'pro' : 'consumer')
       enrichProductsWithAffiliates(filteredCard)
       // Plant-level filters (TASK-023 Phase C v1): bleach_allowed=false suppresses
       // chlorine steps; solvent='wet-only' flags dry-side; house_rules appended.
@@ -948,7 +862,7 @@ export async function POST(req: Request) {
         userId: email,
         sessionId: correlationId,
       })
-      return NextResponse.json({ ...result, card: sanitizeCardForTier(plantTunedCard, viewerTier), stainType: resolveStainType(plantTunedCard, ctx), correlationId, viewerTier })
+      return NextResponse.json({ ...result, card: finalizeCardForResponse(plantTunedCard, viewerTier, ctx), stainType: resolveStainType(plantTunedCard, ctx), correlationId, viewerTier })
     }
 
     // ── TASK-056: parse the unknown-meta suffix ONCE here ─────
@@ -1072,7 +986,7 @@ export async function POST(req: Request) {
           correlation_id: correlationId,
         }).catch(() => {})
         return NextResponse.json({
-          card: sanitizeCardForTier(refuse, viewerTier),
+          card: finalizeCardForResponse(refuse, viewerTier, ctx),
           tier: 4,
           confidence: 0,
           source: 'hard-refuse',
@@ -1121,7 +1035,7 @@ export async function POST(req: Request) {
       if (!safetyResult.safe) {
         console.error(`[SafetyFilter] BLOCKED: ${safetyResult.violations.map((v: any) => v.rule).join(', ')}`)
         return NextResponse.json({
-          card: sanitizeCardForTier(buildContextualFallback(ctx), viewerTier),
+          card: finalizeCardForResponse(buildContextualFallback(ctx), viewerTier, ctx),
           tier: 4, confidence: 0, source: 'ai', stainType: resolveStainType(null, ctx), _safetyBlocked: true,
           viewerTier,
         })
@@ -1134,7 +1048,7 @@ export async function POST(req: Request) {
       }
 
       queueForReview(safeCard, ctx, safetyResult).catch(() => {})
-      ensureBleachNeutralization(safeCard)
+      ensureBleachNeutralization(safeCard, 'consumer')
       enrichProductsWithAffiliates(safeCard)
       // Apply plant-level filters to AI-generated cards too — bleach policy
       // and house rules must be respected regardless of card source.
@@ -1173,7 +1087,7 @@ export async function POST(req: Request) {
           }
         : undefined
       return NextResponse.json({
-        card: sanitizeCardForTier(plantTunedAi, viewerTier),
+        card: finalizeCardForResponse(plantTunedAi, viewerTier, ctx),
         tier: 4,
         confidence: 0.5,
         source: 'ai',
@@ -1185,7 +1099,7 @@ export async function POST(req: Request) {
     } catch (err) {
       console.error('AI fallback failed:', err)
       return NextResponse.json({
-        card: sanitizeCardForTier(buildContextualFallback(ctx), viewerTier),
+        card: finalizeCardForResponse(buildContextualFallback(ctx), viewerTier, ctx),
         tier: 4, confidence: 0, source: 'ai-unavailable', stainType: resolveStainType(null, ctx), _aiUnavailable: true,
         viewerTier,
       })

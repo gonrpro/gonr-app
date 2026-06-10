@@ -54,6 +54,16 @@ const NEUTRALIZATION_STEP_INSTRUCTION =
 const NEUTRALIZATION_WARNING =
   'Mandatory post-bleach neutralization: rinse with dilute acetic acid / white vinegar to deactivate residual oxidizer. See Spotter → Bleaching Guide.'
 
+// TASK-231 — consumer variants. Consumers never get the pro acetic-acid
+// procedure or Spotter/Bleaching Guide references; the safe consumer
+// post-oxidizer move is a plain cool-water rinse, plus the never-mix warning
+// (the pressure test caught the pro block rendering on consumer results).
+const CONSUMER_RINSE_INSTRUCTION =
+  'Rinse the treated area thoroughly with plain cool water and blot dry. Do not add anything else after a bleaching product — never mix bleach with vinegar, ammonia, or any other cleaner; mixing can create toxic gas.'
+
+const CONSUMER_NEVER_MIX_WARNING =
+  'Never mix bleach with vinegar, ammonia, or any other cleaner — mixing can create toxic gas. After any bleaching product, rinse with plain cool water only.'
+
 export interface NeutralizationResult {
   appended: boolean
   reason: string
@@ -150,7 +160,36 @@ function appendNeutralization(card: Card): void {
   }
 }
 
-export function ensureBleachNeutralization(card: Card): NeutralizationResult {
+function appendConsumerRinse(card: Card): void {
+  if (!card || typeof card !== 'object') return
+
+  if (!Array.isArray(card.spottingProtocol)) {
+    card.spottingProtocol = []
+  }
+  const nextStep = (card.spottingProtocol.length || 0) + 1
+  card.spottingProtocol.push({
+    step: nextStep,
+    side: 'wet',
+    agent: 'Cool Water',
+    technique: 'Final rinse',
+    equipment: 'White cloth, clean water',
+    dwellTime: 'Rinse and blot until residue is gone',
+    instruction: CONSUMER_RINSE_INSTRUCTION,
+    _source: 'bleach-neutralization-rule',
+  })
+
+  if (!Array.isArray(card.materialWarnings)) card.materialWarnings = []
+  if (!card.materialWarnings.includes(CONSUMER_NEVER_MIX_WARNING)) {
+    card.materialWarnings.push(CONSUMER_NEVER_MIX_WARNING)
+  }
+}
+
+export type NeutralizationAudience = 'pro' | 'consumer'
+
+export function ensureBleachNeutralization(
+  card: Card,
+  audience: NeutralizationAudience = 'pro',
+): NeutralizationResult {
   if (!card || typeof card !== 'object') {
     return { appended: false, reason: 'invalid card', card }
   }
@@ -158,6 +197,34 @@ export function ensureBleachNeutralization(card: Card): NeutralizationResult {
   const recommendedAgent = findRecommendedBleach(card)
   if (!recommendedAgent) {
     return { appended: false, reason: 'no bleach in protocol', card }
+  }
+
+  // Consumer cards must never carry the pro acetic-acid block or pro-guide
+  // references — plain cool-water rinse instead. Checked BEFORE the generic
+  // hasNeutralization() early-exit (codex-review P2): tannin cards routinely
+  // use diluted vinegar as the acid TREATMENT step, which hasNeutralization()
+  // reads as "already neutralized" — that must not suppress the consumer
+  // never-mix warning when an oxidizer is also recommended.
+  if (audience === 'consumer') {
+    // Idempotence keys on the rule's OWN output (codex-review): a model-
+    // authored "never mix bleach" warning without the final cool-water rinse
+    // must not satisfy this check — the rinse step is the required copy.
+    const hasRuleRinse =
+      Array.isArray(card.spottingProtocol) &&
+      card.spottingProtocol.some(
+        (s: { _source?: string } | null) => s != null && s._source === 'bleach-neutralization-rule',
+      )
+    const hasStandardWarning =
+      Array.isArray(card.materialWarnings) && card.materialWarnings.includes(CONSUMER_NEVER_MIX_WARNING)
+    if (hasRuleRinse || hasStandardWarning) {
+      return { appended: false, reason: `consumer rinse already present (bleach: ${recommendedAgent})`, card }
+    }
+    appendConsumerRinse(card)
+    return {
+      appended: true,
+      reason: `appended consumer rinse for bleach agent "${recommendedAgent}"`,
+      card,
+    }
   }
 
   if (hasNeutralization(card)) {
