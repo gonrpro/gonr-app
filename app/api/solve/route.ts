@@ -1,6 +1,5 @@
 // app/api/solve/route.ts
 import { NextResponse } from 'next/server'
-import { createHash } from 'crypto'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { lookupProtocol, detectFamily } from '@/lib/protocols/lookup'
@@ -52,18 +51,6 @@ const OPENAI_API = 'https://api.openai.com/v1'
 const rateLimitMap = new Map<string, number[]>()
 const RATE_LIMIT_WINDOW_MS = 60 * 1000 // 1 minute
 const RATE_LIMIT_MAX = 60 // 60 requests per minute per IP
-
-function previewSecretProbe(evalSecret: string | undefined, incomingSecret: string | undefined) {
-  if (process.env.VERCEL_ENV === 'production' || !incomingSecret) return undefined
-  const fingerprint = (value: string | undefined) => value ? createHash('sha256').update(value).digest('hex').slice(0, 12) : null
-  return {
-    hasEvalSecret: Boolean(evalSecret),
-    envLen: evalSecret?.length ?? 0,
-    incomingLen: incomingSecret.length,
-    envSha12: fingerprint(evalSecret),
-    incomingSha12: fingerprint(incomingSecret),
-  }
-}
 
 function getClientIp(req: Request): string {
   const forwarded = req.headers.get('x-forwarded-for')
@@ -699,6 +686,7 @@ export async function POST(req: Request) {
     const email: string | null = isEvalRunner ? 'eval@gonr.app' : await getSessionEmail()
     let lang = 'en'
     let ctx: SolveContext
+    let evalViewerTier: SolveTier | 'anon' | undefined
 
     // ── Parse inputs ───────────────────────────────────────────
     if (contentType.includes('multipart/form-data')) {
@@ -740,6 +728,9 @@ export async function POST(req: Request) {
       const body = await req.json()
       // email intentionally NOT read from body — session-only (TASK-032 P0 fix)
       lang = body.lang || 'en'
+      if (isEvalRunner && ['anon', 'free', 'home', 'spotter', 'operator', 'founder'].includes(body.evalViewerTier)) {
+        evalViewerTier = body.evalViewerTier
+      }
 
       // Text-only solve — no vision needed. The frontier intake path POSTs JSON and
       // may carry restrictive care-label symbols (no-bleach / no-heat / dry-clean-only)
@@ -791,14 +782,14 @@ export async function POST(req: Request) {
             error: gateResult.reason || 'trial_expired',
             reason: gateResult.reason,
             viewerTier,
-            evalProbe: previewSecretProbe(evalSecret, incomingSecret),
           },
           { status: isTransient ? 503 : 402 }
         )
       }
     } else {
-      // Eval runner — treat as founder for rendering purposes.
-      viewerTier = 'founder'
+      // Eval runner bypasses auth/usage, but preview probes may request a
+      // consumer render tier to validate public output without burning credits.
+      viewerTier = evalViewerTier ?? 'founder'
     }
 
     // ── Plant context (TASK-023 Phase C) ───────────────────────

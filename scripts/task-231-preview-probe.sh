@@ -11,7 +11,7 @@ DIR="$(cd "$(dirname "$0")/.." && pwd)"
 SECRET=""
 for f in "$DIR/.vercel/.env.production.local" "$DIR/.vercel/.env.preview.local" "$DIR/.vercel/.env.development.local"; do
   if [ -f "$f" ]; then
-    v=$(grep -m1 '^GONR_EVAL_SECRET=' "$f" | cut -d= -f2- | tr -d '"' || true)
+    v=$(grep -m1 '^GONR_EVAL_SECRET=' "$f" | cut -d= -f2- | sed -e "s/^['\"]*//" -e "s/['\"]*\$//" | tr -d '\r\n' || true)
     if [ -n "$v" ]; then SECRET="$v"; break; fi
   fi
 done
@@ -55,11 +55,11 @@ except Exception:
   fi
 }
 
-probe "coffee/cotton (AI-or-library)" '{"stain":"coffee","surface":"cotton"}'
-probe "wine/silk (refusal path)"       '{"stain":"red wine","surface":"silk"}'
-probe "makeup/wool (AI path)"          '{"stain":"makeup","surface":"wool blazer"}'
-probe "peroxide-prone tannin (mustard/cotton)" '{"stain":"mustard","surface":"cotton"}'
-probe "unknown/mixed (fallback path)"  '{"stain":"mystery brown stain","surface":"rayon dress"}'
+probe "coffee/cotton (AI-or-library)" '{"stain":"coffee","surface":"cotton","evalViewerTier":"home"}'
+probe "wine/silk (refusal path)"       '{"stain":"red wine","surface":"silk","evalViewerTier":"home"}'
+probe "makeup/wool (AI path)"          '{"stain":"makeup","surface":"wool blazer","evalViewerTier":"home"}'
+probe "peroxide-prone tannin (mustard/cotton)" '{"stain":"mustard","surface":"cotton","evalViewerTier":"home"}'
+probe "unknown/mixed (fallback path)"  '{"stain":"mystery brown stain","surface":"rayon dress","evalViewerTier":"home"}'
 
 if [ "$overall" = "0" ]; then echo "PROBE RESULT: PASS — 0 forbidden-term hits across all cases"; else echo "PROBE RESULT: FAIL — leaks above"; fi
 exit $overall
