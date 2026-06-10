@@ -40,6 +40,13 @@ except Exception: print("unparseable")')
   if [ "$code" != "200" ]; then
     overall=1
     echo "  NON-200 RESPONSE: expected live card response"
+    echo "$json" | python3 -c 'import sys,json
+try:
+  d=json.load(sys.stdin)
+  safe = {k: d.get(k) for k in ("error", "message", "requires_upgrade") if k in d}
+  if safe: print("  ERROR FIELDS:", safe)
+except Exception:
+  pass'
   fi
   if [ "$hits" != "0" ]; then
     overall=1
