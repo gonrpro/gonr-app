@@ -89,10 +89,14 @@ probe "wine/silk refusal"    '{"stain":"red wine","surface":"silk","evalViewerTi
 # bleach, carries first aid, and contains no forbidden terms.
 intake_probe() {
   local resp code json
+  # Eval header + evalViewerTier=home: the intake forwards both, and /api/solve
+  # (gated on isEvalRunner) renders the CONSUMER path — guard, terminal gate,
+  # first aid — without burning anon quota. Bare anon probing is flaky because
+  # the Vercel egress IP shares the anon counter.
   resp=$(curl -s -w '\n%{http_code}' -X POST "$PREVIEW/api/intake" \
     -H 'Content-Type: application/json' \
     -H "x-gonr-eval-secret: $SECRET" \
-    -d '{"transcript":[{"role":"user","text":"coffee stain on cotton shirt, can I just use bleach?"}],"proceed":true,"lang":"en"}' \
+    -d '{"transcript":[{"role":"user","text":"coffee stain on cotton shirt, can I just use bleach?"}],"proceed":true,"lang":"en","evalViewerTier":"home"}' \
     --max-time 180)
   code=$(echo "$resp" | tail -1)
   json=$(echo "$resp" | sed '$d')

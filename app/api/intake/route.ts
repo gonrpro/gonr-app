@@ -23,6 +23,9 @@ interface RequestBody {
   hints?: unknown
   proceed?: unknown
   lang?: unknown
+  /** Eval-only render tier — forwarded to /api/solve ONLY alongside the eval
+   *  header; downstream gates it on isEvalRunner so it is inert for users. */
+  evalViewerTier?: unknown
 }
 
 // Only languages the engine is wired to answer in. Anything else falls back to 'en'.
@@ -155,7 +158,19 @@ export async function POST(req: NextRequest) {
     const solveRes = await fetch(`${origin}/api/solve`, {
       method: 'POST',
       headers: fwdHeaders,
-      body: JSON.stringify({ ...decision.solveBody, lang }),
+      // Pass the eval render-tier through when the caller supplied one. Only
+      // honored downstream when the forwarded eval header matches
+      // GONR_EVAL_SECRET (/api/solve gates on isEvalRunner), so this lets an
+      // authenticated probe exercise the CONSUMER render path (guard +
+      // terminal gate + first aid) through the real intake flow without
+      // burning anon quota — no consumer-facing behavior change.
+      body: JSON.stringify({
+        ...decision.solveBody,
+        lang,
+        ...(evalSecret && typeof body.evalViewerTier === 'string'
+          ? { evalViewerTier: body.evalViewerTier }
+          : {}),
+      }),
     })
     solveHttp = solveRes.status
     solveData = await solveRes.json().catch(() => ({}))
