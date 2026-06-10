@@ -419,12 +419,12 @@ export default function ProfileScreen() {
           role="dialog"
           aria-modal="true"
           aria-label={t('profile.clearConfirmAria')}
-          className="fixed inset-0 z-50 mx-auto flex max-w-[480px] flex-col justify-end bg-gonr-navy/30 px-5 pb-6 backdrop-blur-sm lg:left-60"
+          className="fixed inset-0 z-50 mx-auto flex max-w-[480px] flex-col justify-end bg-gonr-navy/30 px-5 pb-6 backdrop-blur-sm lg:left-60 lg:max-w-none lg:items-center lg:justify-center"
           onClick={() => {
             if (!clearing) setConfirmClear(false)
           }}
         >
-          <div className="gonr-card p-5" onClick={(e) => e.stopPropagation()}>
+          <div className="gonr-card w-full p-5 lg:max-w-[440px]" onClick={(e) => e.stopPropagation()}>
             <p className="text-base font-black text-gonr-navy">{t('profile.clearConfirmTitle')}</p>
             <p className="mt-1 text-sm font-semibold leading-6 text-gonr-textgray">{t('profile.clearConfirmBody')}</p>
             <div className="mt-4 grid grid-cols-2 gap-2">
