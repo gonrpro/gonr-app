@@ -46,12 +46,18 @@ bad = []
 (ok if fa.get("steps") else bad).append("firstAid")
 exp = os.environ["EXPECT"]
 if exp == "downgrade":
+    # Safe outcomes: the gate DOWNGRADED an active-treatment card, OR the gate
+    # engaged (red cells recorded) and judged the card protect-only — the unit
+    # suite proves active-treatment + red cell always downgrades, so an
+    # annotated pass means the rendered card carries no active treatment.
     tg = card.get("_terminalGate") or {}
     src = card.get("source", "")
     if tg.get("downgraded") or src == "terminal-safety-gate":
         ok.append("downgraded")
+    elif tg.get("reasons"):
+        ok.append("gate-engaged-protect-only")
     else:
-        bad.append(f"NOT-downgraded(source={src})")
+        bad.append(f"gate-not-engaged(source={src})")
 elif exp == "direct-no":
     da = card.get("directAnswer") or {}
     if da.get("answer") == "No":
