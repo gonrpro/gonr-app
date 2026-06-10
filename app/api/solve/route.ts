@@ -1,5 +1,6 @@
 // app/api/solve/route.ts
 import { NextResponse } from 'next/server'
+import { createHash } from 'crypto'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { lookupProtocol, detectFamily } from '@/lib/protocols/lookup'
@@ -51,6 +52,18 @@ const OPENAI_API = 'https://api.openai.com/v1'
 const rateLimitMap = new Map<string, number[]>()
 const RATE_LIMIT_WINDOW_MS = 60 * 1000 // 1 minute
 const RATE_LIMIT_MAX = 60 // 60 requests per minute per IP
+
+function previewSecretProbe(evalSecret: string | undefined, incomingSecret: string | undefined) {
+  if (process.env.VERCEL_ENV === 'production' || !incomingSecret) return undefined
+  const fingerprint = (value: string | undefined) => value ? createHash('sha256').update(value).digest('hex').slice(0, 12) : null
+  return {
+    hasEvalSecret: Boolean(evalSecret),
+    envLen: evalSecret?.length ?? 0,
+    incomingLen: incomingSecret.length,
+    envSha12: fingerprint(evalSecret),
+    incomingSha12: fingerprint(incomingSecret),
+  }
+}
 
 function getClientIp(req: Request): string {
   const forwarded = req.headers.get('x-forwarded-for')
@@ -774,7 +787,12 @@ export async function POST(req: Request) {
       if (!gateResult.allowed) {
         const isTransient = gateResult.reason === 'temporary_error'
         return NextResponse.json(
-          { error: gateResult.reason || 'trial_expired', reason: gateResult.reason, viewerTier },
+          {
+            error: gateResult.reason || 'trial_expired',
+            reason: gateResult.reason,
+            viewerTier,
+            evalProbe: previewSecretProbe(evalSecret, incomingSecret),
+          },
           { status: isTransient ? 503 : 402 }
         )
       }
