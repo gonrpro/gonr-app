@@ -33,6 +33,7 @@ const CONSUMER_API_EXACT = new Set<string>([
   '/api/protocols/saved', // GET ?email (also matched as a prefix below for DELETE :id)
   '/api/scan-stain', // POST — AttachMenu photo hint
   '/api/scan-label', // POST — AttachMenu care-label hint
+  '/api/partner-inquiry', // POST — public Brand/Vendor partner form on /partners
   // Server-side only, never called by consumer client code, but required because
   // app/api/intake/route.ts fetches ${origin}/api/scan-packet through this host.
   '/api/scan-packet',
@@ -117,6 +118,7 @@ export function proxy(request: NextRequest) {
       pathname === '/privacy' ||
       pathname === '/terms' ||
       pathname === '/contact' ||
+      pathname === '/partners' ||
       isStaticAsset(pathname)
     if (!isConsumerSurface) {
       if (pathname === '/') {

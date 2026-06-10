@@ -55,6 +55,8 @@ describe('proxy — GONR one-version routing', () => {
       '/api/protocols/saved/abc123',
       '/api/scan-stain',
       '/api/scan-label',
+      // public Brand/Vendor partner form (posts from /partners)
+      '/api/partner-inquiry',
       // server-side-only (intake calls it) + payment webhook — must stay reachable
       '/api/scan-packet',
       '/api/webhooks/lemonsqueezy',
@@ -120,9 +122,11 @@ describe('proxy — GONR one-version routing', () => {
     expect(proxy(req(`https://gonr.app${path}`)).headers.get('location')).toContain('/solve-v2')
   })
 
-  it('keeps legal pages reachable (privacy / terms / contact)', () => {
+  it('keeps legal + partner pages reachable (privacy / terms / contact / partners)', () => {
     expect(proxy(req('https://gonr.app/privacy')).headers.get('location')).toBeNull()
     expect(proxy(req('https://gonr.app/terms')).headers.get('location')).toBeNull()
     expect(proxy(req('https://gonr.app/contact')).headers.get('location')).toBeNull()
+    // /partners hosts the footer's Brand/Vendor partner form — must not redirect away
+    expect(proxy(req('https://gonr.app/partners')).headers.get('location')).toBeNull()
   })
 })
