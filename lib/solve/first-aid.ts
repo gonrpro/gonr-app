@@ -59,7 +59,10 @@ const DIRECT_ANSWERS: Record<DirectHazardQuestion, DirectAnswer> = {
     question: 'Can I mix cleaning products for this?',
     answer: 'No',
     why: 'Mixing cleaners — especially anything with bleach or ammonia — can create toxic gas and unpredictable chemical damage to the fabric.',
-    instead: 'Use one mild product at a time, rinse with cool water between anything, and stop if the stain does not lift.',
+    // Protect-only (codex-review P1): this answer can render ABOVE a
+    // stop/downgrade card, so it must never contain active product guidance.
+    instead:
+      'Never combine cleaning products. If something already touched the item: plain cool water on that spot, nothing else, then stop. When in doubt, let a professional take it from here.',
   },
 }
 

@@ -110,7 +110,7 @@ export function buildDowngradeCard(original: Card, reasons: string[], stain: str
       'Not adding heat, rubbing, or chemistry keeps the stain workable for a professional. Most permanent damage comes from home attempts, not the stain itself.',
     homeSolutions: [
       `Right now for ${what}: blot gently with a clean white cloth from the outside in. No rubbing, no heat, no cleaning products.`,
-      'Never mix bleach with vinegar, ammonia, or any other cleaner. If a product has already touched the item, rinse that area with plain cool water and stop.',
+      'Never mix bleach with vinegar, ammonia, or any other cleaner. If a product already touched the item: plain cool water on that spot, nothing else, then stop.',
       'Take it to a professional cleaner soon and tell them exactly what happened — including anything already tried on it.',
     ],
     materialWarnings: preservedWarnings.length

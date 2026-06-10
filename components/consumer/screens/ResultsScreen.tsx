@@ -32,6 +32,7 @@ import BottomNav from '@/components/consumer/BottomNav'
 import BetaBadge from '@/components/consumer/BetaBadge'
 import ResultsStepList from '@/components/consumer/ResultsStepList'
 import DoNotDoPanel from '@/components/consumer/DoNotDoPanel'
+import FirstAidBanner from '@/components/consumer/FirstAidBanner'
 import DoNotDoScreen from '@/components/consumer/screens/DoNotDoScreen'
 import ProductsList, { type ProductItem } from '@/components/consumer/ProductsList'
 import GonrLogo from '@/components/brand/GonrLogo'
@@ -82,6 +83,13 @@ export interface EngineCard {
   products?: { consumer?: ReadonlyArray<ProductItem>; household?: ReadonlyArray<ProductItem> }
   meta?: { riskLevel?: string }
   _fiberContext?: FiberContext
+  // TASK-232 — deterministic protect-first block + explicit hazard answer,
+  // attached server-side to every consumer card (lib/solve/first-aid.ts).
+  firstAid?: { headline?: string; steps?: ReadonlyArray<string> }
+  directAnswer?: { question?: string; answer?: string; why?: string; instead?: string }
+  _terminalGate?: { downgraded?: boolean; reasons?: ReadonlyArray<string> }
+  source?: string
+  _contractBlocked?: boolean
 }
 
 interface DisambiguationOption {
@@ -704,6 +712,56 @@ export default function ResultsScreen({
   return (
     <ScreenShell>
       <ContextChip text={headerContext} />
+
+      {/* TASK-232 — explicit answer when the user directly asked about a
+          hazard (bleach/ammonia/mixing). Renders FIRST: the asked question
+          gets answered before anything else. */}
+      {card?.directAnswer?.why ? (
+        <div className="gonr-verdict-stop mt-5 flex items-start gap-3">
+          <AlertTriangle size={20} className="gonr-severity-text mt-0.5 shrink-0" aria-hidden="true" />
+          <div>
+            <p className="gonr-severity-text text-sm font-extrabold leading-6">
+              {t('results.directAnswerNo')}
+            </p>
+            <p className="mt-1 text-sm font-semibold leading-6 text-gonr-textgray">{card.directAnswer.why}</p>
+            {card.directAnswer.instead ? (
+              <p className="mt-1 text-sm font-semibold leading-6 text-gonr-textgray">{card.directAnswer.instead}</p>
+            ) : null}
+          </div>
+        </div>
+      ) : null}
+
+      {/* TASK-232 — protect-first aid stays visible on refusal/downgrade/
+          fallback paths (localized static copy; server card.firstAid is the
+          API contract the eval probe asserts). */}
+      {res._hardRefuse ||
+      res._safetyBlocked ||
+      aiUnavailable ||
+      card?._terminalGate?.downgraded ||
+      card?._contractBlocked ||
+      card?.source === 'deterministic-fallback' ||
+      card?.source === 'terminal-safety-gate' ? (
+        card?.firstAid?.steps?.length ? (
+          /* Server steps are evidence-adapted (no-soak for DCO/leather,
+             cool-water-stop after prior chemicals) — prefer them over the
+             static banner (codex-review P2). Static banner remains the
+             fallback when the card carries no firstAid block. */
+          <section aria-label={t('firstaid.aria')} className="gonr-card mt-5 border border-gonr-navy/10 p-4">
+            <p className="text-sm font-black text-gonr-navy">
+              {card.firstAid.headline ?? t('firstaid.headline')}
+            </p>
+            <ul className="mt-2 flex flex-col gap-1.5">
+              {card.firstAid.steps.map((step) => (
+                <li key={step} className="text-[13px] font-semibold leading-5 text-gonr-textgray">
+                  • {step}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : (
+          <FirstAidBanner className="mt-5" />
+        )
+      ) : null}
 
       {/* Safety-state strips — engine flags drive the severity skin + label. */}
       {res._hardRefuse ? (
