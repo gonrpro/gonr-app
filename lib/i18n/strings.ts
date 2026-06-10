@@ -919,8 +919,8 @@ export const strings: Record<string, Record<string, string>> = {
   operatorWaitlistError: { en: "Couldn't save your email. Try again.", es: 'No pudimos guardar tu email. Intenta de nuevo.' },
   // ── TASK-218 consumer screens (i18n key-based) ──
   "home.settingsAria": { en: "Settings", es: "Ajustes" },
-  "home.heroHeadline": { en: "Know what to do. Know what not to.", es: "Sabe qué hacer. Y qué no hacer." },
-  "home.heroSubhead": { en: "Show us the stain. GONR reads what it can and asks only what matters.", es: "Muéstranos la mancha. GONR lee lo que puede y solo pregunta lo que importa." },
+  "home.heroHeadline": { en: "The stain app.", es: "The stain app." },
+  "home.heroSubhead": { en: "Smart answers for real life messes.", es: "Respuestas inteligentes para los líos de la vida real." },
   "home.tilePhotoTitle": { en: "Snap the stain", es: "Toma una foto" },
   "home.tilePhotoSub": { en: "Photo-first read", es: "Empieza con una foto" },
   "home.tileLabelTitle": { en: "Scan the label", es: "Escanea la etiqueta" },

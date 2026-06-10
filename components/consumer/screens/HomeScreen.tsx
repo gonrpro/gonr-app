@@ -112,15 +112,10 @@ export default function HomeScreen() {
     [query, router],
   )
 
-  // Two-clause headline treatment that survives translation: the catalog string is
-  // two sentences ("Know what to do. Know what not to." / "Sabe qué hacer. Y qué no
-  // hacer."). Split on the sentence break so the SECOND clause — the "what NOT to"
-  // safety hook — stacks on its own line in brand hot-pink, in either language. If a
-  // future string has no break, it renders cleanly as one line.
+  // Brand hero: the product name "The stain app." on ONE line with a navy -> pink ->
+  // orange gradient sweep (matches the marketing treatment), a sparkle accent, and the
+  // "smart answers" subline. Single phrase — no clause split.
   const headline = t('home.heroHeadline')
-  const firstBreak = headline.indexOf('. ')
-  const headlineLead = firstBreak === -1 ? headline : `${headline.slice(0, firstBreak)}.`
-  const headlineHook = firstBreak === -1 ? '' : headline.slice(firstBreak + 2)
 
   return (
     <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5">
@@ -141,19 +136,13 @@ export default function HomeScreen() {
         </span>
       </div>
 
-      {/* hero promise line — keeps the "know what NOT to" safety hook. The second
-          clause carries the brand hot-pink emphasis; works in EN and ES alike. */}
-      <h1 className="gonr-fade-up mt-9 text-[2.1rem] font-black leading-[1.12] tracking-tight text-gonr-navy">
-        {headlineHook ? (
-          <>
-            {headlineLead}
-            <br />
-            <span className="text-gonr-hotpink">{headlineHook}</span>
-          </>
-        ) : (
-          headline
-        )}
+      {/* hero: product name on one line, navy -> pink -> orange gradient sweep + sparkle */}
+      <h1 className="gonr-fade-up gonr-gradient-text-stainapp mt-9 whitespace-nowrap text-[clamp(1.9rem,8.6vw,2.6rem)] font-black leading-[1.12] tracking-tight">
+        {headline}
       </h1>
+      <span aria-hidden="true" className="gonr-fade-up mt-2 block text-gonr-hotpink">
+        <Sparkles size={26} strokeWidth={2.25} />
+      </span>
 
       {/* magic-read invitation — sets the "show me the stain" expectation */}
       <p className="mt-3 text-[15px] font-semibold leading-6 text-gonr-textgray">
