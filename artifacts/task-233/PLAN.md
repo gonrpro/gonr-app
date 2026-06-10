@@ -38,4 +38,6 @@ Spec: ~/ops-vault/Process/Tasks/TASK-233.md (P0, claimed in_progress). Baseline:
 - [ ] Step 6: scripts/task-233-soak.sh (100 runs vs preview /api/solve+intake via eval lane, mixed matrix, p95 < 8s first-guidance, 0 dead ends, artifact in artifacts/task-233/)
 - [ ] Step 7: console evidence (puppeteer-core in node_modules? else greps + unit tests + document residual)
 - [ ] Step 8: __tests__/task-233-reliability.test.ts
-- [ ] Step 9: push, clone-flow preview deploy, probes + soak, evidence post, awaiting_review
+- [x] Steps 3/6/7/8 DONE: events route verified consumer-safe + per-IP throttle added (codex P1); soak harness written; console evidence captured (headless Chrome --enable-logging=stderr: ZERO console lines on anon /solve-v2 + /history); 11 tests, 624/624; codex round 2: anon local-history merge + offline first-aid fixed, untracked-artifact finding rejected
+- [x] Step 9 (partial): pushed @ 6738b6b; preview https://gonr-8diaoxb2z-gonrpros-projects.vercel.app; events/record 204 + auth/tier 404 verified live; TASK-232 regression probe 7/7 PASS; coder report written
+- [ ] REMAINING: soak completing in background (artifacts/task-233/soak-6738b6b.txt — if p95 > 8s on AI-tier TTFB, present honestly: first VISIBLE guidance is the instant client banner; API TTFB is the strict proxy measure). Then: evidence Telegram post + spec → awaiting_review + regen index + daily log finalize.
