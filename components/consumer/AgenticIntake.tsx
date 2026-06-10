@@ -12,6 +12,7 @@ import ResultsScreen, {
 import type { SolveInput } from '@/lib/consumer-safety/solve-input'
 import { useSaveProtocol } from '@/components/consumer/useSaveProtocol'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import FirstAidBanner from '@/components/consumer/FirstAidBanner'
 
 // TASK-218 FRONTIER — AGENTIC INTAKE (the client half of the orchestrator).
 //
@@ -390,6 +391,10 @@ export default function AgenticIntake({
           </p>
         </div>
       ) : null}
+
+      {/* TASK-232 — conservative first-aid visible the whole time the model
+          is reading/asking, so the stain doesn't set during Q&A. */}
+      {phase === 'thinking' || phase === 'asking' ? <FirstAidBanner className="mt-4" /> : null}
 
       {/* The ONE sharp question + quick-reply chips. */}
       {phase === 'asking' && question ? (

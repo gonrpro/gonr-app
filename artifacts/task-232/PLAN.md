@@ -28,10 +28,11 @@ Baseline: task-218-lab @ 4fd6ea8 (TASK-231 accepted; 229b green; suite ~590 test
 - [x] Spec claimed in_progress, index regenerated
 - [x] Step 2: lib/solve/session-evidence.ts WRITTEN (untested) — red-cell evidence parser, question-vs-applied discipline, direct hazard question detection
 - [x] Step 3 (module): lib/solve/terminal-safety-gate.ts WRITTEN (untested) — firedRedCells, cardHasActiveTreatment (negation-aware), buildDowngradeCard (preserves warnings), applyTerminalGate (protect-only cards pass, active treatment downgrades)
-- [ ] Step 1: guard extensions (title rules, absent-step refs, unsupported direct recs)
-- [ ] Step 3 (wiring): call applyTerminalGate LAST in finalizeCardForResponse (route.ts) — after enforceConsumerCard, consumer tiers only; parse evidence once per request from body facts (stain/surface/careSymbols/fabricDescription/garmentLocation)
-- [ ] Step 4: direct-answer injection (ev.directHazardQuestion → card.directAnswer {answer:'No', why, neverMix}) in route; UI render optional this packet? — spec requires explicit answer in result: inject into card title-adjacent field + homeSolutions[0] prefix is acceptable; decide at wiring
-- [ ] Step 5: firstAid block on EVERY response + UI banner (AgenticIntake/SolveFlow pre-AI + refusals)
+- [x] Step 1: guard extensions DONE (title rules, absent-step refs, unsupported direct recs) — committed
+- [x] Step 3 (wiring): applyTerminalGate wired LAST in finalizeCardForResponse — committed (part-1 commit after 4fd6ea8)
+- [x] Step 4: card.directAnswer injection in route — committed (lib/solve/first-aid.ts buildDirectAnswer)
+- [x] Step 5 (API): card.firstAid on every consumer card — committed
+- [ ] Step 5 (UI): NEW component components/consumer/FirstAidBanner.tsx (static conservative copy, gonr-card styling, brand classes per BottomNav/SideNav patterns). Render in: AgenticIntake.tsx during phase 'thinking' AND 'asking' (phase state at ~line 126, Phase type line 68; loading copy keys 'intake.loading.*' lines 112-114 = insertion area); ResultsScreen.tsx render card.firstAid + card.directAnswer near materialWarnings section (~line 401, consumer area; DoNotDoPanel import line 34 shows panel pattern to mimic). i18n: USE PLAIN STRINGS w/ t() fallback pattern only if trivially available — check how BetaBadge/other components handle copy; if i18n required, add keys to lib/i18n dictionaries.
 - [ ] Step 6: __tests__/task-232-terminal-gate.test.ts (replay cases per spec)
 - [ ] Step 7: tsc/vitest/eslint/build + codex review + commit
 - [ ] Step 8: preview deploy + task-232 probe (use evalViewerTier:"home"), evidence post, claim awaiting_review
