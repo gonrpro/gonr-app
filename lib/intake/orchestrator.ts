@@ -409,6 +409,20 @@ const SPECIALTY_FIBER =
   /silk|cashmere|wool|angora|mohair|acetate|rayon|viscose|chiffon|organza|leather|suede|nubuck|aniline|alcantara|velvet|down|gore-?tex/i
 const UNKNOWN = /unknown|not sure|unsure|unclear|can'?t tell|n\/a|none|^$/i
 const PRIOR_AGGRESSIVE = /bleach|solvent|ammonia|alkali|acetone|peroxide|oxidiz/i
+// A QUESTION about an aggressive agent ("can I just use bleach?") is NOT a
+// disclosure that it was applied — folding it into priorTreatment is exactly
+// the pressure test's fabricated "Prior Bleach Applied" (scenario 14). The
+// question phrase is STRIPPED before any bare-token prior-chemistry match
+// (bare chip answers like "bleach" to the prior-treatment question still
+// match — only question-shaped phrases are removed), and forwarded verbatim
+// on the engine body's hazardQuestion field so /api/solve answers it
+// explicitly. Mirrors HEAT_APPLIED's awareness-vs-application discipline.
+export const HAZARD_QUESTION =
+  /\b(?:can|could|should|may|do)\s+(?:i|we|you)\b[^.;?\n]{0,50}\b(?:bleach|ammonia|acetone|peroxide|solvent)\b[^.;?\n]{0,30}\??|\bis\s+(?:it\s+)?(?:ok|okay|safe)\b[^.;?\n]{0,40}\b(?:bleach|ammonia|acetone|peroxide|solvent)\b[^.;?\n]{0,20}\??/i
+export function stripHazardQuestions(text: string): string {
+  if (!text) return text
+  return text.replace(new RegExp(HAZARD_QUESTION.source, 'gi'), ' ')
+}
 // Heat that was ACTUALLY APPLIED to the garment (hot/warm water, dryer, iron, press,
 // steam) — it sets protein/tannin and genuinely changes the safe move. This is DISTINCT
 // from heat named only as a RISK or care-label restriction ("care-label could restrict
@@ -576,7 +590,7 @@ function normalize(raw: Partial<IntakeModelOutput>, fallback: IntakeQuestion): I
   // fail-closed logic can never lose a trigger to the scrub.
   const rawDescriptive = [rawCareRisk, ...rawKnows, ...rawSuspects, ...rawCannotKnow].join(' ')
   const flagsBlob = riskFlags.join(' ')
-  if (PRIOR_AGGRESSIVE.test(rawDescriptive) && !PRIOR_AGGRESSIVE.test(flagsBlob)) {
+  if (PRIOR_AGGRESSIVE.test(stripHazardQuestions(rawDescriptive)) && !PRIOR_AGGRESSIVE.test(flagsBlob)) {
     riskFlags.push('prior_aggressive_chemistry')
   }
   if (HEAT_APPLIED.test(rawCareRisk) && !HEAT_APPLIED.test(flagsBlob)) riskFlags.push('heat_exposure')
@@ -1071,7 +1085,7 @@ function computeFailClosed(
   // Prior aggressive chemistry / heat trip the engine path from ANY source: the model's
   // flags, a care-label constraint, OR the user's own raw words — a raw disclosure can
   // never be lost to the model omitting it from riskFlags/careRisk.
-  if (PRIOR_AGGRESSIVE.test(flags) || PRIOR_AGGRESSIVE.test(careBlob) || PRIOR_AGGRESSIVE.test(rawUser)) {
+  if (PRIOR_AGGRESSIVE.test(flags) || PRIOR_AGGRESSIVE.test(careBlob) || PRIOR_AGGRESSIVE.test(stripHazardQuestions(rawUser))) {
     reasons.push('prior_aggressive_chemistry')
   }
   if (HEAT_APPLIED.test(flags) || HEAT_APPLIED.test(careBlob) || HEAT_APPLIED.test(rawUser)) reasons.push('heat_exposure')
@@ -1225,7 +1239,7 @@ function assembleInput(
   // We scan the user's RAW words too — a disclosure the model omitted from its output
   // ("I already poured bleach on it") still hands the literal token to the engine.
   const priorMatches =
-    `${flags} ${careRisk} ${rawUser}`.match(new RegExp(PRIOR_AGGRESSIVE.source, 'gi')) ?? []
+    stripHazardQuestions(`${flags} ${careRisk} ${rawUser}`).match(new RegExp(PRIOR_AGGRESSIVE.source, 'gi')) ?? []
   const priorTreatment = Array.from(new Set(priorMatches.map((token) => token.toLowerCase())))
 
   const description = engineStainTerm(parsedFacts, userNote, out.read.stain)
@@ -1255,6 +1269,7 @@ function buildSolveBody(
   assembled: SolveInput,
   resolved: ResolvedFiber,
   hardConstraints: string[],
+  hazardQuestion?: string | null,
 ): EngineSolveBody {
   // hardConstraints are the care-label RESTRICTIVE_SYMBOLS (no-bleach / no-heat /
   // no-iron / dry-clean-only / hand-wash-only / do-not-wash). They are NON-OVERRIDABLE
@@ -1267,6 +1282,7 @@ function buildSolveBody(
   return buildEngineSolveBody(assembled, {
     surfaceBase: resolved.surfaceBase,
     careSymbols: hardConstraints,
+    hazardQuestion,
   })
 }
 
@@ -1386,7 +1402,7 @@ export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise
     ...base,
     action: 'solve' as const,
     nextQuestion: null,
-    solveBody: buildSolveBody(assembledInput, resolved, hardConstraints),
+    solveBody: buildSolveBody(assembledInput, resolved, hardConstraints, rawUser.match(HAZARD_QUESTION)?.[0] ?? null),
     assembledInput,
   }
 

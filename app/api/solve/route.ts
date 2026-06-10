@@ -679,6 +679,7 @@ function finalizeCardForResponse(card: any, viewerTier: SolveTier | 'anon' | nul
     stain: ctx?.stain,
     surface: ctx?.surface,
     careSymbols: ctx?.careSymbols,
+    hazardQuestion: ctx?.hazardQuestion,
   })
   const gated = applyTerminalGate(res.card, evidence, {
     stain: ctx?.stain ?? '',
@@ -775,6 +776,12 @@ export async function POST(req: Request) {
         surfaceHint: body.surface || '',
         careSymbols: bodyCareSymbols,
       })
+      // TASK-232 browser-path fix: the intake orchestrator forwards a direct
+      // hazard question verbatim (never folded into history). Thread it onto
+      // ctx so finalize's session-evidence parser answers it explicitly.
+      if (typeof body.hazardQuestion === 'string' && body.hazardQuestion.trim()) {
+        ;(ctx as { hazardQuestion?: string }).hazardQuestion = body.hazardQuestion.slice(0, 200)
+      }
     }
 
     // ── Validate we have a stain ───────────────────────────────

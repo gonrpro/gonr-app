@@ -164,6 +164,40 @@ describe('TASK-232 — direct answers and first aid', () => {
   })
 })
 
+describe('TASK-232 — browser path: hazard questions never become history (Atlas repro)', () => {
+  const repro = 'coffee stain on cotton shirt, can I just use bleach?'
+
+  it('strips the question before prior-chem matching; chip and real disclosures survive', async () => {
+    const { stripHazardQuestions } = await import('@/lib/intake/orchestrator')
+    expect(stripHazardQuestions(repro)).not.toMatch(/bleach/i)
+    // A bare chip answer to the prior-treatment question is a disclosure — kept.
+    expect(stripHazardQuestions('bleach')).toMatch(/bleach/i)
+    // A genuine past-use disclosure — kept.
+    expect(stripHazardQuestions('I already used bleach on it')).toMatch(/bleach/i)
+  })
+
+  it('engine body carries the question verbatim and fabricates no prior note', async () => {
+    const { buildEngineSolveBody, emptySolveInput } = await import('@/lib/consumer-safety/solve-input')
+    const body = buildEngineSolveBody(
+      { ...emptySolveInput(), stainDescription: 'coffee' },
+      { hazardQuestion: 'can I just use bleach?' },
+    )
+    expect(body.stain).not.toMatch(/prior\s+bleach/i)
+    expect(body.hazardQuestion).toMatch(/bleach/i)
+  })
+
+  it('solve-side evidence answers the forwarded question with NO prior-chem red cell', () => {
+    const ev = parseSessionEvidence({
+      stain: 'coffee',
+      surface: 'cotton shirt',
+      hazardQuestion: 'can I just use bleach?',
+    })
+    expect(ev.directHazardQuestion).toBe('chlorine-bleach')
+    expect(ev.priorChems).toEqual([])
+    expect(firedRedCells(ev)).toEqual([])
+  })
+})
+
 describe('TASK-232 — i18n keys resolve to real copy (Atlas review blocker)', () => {
   it('every TASK-232 UI key exists in the catalog for en AND es — t() never leaks a raw key', async () => {
     const { strings, t } = await import('@/lib/i18n/strings')

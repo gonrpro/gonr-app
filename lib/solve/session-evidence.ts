@@ -33,6 +33,8 @@ export interface SolveRequestFacts {
   careSymbols?: string[]
   fabricDescription?: string
   garmentLocation?: string
+  /** Direct hazard question forwarded verbatim from the intake orchestrator. */
+  hazardQuestion?: string
 }
 
 // Past-use phrasing — agent must appear near an application verb.
@@ -62,16 +64,19 @@ const AMMONIA_QUESTION_RE = /can\s+i\s+(?:just\s+)?(?:use|put|try|apply)\s+ammon
 const ACID_MIX_QUESTION_RE = /can\s+i\s+mix|mix(?:ing)?\s+(?:bleach|ammonia|vinegar)[^.;\n]{0,30}(?:\?|safe|ok)/i
 
 export function parseSessionEvidence(facts: SolveRequestFacts): SessionEvidence {
-  const text = [facts.stain, facts.surface, facts.fabricDescription, facts.garmentLocation]
+  const text = [facts.stain, facts.surface, facts.fabricDescription, facts.garmentLocation, facts.hazardQuestion]
     .filter((s): s is string => typeof s === 'string' && s.length > 0)
     .join(' ')
   const symbols = (facts.careSymbols ?? []).join(' ').toLowerCase()
   const all = `${text} ${symbols}`
 
+  // History scan excludes the hazard question — it is captured separately as
+  // directHazardQuestion and must never read as an applied treatment.
+  const historyText = facts.hazardQuestion ? text.split(facts.hazardQuestion).join(' ') : text
   const priorChems: string[] = []
   for (const agent of PRIOR_CHEM_AGENTS) {
     const re = new RegExp(`${APPLIED_VERBS}[^.;\\n]{0,40}\\b${agent}|\\b${agent}\\b[^.;\\n]{0,30}(?:was\\s+(?:used|applied)|already)`, 'i')
-    if (re.test(text)) priorChems.push(agent)
+    if (re.test(historyText)) priorChems.push(agent)
   }
 
   const directHazardQuestion = BLEACH_QUESTION_RE.test(text)

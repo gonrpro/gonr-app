@@ -189,6 +189,11 @@ export interface EngineSolveBody {
    *  symbols have NO CareStatus slot, so without this they evaporate before the
    *  verdict (the adversarial care-label override). */
   careSymbols?: string[]
+  /** A direct hazard question the user asked ("can I just use bleach?").
+   *  Forwarded VERBATIM and separately from the stain text so (a) it can never
+   *  be folded into history as a fabricated prior treatment and (b) the
+   *  engine's session-evidence parser can answer it explicitly. */
+  hazardQuestion?: string
 }
 
 // Restrictive care-label symbols → load-bearing surface phrases the engine reads.
@@ -250,9 +255,9 @@ const AGGRESSIVE_PRIOR = /bleach|ammonia|acetone|peroxide|solvent|alkali|oxidiz|
  */
 export function buildEngineSolveBody(
   input: SolveInput,
-  opts: { override?: string | null; surfaceBase?: string; careSymbols?: readonly string[] } = {},
+  opts: { override?: string | null; surfaceBase?: string; careSymbols?: readonly string[]; hazardQuestion?: string | null } = {},
 ): EngineSolveBody {
-  const { override = null, surfaceBase, careSymbols = [] } = opts
+  const { override = null, surfaceBase, careSymbols = [], hazardQuestion = null } = opts
 
   // Normalize + dedupe the restrictive symbol tokens (lowercased, e.g. 'no-bleach').
   const symbols = Array.from(
@@ -287,6 +292,7 @@ export function buildEngineSolveBody(
   const stain = stainNotes.length > 0 ? `${base} — ${stainNotes.join('; ')}` : base
 
   const body: EngineSolveBody = { stain }
+  if (hazardQuestion) body.hazardQuestion = hazardQuestion.slice(0, 200)
   if (surface) body.surface = surface
   // Structured echo for the forthcoming engine contract (NOT yet enforced — see note).
   if (input.careStatus !== 'unknown') body.careStatus = input.careStatus
