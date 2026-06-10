@@ -21,6 +21,26 @@ import { recordEvent } from '@/lib/events/record'
 
 const MAX_BODY_BYTES = 4096
 
+// TASK-233 (codex-review P1) — the header comment always promised a per-IP
+// rate limit but none was implemented, and the proxy now exposes this route
+// publicly. Simple fixed-window in-memory throttle per serverless instance:
+// enough to stop loop-spam flooding/poisoning the events table; over-limit
+// requests still return 204 so clients never branch on telemetry.
+const RATE_WINDOW_MS = 60_000
+const RATE_MAX_PER_WINDOW = 30
+const rateBuckets = new Map<string, { windowStart: number; count: number }>()
+function isEventRateLimited(ip: string): boolean {
+  const now = Date.now()
+  const bucket = rateBuckets.get(ip)
+  if (!bucket || now - bucket.windowStart > RATE_WINDOW_MS) {
+    rateBuckets.set(ip, { windowStart: now, count: 1 })
+    if (rateBuckets.size > 10_000) rateBuckets.clear() // memory backstop
+    return false
+  }
+  bucket.count += 1
+  return bucket.count > RATE_MAX_PER_WINDOW
+}
+
 // Event types the endpoint will forward. Unknown types silently accepted with
 // no write (never 4xx — telemetry failures must not affect the UI).
 const ALLOWED_EVENT_TYPES = new Set([
@@ -54,6 +74,12 @@ async function getSessionEmail(): Promise<string | null> {
 
 export async function POST(req: Request) {
   try {
+    const ip =
+      req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+      req.headers.get('x-real-ip') ||
+      'unknown'
+    if (isEventRateLimited(ip)) return new NextResponse(null, { status: 204 })
+
     const text = await req.text()
     if (text.length > MAX_BODY_BYTES) return new NextResponse(null, { status: 204 })
 

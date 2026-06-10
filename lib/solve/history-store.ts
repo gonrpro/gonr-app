@@ -60,3 +60,7 @@ export function getHistoryEntry(id: string): HistoryEntry | null {
 export function listHistoryIds(): Set<string> {
   return new Set(readAll().map((e) => e?.id).filter(Boolean))
 }
+
+export function listHistoryEntries(): HistoryEntry[] {
+  return readAll().filter((e) => Boolean(e?.id))
+}

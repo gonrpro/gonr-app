@@ -8,7 +8,7 @@ import BetaBadge from '@/components/consumer/BetaBadge'
 import GonrLogo from '@/components/brand/GonrLogo'
 import { EXAMPLE_CHIPS } from '@/lib/consumer-safety/solve-input'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-import { listHistoryIds } from '@/lib/solve/history-store'
+import { listHistoryIds, listHistoryEntries, type HistoryEntry } from '@/lib/solve/history-store'
 
 // TASK-218 Screen 11 — HISTORY. Every past stain check in one calm, premium list,
 // bound to the REAL /api/solves/history endpoint (session-cookie auth; no signup
@@ -55,6 +55,28 @@ function relativeWhen(iso: string, t: Translate, lang: string): string {
 
 type Load = 'loading' | 'ready' | 'auth' | 'error'
 
+// TASK-233 (codex-review P2) — locally persisted checks must render even when
+// the server list is unavailable (anon 401, network error) or missing rows.
+// Server rows win on duplicate correlation ids; local-only rows are appended
+// and the merged list sorts newest-first.
+function localEntryToRow(e: HistoryEntry): HistoryRow {
+  const input = (e.input ?? {}) as { stainDescription?: string; material?: string }
+  const card = ((e.response ?? {}).card ?? {}) as { title?: string; surface?: string }
+  return {
+    correlation_id: e.id,
+    stain: input.stainDescription || card.title || null,
+    surface: card.surface || (input.material && input.material !== 'unknown' ? input.material : null),
+    served_at: new Date(e.ts).toISOString(),
+    outcome: null,
+  }
+}
+
+function mergeRows(server: HistoryRow[], local: HistoryRow[]): HistoryRow[] {
+  const seen = new Set(server.map((r) => r.correlation_id))
+  const merged = [...server, ...local.filter((r) => !seen.has(r.correlation_id))]
+  return merged.sort((a, b) => (b.served_at > a.served_at ? 1 : b.served_at < a.served_at ? -1 : 0))
+}
+
 export default function HistoryScreen() {
   const { t, lang } = useLanguage()
   const [rows, setRows] = useState<HistoryRow[]>([])
@@ -75,20 +97,40 @@ export default function HistoryScreen() {
       try {
         const res = await fetch('/api/solves/history?limit=50', { credentials: 'include' })
         if (cancelled) return
+        const local = listHistoryEntries().map(localEntryToRow)
         if (res.status === 401) {
-          setState('auth')
+          // Anonymous users still see their locally persisted checks.
+          if (local.length > 0) {
+            setRows(local)
+            setState('ready')
+          } else {
+            setState('auth')
+          }
           return
         }
         if (!res.ok) {
-          setState('error')
+          if (local.length > 0) {
+            setRows(local)
+            setState('ready')
+          } else {
+            setState('error')
+          }
           return
         }
         const data = (await res.json()) as HistoryResponse
         if (cancelled) return
-        setRows(data.ok && Array.isArray(data.results) ? data.results : [])
+        const server = data.ok && Array.isArray(data.results) ? data.results : []
+        setRows(mergeRows(server, local))
         setState('ready')
       } catch {
-        if (!cancelled) setState('error')
+        if (cancelled) return
+        const local = listHistoryEntries().map(localEntryToRow)
+        if (local.length > 0) {
+          setRows(local)
+          setState('ready')
+        } else {
+          setState('error')
+        }
       }
     })()
     return () => {

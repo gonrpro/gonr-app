@@ -524,10 +524,14 @@ export default function ResultsScreen({
   }
 
   // ── 2. Transport / network failure ─────────────────────────────────────────
+  // TASK-233 (codex-review): offline/DNS/abort failures carry the same
+  // protect-first guidance as HTTP error states — never a bare dead end.
   if (status === 'error' && !data) {
     return (
       <ScreenShell>
         <ErrorState heading={t('results.errorNetworkHeading')} message={t('results.errorNetworkBody')} onRetry={retry} />
+        <FirstAidBanner className="mt-5" />
+        <p className="mt-3 text-sm font-semibold leading-6 text-gonr-textgray">{t('results.errorSafeFallbackLine')}</p>
       </ScreenShell>
     )
   }
