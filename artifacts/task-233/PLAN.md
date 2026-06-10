@@ -27,4 +27,15 @@ Spec: ~/ops-vault/Process/Tasks/TASK-233.md (P0, claimed in_progress). Baseline:
 
 ## Status
 - [x] Spec claimed in_progress + index regenerated
-- [ ] Steps 1-9
+- [x] Step 1: proxy allows /api/events/record (+ proxy-one-version test updated: events/record → allowed list, auth/tier stays blocked, comments explain)
+- [x] Step 2: auth/tier stripped from consumer (AuthContext fetchAndSetTier → local 'free', useUser fetchTier → null; EMAIL console logs deleted)
+- [x] Step 4 (client): ResultsScreen 429/5xx + AgenticIntake 'unavailable' carry FirstAidBanner + results.errorSafeFallbackLine i18n (en/es); AgenticIntake fetch has 75s AbortController timeout
+- All committed (amended, NOT pushed yet): "TASK-233 (1/3)" — 613/613 green
+- [ ] Step 3: verify app/api/events/record/route.ts consumer-safe + fire-and-forget; check what records History (logSolveHistory / /api/solves) for "100% of completed checks"
+- [x] Step 5 DONE: lib/solve/history-store.ts (localStorage ring, keyed by server correlationId); ResultsScreen saves on isAnswer effect (storeId = data.correlationId ?? repId); SolveFlow ?hid= renders stored result via PrefetchedSolve (after attachReady gate, falls through if missing); HistoryScreen rows link ?hid= when listHistoryIds has the row's correlation_id. 613/613.
+- (was) Step 5: history persistence — localStorage ring buffer module lib/solve/history-store.ts {id,ts,input,solveResponse}; write on verdict (AgenticIntake verdict + ResultsScreen answer render); HistoryScreen lists stored + opens stored result (ResultsScreen PrefetchedSolve) — NO bare-keyword re-solve; check current HistoryScreen data source first
+- [ ] Step 4 (server): /api/intake route try/catch returns structured phase:'unavailable' (verify exists) + maxDuration export check
+- [ ] Step 6: scripts/task-233-soak.sh (100 runs vs preview /api/solve+intake via eval lane, mixed matrix, p95 < 8s first-guidance, 0 dead ends, artifact in artifacts/task-233/)
+- [ ] Step 7: console evidence (puppeteer-core in node_modules? else greps + unit tests + document residual)
+- [ ] Step 8: __tests__/task-233-reliability.test.ts
+- [ ] Step 9: push, clone-flow preview deploy, probes + soak, evidence post, awaiting_review

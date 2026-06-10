@@ -33,6 +33,7 @@ import BetaBadge from '@/components/consumer/BetaBadge'
 import ResultsStepList from '@/components/consumer/ResultsStepList'
 import DoNotDoPanel from '@/components/consumer/DoNotDoPanel'
 import FirstAidBanner from '@/components/consumer/FirstAidBanner'
+import { saveHistoryEntry } from '@/lib/solve/history-store'
 import DoNotDoScreen from '@/components/consumer/screens/DoNotDoScreen'
 import ProductsList, { type ProductItem } from '@/components/consumer/ProductsList'
 import GonrLogo from '@/components/brand/GonrLogo'
@@ -404,6 +405,12 @@ export default function ResultsScreen({
     const signature = `${repId}:${override ?? ''}:${data.source ?? ''}`
     if (loggedAnswerRef.current === signature) return
     loggedAnswerRef.current = signature
+
+    // TASK-233 — persist the exact answered result so History reopens it
+    // without a bare-keyword re-solve. Keyed by the SERVER correlationId so
+    // /api/solves/history rows match; falls back to the rep id. Failure-safe.
+    const storeId = (data as { correlationId?: string }).correlationId ?? repId
+    saveHistoryEntry({ id: storeId, ts: Date.now(), input, response: data })
 
     const neverDo = card?.safetyMatrix?.neverDo ?? []
     const materialWarnings = card?.materialWarnings ?? []

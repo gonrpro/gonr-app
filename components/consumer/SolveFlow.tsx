@@ -6,6 +6,7 @@ import AgenticIntake from '@/components/consumer/AgenticIntake'
 import ChatIntakeScreen, { type ChatIntakeContext } from '@/components/consumer/screens/ChatIntakeScreen'
 import DetailsCollectedScreen from '@/components/consumer/screens/DetailsCollectedScreen'
 import ResultsScreen from '@/components/consumer/screens/ResultsScreen'
+import { getHistoryEntry } from '@/lib/solve/history-store'
 import { useSaveProtocol } from '@/components/consumer/useSaveProtocol'
 import { ATTACH_CONTEXT_KEY, type AttachContext } from '@/components/consumer/AttachMenu'
 import type { SolveInput } from '@/lib/consumer-safety/solve-input'
@@ -37,6 +38,7 @@ type FallbackStep = 'chat' | 'details' | 'results'
 function SolveFlowInner() {
   const params = useSearchParams()
   const stainParam = params.get('stain') ?? ''
+  const hidParam = params.get('hid') ?? ''
 
   // One-shot Attach vision hint, read + cleared on mount so it can't leak into a
   // later, unrelated solve. Held as one object so the boot side-effect is a single
@@ -104,6 +106,23 @@ function SolveFlowInner() {
   // Wait for the one-shot hint read before kicking off the agent (so its first
   // turn includes any captured photo/label context).
   if (!attachReady) return null
+
+  // TASK-233 — History reopen: ?hid=<correlationId> renders the STORED result
+  // (with its original input + full TASK-232 evidence fields) instead of
+  // re-running AI from a bare keyword. Missing/expired entries fall through
+  // to the normal flow, which still has ?stain= for a fresh check.
+  if (hidParam) {
+    const stored = getHistoryEntry(hidParam)
+    if (stored) {
+      return (
+        <ResultsScreen
+          input={stored.input}
+          prefetched={{ http: 200, data: stored.response }}
+          onSave={saveProtocol}
+        />
+      )
+    }
+  }
 
   if (useFallback) {
     if (fallbackStep === 'details' && fallbackInput) {

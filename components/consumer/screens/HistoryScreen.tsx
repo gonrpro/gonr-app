@@ -8,6 +8,7 @@ import BetaBadge from '@/components/consumer/BetaBadge'
 import GonrLogo from '@/components/brand/GonrLogo'
 import { EXAMPLE_CHIPS } from '@/lib/consumer-safety/solve-input'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { listHistoryIds } from '@/lib/solve/history-store'
 
 // TASK-218 Screen 11 — HISTORY. Every past stain check in one calm, premium list,
 // bound to the REAL /api/solves/history endpoint (session-cookie auth; no signup
@@ -59,6 +60,14 @@ export default function HistoryScreen() {
   const [rows, setRows] = useState<HistoryRow[]>([])
   const [state, setState] = useState<Load>('loading')
   const [filter, setFilter] = useState('')
+  // TASK-233 — ids with a locally stored result open the exact stored answer
+  // (?hid=) instead of re-running a bare-keyword solve. Read once on mount —
+  // localStorage is unavailable during SSR.
+  const [storedIds, setStoredIds] = useState<Set<string>>(() => new Set())
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setStoredIds(listHistoryIds())
+  }, [])
 
   useEffect(() => {
     let cancelled = false
@@ -146,7 +155,11 @@ export default function HistoryScreen() {
             {visible.map((row) => (
               <li key={row.correlation_id}>
                 <Link
-                  href={`/solve-v2/solve?stain=${encodeURIComponent(row.stain ?? '')}`}
+                  href={
+                    storedIds.has(row.correlation_id)
+                      ? `/solve-v2/solve?hid=${encodeURIComponent(row.correlation_id)}`
+                      : `/solve-v2/solve?stain=${encodeURIComponent(row.stain ?? '')}`
+                  }
                   className="gonr-card flex items-center justify-between gap-3 p-3 transition-transform duration-150 active:scale-[0.99]"
                 >
                   <span className="flex min-w-0 items-center gap-3">
