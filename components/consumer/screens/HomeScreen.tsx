@@ -112,9 +112,9 @@ export default function HomeScreen() {
     [query, router],
   )
 
-  // Brand hero: the product name "The stain app." on ONE line with a navy -> pink ->
-  // orange gradient sweep (matches the marketing treatment), a sparkle accent, and the
-  // "smart answers" subline. Single phrase — no clause split.
+  // Brand hero: the product name "The stain app." centered on ONE line with the GONR
+  // logo gradient sweep (pink -> magenta -> orange, same as the wordmark) + the "smart
+  // answers" subline. Single phrase — no clause split.
   const headline = t('home.heroHeadline')
 
   return (
@@ -136,16 +136,13 @@ export default function HomeScreen() {
         </span>
       </div>
 
-      {/* hero: product name on one line, navy -> pink -> orange gradient sweep + sparkle */}
-      <h1 className="gonr-fade-up gonr-gradient-text-stainapp mt-9 whitespace-nowrap text-[clamp(1.9rem,8.6vw,2.6rem)] font-black leading-[1.12] tracking-tight">
+      {/* hero: product name centered on one line, GONR-logo gradient sweep */}
+      <h1 className="gonr-fade-up gonr-gradient-text mt-9 whitespace-nowrap text-center text-[clamp(2.1rem,9.6vw,2.9rem)] font-black leading-[1.12] tracking-tight">
         {headline}
       </h1>
-      <span aria-hidden="true" className="gonr-fade-up mt-2 block text-gonr-hotpink">
-        <Sparkles size={26} strokeWidth={2.25} />
-      </span>
 
-      {/* magic-read invitation — sets the "show me the stain" expectation */}
-      <p className="mt-3 text-[15px] font-semibold leading-6 text-gonr-textgray">
+      {/* smart-answers subline — centered under the hero */}
+      <p className="mt-3 text-center text-[15px] font-semibold leading-6 text-gonr-textgray">
         {t('home.heroSubhead')}
       </p>
 

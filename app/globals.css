@@ -437,14 +437,6 @@ body.plant-brain-shell > main {
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
-/* Brand-name hero ("The stain app.") — navy -> hot-pink -> orange sweep across the phrase. */
-.gonr-gradient-text-stainapp {
-  background: linear-gradient(96deg, var(--color-gonr-navy) 0%, #f70a75 52%, #ff5a18 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
 .gonr-card {
   background: var(--gonr-surface);
   border: 1px solid var(--gonr-border);
