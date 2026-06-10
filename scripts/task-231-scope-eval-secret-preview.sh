@@ -30,3 +30,17 @@ else
   echo "$out" | grep -vF "$v" | head -12
   exit $rc
 fi
+
+# Some Vercel CLI versions require an explicit branch for non-interactive add,
+# but Git-triggered previews can still miss branch overrides. Keep an all-preview
+# fallback with the same value so TASK-231 probes do not silently hit anon limits.
+printf '%s\n' "$v" | vercel env add GONR_EVAL_SECRET preview --yes >/tmp/task-231-env-add-preview.out 2>&1 && all_rc=0 || all_rc=$?
+if [ $all_rc -eq 0 ]; then
+  echo "ADDED: GONR_EVAL_SECRET all-preview fallback"
+elif grep -qi 'already.*exist' /tmp/task-231-env-add-preview.out; then
+  echo "ALREADY PRESENT in all-preview fallback"
+else
+  echo "all-preview env add failed (rc=$all_rc):"
+  grep -vF "$v" /tmp/task-231-env-add-preview.out | head -12
+  echo "continuing with branch-scoped preview secret"
+fi
