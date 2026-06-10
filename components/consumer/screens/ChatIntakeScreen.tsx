@@ -420,11 +420,11 @@ export default function ChatIntakeScreen({
 
   return (
     <main
-      className={`relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5 ${className ?? ''}`}
+      className={`relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5 lg:max-w-[960px] lg:px-10 lg:pb-12 lg:pt-8 ${className ?? ''}`}
     >
       {/* identity */}
       <div className="flex items-center justify-between">
-        <span className="flex items-center gap-2">
+        <span className="flex items-center gap-2 lg:invisible">
           <GonrLogo className="w-[104px]" priority tmClassName="text-[6px]" />
           <BetaBadge />
         </span>

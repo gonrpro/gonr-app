@@ -231,12 +231,12 @@ function contextSummary(input: SolveInput, override: string | null, stainFallbac
 function ScreenShell({ children }: { children: React.ReactNode }) {
   const { t } = useLanguage()
   return (
-    <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-[calc(7rem_+_env(safe-area-inset-bottom))] pt-5">
+    <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-[calc(7rem_+_env(safe-area-inset-bottom))] pt-5 lg:max-w-[960px] lg:px-10 lg:pb-12 lg:pt-8">
       <div className="flex items-center justify-between">
         <Link href="/solve-v2/solve" aria-label={t('results.backToIntakeAria')} className="text-gonr-navy/60">
           <ArrowLeft size={22} />
         </Link>
-        <span className="flex items-center gap-2">
+        <span className="flex items-center gap-2 lg:invisible">
           <GonrLogo className="w-[88px]" priority tmClassName="text-[5px]" />
           <BetaBadge />
         </span>

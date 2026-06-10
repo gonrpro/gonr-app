@@ -119,13 +119,14 @@ export default function HomeScreen() {
   const headline = t('home.heroHeadline')
 
   return (
-    <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5">
+    <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5 lg:max-w-[960px] lg:px-10 lg:pb-12 lg:pt-8">
       {/* soft brand glow wash — premium depth/vibrancy behind the hero (green-free) */}
       <div aria-hidden="true" className="gonr-hero-glow pointer-events-none absolute inset-x-0 top-0 -z-10 h-72" />
 
       {/* top bar: approved GONR-only gradient wordmark + settings */}
       <div className="flex items-center justify-between">
-        <span className="flex items-center gap-2">
+        {/* lg+: SideNav owns the brand mark — keep the slot so justify-between holds */}
+        <span className="flex items-center gap-2 lg:invisible">
           <GonrLogo className="w-[104px]" priority tmClassName="text-[6px]" />
           <BetaBadge />
         </span>

@@ -491,9 +491,9 @@ function Shell({
 }) {
   const { t } = useLanguage()
   return (
-    <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5">
+    <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5 lg:max-w-[960px] lg:px-10 lg:pb-12 lg:pt-8">
       <div className="flex items-center justify-between">
-        <GonrLogo className="w-[104px]" priority tmClassName="text-[6px]" />
+        <GonrLogo className="w-[104px] lg:invisible" priority tmClassName="text-[6px]" />
         <span className="text-xs font-extrabold uppercase tracking-wide text-gonr-textgray">
           {t('intake.tagline')}
         </span>

@@ -176,7 +176,7 @@ export default function DetailsCollectedScreen({
 
   return (
     <main
-      className={`relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5${
+      className={`relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5 lg:max-w-[960px] lg:px-10 lg:pb-12 lg:pt-8${
         className ? ` ${className}` : ''
       }`}
     >

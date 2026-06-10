@@ -250,7 +250,7 @@ export default function AttachMenu({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center"
+      className="fixed inset-0 z-50 flex items-end justify-center lg:pl-60"
       role="dialog"
       aria-modal="true"
       aria-labelledby="attach-menu-title"

@@ -2,36 +2,18 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Home, Clock, Bookmark, User, type LucideIcon } from 'lucide-react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { NAV_ITEMS, isNavActive } from './navItems'
 
-// TASK-218 SHARED FOUNDATION — canonical consumer bottom nav.
-// Extracted out of HomeScreen so every /solve-v2 screen renders ONE identical nav.
-// Mockup screen 1 is the visual source of truth: 4 tabs (Home / History / Saved /
-// Profile), NO center FAB. This is the ONLY sticky chrome on the consumer surface —
-// nothing else competes with the stain action. Premium fabric-care feel — active
-// tab reads in brand hot-pink with a soft-pink pill + gradient indicator dot;
-// inactive is calm navy. Labels are i18n key-based; screen agents import this
+// TASK-218 SHARED FOUNDATION — canonical consumer bottom nav (mobile, <lg only;
+// SideNav takes over at lg+). Extracted out of HomeScreen so every /solve-v2
+// screen renders ONE identical nav. Mockup screen 1 is the visual source of
+// truth: 4 tabs (Home / History / Saved / Profile), NO center FAB. This is the
+// ONLY sticky chrome on the consumer surface — nothing else competes with the
+// stain action. Premium fabric-care feel — active tab reads in brand hot-pink
+// with a soft-pink pill + gradient indicator dot; inactive is calm navy. Labels
+// are i18n key-based; items live in navItems.ts — screen agents import this
 // verbatim and MUST NOT redefine the nav.
-
-type NavItem = {
-  tKey: string
-  href: string
-  Icon: LucideIcon
-}
-
-const NAV_ITEMS: readonly NavItem[] = [
-  { tKey: 'nav.home', href: '/solve-v2', Icon: Home },
-  { tKey: 'nav.history', href: '/solve-v2/history', Icon: Clock },
-  { tKey: 'nav.saved', href: '/solve-v2/saved', Icon: Bookmark },
-  { tKey: 'nav.profile', href: '/solve-v2/profile', Icon: User },
-] as const
-
-function isActive(pathname: string, href: string): boolean {
-  // Home is only active on the exact root; section tabs match their subtree.
-  if (href === '/solve-v2') return pathname === '/solve-v2'
-  return pathname === href || pathname.startsWith(`${href}/`)
-}
 
 export default function BottomNav() {
   const pathname = usePathname() ?? '/solve-v2'
@@ -40,11 +22,11 @@ export default function BottomNav() {
   return (
     <nav
       aria-label={t('nav.primaryAria')}
-      className="fixed inset-x-0 bottom-0 z-30 mx-auto max-w-[480px] border-t border-[var(--gonr-border)] bg-white/95 px-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur-xl"
+      className="fixed inset-x-0 bottom-0 z-30 mx-auto max-w-[480px] border-t border-[var(--gonr-border)] bg-white/95 px-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur-xl lg:hidden"
     >
       <ul className="grid grid-cols-4">
         {NAV_ITEMS.map(({ tKey, href, Icon }) => {
-          const active = isActive(pathname, href)
+          const active = isNavActive(pathname, href)
           const label = t(tKey)
           return (
             <li key={href} className="flex justify-center">

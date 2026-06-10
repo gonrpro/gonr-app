@@ -232,12 +232,12 @@ export default function ProfileScreen() {
   const linkTarget = storedEmail ?? t('profile.yourInbox')
 
   return (
-    <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5">
+    <main className="relative mx-auto flex min-h-[100dvh] w-full max-w-[480px] flex-col px-5 pb-28 pt-5 lg:max-w-[960px] lg:px-10 lg:pb-12 lg:pt-8">
       <div className="flex items-center justify-between gap-3">
         <Link href="/solve-v2" aria-label={t('profile.backAria')} className="text-gonr-navy/60 transition-colors hover:text-gonr-navy">
           <ArrowLeft size={22} />
         </Link>
-        <span className="flex items-center gap-2">
+        <span className="flex items-center gap-2 lg:invisible">
           <GonrLogo className="w-[88px]" priority tmClassName="text-[5px]" />
           <BetaBadge />
         </span>
@@ -419,7 +419,7 @@ export default function ProfileScreen() {
           role="dialog"
           aria-modal="true"
           aria-label={t('profile.clearConfirmAria')}
-          className="fixed inset-0 z-50 mx-auto flex max-w-[480px] flex-col justify-end bg-gonr-navy/30 px-5 pb-6 backdrop-blur-sm"
+          className="fixed inset-0 z-50 mx-auto flex max-w-[480px] flex-col justify-end bg-gonr-navy/30 px-5 pb-6 backdrop-blur-sm lg:left-60"
           onClick={() => {
             if (!clearing) setConfirmClear(false)
           }}
