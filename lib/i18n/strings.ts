@@ -551,8 +551,31 @@ export const strings: Record<string, Record<string, string>> = {
   },
   partnersContact: { en: "Get in Touch", es: "Contáctenos" },
   partnersContactContent: {
-    en: "Interested in partnering? Email tyler@gonr.pro with your company name and partnership idea.",
-    es: "¿Interesado en asociarse? Escriba a tyler@gonr.pro con el nombre de su empresa y su propuesta de asociación."
+    en: "Interested in partnering? Send us the details below and we'll be in touch. Prefer email? Reach us at tyler@gonr.pro.",
+    es: "¿Interesado en asociarse? Envíenos los detalles a continuación y nos pondremos en contacto. ¿Prefiere el correo? Escríbanos a tyler@gonr.pro."
+  },
+
+  // ── Partner inquiry form ──────────────────────────────────────
+  partnersFormCompany: { en: "Company name", es: "Nombre de la empresa" },
+  partnersFormName: { en: "Your name", es: "Su nombre" },
+  partnersFormEmail: { en: "Email", es: "Correo electrónico" },
+  partnersFormType: { en: "Partnership type", es: "Tipo de asociación" },
+  partnersFormTypeBrand: { en: "Brand integration", es: "Integración de marca" },
+  partnersFormTypeWhiteLabel: { en: "White-label licensing", es: "Licencia de marca blanca" },
+  partnersFormTypeAffiliate: { en: "Affiliate / referral", es: "Afiliado / referido" },
+  partnersFormTypeComarketing: { en: "Co-marketing", es: "Co-marketing" },
+  partnersFormTypeOther: { en: "Other", es: "Otro" },
+  partnersFormTypeSelect: { en: "Select one…", es: "Seleccione una…" },
+  partnersFormMessage: { en: "Tell us about your company and what you have in mind", es: "Cuéntenos sobre su empresa y lo que tiene en mente" },
+  partnersFormSubmit: { en: "Send inquiry", es: "Enviar consulta" },
+  partnersFormSubmitting: { en: "Sending…", es: "Enviando…" },
+  partnersFormSuccess: {
+    en: "Thanks — your inquiry came through. We'll be in touch.",
+    es: "Gracias — recibimos su consulta. Nos pondremos en contacto."
+  },
+  partnersFormError: {
+    en: "Something went wrong sending that. Please email us directly at tyler@gonr.pro.",
+    es: "Algo salió mal al enviar. Por favor, escríbanos directamente a tyler@gonr.pro."
   },
 
   // ── TASK-073: Contact page ────────────────────────────────────
