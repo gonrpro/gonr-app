@@ -756,8 +756,8 @@ export async function POST(req: Request) {
     let evalViewerTier: SolveTier | 'anon' | undefined
     // TASK-240 — staged response opt-in (JSON body `staged: true`): consumer AI
     // path streams a deterministic first-aid stage before the full gated card.
-    // Eval traffic always gets classic JSON so the release-gate harness and
-    // assessor semantics never change.
+    // The release-gate harness fixtures never send `staged`, so harness and
+    // assessor semantics are unchanged; eval probes may opt in explicitly.
     let stagedRequested = false
 
     // ── Parse inputs ───────────────────────────────────────────
@@ -800,7 +800,7 @@ export async function POST(req: Request) {
       const body = await req.json()
       // email intentionally NOT read from body — session-only (TASK-032 P0 fix)
       lang = body.lang || 'en'
-      stagedRequested = body.staged === true && !isEvalRunner
+      stagedRequested = body.staged === true
       if (isEvalRunner && ['anon', 'free', 'home', 'spotter', 'operator', 'founder'].includes(body.evalViewerTier)) {
         evalViewerTier = body.evalViewerTier
       }
