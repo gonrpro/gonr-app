@@ -142,6 +142,9 @@ describe('TASK-236 — evidence triggers are narrow', () => {
     // EV-044 (TASK-240 determinism follow-up): "dried in the dryer" IS a
     // heat-set disclosure; the crayon cause-of-stain phrasing above stays out.
     expect(ev('stain already dried in the dryer', 'cotton tee').heatApplied).toBe(true)
+    // codex P2: questions and negations about the dryer are NOT disclosures
+    expect(ev('coffee, can it be dried in the dryer?', 'cotton tee').heatApplied).toBe(false)
+    expect(ev("coffee, it wasn't dried in the dryer", 'cotton tee').heatApplied).toBe(false)
   })
 
   it('EV-050 (bleach question, known white cotton) does NOT fire uncertainty', () => {
@@ -477,6 +480,14 @@ describe('TASK-236 — delicate construction + solvent class + heat governor', (
     }
     const out2 = applyGovernor(waterCard, ev('vomit', 'polyester cover'), [])
     expect(JSON.stringify(out2.card.homeSolutions)).toMatch(/soap and water/i)
+
+    // codex P2: bleach-FIRST verb-less pairs must drop too
+    const bleachCard = {
+      ...activeCard(),
+      homeSolutions: ['Dab the spot with bleach and vinegar.', 'Blot gently with a clean white pad.'],
+    }
+    const out3 = applyGovernor(bleachCard, ev('vomit', 'polyester cover'), [])
+    expect(JSON.stringify(out3.card.homeSolutions)).not.toMatch(/bleach and vinegar/i)
   })
 
   it('bare repeat instructions are stripped (EV-044 class)', () => {

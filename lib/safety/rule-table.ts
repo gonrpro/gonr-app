@@ -72,7 +72,7 @@ export const MIX_PRODUCT_RE =
 // 'solution' are deliberately NOT pair members so "detergent solution" and
 // "soap and water" single-product phrasings survive.
 export const MIX_PRODUCT_PAIR_RE =
-  /\b(?:detergent|soap|vinegar|peroxide|alcohol|ammonia|cleaner|spotter|stain\s+remover)\b[^.;\n]{0,40}\b(?:with|and|plus)\b[^.;\n]{0,40}\b(?:detergent|soap|vinegar|peroxide|alcohol|ammonia|cleaner|spotter|stain\s+remover|bleach)\b/i
+  /\b(?:detergent|soap|vinegar|peroxide|alcohol|ammonia|cleaner|spotter|stain\s+remover|bleach)\b[^.;\n]{0,40}\b(?:with|and|plus)\b[^.;\n]{0,40}\b(?:detergent|soap|vinegar|peroxide|alcohol|ammonia|cleaner|spotter|stain\s+remover|bleach)\b/i
 // GOV-ATTEMPT-1 — every consumer card carries the one-attempt stop line.
 export const ONE_ATTEMPT_LINE =
   'One attempt at most — if the stain has not shifted after the first try, stop and let a professional take over.'
