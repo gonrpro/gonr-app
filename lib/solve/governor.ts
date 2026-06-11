@@ -24,6 +24,7 @@ import {
   HEAT_IMPERATIVE_RE,
   HEAT_INSTRUCTION_TOKEN_RE,
   INSTRUCT_VERB_RE,
+  MIX_PRODUCT_PAIR_RE,
   MIX_PRODUCT_RE,
   MIX_TOKEN_RE,
   NEGATION_RE,
@@ -221,12 +222,18 @@ function scrubAgitation(card: Card, applied: GovernorResult['applied']): Card {
 function scrubMixInstructions(card: Card, applied: GovernorResult['applied']): Card {
   let dropped = 0
   const next = mapCardStrings(card, (s) => {
-    if (!MIX_TOKEN_RE.test(s)) return s
+    if (!MIX_TOKEN_RE.test(s) && !MIX_PRODUCT_PAIR_RE.test(s)) return s
     const sentences = s.split(/(?<=[.;!?])\s+/)
     const kept = sentences.filter((sentence) => {
       const positiveMix = sentence
         .split(/,|;|\bthen\b/i)
-        .some((clause) => MIX_TOKEN_RE.test(clause) && MIX_PRODUCT_RE.test(clause) && !NEGATION_RE.test(clause))
+        .some(
+          (clause) =>
+            !NEGATION_RE.test(clause) &&
+            ((MIX_TOKEN_RE.test(clause) && MIX_PRODUCT_RE.test(clause)) ||
+              // verb-less product pairing — EV-078 class (codex/suite aligned)
+              MIX_PRODUCT_PAIR_RE.test(clause)),
+        )
       if (positiveMix) dropped++
       return !positiveMix
     })

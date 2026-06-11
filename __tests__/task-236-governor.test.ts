@@ -455,6 +455,30 @@ describe('TASK-236 — delicate construction + solvent class + heat governor', (
     expect(out.applied.some((a) => a.rule === 'GOV-COMBO-1')).toBe(true)
   })
 
+  it('verb-less product pairs drop; single-product phrasings survive (EV-078)', () => {
+    // Two-entry cards so the effort-budget trim (yellow cap) can't interfere
+    // with what the combo scrub is being tested on.
+    const pairCard = {
+      ...activeCard(),
+      homeSolutions: [
+        'Dab the area with dish soap and white vinegar.',
+        'Apply a mild detergent solution and blot gently.',
+      ],
+    }
+    const out1 = applyGovernor(pairCard, ev('vomit', 'polyester cover'), [])
+    const text1 = JSON.stringify(out1.card.homeSolutions)
+    expect(text1).not.toMatch(/soap and white vinegar/i)
+    expect(text1).toMatch(/detergent solution and blot/i)
+    expect(out1.applied.some((a) => a.rule === 'GOV-COMBO-1')).toBe(true)
+
+    const waterCard = {
+      ...activeCard(),
+      homeSolutions: ['Sponge with soap and water, working outside-in.'],
+    }
+    const out2 = applyGovernor(waterCard, ev('vomit', 'polyester cover'), [])
+    expect(JSON.stringify(out2.card.homeSolutions)).toMatch(/soap and water/i)
+  })
+
   it('bare repeat instructions are stripped (EV-044 class)', () => {
     const card = { ...activeCard(), homeSolutions: ['Blot the area. Repeat with a fresh cloth section.'] }
     const out = applyGovernor(card, ev('ketchup', 'cotton shirt'), [])
