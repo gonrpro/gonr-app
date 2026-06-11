@@ -3,8 +3,10 @@
 Engine HEAD: `cea9207` — six hardening cycles, each gated by typecheck +
 full vitest + codex review (5 rounds, 12 accepted findings, all fixed) + a
 full 112-case preview eval run: `71fd600` (+ assessor refinement `ae76cea`)
-→ `381bac2` → `73f3e09` → `7684dad` → `232c4a9` → `cea9207`.
-Eval trajectory: 54/112 baseline → 86 → 102 → 108 → 109 → final (delivery msg).
+→ `381bac2` → `73f3e09` → `7684dad` → `232c4a9` → `cea9207` → `3097cca`
+(wool veto per SB verdict). Eval trajectory: 54/112 baseline → 86 → 102 →
+108 → 109 → 112/112 at `cea9207` → 112/112 at `3097cca` with EV-011/038/040
+now DETERMINISTIC (gate-sourced, not AI variance).
 The single source of truth is **`lib/safety/rule-table.ts`**. To change a
 deterministic consumer-safety rule, edit the table (and the mapped eval case)
 — not the executor.
@@ -107,10 +109,9 @@ direct-question answer added (EV-049).
   wool/tannin doctrine question (EV-011/EV-038, SB lane) — if SB softens the
   rayon line, edit this one table row + the three eval cases.
 - `delicate-fiber-construction` encodes the couture veto class (every silk/
-  velvet/satin/embellished/vintage case in the suite is protect-only). This
-  also gates VERIFIED library cards on those fibers (safer direction, suite-
-  consistent). **Wool-class (wool/cashmere/merino/angora/mohair) is
-  deliberately excluded** — EV-011/EV-038/EV-040 stay open pending SB's
-  doctrine line. One table row + gate condition to extend if SB rules wool in.
+  velvet/satin/embellished/vintage case in the suite is protect-only) and —
+  per SB verdict **REQUIRE_VETO_EXTENSION** (2026-06-11) — the wool class:
+  wool, cashmere, merino, angora, mohair (+lana/cachemir). This gates the
+  verified wool cards (EV-011/038) by doctrine; EV-040 is deterministic now.
 - Consumer bleach stance unchanged (stricter than EV-050's gated
   oxygen-bleach allowance; "safer passes" keeps it compatible).
