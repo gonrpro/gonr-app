@@ -114,7 +114,7 @@ const REASON_COPY: Record<string, string> = {
   'delicate-water-sensitive-fiber':
     'Rayon and viscose water-spot very easily — wet home treatment commonly leaves rings worse than the original stain. This fabric is safest in professional hands.',
   'delicate-fiber-construction':
-    'Silk, velvet, satin, embellished, structured and vintage pieces are unforgiving: rings, crushed pile, dye bleed and finish damage are common and often permanent with home treatment. The one safe move: protect it and hand it to a professional cleaner.',
+    'Silk, wool-class fibers (cashmere, merino, angora, mohair), velvet, satin, embellished, structured and vintage pieces are unforgiving: felting, rings, crushed pile, dye bleed and finish damage are common and often permanent with home treatment. The one safe move: protect it and hand it to a professional cleaner.',
   'solvent-class-stain':
     'This stain class is solvent territory — professional work with proper chemistry and ventilation. The home version of that chemistry damages fabric and skin. Keep the area dry and protected, and hand it to a pro.',
   'escalation-request':

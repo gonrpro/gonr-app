@@ -113,10 +113,12 @@ const COLORED_GARMENT_RE = /\bcolored\b|\bcolou?red\b|\bdark\b|\bnavy\b|\bblack\
 const RAYON_VISCOSE_RE = /\brayon\b|\bviscose\b/i
 // Couture/delicate-construction veto class (TASK-236, encyclopedia doctrine:
 // "valued/structured/embellished → do_not_attempt/specialist"). Wool-class
-// fibers are deliberately EXCLUDED — that doctrine line (EV-011/EV-038 vs
-// verified wool cards) is an open SB decision.
+// fibers (wool/cashmere/merino/angora/mohair + Spanish synonyms) ADDED per
+// SB verdict REQUIRE_VETO_EXTENSION (Stain Brain/Reviews/task-236-wool-class-
+// doctrine-review-2026-06-11.md) — deterministic protect-only in garment
+// contexts; this deliberately also gates the verified wool cards (EV-011/038).
 const DELICATE_CONSTRUCTION_RE =
-  /\bsilk\b|\bseda\b|\bvelvet\b|\bsatin\b|\btaffeta\b|\bchiffon\b|\borganza\b|\blace\b|\bsequin(?:ned|ed)?\b|\bbeaded\b|\bembellished\b|\bembroidered\b|\bstructured\b|\bvintage\b|\bantique\b|\bchristening\b|\bdelicate\s+garment\b|\bmetallic\s+print\b|\bfoil\s+print(?:ed)?\b|\bglittered\b|\bglitter\s+(?:print|finish|fabric|dress|top|gown)\b/i
+  /\bsilk\b|\bseda\b|\bwool\b|\bcashmere\b|\bmerino\b|\bangora\b|\bmohair\b|\blana\b|\bcachemir\b|\bvelvet\b|\bsatin\b|\btaffeta\b|\bchiffon\b|\borganza\b|\blace\b|\bsequin(?:ned|ed)?\b|\bbeaded\b|\bembellished\b|\bembroidered\b|\bstructured\b|\bvintage\b|\bantique\b|\bchristening\b|\bdelicate\s+garment\b|\bmetallic\s+print\b|\bfoil\s+print(?:ed)?\b|\bglittered\b|\bglitter\s+(?:print|finish|fabric|dress|top|gown)\b/i
 // Stain classes that are solvent territory at home (pro work): dried
 // oil-based paint. Wet nail polish on non-acetate is acetone-risk → orange.
 const SOLVENT_CLASS_STAIN_RE = /\boil[-\s]based\b[^.;\n]{0,20}\bpaint\b|\bpaint\b[^.;\n]{0,20}\boil[-\s]based\b/i

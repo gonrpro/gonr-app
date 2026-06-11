@@ -367,9 +367,13 @@ describe('TASK-236 — delicate construction + solvent class + heat governor', (
     ]) {
       expect(firedRedCells(ev(stain, surface)), `${stain} / ${surface}`).toContain('delicate-fiber-construction')
     }
-    // wool-class deliberately excluded pending the SB doctrine line
-    expect(firedRedCells(ev('coffee', 'wool coat'))).not.toContain('delicate-fiber-construction')
-    expect(firedRedCells(ev('tea', 'cashmere sweater'))).not.toContain('delicate-fiber-construction')
+    // wool-class joined the veto per SB verdict REQUIRE_VETO_EXTENSION
+    // (2026-06-11) — EV-011/038/040 are deterministic now, not AI variance
+    expect(firedRedCells(ev('coffee', 'wool coat'))).toContain('delicate-fiber-construction')
+    expect(firedRedCells(ev('tea', 'cashmere sweater'))).toContain('delicate-fiber-construction')
+    expect(firedRedCells(ev('coffee', 'merino base layer'))).toContain('delicate-fiber-construction')
+    // cotton/polyester everyday garments stay outside the veto
+    expect(firedRedCells(ev('coffee', 'cotton shirt'))).not.toContain('delicate-fiber-construction')
   })
 
   it('solvent-class and leather-mildew cells fire (EV-018, EV-029)', () => {
