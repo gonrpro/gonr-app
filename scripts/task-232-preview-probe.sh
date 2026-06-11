@@ -13,7 +13,18 @@ DIR="$(cd "$(dirname "$0")/.." && pwd)"
 SECRET=""
 for f in "$DIR/.vercel/.env.preview.local" "$DIR/.vercel/.env.production.local"; do
   if [ -f "$f" ]; then
-    v=$(grep -m1 '^GONR_EVAL_SECRET=' "$f" | cut -d= -f2- | sed -e "s/^['\"]*//" -e "s/['\"]*\$//" | tr -d '\r\n' || true)
+    v=$(python3 - "$f" <<'PY' || true
+import sys
+for line in open(sys.argv[1], encoding="utf-8"):
+    if not line.startswith("GONR_EVAL_SECRET="):
+        continue
+    value = line.split("=", 1)[1].strip()
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in "'\"":
+        value = value[1:-1]
+    print(value, end="")
+    break
+PY
+)
     if [ -n "$v" ]; then SECRET="$v"; break; fi
   fi
 done
