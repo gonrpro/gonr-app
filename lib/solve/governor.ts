@@ -191,9 +191,12 @@ function scrubAgitation(card: Card, applied: GovernorResult['applied']): Card {
       // Instruction-shaped: token in imperative position, OR a separate
       // instruct verb earlier in the clause drives it ("Use a soft brush to
       // scrub the stain" — codex-review P1). Explanatory warnings ("Rubbing
-      // pushes ink deeper") have neither and survive.
+      // pushes ink deeper") have neither and survive. Comparison phrasing
+      // ("blot instead of rubbing", "rather than rubbing") is a no-rub
+      // warning, not an instruction (codex-review P2 round 3).
+      const comparison = /(?:instead\s+of|rather\s+than|not\s+by)\s*$/i.test(clausePre)
       const imperative = AGITATE_PRE_RE.test(clausePre) || INSTRUCT_VERB_RE.test(clausePre)
-      const instructionShaped = imperative && AGITATE_POST_RE.test(post)
+      const instructionShaped = imperative && !comparison && AGITATE_POST_RE.test(post)
       out += s.slice(last, m.index)
       if (!instructionShaped || NEGATION_RE.test(clausePre)) {
         out += m[0]

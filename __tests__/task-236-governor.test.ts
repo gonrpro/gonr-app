@@ -515,8 +515,21 @@ describe('TASK-236 — delicate construction + solvent class + heat governor', (
     expect(text).not.toMatch(/to rub the area/i)
   })
 
-  it('metallic/foil print reads as delicate construction (EV-091)', () => {
+  it('metallic/foil print reads as delicate construction (EV-091); glitter STAINS do not', () => {
     expect(firedRedCells(ev('stain', 'garment with metallic print'))).toContain('delicate-fiber-construction')
+    expect(firedRedCells(ev('glitter glue', 'cotton shirt'))).not.toContain('delicate-fiber-construction')
+  })
+
+  it('comparison phrasing keeps no-rub warnings intact (codex round 4)', () => {
+    const card = { ...activeCard(), homeSolutions: ['Use a damp cloth to blot the area instead of rubbing the stain.'] }
+    const out = applyGovernor(card, ev('ink', 'polyester shirt'), [])
+    expect(JSON.stringify(out.card.homeSolutions)).toMatch(/instead of rubbing/i)
+  })
+
+  it('hair dye caps at orange (EV-085) and enumerated fallback warnings stay negated (EV-007)', async () => {
+    expect(deriveRiskTier(ev('hair dye splash', 'bathroom towel'), [])).toBe('orange')
+    const { SAFE_FALLBACK } = await import('@/lib/safety/filter')
+    expect(JSON.stringify(SAFE_FALLBACK)).not.toMatch(/rub or scrub/i)
   })
 
   it('limited supplies caps at orange (EV-062)', () => {

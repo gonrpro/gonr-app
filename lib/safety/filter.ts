@@ -27,13 +27,13 @@ export const SAFE_FALLBACK = {
   whyThisWorks: 'Some stain/material combinations carry risk of permanent damage if the wrong agent is used. These holding steps reduce risk while leaving the strongest treatment options for a professional.',
   homeSolutions: [
     'Stop active treatment now and keep the item away from heat: no dryer, no iron, no steamer, no hot water, no direct sun.',
-    'If you are going to do anything before a cleaner sees it, blot only with a clean white towel. Do not rub or scrub.',
+    'If you are going to do anything before a cleaner sees it, blot only with a clean white towel. No rubbing, no scrubbing.',
     'If the care label allows water and a hidden area does not transfer color, lightly blot from the outside edge with cool water, then blot dry.',
     'Take it to a professional cleaner as soon as possible and tell them what the stain is, when it happened, and anything already used.',
   ],
   spottingProtocol: [
     { step: 1, instruction: 'Stop active treatment now and keep the item away from heat: no dryer, no iron, no steamer, no hot water, no direct sun.' },
-    { step: 2, instruction: 'If you are going to do anything before a cleaner sees it, blot only with a clean white towel. Do not rub or scrub.' },
+    { step: 2, instruction: 'If you are going to do anything before a cleaner sees it, blot only with a clean white towel. No rubbing, no scrubbing.' },
     { step: 3, instruction: 'If the care label allows water and a hidden area does not transfer color, lightly blot from the outside edge with cool water, then blot dry.' },
     { step: 4, instruction: 'Take it to a professional cleaner as soon as possible and tell them what the stain is, when it happened, and anything already used.' },
   ],

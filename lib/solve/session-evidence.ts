@@ -116,7 +116,7 @@ const RAYON_VISCOSE_RE = /\brayon\b|\bviscose\b/i
 // fibers are deliberately EXCLUDED — that doctrine line (EV-011/EV-038 vs
 // verified wool cards) is an open SB decision.
 const DELICATE_CONSTRUCTION_RE =
-  /\bsilk\b|\bseda\b|\bvelvet\b|\bsatin\b|\btaffeta\b|\bchiffon\b|\borganza\b|\blace\b|\bsequin(?:ned|ed)?\b|\bbeaded\b|\bembellished\b|\bembroidered\b|\bstructured\b|\bvintage\b|\bantique\b|\bchristening\b|\bdelicate\s+garment\b|\bmetallic\s+print\b|\bfoil\s+print(?:ed)?\b|\bglitter(?:ed)?\b/i
+  /\bsilk\b|\bseda\b|\bvelvet\b|\bsatin\b|\btaffeta\b|\bchiffon\b|\borganza\b|\blace\b|\bsequin(?:ned|ed)?\b|\bbeaded\b|\bembellished\b|\bembroidered\b|\bstructured\b|\bvintage\b|\bantique\b|\bchristening\b|\bdelicate\s+garment\b|\bmetallic\s+print\b|\bfoil\s+print(?:ed)?\b|\bglittered\b|\bglitter\s+(?:print|finish|fabric|dress|top|gown)\b/i
 // Stain classes that are solvent territory at home (pro work): dried
 // oil-based paint. Wet nail polish on non-acetate is acetone-risk → orange.
 const SOLVENT_CLASS_STAIN_RE = /\boil[-\s]based\b[^.;\n]{0,20}\bpaint\b|\bpaint\b[^.;\n]{0,20}\boil[-\s]based\b/i
@@ -125,7 +125,7 @@ const SOLVENT_RISK_STAIN_RE = /\bnail\s+polish\b|\bsuper\s*glue\b/i
 // solvent-leaning or dye-risk residues plus wool flooring (garment wool-class
 // stays an open SB doctrine line — this is rugs/carpet only).
 const ORANGE_STAIN_CLASS_RE =
-  /\bmotor\s+oil\b|\bshoe\s+polish\b|\bhighlighter\b|\badhesive\b|\bsticker\s+residue\b|\bdye\s+(?:ring|halo)\b|\bunknown\s+(?:\w+\s+)?residue\b|\btar\b|\bwool\s+(?:rug|carpet)\b/i
+  /\bmotor\s+oil\b|\bshoe\s+polish\b|\bhighlighter\b|\badhesive\b|\bsticker\s+residue\b|\bdye\s+(?:ring|halo)\b|\bunknown\s+(?:\w+\s+)?residue\b|\btar\b|\bwool\s+(?:rug|carpet)\b|\bhair\s+dye\b/i
 // Limited-supplies context ("traveling, only napkins and water"): the user
 // cannot follow product steps, so recommending them is invented-product
 // advice (EV-062). Caps effort at protect-only; firstAid blot guidance is
