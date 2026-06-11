@@ -369,6 +369,7 @@ describe('TASK-236 — delicate construction + solvent class + heat governor', (
       ['any stain', 'vintage dress'],
       ['stain', 'structured blazer shoulder'],
       ['yellowing', 'vintage christening gown'],
+      ['any stain', 'wedding dress'],
       ['stain', 'high-value delicate garment'],
     ]) {
       expect(firedRedCells(ev(stain, surface)), `${stain} / ${surface}`).toContain('delicate-fiber-construction')
