@@ -423,6 +423,35 @@ export function stripHazardQuestions(text: string): string {
   if (!text) return text
   return text.replace(new RegExp(HAZARD_QUESTION.source, 'gi'), ' ')
 }
+// Model prose is weaker evidence than structured flags or the user's own words:
+// only assertion-shaped mentions ("bleach was used", "they applied acetone")
+// should become prior-treatment tokens. Topic echoes ("prior bleach: unknown",
+// "user asked about bleach") must not arm a phantom history note.
+function assertedPriorAggressiveTokens(text: string): string[] {
+  const prose = stripHazardQuestions(text)
+  const asserted = new RegExp(
+    `(?:used|applied|poured|put|tried|treated|already|previously|earlier)[^.;?\\n]{0,40}\\b(?:${PRIOR_AGGRESSIVE.source})|\\b(?:${PRIOR_AGGRESSIVE.source})\\b[^.;?\\n]{0,40}(?:was\\s+(?:used|applied)|has\\s+been\\s+(?:used|applied)|had\\s+been\\s+(?:used|applied)|already)`,
+    'gi',
+  )
+  const negatedOrUncertainPrefix =
+    /(?:^|[\s,;:(-])(?:no|not|never|without|unknown|unclear|unsure|whether|if|didn'?t|hasn'?t|hadn'?t)\s+(?:\w+\s+){0,5}$/i
+  const negatedOrUncertainMatch = new RegExp(
+    `\\b(?:no|not|never|without|unknown|unclear|unsure)\\b[^.;?\\n]{0,24}\\b(?:${PRIOR_AGGRESSIVE.source})\\b|\\b(?:${PRIOR_AGGRESSIVE.source})\\b[^.;?\\n]{0,24}\\b(?:not|never|unknown|unclear|unsure)\\b`,
+    'i',
+  )
+  return Array.from(
+    new Set(
+      Array.from(prose.matchAll(asserted))
+        .filter((m) => {
+          const start = m.index ?? 0
+          const prefix = prose.slice(Math.max(0, start - 48), start)
+          return !negatedOrUncertainPrefix.test(prefix) && !negatedOrUncertainMatch.test(m[0])
+        })
+        .flatMap((m) => m[0].match(new RegExp(PRIOR_AGGRESSIVE.source, 'gi')) ?? [])
+        .map((token) => token.toLowerCase()),
+    ),
+  )
+}
 // Heat that was ACTUALLY APPLIED to the garment (hot/warm water, dryer, iron, press,
 // steam) — it sets protein/tannin and genuinely changes the safe move. This is DISTINCT
 // from heat named only as a RISK or care-label restriction ("care-label could restrict
@@ -590,8 +619,8 @@ function normalize(raw: Partial<IntakeModelOutput>, fallback: IntakeQuestion): I
   // fail-closed logic can never lose a trigger to the scrub.
   const rawDescriptive = [rawCareRisk, ...rawKnows, ...rawSuspects, ...rawCannotKnow].join(' ')
   const flagsBlob = riskFlags.join(' ')
-  if (PRIOR_AGGRESSIVE.test(stripHazardQuestions(rawDescriptive)) && !PRIOR_AGGRESSIVE.test(flagsBlob)) {
-    riskFlags.push('prior_aggressive_chemistry')
+  for (const token of assertedPriorAggressiveTokens(rawDescriptive)) {
+    if (!new RegExp(PRIOR_AGGRESSIVE.source, 'i').test(flagsBlob)) riskFlags.push(`prior_${token}`)
   }
   if (HEAT_APPLIED.test(rawCareRisk) && !HEAT_APPLIED.test(flagsBlob)) riskFlags.push('heat_exposure')
 
@@ -1247,17 +1276,10 @@ function assembleInput(
   //    because topic echo ("prior bleach: unknown", "user asked about
   //    bleach") was folding phantom "prior bleach applied" notes into the
   //    engine stain text on ~1 in 9 live runs (caught by the TASK-234 probe).
-  const PROSE_ASSERTED = new RegExp(
-    `(?:used|applied|poured|put|tried|treated|already|previously|earlier)[^.;?\n]{0,40}\b(?:${PRIOR_AGGRESSIVE.source})|\b(?:${PRIOR_AGGRESSIVE.source})\b[^.;?\n]{0,30}(?:was\s+(?:used|applied)|already)`,
-    'gi',
-  )
-  const proseText = stripHazardQuestions(careRisk)
   const userText = stripHazardQuestions(rawUser)
   const priorMatches = [
     ...(flags.match(new RegExp(PRIOR_AGGRESSIVE.source, 'gi')) ?? []),
-    ...(proseText.match(PROSE_ASSERTED) ?? []).flatMap(
-      (m) => m.match(new RegExp(PRIOR_AGGRESSIVE.source, 'gi')) ?? [],
-    ),
+    ...assertedPriorAggressiveTokens(careRisk),
     ...(userText.match(new RegExp(PRIOR_AGGRESSIVE.source, 'gi')) ?? []),
   ]
   const priorTreatment = Array.from(new Set(priorMatches.map((token) => token.toLowerCase())))

@@ -228,6 +228,102 @@ describe('intake orchestrator — fails closed on delicate / high-risk-unknown',
     expect(decision.assembledInput?.priorTreatment).toContain('bleach')
   })
 
+  it('does not fold model topic echo into phantom prior chemistry when forced to solve', async () => {
+    stubModel({
+      read: {
+        fabric: 'cotton',
+        stain: 'coffee',
+        careRisk: 'prior bleach: unknown; user asked whether bleach is okay',
+        confidence: 'high',
+      },
+      knows: [],
+      suspects: [],
+      cannotKnow: [],
+      nextQuestion: null,
+      readyForVerdict: true,
+      riskFlags: [],
+    })
+
+    const decision = await runIntakeTurn(
+      req({
+        proceed: true,
+        hints: { userNote: 'coffee stain on cotton shirt, can I just use bleach?' },
+        transcript: [{ role: 'user', text: 'coffee stain on cotton shirt, can I just use bleach?' }],
+      }),
+      KEY,
+    )
+
+    expect(decision.action).toBe('solve')
+    expect(decision.assembledInput?.priorTreatment).not.toContain('bleach')
+    expect(decision.solveBody?.stain.toLowerCase()).not.toContain('prior bleach')
+  })
+
+  it('folds assertion-shaped model prose into prior chemistry when forced to solve', async () => {
+    stubModel({
+      read: {
+        fabric: 'cotton',
+        stain: 'coffee',
+        careRisk: 'Bleach was used on the stain before this check.',
+        confidence: 'high',
+      },
+      knows: [],
+      suspects: [],
+      cannotKnow: [],
+      nextQuestion: null,
+      readyForVerdict: true,
+      riskFlags: [],
+    })
+
+    const decision = await runIntakeTurn(
+      req({
+        proceed: true,
+        hints: { userNote: 'coffee stain on cotton shirt' },
+        transcript: [{ role: 'user', text: 'coffee stain on cotton shirt' }],
+      }),
+      KEY,
+    )
+
+    expect(decision.action).toBe('solve')
+    expect(decision.failClosedReasons).toContain('prior_aggressive_chemistry')
+    expect(decision.assembledInput?.priorTreatment).toContain('bleach')
+    expect(decision.solveBody?.stain.toLowerCase()).toContain('prior bleach')
+  })
+
+  it.each([
+    'No bleach was used on this stain.',
+    'Not sure whether bleach was used.',
+    'Never applied bleach to the fabric.',
+  ])('does not fold negated or uncertain model prose: %s', async (careRisk) => {
+    stubModel({
+      read: {
+        fabric: 'cotton',
+        stain: 'coffee',
+        careRisk,
+        confidence: 'high',
+      },
+      knows: [],
+      suspects: [],
+      cannotKnow: [],
+      nextQuestion: null,
+      readyForVerdict: true,
+      riskFlags: [],
+    })
+
+    const decision = await runIntakeTurn(
+      req({
+        proceed: true,
+        hints: { userNote: 'coffee stain on cotton shirt' },
+        transcript: [{ role: 'user', text: 'coffee stain on cotton shirt' }],
+      }),
+      KEY,
+    )
+
+    expect(decision.action).toBe('solve')
+    expect(decision.failClosedReasons).not.toContain('prior_aggressive_chemistry')
+    expect(decision.assembledInput?.priorTreatment).not.toContain('bleach')
+    expect(decision.solveBody?.stain.toLowerCase()).not.toContain('prior bleach')
+  })
+
   it('still hands off to the engine once the question budget is spent (engine is final authority)', async () => {
     stubModel({
       read: { fabric: '', stain: 'something', careRisk: '', confidence: 'low' },
