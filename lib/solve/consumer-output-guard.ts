@@ -311,7 +311,7 @@ export function minimalSafeCard(stain: string, surface: string): Card {
   // Same folded-note hygiene as buildDowngradeCard (TASK-234): engine stain
   // text can carry internal notes after an em-dash — never echo them.
   const clean = (v: string) => {
-    const head = (v ?? '').split('—')[0].split(';')[0].trim()
+    const head = (v ?? '').split('—')[0].split(';')[0].split(',')[0].trim()
     return !head || head.length > 60 || /\bprior\b|\bapplied\b|\bunknown\b/i.test(head) ? '' : head
   }
   const cs = clean(stain)

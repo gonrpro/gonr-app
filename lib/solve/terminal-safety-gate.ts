@@ -140,7 +140,10 @@ function reasonLine(reasons: string[]): string {
 // history (caught live, TASK-234 probe). Keep only the part before the
 // separator, clamp length, and fall back to neutral copy.
 function cleanFactText(value: string): string {
-  const head = (value ?? '').split('—')[0].split(';')[0].trim()
+  // Comma split added (TASK-236, EV-056): trailing descriptors like
+  // ", label says machine wash but…" re-render verb-shaped text ("wash")
+  // inside a protect-only step. Keep only the head noun phrase.
+  const head = (value ?? '').split('—')[0].split(';')[0].split(',')[0].trim()
   if (!head || head.length > 60 || /\bprior\b|\bapplied\b|\bunknown\b/i.test(head)) return ''
   return head
 }

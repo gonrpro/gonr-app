@@ -14,6 +14,7 @@ import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
 import { buildConsumerSolvePrompt } from '@/lib/solve/consumer-prompt'
 import { enforceConsumerCard, buildRequestDisclosureText, minimalSafeCard } from '@/lib/solve/consumer-output-guard'
 import { applyGovernor } from '@/lib/solve/governor'
+import { ONE_ATTEMPT_LINE } from '@/lib/safety/rule-table'
 import { parseSessionEvidence } from '@/lib/solve/session-evidence'
 import { applyTerminalGate, firedRedCells, buildDowngradeCard } from '@/lib/solve/terminal-safety-gate'
 import { buildFirstAid, buildDirectAnswer } from '@/lib/solve/first-aid'
@@ -712,6 +713,12 @@ function finalizeCardForResponse(card: any, viewerTier: SolveTier | 'anon' | nul
     finalCard.firstAid = buildFirstAid(evidence)
     if (evidence.directHazardQuestion) {
       finalCard.directAnswer = buildDirectAnswer(evidence.directHazardQuestion)
+    }
+    // GOV-ATTEMPT-1 — every consumer card ends on the one-attempt stop line
+    // (appended after the gate so downgrade cards carry it too).
+    if (Array.isArray(finalCard.homeSolutions) && !/one attempt|first try/i.test(JSON.stringify(finalCard.homeSolutions))) {
+      finalCard.homeSolutions.push(ONE_ATTEMPT_LINE)
+      governed.applied.push({ rule: 'GOV-ATTEMPT-1', detail: 'appended one-attempt stop line' })
     }
     // TASK-236 — traceability: every stop/refusal/downgrade/trim on this card
     // resolves to stable rule IDs in lib/safety/rule-table.ts.

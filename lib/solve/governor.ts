@@ -18,9 +18,12 @@
 
 import type { SessionEvidence } from './session-evidence'
 import {
+  AGITATION_TOKEN_RE,
   EFFORT_BUDGET,
   HEAT_INSTRUCTION_TOKEN_RE,
   INSTRUCT_VERB_RE,
+  MIX_PRODUCT_RE,
+  MIX_TOKEN_RE,
   NEGATION_RE,
   OVERPROMISE_SOFTENERS,
   REPEAT_LANGUAGE_RULES,
@@ -53,6 +56,7 @@ export function deriveRiskTier(ev: SessionEvidence, redCellReasons: string[]): R
     ev.valuableItem ||
     ev.liningOrAcetate ||
     ev.solventRiskStain ||
+    ev.orangeStainClass ||
     ev.directHazardQuestion !== null
   ) {
     return 'orange'
@@ -111,8 +115,12 @@ function scrubHeatInstructions(card: Card, applied: GovernorResult['applied']): 
     if (!HEAT_INSTRUCTION_TOKEN_RE.test(s)) return s
     const sentences = s.split(/(?<=[.;!?])\s+/)
     const kept = sentences.filter((sentence) => {
-      const positiveHeat =
-        HEAT_INSTRUCTION_TOKEN_RE.test(sentence) && INSTRUCT_VERB_RE.test(sentence) && !NEGATION_RE.test(sentence)
+      // Negation is CLAUSE-scoped (codex-review P2): "Do not iron, then
+      // tumble dry on high." must still drop — an earlier "do not" in the
+      // same sentence cannot launder a later positive heat instruction.
+      const positiveHeat = sentence
+        .split(/,|;|\bthen\b|\band\b/i)
+        .some((clause) => HEAT_INSTRUCTION_TOKEN_RE.test(clause) && INSTRUCT_VERB_RE.test(clause) && !NEGATION_RE.test(clause))
       if (positiveHeat) dropped++
       return !positiveHeat
     })
@@ -120,6 +128,68 @@ function scrubHeatInstructions(card: Card, applied: GovernorResult['applied']): 
   })
   if (dropped > 0) {
     applied.push({ rule: 'GOV-HEAT-1', detail: `dropped ${dropped} heat-instruction sentence${dropped === 1 ? '' : 's'}` })
+  }
+  return dropEmptySteps(next as Card)
+}
+
+// GOV-AGITATE-1 — positive scrub/rub instructions become 'blot'. RULE-11
+// generalized beyond tannin: blot-don't-rub is universal consumer doctrine.
+// Negation is clause-scoped, so "Do not rub" warnings survive untouched.
+function scrubAgitation(card: Card, applied: GovernorResult['applied']): Card {
+  let replaced = 0
+  const next = mapCardStrings(card, (s) => {
+    const re = new RegExp(AGITATION_TOKEN_RE.source, AGITATION_TOKEN_RE.flags)
+    let out = ''
+    let last = 0
+    let m: RegExpExecArray | null
+    while ((m = re.exec(s)) !== null) {
+      const before = s.slice(Math.max(0, m.index - 80), m.index)
+      const leftBoundary = Math.max(
+        before.lastIndexOf('.'),
+        before.lastIndexOf(';'),
+        before.lastIndexOf('!'),
+        before.lastIndexOf('?'),
+        before.lastIndexOf('\n'),
+        before.lastIndexOf(','),
+      )
+      const clause = before.slice(leftBoundary + 1)
+      out += s.slice(last, m.index)
+      if (NEGATION_RE.test(clause)) {
+        out += m[0]
+      } else {
+        out += /ing$/i.test(m[0]) ? 'blotting' : 'blot'
+        replaced++
+      }
+      last = m.index + m[0].length
+    }
+    out += s.slice(last)
+    return out
+  })
+  if (replaced > 0) {
+    applied.push({ rule: 'GOV-AGITATE-1', detail: `replaced ${replaced} scrub/rub instruction${replaced === 1 ? '' : 's'} with blot` })
+  }
+  return next as Card
+}
+
+// GOV-MIX-1 — drop sentences positively instructing a product mix/combination
+// (bleach mixes already hard-block in the guard; this covers the
+// detergent+vinegar class). Negated "never mix…" warnings survive.
+function scrubMixInstructions(card: Card, applied: GovernorResult['applied']): Card {
+  let dropped = 0
+  const next = mapCardStrings(card, (s) => {
+    if (!MIX_TOKEN_RE.test(s)) return s
+    const sentences = s.split(/(?<=[.;!?])\s+/)
+    const kept = sentences.filter((sentence) => {
+      const positiveMix = sentence
+        .split(/,|;|\bthen\b/i)
+        .some((clause) => MIX_TOKEN_RE.test(clause) && MIX_PRODUCT_RE.test(clause) && !NEGATION_RE.test(clause))
+      if (positiveMix) dropped++
+      return !positiveMix
+    })
+    return kept.length === sentences.length ? s : tidy(kept.join(' '))
+  })
+  if (dropped > 0) {
+    applied.push({ rule: 'GOV-MIX-1', detail: `dropped ${dropped} product-mixing sentence${dropped === 1 ? '' : 's'}` })
   }
   return dropEmptySteps(next as Card)
 }
@@ -241,6 +311,8 @@ export function applyGovernor(card: Card, ev: SessionEvidence, redCellReasons: s
 
   let governed = scrubRepeatLanguage(card, applied)
   governed = scrubHeatInstructions(governed, applied)
+  governed = scrubAgitation(governed, applied)
+  governed = scrubMixInstructions(governed, applied)
   governed = softenOverpromise(governed, applied)
 
   // Red-tier cards are the terminal gate's job — it replaces any active card

@@ -46,6 +46,8 @@ export interface SessionEvidence {
   solventClassStain: boolean
   /** Acetone-risk stain (nail polish/superglue) — caps effort at orange. */
   solventRiskStain: boolean
+  /** Suite protect-only effort classes (motor oil/tar/polish/residue/wool rug). */
+  orangeStainClass: boolean
 }
 
 export interface SolveRequestFacts {
@@ -117,6 +119,11 @@ const DELICATE_CONSTRUCTION_RE =
 // oil-based paint. Wet nail polish on non-acetate is acetone-risk → orange.
 const SOLVENT_CLASS_STAIN_RE = /\boil[-\s]based\b[^.;\n]{0,20}\bpaint\b|\bpaint\b[^.;\n]{0,20}\boil[-\s]based\b/i
 const SOLVENT_RISK_STAIN_RE = /\bnail\s+polish\b|\bsuper\s*glue\b/i
+// Stain/surface classes the encyclopedia suite caps at protect-only effort:
+// solvent-leaning or dye-risk residues plus wool flooring (garment wool-class
+// stays an open SB doctrine line — this is rugs/carpet only).
+const ORANGE_STAIN_CLASS_RE =
+  /\bmotor\s+oil\b|\bshoe\s+polish\b|\bhighlighter\b|\badhesive\b|\bsticker\s+residue\b|\bdye\s+(?:ring|halo)\b|\bunknown\s+(?:\w+\s+)?residue\b|\btar\b|\bwool\s+(?:rug|carpet)\b/i
 
 export function parseSessionEvidence(facts: SolveRequestFacts): SessionEvidence {
   const text = [facts.stain, facts.surface, facts.fabricDescription, facts.garmentLocation, facts.hazardQuestion]
@@ -171,5 +178,6 @@ export function parseSessionEvidence(facts: SolveRequestFacts): SessionEvidence 
     delicateConstruction: DELICATE_CONSTRUCTION_RE.test(all),
     solventClassStain: SOLVENT_CLASS_STAIN_RE.test(text),
     solventRiskStain: SOLVENT_RISK_STAIN_RE.test(text),
+    orangeStainClass: ORANGE_STAIN_CLASS_RE.test(all),
   }
 }

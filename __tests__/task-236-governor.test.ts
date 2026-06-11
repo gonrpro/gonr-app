@@ -399,6 +399,89 @@ describe('TASK-236 — delicate construction + solvent class + heat governor', (
     expect(reasons).toContain('care-label-unreadable')
   })
 
+  it('GOV-HEAT-1 catches imperative steam/dryer phrasings and clause-laundered heat (codex P2)', () => {
+    const card = {
+      ...activeCard(),
+      homeSolutions: [
+        'Steam the area for 30 seconds to loosen the wax.',
+        'Put it in the dryer for ten minutes.',
+        'Do not iron, then tumble dry on high.',
+      ],
+    }
+    const out = applyGovernor(card, ev('ketchup', 'cotton shirt'), [])
+    const text = JSON.stringify(out.card.homeSolutions)
+    expect(text).not.toMatch(/Steam the area/i)
+    expect(text).not.toMatch(/in the dryer/i)
+    expect(text).not.toMatch(/tumble dry on high/i)
+  })
+
+  it('GOV-AGITATE-1 replaces positive scrub/rub with blot; rubbing alcohol and warnings survive', () => {
+    const card = {
+      ...activeCard(),
+      homeSolutions: [
+        'Scrub the stain with a soft brush.',
+        'Dab carefully with rubbing alcohol on a cotton swab.',
+        'Do not rub the area while it is wet.',
+      ],
+    }
+    const out = applyGovernor(card, ev('ink', 'polyester shirt'), [])
+    const text = JSON.stringify(out.card.homeSolutions)
+    expect(text).not.toMatch(/\bScrub the stain\b/)
+    expect(text).toMatch(/Blot the stain|blot the stain/i)
+    expect(text).toMatch(/rubbing alcohol/i)
+    expect(text).toMatch(/Do not rub the area/i)
+    expect(out.applied.some((a) => a.rule === 'GOV-AGITATE-1')).toBe(true)
+  })
+
+  it('GOV-MIX-1 drops product-mix instructions but keeps never-mix warnings', () => {
+    const card = {
+      ...activeCard(),
+      homeSolutions: [
+        'Mix detergent with white vinegar and apply to the stain.',
+        'Never mix bleach with vinegar, ammonia, or any other cleaner.',
+      ],
+    }
+    const out = applyGovernor(card, ev('vomit', 'polyester cover'), [])
+    const text = JSON.stringify(out.card.homeSolutions)
+    expect(text).not.toMatch(/Mix detergent with white vinegar/i)
+    expect(text).toMatch(/Never mix bleach/i)
+    expect(out.applied.some((a) => a.rule === 'GOV-MIX-1')).toBe(true)
+  })
+
+  it('bare repeat instructions are stripped (EV-044 class)', () => {
+    const card = { ...activeCard(), homeSolutions: ['Blot the area. Repeat with a fresh cloth section.'] }
+    const out = applyGovernor(card, ev('ketchup', 'cotton shirt'), [])
+    expect(JSON.stringify(out.card)).not.toMatch(/\brepeat\b/i)
+  })
+
+  it('orange stain classes cap effort at protect-only', () => {
+    for (const [stain, surface] of [
+      ['motor oil', 'nylon jacket'],
+      ['shoe polish', 'cotton chinos'],
+      ['highlighter', 'white polyester'],
+      ['adhesive residue', 'nylon jacket'],
+      ['unknown white residue', 'black dress pants'],
+      ['tar', 'canvas sneakers'],
+      ['pet urine', 'wool rug corner'],
+    ]) {
+      expect(deriveRiskTier(ev(stain, surface), []), `${stain} / ${surface}`).toBe('orange')
+    }
+    expect(deriveRiskTier(ev('ketchup', 'cotton shirt'), [])).toBe('yellow')
+  })
+
+  it('downgrade card never echoes verb-shaped surface descriptors (EV-056)', () => {
+    const card = buildDowngradeCard({}, ['delicate-fiber-construction'], 'stain', 'blouse, label says machine wash but it looks like silk')
+    expect(JSON.stringify(card.homeSolutions)).not.toMatch(/machine wash/i)
+    expect(firstPositiveDiyClause(JSON.stringify({ homeSolutions: card.homeSolutions }))).toBeNull()
+  })
+
+  it('the one-attempt stop line is clean by construction', async () => {
+    const { ONE_ATTEMPT_LINE } = await import('@/lib/safety/rule-table')
+    expect(firstPositiveDiyClause(ONE_ATTEMPT_LINE)).toBeNull()
+    expect(ONE_ATTEMPT_LINE).toMatch(/\b(?:one|first)\b/i)
+    expect(ONE_ATTEMPT_LINE).toMatch(/\bstop\b/i)
+  })
+
   it('GOV-HEAT-1 drops heat instructions but keeps negated heat warnings', () => {
     const card = {
       ...activeCard(),
