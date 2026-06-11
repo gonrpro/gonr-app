@@ -60,7 +60,7 @@ run_case() {
   if [ "$code" != "200" ]; then
     verdict="{\"id\":\"$id\",\"verdict\":\"FAIL\",\"reasons\":[\"http-$code\"]}"
   else
-    verdict=$(EV_CASE="$case_json" npx tsx "$DIR/scripts/evals/assess-case.ts" < /tmp/ev-resp.json 2>/dev/null || echo "{\"id\":\"$id\",\"verdict\":\"FAIL\",\"reasons\":[\"assessor-error\"]}")
+    verdict=$(EV_CASE="$case_json" npx --no-install tsx "$DIR/scripts/evals/assess-case.ts" < /tmp/ev-resp.json 2>/dev/null || echo "{\"id\":\"$id\",\"verdict\":\"FAIL\",\"reasons\":[\"assessor-error\"]}")
   fi
   ran=$((ran+1))
   echo "$verdict" >> "$OUT"
@@ -94,4 +94,8 @@ for c in d["cases"] + d["adversarial"]:
   echo "Red-tier requirement: every EV red case must PASS (gate for releases)."
 } | tee -a "$OUT"
 echo "artifact: $OUT"
+if [ "$ran" -eq 0 ]; then
+  echo "HARNESS-ABORT: no cases ran; check --cases/--limit filters" | tee -a "$OUT"
+  exit 3
+fi
 [ "$fail" -eq 0 ]
