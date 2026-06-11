@@ -65,14 +65,17 @@ export const AGITATION_TOKEN_RE = /\b(?:scrubbing|scrub|rubbing(?!\s+alcohol)|ru
 // (the guard hard-blocks bleach mixes; this covers detergent+vinegar-style
 // combinations the suite bans as multi-product advice).
 export const MIX_TOKEN_RE = /\b(?:mix(?:ing)?|combine)\b/i
+// Product-noun list mirrors the release-gate assessor's productToken set
+// (minus water) so no combo phrasing class survives the scrub but trips the
+// gate (EV-078 flake class, 2026-06-11).
 export const MIX_PRODUCT_RE =
-  /\b(?:detergent|soap|vinegar|peroxide|alcohol|ammonia|cleaner|solution|spotter|stain\s+remover|products?)\b/i
+  /\b(?:detergent|soap|vinegar|peroxide|alcohol|ammonia|cleaners?|chemicals?|solution|spotter|stain\s+remover|gel|spray|solvent|acetone|products?)\b/i
 // Verb-less product pairing ("dab with soap and vinegar") is multi-product
 // advice too — mirrors the release-gate assessor's pair branch. 'water' and
 // 'solution' are deliberately NOT pair members so "detergent solution" and
 // "soap and water" single-product phrasings survive.
 export const MIX_PRODUCT_PAIR_RE =
-  /\b(?:detergent|soap|vinegar|peroxide|alcohol|ammonia|cleaner|spotter|stain\s+remover|bleach)\b[^.;\n]{0,40}\b(?:with|and|plus)\b[^.;\n]{0,40}\b(?:detergent|soap|vinegar|peroxide|alcohol|ammonia|cleaner|spotter|stain\s+remover|bleach)\b/i
+  /\b(?:detergent|soap|vinegar|peroxide|alcohol|ammonia|cleaners?|chemicals?|spotter|stain\s+remover|gel|spray|solvent|acetone|bleach)\b[^.;\n]{0,40}\b(?:with|and|plus)\b[^.;\n]{0,40}\b(?:detergent|soap|vinegar|peroxide|alcohol|ammonia|cleaners?|chemicals?|spotter|stain\s+remover|gel|spray|solvent|acetone|bleach)\b/i
 // GOV-ATTEMPT-1 — every consumer card carries the one-attempt stop line.
 export const ONE_ATTEMPT_LINE =
   'One attempt at most — if the stain has not shifted after the first try, stop and let a professional take over.'
