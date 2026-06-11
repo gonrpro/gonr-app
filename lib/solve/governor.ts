@@ -225,15 +225,23 @@ function scrubMixInstructions(card: Card, applied: GovernorResult['applied']): C
     if (!MIX_TOKEN_RE.test(s) && !MIX_PRODUCT_PAIR_RE.test(s)) return s
     const sentences = s.split(/(?<=[.;!?])\s+/)
     const kept = sentences.filter((sentence) => {
-      const positiveMix = sentence
-        .split(/,|;|\bthen\b/i)
-        .some(
-          (clause) =>
-            !NEGATION_RE.test(clause) &&
-            ((MIX_TOKEN_RE.test(clause) && MIX_PRODUCT_RE.test(clause)) ||
-              // verb-less product pairing — EV-078 class (codex/suite aligned)
-              MIX_PRODUCT_PAIR_RE.test(clause)),
-        )
+      // Geometry mirrors the release-gate assessor (EV-078 flake class): the
+      // mix verb's FORWARD window crosses commas ("Mix a small amount, using
+      // dish soap…"), and negation is judged on sentence-start → token (so
+      // "Never mix bleach with vinegar, ammonia…" survives intact).
+      const positiveMix = (() => {
+        const pairHit = sentence
+          .split(/,|;|\bthen\b/i)
+          .some((clause) => !NEGATION_RE.test(clause) && MIX_PRODUCT_PAIR_RE.test(clause))
+        if (pairHit) return true
+        const mixRe = new RegExp(MIX_TOKEN_RE.source, 'gi')
+        let m: RegExpExecArray | null
+        while ((m = mixRe.exec(sentence)) !== null) {
+          if (NEGATION_RE.test(sentence.slice(0, m.index))) continue
+          if (MIX_PRODUCT_RE.test(sentence.slice(m.index, m.index + 90))) return true
+        }
+        return false
+      })()
       if (positiveMix) dropped++
       return !positiveMix
     })

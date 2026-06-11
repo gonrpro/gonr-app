@@ -488,6 +488,20 @@ describe('TASK-236 — delicate construction + solvent class + heat governor', (
     }
     const out3 = applyGovernor(bleachCard, ev('vomit', 'polyester cover'), [])
     expect(JSON.stringify(out3.card.homeSolutions)).not.toMatch(/bleach and vinegar/i)
+
+    // EV-078 flake class: mix verb separated from products by a comma still drops,
+    // while the REQUIRED never-mix warning survives whole
+    const commaCard = {
+      ...activeCard(),
+      homeSolutions: [
+        'Mix a small amount, using dish soap in cool water.',
+        'Never mix bleach with vinegar, ammonia, or any other cleaner.',
+      ],
+    }
+    const out4 = applyGovernor(commaCard, ev('vomit', 'polyester cover'), [])
+    const text4 = JSON.stringify(out4.card.homeSolutions)
+    expect(text4).not.toMatch(/Mix a small amount/i)
+    expect(text4).toMatch(/Never mix bleach with vinegar, ammonia/i)
   })
 
   it('bare repeat instructions are stripped (EV-044 class)', () => {
