@@ -2,15 +2,28 @@
 
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
+import dynamic from 'next/dynamic'
 import AgenticIntake from '@/components/consumer/AgenticIntake'
-import ChatIntakeScreen, { type ChatIntakeContext } from '@/components/consumer/screens/ChatIntakeScreen'
-import DetailsCollectedScreen from '@/components/consumer/screens/DetailsCollectedScreen'
+import { type ChatIntakeContext } from '@/components/consumer/screens/ChatIntakeScreen'
 import ResultsScreen from '@/components/consumer/screens/ResultsScreen'
+
+// TASK-240 — the deterministic fallback intake (Chat -> Details) only renders
+// after the agentic path fails or the user edits facts; keep it out of the
+// route's initial bundle. SolveBootShell doubles as the load placeholder so a
+// fallback entry never flashes blank.
+const ChatIntakeScreen = dynamic(() => import('@/components/consumer/screens/ChatIntakeScreen'), {
+  loading: () => <SolveBootShell />,
+})
+const DetailsCollectedScreen = dynamic(
+  () => import('@/components/consumer/screens/DetailsCollectedScreen'),
+  { loading: () => <SolveBootShell /> },
+)
 import { getHistoryEntry } from '@/lib/solve/history-store'
 import { useSaveProtocol } from '@/components/consumer/useSaveProtocol'
 import { ATTACH_CONTEXT_KEY, type AttachContext } from '@/components/consumer/AttachMenu'
 import type { SolveInput } from '@/lib/consumer-safety/solve-input'
 import { contextFromAttach, hintsFromAttach } from '@/lib/consumer-safety/attach-hints'
+import SolveBootShell from '@/components/consumer/SolveBootShell'
 
 // TASK-218 — CONSUMER SPINE ORCHESTRATOR.
 //
@@ -104,8 +117,9 @@ function SolveFlowInner() {
   )
 
   // Wait for the one-shot hint read before kicking off the agent (so its first
-  // turn includes any captured photo/label context).
-  if (!attachReady) return null
+  // turn includes any captured photo/label context). TASK-240: render the boot
+  // shell (first-aid + thinking state) instead of nothing during that beat.
+  if (!attachReady) return <SolveBootShell />
 
   // TASK-233 — History reopen: ?hid=<correlationId> renders the STORED result
   // (with its original input + full TASK-232 evidence fields) instead of
@@ -169,7 +183,7 @@ function SolveFlowInner() {
 
 export default function SolveFlow() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<SolveBootShell />}>
       <SolveFlowInner />
     </Suspense>
   )

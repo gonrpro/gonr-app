@@ -745,11 +745,20 @@ export async function POST(req: Request) {
     const incomingSecret = req.headers.get('x-gonr-eval-secret')?.trim()
     const isEvalRunner = Boolean(evalSecret && incomingSecret && incomingSecret === evalSecret)
 
-    // TASK-032 P0: always derive email from verified session, never from body
-    const email: string | null = isEvalRunner ? 'eval@gonr.app' : await getSessionEmail()
+    // TASK-032 P0: always derive email from verified session, never from body.
+    // TASK-240: start the auth roundtrip WITHOUT awaiting so it overlaps body
+    // parsing/vision below — the first consumer of `email` is the solve gate.
+    const emailPromise: Promise<string | null> = isEvalRunner
+      ? Promise.resolve('eval@gonr.app')
+      : getSessionEmail()
     let lang = 'en'
     let ctx: SolveContext
     let evalViewerTier: SolveTier | 'anon' | undefined
+    // TASK-240 — staged response opt-in (JSON body `staged: true`): consumer AI
+    // path streams a deterministic first-aid stage before the full gated card.
+    // Eval traffic always gets classic JSON so the release-gate harness and
+    // assessor semantics never change.
+    let stagedRequested = false
 
     // ── Parse inputs ───────────────────────────────────────────
     if (contentType.includes('multipart/form-data')) {
@@ -791,6 +800,7 @@ export async function POST(req: Request) {
       const body = await req.json()
       // email intentionally NOT read from body — session-only (TASK-032 P0 fix)
       lang = body.lang || 'en'
+      stagedRequested = body.staged === true && !isEvalRunner
       if (isEvalRunner && ['anon', 'free', 'home', 'spotter', 'operator', 'founder'].includes(body.evalViewerTier)) {
         evalViewerTier = body.evalViewerTier
       }
@@ -840,7 +850,14 @@ export async function POST(req: Request) {
     // TASK-033 eval runner bypass: authenticated server-to-server eval traffic
     // should exercise solve behavior without burning trial credits or getting
     // blocked by subscriber/free gating.
+    const email: string | null = await emailPromise
     let viewerTier: SolveTier | 'anon' = 'anon'
+    // TASK-240 — gate check and plant lookup are independent reads; run them
+    // concurrently. The gate is still checked before anything is served, and
+    // the credit is consumed exactly where it was before. getUserPlant
+    // resolves null on any error (never rejects), so the floating start is
+    // safe even when the gate returns 402 first.
+    const userPlantPromise = getUserPlant(email)
     if (!isEvalRunner) {
       const gateResult = await checkAndIncrementSolve(email, clientIp)
       viewerTier = gateResult.viewerTier
@@ -865,7 +882,7 @@ export async function POST(req: Request) {
     // Best-effort: fetches the user's plant if they belong to one. Returns null
     // for anon, no-plant, or Supabase errors — solve gracefully degrades to
     // canonical behavior in any of those cases.
-    const userPlant = await getUserPlant(email)
+    const userPlant = await userPlantPromise
 
     // ── Event log: solve.requested ─────────────────────────────
     // TASK-040 Week 0 Day 2. Fire-and-forget; never blocks user.
@@ -1074,6 +1091,101 @@ export async function POST(req: Request) {
       }
     }
 
+    // ── AI payload builders (TASK-240) ─────────────────────────
+    // DEFINITIONS ONLY — invoked strictly AFTER the deterministic fast path
+    // below (TASK-234 ordering invariant unchanged). The classic JSON response
+    // and the staged (NDJSON) response share IDENTICAL logic — every safety
+    // gate runs on the complete card in both modes.
+    const buildAiUnavailablePayload = () => ({
+      card: finalizeCardForResponse(buildContextualFallback(ctx), viewerTier, ctx),
+      tier: 4, confidence: 0, source: 'ai-unavailable', stainType: resolveStainType(null, ctx), _aiUnavailable: true,
+      viewerTier,
+    })
+    const buildAiPayload = async (): Promise<Record<string, unknown>> => {
+      // TASK-231: Stain Brain retrieval is DISABLED on this path — it is the
+      // consumer (+founder) AI fallback, and sb_chunks are professional/
+      // internal references that must not reach the consumer prompt (Atlas
+      // review finding, 2026-06-10). Packet 6 rebuilds grounding with an
+      // audience-gated corpus; until then consumer AI runs ungrounded and the
+      // output guard + safety filter remain the rendering gates.
+      const aiCardRaw = await generateAIProtocol(ctx, lang)
+      // Normalize shape before any downstream processing — caps step count,
+      // merges adjacent rinses, strips numeric dwell, caps instruction length.
+      // See lib/protocols/normalizeAICard.ts (2026-04-18 Atlas call).
+      const aiCard = normalizeAICard(aiCardRaw)
+      injectContextWarnings(aiCard, ctx)
+      if (ctx.fiber) aiCard._fiberContext = { fiber: ctx.fiber, careSymbols: ctx.careSymbols, warnings: ctx.labelWarnings }
+
+      const safetyResult = runSafetyFilter(aiCard, ctx.stain, ctx.surface)
+
+      if (!safetyResult.safe) {
+        console.error(`[SafetyFilter] BLOCKED: ${safetyResult.violations.map((v: any) => v.rule).join(', ')}`)
+        return {
+          card: finalizeCardForResponse(buildContextualFallback(ctx), viewerTier, ctx),
+          tier: 4, confidence: 0, source: 'ai', stainType: resolveStainType(null, ctx), _safetyBlocked: true,
+          viewerTier,
+        }
+      }
+
+      const safeCard = safetyResult.card
+      if (safetyResult.filtered) {
+        console.log(`[SafetyFilter] Auto-corrected ${safetyResult.violations.length} violation(s)`)
+        safeCard._safetyFiltered = true
+      }
+
+      queueForReview(safeCard, ctx, safetyResult).catch(() => {})
+      ensureBleachNeutralization(safeCard, 'consumer')
+      enrichProductsWithAffiliates(safeCard)
+      // Apply plant-level filters to AI-generated cards too — bleach policy
+      // and house rules must be respected regardless of card source.
+      const plantTunedAi = applyPlantFilters(safeCard, userPlant)
+      logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: plantTunedAi.title || ctx.stain, source: userPlant ? 'ai-plant-tuned' : 'ai', confidence: 0.5 }).catch(() => {})
+
+      logSolveReview({
+        queryRaw: `${ctx.stain} on ${ctx.surface}`,
+        stain: ctx.stain,
+        surface: ctx.surface,
+        tierRequested: viewerTier,
+        matchedCardKey: null,
+        usedAiFallback: true,
+        userId: email,
+        sessionId: correlationId,
+      })
+      recordEvent({
+        type: EVENT_TYPES.SOLVE_AI_FALLBACK_SERVED,
+        actor_id: email ?? null,
+        plant_id: (userPlant as { id?: string } | null)?.id ?? null,
+        payload: {
+          stain: ctx.stain,
+          surface: ctx.surface,
+          tier: viewerTier,
+          had_disambiguation: explicitAiConsent,
+        },
+        correlation_id: correlationId,
+      }).catch(() => {})
+      // TASK-056: attach the disclosure banner when the user got here
+      // via the Unknown option in a disambiguation flow. The banner is
+      // the UX surface for `verification_level = 'draft'` (TASK-055).
+      const aiFallbackDisclosure = explicitAiConsent
+        ? {
+            label: 'General starting point — not stain-specific',
+            body: 'We couldn\'t narrow this to a specific stain class. These are tested general steps. If no response after 1–2 passes, take it to a professional.',
+          }
+        : undefined
+      return {
+        card: finalizeCardForResponse(plantTunedAi, viewerTier, ctx),
+        tier: 4,
+        confidence: 0.5,
+        source: 'ai',
+        stainType: resolveStainType(plantTunedAi, ctx),
+        correlationId,
+        viewerTier,
+        ...(aiFallbackDisclosure ? { ai_fallback_disclosure: aiFallbackDisclosure } : {}),
+        _serverMs: Date.now() - _t0,
+      }
+    }
+
+
     // ── TASK-234: deterministic fast path for red-cell sessions ─────────
     // When session evidence already fires a red cell, the terminal gate would
     // constrain whatever the AI produced anyway — so for consumer tiers we
@@ -1126,98 +1238,55 @@ export async function POST(req: Request) {
           _serverMs: Date.now() - _t0,
         })
       }
+
+      // TASK-240 — staged response (opt-in, consumer, no red cells): ship the
+      // deterministic stage-1 guidance immediately (~first-byte), then the
+      // full gated card when the AI tail completes. Stage 1 contains ONLY the
+      // existing deterministic outputs (buildFirstAid/buildDirectAnswer from
+      // gated session evidence) — never model prose, never treatment steps.
+      // If the AI tail fails, stage 2 is the same safe fallback the classic
+      // path returns — never a partial expansion.
+      if (stagedRequested) {
+        const encoder = new TextEncoder()
+        const stage1 = {
+          _stage: 'first-aid',
+          firstAid: buildFirstAid(fastEvidence),
+          ...(fastEvidence.directHazardQuestion
+            ? { directAnswer: buildDirectAnswer(fastEvidence.directHazardQuestion) }
+            : {}),
+          correlationId,
+          viewerTier,
+          _serverMs: Date.now() - _t0,
+        }
+        const stream = new ReadableStream({
+          async start(controller) {
+            controller.enqueue(encoder.encode(JSON.stringify(stage1) + '\n'))
+            let finalPayload: Record<string, unknown>
+            try {
+              finalPayload = await buildAiPayload()
+            } catch (err) {
+              console.error('AI fallback failed (staged):', err)
+              finalPayload = buildAiUnavailablePayload()
+            }
+            controller.enqueue(encoder.encode(JSON.stringify({ _stage: 'final', ...finalPayload }) + '\n'))
+            controller.close()
+          },
+        })
+        return new Response(stream, {
+          headers: {
+            'Content-Type': 'application/x-ndjson; charset=utf-8',
+            'Cache-Control': 'no-store',
+          },
+        })
+      }
     }
 
     // ── AI fallback (Home / Free / Anon only) ──────────────────
     try {
-      // TASK-231: Stain Brain retrieval is DISABLED on this path — it is the
-      // consumer (+founder) AI fallback, and sb_chunks are professional/
-      // internal references that must not reach the consumer prompt (Atlas
-      // review finding, 2026-06-10). Packet 6 rebuilds grounding with an
-      // audience-gated corpus; until then consumer AI runs ungrounded and the
-      // output guard + safety filter remain the rendering gates.
-      const aiCardRaw = await generateAIProtocol(ctx, lang)
-      // Normalize shape before any downstream processing — caps step count,
-      // merges adjacent rinses, strips numeric dwell, caps instruction length.
-      // See lib/protocols/normalizeAICard.ts (2026-04-18 Atlas call).
-      const aiCard = normalizeAICard(aiCardRaw)
-      injectContextWarnings(aiCard, ctx)
-      if (ctx.fiber) aiCard._fiberContext = { fiber: ctx.fiber, careSymbols: ctx.careSymbols, warnings: ctx.labelWarnings }
-
-      const safetyResult = runSafetyFilter(aiCard, ctx.stain, ctx.surface)
-
-      if (!safetyResult.safe) {
-        console.error(`[SafetyFilter] BLOCKED: ${safetyResult.violations.map((v: any) => v.rule).join(', ')}`)
-        return NextResponse.json({
-          card: finalizeCardForResponse(buildContextualFallback(ctx), viewerTier, ctx),
-          tier: 4, confidence: 0, source: 'ai', stainType: resolveStainType(null, ctx), _safetyBlocked: true,
-          viewerTier,
-        })
-      }
-
-      const safeCard = safetyResult.card
-      if (safetyResult.filtered) {
-        console.log(`[SafetyFilter] Auto-corrected ${safetyResult.violations.length} violation(s)`)
-        safeCard._safetyFiltered = true
-      }
-
-      queueForReview(safeCard, ctx, safetyResult).catch(() => {})
-      ensureBleachNeutralization(safeCard, 'consumer')
-      enrichProductsWithAffiliates(safeCard)
-      // Apply plant-level filters to AI-generated cards too — bleach policy
-      // and house rules must be respected regardless of card source.
-      const plantTunedAi = applyPlantFilters(safeCard, userPlant)
-      logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: plantTunedAi.title || ctx.stain, source: userPlant ? 'ai-plant-tuned' : 'ai', confidence: 0.5 }).catch(() => {})
-
-      logSolveReview({
-        queryRaw: `${ctx.stain} on ${ctx.surface}`,
-        stain: ctx.stain,
-        surface: ctx.surface,
-        tierRequested: viewerTier,
-        matchedCardKey: null,
-        usedAiFallback: true,
-        userId: email,
-        sessionId: correlationId,
-      })
-      recordEvent({
-        type: EVENT_TYPES.SOLVE_AI_FALLBACK_SERVED,
-        actor_id: email ?? null,
-        plant_id: (userPlant as { id?: string } | null)?.id ?? null,
-        payload: {
-          stain: ctx.stain,
-          surface: ctx.surface,
-          tier: viewerTier,
-          had_disambiguation: explicitAiConsent,
-        },
-        correlation_id: correlationId,
-      }).catch(() => {})
-      // TASK-056: attach the disclosure banner when the user got here
-      // via the Unknown option in a disambiguation flow. The banner is
-      // the UX surface for `verification_level = 'draft'` (TASK-055).
-      const aiFallbackDisclosure = explicitAiConsent
-        ? {
-            label: 'General starting point — not stain-specific',
-            body: 'We couldn\'t narrow this to a specific stain class. These are tested general steps. If no response after 1–2 passes, take it to a professional.',
-          }
-        : undefined
-      return NextResponse.json({
-        card: finalizeCardForResponse(plantTunedAi, viewerTier, ctx),
-        tier: 4,
-        confidence: 0.5,
-        source: 'ai',
-        stainType: resolveStainType(plantTunedAi, ctx),
-        correlationId,
-        viewerTier,
-        ...(aiFallbackDisclosure ? { ai_fallback_disclosure: aiFallbackDisclosure } : {}),
-        _serverMs: Date.now() - _t0,
-      })
+      return NextResponse.json(await buildAiPayload())
     } catch (err) {
       console.error('AI fallback failed:', err)
-      return NextResponse.json({
-        card: finalizeCardForResponse(buildContextualFallback(ctx), viewerTier, ctx),
-        tier: 4, confidence: 0, source: 'ai-unavailable', stainType: resolveStainType(null, ctx), _aiUnavailable: true,
-        viewerTier,
-      })
+      return NextResponse.json(buildAiUnavailablePayload())
     }
 
   } catch (err) {

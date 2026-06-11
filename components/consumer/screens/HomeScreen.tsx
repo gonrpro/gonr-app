@@ -3,11 +3,16 @@
 import { useCallback, useEffect, useState, type FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { Settings, ArrowRight, ChevronRight, Shirt, Sparkles, Camera, ScanLine, ShieldCheck } from 'lucide-react'
+import { Settings, ArrowRight, ChevronRight, Shirt, Sparkles, Camera, ScanLine, ShieldCheck, Loader2 } from 'lucide-react'
 import BottomNav from '@/components/consumer/BottomNav'
 import BetaBadge from '@/components/consumer/BetaBadge'
 import LanguageToggle from '@/components/consumer/LanguageToggle'
-import AttachMenu, { type AttachInitialAction } from '@/components/consumer/AttachMenu'
+import dynamic from 'next/dynamic'
+import { type AttachInitialAction } from '@/components/consumer/AttachMenu'
+
+// TASK-240 — the attach sheet (camera/label scan) loads on demand; it only
+// renders after a tile tap, so it stays out of Home's initial bundle.
+const AttachMenu = dynamic(() => import('@/components/consumer/AttachMenu'), { ssr: false })
 import GonrLogo from '@/components/brand/GonrLogo'
 import FooterContent from '@/components/layout/FooterContent'
 import { EXAMPLE_CHIPS } from '@/lib/consumer-safety/solve-input'
@@ -75,6 +80,10 @@ export default function HomeScreen() {
   const router = useRouter()
   const { t, lang } = useLanguage()
   const [query, setQuery] = useState('')
+  // TASK-240 — instant CTA acknowledgment: the gradient button flips to a
+  // pressed/starting state the moment the form submits, before navigation
+  // commits (sub-100ms feedback gate).
+  const [starting, setStarting] = useState(false)
   const [recent, setRecent] = useState<RecentRow[]>([])
   const [recentLoaded, setRecentLoaded] = useState(false)
   const [attachOpen, setAttachOpen] = useState(false)
@@ -133,10 +142,17 @@ export default function HomeScreen() {
       event.preventDefault()
       const trimmed = query.trim()
       if (!trimmed) return
+      setStarting(true)
       router.push(`/solve-v2/solve?stain=${encodeURIComponent(trimmed)}`)
     },
     [query, router],
   )
+
+  // TASK-240 — warm the solve route as soon as the user shows intent (typing),
+  // so the Home -> solve transition costs no route-bundle fetch.
+  useEffect(() => {
+    if (query.trim().length > 0) router.prefetch('/solve-v2/solve')
+  }, [query, router])
 
   // Brand hero: the product name "The stain app." centered on ONE line with the GONR
   // logo gradient sweep (pink -> magenta -> orange, same as the wordmark) + the "smart
@@ -229,11 +245,16 @@ export default function HomeScreen() {
         />
         <button
           type="submit"
-          disabled={query.trim().length === 0}
+          disabled={query.trim().length === 0 || starting}
+          aria-busy={starting}
           className="gonr-gradient gonr-cta gonr-pressable inline-flex w-full items-center justify-center gap-1.5 rounded-full px-5 py-3 text-sm font-extrabold text-white transition-opacity duration-200 disabled:opacity-40"
         >
-          {t('home.startCheck')}
-          <ArrowRight size={16} strokeWidth={2.6} aria-hidden="true" />
+          {starting ? t('home.startingCheck') : t('home.startCheck')}
+          {starting ? (
+            <Loader2 size={16} className="animate-spin" aria-hidden="true" />
+          ) : (
+            <ArrowRight size={16} strokeWidth={2.6} aria-hidden="true" />
+          )}
         </button>
       </form>
 

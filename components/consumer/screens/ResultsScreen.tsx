@@ -306,6 +306,11 @@ export default function ResultsScreen({
   const [saveState, setSaveState] = useState<'idle' | 'saving' | 'saved' | 'needs-auth' | 'error'>(
     'idle',
   )
+  // TASK-240 — staged solve: the deterministic stage-1 line (firstAid +
+  // directAnswer) arrives ~first-byte on AI-tail solves; the direct answer
+  // renders during the wait so an asked hazard question is answered in well
+  // under a second. Cleared on every new fetch.
+  const [earlyAnswer, setEarlyAnswer] = useState<{ why?: string; instead?: string } | null>(null)
 
   // Re-solve (follow-up / override) must carry the SAME assembled care/heat/prior-
   // treatment constraints as the orchestrator's first engine call — the shared
@@ -334,13 +339,51 @@ export default function ResultsScreen({
 
     void (async () => {
       setStatus('loading')
+      setEarlyAnswer(null)
       try {
         const res = await fetch('/api/solve', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ...body, lang }),
+          // TASK-240 — staged: true opts into the two-stage NDJSON response on
+          // the AI-tail path; non-AI paths still answer with classic JSON.
+          body: JSON.stringify({ ...body, lang, staged: true }),
           signal: controller.signal,
         })
+        const isStaged = (res.headers.get('content-type') || '').includes('x-ndjson')
+        if (isStaged && res.body) {
+          // Two NDJSON lines: stage-1 deterministic guidance, then the full
+          // gated verdict. A stream interruption falls through to the catch —
+          // the standard safe error state, never a partial answer.
+          const reader = res.body.getReader()
+          const decoder = new TextDecoder()
+          let buf = ''
+          let sawFinal = false
+          for (;;) {
+            const { done, value } = await reader.read()
+            if (done) break
+            buf += decoder.decode(value, { stream: true })
+            let nl = buf.indexOf('\n')
+            while (nl >= 0) {
+              const line = buf.slice(0, nl).trim()
+              buf = buf.slice(nl + 1)
+              nl = buf.indexOf('\n')
+              if (!line) continue
+              const obj = JSON.parse(line) as SolveResponse & { _stage?: string; directAnswer?: { why?: string; instead?: string } }
+              if (ignore) return
+              if (obj._stage === 'first-aid') {
+                if (obj.directAnswer?.why) setEarlyAnswer(obj.directAnswer)
+              } else if (obj._stage === 'final') {
+                sawFinal = true
+                setHttp(res.status)
+                setData(obj)
+                setStatus('loaded')
+                renderedLangRef.current = lang
+              }
+            }
+          }
+          if (!sawFinal && !ignore) throw new Error('staged stream ended before final verdict')
+          return
+        }
         const json = (await res.json().catch(() => ({}))) as SolveResponse
         if (ignore) return
         setHttp(res.status)
@@ -488,16 +531,36 @@ export default function ResultsScreen({
     )
   }
 
-  // ── 1. Loading ────────────────────────────────────────────────────────────
-  if (status === 'loading') {
+  // ── 1. Loading (first solve only — re-solves keep the old card, see §8) ────
+  // TASK-240: when a re-solve (language toggle / follow-up / retry) starts and a
+  // verdict is ALREADY on screen, fall through to the card render below instead
+  // of wiping real content with a skeleton — the stale card stays visible with
+  // an updating chip until the fresh verdict swaps in.
+  if (status === 'loading' && !data) {
     return (
       <ScreenShell>
         <ContextChip text={headerContext} />
+        {/* TASK-240: conservative first-aid is ALWAYS on screen while waiting —
+            completes the TASK-232 pre-response guidance design on this branch
+            (deterministic fallback path, retries, follow-ups, re-solves). */}
+        {earlyAnswer?.why ? (
+          <div className="gonr-verdict-stop mt-5 flex items-start gap-3">
+            <AlertTriangle size={20} className="gonr-severity-text mt-0.5 shrink-0" aria-hidden="true" />
+            <div>
+              <p className="gonr-severity-text text-sm font-extrabold leading-6">{t('results.directAnswerNo')}</p>
+              <p className="mt-1 text-sm font-semibold leading-6 text-gonr-textgray">{earlyAnswer.why}</p>
+              {earlyAnswer.instead ? (
+                <p className="mt-1 text-sm font-semibold leading-6 text-gonr-textgray">{earlyAnswer.instead}</p>
+              ) : null}
+            </div>
+          </div>
+        ) : null}
+        <FirstAidBanner className="mt-5" />
         {/* Skeleton that MIRRORS the loaded result (verdict card + gradient-pill step
             rows) so the layout is reserved and real content fades in without a reflow
             jump — feels faster than a centered spinner. Screen readers get the loading
             status; the shapes are decorative. */}
-        <div className="mt-6 gonr-fade-up space-y-4" aria-busy="true" aria-live="polite">
+        <div className="mt-4 gonr-fade-up space-y-4" aria-busy="true" aria-live="polite">
           <span className="sr-only">{t('results.loadingTitle')}</span>
           <div className="gonr-card p-4">
             <div className="h-3 w-24 animate-pulse rounded-full bg-gonr-navy/10" />
@@ -695,6 +758,9 @@ export default function ResultsScreen({
   }
 
   // ── 8. Card result (the main path) ─────────────────────────────────────────
+  // TASK-240: a re-solve in flight over an existing verdict renders the stale
+  // card dimmed with an updating chip instead of a skeleton wipe.
+  const revalidating = status === 'loading' && data !== null
   const card = res.card
   // Consumer tier renders homeSolutions; spottingProtocol is stripped server-side
   // but we fall back to it defensively if a paid viewer ever lands here.
@@ -730,6 +796,23 @@ export default function ResultsScreen({
   return (
     <ScreenShell>
       <ContextChip text={headerContext} />
+
+      {/* TASK-240 — re-solve in flight: keep the verdict visible, signal the
+          refresh, and dim slightly so the swap-in reads as an update rather
+          than a reload. aria-busy covers assistive tech. */}
+      {revalidating ? (
+        <div
+          className="mt-4 flex items-center gap-2 rounded-2xl border border-[var(--gonr-border)] bg-white px-4 py-2"
+          aria-busy="true"
+          aria-live="polite"
+        >
+          <span className="gonr-gradient h-2.5 w-2.5 shrink-0 animate-pulse rounded-full" aria-hidden="true" />
+          <p className="text-xs font-extrabold uppercase tracking-wide text-gonr-navy/70">
+            {t('results.updatingChip')}
+          </p>
+        </div>
+      ) : null}
+      <div className={revalidating ? 'opacity-60 transition-opacity' : undefined}>
 
       {/* TASK-232 — explicit answer when the user directly asked about a
           hazard (bleach/ammonia/mixing). Renders FIRST: the asked question
@@ -986,6 +1069,8 @@ export default function ResultsScreen({
             </p>
           )}
         </div>
+      </div>
+
       </div>
 
       <FollowUp
