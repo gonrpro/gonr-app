@@ -28,6 +28,7 @@ export type SolveSource =
   | 'ai'
   | 'ai-plant-tuned'
   | 'hard-refuse'
+  | 'deterministic-fast-path'
   | 'no-verified-protocol'
   | 'library-safety-blocked'
   | 'ai-unavailable'
@@ -56,6 +57,8 @@ export const SOURCE_LABEL: Record<SolveSource, SourceLabel> = {
   'ai-plant-tuned': { label: 'AI analysis — no verified protocol matched', verified: false },
   // Safety overrides — cautious by design, not a verified-protocol claim.
   'hard-refuse': { label: 'Safety first — we kept this answer cautious', verified: false },
+  // TASK-234 red-cell fast path — deterministic protect+refer verdict.
+  'deterministic-fast-path': { label: 'Safety first — we kept this answer cautious', verified: false },
   'library-safety-blocked': { label: 'Safety-adjusted guidance', verified: false },
   // No protocol on file yet.
   'no-verified-protocol': { label: 'No verified protocol yet — general guidance only', verified: false },
