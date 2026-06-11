@@ -48,6 +48,8 @@ export interface SessionEvidence {
   solventRiskStain: boolean
   /** Suite protect-only effort classes (motor oil/tar/polish/residue/wool rug). */
   orangeStainClass: boolean
+  /** User disclosed they only have napkins/water — no product steps. */
+  limitedSupplies: boolean
 }
 
 export interface SolveRequestFacts {
@@ -124,6 +126,12 @@ const SOLVENT_RISK_STAIN_RE = /\bnail\s+polish\b|\bsuper\s*glue\b/i
 // stays an open SB doctrine line — this is rugs/carpet only).
 const ORANGE_STAIN_CLASS_RE =
   /\bmotor\s+oil\b|\bshoe\s+polish\b|\bhighlighter\b|\badhesive\b|\bsticker\s+residue\b|\bdye\s+(?:ring|halo)\b|\bunknown\s+(?:\w+\s+)?residue\b|\btar\b|\bwool\s+(?:rug|carpet)\b/i
+// Limited-supplies context ("traveling, only napkins and water"): the user
+// cannot follow product steps, so recommending them is invented-product
+// advice (EV-062). Caps effort at protect-only; firstAid blot guidance is
+// exactly what they CAN do.
+const LIMITED_SUPPLIES_RE =
+  /\bonly\b[^.;\n]{0,30}\b(?:napkins?|paper\s+towels?|tissues?|water)\b|\bno\s+(?:cleaning\s+)?(?:products?|supplies)\s+(?:available|on\s+hand|with\s+me)\b/i
 
 export function parseSessionEvidence(facts: SolveRequestFacts): SessionEvidence {
   const text = [facts.stain, facts.surface, facts.fabricDescription, facts.garmentLocation, facts.hazardQuestion]
@@ -179,5 +187,6 @@ export function parseSessionEvidence(facts: SolveRequestFacts): SessionEvidence 
     solventClassStain: SOLVENT_CLASS_STAIN_RE.test(text),
     solventRiskStain: SOLVENT_RISK_STAIN_RE.test(text),
     orangeStainClass: ORANGE_STAIN_CLASS_RE.test(all),
+    limitedSupplies: LIMITED_SUPPLIES_RE.test(text),
   }
 }

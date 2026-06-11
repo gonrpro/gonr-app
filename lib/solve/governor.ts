@@ -20,6 +20,8 @@ import type { SessionEvidence } from './session-evidence'
 import {
   AGITATION_TOKEN_RE,
   EFFORT_BUDGET,
+  HEAT_APPLY_RE,
+  HEAT_IMPERATIVE_RE,
   HEAT_INSTRUCTION_TOKEN_RE,
   INSTRUCT_VERB_RE,
   MIX_PRODUCT_RE,
@@ -57,6 +59,7 @@ export function deriveRiskTier(ev: SessionEvidence, redCellReasons: string[]): R
     ev.liningOrAcetate ||
     ev.solventRiskStain ||
     ev.orangeStainClass ||
+    ev.limitedSupplies ||
     ev.directHazardQuestion !== null
   ) {
     return 'orange'
@@ -92,15 +95,33 @@ function scrubRepeatLanguage(card: Card, applied: GovernorResult['applied']): Ca
   const next = mapCardStrings(card, (s) => {
     let out = s
     for (const { id, re } of REPEAT_LANGUAGE_RULES) {
+      // Prohibition-aware (codex-review P2 round 2): "Never repeat home
+      // chemistry" is a STOP warning and must survive intact — only strip a
+      // match when no negation governs its clause.
       const fresh = new RegExp(re.source, re.flags)
-      if (fresh.test(out)) {
+      let m: RegExpExecArray | null
+      let stripped = out
+      let offset = 0
+      while ((m = fresh.exec(out)) !== null) {
+        const before = out.slice(Math.max(0, m.index - 80), m.index)
+        const leftBoundary = Math.max(
+          before.lastIndexOf('.'),
+          before.lastIndexOf(';'),
+          before.lastIndexOf('!'),
+          before.lastIndexOf('?'),
+          before.lastIndexOf('\n'),
+          before.lastIndexOf(','),
+        )
+        if (NEGATION_RE.test(before.slice(leftBoundary + 1))) continue
         hits.set(id, (hits.get(id) ?? 0) + 1)
-        out = out.replace(new RegExp(re.source, re.flags), '')
+        stripped = stripped.slice(0, m.index - offset) + stripped.slice(m.index - offset + m[0].length)
+        offset += m[0].length
       }
+      out = stripped
     }
     return out === s ? s : tidy(out)
   })
-  for (const [rule, n] of hits) applied.push({ rule, detail: `stripped unlimited-attempt phrasing (${n} field${n === 1 ? '' : 's'})` })
+  for (const [rule, n] of hits) applied.push({ rule, detail: `removed open-ended retry phrasing (${n})` })
   return dropEmptySteps(next as Card)
 }
 
@@ -112,29 +133,42 @@ function scrubRepeatLanguage(card: Card, applied: GovernorResult['applied']): Ca
 function scrubHeatInstructions(card: Card, applied: GovernorResult['applied']): Card {
   let dropped = 0
   const next = mapCardStrings(card, (s) => {
-    if (!HEAT_INSTRUCTION_TOKEN_RE.test(s)) return s
+    if (!HEAT_INSTRUCTION_TOKEN_RE.test(s) && !/\bheat\b/i.test(s)) return s
     const sentences = s.split(/(?<=[.;!?])\s+/)
     const kept = sentences.filter((sentence) => {
       // Negation is CLAUSE-scoped (codex-review P2): "Do not iron, then
       // tumble dry on high." must still drop — an earlier "do not" in the
       // same sentence cannot launder a later positive heat instruction.
-      const positiveHeat = sentence
-        .split(/,|;|\bthen\b|\band\b/i)
-        .some((clause) => HEAT_INSTRUCTION_TOKEN_RE.test(clause) && INSTRUCT_VERB_RE.test(clause) && !NEGATION_RE.test(clause))
+      // Instruction-shaped only (codex-review P2 round 2): warnings like
+      // "dryer heat sets the stain" survive — the instruct verb must be a
+      // SEPARATE word from the heat token, or the clause must be an
+      // imperative heat phrase / "apply … heat".
+      const positiveHeat = sentence.split(/,|;|\bthen\b|\band\b/i).some((clause) => {
+        if (NEGATION_RE.test(clause)) return false
+        if (HEAT_IMPERATIVE_RE.test(clause) || HEAT_APPLY_RE.test(clause)) return true
+        if (!HEAT_INSTRUCTION_TOKEN_RE.test(clause)) return false
+        const withoutTokens = clause.replace(new RegExp(HEAT_INSTRUCTION_TOKEN_RE.source, 'gi'), '~')
+        return INSTRUCT_VERB_RE.test(withoutTokens)
+      })
       if (positiveHeat) dropped++
       return !positiveHeat
     })
     return kept.length === sentences.length ? s : tidy(kept.join(' '))
   })
   if (dropped > 0) {
-    applied.push({ rule: 'GOV-HEAT-1', detail: `dropped ${dropped} heat-instruction sentence${dropped === 1 ? '' : 's'}` })
+    applied.push({ rule: 'GOV-HEAT-1', detail: `removed ${dropped} heat-class sentence${dropped === 1 ? '' : 's'}` })
   }
   return dropEmptySteps(next as Card)
 }
 
-// GOV-AGITATE-1 — positive scrub/rub instructions become 'blot'. RULE-11
+// GOV-AGITATE-1 — positive scrub/rub INSTRUCTIONS become 'blot'. RULE-11
 // generalized beyond tannin: blot-don't-rub is universal consumer doctrine.
-// Negation is clause-scoped, so "Do not rub" warnings survive untouched.
+// Instruction-shaped only (codex-review P2 round 2): the token must sit in
+// imperative position (clause start, optionally after and/then + an adverb)
+// and take an object — explanatory warnings ("Rubbing pushes ink deeper",
+// "rubbing can spread the stain") and negated warnings survive untouched.
+const AGITATE_PRE_RE = /^\s*(?:(?:and|then|or)\s+)?(?:gently\s+|lightly\s+|carefully\s+)?$/i
+const AGITATE_POST_RE = /^\s+(?:the|it|them|your|a|an|gently|lightly|carefully|with|in|into|on|onto|using|until|for)\b/i
 function scrubAgitation(card: Card, applied: GovernorResult['applied']): Card {
   let replaced = 0
   const next = mapCardStrings(card, (s) => {
@@ -152,9 +186,11 @@ function scrubAgitation(card: Card, applied: GovernorResult['applied']): Card {
         before.lastIndexOf('\n'),
         before.lastIndexOf(','),
       )
-      const clause = before.slice(leftBoundary + 1)
+      const clausePre = before.slice(leftBoundary + 1)
+      const post = s.slice(m.index + m[0].length, m.index + m[0].length + 20)
+      const imperative = AGITATE_PRE_RE.test(clausePre) && AGITATE_POST_RE.test(post)
       out += s.slice(last, m.index)
-      if (NEGATION_RE.test(clause)) {
+      if (!imperative || NEGATION_RE.test(clausePre)) {
         out += m[0]
       } else {
         out += /ing$/i.test(m[0]) ? 'blotting' : 'blot'
@@ -166,12 +202,12 @@ function scrubAgitation(card: Card, applied: GovernorResult['applied']): Card {
     return out
   })
   if (replaced > 0) {
-    applied.push({ rule: 'GOV-AGITATE-1', detail: `replaced ${replaced} scrub/rub instruction${replaced === 1 ? '' : 's'} with blot` })
+    applied.push({ rule: 'GOV-AGITATE-1', detail: `softened ${replaced} agitation step${replaced === 1 ? '' : 's'} to blot` })
   }
   return next as Card
 }
 
-// GOV-MIX-1 — drop sentences positively instructing a product mix/combination
+// GOV-COMBO-1 — drop sentences positively instructing a product mix/combination
 // (bleach mixes already hard-block in the guard; this covers the
 // detergent+vinegar class). Negated "never mix…" warnings survive.
 function scrubMixInstructions(card: Card, applied: GovernorResult['applied']): Card {
@@ -189,7 +225,7 @@ function scrubMixInstructions(card: Card, applied: GovernorResult['applied']): C
     return kept.length === sentences.length ? s : tidy(kept.join(' '))
   })
   if (dropped > 0) {
-    applied.push({ rule: 'GOV-MIX-1', detail: `dropped ${dropped} product-mixing sentence${dropped === 1 ? '' : 's'}` })
+    applied.push({ rule: 'GOV-COMBO-1', detail: `removed ${dropped} combination sentence${dropped === 1 ? '' : 's'}` })
   }
   return dropEmptySteps(next as Card)
 }
@@ -207,7 +243,7 @@ function softenOverpromise(card: Card, applied: GovernorResult['applied']): Card
     }
     return out === s ? s : tidy(out)
   })
-  for (const [rule, n] of hits) applied.push({ rule, detail: `softened overconfident phrasing (${n} field${n === 1 ? '' : 's'})` })
+  for (const [rule, n] of hits) applied.push({ rule, detail: `calibrated confidence wording (${n})` })
   return next as Card
 }
 

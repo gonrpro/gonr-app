@@ -1,7 +1,9 @@
 # TASK-236 — Consolidated safety rule table: before/after map
 
-Engine HEAD: `381bac2` (pass 1 `71fd600`, assessor refinement `ae76cea`,
-pass 2 `381bac2` after the interim eval run + codex review).
+Engine HEAD: `73f3e09` — three hardening cycles, each gated by typecheck +
+full vitest + codex review + a full 112-case preview eval run:
+pass 1 `71fd600` (+ assessor refinement `ae76cea`), pass 2 `381bac2`,
+pass 3 `73f3e09`.
 The single source of truth is **`lib/safety/rule-table.ts`**. To change a
 deterministic consumer-safety rule, edit the table (and the mapped eval case)
 — not the executor.
@@ -15,7 +17,7 @@ deterministic consumer-safety rule, edit the table (and the mapped eval case)
 | Unsafe consumer chemistry (NEW) | `unsafe-chemistry:*` (16) | — | `UNSAFE_CONSUMER_CHEMISTRY` in rule-table | output guard (positive-instruction, clause-negation-aware; warnings pass) |
 | Hard refusals | `HR-1` | `lib/solve/hard-refuse.ts` | registered in rule-table; card builder stays in hard-refuse.ts | hard-refuse pre-AI gate |
 | Terminal-gate red cells | 9 existing + 7 NEW (see below) | conditions + copy in `lib/solve/terminal-safety-gate.ts` | registry + eval-case map in rule-table; conditions/copy stay in the gate (they need typed evidence) | terminal gate + TASK-234 fast path (new cells join the fast path automatically) |
-| Repeat-language bans (NEW) | `GOV-REPEAT-1…5` | — (prompt-level only) | `REPEAT_LANGUAGE_RULES` in rule-table | `lib/solve/governor.ts` (clause strip, empty steps dropped) |
+| Repeat-language bans (NEW) | `GOV-RETRY-1…5` | — (prompt-level only) | `REPEAT_LANGUAGE_RULES` in rule-table | `lib/solve/governor.ts` (clause strip, empty steps dropped) |
 | Overpromise softeners (NEW) | `GOV-CONF-1…4` | — | `OVERPROMISE_SOFTENERS` in rule-table | governor (rewrite, not fail) |
 | Effort budget (NEW) | `GOV-BUDGET` | — | `EFFORT_BUDGET` (red 0 / orange 1 / default 4 active clauses) | governor (tail-trim; fail-closed → `minimalSafeCard`) |
 | Direct hazard answers | `DQ-*` (4, hot-water NEW) | copy in `lib/solve/first-aid.ts` | registered in rule-table; copy stays in first-aid.ts | finalize attach |
@@ -51,6 +53,27 @@ warnings survive. Codex-review P2 fixes: session evidence now includes
 `fabricDescription`/`garmentLocation` at both route call sites, and the
 unsafe-chemistry scan tests every occurrence so an early negated warning
 cannot shadow a later positive instruction.
+
+Pass-3 (after the 86/112 run + second codex review):
+- **Effort budgets calibrated to suite semantics**: orange ⇒ protect-only
+  (0 active clauses), default consumer ceiling 2. Orange now includes
+  deterministic stain classes: motor oil, tar, shoe polish, highlighter,
+  adhesive/sticker residue, unknown residue, dye ring, wool RUG/carpet
+  (garment wool-class stays SB-pending).
+- **GOV-ATTEMPT-1**: every consumer card ends on the one-attempt stop line
+  ("One attempt at most — … stop and let a professional take over"),
+  appended post-gate so downgrade cards carry it too.
+- **GOV-AGITATE-1**: positive scrub/rub → blot everywhere (RULE-11
+  generalized; "rubbing alcohol" exempt via lookahead; negated warnings
+  survive).
+- **GOV-COMBO-1**: sentences positively instructing product mixes dropped
+  (detergent+vinegar class; bleach mixes already hard-block in the guard).
+- **GOV-RETRY-1** broadened to bare "Repeat …" instructions (EV-044).
+- **GOV-HEAT-1 codex fixes**: standalone dryer/steam/bare-heat tokens,
+  imperative heat verbs ("Steam the area"), clause-scoped negation ("Do not
+  iron, then tumble dry on high" still drops).
+- **cleanFactText** stops at commas: downgrade cards never echo verb-shaped
+  surface descriptors ("label says machine wash…", EV-056).
 
 Plus: heat-disclosure regex broadened to `rinsed hot` / `hair-dried` /
 `blow-dried` (EV-059) while staying application-shaped (EV-084 "crayon went

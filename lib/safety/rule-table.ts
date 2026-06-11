@@ -34,24 +34,33 @@
 export const NEGATION_RE = /\b(?:never|don'?t|do\s+not|avoid|must\s+not|no|skip)\b/i
 export const DIY_ACTION_SOURCE =
   '\\b(?:freeze|scrape|lift|brush|rub|scrub|apply|use|add|dab|pour|soak|wash|launder|rinse|flush|spray|sponge|treat|mix|iron|steam|wipe)\\b'
-// Superset of the assessor's INSTRUCT verbs: heat actions are often phrased
-// with the heat word itself as the imperative ("Steam the area", "Heat the
-// solution"), so those verbs are included here (codex-review P2).
+// Mirrors the assessor's INSTRUCT verbs. Heat words are NOT verbs here —
+// "Heat sets the pigment" is a warning, not an instruction (codex-review P2);
+// imperative heat phrasings ("Steam the area") are matched separately by
+// HEAT_IMPERATIVE_RE.
 export const INSTRUCT_VERB_RE =
-  /\b(?:use|apply|try|add|dab|pour|soak|wash|rinse|flush|treat|scrub|rub|brush|scrape|iron|tumble|put|mix|dry|wipe|steam|boil|heat|microwave|blow[-\s]?dry)\b/i
+  /\b(?:use|apply|try|add|dab|pour|soak|wash|rinse|flush|treat|scrub|rub|brush|scrape|iron|tumble|put|mix|dry|wipe)\b/i
+// Imperative-shaped heat instruction: a heat verb opening the clause and
+// taking an object ("Steam the area", "Heat the solution", "Iron it on low").
+export const HEAT_IMPERATIVE_RE =
+  /^\s*["“”']?(?:steam|iron|heat|boil|microwave|blow[-\s]?dry|tumble[-\s]?dry)\s+(?:the|it|them|your|a|an|on|over|in|directly)\b/i
 // GOV-HEAT-1 — heat application tokens. A sentence positively instructing one
 // of these is dropped from consumer cards (GONR core rule: no heat until the
 // stain is fully out); negated warnings survive. Standalone "dryer" included
 // (codex-review P2: "Put it in the dryer" must not bypass).
+// Bare "heat" deliberately NOT a token (codex-review P2): heat-set WARNINGS
+// ("Heat sets turmeric pigment", "dryer heat sets the stain") are required
+// consumer copy. "apply/use/add … heat" is caught by HEAT_APPLY_RE below.
 export const HEAT_INSTRUCTION_TOKEN_RE =
-  /\b(?:iron(?:ing)?|hot\s+water|boiling\s+water|tumble[-\s]dry(?:er|ing)?|machine[-\s]dry(?:er|ing)?|(?:hair\s*|clothes\s+)?dryer|steam(?:er|ing)?|heat(?:[-\s]dry(?:ing)?)?)\b/i
+  /\b(?:iron(?:ing)?|hot\s+water|boiling\s+water|tumble[-\s]dry(?:er|ing)?|machine[-\s]dry(?:er|ing)?|(?:hair\s*|clothes\s+)?dryer|steam(?:er|ing)?|heat[-\s]dry(?:ing)?)\b/i
+export const HEAT_APPLY_RE = /\b(?:apply|use|add)\b[^,;.!?\n]{0,20}\bheat\b/i
 // GOV-AGITATE-1 — positive scrub/rub instructions become 'blot' (RULE-11
 // generalized beyond tannin: blot-don't-rub is universal GONR consumer
 // doctrine and firstAid already says "Do not rub" on every card).
 // Negative lookahead: "rubbing alcohol" is a solvent NAME, not an agitation
 // instruction — it must never become "blotting alcohol".
 export const AGITATION_TOKEN_RE = /\b(?:scrubbing|scrub|rubbing(?!\s+alcohol)|rub(?!bing))\b/gi
-// GOV-MIX-1 — sentences positively instructing product mixing are dropped
+// GOV-COMBO-1 — sentences positively instructing product mixing are dropped
 // (the guard hard-blocks bleach mixes; this covers detergent+vinegar-style
 // combinations the suite bans as multi-product advice).
 export const MIX_TOKEN_RE = /\b(?:mix(?:ing)?|combine)\b/i
@@ -353,11 +362,11 @@ export const REPEAT_LANGUAGE_RULES: ReadonlyArray<{ id: string; re: RegExp }> = 
   // ANY 'repeat …' phrasing is stripped to the end of its clause — the suite
   // bans bare repeat instructions ("Repeat with a fresh cloth"), not only
   // "repeat until" forms (EV-044).
-  { id: 'GOV-REPEAT-1', re: /\brepeat(?:ing)?\b[^.;!?\n"]*/gi },
-  { id: 'GOV-REPEAT-2', re: /\bkeep\s+(?:trying|going|applying|repeating|at\s+it)\b[^.;!?\n"]*/gi },
-  { id: 'GOV-REPEAT-3', re: /\b(?:again\s+and\s+again|as\s+many\s+times\s+as\s+(?:needed|necessary|it\s+takes))\b[^.;!?\n"]*/gi },
-  { id: 'GOV-REPEAT-4', re: /\buntil\s+(?:it\s+)?(?:lifts?|comes?\s+out|is\s+gone|disappears)\b[^.;!?\n"]*/gi },
-  { id: 'GOV-REPEAT-5', re: /\btry\s+again\b[^.;!?\n"]*/gi },
+  { id: 'GOV-RETRY-1', re: /\brepeat(?:ing)?\b[^.;!?\n"]*/gi },
+  { id: 'GOV-RETRY-2', re: /\bkeep\s+(?:trying|going|applying|repeating|at\s+it)\b[^.;!?\n"]*/gi },
+  { id: 'GOV-RETRY-3', re: /\b(?:again\s+and\s+again|as\s+many\s+times\s+as\s+(?:needed|necessary|it\s+takes))\b[^.;!?\n"]*/gi },
+  { id: 'GOV-RETRY-4', re: /\buntil\s+(?:it\s+)?(?:lifts?|comes?\s+out|is\s+gone|disappears)\b[^.;!?\n"]*/gi },
+  { id: 'GOV-RETRY-5', re: /\btry\s+again\b[^.;!?\n"]*/gi },
 ]
 
 // GOV-CONF — confidence-overstatement softeners. Promising removal is both a
@@ -476,7 +485,7 @@ const GOVERNOR_ENTRIES: RuleEntry[] = [
   { id: 'GOV-BUDGET', source: 'governor', action: 'trim', trigger: 'positive DIY-action clauses exceed the effort budget for the derived risk tier (red 0 / orange 1 / default 4); excess steps trimmed from the tail, fail-closed if untrimmable' },
   { id: 'GOV-HEAT-1', source: 'governor', action: 'strip', trigger: 'positive heat instruction (iron/hot water/dryer/steam/heat) in a consumer card — GONR core rule: no heat until the stain is gone; negated warnings survive' },
   { id: 'GOV-AGITATE-1', source: 'governor', action: 'replace', trigger: 'positive scrub/rub instruction → blot (universal blot-don\'t-rub doctrine; negated warnings survive)', evalCases: ['EV-007'] },
-  { id: 'GOV-MIX-1', source: 'governor', action: 'strip', trigger: 'sentence positively instructing a product mix/combination (non-bleach combos; bleach mixes hard-block in the guard)', evalCases: ['EV-078'] },
+  { id: 'GOV-COMBO-1', source: 'governor', action: 'strip', trigger: 'sentence positively instructing a product mix/combination (non-bleach combos; bleach mixes hard-block in the guard)', evalCases: ['EV-078'] },
   { id: 'GOV-ATTEMPT-1', source: 'governor', action: 'replace', trigger: 'every consumer card carries the one-attempt stop line (appended after the terminal gate if absent)' },
 ]
 

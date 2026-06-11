@@ -240,7 +240,7 @@ describe('TASK-236 — governor', () => {
     const text = JSON.stringify(out.card)
     expect(text).not.toMatch(/\brepeat\b/i)
     expect(text).not.toMatch(/\bkeep\s+trying\b/i)
-    expect(out.applied.some((a) => a.rule.startsWith('GOV-REPEAT'))).toBe(true)
+    expect(out.applied.some((a) => a.rule.startsWith('GOV-RETRY'))).toBe(true)
     // metadata must not echo the stripped phrase back into the card
     expect(JSON.stringify(out.applied)).not.toMatch(/repeat until/i)
   })
@@ -433,7 +433,7 @@ describe('TASK-236 — delicate construction + solvent class + heat governor', (
     expect(out.applied.some((a) => a.rule === 'GOV-AGITATE-1')).toBe(true)
   })
 
-  it('GOV-MIX-1 drops product-mix instructions but keeps never-mix warnings', () => {
+  it('GOV-COMBO-1 drops product-mix instructions but keeps never-mix warnings', () => {
     const card = {
       ...activeCard(),
       homeSolutions: [
@@ -445,7 +445,7 @@ describe('TASK-236 — delicate construction + solvent class + heat governor', (
     const text = JSON.stringify(out.card.homeSolutions)
     expect(text).not.toMatch(/Mix detergent with white vinegar/i)
     expect(text).toMatch(/Never mix bleach/i)
-    expect(out.applied.some((a) => a.rule === 'GOV-MIX-1')).toBe(true)
+    expect(out.applied.some((a) => a.rule === 'GOV-COMBO-1')).toBe(true)
   })
 
   it('bare repeat instructions are stripped (EV-044 class)', () => {
@@ -480,6 +480,38 @@ describe('TASK-236 — delicate construction + solvent class + heat governor', (
     expect(firstPositiveDiyClause(ONE_ATTEMPT_LINE)).toBeNull()
     expect(ONE_ATTEMPT_LINE).toMatch(/\b(?:one|first)\b/i)
     expect(ONE_ATTEMPT_LINE).toMatch(/\bstop\b/i)
+  })
+
+  it('explanatory safety warnings survive all governors (codex round 2)', () => {
+    const card = {
+      ...activeCard(),
+      stainChemistry: 'Heat sets turmeric pigment into the fiber, and dryer heat sets the stain permanently. Rubbing pushes ink deeper into the weave.',
+      materialWarnings: ['Never repeat home chemistry on this fiber.', 'Keep heat away from the area.'],
+    }
+    const out = applyGovernor(card, ev('turmeric', 'cotton shirt'), [])
+    const text = JSON.stringify(out.card)
+    expect(text).toMatch(/Heat sets turmeric pigment/)
+    expect(text).toMatch(/dryer heat sets the stain/)
+    expect(text).toMatch(/Rubbing pushes ink deeper/)
+    expect(text).toMatch(/Never repeat home chemistry/)
+    expect(text).toMatch(/Keep heat away/)
+  })
+
+  it('imperative heat/agitation instructions still drop alongside intact warnings', () => {
+    const card = {
+      ...activeCard(),
+      homeSolutions: [
+        'Heat the solution before applying.',
+        'Scrub the area with a stiff brush.',
+        'Rubbing can spread the stain, so blot instead.',
+      ],
+    }
+    const out = applyGovernor(card, ev('ketchup', 'cotton shirt'), [])
+    const text = JSON.stringify(out.card.homeSolutions)
+    expect(text).not.toMatch(/Heat the solution/)
+    expect(text).not.toMatch(/Scrub the area/)
+    expect(text).toMatch(/blot/i)
+    expect(text).toMatch(/Rubbing can spread the stain/)
   })
 
   it('GOV-HEAT-1 drops heat instructions but keeps negated heat warnings', () => {
