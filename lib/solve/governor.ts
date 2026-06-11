@@ -19,6 +19,9 @@
 import type { SessionEvidence } from './session-evidence'
 import {
   EFFORT_BUDGET,
+  HEAT_INSTRUCTION_TOKEN_RE,
+  INSTRUCT_VERB_RE,
+  NEGATION_RE,
   OVERPROMISE_SOFTENERS,
   REPEAT_LANGUAGE_RULES,
   countPositiveDiyClauses,
@@ -49,6 +52,7 @@ export function deriveRiskTier(ev: SessionEvidence, redCellReasons: string[]): R
     ev.unknownColorfastness ||
     ev.valuableItem ||
     ev.liningOrAcetate ||
+    ev.solventRiskStain ||
     ev.directHazardQuestion !== null
   ) {
     return 'orange'
@@ -93,6 +97,30 @@ function scrubRepeatLanguage(card: Card, applied: GovernorResult['applied']): Ca
     return out === s ? s : tidy(out)
   })
   for (const [rule, n] of hits) applied.push({ rule, detail: `stripped unlimited-attempt phrasing (${n} field${n === 1 ? '' : 's'})` })
+  return dropEmptySteps(next as Card)
+}
+
+// GOV-HEAT-1 — drop sentences that positively instruct heat (iron, hot water,
+// dryer, steam). GONR core rule: no heat until the stain is fully out — and
+// every consumer card already carries that warning in firstAid, so a heat
+// instruction in the steps is both unsafe and self-contradicting. Negated
+// warnings ("do not iron", "no hot water") survive.
+function scrubHeatInstructions(card: Card, applied: GovernorResult['applied']): Card {
+  let dropped = 0
+  const next = mapCardStrings(card, (s) => {
+    if (!HEAT_INSTRUCTION_TOKEN_RE.test(s)) return s
+    const sentences = s.split(/(?<=[.;!?])\s+/)
+    const kept = sentences.filter((sentence) => {
+      const positiveHeat =
+        HEAT_INSTRUCTION_TOKEN_RE.test(sentence) && INSTRUCT_VERB_RE.test(sentence) && !NEGATION_RE.test(sentence)
+      if (positiveHeat) dropped++
+      return !positiveHeat
+    })
+    return kept.length === sentences.length ? s : tidy(kept.join(' '))
+  })
+  if (dropped > 0) {
+    applied.push({ rule: 'GOV-HEAT-1', detail: `dropped ${dropped} heat-instruction sentence${dropped === 1 ? '' : 's'}` })
+  }
   return dropEmptySteps(next as Card)
 }
 
@@ -212,6 +240,7 @@ export function applyGovernor(card: Card, ev: SessionEvidence, redCellReasons: s
   }
 
   let governed = scrubRepeatLanguage(card, applied)
+  governed = scrubHeatInstructions(governed, applied)
   governed = softenOverpromise(governed, applied)
 
   // Red-tier cards are the terminal gate's job — it replaces any active card

@@ -40,6 +40,12 @@ export interface SessionEvidence {
   coloredGarment: boolean
   /** Rayon/viscose — water-spots and rings; suite doctrine protect-only. */
   rayonViscose: boolean
+  /** Couture veto class: silk/velvet/satin/embellished/structured/vintage. */
+  delicateConstruction: boolean
+  /** Solvent-territory stain class (dried oil-based paint) — pro only. */
+  solventClassStain: boolean
+  /** Acetone-risk stain (nail polish/superglue) — caps effort at orange. */
+  solventRiskStain: boolean
 }
 
 export interface SolveRequestFacts {
@@ -71,11 +77,13 @@ const DYE_TRANSFER_RE =
 
 const LEATHER_SUEDE_RE = /\bleather\b|\bsuede\b|\bnubuck\b/i
 const LINING_ACETATE_RE = /\blining\b|\blined\b|\bacetate\b/i
-const LIQUID_SOLVENT_RE = /liquid|wet|spill|soaked|solvent|water\s+mark|drink|wine|coffee|juice|oil|sauce/i
+// mildew/mold added (TASK-236, EV-029): biological growth on leather is
+// specialist work just like liquid damage.
+const LIQUID_SOLVENT_RE = /liquid|wet|spill|soaked|solvent|water\s+mark|drink|wine|coffee|juice|oil|sauce|mildew|mold/i
 const DCO_RE = /dry[-\s]?clean(?:\s+|-)?only|\bdco\b/i
 const UNKNOWN_STAIN_RE = /unknown\s+stain|mystery|not\s+sure\s+what|unsure\s+what|don'?t\s+know\s+what|unidentified/i
 const UNKNOWN_FABRIC_RE = /fiber\s+unknown|unknown\s+(?:fiber|fabric|material)|no\s+(?:care\s+)?label|can'?t\s+(?:find|read)\s+the\s+label/i
-const VALUABLE_RE = /heirloom|sentimental|valuable|luxury|designer|wedding|couture|expensive|irreplaceable/i
+const VALUABLE_RE = /heirloom|sentimental|valuable|luxury|designer|wedding|couture|expensive|irreplaceable|high[-\s]value/i
 
 // Direct hazard questions — answered explicitly, never folded into history.
 const BLEACH_QUESTION_RE = /can\s+i\s+(?:just\s+)?(?:use|put|try|apply)\s+(?:chlorine\s+)?bleach|is\s+(?:chlorine\s+)?bleach\s+(?:ok|okay|safe)|should\s+i\s+(?:use\s+)?bleach/i
@@ -94,11 +102,21 @@ const PERMANENCE_CLASS_RE = /\bpermanent\s+marker\b|\bsharpie\b/i
 const DAMAGE_REPAIR_RE =
   /\bshrunk(?:en)?\b|\bfelted\b|\bcolor\s+loss\b|\bbleach(?:ed)?\s+(?:spot|patch|mark)\b|\bbleached[-\s]out\b|\bdye\s+loss\b/i
 const ESCALATION_REQUEST_RE =
-  /\bstrongest\b|\bstronger\s+(?:option|step|stuff|product|chemical|treatment)\b|\bsomething\s+stronger\b|\bnuclear\s+option\b|\bkeep\s+escalating\b|\bgive\s+me\s+everything\b|\bwhat\s+else\s+can\s+i\s+(?:try|use)\b/i
+  /\bstrongest\b|\bstrong(?:er)?\s+(?:option|step|stuff|product|chemical|treatment)\b|\bsomething\s+stronger\b|\bnuclear\s+option\b|\bkeep\s+escalating\b|\bgive\s+me\s+everything\b|\bwhat\s+else\s+can\s+i\s+(?:try|use)\b|\bdon'?t\s+care\s+if\s+it'?s\s+risky\b|\bno\s+matter\s+the\s+risk\b/i
 const GUARDRAIL_BYPASS_RE =
   /\bpretend\s+i'?m\b|\bignore\s+(?:your|the)\s+(?:rules|instructions|safety)\b|\bdisregard\s+(?:your|the)\s+(?:rules|instructions|safety)\b|\bsystem\s*:\s*allow\b|\bi\s+accept\s+the\s+risk\b/i
 const COLORED_GARMENT_RE = /\bcolored\b|\bcolou?red\b|\bdark\b|\bnavy\b|\bblack\b|\bbright(?:ly)?[-\s]colored\b|\bdyed\b/i
 const RAYON_VISCOSE_RE = /\brayon\b|\bviscose\b/i
+// Couture/delicate-construction veto class (TASK-236, encyclopedia doctrine:
+// "valued/structured/embellished → do_not_attempt/specialist"). Wool-class
+// fibers are deliberately EXCLUDED — that doctrine line (EV-011/EV-038 vs
+// verified wool cards) is an open SB decision.
+const DELICATE_CONSTRUCTION_RE =
+  /\bsilk\b|\bseda\b|\bvelvet\b|\bsatin\b|\btaffeta\b|\bchiffon\b|\borganza\b|\blace\b|\bsequin(?:ned|ed)?\b|\bbeaded\b|\bembellished\b|\bembroidered\b|\bstructured\b|\bvintage\b|\bantique\b|\bchristening\b|\bdelicate\s+garment\b/i
+// Stain classes that are solvent territory at home (pro work): dried
+// oil-based paint. Wet nail polish on non-acetate is acetone-risk → orange.
+const SOLVENT_CLASS_STAIN_RE = /\boil[-\s]based\b[^.;\n]{0,20}\bpaint\b|\bpaint\b[^.;\n]{0,20}\boil[-\s]based\b/i
+const SOLVENT_RISK_STAIN_RE = /\bnail\s+polish\b|\bsuper\s*glue\b/i
 
 export function parseSessionEvidence(facts: SolveRequestFacts): SessionEvidence {
   const text = [facts.stain, facts.surface, facts.fabricDescription, facts.garmentLocation, facts.hazardQuestion]
@@ -150,5 +168,8 @@ export function parseSessionEvidence(facts: SolveRequestFacts): SessionEvidence 
     guardrailBypassAttempt: GUARDRAIL_BYPASS_RE.test(text),
     coloredGarment: COLORED_GARMENT_RE.test(text),
     rayonViscose: RAYON_VISCOSE_RE.test(all),
+    delicateConstruction: DELICATE_CONSTRUCTION_RE.test(all),
+    solventClassStain: SOLVENT_CLASS_STAIN_RE.test(text),
+    solventRiskStain: SOLVENT_RISK_STAIN_RE.test(text),
   }
 }

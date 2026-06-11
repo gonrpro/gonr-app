@@ -163,24 +163,29 @@ const CHEM_INSTRUCT_RE = /\b(?:apply|use|add|dab|pour|mix|treat|work\s+in|try|sc
 function unsafeChemistryViolations(text: string): GuardViolation[] {
   const v: GuardViolation[] = []
   for (const { id, re } of UNSAFE_CONSUMER_CHEMISTRY) {
-    const fresh = new RegExp(re.source, re.flags)
-    const m = fresh.exec(text)
-    if (!m) continue
-    const before = text.slice(Math.max(0, m.index - 80), m.index)
-    const after = text.slice(m.index, m.index + 80)
-    const leftBoundary = Math.max(
-      before.lastIndexOf('.'),
-      before.lastIndexOf(';'),
-      before.lastIndexOf('!'),
-      before.lastIndexOf('?'),
-      before.lastIndexOf('\n'),
-      before.lastIndexOf('","'),
-    )
-    const rightCandidates = [after.indexOf('.'), after.indexOf(';'), after.indexOf('!'), after.indexOf('?'), after.indexOf('\n'), after.indexOf('","')].filter((i) => i >= 0)
-    const rightBoundary = rightCandidates.length ? Math.min(...rightCandidates) : after.length
-    const clause = before.slice(leftBoundary + 1) + after.slice(0, rightBoundary)
-    if (!CHEM_INSTRUCT_RE.test(clause) || NEGATION_NEAR.test(clause)) continue
-    v.push({ rule: `unsafe-chemistry:${id}`, match: clause.trim().slice(0, 60) })
+    // EVERY occurrence is clause-tested (codex-review P2): a negated warning
+    // earlier in the card must not shadow a later positive instruction of the
+    // same chemical.
+    const fresh = new RegExp(re.source, re.flags.includes('g') ? re.flags : `${re.flags}g`)
+    let m: RegExpExecArray | null
+    while ((m = fresh.exec(text)) !== null) {
+      const before = text.slice(Math.max(0, m.index - 80), m.index)
+      const after = text.slice(m.index, m.index + 80)
+      const leftBoundary = Math.max(
+        before.lastIndexOf('.'),
+        before.lastIndexOf(';'),
+        before.lastIndexOf('!'),
+        before.lastIndexOf('?'),
+        before.lastIndexOf('\n'),
+        before.lastIndexOf('","'),
+      )
+      const rightCandidates = [after.indexOf('.'), after.indexOf(';'), after.indexOf('!'), after.indexOf('?'), after.indexOf('\n'), after.indexOf('","')].filter((i) => i >= 0)
+      const rightBoundary = rightCandidates.length ? Math.min(...rightCandidates) : after.length
+      const clause = before.slice(leftBoundary + 1) + after.slice(0, rightBoundary)
+      if (!CHEM_INSTRUCT_RE.test(clause) || NEGATION_NEAR.test(clause)) continue
+      v.push({ rule: `unsafe-chemistry:${id}`, match: clause.trim().slice(0, 60) })
+      break
+    }
   }
   return v
 }

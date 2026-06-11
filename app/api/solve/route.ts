@@ -669,6 +669,10 @@ function finalizeCardForResponse(card: any, viewerTier: SolveTier | 'anon' | nul
     stain: ctx?.stain,
     surface: ctx?.surface,
     careSymbols: ctx?.careSymbols,
+    // codex-review P2 (TASK-236): users disclose fiber, damage, and prior
+    // treatments in these fields too — dropping them silently under-blocks.
+    fabricDescription: ctx?.fabricDescription,
+    garmentLocation: ctx?.garmentLocation,
     hazardQuestion: ctx?.hazardQuestion,
   })
   const redCells = firedRedCells(evidence)
@@ -1075,6 +1079,11 @@ export async function POST(req: Request) {
         stain: ctx.stain,
         surface: ctx.surface,
         careSymbols: ctx.careSymbols,
+        // codex-review P2 (TASK-236): same evidence surface as the finalize
+        // path — fiber/damage disclosures in these fields must reach the
+        // fast-path red cells too.
+        fabricDescription: (ctx as { fabricDescription?: string }).fabricDescription,
+        garmentLocation: (ctx as { garmentLocation?: string }).garmentLocation,
         hazardQuestion: (ctx as { hazardQuestion?: string }).hazardQuestion,
       })
       const fastReasons = firedRedCells(fastEvidence)

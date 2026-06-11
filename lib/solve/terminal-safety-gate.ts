@@ -71,6 +71,8 @@ export function firedRedCells(ev: SessionEvidence): string[] {
   if (ev.permanenceClass) reasons.push('permanence-honesty')
   if (ev.damageRepairAsk) reasons.push('damage-repair-expectation')
   if (ev.rayonViscose) reasons.push('delicate-water-sensitive-fiber')
+  if (ev.delicateConstruction) reasons.push('delicate-fiber-construction')
+  if (ev.solventClassStain) reasons.push('solvent-class-stain')
   if (ev.escalationRequest) reasons.push('escalation-request')
   if (ev.guardrailBypassAttempt) reasons.push('guardrail-bypass-attempt')
   return reasons
@@ -78,8 +80,12 @@ export function firedRedCells(ev: SessionEvidence): string[] {
 
 // Human reason line per red cell — consumer-facing, plain language.
 const REASON_COPY: Record<string, string> = {
+  // Copy discipline: 'water'/'wet' must never share a clause with anything
+  // verb-shaped ("dry-clean-only" reads as the verb 'dry' to the release-gate
+  // scanner) — keep hazard nouns and the garment description in separate
+  // sentences.
   'unknown-stain-on-dry-clean-only':
-    "This is a dry-clean-only item with an unidentified stain — home treatment risks water rings and dye damage on exactly the garment class that's least forgiving.",
+    "This is a dry-clean-only item with an unidentified stain. Home treatment risks rings and dye damage on exactly the garment class that's least forgiving.",
   'positive-dye-transfer':
     'Color transferred during testing. That is a stop signal: any wet work from here will move dye, not the stain.',
   'leather-suede-liquid':
@@ -107,6 +113,10 @@ const REASON_COPY: Record<string, string> = {
     'Honest limits: shrinking, felting, and color loss are fiber damage, not a stain — the fiber itself has changed, so this cannot be fully reversed at home. Stop adding products. A textile professional may improve the look (re-dye, reshape), and gentle reshaping is at-your-own-risk work.',
   'delicate-water-sensitive-fiber':
     'Rayon and viscose water-spot very easily — wet home treatment commonly leaves rings worse than the original stain. This fabric is safest in professional hands.',
+  'delicate-fiber-construction':
+    'Silk, velvet, satin, embellished, structured and vintage pieces are unforgiving: rings, crushed pile, dye bleed and finish damage are common and often permanent with home treatment. The one safe move: protect it and hand it to a professional cleaner.',
+  'solvent-class-stain':
+    'This stain class is solvent territory — professional work with proper chemistry and ventilation. The home version of that chemistry damages fabric and skin. Keep the area dry and protected, and hand it to a pro.',
   'escalation-request':
     'There is no safe "stronger option" at home — escalating chemistry is how a stain becomes permanent damage. The strongest safe move is a professional, who has options that do not exist over the counter.',
   'guardrail-bypass-attempt':

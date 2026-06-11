@@ -338,4 +338,98 @@ describe('TASK-236 — unsafe-chemistry screen', () => {
   it('minimalSafeCard remains clean by construction', () => {
     expect(validateConsumerCard(minimalSafeCard('stain', 'cotton'), { requestText: 'stain on cotton' })).toHaveLength(0)
   })
+
+  it('a negated warning does not shadow a later positive instruction (codex P2)', () => {
+    const card = {
+      ...minimalSafeCard('grease', 'cotton'),
+      materialWarnings: ['Never use oven cleaner on delicate fabric.'],
+      homeSolutions: ['Apply oven cleaner to the stain and wait ten minutes.'],
+    }
+    const v = validateConsumerCard(card, { requestText: 'grease on cotton' })
+    expect(v.some((x) => x.rule === 'unsafe-chemistry:oven-cleaner')).toBe(true)
+  })
+})
+
+// ── 6. Second-pass cells: couture veto, solvent class, heat scrub ────────
+
+describe('TASK-236 — delicate construction + solvent class + heat governor', () => {
+  it('couture veto class fires on silk/velvet/satin/embellished/vintage/structured', () => {
+    for (const [stain, surface] of [
+      ['red wine', 'silk blouse, wet'],
+      ['candle wax', 'velvet blazer'],
+      ['spotting', 'satin (unknown fiber)'],
+      ['stain', 'sequined dress'],
+      ['stain', 'beaded gown'],
+      ['any stain', 'vintage dress'],
+      ['stain', 'structured blazer shoulder'],
+      ['yellowing', 'vintage christening gown'],
+      ['stain', 'high-value delicate garment'],
+    ]) {
+      expect(firedRedCells(ev(stain, surface)), `${stain} / ${surface}`).toContain('delicate-fiber-construction')
+    }
+    // wool-class deliberately excluded pending the SB doctrine line
+    expect(firedRedCells(ev('coffee', 'wool coat'))).not.toContain('delicate-fiber-construction')
+    expect(firedRedCells(ev('tea', 'cashmere sweater'))).not.toContain('delicate-fiber-construction')
+  })
+
+  it('solvent-class and leather-mildew cells fire (EV-018, EV-029)', () => {
+    expect(firedRedCells(ev('paint oil-based dried', 'denim'))).toContain('solvent-class-stain')
+    expect(firedRedCells(ev('mildew', 'leather jacket'))).toContain('leather-suede-liquid')
+  })
+
+  it('risk-acceptance phrasing reads as escalation request (EV-053)', () => {
+    const e = ev("red wine, I don't care if it's risky, just tell me the strong option", 'silk dress')
+    expect(firedRedCells(e)).toContain('escalation-request')
+  })
+
+  it('nail polish caps effort at orange without hard-refusing cotton (EV-103)', () => {
+    const e = ev('nail polish wet', 'cotton duvet')
+    expect(firedRedCells(e)).toHaveLength(0)
+    expect(deriveRiskTier(e, [])).toBe('orange')
+  })
+
+  it('evidence read from fabricDescription reaches the red cells (codex P2)', () => {
+    const e = parseSessionEvidence({
+      stain: 'makeup',
+      surface: 'dress',
+      fabricDescription: 'it is a rayon dress, label unreadable',
+    })
+    const reasons = firedRedCells(e)
+    expect(reasons).toContain('delicate-water-sensitive-fiber')
+    expect(reasons).toContain('care-label-unreadable')
+  })
+
+  it('GOV-HEAT-1 drops heat instructions but keeps negated heat warnings', () => {
+    const card = {
+      ...activeCard(),
+      homeSolutions: [
+        'Blot the area with a clean cloth. Then iron on low to dry the spot.',
+        'Wash in cold water. Tumble dry on high when finished.',
+        'Do not iron or machine dry until the stain is fully out.',
+      ],
+    }
+    const out = applyGovernor(card, ev('ketchup', 'cotton shirt'), [])
+    const text = JSON.stringify(out.card.homeSolutions)
+    expect(text).not.toMatch(/iron on low/i)
+    expect(text).not.toMatch(/Tumble dry on high/i)
+    expect(text).toMatch(/Do not iron or machine dry/i)
+    expect(out.applied.some((a) => a.rule === 'GOV-HEAT-1')).toBe(true)
+  })
+
+  it('DCO downgrade copy keeps water out of verb-shaped clauses (EV-019)', () => {
+    const e = ev('unknown stain', 'dry-clean-only suit')
+    const reasons = firedRedCells(e)
+    expect(reasons).toContain('unknown-stain-on-dry-clean-only')
+    const card = buildDowngradeCard({}, reasons, 'unknown stain', 'dry-clean-only suit')
+    // 'water' may only appear in negated clauses or the sanctioned conditional
+    const text = JSON.stringify(card).replace(/\b(?:if|since)\b[^.;\n]{0,180}\b(?:already|touched|used|applied|product|chemical|bleach)\b[^.;\n]{0,180}\b(?:plain\s+cool\s+water|cool\s+water)\b[^.;\n]{0,120}\bstop\b/gi, '')
+    const verbClause = /[^.;!?\n,]*\bwater\b[^.;!?\n,]*/gi
+    let m: RegExpExecArray | null
+    while ((m = verbClause.exec(text)) !== null) {
+      const clause = m[0]
+      if (/\b(?:use|apply|try|add|dab|pour|soak|wash|rinse|flush|treat|scrub|rub|brush|scrape|iron|tumble|put|mix|dry|wipe)\b/i.test(clause)) {
+        expect(NEGATION_RE.test(clause), `non-negated verb clause with water: ${clause}`).toBe(true)
+      }
+    }
+  })
 })

@@ -34,6 +34,13 @@
 export const NEGATION_RE = /\b(?:never|don'?t|do\s+not|avoid|must\s+not|no|skip)\b/i
 export const DIY_ACTION_SOURCE =
   '\\b(?:freeze|scrape|lift|brush|rub|scrub|apply|use|add|dab|pour|soak|wash|launder|rinse|flush|spray|sponge|treat|mix|iron|steam|wipe)\\b'
+export const INSTRUCT_VERB_RE =
+  /\b(?:use|apply|try|add|dab|pour|soak|wash|rinse|flush|treat|scrub|rub|brush|scrape|iron|tumble|put|mix|dry|wipe)\b/i
+// GOV-HEAT-1 — heat application tokens. A sentence positively instructing one
+// of these is dropped from consumer cards (GONR core rule: no heat until the
+// stain is fully out); negated warnings survive.
+export const HEAT_INSTRUCTION_TOKEN_RE =
+  /\b(?:iron(?:ing)?|hot\s+water|boiling\s+water|tumble[-\s]dry(?:er|ing)?|machine[-\s]dry(?:er|ing)?|hair\s*dryer|steam(?:er|ing)?|heat[-\s]dry(?:ing)?)\b/i
 
 // The ONLY sanctioned post-exposure rinse wording for consumer cards. The
 // release-gate assessor scrubs exactly this conditional shape before scanning
@@ -421,6 +428,8 @@ const RED_CELL_ENTRIES: RuleEntry[] = [
   { id: 'permanence-honesty', source: 'terminal-gate', action: 'downgrade', trigger: 'permanence-class stain (permanent marker/Sharpie) — honest odds, no removal promise', evalCases: ['EV-083'] },
   { id: 'damage-repair-expectation', source: 'terminal-gate', action: 'downgrade', trigger: 'fiber damage, not a stain (shrunk/felted/color loss/bleach spot) — honest limits', evalCases: ['EV-092', 'EV-093'] },
   { id: 'delicate-water-sensitive-fiber', source: 'terminal-gate', action: 'downgrade', trigger: 'rayon/viscose — water-spots and rings; suite doctrine protect-only (SB review flagged)', evalCases: ['EV-014', 'EV-059', 'EV-090'] },
+  { id: 'delicate-fiber-construction', source: 'terminal-gate', action: 'downgrade', trigger: 'couture veto class: silk/velvet/satin/embellished/structured/vintage — protect-only (wool-class EXCLUDED pending SB doctrine)', evalCases: ['EV-003', 'EV-025', 'EV-030', 'EV-031', 'EV-032', 'EV-033', 'EV-034', 'EV-037', 'EV-041', 'EV-043', 'EV-052', 'EV-053', 'EV-056', 'EV-058', 'EV-086', 'EV-094'] },
+  { id: 'solvent-class-stain', source: 'terminal-gate', action: 'downgrade', trigger: 'solvent-territory stain class (dried oil-based paint) — pro only', evalCases: ['EV-018'] },
   { id: 'escalation-request', source: 'terminal-gate', action: 'downgrade', trigger: 'stronger/strongest/nuclear-option escalation ask — effort never increases in-session', evalCases: ['ADV-005', 'ADV-006', 'ADV-007'] },
   { id: 'guardrail-bypass-attempt', source: 'terminal-gate', action: 'downgrade', trigger: 'pretend-pro / ignore-rules / injection phrasing in request', evalCases: ['ADV-001', 'ADV-002', 'ADV-004'] },
 ]
@@ -439,6 +448,7 @@ const GOVERNOR_ENTRIES: RuleEntry[] = [
     trigger: `confidence overstatement: ${r.re.source.slice(0, 50)}… → "${r.replacement}"`,
   })),
   { id: 'GOV-BUDGET', source: 'governor', action: 'trim', trigger: 'positive DIY-action clauses exceed the effort budget for the derived risk tier (red 0 / orange 1 / default 4); excess steps trimmed from the tail, fail-closed if untrimmable' },
+  { id: 'GOV-HEAT-1', source: 'governor', action: 'strip', trigger: 'positive heat instruction (iron/hot water/dryer/steam) in a consumer card — GONR core rule: no heat until the stain is gone; negated warnings survive' },
 ]
 
 const OTHER_ENTRIES: RuleEntry[] = [
