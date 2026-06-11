@@ -139,6 +139,9 @@ describe('TASK-236 — evidence triggers are narrow', () => {
     expect(ev('tomato sauce', 'rayon dress, rinsed hot + hair-dried').heatApplied).toBe(true)
     expect(ev('crayon went through the dryer with a whole load', 'mixed cotton laundry load').heatApplied).toBe(false)
     expect(ev('red wine', 'white cotton, already dried 2 days').heatApplied).toBe(false)
+    // EV-044 (TASK-240 determinism follow-up): "dried in the dryer" IS a
+    // heat-set disclosure; the crayon cause-of-stain phrasing above stays out.
+    expect(ev('stain already dried in the dryer', 'cotton tee').heatApplied).toBe(true)
   })
 
   it('EV-050 (bleach question, known white cotton) does NOT fire uncertainty', () => {

@@ -71,7 +71,7 @@ const APPLIED_VERBS = '(?:used|applied|poured|put|tried|treated|already|scrubbed
 // dryer load" (the dryer caused the stain) and "already dried 2 days" (the
 // stain air-dried) never read as heat treatment.
 const HEAT_APPLIED_RE =
-  /(?:used|applied|tried|put|hit|blasted|went\s+over)[^.;\n]{0,30}(?:hot\s+water|hair\s*dryer|dryer|iron(?:ed)?|steam)|(?:hot\s+water|hair\s*dryer|iron|steam)[^.;\n]{0,25}(?:was\s+used|already|applied)|machine[-\s]dried|tumble[-\s]dried|ironed\s+(?:it|over|the)|rinsed[^.;\n]{0,12}\bhot\b|hair[-\s]?dried|blow[-\s]?dried/i
+  /(?:used|applied|tried|put|hit|blasted|went\s+over)[^.;\n]{0,30}(?:hot\s+water|hair\s*dryer|dryer|iron(?:ed)?|steam)|(?:hot\s+water|hair\s*dryer|iron|steam)[^.;\n]{0,25}(?:was\s+used|already|applied)|machine[-\s]dried|tumble[-\s]dried|ironed\s+(?:it|over|the)|rinsed[^.;\n]{0,12}\bhot\b|hair[-\s]?dried|blow[-\s]?dried|dried\s+in\s+the\s+dryer/i
 
 const RUBBED_RE =
   /rubbed(?:\s+(?:it|hard|vigorously|a\s+lot))?|scrubbed|scoured|agitated\s+hard|wiped\s+hard/i
