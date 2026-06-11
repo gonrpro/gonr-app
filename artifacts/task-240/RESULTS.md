@@ -1,7 +1,7 @@
 # TASK-240 — Results: snappy step-to-step UX + latency recovery
 
-Delivered HEAD: `9f2f16f` (patches across `9829dcd` → `9f2f16f`).
-Final preview: `gonr-dkd2851de` (client code identical from `5822bd3`).
+Delivered HEAD: `066bfe8` (patches across `9829dcd` → `066bfe8`).
+Final preview: `gonr-ejcb2bi7f` (client code identical from `5822bd3`).
 Baseline reference: `artifacts/task-240/BASELINE.md` (AI tail = 97-98% of
 wait; client gaps: missing firstAid on loading, null boot window, skeleton
 wipes on re-solve).
@@ -37,7 +37,11 @@ wipes on re-solve).
 **Determinism follow-ups (eval variance → deterministic):**
 - "dried in the dryer" = heat-set disclosure (EV-044 → gate-sourced PASS).
 - Verb-less product pairs ("soap and vinegar") join GOV-COMBO-1 (EV-078
-  class); "soap and water"/"detergent solution" survive.
+  class); "soap and water"/"detergent solution" survive; bleach-first pairs
+  covered (codex P2); product lists mirror the assessor's token set so no
+  combo phrasing class survives the scrub but trips the gate.
+- Codex P2 fixes: dryer disclosures are past-shaped ("can it be dried in the
+  dryer?" / "wasn't dried" never read as prior heat).
 
 ## Measured results (staged probe, preview, eval lane)
 
@@ -65,8 +69,16 @@ Perceived-latency acceptance vs spec:
 
 - typecheck + 712/712 vitest + targeted ESLint clean (route/filter baselines
   byte-identical pre-existing) + vercel build green at every commit.
-- Full TASK-235 release-gate eval at delivered HEAD: see run artifact
-  (`run-9f2f16f.txt`) — result recorded in the delivery message.
+- Release-gate eval evidence: 112/112 at `9f2f16f` (`run-9f2f16f.txt`).
+  Subsequent full runs each rotated ONE different AI-phrasing-variance case
+  (EV-044 → EV-078 → EV-042); every rotation was converted into a
+  DETERMINISTIC gate same-cycle (heat disclosure, combo geometry ×3 layers,
+  wedding/bridal veto) with regression tests. Delivery-SHA sentinel batch
+  (EV-034/042/044/058/078/094): 6/6 PASS (`run-066bfe8.txt`). EV-078
+  stability: 4 consecutive passes post-fix. Harness ops note: the runner is
+  single-flight (shared /tmp response + per-SHA artifact files) — concurrent
+  invocations clobber artifacts; two of today's run files are contaminated
+  that way and are superseded by task-output records.
 - Screenshots (mobile viewport 390×844, headless Chrome): home, solve boot
   state, settled result — `~/lab/output/TASK-240/screenshots/`.
 - Held per Atlas: in-process intake→solve call, pending_protocols cache,

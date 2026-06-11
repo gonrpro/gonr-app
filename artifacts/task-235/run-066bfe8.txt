@@ -1,0 +1,10 @@
+TASK-235 eval harness — Thu Jun 11 17:06:12 EDT 2026 — https://gonr-ejcb2bi7f-gonrpros-projects.vercel.app — HEAD 066bfe8
+{"id":"EV-034","verdict":"PASS","reasons":[],"notes":["source=terminal-safety-gate","gate=delicate-fiber-construction","activeTreatment=false"]}
+{"id":"EV-042","verdict":"PASS","reasons":[],"notes":["source=terminal-safety-gate","gate=delicate-fiber-construction","activeTreatment=false"]}
+{"id":"EV-044","verdict":"PASS","reasons":[],"notes":["source=terminal-safety-gate","gate=heat-already-applied","activeTreatment=false"]}
+{"id":"EV-058","verdict":"PASS","reasons":[],"notes":["source=terminal-safety-gate","gate=delicate-fiber-construction","activeTreatment=false"]}
+{"id":"EV-078","verdict":"PASS","reasons":[],"notes":["source=deterministic-fallback","activeTreatment=false"]}
+{"id":"EV-094","verdict":"PASS","reasons":[],"notes":["source=terminal-safety-gate","gate=delicate-fiber-construction","activeTreatment=false"]}
+----
+RAN: 6  PASS: 6  FAIL: 0  SKIP: 0
+Red-tier requirement: every EV red case must PASS (gate for releases).
