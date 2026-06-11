@@ -14,7 +14,7 @@ import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
 import { buildConsumerSolvePrompt } from '@/lib/solve/consumer-prompt'
 import { enforceConsumerCard, buildRequestDisclosureText } from '@/lib/solve/consumer-output-guard'
 import { parseSessionEvidence } from '@/lib/solve/session-evidence'
-import { applyTerminalGate } from '@/lib/solve/terminal-safety-gate'
+import { applyTerminalGate, firedRedCells, buildDowngradeCard } from '@/lib/solve/terminal-safety-gate'
 import { buildFirstAid, buildDirectAnswer } from '@/lib/solve/first-aid'
 import { enrichProductsWithAffiliates } from '@/lib/protocols/enrichProducts'
 import { createClient } from '@supabase/supabase-js'
@@ -701,6 +701,7 @@ function finalizeCardForResponse(card: any, viewerTier: SolveTier | 'anon' | nul
 }
 
 export async function POST(req: Request) {
+  const _t0 = Date.now()
   try {
     const apiKey = process.env.OPENAI_API_KEY
     const contentType = req.headers.get('content-type') || ''
@@ -905,7 +906,7 @@ export async function POST(req: Request) {
         userId: email,
         sessionId: correlationId,
       })
-      return NextResponse.json({ ...result, card: finalizeCardForResponse(plantTunedCard, viewerTier, ctx), stainType: resolveStainType(plantTunedCard, ctx), correlationId, viewerTier })
+      return NextResponse.json({ ...result, card: finalizeCardForResponse(plantTunedCard, viewerTier, ctx), stainType: resolveStainType(plantTunedCard, ctx), correlationId, viewerTier, _serverMs: Date.now() - _t0 })
     }
 
     // ── TASK-056: parse the unknown-meta suffix ONCE here ─────
@@ -1041,6 +1042,55 @@ export async function POST(req: Request) {
       }
     }
 
+    // ── TASK-234: deterministic fast path for red-cell sessions ─────────
+    // When session evidence already fires a red cell, the terminal gate would
+    // constrain whatever the AI produced anyway — so for consumer tiers we
+    // skip the 8-28s AI call entirely and serve the deterministic protect+
+    // refer verdict immediately. Safety is equal-or-better (deterministic,
+    // contract-clean, gate-verified); latency on the HIGHEST-RISK sessions
+    // drops from the AI tail to sub-second. Founder/paid behavior unchanged.
+    if (!(viewerTier && PAID_TIERS.has(viewerTier))) {
+      const fastEvidence = parseSessionEvidence({
+        stain: ctx.stain,
+        surface: ctx.surface,
+        careSymbols: ctx.careSymbols,
+        hazardQuestion: (ctx as { hazardQuestion?: string }).hazardQuestion,
+      })
+      const fastReasons = firedRedCells(fastEvidence)
+      if (fastReasons.length > 0) {
+        const fastCard = buildDowngradeCard({}, fastReasons, ctx.stain, ctx.surface)
+        logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: fastCard.title, source: 'deterministic-fast-path', confidence: 1 }).catch(() => {})
+        logSolveReview({
+          queryRaw: `${ctx.stain} on ${ctx.surface}`,
+          stain: ctx.stain,
+          surface: ctx.surface,
+          tierRequested: viewerTier,
+          matchedCardKey: null,
+          usedAiFallback: false,
+          userId: email,
+          sessionId: correlationId,
+        })
+        recordEvent({
+          type: EVENT_TYPES.SOLVE_AI_FALLBACK_SERVED,
+          actor_id: email ?? null,
+          plant_id: null,
+          payload: { stain: ctx.stain, surface: ctx.surface, tier: viewerTier, fast_path_reasons: fastReasons },
+          correlation_id: correlationId,
+        }).catch(() => {})
+        return NextResponse.json({
+          card: finalizeCardForResponse(fastCard, viewerTier, ctx),
+          tier: 4,
+          confidence: 1,
+          source: 'deterministic-fast-path',
+          stainType: resolveStainType(null, ctx),
+          correlationId,
+          viewerTier,
+          _fastPath: true,
+          _serverMs: Date.now() - _t0,
+        })
+      }
+    }
+
     // ── AI fallback (Home / Free / Anon only) ──────────────────
     try {
       // TASK-231: Stain Brain retrieval is DISABLED on this path — it is the
@@ -1122,6 +1172,7 @@ export async function POST(req: Request) {
         correlationId,
         viewerTier,
         ...(aiFallbackDisclosure ? { ai_fallback_disclosure: aiFallbackDisclosure } : {}),
+        _serverMs: Date.now() - _t0,
       })
     } catch (err) {
       console.error('AI fallback failed:', err)

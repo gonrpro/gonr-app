@@ -9,6 +9,7 @@ import GonrLogo from '@/components/brand/GonrLogo'
 import { EXAMPLE_CHIPS } from '@/lib/consumer-safety/solve-input'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { listHistoryIds, listHistoryEntries, type HistoryEntry } from '@/lib/solve/history-store'
+import { hasLikelySession } from '@/lib/auth/has-session'
 
 // TASK-218 Screen 11 — HISTORY. Every past stain check in one calm, premium list,
 // bound to the REAL /api/solves/history endpoint (session-cookie auth; no signup
@@ -95,6 +96,20 @@ export default function HistoryScreen() {
     let cancelled = false
     void (async () => {
       try {
+        // TASK-234 — anonymous sessions skip the cookie-auth endpoint (it
+        // 401'd as a console resource error) and render local entries only.
+        if (!hasLikelySession()) {
+          const local = listHistoryEntries().map(localEntryToRow)
+          if (!cancelled) {
+            if (local.length > 0) {
+              setRows(local)
+              setState('ready')
+            } else {
+              setState('auth')
+            }
+          }
+          return
+        }
         const res = await fetch('/api/solves/history?limit=50', { credentials: 'include' })
         if (cancelled) return
         const local = listHistoryEntries().map(localEntryToRow)

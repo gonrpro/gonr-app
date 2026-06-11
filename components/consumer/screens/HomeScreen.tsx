@@ -12,6 +12,8 @@ import GonrLogo from '@/components/brand/GonrLogo'
 import FooterContent from '@/components/layout/FooterContent'
 import { EXAMPLE_CHIPS } from '@/lib/consumer-safety/solve-input'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { hasLikelySession } from '@/lib/auth/has-session'
+import { listHistoryEntries } from '@/lib/solve/history-store'
 
 type Translate = (key: string) => string
 
@@ -87,6 +89,29 @@ export default function HomeScreen() {
 
   useEffect(() => {
     let cancelled = false
+    // TASK-234 — anonymous sessions skip the cookie-auth endpoint entirely
+    // (it 401'd as a browser resource error on every anon load) and read the
+    // locally persisted checks instead. Signed-in behavior unchanged.
+    if (!hasLikelySession()) {
+      const local = listHistoryEntries()
+        .slice(0, 4)
+        .map((e) => ({
+          correlation_id: e.id,
+          stain: (e.input as { stainDescription?: string })?.stainDescription ?? null,
+          surface: null,
+          served_at: new Date(e.ts).toISOString(),
+          outcome: null,
+        }))
+      // External-store sync (localStorage read post-mount, same pattern as
+      // SolveFlow's boot effect) — a single intentional state write.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setRecent(local)
+       
+      setRecentLoaded(true)
+      return () => {
+        cancelled = true
+      }
+    }
     fetch('/api/solves/history?limit=4', { credentials: 'include' })
       .then((res) => (res.ok ? (res.json() as Promise<HistoryResponse>) : null))
       .then((data) => {
