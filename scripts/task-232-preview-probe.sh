@@ -117,7 +117,11 @@ da = card.get("directAnswer") or {}
 (ok if da.get("answer") == "No" else bad).append("direct-No" if da.get("answer") == "No" else "missing-direct-No")
 (ok if (card.get("firstAid") or {}).get("steps") else bad).append("firstAid" if (card.get("firstAid") or {}).get("steps") else "missing-firstAid")
 import re
-if re.search(r"prior\s+bleach", text, re.I):
+# Claim-shaped assertions only (matches the output guard contract): a
+# CONDITIONAL safety mention ("if prior bleach exposure occurred, rinse…")
+# is legitimate advice, not a fabricated history claim.
+FABRICATION = r"with\s+prior\s+bleach|prior\s+bleach\s+(?:was\s+)?(?:applied|used)|already\s+(?:used|applied)\s+(?:\w+\s+)?bleach|treated\s+(?:at\s+home\s+)?with\s+(?:\w+\s+)?bleach"
+if re.search(FABRICATION, text, re.I):
     bad.append("FABRICATED-prior-bleach")
 else:
     ok.append("no-fabrication")

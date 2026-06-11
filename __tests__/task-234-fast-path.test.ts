@@ -51,6 +51,29 @@ describe('TASK-234 — deterministic fast path', () => {
   })
 })
 
+describe('TASK-234 — hardened fabrication shapes (intermittent probe catch)', () => {
+  const req = { requestText: 'coffee stain on cotton shirt' }
+  it.each([
+    'Bleach was used on this stain earlier.',
+    'Bleach has been applied to the area.',
+    'The user applied chlorine bleach before this check.',
+  ])('blocks passive/third-person assertion: %s', (phrase) => {
+    const rules = validateConsumerCard(
+      { title: 'Coffee on Cotton', homeSolutions: [phrase], escalation: {} },
+      req,
+    ).map((v) => v.rule)
+    expect(rules).toContain('fabricated-history:bleach')
+  })
+
+  it('conditional advice is NOT flagged as fabrication', () => {
+    const rules = validateConsumerCard(
+      { title: 'Coffee on Cotton', homeSolutions: ['If any bleach product touched the fabric earlier, rinse with cool water and stop.'], escalation: {} },
+      req,
+    ).map((v) => v.rule)
+    expect(rules.filter((r) => r.startsWith('fabricated-history'))).toEqual([])
+  })
+})
+
 describe('TASK-234 — anon 401 cleanup', () => {
   afterEach(() => vi.unstubAllGlobals())
 

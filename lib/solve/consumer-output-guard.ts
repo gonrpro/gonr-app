@@ -67,6 +67,11 @@ const HISTORY_AGENTS = [
 ] as const
 
 // Phrasings that assert the user already did something with an agent.
+// TASK-234 hardening: added passive assertion shapes ("bleach was used",
+// "bleach has been applied") after a live probe caught one AI-authored
+// claim-shaped phrase rendering once in ~9 intake runs. Conditional advice
+// ("IF prior bleach exposure occurred, rinse…") stays legitimate — only
+// assertion shapes are fabrication.
 function fabricatedHistoryPatterns(agent: string): RegExp[] {
   return [
     new RegExp(`prior\\s+(?:\\w+\\s+)?${agent}[\\w\\s]{0,20}(?:applied|used|treatment)`, 'i'),
@@ -74,6 +79,8 @@ function fabricatedHistoryPatterns(agent: string): RegExp[] {
     new RegExp(`already\\s+(?:applied|used|tried)\\s+(?:\\w+\\s+){0,2}${agent}`, 'i'),
     new RegExp(`treated\\s+(?:at\\s+home\\s+)?with\\s+(?:\\w+\\s+){0,2}${agent}`, 'i'),
     new RegExp(`after\\s+(?:your|the\\s+user'?s?)\\s+${agent}`, 'i'),
+    new RegExp(`${agent}\\s+(?:was|has\\s+been|had\\s+been)\\s+(?:previously\\s+)?(?:applied|used)`, 'i'),
+    new RegExp(`(?:user|they|you)\\s+(?:had\\s+)?(?:applied|used|poured)\\s+(?:\\w+\\s+){0,2}${agent}`, 'i'),
   ]
 }
 
