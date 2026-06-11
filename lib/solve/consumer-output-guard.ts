@@ -285,7 +285,15 @@ export function validateConsumerCard(
 // sanitization, so it must never reintroduce pro-only fields.
 // If this card ever fails validation the guard tests fail.
 export function minimalSafeCard(stain: string, surface: string): Card {
-  const what = stain && surface ? `${stain} on ${surface}` : 'this stain'
+  // Same folded-note hygiene as buildDowngradeCard (TASK-234): engine stain
+  // text can carry internal notes after an em-dash — never echo them.
+  const clean = (v: string) => {
+    const head = (v ?? '').split('—')[0].split(';')[0].trim()
+    return !head || head.length > 60 || /\bprior\b|\bapplied\b|\bunknown\b/i.test(head) ? '' : head
+  }
+  const cs = clean(stain)
+  const cf = clean(surface)
+  const what = cs && cf ? `${cs} on ${cf}` : 'this stain'
   return {
     id: 'safe-fallback-protect-only',
     title: 'Protect the item — this one needs a professional',

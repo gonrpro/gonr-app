@@ -121,8 +121,10 @@ import re
 # CONDITIONAL safety mention ("if prior bleach exposure occurred, rinse…")
 # is legitimate advice, not a fabricated history claim.
 FABRICATION = r"with\s+prior\s+bleach|prior\s+bleach\s+(?:was\s+)?(?:applied|used)|already\s+(?:used|applied)\s+(?:\w+\s+)?bleach|treated\s+(?:at\s+home\s+)?with\s+(?:\w+\s+)?bleach"
-if re.search(FABRICATION, text, re.I):
+m = re.search(r".{0,60}(?:" + FABRICATION + r").{0,60}", text, re.I)
+if m:
     bad.append("FABRICATED-prior-bleach")
+    print("FABRICATION-CONTEXT: " + m.group(0).replace("\\n", " "), file=__import__("sys").stderr)
 else:
     ok.append("no-fabrication")
 print(("PASS " if not bad else "FAIL ") + "+".join(ok) + ((" / " + "+".join(bad)) if bad else "") + " phase=" + str(d.get("phase")))

@@ -1238,8 +1238,28 @@ function assembleInput(
   // matched tokens keeps the deterministic engine's prior-chemistry gate armed.
   // We scan the user's RAW words too — a disclosure the model omitted from its output
   // ("I already poured bleach on it") still hands the literal token to the engine.
-  const priorMatches =
-    stripHazardQuestions(`${flags} ${careRisk} ${rawUser}`).match(new RegExp(PRIOR_AGGRESSIVE.source, 'gi')) ?? []
+  // TASK-234 — three trust levels for prior-chem folding:
+  //  • flags = the model's STRUCTURED risk tokens ('prior_bleach') — designed
+  //    fail-closed signals, keep bare-token sensitivity;
+  //  • rawUser = the user's own words — bare-token after question-strip (a
+  //    chip answer "bleach" to the prior-treatment question is a disclosure);
+  //  • careRisk = model PROSE — must be assertion-shaped ("bleach was used"),
+  //    because topic echo ("prior bleach: unknown", "user asked about
+  //    bleach") was folding phantom "prior bleach applied" notes into the
+  //    engine stain text on ~1 in 9 live runs (caught by the TASK-234 probe).
+  const PROSE_ASSERTED = new RegExp(
+    `(?:used|applied|poured|put|tried|treated|already|previously|earlier)[^.;?\n]{0,40}\b(?:${PRIOR_AGGRESSIVE.source})|\b(?:${PRIOR_AGGRESSIVE.source})\b[^.;?\n]{0,30}(?:was\s+(?:used|applied)|already)`,
+    'gi',
+  )
+  const proseText = stripHazardQuestions(careRisk)
+  const userText = stripHazardQuestions(rawUser)
+  const priorMatches = [
+    ...(flags.match(new RegExp(PRIOR_AGGRESSIVE.source, 'gi')) ?? []),
+    ...(proseText.match(PROSE_ASSERTED) ?? []).flatMap(
+      (m) => m.match(new RegExp(PRIOR_AGGRESSIVE.source, 'gi')) ?? [],
+    ),
+    ...(userText.match(new RegExp(PRIOR_AGGRESSIVE.source, 'gi')) ?? []),
+  ]
   const priorTreatment = Array.from(new Set(priorMatches.map((token) => token.toLowerCase())))
 
   const description = engineStainTerm(parsedFacts, userNote, out.read.stain)

@@ -93,9 +93,22 @@ function reasonLine(reasons: string[]): string {
   return 'The safest move for this one is to protect the item and see a professional.'
 }
 
+// Engine stain/surface strings carry FOLDED INTERNAL NOTES after an em-dash
+// separator ("coffee stain — prior bleach applied"). Echoing them verbatim
+// into consumer prose re-renders upstream contamination as if it were user
+// history (caught live, TASK-234 probe). Keep only the part before the
+// separator, clamp length, and fall back to neutral copy.
+function cleanFactText(value: string): string {
+  const head = (value ?? '').split('—')[0].split(';')[0].trim()
+  if (!head || head.length > 60 || /\bprior\b|\bapplied\b|\bunknown\b/i.test(head)) return ''
+  return head
+}
+
 // Build the downgrade card: protect+refer, preserving original warnings.
 export function buildDowngradeCard(original: Card, reasons: string[], stain: string, surface: string): Card {
-  const what = stain && surface ? `${stain} on ${surface}` : 'this stain'
+  const cleanStain = cleanFactText(stain)
+  const cleanSurface = cleanFactText(surface)
+  const what = cleanStain && cleanSurface ? `${cleanStain} on ${cleanSurface}` : 'this stain'
   const preservedWarnings: string[] = Array.isArray(original?.materialWarnings)
     ? original.materialWarnings.filter((w: unknown): w is string => typeof w === 'string').slice(0, 4)
     : []
