@@ -12,7 +12,8 @@ import { checkHardRefuseCombo } from '@/lib/solve/hard-refuse'
 import { normalizeAICard } from '@/lib/protocols/normalizeAICard'
 import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
 import { buildConsumerSolvePrompt } from '@/lib/solve/consumer-prompt'
-import { enforceConsumerCard, buildRequestDisclosureText } from '@/lib/solve/consumer-output-guard'
+import { enforceConsumerCard, buildRequestDisclosureText, minimalSafeCard } from '@/lib/solve/consumer-output-guard'
+import { applyGovernor } from '@/lib/solve/governor'
 import { parseSessionEvidence } from '@/lib/solve/session-evidence'
 import { applyTerminalGate, firedRedCells, buildDowngradeCard } from '@/lib/solve/terminal-safety-gate'
 import { buildFirstAid, buildDirectAnswer } from '@/lib/solve/first-aid'
@@ -658,8 +659,26 @@ function finalizeCardForResponse(card: any, viewerTier: SolveTier | 'anon' | nul
   // the JSON the consumer's browser will receive.
   const sanitized = sanitizeCardForTier(card, viewerTier)
   if (!sanitized || (viewerTier && PAID_TIERS.has(viewerTier))) return sanitized
+  // TASK-236 — result governor runs FIRST on the sanitized card, so the guard
+  // and the terminal gate judge the governed text exactly as it would render:
+  // unlimited-attempt language stripped, confidence overstatements softened,
+  // active steps trimmed to the effort budget of the derived risk tier. A
+  // card that cannot be trimmed under budget fails closed to the minimal
+  // protect-only card.
+  const evidence = parseSessionEvidence({
+    stain: ctx?.stain,
+    surface: ctx?.surface,
+    careSymbols: ctx?.careSymbols,
+    hazardQuestion: ctx?.hazardQuestion,
+  })
+  const redCells = firedRedCells(evidence)
+  const governed = applyGovernor(sanitized, evidence, redCells)
+  if (governed.applied.length > 0) {
+    console.error(`[Governor] applied: ${governed.applied.map((a) => a.rule).join(', ')}`)
+  }
+  const governedCard = governed.failClosed ? minimalSafeCard(ctx?.stain ?? '', ctx?.surface ?? '') : governed.card
   const res = enforceConsumerCard(
-    sanitized,
+    governedCard,
     () => sanitizeCardForTier(buildContextualFallback(ctx), viewerTier),
     {
       requestText: buildRequestDisclosureText(ctx),
@@ -675,12 +694,6 @@ function finalizeCardForResponse(card: any, viewerTier: SolveTier | 'anon' | nul
   // session evidence; red cells with active treatment downgrade to
   // protect+refer. Runs after guard + sanitize so nothing can re-mutate the
   // card after this.
-  const evidence = parseSessionEvidence({
-    stain: ctx?.stain,
-    surface: ctx?.surface,
-    careSymbols: ctx?.careSymbols,
-    hazardQuestion: ctx?.hazardQuestion,
-  })
   const gated = applyTerminalGate(res.card, evidence, {
     stain: ctx?.stain ?? '',
     surface: ctx?.surface ?? '',
@@ -695,6 +708,14 @@ function finalizeCardForResponse(card: any, viewerTier: SolveTier | 'anon' | nul
     finalCard.firstAid = buildFirstAid(evidence)
     if (evidence.directHazardQuestion) {
       finalCard.directAnswer = buildDirectAnswer(evidence.directHazardQuestion)
+    }
+    // TASK-236 — traceability: every stop/refusal/downgrade/trim on this card
+    // resolves to stable rule IDs in lib/safety/rule-table.ts.
+    finalCard._governor = {
+      riskTier: governed.riskTier,
+      applied: governed.applied,
+      failClosed: governed.failClosed,
+      redCells,
     }
   }
   return finalCard

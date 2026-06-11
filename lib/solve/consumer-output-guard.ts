@@ -17,6 +17,12 @@
 // fails validation it is replaced by minimalSafeCard(), which is clean by
 // construction — the chain always terminates in safe output.
 
+// Pro/internal terms that must never reach a consumer screen — definitions
+// moved to the TASK-236 consolidated rule table (lib/safety/rule-table.ts);
+// re-exported here so existing imports keep working.
+import { FORBIDDEN_CONSUMER_TERMS, UNSAFE_CONSUMER_CHEMISTRY } from '../safety/rule-table'
+export { FORBIDDEN_CONSUMER_TERMS }
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Card = any
 
@@ -24,28 +30,6 @@ export interface GuardViolation {
   rule: string
   match: string
 }
-
-// Pro/internal terms that must never reach a consumer screen. Word-boundary
-// regexes so short trade acronyms (POG/VDS/NSD) don't false-positive inside
-// ordinary words. Extend the TASK-231 test list before extending this.
-export const FORBIDDEN_CONSUMER_TERMS: ReadonlyArray<{ id: string; re: RegExp }> = [
-  { id: 'jerrys-house-rules', re: /jerry'?s\s+cleaners/i },
-  { id: 'house-rules', re: /house\s+rules/i },
-  { id: 'spotter-ref', re: /\bspotter\b\s*(?:→|->)?\s*/i },
-  { id: 'bleaching-guide', re: /bleaching\s+guide/i },
-  { id: 'bongo', re: /\bbongo\b/i },
-  { id: 'streetan', re: /\bstreetan\b/i },
-  { id: 'formula-209', re: /formula\s*209/i },
-  { id: 'pog', re: /\bPOG\b/ },
-  { id: 'vds', re: /\bVDS\b/ },
-  { id: 'nsd', re: /\bNSD\b/ },
-  { id: 'acetic-acid', re: /acetic\s+acid|28%\s*acetic/i },
-  { id: 'amyl-acetate', re: /amyl\s+acetate/i },
-  { id: 'steam-gun', re: /steam\s+gun/i },
-  { id: 'sodium-hydrosulfite', re: /sodium\s+hydrosul(?:ph|f)ite/i },
-  { id: 'titanium-sulfate', re: /titanium\s+sulfate/i },
-  { id: 'bleach-vinegar-neutralization', re: /neutrali[sz]e\s+(?:residual\s+)?(?:the\s+)?bleach\s+with\s+vinegar/i },
-]
 
 // Unfilled template placeholders. Matches the report's literal [hours/days] /
 // [products] plus any short bracketed lowercase token that reads like an
@@ -170,6 +154,37 @@ function directRecViolation(text: string): GuardViolation | null {
   return { rule: 'unsupported-direct-recommendation', match: m[0] }
 }
 
+// TASK-236 — unsafe chemistry beyond the trade-term list (rule table:
+// unsafe-chemistry:*). Household/garage products with no safe consumer use on
+// textiles are blocked when POSITIVELY INSTRUCTED in a clause; "never use
+// oven cleaner" warnings pass. TSP stays case-sensitive in the table so
+// "add 1 tsp of detergent" can never false-positive.
+const CHEM_INSTRUCT_RE = /\b(?:apply|use|add|dab|pour|mix|treat|work\s+in|try|scrub|wipe|soak|spray)\b/i
+function unsafeChemistryViolations(text: string): GuardViolation[] {
+  const v: GuardViolation[] = []
+  for (const { id, re } of UNSAFE_CONSUMER_CHEMISTRY) {
+    const fresh = new RegExp(re.source, re.flags)
+    const m = fresh.exec(text)
+    if (!m) continue
+    const before = text.slice(Math.max(0, m.index - 80), m.index)
+    const after = text.slice(m.index, m.index + 80)
+    const leftBoundary = Math.max(
+      before.lastIndexOf('.'),
+      before.lastIndexOf(';'),
+      before.lastIndexOf('!'),
+      before.lastIndexOf('?'),
+      before.lastIndexOf('\n'),
+      before.lastIndexOf('","'),
+    )
+    const rightCandidates = [after.indexOf('.'), after.indexOf(';'), after.indexOf('!'), after.indexOf('?'), after.indexOf('\n'), after.indexOf('","')].filter((i) => i >= 0)
+    const rightBoundary = rightCandidates.length ? Math.min(...rightCandidates) : after.length
+    const clause = before.slice(leftBoundary + 1) + after.slice(0, rightBoundary)
+    if (!CHEM_INSTRUCT_RE.test(clause) || NEGATION_NEAR.test(clause)) continue
+    v.push({ rule: `unsafe-chemistry:${id}`, match: clause.trim().slice(0, 60) })
+  }
+  return v
+}
+
 function collectCardText(card: Card): string {
   // Serialize every string the consumer renderer could show. JSON.stringify
   // covers nested fields (steps, escalation, products, warnings) in one pass;
@@ -273,6 +288,9 @@ export function validateConsumerCard(
   violations.push(...absentStepViolations(card))
   const directRec = directRecViolation(text)
   if (directRec) violations.push(directRec)
+
+  // TASK-236 — broader unsafe-chemistry screen (table-driven)
+  violations.push(...unsafeChemistryViolations(text))
 
   return violations
 }

@@ -24,7 +24,22 @@ export interface SessionEvidence {
   rubbedHard: boolean
   priorChems: string[]
   valuableItem: boolean
-  directHazardQuestion: 'chlorine-bleach' | 'ammonia' | 'acid-mix' | null
+  directHazardQuestion: 'chlorine-bleach' | 'ammonia' | 'acid-mix' | 'hot-water' | null
+  // TASK-236 governor evidence:
+  /** Care label reported blurry/unreadable — ask for retake/fiber, stabilize. */
+  unreadableCareLabel: boolean
+  /** Permanence-class stain (permanent marker/Sharpie) — honest odds only. */
+  permanenceClass: boolean
+  /** Fiber damage, not a stain (shrunk/felted/color loss/bleach spot). */
+  damageRepairAsk: boolean
+  /** "Stronger/strongest/nuclear option" ask — effort never escalates. */
+  escalationRequest: boolean
+  /** Pretend-pro / ignore-rules / prompt-injection phrasing. */
+  guardrailBypassAttempt: boolean
+  /** Colored/dark garment named — chlorine-bleach questions go protect-only. */
+  coloredGarment: boolean
+  /** Rayon/viscose — water-spots and rings; suite doctrine protect-only. */
+  rayonViscose: boolean
 }
 
 export interface SolveRequestFacts {
@@ -41,8 +56,12 @@ export interface SolveRequestFacts {
 const PRIOR_CHEM_AGENTS = ['bleach', 'ammonia', 'peroxide', 'enzyme', 'solvent', 'vinegar', 'acetone', 'alcohol'] as const
 const APPLIED_VERBS = '(?:used|applied|poured|put|tried|treated|already|scrubbed\\s+with|washed\\s+with|prior)'
 
+// TASK-236 (EV-059): real disclosure phrasings "rinsed hot" / "hair-dried" /
+// "blow-dried" added — application-shaped only, so "crayon went through the
+// dryer load" (the dryer caused the stain) and "already dried 2 days" (the
+// stain air-dried) never read as heat treatment.
 const HEAT_APPLIED_RE =
-  /(?:used|applied|tried|put|hit|blasted|went\s+over)[^.;\n]{0,30}(?:hot\s+water|hair\s*dryer|dryer|iron(?:ed)?|steam)|(?:hot\s+water|hair\s*dryer|iron|steam)[^.;\n]{0,25}(?:was\s+used|already|applied)|machine[-\s]dried|tumble[-\s]dried|ironed\s+(?:it|over|the)/i
+  /(?:used|applied|tried|put|hit|blasted|went\s+over)[^.;\n]{0,30}(?:hot\s+water|hair\s*dryer|dryer|iron(?:ed)?|steam)|(?:hot\s+water|hair\s*dryer|iron|steam)[^.;\n]{0,25}(?:was\s+used|already|applied)|machine[-\s]dried|tumble[-\s]dried|ironed\s+(?:it|over|the)|rinsed[^.;\n]{0,12}\bhot\b|hair[-\s]?dried|blow[-\s]?dried/i
 
 const RUBBED_RE =
   /rubbed(?:\s+(?:it|hard|vigorously|a\s+lot))?|scrubbed|scoured|agitated\s+hard|wiped\s+hard/i
@@ -62,6 +81,24 @@ const VALUABLE_RE = /heirloom|sentimental|valuable|luxury|designer|wedding|coutu
 const BLEACH_QUESTION_RE = /can\s+i\s+(?:just\s+)?(?:use|put|try|apply)\s+(?:chlorine\s+)?bleach|is\s+(?:chlorine\s+)?bleach\s+(?:ok|okay|safe)|should\s+i\s+(?:use\s+)?bleach/i
 const AMMONIA_QUESTION_RE = /can\s+i\s+(?:just\s+)?(?:use|put|try|apply)\s+ammonia|is\s+ammonia\s+(?:ok|okay|safe)/i
 const ACID_MIX_QUESTION_RE = /can\s+i\s+mix|mix(?:ing)?\s+(?:bleach|ammonia|vinegar)[^.;\n]{0,30}(?:\?|safe|ok)/i
+// TASK-236 (EV-049): hot water is a hazard question too — heat sets most
+// stain families, so "can I just use hot water?" gets an explicit No.
+const HOT_WATER_QUESTION_RE =
+  /can\s+i\s+(?:just\s+)?(?:use|put|try|pour|rinse\s+(?:it\s+)?(?:in|with))\s+hot\s+water|is\s+hot\s+water\s+(?:ok|okay|safe)|should\s+i\s+(?:use\s+)?hot\s+water/i
+
+// TASK-236 governor evidence patterns. All deterministic, all narrow on
+// purpose — each maps to a red cell with a stable ID in the rule table.
+const UNREADABLE_LABEL_RE =
+  /\b(?:blurry|unreadable|illegible|can'?t\s+(?:read|make\s+out))\b[^.;\n]{0,40}\blabel\b|\blabel\b[^.;\n]{0,60}\b(?:blurry|unreadable|illegible|can'?t\s+(?:be\s+)?read)\b|\blabel\s+photo\s+is\s+\b(?:blurry|unclear)\b/i
+const PERMANENCE_CLASS_RE = /\bpermanent\s+marker\b|\bsharpie\b/i
+const DAMAGE_REPAIR_RE =
+  /\bshrunk(?:en)?\b|\bfelted\b|\bcolor\s+loss\b|\bbleach(?:ed)?\s+(?:spot|patch|mark)\b|\bbleached[-\s]out\b|\bdye\s+loss\b/i
+const ESCALATION_REQUEST_RE =
+  /\bstrongest\b|\bstronger\s+(?:option|step|stuff|product|chemical|treatment)\b|\bsomething\s+stronger\b|\bnuclear\s+option\b|\bkeep\s+escalating\b|\bgive\s+me\s+everything\b|\bwhat\s+else\s+can\s+i\s+(?:try|use)\b/i
+const GUARDRAIL_BYPASS_RE =
+  /\bpretend\s+i'?m\b|\bignore\s+(?:your|the)\s+(?:rules|instructions|safety)\b|\bdisregard\s+(?:your|the)\s+(?:rules|instructions|safety)\b|\bsystem\s*:\s*allow\b|\bi\s+accept\s+the\s+risk\b/i
+const COLORED_GARMENT_RE = /\bcolored\b|\bcolou?red\b|\bdark\b|\bnavy\b|\bblack\b|\bbright(?:ly)?[-\s]colored\b|\bdyed\b/i
+const RAYON_VISCOSE_RE = /\brayon\b|\bviscose\b/i
 
 export function parseSessionEvidence(facts: SolveRequestFacts): SessionEvidence {
   const text = [facts.stain, facts.surface, facts.fabricDescription, facts.garmentLocation, facts.hazardQuestion]
@@ -85,7 +122,9 @@ export function parseSessionEvidence(facts: SolveRequestFacts): SessionEvidence 
       ? ('ammonia' as const)
       : ACID_MIX_QUESTION_RE.test(text)
         ? ('acid-mix' as const)
-        : null
+        : HOT_WATER_QUESTION_RE.test(text)
+          ? ('hot-water' as const)
+          : null
 
   const leatherSuede = LEATHER_SUEDE_RE.test(all)
 
@@ -104,5 +143,12 @@ export function parseSessionEvidence(facts: SolveRequestFacts): SessionEvidence 
     priorChems,
     valuableItem: VALUABLE_RE.test(text),
     directHazardQuestion,
+    unreadableCareLabel: UNREADABLE_LABEL_RE.test(all),
+    permanenceClass: PERMANENCE_CLASS_RE.test(text),
+    damageRepairAsk: DAMAGE_REPAIR_RE.test(text),
+    escalationRequest: ESCALATION_REQUEST_RE.test(text),
+    guardrailBypassAttempt: GUARDRAIL_BYPASS_RE.test(text),
+    coloredGarment: COLORED_GARMENT_RE.test(text),
+    rayonViscose: RAYON_VISCOSE_RE.test(all),
   }
 }

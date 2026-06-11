@@ -31,7 +31,7 @@ export function buildFirstAid(ev?: Partial<SessionEvidence>): FirstAid {
   return { headline: 'Right now — before anything else', steps }
 }
 
-export type DirectHazardQuestion = 'chlorine-bleach' | 'ammonia' | 'acid-mix'
+export type DirectHazardQuestion = 'chlorine-bleach' | 'ammonia' | 'acid-mix' | 'hot-water'
 
 export interface DirectAnswer {
   question: string
@@ -52,8 +52,11 @@ const DIRECT_ANSWERS: Record<DirectHazardQuestion, DirectAnswer> = {
     question: 'Can I use ammonia on this?',
     answer: 'No',
     why: 'Household ammonia permanently darkens coffee, tea, wine and similar stains, and damages wool and silk. Used near bleach it can create toxic gas.',
+    // "Use only the safe steps…" carried a non-negated action verb that read
+    // as active treatment on protect-only cards (TASK-236) — stick to
+    // verb-free phrasing here.
     instead:
-      'Skip ammonia entirely. Never mix it with bleach or any other cleaner. Use only the safe steps below, or hand it to a professional.',
+      'Skip ammonia entirely. Never mix it with bleach or any other cleaner. Stick to the safe steps below, or hand it to a professional.',
   },
   'acid-mix': {
     question: 'Can I mix cleaning products for this?',
@@ -63,6 +66,16 @@ const DIRECT_ANSWERS: Record<DirectHazardQuestion, DirectAnswer> = {
     // stop/downgrade card, so it must never contain active product guidance.
     instead:
       'Never combine cleaning products. If something already touched the item: plain cool water on that spot, nothing else, then stop. When in doubt, let a professional take it from here.',
+  },
+  // TASK-236 (EV-049) — heat is a hazard question too. Copy is protect-only:
+  // no action verbs outside negated clauses, no rinse phrasing beyond the
+  // sanctioned conditional, never names hot water in an instructing clause.
+  'hot-water': {
+    question: 'Can I use hot water on this?',
+    answer: 'No',
+    why: 'Heat is the most common way a removable stain becomes permanent — hot water cooks protein stains into the fiber, sets tannins and dyes, and can shrink or distort delicate fabrics.',
+    instead:
+      'Keep everything cool: no hot water, no dryer, no iron, no steam until the stain is fully out. Blot gently with a clean white cloth, and let a professional take it from here if the stain matters.',
   },
 }
 

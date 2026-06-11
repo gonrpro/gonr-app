@@ -11,6 +11,7 @@
 // the original card is preserved — warnings are never the hazard.
 
 import type { SessionEvidence } from './session-evidence'
+import { firstPositiveDiyClause } from '../safety/rule-table'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Card = any
@@ -59,6 +60,19 @@ export function firedRedCells(ev: SessionEvidence): string[] {
   if (ev.priorChems.length > 0) reasons.push(`prior-chemical:${ev.priorChems.join('+')}`)
   if (ev.unknownFabric && (ev.dryCleanOnly || ev.valuableItem)) reasons.push('unknown-fabric-high-stakes')
   if (ev.valuableItem && (ev.unknownStain || ev.unknownFabric || ev.unknownCare)) reasons.push('valuable-item-uncertainty')
+  // TASK-236 red cells — IDs are registered in lib/safety/rule-table.ts.
+  if (
+    ev.directHazardQuestion &&
+    (ev.unknownStain || ev.unknownFabric || (ev.coloredGarment && ev.directHazardQuestion === 'chlorine-bleach'))
+  ) {
+    reasons.push('hazard-question-uncertainty')
+  }
+  if (ev.unreadableCareLabel) reasons.push('care-label-unreadable')
+  if (ev.permanenceClass) reasons.push('permanence-honesty')
+  if (ev.damageRepairAsk) reasons.push('damage-repair-expectation')
+  if (ev.rayonViscose) reasons.push('delicate-water-sensitive-fiber')
+  if (ev.escalationRequest) reasons.push('escalation-request')
+  if (ev.guardrailBypassAttempt) reasons.push('guardrail-bypass-attempt')
   return reasons
 }
 
@@ -80,6 +94,23 @@ const REASON_COPY: Record<string, string> = {
     "The fiber is unknown and the stakes are high — the safe move is to protect it and let a pro identify the fabric first.",
   'valuable-item-uncertainty':
     'This item matters and too much is unknown. Protect it and hand it to a professional.',
+  // TASK-236 red cells. Copy is written against the eval suite's required-stop
+  // tokens (honesty/odds/limits, ask/retake/fiber, explicit No) — change it
+  // together with the mapped eval cases in lib/safety/rule-table.ts.
+  'hazard-question-uncertainty':
+    'You asked about a strong product, and the honest answer is No — with the fiber or stain not safely identified, that chemistry risks setting the stain or stripping the color. Protect the item instead.',
+  'care-label-unreadable':
+    'The care label could not be read. Retake the label photo in good light, or tell us the fiber (check the small tag at the collar or side seam). Until the fabric is known, treat it as delicate: stabilize only.',
+  'permanence-honesty':
+    'Honest odds: permanent marker is designed to bond with fiber, and complete removal at home is unlikely. A professional may improve it — results vary. Aggressive home attempts usually set it or damage the fabric.',
+  'damage-repair-expectation':
+    'Honest limits: shrinking, felting, and color loss are fiber damage, not a stain — the fiber itself has changed, so this cannot be fully reversed at home. Stop adding products. A textile professional may improve the look (re-dye, reshape), and gentle reshaping is at-your-own-risk work.',
+  'delicate-water-sensitive-fiber':
+    'Rayon and viscose water-spot very easily — wet home treatment commonly leaves rings worse than the original stain. This fabric is safest in professional hands.',
+  'escalation-request':
+    'There is no safe "stronger option" at home — escalating chemistry is how a stain becomes permanent damage. The strongest safe move is a professional, who has options that do not exist over the counter.',
+  'guardrail-bypass-attempt':
+    'Professional spotting chemistry depends on fiber identification, dilution control, and shop equipment — it is never safe as home steps. Protect the item and let a pro work on it.',
 }
 
 function reasonLine(reasons: string[]): string {
@@ -109,8 +140,17 @@ export function buildDowngradeCard(original: Card, reasons: string[], stain: str
   const cleanStain = cleanFactText(stain)
   const cleanSurface = cleanFactText(surface)
   const what = cleanStain && cleanSurface ? `${cleanStain} on ${cleanSurface}` : 'this stain'
+  // TASK-236 (EV-045/046/047): preserved warnings must be prohibition-shaped.
+  // Original-card warnings can carry instructional phrasing ("rinse with cool
+  // water after treating…") that reads as active treatment on a protect-only
+  // card. Keep a warning only if every action verb in it is negated; the
+  // downgrade card's own copy already carries the one sanctioned
+  // post-exposure rinse wording.
   const preservedWarnings: string[] = Array.isArray(original?.materialWarnings)
-    ? original.materialWarnings.filter((w: unknown): w is string => typeof w === 'string').slice(0, 4)
+    ? original.materialWarnings
+        .filter((w: unknown): w is string => typeof w === 'string')
+        .filter((w: string) => firstPositiveDiyClause(w) === null)
+        .slice(0, 4)
     : []
   return {
     id: 'terminal-gate-protect-refer',

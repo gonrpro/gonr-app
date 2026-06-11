@@ -2,6 +2,8 @@
 // GONR Safety Filter — rules-based safety check for AI-generated protocol cards
 // Pure function, no I/O, <1ms execution
 
+import { FILTER_RULES, type FilterContextKey } from './rule-table'
+
 export interface SafetyViolation {
   rule: string
   term: string
@@ -290,223 +292,22 @@ export function runSafetyFilter(card: any, stain: string, surface: string): Safe
   const ctx = detectContext(stain, surface, safeCard)
   const fields = collectFields(safeCard)
 
-  // Build the set of active rules based on context
-  const activeRules: ScanRule[] = []
-
-  // RULE 1: Heat on protein stains (REPLACE)
-  // Extended 2026-04-18 to catch steam/steamer/heated — the eval judge flagged
-  // egg-cotton where the AI introduced steam before protein removal; original
-  // regex only caught literal "hot/warm/boiling water".
-  if (ctx.isProtein) {
-    activeRules.push({
-      id: 'RULE-1: Heat on protein stain',
-      pattern: /\b(hot water|warm water|boiling water|steam(?:er|ing|\s+gun|\s+wand)?|heated water|elevated temperature|agua caliente|agua tibia|agua templada|agua hirviendo|vapor(?:izador|izar)?)\b/gi,
-      replacement: 'cold water',
-      note: '[cold water only — heat permanently sets protein]',
-      action: 'replaced',
-    })
-    // RULE-1b: warm/heated/hot <agent> on protein — caught chocolate-cotton
-    // where AI wrote "warm enzyme and detergent" without literal "warm water".
-    // Lookahead requires a non-water agent word so the rule only triggers
-    // when heat is being applied to a chemistry step; scanAndReplace does
-    // not support $N backreferences, so the match is just the heat word
-    // and the following agent word is preserved in place.
-    activeRules.push({
-      id: 'RULE-1b: Warm/heated agent on protein stain',
-      pattern: /\b(warm|heated|hot)\b(?=\s+(?!water\b)[a-z][a-z-]+)/gi,
-      replacement: 'cool',
-      // No mid-sentence note — would break the "cool <agent>" phrase in the
-      // rendered instruction. The rule id + violations log captures context.
-      action: 'replaced',
-    })
-    // RULE-1c: laundering / washing machine / dryer pre-rinse on protein —
-    // eval judge flagged egg-cotton where AI introduced "laundering before
-    // confirming protein removal"; laundering carries heat + agitation.
-    activeRules.push({
-      id: 'RULE-1c: Laundering before protein removal',
-      pattern: /\b(launder(?:ing|ed)?|washing machine|clothes dryer|tumble dryer|tumble dry|dry cycle|wash cycle)\b/gi,
-      replacement: 'cold-water hand treatment (do not launder until stain is gone)',
-      note: '[no heat-based laundering until the stain is gone]',
-      action: 'replaced',
-    })
-  }
-
-  // RULE 2: Enzymes on wool (REPLACE — wool tolerates pH-neutral alternative)
-  // For silk, enzymes are unsafe AT ALL (see RULE-2S below) — they digest
-  // fibroin irreversibly regardless of pH.
-  if (ctx.isWool && !ctx.isSilk) {
-    activeRules.push({
-      id: 'RULE-2: Enzyme on wool',
-      pattern: /\b(enzyme|protease|enzymatic|biological detergent|OxiClean)\b/gi,
-      replacement: 'pH-neutral protein spotter',
-      action: 'replaced',
-    })
-  }
-
-  // RULE 12: Hot/boiling water on wool — stain-independent (TASK-229b).
-  // Wool-class keratin (incl. cashmere/merino/angora/mohair) felts and shrinks
-  // under hot water regardless of stain family. RULE-1 only covers protein
-  // stains, which is how hot water on mud/wool escaped (eval G3): no rule was
-  // active for non-protein stains on wool. Warm water is NOT banned here —
-  // lukewarm is legitimate wool-wash guidance; hot/boiling is the felting risk.
-  if (ctx.isWool) {
-    activeRules.push({
-      id: 'RULE-12: Hot water on wool',
-      pattern: /\b(hot water|boiling water|agua caliente|agua hirviendo)\b/gi,
-      replacement: 'cool water',
-      // Note must not restate the banned phrase — the rendered text is graded
-      // against mustNotContain, and "hot water" inside the note would re-fail it.
-      note: '[cool water only — heat felts and shrinks wool-class fibers]',
-      action: 'replaced',
-    })
-  }
-
-  // RULE 2S: Enzymes / protein spotters on silk (BLOCK — nuclear)
-  // Added 2026-04-18 after chocolate-silk eval FAIL. Enzymes digest silk
-  // fibroin; "protein spotter" is the protein-spotting agent category and
-  // includes enzymes, proteases, and digestants. No safe generic
-  // replacement exists for silk — send to professional.
-  if (ctx.isSilk) {
-    activeRules.push({
-      id: 'RULE-2S: Enzyme/protein spotter on silk',
-      pattern: /\b(enzyme|protease|enzymatic|biological detergent|protein spotter|protein formula|protein solution|digestant|digestive|enzima|proteasa|enzim[áa]tico|detergente biol[óo]gico|quitamanchas proteico|f[óo]rmula proteica|digestante)\b/gi,
-      replacement: null, // nuclear
-      action: 'blocked',
-    })
-  }
-
-  // RULE 13: Alkali/ammonia on tannin stains (BLOCK — nuclear)
-  // Added 2026-04-18 after beer-cotton eval FAIL. Tannin stains (coffee,
-  // tea, wine, beer, juice, chocolate) are permanently darkened by alkali.
-  // GONR rule: tannin = acid side only, never ammonia or alkali.
-  // Extended with generic "alkaline ..." pattern after second-pass eval
-  // still flagged beer-cotton (AI wrote "alkaline detergent" not "ammonia").
-  if (ctx.isTannin) {
-    activeRules.push({
-      id: 'RULE-13: Alkali on tannin stain',
-      // Spanish synonyms appended (TASK-218): an ES→AI-tier card may name the agent
-      // in Spanish despite the prompt directive. Adding them keeps this nuclear rule
-      // language-robust; a wrong synonym can only over-block (the safe direction).
-      // SB to review the ES chemical list.
-      pattern: /\b(ammonia|ammonium hydroxide|sodium carbonate|sodium hydroxide|lye|caustic soda|washing soda|borax|baking soda|sodium bicarbonate|potassium hydroxide|amon[ií]aco|hidr[óo]xido de amonio|carbonato (?:de sodio|s[óo]dico)|hidr[óo]xido de sodio|sosa c[áa]ustica|soda c[áa]ustica|b[óo]rax|bicarbonato (?:de sodio|s[óo]dico)|hidr[óo]xido de potasio|potasa c[áa]ustica)\b/gi,
-      replacement: null, // nuclear
-      action: 'blocked',
-    })
-    // RULE-13b: generic "alkaline <anything>" on tannin — catches the class
-    // without enumerating every compound name.
-    activeRules.push({
-      id: 'RULE-13b: Alkaline agent on tannin stain',
-      pattern: /\b(?:alkaline|alcalin[oa])\s+(?:detergent|solution|cleaner|spotter|agent|rinse|bath|formula|product|detergente|soluci[óo]n|limpiador|agente|enjuague|producto)\b/gi,
-      replacement: null, // nuclear
-      action: 'blocked',
-    })
-  }
-
-  // RULE 3: Acid on marble (BLOCK)
-  if (ctx.isMarble) {
-    activeRules.push({
-      id: 'RULE-3: Acid on marble/limestone',
-      pattern: /\b(vinegar|citric acid|lemon juice|CLR|muriatic acid|oxalic acid|vinagre|[áa]cido c[íi]trico|jugo de lim[óo]n|zumo de lim[óo]n|[áa]cido muri[áa]tico|[áa]cido ox[áa]lico)\b/gi,
-      replacement: null, // nuclear
-      action: 'blocked',
-    })
-  }
-
-  // RULE 4: Acetone on acetate (BLOCK)
-  if (ctx.isAcetate) {
-    activeRules.push({
-      id: 'RULE-4: Acetone on acetate',
-      pattern: /\b(acetone|nail polish remover|acetona|quitaesmalte|removedor de esmalte)\b/gi,
-      replacement: null, // nuclear
-      action: 'blocked',
-    })
-  }
-
-  // RULE 5: Chlorine bleach on silk/wool (REPLACE)
-  if (ctx.isSilk || ctx.isWool) {
-    activeRules.push({
-      id: 'RULE-5: Chlorine bleach on silk/wool',
-      pattern: /\b(chlorine bleach|sodium hypochlorite|clorox|lej[ií]a|cloro|hipoclorito de sodio|blanqueador con cloro)\b/gi,
-      replacement: 'oxygen-based cleaner (not chlorine)',
-      action: 'replaced',
-    })
-  }
-
-  // RULE 7: H2O2 + ammonia on silk (BLOCK)
-  // Hydrogen peroxide and ammonia both destroy silk fiber protein.
-  // S1 safety-critical: blood on silk must use cold water + NSD only.
-  if (ctx.isSilk) {
-    activeRules.push({
-      id: 'RULE-7: Hydrogen peroxide on silk',
-      pattern: /\b(hydrogen peroxide|h2o2|h₂o₂|peroxide|per[óo]xido de hidr[óo]geno|agua oxigenada|per[óo]xido)\b/gi,
-      replacement: null, // nuclear — block entire response
-      action: 'blocked',
-    })
-    activeRules.push({
-      id: 'RULE-8: Ammonia on silk',
-      pattern: /\b(ammonia|ammonium hydroxide|amon[ií]aco|hidr[óo]xido de amonio)\b/gi,
-      replacement: null, // nuclear — block entire response
-      action: 'blocked',
-    })
-  }
-
-  // RULE 9: Aniline leather — no dish soap, no solvents (REPLACE)
-  // Aniline leather has no protective topcoat. Dish soap strips oils and
-  // dulls the finish; solvents pull dye.
-  if (ctx.isAnilineLeather) {
-    activeRules.push({
-      id: 'RULE-9: Dish soap on aniline leather',
-      pattern: /\b(dish soap|dishwashing liquid|dawn|dish detergent)\b/gi,
-      replacement: 'leather-safe cleaner',
-      // Note must not restate the banned phrase (TASK-229b): the rendered text
-      // is graded against mustNotContain, so "dish soap" inside the note kept
-      // the card failing even after the replacement fired.
-      note: '[aniline leather only — degreasing detergents strip oils and damage the finish]',
-      action: 'replaced',
-    })
-    activeRules.push({
-      id: 'RULE-9b: Solvents on aniline leather',
-      pattern: /\b(acetone|isopropanol|isopropyl alcohol|rubbing alcohol|petroleum solvent|mineral spirits)\b/gi,
-      replacement: 'leather-safe cleaner',
-      note: '[aniline leather — solvents pull dye permanently]',
-      action: 'replaced',
-    })
-  }
-
-  // RULE 10: Alcantara — water-based only (REPLACE)
-  // Petroleum solvents dissolve the polyurethane binder in Alcantara.
-  // Alcohol and steam are also contraindicated.
-  if (ctx.isAlcantara) {
-    activeRules.push({
-      id: 'RULE-10: Solvents on Alcantara',
-      pattern: /\b(acetone|petroleum solvent|mineral spirits|dry cleaning solvent|rubbing alcohol|isopropyl alcohol|isopropanol|ethanol|steam(?:er|ing|\s+gun)?|acetona|solvente de petr[óo]leo|alcohol isoprop[ií]lico|etanol|vapor(?:izador|izar)?)\b/gi,
-      replacement: 'water-based cleaner',
-      note: '[Alcantara — use water-based cleaners only; solvents dissolve the polyurethane binder]',
-      action: 'replaced',
-    })
-  }
-
-  // RULE 11: Rub/scrub on tannin stains (REPLACE)
-  // Rubbing spreads tannin stains and damages fibers. Always blot.
-  if (ctx.isTannin) {
-    activeRules.push({
-      id: 'RULE-11: Rub/scrub on tannin',
-      pattern: /\b(rub|scrub|rubbing|scrubbing|frotar|restriegar|restregar|tallar)\b/gi,
-      replacement: 'blot',
-      note: '[blot — never rub tannin stains; rubbing spreads and sets them]',
-      action: 'replaced',
-    })
-  }
-
-  // RULE 6: Flood/saturate wood (REPLACE)
-  if (ctx.isWood) {
-    activeRules.push({
-      id: 'RULE-6: Saturate wood',
-      pattern: /\b(soak|saturate|flood|submerge)\b/gi,
-      replacement: 'apply sparingly',
-      action: 'replaced',
-    })
-  }
+  // Build the set of active rules from the consolidated rule table
+  // (TASK-236, lib/safety/rule-table.ts): a rule is active when ANY of its
+  // `when.any` context keys is true and NONE of its `when.not` keys is true.
+  // Pattern/replacement/note data lives in the table; this module owns only
+  // the context detection and the scan/replace engine.
+  const activeRules: ScanRule[] = FILTER_RULES.filter((def) => {
+    const active = def.when.any.some((k: FilterContextKey) => ctx[k])
+    const excluded = (def.when.not ?? []).some((k: FilterContextKey) => ctx[k])
+    return active && !excluded
+  }).map((def) => ({
+    id: def.id,
+    pattern: def.pattern,
+    replacement: def.replacement,
+    note: def.note,
+    action: def.replacement === null ? ('blocked' as const) : ('replaced' as const),
+  }))
 
   // Run every active rule against every scannable field
   for (const rule of activeRules) {
