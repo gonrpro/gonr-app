@@ -1,9 +1,10 @@
 # TASK-236 — Consolidated safety rule table: before/after map
 
-Engine HEAD: `73f3e09` — three hardening cycles, each gated by typecheck +
-full vitest + codex review + a full 112-case preview eval run:
-pass 1 `71fd600` (+ assessor refinement `ae76cea`), pass 2 `381bac2`,
-pass 3 `73f3e09`.
+Engine HEAD: `cea9207` — six hardening cycles, each gated by typecheck +
+full vitest + codex review (5 rounds, 12 accepted findings, all fixed) + a
+full 112-case preview eval run: `71fd600` (+ assessor refinement `ae76cea`)
+→ `381bac2` → `73f3e09` → `7684dad` → `232c4a9` → `cea9207`.
+Eval trajectory: 54/112 baseline → 86 → 102 → 108 → 109 → final (delivery msg).
 The single source of truth is **`lib/safety/rule-table.ts`**. To change a
 deterministic consumer-safety rule, edit the table (and the mapped eval case)
 — not the executor.
@@ -19,7 +20,7 @@ deterministic consumer-safety rule, edit the table (and the mapped eval case)
 | Terminal-gate red cells | 9 existing + 7 NEW (see below) | conditions + copy in `lib/solve/terminal-safety-gate.ts` | registry + eval-case map in rule-table; conditions/copy stay in the gate (they need typed evidence) | terminal gate + TASK-234 fast path (new cells join the fast path automatically) |
 | Repeat-language bans (NEW) | `GOV-RETRY-1…5` | — (prompt-level only) | `REPEAT_LANGUAGE_RULES` in rule-table | `lib/solve/governor.ts` (clause strip, empty steps dropped) |
 | Overpromise softeners (NEW) | `GOV-CONF-1…4` | — | `OVERPROMISE_SOFTENERS` in rule-table | governor (rewrite, not fail) |
-| Effort budget (NEW) | `GOV-BUDGET` | — | `EFFORT_BUDGET` (red 0 / orange 1 / default 4 active clauses) | governor (tail-trim; fail-closed → `minimalSafeCard`) |
+| Effort budget (NEW) | `GOV-BUDGET` | — | `EFFORT_BUDGET` (red 0 / orange 0 / default 2 active clauses) | governor (tail-trim; fail-closed → `minimalSafeCard`) |
 | Direct hazard answers | `DQ-*` (4, hot-water NEW) | copy in `lib/solve/first-aid.ts` | registered in rule-table; copy stays in first-aid.ts | finalize attach |
 | Shared lexicon | — | duplicated per module | `NEGATION_RE`, `DIY_ACTION_SOURCE`, clause helpers in rule-table | governor, gate warning-sanitizer, tests |
 
