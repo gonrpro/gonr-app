@@ -41,9 +41,10 @@ export const DIY_ACTION_SOURCE =
 export const INSTRUCT_VERB_RE =
   /\b(?:use|apply|try|add|dab|pour|soak|wash|rinse|flush|treat|scrub|rub|brush|scrape|iron|tumble|put|mix|dry|wipe)\b/i
 // Imperative-shaped heat instruction: a heat verb opening the clause and
-// taking an object ("Steam the area", "Heat the solution", "Iron it on low").
+// taking an object or duration ("Steam the area", "Iron for 10 seconds",
+// "Heat-dry the item") — codex-review P1: duration/adverb forms included.
 export const HEAT_IMPERATIVE_RE =
-  /^\s*["“”']?(?:steam|iron|heat|boil|microwave|blow[-\s]?dry|tumble[-\s]?dry)\s+(?:the|it|them|your|a|an|on|over|in|directly)\b/i
+  /^\s*["“”']?(?:steam|iron|heat(?:[-\s]?dry)?|boil|microwave|blow[-\s]?dry|tumble[-\s]?dry)\s+(?:the|it|them|your|a|an|on|over|in|directly|for|gently|lightly|briefly|until)\b/i
 // GOV-HEAT-1 — heat application tokens. A sentence positively instructing one
 // of these is dropped from consumer cards (GONR core rule: no heat until the
 // stain is fully out); negated warnings survive. Standalone "dryer" included

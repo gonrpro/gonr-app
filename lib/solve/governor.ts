@@ -188,9 +188,14 @@ function scrubAgitation(card: Card, applied: GovernorResult['applied']): Card {
       )
       const clausePre = before.slice(leftBoundary + 1)
       const post = s.slice(m.index + m[0].length, m.index + m[0].length + 20)
-      const imperative = AGITATE_PRE_RE.test(clausePre) && AGITATE_POST_RE.test(post)
+      // Instruction-shaped: token in imperative position, OR a separate
+      // instruct verb earlier in the clause drives it ("Use a soft brush to
+      // scrub the stain" — codex-review P1). Explanatory warnings ("Rubbing
+      // pushes ink deeper") have neither and survive.
+      const imperative = AGITATE_PRE_RE.test(clausePre) || INSTRUCT_VERB_RE.test(clausePre)
+      const instructionShaped = imperative && AGITATE_POST_RE.test(post)
       out += s.slice(last, m.index)
-      if (!imperative || NEGATION_RE.test(clausePre)) {
+      if (!instructionShaped || NEGATION_RE.test(clausePre)) {
         out += m[0]
       } else {
         out += /ing$/i.test(m[0]) ? 'blotting' : 'blot'

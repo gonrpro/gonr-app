@@ -3,9 +3,15 @@
 # around suite-advisory pattern hits. No secrets printed.
 set -uo pipefail
 PREVIEW="${1:?usage: task236-probe-fails.sh <preview-url>}"
+# Never send the eval secret to a non-GONR host (codex-review P2), and never
+# load it from the production env file for a debug probe.
+case "$PREVIEW" in
+  https://gonr-*.vercel.app|https://gonr-*.vercel.app/) ;;
+  *) echo "ABORT: preview URL must be a gonr-*.vercel.app deployment"; exit 2 ;;
+esac
 DIR="$(cd "$(dirname "$0")/.." && pwd)"
 SECRET=""
-for f in "$DIR/.vercel/.env.preview.local" "$DIR/.vercel/.env.production.local"; do
+for f in "$DIR/.vercel/.env.preview.local"; do
   [ -f "$f" ] || continue
   v=$(python3 - "$f" <<'PY' || true
 import sys

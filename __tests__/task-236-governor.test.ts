@@ -497,6 +497,32 @@ describe('TASK-236 — delicate construction + solvent class + heat governor', (
     expect(text).toMatch(/Keep heat away/)
   })
 
+  it('duration-style heat imperatives and tool-mediated scrub instructions are caught (codex round 3)', () => {
+    const card = {
+      ...activeCard(),
+      homeSolutions: [
+        'Steam for 30 seconds to loosen the wax.',
+        'Heat-dry the item once finished.',
+        'Use a soft brush to scrub the stain out.',
+        'Use the cloth to rub the area dry.',
+      ],
+    }
+    const out = applyGovernor(card, ev('ketchup', 'cotton shirt'), [])
+    const text = JSON.stringify(out.card.homeSolutions)
+    expect(text).not.toMatch(/Steam for 30 seconds/i)
+    expect(text).not.toMatch(/Heat-dry the item/i)
+    expect(text).not.toMatch(/\bscrub\b/i)
+    expect(text).not.toMatch(/to rub the area/i)
+  })
+
+  it('metallic/foil print reads as delicate construction (EV-091)', () => {
+    expect(firedRedCells(ev('stain', 'garment with metallic print'))).toContain('delicate-fiber-construction')
+  })
+
+  it('limited supplies caps at orange (EV-062)', () => {
+    expect(deriveRiskTier(ev('grease, traveling, only napkins and water', 'shirt'), [])).toBe('orange')
+  })
+
   it('imperative heat/agitation instructions still drop alongside intact warnings', () => {
     const card = {
       ...activeCard(),
