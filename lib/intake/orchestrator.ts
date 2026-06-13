@@ -462,6 +462,55 @@ function assertedPriorAggressiveTokens(text: string): string[] {
 const HEAT_APPLIED =
   /\b(?:hot|warm|boiling)\s+(?:water|wash)\b|\btumble[\s-]?dr\w*|\bblow[\s-]?dr\w*|\bdryer\b|\biron(?:ed|ing)?\b|\bpress(?:ed|ing)?\b|\bsteam(?:ed|ing)?\b|\bhot\s+(?:setting|cycle|dry\w*)|\balready\s+(?:washed|dried|heated|ironed|pressed|steamed)\b/i
 const DYE = /dye|color|colour|bleed|fade/i
+// Colorfastness describes the GARMENT, not the stain. Deriving prone_to_bleed from the
+// model's STAIN riskFlags (DYE, above) matched any "dye"/"color" mention — so any
+// dye/tannin stain (red wine, ink) or a flag merely saying "discoloration" falsely
+// marked a white / unspecified garment as prone_to_bleed. These matchers only accept
+// the user's words about the GARMENT's own colour/dye behaviour: the colorfastness chip
+// answer ("Dark, bright, or might bleed") arrives as its own user turn, and free text
+// must tie colour words to the item ("dark red dress", "shirt is bright"). Stain
+// descriptors ("dark coffee stain", "bright red lipstick") intentionally do not match.
+// 'unknown' stays the safe default — it still arms the conservative SB-CS-013 caution,
+// and a fiber's intrinsic bleed risk (e.g. silk) arms separately via the material floor
+// (SB-HS-016), so decoupling from stain flags loses no real safety signal.
+const GARMENT_ITEM_WORD =
+  String.raw`(?:garment|item|fabric|material|shirt|dress|blouse|pants|jeans|denim|jacket|coat|sweater|hoodie|towel|sheet|linen|cotton|silk|wool|polyester|nylon|rayon|viscose|leather|suede|velvet|satin)`
+const GARMENT_COLOR_WORD =
+  String.raw`(?:dark|bright|vivid|deep[- ]?colou?red|brightly[- ]?colou?red)`
+const GARMENT_HUE_WORD =
+  String.raw`(?:black|blue|brown|burgundy|green|indigo|maroon|navy|orange|pink|purple|red|teal|yellow)`
+const GARMENT_COLOR_CHIP =
+  /\b(?:dark,\s*bright,\s*or\s*might\s+bleed|dark\s+bright\s+or\s+might\s+bleed)\b/i
+const GARMENT_COLOR_STANDALONE = /^(?:dark|bright|vivid)$/i
+const GARMENT_BLEED_STANDALONE = /^(?:might\s+bleed|may\s+bleed|could\s+bleed|bleeds?)$/i
+const GARMENT_COLOR_CONTEXT = new RegExp(
+  String.raw`\b(?:(?:${GARMENT_COLOR_WORD}|${GARMENT_HUE_WORD})\s+(?:${GARMENT_HUE_WORD}\s+)?${GARMENT_ITEM_WORD}|${GARMENT_ITEM_WORD}\s+(?:is|looks|seems|feels|might\s+be|may\s+be|could\s+be)?\s*(?:${GARMENT_COLOR_WORD}|${GARMENT_HUE_WORD}))\b`,
+  'i',
+)
+const GARMENT_DYE_CONTEXT = new RegExp(
+  String.raw`\b(?:(?:dyed|hand[- ]?dyed|tie[- ]?dye)\s+${GARMENT_ITEM_WORD}|${GARMENT_ITEM_WORD}\s+(?:is|looks|seems|feels)?\s*(?:dyed|hand[- ]?dyed|tie[- ]?dye))\b`,
+  'i',
+)
+const GARMENT_BLEED_BEHAVIOR = new RegExp(
+  String.raw`\b(?:(?:dye|colou?r)\s+(?:may\s+|might\s+|could\s+)?(?:bleed|run)|colou?r\s+runs?|not\s+colou?rfast|${GARMENT_ITEM_WORD}\s+(?:may\s+|might\s+|could\s+)?bleeds?)\b`,
+  'i',
+)
+
+function hasGarmentBleedSignal(rawUser: string): boolean {
+  return rawUser
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .some(
+      (line) =>
+        GARMENT_COLOR_CHIP.test(line) ||
+        GARMENT_COLOR_STANDALONE.test(line) ||
+        GARMENT_BLEED_STANDALONE.test(line) ||
+        GARMENT_COLOR_CONTEXT.test(line) ||
+        GARMENT_DYE_CONTEXT.test(line) ||
+        GARMENT_BLEED_BEHAVIOR.test(line),
+    )
+}
 
 /** Imperative treatment / chemical-action verbs the model must never emit. */
 const TREATMENT_VERB =
@@ -567,6 +616,21 @@ const GENERIC_SAFETY_QUESTION: IntakeQuestion = {
   text: 'One more thing — anything you’ve already tried on it, or anything delicate about the item?',
   options: ['Nothing tried yet', 'Already treated it', 'It is delicate or valuable', 'Not sure'],
 }
+
+// The static-option slot questions the deterministic fast-path may answer with NO model
+// call (TASK-257 Slice 1). FABRIC is mandatory before any verdict, so it fast-paths
+// immediately (TASK-254). AGE / PRIOR / CARE are the guided-flow follow-ups: they fast-path
+// only AFTER at least one question has been asked (asked >= 1), so a single-turn full-info
+// input ("coffee on my cotton shirt", asked === 0) still reaches the model and can solve
+// immediately via readyForVerdict rather than being forced into an age question — the exact
+// over-ask the TASK-254 suite caught. A dynamic confirm question is intentionally NOT in the
+// set (it needs model nuance and only arises for a low-confidence fact).
+const FAST_PATH_SLOT_QUESTIONS: ReadonlySet<IntakeQuestion> = new Set([
+  FABRIC_QUESTION,
+  AGE_QUESTION,
+  PRIOR_TREATMENT_QUESTION,
+  CARE_LABEL_QUESTION,
+])
 
 /** A CONFIRM question for a fact we resolved at LOW confidence (rule (a)). */
 function confirmQuestion(pf: ParsedFacts): IntakeQuestion {
@@ -1247,7 +1311,10 @@ function assembleInput(
   // "I tossed it in the dryer" reaches the engine even if the model never flagged it.
   const heatExposure: HeatExposure =
     HEAT_APPLIED.test(flags) || HEAT_APPLIED.test(careRisk) || HEAT_APPLIED.test(rawUser) ? 'warm_hot_wash' : 'unknown'
-  const colorfastness: Colorfastness = DYE.test(flags) ? 'prone_to_bleed' : 'unknown'
+  // GARMENT colourfastness — derived from the user's words about the ITEM (chip answer or
+  // free text), NEVER from the model's stain riskFlags (which mention dye/colour for any
+  // dye/tannin stain and falsely flagged white garments). 'unknown' stays conservative.
+  const colorfastness: Colorfastness = hasGarmentBleedSignal(rawUser) ? 'prone_to_bleed' : 'unknown'
   const stainAge: StainAge =
     /set|old|dried|aged/.test(flags) || SET_IN_AGE_DISCLOSED.test(rawUser)
       ? 'set_in'
@@ -1372,14 +1439,20 @@ export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise
       (parsedFacts.fabric ? SPECIALTY_FIBER.test(parsedFacts.fabric) : false)
     if (!hazardDisclosed) {
       const detQuestion = nextQuestionAfterIdentitySuppression(parsedFacts, req)
-      // Fast-path ONLY the fabric/surface slot — the dominant TASK-253 case ("coffee" ->
-      // "what surface?") and the one the model path MUST also ask, because it cannot
-      // reach a verdict without a known fabric. Everything else (age, prior, care, confirm,
-      // solve-ready) is LEFT to the model: age-necessity in particular is a per-case
-      // judgment the model makes via readyForVerdict (a low-risk coffee-on-cotton solves
-      // WITHOUT asking age), and forcing a deterministic age question there would over-ask
-      // and change behavior. Reference-equality against the module question constant.
-      if (detQuestion === FABRIC_QUESTION) {
+      // TASK-257 Slice 1: fast-path the static-option slot questions with NO model call.
+      // FABRIC fast-paths at any point (mandatory before a verdict — never an over-ask, the
+      // dominant TASK-253 case "coffee" -> "what surface?"). AGE / PRIOR / CARE fast-path
+      // ONLY once we are already in the guided flow (asked >= 1), so a single-turn full-info
+      // input (asked === 0, fabric already known) still falls through to the model and can
+      // solve immediately via readyForVerdict instead of being forced to ask age — the exact
+      // TASK-254 over-ask the suite caught. A solve-ready read (detQuestion === null) or a
+      // dynamic confirm question (not in the set) still falls through to the model. This
+      // never reaches a verdict — it only picks the next templated slot question.
+      if (
+        detQuestion !== null &&
+        FAST_PATH_SLOT_QUESTIONS.has(detQuestion) &&
+        (detQuestion === FABRIC_QUESTION || asked >= 1)
+      ) {
         return {
           action: 'ask',
           read: {
@@ -1400,9 +1473,10 @@ export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise
           model: 'deterministic',
         }
       }
-      // Not a core fabric/age slot (prior/care/confirm slot, or solve-ready with
-      // detQuestion === null) -> fall through to the model path, UNCHANGED. The SOLVE
-      // fast-path is deliberately deferred (no synthetic engine read here).
+      // Not a fast-pathable slot (a dynamic confirm question, a still-unasked AGE/PRIOR/CARE
+      // on the very first turn, or solve-ready with detQuestion === null) -> fall through to
+      // the model path, UNCHANGED. The SOLVE fast-path is deliberately deferred (no synthetic
+      // engine read here).
     }
   }
 

@@ -407,9 +407,14 @@ export default function AgenticIntake({
         </div>
       ) : null}
 
-      {/* TASK-232 — conservative first-aid visible the whole time the model
-          is reading/asking, so the stain doesn't set during Q&A. */}
-      {phase === 'thinking' || phase === 'asking' ? <FirstAidBanner className="mt-4" /> : null}
+      {/* TASK-232 — conservative first-aid visible while the model reads/asks so the
+          stain doesn't set during Q&A. TASK-257 Slice 1: show it ONCE (initial thinking /
+          first question, threadTurns empty), not re-rendered on every subsequent guided-flow
+          turn — the repeated, non-adapting stabilization block was noise (Cowork audit). It
+          reappears on the Results screen, so protective guidance is never lost. */}
+      {(phase === 'thinking' || phase === 'asking') && threadTurns.length === 0 ? (
+        <FirstAidBanner className="mt-4" />
+      ) : null}
 
       {/* The ONE sharp question + quick-reply chips. */}
       {phase === 'asking' && question ? (
