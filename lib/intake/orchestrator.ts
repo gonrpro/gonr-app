@@ -44,6 +44,7 @@ import {
   type EngineSolveBody,
 } from '@/lib/consumer-safety/solve-input'
 import { containsTerm, inferStainType, normalizeText } from '@/lib/consumer-safety/helpers'
+import { lookupProtocol } from '@/lib/protocols/lookup'
 import stainAliasesData from '@/data/stain-aliases.json'
 import surfaceAliasesData from '@/data/surface-aliases.json'
 
@@ -408,7 +409,14 @@ async function callModel(
 const SPECIALTY_FIBER =
   /silk|cashmere|wool|angora|mohair|acetate|rayon|viscose|chiffon|organza|leather|suede|nubuck|aniline|alcantara|velvet|down|gore-?tex/i
 const UNKNOWN = /unknown|not sure|unsure|unclear|can'?t tell|n\/a|none|^$/i
-const PRIOR_AGGRESSIVE = /bleach|solvent|ammonia|alkali|acetone|peroxide|oxidiz/i
+// User-expressed uncertainty in an answer — a fact given as "not sure" is NOT an explicit
+// structured value, so the TASK-257 Slice 1.6 structured-only solve fast-path defers to the
+// model. Narrower than UNKNOWN (no bare "none"/empty match) so it only catches real hedging.
+const CHIP_UNCERTAINTY = /\bnot sure\b|\bunsure\b|\bdon'?t know\b|\bdunno\b|\bno idea\b/i
+const PRIOR_AGGRESSIVE =
+  /bleach|clorox|chlorine|hypochlorite|solvent|ammonia|alkali|acetone|peroxide|oxidiz|oxi-?clean/i
+const AMBIGUOUS_HAZARD_PROSE =
+  /\b(strong stuff|cleaner|cleaning product|product|chemical|home remedy|used|tried|treated|applied|put|poured|washed|rinsed|scrubbed|soaked|sprayed|rubbed|stain remover|soap|detergent|water)\b|\bhit\s+(?:it|this|that|the stain)\s+with\b/i
 // A QUESTION about an aggressive agent ("can I just use bleach?") is NOT a
 // disclosure that it was applied — folding it into priorTreatment is exactly
 // the pressure test's fabricated "Prior Bleach Applied" (scenario 14). The
@@ -430,7 +438,7 @@ export function stripHazardQuestions(text: string): string {
 function assertedPriorAggressiveTokens(text: string): string[] {
   const prose = stripHazardQuestions(text)
   const asserted = new RegExp(
-    `(?:used|applied|poured|put|tried|treated|already|previously|earlier)[^.;?\\n]{0,40}\\b(?:${PRIOR_AGGRESSIVE.source})|\\b(?:${PRIOR_AGGRESSIVE.source})\\b[^.;?\\n]{0,40}(?:was\\s+(?:used|applied)|has\\s+been\\s+(?:used|applied)|had\\s+been\\s+(?:used|applied)|already)`,
+    `(?:used|applied|poured|put|tried|treated|already|previously|earlier)[^.;?\\n]{0,40}\\b(?:${PRIOR_AGGRESSIVE.source})|\\bprior\\s+(?:${PRIOR_AGGRESSIVE.source})\\b[^.;?\\n]{0,40}\\b(?:exposure|reported|history|use|treatment|applied)\\b|\\b(?:${PRIOR_AGGRESSIVE.source})\\b[^.;?\\n]{0,40}(?:was\\s+(?:used|applied)|has\\s+been\\s+(?:used|applied)|had\\s+been\\s+(?:used|applied)|already|exposure|reported|history)`,
     'gi',
   )
   const negatedOrUncertainPrefix =
@@ -448,9 +456,16 @@ function assertedPriorAggressiveTokens(text: string): string[] {
           return !negatedOrUncertainPrefix.test(prefix) && !negatedOrUncertainMatch.test(m[0])
         })
         .flatMap((m) => m[0].match(new RegExp(PRIOR_AGGRESSIVE.source, 'gi')) ?? [])
-        .map((token) => token.toLowerCase()),
+        .map(canonicalPriorAggressiveToken),
     ),
   )
+}
+
+function canonicalPriorAggressiveToken(token: string): string {
+  const normalized = token.toLowerCase()
+  if (/clorox|chlorine|hypochlorite/.test(normalized)) return 'bleach'
+  if (/oxi-?clean|oxidiz/.test(normalized)) return 'peroxide'
+  return normalized
 }
 // Heat that was ACTUALLY APPLIED to the garment (hot/warm water, dryer, iron, press,
 // steam) — it sets protein/tannin and genuinely changes the safe move. This is DISTINCT
@@ -518,7 +533,7 @@ const TREATMENT_VERB =
 
 /** Named chemicals / products — naming one in a descriptive field is suggestion-shaped. */
 const CHEM_AGENT =
-  /\b(bleach|chlorine|ammonia|acetone|peroxide|vinegar|alcohol|solvent|naphtha|turpentine|lye|borax|baking\s*soda|dish\s*soap|deterg\w*|oxi-?clean|woolite|wd-?40|degreaser|stain\s*remover|spot\s*remover)\b/i
+  /\b(bleach|clorox|chlorine|hypochlorite|ammonia|acetone|peroxide|vinegar|alcohol|solvent|naphtha|turpentine|lye|borax|baking\s*soda|dish\s*soap|deterg\w*|oxi-?clean|woolite|wd-?40|degreaser|stain\s*remover|spot\s*remover)\b/i
 
 /** Affirmative-safety / permission phrasing. A user-visible descriptive field may only
  *  DESCRIBE risk — it must never assert an action is safe or permitted. The treatment-
@@ -755,6 +770,27 @@ function rawUserText(req: IntakeRequest): string {
   return parts.join('\n')
 }
 
+function rawUserTextWithoutTrustedChipAnswer(req: IntakeRequest, re: RegExp, trustedAnswer: string): string {
+  const parts: string[] = []
+  const note = req.hints?.userNote?.trim()
+  if (note) parts.push(note)
+  const trusted = normalizedChipAnswer(trustedAnswer)
+  for (let i = 0; i < req.transcript.length; i++) {
+    const turn = req.transcript[i]
+    if (turn.role !== 'user' || !turn.text.trim()) continue
+    const previous = req.transcript[i - 1]
+    if (
+      previous?.role === 'assistant' &&
+      re.test(previous.text) &&
+      normalizedChipAnswer(turn.text) === trusted
+    ) {
+      continue
+    }
+    parts.push(turn.text.trim())
+  }
+  return parts.join('\n')
+}
+
 // ── DETERMINISTIC FACT EXTRACTION (no LLM) ───────────────────────────────────
 // The gate (Atlas 2026-06-08): the intake must NEVER ask a question whose answer is
 // already resolved by the input. Prompt compliance is not enough — we resolve the
@@ -963,6 +999,75 @@ const CONFIRM_ASKED = /\b(is that right|did i (?:get|read) (?:that|this)|can you
 
 function askedInTranscript(transcript: IntakeTurn[], re: RegExp): boolean {
   return transcript.some((t) => t.role === 'assistant' && re.test(t.text))
+}
+
+function normalizedChipAnswer(text: string): string {
+  return cleanSlotAnswer(text).toLowerCase().replace(/\s+/g, ' ')
+}
+
+function trustedChipAnswerFromTranscript(transcript: IntakeTurn[], re: RegExp, options: string[]): string | null {
+  const trusted = new Set(options.map(normalizedChipAnswer))
+  let answer: string | null = null
+  for (let i = 0; i < transcript.length - 1; i++) {
+    const q = transcript[i]
+    const a = transcript[i + 1]
+    if (q.role !== 'assistant' || a.role !== 'user') continue
+    if (!re.test(q.text)) continue
+    const cleaned = cleanSlotAnswer(a.text)
+    if (trusted.has(normalizedChipAnswer(cleaned))) answer = cleaned
+  }
+  return answer
+}
+
+function trustedChipAnswerInTranscript(transcript: IntakeTurn[], re: RegExp, options: string[]): boolean {
+  return trustedChipAnswerFromTranscript(transcript, re, options) !== null
+}
+
+function careSymbolsFromTrustedCareChip(answer: string): string[] {
+  const normalized = normalizedChipAnswer(answer)
+  if (normalized === 'dry clean only') return ['dry-clean-only']
+  if (normalized === 'hand wash') return ['hand-wash-only']
+  if (normalized === 'no bleach / no heat') return ['no-bleach', 'no-heat']
+  return []
+}
+
+function matchesTrustedOptions(answer: string, options: string[]): boolean {
+  return new Set(options.map(normalizedChipAnswer)).has(normalizedChipAnswer(answer))
+}
+
+function isTrustedStructuredChipAnswer(transcript: IntakeTurn[], index: number): boolean {
+  const answer = transcript[index]
+  const prompt = transcript[index - 1]
+  if (answer?.role !== 'user' || prompt?.role !== 'assistant') return false
+  return (
+    (/\bfabric\b/i.test(prompt.text) && matchesTrustedOptions(answer.text, FABRIC_QUESTION.options)) ||
+    (AGE_ASKED.test(prompt.text) && matchesTrustedOptions(answer.text, AGE_QUESTION.options)) ||
+    (PRIOR_ASKED.test(prompt.text) && matchesTrustedOptions(answer.text, PRIOR_TREATMENT_QUESTION.options)) ||
+    (CARE_ASKED.test(prompt.text) && matchesTrustedOptions(answer.text, CARE_LABEL_QUESTION.options))
+  )
+}
+
+function residualFreeTextForHazardInference(req: IntakeRequest): string {
+  const parts: string[] = []
+  const note = req.hints?.userNote?.trim()
+  if (note) parts.push(note)
+  for (let i = 0; i < req.transcript.length; i++) {
+    const turn = req.transcript[i]
+    if (turn.role !== 'user' || !turn.text.trim()) continue
+    if (isTrustedStructuredChipAnswer(req.transcript, i)) continue
+    parts.push(turn.text.trim())
+  }
+  return parts.join('\n')
+}
+
+function hasResidualHazardProse(req: IntakeRequest): boolean {
+  const residual = residualFreeTextForHazardInference(req)
+  return (
+    PRIOR_AGGRESSIVE.test(stripHazardQuestions(residual)) ||
+    HEAT_APPLIED.test(residual) ||
+    TREATMENT_VERB.test(residual) ||
+    AMBIGUOUS_HAZARD_PROSE.test(residual)
+  )
 }
 
 function answeredStainIdentityInTranscript(transcript: IntakeTurn[]): boolean {
@@ -1175,10 +1280,12 @@ function computeFailClosed(
     reasons.push('specialty_fiber_unconfirmed')
   }
 
-  // Prior aggressive chemistry / heat trip the engine path from ANY source: the model's
-  // flags, a care-label constraint, OR the user's own raw words — a raw disclosure can
-  // never be lost to the model omitting it from riskFlags/careRisk.
-  if (PRIOR_AGGRESSIVE.test(flags) || PRIOR_AGGRESSIVE.test(careBlob) || PRIOR_AGGRESSIVE.test(stripHazardQuestions(rawUser))) {
+  // Prior aggressive chemistry / heat trip the engine path from real application
+  // evidence: the model's structured flags, assertion-shaped careRisk prose, OR the
+  // user's own raw words. Care-label restrictions like "no-bleach" are not prior
+  // chemical use; they must ride to /api/solve as restrictions, not block the
+  // structured fast-path as if bleach had already been applied.
+  if (PRIOR_AGGRESSIVE.test(flags) || assertedPriorAggressiveTokens(careBlob).length > 0 || PRIOR_AGGRESSIVE.test(stripHazardQuestions(rawUser))) {
     reasons.push('prior_aggressive_chemistry')
   }
   if (HEAT_APPLIED.test(flags) || HEAT_APPLIED.test(careBlob) || HEAT_APPLIED.test(rawUser)) reasons.push('heat_exposure')
@@ -1271,9 +1378,9 @@ function resolveFiber(modelFabric: string, labelFiber: string): ResolvedFiber {
 
 function toCareStatus(hardConstraints: string[], careRisk: string): CareStatus {
   const blob = `${hardConstraints.join(' ')} ${careRisk}`.toLowerCase()
-  if (/dry-?clean|do-?not-?wash/.test(blob)) return 'dry_clean_only'
-  if (/hand-?wash/.test(blob)) return 'hand_wash'
-  if (/machine-?wash/.test(blob)) return 'machine_washable'
+  if (/dry[- ]?clean|do[- ]?not[- ]?wash/.test(blob)) return 'dry_clean_only'
+  if (/hand[- ]?wash/.test(blob)) return 'hand_wash'
+  if (/machine[- ]?wash/.test(blob)) return 'machine_washable'
   return 'unknown'
 }
 
@@ -1349,7 +1456,7 @@ function assembleInput(
     ...assertedPriorAggressiveTokens(careRisk),
     ...(userText.match(new RegExp(PRIOR_AGGRESSIVE.source, 'gi')) ?? []),
   ]
-  const priorTreatment = Array.from(new Set(priorMatches.map((token) => token.toLowerCase())))
+  const priorTreatment = Array.from(new Set(priorMatches.map(canonicalPriorAggressiveToken)))
 
   const description = engineStainTerm(parsedFacts, userNote, out.read.stain)
 
@@ -1402,6 +1509,119 @@ function buildSolveBody(
  * question or SOLVE (hand the assembled facts to the deterministic engine).
  * Never throws — on model failure it fails closed to a safe clarifying question.
  */
+/**
+ * TASK-257 Slice 1.6 — deterministic verified-card SOLVE (no model round-trip).
+ *
+ * The verdict turn was still costing a ~15-28s intake-model call BEFORE handing the
+ * assembled read to /api/solve, even when the library already had a verified/safety-blocked
+ * card for the (stain, fabric) pair. When BOTH facts are high-confidence parses, a card
+ * exists (lookupProtocol tier < 4), and computeFailClosed — the EXISTING fail-closed safety
+ * authority — raises NO blocking reason (prior chemistry / heat / specialty fiber / unknowns /
+ * label conflict all live there, derived from the user's RAW words), we assemble the read
+ * deterministically and hand it to /api/solve exactly as the model path would. /api/solve
+ * re-runs every deterministic gate, so a safety-blocked fiber STILL returns its pro-assessment
+ * block — this serves the engine's verdict faster, it never bypasses a gate or widens DIY.
+ *
+ * Returns null (→ caller falls through to the model path, UNCHANGED) when there is no verified
+ * card (tier 4 needs AI synthesis) or any blocking fail-closed exclusion applies.
+ */
+async function tryDeterministicVerifiedCardSolve(
+  parsedFacts: ParsedFacts,
+  req: IntakeRequest,
+  hardConstraints: string[],
+  userNote: string,
+  rawUser: string,
+): Promise<IntakeDecision | null> {
+  const stain = parsedFacts.stain ?? ''
+  const parsedFabric = parsedFacts.fabric ?? ''
+  if (!stain || !parsedFabric) return null
+
+  // ── Atlas ruling C (msg 12343): STRUCTURED-ONLY fast-path ──────────────────────
+  // Fire ONLY when the full structured safety-chip sequence is complete — fabric, age,
+  // prior-treatment, and care have all been asked/disclosed (nextQuestionAfterIdentity-
+  // Suppression === null) — so every hazard-relevant fact came from an explicit chip/field,
+  // not model-inferred free-text prose. One-shot / free-text inputs (detQuestion !== null)
+  // stay on the model path, which interprets the prose for INFERRED hazards (e.g. bleach the
+  // model reads from "the strong stuff" that no raw-words regex catches). Conservative interim;
+  // Option A (solve before all chips) needs an SB ruling that the raw-words + care-label guard
+  // is complete enough — that becomes Slice 1.7.
+  // The hazard-relevant facts must come from TRUSTED chip answers, not free-text prose. Asking
+  // the prompt is not enough: if the user types "the strong stuff" after the prior-treatment
+  // prompt, the model path must still interpret that as possible bleach/solvent exposure.
+  const t = req.transcript
+  const trustedFabric = trustedChipAnswerFromTranscript(t, /\bfabric\b/i, FABRIC_QUESTION.options) ?? ''
+  const careRisk = trustedChipAnswerFromTranscript(t, CARE_ASKED, CARE_LABEL_QUESTION.options) ?? ''
+  const fabric = trustedFabric && !CHIP_UNCERTAINTY.test(trustedFabric) ? trustedFabric.toLowerCase() : parsedFabric
+  const structuredChipsAnswered =
+    (parsedFacts.fabricConfidence === 'high' || trustedFabric !== '') &&
+    trustedChipAnswerInTranscript(t, AGE_ASKED, AGE_QUESTION.options) &&
+    trustedChipAnswerInTranscript(t, PRIOR_ASKED, PRIOR_TREATMENT_QUESTION.options) &&
+    careRisk !== ''
+  if (!structuredChipsAnswered) return null
+  if (hasResidualHazardProse(req)) return null
+  const solveHardConstraints = Array.from(new Set([...hardConstraints, ...careSymbolsFromTrustedCareChip(careRisk)]))
+  // ...and the whole structured sweep must be complete (fabric + age resolved too).
+  if (nextQuestionAfterIdentitySuppression(parsedFacts, req) !== null) return null
+  // Expressed uncertainty ("not sure" / "don't know") means a fact is NOT an explicit
+  // structured value — defer to the model (covers Atlas's "prior chemistry uncertainty").
+  if (CHIP_UNCERTAINTY.test(rawUser)) return null
+
+  // A verified/safety-blocked card must already exist for the pair (tier 1-3). Tier 4 means
+  // no card → the AI synthesis path is required, which is the model's job, so defer.
+  const lookup = await lookupProtocol(stain, fabric)
+  if (lookup.tier >= 4) return null
+
+  // The care-label chip can itself contain restriction words ("No bleach / no heat").
+  // Those are not prior treatment disclosures. Keep the user note + every other user
+  // turn in the hazard scan, but remove this trusted care-chip answer so the raw
+  // prior-chemistry scan does not read a label restriction as "bleach was applied".
+  const rawUserWithoutCareChip = rawUserTextWithoutTrustedChipAnswer(req, CARE_ASKED, careRisk)
+
+  // DETERMINISTIC read — no model. riskFlags empty on purpose: assembleInput +
+  // computeFailClosed derive every safety signal (heat / prior chemistry / colourfastness /
+  // age / specialty fiber) from the user's RAW words, so nothing disclosed is lost.
+  const detOut: IntakeModelOutput = {
+    read: { fabric, stain, careRisk, confidence: 'high' },
+    knows: stain ? [`stain = ${stain}`] : [],
+    suspects: [],
+    cannotKnow: [],
+    nextQuestion: null,
+    readyForVerdict: true,
+    riskFlags: [],
+  }
+  const resolved = resolveFiber(fabric, req.hints?.careLabel?.fiber ?? '')
+  const failClosedReasons = computeFailClosed(detOut, hardConstraints, rawUserWithoutCareChip)
+  if (resolved.labelConflict) failClosedReasons.push('label_fiber_conflict')
+  // ANY blocking fail-closed reason (prior chemistry, heat, specialty fiber, unknowns, label
+  // conflict) means the model path must handle it — only dye_uncertain is non-blocking.
+  const blocking = failClosedReasons.filter((r) => r !== 'dye_uncertain')
+  if (blocking.length > 0) return null
+
+  const assembledInput = assembleInput(detOut, solveHardConstraints, userNote, resolved, rawUserWithoutCareChip, parsedFacts)
+  const solveBody = buildSolveBody(
+    assembledInput,
+    resolved,
+    solveHardConstraints,
+    rawUser.match(HAZARD_QUESTION)?.[0] ?? null,
+  )
+  return {
+    action: 'solve',
+    read: detOut.read,
+    knows: detOut.knows,
+    suspects: [],
+    cannotKnow: [],
+    riskFlags: [],
+    nextQuestion: null,
+    failClosedReasons,
+    hardConstraints: solveHardConstraints,
+    parsedFacts,
+    suppressions: [],
+    model: 'deterministic',
+    solveBody,
+    assembledInput,
+  }
+}
+
 export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise<IntakeDecision> {
   const hardConstraints = (req.hints?.hardConstraints ?? []).map((s) => s.toLowerCase())
   const userNote = req.hints?.userNote ?? ''
@@ -1417,6 +1637,32 @@ export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise
   const fallback = safetyFallbackQuestion(parsedFacts, req)
   const context = buildContext(req, parsedFacts)
   const asked = questionsAsked(req.transcript)
+
+  // ── TASK-257 Slice 1.6: deterministic verified-card SOLVE (no model call) ──────
+  // Runs BEFORE the ASK fast-path. When BOTH stain and fabric are high-confidence parses and
+  // a verified/safety-blocked card already exists, hand the deterministic read straight to
+  // /api/solve (the engine still re-runs every gate). Fires for proceed AND the natural
+  // verdict turn — this is what kills the ~15-28s model round-trip on the final answer for
+  // the ~81% of common stains with a card. ANY exclusion or a tier-4 (no card) lookup returns
+  // null and falls through to the ASK fast-path / model path, UNCHANGED.
+  // No asked<MAX cap here: the structured sweep this requires (fabric+age+prior+care) can
+  // itself reach the budget, and a verified-card SOLVE is the goal at that point — not another
+  // model round-trip. The helper enforces all structured/exclusion gates.
+  if (
+    parsedFacts.stainKnown &&
+    parsedFacts.stainConfidence === 'high' &&
+    parsedFacts.fabricKnown &&
+    parsedFacts.fabricConfidence === 'high'
+  ) {
+    const deterministicSolve = await tryDeterministicVerifiedCardSolve(
+      parsedFacts,
+      req,
+      hardConstraints,
+      userNote,
+      rawUser,
+    )
+    if (deterministicSolve) return deterministicSolve
+  }
 
   // ── TASK-254: deterministic pre-LLM slot short-circuit (ASK fast-path) ─────────
   // When the stain is resolved by ALIAS (high confidence) and the input carries NO

@@ -289,6 +289,37 @@ describe('intake orchestrator — fails closed on delicate / high-risk-unknown',
     expect(decision.solveBody?.stain.toLowerCase()).toContain('prior bleach')
   })
 
+  it('folds prior-chemistry exposure/report prose into prior chemistry when forced to solve', async () => {
+    stubModel({
+      read: {
+        fabric: 'cotton',
+        stain: 'coffee',
+        careRisk: 'Prior bleach exposure reported by the user.',
+        confidence: 'high',
+      },
+      knows: [],
+      suspects: [],
+      cannotKnow: [],
+      nextQuestion: null,
+      readyForVerdict: true,
+      riskFlags: [],
+    })
+
+    const decision = await runIntakeTurn(
+      req({
+        proceed: true,
+        hints: { userNote: 'coffee stain on cotton shirt' },
+        transcript: [{ role: 'user', text: 'coffee stain on cotton shirt' }],
+      }),
+      KEY,
+    )
+
+    expect(decision.action).toBe('solve')
+    expect(decision.failClosedReasons).toContain('prior_aggressive_chemistry')
+    expect(decision.assembledInput?.priorTreatment).toContain('bleach')
+    expect(decision.solveBody?.stain.toLowerCase()).toContain('prior bleach')
+  })
+
   it.each([
     'No bleach was used on this stain.',
     'Not sure whether bleach was used.',
