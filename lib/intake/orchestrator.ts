@@ -1351,6 +1351,61 @@ export async function runIntakeTurn(req: IntakeRequest, apiKey: string): Promise
   const context = buildContext(req, parsedFacts)
   const asked = questionsAsked(req.transcript)
 
+  // ── TASK-254: deterministic pre-LLM slot short-circuit (ASK fast-path) ─────────
+  // When the stain is resolved by ALIAS (high confidence) and the input carries NO
+  // hazard disclosure, the next intake step is a pure templated slot question the LLM
+  // adds no value to — and the model round-trip is ~97-98% of the wait (TASK-253: 7/9
+  // intakes, ~18s -> <100ms). Answer it deterministically here, reusing the SAME
+  // question builder (nextQuestionAfterIdentitySuppression -> templated FABRIC/AGE/
+  // PRIOR/CARE questions, no treatment text). This NEVER writes a verdict, card, or
+  // advice — it only picks the next slot question. ANYTHING uncertain — unknown/low-conf
+  // stain, ANY hazard signal (prior chemistry / heat / specialty fiber / hard
+  // constraint), or a solve-ready read (detQuestion === null, deferred case #3) — falls
+  // through to the existing planner path below, UNCHANGED. computeFailClosed stays the
+  // authority; this short-circuit cannot reach a verdict.
+  if (!req.proceed && parsedFacts.stainKnown && parsedFacts.stainConfidence === 'high' && asked < MAX_QUESTIONS) {
+    const hazardDisclosed =
+      hardConstraints.length > 0 ||
+      PRIOR_AGGRESSIVE.test(stripHazardQuestions(rawUser)) ||
+      HEAT_APPLIED.test(rawUser) ||
+      SPECIALTY_FIBER.test(rawUser) ||
+      (parsedFacts.fabric ? SPECIALTY_FIBER.test(parsedFacts.fabric) : false)
+    if (!hazardDisclosed) {
+      const detQuestion = nextQuestionAfterIdentitySuppression(parsedFacts, req)
+      // Fast-path ONLY the fabric/surface slot — the dominant TASK-253 case ("coffee" ->
+      // "what surface?") and the one the model path MUST also ask, because it cannot
+      // reach a verdict without a known fabric. Everything else (age, prior, care, confirm,
+      // solve-ready) is LEFT to the model: age-necessity in particular is a per-case
+      // judgment the model makes via readyForVerdict (a low-risk coffee-on-cotton solves
+      // WITHOUT asking age), and forcing a deterministic age question there would over-ask
+      // and change behavior. Reference-equality against the module question constant.
+      if (detQuestion === FABRIC_QUESTION) {
+        return {
+          action: 'ask',
+          read: {
+            fabric: parsedFacts.fabric ?? '',
+            stain: parsedFacts.stain ?? '',
+            careRisk: '',
+            confidence: 'medium',
+          },
+          knows: parsedFacts.stain ? [`stain = ${parsedFacts.stain}`] : [],
+          suspects: [],
+          cannotKnow: [],
+          riskFlags: [],
+          nextQuestion: detQuestion,
+          failClosedReasons: [],
+          hardConstraints,
+          parsedFacts,
+          suppressions: [],
+          model: 'deterministic',
+        }
+      }
+      // Not a core fabric/age slot (prior/care/confirm slot, or solve-ready with
+      // detQuestion === null) -> fall through to the model path, UNCHANGED. The SOLVE
+      // fast-path is deliberately deferred (no synthetic engine read here).
+    }
+  }
+
   let out: IntakeModelOutput
   let model: string
   try {
