@@ -112,8 +112,10 @@ function normalize(input: string): string {
 const SURFACE_NORMALIZE: Record<string, string> = {
   'cotton-white': 'cotton',
   'cotton-color': 'cotton',
+  'cotton-dark': 'cotton',
   'cotton color': 'cotton',
   'cotton white': 'cotton',
+  'cotton dark': 'cotton',
   'wool-cashmere': 'wool',
   'leather-suede': 'leather',
   'general fabric': 'cotton',
@@ -453,7 +455,12 @@ export async function lookupProtocol(
     const resolvedStain = stainAliases[stNorm] ?? stainAliases[stSlug] ?? stSlug
 
     for (const { norm, slug } of surfaceVariants) {
-      const resolvedSurface = surfaceAliases[norm] ?? surfaceAliases[slug] ?? slug
+      const resolvedSurfaceRaw = surfaceAliases[norm] ?? surfaceAliases[slug] ?? slug
+      // A surface alias can resolve to a colour/variant-tagged key (e.g. t-shirt→cotton-dark,
+      // sheets→cotton-white) that the cards do not key on. Collapse it to the base substrate the
+      // same way SURFACE_NORMALIZE already does for the surface variants — otherwise a case WITH
+      // a verified card silently falls to tier-4 AI (Cowork TASK-257-S2 routing-bug class).
+      const resolvedSurface = SURFACE_NORMALIZE[resolvedSurfaceRaw] ?? resolvedSurfaceRaw
       const aliasKey = `${resolvedStain}+${resolvedSurface}`
       const baseKey = `${stSlug}+${slug}`
 
