@@ -322,7 +322,12 @@ export const FORBIDDEN_CONSUMER_TERMS: ReadonlyArray<{ id: string; re: RegExp }>
   { id: 'bleaching-guide', re: /bleaching\s+guide/i },
   { id: 'bongo', re: /\bbongo\b/i },
   { id: 'streetan', re: /\bstreetan\b/i },
-  { id: 'formula-209', re: /formula\s*209/i },
+  { id: 'streepro', re: /\bstreepro\b/i },
+  { id: 'mulsolite', re: /\bmulsolite\b/i },
+  { id: 'pyratex', re: /\bpyratex\b/i },
+  // "General Formula No. 209" is the spelling used throughout the pro corpus;
+  // the bare "formula 209" form alone missed it.
+  { id: 'formula-209', re: /(?:general\s+)?formula\s*(?:no\.?\s*)?209/i },
   { id: 'pog', re: /\bPOG\b/ },
   { id: 'vds', re: /\bVDS\b/ },
   { id: 'nsd', re: /\bNSD\b/ },

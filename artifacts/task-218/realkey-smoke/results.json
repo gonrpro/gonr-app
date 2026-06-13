@@ -1,0 +1,186 @@
+[
+{
+  "case": "coffee on cotton shirt",
+  "realKeyPath": true,
+  "modelOrFallback": "gpt-5.2",
+  "phase": "question",
+  "parsedFacts": {
+    "stain": "coffee",
+    "stainFamily": "tannin",
+    "fabric": "cotton",
+    "stainKnown": true,
+    "fabricKnown": true,
+    "stainConfidence": "high",
+    "fabricConfidence": "high"
+  },
+  "questionAsked": "How long has the stain been there?",
+  "questionOptions": [
+    "Just happened",
+    "A few hours",
+    "Since yesterday",
+    "Days+ / already set in",
+    "Not sure"
+  ],
+  "suppressionsApplied": [],
+  "riskFlags": [
+    "unknown_age",
+    "unknown_prior_treatment",
+    "unknown_care_label",
+    "unknown_dye",
+    "prior_aggressive_chemistry",
+    "heat_exposure",
+    "sanitized_model_output"
+  ],
+  "failClosedReasons": [
+    "heat_exposure"
+  ],
+  "read": {
+    "fabric": "Cotton shirt (user-stated)",
+    "stain": "Coffee (tannin-based beverage stain)",
+    "careRisk": "Generally sturdy fiber, but color/dye loss and set-in risk depends on whether the stain is fresh vs dried and whether any heat or cleaners were already used.",
+    "confidence": "high"
+  },
+  "proceed_phase": "verdict",
+  "solveSource": "ai",
+  "solveTier": 4,
+  "solveHttp": 200,
+  "doNotDoCount": 2
+}
+,
+{
+  "case": "red wine on silk dress",
+  "realKeyPath": true,
+  "modelOrFallback": "gpt-5.2",
+  "phase": "question",
+  "parsedFacts": {
+    "stain": "red wine",
+    "stainFamily": "tannin",
+    "fabric": "silk",
+    "stainKnown": true,
+    "fabricKnown": true,
+    "stainConfidence": "high",
+    "fabricConfidence": "high"
+  },
+  "questionAsked": "Quick one \u2014 is the red wine still fresh/wet, or has it dried/set in?",
+  "questionOptions": [
+    "Fresh (minutes)",
+    "A few hours",
+    "Overnight/1+ day",
+    "Not sure"
+  ],
+  "suppressionsApplied": [],
+  "riskFlags": [
+    "specialty_fiber",
+    "unknown_dye",
+    "heat_exposure",
+    "sanitized_model_output"
+  ],
+  "failClosedReasons": [
+    "specialty_fiber_unconfirmed",
+    "heat_exposure"
+  ],
+  "read": {
+    "fabric": "Silk dress (specialty fiber)",
+    "stain": "Red wine (tannin-based)",
+    "careRisk": "High sensitivity: silk can be water-spot prone and dye-sensitive; safest next move depends heavily on whether the stain is fresh vs dried/set and any prior exposure to heat/chemicals.",
+    "confidence": "high"
+  },
+  "proceed_phase": "verdict",
+  "solveSource": "ai",
+  "solveTier": 4,
+  "solveHttp": 200,
+  "doNotDoCount": 2
+}
+,
+{
+  "case": "unknown brown stain on wool sweater",
+  "realKeyPath": true,
+  "modelOrFallback": "gpt-5.2",
+  "phase": "question",
+  "parsedFacts": {
+    "fabric": "wool",
+    "stainKnown": false,
+    "fabricKnown": true,
+    "fabricConfidence": "high"
+  },
+  "questionAsked": "Quick one: is the brown stain fresh (still damp/tacky) or has it dried/set in?",
+  "questionOptions": [
+    "Fresh / just happened",
+    "Dry / not sure how old",
+    "It\u2019s been washed or dried since",
+    "Not sure"
+  ],
+  "suppressionsApplied": [],
+  "riskFlags": [
+    "specialty_fiber",
+    "unknown_stain",
+    "unknown_dye",
+    "heat_exposure",
+    "sanitized_model_output"
+  ],
+  "failClosedReasons": [
+    "stain_unknown",
+    "specialty_fiber_unconfirmed",
+    "heat_exposure",
+    "dye_uncertain"
+  ],
+  "read": {
+    "fabric": "Wool sweater (user-stated)",
+    "stain": "Unknown brown stain (source not identified)",
+    "careRisk": "Wool is a specialty fiber with higher risk of shrink/felt and dye shift; stain type is unknown, so safest next move depends heavily on whether it\u2019s fresh or already dried/set.",
+    "confidence": "medium"
+  },
+  "proceed_phase": "verdict",
+  "solveSource": "ai",
+  "solveTier": 4,
+  "solveHttp": 200,
+  "doNotDoCount": 2
+}
+,
+{
+  "case": "grease on polyester pants, already used heat",
+  "realKeyPath": true,
+  "modelOrFallback": "gpt-5.2",
+  "phase": "question",
+  "parsedFacts": {
+    "stain": "grease",
+    "stainFamily": "oil_grease",
+    "fabric": "polyester",
+    "stainKnown": true,
+    "fabricKnown": true,
+    "stainConfidence": "high",
+    "fabricConfidence": "high"
+  },
+  "questionAsked": "How long has the stain been there?",
+  "questionOptions": [
+    "Just happened",
+    "A few hours",
+    "Since yesterday",
+    "Days+ / already set in",
+    "Not sure"
+  ],
+  "suppressionsApplied": [],
+  "riskFlags": [
+    "heat_exposure",
+    "unknown_care_label",
+    "unknown_dye",
+    "prior_aggressive_chemistry",
+    "sanitized_model_output"
+  ],
+  "failClosedReasons": [
+    "heat_exposure",
+    "dye_uncertain"
+  ],
+  "read": {
+    "fabric": "Polyester pants (synthetic; likely color-dyed).",
+    "stain": "Grease/oil stain.",
+    "careRisk": "Heat has already been used, which can increase set-in risk and limits margin for error; dye/colorfastness and care-label limits still unknown.",
+    "confidence": "high"
+  },
+  "proceed_phase": "verdict",
+  "solveSource": "ai",
+  "solveTier": 4,
+  "solveHttp": 200,
+  "doNotDoCount": 2
+}
+]

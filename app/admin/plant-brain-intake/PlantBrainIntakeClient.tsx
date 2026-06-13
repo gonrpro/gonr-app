@@ -37,13 +37,44 @@
 //   - No backend, no DDL, no env, no new deps
 //   - localStorage only (key preserved for in-flight data continuity)
 //   - JSON / Markdown ops plan exports
-//   - /plant-brain-builder route (no auth)
+//   - /plant-brain-builder route (founder-gated since TASK-249)
 //
 // ============================================================================
 
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react'
-import { SEED_SCENARIOS, type SeedScenario } from './scenarios'
-import { QUESTIONS, MODULES, PHASE_THRESHOLDS, type ModuleId, type Question } from './questions'
+import type { SeedScenario } from './scenarios'
+import type { ModuleId, Question } from './questions'
+
+// ============================================================================
+// TASK-249 — corpus isolation
+// ============================================================================
+// The training corpus (scenarios / questions / modules / thresholds) is NOT
+// imported statically here: it arrives from the founder-gated server pages
+// via the `corpus` prop, so it serializes only into gated RSC payloads and
+// never into an unauthenticated static chunk (`.next/static/**` bypasses the
+// proxy matcher entirely). scripts/check-static-chunks.mjs fails the build if
+// corpus fingerprints reappear in a client chunk.
+export interface PlantBrainCorpus {
+  scenarios: SeedScenario[]
+  questions: Question[]
+  modules: { id: ModuleId; label: string; description: string }[]
+  phaseThresholds: {
+    formingMinModules: number
+    formingMinCoverage: number
+    verifyingMinModules: number
+    verifyingMinCoverage: number
+  }
+}
+
+// Module-level registry instead of prop-threading: the corpus is read by a
+// dozen module-scope helpers (freshSession / pickNextQuestion / applyAnswer /
+// exportOpsPlan / …) that only ever run after the root component rendered.
+// The default export hydrates this synchronously before its first hook.
+let CORPUS: PlantBrainCorpus | null = null
+function corpus(): PlantBrainCorpus {
+  if (!CORPUS) throw new Error('PlantBrain corpus missing — render via a founder-gated server page')
+  return CORPUS
+}
 
 // ============================================================================
 // Types
@@ -195,14 +226,14 @@ function newMessageId() {
 
 function emptyProfile(): Record<ModuleId, ProfileModule> {
   const result = {} as Record<ModuleId, ProfileModule>
-  for (const m of MODULES) {
+  for (const m of corpus().modules) {
     result[m.id] = { id: m.id, coverage: 0, data: {} }
   }
   return result
 }
 
 function freshSession(): SessionState {
-  const scenarios = JSON.parse(JSON.stringify(SEED_SCENARIOS)) as SeedScenario[]
+  const scenarios = JSON.parse(JSON.stringify(corpus().scenarios)) as SeedScenario[]
   const session: SessionState = {
     sessionId: newSessionId(),
     startedAt: new Date().toISOString(),
@@ -212,7 +243,9 @@ function freshSession(): SessionState {
     scenariosFromSeed: scenarios,
     answeredQuestionIds: [],
     phase: 'discovery',
-    currentScenarioId: scenarios[0]?.id || 'red-wine-silk-3day',
+    // No literal scenario-id fallback: scenario ids are corpus fingerprints
+    // the chunk guard greps for, so they must never appear in client code.
+    currentScenarioId: scenarios[0]?.id || '',
     pendingApproveCardScenarioId: null,
   }
   // Welcome message + first question
@@ -274,7 +307,7 @@ function pickNextQuestion(s: SessionState): Question | null {
   ]
   if (s.phase === 'discovery') {
     const pinnedNext = openingSequence
-      .map((id) => QUESTIONS.find((q) => q.id === id))
+      .map((id) => corpus().questions.find((q) => q.id === id))
       .find((q): q is Question => Boolean(q && !answered.has(q.id)))
     if (pinnedNext) return pinnedNext
   }
@@ -282,7 +315,7 @@ function pickNextQuestion(s: SessionState): Question | null {
   // Score = weight * (low coverage of its module + 1)
   let best: Question | null = null
   let bestScore = -Infinity
-  for (const q of QUESTIONS) {
+  for (const q of corpus().questions) {
     if (answered.has(q.id)) continue
     const moduleCoverage = s.profile[q.module]?.coverage ?? 0
     const coverageGap = (100 - moduleCoverage) / 100 // 1.0 if empty, 0.0 if full
@@ -325,18 +358,18 @@ function applyAnswer(s: SessionState, q: Question, answer: ProfileFieldValue): S
   const m = profile[q.module]
   const data = { ...m.data, [q.fieldKey.split('.').slice(1).join('.') || q.id]: answer }
   // Compute coverage: # of answered questions in this module / total questions in this module, capped at 100
-  const moduleQuestions = QUESTIONS.filter((qq) => qq.module === q.module)
+  const moduleQuestions = corpus().questions.filter((qq) => qq.module === q.module)
   const newAnswered = [...s.answeredQuestionIds, q.id]
   const answeredInModule = moduleQuestions.filter((qq) => newAnswered.includes(qq.id)).length
   const coverage = Math.min(100, Math.round((answeredInModule / moduleQuestions.length) * 100))
   profile[q.module] = { ...m, data, coverage }
 
   // Phase transition check
-  const passed60 = MODULES.filter((mm) => profile[mm.id].coverage >= PHASE_THRESHOLDS.formingMinCoverage).length
-  const passed75 = MODULES.filter((mm) => profile[mm.id].coverage >= PHASE_THRESHOLDS.verifyingMinCoverage).length
+  const passed60 = corpus().modules.filter((mm) => profile[mm.id].coverage >= corpus().phaseThresholds.formingMinCoverage).length
+  const passed75 = corpus().modules.filter((mm) => profile[mm.id].coverage >= corpus().phaseThresholds.verifyingMinCoverage).length
   let phase: Phase = s.phase
-  if (passed75 >= PHASE_THRESHOLDS.verifyingMinModules) phase = 'verifying'
-  else if (passed60 >= PHASE_THRESHOLDS.formingMinModules) phase = 'forming'
+  if (passed75 >= corpus().phaseThresholds.verifyingMinModules) phase = 'verifying'
+  else if (passed60 >= corpus().phaseThresholds.formingMinModules) phase = 'forming'
 
   return { ...s, profile, answeredQuestionIds: newAnswered, phase }
 }
@@ -476,7 +509,7 @@ function deriveCardSection_customerNote(p: Record<ModuleId, ProfileModule>): str
 }
 
 function deriveCardSection_confidence(s: SessionState): string {
-  const totalCoverage = MODULES.reduce((sum, m) => sum + s.profile[m.id].coverage, 0) / MODULES.length
+  const totalCoverage = corpus().modules.reduce((sum, m) => sum + s.profile[m.id].coverage, 0) / corpus().modules.length
   const pct = Math.round(totalCoverage)
   if (pct < 30) return `Confidence: building (${pct}% of plant brain captured).`
   if (pct < 60) return `Confidence: forming (${pct}% captured). Card is ready to verify on key sections.`
@@ -571,7 +604,7 @@ function exportOpsPlan(s: SessionState) {
   lines.push(``)
   lines.push(`## Plant profile`)
   lines.push(``)
-  for (const m of MODULES) {
+  for (const m of corpus().modules) {
     lines.push(`### ${m.label} (${s.profile[m.id].coverage}% captured)`)
     lines.push(``)
     const data = s.profile[m.id].data
@@ -617,7 +650,15 @@ function exportOpsPlan(s: SessionState) {
 // ============================================================================
 // Root component
 // ============================================================================
-export default function PlantBrainIntakeClient() {
+export default function PlantBrainIntakeClient({ corpus: corpusData }: { corpus: PlantBrainCorpus }) {
+  // Hydrate the module registry before any hook/helper touches the corpus.
+  // Deliberate render-time write of a module global: the value is static
+  // server-provided config, deep-equal on every render and across all three
+  // gated routes, and it must be set before the useState(loadSession)
+  // initializer below runs. React Compiler is off in this repo; if it is ever
+  // enabled, thread the corpus through helper parameters instead.
+  // eslint-disable-next-line react-hooks/globals
+  CORPUS = corpusData
   useGoogleFonts()
   const [state, setState] = useState<SessionState>(() => loadSession())
   const [showResetConfirm, setShowResetConfirm] = useState(false)
@@ -639,7 +680,7 @@ export default function PlantBrainIntakeClient() {
 
   // Live solve card derives from current scenario + profile
   const liveCard = useMemo(() => buildLiveSolveCard(state, state.currentScenarioId), [state])
-  const totalCoverage = useMemo(() => Math.round(MODULES.reduce((sum, m) => sum + state.profile[m.id].coverage, 0) / MODULES.length), [state.profile])
+  const totalCoverage = useMemo(() => Math.round(corpus().modules.reduce((sum, m) => sum + state.profile[m.id].coverage, 0) / corpus().modules.length), [state.profile])
 
   // ==========================================================================
   // Answer handling — applies inference + advances conversation
@@ -1188,7 +1229,7 @@ function MessageRenderer({
   )
 
   function findQuestion(qid: string): Question | undefined {
-    return QUESTIONS.find((q) => q.id === qid)
+    return corpus().questions.find((q) => q.id === qid)
   }
 }
 
@@ -1517,7 +1558,7 @@ function ProfileCoverage({ state }: { state: SessionState }) {
         Plant Brain Coverage
       </div>
       <div className="space-y-3">
-        {MODULES.map((m) => {
+        {corpus().modules.map((m) => {
           const cov = state.profile[m.id].coverage
           return (
             <div key={m.id}>

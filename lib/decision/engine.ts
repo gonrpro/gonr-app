@@ -12,6 +12,11 @@
 // the codebase.
 
 import { lookupProtocol } from '@/lib/protocols/lookup'
+import {
+  isCardRatifiedForConsumer,
+  isConsumerSolveTier,
+  RATIFIED_CARD_ALLOWLIST_VERSION,
+} from '@/lib/solve/ratified-cards'
 import type { LookupResult } from '@/lib/types'
 
 export interface DecideInput {
@@ -23,6 +28,8 @@ export interface DecideInput {
   operator_role?: string | null
   /** Language preference; consumed by downstream translation today, not the engine itself. */
   lang?: string
+  /** Runtime audience gate for TASK-251 legacy-card admission. */
+  viewerTier?: string | null
 }
 
 /**
@@ -60,6 +67,29 @@ export async function decide(input: DecideInput): Promise<LookupResult> {
   const lang = (input.lang ?? 'en').toLowerCase()
   if (lang !== 'en' && base.card) {
     return { card: null, tier: 4, confidence: 0, source: 'ai' }
+  }
+
+  // TASK-251 — consumer legacy-card deny gate. Tier-1/2 data/core matches are
+  // legacy guidance until an explicit source/SB ratification entry admits the
+  // card. Paid/pro tiers keep the old behavior for this task.
+  if (
+    base.card &&
+    base.source === 'core' &&
+    (base.tier === 1 || base.tier === 2) &&
+    isConsumerSolveTier(input.viewerTier) &&
+    !isCardRatifiedForConsumer(base.card.id)
+  ) {
+    return {
+      card: null,
+      tier: 4,
+      confidence: 0,
+      source: 'core',
+      legacyDenied: {
+        reason: 'unratified_legacy_card',
+        cardId: base.card.id,
+        allowlistVersion: RATIFIED_CARD_ALLOWLIST_VERSION,
+      },
+    }
   }
 
   return base

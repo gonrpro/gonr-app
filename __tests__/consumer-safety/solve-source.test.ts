@@ -27,6 +27,7 @@ describe('solve-source provenance mapping', () => {
       'ai',
       'ai-unavailable',
       'no-verified-protocol',
+      'library-unratified-denied',
       'library-safety-blocked',
     ]
     for (const s of liveSources) {
@@ -53,5 +54,6 @@ describe('solve-source provenance mapping', () => {
     expect(resolveSourceLabel('ai-unavailable')?.verified).toBe(false)
     expect(resolveSourceLabel('hard-refuse')?.verified).toBe(false)
     expect(resolveSourceLabel('no-verified-protocol')?.verified).toBe(false)
+    expect(resolveSourceLabel('library-unratified-denied')?.verified).toBe(false)
   })
 })

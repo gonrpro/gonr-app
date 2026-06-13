@@ -1,38 +1,17 @@
-import { cookies, headers } from 'next/headers'
-import { createServerClient } from '@supabase/ssr'
+// TASK-249 — server component. The plant-brain training corpus enters
+// through ./corpus (server-only) and is passed as a prop, so it serializes
+// only into this founder-gated RSC payload, never into unauthenticated
+// static chunks. The founder gate moved to lib/auth/founder-access so
+// /plant-brain-builder shares the exact same boundary.
+
+import { hasFounderAccess } from '@/lib/auth/founder-access'
+import { plantBrainCorpus } from './corpus'
 import PlantBrainIntakeClient from './PlantBrainIntakeClient'
 
-const FOUNDER_EMAILS = ['tyler@gonr.pro', 'tyler@nexshift.co', 'twfyke@me.com', 'eval@gonr.app', 'jeff@cleanersupply.com']
-
-async function isLocalDevBypass() {
-  if (process.env.NODE_ENV !== 'development') return false
-  const h = await headers()
-  const host = h.get('host') ?? ''
-  return host.startsWith('localhost:') || host.startsWith('127.0.0.1:')
-}
-
-async function getSessionEmail(): Promise<string | null> {
-  try {
-    const cookieStore = await cookies()
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      { cookies: { getAll: () => cookieStore.getAll(), setAll: () => {} } }
-    )
-    const { data } = await supabase.auth.getUser()
-    return data.user?.email?.toLowerCase() ?? null
-  } catch {
-    return null
-  }
-}
-
 export default async function PlantBrainIntakePage() {
-  const localDev = await isLocalDevBypass()
-  const email = localDev ? 'local-dev-founder-preview@gonr.local' : await getSessionEmail()
-
-  if (!localDev && (!email || !FOUNDER_EMAILS.includes(email))) {
+  if (!(await hasFounderAccess())) {
     return <div className="p-6 text-sm text-red-700">Founder access required.</div>
   }
 
-  return <PlantBrainIntakeClient />
+  return <PlantBrainIntakeClient corpus={plantBrainCorpus} />
 }

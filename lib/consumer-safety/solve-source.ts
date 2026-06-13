@@ -30,6 +30,7 @@ export type SolveSource =
   | 'hard-refuse'
   | 'deterministic-fast-path'
   | 'no-verified-protocol'
+  | 'library-unratified-denied'
   | 'library-safety-blocked'
   | 'ai-unavailable'
 
@@ -62,6 +63,9 @@ export const SOURCE_LABEL: Record<SolveSource, SourceLabel> = {
   'library-safety-blocked': { label: 'Safety-adjusted guidance', verified: false },
   // No protocol on file yet.
   'no-verified-protocol': { label: 'No verified protocol yet — general guidance only', verified: false },
+  // TASK-251: a legacy data/core card matched, but no SB/source ratification
+  // allowlist entry admits it for consumer guidance.
+  'library-unratified-denied': { label: 'No ratified home protocol yet — protect and escalate', verified: false },
   // AI assist down — general, non-stain-specific starting point only.
   'ai-unavailable': { label: 'AI reasoning unavailable — general starting point only', verified: false },
 }

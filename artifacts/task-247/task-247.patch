@@ -1,0 +1,1112 @@
+diff --git a/__tests__/task-231-consumer-detox.test.ts b/__tests__/task-231-consumer-detox.test.ts
+index ef2149e..b277ad8 100644
+--- a/__tests__/task-231-consumer-detox.test.ts
++++ b/__tests__/task-231-consumer-detox.test.ts
+@@ -29,7 +29,10 @@ const FORBIDDEN_PROMPT_TERMS: Array<{ label: string; re: RegExp }> = [
+   { label: 'VDS', re: /\bVDS\b/ },
+   { label: 'BonGo', re: /bongo/i },
+   { label: 'StreeTAN', re: /streetan/i },
+-  { label: 'Formula 209', re: /formula\s*209/i },
++  { label: 'StreePRO', re: /streepro/i },
++  { label: 'Mulsolite', re: /mulsolite/i },
++  { label: 'PYRATEX', re: /pyratex/i },
++  { label: 'Formula 209 (incl. "General Formula No. 209")', re: /(?:general\s+)?formula\s*(?:no\.?\s*)?209/i },
+   { label: 'Spotter', re: /\bspotter\b/i },
+   { label: 'Bleaching Guide', re: /bleaching guide/i },
+   { label: '28% acetic', re: /28%\s*acetic|acetic acid/i },
+@@ -182,7 +185,10 @@ describe('TASK-231 — consumer output guard', () => {
+     ['bleaching-guide', 'See Spotter → Bleaching Guide.'],
+     ['bongo', 'Apply BonGo to the area.'],
+     ['streetan', 'Use StreeTAN per shop practice.'],
+-    ['formula-209', 'General Formula 209 works here.'],
++    ['streepro', 'Use StreePRO per shop practice.'],
++    ['mulsolite', 'Flush with Mulsolite first.'],
++    ['pyratex', 'PYRATEX lifts the resin.'],
++    ['formula-209', 'General Formula No. 209 works here.'],
+     ['pog', 'Treat with POG before rinsing.'],
+     ['vds', 'Use VDS on the dry side.'],
+     ['nsd', 'Apply NSD at working strength.'],
+diff --git a/app/api/solve/route.ts b/app/api/solve/route.ts
+index 929900a..cfd75b0 100644
+--- a/app/api/solve/route.ts
++++ b/app/api/solve/route.ts
+@@ -13,6 +13,7 @@ import { normalizeAICard } from '@/lib/protocols/normalizeAICard'
+ import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
+ import { buildConsumerSolvePrompt } from '@/lib/solve/consumer-prompt'
+ import { enforceConsumerCard, buildRequestDisclosureText, minimalSafeCard } from '@/lib/solve/consumer-output-guard'
++import { sanitizeCardForTier, PAID_TIERS } from '@/lib/solve/sanitize-card'
+ import { applyGovernor } from '@/lib/solve/governor'
+ import { ONE_ATTEMPT_LINE } from '@/lib/safety/rule-table'
+ import { parseSessionEvidence } from '@/lib/solve/session-evidence'
+@@ -107,67 +108,8 @@ const HOME_TIER_GATE_ENABLED = process.env.HOME_TIER_GATE_ENABLED === 'true'
+ 
+ type SolveTier = 'free' | 'home' | 'spotter' | 'operator' | 'founder'
+ 
+-// TASK-068 — server-side tier sanitization. Strips pro-only fields from the
+-// card before returning to non-paid tiers. Client-side gating in ResultCard
+-// is a UX surface; this is the load-bearing trust contract.
+-//
+-// Callers: apply to every card going out in a NextResponse.json so the home
+-// user's browser never receives `spottingProtocol`, `products.professional`,
+-// handoff objects, or pro-only provenance fields in the first place.
+-const PAID_TIERS = new Set<string>(['spotter', 'operator', 'founder'])
+-
+-function sanitizeCardForTier(
+-  card: unknown,
+-  viewerTier: SolveTier | 'anon' | null | undefined,
+-): unknown {
+-  if (!card || typeof card !== 'object') return card
+-  if (viewerTier && PAID_TIERS.has(viewerTier)) return card
+-
+-  const c = card as Record<string, unknown>
+-  const out: Record<string, unknown> = { ...c }
+-
+-  // Pro protocol steps — home/anon never see these. Client fallback uses
+-  // homeSolutions. Deleting instead of nulling so the field is absent from
+-  // the JSON payload entirely.
+-  delete out.spottingProtocol
+-  delete (out as { professionalProtocol?: unknown }).professionalProtocol
+-
+-  // Products — keep consumer/household; drop professional.
+-  const products = out.products as
+-    | { professional?: unknown; consumer?: unknown; household?: unknown }
+-    | Array<{ name?: string }>
+-    | undefined
+-  if (products && !Array.isArray(products)) {
+-    const { professional: _pro, ...homeProducts } = products
+-    void _pro
+-    out.products = homeProducts
+-  }
+-
+-  // Pro-only callout / action fields. Keep escalation + customerExplanation
+-  // since those are appropriate home-tier content ("take to a pro" is fine
+-  // for home users). Drop Customer Handoff / Deep Solve / pro-specific
+-  // chemistry callouts.
+-  delete out.customerHandoff
+-  delete (out as { deepSolve?: unknown }).deepSolve
+-  delete (out as { deepSolvePrompt?: unknown }).deepSolvePrompt
+-
+-  // Source-attribution — for non-paid tiers we still want a lightweight
+-  // hint but not the full pro-vendor provenance chain. The card's generic
+-  // `scienceNote` / `stainChemistry` fields already cover the consumer angle.
+-  // Leave `sources` in only when it's already a short array (typical anon
+-  // cards have 0–1 sources). If it's long, truncate to the first entry so
+-  // consumer cards don't expose the full pro source ladder.
+-  const srcs = out.sources
+-  if (Array.isArray(srcs) && srcs.length > 1) {
+-    out.sources = srcs.slice(0, 1)
+-  }
+-
+-  // Pro tier metadata — never needed by home clients.
+-  delete (out as { pro?: unknown }).pro
+-  delete (out as { pro_es?: unknown }).pro_es
+-
+-  return out
+-}
++// TASK-068 tier sanitization — moved to lib/solve/sanitize-card.ts (TASK-247)
++// so the repo-level consumer-card guard test runs the same strip the API runs.
+ 
+ // Calls the Postgres RPC that handles the check-and-increment atomically with
+ // row lock. Returns a normalized shape for the caller.
+diff --git a/app/pro/chemicals/page.tsx b/app/pro/chemicals/page.tsx
+index 59d01be..e816a6e 100644
+--- a/app/pro/chemicals/page.tsx
++++ b/app/pro/chemicals/page.tsx
+@@ -1,11 +1,12 @@
+-'use client'
++// TASK-247 — server component. The pro chemical corpus is imported HERE so it
++// serializes only into this route's proxy-gated RSC payload, never into the
++// unauthenticated static chunks (`.next/static/chunks/*`). Do NOT add
++// `'use client'` to this file and do NOT import these JSONs from any client
++// module — scripts/check-static-chunks.mjs fails the build if corpus terms
++// reappear in a client chunk.
+ 
+-import { useState } from 'react'
+-import { useLanguage } from '@/lib/i18n/LanguageContext'
+ import crosswalkData from '@/data/chemicals/agent-brand-crosswalk.json'
+ import fiberData from '@/data/chemicals/fiber-expertise-index.json'
+-import { getAgentIcon } from '@/lib/ui/chemistryIcons'
+-import Badge from '@/components/ui/Badge'
+ 
+ // Company imports
+ import rrStreet from '@/data/chemicals/companies/rr-street.json'
+@@ -19,670 +20,31 @@ import bufa from '@/data/chemicals/companies/bufa.json'
+ import greenearth from '@/data/chemicals/companies/greenearth.json'
+ import nationalChemical from '@/data/chemicals/companies/national-chemical.json'
+ 
+-// ─── Types ───────────────────────────────────────────────────────────────────
++import ChemicalsClient, {
++  type ChemicalsData,
++  type CompanyData,
++  type CrosswalkAgent,
++  type FiberEntry,
++} from './ChemicalsClient'
+ 
+-type Tab = 'agent' | 'company' | 'fiber'
+-
+-interface CrosswalkProduct {
+-  company: string
+-  productName: string
+-  notes: string
+-}
+-
+-interface CrosswalkAgent {
+-  genericName: string
+-  description: string
+-  mechanism: string
+-  safetyWarning?: string
+-  products: CrosswalkProduct[]
+-}
+-
+-interface CompanyData {
+-  id: string
+-  name: string
+-  slug: string
+-  website: string
+-  headquarters: string
+-  founded: string
+-  employeeRange?: string
+-  overview: {
+-    summary: string
+-    historyAndReputation: string
+-    marketPosition?: string
+-  }
+-  specialties: string[]
+-  productLines: {
+-    category: string
+-    categoryDescription?: string
+-    products: {
+-      name: string
+-      type?: string
+-      description: string
+-      usedFor?: string[]
+-      fibers?: string[]
+-      notFor?: string[]
+-      proTips?: string
+-      alternativeTo?: string
+-      priceTier?: string
+-      availability?: string
+-    }[]
+-  }[]
+-  agentMapping: Record<string, string>
+-  fiberExpertise: Record<string, string>
+-  distributionNetwork?: {
+-    regions?: string[]
+-    distributionMethod?: string
+-    howToBuy?: string
+-    majorDistributors?: string[]
+-  }
+-  gonrIntegration: {
+-    relevance: string
+-    agentCrossReference?: string
+-    whenToRecommend?: string
+-  }
+-  links?: Record<string, string>
+-  lastResearched?: string
+-}
+-
+-interface FiberEntry {
+-  description: string
+-  keyConsiderations: string[]
+-  recommendedCompanies: {
+-    company: string
+-    why: string
+-    products: string[]
+-  }[]
+-  agentsToUse: string[]
+-  agentsToAvoid: string[]
+-}
+-
+-// ─── Data ────────────────────────────────────────────────────────────────────
+-
+-const companies: CompanyData[] = [
+-  rrStreet, kreussler, alWilson, adco, pariser,
+-  seitz, royaltone, bufa, greenearth, nationalChemical,
+-] as CompanyData[]
+-
+-const crosswalk = crosswalkData as unknown as Record<string, CrosswalkAgent>
+-const fibers = fiberData as unknown as Record<string, FiberEntry>
+-
+-// Agent categories in display order
++// Agent categories in display order. Lives server-side with the corpus: the
++// slugs double as forbidden consumer terms, so they stay out of client chunks.
+ const AGENT_KEYS = [
+   'NSD', 'POG', 'protein', 'tannin', 'leveling',
+   'rustRemover', 'enzymatic', 'solvent', 'oxidizingBleach',
+   'reducingAgent', 'wetCleaningDetergent', 'finishingAgent',
+-] as const
+-
+-// Cheesy chemistry emojis (🧴🛢️🥩🍷💧🔩🧬⚗️☀️⚡🫧✨) retired here — see
+-// lib/ui/chemistryIcons.tsx. Modern palette matches the solve card's Lucide
+-// section headers.
+-
+-// Fiber config
+-const FIBER_KEYS = [
+-  'silk', 'wool', 'cashmere', 'leather',
+-  'suede', 'acetate', 'polyester', 'cotton',
+-  'linen', 'nylon', 'alcantara', 'denim',
+-] as const
+-
+-const FIBER_ICONS: Record<string, string> = {
+-  silk: '🪡', wool: '🐑', cashmere: '🧣', leather: '🧥',
+-  suede: '👞', acetate: '🎀', polyester: '👕', cotton: '🌿',
+-  linen: '🌾', nylon: '🧦', alcantara: '🚗', denim: '👖',
+-}
+-
+-const HIGH_RISK_FIBERS = ['silk', 'wool', 'cashmere']
+-
+-// ─── Shared Components ───────────────────────────────────────────────────────
+-
+-// TASK-badges-v1-b (Atlas 7997): normalize chemistry-badge text so what the
+-// user reads matches the card title — no raw camelCase schema keys leaking
+-// into visible UI. All-caps acronyms (NSD, POG, IPA) are preserved as-is;
+-// camelCase and single-word lowercase become Title Case.
+-function formatAgentKey(key: string): string {
+-  if (key.length >= 2 && key === key.toUpperCase()) return key
+-  return key
+-    .replace(/([a-z])([A-Z])/g, '$1 $2')
+-    .split(/\s+/)
+-    .map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+-    .join(' ')
+-}
+-
+-function Chevron({ open }: { open: boolean }) {
+-  return (
+-    <svg
+-      width="16" height="16" viewBox="0 0 16 16" fill="none"
+-      className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+-      style={{ color: 'var(--text-secondary)' }}
+-    >
+-      <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+-    </svg>
+-  )
+-}
+-
+-function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
+-  return (
+-    <a
+-      href={href}
+-      target="_blank"
+-      rel="noopener noreferrer"
+-      className="inline-flex items-center gap-1 text-sm font-medium transition-colors"
+-      style={{ color: 'var(--text-secondary)' }}
+-    >
+-      {children}
+-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+-        <path d="M3.5 2.5H9.5V8.5M9.5 2.5L2.5 9.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+-      </svg>
+-    </a>
+-  )
+-}
+-
+-// TASK-badges-v1: local Chip removed in favor of `components/ui/Badge`.
+-// Call sites below use the shared Badge with tones:
+-//   variant="green" → tone="safe"   (agents to use, compatible products)
+-//   variant="red"   → tone="danger" (agents to avoid, high-risk fibers)
+-//   variant="default" → tone="neutral"
+-// `variant="gold"` was defined here but never actually used in this file.
+-
+-// ─── Tab: By Agent ───────────────────────────────────────────────────────────
+-
+-function AgentTab() {
+-  const { t } = useLanguage()
+-  const [expandedAgent, setExpandedAgent] = useState<string | null>(null)
+-  const [expandedBrands, setExpandedBrands] = useState<Record<string, boolean>>({})
+-
+-  return (
+-    <div className="space-y-3">
+-      {AGENT_KEYS.map(key => {
+-        const agent = crosswalk[key] as CrosswalkAgent | undefined
+-        if (!agent?.genericName) return null
+-        const isExpanded = expandedAgent === key
+-        const brandProducts = agent.products?.filter(p => p.productName !== 'N/A' && !p.productName.startsWith('N/A')) || []
+-        const showAllBrands = expandedBrands[key] || false
+-        const visibleBrands = showAllBrands ? brandProducts : brandProducts.slice(0, 4)
+-
+-        const AgentIcon = getAgentIcon(key)
+-        return (
+-          <div key={key} className="card">
+-            <button
+-              onClick={() => setExpandedAgent(isExpanded ? null : key)}
+-              className="w-full text-left flex items-center gap-3"
+-            >
+-              <AgentIcon size={18} strokeWidth={1.75} className="flex-shrink-0" style={{ color: 'var(--text-secondary)' }} aria-hidden="true" />
+-              <div className="flex-1 min-w-0">
+-                <div className="flex items-center gap-2 flex-wrap">
+-                  <h3 className="font-bold text-sm">{agent.genericName}</h3>
+-                  <Badge tone="schema" size="sm" mono={false}>{formatAgentKey(key)}</Badge>
+-                </div>
+-              </div>
+-              <Chevron open={isExpanded} />
+-            </button>
+-
+-            {isExpanded && (
+-              <div className="mt-3 pt-3 space-y-3" style={{ borderTop: '1px solid var(--border)' }}>
+-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+-                  {agent.description}
+-                </p>
+-
+-                {agent.mechanism && (
+-                  <div className="rounded-lg p-3" style={{ background: 'var(--surface-2)' }}>
+-                    <p className="text-xs font-mono font-bold mb-1" style={{ color: 'var(--text-secondary)' }}>
+-                      {t('mechanism')}
+-                    </p>
+-                    <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+-                      {agent.mechanism}
+-                    </p>
+-                  </div>
+-                )}
+-
+-                {agent.safetyWarning && (
+-                  <div className="rounded-lg p-3 border border-red-500/20" style={{ background: 'rgba(239,68,68,0.05)' }}>
+-                    <p className="text-xs font-mono font-bold mb-1 text-red-400">
+-                      ⚠️ {t('safetyUpper')}
+-                    </p>
+-                    <p className="text-xs text-red-400/80">
+-                      {agent.safetyWarning}
+-                    </p>
+-                  </div>
+-                )}
+-              </div>
+-            )}
+-
+-            {/* Brand Products — always visible below card header */}
+-            {brandProducts.length > 0 && (
+-              <div className="mt-3 pt-3" style={{ borderTop: '1px solid var(--border)' }}>
+-                <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>
+-                  {t('brandProducts')}
+-                </p>
+-                <div className="space-y-1.5">
+-                  {visibleBrands.map((p, i) => (
+-                    <div key={i} className="flex items-start gap-2 text-xs">
+-                      <span className="font-medium flex-shrink-0" style={{ color: 'var(--text-secondary)' }}>
+-                        {p.company}
+-                      </span>
+-                      <span style={{ color: 'var(--text-secondary)' }}>→</span>
+-                      <span className="font-bold">{p.productName}</span>
+-                    </div>
+-                  ))}
+-                </div>
+-                {brandProducts.length > 4 && (
+-                  <button
+-                    onClick={() => setExpandedBrands(prev => ({ ...prev, [key]: !prev[key] }))}
+-                    className="text-[10px] font-mono font-bold mt-2 transition-colors"
+-                    style={{ color: 'var(--text-secondary)' }}
+-                  >
+-                    {showAllBrands ? `▲ ${t('showLess')}` : `▼ ${t('showAll')} ${brandProducts.length}`}
+-                  </button>
+-                )}
+-              </div>
+-            )}
+-          </div>
+-        )
+-      })}
+-    </div>
+-  )
+-}
+-
+-// ─── Tab: By Company ─────────────────────────────────────────────────────────
+-
+-function CompanyTab() {
+-  const [expandedCompany, setExpandedCompany] = useState<string | null>(null)
+-
+-  return (
+-    <div className="space-y-3">
+-      {companies.map(company => {
+-        const isExpanded = expandedCompany === company.id
+-        const firstSentence = company.overview.summary.split('. ')[0] + '.'
+-
+-        return (
+-          <div key={company.id} className="card">
+-            {/* Header */}
+-            <button
+-              onClick={() => setExpandedCompany(isExpanded ? null : company.id)}
+-              className="w-full text-left"
+-            >
+-              <div className="flex items-start justify-between gap-2">
+-                <div className="flex-1 min-w-0">
+-                  <div className="flex items-center gap-2 flex-wrap">
+-                    <h3 className="font-bold text-sm">{company.name}</h3>
+-                    <ExternalLink href={company.website}>{new URL(company.website).hostname.replace('www.', '')}</ExternalLink>
+-                  </div>
+-                  <p className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+-                    {company.headquarters} · Est. {company.founded}
+-                  </p>
+-                </div>
+-                <Chevron open={isExpanded} />
+-              </div>
+-
+-              <p className="text-xs mt-2" style={{ color: 'var(--text-secondary)' }}>
+-                {firstSentence}
+-              </p>
+-
+-              {/* Specialty chips */}
+-              <div className="flex flex-wrap gap-1.5 mt-2">
+-                {company.specialties.slice(0, 4).map((s, i) => (
+-                  <span
+-                    key={i}
+-                    className="text-[10px] font-mono px-2 py-0.5 rounded-md border"
+-                    style={{
+-                      borderColor: 'var(--border-strong)',
+-                      color: 'var(--text-secondary)',
+-                      background: 'var(--surface-2)',
+-                    }}
+-                  >
+-                    {s.length > 40 ? s.slice(0, 37) + '...' : s}
+-                  </span>
+-                ))}
+-                {company.specialties.length > 4 && (
+-                  <span className="text-[10px] font-mono px-2 py-0.5" style={{ color: 'var(--text-secondary)' }}>
+-                    +{company.specialties.length - 4}
+-                  </span>
+-                )}
+-              </div>
+-            </button>
+-
+-            {/* Expanded Details */}
+-            {isExpanded && (
+-              <CompanyDetails company={company} />
+-            )}
+-          </div>
+-        )
+-      })}
+-    </div>
+-  )
+-}
+-
+-function CompanyDetails({ company }: { company: CompanyData }) {
+-  const { t } = useLanguage()
+-  const [expandedSection, setExpandedSection] = useState<string | null>(null)
+-
+-  const sections = [
+-    { key: 'overview', tKey: 'overview', icon: '📋' },
+-    { key: 'products', tKey: 'productLines', icon: '🧪' },
+-    { key: 'agents', tKey: 'agentMapping', icon: '🗺️' },
+-    { key: 'fibers', tKey: 'fiberExpertise', icon: '🧵' },
+-    { key: 'distribution', tKey: 'distribution', icon: '📦' },
+-    { key: 'gonr', tKey: 'gonrRelevance', icon: '🟢' },
+-  ]
+-
+-  return (
+-    <div className="mt-3 pt-3 space-y-2" style={{ borderTop: '1px solid var(--border)' }}>
+-      {sections.map(section => {
+-        const isOpen = expandedSection === section.key
+-
+-        return (
+-          <div key={section.key}>
+-            <button
+-              onClick={() => setExpandedSection(isOpen ? null : section.key)}
+-              className="w-full flex items-center gap-2 py-2 text-left"
+-            >
+-              <span className="text-sm">{section.icon}</span>
+-              <span className="text-xs font-bold flex-1">{t(section.tKey)}</span>
+-              <Chevron open={isOpen} />
+-            </button>
+-
+-            {isOpen && (
+-              <div className="pb-3 pl-6">
+-                {section.key === 'overview' && (
+-                  <div className="space-y-2">
+-                    <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+-                      {company.overview.summary}
+-                    </p>
+-                    {company.overview.historyAndReputation && (
+-                      <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+-                        {company.overview.historyAndReputation}
+-                      </p>
+-                    )}
+-                  </div>
+-                )}
+-
+-                {section.key === 'products' && (
+-                  <div className="space-y-3">
+-                    {company.productLines.map((line, i) => (
+-                      <div key={i}>
+-                        <p className="text-[10px] font-mono font-bold tracking-wider mb-1" style={{ color: 'var(--text-secondary)' }}>
+-                          {line.category.toUpperCase()}
+-                        </p>
+-                        {line.products.map((product, j) => (
+-                          <div key={j} className="ml-2 mb-2">
+-                            <p className="text-xs font-bold">{product.name}</p>
+-                            <p className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+-                              {product.description.length > 200
+-                                ? product.description.slice(0, 197) + '...'
+-                                : product.description}
+-                            </p>
+-                            {product.usedFor && product.usedFor.length > 0 && (
+-                              <div className="flex flex-wrap gap-1 mt-1">
+-                                {product.usedFor.slice(0, 5).map((use, k) => (
+-                                  <Badge key={k} tone="neutral" mono>{use}</Badge>
+-                                ))}
+-                              </div>
+-                            )}
+-                          </div>
+-                        ))}
+-                      </div>
+-                    ))}
+-                  </div>
+-                )}
+-
+-                {section.key === 'agents' && (
+-                  <div className="space-y-2">
+-                    {Object.entries(company.agentMapping).map(([agent, mapping]) => (
+-                      <div key={agent} className="flex items-start gap-2 text-xs">
+-                        <span className="font-mono font-bold flex-shrink-0 w-20" style={{ color: 'var(--text-secondary)' }}>
+-                          {agent}
+-                        </span>
+-                        <span style={{ color: 'var(--text-secondary)' }}>
+-                          {mapping}
+-                        </span>
+-                      </div>
+-                    ))}
+-                  </div>
+-                )}
+-
+-                {section.key === 'fibers' && (
+-                  <div className="space-y-2">
+-                    {Object.entries(company.fiberExpertise).map(([fiber, note]) => (
+-                      <div key={fiber} className="flex items-start gap-2 text-xs">
+-                        <span className="font-mono font-bold flex-shrink-0 w-20 capitalize" style={{ color: 'var(--text-secondary)' }}>
+-                          {fiber}
+-                        </span>
+-                        <span style={{ color: 'var(--text-secondary)' }}>
+-                          {note}
+-                        </span>
+-                      </div>
+-                    ))}
+-                  </div>
+-                )}
+-
+-                {section.key === 'distribution' && company.distributionNetwork && (
+-                  <div className="space-y-2 text-xs" style={{ color: 'var(--text-secondary)' }}>
+-                    {company.distributionNetwork.regions && (
+-                      <p><span className="font-bold" style={{ color: 'var(--text)' }}>{t('regions')}:</span> {company.distributionNetwork.regions.join(', ')}</p>
+-                    )}
+-                    {company.distributionNetwork.distributionMethod && (
+-                      <p><span className="font-bold" style={{ color: 'var(--text)' }}>{t('method')}:</span> {company.distributionNetwork.distributionMethod}</p>
+-                    )}
+-                    {company.distributionNetwork.howToBuy && (
+-                      <p><span className="font-bold" style={{ color: 'var(--text)' }}>{t('howToBuy')}:</span> {company.distributionNetwork.howToBuy}</p>
+-                    )}
+-                  </div>
+-                )}
+-
+-                {section.key === 'gonr' && (
+-                  <div className="space-y-2">
+-                    <div className="rounded-lg p-3" style={{ background: 'var(--surface-2)' }}>
+-                      <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+-                        {company.gonrIntegration.relevance}
+-                      </p>
+-                    </div>
+-                    {company.gonrIntegration.agentCrossReference && (
+-                      <div className="rounded-lg p-3 border border-green-500/20" style={{ background: 'rgba(var(--brand-green-rgb), 0.04)' }}>
+-                        <p className="text-[10px] font-mono font-bold mb-1" style={{ color: 'var(--text-secondary)' }}>
+-                          {t('protocolMapping')}
+-                        </p>
+-                        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+-                          {company.gonrIntegration.agentCrossReference}
+-                        </p>
+-                      </div>
+-                    )}
+-                    {company.gonrIntegration.whenToRecommend && (
+-                      <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+-                        <span className="font-bold" style={{ color: 'var(--text)' }}>{t('whenToRecommend')}:</span>{' '}
+-                        {company.gonrIntegration.whenToRecommend}
+-                      </p>
+-                    )}
+-                  </div>
+-                )}
+-              </div>
+-            )}
+-          </div>
+-        )
+-      })}
+-    </div>
+-  )
+-}
+-
+-// ─── Tab: By Fiber ───────────────────────────────────────────────────────────
+-
+-function FiberTab() {
+-  const [selectedFiber, setSelectedFiber] = useState<string | null>(null)
+-
+-  return (
+-    <div>
+-      {/* Fiber Grid */}
+-      {!selectedFiber && (
+-        <div className="grid grid-cols-4 gap-2">
+-          {FIBER_KEYS.map(key => {
+-            const isHighRisk = HIGH_RISK_FIBERS.includes(key)
+-            return (
+-              <button
+-                key={key}
+-                onClick={() => setSelectedFiber(key)}
+-                className="card flex flex-col items-center gap-1 py-3 px-2 transition-colors hover:border-green-500/30"
+-              >
+-                <span className="text-lg">{FIBER_ICONS[key]}</span>
+-                <span className="text-xs font-bold capitalize">{key}</span>
+-                {isHighRisk && (
+-                  <span className="text-[10px]">⚠️</span>
+-                )}
+-              </button>
+-            )
+-          })}
+-        </div>
+-      )}
+-
+-      {/* Fiber Detail */}
+-      {selectedFiber && (
+-        <FiberDetail fiber={selectedFiber} onBack={() => setSelectedFiber(null)} />
+-      )}
+-    </div>
+-  )
+-}
+-
+-function FiberDetail({ fiber, onBack }: { fiber: string; onBack: () => void }) {
+-  const { t } = useLanguage()
+-  const data = fibers[fiber] as FiberEntry | undefined
+-  if (!data) return null
+-  const isHighRisk = HIGH_RISK_FIBERS.includes(fiber)
+-
+-  return (
+-    <div className="space-y-4">
+-      <button
+-        onClick={onBack}
+-        className="flex items-center gap-2 text-xs font-mono font-bold px-3 py-1.5 rounded-lg
+-          border border-white/10 hover:border-green-500/30 transition-colors"
+-        style={{ color: 'var(--text-secondary)' }}
+-      >
+-        {t('allFibers')}
+-      </button>
+-
+-      <div className="flex items-center gap-3">
+-        <span className="text-2xl">{FIBER_ICONS[fiber]}</span>
+-        <div>
+-          <h2 className="text-lg font-bold capitalize">{fiber}</h2>
+-          {isHighRisk && (
+-            <Badge tone="danger" srLabel="Risk">⚠️ {t('highRiskFiber')}</Badge>
+-          )}
+-        </div>
+-      </div>
+-
+-      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+-        {data.description}
+-      </p>
+-
+-      {/* Key Considerations */}
+-      <div className="card" style={{ borderColor: isHighRisk ? 'rgba(239,68,68,0.2)' : undefined }}>
+-        <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: isHighRisk ? 'var(--danger)' : 'var(--gold)' }}>
+-          ⚠️ {t('keyConsiderations')}
+-        </p>
+-        <ul className="space-y-1.5">
+-          {data.keyConsiderations.map((item, i) => (
+-            <li key={i} className="text-xs flex items-start gap-2" style={{ color: 'var(--text-secondary)' }}>
+-              <span className="flex-shrink-0 mt-0.5" style={{ color: 'var(--gold)' }}>•</span>
+-              {item}
+-            </li>
+-          ))}
+-        </ul>
+-      </div>
+-
+-      {/* Recommended Companies */}
+-      <div>
+-        <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>
+-          {t('recommendedCompanies')}
+-        </p>
+-        <div className="space-y-2">
+-          {data.recommendedCompanies.map((rec, i) => (
+-            <div key={i} className="card">
+-              <p className="text-sm font-bold" style={{ color: 'var(--text)' }}>{rec.company}</p>
+-              <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>{rec.why}</p>
+-              <div className="flex flex-wrap gap-1.5 mt-2">
+-                {rec.products.map((prod, j) => (
+-                  <Badge key={j} tone="safe" mono>{prod}</Badge>
+-                ))}
+-              </div>
+-            </div>
+-          ))}
+-        </div>
+-      </div>
+-
+-      {/* Agents To Use / Avoid */}
+-      <div className="grid grid-cols-1 gap-3">
+-        <div className="card">
+-          <p className="text-[10px] font-mono font-bold tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>
+-            ✓ {t('agentsToUse')}
+-          </p>
+-          <div className="flex flex-wrap gap-1.5">
+-            {data.agentsToUse.map((agent, i) => (
+-              <Badge key={i} tone="safe" mono>{agent}</Badge>
+-            ))}
+-          </div>
+-        </div>
++]
+ 
+-        <div className="card" style={{ borderColor: 'rgba(239,68,68,0.15)' }}>
+-          <p className="text-[10px] font-mono font-bold tracking-wider mb-2 text-red-400">
+-            ✗ {t('agentsToAvoid')}
+-          </p>
+-          <div className="flex flex-wrap gap-1.5">
+-            {data.agentsToAvoid.map((agent, i) => (
+-              <Badge key={i} tone="danger" mono>{agent}</Badge>
+-            ))}
+-          </div>
+-        </div>
+-      </div>
+-    </div>
+-  )
++const data: ChemicalsData = {
++  agentKeys: AGENT_KEYS,
++  crosswalk: crosswalkData as unknown as Record<string, CrosswalkAgent>,
++  fibers: fiberData as unknown as Record<string, FiberEntry>,
++  companies: [
++    rrStreet, kreussler, alWilson, adco, pariser,
++    seitz, royaltone, bufa, greenearth, nationalChemical,
++  ] as CompanyData[],
+ }
+ 
+-// ─── Main Page ───────────────────────────────────────────────────────────────
+-
+-const TAB_KEYS: { key: Tab; tKey: string }[] = [
+-  { key: 'agent', tKey: 'byAgent' },
+-  { key: 'company', tKey: 'byCompany' },
+-  { key: 'fiber', tKey: 'byFiber' },
+-]
+-
+ export default function ChemicalReferencePage() {
+-  const { t } = useLanguage()
+-  const [activeTab, setActiveTab] = useState<Tab>('agent')
+-
+-  return (
+-    <div className="space-y-4">
+-      {/* Page Header */}
+-      <div>
+-        <h1 className="text-xl font-bold tracking-tight">{t('chemicalReference')}</h1>
+-        <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
+-          {t('chemicalRefSubtitle')}
+-        </p>
+-      </div>
+-
+-      {/* Tab Bar */}
+-      <div
+-        className="flex rounded-xl p-1 gap-1"
+-        style={{ background: 'var(--surface-2)' }}
+-      >
+-        {TAB_KEYS.map(tab => (
+-          <button
+-            key={tab.key}
+-            onClick={() => setActiveTab(tab.key)}
+-            className={`flex-1 text-xs font-bold py-2 rounded-lg transition-all ${
+-              activeTab === tab.key
+-                ? 'text-white shadow-sm'
+-                : ''
+-            }`}
+-            style={{
+-              background: activeTab === tab.key ? 'var(--accent)' : 'transparent',
+-              color: activeTab === tab.key ? '#fff' : 'var(--text-secondary)',
+-            }}
+-          >
+-            {t(tab.tKey)}
+-          </button>
+-        ))}
+-      </div>
+-
+-      {/* Tab Content */}
+-      {activeTab === 'agent' && <AgentTab />}
+-      {activeTab === 'company' && <CompanyTab />}
+-      {activeTab === 'fiber' && <FiberTab />}
+-    </div>
+-  )
++  return <ChemicalsClient data={data} />
+ }
+diff --git a/app/pro/chemistry/page.tsx b/app/pro/chemistry/page.tsx
+index 3655115..8a52910 100644
+--- a/app/pro/chemistry/page.tsx
++++ b/app/pro/chemistry/page.tsx
+@@ -1,227 +1,32 @@
+-'use client'
+-
+-import { useState, useEffect } from 'react'
+-
+-const FAMILY_FILES = [
+-  'tannin', 'protein', 'oil', 'dye', 'combination',
+-  'mineral', 'mildew', 'odor', 'resin', 'particulate',
+-  'chemical-damage', 'maintenance'
+-]
+-
+-
+-
+-function getAgents(keyAgents: any): { name: string; action: string }[] {
+-  if (!keyAgents) return []
+-  if (Array.isArray(keyAgents)) {
+-    return keyAgents.map((a: any) => ({
+-      name: a.agent || a.name || '',
+-      action: a.mechanism || a.action || a.use || '',
+-    })).filter(a => a.name)
+-  }
+-  if (keyAgents.primary) {
+-    return keyAgents.primary.map((a: any) => ({
+-      name: a.name || a.agent || '',
+-      action: a.action || a.mechanism || '',
+-    }))
+-  }
+-  return []
+-}
+-
+-function getAvoid(keyAgents: any): { name: string; reason: string }[] {
+-  if (!keyAgents || Array.isArray(keyAgents)) return []
+-  return (keyAgents.avoid || []).map((a: any) => ({
+-    name: a.name || a.agent || '',
+-    reason: a.reason || '',
+-  }))
+-}
+-
+-function getMistakes(mistakes: any[]): { mistake: string; why: string; instead: string }[] {
+-  if (!mistakes) return []
+-  return mistakes.map((m: any) => {
+-    if (typeof m === 'string') return { mistake: m, why: '', instead: '' }
+-    return {
+-      mistake: m.mistake || m.title || '',
+-      why: m.whyItFails || m.why || '',
+-      instead: m.instead || m.fix || '',
+-    }
+-  }).filter(m => m.mistake)
+-}
+-
+-function getTips(tips: any[]): string[] {
+-  if (!tips) return []
+-  return tips.map((t: any) => typeof t === 'string' ? t : (t.tip || t.text || t.summary || '')).filter(Boolean)
+-}
++// TASK-247 — server component. Chemistry family cards are imported HERE from
++// data/chemistry/ (the canonical copy) instead of runtime-fetched from
++// static-public /data/chemistry/*.json, so the corpus is served only through
++// this proxy-gated route. Do NOT add 'use client' or reintroduce the
++// public-data fetch — scripts/check-static-chunks.mjs guards the regression.
++
++import tannin from '@/data/chemistry/tannin.json'
++import protein from '@/data/chemistry/protein.json'
++import oil from '@/data/chemistry/oil.json'
++import dye from '@/data/chemistry/dye.json'
++import combination from '@/data/chemistry/combination.json'
++import mineral from '@/data/chemistry/mineral.json'
++import mildew from '@/data/chemistry/mildew.json'
++import odor from '@/data/chemistry/odor.json'
++import resin from '@/data/chemistry/resin.json'
++import particulate from '@/data/chemistry/particulate.json'
++import chemicalDamage from '@/data/chemistry/chemical-damage.json'
++import maintenance from '@/data/chemistry/maintenance.json'
++
++import ChemistryClient, { type ChemistryCard } from './ChemistryClient'
++
++// Same display order as the retired FAMILY_FILES fetch list. The cast crosses
++// the same trust boundary the old `fetch().json()` did — the getters in
++// ChemistryClient normalize the shape-drifted hand-authored JSON.
++const cards = [
++  tannin, protein, oil, dye, combination, mineral,
++  mildew, odor, resin, particulate, chemicalDamage, maintenance,
++] as ChemistryCard[]
+ 
+ export default function ChemistryPage() {
+-  const [cards, setCards] = useState<any[]>([])
+-  const [selected, setSelected] = useState<string | null>(null)
+-  const [loading, setLoading] = useState(true)
+-
+-  useEffect(() => {
+-    async function load() {
+-      const loaded: any[] = []
+-      for (const id of FAMILY_FILES) {
+-        try {
+-          const res = await fetch(`/data/chemistry/${id}.json`)
+-          if (res.ok) loaded.push(await res.json())
+-        } catch {}
+-      }
+-      setCards(loaded)
+-      setLoading(false)
+-    }
+-    load()
+-  }, [])
+-
+-  const active = cards.find(c => c.id === selected)
+-
+-  return (
+-    <div className="space-y-4 pb-8">
+-      <div>
+-        <h1 className="text-xl font-bold" style={{ color: 'var(--text)' }}>Chemistry Cards</h1>
+-        <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
+-          Stain family chemistry — how each family bonds, what breaks it, what makes it permanent.
+-        </p>
+-      </div>
+-
+-      {loading ? (
+-        <div className="flex items-center justify-center py-8">
+-          <span className="w-5 h-5 border-2 border-white/20 border-t-green-500 rounded-full animate-spin" />
+-        </div>
+-      ) : (
+-        <>
+-          <div className="flex flex-wrap gap-2">
+-            {cards.map(c => (
+-              <button
+-                key={c.id}
+-                type="button"
+-                onClick={() => setSelected(selected === c.id ? null : c.id)}
+-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-all"
+-                style={{
+-                  background: selected === c.id ? 'rgba(var(--brand-green-rgb), 0.12)' : 'var(--surface)',
+-                  border: `1.5px solid ${selected === c.id ? 'var(--accent)' : 'var(--border-strong)'}`,
+-                  color: selected === c.id ? 'var(--accent)' : 'var(--text)',
+-                }}
+-              >
+-                <span>{c.icon}</span>
+-                <span>{c.family}</span>
+-              </button>
+-            ))}
+-          </div>
+-
+-          {active && (() => {
+-            const summary = typeof active.overview === 'string' ? active.overview : active.overview?.summary
+-            const molecular = typeof active.overview === 'object' ? active.overview?.molecularStructure : null
+-            const timeFactor = active.timeFactor
+-            const agents = getAgents(active.keyAgents)
+-            const avoid = getAvoid(active.keyAgents)
+-            const mistakes = getMistakes(active.commonMistakes || [])
+-            const tips = getTips(active.dansTips || [])
+-
+-            return (
+-              <div className="rounded-xl overflow-hidden" style={{ background: 'var(--surface)', border: '1px solid var(--border-strong)' }}>
+-                {/* Header */}
+-                <div className="px-4 pt-4 pb-3" style={{ borderBottom: '1px solid var(--border)' }}>
+-                  <div className="flex items-center gap-3">
+-                    <span className="text-3xl">{active.icon}</span>
+-                    <div>
+-                      <h2 className="text-lg font-bold" style={{ color: 'var(--text)' }}>{active.family} Family</h2>
+-                    </div>
+-                  </div>
+-                </div>
+-
+-                <div className="px-4 py-4 space-y-4">
+-                  {/* Summary */}
+-                  {summary && <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>{summary}</p>}
+-
+-                  {/* Molecular */}
+-                  {molecular && (
+-                    <div className="rounded-xl p-3" style={{ background: 'var(--surface-2)' }}>
+-                      <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--text-secondary)' }}>Molecular Structure</p>
+-                      <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>{molecular}</p>
+-                    </div>
+-                  )}
+-
+-                  {/* Time factor */}
+-                  {timeFactor && (
+-                    <div>
+-                      <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>Time Factor</p>
+-                      <div className="flex flex-col gap-2">
+-                        {[
+-                          { key: 'fresh', label: 'Fresh', color: 'var(--accent)', bg: 'rgba(var(--brand-green-rgb), 0.08)', border: 'rgba(var(--brand-green-rgb), 0.2)' },
+-                          { key: 'aged', label: 'Aged', color: '#f59e0b', bg: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.2)' },
+-                          { key: 'heatSet', label: 'Heat Set', color: '#ef4444', bg: 'rgba(239,68,68,0.08)', border: 'rgba(239,68,68,0.2)' },
+-                        ].map(({ key, label, color, bg, border }) => timeFactor[key] ? (
+-                          <div key={key} className="rounded-lg px-3 py-2 flex gap-2 items-baseline" style={{ background: bg, border: `1px solid ${border}` }}>
+-                            <p className="text-[11px] font-bold shrink-0 w-14" style={{ color }}>{label}</p>
+-                            <p className="text-[11px] leading-relaxed" style={{ color: 'var(--text)' }}>{timeFactor[key]}</p>
+-                          </div>
+-                        ) : null)}
+-                      </div>
+-                    </div>
+-                  )}
+-
+-                  {/* Key agents */}
+-                  {agents.length > 0 && (
+-                    <div>
+-                      <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--text-secondary)' }}>Key Agents</p>
+-                      <div className="space-y-3">
+-                        {agents.map((a, i) => (
+-                          <div key={i} className="rounded-xl p-3" style={{ background: 'var(--surface-2)' }}>
+-                            <p className="text-sm font-semibold mb-1" style={{ color: 'var(--accent)' }}>{a.name}</p>
+-                            <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>{a.action}</p>
+-                          </div>
+-                        ))}
+-                      </div>
+-                    </div>
+-                  )}
+-
+-                  {/* Never use */}
+-                  {avoid.length > 0 && (
+-                    <div className="rounded-xl p-3" style={{ background: 'rgba(239,68,68,0.06)', border: '1px solid rgba(239,68,68,0.2)' }}>
+-                      <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: '#ef4444' }}>⚠️ Never Use</p>
+-                      {avoid.map((a, i) => (
+-                        <p key={i} className="text-sm mb-1" style={{ color: 'var(--text)' }}>• <span className="font-semibold">{a.name}</span>{a.reason ? ` — ${a.reason}` : ''}</p>
+-                      ))}
+-                    </div>
+-                  )}
+-
+-                  {/* Common mistakes */}
+-                  {mistakes.length > 0 && (
+-                    <div>
+-                      <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: '#ef4444' }}>⚠️ Common Mistakes</p>
+-                      <div className="space-y-2">
+-                        {mistakes.map((m, i) => (
+-                          <div key={i} className="rounded-xl p-3" style={{ background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.15)' }}>
+-                            <p className="text-sm font-semibold" style={{ color: '#ef4444' }}>✗ {m.mistake}</p>
+-                            {m.why && <p className="text-xs mt-1" style={{ color: 'var(--text)' }}>{m.why}</p>}
+-                            {m.instead && <p className="text-xs font-medium mt-1" style={{ color: 'var(--accent)' }}>→ {m.instead}</p>}
+-                          </div>
+-                        ))}
+-                      </div>
+-                    </div>
+-                  )}
+-
+-                  {/* Dan's tips */}
+-                  {tips.length > 0 && (
+-                    <div className="rounded-xl p-3" style={{ background: 'rgba(var(--brand-green-rgb), 0.06)', border: '1px solid rgba(var(--brand-green-rgb), 0.2)' }}>
+-                      <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--accent)' }}>💡 Dan's Tips</p>
+-                      <div className="space-y-2">
+-                        {tips.map((t, i) => (
+-                          <p key={i} className="text-sm" style={{ color: 'var(--text)' }}>• {t}</p>
+-                        ))}
+-                      </div>
+-                    </div>
+-                  )}
+-                </div>
+-              </div>
+-            )
+-          })()}
+-
+-          {!selected && (
+-            <p className="text-sm text-center py-4" style={{ color: 'var(--text-secondary)' }}>Tap a stain family to see chemistry details</p>
+-          )}
+-        </>
+-      )}
+-    </div>
+-  )
++  return <ChemistryClient cards={cards} />
+ }
+diff --git a/lib/safety/rule-table.ts b/lib/safety/rule-table.ts
+index f2c60f5..17d42c8 100644
+--- a/lib/safety/rule-table.ts
++++ b/lib/safety/rule-table.ts
+@@ -322,7 +322,12 @@ export const FORBIDDEN_CONSUMER_TERMS: ReadonlyArray<{ id: string; re: RegExp }>
+   { id: 'bleaching-guide', re: /bleaching\s+guide/i },
+   { id: 'bongo', re: /\bbongo\b/i },
+   { id: 'streetan', re: /\bstreetan\b/i },
+-  { id: 'formula-209', re: /formula\s*209/i },
++  { id: 'streepro', re: /\bstreepro\b/i },
++  { id: 'mulsolite', re: /\bmulsolite\b/i },
++  { id: 'pyratex', re: /\bpyratex\b/i },
++  // "General Formula No. 209" is the spelling used throughout the pro corpus;
++  // the bare "formula 209" form alone missed it.
++  { id: 'formula-209', re: /(?:general\s+)?formula\s*(?:no\.?\s*)?209/i },
+   { id: 'pog', re: /\bPOG\b/ },
+   { id: 'vds', re: /\bVDS\b/ },
+   { id: 'nsd', re: /\bNSD\b/ },
+diff --git a/package.json b/package.json
+index 064ff59..76ada42 100644
+--- a/package.json
++++ b/package.json
+@@ -5,6 +5,7 @@
+   "scripts": {
+     "dev": "next dev",
+     "build": "next build",
++    "postbuild": "node scripts/check-static-chunks.mjs",
+     "start": "next start",
+     "lint": "eslint",
+     "test": "vitest run",

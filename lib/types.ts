@@ -107,6 +107,11 @@ export interface LookupResult {
   tier: 1 | 2 | 3 | 4
   confidence: number
   source: Source
+  legacyDenied?: {
+    reason: 'unratified_legacy_card'
+    cardId: string
+    allowlistVersion: string
+  }
 }
 
 export interface User {

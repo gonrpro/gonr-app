@@ -1,0 +1,22 @@
+▲ Next.js 16.2.6 (webpack)
+- Local:         http://127.0.0.1:4557
+- Network:       http://127.0.0.1:4557
+- Environments: .env.local
+✓ Ready in 253ms
+
+⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:4557". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ GET / 200 in 912ms (next.js: 733ms, proxy.ts: 71ms, application-code: 108ms)
+ POST /api/intake 200 in 24.7s (next.js: 222ms, proxy.ts: 2ms, application-code: 24.5s)
+[SafetyFilter] Auto-corrected 1 violation(s)
+ POST /api/solve 200 in 13.7s (next.js: 257ms, proxy.ts: 5ms, application-code: 13.5s)
+ POST /api/intake 200 in 34.7s (next.js: 1159µs, proxy.ts: 4ms, application-code: 34.7s)
+ POST /api/intake 200 in 25.1s (next.js: 8ms, proxy.ts: 1649µs, application-code: 25.1s)
+[SafetyFilter] BLOCKED: RULE-7: Hydrogen peroxide on silk, RULE-7: Hydrogen peroxide on silk, RULE-7: Hydrogen peroxide on silk, RULE-7: Hydrogen peroxide on silk, RULE-11: Rub/scrub on tannin, RULE-11: Rub/scrub on tannin, RULE-11: Rub/scrub on tannin
+ POST /api/solve 200 in 14.4s (next.js: 1655µs, proxy.ts: 3ms, application-code: 14.4s)
+ POST /api/intake 200 in 36.2s (next.js: 1398µs, proxy.ts: 1933µs, application-code: 36.2s)
+ POST /api/intake 200 in 19.5s (next.js: 717µs, proxy.ts: 1391µs, application-code: 19.5s)
+ POST /api/solve 200 in 15.6s (next.js: 796µs, proxy.ts: 1242µs, application-code: 15.6s)
+ POST /api/intake 200 in 41s (next.js: 967µs, proxy.ts: 1829µs, application-code: 41s)
+ POST /api/intake 200 in 25.4s (next.js: 801µs, proxy.ts: 1404µs, application-code: 25.4s)
+ POST /api/solve 200 in 18.6s (next.js: 1685µs, proxy.ts: 3ms, application-code: 18.6s)
+ POST /api/intake 200 in 43s (next.js: 789µs, proxy.ts: 1834µs, application-code: 43s)

@@ -10,7 +10,7 @@ import { langOutputDirective } from '@/lib/solve/langDirective'
 
 describe('ES → AI-tier library bypass (decide)', () => {
   it('serves the English library card for an English request (control)', async () => {
-    const en = await decide({ stain: 'coffee', surface: 'cotton', lang: 'en' })
+    const en = await decide({ stain: 'coffee', surface: 'cotton', lang: 'en', viewerTier: 'founder' })
     // The control MUST actually hit a card, or the bypass assertion below is vacuous.
     expect(en.card).not.toBeNull()
     expect(en.source).toBe('core')
@@ -25,8 +25,8 @@ describe('ES → AI-tier library bypass (decide)', () => {
   })
 
   it('canonical proof: red wine on cotton — EN may match a card, ES must not', async () => {
-    const enWine = await decide({ stain: 'red wine', surface: 'cotton', lang: 'en' })
-    const esWine = await decide({ stain: 'red wine', surface: 'cotton', lang: 'es' })
+    const enWine = await decide({ stain: 'red wine', surface: 'cotton', lang: 'en', viewerTier: 'founder' })
+    const esWine = await decide({ stain: 'red wine', surface: 'cotton', lang: 'es', viewerTier: 'founder' })
     // If English resolves a library card, Spanish must NOT return it.
     if (enWine.card) {
       expect(esWine.card).toBeNull()
@@ -44,7 +44,7 @@ describe('ES → AI-tier library bypass (decide)', () => {
   })
 
   it('lang is case-insensitive (ES and es both bypass)', async () => {
-    const upper = await decide({ stain: 'coffee', surface: 'cotton', lang: 'ES' })
+    const upper = await decide({ stain: 'coffee', surface: 'cotton', lang: 'ES', viewerTier: 'founder' })
     expect(upper.card).toBeNull()
   })
 })

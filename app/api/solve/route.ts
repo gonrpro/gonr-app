@@ -13,6 +13,7 @@ import { normalizeAICard } from '@/lib/protocols/normalizeAICard'
 import { ensureBleachNeutralization } from '@/lib/safety/bleach-neutralization'
 import { buildConsumerSolvePrompt } from '@/lib/solve/consumer-prompt'
 import { enforceConsumerCard, buildRequestDisclosureText, minimalSafeCard } from '@/lib/solve/consumer-output-guard'
+import { sanitizeCardForTier, PAID_TIERS } from '@/lib/solve/sanitize-card'
 import { applyGovernor } from '@/lib/solve/governor'
 import { ONE_ATTEMPT_LINE } from '@/lib/safety/rule-table'
 import { parseSessionEvidence } from '@/lib/solve/session-evidence'
@@ -107,67 +108,8 @@ const HOME_TIER_GATE_ENABLED = process.env.HOME_TIER_GATE_ENABLED === 'true'
 
 type SolveTier = 'free' | 'home' | 'spotter' | 'operator' | 'founder'
 
-// TASK-068 — server-side tier sanitization. Strips pro-only fields from the
-// card before returning to non-paid tiers. Client-side gating in ResultCard
-// is a UX surface; this is the load-bearing trust contract.
-//
-// Callers: apply to every card going out in a NextResponse.json so the home
-// user's browser never receives `spottingProtocol`, `products.professional`,
-// handoff objects, or pro-only provenance fields in the first place.
-const PAID_TIERS = new Set<string>(['spotter', 'operator', 'founder'])
-
-function sanitizeCardForTier(
-  card: unknown,
-  viewerTier: SolveTier | 'anon' | null | undefined,
-): unknown {
-  if (!card || typeof card !== 'object') return card
-  if (viewerTier && PAID_TIERS.has(viewerTier)) return card
-
-  const c = card as Record<string, unknown>
-  const out: Record<string, unknown> = { ...c }
-
-  // Pro protocol steps — home/anon never see these. Client fallback uses
-  // homeSolutions. Deleting instead of nulling so the field is absent from
-  // the JSON payload entirely.
-  delete out.spottingProtocol
-  delete (out as { professionalProtocol?: unknown }).professionalProtocol
-
-  // Products — keep consumer/household; drop professional.
-  const products = out.products as
-    | { professional?: unknown; consumer?: unknown; household?: unknown }
-    | Array<{ name?: string }>
-    | undefined
-  if (products && !Array.isArray(products)) {
-    const { professional: _pro, ...homeProducts } = products
-    void _pro
-    out.products = homeProducts
-  }
-
-  // Pro-only callout / action fields. Keep escalation + customerExplanation
-  // since those are appropriate home-tier content ("take to a pro" is fine
-  // for home users). Drop Customer Handoff / Deep Solve / pro-specific
-  // chemistry callouts.
-  delete out.customerHandoff
-  delete (out as { deepSolve?: unknown }).deepSolve
-  delete (out as { deepSolvePrompt?: unknown }).deepSolvePrompt
-
-  // Source-attribution — for non-paid tiers we still want a lightweight
-  // hint but not the full pro-vendor provenance chain. The card's generic
-  // `scienceNote` / `stainChemistry` fields already cover the consumer angle.
-  // Leave `sources` in only when it's already a short array (typical anon
-  // cards have 0–1 sources). If it's long, truncate to the first entry so
-  // consumer cards don't expose the full pro source ladder.
-  const srcs = out.sources
-  if (Array.isArray(srcs) && srcs.length > 1) {
-    out.sources = srcs.slice(0, 1)
-  }
-
-  // Pro tier metadata — never needed by home clients.
-  delete (out as { pro?: unknown }).pro
-  delete (out as { pro_es?: unknown }).pro_es
-
-  return out
-}
+// TASK-068 tier sanitization — moved to lib/solve/sanitize-card.ts (TASK-247)
+// so the repo-level consumer-card guard test runs the same strip the API runs.
 
 // Calls the Postgres RPC that handles the check-and-increment atomically with
 // row lock. Returns a normalized shape for the caller.
@@ -444,6 +386,32 @@ function buildContextualFallback(ctx: SolveContext): any {
   }
   fallback.meta.cautiousHoldingSteps = cautiousOk
 
+  return fallback
+}
+
+type MutableFallbackCard = Record<string, unknown> & {
+  id?: string
+  title: string
+  stainChemistry?: string
+  whyThisWorks?: string
+  meta?: Record<string, unknown>
+}
+
+function buildUnratifiedLegacyFallback(ctx: SolveContext, cardId: string): MutableFallbackCard {
+  const fallback = buildContextualFallback(ctx) as MutableFallbackCard
+  fallback.id = 'consumer-unratified-legacy-card-fallback'
+  fallback.title = `Verified home guidance not ready — ${ctx.stain} on ${ctx.surface}`
+  fallback.stainChemistry = `We do not have ratified home guidance for this combination yet, so protect the item and ask a professional before treating it.`
+  fallback.whyThisWorks = 'Defaulting to no treatment avoids turning an unverified legacy card into consumer advice.'
+  fallback.meta = {
+    ...(fallback.meta || {}),
+    tier: 'consumer-unratified-legacy-card-fallback',
+    deniedLegacyCardId: cardId,
+  }
+  fallback._legacyCardDenied = {
+    reason: 'unratified_legacy_card',
+    cardId,
+  }
   return fallback
 }
 
@@ -901,7 +869,47 @@ export async function POST(req: Request) {
       surface: ctx.surface,
       plant_id: (userPlant as { id?: string } | null)?.id ?? null,
       lang,
+      viewerTier,
     })
+    if (result.legacyDenied) {
+      const deniedCardId = result.legacyDenied.cardId
+      const fallback = buildUnratifiedLegacyFallback(ctx, deniedCardId)
+      logSolveHistory({ stain: ctx.stain, surface: ctx.surface, title: fallback.title, source: 'library-unratified-denied', confidence: 0 }).catch(() => {})
+      logSolveReview({
+        queryRaw: `${ctx.stain} on ${ctx.surface}`,
+        stain: ctx.stain,
+        surface: ctx.surface,
+        tierRequested: viewerTier,
+        matchedCardKey: deniedCardId,
+        usedAiFallback: false,
+        userId: email,
+        sessionId: correlationId,
+      })
+      recordEvent({
+        type: EVENT_TYPES.SOLVE_AI_FALLBACK_SERVED,
+        actor_id: email ?? null,
+        plant_id: (userPlant as { id?: string } | null)?.id ?? null,
+        payload: {
+          stain: ctx.stain,
+          surface: ctx.surface,
+          tier: viewerTier,
+          denied_legacy_card_id: deniedCardId,
+          allowlist_version: result.legacyDenied.allowlistVersion,
+        },
+        correlation_id: correlationId,
+      }).catch(() => {})
+      return NextResponse.json({
+        card: finalizeCardForResponse(fallback, viewerTier, ctx),
+        tier: 4,
+        confidence: 0,
+        source: 'library-unratified-denied',
+        stainType: resolveStainType(null, ctx),
+        correlationId,
+        viewerTier,
+        _legacyCardDenied: result.legacyDenied,
+        _serverMs: Date.now() - _t0,
+      })
+    }
     if (result.card) {
       applyFiberModifications(result.card, ctx)
       injectContextWarnings(result.card, ctx)
