@@ -631,6 +631,14 @@ const GENERIC_SAFETY_QUESTION: IntakeQuestion = {
   text: 'One more thing — anything you’ve already tried on it, or anything delicate about the item?',
   options: ['Nothing tried yet', 'Already treated it', 'It is delicate or valuable', 'Not sure'],
 }
+// Delicate-only variant of the final safety sweep. Used when prior-treatment is ALREADY
+// captured, so the generic fallback must not re-ask "anything you've already tried" (the
+// duplicate-question bug — Tyler 2026-06-13). Asks ONLY the still-open delicate/valuable
+// signal; drops nothing safety-relevant since prior-treatment is already known.
+const DELICATE_SAFETY_QUESTION: IntakeQuestion = {
+  text: 'Last thing — anything delicate or valuable about the item?',
+  options: ['Nothing special', 'It is delicate or valuable', 'Not sure'],
+}
 
 // The static-option slot questions the deterministic fast-path may answer with NO model
 // call (TASK-257 Slice 1). FABRIC is mandatory before any verdict, so it fast-paths
@@ -1001,6 +1009,14 @@ function askedInTranscript(transcript: IntakeTurn[], re: RegExp): boolean {
   return transcript.some((t) => t.role === 'assistant' && re.test(t.text))
 }
 
+function answeredQuestionInTranscript(transcript: IntakeTurn[], re: RegExp): boolean {
+  return transcript.some((turn, index) => {
+    if (turn.role !== 'assistant' || !re.test(turn.text)) return false
+    const answer = transcript[index + 1]
+    return answer?.role === 'user' && cleanSlotAnswer(answer.text).length > 0
+  })
+}
+
 function normalizedChipAnswer(text: string): string {
   return cleanSlotAnswer(text).toLowerCase().replace(/\s+/g, ' ')
 }
@@ -1158,8 +1174,24 @@ function nextQuestionAfterIdentitySuppression(pf: ParsedFacts, req: IntakeReques
   return pickSafetyQuestion(pf, req)?.question ?? null
 }
 
-function safetyFallbackQuestion(pf: ParsedFacts, req: IntakeRequest): IntakeQuestion {
-  return nextQuestionAfterIdentitySuppression(pf, req) ?? GENERIC_SAFETY_QUESTION
+/** Has prior-treatment already been captured — disclosed in the user's words OR answered after
+ *  the prior-treatment prompt? Never treat a bare assistant prompt as a known fact. */
+export function priorTreatmentKnown(req: IntakeRequest): boolean {
+  const text = normalizeText(rawUserText(req))
+  return (
+    PRIOR_DISCLOSED.test(text) ||
+    PRIOR_AGENT_DISCLOSED.test(text) ||
+    answeredQuestionInTranscript(req.transcript, PRIOR_ASKED)
+  )
+}
+
+export function safetyFallbackQuestion(pf: ParsedFacts, req: IntakeRequest): IntakeQuestion {
+  const next = nextQuestionAfterIdentitySuppression(pf, req)
+  if (next) return next
+  // Final safety sweep: if prior-treatment is already captured, the generic "anything you've
+  // already tried, or anything delicate?" would re-ask a known fact (the duplicate-question
+  // bug). Ask the delicate-only variant instead. Prior still unknown → keep the generic ask.
+  return priorTreatmentKnown(req) ? DELICATE_SAFETY_QUESTION : GENERIC_SAFETY_QUESTION
 }
 
 function hasConcreteReadValue(value: string): boolean {
