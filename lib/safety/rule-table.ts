@@ -337,6 +337,31 @@ export const FORBIDDEN_CONSUMER_TERMS: ReadonlyArray<{ id: string; re: RegExp }>
   { id: 'sodium-hydrosulfite', re: /sodium\s+hydrosul(?:ph|f)ite/i },
   { id: 'titanium-sulfate', re: /titanium\s+sulfate/i },
   { id: 'bleach-vinegar-neutralization', re: /neutrali[sz]e\s+(?:residual\s+)?(?:the\s+)?bleach\s+with\s+vinegar/i },
+  // TASK-257 (A) — SB never-allow consumer term set (review task-257-consumer-pro-product-
+  // quarantine-2026-06-13 §4). The guard runs on the SANITIZED consumer card (pro fields already
+  // stripped by sanitizeCardForTier) + AI output, so these block only consumer-rendered text.
+  // Trade products / formulas:
+  { id: 'tango-oxidizer', re: /\btango\b/i },
+  { id: 'streepene', re: /\bstreepene\b/i },
+  { id: 'fortex', re: /\bfortex\b/i },
+  { id: 'chemspec', re: /\bchemspec\b/i },
+  { id: 'tannin-spotter', re: /\btannin\s+spotters?\b/i },
+  { id: 'protein-spotter', re: /\bprotein\s+spotters?\b/i },
+  { id: 'picrin', re: /\bpicrin\b/i },
+  { id: 'solvon', re: /\bsolvon(?:\s*k4)?\b/i },
+  // Hazardous / pro raw chemicals as shopping terms:
+  { id: 'sodium-dithionite', re: /\bdithionite\b/i },
+  { id: 'thiourea', re: /\bthiourea\b/i },
+  { id: 'potassium-hydroxide', re: /\bpotassium\s+hydroxide\b|\bcaustic\s+potash\b/i },
+  { id: 'koh', re: /\bKOH\b/i },
+  { id: 'naphtha', re: /\bnaphtha\b/i },
+  { id: 'petroleum-ether', re: /\bpetroleum\s+ether\b/i },
+  { id: 'perchloroethylene', re: /\bperchloroethylene\b|\btetrachloroethylene\b|\bperc\b/i },
+  { id: 'stoddard-solvent', re: /\bstoddard\s+solvent\b/i },
+  // Trade-context pro phrases implying consumer procurement/use:
+  { id: 'dry-cleaning-solvent', re: /\bdry[-\s]?clean(?:ing)?\s+solvents?\b/i },
+  { id: 'spotting-agent', re: /\bspotting\s+(?:agents?|formulas?|boards?|chemicals?)\b/i },
+  { id: 'pro-solvent', re: /\bpro\s+solvents?\b/i },
 ]
 
 // TASK-236 — unsafe chemistry BEYOND the trade-term list: household/garage

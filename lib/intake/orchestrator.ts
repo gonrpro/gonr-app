@@ -414,9 +414,22 @@ const UNKNOWN = /unknown|not sure|unsure|unclear|can'?t tell|n\/a|none|^$/i
 // model. Narrower than UNKNOWN (no bare "none"/empty match) so it only catches real hedging.
 const CHIP_UNCERTAINTY = /\bnot sure\b|\bunsure\b|\bdon'?t know\b|\bdunno\b|\bno idea\b/i
 const PRIOR_AGGRESSIVE =
-  /bleach|clorox|chlorine|hypochlorite|solvent|ammonia|alkali|acetone|peroxide|oxidiz|oxi-?clean/i
+  /bleach|clorox|chlorine|hypochlorite|solvent|ammonia|alkali|acetone|peroxide|oxidiz|oxi-?clean|\bacid\b|vinegar|alcohol|isopropyl|rubbing alcohol|hand sanitizer|nail polish remover|paint thinner|mineral spirits|turpentine|naphtha|petroleum ether|degreaser|wd-?40|goo gone|goof off|\blye\b|caustic|\bkoh\b|potassium hydroxide|rust remover|oxalic acid|sodium hydrosulfite|sodium dithionite|reducing bleach|colou?r remover/i
+// TASK-257 Slice 1.7 A1 (SB ruling): bare `water|soap|detergent` REMOVED here — benign prior
+// care ("blotted with cool water", "used mild soap") is allowlisted by BENIGN_PRIOR_CARE_PROSE
+// and stripped BEFORE this test runs (see hasResidualHazardProse). Added SB's unknown-product
+// classes (mystery/spray/powder/paste/booster/eraser/sanitizer/home-mix/concoction/spot-remover/
+// pre-treat). "hot/warm/strong/industrial" qualifiers still defer via PRIOR_AGGRESSIVE/HEAT.
 const AMBIGUOUS_HAZARD_PROSE =
-  /\b(strong stuff|cleaner|cleaning product|product|chemical|home remedy|used|tried|treated|applied|put|poured|washed|rinsed|scrubbed|soaked|sprayed|rubbed|stain remover|soap|detergent|water)\b|\bhit\s+(?:it|this|that|the stain)\s+with\b/i
+  /\b(strong stuff|cleaner|cleaning product|cleaning spray|spray cleaner|unknown cleaner|mystery cleaner|some cleaner|some product|product|chemical|home remedy|home ?made mix|home mix|diy mix|mixed|mixture|concoction|combo|combination|used|tried|treated|applied|put|poured|washed|rinsed|scrubbed|soaked|sprayed|rubbed|stain remover|spot remover|pre-?treat(?:er|ment)?|laundry booster|booster|powder|paste|gel|stick|wipe|eraser|magic eraser|sanitizer|disinfectant|deodorizer)\b|\bhit\s+(?:it|this|that|the stain)\s+with\b/i
+// TASK-257 Slice 1.7 A1 (SB benign-prior allowlist): low-risk prior care that does NOT defer —
+// blotting/rinsing/flushing with (cold/cool/room-temp/plain) water, or using mild/plain soap or
+// detergent. Stripped from the residual BEFORE hazard testing so it doesn't trip TREATMENT_VERB/
+// AMBIGUOUS. NOTE the temperature gate: "hot/warm/boiling water" is NOT matched here (only
+// cold/cool/room-temp/bare), so it still defers via HEAT_APPLIED; "strong/industrial" soap still
+// defers via the qualifier. /g so .replace removes every benign clause before the remainder is scanned.
+const BENIGN_PRIOR_CARE_PROSE =
+  /\b(?:blott(?:ed|ing)?|dabbed|pressed|rins(?:ed|ing)?|flush(?:ed|ing)?)\s+(?:it|this|that|the stain)?\s*(?:with|under)?\s*(?:cold|cool|room[- ]?temperature)?\s*water\b|\b(?:used|tried|applied)\s+(?:a\s+)?(?:mild|gentle|plain|regular)?\s*(?:soap|dish soap|laundry detergent|detergent)\b/gi
 // A QUESTION about an aggressive agent ("can I just use bleach?") is NOT a
 // disclosure that it was applied — folding it into priorTreatment is exactly
 // the pressure test's fabricated "Prior Bleach Applied" (scenario 14). The
@@ -426,7 +439,10 @@ const AMBIGUOUS_HAZARD_PROSE =
 // on the engine body's hazardQuestion field so /api/solve answers it
 // explicitly. Mirrors HEAT_APPLIED's awareness-vs-application discipline.
 export const HAZARD_QUESTION =
-  /\b(?:can|could|should|may|do)\s+(?:i|we|you)\b[^.;?\n]{0,50}\b(?:bleach|ammonia|acetone|peroxide|solvent)\b[^.;?\n]{0,30}\??|\bis\s+(?:it\s+)?(?:ok|okay|safe)\b[^.;?\n]{0,40}\b(?:bleach|ammonia|acetone|peroxide|solvent)\b[^.;?\n]{0,20}\??/i
+  new RegExp(
+    `\\b(?:can|could|should|may|do)\\s+(?:i|we|you)\\b[^.;?\\n]{0,50}\\b(?:${PRIOR_AGGRESSIVE.source})\\b[^.;?\\n]{0,30}\\??|\\bis\\s+(?:it\\s+)?(?:ok|okay|safe)\\b[^.;?\\n]{0,40}\\b(?:${PRIOR_AGGRESSIVE.source})\\b[^.;?\\n]{0,20}\\??`,
+    'i',
+  )
 export function stripHazardQuestions(text: string): string {
   if (!text) return text
   return text.replace(new RegExp(HAZARD_QUESTION.source, 'gi'), ' ')
@@ -475,7 +491,7 @@ function canonicalPriorAggressiveToken(token: string): string {
 // "warm/hot water already applied" note into the stain, misses the curated card, and
 // over-cautions a fresh stain. Care-label no-heat RESTRICTIONS still arm via careSymbols.
 const HEAT_APPLIED =
-  /\b(?:hot|warm|boiling)\s+(?:water|wash)\b|\btumble[\s-]?dr\w*|\bblow[\s-]?dr\w*|\bdryer\b|\biron(?:ed|ing)?\b|\bpress(?:ed|ing)?\b|\bsteam(?:ed|ing)?\b|\bhot\s+(?:setting|cycle|dry\w*)|\balready\s+(?:washed|dried|heated|ironed|pressed|steamed)\b/i
+  /\b(?:hot|warm|boiling)\s+(?:water|wash)\b|\btumble[\s-]?dr\w*|\bblow[\s-]?dr\w*|\bdryer\b|\biron(?:ed|ing)?\b|\bpress(?:ed|ing)?\b|\bsteam(?:ed|ing)?\b|\bhot\s+(?:setting|cycle|dry\w*)|\balready\s+(?:washed|dried|heated|ironed|pressed|steamed)\b|\bsun[-\s]?dried\b|\bleft\s+(?:(?:it|this|that|the\s+\w+)\s+)?in\s+(?:the\s+|a\s+)?(?:sun|car)\b|\bradiator\b|\bheater\b|\bheat\s+gun\b|\bhair[-\s]?dryer\b|\b(?:sanitize|steam|warm)\s+cycle\b/i
 const DYE = /dye|color|colour|bleed|fade/i
 // Colorfastness describes the GARMENT, not the stain. Deriving prone_to_bleed from the
 // model's STAIN riskFlags (DYE, above) matched any "dye"/"color" mention — so any
@@ -1063,6 +1079,40 @@ function isTrustedStructuredChipAnswer(transcript: IntakeTurn[], index: number):
   )
 }
 
+function hasUntrustedAnsweredSafetyChip(transcript: IntakeTurn[]): boolean {
+  for (let i = 0; i < transcript.length - 1; i++) {
+    const prompt = transcript[i]
+    const answer = transcript[i + 1]
+    if (prompt.role !== 'assistant' || answer.role !== 'user') continue
+    const text = cleanSlotAnswer(answer.text)
+    if (!text) continue
+    const normalized = normalizeText(text)
+
+    if (
+      AGE_ASKED.test(prompt.text) &&
+      !matchesTrustedOptions(text, AGE_QUESTION.options) &&
+      !AGE_DISCLOSED.test(normalized)
+    ) {
+      return true
+    }
+    if (
+      PRIOR_ASKED.test(prompt.text) &&
+      !matchesTrustedOptions(text, PRIOR_TREATMENT_QUESTION.options) &&
+      !(PRIOR_DISCLOSED.test(normalized) || PRIOR_AGENT_DISCLOSED.test(normalized))
+    ) {
+      return true
+    }
+    if (
+      CARE_ASKED.test(prompt.text) &&
+      !matchesTrustedOptions(text, CARE_LABEL_QUESTION.options) &&
+      !CARE_DISCLOSED.test(normalized)
+    ) {
+      return true
+    }
+  }
+  return false
+}
+
 function residualFreeTextForHazardInference(req: IntakeRequest): string {
   const parts: string[] = []
   const note = req.hints?.userNote?.trim()
@@ -1077,12 +1127,16 @@ function residualFreeTextForHazardInference(req: IntakeRequest): string {
 }
 
 function hasResidualHazardProse(req: IntakeRequest): boolean {
-  const residual = residualFreeTextForHazardInference(req)
+  // TASK-257 Slice 1.7 A1: strip SB's benign prior-care allowlist (blot/rinse with cool water,
+  // mild soap/detergent) BEFORE testing, so benign care doesn't trip TREATMENT_VERB/AMBIGUOUS —
+  // but any real hazard in the REMAINDER (hot water, OxiClean, solvent, "strong stuff", mixed
+  // product) still defers. Temperature/qualifier gate lives in the benign regex + HEAT_APPLIED.
+  const stripped = residualFreeTextForHazardInference(req).replace(BENIGN_PRIOR_CARE_PROSE, ' ')
   return (
-    PRIOR_AGGRESSIVE.test(stripHazardQuestions(residual)) ||
-    HEAT_APPLIED.test(residual) ||
-    TREATMENT_VERB.test(residual) ||
-    AMBIGUOUS_HAZARD_PROSE.test(residual)
+    PRIOR_AGGRESSIVE.test(stripHazardQuestions(stripped)) ||
+    HEAT_APPLIED.test(stripped) ||
+    TREATMENT_VERB.test(stripped) ||
+    AMBIGUOUS_HAZARD_PROSE.test(stripped)
   )
 }
 
@@ -1541,6 +1595,29 @@ function buildSolveBody(
  * question or SOLVE (hand the assembled facts to the deterministic engine).
  * Never throws — on model failure it fails closed to a safe clarifying question.
  */
+// TASK-257 Slice 1.7 A1 — age-family holds (SB ruling approve_a1_with_fixes_hold_a2).
+// The age chip changes the safe route for most families, so it stays REQUIRED before an early
+// deterministic solve. AGE_HOLD_STAIN enumerates SB's hold list (protein / combo_protein_tannin /
+// dye / oxidizable / combo_oil_dye / resin / particulate / mildew / chemical_damage); it takes
+// PRECEDENCE so look-alikes (coffee-WITH-CREAM → "cream", tomato SAUCE) hold even though their
+// base word looks tannin/oil. AGE_SKIPPABLE_STAIN is the ONLY allowlist where age may be skipped:
+// simple tannin + simple lipid. Default (no allowlist match, or any hold match, or unknown) = HOLD.
+const AGE_HOLD_STAIN =
+  /\bcream\b|latte|cappuccino|mocha|macchiato|chai|chocolate|cocoa|gravy|formula|baby\s*food|cream\s*sauce|custard|pudding|blood|\begg\b|dairy|\bmilk\b|sweat|perspiration|urine|vomit|saliva|body\s*fluid|grass|\bink\b|marker|hair\s*dye|dye\s*transfer|colou?r\s*run|turmeric|mustard|food\s*colou?r|rust|yellowing|age\s*spot|foxing|metal\s*stain|lipstick|make\s*up|makeup|foundation|mascara|shoe\s*polish|curry|tomato|pasta\s*sauce|crayon|nail\s*polish|\bpaint\b|glue|adhesive|tape|\bsap\b|resin|acrylic|latex|epoxy|\bgum\b|caulk|silicone|\bmud\b|dirt|\bclay\b|soot|\bash\b|deodorant|antiperspirant|hard[- ]?water|mineral|mold|mould|mildew|musty|smoke/i
+const AGE_SKIPPABLE_STAIN =
+  /\b(?:coffee|tea|red[- ]?wine|white[- ]?wine|wine|juice|berr(?:y|ies)|fruit|soda|cola|\bpop\b|beer|sports?\s+drink|cooking[- ]?oil|grease|butter|lotion|sunscreen|sebum|salad[- ]?dressing|motor[- ]?oil|olive[- ]?oil|vegetable[- ]?oil)\b/i
+// Age skippable ONLY when the held-family denylist does NOT match AND the simple tannin/lipid
+// allowlist DOES. Anything else (unknown stain, combo, protein, dye, etc.) → false → age held.
+// `stain` is the canonical parse (e.g. "coffee"); `rawText` is the user's raw prose. The hold
+// denylist is tested against BOTH, because canonicalization can drop a hold-modifier — "coffee
+// WITH CREAM" parses to stain="coffee" (tannin, age-skippable) yet is a combo_protein_tannin that
+// MUST hold the age chip. Scanning the raw prose for "cream" (and the rest of the hold list)
+// re-captures that. A false hold only costs one extra age question — safe by design.
+function ageSkippable(stain: string, rawText: string): boolean {
+  if (AGE_HOLD_STAIN.test(`${stain} ${rawText}`.toLowerCase())) return false
+  return AGE_SKIPPABLE_STAIN.test(stain.toLowerCase())
+}
+
 /**
  * TASK-257 Slice 1.6 — deterministic verified-card SOLVE (no model round-trip).
  *
@@ -1568,35 +1645,53 @@ async function tryDeterministicVerifiedCardSolve(
   const parsedFabric = parsedFacts.fabric ?? ''
   if (!stain || !parsedFabric) return null
 
-  // ── Atlas ruling C (msg 12343): STRUCTURED-ONLY fast-path ──────────────────────
-  // Fire ONLY when the full structured safety-chip sequence is complete — fabric, age,
-  // prior-treatment, and care have all been asked/disclosed (nextQuestionAfterIdentity-
-  // Suppression === null) — so every hazard-relevant fact came from an explicit chip/field,
-  // not model-inferred free-text prose. One-shot / free-text inputs (detQuestion !== null)
-  // stay on the model path, which interprets the prose for INFERRED hazards (e.g. bleach the
-  // model reads from "the strong stuff" that no raw-words regex catches). Conservative interim;
-  // Option A (solve before all chips) needs an SB ruling that the raw-words + care-label guard
-  // is complete enough — that becomes Slice 1.7.
-  // The hazard-relevant facts must come from TRUSTED chip answers, not free-text prose. Asking
-  // the prompt is not enough: if the user types "the strong stuff" after the prior-treatment
-  // prompt, the model path must still interpret that as possible bleach/solvent exposure.
+  // ── TASK-257 Slice 1.7 A1 (SB approve_a1_with_fixes_hold_a2, supersedes ruling C) ──
+  // RELAX ruling C's full-chip-sweep: an early deterministic solve may fire after stain + fabric
+  // are KNOWN, without first requiring the age/prior/care chip sweep — leaning on the (expanded)
+  // deterministic hazard guard + computeFailClosed for prior-chem/heat/specialty/unknown detection
+  // instead of forcing every chip. A1 fires ONLY when ALL of these hold (else fall through to the
+  // UNCHANGED full/model path, which still interprets prose for inferred hazards):
+  //   1. fabric high-confidence known (parsed high-conf OR a trusted, non-uncertain fabric chip)
+  //   2. no expressed uncertainty ("not sure" / "don't know") in the raw input
+  //   3. residual free-text hazard prose clean AFTER the SB benign-prior strip (hasResidualHazardProse)
+  //   4. age not required for the stain family (SB age-hold list) OR the age chip is trusted/disclosed
+  //   5. a verified/safety-blocked card exists (tier < 4) — checked below
+  //   6. computeFailClosed raises nothing blocking — checked below (specialty fiber / prior-chem /
+  //      heat / unknowns / label conflict all derive from the RAW words there)
+  // /api/solve re-runs every engine gate after handoff, so this serves the verdict faster without
+  // bypassing a gate or widening DIY. A2 (clean one-shot, no chips) remains HELD per SB.
   const t = req.transcript
+  // (0) A1 ONLY — NOT A2. A1 fires once the guided flow has STARTED (at least one chip asked),
+  // skipping the remaining age/prior/care chips. A clean one-shot with no chips asked (asked === 0)
+  // is the A2 case, which SB explicitly HELD — it must stay on the model path so the model can
+  // interpret the full free-text input (and fold any model-surfaced prior chemistry). This mirrors
+  // the TASK-254 ASK fast-path, which likewise fast-paths age/prior/care only once asked >= 1.
+  if (questionsAsked(t) < 1) return null
   const trustedFabric = trustedChipAnswerFromTranscript(t, /\bfabric\b/i, FABRIC_QUESTION.options) ?? ''
   const careRisk = trustedChipAnswerFromTranscript(t, CARE_ASKED, CARE_LABEL_QUESTION.options) ?? ''
   const fabric = trustedFabric && !CHIP_UNCERTAINTY.test(trustedFabric) ? trustedFabric.toLowerCase() : parsedFabric
-  const structuredChipsAnswered =
-    (parsedFacts.fabricConfidence === 'high' || trustedFabric !== '') &&
-    trustedChipAnswerInTranscript(t, AGE_ASKED, AGE_QUESTION.options) &&
-    trustedChipAnswerInTranscript(t, PRIOR_ASKED, PRIOR_TREATMENT_QUESTION.options) &&
-    careRisk !== ''
-  if (!structuredChipsAnswered) return null
-  if (hasResidualHazardProse(req)) return null
-  const solveHardConstraints = Array.from(new Set([...hardConstraints, ...careSymbolsFromTrustedCareChip(careRisk)]))
-  // ...and the whole structured sweep must be complete (fabric + age resolved too).
-  if (nextQuestionAfterIdentitySuppression(parsedFacts, req) !== null) return null
-  // Expressed uncertainty ("not sure" / "don't know") means a fact is NOT an explicit
-  // structured value — defer to the model (covers Atlas's "prior chemistry uncertainty").
+  // (1) fabric must be high-confidence known — parsed high-conf OR a trusted, non-uncertain chip.
+  const fabricKnownHigh =
+    parsedFacts.fabricConfidence === 'high' || (trustedFabric !== '' && !CHIP_UNCERTAINTY.test(trustedFabric))
+  if (!fabricKnownHigh) return null
+  // (2) Expressed uncertainty means a fact is NOT an explicit structured value — defer to the model
+  // (covers Atlas's "prior chemistry uncertainty"). Any present chip read above is already required
+  // to be a trusted exact option (CHIP_UNCERTAINTY guards both the fabric chip and the raw input).
   if (CHIP_UNCERTAINTY.test(rawUser)) return null
+  // (2b) Present safety chips must be trusted or concrete. A vague free-form answer after the
+  // prior-treatment prompt ("yes", "I did") is unresolved safety information, not a clean input.
+  if (hasUntrustedAnsweredSafetyChip(t)) return null
+  // (3) Residual free-text hazard prose (after the SB benign-prior strip) → defer to the model path,
+  // which interprets prose for inferred hazards (e.g. bleach read from "the strong stuff").
+  if (hasResidualHazardProse(req)) return null
+  // (4) Age-family hold: age may be skipped ONLY for SB's simple tannin/lipid allowlist; every held
+  // family (protein/combo/dye/oxidizable/combo-oil-dye/resin/particulate/mildew/chemical/unknown)
+  // still REQUIRES the age chip trusted-answered or disclosed before an early solve.
+  const ageResolved =
+    trustedChipAnswerInTranscript(t, AGE_ASKED, AGE_QUESTION.options) ||
+    AGE_DISCLOSED.test(normalizeText(rawUserText(req)))
+  if (!ageSkippable(stain, rawUser) && !ageResolved) return null
+  const solveHardConstraints = Array.from(new Set([...hardConstraints, ...careSymbolsFromTrustedCareChip(careRisk)]))
 
   // A verified/safety-blocked card must already exist for the pair (tier 1-3). Tier 4 means
   // no card → the AI synthesis path is required, which is the model's job, so defer.

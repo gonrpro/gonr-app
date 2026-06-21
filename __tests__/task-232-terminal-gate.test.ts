@@ -170,10 +170,17 @@ describe('TASK-232 — browser path: hazard questions never become history (Atla
   it('strips the question before prior-chem matching; chip and real disclosures survive', async () => {
     const { stripHazardQuestions } = await import('@/lib/intake/orchestrator')
     expect(stripHazardQuestions(repro)).not.toMatch(/bleach/i)
+    expect(stripHazardQuestions('coffee on cotton, can I use vinegar?')).not.toMatch(/vinegar/i)
+    expect(stripHazardQuestions('should I use rubbing alcohol on this?')).not.toMatch(/rubbing alcohol/i)
+    expect(stripHazardQuestions('is it safe to use lye?')).not.toMatch(/lye/i)
     // A bare chip answer to the prior-treatment question is a disclosure — kept.
     expect(stripHazardQuestions('bleach')).toMatch(/bleach/i)
+    expect(stripHazardQuestions('vinegar')).toMatch(/vinegar/i)
+    expect(stripHazardQuestions('lye')).toMatch(/lye/i)
     // A genuine past-use disclosure — kept.
     expect(stripHazardQuestions('I already used bleach on it')).toMatch(/bleach/i)
+    expect(stripHazardQuestions('I already used vinegar on it')).toMatch(/vinegar/i)
+    expect(stripHazardQuestions('I already used lye on it')).toMatch(/lye/i)
   })
 
   it('engine body carries the question verbatim and fabricates no prior note', async () => {

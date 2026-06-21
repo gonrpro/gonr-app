@@ -18,7 +18,6 @@ const TREATMENT =
 
 const FABRIC_Q = 'Quick one — what is the fabric?'
 const AGE_Q = 'How long has the stain been there?'
-const PRIOR_Q = 'Have you tried anything on it yet?'
 
 function turns(...t: Array<[IntakeTurn['role'], string]>): IntakeRequest {
   return { transcript: t.map(([role, text]) => ({ role, text })), proceed: false }
@@ -71,8 +70,12 @@ describe('TASK-257 Slice 1 — deterministic post-initial chips', () => {
   })
   afterEach(() => vi.unstubAllGlobals())
 
+  // TASK-257 Slice 1.7 A1: blood = protein (age HELD per SB), so even after fabric is answered the
+  // AGE chip is still required — A1 defers age-sensitive families to the deterministic chip flow.
+  // (For an age-skippable family like coffee, A1 now early-SOLVES here instead — see turn-3 + the
+  // dedicated A1 suite. Using blood keeps coverage of the deterministic AGE-chip fast-path itself.)
   it('turn 2 (fabric just answered) fast-paths the AGE chip with NO model call, <250ms', async () => {
-    const req = turns(['user', 'coffee'], ['assistant', FABRIC_Q], ['user', 'cotton'])
+    const req = turns(['user', 'blood'], ['assistant', FABRIC_Q], ['user', 'cotton'])
     const t0 = performance.now()
     const d = await runIntakeTurn(req, 'test-key')
     const ms = performance.now() - t0
@@ -83,7 +86,11 @@ describe('TASK-257 Slice 1 — deterministic post-initial chips', () => {
     expect(ms).toBeLessThan(250)
   })
 
-  it('turn 3 (fabric + age answered) fast-paths the PRIOR-TREATMENT chip with NO model call', async () => {
+  // TASK-257 Slice 1.7 A1: coffee = tannin on cotton (verified card, no hazard, age resolved) now
+  // early-SOLVES deterministically once stain+fabric are known — the prior/care chips are skipped
+  // (the deterministic hazard guard + /api/solve engine carry safety). Pre-A1 this fast-pathed the
+  // PRIOR chip; A1 supersedes the remaining chip walk for carded, age-cleared, no-hazard cases.
+  it('turn 3 (fabric + age answered) early-SOLVES a carded tannin with NO model call (A1)', async () => {
     const req = turns(
       ['user', 'coffee'],
       ['assistant', FABRIC_Q],
@@ -94,7 +101,8 @@ describe('TASK-257 Slice 1 — deterministic post-initial chips', () => {
     const d = await runIntakeTurn(req, 'test-key')
     expect(fetchSpy).not.toHaveBeenCalled()
     expect(d.model).toBe('deterministic')
-    expect(d.nextQuestion?.text).toBe(PRIOR_Q)
+    expect(d.action).toBe('solve')
+    expect(d.solveBody).toBeTruthy()
   })
 
   it('deterministic post-initial chips carry zero treatment prose', async () => {

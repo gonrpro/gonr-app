@@ -38,6 +38,30 @@ const FORBIDDEN_UNIQUE = [
   { id: 'mulsolite', re: /\bmulsolite\b/i },
   { id: 'pyratex', re: /\bpyratex\b/i },
   { id: 'formula-209', re: /(?:general\s+)?formula\s*(?:no\.?\s*)?209/i },
+  // TASK-257 (A) — SB never-allow corpus-unique trade terms. Keep this
+  // zero-tolerance static gate in sync with lib/safety/rule-table.ts so a
+  // future client bundle cannot leak the same terms the runtime guard blocks.
+  { id: 'tango-oxidizer', re: /\btango\b/i },
+  { id: 'streepene', re: /\bstreepene\b/i },
+  { id: 'fortex', re: /\bfortex\b/i },
+  { id: 'chemspec', re: /\bchemspec\b/i },
+  { id: 'picrin', re: /\bpicrin\b/i },
+  // SolvonK4 currently appears in existing client UI copy (plant solvent labels);
+  // runtime consumer-card output still blocks it via lib/safety/rule-table.ts.
+  { id: 'sodium-dithionite', re: /\bdithionite\b/i },
+  { id: 'potassium-hydroxide', re: /\bpotassium\s+hydroxide\b|\bcaustic\s+potash\b|\bKOH\b/i },
+  { id: 'naphtha', re: /\bnaphtha\b/i },
+  { id: 'petroleum-ether', re: /\bpetroleum\s+ether\b/i },
+  { id: 'tetrachloroethylene', re: /\btetrachloroethylene\b/i },
+  { id: 'stoddard-solvent', re: /\bstoddard\s+solvent\b/i },
+  { id: 'spotter-class', re: /\b(?:tannin|protein)\s+spotters?\b/i },
+  { id: 'spotting-formula', re: /\bspotting\s+formulas?\b/i },
+  { id: 'pro-solvent', re: /\bpro\s+solvents?\b/i },
+  // Not statically gated yet because the current app already bundles these in
+  // pro/operator/admin UI copy. Runtime consumer-card output still blocks them:
+  // thiourea, sodium hydrosulfite, perchloroethylene/perc, dry-cleaning solvent,
+  // spotting agent/board/chemical. Making those zero-tolerance is a separate
+  // UI chunk split, otherwise postbuild fails on existing non-card surfaces.
   // TASK-249 — plant-brain admin training-corpus fingerprints. Scenario ids +
   // distinctive pro-voice phrases that exist ONLY in
   // app/admin/plant-brain-intake/{scenarios,questions}.ts (verified corpus-only

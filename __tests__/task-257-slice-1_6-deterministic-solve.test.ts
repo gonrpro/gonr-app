@@ -196,12 +196,17 @@ describe('TASK-257 Slice 1.6 — exclusions stay on the model path', () => {
     expect(d.model).not.toBe('deterministic')
   })
 
-  it('incomplete sweep (prior/care chips not asked) → model path, not deterministic', async () => {
-    // fabric answered, but prior-treatment + care chips never asked → hazardChipsAsked false.
+  // TASK-257 Slice 1.7 A1: an age-SENSITIVE family (blood = protein, age HELD per SB) must NOT
+  // early-solve on an incomplete sweep — A1 holds the age chip for held families, so with age
+  // unanswered this stays a deterministic ASK, never a SOLVE. (For an age-skippable carded family
+  // like coffee, A1 now legitimately early-solves on this same incomplete sweep — covered in the
+  // A1 suite. This case guards that the age-family hold blocks premature solves.)
+  it('incomplete sweep, age-sensitive family (no age) → NOT a deterministic solve', async () => {
+    // fabric answered, age not answered, and blood holds the age chip → A1 defers to the chip flow.
     const d = await runIntakeTurn(
       {
         transcript: [
-          { role: 'user', text: 'coffee' },
+          { role: 'user', text: 'blood' },
           { role: 'assistant', text: FABRIC_Q },
           { role: 'user', text: 'cotton' },
         ],
