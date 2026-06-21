@@ -93,19 +93,20 @@ describe('RULE 2: Enzymes on silk/wool', () => {
     expect(result.violations.some(v => v.rule.includes('RULE-2S') && v.action === 'blocked')).toBe(true)
   })
 
-  test('replaces OxiClean on cashmere', () => {
+  test('blocks OxiClean on cashmere', () => {
     const card = makeCard({ agent: 'OxiClean solution' })
     const result = runSafetyFilter(card, 'wine', 'cashmere')
-    expect(result.safe).toBe(true)
-    expect(result.filtered).toBe(true)
-    expect(result.card.spottingProtocol[0].agent).toContain('pH-neutral protein spotter')
+    expect(result.safe).toBe(false)
+    expect(result.filtered).toBe(false)
+    expect(result.violations.some(v => v.rule.includes('RULE-2') && v.action === 'blocked')).toBe(true)
   })
 
-  test('replaces biological detergent on wool', () => {
+  test('blocks biological detergent on wool', () => {
     const card = makeCard({ instruction: 'Soak in biological detergent for 30 min.' })
     const result = runSafetyFilter(card, 'grease', 'wool')
-    expect(result.filtered).toBe(true)
-    expect(result.card.spottingProtocol[0].instruction).toContain('pH-neutral protein spotter')
+    expect(result.safe).toBe(false)
+    expect(result.filtered).toBe(false)
+    expect(result.violations.some(v => v.rule.includes('RULE-2') && v.action === 'blocked')).toBe(true)
   })
 
   test('does NOT flag enzyme on cotton', () => {

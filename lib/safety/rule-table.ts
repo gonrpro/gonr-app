@@ -210,8 +210,8 @@ export const FILTER_RULES: FilterRuleDef[] = [
   {
     id: 'RULE-2: Enzyme on wool',
     when: { any: ['isWool'], not: ['isSilk'] },
-    pattern: /\b(enzyme|protease|enzymatic|biological detergent|OxiClean)\b/gi,
-    replacement: 'pH-neutral protein spotter',
+    pattern: /\b(enzyme|enzymes|protease|enzymatic|enzyme detergent|enzyme cleaner|biological detergent|bio detergent|protein spotter|stain-digesting|digestant|OxiClean)\b/gi,
+    replacement: null,
   },
   {
     id: 'RULE-12: Hot water on wool',
