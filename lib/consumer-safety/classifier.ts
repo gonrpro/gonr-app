@@ -155,6 +155,17 @@ function safeFirstMoveFor(verdict: VerdictLevel, card: ConsumerCard | null): str
   return card?.safeSteps[0] ?? 'Blot only with a clean white cloth and do not apply heat.'
 }
 
+function missingFactsForCard(input: NormalizedSolveInput, card: ConsumerCard | null): string[] {
+  if (!card) return []
+
+  const missing: string[] = []
+  if (input.careStatus === 'unknown') missing.push('care label allows washing')
+  if (input.colorfastness === 'unknown') missing.push('white or colorfast fabric')
+  if (input.heatExposure === 'unknown') missing.push('no warm water, dryer, or iron has touched it')
+  if (card.id.includes('fresh') && input.stainAge === 'unknown') missing.push('stain is fresh')
+  return missing
+}
+
 function buildVerdict(input: NormalizedSolveInput, verdict: VerdictLevel, rules: SafetyRule[], card: ConsumerCard | null): SafetyVerdict {
   const orderedRules = [...rules].sort((a, b) => severity(b.enforces) - severity(a.enforces))
   const confidence = confidenceFor(input, verdict, card)
@@ -184,9 +195,18 @@ function buildVerdict(input: NormalizedSolveInput, verdict: VerdictLevel, rules:
     triggeredRules: orderedRules.map((rule) => rule.id),
     avoid,
     blockedActions,
-    safeFirstMove: isProtectionOnlySafeFirstMove(verdict, safeFirstMove) ? safeFirstMove : verdict === 'do_not_attempt' ? PROTECTION_ONLY_DNA : PROTECTION_ONLY_STOP,
+    safeFirstMove:
+      verdict === 'diy_safe' || verdict === 'diy_with_constraints'
+        ? safeFirstMove
+        : isProtectionOnlySafeFirstMove(verdict, safeFirstMove)
+          ? safeFirstMove
+          : verdict === 'do_not_attempt'
+            ? PROTECTION_ONLY_DNA
+            : PROTECTION_ONLY_STOP,
     constraints: verdict === 'diy_with_constraints' ? uniqueStrings([...(card?.avoid ?? []), ...orderedRules.flatMap((rule) => rule.avoid ?? [])]).slice(0, 5) : undefined,
     card: verdict === 'diy_safe' || verdict === 'diy_with_constraints' ? card?.id ?? null : null,
+    candidateCard: card?.id ?? null,
+    missingFacts: missingFactsForCard(input, card),
     requiresReferral,
     source: card && (verdict === 'diy_safe' || verdict === 'diy_with_constraints') ? 'card' : 'rule_engine',
     safetyLabel: label,

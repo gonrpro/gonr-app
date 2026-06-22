@@ -58,9 +58,20 @@ export type SafetyLabel =
   | 'escalation_required'
   | 'unsafe_do_not_use'
 
+// TASK-260 Lane 3B (Atlas-locked 2026-06-18): provenance grade. Irreversible-risk,
+// chlorine-bleach and heat-set claims require at least one source of tier
+// pro_reference | textbook | manufacturer; forum | unknown alone fails the gate.
+export type SourceTier = 'pro_reference' | 'textbook' | 'manufacturer' | 'trade_assoc' | 'forum' | 'unknown'
+export const PRO_SOURCE_TIERS: SourceTier[] = ['pro_reference', 'textbook', 'manufacturer']
+
 export interface SourceRef {
   kind: 'citation' | 'reference' | 'sb_card'
   label: string
+  // Provenance grade. Required (>=1 pro_reference|textbook|manufacturer) for irreversible/
+  // bleach/heat claims. A verified:true card needs every source tiered + confidence-rated.
+  tier?: SourceTier
+  // Per-source confidence; a card rolls up to the LOWEST confidence across its sources.
+  confidence?: Confidence
 }
 
 export interface SafetyRule {
@@ -78,6 +89,15 @@ export interface ConsumerCard {
   stainType: StainType
   materials: Material[]
   title: string
+  protocolName?: string
+  mechanism?: string
+  sourceFit?: string
+  knowledgeBullets?: string[]
+  productGuidance?: Array<{
+    name: string
+    use: string
+    note?: string
+  }>
   safeSteps: string[]
   avoid: string[]
   maxVerdict: VerdictLevel
@@ -114,6 +134,8 @@ export interface SafetyVerdict {
   safeFirstMove?: string
   constraints?: string[]
   card?: string | null
+  candidateCard?: string | null
+  missingFacts?: string[]
   requiresReferral: boolean
   referral: ReferralBlock
   source: 'rule_engine' | 'card' | 'ai_edge'

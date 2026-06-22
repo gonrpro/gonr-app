@@ -1,12 +1,11 @@
 import type { Metadata } from 'next'
-import HomeScreen from '@/components/consumer/screens/HomeScreen'
+import ConsumerSolveShell from '@/components/consumer/ConsumerSolveShell'
 
 export const metadata: Metadata = {
-  title: 'GONR — Stain confidence',
-  description: 'Start a stain check, see what may be okay to try, and know when not to DIY.',
+  title: 'GONR Stain Intelligence',
+  description: 'Understand the stain, protect the garment, and get the safe first move.',
 }
 
-// Consumer shell entry (TASK-218): mockup-faithful home / scan-entry screen.
-export default function SolveV2Home() {
-  return <HomeScreen />
+export default function SolveV2Page() {
+  return <ConsumerSolveShell />
 }

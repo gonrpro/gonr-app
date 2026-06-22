@@ -44,6 +44,9 @@ export interface SolveContext {
 // material descriptors so collision risk is low, but bounding makes it exact.
 const DELICATE_FIBERS =
   /\b(?:silk|cashmere|wool|angora|mohair|acetate|rayon|viscose|chiffon|organza|velvet|velour|suede|leather|satin|taffeta|tulle|lace|brocade|down|fur|georgette|seda|lana|cachemir|cuero|ante|gamuza|terciopelo|raso|tul|encaje|plum[óo]n|piel)\b/i
+const DRY_CLEAN_ONLY_TEXT = /\b(?:dry[-\s]?clean(?:\s+only)?|do\s+not\s+wash|do[-\s]?not[-\s]?wash|no\s+wash)\b/i
+const NO_BLEACH_TEXT = /\b(?:no\s+bleach|do\s+not\s+bleach|do[-\s]?not[-\s]?bleach)\b/i
+const NO_HEAT_TEXT = /\b(?:no\s+heat|no\s+dryer|do\s+not\s+tumble\s+dry|do[-\s]?not[-\s]?tumble[-\s]?dry|air\s+dry)\b/i
 
 // Location-specific complications known to affect protocol
 const LOCATION_NOTES: Record<string, string> = {
@@ -111,7 +114,8 @@ export function buildSolveContext(params: {
   // are care-label ground truth, so hasNoBleach / hasNoHeat / isDryCleanOnly arm.
   const careSymbols = labelResult?.careSymbols?.length ? labelResult.careSymbols : careSymbolsParam
   const labelWarnings = labelResult?.warnings || []
-  const isDryCleanOnly = careSymbols.includes('dry-clean-only')
+  const contextText = [surfaceHint, fabricDescription, fiber, visionSurface].filter(Boolean).join(' ')
+  const isDryCleanOnly = careSymbols.includes('dry-clean-only') || DRY_CLEAN_ONLY_TEXT.test(contextText)
   // Also read the resolved SURFACE text — on the frontier JSON path a delicate fiber
   // ("silk dress") often arrives only via surfaceHint, with no care-label fiber, so
   // delicacy would otherwise be missed and the cautious-fallback gate would wrongly show
@@ -120,8 +124,8 @@ export function buildSolveContext(params: {
     DELICATE_FIBERS.test(fiber) ||
     DELICATE_FIBERS.test(fabricDescription) ||
     DELICATE_FIBERS.test(surface)
-  const hasNoBleach = careSymbols.includes('no-bleach')
-  const hasNoHeat = careSymbols.includes('no-heat')
+  const hasNoBleach = careSymbols.includes('no-bleach') || NO_BLEACH_TEXT.test(contextText)
+  const hasNoHeat = careSymbols.includes('no-heat') || NO_HEAT_TEXT.test(contextText)
 
   // ── Build unified brief ───────────────────────────────────
   const briefParts: string[] = []

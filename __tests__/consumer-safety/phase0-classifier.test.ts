@@ -187,7 +187,7 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
   })
 
   it('reconciles card source wiring without private source-label leakage', () => {
-    expect(CONSUMER_CARDS_PHASE0).toHaveLength(20)
+    expect(CONSUMER_CARDS_PHASE0).toHaveLength(21)
     expect(CONSUMER_CARDS_PHASE0.some((card) => card.id === 'consumer-cooking-oil-polyester')).toBe(false)
     expect(CONSUMER_CARDS_PHASE0.filter((card) => card.sourceSupport === 'partial')).toHaveLength(11)
 
@@ -213,6 +213,32 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
     expect(CONSUMER_CARDS_PHASE0.find((card) => card.id === 'consumer-rust-any')?.proChemistryInSource).toBe(true)
     expect(CONSUMER_CARDS_PHASE0.find((card) => card.id === 'consumer-rust-any')?.sources.length).toBeGreaterThan(0)
     expect(CONSUMER_CARDS_PHASE0.find((card) => card.id === 'consumer-rust-any')?.unsupportedConsumerStepClaims).toBe(false)
+  })
+
+  it('renders an educational grass-on-denim card with real first move and product guidance', () => {
+    const verdict = classify(
+      base({
+        stainDescription: 'grass stain on blue jeans',
+        stainType: undefined,
+        material: 'denim',
+        careStatus: 'machine_washable',
+        heatExposure: 'none',
+        colorfastness: 'colorfast',
+        stainAge: 'fresh',
+      }),
+    )
+    const card = CONSUMER_CARDS_PHASE0.find((item) => item.id === verdict.card)
+
+    expect(verdict.verdict).toBe('diy_with_constraints')
+    expect(verdict.card).toBe('consumer-grass-denim')
+    expect(verdict.safeFirstMove).toContain('Lift loose grass')
+    expect(card?.mechanism).toContain('chlorophyll pigment')
+    expect(card?.knowledgeBullets?.length).toBeGreaterThanOrEqual(3)
+    expect(card?.productGuidance?.map((product) => product.name)).toEqual([
+      'Mild liquid dish soap',
+      '70% isopropyl alcohol',
+      'Oxygen cleaner',
+    ])
   })
 
   it('T12 guarantees referral for stop/pro, do-not-attempt, and low-confidence verdicts', () => {
@@ -379,6 +405,48 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
     expect(negatedHeat.card).toBe('consumer-coffee-cotton-black')
     expect(unknownHeat.verdict).toBe('stop_use_pro')
     expect(unknownHeat.card).toBeNull()
+  })
+
+  it('keeps the coffee protocol candidate visible when only confirmable facts are missing', () => {
+    const verdict = classify(
+      base({
+        stainDescription: 'Coffee on white cotton pants',
+        stainType: undefined,
+        careStatus: 'unknown',
+        heatExposure: 'unknown',
+        colorfastness: 'colorfast',
+        stainAge: 'unknown',
+      }),
+    )
+
+    expect(verdict.verdict).toBe('stop_use_pro')
+    expect(verdict.card).toBeNull()
+    expect(verdict.candidateCard).toBe('consumer-coffee-cotton-black')
+    expect(verdict.missingFacts).toEqual(['care label allows washing', 'no warm water, dryer, or iron has touched it'])
+  })
+
+  it('shows source-backed coffee protocol steps once washable and no-heat facts are confirmed', () => {
+    const verdict = classify(
+      base({
+        stainDescription: 'Coffee on white cotton pants',
+        stainType: undefined,
+        careStatus: 'machine_washable',
+        heatExposure: 'none',
+        colorfastness: 'colorfast',
+        stainAge: 'unknown',
+      }),
+    )
+    const card = CONSUMER_CARDS_PHASE0.find((item) => item.id === verdict.card)
+
+    expect(verdict.verdict).toBe('diy_with_constraints')
+    expect(verdict.card).toBe('consumer-coffee-cotton-black')
+    expect(verdict.constraints).toEqual([
+      'No ammonia, baking soda, or alkaline cleaners.',
+      'No chlorine bleach in this first-step protocol.',
+      'No dryer or iron until the stain is gone.',
+    ])
+    expect(card?.protocolName).toContain('Cool-water tannin flush')
+    expect(card?.mechanism).toContain('Coffee is a tannin-rich')
   })
 
   it('classifies unsupported mixed-stain fixtures before generic protein or tannin keywords, then blocks them', () => {

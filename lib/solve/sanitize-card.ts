@@ -26,6 +26,20 @@ export function sanitizeCardForTier(
   delete out.spottingProtocol
   delete (out as { professionalProtocol?: unknown }).professionalProtocol
 
+  // Legacy consumer-DIY fields are quarantined from the consumer runtime. The
+  // core legacy card library predates the Stain Brain safety model and is
+  // recipe-based across nearly the full surface.
+  delete out.homeSolutions
+  delete (out as { diyProtocol?: unknown }).diyProtocol
+  delete (out as { diy?: unknown }).diy
+  delete (out as { diy_es?: unknown }).diy_es
+
+  out.consumerSurfaceQuarantine = {
+    status: 'legacy_consumer_fields_quarantined',
+    fields: ['homeSolutions', 'diyProtocol'],
+    directive: 'rewrite_from_stain_brain_claim_unit_model',
+  }
+
   // Products — keep consumer/household; drop professional.
   const products = out.products as
     | { professional?: unknown; consumer?: unknown; household?: unknown }

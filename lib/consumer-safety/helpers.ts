@@ -58,7 +58,7 @@ const PROTEIN_COMPONENT_TERMS = ['blood', 'sweat', 'urine', 'pee', 'milk', 'egg'
 const TANNIN_COMPONENT_TERMS = ['coffee', 'tea', 'wine', 'juice', 'tomato', 'berry', 'mustard', 'soy sauce', 'salsa', 'chocolate']
 const OIL_COMPONENT_TERMS = ['oil', 'grease', 'butter', 'makeup', 'cosmetic', 'lipstick', 'body oil', 'motor oil']
 const PARTICULATE_COMPONENT_TERMS = ['mud', 'dirt', 'soil', 'particulate']
-const REVIEWED_MIXED_TERMS = ['chocolate', 'coffee with cream', 'cream in coffee', 'coffee and cream']
+const REVIEWED_MIXED_TERMS = ['chocolate', 'coffee with cream', 'cream in coffee', 'coffee and cream', 'grass']
 
 export function normalizeText(value: string): string {
   return value
