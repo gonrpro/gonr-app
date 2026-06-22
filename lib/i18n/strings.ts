@@ -1124,6 +1124,7 @@ export const strings: Record<string, Record<string, string>> = {
   "results.guidanceBasisRisk": { en: "Risk", es: "Riesgo" },
   "results.guidanceBasisApproach": { en: "Approach", es: "Enfoque" },
   "results.guidanceBasisApproachValue": { en: "Conservative fabric-safe method", es: "Método conservador y seguro para la tela" },
+  "results.whyThisWorks": { en: "Why this works", es: "Por qué funciona" },
   "results.signInToSave": { en: "Sign in to save", es: "Inicia sesión para guardar" },
   "results.savedJustNow": { en: "Saved just now", es: "Guardado ahora" },
   "results.saving": { en: "Saving…", es: "Guardando…" },
