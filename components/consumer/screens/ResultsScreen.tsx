@@ -76,6 +76,9 @@ interface FiberContext {
 export interface EngineCard {
   title?: string
   stainType?: string
+  stainChemistry?: string
+  whyThisWorks?: string
+  defaultAssumption?: string
   homeSolutions?: ReadonlyArray<string | Step>
   spottingProtocol?: ReadonlyArray<Step>
   materialWarnings?: ReadonlyArray<string>
@@ -185,6 +188,19 @@ const FABRIC_KEYWORDS: readonly string[] = [
   'suede',
   'nubuck',
 ]
+
+const INTERNAL_BASIS_PATTERN = /\b(?:house rules?|jerry'?s|jerry's cleaners|plant policy|spotter\s*→|spotter\s*->|bleaching guide)\b/i
+
+function publicConsumerLine(text: string | undefined): string | null {
+  const clean = text?.trim()
+  if (!clean || INTERNAL_BASIS_PATTERN.test(clean)) return null
+  return clean
+}
+
+function publicConsumerList(list: ReadonlyArray<string> | undefined): string[] | undefined {
+  const out = list?.map(publicConsumerLine).filter((line): line is string => Boolean(line))
+  return out && out.length > 0 ? out : undefined
+}
 
 /**
  * When the user never stated a fabric (material 'unknown') yet the engine's result
@@ -789,6 +805,18 @@ export default function ResultsScreen({
   // present an inferred fabric as certain.
   const assumedFabric = inferredFabric(input, card?.title)
   const titleParts = splitTitle(card?.title)
+  const publicNeverDo = publicConsumerList(card?.safetyMatrix?.neverDo)
+  const publicMaterialWarnings = publicConsumerList(card?.materialWarnings)
+  const publicChemistry = publicConsumerLine(card?.stainChemistry)
+  const publicWhy = publicConsumerLine(card?.whyThisWorks)
+  const publicAssumption = publicConsumerLine(card?.defaultAssumption)
+  const publicRisk = risk ? t(risk.labelKey) : card?.meta?.riskLevel
+  const publicFabric =
+    input.material !== 'unknown'
+      ? labelFor(MATERIAL_OPTIONS, input.material)
+      : assumedFabric
+        ? assumedFabric.charAt(0).toUpperCase() + assumedFabric.slice(1)
+        : undefined
   // Engine titles render verbatim; only the no-title sentinel is localized.
   const displayTitle =
     titleParts.head === RESCUE_PLAN_FALLBACK ? t('results.titleFallback') : titleParts.head
@@ -904,7 +932,7 @@ export default function ResultsScreen({
       ) : null}
 
       <div className="mt-6 flex items-start justify-between gap-3">
-        <h1 className="text-2xl font-black leading-tight text-gonr-navy">
+        <h1 className="text-2xl font-black leading-tight text-gonr-navy lg:text-3xl">
           {displayTitle}
         </h1>
         {risk ? (
@@ -920,6 +948,21 @@ export default function ResultsScreen({
         <p className="mt-1.5 text-sm font-medium leading-6 text-gonr-textgray">{titleParts.detail}</p>
       ) : null}
 
+      {publicChemistry ? (
+        <section className="mt-4 rounded-[22px] border border-[var(--gonr-border)] bg-white px-4 py-4 shadow-[0_12px_34px_-24px_rgba(7,27,85,0.22)]">
+          <p className="text-[15px] font-semibold leading-6 text-gonr-navy">{publicChemistry}</p>
+          {publicAssumption ? (
+            <p className="mt-2 text-sm font-medium leading-6 text-gonr-textgray">{publicAssumption}</p>
+          ) : null}
+        </section>
+      ) : null}
+
+      <GuidanceBasis
+        stain={card?.stainType ?? res.stainType ?? input.stainDescription}
+        fabric={publicFabric}
+        risk={publicRisk}
+      />
+
       {/* Inferred-fabric confidence — the fabric in the title was assumed, not
           confirmed by the user; surface it with a confirm/change affordance. */}
       {assumedFabric ? (
@@ -931,9 +974,10 @@ export default function ResultsScreen({
       {elevateProhibitions ? (
         <DoNotDoScreen
           className="mt-6"
-          neverDo={card?.safetyMatrix?.neverDo}
-          materialWarnings={card?.materialWarnings}
+          neverDo={publicNeverDo}
+          materialWarnings={publicMaterialWarnings}
           collapsible
+          initialVisible={3}
         />
       ) : null}
 
@@ -978,11 +1022,14 @@ export default function ResultsScreen({
       {!elevateProhibitions ? (
         <DoNotDoScreen
           className="mt-6"
-          neverDo={card?.safetyMatrix?.neverDo}
-          materialWarnings={card?.materialWarnings}
+          neverDo={publicNeverDo}
+          materialWarnings={publicMaterialWarnings}
           collapsible
+          initialVisible={3}
         />
       ) : null}
+
+      {publicWhy ? <WhyThisWorks text={publicWhy} /> : null}
 
       {/* Structured escalation / take-it-to-a-pro handoff. */}
       {escalation ? <Escalation escalation={escalation} /> : null}
@@ -1117,6 +1164,53 @@ function InferredFabricNote({
         </button>
       </div>
     </div>
+  )
+}
+
+function GuidanceBasis({
+  stain,
+  fabric,
+  risk,
+}: {
+  stain?: string
+  fabric?: string
+  risk?: string
+}) {
+  const { t } = useLanguage()
+  const rows = [
+    stain ? { label: t('results.guidanceBasisStain'), value: stain } : null,
+    fabric ? { label: t('results.guidanceBasisFabric'), value: fabric } : null,
+    risk ? { label: t('results.guidanceBasisRisk'), value: risk } : null,
+    { label: t('results.guidanceBasisApproach'), value: t('results.guidanceBasisApproachValue') },
+  ].filter((row): row is { label: string; value: string } => Boolean(row))
+
+  return (
+    <section className="gonr-card mt-4 p-4" aria-label={t('results.guidanceBasisHeading')}>
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-sm font-black text-gonr-navy">{t('results.guidanceBasisHeading')}</p>
+        <span className="rounded-full bg-gonr-lightgray px-2.5 py-1 text-[11px] font-extrabold uppercase tracking-wide text-gonr-textgray">
+          {t('results.guidanceBasisPublic')}
+        </span>
+      </div>
+      <dl className="mt-3 grid gap-2 sm:grid-cols-2">
+        {rows.map((row) => (
+          <div key={row.label} className="rounded-2xl bg-gonr-lightgray px-3 py-2">
+            <dt className="text-[11px] font-extrabold uppercase tracking-wide text-gonr-textgray">{row.label}</dt>
+            <dd className="mt-0.5 text-sm font-bold leading-5 text-gonr-navy">{row.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  )
+}
+
+function WhyThisWorks({ text }: { text: string }) {
+  const { t } = useLanguage()
+  return (
+    <section className="gonr-card mt-6 p-5" aria-label={t('results.whyThisWorks')}>
+      <p className="text-xs font-extrabold uppercase tracking-wide text-gonr-textgray">{t('results.whyThisWorks')}</p>
+      <p className="mt-2 text-[15px] font-semibold leading-6 text-gonr-navy">{text}</p>
+    </section>
   )
 }
 

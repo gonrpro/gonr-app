@@ -32,6 +32,8 @@ export interface DoNotDoScreenProps {
    *  behind a "Show all" toggle. Nothing is dropped — the tail is progressively
    *  disclosed. Used by Results for the top prohibition panel. */
   collapsible?: boolean
+  /** Head size when collapsible. */
+  initialVisible?: number
 }
 
 /** Lightweight emptiness gate so the severity card never renders empty. */
@@ -53,6 +55,7 @@ export default function DoNotDoScreen({
   heading,
   className,
   collapsible = false,
+  initialVisible = 3,
 }: DoNotDoScreenProps) {
   const { t } = useLanguage()
   if (!hasContent([neverDo, materialWarnings, avoid], items)) return null
@@ -91,6 +94,7 @@ export default function DoNotDoScreen({
           items={items}
           heading={null}
           collapsible={collapsible}
+          initialVisible={initialVisible}
         />
       </div>
     </section>
