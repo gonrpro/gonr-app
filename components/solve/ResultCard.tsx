@@ -23,7 +23,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import type { ComponentType } from 'react'
 import type { ProtocolCard, Step } from '@/lib/types'
 import type { Tier } from '@/lib/types'
 import SaveButton from './SaveButton'
@@ -44,8 +43,6 @@ import { getEffectiveViewerTier } from '@/lib/auth/viewerTier'
 import {
   Microscope,
   Handshake,
-  Lightbulb,
-  Home,
   AlertTriangle,
   ShoppingBag,
   Phone,
@@ -57,12 +54,6 @@ import {
 } from 'lucide-react'
 
 /* ── Helpers ─────────────────────────────────── */
-
-function difficultyColor(d: number) {
-  if (d <= 3) return { text: 'text-green-400', bg: 'bg-green-500/20', border: 'border-l-green-500' }
-  if (d <= 6) return { text: 'text-amber-400', bg: 'bg-amber-500/20', border: 'border-l-amber-500' }
-  return { text: 'text-red-400', bg: 'bg-red-500/20', border: 'border-l-red-500' }
-}
 
 /**
  * TrustTile — one square in the 3-tile trust strip under the result title.
@@ -148,8 +139,8 @@ function Collapsible({
   onToggle?: (nowOpen: boolean) => void
 }) {
   const [open, setOpen] = useState(defaultOpen)
-  const IconCmp: ComponentType<{ size?: number; strokeWidth?: number; 'aria-hidden'?: boolean | 'true' | 'false' }> | null =
-    typeof icon === 'string' ? null : (icon as unknown as ComponentType<any>)
+  const IconCmp: LucideIcon | null =
+    typeof icon === 'string' ? null : icon
   return (
     <div className="border border-gray-200 dark:border-white/10 rounded-xl overflow-hidden">
       <button
@@ -189,19 +180,41 @@ interface ResultCardProps {
   viewerTier?: Tier | 'anon'
 }
 
-export default function ResultCard({ card, source, lang = 'en', correlationId, viewerTier = 'free' }: ResultCardProps) {
+type ProductArray = { name: string; use?: string; note?: string; link?: string }[]
+type ProductsMap = { professional?: ProductArray; consumer?: ProductArray; household?: ProductArray }
+type RawCardExtras = {
+  stainType?: string
+  professionalProtocol?: {
+    steps?: Array<string | Step>
+    products?: unknown[]
+    warnings?: string[]
+  }
+  diyProtocol?: {
+    steps?: Array<string | Step>
+    products?: unknown[]
+  }
+  safetyMatrix?: {
+    neverDo?: string[]
+    homeAllowed?: string[]
+  }
+  _fiberContext?: {
+    fiber?: string
+    careSymbols?: string[]
+    warnings?: string[]
+  }
+  source?: string
+}
+
+export default function ResultCard({ card, source, correlationId, viewerTier = 'free' }: ResultCardProps) {
   const { t } = useLanguage()
   const [enlargedStepIndex, setEnlargedStepIndex] = useState<number | null>(null)
   const [fullCardOpen, setFullCardOpen] = useState(false)
-
-  const difficulty = card.difficulty ?? 5
-  const dc = difficultyColor(difficulty)
 
   const escalation = typeof card.escalation === 'string'
     ? { when: card.escalation, whatToTell: '', specialistType: '' }
     : card.escalation
 
-  const rawCard = card as any
+  const rawCard = card as ProtocolCard & RawCardExtras
   const { user } = useOptionalAuth()
 
   // ── Tier-aware rendering (TASK-066 fail-safe containment 2026-04-23) ─────
@@ -234,35 +247,48 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
   const primarySteps: (Step | string)[] = isHomeUI
     ? (homeHasOwnProtocol ? homeSolutionsRaw : spottingProtocolSteps)
     : spottingProtocolSteps
+  const visibleSteps: Step[] = primarySteps.map((step, i) =>
+    typeof step === 'string' ? { step: i + 1, instruction: step } : step,
+  )
 
   const needsFallbackNote = isHomeUI && !homeHasOwnProtocol
 
-  // Products rail — tier-aware
-  type ProductArray = { name: string; use?: string; note?: string; link?: string }[]
-  type ProductsMap = { professional?: ProductArray; consumer?: ProductArray; household?: ProductArray }
+  // Products are intentionally status-only until Product Evidence Cards are modeled in the payload.
   const productsObj: ProductsMap = card.products && !Array.isArray(card.products)
     ? (card.products as ProductsMap)
     : {}
-  const primaryProducts: ProductArray = isHomeUI
-    ? (productsObj.consumer ?? productsObj.household ?? [])
-    : (productsObj.professional ?? [])
+  const hasUngatedProductNames =
+    Boolean(productsObj.professional?.length) ||
+    Boolean(productsObj.consumer?.length) ||
+    Boolean(productsObj.household?.length) ||
+    Boolean(rawCard.professionalProtocol?.products?.length) ||
+    Boolean(rawCard.diyProtocol?.products?.length)
+  const productGateCopy = hasUngatedProductNames
+    ? 'Product names are withheld here until a Product Evidence Card clears source-fit, ingredient, SDS, and safety checks for this exact protocol.'
+    : 'No branded product is recommended yet. GONR only shows brand names after a Product Evidence Card clears source-fit, ingredient, SDS, and safety checks for this exact protocol.'
+  const scienceLead = (card.whyThisWorks ?? card.stainChemistry ?? '').trim()
+  const scienceDetail =
+    card.whyThisWorks && card.stainChemistry && card.stainChemistry !== card.whyThisWorks
+      ? card.stainChemistry.trim()
+      : ''
+  const showProtocolIntelligence = scienceLead.length > 20 || hasUngatedProductNames || isHomeUI
 
   // Legacy aliases (used elsewhere in this file)
   const proSteps = spottingProtocolSteps
   const diySteps = homeSolutionsRaw
-  const products = productsObj as { professional?: { name: string; use?: string; note?: string }[]; consumer?: { name: string; use?: string; note?: string }[] }
 
   const warnings: string[] = card.materialWarnings
     ?? rawCard.professionalProtocol?.warnings
     ?? rawCard.safetyMatrix?.neverDo
     ?? []
+  const visibleWarnings = warnings.filter((warning) => !/^\s*(house rules|plant policy)\b/i.test(warning))
 
   // ── Trust block data (Why / Caution / Escalate 3-tile under title) ──
   // Pulls from existing fields — hide a tile entirely if source is weak/empty.
   const trustWhy = (card.whyThisWorks ?? '').trim()
   const trustCaution = (
     (rawCard.safetyMatrix?.neverDo?.[0] as string | undefined)
-    ?? warnings[0]
+    ?? visibleWarnings[0]
     ?? ''
   ).trim()
   const trustEscalate = (escalation?.when ?? '').trim()
@@ -318,21 +344,21 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
       {/* ── Card badges ── */}
       <div className="px-4 pb-2">
         <CardBadges
-          stainType={(card as any).stainType || (card as any).stainFamily}
-          riskLevel={(card as any).meta?.riskLevel}
-          difficulty={card.difficulty}
-          tags={(card as any).meta?.tags}
-          source={(card as any).source || (card as any).meta?.source}
+          stainType={rawCard.stainType || card.stainFamily}
+          riskLevel={isHomeUI ? undefined : card.meta?.riskLevel}
+          difficulty={isHomeUI ? undefined : card.difficulty}
+          tags={isHomeUI ? undefined : card.meta?.tags}
+          source={rawCard.source || source}
         />
       </div>
 
       {/* ── Fiber context ── */}
-      {(card as any)._fiberContext?.fiber && (
+      {rawCard._fiberContext?.fiber && (
         <div className="px-4 pb-3">
           <FiberContextBadge
-            fiber={(card as any)._fiberContext.fiber}
-            careSymbols={(card as any)._fiberContext.careSymbols || []}
-            warnings={(card as any)._fiberContext.warnings || []}
+            fiber={rawCard._fiberContext.fiber}
+            careSymbols={rawCard._fiberContext.careSymbols || []}
+            warnings={rawCard._fiberContext.warnings || []}
           />
         </div>
       )}
@@ -391,6 +417,51 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
         </div>
       )}
 
+      {showProtocolIntelligence && (
+        <div className="px-4 pb-3">
+          <div
+            className="grid gap-3 rounded-xl p-3"
+            style={{
+              background: 'rgba(var(--brand-green-rgb), 0.055)',
+              border: '1px solid rgba(var(--brand-green-rgb), 0.22)',
+            }}
+          >
+            {scienceLead.length > 20 && (
+              <div className="space-y-1">
+                <div className="flex items-center gap-1.5">
+                  <FlaskConical size={15} strokeWidth={1.75} style={{ color: 'var(--accent)' }} aria-hidden="true" />
+                  <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--accent)' }}>
+                    Science behind this plan
+                  </p>
+                </div>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
+                  {scienceLead}
+                </p>
+                {scienceDetail.length > 20 && (
+                  <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                    {scienceDetail}
+                  </p>
+                )}
+              </div>
+            )}
+
+            {(hasUngatedProductNames || isHomeUI) && (
+              <div className="space-y-2">
+                <div className="flex items-center gap-1.5">
+                  <ShoppingBag size={15} strokeWidth={1.75} style={{ color: 'var(--accent)' }} aria-hidden="true" />
+                  <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--accent)' }}>
+                    Product recommendation status
+                  </p>
+                </div>
+                <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                  {productGateCopy}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* ── 3. Protocol Steps (tier-aware P2-d) ── */}
       {needsFallbackNote && (
         <div className="px-4 pt-2">
@@ -407,8 +478,7 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
             {isHomeUI ? t('homeProtocol') || 'Home Protocol' : t('proProtocol')}
           </p>
           <div className="space-y-4">
-            {primarySteps.map((step, i) => {
-              const stepObj = typeof step === 'string' ? { step: i + 1, agent: '', instruction: step } : step
+            {visibleSteps.map((stepObj, i) => {
               return (
               <button
                 key={i}
@@ -595,10 +665,10 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
           </Collapsible>
         )}
 
-        {warnings.length > 0 && (
+        {visibleWarnings.length > 0 && (
           <Collapsible title={t('collapsibleSafety')} icon={AlertTriangle}>
             <ul className="space-y-2">
-              {warnings.map((w, i) => (
+              {visibleWarnings.map((w, i) => (
                 <li key={i} className="flex gap-2 items-start">
                   <AlertTriangle size={14} strokeWidth={1.75} className="text-red-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                   <span>{w}</span>
@@ -607,37 +677,6 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
             </ul>
           </Collapsible>
         )}
-
-        {(products.professional?.length || products.consumer?.length) ? (
-          <Collapsible title={t('collapsibleProducts')} icon={ShoppingBag}>
-            {/* TASK-066: professional products are a pro-tier surface. Home/free/anon
-                see consumer-tier products only. */}
-            {isPro && products.professional && products.professional.length > 0 && (
-              <div className="space-y-2">
-                <p className="text-xs font-bold text-green-400 uppercase tracking-wider">{t('professional')}</p>
-                {products.professional.map((p, i) => (
-                  <div key={i} className="space-y-0.5">
-                    <p className="font-medium text-gray-700 dark:text-gray-300">{p.name}</p>
-                    {p.use && <p className="text-xs">{p.use}</p>}
-                    {p.note && <p className="text-xs text-gray-500 italic">{p.note}</p>}
-                  </div>
-                ))}
-              </div>
-            )}
-            {products.consumer && products.consumer.length > 0 && (
-              <div className="space-y-2 mt-3">
-                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">{t('consumer')}</p>
-                {products.consumer.map((p, i) => (
-                  <div key={i} className="space-y-0.5">
-                    <p className="font-medium text-gray-700 dark:text-gray-300">{p.name}</p>
-                    {p.use && <p className="text-xs">{p.use}</p>}
-                    {p.note && <p className="text-xs text-gray-500 italic">{p.note}</p>}
-                  </div>
-                ))}
-              </div>
-            )}
-          </Collapsible>
-        ) : null}
 
         {escalation && (
           <Collapsible title={t('collapsibleEscalation')} icon={Phone}>
@@ -667,7 +706,7 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
         )}
       </div>
 
-      {/* ── P2-d: Home tier surfaces ── */}
+      {/* ── P2-d: Home viewer surfaces ── */}
       {isHomeUI && correlationId && (
         <>
           <div className="px-4">
@@ -703,9 +742,9 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
         {t('protocolDisclaimer')}
       </p>
 
-      {enlargedStepIndex !== null && proSteps.length > 0 && (
+      {enlargedStepIndex !== null && visibleSteps.length > 0 && (
         <StepEnlargeModal
-          steps={proSteps}
+          steps={visibleSteps}
           currentIndex={enlargedStepIndex}
           onClose={() => setEnlargedStepIndex(null)}
           onNavigate={setEnlargedStepIndex}
@@ -716,7 +755,7 @@ export default function ResultCard({ card, source, lang = 'en', correlationId, v
         <FullCardModal
           card={card}
           steps={proSteps}
-          warnings={warnings}
+          warnings={visibleWarnings}
           onClose={() => setFullCardOpen(false)}
         />
       )}
