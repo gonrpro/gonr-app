@@ -1,9 +1,9 @@
 'use client'
 
-import { useCallback, useEffect, useState, type FormEvent } from 'react'
+import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { Settings, ArrowRight, ChevronRight, Shirt, Sparkles, Camera, ScanLine, ShieldCheck, Loader2 } from 'lucide-react'
+import { Settings, Mic, MicOff, ArrowRight, ChevronRight, Shirt, Sparkles, Camera, ScanLine, ShieldCheck, Loader2 } from 'lucide-react'
 import BottomNav from '@/components/consumer/BottomNav'
 import BetaBadge from '@/components/consumer/BetaBadge'
 import LanguageToggle from '@/components/consumer/LanguageToggle'
@@ -21,6 +21,21 @@ import { hasLikelySession } from '@/lib/auth/has-session'
 import { listHistoryEntries } from '@/lib/solve/history-store'
 
 type Translate = (key: string) => string
+
+// Minimal Web Speech API shape — SpeechRecognition isn't in TS's DOM lib (and
+// the project already declares window.SpeechRecognition as `unknown`), so we
+// type just what the voice-input affordance touches and cast at the read site.
+type SpeechRecognitionLike = {
+  lang: string
+  interimResults: boolean
+  continuous: boolean
+  start: () => void
+  stop: () => void
+  onresult: ((event: { results: ArrayLike<ArrayLike<{ transcript: string }>> }) => void) | null
+  onend: (() => void) | null
+  onerror: (() => void) | null
+}
+type SpeechRecognitionCtor = new () => SpeechRecognitionLike
 
 // TASK-218 Screen 1 — HOME. Premium fabric-care brand surface, GREEN-FREE.
 //
@@ -154,6 +169,62 @@ export default function HomeScreen() {
     if (query.trim().length > 0) router.prefetch('/solve-v2/solve')
   }, [query, router])
 
+  // Voice input — Web Speech dictation into the describe field. The mic only
+  // renders where SpeechRecognition exists (graceful no-op elsewhere); the
+  // transcript fills the same `query` state typed input uses, so the solve flow
+  // (and its downstream SB-gated result) is unchanged.
+  const [micSupported, setMicSupported] = useState(false)
+  const [listening, setListening] = useState(false)
+  const recognitionRef = useRef<SpeechRecognitionLike | null>(null)
+
+  useEffect(() => {
+    const Ctor = (window.SpeechRecognition ?? window.webkitSpeechRecognition) as
+      | SpeechRecognitionCtor
+      | undefined
+    if (!Ctor) return
+    const rec = new Ctor()
+    rec.lang = lang === 'es' ? 'es-ES' : 'en-US'
+    rec.interimResults = true
+    rec.continuous = false
+    rec.onresult = (event) => {
+      let transcript = ''
+      for (let i = 0; i < event.results.length; i += 1) transcript += event.results[i][0].transcript
+      setQuery(transcript)
+    }
+    rec.onend = () => setListening(false)
+    rec.onerror = () => setListening(false)
+    recognitionRef.current = rec
+    // one-time feature-detect, same intentional set-in-effect as the recent-load
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMicSupported(true)
+    return () => {
+      try {
+        rec.stop()
+      } catch {
+        /* already stopped */
+      }
+      rec.onresult = null
+      rec.onend = null
+      rec.onerror = null
+      recognitionRef.current = null
+    }
+  }, [lang])
+
+  const toggleListening = useCallback(() => {
+    const rec = recognitionRef.current
+    if (!rec) return
+    if (listening) {
+      rec.stop()
+      return
+    }
+    try {
+      rec.start()
+      setListening(true)
+    } catch {
+      setListening(false)
+    }
+  }, [listening])
+
   // Brand hero: the product name "The stain app." centered on ONE line with the GONR
   // logo gradient sweep (pink -> magenta -> orange, same as the wordmark) + the "smart
   // answers" subline. Single phrase — no clause split.
@@ -234,15 +305,28 @@ export default function HomeScreen() {
         className="gonr-card mt-3 flex flex-col gap-2.5 p-3"
         role="search"
       >
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder={t('home.describePlaceholder')}
-          aria-label={t('home.describeAria')}
-          enterKeyHint="search"
-          className="w-full bg-transparent px-1.5 py-1.5 text-base font-bold text-gonr-navy outline-none placeholder:font-semibold placeholder:text-gonr-navy/40"
-        />
+        <div className="flex items-center gap-2">
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder={t('home.describePlaceholder')}
+            aria-label={t('home.describeAria')}
+            enterKeyHint="search"
+            className="min-w-0 flex-1 bg-transparent px-1.5 py-1.5 text-base font-bold text-gonr-navy outline-none placeholder:font-semibold placeholder:text-gonr-navy/40"
+          />
+          {micSupported && (
+            <button
+              type="button"
+              onClick={toggleListening}
+              aria-label={listening ? t('home.micStopAria') : t('home.micAria')}
+              aria-pressed={listening}
+              className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-colors ${listening ? 'gonr-gradient text-white shadow-sm' : 'text-gonr-navy/45 hover:text-gonr-hotpink'}`}
+            >
+              {listening ? <MicOff size={18} aria-hidden="true" /> : <Mic size={18} aria-hidden="true" />}
+            </button>
+          )}
+        </div>
         <button
           type="submit"
           disabled={query.trim().length === 0 || starting}

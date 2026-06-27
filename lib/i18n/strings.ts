@@ -950,6 +950,8 @@ export const strings: Record<string, Record<string, string>> = {
   "home.tileLabelSub": { en: "Fabric & care first", es: "Tejido y cuidado primero" },
   "home.describePlaceholder": { en: "Or describe what happened…", es: "O describe qué pasó…" },
   "home.describeAria": { en: "Describe your stain or fabric", es: "Describe tu mancha o tejido" },
+  "home.micAria": { en: "Dictate by voice", es: "Dictar por voz" },
+  "home.micStopAria": { en: "Stop dictation", es: "Detener dictado" },
   "home.startCheck": { en: "Start stain check", es: "Revisar la mancha" },
   "home.startingCheck": { en: "Starting…", es: "Iniciando…" },
   "home.recentSectionAria": { en: "Recent checks", es: "Revisiones recientes" },
