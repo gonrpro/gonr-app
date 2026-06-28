@@ -3,7 +3,7 @@
 import { describe, expect, it } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { decide } from '@/lib/decision/engine'
+import { decide } from '../lib/decision/engine'
 import {
   isCardRatifiedForConsumer,
   isConsumerSolveTier,
@@ -15,20 +15,74 @@ describe('TASK-251 — consumer legacy-card deny-by-default gate', () => {
   it('ships only SB-ratified legacy cards for consumer exposure', () => {
     const allowlist = JSON.parse(readFileSync(join(process.cwd(), 'data', 'ratified-cards.json'), 'utf8'))
     expect(allowlist.schemaVersion).toBe(RATIFIED_CARD_ALLOWLIST_VERSION)
-    expect(allowlist.entries).toHaveLength(11)
+    expect(allowlist.entries).toHaveLength(63)
     expect(allowlist.entries.map((entry: { cardId: string }) => entry.cardId)).toEqual([
+      'barbecue-sauce-cotton',
+      'beer-cotton',
+      'berry-cotton',
       'berry-linen',
       'berry-polyester',
+      'body-oil-cotton',
+      'body-oil-polyester',
+      'butter-cotton',
+      'butter-linen',
+      'butter-polyester',
+      'chocolate-cotton',
+      'chocolate-polyester',
       'coffee-black-cotton',
       'coffee-cotton',
+      'coffee-cream-cotton',
+      'coffee-cream-polyester',
+      'coffee-linen',
+      'coffee-polyester',
+      'cooking-oil-cotton',
+      'cooking-oil-linen',
+      'cooking-oil-polyester',
+      'cosmetic-oil-cotton',
+      'cosmetic-oil-polyester',
+      'egg-cotton',
+      'egg-polyester',
+      'grass-cotton',
+      'grass-polyester',
+      'grease-cooking-oil-cotton',
+      'grease-cooking-oil-polyester',
+      'grease-cotton',
+      'grease-denim',
+      'grease-polyester',
       'juice-cotton',
+      'lipstick-cotton',
+      'lipstick-polyester',
+      'makeup-cotton',
+      'makeup-polyester',
+      'milk-cotton',
+      'milk-polyester',
+      'motor-oil-cotton',
+      'motor-oil-denim',
       'mud-cotton',
+      'mud-denim',
+      'olive-oil-cotton',
       'olive-oil-linen',
+      'olive-oil-polyester',
+      'red-wine-cotton',
       'red-wine-linen',
+      'red-wine-polyester',
+      'soy-sauce-cotton',
+      'soy-sauce-linen',
+      'soy-sauce-polyester',
+      'sweat-cotton',
+      'sweat-polyester',
       'sweat-stain-cotton',
+      'sweat-white-cotton',
       'tea-cotton',
+      'tea-linen',
+      'tea-polyester',
       'tomato-sauce-cotton',
+      'tomato-sauce-linen',
+      'tomato-sauce-polyester',
+      'white-wine-cotton',
     ])
+    expect(allowlist.entries.map((entry: { cardId: string }) => entry.cardId)).not.toContain('body-oil-white-cotton')
+    expect(allowlist.entries.map((entry: { cardId: string }) => entry.cardId)).not.toContain('grass-denim')
   })
 
   it.each(['anon', 'free', 'home'] as const)('admits SB-ratified legacy core cards for %s', async (viewerTier) => {
@@ -42,7 +96,7 @@ describe('TASK-251 — consumer legacy-card deny-by-default gate', () => {
   })
 
   it.each(['anon', 'free', 'home'] as const)('still denies unlisted legacy core cards for %s', async (viewerTier) => {
-    const result = await decide({ stain: 'chocolate', surface: 'cotton', lang: 'en', viewerTier })
+    const result = await decide({ stain: 'mustard', surface: 'cotton', lang: 'en', viewerTier })
 
     expect(result.card).toBeNull()
     expect(result.tier).toBe(4)
@@ -51,7 +105,7 @@ describe('TASK-251 — consumer legacy-card deny-by-default gate', () => {
     expect(result.legacyDenied).toMatchObject({
       reason: 'unratified_legacy_card',
       allowlistVersion: RATIFIED_CARD_ALLOWLIST_VERSION,
-      cardId: 'chocolate-cotton',
+      cardId: 'mustard-cotton',
     })
   })
 
