@@ -126,15 +126,14 @@ function canUseDiyCard(input: NormalizedSolveInput, card: ConsumerCard | null, t
   if (!card) return false
   if (card.id.includes('fresh') && input.stainAge !== 'fresh') return false
   if (isSensitiveMaterial(input.material)) return false
-  if (input.careStatus !== 'machine_washable' && input.careStatus !== 'hand_wash') return false
-  if (input.colorfastness !== 'colorfast') return false
+  if (input.careStatus === 'dry_clean_only') return false
   if (hasPriorHeatExposure(input)) return false
   if (triggeredRules.some((rule) => severity(rule.enforces) > severity(card.maxVerdict))) return false
   return isCardRenderable(card, candidateVerdict)
 }
 
 function confidenceFor(input: NormalizedSolveInput, verdict: VerdictLevel, card: ConsumerCard | null): Confidence {
-  if (input.material === 'unknown' || input.careStatus === 'unknown' || input.colorfastness === 'unknown') return 'low'
+  if (input.material === 'unknown') return 'low'
   if (hasPriorHeatExposure(input)) return 'low'
   if (verdict === 'stop_use_pro' || verdict === 'do_not_attempt') return card?.sourceSupport === 'yes' ? 'medium' : 'low'
   if (card?.sourceSupport === 'yes' && input.stainAge !== 'unknown') return 'medium'
@@ -177,9 +176,7 @@ function buildVerdict(input: NormalizedSolveInput, verdict: VerdictLevel, rules:
     verdict === 'do_not_attempt' ||
     confidence === 'low' ||
     orderedRules.some((rule) => rule.severity === 'hard_stop') ||
-    input.material === 'unknown' ||
-    input.careStatus === 'unknown' ||
-    input.colorfastness === 'unknown'
+    input.material === 'unknown'
   const label = safetyLabelFor(verdict, confidence, card)
   const reasons =
     orderedRules.length > 0

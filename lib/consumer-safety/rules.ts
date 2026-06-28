@@ -36,8 +36,10 @@ function mentionsChlorineBleachIntent(input: NormalizedSolveInput): boolean {
 }
 
 export function hasPriorHeatExposure(input: NormalizedSolveInput): boolean {
-  // Phase 0 DIY cards require confirmed no heat; unknown heat fails closed.
-  return input.heatExposure === 'unknown' || STRUCTURED_HEAT_EXPOSURES.includes(input.heatExposure) || mentionsAny(input, HEAT_EXPOSURE_TERMS)
+  // Treat only known heat exposure as prior heat. Unknown heat still appears as
+  // a follow-up, but it should not turn obvious washable stains into referral-
+  // first dead ends before the user gets a safe no-heat first move.
+  return STRUCTURED_HEAT_EXPOSURES.includes(input.heatExposure) || mentionsAny(input, HEAT_EXPOSURE_TERMS)
 }
 
 export const SAFETY_RULES_PHASE0: SafetyRule[] = [
@@ -174,10 +176,10 @@ export const SAFETY_RULES_PHASE0: SafetyRule[] = [
   },
   {
     id: 'SB-CS-013-unknown-material-care-or-colorfastness',
-    match: (i) => i.material === 'unknown' || i.careStatus === 'unknown' || i.colorfastness === 'unknown',
+    match: (i) => i.material === 'unknown',
     enforces: 'stop_use_pro',
     severity: 'caution',
-    reason: 'Unknown fiber, care label, or dye stability makes home treatment unreliable; the safest action is limited protection and referral.',
+    reason: 'Unknown fiber makes home treatment unreliable; identify the material before using water, detergent, or chemistry.',
     avoid: ['Do not bleach.', 'Do not heat.', 'Do not use solvents or strong cleaners.'],
   },
   {
