@@ -27,6 +27,7 @@ function isStaticAsset(pathname: string): boolean {
 const CONSUMER_API_EXACT = new Set<string>([
   '/api/intake', // POST — AgenticIntake / SolveFlow
   '/api/solve', // POST — solve flow (NOT /api/solve/outcome, which is legacy)
+  '/api/usage', // GET — consumer trial/anon counter
   '/api/solves', // GET — history (also matched as a prefix below)
   '/api/profile', // GET ?email / POST save
   '/api/protocols/save', // POST — useSaveProtocol
