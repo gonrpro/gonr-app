@@ -189,7 +189,7 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
   it('reconciles card source wiring without private source-label leakage', () => {
     expect(CONSUMER_CARDS_PHASE0).toHaveLength(21)
     expect(CONSUMER_CARDS_PHASE0.some((card) => card.id === 'consumer-cooking-oil-polyester')).toBe(false)
-    expect(CONSUMER_CARDS_PHASE0.filter((card) => card.sourceSupport === 'partial')).toHaveLength(11)
+    expect(CONSUMER_CARDS_PHASE0.filter((card) => card.sourceSupport === 'partial')).toHaveLength(1)
 
     const internalSourcePattern =
       /ops-vault|lab-bridge|GONR-MATERIAL-SAFETY-MATRIX|Protocol Factory|Card Presentation Standard|STAIN_|RULE-\d|Material Safety Matrix|~\/|^SB\s/i
@@ -282,20 +282,39 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
     expect(verdict.reasons[0]).toContain('Prior bleach use')
   })
 
-  it('routes source-backed cards and blocks partial DIY fixtures inside shared stain families', () => {
+  it('routes SB-passed common-stain cards inside shared stain families', () => {
     const redWine = classify(base({ stainDescription: 'red wine on cotton', stainType: 'tannin' }))
     const sweat = classify(base({ stainDescription: 'sweat on white cotton', stainType: 'protein' }))
     const urine = classify(base({ stainDescription: 'urine on washable cotton', stainType: 'protein' }))
 
-    expect(redWine.verdict).toBe('stop_use_pro')
-    expect(redWine.card).toBeNull()
+    expect(redWine.verdict).toBe('diy_with_constraints')
+    expect(redWine.card).toBe('consumer-red-wine-cotton')
     expect(classify(base({ stainDescription: 'tea on cotton', stainType: 'tannin' })).card).toBe('consumer-tea-cotton')
-    expect(sweat.verdict).toBe('stop_use_pro')
-    expect(sweat.card).toBeNull()
-    expect(urine.verdict).toBe('stop_use_pro')
-    expect(urine.card).toBeNull()
+    expect(sweat.verdict).toBe('diy_with_constraints')
+    expect(sweat.card).toBe('consumer-sweat-white-cotton')
+    expect(urine.verdict).toBe('diy_with_constraints')
+    expect(urine.card).toBe('consumer-urine-cotton')
     expect(classify(base({ stainDescription: 'tea on cotton, not coffee', stainType: 'tannin' })).card).toBe('consumer-tea-cotton')
     expect(classify(base({ stainDescription: 'black coffee on cotton, not tea', stainType: 'tannin' })).card).toBe('consumer-coffee-cotton-black')
+  })
+
+  it('renders advice for Tyler screenshot case: red wine on washable white cotton', () => {
+    const verdict = classify(
+      base({
+        stainDescription: 'red wine on white cotton shirt',
+        stainType: undefined,
+        material: 'cotton',
+        careStatus: 'machine_washable',
+        heatExposure: 'none',
+        colorfastness: 'colorfast',
+        stainAge: 'fresh',
+      }),
+    )
+
+    expect(verdict.verdict).toBe('diy_with_constraints')
+    expect(verdict.card).toBe('consumer-red-wine-cotton')
+    expect(verdict.requiresReferral).toBe(false)
+    expect(verdict.safeFirstMove).toBe('Blot up liquid immediately.')
   })
 
   it('falls through to source-backed stop cards when exact candidates have no keyword hit', () => {
@@ -333,8 +352,8 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
     const polyesterCoffee = classify(base({ stainDescription: 'coffee on polyester shirt', stainType: 'tannin', material: 'polyester' }))
 
     expect(mud.triggeredRules).not.toContain('SB-HS-010-rust-mineral-default-referral')
-    expect(mud.card).toBeNull()
-    expect(mud.verdict).toBe('stop_use_pro')
+    expect(mud.card).toBe('consumer-mud-denim')
+    expect(mud.verdict).toBe('diy_with_constraints')
     expect(polyesterCoffee.triggeredRules).not.toContain('SB-HS-005-alkali-on-tannin')
     expect(polyesterCoffee.verdict).not.toBe('do_not_attempt')
   })
@@ -452,9 +471,8 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
   it('classifies unsupported mixed-stain fixtures before generic protein or tannin keywords, then blocks them', () => {
     const verdict = classify(base({ stainDescription: 'coffee with cream on cotton', stainType: undefined }))
 
-    expect(verdict.card).toBeNull()
-    expect(verdict.verdict).toBe('stop_use_pro')
-    expect(verdict.triggeredRules).toContain('SB-POLICY-no-reviewed-card')
+    expect(verdict.card).toBe('consumer-coffee-with-cream-cotton')
+    expect(verdict.verdict).toBe('diy_with_constraints')
   })
 
   it('preserves mixed stain components for safety floors', () => {
@@ -484,9 +502,8 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
     expect(inferred.card).toBeNull()
     expect(explicitOil.verdict).toBe('stop_use_pro')
     expect(explicitOil.card).toBeNull()
-    expect(reviewedMixed.verdict).toBe('stop_use_pro')
-    expect(reviewedMixed.card).toBeNull()
-    expect(reviewedMixed.triggeredRules).toContain('SB-POLICY-no-reviewed-card')
+    expect(reviewedMixed.verdict).toBe('diy_with_constraints')
+    expect(reviewedMixed.card).toBe('consumer-coffee-with-cream-cotton')
   })
 
   it('treats the UI bleach chip as chlorine bleach for sensitive and unstable items', () => {
