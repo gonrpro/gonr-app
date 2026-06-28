@@ -97,10 +97,10 @@ const optionLabel = <T extends string>(options: Array<{ value: T; label: string 
 const PRIOR_TREATMENTS = ['water', 'detergent', 'bleach', 'ammonia', 'acetone', 'enzyme detergent', 'peroxide', 'baking soda']
 
 const EXAMPLE_CHIPS = [
+  'coffee on cotton shirt',
   'red wine on white cotton shirt',
-  'grease on silk blouse',
-  'ink on wool coat',
-  'bleach and ammonia were already used',
+  'mud on jeans',
+  'olive oil on cotton shirt',
 ]
 
 const VERDICT_COPY: Record<VerdictLevel, { label: string; tone: string; color: string; bg: string; Icon: typeof ShieldCheck }> = {
@@ -364,6 +364,8 @@ export default function ConsumerSolveShell() {
     verdict?.verdict === 'diy_safe' || verdict?.verdict === 'diy_with_constraints'
       ? (verdict.constraints && verdict.constraints.length > 0 ? verdict.constraints : verdict.avoid).slice(0, 3)
       : (verdict?.avoid ?? []).slice(0, 4)
+  const dangerousVerdict = verdict?.verdict === 'stop_use_pro' || verdict?.verdict === 'do_not_attempt'
+  const shouldShowReferral = Boolean(verdict?.requiresReferral || verdict?.referral.emphasize)
 
   return (
     <div className="min-h-[calc(100dvh-122px)] w-full max-w-full overflow-x-hidden bg-[#F5F7FA] text-[#2D3748] lg:min-h-[calc(100dvh-62px)]">
@@ -374,27 +376,28 @@ export default function ConsumerSolveShell() {
               <Shirt size={24} aria-hidden="true" />
             </div>
             <div className="min-w-0">
-              <h1 className="text-2xl font-bold leading-tight text-[#2D3748]">Tell GONR what happened</h1>
-              <p className="mt-1 break-words text-sm leading-6 text-[#718096]">Answer what you know. Unknown is better than guessing.</p>
+              <h1 className="text-2xl font-bold leading-tight text-[#2D3748]">Ask GONR about a stain</h1>
+              <p className="mt-1 break-words text-sm leading-6 text-[#718096]">Type the stain and fabric. GONR will give the safe first move.</p>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="grid min-w-0 gap-4">
             <label className="grid gap-2 text-sm font-semibold text-[#283241]">
-              What happened?
+              Stain + fabric
               <textarea
                 value={description}
                 onChange={(event) => {
                   clearStaleVerdict()
                   updateDescriptionFromText(event.target.value)
                 }}
-                placeholder="Example: red wine on a white cotton shirt, already blotted with water"
-                rows={4}
-                className="min-h-[118px] w-full min-w-0 rounded-[12px] border border-[#E5E7EB] bg-white px-3 py-3 text-[16px] leading-6 text-[#2D3748] outline-none transition placeholder:text-[#8A94A6] focus:border-[#E11D48]"
+                placeholder="Example: coffee on a cotton shirt"
+                rows={3}
+                className="min-h-[96px] w-full min-w-0 rounded-[12px] border border-[#E5E7EB] bg-white px-3 py-3 text-[16px] leading-6 text-[#2D3748] outline-none transition placeholder:text-[#8A94A6] focus:border-[#E11D48]"
                 required
               />
             </label>
 
+            <p className="-mt-1 text-xs font-bold uppercase tracking-[0.08em] text-[#8A94A6]">Try one</p>
             <div className="grid grid-cols-1 gap-2 min-[420px]:grid-cols-2">
               {EXAMPLE_CHIPS.map((example) => (
                 <button
@@ -421,7 +424,7 @@ export default function ConsumerSolveShell() {
               aria-expanded={showDetails}
               className="flex min-h-[44px] items-center justify-between gap-2 rounded-[8px] border border-dashed border-[#E5E7EB] bg-white px-3 text-sm font-semibold text-[#4A5568] transition hover:border-[#E11D48] hover:text-[#BE123C]"
             >
-              <span>Add details (optional) — fabric, care label, color, age</span>
+              <span>Add fabric, care label, color, or age</span>
               <span aria-hidden="true">{showDetails ? '−' : '+'}</span>
             </button>
 
@@ -496,7 +499,7 @@ export default function ConsumerSolveShell() {
               className="flex min-h-[50px] items-center justify-center gap-2 rounded-[12px] bg-[#E11D48] px-4 text-[16px] font-bold text-white shadow-sm transition hover:bg-[#BE123C] focus:outline-none focus:ring-2 focus:ring-[#FB7185] focus:ring-offset-2"
             >
               <ShieldCheck size={20} aria-hidden="true" />
-              Check safe first move
+              Get stain answer
             </button>
           </form>
         </section>
@@ -554,16 +557,18 @@ export default function ConsumerSolveShell() {
                   <p className="mt-1 text-[17px] font-bold leading-6 text-[#16202D]">{verdict.safeFirstMove}</p>
                 </div>
 
-                <div className="grid gap-2">
-                  <p className="text-xs font-bold uppercase text-[#667085]">Do not do</p>
-                  <ul className="grid gap-2">
-                    {displayedAvoid.map((item) => (
-                      <li key={item} className="rounded-[12px] border border-[#F8CACA] bg-[#FEF2F2] px-3 py-2 text-sm font-semibold leading-5 text-[#991B1B]">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {dangerousVerdict ? (
+                  <div className="grid gap-2">
+                    <p className="text-xs font-bold uppercase text-[#667085]">Do not do</p>
+                    <ul className="grid gap-2">
+                      {displayedAvoid.map((item) => (
+                        <li key={item} className="rounded-[12px] border border-[#F8CACA] bg-[#FEF2F2] px-3 py-2 text-sm font-semibold leading-5 text-[#991B1B]">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
 
                 <div className="grid gap-1">
                   <p className="text-xs font-bold uppercase text-[#667085]">Why GONR thinks this</p>
@@ -579,28 +584,6 @@ export default function ConsumerSolveShell() {
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div className="rounded-[12px] border border-[#FED7AA] bg-[#FFF7ED] p-4 shadow-sm sm:p-5">
-              <p className="text-xs font-bold uppercase text-[#C2410C]">Stain family lesson</p>
-              <h3 className="mt-1 text-lg font-bold text-[#2D3748]">This behaves like {familyLesson.name.toLowerCase()}.</h3>
-              <p className="mt-2 text-[15px] leading-6 text-[#4A5568]">{familyLesson.behavior}</p>
-              <p className="mt-2 rounded-[12px] border border-[#FED7AA] bg-white px-3 py-2 text-sm font-semibold leading-5 text-[#2D3748]">{familyLesson.risk}</p>
-            </div>
-
-            <div className="rounded-[12px] border border-[#E5E7EB] bg-white p-4 shadow-sm sm:p-5">
-              <p className="text-xs font-bold uppercase text-[#667085]">Details collected</p>
-              <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
-                {collectedFacts.map((fact) => (
-                  <div key={fact.label} className="rounded-[12px] border border-[#E5E7EB] bg-[#F5F7FA] px-3 py-2">
-                    <p className="text-[11px] font-bold uppercase text-[#718096]">{fact.label}</p>
-                    <p className="mt-1 text-sm font-bold text-[#2D3748]">{fact.value}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-3 text-sm leading-6 text-[#718096]">
-                Care label, color risk, heat exposure, and prior products change whether GONR can show steps or must protect the garment first.
-              </p>
             </div>
 
             {renderedCard && (verdict.verdict === 'diy_safe' || verdict.verdict === 'diy_with_constraints') ? (
@@ -680,6 +663,42 @@ export default function ConsumerSolveShell() {
               </div>
             )}
 
+            {!dangerousVerdict && displayedAvoid.length > 0 ? (
+              <div className="rounded-[12px] border border-[#F8CACA] bg-[#FEF2F2] p-4 shadow-sm sm:p-5">
+                <p className="text-xs font-bold uppercase text-[#991B1B]">Do not do</p>
+                <ul className="mt-2 grid gap-2">
+                  {displayedAvoid.map((item) => (
+                    <li key={item} className="text-sm font-semibold leading-5 text-[#991B1B]">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            <div className="rounded-[12px] border border-[#FED7AA] bg-[#FFF7ED] p-4 shadow-sm sm:p-5">
+              <p className="text-xs font-bold uppercase text-[#C2410C]">Stain family lesson</p>
+              <h3 className="mt-1 text-lg font-bold text-[#2D3748]">This behaves like {familyLesson.name.toLowerCase()}.</h3>
+              <p className="mt-2 text-[15px] leading-6 text-[#4A5568]">{familyLesson.behavior}</p>
+              <p className="mt-2 rounded-[12px] border border-[#FED7AA] bg-white px-3 py-2 text-sm font-semibold leading-5 text-[#2D3748]">{familyLesson.risk}</p>
+            </div>
+
+            <div className="rounded-[12px] border border-[#E5E7EB] bg-white p-4 shadow-sm sm:p-5">
+              <p className="text-xs font-bold uppercase text-[#667085]">Details collected</p>
+              <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {collectedFacts.map((fact) => (
+                  <div key={fact.label} className="rounded-[12px] border border-[#E5E7EB] bg-[#F5F7FA] px-3 py-2">
+                    <p className="text-[11px] font-bold uppercase text-[#718096]">{fact.label}</p>
+                    <p className="mt-1 text-sm font-bold text-[#2D3748]">{fact.value}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-3 text-sm leading-6 text-[#718096]">
+                Care label, color risk, heat exposure, and prior products change whether GONR can show steps or must protect the garment first.
+              </p>
+            </div>
+
+            {shouldShowReferral ? (
             <div className="rounded-[12px] border border-[#E5E7EB] bg-white p-4 shadow-sm sm:p-5">
               <div className="flex items-start gap-3">
                 <div className="grid h-11 w-11 shrink-0 place-items-center rounded-[12px] bg-[#FFF1F2] text-[#E11D48]">
@@ -732,6 +751,7 @@ export default function ConsumerSolveShell() {
                 />
               ) : null}
             </div>
+            ) : null}
 
             {verdict.requiresReferral ? (
               <div className="sticky bottom-[72px] z-20 rounded-[8px] border border-[#FDA4AF] bg-white/95 p-3 shadow-lg backdrop-blur sm:static sm:shadow-sm">
@@ -750,9 +770,9 @@ export default function ConsumerSolveShell() {
           <aside className="hidden min-w-0 rounded-[12px] border border-[#E5E7EB] bg-white p-5 shadow-sm lg:grid lg:gap-4">
             <div>
               <p className="text-xs font-bold uppercase text-[#667085]">Safety triage</p>
-              <h2 className="mt-1 text-2xl font-bold leading-tight text-[#16202D]">Protect the garment first.</h2>
+              <h2 className="mt-1 text-2xl font-bold leading-tight text-[#16202D]">Useful answers need the fabric.</h2>
               <p className="mt-2 text-[15px] leading-6 text-[#475569]">
-                GONR weighs stain family, fiber, care label, heat, color risk, and prior products before showing a move.
+                Start with a plain phrase like coffee on cotton or red wine on linen. Add care-label details only when you know them.
               </p>
             </div>
 

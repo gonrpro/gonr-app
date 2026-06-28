@@ -7,11 +7,11 @@ import { createClient } from '@supabase/supabase-js'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
-const FREE_SOLVE_LIMIT = 3
-// TASK-073: anon users get 1 sample protocol pre-signup; must stay aligned
+const FREE_SOLVE_LIMIT = 30
+// TASK-073: anon users get sample protocols pre-signup; must stay aligned
 // with ANON_SOLVE_LIMIT in app/api/solve/route.ts so the UI counter reflects
-// the actual server gate, not the legacy 3-free-solves number.
-const ANON_SOLVE_LIMIT = 1
+// the actual server gate, not the legacy free-solves number.
+const ANON_SOLVE_LIMIT = 10
 const FOUNDER_EMAILS = ['tyler@gonr.pro', 'tyler@nexshift.co', 'twfyke@me.com', 'eval@gonr.app', 'jeff@cleanersupply.com']
 
 function getSupabaseAdmin() {
