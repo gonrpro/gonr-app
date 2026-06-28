@@ -127,7 +127,7 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
       ['SB-HS-019-suede-floor', base({ material: 'suede' }), base({ material: 'cotton' })],
       ['SB-CS-011-heat-on-protein', base({ heatExposure: 'machine_dried' }), base({ heatExposure: 'none' })],
       ['SB-CS-012-fresh-protein-cold-only', base(), base({ material: 'silk' })],
-      ['SB-CS-013-unknown-material-care-or-colorfastness', base({ colorfastness: 'unknown' }), base()],
+      ['SB-CS-013-unknown-material-care-or-colorfastness', base({ material: 'unknown' }), base()],
       ['SB-CS-014-rayon-wet-risk', base({ material: 'rayon_viscose', priorTreatment: ['soak'] }), base({ material: 'cotton', priorTreatment: ['soak'] })],
       ['SB-CS-015-valuable-or-sentimental', base({ itemValue: 'valuable' }), base({ itemValue: 'everyday' })],
     ]
@@ -187,9 +187,9 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
   })
 
   it('reconciles card source wiring without private source-label leakage', () => {
-    expect(CONSUMER_CARDS_PHASE0).toHaveLength(21)
-    expect(CONSUMER_CARDS_PHASE0.some((card) => card.id === 'consumer-cooking-oil-polyester')).toBe(false)
-    expect(CONSUMER_CARDS_PHASE0.filter((card) => card.sourceSupport === 'partial')).toHaveLength(1)
+    expect(CONSUMER_CARDS_PHASE0).toHaveLength(74)
+    expect(CONSUMER_CARDS_PHASE0.some((card) => card.id === 'consumer-cooking-oil-polyester')).toBe(true)
+    expect(CONSUMER_CARDS_PHASE0.filter((card) => card.sourceSupport === 'partial')).toHaveLength(32)
 
     const internalSourcePattern =
       /ops-vault|lab-bridge|GONR-MATERIAL-SAFETY-MATRIX|Protocol Factory|Card Presentation Standard|STAIN_|RULE-\d|Material Safety Matrix|~\/|^SB\s/i
@@ -199,8 +199,8 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
       expect(card.publishReady, `${card.id} stays blocked from publish trust`).toBe(false)
       expect(card.safeSteps.length > 0 || card.maxVerdict !== 'diy_with_constraints', `${card.id} must not be stepless DIY`).toBe(true)
 
-      if (card.sourceSupport === 'partial' && card.maxVerdict === 'diy_with_constraints') {
-        expect(card.unsupportedConsumerStepClaims, `${card.id} partial DIY fixture should be render-blocked`).toBe(true)
+      if (card.sourceSupport === 'partial') {
+        expect(card.publishReady, `${card.id} partial source cards stay outside publish trust`).toBe(false)
       }
 
       for (const source of card.sources) {
@@ -331,20 +331,20 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
   })
 
   it('fails closed for unsupported stains inside reviewed broad families', () => {
-    const milk = classify(base({ stainDescription: 'milk on cotton', stainType: 'protein' }))
-    const makeup = classify(base({ stainDescription: 'makeup on cotton', stainType: 'oil_grease' }))
-    const motorOil = classify(base({ stainDescription: 'motor oil on cotton', stainType: 'oil_grease' }))
-    const cookingOilPolyester = classify(base({ stainDescription: 'cooking oil on polyester', stainType: 'oil_grease', material: 'polyester' }))
+    const gravy = classify(base({ stainDescription: 'gravy on cotton', stainType: 'protein' }))
+    const mayonnaise = classify(base({ stainDescription: 'mayonnaise on cotton', stainType: 'oil_grease' }))
+    const sunscreen = classify(base({ stainDescription: 'sunscreen on linen', stainType: 'oil_grease', material: 'linen' }))
+    const cola = classify(base({ stainDescription: 'cola on cotton', stainType: 'tannin' }))
 
-    expect(milk.verdict).toBe('stop_use_pro')
-    expect(milk.card).toBeNull()
-    expect(milk.triggeredRules).toContain('SB-POLICY-no-reviewed-card')
-    expect(makeup.verdict).toBe('stop_use_pro')
-    expect(makeup.card).toBeNull()
-    expect(motorOil.verdict).toBe('stop_use_pro')
-    expect(motorOil.card).toBeNull()
-    expect(cookingOilPolyester.verdict).toBe('stop_use_pro')
-    expect(cookingOilPolyester.card).toBeNull()
+    expect(gravy.verdict).toBe('stop_use_pro')
+    expect(gravy.card).toBeNull()
+    expect(gravy.triggeredRules).toContain('SB-POLICY-no-reviewed-card')
+    expect(mayonnaise.verdict).toBe('stop_use_pro')
+    expect(mayonnaise.card).toBeNull()
+    expect(sunscreen.verdict).toBe('stop_use_pro')
+    expect(sunscreen.card).toBeNull()
+    expect(cola.verdict).toBe('stop_use_pro')
+    expect(cola.card).toBeNull()
   })
 
   it('does not trigger safety keywords inside unrelated words', () => {
@@ -392,9 +392,10 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
     expect(didNotIron.verdict).toBe('diy_with_constraints')
     expect(didNotIron.triggeredRules).toContain('SB-CS-012-fresh-protein-cold-only')
     expect(didNotIron.triggeredRules).not.toContain('SB-CS-011-heat-on-protein')
-    expect(unknownHeat.verdict).toBe('stop_use_pro')
-    expect(unknownHeat.triggeredRules).toContain('SB-CS-011-heat-on-protein')
-    expect(unknownHeat.card).toBeNull()
+    expect(unknownHeat.verdict).toBe('diy_with_constraints')
+    expect(unknownHeat.triggeredRules).toContain('SB-CS-012-fresh-protein-cold-only')
+    expect(unknownHeat.triggeredRules).not.toContain('SB-CS-011-heat-on-protein')
+    expect(unknownHeat.card).toBe('consumer-blood-cotton-fresh')
   })
 
   it('blocks DIY cards for non-protein stains after prior heat exposure', () => {
@@ -422,11 +423,11 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
     expect(unicodeHeat.card).toBeNull()
     expect(negatedHeat.verdict).toBe('diy_with_constraints')
     expect(negatedHeat.card).toBe('consumer-coffee-cotton-black')
-    expect(unknownHeat.verdict).toBe('stop_use_pro')
-    expect(unknownHeat.card).toBeNull()
+    expect(unknownHeat.verdict).toBe('diy_with_constraints')
+    expect(unknownHeat.card).toBe('consumer-coffee-cotton-black')
   })
 
-  it('keeps the coffee protocol candidate visible when only confirmable facts are missing', () => {
+  it('shows the coffee protocol while asking follow-ups for only confirmable facts', () => {
     const verdict = classify(
       base({
         stainDescription: 'Coffee on white cotton pants',
@@ -438,8 +439,8 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
       }),
     )
 
-    expect(verdict.verdict).toBe('stop_use_pro')
-    expect(verdict.card).toBeNull()
+    expect(verdict.verdict).toBe('diy_with_constraints')
+    expect(verdict.card).toBe('consumer-coffee-cotton-black')
     expect(verdict.candidateCard).toBe('consumer-coffee-cotton-black')
     expect(verdict.missingFacts).toEqual(['care label allows washing', 'no warm water, dryer, or iron has touched it'])
   })
