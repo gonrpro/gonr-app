@@ -127,17 +127,45 @@ export function effectiveColorfastness(fields: SolveFields): Colorfastness {
   return inferColorfastnessFromText(fields.description, fields.colorfastness)
 }
 
+export function effectiveCareStatus(fields: SolveFields): CareStatus {
+  if (fields.careStatus !== 'unknown') return fields.careStatus
+  const text = fields.description.toLowerCase()
+  if (/\b(dry clean only|dry-clean-only|dryclean only|professional clean only)\b/.test(text)) return 'dry_clean_only'
+  if (/\b(hand wash|hand-wash|handwash)\b/.test(text)) return 'hand_wash'
+  if (/\b(machine washable|washable|launderable|can wash|can be washed|washing machine)\b/.test(text)) return 'machine_washable'
+  return 'unknown'
+}
+
+export function effectiveHeatExposure(fields: SolveFields): HeatExposure {
+  if (fields.heatExposure !== 'unknown') return fields.heatExposure
+  const text = fields.description.toLowerCase()
+  if (/\b(machine dried|tumble dried|ran through (the )?dryer|put (it )?in (the )?dryer|dried it)\b/.test(text)) return 'machine_dried'
+  if (/\b(ironed|pressed with (an )?iron)\b/.test(text)) return 'ironed'
+  if (/\b(hot water|warm water|hot wash|warm wash)\b/.test(text)) return 'warm_hot_wash'
+  if (/\b(no heat|not heated|hasn'?t been heated|not dried|no dryer|not in (the )?dryer|air dried only)\b/.test(text)) return 'none'
+  return 'unknown'
+}
+
+export function effectiveStainAge(fields: SolveFields): StainAge {
+  if (fields.stainAge !== 'unknown') return fields.stainAge
+  const text = fields.description.toLowerCase()
+  if (/\b(fresh|just happened|just spilled|right now|today|new spill)\b/.test(text)) return 'fresh'
+  if (/\b(hours old|few hours|earlier today|yesterday|last night)\b/.test(text)) return 'hours_old'
+  if (/\b(set in|set-in|old stain|already washed|washed already|dried in|weeks old|days old)\b/.test(text)) return 'set_in'
+  return 'unknown'
+}
+
 /** Build the engine SolveInput from the collected fields, applying the same
- * free-text inference the shell relied on (material + colorfastness). */
+ * free-text inference the shell relied on. */
 export function buildSolveInputFrom(fields: SolveFields): SolveInput {
   return {
     stainDescription: fields.description,
     stainType: fields.stainType === 'auto' ? undefined : fields.stainType,
     material: effectiveMaterial(fields),
-    careStatus: fields.careStatus,
-    heatExposure: fields.heatExposure,
+    careStatus: effectiveCareStatus(fields),
+    heatExposure: effectiveHeatExposure(fields),
     colorfastness: effectiveColorfastness(fields),
-    stainAge: fields.stainAge,
+    stainAge: effectiveStainAge(fields),
     priorTreatment: fields.priorTreatment,
     itemValue: fields.itemValue,
     locationText: fields.locationText,
@@ -147,6 +175,9 @@ export function buildSolveInputFrom(fields: SolveFields): SolveInput {
 function isUnknown(fields: SolveFields, field: FollowupField): boolean {
   if (field === 'material') return effectiveMaterial(fields) === 'unknown'
   if (field === 'colorfastness') return effectiveColorfastness(fields) === 'unknown'
+  if (field === 'careStatus') return effectiveCareStatus(fields) === 'unknown'
+  if (field === 'heatExposure') return effectiveHeatExposure(fields) === 'unknown'
+  if (field === 'stainAge') return effectiveStainAge(fields) === 'unknown'
   return fields[field] === 'unknown'
 }
 

@@ -187,16 +187,23 @@ describe('GONR consumer Phase 0 classifier T1-T15', () => {
   })
 
   it('reconciles card source wiring without private source-label leakage', () => {
+    const sourceReviewPromoted = new Set([
+      'consumer-red-wine-polyester',
+      'consumer-white-wine-cotton',
+      'consumer-milk-polyester',
+      'consumer-egg-polyester',
+    ])
+
     expect(CONSUMER_CARDS_PHASE0).toHaveLength(74)
     expect(CONSUMER_CARDS_PHASE0.some((card) => card.id === 'consumer-cooking-oil-polyester')).toBe(true)
-    expect(CONSUMER_CARDS_PHASE0.filter((card) => card.sourceSupport === 'partial')).toHaveLength(32)
+    expect(CONSUMER_CARDS_PHASE0.filter((card) => card.sourceSupport === 'partial')).toHaveLength(28)
 
     const internalSourcePattern =
       /ops-vault|lab-bridge|GONR-MATERIAL-SAFETY-MATRIX|Protocol Factory|Card Presentation Standard|STAIN_|RULE-\d|Material Safety Matrix|~\/|^SB\s/i
 
     for (const card of CONSUMER_CARDS_PHASE0) {
       expect(card.sources.length, `${card.id} should carry opaque source evidence IDs`).toBeGreaterThan(0)
-      expect(card.publishReady, `${card.id} stays blocked from publish trust`).toBe(false)
+      expect(card.publishReady, `${card.id} source-review trust state`).toBe(sourceReviewPromoted.has(card.id))
       expect(card.safeSteps.length > 0 || card.maxVerdict !== 'diy_with_constraints', `${card.id} must not be stepless DIY`).toBe(true)
 
       if (card.sourceSupport === 'partial') {

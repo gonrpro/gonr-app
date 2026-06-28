@@ -104,11 +104,17 @@ describe('Batch-3 Phase-0 coverage - every approved card renders', () => {
     expect(dark).toEqual([])
   })
 
-  it('new cards are publishReady:false, consumerSafe, and carry no oxygen/peroxide/solvent steps', () => {
+  it('new cards are consumerSafe, keep source-review trust explicit, and carry no oxygen/peroxide/solvent steps', () => {
     const OXY = /oxygen bleach|oxiclean|percarbonate|hydrogen peroxide|peroxide|acetone|solvent|chlorine bleach/
+    const SOURCE_REVIEW_PROMOTED = new Set([
+      'consumer-red-wine-polyester',
+      'consumer-white-wine-cotton',
+      'consumer-milk-polyester',
+      'consumer-egg-polyester',
+    ])
     for (const id of NEW_53) {
       const card = CONSUMER_CARDS_PHASE0.find((c) => c.id === id)!
-      expect(card.publishReady).toBe(false)
+      expect(card.publishReady).toBe(SOURCE_REVIEW_PROMOTED.has(id))
       expect(card.consumerSafe).toBe(true)
       expect(card.safeSteps.length).toBeGreaterThan(0)
       expect(card.safeSteps.join(' ').toLowerCase()).not.toMatch(OXY)
