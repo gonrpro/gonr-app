@@ -12,14 +12,37 @@ import {
 } from '@/lib/solve/ratified-cards'
 
 describe('TASK-251 — consumer legacy-card deny-by-default gate', () => {
-  it('ships an empty initial ratified-card allowlist', () => {
+  it('ships only SB-ratified legacy cards for consumer exposure', () => {
     const allowlist = JSON.parse(readFileSync(join(process.cwd(), 'data', 'ratified-cards.json'), 'utf8'))
     expect(allowlist.schemaVersion).toBe(RATIFIED_CARD_ALLOWLIST_VERSION)
-    expect(allowlist.entries).toEqual([])
+    expect(allowlist.entries).toHaveLength(11)
+    expect(allowlist.entries.map((entry: { cardId: string }) => entry.cardId)).toEqual([
+      'berry-linen',
+      'berry-polyester',
+      'coffee-black-cotton',
+      'coffee-cotton',
+      'juice-cotton',
+      'mud-cotton',
+      'olive-oil-linen',
+      'red-wine-linen',
+      'sweat-stain-cotton',
+      'tea-cotton',
+      'tomato-sauce-cotton',
+    ])
   })
 
-  it.each(['anon', 'free', 'home'] as const)('denies unlisted legacy core cards for %s', async (viewerTier) => {
+  it.each(['anon', 'free', 'home'] as const)('admits SB-ratified legacy core cards for %s', async (viewerTier) => {
     const result = await decide({ stain: 'coffee', surface: 'cotton', lang: 'en', viewerTier })
+
+    expect(result.card).not.toBeNull()
+    expect(result.card?.id).toBe('coffee-cotton')
+    expect([1, 2]).toContain(result.tier)
+    expect(result.source).toBe('core')
+    expect(result.legacyDenied).toBeUndefined()
+  })
+
+  it.each(['anon', 'free', 'home'] as const)('still denies unlisted legacy core cards for %s', async (viewerTier) => {
+    const result = await decide({ stain: 'chocolate', surface: 'cotton', lang: 'en', viewerTier })
 
     expect(result.card).toBeNull()
     expect(result.tier).toBe(4)
@@ -28,8 +51,8 @@ describe('TASK-251 — consumer legacy-card deny-by-default gate', () => {
     expect(result.legacyDenied).toMatchObject({
       reason: 'unratified_legacy_card',
       allowlistVersion: RATIFIED_CARD_ALLOWLIST_VERSION,
+      cardId: 'chocolate-cotton',
     })
-    expect(result.legacyDenied?.cardId).toBeTruthy()
   })
 
   it.each(['spotter', 'operator', 'founder'] as const)('leaves paid/pro tier %s library behavior unchanged', async (viewerTier) => {
