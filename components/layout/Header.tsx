@@ -118,7 +118,10 @@ export default function Header({ brand = 'gonr' }: { brand?: 'gonr' | 'spottingb
           </button>
         </div>
       </div>
-      <div className="h-[2px] bg-gradient-to-r from-green-500/80 via-green-500 to-green-500/80" />
+      <div
+        className="h-[2px]"
+        style={{ background: 'linear-gradient(90deg, rgba(236,0,140,0.65), #ff2d5e, #ff7a1a)' }}
+      />
     </header>
   )
 }
