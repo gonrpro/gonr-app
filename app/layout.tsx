@@ -33,6 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
+    metadataBase: new URL('https://gonr.app'),
     title: 'GONR Pretreat — On-the-Go Stain & Odor Relief',
     description: 'Single-use pretreat and laundry booster packets for the sweatiest, smelliest, stainiest loads. Join the waitlist.',
     icons: {
