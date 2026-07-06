@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { createClient } from '@/lib/supabase/client'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { AlertTriangle, BookOpen, CheckCircle2, Droplets, Mail, ShieldCheck, Sparkles } from 'lucide-react'
 
@@ -50,7 +49,7 @@ type Copy = {
 const COPY: Record<Lang, Copy> = {
   en: {
     noApp: 'No app needed',
-    freeChecks: '3 sample solves',
+    freeChecks: 'Prelaunch access list',
     headline: 'Know what to do before the stain sets.',
     subhead: 'Fabric-aware stain guidance in seconds — cautious first steps, risk warnings, and when to stop.',
     proof: 'Not generic tips. GONR checks the stain, fabric, color risk, and stop signs before you make it worse.',
@@ -59,13 +58,13 @@ const COPY: Record<Lang, Copy> = {
     examples: ['Red wine', 'Ink', 'Oil', 'Silk', 'Wool', 'Mystery stain'],
     unlockHint: 'Use GONR on your own stain.',
     emailPlaceholder: 'your@email.com',
-    cta: 'Start free',
-    sending: 'Sending secure link…',
-    helper: 'No password. Secure magic link when needed.',
+    cta: 'Join the list',
+    sending: 'Saving your spot...',
+    helper: 'Email signup only. Access opens when the app is ready.',
     trust: 'Safety-first · Fabric-aware · Draws from professional textile-care references',
-    checkEmail: 'Check your email',
-    sentPrefix: 'We sent a secure link to',
-    sentSuffix: 'Tap it to start solving stains.',
+    checkEmail: "You're on the list",
+    sentPrefix: 'We saved',
+    sentSuffix: "We'll email when GONR is ready for access.",
     reset: 'Use a different email',
     failed: 'Failed to send link',
     cards: [
@@ -76,7 +75,7 @@ const COPY: Record<Lang, Copy> = {
   },
   es: {
     noApp: 'Sin app',
-    freeChecks: '3 ejemplos de resolución',
+    freeChecks: 'Lista de acceso anticipado',
     headline: 'Sepa qué hacer antes de que la mancha se fije.',
     subhead: 'Guía según tela y riesgo en segundos: primeros pasos seguros, alertas y cuándo parar.',
     proof: 'No son consejos genéricos. GONR revisa la mancha, la tela, el riesgo de color y cuándo parar.',
@@ -85,13 +84,13 @@ const COPY: Record<Lang, Copy> = {
     examples: ['Vino tinto', 'Tinta', 'Aceite', 'Seda', 'Lana', 'Mancha desconocida'],
     unlockHint: 'Use GONR con su propia mancha.',
     emailPlaceholder: 'tu@email.com',
-    cta: 'Empezar gratis',
-    sending: 'Enviando enlace seguro…',
-    helper: 'Sin contraseña. Enlace seguro cuando haga falta.',
+    cta: 'Unirse a la lista',
+    sending: 'Guardando su lugar...',
+    helper: 'Solo registro por email. El acceso abre cuando la app esté lista.',
     trust: 'Primero seguridad · Según la tela · Fuentes profesionales',
-    checkEmail: 'Revise su email',
-    sentPrefix: 'Enviamos un enlace seguro a',
-    sentSuffix: 'Tóquelo para empezar a resolver manchas.',
+    checkEmail: 'Ya está en la lista',
+    sentPrefix: 'Guardamos',
+    sentSuffix: 'Le avisaremos cuando GONR esté listo.',
     reset: 'Usar otro email',
     failed: 'No se pudo enviar el enlace',
     cards: [
@@ -114,11 +113,6 @@ export default function LandingPage() {
   const [openCard, setOpenCard] = useState(0)
 
   useEffect(() => {
-    let cancelled = false
-    createClient().auth.getSession().then(({ data }) => {
-      if (!cancelled && data.session) window.location.replace('/solve')
-    }).catch(() => {})
-
     const params = new URLSearchParams(window.location.search)
     const requestedLang = params.get('lang')
     if (requestedLang === 'en' || requestedLang === 'es') {
@@ -133,7 +127,6 @@ export default function LandingPage() {
     document.body.classList.add('gonr-landing-active')
 
     return () => {
-      cancelled = true
       document.body.classList.remove('gonr-landing-active')
     }
   }, [setLang])
@@ -163,12 +156,12 @@ export default function LandingPage() {
     setSending(true)
 
     try {
-      const supabase = createClient()
-      const { error: authError } = await supabase.auth.signInWithOtp({
-        email: trimmed,
-        options: { emailRedirectTo: `${window.location.origin}/auth/callback?next=/solve` },
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: trimmed }),
       })
-      if (authError) throw authError
+      if (!res.ok) throw new Error(copy.failed)
       try { localStorage.setItem('gonr_user_email', trimmed.toLowerCase()) } catch {}
       setSent(true)
     } catch (err) {

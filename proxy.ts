@@ -2,6 +2,12 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 const SPOTTING_BOARD_HOSTS = new Set(['spottingboard.com', 'www.spottingboard.com'])
 
+const GONR_WAITLIST_API_PREFIXES = [
+  '/api/waitlist',
+  '/api/operator-waitlist',
+  '/api/webhooks/lemonsqueezy',
+]
+
 function isStaticAsset(pathname: string): boolean {
   return (
     pathname.startsWith('/_next/') ||
@@ -57,7 +63,34 @@ export function proxy(request: NextRequest) {
     }
   }
 
-  return NextResponse.next()
+  if (isStaticAsset(pathname) || pathname === '/' || pathname === '/landing') {
+    return NextResponse.next()
+  }
+
+  if (GONR_WAITLIST_API_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`))) {
+    return NextResponse.next()
+  }
+
+  if (pathname.startsWith('/api/')) {
+    return NextResponse.json(
+      {
+        error: 'gonr_coming_soon',
+        message: 'GONR is currently in prelaunch. Join the email list for access when it is ready.',
+      },
+      {
+        status: 503,
+        headers: {
+          'Retry-After': '86400',
+          'x-gonr-prelaunch': '1',
+        },
+      },
+    )
+  }
+
+  const url = request.nextUrl.clone()
+  url.pathname = '/'
+  return NextResponse.redirect(url)
+
 }
 
 export const config = {
