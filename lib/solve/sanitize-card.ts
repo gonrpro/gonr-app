@@ -18,7 +18,7 @@ export function sanitizeCardForTier(
   delete (out as { professionalProtocol?: unknown }).professionalProtocol
 
   // Legacy consumer-DIY fields are quarantined from consumer runtime as of
-  // 2026-05-29. The core legacy card library predates the Stain Brain safety
+  // 2026-05-29. The core legacy card library predates the GONR safety
   // model and is recipe-based across nearly the full surface.
   delete out.homeSolutions
   delete (out as { diyProtocol?: unknown }).diyProtocol

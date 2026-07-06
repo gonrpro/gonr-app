@@ -4,7 +4,7 @@
 // onboarding `getNextStep` lattice for plants that still have wizard fields
 // to fill; otherwise composes operational prompts from live DB-backed state.
 //
-// SB phrasing locks (TASK-187 Stain Brain review):
+// SB phrasing locks (TASK-187 GONR safety review):
 //   - "Based on what's in the plant brain so far…" / "Want to review this?"
 //   - Never "Your plant needs…" unless evidence supports it
 //   - No fake plant certainty; every prompt acknowledges current evidence

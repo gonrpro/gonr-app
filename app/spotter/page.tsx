@@ -237,10 +237,10 @@ function SpotterPageInner() {
         >
           <div className="flex items-center gap-2">
             <span className="text-lg">🧠</span>
-            <h2 className="text-base font-bold">Stain Brain</h2>
+            <h2 className="text-base font-bold">GONR AI</h2>
           </div>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            Ask Stain Brain about stain scenarios, edge cases, risks, and why a step may or may not fit.
+            Ask GONR AI about stain scenarios, edge cases, risks, and why a step may or may not fit.
           </p>
         </button>
 

@@ -1,5 +1,5 @@
 // Seed scenarios for Plant Brain Intake v0
-// 10 plausible scenarios drawn from Stain Brain card library — picked because they're
+// 10 plausible scenarios drawn from the GONR card library — picked because they're
 // cases plants commonly handle differently. Tyler can edit any of these in the UI before
 // answering, or add custom scenarios.
 

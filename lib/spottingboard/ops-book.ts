@@ -141,7 +141,7 @@ function renderItem(item: BrainLibraryItem, index: number): string {
 
   if (item.safety_label === 'unsafe_do_not_use') {
     lines.push(
-      '> ⚠️ **UNSAFE — DO NOT USE.** This rule was flagged by the classifier or supervisor as quarantined. Kept here as training warning. Never apply to garments without explicit supervisor + Stain Brain review.',
+      '> ⚠️ **UNSAFE — DO NOT USE.** This rule was flagged by the classifier or supervisor as quarantined. Kept here as training warning. Never apply to garments without explicit supervisor + GONR safety review.',
     )
     lines.push('')
   } else if (item.safety_label === 'escalation_required') {

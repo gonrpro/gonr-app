@@ -16,7 +16,7 @@ import { MobileNav } from './MobileNav'
 export const metadata: Metadata = {
   title: 'Spotting Board Workbench — The plant brain builder for dry cleaners',
   description:
-    'Build, edit, and export your plant\'s Stain Brain. Operator-owned. Provenance-labeled.',
+    'Build, edit, and export your plant brain. Operator-owned. Provenance-labeled.',
 }
 
 export default async function SpottingBoardLayout({

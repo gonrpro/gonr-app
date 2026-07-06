@@ -81,7 +81,7 @@ export const TIERS: TierDisplay[] = [
     features: [
       'Everything in Home',
       'Full pro spotting protocols',
-      'Stain Brain AI chat',
+      'GONR AI chat',
       'Deep Solve + garment analysis',
       'Customer handoff scripts',
       'Priority support',

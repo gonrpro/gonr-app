@@ -1038,7 +1038,7 @@ export async function POST(req: Request) {
 
     // ── AI fallback (Home / Free / Anon only) ──────────────────
     try {
-      // Stain Brain retrieval (TASK-005 Phase 2) — fetch grounded context
+      // GONR knowledge retrieval (TASK-005 Phase 2) — fetch grounded context
       // from sb_chunks when the kill switch is on. Returns a non-retrieving
       // result when disabled or on missing creds — no behavior change.
       let retrieval: RetrievalResult | undefined

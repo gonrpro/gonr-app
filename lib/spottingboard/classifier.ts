@@ -16,7 +16,7 @@
 // promoted to runtime guidance via the DDL composite check
 // `plant_brain_items_unsafe_not_runtime`.
 //
-// SB content authority: `unsafe-patterns.json` is owned by Stain Brain. Lab
+// SB content authority: `unsafe-patterns.json` is owned by GONR safety. Lab
 // owns plumbing only — pattern updates land in the JSON, not in this file.
 
 import unsafePatternsRaw from './unsafe-patterns.json'

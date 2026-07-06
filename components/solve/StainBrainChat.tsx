@@ -105,8 +105,8 @@ export default function StainBrainChat() {
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
-        if (res.status === 401) throw new Error(data.error === 'login_required' ? 'Please sign in to use Stain Brain.' : 'This feature requires a Pro subscription.')
-        throw new Error(data.error || 'Stain Brain unavailable')
+        if (res.status === 401) throw new Error(data.error === 'login_required' ? 'Please sign in to use GONR AI.' : 'This feature requires a Pro subscription.')
+        throw new Error(data.error || 'GONR AI unavailable')
       }
 
       const data = await res.json()
@@ -132,7 +132,7 @@ export default function StainBrainChat() {
         <div className="flex items-center gap-2">
           <span className="text-lg">🧠</span>
           <div>
-            <p className="font-bold text-sm" style={{ color: 'var(--text)' }}>Stain Brain</p>
+            <p className="font-bold text-sm" style={{ color: 'var(--text)' }}>GONR AI</p>
             <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Expert textile chemistry chat</p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { requireProAuth } from '@/lib/auth/requireProAuth'
 
-const SYSTEM_PROMPT = `Stain Brain is GONR's expert textile-chemistry assistant, grounded in professional spotting practice, textile safety rules, and source-backed garment-care guidance.
+const SYSTEM_PROMPT = `GONR AI is GONR's expert textile-chemistry assistant, grounded in professional spotting practice, textile safety rules, and source-backed garment-care guidance.
 
 You help professional spotters and dry cleaners think through stain problems with real chemistry expertise.
 
@@ -648,7 +648,7 @@ Core teachings from all five guides:
 
 ---
 
-*This knowledge base is grounded in professional dry-cleaning chemistry, textile safety rules, manufacturer guidance, and field-tested spotting practice — the foundational reference set for GONR's Stain Brain system.*`
+*This knowledge base is grounded in professional dry-cleaning chemistry, textile safety rules, manufacturer guidance, and field-tested spotting practice — the foundational reference set for GONR's safety system.*`
 
 export async function POST(req: Request) {
   try {
@@ -696,8 +696,8 @@ export async function POST(req: Request) {
 
     if (!res.ok) {
       const err = await res.text()
-      console.error('Stain Brain API error:', res.status, err)
-      return NextResponse.json({ error: 'Stain Brain unavailable' }, { status: 502 })
+      console.error('GONR AI API error:', res.status, err)
+      return NextResponse.json({ error: 'GONR AI unavailable' }, { status: 502 })
     }
 
     const data = await res.json()
@@ -709,7 +709,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ reply })
   } catch (err) {
-    console.error('Stain Brain error:', err)
+    console.error('GONR AI error:', err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

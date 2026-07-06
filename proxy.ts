@@ -63,7 +63,13 @@ export function proxy(request: NextRequest) {
     }
   }
 
-  if (isStaticAsset(pathname) || pathname === '/' || pathname === '/landing') {
+  if (pathname === '/landing') {
+    const url = request.nextUrl.clone()
+    url.pathname = '/'
+    return NextResponse.redirect(url)
+  }
+
+  if (isStaticAsset(pathname) || pathname === '/') {
     return NextResponse.next()
   }
 

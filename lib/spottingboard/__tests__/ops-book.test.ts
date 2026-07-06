@@ -208,7 +208,7 @@ describe('renderOpsBookMarkdown — per-item rendering preserves all 4 governanc
       ]),
     )
     expect(md).toContain('UNSAFE — DO NOT USE')
-    expect(md).toContain('Never apply to garments without explicit supervisor + Stain Brain review')
+    expect(md).toContain('Never apply to garments without explicit supervisor + GONR safety review')
   })
 
   it('renders runtime-eligible callout when applicable', () => {

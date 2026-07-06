@@ -2,7 +2,7 @@
   "schema_name": "spottingboard_unsafe_patterns",
   "version": "0.1.1",
   "date": "2026-05-07",
-  "owner": "Stain Brain",
+  "owner": "GONR safety",
   "purpose": "Fail-closed pattern set for future SpottingBoard classifier/review gate. This is not invoked by the first raw module insert loop, but should be attached before plant-local rules become runtime guidance or central candidates. v0.1.1 clarification: classifier may quarantine/downgrade at capture, but must not auto-review or auto-reject rows.",
   "default_action": "requires_supervisor_review",
   "authority_mapping": {

@@ -101,7 +101,7 @@ export default async function BrainLibraryPage() {
       <header className="sb-surface-head">
         <h1>Brain Library</h1>
         <p className="sb-surface-tagline">
-          <strong>{plant.name}</strong> — your plant&apos;s operating Stain Brain. Owned by you, exportable anytime.
+          <strong>{plant.name}</strong> — your plant&apos;s operating brain. Owned by you, exportable anytime.
         </p>
       </header>
 

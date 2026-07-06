@@ -164,7 +164,7 @@ export function IntakeChemistryRuleForm({ plantId }: Props) {
     <form className="sb-capture-form" onSubmit={handleSubmit} aria-label="Chemistry rule capture">
       <p className="sb-form-help">
         Every saved rule starts <strong>unreviewed · plant-local · needs source review · requires supervisor</strong>.
-        Nothing becomes runtime guidance without supervisor + Stain Brain review.
+        Nothing becomes runtime guidance without supervisor + GONR safety review.
       </p>
 
       <label className="sb-form-row">

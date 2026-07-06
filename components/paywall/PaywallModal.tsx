@@ -172,7 +172,7 @@ export default function PaywallModal({ open, onDismiss, reason = 'trial_expired'
               <ul style={{ fontSize: '12px', color: '#6b7280', marginBottom: '12px', paddingLeft: '16px', lineHeight: '1.8' }}>
                 <li>Solve + 250+ protocol library</li>
                 <li>Chemistry Cards + Chemical Reference</li>
-                <li>Stain Brain AI chat</li>
+                <li>GONR AI chat</li>
                 <li>Deep Solve + Garment Analysis</li>
                 <li>Customer Handoff scripts</li>
               </ul>

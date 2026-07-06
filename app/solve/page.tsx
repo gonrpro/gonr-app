@@ -802,7 +802,7 @@ function SolvePageInner() {
           </span>
         </div>
         <p style={{ fontSize: '11px', color: 'var(--text-secondary)', marginTop: '4px', opacity: 0.7 }}>
-          {t('poweredBy')} <span style={{ fontWeight: 600 }}>Stain Brain</span>
+          {t('poweredBy')} <span style={{ fontWeight: 600 }}>GONR AI</span>
         </p>
       </div>
 
@@ -1019,7 +1019,7 @@ function SolvePageInner() {
       </div>
 
       {/* ── QUICK ACTIONS (TASK-050: pro-tier only) ── */}
-      {/* Handoff + Stain Brain are Spotter+ features. Home/free/anon users
+      {/* Handoff + GONR AI are Spotter+ features. Home/free/anon users
           see no pro quick-actions on the homepage. */}
       {canAccessFeature(authTier, 'spotter') && (
         <div className="flex gap-3" style={{ marginBottom: '-8px' }}>
